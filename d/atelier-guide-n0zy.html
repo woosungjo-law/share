@@ -16,6 +16,8 @@
     --tag-bg: #e8f0f8;
     --tag-color: #1a3a5c;
     --heading: #1a2535;
+    --green: #1a5c3a;
+    --amber: #92400e;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -54,6 +56,20 @@
   .hero h1 { font-size: 24px; font-weight: 700; color: var(--heading); margin-bottom: 6px; letter-spacing: -0.5px; }
   .hero p { color: var(--muted); font-size: 13px; }
 
+  /* Concept badges */
+  .concept-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin: 16px 0; }
+  @media(max-width:640px){ .concept-row { grid-template-columns: 1fr; } }
+  .concept-box { border-radius: 10px; padding: 18px; text-align: center; }
+  .concept-box.dancho { background: #f0faf4; border: 1px solid #86efac; }
+  .concept-box.sp     { background: #fffbeb; border: 1px solid #fcd34d; }
+  .concept-box.draft  { background: #eff6ff; border: 1px solid #93c5fd; }
+  .concept-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; margin-bottom: 6px; }
+  .concept-box.dancho .concept-label { color: var(--green); }
+  .concept-box.sp .concept-label     { color: var(--amber); }
+  .concept-box.draft .concept-label  { color: #1d4ed8; }
+  .concept-name { font-size: 15px; font-weight: 700; color: var(--heading); margin-bottom: 6px; }
+  .concept-desc { font-size: 12.5px; color: #374151; line-height: 1.65; }
+
   /* Section */
   .section { background: var(--surface); border-radius: 12px; padding: 36px; margin-bottom: 24px; box-shadow: 0 1px 8px rgba(0,0,0,0.05); }
   .section-title {
@@ -66,8 +82,10 @@
     border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
     font-size: 13px; flex-shrink: 0;
   }
-  .section-title.seed { color: #1a5c3a; border-color: #b8ddc8; }
-  .section-title.seed .num { background: #1a5c3a; }
+  .section-title.dancho { color: var(--green); border-color: #b8ddc8; }
+  .section-title.dancho .num { background: var(--green); }
+  .section-title.sp { color: var(--amber); border-color: #fde68a; }
+  .section-title.sp .num { background: var(--amber); }
 
   h3 { font-size: 14.5px; font-weight: 700; color: var(--heading); margin: 26px 0 10px; }
   h3:first-of-type { margin-top: 0; }
@@ -84,7 +102,8 @@
   /* Table */
   table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 14px 0; }
   th { background: var(--accent); color: white; padding: 10px 14px; text-align: left; font-weight: 600; font-size: 13px; }
-  .section-title.seed ~ * th { background: #1a5c3a; }
+  .section-title.dancho ~ * th { background: var(--green); }
+  .section-title.sp ~ * th { background: var(--amber); }
   td { padding: 10px 14px; border-bottom: 1px solid var(--border); color: #374151; vertical-align: top; }
   tr:last-child td { border-bottom: none; }
   tr:nth-child(even) td { background: #faf9f6; }
@@ -102,19 +121,51 @@
   /* Flow */
   .flow { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
   .flow-step { background: var(--tag-bg); color: var(--tag-color); padding: 7px 15px; border-radius: 20px; font-size: 13px; font-weight: 600; }
+  .flow-step.green { background: #d1fae5; color: var(--green); }
+  .flow-step.amber { background: #fef3c7; color: var(--amber); }
+  .flow-step.blue  { background: #dbeafe; color: #1d4ed8; }
   .flow-arrow { color: var(--muted); font-size: 18px; }
 
-  /* Seed channel card */
+  /* Method badge */
+  .method-badge {
+    display: inline-block; padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 700;
+    letter-spacing: 0.5px; margin-bottom: 14px;
+  }
+  .method-a { background: #d1fae5; color: var(--green); }
+  .method-b { background: var(--tag-bg); color: var(--accent); }
+
+  /* Domain grid */
+  .domain-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; margin: 14px 0; }
+  @media(max-width:640px){ .domain-grid { grid-template-columns: repeat(2,1fr); } }
+  .domain-card { background: #f0faf4; border: 1px solid #b8ddc8; border-radius: 8px; padding: 10px 12px; font-size: 12.5px; color: #1a3a28; }
+  .domain-name { font-weight: 700; font-size: 12px; color: var(--green); margin-bottom: 3px; }
+
+  /* SP option cards */
+  .option-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin: 14px 0; }
+  @media(max-width:640px){ .option-row { grid-template-columns: 1fr; } }
+  .option-card { border-radius: 10px; padding: 18px; }
+  .option-card.op1 { background: #f0faf4; border: 1px solid #86efac; }
+  .option-card.op2 { background: #fffbeb; border: 1px solid #fcd34d; }
+  .option-card.op3 { background: #eff6ff; border: 1px solid #93c5fd; }
+  .option-num { font-size: 11px; font-weight: 700; letter-spacing: 1px; margin-bottom: 6px; }
+  .op1 .option-num { color: var(--green); }
+  .op2 .option-num { color: var(--amber); }
+  .op3 .option-num { color: #1d4ed8; }
+  .option-title { font-size: 13.5px; font-weight: 700; color: var(--heading); margin-bottom: 6px; }
+  .option-body { font-size: 12.5px; color: #374151; line-height: 1.65; }
+  .option-when { margin-top: 8px; font-size: 12px; font-style: italic; color: var(--muted); }
+
+  /* Channel card */
   .channel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0; }
   @media(max-width: 640px) { .channel-grid { grid-template-columns: 1fr; } }
   .channel-card {
     border: 1px solid #c8ddc8; border-radius: 10px; padding: 18px;
     background: linear-gradient(135deg, #f0faf4 0%, #e8f5ec 100%);
   }
-  .channel-num { font-size: 11px; font-weight: 700; color: #1a5c3a; letter-spacing: 1px; margin-bottom: 6px; }
+  .channel-num { font-size: 11px; font-weight: 700; color: var(--green); letter-spacing: 1px; margin-bottom: 6px; }
   .channel-title { font-size: 14px; font-weight: 700; color: #1a3a28; margin-bottom: 8px; }
   .channel-body { font-size: 13px; color: #374151; line-height: 1.7; }
-  .channel-tip { margin-top: 10px; background: rgba(255,255,255,0.6); border-radius: 6px; padding: 8px 10px; font-size: 12.5px; color: #1a5c3a; }
+  .channel-tip { margin-top: 10px; background: rgba(255,255,255,0.6); border-radius: 6px; padding: 8px 10px; font-size: 12.5px; color: var(--green); }
 
   /* Principle boxes */
   .principle-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 14px 0; }
@@ -153,17 +204,14 @@
 
   /* Note */
   .note { background: #fffbeb; border-left: 3px solid #f59e0b; border-radius: 0 8px 8px 0; padding: 13px 18px; font-size: 13.5px; color: #78350f; margin: 12px 0; }
-  .note-green { background: #f0faf4; border-left: 3px solid #1a5c3a; border-radius: 0 8px 8px 0; padding: 13px 18px; font-size: 13.5px; color: #1a3a28; margin: 12px 0; }
+  .note-green { background: #f0faf4; border-left: 3px solid var(--green); border-radius: 0 8px 8px 0; padding: 13px 18px; font-size: 13.5px; color: #1a3a28; margin: 12px 0; }
+  .note-amber { background: #fffbeb; border-left: 3px solid #f59e0b; border-radius: 0 8px 8px 0; padding: 13px 18px; font-size: 13.5px; color: #78350f; margin: 12px 0; }
 
-  /* Good/Bad comparison */
-  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0; }
-  @media(max-width: 580px) { .compare { grid-template-columns: 1fr; } }
-  .compare-box { border-radius: 8px; padding: 14px; font-size: 13px; line-height: 1.7; }
-  .compare-bad { background: #fff0f0; border: 1px solid #fca5a5; }
-  .compare-good { background: #f0faf4; border: 1px solid #86efac; }
-  .compare-label { font-size: 11px; font-weight: 700; margin-bottom: 6px; letter-spacing: 0.5px; }
-  .compare-bad .compare-label { color: #dc2626; }
-  .compare-good .compare-label { color: #16a34a; }
+  /* Example box */
+  .example-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px 18px; font-size: 13px; margin: 12px 0; line-height: 1.9; }
+  .example-label { font-size: 11px; font-weight: 700; color: var(--muted); letter-spacing: 1px; margin-bottom: 8px; }
+  .example-item { display: flex; gap: 10px; margin-bottom: 4px; }
+  .example-tag { background: var(--code-bg); border-radius: 4px; padding: 1px 7px; font-size: 11.5px; font-weight: 700; color: var(--accent); white-space: nowrap; flex-shrink: 0; font-family: 'SF Mono','Consolas',monospace; }
 
   /* Footer */
   .footer { text-align: center; color: var(--muted); font-size: 13px; margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--border); }
@@ -181,35 +229,52 @@
     <div class="toc-title">목차</div>
     <ol>
       <li><a href="#s1">ATELIER란 무엇인가</a></li>
-      <li><a href="#s2">씨앗 발굴법 — 아이디어를 어디서 어떻게 찾는가</a></li>
-      <li><a href="#s3">폴더 구조 한눈에 보기</a></li>
-      <li><a href="#s4">글 한 편의 생애주기</a></li>
-      <li><a href="#s5">파일명 규칙</a></li>
-      <li><a href="#s6">주요 명령어</a></li>
-      <li><a href="#s7">Q&amp;A 10가지</a></li>
-      <li><a href="#s8">매일 쓸 수 있는 팁 3가지</a></li>
-      <li><a href="#s9">알아두면 좋은 것들</a></li>
+      <li><a href="#s2">단초 발굴법 — 아이디어를 어디서 어떻게 찾는가</a></li>
+      <li><a href="#s3">단초 → SP 워크플로 (3가지 옵션)</a></li>
+      <li><a href="#s4">폴더 구조 한눈에 보기</a></li>
+      <li><a href="#s5">글 한 편의 생애주기</a></li>
+      <li><a href="#s6">파일명 규칙</a></li>
+      <li><a href="#s7">주요 명령어</a></li>
+      <li><a href="#s8">Q&amp;A 10가지</a></li>
+      <li><a href="#s9">매일 쓸 수 있는 팁 3가지</a></li>
+      <li><a href="#s10">알아두면 좋은 것들</a></li>
     </ol>
   </div>
 
   <!-- 1 -->
   <div class="section" id="s1">
     <div class="section-title"><span class="num">1</span> ATELIER란 무엇인가</div>
-    <p>_ATELIER는 <strong>"컬럼 창작의 전 과정을 한 공간에서"</strong>라는 원칙으로 만든 워크스페이스입니다.<br>
-    기존에 흩어져 있던 _CREATION · _FORGE · _SPARK_COL · _WIKI_에디톨로지 4개 폴더를 하나로 통폐합한 결과물입니다.</p>
+    <p>_ATELIER는 <strong>"컬럼 창작의 전 과정을 한 공간에서"</strong>라는 원칙으로 만든 워크스페이스입니다.</p>
     <div class="note">
-      <strong>핵심 철학:</strong> 글은 씨앗에서 출발해 초안을 거쳐 완성 컬럼이 되고, 컬럼집·강의·전자책으로 상품화됩니다. 모든 과정이 이 폴더 하나에서 끝납니다.
+      <strong>핵심 철학:</strong> 글은 단초(한 문장)에서 출발해 SP(Spark)로 확장되고, 초안을 거쳐 완성 컬럼이 됩니다. 완성 컬럼은 컬럼집·강의·전자책으로 상품화됩니다. 모든 과정이 이 폴더 하나에서 끝납니다.
+    </div>
+    <h3>3단계 핵심 개념</h3>
+    <div class="concept-row">
+      <div class="concept-box dancho">
+        <div class="concept-label">STEP 1 · 단초</div>
+        <div class="concept-name">생각의 씨앗</div>
+        <div class="concept-desc">논증도 구조도 없는 <strong>한 문장</strong>짜리 아이디어.<br>"왜 나이 들면 친구가 덜 필요한가"</div>
+      </div>
+      <div class="concept-box sp">
+        <div class="concept-label">STEP 2 · SP(Spark)</div>
+        <div class="concept-name">아이디어 기획 문서</div>
+        <div class="concept-desc">단초에서 불꽃이 튄 결과물. 3가지 방식으로 확장. 초안의 설계도.</div>
+      </div>
+      <div class="concept-box draft">
+        <div class="concept-label">STEP 3 · 초안→컬럼</div>
+        <div class="concept-name">글 원고 & 완성본</div>
+        <div class="concept-desc">SP를 바탕으로 쓰는 2,500자 글 초고. 완성되면 컬럼으로 등록.</div>
+      </div>
     </div>
   </div>
 
-  <!-- 2 씨앗 발굴법 -->
+  <!-- 2 단초 발굴법 -->
   <div class="section" id="s2">
-    <div class="section-title seed"><span class="num" style="background:#1a5c3a">2</span> 씨앗 발굴법 — 아이디어를 어디서 어떻게 찾는가</div>
+    <div class="section-title dancho"><span class="num">2</span> 단초 발굴법 — 아이디어를 어디서 어떻게 찾는가</div>
 
-    <h3>씨앗(SP)의 정의와 조건</h3>
-    <p>씨앗은 <strong>한 문장으로 표현 가능한 통찰, 역설, 또는 긴장감</strong>입니다. 컬럼의 핵심 주장이 될 수 있는 것, 독자가 읽다가 잠깐 멈추게 만드는 것이어야 합니다.</p>
+    <h3>단초의 정의와 조건</h3>
+    <p>단초는 <strong>한 문장으로 표현 가능한 통찰, 역설, 또는 긴장감</strong>입니다. 컬럼의 핵심 주장이 될 수 있는 것, 독자가 읽다가 잠깐 멈추게 만드는 것이어야 합니다.</p>
 
-    <p>좋은 씨앗의 3가지 조건:</p>
     <table>
       <tr><th>조건</th><th>나쁜 예</th><th>좋은 예</th></tr>
       <tr>
@@ -218,7 +283,7 @@
         <td style="color:#16a34a">"계약서의 도장은 합의가 아니라 공격의 시작이다"</td>
       </tr>
       <tr>
-        <td><strong>충돌</strong><br><small>당연한 말은 씨앗이 아님</small></td>
+        <td><strong>충돌</strong><br><small>당연한 말은 단초가 아님</small></td>
         <td style="color:#9ca3af">"계약서는 꼼꼼히 읽어야 한다"</td>
         <td style="color:#16a34a">"계약서를 꼼꼼히 읽는 사람이 협상에서 진다"</td>
       </tr>
@@ -229,246 +294,358 @@
       </tr>
     </table>
 
-    <h3 style="margin-top:30px">씨앗 발굴의 7가지 채널</h3>
+    <h3 style="margin-top:30px">방법 A — Claude에게 단초 발굴 요청 (가장 빠른 방법)</h3>
+    <div class="method-badge method-a">⚡ METHOD A · Claude 요청</div>
+    <p>단초가 떠오르지 않을 때 Claude에게 직접 요청합니다. Claude는 8개 분야를 망라해 즉시 제시합니다.</p>
+    <div class="cmd">단초 몇 가지 줘<br>단초 5개 줘<br>법률 단초 줘<br>인간관계 단초 줘</div>
+
+    <p>Claude가 다루는 8개 발굴 분야:</p>
+    <div class="domain-grid">
+      <div class="domain-card"><div class="domain-name">법률·계약</div>계약, 증거, 소송, 권리, 의무</div>
+      <div class="domain-card"><div class="domain-name">인간관계</div>신뢰, 배신, 거리두기, 연대</div>
+      <div class="domain-card"><div class="domain-name">조직·리더십</div>위계, 의사결정, 침묵, 동기</div>
+      <div class="domain-card"><div class="domain-name">협상·설득</div>양보, 침묵, 레버리지, 프레임</div>
+      <div class="domain-card"><div class="domain-name">인문·고전</div>동양고전, 철학, 역사적 인물</div>
+      <div class="domain-card"><div class="domain-name">AI·기술</div>알고리즘, 편향, 인간과 기계</div>
+      <div class="domain-card"><div class="domain-name">경영·경제</div>생존, 성장, 리스크, 선택</div>
+      <div class="domain-card"><div class="domain-name">심리·행동</div>인지편향, 자기기만, 습관</div>
+    </div>
+
+    <div class="example-box">
+      <div class="example-label">응답 예시 — "단초 5개 줘" 요청 시</div>
+      <div class="example-item"><span class="example-tag">[법률]</span> 계약서를 꼼꼼히 읽는 사람이 오히려 협상에서 진다</div>
+      <div class="example-item"><span class="example-tag">[인간관계]</span> 왜 나이 들면 친구가 덜 필요한가</div>
+      <div class="example-item"><span class="example-tag">[조직]</span> 조직의 침묵은 동의가 아니라 체념이다</div>
+      <div class="example-item"><span class="example-tag">[협상]</span> 먼저 합의를 꺼낸 쪽이 먼저 진다</div>
+      <div class="example-item"><span class="example-tag">[AI]</span> AI가 항상 "하지 말라"고 하는 이유</div>
+    </div>
+    <div class="note-green">마음에 드는 단초를 골라 <strong>단초: ③번</strong> 또는 <strong>단초: [문장 그대로]</strong> 로 SP 생성을 개시합니다.</div>
+
+    <h3 style="margin-top:30px">방법 B — 직접 발굴 7가지 채널</h3>
+    <div class="method-badge method-b">🔍 METHOD B · 직접 발굴</div>
     <div class="channel-grid">
       <div class="channel-card">
         <div class="channel-num">CHANNEL 01</div>
         <div class="channel-title">강의·상담 현장의 "그 순간"</div>
-        <div class="channel-body">수강생이 고개를 갸우뚱하거나, 의뢰인이 "그게 그런 거였어요?"라고 반응하는 순간이 씨앗입니다. <strong>상대의 놀람 = 세상의 오해 = 컬럼의 독자층.</strong></div>
+        <div class="channel-body">수강생이 고개를 갸우뚱하거나, 의뢰인이 "그게 그런 거였어요?"라고 반응하는 순간이 단초입니다. <strong>상대의 놀람 = 세상의 오해 = 컬럼의 독자층.</strong></div>
         <div class="channel-tip">▶ 강의·상담 직후 "오늘 상대방이 가장 놀란 것"을 한 문장으로 메모한다.</div>
       </div>
       <div class="channel-card">
         <div class="channel-num">CHANNEL 02</div>
         <div class="channel-title">판례·법령 읽기</div>
-        <div class="channel-body">판례에는 일상의 상식과 법원의 판단이 충돌하는 지점이 반드시 있습니다. "상식적으로는 그래야 하는데 법은 이렇게 본다"는 갭이 씨앗입니다.</div>
+        <div class="channel-body">판례에는 일상의 상식과 법원의 판단이 충돌하는 지점이 반드시 있습니다. "상식적으로는 그래야 하는데 법은 이렇게 본다"는 갭이 단초입니다.</div>
         <div class="channel-tip">▶ 예: 구두계약도 유효 → "계약서 없이 한 약속도 법은 기억한다"</div>
       </div>
       <div class="channel-card">
         <div class="channel-num">CHANNEL 03</div>
         <div class="channel-title">내 기존 컬럼 역독</div>
-        <div class="channel-body">완성된 컬럼을 다시 읽다가 "이 부분 더 파야 했는데"라는 아쉬움이 드는 곳이 새 씨앗입니다. 각주·부연·주석에 씨앗이 숨어 있습니다.</div>
-        <div class="channel-tip">▶ Claude: "03_컬럼 최근 10편에서 더 발전시킬 하위 주제 뽑아줘"</div>
+        <div class="channel-body">완성된 컬럼을 다시 읽다가 "이 부분 더 파야 했는데"라는 아쉬움이 드는 곳이 새 단초입니다. 각주·부연·주석에 단초가 숨어 있습니다.</div>
+        <div class="channel-tip">▶ Claude: "04_컬럼 최근 10편에서 더 발전시킬 하위 주제 뽑아줘"</div>
       </div>
       <div class="channel-card">
         <div class="channel-num">CHANNEL 04</div>
         <div class="channel-title">독서·뉴스·타 분야</div>
-        <div class="channel-body">심리학·행동경제학·역사·경영학의 개념이 법률 현실과 맞닿는 순간 씨앗이 나옵니다. 던닝-크루거 효과를 법무팀 의사결정에 대입하면 완전히 새로운 관점이 생깁니다.</div>
+        <div class="channel-body">심리학·행동경제학·역사·경영학의 개념이 법률 현실과 맞닿는 순간 단초가 나옵니다. 던닝-크루거 효과를 법무팀 의사결정에 대입하면 완전히 새로운 관점이 생깁니다.</div>
         <div class="channel-tip">▶ 읽는 중 "이걸 법률 관점으로 바꾸면?"이라는 질문을 항상 달고 다닌다.</div>
       </div>
       <div class="channel-card">
         <div class="channel-num">CHANNEL 05</div>
         <div class="channel-title">클라이언트·수강생의 질문</div>
         <div class="channel-body">"변호사님, 이게 왜 이렇게 돼 있어요?"라는 질문이 대부분의 독자가 품는 오해입니다. <strong>한 사람이 물었다면 천 명이 모르는 것.</strong></div>
-        <div class="channel-tip">▶ 자주 받는 질문 3개 → 각각이 씨앗 후보.</div>
+        <div class="channel-tip">▶ 자주 받는 질문 3개 → 각각이 단초 후보.</div>
       </div>
       <div class="channel-card">
         <div class="channel-num">CHANNEL 06</div>
         <div class="channel-title">마찰·불편함·의아함</div>
-        <div class="channel-body">"이건 뭔가 이상한데"라는 느낌이 드는 순간을 그냥 넘기지 않습니다. 마찰은 통찰의 입구입니다. 당연한 것에 의문을 품는 것에서 가장 날카로운 씨앗이 나옵니다.</div>
-        <div class="channel-tip">▶ "왜 다들 이걸 당연하게 받아들이지?"가 씨앗의 씨앗이다.</div>
+        <div class="channel-body">"이건 뭔가 이상한데"라는 느낌이 드는 순간을 그냥 넘기지 않습니다. 마찰은 통찰의 입구입니다. 당연한 것에 의문을 품는 것에서 가장 날카로운 단초가 나옵니다.</div>
+        <div class="channel-tip">▶ "왜 다들 이걸 당연하게 받아들이지?"가 단초의 단초이다.</div>
       </div>
     </div>
-    <!-- 채널 7 별도 -->
     <div class="channel-card" style="background: linear-gradient(135deg,#eef4ff,#e4edff); border-color:#a5b8e8; margin-top: 0;">
       <div class="channel-num" style="color:#1a3a8c">CHANNEL 07</div>
-      <div class="channel-title" style="color:#1a2a5c">두 씨앗의 의도적 충돌</div>
-      <div class="channel-body">이미 있는 씨앗 두 개를 나란히 놓았을 때 "이 둘이 부딪히면 어떤 새 주장이 나오지?"를 묻습니다. SP-018 × SP-027처럼 의도적으로 충돌시키면 예상 밖의 융합 씨앗이 탄생합니다.</div>
-      <div class="channel-tip" style="background: rgba(255,255,255,0.5); color:#1a3a8c;">▶ Claude: "01_씨앗에서 서로 충돌시키면 흥미로울 SP 조합 3개 추천해줘"</div>
+      <div class="channel-title" style="color:#1a2a5c">두 단초의 의도적 충돌</div>
+      <div class="channel-body">이미 있는 단초 두 개를 나란히 놓았을 때 "이 둘이 부딪히면 어떤 새 주장이 나오지?"를 묻습니다. 의도적으로 충돌시키면 예상 밖의 융합 단초가 탄생합니다.</div>
+      <div class="channel-tip" style="background: rgba(255,255,255,0.5); color:#1a3a8c;">▶ Claude: "01_단초에서 서로 충돌시키면 흥미로울 단초 조합 3개 추천해줘"</div>
     </div>
 
-    <h3 style="margin-top:30px">씨앗 포착의 3원칙</h3>
+    <h3 style="margin-top:30px">단초 포착의 3원칙</h3>
     <div class="principle-row">
       <div class="principle-box">
         <div class="principle-icon">⚡</div>
         <div class="principle-title">즉시 저장</div>
-        <div class="principle-body">씨앗은 5분 후 사라집니다. 정리는 나중에 해도 됩니다. 카톡 자기 대화방·메모앱에 날것 그대로 저장 → 나중에 Claude에게 "이 메모를 SP 파일로 만들어줘"</div>
+        <div class="principle-body">단초는 5분 후 사라집니다. 카톡 자기 대화방·메모앱에 날것 그대로 저장 → 나중에 Claude에게 "이 메모를 단초로 등록하고 SP 만들어줘"</div>
       </div>
       <div class="principle-box">
         <div class="principle-icon">🌱</div>
         <div class="principle-title">다듬지 않아도 된다</div>
-        <div class="principle-body">SP 파일 안의 문장이 거칠고 불완전해도 괜찮습니다. 정제는 02_초안 단계에서 합니다. 씨앗 단계에서 완벽함을 추구하면 씨앗 자체가 줄어듭니다.</div>
+        <div class="principle-body">단초가 거칠고 불완전해도 괜찮습니다. 정제는 SP·초안 단계에서 합니다. 단초 단계에서 완벽함을 추구하면 단초 자체가 줄어듭니다.</div>
       </div>
       <div class="principle-box">
         <div class="principle-icon">🎯</div>
         <div class="principle-title">양보다 날카로움</div>
-        <div class="principle-body">10개의 평범한 씨앗보다 1개의 날카로운 씨앗이 낫습니다. 씨앗이 너무 많아서 뭘 써야 할지 모르겠다면 이미 씨앗이 아닌 것이 섞인 것입니다.</div>
+        <div class="principle-body">10개의 평범한 단초보다 1개의 날카로운 단초가 낫습니다. 단초가 너무 많아서 뭘 써야 할지 모르겠다면 이미 단초가 아닌 것이 섞인 것입니다.</div>
       </div>
     </div>
 
-    <h3>씨앗 품질 판별: Claude에게 묻는 법</h3>
-    <p>씨앗이 좋은지 확신이 없을 때 바로 물어보면 됩니다:</p>
-    <div class="cmd">이 SP가 컬럼으로 발전 가능한지 판단해줘:<br>
-"[씨앗 문장]"<br><br>
+    <h3>단초 품질 판별: Claude에게 묻는 법</h3>
+    <div class="cmd">이 단초가 컬럼으로 발전 가능한지 판단해줘:<br>
+"[단초 문장]"<br><br>
 판단 기준:<br>
 1. 한 문장 통찰인가<br>
 2. 독자의 기존 믿음과 충돌하는가<br>
 3. 2500자로 확장 가능한가<br>
 4. 내 기존 컬럼과 겹치지 않는가</div>
 
-    <h3>씨앗에서 초안으로: 확장 타이밍 3가지 신호</h3>
-    <p>씨앗을 발견했다고 바로 초안을 쓸 필요는 없습니다. 다음 신호 중 하나가 오면 확장합니다:</p>
+    <h3>단초 → SP 확장 타이밍 3가지 신호</h3>
     <ul class="signal-list">
       <li>
-        <span class="signal-num" style="background:#1a5c3a">1</span>
-        <span class="signal-text"><strong>같은 씨앗이 다른 채널에서 반복 등장할 때</strong> — 강의에서도 나오고 판례에서도 나오면 타이밍입니다.</span>
+        <span class="signal-num" style="background:var(--green)">1</span>
+        <span class="signal-text"><strong>같은 단초가 다른 채널에서 반복 등장할 때</strong> — 강의에서도 나오고 판례에서도 나오면 타이밍입니다.</span>
       </li>
       <li>
-        <span class="signal-num" style="background:#1a5c3a">2</span>
-        <span class="signal-text"><strong>비슷한 씨앗이 2개 이상 모였을 때</strong> — 하나만으로 2,500자가 안 나올 것 같으면 두 씨앗을 합칩니다.</span>
+        <span class="signal-num" style="background:var(--green)">2</span>
+        <span class="signal-text"><strong>비슷한 단초가 2개 이상 모였을 때</strong> — 하나만으로 2,500자가 안 나올 것 같으면 두 단초를 합칩니다.</span>
       </li>
       <li>
-        <span class="signal-num" style="background:#1a5c3a">3</span>
-        <span class="signal-text"><strong>그 씨앗이 3일 이상 머릿속에서 맴돌 때</strong> — 계속 생각난다는 것은 할 말이 있다는 신호입니다.</span>
+        <span class="signal-num" style="background:var(--green)">3</span>
+        <span class="signal-text"><strong>그 단초가 3일 이상 머릿속에서 맴돌 때</strong> — 계속 생각난다는 것은 할 말이 있다는 신호입니다.</span>
       </li>
     </ul>
   </div>
 
-  <!-- 3 -->
+  <!-- 3 단초→SP 워크플로 -->
   <div class="section" id="s3">
-    <div class="section-title"><span class="num">3</span> 폴더 구조 한눈에 보기</div>
+    <div class="section-title sp"><span class="num">3</span> 단초 → SP 워크플로 (3가지 옵션)</div>
+
+    <p>단초를 입력하면 Claude가 <strong>SP 생성 방향 3가지 미리보기</strong>를 제시합니다. 사용자가 번호를 선택하면 그 방식으로 SP 파일을 생성합니다.</p>
+
+    <h3>입력 명령어</h3>
+    <div class="cmd">단초: [한 문장]</div>
+
+    <h3>Claude의 응답 형식</h3>
+    <div class="cmd" style="color:#fcd34d;">[옵션 1 — 내 폴더 자료 기반]<br>
+내 WIKI·컬럼에서 관련 자료 2~3개를 찾아 교차 분석한 방향.<br>
+(한 단락 요약)<br><br>
+[옵션 2 — 내 폴더 + 웹 검색]<br>
+내 자료와 외부 연구·사례를 결합한 방향.<br>
+(한 단락 요약)<br><br>
+[옵션 3 — 웹 검색만]<br>
+최신 외부 자료만으로 구성한 방향. 내 기존 관점과 독립적.<br>
+(한 단락 요약)</div>
+
+    <h3>3가지 옵션 비교</h3>
+    <div class="option-row">
+      <div class="option-card op1">
+        <div class="option-num">OPTION 1</div>
+        <div class="option-title">내 폴더 자료 기반</div>
+        <div class="option-body">_ATELIER·_WIKI_법률업무 등 내 자료 2~3개를 결합. 내 사유와 맥락이 살아있음.</div>
+        <div class="option-when">→ 내 관점을 깊이 파고 싶을 때</div>
+      </div>
+      <div class="option-card op2">
+        <div class="option-num">OPTION 2</div>
+        <div class="option-title">내 폴더 + 웹 검색</div>
+        <div class="option-body">내 자료 + 외부 연구·사례·통계를 결합. 가장 균형 잡힌 방식.</div>
+        <div class="option-when">→ 외부 근거로 논거를 보강하고 싶을 때</div>
+      </div>
+      <div class="option-card op3">
+        <div class="option-num">OPTION 3</div>
+        <div class="option-title">웹 검색만 활용</div>
+        <div class="option-body">최신 외부 자료만으로 구성. 내 기존 색깔에서 벗어난 신선한 각도.</div>
+        <div class="option-when">→ 완전히 새로운 시각을 원할 때</div>
+      </div>
+    </div>
+
+    <h3>선택 후 SP 파일 생성</h3>
+    <div class="cmd">옵션1   ← (또는 1 / 옵션 1 선택)</div>
+    <p>→ <code>02_SP/SP-YYYYMMDD-NNN.md</code> 파일이 생성됩니다.</p>
+
+    <div class="flow" style="margin-top:20px">
+      <span class="flow-step green">단초: [문장]</span><span class="flow-arrow">→</span>
+      <span class="flow-step amber">옵션 선택</span><span class="flow-arrow">→</span>
+      <span class="flow-step amber">02_SP/ 저장</span><span class="flow-arrow">→</span>
+      <span class="flow-step blue">SP-NNN 컬럼 써줘</span><span class="flow-arrow">→</span>
+      <span class="flow-step blue">03_초안/ 생성</span><span class="flow-arrow">→</span>
+      <span class="flow-step">04_컬럼/ 완성</span>
+    </div>
+  </div>
+
+  <!-- 4 폴더 구조 -->
+  <div class="section" id="s4">
+    <div class="section-title"><span class="num">4</span> 폴더 구조 한눈에 보기</div>
     <div class="tree">
 _ATELIER/<br>
-├── 01_씨앗/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;아이디어 원석 — SP(스파크), CRYSTAL(대형기획)<br>
-├── 02_초안/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;작업 중인 모든 글 — 신규·융합·업그레이드<br>
-├── 03_컬럼/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;완성된 컬럼 전부 (출처 무관)<br>
-├── 04_강의/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;강의 원고 (1h·3h) + 교안 + 출강이력<br>
-├── 05_전자책/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전자책 원고<br>
-├── 06_컬럼집/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;주제별 컬럼집 (10~14편 묶음)<br>
-├── 90_자산/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비유·도입부·클로징 은행, 템플릿, 워크플로<br>
-└── CLAUDE.md&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;운영 규칙
+├── 01_단초/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;생각의 단초 — _dancho.md (단초 목록 파일)<br>
+├── 02_SP/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Spark 기획 문서 — SP-YYYYMMDD-NNN.md<br>
+├── 03_초안/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;작업 중인 모든 글 — DR-*.md<br>
+├── 04_컬럼/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;완성된 컬럼 전부 (출처 무관)<br>
+├── 05_강의/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;강의 원고 (1h·3h) + 교안 + 출강이력<br>
+├── 06_전자책/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전자책 원고<br>
+├── 07_컬럼집/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;주제별 컬럼집 (10~14편 묶음)<br>
+├── 90_자산/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비유·도입부·클로징 은행, 템플릿, 워크플로<br>
+└── CLAUDE.md&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;운영 규칙 (AI 에이전트용)
     </div>
+    <div class="note-amber"><strong>참고:</strong> <code>01_단초/</code>에 기존 CRYSTAL-*.md 파일(31개)이 있습니다. SP 수준의 문서이며, 점진적으로 <code>02_SP/</code>로 이관 예정입니다. <code>CRYSTAL-NNN 컬럼 써줘</code> 명령은 그대로 사용 가능합니다.</div>
     <table>
       <tr><th>폴더</th><th>들어오는 것</th><th>나가는 것</th></tr>
-      <tr><td><code>01_씨앗/</code></td><td>번뜩이는 아이디어, Crystal 기획서</td><td>02_초안으로 발전</td></tr>
-      <tr><td><code>02_초안/</code></td><td>작업 중 파일. 완성되면 즉시 나간다</td><td>완성 시 03_컬럼으로 이동</td></tr>
-      <tr><td><code>03_컬럼/</code></td><td>완성 컬럼 <strong>전부</strong>. 최종 보관소</td><td>06_컬럼집 편집 시 소환</td></tr>
-      <tr><td><code>04_강의/</code></td><td>강의 원고·교안·출강이력</td><td>강의 상품화</td></tr>
-      <tr><td><code>05_전자책/</code></td><td>전자책 원고</td><td>출판</td></tr>
-      <tr><td><code>06_컬럼집/</code></td><td>COLBOOK 단위 묶음 기획+편집</td><td>상품 배포</td></tr>
+      <tr><td><code>01_단초/</code></td><td>한 문장 아이디어 (_dancho.md 목록)</td><td>단초 선택 → 02_SP로 발전</td></tr>
+      <tr><td><code>02_SP/</code></td><td>단초에서 확장된 SP 기획 문서</td><td>SP-NNN → 03_초안 생성</td></tr>
+      <tr><td><code>03_초안/</code></td><td>작업 중 파일. 완성되면 즉시 나간다</td><td>완성 시 04_컬럼으로 이동</td></tr>
+      <tr><td><code>04_컬럼/</code></td><td>완성 컬럼 <strong>전부</strong>. 최종 보관소</td><td>07_컬럼집 편집 시 소환</td></tr>
+      <tr><td><code>05_강의/</code></td><td>강의 원고·교안·출강이력</td><td>강의 상품화</td></tr>
+      <tr><td><code>06_전자책/</code></td><td>전자책 원고</td><td>출판</td></tr>
+      <tr><td><code>07_컬럼집/</code></td><td>COLBOOK 단위 묶음 기획+편집</td><td>상품 배포</td></tr>
       <tr><td><code>90_자산/</code></td><td>재사용 표현·템플릿·워크플로</td><td>언제든 꺼내 쓰기</td></tr>
     </table>
   </div>
 
-  <!-- 4 -->
-  <div class="section" id="s4">
-    <div class="section-title"><span class="num">4</span> 글 한 편의 생애주기</div>
-    <h3>신규 컬럼</h3>
+  <!-- 5 생애주기 -->
+  <div class="section" id="s5">
+    <div class="section-title"><span class="num">5</span> 글 한 편의 생애주기</div>
+    <h3>신규 컬럼 전체 경로</h3>
     <div class="flow">
-      <span class="flow-step">아이디어 포착</span><span class="flow-arrow">→</span>
-      <span class="flow-step">01_씨앗/ SP 저장</span><span class="flow-arrow">→</span>
-      <span class="flow-step">02_초안/ 작성</span><span class="flow-arrow">→</span>
-      <span class="flow-step">03_컬럼/ 완성</span><span class="flow-arrow">→</span>
-      <span class="flow-step">06_컬럼집/ 상품화</span>
+      <span class="flow-step green">단초 발굴</span><span class="flow-arrow">→</span>
+      <span class="flow-step green">01_단초/ 기록</span><span class="flow-arrow">→</span>
+      <span class="flow-step amber">옵션 선택</span><span class="flow-arrow">→</span>
+      <span class="flow-step amber">02_SP/ 저장</span><span class="flow-arrow">→</span>
+      <span class="flow-step blue">03_초안/ 작성</span><span class="flow-arrow">→</span>
+      <span class="flow-step">04_컬럼/ 완성</span><span class="flow-arrow">→</span>
+      <span class="flow-step">07_컬럼집/ 상품화</span>
     </div>
     <h3>기존 글 업그레이드</h3>
     <div class="flow">
-      <span class="flow-step">03_컬럼/ 선택</span><span class="flow-arrow">→</span>
-      <span class="flow-step">02_초안/ FX-v2 작성</span><span class="flow-arrow">→</span>
-      <span class="flow-step">03_컬럼/ 이동</span><span class="flow-arrow">→</span>
-      <span class="flow-step">원본 보존 ✓</span>
+      <span class="flow-step">04_컬럼/ 선택</span><span class="flow-arrow">→</span>
+      <span class="flow-step blue">03_초안/ FX-v2 작성</span><span class="flow-arrow">→</span>
+      <span class="flow-step">04_컬럼/ 이동</span><span class="flow-arrow">→</span>
+      <span class="flow-step" style="background:#d1fae5;color:var(--green)">원본 보존 ✓</span>
     </div>
   </div>
 
-  <!-- 5 -->
-  <div class="section" id="s5">
-    <div class="section-title"><span class="num">5</span> 파일명 규칙</div>
-    <h3>완성 컬럼</h3>
-    <pre>COL-YYYYMMDD_제목.md
-예) COL-20260602_침묵이조직을죽인다.md</pre>
+  <!-- 6 파일명 규칙 -->
+  <div class="section" id="s6">
+    <div class="section-title"><span class="num">6</span> 파일명 규칙</div>
+    <h3>SP (Spark 기획 문서)</h3>
+    <pre>SP-YYYYMMDD-NNN.md       → 02_SP/
+예) SP-20260602-001.md</pre>
     <h3>초안</h3>
-    <pre>DR-YYYYMMDD_제목.md       ← 신규 초안
-FX-YYYYMMDD_제목_v2.md    ← 기존 글 업그레이드
-FUSION-YYYYMMDD_제목.md   ← 복수 글 융합 초안</pre>
-    <h3>씨앗</h3>
-    <pre>SP-YYYYMMDD-NNN.md        ← 스파크 (번호 순차)
-CRYSTAL-YYYYMMDD-NNN.md   ← 대형 기획</pre>
+    <pre>DR-YYYYMMDD_제목.md      → 03_초안/  ← 신규 초안
+FX-YYYYMMDD_제목_v2.md   → 03_초안/  ← 기존 글 업그레이드
+FUSION-YYYYMMDD_제목.md  → 03_초안/  ← 복수 글 융합</pre>
+    <h3>완성 컬럼</h3>
+    <pre>COL-YYYYMMDD_제목.md     → 04_컬럼/
+예) COL-20260602_침묵이조직을죽인다.md</pre>
     <h3>Frontmatter 표준 (컬럼 기준)</h3>
     <pre>---
 date: 2026-06-02
-source: SP-20260602-001 | CRYSTAL-001 | fusion
+source_sp: SP-20260602-001
 status: draft | final
 target_char: 2500
-category: 법률실무 | 조직리더십 | 협상커뮤니케이션 | 경영지배구조
+category: 법률실무 | 조직리더십 | 협상커뮤니케이션 | 경영지배구조 | 인문에세이
+publish_info:
+  platform: ""
+  date: ""
+  url: ""
 ---</pre>
   </div>
 
-  <!-- 6 -->
-  <div class="section" id="s6">
-    <div class="section-title"><span class="num">6</span> 주요 명령어 (Claude에게 내리는 명령)</div>
+  <!-- 7 주요 명령어 -->
+  <div class="section" id="s7">
+    <div class="section-title"><span class="num">7</span> 주요 명령어 (Claude에게 내리는 명령)</div>
+
+    <h3>단초 발굴</h3>
+    <table>
+      <tr><th>하고 싶은 것</th><th>명령어</th></tr>
+      <tr><td>단초 여러 개 받기</td><td><code>단초 몇 가지 줘</code> / <code>단초 5개 줘</code></td></tr>
+      <tr><td>특정 분야 단초</td><td><code>법률 단초 줘</code> / <code>인간관계 단초 줘</code></td></tr>
+      <tr><td>단초 직접 입력</td><td><code>단초: [한 문장]</code></td></tr>
+      <tr><td>단초 충돌 조합 추천</td><td><code>01_단초에서 서로 충돌시키면 흥미로울 단초 조합 3개 추천해줘</code></td></tr>
+      <tr><td>단초 목록 확인</td><td><code>단초 목록 보여줘</code></td></tr>
+    </table>
+
+    <h3>SP 생성 및 관리</h3>
+    <table>
+      <tr><th>하고 싶은 것</th><th>명령어</th></tr>
+      <tr><td>SP 생성 옵션 선택</td><td><code>옵션1</code> / <code>옵션2</code> / <code>옵션3</code></td></tr>
+      <tr><td>SP 목록 확인</td><td><code>SP 목록 보여줘</code></td></tr>
+      <tr><td>SP 기반 컬럼 초안</td><td><code>SP-NNN 컬럼 써줘</code></td></tr>
+      <tr><td>SP 기반 강의안</td><td><code>SP-NNN 강의 만들어줘</code></td></tr>
+      <tr><td>기존 Crystal 기반 초안</td><td><code>CRYSTAL-NNN 컬럼 써줘</code></td></tr>
+    </table>
+
     <h3>글 창작</h3>
     <table>
       <tr><th>하고 싶은 것</th><th>명령어</th></tr>
-      <tr><td>새 컬럼 초안 작성</td><td><code>SP-NNN으로 2500자 컬럼 초안 써줘. 02_초안에 DR-날짜_제목.md로 저장</code></td></tr>
-      <tr><td>기존 글 업그레이드</td><td><code>03_컬럼/파일명을 웹 증강해서 v2로 업그레이드해줘</code></td></tr>
+      <tr><td>기존 글 업그레이드</td><td><code>04_컬럼/파일명을 웹 증강해서 v2로 업그레이드해줘</code></td></tr>
       <tr><td>두 글 융합</td><td><code>파일A와 파일B를 충돌시켜 새 주장의 컬럼 써줘</code></td></tr>
-      <tr><td>초안 완성 처리</td><td><code>02_초안/파일명을 검토 후 final 처리하고 03_컬럼으로 이동해줘</code></td></tr>
+      <tr><td>초안 완성 처리</td><td><code>03_초안/파일명을 검토 후 final 처리하고 04_컬럼으로 이동해줘</code></td></tr>
     </table>
-    <h3>씨앗 관리</h3>
-    <table>
-      <tr><th>하고 싶은 것</th><th>명령어</th></tr>
-      <tr><td>스파크 등록</td><td><code>아이디어: [내용] → 01_씨앗에 SP로 저장해줘</code></td></tr>
-      <tr><td>씨앗 품질 판별</td><td><code>이 SP가 컬럼으로 발전 가능한지 판단해줘: "[씨앗]"</code></td></tr>
-      <tr><td>오늘 씨앗 브리핑</td><td><code>01_씨앗에서 아직 컬럼화 안 된 SP 목록 뽑아줘</code></td></tr>
-      <tr><td>씨앗 충돌 조합 추천</td><td><code>01_씨앗에서 서로 충돌시키면 흥미로울 SP 조합 3개 추천해줘</code></td></tr>
-      <tr><td>크리스탈 기획</td><td><code>SP-NNN을 기반으로 1시간 강의 Crystal 기획서 만들어줘</code></td></tr>
-    </table>
+
     <h3>컬럼집 작업</h3>
     <table>
       <tr><th>하고 싶은 것</th><th>명령어</th></tr>
-      <tr><td>컬럼집 신규 기획</td><td><code>[주제]로 컬럼집 10편 기획해줘. 06_컬럼집에 COLBOOK 생성</code></td></tr>
-      <tr><td>합본 생성</td><td><code>06_컬럼집/COLBOOK-폴더명 합본 만들어줘</code></td></tr>
-      <tr><td>역추출</td><td><code>06_컬럼집/COLBOOK-폴더명에서 재사용 가능한 표현·사례 역추출해줘</code></td></tr>
+      <tr><td>컬럼집 신규 기획</td><td><code>[주제]로 컬럼집 10편 기획해줘. 07_컬럼집에 COLBOOK 생성</code></td></tr>
+      <tr><td>합본 생성</td><td><code>07_컬럼집/COLBOOK-폴더명 합본 만들어줘</code></td></tr>
+      <tr><td>역추출</td><td><code>07_컬럼집/COLBOOK-폴더명에서 재사용 가능한 표현·사례 역추출해줘</code></td></tr>
     </table>
   </div>
 
-  <!-- 7 QA -->
-  <div class="section" id="s7">
-    <div class="section-title"><span class="num">7</span> Q&amp;A 10가지</div>
-    <div class="qa-item"><div class="qa-q">Q1. 컬럼 파일을 어디에 저장해야 할지 모르겠어요.</div><div class="qa-a">작성 중이면 <code>02_초안/</code>, 완성됐으면 <code>03_컬럼/</code>. 이 두 가지만 기억하면 됩니다. 출처는 frontmatter의 <code>source:</code> 필드에 적으면 되고, 폴더는 항상 단계로만 구분합니다.</div></div>
-    <div class="qa-item"><div class="qa-q">Q2. SP(스파크)가 뭔가요? 언제 쓰나요?</div><div class="qa-a">번뜩이는 한 문장짜리 통찰이나 아이디어입니다. "조직의 침묵은 동의가 아니라 체념이다" 같은 문장 하나가 SP입니다. <code>01_씨앗/SP-날짜-번호.md</code>로 저장하고, 나중에 이 씨앗을 펼쳐서 컬럼 초안(DR-)을 씁니다.</div></div>
-    <div class="qa-item"><div class="qa-q">Q3. Crystal은 SP와 뭐가 다른가요?</div><div class="qa-a">SP가 한 문장이라면 Crystal은 복수의 SP를 엮은 대형 기획서입니다. 1시간 강의, 전자책, 시리즈 컬럼처럼 규모가 큰 작업에만 씁니다. <code>CRYSTAL-날짜-번호.md</code>로 저장합니다.</div></div>
-    <div class="qa-item"><div class="qa-q">Q4. 02_초안에 COL- 파일이 많이 있는데, 이게 뭔가요?</div><div class="qa-a">이전에 _CREATION/_drafts에 있던 파일들입니다. status: draft인 파일들로, 하나씩 검토해서 완성되면 03_컬럼으로 이동시키면 됩니다. Claude에게 "02_초안의 COL 파일들 status 일괄 확인해줘"라고 하면 목록을 뽑아줍니다.</div></div>
-    <div class="qa-item"><div class="qa-q">Q5. 같은 주제의 컬럼이 여러 개인데 어떻게 관리하나요?</div><div class="qa-a"><code>03_컬럼/</code> 안에 주제별 서브폴더를 만들 수 있습니다. 파일이 30개 이상 쌓이면 Claude에게 "03_컬럼 주제별로 분류해줘"라고 요청하면 frontmatter의 category 기준으로 정리해줍니다.</div></div>
-    <div class="qa-item"><div class="qa-q">Q6. 강의 원고는 어디에 보관하나요?</div><div class="qa-a"><code>04_강의/1h/</code>(1시간 강의) 또는 <code>04_강의/3h/</code>(3시간 강의)입니다. 파일명은 <code>LEC1H-날짜_주제.md</code> 형식을 씁니다. 교안(PPT용 자료)은 <code>04_강의/01_교안/</code>에 넣습니다.</div></div>
-    <div class="qa-item"><div class="qa-q">Q7. 컬럼집은 언제 만들기 시작하나요?</div><div class="qa-a">같은 테마의 완성 컬럼이 <code>03_컬럼/</code>에 10편 이상 모였을 때 시작하는 것이 자연스럽습니다. "이 테마로 컬럼집 기획해줘"라고 하면 <code>06_컬럼집/COLBOOK-날짜_주제/</code> 폴더를 만들고 기획부터 편집까지 진행합니다.</div></div>
-    <div class="qa-item"><div class="qa-q">Q8. 90_자산은 어떻게 활용하나요?</div><div class="qa-a">컬럼 작성 중에 "이 주제에 어울리는 비유 없나?" 싶을 때 열어봅니다. 비유은행·도입부은행·클로징은행·편집렌즈·템플릿이 있습니다. Claude에게 "이 컬럼 도입부 추천해줘"라고 하면 90_자산에서 자동으로 꺼내 붙여줍니다.</div></div>
-    <div class="qa-item"><div class="qa-q">Q9. 법무팀 업무사전은 어디로 갔나요?</div><div class="qa-a"><code>_WIKI_법률업무/법무팀_업무사전/</code>으로 이관됐습니다. 창작 워크스페이스(_ATELIER)와 실무 WIKI는 성격이 다르기 때문에 분리했습니다. 총 321개 실무 카드가 그곳에 있습니다.</div></div>
-    <div class="qa-item"><div class="qa-q">Q10. 파일을 잘못 분류했을 때 어떻게 하나요?</div><div class="qa-a">Claude에게 "파일명을 02_초안에서 03_컬럼으로 이동해줘"라고 하면 됩니다. 파일명과 이동 경로만 알려주면 처리해 줍니다. frontmatter의 status 값도 함께 업데이트됩니다.</div></div>
+  <!-- 8 QA -->
+  <div class="section" id="s8">
+    <div class="section-title"><span class="num">8</span> Q&amp;A 10가지</div>
+
+    <div class="qa-item"><div class="qa-q">Q1. 단초와 SP는 뭐가 다른가요?</div><div class="qa-a">단초는 "한 문장 아이디어"입니다. "호의가 계속되면 권리가 되는 이유"처럼 그냥 떠오른 생각이에요. SP는 그 단초를 3가지 옵션 중 하나로 전개한 <strong>기획 문서</strong>입니다. 단초 → SP → 초안 → 컬럼의 순서입니다.</div></div>
+
+    <div class="qa-item"><div class="qa-q">Q2. 단초가 생각나지 않을 때는 어떻게 하나요?</div><div class="qa-a">Claude에게 바로 요청하세요: <code>단초 몇 가지 줘</code> 또는 <code>법률 단초 줘</code>. Claude가 8개 분야를 망라해 즉시 제시합니다. 그중 마음에 드는 것을 고르면 됩니다.</div></div>
+
+    <div class="qa-item"><div class="qa-q">Q3. SP 생성 3가지 옵션 중 뭘 골라야 하나요?</div><div class="qa-a">내 기존 관점을 깊이 파고 싶으면 <strong>옵션 1</strong>, 외부 데이터로 논거를 보강하고 싶으면 <strong>옵션 2</strong>, 완전히 새로운 각도를 원하면 <strong>옵션 3</strong>. 처음엔 옵션 2가 가장 균형 잡혀 있습니다.</div></div>
+
+    <div class="qa-item"><div class="qa-q">Q4. 기존 CRYSTAL-*.md 파일들은 어떻게 됐나요?</div><div class="qa-a"><code>01_단초/</code> 폴더에 그대로 있습니다. SP와 동등하게 취급하면 됩니다. <code>CRYSTAL-NNN 컬럼 써줘</code> 명령은 여전히 동작합니다. 점진적으로 <code>02_SP/</code>로 이관 예정입니다.</div></div>
+
+    <div class="qa-item"><div class="qa-q">Q5. 컬럼 파일을 어디에 저장해야 할지 모르겠어요.</div><div class="qa-a">작성 중이면 <code>03_초안/</code>, 완성됐으면 <code>04_컬럼/</code>. 이 두 가지만 기억하면 됩니다. 출처(SP 번호)는 frontmatter의 <code>source_sp:</code> 필드에 적으면 됩니다.</div></div>
+
+    <div class="qa-item"><div class="qa-q">Q6. 강의 원고는 어디에 보관하나요?</div><div class="qa-a"><code>05_강의/1h/</code>(1시간 강의) 또는 <code>05_강의/3h/</code>(3시간 강의)입니다. 파일명은 <code>LEC1H-날짜_주제.md</code> 형식을 씁니다.</div></div>
+
+    <div class="qa-item"><div class="qa-q">Q7. 컬럼집은 언제 만들기 시작하나요?</div><div class="qa-a">같은 테마의 완성 컬럼이 <code>04_컬럼/</code>에 10편 이상 모였을 때 시작하는 것이 자연스럽습니다. "이 테마로 컬럼집 기획해줘"라고 하면 <code>07_컬럼집/COLBOOK-날짜_주제/</code> 폴더를 만들고 기획부터 편집까지 진행합니다.</div></div>
+
+    <div class="qa-item"><div class="qa-q">Q8. 90_자산은 어떻게 활용하나요?</div><div class="qa-a">컬럼 작성 중에 "이 주제에 어울리는 비유 없나?" 싶을 때 열어봅니다. 비유은행·도입부은행·클로징은행·편집렌즈·템플릿이 있습니다. Claude에게 "이 컬럼 도입부 추천해줘"라고 하면 자동으로 꺼내 붙여줍니다.</div></div>
+
+    <div class="qa-item"><div class="qa-q">Q9. 법무팀 업무사전은 어디로 갔나요?</div><div class="qa-a"><code>_WIKI_법률업무/법무팀_업무사전/</code>으로 이관됐습니다. 창작 워크스페이스(_ATELIER)와 실무 WIKI는 성격이 달라서 분리했습니다.</div></div>
+
+    <div class="qa-item"><div class="qa-q">Q10. 파일을 잘못 분류했을 때 어떻게 하나요?</div><div class="qa-a">Claude에게 "파일명을 03_초안에서 04_컬럼으로 이동해줘"라고 하면 됩니다. frontmatter의 status 값도 함께 업데이트됩니다.</div></div>
   </div>
 
-  <!-- 8 팁 -->
-  <div class="section" id="s8">
-    <div class="section-title"><span class="num">8</span> 매일 쓸 수 있는 팁 3가지</div>
+  <!-- 9 팁 -->
+  <div class="section" id="s9">
+    <div class="section-title"><span class="num">9</span> 매일 쓸 수 있는 팁 3가지</div>
     <div class="tip-card">
       <div class="tip-badge">TIP 01</div>
-      <div class="tip-title">오늘의 씨앗 루틴</div>
+      <div class="tip-title">오늘의 단초 루틴</div>
       <div class="tip-body">
-        하루 시작 시 Claude에게 이 명령을 내리세요:<br>
-        <div class="cmd">01_씨앗에서 컬럼화 안 된 SP 중 가장 오래된 5개 보여줘</div>
-        그중 하나를 골라 바로 초안 작성에 들어가는 습관을 만들면 컬럼 발행 주기가 규칙적으로 유지됩니다.
+        하루 시작 시 Claude에게 이 명령을 내리세요:
+        <div class="cmd">단초 3개 줘</div>
+        그중 하나를 골라 SP로 발전시키는 습관을 만들면 컬럼 발행 주기가 규칙적으로 유지됩니다.
       </div>
     </div>
     <div class="tip-card">
       <div class="tip-badge">TIP 02</div>
       <div class="tip-title">1편 완성 → 즉시 이동 규칙</div>
       <div class="tip-body">
-        02_초안에 파일이 쌓이면 창작 에너지가 분산됩니다. 초안 하나를 완성하면 <strong>그 자리에서</strong> status: final로 바꾸고 03_컬럼으로 옮기세요. 완성 기준은 본문 검토 1회 + 오탈자 확인 정도면 충분합니다. 완벽주의를 경계하세요.
+        03_초안에 파일이 쌓이면 창작 에너지가 분산됩니다. 초안 하나를 완성하면 <strong>그 자리에서</strong> status: final로 바꾸고 04_컬럼으로 옮기세요. 완성 기준은 본문 검토 1회 + 오탈자 확인 정도면 충분합니다. 완벽주의를 경계하세요.
       </div>
     </div>
     <div class="tip-card">
       <div class="tip-badge">TIP 03</div>
       <div class="tip-title">컬럼집 카운터 활용</div>
       <div class="tip-body">
-        03_컬럼에서 특정 테마 파일이 몇 개 모였는지 수시로 확인하세요:
-        <div class="cmd">03_컬럼에서 [테마 키워드] 관련 컬럼 몇 개 있는지 카운트해줘</div>
+        04_컬럼에서 특정 테마 파일이 몇 개 모였는지 수시로 확인하세요:
+        <div class="cmd">04_컬럼에서 [테마 키워드] 관련 컬럼 몇 개 있는지 카운트해줘</div>
         10개가 넘으면 컬럼집 기획에 들어갈 타이밍입니다.
       </div>
     </div>
   </div>
 
-  <!-- 9 알아두면 -->
-  <div class="section" id="s9">
-    <div class="section-title"><span class="num">9</span> 알아두면 좋은 것들</div>
+  <!-- 10 알아두면 -->
+  <div class="section" id="s10">
+    <div class="section-title"><span class="num">10</span> 알아두면 좋은 것들</div>
     <h3>컬럼 category 분류 기준</h3>
     <table>
       <tr><th>카테고리</th><th>주요 주제</th></tr>
@@ -476,11 +653,12 @@ category: 법률실무 | 조직리더십 | 협상커뮤니케이션 | 경영지�
       <tr><td><code>조직리더십</code></td><td>조직문화·의사결정·팀 역학·리더십 심리</td></tr>
       <tr><td><code>협상커뮤니케이션</code></td><td>협상 전략·설득·프레임·대화 설계</td></tr>
       <tr><td><code>경영지배구조</code></td><td>이사회·지분·M&amp;A·스타트업·기업지배구조</td></tr>
+      <tr><td><code>인문에세이</code></td><td>고전·철학·역사·인간 본성</td></tr>
     </table>
     <h3>원본 보존 원칙</h3>
     <p>기존 컬럼을 업그레이드할 때 <strong>절대 원본을 덮어쓰지 않습니다.</strong> <code>FX-날짜_제목_v2.md</code>로 새 파일을 만들고, 원본은 그대로 둡니다.</p>
-    <h3>웹 증강 원칙 (융합 작업 시)</h3>
-    <div class="note-green">내 목소리가 먼저, 웹은 증강 도구입니다. 먼저 03_컬럼 스캔 → 웹 보강 → 번호 각주로 출처 표기.</div>
+    <h3>웹 증강 원칙 (SP 옵션 2·3 사용 시)</h3>
+    <div class="note-green">내 목소리가 먼저, 웹은 증강 도구입니다. 먼저 04_컬럼 스캔 → 웹 보강 → 번호 각주로 출처 표기.</div>
     <h3>컬럼집 품질 게이트</h3>
     <table>
       <tr><th>파일</th><th>역할</th></tr>
@@ -502,7 +680,7 @@ category: 법률실무 | 조직리더십 | 협상커뮤니케이션 | 경영지�
 
   <div class="footer">
     아뜨리에(ATELIER) 사용법 가이드 · 2026-06-02<br>
-    관련 파일: CLAUDE.md | _index.md
+    관련 파일: CLAUDE.md · _dancho.md · _sp_registry.md
   </div>
 
 </div>
