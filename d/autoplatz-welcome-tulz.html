@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>아우토플라츠 Risk Radar Welcome Report</title>
+<style>
+  :root{
+    --navy:#16243f; --navy2:#1f3354; --gold:#b08a3e; --gold-soft:#e9dcc0;
+    --ink:#1b2230; --muted:#5b6678; --line:#e4e7ee; --bg:#f4f5f8; --card:#ffffff;
+    --red:#b03a3a; --amber:#c08a2e; --paper:#fbfaf7;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"Pretendard","Noto Sans KR","Malgun Gothic","맑은 고딕",sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1080px; margin:0 auto; padding:0 24px 80px;}
+  header.hero{
+    background:linear-gradient(135deg,var(--navy),var(--navy2));
+    color:#fff; padding:48px 24px 40px; border-bottom:4px solid var(--gold);
+  }
+  .hero-inner{max-width:1080px; margin:0 auto;}
+  .eyebrow{letter-spacing:.18em; font-size:12px; color:var(--gold-soft); text-transform:uppercase; margin:0 0 10px;}
+  .hero h1{margin:0 0 8px; font-size:30px; font-weight:800; letter-spacing:-.01em;}
+  .hero .sub{margin:0; color:#cdd6e6; font-size:15px;}
+  .hero .asof{display:inline-block; margin-top:18px; padding:6px 14px; border:1px solid rgba(255,255,255,.28); border-radius:999px; font-size:13px; color:#e7edf7;}
+  .lead{
+    background:var(--paper); border:1px solid var(--line); border-left:4px solid var(--gold);
+    padding:22px 24px; border-radius:10px; margin:28px 0; color:#374055; font-size:15.5px;
+  }
+  .lead strong{color:var(--navy);}
+  .note-disclaimer{font-size:13.5px; color:var(--muted); margin-top:10px;}
+  .stats{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:26px 0 8px;}
+  .stat{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:22px; text-align:center; box-shadow:0 1px 2px rgba(20,36,63,.04);}
+  .stat .num{font-size:38px; font-weight:800; color:var(--navy); line-height:1;}
+  .stat .lab{margin-top:8px; font-size:13.5px; color:var(--muted);}
+  h2.sec{font-size:20px; color:var(--navy); margin:42px 0 6px; padding-bottom:8px; border-bottom:2px solid var(--line); display:flex; align-items:center; gap:10px;}
+  h2.sec .n{display:inline-flex; width:28px; height:28px; background:var(--navy); color:#fff; border-radius:7px; align-items:center; justify-content:center; font-size:14px; font-weight:700;}
+  p.body{color:#3a4356; font-size:15px;}
+  .priority{background:#fff7ec; border:1px solid var(--gold-soft); border-radius:10px; padding:16px 18px; font-size:14.5px; color:#5a4a26; margin:14px 0;}
+  .axes{display:grid; gap:14px; margin-top:18px;}
+  .axis{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px 20px; box-shadow:0 1px 2px rgba(20,36,63,.04);}
+  .axis h3{margin:0 0 12px; font-size:16px; color:var(--navy); display:flex; align-items:center; gap:10px;}
+  .axis h3 .badge{background:var(--gold); color:#fff; font-size:12px; font-weight:700; padding:3px 9px; border-radius:6px; flex:none;}
+  .axis .grid{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  .axis .grid .cell .k{font-size:11.5px; letter-spacing:.04em; color:var(--gold); text-transform:uppercase; font-weight:700; margin-bottom:3px;}
+  .axis .grid .cell .v{font-size:14px; color:#3a4356;}
+  .axis .next{grid-column:1 / -1; border-top:1px dashed var(--line); padding-top:12px;}
+  .axis .next .k{color:var(--navy);}
+  table{width:100%; border-collapse:collapse; margin-top:16px; background:#fff; border:1px solid var(--line); border-radius:10px; overflow:hidden; font-size:14px;}
+  th,td{text-align:left; padding:12px 14px; border-bottom:1px solid var(--line); vertical-align:top;}
+  th{background:var(--navy); color:#fff; font-weight:600; font-size:13px;}
+  tr:last-child td{border-bottom:none;}
+  td.site{font-weight:700; color:var(--navy); white-space:nowrap;}
+  .confid{margin-top:36px; background:var(--navy); color:#dfe6f2; border-radius:12px; padding:22px 24px;}
+  .confid h2{margin:0 0 8px; font-size:16px; color:#fff;}
+  .confid p{margin:0; font-size:14px; color:#c4cfe2;}
+  footer{margin-top:30px; text-align:center; color:var(--muted); font-size:12.5px;}
+  @media (max-width:680px){
+    .stats{grid-template-columns:1fr;} .axis .grid{grid-template-columns:1fr;} .hero h1{font-size:24px;}
+  }
+  @media print{ body{background:#fff;} .axis,.stat,table{box-shadow:none;} }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Risk Radar · First Risk Read</p>
+    <h1>아우토플라츠 Risk Radar Welcome Report</h1>
+    <p class="sub">부동산 계약 포트폴리오 1차 검토 — Weekly Risk Radar 이전 First Risk Read</p>
+    <span class="asof">2026년 6월 2일 현재 자료 기준</span>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="lead">
+    안녕하세요. 보내주신 사업장 관련 계약 자료를 수령했고, 현재 1차 검토를 마쳤습니다. 이번 Welcome Report는 첫 Weekly Risk Radar 전에 드리는 <strong>First Risk Read</strong>입니다. 단순 수령 확인이 아니라, 현재 자료만으로도 먼저 보이는 금액·기한·권리·회수가능성의 숨은 각도를 정리한 초안입니다.
+    <div class="note-disclaimer">※ 본 보고서는 최종 법률의견이 아닙니다. 확인 전까지 결론을 단정하기보다, 어느 지점이 먼저 의사결정 테이블에 올라와야 하는지 보여드리는 데 초점을 두었습니다.</div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="num">55</div><div class="lab">정리된 레이더 항목</div></div>
+    <div class="stat"><div class="num">22</div><div class="lab">우선 확인 항목</div></div>
+    <div class="stat"><div class="num">6</div><div class="lab">즉시 우선 사업장</div></div>
+  </div>
+
+  <h2 class="sec"><span class="n">1</span> 자료 수령 확인</h2>
+  <p class="body">현재 수령한 자료는 임대차계약, 전대차계약, 부동산 매매계약, 사업장별 설명자료를 포함한 부동산 계약 포트폴리오입니다. 1차로는 각 계약을 개별 문서로만 보지 않고, 사업장별 해지·갱신 트리거, 보증금 회수순위, 잔여 차임과 철수비용, 시설투자 회수, 인허가·용도변경, 잔금 전 현장 통제 가능성까지 함께 보는 방식으로 정리했습니다.</p>
+
+  <h2 class="sec"><span class="n">2</span> 현재 검토 위치</h2>
+  <p class="body">현재 자료 기준 세부 레이더 항목은 55건으로 정리되어 있고, 그중 우선 확인 항목은 22건, 즉시 우선해서 볼 사업장은 6곳으로 보입니다. 이 숫자는 위험을 확정했다는 의미가 아니라, 현재 자료 기준으로 “먼저 물어봐야 하는 질문”의 밀도가 높다는 뜻입니다.</p>
+  <div class="priority"><strong>별도 축으로 관리 권장:</strong> 오포 · 판교 · 신탄진·대전 폭스바겐 · 대전 마세라티 · 하남 · 대구 철수 패키지 · 백석동·청주</div>
+
+  <h2 class="sec"><span class="n">3</span> First Risk Read — 1차 리스크 7축</h2>
+  <div class="axes">
+
+    <div class="axis">
+      <h3><span class="badge">축 1</span> 오포</h3>
+      <div class="grid">
+        <div class="cell"><div class="k">보이는 신호</div><div class="v">보증금 2.5억과 약 14억대 exposure가 함께 보입니다. 해지권 행사·미납 회수·7일 최고 timing이 동시에 걸린 구조입니다.</div></div>
+        <div class="cell"><div class="k">왜 중요한가</div><div class="v">해지를 서두르면 회수 루트가 흔들릴 수 있고, 회수를 기다리면 미납·하자·보험 처리의 시간표가 뒤엉킬 수 있습니다.</div></div>
+        <div class="cell next"><div class="k">다음 조치</div><div class="v">해지 가능성 자체를 단정하기보다 미납 내역·기존 합의·보험 처리·하자 통지 자료를 먼저 맞춘 뒤, 해지 루트와 회수 루트를 나눠 결정.</div></div>
+      </div>
+    </div>
+
+    <div class="axis">
+      <h3><span class="badge">축 2</span> 판교</h3>
+      <div class="grid">
+        <div class="cell"><div class="k">보이는 신호</div><div class="v">임대차 문서만으로는 신탁·근저당 구조 아래 보증금 회수순위가 잘 보이지 않습니다. 합계 5.5억 보증금이 걸려 있습니다.</div></div>
+        <div class="cell"><div class="k">왜 중요한가</div><div class="v">보증금이 크더라도 실제 회수순위는 등기·신탁원부·담보 설정·선순위 권리관계에 따라 달라질 수 있습니다.</div></div>
+        <div class="cell next"><div class="k">다음 조치</div><div class="v">반환 가능성을 단정하기보다 최신 등기·신탁원부·담보·전세권 자료를 받아 security map을 만든 뒤 회수순위 확인.</div></div>
+      </div>
+    </div>
+
+    <div class="axis">
+      <h3><span class="badge">축 3</span> 신탄진·대전 폭스바겐</h3>
+      <div class="grid">
+        <div class="cell"><div class="k">보이는 신호</div><div class="v">자동연장처럼 보이는 구조가 있으나 매각이 있으면 연장 기대가 끊길 수 있습니다. 15% 연 인상과 잔여 차임 exposure도 함께 보입니다.</div></div>
+        <div class="cell"><div class="k">왜 중요한가</div><div class="v">계속·철수·이전을 정할 때 단순 만기일보다 매각 트리거와 잔여 임대료 부담이 더 큰 변수가 될 수 있습니다.</div></div>
+        <div class="cell next"><div class="k">다음 조치</div><div class="v">갱신 가능성을 단정하기보다 매각 시 연장 배제 조항·인상률 적용 방식·잔여 차임 산정표를 exit cost table로 정리.</div></div>
+      </div>
+    </div>
+
+    <div class="axis">
+      <h3><span class="badge">축 4</span> 대전 마세라티</h3>
+      <div class="grid">
+        <div class="cell"><div class="k">보이는 신호</div><div class="v">1년 단위 연장 구조가 반복되고, 2026.7.31 및 2026.8.31이 가까운 주요 만기로 보입니다. 갱신거절 통지 방식은 아직 선명하지 않습니다.</div></div>
+        <div class="cell"><div class="k">왜 중요한가</div><div class="v">만기 직전에는 통지 누락·차임 인상·영업 계속 가능성이 한 번에 걸립니다. 상가임대차보호법 보호 가능성도 조건별로 달라질 수 있습니다.</div></div>
+        <div class="cell next"><div class="k">다음 조치</div><div class="v">갱신권·인상 방어를 단정하기보다 통지 이력·차임 증액 근거·사업자등록·환산보증금·용도 자료를 확인해 renewal/raise defense 구성.</div></div>
+      </div>
+    </div>
+
+    <div class="axis">
+      <h3><span class="badge">축 5</span> 하남</h3>
+      <div class="grid">
+        <div class="cell"><div class="k">보이는 신호</div><div class="v">신축·시설투자형 사업장에 철거특약이 보입니다. 다만 지상물매수청구권이 반대 카드가 될 수 있는지 확인할 여지가 있습니다.</div></div>
+        <div class="cell"><div class="k">왜 중요한가</div><div class="v">철거특약만 보면 종료 시 비용 부담이 커 보이지만, 법정 권리나 투자 회수 논리가 살아 있으면 협상 카드가 달라질 수 있습니다.</div></div>
+        <div class="cell next"><div class="k">다음 조치</div><div class="v">철거의무 확정을 단정하기보다 공사 범위·소유·부합 관계·임대인 승낙 자료를 확인하고, 지상물매수청구권 카드는 보존하되 임차인 귀책 해지로 몰리지 않도록 운영.</div></div>
+      </div>
+    </div>
+
+    <div class="axis">
+      <h3><span class="badge">축 6</span> 대구 철수 패키지</h3>
+      <div class="grid">
+        <div class="cell"><div class="k">보이는 신호</div><div class="v">건물 매각 자체보다 토지 사용·잔금 전 현장 통제·조기 공사·점유·보험·원상복구가 더 앞단의 변수로 보입니다.</div></div>
+        <div class="cell"><div class="k">왜 중요한가</div><div class="v">잔금 전 현장 출입·공사가 시작되면 인도 전 사고·하자·점유권·유치권성 주장·원상복구 책임이 매매 종결보다 먼저 분쟁화될 수 있습니다.</div></div>
+        <div class="cell next"><div class="k">다음 조치</div><div class="v">매각 완료를 전제하기보다 final undertaking·토지주 동의·보험·site inspection·no lien 확인·restoration 조건을 잔금 전 체크리스트로 묶음.</div></div>
+      </div>
+    </div>
+
+    <div class="axis">
+      <h3><span class="badge">축 7</span> 백석동·청주</h3>
+      <div class="grid">
+        <div class="cell"><div class="k">보이는 신호</div><div class="v">서류상 종료·승계가 된 것처럼 보여도 용도변경·브랜드 승인·운영불능 조건이 숨어 있을 수 있습니다.</div></div>
+        <div class="cell"><div class="k">왜 중요한가</div><div class="v">조건이 성취되지 않으면 실제 영업개시·승계 효력이 흔들리고, 이미 투입한 비용과 임대료 부담만 남을 수 있습니다.</div></div>
+        <div class="cell next"><div class="k">다음 조치</div><div class="v">종료·승계를 단정하기보다 termination/succession docs·use-change feasibility·landlord consent·브랜드 승인 조건을 확인해 hidden condition-precedent 분리.</div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <h2 class="sec"><span class="n">4</span> 추가 확인이 필요한 지점</h2>
+  <p class="body">아래는 다음 단계에서 우선 확인하면 좋은 자료입니다. 한 번에 완비할 필요는 없고, 사업장별 우선순위를 나눠 순차적으로 받으면 됩니다.</p>
+  <table>
+    <thead><tr><th style="width:160px">구분</th><th>확인하면 좋은 자료</th><th style="width:30%">보는 이유</th></tr></thead>
+    <tbody>
+      <tr><td class="site">오포</td><td>미납 내역, 7일 최고 관련 통지, 지급방식 변경 합의, 보험 접수·처리 내역, 하자 요청 본문</td><td>해지권 행사와 회수불능 가능성을 같은 테이블에서 판단</td></tr>
+      <tr><td class="site">판교</td><td>최신 등기, 신탁원부, 전세권·근저당·담보 자료</td><td>5.5억 보증금의 회수순위와 임대인 권원 안정성 확인</td></tr>
+      <tr><td class="site">신탄진·대전 폭스바겐</td><td>원계약·연장계약 세트, 매각 관련 조항, 임대료 인상 산식, 잔여 차임 자료</td><td>자동연장 기대·매각 시 종료·15% 인상·exit cost 분리</td></tr>
+      <tr><td class="site">대전 마세라티</td><td>갱신·거절 통지 이력, 2026.7.31·2026.8.31 만기 관련 자료, 차임 증액 근거</td><td>만기 직전 갱신거절과 인상 방어 가능성 확인</td></tr>
+      <tr><td class="site">하남</td><td>공사 범위, 신축건물 권리관계, 임대인 승낙 자료, 철거특약, 시설투자 내역</td><td>철거특약과 지상물매수청구권 카드의 충돌 가능성 확인</td></tr>
+      <tr><td class="site">대구</td><td>최종 확약서, 토지주 동의, 보험, 잔금 전 site inspection, no lien 확인, 원상복구 조건</td><td>잔금 전 현장 통제와 조기 공사·점유 리스크 차단</td></tr>
+      <tr><td class="site">백석동·청주</td><td>종료·승계 문서, 용도변경 가능성 자료, 임대인 동의, 브랜드 승인 조건</td><td>조건부 종료·승계와 운영불능 가능성 분리</td></tr>
+    </tbody>
+  </table>
+
+  <div class="confid">
+    <h2>5. 비밀유지와 자료 취급</h2>
+    <p>보내주신 자료는 Risk Radar 검토 목적 범위에서만 사용합니다. 사업장별 계약서·등기·담보자료·현장 확인자료는 의뢰인 자료로 분리 보관하고, 외부 공개용 자료나 다른 의뢰인 자료와 섞지 않습니다. 본 보고서는 현재 자료 기준의 1차 안내이며, 후속 자료가 들어오면 사업장별 우선순위와 대응 방향을 업데이트합니다.</p>
+  </div>
+
+  <footer>아우토플라츠 Risk Radar · Welcome Report (초안) · 2026-06-02 · 본 문서는 최종 법률의견이 아닙니다.</footer>
+
+</div>
+</body>
+</html>
