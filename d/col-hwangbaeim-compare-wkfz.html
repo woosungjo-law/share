@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5가지 사례로 보는 횡령죄 vs 배임죄</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #F1F4F8; font-family: 'Noto Sans KR', sans-serif; color: #111827; line-height: 1.6; display: flex; justify-content: center; }
+  .wrap { width: 100%; max-width: 960px; padding: 28px 20px 60px; }
+  .header { background: linear-gradient(135deg, #1A3A6B, #2E6BE6); border-radius: 14px; padding: 28px 32px; margin-bottom: 24px; color: #fff; }
+  .header h1 { font-size: 24px; font-weight: 900; letter-spacing: -0.02em; margin-bottom: 4px; }
+  .header .sub { font-size: 13px; font-weight: 300; opacity: .8; display: flex; justify-content: space-between; flex-wrap: wrap; }
+  .header .badge { background: rgba(255,255,255,0.18); padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; }
+  .scenario { background: #fff; border-radius: 12px; padding: 20px 22px; margin-bottom: 14px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); border-left: 4px solid #2E6BE6; }
+  .scenario.hwang { border-left-color: #DC2626; }
+  .scenario.baeim { border-left-color: #F59E0B; }
+  .scenario.both { border-left-color: #7C3AED; }
+  .scenario .label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; margin-bottom: 2px; }
+  .scenario .label.hwang { color: #DC2626; }
+  .scenario .label.baeim { color: #D97706; }
+  .scenario .label.both { color: #7C3AED; }
+  .scenario h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+  .scenario p { font-size: 13px; color: #4B5563; }
+  .scenario .verdict { margin-top: 6px; font-size: 13px; font-weight: 600; padding: 4px 10px; border-radius: 6px; display: inline-block; }
+  .verdict.hwang { background: #FEE2E2; color: #DC2626; }
+  .verdict.baeim { background: #FEF3C7; color: #D97706; }
+  .verdict.both { background: #EDE9FE; color: #7C3AED; }
+  section { margin-bottom: 24px; }
+  .section-title { font-size: 17px; font-weight: 700; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .section-title .sub { font-size: 12px; font-weight: 500; color: #6B7280; }
+  table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.06); font-size: 13px; }
+  th { background: #1A3A6B; color: #fff; font-weight: 600; font-size: 11px; letter-spacing: 0.06em; padding: 10px 12px; text-align: left; }
+  td { padding: 10px 12px; border-bottom: 1px solid #E5E7EB; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #F8FAFC; }
+  .tag-o { display: inline-block; background: #D1FAE5; color: #059669; font-weight: 700; font-size: 12px; padding: 1px 8px; border-radius: 4px; }
+  .tag-x { display: inline-block; background: #FEE2E2; color: #DC2626; font-weight: 700; font-size: 12px; padding: 1px 8px; border-radius: 4px; }
+  .tag-tri { display: inline-block; background: #FEF3C7; color: #D97706; font-weight: 700; font-size: 12px; padding: 1px 8px; border-radius: 4px; }
+  .callout { background: #FFF9F0; border-left: 4px solid #F59E0B; padding: 14px 18px; border-radius: 8px; font-size: 13px; color: #4B5563; margin-bottom: 14px; }
+  .callout strong { color: #111827; }
+  .summary-box { background: #fff; border-radius: 12px; padding: 18px 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+  .summary-box li { font-size: 13px; padding: 5px 0; list-style: none; border-bottom: 1px solid #F3F4F6; }
+  .summary-box li:last-child { border: none; }
+  .summary-box li::before { content: "•"; color: #2E6BE6; font-weight: 700; margin-right: 8px; }
+  .footer { text-align: center; font-size: 11px; color: #9CA3AF; margin-top: 36px; padding-top: 16px; border-top: 1px solid #E5E7EB; }
+  @media (max-width: 600px) {
+    td, th { font-size: 12px; padding: 8px 10px; }
+    .header h1 { font-size: 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <h1>5가지 사례로 보는 횡령죄 vs 배임죄</h1>
+    <div class="sub"><span>당신의 사건은 어디에 해당하나</span><span class="badge">COL-형사법_횡령배임구별_비교_01</span></div>
+  </div>
+
+  <div class="callout">
+    <strong>이런 일이 생겼습니다</strong><br>
+    중소기업 케이엠테크에서 두 건의 내부 비리가 적발됐다. 자금 담당 직원의 법인카드 800만 원 개인 결제, 영업팀장의 거래처 정보 경쟁사 유출 대가 1,500만 원. 두 사건 모두 회사에 손해를 입혔지만, 적용될 범죄와 처벌 수위는 어떻게 다를까?
+  </div>
+
+  <section>
+    <div class="section-title">5가지 유형별 비교</div>
+
+    <div class="scenario hwang">
+      <div class="label hwang">유형 1 · 횡령죄</div>
+      <h3>법인 자금 개인 용도 사용</h3>
+      <p>자금 담당 직원이 회사 법인카드로 800만 원 상당 개인 물품을 결제한 사건. 자금에 대한 보관자 지위 인정 → 횡령죄 우선. 배임죄 경합 가능.</p>
+      <span class="verdict hwang">횡령죄 ○ (대법원 2019도13579)</span>
+    </div>
+
+    <div class="scenario baeim">
+      <div class="label baeim">유형 2 · 배임죄</div>
+      <h3>부동산 이중 매매</h3>
+      <p>부동산 자체는 횡령죄의 객체(재물)가 될 수 없으므로, 등기 이전 의무를 위반한 사무처리자 지위에서 배임죄가 성립한다.</p>
+      <span class="verdict baeim">배임죄 ○ (부동산 자체 ×)</span>
+    </div>
+
+    <div class="scenario hwang">
+      <div class="label hwang">유형 3 · 횡령죄</div>
+      <h3>매매 대금 수령 후 소비</h3>
+      <p>매매 대금을 수령한 자가 이를 임의로 소비한 경우, 금전에 대한 보관자 지위가 인정되어 횡령죄가 성립한다.</p>
+      <span class="verdict hwang">횡령죄 ○</span>
+    </div>
+
+    <div class="scenario baeim">
+      <div class="label baeim">유형 4 · 배임죄</div>
+      <h3>회사 기회 개인 취득</h3>
+      <p>영업팀장이 회사 거래처 정보를 경쟁사에 넘기고 1,500만 원 수수. 특정 재물 보관이 아닌 포괄적 의무 위반 → 배임죄. (대법원 2020도14678)</p>
+      <span class="verdict baeim">배임죄 ○</span>
+    </div>
+
+    <div class="scenario both">
+      <div class="label both">유형 5 · 횡령/배임 경합</div>
+      <h3>주식·채권 임의 처분</h3>
+      <p>유가증권에 대한 보관자 지위 인정 → 횡령죄 성립. 동시에 임무위배 책임도 물을 수 있어 배임죄와 경합 가능.</p>
+      <span class="verdict both">횡령 ○ · 배임 △ (경합)</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">횡령죄 vs 배임죄 비교표</div>
+    <table>
+      <tr><th>비교 항목</th><th>횡령죄</th><th>배임죄</th></tr>
+      <tr><td>적용 조문</td><td>형법 제355조 제1항</td><td>형법 제355조 제2항</td></tr>
+      <tr><td>객체</td><td>타인의 재물</td><td>재산상 이익</td></tr>
+      <tr><td>지위</td><td>보관자</td><td>사무처리자</td></tr>
+      <tr><td>행위</td><td>불법 영득</td><td>임무위배</td></tr>
+      <tr><td>법정형 (보통)</td><td>5년 이하 징역</td><td>5년 이하 징역</td></tr>
+      <tr><td>법정형 (업무상)</td><td>10년 이하 징역</td><td>10년 이하 징역</td></tr>
+      <tr><td>특경가법 이득액</td><td>유용 금액</td><td>본인 손해액</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <div class="section-title">실무 포인트</div>
+    <div class="summary-box">
+      <li><strong>횡령죄 방어</strong> — '보관자 지위 부정'(단순 차용·개인 채무 변제)을 주장해 무죄 도모</li>
+      <li><strong>배임죄 방어</strong> — '임무위배 없음·손해 없음·경영 판단' 주장</li>
+      <li><strong>내부 조사 우선순위</strong> — 자금 유용 의심 시 먼저 '보관자 지위'(자금 관리·통제 권한) 확인</li>
+      <li><strong>통합 전략</strong> — 형사 방어(횡령/배임)와 민사 방어(손해배상·부당이득) 통합 필요</li>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">한눈에 정리</div>
+    <div class="summary-box">
+      <li>횡령죄는 '보관자 지위'가, 배임죄는 '사무처리자 지위'가 핵심 구별 기준</li>
+      <li>법인 자금 유용 → 횡령죄 우선 / 회사 기회 개인 취득 → 배임죄 우선</li>
+      <li>특경가법 적용 시 이득액 산정 방식(유용 금액 vs 본인 손해액)이 다르므로 전략적 판단 필요</li>
+    </div>
+  </section>
+
+  <div class="footer">
+    횡령죄 vs 배임죄 비교 분석 · COL-형사법_횡령배임구별_비교_01 · 2026-06-04
+  </div>
+</div>
+</body>
+</html>
