@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026년 OPS 법률사무소 매출 대시보드</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #0f0f1a;
+    color: #e0e0e0;
+    min-height: 100vh;
+    padding: 40px 20px;
+  }
+  
+  .dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* 헤더 */
+  .header {
+    text-align: center;
+    margin-bottom: 48px;
+    position: relative;
+  }
+  
+  .header::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #6366f1, #a855f7);
+    margin: 20px auto 0;
+    border-radius: 2px;
+  }
+  
+  .header h1 {
+    font-size: 2.4rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.5px;
+  }
+  
+  .header .subtitle {
+    font-size: 1rem;
+    color: #888;
+    margin-top: 8px;
+    font-weight: 300;
+  }
+  
+  .header .date-badge {
+    display: inline-block;
+    background: rgba(99, 102, 241, 0.15);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    color: #a5b4fc;
+    padding: 4px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin-top: 12px;
+  }
+  
+  /* KPI 카드 그리드 */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  
+  .kpi-card {
+    background: linear-gradient(135deg, rgba(30, 30, 50, 0.8), rgba(20, 20, 40, 0.8));
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .kpi-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(99, 102, 241, 0.15);
+  }
+  
+  .kpi-card .label {
+    font-size: 0.8rem;
+    color: #888;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  
+  .kpi-card .value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  
+  .kpi-card .value.green { color: #34d399; }
+  .kpi-card .value.red { color: #f87171; }
+  .kpi-card .value.blue { color: #60a5fa; }
+  .kpi-card .value.purple { color: #a78bfa; }
+  .kpi-card .value.amber { color: #fbbf24; }
+  
+  .kpi-card .sub {
+    font-size: 0.75rem;
+    color: #666;
+    margin-top: 4px;
+  }
+  
+  /* 섹션 */
+  .section {
+    background: linear-gradient(135deg, rgba(30, 30, 50, 0.6), rgba(20, 20, 40, 0.6));
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 24px;
+    backdrop-filter: blur(10px);
+  }
+  
+  .section-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #c4b5fd;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .section-title .icon {
+    font-size: 1.3rem;
+  }
+  
+  /* 테이블 */
+  .table-wrap {
+    overflow-x: auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  
+  thead th {
+    text-align: left;
+    padding: 12px 16px;
+    font-weight: 500;
+    color: #888;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  
+  tbody td {
+    padding: 14px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    vertical-align: middle;
+  }
+  
+  tbody tr:hover {
+    background: rgba(99, 102, 241, 0.05);
+  }
+  
+  .amount {
+    font-weight: 600;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+  
+  .amount.green { color: #34d399; }
+  .amount.red { color: #f87171; }
+  .amount.blue { color: #60a5fa; }
+  .amount.amber { color: #fbbf24; }
+  .amount.purple { color: #a78bfa; }
+  
+  .tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+  
+  .tag.confirmed { background: rgba(52, 211, 153, 0.15); color: #34d399; }
+  .tag.pending { background: rgba(251, 191, 36, 0.15); color: #fbbf24; }
+  .tag.waiting { background: rgba(96, 165, 250, 0.15); color: #60a5fa; }
+  .tag.risk { background: rgba(248, 113, 113, 0.15); color: #f87171; }
+  
+  /* 시나리오 카드 */
+  .scenario-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 16px;
+  }
+  
+  .scenario-card {
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  
+  .scenario-card.optimistic {
+    background: linear-gradient(135deg, rgba(52, 211, 153, 0.1), rgba(52, 211, 153, 0.02));
+    border-color: rgba(52, 211, 153, 0.2);
+  }
+  
+  .scenario-card.realistic {
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(251, 191, 36, 0.02));
+    border-color: rgba(251, 191, 36, 0.2);
+  }
+  
+  .scenario-card.pessimistic {
+    background: linear-gradient(135deg, rgba(248, 113, 113, 0.1), rgba(248, 113, 113, 0.02));
+    border-color: rgba(248, 113, 113, 0.2);
+  }
+  
+  .scenario-card .scenario-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  
+  .scenario-card.optimistic .scenario-label { color: #34d399; }
+  .scenario-card.realistic .scenario-label { color: #fbbf24; }
+  .scenario-card.pessimistic .scenario-label { color: #f87171; }
+  
+  .scenario-card .scenario-value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  
+  .scenario-card.optimistic .scenario-value { color: #34d399; }
+  .scenario-card.realistic .scenario-value { color: #fbbf24; }
+  .scenario-card.pessimistic .scenario-value { color: #f87171; }
+  
+  .scenario-card .scenario-diff {
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+  
+  .scenario-card.optimistic .scenario-diff { color: #6ee7b7; }
+  .scenario-card.realistic .scenario-diff { color: #fcd34d; }
+  .scenario-card.pessimistic .scenario-diff { color: #fca5a5; }
+  
+  .scenario-card .scenario-detail {
+    font-size: 0.78rem;
+    color: #888;
+    margin-top: 8px;
+    line-height: 1.5;
+  }
+  
+  /* 프로그레스 바 */
+  .progress-wrap {
+    margin: 16px 0;
+  }
+  
+  .progress-bar {
+    height: 10px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .progress-fill {
+    height: 100%;
+    border-radius: 5px;
+    transition: width 0.8s ease;
+    position: relative;
+  }
+  
+  .progress-fill.under { background: linear-gradient(90deg, #f87171, #fb923c); }
+  .progress-fill.on-track { background: linear-gradient(90deg, #fbbf24, #34d399); }
+  .progress-fill.over { background: linear-gradient(90deg, #34d399, #06b6d4); }
+  
+  .progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 6px;
+  }
+  
+  /* 리스크 박스 */
+  .risk-box {
+    background: rgba(248, 113, 113, 0.06);
+    border: 1px solid rgba(248, 113, 113, 0.15);
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 16px;
+  }
+  
+  .risk-box .risk-title {
+    color: #f87171;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+  }
+  
+  .risk-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(248, 113, 113, 0.08);
+    font-size: 0.85rem;
+  }
+  
+  .risk-item:last-child { border-bottom: none; }
+  
+  .risk-item .risk-factor { color: #ccc; flex: 1; }
+  .risk-item .risk-impact { color: #f87171; text-align: right; font-size: 0.8rem; max-width: 200px; }
+  
+  /* 결론 박스 */
+  .conclusion {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.05));
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 16px;
+    padding: 28px;
+    margin-top: 24px;
+  }
+  
+  .conclusion h3 {
+    color: #a5b4fc;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  
+  .conclusion p {
+    color: #bbb;
+    line-height: 1.7;
+    font-size: 0.9rem;
+  }
+  
+  .conclusion .highlight {
+    color: #fbbf24;
+    font-weight: 600;
+  }
+  
+  /* 반응형 */
+  @media (max-width: 900px) {
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    .scenario-grid { grid-template-columns: 1fr; }
+  }
+  
+  @media (max-width: 600px) {
+    .kpi-grid { grid-template-columns: 1fr; }
+    .header h1 { font-size: 1.6rem; }
+    .section { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="dashboard">
+  
+  <!-- 헤더 -->
+  <div class="header">
+    <h1>⚖️ OPS 법률사무소</h1>
+    <div class="subtitle">2026년 매출 트래킹 대시보드</div>
+    <div class="date-badge">📅 기준일: 2026-05-18</div>
+  </div>
+  
+  <!-- KPI -->
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="label">월 목표</div>
+      <div class="value amber">8,000만원</div>
+      <div class="sub">연간 9.6억원 목표</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">1~4월 실제</div>
+      <div class="value red">1.44억원</div>
+      <div class="sub">달성률 45%</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">누적 부족액</div>
+      <div class="value red">△1.76억원</div>
+      <div class="sub">목표 3.2억원 대비</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">5~12월 필요 월평균</div>
+      <div class="value blue">1.02억원</div>
+      <div class="sub">연간 목표 달성 위해</div>
+    </div>
+  </div>
+  
+  <!-- 프로그레스 -->
+  <div class="section">
+    <div class="section-title"><span class="icon">📊</span> 1~4월 목표 달성률</div>
+    <div class="progress-wrap">
+      <div class="progress-bar">
+        <div class="progress-fill under" style="width: 45%;"></div>
+      </div>
+      <div class="progress-label">
+        <span>1.44억원 / 3.2억원</span>
+        <span style="color: #f87171;">45% 달성</span>
+      </div>
+    </div>
+  </div>
+  
+  <!-- 5~6월 예상 유입 -->
+  <div class="section">
+    <div class="section-title"><span class="icon">💰</span> 5~6월 예상 추가 유입</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>항목</th>
+            <th>금액</th>
+            <th>시점</th>
+            <th>상태</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>신아주 최무도 성공보수 (낙관적)</td>
+            <td class="amount purple">약 2.61억원</td>
+            <td>2026-06 말 (1심 선고)</td>
+            <td><span class="tag waiting">결과 대기</span></td>
+          </tr>
+          <tr>
+            <td>클래스유 성공보수</td>
+            <td class="amount blue">3,000만원</td>
+            <td>2026-05-19~23</td>
+            <td><span class="tag waiting">결과 대기</span></td>
+          </tr>
+          <tr>
+            <td>파인링크 성공보수</td>
+            <td class="amount blue">5,000만원</td>
+            <td>2026-05 말</td>
+            <td><span class="tag waiting">결과 대기</span></td>
+          </tr>
+          <tr>
+            <td>주묘희 착수금</td>
+            <td class="amount blue">2,000만원</td>
+            <td>2026-05-19 이후</td>
+            <td><span class="tag pending">입금 예의주시</span></td>
+          </tr>
+          <tr>
+            <td>5~6월 고문료 (월 1,500만원 × 2)</td>
+            <td class="amount green">3,000만원</td>
+            <td>5~6월</td>
+            <td><span class="tag confirmed">확정</span></td>
+          </tr>
+          <tr style="border-top: 2px solid rgba(255,255,255,0.1);">
+            <td style="font-weight: 700;">합계</td>
+            <td class="amount purple" style="font-weight: 700;">약 3.91억원</td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <!-- 시나리오 -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🎯</span> 6월 말 목표 달성 시나리오</div>
+    <div class="scenario-grid">
+      <div class="scenario-card optimistic">
+        <div class="scenario-label">✅ 낙관적</div>
+        <div class="scenario-value">5.35억원</div>
+        <div class="scenario-diff">+5,500만원 초과</div>
+        <div class="scenario-detail">신아주 6월 내 입금 + 나머지 모두 적시 입금</div>
+      </div>
+      <div class="scenario-card realistic">
+        <div class="scenario-label">⚠️ 현실적</div>
+        <div class="scenario-value">2.24억원</div>
+        <div class="scenario-diff">△2.56억원 부족</div>
+        <div class="scenario-detail">신아주 7월 이후, 나머지 일부만 6월 내 입금</div>
+      </div>
+      <div class="scenario-card pessimistic">
+        <div class="scenario-label">❌ 비관적</div>
+        <div class="scenario-value">1.74억원</div>
+        <div class="scenario-diff">△3.06억원 부족</div>
+        <div class="scenario-detail">주묘희·클래스유·파인링크 모두 지연</div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- 리스크 요인 -->
+  <div class="section">
+    <div class="section-title"><span class="icon">⚠️</span> 핵심 리스크 요인</div>
+    <div class="risk-box">
+      <div class="risk-title">현실적 시나리오를 가로막는 요인들</div>
+      <div class="risk-item">
+        <span class="risk-factor">신아주 최무도 — 1심 선고가 6월 말, 실제 입금은 7월 이후 가능</span>
+        <span class="risk-impact">2.61억원 6월 내 미입금 가능성 ↑</span>
+      </div>
+      <div class="risk-item">
+        <span class="risk-factor">클래스유 — 5/19~23 결과 대기, 청구→입금까지 시간 소요</span>
+        <span class="risk-impact">5월 내 입금 불확실</span>
+      </div>
+      <div class="risk-item">
+        <span class="risk-factor">파인링크 — 5월 말 재계약 확정 후 청구 절차 필요</span>
+        <span class="risk-impact">6월 이후 입금 가능성</span>
+      </div>
+      <div class="risk-item">
+        <span class="risk-factor">주묘희 — 아직 착수금 미입금, 팔로업 필요</span>
+        <span class="risk-impact">확정 아님</span>
+      </div>
+    </div>
+  </div>
+  
+  <!-- 결론 -->
+  <div class="conclusion">
+    <h3>🔑 핵심 결론</h3>
+    <p>
+      <strong>핵심 변수는 신아주 최무도 사건의 1심 선고 결과와 실제 입금 시점이다.</strong><br><br>
+      6월 말 선고가 나더라도 판결금이 실제로 입금되려면 항소 여부, 집행 절차 등을 거쳐야 하므로 
+      <span class="highlight">6월 내 입금은 어려울 가능성이 높다.</span><br><br>
+      따라서 <span class="highlight">현실적으로는 6월 말까지 목표 달성이 어렵고</span>, 
+      신아주 성공보수가 7월 이후에라도 들어오면 연간 목표 트래킹에서는 큰 도움이 될 것으로 보인다.
+    </p>
+  </div>
+  
+</div>
+</body>
+</html>
