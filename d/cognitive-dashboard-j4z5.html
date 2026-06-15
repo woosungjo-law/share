@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<title>인지기능검사 대시보드: K-MMSE & CDR</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #1A3A6B;
+  --navy-light: #234B8A;
+  --blue: #2E6BE6;
+  --blue-light: #DBEAFE;
+  --gray-50: #F9FAFB;
+  --gray-100: #F3F4F6;
+  --gray-200: #E5E7EB;
+  --gray-300: #D1D5DB;
+  --gray-400: #9CA3AF;
+  --gray-500: #6B7280;
+  --gray-700: #374151;
+  --gray-900: #111827;
+  --green: #059669;
+  --green-bg: #D1FAE5;
+  --yellow: #D97706;
+  --yellow-bg: #FEF3C7;
+  --red: #DC2626;
+  --red-bg: #FEE2E2;
+  --indigo-bg: #E0E7FF;
+  --indigo: #4338CA;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 15px; scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+  background: var(--gray-50);
+  color: var(--gray-900);
+  line-height: 1.6;
+}
+
+/* Navigation */
+.topbar {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--navy);
+  color: #fff;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  height: 56px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+.topbar .logo { font-weight: 700; font-size: 1rem; letter-spacing: 0.05em; }
+.topbar .logo span { color: #93C5FD; }
+.topbar .nav-links { margin-left: auto; display: flex; gap: 20px; }
+.topbar .nav-links a { color: #BFDBFE; text-decoration: none; font-size: 0.85rem; font-weight: 500; padding: 4px 0; border-bottom: 2px solid transparent; transition: 0.2s; }
+.topbar .nav-links a:hover { color: #fff; border-bottom-color: #93C5FD; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 28px 20px 60px; }
+
+/* Page Header */
+.page-header { margin-bottom: 28px; }
+.page-header h1 { font-size: 1.7rem; font-weight: 900; color: var(--navy); letter-spacing: -0.02em; }
+.page-header p { color: var(--gray-500); font-size: 0.95rem; margin-top: 4px; }
+
+/* Metric Cards */
+.metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 28px; }
+.metric-card {
+  background: #fff; border-radius: 12px; padding: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid var(--gray-200);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.metric-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+.metric-card .label { font-size: 0.75rem; font-weight: 600; color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
+.metric-card .value { font-size: 1.8rem; font-weight: 900; color: var(--navy); }
+.metric-card .sub { font-size: 0.8rem; color: var(--gray-400); margin-top: 2px; }
+.metric-card .badge { display: inline-block; font-size: 0.7rem; font-weight: 700; padding: 2px 10px; border-radius: 20px; margin-top: 6px; }
+
+/* Sections */
+.section { margin-bottom: 32px; }
+.section-header {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid var(--gray-200);
+}
+.section-header .num {
+  display: flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px; border-radius: 8px;
+  background: var(--navy); color: #fff;
+  font-size: 0.85rem; font-weight: 700; flex-shrink: 0;
+}
+.section-header h2 { font-size: 1.15rem; font-weight: 700; color: var(--gray-900); }
+
+/* Cards */
+.card {
+  background: #fff; border-radius: 10px; padding: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05); border: 1px solid var(--gray-200);
+  margin-bottom: 14px;
+}
+.card h3 { font-size: 0.95rem; font-weight: 600; color: var(--navy); margin-bottom: 10px; }
+.card p { font-size: 0.9rem; color: var(--gray-700); line-height: 1.7; }
+.card .card-sub { font-size: 0.8rem; color: var(--gray-500); margin-top: 4px; }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+
+/* Data Tables */
+.data-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+.data-table th {
+  background: var(--navy); color: #fff;
+  font-weight: 600; padding: 8px 10px; text-align: center;
+  font-size: 0.8rem; letter-spacing: 0.03em;
+}
+.data-table td { padding: 7px 10px; border-bottom: 1px solid var(--gray-200); text-align: center; }
+.data-table tr:hover td { background: var(--gray-100); }
+.data-table .hl td { background: var(--blue-light) !important; font-weight: 500; }
+
+/* Severity indicators */
+.sev-normal { background: var(--green-bg); color: #065F46; font-weight: 600; padding: 2px 10px; border-radius: 20px; font-size: 0.75rem; display: inline-block; }
+.sev-mild { background: var(--yellow-bg); color: #92400E; font-weight: 600; padding: 2px 10px; border-radius: 20px; font-size: 0.75rem; display: inline-block; }
+.sev-severe { background: var(--red-bg); color: #991B1B; font-weight: 600; padding: 2px 10px; border-radius: 20px; font-size: 0.75rem; display: inline-block; }
+
+/* Mapping Table Special */
+.mapping-table td:first-child { font-weight: 700; }
+.type-badge { display: inline-block; font-size: 0.7rem; font-weight: 700; padding: 3px 12px; border-radius: 20px; }
+.type-none { background: var(--green-bg); color: #065F46; }
+.type-limited { background: var(--indigo-bg); color: var(--indigo); }
+.type-guardian { background: var(--yellow-bg); color: #92400E; }
+.type-full { background: var(--red-bg); color: #991B1B; }
+
+/* Info Box */
+.info-box {
+  background: #EFF6FF; border-left: 4px solid var(--blue);
+  padding: 14px 16px; border-radius: 6px; margin-top: 10px;
+}
+.info-box .info-title { font-weight: 700; font-size: 0.85rem; color: var(--navy); margin-bottom: 4px; }
+.info-box p { font-size: 0.85rem; color: var(--gray-700); }
+.info-box.warn { background: #FFFBEB; border-left-color: var(--yellow); }
+.info-box.warn .info-title { color: #92400E; }
+
+/* Analysis Table */
+.analysis-table td:first-child { font-weight: 600; color: var(--navy); text-align: left; width: 150px; }
+.analysis-table td:last-child { text-align: left; }
+
+/* Footer */
+.footer { text-align: center; padding: 20px 0; font-size: 0.8rem; color: var(--gray-400); border-top: 1px solid var(--gray-200); margin-top: 20px; }
+
+@media (max-width: 640px) {
+  .container { padding: 16px 12px; }
+  .metrics { grid-template-columns: repeat(2, 1fr); }
+  .card-grid { grid-template-columns: 1fr; }
+  .topbar .nav-links { display: none; }
+}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="logo"><span>◆</span> Cognitive Assessment Dashboard</div>
+  <div class="nav-links">
+    <a href="#mmse">K-MMSE</a>
+    <a href="#cdr">CDR</a>
+    <a href="#mapping">종합매핑</a>
+    <a href="#analysis">심층분석</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- Header -->
+  <div class="page-header">
+    <h1>인지기능검사 종합 대시보드</h1>
+    <p>K-MMSE (간이정신상태검사) &amp; CDR (임상치매평가척도) — 법적 해석 가이드</p>
+  </div>
+
+  <!-- Metrics -->
+  <div class="metrics">
+    <div class="metric-card">
+      <div class="label">K-MMSE</div>
+      <div class="value">30</div>
+      <div class="sub">만점 기준</div>
+      <span class="badge" style="background:var(--green-bg);color:#065F46;">5~10분 소요 · 19문항</span>
+    </div>
+    <div class="metric-card">
+      <div class="label">CDR</div>
+      <div class="value">0–3</div>
+      <div class="sub">단계 평가</div>
+      <span class="badge" style="background:var(--indigo-bg);color:var(--indigo);">30~90분 면담 · 6영역</span>
+    </div>
+    <div class="metric-card">
+      <div class="label">CDR-SB</div>
+      <div class="value">0–18</div>
+      <div class="sub">Sum of Boxes</div>
+      <span class="badge" style="background:var(--yellow-bg);color:#92400E;">진행도에 더 민감</span>
+    </div>
+    <div class="metric-card">
+      <div class="label">후견 유형</div>
+      <div class="value" style="font-size:1.3rem;">특정 · 한정 · 성년</div>
+      <div class="sub">MMSE + CDR 조합으로 결정</div>
+      <span class="badge" style="background:var(--blue-light);color:var(--navy);">법적 참고자료</span>
+    </div>
+  </div>
+
+  <!-- Section 1: K-MMSE -->
+  <div class="section" id="mmse">
+    <div class="section-header"><span class="num">1</span><h2>K-MMSE (Korean Mini-Mental State Examination)</h2></div>
+
+    <div class="card">
+      <h3>개요</h3>
+      <p>치매 선별을 위한 가장 보편적인 인지기능 검사. 30점 만점. 5~10분 소요. 19개 문항으로 구성.</p>
+    </div>
+
+    <div class="card">
+      <h3>평가 영역 (6개)</h3>
+      <table class="data-table">
+        <tr><th style="width:28%">영역</th><th style="width:10%">점수</th><th>평가 내용</th></tr>
+        <tr><td><strong>시간지남력</strong></td><td>5</td><td>연도·월·날짜·요일·계절</td></tr>
+        <tr><td><strong>장소지남력</strong></td><td>5</td><td>국가·시도·구군·건물명·층/위치</td></tr>
+        <tr><td><strong>기억등록</strong></td><td>3</td><td>3개 단어 즉시 기억</td></tr>
+        <tr><td><strong>주의집중·계산</strong></td><td>5</td><td>100에서 7씩 빼기 (5회)</td></tr>
+        <tr><td><strong>기억회상</strong></td><td>3</td><td>등록한 3개 단어 회상</td></tr>
+        <tr><td><strong>언어·시공간</strong></td><td>9</td><td>사물이름대기·문장따라말하기·쓰기·명령수행·모사</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>점수별 해석 기준</h3>
+      <table class="data-table">
+        <tr><th>점수 범위</th><th>판정</th><th>일상생활 기능</th></tr>
+        <tr class="hl"><td><strong>24~30</strong></td><td><span class="sev-normal">정상 (Normal)</span></td><td>일상생활·금전관리 독립적 가능</td></tr>
+        <tr><td>20~23</td><td><span class="sev-mild">경도 인지장애 의심 / 치매 의심</span></td><td>복잡한 금전거래·계약에 어려움 시작</td></tr>
+        <tr><td>15~19</td><td><span class="sev-mild">경도~중등도 치매</span></td><td>일상적 금전관리 곤란, 타인 도움 필요</td></tr>
+        <tr><td>10~14</td><td><span class="sev-severe">중등도 치매</span></td><td>시간·장소 인식 혼동, 전반적 도움 필요</td></tr>
+        <tr><td>0~9</td><td><span class="sev-severe">중증 치매</span></td><td>전적 타인 의존, 기본적 의사소통도 제한</td></tr>
+      </table>
+      <div class="info-box warn" style="margin-top:12px;">
+        <div class="info-title">주의사항</div>
+        <p><strong>연령·학력 보정:</strong> 고령(80대+)은 평균 점수 하락, 무학자는 +4점 보정, 고학력자는 동일 점수라도 실제 인지저하가 더 진행되었을 가능성<br>
+        <strong>천장효과:</strong> 학력·지능이 높으면 MMSE 점수가 실제 인지저하보다 높게 나올 수 있음 → 추가 정밀검사(SNSB 등) 필요<br>
+        <strong>진단명 ≠ 점수:</strong> 알츠하이머 진단 + MMSE 27이면, 진단은 내려졌으나 인지저하 정도는 매우 초기 단계임을 의미</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>법적 관점에서의 해석</h3>
+      <table class="data-table">
+        <tr><th style="width:20%">MMSE</th><th>법적 시사점</th></tr>
+        <tr class="hl"><td><strong>24↑</strong></td><td>성년후견 불가능에 가까움. 특정후견 또는 생활사실 보강 시 한정후견 검토</td></tr>
+        <tr><td>20~23</td><td>한정후견 청구 가능 영역. 성년후견은 증거 보강 필요</td></tr>
+        <tr><td>15~19</td><td>성년후견 청구 가능하나 추가 소명 필요 (진행성·실제 기능 저하)</td></tr>
+        <tr><td>15↓</td><td>성년후견 요건 소명 용이</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Section 2: CDR -->
+  <div class="section" id="cdr">
+    <div class="section-header"><span class="num">2</span><h2>CDR (Clinical Dementia Rating)</h2></div>
+
+    <div class="card">
+      <h3>개요</h3>
+      <p>치매의 <strong>중증도(단계)</strong>를 평가하는 척도. 환자·보호자 면담(30~90분)으로 6개 영역 평가. MMSE가 인지기능의 &ldquo;양적&rdquo; 측정이라면, CDR은 일상생활에서의 &ldquo;기능적 영향&rdquo;을 평가.</p>
+    </div>
+
+    <div class="card">
+      <h3>평가 영역 (6개)</h3>
+      <table class="data-table">
+        <tr><th style="width:8%">#</th><th style="width:28%">영역</th><th>주요 평가 내용</th></tr>
+        <tr><td>1</td><td><strong>기억력 (Memory)</strong></td><td>최근·원거리 기억, 일상적 건망증</td></tr>
+        <tr><td>2</td><td><strong>지남력 (Orientation)</strong></td><td>시간·장소·사람 인식</td></tr>
+        <tr><td>3</td><td><strong>판단력·문제해결</strong></td><td>재정·일상 문제 대처, 유사성·차이점 이해</td></tr>
+        <tr><td>4</td><td><strong>사회활동 (Community Affairs)</strong></td><td>직장·단체 활동, 사회적 역할 수행</td></tr>
+        <tr><td>5</td><td><strong>가정·취미 (Home &amp; Hobbies)</strong></td><td>집안일, 취미, 지적 관심 유지</td></tr>
+        <tr><td>6</td><td><strong>자기관리 (Personal Care)</strong></td><td>위생·옷차림·식사</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>단계별 해석</h3>
+      <table class="data-table">
+        <tr><th>CDR</th><th>판정</th><th>기억력</th><th>일상생활</th><th>금전관리</th></tr>
+        <tr class="hl"><td><strong>0</strong></td><td><span class="sev-normal">정상</span></td><td>정상</td><td>완전 독립</td><td>완전 가능</td></tr>
+        <tr><td><strong>0.5</strong></td><td><span class="sev-mild">치매 의증</span></td><td>경도 건망증</td><td>대체로 독립, 타인 인지 가능</td><td>단순 거래 가능, 복잡한 거래에 어려움 시작</td></tr>
+        <tr><td><strong>1</strong></td><td><span class="sev-mild">경도 치매</span></td><td>최근 기억 유의미 저하</td><td>복잡한 업무 곤란, 일상생활은 가능</td><td>재정·계약 독립 처리 불가</td></tr>
+        <tr><td><strong>2</strong></td><td><span class="sev-severe">중등도 치매</span></td><td>심한 기억장애</td><td>독립적 활동 불가, 가정 내 단순업무만 가능</td><td>금전관리 불가</td></tr>
+        <tr><td><strong>3</strong></td><td><span class="sev-severe">중증 치매</span></td><td>단편적 기억만 잔존</td><td>전적 의존, 의사소통 제한</td><td>불가</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>Global CDR 결정 규칙</h3>
+      <div class="info-box">
+        <div class="info-title">결정 알고리즘</div>
+        <p>전체 CDR 점수는 <strong>기억력(Memory) 점수</strong>를 기준으로 하고, 다른 5개 영역의 분포에 따라 알고리즘으로 결정:</p>
+        <ol style="margin:8px 0 4px 18px;font-size:0.85rem;">
+          <li>기억력=0 → 다른 영역도 전부 0 또는 1개만 0.5 → CDR=0 / 그 외 → CDR=0.5</li>
+          <li>기억력=0.5 → 다른 영역 중 3개↑ 1 이상 → CDR=1 / 그 외 → CDR=0.5</li>
+          <li>기억력=1,2,3 → 다른 5개 중 3개↑의 공통 점수로 결정 / 불일치 시 기억력 점수</li>
+        </ol>
+      </div>
+      <div class="info-box warn" style="margin-top:8px;">
+        <div class="info-title">실무 Tip</div>
+        <p>Global CDR만 보지 말고 <strong>CDR-SB(Sum of Boxes, 0~18)</strong>도 확인할 것. CDR-SB가 진행도·미세 변화에 더 민감.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 3: Mapping -->
+  <div class="section" id="mapping">
+    <div class="section-header"><span class="num">3</span><h2>MMSE + CDR 종합 매핑</h2></div>
+
+    <div class="card">
+      <h3>조합표 &mdash; 임상·법적 통합 매트릭스</h3>
+      <table class="data-table mapping-table">
+        <tr><th>MMSE</th><th>CDR</th><th>법적 의미</th><th>권고 후견 유형</th></tr>
+        <tr class="hl"><td>26~30</td><td>0</td><td>정상</td><td><span class="type-badge type-none">후견 불필요</span><br><span style="font-size:0.7rem;color:var(--gray-500);">임의후견·대리위임으로 충분</span></td></tr>
+        <tr class="hl"><td>24~27</td><td>0.5</td><td>정상~치매 의증</td><td><span class="type-badge type-limited">특정후견</span><br><span style="font-size:0.7rem;color:var(--gray-500);">생활사실 보강 시 한정후견</span></td></tr>
+        <tr><td>20~23</td><td>0.5~1</td><td>경도 인지장애~경도 치매</td><td><span class="type-badge type-limited">한정후견 (우선)</span></td></tr>
+        <tr><td>15~19</td><td>1~2</td><td>중등도 치매</td><td><span class="type-badge type-guardian">성년후견 (가능)</span><br><span style="font-size:0.7rem;color:var(--gray-500);">or 한정후견 (보충적)</span></td></tr>
+        <tr><td>10~14</td><td>2</td><td>중등도~중증 치매</td><td><span class="type-badge type-full">성년후견 (적합)</span></td></tr>
+        <tr><td>0~9</td><td>3</td><td>중증 치매</td><td><span class="type-badge type-full">성년후견 (필수)</span></td></tr>
+      </table>
+    </div>
+
+    <div class="card" id="analysis">
+      <h3>MMSE 27 / CDR 0.5 사례 심층 분석</h3>
+      <div class="info-box">
+        <div class="info-title">문성회 님 사례 매핑</div>
+        <p>MMSE <strong>27</strong> (정상 범주 하단) + CDR <strong>0.5</strong> (치매 의증) → 표준 매핑상 <strong>특정후견 영역</strong>.</p>
+      </div>
+      <table class="data-table analysis-table" style="margin-top:12px;">
+        <tr><th>측면</th><th>의미</th></tr>
+        <tr><td>의학적</td><td>알츠하이머 진단은 있으나, 인지저하 정도는 매우 초기. 일상대화·단순의사결정 가능.</td></tr>
+        <tr><td>법적 (성년후견)</td><td>불가능. &ldquo;사무처리능력 지속적 결여&rdquo; 소명 거의 불가.</td></tr>
+        <tr><td>법적 (한정후견)</td><td>가능하나, &ldquo;사무처리능력 부족&rdquo;도 수치만으로는 부족. <strong>생활사실 보강 필수.</strong></td></tr>
+        <tr><td>법적 (특정후견)</td><td><strong>가장 적합.</strong> 특정 재산처분·계약 건별 후원이면 수치상 무리 없음.</td></tr>
+        <tr><td>실무 전략</td><td>수치가 높더라도 (1) 알츠하이머 진행성 질환 (2) 실제 금전관리 곤란 사례 (3) 가족 진술 등을 보강하여 <strong>한정후견 청구</strong> → 법원이 특정후견으로 낮추더라도 손해 없음.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer">
+    참고용 자료 &middot; 처방 변경은 담당의와 상의 &middot; 법적 판단은 변호사 상담 필수<br>
+    Created 2026-06-15 &middot; Cognitive Assessment Reference
+  </div>
+
+</div>
+</body>
+</html>
