@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>브랜드 컬럼 사용설명서</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: #faf8f4;
+  color: #2c2416;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}
+
+/* ── 헤더 대시보드 ── */
+.dashboard {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #fff;
+  border-radius: 16px;
+  padding: 32px 36px;
+  margin: 32px 0 40px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+}
+.dashboard .label {
+  font-size: 11px;
+  color: #8899bb;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.dashboard h1 {
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
+}
+.dashboard .grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.dashboard .stat {
+  background: rgba(255,255,255,0.06);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+.dashboard .stat .num {
+  font-size: 28px;
+  font-weight: 700;
+}
+.dashboard .stat .lbl {
+  font-size: 11px;
+  color: #aab;
+  margin-top: 2px;
+}
+.dashboard .stat .c1 { color: #4fc3f7; }
+.dashboard .stat .c2 { color: #81c784; }
+.dashboard .stat .c3 { color: #ffb74d; }
+.dashboard .stat .c4 { color: #e57373; }
+.dashboard .footer {
+  margin-top: 14px;
+  font-size: 11px;
+  color: #667;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding-top: 12px;
+}
+.dashboard .footer span { margin-right: 16px; }
+.dashboard .footer code {
+  background: rgba(255,255,255,0.1);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+}
+.dot-b { color: #4fc3f7; }
+.dot-g { color: #81c784; }
+.dot-y { color: #ffb74d; }
+
+/* ── 타이포그래피 ── */
+h2 {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #c4704a;
+  margin: 40px 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e8e2d8;
+}
+h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #2c2416;
+  margin: 28px 0 10px;
+}
+h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #c4704a;
+  margin: 20px 0 8px;
+}
+p, li { font-size: 14px; color: #2c2416; margin-bottom: 8px; }
+strong { font-weight: 700; color: #2c2416; }
+
+/* ── 목차 ── */
+.toc {
+  background: #fff9f5;
+  border: 1px solid #e8e2d8;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.toc h3 { color: #c4704a; margin: 0 0 10px; border: none; }
+.toc ol { padding-left: 20px; }
+.toc li { margin-bottom: 4px; font-size: 13px; }
+.toc a { color: #c4704a; text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+
+/* ── 표 ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 13px;
+}
+th {
+  background: #e8e2d8;
+  color: #2c2416;
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+}
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #e8e2d8;
+}
+tr:nth-child(even) td { background: #faf8f4; }
+
+/* ── 코드블록 ── */
+pre {
+  background: #2c2416;
+  color: #f0ece4;
+  border-radius: 10px;
+  padding: 16px 20px;
+  font-size: 12px;
+  line-height: 1.6;
+  overflow-x: auto;
+  margin: 12px 0;
+  font-family: 'Consolas', 'Courier New', monospace;
+}
+code {
+  background: #e8e2d8;
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-family: 'Consolas', 'Courier New', monospace;
+}
+pre code { background: transparent; padding: 0; border-radius: 0; }
+
+/* ── 콜아웃 박스 ── */
+.callout {
+  background: #fff9f5;
+  border-left: 4px solid #c4704a;
+  border-radius: 0 10px 10px 0;
+  padding: 16px 20px;
+  margin: 16px 0;
+  font-size: 13px;
+}
+.callout.green { border-left-color: #4caf50; }
+.callout.blue { border-left-color: #2196f3; }
+.callout.red { border-left-color: #e53935; }
+
+/* ── Q&A ── */
+.qa-item {
+  border: 1px solid #e8e2d8;
+  border-radius: 10px;
+  margin: 12px 0;
+  overflow: hidden;
+}
+.qa-q {
+  background: #faf8f4;
+  padding: 12px 16px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #c4704a;
+  cursor: default;
+}
+.qa-a {
+  padding: 12px 16px;
+  font-size: 13px;
+}
+
+/* ── 꿀팁 카드 ── */
+.tip-card {
+  background: #fff9f5;
+  border: 1px solid #e8e2d8;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin: 12px 0;
+}
+.tip-card .num {
+  display: inline-block;
+  background: #c4704a;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 20px;
+  margin-bottom: 6px;
+}
+.tip-card strong { display: block; margin-bottom: 4px; }
+
+/* ── 푸터 ── */
+.footer-note {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 2px solid #e8e2d8;
+  text-align: center;
+  font-size: 13px;
+  color: #7a6a55;
+}
+.footer-note strong { color: #c4704a; }
+
+/* ── 반응형 ── */
+@media (max-width: 640px) {
+  .dashboard .grid { grid-template-columns: repeat(2, 1fr); }
+  .wrap { padding: 0 16px 48px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ═══════ 대시보드 ═══════ -->
+<div class="dashboard">
+  <div class="label">BRAND COLUMN SYSTEM · DASHBOARD</div>
+  <h1>📊 브랜드 컬럼 운영 현황</h1>
+  <div class="grid">
+    <div class="stat"><div class="num c1">40</div><div class="lbl">자기계발 전자책</div></div>
+    <div class="stat"><div class="num c2">~400</div><div class="lbl">챕터 풀 (원천 소스)</div></div>
+    <div class="stat"><div class="num c3">0</div><div class="lbl">생성 컬럼 (BRAND-*.md)</div></div>
+    <div class="stat"><div class="num c4">0</div><div class="lbl">사용 소스 (_registry.md)</div></div>
+  </div>
+  <div class="footer">
+    <span><span class="dot-b">●</span> 시스템 구축일: 2026-06-15</span>
+    <span><span class="dot-g">●</span> 워크플로: <code>_workflow_brand_column.md</code></span>
+    <span><span class="dot-y">●</span> 레지스트리: <code>_registry.md</code></span>
+  </div>
+</div>
+
+<!-- ═══════ 목차 ═══════ -->
+<div class="toc">
+  <h3>📋 목차</h3>
+  <ol>
+    <li><a href="#s1">시스템 개요</a></li>
+    <li><a href="#s2">소스 구조</a></li>
+    <li><a href="#s3">핵심 명령어</a></li>
+    <li><a href="#s4">처리 절차 상세</a></li>
+    <li><a href="#s5">컬럼 작성 기준</a></li>
+    <li><a href="#s6">Q&amp;A 10선</a></li>
+    <li><a href="#s7">꿀팁 10선</a></li>
+    <li><a href="#s8">아카이브 및 발행</a></li>
+  </ol>
+</div>
+
+<!-- ═══════ 1. 시스템 개요 ═══════ -->
+<h2 id="s1">1. 시스템 개요</h2>
+<p>이 시스템은 <strong>"지적 백스테이지"</strong> 브랜딩의 일환으로, 전자책 원고를 소스로 한 비법률 자기계발 컬럼을 생성·관리합니다.</p>
+
+<table>
+  <tr><th>항목</th><th>내용</th></tr>
+  <tr><td>트리거</td><td><code>"브랜드 컬럼 N개 써줘"</code> (어느 폴더에서든 OK)</td></tr>
+  <tr><td>소스</td><td><code>_WIKI_전자책제작/books/04_자기계발/</code> 40권 비법률 전자책 원고</td></tr>
+  <tr><td>가공</td><td>원본 베끼기 금지 — 웹 검색 병행, 업그레이드·변형 필수</td></tr>
+  <tr><td>출력</td><td>1300자 내외, 사람 냄새 문체, 구체적 도움</td></tr>
+  <tr><td>저장</td><td><code>60_비법컬럼/BRAND-YYYYMMDD-NNN_*.md</code></td></tr>
+  <tr><td>추적</td><td><code>_registry.md</code>에 소스 사용 이력 기록 (중복 방지)</td></tr>
+</table>
+
+<h3>이 시스템이 아닌 것</h3>
+<table>
+  <tr><th>❌ 아님</th><th>이유</th></tr>
+  <tr><td>법률컬럼 생성기</td><td>법률컬럼은 <code>/컬럼</code> 명령 → <code>_PUBLISH_발행허브/법률컬럼/</code></td></tr>
+  <tr><td>일반 포스트 생성기</td><td>500~1000자 숏폼은 <code>"아이디어 떠올려줘"</code> → pillars.md 기반</td></tr>
+  <tr><td>전자책 원고 복사기</td><td>원본을 그대로 배끼지 않음. <strong>업그레이드·변형</strong>이 핵심</td></tr>
+  <tr><td>AI 자동 발행기</td><td>생성된 컬럼은 사용자 검토 후 직접 페이스북에 발행</td></tr>
+</table>
+
+<!-- ═══════ 2. 소스 구조 ═══════ -->
+<h2 id="s2">2. 소스 구조</h2>
+<h3>1차 소스: <code>_WIKI_전자책제작/books/04_자기계발/</code></h3>
+<p>40권의 비법률 자기계발 전자책, 권당 10개 챕터 = 약 400개 원천 소스.</p>
+<pre>04_자기계발/
+├── D02_변호사의글쓰기_논리와설득의문장술_100p/
+├── D03_변호사의협상_고급협상전략_100p/
+├── D05_공자의까칠한조언_100p/
+│   └── 02_본문/
+│       ├── 01_공자는_원래_T였습니다.md
+│       ├── 02_충성은_조건부_계약이다.md
+│       └── ... (10개 챕터)
+├── E10_적발견_상대의약점을포착하는법_100p/
+├── E28_마음실험실_심리학일상해부_100p/
+├── E30_관계매니지먼트_인간관계의기술_100p/
+├── E36_뇌기반학습법_100p/
+├── E56_프롬프팅레버리지역설_100p/
+└── ... (총 40권)</pre>
+
+<h3>소스 선정 규칙</h3>
+<ol>
+  <li><code>_registry.md</code>에서 <code>status: used</code>인 항목은 제외</li>
+  <li><strong>같은 책에서 2개 이상 챕터를 동시 선정하지 않음</strong> (1권당 최대 1컬럼)</li>
+  <li>다양한 책에서 고르도록 분산</li>
+  <li>사용자가 특정 책·주제를 지정하면 그쪽 우선</li>
+</ol>
+
+<!-- ═══════ 3. 핵심 명령어 ═══════ -->
+<h2 id="s3">3. 핵심 명령어</h2>
+
+<h3>3.1 생성 명령</h3>
+<div class="callout"><code>"브랜드 컬럼 3개 써줘"</code> — 기본. 3개 생성.</div>
+<div class="callout"><code>"브랜드 컬럼 1개 써줘"</code> — 1개만 생성.</div>
+<div class="callout green"><code>"관계관리 책에서 브랜드 컬럼 2개 써줘"</code> — 특정 책 지정.</div>
+<div class="callout blue"><code>"E28 책에서 브랜드 컬럼 1개 써줘"</code> — 책ID로 직접 지정.</div>
+
+<h3>3.2 현황 조회</h3>
+<div class="callout"><code>"브랜드 컬럼 리스트 보여줘"</code> — 전체 목록 출력.</div>
+<div class="callout"><code>"브랜드 컬럼 남은 소스 보여줘"</code> — 미사용 소스 목록 및 잔여 수.</div>
+<div class="callout"><code>"브랜드 컬럼 대시보드"</code> — 전체 현황 요약.</div>
+
+<h3>3.3 발행 및 아카이브</h3>
+<div class="callout green"><code>"(이 컬럼) 발행했어"</code> — 30_published/ 이동, calendar 등록, registry 갱신.</div>
+<div class="callout"><code>"브랜드 컬럼 중 발행 안 한 거 보여줘"</code> — status=draft 목록.</div>
+
+<!-- ═══════ 4. 처리 절차 상세 ═══════ -->
+<h2 id="s4">4. 처리 절차 상세</h2>
+<p><code>"브랜드 컬럼 N개 써줘"</code> 명령 시 내부적으로 실행되는 6단계:</p>
+
+<h4>Step 0 — 소스 파악</h4>
+<p><code>04_자기계발/</code> 하위 40개 책 폴더 탐색, 각 책 <code>02_본문/</code> 내 챕터 파일 수집. 법률 소스 제외.</p>
+
+<h4>Step 1 — 소스 선정</h4>
+<p><code>_registry.md</code>에서 <code>used</code> 항목 제외한 미사용 풀에서 N개 선정 (책 중복 방지).</p>
+
+<h4>Step 2 — 소스 읽기</h4>
+<p>선정된 각 챕터 파일 전체 읽기 — frontmatter, 본문, 핵심 통찰·논리·사례 추출.</p>
+
+<h4>Step 3 — 웹 검색</h4>
+<p>해당 주제 관련 최신 트렌드·연구·뉴스 검색. 검색 결과에서 1~2개 구체적 사실 확보.</p>
+
+<h4>Step 4 — 컬럼 작성</h4>
+<table>
+  <tr><th>조건</th><th>설명</th></tr>
+  <tr><td>① 사람 냄새</td><td>AI가 쓴 느낌 금지. 독백체(주어 '나'), 솔직한 시행착오, 자기비꼼</td></tr>
+  <tr><td>② 구체적 도움</td><td>오늘 당장 써먹을 수 있는 실용적 인사이트 1개</td></tr>
+  <tr><td>③ 1300자 내외</td><td>±200자 허용 (1100~1500자)</td></tr>
+  <tr><td>④ 업그레이드·변형</td><td>원본 베끼기 금지. 웹 검색 반영. 구성·사례·표현 새롭게</td></tr>
+</table>
+
+<h4>Step 5 — 저장</h4>
+<pre>파일명: BRAND-YYYYMMDD-NNN_카테고리명_핵심주제.md
+위치: 60_비법컬럼/
+---
+type: brand-column
+source_book: E28_마음실험실_심리학일상해부_100p
+source_chapter: CH07_선택의_심리학.md
+web_search: 선택의 심리학 2025 2026 최신 연구
+created: 2026-06-15
+chars: 1312
+status: draft
+---</pre>
+
+<h4>Step 6 — 레지스트리 갱신 + 보고</h4>
+<p><code>_registry.md</code>에 사용 이력 추가 후 완료 보고 출력.</p>
+
+<!-- ═══════ 5. 컬럼 작성 기준 ═══════ -->
+<h2 id="s5">5. 컬럼 작성 기준</h2>
+
+<h3>Voice &amp; Tone</h3>
+<table>
+  <tr><th>지향</th><th>금지</th></tr>
+  <tr><td>주어 '나' 중심 독백체</td><td><code>여러분도 해보세요</code> 훈계형</td></tr>
+  <tr><td>솔직한 시행착오·실패</td><td><code>~해야 합니다</code>, <code>~가 중요합니다</code></td></tr>
+  <tr><td>행동 동사: 시도하다/삽질하다/깨닫다</td><td>자기연민: 힘들다/지친다/포기하고 싶다</td></tr>
+  <tr><td>구체적 수치: 3시간, 프롬프트 7번</td><td>권위적 일반화: 모든 변호사는</td></tr>
+  <tr><td>가벼운 유머·자기비꼼</td><td>영어 남용, 과장된 감정</td></tr>
+</table>
+
+<h3>No-Fly List</h3>
+<table>
+  <tr><th>금지</th><th>이유</th></tr>
+  <tr><td>교훈형 어미</td><td>독백체 원칙 위반, 권위적 이미지</td></tr>
+  <tr><td>권위 흔들림</td><td><code>법을 잘 모르겠다</code> 등 기본 역량 불안감</td></tr>
+  <tr><td>텍스트 월</td><td>500자 이상 단일 문단 금지</td></tr>
+  <tr><td>의뢰인 기밀</td><td>실명·사업자번호·계약금액·사건 사실</td></tr>
+  <tr><td>정치적 발언</td><td>특정 정당·정치인 지지 또는 비판</td></tr>
+</table>
+
+<h3>업그레이드·변형 가이드</h3>
+<table>
+  <tr><th>방법</th><th>예시</th></tr>
+  <tr><td>최신 연구 반영</td><td>원본 2019년 연구 → 2025년 후속 연구 결과 추가</td></tr>
+  <tr><td>개인 경험 접목</td><td>원본의 일반론 → "내가 실제로 겪은 일"로 전환</td></tr>
+  <tr><td>구조 재구성</td><td>원본 A→B→C → 반전 구조: B→왜?→A→C</td></tr>
+  <tr><td>관점 전환</td><td>제3자 서술 → 1인칭 독백, 혹은 그 반대</td></tr>
+  <tr><td>시의성 주입</td><td>요즘 화제가 된 사건·뉴스와 연결</td></tr>
+  <tr><td>반론 도입</td><td>"그런데 사실 반대 연구도 있다" → 더 깊은 통찰</td></tr>
+</table>
+
+<!-- ═══════ 6. Q&A 10선 ═══════ -->
+<h2 id="s6">6. Q&amp;A 10선</h2>
+
+<div class="qa-item">
+  <div class="qa-q">Q1. "브랜드 컬럼"과 "법률컬럼"의 차이는?</div>
+  <div class="qa-a">완전히 다른 시스템입니다. 브랜드 컬럼은 <code>"브랜드 컬럼 N개 써줘"</code>로 호출, 04_자기계발 소스 기반, 1300자 내외, 60_비법컬럼/ 저장. 법률컬럼은 <code>/컬럼</code> 명령, _WIKI_법률지식 소스 기반, 1500~2500자, _PUBLISH_발행허브/ 저장. 소스·분량·문체·저장 위치·검증 방식이 모두 다릅니다.</div>
+</div>
+
+<div class="qa-item">
+  <div class="qa-q">Q2. 소스가 40권인데, 언젠간 바닥나지 않나요?</div>
+  <div class="qa-a">1권당 평균 10챕터 × 40권 = 약 400개 소스. 주 2회 발행 기준 <strong>약 4년치</strong> 분량입니다. 향후 _WIKI_인문비즈니스, _WIKI_AI비즈니스 등으로 소스 확장 가능하므로 고갈 걱정은 없습니다.</div>
+</div>
+
+<div class="qa-item">
+  <div class="qa-q">Q3. 원본이랑 너무 비슷하면 어쩌죠?</div>
+  <div class="qa-a">워크플로에 <strong>업그레이드·변형이 강제</strong>되어 있습니다. 단순 요약·발췌가 아니라 웹 검색 결과 반영, 구조 재구성, 개인 경험 접목, 관점 전환 등으로 원본과 확연히 다른 컬럼이 생성됩니다. _registry.md가 중복 사용을 원천 차단합니다.</div>
+</div>
+
+<div class="qa-item">
+  <div class="qa-q">Q4. AI가 쓴 티가 너무 나면 어떻게 하나요?</div>
+  <div class="qa-a">사람 냄새 조건이 최우선입니다. 주어 '나'의 독백체, 솔직한 시행착오, 자기비꼼, 구체적 수치(시간·횟수·장소)가 이를 방지합니다. 그래도 어색하면 <code>"더 사람 냄새 나게 수정해줘"</code>라고 말씀해주세요.</div>
+</div>
+
+<div class="qa-item">
+  <div class="qa-q">Q5. 분량이 1300자보다 너무 짧거나 길면?</div>
+  <div class="qa-a">1300자 ±200자 (1100~1500자) 범위에서 생성됩니다. 범위를 벗어나면 <code>"좀 더 길게/짧게 해줘"</code>라고 조정 요청하세요.</div>
+</div>
+
+<div class="qa-item">
+  <div class="qa-q">Q6. 특정 주제만 몰아서 생성할 수 있나요?</div>
+  <div class="qa-a">네. <code>"공자 책에서만 브랜드 컬럼 2개 써줘"</code>, <code>"심리학 주제로만 3개 써줘"</code> 등으로 특정 책·주제를 지정할 수 있습니다.</div>
+</div>
+
+<div class="qa-item">
+  <div class="qa-q">Q7. 생성된 컬럼을 수정하고 싶어요.</div>
+  <div class="qa-a"><code>"BRAND-20260615-001 이 컬럼 수정해줘"</code> 또는 <code>"두 번째 문단을 더 구체적으로 바꿔줘"</code> 등으로 요청하세요.</div>
+</div>
+
+<div class="qa-item">
+  <div class="qa-q">Q8. 발행한 컬럼은 어떻게 추적하나요?</div>
+  <div class="qa-a"><code>"브랜드 컬럼 리스트 보여줘"</code>로 전체 현황 조회. _registry.md에 draft/published 상태 기록, 발행 시 30_published/로 복사, calendar.md 등록.</div>
+</div>
+
+<div class="qa-item">
+  <div class="qa-q">Q9. 같은 내용의 컬럼이 두 번 생성될 수 있나요?</div>
+  <div class="qa-a">_registry.md가 사용 이력을 관리하므로 같은 소스 챕터가 두 번 사용되지 않습니다. 한 번 used가 되면 다시 선정되지 않습니다.</div>
+</div>
+
+<div class="qa-item">
+  <div class="qa-q">Q10. 법률 지식이 필요한 컬럼도 이 시스템으로 만들 수 있나요?</div>
+  <div class="qa-a">아닙니다. 이 시스템은 <strong>오직 비법률 소스</strong>만 다룹니다. 법률 컬럼이 필요하면 <code>/컬럼 [분야]</code> 명령을 사용하세요.</div>
+</div>
+
+<!-- ═══════ 7. 꿀팁 10선 ═══════ -->
+<h2 id="s7">7. 꿀팁 10선</h2>
+
+<div class="tip-card">
+  <div class="num">꿀팁 1</div>
+  <strong>첫 발행은 시스템 메타 컬럼으로</strong>
+  첫 브랜드 컬럼으로 "이 시스템을 왜 만들었는지" 그 자체를 소재로 삼아보세요. 브랜드의 메타서사가 독자의 호기심을 자극합니다.
+</div>
+
+<div class="tip-card">
+  <div class="num">꿀팁 2</div>
+  <strong>주 2회 일정을 캘린더에 매칭하라</strong>
+  <code>"다음 주 브랜드 컬럼 캘린더 짜줘"</code>라고 하면 브랜드 컬럼 발행 일정을 calendar.md에 등록할 수 있습니다.
+</div>
+
+<div class="tip-card">
+  <div class="num">꿀팁 3</div>
+  <strong>동일 주제를 2주 간격으로 재방문</strong>
+  한 책(예: E30_관계매니지먼트)에서 2주 간격으로 다른 챕터를 연속 컬럼화하면 독자가 "이 주제 시리즈"라고 인지합니다. 시리즈물은 engagement가 높습니다.
+</div>
+
+<div class="tip-card">
+  <div class="num">꿀팁 4</div>
+  <strong>웹 검색 키워드를 직접 지정하라</strong>
+  <code>"브랜드 컬럼 2개 써줘, 웹 검색 키워드는 '2026 직장인 심리 번아웃 트렌드'로 해줘"</code> — 검색 키워드를 직접 지정하면 원하는 방향으로 업그레이드됩니다.
+</div>
+
+<div class="tip-card">
+  <div class="num">꿀팁 5</div>
+  <strong>컬럼 하단에 행동 유도 장치를 넣어라</strong>
+  마지막 문단은 독자가 "오늘 저녁에 해볼 만한" 구체적 행동 1개로 끝내세요. 예: "오늘 밤, 5년 전 후회하는 결정 하나를 꺼내서 '그때 왜 그랬을까'를 3분만 적어보기로 했다."
+</div>
+
+<div class="tip-card">
+  <div class="num">꿀팁 6</div>
+  <strong>발행 후 24시간 내 반응을 기록하라</strong>
+  다음 날 <code>"어제 브랜드 컬럼 반응 알려줘 — 좋아요 X, 댓글 Y, 공유 Z"</code>라고 알려주세요. engagement_log.md에 기록되고 월간 리뷰 정확도가 올라갑니다.
+</div>
+
+<div class="tip-card">
+  <div class="num">꿀팁 7</div>
+  <strong>법률컬럼과 브랜드 컬럼을 교차 발행하라</strong>
+  A주: 법률컬럼(수) + 브랜드 컬럼(토) / B주: 브랜드 컬럼(수) + 법률컬럼(토) — 교차하면 독자층이 넓어집니다.
+</div>
+
+<div class="tip-card">
+  <div class="num">꿀팁 8</div>
+  <strong>컬럼의 소스 책을 태그하라</strong>
+  frontmatter에 source_book이 기록되므로 <code>"E28 책에서 만든 컬럼 다 보여줘"</code>로 특정 책 기반 컬럼만 모아볼 수 있습니다.
+</div>
+
+<div class="tip-card">
+  <div class="num">꿀팁 9</div>
+  <strong>분기 1회 소스 리밸런싱</strong>
+  3개월에 한 번 <code>"브랜드 컬럼 소스 현황 리밸런싱 해줘"</code> — 잔여 소스 분포 분석, 특정 책 편중 방지 조정 제안.
+</div>
+
+<div class="tip-card">
+  <div class="num">꿀팁 10</div>
+  <strong>AI 감지기를 통과하려면 개인 경험을 넣어라</strong>
+  "커피 2잔", "재판 복도 의자", "퇴근길 지하철" 같은 개인적 디테일이 컬럼을 AI와 구분짓습니다. <code>"내 경험을 좀 더 녹여줘"</code>라고 요청하세요.
+</div>
+
+<!-- ═══════ 8. 아카이브 및 발행 ═══════ -->
+<h2 id="s8">8. 아카이브 및 발행</h2>
+
+<h3>발행 절차</h3>
+<pre>[LLM] 컬럼 생성 → 60_비법컬럼/BRAND-*.md 저장
+   ↓
+[사용자] 초안 검토 → 필요시 수정 요청
+   ↓
+[사용자] 페이스북에 직접 발행
+   ↓
+[사용자] "발행했어" 명령
+   ↓
+[LLM]  30_published/ 로 복사
+       calendar.md → published
+       engagement_log.md 신규 행 추가
+       _registry.md → published</pre>
+
+<h3>파일 생애주기</h3>
+<p><code>draft(초안) → [사용자 검토] → published(발행 완료) / cancelled(부적합)</code></p>
+
+<h3>폴더 구조</h3>
+<pre>60_비법컬럼/
+├── _workflow_brand_column.md      ← 워크플로 (단일 진실원천)
+├── 브랜드컬럼_사용설명서_20260615.md  ← 사용설명서
+├── _registry.md                   ← 소스 사용 이력 원장
+├── BRAND-20260615-001_*.md        ← 생성 컬럼
+└── ... (차곡차곡 쌓임)</pre>
+
+<!-- ═══════ 푸터 ═══════ -->
+<div class="footer-note">
+  <strong>기억할 한 문장:</strong><br>
+  "원고를 베끼지 말고, 업그레이드하라. 웹 검색이 날개를 달아준다.<br>
+  AI 티가 나지 않는 유일한 방법은 <strong>'나'의 경험을 솔직하게 쓰는 것</strong>이다."
+</div>
+
+</div><!-- /.wrap -->
+</body>
+</html>
