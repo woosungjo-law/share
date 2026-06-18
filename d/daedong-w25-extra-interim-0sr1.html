@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>대동여주도 W25 추가정보 중간 리포트</title>
+  <style>
+    :root {
+      --ink: #111827;
+      --muted: #5f6b7a;
+      --line: #d9e2ec;
+      --soft: #f6f8fb;
+      --navy: #17345f;
+      --blue: #2d6cdf;
+      --green: #0f7a5a;
+      --amber: #b7791f;
+      --paper: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #eef3f8;
+      color: var(--ink);
+      font-family: "Malgun Gothic", "Apple SD Gothic Neo", Arial, sans-serif;
+      line-height: 1.72;
+      word-break: keep-all;
+    }
+    .page {
+      width: min(1040px, calc(100% - 32px));
+      margin: 28px auto;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 48px rgba(20, 38, 70, 0.12);
+    }
+    header {
+      padding: 42px 48px 34px;
+      border-top: 9px solid var(--navy);
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    }
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 700;
+    }
+    h1 {
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.22;
+      letter-spacing: 0;
+    }
+    .subtitle {
+      margin: 18px 0 0;
+      max-width: 820px;
+      color: #374151;
+      font-size: 17px;
+    }
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .meta div {
+      padding: 12px 14px;
+      background: #f2f6fb;
+      border: 1px solid #dde7f2;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    .meta strong {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--navy);
+      font-size: 12px;
+    }
+    main { padding: 38px 48px 46px; }
+    section { margin: 0 0 40px; }
+    h2 {
+      margin: 0 0 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--navy);
+      color: var(--navy);
+      font-size: 24px;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+    h3 {
+      margin: 24px 0 10px;
+      color: #20395f;
+      font-size: 18px;
+      letter-spacing: 0;
+    }
+    p { margin: 0 0 14px; }
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 24px 0 0;
+    }
+    .summary-card {
+      padding: 18px 18px 16px;
+      border: 1px solid #cbd8e6;
+      border-radius: 8px;
+      background: #f8fbff;
+    }
+    .summary-card b {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--navy);
+      font-size: 17px;
+    }
+    .callout {
+      margin: 18px 0;
+      padding: 16px 18px;
+      border-left: 5px solid var(--blue);
+      background: #f4f8ff;
+      color: #1f2f46;
+    }
+    .note {
+      border-left-color: var(--green);
+      background: #f2fbf7;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 20px;
+      font-size: 15px;
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 11px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #eef4fb;
+      color: var(--navy);
+      font-weight: 700;
+    }
+    tbody tr:nth-child(even) td { background: #fbfdff; }
+    ul, ol {
+      margin: 10px 0 18px 22px;
+      padding: 0;
+    }
+    li { margin: 6px 0; }
+    .check-table td:first-child {
+      width: 110px;
+      color: var(--amber);
+      font-weight: 700;
+    }
+    footer {
+      padding: 24px 48px 34px;
+      border-top: 1px solid var(--line);
+      background: #f8fafc;
+      color: #4b5563;
+      font-size: 14px;
+    }
+    @media (max-width: 760px) {
+      .page { width: 100%; margin: 0; border-left: 0; border-right: 0; }
+      header, main, footer { padding-left: 22px; padding-right: 22px; }
+      .meta, .summary { grid-template-columns: 1fr; }
+      table { font-size: 13px; }
+      th, td { padding: 9px 8px; }
+    }
+    @media print {
+      body { background: #fff; }
+      .page { margin: 0; width: 100%; box-shadow: none; border: 0; }
+    }
+  </style>
+</head>
+<body>
+  <article class="page">
+    <header>
+<meta name="robots" content="noindex,nofollow">
+      <p class="eyebrow">Legal Risk Radar | W25 추가정보</p>
+      <h1>대동여주도 리스크레이더<br>W25 추가정보 중간 리포트</h1>
+      <p class="subtitle">2026년 6월 18일 수령 자료 중 신규 계약서 검토 요청을 제외하고, 새롭게 확인된 양 법인 분리운영 증빙과 SLL 정산 관련 사항만 정리했습니다.</p>
+      <div class="meta">
+        <div><strong>수신</strong>이세민 대표 / 이정연 부장</div>
+        <div><strong>발행</strong>2026-06-18</div>
+        <div><strong>작성</strong>조우성 변호사</div>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <h2>핵심 요약</h2>
+        <p>이번 리포트는 이미 답변이 완료된 수원양조 계약 부분을 제외하고, 새롭게 확인된 정보만 정리한 것입니다. 핵심은 두 가지입니다. 첫째, 양 법인 분리운영에 관한 1차 증빙이 들어왔고, 둘째, SLL 정산 및 회생절차 관련 대응 방향이 확인되었습니다.</p>
+        <div class="summary">
+          <div class="summary-card">
+            <b>양 법인 분리운영</b>
+            대표 겸임 구조는 유지하되, 실제 운영 분리 증빙을 보강하는 방향으로 내부 결정이 이루어졌습니다.
+          </div>
+          <div class="summary-card">
+            <b>SLL 정산·증빙관리</b>
+            정산 사이클은 작동 중이며, 향후 주요 협의사항을 이메일 등 문서로 남기는 관리 방식이 필요합니다.
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>1. 오늘 새로 확인된 사항</h2>
+        <table>
+          <thead>
+            <tr><th>구분</th><th>새로 확인된 정보</th><th>실무상 의미</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>대표 겸임 구조</td><td>현재는 겸임 구조를 유지하되, 실제 운영 분리 증빙을 보강하는 방향으로 내부 결정</td><td>구조 자체의 리스크는 남아 있으나, 방어 증빙 구축 단계로 전환</td></tr>
+            <tr><td>양 법인 운영 분리</td><td>계좌·장부·인력·거래처·의사결정 항목에 대한 1차 현황 및 증빙자료 수령</td><td>독립 운영 5요소를 문서화할 수 있는 기초자료 확보</td></tr>
+            <tr><td>내부 거래 여부</td><td>양 법인 간 제품 매매나 내부 거래가 발생하지 않는 구조라고 확인</td><td>면허 대여 또는 사실상 공동운영 의심을 낮추는 긍정 자료</td></tr>
+            <tr><td>온라인 판매 구조</td><td>농업법인은 온라인 판매만 진행하고, 대동여주도는 주류 도소매 면허상 온라인 판매를 진행하지 않는 것으로 확인</td><td>법인별 역할 구분을 설명할 수 있는 자료</td></tr>
+            <tr><td>SLL 정산</td><td>2026년 4월 말 및 5월 판매 수량과 로열티 정산 내역 확인</td><td>정산 사이클이 실제로 작동 중임을 확인</td></tr>
+            <tr><td>SLL 협의 증빙</td><td>권리자 표기 및 지정상품 승인 내역은 구두 협의로 진행되어 별도 증빙이 없는 것으로 확인</td><td>향후 이메일·문서 증빙 관리가 필요</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>2. 양 법인 분리운영</h2>
+        <p>이번에 제출된 자료는 대표 겸임 구조 자체를 해소하는 자료는 아니지만, 양 법인이 실제로 분리되어 운영되고 있다는 점을 설명하는 데 의미가 있습니다.</p>
+        <table>
+          <thead>
+            <tr><th>항목</th><th>제출·확인 내용</th><th>평가</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>인력</td><td>4대보험 가입자 명부상 법인별 인력 구분 자료</td><td>법인별 인력 분리의 1차 증빙</td></tr>
+            <tr><td>장부</td><td>회계프로그램 회사코드가 별도로 운영되는 자료</td><td>재무장부 분리의 1차 증빙</td></tr>
+            <tr><td>매출</td><td>농업법인의 부가가치세 신고서 매출신고 내역</td><td>농업법인 매출이 별도 집계되고 있음을 보여주는 자료</td></tr>
+            <tr><td>거래처</td><td>농업법인 온라인 거래처 현황</td><td>법인별 거래 채널 구분을 설명하는 자료</td></tr>
+            <tr><td>내부 거래</td><td>양 법인 간 제품 매매나 내부 거래가 없다는 설명</td><td>면허 대여·동업경영 의심을 낮추는 방향의 자료</td></tr>
+          </tbody>
+        </table>
+        <div class="callout note">현재 제출된 자료만으로 모든 리스크가 해소되었다고 보기는 어렵습니다. 다만 이번 자료는 방어 논리를 구성하는 첫 묶음으로 의미가 있습니다.</div>
+      </section>
+
+      <section>
+        <h2>3. 아직 남아 있는 포인트</h2>
+        <h3>겸임 구조 자체는 아직 남아 있습니다</h3>
+        <p>현재 내부 결정은 대표 겸임을 바로 해소하기보다, 실제 운영 분리 증빙을 보강하는 방향입니다. 이 방향도 실무적으로 가능한 선택입니다. 다만 겸임 구조가 유지되는 동안에는 독립 운영 자료가 계속 축적되어야 합니다.</p>
+
+        <h3>의사결정 분리 자료는 더 보강하면 좋습니다</h3>
+        <p>이번 자료는 인력·회계·매출·거래처 쪽 증빙으로는 의미가 큽니다. 다음 단계에서는 각 법인의 주요 의사결정이 별도로 이루어졌다는 자료가 있으면 좋습니다.</p>
+        <ul>
+          <li>법인별 내부 결재문서</li>
+          <li>법인별 거래처 선정·가격 결정 자료</li>
+          <li>법인별 주요 회의록 또는 업무지시 기록</li>
+          <li>법인별 통장 입출금 내역 중 주요 거래 부분</li>
+          <li>법인별 재무제표 또는 결산자료</li>
+        </ul>
+
+        <h3>일부 업무 협조는 허용되더라도 근거가 필요합니다</h3>
+        <p>두 법인이 소규모 조직이기 때문에 일부 업무를 서로 협조할 수밖에 없다는 설명은 현실적으로 이해됩니다. 다만 법적으로는 그 협조가 사실상 하나의 회사 운영으로 보이지 않도록 관리해야 합니다.</p>
+      </section>
+
+      <section>
+        <h2>4. SLL 정산</h2>
+        <p>SLL 관련해서는 현재 방향이 적절합니다. 대동여주도는 로열티를 지급하는 입장이고, 현재 재고 규모도 크지 않으므로 과도한 선제 조치보다는 아래 방향이 맞습니다.</p>
+        <ul>
+          <li>관리인 또는 SLL 측의 향후 입장 변화 모니터링</li>
+          <li>기존 계약상 정산·보고 의무 정상 이행</li>
+          <li>판매현황 및 정산 내역을 매월 보관</li>
+          <li>주요 협의사항은 앞으로 이메일 등 문서로 남기기</li>
+        </ul>
+        <div class="callout">이번 정산 자료상 확인되는 판매 수량은 2026년 4월 말 48병, 2026년 5월 494병입니다. 정산서상 최종 수수료 합계는 4,661,118원으로 확인됩니다.</div>
+      </section>
+
+      <section>
+        <h2>5. 실무자 관리 체크리스트</h2>
+        <table class="check-table">
+          <thead>
+            <tr><th>우선순위</th><th>할 일</th><th>담당 실무 포인트</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>높음</td><td>양 법인 분리운영 증빙 폴더 생성</td><td>4대보험, 회계코드, 부가세 신고, 거래처 현황 자료를 한 곳에 보관</td></tr>
+            <tr><td>높음</td><td>의사결정 분리 자료 추가 축적</td><td>법인별 결재문서, 회의록, 가격·거래처 결정 자료 보관</td></tr>
+            <tr><td>중간</td><td>법인 간 협조 업무 정리</td><td>반복 협조 업무가 있으면 역할분장표 또는 업무위탁 문서로 정리</td></tr>
+            <tr><td>중간</td><td>SLL 정산자료 월별 보관</td><td>정산서, 판매내역, 지급내역, 확인 메일을 월별 폴더에 저장</td></tr>
+            <tr><td>중간</td><td>SLL 주요 협의사항 서면화</td><td>권리자 표기, 지정상품 승인, 지급계좌 확인 등은 이메일로 남기기</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>6. 다음 회신 때 확인하면 좋은 질문</h2>
+        <ol>
+          <li>양 법인별 주요 법인계좌 사본 또는 계좌 구분표</li>
+          <li>법인별 2025년 또는 2026년 결산자료·재무제표</li>
+          <li>법인별 주요 의사결정 결재문서 또는 회의록 샘플</li>
+          <li>반복적으로 상호 협조하는 업무가 있다면 그 업무 목록</li>
+          <li>SLL 권리자 표기·지정상품 승인 내용을 사후 확인하는 이메일</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>7. 정리</h2>
+        <p>오늘 추가 자료의 의미는 분명합니다. 대표 겸임 구조는 유지되지만, 양 법인이 실제로 분리 운영되고 있다는 증빙을 쌓기 시작했다는 점에서 긍정적입니다. 특히 인력, 장부, 매출, 거래처 관련 자료가 들어온 것은 향후 방어 자료로 활용할 수 있습니다.</p>
+        <p>다만 이 자료들은 일회성 제출로 끝내기보다 계속 누적되어야 합니다. 앞으로의 목표는 문제 없음을 설명하는 것이 아니라, 문제가 제기되었을 때 바로 보여줄 수 있는 자료철을 만들어 두는 것입니다.</p>
+        <p>SLL 관련해서도 현재 대응 방향은 적절합니다. 다만 구두 협의로 처리된 사항은 향후 담당자 변경이나 분쟁 가능성에 대비해 이메일 등으로 보강해 두시길 권합니다.</p>
+      </section>
+    </main>
+
+    <footer>
+      본 리포트는 변호사-의뢰인 비밀유지 특권이 적용되는 법률 자문입니다. 외부 공개 금지.
+    </footer>
+  </article>
+</body>
+</html>
