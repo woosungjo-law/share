@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>노바스튜디오랩 자료 결손·증빙 추적표</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=SUIT:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap');
+    :root{
+      --bg:#0b1220;
+      --panel:#ffffff;
+      --panel-soft:#f4f7fb;
+      --ink:#112031;
+      --muted:#5d6a78;
+      --line:#d7e0ea;
+      --navy:#11335d;
+      --blue:#1877f2;
+      --teal:#0f9d94;
+      --amber:#be7a00;
+      --red:#c33f31;
+      --peach:#fff3ea;
+      --mint:#ecfffb;
+      --sky:#eef5ff;
+      --shadow:0 30px 70px rgba(8,17,31,.22);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family:"SUIT","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 0% 0%, rgba(24,119,242,.22), transparent 22%),
+        radial-gradient(circle at 100% 0%, rgba(15,157,148,.18), transparent 20%),
+        linear-gradient(180deg, #0b1220 0%, #101a2e 24%, #e9eff6 24%, #eef3f8 100%);
+      min-height:100vh;
+      line-height:1.7;
+    }
+    .wrap{
+      width:min(1260px, calc(100vw - 28px));
+      margin:0 auto;
+      padding:24px 0 52px;
+    }
+    .hero{
+      position:relative;
+      overflow:hidden;
+      border-radius:30px;
+      padding:34px 34px 28px;
+      background:
+        linear-gradient(135deg, rgba(10,26,47,.96), rgba(17,51,93,.94) 48%, rgba(24,119,242,.92) 100%);
+      color:#f8fbff;
+      box-shadow:var(--shadow);
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      right:-80px;
+      top:-40px;
+      width:300px;
+      height:300px;
+      background:radial-gradient(circle, rgba(255,255,255,.16), transparent 62%);
+    }
+    .eyebrow{
+      display:inline-flex;
+      padding:7px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.1);
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+    .hero-head{
+      display:flex;
+      justify-content:space-between;
+      gap:22px;
+      align-items:flex-end;
+      flex-wrap:wrap;
+      margin-top:14px;
+    }
+    h1{
+      margin:0;
+      max-width:800px;
+      font-size:42px;
+      line-height:1.05;
+      letter-spacing:-.05em;
+      font-weight:900;
+    }
+    .hero-meta{
+      min-width:280px;
+      text-align:right;
+      display:grid;
+      gap:6px;
+      font-size:14px;
+      color:rgba(248,251,255,.86);
+    }
+    .lead-grid{
+      display:grid;
+      grid-template-columns:1.4fr .9fr;
+      gap:16px;
+      margin-top:24px;
+    }
+    .lead-card{
+      position:relative;
+      z-index:1;
+      border-radius:22px;
+      padding:20px 20px 18px;
+      background:rgba(255,255,255,.1);
+      border:1px solid rgba(255,255,255,.16);
+      backdrop-filter:blur(10px);
+    }
+    .lead-card strong{
+      display:block;
+      margin-bottom:8px;
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      opacity:.9;
+    }
+    .summary-band{
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin-top:16px;
+      padding:14px 16px;
+      border-radius:18px;
+      background:#ffffff;
+      color:var(--navy);
+    }
+    .summary-band p{
+      margin:0;
+      flex:1 1 480px;
+      font-weight:600;
+    }
+    .share{
+      display:grid;
+      gap:4px;
+      min-width:320px;
+    }
+    .share span{
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:#6b7f94;
+    }
+    .share-link{
+      color:var(--blue);
+      font-weight:800;
+      text-decoration:none;
+      word-break:break-all;
+    }
+    .muted-link{color:#6b7f94}
+    .metrics{
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      gap:16px;
+      margin:18px 0;
+    }
+    .metric-card,.info-card,.table-card,.action-card,.close-card{
+      background:var(--panel);
+      border:1px solid rgba(17,32,49,.06);
+      border-radius:24px;
+      box-shadow:0 18px 36px rgba(17,32,49,.08);
+    }
+    .metric-card{padding:20px}
+    .chip{
+      display:inline-flex;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+    .chip-red{background:#fdeceb;color:var(--red)}
+    .chip-amber{background:#fff1d8;color:var(--amber)}
+    .chip-sky{background:#eaf3ff;color:var(--blue)}
+    .chip-navy{background:#eaf0f7;color:var(--navy)}
+    .metric-value{
+      margin-top:14px;
+      font-family:"Space Grotesk","SUIT",sans-serif;
+      font-size:38px;
+      line-height:1;
+      letter-spacing:-.05em;
+      font-weight:700;
+      color:var(--navy);
+    }
+    .metric-note{
+      margin:8px 0 0;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+      margin-bottom:18px;
+    }
+    .info-card,.table-card,.close-card{padding:24px}
+    .section-kicker{
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:#73879b;
+      margin-bottom:8px;
+    }
+    h2{
+      margin:0 0 14px;
+      font-size:25px;
+      line-height:1.15;
+      letter-spacing:-.04em;
+      color:var(--navy);
+    }
+    h3{
+      margin:0 0 10px;
+      font-size:20px;
+      line-height:1.2;
+      letter-spacing:-.03em;
+      color:var(--navy);
+    }
+    .body-list{
+      margin:0;
+      padding-left:18px;
+    }
+    .body-list li+li{margin-top:8px}
+    .table-card{
+      background:linear-gradient(180deg, #ffffff 0%, #f6f9fc 100%);
+    }
+    table{
+      width:100%;
+      border-collapse:collapse;
+      overflow:hidden;
+      border-radius:18px;
+      background:#fff;
+    }
+    th{
+      padding:14px 14px;
+      text-align:left;
+      background:linear-gradient(180deg, #123661 0%, #0d2747 100%);
+      color:#f8fbff;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+    }
+    td{
+      padding:14px;
+      border-bottom:1px solid var(--line);
+      vertical-align:top;
+      font-size:14px;
+    }
+    tr:last-child td{border-bottom:none}
+    .action-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:16px;
+      margin-top:16px;
+    }
+    .action-card{
+      padding:22px;
+      background:linear-gradient(180deg, #fff 0%, var(--panel-soft) 100%);
+    }
+    .action-when{
+      display:inline-flex;
+      padding:6px 10px;
+      border-radius:999px;
+      background:var(--navy);
+      color:#fff;
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      margin-bottom:12px;
+    }
+    .close-card{
+      margin-top:18px;
+      background:linear-gradient(135deg, var(--peach) 0%, #fff 48%, var(--mint) 100%);
+      border:1px solid rgba(17,51,93,.08);
+    }
+    .close-card p{
+      margin:0;
+      font-size:16px;
+      font-weight:600;
+      color:var(--ink);
+    }
+    .footer{
+      margin-top:12px;
+      text-align:center;
+      color:#6d7c8c;
+      font-size:12px;
+    }
+    @media (max-width: 1020px){
+      .lead-grid,.grid-2{grid-template-columns:1fr}
+      .metrics,.action-grid{grid-template-columns:repeat(2, minmax(0,1fr))}
+      .hero-meta{text-align:left}
+    }
+    @media (max-width: 720px){
+      .wrap{width:min(100vw - 16px, 1260px);padding:16px 0 40px}
+      .hero{padding:24px 18px 20px;border-radius:24px}
+      h1{font-size:32px}
+      .metrics,.action-grid{grid-template-columns:1fr}
+      .summary-band{padding:14px}
+      .share{min-width:auto}
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">Risk Radar · doc_gap_tracker</div>
+      <div class="hero-head">
+        <h1>노바스튜디오랩 자료 결손·증빙 추적표</h1>
+        <div class="hero-meta">
+          <span>브랜드 콘텐츠 제작</span>
+          <span>격주 자료 회수 · 대표 · 경영관리실</span>
+        </div>
+      </div>
+      <div class="lead-grid">
+        <article class="lead-card">
+          <strong>한 줄 판단</strong>
+          <div>현재 분석이 막히는 가장 큰 이유는 법리가 아니라 외주계약 최신본과 정산표가 아직 도착하지 않았기 때문입니다.</div>
+        </article>
+        <article class="lead-card">
+          <strong>메모</strong>
+          <div>무엇이 없어서 어떤 판단이 멈추는지 선명하게 보여줘야 회신 속도가 올라갑니다.</div>
+        </article>
+      </div>
+      <div class="summary-band">
+        <p>외주계약 최신본, 정산표, 승인메일 세 축의 미수령이 판단 지연을 만들고 있습니다. 특히 외주계약 최신본과 정산표는 우선순위가 높아 다음 주 전에 받아야 실질 판단이 가능합니다.</p>
+        <div class="share">
+          <span>공유 URL</span>
+          <a class="share-link" href="https://woosungjo-law.github.io/share/d/riskradar-nova-doc-gap-hyr2.html">https://woosungjo-law.github.io/share/d/riskradar-nova-doc-gap-hyr2.html</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="metrics">
+    <article class="metric-card">
+      <div class="chip chip-red">미수령 자료</div>
+      <div class="metric-value">5건</div>
+      <p class="metric-note">우선순위 포함</p>
+    </article>
+  
+    <article class="metric-card">
+      <div class="chip chip-amber">지연 영향</div>
+      <div class="metric-value">3축</div>
+      <p class="metric-note">계약 · 세금 · 저작권</p>
+    </article>
+  
+    <article class="metric-card">
+      <div class="chip chip-navy">즉시 회수</div>
+      <div class="metric-value">2건</div>
+      <p class="metric-note">이번 주 마감</p>
+    </article>
+  
+    <article class="metric-card">
+      <div class="chip chip-sky">왕복 감소</div>
+      <div class="metric-value">높음</div>
+      <p class="metric-note">질문 반복 축소</p>
+    </article>
+  </section>
+
+    <section class="grid-2">
+      
+    <article class="info-card">
+      <div class="section-kicker">Core View</div>
+      <h2>현재 병목</h2>
+      <ul class="body-list">
+        <li>판단이 늦어지는 이유를 '자료가 없다'는 말로만 적으면 회신이 잘 오지 않습니다.</li><li>어떤 자료가 왜 필요한지, 없으면 무엇을 못 보는지까지 적어야 병목이 풀립니다.</li>
+      </ul>
+    </article>
+  
+    <article class="info-card">
+      <div class="section-kicker">Core View</div>
+      <h2>이번 회수 원칙</h2>
+      <ul class="body-list">
+        <li>최우선 자료 2건부터 회수</li><li>승인메일은 캠페인별 폴더로 정리</li><li>미수령이 누적되면 대표 보고로 상향</li>
+      </ul>
+    </article>
+  
+    </section>
+
+    <section class="table-card">
+      <div class="section-kicker">Priority Board</div>
+      <h2>이번 리포트가 잡아주는 우선순위</h2>
+      <table>
+        <thead>
+          <tr><th>시급성</th><th>영향</th><th>권장 조치</th></tr>
+        </thead>
+        <tbody>
+    <tr>
+      <td>즉시</td>
+      <td>외주계약 최신본 미수령</td>
+      <td>저작권 귀속 판단이 멈춤</td>
+    </tr>
+  
+    <tr>
+      <td>이번 주</td>
+      <td>세금계산서·정산표 누락</td>
+      <td>수익분배 구조 검증 지연</td>
+    </tr>
+  
+    <tr>
+      <td>이번 달</td>
+      <td>캠페인 승인메일 미정리</td>
+      <td>광고표시 책임선 확인 지연</td>
+    </tr>
+  </tbody>
+      </table>
+    </section>
+
+    <section class="table-card" style="margin-top:18px;">
+      <div class="section-kicker">Detail Ledger</div>
+      <h2>자료 결손 보드</h2>
+      <table>
+        <thead>
+          <tr><th>자료</th><th>왜 필요한가</th><th>없으면 멈추는 판단</th><th>우선순위</th></tr>
+        </thead>
+        <tbody>
+    <tr><td>외주계약 최신본</td><td>저작권 귀속 확인</td><td>2차활용 가능범위</td><td>높음</td></tr>
+  
+    <tr><td>정산표</td><td>수익배분 검증</td><td>정산클레임 대응</td><td>높음</td></tr>
+  
+    <tr><td>승인메일</td><td>광고책임선 확인</td><td>대외표현 분쟁 대응</td><td>중간</td></tr>
+  
+    <tr><td>결과보고</td><td>성과약속 범위 확인</td><td>환불·배상 구조</td><td>중간</td></tr>
+  </tbody>
+      </table>
+    </section>
+
+    <section class="action-grid">
+    <article class="action-card">
+      <div class="action-when">D+2</div>
+      <h3>최우선 자료 2건 회수</h3>
+      <p>외주계약 최신본과 정산표를 먼저 받습니다.</p>
+    </article>
+  
+    <article class="action-card">
+      <div class="action-when">D+5</div>
+      <h3>승인메일 정리</h3>
+      <p>캠페인별 승인 흐름을 한 폴더로 묶습니다.</p>
+    </article>
+  </section>
+
+    <section class="close-card">
+      <div class="section-kicker">Closing View</div>
+      <h2>정리</h2>
+      <p>자료 추적표는 독촉장이 아니라, 판단 지연을 가장 적은 마찰로 줄이기 위한 운영 문서입니다.</p>
+    </section>
+
+    <div class="footer">Legal Risk Foundry · Risk Radar</div>
+  </main>
+</body>
+</html>
