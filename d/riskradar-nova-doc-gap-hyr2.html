@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>노바스튜디오랩 자료 결손·증빙 추적표</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
+    :root{
+      --bg:#f4efe7;
+      --surface:rgba(255,255,255,.76);
+      --surface-strong:#ffffff;
+      --ink:#132433;
+      --muted:#5f6b78;
+      --line:rgba(19,36,51,.12);
+      --navy:#153b63;
+      --navy-deep:#0c2743;
+      --copper:#b97845;
+      --copper-soft:#e7c7aa;
+      --red:#b73a2d;
+      --amber:#ad6f1c;
+      --sky:#5e84af;
+      --shadow:0 22px 55px rgba(21,59,99,.12);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(185,120,69,.22), transparent 28%),
+        radial-gradient(circle at top right, rgba(94,132,175,.18), transparent 32%),
+        linear-gradient(180deg, #f7f3ec 0%, #f2ede5 48%, #ebe5db 100%);
+      line-height:1.72;
+      min-height:100vh;
+    }
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background-image:linear-gradient(rgba(19,36,51,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(19,36,51,.03) 1px, transparent 1px);
+      background-size:32px 32px;
+      pointer-events:none;
+      opacity:.35;
+    }
+    .wrap{
+      width:min(1220px, calc(100vw - 32px));
+      margin:0 auto;
+      padding:28px 0 56px;
+      position:relative;
+      z-index:1;
+    }
+    .hero{
+      position:relative;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.34);
+      background:
+        linear-gradient(135deg, rgba(12,39,67,.96), rgba(21,59,99,.92) 46%, rgba(96,70,45,.92));
+      color:#f6f0e9;
+      border-radius:28px;
+      padding:34px 34px 28px;
+      box-shadow:var(--shadow);
+      margin-bottom:18px;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      right:-70px;
+      top:-70px;
+      width:240px;
+      height:240px;
+      background:radial-gradient(circle, rgba(255,255,255,.22), transparent 66%);
+      filter:blur(6px);
+    }
+    .eyebrow{
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      opacity:.82;
+    }
+    .title-row{
+      display:flex;
+      gap:24px;
+      justify-content:space-between;
+      align-items:flex-end;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+    .title{
+      font-family:"Plus Jakarta Sans","IBM Plex Sans KR",sans-serif;
+      font-size:38px;
+      font-weight:800;
+      letter-spacing:-.04em;
+      line-height:1.1;
+      margin:0;
+      max-width:760px;
+    }
+    .hero-meta{
+      display:grid;
+      gap:6px;
+      min-width:260px;
+      font-size:14px;
+      opacity:.95;
+      text-align:right;
+    }
+    .hero-copy{
+      display:grid;
+      grid-template-columns:1.5fr .9fr;
+      gap:18px;
+      margin-top:22px;
+    }
+    .hero-panel, .share-banner, .metric-card, .note-card, .table-card, .action-card{
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+    }
+    .hero-panel{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:20px;
+      padding:18px 18px 16px;
+    }
+    .hero-panel p{margin:0}
+    .hero-panel strong{display:block;margin-bottom:6px;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+    .share-banner{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      margin-top:16px;
+      border-radius:18px;
+      padding:14px 18px;
+      background:rgba(255,255,255,.84);
+      border:1px solid rgba(255,255,255,.62);
+      color:var(--navy-deep);
+    }
+    .share-banner a{color:var(--navy);font-weight:700;text-decoration:none;word-break:break-all}
+    .share-label{
+      font-size:11px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:var(--muted);
+      font-weight:700;
+    }
+    .metrics{
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      gap:16px;
+      margin:18px 0;
+    }
+    .metric-card{
+      background:var(--surface);
+      border:1px solid rgba(255,255,255,.7);
+      border-radius:22px;
+      padding:18px;
+      box-shadow:0 18px 44px rgba(17,24,39,.06);
+    }
+    .chip{
+      display:inline-flex;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:11px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      font-weight:700;
+    }
+    .chip-red{background:#fde7e4;color:var(--red)}
+    .chip-amber{background:#f7ebd7;color:var(--amber)}
+    .chip-sky{background:#e8eef6;color:var(--sky)}
+    .chip-navy{background:#dfe8f2;color:var(--navy)}
+    .metric-value{
+      font-family:"Plus Jakarta Sans","IBM Plex Sans KR",sans-serif;
+      font-size:34px;
+      font-weight:800;
+      letter-spacing:-.04em;
+      margin-top:14px;
+    }
+    .metric-note{margin:8px 0 0;color:var(--muted);font-size:14px}
+    .section-grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:16px;
+      margin-bottom:18px;
+    }
+    .note-card, .table-card{
+      background:var(--surface);
+      border:1px solid rgba(255,255,255,.74);
+      border-radius:24px;
+      padding:22px;
+      box-shadow:0 18px 44px rgba(17,24,39,.06);
+    }
+    .section-kicker{
+      font-size:11px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:var(--copper);
+      font-weight:700;
+      margin-bottom:8px;
+    }
+    h2{
+      margin:0 0 14px;
+      font-size:24px;
+      letter-spacing:-.03em;
+      color:var(--navy-deep);
+    }
+    h3{
+      margin:0 0 10px;
+      font-size:18px;
+      letter-spacing:-.02em;
+      color:var(--navy);
+    }
+    p, li, td{font-size:14px}
+    .note-card ul{
+      margin:0;
+      padding-left:18px;
+      color:var(--ink);
+    }
+    .note-card li+li{margin-top:8px}
+    .priority-table{
+      width:100%;
+      border-collapse:collapse;
+      overflow:hidden;
+      border-radius:18px;
+      background:var(--surface-strong);
+      margin-top:8px;
+    }
+    .priority-table th{
+      background:linear-gradient(180deg, rgba(21,59,99,.95), rgba(12,39,67,.98));
+      color:#f8f4ee;
+      text-align:left;
+      font-size:12px;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      padding:13px 14px;
+    }
+    .priority-table td{
+      padding:13px 14px;
+      border-bottom:1px solid var(--line);
+      vertical-align:top;
+    }
+    .priority-table tr:last-child td{border-bottom:none}
+    .action-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:16px;
+      margin-top:16px;
+    }
+    .action-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.72));
+      border:1px solid rgba(255,255,255,.8);
+      border-radius:22px;
+      padding:20px;
+      box-shadow:0 18px 44px rgba(17,24,39,.06);
+    }
+    .action-when{
+      color:var(--copper);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      margin-bottom:10px;
+    }
+    .footer-band{
+      margin-top:18px;
+      border-radius:22px;
+      padding:18px 22px;
+      background:linear-gradient(135deg, rgba(185,120,69,.12), rgba(21,59,99,.16));
+      border:1px solid rgba(19,36,51,.08);
+      color:var(--navy-deep);
+      font-weight:600;
+    }
+    .fine-print{
+      color:var(--muted);
+      font-size:12px;
+      margin-top:12px;
+      text-align:center;
+    }
+    @media (max-width: 980px){
+      .metrics,.action-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .section-grid,.hero-copy{grid-template-columns:1fr}
+      .hero-meta{text-align:left}
+    }
+    @media (max-width: 720px){
+      .wrap{width:min(100vw - 18px, 1220px);padding:18px 0 40px}
+      .hero{padding:24px 18px 20px;border-radius:22px}
+      .title{font-size:30px}
+      .metrics,.action-grid{grid-template-columns:1fr}
+      .note-card,.table-card,.metric-card,.action-card{border-radius:18px}
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">Risk Radar Demo Portfolio · doc_gap_tracker</div>
+      <div class="title-row">
+        <h1 class="title">노바스튜디오랩 자료 결손·증빙 추적표</h1>
+        <div class="hero-meta">
+          <span>가상 회사 · 브랜드 콘텐츠 제작</span>
+          <span>격주 자료 회수 · 대상 대표·경영관리실</span>
+        </div>
+      </div>
+      <div class="hero-copy">
+        <div class="hero-panel">
+          <strong>이 샘플이 보여주는 것</strong>
+          <p>자료가 안 와서 분석이 멈추는 상황을 관리형 문서로 바꿔주는 샘플입니다.</p>
+        </div>
+        <div class="hero-panel">
+          <strong>메모</strong>
+          <p>고문서비스의 병목은 종종 법리가 아니라 '자료 미수령'입니다. 이 포맷은 그 병목을 직접 다룹니다.</p>
+        </div>
+      </div>
+      <div class="share-banner">
+         <span class="share-label">공유 URL</span>
+         <span>게시 후 자동 반영 예정</span>
+       </div>
+    </section>
+
+    <section class="metrics">
+      
+        <article class="metric-card">
+          <div class="chip chip-red">미수령 자료</div>
+          <div class="metric-value">5건</div>
+          <p class="metric-note">우선순위 포함</p>
+        </article>
+        <article class="metric-card">
+          <div class="chip chip-amber">분석 지연 영향</div>
+          <div class="metric-value">3축</div>
+          <p class="metric-note">계약·세금·저작권</p>
+        </article>
+        <article class="metric-card">
+          <div class="chip chip-navy">즉시 회신 요청</div>
+          <div class="metric-value">2건</div>
+          <p class="metric-note">이번 주 마감</p>
+        </article>
+        <article class="metric-card">
+          <div class="chip chip-sky">추정 시간절감</div>
+          <div class="metric-value">높음</div>
+          <p class="metric-note">왕복질문 감소</p>
+        </article>
+    </section>
+
+    <section class="section-grid">
+      <article class="note-card">
+        <div class="section-kicker">One Read Summary</div>
+        <h2>왜 이 형식이 먹히는가</h2>
+        <p>실무자는 무엇이 부족한지 명확할수록 회신합니다. 그래서 이 문서는 관계 유지에도 강합니다.</p>
+      </article>
+      <article class="table-card">
+        <div class="section-kicker">Priority Board</div>
+        <h2>이번 리포트가 잡아주는 우선순위</h2>
+        <table class="priority-table">
+          <thead>
+            <tr><th>시급성</th><th>영향</th><th>권장 조치</th></tr>
+          </thead>
+          <tbody>
+            
+          <tr>
+            <td>즉시</td>
+            <td>외주계약 최신본 미수령</td>
+            <td>저작권 귀속 판단이 멈춤</td>
+          </tr>
+          <tr>
+            <td>이번 주</td>
+            <td>세금계산서·정산표 누락</td>
+            <td>수익분배 구조 검증 지연</td>
+          </tr>
+          <tr>
+            <td>이번 달</td>
+            <td>캠페인 승인메일 미정리</td>
+            <td>광고표시 책임선 확인 지연</td>
+          </tr>
+          </tbody>
+        </table>
+      </article>
+    </section>
+
+    <section class="section-grid">
+      
+        <article class="note-card">
+          <h3>자료 추적표의 역할</h3>
+          <ul>
+            <li>무엇이 없어서 판단을 보류하는지 명확히 보여줍니다.</li><li>단순 요청이 아니라 왜 필요한지까지 적기 때문에 회신율이 높아집니다.</li>
+          </ul>
+        </article>
+        <article class="note-card">
+          <h3>운영 팁</h3>
+          <ul>
+            <li>격주 발행</li><li>위클리와 연결</li><li>미수령이 누적되면 대표 요약보고서에 상향</li>
+          </ul>
+        </article>
+    </section>
+
+    <section class="table-card">
+      <div class="section-kicker">Proof Layout</div>
+      <h2>자료 결손 보드</h2>
+      <table class="priority-table">
+        <thead>
+          <tr><th>자료</th><th>왜 필요한가</th><th>없으면 멈추는 판단</th><th>우선순위</th></tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td>외주계약 최신본</td><td>저작권 귀속 확인</td><td>2차활용 가능범위</td><td>높음</td>
+          </tr>
+          <tr>
+            <td>정산표</td><td>수익배분 검증</td><td>정산클레임 대응</td><td>높음</td>
+          </tr>
+          <tr>
+            <td>승인메일</td><td>광고책임선 확인</td><td>대외표현 분쟁 대응</td><td>중간</td>
+          </tr>
+          <tr>
+            <td>캠페인 결과보고</td><td>성과약속 범위 확인</td><td>환불·배상 구조</td><td>중간</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="action-grid">
+      
+        <article class="action-card">
+          <div class="action-when">D+2</div>
+          <h3>최우선 자료 2건 회수</h3>
+          <p>계약 최신본과 정산표를 먼저 받습니다.</p>
+        </article>
+        <article class="action-card">
+          <div class="action-when">D+5</div>
+          <h3>승인메일 정리</h3>
+          <p>캠페인별 승인 흐름을 한 폴더로 묶습니다.</p>
+        </article>
+    </section>
+
+    <section class="footer-band">
+      이 리포트가 막아주는 것: 자료 병목 때문에 판단이 늦어지고 책임이 흐려지는 상황을 줄여줍니다.
+    </section>
+
+    <div class="fine-print">Legal Risk Foundry · Risk Radar Marketing Demo · created 2026-06-22 · updated 2026-06-22</div>
+  </main>
+</body>
+</html>
