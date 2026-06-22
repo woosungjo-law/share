@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>베가메디랩 법적 노출 현황도</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
+    :root{
+      --bg:#f4efe7;
+      --surface:rgba(255,255,255,.76);
+      --surface-strong:#ffffff;
+      --ink:#132433;
+      --muted:#5f6b78;
+      --line:rgba(19,36,51,.12);
+      --navy:#153b63;
+      --navy-deep:#0c2743;
+      --copper:#b97845;
+      --copper-soft:#e7c7aa;
+      --red:#b73a2d;
+      --amber:#ad6f1c;
+      --sky:#5e84af;
+      --shadow:0 22px 55px rgba(21,59,99,.12);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(185,120,69,.22), transparent 28%),
+        radial-gradient(circle at top right, rgba(94,132,175,.18), transparent 32%),
+        linear-gradient(180deg, #f7f3ec 0%, #f2ede5 48%, #ebe5db 100%);
+      line-height:1.72;
+      min-height:100vh;
+    }
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background-image:linear-gradient(rgba(19,36,51,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(19,36,51,.03) 1px, transparent 1px);
+      background-size:32px 32px;
+      pointer-events:none;
+      opacity:.35;
+    }
+    .wrap{
+      width:min(1220px, calc(100vw - 32px));
+      margin:0 auto;
+      padding:28px 0 56px;
+      position:relative;
+      z-index:1;
+    }
+    .hero{
+      position:relative;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.34);
+      background:
+        linear-gradient(135deg, rgba(12,39,67,.96), rgba(21,59,99,.92) 46%, rgba(96,70,45,.92));
+      color:#f6f0e9;
+      border-radius:28px;
+      padding:34px 34px 28px;
+      box-shadow:var(--shadow);
+      margin-bottom:18px;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      right:-70px;
+      top:-70px;
+      width:240px;
+      height:240px;
+      background:radial-gradient(circle, rgba(255,255,255,.22), transparent 66%);
+      filter:blur(6px);
+    }
+    .eyebrow{
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      opacity:.82;
+    }
+    .title-row{
+      display:flex;
+      gap:24px;
+      justify-content:space-between;
+      align-items:flex-end;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+    .title{
+      font-family:"Plus Jakarta Sans","IBM Plex Sans KR",sans-serif;
+      font-size:38px;
+      font-weight:800;
+      letter-spacing:-.04em;
+      line-height:1.1;
+      margin:0;
+      max-width:760px;
+    }
+    .hero-meta{
+      display:grid;
+      gap:6px;
+      min-width:260px;
+      font-size:14px;
+      opacity:.95;
+      text-align:right;
+    }
+    .hero-copy{
+      display:grid;
+      grid-template-columns:1.5fr .9fr;
+      gap:18px;
+      margin-top:22px;
+    }
+    .hero-panel, .share-banner, .metric-card, .note-card, .table-card, .action-card{
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+    }
+    .hero-panel{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:20px;
+      padding:18px 18px 16px;
+    }
+    .hero-panel p{margin:0}
+    .hero-panel strong{display:block;margin-bottom:6px;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+    .share-banner{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      margin-top:16px;
+      border-radius:18px;
+      padding:14px 18px;
+      background:rgba(255,255,255,.84);
+      border:1px solid rgba(255,255,255,.62);
+      color:var(--navy-deep);
+    }
+    .share-banner a{color:var(--navy);font-weight:700;text-decoration:none;word-break:break-all}
+    .share-label{
+      font-size:11px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:var(--muted);
+      font-weight:700;
+    }
+    .metrics{
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      gap:16px;
+      margin:18px 0;
+    }
+    .metric-card{
+      background:var(--surface);
+      border:1px solid rgba(255,255,255,.7);
+      border-radius:22px;
+      padding:18px;
+      box-shadow:0 18px 44px rgba(17,24,39,.06);
+    }
+    .chip{
+      display:inline-flex;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:11px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      font-weight:700;
+    }
+    .chip-red{background:#fde7e4;color:var(--red)}
+    .chip-amber{background:#f7ebd7;color:var(--amber)}
+    .chip-sky{background:#e8eef6;color:var(--sky)}
+    .chip-navy{background:#dfe8f2;color:var(--navy)}
+    .metric-value{
+      font-family:"Plus Jakarta Sans","IBM Plex Sans KR",sans-serif;
+      font-size:34px;
+      font-weight:800;
+      letter-spacing:-.04em;
+      margin-top:14px;
+    }
+    .metric-note{margin:8px 0 0;color:var(--muted);font-size:14px}
+    .section-grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:16px;
+      margin-bottom:18px;
+    }
+    .note-card, .table-card{
+      background:var(--surface);
+      border:1px solid rgba(255,255,255,.74);
+      border-radius:24px;
+      padding:22px;
+      box-shadow:0 18px 44px rgba(17,24,39,.06);
+    }
+    .section-kicker{
+      font-size:11px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:var(--copper);
+      font-weight:700;
+      margin-bottom:8px;
+    }
+    h2{
+      margin:0 0 14px;
+      font-size:24px;
+      letter-spacing:-.03em;
+      color:var(--navy-deep);
+    }
+    h3{
+      margin:0 0 10px;
+      font-size:18px;
+      letter-spacing:-.02em;
+      color:var(--navy);
+    }
+    p, li, td{font-size:14px}
+    .note-card ul{
+      margin:0;
+      padding-left:18px;
+      color:var(--ink);
+    }
+    .note-card li+li{margin-top:8px}
+    .priority-table{
+      width:100%;
+      border-collapse:collapse;
+      overflow:hidden;
+      border-radius:18px;
+      background:var(--surface-strong);
+      margin-top:8px;
+    }
+    .priority-table th{
+      background:linear-gradient(180deg, rgba(21,59,99,.95), rgba(12,39,67,.98));
+      color:#f8f4ee;
+      text-align:left;
+      font-size:12px;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      padding:13px 14px;
+    }
+    .priority-table td{
+      padding:13px 14px;
+      border-bottom:1px solid var(--line);
+      vertical-align:top;
+    }
+    .priority-table tr:last-child td{border-bottom:none}
+    .action-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:16px;
+      margin-top:16px;
+    }
+    .action-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.72));
+      border:1px solid rgba(255,255,255,.8);
+      border-radius:22px;
+      padding:20px;
+      box-shadow:0 18px 44px rgba(17,24,39,.06);
+    }
+    .action-when{
+      color:var(--copper);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      margin-bottom:10px;
+    }
+    .footer-band{
+      margin-top:18px;
+      border-radius:22px;
+      padding:18px 22px;
+      background:linear-gradient(135deg, rgba(185,120,69,.12), rgba(21,59,99,.16));
+      border:1px solid rgba(19,36,51,.08);
+      color:var(--navy-deep);
+      font-weight:600;
+    }
+    .fine-print{
+      color:var(--muted);
+      font-size:12px;
+      margin-top:12px;
+      text-align:center;
+    }
+    @media (max-width: 980px){
+      .metrics,.action-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .section-grid,.hero-copy{grid-template-columns:1fr}
+      .hero-meta{text-align:left}
+    }
+    @media (max-width: 720px){
+      .wrap{width:min(100vw - 18px, 1220px);padding:18px 0 40px}
+      .hero{padding:24px 18px 20px;border-radius:22px}
+      .title{font-size:30px}
+      .metrics,.action-grid{grid-template-columns:1fr}
+      .note-card,.table-card,.metric-card,.action-card{border-radius:18px}
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">Risk Radar Demo Portfolio · exposure_map</div>
+      <div class="title-row">
+        <h1 class="title">베가메디랩 법적 노출 현황도</h1>
+        <div class="hero-meta">
+          <span>가상 회사 · 의료기기 유통</span>
+          <span>분기 노출 점검 · 대상 대표·CFO</span>
+        </div>
+      </div>
+      <div class="hero-copy">
+        <div class="hero-panel">
+          <strong>이 샘플이 보여주는 것</strong>
+          <p>금액 총노출을 한 장으로 보여줘 자문 가치가 바로 이해되는 시각화형 샘플입니다.</p>
+        </div>
+        <div class="hero-panel">
+          <strong>메모</strong>
+          <p>리스크는 추상적이지만 노출액은 즉시 이해됩니다. 이 포맷은 그 점을 활용합니다.</p>
+        </div>
+      </div>
+      <div class="share-banner">
+         <span class="share-label">공유 URL</span>
+         <span>게시 후 자동 반영 예정</span>
+       </div>
+    </section>
+
+    <section class="metrics">
+      
+        <article class="metric-card">
+          <div class="chip chip-red">추정 총노출</div>
+          <div class="metric-value">약 32억</div>
+          <p class="metric-note">확정+잠재 포함</p>
+        </article>
+        <article class="metric-card">
+          <div class="chip chip-amber">즉시 줄일 수 있는 노출</div>
+          <div class="metric-value">약 9억</div>
+          <p class="metric-note">계약·담보 조정</p>
+        </article>
+        <article class="metric-card">
+          <div class="chip chip-navy">회수지연성</div>
+          <div class="metric-value">약 11억</div>
+          <p class="metric-note">보증·대금 묶임</p>
+        </article>
+        <article class="metric-card">
+          <div class="chip chip-sky">대응 진행 중</div>
+          <div class="metric-value">4건</div>
+          <p class="metric-note">문서화 완료</p>
+        </article>
+    </section>
+
+    <section class="section-grid">
+      <article class="note-card">
+        <div class="section-kicker">One Read Summary</div>
+        <h2>왜 이 형식이 먹히는가</h2>
+        <p>영업 제안 단계에서 가장 반응이 좋은 자료 중 하나가 '회사가 지금 얼마 규모의 법적 노출에 서 있는지'를 보여주는 문서입니다.</p>
+      </article>
+      <article class="table-card">
+        <div class="section-kicker">Priority Board</div>
+        <h2>이번 리포트가 잡아주는 우선순위</h2>
+        <table class="priority-table">
+          <thead>
+            <tr><th>시급성</th><th>영향</th><th>권장 조치</th></tr>
+          </thead>
+          <tbody>
+            
+          <tr>
+            <td>즉시</td>
+            <td>대리점 보증채권 구조 정리</td>
+            <td>담보·상계·정산순서를 다시 설계</td>
+          </tr>
+          <tr>
+            <td>이번 달</td>
+            <td>병원 납품 하자책임 한도 조정</td>
+            <td>손배 상한과 면책 구조 보강</td>
+          </tr>
+          <tr>
+            <td>분기 내</td>
+            <td>리콜비용 분담표 정비</td>
+            <td>제조사·유통사 책임선 명확화</td>
+          </tr>
+          </tbody>
+        </table>
+      </article>
+    </section>
+
+    <section class="section-grid">
+      
+        <article class="note-card">
+          <h3>이 숫자가 중요한 이유</h3>
+          <ul>
+            <li>대표는 리스크가 많다는 말보다 '지금 약 32억 노출'이라는 문장을 더 빠르게 이해합니다.</li><li>동시에 줄일 수 있는 금액과 이미 대응 중인 금액을 나눠 보여주면 법무의 기여가 선명해집니다.</li>
+          </ul>
+        </article>
+        <article class="note-card">
+          <h3>활용 장면</h3>
+          <ul>
+            <li>분기 리뷰</li><li>정식 고문 전환 설득</li><li>CFO 보고</li><li>대표용 1페이지 브리프</li>
+          </ul>
+        </article>
+    </section>
+
+    <section class="table-card">
+      <div class="section-kicker">Proof Layout</div>
+      <h2>노출액 상위 축</h2>
+      <table class="priority-table">
+        <thead>
+          <tr><th>축</th><th>추정 노출</th><th>설명</th></tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td>대리점 정산</td><td>약 12억</td><td>반품·리베이트 정산 충돌</td>
+          </tr>
+          <tr>
+            <td>병원 납품 하자</td><td>약 8억</td><td>하자책임 상한 불명확</td>
+          </tr>
+          <tr>
+            <td>리콜비용</td><td>약 7억</td><td>제조사/유통사 분담 공백</td>
+          </tr>
+          <tr>
+            <td>보증금·채권</td><td>약 5억</td><td>회수지연성 자금</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="action-grid">
+      
+        <article class="action-card">
+          <div class="action-when">D+5</div>
+          <h3>정산구조 재정리</h3>
+          <p>대리점 정산순서와 상계가능 범위를 먼저 점검합니다.</p>
+        </article>
+        <article class="action-card">
+          <div class="action-when">D+10</div>
+          <h3>하자상한 조항 개정</h3>
+          <p>납품계약의 손배 상한과 제외영역을 조정합니다.</p>
+        </article>
+    </section>
+
+    <section class="footer-band">
+      이 리포트가 막아주는 것: 눈에 안 보이던 총노출을 숫자로 드러내 우선순위를 맞추게 합니다.
+    </section>
+
+    <div class="fine-print">Legal Risk Foundry · Risk Radar Marketing Demo · created 2026-06-22 · updated 2026-06-22</div>
+  </main>
+</body>
+</html>
