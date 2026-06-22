@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>헤일로모빌리티 대표 요약보고서</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=SUIT:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap');
+    :root{
+      --bg:#0b1220;
+      --panel:#ffffff;
+      --panel-soft:#f4f7fb;
+      --ink:#112031;
+      --muted:#5d6a78;
+      --line:#d7e0ea;
+      --navy:#11335d;
+      --blue:#1877f2;
+      --teal:#0f9d94;
+      --amber:#be7a00;
+      --red:#c33f31;
+      --peach:#fff3ea;
+      --mint:#ecfffb;
+      --sky:#eef5ff;
+      --shadow:0 30px 70px rgba(8,17,31,.22);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family:"SUIT","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 0% 0%, rgba(24,119,242,.22), transparent 22%),
+        radial-gradient(circle at 100% 0%, rgba(15,157,148,.18), transparent 20%),
+        linear-gradient(180deg, #0b1220 0%, #101a2e 24%, #e9eff6 24%, #eef3f8 100%);
+      min-height:100vh;
+      line-height:1.7;
+    }
+    .wrap{
+      width:min(1260px, calc(100vw - 28px));
+      margin:0 auto;
+      padding:24px 0 52px;
+    }
+    .hero{
+      position:relative;
+      overflow:hidden;
+      border-radius:30px;
+      padding:34px 34px 28px;
+      background:
+        linear-gradient(135deg, rgba(10,26,47,.96), rgba(17,51,93,.94) 48%, rgba(24,119,242,.92) 100%);
+      color:#f8fbff;
+      box-shadow:var(--shadow);
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      right:-80px;
+      top:-40px;
+      width:300px;
+      height:300px;
+      background:radial-gradient(circle, rgba(255,255,255,.16), transparent 62%);
+    }
+    .eyebrow{
+      display:inline-flex;
+      padding:7px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.1);
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+    .hero-head{
+      display:flex;
+      justify-content:space-between;
+      gap:22px;
+      align-items:flex-end;
+      flex-wrap:wrap;
+      margin-top:14px;
+    }
+    h1{
+      margin:0;
+      max-width:800px;
+      font-size:42px;
+      line-height:1.05;
+      letter-spacing:-.05em;
+      font-weight:900;
+    }
+    .hero-meta{
+      min-width:280px;
+      text-align:right;
+      display:grid;
+      gap:6px;
+      font-size:14px;
+      color:rgba(248,251,255,.86);
+    }
+    .lead-grid{
+      display:grid;
+      grid-template-columns:1.4fr .9fr;
+      gap:16px;
+      margin-top:24px;
+    }
+    .lead-card{
+      position:relative;
+      z-index:1;
+      border-radius:22px;
+      padding:20px 20px 18px;
+      background:rgba(255,255,255,.1);
+      border:1px solid rgba(255,255,255,.16);
+      backdrop-filter:blur(10px);
+    }
+    .lead-card strong{
+      display:block;
+      margin-bottom:8px;
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      opacity:.9;
+    }
+    .summary-band{
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin-top:16px;
+      padding:14px 16px;
+      border-radius:18px;
+      background:#ffffff;
+      color:var(--navy);
+    }
+    .summary-band p{
+      margin:0;
+      flex:1 1 480px;
+      font-weight:600;
+    }
+    .share{
+      display:grid;
+      gap:4px;
+      min-width:320px;
+    }
+    .share span{
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:#6b7f94;
+    }
+    .share-link{
+      color:var(--blue);
+      font-weight:800;
+      text-decoration:none;
+      word-break:break-all;
+    }
+    .muted-link{color:#6b7f94}
+    .metrics{
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      gap:16px;
+      margin:18px 0;
+    }
+    .metric-card,.info-card,.table-card,.action-card,.close-card{
+      background:var(--panel);
+      border:1px solid rgba(17,32,49,.06);
+      border-radius:24px;
+      box-shadow:0 18px 36px rgba(17,32,49,.08);
+    }
+    .metric-card{padding:20px}
+    .chip{
+      display:inline-flex;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+    .chip-red{background:#fdeceb;color:var(--red)}
+    .chip-amber{background:#fff1d8;color:var(--amber)}
+    .chip-sky{background:#eaf3ff;color:var(--blue)}
+    .chip-navy{background:#eaf0f7;color:var(--navy)}
+    .metric-value{
+      margin-top:14px;
+      font-family:"Space Grotesk","SUIT",sans-serif;
+      font-size:38px;
+      line-height:1;
+      letter-spacing:-.05em;
+      font-weight:700;
+      color:var(--navy);
+    }
+    .metric-note{
+      margin:8px 0 0;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+      margin-bottom:18px;
+    }
+    .info-card,.table-card,.close-card{padding:24px}
+    .section-kicker{
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:#73879b;
+      margin-bottom:8px;
+    }
+    h2{
+      margin:0 0 14px;
+      font-size:25px;
+      line-height:1.15;
+      letter-spacing:-.04em;
+      color:var(--navy);
+    }
+    h3{
+      margin:0 0 10px;
+      font-size:20px;
+      line-height:1.2;
+      letter-spacing:-.03em;
+      color:var(--navy);
+    }
+    .body-list{
+      margin:0;
+      padding-left:18px;
+    }
+    .body-list li+li{margin-top:8px}
+    .table-card{
+      background:linear-gradient(180deg, #ffffff 0%, #f6f9fc 100%);
+    }
+    table{
+      width:100%;
+      border-collapse:collapse;
+      overflow:hidden;
+      border-radius:18px;
+      background:#fff;
+    }
+    th{
+      padding:14px 14px;
+      text-align:left;
+      background:linear-gradient(180deg, #123661 0%, #0d2747 100%);
+      color:#f8fbff;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+    }
+    td{
+      padding:14px;
+      border-bottom:1px solid var(--line);
+      vertical-align:top;
+      font-size:14px;
+    }
+    tr:last-child td{border-bottom:none}
+    .action-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:16px;
+      margin-top:16px;
+    }
+    .action-card{
+      padding:22px;
+      background:linear-gradient(180deg, #fff 0%, var(--panel-soft) 100%);
+    }
+    .action-when{
+      display:inline-flex;
+      padding:6px 10px;
+      border-radius:999px;
+      background:var(--navy);
+      color:#fff;
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      margin-bottom:12px;
+    }
+    .close-card{
+      margin-top:18px;
+      background:linear-gradient(135deg, var(--peach) 0%, #fff 48%, var(--mint) 100%);
+      border:1px solid rgba(17,51,93,.08);
+    }
+    .close-card p{
+      margin:0;
+      font-size:16px;
+      font-weight:600;
+      color:var(--ink);
+    }
+    .footer{
+      margin-top:12px;
+      text-align:center;
+      color:#6d7c8c;
+      font-size:12px;
+    }
+    @media (max-width: 1020px){
+      .lead-grid,.grid-2{grid-template-columns:1fr}
+      .metrics,.action-grid{grid-template-columns:repeat(2, minmax(0,1fr))}
+      .hero-meta{text-align:left}
+    }
+    @media (max-width: 720px){
+      .wrap{width:min(100vw - 16px, 1260px);padding:16px 0 40px}
+      .hero{padding:24px 18px 20px;border-radius:24px}
+      h1{font-size:32px}
+      .metrics,.action-grid{grid-template-columns:1fr}
+      .summary-band{padding:14px}
+      .share{min-width:auto}
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">Risk Radar · ceo_brief</div>
+      <div class="hero-head">
+        <h1>헤일로모빌리티 대표 요약보고서</h1>
+        <div class="hero-meta">
+          <span>모빌리티 플랫폼</span>
+          <span>대표 판단 필요 안건 · 대표이사</span>
+        </div>
+      </div>
+      <div class="lead-grid">
+        <article class="lead-card">
+          <strong>한 줄 판단</strong>
+          <div>하이브퀵과의 수도권 배송 제휴계약은 7월 5일 서명 예정인데, 현 초안대로면 기사 사고 민원까지 헤일로모빌리티가 1차 창구를 떠안습니다.</div>
+        </article>
+        <article class="lead-card">
+          <strong>메모</strong>
+          <div>대표 결정은 '계약을 할지 말지'가 아니라, 정산 2.8% 인하를 받는 대신 사고·지연 책임을 어디까지 받을지입니다.</div>
+        </article>
+      </div>
+      <div class="summary-band">
+        <p>하이브퀵은 배송수수료를 건당 2.8% 낮추는 대신, 고객 클레임 1차 응대와 기사 배정 지연 책임을 플랫폼에 넓게 넘기는 조항을 제시했습니다. 월 18만 건 물량 기준 수수료 절감은 약 1,260만 원이지만, 지연·분실 클레임을 그대로 받으면 분기 단위로 그 이상이 빠질 수 있습니다.</p>
+        <div class="share">
+          <span>공유 URL</span>
+          <a class="share-link" href="https://woosungjo-law.github.io/share/d/riskradar-halo-ceo-brief-mzku.html">https://woosungjo-law.github.io/share/d/riskradar-halo-ceo-brief-mzku.html</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="metrics">
+    <article class="metric-card">
+      <div class="chip chip-navy">월 물량</div>
+      <div class="metric-value">18만건</div>
+      <p class="metric-note">수도권 배정 예상</p>
+    </article>
+  
+    <article class="metric-card">
+      <div class="chip chip-amber">수수료 절감</div>
+      <div class="metric-value">1,260만</div>
+      <p class="metric-note">월 추정</p>
+    </article>
+  
+    <article class="metric-card">
+      <div class="chip chip-red">서명 예정</div>
+      <div class="metric-value">7/5</div>
+      <p class="metric-note">하이브퀵 제휴계약</p>
+    </article>
+  
+    <article class="metric-card">
+      <div class="chip chip-sky">수정 조항</div>
+      <div class="metric-value">4개</div>
+      <p class="metric-note">지연·분실·민원·정산</p>
+    </article>
+  </section>
+
+    <section class="grid-2">
+      
+    <article class="info-card">
+      <div class="section-kicker">Core View</div>
+      <h2>권고</h2>
+      <ul class="body-list">
+        <li>제휴 자체는 진행하되, 하이브퀵 초안 12조와 16조는 그대로 받지 않는 것을 권합니다.</li><li>2.8% 단가 인하는 매력적이지만, 지연·분실·기사민원을 모두 플랫폼 책임처럼 받으면 절감액보다 설명비용이 빨리 커집니다.</li>
+      </ul>
+    </article>
+  
+    <article class="info-card">
+      <div class="section-kicker">Core View</div>
+      <h2>대표가 읽어야 할 핵심</h2>
+      <ul class="body-list">
+        <li>오늘 정할 것은 협상 결렬 여부가 아니라, 책임조항의 레드라인입니다.</li><li>레드라인만 정해지면 법무는 수정조항을, 운영은 고객 안내 FAQ를, 정산팀은 비용상한표를 바로 만들 수 있습니다.</li>
+      </ul>
+    </article>
+  
+    </section>
+
+    <section class="table-card">
+      <div class="section-kicker">Priority Board</div>
+      <h2>이번 리포트가 잡아주는 우선순위</h2>
+      <table>
+        <thead>
+          <tr><th>시급성</th><th>영향</th><th>권장 조치</th></tr>
+        </thead>
+        <tbody>
+    <tr>
+      <td>대표 결정</td>
+      <td>하이브퀵 2.8% 단가 인하를 받을지</td>
+      <td>단가 인하를 받되 지연·분실 책임은 귀책 기준으로 쪼개서 수용</td>
+    </tr>
+  
+    <tr>
+      <td>대표 승인</td>
+      <td>고객 클레임 1차 창구를 헤일로모빌리티가 맡을지</td>
+      <td>1차 접수는 가능하되 보상결정권과 비용부담은 하이브퀵 귀책 시 제외</td>
+    </tr>
+  
+    <tr>
+      <td>모니터링</td>
+      <td>기사 배정 지연 30분 초과 건의 월별 추이</td>
+      <td>SLA 위반이 월 50건 넘으면 단가 재협상 트리거 발동</td>
+    </tr>
+  </tbody>
+      </table>
+    </section>
+
+    <section class="table-card" style="margin-top:18px;">
+      <div class="section-kicker">Detail Ledger</div>
+      <h2>선택지 비교</h2>
+      <table>
+        <thead>
+          <tr><th>안</th><th>장점</th><th>리스크</th><th>권고</th></tr>
+        </thead>
+        <tbody>
+    <tr><td>A. 초안 수용</td><td>월 1,260만 원 절감 즉시 반영</td><td>고객 클레임·분실 보상 창구가 플랫폼으로 집중</td><td>비권고</td></tr>
+  
+    <tr><td>B. 책임조항 수정</td><td>단가 인하 유지하며 귀책 기준 방어</td><td>7/5 서명 전 협상 1회 추가 필요</td><td>권고</td></tr>
+  
+    <tr><td>C. 계약 보류</td><td>불리한 책임 전가 차단</td><td>수도권 물량 배정 계획 지연</td><td>예비안</td></tr>
+  </tbody>
+      </table>
+    </section>
+
+    <section class="action-grid">
+    <article class="action-card">
+      <div class="action-when">오늘</div>
+      <h3>레드라인 확정</h3>
+      <p>12조 지연책임, 16조 고객보상, 정산상계 조항의 수용 한계를 대표가 정합니다.</p>
+    </article>
+  
+    <article class="action-card">
+      <div class="action-when">7/2</div>
+      <h3>수정조항 전달</h3>
+      <p>하이브퀵에 4개 수정조항과 비용상한표를 함께 보냅니다.</p>
+    </article>
+  
+    <article class="action-card">
+      <div class="action-when">7/4</div>
+      <h3>고객 FAQ 승인</h3>
+      <p>제휴 공지 전에 지연·분실 문의 응대문구를 운영팀과 맞춥니다.</p>
+    </article>
+  </section>
+
+    <section class="close-card">
+      <div class="section-kicker">Closing View</div>
+      <h2>정리</h2>
+      <p>이 안건은 단가 2.8%를 얻는 대신 책임을 통째로 받는 거래가 되면 안 됩니다. 대표가 정할 것은 계약 진행 여부가 아니라, 사고 비용의 방어선입니다.</p>
+    </section>
+
+    <div class="footer">Legal Risk Foundry · Risk Radar</div>
+  </main>
+</body>
+</html>
