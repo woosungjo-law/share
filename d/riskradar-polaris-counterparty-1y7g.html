@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>폴라리스AI 상대방 카드</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=SUIT:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap');
+    :root{
+      --bg:#0b1220;
+      --panel:#ffffff;
+      --panel-soft:#f4f7fb;
+      --ink:#112031;
+      --muted:#5d6a78;
+      --line:#d7e0ea;
+      --navy:#11335d;
+      --blue:#1877f2;
+      --teal:#0f9d94;
+      --amber:#be7a00;
+      --red:#c33f31;
+      --peach:#fff3ea;
+      --mint:#ecfffb;
+      --sky:#eef5ff;
+      --shadow:0 30px 70px rgba(8,17,31,.22);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family:"SUIT","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 0% 0%, rgba(24,119,242,.22), transparent 22%),
+        radial-gradient(circle at 100% 0%, rgba(15,157,148,.18), transparent 20%),
+        linear-gradient(180deg, #0b1220 0%, #101a2e 24%, #e9eff6 24%, #eef3f8 100%);
+      min-height:100vh;
+      line-height:1.7;
+    }
+    .wrap{
+      width:min(1260px, calc(100vw - 28px));
+      margin:0 auto;
+      padding:24px 0 52px;
+    }
+    .hero{
+      position:relative;
+      overflow:hidden;
+      border-radius:30px;
+      padding:34px 34px 28px;
+      background:
+        linear-gradient(135deg, rgba(10,26,47,.96), rgba(17,51,93,.94) 48%, rgba(24,119,242,.92) 100%);
+      color:#f8fbff;
+      box-shadow:var(--shadow);
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      right:-80px;
+      top:-40px;
+      width:300px;
+      height:300px;
+      background:radial-gradient(circle, rgba(255,255,255,.16), transparent 62%);
+    }
+    .eyebrow{
+      display:inline-flex;
+      padding:7px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.1);
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+    .hero-head{
+      display:flex;
+      justify-content:space-between;
+      gap:22px;
+      align-items:flex-end;
+      flex-wrap:wrap;
+      margin-top:14px;
+    }
+    h1{
+      margin:0;
+      max-width:800px;
+      font-size:42px;
+      line-height:1.05;
+      letter-spacing:-.05em;
+      font-weight:900;
+    }
+    .hero-meta{
+      min-width:280px;
+      text-align:right;
+      display:grid;
+      gap:6px;
+      font-size:14px;
+      color:rgba(248,251,255,.86);
+    }
+    .lead-grid{
+      display:grid;
+      grid-template-columns:1.4fr .9fr;
+      gap:16px;
+      margin-top:24px;
+    }
+    .lead-card{
+      position:relative;
+      z-index:1;
+      border-radius:22px;
+      padding:20px 20px 18px;
+      background:rgba(255,255,255,.1);
+      border:1px solid rgba(255,255,255,.16);
+      backdrop-filter:blur(10px);
+    }
+    .lead-card strong{
+      display:block;
+      margin-bottom:8px;
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      opacity:.9;
+    }
+    .summary-band{
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin-top:16px;
+      padding:14px 16px;
+      border-radius:18px;
+      background:#ffffff;
+      color:var(--navy);
+    }
+    .summary-band p{
+      margin:0;
+      flex:1 1 480px;
+      font-weight:600;
+    }
+    .share{
+      display:grid;
+      gap:4px;
+      min-width:320px;
+    }
+    .share span{
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:#6b7f94;
+    }
+    .share-link{
+      color:var(--blue);
+      font-weight:800;
+      text-decoration:none;
+      word-break:break-all;
+    }
+    .muted-link{color:#6b7f94}
+    .metrics{
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      gap:16px;
+      margin:18px 0;
+    }
+    .metric-card,.info-card,.table-card,.action-card,.close-card{
+      background:var(--panel);
+      border:1px solid rgba(17,32,49,.06);
+      border-radius:24px;
+      box-shadow:0 18px 36px rgba(17,32,49,.08);
+    }
+    .metric-card{padding:20px}
+    .chip{
+      display:inline-flex;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+    .chip-red{background:#fdeceb;color:var(--red)}
+    .chip-amber{background:#fff1d8;color:var(--amber)}
+    .chip-sky{background:#eaf3ff;color:var(--blue)}
+    .chip-navy{background:#eaf0f7;color:var(--navy)}
+    .metric-value{
+      margin-top:14px;
+      font-family:"Space Grotesk","SUIT",sans-serif;
+      font-size:38px;
+      line-height:1;
+      letter-spacing:-.05em;
+      font-weight:700;
+      color:var(--navy);
+    }
+    .metric-note{
+      margin:8px 0 0;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+      margin-bottom:18px;
+    }
+    .info-card,.table-card,.close-card{padding:24px}
+    .section-kicker{
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:#73879b;
+      margin-bottom:8px;
+    }
+    h2{
+      margin:0 0 14px;
+      font-size:25px;
+      line-height:1.15;
+      letter-spacing:-.04em;
+      color:var(--navy);
+    }
+    h3{
+      margin:0 0 10px;
+      font-size:20px;
+      line-height:1.2;
+      letter-spacing:-.03em;
+      color:var(--navy);
+    }
+    .body-list{
+      margin:0;
+      padding-left:18px;
+    }
+    .body-list li+li{margin-top:8px}
+    .table-card{
+      background:linear-gradient(180deg, #ffffff 0%, #f6f9fc 100%);
+    }
+    table{
+      width:100%;
+      border-collapse:collapse;
+      overflow:hidden;
+      border-radius:18px;
+      background:#fff;
+    }
+    th{
+      padding:14px 14px;
+      text-align:left;
+      background:linear-gradient(180deg, #123661 0%, #0d2747 100%);
+      color:#f8fbff;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+    }
+    td{
+      padding:14px;
+      border-bottom:1px solid var(--line);
+      vertical-align:top;
+      font-size:14px;
+    }
+    tr:last-child td{border-bottom:none}
+    .action-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:16px;
+      margin-top:16px;
+    }
+    .action-card{
+      padding:22px;
+      background:linear-gradient(180deg, #fff 0%, var(--panel-soft) 100%);
+    }
+    .action-when{
+      display:inline-flex;
+      padding:6px 10px;
+      border-radius:999px;
+      background:var(--navy);
+      color:#fff;
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      margin-bottom:12px;
+    }
+    .close-card{
+      margin-top:18px;
+      background:linear-gradient(135deg, var(--peach) 0%, #fff 48%, var(--mint) 100%);
+      border:1px solid rgba(17,51,93,.08);
+    }
+    .close-card p{
+      margin:0;
+      font-size:16px;
+      font-weight:600;
+      color:var(--ink);
+    }
+    .footer{
+      margin-top:12px;
+      text-align:center;
+      color:#6d7c8c;
+      font-size:12px;
+    }
+    @media (max-width: 1020px){
+      .lead-grid,.grid-2{grid-template-columns:1fr}
+      .metrics,.action-grid{grid-template-columns:repeat(2, minmax(0,1fr))}
+      .hero-meta{text-align:left}
+    }
+    @media (max-width: 720px){
+      .wrap{width:min(100vw - 16px, 1260px);padding:16px 0 40px}
+      .hero{padding:24px 18px 20px;border-radius:24px}
+      h1{font-size:32px}
+      .metrics,.action-grid{grid-template-columns:1fr}
+      .summary-band{padding:14px}
+      .share{min-width:auto}
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">Risk Radar · counterparty_dossier</div>
+      <div class="hero-head">
+        <h1>폴라리스AI 상대방 카드</h1>
+        <div class="hero-meta">
+          <span>기업용 AI 솔루션</span>
+          <span>대형 파트너 협상 전 · 대표 · 사업개발팀</span>
+        </div>
+      </div>
+      <div class="lead-grid">
+        <article class="lead-card">
+          <strong>한 줄 판단</strong>
+          <div>이번 상대방은 책임은 넓게 지우고 대금은 늦게 주려는 패턴이 선명합니다.</div>
+        </article>
+        <article class="lead-card">
+          <strong>메모</strong>
+          <div>반면 검수와 성과 정의는 불명확해 협상 레버리지를 만들 여지도 충분합니다.</div>
+        </article>
+      </div>
+      <div class="summary-band">
+        <p>데이터책임, 성과보장, 정산, IP 네 축이 핵심입니다. 모든 조항을 막으려 하기보다 레드라인 3개를 먼저 정하고 나머지를 교환조건으로 삼는 전략이 적절합니다.</p>
+        <div class="share">
+          <span>공유 URL</span>
+          <a class="share-link" href="https://woosungjo-law.github.io/share/d/riskradar-polaris-counterparty-mz2i.html">https://woosungjo-law.github.io/share/d/riskradar-polaris-counterparty-mz2i.html</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="metrics">
+    <article class="metric-card">
+      <div class="chip chip-navy">평가 축</div>
+      <div class="metric-value">4개</div>
+      <p class="metric-note">정산 · IP · 보안 · 책임</p>
+    </article>
+  
+    <article class="metric-card">
+      <div class="chip chip-red">즉시 경계</div>
+      <div class="metric-value">1개</div>
+      <p class="metric-note">광범위 면책 요구</p>
+    </article>
+  
+    <article class="metric-card">
+      <div class="chip chip-sky">협상 레버리지</div>
+      <div class="metric-value">2개</div>
+      <p class="metric-note">검수 · 정산구조</p>
+    </article>
+  
+    <article class="metric-card">
+      <div class="chip chip-amber">권장 전략</div>
+      <div class="metric-value">선별 수용</div>
+      <p class="metric-note">핵심만 방어</p>
+    </article>
+  </section>
+
+    <section class="grid-2">
+      
+    <article class="info-card">
+      <div class="section-kicker">Core View</div>
+      <h2>이번 상대방의 패턴</h2>
+      <ul class="body-list">
+        <li>책임은 넓게 전가하고 대금은 늦게 주려는 구조가 보입니다.</li><li>반대로 검수와 성과 정의는 상대방도 명확하지 않아 협상 여지가 있습니다.</li>
+      </ul>
+    </article>
+  
+    <article class="info-card">
+      <div class="section-kicker">Core View</div>
+      <h2>권장 접근</h2>
+      <ul class="body-list">
+        <li>양보 불가 조항 3개를 영업과 먼저 합의</li><li>거절 대신 대체문안을 바로 준비</li><li>검수기한과 정산조건을 동시에 묶어 제시</li>
+      </ul>
+    </article>
+  
+    </section>
+
+    <section class="table-card">
+      <div class="section-kicker">Priority Board</div>
+      <h2>이번 리포트가 잡아주는 우선순위</h2>
+      <table>
+        <thead>
+          <tr><th>시급성</th><th>영향</th><th>권장 조치</th></tr>
+        </thead>
+        <tbody>
+    <tr>
+      <td>즉시</td>
+      <td>광범위한 데이터책임 전가 요구</td>
+      <td>보안사고와 제3자청구 책임선을 분리</td>
+    </tr>
+  
+    <tr>
+      <td>이번 주</td>
+      <td>성과약속 표현 조정</td>
+      <td>기술보장 대신 협력의무 수준으로 완화</td>
+    </tr>
+  
+    <tr>
+      <td>협상 전</td>
+      <td>정산조건 레버리지 확보</td>
+      <td>단계별 검수 기준을 세분화</td>
+    </tr>
+  </tbody>
+      </table>
+    </section>
+
+    <section class="table-card" style="margin-top:18px;">
+      <div class="section-kicker">Detail Ledger</div>
+      <h2>상대방 협상 카드</h2>
+      <table>
+        <thead>
+          <tr><th>축</th><th>상대방 요구</th><th>우리 리스크</th><th>권장 대응</th></tr>
+        </thead>
+        <tbody>
+    <tr><td>데이터책임</td><td>광범위 면책</td><td>사고비용 전가</td><td>책임선 분리</td></tr>
+  
+    <tr><td>성과보장</td><td>과도한 성과확약</td><td>미달 클레임</td><td>최선의 노력형 전환</td></tr>
+  
+    <tr><td>정산</td><td>검수지연 가능 구조</td><td>대금회수 지연</td><td>단계별 승인기한 설정</td></tr>
+  
+    <tr><td>IP</td><td>결과물 전면귀속</td><td>재사용 제약</td><td>기반도구 제외 조항 삽입</td></tr>
+  </tbody>
+      </table>
+    </section>
+
+    <section class="action-grid">
+    <article class="action-card">
+      <div class="action-when">협상 전</div>
+      <h3>레드라인 3개 확정</h3>
+      <p>영업과 법무가 양보 불가 조항을 먼저 정합니다.</p>
+    </article>
+  
+    <article class="action-card">
+      <div class="action-when">협상 당일</div>
+      <h3>대체문안 준비</h3>
+      <p>거절만 하지 말고 대체문안을 곧바로 제시합니다.</p>
+    </article>
+  </section>
+
+    <section class="close-card">
+      <div class="section-kicker">Closing View</div>
+      <h2>정리</h2>
+      <p>상대방 카드는 상대를 흠잡는 문서가 아니라, 협상판에서 우리 기준을 잃지 않게 하는 문서입니다.</p>
+    </section>
+
+    <div class="footer">Legal Risk Foundry · Risk Radar</div>
+  </main>
+</body>
+</html>
