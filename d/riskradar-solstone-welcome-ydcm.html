@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>솔스톤로지스 리스크레이더 웰컴 리포트</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
+    :root{
+      --bg:#f4efe7;
+      --surface:rgba(255,255,255,.76);
+      --surface-strong:#ffffff;
+      --ink:#132433;
+      --muted:#5f6b78;
+      --line:rgba(19,36,51,.12);
+      --navy:#153b63;
+      --navy-deep:#0c2743;
+      --copper:#b97845;
+      --copper-soft:#e7c7aa;
+      --red:#b73a2d;
+      --amber:#ad6f1c;
+      --sky:#5e84af;
+      --shadow:0 22px 55px rgba(21,59,99,.12);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(185,120,69,.22), transparent 28%),
+        radial-gradient(circle at top right, rgba(94,132,175,.18), transparent 32%),
+        linear-gradient(180deg, #f7f3ec 0%, #f2ede5 48%, #ebe5db 100%);
+      line-height:1.72;
+      min-height:100vh;
+    }
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background-image:linear-gradient(rgba(19,36,51,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(19,36,51,.03) 1px, transparent 1px);
+      background-size:32px 32px;
+      pointer-events:none;
+      opacity:.35;
+    }
+    .wrap{
+      width:min(1220px, calc(100vw - 32px));
+      margin:0 auto;
+      padding:28px 0 56px;
+      position:relative;
+      z-index:1;
+    }
+    .hero{
+      position:relative;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.34);
+      background:
+        linear-gradient(135deg, rgba(12,39,67,.96), rgba(21,59,99,.92) 46%, rgba(96,70,45,.92));
+      color:#f6f0e9;
+      border-radius:28px;
+      padding:34px 34px 28px;
+      box-shadow:var(--shadow);
+      margin-bottom:18px;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      right:-70px;
+      top:-70px;
+      width:240px;
+      height:240px;
+      background:radial-gradient(circle, rgba(255,255,255,.22), transparent 66%);
+      filter:blur(6px);
+    }
+    .eyebrow{
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      opacity:.82;
+    }
+    .title-row{
+      display:flex;
+      gap:24px;
+      justify-content:space-between;
+      align-items:flex-end;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+    .title{
+      font-family:"Plus Jakarta Sans","IBM Plex Sans KR",sans-serif;
+      font-size:38px;
+      font-weight:800;
+      letter-spacing:-.04em;
+      line-height:1.1;
+      margin:0;
+      max-width:760px;
+    }
+    .hero-meta{
+      display:grid;
+      gap:6px;
+      min-width:260px;
+      font-size:14px;
+      opacity:.95;
+      text-align:right;
+    }
+    .hero-copy{
+      display:grid;
+      grid-template-columns:1.5fr .9fr;
+      gap:18px;
+      margin-top:22px;
+    }
+    .hero-panel, .share-banner, .metric-card, .note-card, .table-card, .action-card{
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+    }
+    .hero-panel{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:20px;
+      padding:18px 18px 16px;
+    }
+    .hero-panel p{margin:0}
+    .hero-panel strong{display:block;margin-bottom:6px;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+    .share-banner{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      margin-top:16px;
+      border-radius:18px;
+      padding:14px 18px;
+      background:rgba(255,255,255,.84);
+      border:1px solid rgba(255,255,255,.62);
+      color:var(--navy-deep);
+    }
+    .share-banner a{color:var(--navy);font-weight:700;text-decoration:none;word-break:break-all}
+    .share-label{
+      font-size:11px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:var(--muted);
+      font-weight:700;
+    }
+    .metrics{
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      gap:16px;
+      margin:18px 0;
+    }
+    .metric-card{
+      background:var(--surface);
+      border:1px solid rgba(255,255,255,.7);
+      border-radius:22px;
+      padding:18px;
+      box-shadow:0 18px 44px rgba(17,24,39,.06);
+    }
+    .chip{
+      display:inline-flex;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:11px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      font-weight:700;
+    }
+    .chip-red{background:#fde7e4;color:var(--red)}
+    .chip-amber{background:#f7ebd7;color:var(--amber)}
+    .chip-sky{background:#e8eef6;color:var(--sky)}
+    .chip-navy{background:#dfe8f2;color:var(--navy)}
+    .metric-value{
+      font-family:"Plus Jakarta Sans","IBM Plex Sans KR",sans-serif;
+      font-size:34px;
+      font-weight:800;
+      letter-spacing:-.04em;
+      margin-top:14px;
+    }
+    .metric-note{margin:8px 0 0;color:var(--muted);font-size:14px}
+    .section-grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:16px;
+      margin-bottom:18px;
+    }
+    .note-card, .table-card{
+      background:var(--surface);
+      border:1px solid rgba(255,255,255,.74);
+      border-radius:24px;
+      padding:22px;
+      box-shadow:0 18px 44px rgba(17,24,39,.06);
+    }
+    .section-kicker{
+      font-size:11px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:var(--copper);
+      font-weight:700;
+      margin-bottom:8px;
+    }
+    h2{
+      margin:0 0 14px;
+      font-size:24px;
+      letter-spacing:-.03em;
+      color:var(--navy-deep);
+    }
+    h3{
+      margin:0 0 10px;
+      font-size:18px;
+      letter-spacing:-.02em;
+      color:var(--navy);
+    }
+    p, li, td{font-size:14px}
+    .note-card ul{
+      margin:0;
+      padding-left:18px;
+      color:var(--ink);
+    }
+    .note-card li+li{margin-top:8px}
+    .priority-table{
+      width:100%;
+      border-collapse:collapse;
+      overflow:hidden;
+      border-radius:18px;
+      background:var(--surface-strong);
+      margin-top:8px;
+    }
+    .priority-table th{
+      background:linear-gradient(180deg, rgba(21,59,99,.95), rgba(12,39,67,.98));
+      color:#f8f4ee;
+      text-align:left;
+      font-size:12px;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      padding:13px 14px;
+    }
+    .priority-table td{
+      padding:13px 14px;
+      border-bottom:1px solid var(--line);
+      vertical-align:top;
+    }
+    .priority-table tr:last-child td{border-bottom:none}
+    .action-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:16px;
+      margin-top:16px;
+    }
+    .action-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.72));
+      border:1px solid rgba(255,255,255,.8);
+      border-radius:22px;
+      padding:20px;
+      box-shadow:0 18px 44px rgba(17,24,39,.06);
+    }
+    .action-when{
+      color:var(--copper);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      margin-bottom:10px;
+    }
+    .footer-band{
+      margin-top:18px;
+      border-radius:22px;
+      padding:18px 22px;
+      background:linear-gradient(135deg, rgba(185,120,69,.12), rgba(21,59,99,.16));
+      border:1px solid rgba(19,36,51,.08);
+      color:var(--navy-deep);
+      font-weight:600;
+    }
+    .fine-print{
+      color:var(--muted);
+      font-size:12px;
+      margin-top:12px;
+      text-align:center;
+    }
+    @media (max-width: 980px){
+      .metrics,.action-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .section-grid,.hero-copy{grid-template-columns:1fr}
+      .hero-meta{text-align:left}
+    }
+    @media (max-width: 720px){
+      .wrap{width:min(100vw - 18px, 1220px);padding:18px 0 40px}
+      .hero{padding:24px 18px 20px;border-radius:22px}
+      .title{font-size:30px}
+      .metrics,.action-grid{grid-template-columns:1fr}
+      .note-card,.table-card,.metric-card,.action-card{border-radius:18px}
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">Risk Radar Demo Portfolio · welcome</div>
+      <div class="title-row">
+        <h1 class="title">솔스톤로지스 리스크레이더 웰컴 리포트</h1>
+        <div class="hero-meta">
+          <span>가상 회사 · 저온물류·풀필먼트</span>
+          <span>온보딩 주간 · 대상 대표·경영지원실</span>
+        </div>
+      </div>
+      <div class="hero-copy">
+        <div class="hero-panel">
+          <strong>이 샘플이 보여주는 것</strong>
+          <p>첫 자료만 보고도 어떤 리스크가 먼저 보여야 하는지 감을 주는 온보딩형 샘플입니다.</p>
+        </div>
+        <div class="hero-panel">
+          <strong>메모</strong>
+          <p>이 리포트는 가상 회사 기준의 마케팅 샘플입니다. 실제 고객 자료는 전혀 사용하지 않았습니다.</p>
+        </div>
+      </div>
+      <div class="share-banner">
+         <span class="share-label">공유 URL</span>
+         <span>게시 후 자동 반영 예정</span>
+       </div>
+    </section>
+
+    <section class="metrics">
+      
+        <article class="metric-card">
+          <div class="chip chip-navy">가장 먼저 볼 축</div>
+          <div class="metric-value">3개</div>
+          <p class="metric-note">도급·개인정보·물류위탁</p>
+        </article>
+        <article class="metric-card">
+          <div class="chip chip-amber">즉시 확인할 기한</div>
+          <div class="metric-value">14일</div>
+          <p class="metric-note">위탁계약 자동갱신 통지</p>
+        </article>
+        <article class="metric-card">
+          <div class="chip chip-sky">추가 요청 자료</div>
+          <div class="metric-value">4건</div>
+          <p class="metric-note">증빙 공백 최소화</p>
+        </article>
+        <article class="metric-card">
+          <div class="chip chip-red">대표용 한줄 결론</div>
+          <div class="metric-value">1개</div>
+          <p class="metric-note">지금 당장 결론이 필요한 리스크</p>
+        </article>
+    </section>
+
+    <section class="section-grid">
+      <article class="note-card">
+        <div class="section-kicker">One Read Summary</div>
+        <h2>왜 이 형식이 먹히는가</h2>
+        <p>이번 샘플의 포인트는 '첫 자료를 받자마자 무엇을 먼저 봐주는지'를 한 화면에 설득력 있게 보여주는 것입니다.</p>
+      </article>
+      <article class="table-card">
+        <div class="section-kicker">Priority Board</div>
+        <h2>이번 리포트가 잡아주는 우선순위</h2>
+        <table class="priority-table">
+          <thead>
+            <tr><th>시급성</th><th>영향</th><th>권장 조치</th></tr>
+          </thead>
+          <tbody>
+            
+          <tr>
+            <td>즉시</td>
+            <td>풀필먼트 위탁계약 자동갱신 통지기한이 14일 앞으로 다가옴</td>
+            <td>해지·수정 여부를 먼저 결정하고 상대방 통지 문안 확보</td>
+          </tr>
+          <tr>
+            <td>이번 달</td>
+            <td>개인정보 처리위탁 구조가 계약서와 실제 운영 흐름 사이에서 어긋남</td>
+            <td>수탁자 분리표와 접근권한 표를 같이 정리</td>
+          </tr>
+          <tr>
+            <td>분기 내</td>
+            <td>지게차·냉동설비 안전점검 위수탁 책임 배분이 불명확</td>
+            <td>보험·유지보수 조항 보강 검토</td>
+          </tr>
+          </tbody>
+        </table>
+      </article>
+    </section>
+
+    <section class="section-grid">
+      
+        <article class="note-card">
+          <h3>이번 샘플에서 보여주는 가치</h3>
+          <ul>
+            <li>처음 받은 자료를 단순 요약하지 않고 '당장 봐야 할 축'으로 재배열합니다.</li><li>대표가 바로 이해할 수 있도록 기한·계약·운영 리스크를 숫자와 결정 포인트로 바꿉니다.</li><li>추가 자료 요청도 이유와 우선순위를 함께 적어 회신 장벽을 낮춥니다.</li>
+          </ul>
+        </article>
+        <article class="note-card">
+          <h3>다음 접점 설계</h3>
+          <ul>
+            <li>위클리 리포트로 바로 이어질 리스크 3개를 선별합니다.</li><li>추가 자료를 받으면 RR-master와 액션보드로 이어지는 흐름을 보여줍니다.</li><li>첫 보고서부터 '무엇이 막혔고 무엇이 풀렸는지'를 추적 가능한 구조로 남깁니다.</li>
+          </ul>
+        </article>
+    </section>
+
+    <section class="table-card">
+      <div class="section-kicker">Proof Layout</div>
+      <h2>온보딩 첫 판독 결과</h2>
+      <table class="priority-table">
+        <thead>
+          <tr><th>영역</th><th>보이는 신호</th><th>왜 지금 중요한가</th></tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td>도급·위수탁</td><td>자동갱신 조항과 SLA 위약금이 한 문단에 섞여 있음</td><td>해지 통지 시점 하나로 1년이 추가될 수 있음</td>
+          </tr>
+          <tr>
+            <td>개인정보</td><td>물류센터 현장 계정과 본사 승인 흐름이 분리되지 않음</td><td>사고 시 위탁자·수탁자 책임선이 흐려짐</td>
+          </tr>
+          <tr>
+            <td>안전</td><td>설비 점검 책임 주체가 도급사·수급사 사이에 중첩</td><td>사후 사고보다 사전 문서 정비가 훨씬 저렴함</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="action-grid">
+      
+        <article class="action-card">
+          <div class="action-when">D-3</div>
+          <h3>자동갱신 여부 결론</h3>
+          <p>현 계약 유지·수정·재입찰 중 어느 방향인지 우선 결정합니다.</p>
+        </article>
+        <article class="action-card">
+          <div class="action-when">D-7</div>
+          <h3>개인정보 접근권한 표 수령</h3>
+          <p>현장·본사 계정과 승인권자를 한 장 표로 받습니다.</p>
+        </article>
+        <article class="action-card">
+          <div class="action-when">D-10</div>
+          <h3>안전점검 외주구조 확인</h3>
+          <p>설비 점검, 응급조치, 보험부담 구조를 도표로 정리합니다.</p>
+        </article>
+    </section>
+
+    <section class="footer-band">
+      이 리포트가 막아주는 것: 처음 받은 자료에서 바로 놓치기 쉬운 자동갱신·책임배분 리스크를 조기에 고정합니다.
+    </section>
+
+    <div class="fine-print">Legal Risk Foundry · Risk Radar Marketing Demo · created 2026-06-22 · updated 2026-06-22</div>
+  </main>
+</body>
+</html>
