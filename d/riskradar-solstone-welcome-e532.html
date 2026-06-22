@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>솔스톤로지스 리스크레이더 웰컴 리포트</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=SUIT:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap');
+    :root{
+      --bg:#0b1220;
+      --panel:#ffffff;
+      --panel-soft:#f4f7fb;
+      --ink:#112031;
+      --muted:#5d6a78;
+      --line:#d7e0ea;
+      --navy:#11335d;
+      --blue:#1877f2;
+      --teal:#0f9d94;
+      --amber:#be7a00;
+      --red:#c33f31;
+      --peach:#fff3ea;
+      --mint:#ecfffb;
+      --sky:#eef5ff;
+      --shadow:0 30px 70px rgba(8,17,31,.22);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family:"SUIT","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 0% 0%, rgba(24,119,242,.22), transparent 22%),
+        radial-gradient(circle at 100% 0%, rgba(15,157,148,.18), transparent 20%),
+        linear-gradient(180deg, #0b1220 0%, #101a2e 24%, #e9eff6 24%, #eef3f8 100%);
+      min-height:100vh;
+      line-height:1.7;
+    }
+    .wrap{
+      width:min(1260px, calc(100vw - 28px));
+      margin:0 auto;
+      padding:24px 0 52px;
+    }
+    .hero{
+      position:relative;
+      overflow:hidden;
+      border-radius:30px;
+      padding:34px 34px 28px;
+      background:
+        linear-gradient(135deg, rgba(10,26,47,.96), rgba(17,51,93,.94) 48%, rgba(24,119,242,.92) 100%);
+      color:#f8fbff;
+      box-shadow:var(--shadow);
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      right:-80px;
+      top:-40px;
+      width:300px;
+      height:300px;
+      background:radial-gradient(circle, rgba(255,255,255,.16), transparent 62%);
+    }
+    .eyebrow{
+      display:inline-flex;
+      padding:7px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.1);
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+    .hero-head{
+      display:flex;
+      justify-content:space-between;
+      gap:22px;
+      align-items:flex-end;
+      flex-wrap:wrap;
+      margin-top:14px;
+    }
+    h1{
+      margin:0;
+      max-width:800px;
+      font-size:42px;
+      line-height:1.05;
+      letter-spacing:-.05em;
+      font-weight:900;
+    }
+    .hero-meta{
+      min-width:280px;
+      text-align:right;
+      display:grid;
+      gap:6px;
+      font-size:14px;
+      color:rgba(248,251,255,.86);
+    }
+    .lead-grid{
+      display:grid;
+      grid-template-columns:1.4fr .9fr;
+      gap:16px;
+      margin-top:24px;
+    }
+    .lead-card{
+      position:relative;
+      z-index:1;
+      border-radius:22px;
+      padding:20px 20px 18px;
+      background:rgba(255,255,255,.1);
+      border:1px solid rgba(255,255,255,.16);
+      backdrop-filter:blur(10px);
+    }
+    .lead-card strong{
+      display:block;
+      margin-bottom:8px;
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      opacity:.9;
+    }
+    .summary-band{
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin-top:16px;
+      padding:14px 16px;
+      border-radius:18px;
+      background:#ffffff;
+      color:var(--navy);
+    }
+    .summary-band p{
+      margin:0;
+      flex:1 1 480px;
+      font-weight:600;
+    }
+    .share{
+      display:grid;
+      gap:4px;
+      min-width:320px;
+    }
+    .share span{
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:#6b7f94;
+    }
+    .share-link{
+      color:var(--blue);
+      font-weight:800;
+      text-decoration:none;
+      word-break:break-all;
+    }
+    .muted-link{color:#6b7f94}
+    .metrics{
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      gap:16px;
+      margin:18px 0;
+    }
+    .metric-card,.info-card,.table-card,.action-card,.close-card{
+      background:var(--panel);
+      border:1px solid rgba(17,32,49,.06);
+      border-radius:24px;
+      box-shadow:0 18px 36px rgba(17,32,49,.08);
+    }
+    .metric-card{padding:20px}
+    .chip{
+      display:inline-flex;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+    .chip-red{background:#fdeceb;color:var(--red)}
+    .chip-amber{background:#fff1d8;color:var(--amber)}
+    .chip-sky{background:#eaf3ff;color:var(--blue)}
+    .chip-navy{background:#eaf0f7;color:var(--navy)}
+    .metric-value{
+      margin-top:14px;
+      font-family:"Space Grotesk","SUIT",sans-serif;
+      font-size:38px;
+      line-height:1;
+      letter-spacing:-.05em;
+      font-weight:700;
+      color:var(--navy);
+    }
+    .metric-note{
+      margin:8px 0 0;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+      margin-bottom:18px;
+    }
+    .info-card,.table-card,.close-card{padding:24px}
+    .section-kicker{
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:#73879b;
+      margin-bottom:8px;
+    }
+    h2{
+      margin:0 0 14px;
+      font-size:25px;
+      line-height:1.15;
+      letter-spacing:-.04em;
+      color:var(--navy);
+    }
+    h3{
+      margin:0 0 10px;
+      font-size:20px;
+      line-height:1.2;
+      letter-spacing:-.03em;
+      color:var(--navy);
+    }
+    .body-list{
+      margin:0;
+      padding-left:18px;
+    }
+    .body-list li+li{margin-top:8px}
+    .table-card{
+      background:linear-gradient(180deg, #ffffff 0%, #f6f9fc 100%);
+    }
+    table{
+      width:100%;
+      border-collapse:collapse;
+      overflow:hidden;
+      border-radius:18px;
+      background:#fff;
+    }
+    th{
+      padding:14px 14px;
+      text-align:left;
+      background:linear-gradient(180deg, #123661 0%, #0d2747 100%);
+      color:#f8fbff;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+    }
+    td{
+      padding:14px;
+      border-bottom:1px solid var(--line);
+      vertical-align:top;
+      font-size:14px;
+    }
+    tr:last-child td{border-bottom:none}
+    .action-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:16px;
+      margin-top:16px;
+    }
+    .action-card{
+      padding:22px;
+      background:linear-gradient(180deg, #fff 0%, var(--panel-soft) 100%);
+    }
+    .action-when{
+      display:inline-flex;
+      padding:6px 10px;
+      border-radius:999px;
+      background:var(--navy);
+      color:#fff;
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      margin-bottom:12px;
+    }
+    .close-card{
+      margin-top:18px;
+      background:linear-gradient(135deg, var(--peach) 0%, #fff 48%, var(--mint) 100%);
+      border:1px solid rgba(17,51,93,.08);
+    }
+    .close-card p{
+      margin:0;
+      font-size:16px;
+      font-weight:600;
+      color:var(--ink);
+    }
+    .footer{
+      margin-top:12px;
+      text-align:center;
+      color:#6d7c8c;
+      font-size:12px;
+    }
+    @media (max-width: 1020px){
+      .lead-grid,.grid-2{grid-template-columns:1fr}
+      .metrics,.action-grid{grid-template-columns:repeat(2, minmax(0,1fr))}
+      .hero-meta{text-align:left}
+    }
+    @media (max-width: 720px){
+      .wrap{width:min(100vw - 16px, 1260px);padding:16px 0 40px}
+      .hero{padding:24px 18px 20px;border-radius:24px}
+      h1{font-size:32px}
+      .metrics,.action-grid{grid-template-columns:1fr}
+      .summary-band{padding:14px}
+      .share{min-width:auto}
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">Risk Radar · welcome</div>
+      <div class="hero-head">
+        <h1>솔스톤로지스 리스크레이더 웰컴 리포트</h1>
+        <div class="hero-meta">
+          <span>저온물류·풀필먼트</span>
+          <span>2026년 6월 온보딩 주간 · 대표 · 경영지원실</span>
+        </div>
+      </div>
+      <div class="lead-grid">
+        <article class="lead-card">
+          <strong>한 줄 판단</strong>
+          <div>첫 자료 검토 결과, 자동갱신 조항과 개인정보 처리위탁 구조를 먼저 바로잡는 것이 가장 비용 대비 효과가 큽니다.</div>
+        </article>
+        <article class="lead-card">
+          <strong>메모</strong>
+          <div>현재 단계에서는 리스크가 많다기보다, 우선순위 없이 자료가 흩어져 있다는 점이 더 큰 문제입니다.</div>
+        </article>
+      </div>
+      <div class="summary-band">
+        <p>이번 첫 판독에서는 계약상 자동연장, 물류센터 접근권한, 냉동설비 안전책임 세 축이 가장 먼저 드러났습니다. 특히 위탁계약 자동갱신은 통지시점 하나로 1년 비용이 늘어날 수 있어 선제 판단이 필요합니다.</p>
+        <div class="share">
+          <span>공유 URL</span>
+          <a class="share-link" href="https://woosungjo-law.github.io/share/d/riskradar-solstone-welcome-ydcm.html">https://woosungjo-law.github.io/share/d/riskradar-solstone-welcome-ydcm.html</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="metrics">
+    <article class="metric-card">
+      <div class="chip chip-red">우선 축</div>
+      <div class="metric-value">3개</div>
+      <p class="metric-note">계약 · 개인정보 · 안전</p>
+    </article>
+  
+    <article class="metric-card">
+      <div class="chip chip-amber">즉시 점검</div>
+      <div class="metric-value">14일</div>
+      <p class="metric-note">자동연장 통지기한</p>
+    </article>
+  
+    <article class="metric-card">
+      <div class="chip chip-sky">추가 요청</div>
+      <div class="metric-value">4건</div>
+      <p class="metric-note">증빙 공백 보완</p>
+    </article>
+  
+    <article class="metric-card">
+      <div class="chip chip-navy">경영진 판단</div>
+      <div class="metric-value">1건</div>
+      <p class="metric-note">계약 유지 여부</p>
+    </article>
+  </section>
+
+    <section class="grid-2">
+      
+    <article class="info-card">
+      <div class="section-kicker">Core View</div>
+      <h2>핵심 진단</h2>
+      <ul class="body-list">
+        <li>현재 리스크의 본질은 법리가 부족해서가 아니라 문서와 운영 흐름이 서로 맞물리지 않는다는 점에 있습니다.</li><li>계약, 운영, 증빙 세 층을 같은 언어로 재정렬하면 초기 단계에서 큰 분쟁의 대부분을 줄일 수 있습니다.</li>
+      </ul>
+    </article>
+  
+    <article class="info-card">
+      <div class="section-kicker">Core View</div>
+      <h2>이번 주 확인된 사실</h2>
+      <ul class="body-list">
+        <li>위탁계약은 가격표보다 자동갱신·해지통지 조항이 더 중요합니다.</li><li>현장 계정 사용 흐름은 실제 운영과 승인체계가 분리되어 있어 사고 시 책임선이 흐려질 가능성이 있습니다.</li><li>설비 점검 문서는 존재하지만, 응급조치와 보험부담 구조가 계약서에 선명하게 적혀 있지 않습니다.</li>
+      </ul>
+    </article>
+  
+    </section>
+
+    <section class="table-card">
+      <div class="section-kicker">Priority Board</div>
+      <h2>이번 리포트가 잡아주는 우선순위</h2>
+      <table>
+        <thead>
+          <tr><th>시급성</th><th>영향</th><th>권장 조치</th></tr>
+        </thead>
+        <tbody>
+    <tr>
+      <td>즉시</td>
+      <td>풀필먼트 위탁계약 자동갱신 통지기한이 14일 앞으로 도래</td>
+      <td>계약 유지·수정·재입찰 중 방향을 결정하고 통지문 초안을 확정</td>
+    </tr>
+  
+    <tr>
+      <td>이번 달</td>
+      <td>개인정보 처리위탁 구조와 실제 운영 흐름 사이 불일치</td>
+      <td>수탁자 구분표와 접근권한 승인흐름을 한 장 표로 정리</td>
+    </tr>
+  
+    <tr>
+      <td>분기 내</td>
+      <td>설비 안전점검 책임 주체가 도급사·수급사 사이에서 중첩</td>
+      <td>보험·유지보수·현장조치 조항을 점검</td>
+    </tr>
+  </tbody>
+      </table>
+    </section>
+
+    <section class="table-card" style="margin-top:18px;">
+      <div class="section-kicker">Detail Ledger</div>
+      <h2>온보딩 1차 판독 결과</h2>
+      <table>
+        <thead>
+          <tr><th>영역</th><th>확인된 신호</th><th>귀사 영향</th><th>우선 조치</th></tr>
+        </thead>
+        <tbody>
+    <tr><td>도급·위수탁</td><td>자동갱신 조항과 SLA 위약금이 한 문단에 혼재</td><td>해지 통지 시점 하나로 비용 1년 증가 가능</td><td>방향 결정 후 통지문 확보</td></tr>
+  
+    <tr><td>개인정보</td><td>현장 계정과 본사 승인흐름이 분리</td><td>사고 시 위탁자·수탁자 책임 혼선</td><td>권한표와 승인표 정리</td></tr>
+  
+    <tr><td>안전</td><td>점검 책임 주체가 문서마다 다름</td><td>사고 이후 책임 다툼 가능</td><td>보험·현장조치 구조 확인</td></tr>
+  </tbody>
+      </table>
+    </section>
+
+    <section class="action-grid">
+    <article class="action-card">
+      <div class="action-when">D-3</div>
+      <h3>자동갱신 여부 결정</h3>
+      <p>현 계약 유지 여부를 먼저 정하고 필요 시 상대방 통지문을 준비합니다.</p>
+    </article>
+  
+    <article class="action-card">
+      <div class="action-when">D-7</div>
+      <h3>접근권한 표 수령</h3>
+      <p>현장·본사 계정, 승인권자, 외부수탁자 사용범위를 한 장 표로 받습니다.</p>
+    </article>
+  
+    <article class="action-card">
+      <div class="action-when">D-10</div>
+      <h3>안전점검 구조 확인</h3>
+      <p>설비 점검, 응급조치, 보험부담 주체를 계약·실행 기준으로 정리합니다.</p>
+    </article>
+  </section>
+
+    <section class="close-card">
+      <div class="section-kicker">Closing View</div>
+      <h2>정리</h2>
+      <p>첫 위클리 발행 전까지는 리스크 수를 늘리는 것보다, 기한과 책임선이 분명한 초기 레지스터를 만드는 것이 우선입니다.</p>
+    </section>
+
+    <div class="footer">Legal Risk Foundry · Risk Radar</div>
+  </main>
+</body>
+</html>
