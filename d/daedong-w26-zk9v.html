@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>대동여주도 리스크레이더 — 주간리포트 W26</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=SUIT:wght@300;400;500;600;700;800&display=swap');
+  :root{
+    --ink:#2c1d26; --ink2:#56424c; --muted:#8a7b82; --line:#e5dde1;
+    --teal:#7a2e3a; --teal-d:#5a1f2b; --surface:#f6f2f4; --white:#fff;
+    --wine:#3a1525; --wine-l:#4e1f32;
+    --rH:#c74a3c; --rH-bg:#f0bdb6; --rH-tx:#7c2d12;
+    --rM-bg:#f8e4b8; --rM-tx:#7d520a;
+    --rL-bg:#fef3c7; --rL-tx:#78350f;
+    --rOK-bg:#d6ecdb; --rOK-tx:#287a54;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:#f0edee;color:var(--ink);
+    font-family:"SUIT","Apple SD Gothic Neo","Malgun Gothic",sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:860px;margin:0 auto;padding:20px 16px 56px}
+  .stamp{font-size:11px;letter-spacing:.04em;color:var(--muted);text-align:center;margin-bottom:10px}
+  .card{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:24px;margin-bottom:16px}
+  .card-header{background:linear-gradient(135deg,var(--wine) 0%,var(--wine-l) 100%);border-color:var(--wine)}
+  .card-header h1,.card-header .facts div{color:#fff}
+  .card-header .facts div span{color:rgba(255,255,255,.5)}
+  .card-header .sub{color:rgba(255,255,255,.55)}
+  .card-header .eyebrow{color:#d4a0aa;background:rgba(255,255,255,.1)}
+  .eyebrow{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:var(--teal-d);
+    background:var(--surface);border-radius:999px;padding:6px 12px;letter-spacing:.02em}
+  h1{font-size:25px;font-weight:800;letter-spacing:-.02em;margin:12px 0 4px}
+  .sub{color:var(--muted);font-size:13px}
+  .facts{display:grid;grid-template-columns:repeat(2,1fr);gap:8px 20px;margin-top:16px;font-size:13px}
+  .facts div span{color:var(--muted)}
+  .lens-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .lens-chip{padding:10px 16px;border-radius:10px;font-size:13px;font-weight:700;flex:1;min-width:130px;text-align:center;display:flex;flex-direction:column;gap:2px}
+  .lens-chip small{font-size:11px;font-weight:500;opacity:.7}
+  .lens-H{background:var(--rH-bg);color:var(--rH-tx)} .lens-M{background:var(--rM-bg);color:var(--rM-tx)}
+  .lens-L{background:var(--rL-bg);color:var(--rL-tx)} .lens-OK{background:var(--rOK-bg);color:var(--rOK-tx)}
+  .note{font-size:12px;color:var(--muted);margin-top:10px}
+  h2{font-size:17px;font-weight:800;margin:0 0 14px;display:flex;align-items:center;gap:8px}
+  h2 .dot{width:8px;height:18px;background:var(--teal);border-radius:3px}
+  p.lead{font-size:14.5px;color:var(--ink2);margin:0}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  thead th{text-align:left;font-size:12px;font-weight:700;color:var(--teal-d);background:var(--surface);padding:11px 12px}
+  thead th:first-child{border-radius:8px 0 0 8px} thead th:last-child{border-radius:0 8px 8px 0}
+  tbody td{padding:13px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  .risk{display:inline-flex;align-items:center;justify-content:center;min-width:30px;font-weight:800;font-size:12px;
+    border-radius:7px;padding:4px 9px;letter-spacing:.02em}
+  .r-H{background:var(--rH);color:#fff} .r-M{background:var(--rM-bg);color:var(--rM-tx)} .r-L{background:var(--rOK-bg);color:var(--rOK-tx)}
+  .chg{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .chg .c{background:var(--surface);border-radius:12px;padding:14px}
+  .chg .k{font-size:12px;color:var(--muted)} .chg .v{font-size:24px;font-weight:800;margin-top:6px;letter-spacing:-.02em}
+  .signal{border-left:3px solid var(--teal);padding:4px 0 4px 14px}
+  .signal .t{font-weight:800;font-size:14px;color:var(--teal-d);margin-bottom:6px}
+  .signal p{margin:6px 0;font-size:14px;color:var(--ink2)}
+  .ask li{margin:8px 0;font-size:14px;color:var(--ink2)}
+  .ask b{color:var(--ink)}
+  .disc{font-size:11.5px;color:var(--muted);line-height:1.7;margin-top:6px}
+  .metrics{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:16px}
+  .metrics .m{background:var(--surface);border-radius:12px;padding:12px;text-align:center}
+  .metrics .m .k{font-size:11px;color:var(--muted);margin-bottom:4px}
+  .metrics .m .v{font-size:20px;font-weight:800}
+  .opt-lens{margin-top:12px;padding:10px 14px;background:var(--surface);border-radius:10px;font-size:12.5px;display:flex;align-items:center;gap:8px}
+  .opt-lens .tag{background:var(--rH-bg);color:var(--rH-tx);font-weight:700;padding:3px 8px;border-radius:6px;font-size:11px}
+  @media (max-width:620px){
+    h1{font-size:21px} .lens-row{flex-direction:column} .lens-chip{min-width:auto}
+    .chg,.metrics{grid-template-columns:repeat(2,1fr)} .facts{grid-template-columns:1fr}
+    thead{display:none}
+    tbody td{display:block;border-bottom:0;padding:3px 0}
+    tbody tr{display:block;border-bottom:1px solid var(--line);padding:12px 0}
+    td[data-l]::before{content:attr(data-l);display:block;font-size:11px;color:var(--muted);font-weight:700;margin-bottom:2px}
+  }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="stamp">주간리포트 · 2026-W26 · v2.0 · 변호사-의뢰인 비밀유지 특권 적용</div>
+
+  <section class="card card-header">
+    <span class="eyebrow">◎ 리스크레이더 · 주간리포트</span>
+    <h1>대동여주도 — 2026년 제26주차</h1>
+    <div class="sub">2026.06.22 ~ 06.28 · 발행 2026-06-24 · 담당 변호사 조우성</div>
+    <div class="facts">
+      <div><span>수신 </span>이세민 대표 / 이정연 부장</div>
+      <div><span>이번 주 한 줄 </span>새 위험보다 기존 위험의 증빙력 강화</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2><span class="dot"></span>5대 렌즈 진단 현황</h2>
+    <div class="lens-row">
+      <div class="lens-chip lens-H"><small>L1</small>의무·책임 <b>H</b></div>
+      <div class="lens-chip lens-H"><small>L2</small>기한·조건 <b>H</b></div>
+      <div class="lens-chip lens-H"><small>L3</small>분쟁·해지·손배 <b>H</b></div>
+      <div class="lens-chip lens-H"><small>L4</small>규제·컴플 <b>H</b></div>
+      <div class="lens-chip lens-M"><small>L5</small>IP·데이터 <b>M</b></div>
+    </div>
+    <div class="opt-lens"><span class="tag">선택</span> L0 지배구조·이해상충 — <b>H</b> (투자·주주간계약·농업회사 출자한도)</div>
+    <div class="note">수령 자료 범위 내 관리 우선순위 안내 · 확정적 법률효과 단정 안 함</div>
+  </section>
+
+  <section class="card">
+    <h2><span class="dot"></span>리걸 지표</h2>
+    <div class="metrics">
+      <div class="m"><div class="k">H 리스크</div><div class="v">9건</div></div>
+      <div class="m"><div class="k">M 리스크</div><div class="v">11건</div></div>
+      <div class="m"><div class="k">검토 대기</div><div class="v">11건</div></div>
+      <div class="m"><div class="k">임박 기한</div><div class="v">0건</div></div>
+      <div class="m"><div class="k">이행률</div><div class="v">65%</div></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2><span class="dot"></span>이번 주 한눈에</h2>
+    <table>
+      <thead><tr><th style="width:88px">시급성</th><th>무엇이 걸려 있나</th><th>권장 조치</th></tr></thead>
+      <tbody>
+        <tr><td data-l="시급성"><span class="risk r-H">즉시</span></td><td data-l="무엇이">양 법인 분리 운영 자료가 흩어져 있어 설명력이 약함</td><td data-l="권장 조치">계좌·장부·인력·거래처·의사결정 자료를 한 폴더로 정리</td></tr>
+        <tr><td data-l="시급성"><span class="risk r-M">이번 달</span></td><td data-l="무엇이">SLL 정산·승인 증빙이 구두 합의에 머물러 있음</td><td data-l="권장 조치">5월 정산 검산, 권리자 표기·승인 이메일 보관</td></tr>
+        <tr><td data-l="시급성"><span class="risk r-L">분기 내</span></td><td data-l="무엇이">에프앤비 90% 보유 구조는 유지 중</td><td data-l="권장 조치">추가 지분 변동만 분기 점검</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="card">
+    <h2><span class="dot"></span>지난주 대비 변화</h2>
+    <div class="chg">
+      <div class="c"><div class="k">신규</div><div class="v">0<small style="font-size:13px;color:var(--muted)"> 건</small></div></div>
+      <div class="c"><div class="k">정정</div><div class="v">1<small style="font-size:13px;color:var(--muted)"> 건</small></div></div>
+      <div class="c"><div class="k">해소</div><div class="v">1<small style="font-size:13px;color:var(--muted)"> 건</small></div></div>
+      <div class="c"><div class="k">기한임박</div><div class="v">0<small style="font-size:13px;color:var(--muted)"> 건</small></div></div>
+    </div>
+    <div class="note">R-005 정정 완료(SLL중앙 미회생 확인), R-002 면세점 유지 의사결정 완료.</div>
+  </section>
+
+  <section class="card">
+    <h2><span class="dot"></span>이번 주 핵심 신호 1개</h2>
+    <div class="signal">
+      <div class="t">양 법인 분리운영 증빙 정리가 이번 주의 핵심입니다</div>
+      <p>이지민 대표 겸임 구조가 유지되는 한, 국세청이 "실질 동일 경영"으로 볼 수 있습니다. <b>지금 증빙을 정리해두면 그때 꺼내 보여줄 수 있습니다.</b></p>
+      <p><b>그래서 할 일</b> — 계좌·장부·인력·거래처·의사결정 5요소 자료를 한 묶음으로 정리해 주세요.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2><span class="dot"></span>핵심 요약</h2>
+    <p class="lead">이번 주의 핵심 메시지는 <b>새 리스크가 아니라, 기존 리스크의 방어력을 높이는 것</b>입니다. SLL 긴급 이슈는 6/19 정정으로 내려왔고, 면세점은 2028년까지 유지로 정리됐습니다. 남은 핵심은 제조·유통 법인의 실질 분리 운영을 설명할 증빙을 정리하는 일입니다. 에프앤비 90% 보유 구조는 분기 1회 점검이면 충분합니다.</p>
+  </section>
+
+  <section class="card">
+    <h2><span class="dot"></span>동종 업계 리스크 브리핑</h2>
+    <p class="lead" style="font-size:13.5px"><b>국세청 「주류제조자 가이드북 2026」</b> — 주류 제조·출고·표시·신고 실무 가이드 갱신. 제조·유통 분리 운영의 증빙 충실도가 갈수록 중요해지는 흐름입니다. 현재 진행 중인 독립운영 5요소 문서화 작업이 규제 강화 흐름과 정확히 일치합니다.</p>
+  </section>
+
+  <section class="card">
+    <h2><span class="dot"></span>이번 주에 부탁드리는 일</h2>
+    <ul class="ask">
+      <li><b>양 법인 분리 운영 자료</b>를 한 폴더에 모아 주세요 (계좌·장부·인력·거래처·의사결정)</li>
+      <li><b>SLL 정산표와 승인 관련 메일·메모</b>를 보관해 주세요 (5월 정산 검산 + 이메일 증빙)</li>
+      <li><b>9억 금전소비대차·더남산소주 자료</b>는 이번 달 안으로 보내 주세요</li>
+      <li><b>에프앤비 지분 구조</b>는 분기 1회 점검으로 충분합니다</li>
+    </ul>
+  </section>
+
+  <div class="disc" style="text-align:center;padding:0 8px">
+    본 리포트는 일반적 위험 점검을 위한 참고 자료이며, 개별 사안에 대한 확정적 법률 자문이나 법률효과를 단정하지 않습니다.<br>
+    대동여주도를 위한 법률 자문 · 변호사-의뢰인 비밀유지 특권 적용 · 외부 공개 금지<br>
+    다음 주간리포트: 2026-06-29 (W27)
+  </div>
+</main>
+</body>
+</html>
