@@ -1,11 +1,12 @@
 <!doctype html>
 <html lang="ko">
 <head>
+<meta name="robots" content="noindex,nofollow">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>아우토플라츠 리스크레이더 — 주간리포트 W27 (Apollo)</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=SUIT:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
   :root{
     --bg:#f5f1f2; --panel:#ffffff; --panel2:#faf6f7; --line:#ebe2e5; --line2:#ddccd2;
     --ink:#2c1d26; --ink2:#56424c; --muted:#8a7b82; --faint:#b3a6ab;
@@ -13,11 +14,11 @@
     --header-bg:#3a1525; --header-bg2:#4e1f32; --header-accent:#d4a0aa;
     --rH:#c74a3c; --rH-tx:#fff; --rM-bg:#f8e4b8; --rM-tx:#7d520a; --rL-bg:#d6ecdb; --rL-tx:#287a54;
     --amber:#b45309; --green:#287a54;
-    --mono:"JetBrains Mono",ui-monospace,monospace;
+    --mono:"Pretendard";
   }
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--ink);
-    font-family:"SUIT","Apple SD Gothic Neo","Malgun Gothic",sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+    font-family:"Pretendard";line-height:1.6;-webkit-font-smoothing:antialiased}
   .app{display:grid;grid-template-columns:214px 1fr;min-height:100vh;max-width:1090px;margin:0 auto;background:var(--panel);box-shadow:0 0 0 1px var(--line)}
   .side{background:var(--panel2);border-right:1px solid var(--line);position:sticky;top:0;align-self:start;height:100vh;overflow:auto}
   .brand{padding:18px;border-bottom:1px solid var(--line)}
@@ -63,7 +64,7 @@
   .c-H{background:var(--rH);color:#fff} .c-M{background:var(--rM-bg);color:var(--rM-tx)} .c-L{background:var(--rL-bg);color:var(--rL-tx)}
   .st-up{color:var(--amber)} .st-ok{color:var(--green)} .st-flat{color:var(--faint)} .st-done{color:var(--wine)}
   .tl{display:grid;grid-template-columns:repeat(4,1fr);gap:0;font-family:var(--mono);font-size:12px;margin-top:6px}
-  .tl .n{padding-top:9px;color:var(--ink2)} .tl .n small{color:var(--muted);display:block;margin-top:3px;font-family:"SUIT",sans-serif}
+  .tl .n{padding-top:9px;color:var(--ink2)} .tl .n small{color:var(--muted);display:block;margin-top:3px;font-family:"Pretendard"}
   .tl .n.a{border-top:3px solid var(--amber)} .tl .n.g{border-top:3px solid var(--green)}
   .ckgrp{margin-bottom:20px} .ckgrp .gl{font-size:12px;font-weight:700;color:var(--amber);margin-bottom:9px}
   .ck{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px;color:var(--ink2)}
@@ -91,7 +92,7 @@
 <body>
 <div class="app">
   <aside class="side">
-    <div class="brand"><div class="eb">리스크레이더 · 주간</div><div class="n">아우토플라츠</div><div class="c">제27주차 · 2026.06.24</div></div>
+    <div class="brand"><div class="eb">리스크레이더 · 주간</div><div class="n">아우토플라츠</div><div class="c">제27주차 · 2026.06.29</div></div>
     <div class="navlbl">세부 메뉴</div>
     <nav class="nav">
       <a data-v="ov" class="active"><i class="ti ti-layout-dashboard"></i>종합 현황</a>
@@ -107,7 +108,7 @@
   <div class="main">
     <div class="header">
       <div><div class="eb">리스크레이더 · 주간리포트</div><h1 id="ttl">종합 현황</h1></div>
-      <div class="meta">아우토플라츠 · 제27주차<br>2026.06.29 – 07.05 · 발행 06.24</div>
+      <div class="meta">아우토플라츠 · 제27주차<br>2026.06.29 – 07.05 · 발행 06.29</div>
     </div>
     <div class="body">
 
@@ -215,7 +216,6 @@
     </div>
   </div>
 </div>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.5.0/dist/tabler-icons.min.css">
 <script>
   const titles={ov:"종합 현황",rk:"리스크 레지스터",dl:"기한 관제",ac:"실행 항목",dc:"자료 · 추가요청",ex:"외부 환경"};
   document.querySelectorAll('.nav a').forEach(a=>{
