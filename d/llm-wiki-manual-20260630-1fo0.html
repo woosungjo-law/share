@@ -1,0 +1,305 @@
+<!doctype html><html lang="ko"><head>
+<meta name="robots" content="noindex,nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>LLM WIKI ?????</title><style>
+:root{--ink:#17202a;--muted:#667085;--line:#d9e1ea;--panel:#fff;--accent:#1f6f68;--accent2:#b9472f;--soft:#eef7f5;--code:#12212f}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(180deg,#eef7f5 0,#fbfcfd 280px,#fff 100%);color:var(--ink);font-family:'Noto Sans KR','Pretendard','Malgun Gothic',sans-serif;line-height:1.78}a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}.hero{padding:56px 24px 34px;border-bottom:1px solid var(--line)}.hero-inner{max-width:1120px;margin:0 auto}.kicker{color:var(--accent2);font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase}h1{margin:12px 0 16px;font-size:clamp(34px,5vw,58px);line-height:1.12;letter-spacing:0}.subtitle{max-width:760px;color:#344054;font-size:18px;margin:0}.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.meta span{border:1px solid var(--line);background:rgba(255,255,255,.78);padding:6px 10px;font-size:13px;font-weight:700;color:#425466}.layout{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:260px minmax(0,1fr);gap:36px;padding:34px 24px 80px}.toc{position:sticky;top:18px;align-self:start;border-left:3px solid var(--accent);padding:4px 0 4px 16px;max-height:calc(100vh - 36px);overflow:auto}.toc-title{font-size:13px;font-weight:900;margin:0 0 10px;color:var(--accent2)}.toc a{display:block;color:#344054;text-decoration:none;font-size:14px;line-height:1.45;padding:5px 0}.toc a:hover{color:var(--accent)}.toc-l1{font-weight:800}.toc-l2{padding-left:10px!important}main{min-width:0}section.notice{border:1px solid #b7d9d3;background:var(--soft);padding:18px 20px;margin-bottom:26px}h2{margin-top:52px;padding-top:10px;border-top:1px solid var(--line);font-size:29px;line-height:1.35;letter-spacing:0}h3{margin-top:34px;font-size:22px;line-height:1.42;letter-spacing:0;color:#1d2939}h4{margin-top:24px;font-size:18px;letter-spacing:0}p{margin:14px 0}blockquote{margin:20px 0;padding:16px 18px;border-left:4px solid var(--accent2);background:#fff8f5;color:#3a2a25;font-weight:700}ul{padding-left:22px}li{margin:5px 0}.table-wrap{width:100%;overflow-x:auto;margin:18px 0 24px;border:1px solid var(--line);background:var(--panel)}table{width:100%;border-collapse:collapse;min-width:560px}th,td{border-bottom:1px solid var(--line);padding:11px 13px;vertical-align:top;text-align:left}th{background:#f1f6f6;font-weight:900;color:#243b3a}tr:last-child td{border-bottom:0}code{background:#eef2f6;color:#263544;padding:2px 5px;font-size:.92em}pre{background:var(--code);color:#eef6ff;overflow-x:auto;padding:18px 20px;line-height:1.65;border:1px solid #26384a}pre code{background:transparent;color:inherit;padding:0}.wikilink{color:var(--accent);font-weight:800}hr{border:0;border-top:1px solid var(--line);margin:36px 0}.footer{margin-top:64px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:20px}@media(max-width:920px){.layout{display:block;padding:24px 18px 60px}.toc{position:static;max-height:none;margin-bottom:26px;border:1px solid var(--line);border-left:3px solid var(--accent);background:rgba(255,255,255,.8);padding:14px 16px}h1{font-size:36px}h2{font-size:25px}.hero{padding:40px 18px 26px}}@media print{body{background:#fff}.toc{position:static;max-height:none}.layout{display:block}a{color:inherit}}
+</style></head><body><header class="hero">
+<meta name="robots" content="noindex,nofollow"><div class="hero-inner"><div class="kicker">LLM WIKI Lab Manual</div><h1>LLM WIKI ?????</h1><p class="subtitle">??? ?? ??? ???, ??? ??, ???, ??? ???? ?? ????? ?? ???? ???.</p><div class="meta"><span>as of 2026-06-30</span><span>status ready</span><span>source: _WIKI_LLMWIKI</span></div></div></header><div class="layout"><nav class="toc"><p class="toc-title">??</p><a class="toc-l1" href="#llm-wiki">LLM WIKI 사용설명서</a><a class="toc-l2" href="#1-wiki">1. 이 WIKI의 정체</a><a class="toc-l2" href="#2-7">2. 가장 중요한 사용 원칙 7개</a><a class="toc-l2" href="#3">3. 폴더별 사용법</a><a class="toc-l2" href="#4">4. 가장 좋은 작업 흐름</a><a class="toc-l2" href="#5">5. 중요 명령어 모음</a><a class="toc-l2" href="#6">6. 추천 루틴</a><a class="toc-l2" href="#7-wiki">7. 이 WIKI로 좋은 퍼포먼스를 내는 꿀팁</a><a class="toc-l2" href="#8-qa">8. QA 시리즈</a><a class="toc-l2" href="#9">9. 추천 프롬프트 세트</a><a class="toc-l2" href="#10-30">10. 30일 운영 플랜</a><a class="toc-l2" href="#11">11. 사용자가 기억할 한 문장</a></nav><main><section class="notice"><strong>??:</strong> ? ??? Obsidian ?? ?? <code>LLM_WIKI_사용설명서_20260630.md</code>? ? ??? HTML???. ?? URL? ?? ??? <code>web_html</code> ???? ?????.</section><h1 id="llm-wiki">LLM WIKI 사용설명서</h1>
+<blockquote>이 WIKI는 "AI 자료 정리 폴더"가 아니라, LLM WIKI 강의와 지식운영 상품을 계속 생산하기 위한 운영체계다.</blockquote>
+<p>핵심 문장:</p>
+<blockquote>AI 시대의 지식관리는 저장이 아니라 운영이다.</blockquote>
+<p>이 문서는 <code>_WIKI_LLMWIKI/</code>를 어떻게 쓰면 가장 좋은 퍼포먼스가 나는지 설명한다. 기준은 단순 정리가 아니라 강의안, 워크북, 컬럼, 상품기획, 컨설팅 프레임워크가 계속 나오는 구조다.</p>
+<h2 id="1-wiki">1. 이 WIKI의 정체</h2>
+<p><code>_WIKI_LLMWIKI/</code>는 다음 다섯 가지를 동시에 수행하는 WIKI다.</p>
+<div class="table-wrap"><table><thead><tr><th>역할</th><th>설명</th><th>대표 폴더</th></tr></thead><tbody><tr><td>강의 지식창고</td><td>DIKW, 온톨로지, RAG, LLM WIKI 개념 축적</td><td><code>20_concepts/</code></td></tr><tr><td>강의 설계실</td><td>입문, 심화, 특화 과정 설계</td><td><code>10_curriculum/</code>, <code>80_outputs/강의안/</code></td></tr><tr><td>사례 라이브러리</td><td>내 지식관리 워크스페이스와 Palantir/NotebookLM 등 사례 정리</td><td><code>30_cases/</code></td></tr><tr><td>도구 비교실</td><td>Obsidian, Notion, Dropbox, NotebookLM, Codex 등 비교</td><td><code>40_tools/</code></td></tr><tr><td>상품화 공장</td><td>컬럼, 워크북, 로드맵, 컨설팅 상품 생산</td><td><code>50_market/</code>, <code>60_columns/</code>, <code>80_outputs/</code></td></tr></tbody></table></div>
+<p>이 WIKI의 최종 목표는 한국어권에서 "LLM WIKI/지식운영"을 설명하고 판매할 수 있는 대표 라이브러리가 되는 것이다.</p>
+<h2 id="2-7">2. 가장 중요한 사용 원칙 7개</h2>
+<ul><li>새 자료는 먼저 <code>00_raw/</code>에 넣는다.</li><li>원본은 직접 고치지 않는다.</li><li>개념은 <code>20_concepts/</code>로 승격한다.</li><li>사례는 <code>30_cases/</code>로 분리한다.</li><li>강의, 워크북, 컬럼으로 나갈 수 있는지는 항상 묻는다.</li><li>모든 페이지는 <code>as_of</code>, <code>confidence</code>, <code>freshness</code>로 현행성을 관리한다.</li><li>산출물이 나오면 <code>log.md</code>에 기록한다.</li></ul>
+<p>짧게 말하면:</p>
+<pre><code class="language-text">Raw를 넣고 → Concept/Case로 승격하고 → Curriculum에 배치하고 → Output으로 뽑고 → Feedback으로 다시 보강한다.</code></pre>
+<h2 id="3">3. 폴더별 사용법</h2>
+<h3 id="section">루트</h3>
+<div class="table-wrap"><table><thead><tr><th>파일</th><th>용도</th></tr></thead><tbody><tr><td><code>CLAUDE.md</code></td><td>이 WIKI의 canonical schema. 에이전트가 반드시 따라야 하는 운영규칙</td></tr><tr><td><code>AGENTS.md</code></td><td>Codex, Claude Code, Opencode 등 cross-tool용 진입 규칙</td></tr><tr><td><code>index.md</code></td><td>전체 WIKI의 첫 진입점</td></tr><tr><td><code>log.md</code></td><td>작업 이력, 갱신 이력, 산출물 기록</td></tr><tr><td><code>_시작하기.md</code></td><td>간단한 사용 안내</td></tr><tr><td><code>_QUESTIONS.md</code></td><td>강의/상품 설계를 위한 50개 결정 질문</td></tr><tr><td><code>LLM_WIKI_사용설명서_20260630.md</code></td><td>사람이 읽는 운영 매뉴얼</td></tr></tbody></table></div>
+<p>루트에서 가장 먼저 읽을 파일은 <code>index.md</code>이고, 작업 규칙이 흔들릴 때는 <code>CLAUDE.md</code>를 다시 읽는다.</p>
+<h3 id="00raw"><code>00_raw/</code></h3>
+<p>새 자료를 임시로 넣는 곳이다.</p>
+<p>넣을 수 있는 자료:</p>
+<ul><li>카파시, Anthropic, OpenAI, Palantir, NotebookLM 관련 공식 자료</li><li>지식관리, DIKW, 온톨로지, RAG 관련 문서</li><li>강의 아이디어 메모</li><li>수강생 질문</li><li>경쟁 강의 분석</li><li>내 기존 WIKI 구조 캡처나 설명 메모</li></ul>
+<p>주의:</p>
+<ul><li>raw는 불변 원본이다.</li><li>요약문으로 덮어쓰지 않는다.</li><li>ingest 후 <code>00_raw_ingested/</code>로 이동한다.</li></ul>
+<h3 id="10curriculum"><code>10_curriculum/</code></h3>
+<p>강의 구조를 잡는 곳이다.</p>
+<p>현재 핵심 문서:</p>
+<ul><li><span class="wikilink">CUR-풀코스-LLM_WIKI_마스터프로그램</span></li></ul>
+<p>이 폴더는 다음 질문에 답해야 한다.</p>
+<ul><li>3시간 입문은 무엇을 완성시키는가?</li><li>1일 워크숍은 어디까지 구축하는가?</li><li>4주 과정은 어떤 변화를 만드는가?</li><li>특화 WIKI 컨설팅과 어떻게 이어지는가?</li></ul>
+<h3 id="20concepts"><code>20_concepts/</code></h3>
+<p>강의의 이론 엔진이다.</p>
+<p>대표 축:</p>
+<ul><li><span class="wikilink">C-DIKW</span></li><li><span class="wikilink">C-카파시식_LLM_WIKI</span></li><li><span class="wikilink">C-Raw_Wiki_Schema</span></li><li><span class="wikilink">C-온톨로지</span></li><li><span class="wikilink">C-RAG</span></li><li><span class="wikilink">C-Context_Engineering</span></li><li><span class="wikilink">C-Workflow_vs_Agent</span></li><li><span class="wikilink">C-Evals_Observability</span></li><li><span class="wikilink">C-Agent_Harness</span></li></ul>
+<p>좋은 Concept 페이지는 반드시 네 가지를 담는다.</p>
+<div class="table-wrap"><table><thead><tr><th>요소</th><th>설명</th></tr></thead><tbody><tr><td>한 줄 정의</td><td>강의 슬라이드 제목처럼 바로 말할 수 있어야 함</td></tr><tr><td>왜 중요한가</td><td>수강생의 문제와 연결</td></tr><tr><td>강의에서의 설명법</td><td>실제 말하기 방식</td></tr><tr><td>실습/과제 아이디어</td><td>수강생이 손으로 할 일</td></tr></tbody></table></div>
+<h3 id="20concepts-lectureassets"><code>20_concepts/_lecture_assets/</code></h3>
+<p>개념을 강의용 자료로 바꾸는 중간 자산 폴더다.</p>
+<p>예:</p>
+<ul><li>DIKW 강의 메모</li><li>RAG 비교 데모</li><li>온톨로지 실습 메모</li><li>FDE 컨설팅 연결</li></ul>
+<p>Concept는 이론 원장이고, <code>_lecture_assets</code>는 슬라이드와 데모를 만들기 직전의 작업대다.</p>
+<h3 id="30cases"><code>30_cases/</code></h3>
+<p>사례를 관리한다.</p>
+<p>현재 핵심 사례:</p>
+<ul><li><span class="wikilink">CASE-지식관리_워크스페이스</span></li><li><span class="wikilink">CASE-Palantir_온톨로지</span></li></ul>
+<p>좋은 사례 페이지는 "이 사례가 어떤 구조를 보여주는가"를 중심에 둔다. 제품 리뷰나 기업 분석으로 빠지지 않도록 주의한다.</p>
+<h3 id="40tools"><code>40_tools/</code></h3>
+<p>도구를 LLM WIKI 관점에서 평가한다.</p>
+<p>현재 축:</p>
+<ul><li>Obsidian: 기본 작업대</li><li>Notion: 예쁜 올인원 노트앱이지만 LLM 운영 스키마에는 한계</li><li>Dropbox: 저장소이지 지식체계는 아님</li><li>NotebookLM: 자료 대화 도구</li><li>Claude Code, Codex, OpenCode: WIKI 운영 에이전트</li></ul>
+<p>도구 페이지를 볼 때의 기준:</p>
+<pre><code class="language-text">이 도구가 지식을 저장하는가, 구조화하는가, 운영하는가, 산출물로 뽑는가?</code></pre>
+<h3 id="50market"><code>50_market/</code></h3>
+<p>강의와 상품의 포지셔닝을 관리한다.</p>
+<p>현재 핵심 문서:</p>
+<ul><li><span class="wikilink">MKT-LLM_WIKI_강의_포지셔닝</span></li></ul>
+<p>이 폴더는 다음 질문을 관리한다.</p>
+<ul><li>누구에게 팔 것인가?</li><li>어떤 약속을 할 것인가?</li><li>첫 상품은 무엇인가?</li><li>어떤 컬럼이 유입 콘텐츠가 되는가?</li><li>어떤 증거가 구매 전환을 만드는가?</li></ul>
+<h3 id="60columns"><code>60_columns/</code></h3>
+<p>발행 글을 관리한다.</p>
+<p>현재 첫 후보:</p>
+<ul><li><span class="wikilink">COL-20260630-노트앱을_써도_지식이_안_쌓이는_이유</span></li></ul>
+<p>컬럼은 단순 홍보글이 아니다. Concept를 대중 언어로 번역해 시장 반응을 보는 실험이다.</p>
+<h3 id="70lab"><code>70_lab/</code></h3>
+<p>실험 기록을 관리한다.</p>
+<p>예:</p>
+<ul><li>WIKI 초기 구축</li><li>ingest 실험</li><li>강의 데모 실험</li><li>프롬프트/스키마 실험</li><li>수강생 과제 실험</li></ul>
+<p>Lab은 "정답 문서"가 아니라 시도와 배움을 남기는 공간이다.</p>
+<h3 id="80outputs"><code>80_outputs/</code></h3>
+<p>실제 산출물 허브다.</p>
+<div class="table-wrap"><table><thead><tr><th>하위 폴더</th><th>산출물</th></tr></thead><tbody><tr><td><code>강의안/입문/</code></td><td>3시간 입문, 1시간 입문 등</td></tr><tr><td><code>강의안/심화/</code></td><td>온톨로지, RAG, agent 설계</td></tr><tr><td><code>강의안/특화/</code></td><td>법률/강의/콘텐츠/투자 WIKI 구축</td></tr><tr><td><code>상품기획/</code></td><td>로드맵, 오퍼, 컨설팅 설계</td></tr><tr><td><code>워크북/</code></td><td>수강생 설계서</td></tr><tr><td><code>슬라이드/</code></td><td>발표 자료</td></tr></tbody></table></div>
+<p>현재 핵심 산출물:</p>
+<ul><li><code>ROADMAP-LLM_WIKI_마스터클래스-20260630.md</code></li><li><code>OFFER-1대1_특화_WIKI_구축컨설팅-20260630.md</code></li><li><code>WB-LLM_WIKI_입문워크북-20260630.md</code></li></ul>
+<h2 id="4">4. 가장 좋은 작업 흐름</h2>
+<h3 id="a">A. 새 자료를 넣을 때</h3>
+<pre><code class="language-text">1. 자료를 00_raw/에 넣는다.
+2. "LLMWIKI ingest 해줘"라고 요청한다.
+3. AI가 Concept/Case/Tool/Market/Lab 중 어디로 승격할지 판단한다.
+4. 새 페이지 또는 기존 페이지에 반영한다.
+5. index와 log를 갱신한다.
+6. 원본은 00_raw_ingested/로 이동한다.</code></pre>
+<p>추천 명령:</p>
+<pre><code class="language-text">LLMWIKI ingest 해줘</code></pre>
+<p>더 좋은 명령:</p>
+<pre><code class="language-text">LLMWIKI ingest 해줘. 이번 자료는 3시간 입문 강의에서 쓸 수 있는 Concept/Case/데모 후보 중심으로 분류해줘.</code></pre>
+<h3 id="b">B. 강의안을 만들 때</h3>
+<p>강의안은 바로 쓰지 말고 이 순서로 진행하는 것이 좋다.</p>
+<pre><code class="language-text">1. 10_curriculum/에서 강의 위치 확인
+2. 20_concepts/에서 핵심 개념 3~7개 선택
+3. 30_cases/에서 사례 선택
+4. 40_tools/에서 데모 도구 선택
+5. 80_outputs/강의안/에 저장</code></pre>
+<p>추천 명령:</p>
+<pre><code class="language-text">LLMWIKI 기준으로 3시간 입문 강의안 만들어줘.</code></pre>
+<p>더 좋은 명령:</p>
+<pre><code class="language-text">LLMWIKI 기준으로 3시간 입문 강의안을 만들어줘. 첫 10분은 "노트앱을 써도 지식이 안 쌓이는 이유" 문제 제기로 시작하고, 실습 비중은 50%, 최종 산출물은 폴더 구조 + AGENTS/CLAUDE + index + Concept 1개로 잡아줘. 저장은 80_outputs/강의안/입문/에 해줘.</code></pre>
+<h3 id="c">C. 컬럼을 쓸 때</h3>
+<p>컬럼은 Concept를 시장 언어로 바꾸는 작업이다.</p>
+<p>추천 흐름:</p>
+<pre><code class="language-text">Concept 1~3개 → 수강생 문제 → 사례 → 짧은 주장 → 강의/워크숍으로 연결</code></pre>
+<p>추천 명령:</p>
+<pre><code class="language-text">LLMWIKI의 C-DIKW, C-검색불가능한_축적, C-카파시식_LLM_WIKI를 바탕으로 "노트앱을 써도 지식이 안 쌓이는 이유" 컬럼 초안을 2500자로 써줘. 저장은 60_columns/에 해줘.</code></pre>
+<h3 id="d">D. 워크북을 만들 때</h3>
+<p>워크북은 설명서가 아니라 수강생이 손으로 채우는 설계서다.</p>
+<p>추천 구성:</p>
+<pre><code class="language-text">지식병목 진단 → 도메인 객체 5개 → 관계 5개 → output 3개 → 내 WIKI 스키마 1장</code></pre>
+<p>추천 명령:</p>
+<pre><code class="language-text">LLMWIKI 입문 워크북을 보강해줘. 수강생이 3시간 안에 자기 분야 WIKI 초안을 만들 수 있도록 빈칸 채우기, 체크리스트, 예시 답안을 추가해줘.</code></pre>
+<h3 id="e">E. 상품기획을 할 때</h3>
+<p>상품기획은 <code>50_market/</code>과 <code>80_outputs/상품기획/</code>를 함께 본다.</p>
+<p>추천 명령:</p>
+<pre><code class="language-text">LLMWIKI의 market, roadmap, curriculum을 바탕으로 3시간 입문 워크숍 판매페이지 초안을 만들어줘.</code></pre>
+<p>또는:</p>
+<pre><code class="language-text">1:1 특화 WIKI 구축 컨설팅 상품을 더 구체화해줘. 진단 질문, 산출물, 진행 단계, 가격 사다리, 후속 상품까지 포함해줘.</code></pre>
+<h2 id="5">5. 중요 명령어 모음</h2>
+<h3 id="section">관리 명령</h3>
+<pre><code class="language-text">LLMWIKI 신규 raw 있어?</code></pre>
+<p><code>00_raw/</code>에 처리 안 된 자료가 있는지 확인한다.</p>
+<pre><code class="language-text">LLMWIKI ingest 해줘</code></pre>
+<p>새 raw를 Concept/Case/Tool/Market/Lab 등으로 승격한다.</p>
+<pre><code class="language-text">LLMWIKI gardening 해줘</code></pre>
+<p>중복, stale, 깨진 링크, index 누락, 최신성 문제를 점검한다.</p>
+<pre><code class="language-text">LLMWIKI log 정리해줘</code></pre>
+<p>최근 작업 이력을 읽기 좋게 정리한다.</p>
+<h3 id="section">강의 명령</h3>
+<pre><code class="language-text">LLMWIKI 3시간 입문 강의안 만들어줘</code></pre>
+<p>입문 워크숍 강의안을 만든다.</p>
+<pre><code class="language-text">LLMWIKI 심화 강의안 만들어줘. 주제는 온톨로지와 RAG의 차이야.</code></pre>
+<p>심화 모듈을 만든다.</p>
+<pre><code class="language-text">LLMWIKI 특화 WIKI 구축 강의안 만들어줘. 법률/강의/콘텐츠/투자 예시를 포함해줘.</code></pre>
+<p>도메인 특화 과정으로 확장한다.</p>
+<h3 id="section">개념 보강 명령</h3>
+<pre><code class="language-text">C-RAG를 강의용으로 더 보강해줘. 최근 공식 자료와 NotebookLM 비교를 넣어줘.</code></pre>
+<p>특정 Concept를 확장한다.</p>
+<pre><code class="language-text">20_concepts를 훑고, 3시간 입문 강의에 꼭 필요한 개념 7개만 골라줘.</code></pre>
+<p>강의용 핵심 개념을 추린다.</p>
+<pre><code class="language-text">이 개념을 수강생이 이해하기 쉽게 비유, 실습, 흔한 오해까지 넣어 Concept 페이지로 만들어줘.</code></pre>
+<p>새 개념 페이지를 만든다.</p>
+<h3 id="section">컬럼 명령</h3>
+<pre><code class="language-text">LLMWIKI 컬럼 5개 아이디어 뽑아줘.</code></pre>
+<p>발행 후보를 만든다.</p>
+<pre><code class="language-text">"노트앱을 써도 지식이 안 쌓이는 이유" 컬럼을 완성본으로 써줘.</code></pre>
+<p>seed 컬럼을 완성한다.</p>
+<pre><code class="language-text">C-Workflow_vs_Agent를 일반인도 이해할 수 있는 페이스북 글로 바꿔줘.</code></pre>
+<p>심화 개념을 대중 글로 번역한다.</p>
+<h3 id="section">워크북/템플릿 명령</h3>
+<pre><code class="language-text">입문 워크북을 3시간 실습용으로 보강해줘.</code></pre>
+<p>워크북을 실습 중심으로 확장한다.</p>
+<pre><code class="language-text">도메인별 LLM WIKI 템플릿 20개 설계해줘.</code></pre>
+<p>워크북 템플릿을 만든다.</p>
+<pre><code class="language-text">수강생용 "내 WIKI 스키마 1장 설계도"를 만들어줘.</code></pre>
+<p>핵심 실습지를 만든다.</p>
+<h3 id="section">컨설팅 명령</h3>
+<pre><code class="language-text">1:1 특화 WIKI 구축 컨설팅 진단 질문지를 만들어줘.</code></pre>
+<p>컨설팅 첫 세션용 질문지를 만든다.</p>
+<pre><code class="language-text">법률/강의/콘텐츠/투자 도메인별 WIKI 설계 예시를 만들어줘.</code></pre>
+<p>대표 사례 템플릿을 만든다.</p>
+<pre><code class="language-text">이 고객 도메인을 Object-Link-Action 모델로 분석해줘.</code></pre>
+<p>특화 WIKI 설계의 첫 진단을 수행한다.</p>
+<h2 id="6">6. 추천 루틴</h2>
+<h3 id="10">매일 10분 루틴</h3>
+<pre><code class="language-text">1. 새로 본 자료를 00_raw/에 넣는다.
+2. "LLMWIKI 신규 raw 있어?"로 확인한다.
+3. 당장 중요한 자료만 ingest한다.
+4. log에 오늘의 배움을 남긴다.</code></pre>
+<p>목표는 완벽한 정리가 아니라 자료가 썩지 않게 하는 것이다.</p>
+<h3 id="1-60">주 1회 60분 루틴</h3>
+<pre><code class="language-text">1. 20_concepts/_index.md를 읽는다.
+2. 이번 주에 가장 강해진 Concept 3개를 고른다.
+3. 그 Concept에서 만들 수 있는 컬럼/강의/워크북 항목을 뽑는다.
+4. 60_columns 또는 80_outputs에 하나 이상 산출한다.</code></pre>
+<p>좋은 퍼포먼스의 기준은 "얼마나 많이 정리했나"가 아니라 "무엇이 나왔나"다.</p>
+<h3 id="1">강의 준비 1주 전 루틴</h3>
+<pre><code class="language-text">1. 10_curriculum을 읽고 강의 목표를 확정한다.
+2. 20_concepts에서 핵심 개념 7개를 고른다.
+3. 30_cases에서 사례 2개를 고른다.
+4. 40_tools에서 데모 도구 2개를 고른다.
+5. 80_outputs/강의안에 초안을 만든다.
+6. 워크북과 슬라이드로 나눈다.</code></pre>
+<h3 id="1">월 1회 성장 루틴</h3>
+<pre><code class="language-text">1. _QUESTIONS.md의 미답 또는 수정 필요 질문을 다시 본다.
+2. 50_market의 포지셔닝을 점검한다.
+3. 콘텐츠 시리즈 50편 중 다음 5편을 선정한다.
+4. 컨설팅 상품의 진단 질문과 산출물을 보강한다.</code></pre>
+<h2 id="7-wiki">7. 이 WIKI로 좋은 퍼포먼스를 내는 꿀팁</h2>
+<h3 id="1">1. 질문을 "정리해줘"로 끝내지 말기</h3>
+<p>약한 명령:</p>
+<pre><code class="language-text">이 자료 정리해줘.</code></pre>
+<p>강한 명령:</p>
+<pre><code class="language-text">이 자료를 LLM WIKI 강의 관점에서 Concept/Case/Tool/Market 중 어디에 넣을지 판단하고, 3시간 입문 강의에서 쓸 수 있는 설명법과 실습 아이디어까지 뽑아줘.</code></pre>
+<h3 id="2-output">2. 항상 output을 같이 묻기</h3>
+<p>Concept를 보강할 때마다 물어야 한다.</p>
+<pre><code class="language-text">이 개념으로 만들 수 있는 강의 모듈, 컬럼, 워크북 질문을 각각 3개씩 뽑아줘.</code></pre>
+<h3 id="3-asof">3. "최근 자료"는 반드시 <code>as_of</code>와 출처를 남기기</h3>
+<p>LLM, RAG, NotebookLM, Codex, MCP는 빠르게 바뀐다. 최신 정보를 반영했다면 페이지에 다음이 남아야 한다.</p>
+<pre><code class="language-yaml">as_of: 2026-06-30
+confidence: evolving
+freshness: hot
+sources:
+  - title:
+    url:
+    publisher:
+    accessed:</code></pre>
+<h3 id="4">4. 강의용 페이지는 반드시 말하기 문장으로 바꾸기</h3>
+<p>좋은 Concept는 설명이 아니라 강의 대사가 된다.</p>
+<p>체크 질문:</p>
+<pre><code class="language-text">이 내용을 내가 수강생 앞에서 3분 안에 말할 수 있는가?</code></pre>
+<h3 id="5-palantir">5. Palantir는 제품 분석이 아니라 사고법으로 쓰기</h3>
+<p>이 WIKI에서 Palantir는 "Foundry를 따라 만들자"가 아니다.</p>
+<p>정확한 사용법:</p>
+<pre><code class="language-text">도메인을 Object, Link, Action, Governance로 자르는 사고법</code></pre>
+<h3 id="6-notebooklm">6. NotebookLM은 경쟁자가 아니라 비교 도구로 쓰기</h3>
+<p>NotebookLM은 자료 묶음과 대화하는 데 강하다. LLM WIKI는 자료가 장기적으로 구조화되고 산출물로 나오는 데 강하다.</p>
+<p>강의에서는 이렇게 말하면 좋다.</p>
+<pre><code class="language-text">NotebookLM은 자료와 대화하는 도구이고, LLM WIKI는 지식을 운영하는 구조다.</code></pre>
+<h3 id="7-log-md">7. <code>log.md</code>를 가볍게라도 남기기</h3>
+<p>log가 없으면 WIKI가 성장해도 기억이 흐려진다. 긴 기록이 아니어도 된다.</p>
+<p>예:</p>
+<pre><code class="language-markdown">## [2026-06-30 18:00] concept-update | RAG
+- 반영: NotebookLM/source grounding 관점 추가
+- 다음: RAG 비교 데모를 슬라이드화</code></pre>
+<h3 id="8-20concepts">8. 20_concepts를 너무 비대하게만 만들지 않기</h3>
+<p>Concept가 충분히 자라면 반드시 다음 중 하나로 보내야 한다.</p>
+<ul><li>강의 모듈</li><li>컬럼</li><li>워크북 질문</li><li>컨설팅 진단 질문</li><li>데모 시나리오</li></ul>
+<h3 id="9-manualedit-true">9. <code>manual_edit: true</code>는 정말 손대면 안 되는 문서에만 쓰기</h3>
+<p>대부분의 WIKI 페이지는 LLM이 보강할 수 있어야 한다. 사람이 직접 관리해야 하는 최종본, 민감 자료, 확정된 상품 문안만 <code>manual_edit: true</code> 후보로 둔다.</p>
+<h3 id="10-wiki">10. 이 WIKI의 성과 지표를 정하기</h3>
+<p>추천 KPI:</p>
+<div class="table-wrap"><table><thead><tr><th>지표</th><th>목표</th></tr></thead><tbody><tr><td>Concept</td><td>핵심 개념 30개</td></tr><tr><td>Case</td><td>강의용 사례 10개</td></tr><tr><td>Column</td><td>콘텐츠 시리즈 50편</td></tr><tr><td>Workbook</td><td>입문/심화/특화 3종</td></tr><tr><td>Output</td><td>3시간 입문 강의안, 1일 워크숍, 1:1 컨설팅 상품</td></tr></tbody></table></div>
+<h2 id="8-qa">8. QA 시리즈</h2>
+<h3 id="q1-wiki-obsidian-vault-?">Q1. 이 WIKI와 일반 Obsidian vault는 무엇이 다른가?</h3>
+<p>일반 vault는 사람이 읽기 좋은 노트 모음일 수 있다. 이 WIKI는 LLM이 읽고 갱신하고 산출물을 만들 수 있도록 schema, index, log, output path를 갖춘 운영체계다.</p>
+<h3 id="q2-concept-?">Q2. 자료는 바로 Concept로 넣으면 안 되나?</h3>
+<p>가급적 원본은 <code>00_raw/</code>에 먼저 둔다. Concept는 해석이고, raw는 근거다. 둘을 섞으면 나중에 검증이 어려워진다.</p>
+<h3 id="q3-wiki-?">Q3. 이 WIKI에서 가장 먼저 키워야 할 폴더는?</h3>
+<p>현재 단계에서는 <code>20_concepts/</code>와 <code>80_outputs/</code>다. 개념층이 강해야 강의가 힘을 받고, 산출물이 나와야 WIKI가 창고로 굳지 않는다.</p>
+<h3 id="q4-10curriculum-80outputs-?">Q4. <code>10_curriculum/</code>과 <code>80_outputs/강의안/</code>은 어떻게 다른가?</h3>
+<p><code>10_curriculum/</code>은 설계도다. <code>80_outputs/강의안/</code>은 실제 강의에 쓸 원고다.</p>
+<h3 id="q5-60columns-?">Q5. 컬럼은 왜 <code>60_columns/</code>에 따로 두나?</h3>
+<p>컬럼은 시장과 만나는 실험이다. 강의 개념을 대중 언어로 바꾸고, 반응을 통해 포지셔닝을 다시 보강한다.</p>
+<h3 id="q6-?">Q6. 강의안부터 바로 쓰면 안 되나?</h3>
+<p>쓸 수는 있다. 다만 좋은 퍼포먼스를 내려면 Concept와 Case를 먼저 고른 뒤 강의안으로 가는 것이 좋다. 그러면 강의가 단순 설명 모음이 아니라 구조 있는 프로그램이 된다.</p>
+<h3 id="q7-?">Q7. 웹 리서치는 언제 하나?</h3>
+<p>내부 WIKI가 부족하거나 최신성이 중요한 주제일 때 한다. 단, 공식 문서, 1차 자료, 제품 문서, 원문 강연을 우선한다. 블로그 요약은 1차 근거로 쓰지 않는다.</p>
+<h3 id="q8-wiki-?">Q8. 기존 지식관리 WIKI 자료는 얼마나 가져와도 되나?</h3>
+<p>구조와 스키마는 적극적으로 참조한다. 법률업무 등 기밀 자료는 내용이 아니라 구조만 익명화해서 쓴다.</p>
+<h3 id="q9-concept-?">Q9. Concept가 너무 많아지면 어떻게 하나?</h3>
+<p><code>20_concepts/_index.md</code>를 기준으로 입문/심화/특화/상품화로 묶는다. 오래된 개념은 <code>freshness: stale</code>로 표시하고, 중복은 gardening 때 병합한다.</p>
+<h3 id="q10-?">Q10. 수강생용 실습은 어디서 시작해야 하나?</h3>
+<p>워크북의 첫 질문은 "내 지식병목 진단"이다. 도구 설치보다 먼저, 무엇이 쌓였지만 다시 쓰이지 않는지 진단해야 한다.</p>
+<h3 id="q11-wiki-?">Q11. 이 WIKI의 첫 상품은 무엇인가?</h3>
+<p>현재 결정은 3시간 입문 워크숍이다. 약속은 "3시간 만에 내 분야의 LLM WIKI 뼈대를 만든다"이다.</p>
+<h3 id="q12-wiki-?">Q12. 이 WIKI의 장기 상품은 무엇인가?</h3>
+<p>1:1 특화 WIKI 구축 컨설팅이다. 첫 진단은 도메인 객체/관계/산출물 진단으로 시작한다.</p>
+<h3 id="q13-rag-wiki-?">Q13. RAG는 이 WIKI에서 어디까지 다루나?</h3>
+<p>입문에서는 구현하지 않는다. WIKI와 비교하는 데모 중심으로 다룬다. 심화에서 retrieval, source grounding, agent workflow와 연결한다.</p>
+<h3 id="q14-mcp-?">Q14. MCP는 입문에서 다루나?</h3>
+<p>입문에서는 개념만 짧게 언급한다. "나중에 WIKI가 외부 도구와 연결될 때 필요한 표준" 정도로 충분하다.</p>
+<h3 id="q15-wiki-?">Q15. 이 WIKI를 가장 망치는 사용법은?</h3>
+<p>자료를 계속 넣기만 하고 output을 만들지 않는 것이다. 이 WIKI는 저장소가 아니라 산출물 공장이어야 한다.</p>
+<h2 id="9">9. 추천 프롬프트 세트</h2>
+<h3 id="concept">Concept 생성</h3>
+<pre><code class="language-text">다음 자료를 LLM WIKI 강의용 Concept 페이지로 만들어줘.
+형식은 _WIKI_LLMWIKI/CLAUDE.md의 Concept 구조를 따르고,
+반드시 "강의에서의 설명법", "흔한 오해", "실습/과제 아이디어"를 포함해줘.
+저장은 20_concepts/C-{개념명}.md에 해줘.</code></pre>
+<h3 id="concept">Concept 보강</h3>
+<pre><code class="language-text">20_concepts/C-{개념명}.md를 강의 준비용으로 300% 보강해줘.
+최근 공식 자료가 필요하면 웹 리서치하고,
+출처, as_of, confidence, freshness를 업데이트해줘.
+마지막에는 이 개념으로 만들 수 있는 강의 모듈/컬럼/워크북 질문을 제안해줘.</code></pre>
+<h3 id="section">강의안 생성</h3>
+<pre><code class="language-text">_WIKI_LLMWIKI를 기준으로 {주제} 강의안 만들어줘.
+먼저 10_curriculum, 20_concepts/_index, 30_cases/_index, 40_tools/_index를 읽고
+핵심 개념 5개, 사례 2개, 데모 1개를 골라서 구성해줘.
+저장은 80_outputs/강의안/{입문|심화|특화}/에 해줘.</code></pre>
+<h3 id="section">컬럼 생성</h3>
+<pre><code class="language-text">_WIKI_LLMWIKI의 Concept와 Market 문서를 바탕으로 {주제} 컬럼을 써줘.
+독자는 전문직/강사/지식노동자이고,
+톤은 실전적이지만 인문학적 문제의식이 있게 해줘.
+저장은 60_columns/COL-YYYYMMDD-{주제}.md에 해줘.</code></pre>
+<h3 id="section">워크북 생성</h3>
+<pre><code class="language-text">_WIKI_LLMWIKI의 3시간 입문 과정에 맞는 워크북을 만들어줘.
+수강생이 직접 채울 수 있는 표, 체크리스트, 예시 답안을 포함하고,
+최종 산출물은 "내 LLM WIKI 스키마 1장 설계도"가 되게 해줘.</code></pre>
+<h3 id="section">컨설팅 진단</h3>
+<pre><code class="language-text">다음 도메인을 1:1 특화 WIKI 구축 컨설팅 관점에서 진단해줘.
+Object 5개, Link 5개, Action 5개, Output 3개, Governance 3개를 뽑고,
+초기 폴더 구조와 AGENTS/CLAUDE 핵심 규칙도 제안해줘.</code></pre>
+<h2 id="10-30">10. 30일 운영 플랜</h2>
+<h3 id="1">1주차: 개념 안정화</h3>
+<ul><li><code>20_concepts</code> 핵심 개념 30개까지 확장</li><li>입문 강의에 쓸 개념 7개 선정</li><li>RAG, NotebookLM, Agent Harness 최신성 점검</li></ul>
+<h3 id="2">2주차: 입문 강의안 제작</h3>
+<ul><li>3시간 입문 강의안 작성</li><li>대표 데모 1개 제작</li><li>워크북 v1 보강</li></ul>
+<h3 id="3">3주차: 콘텐츠 발행 준비</h3>
+<ul><li>컬럼 5편 seed 작성</li><li>첫 컬럼 완성</li><li>50편 콘텐츠 시리즈 목차 작성</li></ul>
+<h3 id="4">4주차: 상품화</h3>
+<ul><li>3시간 워크숍 판매페이지 초안</li><li>1:1 컨설팅 진단 질문지</li><li>수강생용 템플릿 20개 초안</li></ul>
+<h2 id="11">11. 사용자가 기억할 한 문장</h2>
+<p>이 WIKI는 자료를 쌓는 곳이 아니다.</p>
+<pre><code class="language-text">자료가 들어와서, 개념이 되고, 사례가 되고, 강의와 컬럼과 컨설팅 상품으로 나가는 지식 운영체계다.</code></pre>
+<p>그래서 이 WIKI를 잘 쓰는 사람은 더 많이 저장하는 사람이 아니라, 더 자주 승격시키고 더 꾸준히 산출하는 사람이다.</p><div class="footer">Generated from _WIKI_LLMWIKI/LLM_WIKI_사용설명서_20260630.md ? 2026-06-30</div></main></div></body></html>
