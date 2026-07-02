@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026년 7-8월 강의 운영 한눈에 보기</title>
+  <style>
+    :root {
+      --ink: #111827;
+      --muted: #5b6472;
+      --line: #d9e1ec;
+      --soft: #f6f8fb;
+      --blue: #1f4e79;
+      --green: #1d6b57;
+      --amber: #9a5b12;
+      --white: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Noto Sans KR", "Pretendard", "Malgun Gothic", Arial, sans-serif;
+      color: var(--ink);
+      background: #eef2f7;
+      line-height: 1.62;
+    }
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      background: var(--white);
+      min-height: 100vh;
+    }
+    header {
+      padding: 42px 48px 34px;
+      background: #132238;
+      color: #fff;
+    }
+    header .eyebrow {
+      font-size: 14px;
+      letter-spacing: .04em;
+      color: #b9c7d8;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    h1 {
+      margin: 0;
+      font-size: 34px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+    header p {
+      margin: 14px 0 0;
+      color: #d8e2ef;
+      font-size: 16px;
+      max-width: 880px;
+    }
+    main { padding: 34px 48px 54px; }
+    section { margin: 0 0 34px; }
+    h2 {
+      margin: 0 0 14px;
+      font-size: 22px;
+      line-height: 1.35;
+      letter-spacing: 0;
+      color: #152036;
+      border-left: 5px solid var(--blue);
+      padding-left: 12px;
+    }
+    h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .metric {
+      border: 1px solid var(--line);
+      background: var(--soft);
+      padding: 14px 14px 13px;
+      border-radius: 8px;
+    }
+    .metric .label { color: var(--muted); font-size: 13px; }
+    .metric .value { font-weight: 800; font-size: 19px; margin-top: 4px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+    th, td {
+      padding: 10px 11px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+    }
+    th {
+      background: #eef4fb;
+      color: #24364f;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    tr:last-child td { border-bottom: 0; }
+    .tag {
+      display: inline-block;
+      min-width: 38px;
+      text-align: center;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 12px;
+      color: #fff;
+    }
+    .tag.ai { background: var(--green); }
+    .tag.legal { background: var(--blue); }
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .course {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .course-head {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 0;
+      background: #f8fafc;
+      border-bottom: 1px solid var(--line);
+    }
+    .code {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 900;
+      color: #fff;
+      background: var(--blue);
+    }
+    .code.ai { background: var(--green); }
+    .course-title { padding: 14px 16px; }
+    .course-title .sub {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 3px;
+    }
+    .slogan {
+      margin: 10px 0 0;
+      font-weight: 800;
+      color: var(--amber);
+    }
+    .course-body {
+      padding: 15px 16px 16px;
+    }
+    .summary {
+      margin: 0 0 12px;
+      color: #253247;
+    }
+    .note {
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      color: #7c2d12;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .box {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      background: #fff;
+    }
+    ul { margin: 8px 0 0; padding-left: 20px; }
+    @media (max-width: 800px) {
+      header, main { padding-left: 22px; padding-right: 22px; }
+      .grid, .two-col { grid-template-columns: 1fr; }
+      .course-head { grid-template-columns: 56px 1fr; }
+      h1 { font-size: 28px; }
+      table { font-size: 13px; }
+      th, td { padding: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+<meta name="robots" content="noindex,nofollow">
+      <div class="eyebrow">이민하 이사님 공유용</div>
+      <h1>2026년 7-8월 강의 운영 한눈에 보기</h1>
+      <p>AI 강의 2종(A1/A2), 법무팀 강의 3종(L1/L2/L3)의 일정, 운영 기준, 소개 문안, 시간표를 한 페이지에 정리했습니다.</p>
+    </header>
+    <main>
+      <section>
+        <h2>운영 기준</h2>
+        <div class="grid">
+          <div class="metric"><div class="label">장소</div><div class="value">사무실 강의실</div></div>
+          <div class="metric"><div class="label">시간</div><div class="value">14:30-17:30</div></div>
+          <div class="metric"><div class="label">강의료</div><div class="value">50만원 + VAT</div></div>
+          <div class="metric"><div class="label">결제</div><div class="value">카드 전용</div></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>7-8월 일정</h2>
+        <table>
+          <thead>
+            <tr><th>날짜</th><th>요일</th><th>시간</th><th>코드</th><th>강의명</th><th>비고</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>2026-07-22</td><td>수</td><td>14:30-17:30</td><td><span class="tag ai">A1</span></td><td>LLM WIKI 입문강의</td><td></td></tr>
+            <tr><td>2026-07-23</td><td>목</td><td>14:30-17:30</td><td><span class="tag legal">L1</span></td><td>로펌 200% 활용법(소송/자문)</td><td></td></tr>
+            <tr><td>2026-07-25</td><td>토</td><td>14:30-17:30</td><td><span class="tag ai">A1</span></td><td>LLM WIKI 입문강의</td><td>토요일 AI</td></tr>
+            <tr><td>2026-07-29</td><td>수</td><td>14:30-17:30</td><td><span class="tag ai">A2</span></td><td>토큰을 줄여주는 프롬프팅 노하우</td><td></td></tr>
+            <tr><td>2026-07-30</td><td>목</td><td>14:30-17:30</td><td><span class="tag legal">L1</span></td><td>로펌 200% 활용법(소송/자문)</td><td></td></tr>
+            <tr><td>2026-08-05</td><td>수</td><td>14:30-17:30</td><td><span class="tag legal">L1</span></td><td>로펌 200% 활용법(소송/자문)</td><td></td></tr>
+            <tr><td>2026-08-06</td><td>목</td><td>14:30-17:30</td><td><span class="tag legal">L2</span></td><td>상법개정에 따른 법무팀의 대응방안</td><td></td></tr>
+            <tr><td>2026-08-08</td><td>토</td><td>14:30-17:30</td><td><span class="tag ai">A1</span></td><td>LLM WIKI 입문강의</td><td>토요일 AI</td></tr>
+            <tr><td>2026-08-12</td><td>수</td><td>14:30-17:30</td><td><span class="tag legal">L3</span></td><td>법무팀의 정치학</td><td>3시간 압축 운영</td></tr>
+            <tr><td>2026-08-13</td><td>목</td><td>14:30-17:30</td><td><span class="tag ai">A2</span></td><td>토큰을 줄여주는 프롬프팅 노하우</td><td></td></tr>
+            <tr><td>2026-08-19</td><td>수</td><td>14:30-17:30</td><td><span class="tag legal">L1</span></td><td>로펌 200% 활용법(소송/자문)</td><td></td></tr>
+            <tr><td>2026-08-20</td><td>목</td><td>14:30-17:30</td><td><span class="tag ai">A1</span></td><td>LLM WIKI 입문강의</td><td></td></tr>
+            <tr><td>2026-08-22</td><td>토</td><td>14:30-17:30</td><td><span class="tag ai">A2</span></td><td>토큰을 줄여주는 프롬프팅 노하우</td><td>토요일 AI</td></tr>
+            <tr><td>2026-08-26</td><td>수</td><td>14:30-17:30</td><td><span class="tag legal">L2</span></td><td>상법개정에 따른 법무팀의 대응방안</td><td></td></tr>
+            <tr><td>2026-08-27</td><td>목</td><td>14:30-17:30</td><td><span class="tag ai">A1</span></td><td>LLM WIKI 입문강의</td><td></td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>강의 소개</h2>
+        <div class="cards">
+          <article class="course">
+            <div class="course-head"><div class="code ai">A1</div><div class="course-title"><h3>LLM WIKI 입문강의</h3><div class="sub">쌓아둔 자료를 AI와 함께 쓰는 지식 시스템으로 바꾸는 법</div><div class="slogan">저장은 끝났다. 이제 내 지식을 운영할 시간이다.</div></div></div>
+            <div class="course-body">
+              <p class="summary">노션, 폴더, 드라이브에 자료는 쌓였지만 정작 필요할 때 꺼내 쓰지 못하는 사람을 위한 입문 강의입니다. 옵시디언과 AI를 활용해 Raw, Wiki, Schema, Output의 4층 구조를 이해하고, 내 자료를 연결·질문·활용 가능한 개인 지식 시스템으로 바꾸는 첫 경험을 제공합니다.</p>
+              <table><tbody><tr><th>14:30-15:20</th><td>노트앱의 한계, DIKW, 4층 구조</td></tr><tr><th>15:30-16:20</th><td>옵시디언 볼트, 위키링크, 관계망 실습</td></tr><tr><th>16:30-17:30</th><td>인제스트, 템플릿, AI 질문 실습</td></tr></tbody></table>
+            </div>
+          </article>
+
+          <article class="course">
+            <div class="course-head"><div class="code ai">A2</div><div class="course-title"><h3>토큰을 줄여주는 프롬프팅 노하우</h3><div class="sub">짧게 묻는 법이 아니라 다시 묻지 않는 법</div><div class="slogan">토큰을 아끼려면 먼저 생각을 압축하라.</div></div></div>
+            <div class="course-body">
+              <p class="summary">프롬프트를 짧게 쓰는 기술이 아니라, 재질문과 재작성 횟수를 줄이는 프롬프팅 강의입니다. 범위, 목표, 화법, 검증을 담은 SAVE 구조를 통해 AI에게 명령이 아니라 브리핑하는 법을 배웁니다.</p>
+              <table><tbody><tr><th>14:30-15:10</th><td>토큰 이코노미</td></tr><tr><th>15:10-15:45</th><td>구분자, 순서, 위치, 장문 배치</td></tr><tr><th>15:55-16:30</th><td>역할, 목표, 맥락, 검증</td></tr><tr><th>16:30-17:10</th><td>SAVE 실습</td></tr><tr><th>17:10-17:30</th><td>반대근거, 자가검증, 업무 적용</td></tr></tbody></table>
+            </div>
+          </article>
+
+          <article class="course">
+            <div class="course-head"><div class="code">L1</div><div class="course-title"><h3>로펌 200% 활용법</h3><div class="sub">소송과 자문에서 외부 로펌을 전략적으로 통제하는 법</div><div class="slogan">로펌을 믿지 말고, 로펌을 설계하라.</div></div></div>
+            <div class="course-body">
+              <p class="summary">외부 로펌을 선임하고도 실제 담당자, 청구서, 의견서, 진행상황을 통제하지 못해 답답했던 법무팀을 위한 강의입니다. RFP와 면접 질문부터 청구서 해독, 해외 로펌 인보이스, 의견서 활용까지 외부 로펌을 관리하는 실무 프레임을 제공합니다.</p>
+              <table><tbody><tr><th>14:30-14:45</th><td>로펌은 통제의 대상</td></tr><tr><th>14:45-15:30</th><td>Bait & Switch, RFP, 계약 핵심 조항</td></tr><tr><th>15:40-16:20</th><td>청구서 통제, 레드플래그, 교체 타이밍</td></tr><tr><th>16:30-17:05</th><td>해외 인보이스, AFA, Budget Cap</td></tr><tr><th>17:05-17:30</th><td>질의서 설계, 1페이지 요약</td></tr></tbody></table>
+            </div>
+          </article>
+
+          <article class="course">
+            <div class="course-head"><div class="code">L2</div><div class="course-title"><h3>상법개정에 따른 법무팀의 대응방안</h3><div class="sub">개정 조문을 90일 액션플랜으로 바꾸는 법</div><div class="slogan">상법개정은 뉴스가 아니라 법무팀의 할 일 목록이다.</div></div></div>
+            <div class="course-body">
+              <p class="summary">상법개정 내용을 단순히 해설하는 데서 멈추지 않고, 법무팀이 실제로 무엇을 점검하고 고쳐야 하는지 정리하는 강의입니다. 이사 책임, 주주권, 자기주식, 정관·이사회규정·D&O보험·주총매뉴얼을 하나의 대응표로 묶어 실행계획으로 전환합니다.</p>
+              <table><tbody><tr><th>14:30-14:45</th><td>한 조항이 회사를 흔드는 이유</td></tr><tr><th>14:45-15:30</th><td>충실의무, 다중대표소송, 이사회 리스크</td></tr><tr><th>15:40-16:20</th><td>주주권, 집중투표, 감사위원, 전자주총</td></tr><tr><th>16:30-17:05</th><td>자기주식, 예외, 경과조치</td></tr><tr><th>17:05-17:30</th><td>법무팀 90일 액션플랜</td></tr></tbody></table>
+              <div class="note">강의 전 법률 최신성, 시행일, 판례번호, 계류 법안 상태 재검증 필요.</div>
+            </div>
+          </article>
+
+          <article class="course">
+            <div class="course-head"><div class="code">L3</div><div class="course-title"><h3>법무팀의 정치학</h3><div class="sub">법리로 이기고 조직에서 지지 않는 법</div><div class="slogan">옳은 의견도 정치적으로 전달되어야 살아남는다.</div></div></div>
+            <div class="course-body">
+              <p class="summary">법무팀이 법리적으로 맞는 의견을 내고도 조직 안에서 밀리는 순간을 다루는 강의입니다. 공식 결재선과 실제 권력의 차이, 법무팀의 포지셔닝, 전략적 NO, 리스크 정량화, 요약 주도권, 기록을 통한 생존 전략을 배웁니다.</p>
+              <table><tbody><tr><th>14:30-14:40</th><td>법리로 이기고도 조직에서 지는 이유</td></tr><tr><th>14:40-15:20</th><td>권력 지형도, 실세, 사전 설득</td></tr><tr><th>15:20-16:00</th><td>수문장에서 평형수로, 전략적 NO</td></tr><tr><th>16:10-16:55</th><td>리스크 정량화, C레벨 언어, 요약 주도권</td></tr><tr><th>16:55-17:30</th><td>정치적 생존, 기록, 평판 관리</td></tr></tbody></table>
+              <div class="note">원천 4시간 강의안을 3시간으로 압축한 운영안.</div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2>준비 체크포인트</h2>
+        <div class="two-col">
+          <div class="box">
+            <h3>아임웹/결제</h3>
+            <ul>
+              <li>각 강의별 상세페이지와 카드 결제 링크 생성</li>
+              <li>가격 표기는 50만원 + VAT로 통일</li>
+              <li>정원, 환불, 최소 개강 기준 문구 확인</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>강의 운영</h3>
+            <ul>
+              <li>7월 5개 회차 우선 모집 세팅</li>
+              <li>L2는 최신 법률 검증 후 외부 문구 확정</li>
+              <li>L3는 3시간 압축 구성으로 자료 정리</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
