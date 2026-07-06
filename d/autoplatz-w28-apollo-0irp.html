@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>아우토플라츠 리스크레이더 — 주간리포트 W28 (Apollo)</title>
+<style>
+  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+  :root{
+    --bg:#f5f1f2; --panel:#ffffff; --panel2:#faf6f7; --line:#ebe2e5; --line2:#ddccd2;
+    --ink:#2c1d26; --ink2:#56424c; --muted:#8a7b82; --faint:#b3a6ab;
+    --wine:#7a2e3a; --wine-d:#5a1f2b; --wine-l:#9c4456; --wine-tint:#f4e9ec; --wine-tint-ln:#ecd7dd;
+    --header-bg:#3a1525; --header-bg2:#4e1f32; --header-accent:#d4a0aa;
+    --rH:#c74a3c; --rH-tx:#fff; --rM-bg:#f8e4b8; --rM-tx:#7d520a; --rL-bg:#d6ecdb; --rL-tx:#287a54;
+    --amber:#b45309; --green:#287a54;
+    --mono:"Pretendard";
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Pretendard";line-height:1.6;-webkit-font-smoothing:antialiased}
+  .app{display:grid;grid-template-columns:214px 1fr;min-height:100vh;max-width:1090px;margin:0 auto;background:var(--panel);box-shadow:0 0 0 1px var(--line)}
+  .side{background:var(--panel2);border-right:1px solid var(--line);position:sticky;top:0;align-self:start;height:100vh;overflow:auto}
+  .brand{padding:18px;border-bottom:1px solid var(--line)}
+  .brand .eb{font-size:11px;font-weight:700;letter-spacing:.04em;color:var(--wine)}
+  .brand .n{font-size:15px;font-weight:700;color:var(--ink);margin-top:4px} .brand .c{font-size:11px;color:var(--muted);margin-top:2px}
+  .navlbl{font-size:11px;font-weight:700;letter-spacing:.02em;color:var(--faint);padding:18px 18px 7px}
+  .nav a{display:flex;align-items:center;gap:11px;padding:10px 18px;font-size:13.5px;color:var(--ink2);cursor:pointer;border-left:3px solid transparent;text-decoration:none}
+  .nav a i{font-size:16px;color:var(--muted);width:18px;text-align:center}
+  .nav a:hover{background:#f1e8eb;color:var(--ink)}
+  .nav a.active{background:var(--wine-tint);color:var(--wine-d);font-weight:500;border-left-color:var(--wine)} .nav a.active i{color:var(--wine)}
+  .nav a .bdg{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--faint)}
+  .side .ft{padding:18px;font-size:11px;color:var(--faint);line-height:1.65;border-top:1px solid var(--line);margin-top:8px}
+  .header{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);padding:18px 26px;display:flex;justify-content:space-between;align-items:flex-end}
+  .header .eb{font-size:12px;font-weight:700;letter-spacing:.05em;color:var(--header-accent)}
+  .header h1{font-size:19px;font-weight:700;color:#f4eef0;margin:5px 0 0}
+  .header .meta{font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.55);text-align:right;line-height:1.6}
+  .body{padding:22px 26px 44px}
+  .view{display:none} .view.active{display:block}
+  .secl{font-size:12px;font-weight:700;letter-spacing:.02em;color:var(--muted);margin:0 0 13px;display:flex;align-items:center;gap:8px}
+  .secl::before{content:"";width:7px;height:15px;background:var(--wine);border-radius:3px}
+  .kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:22px}
+  .kpi{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:13px 14px}
+  .kpi .k{font-size:12px;color:var(--muted)} .kpi .v{font-size:24px;font-weight:800;margin-top:3px;letter-spacing:-.01em;color:var(--ink)}
+  .kpi .v small{font-size:12px;font-weight:500;color:var(--faint)} .kpi .v.g small{color:var(--green)}
+  .tri{display:flex;gap:14px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:0 11px 11px 0;padding:13px 16px;margin-bottom:8px}
+  .tri .bar{width:3px;align-self:stretch;border-radius:2px;flex-shrink:0} .tri.r .bar{background:var(--rH)} .tri.a .bar{background:var(--amber)} .tri.g .bar{background:var(--green)}
+  .tri .lvl{font-size:11px;font-weight:700;padding:3px 9px;border-radius:6px;white-space:nowrap}
+  .tri.r .lvl{background:var(--rH);color:#fff} .tri.a .lvl{background:var(--rM-bg);color:var(--rM-tx)} .tri.g .lvl{background:var(--rL-bg);color:var(--rL-tx)}
+  .tri .tt{font-size:15px;font-weight:500;color:var(--ink)} .tri .ds{font-size:13px;color:var(--ink2);display:block;margin-top:3px}
+  .tri .row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .cols{display:grid;grid-template-columns:1.4fr 1fr;gap:14px;margin-top:22px}
+  .pnl{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px}
+  .pnl .h{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:10px;display:flex;align-items:center;gap:8px} .pnl .h i{color:var(--wine);font-size:17px}
+  .pnl p{margin:0;font-size:14px;line-height:1.75;color:var(--ink2)} .pnl p b{color:var(--ink);font-weight:500} .pnl p .g{color:var(--green)} .pnl p .a{color:var(--amber)}
+  .delta{display:flex;gap:18px;font-size:13px;color:var(--ink2);margin-top:13px;font-family:var(--mono)} .delta b{color:var(--ink);font-weight:500} .delta .up{color:var(--amber)} .delta .ok{color:var(--green)}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  thead th{text-align:left;font-size:12px;font-weight:700;color:var(--wine-d);background:var(--panel2);padding:11px 12px}
+  thead th:first-child{border-radius:8px 0 0 8px} thead th:last-child{border-radius:0 8px 8px 0}
+  tbody td{padding:13px 12px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink2)}
+  tbody tr:hover{background:var(--panel2)}
+  .legend{font-size:11.5px;color:var(--muted);margin-top:10px}
+  .chip{display:inline-flex;align-items:center;justify-content:center;min-width:34px;font-family:var(--mono);font-size:11px;font-weight:500;border-radius:6px;padding:3px 8px}
+  .c-H{background:var(--rH);color:#fff} .c-M{background:var(--rM-bg);color:var(--rM-tx)} .c-L{background:var(--rL-bg);color:var(--rL-tx)}
+  .st-up{color:var(--amber)} .st-ok{color:var(--green)} .st-flat{color:var(--faint)} .st-done{color:var(--wine)}
+  .tl{display:grid;grid-template-columns:repeat(4,1fr);gap:0;font-family:var(--mono);font-size:12px;margin-top:6px}
+  .tl .n{padding-top:9px;color:var(--ink2)} .tl .n small{color:var(--muted);display:block;margin-top:3px;font-family:"Pretendard"}
+  .tl .n.a{border-top:3px solid var(--amber)} .tl .n.g{border-top:3px solid var(--green)}
+  .ckgrp{margin-bottom:20px} .ckgrp .gl{font-size:12px;font-weight:700;color:var(--amber);margin-bottom:9px}
+  .ck{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px;color:var(--ink2)}
+  .ck .box{width:16px;height:16px;border:1.5px solid var(--line2);border-radius:4px;margin-top:2px;flex-shrink:0}
+  .ck .tag{font-family:var(--mono);font-size:11px;color:var(--wine);background:var(--wine-tint);padding:2px 7px;border-radius:5px;margin-right:7px}
+  .doc{display:flex;gap:13px;align-items:flex-start;padding:13px 16px;background:var(--panel2);border:1px solid var(--line);border-radius:12px;margin-bottom:8px}
+  .doc .i{font-family:var(--mono);color:var(--wine);font-size:13px;margin-top:1px}
+  .doc .t{font-size:14px;font-weight:500;color:var(--ink)} .doc .why{font-size:12.5px;color:var(--muted);display:block;margin-top:2px}
+  .ext{background:var(--wine-tint);border:1px solid var(--wine-tint-ln);border-left:3px solid var(--wine);border-radius:0 12px 12px 0;padding:16px;margin-bottom:12px}
+  .ext .t{font-size:14.5px;font-weight:700;color:var(--wine-d);margin-bottom:7px}
+  .ext p{margin:6px 0;font-size:13.5px;color:var(--ink2);line-height:1.7} .ext p b{color:var(--ink)}
+  .ext .src{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:9px}
+  .note{margin-top:16px;padding:14px 16px;background:var(--wine-tint);border:1px solid var(--wine-tint-ln);border-radius:12px;display:flex;gap:11px;align-items:flex-start}
+  .note i{font-size:18px;color:var(--wine);margin-top:1px} .note p{margin:0;font-size:13.5px;line-height:1.7;color:var(--ink2)} .note p b{color:var(--wine-d);font-weight:500}
+  .badge{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);font-size:12px;font-weight:600;padding:4px 10px;border-radius:20px;margin-bottom:10px}
+  .badge i{font-size:13px}
+  .disc{font-size:11.5px;color:var(--faint);line-height:1.7;text-align:center;margin-top:28px;padding-top:18px;border-top:1px solid var(--line)}
+  @media (max-width:760px){
+    .app{grid-template-columns:1fr;box-shadow:none}
+    .side{position:static;height:auto}.nav{display:flex;flex-wrap:wrap}.nav a{border-left:none;border-bottom:3px solid transparent;flex:1;justify-content:center}.nav a.active{border-left:none;border-bottom-color:var(--wine)}.nav a .bdg{display:none}.navlbl,.side .ft{display:none}
+    .kpis{grid-template-columns:repeat(2,1fr)} .cols{grid-template-columns:1fr}
+    thead{display:none} tbody td{display:block;border-bottom:0;padding:3px 0} tbody tr{display:block;border-bottom:1px solid var(--line);padding:11px 0}
+    td[data-l]::before{content:attr(data-l);display:block;font-size:11px;color:var(--muted);font-weight:700;margin-bottom:2px}
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="side">
+    <div class="brand"><div class="eb">리스크레이더 · 주간</div><div class="n">아우토플라츠</div><div class="c">제28주차 · 2026.07.06</div></div>
+    <div class="navlbl">세부 메뉴</div>
+    <nav class="nav">
+      <a data-v="ov" class="active"><i class="ti ti-layout-dashboard"></i>종합 현황</a>
+      <a data-v="rk"><i class="ti ti-alert-triangle"></i>리스크 레지스터<span class="bdg">7</span></a>
+      <a data-v="dl"><i class="ti ti-calendar-due"></i>기한 관제<span class="bdg">2</span></a>
+      <a data-v="ac"><i class="ti ti-checklist"></i>실행 항목<span class="bdg">8</span></a>
+      <a data-v="dc"><i class="ti ti-files"></i>자료 · 추가요청<span class="bdg">4</span></a>
+      <a data-v="ex"><i class="ti ti-world-search"></i>외부 환경</a>
+    </nav>
+    <div class="ft">변호사-의뢰인 비밀유지 특권<br>외부 공개 금지<br>조우성 변호사</div>
+  </aside>
+
+  <div class="main">
+    <div class="header">
+      <div><div class="eb">리스크레이더 · 주간리포트</div><h1 id="ttl">종합 현황</h1></div>
+      <div class="meta">아우토플라츠 · 제28주차<br>2026.07.06 – 07.12 · 발행 07.06</div>
+    </div>
+    <div class="body">
+
+      <section class="view active" id="v-ov">
+        <div class="badge"><i class="ti ti-check-circle"></i>대전 마세라티 계약 체결 완료 — R-004 완화 ✅</div>
+        <div class="secl">리걸 지표</div>
+        <div class="kpis">
+          <div class="kpi"><div class="k">H 리스크</div><div class="v">22 <small class="ok">-2</small></div></div>
+          <div class="kpi"><div class="k">M 리스크</div><div class="v">39 <small>+2</small></div></div>
+          <div class="kpi"><div class="k">승격 리스크</div><div class="v">8 <small>±0</small></div></div>
+          <div class="kpi"><div class="k">임박 기한</div><div class="v">0 <small class="ok">-3</small></div></div>
+          <div class="kpi"><div class="k">이행률</div><div class="v g">60% <small class="ok">+5%p</small></div></div>
+        </div>
+
+        <div class="secl">이번 주 한눈에</div>
+        <div class="tri g"><div class="bar"></div><div style="flex:1"><div class="row"><span class="tt">대전 마세라티 — 연장계약 체결 완료 ✅</span><span class="lvl">확인 완료 · 리스크 완화</span></div><span class="ds">6/29 체결 완료, 1년 연장·차임 동결 확인. R-004 H×H→M×L 하향. 체결계약서 사본 분석 완료</span></div></div>
+        <div class="tri a"><div class="bar"></div><div style="flex:1"><div class="row"><span class="tt">오산 명도 완료 — 원상복구·보증금 반환 관리</span><span class="lvl">이번 달 · 관찰</span></div><span class="ds">6/30 명도·직원 철수 완료. 시설 원상복구 협의 진행중. 보증금 5억 반환(8/31) 사전 준비 필요</span></div></div>
+        <div class="tri a"><div class="bar"></div><div style="flex:1"><div class="row"><span class="tt">오포 연체 — 5월분 입금, 6월분 잔류</span><span class="lvl">이번 달 · 관찰</span></div><span class="ds">5월분 1개월치 입금(7/3). 6월분 미확인. 연체료 잔액 재산정 필요</span></div></div>
+
+        <div class="cols">
+          <div class="pnl">
+            <div class="h"><i class="ti ti-bolt"></i>핵심 신호 1개</div>
+            <p><b>대전 마세라티 리스크 완화</b> — 1년 연장·차임 동결 계약이 6/29 체결 완료되었습니다. 이는 리스크레이더 시작 이후 <b class="g">첫 번째 완료형 리스크 해소 사례</b>입니다. 이제 오산(원상복구 협의·보증금 반환)과 오포(6월분 입금)에 집중해 주세요.</p>
+            <div class="delta"><span>신규 <b>0</b></span><span>완화 <b class="ok">1</b></span><span>기한임박 <b>0</b></span><span>변화없음 <b class="ok">4</b></span></div>
+          </div>
+          <div class="pnl">
+            <div class="h"><i class="ti ti-file-text"></i>핵심 요약</div>
+            <p>이번 주는 <b>지난주 실행 결과 확인 + 남은 과제 재정비</b>입니다. 대전 체결 완료로 H 리스크 2건이 감소했습니다. 오산과 오포는 잔여 리스크가 남아 있어 지속 관리가 필요합니다. 특히 오산 보증금 5억 반환(8/31)은 아직 8주 남았으나 사전 준비가 필요합니다.</p>
+          </div>
+        </div>
+
+        <div class="note"><i class="ti ti-bulb"></i><p><b>이번 주 요지.</b> 대전 마세라티 리스크가 완화되었습니다 — 6/29 체결 완료로 첫 번째 해소 사례를 기록했습니다. 관심을 오산(원상복구·보증금 반환)과 오포(6월분 입금)로 전환해 주세요.</p></div>
+      </section>
+
+      <section class="view" id="v-rk">
+        <div class="secl">기존 리스크 상태 변화</div>
+        <table>
+          <thead><tr><th style="width:62px">번호</th><th>제목</th><th style="width:84px">위험도</th><th style="width:122px">변화</th><th>비고</th></tr></thead>
+          <tbody>
+            <tr><td data-l="번호">R-004</td><td data-l="제목">대전 마세라티 단기갱신·임대료 인상</td><td data-l="위험도"><span class="chip c-L">완화</span></td><td data-l="변화"><span class="st-done">✅ 완료</span></td><td data-l="비고">6/29 체결 완료. 차기 갱신(2027.6~7월) 모니터링</td></tr>
+            <tr><td data-l="번호">R-007</td><td data-l="제목">오산지점 중도해지·보증금·인허가 정산</td><td data-l="위험도"><span class="chip c-H">중점</span></td><td data-l="변화"><span class="st-up">▲ 명도 완료, 잔여 유지</span></td><td data-l="비고">명도 완료. 원상복구·보증금 5억(8/31) 잔류</td></tr>
+            <tr><td data-l="번호">R-001</td><td data-l="제목">오포 전대차 차임 연체</td><td data-l="위험도"><span class="chip c-H">중점</span></td><td data-l="변화"><span class="st-up">▲ 부분 개선</span></td><td data-l="비고">5월분 입금(7/3). 6월분 잔류</td></tr>
+            <tr><td data-l="번호">R-003</td><td data-l="제목">판교 신탁·근저당 리스크</td><td data-l="위험도"><span class="chip c-M">관찰</span></td><td data-l="변화"><span class="st-flat">― 변화 없음</span></td><td data-l="비고">정기 모니터링 유지</td></tr>
+            <tr><td data-l="번호">R-002</td><td data-l="제목">신탄진·대전폭스바겐 출구전략</td><td data-l="위험도"><span class="chip c-H">중점</span></td><td data-l="변화"><span class="st-flat">― 변화 없음</span></td><td data-l="비고">2027.6.30 만료</td></tr>
+            <tr><td data-l="번호">R-006</td><td data-l="제목">하남 토지임대차 철거·송금구조</td><td data-l="위험도"><span class="chip c-H">중점</span></td><td data-l="변화"><span class="st-flat">― 변화 없음</span></td><td data-l="비고">매각+리스백 구체화 시 재검토</td></tr>
+            <tr><td data-l="번호">#53</td><td data-l="제목">초이동 단기계약 만료 임박</td><td data-l="위험도"><span class="chip c-M">관찰</span></td><td data-l="변화"><span class="st-flat">― 변화 없음</span></td><td data-l="비고">2026-08-03 만료, 4주 전</td></tr>
+          </tbody>
+        </table>
+        <div class="legend">위험도 — <b style="color:var(--rH)">중점</b> 중점 관리 · <b style="color:var(--rM-tx)">관찰</b> 관찰 · <b style="color:var(--rL-tx)">완화</b> 완화. 수령 자료 범위 내 관리 우선순위 안내이며 확정적 법률효과를 단정하지 않습니다.</div>
+      </section>
+
+      <section class="view" id="v-dl">
+        <div class="secl">기한 타임라인</div>
+        <div class="tl">
+          <div class="n g">07.06<small>W28 시작 — 과제 재정비</small></div>
+          <div class="n a">08.03<small>초이동 단기계약 만료</small></div>
+          <div class="n a">08.31<small>오산 보증금 5억 반환</small></div>
+          <div class="n g">2027.06<small>신탄진·대전폭스바겐 만료</small></div>
+        </div>
+        <div class="pnl" style="margin-top:22px">
+          <div class="h"><i class="ti ti-clock"></i>임박 기한 현황</div>
+          <p>7일 내 임박 기한은 <b>0건</b>입니다. 다만 <b>초이동 단기계약 만료(8/3)</b>가 4주 앞으로 다가와 7월 중순까지 연장 여부 결정이 필요합니다. <b>오산 보증금 5억 반환(8/31)</b>은 아직 8주 남았으나 사전 준비가 필요합니다.</p>
+        </div>
+      </section>
+
+      <section class="view" id="v-ac">
+        <div class="secl">실행 항목</div>
+        <div class="ckgrp"><div class="gl">즉시 · 7일 내 (~07.13)</div>
+          <div class="ck"><span class="box"></span><div><span class="tag">R-001</span>오포 6월분 입금 여부 확인 및 연체관리표 업데이트</div></div>
+          <div class="ck"><span class="box"></span><div><span class="tag">R-007</span>오산 원상복구 협의 진행상황 확인</div></div>
+        </div>
+        <div class="ckgrp"><div class="gl">7일 내 (~07.13)</div>
+          <div class="ck"><span class="box"></span><div><span class="tag">R-007</span>오산 보증금 5억 반환 준비 — 전세권 말소 조건·반환 일정 확인</div></div>
+          <div class="ck"><span class="box"></span><div><span class="tag">#53</span>초이동 연장 필요 여부 판단 (8/3 만료, 7월 중순까지 결정)</div></div>
+        </div>
+        <div class="ckgrp"><div class="gl">분기 내 검토 (~09.30)</div>
+          <div class="ck"><span class="box"></span><div><span class="tag">R-006</span>하남 매각·리스백 조건 구체화 시 검토</div></div>
+          <div class="ck"><span class="box"></span><div><span class="tag">R-002</span>신탄진 이전계획 시나리오별 비용 정리</div></div>
+          <div class="ck"><span class="box"></span><div><span class="tag">R-005</span>그룹 지배구조도 또는 관계사 범위 설명자료 수령</div></div>
+          <div class="ck"><span class="box"></span><div><span class="tag">R-007</span>오산 보증금 5억 반환 수령 (8/31)</div></div>
+        </div>
+      </section>
+
+      <section class="view" id="v-dc">
+        <div class="secl">추가 요청 자료 · 다음 주 위클리 전 회신 요청</div>
+        <div class="doc"><span class="i">01</span><div><span class="t">오포 6월분 입금내역 및 연체관리표 최신본</span><span class="why">사유 — R-001 관리 지속 (FU-009 잔여)</span></div></div>
+        <div class="doc"><span class="i">02</span><div><span class="t">오산 원상복구 협의 진행상황 및 보증금 반환 일정 확정</span><span class="why">사유 — R-007 잔여 리스크 (FU-008 잔여)</span></div></div>
+        <div class="doc"><span class="i">03</span><div><span class="t">초이동 연장 의사 결정</span><span class="why">사유 — #53 만료 임박 (8/3)</span></div></div>
+        <div class="doc"><span class="i">04</span><div><span class="t">그룹 지배구조도 및 관계사 범위 설명자료</span><span class="why">사유 — R-005 분석범위 확정 (FU-001)</span></div></div>
+      </section>
+
+      <section class="view" id="v-ex">
+        <div class="secl">외부 환경 변화 · 동종 업계</div>
+        <div class="ext">
+          <div class="t">하반기 수입차 시장 전망 — 재고 부담 지속</div>
+          <p>상반기 수입차 신규 등록이 전년 동기 대비 <b>8% 감소</b>. 완성차 업체의 재고 소진 압박으로 신차 할인율 확대 지속. 하반기도 유사한 흐름 예상.</p>
+          <p><b>당사 영향</b> — 현재 직접적 리스크는 아니나, 업황 악화 장기화 시 임대차 포트폴리오 조정(일부 지점 정리·축소) 가능성에 대비 필요.</p>
+          <p><b>시사점</b> — 오산 명도·초이동 만료 등 포트폴리오 정리 작업을 업황 대비 차원에서도 바라볼 필요. 불필요한 임차 부담을 줄이고 핵심 사업장에 집중하는 전략이 유효.</p>
+          <div class="src">출처 — 업계 보도 종합 (2026-07-06 확인)</div>
+        </div>
+      </section>
+
+      <div class="disc">
+        본 리포트는 일반적 위험 점검 참고 자료이며 개별 사안의 확정적 법률효과를 단정하지 않습니다 · 변호사-의뢰인 비밀유지 특권 적용 · 외부 공개 금지<br>다음 주간리포트: 2026-07-13 (W29)
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  const titles={ov:"종합 현황",rk:"리스크 레지스터",dl:"기한 관제",ac:"실행 항목",dc:"자료 · 추가요청",ex:"외부 환경"};
+  document.querySelectorAll('.nav a').forEach(a=>{
+    a.addEventListener('click',()=>{
+      document.querySelectorAll('.nav a').forEach(x=>x.classList.remove('active'));
+      document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+      a.classList.add('active');
+      const v=a.dataset.v;
+      document.getElementById('v-'+v).classList.add('active');
+      document.getElementById('ttl').textContent=titles[v];
+      window.scrollTo({top:0,behavior:'smooth'});
+    });
+  });
+</script>
+</body>
+</html>
