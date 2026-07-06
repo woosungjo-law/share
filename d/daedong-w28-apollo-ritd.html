@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>대동여주도 리스크레이더 — 주간리포트 W28 (Apollo)</title>
+<style>
+  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+  :root{
+    --bg:#f5f1f2; --panel:#ffffff; --panel2:#faf6f7; --line:#ebe2e5; --line2:#ddccd2;
+    --ink:#2c1d26; --ink2:#56424c; --muted:#8a7b82; --faint:#b3a6ab;
+    --wine:#7a2e3a; --wine-d:#5a1f2b; --wine-l:#9c4456; --wine-tint:#f4e9ec; --wine-tint-ln:#ecd7dd;
+    --header-bg:#3a1525; --header-bg2:#4e1f32; --header-accent:#d4a0aa;
+    --rH:#c74a3c; --rH-tx:#fff; --rM-bg:#f8e4b8; --rM-tx:#7d520a; --rL-bg:#d6ecdb; --rL-tx:#287a54;
+    --amber:#b45309; --green:#287a54;
+    --mono:"Pretendard";
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Pretendard";line-height:1.6;-webkit-font-smoothing:antialiased}
+  .app{display:grid;grid-template-columns:214px 1fr;min-height:100vh;max-width:1090px;margin:0 auto;background:var(--panel);box-shadow:0 0 0 1px var(--line)}
+  .side{background:var(--panel2);border-right:1px solid var(--line);position:sticky;top:0;align-self:start;height:100vh;overflow:auto}
+  .brand{padding:18px;border-bottom:1px solid var(--line)}
+  .brand .eb{font-size:11px;font-weight:700;letter-spacing:.04em;color:var(--wine)}
+  .brand .n{font-size:15px;font-weight:700;color:var(--ink);margin-top:4px} .brand .c{font-size:11px;color:var(--muted);margin-top:2px}
+  .navlbl{font-size:11px;font-weight:700;letter-spacing:.02em;color:var(--faint);padding:18px 18px 7px}
+  .nav a{display:flex;align-items:center;gap:11px;padding:10px 18px;font-size:13.5px;color:var(--ink2);cursor:pointer;border-left:3px solid transparent;text-decoration:none}
+  .nav a i{font-size:16px;color:var(--muted);width:18px;text-align:center}
+  .nav a:hover{background:#f1e8eb;color:var(--ink)}
+  .nav a.active{background:var(--wine-tint);color:var(--wine-d);font-weight:500;border-left-color:var(--wine)} .nav a.active i{color:var(--wine)}
+  .nav a .bdg{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--faint)}
+  .side .ft{padding:18px;font-size:11px;color:var(--faint);line-height:1.65;border-top:1px solid var(--line);margin-top:8px}
+  .header{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);padding:18px 26px;display:flex;justify-content:space-between;align-items:flex-end}
+  .header .eb{font-size:12px;font-weight:700;letter-spacing:.05em;color:var(--header-accent)}
+  .header h1{font-size:19px;font-weight:700;color:#f4eef0;margin:5px 0 0}
+  .header .meta{font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.55);text-align:right;line-height:1.6}
+  .body{padding:22px 26px 44px}
+  .view{display:none} .view.active{display:block}
+  .secl{font-size:12px;font-weight:700;letter-spacing:.02em;color:var(--muted);margin:0 0 13px;display:flex;align-items:center;gap:8px}
+  .secl::before{content:"";width:7px;height:15px;background:var(--wine);border-radius:3px}
+  .kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:22px}
+  .kpi{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:13px 14px}
+  .kpi .k{font-size:12px;color:var(--muted)} .kpi .v{font-size:24px;font-weight:800;margin-top:3px;letter-spacing:-.01em;color:var(--ink)}
+  .kpi .v small{font-size:12px;font-weight:500;color:var(--faint)} .kpi .v.g small{color:var(--green)}
+  .tri{display:flex;gap:14px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:0 11px 11px 0;padding:13px 16px;margin-bottom:8px}
+  .tri .bar{width:3px;align-self:stretch;border-radius:2px;flex-shrink:0} .tri.r .bar{background:var(--rH)} .tri.a .bar{background:var(--amber)} .tri.g .bar{background:var(--green)}
+  .tri .lvl{font-size:11px;font-weight:700;padding:3px 9px;border-radius:6px;white-space:nowrap}
+  .tri.r .lvl{background:var(--rH);color:#fff} .tri.a .lvl{background:var(--rM-bg);color:var(--rM-tx)} .tri.g .lvl{background:var(--rL-bg);color:var(--rL-tx)}
+  .tri .tt{font-size:15px;font-weight:500;color:var(--ink)} .tri .ds{font-size:13px;color:var(--ink2);display:block;margin-top:3px}
+  .tri .row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .cols{display:grid;grid-template-columns:1.4fr 1fr;gap:14px;margin-top:22px}
+  .pnl{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px}
+  .pnl .h{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:10px;display:flex;align-items:center;gap:8px} .pnl .h i{color:var(--wine);font-size:17px}
+  .pnl p{margin:0;font-size:14px;line-height:1.75;color:var(--ink2)} .pnl p b{color:var(--ink);font-weight:500} .pnl p .g{color:var(--green)} .pnl p .a{color:var(--amber)}
+  .delta{display:flex;gap:18px;font-size:13px;color:var(--ink2);margin-top:13px;font-family:var(--mono)} .delta b{color:var(--ink);font-weight:500} .delta .up{color:var(--amber)} .delta .ok{color:var(--green)}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  thead th{text-align:left;font-size:12px;font-weight:700;color:var(--wine-d);background:var(--panel2);padding:11px 12px}
+  thead th:first-child{border-radius:8px 0 0 8px} thead th:last-child{border-radius:0 8px 8px 0}
+  tbody td{padding:13px 12px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink2)}
+  tbody tr:hover{background:var(--panel2)}
+  .legend{font-size:11.5px;color:var(--muted);margin-top:10px}
+  .chip{display:inline-flex;align-items:center;justify-content:center;min-width:34px;font-family:var(--mono);font-size:11px;font-weight:500;border-radius:6px;padding:3px 8px}
+  .c-H{background:var(--rH);color:#fff} .c-M{background:var(--rM-bg);color:var(--rM-tx)} .c-L{background:var(--rL-bg);color:var(--rL-tx)}
+  .st-up{color:var(--amber)} .st-ok{color:var(--green)} .st-flat{color:var(--faint)} .st-done{color:var(--wine)}
+  .tl{display:grid;grid-template-columns:repeat(4,1fr);gap:0;font-family:var(--mono);font-size:12px;margin-top:6px}
+  .tl .n{padding-top:9px;color:var(--ink2)} .tl .n small{color:var(--muted);display:block;margin-top:3px;font-family:"Pretendard"}
+  .tl .n.a{border-top:3px solid var(--amber)} .tl .n.g{border-top:3px solid var(--green)}
+  .ckgrp{margin-bottom:20px} .ckgrp .gl{font-size:12px;font-weight:700;color:var(--amber);margin-bottom:9px}
+  .ck{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px;color:var(--ink2)}
+  .ck .box{width:16px;height:16px;border:1.5px solid var(--line2);border-radius:4px;margin-top:2px;flex-shrink:0}
+  .ck .tag{font-family:var(--mono);font-size:11px;color:var(--wine);background:var(--wine-tint);padding:2px 7px;border-radius:5px;margin-right:7px}
+  .doc{display:flex;gap:13px;align-items:flex-start;padding:13px 16px;background:var(--panel2);border:1px solid var(--line);border-radius:12px;margin-bottom:8px}
+  .doc .i{font-family:var(--mono);color:var(--wine);font-size:13px;margin-top:1px}
+  .doc .t{font-size:14px;font-weight:500;color:var(--ink)} .doc .why{font-size:12.5px;color:var(--muted);display:block;margin-top:2px}
+  .ext{background:var(--wine-tint);border:1px solid var(--wine-tint-ln);border-left:3px solid var(--wine);border-radius:0 12px 12px 0;padding:16px;margin-bottom:12px}
+  .ext .t{font-size:14.5px;font-weight:700;color:var(--wine-d);margin-bottom:7px}
+  .ext p{margin:6px 0;font-size:13.5px;color:var(--ink2);line-height:1.7} .ext p b{color:var(--ink)}
+  .ext .src{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:9px}
+  .note{margin-top:16px;padding:14px 16px;background:var(--wine-tint);border:1px solid var(--wine-tint-ln);border-radius:12px;display:flex;gap:11px;align-items:flex-start}
+  .note i{font-size:18px;color:var(--wine);margin-top:1px} .note p{margin:0;font-size:13.5px;line-height:1.7;color:var(--ink2)} .note p b{color:var(--wine-d);font-weight:500}
+  .badge{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);font-size:12px;font-weight:600;padding:4px 10px;border-radius:20px;margin-bottom:10px}
+  .badge i{font-size:13px}
+  .disc{font-size:11.5px;color:var(--faint);line-height:1.7;text-align:center;margin-top:28px;padding-top:18px;border-top:1px solid var(--line)}
+  @media (max-width:760px){
+    .app{grid-template-columns:1fr;box-shadow:none}
+    .side{position:static;height:auto}.nav{display:flex;flex-wrap:wrap}.nav a{border-left:none;border-bottom:3px solid transparent;flex:1;justify-content:center}.nav a.active{border-left:none;border-bottom-color:var(--wine)}.nav a .bdg{display:none}.navlbl,.side .ft{display:none}
+    .kpis{grid-template-columns:repeat(2,1fr)} .cols{grid-template-columns:1fr}
+    thead{display:none} tbody td{display:block;border-bottom:0;padding:3px 0} tbody tr{display:block;border-bottom:1px solid var(--line);padding:11px 0}
+    td[data-l]::before{content:attr(data-l);display:block;font-size:11px;color:var(--muted);font-weight:700;margin-bottom:2px}
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="side">
+    <div class="brand"><div class="eb">리스크레이더 · 주간</div><div class="n">대동여주도</div><div class="c">제28주차 · 2026.07.06</div></div>
+    <div class="navlbl">세부 메뉴</div>
+    <nav class="nav">
+      <a data-v="ov" class="active"><i class="ti ti-layout-dashboard"></i>종합 현황</a>
+      <a data-v="rk"><i class="ti ti-alert-triangle"></i>리스크 레지스터<span class="bdg">8</span></a>
+      <a data-v="dl"><i class="ti ti-calendar-due"></i>기한 관제<span class="bdg">2</span></a>
+      <a data-v="ac"><i class="ti ti-checklist"></i>실행 항목<span class="bdg">10</span></a>
+      <a data-v="dc"><i class="ti ti-files"></i>자료 · 추가요청<span class="bdg">6</span></a>
+      <a data-v="ex"><i class="ti ti-world-search"></i>외부 환경</a>
+    </nav>
+    <div class="ft">변호사-의뢰인 비밀유지 특권<br>외부 공개 금지<br>조우성 변호사</div>
+  </aside>
+
+  <div class="main">
+    <div class="header">
+      <div><div class="eb">리스크레이더 · 주간리포트</div><h1 id="ttl">종합 현황</h1></div>
+      <div class="meta">대동여주도 · 제28주차<br>2026.07.06 – 07.12 · 발행 07.06</div>
+    </div>
+    <div class="body">
+
+      <section class="view active" id="v-ov">
+        <div class="badge"><i class="ti ti-check-circle"></i>수원양조 계약 체결 가능 — FU-015 closed ✅</div>
+        <div class="secl">리걸 지표</div>
+        <div class="kpis">
+          <div class="kpi"><div class="k">H 리스크</div><div class="v">9 <small>±0</small></div></div>
+          <div class="kpi"><div class="k">M 리스크</div><div class="v">11 <small>±0</small></div></div>
+          <div class="kpi"><div class="k">검토 대기</div><div class="v">11 <small>±0</small></div></div>
+          <div class="kpi"><div class="k">임박 기한</div><div class="v">0 <small class="ok">-1</small></div></div>
+          <div class="kpi"><div class="k">이행률</div><div class="v g">75% <small class="ok">+5%p</small></div></div>
+        </div>
+
+        <div class="secl">이번 주 한눈에</div>
+        <div class="tri g"><div class="bar"></div><div style="flex:1"><div class="row"><span class="tt">수원양조 — 잔여 3개 이슈 해결 ✅ 체결 가능</span><span class="lvl">해결 · 체결 진행</span></div><span class="ds">납기일·지연이자·기수행 용역비 정산 기준 전부 해결. 이번 주 체결 후 계약서 사본 확보</span></div></div>
+        <div class="tri a"><div class="bar"></div><div style="flex:1"><div class="row"><span class="tt">분리운영 증빙 — 5요소 자료 7/10까지 보강</span><span class="lvl">이번 달 · 진행 중</span></div><span class="ds">계좌·장부·인력·거래처·의사결정 자료 보강 마무리 중. 7/10 일정 확인</span></div></div>
+        <div class="tri a"><div class="bar"></div><div style="flex:1"><div class="row"><span class="tt">온지음 계약 — 변호사 의견서 송부 완료, 협상 필요</span><span class="lvl">이번 달 · 신규</span></div><span class="ds">9,000만원 후불 구조·10개 조항 검토 완료. 3개 조항 신설 권고. 협상 후 체결</span></div></div>
+
+        <div class="cols">
+          <div class="pnl">
+            <div class="h"><i class="ti ti-bolt"></i>핵심 신호 1개</div>
+            <p><b>수원양조 계약 체결 가능</b> — 지난주 지적한 잔여 3개 이슈(납기일·지연이자·기수행 용역비 정산 기준)가 모두 해결되었습니다. <b class="g">FU-015 closed</b>. 이제 체결 후 사본 확보만 남았습니다.</p>
+            <div class="delta"><span>신규 <b>0</b></span><span>해소 <b class="ok">1</b></span><span>신규 FU <b>1</b></span><span>기한임박 <b>0</b></span></div>
+          </div>
+          <div class="pnl">
+            <div class="h"><i class="ti ti-file-text"></i>핵심 요약</div>
+            <p>이번 주는 <b>수원양조 체결 + 온지음 검토 + 분리운영 증빙</b> 세 가지가 병행됩니다. 수원양조는 체결만 남았고, 온지음은 의견서 기반 협상이 필요하며, 분리운영 증빙은 7/10 마감을 앞두고 있습니다.</p>
+          </div>
+        </div>
+
+        <div class="note"><i class="ti ti-bulb"></i><p><b>이번 주 요지.</b> 수원양조 체결 가능 상태가 되었습니다 — 체결 후 사본을 보내주세요. 온지음 계약(9,000만원)은 의견서를 참고해 협상해 주시고, 분리운영 증빙(7/10 마감)도 함께 진행해 주세요.</p></div>
+      </section>
+
+      <section class="view" id="v-rk">
+        <div class="secl">기존 리스크 상태 변화</div>
+        <table>
+          <thead><tr><th style="width:62px">번호</th><th>제목</th><th style="width:84px">위험도</th><th style="width:122px">변화</th><th>비고</th></tr></thead>
+          <tbody>
+            <tr><td data-l="번호">FU-015</td><td data-l="제목">수원양조 체결 전 보강</td><td data-l="위험도"><span class="chip c-L">해결</span></td><td data-l="변화"><span class="st-done">✅ 해결</span></td><td data-l="비고">잔여 3개 이슈 전부 해결, 체결 가능</td></tr>
+            <tr><td data-l="번호">FU-016</td><td data-l="제목">온지음 삼해주 계약 체결 전 보강</td><td data-l="위험도"><span class="chip c-M">관찰</span></td><td data-l="변화"><span class="st-up">▲ 신규 follow-up</span></td><td data-l="비고">의견서 송부 완료, 협상 결과 회신 대기</td></tr>
+            <tr><td data-l="번호">R-001</td><td data-l="제목">SLL 로열티 정산·위약벌</td><td data-l="위험도"><span class="chip c-H">중점</span></td><td data-l="변화"><span class="st-ok">▽ SOP 정착</span></td><td data-l="비고">1차 사이클 정상 완료, 반복 운영 확인</td></tr>
+            <tr><td data-l="번호">R-004</td><td data-l="제목">법인 대표 겸임·면허 리스크</td><td data-l="위험도"><span class="chip c-H">중점</span></td><td data-l="변화"><span class="st-up">▲ 증빙 진행 중</span></td><td data-l="비고">5요소 증빙 7/10까지 보강 예정</td></tr>
+            <tr><td data-l="번호">R-005</td><td data-l="제목">SLL중앙 경영 불확실성</td><td data-l="위험도"><span class="chip c-M">관찰</span></td><td data-l="변화"><span class="st-flat">― 변화 없음</span></td><td data-l="비고">간접 모니터링 유지</td></tr>
+            <tr><td data-l="번호">R-002</td><td data-l="제목">면세점 자동연장</td><td data-l="위험도"><span class="chip c-L">완화</span></td><td data-l="변화"><span class="st-done">✓ 의사결정 완료</span></td><td data-l="비고">2028년까지 유지</td></tr>
+            <tr><td data-l="번호">R-003</td><td data-l="제목">마용옥 에디션 상표권</td><td data-l="위험도"><span class="chip c-H">중점</span></td><td data-l="변화"><span class="st-flat">― 변화 없음</span></td><td data-l="비고">1,500병 소규모 유지</td></tr>
+            <tr><td data-l="번호">r19</td><td data-l="제목">에프앤비 90% 보유 경계</td><td data-l="위험도"><span class="chip c-M">관찰</span></td><td data-l="변화"><span class="st-flat">― 변화 없음</span></td><td data-l="비고">추가 지분 변동 없음</td></tr>
+          </tbody>
+        </table>
+        <div class="legend">위험도 — <b style="color:var(--rH)">중점</b> 중점 관리 · <b style="color:var(--rM-tx)">관찰</b> 관찰 · <b style="color:var(--rL-tx)">완화</b> 완화. 수령 자료 범위 내 관리 우선순위 안내이며 확정적 법률효과를 단정하지 않습니다.</div>
+      </section>
+
+      <section class="view" id="v-dl">
+        <div class="secl">기한 타임라인</div>
+        <div class="tl">
+          <div class="n g">07.06<small>W28 시작 — 수원양조 체결</small></div>
+          <div class="n a">07.10<small>분리운영 증빙 5요소 완료</small></div>
+          <div class="n a">07월<small>SLL 6월 정산 자료 수령</small></div>
+          <div class="n g">09.30<small>에프앤비 지분 정기 점검</small></div>
+        </div>
+        <div class="pnl" style="margin-top:22px">
+          <div class="h"><i class="ti ti-clock"></i>임박 기한 현황</div>
+          <p>7일 내 임박 기한은 <b>0건</b>입니다. 다만 <b>분리운영 증빙(7/10)</b>이 4일 앞으로 다가와 마무리가 필요합니다. <b>온지음 계약</b>은 변호사 의견서를 기반으로 협상을 진행해 주세요.</p>
+        </div>
+      </section>
+
+      <section class="view" id="v-ac">
+        <div class="secl">실행 항목</div>
+        <div class="ckgrp"><div class="gl">즉시 · 7일 내 (~07.13)</div>
+          <div class="ck"><span class="box"></span><div><span class="tag">FU-015</span>수원양조 계약 체결 및 계약서 사본 raw 송부</div></div>
+          <div class="ck"><span class="box"></span><div><span class="tag">FU-016</span>온지음 계약 — 의견서 기반 협상 및 수정본 확보</div></div>
+        </div>
+        <div class="ckgrp"><div class="gl">7일 내 (~07.13)</div>
+          <div class="ck"><span class="box"></span><div><span class="tag">R-004</span>5요소 증빙 1개 폴더로 정리 완료 (7/10)</div></div>
+          <div class="ck"><span class="box"></span><div><span class="tag">R-004</span>대표 겸임 유지 방어 논리 내부 설명 메모 정리</div></div>
+          <div class="ck"><span class="box"></span><div><span class="tag">R-001</span>SLL 판매보고·승인·정산·지급 증빙 동일 구조로 보관</div></div>
+        </div>
+        <div class="ckgrp"><div class="gl">분기 내 검토 (~09.30)</div>
+          <div class="ck"><span class="box"></span><div><span class="tag">r19</span>에프앤비 지분 구조 정기 점검</div></div>
+          <div class="ck"><span class="box"></span><div><span class="tag">R-003</span>마용옥 에디션 부속합의서 추진 여부 판단</div></div>
+          <div class="ck"><span class="box"></span><div><span class="tag">R-004</span>5요소 증빙팩 분기별 업데이트 루틴 확정</div></div>
+          <div class="ck"><span class="box"></span><div><span class="tag">FU-008</span>9억 금전소비대차 자금흐름 및 회계처리 자료 정리</div></div>
+          <div class="ck"><span class="box"></span><div><span class="tag">FU-011/012</span>더남산소주 최종 견적서·IP 권리확보 자료 수령</div></div>
+        </div>
+      </section>
+
+      <section class="view" id="v-dc">
+        <div class="secl">추가 요청 자료 · 다음 주 위클리 전 회신 요청</div>
+        <div class="doc"><span class="i">01</span><div><span class="t">수원양조 계약 체결 사본</span><span class="why">사유 — FU-015 체결 확인</span></div></div>
+        <div class="doc"><span class="i">02</span><div><span class="t">온지음 계약 협상 결과 및 수정본</span><span class="why">사유 — FU-016 의견서 반영 여부 확인</span></div></div>
+        <div class="doc"><span class="i">03</span><div><span class="t">분리운영 증빙 묶음 (5요소)</span><span class="why">사유 — R-004 방어력 강화 (7/10 예정)</span></div></div>
+        <div class="doc"><span class="i">04</span><div><span class="t">SLL 6월 정산 사이클 증빙</span><span class="why">사유 — R-001 SOP 반복 운영 확인</span></div></div>
+        <div class="doc"><span class="i">05</span><div><span class="t">9억 금전소비대차 자금흐름 및 회계처리 내역</span><span class="why">사유 — FU-008 r12 분석 심화</span></div></div>
+        <div class="doc"><span class="i">06</span><div><span class="t">더남산소주 최종 견적서 및 IP 권리확보 자료</span><span class="why">사유 — FU-011/FU-012 r15~r17 리스크 평가</span></div></div>
+      </section>
+
+      <section class="view" id="v-ex">
+        <div class="secl">외부 환경 변화 · 동종 업계</div>
+        <div class="ext">
+          <div class="t">계약 체결 후 첫 3개월 — 분쟁 예방의 골든타임</div>
+          <p>계약 체결 이후 이행 과정에서 분쟁이 발생할 수 있습니다. 납기일, 대금 정산 기준, 하자 책임 등이 체결 후 실무에서 다툼이 되는 대표적 쟁점입니다. <b>수원양조</b> 체결 후 이행 모니터링과 <b>온지음</b> 계약의 유사 쟁점 사전 식별이 선제적 리스크 관리의 핵심입니다.</p>
+          <p><b>당사 영향</b> — 수원양조 체결 완료 후 첫 이행 사이클 점검 필요. 온지음 계약도 유사 쟁점(대금 미지급·납품지연 책임)이 이미 의견서에 반영됨.</p>
+          <p><b>시사점</b> — SLL 1차 사이클 정상 완료가 좋은 선례입니다. 계약서에 정해진 절차(검수·승인·보고)를 첫 사이클에서 정확히 지키는 것이 중요합니다.</p>
+          <div class="src">출처 — 수원양조·온지음 계약 검토 경험 축적 (2026-07-06)</div>
+        </div>
+      </section>
+
+      <div class="disc">
+        본 리포트는 일반적 위험 점검 참고 자료이며 개별 사안의 확정적 법률효과를 단정하지 않습니다 · 변호사-의뢰인 비밀유지 특권 적용 · 외부 공개 금지<br>다음 주간리포트: 2026-07-13 (W29)
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  const titles={ov:"종합 현황",rk:"리스크 레지스터",dl:"기한 관제",ac:"실행 항목",dc:"자료 · 추가요청",ex:"외부 환경"};
+  document.querySelectorAll('.nav a').forEach(a=>{
+    a.addEventListener('click',()=>{
+      document.querySelectorAll('.nav a').forEach(x=>x.classList.remove('active'));
+      document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+      a.classList.add('active');
+      const v=a.dataset.v;
+      document.getElementById('v-'+v).classList.add('active');
+      document.getElementById('ttl').textContent=titles[v];
+      window.scrollTo({top:0,behavior:'smooth'});
+    });
+  });
+</script>
+</body>
+</html>
