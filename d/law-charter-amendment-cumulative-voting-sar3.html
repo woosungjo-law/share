@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="집중투표제 의무화 D-60: 기존 이사회 정관 변경 실무 3단계 — 대규모 상장회사 법무팀을 위한 정관 변경 가이드">
+<meta property="og:title" content="집중투표제 의무화 D-60: 정관 변경 실무 3단계">
+<meta property="og:description" content="2026. 9. 10. 시행 앞둔 집중투표제 의무화, D-60 시점에서 법무팀이 해야 할 정관 변경 3단계">
+<meta property="og:type" content="article">
+<title>집중투표제 의무화 D-60: 정관 변경 실무 3단계</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Noto Sans KR', sans-serif; font-size: 14.5px; line-height: 1.75; color: #111827; background: #f0f2f5; -webkit-font-smoothing: antialiased; }
+/* Sticky Topbar */
+.topbar { position: sticky; top: 0; z-index: 100; height: 4px; background: linear-gradient(90deg, #1a3a6b, #2e6be6); }
+/* Header */
+.header { background: #fff; border-bottom: 1px solid #e5e7eb; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; }
+.header-left { display: flex; align-items: center; gap: 12px; }
+.header-badge { background: #1a3a6b; color: #fff; font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 3px; letter-spacing: 0.5px; text-transform: uppercase; }
+.header-name { font-size: 13px; font-weight: 500; color: #4b5563; }
+.header-meta { font-size: 11px; color: #9ca3af; }
+/* Hero */
+.hero { background: linear-gradient(135deg, #1a3a6b 0%, #1e4d8c 30%, #2e6be6 70%, #4a8cff 100%); padding: 60px 24px 50px; text-align: center; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 70% 30%, rgba(255,255,255,0.08) 0%, transparent 50%); pointer-events: none; }
+.hero h1 { font-size: clamp(22px, 4vw, 32px); font-weight: 900; color: #fff; line-height: 1.3; margin-bottom: 6px; letter-spacing: -0.5px; }
+.hero .tag { display: inline-block; background: rgba(255,255,255,0.15); color: #fff; font-size: 11px; font-weight: 600; padding: 3px 12px; border-radius: 20px; margin-bottom: 16px; letter-spacing: 0.3px; }
+.hero .meta { font-size: 12px; color: rgba(255,255,255,0.7); display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 10px; }
+.hero .meta span { display: flex; align-items: center; gap: 4px; }
+.hero .meta .badge { display: inline-block; background: #059669; color: #fff; font-size: 10px; padding: 2px 8px; border-radius: 3px; font-weight: 600; }
+.hero .cta { margin-top: 20px; }
+.hero .cta a { display: inline-block; background: #fff; color: #1a3a6b; font-size: 13px; font-weight: 700; padding: 10px 28px; border-radius: 6px; text-decoration: none; transition: all 0.2s; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+.hero .cta a:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(0,0,0,0.2); }
+/* TLDR */
+.tldr-wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 2; }
+.tldr-card { background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); padding: 24px 28px; margin-top: -24px; margin-bottom: 28px; border: 1px solid #e5e7eb; }
+.tldr-card .label { font-size: 10px; font-weight: 700; color: #2e6be6; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+.tldr-card ul { list-style: none; padding: 0; }
+.tldr-card ul li { position: relative; padding: 6px 0 6px 18px; font-size: 14px; color: #374151; line-height: 1.6; }
+.tldr-card ul li::before { content: '▸'; position: absolute; left: 0; color: #2e6be6; font-weight: 700; }
+/* Container */
+.container { max-width: 920px; margin: 0 auto; padding: 0 20px 60px; }
+/* Section */
+.section { background: #fff; border-radius: 12px; box-shadow: 0 1px 6px rgba(0,0,0,0.06); margin-bottom: 24px; padding: 28px 30px; border: 1px solid #e5e7eb; transition: box-shadow 0.2s; }
+.section:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.1); }
+.section-number { display: inline-block; background: #2e6be6; color: #fff; font-size: 11px; font-weight: 700; padding: 2px 12px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+.section h2 { font-size: 20px; font-weight: 700; color: #111827; margin-bottom: 4px; line-height: 1.3; }
+.section .subtitle { font-size: 13px; color: #6b7280; margin-bottom: 16px; }
+/* Eye-catcher */
+.eye-catcher { background: #eff6ff; border-left: 4px solid #2e6be6; padding: 14px 18px; border-radius: 4px; margin: 16px 0; }
+.eye-catcher p { font-size: 13.5px; color: #1e40af; line-height: 1.6; margin: 0; }
+.eye-catcher strong { color: #1e3a8a; }
+/* Legal Quote */
+.legal-quote { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 4px; margin: 16px 0; font-size: 13px; color: #92400e; line-height: 1.6; }
+.legal-quote .src { font-weight: 700; color: #78350f; }
+.legal-quote .status { display: inline-block; font-size: 10px; font-weight: 600; padding: 1px 8px; border-radius: 3px; margin-left: 6px; }
+.legal-quote .status.verified { background: #d1fae5; color: #065f46; }
+.legal-quote .status.caution { background: #fef3c7; color: #92400e; }
+/* Info Card */
+.info-card { background: linear-gradient(135deg, #eff6ff, #dbeafe); padding: 16px 20px; border-radius: 8px; margin: 16px 0; }
+.info-card p { font-size: 13px; color: #1e3a8a; line-height: 1.6; margin: 0; }
+/* Highlight Box */
+.highlight-box { background: #ecfdf5; border: 1px solid #a7f3d0; padding: 14px 18px; border-radius: 8px; margin: 16px 0; }
+.highlight-box p { font-size: 13px; color: #065f46; line-height: 1.6; margin: 0; }
+.highlight-box strong { color: #047857; }
+/* Alert Box */
+.alert-box { background: #fef2f2; border: 1px solid #fecaca; padding: 14px 18px; border-radius: 8px; margin: 16px 0; }
+.alert-box p { font-size: 13px; color: #991b1b; line-height: 1.6; margin: 0; }
+/* Table */
+.table-wrap { overflow-x: auto; margin: 16px 0; border-radius: 8px; border: 1px solid #e5e7eb; }
+.table-wrap table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.table-wrap thead { background: #1a3a6b; color: #fff; }
+.table-wrap th { padding: 10px 14px; text-align: left; font-weight: 600; font-size: 12px; }
+.table-wrap td { padding: 10px 14px; border-bottom: 1px solid #e5e7eb; color: #374151; }
+.table-wrap tbody tr:hover { background: #f9fafb; }
+.table-wrap tbody tr:last-child td { border-bottom: none; }
+/* Steps */
+.steps { display: flex; gap: 16px; margin: 16px 0; flex-wrap: wrap; }
+.step-card { flex: 1; min-width: 180px; background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 10px; padding: 18px 16px; position: relative; }
+.step-card .step-num { display: inline-block; background: #2e6be6; color: #fff; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 3px; margin-bottom: 8px; }
+.step-card h4 { font-size: 14px; font-weight: 700; color: #111827; margin-bottom: 4px; }
+.step-card p { font-size: 12.5px; color: #6b7280; line-height: 1.5; }
+/* Checklist list (not table) */
+.checklist { margin: 12px 0; padding: 0; list-style: none; }
+.checklist li { padding: 5px 0 5px 24px; position: relative; font-size: 13.5px; color: #374151; }
+.checklist li::before { content: '☐'; position: absolute; left: 0; color: #2e6be6; font-weight: 700; }
+/* QA */
+.qa-item { border-bottom: 1px solid #e5e7eb; padding: 16px 0; }
+.qa-item:last-child { border-bottom: none; }
+.qa-q { font-weight: 700; font-size: 14.5px; color: #111827; margin-bottom: 6px; }
+.qa-q::before { content: 'Q. '; color: #2e6be6; font-weight: 900; }
+.qa-a { font-size: 13.5px; color: #4b5563; line-height: 1.7; padding-left: 4px; }
+.footer { max-width: 920px; margin: 0 auto; padding: 32px 20px 40px; text-align: center; }
+.footer p { font-size: 12px; color: #9ca3af; line-height: 1.6; }
+/* Progress bar */
+.progress-bar { position: sticky; top: 4px; z-index: 99; height: 3px; background: #e5e7eb; }
+.progress-bar .progress-fill { height: 100%; background: linear-gradient(90deg, #2e6be6, #4a8cff); width: 0%; transition: width 0.1s; }
+/* Responsive */
+@media (max-width: 640px) {
+  .hero { padding: 40px 16px 36px; }
+  .section { padding: 20px 16px; }
+  .tldr-card { padding: 18px 16px; }
+  .steps { flex-direction: column; }
+  .step-card { min-width: auto; }
+  .header { padding: 10px 16px; flex-direction: column; gap: 6px; text-align: center; }
+}
+h3 { font-size: 16px; font-weight: 700; color: #111827; margin-top: 20px; margin-bottom: 8px; }
+h4 { font-size: 14px; font-weight: 700; color: #374151; margin-top: 14px; margin-bottom: 6px; }
+p { font-size: 14px; color: #374151; margin-bottom: 10px; line-height: 1.7; }
+</style>
+</head>
+<body>
+
+<div class="topbar"></div>
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<header class="header">
+  <div class="header-left">
+    <span class="header-badge">Legal Dashboard</span>
+    <span class="header-name">조우성 변호사 · 로펌 머스트노우</span>
+  </div>
+  <div class="header-meta">문의: law@mustknow.co.kr</div>
+</header>
+
+<section class="hero">
+  <div class="tag">회사법 · 지배구조</div>
+  <h1>집중투표제 의무화 D-60:<br>기존 이사회 정관 변경 실무 3단계</h1>
+  <div class="meta">
+    <span>📅 2026. 7. 10. 작성</span>
+    <span>⚖️ 시행: 2026. 9. 10.</span>
+    <span><span class="badge">✓ 2단검증 완료</span></span>
+    <span>⏱ 읽기 8분</span>
+  </div>
+  <div class="cta">
+    <a href="#step1">정관 변경 시작하기 →</a>
+  </div>
+</section>
+
+<div class="tldr-wrap">
+  <div class="tldr-card">
+    <div class="label">3줄 요약</div>
+    <ul>
+      <li><strong>D-60 시점에서 정관 변경 필수</strong> — 2026. 9. 10.부터 대규모 상장회사(자산 2조↑)는 정관으로 집중투표를 배제할 수 없게 되어, 배제 조항을 방치하면 위법 상태가 된다.</li>
+      <li><strong>3단계 절차</strong> — ① 현행 정관 진단 → ② 정관 변경안 작성 및 이사회 결의 → ③ 주총 특별결의 및 등기. 각 단계마다 소수주주 대응·기관투자자 설득·분쟁 리스크 방지 전략이 필요하다.</li>
+      <li><strong>간접적 대응은 신중히</strong> — 이사 정수 조정·시차임기제 도입은 기관투자자의 강한 반대와 결의취소 소송 리스크를 수반하므로 법적·전략적 검토 선행이 필수다.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- SECTION 1 -->
+  <div class="section" id="step1">
+    <div class="section-number">STEP 1</div>
+    <h2>현행 정관 진단 — 배제 조항 유무와 이사 구성 현황 파악</h2>
+    <p class="subtitle">정관 변경의 첫 단계: 현행 정관에 집중투표 배제 조항이 있는지, 이사회 구성은 어떤지 정확히 파악한다.</p>
+
+    <div class="eye-catcher">
+      <p><strong>한눈에</strong> — 대규모 상장회사 대부분은 "상법 제382조의2에 따른 집중투표를 적용하지 아니한다"는 <strong>opt-out 조항</strong>을 정관에 두고 있다. 이 조항은 2026. 9. 10.부터 무효가 되므로 반드시 삭제해야 한다.</p>
+    </div>
+
+    <h3>✅ 체크포인트 1: 집중투표 배제 조항 존재 여부</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>현행 정관 조항 여부</th><th>필요한 조치</th><th>마감</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>배제 조항 있음 (대다수)</td><td><strong>삭제</strong> — 정관 변경안 필수 포함</td><td>2026. 9. 10.</td></tr>
+          <tr><td>배제 조항 없음 (소수)</td><td>집중투표 청구 대비 시뮬레이션만</td><td>2026년 3분기</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="legal-quote">
+      <p><span class="src">근거·조문</span> <strong>상법 제542조의7 제3항</strong> (현행: 정관으로 배제 가능, 2026.9.10.부터 배제 금지로 개정)<br>
+      "제2항의 상장회사가 정관으로 집중투표를 배제하거나..." → 개정 후에는 배제 자체가 불가</p>
+      <p><span class="status verified">✓ 한국법 MCP 현행 조문 확인</span></p>
+    </div>
+
+    <div class="info-card">
+      <p><strong>실무 포인트</strong>: 배제 조항을 '삭제'만 하면 법적 의무는 충족된다. 그러나 삭제만으로는 소수주주의 집중투표 청구 가능성이 그대로 열리므로, 이사 정수·안건 설계까지 검토해야 한다.</p>
+    </div>
+
+    <h3>✅ 체크포인트 2: 분리형 vs 통합형 집중투표 조항</h3>
+    <p>일부 회사는 사내이사와 사외이사를 분리하여 집중투표하도록 하는 <strong>분리형 집중투표 조항</strong>을 두고 있다. 법무부는 유권해석을 통해 <strong>전체 후보자를 대상으로 통합 적용</strong>해야 한다는 입장이므로, 분리형 조항이 있다면 통합형으로 정비해야 한다.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>구분</th><th>내용</th><th>조치</th></tr></thead>
+        <tbody>
+          <tr><td>분리형</td><td>사내·사외이사 각각 별도 집중투표</td><td>통합형으로 전환 필요</td></tr>
+          <tr><td>통합형</td><td>전체 이사 후보 통합 집중투표</td><td>현행 유지 (법무부 해석 부합)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>✅ 체크포인트 3: 이사 구성 및 감사위원 연계 확인</h3>
+    <p>2026. 7. 23. 시행된 <strong>감사위원 분리선출 2인 확대 및 합산 3% 룰</strong>과 집중투표제는 동시에 작동한다. 감사위원 2인은 분리선출되어 집중투표 대상에서 제외되므로, 일반 이사 선임에 집중투표가 집중되어 의결권 경쟁이 격화된다.</p>
+
+    <div class="highlight-box">
+      <p><strong>실무 포인트</strong>: 두 안건(감사위원 선임, 일반 이사 선임)을 분리 상정하는 것이 일반적이나, '안건 쪼개기'로 평가되지 않도록 목적과 구성을 명확히 설계해야 한다.</p>
+    </div>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="section" id="step2">
+    <div class="section-number">STEP 2</div>
+    <h2>정관 변경안 작성 및 이사회 결의 — 3가지 핵심 결정</h2>
+    <p class="subtitle">정관 변경안은 ① 배제 조항 삭제(필수), ② 이사 정수·임기 조정(선택), ③ 분리형→통합형 전환(필요 시)으로 구성된다.</p>
+
+    <div class="eye-catcher">
+      <p><strong>한눈에</strong> — 이사회는 각 안건의 경영상 필요성과 기관투자자 수용 가능성을 검토하여 결의한다. 특히 안건 상정 방식(분리 상정 의무)을 위반하면 결의취소 사유가 될 수 있으므로 주의해야 한다.</p>
+    </div>
+
+    <h3>결정 1: 배제 조항 삭제 — 단순 삭제 vs 대체 규정 도입</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>접근법</th><th>내용</th><th>기관투자자 반응</th></tr></thead>
+        <tbody>
+          <tr><td>단순 삭제</td><td>배제 조항만 제거</td><td><span style="color:#059669;">✅ 찬성 (당연한 조치)</span></td></tr>
+          <tr><td>삭제 + 이사 수 명시</td><td>"이사는 3명 이상 7명 이하로 한다" 등</td><td><span style="color:#059669;">✅ 합리적 근거 시 찬성</span></td></tr>
+          <tr><td>삭제 + 시차임기제 도입</td><td>이사별 임기 분산 규정 도입</td><td><span style="color:#dc2626;">❌ 원칙 반대 (설득 필요)</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="alert-box">
+      <p><strong>⚠️ 시차임기제(Staggered Board)</strong>는 집중투표 효과 분산 수단으로 주목받지만, ISS·Glass Lewis·KCGS 모두 원칙적으로 반대한다. 도입 시 정당한 경영상 근거(경영 안정성·연속성)와 지배구조 개선 계획(사외이사 확충)을 함께 제시해야 한다.</p>
+    </div>
+
+    <h3>결정 2: 이사 정수·선임 단위 설계</h3>
+    <p>집중투표제 하에서는 <strong>한 번에 선임하는 이사 수</strong>가 소수주주의 영향력을 결정한다. 기본 공식을 이해하고 사전 시뮬레이션을 실시해야 한다.</p>
+
+    <div class="info-card">
+      <p><strong>의결권 시뮬레이션 기본 공식</strong><br>
+      소수주주가 확보 가능한 이사석 수 = (소수주주 보유 지분 × 선임 이사 수) ÷ (대주주 집중 의결권 수 + 1)</p>
+      <p style="margin-top:8px;font-size:12px;color:#1e40af;">예: 지분 40% 소수주주, 선임 이사 5명 → 최대 2석 확보 가능</p>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>선임 방식</th><th>집중투표 효과</th><th>권장 여부</th></tr></thead>
+        <tbody>
+          <tr><td>매년 전체 이사 전원 선임</td><td>집중투표 효과 최대</td><td>기본</td></tr>
+          <tr><td>매년 일부 이사만 선임 (시차임기)</td><td>집중투표 효과 분산</td><td>신중히 검토</td></tr>
+          <tr><td>이사 수 과도하게 축소</td><td>집중투표 효과 감소</td><td>비권장</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="legal-quote">
+      <p><span class="src">근거·조문</span> <strong>상법 제382조의2 제3항</strong> — "각 주주는 1주마다 선임할 이사의 수와 동일한 수의 의결권을 가지며, 그 의결권은 이사 후보자 1인 또는 수인에게 집중하여 투표하는 방법으로 행사할 수 있다."</p>
+      <p><span class="status verified">✓ 한국법 MCP 현행 조문 확인</span></p>
+    </div>
+
+    <h3>결정 3: 안건 상정 방식 — 분리 상정 의무 준수</h3>
+    <p>상법 제542조의7 제4항은 집중투표 배제에 관한 정관 변경 안건을 <strong>다른 정관 변경 안건과 별도로 상정</strong>하도록 규정한다. 이는 주주에게 유리한 변경을 미끼로 배제 정관 변경을 통과시키는 것을 막기 위한 조항이다.</p>
+
+    <div class="legal-quote">
+      <p><span class="src">근거·조문</span> <strong>상법 제542조의7 제4항</strong> — "제2항의 상장회사가 주주총회의 목적사항으로 제3항에 따른 집중투표 배제에 관한 정관 변경에 관한 의안을 상정하려는 경우에는 그 밖의 사항의 정관 변경에 관한 의안과 별도로 상정하여 의결하여야 한다."</p>
+      <p><span class="status verified">✓ 한국법 MCP 현행 조문 확인</span></p>
+    </div>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="section" id="step3">
+    <div class="section-number">STEP 3</div>
+    <h2>주총 특별결의 및 등기 — 절차 타임라인과 분쟁 리스크 대비</h2>
+    <p class="subtitle">정관 변경안은 주주총회 특별결의를 거쳐 최종 확정된다. 2026. 9. 10. 시행 전 결의 완료를 위해 늦어도 7월 말까지 소집통지가 필요하다.</p>
+
+    <div class="eye-catcher">
+      <p><strong>한눈에</strong> — 정관 변경은 상법 제434조에 따라 출석 주주 의결권 3분의 2 이상 및 발행주식총수 3분의 1 이상의 찬성이 필요하다. 소집통지 단계의 하자는 결의취소 사유가 되므로, 작성 시 철저한 검토가 필수다.</p>
+    </div>
+
+    <h3>주총 소집 및 결의 타임라인</h3>
+    <div class="steps" style="margin-bottom:20px;">
+      <div class="step-card">
+        <div class="step-num">D-60</div>
+        <h4>이사회 개최</h4>
+        <p>정관 변경안 결의, 소집통지서 작성·검토</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">D-42</div>
+        <h4>소집통지 발송</h4>
+        <p>주총일 6주 전까지, 안건·인원수 명확히 기재</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">D-14</div>
+        <h4>주총 개최</h4>
+        <p>특별결의, 출석·의결 정족수 사전 확인</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">D-Day</div>
+        <h4>정관 변경 등기</h4>
+        <p>주총일로부터 2주 이내 관할 법원에 제출</p>
+      </div>
+    </div>
+
+    <div class="legal-quote">
+      <p><span class="src">근거·조문</span> <strong>상법 제434조</strong> (정관 변경 특별결의) — "출석한 주주의 의결권의 3분의 2 이상의 수와 발행주식총수의 3분의 1 이상의 수로 하여야 한다."</p>
+      <p><span class="status verified">✓ 한국법 MCP 현행 조문 확인</span></p>
+    </div>
+
+    <h3>소집통지서 작성 체크리스트</h3>
+    <ul class="checklist">
+      <li><strong>선임할 이사의 인원수</strong> 명확히 기재 — 누락 시 집중투표권 침해 → 결의취소 사유</li>
+      <li>정관 변경 안건은 <strong>다른 안건과 분리 상정</strong></li>
+      <li>안건 설명에 집중투표제 의무화에 따른 정관 정비라는 <strong>목적과 취지</strong> 명시</li>
+      <li>소수주주가 집중투표 청구 시 <strong>대응 절차</strong> 사전 마련</li>
+    </ul>
+
+    <div class="legal-quote">
+      <p><span class="src">근거·판례</span> <strong>대구고등법원 2017. 5. 24. 선고 2016나26397 판결</strong> — "정관으로 집중투표를 배제하지 않은 회사는 소집통지·공고에 '선임할 이사의 인원수'를 기재해야 하며, 단순히 '이사 선임' 기재는 집중투표권 침해로 결의취소 사유"</p>
+      <p><span class="status verified">✓ LBOX 존재 확인 (2026-07-04 인용감사)</span></p>
+    </div>
+
+    <div class="legal-quote">
+      <p><span class="src">근거·판례</span> <strong>서울고등법원 2010. 11. 15.자 2010라1065 결정</strong> — 인원수는 주주가 집중투표 청구 여부를 결정하는 가장 중요한 정보이므로 누락 시 통지 단계에서 절차 하자 완성</p>
+      <p><span class="status verified">✓ 한국법 MCP 확인 완료 (ID 147259)</span></p>
+    </div>
+
+    <h3>분쟁 리스크 예방 포인트</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>리스크 유형</th><th>구체적 상황</th><th>예방 조치</th></tr></thead>
+        <tbody>
+          <tr><td><strong>안건 쪼개기</strong></td><td>복수 이사 선임 안건을 쪼개 집중투표 회피</td><td>'실질' 기준으로 통합 상정</td></tr>
+          <tr><td><strong>안건 분리·일부 연기</strong></td><td>주총 현장에서 안건 분리·표결 연기로 집중투표 무력화</td><td>소집통지 내용 그대로 진행</td></tr>
+          <tr><td><strong>가처분 위험</strong></td><td>집중투표권 침해로 선임된 이사의 직무집행정지 신청</td><td>절차 투명하게, 사전 시뮬레이션 자료 준비</td></tr>
+          <tr><td><strong>기관투자자 반대</strong></td><td>ISS·Glass Lewis 등 의결권 자문사 반대 권고</td><td>합리적 근거 사전 제시, IR 자료 준비</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- SECTION 4: POST-CHANGE ACTION PLAN -->
+  <div class="section" id="action-plan">
+    <div class="section-number">BONUS</div>
+    <h2>정관 변경 이후 — 집중투표 청구 대비 액션 플랜</h2>
+    <p class="subtitle">정관 배제 조항을 삭제했다고 모든 준비가 끝난 것은 아니다. 2027년 정기주총 대비, 지금부터 준비해야 할 5대 선제 조치.</p>
+
+    <div class="eye-catcher">
+      <p><strong>한눈에</strong> — 소수주주·행동주의 펀드가 집중투표를 청구할 가능성이 현실화된다. 의결권 시뮬레이션, 이사 후보군 확보, IR 자료 준비를 D-60 시점에서 함께 진행해야 한다.</p>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>우선순위</th><th>액션</th><th>구체적 내용</th></tr></thead>
+        <tbody>
+          <tr><td><span style="color:#dc2626;font-weight:700;">🔴 긴급</span></td><td><strong>의결권 시뮬레이션</strong></td><td>현 주주 구성으로 집중투표 시 소수주주 확보 가능 이사석 계산</td></tr>
+          <tr><td><span style="color:#dc2626;font-weight:700;">🔴 긴급</span></td><td><strong>이사 후보군 확보</strong></td><td>사외이사·기타비상무이사 후보군 사전 발굴</td></tr>
+          <tr><td><span style="color:#d97706;font-weight:700;">🟡 중요</span></td><td><strong>IR 자료 준비</strong></td><td>집중투표 대비 이사회 구성 전략, 지배구조 개선 계획</td></tr>
+          <tr><td><span style="color:#d97706;font-weight:700;">🟡 중요</span></td><td><strong>내부 매뉴얼 정비</strong></td><td>소집통지·의안 상정·의결권 행사 절차 내부 지침 마련</td></tr>
+          <tr><td><span style="color:#059669;font-weight:700;">🟢 예방</span></td><td><strong>기관투자자 사전 설명</strong></td><td>주요 연기금·운용사·의결권 자문사 대상 설명회</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section" id="faq">
+    <div class="section-number">Q&A</div>
+    <h2>자주 묻는 질문</h2>
+
+    <div class="qa-item">
+      <div class="qa-q">정관에 집중투표 배제 조항을 두고 있는데, 9월 10일이 지나도 바로 무효가 되나요?</div>
+      <div class="qa-a">네, 2026. 9. 10.부터는 배제 조항이 법령에 위반되어 무효가 됩니다. 회사가 정관 변경 절차를 밟지 않아도 해당 조항은 효력을 상실합니다. 그러나 <strong>무효 상태를 방치하는 것 자체가 위험</strong>하므로, 늦어도 8월 말까지는 정관 변경을 완료하여 법적 안정성을 확보해야 합니다.</div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q">자산 2조 원 미만 상장회사도 정관 변경이 필요한가요?</div>
+      <div class="qa-a">직접적인 의무화 대상은 아니지만, 배제 조항을 그대로 두면 향후 자산 규모 증가 시 적용 대상이 될 수 있습니다. 또한 기관투자자·의결권 자문사가 모범 지배구조 기준으로 집중투표 도입을 권장할 가능성이 있으므로, 선제적 검토를 권장합니다.</div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q">배제 조항 삭제만 하면 되나요? 다른 정관 조항도 고쳐야 하나요?</div>
+      <div class="qa-a">배제 조항 삭제가 최소 요건입니다. 추가로 ① 분리형 집중투표 조항이 있다면 통합형으로 전환, ② 이사 정수·임기 조정, ③ 소수주주가 제안한 배제 조항 삭제 정관 변경안이 상정될 경우에 대비한 방어 전략도 함께 검토하는 것이 바람직합니다.</div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q">소수주주가 집중투표 배제 조항 삭제를 주주제안으로 제출하면 어떻게 대응해야 하나요?</div>
+      <div class="qa-a">주주제안이 적법한 요건(지분율 1% 이상, 주총일 6주 전 서면 제출)을 충족하면 이사회는 이를 안건으로 상정해야 합니다. 상법 제542조의7 제4항에 따라 다른 정관 변경 안건과 <strong>별도로 상정</strong>해야 하며, 가결 가능성과 대응 전략을 사전에 준비해야 합니다.</div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q">기관투자자의 반대가 예상되는데, 설득 방법이 있나요?</div>
+      <div class="qa-a">의결권 자문사(ISS·Glass Lewis)는 이사 수 상한 설정·시차임기제 도입에 원칙적으로 반대하지만, 합리적 경영상 근거와 지배구조 개선 계획을 함께 제시하면 일부 설득이 가능합니다. 데이터 기반 접근(시뮬레이션 결과), 사외이사 확충 계획, 기관투자자 사전 설명회가 핵심입니다.</div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q">이사회 결의는 언제까지 해야 하나요?</div>
+      <div class="qa-a">주총일 기준으로 역산하여 최소 6주 전에 소집통지를 발송해야 하므로, 이사회 결의는 소집통지 전에 완료해야 합니다. 9월 첫째 주에 임시주총을 열려면 <strong>7월 말까지 이사회를 개최</strong>하는 것이 안전합니다.</div>
+    </div>
+  </div>
+
+  <!-- DISCLAIMER -->
+  <div class="section" style="background:#f9fafb;border-color:#d1d5db;">
+    <div class="section-number" style="background:#6b7280;">NOTICE</div>
+    <h2 style="font-size:16px;">최신성·면책 고지</h2>
+    <p style="font-size:13px;color:#6b7280;">본 가이드는 <strong>2026. 7. 10.</strong> 기준으로 작성되었습니다. 집중투표제 의무화(2026. 9. 10. 시행)는 개정상법 제542조의7 제3항에 의하며, 시행 전 해석과 실무 관행은 변경될 수 있습니다. Skipping Rule, 분리선출 감사위원과 집중투표 관계 등 미해결 쟁점은 유관기관의 유권해석 또는 판례를 주시하시기 바랍니다.</p>
+    <p style="font-size:13px;color:#6b7280;">본 가이드는 일반적인 법률 정보 제공을 목적으로 하며, 특정 사안에 대한 법률 자문을 대체하지 않습니다. 실제 의사결정은 개별 상황에 맞는 변호사의 자문을 받은 후에 이루어져야 합니다.</p>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <p>법률정보 : 조우성 변호사 · 로펌 머스트노우 &nbsp;|&nbsp; 문의: law@mustknow.co.kr</p>
+  <p style="margin-top:4px;">본 콘텐츠는 일반적인 법률 정보 제공 목적으로 작성되었습니다.</p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var progressFill = document.getElementById('progressFill');
+  window.addEventListener('scroll', function() {
+    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    var scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+    progressFill.style.width = Math.min(progress, 100) + '%';
+  });
+});
+</script>
+</body>
+</html>
