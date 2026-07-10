@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 검색허용(— 검색허용 옵션): 아래 줄을 삭제하지 말고 content를 "index,follow"로 교체.
+     게시 스크립트는 robots 메타가 없을 때만 noindex를 주입하므로, 삭제하면 오히려 noindex가 재주입된다. -->
+<meta name="robots" content="noindex,nofollow">
+<title>감사위원회 분리선출 2인 시대: 선임절차·3%룰·소수주주 대응 전략 — 조우성 변호사</title>
+<!-- 링크 미리보기(카톡·메신저·검색허용 시 SEO)용 메타 -->
+<meta name="description" content="2026년 7월 23일 합산 3%룰, 9월 10일 감사위원 2인 분리선출 의무화 시행. 선임절차, 3%룰 적용 실무, 소수주주 대응 전략을 실무자 가이드로 정리합니다.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="감사위원회 분리선출 2인 시대: 선임절차·3%룰·소수주주 대응 전략 — 조우성 변호사">
+<meta property="og:description" content="2026년 7월 23일 합산 3%룰, 9월 10일 감사위원 2인 분리선출 의무화 시행. 선임절차, 3%룰 적용 실무, 소수주주 대응 전략을 실무자 가이드로 정리합니다.">
+<style>
+/* ============================================================
+   법률 대시보드 전자책 — Apollo 기반 경량 커스텀 (공개 롱스크롤)
+   Apollo 토큰(버건디 액센트 + 웜 화이트 + 딥와인 헤더) 상속.
+   의뢰인 리포트(리스크레이더 6뷰)와 달리 공개 독서형 롱스크롤.
+   self-contained: 외부 CDN/폰트/이미지/스크립트 의존 없음.
+   ============================================================ */
+:root{
+  --bg:#f5f1f2; --panel:#ffffff; --panel2:#faf6f7;
+  --line:#ebe2e5; --line2:#ddccd2;
+  --ink:#2c1d26; --ink2:#56424c; --muted:#8a7b82; --faint:#b3a6ab;
+  --wine:#7a2e3a; --wine-d:#5a1f2b; --wine-l:#9c4456;
+  --wine-tint:#f4e9ec; --wine-tint-ln:#ecd7dd;
+  --header-bg:#3a1525; --header-bg2:#4e1f32; --header-accent:#d4a0aa;
+  --rH:#c74a3c; --rM-bg:#f8e4b8; --rM-tx:#7d520a; --rL-bg:#d6ecdb; --rL-tx:#287a54;
+  --amber:#b45309; --green:#287a54;
+  --font:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Noto Sans KR',sans-serif;
+  --maxw:1120px; --readw:760px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
+
+/* 읽기 진행바 */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;
+  background:linear-gradient(90deg,var(--wine),var(--wine-l));transition:width .1s linear}
+
+/* 헤더 표지 (딥와인, 유일한 딥 컬러) */
+.header{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0}
+.header .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 26px}
+.header .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;
+  color:var(--header-accent);border:1px solid rgba(212,160,170,.4);border-radius:999px;padding:4px 12px}
+.header .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--header-accent)}
+
+/* 히어로 */
+.hero{max-width:var(--maxw);margin:0 auto;padding:30px 26px 8px}
+.hero .eb{font-size:12px;font-weight:700;color:var(--wine);letter-spacing:.02em;margin-bottom:10px}
+.hero h1{font-size:30px;line-height:1.28;font-weight:800;margin:0 0 16px;color:var(--ink);letter-spacing:-.01em}
+.hero .tldr{background:var(--wine-tint);border:1px solid var(--wine-tint-ln);border-left:4px solid var(--wine);
+  border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.hero .tldr .lb{font-size:12px;font-weight:700;color:var(--wine-d);margin-bottom:8px}
+.hero .tldr ul{margin:0;padding-left:18px}
+.hero .tldr li{margin:4px 0;font-size:15px;color:var(--ink2)}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:12.5px;color:var(--muted);margin-bottom:18px}
+.hero .meta .vchip{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);
+  font-weight:700;border-radius:6px;padding:3px 9px;font-size:11.5px}
+.hero .cta-row{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:9px;
+  padding:11px 18px;text-decoration:none;cursor:pointer;border:1px solid transparent}
+.btn-p{background:var(--wine);color:#fff}
+.btn-p:hover{background:var(--wine-d)}
+.btn-o{background:#fff;color:var(--wine-d);border-color:var(--line2)}
+.btn-o:hover{background:var(--panel2)}
+
+/* 셸: 좌측 목차 + 본문 */
+.app{max-width:var(--maxw);margin:0 auto;padding:8px 26px 60px;
+  display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:start}
+
+/* 목차 (데스크톱 = 좌측 sticky) */
+.toc{position:sticky;top:24px}
+.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;
+  margin:0 0 10px;padding-left:2px}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}
+.toc li{counter-increment:toc;margin:1px 0}
+.toc a{display:flex;gap:9px;font-size:13.5px;color:var(--ink2);text-decoration:none;
+  padding:7px 10px;border-radius:8px;border-left:3px solid transparent;line-height:1.4}
+.toc a::before{content:counter(toc,decimal-leading-zero);color:var(--faint);font-weight:700;font-size:11.5px;flex:none}
+.toc a:hover{background:var(--panel2)}
+.toc a.active{background:var(--wine-tint);border-left-color:var(--wine);color:var(--wine-d);font-weight:700}
+.toc-toggle{display:none}
+
+/* 본문 */
+.content{max-width:var(--readw);min-width:0}
+section.blk{scroll-margin-top:24px;margin-bottom:38px}
+.secl{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.05em;margin:0 0 12px}
+.secl::before{content:"";width:7px;height:15px;background:var(--wine);border-radius:2px;flex:none}
+section.blk h2{font-size:23px;font-weight:800;line-height:1.35;margin:0 0 14px;color:var(--ink);letter-spacing:-.01em}
+section.blk h3{font-size:17px;font-weight:700;margin:26px 0 10px;color:var(--wine-d)}
+section.blk p{margin:0 0 14px;color:var(--ink2)}
+section.blk ul,section.blk ol{margin:0 0 14px;padding-left:22px;color:var(--ink2)}
+section.blk li{margin:6px 0}
+strong{color:var(--ink);font-weight:700}
+a.ln{color:var(--wine-l);text-decoration:none;border-bottom:1px solid var(--wine-tint-ln)}
+a.ln:hover{border-bottom-color:var(--wine-l)}
+
+/* 핵심요약 카드 */
+.summary{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.summary .lb{font-size:11px;font-weight:700;color:var(--wine-d);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.summary ul{margin:0;padding-left:18px}
+
+/* 근거 카드 (조문·판례) */
+.ev{background:#fff;border:1px solid var(--line);border-left:4px solid var(--wine);border-radius:10px;
+  padding:13px 15px;margin:0 0 12px}
+.ev .top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px}
+.ev .kind{font-size:11px;font-weight:700;color:#fff;background:var(--wine);border-radius:5px;padding:2px 8px}
+.ev .kind.law{background:var(--wine-d)}
+.ev .kind.case{background:var(--amber)}
+.ev .cite{font-size:13.5px;font-weight:700;color:var(--ink)}
+.ev .vtick{margin-left:auto;font-size:11px;font-weight:700;color:var(--rL-tx);background:var(--rL-bg);border-radius:5px;padding:2px 7px}
+.ev .gist{font-size:14px;color:var(--ink2);margin:0}
+.ev .date{font-size:12px;color:var(--muted);margin-top:5px}
+
+/* 다이어그램 — 플로우 / 체크리스트 (CSS·SVG only) */
+.figure{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin:0 0 18px}
+.figure .cap{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:12px}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px}
+.flow .step{flex:1;min-width:120px;background:var(--wine-tint);border:1px solid var(--wine-tint-ln);
+  border-radius:10px;padding:11px 12px;position:relative}
+.flow .step .n{font-size:11px;font-weight:700;color:var(--wine)}
+.flow .step .t{font-size:13.5px;font-weight:700;color:var(--ink);margin-top:2px}
+.flow .step .d{font-size:12.5px;color:var(--ink2);margin-top:3px}
+.checklist{list-style:none;margin:0;padding:0}
+.checklist li{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+.checklist li:last-child{border-bottom:none}
+.checklist .ck{flex:none;width:20px;height:20px;border-radius:5px;background:var(--rL-bg);color:var(--rL-tx);
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+
+/* 위험도 칩 */
+.chip{display:inline-flex;align-items:center;justify-content:center;min-width:34px;font-size:11px;font-weight:500;
+  border-radius:6px;padding:3px 8px;margin-right:4px}
+.c-H{background:var(--rH);color:#fff}
+.c-M{background:var(--rM-bg);color:var(--rM-tx)}
+.c-L{background:var(--rL-bg);color:var(--rL-tx)}
+
+/* 표 */
+.tbl-wrap{overflow-x:auto;margin:0 0 18px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px}
+
+/* FAQ (아코디언) */
+.faq details{background:#fff;border:1px solid var(--line);border-radius:10px;margin:0 0 10px;overflow:hidden}
+.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:15px;font-weight:700;color:var(--ink);
+  display:flex;align-items:center;gap:10px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--wine-tint);
+  color:var(--wine-d);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+.faq details[open] summary{border-bottom:1px solid var(--line);color:var(--wine-d)}
+.faq .a{padding:14px 16px;font-size:14.5px;color:var(--ink2)}
+
+/* 최신성·면책 고지 */
+.notice{background:#fff;border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;
+  font-size:12.5px;color:var(--muted);line-height:1.7}
+
+/* 맨 위로 버튼 */
+#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--wine-tint-ln);background:var(--wine);color:#fff;font-size:18px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;
+  box-shadow:0 4px 14px rgba(58,21,37,.28)}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{background:var(--wine-d)}
+
+/* 푸터 프로필 + 상담 CTA */
+.footer{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0;margin-top:20px}
+.footer .wrap{max-width:var(--maxw);margin:0 auto;padding:34px 26px}
+.footer h3{font-size:20px;font-weight:800;margin:0 0 8px;color:#fff}
+.footer p{font-size:14px;color:rgba(255,255,255,.72);margin:0 0 6px;line-height:1.7}
+.footer .prof{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end}
+.footer .cta-f{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.footer .btn-f{background:#fff;color:var(--wine-d)}
+.footer .btn-f:hover{background:var(--header-accent)}
+.footer .btn-fo{background:transparent;color:#f4eef0;border-color:rgba(255,255,255,.35)}
+.footer .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:22px;padding-top:14px;
+  font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.7}
+
+/* ── 모바일 (≤820px) ── */
+@media(max-width:820px){
+  .hero h1{font-size:24px}
+  .app{grid-template-columns:1fr;gap:0;padding-top:0}
+  .toc{position:static;margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 8px}
+  .toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;
+    cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--wine-d);padding:9px 8px}
+  .toc-toggle .ar{transition:transform .2s}
+  .toc.closed .toc-toggle .ar{transform:rotate(-90deg)}
+  .toc .tt{display:none}
+  .toc ol{max-height:50vh;overflow:auto}
+  .toc.closed ol{display:none}
+  section.blk h2{font-size:20px}
+  th,td{white-space:nowrap}
+}
+@media print{
+  #progress,.toc,.cta-row,.footer .cta-f{display:none}
+  .header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .app{display:block}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<button id="toTop" aria-label="맨 위로" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- ===== 헤더 배지 ===== -->
+<header class="header">
+  <div class="wrap">
+    <span class="badge"><span class="dot"></span>조우성 변호사 · 법률 인사이트</span>
+  </div>
+</header>
+
+<!-- ===== 히어로 (제목 + TL;DR + 메타 + CTA) ===== -->
+<div class="hero">
+  <div class="eb">회사법 / 지배구조 · 실무자 실용 가이드</div>
+  <h1>감사위원회 분리선출 2인 시대: 선임절차·3%룰·소수주주 대응 전략</h1>
+  <div class="tldr">
+    <div class="lb">3줄 요약 (TL;DR)</div>
+    <ul>
+      <li>2026년 9월 10일부터 자산 2조 원 이상 대규모 상장회사는 감사위원 중 최소 2명을 다른 이사와 분리하여 선출해야 하며, 2026년 7월 23일부터는 분리선출 감사위원 전원에게 합산 3%룰(최대주주+특수관계인 의결권 3% 제한)이 적용된다.</li>
+      <li>분리선출 감사위원이 1명에서 2명으로 확대되고 3%룰이 전면 적용되어, 최대주주의 감사위원회 지배력은 구조적으로 축소되고 소수주주의 감사위원회 진입 가능성이 현저히 높아졌다.</li>
+      <li>법무팀은 정관 개정(분리선출 2인 근거 규정 신설), 감사위원 후보 득표 시뮬레이션, 합산 3%룰 적용 정확성(최대주주/특수관계인 범위 확정), 집중투표제 연동 분석을 2026년 하반기까지 반드시 완료해야 한다.</li>
+    </ul>
+  </div>
+  <div class="meta">
+    <span>작성일 2026-07-10</span>
+    <span>· 기준 법령 시행일 합산 3%룰 2026.7.23 / 분리선출 2인 2026.9.10</span>
+    <span class="vchip">✓ 조문·판례 2단 검증</span>
+    <span>· 읽는 시간 약 10분</span>
+  </div>
+  <div class="cta-row">
+    <a class="btn btn-p" href="#faq">핵심만 빠르게 (Q&amp;A)</a>
+    <a class="btn btn-o" href="#consult">상담 문의</a>
+  </div>
+</div>
+
+<!-- ===== 본문 셸 ===== -->
+<div class="app">
+
+  <!-- 목차 -->
+  <nav class="toc" id="toc">
+    <button class="toc-toggle" onclick="document.getElementById('toc').classList.toggle('closed')">
+      목차 <span class="ar">▾</span>
+    </button>
+    <div class="tt">목차</div>
+    <ol id="toc-list">
+      <li><a href="#s1">왜 지금 감사위원회인가 - 2026년 지배구조 대격변</a></li>
+      <li><a href="#s2">분리선출 감사위원 2인, 어떻게 선임하나</a></li>
+      <li><a href="#s3">합산 3%룰 - 최대주주 의결권 제한의 모든 것</a></li>
+      <li><a href="#s4">소수주주/행동주의 펀드의 진입 전략과 방어</a></li>
+      <li><a href="#faq">자주 묻는 질문</a></li>
+    </ol>
+  </nav>
+
+  <!-- 본문 -->
+  <main class="content">
+
+    <!-- ===== 대주제 1 ===== -->
+    <section class="blk" id="s1">
+      <div class="secl">쟁점 1</div>
+      <h2>왜 지금 감사위원회인가 - 2026년 지배구조 대격변</h2>
+
+      <div class="summary">
+        <div class="lb">한눈에</div>
+        <ul>
+          <li>2025~2026년 3차례 상법개정 중 2차 개정상법(2025.9.9 공포)이 감사위원회 제도를 근본적으로 바꿨다.</li>
+          <li>핵심: 분리선출 감사위원 1인→2인 확대 + 합산 3%룰 전면 적용</li>
+        </ul>
+      </div>
+
+      <p>2025년 9월 공포된 2차 개정상법은 기업지배구조의 판을 바꿨다. 기존에는 감사위원 중 1명만 분리선출하면 되었고 사외이사가 아닌 감사위원에게만 3%룰이 적용되었다. 그러나 개정 후 분리선출 감사위원 2명으로 확대, 분리선출 감사위원 전원 합산 3%룰 적용, 집중투표제 의무화(2026.9.10)가 함께 작동하여 최대주주의 지배력을 구조적으로 제한한다.</p>
+
+      <!-- 소쟁점 -->
+      <h3>2026년 정기주총 동향</h3>
+      <p>2026년 정기주총에서 다수 대규모 상장사가 분리선출 감사위원 2명 확대 정관 개정을 진행했다. 일부 기업은 합산 3%룰 적용 전 사외이사인 감사위원을 선임하여 3%룰 회피를 시도했으나, 2026.7.23 이후 모든 분리선출 감사위원에 합산 3%룰이 적용되므로 이 전략은 일시적 효과만 있다.</p>
+
+      <!-- 근거 카드 (조문) -->
+      <div class="ev">
+        <div class="top">
+          <span class="kind law">조문</span>
+          <span class="cite">상법 제542조의12조</span>
+          <span class="vtick">✓ 현행 확인</span>
+        </div>
+        <p class="gist">감사위원회위원 중 1명(정관에서 2명 이상으로 정할 수 있음)은 주주총회 결의로 다른 이사들과 분리하여 선임하여야 한다.</p>
+        <div class="date">시행일 2026.9.10</div>
+      </div>
+
+      <!-- 근거 카드 (판례) -->
+      <div class="ev">
+        <div class="top">
+          <span class="kind case">판례</span>
+          <span class="cite">대법원 2016.8.17 선고 2016다222996 판결</span>
+          <span class="vtick">✓ 실존·현행 확인</span>
+        </div>
+        <p class="gist">3% 초과 주식(의결권 제한 주식)은 상법 제371조 문언에도 불구하고, 상법 제368조 제1항 정족수 요건 중 발행주식총수에 산입되지 않는다.</p>
+      </div>
+    </section>
+
+    <!-- ===== 대주제 2 (다이어그램 예시 포함) ===== -->
+    <section class="blk" id="s2">
+      <div class="secl">쟁점 2</div>
+      <h2>분리선출 감사위원 2인, 어떻게 선임하나</h2>
+      <p>자산 2조 원 이상 상장회사는 감사위원회 설치 의무(상법 제415조의2). 감사위원회는 3명 이상 이사, 사외이사 2/3 이상. 감사위원회 설치 시 감사는 자동 해임(대전고법 2021나16087). 분리선출 감사위원 2인은 다른 이사 선임과 별도 안건으로 선출. 정관에 분리선출 2인 근거 규정 필수. 정족수 산정 시 3% 초과 주식은 발행주식총수에서 제외(대법원 2016다222996).</p>
+
+      <!-- 플로우 다이어그램 -->
+      <div class="figure">
+        <div class="cap">분리선출 감사위원 선임 5단계</div>
+        <div class="flow">
+          <div class="step"><div class="n">STEP 1</div><div class="t">정관 개정</div><div class="d">분리선출 감사위원 2인 근거 규정 신설 (주총 특별결의)</div></div>
+          <div class="step"><div class="n">STEP 2</div><div class="t">구성 확인</div><div class="d">감사위원회 총원 3명 이상, 사외이사 2/3 이상 확인</div></div>
+          <div class="step"><div class="n">STEP 3</div><div class="t">안건 상정</div><div class="d">감사위원 후보를 일반 이사 선임과 별도 안건으로 주총 상정</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 대주제 3 (체크리스트 + 표 예시) ===== -->
+    <section class="blk" id="s3">
+      <div class="secl">쟁점 3</div>
+      <h2>합산 3%룰 - 최대주주 의결권 제한의 모든 것</h2>
+      <p>합산 3%룰은 감사위원 선임/해임 시 최대주주+특수관계인 의결권을 3%로 제한. 개정 후 적용 대상이 사외이사 아닌 감사위원에서 분리선출 감사위원 전원으로 확대. 3%룰은 1주 1의결권 원칙의 예외로서 엄격 해석, 정관으로 확장 불가(대법원 2009다51820). 최대주주 판단 오류는 결의 무효 사유(2025가합1235). 3%룰 위반은 결의 취소 사유(대법원 2016다204905).</p>
+
+      <div class="figure">
+        <div class="cap">소수주주 감사위원회 진입 전략 체크리스트</div>
+        <ul class="checklist">
+          <li><span class="ck">✓</span><span>최소 5~10% 이상의 의결권 연합 구성 (소액주주 단체/행동주의 펀드/기관투자자)</span></li>
+          <li><span class="ck">✓</span><span>주주명부 열람권(상법 제466조, 상장사 1%·6개월)을 활용해 주요 주주 파악</span></li>
+          <li><span class="ck">✓</span><span>감사위원 후보를 주주제안(상법 제363조의2, 상장사 0.5%)으로 추천</span></li>
+        </ul>
+      </div>
+
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>방어 전략</th><th>내용</th><th>리스크/한계</th></tr></thead>
+          <tbody>
+            <tr><td>이사 정수 축소</td><td>정수 최소화로 집중투표 효과 완화</td><td>기관투자자/의결권 자문사 부정적 평가</td></tr>
+            <tr><td>시차임기제</td><td>임기 분산, 한 번에 교체 이사 수 제한</td><td>참호 구축(entrenchment) 평가, ISS/Glass Lewis 반대</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===== 대주제 4 ===== -->
+    <section class="blk" id="s4">
+      <div class="secl">쟁점 4</div>
+      <h2>소수주주/행동주의 펀드의 진입 전략과 방어</h2>
+      <p>분리선출 감사위원 2인으로 진입 통로 2개. 합산 3%룰로 최대주주 의결권 제한. 소수주주는 주주명부 열람권(1%), 주주제안권(0.5%) 활용, 3%룰 적용 정확성 검증, 집중투표제 연동 전략 구사 가능. 방어 측 이사 정수 축소·시차임기제는 기관투자자 반대 위험. 사외이사 결격 사유 심사(상법 제382조 제3항)가 중요 방어 수단(수원지법 2024가합10160).</p>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="blk faq" id="faq">
+      <div class="secl">Q&amp;A</div>
+      <h2>자주 묻는 질문</h2>
+      <details open>
+        <summary>분리선출 감사위원과 일반 감사위원은 무엇이 다른가요?</summary>
+        <div class="a">분리선출 감사위원은 다른 이사들과 분리하여 별도 안건으로 선출됩니다. 또한 분리선출 감사위원 전원에게 합산 3%룰이 적용되어 최대주주의 의결권이 3%로 제한됩니다. 권한과 책임은 일반 감사위원과 동일합니다(상법 제542조의12).</div>
+      </details>
+      <details>
+        <summary>3%룰을 위반하여 감사위원을 선임하면 결의 효력은 어떻게 되나요?</summary>
+        <div class="a">3%룰 위반은 결의방법의 중대한 하자로 결의 취소 사유(대법원 2016다204905). 최대주주 판단 오류는 결의 무효(부산지부 2025가합1235). 결의취소 소송은 결의일 2개월 내, 결의무효 확인은 제척기간 없음.</div>
+      </details>
+      <details>
+        <summary>소수주주가 감사위원 선임에 영향력을 행사하려면 최소 지분율이 얼마나 되어야 하나요?</summary>
+        <div class="a">정해진 요건은 없습니다. 합산 3%룰로 최대주주 의결권이 3% 제한되는 상황에서, 소수주주 연합 또는 기관투자자와 연대해 전체 의결권 10~15% 이상을 확보하면 2인 중 1인의 감사위원 선임 가능성이 생깁니다.</div>
+      </details>
+
+      <!-- 최신성·면책 고지 (Q9·Q10) -->
+      <div class="notice">
+        본 자료는 2026-07-10 기준으로 작성되었으며, 인용된 법령·판례는 작성 시점의 현행성을 확인한 것입니다.
+        법령은 개정될 수 있고 사안마다 결론이 달라질 수 있으므로, 실제 의사결정 전 최신 법령과 개별 사실관계에 대한 확인이 필요합니다.
+        본 자료는 일반적인 법률 정보 제공이며 특정 사안에 대한 법률 자문이 아닙니다.
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- ===== 푸터: 프로필 + 상담 CTA ===== -->
+<footer class="footer" id="consult">
+  <div class="wrap">
+    <div class="prof">
+      <div>
+        <h3>조우성 변호사 / 로펌 머스트노우</h3>
+        <p>회사법·지배구조 전문 변호사. 대규모 상장회사 자문, 주주총회 분쟁, 이사회 운영, 감사위원회 설계 등 다양한 자문 경험 보유.</p>
+        <p>로펌 머스트노우 대표변호사. law@mustknow.co.kr</p>
+        <p style="font-size:15px;color:rgba(255,255,255,.92);margin-top:8px">✉ law@mustknow.co.kr</p>
+      </div>
+      <div class="cta-f">
+        <a class="btn btn-f" href="mailto:law@mustknow.co.kr">상담 문의하기</a>
+      </div>
+    </div>
+    <div class="fine">
+      © 2026 조우성 변호사. 본 콘텐츠는 일반 법률 정보이며 법률 자문을 대체하지 않습니다.
+      인용 법령·판례는 2026-07-10 기준 현행성을 확인했습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+/* 읽기 진행바 */
+var pb=document.getElementById('progress');
+function onScroll(){
+  var h=document.documentElement,b=document.body;
+  var st=h.scrollTop||b.scrollTop;
+  var sh=(h.scrollHeight||b.scrollHeight)-h.clientHeight;
+  pb.style.width=(sh>0?(st/sh*100):0)+'%';
+}
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+/* 맨 위로 버튼 표시 */
+var toTop=document.getElementById('toTop');
+window.addEventListener('scroll',function(){
+  (window.scrollY||window.pageYOffset)>500?toTop.classList.add('show'):toTop.classList.remove('show');
+},{passive:true});
+
+/* 목차 스크롤 스파이 */
+var links=Array.prototype.slice.call(document.querySelectorAll('#toc-list a'));
+var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));}).filter(Boolean);
+function spy(){
+  var pos=(window.scrollY||window.pageYOffset)+120,cur=secs[0];
+  for(var i=0;i<secs.length;i++){if(secs[i].offsetTop<=pos)cur=secs[i];}
+  links.forEach(function(a){
+    a.classList.toggle('active',cur&&a.getAttribute('href')==='#'+cur.id);
+  });
+}
+window.addEventListener('scroll',spy,{passive:true});spy();
+
+/* 모바일: 목차 링크 클릭 시 접기 */
+document.querySelectorAll('#toc-list a').forEach(function(a){
+  a.addEventListener('click',function(){
+    if(window.innerWidth<=820)document.getElementById('toc').classList.add('closed');
+  });
+});
+</script>
+</body>
+</html>
