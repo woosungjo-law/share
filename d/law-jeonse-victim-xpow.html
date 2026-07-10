@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 검색허용(— 검색허용 옵션): 아래 줄을 삭제하지 말고 content를 "index,follow"로 교체.
+     게시 스크립트는 robots 메타가 없을 때만 noindex를 주입하므로, 삭제하면 오히려 noindex가 재주입된다. -->
+<meta name="robots" content="noindex,nofollow">
+<title>전세사기 피해자 구제 완전정복: 경매배당·우선변제·HUG 보증금·법률구조 — 조우성 변호사</title>
+<!-- 링크 미리보기(카톡·메신저·검색허용 시 SEO)용 메타 -->
+<meta name="description" content="전세사기 피해자가 보증금을 돌려받는 3대 수단: 경매배당·임차권등기명령·HUG 보증금. 소액임차인 최우선변제권, 확정일자 우선변제권, 법률구조 단계별 행동 매뉴얼.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="전세사기 피해자 구제 완전정복: 경매배당·우선변제·HUG 보증금·법률구조 — 조우성 변호사">
+<meta property="og:description" content="전세사기 피해자가 보증금을 돌려받는 3대 수단: 경매배당·임차권등기명령·HUG 보증금. 소액임차인 최우선변제권, 확정일자 우선변제권, 법률구조 단계별 행동 매뉴얼.">
+<style>
+/* ============================================================
+   법률 대시보드 전자책 — Apollo 기반 경량 커스텀 (공개 롱스크롤)
+   Apollo 토큰(버건디 액센트 + 웜 화이트 + 딥와인 헤더) 상속.
+   의뢰인 리포트(리스크레이더 6뷰)와 달리 공개 독서형 롱스크롤.
+   self-contained: 외부 CDN/폰트/이미지/스크립트 의존 없음.
+   ============================================================ */
+:root{
+  --bg:#f5f1f2; --panel:#ffffff; --panel2:#faf6f7;
+  --line:#ebe2e5; --line2:#ddccd2;
+  --ink:#2c1d26; --ink2:#56424c; --muted:#8a7b82; --faint:#b3a6ab;
+  --wine:#7a2e3a; --wine-d:#5a1f2b; --wine-l:#9c4456;
+  --wine-tint:#f4e9ec; --wine-tint-ln:#ecd7dd;
+  --header-bg:#3a1525; --header-bg2:#4e1f32; --header-accent:#d4a0aa;
+  --rH:#c74a3c; --rM-bg:#f8e4b8; --rM-tx:#7d520a; --rL-bg:#d6ecdb; --rL-tx:#287a54;
+  --amber:#b45309; --green:#287a54;
+  --font:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Noto Sans KR',sans-serif;
+  --maxw:1120px; --readw:760px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
+
+/* 읽기 진행바 */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;
+  background:linear-gradient(90deg,var(--wine),var(--wine-l));transition:width .1s linear}
+
+/* 헤더 표지 (딥와인, 유일한 딥 컬러) */
+.header{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0}
+.header .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 26px}
+.header .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;
+  color:var(--header-accent);border:1px solid rgba(212,160,170,.4);border-radius:999px;padding:4px 12px}
+.header .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--header-accent)}
+
+/* 히어로 */
+.hero{max-width:var(--maxw);margin:0 auto;padding:30px 26px 8px}
+.hero .eb{font-size:12px;font-weight:700;color:var(--wine);letter-spacing:.02em;margin-bottom:10px}
+.hero h1{font-size:30px;line-height:1.28;font-weight:800;margin:0 0 16px;color:var(--ink);letter-spacing:-.01em}
+.hero .tldr{background:var(--wine-tint);border:1px solid var(--wine-tint-ln);border-left:4px solid var(--wine);
+  border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.hero .tldr .lb{font-size:12px;font-weight:700;color:var(--wine-d);margin-bottom:8px}
+.hero .tldr ul{margin:0;padding-left:18px}
+.hero .tldr li{margin:4px 0;font-size:15px;color:var(--ink2)}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:12.5px;color:var(--muted);margin-bottom:18px}
+.hero .meta .vchip{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);
+  font-weight:700;border-radius:6px;padding:3px 9px;font-size:11.5px}
+.hero .cta-row{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:9px;
+  padding:11px 18px;text-decoration:none;cursor:pointer;border:1px solid transparent}
+.btn-p{background:var(--wine);color:#fff}
+.btn-p:hover{background:var(--wine-d)}
+.btn-o{background:#fff;color:var(--wine-d);border-color:var(--line2)}
+.btn-o:hover{background:var(--panel2)}
+
+/* 셸: 좌측 목차 + 본문 */
+.app{max-width:var(--maxw);margin:0 auto;padding:8px 26px 60px;
+  display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:start}
+
+/* 목차 (데스크톱 = 좌측 sticky) */
+.toc{position:sticky;top:24px}
+.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;
+  margin:0 0 10px;padding-left:2px}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}
+.toc li{counter-increment:toc;margin:1px 0}
+.toc a{display:flex;gap:9px;font-size:13.5px;color:var(--ink2);text-decoration:none;
+  padding:7px 10px;border-radius:8px;border-left:3px solid transparent;line-height:1.4}
+.toc a::before{content:counter(toc,decimal-leading-zero);color:var(--faint);font-weight:700;font-size:11.5px;flex:none}
+.toc a:hover{background:var(--panel2)}
+.toc a.active{background:var(--wine-tint);border-left-color:var(--wine);color:var(--wine-d);font-weight:700}
+.toc-toggle{display:none}
+
+/* 본문 */
+.content{max-width:var(--readw);min-width:0}
+section.blk{scroll-margin-top:24px;margin-bottom:38px}
+.secl{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.05em;margin:0 0 12px}
+.secl::before{content:"";width:7px;height:15px;background:var(--wine);border-radius:2px;flex:none}
+section.blk h2{font-size:23px;font-weight:800;line-height:1.35;margin:0 0 14px;color:var(--ink);letter-spacing:-.01em}
+section.blk h3{font-size:17px;font-weight:700;margin:26px 0 10px;color:var(--wine-d)}
+section.blk p{margin:0 0 14px;color:var(--ink2)}
+section.blk ul,section.blk ol{margin:0 0 14px;padding-left:22px;color:var(--ink2)}
+section.blk li{margin:6px 0}
+strong{color:var(--ink);font-weight:700}
+a.ln{color:var(--wine-l);text-decoration:none;border-bottom:1px solid var(--wine-tint-ln)}
+a.ln:hover{border-bottom-color:var(--wine-l)}
+
+/* 핵심요약 카드 */
+.summary{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.summary .lb{font-size:11px;font-weight:700;color:var(--wine-d);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.summary ul{margin:0;padding-left:18px}
+
+/* 근거 카드 (조문·판례) */
+.ev{background:#fff;border:1px solid var(--line);border-left:4px solid var(--wine);border-radius:10px;
+  padding:13px 15px;margin:0 0 12px}
+.ev .top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px}
+.ev .kind{font-size:11px;font-weight:700;color:#fff;background:var(--wine);border-radius:5px;padding:2px 8px}
+.ev .kind.law{background:var(--wine-d)}
+.ev .kind.case{background:var(--amber)}
+.ev .cite{font-size:13.5px;font-weight:700;color:var(--ink)}
+.ev .vtick{margin-left:auto;font-size:11px;font-weight:700;color:var(--rL-tx);background:var(--rL-bg);border-radius:5px;padding:2px 7px}
+.ev .gist{font-size:14px;color:var(--ink2);margin:0}
+.ev .date{font-size:12px;color:var(--muted);margin-top:5px}
+
+/* 다이어그램 — 플로우 / 체크리스트 (CSS·SVG only) */
+.figure{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin:0 0 18px}
+.figure .cap{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:12px}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px}
+.flow .step{flex:1;min-width:120px;background:var(--wine-tint);border:1px solid var(--wine-tint-ln);
+  border-radius:10px;padding:11px 12px;position:relative}
+.flow .step .n{font-size:11px;font-weight:700;color:var(--wine)}
+.flow .step .t{font-size:13.5px;font-weight:700;color:var(--ink);margin-top:2px}
+.flow .step .d{font-size:12.5px;color:var(--ink2);margin-top:3px}
+.checklist{list-style:none;margin:0;padding:0}
+.checklist li{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+.checklist li:last-child{border-bottom:none}
+.checklist .ck{flex:none;width:20px;height:20px;border-radius:5px;background:var(--rL-bg);color:var(--rL-tx);
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+
+/* 위험도 칩 */
+.chip{display:inline-flex;align-items:center;justify-content:center;min-width:34px;font-size:11px;font-weight:500;
+  border-radius:6px;padding:3px 8px;margin-right:4px}
+.c-H{background:var(--rH);color:#fff}
+.c-M{background:var(--rM-bg);color:var(--rM-tx)}
+.c-L{background:var(--rL-bg);color:var(--rL-tx)}
+
+/* 표 */
+.tbl-wrap{overflow-x:auto;margin:0 0 18px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px}
+
+/* FAQ (아코디언) */
+.faq details{background:#fff;border:1px solid var(--line);border-radius:10px;margin:0 0 10px;overflow:hidden}
+.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:15px;font-weight:700;color:var(--ink);
+  display:flex;align-items:center;gap:10px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--wine-tint);
+  color:var(--wine-d);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+.faq details[open] summary{border-bottom:1px solid var(--line);color:var(--wine-d)}
+.faq .a{padding:14px 16px;font-size:14.5px;color:var(--ink2)}
+
+/* 최신성·면책 고지 */
+.notice{background:#fff;border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;
+  font-size:12.5px;color:var(--muted);line-height:1.7}
+
+/* 맨 위로 버튼 */
+#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--wine-tint-ln);background:var(--wine);color:#fff;font-size:18px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;
+  box-shadow:0 4px 14px rgba(58,21,37,.28)}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{background:var(--wine-d)}
+
+/* 푸터 프로필 + 상담 CTA */
+.footer{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0;margin-top:20px}
+.footer .wrap{max-width:var(--maxw);margin:0 auto;padding:34px 26px}
+.footer h3{font-size:20px;font-weight:800;margin:0 0 8px;color:#fff}
+.footer p{font-size:14px;color:rgba(255,255,255,.72);margin:0 0 6px;line-height:1.7}
+.footer .prof{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end}
+.footer .cta-f{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.footer .btn-f{background:#fff;color:var(--wine-d)}
+.footer .btn-f:hover{background:var(--header-accent)}
+.footer .btn-fo{background:transparent;color:#f4eef0;border-color:rgba(255,255,255,.35)}
+.footer .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:22px;padding-top:14px;
+  font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.7}
+
+/* ── 모바일 (≤820px) ── */
+@media(max-width:820px){
+  .hero h1{font-size:24px}
+  .app{grid-template-columns:1fr;gap:0;padding-top:0}
+  .toc{position:static;margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 8px}
+  .toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;
+    cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--wine-d);padding:9px 8px}
+  .toc-toggle .ar{transition:transform .2s}
+  .toc.closed .toc-toggle .ar{transform:rotate(-90deg)}
+  .toc .tt{display:none}
+  .toc ol{max-height:50vh;overflow:auto}
+  .toc.closed ol{display:none}
+  section.blk h2{font-size:20px}
+  th,td{white-space:nowrap}
+}
+@media print{
+  #progress,.toc,.cta-row,.footer .cta-f{display:none}
+  .header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .app{display:block}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<button id="toTop" aria-label="맨 위로" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- ===== 헤더 배지 ===== -->
+<header class="header">
+  <div class="wrap">
+    <span class="badge"><span class="dot"></span>조우성 변호사 · 법률 인사이트</span>
+  </div>
+</header>
+
+<!-- ===== 히어로 (제목 + TL;DR + 메타 + CTA) ===== -->
+<div class="hero">
+  <div class="eb">부동산법 / 주택임대차·전세사기 · 피해자를 위한 실전 가이드</div>
+  <h1>전세사기 피해자 구제 완전정복: 경매배당·우선변제·HUG 보증금·법률구조</h1>
+  <div class="tldr">
+    <div class="lb">3줄 요약 (TL;DR)</div>
+    <ul>
+      <li>전세사기 피해자가 보증금을 돌려받는 3대 수단: ① 경매배당(대항력+확정일자로 우선변제) ② 임차권등기명령(점유 상실 전후 대항력 유지) ③ HUG 전세보증금반환보증 청구.</li>
+      <li>소액임차인(지역별 한도 이하)은 최우선변제권으로 담보권자보다 먼저 보증금 일정액을 변제받을 수 있다. 확정일자 순위에 따라 후순위 임차인은 배당에서 불리할 수 있다.</li>
+      <li>전세사기 의심 시 24시간 내 초동 대응(임차권등기명령·HUG 청구·형사고소)이 회수율을 좌우한다. 대한법률구조공단(☎132) 무료 법률 지원 가능.</li>
+    </ul>
+  </div>
+  <div class="meta">
+    <span>작성일 2026-07-10</span>
+    <span>· 기준 법령 시행일 현행 법령 기준</span>
+    <span class="vchip">✓ 조문·판례 2단 검증</span>
+    <span>· 읽는 시간 약 10분</span>
+  </div>
+  <div class="cta-row">
+    <a class="btn btn-p" href="#faq">핵심만 빠르게 (Q&amp;A)</a>
+    <a class="btn btn-o" href="#consult">상담 문의</a>
+  </div>
+</div>
+
+<!-- ===== 본문 셸 ===== -->
+<div class="app">
+
+  <!-- 목차 -->
+  <nav class="toc" id="toc">
+    <button class="toc-toggle" onclick="document.getElementById('toc').classList.toggle('closed')">
+      목차 <span class="ar">▾</span>
+    </button>
+    <div class="tt">목차</div>
+    <ol id="toc-list">
+      <li><a href="#s1">전세사기 피해자 구제 법체계 — 3대 보호 수단</a></li>
+      <li><a href="#s2">경매배당 — 임차인의 권리 순위 완전 정리</a></li>
+      <li><a href="#s3">임차권등기명령과 HUG 보증금 — 실전 대응</a></li>
+      <li><a href="#s4">법률구조와 소송 — 단계별 행동 매뉴얼</a></li>
+      <li><a href="#faq">자주 묻는 질문</a></li>
+    </ol>
+  </nav>
+
+  <!-- 본문 -->
+  <main class="content">
+
+    <!-- ===== 대주제 1 ===== -->
+    <section class="blk" id="s1">
+      <div class="secl">쟁점 1</div>
+      <h2>전세사기 피해자 구제 법체계 — 3대 보호 수단</h2>
+
+      <div class="summary">
+        <div class="lb">한눈에</div>
+        <ul>
+          <li>제1 수단: 대항력과 우선변제권(주택임대차보호법) — 인도+주민등록으로 대항력, 확정일자로 우선변제권 취득.</li>
+          <li>제2 수단: 임차권등기명령(제3조의3) — 점유 상실 위험 시 법원에 신청해 대항력·우선변제권 유지. 제3 수단: HUG 전세보증금반환보증.</li>
+        </ul>
+      </div>
+
+      <p>전세사기피해자지원특별법에 따라 피해자 인정 시 우선매수권·경매유예(6개월~1년)·금융지원(저리대출) 추가 보호. 사기죄 성립 요건: 기망행위(부작위 포함) → 착오 → 처분행위(보증금 지급) → 손해. 선순위 보증금·근저당·반환재원이 처분 판단의 기초라면 신의칙상 고지의무 있고 묵비도 기망(2017도20682). 계약 체결 당시 반환의사·능력 부재를 객관사정으로 입증해야(2016도278).</p>
+
+      <!-- 소쟁점 -->
+      <h3>3대 보호 수단 비교</h3>
+      <p>① 대항력+우선변제권: 경매 시 보증금 우선 변제. 경매신청 등기 전까지 대항요건 완비 필수. ② 임차권등기명령: 점유 상실 전 신청 이상적. 점유 상실 후에도 등기 시점부터 새 대항력 취득 가능(2024마8598). ③ HUG 보증금: 임대인이 반환하지 않으면 HUG가 대위변제. 보증가입 전제.</p>
+
+      <!-- 근거 카드 (조문) -->
+      <div class="ev">
+        <div class="top">
+          <span class="kind law">조문</span>
+          <span class="cite">주택임대차보호법 제3·3의2·3의3·8조</span>
+          <span class="vtick">✓ 현행 확인</span>
+        </div>
+        <p class="gist">임차인의 대항력(인도+주민등록), 우선변제권(확정일자), 임차권등기명령, 소액임차인 최우선변제권 규정.</p>
+        <div class="date">시행일 주택임대차보호법 현행</div>
+      </div>
+
+      <!-- 근거 카드 (판례) -->
+      <div class="ev">
+        <div class="top">
+          <span class="kind case">판례</span>
+          <span class="cite">대법원 1997 선고 97다22393 판결</span>
+          <span class="vtick">✓ 실존·현행 확인</span>
+        </div>
+        <p class="gist">확정일자가 인도·전입일과 동일하거나 이전이면 인도·전입 다음 날 기준으로 우선변제권 효력 발생. 같은 날 설정된 근저당보다 선순위.</p>
+      </div>
+    </section>
+
+    <!-- ===== 대주제 2 (다이어그램 예시 포함) ===== -->
+    <section class="blk" id="s2">
+      <div class="secl">쟁점 2</div>
+      <h2>경매배당 — 임차인의 권리 순위 완전 정리</h2>
+      <p>배당순위: ① 소액임차인(최우선변제) → ② 근저당권자·가압류권자 → ③ 확정일자부 임차인 → ④ 일반 채권자. 대항력(제3조): 인도+주민등록 취득, 경매 시 임대차 존속, 매수인이 임대인 지위 승계. 확정일자 우선변제권(제3조의2): 같은 날 설정된 근저당보다 선순위(98다26002). 소액임차인 최우선변제권(제8조): 보증금 중 일정액을 담보물권자보다 우선 변제. 지역별(수도권·광역시·그 외) 보증금 한도 차등(시행령 별표).</p>
+
+      <!-- 플로우 다이어그램 -->
+      <div class="figure">
+        <div class="cap">경매배당 우선순위</div>
+        <div class="flow">
+          <div class="step"><div class="n">STEP 1</div><div class="t">소액임차인</div><div class="d">최우선변제권 — 담보권자보다 먼저 보증금 일정액 변제</div></div>
+          <div class="step"><div class="n">STEP 2</div><div class="t">근저당권자·가압류권자</div><div class="d">담보권 실행으로 선순위 배당</div></div>
+          <div class="step"><div class="n">STEP 3</div><div class="t">확정일자부 임차인</div><div class="d">확정일자 순서에 따라 배당. 후순위는 잔여 재원에서 배당</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 대주제 3 (체크리스트 + 표 예시) ===== -->
+    <section class="blk" id="s3">
+      <div class="secl">쟁점 3</div>
+      <h2>임차권등기명령과 HUG 보증금 — 실전 대응</h2>
+      <p>임차권등기명령 절차: ① 신청 요건 확인(임대차 종료·보증금 미반환) ② 점유 상태 확인(점유 유지 중=기존 대항력 유지, 점유 상실 후=비소급적 새 대항력) ③ 법원 신청(관할 법원, 소명자료: 임대차계약서·등기부등본·확정일자증명·미반환증빙) ④ 등기 완료 후 관리(시효중단 없음 → 소제기·지급명령·가압류 병행 필수) ⑤ 경매 배당 참가.</p>
+
+      <div class="figure">
+        <div class="cap">전세사기 의심 시 24시간 체크리스트</div>
+        <ul class="checklist">
+          <li><span class="ck">✓</span><span>등기부등본 즉시 발급 — 선순위 근저당·가압류·압류 현황 확인</span></li>
+          <li><span class="ck">✓</span><span>확정일자 미취득 시 즉시 세무서·주민센터 방문</span></li>
+          <li><span class="ck">✓</span><span>임차권등기명령 신청 준비 — 점유 유지 상태 유지</span></li>
+        </ul>
+      </div>
+
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>보호 수단</th><th>효과</th><th>유의사항</th></tr></thead>
+          <tbody>
+            <tr><td>대항력(인도+주민등록)</td><td>경매 시 임대차 승계</td><td>경매신청 등기 전 완비</td></tr>
+            <tr><td>확정일자</td><td>우선변제권</td><td>선순위 근저당과 경합 시 순위 판단</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===== 대주제 4 ===== -->
+    <section class="blk" id="s4">
+      <div class="secl">쟁점 4</div>
+      <h2>법률구조와 소송 — 단계별 행동 매뉴얼</h2>
+      <p>소송 절차 선택: 지급명령(1~2개월·저비용) → 소액재판(2~4개월·소가 6천만 원 이하) → 보증금반환소송(4~12개월) → 형사고소(3~12개월·임대인 압박). 모든 민사절차에 임차권등기명령(1~2주·신속·저비용) 병행 권장. 법률구조: 대한법률구조공단(www.klac.or.kr, ☎132) 기초생활수급자·차상위계층 무료 변호사 선임.</p>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="blk faq" id="faq">
+      <div class="secl">Q&amp;A</div>
+      <h2>자주 묻는 질문</h2>
+      <details open>
+        <summary>전세사기 피해자라면 보증금 전액을 돌려받을 수 있나요?</summary>
+        <div class="a">보증금 전액 회수는 현실적으로 어렵다. 경매배당은 선순위 근저당·확정일자 임차인·소액임차인 등과 순위 경쟁에서 우선순위에 따라 배분된다. 소액임차인은 최우선변제권으로 일정액(수도권 기준 약 4,000~5,000만 원)을 담보권자보다 먼저 변제받을 수 있다.</div>
+      </details>
+      <details>
+        <summary>경매로 집이 넘어가면 언제까지 살 수 있나요?</summary>
+        <div class="a">대항력(인도+주민등록)을 갖춘 경우, 경매 매수인에게 임대차가 승계되므로 임대차 기간이 만료될 때까지 거주 가능. 주택의 경우 최초 2년(계약갱신 포함 최대 4년) 보장.</div>
+      </details>
+      <details>
+        <summary>HUG 전세보증금반환보증은 어떻게 청구하나요?</summary>
+        <div class="a">전세계약 체결 시 HUG 보증 가입 필수. 청구 절차: ① 임대차 종료 후 명도 완료 ② 임대인 보증금 미반환 입증 ③ 청구서+증빙서류 HUG 제출 ④ HUG 심사(1~2개월) ⑤ 보증금 한도 내 대위변제.</div>
+      </details>
+
+      <!-- 최신성·면책 고지 (Q9·Q10) -->
+      <div class="notice">
+        본 자료는 2026-07-10 기준으로 작성되었으며, 인용된 법령·판례는 작성 시점의 현행성을 확인한 것입니다.
+        법령은 개정될 수 있고 사안마다 결론이 달라질 수 있으므로, 실제 의사결정 전 최신 법령과 개별 사실관계에 대한 확인이 필요합니다.
+        본 자료는 일반적인 법률 정보 제공이며 특정 사안에 대한 법률 자문이 아닙니다.
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- ===== 푸터: 프로필 + 상담 CTA ===== -->
+<footer class="footer" id="consult">
+  <div class="wrap">
+    <div class="prof">
+      <div>
+        <h3>조우성 변호사 / 로펌 머스트노우</h3>
+        <p>로펌 머스트노우 대표변호사. 서울대학교 법학전문대학원 졸업. 법률지식 WIKI 기반 법률 콘텐츠 대시보드 전자책 리스크 진단 자동화.</p>
+        <p>25년 이상의 법률 실무 경험을 바탕으로 기업 자문·소송·M&A·컴플라이언스 분야에서 활동 중.</p>
+        <p style="font-size:15px;color:rgba(255,255,255,.92);margin-top:8px">✉ law@mustknow.co.kr</p>
+      </div>
+      <div class="cta-f">
+        <a class="btn btn-f" href="mailto:law@mustknow.co.kr">상담 문의하기</a>
+      </div>
+    </div>
+    <div class="fine">
+      © 2026 조우성 변호사. 본 콘텐츠는 일반 법률 정보이며 법률 자문을 대체하지 않습니다.
+      인용 법령·판례는 2026-07-10 기준 현행성을 확인했습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+/* 읽기 진행바 */
+var pb=document.getElementById('progress');
+function onScroll(){
+  var h=document.documentElement,b=document.body;
+  var st=h.scrollTop||b.scrollTop;
+  var sh=(h.scrollHeight||b.scrollHeight)-h.clientHeight;
+  pb.style.width=(sh>0?(st/sh*100):0)+'%';
+}
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+/* 맨 위로 버튼 표시 */
+var toTop=document.getElementById('toTop');
+window.addEventListener('scroll',function(){
+  (window.scrollY||window.pageYOffset)>500?toTop.classList.add('show'):toTop.classList.remove('show');
+},{passive:true});
+
+/* 목차 스크롤 스파이 */
+var links=Array.prototype.slice.call(document.querySelectorAll('#toc-list a'));
+var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));}).filter(Boolean);
+function spy(){
+  var pos=(window.scrollY||window.pageYOffset)+120,cur=secs[0];
+  for(var i=0;i<secs.length;i++){if(secs[i].offsetTop<=pos)cur=secs[i];}
+  links.forEach(function(a){
+    a.classList.toggle('active',cur&&a.getAttribute('href')==='#'+cur.id);
+  });
+}
+window.addEventListener('scroll',spy,{passive:true});spy();
+
+/* 모바일: 목차 링크 클릭 시 접기 */
+document.querySelectorAll('#toc-list a').forEach(function(a){
+  a.addEventListener('click',function(){
+    if(window.innerWidth<=820)document.getElementById('toc').classList.add('closed');
+  });
+});
+</script>
+</body>
+</html>
