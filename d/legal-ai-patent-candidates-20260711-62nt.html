@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>법과 AI 결합 비즈니스 모델 특허 후보 1차 진단</title>
+  <meta name="description" content="지식관리 내부 자산을 바탕으로 법과 AI 결합 BM 특허 후보 5개를 선별한 1차 진단 보고서">
+  <meta property="og:title" content="법과 AI 결합 BM 특허 후보 1차 진단">
+  <meta property="og:description" content="Risk Radar, 법률 대시보드 전자책, AI WIKI, 레몬마켓 가디언스, 상담형 법률 콘텐츠 변환 후보 정리">
+  <meta property="og:type" content="article">
+  <style>
+    :root{
+      --bg:#f4f7fb;--panel:#fff;--ink:#111827;--sub:#4b5563;--muted:#6b7280;
+      --line:#e5e7eb;--navy:#173a67;--blue:#2563eb;--blue2:#dbeafe;
+      --gold:#b7791f;--gold2:#fff7ed;--green:#166534;--green2:#dcfce7;
+      --red:#b91c1c;--red2:#fee2e2;--slate:#334155;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:"Malgun Gothic","Apple SD Gothic Neo",system-ui,-apple-system,sans-serif;line-height:1.72}
+    a{color:var(--blue);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .hero{background:linear-gradient(135deg,#10233f 0%,#173a67 58%,#245c9d 100%);color:#fff;padding:42px 22px 34px;border-bottom:5px solid #d7a84a}
+    .hero-inner{max-width:1120px;margin:0 auto}
+    .eyebrow{font-size:13px;font-weight:700;color:#bfdbfe;letter-spacing:.08em;text-transform:uppercase}
+    h1{font-size:clamp(28px,4vw,46px);line-height:1.2;margin:12px 0 14px;letter-spacing:0}
+    .lead{max-width:850px;color:#e5eefc;font-size:17px;margin:0}
+    .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+    .pill{display:inline-flex;align-items:center;border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:6px 11px;font-size:12px;color:#f8fafc;background:rgba(255,255,255,.08)}
+    .wrap{max-width:1120px;margin:0 auto;padding:22px}
+    .toc{position:sticky;top:0;z-index:5;background:rgba(244,247,251,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:10px 22px;margin:0 -22px 22px}
+    .toc-inner{max-width:1120px;margin:0 auto;display:flex;gap:8px;overflow:auto}
+    .toc a{white-space:nowrap;border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 12px;color:var(--slate);font-size:13px}
+    section{margin:20px 0}
+    .grid{display:grid;gap:14px}
+    .grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:0 8px 22px rgba(15,23,42,.05)}
+    .card h2,.card h3{margin-top:0}
+    h2{font-size:25px;margin:30px 0 14px;color:#0f2948}
+    h3{font-size:20px;margin:22px 0 10px;color:#173a67}
+    h4{font-size:16px;margin:16px 0 8px;color:#1f2937}
+    .kpi{display:grid;grid-template-columns:90px 1fr;gap:12px;align-items:start}
+    .rank{width:58px;height:58px;border-radius:14px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:24px}
+    .tag{display:inline-flex;border-radius:7px;padding:3px 8px;font-size:12px;font-weight:700;margin:2px 4px 2px 0}
+    .high{background:var(--red2);color:var(--red)}
+    .mid{background:var(--gold2);color:var(--gold)}
+    .ok{background:var(--green2);color:var(--green)}
+    .blue{background:var(--blue2);color:#1d4ed8}
+    table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+    th,td{border-bottom:1px solid var(--line);padding:10px 11px;text-align:left;vertical-align:top;font-size:14px}
+    th{background:#eef4fb;color:#173a67;font-weight:800}
+    tr:last-child td{border-bottom:0}
+    .note{border-left:4px solid var(--gold);background:#fff8ed;padding:14px 16px;border-radius:10px;margin:14px 0;color:#4b3413}
+    .warn{border-left:4px solid var(--red);background:#fff1f2;padding:14px 16px;border-radius:10px;margin:14px 0;color:#5f1212}
+    .candidate{border-top:5px solid var(--navy)}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    ul,ol{padding-left:22px}
+    code{background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:1px 5px}
+    .footer{margin-top:34px;padding:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+    @media(max-width:760px){
+      .wrap{padding:14px}.toc{margin:0 -14px 18px;padding:10px 14px}
+      .grid.cols-2,.grid.cols-3,.split{grid-template-columns:1fr}
+      table,thead,tbody,tr,th,td{display:block}
+      thead{display:none}
+      tr{border-bottom:1px solid var(--line)}
+      td{border-bottom:0}
+      td:before{content:attr(data-label);display:block;font-weight:800;color:#173a67;margin-bottom:2px}
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Patent Candidate Report · Legal AI Business Models</div>
+      <h1>법과 AI 결합 비즈니스 모델 특허 후보 1차 진단</h1>
+      <p class="lead">지식관리 내부 자산을 바탕으로, 단순 사업 아이디어가 아니라 컴퓨터 구현 구조와 출원 검토 가능성이 있는 법+AI 특허 후보 5개를 선별한 보고서입니다.</p>
+      <div class="meta">
+        <span class="pill">작성일 2026-07-11</span>
+        <span class="pill">Team Mode + fable-react deep</span>
+        <span class="pill">저장 위치: OPS 법률사무소 / service lab</span>
+        <span class="pill">공개범위: noindex</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <nav class="toc">
+      <div class="toc-inner">
+        <a href="#summary">결론</a>
+        <a href="#criteria">선별 기준</a>
+        <a href="#candidates">후보 5개</a>
+        <a href="#deferred">보류 후보</a>
+        <a href="#strategy">출원 전략</a>
+        <a href="#evidence">Evidence Ledger</a>
+        <a href="#next">다음 액션</a>
+      </div>
+    </nav>
+
+    <section id="summary" class="card">
+      <h2>0. 결론</h2>
+      <p>현재 <code>&lt;지식관리&gt;</code> 폴더에서 특허 출원 검토 가치가 가장 높은 후보는 아래 5개입니다.</p>
+      <table>
+        <thead><tr><th>순위</th><th>특허 후보명</th><th>출원 우선도</th><th>상태</th><th>한 줄 요지</th></tr></thead>
+        <tbody>
+          <tr><td data-label="순위">1</td><td data-label="특허 후보명">기업 법률자료 기반 리스크 트윈 생성 및 선제 자문 제공 시스템</td><td data-label="출원 우선도"><span class="tag high">매우 높음</span></td><td data-label="상태">베타 운영 중</td><td data-label="한 줄 요지">기업 자료를 ingest해 리스크 레지스터, 기한, 노출금액, 실행항목을 누적하고 대시보드와 리포트로 산출</td></tr>
+          <tr><td data-label="순위">2</td><td data-label="특허 후보명">다중 출처 법률근거 검증을 포함하는 법률 대시보드 전자책 자동 생성 시스템</td><td data-label="출원 우선도"><span class="tag high">높음</span></td><td data-label="상태">서비스 완성에 가까움</td><td data-label="한 줄 요지">내부 WIKI, 공식 웹, 한국법 MCP 검증을 거쳐 전자책과 HTML 대시보드를 생성·게시</td></tr>
+          <tr><td data-label="순위">3</td><td data-label="특허 후보명">규칙파일 기반 AI 업무공간 전환 및 법률·보안 리스크 통제 시스템</td><td data-label="출원 우선도"><span class="tag high">높음</span></td><td data-label="상태">컨셉+실증 자산 있음</td><td data-label="한 줄 요지">회사 폴더를 AI가 일할 수 있는 WIKI로 전환하고, 규칙파일·금지사항·검증 루프로 안전하게 운용</td></tr>
+          <tr><td data-label="순위">4</td><td data-label="특허 후보명">레몬마켓 거래의 계약·변경·증거관리 자동 패키징 시스템</td><td data-label="출원 우선도"><span class="tag mid">중상</span></td><td data-label="상태">상품 모델 설계 완료</td><td data-label="한 줄 요지">외주개발·인테리어·프랜차이즈 같은 정보비대칭 거래에서 계약 범위, 변경합의, 증거폴더를 구조화</td></tr>
+          <tr><td data-label="순위">5</td><td data-label="특허 후보명">법률 콘텐츠의 인터랙티브 상담형 학습물 자동 변환 시스템</td><td data-label="출원 우선도"><span class="tag mid">중상</span></td><td data-label="상태">작동 산출물 있음</td><td data-label="한 줄 요지">법률 컬럼을 클릭형 챗봇, 카카오톡 이미지, 애니메이션 상담 플레이어로 변환</td></tr>
+        </tbody>
+      </table>
+      <div class="note">핵심 판단: 단순히 "법률서비스 상품"이라고 보면 특허성이 약합니다. 그러나 위 5개는 모두 데이터 구조, 처리 순서, 검증 루프, 화면 출력, 자동 게시, 사용자 행동 추적 같은 컴퓨터 구현 요소를 붙일 수 있습니다.</div>
+    </section>
+
+    <section class="card">
+      <h2>1. 이번 진단의 전제</h2>
+      <p>이 문서는 특허 명세서 초안이 아니라, 변리사 선행기술조사와 명세서 설계를 의뢰하기 전의 내부 후보 선별 보고서입니다.</p>
+      <p>BM 특허는 "사업 아이디어" 그 자체보다 컴퓨터 관련 발명으로서 정보처리가 구체적으로 구현되는 구조가 중요합니다. 지식재산처 자료도 영업방법 발명을 컴퓨터 관련 발명의 한 형태로 보고, 소프트웨어 정보처리가 하드웨어를 통해 구체적으로 구현되는 경우를 전제로 설명합니다.</p>
+      <div class="warn">
+        <strong>주의:</strong> 신규성·진보성은 선행기술조사 전에는 확정할 수 없습니다. 이미 공개된 HTML, 컬럼, 사용설명서가 있는 경우 신규성 판단에 영향을 줄 수 있으므로 변리사에게 공개일·게시 URL을 함께 전달해야 합니다.
+      </div>
+    </section>
+
+    <section id="criteria" class="card">
+      <h2>2. 선별 기준</h2>
+      <div class="grid cols-3">
+        <div class="card"><h3>구현 근거</h3><p>실제 폴더·템플릿·산출물이 있는가. 아이디어만 있으면 감점.</p></div>
+        <div class="card"><h3>기술적 처리구조</h3><p>데이터 입력, 분류, 검증, 출력, 게시 흐름이 있는가.</p></div>
+        <div class="card"><h3>법+AI 결합성</h3><p>법률지식, 법리검증, 계약, 리스크와 AI가 실질 결합되는가.</p></div>
+        <div class="card"><h3>차별성</h3><p>일반 법률 챗봇, RAG, 문서자동화와 다른 구조가 있는가.</p></div>
+        <div class="card"><h3>서비스화</h3><p>지금 팔 수 있거나 조금 보완하면 팔 수 있는가.</p></div>
+        <div class="card"><h3>청구항화</h3><p>방법, 시스템, 기록매체 청구항으로 쪼갤 수 있는가.</p></div>
+      </div>
+    </section>
+
+    <section id="candidates">
+      <h2>3. 최종 후보 5개</h2>
+
+      <article class="card candidate" id="c1">
+        <div class="kpi"><div class="rank">1</div><div><h3>기업 법률자료 기반 리스크 트윈 생성 및 선제 자문 제공 시스템</h3><span class="tag high">출원 우선도 매우 높음</span><span class="tag ok">베타 운영 중</span></div></div>
+        <div class="split">
+          <div>
+            <h4>대체 제목</h4>
+            <ul>
+              <li>법률 리스크 온톨로지를 이용한 기업 맞춤형 선제 자문 제공 방법</li>
+              <li>기업별 법률 트윈 기반 리스크 레지스터 및 대시보드 생성 시스템</li>
+              <li>계약·규제·기한 데이터를 이용한 법률 리스크 관제 및 실행항목 산출 방법</li>
+            </ul>
+          </div>
+          <div>
+            <h4>내부 근거</h4>
+            <p><code>_FOUNDRY_리걸리스크/CLAUDE.md</code>, <code>_INDEX.md</code>, <code>리스크레이더_사용설명서_v1.md</code>, <code>리스크레이더_사용법_2.0.md</code>, <code>_edge_strategy.md</code>, <code>legal_screening.md</code>, <code>output_portfolio.md</code>, <code>apollo_design_system.md</code></p>
+          </div>
+        </div>
+        <h4>발명의 요지</h4>
+        <p>기업으로부터 수령한 계약서, 의사록, 리포트, 질의, 외부 시그널을 기업별 raw 저장소에 축적하고, 이를 5렌즈 또는 리스크 분류체계로 분석하여 리스크 레지스터와 개별 리스크 카드를 생성합니다. 각 리스크에는 severity, likelihood, 기한, 노출금액, 상대방, 법리 스크리닝 상태, 후속자료 요청 상태를 결합합니다. 시스템은 이 누적 데이터를 이용해 주간리포트, 자료분석리포트, 질의회신리포트, 종합검진리포트, HTML 대시보드, 실행표를 자동 또는 반자동으로 생성합니다.</p>
+        <h4>해결하려는 문제</h4>
+        <p>기존 법률고문 서비스는 질문이 들어온 뒤 단건 답변을 제공하는 구조에 머무릅니다. 회사 전체의 계약, 기한, 상대방, 규제, 증거 공백이 하나의 법률 상태로 축적되지 않아 대표나 법무팀장이 이번 주 무엇을 해야 하는지 보기 어렵습니다.</p>
+        <h4>핵심 구성</h4>
+        <table><thead><tr><th>구성요소</th><th>내용</th></tr></thead><tbody>
+          <tr><td data-label="구성요소">기업별 raw 격리 저장부</td><td data-label="내용">CO 단위로 자료를 분리하고 raw/raw_ingested 상태를 추적</td></tr>
+          <tr><td data-label="구성요소">리스크 추출부</td><td data-label="내용">자료를 5렌즈 또는 분야별 리스크 축으로 분류</td></tr>
+          <tr><td data-label="구성요소">리스크 레지스터 생성부</td><td data-label="내용">id, 렌즈, 제목, 위험도, 가능성, 상태, 발견일, 원자료, 노출액, 상대방을 누적</td></tr>
+          <tr><td data-label="구성요소">법리 스크리닝부</td><td data-label="내용">내부 WIKI, 업무 이슈, 법률자료, 공식 웹, 한국법 MCP 확인 결과를 리스크에 연결</td></tr>
+          <tr><td data-label="구성요소">대시보드 생성부</td><td data-label="내용">위험도, 기한, 실행항목, 외부환경을 Apollo UI로 시각화</td></tr>
+        </tbody></table>
+        <h4>청구항 방향</h4>
+        <p>기업 자료 수집, 리스크 분류, 레지스터 갱신, 법리 스크리닝, 산출물 선택, 대시보드 생성 단계의 방법 청구항과, raw 저장부·리스크 분석부·법리 검증부·리포트 생성부·대시보드 제공부의 시스템 청구항이 적합합니다.</p>
+        <h4>예비평가</h4>
+        <p><span class="tag ok">산업상 이용가능성 높음</span><span class="tag mid">신규성 확인 필요</span><span class="tag high">기술적 구성 높음</span></p>
+        <p>너무 넓게 쓰면 단순 법률자문 방법으로 보일 수 있으므로, 데이터 필드, 자동 분류, 상태 갱신, 대시보드 생성 알고리즘을 구체화해야 합니다.</p>
+      </article>
+
+      <article class="card candidate" id="c2">
+        <div class="kpi"><div class="rank">2</div><div><h3>다중 출처 법률근거 검증을 포함하는 법률 대시보드 전자책 자동 생성 시스템</h3><span class="tag high">출원 우선도 높음</span><span class="tag ok">서비스 완성에 가까움</span></div></div>
+        <div class="split">
+          <div>
+            <h4>대체 제목</h4>
+            <ul>
+              <li>법률 이슈 입력에 따른 검증형 전자책 및 반응형 대시보드 생성 방법</li>
+              <li>내부 법률 WIKI와 공식 법률 DB 교차검증 기반 법률 콘텐츠 생성 시스템</li>
+              <li>법률근거 카드와 최신성 로그를 포함하는 HTML 법률 대시보드 자동 게시 방법</li>
+            </ul>
+          </div>
+          <div>
+            <h4>내부 근거</h4>
+            <p><code>_WIKI_법률지식/65_대시보드전자책/_workflow.md</code>, 실제 <code>*.md</code>/<code>*.html</code> 산출물, <code>SEARCH_PROTOCOL.md</code>, <code>WEB_RESEARCH.md</code>, <code>anti_hallucination_policy.md</code></p>
+          </div>
+        </div>
+        <h4>발명의 요지</h4>
+        <p>사용자가 법률 이슈를 입력하면 내부 법률 WIKI에서 관련 법리·실무·판례 후보를 검색하고, 공식 웹 출처와 한국법 MCP 등 외부 검증 도구로 조문·판례·행정해석의 실존성과 현행성을 확인합니다. 검증된 근거만 전자책 본문과 근거 카드로 편입하고, 미검증 근거는 배제하거나 확인 필요로 표시합니다. 이후 전자책 본문과 동일한 내용을 반응형 HTML 대시보드로 변환하고 웹 게시 후 원문 노트에 URL을 역삽입합니다.</p>
+        <h4>핵심 구성</h4>
+        <table><thead><tr><th>구성요소</th><th>내용</th></tr></thead><tbody>
+          <tr><td data-label="구성요소">내부 WIKI 검색부</td><td data-label="내용">마스터 인덱스, 샤드 인덱스, 후보 법리·판례·업무사전 검색</td></tr>
+          <tr><td data-label="구성요소">외부 검증부</td><td data-label="내용">공식 법률 DB 웹 확인 및 한국법 MCP 교차검증</td></tr>
+          <tr><td data-label="구성요소">근거 필터링부</td><td data-label="내용">검증 통과 근거만 본문 등재, 미검증 인용 배제</td></tr>
+          <tr><td data-label="구성요소">HTML 대시보드 변환부</td><td data-label="내용">히어로, TL;DR, 목차, 섹션, 근거카드, CTA를 포함한 반응형 HTML 생성</td></tr>
+          <tr><td data-label="구성요소">게시 및 역삽입부</td><td data-label="내용">GitHub Pages URL을 원문 frontmatter와 본문 콜아웃에 반영</td></tr>
+        </tbody></table>
+        <h4>차별 포인트와 예비평가</h4>
+        <p>일반 법률 콘텐츠 생성기는 답변 생성에 초점을 둡니다. 이 후보는 내부 WIKI, 공식 웹, 법률 MCP의 검증 순서를 강제하고 근거 카드와 검증 로그를 콘텐츠의 일부로 만든다는 점이 핵심입니다.</p>
+        <p><span class="tag ok">산업상 이용가능성 높음</span><span class="tag mid">RAG·citation verification 선행기술 조사 필요</span><span class="tag high">기술적 구성 높음</span></p>
+      </article>
+
+      <article class="card candidate" id="c3">
+        <div class="kpi"><div class="rank">3</div><div><h3>규칙파일 기반 AI 업무공간 전환 및 법률·보안 리스크 통제 시스템</h3><span class="tag high">출원 우선도 높음</span><span class="tag blue">컨셉+실증 자산</span></div></div>
+        <h4>내부 근거</h4>
+        <p><code>04_ai_wiki_consulting/_brief.md</code>, <code>T-규칙파일기반AI운영.md</code>, <code>T-데스크톱AI에이전트업무관리.md</code>, <code>IN-20260613_LLMWIKI사업접목입문.md</code>, 루트 및 각 WIKI의 <code>AGENTS.md</code>/<code>CLAUDE.md</code>.</p>
+        <h4>발명의 요지</h4>
+        <p>조직의 문서 폴더, 업무 유형, 민감정보 유형, 반복 산출물, 승인 절차를 분석하여 raw, wiki, output, archive 등 AI가 처리 가능한 업무공간 구조로 재편합니다. 각 폴더 또는 업무 단위에 적용될 규칙파일을 생성하고, AI 에이전트가 작업 시작 시 해당 규칙을 읽어 저장 위치, 금지행위, 검증절차, 승인 게이트, 출력 형식을 준수하도록 합니다.</p>
+        <h4>핵심 구성</h4>
+        <div class="grid cols-3">
+          <div class="card"><strong>업무자료 진단부</strong><br>문서, 반복업무, 산출물, 보안등급, 승인흐름 분석</div>
+          <div class="card"><strong>WIKI 구조 생성부</strong><br>raw/wiki/output/log/archive 구조 추천</div>
+          <div class="card"><strong>규칙파일 생성부</strong><br>AGENTS.md, CLAUDE.md 등 업무규칙 파일 생성</div>
+          <div class="card"><strong>위험정책 매핑부</strong><br>개인정보, 영업비밀, 법률검토, 외부발행 통제문구 매핑</div>
+          <div class="card"><strong>실행 제어부</strong><br>AI가 현재 폴더의 규칙파일을 읽고 작업범위와 금지사항 적용</div>
+          <div class="card"><strong>운영 로그부</strong><br>작업 결과, 검증 상태, 미완료 사유 기록</div>
+        </div>
+        <h4>예비평가</h4>
+        <p><span class="tag ok">산업상 이용가능성 높음</span><span class="tag mid">agent instruction file·policy-as-code 선행기술 조사 필요</span><span class="tag mid">청구항 구체화 필요</span></p>
+        <p>AGENTS.md 같은 공개 개념을 그대로 청구하면 약합니다. 고객자료 진단, 규칙 생성, 위험정책 삽입, 검증 로그 자동화 구조로 좁혀야 합니다.</p>
+      </article>
+
+      <article class="card candidate" id="c4">
+        <div class="kpi"><div class="rank">4</div><div><h3>레몬마켓 거래의 계약·변경·증거관리 자동 패키징 시스템</h3><span class="tag mid">출원 우선도 중상</span><span class="tag blue">상품 모델 설계 완료</span></div></div>
+        <h4>내부 근거</h4>
+        <p><code>65_service_lab/_index.md</code>, <code>서비스모델_개발논의.md</code>, <code>lemon_market_service_framework.md</code>, <code>03_webapp_outsourcing_guardians/product_model.md</code>, 인테리어·프랜차이즈 product model.</p>
+        <h4>발명의 요지</h4>
+        <p>고액·비반복·정보비대칭 거래에서 계약 체결 전 제출된 계약서, 견적서, 제안서, 요구사항, 상대방 설명자료를 입력받아 거래유형별 위험 항목을 추출합니다. 거래유형에 따라 계약 특약, 별지, 체크리스트, 변경합의서 양식, 검수기준표, 증거관리 폴더 구조를 생성하고, 진행 중 이벤트가 발생하면 변경관리 기록으로 저장합니다.</p>
+        <h4>핵심 구성</h4>
+        <table><thead><tr><th>구성요소</th><th>내용</th></tr></thead><tbody>
+          <tr><td data-label="구성요소">거래유형 식별부</td><td data-label="내용">인테리어, 프랜차이즈, 외주개발 등 유형 판별</td></tr>
+          <tr><td data-label="구성요소">위험항목 추출부</td><td data-label="내용">추가금, 검수, 권한, 위약금, 영업지역 등 거래유형별 핵심 위험 추출</td></tr>
+          <tr><td data-label="구성요소">특약·별지 생성부</td><td data-label="내용">의뢰인 요구사항과 위험항목을 계약 특약 또는 별지로 변환</td></tr>
+          <tr><td data-label="구성요소">변경이력 관리부</td><td data-label="내용">진행 중 변경요청, 합의, 거절, 검수결과를 버전관리</td></tr>
+          <tr><td data-label="구성요소">분쟁전환 판단부</td><td data-label="내용">사건 수임 또는 추가 법률조치 필요 여부 표시</td></tr>
+        </tbody></table>
+        <h4>예비평가</h4>
+        <p>범용적으로 쓰면 약하므로, 1차 출원은 "외주개발 계약 가디언스"로 좁히는 편이 좋아 보입니다. 요구사항, 검수기준, 수정요청, 계정·권한, 소스코드 인도라는 데이터 항목이 명확합니다.</p>
+      </article>
+
+      <article class="card candidate" id="c5">
+        <div class="kpi"><div class="rank">5</div><div><h3>법률 콘텐츠의 인터랙티브 상담형 학습물 자동 변환 시스템</h3><span class="tag mid">출원 우선도 중상</span><span class="tag ok">작동 산출물 있음</span></div></div>
+        <h4>내부 근거</h4>
+        <p><code>_WIKI_법률지식/기존_챗봇_3프롬프트.md</code>, <code>_WIKI_법률지식/_chatbot_output/*.md, *.html</code>, 법률지식 WIKI의 챗봇 코딩 워크플로, 대시보드 전자책 HTML 산출물.</p>
+        <h4>발명의 요지</h4>
+        <p>법률 컬럼 또는 법률 설명문을 입력받아 제목, 부제, 핵심 테마, 독자 질문, 답변, 요약을 추출합니다. 추출 결과를 기반으로 클릭형 학습 챗봇, 카카오톡 상담 이미지, 카카오톡 애니메이션 상담 플레이어 중 하나의 UI 템플릿을 선택하고, 각 화면에 필요한 데이터 구조와 상호작션 상태를 생성합니다.</p>
+        <h4>핵심 구성</h4>
+        <div class="grid cols-3">
+          <div class="card"><strong>콘텐츠 분석부</strong><br>제목, 부제, 핵심 테마, 질문, 답변, 요약 추출</div>
+          <div class="card"><strong>답변 제한부</strong><br>원문 범위 밖 내용을 생성하지 않도록 근거 제한</div>
+          <div class="card"><strong>UI 템플릿 선택부</strong><br>클릭형 챗봇, 카카오톡 이미지, 애니메이션 플레이어 선택</div>
+          <div class="card"><strong>대화 데이터 생성부</strong><br>persona, cards, messages, bubbles, summary 구조화</div>
+          <div class="card"><strong>상호작용 제어부</strong><br>질문 클릭, 진행상태, 타이핑 인디케이터, 요약 화면</div>
+          <div class="card"><strong>모바일 최적화부</strong><br>viewport, safe-area, sticky button, iOS 높이 보정</div>
+        </div>
+        <h4>예비평가</h4>
+        <p>사업적 활용도는 높지만 콘텐츠 변환·챗봇형 학습·대화형 UI 선행기술이 많을 가능성이 있습니다. 원문근거 제한, 법률 특화 질문-답변 구조, 모바일 상담 UI 생성 절차를 구체화해야 합니다.</p>
+      </article>
+    </section>
+
+    <section id="deferred" class="card">
+      <h2>4. 보류 또는 탈락 후보</h2>
+      <table>
+        <thead><tr><th>후보</th><th>판단</th><th>이유</th></tr></thead>
+        <tbody>
+          <tr><td data-label="후보">AI Launch Legal Check</td><td data-label="판단">보류</td><td data-label="이유">사업성은 높지만 현재 내부에 독립된 기술 파이프라인이 아직 약함. Risk Radar 또는 AI WIKI Builder의 하위 모듈로 흡수 가능.</td></tr>
+          <tr><td data-label="후보">Doctors Legal Concierge</td><td data-label="판단">보류</td><td data-label="이유">월정액 서비스 모델은 좋지만 기술적 구성보다 서비스 운영 모델에 가까움.</td></tr>
+          <tr><td data-label="후보">Contract Decision Prime</td><td data-label="판단">보류</td><td data-label="이유">48시간 계약 의사결정 리포트는 상품성은 높으나 계약검토 리포트 자동화 구조가 더 구체화되어야 함.</td></tr>
+          <tr><td data-label="후보">Legal Last Mile</td><td data-label="판단">보류</td><td data-label="이유">실행문서 생성은 생성AI 일반 기능과 겹침. 특허보다는 영업비밀·템플릿 자산으로 관리 적합.</td></tr>
+          <tr><td data-label="후보">AI & Law Executive Workshop</td><td data-label="판단">탈락</td><td data-label="이유">강의·워크숍 상품으로는 강하지만 특허 후보로는 약함.</td></tr>
+          <tr><td data-label="후보">Cross-Client Intelligence Report</td><td data-label="판단">후보 1에 흡수</td><td data-label="이유">가명화된 복수 의뢰인 리스크 패턴 분석은 Risk Radar/Legal Twin의 종속항으로 넣는 것이 좋음.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="strategy" class="card">
+      <h2>5. 출원 전략 제안</h2>
+      <div class="split">
+        <div>
+          <h3>1차 변리사 미팅 순서</h3>
+          <ol>
+            <li>Risk Radar / Legal Twin</li>
+            <li>법률 대시보드 전자책 자동 생성</li>
+            <li>AI WIKI 전환 및 규칙파일 기반 운영</li>
+            <li>외주개발 계약 가디언스</li>
+            <li>법률 콘텐츠 상담형 변환</li>
+          </ol>
+        </div>
+        <div>
+          <h3>청구항 설계 방향</h3>
+          <ol>
+            <li>컴퓨터에 의해 수행되는 방법</li>
+            <li>해당 방법을 수행하는 시스템</li>
+            <li>해당 방법을 실행하는 프로그램이 저장된 컴퓨터 판독가능 기록매체</li>
+          </ol>
+        </div>
+      </div>
+      <h3>명세서 작성 전 추가자료</h3>
+      <table>
+        <thead><tr><th>필요자료</th><th>대상 후보</th><th>설명</th></tr></thead>
+        <tbody>
+          <tr><td data-label="필요자료">시스템 구성도</td><td data-label="대상 후보">1~5 전부</td><td data-label="설명">입력, 처리, 저장, 출력, 검증, 게시 흐름</td></tr>
+          <tr><td data-label="필요자료">데이터 필드 표</td><td data-label="대상 후보">1, 2, 4</td><td data-label="설명">RR-master, 법리검증 로그, 변경관리 이력, 근거카드 등</td></tr>
+          <tr><td data-label="필요자료">실제 산출물 샘플</td><td data-label="대상 후보">1, 2, 5</td><td data-label="설명">대시보드 URL, md/html 샘플, 챗봇 HTML</td></tr>
+          <tr><td data-label="필요자료">공개일 정리</td><td data-label="대상 후보">1, 2, 5</td><td data-label="설명">이미 게시·공개된 자료의 날짜와 URL</td></tr>
+          <tr><td data-label="필요자료">선행기술 키워드</td><td data-label="대상 후보">1~5 전부</td><td data-label="설명">변리사 조사용 키워드</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="evidence" class="card">
+      <h2>6. Evidence Ledger</h2>
+      <table>
+        <thead><tr><th>주장</th><th>근거</th><th>상태</th><th>남은 불확실성</th></tr></thead>
+        <tbody>
+          <tr><td data-label="주장">Risk Radar는 가장 강한 특허 후보</td><td data-label="근거">Foundry CLAUDE, _INDEX, 리스크레이더 사용설명서, edge strategy, legal screening, output portfolio</td><td data-label="상태"><span class="tag ok">확인됨</span></td><td data-label="남은 불확실성">선행기술조사, 공개일 검토</td></tr>
+          <tr><td data-label="주장">법률 대시보드 전자책은 검증형 콘텐츠 생성 파이프라인으로 후보화 가능</td><td data-label="근거">65_대시보드전자책 workflow, 실제 md/html 산출물</td><td data-label="상태"><span class="tag ok">확인됨</span></td><td data-label="남은 불확실성">한국법 MCP 연동 구현 방식 명세화 필요</td></tr>
+          <tr><td data-label="주장">AI WIKI Builder는 규칙파일 기반 AI 운영과 법률 리스크 통제가 결합된 후보</td><td data-label="근거">AI WIKI consulting brief, 규칙파일 기반 AI 운영, 데스크톱 AI 에이전트 업무관리, LLMWIKI 인사이트</td><td data-label="상태"><span class="tag ok">확인됨</span></td><td data-label="남은 불확실성">공개기술과의 차별점 정밀화 필요</td></tr>
+          <tr><td data-label="주장">레몬마켓 가디언스는 외주개발형으로 좁히면 후보 가능</td><td data-label="근거">lemon market framework, webapp outsourcing product model</td><td data-label="상태"><span class="tag ok">확인됨</span></td><td data-label="남은 불확실성">계약 자동화·CLM 선행기술과의 차별화 필요</td></tr>
+          <tr><td data-label="주장">BM/AI 특허는 컴퓨터 구현 구조가 중요</td><td data-label="근거">지식재산처 BM·컴퓨터관련 발명·AI patentability 공식 페이지</td><td data-label="상태"><span class="tag ok">확인됨</span></td><td data-label="남은 불확실성">구체 청구항은 변리사 검토 필요</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="next" class="card">
+      <h2>7. 다음 액션</h2>
+      <ol>
+        <li>변리사에게 보낼 1페이지 요약본을 별도로 만든다.</li>
+        <li>후보 1번 Risk Radar에 대해 시스템 구성도와 데이터 필드 표를 먼저 만든다.</li>
+        <li>공개된 대시보드 URL, HTML 파일, md 파일의 최초 생성·게시일을 정리한다.</li>
+        <li>각 후보별 선행기술 검색 키워드를 만든다.</li>
+        <li>변리사 미팅 전, 실제 구현 예시로 후보 1번과 2번의 플로우차트를 준비한다.</li>
+      </ol>
+      <div class="note">
+        <strong>변리사 전달 메모:</strong> 이번 후보들은 단순 법률서비스 아이디어가 아니라 기업별 법률자료 ingest, 리스크 레지스터 생성, 검증형 콘텐츠 생성, 규칙파일 기반 AI 운영, 정보비대칭 거래의 증거관리, 상담형 UI 변환 같은 컴퓨터 구현 구조를 전제로 검토받아야 합니다.
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>원본 노트: <code>_OPS_법률사무소/65_service_lab/05_patent_candidates/20260711_법AI_BM특허후보_1차진단.md</code></p>
+      <p>이 HTML은 내부 검토용 보고서를 웹에서 읽기 쉽게 변환한 것입니다. 특허성 판단은 변리사 선행기술조사 및 명세서 설계를 거쳐야 합니다.</p>
+    </footer>
+  </main>
+</body>
+</html>
