@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>FOUNDRY 리걸리스크 1회 진단 대시보드</title>
+<style>
+:root{--bg:#f5f1f2;--panel:#fff;--panel2:#faf6f7;--line:#ebe2e5;--line2:#ddccd2;--ink:#2c1d26;--ink2:#56424c;--muted:#8a7b82;--wine:#7a2e3a;--wine-d:#5a1f2b;--wine-t:#f4e9ec;--head:#3a1525;--head2:#4e1f32;--accent:#d4a0aa;--green:#287a54;--amber:#b45309;--red:#c74a3c}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Pretendard,"Malgun Gothic",Arial,sans-serif;line-height:1.55}a{color:inherit}.app{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:218px 1fr;min-height:100vh;background:var(--panel);box-shadow:0 22px 60px rgba(58,21,37,.13)}
+.side{background:#fbf8f9;border-right:1px solid var(--line);padding:22px 16px;position:sticky;top:0;height:100vh}.brand{font-weight:800;color:var(--wine-d);font-size:17px;margin-bottom:4px}.by{font-size:12px;color:var(--muted);margin-bottom:22px}.nav{display:grid;gap:7px}.nav button{border:0;background:transparent;text-align:left;padding:11px 12px;border-radius:8px;color:var(--ink2);font-weight:700;cursor:pointer;font-size:14px}.nav button.active{background:var(--wine-t);color:var(--wine-d);box-shadow:inset 3px 0 0 var(--wine)}
+.main{min-width:0}.header{background:linear-gradient(135deg,var(--head),var(--head2));color:#fff;padding:26px 30px 28px;display:flex;justify-content:space-between;gap:24px;align-items:flex-end}.eyebrow{color:var(--accent);font-weight:800;font-size:13px;margin-bottom:8px}.header h1{font-size:28px;line-height:1.25;margin:0;letter-spacing:0}.header p{margin:10px 0 0;color:#ead8dd;max-width:690px}.meta{text-align:right;color:rgba(255,255,255,.67);font-size:12px;white-space:nowrap}.content{padding:24px 28px 42px}.view{display:none}.view.active{display:block}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}.metric{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:14px}.metric span{display:block;color:var(--muted);font-size:12px;font-weight:700}.metric b{display:block;font-size:23px;margin-top:3px;color:var(--wine-d)}
+.section{margin-top:22px}.secl{font-size:13px;font-weight:800;color:var(--muted);display:flex;align-items:center;gap:8px;margin:0 0 12px}.secl:before{content:"";width:7px;height:16px;border-radius:4px;background:var(--wine)}.grid2{display:grid;grid-template-columns:1.1fr .9fr;gap:14px}.card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px}.card h3{margin:0 0 8px;font-size:18px}.card p{margin:0;color:var(--ink2)}.triage{display:grid;gap:10px}.row{border:1px solid var(--line);border-left:5px solid var(--wine);border-radius:10px;padding:13px 14px;background:#fff}.row b{display:block;margin-bottom:3px}.row span{color:var(--ink2);font-size:14px}.chip{display:inline-flex;border-radius:7px;padding:4px 8px;font-size:12px;font-weight:800;margin-right:8px}.c-now{background:var(--red);color:#fff}.c-month{background:#f8e4b8;color:#7d520a}.c-quarter{background:#d6ecdb;color:#287a54}.lensgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.lens{background:#fff;border:1px solid var(--line);border-top:4px solid var(--wine);border-radius:10px;padding:13px;min-height:150px}.lens b{display:block;font-size:15px;margin-bottom:6px}.lens p{font-size:13px;color:var(--ink2);margin:0}
+.process{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.step{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px}.step em{font-style:normal;background:var(--wine);color:#fff;border-radius:999px;padding:5px 9px;font-weight:800;font-size:12px}.step h3{font-size:17px;margin:12px 0 6px}.step p{margin:0;color:var(--ink2);font-size:14px}.table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}th,td{padding:12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:#faf6f7;color:var(--wine-d);font-size:13px}td{font-size:14px;color:var(--ink2)}tr:last-child td{border-bottom:0}.quote{background:var(--wine-t);border:1px solid #ecd7dd;border-left:5px solid var(--wine);border-radius:10px;padding:16px;color:var(--wine-d);font-weight:800}.cta{margin-top:24px;background:#3a1525;color:#fff;border-radius:10px;padding:22px;display:flex;justify-content:space-between;gap:18px;align-items:center}.cta b{font-size:21px}.cta span{display:block;color:#ead8dd;margin-top:4px}.button{background:#fff;color:#5a1f2b;border-radius:8px;padding:11px 14px;font-weight:800;white-space:nowrap}
+.miniinfographic{max-width:680px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}.minihead{background:linear-gradient(145deg,#3a1525,#5a1f2b);color:#fff;text-align:center;padding:34px 26px}.minihead h2{margin:0;font-size:30px}.minihead p{color:#ead8dd}.minibody{padding:24px}.miniline{display:grid;grid-template-columns:48px 1fr;gap:12px;border:1px solid var(--line);border-left:5px solid var(--wine);border-radius:10px;padding:13px;margin-bottom:10px}.mininum{width:36px;height:36px;border-radius:9px;background:var(--wine);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800}.miniline b{display:block}.miniline span{font-size:13px;color:var(--ink2)}
+@media(max-width:860px){.app{display:block}.side{position:static;height:auto;border-right:0;border-bottom:1px solid var(--line)}.nav{display:flex;overflow:auto}.nav button{white-space:nowrap}.header{display:block}.meta{text-align:left;margin-top:14px}.metrics,.grid2,.lensgrid,.process{grid-template-columns:1fr}.content{padding:20px}.cta{display:block}.button{display:inline-block;margin-top:14px}}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="side">
+    <div class="brand">FOUNDRY 리걸리스크</div>
+    <div class="by">법률사무소 머스트노우 · 조우성 변호사</div>
+    <nav class="nav">
+      <button class="active" data-v="ov">종합 소개</button>
+      <button data-v="lens">진단 방법론</button>
+      <button data-v="out">결과물·효과</button>
+      <button data-v="info">세로형 인포그래픽</button>
+    </nav>
+  </aside>
+  <main class="main">
+    <header class="header">
+      <div>
+        <div class="eyebrow">기업용 법률 건강검진 · 1회 진단</div>
+        <h1 id="ttl">문제가 터지기 전에, 우리 회사 법률 위험을 먼저 확인합니다</h1>
+        <p>계약서와 내부자료 속 리스크를 변호사가 직접 분석해 대표님이 바로 결정할 수 있는 우선순위와 실행 로드맵으로 정리합니다.</p>
+      </div>
+      <div class="meta">주관<br>법률사무소 머스트노우<br>조우성 변호사</div>
+    </header>
+    <section class="content">
+      <section id="v-ov" class="view active">
+        <div class="metrics">
+          <div class="metric"><span>서비스 형태</span><b>1회 진단</b></div>
+          <div class="metric"><span>핵심 대상</span><b>중소기업</b></div>
+          <div class="metric"><span>분석 방식</span><b>5대 렌즈</b></div>
+          <div class="metric"><span>결과 형태</span><b>로드맵</b></div>
+        </div>
+        <div class="grid2">
+          <div class="card">
+            <h3>왜 지금 필요한가</h3>
+            <p>중소기업의 법률 문제는 대부분 갑자기 생기지 않습니다. 계약서, 거래 조건, 내부규정, 증빙 공백 속에 작은 신호로 쌓여 있다가 내용증명, 거래 중단, 과태료, 손해배상 청구로 나타납니다.</p>
+          </div>
+          <div class="quote">막연한 불안을 “지금 볼 것, 이번 달 고칠 것, 분기 안에 정비할 것”으로 바꾸는 것이 이 진단의 핵심입니다.</div>
+        </div>
+        <div class="section">
+          <h2 class="secl">대표님들이 자주 놓치는 지점</h2>
+          <div class="triage">
+            <div class="row"><span class="chip c-now">즉시</span><b>과도한 책임 조항</b><span>손해배상, 보증, 면책 불균형이 숨어 있어 실제 분쟁 때 큰 비용으로 번질 수 있습니다.</span></div>
+            <div class="row"><span class="chip c-month">이번 달</span><b>기한과 증빙 공백</b><span>갱신일, 통지일, 신고일, 증빙 보관 기준을 놓치면 유리한 권리를 잃을 수 있습니다.</span></div>
+            <div class="row"><span class="chip c-quarter">분기 내</span><b>거래처 재량과 내부관리 리스크</b><span>거래처가 일방적으로 흔들 수 있는 구조와 직원·개인정보·영업비밀 리스크를 정비합니다.</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="v-lens" class="view">
+        <h2 class="secl">FOUNDRY 5대 진단 렌즈</h2>
+        <div class="lensgrid">
+          <div class="lens"><b>의무·책임</b><p>우리 회사가 과하게 떠안은 손해배상, 보증, 면책 조항을 확인합니다.</p></div>
+          <div class="lens"><b>조건부 트리거</b><p>해지, 권리 상실, 채무불이행이 발생하는 조건을 찾아냅니다.</p></div>
+          <div class="lens"><b>기한·임계치</b><p>갱신, 통지, 신고, 신청처럼 놓치면 손해 보는 날짜를 뽑습니다.</p></div>
+          <div class="lens"><b>상대방 재량</b><p>단가, 납기, 변경, 해지를 상대방이 일방적으로 정할 수 있는지 봅니다.</p></div>
+          <div class="lens"><b>분쟁·규제</b><p>법원, 관청, 거래처 분쟁으로 번질 수 있는 조항과 증빙 공백을 확인합니다.</p></div>
+        </div>
+        <div class="section">
+          <h2 class="secl">진행 절차</h2>
+          <div class="process">
+            <div class="step"><em>STEP 1</em><h3>자료 제출</h3><p>계약서, 정관, 내부규정, 거래약관, 인허가 자료 등 핵심 자료를 전달합니다.</p></div>
+            <div class="step"><em>STEP 2</em><h3>변호사 진단</h3><p>조우성 변호사가 FOUNDRY 방식으로 자료를 분류하고 5대 렌즈로 분석합니다.</p></div>
+            <div class="step"><em>STEP 3</em><h3>결과 전달</h3><p>대표 요약, 리스크 레지스터, 실행 로드맵을 전달하고 필요 시 브리핑합니다.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="v-out" class="view">
+        <h2 class="secl">받게 되는 결과물</h2>
+        <table class="table">
+          <thead><tr><th>결과물</th><th>내용</th><th>대표님 입장에서의 가치</th></tr></thead>
+          <tbody>
+            <tr><td>1장 대표 요약</td><td>가장 중요한 리스크와 경영 판단 포인트</td><td>바쁜 상황에서도 핵심만 즉시 파악</td></tr>
+            <tr><td>리스크 레지스터</td><td>발견 리스크를 중점관리 / 관찰 / 경미로 분류</td><td>무엇이 큰 문제인지 우선순위 확정</td></tr>
+            <tr><td>실행 로드맵</td><td>즉시 조치, 이번 달 정비, 분기 내 개선 과제</td><td>직원에게 맡길 일과 대표가 결정할 일 분리</td></tr>
+            <tr><td>핵심 조치 제안</td><td>계약 수정, 내부규정 보완, 증빙 확보, 협상 포인트</td><td>실제 행동으로 이어지는 법률 자문</td></tr>
+          </tbody>
+        </table>
+        <div class="section">
+          <h2 class="secl">기대 효과</h2>
+          <div class="grid2">
+            <div class="card"><h3>손실 예방</h3><p>큰 손해로 이어질 조항, 기한, 증빙 공백을 먼저 발견합니다.</p></div>
+            <div class="card"><h3>협상력 강화</h3><p>계약 갱신과 신규 거래에서 불리한 지점을 알고 움직입니다.</p></div>
+            <div class="card"><h3>내부 정비</h3><p>직원 관리, 개인정보, 영업비밀, 인허가 자료를 점검합니다.</p></div>
+            <div class="card"><h3>정기관리 전환</h3><p>필요한 기업은 1회 진단 후 리스크레이더 정기 관리로 확장할 수 있습니다.</p></div>
+          </div>
+        </div>
+        <div class="cta"><div><b>사고가 난 뒤의 자문보다, 사고 전의 진단이 더 싸고 빠릅니다.</b><span>FOUNDRY 리걸리스크 1회 진단으로 우리 회사의 법률 건강상태를 먼저 확인하세요.</span></div><div class="button">문의: 머스트노우 · 조우성 변호사</div></div>
+      </section>
+
+      <section id="v-info" class="view">
+        <div class="miniinfographic">
+          <div class="minihead"><h2>FOUNDRY 리걸리스크<br>1회 진단</h2><p>법률사무소 머스트노우 · 조우성 변호사</p></div>
+          <div class="minibody">
+            <div class="miniline"><div class="mininum">1</div><div><b>자료를 봅니다</b><span>계약서, 내부규정, 거래약관, 인허가, 증빙자료를 확인합니다.</span></div></div>
+            <div class="miniline"><div class="mininum">2</div><div><b>5대 렌즈로 분석합니다</b><span>의무·책임, 조건부 트리거, 기한, 상대방 재량, 분쟁·규제를 점검합니다.</span></div></div>
+            <div class="miniline"><div class="mininum">3</div><div><b>리스크를 등급화합니다</b><span>중점관리, 관찰, 경미로 나누어 무엇부터 볼지 정리합니다.</span></div></div>
+            <div class="miniline"><div class="mininum">4</div><div><b>실행 순서를 제안합니다</b><span>즉시, 이번 달, 분기 내 과제로 나누어 현실적인 로드맵을 제공합니다.</span></div></div>
+            <div class="miniline"><div class="mininum">5</div><div><b>대표님의 판단을 돕습니다</b><span>막연한 법률 불안을 경영 의사결정 자료로 바꿉니다.</span></div></div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+</div>
+<script>
+const titles={ov:"문제가 터지기 전에, 우리 회사 법률 위험을 먼저 확인합니다",lens:"FOUNDRY 방식으로 법률 위험을 구조적으로 찾습니다",out:"대표님이 바로 움직일 수 있는 결과물로 정리합니다",info:"배포용 세로형 인포그래픽"};
+document.querySelectorAll(".nav button").forEach(btn=>btn.addEventListener("click",()=>{document.querySelectorAll(".nav button").forEach(x=>x.classList.remove("active"));document.querySelectorAll(".view").forEach(x=>x.classList.remove("active"));btn.classList.add("active");const v=btn.dataset.v;document.getElementById("v-"+v).classList.add("active");document.getElementById("ttl").textContent=titles[v];window.scrollTo({top:0,behavior:"smooth"});}));
+</script>
+</body>
+</html>
