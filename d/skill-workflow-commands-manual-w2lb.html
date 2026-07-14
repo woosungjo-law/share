@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>스킬·워크플로우·커맨즈 상세 매뉴얼</title>
+  <style>
+    :root{--ink:#172033;--muted:#5f6b7a;--line:#dfe5ef;--paper:#fff;--bg:#f6f8fb;--blue:#133b5c;--green:#1e6f5c;--amber:#8a5a12;--red:#8f1d1d}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans KR","Pretendard","Malgun Gothic",sans-serif}
+    header{background:linear-gradient(135deg,var(--blue),var(--green) 58%,var(--amber));color:#fff;padding:36px 42px}
+    header h1{margin:0 0 10px;font-size:34px;letter-spacing:0} header p{max-width:1040px;margin:0;line-height:1.7;color:#eef6f3}
+    main{max-width:1240px;margin:0 auto;padding:26px 22px 52px}
+    .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:18px}
+    .card,.panel{background:var(--paper);border:1px solid var(--line);border-radius:8px;box-shadow:0 1px 2px rgba(22,34,51,.05)}
+    .card{padding:18px}.card strong{display:block;font-size:34px;color:var(--blue);line-height:1}.card span{display:block;margin-top:8px;color:var(--muted);font-size:13px}
+    .panel{padding:20px;margin:16px 0} h2{font-size:20px;margin:0 0 12px} h3{font-size:16px;margin:18px 0 8px}
+    p{line-height:1.65;color:#425166} table{width:100%;border-collapse:collapse;font-size:13px} th{background:#edf2f7;text-align:left;color:#29364a} th,td{padding:9px 10px;border-bottom:1px solid #e7ebf2;vertical-align:top}
+    .badge{display:inline-block;border-radius:999px;padding:2px 8px;font-size:12px;font-weight:700}.active{background:#e3f4ed;color:#116149}.review{background:#fff1d6;color:#7a4d00}.deprecated{background:#ffe2e2;color:var(--red)}
+    .toc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.toc a{display:block;background:#f3f6fb;border:1px solid #dfe5ef;border-radius:8px;padding:10px 12px;color:#173b5c;text-decoration:none;font-weight:700}
+    .cols{columns:2;column-gap:28px}.cols li{break-inside:avoid;margin:0 0 6px}
+    .note{background:#f3f6fb;border-left:4px solid var(--green);border-radius:6px;padding:12px 14px}
+    code{font-family:Consolas,monospace;color:#263449} footer{margin-top:18px;color:#66758a;font-size:12px}
+    @media(max-width:900px){header{padding:26px 22px}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.toc{grid-template-columns:1fr}.cols{columns:1}}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>스킬·워크플로우·커맨즈 상세 매뉴얼</h1>
+    <p>Markdown 원본은 각 COMMANDS, WORKFLOWS, SKILLS, Claude commands의 역할·발동 조건·용법·주의사항을 매뉴얼 형식으로 상세 정리했다. 이 웹 화면은 그 내용을 빠르게 탐색하기 위한 대시보드다.</p>
+  </header>
+  <main>
+    <section class="stats">
+      <div class="card"><strong>27</strong><span>COMMANDS</span></div>
+      <div class="card"><strong>40</strong><span>WORKFLOWS 및 도구</span></div>
+      <div class="card"><strong>8</strong><span>SKILLS</span></div>
+      <div class="card"><strong>3</strong><span>Claude commands</span></div>
+    </section>
+
+    <section class="panel">
+      <h2>탐색 목차</h2>
+      <div class="toc">
+        <a href="#principles">계층 구조 원칙</a>
+        <a href="#commands">COMMANDS 매뉴얼</a>
+        <a href="#workflows">WORKFLOWS 매뉴얼</a>
+        <a href="#skills">SKILLS 매뉴얼</a>
+        <a href="#claude">Claude commands</a>
+        <a href="#maintenance">정비 후보</a>
+      </div>
+    </section>
+
+    <section id="principles" class="panel">
+      <h2>계층 구조 원칙</h2>
+      <table>
+        <tr><th>계층</th><th>역할</th><th>파일에 들어갈 내용</th><th>넣지 말아야 할 것</th></tr>
+        <tr><td>COMMANDS</td><td>사용자 명령 라우터</td><td>트리거, owner, canonical, 첫 동작, 대표 주의점</td><td>긴 절차, 디자인 규칙, 검증 본문 복붙</td></tr>
+        <tr><td>WORKFLOWS</td><td>실행 절차 정본</td><td>단계, 체크리스트, 산출 위치, fallback, 도구</td><td>서로 다른 파일에 같은 절차 중복</td></tr>
+        <tr><td>SKILLS</td><td>툴별 능력 카드</td><td>사용 시점, 호출 예시, canonical 포인터</td><td>워크플로우 본문 복붙</td></tr>
+        <tr><td>Claude commands</td><td>Claude Code 단축 명령</td><td>인자 파싱, 정본 포인터</td><td>절차의 단일 진실원천 역할</td></tr>
+      </table>
+      <p class="note">핵심 규칙: 명령은 얇게, 워크플로우는 자세히, 스킬은 호출 카드로 유지한다.</p>
+    </section>
+
+    <section id="commands" class="panel">
+      <h2>COMMANDS 매뉴얼 핵심</h2>
+      <table>
+        <tr><th>명령</th><th>기능</th><th>먼저 읽을 파일</th><th>주의</th></tr>
+        <tr><td>ingest/gardening/lint</td><td>신규 raw 반영, WIKI 정비</td><td>_COMMANDS/ingest.md</td><td>WIKI별 AGENTS/CLAUDE 우선</td></tr>
+        <tr><td>external ingest</td><td>외부 파일을 복사 없이 소스로 편입</td><td>_COMMANDS/external_ingest.md</td><td>법률업무 기밀 파일 금지</td></tr>
+        <tr><td>/compose</td><td>컬럼·강의·전자책 초고</td><td>_COMMANDS/compose.md</td><td>법률 컬럼은 /컬럼으로 라우팅</td></tr>
+        <tr><td>/lcp</td><td>법률 콘텐츠팩 루프</td><td>_COMMANDS/lcp.md</td><td>검증 전 정본화 금지</td></tr>
+        <tr><td>/컬럼</td><td>법률컬럼 작성</td><td>_COMMANDS/컬럼.md</td><td>55_컬럼 체계 사용</td></tr>
+        <tr><td>/인용감사</td><td>판례·법령 인용 감사</td><td>_COMMANDS/인용감사.md</td><td>공식기관·MCP 검증</td></tr>
+        <tr><td>/법률검증보완</td><td>검증·보완본 생성</td><td>_COMMANDS/법률검증보완.md</td><td>MCP 미연결 시 확정 중단</td></tr>
+        <tr><td>/간편법률검증</td><td>원문 직접 수정형 검증</td><td>_COMMANDS/간편법률검증.md</td><td>최종본 단일 유지</td></tr>
+        <tr><td>/엘박스검증</td><td>엘박스 질문·반영·수확</td><td>_COMMANDS/엘박스검증.md</td><td>엘박스는 정본이 아님</td></tr>
+        <tr><td>spark/crystal</td><td>단초 발굴·정제</td><td>_COMMANDS/spark.md, crystallization.md</td><td>출처 3소스 원칙</td></tr>
+        <tr><td>연구원장</td><td>법률연구팀 가동</td><td>_COMMANDS/연구팀.md</td><td>실장보다 연구원장 우선</td></tr>
+        <tr><td>웹게시</td><td>HTML 게시·URL 반영</td><td>_COMMANDS/웹게시.md</td><td>실행 절차는 html_pdf_workflow</td></tr>
+        <tr><td>/해결</td><td>SOLVE 진단 엔진</td><td>_COMMANDS/해결.md</td><td>수정 전 HITL 승인</td></tr>
+      </table>
+    </section>
+
+    <section id="workflows" class="panel">
+      <h2>WORKFLOWS 매뉴얼 핵심</h2>
+      <table>
+        <tr><th>워크플로우</th><th>기능</th><th>연결 명령</th><th>상태</th></tr>
+        <tr><td>html_pdf_workflow</td><td>HTML/PDF/게시 URL 파이프라인</td><td>웹게시, html로</td><td><span class="badge active">active</span></td></tr>
+        <tr><td>legal_citation_audit</td><td>인용 무결성 점검</td><td>/인용감사</td><td><span class="badge active">active</span></td></tr>
+        <tr><td>legal_verify_enrich</td><td>법률 검증·보완</td><td>/법률검증보완</td><td><span class="badge active">active</span></td></tr>
+        <tr><td>legal_simple_verify</td><td>원문 직접 수정형 검증</td><td>/간편법률검증</td><td><span class="badge active">active</span></td></tr>
+        <tr><td>elbox_verify</td><td>엘박스 선별·반영·수확</td><td>/엘박스검증</td><td><span class="badge active">active</span></td></tr>
+        <tr><td>legal_content_pack_loop</td><td>LCP 콘텐츠팩 생성</td><td>/lcp</td><td><span class="badge active">active</span></td></tr>
+        <tr><td>법률연구팀_오케스트레이터</td><td>법률연구팀 운영</td><td>연구원장</td><td><span class="badge active">active</span></td></tr>
+        <tr><td>문제해결_오케스트레이터</td><td>SOLVE 재귀 진단</td><td>/해결</td><td><span class="badge active">active</span></td></tr>
+        <tr><td>사고법_워크플로우</td><td>사고법 문제해결</td><td>사고법으로 분석</td><td><span class="badge active">active</span></td></tr>
+        <tr><td>자비스_오케스트레이터</td><td>전략 보고서</td><td>자비스</td><td><span class="badge active">active</span></td></tr>
+        <tr><td>페이스북_컬럼_자동생성</td><td>옛 컬럼 자동생성</td><td>없음</td><td><span class="badge deprecated">deprecated</span></td></tr>
+        <tr><td>컬럼생성_사례형</td><td>옛 사례형 컬럼 파이프라인</td><td>없음</td><td><span class="badge deprecated">deprecated</span></td></tr>
+      </table>
+    </section>
+
+    <section id="skills" class="panel">
+      <h2>SKILLS 매뉴얼 핵심</h2>
+      <table>
+        <tr><th>스킬</th><th>기능</th><th>정본/주의</th></tr>
+        <tr><td>obsidian-markdown</td><td>Obsidian Markdown 작성 규칙</td><td>WIKI별 frontmatter 규칙 우선</td></tr>
+        <tr><td>obsidian-bases</td><td>Bases 구조 설계</td><td>기존 메타데이터와 충돌 주의</td></tr>
+        <tr><td>obsidian-cli</td><td>Obsidian CLI 보조</td><td>한글 쓰기는 PowerShell 금지</td></tr>
+        <tr><td>defuddle</td><td>웹·문서 본문 정리</td><td>법률·최신정보는 정본 검증</td></tr>
+        <tr><td>json-canvas</td><td>Canvas 파일 구조 편집</td><td>기존 노드·엣지 확인</td></tr>
+        <tr><td>html-pdf-pipeline</td><td>HTML/PDF 변환</td><td>_WORKFLOWS/html_pdf_workflow.md 우선</td></tr>
+        <tr><td>법률-문제해결</td><td>법률 사건 고민을 사고법으로 구조화</td><td>사고법 워크플로우로 라우팅</td></tr>
+        <tr><td>자비스</td><td>자비스 호출 카드</td><td>자비스 오케스트레이터가 정본</td></tr>
+      </table>
+    </section>
+
+    <section id="claude" class="panel">
+      <h2>Claude commands</h2>
+      <table>
+        <tr><th>명령</th><th>기능</th><th>정본</th></tr>
+        <tr><td>검증질문</td><td>전자책 검증 질문 생성</td><td>_WIKI_전자책제작/verify/command/_전자책검증_명령_canonical.md</td></tr>
+        <tr><td>검증반영</td><td>전자책 검증 답변 반영</td><td>_WIKI_전자책제작/verify/command/_전자책검증_명령_canonical.md</td></tr>
+        <tr><td>법률-문제해결</td><td>사건 고민을 사고법 워크플로우로 전달</td><td>_WORKFLOWS/사고법/사고법_워크플로우.md</td></tr>
+      </table>
+    </section>
+
+    <section id="maintenance" class="panel">
+      <h2>정비 후보</h2>
+      <table>
+        <tr><th>항목</th><th>상태</th><th>권장 처리</th></tr>
+        <tr><td>/promotion, /판례검증, /익명화, /소송체크, /사건대시보드_갱신</td><td><span class="badge review">review</span></td><td>정본 위치 확인 또는 전용 명령 파일 생성</td></tr>
+        <tr><td>옛 _CREATION Spark/Crystal 자료</td><td><span class="badge review">review</span></td><td>_ATELIER 체계 이관 여부 결정</td></tr>
+        <tr><td>deprecated 컬럼 파이프라인</td><td><span class="badge deprecated">deprecated</span></td><td>이력 보존, 신규 실행 금지</td></tr>
+      </table>
+    </section>
+
+    <section class="panel">
+      <h2>전체 파일 목록</h2>
+      <h3>COMMANDS</h3>
+      <ol class="cols">
+        <li>_COMMANDS/_command_registry.md</li><li>_COMMANDS/chatbot_coding.md</li><li>_COMMANDS/compose.md</li><li>_COMMANDS/crystallization.md</li><li>_COMMANDS/dashboard_raw.md</li><li>_COMMANDS/external_ingest.md</li><li>_COMMANDS/fable-react-audit.md</li><li>_COMMANDS/ingest.md</li><li>_COMMANDS/lcp.md</li><li>_COMMANDS/MOC갱신.md</li><li>_COMMANDS/publish_hub.md</li><li>_COMMANDS/README.md</li><li>_COMMANDS/spark.md</li><li>_COMMANDS/간편법률검증.md</li><li>_COMMANDS/계약분쟁자문.md</li><li>_COMMANDS/몽땅정리.md</li><li>_COMMANDS/법률검증_생활법률150_후속명령서.md</li><li>_COMMANDS/법률검증보완.md</li><li>_COMMANDS/법률대시보드.md</li><li>_COMMANDS/사건마감.md</li><li>_COMMANDS/엘박스검증.md</li><li>_COMMANDS/연구팀.md</li><li>_COMMANDS/웹게시.md</li><li>_COMMANDS/인용감사.md</li><li>_COMMANDS/총서연결.md</li><li>_COMMANDS/컬럼.md</li><li>_COMMANDS/해결.md</li>
+      </ol>
+      <h3>WORKFLOWS</h3>
+      <ol class="cols">
+        <li>_WORKFLOWS/_lcp_mcp_pending.md</li><li>_WORKFLOWS/_lcp_pack_registry.md</li><li>_WORKFLOWS/_workflow_registry.md</li><li>_WORKFLOWS/content_indexing_workflow.md</li><li>_WORKFLOWS/elbox_verify_workflow.md</li><li>_WORKFLOWS/fable_systemprompt_implant_20260710.md</li><li>_WORKFLOWS/GitHub-Actions-변호사-자동화-가이드.md</li><li>_WORKFLOWS/html_pdf_tools/doc_to_html.ps1</li><li>_WORKFLOWS/html_pdf_tools/html_to_pdf.mjs</li><li>_WORKFLOWS/html_pdf_tools/publish_html.ps1</li><li>_WORKFLOWS/html_pdf_tools/웹게시_design.md</li><li>_WORKFLOWS/html_pdf_workflow.md</li><li>_WORKFLOWS/indexer.py</li><li>_WORKFLOWS/LCP_manual_20260709.md</li><li>_WORKFLOWS/lcp_진행상황_다음작업명령서_20260709.md</li><li>_WORKFLOWS/legal_citation_audit.md</li><li>_WORKFLOWS/legal_content_pack_loop.md</li><li>_WORKFLOWS/legal_simple_verify_workflow.md</li><li>_WORKFLOWS/legal_verify_enrich_workflow.md</li><li>_WORKFLOWS/norm_implant_20260710.md</li><li>_WORKFLOWS/norm_info_20260710.md</li><li>_WORKFLOWS/posts_coverage.md</li><li>_WORKFLOWS/posts_spark.md</li><li>_WORKFLOWS/계약분쟁_버티컬_완주_20260710.md</li><li>_WORKFLOWS/문제해결_어벤저스_사용설명서_20260710.md</li><li>_WORKFLOWS/문제해결_오케스트레이터.md</li><li>_WORKFLOWS/법률연구팀_오케스트레이터.md</li><li>_WORKFLOWS/볼트_판단인코딩_진단_20260710.md</li><li>_WORKFLOWS/사고법/사고법_사용설명서.md</li><li>_WORKFLOWS/사고법/사고법_워크플로우.md</li><li>_WORKFLOWS/수익화_실행안_계약분쟁_20260710.md</li><li>_WORKFLOWS/업그레이드_안내문_20260424.md</li><li>_WORKFLOWS/업그레이드_에이전트_사용설명서_20260711.md</li><li>_WORKFLOWS/자비스_오케스트레이터.md</li><li>_WORKFLOWS/컬럼생성_사례형/LOG.md</li><li>_WORKFLOWS/컬럼생성_사례형/MASTER_PROMPT.md</li><li>_WORKFLOWS/컬럼생성_사례형/PROGRESS.json</li><li>_WORKFLOWS/컬럼생성_사례형/QUEUE.md</li><li>_WORKFLOWS/컬럼생성_사례형/WORKFLOW.md</li><li>_WORKFLOWS/페이스북_컬럼_자동생성_워크플로우.md</li>
+      </ol>
+    </section>
+
+    <footer>상세 원본: _WORKFLOWS/스킬_웍플로우_커맨즈정리_20260714.md · 생성 기준: 2026-07-14</footer>
+  </main>
+</body>
+</html>
