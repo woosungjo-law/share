@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>DYSCOPEKOREA 사업계획 분석 보고서</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<style>
+:root {
+  --bg: #f7f6f3;
+  --panel: #ffffff;
+  --panel2: #f1efec;
+  --line: #e4dfda;
+  --line2: #cdc5bd;
+  --ink: #1a1715;
+  --ink2: #4d4742;
+  --muted: #8a8078;
+  --faint: #b0a89f;
+  --accent: #1e3a5f;
+  --accent-d: #13243c;
+  --accent-l: #2c5691;
+  --accent-tint: #eef3f9;
+  --accent-tint-ln: #d6e0ed;
+  --rH: #c74a3c;
+  --rM: #b45309;
+  --rL: #287a54;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-size: 16px; line-height: 1.85;
+  color: var(--ink); background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+/* Header */
+.header {
+  background: linear-gradient(135deg, var(--accent-d) 0%, var(--accent) 100%);
+  color: #fff; padding: 60px 24px 44px;
+  position: relative;
+}
+.header::after {
+  content: ''; position: absolute; bottom: 0; left: 0;
+  width: 80px; height: 4px;
+  background: var(--accent-l); border-radius: 0 2px 2px 0;
+}
+.header-meta {
+  font-size: 13px; font-weight: 500;
+  color: rgba(255,255,255,.55);
+  letter-spacing: .04em;
+  margin-bottom: 12px;
+}
+.header-meta span::before { content: '·'; margin: 0 8px; opacity: .4; }
+.header-meta span:first-child::before { content: none; }
+.header h1 {
+  font-size: 28px; font-weight: 700;
+  line-height: 1.35; letter-spacing: -.015em;
+  color: #fff; margin-bottom: 16px;
+}
+.header .attribution {
+  font-size: 14px; color: rgba(255,255,255,.6);
+  line-height: 1.6;
+}
+.header .attribution strong { color: rgba(255,255,255,.85); font-weight: 500; }
+/* Container */
+.container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+/* Executive Summary */
+.summary {
+  margin-top: -20px; position: relative; z-index: 1;
+  background: var(--panel); border-radius: 8px;
+  border-left: 4px solid var(--accent); padding: 28px 32px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.04);
+}
+.summary h2 {
+  font-size: 14px; font-weight: 600; color: var(--accent);
+  letter-spacing: .08em; text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.summary ul { list-style: none; }
+.summary li {
+  font-size: 15px; line-height: 1.7; color: var(--ink2);
+  padding-left: 20px; position: relative; margin-bottom: 8px;
+}
+.summary li:last-child { margin-bottom: 0; }
+.summary li::before {
+  content: ''; position: absolute; left: 2px; top: 9px;
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--accent); opacity: .5;
+}
+.summary-tags { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 6px; }
+.summary-tags span {
+  display: inline-block; padding: 3px 10px;
+  font-size: 11px; font-weight: 600; letter-spacing: .04em;
+  background: var(--accent-tint); color: var(--accent);
+  border-radius: 12px;
+}
+/* TOC */
+.toc { margin: 40px 0; }
+.toc h2 {
+  font-size: 13px; font-weight: 600; color: var(--muted);
+  letter-spacing: .1em; text-transform: uppercase;
+  margin-bottom: 14px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.toc ol {
+  list-style: none; counter-reset: toc-counter;
+  display: flex; flex-direction: column; gap: 4px;
+}
+.toc li {
+  counter-increment: toc-counter; font-size: 15px;
+  padding: 6px 12px; border-radius: 6px;
+  transition: background .15s;
+}
+.toc li:hover { background: var(--panel2); }
+.toc li::before {
+  content: counter(toc-counter) ".";
+  font-weight: 600; color: var(--accent);
+  margin-right: 8px; font-size: 13px;
+}
+.toc a {
+  color: var(--ink2); text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color .15s, border-color .15s;
+}
+.toc a:hover { color: var(--accent); border-bottom-color: var(--accent-tint-ln); }
+/* Sections */
+.section {
+  padding: 40px 0; position: relative;
+  border-bottom: 1px solid var(--line);
+}
+.section:last-of-type { border-bottom: none; }
+.section:nth-child(even) { background: var(--panel2); margin: 0 -24px; padding: 40px 24px; border-radius: 8px; }
+.section-header {
+  display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px;
+}
+.section-number {
+  flex-shrink: 0; width: 28px; height: 28px;
+  background: var(--accent); color: #fff;
+  border-radius: 6px; display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 700; margin-top: 2px;
+}
+.section h2 {
+  font-size: 20px; font-weight: 600; color: var(--accent);
+  line-height: 1.4; letter-spacing: -.01em;
+  padding-top: 2px;
+}
+.section p {
+  font-size: 16px; line-height: 1.85; color: var(--ink);
+  margin-bottom: 14px;
+}
+.section p:last-child { margin-bottom: 0; }
+.section strong { color: var(--accent-d); font-weight: 600; }
+.section em { font-style: normal; color: var(--rM); font-weight: 500; }
+/* Tags inside sections */
+.tag-group { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+.tag {
+  display: inline-block; padding: 2px 8px;
+  font-size: 11px; font-weight: 600; letter-spacing: .03em;
+  border-radius: 4px;
+}
+.tag-accent { background: var(--accent-tint); color: var(--accent); }
+.tag-warn { background: #fef2f0; color: var(--rH); }
+.tag-ok { background: #edf7f2; color: var(--rL); }
+.tag-caution { background: #fef9ec; color: var(--rM); }
+/* Footer */
+.footer {
+  margin-top: 24px; padding: 28px 0 40px;
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+.footer p {
+  font-size: 13px; line-height: 1.6; color: var(--muted);
+}
+.footer .confidential {
+  margin-bottom: 6px; font-weight: 500; letter-spacing: .06em;
+  color: var(--ink2);
+}
+/* Responsive */
+@media (max-width: 640px) {
+  .header { padding: 40px 20px 32px; }
+  .header h1 { font-size: 22px; }
+  .container { padding: 0 20px; }
+  .summary { padding: 20px 20px; margin-top: -16px; }
+  .section:nth-child(even) { margin: 0 -20px; padding: 32px 20px; }
+  .section h2 { font-size: 18px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="container" style="max-width:800px;margin:0 auto;padding:0;">
+    <div class="header-meta">
+      <span>분석 보고서</span>
+      <span>2026-07-14</span>
+      <span>기밀</span>
+    </div>
+    <h1>AI 기반 시설물 안전진단 SaaS<br>사업계획 분석 보고서</h1>
+    <div class="attribution">
+      <strong>디와이스코프코리아</strong> (DYSCOPEKOREA) · 대상: 대흥건설·대흥토건 인수 검토 자문 연계<br>
+      출처: 사업계획 요약서 (25.03.17 최종)
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- EXECUTIVE SUMMARY -->
+<div class="summary">
+  <h2>Executive Summary</h2>
+  <ul>
+    <li>DYSCOPEKOREA는 스마트폰 카메라로 시설물 균열·손상을 AI 자동 진단하는 SaaS 솔루션 보유 — 진단 기간을 <strong>50일→7일</strong>, 비용을 <strong>4,500만원→1,000만원</strong>으로 단축</li>
+    <li>NET·NEP 인증, 국내 특허 5건, PCT 국제출원 완료 — 기술성은 인정받았으나 <strong>법정 진단 기준과의 정합성</strong> 및 <strong>현장 적용 실증(Reference Site)</strong>이 본격 사업화의 전제 조건</li>
+    <li>대흥건설·대흥토건 회생 M&A를 통해 건설업 면허와 시공 실적을 확보하려는 전략이나, <strong>자문 의뢰인·인수주체·인수 구조</strong>가 아직 확정되지 않아 자문 범위 특정이 첫 과제</li>
+    <li>AI 진단 결과의 <strong>법적 효력·책임 귀속</strong>(전문가 책임·제조물 책임법), 공공 B2G 시장 특성(Long Sales Cycle), 해외 진출 시 각국 규제 대응이 핵심 리스크로 식별됨</li>
+  </ul>
+  <div class="summary-tags">
+    <span>AI 안전진단</span>
+    <span>SaaS</span>
+    <span>회생 M&A</span>
+    <span>건설업 면허</span>
+    <span>규제 샌드박스</span>
+  </div>
+</div>
+
+<!-- TOC -->
+<div class="toc">
+  <h2>Table of Contents</h2>
+  <ol>
+    <li><a href="#s1">사업 개요</a></li>
+    <li><a href="#s2">현재 상황 — 회생기업 M&A와의 연계</a></li>
+    <li><a href="#s3">비즈니스 관점 검토</a></li>
+    <li><a href="#s4">기술 관점 검토</a></li>
+    <li><a href="#s5">재무 관점 검토</a></li>
+    <li><a href="#s6">법률 관점 검토</a></li>
+    <li><a href="#s7">종합 평가 및 제안</a></li>
+  </ol>
+</div>
+
+<!-- SECTION 1 -->
+<div class="section" id="s1">
+  <div class="section-number">1</div>
+  <h2>사업 개요</h2>
+  <div class="tag-group">
+    <span class="tag tag-accent">NET·NEP 인증</span>
+    <span class="tag tag-accent">특허 5건</span>
+    <span class="tag tag-accent">PCT 국제출원</span>
+  </div>
+  <p>디와이스코프코리아는 <strong>AI 기반 스마트폰 카메라 이미지 분석</strong> 기술로 건축물의 균열·손상을 자동 진단하고 안전진단 보고서를 생성하는 SaaS 솔루션을 제공합니다. NET(신기술인증)과 NEP(신제품인증)를 획득하였고, 국내 특허 5건과 PCT 국제출원을 보유하고 있습니다.</p>
+  <p>기존 안전진단 대비 <strong>진단기간 50일 → 7일</strong>, <strong>비용 4,500만원 → 1,000만원</strong> 수준으로 획기적인 효율 개선이 가능합니다. 주요 타겟 시장은 <strong>시설물안전법</strong>에 따라 정기안전진단이 의무화된 9,000㎡ 이상의 건축물입니다.</p>
+</div>
+
+<!-- SECTION 2 -->
+<div class="section" id="s2">
+  <div class="section-number">2</div>
+  <h2>현재 상황 — 회생기업 M&A와의 연계</h2>
+  <div class="tag-group">
+    <span class="tag tag-caution">의뢰인 미확정</span>
+    <span class="tag tag-caution">인수 구조 미확정</span>
+  </div>
+  <p>김동균 대표는 <strong>건설업 면허와 시공 실적</strong>을 확보하기 위해 회생절차 중인 대흥건설·대흥토건 인수를 검토 중입니다. 현재 법률 자문 의뢰를 위한 협의 단계에 있으며, <strong>자문 의뢰인(김동균 개인 / DYSCOPEKOREA 법인 / 별도 투자자)</strong>과 <strong>인수 구조</strong>가 아직 확정되지 않아, 이를 특정하는 것이 첫 번째 과제입니다.</p>
+</div>
+
+<!-- SECTION 3 -->
+<div class="section" id="s3">
+  <div class="section-number">3</div>
+  <h2>비즈니스 관점 검토</h2>
+  <div class="tag-group">
+    <span class="tag tag-caution">B2G Long Sales Cycle</span>
+    <span class="tag tag-caution">공공 입찰 장벽</span>
+    <span class="tag tag-accent">철 구조물 차별화</span>
+  </div>
+  <p><strong>시장 특성:</strong> 시설물안전법에 따라 법정 의무검사가 존재해 안정적 수요가 있으나, 발주 대부분이 공공기관을 통해 이루어져 B2G 영업 역량이 필수적입니다. <strong>진단 결과의 법적 효력</strong>과 <strong>책임 귀속</strong>(전문가 책임보험)도 함께 검토해야 할 사항입니다.</p>
+  <p><strong>경쟁 환경:</strong> 한국시설안전공단 등 기존 사업자가 시장을 장악하고 있어 가격 경쟁만으로는 진입이 어렵습니다. 해외 시장(베트남·터키·인도네시아 합계 약 6,000억 원 규모 추정)은 매력적이나, 각국 <strong>건축 법규·인허가 체계</strong>와 <strong>현지 파트너십 구축</strong>에 장기간이 소요됩니다. 철(IRON) 구조물 분석 기술은 경쟁사와의 차별화 요소이나, 타 구조물(콘크리트·목재)로 확장 계획을 점검해야 합니다.</p>
+  <p><strong>비즈니스 모델:</strong> SaaS 방식으로 초기 인프라 부담은 낮으나, 공공 고객의 <strong>Long Sales Cycle</strong>로 현금흐름 안정화까지 시간이 소요됩니다. 건설업 인수는 시장 진입 장벽 극복을 위한 전략으로 이해되나, 인수 후 <strong>PMI(조직 통합)와 기술 인력 이탈 방지</strong>가 별도 과제입니다.</p>
+</div>
+
+<!-- SECTION 4 -->
+<div class="section" id="s4">
+  <div class="section-number">4</div>
+  <h2>기술 관점 검토</h2>
+  <div class="tag-group">
+    <span class="tag tag-accent">NET·NEP 인증</span>
+    <span class="tag tag-warn">법정 기준 충족 여부</span>
+    <span class="tag tag-warn">데이터 보안 (Cloud Act)</span>
+  </div>
+  <p><strong>정확도·강건성:</strong> 스마트폰 카메라 기반 진단의 <strong>조명·각도·기상 조건 강건성</strong>을 실제 현장 데이터로 검증해야 합니다. NET·NEP 인증은 기술성 자체를 인정받은 것이나, <strong>실제 Reference Site 확보</strong>와 장기 성능 데이터 축적이 본격 사업화의 전제 조건입니다. 보유 특허의 권리 범위가 경쟁사 회피 설계를 막을 수준인지도 확인 필요합니다.</p>
+  <p><strong>규제 정합성:</strong> 시설물안전법·건축물관리법 및 국토교통부 고시 「안전점검 및 정밀안전진단 세부기준」 등 법정 기준을 충족해야 합니다. 비용·시간 절감 효과가 아무리 커도 <strong>법정 기준을 충족하지 못하면 공식 안전진단으로 인정되지 않습니다.</strong></p>
+  <p><strong>데이터 보안:</strong> 건축물 안전진단 정보는 공공 인프라 민감 정보에 해당할 수 있어, 개인정보보호법과 국가정보원 보안지침을 준수해야 합니다. 클라우드 SaaS의 경우 <strong>해외 서버 저장 관련 법적 문제</strong>(미국 Cloud Act와의 충돌 가능성)도 사전 검토가 필요합니다.</p>
+</div>
+
+<!-- SECTION 5 -->
+<div class="section" id="s5">
+  <div class="section-number">5</div>
+  <h2>재무 관점 검토</h2>
+  <div class="tag-group">
+    <span class="tag tag-caution">공격적 시장 점유율 가정</span>
+    <span class="tag tag-warn">LBO 부인권 위험</span>
+  </div>
+  <p><strong>초기 투자:</strong> AI 모델 고도화, 현장 실증, 인증 취득, 영업망 구축에 상당한 자금이 필요합니다. <strong>인수 자금과 운전자금(Working Capital)은 별도로 확보</strong>해야 합니다.</p>
+  <p><strong>시장 점유율 가정:</strong> 사업계획의 "글로벌 시장 점유율 50% 달성" 목표는 <strong>공격적인 가정</strong>입니다. TAM·SAM·SOM을 보다 현실적으로 분석하고, 서비스 가격·예상 계약 건수·고객 갱신율 등의 가정을 검증할 필요가 있습니다.</p>
+  <p><strong>인수 금융 리스크:</strong> LBO 방식이나 대상 회사 자산 담보 제공 구조가 포함된다면, <strong>채무자 회생법상 부인권·사해행위 취소 위험</strong>과 공익채권 변제 계획과의 충돌 가능성을 검토해야 합니다. 인수 후 결합법인의 재무 상태가 건설업 면허 유지 요건에 영향을 주지 않는지도 확인이 필요합니다.</p>
+</div>
+
+<!-- SECTION 6 -->
+<div class="section" id="s6">
+  <div class="section-number">6</div>
+  <h2>법률 관점 검토</h2>
+  <div class="tag-group">
+    <span class="tag tag-warn">AI 진단 책임 귀속</span>
+    <span class="tag tag-warn">기술사 서명 요건</span>
+    <span class="tag tag-caution">회생계획 인가 전/후 M&A</span>
+  </div>
+  <p><strong>인수 구조:</strong> 가장 시급한 과제는 <strong>자문 의뢰인·실제 투자자·인수주체의 분리 확정</strong>입니다. 회생계획 인가 전 M&A와 인가 후 M&A는 절차와 리스크가 완전히 다르므로, 대상 회사별로 적합한 방식을 선택해야 합니다. IP·규제·계약·고용 등 전반에 걸친 <strong>법률 실사</strong>가 필수적입니다.</p>
+  <p><strong>AI 진단 책임:</strong> AI 자동 생성 진단 결과에 하자가 있을 경우 <strong>전문가 책임</strong> 또는 <strong>제조물 책임법</strong> 적용 여부가 문제될 수 있습니다. 건축사법·기술사법에 따라 안전진단 보고서에 <strong>기술사의 확인·서명</strong>이 필요한 경우가 많아, AI 자동 보고서가 이 요건을 충족할 수 있는지 확인해야 합니다.</p>
+  <p><strong>해외 진출:</strong> 각국의 <strong>지식재산권 보호 체계, 기술 이전 규제, 반독점법</strong> 등도 별도 검토가 필요합니다.</p>
+</div>
+
+<!-- SECTION 7 -->
+<div class="section" id="s7">
+  <div class="section-number">7</div>
+  <h2>종합 평가 및 제안</h2>
+  <div class="tag-group">
+    <span class="tag tag-accent">기술 혁신성 ↑</span>
+    <span class="tag tag-caution">시장 리스크 중간</span>
+    <span class="tag tag-ok">M&A 연계 전략 합리적</span>
+  </div>
+  <p>DYSCOPEKOREA의 AI 기반 안전진단 솔루션은 <strong>기술적 혁신성과 시장성이 충분히 인정</strong>되는 사업입니다. 다만 단계적인 접근이 필요합니다.</p>
+  <p><strong>단기:</strong> AI 진단 기술의 공인된 방식 검증 → Reference Site 확보 → 법정 진단 기준과의 정합성 확인 (<strong>규제 샌드박스·실증특례</strong> 활용 검토)</p>
+  <p><strong>중기:</strong> B2G 영업 채널 체계적 구축 → 건설업 면허·시공 실적 확보 (대흥건설·대흥토건 인수 또는 별도 취득) → 해외 시장 현지 파트너십 준비</p>
+  <p><strong>장기:</strong> 철 구조물 외 콘크리트·목재 등 진단 대상 확장 → 동남아·중동·터키 등 해외 시장 본격 진출</p>
+  <p style="margin-top:20px;padding:16px 20px;background:var(--accent-tint);border-radius:8px;color:var(--accent-d);font-weight:500;">현재 진행 중인 회생 M&A 자문은 건설업 면허와 시공 실적 확보에 직결되어 있습니다. <strong>인수 구조 법률 검토와 사업화 전략을 분리하지 말고 연계하여 진행</strong>하는 것이 효과적입니다.</p>
+</div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="container" style="max-width:800px;margin:0 auto;padding:0;">
+    <p class="confidential">기밀 — 법률업무 검토용 내부 메모</p>
+    <p>작성일: 2026-07-14 &nbsp;·&nbsp; 출처: DYSCOPEKOREA 사업계획 요약서 (25.03.17)</p>
+    <p style="margin-top:8px;">이 문서는 법률 자문에 선행하는 사업적·기술적 검토 사항을 정리한 내부 메모입니다.</p>
+  </div>
+</div>
+
+</body>
+</html>
