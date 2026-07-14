@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>스킬·워크플로우·커맨즈 정리</title>
+  <style>
+    :root{--ink:#172033;--muted:#5f6b7a;--line:#dfe5ef;--paper:#ffffff;--bg:#f7f8fb;--blue:#133b5c;--green:#1e6f5c;--amber:#8a5a12;--red:#8f1d1d}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans KR","Pretendard","Malgun Gothic",sans-serif}
+    .hero{padding:36px 42px;background:linear-gradient(135deg,var(--blue),var(--green) 56%,var(--amber));color:white}
+    .hero h1{margin:0 0 10px;font-size:34px;letter-spacing:0}
+    .hero p{margin:0;max-width:980px;line-height:1.65;color:#eef6f3}
+    main{max-width:1180px;margin:0 auto;padding:28px 22px 48px}
+    .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:22px}
+    .card,.section{background:var(--paper);border:1px solid var(--line);border-radius:8px;box-shadow:0 1px 2px rgba(22,34,51,.05)}
+    .card{padding:18px}
+    .card strong{display:block;font-size:34px;color:var(--blue);line-height:1}
+    .card span{display:block;margin-top:8px;color:var(--muted);font-size:13px}
+    .section{padding:20px;margin:16px 0}
+    h2{margin:0 0 12px;font-size:20px}
+    p{line-height:1.65;color:#425166}
+    table{width:100%;border-collapse:collapse;font-size:13px}
+    th{background:#edf2f7;text-align:left;color:#29364a}
+    th,td{padding:9px 10px;border-bottom:1px solid #e7ebf2;vertical-align:top}
+    .badge{display:inline-block;border-radius:999px;padding:2px 8px;font-size:12px;font-weight:700}
+    .active{background:#e3f4ed;color:#116149}.review{background:#fff1d6;color:#7a4d00}.deprecated{background:#ffe2e2;color:var(--red)}
+    .note{background:#f3f6fb;border-left:4px solid var(--green);padding:12px 14px;border-radius:6px;color:#35445a}
+    .cols{columns:2;column-gap:28px}.cols li{break-inside:avoid;margin:0 0 6px}
+    code{font-family:Consolas,monospace;color:#263449}
+    footer{color:#66758a;font-size:12px;margin-top:18px}
+    @media(max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.cols{columns:1}.hero{padding:26px 22px}}
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <h1>지식관리 운영 자산 대시보드</h1>
+    <p>Commands는 사용자 트리거, Workflows는 실행 절차의 정본, Skills는 툴별 능력 카드다. 이 문서는 2026-07-14 현재 파일 시스템과 레지스트리 기준으로 세 계층을 한 화면에 정리한다.</p>
+  </header>
+  <main>
+    <section class="grid">
+      <div class="card"><strong>27</strong><span>_COMMANDS 파일</span></div>
+      <div class="card"><strong>40</strong><span>_WORKFLOWS 파일·도구</span></div>
+      <div class="card"><strong>8</strong><span>.claude/skills</span></div>
+      <div class="card"><strong>3</strong><span>.claude/commands</span></div>
+    </section>
+
+    <section class="section">
+      <h2>운영 원칙</h2>
+      <table>
+        <tr><th>계층</th><th>역할</th><th>정리 기준</th></tr>
+        <tr><td>COMMANDS</td><td>자연어·슬래시 명령을 정본으로 보내는 라우터</td><td>트리거, owner, canonical, 첫 동작만 남긴다.</td></tr>
+        <tr><td>WORKFLOWS</td><td>실제 실행 절차, 파이프라인, 체크리스트의 정본</td><td>상세 절차는 여기 또는 각 WIKI 정본 문서에 둔다.</td></tr>
+        <tr><td>SKILLS</td><td>툴이 언제 어떤 능력을 켜야 하는지 알려주는 카드</td><td>긴 절차를 복붙하지 않고 canonical workflow를 가리킨다.</td></tr>
+      </table>
+      <p class="note">2026-07-14 정리 결과: 웹게시와 법률-문제해결은 포인터화했고, 사례형 법률컬럼 옛 파이프라인은 신규 실행 중지(deprecated)로 고정했다.</p>
+    </section>
+
+    <section class="section">
+      <h2>주요 명령 레지스트리</h2>
+      <table>
+        <tr><th>명령/트리거</th><th>정본·원본</th><th>상태</th><th>메모</th></tr>
+        <tr><td>ingest, gardening, lint</td><td>_COMMANDS/ingest.md</td><td><span class="badge active">active</span></td><td>WIKI별 AGENTS/CLAUDE 우선</td></tr>
+        <tr><td>external ingest</td><td>_COMMANDS/external_ingest.md</td><td><span class="badge active">active</span></td><td>외부 경로를 raw_sources로 편입</td></tr>
+        <tr><td>/compose</td><td>_COMMANDS/compose.md</td><td><span class="badge active">active</span></td><td>컬럼·강의·전자책 초고</td></tr>
+        <tr><td>/lcp</td><td>_COMMANDS/lcp.md, _WORKFLOWS/legal_content_pack_loop.md</td><td><span class="badge active">active</span></td><td>법률 콘텐츠팩 루프</td></tr>
+        <tr><td>/컬럼</td><td>_COMMANDS/컬럼.md</td><td><span class="badge active">active</span></td><td>현행 저장 위치는 55_컬럼</td></tr>
+        <tr><td>/인용감사, /판례검증</td><td>_COMMANDS/인용감사.md, _WORKFLOWS/legal_citation_audit.md</td><td><span class="badge active">active</span></td><td>법률 인용 무결성 정비</td></tr>
+        <tr><td>/법률검증보완</td><td>_COMMANDS/법률검증보완.md, _WORKFLOWS/legal_verify_enrich_workflow.md</td><td><span class="badge active">active</span></td><td>내부 WIKI -> 웹 -> MCP -> 엘박스</td></tr>
+        <tr><td>/간편법률검증</td><td>_COMMANDS/간편법률검증.md, _WORKFLOWS/legal_simple_verify_workflow.md</td><td><span class="badge active">active</span></td><td>원문 직접 수정 + 변경기록</td></tr>
+        <tr><td>/엘박스검증</td><td>_COMMANDS/엘박스검증.md, _WORKFLOWS/elbox_verify_workflow.md</td><td><span class="badge active">active</span></td><td>의심선별·반영·독트린 수확</td></tr>
+        <tr><td>spark, crystal</td><td>_COMMANDS/spark.md, _COMMANDS/crystallization.md</td><td><span class="badge active">active</span></td><td>_ATELIER 체계</td></tr>
+        <tr><td>/publish-hub</td><td>_COMMANDS/publish_hub.md</td><td><span class="badge review">review</span></td><td>발행허브 운영</td></tr>
+        <tr><td>연구원장</td><td>_COMMANDS/연구팀.md, _WORKFLOWS/법률연구팀_오케스트레이터.md</td><td><span class="badge active">active</span></td><td>실장팀과 별도 법률연구팀</td></tr>
+        <tr><td>자비스</td><td>_WORKFLOWS/자비스_오케스트레이터.md</td><td><span class="badge active">active</span></td><td>팀모드보다 우선</td></tr>
+        <tr><td>웹게시</td><td>_COMMANDS/웹게시.md -> _WORKFLOWS/html_pdf_workflow.md</td><td><span class="badge active">active</span></td><td>명령 파일은 라우터</td></tr>
+        <tr><td>/해결</td><td>_COMMANDS/해결.md -> _WORKFLOWS/문제해결_오케스트레이터.md</td><td><span class="badge active">active</span></td><td>SOLVE 엔진</td></tr>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>정비·주의 항목</h2>
+      <table>
+        <tr><th>항목</th><th>상태</th><th>처리</th></tr>
+        <tr><td>옛 페이스북 컬럼 자동생성</td><td><span class="badge deprecated">deprecated</span></td><td>이력 보존. 신규 법률컬럼은 _COMMANDS/컬럼.md 사용.</td></tr>
+        <tr><td>사례형 법률컬럼 파이프라인</td><td><span class="badge deprecated">deprecated</span></td><td>50_outputs 경로 사용으로 신규 실행 중지. 55_컬럼 체계 사용.</td></tr>
+        <tr><td>README에는 있으나 전용 명령 파일이 없는 항목</td><td><span class="badge review">review</span></td><td>/promotion, /판례검증, /익명화, /소송체크, /사건대시보드_갱신</td></tr>
+        <tr><td>옛 _CREATION Spark/Crystal 자료</td><td><span class="badge review">review</span></td><td>_ATELIER 체계로 이관 여부 결정 필요</td></tr>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>COMMANDS 전체 파일</h2>
+      <ol class="cols">
+        <li>_COMMANDS/_command_registry.md</li><li>_COMMANDS/chatbot_coding.md</li><li>_COMMANDS/compose.md</li><li>_COMMANDS/crystallization.md</li><li>_COMMANDS/dashboard_raw.md</li><li>_COMMANDS/external_ingest.md</li><li>_COMMANDS/fable-react-audit.md</li><li>_COMMANDS/ingest.md</li><li>_COMMANDS/lcp.md</li><li>_COMMANDS/MOC갱신.md</li><li>_COMMANDS/publish_hub.md</li><li>_COMMANDS/README.md</li><li>_COMMANDS/spark.md</li><li>_COMMANDS/간편법률검증.md</li><li>_COMMANDS/계약분쟁자문.md</li><li>_COMMANDS/몽땅정리.md</li><li>_COMMANDS/법률검증_생활법률150_후속명령서.md</li><li>_COMMANDS/법률검증보완.md</li><li>_COMMANDS/법률대시보드.md</li><li>_COMMANDS/사건마감.md</li><li>_COMMANDS/엘박스검증.md</li><li>_COMMANDS/연구팀.md</li><li>_COMMANDS/웹게시.md</li><li>_COMMANDS/인용감사.md</li><li>_COMMANDS/총서연결.md</li><li>_COMMANDS/컬럼.md</li><li>_COMMANDS/해결.md</li>
+      </ol>
+    </section>
+
+    <section class="section">
+      <h2>SKILLS 및 Claude 전용 명령</h2>
+      <table>
+        <tr><th>구분</th><th>파일</th><th>역할</th></tr>
+        <tr><td>Skill</td><td>.claude/skills/defuddle.md</td><td>웹·문서 정리</td></tr>
+        <tr><td>Skill</td><td>.claude/skills/html-pdf-pipeline.md</td><td>HTML/PDF 파이프라인</td></tr>
+        <tr><td>Skill</td><td>.claude/skills/json-canvas.md</td><td>Canvas 파일</td></tr>
+        <tr><td>Skill</td><td>.claude/skills/obsidian-bases.md</td><td>Obsidian Bases</td></tr>
+        <tr><td>Skill</td><td>.claude/skills/obsidian-cli.md</td><td>Obsidian CLI</td></tr>
+        <tr><td>Skill</td><td>.claude/skills/obsidian-markdown.md</td><td>Obsidian Markdown 작성 규칙</td></tr>
+        <tr><td>Skill</td><td>.claude/skills/법률-문제해결.md</td><td>법률 문제 구조화. 정본은 사고법 워크플로우</td></tr>
+        <tr><td>Skill</td><td>.claude/skills/자비스.md</td><td>자비스 호출 카드</td></tr>
+        <tr><td>Claude command</td><td>.claude/commands/검증반영.md</td><td>전자책 검증 반영 포인터</td></tr>
+        <tr><td>Claude command</td><td>.claude/commands/검증질문.md</td><td>전자책 검증 질문 포인터</td></tr>
+        <tr><td>Claude command</td><td>.claude/commands/법률-문제해결.md</td><td>사고법 워크플로우 포인터</td></tr>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>WORKFLOWS 전체 파일</h2>
+      <ol class="cols">
+        <li>_WORKFLOWS/_lcp_mcp_pending.md</li><li>_WORKFLOWS/_lcp_pack_registry.md</li><li>_WORKFLOWS/_workflow_registry.md</li><li>_WORKFLOWS/content_indexing_workflow.md</li><li>_WORKFLOWS/elbox_verify_workflow.md</li><li>_WORKFLOWS/fable_systemprompt_implant_20260710.md</li><li>_WORKFLOWS/GitHub-Actions-변호사-자동화-가이드.md</li><li>_WORKFLOWS/html_pdf_tools/doc_to_html.ps1</li><li>_WORKFLOWS/html_pdf_tools/html_to_pdf.mjs</li><li>_WORKFLOWS/html_pdf_tools/publish_html.ps1</li><li>_WORKFLOWS/html_pdf_tools/웹게시_design.md</li><li>_WORKFLOWS/html_pdf_workflow.md</li><li>_WORKFLOWS/indexer.py</li><li>_WORKFLOWS/LCP_manual_20260709.md</li><li>_WORKFLOWS/lcp_진행상황_다음작업명령서_20260709.md</li><li>_WORKFLOWS/legal_citation_audit.md</li><li>_WORKFLOWS/legal_content_pack_loop.md</li><li>_WORKFLOWS/legal_simple_verify_workflow.md</li><li>_WORKFLOWS/legal_verify_enrich_workflow.md</li><li>_WORKFLOWS/norm_implant_20260710.md</li><li>_WORKFLOWS/norm_info_20260710.md</li><li>_WORKFLOWS/posts_coverage.md</li><li>_WORKFLOWS/posts_spark.md</li><li>_WORKFLOWS/계약분쟁_버티컬_완주_20260710.md</li><li>_WORKFLOWS/문제해결_어벤저스_사용설명서_20260710.md</li><li>_WORKFLOWS/문제해결_오케스트레이터.md</li><li>_WORKFLOWS/법률연구팀_오케스트레이터.md</li><li>_WORKFLOWS/볼트_판단인코딩_진단_20260710.md</li><li>_WORKFLOWS/사고법/사고법_사용설명서.md</li><li>_WORKFLOWS/사고법/사고법_워크플로우.md</li><li>_WORKFLOWS/수익화_실행안_계약분쟁_20260710.md</li><li>_WORKFLOWS/업그레이드_안내문_20260424.md</li><li>_WORKFLOWS/업그레이드_에이전트_사용설명서_20260711.md</li><li>_WORKFLOWS/자비스_오케스트레이터.md</li><li>_WORKFLOWS/컬럼생성_사례형/LOG.md</li><li>_WORKFLOWS/컬럼생성_사례형/MASTER_PROMPT.md</li><li>_WORKFLOWS/컬럼생성_사례형/PROGRESS.json</li><li>_WORKFLOWS/컬럼생성_사례형/QUEUE.md</li><li>_WORKFLOWS/컬럼생성_사례형/WORKFLOW.md</li><li>_WORKFLOWS/페이스북_컬럼_자동생성_워크플로우.md</li>
+      </ol>
+    </section>
+    <footer>생성 기준: 2026-07-14, 파일 시스템 목록 + _COMMANDS/_command_registry.md + _WORKFLOWS/_workflow_registry.md.</footer>
+  </main>
+</body>
+</html>
