@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>DART MCP의 Legal Risk Foundry 접목 전략 보고서</title>
+  <style>
+    :root{--bg:#f5f1f2;--panel:#fff;--panel2:#faf6f7;--line:#ebe2e5;--line2:#ddccd2;--ink:#2c1d26;--ink2:#56424c;--muted:#8a7b82;--wine:#7a2e3a;--wine-d:#5a1f2b;--wine-l:#9c4456;--wine-tint:#f4e9ec;--wine-tint-ln:#ecd7dd;--header-bg:#3a1525;--header-bg2:#4e1f32;--header-accent:#d4a0aa;--rH:#c74a3c;--rM-bg:#f8e4b8;--rM-tx:#7d520a;--rL-bg:#d6ecdb;--rL-tx:#287a54}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:Pretendard,"Malgun Gothic",Arial,sans-serif;line-height:1.65}
+    .wrap{max-width:1080px;margin:0 auto;padding:0 20px 48px}
+    header{margin:24px 0 18px;background:linear-gradient(135deg,var(--header-bg),var(--header-bg2));color:#f7eef1;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.12)}
+    .hero{padding:30px 34px 28px}
+    .eyebrow{font-size:13px;font-weight:800;color:var(--header-accent);margin-bottom:8px}
+    h1{margin:0;font-size:28px;line-height:1.25;letter-spacing:0}
+    .meta{margin-top:14px;color:rgba(255,255,255,.72);font-size:13px}
+    .summary{display:grid;grid-template-columns:1.2fr .8fr;gap:16px;margin:18px 0}
+    .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px}
+    .callout{background:var(--wine-tint);border:1px solid var(--wine-tint-ln);border-left:5px solid var(--wine);border-radius:12px;padding:18px 20px}
+    h2{margin:34px 0 12px;font-size:20px;color:var(--wine-d)}
+    h3{margin:24px 0 10px;font-size:16px;color:var(--ink)}
+    p{margin:9px 0}
+    ul,ol{padding-left:22px}
+    li{margin:5px 0}
+    table{width:100%;border-collapse:collapse;margin:12px 0 18px;background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+    th,td{border:1px solid var(--line);padding:10px 12px;vertical-align:top;text-align:left}
+    th{background:var(--panel2);color:var(--wine-d);font-size:13px}
+    code{background:var(--panel2);border:1px solid var(--line);border-radius:5px;padding:1px 5px;font-family:Consolas,"Malgun Gothic",monospace;font-size:.92em}
+    pre{background:#2c1d26;color:#f8f1f3;border-radius:12px;padding:16px;overflow:auto}
+    pre code{background:transparent;border:0;color:inherit;padding:0}
+    .pill{display:inline-flex;align-items:center;border-radius:999px;background:var(--wine-tint);color:var(--wine-d);border:1px solid var(--wine-tint-ln);padding:4px 10px;font-size:12px;font-weight:700;margin:4px 5px 4px 0}
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .step{border-left:4px solid var(--wine);background:var(--panel);border-radius:10px;padding:14px 16px;border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .sources a{color:var(--wine-d)}
+    footer{margin-top:34px;color:var(--muted);font-size:12px}
+    @media(max-width:760px){.wrap{padding:0 12px 34px}.hero{padding:24px 20px}h1{font-size:23px}.summary,.grid3{grid-template-columns:1fr}table,thead,tbody,tr,th,td{display:block}thead{display:none}td{border-top:0}td:first-child{background:var(--panel2);font-weight:700;color:var(--wine-d)}}
+    @media print{body{background:#fff}.wrap{max-width:none}header,.card,.callout,.step,table{break-inside:avoid}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="hero">
+        <div class="eyebrow">리스크레이더 · 전략보고서</div>
+        <h1>DART MCP의 Legal Risk Foundry 접목 전략 보고서</h1>
+        <div class="meta">작성일 2026-07-20 · 담당 @진단 · 검토 @실장 · 상태 draft</div>
+      </div>
+    </header>
+
+    <section class="summary">
+      <div class="callout">
+        <strong>핵심 결론</strong>
+        <p>DART MCP는 Foundry에 붙일 가치가 높다. 다만 단순 공시 검색 도구가 아니라 <strong>공시 기반 리스크 시그널 레이어</strong>로 편입해야 한다.</p>
+      </div>
+      <div class="card">
+        <span class="pill">Disclosure Signal Layer</span>
+        <span class="pill">Counterparty Watch</span>
+        <span class="pill">Peer Watch Brief</span>
+        <span class="pill">Contract Risk Alert</span>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>1. 전략 판단</h2>
+      <p>현재 Foundry는 의뢰인 내부자료, 외부 시그널, 법리 스크리닝, Risk Radar 리포트를 결합하는 구조다. DART MCP는 여기에 네 번째 축인 공시 기반 공개 사실 레이어를 추가한다. 특히 상장사, 상장사 계열사, 거래상대방, 경쟁사, 발주처, 인수·투자 대상 기업이 있는 업무에서 가치가 크다.</p>
+      <ol>
+        <li>DART MCP를 <code>00_signals</code>의 하위 채널로 넣되, 일반 뉴스보다 높은 증거 등급을 준다.</li>
+        <li>클라이언트별 <code>signal_watchlist.md</code>에 <code>dart_watchlist</code> 블록을 추가한다.</li>
+        <li>공시에서 바로 법률 결론을 내리지 않고 <code>Disclosure Signal -> Risk Candidate -> Legal Screening -> Play/Report</code>의 4단계를 강제한다.</li>
+        <li>첫 제품화는 거래상대방·동종업계 공시 레이더로 시작하고, 그 다음 재무·지배구조 기반 계약 리스크 조기경보로 확장한다.</li>
+      </ol>
+    </section>
+
+    <h2>2. Foundry 접점</h2>
+    <table>
+      <thead><tr><th>기존 Foundry 레이어</th><th>현재 역할</th><th>DART MCP 접목 방식</th></tr></thead>
+      <tbody>
+        <tr><td><code>00_signals/</code></td><td>법령·판례·규제·업계 외부 시그널</td><td>공시 시그널 전용 수집 채널 추가</td></tr>
+        <tr><td>CO별 <code>signal_watchlist.md</code></td><td>업종·의뢰인별 외부 모니터링 기준</td><td>상장 거래상대방, 경쟁사, 발주처, 주요 공급처의 corp_code·종목코드 등록</td></tr>
+        <tr><td>CO별 <code>risks/RR-master.md</code></td><td>누적 리스크 레지스터</td><td>공시 변화가 H/M 리스크 후보가 될 때만 승격</td></tr>
+        <tr><td><code>legal_screen_matrix.md</code></td><td>반복 법리·규제 축</td><td>공시 항목과 지배구조, 내부통제, 대규모 거래, 우발채무, 소송, 담보 등 법리 축 매핑</td></tr>
+      </tbody>
+    </table>
+
+    <h2>3. DART MCP로 얻을 수 있는 신호</h2>
+    <p>OpenDART는 공시보고서 원문, 사업보고서 주요 항목, 주요 재무계정, 지분보고서, 주요사항보고서, 증권신고서 종합정보를 API로 활용할 수 있게 한다. 현재 공개된 MCP 구현들도 기업 개황, 공시 검색, 재무제표, 주요사항보고서, 주주·임원 현황 조회를 목표로 한다.</p>
+    <table>
+      <thead><tr><th>신호군</th><th>대표 데이터</th><th>Foundry 리스크 전환</th></tr></thead>
+      <tbody>
+        <tr><td>계속기업·재무 압박</td><td>매출 급감, 영업손실 지속, 부채비율 급등, 감사의견, 자본잠식</td><td>대금회수, 선급금, 보증, 계약해지, 담보 요구</td></tr>
+        <tr><td>우발채무·소송</td><td>소송 제기, 우발부채, 지급보증, 담보 제공</td><td>거래 지속 여부, 충당부채, 분쟁 가능성</td></tr>
+        <tr><td>지배구조·내부통제</td><td>최대주주 변경, 임원 변동, 내부회계관리제도, 감사 관련 기재</td><td>의사결정 권한, 이해상충, 내부통제 리스크</td></tr>
+        <tr><td>대규모 거래·투자</td><td>타법인 출자, 영업양수도, 합병·분할, 유상증자, CB/BW</td><td>계약 상대방 신용, 투자계약, 주주간계약, M&amp;A 리스크</td></tr>
+        <tr><td>특수관계자 거래</td><td>계열사 거래, 대여금, 지급보증, 내부거래</td><td>공정거래, 배임, 이사 책임, 세무 리스크</td></tr>
+        <tr><td>인력·노무</td><td>직원 수, 임원 보수, 사업부 변동</td><td>구조조정, 근로자성, 임금·퇴직금, 영업양도 노동 이슈</td></tr>
+        <tr><td>사업 내용 변화</td><td>신규 사업, 주요 고객·매출처, 사업 위험</td><td>인허가, 표시광고, 개인정보, 안전·품질 규제</td></tr>
+      </tbody>
+    </table>
+
+    <h2>4. 추천 아키텍처</h2>
+    <pre><code>_FOUNDRY_리걸리스크/
+├── 00_signals/
+│   ├── dart_raw/              # MCP 조회 결과 원문 또는 요약 JSON/MD
+│   ├── dart_ingested/         # 처리 완료 공시 시그널
+│   └── digest/                # 기존 주차별 digest에 DART 섹션 추가
+├── 00_settings/
+│   └── dart_mcp_protocol.md   # 조회·기록·기밀·승격 기준
+└── CO-NNN_기업명/
+    ├── signal_watchlist.md    # dart_watchlist 블록 추가
+    └── risks/
+        └── RR-master.md       # 승격된 공시 리스크만 반영</code></pre>
+    <div class="grid3">
+      <div class="step"><strong>1. 발견</strong><br>DART MCP 조회 결과를 <code>00_signals/dart_raw</code>에 저장한다.</div>
+      <div class="step"><strong>2. 선별</strong><br>Disclosure Signal 카드로 정리하고 업종·watchlist와 매칭한다.</div>
+      <div class="step"><strong>3. 승격</strong><br>H/M 후보만 RR-master와 법리 스크리닝으로 넘긴다.</div>
+    </div>
+
+    <h2>5. 제품화 전략</h2>
+    <h3>1단계: 거래상대방 공시 레이더</h3>
+    <p>의뢰인의 주요 거래상대방, 발주처, 공급처, 대리점, 인수 후보, 투자 대상을 모니터링한다. 재무 악화, 경영권 변동, 소송, 담보 제공, 감사의견 변화, 주요 계약 변동이 잡히면 Risk Radar에 반영한다.</p>
+    <h3>2단계: Peer Watch Brief</h3>
+    <p>동종 상장사의 주요사항보고서, 사업보고서 위험요인, 제재·소송 기재, 재무 악화 신호를 모아 의뢰인에게 우리 업종에서 반복되는 리스크로 보여준다.</p>
+    <h3>3단계: 계약 리스크 조기경보</h3>
+    <p>상대방 공시의 자본잠식, 영업손실, 우발채무, 최대주주 변경, 소송 증가가 감지되면 선급금 축소, 담보 요구, 기한이익 상실, 조기해지권, 진술·보장, 정보제공 의무를 계약 조항으로 제안한다.</p>
+
+    <h2>6. 법률·기밀 게이트</h2>
+    <ol>
+      <li>DART 검색어에 CO 코드, 의뢰인 내부자료 문구, 비공개 거래명, 미공개 상대방 정보를 넣지 않는다.</li>
+      <li>상장사명·종목코드·공시 유형처럼 공개 식별자만 사용한다.</li>
+      <li>공시 내용은 공개 사실로만 기록하고, 법적 평가는 <code>법리 스크리닝</code>으로 넘긴다.</li>
+      <li>법령·판례·행정해석이 필요한 결론은 내부 WIKI, 웹 화이트리스트, 한국법 MCP 검증을 거친다.</li>
+      <li>의뢰인 전달본에는 공시 출처, 접수번호, 공시일, 확인일을 남긴다.</li>
+    </ol>
+
+    <h2>7. 운영 루틴</h2>
+    <table>
+      <thead><tr><th>주기</th><th>작업</th></tr></thead>
+      <tbody>
+        <tr><td>주간</td><td>CO별 <code>dart_watchlist</code> 확인, 최근 7~14일 공시 조회, 의미 있는 공시만 시그널 카드화, H/M 후보를 RR-master에 연결, Flash Report 후보 판단</td></tr>
+        <tr><td>월간</td><td>주요 거래상대방의 재무제표·분기보고서 갱신, 재무 압박·소송·우발채무·지배구조 추세 비교, 계약조건 조정 필요성 도출</td></tr>
+      </tbody>
+    </table>
+
+    <h2>8. 리스크 등급화 기준</h2>
+    <table>
+      <thead><tr><th>공시 신호</th><th>기본 등급</th><th>승격 조건</th></tr></thead>
+      <tbody>
+        <tr><td>감사의견 변형, 계속기업 불확실성</td><td>High</td><td>의뢰인과 미수금·선급금·장기계약 존재</td></tr>
+        <tr><td>자본잠식, 회생·파산, 대규모 손실</td><td>High</td><td>거래상대방 또는 발주처</td></tr>
+        <tr><td>소송 제기, 대규모 우발채무</td><td>Medium~High</td><td>의뢰인 거래와 동일 사업부·제품군 관련</td></tr>
+        <tr><td>최대주주·대표이사 변경</td><td>Medium</td><td>계약 승인권자·신용 리스크와 연결</td></tr>
+        <tr><td>대규모 유상증자, CB/BW, 담보 제공</td><td>Medium</td><td>재무 압박 또는 지배구조 변동과 결합</td></tr>
+        <tr><td>사업목적·주요사업 변경</td><td>Monitoring~Medium</td><td>인허가·품질·개인정보·표시광고 리스크와 연결</td></tr>
+      </tbody>
+    </table>
+
+    <h2>9. 구현 우선순위</h2>
+    <div class="grid3">
+      <div class="step"><strong>Phase 1</strong><br><code>dart_mcp_protocol.md</code>, <code>dart_watchlist</code>, <code>dart_raw</code>, 공시 시그널 카드 템플릿 추가</div>
+      <div class="step"><strong>Phase 2</strong><br>주 1회 수동 MCP 조회, 공시 시그널 3~5개 선별, CO-003 Peer Watch 파일럿</div>
+      <div class="step"><strong>Phase 3</strong><br>digest 자동 초안, 공시 유형별 리스크 매핑, HTML 대시보드 Disclosure Radar 모듈</div>
+    </div>
+
+    <h2>10. 도입 판단</h2>
+    <table>
+      <tbody>
+        <tr><th>전략 적합성</th><td>매우 높음. Foundry의 외부 시그널 레이어를 공식 공시 데이터로 강화한다.</td></tr>
+        <tr><th>초기 난이도</th><td>중간. MCP 설치보다 조회 결과를 Foundry 스키마에 맞게 선별하는 것이 핵심이다.</td></tr>
+        <tr><th>즉시 매출화 가능성</th><td>높음. 거래상대방·동종업계 공시 레이더는 의뢰인 체감 가치가 선명하다.</td></tr>
+        <tr><th>법률 정확성 리스크</th><td>관리 가능. 공시는 사실 소스, 법리 결론은 별도 스크리닝으로 분리한다.</td></tr>
+        <tr><th>기밀 리스크</th><td>중간. 조회 대상 목록과 질의 맥락이 의뢰인 전략정보가 될 수 있으므로 watchlist 관리가 필요하다.</td></tr>
+        <tr><th>추천</th><td><strong>도입.</strong> 단, DART MCP 연결이 아니라 Disclosure Signal Layer로 제품화한다.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>11. 바로 다음 액션</h2>
+    <ol>
+      <li><code>00_settings/dart_mcp_protocol.md</code>를 만든다.</li>
+      <li><code>_TEMPLATE/signal_watchlist.md</code>에 <code>dart_watchlist</code> 블록을 추가한다.</li>
+      <li><code>00_signals/README.md</code>에 DART 공시 채널을 추가한다.</li>
+      <li>CO-003 아우토플라츠에서 자동차·모빌리티 관련 상장 Peer Watch를 파일럿으로 돌린다.</li>
+      <li>파일럿 결과가 위클리에 실제로 유용하면 HTML 대시보드에 <code>Disclosure Radar</code> 모듈을 넣는다.</li>
+    </ol>
+
+    <section class="card sources">
+      <h2>12. 작성 근거</h2>
+      <ul>
+        <li>Foundry 내부 구조: <code>AGENTS.md</code>, <code>_INDEX.md</code>, <code>리스크레이더_사용법_2.0.md</code>, <code>00_settings/web_research_protocol.md</code>, <code>00_signals/README.md</code>, <code>00_settings/legal_screening.md</code></li>
+        <li>공식 외부 근거: <a href="https://opendart.fss.or.kr/intro/main.do">금융감독원 OpenDART 오픈API 소개</a></li>
+        <li>MCP 구현 현황: <a href="https://mcpservers.org/servers/songhyojun0228/opendart-mcp-server">OpenDART MCP Server</a>, <a href="https://github.com/vertical-mcp/dart-mcp">vertical-mcp/dart-mcp</a>, <a href="https://github.com/gyeongmin100/Open-Dart-Plugin">OpenDART Plugin</a></li>
+      </ul>
+    </section>
+    <footer>noindex · Legal Risk Foundry · 2026-07-20</footer>
+  </main>
+</body>
+</html>
