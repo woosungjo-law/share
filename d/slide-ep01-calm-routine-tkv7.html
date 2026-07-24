@@ -31,36 +31,32 @@
     z-index:1;
   }
 
-  .nav {
-    position:fixed; bottom:2.5vh; left:50%; transform:translateX(-50%);
-    display:flex; align-items:center; gap:1vw;
-    background:rgba(20,20,20,0.85);
-    border-radius:40px;
-    padding:0.8vh 2vw;
+  .nav-arrows {
+    position:fixed; bottom:2vh; right:3vw;
+    display:flex; gap:0.8vw;
     z-index:100;
   }
-  .nav button {
-    background:none; border:none; color:#B0B0B0;
-    font-size:clamp(18px,2vw,28px); cursor:pointer;
-    padding:0.5vh 1vw; border-radius:6px; transition:all 0.15s;
+  .nav-arrow {
+    width:3vw; height:3vw; max-width:34px; max-height:34px; min-width:26px; min-height:26px;
+    border-radius:50%;
+    background:rgba(20,20,20,0.5);
+    border:none; color:#B0B0B0;
+    font-size:clamp(12px,1.4vw,18px);
+    cursor:pointer; display:flex; align-items:center; justify-content:center;
+    transition:all 0.15s;
   }
-  .nav button:hover { color:#FF8A65; }
-  .nav .dots { display:flex; gap:0.6vw; }
-  .nav .dot {
-    width:0.9vw; height:0.9vw; min-width:8px; min-height:8px; border-radius:50%;
-    background:#555; cursor:pointer; transition:all 0.2s;
-  }
-  .nav .dot.active { background:#C4704A; transform:scale(1.3); }
+  .nav-arrow:hover { background:rgba(196,112,74,0.75); color:#fff; }
 
   /* ====== SHARED ====== */
   .tag-sm { font-size:clamp(12px,1.2vw,18px); font-weight:700; color:#C4704A; letter-spacing:0.15em; }
   .section-title { font-size:clamp(26px,4.5vw,60px); font-weight:900; color:#2C2416; letter-spacing:-0.03em; line-height:1.3; }
-  .body-text { font-size:clamp(15px,2vw,26px); font-weight:400; color:#2C2416; line-height:1.75; }
+  .body-text { font-size:clamp(15px,2vw,26px); font-weight:400; color:#2C2416; line-height:1.75; word-break:keep-all; overflow-wrap:break-word; }
   .body-text em { color:#C4704A; font-style:normal; font-weight:500; }
   .body-text strong { color:#C4704A; font-weight:700; }
 
   .card {
     background:#FFF9F5; border-radius:1vw; padding:1.8vw 2vw;
+    word-break:keep-all; overflow-wrap:break-word;
   }
   .card-brand { border-left:0.4vw solid #C4704A; }
   .card-muted { border-left:0.4vw solid #E8A882; }
@@ -94,17 +90,17 @@
   .s1-hook strong { color:#C4704A; font-weight:700; }
 
   /* ====== SLIDE 2 — SPLIT STORY ====== */
-  .s2 { background:#FAF8F4; flex-direction:row; padding:6vh 5vw 8vh 5vw; gap:3vw; }
-  .s2-left { flex:1; display:flex; flex-direction:column; justify-content:center; }
-  .s2-right { flex:1; display:flex; flex-direction:column; justify-content:center; gap:1.5vw; }
+  .s2 { background:#FAF8F4; flex-direction:row; padding:5vh 5vw 5vh 5vw; gap:3vw; }
+  .s2-left { flex:1; display:flex; flex-direction:column; justify-content:center; min-width:0; }
+  .s2-right { flex:1; display:flex; flex-direction:column; justify-content:center; gap:1.5vw; min-width:0; }
   .s2-left .tag-sm { margin-bottom:1vh; }
   .s2-left .section-title { margin-bottom:2vh; }
 
   /* ====== SLIDE 3 — THREE COL ====== */
-  .s3 { background:#FAF8F4; padding:5vh 5vw 8vh 5vw; }
+  .s3 { background:#FAF8F4; padding:5vh 5vw 5vh 5vw; }
   .s3 .tag-sm { margin-bottom:0.8vh; }
   .s3 .section-title { margin-bottom:2.5vh; }
-  .cols3 { display:flex; gap:1.5vw; flex:1; margin-bottom:2vh; }
+  .cols3 { display:flex; gap:1.5vw; flex:1; margin-bottom:2vh; min-height:0; }
   .col3 {
     flex:1; background:#FFF9F5; border-radius:1vw; padding:1.8vw; text-align:center;
     display:flex; flex-direction:column; justify-content:center;
@@ -128,12 +124,12 @@
   .trans .ts { font-size:clamp(13px,1.7vw,24px); color:#7A6A55; line-height:1.65; }
 
   /* ====== SLIDE 4 — METHOD ====== */
-  .s4 { background:#FAF8F4; padding:5vh 5vw 8vh 5vw; }
+  .s4 { background:#FAF8F4; padding:5vh 5vw 5vh 5vw; }
   .s4 .tag-sm { margin-bottom:0.8vh; }
   .s4 .section-title { margin-bottom:2vh; }
-  .s4main { display:flex; gap:2vw; flex:1; }
-  .s4l { flex:1.1; display:flex; flex-direction:column; gap:1.2vw; }
-  .s4r { flex:0.9; display:flex; flex-direction:column; gap:1vw; justify-content:center; }
+  .s4main { display:flex; gap:2vw; flex:1; min-height:0; }
+  .s4l { flex:1.1; display:flex; flex-direction:column; gap:1.2vw; min-width:0; overflow:hidden; }
+  .s4r { flex:0.9; display:flex; flex-direction:column; gap:1vw; justify-content:center; min-width:0; overflow:hidden; }
   .ins {
     background:linear-gradient(90deg,#FFF9F5,transparent);
     border-radius:0.8vw; padding:1.5vw 2vw; margin-top:auto;
@@ -142,9 +138,9 @@
   .ins .it { font-size:clamp(13px,1.7vw,24px); font-weight:500; color:#2C2416; line-height:1.6; }
 
   /* ====== SLIDE 5 — CLOSING ====== */
-  .s5 { background:#FAF8F4; flex-direction:row; padding:6vh 5vw 8vh 5vw; gap:3vw; }
-  .s5l { flex:1.2; display:flex; flex-direction:column; justify-content:center; }
-  .s5r { flex:0.8; display:flex; flex-direction:column; justify-content:center; gap:1.2vw; }
+  .s5 { background:#FAF8F4; flex-direction:row; padding:5vh 5vw 5vh 5vw; gap:3vw; }
+  .s5l { flex:1.2; display:flex; flex-direction:column; justify-content:center; min-width:0; }
+  .s5r { flex:0.8; display:flex; flex-direction:column; justify-content:center; gap:1.2vw; min-width:0; }
   .s5-big {
     font-size:clamp(30px,5.5vw,76px); font-weight:900; color:#2C2416;
     letter-spacing:-0.04em; line-height:1.35; margin-bottom:2vh;
@@ -156,7 +152,7 @@
     margin-bottom:2vh;
   }
   .formula .fl { font-size:clamp(11px,1.2vw,17px); font-weight:700; letter-spacing:0.12em; color:#7A6A55; margin-bottom:0.5vh; }
-  .formula .ft { font-size:clamp(17px,2.6vw,34px); font-weight:900; color:#C4704A; letter-spacing:-0.02em; white-space:nowrap; }
+  .formula .ft { font-size:clamp(17px,2.6vw,34px); font-weight:900; color:#C4704A; letter-spacing:-0.02em; }
   .s5-cta { font-size:clamp(14px,1.8vw,24px); font-weight:500; color:#2C2416; line-height:1.65; }
   .s5-cta strong { color:#C4704A; font-weight:700; }
   .qhead { font-size:clamp(13px,1.5vw,22px); font-weight:700; color:#7A6A55; letter-spacing:0.12em; margin-bottom:0.8vh; }
@@ -299,32 +295,21 @@
 
 </div>
 
-<div class="nav">
-  <button onclick="move(-1)">&larr;</button>
-  <div class="dots" id="dots"></div>
-  <button onclick="move(1)">&rarr;</button>
+<div class="nav-arrows">
+  <button class="nav-arrow" onclick="move(-1)">&#x25C2;</button>
+  <button class="nav-arrow" onclick="move(1)">&#x25B8;</button>
 </div>
 
 <script>
   var slides = document.querySelectorAll('.slide');
-  var dotsEl = document.getElementById('dots');
   var total = slides.length;
   var idx = 0;
-
-  for (var i=0; i<total; i++) {
-    var d = document.createElement('span');
-    d.className = 'dot' + (i===0 ? ' active' : '');
-    d.setAttribute('onclick', 'goto(' + i + ')');
-    dotsEl.appendChild(d);
-  }
 
   function goto(n) {
     if (n<0 || n>=total) return;
     slides[idx].classList.remove('active');
-    dotsEl.children[idx].classList.remove('active');
     idx = n;
     slides[idx].classList.add('active');
-    dotsEl.children[idx].classList.add('active');
   }
 
   function move(dir) { goto(idx + dir); }
