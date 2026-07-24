@@ -54,6 +54,20 @@
   }
   .nav-arrow:hover { background:rgba(196,112,74,0.75); color:#fff; }
 
+  .dl-btn {
+    position:fixed; bottom:3vh; left:4vw;
+    display:flex; align-items:center; gap:0.5vw;
+    background:rgba(20,20,20,0.5);
+    border:none; border-radius:2vw;
+    color:#B0B0B0; padding:0.8vh 1.5vw;
+    font-size:clamp(11px,1.3vw,15px);
+    font-family:'Noto Sans KR',sans-serif;
+    cursor:pointer; z-index:100;
+    transition:all 0.15s;
+  }
+  .dl-btn:hover { background:rgba(196,112,74,0.75); color:#fff; }
+  .dl-btn .icon { font-size:clamp(13px,1.6vw,18px); }
+
   /* ====== CARD CONTENT STYLES — all use clamp() or % ====== */
   .c-cover { display:flex; align-items:center; justify-content:center; flex-direction:column; width:100%; height:100%; text-align:center; }
   .c-tag {
@@ -263,6 +277,11 @@
   <button class="nav-arrow" onclick="move(1)">&#x25B8;</button>
 </div>
 
+<button class="dl-btn" onclick="downloadCard()" title="PNG 다운로드">
+  <span class="icon">&#x2913;</span> PNG
+</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script>
   var cards = document.querySelectorAll('.card-view');
   var total = cards.length;
@@ -279,6 +298,25 @@
     if (e.key==='ArrowRight' || e.key==='ArrowDown' || e.key===' ') { e.preventDefault(); move(1); }
     if (e.key==='ArrowLeft' || e.key==='ArrowUp') { e.preventDefault(); move(-1); }
   });
+
+  function downloadCard() {
+    var frame = document.querySelector('.card-view.active .card-frame');
+    if (!frame) return;
+    var btn = document.querySelector('.dl-btn');
+    btn.textContent = '...';
+    btn.disabled = true;
+    html2canvas(frame, { scale: 2, backgroundColor: null, useCORS: true }).then(function(canvas) {
+      var link = document.createElement('a');
+      link.download = 'EP02_창업에서_수성으로_' + ('0'+(idx+1)) + '.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+      btn.innerHTML = '<span class="icon">&#x2913;</span> PNG';
+      btn.disabled = false;
+    }).catch(function() {
+      btn.innerHTML = '<span class="icon">&#x2913;</span> PNG';
+      btn.disabled = false;
+    });
+  }
 </script>
 </body>
 </html>
