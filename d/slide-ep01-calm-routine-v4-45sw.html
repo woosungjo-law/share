@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EP01. 평정심은 훈련된다 — 루틴의 힘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { width:100%; height:100%; overflow:hidden; background:#1C1C1C; font-family:'Noto Sans KR',sans-serif; }
+
+  .deck { width:100vw; height:100vh; position:relative; overflow:hidden; }
+  .slide {
+    width:100vw; height:100vh;
+    position:absolute; top:0; left:0;
+    display:none;
+    overflow:hidden;
+  }
+  .slide.active { display:flex; flex-direction:column; }
+  .slide-inner { width:100%; height:100%; position:relative; }
+
+  .accent-bar {
+    position:absolute; top:0; left:0; right:0; height:0.6vh;
+    background:linear-gradient(90deg,#C4704A,#E8A882);
+    z-index:1;
+  }
+  .slide-num {
+    position:absolute; bottom:1.5vw; right:4vw;
+    font-size:clamp(12px,1.4vw,20px); font-weight:700; color:#7A6A55; letter-spacing:0.12em;
+    z-index:1;
+  }
+
+  .nav-arrows {
+    position:fixed; bottom:2vh; right:3vw;
+    display:flex; gap:0.8vw;
+    z-index:100;
+  }
+  .nav-arrow {
+    width:3vw; height:3vw; max-width:34px; max-height:34px; min-width:26px; min-height:26px;
+    border-radius:50%;
+    background:rgba(20,20,20,0.5);
+    border:none; color:#B0B0B0;
+    font-size:clamp(12px,1.4vw,18px);
+    cursor:pointer; display:flex; align-items:center; justify-content:center;
+    transition:all 0.15s;
+  }
+  .nav-arrow:hover { background:rgba(196,112,74,0.75); color:#fff; }
+
+  /* ====== SHARED ====== */
+  .tag-sm { font-size:clamp(12px,1.2vw,18px); font-weight:700; color:#C4704A; letter-spacing:0.15em; }
+  .section-title { font-size:clamp(26px,4.5vw,60px); font-weight:900; color:#2C2416; letter-spacing:-0.03em; line-height:1.3; }
+  .body-text { font-size:clamp(15px,2vw,26px); font-weight:400; color:#2C2416; line-height:1.75; word-break:keep-all; overflow-wrap:break-word; }
+  .body-text em { color:#C4704A; font-style:normal; font-weight:500; }
+  .body-text strong { color:#C4704A; font-weight:700; }
+
+  .card {
+    background:#FFF9F5; border-radius:1vw; padding:1.8vw 2vw;
+    word-break:keep-all; overflow-wrap:break-word;
+  }
+  .card-brand { border-left:0.4vw solid #C4704A; }
+  .card-muted { border-left:0.4vw solid #E8A882; }
+  .card-light { border:1px solid #E8E2D8; }
+  .card-q { background:#FFF9F5; border-radius:1vw; padding:1.5vw 1.8vw; border-left:0.3vw solid #E8A882; }
+  .card-label { font-size:clamp(11px,1.2vw,17px); font-weight:700; letter-spacing:0.12em; color:#C4704A; margin-bottom:0.5vw; }
+  .card-muted .card-label { color:#A08A7A; }
+  .card-title { font-size:clamp(17px,2.4vw,32px); font-weight:700; color:#2C2416; margin-bottom:0.5vw; }
+  .card-desc { font-size:clamp(13px,1.6vw,22px); font-weight:400; color:#7A6A55; line-height:1.65; }
+  .card-desc strong { color:#C4704A; font-weight:700; }
+
+  /* ====== SLIDE 1 — COVER ====== */
+  .s1 { background:#FAF8F4; align-items:center; justify-content:center; }
+  .s1-inner { text-align:center; max-width:70vw; display:flex; flex-direction:column; align-items:center; }
+  .s1-tag {
+    display:inline-block;
+    font-size:clamp(12px,1.3vw,20px); font-weight:700; color:#C4704A;
+    letter-spacing:0.15em;
+    border:0.15vw solid #E8A882;
+    border-radius:2vw;
+    padding:0.6vh 2vw;
+    margin-bottom:3vh;
+  }
+  .s1-title { font-size:clamp(38px,7vw,96px); font-weight:900; color:#2C2416; letter-spacing:-0.03em; line-height:1.25; margin-bottom:1.5vh; }
+  .s1-sub { font-size:clamp(22px,4vw,54px); font-weight:700; color:#C4704A; letter-spacing:-0.02em; margin-bottom:3vh; }
+  .s1-divider { width:4vw; height:0.3vw; background:#E8A882; margin:2vh auto; max-width:48px; }
+  .s1-hook {
+    font-size:clamp(15px,1.9vw,26px); color:#7A6A55; line-height:1.75;
+    border-top:1px solid #E8E2D8; padding-top:2.5vh; max-width:50vw;
+  }
+  .s1-hook strong { color:#C4704A; font-weight:700; }
+
+  /* ====== SLIDE 2 — SPLIT STORY ====== */
+  .s2 { background:#FAF8F4; flex-direction:row; padding:5vh 5vw 5vh 5vw; gap:3vw; }
+  .s2-left { flex:1; display:flex; flex-direction:column; justify-content:center; min-width:0; }
+  .s2-right { flex:1; display:flex; flex-direction:column; justify-content:center; gap:1.5vw; min-width:0; }
+  .s2-left .tag-sm { margin-bottom:1vh; }
+  .s2-left .section-title { margin-bottom:2vh; }
+
+  /* ====== SLIDE 3 — THREE COL ====== */
+  .s3 { background:#FAF8F4; padding:5vh 5vw 5vh 5vw; }
+  .s3 .tag-sm { margin-bottom:0.8vh; }
+  .s3 .section-title { margin-bottom:2.5vh; }
+  .cols3 { display:flex; gap:1.5vw; flex:1; margin-bottom:2vh; min-height:0; }
+  .col3 {
+    flex:1; background:#FFF9F5; border-radius:1vw; padding:1.8vw; text-align:center;
+    display:flex; flex-direction:column; justify-content:center;
+  }
+  .col3 .cn { font-size:clamp(28px,5vw,68px); font-weight:900; color:#C4704A; margin-bottom:0.5vh; }
+  .col3 .cl { font-size:clamp(15px,2.2vw,28px); font-weight:700; color:#2C2416; margin-bottom:0.5vh; }
+  .col3 .cd { font-size:clamp(12px,1.5vw,20px); color:#7A6A55; line-height:1.6; }
+  .trans {
+    background:linear-gradient(135deg,#FFF9F5,#FAF8F4);
+    border-radius:1.2vw; padding:2.5vh 3vw; border:1px solid #E8E2D8; position:relative;
+  }
+  .trans .arr {
+    position:absolute; top:-2.5vh; left:50%; transform:translateX(-50%);
+    width:4vh; height:4vh; min-width:28px; min-height:28px;
+    background:#C4704A; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    color:#fff; font-size:clamp(16px,2.4vw,30px); font-weight:900;
+  }
+  .trans .tl { font-size:clamp(12px,1.2vw,17px); font-weight:700; letter-spacing:0.12em; color:#C4704A; margin-bottom:0.8vh; }
+  .trans .tq { font-size:clamp(17px,2.6vw,34px); font-weight:700; color:#2C2416; line-height:1.5; margin-bottom:1vh; }
+  .trans .ts { font-size:clamp(13px,1.7vw,24px); color:#7A6A55; line-height:1.65; }
+
+  /* ====== SLIDE 4 — METHOD ====== */
+  .s4 { background:#FAF8F4; padding:5vh 5vw 5vh 5vw; }
+  .s4 .tag-sm { margin-bottom:0.8vh; }
+  .s4 .section-title { margin-bottom:2vh; }
+  .s4main { display:flex; gap:2vw; flex:1; min-height:0; }
+  .s4l { flex:1.1; display:flex; flex-direction:column; gap:1.2vw; min-width:0; overflow:hidden; }
+  .s4r { flex:0.9; display:flex; flex-direction:column; gap:1vw; justify-content:center; min-width:0; overflow:hidden; }
+  .ins {
+    background:linear-gradient(90deg,#FFF9F5,transparent);
+    border-radius:0.8vw; padding:1.5vw 2vw; margin-top:auto;
+  }
+  .ins .il { font-size:clamp(12px,1.2vw,17px); font-weight:700; letter-spacing:0.12em; color:#C4704A; margin-bottom:0.5vh; }
+  .ins .it { font-size:clamp(13px,1.7vw,24px); font-weight:500; color:#2C2416; line-height:1.6; }
+
+  /* ====== SLIDE 5 — CLOSING ====== */
+  .s5 { background:#FAF8F4; flex-direction:row; padding:5vh 5vw 5vh 5vw; gap:3vw; }
+  .s5l { flex:1.2; display:flex; flex-direction:column; justify-content:center; min-width:0; }
+  .s5r { flex:0.8; display:flex; flex-direction:column; justify-content:center; gap:1.2vw; min-width:0; }
+  .s5-big {
+    font-size:clamp(30px,5.5vw,76px); font-weight:900; color:#2C2416;
+    letter-spacing:-0.04em; line-height:1.35; margin-bottom:2vh;
+  }
+  .s5-big em { color:#C4704A; font-style:normal; }
+  .formula {
+    background:#FFF9F5; border-radius:1vw; padding:1.5vw 2vw;
+    display:inline-block; border:1px solid #E8E2D8;
+    margin-bottom:2vh;
+  }
+  .formula .fl { font-size:clamp(11px,1.2vw,17px); font-weight:700; letter-spacing:0.12em; color:#7A6A55; margin-bottom:0.5vh; }
+  .formula .ft { font-size:clamp(17px,2.6vw,34px); font-weight:900; color:#C4704A; letter-spacing:-0.02em; }
+  .s5-cta { font-size:clamp(14px,1.8vw,24px); font-weight:500; color:#2C2416; line-height:1.65; }
+  .s5-cta strong { color:#C4704A; font-weight:700; }
+  .qhead { font-size:clamp(13px,1.5vw,22px); font-weight:700; color:#7A6A55; letter-spacing:0.12em; margin-bottom:0.8vh; }
+  .qcn { font-size:clamp(11px,1.2vw,17px); font-weight:700; letter-spacing:0.12em; color:#C4704A; margin-bottom:0.3vh; }
+  .qct { font-size:clamp(13px,1.7vw,24px); font-weight:500; color:#2C2416; line-height:1.5; }
+</style>
+</head>
+<body>
+<div class="deck" id="deck">
+
+  <!-- SLIDE 01 — COVER -->
+  <div class="slide s1 active">
+    <div class="slide-inner s1" style="display:flex; align-items:center; justify-content:center; background:#FAF8F4; width:100%; height:100%;">
+      <div class="accent-bar"></div>
+      <div class="s1-inner">
+        <div class="s1-tag">EP01</div>
+        <div class="s1-title">평정심은 훈련된다</div>
+        <div class="s1-sub">루틴의 힘</div>
+        <div class="s1-divider"></div>
+        <div class="s1-hook">
+          1998년 LTCM 붕괴가 던지는 질문 &mdash;<br><strong>진정한 평정심인가, 무감각인가?</strong>
+        </div>
+      </div>
+      <div class="slide-num">01 / 05</div>
+    </div>
+  </div>
+
+  <!-- SLIDE 02 — LTCM -->
+  <div class="slide">
+    <div class="slide-inner s2">
+      <div class="accent-bar"></div>
+      <div class="s2-left">
+        <div class="tag-sm">CASE STUDY</div>
+        <div class="section-title">1998년,<br>롱텀캐피탈매니지먼트<br>붕괴</div>
+        <div class="body-text">
+          두 명의 <em>노벨 경제학상 수상자</em>가 설계한 모델.<br>
+          붕괴 직전까지 파트너들은<br><em>자신들의 모델이 틀리지 않았다</em>고 믿었다.<br><br>
+          그들은 평정심을 잃지 않았다.<br>
+          아니, <em>너무 평정심을 유지한 것</em>이 문제였다.
+        </div>
+      </div>
+      <div class="s2-right">
+        <div class="card card-muted">
+          <div class="card-label">표면적 평정심</div>
+          <div class="card-title">방어기제로서의 평정심</div>
+          <div class="card-desc">현실 직면을 회피하는 무감각.<br>흔들리지 않았지만, 그것은 경직이었다.</div>
+        </div>
+        <div class="card card-brand">
+          <div class="card-label">진정한 평정심</div>
+          <div class="card-title">현실을 직면하는 능력</div>
+          <div class="card-desc">단순히 흔들리지 않는 상태가 아니라<br><strong>올바른 방향으로 흔들릴 줄 아는 능력</strong>.</div>
+        </div>
+      </div>
+      <div class="slide-num">02 / 05</div>
+    </div>
+  </div>
+
+  <!-- SLIDE 03 — THREE COL -->
+  <div class="slide">
+    <div class="slide-inner s3">
+      <div class="accent-bar"></div>
+      <div class="tag-sm">#202 복습</div>
+      <div class="section-title">평정심의 &#x2018;무엇&#x2019;에서 &#x2018;어떻게&#x2019;로</div>
+      <div class="cols3">
+        <div class="col3"><div class="cn">01</div><div class="cl">얼굴 통제</div><div class="cd">감정 표현 관리<br>외부에 보여지는<br>평정의 첫 번째 층</div></div>
+        <div class="col3"><div class="cn">02</div><div class="cl">내면의 중력</div><div class="cd">감정적 동요 진정<br>흔들리는 마음을<br>가라앉히는 힘</div></div>
+        <div class="col3"><div class="cn">03</div><div class="cl">인재 중력</div><div class="cd">조직에 미치는 영향<br>리더의 평정심이<br>팀 전체로 확산</div></div>
+      </div>
+      <div class="trans">
+        <div class="arr">&darr;</div>
+        <div class="tl">핵심 전환</div>
+        <div class="tq">평정심은 앎의 문제가 아니라 훈련의 문제다.</div>
+        <div class="ts">지식을 안다고 해서 위기 상황에서 자동으로 작동하지 않는다.<br><strong>근육을 키우려면 매일 운동해야 하듯, 평정심을 키우려면 매일의 루틴이 필요하다.</strong></div>
+      </div>
+      <div class="slide-num">03 / 05</div>
+    </div>
+  </div>
+
+  <!-- SLIDE 04 — METHOD -->
+  <div class="slide">
+    <div class="slide-inner s4">
+      <div class="accent-bar"></div>
+      <div class="tag-sm">CORE METHOD</div>
+      <div class="section-title">스트레스 접종 훈련</div>
+      <div class="s4main">
+        <div class="s4l">
+          <div class="card card-brand">
+            <div class="card-label">CONCEPT</div>
+            <div class="card-title">백신의 원리</div>
+            <div class="card-desc">약화된 바이러스를 주입하여 면역을 형성하듯, 통제 가능한 수준의 스트레스에 <strong>반복적으로 노출</strong>되면 위기 상황에서도 평정심을 유지할 능력이 생긴다.</div>
+          </div>
+          <div class="card card-brand">
+            <div class="card-label">MECHANISM</div>
+            <div class="card-title">신경 회로의 강화</div>
+            <div class="card-desc">처음에는 불편하지만, 반복할수록 뇌는 그 불편함에 적응하고 평정심을 유지하는 <strong>신경 회로가 강화</strong>된다.</div>
+          </div>
+        </div>
+        <div class="s4r">
+          <div class="card card-light">
+            <div class="card-label">METHOD 01</div>
+            <div class="card-title" style="font-size:clamp(15px,2vw,26px);">일부러 불편한 상황 만들기</div>
+            <div class="card-desc">평소 하지 않던 어려운 대화를 먼저 시도하거나, 익숙하지 않은 결정을 내리는 연습.</div>
+          </div>
+          <div class="card card-light">
+            <div class="card-label">METHOD 02</div>
+            <div class="card-title" style="font-size:clamp(15px,2vw,26px);">작은 스트레스의 의도적 반복</div>
+            <div class="card-desc">위기가 아닌 평소에, 통제 가능한 수준의 스트레스 상황을 의도적으로 만들고 반복.</div>
+          </div>
+          <div class="ins">
+            <div class="il">KEY INSIGHT</div>
+            <div class="it"><strong>훈련된 자연스러움</strong>이 진정한 평정심의 완성 &mdash; 운동선수의 자연스러운 움직임 뒤에는 수천 번의 반복이 있다.</div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-num">04 / 05</div>
+    </div>
+  </div>
+
+  <!-- SLIDE 05 — CLOSING -->
+  <div class="slide">
+    <div class="slide-inner s5">
+      <div class="accent-bar"></div>
+      <div class="s5l">
+        <div class="s5-big">작은 루틴이<br><em>큰 평정심</em>을<br>만든다</div>
+        <div class="formula">
+          <div class="fl">성장 공식</div>
+          <div class="ft">1% &times; 100일 &gt; 100% &times; 1일</div>
+        </div>
+        <div class="s5-cta">오늘 선택한 루틴이 1년 후 당신의 평정심을 결정한다.<br>중요한 것은 <strong>완벽함이 아니라 지속 가능성</strong>.</div>
+      </div>
+      <div class="s5r">
+        <div class="qhead">실행 질문</div>
+        <div class="card-q"><div class="qcn">Q1</div><div class="qct">평정심은 타고난 것이라고 믿는가, 훈련될 수 있다고 믿는가?</div></div>
+        <div class="card-q"><div class="qcn">Q2</div><div class="qct">오늘 의도적으로 만들 수 있는 작은 불편함은 무엇인가?</div></div>
+        <div class="card-q"><div class="qcn">Q3</div><div class="qct">평정심 훈련을 위해 일상에 추가할 가장 작은 루틴은 무엇인가?</div></div>
+      </div>
+      <div class="slide-num">05 / 05</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="nav-arrows">
+  <button class="nav-arrow" onclick="move(-1)">&#x25C2;</button>
+  <button class="nav-arrow" onclick="move(1)">&#x25B8;</button>
+</div>
+
+<script>
+  var slides = document.querySelectorAll('.slide');
+  var total = slides.length;
+  var idx = 0;
+
+  function goto(n) {
+    if (n<0 || n>=total) return;
+    slides[idx].classList.remove('active');
+    idx = n;
+    slides[idx].classList.add('active');
+  }
+
+  function move(dir) { goto(idx + dir); }
+
+  document.addEventListener('keydown',function(e){
+    if (e.key==='ArrowRight' || e.key==='ArrowDown' || e.key===' ') { e.preventDefault(); move(1); }
+    if (e.key==='ArrowLeft' || e.key==='ArrowUp') { e.preventDefault(); move(-1); }
+  });
+</script>
+</body>
+</html>
