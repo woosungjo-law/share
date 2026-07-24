@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EP02. 창업에서 수성으로 — 카드뉴스</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { width:100%; height:100%; overflow:hidden; background:#1C1C1C; }
+
+  .deck { width:100vw; height:100vh; position:relative; overflow:hidden; }
+  .card-view {
+    width:100%; height:100%;
+    display:none; align-items:center; justify-content:center;
+  }
+  .card-view.active { display:flex; }
+
+  .card-frame {
+    width:min(90vw, 90vh); height:min(90vw, 90vh);
+    position:relative; overflow:hidden;
+    border-radius:8px;
+    box-shadow:0 8px 40px rgba(0,0,0,0.35);
+    background:#FAF8F4; font-family:'Noto Sans KR',sans-serif;
+    word-break:keep-all; overflow-wrap:break-word;
+  }
+  .card-inner { width:100%; height:100%; position:relative; overflow:hidden; }
+
+  .accent-bar {
+    position:absolute; top:0; left:0; right:0; height:0.6vh;
+    background:linear-gradient(90deg,#C4704A,#E8A882);
+    z-index:1;
+  }
+  .card-num {
+    position:absolute; bottom:3vw; right:5vw;
+    font-size:clamp(11px,1.4vw,16px); font-weight:700; color:#7A6A55; letter-spacing:0.12em;
+    z-index:1;
+  }
+
+  .nav-arrows {
+    position:fixed; bottom:3vh; right:4vw;
+    display:flex; gap:1vw;
+    z-index:100;
+  }
+  .nav-arrow {
+    width:3.2vw; height:3.2vw; max-width:36px; max-height:36px; min-width:26px; min-height:26px;
+    border-radius:50%;
+    background:rgba(20,20,20,0.5);
+    border:none; color:#B0B0B0;
+    font-size:clamp(12px,1.5vw,18px);
+    cursor:pointer; display:flex; align-items:center; justify-content:center;
+    transition:all 0.15s;
+  }
+  .nav-arrow:hover { background:rgba(196,112,74,0.75); color:#fff; }
+
+  /* ====== CARD CONTENT STYLES — all use clamp() or % ====== */
+  .c-cover { display:flex; align-items:center; justify-content:center; flex-direction:column; width:100%; height:100%; text-align:center; }
+  .c-tag {
+    display:inline-block; padding:0.8vh 2.6vw;
+    font-size:clamp(11px,1.6vw,18px); font-weight:700; color:#C4704A;
+    letter-spacing:0.15em; border:0.15vw solid #E8A882;
+    border-radius:2vw; margin-bottom:3vw;
+  }
+  .c-title { font-size:clamp(28px,7vw,72px); font-weight:900; color:#2C2416; letter-spacing:-0.03em; line-height:1.25; margin-bottom:1.5vw; }
+  .c-sub { font-size:clamp(18px,3.8vw,40px); font-weight:700; color:#C4704A; letter-spacing:-0.02em; margin-bottom:3vw; }
+  .c-div { width:5vw; max-width:52px; height:0.3vw; max-height:3px; background:#E8A882; margin:2vw auto; }
+  .c-hook { font-size:clamp(13px,2vw,24px); color:#7A6A55; line-height:1.75; border-top:1px solid #E8E2D8; padding-top:2.5vw; max-width:60%; }
+  .c-hook strong { color:#C4704A; font-weight:700; }
+
+  .c-content { display:flex; flex-direction:column; padding:6vw; width:100%; height:100%; }
+  .c-tag-sm { font-size:clamp(10px,1.3vw,16px); font-weight:700; color:#C4704A; letter-spacing:0.15em; margin-bottom:0.8vw; }
+  .c-head { font-size:clamp(20px,4.5vw,48px); font-weight:900; color:#2C2416; letter-spacing:-0.03em; line-height:1.3; margin-bottom:3vw; }
+
+  .c-row { display:flex; gap:2vw; flex:1; min-height:0; }
+  .c-col { flex:1; display:flex; flex-direction:column; min-width:0; }
+  .c-card {
+    background:#FFF9F5; border-radius:1.2vw; padding:2.2vw; min-width:0;
+    word-break:keep-all; overflow-wrap:break-word;
+  }
+  .c-card-b { border-left:0.5vw solid #C4704A; }
+  .c-card-m { border-left:0.5vw solid #E8A882; }
+  .c-card-l { border:1px solid #E8E2D8; }
+  .c-cl { font-size:clamp(10px,1.3vw,15px); font-weight:700; letter-spacing:0.12em; color:#C4704A; margin-bottom:0.8vw; }
+  .c-card-m .c-cl { color:#A08A7A; }
+  .c-ct { font-size:clamp(13px,2.4vw,30px); font-weight:700; color:#2C2416; margin-bottom:0.8vw; }
+  .c-cd { font-size:clamp(11px,1.6vw,20px); color:#7A6A55; line-height:1.6; }
+  .c-cd strong { color:#C4704A; font-weight:700; }
+  .c-strip {
+    background:linear-gradient(90deg,#FFF9F5,transparent);
+    border-radius:1vw; padding:1.8vw 2.2vw; margin-top:1.5vw;
+  }
+  .c-strip .sl { font-size:clamp(10px,1.2vw,14px); font-weight:700; letter-spacing:0.12em; color:#C4704A; margin-bottom:0.4vw; }
+  .c-strip .st { font-size:clamp(12px,1.8vw,22px); font-weight:500; color:#2C2416; line-height:1.55; }
+  .c-strip .st strong { color:#C4704A; }
+
+  .c-fail { background:#FFF9F5; border-radius:1.2vw; padding:2vw 1.8vw; flex:1; min-width:0; word-break:keep-all; overflow-wrap:break-word; }
+  .c-fail .fi { font-size:clamp(16px,2.5vw,30px); margin-bottom:0.5vw; }
+  .c-fail .fl { font-size:clamp(10px,1.2vw,14px); font-weight:700; letter-spacing:0.12em; color:#C4704A; margin-bottom:0.4vw; }
+  .c-fail .ft { font-size:clamp(12px,1.8vw,22px); font-weight:700; color:#2C2416; margin-bottom:0.5vw; }
+  .c-fail .fd { font-size:clamp(10px,1.4vw,17px); color:#7A6A55; line-height:1.55; }
+
+  .c-qbox {
+    background:linear-gradient(135deg,#FFF9F5,#FAF8F4);
+    border-radius:1.4vw; padding:2.5vw 3vw; border:1px solid #E8E2D8;
+  }
+  .c-qbox .ql { font-size:clamp(10px,1.3vw,15px); font-weight:700; letter-spacing:0.12em; color:#C4704A; margin-bottom:0.8vw; }
+  .c-qbox .qt { font-size:clamp(16px,2.6vw,30px); font-weight:700; color:#2C2416; line-height:1.45; }
+  .c-qbox .qt em { color:#C4704A; font-style:normal; }
+
+  .c-big { font-size:clamp(22px,5vw,56px); font-weight:900; color:#2C2416; letter-spacing:-0.04em; line-height:1.35; margin-bottom:2.5vw; }
+  .c-big em { color:#C4704A; font-style:normal; }
+  .c-qcard {
+    background:#FFF9F5; border-radius:1.2vw; padding:1.5vw 2vw; border-left:0.4vw solid #E8A882;
+    word-break:keep-all; overflow-wrap:break-word;
+  }
+  .c-qcard .qn { font-size:clamp(9px,1.1vw,13px); font-weight:700; letter-spacing:0.12em; color:#C4704A; margin-bottom:0.2vw; }
+  .c-qcard .qt { font-size:clamp(11px,1.5vw,18px); font-weight:500; color:#2C2416; line-height:1.45; }
+
+  .gap-col { gap:1.5vw; }
+  .gap-16 { gap:1.2vw; }
+</style>
+</head>
+<body>
+<div class="deck">
+  <!-- CARD 01 — COVER -->
+  <div class="card-view active"><div class="card-frame"><div class="card-inner">
+    <div class="accent-bar"></div>
+    <div class="c-cover">
+      <div class="c-tag">EP02</div>
+      <div class="c-title">창업에서 수성으로</div>
+      <div class="c-sub">전환의 순간이 리더를 결정한다</div>
+      <div class="c-div"></div>
+      <div class="c-hook">
+        유방의 한나라, 인텔의 그로브 &mdash;<br>
+        <strong>위대한 리더들은 왜 과거의 성공을 버렸는가</strong>
+      </div>
+    </div>
+    <div class="card-num">01 / 05</div>
+  </div></div></div>
+
+  <!-- CARD 02 — TWO LEADERS -->
+  <div class="card-view"><div class="card-frame"><div class="card-inner">
+    <div class="accent-bar"></div>
+    <div class="c-content">
+      <div class="c-tag-sm">TWO LEADERS, ONE TRUTH</div>
+      <div class="c-head">과거의 성공이<br>미래의 성공을 보장하지 않는다</div>
+      <div class="c-row">
+        <div class="c-col"><div class="c-card c-card-m">
+          <div class="c-cl">한나라, 유방</div>
+          <div class="c-ct">전투 영웅</div>
+          <div class="c-cd" style="color:#C4704A; margin-bottom:0.5vw;">&rarr; 행정가로</div>
+          <div class="c-cd">천하 통일 후 즉시 법률·제도를 정비하고 지방 통치 체계를 구축했다.</div>
+        </div></div>
+        <div class="c-col"><div class="c-card c-card-b">
+          <div class="c-cl">인텔, 그로브</div>
+          <div class="c-ct">메모리 제국</div>
+          <div class="c-cd" style="color:#C4704A; margin-bottom:0.5vw;">&rarr; CPU로 전환</div>
+          <div class="c-cd">자신의 <strong>과거 성공을 버리는</strong> 고통스러운 결정을 실행에 옮겼다.</div>
+        </div></div>
+      </div>
+      <div class="c-strip">
+        <div class="sl">공통점</div>
+        <div class="st">창업에서 수성으로의 전환은 단순한 유지가 아니라 <strong>완전히 새로운 리더십</strong>을 요구한다.</div>
+      </div>
+    </div>
+    <div class="card-num">02 / 05</div>
+  </div></div></div>
+
+  <!-- CARD 03 — FAILURE PATTERN -->
+  <div class="card-view"><div class="card-frame"><div class="card-inner">
+    <div class="accent-bar"></div>
+    <div class="c-content">
+      <div class="c-tag-sm">FAILURE PATTERN</div>
+      <div class="c-head">실패한 리더는 과거의<br>성공 방식을 고수한다</div>
+      <div class="c-row gap-col">
+        <div class="c-fail">
+          <div class="fi">&#x26A0;</div>
+          <div class="fl">RISK A</div>
+          <div class="ft">창업식 의사결정</div>
+          <div class="fd">공격적이고 직관적인 방식이 수성 단계에서는 오히려 리스크가 된다.</div>
+        </div>
+        <div class="c-fail">
+          <div class="fi">&#x26A0;</div>
+          <div class="fl">RISK B</div>
+          <div class="ft">대기업식 안정주의</div>
+          <div class="fd">안정적인 운영이 새로운 기회를 창출해야 할 때 걸림돌이 된다.</div>
+        </div>
+      </div>
+      <div class="c-qbox" style="margin-top:2vw;">
+        <div class="ql">리더가 던져야 할 질문</div>
+        <div class="qt"><em>지금 나에게 필요한 역량은 과거와 같은가, 다른가?</em></div>
+      </div>
+    </div>
+    <div class="card-num">03 / 05</div>
+  </div></div></div>
+
+  <!-- CARD 04 — EXECUTION -->
+  <div class="card-view"><div class="card-frame"><div class="card-inner">
+    <div class="accent-bar"></div>
+    <div class="c-content">
+      <div class="c-tag-sm">EXECUTION</div>
+      <div class="c-head">전환은 인식이 아니라<br>실행이다</div>
+      <div class="c-row gap-col">
+        <div class="c-col gap-16" style="gap:1.5vw;">
+          <div class="c-card c-card-b">
+            <div class="c-cl">유방의 성공 비결</div>
+            <div class="c-ct">조언 수용 + 과감한 실행</div>
+            <div class="c-cd">변화의 필요성을 느끼는 것만으로는 부족하다. <strong>실행까지 이어져야</strong> 진정한 전환이다.</div>
+          </div>
+          <div class="c-card c-card-b">
+            <div class="c-cl">지속적 과정</div>
+            <div class="c-ct">한 번으로 끝나지 않는다</div>
+            <div class="c-cd">전환은 리더십 여정 내내 <strong>지속적으로 이루어져야 하는 과정</strong>이다.</div>
+          </div>
+        </div>
+        <div class="c-col gap-16" style="justify-content:center;">
+          <div class="c-card c-card-l">
+            <div class="c-cl">TOOL 01</div>
+            <div class="c-ct" style="font-size:clamp(11px,1.8vw,20px);">독서와 네트워킹</div>
+            <div class="c-cd">새로운 지식·관점의 지속적 유입</div>
+          </div>
+          <div class="c-card c-card-l" style="margin-top:0.8vw;">
+            <div class="c-cl">TOOL 02</div>
+            <div class="c-ct" style="font-size:clamp(11px,1.8vw,20px);">멘토링과 실수 학습</div>
+            <div class="c-cd">자신의 실수에서 배우는 겸손함</div>
+          </div>
+        </div>
+      </div>
+      <div class="c-strip">
+        <div class="sl">유방의 원천</div>
+        <div class="st">평생 유지한 <strong>겸손함과 학습 의지</strong> &mdash; 이것이 그를 역사상 가장 위대한 리더 중 하나로 남게 했다.</div>
+      </div>
+    </div>
+    <div class="card-num">04 / 05</div>
+  </div></div></div>
+
+  <!-- CARD 05 — CLOSING -->
+  <div class="card-view"><div class="card-frame"><div class="card-inner">
+    <div class="accent-bar"></div>
+    <div class="c-content" style="flex-direction:row; gap:3vw;">
+      <div class="c-col" style="flex:1.2; justify-content:center;">
+        <div class="c-big">리더의<br><em>업그레이드</em>는<br>선택이 아니라<br>생존의 조건이다</div>
+        <div class="c-card c-card-l" style="display:inline-block; padding:1.5vw 2.2vw; margin-bottom:2vw;">
+          <div class="c-cl" style="margin-bottom:0.3vw;">핵심 원칙</div>
+          <div class="c-cd" style="font-size:clamp(13px,2.4vw,28px); font-weight:900; color:#C4704A;">편안함보다 성장을 선택하라</div>
+        </div>
+        <div style="font-size:clamp(11px,1.6vw,20px); font-weight:500; color:#2C2416; line-height:1.6;">과거의 성공 방식에 안주하는 순간,<br>리더는 이미 <strong style="color:#C4704A;">쇠락의 길</strong>에 들어선 것이다.</div>
+      </div>
+      <div class="c-col gap-16" style="flex:0.8; justify-content:center;">
+        <div class="c-cl" style="margin-bottom:1vw;">실행 질문</div>
+        <div class="c-qcard"><div class="qn">Q1</div><div class="qt">현재 리더십 단계는 창업인가, 수성인가? 전환이 필요한 때인가?</div></div>
+        <div class="c-qcard"><div class="qn">Q2</div><div class="qt">과거의 성공 방식에 집착하고 있는 부분은 없는가?</div></div>
+        <div class="c-qcard"><div class="qn">Q3</div><div class="qt">지금 당신에게 필요한 새로운 역량은 무엇인가?</div></div>
+      </div>
+    </div>
+    <div class="card-num">05 / 05</div>
+  </div></div></div>
+</div>
+
+<div class="nav-arrows">
+  <button class="nav-arrow" onclick="move(-1)">&#x25C2;</button>
+  <button class="nav-arrow" onclick="move(1)">&#x25B8;</button>
+</div>
+
+<script>
+  var cards = document.querySelectorAll('.card-view');
+  var total = cards.length;
+  var idx = 0;
+
+  function goto(n) {
+    if (n<0 || n>=total) return;
+    cards[idx].classList.remove('active');
+    idx = n;
+    cards[idx].classList.add('active');
+  }
+  function move(dir) { goto(idx + dir); }
+  document.addEventListener('keydown',function(e){
+    if (e.key==='ArrowRight' || e.key==='ArrowDown' || e.key===' ') { e.preventDefault(); move(1); }
+    if (e.key==='ArrowLeft' || e.key==='ArrowUp') { e.preventDefault(); move(-1); }
+  });
+</script>
+</body>
+</html>
