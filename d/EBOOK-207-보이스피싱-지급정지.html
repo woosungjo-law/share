@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>보이스피싱 피해 계좌 지급정지부터 환급까지 3단계 절차 | 머스트노우</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans KR', sans-serif; font-size: 14.5px; font-weight: 400; line-height: 1.75; color: #111827; background: #f0f2f5; }
+.topbar { position: sticky; top: 0; height: 4px; background: linear-gradient(90deg, #b91c1c, #dc2626); z-index: 100; }
+.header-wrap { background: #fff; border-bottom: 1px solid #e5e7eb; padding: 12px 24px; display: flex; align-items: center; gap: 12px; max-width: 1000px; margin: 0 auto; }
+.header-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #b91c1c, #dc2626); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 16px; }
+.header-name { font-weight: 600; font-size: 14px; color: #b91c1c; }
+.header-badge { background: #e5e7eb; color: #6b7280; font-size: 11px; padding: 2px 8px; border-radius: 4px; font-weight: 500; }
+.hero { background: linear-gradient(135deg, #b91c1c, #dc2626); color: #fff; padding: 48px 24px 64px; text-align: center; }
+.hero-inner { max-width: 720px; margin: 0 auto; }
+.hero h1 { font-size: 28px; font-weight: 900; line-height: 1.3; margin-bottom: 12px; }
+.hero .tag { display: inline-block; background: rgba(255,255,255,0.2); font-size: 12px; padding: 4px 12px; border-radius: 4px; margin-bottom: 12px; }
+.hero .meta { font-size: 13px; opacity: 0.85; }
+.container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+.tldr { background: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); padding: 28px 32px; margin-top: -28px; position: relative; z-index: 10; margin-bottom: 32px; }
+.tldr h2 { font-size: 16px; font-weight: 700; color: #b91c1c; margin-bottom: 12px; }
+.tldr li { list-style: none; padding: 6px 0; font-size: 14px; }
+.tldr li::before { content: "▸ "; color: #dc2626; font-weight: 700; }
+.card { background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border: 1px solid #e5e7eb; padding: 28px 32px; margin-bottom: 24px; }
+.section-number { display: inline-block; background: #dc2626; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 4px; margin-bottom: 12px; }
+.card h2 { font-size: 22px; font-weight: 700; color: #b91c1c; margin-bottom: 16px; }
+.card h3 { font-size: 17px; font-weight: 700; color: #b91c1c; margin: 20px 0 10px; }
+.card p { margin-bottom: 12px; }
+.card ul, .card ol { margin: 8px 0 12px 20px; }
+.card li { margin-bottom: 6px; }
+.eye-catcher { background: #fef2f2; border-left: 4px solid #dc2626; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 16px 0; }
+.info-card { background: #fef2f2; border-radius: 8px; padding: 16px 20px; margin: 16px 0; }
+.info-card strong { color: #b91c1c; }
+.warning-box { background: #fef3c7; border: 1px solid #fcd34d; border-radius: 8px; padding: 16px 20px; margin: 16px 0; }
+.table-wrap { overflow-x: auto; margin: 16px 0; }
+.table-wrap table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.table-wrap th { background: #f3f4f6; color: #b91c1c; font-weight: 600; padding: 10px 12px; text-align: left; border-bottom: 2px solid #d1d5db; }
+.table-wrap td { padding: 10px 12px; border-bottom: 1px solid #e5e7eb; }
+.strategy-flow { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 20px 24px; margin: 16px 0; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.strategy-step { background: #fff; border: 2px solid #dc2626; border-radius: 8px; padding: 12px 16px; min-width: 140px; }
+.strategy-step .num { font-size: 11px; font-weight: 700; color: #dc2626; }
+.strategy-step .act { font-weight: 600; color: #b91c1c; font-size: 15px; margin: 4px 0; }
+.strategy-step .note { font-size: 12px; color: #6b7280; }
+.strategy-arrow { font-size: 24px; color: #dc2626; display: flex; align-items: center; }
+.qa-item { border-bottom: 1px solid #e5e7eb; padding: 16px 0; }
+.qa-item:last-child { border-bottom: none; }
+.qa-q { font-weight: 700; color: #b91c1c; margin-bottom: 6px; }
+.qa-q::before { content: "Q. "; }
+.qa-a { color: #374151; }
+.qa-a::before { content: "A. "; font-weight: 600; color: #6b7280; }
+.footer { text-align: center; color: #6b7280; font-size: 12px; padding: 32px 20px; }
+.footer a { color: #dc2626; text-decoration: none; }
+@media (max-width: 640px) {
+  .card { padding: 20px 16px; }
+  .tldr { padding: 20px 16px; }
+  .hero h1 { font-size: 22px; }
+  .strategy-flow { flex-direction: column; }
+  .strategy-arrow { transform: rotate(90deg); }
+}
+</style>
+</head>
+<body>
+<div class="topbar"></div>
+<div class="header-wrap">
+  <div class="header-avatar">조</div>
+  <span class="header-name">조우성 변호사</span>
+  <span class="header-badge">머스트노우</span>
+</div>
+
+<div class="hero">
+  <div class="hero-inner">
+    <span class="tag">형사·금융사기</span>
+    <h1>보이스피싱 피해 — 계좌 지급정지부터<br>환급까지 3단계 절차</h1>
+    <div class="meta">2026. 7. 28. · 통신사기피해환급법 기준 · 읽기 6분</div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="tldr">
+    <h2>핵심 요약</h2>
+    <ul>
+      <li>보이스피싱 피해 즉시 <strong>112 신고 + 금융회사 지급정지 요청</strong> — 시간이 생명</li>
+      <li><strong>지급정지</strong>(제4조): 사기이용계좌 의심 시 즉시 차단 / <strong>임시조치</strong>(제2조의5): 피해의심거래 10일간 제한</li>
+      <li>지급정지된 돈은 <strong>자동 환급되지 않음</strong> — 별도 환급 청구 필수</li>
+      <li>금융회사 의무 위반 시 <strong>책임 30% 인정</strong> 가능 (서울남부지법 2024가합112385)</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <span class="section-number">긴급</span>
+    <h2>Step 1. 피해 직후 행동 순서</h2>
+    <p>보이스피싱 피해는 <strong>시간과의 싸움</strong>입니다. 돈이 인출·송금되기 전에 신속히 막아야 합니다.</p>
+
+    <div class="strategy-flow">
+      <div class="strategy-step">
+        <div class="num">STEP 1</div>
+        <div class="act">112 신고</div>
+        <div class="note">보이스피싱 신고 접수<br>상대방 계좌·금액 전달</div>
+      </div>
+      <div class="strategy-arrow">→</div>
+      <div class="strategy-step">
+        <div class="num">STEP 2</div>
+        <div class="act">지급정지 요청</div>
+        <div class="note">금융회사에 즉시 전화<br>또는 112 경찰 24시간 가능</div>
+      </div>
+      <div class="strategy-arrow">→</div>
+      <div class="strategy-step">
+        <div class="num">STEP 3</div>
+        <div class="act">경찰서 출석</div>
+        <div class="note">신고서 작성<br>증거 제출·피해자 진술</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="section-number">핵심 제도</span>
+    <h2>Step 2. 지급정지 vs 임시조치</h2>
+    <p>통신사기피해환급법은 피해자 보호를 위해 금융회사에 두 가지 의무를 부과합니다.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>구분</th><th>지급정지 (제4조)</th><th>임시조치 (제2조의5)</th></tr></thead>
+        <tbody>
+          <tr><td><strong>대상</strong></td><td>사기이용계좌로 의심되는 계좌</td><td>피해의심거래계좌로 추정되는 계좌</td></tr>
+          <tr><td><strong>효과</strong></td><td>계좌 잔액 지급정지 (입금 차단)</td><td>10일간 송금·출금 제한</td></tr>
+          <tr><td><strong>의무</strong></td><td>직권 또는 요청에 따라 즉시</td><td>추정되는 즉시 실행</td></tr>
+          <tr><td><strong>해제</strong></td><td>수사 종결·피해금 반환 등</td><td>10일 경과 또는 사기계좌 아님 확인 시</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="eye-catcher">
+      <strong>💡 금융회사 책임 핵심 판례:</strong><br><br>
+      <strong>책임 인정:</strong> 서울남부지법 2024가합112385 (2026.1.9.) — 약 15.67억 원 보이스피싱 송금 사안. 4영업일간 거액 반복 송금 방치, 2회 임시조치 후에도 동일 거래 계속 → 금융회사 책임 <strong>30% 인정</strong> (약 4.6억 원).<br><br>
+      <strong>책임 부인:</strong> 서울중앙지법 2023나46625 (2024.11.15.) — 지급정지 문자 통지 이행, 거래 유형상 피해의심거래로 보기 어려움 → 책임 부인.
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="section-number">환급</span>
+    <h2>Step 3. 피해금 환급 절차</h2>
+    <p>지급정지된 돈은 <strong>자동으로 돌아오지 않습니다</strong>. 반드시 별도 환급 청구 절차를 따라야 합니다.</p>
+
+    <h3>환급 청구 절차</h3>
+    <ol>
+      <li><strong>금융회사에 환급 청구</strong>: 지급정지된 계좌의 금융회사에 서면 또는 전자적 방법으로 청구</li>
+      <li><strong>금융회사 확인</strong>: 청구인의 계좌와 피해금액 일치 여부 확인</li>
+      <li><strong>환급 통지</strong>: 금융회사가 환급 결정 시 청구인에게 통지</li>
+      <li><strong>환급 실행</strong>: 통지 후 지체 없이 환급</li>
+    </ol>
+
+    <div class="warning-box">
+      <strong>⚠️ 환급이 거부될 수 있는 경우:</strong><br>
+      피해자 본인의 과실(보안카드·OTP 직접 제공), 사기이용계좌 잔액 부족, 타 피해자와 청구 경합, 제3자 계좌로 송금된 경우 등.
+    </div>
+
+    <div class="info-card">
+      <strong>📞 금융감독원 분쟁 조정:</strong> 금융회사가 2주 이내에 환급 청구를 처리하지 않으면 금융감독원(1332)에 분쟁 조정을 신청할 수 있습니다.
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="section-number">Q&A</span>
+    <h2>자주 묻는 질문</h2>
+
+    <div class="qa-item">
+      <div class="qa-q">이미 송금한 후에 보이스피싱임을 알게 되었습니다. 돈을 돌려받을 수 있나요?</div>
+      <div class="qa-a">즉시 112 신고와 금융회사 지급정지 요청을 하세요. 송금 후 시간이 짧을수록 환급 가능성이 높아집니다. 사기이용계좌에 잔액이 남아 있다면 환급 청구가 가능합니다.</div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q">보안카드 번호를 알려줬는데, 이 경우도 보호받을 수 있나요?</div>
+      <div class="qa-a">보안카드·OTP를 직접 알려준 경우 '피해자 본인의 중대한 과실'로 인정되어 환급이 제한될 수 있습니다. 그래도 지급정지와 환급 청구는 반드시 하세요. 정황에 따라 금융회사 책임이 인정될 여지가 있습니다.</div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q">금융회사에 지급정지를 요청했는데 거절했습니다. 어떻게 하나요?</div>
+      <div class="qa-a">금융회사가 지급정지 의무를 위반한 경우 손해배상을 청구할 수 있습니다. 금융감독원에 민원을 제기하고, 법률 전문가의 도움을 받아 소송을 검토하세요. 서울남부지법 2024가합112385 판결처럼 금융회사 책임이 인정될 수 있습니다.</div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q">계좌가 지급정지되었다는 통지를 받았는데, 앞으로 어떻게 되나요?</div>
+      <div class="qa-a">수사가 진행되는 동안 지급정지가 유지됩니다. 수사 종결 후 피해금 반환 결정이 나면 환급 절차가 진행됩니다. 중간에 금융회사에 환급 청구를 별도로 하지 않으면 자동 환급되지 않으니 반드시 청구하세요.</div>
+    </div>
+  </div>
+
+  <div class="card" style="background: #f9fafb;">
+    <div class="eye-catcher" style="border-left-color: #6b7280;">
+      <strong>최신성·면책 고지</strong>
+      <p style="margin-top: 6px; font-size: 13px; color: #6b7280;">본 자료는 <strong>2026. 7. 28.</strong> 기준으로 작성되었으며, 인용 법령·판례는 작성 시점의 현행성을 MCP로 확인한 것입니다. 법령은 개정될 수 있고 사안마다 결론이 달라질 수 있으므로, 실제 의사결정 전 최신 법령과 개별 사실관계 확인이 필요합니다. 본 자료는 일반적 법률 정보 제공이며 특정 사안에 대한 법률 자문이 아닙니다.</div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>조우성 변호사 · 로펌 머스트노우 · <a href="mailto:law@mustknow.co.kr">law@mustknow.co.kr</a></p>
+  <p style="margin-top: 4px;">
+    <strong>참고:</strong> 통신사기피해환급법 §2조의5·§4조·§8조 · 서울남부지법 2024가합112385 · 서울중앙지법 2023나46625 · 대법원 2024다314586 · 대법원 2024도20664
+  </p>
+</div>
+</body>
+</html>
