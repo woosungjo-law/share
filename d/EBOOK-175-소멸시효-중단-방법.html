@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>채권 소멸시효 중단하는 4가지 방법 완전 정리 | 머스트노우</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans KR', sans-serif; font-size: 14.5px; font-weight: 400; line-height: 1.75; color: #111827; background: #f0f2f5; }
+.topbar { position: sticky; top: 0; height: 4px; background: linear-gradient(90deg, #1a3a6b, #2e6be6); z-index: 100; }
+.header-wrap { background: #fff; border-bottom: 1px solid #e5e7eb; padding: 12px 24px; display: flex; align-items: center; gap: 12px; max-width: 1000px; margin: 0 auto; }
+.header-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #1a3a6b, #2e6be6); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 16px; }
+.header-name { font-weight: 600; font-size: 14px; color: #1a3a6b; }
+.header-badge { background: #e5e7eb; color: #6b7280; font-size: 11px; padding: 2px 8px; border-radius: 4px; font-weight: 500; }
+.hero { background: linear-gradient(135deg, #1a3a6b, #2e6be6); color: #fff; padding: 48px 24px 64px; text-align: center; }
+.hero-inner { max-width: 720px; margin: 0 auto; }
+.hero h1 { font-size: 28px; font-weight: 900; line-height: 1.3; margin-bottom: 12px; }
+.hero .tag { display: inline-block; background: rgba(255,255,255,0.2); font-size: 12px; padding: 4px 12px; border-radius: 4px; margin-bottom: 12px; }
+.hero .meta { font-size: 13px; opacity: 0.85; }
+.container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+.tldr { background: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); padding: 28px 32px; margin-top: -28px; position: relative; z-index: 10; margin-bottom: 32px; }
+.tldr h2 { font-size: 16px; font-weight: 700; color: #1a3a6b; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+.tldr li { list-style: none; padding: 6px 0; font-size: 14px; }
+.tldr li::before { content: "▸ "; color: #2e6be6; font-weight: 700; }
+.card { background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border: 1px solid #e5e7eb; padding: 28px 32px; margin-bottom: 24px; }
+.section-number { display: inline-block; background: #2e6be6; color: #fff; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 3px 10px; border-radius: 4px; margin-bottom: 12px; }
+.card h2 { font-size: 22px; font-weight: 700; color: #1a3a6b; margin-bottom: 16px; }
+.card h3 { font-size: 17px; font-weight: 700; color: #1a3a6b; margin: 20px 0 10px; }
+.card p { margin-bottom: 12px; }
+.card ul, .card ol { margin: 8px 0 12px 20px; }
+.card li { margin-bottom: 6px; }
+.eye-catcher { background: #eff6ff; border-left: 4px solid #2e6be6; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 16px 0; }
+.eye-catcher > :last-child { margin-bottom: 0; }
+.legal-quote { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 16px 0; font-size: 13.5px; }
+.legal-quote .src { font-weight: 600; color: #1a3a6b; }
+.legal-quote .status { display: inline-block; background: #059669; color: #fff; font-size: 10px; padding: 1px 6px; border-radius: 3px; margin-left: 6px; font-weight: 600; }
+.table-wrap { overflow-x: auto; margin: 16px 0; }
+.table-wrap table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.table-wrap th { background: #f3f4f6; color: #1a3a6b; font-weight: 600; padding: 10px 12px; text-align: left; border-bottom: 2px solid #d1d5db; position: sticky; top: 0; }
+.table-wrap td { padding: 10px 12px; border-bottom: 1px solid #e5e7eb; }
+.table-wrap tr:last-child td { border-bottom: none; }
+.table-wrap tr.danger td { background: #fef2f2; font-weight: 600; }
+.table-wrap tr.success td { background: #f0fdf4; }
+.info-card { background: #eff6ff; border-radius: 8px; padding: 16px 20px; margin: 16px 0; }
+.info-card p { margin: 0; }
+.info-card strong { color: #1a3a6b; }
+.highlight-box { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 16px 20px; margin: 16px 0; }
+.highlight-box strong { color: #059669; }
+.warning-box { background: #fef3c7; border: 1px solid #fcd34d; border-radius: 8px; padding: 16px 20px; margin: 16px 0; }
+.danger-box { background: #fef2f2; border: 1px solid #fca5a5; border-radius: 8px; padding: 16px 20px; margin: 16px 0; }
+.qa-item { border-bottom: 1px solid #e5e7eb; padding: 16px 0; }
+.qa-item:last-child { border-bottom: none; }
+.qa-q { font-weight: 700; color: #1a3a6b; margin-bottom: 6px; }
+.qa-q::before { content: "Q. "; color: #2e6be6; }
+.qa-a { color: #374151; }
+.qa-a::before { content: "A. "; font-weight: 600; color: #6b7280; }
+.strategy-flow { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 20px 24px; margin: 16px 0; text-align: center; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.strategy-step { background: #fff; border: 2px solid #2e6be6; border-radius: 8px; padding: 12px 16px; min-width: 140px; }
+.strategy-step .num { font-size: 11px; font-weight: 700; color: #2e6be6; text-transform: uppercase; }
+.strategy-step .act { font-weight: 600; color: #1a3a6b; font-size: 15px; margin: 4px 0; }
+.strategy-step .note { font-size: 12px; color: #6b7280; }
+.strategy-arrow { font-size: 24px; color: #2e6be6; display: flex; align-items: center; }
+.footer { text-align: center; color: #6b7280; font-size: 12px; padding: 32px 20px; }
+.footer a { color: #2e6be6; text-decoration: none; }
+@media (max-width: 640px) {
+  .card { padding: 20px 16px; }
+  .tldr { padding: 20px 16px; }
+  .hero h1 { font-size: 22px; }
+  .strategy-flow { flex-direction: column; }
+  .strategy-arrow { transform: rotate(90deg); }
+}
+</style>
+</head>
+<body>
+<div class="topbar"></div>
+<div class="header-wrap">
+  <div class="header-avatar">조</div>
+  <span class="header-name">조우성 변호사</span>
+  <span class="header-badge">머스트노우</span>
+</div>
+
+<div class="hero">
+  <div class="hero-inner">
+    <span class="tag">민사·채권추심</span>
+    <h1>소멸시효, 이렇게만 하면 '멈출' 수 있습니다<br>시효 중단 4가지 방법 완전 정리</h1>
+    <div class="meta">2026. 7. 28. · 민법 제168조·제174조 기준 · 읽기 7분</div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="tldr">
+    <h2>핵심 요약</h2>
+    <ul>
+      <li>소멸시효 중단 방법 4가지: 승인·최고(내용증명)·재판상 청구·압류/가압류</li>
+      <li><strong>내용증명은 6개월 한시 티켓</strong> — 6개월 내 후속 조치 없으면 효력 소멸</li>
+      <li><strong>재최고는 효력 없음</strong> — 대법원 87다카2337, 이미 소멸한 최고의 재최고는 무의미</li>
+      <li>최적 전략: 선가압류 → 내용증명 → 6개월 내 본안소송</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <span class="section-number">Section 1</span>
+    <h2>채권 종류별 소멸시효 기간</h2>
+    <p>소멸시효는 채권자가 권리를 행사하지 않고 일정 기간 방치하면 채권이 소멸하는 제도입니다. 채권 종류에 따라 시효 기간이 다릅니다.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>채권 종류</th><th>시효 기간</th><th>근거</th></tr></thead>
+        <tbody>
+          <tr><td>일반 대여금·매매대금</td><td>10년</td><td>민법 제162조</td></tr>
+          <tr><td>상사채권 (상인 간 거래)</td><td>5년</td><td>상법 제64조</td></tr>
+          <tr><td>임료·월세</td><td>3년</td><td>민법 제163조</td></tr>
+          <tr><td>공사대금·변호사 보수</td><td>3년</td><td>민법 제163조</td></tr>
+          <tr><td>어음·수표금</td><td>1년</td><td>어음법·수표법</td></tr>
+          <tr><td>불법행위 손해배상</td><td>3년 (안 날부터)</td><td>민법 제766조</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="section-number">Section 2</span>
+    <h2>시효 중단 4가지 방법</h2>
+    <p>민법 제168조와 제174조는 소멸시효를 중단할 수 있는 방법을 규정합니다. 각 방법의 효력과 주의점이 다르므로 상황에 맞게 선택해야 합니다.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>방법</th><th>근거</th><th>효력</th><th>핵심 주의점</th></tr></thead>
+        <tbody>
+          <tr><td><strong>승인</strong></td><td>제168조③</td><td>완전 중단, 시효 재진행</td><td>묵시적 승인 요건 까다로움</td></tr>
+          <tr><td><strong>최고 (내용증명)</strong></td><td>제174조</td><td>6개월 한시 중단</td><td>재최고 불가 (87다카2337)</td></tr>
+          <tr><td><strong>재판상 청구</strong></td><td>제168조①</td><td>완전 중단</td><td>각하·취하 시 소급 소멸</td></tr>
+          <tr><td><strong>압류·가압류·가처분</strong></td><td>제168조②</td><td>완전 중단</td><td>가장 강력한 방법</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="danger-box">
+      <strong>⛔ 가장 위험한 오해:</strong> "내용증명을 보냈으니 시효가 확실히 중단됐다."<br><br>
+      <strong>틀렸습니다.</strong> 내용증명(최고)은 <strong>6개월 동안만</strong> 시효 중단 효력이 있습니다. 6개월 안에 소송·지급명령·가압류 등 후속 조치를 하지 않으면, 최고가 없었던 것으로 소급되어 시효가 계속 진행됩니다. 게다가 <strong>재최고(두 번째 내용증명)는 시효 중단 효력이 없습니다</strong>(대법원 87다카2337).
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="section-number">Section 3</span>
+    <h2>최고(내용증명)의 함정 — 재최고 불가</h2>
+    <p>민법 제174조는 "최고는 6개월 내에 재판상 청구, 압류 또는 가압류, 가처분을 하지 아니하면 시효 중단의 효력이 없다"고 규정합니다. 이는 최고가 <strong>6개월이라는 시한부 티켓</strong>임을 의미합니다.</p>
+
+    <h3>대법원 87다카2337 — 재최고 불가의 법리</h3>
+    <div class="legal-quote">
+      <div class="src">대법원 1987. 12. 22. 선고 87다카2337 판결 <span class="status">현행</span></div>
+      "민법 제174조의 최고는 1회에 한하여 시효중단 효력이 인정되며, 6개월 내에 후속 조치를 하지 아니한 상태에서 다시 최고(재최고)를 하더라도 시효중단의 효력이 없다."
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>오해</th><th>실상</th></tr></thead>
+        <tbody>
+          <tr class="danger"><td>"내용증명 한 번이면 영구 중단"</td><td>최고는 6개월 한시. 후속 조치 없으면 소멸</td></tr>
+          <tr class="danger"><td>"6개월 지나서 다시 내용증명 하면 되지"</td><td>재최고는 시효 중단 효력 없음 (87다카2337)</td></tr>
+          <tr class="danger"><td>"소송 취하했지만 최고의 효력은 유지"</td><td>소송 취하 시 중단 효력 소급 소멸 (제170조)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="info-card">
+      <strong>💡 실무 포인트:</strong> 최고(내용증명) 후 6개월이 임박했다면, 반드시 지급명령·가압류·본안소송 중 하나를 제기하세요. 재최고는 아무 소용이 없습니다.
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="section-number">Section 4</span>
+    <h2>승인 — 이메일·문자 한 줄로 시효 중단?</h2>
+    <p>민법 제168조 제3호의 '승인'은 채무자가 채권자에게 채무 존재를 인식하고 있음을 표시하는 행위로, <strong>명시적뿐 아니라 묵시적으로도 가능</strong>합니다. 형식이 자유롭고 채무자의 처분 능력도 필요하지 않습니다(제177조).</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>상대방 행위</th><th>승인 여부</th><th>근거</th></tr></thead>
+        <tbody>
+          <tr class="success"><td>"내역 확인, 미불금 곧 처리" 이메일</td><td>✅ 가능</td><td>2015다34635</td></tr>
+          <tr class="success"><td>"도덕적으로 꼭 갚겠다" 확인서</td><td>✅ 가능</td><td>2013다207125</td></tr>
+          <tr class="success"><td>잔액확인통지서 작성·교부</td><td>✅ 가능</td><td>2006다22852</td></tr>
+          <tr><td>일부 변제</td><td>⚠️ 변제 부분만 한정</td><td>2006다22968</td></tr>
+          <tr><td>형사합의금 공탁</td><td>❌ 초과분 불인정 possible</td><td>2014다85216</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="eye-catcher">
+      <strong>⚡ 실무 포인트:</strong> 채권자라면 내역표를 보내고 상대방의 '확인·검토·처리 예정' 회신을 확보하는 것이 묵시적 승인 주장의 핵심입니다(2015다34635). 채무자라면 교섭 메시지에 '채무 부인' 또는 '분쟁 중'이라는 취지를 반드시 기재하세요.
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="section-number">Section 5</span>
+    <h2>가장 안전한 전략 — 3단계 시효 중단</h2>
+
+    <div class="strategy-flow">
+      <div class="strategy-step">
+        <div class="num">STEP 1</div>
+        <div class="act">선가압류</div>
+        <div class="note">가압류 자체로 시효 중단<br>재산 동결 + 심리적 압박</div>
+      </div>
+      <div class="strategy-arrow">→</div>
+      <div class="strategy-step">
+        <div class="num">STEP 2</div>
+        <div class="act">내용증명</div>
+        <div class="note">추가 시효 중단<br>협상·조정 계기 마련</div>
+      </div>
+      <div class="strategy-arrow">→</div>
+      <div class="strategy-step">
+        <div class="num">STEP 3</div>
+        <div class="act">본안소송</div>
+        <div class="note">6개월 내 제기<br>최고 효력 확정적 담보</div>
+      </div>
+    </div>
+
+    <div class="warning-box">
+      <strong>⚠️ 시효 완성 임박 시 (1~2개월 남음):</strong><br>
+      내용증명보다 <strong>지급명령 또는 가압류</strong>를 먼저 하세요. 내용증명은 6개월 내 후속 조치를 전제하므로, 시효가 임박했을 때는 직접적인 확정 중단 수단(지급명령·가압류)이 더 안전합니다.
+    </div>
+
+    <div class="info-card">
+      <strong>💡 지급명령 팁:</strong> 지급명령(민사소액·독촉절차)은 소송보다 빠르고 저렴합니다. 시효 중단 효과는 재판상 청구와 동일합니다. 채권 금액이 3,000만 원 미만이면 소액사건심판도 고려하세요.
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="section-number">Q&A</span>
+    <h2>자주 묻는 질문</h2>
+
+    <div class="qa-item">
+      <div class="qa-q">빌려준 돈이 5천만 원인데 8년이 지났습니다. 이미 시효가 완성된 건가요?</div>
+      <div class="qa-a">대여금 채권의 소멸시효는 10년입니다(민법 제162조). 아직 2년이 남았습니다. 단, 중간에 시효 중단 조치(승인·최고·소송 등)를 한 적이 없다면 지금부터라도 조치하세요.</div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q">상대방이 카톡으로 "다음 달에 갚을게"라고 했어요. 시효 중단되나요?</div>
+      <div class="qa-a">묵시적 승인 가능성이 있습니다. 다만 구체적 채무(금액·발생 원인)가 특정되어야 하고, 상대방이 채무 존재를 인식하고 있음을 표시한 것으로 해석될 수 있어야 합니다. 확실한 정리는 내역표와 이메일 회신이 가장 안전합니다.</div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q">지급명령을 신청했는데 상대방이 이의신청해서 소송으로 이행됐습니다. 시효는 언제 중단된 건가요?</div>
+      <div class="qa-a">지급명령 신청 시점(제172조) 또는 최초 재판상 청구 시점(제170조)에 소급하여 시효 중단 효력이 발생합니다.</div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q">소송을 제기했다가 취하했습니다. 시효 중단 효력은 어떻게 되나요?</div>
+      <div class="qa-a">소송 취하로 시효 중단 효력은 소멸하고, 소송이 없었던 상태로 돌아갑니다(민법 제170조①). 단, 취하 후 6개월 내에 다시 소송을 제기하면 최초 소송 시점으로 소급하여 시효가 중단됩니다(제170조②).</div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q">상대방이 일부 금액만 변제했습니다. 전체 채권의 시효가 중단되나요?</div>
+      <div class="qa-a">일부 변제는 <strong>변제한 부분에 대해서만 승인</strong>으로 인정됩니다(대법원 2006다22968). 전체 채권이 자동으로 승인되는 것은 아니므로, 나머지 부분은 별도 시효 관리가 필요합니다.</div>
+    </div>
+  </div>
+
+  <div class="card" style="background: #f9fafb;">
+    <div class="eye-catcher" style="border-left-color: #6b7280;">
+      <strong>최신성·면책 고지</strong>
+      <p style="margin-top: 6px; font-size: 13px; color: #6b7280;">본 자료는 <strong>2026. 7. 28.</strong> 기준으로 작성되었으며, 인용 법령·판례는 작성 시점의 현행성을 MCP로 확인한 것입니다. 법령은 개정될 수 있고 사안마다 결론이 달라질 수 있으므로, 실제 의사결정 전 최신 법령과 개별 사실관계 확인이 필요합니다. 본 자료는 일반적 법률 정보 제공이며 특정 사안에 대한 법률 자문이 아닙니다.</div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>조우성 변호사 · 로펌 머스트노우 · <a href="mailto:law@mustknow.co.kr">law@mustknow.co.kr</a></p>
+  <p style="margin-top: 4px;">
+    <strong>참고:</strong> 민법 제162조~제184조 · 상법 제64조 · 대법원 87다카2337 · 2015다34635 · 2014다85216 · 2013다207125 · 2006다22968 · 2006다22852
+  </p>
+</div>
+</body>
+</html>
