@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,follow">
+<title>투자리딩방 사기 피해 회복 3단계 — 법률 대시보드</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --primary: #1a365d;
+    --primary-light: #2b4f8e;
+    --accent: #c53030;
+    --accent-light: #fc8181;
+    --bg: #f7fafc;
+    --card-bg: #ffffff;
+    --text: #1a202c;
+    --text-muted: #4a5568;
+    --border: #e2e8f0;
+    --success: #276749;
+    --success-bg: #f0fff4;
+    --warning: #975a16;
+    --warning-bg: #fffaf0;
+    --danger: #9b2c2c;
+    --danger-bg: #fff5f5;
+    --info: #2a4365;
+    --info-bg: #ebf8ff;
+    --radius: 12px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    padding: 0;
+  }
+  .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+
+  .hero {
+    background: linear-gradient(135deg, #9b2c2c 0%, #c53030 100%);
+    color: white;
+    padding: 48px 0 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero h1 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+  .hero .subtitle {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-bottom: 20px;
+  }
+  .hero .badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .hero .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: rgba(255,255,255,0.2);
+    color: white;
+  }
+
+  .target-section {
+    background: var(--danger-bg);
+    border-left: 4px solid var(--danger);
+    padding: 16px 20px;
+    margin: 24px auto;
+    border-radius: 0 var(--radius) var(--radius) 0;
+  }
+  .target-section p { font-size: 0.9rem; margin-bottom: 4px; }
+  .target-section strong { color: var(--danger); }
+
+  .section {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 28px 24px;
+    margin: 20px auto;
+    transition: box-shadow 0.2s;
+  }
+  .section:hover { box-shadow: var(--shadow-lg); }
+  .section h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--border);
+  }
+  .section h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-light);
+    margin: 16px 0 8px;
+  }
+  .section p { margin-bottom: 12px; font-size: 0.925rem; }
+
+  .table-wrap { overflow-x: auto; margin: 12px 0; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+  }
+  th, td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  th {
+    background: var(--primary);
+    color: white;
+    font-weight: 600;
+  }
+  th:first-child { border-radius: 6px 0 0 0; }
+  th:last-child { border-radius: 0 6px 0 0; }
+  tr:hover td { background: #f7fafc; }
+
+  .pattern-box {
+    background: var(--bg);
+    border-radius: 8px;
+    padding: 16px;
+    margin: 12px 0;
+    border-left: 3px solid var(--accent);
+  }
+  .pattern-box .label {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: white;
+    background: var(--accent);
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+
+  .step {
+    display: flex;
+    gap: 12px;
+    margin: 16px 0;
+    padding: 16px;
+    background: var(--bg);
+    border-radius: 8px;
+    transition: transform 0.15s;
+  }
+  .step:hover { transform: translateX(4px); }
+  .step-num {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    background: var(--accent);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+  .step-content { flex: 1; }
+  .step-content strong { color: var(--accent); font-size: 0.95rem; }
+  .step-content p { margin: 4px 0 0; font-size: 0.85rem; }
+
+  .alert {
+    padding: 14px 16px;
+    border-radius: 8px;
+    margin: 12px 0;
+    font-size: 0.875rem;
+    border-left: 4px solid;
+  }
+  .alert.warning { background: var(--warning-bg); border-color: var(--warning); color: var(--warning); }
+  .alert.danger { background: var(--danger-bg); border-color: var(--danger); color: var(--danger); }
+  .alert.success { background: var(--success-bg); border-color: var(--success); color: var(--success); }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin: 12px 0;
+  }
+  @media (min-width: 600px) { .card-grid { grid-template-columns: 1fr 1fr; } }
+  .ev-card {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px;
+    transition: box-shadow 0.2s;
+  }
+  .ev-card:hover { box-shadow: var(--shadow); }
+  .ev-card .card-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 6px;
+  }
+  .ev-card p { font-size: 0.825rem; margin-bottom: 6px; }
+  .ev-card .tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: var(--info-bg);
+    color: var(--info);
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+    padding: 14px 0;
+  }
+  .faq-item:first-child { padding-top: 0; }
+  .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .faq-q { font-weight: 600; color: var(--primary-light); margin-bottom: 4px; font-size: 0.925rem; }
+  .faq-a { font-size: 0.875rem; color: var(--text-muted); }
+
+  .cta-box {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: white;
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    margin: 20px auto;
+    text-align: center;
+  }
+  .cta-box h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; color: white; border-bottom: none; }
+  .cta-box p { font-size: 0.9rem; opacity: 0.9; margin-bottom: 16px; }
+
+  .disclaimer {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    background: var(--border);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    margin: 20px auto;
+    line-height: 1.6;
+  }
+  .disclaimer strong { color: var(--text); }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 1.35rem; }
+    .section { padding: 20px 16px; }
+    th, td { padding: 8px 10px; font-size: 0.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <h1>투자리딩방 사기,<br>피해 회복 3단계 대응</h1>
+    <p class="subtitle">'원금보장·고수익'에 속았다면? 사기죄 성립 요건부터 고소·민사 구제까지 완전 정복</p>
+    <div class="badge-row">
+      <span class="badge">형사법</span>
+      <span class="badge">소비자</span>
+      <span class="badge">L2 검증</span>
+      <span class="badge">2026.07.29 기준</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="target-section">
+  <p><strong>이 글이 도움이 되는 분</strong></p>
+  <p>투자리딩방·스톡봇·AI자동매매 등에 가입했다가 피해를 본 분</p>
+  <p>"원금보장·고수익"을 약속받고 투자했는데 연락이 두절된 분</p>
+  <p>투자금을 돌려받을 방법이 있는지, 고소하면 도움이 되는지 궁금한 분</p>
+</div>
+
+<div class="section">
+  <h2>문제상황 — 진화하는 투자리딩방 사기</h2>
+  <p>투자리딩방 사기는 날이 갈수록 진화하고 있습니다. 주식·코인·선물·FX마진 등 다양한 투자 상품을 내세우며 "원금보장", "월 10% 수익", "전문가가 1:1로 관리"라는 말로 피해자를 유인합니다.</p>
+
+  <div class="pattern-box">
+    <span class="label">전형적 패턴</span>
+    <p><strong>1단계:</strong> SNS·카카오톡 오픈채팅·유튜브 댓글을 통해 접근</p>
+    <p><strong>2단계:</strong> 과거 수익률 인증샷·후기 조작으로 신뢰 형성</p>
+    <p><strong>3단계:</strong> "소수만 초대"라는 심리로 가입 유도</p>
+    <p><strong>4단계:</strong> 초기 소액 수익금 지급으로 안심시킴 (돌려막기)</p>
+    <p><strong>5단계:</strong> 추가 투자 유도 후 잠적 또는 지속적 손실 발생</p>
+  </div>
+  <p>피해자들은 "이게 사기인지 몰랐다", "계약서도 있었는데", "돌려받을 방법이 있을까"라는 질문을 하게 됩니다.</p>
+</div>
+
+<div class="section">
+  <h2>핵심 쟁점</h2>
+
+  <h3>쟁점 1: 투자리딩방, 언제 사기죄가 성립하나?</h3>
+  <p>사기죄(형법 제347조)는 피해자를 기망하여 재물을 교부받거나 재산상 이익을 취득하는 범죄입니다. 법정형은 <strong>20년 이하 징역 또는 5천만원 이하 벌금</strong>입니다(2026년 3월 법정형 강화).</p>
+
+  <div class="table-wrap">
+  <table>
+    <tr><th>요소</th><th>설명</th></tr>
+    <tr><td>기망행위</td><td>원금보장·고수익 등 허위 사실 제시, 또는 손실·전용 등 불리한 핵심 사정 은폐</td></tr>
+    <tr><td>착오</td><td>피해자가 허위 사실을 믿고 착오에 빠짐</td></tr>
+    <tr><td>처분행위</td><td>착오에 기해 투자금 교부</td></tr>
+    <tr><td>편취 고의</td><td>투자금 유치 당시 반환 의사·능력 없었음에도 있는 것처럼 가장</td></tr>
+  </table>
+  </div>
+
+  <p><strong>기망행위 네 가지 유형:</strong> 적극적 허위고지(원금보장·고수익 약속), 묵비(손실·전용·돌려막기 미고지), 위험 미고지(고위험 투자 위험성 미고지), 보전재원 허위(손실 시 보전 능력 없음에도 원금보장 약속).</p>
+
+  <div class="alert success">
+    <strong>부작위(묵비) 기망 인정 요건</strong>: 법률상 고지의무자가 상대방의 착오를 알면서도 고지하지 않고, 상대방이 알았더라면 거래를 하지 않았을 것이 명백한 경우(대법원 2013도3631). 리딩방 운영진은 투자금 운용 실태·손실 등 핵심 정보 고지 의무가 있습니다.
+  </div>
+
+  <h3>쟁점 2: 원금보장 약정의 법적 의미</h3>
+  <p>"원금보장" 문구만으로 곧바로 사기죄는 성립하지 않습니다. 구체적 허위 고지 내용이 특정되고 편취 고의가 입증되어야 합니다. 초기 일부 수익금 지급은 방어 논리로 제기될 수 있으나, 기망에 의한 교부가 있었으면 사기 기수에 영향이 없습니다. 반대로 구체적 허위 고지가 특정되지 않거나 투자자가 위험을 인지·감수한 정황이 있다면 무죄 여지도 있습니다(대전지법 2023노2076).</p>
+
+  <h3>쟁점 3: 유사수신행위 해당 여부</h3>
+  <p>유사수신행위의 규제에 관한 법률은 인가·허가 없이 불특정 다수로부터 자금을 조달하면서 원금보장을 약정하는 행위를 규제합니다(유사수신법 제2조). 투자리딩방이 이에 해당하면 별도 법적 책임이 발생할 수 있습니다.</p>
+</div>
+
+<div class="section">
+  <h2>첫 대응 순서</h2>
+
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-content">
+      <strong>증거 확보 (가장 중요)</strong>
+      <p>리딩방 대화 내용(카톡·텔레그램) 캡처, 송금 내역, 운영진 신원 정보, 홍보 자료를 확보합니다. 증거는 삭제되기 전에 빠르게 확보해야 하며, 특히 원금보장·수익률 약속 부분을 중심으로 저장합니다.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-content">
+      <strong>고소장 접수</strong>
+      <p>증거를 확보한 후 경찰서에 고소장을 제출합니다. 범죄사실(누가, 언제, 어떤 방법으로, 얼마를 편취했는지), 증거, 법률구성(사기죄)을 기재합니다. 사기죄는 반의사불벌죄가 아니므로 합의하더라도 공소 제기가 가능합니다.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-content">
+      <strong>민사상 구제 검토</strong>
+      <p>고소와 별도로 손해배상청구나 부당이득반환청구를 할 수 있습니다. 운영진 재산에 가압류를 신청하고, 공동 피해자가 있다면 공동 소송도 검토합니다. 송금 계좌의 지급정지를 요청하는 것도 도움이 될 수 있습니다.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>위험 신호 — 이런 투자리딩방은 사기입니다</h2>
+
+  <div class="alert danger">
+    <strong>"원금보장·고수익" — 정상 투자는 원금보장하지 않습니다.</strong>
+  </div>
+  <div class="alert warning">
+    <strong>"소수만 초대" — 심리적 압박으로 합리적 판단을 흐리는 전형적 수법입니다.</strong>
+  </div>
+  <div class="alert danger">
+    <strong>초기 소액 수익 — 신규 투자자 돈으로 기존 투자자에게 지급하는 돌려막기(Ponzi scheme)일 가능성이 높습니다.</strong>
+  </div>
+  <div class="alert warning">
+    <strong>개인 계좌 입금 요구 — 법인 계좌가 아닌 개인 명의 계좌로 입금을 요구한다면 사기를 의심해야 합니다.</strong>
+  </div>
+  <div class="alert danger">
+    <strong>검증 불가능한 수익률 인증샷 — 포토샵이나 가상 계좌로 조작이 가능합니다.</strong>
+  </div>
+</div>
+
+<div class="section">
+  <h2>근거 카드</h2>
+
+  <div class="card-grid">
+    <div class="ev-card">
+      <div class="card-title">형법 제347조 (사기)</div>
+      <p>사람을 기망하여 재물 교부 또는 재산상 이익 취득 → 20년 이하 징역 또는 5천만원 이하 벌금. 2026.3.12 시행 기준 법정형 강화.</p>
+      <span class="tag">법제처 확인</span>
+    </div>
+    <div class="ev-card">
+      <div class="card-title">유사수신법 제2조</div>
+      <p>인가·허가 없이 불특정 다수로부터 자금 조달, 원금보장·초과지급 약정 → 유사수신행위. 가상자산 포함.</p>
+      <span class="tag">법제처 확인</span>
+    </div>
+    <div class="ev-card">
+      <div class="card-title">대법원 2013도3631</div>
+      <p>부작위 기망 법리: 법률상 고지의무 + 착오 인식 + 알았더라면 거래 안 했을 명백성 → 신의칙상 고지의무 위반 = 부작위 기망 성립.</p>
+      <span class="tag">법제처 확인</span>
+    </div>
+    <div class="ev-card">
+      <div class="card-title">서울고법 2024노708</div>
+      <p>원금보장·매월 1% 수익 약속 + 손실 사실 숨김 + 투자금 개인소비 → 사기 인정.</p>
+      <span class="tag">doctrine 인용</span>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>자주 묻는 질문</h2>
+
+  <div class="faq-item">
+    <div class="faq-q">고소하면 투자금을 돌려받을 수 있나요?</div>
+    <div class="faq-a">고소 자체가 투자금 회수를 보장하지는 않습니다. 고소는 가해자 처벌 절차이고, 투자금 회수는 별도 민사절차(손해배상청구, 부당이득반환청구, 가압류)가 필요합니다. 다만 고소 과정에서 재산 발견이나 합의를 통해 일부 회수 가능성이 있습니다.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">사기인지 몰랐는데 저도 처벌받나요?</div>
+    <div class="faq-a">단순 피해자는 처벌받지 않습니다. 다만 투자 권유로 수수료를 받거나 리딩방 운영에 가담했다면 공범으로 처벌될 수 있습니다.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">이미 시간이 지났는데 고소 가능한가요?</div>
+    <div class="faq-a">사기죄 공소시효는 법정형(20년)에 따라 장기이며, 증거가 사라질 수 있으므로 빠를수록 좋습니다.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">변호사 없이 직접 고소할 수 있나요?</div>
+    <div class="faq-a">가능합니다. 경찰서에 방문해 고소장을 제출하면 됩니다. 다만 법리 구성이 복잡한 사건이므로 고소 전 변호사 상담이 유리합니다.</div>
+  </div>
+</div>
+
+<div class="cta-box">
+  <h3>더 정확한 판단이 필요하신가요?</h3>
+  <p>투자리딩방 사기는 구체적 사실관계에 따라 사기죄 성립 여부가 달라집니다. 변호사와의 상담을 통해 법적 조언을 받으시기 바랍니다.</p>
+  <a class="btn" href="#" style="pointer-events:none; opacity:0.9; display:inline-block; background:white; color:var(--primary); font-weight:700; padding:10px 24px; border-radius:8px; text-decoration:none;">법률 상담 링크 준비 중 →</a>
+  <p style="font-size:0.8rem; margin-top:12px; opacity:0.8;">※ 개별 사건에 대한 상담은 변호사에게 직접 문의하세요.</p>
+</div>
+
+<div class="disclaimer">
+  <strong>최신성 및 면책 고지</strong><br>
+  이 글은 2026년 7월 29일 기준 법령과 판례를 바탕으로 작성되었습니다.<br>
+  검증된 근거: 형법 제347조(법제처 확인, 법정형 20년/5천만원 — 2026.3.12 시행), 유사수신행위의 규제에 관한 법률 제2조(법제처 확인), 대법원 2013도3631(법제처 확인).<br>
+  일부 판례(서울고법 2024노708, 서울북부지법 2023노1695, 대전지법 2023노2076 등)는 MCP 한국법 DB에서 실시간 확인되지 않아 내부 doctrine에 의존하였습니다.<br>
+  이 글은 일반적 법률 정보 제공을 위한 것이며, 개별 사건에 대한 법률 자문을 대체하지 않습니다.
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,follow">
+<title>스타트업 투자계약 독소조항 7대 체크리스트 — 법률 대시보드</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --primary: #1a202c;
+    --primary-light: #2d3748;
+    --accent: #3182ce;
+    --accent-light: #63b3ed;
+    --teal: #2c7a7b;
+    --danger: #c53030;
+    --warning: #975a16;
+    --success: #276749;
+    --bg: #f0f4f8;
+    --card-bg: #ffffff;
+    --text: #1a202c;
+    --text-muted: #4a5568;
+    --border: #e2e8f0;
+    --radius: 12px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+  }
+  .container { max-width: 840px; margin: 0 auto; padding: 0 20px; }
+
+  .hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    color: white; padding: 48px 0 40px;
+  }
+  .hero h1 { font-size: 1.75rem; font-weight: 800; line-height: 1.3; margin-bottom: 8px; }
+  .hero .subtitle { font-size: 1rem; opacity: 0.9; margin-bottom: 20px; }
+  .hero .badge-row { display: flex; flex-wrap: wrap; gap: 6px; }
+  .hero .badge {
+    display: inline-block; padding: 3px 10px; border-radius: 20px;
+    font-size: 0.75rem; font-weight: 600; background: rgba(255,255,255,0.2); color: white;
+  }
+  .hero .badge.startup { background: #38a169; color: white; }
+
+  .target-section {
+    background: #ebf8ff; border-left: 4px solid var(--accent);
+    padding: 16px 20px; margin: 24px auto; border-radius: 0 var(--radius) var(--radius) 0;
+  }
+  .target-section p { font-size: 0.9rem; margin-bottom: 4px; }
+  .target-section strong { color: var(--accent); }
+
+  .section {
+    background: var(--card-bg); border-radius: var(--radius); box-shadow: var(--shadow);
+    padding: 28px 24px; margin: 20px auto; transition: box-shadow 0.2s;
+  }
+  .section:hover { box-shadow: var(--shadow-lg); }
+  .section h2 {
+    font-size: 1.25rem; font-weight: 700; color: var(--primary);
+    margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--border);
+  }
+  .section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin: 16px 0 8px; }
+  .section h4 { font-size: 0.9rem; font-weight: 600; margin: 10px 0 4px; }
+  .section p { margin-bottom: 12px; font-size: 0.925rem; }
+
+  .poison-card {
+    border: 1px solid var(--border); border-radius: 8px; padding: 20px;
+    margin: 16px 0; border-left: 4px solid var(--danger);
+  }
+  .poison-card h3 { margin-top: 0; color: var(--danger); }
+  .poison-card .harm { color: var(--danger); font-weight: 600; font-size: 0.85rem; }
+  .poison-card .tip { background: #f0fff4; border-left: 3px solid var(--success); padding: 10px 12px; margin: 10px 0; font-size: 0.85rem; border-radius: 4px; }
+
+  .table-wrap { overflow-x: auto; margin: 12px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { background: var(--accent); color: white; font-weight: 600; }
+  th:first-child { border-radius: 6px 0 0 0; }
+  th:last-child { border-radius: 0 6px 0 0; }
+  tr:hover td { background: #f7fafc; }
+
+  .step {
+    display: flex; gap: 12px; margin: 16px 0; padding: 16px;
+    background: var(--bg); border-radius: 8px; border-left: 3px solid var(--accent);
+  }
+  .step-num {
+    flex-shrink: 0; width: 32px; height: 32px;
+    background: var(--accent); color: white; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.85rem; font-weight: 700;
+  }
+  .step-content { flex: 1; }
+  .step-content strong { color: var(--accent); font-size: 0.95rem; }
+  .step-content p { margin: 4px 0 0; font-size: 0.85rem; }
+
+  .alert {
+    padding: 14px 16px; border-radius: 8px; margin: 12px 0;
+    font-size: 0.875rem; border-left: 4px solid;
+  }
+  .alert.danger { background: #fff5f5; border-color: var(--danger); color: var(--danger); }
+  .alert.warning { background: #fffaf0; border-color: var(--warning); color: var(--warning); }
+  .alert.info { background: #ebf8ff; border-color: var(--accent); color: var(--accent); }
+
+  .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+  @media (max-width: 600px) { .card-grid { grid-template-columns: 1fr; } }
+  .ev-card {
+    border: 1px solid var(--border); border-radius: 8px; padding: 14px;
+  }
+  .ev-card .card-title { font-size: 0.85rem; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+  .ev-card p { font-size: 0.825rem; margin-bottom: 6px; }
+  .ev-card .tag {
+    display: inline-block; font-size: 0.7rem; font-weight: 600;
+    padding: 2px 6px; border-radius: 4px; background: #ebf8ff; color: var(--accent);
+  }
+
+  .faq-item { border-bottom: 1px solid var(--border); padding: 14px 0; }
+  .faq-item:first-child { padding-top: 0; }
+  .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .faq-q { font-weight: 600; color: var(--accent); margin-bottom: 4px; font-size: 0.925rem; }
+  .faq-a { font-size: 0.875rem; color: var(--text-muted); }
+
+  .risk-indicator { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; margin-right: 4px; }
+  .risk-high { background: #fed7d7; color: var(--danger); }
+  .risk-mid { background: #fefcbf; color: #975a16; }
+  .risk-low { background: #c6f6d5; color: #276749; }
+
+  .cta-box {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    color: white; border-radius: var(--radius); padding: 28px 24px; margin: 20px auto; text-align: center;
+  }
+  .cta-box h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; color: white; border-bottom: none; }
+  .cta-box .cta-btn {
+    display: inline-block; margin-top: 14px; padding: 12px 28px;
+    background: white; color: var(--primary); border-radius: 8px;
+    text-decoration: none; font-weight: 700; font-size: 0.95rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .cta-box .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.25); }
+
+  .disclaimer {
+    font-size: 0.75rem; color: var(--text-muted); background: var(--border);
+    border-radius: var(--radius); padding: 16px 20px; margin: 20px auto; line-height: 1.6;
+  }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 1.35rem; }
+    .section { padding: 20px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <h1>스타트업 투자계약 독소조항<br>창업자가 반드시 확인해야 할 7가지</h1>
+    <p class="subtitle">투자계약서 한 줄이 경영권과 회사의 미래를 좌우한다 — 풋옵션·청산우선권·반희석화·드래그얼롱의 숨은 위험</p>
+    <div class="badge-row">
+      <span class="badge">스타트업·회사법</span>
+      <span class="badge startup">B2B</span>
+      <span class="badge">L2 검증</span>
+      <span class="badge">2026.07.29 기준</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="target-section">
+  <p><strong>이 글이 도움이 되는 분</strong></p>
+  <p>시드·시리즈A 투자유치를 앞두고 투자계약서를 검토해야 하는 스타트업 창업자·공동창업자</p>
+  <p>투자계약서에 서명하기 전에 어떤 조항이 위험한지 미리 알고 싶은 대표님</p>
+  <p>스타트업 법무를 담당하는 사내 변호사·실무자</p>
+</div>
+
+<div class="section">
+  <h2>문제상황 — 투자계약서, 아무 생각 없이 서명했다간</h2>
+  <p>스타트업 창업자가 처음 투자계약서를 받아들면 놀라는 점이 한두 가지가 아닙니다. 계약서는 두껍고, 용어는 낯설며, "이것만 통과하면 투자금이 들어온다"는 압박감에 중요한 조항을 그냥 넘기기 쉽습니다.</p>
+  <p><strong>실제 사례 1</strong>: A사 창업자는 시리즈A 투자계약서에 포함된 풋옵션 조항을 대수롭지 않게 생각하고 서명했습니다. 사업이 예상보다 더뎌지자 투자자는 풋옵션을 행사해 회사를 상대로 투자금 전액 반환을 요구했습니다. 법원은 "회사가 직접 투자자 주식을 매수하는 풋옵션은 주주평등 원칙과 자기주식취득 제한에 위반되어 무효"라고 판결했지만(서울고등법원 2025. 2. 20. 선고 2024나2001871), 이미 소송 비용과 시간을 허비했습니다.</p>
+  <p><strong>실제 사례 2</strong>: B사는 RCPS 투자계약에서 반희석화 조항이 '완전희석(full ratchet)' 방식임을 인지하지 못했습니다. 이후 후속 라운드가 저가에 이루어지자 창업자 지분이 급격히 희석되어 경영권에 심각한 위협을 받았습니다.</p>
+</div>
+
+<div class="section">
+  <h2>7대 독소조항</h2>
+
+  <div class="poison-card">
+    <h3>독소조항 1: 풋옵션 <span class="risk-indicator risk-high">고위험</span></h3>
+    <p>투자자가 일정 기간 후 또는 특정 사유 발생 시 보유 주식을 회사나 대주주에게 매도할 수 있는 권리.</p>
+    <p class="harm">위험 신호: "회사는 투자자의 주식을 매수한다"(회사 매수형), IRR 포함 가격, 원금+확정수익 보장</p>
+    <p><strong>법적 기준</strong>: 회사 매수형 = 주주평등 원칙 + 상법 제341조(자기주식취득 제한) 위반 <strong>무효 가능성 높음</strong>(2024나2001871, 2022가합554194). 대주주(창업자) 매수형은 별도 유효 가능(2022다224986).</p>
+    <div class="tip"><strong>협상 포인트</strong>: 회사 매수형 절대 금지 → 대주주 매수형 또는 제3자 매수 주선 의무 구조로 전환. IRR·프리미엄은 합리적 수준으로 조정.</div>
+  </div>
+
+  <div class="poison-card">
+    <h3>독소조항 2: 청산우선권 <span class="risk-indicator risk-high">고위험</span></h3>
+    <p>회사 청산·매각 시 투자자가 보통주보다 먼저 일정 금액을 배분받는 권리.</p>
+    <p class="harm">위험 신호: 참여형(participating), 투자금 N배 우선 배분, 정관 미편입, 청산간주 사유 과다</p>
+    <p><strong>법적 기준</strong>: 정관에 종류주식 내용으로 <strong>적법 편입 필수</strong>(상법 제344조). 차등취급 정당화 특별사정 필요(2023다210670). 배당가능이익 부족 시 조기상환 불가(2023나2029599).</p>
+    <div class="tip"><strong>협상 포인트</strong>: 정관 편입 여부 확인. 참여형 → 비참여형 전환 또는 캡 설정. 청산간주 사유 구체화.</div>
+  </div>
+
+  <div class="poison-card">
+    <h3>독소조항 3: 반희석화 <span class="risk-indicator risk-high">고위험</span></h3>
+    <p>후속 라운드 저가발행 시 투자자의 전환가액을 조정하는 조항.</p>
+    <p class="harm">위험 신호: 완전희석(full ratchet) 방식, 조정 하한(floor) 부재, ESOP 예외 좁음</p>
+    <p><strong>법적 기준</strong>: 완전희석 = 최저가 일괄 리셋 → 창업자 지분 급격 희석. 가중평균 = 상대적 온건. 산식 명시 → 산식대로 판단(2013다40858, 2019나2051261). 반희석화와 리픽싱 별도 목적(2008가합16528).</p>
+    <div class="tip"><strong>협상 포인트</strong>: 완전희석 절대 금지 → <strong>가중평균</strong> 방식 요구. 조정 하한 설정, ESOP·스톡옵션 예외 최대한 넓힐 것.</div>
+  </div>
+
+  <div class="poison-card">
+    <h3>독소조항 4: 드래그얼롱 <span class="risk-indicator risk-mid">중위험</span></h3>
+    <p>대주주(투자자)가 회사 매각 시 소수주주(창업자)를 강제 매각에 참여시키는 권리.</p>
+    <p class="harm">위험 신호: 낮은 행사 임계값, 가격 평가 메커니즘 부재, "최대한 협조" 모호 문구</p>
+    <p><strong>법적 기준</strong>: 주주간계약상 채권계약으로 원칙 유효. "최대한 협조" = 법적 구속력 불명확(2018다223054). 저가 강제매수+압박→민법 제104조 무효 위험(2023가합79041).</p>
+    <div class="tip"><strong>협상 포인트</strong>: 행사 임계값 2/3 이상. 가격 하한 명시. <strong>태그얼롱</strong> 권리 요구(동반 매각 참여권).</div>
+  </div>
+
+  <div class="poison-card">
+    <h3>독소조항 5: 동의권(보호조항) <span class="risk-indicator risk-mid">중위험</span></h3>
+    <p>투자자가 회사의 중요 의사결정에 사전 동의권을 행사하는 조항.</p>
+    <p class="harm">위험 신호: 지나치게 광범위한 동의권(일상 경영 포함), 기준 불명확, 거부 시 업무 마비</p>
+    <p><strong>법적 기준</strong>: 동의권 자체 유효 영역 존재(2023다210670). 범위 과다·불공정 시 무효 리스크. 과도한 위반 제재 = 민법 제398조 감액 가능.</p>
+    <div class="tip"><strong>협상 포인트</strong>: 동의권 대상을 핵심 사항(정관변경·합병·증자·이사선임)으로 한정. 일정 금액 이하 일상 경영 제외.</div>
+  </div>
+
+  <div class="poison-card">
+    <h3>독소조항 6: SAFE/전환사채 리스크 <span class="risk-indicator risk-high">고위험</span></h3>
+    <p>초기 투자에서 자주 사용되는 전환사채·SAFE의 법적 성질 리스크.</p>
+    <p class="harm">위험 신호: 원금 확정상환+변제기+담보, 고율 IRR 가산, 과도한 밸류캡</p>
+    <p><strong>법적 기준</strong>: 경제적 실질 우선. 확정 보장 구조 → <strong>금전소비대차</strong> 재구성 위험. 이자제한법 적용(2023다272289, 2025나11217). 고율 IRR 가산 → 위약벌 재해석·일부무효 가능(2018다248855 전합).</p>
+    <div class="tip"><strong>협상 포인트</strong>: '투자'·'전환' 문언 유지, 원금 확정 보장·변제기·담보 설정 금물. 밸류캡 = 합리적 가치 평가 기반.</div>
+  </div>
+
+  <div class="poison-card">
+    <h3>독소조항 7: 주식매수청구권(콜옵션) <span class="risk-indicator risk-mid">중위험</span></h3>
+    <p>회사나 투자자가 일정 조건에서 창업자 주식을 강제 매수하는 권리.</p>
+    <p class="harm">위험 신호: 위반 사유 과다, 매수가격 액면가/저가, 일방적 행사 재량</p>
+    <p><strong>법적 기준</strong>: 형성권으로 상대방 의사 무관 효과 발생(2021나2049285). 저가 매수 = 주주평등 위반 또는 민법 제104조 무효 위험. 태그얼롱 = 문언 구체적일수록 실효성 높음(2024가합43469).</p>
+    <div class="tip"><strong>협상 포인트</strong>: 행사 사유 제한적 정의. 공정 평가 메커니즘(평가기관·산정기준) 명시. 상호 권리 설계 고려.</div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>첫 대응 — 투자계약서 검토 5단계</h2>
+
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-content">
+      <strong>핵심 조항 식별 (30분)</strong>
+      <p>풋옵션(회사/대주주 매수형), 반희석화(가중평균/완전희석), 청산우선권(참여/비참여형), 드래그얼롱(임계값·가격), 동의권(범위) 확인</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-content">
+      <strong>위험도 평가 (1시간)</strong>
+      <p>고위험: 회사 매수형 풋옵션, 완전희석, 참여형 무제한 우선권. 중위험: 대주주 매수형 풋옵션, 가중평균 반희석화. 저위험: 합리적 동의권.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-content">
+      <strong>법률 검토 의뢰</strong>
+      <p>풋옵션 효력, RCPS 정관 편입, SAFE 대여 리스크 등은 반드시 스타트업 전문 변호사 검토 필요.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-content">
+      <strong>협상 우선순위 설정</strong>
+      <p>필수 수정: 회사 매수형 풋옵션, 완전희석, 과도한 동의권. 권장 수정: 참여형 우선권. 양보 가능: 적정 수준 가중평균·청산우선권.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">5</div>
+    <div class="step-content">
+      <strong>정관 확인</strong>
+      <p>투자계약 내용이 정관과 일치하는지 확인. 종류주식 권리(청산우선권·전환권)의 정관 편입 여부가 핵심.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>위험 신호</h2>
+  <div class="alert danger"><strong>"표준 투자계약서"</strong> — 투자자마다 선호 조항이 다릅니다. "표준"이라는 말에 안심하지 마세요.</div>
+  <div class="alert warning"><strong>구두 약속과 계약서 불일치</strong> — 계약서에 명시되지 않은 구두 약속은 법적 효력이 없습니다.</div>
+  <div class="alert danger"><strong>정관과 투자계약서 충돌</strong> — 투자계약 권리가 정관에 반영되지 않으면 자본규제 위반 리스크 발생.</div>
+  <div class="alert warning"><strong>"오늘 서명 안 하면 투자 철회"</strong> — 전형적인 협상 전술입니다. 충분한 검토 시간을 확보하세요.</div>
+</div>
+
+<div class="section">
+  <h2>근거 카드</h2>
+  <div class="card-grid">
+    <div class="ev-card">
+      <div class="card-title">상법 제341조</div>
+      <p>자기주식 취득 요건 — 배당가능이익 한도 내에서만 취득 가능.</p>
+      <span class="tag">법제처 확인</span>
+    </div>
+    <div class="ev-card">
+      <div class="card-title">상법 제344조</div>
+      <p>종류주식 발행 — 정관에 각 종류주식의 내용과 수를 정해야 함.</p>
+      <span class="tag">법제처 확인</span>
+    </div>
+    <div class="ev-card">
+      <div class="card-title">대법원 2023다210670</div>
+      <p>차등취급 정당화 특별사정 법리. 동의권 자체 유효 영역 존재.</p>
+      <span class="tag">doctrine 인용</span>
+    </div>
+    <div class="ev-card">
+      <div class="card-title">대법원 2023다272289</div>
+      <p>투자/대여 구분 기준 — 확정 보장 구조 있으면 대여로 재구성 가능.</p>
+      <span class="tag">doctrine 인용</span>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>자주 묻는 질문</h2>
+  <div class="faq-item">
+    <div class="faq-q">투자계약서의 풋옵션은 다 무효인가요?</div>
+    <div class="faq-a">회사가 직접 투자자 주식을 매수하는 '회사 매수형'은 무효 가능성이 높지만, 창업자(대주주) 개인이 매수하는 '대주주 매수형'은 별도로 유효할 가능성이 큽니다. 투자계약 협상 시 반드시 이 점을 구분해야 합니다.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">반희석화에서 완전희석과 가중평균 중 무엇이 유리한가요?</div>
+    <div class="faq-a">창업자에게는 가중평균 방식이 훨씬 유리합니다. 완전희석은 후속 라운드의 최저가로 전환가액이 일괄 조정되어 창업자 지분이 급격히 희석됩니다. 반드시 가중평균 방식을 요구하세요.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">드래그얼롱에 동의하지 않으면 투자를 못 받나요?</div>
+    <div class="faq-a">드래그얼롱은 투자자의 주요 회수 수단이므로 완전 배제는 어렵습니다. 대신 행사 임계값을 높이고(2/3 이상), 최소 매각 가격 하한을 설정하며, 창업자에게도 태그얼롱 권리를 요구하는 방식으로 조건을 조정하는 것이 현실적인 협상 전략입니다.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">SAFE로 투자받았는데, 나중에 대여금이라고 주장하면?</div>
+    <div class="faq-a">법원은 계약 문언보다 경제적 실질을 우선합니다. 원금 확정 보장·변제기·담보·기한이익상실 조항이 있으면 SAFE도 실질적으로 대여금으로 재구성될 수 있습니다(대법원 2023다272289). 계약서 문언을 '투자'·'전환' 중심으로 유지하고, 원금 확정 보장 구조를 피하는 것이 중요합니다.</div>
+  </div>
+</div>
+
+<div class="cta-box">
+  <h3>더 체계적인 투자계약 검토가 필요하신가요?</h3>
+  <p>스타트업 투자계약 체크리스트·독소조항 대응 실무 법률팩을 통해 체계적인 투자 리스크 관리를 시작하세요.</p>
+  <a href="#" class="cta-btn" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.25)';" onmouseout="this.style.transform='';this.style.boxShadow='0 2px 8px rgba(0,0,0,0.15)';">법률팩 출시 알림 신청 →</a>
+  <p style="font-size:0.8rem; opacity:0.8; margin-top:8px;">※ 법률팩 준비 중입니다. 출시 시 알림을 보내드립니다.</p>
+</div>
+
+<div class="disclaimer">
+  <strong>최신성 및 면책 고지</strong><br>
+  이 글은 2026년 7월 29일 기준 법령과 판례를 바탕으로 작성되었습니다.<br>
+  검증된 근거: 상법 제341조·제344조·제350조·제462조(법제처 DB 확인), 민법 제103조·제104조·제398조(법제처 DB 확인), 이자제한법(법제처 DB 확인).<br>
+  일부 판례는 내부 doctrine 인용.<br>
+  이 글은 일반적 법률 정보 제공 목적이며, 개별 투자계약에 대한 법률 자문을 대체하지 않습니다.
+</div>
+
+</div>
+</body>
+</html>

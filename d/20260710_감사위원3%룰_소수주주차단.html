@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="감사위원 분리선출 합산 3%룰(상법 제542조의12). 대주주 의결권 3% 제한으로 소수주주 후보가 감사위원회에 진입하는 법과 회사의 적법한 방어 전략 완전 정리.">
+<meta property="og:title" content="감사위원 분리선출 3%룰: 단 한 명의 소수주주 후보 막는 법">
+<meta property="og:description" content="합산 3%룰(2026.7.23 시행)로 대주주 의결권이 3%로 쪼그라들었다. 소수주주 후보 차단 전략과 한계를 실무 판례와 함께 정리.">
+<meta property="og:type" content="website">
+<meta name="robots" content="index,follow">
+<title>감사위원 분리선출 3%룰 — 소수주주 후보 차단 전략</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#f0f2f5;color:#111827;line-height:1.75;font-size:14.5px;-webkit-font-smoothing:antialiased}
+.topbar{position:sticky;top:0;height:4px;background:linear-gradient(90deg,#1a3a6b,#2e6be6);z-index:100}
+.progress-bar{position:sticky;top:4px;height:3px;background:#e5e7eb;z-index:99}
+.progress-bar .fill{height:100%;width:0%;background:linear-gradient(90deg,#2e6be6,#60a5fa);transition:width .2s}
+.header{background:#fff;border-bottom:1px solid #e5e7eb;padding:12px 20px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.header .avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#1a3a6b,#2e6be6);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;flex-shrink:0}
+.header .info{font-size:12px;color:#6b7280}
+.header .info strong{color:#1a3a6b}
+.hero{background:linear-gradient(135deg,#1a3a6b,#2e6be6);color:#fff;padding:40px 20px 56px}
+.hero h1{font-size:clamp(22px,4vw,32px);font-weight:900;margin-bottom:6px;line-height:1.3}
+.hero .tag{display:inline-block;background:rgba(255,255,255,0.2);padding:3px 10px;border-radius:4px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
+.hero .meta{font-size:12px;color:rgba(255,255,255,0.8);margin-top:8px}
+.hero .meta span{margin-right:16px}
+.container{max-width:800px;margin:0 auto;padding:0 16px}
+.tldr{background:#fff;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.08);padding:20px 24px;margin-top:-36px;margin-bottom:24px;border-left:4px solid #2e6be6}
+.tldr h2{font-size:16px;font-weight:700;color:#1a3a6b;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.tldr ul{list-style:none;padding:0}
+.tldr ul li{padding:4px 0;padding-left:16px;position:relative;font-size:13.5px}
+.tldr ul li::before{content:"▸";position:absolute;left:0;color:#2e6be6;font-weight:700}
+.section{background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.06);padding:24px;margin-bottom:20px;border:1px solid #e5e7eb}
+.section .number{display:inline-block;background:#2e6be6;color:#fff;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:2px 8px;border-radius:3px;margin-bottom:8px}
+.section h2{font-size:20px;font-weight:700;color:#1a3a6b;margin-bottom:12px}
+.section h3{font-size:16px;font-weight:700;color:#374151;margin-top:16px;margin-bottom:8px}
+.section p{margin-bottom:10px;font-size:14px}
+.eye{border-left:4px solid #2e6be6;background:#eff6ff;padding:10px 14px;margin-bottom:12px;border-radius:0 6px 6px 0}
+.eye ul{list-style:none;padding:0}
+.eye ul li{padding:2px 0;padding-left:14px;position:relative;font-size:13px}
+.eye ul li::before{content:"▸";position:absolute;left:0;color:#2e6be6}
+.legal-quote{background:#fffbeb;border-left:4px solid #f59e0b;padding:10px 14px;margin:12px 0;border-radius:0 6px 6px 0;font-size:12.5px;color:#92400e}
+.legal-quote strong{color:#78350f}
+.legal-quote .status{display:inline-block;background:#d1fae5;color:#065f46;padding:1px 6px;border-radius:3px;font-size:10px;font-weight:700;margin-left:4px}
+.table-wrap{overflow-x:auto;margin:12px 0}
+table{width:100%;border-collapse:collapse;font-size:13px}
+thead th{background:#f0f2f5;color:#1a3a6b;font-weight:700;text-align:left;padding:8px 10px;border-bottom:2px solid #e5e7eb;position:sticky;top:0}
+tbody td{padding:8px 10px;border-bottom:1px solid #e5e7eb;vertical-align:top}
+tbody tr:last-child td{border-bottom:none}
+.steps{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0}
+.step-card{flex:1;min-width:180px;background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:14px;border-top:3px solid #2e6be6}
+.step-card .step-num{font-size:10px;font-weight:700;color:#2e6be6;text-transform:uppercase}
+.step-card h4{font-size:14px;font-weight:700;color:#1a3a6b;margin:4px 0}
+.step-card p{font-size:12.5px;color:#4b5563;margin:0}
+.info-card{background:#eff6ff;border-radius:8px;padding:12px 16px;margin:12px 0;font-size:13px}
+.info-card strong{color:#1a3a6b}
+.highlight-box{background:#ecfdf5;border-left:4px solid #059669;padding:10px 14px;margin:12px 0;border-radius:0 6px 6px 0;font-size:13px}
+.highlight-box strong{color:#065f46}
+.warning-box{background:#fef3c7;border-left:4px solid #d97706;padding:10px 14px;margin:12px 0;border-radius:0 6px 6px 0;font-size:13px}
+.warning-box strong{color:#92400e}
+.sim-box{background:#1e293b;color:#e2e8f0;border-radius:8px;padding:14px 16px;margin:12px 0;font-size:12.5px;font-family:'Courier New',monospace;line-height:1.6}
+.sim-box .sim-title{color:#60a5fa;font-weight:700;margin-bottom:4px}
+.qa-item{margin:12px 0;padding:12px 14px;background:#f9fafb;border-radius:8px;border:1px solid #e5e7eb}
+.qa-q{font-weight:700;color:#1a3a6b;margin-bottom:4px;font-size:14px}
+.qa-q::before{content:"Q. ";color:#2e6be6}
+.qa-a{font-size:13.5px;color:#374151;padding-left:24px}
+.disclaimer{background:#f9fafb;border-radius:8px;padding:14px 18px;margin-top:20px;font-size:12px;color:#6b7280;border-left:4px solid #9ca3af}
+.footer{text-align:center;padding:24px 16px;color:#9ca3af;font-size:11px;border-top:1px solid #e5e7eb;margin-top:20px}
+.footer a{color:#2e6be6;text-decoration:none}
+.cta-box{background:#1a3a6b;color:#fff;border-radius:12px;padding:20px;margin-top:20px;text-align:center}
+.cta-box h3{font-size:16px;font-weight:700;margin-bottom:6px}
+.cta-box p{font-size:13px;color:rgba(255,255,255,0.85)}
+.cta-box .btn{display:inline-block;background:#fff;color:#1a3a6b;padding:8px 20px;border-radius:6px;font-weight:700;font-size:13px;text-decoration:none;margin-top:8px}
+.chk-table td:first-child{text-align:center;font-size:14px;font-weight:700}
+.chk-red{color:#dc2626}.chk-yellow{color:#d97706}.chk-green{color:#059669}
+@media(max-width:640px){
+  .hero{padding:28px 16px 44px}
+  .tldr{padding:14px 16px;margin-top:-28px}
+  .section{padding:16px}
+  .steps{flex-direction:column}
+  .step-card{min-width:auto}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar"></div>
+<div class="progress-bar"><div class="fill" id="progressFill"></div></div>
+
+<div class="header">
+  <div class="avatar">조</div>
+  <div class="info"><strong>조우성 변호사</strong> · 머스트노우 법률사무소 &nbsp;|&nbsp; law@mustknow.co.kr</div>
+</div>
+
+<div class="hero">
+  <div class="container">
+    <span class="tag">회사법 · 지배구조</span>
+    <h1>감사위원 분리선출 3%룰<br>단 한 명의 소수주주 후보 막는 법</h1>
+    <div class="meta">
+      <span>📅 2026-07-10 작성</span>
+      <span>⚖️ 합산 3%룰 2026.7.23 시행</span>
+      <span>🔹 분리선출 2인 2026.9.10 시행</span>
+      <span>⏱ 읽기 5분</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="tldr">
+  <h2>📌 3줄 요약</h2>
+  <ul>
+    <li><strong>2026.7.23부터</strong> 상장사 감사위원 선임 시 최대주주+특수관계인 의결권이 <strong>3%로 제한</strong>(합산 3%룰). 대주주가 지분 40%를 가져도 감사위원 선임에서는 3%만 행사 가능.</li>
+    <li><strong>2026.9.10부터</strong> 분리선출 감사위원이 <strong>2명으로 확대</strong>되어 소수주주·행동주의 펀드의 감사위원회 진입 통로가 2개로 늘어난다.</li>
+    <li>회사는 <strong>정관 설계·이사 정수 조정·사외이사 선임 전략</strong>으로 소수주주 후보의 진입을 최소화할 수 있으나, <strong>3%룰은 문언 엄격 — 정관·결의로 확장 불가</strong>(대법원 2009다51820), <strong>기습 상정·절차 위반 시 결의 무효</strong> 리스크가 있다.</li>
+  </ul>
+</div>
+
+<!-- SECTION 1 -->
+<div class="section">
+  <span class="number">쟁점 01</span>
+  <h2>3%룰의 파괴력 — 대주주 45%도 3%로 쪼그라든다</h2>
+
+  <div class="eye">
+    <ul>
+      <li>합산 3%룰은 최대주주와 특수관계인 주식을 <strong>모두 합산</strong>하여 3% 초과분 의결권 불행사.</li>
+      <li>대주주 지분 45% → 감사위원 선임 시 의결권 3% → 나머지 97%로 소수주주·기관투자자가 선임을 좌우.</li>
+      <li>3%룰은 1주 1의결권 원칙의 <strong>강행규정 예외</strong> → 문언 엄격 해석, 정관·결의로 추가 확장 불가.</li>
+    </ul>
+  </div>
+
+  <h3>1.1 개정 전후 비교</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>구분</th><th>개정 전</th><th>개정 후 (시행일)</th></tr></thead>
+      <tbody>
+        <tr><td>적용 대상</td><td>사외이사 아닌 감사위원만</td><td><strong>분리선출 감사위원 전원</strong> (2026.7.23)</td></tr>
+        <tr><td>3%룰 합산 기준</td><td>최대주주 지분만</td><td><strong>최대주주+특수관계인+계산보유자+의결권위임자</strong> (2026.7.23)</td></tr>
+        <tr><td>분리선출 감사위원 수</td><td>최소 1명</td><td><strong>최소 2명</strong> (2026.9.10)</td></tr>
+        <tr><td>대상 회사</td><td>자산 2조↑ 상장사</td><td>동일</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="legal-quote">
+    <strong>[근거·조문] 상법 제542조의12 제4항</strong> (시행 2026.7.23) — 감사위원 선임·해임 시 최대주주와 그 특수관계인 등이 소유한 주식을 모두 합산하여 3%를 초과하는 주식에 대해 의결권을 행사하지 못한다.
+    <span class="status">✓ MCP FOUND</span>
+  </div>
+
+  <div class="legal-quote">
+    <strong>[근거·조문] 상법 제542조의12 제2항</strong> (시행 2026.9.10) — 감사위원회위원 중 1명(정관에서 2명 이상으로 정할 수 있음)은 주주총회 결의로 다른 이사들과 분리하여 선임하여야 한다.
+    <span class="status">✓ MCP FOUND</span>
+  </div>
+
+  <h3>1.2 대주주 의결권 시뮬레이션</h3>
+  <div class="sim-box">
+    <div class="sim-title">📊 [사례] 태양전자 — 최대주주 지분 45%, 특수관계인 합산 52%</div>
+    ────────────────────────────────────<br>
+    감사위원 선임 안건:<br>
+    · 최대주주 의결권: 3% (45% 아님, 42% 제한)<br>
+    · 나머지 의결권: <strong>97%</strong><br>
+    · 소수주주 연합 15% + 기관투자자 25% = 40%<br>
+    · → 40%/97% = <strong>41.2% 득표율</strong><br>
+    · → 분리선출 2인 중 <strong>1인 당선 가능</strong>
+  </div>
+
+  <h3>1.3 정족수 산정 특칙 — 핵심 실무 포인트</h3>
+  <p>3% 제한이 적용되는 선임·해임 결의에서 의결권이 제한된 주식은 <strong>발행주식총수에서 제외</strong>한다. 그렇지 않으면 지분 집중 회사에서 발행주식총수 1/4 요건을 충족할 수 없어 감사 선임이 불가능해진다.</p>
+
+  <div class="legal-quote">
+    <strong>[근거·판례] 대법원 2016.8.17. 선고 2016다222996 판결</strong> — 3% 초과 주식(의결권 제한 주식)은 상법 제368조 제1항 정족수 요건 중 '발행주식총수'에 산입되지 않는다.
+    <span class="status">✓ WIKI CANONICAL</span>
+  </div>
+</div>
+
+<!-- SECTION 2 -->
+<div class="section">
+  <span class="number">쟁점 02</span>
+  <h2>소수주주 후보 진입 경로 — 세 가지 루트</h2>
+
+  <div class="eye">
+    <ul>
+      <li>합산 3%룰로 최대주주 의결권이 3%로 제한되면서, 소수주주 연합이 감사위원을 선임할 <strong>현실적 가능성</strong>이 열렸다.</li>
+      <li>소수주주의 진입 경로는 <strong>① 주주제안 ② 집중투표제 연동 ③ 기관투자자 연대</strong>의 세 가지.</li>
+    </ul>
+  </div>
+
+  <h3>2.1 주주제안으로 감사위원 후보 추천</h3>
+  <p>소수주주(1% 이상 보유)는 주주제안권을 행사하여 감사위원 후보를 추천할 수 있다. 분리선출 감사위원 안건은 별도 안건이므로, 감사위원회 후보 추천을 이사회에 의존하지 않고 직접 주주제안이 가능하다.</p>
+
+  <div class="legal-quote">
+    <strong>[근거·조문] 상법 제363조의2</strong> — 발행주식 총수 1% 이상 보유 주주는 주주제안권 행사 가능.
+    <span class="status">✓ MCP FOUND</span>
+  </div>
+
+  <h3>2.2 집중투표제와의 연동 효과</h3>
+  <p>2026.9.10부터 자산 2조↑ 상장사는 <strong>집중투표제 의무화</strong>. 분리선출 감사위원 선임 안건은 집중투표 대상에서 제외되므로, 일반 이사 선임에서 집중투표로 영향력을 행사하고 감사위원 선임에서는 3%룰로 직접 영향력을 행사하는 <strong>이중 전략</strong>이 필요하다.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>제도</th><th>일반 이사 선임</th><th>감사위원 선임</th></tr></thead>
+      <tbody>
+        <tr><td>집중투표</td><td>✅ 적용 (의무화)</td><td>❌ 분리선출 제외</td></tr>
+        <tr><td>3%룰</td><td>❌ 미적용</td><td>✅ 합산 3%룰 적용</td></tr>
+        <tr><td>소수주주 전략</td><td>집중투표로 이사 1석 확보</td><td>3%룰로 감사위원 1석 확보</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>2.3 기관투자자와의 연대</h3>
+  <p>연기금·운용사의 의결권 행사는 감사위원 선임의 캐스팅보트가 된다. 소수주주는 기관투자자와의 사전 협의를 통해 감사위원 후보에 대한 지지를 확보할 수 있다.</p>
+
+  <div class="legal-quote">
+    <strong>[근거·판례] 대법원 2025.6.26. 선고 2025다211360 판결</strong> — 투자일임업자가 투자자의 위임 없이 의결권을 행사한 부분은 결의방법의 중대한 하자로 결의 취소 사유가 된다.
+    <span class="status">✓ WIKI CANONICAL</span>
+  </div>
+</div>
+
+<!-- SECTION 3 -->
+<div class="section">
+  <span class="number">쟁점 03</span>
+  <h2>회사가 소수주주 후보를 막는 법적 전략</h2>
+
+  <div class="eye">
+    <ul>
+      <li>회사가 소수주주 후보의 진입을 완전히 '막는' 것은 <strong>3%룰의 문언 구조상 불가능</strong>하다. 3%룰은 강행규정으로, 이를 정관·결의로 회피할 수 없다(2009다51820).</li>
+      <li>따라서 <strong>완전 차단이 아니라 '영향력 최소화 전략'</strong>으로 접근해야 한다.</li>
+    </ul>
+  </div>
+
+  <h3>3.1 ✅ 정관 설계를 통한 최소화</h3>
+  <p>개정상법은 "1명(정관으로 2명 이상 가능)"이라고 규정. 분리선출 2명이 의무가 아니라 정관으로 더 늘릴 수 있다는 점을 활용한다.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>전략</th><th>내용</th><th>리스크</th></tr></thead>
+      <tbody>
+        <tr><td>분리선출 최소 인원 유지</td><td>법정 최소치 2명 유지, 증원 안 함</td><td>3%룰 적용 대상 최소화</td></tr>
+        <tr><td>사외이사 감사위원 배치</td><td>분리선출 감사위원을 사외이사로 충원</td><td>독립성 요건 충족 + 이사회 내 신뢰도</td></tr>
+        <tr><td>감사위원 자격 요건 강화</td><td>회계·재무 전문가 요건 명시</td><td>과도하면 정관 무효 리스크</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>3.2 ✅ 이사 정수 조정의 적법한 범위</h3>
+  <p>이사 정수를 조정하여 소수주주 후보의 당선 가능성을 간접적으로 조정할 수 있다. 단, <strong>기습 상정·목적사항 통지 위반 시 결의 자체가 부존재</strong>될 수 있다.</p>
+
+  <div class="legal-quote">
+    <strong>[근거·판례] 대전고등법원 2018.7.17. 선고 (청주)2016나11975 판결</strong> — 통지된 안건이 "이사 보선"인데 총회 현장에서 기습적으로 이사 증원 및 후보 선임을 밀어붙인 진행은 목적사항 외 결의로 부존재.
+    <span class="status">✓ WIKI CANONICAL</span>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>✅ 적법한 전략</th><th>❌ 위법한 전략</th></tr></thead>
+      <tbody>
+        <tr><td>사전 통지 후 이사 정수 변경안 상정</td><td>기습 상정·표결 강행</td></tr>
+        <tr><td>정기주총 일정에 맞춘 정관 변경</td><td>소집통지일 임박한 정관 변경 강행</td></tr>
+        <tr><td>주주제안의 적법한 심사·부의</td><td>주주제안 자체를 무시·방치</td></tr>
+        <tr><td>이사회 추천 절차 내실화</td><td>추천 자격을 자의적으로 제한</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>3.3 ❌ 금지 — 3%룰 확장·정관 우회</h3>
+  <p>3%룰을 정관이나 결의로 확장하거나, 우회 수단을 도입하는 것은 <strong>무효</strong>다. 대법원 2009다51820은 "최대주주가 아닌 주주까지 감사 선임 의결권 제한을 확장하는 정관 규정·결의는 무효"라고 명시했다.</p>
+
+  <div class="warning-box">
+    <strong>⛔ 절대 금지:</strong> 정관에 "최대주주+특수관계인+의결권 위임자+계산보유자 전부 합산 3%" 규정을 넣는 것은 법률이 허용하지 않는 방식으로 1주 1의결권 원칙의 예외를 확장한 것으로 무효(대전지법 2024가합203185).
+  </div>
+
+  <div class="legal-quote">
+    <strong>[근거·판례] 대법원 2009.11.26. 선고 2009다51820 판결</strong> — 1주 1의결권 원칙은 강행규정으로, 법률이 정한 예외를 넘어 정관 또는 주주총회 결의로 의결권을 추가 제한할 수 없다.
+    <span class="status">✓ WIKI CANONICAL</span>
+  </div>
+
+  <div class="legal-quote">
+    <strong>[근거·판례] 대전지방법원 2026.1.21. 선고 2024가합203185 판결</strong> — 의결권 위임이 "표결 내용이 이미 정해져 있고 단지 행사만 위임"된 형태라면, 그 위임주식을 의결권 제한 합산 대상으로 삼을 수 없다.
+    <span class="status">✓ WIKI CANONICAL</span>
+  </div>
+
+  <h3>3.4 ⚠️ 최대주주 판단 오류 — 가장 큰 리스크</h3>
+  <p>3%룰 적용에서 <strong>최대주주 판단을 잘못하면 결의가 무효</strong>가 될 수 있다. 기준일 주주명부 기준으로 최대주주를 확정하고, 특수관계인 범위를 정밀 검증해야 한다.</p>
+
+  <div class="legal-quote">
+    <strong>[근거·판례] 부산지방법원 서부지원 2025.9.24. 선고 2025가합1235 판결</strong> — 회사가 최대주주 판단 및 '자기 계산' 주장을 근거로 의결권 제한을 잘못 적용한 경우, 하자가 중대하여 감사 선임 결의 무효.
+    <span class="status">✓ WIKI CANONICAL</span>
+  </div>
+</div>
+
+<!-- SECTION 4 -->
+<div class="section">
+  <span class="number">액션 플랜</span>
+  <h2>주총 시즌 전 법무팀 액션 플랜</h2>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>우선순위</th><th>과제</th><th>마감</th></tr></thead>
+      <tbody>
+        <tr><td><span class="chk-red">🔴</span></td><td><strong>정관 개정</strong>: 분리선출 감사위원 2인 근거 규정 신설</td><td>주총 6주 전</td></tr>
+        <tr><td><span class="chk-red">🔴</span></td><td><strong>최대주주+특수관계인 지분 구조 정밀 분석</strong></td><td>주총 8주 전</td></tr>
+        <tr><td><span class="chk-yellow">🟡</span></td><td><strong>감사위원 후보 풀(pool) 확정</strong> — 사외이사 2/3 요건 충족</td><td>주총 6주 전</td></tr>
+        <tr><td><span class="chk-yellow">🟡</span></td><td><strong>3%룰 적용 의결권 시뮬레이션</strong> — 각 시나리오별 득표 예측</td><td>주총 4주 전</td></tr>
+        <tr><td><span class="chk-green">🟢</span></td><td>소수주주 주주제안 가능성 사전 모니터링</td><td>상시</td></tr>
+        <tr><td><span class="chk-green">🟢</span></td><td>기관투자자 의결권 행사 방향 사전 파악</td><td>주총 4주 전</td></tr>
+        <tr><td><span class="chk-green">🟢</span></td><td>감사위원 독립성·결격 사유 사전 심사</td><td>주총 4주 전</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="section">
+  <span class="number">Q&A</span>
+  <h2>자주 묻는 질문</h2>
+
+  <div class="qa-item">
+    <div class="qa-q">감사위원 선임에서 최대주주가 지분 45%인데, 의결권이 진짜 3%만 인정되나요?</div>
+    <div class="qa-a">네, 맞습니다. 2026.7.23 시행된 합산 3%룰(상법 제542조의12 제4항)에 따라 최대주주와 그 특수관계인의 지분을 합산하여 3%를 초과하는 부분의 의결권은 행사할 수 없습니다. 최대주주가 45%를 보유해도 감사위원 선임 안건에서는 3%만 의결권을 행사할 수 있고, 나머지 42%는 의결권이 제한됩니다.</div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">분리선출 감사위원과 일반 감사위원의 차이는 무엇인가요?</div>
+    <div class="qa-a">분리선출 감사위원은 다른 이사들과 분리하여 별도 안건으로 선출됩니다(상법 제542조의12 제2항). 일반 감사위원은 이사 선임 안건에서 함께 선출됩니다. 분리선출 감사위원 전원에게 합산 3%룰이 적용되며, 해임 시에도 3%룰이 적용됩니다. 권한과 책임은 일반 감사위원과 동일합니다.</div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">소수주주가 감사위원 후보를 내려면 지분율이 얼마나 필요한가요?</div>
+    <div class="qa-a">정해진 지분율 요건은 없습니다. 다만 주주제안(상법 제363조의2)을 통해 후보를 추천하려면 발행주식 총수의 1% 이상을 보유해야 합니다. 3%룰이 적용되는 상황에서 최대주주 의결권이 3%로 제한되므로, 1% 미만의 소수주주라도 기관투자자 등과 연대하여 감사위원 선임에 영향력을 행사할 수 있습니다.</div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">소수주주 후보의 진입을 완전히 막을 수는 없나요?</div>
+    <div class="qa-a">완전히 막을 수는 없습니다. 3%룰은 강행규정으로 이를 정관이나 결의로 회피할 수 없고(2009다51820), 정관 설계·이사 정수 조정·자격 요건 설정 등은 간접적 영향력 행사에 그칩니다. 소수주주가 기관투자자와 연대하여 전체 의결권의 50% 이상을 확보하면 감사위원 선임이 사실상 확정됩니다. 중요한 것은 '완전 차단'이 아니라 '적법한 범위 내에서의 영향력 최소화'입니다.</div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">3%룰을 위반하여 감사위원을 선임하면 어떤 효력이 있나요?</div>
+    <div class="qa-a">3%룰 위반은 결의방법의 중대한 하자로 인정되어 <strong>결의 취소 사유</strong>가 됩니다(대법원 2016다204905). 특히 최대주주 판단 자체를 잘못한 경우 하자가 중대하여 <strong>결의 무효</strong> 사유가 될 수 있습니다(부산지부 2025가합1235). 결의취소 소송은 결의일로부터 2개월 내(상법 제376조) 제기해야 합니다.</div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-box">
+  <h3>🏛️ 법률사무소 머스트노우</h3>
+  <p>회사법·지배구조 자문 · 감사위원 선임 전략 설계 · 주총 분쟁 대응</p>
+  <a class="btn" href="mailto:law@mustknow.co.kr">문의하기 law@mustknow.co.kr</a>
+</div>
+
+<div class="disclaimer">
+  <strong>📘 최신성·면책 고지</strong><br>
+  본 자료는 <strong>2026년 7월 10일</strong> 기준으로 작성되었으며, 인용 법령·판례는 작성 시점의 현행성을 확인한 것입니다. 합산 3%룰(2026.7.23 시행)과 분리선출 감사위원 2인 의무화(2026.9.10 시행)는 현재 시행되었거나 시행 임박한 제도입니다. 법령은 추가 개정될 수 있고 사안마다 결론이 달라질 수 있으므로, 실제 의사결정 전 최신 법령과 개별 사실관계 확인이 필요합니다. 본 자료는 일반적 법률 정보 제공이며 특정 사안에 대한 법률 자문이 아닙니다.
+</div>
+
+</div> <!-- container -->
+
+<div class="footer">
+  <p>© 2026 조우성 변호사 · 머스트노우 법률사무소</p>
+  <p>문의: <a href="mailto:law@mustknow.co.kr">law@mustknow.co.kr</a></p>
+</div>
+
+<script>
+window.addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-window.innerHeight;var p=window.scrollY/h*100;document.getElementById('progressFill').style.width=Math.min(p,100)+'%'});
+</script>
+
+</body>
+</html>

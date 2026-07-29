@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,follow">
+<title>계약서 독소조항 빠른 판독 5대 체크리스트 — 법률 대시보드</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --primary: #1a365d;
+    --primary-light: #2c5282;
+    --accent: #2b6cb0;
+    --accent-light: #5a9bd5;
+    --danger: #c53030;
+    --warning: #975a16;
+    --success: #276749;
+    --bg: #f0f4f8;
+    --card-bg: #ffffff;
+    --text: #1a202c;
+    --text-muted: #4a5568;
+    --border: #e2e8f0;
+    --radius: 12px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+  }
+  .container { max-width: 840px; margin: 0 auto; padding: 0 20px; }
+
+  .hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    color: white; padding: 48px 0 40px;
+  }
+  .hero h1 { font-size: 1.75rem; font-weight: 800; line-height: 1.3; margin-bottom: 8px; }
+  .hero .subtitle { font-size: 1rem; opacity: 0.9; margin-bottom: 20px; }
+  .hero .badge-row { display: flex; flex-wrap: wrap; gap: 6px; }
+  .hero .badge {
+    display: inline-block; padding: 3px 10px; border-radius: 20px;
+    font-size: 0.75rem; font-weight: 600; background: rgba(255,255,255,0.2); color: white;
+  }
+
+  .target-section {
+    background: #ebf8ff; border-left: 4px solid var(--accent);
+    padding: 16px 20px; margin: 24px auto; border-radius: 0 var(--radius) var(--radius) 0;
+  }
+  .target-section p { font-size: 0.9rem; margin-bottom: 4px; }
+  .target-section strong { color: var(--accent); }
+
+  .section {
+    background: var(--card-bg); border-radius: var(--radius); box-shadow: var(--shadow);
+    padding: 28px 24px; margin: 20px auto; transition: box-shadow 0.2s;
+  }
+  .section:hover { box-shadow: var(--shadow-lg); }
+  .section h2 {
+    font-size: 1.25rem; font-weight: 700; color: var(--primary);
+    margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--border);
+  }
+  .section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin: 16px 0 8px; }
+  .section h4 { font-size: 0.9rem; font-weight: 600; margin: 10px 0 4px; }
+  .section p { margin-bottom: 12px; font-size: 0.925rem; }
+
+  .poison-card {
+    border: 1px solid var(--border); border-radius: 8px; padding: 20px;
+    margin: 16px 0; border-left: 4px solid var(--danger);
+  }
+  .poison-card h3 { margin-top: 0; color: var(--danger); }
+  .poison-card .harm { color: var(--danger); font-weight: 600; font-size: 0.85rem; }
+
+  .table-wrap { overflow-x: auto; margin: 12px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { background: var(--accent); color: white; font-weight: 600; }
+  th:first-child { border-radius: 6px 0 0 0; }
+  th:last-child { border-radius: 0 6px 0 0; }
+  tr:hover td { background: #f7fafc; }
+
+  .step {
+    display: flex; gap: 12px; margin: 16px 0; padding: 16px;
+    background: var(--bg); border-radius: 8px; border-left: 3px solid var(--accent);
+  }
+  .step-num {
+    flex-shrink: 0; width: 32px; height: 32px;
+    background: var(--accent); color: white; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.85rem; font-weight: 700;
+  }
+  .step-content { flex: 1; }
+  .step-content strong { color: var(--accent); font-size: 0.95rem; }
+  .step-content p { margin: 4px 0 0; font-size: 0.85rem; }
+
+  .alert {
+    padding: 14px 16px; border-radius: 8px; margin: 12px 0;
+    font-size: 0.875rem; border-left: 4px solid;
+  }
+  .alert.danger { background: #fff5f5; border-color: var(--danger); color: var(--danger); }
+  .alert.warning { background: #fffaf0; border-color: var(--warning); color: var(--warning); }
+
+  .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+  @media (max-width: 600px) { .card-grid { grid-template-columns: 1fr; } }
+  .ev-card {
+    border: 1px solid var(--border); border-radius: 8px; padding: 14px;
+  }
+  .ev-card .card-title { font-size: 0.85rem; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+  .ev-card p { font-size: 0.825rem; margin-bottom: 6px; }
+  .ev-card .tag {
+    display: inline-block; font-size: 0.7rem; font-weight: 600;
+    padding: 2px 6px; border-radius: 4px; background: #ebf8ff; color: var(--accent);
+  }
+
+  .faq-item { border-bottom: 1px solid var(--border); padding: 14px 0; }
+  .faq-item:first-child { padding-top: 0; }
+  .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .faq-q { font-weight: 600; color: var(--accent); margin-bottom: 4px; font-size: 0.925rem; }
+  .faq-a { font-size: 0.875rem; color: var(--text-muted); }
+
+  .risk-indicator { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; margin-right: 4px; }
+  .risk-high { background: #fed7d7; color: var(--danger); }
+  .risk-mid { background: #fefcbf; color: #975a16; }
+  .risk-low { background: #c6f6d5; color: #276749; }
+
+  .cta-box {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    color: white; border-radius: var(--radius); padding: 28px 24px; margin: 20px auto; text-align: center;
+  }
+  .cta-box h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; color: white; border-bottom: none; }
+
+  .disclaimer {
+    font-size: 0.75rem; color: var(--text-muted); background: var(--border);
+    border-radius: var(--radius); padding: 16px 20px; margin: 20px auto; line-height: 1.6;
+  }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 1.35rem; }
+    .section { padding: 20px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <h1>계약서 독소조항 빠른 판독<br>변호사가 알려주는 5대 위험 조항</h1>
+    <p class="subtitle">계약서 한 줄이 수억 원을 좌우한다 — 면책·위약금·손해배상 제한·약관변경·관할 조항의 숨은 위험</p>
+    <div class="badge-row">
+      <span class="badge">계약법</span>
+      <span class="badge">B2B</span>
+      <span class="badge">L2 검증</span>
+      <span class="badge">2026.07.29 기준</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="target-section">
+  <p><strong>이 글이 도움이 되는 분</strong></p>
+  <p>사내 법무·계약 실무자로서 계약서를 검토해야 하는 분</p>
+  <p>스타트업 대표·소상공인으로서 상대방 계약서에 숨은 위험을 찾고 싶은 분</p>
+  <p>영업·구매 담당자로서 기본적인 계약 리스크를 스스로 판별하고 싶은 분</p>
+</div>
+
+<div class="section">
+  <h2>문제상황 — 계약서 한 줄이 수억 원 손해를 부른다</h2>
+  <p>계약서는 길고 어렵습니다. 그중 일부는 전형적인 '독소조항(poison clause)'입니다. 이런 조항은 분쟁이 발생했을 때 예상치 못한 큰 손해를 초래할 수 있습니다.</p>
+  <p><strong>실제 사례</strong>: A사는 B사와 물품 공급계약을 체결하면서 "공급자의 책임은 매매대금의 100%를 초과하지 않는다"는 면책조항을 그냥 통과시켰습니다. 그런데 B사가 공급한 부품 결함으로 A사의 완제품 전체가 불량 처리되어 수십억 원 손해가 발생했습니다. 계약상 A사는 물품 대금의 100%인 1억 원만 배상받을 수 있었습니다.</p>
+  <p>이런 상황을 막기 위해서는 계약서에서 어떤 조항을 특히 주의 깊게 봐야 하는지 알아야 합니다.</p>
+</div>
+
+<div class="section">
+  <h2>5대 독소조항</h2>
+
+  <div class="poison-card">
+    <h3>독소조항 1: 면책조항 <span class="risk-indicator risk-high">고위험</span></h3>
+    <p>계약 당사자의 책임을 사전에 제한하는 조항입니다.</p>
+    <p class="harm">위험 신호: "책임은 계약금액 초과 불가", "직접손해 한정·간접손해 배제", "일체의 책임 부담 안 함"</p>
+    <p><strong>법적 기준</strong>: 고의·중대한 과실로 인한 손해를 면제하는 조항은 민법 제103조(반사회질서) 위반 무효. 약관 형태면 약관규제법 제7조(면책조항 금지) 적용.</p>
+    <p><strong>협상 포인트</strong>: 고의·중과실 면책 제외 문구 필수, 책임 한도를 계약금액 300~500%로 상향.</p>
+  </div>
+
+  <div class="poison-card">
+    <h3>독소조항 2: 위약금 조항 <span class="risk-indicator risk-mid">중위험</span></h3>
+    <p>채무불이행 시 일정 금액을 지급하도록 정한 조항.</p>
+    <p class="harm">위험 신호: "계약금 위약금 몰취", "위약금 비율 과다", 위약금 외 별도 손해배상 불명확</p>
+    <p><strong>법적 기준</strong>: 위약금은 손해배상액의 예정으로 추정(민법 §398④). 부당히 과다하면 법원 감액 가능(§398②). 위약벌이면 감액 불가(대법원 2018다248855 전합).</p>
+    <p><strong>협상 포인트</strong>: 합리적 비율(10~20%)로 조정, 명칭보다 실질(이중배상 구조) 확인.</p>
+  </div>
+
+  <div class="poison-card">
+    <h3>독소조항 3: 손해배상 제한조항 <span class="risk-indicator risk-high">고위험</span></h3>
+    <p>손해배상 총액에 상한(Cap)을 설정하는 조항.</p>
+    <p class="harm">위험 신호: 간접손해·영업손실·기대이익 전면 배제, 고의·중과실 예외 없는 Cap</p>
+    <p><strong>법적 기준</strong>: 약관으로 부당하게 과중한 손해배상을 제한하면 약관규제법 제8조 위반 무효. 개별약정이어도 고의·중과실 책임 전면 배제는 민법 제103조 위반.</p>
+    <p><strong>협상 포인트</strong>: 고의·중과실·기밀유지의무·지식재산권 침해는 Cap 예외로 필수 포함.</p>
+  </div>
+
+  <div class="poison-card">
+    <h3>독소조항 4: 일방적 약관변경권 <span class="risk-indicator risk-mid">중위험</span></h3>
+    <p>"회사는 사전 통지 없이 약관을 변경할 수 있다"는 조항.</p>
+    <p class="harm">위험 신호: 사전 통지 없이 변경, 변경 동의 안 하면 계약 해지, 변경 사유·범위 불특정</p>
+    <p><strong>법적 기준</strong>: 중요 내용에 대해 명시·설명의무 위반 시 해당 조항 주장 불가(약관규제법 §3). 불공정하면 §6 위반 무효.</p>
+    <p><strong>협상 포인트</strong>: 사전 통지 의무·동의권 명시, 위약금 없는 해지권 요구.</p>
+  </div>
+
+  <div class="poison-card">
+    <h3>독소조항 5: 관할·준거법 조항 <span class="risk-indicator risk-mid">중위험</span></h3>
+    <p>분쟁 시 어느 법원·어느 나라 법을 적용할지 정하는 조항.</p>
+    <p class="harm">위험 신호: 외국 법원 전속관할, 외국법 준거법, 중재 조항</p>
+    <p><strong>법적 기준</strong>: 전속관할 합의는 유효하나, 해외 영업점포 없는 법원 관할은 약관규제법 위반 무효 가능.</p>
+    <p><strong>협상 포인트</strong>: 불가피하면 중재(서울중재원·ICC) 제안, 중재지·준거법 균형 조정.</p>
+  </div>
+</div>
+
+<div class="section">
+  <h2>첫 대응 — 계약서 검토 3단계</h2>
+
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-content">
+      <strong>독소조항 스캔 (10분)</strong>
+      <p>계약서 키워드 검색: "책임·배상·면책·한도" / "위약금·해지·몰취" / "관할·중재·준거법" / "변경권·통지·동의"</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-content">
+      <strong>위험도 평가 (20분)</strong>
+      <p>고위험: 고의·중과실 면책, 전면적 책임 부인, 과도한 위약금. 중위험: 손해배상 Cap 과소, 간접손해 전면 배제, 외국 관할.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-content">
+      <strong>협상 전략 수립 (10분)</strong>
+      <p>필수 수정: 고의·중과실 면책, 전면적 책임 부인. 권장 수정: 간접손해 배제, 배상 상한. 양보 가능: 합리적 관할, 통상 위약금.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>위험 신호</h2>
+  <div class="alert danger"><strong>"민형사상 모든 책임을 진다"</strong> — 구체적 금액·위약금 미특정 시 실효성 낮음.</div>
+  <div class="alert warning"><strong>"적당한 배상"</strong> — 모호한 표현은 분쟁의 원인. 구체적 금액 또는 산정 방식 명시 필요.</div>
+  <div class="alert danger"><strong>표준약관이라고 안심 금물</strong> — 공정위 표준약관도 구체적 거래 상황에서 불공정하면 무효 가능.</div>
+  <div class="alert warning"><strong>개별약정 vs 약관 확인</strong> — 대등 교섭 개별약정이면 약관규제법 규율 제외, 사업자 일방 약관이면 강한 규제.</div>
+</div>
+
+<div class="section">
+  <h2>근거 카드</h2>
+  <div class="card-grid">
+    <div class="ev-card">
+      <div class="card-title">민법 제398조</div>
+      <p>위약금=손해배상예정 추정(§4). 부당히 과다하면 법원 직권 감액(§2). 위약벌이면 감액 불가.</p>
+      <span class="tag">법제처 확인</span>
+    </div>
+    <div class="ev-card">
+      <div class="card-title">약관규제법 제7조</div>
+      <p>면책조항 금지: 고의·중과실 책임 배제, 상당한 이유 없는 위험 전가, 담보책임 배제 등 무효.</p>
+      <span class="tag">법제처 확인</span>
+    </div>
+    <div class="ev-card">
+      <div class="card-title">약관규제법 제8조</div>
+      <p>부당하게 과중한 지연손해금 등 손해배상 의무를 부담시키는 약관 조항은 무효.</p>
+      <span class="tag">법제처 확인</span>
+    </div>
+    <div class="ev-card">
+      <div class="card-title">대법원 2018다248855 전합</div>
+      <p>위약벌 감액 불가 원칙. 이중배상 구조가 위약벌 판단의 핵심 징표.</p>
+      <span class="tag">doctrine 인용</span>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>자주 묻는 질문</h2>
+  <div class="faq-item">
+    <div class="faq-q">면책조항이 아예 다 무효인가요?</div>
+    <div class="faq-a">개별약정으로서 합리적 범위 내의 면책조항은 유효합니다. 다만 고의·중대한 과실로 인한 손해를 면제하거나, 약관 형태로 고객에게 부당하게 불리한 조항은 무효입니다.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">"위약금"이라고 써 있으면 위약금인가요?</div>
+    <div class="faq-a">명칭보다 실질이 중요합니다. 계약서에 별도 손해배상 조항이 있어 이중배상 구조를 가지면 위약벌로 볼 수 있어 감액이 불가능해집니다(대법원 2018다248855 전합).</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">상대방이 표준계약서라면서 수정을 거부합니다.</div>
+    <div class="faq-a">표준계약서라도 구체적 거래 상황에서 불공정하면 무효가 될 수 있습니다. 최소한 고의·중과실 예외 조항과 손해배상 상한의 합리적 조정을 요구하세요.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">영문 계약서인데 번역 없이 서명해도 되나요?</div>
+    <div class="faq-a">매우 위험합니다. 영문계약에는 전체 합의 조항, 준거법 조항, 중재 조항 등 한글 계약서에는 없는 독소조항이 포함되는 경우가 많습니다. 반드시 번역 검토 후 서명하세요.</div>
+  </div>
+</div>
+
+<div class="cta-box">
+  <h3>더 체계적인 계약 검토가 필요하신가요?</h3>
+  <p>법률팩(계약서 체크리스트·독소조항 대응 실무)을 통해 더 체계적인 계약 리스크 관리를 시작하세요.</p>
+  <a href="#" style="display:inline-block; margin-top:14px; padding:12px 28px; background:white; color:var(--primary); border-radius:8px; text-decoration:none; font-weight:700; font-size:0.95rem; transition:transform 0.2s, box-shadow 0.2s; box-shadow:0 2px 8px rgba(0,0,0,0.15);" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.25)';" onmouseout="this.style.transform='';this.style.boxShadow='0 2px 8px rgba(0,0,0,0.15)';">법률팩 출시 알림 신청 →</a>
+  <p style="font-size:0.8rem; opacity:0.8; margin-top:8px;">※ 법률팩 준비 중입니다. 출 시 시 알림을 보내드립니다.</p>
+</div>
+
+<div class="disclaimer">
+  <strong>최신성 및 면책 고지</strong><br>
+  이 글은 2026년 7월 29일 기준 법령과 판례를 바탕으로 작성되었습니다.<br>
+  검증된 근거: 민법 제103조·제398조(법제처 DB 확인), 약관규제법 제3조·제6조·제7조·제8조(법제처 DB 확인).<br>
+  일부 판례는 내부 doctrine 인용.<br>
+  이 글은 일반적 법률 정보 제공 목적이며, 개별 계약에 대한 법률 자문을 대체하지 않습니다.
+</div>
+
+</div>
+</body>
+</html>

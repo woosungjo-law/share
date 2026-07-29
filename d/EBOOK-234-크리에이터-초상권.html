@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,follow">
+<title>크리에이터 초상권·퍼블리시티권 보호 — AI 시대 가이드</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --primary: #2a4365;
+    --primary-light: #4a6fa5;
+    --accent: #6b46c1;
+    --accent-light: #9f7aea;
+    --bg: #f7fafc;
+    --card-bg: #ffffff;
+    --text: #1a202c;
+    --text-muted: #4a5568;
+    --border: #e2e8f0;
+    --success: #276749;
+    --success-bg: #f0fff4;
+    --warning: #975a16;
+    --warning-bg: #fffaf0;
+    --danger: #9b2c2c;
+    --danger-bg: #fff5f5;
+    --info: #553c9a;
+    --info-bg: #faf5ff;
+    --radius: 12px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    padding: 0;
+  }
+  .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+
+  .hero {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--primary-light) 100%);
+    color: white;
+    padding: 48px 0 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero h1 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+  .hero .subtitle { font-size: 1rem; opacity: 0.9; margin-bottom: 20px; }
+  .hero .badge-row { display: flex; flex-wrap: wrap; gap: 6px; }
+  .hero .badge {
+    display: inline-block; padding: 3px 10px; border-radius: 20px;
+    font-size: 0.75rem; font-weight: 600; background: rgba(255,255,255,0.2); color: white;
+  }
+
+  .target-section {
+    background: var(--info-bg); border-left: 4px solid var(--info);
+    padding: 16px 20px; margin: 24px auto; border-radius: 0 var(--radius) var(--radius) 0;
+  }
+  .target-section p { font-size: 0.9rem; margin-bottom: 4px; }
+  .target-section strong { color: var(--info); }
+
+  .section {
+    background: var(--card-bg); border-radius: var(--radius); box-shadow: var(--shadow);
+    padding: 28px 24px; margin: 20px auto; transition: box-shadow 0.2s;
+  }
+  .section:hover { box-shadow: var(--shadow-lg); }
+  .section h2 {
+    font-size: 1.25rem; font-weight: 700; color: var(--primary);
+    margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--border);
+  }
+  .section h3 { font-size: 1rem; font-weight: 600; color: var(--primary-light); margin: 16px 0 8px; }
+  .section p { margin-bottom: 12px; font-size: 0.925rem; }
+
+  .table-wrap { overflow-x: auto; margin: 12px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { background: var(--accent); color: white; font-weight: 600; }
+  th:first-child { border-radius: 6px 0 0 0; }
+  th:last-child { border-radius: 0 6px 0 0; }
+  tr:hover td { background: #f7fafc; }
+
+  .story-card {
+    background: var(--bg); border-radius: 8px; padding: 16px;
+    margin: 12px 0; border-left: 3px solid var(--accent);
+  }
+  .story-card .label {
+    display: inline-block; font-size: 0.75rem; font-weight: 700;
+    color: white; background: var(--accent); padding: 2px 8px; border-radius: 4px; margin-bottom: 6px;
+  }
+
+  .step {
+    display: flex; gap: 12px; margin: 16px 0; padding: 16px;
+    background: var(--bg); border-radius: 8px; transition: transform 0.15s;
+  }
+  .step:hover { transform: translateX(4px); }
+  .step-num {
+    flex-shrink: 0; width: 28px; height: 28px;
+    background: var(--accent); color: white; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.8rem; font-weight: 700;
+  }
+  .step-content { flex: 1; }
+  .step-content strong { color: var(--accent); font-size: 0.95rem; }
+  .step-content p { margin: 4px 0 0; font-size: 0.85rem; }
+
+  .alert {
+    padding: 14px 16px; border-radius: 8px; margin: 12px 0;
+    font-size: 0.875rem; border-left: 4px solid;
+  }
+  .alert.warning { background: var(--warning-bg); border-color: var(--warning); color: var(--warning); }
+  .alert.danger { background: var(--danger-bg); border-color: var(--danger); color: var(--danger); }
+  .alert.success { background: var(--success-bg); border-color: var(--success); color: var(--success); }
+
+  .card-grid {
+    display: grid; grid-template-columns: 1fr; gap: 12px; margin: 12px 0;
+  }
+  @media (min-width: 600px) { .card-grid { grid-template-columns: 1fr 1fr; } }
+  .ev-card {
+    border: 1px solid var(--border); border-radius: 8px; padding: 14px; transition: box-shadow 0.2s;
+  }
+  .ev-card:hover { box-shadow: var(--shadow); }
+  .ev-card .card-title { font-size: 0.85rem; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+  .ev-card p { font-size: 0.825rem; margin-bottom: 6px; }
+  .ev-card .tag {
+    display: inline-block; font-size: 0.7rem; font-weight: 600;
+    padding: 2px 6px; border-radius: 4px; background: var(--info-bg); color: var(--info);
+  }
+
+  .faq-item { border-bottom: 1px solid var(--border); padding: 14px 0; }
+  .faq-item:first-child { padding-top: 0; }
+  .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .faq-q { font-weight: 600; color: var(--primary-light); margin-bottom: 4px; font-size: 0.925rem; }
+  .faq-a { font-size: 0.875rem; color: var(--text-muted); }
+
+  .cta-box {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--primary-light) 100%);
+    color: white; border-radius: var(--radius); padding: 28px 24px; margin: 20px auto; text-align: center;
+  }
+  .cta-box h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; color: white; border-bottom: none; }
+
+  .disclaimer {
+    font-size: 0.75rem; color: var(--text-muted); background: var(--border);
+    border-radius: var(--radius); padding: 16px 20px; margin: 20px auto; line-height: 1.6;
+  }
+  .disclaimer strong { color: var(--text); }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 1.35rem; }
+    .section { padding: 20px 16px; }
+    th, td { padding: 8px 10px; font-size: 0.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <h1>크리에이터 얼굴·목소리 보호<br>내 인격표지를 지키는 법</h1>
+    <p class="subtitle">AI가 내 목소리를 따라 하고 내 얼굴을 합성한다면? 퍼블리시티권부터 부정경쟁방지법까지 완전 정복</p>
+    <div class="badge-row">
+      <span class="badge">저작권·인격권</span>
+      <span class="badge">AI 규제</span>
+      <span class="badge">L2 검증</span>
+      <span class="badge">2026.07.29 기준</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="target-section">
+  <p><strong>이 글이 도움이 되는 분</strong></p>
+  <p>유튜브·인스타·틱톡 등에서 활동하는 크리에이터</p>
+  <p>자신의 얼굴·목소리·닉네임이 AI 학습에 무단 사용될까 걱정되는 분</p>
+  <p>AI 커버곡에 자신의 목소리가 복제된 것을 발견한 분</p>
+</div>
+
+<div class="section">
+  <h2>문제상황 — AI가 내 얼굴을 훔친다</h2>
+  <p>AI 기술이 급격히 발전하면서 크리에이터의 얼굴, 목소리, 닉네임 등 개인을 식별할 수 있는 요소들이 무단으로 사용되는 사례가 급증하고 있습니다.</p>
+
+  <div class="story-card">
+    <span class="label">사례 A</span>
+    <p><strong>유명 유튜버 얼굴이 AI 합성 딥페이크 광고에 사용됨</strong></p>
+    <p>유튜버 A씨의 얼굴이 AI로 합성된 건강식품 광고 영상이 SNS에 유포. A씨는 자신도 모르는 사이에 광고에 등장했고, 시청자들은 "A씨가 추천하는 제품"으로 오인했다.</p>
+  </div>
+
+  <div class="story-card">
+    <span class="label">사례 B</span>
+    <p><strong>인기 가수 목소리 AI 커버곡이 수백만 뷰</strong></p>
+    <p>가수 B씨의 목소리를 AI가 학습해 부른 AI 커버곡이 유튜브에 업로드되어 수백만 뷰 기록. B씨는 동의한 적도 없고 수익도 전혀 돌아오지 않았다.</p>
+  </div>
+
+  <div class="story-card">
+    <span class="label">사례 C</span>
+    <p><strong>크리에이터 닉네임 도용 및 콘텐츠 도용</strong></p>
+    <p>먹방 크리에이터 C씨의 닉네임과 유사한 이름을 사용하는 계정이 타 플랫폼에서 활동하며 C씨의 콘텐츠를 도용하고 광고 수익을 올리고 있다.</p>
+  </div>
+</div>
+
+<div class="section">
+  <h2>핵심 쟁점</h2>
+
+  <h3>퍼블리시티권(Personality Rights)이란?</h3>
+  <p>유명인의 성명·초상·음성 등 인격적 표지가 가지는 경제적 가치를 독점적으로 통제할 수 있는 권리입니다. 한국에는 아직 명문 일반법이 없지만(민법 개정안 논의 중), <strong>부정경쟁방지법</strong>과 <strong>민법상 인격권</strong>을 통해 보호받을 수 있습니다.</p>
+
+  <h3>부정경쟁방지법 — 인격표지 보호</h3>
+  <p>부정경쟁방지법 제2조 제1호 <strong>타목</strong>은 2023년 개정으로 신설되어 국내에 널리 인식된 인격표지의 무단 영업적 사용을 금지합니다.</p>
+
+  <div class="alert success">
+    <strong>부정경쟁방지법 제2조 제1호 타목</strong><br>
+    "국내에 널리 인식되고 경제적 가치를 가지는 타인의 성명, 초상, 음성, 서명 등 그 타인을 식별할 수 있는 표지를 공정한 상거래 관행이나 경쟁질서에 반하는 방법으로 자신의 영업을 위하여 무단으로 사용함으로써 타인의 경제적 이익을 침해하는 행위"
+  </div>
+
+  <div class="table-wrap">
+  <table>
+    <tr><th>요건</th><th>설명</th></tr>
+    <tr><td>국내에 널리 인식</td><td>해당 지역에서 어느 정도 알려져 있어야 함</td></tr>
+    <tr><td>경제적 가치</td><td>인격표지가 경제적 이익을 창출 가능해야 함</td></tr>
+    <tr><td>무단 영업 사용</td><td>동의 없이, 공정 상거래 관행 위반, 영업 목적 사용</td></tr>
+  </table>
+  </div>
+
+  <h3>AI 기본법 — 투명성 확보 의무</h3>
+  <p>AI 기본법 제31조는 AI 생성 콘텐츠에 대한 투명성 확보 의무를 규정합니다. 생성형 AI 결과물은 AI 생성 사실을 표시해야 하고(제2항), 실제와 구분하기 어려운 가상 음향·이미지·영상은 이용자가 명확히 인식할 수 있는 방식으로 고지해야 합니다(제3항).</p>
+
+  <h3>민법상 인격권</h3>
+  <p>초상권과 음성권은 헌법과 민법이 보장하는 인격권의 일부입니다. AI가 크리에이터의 동의 없이 목소리나 얼굴을 복제하는 것은 인격권 직접 침해 소지가 있습니다. 다만 AI 학습의 <strong>비가역성</strong>(일단 학습된 데이터 선택적 삭제 곤란)으로 인해 사전 동의(Opt-in) 확보가 더 중요합니다.</p>
+</div>
+
+<div class="section">
+  <h2>첫 대응 순서</h2>
+
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-content">
+      <strong>증거 확보</strong>
+      <p>AI 생성 콘텐츠의 URL·업로드 일시·조회수 캡처. AI 생성임을 알 수 있는 단서(어색한 움직임, 음색 차이)와 함께 저장.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-content">
+      <strong>플랫폼 삭제 요청</strong>
+      <p>AI 기본법 제31조 위반 가능성 주장. 유튜브·인스타그램 등에 저작권·인격권 침해 이유로 삭제 요청.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-content">
+      <strong>법적 조치 검토</strong>
+      <p>영리 목적 무단 사용 시 부정경쟁방지법 위반 손해배상청구·침해금지가처분 검토. AI 기본법 위반 시 방송통신위원회 신고 가능.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>위험 신호</h2>
+  <div class="alert danger"><strong>"AI가 자동으로 만든 거라서 괜찮다"</strong> — AI 자동 생성 결과물도 인격표지 무단 사용 시 법적 책임 발생 가능.</div>
+  <div class="alert warning"><strong>AI 학습 데이터 비가역성</strong> — 일단 학습된 데이터는 완전 삭제 곤란. 사전 동의 없는 AI 학습 자체가 문제될 수 있음.</div>
+  <div class="alert danger"><strong>퍼블리시티권 불확실성</strong> — 한국에 명문 일반법 없어 보호 범위가 판례에 따라 달라질 수 있음.</div>
+  <div class="alert warning"><strong>초기 크리에이터 보호 제한</strong> — 국내 인지도 낮으면 부정경쟁방지법 적용 범위 제한될 수 있음.</div>
+</div>
+
+<div class="section">
+  <h2>근거 카드</h2>
+  <div class="card-grid">
+    <div class="ev-card">
+      <div class="card-title">부정경쟁방지법 제2조 타목</div>
+      <p>인격표지(성명·초상·음성·서명) 무단 영업 사용 금지. 2023년 개정 신설, 2026.5.28 시행.</p>
+      <span class="tag">법제처 확인</span>
+    </div>
+    <div class="ev-card">
+      <div class="card-title">AI 기본법 제31조</div>
+      <p>AI 생성 결과물 투명성 확보 의무. 생성형 AI(§31②), 실제 구분 어려운 가상 콘텐츠(§31③).</p>
+      <span class="tag">법제처 확인</span>
+    </div>
+    <div class="ev-card">
+      <div class="card-title">민법상 초상권·음성권</div>
+      <p>인격권의 일부. 얼굴·목소리 무단 촬영·녹음·복제·공표 금지. 손해배상·위자료 청구 가능.</p>
+      <span class="tag">판례·학설</span>
+    </div>
+    <div class="ev-card">
+      <div class="card-title">인격표지영리권 개정안</div>
+      <p>민법 개정안 논의 중. 유명인 외 모든 개인이 성명·초상·음성 등을 영리적 통제 가능하도록 명문화.</p>
+      <span class="tag">입법 논의 중</span>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>자주 묻는 질문</h2>
+  <div class="faq-item">
+    <div class="faq-q">유명하지 않은 일반인도 퍼블리시티권을 보호받을 수 있나요?</div>
+    <div class="faq-a">부정경쟁방지법은 '널리 인식' 요건이 있어 일반인 보호가 쉽지 않습니다. 다만 일반인도 민법상 초상권·음성권 등 인격권 침해를 이유로 법적 조치를 취할 수 있습니다.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">AI 커버곡에 내 목소리가 복제된 것을 발견했습니다.</div>
+    <div class="faq-a">AI 기본법 제31조 제3항 위반 가능성이 있습니다. 플랫폼에 삭제 요청하고, 필요한 경우 부정경쟁방지법 위반으로 법적 조치를 검토할 수 있습니다.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">AI 학습용으로 제 콘텐츠를 수집하는 것을 막을 수 있나요?</div>
+    <div class="faq-a">아직 명확한 법적 금지 규정은 없지만, 플랫폼 이용약관을 통해 금지하거나 robots.txt로 크롤링을 차단할 수 있습니다. 해외에서는 Opt-out 제도 도입 중입니다.</div>
+  </div>
+</div>
+
+<div class="cta-box">
+  <h3>더 정확한 판단이 필요하신가요?</h3>
+  <p>AI 시대 크리에이터 권리 보호는 새로운 법적 영역입니다. 변호사와의 상담을 통해 구체적인 보호 방안을 확인하세요.</p>
+  <a class="btn" href="#" style="pointer-events:none; opacity:0.9; display:inline-block; background:white; color:var(--accent); font-weight:700; padding:10px 24px; border-radius:8px; text-decoration:none;">법률 상담 링크 준비 중 →</a>
+  <p style="font-size:0.8rem; margin-top:12px; opacity:0.8;">※ 개별 사건에 대한 상담은 변호사에게 직접 문의하세요.</p>
+</div>
+
+<div class="disclaimer">
+  <strong>최신성 및 면책 고지</strong><br>
+  이 글은 2026년 7월 29일 기준 법령과 판례를 바탕으로 작성되었습니다.<br>
+  검증된 근거: 부정경쟁방지법 제2조 제1호 타목(법제처 DB 확인, 2026.5.28 시행), AI 기본법 제31조(법제처 DB 확인, 2026.7.21 시행), 내부 doctrine(D-AI퍼블리시티권) 인용.<br>
+  인격표지영리권 민법 개정안은 현재 논의 중으로 향후 법제 변화를 주의 깊게 지켜볼 필요가 있습니다.<br>
+  이 글은 일반적 법률 정보 제공을 위한 것이며, 개별 사건에 대한 법률 자문을 대체하지 않습니다.
+</div>
+
+</div>
+</body>
+</html>

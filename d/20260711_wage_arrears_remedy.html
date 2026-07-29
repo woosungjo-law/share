@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow">
+<title>임금체불 진정부터 체당금까지: 고용노동부 진정→근로감독관 조사→체당금 지급 — 조우성 변호사</title>
+<meta name="description" content="임금체불 진정 절차와 체당금(대지급금) 제도. 고용노동부 신고, 근로감독관 조사, 체당금 지급까지 전 과정.">
+<style>
+:root{--bg:#f0f2f5;--panel:#fff;--panel2:#f8f9fb;--line:#e2e5ea;--ink:#111827;--ink2:#374151;--muted:#6b7280;--navy:#1a3a6b;--navy-d:#0f2547;--navy-l:#2e6be6;--navy-tint:#e8edf5;--green-bg:#ecfdf5;--green:#059669;--amber:#f59e0b;--amber-bg:#fffbeb;--red:#dc2626;--red-bg:#fef2f2;--font:-apple-system,BlinkMacSystemFont,Malgun Gothic,sans-serif;--readw:760px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);margin:0;line-height:1.75;font-size:16px}
+.progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--navy-l),var(--navy));z-index:999;transition:width .3s;width:0%}
+.hero{background:linear-gradient(135deg,var(--navy-d),var(--navy));color:#fff;padding:48px 24px;text-align:center}
+.hero h1{font-size:clamp(1.35rem,4vw,1.85rem);margin:0 0 8px;line-height:1.3}
+.hero .badge{display:inline-block;background:rgba(255,255,255,.15);padding:4px 12px;border-radius:20px;font-size:12px;margin-bottom:12px;letter-spacing:.3px}
+.hero .meta{font-size:14px;opacity:.8;margin:8px 0 0}
+.hero .meta span{margin:0 8px}
+.tldr{background:var(--navy-tint);border-left:4px solid var(--navy-l);padding:16px 20px;margin:24px auto;max-width:var(--readw);border-radius:0 8px 8px 0;font-size:15px}
+.tldr strong{color:var(--navy)}
+.container{max-width:var(--readw);margin:0 auto;padding:0 16px 48px}
+.card{background:var(--panel);border-radius:10px;padding:24px;margin-bottom:20px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid var(--line)}
+.card h2{font-size:1.15rem;margin:0 0 12px;color:var(--navy);padding-bottom:8px;border-bottom:2px solid var(--navy-tint)}
+.card h3{font-size:1rem;margin:16px 0 8px;color:var(--ink2)}
+.card p{margin:0 0 10px;color:var(--ink2);line-height:1.7}
+.card p:last-child{margin-bottom:0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+th{background:var(--navy-tint);color:var(--navy-d);font-weight:600;padding:8px 10px;text-align:left;border:1px solid var(--line)}
+td{padding:8px 10px;border:1px solid var(--line);vertical-align:top}
+tr:nth-child(even){background:var(--panel2)}
+.alert-box{background:var(--amber-bg);border-left:4px solid var(--amber);padding:12px 16px;margin:12px 0;border-radius:0 6px 6px 0;font-size:14px}
+.alert-box strong{color:#92400e}
+.info-box{background:var(--navy-tint);border-left:4px solid var(--navy);padding:12px 16px;margin:12px 0;border-radius:0 6px 6px 0;font-size:14px}
+.checklist{list-style:none;padding:0;margin:8px 0}
+.checklist li{padding:5px 0 5px 24px;position:relative;font-size:14px;border-bottom:1px solid var(--panel2)}
+.checklist li:before{content:"☐";position:absolute;left:0;color:var(--navy-l)}
+details{background:var(--panel2);border-radius:6px;padding:0 14px;margin:6px 0;border:1px solid var(--line)}
+details summary{cursor:pointer;font-weight:600;padding:12px 0;color:var(--navy);font-size:14px}
+details p{padding:0 0 12px;margin:0;font-size:14px}
+.legal-table th:first-child{width:40%}
+.footer{text-align:center;padding:32px 16px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);margin-top:24px}
+@media(max-width:600px){.hero{padding:32px 16px}.card{padding:16px}table{font-size:13px}th,td{padding:6px 8px}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div class="hero">
+<div class="badge">📘 법률 대시보드 전자책</div>
+<h1>임금체불 진정부터 체당금까지:<br>고용노동부 진정→근로감독관 조사→체당금 지급</h1>
+<div class="meta">작성일 2026-07-11 · 법령시행일 2026-07-11 · 읽는시간 5분</div>
+</div>
+
+<div class="container">
+<div class="tldr">
+<strong>3줄 요약</strong><br>
+• 임금체불 발생 시 사업장 관할 <strong>고용노동부에 진정(신고)</strong>을 제기할 수 있다. 접수 후 근로감독관이 조사하며 <strong>25일 이내</strong> 처리 원칙.<br>
+• 체불 확인 시 <strong>시정지시</strong> → 미이행 시 <strong>형사입건</strong>(근로기준법 제109조, 3년 이하 징역). 근로자의 <strong>처벌불원서</strong> 제출 시 처벌 면제 가능.<br>
+• 사용자가 지급 능력이 없으면 국가가 대신 지급하는 <strong>대지급금(구 체당금)</strong> 활용 가능. 임금 최대 700만 원, 총 <strong>1,000만 원 한도</strong>.
+</div>
+
+<div class="card">
+<h2>1. 임금체불의 개념과 법적 근거</h2>
+<p><strong>임금체불</strong>이란 사용자가 법정 지급일(퇴직일로부터 14일 이내)까지 임금·퇴직금·수당 등을 지급하지 않는 행위다(근로기준법 제36조·제43조). 체불임금에는 <strong>지연이자 연 20%</strong>가 발생한다.</p>
+<div class="info-box"><strong>참고:</strong> 5인 미만 사업장도 임금체불 규정(근로기준법 제36조·제43조)이 적용되므로 규모와 관계없이 진정 가능하다.</div>
+<table>
+<tr><th>위반 유형</th><th>법적 근거</th><th>처벌</th></tr>
+<tr><td>임금 미지급</td><td>근로기준법 제43조</td><td>3년 이하 징역 또는 3천만 원 이하 벌금</td></tr>
+<tr><td>퇴직금 14일 내 미지급</td><td>근로자퇴직급여보장법 제9조</td><td>동일</td></tr>
+<tr><td>금품 미청산</td><td>근로기준법 제36조</td><td>동일 (반의사불벌죄)</td></tr>
+<tr><td>지연이자 미지급</td><td>근로기준법 제37조</td><td>연 20% 지연이자</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h2>2. 고용노동부 진정 절차</h2>
+<h3>2.1. 진정 접수</h3>
+<p><strong>접수처:</strong> 사업장 관할 지방고용노동청 방문 또는 <strong>노동포털</strong>(labor.moel.go.kr) 온라인 신청. 무료.<br>
+<strong>필요 서류:</strong> 근로계약서, 급여명세서, 통장 내역, 출퇴근 기록, 체불 입증 자료(문자·카톡·녹취 등).</p>
+
+<h3>2.2. 근로감독관 조사 (25일 이내 처리)</h3>
+<p>접수 즉시 근로감독관 배정 → 당사자 출석 요구 및 사실조사. 원칙적으로 접수일로부터 <strong>25일 이내</strong> 처리(필요 시 1회 연장 가능).</p>
+
+<h3>2.3. 조사 결과에 따른 조치</h3>
+<table>
+<tr><th>결과</th><th>내용</th><th>후속 절차</th></tr>
+<tr><td>체불 확인→시정지시</td><td>사용자에게 기한 내 지급 명령</td><td>이행 시 종결</td></tr>
+<tr><td>시정지시 미이행</td><td><strong>형사입건</strong>→검찰 송치</td><td>약식명령 또는 정식 재판</td></tr>
+<tr><td>체불 사실 없음</td><td>각하 또는 기각</td><td>재조사 청구 가능</td></tr>
+<tr><td>합의 성립</td><td>사용자 지급+처벌불원서</td><td>공소권 없음 종결</td></tr>
+</table>
+
+<h3>2.4. 형사처벌</h3>
+<div class="alert-box">
+<strong>반의사불벌죄:</strong> 근로자가 '처벌을 원하지 않는다'는 의사 표시(처벌불원서)를 하면 공소 제기 불가. <strong>처벌불원서가 형사처벌을 피하는 유일한 방법</strong>이다. 다만 상습체불 사업주는 예외적용 가능.
+</div>
+</div>
+
+<div class="card">
+<h2>3. 체당금(대지급금) 제도</h2>
+<p>사용자가 지급 능력이 없는 경우, 국가(근로복지공단)가 체불임금을 대신 지급하는 제도(임금채권보장법). 이후 공단이 사업주에게 <strong>구상권</strong>을 행사한다.</p>
+<table>
+<tr><th>구분</th><th>도산대지급금</th><th>간이대지급금</th></tr>
+<tr><td>요건</td><td>파산·회생개시결정 또는 도산등사실인정</td><td>체불임금등사업주확인서 또는 확정판결</td></tr>
+<tr><td>임금 지급</td><td>최종 3개월분</td><td>최대 700만 원</td></tr>
+<tr><td>퇴직금 지급</td><td>최종 3년분</td><td>최대 700만 원</td></tr>
+<tr><td>총 한도</td><td colspan="2" style="text-align:center"><strong>합계 최대 1,000만 원</strong></td></tr>
+<tr><td>청구 기한</td><td>도산인정일로부터 2년 이내</td><td>확인서 발급일로부터 6개월 이내</td></tr>
+</table>
+
+<h3>체당금 신청 5단계</h3>
+<table>
+<tr><th>단계</th><th>내용</th><th>소요 기간</th></tr>
+<tr><td>1</td><td>고용노동부 진정 → 체불 확인</td><td>1~2개월</td></tr>
+<tr><td>2</td><td><strong>체불임금등사업주확인서</strong> 발급</td><td>진정 처리 후 즉시</td></tr>
+<tr><td>3</td><td>근로복지공단에 대지급금 청구서 제출</td><td>확인서 발급 후 6개월 이내</td></tr>
+<tr><td>4</td><td>공단 심사 및 지급 결정</td><td>접수 후 14일 이내</td></tr>
+<tr><td>5</td><td>대지급금 수령</td><td>2~4주</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h2>4. 진정 vs 민사소송 vs 체당금 비교</h2>
+<table>
+<tr><th>구분</th><th>고용노동부 진정</th><th>민사소송</th><th>체당금(대지급금)</th></tr>
+<tr><td>목적</td><td>형사처벌+임금 회수</td><td>임금 채권 확정·집행</td><td>국가 대신 지급</td></tr>
+<tr><td>처리 기간</td><td>1~3개월</td><td>6개월~2년</td><td>2~4개월</td></tr>
+<tr><td>비용</td><td>무료</td><td>인지대·변호사비용</td><td>무료</td></tr>
+<tr><td>강제력</td><td>형사처벌(징역·벌금)</td><td>강제집행(압류·매각)</td><td>공단이 구상권 행사</td></tr>
+<tr><td>한계</td><td>사용자 무자력 시 회수 어려움</td><td>시간·비용 부담</td><td>한도액 제한(최대 1,000만 원)</td></tr>
+<tr><td>병행</td><td colspan="3" style="text-align:center"><strong>세 절차 동시 진행 가능! '3트랙 전략'</strong></td></tr>
+</table>
+<div class="info-box"><strong>실무 포인트:</strong> 즉시 진정 + 체당금 신청 + 민사소송 '3트랙 전략'이 가장 효과적이다.</div>
+</div>
+
+<div class="card">
+<h2>5. 실무 체크리스트</h2>
+<ul class="checklist">
+<li>체불 임금·퇴직금 내역(기간·금액)을 정리하였는가?</li>
+<li>근로계약서, 급여명세서, 통장 내역 등 증거 자료를 확보하였는가?</li>
+<li>내용증명(독촉장)을 사용자에게 발송하였는가?</li>
+<li>고용노동부 진정을 제기하였는가? (온라인 또는 방문)</li>
+<li>근로감독관 조사 진행 상황을 확인하고 있는가?</li>
+<li>사용자와 합의 가능성이 있는가? (처벌불원서 확보)</li>
+<li>사용자의 지급 능력을 확인하였는가?</li>
+<li>체불임금등사업주확인서를 발급받아 체당금을 신청하였는가?</li>
+<li>체당금 한도(1,000만 원) 초과분은 별도 민사소송 검토하였는가?</li>
+<li>지연이자(연 20%)를 포함한 정확한 청구 금액을 산정하였는가?</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>6. FAQ</h2>
+<details>
+<summary>Q1. 임금체불 진정은 어디에 어떻게 제기하나요?</summary>
+<p>사업장 소재지 관할 <strong>지방고용노동청</strong>에 방문하거나, <strong>고용노동부 노동포털</strong>(labor.moel.go.kr)에서 온라인으로 진정을 제기할 수 있습니다. 접수비는 무료입니다. 근로계약서·급여명세서·체불 증빙 자료를 첨부하세요.</p>
+</details>
+<details>
+<summary>Q2. 회사가 "돈이 없다"고 버틸 경우 어떻게 해야 하나요?</summary>
+<p>'돈이 없다'는 사정만으로는 형사책임을 면할 수 없습니다. 고용노동부 진정으로 형사처벌을 압박하는 한편, <strong>체당금(대지급금)</strong>을 신청하여 국가로부터 우선 지급받는 것이 가장 빠른 방법입니다. 동시에 사용자 재산을 확인하여 가압류도 검토하세요.</p>
+</details>
+<details>
+<summary>Q3. 대지급금(체당금)은 얼마나 받을 수 있나요?</summary>
+<p>임금·휴업수당 최대 <strong>700만 원</strong>, 퇴직급여 최대 <strong>700만 원</strong>, 합계 최대 <strong>1,000만 원</strong>까지 지급받을 수 있습니다. 초과액은 별도 민사소송을 통해 청구해야 합니다.</p>
+</details>
+<details>
+<summary>Q4. 체당금 신청에 필요한 서류는 무엇인가요?</summary>
+<p>체불임금등사업주확인서(고용노동부) 또는 확정판결 정본, 대지급금 청구서(공단 서식), 신분증, 통장 사본, 근로계약서·급여명세서 등 체불 내역 증명 서류가 필요합니다. 도산 사건은 도산등사실인정서도 필요합니다.</p>
+</details>
+<details>
+<summary>Q5. 회사가 파산하거나 폐업한 경우에도 체당금을 받을 수 있나요?</summary>
+<p><strong>네, 가능합니다.</strong> 오히려 도산대지급금 제도가 이런 상황을 위해 설계되었습니다. 고용노동부의 <strong>도산등사실인정</strong>을 받거나 법원의 파산선고·회생개시결정이 있으면 근로복지공단에 대지급금을 신청할 수 있습니다. 한도는 동일하게 최대 1,000만 원입니다.</p>
+</details>
+</div>
+
+<div class="card">
+<h2>7. 관련 법령·판례</h2>
+<table class="legal-table">
+<tr><th>구분</th><th>내용</th></tr>
+<tr><td>근로기준법 제36조</td><td>퇴직 시 금품 청산 의무 (14일 이내)</td></tr>
+<tr><td>근로기준법 제37조</td><td>임금채권 지연이자 (연 20%)</td></tr>
+<tr><td>근로기준법 제43조</td><td>임금 지급 원칙 (직접·전액·정기)</td></tr>
+<tr><td>근로기준법 제109조</td><td>임금체불 형사처벌 (3년 이하 징역·3천만 원 이하 벌금)</td></tr>
+<tr><td>임금채권보장법 제7조</td><td>대지급금 지급 (도산·간이)</td></tr>
+<tr><td>근로자퇴직급여보장법 제9조</td><td>퇴직금 14일 내 지급 의무</td></tr>
+<tr><td>대법원 2010두5479</td><td>대지급금 지급 요건과 범위</td></tr>
+</table>
+</div>
+
+<div class="footer">
+<strong>조우성 변호사</strong> · 로펌 머스트노우<br>
+문의: law@mustknow.co.kr<br>
+본 콘텐츠는 법률 정보 제공 목적으로, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.<br>
+© 2026 MustKnow. All rights reserved. <span style="opacity:.5">· noindex</span>
+</div>
+</div>
+
+<script>
+window.addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-window.innerHeight;var p=window.scrollY/h*100;document.getElementById('progress').style.width=Math.min(p,100)+'%'});
+</script>
+</body>
+</html>

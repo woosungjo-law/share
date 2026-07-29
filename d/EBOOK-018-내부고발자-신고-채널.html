@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>내부고발자 익명 신고 채널 — 신고 채널과 보호조치 설계 | 조우성 변호사</title>
+<meta name="description" content="B2B 컴플라이언스 리스크분석형. 익명 신고 채널 설치만으로 법 준수가 완성되는지 분석하고, 접수→조사→보호 3대 축 중심의 시스템 설계와 리스크 맵을 제공합니다.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="내부고발자 익명 신고 채널 — 신고 채널과 보호조치 설계 | 조우성 변호사">
+<meta property="og:description" content="B2B 컴플라이언스 리스크분석형. 신고 채널 설계, 보호조치 체계, 리스크 맵과 위험 신호 자가진단을 포함한 종합 리스크분석입니다.">
+<style>
+:root{
+  --bg:#eff3f3; --panel:#ffffff; --panel2:#f2f6f7;
+  --line:#d4dede; --line2:#bccccc;
+  --ink:#14303a; --ink2:#2a505c; --muted:#6a838c; --faint:#96aeb5;
+  --teal:#0d7377; --teal-d:#095255; --teal-l:#1a9e9e;
+  --teal-tint:#dfeeef; --teal-tint-ln:#cae0e2;
+  --header-bg:#063e42; --header-bg2:#0a5156; --header-accent:#7fc7c9;
+  --rH:#c74a3c; --rM-bg:#f8e4b8; --rM-tx:#7d520a; --rL-bg:#d6ecdb; --rL-tx:#287a54;
+  --amber:#b45309; --green:#287a54; --red:#dc2626;
+  --font:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Noto Sans KR',sans-serif;
+  --maxw:1120px; --readw:780px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;background:linear-gradient(90deg,var(--teal),var(--teal-l));transition:width .1s linear}
+.header{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#ebf4f2}
+.header .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 26px}
+.header .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;color:var(--header-accent);border:1px solid rgba(127,199,201,.35);border-radius:999px;padding:4px 12px}
+.header .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--header-accent)}
+.hero{max-width:var(--maxw);margin:0 auto;padding:30px 26px 8px}
+.hero .eb{font-size:11.5px;font-weight:700;color:var(--teal-d);letter-spacing:.04em;margin-bottom:10px;text-transform:uppercase}
+.hero .eb .tag{display:inline-block;background:var(--teal-tint);color:var(--teal-d);border-radius:6px;padding:2px 9px;margin-right:8px;font-size:11px}
+.hero h1{font-size:30px;line-height:1.28;font-weight:800;margin:0 0 16px;color:var(--ink);letter-spacing:-.01em}
+.hero .tldr{background:var(--teal-tint);border:1px solid var(--teal-tint-ln);border-left:4px solid var(--teal);border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.hero .tldr .lb{font-size:12px;font-weight:700;color:var(--teal-d);margin-bottom:8px}
+.hero .tldr ul{margin:0;padding-left:18px}
+.hero .tldr li{margin:5px 0;font-size:14.5px;color:var(--ink2)}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:12.5px;color:var(--muted);margin-bottom:18px}
+.hero .meta .vchip{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);font-weight:700;border-radius:6px;padding:3px 9px;font-size:11.5px}
+.hero .cta-row{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:9px;padding:11px 18px;text-decoration:none;cursor:pointer;border:1px solid transparent}
+.btn-p{background:var(--teal);color:#fff}
+.btn-p:hover{background:var(--teal-d)}
+.btn-o{background:#fff;color:var(--teal-d);border-color:var(--line2)}
+.btn-o:hover{background:var(--panel2)}
+.app{max-width:var(--maxw);margin:0 auto;padding:8px 26px 60px;display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:start}
+.toc{position:sticky;top:24px}
+.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:0 0 10px;padding-left:2px}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}
+.toc li{counter-increment:toc;margin:1px 0}
+.toc a{display:flex;gap:9px;font-size:13px;color:var(--ink2);text-decoration:none;padding:6px 10px;border-radius:8px;border-left:3px solid transparent;line-height:1.35}
+.toc a::before{content:counter(toc,decimal-leading-zero);color:var(--faint);font-weight:700;font-size:11px;flex:none;min-width:18px}
+.toc a:hover{background:var(--panel2)}
+.toc a.active{background:var(--teal-tint);border-left-color:var(--teal);color:var(--teal-d);font-weight:700}
+.toc-toggle{display:none}
+.content{max-width:var(--readw);min-width:0}
+section.blk{scroll-margin-top:24px;margin-bottom:40px}
+.secl{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin:0 0 10px}
+.secl::before{content:"";width:7px;height:15px;background:var(--teal);border-radius:2px;flex:none}
+section.blk h2{font-size:22px;font-weight:800;line-height:1.35;margin:0 0 14px;color:var(--ink);letter-spacing:-.01em}
+section.blk h3{font-size:17px;font-weight:700;margin:24px 0 10px;color:var(--teal-d)}
+section.blk p{margin:0 0 14px;color:var(--ink2)}
+section.blk ul,section.blk ol{margin:0 0 14px;padding-left:22px;color:var(--ink2)}
+section.blk li{margin:6px 0}
+strong{color:var(--ink);font-weight:700}
+.summary{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:15px 18px;margin:0 0 18px}
+.summary .lb{font-size:11px;font-weight:700;color:var(--teal-d);text-transform:uppercase;letter-spacing:.05em;margin-bottom:7px}
+.summary ul{margin:0;padding-left:18px}
+.ev{background:#fff;border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:10px;padding:13px 15px;margin:0 0 12px}
+.ev .top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px}
+.ev .kind{font-size:11px;font-weight:700;color:#fff;background:var(--teal);border-radius:5px;padding:2px 8px}
+.ev .kind.law{background:var(--teal-d)}
+.ev .kind.case{background:var(--amber)}
+.ev .kind.risk{background:var(--rH)}
+.ev .cite{font-size:13.5px;font-weight:700;color:var(--ink)}
+.ev .vtick{margin-left:auto;font-size:11px;font-weight:700;color:var(--rL-tx);background:var(--rL-bg);border-radius:5px;padding:2px 7px}
+.ev .gist{font-size:14px;color:var(--ink2);margin:0}
+.ev .date{font-size:12px;color:var(--muted);margin-top:5px}
+.figure{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin:0 0 18px}
+.figure .cap{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:12px}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px}
+.flow .step{flex:1;min-width:120px;background:var(--teal-tint);border:1px solid var(--teal-tint-ln);border-radius:10px;padding:11px 12px;position:relative}
+.flow .step .n{font-size:11px;font-weight:700;color:var(--teal)}
+.flow .step .t{font-size:13.5px;font-weight:700;color:var(--ink);margin-top:2px}
+.flow .step .d{font-size:12.5px;color:var(--ink2);margin-top:3px}
+.chip{display:inline-flex;align-items:center;justify-content:center;min-width:34px;font-size:11px;font-weight:500;border-radius:6px;padding:3px 8px;margin-right:4px}
+.c-CRITICAL{background:#7f1d1d;color:#fff}
+.c-HIGH{background:var(--rH);color:#fff}
+.c-MEDIUM{background:var(--rM-bg);color:var(--rM-tx)}
+.c-LOW{background:var(--rL-bg);color:var(--rL-tx)}
+.tbl-wrap{overflow-x:auto;margin:0 0 18px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--teal-d);font-weight:700;font-size:12.5px}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:10px;margin:0 0 10px;overflow:hidden}
+.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:15px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:10px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--teal-tint);color:var(--teal-d);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+.faq details[open] summary{border-bottom:1px solid var(--line);color:var(--teal-d)}
+.faq .a{padding:14px 16px;font-size:14.5px;color:var(--ink2)}
+.notice{background:#fff;border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;font-size:12.5px;color:var(--muted);line-height:1.7}
+#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;border:1px solid var(--teal-tint-ln);background:var(--teal);color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;box-shadow:0 4px 14px rgba(6,62,66,.28)}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{background:var(--teal-d)}
+.footer{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#ebf4f2;margin-top:20px}
+.footer .wrap{max-width:var(--maxw);margin:0 auto;padding:34px 26px}
+.footer h3{font-size:20px;font-weight:800;margin:0 0 8px;color:#fff}
+.footer p{font-size:14px;color:rgba(255,255,255,.72);margin:0 0 6px;line-height:1.7}
+.footer .prof{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end}
+.footer .cta-f{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.footer .btn-f{background:#fff;color:var(--teal-d)}
+.footer .btn-f:hover{background:var(--header-accent)}
+.footer .btn-fo{background:transparent;color:#ebf4f2;border-color:rgba(255,255,255,.35)}
+.footer .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:22px;padding-top:14px;font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.7}
+@media(max-width:820px){
+  .hero h1{font-size:24px}
+  .app{grid-template-columns:1fr;gap:0;padding-top:0}
+  .toc{position:static;margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 8px}
+  .toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--teal-d);padding:9px 8px}
+  .toc-toggle .ar{transition:transform .2s}
+  .toc.closed .toc-toggle .ar{transform:rotate(-90deg)}
+  .toc .tt{display:none}
+  .toc ol{max-height:50vh;overflow:auto}
+  .toc.closed ol{display:none}
+  section.blk h2{font-size:20px}
+  th,td{white-space:nowrap}
+}
+@media print{
+  #progress,.toc,.cta-row,.footer .cta-f{display:none}
+  .header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .app{display:block}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<button id="toTop" aria-label="맨 위로" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<header class="header">
+  <div class="wrap">
+    <span class="badge"><span class="dot"></span>조우성 변호사 · 리스크분석형 전자책</span>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="eb"><span class="tag">B2B | 리스크분석형</span>컴플라이언스 · 내부통제</div>
+  <h1>내부고발자 익명 신고 채널<br>신고 채널과 보호조치 설계</h1>
+  <div class="tldr">
+    <div class="lb">TL;DR — 핵심 요약</div>
+    <ul>
+      <li>익명 신고 채널 1개 설치로 법 준수가 완성되지 않는다. 접수→조사→보호 3대 축의 실효성이 핵심이며, 채널 유무보다 시스템의 실질적 작동이 중요하다.</li>
+      <li>신고자 보호 실패 시 리스크는 형사(2~5년)·징벌적 손해배상(3배)을 넘어 평판·ESG 평가까지 확장되는 누적 책임 구조를 가진다.</li>
+      <li>비실명 대리신고 제도와 익명·실명 채널 병행이 법적 권장 구성이며, 채널 설계 단계에서 신고자 특정 가능성과 보호 실효성을 함께 고려해야 한다.</li>
+    </ul>
+  </div>
+  <div class="meta">
+    <span>2026-07-29 작성</span>
+    <span>· 공익신고자보호법 현행 기준</span>
+    <span class="vchip">✓ L3 검증 (MCP + 내부 WIKI)</span>
+    <span>· 읽는 시간 약 12분</span>
+  </div>
+  <div class="cta-row">
+    <a class="btn btn-p" href="#faq">핵심만 빠르게 (Q&amp;A)</a>
+    <a class="btn btn-o" href="#cta">리スク 진단받기</a>
+  </div>
+</div>
+
+<div class="app">
+  <nav class="toc" id="toc">
+    <button class="toc-toggle" onclick="document.getElementById('toc').classList.toggle('closed')">
+      목차 <span class="ar">▾</span>
+    </button>
+    <div class="tt">목차</div>
+    <ol id="toc-list">
+      <li><a href="#s1">문제상황</a></li>
+      <li><a href="#s2">내부고발자 보호 체계</a></li>
+      <li><a href="#s3">신고 채널 설계</a></li>
+      <li><a href="#s4">리스크 분석</a></li>
+      <li><a href="#s5">위험 신호</a></li>
+      <li><a href="#s6">근거 카드</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#cta">다음 행동</a></li>
+    </ol>
+  </nav>
+
+  <main class="content">
+
+    <!-- ===== 1. 문제상황 ===== -->
+    <section class="blk" id="s1">
+      <div class="secl">Section 1</div>
+      <h2>문제상황 — 내부고발자가 사각지대에 머무는 이유</h2>
+
+      <div class="summary">
+        <div class="lb">한눈에</div>
+        <ul>
+          <li>많은 기업이 ESG·내부통제 강화의 일환으로 익명 신고 채널을 설치하지만, '채널 설치=법 준수'라는 오해가 실제 리스크를 키운다.</li>
+          <li>채널은 열려 있지만 신고자 보호 절차·조사 프로세스·보복 금지 고지가 문서화되어 있지 않은 경우가 대부분이다.</li>
+          <li>익명 채널만 운영하면 신고자가 법적 보호를 받을 수 없는 사각지대가 발생한다.</li>
+        </ul>
+      </div>
+
+      <h3>기업이 직면하는 4가지 리스크 시나리오</h3>
+
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>시나리오</th><th>내용</th><th>결과</th></tr></thead>
+          <tbody>
+            <tr><td><strong>거짓 안전감</strong></td><td>채널 설치=법 준수 완료로 오인. 실명 전환·조사·보호 절차 미비</td><td>실제 신고 발생 시 속수무책. 부실 시스템으로 법적 책임 가중</td></tr>
+            <tr><td><strong>보호 사각지대</strong></td><td>익명 제보자는 법적 보호 불가. 실명 전환 의사가 있어도 방법 없음</td><td>신고자 보호 실패 → 신뢰 하락 + 징벌적 손해배상 리스크</td></tr>
+            <tr><td><strong>조사 불가능</strong></td><td>익명만으로 사실 확인·증거 수집·가해자 특정이 어려움</td><td>조사 중단 → 후속조치 불가 → 재발 방지 실패</td></tr>
+            <tr><td><strong>외부 신고 유도</strong></td><td>내부 익명 채널에 대한 불신으로 권익위·수사기관 직접 신고</td><td>기업 통제 불가능한 외부 조사, 언론 노출, 평판 손상</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>ESG·컴플라이언스 환경 변화</h3>
+      <p>2026년 현재 ESG 공시 논의, 자본시장법 내부통제 강화, 중대재해처벌법 시행에 따라 내부고발 시스템의 실효성은 단순 권장사항을 넘어 기업 리스크 관리의 핵심 요소로 자리잡고 있다. EU Whistleblower Directive(2019/1937)는 50인 이상 기업에 내부고발 채널 의무 설치를 요구하고, 미국 Dodd-Frank Act는 원고격려제도를 통해 신고 유인을 제공한다. 글로벌 스탠더드와 비교할 때 국내 기업의 내부고발 시스템은 아직 형식적 단계에 머물러 있어, 법 개정 방향에 따라 리스크가 더욱 커질 수 있다.</p>
+    </section>
+
+    <!-- ===== 2. 내부고발자 보호 체계 ===== -->
+    <section class="blk" id="s2">
+      <div class="secl">Section 2</div>
+      <h2>내부고발자 보호 체계 — 법률 이중 구조</h2>
+
+      <div class="summary">
+        <div class="lb">한눈에</div>
+        <ul>
+          <li>공익신고자보호법은 5대 보호 메커니즘(신분보장·불이익 금지·보호조치·추정·징벌적 배상)과 형사처벌(5년 이하)로 신고자를 보호한다.</li>
+          <li>부패방지권익위법은 부패신고자를 추가 보호하며, 두 법은 중첩 적용되어 신고자가 유리한 법을 선택할 수 있다.</li>
+          <li>인과관계 추정(신고 후 2년 내 불이익 → 추정)과 추정 번복 요건('다른 뚜렷한 사유' 증명)이 실무의 핵심 쟁점이다.</li>
+        </ul>
+      </div>
+
+      <h3>공익신고자보호법 5대 보호 메커니즘</h3>
+
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>메커니즘</th><th>조문</th><th>내용</th></tr></thead>
+          <tbody>
+            <tr><td>신분보장·책임 감면</td><td>제14조</td><td>징계·행정처분 감면, 비밀준수 면책, 손해배상 청구 금지</td></tr>
+            <tr><td>불이익조치 금지</td><td>제15조</td><td>누구든지 공익신고등을 이유로 불이익 금지. 방해·강요 금지</td></tr>
+            <tr><td>보호조치결정</td><td>제20조</td><td>권익위 원상회복·보수 지급·취소·금지 결정 (30일 이내)</td></tr>
+            <tr><td>인과관계 추정</td><td>제23조</td><td>신고 후 2년 내 불이익 → 신고로 인한 불이익으로 추정</td></tr>
+            <tr><td>징벌적 손해배상</td><td>제29조의2</td><td>손해액의 3배 이내 배상. 고의·과실 없음 입증 시 면책</td></tr>
+            <tr><td>형사 처벌</td><td>제30조</td><td>신원공개 5년·해고 3년·기타 불이익 2년 이하 징역</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>부패방지권익위법 병행 보호</h3>
+
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>조문</th><th>내용</th><th>실무 의미</th></tr></thead>
+          <tbody>
+            <tr><td>제63조 (불이익 추정)</td><td>부패신고 후 권익위 신청·법원 소송 시 불이익 추정</td><td>부패신고자 입증책임 경감</td></tr>
+            <tr><td>제68조 (포상·보상·구조)</td><td>포상금·보상금·구조금(치료비·이사비·쟁송비·임금손실)</td><td>신고 유인과 피해 구제</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="figure">
+        <div class="cap">법률 이중 구조 — 보호 체계 흐름</div>
+        <div class="flow">
+          <div class="step"><div class="n">공익침해</div><div class="t">공익신고자보호법</div><div class="d">국민건강·안전·환경·소비자·공정경쟁</div></div>
+          <div class="step"><div class="n">부패</div><div class="t">부패방지권익위법</div><div class="d">공직자 부패·공공기관 재정 손실</div></div>
+          <div class="step"><div class="n">중첩 적용</div><div class="t">신고자 선택 가능</div><div class="d">유리한 법 선택 → 보호 극대화</div></div>
+        </div>
+      </div>
+
+      <h3>리딩 판례 3선</h3>
+
+      <div class="ev">
+        <div class="top">
+          <span class="kind case">판례</span>
+          <span class="cite">대법원 2023.10.12. 선고 2021두50239</span>
+          <span class="vtick">✓ 판례 확인</span>
+        </div>
+        <p class="gist">보호조치결정의 상대방은 법인이 원칙. 대표자 개인 특정 시 처분 무효 가능. 권익위 단계부터 상대방 특정이 승패를 좌우한다.</p>
+      </div>
+
+      <div class="ev">
+        <div class="top">
+          <span class="kind case">판례</span>
+          <span class="cite">대법원 2023.6.15. 선고 2022두66576</span>
+          <span class="vtick">✓ 판례 확인</span>
+        </div>
+        <p class="gist">인과관계 추정 번복을 위해 "다른 뚜렷한 사유" 증명 필요. 정당한 인사권 행사 주장만으로는 불충분. 사유·경위·관행을 증거로 구축해야 함.</p>
+      </div>
+
+      <div class="ev">
+        <div class="top">
+          <span class="kind case">판례</span>
+          <span class="cite">수원지법 성남지원 2024.12.26. 선고 2022가단252317</span>
+          <span class="vtick">✓ 판례 확인</span>
+        </div>
+        <p class="gist">직위해제·대기발령·보직변경·급여감액·해고 → 불이익조치 인정, 징벌적 손해배상(3배) 책임 인정. 손익상계(중간이익 공제)도 함께 판시.</p>
+      </div>
+    </section>
+
+    <!-- ===== 3. 신고 채널 설계 ===== -->
+    <section class="blk" id="s3">
+      <div class="secl">Section 3</div>
+      <h2>신고 채널 설계 — 법적 요구사항과 실무 권장사항</h2>
+
+      <div class="summary">
+        <div class="lb">한눈에</div>
+        <ul>
+          <li>공익신고자보호법 제8조는 실명 신고(인적사항 기재)를 원칙으로 하며, 익명 신고는 원칙적 보호 제외 대상이다.</li>
+          <li>비실명 대리신고(변호사 대리)는 실명 부담을 낮추면서 법적 보호는 온전히 받을 수 있는 대안이다.</li>
+          <li>익명·실명 채널 병행이 가장 바람직하며, 접수→조사→보호 3단계 프로세스가 문서화되어야 한다.</li>
+        </ul>
+      </div>
+
+      <h3>채널 유형별 법적 비교</h3>
+
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>항목</th><th>익명 채널</th><th>실명 채널</th><th>비실명 대리신고</th></tr></thead>
+          <tbody>
+            <tr><td>신고자 특정</td><td><span class="chip c-CRITICAL">불가능</span></td><td><span class="chip c-LOW">가능</span></td><td><span class="chip c-LOW">변호사가 특정</span></td></tr>
+            <tr><td>법적 보호</td><td><span class="chip c-HIGH">△ 제한적</span></td><td><span class="chip c-LOW">✅ 완전 보호</span></td><td><span class="chip c-LOW">✅ 완전 보호</span></td></tr>
+            <tr><td>보호조치 신청</td><td><span class="chip c-CRITICAL">불가</span></td><td><span class="chip c-LOW">가능</span></td><td><span class="chip c-LOW">가능</span></td></tr>
+            <tr><td>손해배상 청구</td><td><span class="chip c-CRITICAL">불가</span></td><td><span class="chip c-LOW">가능</span></td><td><span class="chip c-LOW">가능</span></td></tr>
+            <tr><td>조사 연계성</td><td><span class="chip c-MEDIUM">△ 낮음</span></td><td><span class="chip c-LOW">✅ 높음</span></td><td><span class="chip c-LOW">✅ 높음</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>채널 설계 5원칙</h3>
+
+      <div class="figure">
+        <div class="cap">신고 채널 설계 5원칙</div>
+        <div class="flow">
+          <div class="step"><div class="n">원칙 1</div><div class="t">익명·실명 병행</div><div class="d">익명 접수 + 실명 전환 절차. 보호 사각지대 방지</div></div>
+          <div class="step"><div class="n">원칙 2</div><div class="t">보호 사전고지</div><div class="d">신원보호·보복금지 접수 단계 고지. 취업규칙 문서화</div></div>
+          <div class="step"><div class="n">원칙 3</div><div class="t">3단계 문서화</div><div class="d">접수(Audit Trail) → 조사(48h 예비심사) → 보호(후속조치)</div></div>
+          <div class="step"><div class="n">원칙 4</div><div class="t">대리신고 안내</div><div class="d">비실명 대리신고 제도 사내 안내. 법적 보호 경로 제공</div></div>
+          <div class="step"><div class="n">원칙 5</div><div class="t">기록·점검</div><div class="d">전 기록 3년 보관. 연 1회 시스템 점검</div></div>
+        </div>
+      </div>
+
+      <h3>기업 규모별 권장 구성</h3>
+
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>구분</th><th>중소기업 (최소)</th><th>중견기업 (권장)</th><th>대기업 (고도화)</th></tr></thead>
+          <tbody>
+            <tr><td>신고 채널</td><td>전담 이메일 + 전화</td><td>이메일 + 핫라인 + 웹 폼</td><td>이메일 + 핫라인 + 웹 폼 + 외부 위탁</td></tr>
+            <tr><td>접수 창구</td><td>대표이사·법무 담당</td><td>법무팀 전담 + 감사위</td><td>법무팀 + 감사위 + 외부 수탁사</td></tr>
+            <tr><td>조사 주체</td><td>외부 법률 사무소 위탁</td><td>외부 로펌 + 내부 감사팀</td><td>외부 로펌 + 감사위 + 컴플라이언스</td></tr>
+            <tr><td>보호 장치</td><td>취업규칙 명시</td><td>취업규칙 + 내부고발지침</td><td>규정 + 지침 + 전담 보호 프로그램</td></tr>
+            <tr><td>교육</td><td>연 1회 공지</td><td>연 1회 교육 + 리마인더</td><td>연 2회 + 신규 입사자 + 리더십</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="ev">
+        <div class="top">
+          <span class="kind law">조문</span>
+          <span class="cite">공익신고자보호법 제8조 (신고방법)</span>
+          <span class="vtick">✓ MCP 현행 확인</span>
+        </div>
+        <p class="gist">공익신고는 인적사항(이름·주민등록번호·주소·연락처)을 기재한 문서 제출 원칙. 구술 신고 시 신고서 작성·서명 필요. 익명 신고는 원칙적 보호 제외.</p>
+        <div class="date">공익신고자보호법 (법률 제268861호, 시행 2026.2.1)</div>
+      </div>
+    </section>
+
+    <!-- ===== 4. 리스크 분석 ===== -->
+    <section class="blk" id="s4">
+      <div class="secl">Section 4</div>
+      <h2>리스크 분석 — 채널 미설계·부실 설계 시 리스크 맵</h2>
+
+      <div class="summary">
+        <div class="lb">한눈에</div>
+        <ul>
+          <li>내부고발자 보호 실패 시 리스크는 행정→민사→형사→평판으로 단계적 증폭된다 (누적 책임 구조).</li>
+          <li>불이익조치 금지 위반은 2~5년 징역 + 손해액 3배 징벌적 배상 + ESG 평가 하락으로 이어진다.</li>
+          <li>가장 높은 리스크는 '거짓 안전감' — 채널은 있지만 작동하지 않는 시스템이 오히려 책임을 가중시킨다.</li>
+        </ul>
+      </div>
+
+      <h3>리스크 매트릭스</h3>
+
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>리스크</th><th>발생 가능성</th><th>영향도</th><th>전체 위험도</th><th>주요 원인</th></tr></thead>
+          <tbody>
+            <tr><td>불이익조치 위반 형사처벌</td><td>중간</td><td>매우 높음</td><td><span class="chip c-CRITICAL">CRITICAL</span></td><td>채널만 있고 보호 절차 미비</td></tr>
+            <tr><td>징벌적 손해배상 (3배)</td><td>중간</td><td>높음</td><td><span class="chip c-HIGH">HIGH</span></td><td>신고자 보호 시스템 부재</td></tr>
+            <tr><td>권익위 보호조치·이행강제금</td><td>높음</td><td>중간</td><td><span class="chip c-MEDIUM">MEDIUM</span></td><td>조사·보호 절차 미문서화</td></tr>
+            <tr><td>노동위 부당징계 구제</td><td>높음</td><td>중간</td><td><span class="chip c-MEDIUM">MEDIUM</span></td><td>징계와 신고 연계 미인지</td></tr>
+            <tr><td>언론·평판 리스크</td><td>낮음</td><td>매우 높음</td><td><span class="chip c-HIGH">HIGH</span></td><td>외부 신고 후 통제 불능</td></tr>
+            <tr><td>ESG 평가 하락</td><td>중간</td><td>중간</td><td><span class="chip c-MEDIUM">MEDIUM</span></td><td>형식적 채널만 운영</td></tr>
+            <tr><td>외부 수사·조사 연계</td><td>낮음</td><td>매우 높음</td><td><span class="chip c-HIGH">HIGH</span></td><td>내부 조사 실패 → 권익위·검찰 신고</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>방어 전략 — 회사 측 관점</h3>
+
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>리스크</th><th>방어 전략</th><th>근거</th></tr></thead>
+          <tbody>
+            <tr><td>인과관계 추정</td><td>신고와 무관한 '정당한 사유' 증명 자료 구축 (평가 기준·징계 절차·처리 관행 문서화)</td><td>대법원 2022두66576</td></tr>
+            <tr><td>징벌적 손해배상</td><td>손익상계 주장(중간이득 공제), 고의·과실 없음 입증</td><td>제29조의2 단서</td></tr>
+            <tr><td>보호조치결정 상대방</td><td>법인이 원칙, 개인은 예외임을 주장하여 대표자 개인 방어</td><td>대법원 2021두50239</td></tr>
+            <tr><td>권익위 조사</td><td>사전 문서화·내부 절차 독립성 입증, 처리 관행 증거 제출</td><td>제20조</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>누적 책임 구조 — 리스크 증폭 메커니즘</h3>
+      <p>내부고발자 보호 실패 시 책임은 다음 단계로 증폭된다:</p>
+      <ol>
+        <li><strong>1차: 행정 책임</strong> — 권익위 보호조치결정·이행강제금 (제20조·제24조)</li>
+        <li><strong>2차: 민사 책임</strong> — 손해배상(3배 징벌적) (제29조의2)</li>
+        <li><strong>3차: 형사 책임</strong> — 2~5년 징역 (제30조)</li>
+        <li><strong>4차: 평판·ESG</strong> — 기업 가치 하락, 투자자 신뢰 상실</li>
+      </ol>
+
+      <div class="ev">
+        <div class="top">
+          <span class="kind risk">리스크 경고</span>
+          <span class="cite">공익신고자보호법 제30조 + 제29조의2</span>
+          <span class="vtick">✓ MCP 현행 확인</span>
+        </div>
+        <p class="gist">불이익조치(해고 등) 위반 시 3년 이하 징역 또는 3천만 원 이하 벌금 + 손해액 3배 이내 징벌적 배상. 두 제재는 병과될 수 있다.</p>
+      </div>
+    </section>
+
+    <!-- ===== 5. 위험 신호 ===== -->
+    <section class="blk" id="s5">
+      <div class="secl">Section 5</div>
+      <h2>위험 신호 — 경영진·법무팀 확인 필수 10문항</h2>
+
+      <div class="summary">
+        <div class="lb">한눈에</div>
+        <ul>
+          <li>익명 채널 1개만 운영하면서 '법 준수 완료'라고 생각하고 있다면 즉시 법률 검토가 필요하다.</li>
+          <li>신고 접수 후 조사가 법무팀 1명에 의해 비공식적으로 진행된다면 조사 독립성에 심각한 문제가 있다.</li>
+          <li>내부고발자가 징계·해고·전보 조치를 받았고 그 시점이 신고 후 2년 이내라면 인과관계 추정이 적용된다.</li>
+        </ul>
+      </div>
+
+      <h3>자가진단 체크리스트</h3>
+
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>#</th><th>위험 신호</th><th>진단 질문</th><th>위험도</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>채널 단독 운영</td><td>익명 채널만 있고 실명 채널은 없는가?</td><td><span class="chip c-HIGH">HIGH</span></td></tr>
+            <tr><td>2</td><td>규정 미비</td><td>취업규칙·내부고발지침에 보호 절차가 명시되어 있지 않은가?</td><td><span class="chip c-HIGH">HIGH</span></td></tr>
+            <tr><td>3</td><td>조사 절차 미문서화</td><td>신고 접수 후 누가·어떻게 조사하는지 문서화되어 있지 않은가?</td><td><span class="chip c-HIGH">HIGH</span></td></tr>
+            <tr><td>4</td><td>보호 고지 부재</td><td>신고자에게 신원보호·보복금지를 사전 고지하지 않는가?</td><td><span class="chip c-MEDIUM">MEDIUM</span></td></tr>
+            <tr><td>5</td><td>입증책임 대비 부재</td><td>불이익조치 시 '정당한 사유' 증명 자료가 준비되어 있지 않은가?</td><td><span class="chip c-MEDIUM">MEDIUM</span></td></tr>
+            <tr><td>6</td><td>기록 미보관</td><td>접수·조사·조치 기록이 보관되지 않는가?</td><td><span class="chip c-MEDIUM">MEDIUM</span></td></tr>
+            <tr><td>7</td><td>교육 미실시</td><td>전 직원 대상 연 1회 교육이 없는가?</td><td><span class="chip c-MEDIUM">MEDIUM</span></td></tr>
+            <tr><td>8</td><td>대리신고 미안내</td><td>직원들이 비실명 대리신고 제도를 알지 못하는가?</td><td><span class="chip c-LOW">LOW</span></td></tr>
+            <tr><td>9</td><td>외부 위탁 미검토</td><td>조사 독립성 확보를 위한 외부 위탁 체계가 없는가?</td><td><span class="chip c-LOW">LOW</span></td></tr>
+            <tr><td>10</td><td>정기 점검 미실시</td><td>연 1회 시스템 점검 계획이 없는가?</td><td><span class="chip c-LOW">LOW</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="ev">
+        <div class="top">
+          <span class="kind risk">Red Flag — 즉시 조치</span>
+          <span class="cite">다음 중 하나라도 해당되면 즉시 법률 검토 필요</span>
+        </div>
+        <p class="gist">① 익명 채널 1개만 운영하면서 '법 준수 완료'라고 생각하는 경우<br>② 신고 접수 후 조사가 법무팀 1명에 의해 비공식 진행되는 경우<br>③ 내부고발자가 징계·해고·전보 조치를 받았고, 그 시점이 신고 후 2년 이내인 경우<br>④ 내부고발자 보복성 인사 조치가 권익위·노동위에 신고된 경우<br>⑤ 익명 신고 채널 자체가 없는 경우</p>
+      </div>
+    </section>
+
+    <!-- ===== 6. 근거 카드 ===== -->
+    <section class="blk" id="s6">
+      <div class="secl">Section 6</div>
+      <h2>근거 카드 — 조문·판례 통합</h2>
+
+      <div class="summary">
+        <div class="lb">한눈에</div>
+        <ul>
+          <li>공익신고자보호법 핵심 6개 조문 + 부패방지권익위법 2개 조문을 MCP로 직접 확인하였다.</li>
+          <li>4개의 리딩 판례(대법원 3건 + 하급심 1건)를 내부 WIKI canonical 자료로 교차검증하였다.</li>
+          <li>비실명 대리신고 제도는 웹(clean.go.kr·acrc.go.kr)으로 확인하였다.</li>
+        </ul>
+      </div>
+
+      <h3>공익신고자보호법 핵심 조문</h3>
+
+      <div class="ev">
+        <div class="top">
+          <span class="kind law">조문</span>
+          <span class="cite">제2조 (정의)</span>
+          <span class="vtick">✓ MCP 확인</span>
+        </div>
+        <p class="gist">공익침해행위: 국민건강·안전·환경·소비자·공정경쟁 침해 행위 (별표 법률). 불이익조치: 해고·징계·전보·감사·차별·따돌림·부당감사·계약해지 등 8개 유형. 내부 공익신고자: 소속 근무자·계약자 등.</p>
+      </div>
+
+      <div class="ev">
+        <div class="top">
+          <span class="kind law">조문</span>
+          <span class="cite">제15조 (불이익조치 등의 금지)</span>
+          <span class="vtick">✓ MCP 확인</span>
+        </div>
+        <p class="gist">누구든지 공익신고자등에게 공익신고등을 이유로 불이익조치 금지. 공익신고등을 하지 못하도록 방해하거나 취소하도록 강요 금지.</p>
+      </div>
+
+      <div class="ev">
+        <div class="top">
+          <span class="kind law">조문</span>
+          <span class="cite">제23조 (불이익조치 추정)</span>
+          <span class="vtick">✓ MCP 확인</span>
+        </div>
+        <p class="gist">신고자 알아내기·신고 후 2년 내 불이익·권익위 불이익 권고 후 조치·보호조치 신청 — 이 중 하나라도 있으면 불이익 추정.</p>
+      </div>
+
+      <div class="ev">
+        <div class="top">
+          <span class="kind law">조문</span>
+          <span class="cite">제29조의2 (손해배상책임)</span>
+          <span class="vtick">✓ MCP 확인</span>
+        </div>
+        <p class="gist">불이익조치로 인한 손해액 3배 이내 징벌적 배상. 고의·과실 없음 입증 시 면책. 배상액 산정 시 고의 정도·피해 규모·경제적 이익·형사처벌·조치 유형·재산상태·구제 노력 고려.</p>
+      </div>
+
+      <div class="ev">
+        <div class="top">
+          <span class="kind law">조문</span>
+          <span class="cite">제30조 (벌칙)</span>
+          <span class="vtick">✓ MCP 확인</span>
+        </div>
+        <p class="gist">신원공개 위반 5년 이하 징역 또는 5천만 원 벌금. 해고 등 불이익 3년 이하 또는 3천만 원. 기타 불이익·방해·강요 2년 이하 또는 2천만 원.</p>
+      </div>
+
+      <h3>부패방지권익위법 핵심 조문</h3>
+
+      <div class="ev">
+        <div class="top">
+          <span class="kind law">조문</span>
+          <span class="cite">제63조 (불이익 추정)</span>
+          <span class="vtick">✓ MCP 확인</span>
+        </div>
+        <p class="gist">부패신고자가 권익위에 신분보장조치 신청 또는 법원에 원상회복 소송 제기 시 해당 신고와 관련하여 불이익을 당한 것으로 추정.</p>
+      </div>
+
+      <div class="ev">
+        <div class="top">
+          <span class="kind law">조문</span>
+          <span class="cite">제68조 (포상·보상·구조)</span>
+          <span class="vtick">✓ MCP 확인</span>
+        </div>
+        <p class="gist">포상금·보상금(회수금액 기준)·구조금(치료비·이사비·쟁송비·임금손실) 지급. 보상금 신청: 법률관계 확정 안 날부터 3년, 확정일부터 5년 내.</p>
+      </div>
+
+      <h3>리딩 판례</h3>
+
+      <div class="ev">
+        <div class="top">
+          <span class="kind case">판례</span>
+          <span class="cite">대법원 2023.10.12. 선고 2021두50239</span>
+          <span class="vtick">✓ 내부 WIKI 확인</span>
+        </div>
+        <p class="gist">보호조치결정 상대방 특정 — 법인이 원칙, 개인 예외. 대표자 개인 특정 시 중대 하자로 당연무효 가능.</p>
+      </div>
+
+      <div class="ev">
+        <div class="top">
+          <span class="kind case">판례</span>
+          <span class="cite">대법원 2023.6.15. 선고 2022두66576</span>
+          <span class="vtick">✓ 내부 WIKI 확인</span>
+        </div>
+        <p class="gist">추정 번복 기준 — "다른 뚜렷한 사유" 증명 필요. 정당 인사권 행사 주장만 불충분.</p>
+      </div>
+
+      <div class="ev">
+        <div class="top">
+          <span class="kind case">판례</span>
+          <span class="cite">대법원 2023.7.13. 선고 2023두35623</span>
+          <span class="vtick">✓ 내부 WIKI 확인</span>
+        </div>
+        <p class="gist">추정 번복은 이익형량 구조로 판단. 신고자 보호 공익과 신고자 비위 면책으로 훼손될 공익을 비교·형량.</p>
+      </div>
+
+      <div class="ev">
+        <div class="top">
+          <span class="kind case">판례</span>
+          <span class="cite">수원지법 성남지원 2024.12.26. 2022가단252317</span>
+          <span class="vtick">✓ 내부 WIKI 확인</span>
+        </div>
+        <p class="gist">직위해제·대기발령·보직변경·급여감액·해고 → 불이익 해당. 징벌적 손해배상(3배) 인정. 중간이익 손익상계 공제.</p>
+      </div>
+    </section>
+
+    <!-- ===== 7. FAQ ===== -->
+    <section class="blk faq" id="faq">
+      <div class="secl">Q&amp;A</div>
+      <h2>자주 묻는 질문</h2>
+
+      <details open>
+        <summary>익명 신고 채널 1개만 있어도 법적 문제가 없지 않나요?</summary>
+        <div class="a">네, 채널 설치 자체를 강제하는 법률은 없으므로 '설치하지 않았다'는 이유만으로 처벌되지는 않습니다. 하지만 '법 준수'는 단순히 처벌을 피하는 상태가 아니라, 신고자 보호 시스템이 실효적으로 작동하는 상태를 말합니다. 익명 채널만 있고 실명 채널·조사 절차·보호 장치가 없다면, 실제 신고 발생 시 불이익조치 금지 위반·손해배상 책임을 피하기 어렵습니다.</div>
+      </details>
+
+      <details>
+        <summary>익명 제보자는 공익신고자보호법의 보호를 전혀 못 받나요?</summary>
+        <div class="a">원칙적으로 보호 대상이 아닙니다. 신고자 특정이 불가능하면 보호조치·손해배상 청구가 실효적으로 작동하지 않기 때문입니다. 다만 익명 제보라도 조사 과정에서 신고자가 특정되고 이후 불이익조치가 발생했다면 보호 대상이 될 수 있습니다. 따라서 익명 채널만 운영하는 기업은 '보호 사각지대'가 존재함을 인지해야 합니다.</div>
+      </details>
+
+      <details>
+        <summary>비실명 대리신고 제도의 구체적 내용과 기업이 해야 할 일은?</summary>
+        <div class="a">국민권익위원회가 운영하는 제도로, 신고자가 변호사를 통해 신원을 공개하지 않고 신고할 수 있습니다. 변호사가 신고자를 특정하고 있으므로 법적 보호는 실명 신고와 동일합니다. 기업은 이 제도를 취업규칙·사내 게시판 등을 통해 직원들에게 안내하고, 채널 안내 페이지에 관련 정보를 게시하는 것이 좋습니다.</div>
+      </details>
+
+      <details>
+        <summary>중소기업인데 시스템 구축 비용이 얼마나 드나요?</summary>
+        <div class="a">필수 비용은 거의 들지 않습니다. 무료 이메일 채널 + 취업규칙 정비(내부 작성) + 전 직원 교육(내부 자료 활용)만으로 기본 시스템 구축이 가능합니다. 외부 법률 검토가 필요한 경우에만 비용이 발생하며, 사건 발생 시점에 개별 대응해도 됩니다. '모든 것을 자체 해결'하려다 절차 하자로 불리해지는 것이 가장 큰 함정입니다.</div>
+      </details>
+
+      <details>
+        <summary>신고자 보호와 회사의 영업비밀 보호가 충돌할 때는 어떻게 하나요?</summary>
+        <div class="a">공익신고자보호법 제14조제4항은 공익신고등에 직무상 비밀이 포함된 경우에도 비밀준수 의무 위반이 아닌 것으로 본다고 규정합니다. 다만 신고 내용의 진실성·신고 대상의 정당성·신고 방법의 상당성이라는 요건이 충족되어야 합니다. 영업비밀 보호를 이유로 내부고발자를 징계하면 오히려 불이익조치 금지 위반이 될 수 있으므로 신중한 판단이 필요합니다.</div>
+      </details>
+
+      <details>
+        <summary>해외 진출 기업이 추가로 고려할 사항은?</summary>
+        <div class="a">EU Whistleblower Directive(2019/1937)는 50인 이상 기업에 내부고발 채널 의무 설치를 요구합니다. EU에 자회사·지점이 있는 기업은 현지법 준수를 위해 별도 시스템 구축이 필요합니다. 미국 상장 기업은 Dodd-Frank Act상 원고격려제도(보상금) 리스크도 고려해야 합니다.</div>
+      </details>
+
+      <!-- 최신성·면책 -->
+      <div class="notice">
+        본 자료는 <strong>2026년 7월 29일</strong> 기준으로 작성되었습니다. 인용 법령은 한국법 MCP(mst=268861, 268657) 직접 조회로 현행 확인(L3)하였으며, 판례는 내부 WIKI canonical 자료로 교차검증하였습니다. 법령은 개정될 수 있고 사안마다 결론이 달라질 수 있으므로, 실제 의사결정 전 최신 법령과 개별 사실관계 확인이 필요합니다. 본 자료는 일반적 법률 정보 제공이며 특정 사안에 대한 법률 자문이 아닙니다.
+      </div>
+    </section>
+
+    <!-- ===== 8. CTA ===== -->
+    <section class="blk" id="cta">
+      <div class="secl">CTA</div>
+      <h2>다음 행동 — 리스크 진단부터 시작하세요</h2>
+
+      <div class="figure">
+        <div class="cap">즉시 실행 가능한 3단계</div>
+        <div class="flow">
+          <div class="step"><div class="n">1단계</div><div class="t">자가진단</div><div class="d">위험 신호 체크리스트 10문항 자가진단 (30분)</div></div>
+          <div class="step"><div class="n">2단계</div><div class="t">규정 정비</div><div class="d">취업규칙·내부고발지침에 보호 절차 명시 + 채널 개설 (1~2주)</div></div>
+          <div class="step"><div class="n">3단계</div><div class="t">교육·점검</div><div class="d">전 직원 교육 + 연 1회 정기 점검 체계 수립 (1일)</div></div>
+        </div>
+      </div>
+
+      <h3>법률 검토가 필요한 경우</h3>
+      <ul>
+        <li>현재 운영 중인 신고 채널의 법적 적합성 검토</li>
+        <li>불이익조치 발생 시 대응 전략 수립</li>
+        <li>내부고발 규정·취업규칙 정비</li>
+        <li>권익위 보호조치결정·노동위원회 대응</li>
+      </ul>
+
+      <div class="ev">
+        <div class="top">
+          <span class="kind">문의</span>
+          <span class="cite">조우성 변호사 / 로펌 머스트노우</span>
+        </div>
+        <p class="gist">리スク 진단과 시스템 구축에 관한 구체적 상담이 필요하시면 아래로 연락주십시오.</p>
+        <div class="date">✉ law@mustknow.co.kr</div>
+      </div>
+
+      <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn btn-p" href="mailto:law@mustknow.co.kr">상담 문의하기</a>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="prof">
+      <div>
+        <h3>조우성 변호사 / 로펌 머스트노우</h3>
+        <p>로펌 머스트노우 대표변호사. 서울대학교 법학전문대학원 졸업. 법률지식 WIKI 기반 리스크 진단·전자책 대시보드·기업 컴플라이언스 자문.</p>
+        <p>25년 이상 법률 실무 경험을 바탕으로 기업 자문·소송·M&A·컴플라이언스 분야에서 활동 중.</p>
+        <p style="font-size:15px;color:rgba(255,255,255,.92);margin-top:8px">✉ law@mustknow.co.kr</p>
+      </div>
+      <div class="cta-f">
+        <a class="btn btn-f" href="mailto:law@mustknow.co.kr">상담 문의하기</a>
+      </div>
+    </div>
+    <div class="fine">
+      © 2026 조우성 변호사. 본 콘텐츠는 일반 법률 정보이며 법률 자문을 대체하지 않습니다. 인용 법령·판례는 2026-07-29 기준 L3 검증을 완료했습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+var pb=document.getElementById('progress');
+function onScroll(){
+  var h=document.documentElement,b=document.body;
+  var st=h.scrollTop||b.scrollTop;
+  var sh=(h.scrollHeight||b.scrollHeight)-h.clientHeight;
+  pb.style.width=(sh>0?(st/sh*100):0)+'%';
+}
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+var toTop=document.getElementById('toTop');
+window.addEventListener('scroll',function(){
+  (window.scrollY||window.pageYOffset)>500?toTop.classList.add('show'):toTop.classList.remove('show');
+},{passive:true});
+
+var links=Array.prototype.slice.call(document.querySelectorAll('#toc-list a'));
+var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));}).filter(Boolean);
+function spy(){
+  var pos=(window.scrollY||window.pageYOffset)+120,cur=secs[0];
+  for(var i=0;i<secs.length;i++){if(secs[i].offsetTop<=pos)cur=secs[i];}
+  links.forEach(function(a){
+    a.classList.toggle('active',cur&&a.getAttribute('href')==='#'+cur.id);
+  });
+}
+window.addEventListener('scroll',spy,{passive:true});spy();
+
+document.querySelectorAll('#toc-list a').forEach(function(a){
+  a.addEventListener('click',function(){
+    if(window.innerWidth<=820)document.getElementById('toc').classList.add('closed');
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>전세권 설정과 확정일자 차이 — 보증금 보호의 두 가지 길</title>
+<style>
+:root { --bg:#0b0f14; --card:#111820; --muted:#8b95a1; --text:#e6edf3; --accent:#3b82f6; --accent-soft:rgba(59,130,246,.12); --border:#1f2a3a; --warn:#f59e0b; --danger:#ef4444; --ok:#22c55e; }
+*{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Noto Sans KR',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.container{max-width:960px;margin:0 auto;padding:24px 16px}
+header{text-align:center;padding:32px 0 16px;border-bottom:1px solid var(--border);margin-bottom:24px}
+header h1{font-size:clamp(1.5rem,4vw,2rem);font-weight:800;line-height:1.3;margin-bottom:8px;color:var(--text)}
+header .meta{font-size:.85rem;color:var(--muted);display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+header .meta span{display:flex;align-items:center;gap:6px}
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:.7rem;font-weight:700;background:var(--accent-soft);color:var(--accent)}
+.badge.warn{background:rgba(245,158,11,.12);color:var(--warn)}
+.badge.danger{background:rgba(239,68,68,.12);color:var(--danger)}
+.tl;dr{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:24px;font-size:.9rem}
+.tl;dr summary{cursor:pointer;font-weight:700;color:var(--accent);margin-bottom:8px}
+.tl;dr ul{margin-left:16px}
+.tl;dr li{margin:6px 0}
+section{margin-bottom:32px}
+h2{font-size:1.35rem;font-weight:800;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--accent);color:var(--text)}
+h3{font-size:1.1rem;font-weight:700;margin:20px 0 10px;color:var(--text)}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:16px}
+.card h3{margin-top:0;border-bottom:1px solid var(--border);padding-bottom:8px;margin-bottom:12px}
+.grid{display:grid;gap:16px}
+.grid-2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th,td{border:1px solid var(--border);padding:10px 12px;text-align:left}
+th{background:var(--accent-soft);color:var(--accent);font-weight:700}
+tr:nth-child(even) td{background:rgba(255,255,255,.02)}
+.muted{color:var(--muted);font-size:.9rem}
+.checklist{list-style:none;padding:0}
+.checklist li{position:relative;padding-left:24px;margin:8px 0}
+.checklist li::before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:700}
+.faq details{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 16px;margin-bottom:8px}
+.faq summary{cursor:pointer;font-weight:700;color:var(--text)}
+.faq summary::marker{content:"❓ ";color:var(--accent)}
+.faq p{margin-top:8px;color:var(--muted)}
+.disclaimer{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;margin-top:32px;font-size:.85rem;color:var(--muted)}
+.cta{background:linear-gradient(135deg,var(--accent-soft),rgba(34,197,85,.1));border:1px solid var(--accent);border-radius:12px;padding:20px;margin-top:24px;text-align:center}
+.cta h3{margin:0 0 8px;border:none;color:var(--accent)}
+.cta p{color:var(--muted);margin:0}
+footer{text-align:center;padding:24px 0;color:var(--muted);font-size:.8rem;border-top:1px solid var(--border);margin-top:32px}
+@media (max-width:640px){
+  header{padding:24px 0 12px}
+  .card{padding:16px}
+  h2{font-size:1.2rem}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>전세권 설정과 확정일자 차이</h1>
+<p style="color:var(--muted);margin-top:8px;font-size:1.05rem">보증금 보호의 두 가지 길</p>
+<div class="meta">
+<span class="badge">B2C</span>
+<span class="badge">부동산·주택임대차</span>
+<span class="badge warn">비교형·절차형</span>
+<span class="badge">L2 검증</span>
+<span class="muted">읽는 시간 약 6분</span>
+</div>
+</header>
+
+<details class="tl;dr" open>
+<summary>3줄 요약 (TL;DR)</summary>
+<ul>
+<li><strong>전세권</strong>은 <strong>등기부상 권리</strong>로 용익물권(사용·수익)과 담보물권(우선변제·경매청구) 이중 기능 — 인도·말소와 반환은 <strong>동시이행</strong>, 경매청구 전 이행제공 필수(민법 제303·317·318조, 77마90)</li>
+<li><strong>확정일자(주택임대차)</strong>는 <strong>주민센터 신고</strong>로 대항력·우선변제권 확보 — 전세권보다 비용·절차 간단, 단 <strong>보증금 상한·최우선변제</strong> 등 주임법 특례 적용</li>
+<li><strong>전세금 반환 분쟁</strong>은 (i) 용익 소멸+담보 잔존 구도, (ii) 인도·말소와 반환의 동시이행, (iii) 경매·배당(또는 공탁)에서 회수·면책 구조를 한 세트로 검토해야 함</li>
+</ul>
+</details>
+
+<section>
+<h2>1. 전세권 vs 확정일자 — 무엇이 어떻게 다른가</h2>
+<div class="card">
+<p><strong>전세권</strong>은 <strong>민법 제303조</strong>에 따라 전세금을 지급하고 타인의 부동산을 점유하여 그 부동산의 용도에 좇아 사용·수익하며, 그 부동산 전부에 대하여 <strong>후순위권리자 기타 채권자보다 전세금의 우선변제</strong>를 받을 권리가 있다. 농경지는 전세권 목적으로 할 수 없다(제303조 제2항).</p>
+<p><strong>확정일자(주택임대차보호법 제3조의2)</strong>는 임대차계약서에 <strong>주민센터(또는 온라인) 확정일자</strong>를 받으면 <strong>대항력(제3자 대항)</strong>과 <strong>우선변제권(경매·공매 시 보증금 우선배당)</strong>을 취득한다. 전세권보다 <strong>비용(수수료 600원 내외)·절차 간단</strong>하나, <strong>보증금 상한(수도권 1.5억·광역시 1.3억·그 외 1.0억)</strong>과 <strong>최우선변제(소액임차인)</strong> 등 주임법 특례가 적용돼 전액 우선변제가 안 될 수 있다.</p>
+</div>
+
+<div class="card">
+<h3>핵심 근거 법령</h3>
+<ul class="checklist">
+<li><strong>민법 제303조</strong> (전세권의 내용) — 전세권자의 사용·수익권, 우선변제권, 농경지 제외</li>
+<li><strong>민법 제317조</strong> (전세권의 소멸과 동시이행) — 전세권 소멸 시 설정자는 전세권자로부터 목적물 인도 및 말소등기서류 교부받는 동시에 전세금 반환</li>
+<li><strong>민법 제318조</strong> (전세권자의 경매청구권) — 설정자가 전세금 반환 지체 시 전세권자는 민사집행법 따라 경매 청구 가능</li>
+</ul>
+</div>
+
+<div class="card">
+<p>전세권이 기간만료 등으로 종료하면 <strong>용익물권적 권능은 소멸</strong>하나 전세금반환채권을 담보하는 <strong>담보물권적 권능만 전세금 반환 시까지 전세권설정등기 효력으로 존속</strong>한다(대법원 2014다10694). 전세권 소멸 후 전세권설정자의 전세금 반환의무와 전세권자의 목적물 인도·말소등기서류 교부 의무는 <strong>동시이행 관계</strong>이므로(민법 제317조), 전세권자가 민법 제318조에 따른 <strong>경매를 청구하려면 먼저 인도·말소의무 이행제공을 완료</strong>해야 한다(77마90).</p>
+</div>
+</section>
+
+<section>
+<h2>2. 전세권의 용익·담보 이중성과 실무 쟁점</h2>
+<div class="card">
+<p>전세권이 종료하면 용익물권적 권능은 소멸하되, 전세금반환채권을 담보하는 담보물권적 권능만 전세금 반환 시까지 전세권설정등기 효력으로 존속한다. 전세권 존속 중 전세금반환채권만 분리해 양도하거나 압류·가압류하는 것은 <strong>효력 부정</strong>된다(서울동부지법 2023나20268). 전세권 설정계약이 상행위인 경우 전세금반환채권에 <strong>상사소멸시효(5년)</strong>가 적용돼 시효 완성 시 등기 말소 가능(제주지법 2021나15710). 전세권자가 전출·인도로 용익권을 완전히 배제하기로 합의하면 <strong>합의해지</strong>로 종료된다(제주지법 2021나15710).</p>
+</div>
+
+<div class="card">
+<h3>리딩 판례</h3>
+<ul class="checklist">
+<li><strong>대법원 2014다10694</strong> — 전세권 종료 후 용익권능 소멸, 담보권능만 잔존, 최선순위 전세권자 채권자 일정 요건 하 배당요구 가능, 배당요구 시 전세권 종료 사실 소명 필요</li>
+<li><strong>대법원 1977.4.13. 77마90</strong> — 전세권자 인도·말소서류 교부 의무와 설정자 전세금 반환의무는 동시이행 관계, 경매청구 위해선 먼저 인도·말소의무 이행제공 완료 필요</li>
+<li><strong>서울동부지법 2023.9.6. 2023나20268</strong> — 전세권 존속 중 전세금반환채권만 분리 확정 양도 효력 부정</li>
+<li><strong>제주지법 2022.12.23. 2021나15710</strong> — 전세권자 전출·인도로 용익 완전 배제 합의 시 합의해지 종료, 상행위 전세권 설정 시 상사소멸시효 5년 적용, 시효 완성 시 등기 말소 가능</li>
+</ul>
+</div>
+</section>
+
+<section>
+<h2>3. 전세권 소멸 후 분쟁 — 동시이행·경매·공탁 한 세트</h2>
+<div class="card">
+<p>전세권 소멸 후 분쟁은 (i) <strong>용익 소멸+담보 잔존</strong> 구도, (ii) <strong>인도·말소와 반환의 동시이행</strong>(민법 제317조, 77마90), (iii) <strong>경매·배당(또는 공탁)</strong>에서의 회수·면책 구조를 한 세트로 검토해야 한다. 특히 전세권 존속 중 전세금반환채권 처분(양도)이나 압류·가압류 경합 상태에서 변제·공탁 및 말소절차는 등기부(부기등기 포함), 통지·승낙 문서, 공탁 사유 중심으로 쟁점을 정리해야 한다.</p>
+</div>
+
+<div class="card">
+<h3>참고 판례</h3>
+<ul class="checklist">
+<li><strong>서울중앙지법 2018가합567063</strong> — 기간만료 후 신소유자도 전세금 반환의무 부담, 전세금 반환의무는 목적물 인도·말소와 동시이행, 말소 이행/제공 없으면 지체책임(지연손해금) 제한</li>
+</ul>
+</div>
+</section>
+
+<section>
+<h2>4. 확정일자(주택임대차) — 우선변제권과 최우선변제의 한계</h2>
+<div class="card">
+<p>주택임대차보호법 제3조의2(확정일자), 제8조(우선변제권), 제10조(최우선변제), 제10조의2(보증금 상한). 확정일자는 비용·절차 면에서 전세권보다 유리하나, <strong>고액 보증금(상한 초과) 임차인</strong>은 전세권 설정이 더 강한 보호 수단이 될 수 있다.</p>
+<ul class="checklist">
+<li><strong>확정일자 받으면 대항력+우선변제권</strong> 취득 — 전세권 없이도 경매·공매 시 보증금 우선배당</li>
+<li><strong>최우선변제(소액임차인)</strong>: 보증금 일정액(수도권 5,500만·광역시 4,800만·그 외 3,800만)까지 <strong>근저당권보다 앞선 배당</strong></li>
+<li><strong>보증금 상한 제한</strong>: 우선변제권 행사 시 보증금 전액이 아닌 상한(수도권 1.5억·광역시 1.3억·그 외 1.0억)까지만 보호</li>
+<li><strong>전세권은 상한 없이 전액 우선변제·경매청구 가능</strong> → 고액 보증금이면 전세권 유리</li>
+</ul>
+</div>
+</section>
+
+<section>
+<h2>5. 첫 대응 체크리스트 — 오늘 바로 확인할 것</h2>
+<div class="card">
+<p><strong>한눈에</strong></p>
+<ul class="checklist">
+<li>전세권 설정 여부 확인: 등기부 갑구·을구 확인, 전세권설정등기 존재·순위·피담보채권액</li>
+<li>확정일자 수령 여부: 임대차계약서 확정일자 도장·온라인 발급 내역 확인</li>
+<li>보증금 규모 vs 상한 비교: 주임법상 우선변제권 상한(수도권 1.5억 등) 초과 시 전세권 설정 검토</li>
+<li>전세권 소멸 시점: 기간만료·합의해지·경매개시 등 종료 원인·시점 특정</li>
+<li>동시이행 이행제공: 전세권자 측 인도·말소서류 준비·제공 완료 여부(경매청구 전 필수)</li>
+<li>배당·공탁 자료: 배당요구서, 배당표, 공탁서, 통지·승낙 문서 확보</li>
+</ul>
+</div>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>확인 항목</th><th>세부 내용</th><th>중요도</th></tr>
+</thead>
+<tbody>
+<tr><td>등기부 확인</td><td>전세권설정등기 존재·순위·피담보채권액, 근저당권·가압류 등 선후순위 권리</td><td>★★★</td></tr>
+<tr><td>확정일자 확인</td><td>임대차계약서 확정일자 도장·온라인 발급 내역, 우선변제권·최우선변제권 해당 여부</td><td>★★★</td></tr>
+<tr><td>보증금 vs 상한</td><td>주임법 우선변제권 상한(수도권 1.5억·광역시 1.3억·그 외 1.0억) 초과 여부</td><td>★★★</td></tr>
+<tr><td>전세권 종료 원인·시점</td><td>기간만료, 합의해지(전출·인도 합의), 경매개시, 시효 완성 등</td><td>★★★</td></tr>
+<tr><td>동시이행 이행제공</td><td>전세권자 측 목적물 인도·말소등기서류 교부 준비·제공 완료 여부(경매청구 전 필수)</td><td>★★★</td></tr>
+<tr><td>배당·공탁 자료</td><td>배당요구서·배당표·공탁서, 채권양도·가압류·가처분 경합 시 통지·승낙 문서</td><td>★★</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section>
+<h2>6. 자주 묻는 질문 (Q&A)</h2>
+<div class="faq">
+<details>
+<summary>전세권 설정했는데 기간 끝나고도 집주인이 전세금 안 돌려줘요. 어떻게 받아내나요?</summary>
+<p>전세권 기간만료로 <strong>용익권능은 소멸</strong>했으나 <strong>담보권능(우선변제·경매청구)은 전세금 반환 때까지 잔존</strong>합니다(대법원 2014다10694). 먼저 <strong>목적물 인도·말소등기서류 교부 이행제공</strong>을 내용증명 등으로 완료한 뒤(77마90), 민법 제318조에 따라 <strong>전세권 목적물 경매 청구</strong>를 하거나, 경매 진행 중이면 <strong>배당요구</strong>로 회수하세요. 신소유자도 전세금 반환의무 부담하며, 인도·말소 이행/제공 없으면 지연손해금 제한됩니다(서울중앙 2018가합567063).</p>
+</details>
+<details>
+<summary>확정일자만 받았는데 보증금 2억 원(수도권) 전액 보호받을 수 있나요?</summary>
+<p>주임법상 <strong>우선변제권 상한(수도권 1.5억 원)</strong>이 적용돼 <strong>초과분 5,000만 원은 우선변제권 보호 밖</strong>입니다. 최우선변제(소액임차인)도 수도권 5,500만 원까지만 근저당권보다 앞섭니다. 고액 보증금이면 <strong>전세권 설정(상한 없이 전액 우선변제·경매청구 가능)</strong>을 병행하거나, 임대차보증금반환채권 가압류·가처분 등 보전처분 병행이 필요합니다.</p>
+</details>
+<details>
+<summary>전세권 설정계약이 상행위라면 소멸시효 5년인가요?</summary>
+<p>네. 전세권 설정계약이 상행위(영업용 부동산 등)인 경우 전세금반환채권에 <strong>상사소멸시효 5년(상법 제64조)</strong>이 적용돼, 시효 완성 시 등기 말소 청구 가능합니다(제주지법 2021나15710). 비상행위면 민법상 10년(민법 제162조)입니다.</p>
+</details>
+<details>
+<summary>전세권자가 전출하고 열쇠 돌려주기로 합의했는데 전세금 안 주면 어떻게 하나요?</summary>
+<p>전세권자가 전출·인도로 용익권을 완전히 배제하기로 합의했다면 <strong>합의해지</strong>로 전세권이 종료됩니다(제주지법 2021나15710). 종료 후에도 담보권능은 잔존하므로, 인도·말소 이행제공 후 경매청구 또는 배당요구로 전세금 회수 절차를 밟으세요.</p>
+</details>
+</div>
+</section>
+
+<div class="cta">
+<h3>다음 행동</h3>
+<p>등기부·확정일자·보증금 규모를 대조해 <strong>전세권 설정 필요 여부</strong>를 판단하세요. 전세권 소멸 임박 시 <strong>인도·말소 이행제공 준비(내용증명·말소서류)</strong>를 선행하세요. 분쟁화되면 <strong>법률팩(체크리스트·서식·문구·행동순서)</strong> 또는 <strong>통합팩(업종별 리스크맵·대응도구)</strong>을 검토해 보세요. 개별 사안에 대한 단정적 자문은 불가능하므로, 최신 법령과 사실관계 확인 후 전문가 상담을 권합니다.</p>
+</div>
+
+<div class="disclaimer">
+<strong>최신성·면책 고지</strong><br>
+본 자료는 <strong>2026-07-28</strong> 기준으로 작성되었으며, 인용 법령·판례는 작성 시점의 현행성을 확인한 것입니다.<br>
+법령은 개정될 수 있고 사안마다 결론이 달라질 수 있으므로, 실제 의사결정 전 최신 법령과 개별 사실관계 확인이 필요합니다.<br>
+본 자료는 일반적인 법률 정보 제공이며 특정 사안에 대한 법률 자문이 아닙니다.
+</div>
+
+<footer>
+© 2026 조우성 변호사 / 로펌 머스트노우 | 문의: law@mustknow.co.kr<br>
+게시 URL: (게시 후 삽입) | 원본: <code>content/EBOOK-132-전세권-확정일자-차이.md</code>
+</footer>
+</div>
+</body>
+</html>

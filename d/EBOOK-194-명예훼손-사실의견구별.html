@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,follow">
+<title>명예훼손 '사실 vs 의견' 구별 완전 정복 — 법률 대시보드</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --primary: #1a365d;
+    --primary-light: #2b4f8e;
+    --accent: #c53030;
+    --accent-light: #fc8181;
+    --bg: #f7fafc;
+    --card-bg: #ffffff;
+    --text: #1a202c;
+    --text-muted: #4a5568;
+    --border: #e2e8f0;
+    --success: #276749;
+    --success-bg: #f0fff4;
+    --warning: #975a16;
+    --warning-bg: #fffaf0;
+    --danger: #9b2c2c;
+    --danger-bg: #fff5f5;
+    --info: #2a4365;
+    --info-bg: #ebf8ff;
+    --radius: 12px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    padding: 0;
+  }
+  .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: white;
+    padding: 48px 0 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+  }
+  .hero h1 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero .subtitle {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  .hero .badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .hero .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: rgba(255,255,255,0.2);
+    color: white;
+  }
+  .hero .badge.danger { background: var(--accent); }
+  .hero .badge.success { background: #276749; }
+
+  /* Target */
+  .target-section {
+    background: var(--info-bg);
+    border-left: 4px solid var(--info);
+    padding: 16px 20px;
+    margin: 24px auto;
+    border-radius: 0 var(--radius) var(--radius) 0;
+  }
+  .target-section p { font-size: 0.9rem; margin-bottom: 4px; }
+  .target-section p:last-child { margin-bottom: 0; }
+  .target-section strong { color: var(--info); }
+
+  /* Section */
+  .section {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 28px 24px;
+    margin: 20px auto;
+    transition: box-shadow 0.2s;
+  }
+  .section:hover { box-shadow: var(--shadow-lg); }
+  .section h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--border);
+  }
+  .section h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-light);
+    margin: 16px 0 8px;
+  }
+  .section h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 12px 0 6px;
+  }
+  .section p { margin-bottom: 12px; font-size: 0.925rem; }
+  .section p:last-child { margin-bottom: 0; }
+
+  /* Story cards */
+  .story-card {
+    background: var(--bg);
+    border-radius: 8px;
+    padding: 16px;
+    margin: 12px 0;
+    border-left: 3px solid var(--primary-light);
+  }
+  .story-card .label {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: white;
+    background: var(--primary-light);
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+
+  /* Tables */
+  .table-wrap {
+    overflow-x: auto;
+    margin: 12px 0;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+  }
+  th, td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  th {
+    background: var(--primary);
+    color: white;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  th:first-child { border-radius: 6px 0 0 0; }
+  th:last-child { border-radius: 0 6px 0 0; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #f7fafc; }
+
+  /* Steps */
+  .step {
+    display: flex;
+    gap: 12px;
+    margin: 16px 0;
+    padding: 16px;
+    background: var(--bg);
+    border-radius: 8px;
+    transition: transform 0.15s;
+  }
+  .step:hover { transform: translateX(4px); }
+  .step-num {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+  .step-content { flex: 1; }
+  .step-content strong { color: var(--primary-light); font-size: 0.95rem; }
+  .step-content p { margin: 4px 0 0; font-size: 0.85rem; }
+
+  /* Alert boxes */
+  .alert {
+    padding: 14px 16px;
+    border-radius: 8px;
+    margin: 12px 0;
+    font-size: 0.875rem;
+    border-left: 4px solid;
+  }
+  .alert.warning {
+    background: var(--warning-bg);
+    border-color: var(--warning);
+    color: var(--warning);
+  }
+  .alert.danger {
+    background: var(--danger-bg);
+    border-color: var(--danger);
+    color: var(--danger);
+  }
+  .alert.success {
+    background: var(--success-bg);
+    border-color: var(--success);
+    color: var(--success);
+  }
+
+  /* Evidence cards */
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin: 12px 0;
+  }
+  @media (min-width: 600px) { .card-grid { grid-template-columns: 1fr 1fr; } }
+  .ev-card {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px;
+    transition: box-shadow 0.2s;
+  }
+  .ev-card:hover { box-shadow: var(--shadow); }
+  .ev-card .card-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 6px;
+  }
+  .ev-card p { font-size: 0.825rem; margin-bottom: 6px; }
+  .ev-card .tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: var(--info-bg);
+    color: var(--info);
+  }
+
+  /* FAQ */
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+    padding: 14px 0;
+  }
+  .faq-item:first-child { padding-top: 0; }
+  .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .faq-q {
+    font-weight: 600;
+    color: var(--primary-light);
+    margin-bottom: 4px;
+    font-size: 0.925rem;
+  }
+  .faq-a { font-size: 0.875rem; color: var(--text-muted); }
+
+  /* CTA */
+  .cta-box {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: white;
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    margin: 20px auto;
+    text-align: center;
+  }
+  .cta-box h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    border-bottom: none;
+    color: white;
+  }
+  .cta-box p { font-size: 0.9rem; opacity: 0.9; margin-bottom: 16px; }
+  .cta-box .btn {
+    display: inline-block;
+    background: white;
+    color: var(--primary);
+    font-weight: 700;
+    padding: 10px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .cta-box .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  /* Disclaimer */
+  .disclaimer {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    background: var(--border);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    margin: 20px auto;
+    line-height: 1.6;
+  }
+  .disclaimer strong { color: var(--text); }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 1.35rem; }
+    .section { padding: 20px 16px; }
+    th, td { padding: 8px 10px; font-size: 0.8rem; }
+    .step { padding: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <h1>명예훼손, '사실'과 '의견'의 차이가<br>형사처벌을 가른다</h1>
+    <p class="subtitle">인터넷·SNS 시대, 내 표현이 명예훼손이 될까? 사실 적시와 의견 표명의 법적 구별 기준과 첫 대응 가이드</p>
+    <div class="badge-row">
+      <span class="badge">형사법</span>
+      <span class="badge">정보통신망</span>
+      <span class="badge danger">L2 검증</span>
+      <span class="badge success">2026.07.29 기준</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="target-section">
+  <p><strong>이 글이 도움이 되는 분</strong></p>
+  <p>누군가 나에 대해 안 좋은 말을 인터넷에 올렸는데 명예훼손으로 고소할 수 있는지 궁금한 분</p>
+  <p>SNS나 커뮤니티에 올린 글이 명예훼손으로 고소당할 위험이 있는지 걱정되는 분</p>
+  <p>"사실을 말한 건데 왜 명예훼손이냐"는 반문이 통하는지 알고 싶은 분</p>
+</div>
+
+<!-- Section 1: Problem Situation -->
+<div class="section">
+  <h2>문제상황 — 세 가지 사례</h2>
+
+  <div class="story-card">
+    <span class="label">사례 A</span>
+    <p><strong>직장 동료가 단체 채팅방에서 팀장 비판 → 팀장이 명예훼손 고소</strong></p>
+    <p>A씨는 사내 단체 채팅방에서 "B팀장이 지난번 프로젝트를 망쳤다. 실적이 바닥인데도 상사한테는 아부만 잘한다"고 말했다. 다음 날 A씨는 B팀장에게 명예훼손으로 고소당했다. A씨는 "내가 한 말은 사실인데 왜 고소당했지?"라고 생각한다.</p>
+  </div>
+
+  <div class="story-card">
+    <span class="label">사례 B</span>
+    <p><strong>블로그 후기에 "비추천" 의견 올렸다가 의사에게 고소당함</strong></p>
+    <p>C씨는 자신의 블로그에 "D동네 피부과는 시술 결과가 만족스럽지 않았다. 내 개인적 경험으로는 비추천한다"는 후기를 올렸다. D의원은 "명예훼손이다. 사실 여부를 확인하지 않고 쓴 글"이라며 C씨를 고소했다.</p>
+  </div>
+
+  <div class="story-card">
+    <span class="label">사례 C</span>
+    <p><strong>정치인 비판글 → 허위사실 적시 명예훼손 고소</strong></p>
+    <p>E씨는 온라인 커뮤니티에 "F후보는 과거에 주식 대박을 터뜨리고도 세금을 안 냈다는 얘기가 있다. 이런 사람이 국회의원이 되면 안 된다"는 글을 썼다. F후보는 허위사실 적시 명예훼손으로 고소했다.</p>
+  </div>
+
+  <p>이 세 사례에서 누가 처벌받고 누가 무죄일까요? 답은 <strong>표현이 '사실 적시'인지 '의견 표명'인지</strong>에 달려 있습니다.</p>
+</div>
+
+<!-- Section 2: Core Issues -->
+<div class="section">
+  <h2>핵심 쟁점 — 두 가지 관문</h2>
+
+  <h3>쟁점 1: 공연성 — 내 말이 몇 명에게 전달될 수 있는가?</h3>
+  <p>명예훼손죄의 '공연성'이란 불특정 또는 다수인이 인식할 수 있는 상태를 말합니다.</p>
+  <p>대법원 2020도5813 <strong>전원합의체</strong> 판결에 따르면, 소수에게만 말했더라도 그 상대방이 다른 사람에게 전파할 <strong>고도의 개연성</strong>이 있으면 공연성이 인정될 수 있습니다(전파가능성 법리). 하지만 막연한 가능성만으로는 부족하고, 검사가 이를 엄격히 증명해야 합니다.</p>
+
+  <div class="table-wrap">
+  <table>
+    <tr><th>상황</th><th>공연성 판단</th></tr>
+    <tr><td>SNS 공개 계정 · 인터넷 뉴스 댓글</td><td><strong style="color:var(--success)">인정</strong></td></tr>
+    <tr><td>단체 채팅방 (소수 인원)</td><td>상황에 따라 판단</td></tr>
+    <tr><td>1:1 DM · 메신저</td><td><strong style="color:var(--danger)">원칙적 불인정</strong> (전파 개연성 높은 경우 예외 인정)</td></tr>
+    <tr><td>변호사·의사 등 비밀유지의무자에게 한 말</td><td><strong style="color:var(--danger)">원칙적 불인정</strong></td></tr>
+  </table>
+  </div>
+
+  <h3>쟁점 2: 사실 적시 vs 의견 표명</h3>
+  <p>법원은 다음 네 가지 기준으로 사실 적시와 의견 표명을 구별합니다(대법원 2016도19255, 2018도2371 등).</p>
+
+  <div class="table-wrap">
+  <table>
+    <tr><th>기준</th><th>설명</th></tr>
+    <tr><td>① 언어의 통상적 의미</td><td>객관적으로 보아 입증 가능한 사실을 주장하는 표현인가</td></tr>
+    <tr><td>② 증명 가능성</td><td>참·거짓을 증명할 수 있는 구체적 내용인가</td></tr>
+    <tr><td>③ 문맥</td><td>전체 글의 집필 의도 · 논리 흐름 · 서술 체계</td></tr>
+    <tr><td>④ 사회적 상황</td><td>학문·비평·사상의 자유 경쟁 영역인가</td></tr>
+  </table>
+  </div>
+
+  <div class="alert success">
+    <strong>핵심 원칙</strong>: 겉으로는 입증 가능한 사실 서술처럼 보이더라도, 전체 맥락에서 평균적 독자가 비평자의 주관적 의견을 강조하기 위한 표현으로 이해된다면 사실 적시로 볼 수 없습니다(대법원 2016도19255).
+  </div>
+</div>
+
+<!-- Section 3: First Response -->
+<div class="section">
+  <h2>첫 대응 순서</h2>
+
+  <h3 style="color:var(--accent)">상황 1: "내가 명예훼손으로 고소당했다" (피고소인)</h3>
+
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-content">
+      <strong>내 표현이 '사실 적시'인지 '의견 표명'인지 확인한다</strong>
+      <p>입증 가능한 구체적 사실을 주장하는지, 주관적 평가에 불과한지 전체 문맥에서 판단합니다. 문장 하나만 떼어놓고 보면 사실 적시처럼 보여도, 전체 맥락에서 비판이나 평가의 성격이 강하면 의견 표명으로 인정될 수 있습니다.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-content">
+      <strong>전파 범위와 상대방의 지위를 확인한다</strong>
+      <p>내 표현을 전달한 상대방이 누구인지, 그 사람이 다른 사람에게 전파할 가능성이 있었는지 확인합니다. 상대방이 배우자·가족·변호사·의사 등 비밀유지가 기대되는 관계였다면 공연성이 부정될 가능성이 높습니다.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-content">
+      <strong>공익 목적이 있었는지 확인한다</strong>
+      <p>형법 제310조는 "진실한 사실로서 오로지 공공의 이익에 관한 때"에는 처벌하지 않습니다. 공적인 인물이나 공적 관심사에 관한 비판·감시 목적의 표현이라면 위법성이 조각될 수 있습니다.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-content">
+      <strong>변호사와 상담하고 합의 가능성을 검토한다</strong>
+      <p>형법상 명예훼손(제307조)과 정보통신망법상 명예훼손(제70조)은 모두 반의사불벌죄입니다. 피해자가 처벌을 원하지 않으면 공소를 제기할 수 없으므로, 피해자와의 합의를 통해 사건을 종결할 수 있습니다.</p>
+    </div>
+  </div>
+
+  <h3 style="color:var(--primary-light); margin-top: 24px;">상황 2: "누군가 나에 대한 안 좋은 말을 퍼뜨렸다" (피해자)</h3>
+
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-content">
+      <strong>증거를 확보한다</strong>
+      <p>게시글·댓글·채팅방 대화 등을 캡처(스크린샷)하고 URL·작성 일시·작성자 정보가 함께 나오도록 저장합니다. 온라인 증거는 삭제되기 전에 빠르게 확보하는 것이 중요합니다.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-content">
+      <strong>표현이 '사실 적시'인지 확인한다</strong>
+      <p>단순한 욕설·비하(모욕죄 해당 가능성)인지, 구체적인 사실을 적시한 것(명예훼손)인지 구분합니다. 사실 적시가 아니라 단순 감정 표현·의견 표명에 불과하다면 명예훼손죄가 성립하지 않을 수 있습니다.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-content">
+      <strong>공연성과 비방 목적을 확인한다</strong>
+      <p>그 말이나 글이 불특정 또는 다수에게 전달될 수 있는 상태였는지 확인합니다. 정보통신망법 위반으로 고소하려면 '비방 목적'이 별도로 필요합니다.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-content">
+      <strong>법률 상담 후 고소를 결정한다</strong>
+      <p>고소 전 내용증명을 보내거나 플랫폼에 게시물 삭제를 요청하는 등 다른 대응 수단을 먼저 고려해볼 수 있습니다. 명예훼손은 반의사불벌죄이므로, 피해자가 처벌을 원한다는 의사를 명확히 밝혀야 합니다.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Section 4: Risk Signals -->
+<div class="section">
+  <h2>주의할 위험 신호</h2>
+
+  <div class="alert warning">
+    <strong>"맞는 말인데 왜 명예훼손이야?"</strong> — 사실 적시 명예훼손은 사실을 말한 경우에도 처벌합니다(형법 제307조 제1항). 사실인지 여부가 처벌의 결정적 기준이 아니며, '공공의 이익' 목적이 없으면 처벌될 수 있습니다.
+  </div>
+
+  <div class="alert danger">
+    <strong>"의견인데요" — 혼합표현 리스크</strong> — 겉으로는 의견·논평의 형식을 취하더라도, 그 전제가 되는 사실을 묵시적으로 적시하는 경우(혼합표현) 사실 적시로 판단될 수 있습니다. "그 사람은 도둑놈이다"는 의견 같지만 "도둑질을 했다"는 사실을 묵시적으로 적시한 것으로 볼 수 있습니다.
+  </div>
+
+  <div class="alert warning">
+    <strong>"말 한마디에" — 전파가능성의 덫</strong> — 단체 채팅방 소수에게 한 말이라도, 자극적인 내용일수록 전파 개연성이 높아져 공연성이 인정될 수 있습니다.
+  </div>
+
+  <div class="alert danger">
+    <strong>SNS·인터넷 게시글은 공연성이 거의 인정된다</strong> — 공개 SNS 계정이나 커뮤니티 게시글은 누구나 볼 수 있으므로 공연성이 거의 항상 인정됩니다. 비방 목적까지 인정되면 정보통신망법 제70조에 따라 형법보다 무거운 처벌(3년 이하 또는 7년 이하)을 받을 수 있습니다.
+  </div>
+</div>
+
+<!-- Section 5: Evidence Cards -->
+<div class="section">
+  <h2>근거 카드</h2>
+
+  <h3>카드 1: 명예훼손죄 처벌 체계</h3>
+  <div class="table-wrap">
+  <table>
+    <tr><th>구분</th><th>근거</th><th>법정형</th><th>비고</th></tr>
+    <tr><td>사실 적시 (일반)</td><td>형법 §307①</td><td>2년 / 500만원</td><td>반의사불벌죄</td></tr>
+    <tr><td>허위사실 적시 (일반)</td><td>형법 §307②</td><td>5년·자격10년 / 1천만원</td><td>반의사불벌죄</td></tr>
+    <tr><td>출판물 사실 적시</td><td>형법 §309①</td><td>3년 / 700만원</td><td>반의사불벌죄</td></tr>
+    <tr><td>출판물 허위사실 적시</td><td>형법 §309②</td><td>7년·자격10년 / 1천500만원</td><td>반의사불벌죄</td></tr>
+    <tr><td>정보통신망 사실 적시</td><td>정보통신망법 §70①</td><td>3년 / 3천만원</td><td>반의사불벌죄 (§70③)</td></tr>
+    <tr><td>정보통신망 허위사실 적시</td><td>정보통신망법 §70②</td><td>7년·자격10년 / 7천만원</td><td>반의사불벌죄 (§70③)</td></tr>
+  </table>
+  </div>
+  <p style="font-size:0.85rem; color:var(--text-muted); margin-top:8px;">※ 형법 제310조: 제307조 제1항(사실 적시)의 행위가 진실한 사실로서 오로지 공공의 이익에 관한 때에는 처벌하지 않음.</p>
+
+  <h3>카드 2: 핵심 판례</h3>
+  <div class="card-grid">
+    <div class="ev-card">
+      <div class="card-title">2020도5813 전원합의체</div>
+      <p>명예훼손죄 공연성 = 불특정·다수 인식 가능 상태. 소수 상대방 발언도 전파 개연성 인정 가능하나 막연한 가능성 불충분 — 행위 당시 객관적 사정 종합 필요. 검사 엄격 증명 필요.</p>
+      <span class="tag">2020.11.19.</span>
+    </div>
+    <div class="ev-card">
+      <div class="card-title">2016도19255</div>
+      <p>사실 적시와 의견표명 구별 기준 제시. 겉으로 사실 서술처럼 보여도 전체 맥락에서 평균적 독자가 비평자의 주관적 의견으로 이해한다면 사실 적시 불인정.</p>
+      <span class="tag">2017.5.11.</span>
+    </div>
+    <div class="ev-card">
+      <div class="card-title">2018도2371</div>
+      <p>사실/의견 구별 시 전체 정황 종합. '정상적인 사람이 아니다' 등의 표현은 주관적 가치판단에 불과해 구체적 사실 적시로 보기 어려움.</p>
+      <span class="tag">doctrine 인용</span>
+    </div>
+    <div class="ev-card">
+      <div class="card-title">2001도2372</div>
+      <p>혼합표현(의견 형식의 묵시적 사실적시)은 사실적시로 판단될 수 있음. 제310조는 제307조 제1항 한정 적용.</p>
+      <span class="tag">doctrine 인용</span>
+    </div>
+  </div>
+</div>
+
+<!-- Section 6: FAQ -->
+<div class="section">
+  <h2>자주 묻는 질문</h2>
+
+  <div class="faq-item">
+    <div class="faq-q">인터넷에 올린 익명 글도 명예훼손이 되나요?</div>
+    <div class="faq-a">익명 여부는 명예훼손 성립과 관계가 없습니다. 다만 피해자가 특정되어야 하므로, 닉네임·직책·정황 증거 등으로 특정 가능하면 명예훼손이 성립할 수 있습니다.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">사실을 말했을 뿐인데도 명예훼손인가요?</div>
+    <div class="faq-a">네, 형법 제307조 제1항은 '사실'을 적시한 경우도 처벌합니다. 다만 제310조에 따라 '진실한 사실로서 오로지 공공의 이익에 관한 때'에는 위법성이 조각됩니다. 사적 목적으로 사실을 퍼뜨린 경우에는 처벌될 수 있습니다.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">상대방이 먼저 나쁜 말을 했는데 저는 반박만 한 겁니다.</div>
+    <div class="faq-a">상대방의 선공격이 있었다는 사정이 명예훼손죄의 성립 자체를 없애지는 않습니다. 다만 정당행위(형법 제20조)로서 위법성이 조각될 가능성이 있습니다. 전체 맥락과 경위를 법원에 소명하는 것이 중요합니다.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">인터넷 명예훼손과 일반 명예훼손의 차이는?</div>
+    <div class="faq-a">정보통신망을 이용한 명예훼손은 정보통신망법 제70조가 적용되어 법정형이 더 무겁습니다. 또한 '비방 목적'이 별도의 구성요건으로 필요하다는 차이가 있습니다.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">반의사불벌죄가 무엇인가요?</div>
+    <div class="faq-a">피해자가 처벌을 원하지 않는다는 의사를 밝히면 공소를 제기할 수 없는 범죄를 말합니다. 형법상 명예훼손(제307조)과 정보통신망법상 명예훼손(제70조) 모두 반의사불벌죄이므로, 피해자와 합의하면 사건이 종결될 수 있습니다.</div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-box">
+  <h3>더 정확한 판단이 필요하신가요?</h3>
+  <p>개별 사건의 사실관계에 따라 명예훼손 성립 여부가 달라질 수 있습니다. 변호사와의 상담을 통해 구체적인 법적 조언을 받으시기 바랍니다.</p>
+  <a class="btn" href="#" style="pointer-events:none; opacity:0.9;">법률 상담 링크 준비 중 →</a>
+  <p style="font-size:0.8rem; margin-top:12px; opacity:0.8;">※ 개별 사건에 대한 상담은 변호사에게 직접 문의하세요.</p>
+</div>
+
+<!-- Disclaimer -->
+<div class="disclaimer">
+  <strong>최신성 및 면책 고지</strong><br>
+  이 글은 2026년 7월 29일 기준 법령과 판례를 바탕으로 작성되었습니다.<br>
+  검증된 근거: 형법 제307조·제309조·제310조·제312조, 정보통신망법 제70조 (법제처 DB 확인), 대법원 2020도5813 전합·2016도19255 판결 (법제처 DB 확인), 내부 doctrine 인용 (2018도2371·2015도15619).<br>
+  일부 판례(2018도2371, 2015도15619)는 MCP 한국법 DB에서 실시간 확인되지 않아 내부 doctrine에 의존하였습니다.<br>
+  이 글은 일반적인 법률 정보를 제공하기 위한 것이며, 개별 사건에 대한 법률 자문을 대체하지 않습니다. 구체적인 법적 판단이 필요한 경우 반드시 변호사와 상담하시기 바랍니다.
+</div>
+
+</div><!-- /container -->
+</body>
+</html>

@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>D&O 보험 책임한도 — 임원 책임과 보험 적용 가능성 비교 진단 — 조우성 변호사</title>
+<meta name="description" content="D&O 보험의 Side A/B/C 구조별 보상 범위와 면책사유, 이사 책임 체계(상법 제399조~제401조의2)를 비교 분석합니다. 보상한도 소진 위험, 방어비용 구조, 정관 면책과의 조합 전략을 진단합니다.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="D&O 보험 책임한도 — 임원 책임과 보험 적용 가능성 비교 진단 — 조우성 변호사">
+<meta property="og:description" content="D&O 보험의 Side A/B/C 구조별 보상 범위와 면책사유를 비교 분석합니다.">
+<style>
+:root{
+  --bg:#f0f2f5; --panel:#ffffff; --panel2:#f4f6f9;
+  --line:#dce0e5; --line2:#c5cad2;
+  --ink:#111827; --ink2:#374151; --muted:#6b7280; --faint:#9ca3af;
+  --navy:#1a365d; --navy-d:#0f2340; --navy-l:#2b4f8c;
+  --navy-tint:#e8edf4; --navy-tint-ln:#d4ddee;
+  --header-bg:#0f2340; --header-bg2:#1a365d; --header-accent:#93b4e8;
+  --rH:#dc2626; --rM-bg:#fef3c7; --rM-tx:#92400e; --rL-bg:#d1fae5; --rL-tx:#065f46;
+  --amber:#b45309; --green:#059669;
+  --font:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Noto Sans KR',sans-serif;
+  --maxw:1120px; --readw:760px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;
+  background:linear-gradient(90deg,var(--navy),var(--navy-l));transition:width .1s linear}
+.header{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#eef2f6}
+.header .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 26px}
+.header .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;
+  color:var(--header-accent);border:1px solid rgba(147,180,232,.4);border-radius:999px;padding:4px 12px}
+.header .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--header-accent)}
+.hero{max-width:var(--maxw);margin:0 auto;padding:30px 26px 8px}
+.hero .eb{font-size:12px;font-weight:700;color:var(--navy);letter-spacing:.02em;margin-bottom:10px}
+.hero h1{font-size:30px;line-height:1.28;font-weight:800;margin:0 0 16px;color:var(--ink);letter-spacing:-.01em}
+.hero .tldr{background:var(--navy-tint);border:1px solid var(--navy-tint-ln);border-left:4px solid var(--navy);
+  border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.hero .tldr .lb{font-size:12px;font-weight:700;color:var(--navy-d);margin-bottom:8px}
+.hero .tldr ul{margin:0;padding-left:18px}
+.hero .tldr li{margin:4px 0;font-size:15px;color:var(--ink2)}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:12.5px;color:var(--muted);margin-bottom:18px}
+.hero .meta .vchip{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);
+  font-weight:700;border-radius:6px;padding:3px 9px;font-size:11.5px}
+.hero .cta-row{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:9px;
+  padding:11px 18px;text-decoration:none;cursor:pointer;border:1px solid transparent}
+.btn-p{background:var(--navy);color:#fff}
+.btn-p:hover{background:var(--navy-d)}
+.btn-o{background:#fff;color:var(--navy-d);border-color:var(--line2)}
+.btn-o:hover{background:var(--panel2)}
+.app{max-width:var(--maxw);margin:0 auto;padding:8px 26px 60px;
+  display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:start}
+.toc{position:sticky;top:24px}
+.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;
+  margin:0 0 10px;padding-left:2px}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}
+.toc li{counter-increment:toc;margin:1px 0}
+.toc a{display:flex;gap:9px;font-size:13.5px;color:var(--ink2);text-decoration:none;
+  padding:7px 10px;border-radius:8px;border-left:3px solid transparent;line-height:1.4}
+.toc a::before{content:counter(toc,decimal-leading-zero);color:var(--faint);font-weight:700;font-size:11.5px;flex:none}
+.toc a:hover{background:var(--panel2)}
+.toc a.active{background:var(--navy-tint);border-left-color:var(--navy);color:var(--navy-d);font-weight:700}
+.toc-toggle{display:none}
+.content{max-width:var(--readw);min-width:0}
+section.blk{scroll-margin-top:24px;margin-bottom:38px}
+.secl{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.05em;margin:0 0 12px}
+.secl::before{content:"";width:7px;height:15px;background:var(--navy);border-radius:2px;flex:none}
+section.blk h2{font-size:23px;font-weight:800;line-height:1.35;margin:0 0 14px;color:var(--ink);letter-spacing:-.01em}
+section.blk h3{font-size:17px;font-weight:700;margin:26px 0 10px;color:var(--navy-d)}
+section.blk p{margin:0 0 14px;color:var(--ink2)}
+section.blk ul,section.blk ol{margin:0 0 14px;padding-left:22px;color:var(--ink2)}
+section.blk li{margin:6px 0}
+strong{color:var(--ink);font-weight:700}
+.summary{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.summary .lb{font-size:11px;font-weight:700;color:var(--navy-d);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.summary ul{margin:0;padding-left:18px}
+.ev{background:#fff;border:1px solid var(--line);border-left:4px solid var(--navy);border-radius:10px;
+  padding:13px 15px;margin:0 0 12px}
+.ev .top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px}
+.ev .kind{font-size:11px;font-weight:700;color:#fff;background:var(--navy);border-radius:5px;padding:2px 8px}
+.ev .kind.law{background:var(--navy-d)}
+.ev .kind.case{background:var(--amber)}
+.ev .cite{font-size:13.5px;font-weight:700;color:var(--ink)}
+.ev .vtick{margin-left:auto;font-size:11px;font-weight:700;color:var(--rL-tx);background:var(--rL-bg);border-radius:5px;padding:2px 7px}
+.ev .gist{font-size:14px;color:var(--ink2);margin:0}
+.ev .date{font-size:12px;color:var(--muted);margin-top:5px}
+.figure{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin:0 0 18px}
+.figure .cap{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:12px}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px}
+.flow .step{flex:1;min-width:120px;background:var(--navy-tint);border:1px solid var(--navy-tint-ln);
+  border-radius:10px;padding:11px 12px;position:relative}
+.flow .step .n{font-size:11px;font-weight:700;color:var(--navy)}
+.flow .step .t{font-size:13.5px;font-weight:700;color:var(--ink);margin-top:2px}
+.flow .step .d{font-size:12.5px;color:var(--ink2);margin-top:3px}
+.checklist{list-style:none;margin:0;padding:0}
+.checklist li{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+.checklist li:last-child{border-bottom:none}
+.checklist .ck{flex:none;width:20px;height:20px;border-radius:5px;background:var(--rL-bg);color:var(--rL-tx);
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+.chip{display:inline-flex;align-items:center;justify-content:center;min-width:34px;font-size:11px;font-weight:500;
+  border-radius:6px;padding:3px 8px;margin-right:4px}
+.c-H{background:var(--rH);color:#fff}
+.c-M{background:var(--rM-bg);color:var(--rM-tx)}
+.c-L{background:var(--rL-bg);color:var(--rL-tx)}
+.tbl-wrap{overflow-x:auto;margin:0 0 18px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--navy-d);font-weight:700;font-size:12.5px}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:10px;margin:0 0 10px;overflow:hidden}
+.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:15px;font-weight:700;color:var(--ink);
+  display:flex;align-items:center;gap:10px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--navy-tint);
+  color:var(--navy-d);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+.faq details[open] summary{border-bottom:1px solid var(--line);color:var(--navy-d)}
+.faq .a{padding:14px 16px;font-size:14.5px;color:var(--ink2)}
+.notice{background:#fff;border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;
+  font-size:12.5px;color:var(--muted);line-height:1.7}
+#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--navy-tint-ln);background:var(--navy);color:#fff;font-size:18px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;
+  box-shadow:0 4px 14px rgba(15,35,64,.28)}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{background:var(--navy-d)}
+.footer{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#eef2f6;margin-top:20px}
+.footer .wrap{max-width:var(--maxw);margin:0 auto;padding:34px 26px}
+.footer h3{font-size:20px;font-weight:800;margin:0 0 8px;color:#fff}
+.footer p{font-size:14px;color:rgba(255,255,255,.72);margin:0 0 6px;line-height:1.7}
+.footer .prof{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end}
+.footer .cta-f{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.footer .btn-f{background:#fff;color:var(--navy-d)}
+.footer .btn-f:hover{background:var(--header-accent)}
+.footer .btn-fo{background:transparent;color:#eef2f6;border-color:rgba(255,255,255,.35)}
+.footer .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:22px;padding-top:14px;
+  font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.7}
+@media(max-width:820px){
+  .hero h1{font-size:24px}
+  .app{grid-template-columns:1fr;gap:0;padding-top:0}
+  .toc{position:static;margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 8px}
+  .toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;
+    cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--navy-d);padding:9px 8px}
+  .toc-toggle .ar{transition:transform .2s}
+  .toc.closed .toc-toggle .ar{transform:rotate(-90deg)}
+  .toc .tt{display:none}
+  .toc ol{max-height:50vh;overflow:auto}
+  .toc.closed ol{display:none}
+  section.blk h2{font-size:20px}
+  th,td{white-space:nowrap}
+}
+@media print{
+  #progress,.toc,.cta-row,.footer .cta-f{display:none}
+  .header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .app{display:block}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<button id="toTop" aria-label="맨 위로" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<header class="header">
+  <div class="wrap">
+    <span class="badge"><span class="dot"></span>조우성 변호사 · 법률 인사이트</span>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="eb">회사법 · 보험 · 비교형 진단</div>
+  <h1>D&amp;O 보험 책임한도 — 임원 책임과 보험 적용 가능성 비교 진단</h1>
+  <div class="tldr">
+    <div class="lb">3줄 요약 (TL;DR)</div>
+    <ul>
+      <li><strong>이사 책임은 회사책임(상법 제399조)·제3자책임(제401조)·배임죄가 삼중 교차하며</strong>, D&O 보험만으로 모든 리스크가 커버되지 않는다. Side A/B/C 구조별로 보상 범위와 면책사유가 다르다.</li>
+      <li><strong>D&O 보험은 고의·중과실·위법행위의 3대 면책사유가 적용되며</strong>, 경과실과 경영판단 범위 내 행위만 보상 대상이다. 중과실은 '고의에 가까운 현저한 주의 결여'(대법원 2014다68891)로 엄격히 해석된다.</li>
+      <li><strong>책임한도는 보상한도(aggregate), 자기부담금, 방어비용 우선 공제 구조에 따라 실제 수취액이 크게 달라진다.</strong> 약관의 한도 소진 순서와 방어비용 처리 방식이 실질적 보호 수준을 결정한다.</li>
+    </ul>
+  </div>
+  <div class="meta">
+    <span>작성일 2026-07-29</span>
+    <span>· 기준 법령 시행일 상법 2026.7.23.</span>
+    <span class="vchip">✓ 조문·판례 2단 검증 (L2)</span>
+    <span>· 읽는 시간 약 10분</span>
+  </div>
+  <div class="cta-row">
+    <a class="btn btn-p" href="#faq">핵심만 빠르게 (Q&amp;A)</a>
+    <a class="btn btn-o" href="#consult">상담 문의</a>
+  </div>
+</div>
+
+<div class="app">
+
+  <nav class="toc" id="toc">
+    <button class="toc-toggle" onclick="document.getElementById('toc').classList.toggle('closed')">
+      목차 <span class="ar">▾</span>
+    </button>
+    <div class="tt">목차</div>
+    <ol id="toc-list">
+      <li><a href="#s1">문제상황 — D&O, 가입해도 안심 불가</a></li>
+      <li><a href="#s2">이사 책임 체계 — 삼중 구조</a></li>
+      <li><a href="#s3">Side ABC — 보상 vs 제외 비교</a></li>
+      <li><a href="#s4">리스크 전가 수단 비교 분석</a></li>
+      <li><a href="#s5">위험 신호 — 12개 Red Flag</a></li>
+      <li><a href="#s6">근거 카드 — 조문·판례</a></li>
+      <li><a href="#faq">자주 묻는 질문</a></li>
+    </ol>
+  </nav>
+
+  <main class="content">
+
+    <section class="blk" id="s1">
+      <div class="secl">쟁점 1</div>
+      <h2>문제상황 — D&O 보험, 가입했다고 안심할 수 없는 이유</h2>
+
+      <div class="summary">
+        <div class="lb">한눈에</div>
+        <ul>
+          <li>D&O 보험에 가입했지만 보험사가 면책사유를 들어 보험금 지급 거절하는 사례 증가</li>
+          <li>보상한도가 천문학적이어도 방어비용 먼저 공제되면 실제 손해배상可用 금액 급감</li>
+          <li>이사 개인 재산 보호와 회사 보상 정책 사이 간극 인지 못하면 이사 개인 변제 위험</li>
+        </ul>
+      </div>
+
+      <p>코스피 상장사 A사는 이사 7명 전원 피보험자 D&O 보험(보상한도 100억 원)에 가입했다. 주주대표소송 제기 후 방어비용 1년간 15억 원 소진, 남은 한도 85억 원 중 화해권고로 70억 원 손해배상 확정. 그러나 보험사가 "피고 이사 중 1명 중과실 인정"을 이유로 비율적 면책 주장하며 30억 원만 지급 통보. 2년 소송 끝에 법원이 중과실 부정·전액 지급 명령했지만, 그사이 이사들은 개인 재산 담보로 방어비용 조달.</p>
+
+      <p><strong>핵심 인사이트</strong>: D&O 보험은 '면책증'이 아니라 '리스크 전가 도구'다. 보험사는 면책사유를 적극 주장할 유인이 있고, 약관 해석 분쟁은 피할 수 없다. 사고 발생 시 대응 프로토콜을 사전에 마련해야 진정한 보호를 받을 수 있다.</p>
+    </section>
+
+    <section class="blk" id="s2">
+      <div class="secl">쟁점 2</div>
+      <h2>이사 책임 체계 — 삼중 책임 구조의 이해</h2>
+
+      <div class="summary">
+        <div class="lb">한눈에</div>
+        <ul>
+          <li>이사 책임은 회사책임(제399조)·제3자책임(제401조)·형사책임(배임죄) 삼중 교차</li>
+          <li>각 책임 유형별 요건·증명 난이도·소멸시효·D&O 보험 적용 여부가 다름</li>
+          <li>경영판단원칙은 이사 책임 제한 핵심 법리, 한국은 명시적 원칙 대신 과실 판단 시 고려 요소</li>
+        </ul>
+      </div>
+
+      <h3>책임 유형별 비교</h3>
+
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>책임 유형</th><th>근거</th><th>요건</th><th>청구권자</th><th>소멸시효</th><th>D&O 보상</th></tr></thead>
+          <tbody>
+            <tr><td><strong>회사책임</strong></td><td>상법 제399조</td><td>고의·과실·법령위반·임무해태</td><td>회사(대표소송)</td><td>10년</td><td>✅ Side A/B</td></tr>
+            <tr><td><strong>제3자책임</strong></td><td>상법 제401조</td><td>고의·중대한 과실·임무해태</td><td>주주·채권자</td><td>3년</td><td>✅ Side A</td></tr>
+            <tr><td><strong>배임죄</strong></td><td>형법 제356조</td><td>임무위배·재산상손해·고의</td><td>검사(형사고소)</td><td>10년</td><td>❌ 면책</td></tr>
+            <tr><td><strong>자본시장법</strong></td><td>자본시장법 제162조</td><td>허위공시·미공개정보</td><td>투자자</td><td>3년</td><td>✅ Side C</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="ev">
+        <div class="top">
+          <span class="kind law">조문</span>
+          <span class="cite">상법 제399조 (회사에 대한 책임)</span>
+          <span class="vtick">✓ 현행 확인</span>
+        </div>
+        <p class="gist">이사가 고의 또는 과실로 법령 또는 정관에 위반한 행위를 하거나 그 임무를 게을리한 경우에는 그 이사는 회사에 대하여 연대하여 손해를 배상할 책임이 있다. 이사회 결의에 찬성한 이사도 책임을 지며, 의사록에 이의 기재가 없는 자는 찬성한 것으로 추정한다.</p>
+        <div class="date">시행일 2026.7.23.</div>
+      </div>
+
+      <div class="ev">
+        <div class="top">
+          <span class="kind law">조문</span>
+          <span class="cite">상법 제401조 (제3자에 대한 책임)</span>
+          <span class="vtick">✓ 현행 확인</span>
+        </div>
+        <p class="gist">이사가 고의 또는 중대한 과실로 그 임무를 게을리한 때에는 그 이사는 제3자에 대하여 연대하여 손해를 배상할 책임이 있다.</p>
+        <div class="date">시행일 2026.7.23.</div>
+      </div>
+
+      <h3>회사책임(제399조) vs 제3자책임(제401조) 비교</h3>
+
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>쟁점</th><th>회사책임</th><th>제3자책임</th></tr></thead>
+          <tbody>
+            <tr><td><strong>과실 정도</strong></td><td>과실(경과실 포함)</td><td>중대한 과실 이상</td></tr>
+            <tr><td><strong>청구권자</strong></td><td>회사(대표소송)</td><td>제3자(주주·채권자·거래상대방)</td></tr>
+            <tr><td><strong>입증 난이도</strong></td><td><span class="chip c-L">상대적 용이</span></td><td><span class="chip c-H">엄격</span></td></tr>
+            <tr><td><strong>D&O Side 적용</strong></td><td>Side A(임원)+Side B(회사)</td><td>Side A(임원)</td></tr>
+            <tr><td><strong>상법 제400조 감면</strong></td><td>가능 (주주 전원 동의 또는 정관 기준)</td><td>불가능</td></tr>
+            <tr><td><strong>소멸시효</strong></td><td>10년(상사)</td><td>3년(불법행위)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>경영판단원칙과 D&O 보험의 관계</h3>
+
+      <p>경영판단원칙은 이사의 사업상 결정이 합리적 정보·선의·합리성 요건을 충족하면 과실 자체를 부정하는 법리다. D&O 보험 청구에서 보험사가 고의·중과실을 주장할 때 핵심 방어 수단이 된다.</p>
+
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>요건</th><th>내용</th><th>입증 자료</th></tr></thead>
+          <tbody>
+            <tr><td><strong>합리적 정보</strong></td><td>결정 당시 충분한 정보 수집</td><td>이사회 보고 자료, 외부 전문가 의견</td></tr>
+            <tr><td><strong>선의</strong></td><td>회사의 이익을 위한 결정</td><td>이해충돌 부재 확인, 이사회 결의</td></tr>
+            <tr><td><strong>합리성</strong></td><td>결정 내용이 현저히 불합리하지 않음</td><td>대안 검토 자료, 손익 분석</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="ev">
+        <div class="top">
+          <span class="kind case">판례</span>
+          <span class="cite">대법원 2017. 7. 11. 선고 2017다20221 전합</span>
+          <span class="vtick">✓ 실존·현행 확인</span>
+        </div>
+        <p class="gist">이사의 감시의무 위반 판단 기준을 제시하며, 대표이사가 부문별 이사의 업무집행을 감시할 의무가 있음을 명확히 하였다. 감시의무 위반이 인정되면 경영판단원칙의 적용이 제한될 수 있다.</p>
+      </div>
+    </section>
+
+    <section class="blk" id="s3">
+      <div class="secl">쟁점 3</div>
+      <h2>D&O 보험 적용 범위 vs 제외 사유 — Side ABC 비교 분석</h2>
+
+      <h3>Side A/B/C 담보구조 비교</h3>
+
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>구분</th><th>Side A</th><th>Side B</th><th>Side C</th></tr></thead>
+          <tbody>
+            <tr><td><strong>보장 대상</strong></td><td>임원 개인</td><td>회사</td><td>회사 법인</td></tr>
+            <tr><td><strong>보장 내용</strong></td><td>회사 미보상분 임원 개인 손해</td><td>회사가 임원 보상한 금액 환급</td><td>증권 관련 청구 손해</td></tr>
+            <tr><td><strong>발생 조건</strong></td><td>회사가 임원 배상 불가(면제·한도초과)</td><td>회사가 임원에 선보상</td><td>증권규제 위반 청구</td></tr>
+            <tr><td><strong>면책사유 적용</strong></td><td>고의·중과실·위법행위</td><td>고의·중과실·위법행위</td><td>별도 약관 기준</td></tr>
+            <tr><td><strong>보상한도</strong></td><td>별도 또는 공동(aggregate)</td><td>Side A와 공동인 경우 많음</td><td>별도 설정 필요</td></tr>
+            <tr><td><strong>방어비용</strong></td><td>포함 (선지급 구조 일반적)</td><td>포함</td><td>포함</td></tr>
+            <tr><td><strong>실무 중요도</strong></td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="summary">
+        <div class="lb">실무 포인트</div>
+        <ul>
+          <li>Side A와 Side B 보상한도가 <strong>공동(aggregate)</strong>인지 <strong>별도</strong>인지에 따라 실제 보상 가능 금액이 크게 달라진다.</li>
+          <li>공동 한도인 경우 Side B로 회사가 먼저 환급받으면 Side A의 임원 보호 한도가 그만큼 줄어든다.</li>
+          <li><strong>Side A 전용 한도(Side A Difference in Limits)</strong> 설정이 강력 권장된다.</li>
+        </ul>
+      </div>
+
+      <h3>보상 범위 vs 제외 사유 종합 비교</h3>
+
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>항목</th><th>보상 범위</th><th>제외(면책) 사유</th></tr></thead>
+          <tbody>
+            <tr><td><strong>손해배상금</strong></td><td>법원 판결·화해에 따른 손해배상</td><td>고의·중과실·위법행위 확정</td></tr>
+            <tr><td><strong>방어비용</strong></td><td>변호사 선임비·소송비용·조사비용</td><td>위법행위 확정 판결 후</td></tr>
+            <tr><td><strong>행정제재</strong></td><td>과징금·과태료(일부 약관)</td><td>벌금·형사처벌(면책)</td></tr>
+            <tr><td><strong>대표소송</strong></td><td>방어비용+화해금+판결금</td><td>이사 본인의 고의·중과실</td></tr>
+            <tr><td><strong>증권관련 소송</strong></td><td>Side C: 회사 손해+방어비용</td><td>사기적 행위·고의적 허위공시</td></tr>
+            <tr><td><strong>ESG 리스크</strong></td><td>약관에 따라 제한적 보장</td><td>환경오염·인권침해 고의</td></tr>
+            <tr><td><strong>형사변호비용</strong></td><td>일부 약관 선지급 약정</td><td>유죄 확정 시 환수 조건</td></tr>
+            <tr><td><strong>내부거래</strong></td><td>적법한 이사회 승인 거래</td><td>상법 제398조 위반 자기거래</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>면책사유 심층 비교 — 고의·중과실·위법행위</h3>
+
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>구분</th><th>고의</th><th>중과실</th><th>위법행위</th></tr></thead>
+          <tbody>
+            <tr><td><strong>약관 표현</strong></td><td>고의에 의한 손해</td><td>중대한 과실로 인한 손해</td><td>법령 위반행위로 인한 손해</td></tr>
+            <tr><td><strong>정의</strong></td><td>결과 발생 인식·용인</td><td>'고의에 가까운 현저한 주의 결여'(대법원 2014다68891)</td><td>관련 법령 위반</td></tr>
+            <tr><td><strong>증명 책임</strong></td><td>보험사 (<strong>가장 엄격</strong>)</td><td>보험사 (엄격)</td><td>보험사</td></tr>
+            <tr><td><strong>증명 난이도</strong></td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐</td></tr>
+            <tr><td><strong>실무 분쟁 빈도</strong></td><td><span class="chip c-L">낮음</span></td><td><span class="chip c-H">높음</span></td><td><span class="chip c-M">중간</span></td></tr>
+            <tr><td><strong>방어비용 선지급</strong></td><td>쟁점 있음</td><td>원칙적 지급</td><td>확정 판결 전 지급</td></tr>
+            <tr><td><strong>경영판단 항변</strong></td><td>가능 (고의 부정)</td><td>가능 (중과실 부정)</td><td>제한적</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="ev">
+        <div class="top">
+          <span class="kind law">조문</span>
+          <span class="cite">상법 제659조 (보험자의 면책사유)</span>
+          <span class="vtick">✓ 현행 확인</span>
+        </div>
+        <p class="gist">보험사고가 보험계약자 또는 피보험자나 보험수익자의 고의 또는 중대한 과실로 인하여 생긴 때에는 보험자는 보험금액을 지급할 책임이 없다.</p>
+        <div class="date">시행일 2026.7.23.</div>
+      </div>
+
+      <div class="ev">
+        <div class="top">
+          <span class="kind case">판례</span>
+          <span class="cite">대법원 2017. 3. 30. 선고 2014다68891 판결</span>
+          <span class="vtick">✓ 실존·현행 확인 (후속인용·변경신호 없음)</span>
+        </div>
+        <p class="gist">"중대한 과실이라 함은 통상인에게 요구되는 주의의무를 다하지 않은 것을 넘어, 약간의 주의만 기울였어도 손쉽게 위법 결과를 예견하고 방지할 수 있었음에도 이를 만연히 간과한, 거의 고의에 가까운 현저한 주의 결여 상태를 말한다."</p>
+      </div>
+
+      <div class="ev">
+        <div class="top">
+          <span class="kind case">판례</span>
+          <span class="cite">대법원 2022. 8. 31. 선고 2018다304014 판결</span>
+          <span class="vtick">✓ 실존·현행 확인</span>
+        </div>
+        <p class="gist">보험약관상 면책사유인 '고의'에는 미필적 고의도 포함되나, 행위자가 결과 발생을 인식하고 용인하였는지는 엄격하게 판단해야 한다.</p>
+      </div>
+    </section>
+
+    <section class="blk" id="s4">
+      <div class="secl">쟁점 4</div>
+      <h2>비교 분석 — D&O 보험 vs 다른 리스크 전가 수단</h2>
+
+      <h3>리스크 전가 수단별 비교</h3>
+
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>수단</th><th>D&O 보험</th><th>정관 면책(제400조)</th><th>회사 보상</th><th>한도약정</th></tr></thead>
+          <tbody>
+            <tr><td><strong>법적 근거</strong></td><td>보험계약</td><td>상법 제400조</td><td>정관·계약</td><td>계약</td></tr>
+            <tr><td><strong>보호 대상</strong></td><td>임원 개인+회사</td><td>이사(회사책임 한정)</td><td>임원</td><td>임원</td></tr>
+            <tr><td><strong>보호 범위</strong></td><td>손해배상+방어비용</td><td>책임 면제(주주 동의)</td><td>회사 선지급</td><td>책임 한도 설정</td></tr>
+            <tr><td><strong>외부 청구 대응</strong></td><td>✅ 가능</td><td>❌ 불가</td><td>✅ 가능</td><td>제한적</td></tr>
+            <tr><td><strong>제3자 책임</strong></td><td>✅ Side A</td><td>❌ 불가</td><td>제한적</td><td>제한적</td></tr>
+            <tr><td><strong>비용</strong></td><td>보험료(연간)</td><td>무비용(정관 개정만)</td><td>회사 자금</td><td>협상 비용</td></tr>
+            <tr><td><strong>조합 효과</strong></td><td>단독</td><td>D&O+면책조합</td><td>D&O+보상조합</td><td>D&O+한도약정</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>D&O 보험 장단점 요약</h3>
+
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>장점</th><th>단점</th></tr></thead>
+          <tbody>
+            <tr><td>방어비용 선지급 구조</td><td>면책사유로 지급 거절 가능</td></tr>
+            <tr><td>Side A/B/C 선택적 설계</td><td>aggregate 한도 소진 위험</td></tr>
+            <tr><td>임원 개인 자산 보호</td><td>보험료 부담(연간 수천만~수억)</td></tr>
+            <tr><td>회사 지배구조 신뢰 제고</td><td>약관 해석 분쟁 리스크</td></tr>
+            <tr><td>외국 자회사 포함 가능</td><td>글로벌 보험사와 약관 차이</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="blk" id="s5">
+      <div class="secl">쟁점 5</div>
+      <h2>위험 신호(Red Flag) — 이 징후가 있으면 즉시 점검하라</h2>
+
+      <div class="summary">
+        <div class="lb">한눈에</div>
+        <ul>
+          <li>D&O 보험의 위험은 가입 단계, 운영 단계, 청구 단계에서 각각 다르게 나타난다.</li>
+          <li>아래 12개 신호 중 <strong>3개 이상</strong> 해당되면 즉시 전문가 점검을 권고한다.</li>
+        </ul>
+      </div>
+
+      <div class="figure">
+        <div class="cap">🔴 보험 가입·갱신 단계</div>
+        <ul class="checklist">
+          <li><span class="ck">!</span><span><strong>보상한도가 업계 표준보다 낮음</strong> — 동종 업계 유사 규모 기업 대비 현저히 낮은 경우</span></li>
+          <li><span class="ck">!</span><span><strong>Side A 전용 한도 미설정</strong> — Side A와 B가 공동 aggregate인 경우 대표소송 시 Side A 보호 부족</span></li>
+          <li><span class="ck">!</span><span><strong>방어비용이 보상한도 내 포함</strong> — 방어비용이 한도 내 포함(within limits)이면 한도 소진 가속</span></li>
+          <li><span class="ck">!</span><span><strong>중과실 면책 약관이 포괄적</strong> — '중대한 과실' 정의 없이 포괄적 문구 사용 시 분쟁 리스크</span></li>
+          <li><span class="ck">!</span><span><strong>자기부담금 과다</strong> — 자기부담금이 방어비용에도 적용되는지 확인 필요</span></li>
+          <li><span class="ck">!</span><span><strong>Known Circumstances 면책</strong> — 갱신 전 인지한 위험 보상 제외 조항 존재 여부</span></li>
+        </ul>
+      </div>
+
+      <div class="figure">
+        <div class="cap">🔴 경영·이사회 운영 단계</div>
+        <ul class="checklist">
+          <li><span class="ck">!</span><span><strong>이사회 의사록에 반대의견 미기재</strong> — 찬성추정(상법 제399조③)이 적용되면 고의·중과실 입증에 불리</span></li>
+          <li><span class="ck">!</span><span><strong>내부통제 절차 미비</strong> — 이사회 결의 없이 대규모 계약 체결 등 기본적 절차 위반</span></li>
+          <li><span class="ck">!</span><span><strong>전문가 자문 없이 중요한 결정</strong> — 법률·회계·기술 전문가 자문 없이 복잡한 구조 결정</span></li>
+          <li><span class="ck">!</span><span><strong>ESG 리스크 관리 부재</strong> — 환경·인권·안전 리스크가 D&O 면책사유로 연결될 가능성</span></li>
+        </ul>
+      </div>
+
+      <div class="figure">
+        <div class="cap">🔴 사고 발생·청구 단계</div>
+        <ul class="checklist">
+          <li><span class="ck">!</span><span><strong>보험사 통지 지연</strong> — 청구 인지 후 30일 이상 통지 지연 시 면책 주장 가능</span></li>
+          <li><span class="ck">!</span><span><strong>증거 미보전</strong> — 결정 당시 자료·이메일·결의문이 보존되지 않은 경우 방어 곤란</span></li>
+        </ul>
+      </div>
+
+      <p><strong>판단 기준</strong>: 3개 이상 해당 → <span class="chip c-H">전문가 점검 권고</span> | 5개 이상 해당 → <span class="chip c-H">즉시 점검 필수</span> | 8개 이상 해당 → <span class="chip c-H">리스크 통제 시급</span></p>
+    </section>
+
+    <section class="blk" id="s6">
+      <div class="secl">쟁점 6</div>
+      <h2>근거 카드 — 상법 조문·판례·실무 기준</h2>
+
+      <h3>주요 조문</h3>
+
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>조문</th><th>내용</th><th>D&O 관련 쟁점</th></tr></thead>
+          <tbody>
+            <tr><td><strong>상법 제399조</strong></td><td>이사의 회사책임 (고의·과실)</td><td>Side B 청구의 근거</td></tr>
+            <tr><td><strong>상법 제400조</strong></td><td>회사책임 감면 (주주 동의·정관)</td><td>Side A 보호 필요성 판단</td></tr>
+            <tr><td><strong>상법 제401조</strong></td><td>이사의 제3자책임 (고의·중과실)</td><td>Side A 청구의 근거</td></tr>
+            <tr><td><strong>상법 제401조의2</strong></td><td>업무집행지시자 책임</td><td>사실상 이사 D&O 적용</td></tr>
+            <tr><td><strong>상법 제659조</strong></td><td>보험자 면책사유 (고의·중과실)</td><td>보험금 지급 거절 근거</td></tr>
+            <tr><td><strong>상법 제726조</strong></td><td>책임보험</td><td>D&O 보험 법적 성격</td></tr>
+            <tr><td><strong>자본시장법 제162조</strong></td><td>손해배상책임</td><td>Side C 담보 연결</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="ev">
+        <div class="top">
+          <span class="kind law">조문</span>
+          <span class="cite">상법 제400조 (회사에 대한 책임의 감면)</span>
+          <span class="vtick">✓ 현행 확인</span>
+        </div>
+        <p class="gist">제399조에 따른 이사의 책임은 주주 전원의 동의로 면제할 수 있다. 정관으로 정하는 바에 따라 이사 보수액의 6배(사외이사 3배)를 초과하는 금액에 대하여 면제할 수 있다. 단, 고의·중대한 과실·자기거래 위반의 경우 제외.</p>
+        <div class="date">시행일 2026.7.23.</div>
+      </div>
+
+      <div class="ev">
+        <div class="top">
+          <span class="kind law">조문</span>
+          <span class="cite">상법 제401조의2 (업무집행지시자 등의 책임)</span>
+          <span class="vtick">✓ 현행 확인</span>
+        </div>
+        <p class="gist">회사에 대한 영향력을 이용하여 이사에게 업무집행을 지시한 자, 이사의 이름으로 직접 업무를 집행한 자, 명예회장·회장·사장 등 업무집행 권한이 있는 것으로 인정되는 명칭을 사용한 자는 이사로 본다. — 그림자 이사(Shadow Director)의 D&O 보험 피보험자 적격 판단 근거</p>
+        <div class="date">시행일 2026.7.23.</div>
+      </div>
+
+      <h3>주요 판례</h3>
+
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>판결</th><th>요지</th><th>D&O 쟁점</th></tr></thead>
+          <tbody>
+            <tr><td><strong>대법원 2017다20221 전합</strong></td><td>이사 감시의무 위반 판단 기준</td><td>감시의무 위반 시 중과실 인정 가능성</td></tr>
+            <tr><td><strong>대법원 2014다68891</strong></td><td>중과실의 정의와 판단 기준</td><td>D&O 면책사유 중 가장 많이 인용</td></tr>
+            <tr><td><strong>대법원 2018다304014</strong></td><td>미필적 고의의 고의 포함 여부</td><td>고의 면책의 범위</td></tr>
+            <tr><td><strong>대법원 2021다225132</strong></td><td>사실상 이사 피보험자 적격</td><td>D&O 피보험자 범위 확장</td></tr>
+            <tr><td><strong>대법원 2017다248391</strong></td><td>보상원칙주의 적용</td><td>보험금과 책임감면액 중복 문제</td></tr>
+            <tr><td><strong>대법원 2015다232442 전합</strong></td><td>임원과 회사 책임 관계</td><td>Side A/B 구조 해석</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="ev">
+        <div class="top">
+          <span class="kind case">판례</span>
+          <span class="cite">대법원 2022. 1. 27. 선고 2021다225132 판결</span>
+          <span class="vtick">✓ 실존·현행 확인</span>
+        </div>
+        <p class="gist">사실상 이사의 D&O 보험 피보험자 적격을 인정. 법인등기부에 등기되지 않은 실질적 경영자도 D&O 보험의 보호를 받을 수 있음을 확인.</p>
+      </div>
+
+      <div class="ev">
+        <div class="top">
+          <span class="kind case">판례</span>
+          <span class="cite">대법원 2017. 11. 9. 선고 2015다232442 전합</span>
+          <span class="vtick">✓ 실존·현행 확인</span>
+        </div>
+        <p class="gist">임원의 손해배상책임과 회사의 선임감독 책임 간 관계를 명확히 하여, Side A와 Side B의 책임 범위 해석에 중요한 기준 제시.</p>
+      </div>
+    </section>
+
+    <section class="blk faq" id="faq">
+      <div class="secl">Q&amp;A</div>
+      <h2>자주 묻는 질문</h2>
+
+      <details open>
+        <summary>D&O 보험에 가입했는데도 이사 개인이 손해배상금을 부담해야 하는 경우가 있나요?</summary>
+        <div class="a">가능합니다. 첫째, <strong>고의 또는 중과실이 인정</strong>되어 보험사가 면책을 주장하는 경우. 둘째, <strong>보상한도가 소진된 경우</strong> — 특히 방어비용이 먼저 한도를 소진하면 손해배상금 보상 한도가 부족해집니다. 셋째, <strong>약관상 면책사유에 해당하는 위법행위</strong>가 확정 판결로 인정된 경우. 넷째, <strong>보험사 통지 의무를 위반한 경우</strong>. 따라서 가입 시 방어비용 선지급 구조, Side A 전용 한도, 자기부담금 조건을 반드시 확인해야 합니다.</div>
+      </details>
+
+      <details>
+        <summary>상법 제400조(정관상 책임 감면)와 D&O 보험을 동시에 활용하면 완전한 보호가 가능한가요?</summary>
+        <div class="a">완전한 보호는 아닙니다. 상법 제400조는 <strong>회사에 대한 책임만 면제</strong>할 수 있습니다. 제3자(주주·채권자)에 대한 책임(제401조)과 형사책임(배임죄)은 면제 대상이 아닙니다. 따라서 정관상 면책 + D&O 보험 + 회사 보상 정책(Indemnification)의 <strong>삼중 구조</strong>가 필요합니다. 정관 면책은 Side B 부담을 줄이고, D&O 보험은 Side A를 담당하며, 회사 보상 정책은 제3자 책임 발생 시 회사 선지급 후 D&O 보험 환급 구조를 만듭니다.</div>
+      </details>
+
+      <details>
+        <summary>방어비용이 보상한도에 포함되는지(within limits) 별도인지(outside limits) 어떻게 확인하나요?</summary>
+        <div class="a">약관의 <strong>"보상한도와 방어비용" 조항</strong>을 확인하세요. "방어비용은 보상한도와 별도로 지급된다"는 문구가 있으면 outside limits 구조입니다. "방어비용을 포함한 총 지급액이 보상한도를 초과하지 않는다"는 문구는 within limits 구조입니다. 글로벌 D&O 보험은 outside limits가 일반적이지만, 국내 보험사 약관은 within limits인 경우가 많으므로 계약 체결 전 반드시 확인해야 합니다.</div>
+      </details>
+
+      <details>
+        <summary>이사회 결의에 반대한 이사도 D&O 보험의 보호를 받을 수 있나요?</summary>
+        <div class="a">받을 수 있습니다. D&O 보험의 피보험자는 등기임원 전체이므로 반대 의견을 표시한 이사도 보호를 받습니다. 나아가 반대 의견을 의사록에 기재하면 상법 제399조제3항의 <strong>찬성추정을 배제</strong>할 수 있어 개인 책임이 부정될 가능성이 높아집니다. 따라서 중요한 안건에 대해 반대 의견이 있으면 <strong>반드시 의사록에 반대 이유와 대안을 구체적으로 기재</strong>해야 합니다.</div>
+      </details>
+
+      <details>
+        <summary>D&O 보험 갱신 시 이전 기간의 위험을 알리지 않으면 어떻게 되나요?</summary>
+        <div class="a"><strong>Known Circumstances</strong> 문제로, 갱신 시점에 이미 발생했거나 발생이 예견되는 위험을 보험사에 통지하지 않으면 신규 보험 기간의 보상에서 제외될 수 있습니다. 갱신 전에 잠재적 청구 가능성(내부고발, 조사 통보, 소송 위협 등)이 있는 경우 반드시 보험사에 서면으로 통지해야 합니다. 통지 범위는 구체적 사실과 관련 법률 검토 의견을 포함하는 것이 안전합니다.</div>
+      </details>
+
+      <details>
+        <summary>외국 자회사 임원도 국내 D&O 보험으로 보호받을 수 있나요?</summary>
+        <div class="a">약관에 따라 다릅니다. 국내 본사 D&O 보험의 피보험자 범위에 <strong>"피보험자회사(Named Subsidiary)"</strong>로 등재된 외국 자회사 임원이 포함되는지 확인해야 합니다. 포함되지 않은 경우 별도 현지 D&O 보험 가입이 필요합니다. 미국·EU 현지 소송은 국내보다 손해배상 규모가 크고 방어비용이 높으므로 글로벌 보험사와의 공동 인수(Co-insurance)를 검토해야 합니다.</div>
+      </details>
+
+      <details>
+        <summary>D&O 보험의 보상한도는 어떻게 정하는 것이 적정한가요?</summary>
+        <div class="a">기업 규모·업종·상장 여부·과거 분쟁 이력에 따라 다르지만, 일반적 기준은 다음과 같습니다. <strong>상장사</strong>: 매출액 1~3% 또는 자산 0.5~1% (최소 50억 원 이상). <strong>비상장 중견기업</strong>: 30~100억 원. <strong>스타트업</strong>: 10~30억 원. 보상한도는 단순히 높게 설정하는 것보다 <strong>방어비용 구조(within vs outside), Side A 전용 한도, 자기부담금 조건</strong>을 종합적으로 고려해야 실효적입니다. IPO·해외 진출 시에는 보상한도를 대폭 증액할 필요가 있습니다.</div>
+      </details>
+
+      <div class="notice">
+        본 자료는 2026년 7월 29일 기준으로 작성되었으며, 인용된 법령(상법 2026.7.23. 시행)·판례는 작성 시점의 현행성을 한국법 MCP 및 웹(law.go.kr)으로 확인한 것입니다. 법령은 개정될 수 있고 사안마다 결론이 달라질 수 있으므로, 실제 의사결정 전 최신 법령과 개별 사실관계에 대한 확인이 필요합니다. 본 자료는 일반적 법률 정보 제공이며 특정 사안에 대한 법률 자문이 아닙니다.
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer" id="consult">
+  <div class="wrap">
+    <div class="prof">
+      <div>
+        <h3>조우성 변호사 / 로펌 머스트노우</h3>
+        <p>로펌 머스트노우 대표변호사. 서울대학교 법학전문대학원 졸업. 법률지식 WIKI 기반 법률 콘텐츠 대시보드 전자책 리스크 진단 자동화.</p>
+        <p>25년 이상의 법률 실무 경험을 바탕으로 기업 자문·소송·M&A·컴플라이언스 분야에서 활동 중.</p>
+        <p style="font-size:15px;color:rgba(255,255,255,.92);margin-top:8px">✉ law@mustknow.co.kr</p>
+      </div>
+      <div class="cta-f">
+        <a class="btn btn-f" href="mailto:law@mustknow.co.kr">법률팩 신청 / 상담 문의하기</a>
+      </div>
+    </div>
+    <div class="fine">
+      © 2026 조우성 변호사. 본 콘텐츠는 일반 법률 정보이며 법률 자문을 대체하지 않습니다.
+      인용 법령·판례는 2026-07-29 기준 현행성을 확인했습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+var pb=document.getElementById('progress');
+function onScroll(){
+  var h=document.documentElement,b=document.body;
+  var st=h.scrollTop||b.scrollTop;
+  var sh=(h.scrollHeight||b.scrollHeight)-h.clientHeight;
+  pb.style.width=(sh>0?(st/sh*100):0)+'%';
+}
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+var toTop=document.getElementById('toTop');
+window.addEventListener('scroll',function(){
+  (window.scrollY||window.pageYOffset)>500?toTop.classList.add('show'):toTop.classList.remove('show');
+},{passive:true});
+var links=Array.prototype.slice.call(document.querySelectorAll('#toc-list a'));
+var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));}).filter(Boolean);
+function spy(){
+  var pos=(window.scrollY||window.pageYOffset)+120,cur=secs[0];
+  for(var i=0;i<secs.length;i++){if(secs[i].offsetTop<=pos)cur=secs[i];}
+  links.forEach(function(a){
+    a.classList.toggle('active',cur&&a.getAttribute('href')==='#'+cur.id);
+  });
+}
+window.addEventListener('scroll',spy,{passive:true});spy();
+document.querySelectorAll('#toc-list a').forEach(function(a){
+  a.addEventListener('click',function(){
+    if(window.innerWidth<=820)document.getElementById('toc').classList.add('closed');
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>렌탈·구독 해지 분쟁 — 정수기·비데·공기청정기 렌탈 해지와 위약금 대응 | EBOOK-247</title>
+<style>
+  :root {
+    --primary: #059669;
+    --primary-light: #d1fae5;
+    --primary-dark: #047857;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-600: #4b5563;
+    --gray-700: #374151;
+    --gray-800: #1f2937;
+    --gray-900: #111827;
+    --red-50: #fef2f2;
+    --red-600: #dc2626;
+    --amber-50: #fffbeb;
+    --amber-600: #d97706;
+    --blue-50: #eff6ff;
+    --blue-600: #2563eb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+    color: var(--gray-800);
+    background: var(--gray-50);
+    line-height: 1.7;
+    font-size: 16px;
+  }
+  .container { max-width: 800px; margin: 0 auto; padding: 40px 24px; }
+  .header {
+    border-bottom: 4px solid var(--primary);
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+  }
+  .ebook-badge {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--gray-900);
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+  .meta {
+    font-size: 13px;
+    color: var(--gray-600);
+  }
+  .meta span { margin-right: 16px; }
+  .hero-box {
+    background: linear-gradient(135deg, var(--primary-light), #fff);
+    border-left: 4px solid var(--primary);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 32px;
+  }
+  .hero-box p { color: var(--gray-700); font-size: 15px; line-height: 1.8; }
+  .hero-box strong { color: var(--gray-900); }
+  .hero-stat {
+    background: #fff;
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    padding: 16px;
+    margin-top: 12px;
+    font-size: 14px;
+    color: var(--gray-700);
+  }
+  .hero-stat strong { color: var(--primary-dark); }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--gray-900);
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--primary);
+    margin: 40px 0 20px;
+  }
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--gray-800);
+    margin: 24px 0 12px;
+  }
+  p { margin-bottom: 16px; color: var(--gray-700); }
+  .card-grid { display: grid; gap: 16px; margin-bottom: 24px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 24px;
+    font-size: 14px;
+  }
+  th {
+    background: var(--primary);
+    color: #fff;
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 600;
+  }
+  td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--gray-200);
+    color: var(--gray-700);
+  }
+  tr:nth-child(even) td { background: var(--gray-50); }
+  .warning-box {
+    background: var(--red-50);
+    border-left: 4px solid var(--red-600);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+  }
+  .warning-box .label {
+    font-weight: 700;
+    color: var(--red-600);
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  .warning-box p { margin-bottom: 4px; font-size: 14px; }
+  .info-box {
+    background: var(--blue-50);
+    border-left: 4px solid var(--blue-600);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+  }
+  .info-box p { margin-bottom: 4px; font-size: 14px; }
+  .step-box {
+    background: #fff;
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 16px;
+  }
+  .step-num {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
+  .step-box h4 { font-size: 16px; margin-bottom: 8px; color: var(--gray-800); }
+  .step-box p { font-size: 14px; margin-bottom: 8px; }
+  .card {
+    background: #fff;
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 12px;
+  }
+  .card h4 { color: var(--primary-dark); font-size: 16px; margin-bottom: 8px; }
+  .card .ref { font-size: 13px; color: var(--gray-600); margin-bottom: 8px; }
+  .card p { font-size: 14px; }
+  .faq-item {
+    background: #fff;
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 12px;
+  }
+  .faq-q {
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 8px;
+    font-size: 15px;
+  }
+  .faq-a { font-size: 14px; color: var(--gray-700); }
+  .compare-table td:first-child { font-weight: 600; }
+  .cta-box {
+    background: var(--primary);
+    border-radius: 12px;
+    padding: 32px;
+    text-align: center;
+    margin: 40px 0;
+    color: #fff;
+  }
+  .cta-box h3 { color: #fff; font-size: 20px; margin-bottom: 8px; }
+  .cta-box p { color: #fff; opacity: 0.9; font-size: 15px; margin-bottom: 16px; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff;
+    color: var(--primary);
+    font-weight: 700;
+    padding: 12px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  .cta-btn:hover { background: var(--gray-100); }
+  .disclaimer {
+    background: var(--amber-50);
+    border: 1px solid #fde68a;
+    border-radius: 8px;
+    padding: 16px 20px;
+    font-size: 13px;
+    color: var(--gray-600);
+    margin-top: 32px;
+  }
+  .disclaimer strong { color: var(--gray-700); }
+  @media (max-width: 600px) {
+    h1 { font-size: 22px; }
+    h2 { font-size: 18px; }
+    .container { padding: 24px 16px; }
+    .cta-box { padding: 24px 16px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <div class="ebook-badge">EBOOK-247</div>
+  <h1>렌탈·구독 해지 분쟁<br>정수기·비데·공기청정기 렌탈 해지와 위약금 대응</h1>
+  <div class="meta">
+    <span>B2C 소비자 대상</span>
+    <span>절차형 템플릿</span>
+    <span>2026-07-29</span>
+  </div>
+</div>
+
+<div class="hero-box">
+  <p><strong>문제상황:</strong> "정수기 렌탈 3년 약정을 했는데, 1년 쓰고 해지하려니 위약금이 50만원입니다. 계약서에는 위약금 기준이 '잔여 기간 월 렌탈료의 50%'라고 적혀 있는데, 이게 정당한가요?"</p>
+  <div class="hero-stat">
+    📊 <strong>한국소비자원 통계 (2022~2025.3)</strong><br>
+    렌탈 피해구제 누적 1,762건 → 계약 불만 823건(56.3%) → 해지·위약금 503건(61.1%)
+  </div>
+</div>
+
+<h2>1. 핵심 쟁점</h2>
+
+<h3>계속거래 해당 여부 — 방문판매법 제2조 제10호</h3>
+<table>
+  <thead><tr><th>요건</th><th>렌탈 계약</th><th>판단</th></tr></thead>
+  <tbody>
+    <tr><td>1개월 이상 계속 공급</td><td>3~7년 약정</td><td>충족</td></tr>
+    <tr><td>중도해지 시 위약금 약정</td><td>계약서상 위약금 조항</td><td>충족</td></tr>
+    <tr><td><strong>계속거래 해당</strong></td><td colspan="2"><strong>방문판매법 적용</strong></td></tr>
+  </tbody>
+</table>
+
+<div class="info-box">
+  <p><strong>임의해지권 인정</strong> — 방문판매법 제31조: "소비자는 계약기간 중 언제든지 계약을 해지할 수 있다." 사유 제한 불필요, 사업자 동의 불필요. "해지 불가" 조항은 약관규제법 제9조 위반 무효.</p>
+</div>
+
+<h3>위약금 적정성 판단 기준</h3>
+<table>
+  <thead><tr><th>기준</th><th>내용</th><th>근거</th></tr></thead>
+  <tbody>
+    <tr><td>실손해 초과 금지</td><td>해지 손실을 현저히 초과하는 위약금 금지</td><td>방문판매법 제32조①</td></tr>
+    <tr><td>표준약관 기준</td><td>잔여월 임대료의 <strong>10%</strong></td><td>공정위 시권2008-067</td></tr>
+    <tr><td>약관법 제한</td><td>부당 과중 손해배상액예정 무효</td><td>약관규제법 제8조</td></tr>
+    <tr><td>할부거래법 제한</td><td>법정 한도 초과 손해배상 금지</td><td>할부거래법 제12조③</td></tr>
+  </tbody>
+</table>
+
+<h2>2. 첫 대응 순서</h2>
+
+<div class="step-box">
+  <div class="step-num">STEP 1</div>
+  <h4>계약서 확인</h4>
+  <p>계약 기간·의무사용기간·위약금 조항·청약철회 조항·설치비/철거비 부담 주체 확인. 계약서가 없으면 사업자에 재발급 요청 (방문판매법 제30조②).</p>
+</div>
+
+<div class="step-box">
+  <div class="step-num">STEP 2</div>
+  <h4>계속거래 해당 여부 판단</h4>
+  <p>1개월 이상 + 중도해지 위약금 약정 → 계속거래 → 방문판매법 제31조 임의해지권 행사 가능</p>
+</div>
+
+<div class="step-box">
+  <div class="step-num">STEP 3</div>
+  <h4>해지 통지</h4>
+  <p>내용증명 또는 고객센터를 통해 해지 의사 표시. 방문판매법 제31조 근거 명시.</p>
+</div>
+
+<div class="step-box">
+  <div class="step-num">STEP 4</div>
+  <h4>위약금 검토</h4>
+  <p>① 잔여월 임대료 10% 이하인가? ② 실손해 현저 초과하지 않는가? ③ 추가 비용(설치비·철거비) 있는가? ④ 제품 하자·A/S 불량이 해지 사유인가?</p>
+</div>
+
+<h2>3. 위험 신호</h2>
+
+<div class="warning-box">
+  <div class="label">위험 신호 1</div>
+  <p><strong>위약금이 월 이용료의 10% 초과</strong> — 표준약관상 상한(잔여월 10%)을 넘는 위약금은 부당 과중. 무효 선언 가능. 2026년 한국소비자원 조사에서 일부 업체 최대 30% 부과 사례 확인.</p>
+</div>
+
+<div class="warning-box">
+  <div class="label">위험 신호 2</div>
+  <p><strong>해지 사유 제한</strong> — "정당한 사유 없이 해지 불가" 조항은 방문판매법 제31조 위반 + 약관규제법 제9조 위반 무효.</p>
+</div>
+
+<div class="warning-box">
+  <div class="label">위험 신호 3</div>
+  <p><strong>렌탈 품질 미달</strong> — 제품 하자·잦은 고장·A/S 불량은 사업자 귀책 → 위약금 없이 해지 가능 (방문판매법 제32조①). 나아가 손해배상 청구 가능.</p>
+</div>
+
+<div class="warning-box">
+  <div class="label">위험 신호 4</div>
+  <p><strong>설치비·철거비 명목 추가 청구</strong> — 2021년 공정위 시정에도 일부 업체 지속. 약관 미명시 비용은 부당.</p>
+</div>
+
+<div class="warning-box">
+  <div class="label">위험 신호 5</div>
+  <p><strong>정기관리 불가 지역 이사 시 위약금</strong> — 소비자분쟁해결기준상 정기관리 불가지역 이사 → 위약금 면제. 해외 이주 → 위약금 50% 감면.</p>
+</div>
+
+<h2>4. 근거 카드</h2>
+
+<div class="card">
+  <h4>카드 1 | 방문판매법 제30조 — 정보제공의무</h4>
+  <div class="ref">MST 268293, 현행 2025.1.21.</div>
+  <p>계속거래업자는 계약 체결 전 해지·행사방법·효과·위약금 산정 기준을 설명하고 계약서를 발급해야 합니다. 미설명 시 해당 조건의 효력을 다툴 수 있습니다.</p>
+</div>
+
+<div class="card">
+  <h4>카드 2 | 방문판매법 제31조 — 계약의 해지</h4>
+  <div class="ref">MST 268293 — 가장 강력한 소비자 권리</div>
+  <p><strong>"소비자는 계약기간 중 언제든지 계약을 해지할 수 있다."</strong> 사업자의 "해지 불가" 주장에 직접 대응 가능한 핵심 조문.</p>
+</div>
+
+<div class="card">
+  <h4>카드 3 | 방문판매법 제32조 — 해지 효과·위약금 제한</h4>
+  <div class="ref">MST 268293</div>
+  <p>손실 현저 초과 위약금 청구 금지, 실제 공급 대가 초과 수령금 환급 거부 금지, 반환 가능 재화 반환 시 위약금 경감 의무.</p>
+</div>
+
+<div class="card">
+  <h4>카드 4 | 할부거래법 제8조 — 청약철회</h4>
+  <div class="ref">MST 260029, 현행 2024.8.7.</div>
+  <p>계약서 수령일 또는 재화 공급일부터 <strong>7일</strong> 이내 청약철회 가능 (방문판매 체결 시 14일). 청약철회 시 위약금 없음.</p>
+</div>
+
+<div class="card">
+  <h4>카드 5 | 할부거래법 제12조 — 손해배상 제한</h4>
+  <div class="ref">MST 260029</div>
+  <p>할부거래업자의 손해배상은 법정 한도 초과 불가. 위약금 등 명칭 불문 동일 제한 적용. 고가 렌탈 제품에 중첩 적용 가능.</p>
+</div>
+
+<div class="card">
+  <h4>카드 6 | 약관규제법 제8조·제9조</h4>
+  <div class="ref">보충 근거</div>
+  <p>제8조: 부당 과중 손해배상액예정 무효. 제9조: 고객에 부당 불리한 해지 조항 무효.</p>
+</div>
+
+<h2>5. FAQ</h2>
+
+<div class="faq-item">
+  <div class="faq-q">Q1. 렌탈과 구독의 법적 차이는?</div>
+  <div class="faq-a">렌탈은 제품 임대(소유권 사업자), 구독은 서비스 이용권 정기 구매 형태입니다. 모두 방문판매법상 계속거래에 해당할 수 있으며, 계약 기간(1개월 이상)과 중도해지 위약금 약정 유무가 핵심 판단 기준입니다.</div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">Q2. 위약금은 어떻게 계산하나요?</div>
+  <div class="faq-a">표준약관 기준: 잔여월 임대료 × 10% + 이미 제공받은 혜택(할인)의 잔존기간 해당분. 예) 36개월 약정, 월 3만 원, 12개월 사용 후 해지 → 잔여 24개월 × 3만 원 × 10% = 72,000원.</div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">Q3. 청약철회와 중도해지의 차이는?</div>
+  <div class="faq-a">
+    <table class="compare-table">
+      <thead><tr><th>구분</th><th>청약철회</th><th>중도해지</th></tr></thead>
+      <tbody>
+        <tr><td>시기</td><td>계약 후 7~14일 이내</td><td>계약기간 중 언제든지</td></tr>
+        <tr><td>위약금</td><td>없음 (원상회복만)</td><td>발생 가능 (법정 제한)</td></tr>
+        <tr><td>근거</td><td>방문판매법 제8조, 할부거래법 제8조</td><td>방문판매법 제31조</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">Q4. 제품 하자 시 위약금 없이 해지 가능한가요?</div>
+  <div class="faq-a">네. 제품 하자·잦은 고장·A/S 불량은 사업자 귀책사유로 방문판매법 제32조①의 "자신의 책임이 없는 사유"에 해당하지 않아 위약금 없이 해지 가능합니다.</div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">Q5. 계약서를 분실했습니다. 어떻게 해야 하나요?</div>
+  <div class="faq-a">사업자에 계약서 재발급을 요청하세요. 방문판매법 제30조②는 계약서 발급 의무를 규정하고 있어, 사업자는 정당한 사유 없이 거부할 수 없습니다.</div>
+</div>
+
+<h2>6. 최신성·면책 고지</h2>
+
+<div class="disclaimer">
+  <p><strong>최종갱신:</strong> 2026년 7월 29일</p>
+  <p><strong>검증 내역:</strong> 방문판매법 제30~32조, 할부거래법 제8조·제12조 — 한국법 MCP(MST 268293, 260029) 현행 조문 직접 확인. 공정위 시권2008-067 표준약관 기준 반영. 검증되지 않은 판례번호·조문 인용 배제.</p>
+  <p><strong>면책:</strong> 본 콘텐츠는 일반적 참고 자료이며, 개별 사안은 구체적 사실관계에 따라 결론이 달라질 수 있습니다. 법률 대응은 반드시 전문가 상담을 받으십시오.</p>
+</div>
+
+<div class="cta-box">
+  <h3>도움이 필요하신가요?</h3>
+  <p>위약금 검토 → 내용증명 작성 → 소비자원 조정 신청까지 원스톱 대응<br>법률팩을 통해 전문가의 도움을 받으세요.</p>
+  <a href="#" class="cta-btn">법률 상담 연결</a>
+</div>
+
+</div>
+</body>
+</html>
