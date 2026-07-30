@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>인터뷰 설계와 질문지 작성 - 사내조사(비위·내부감사) 절차</title>
+<style>
+:root {
+  --bg: #f7f6f3; --panel: #fff; --panel2: #f1efec;
+  --line: #e4dfda; --line2: #cdc5bd;
+  --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078; --faint: #b0a89f;
+  --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+  --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+  --rH: #c74a3c; --rM: #b45309; --rL: #287a54;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:"Pretendard","Malgun Gothic",sans-serif; font-size:16px; line-height:1.8; color:var(--ink); background:var(--bg); }
+.wrap { max-width:800px; margin:0 auto; padding:40px 20px; }
+.card { background:var(--panel); border-radius:8px; padding:32px 40px; box-shadow:0 1px 4px rgba(0,0,0,0.06); }
+h1 { font-size:26px; font-weight:700; color:var(--accent-d); margin-bottom:24px; padding-bottom:12px; border-bottom:2px solid var(--accent-tint-ln); }
+h2 { font-size:20px; font-weight:600; color:var(--accent); margin:28px 0 12px; }
+h3 { font-size:17px; font-weight:600; color:var(--ink); margin:20px 0 8px; }
+p { margin-bottom:12px; }
+table { width:100%; border-collapse:collapse; margin:12px 0 20px; font-size:14px; }
+th { background:var(--accent-tint); color:var(--accent-d); font-weight:600; text-align:left; padding:8px 12px; border:1px solid var(--line); }
+td { padding:8px 12px; border:1px solid var(--line); }
+tr:nth-child(even) { background:#fafaf8; }
+ul, ol { margin:8px 0 12px 20px; }
+li { margin-bottom:4px; }
+strong { font-weight:600; color:var(--accent-d); }
+code { font-family:"JetBrains Mono","Consolas",monospace; font-size:13px; background:var(--panel2); padding:2px 6px; border-radius:3px; }
+blockquote { border-left:3px solid var(--accent); padding:8px 16px; margin:12px 0; background:var(--accent-tint); border-radius:0 4px 4px 0; font-size:14px; color:var(--ink2); }
+.meta { font-size:13px; color:var(--muted); margin-bottom:20px; padding:12px; background:var(--panel2); border-radius:6px; }
+.footer { margin-top:32px; padding-top:16px; border-top:1px solid var(--line); font-size:13px; color:var(--muted); }
+.web-badge { display:inline-block; background:var(--accent-l); color:#fff; padding:4px 12px; border-radius:4px; font-size:12px; font-weight:600; margin-bottom:16px; }
+</style>
+</head>
+<body>
+<div class="wrap"><div class="card">
+<div class="web-badge">웹게시</div>
+<div class='meta'><span style='margin-right:16px'>ID: PROC-INVS-008</span><span style='margin-right:16px'>단계: 착수</span><span style='margin-right:16px'>검증: L2</span></div>
+<h1>인터뷰 설계와 질문지 작성</h1>
+<h2>3줄 요약</h2>
+<ul>
+<li>질문은 개방형→확인형→대립형 순서로 구성하고, 유도형 질문은 절대 금지다.</li>
+<li>면담 순서는 증거인멸 위험과 진술 오염을 고려해 설계한다. 핵심 관계자보다 자료 보유자를 먼저 면담하는 것이 원칙이다.</li>
+<li>질문지는 사전에 법무팀장(또는 외부 전문가)의 검토를 받고, 민감 사안(성희롱 등)은 금지 질문 리스트를 별도 작성한다.</li>
+</ul>
+<h2>0. 지금 당신의 위치</h2>
+<p>공통 5단계: 사전 → 착수 → 대응 → 결정 → 사후 (현재: <strong>착수</strong>)</p>
+<pre><code class="language-text">조사계획(007) -&gt; [인터뷰 설계] -&gt; 외부 전문가(009)
+</code></pre>
+<h2>1. 이번 단계에서 반드시 할 일</h2>
+<ul>
+<li>[ ] 면담 대상자별 질문지 작성 — 개방형→확인형→대립형 순서</li>
+<li>[ ] 면담 순서 설계 — 자료 보유자→참고인→핵심 관계자</li>
+<li>[ ] 민감 사안의 경우 금지 질문 리스트 작성·검토</li>
+<li>[ ] 2인 1조(질문자+기록자) 면담 구성</li>
+</ul>
+<h2>2. 준비물</h2>
+<p>| 준비물 | 왜 필요한가 | 준비 상태 |
+|---|---|---|
+| 질문 은행(Question Bank) | 유형별 핵심 질문 사전 리스트업 | 미확인 |
+| 면담 안내문 양식 | 면담 시작 전 목적·방식·권리 고지용 | 미확인 |
+| 금지 질문 리스트 | 2차 가해·귀책 추궁 질문 방지 | 미확인 |</p>
+<h2>3. 작성·제출물</h2>
+<p>| 문서 | 제출처 | 주의점 |
+|---|---|---|
+| 면담 대상자별 질문지 | 법무팀(내부) | 유도형 질문·가정 질문 금지 |
+| 면담 안내문 | 면담 대상자 사전 교부 | 진술 거부권·외부 전문가 동석권 안내 |</p>
+<h2>4. 흔한 실수</h2>
+<ul>
+<li>유도형 질문 사용(&quot;부장이 지시한 거죠?&quot;) — 진술 자발성 약화</li>
+<li>민감 사안에서 피해자 귀책 질문(&quot;왜 안 피했나요?&quot;) — 2차 가해 성립</li>
+<li>즉흥 질문으로 일관 — 핵심 쟁점 누락, 주도권 상실</li>
+<li>질문 순서를 고려하지 않음 — 진술 오염 및 모순 확인 기회 상실</li>
+</ul>
+<h2>5. 전문가 상담 신호</h2>
+<p><strong>위험도:</strong> 상담 권장</p>
+<ul>
+<li>성희롱·직장 내 괴롭힘 등 트라우마 관련 사안에서 질문지 구성이 어려운 경우</li>
+<li>다수 면담 대상자의 진술 오염 방지를 위한 순서 설계가 필요한 경우</li>
+</ul>
+<h2>6. 인접 절차 연결</h2>
+<ul>
+<li>선행: PROC-INVS-007 · 후속: PROC-INVS-009(외부 전문가) / PROC-INVS-011(면담 실행)</li>
+</ul>
+<h2>7. 근거 조문·판례</h2>
+<blockquote>
+<p>⚠️ 검증 전 확정 인용 금지.</p>
+</blockquote>
+<p>| 근거 후보 | 의미 | 검증상태 |
+|---|---|---|
+| (실무 원칙 — Upjohn Warning) | 회사 변호사의 개인 변호사 아님 고지 의무(미국법, 한국 실무 참고) | 검증대기 |</p>
+<h2>8. 다음 단계</h2>
+<p>→ PROC-INVS-009 외부 전문가·로펌 선정과 관리</p>
+<h2>최신성·면책 고지</h2>
+<p>본 자료는 작성일(2026-07-30) 기준 일반적 법률 정보이며 특정 사건에 대한 자문이 아닙니다.</p>
+<h2>검증 로그</h2>
+<p>| 인용 | 유형 | 웹 화이트리스트 | 한국법 MCP | 판정 |
+|---|---|---|---|---|
+| (실무 원칙 — Upjohn Warning) | 실무(참고) | 해당 없음 | 해당 없음 | 등재 |</p>
+
+<div class="footer">
+<p>본 자료는 일반적 법률 정보이며 특정 사건에 대한 자문이 아닙니다. 법령·실무는 변경될 수 있습니다.</p>
+<p>법률 상담: 법무법인(유한) 세종 · 문의: woosungjo@sejong.com</p>
+</div>
+</div></div></body></html>
