@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>PROC-LABI — 노동청 진정·근로감독 대응 절차</title>
+<style>
+:root {
+  --ink: #1a1a2e;
+  --blue: #1e3a5f;
+  --accent: #3a7bd5;
+  --light: #f5f7fa;
+  --border: #d0d5dd;
+  --green: #2e7d32;
+  --amber: #e65100;
+  --red: #c62828;
+  --gray: #64748b;
+  --card-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+  --card-hover: 0 4px 12px rgba(0,0,0,0.1);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Noto Sans KR', 'Pretendard', 'Malgun Gothic', sans-serif;
+  background: var(--light);
+  color: var(--ink);
+  line-height: 1.6;
+}
+.container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, var(--blue) 0%, #0f2b4a 100%);
+  color: #fff;
+  padding: 64px 0 48px;
+}
+.hero h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.01em; }
+.hero .sub { font-size: 1rem; opacity: 0.85; margin-top: 8px; }
+.hero .meta { font-size: 0.85rem; opacity: 0.65; margin-top: 16px; }
+.hero .badge-row { margin-top: 20px; display: flex; gap: 8px; flex-wrap: wrap; }
+.badge {
+  display: inline-block; padding: 4px 12px; border-radius: 999px;
+  font-size: 0.75rem; font-weight: 600; background: rgba(255,255,255,0.15);
+}
+.badge.b2b { background: var(--accent); color: #fff; }
+/* Section */
+.section { padding: 40px 0; }
+.section-title {
+  font-size: 1.25rem; font-weight: 700; margin-bottom: 20px;
+  padding-bottom: 8px; border-bottom: 2px solid var(--border);
+  display: flex; align-items: center; gap: 8px;
+}
+.stage-tag {
+  display: inline-block; padding: 2px 10px; border-radius: 4px;
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.03em;
+  text-transform: uppercase; color: #fff;
+}
+.stage-sajeon { background: #1565c0; }
+.stage-chaksu { background: #6a1b9a; }
+.stage-daeeung { background: #e65100; }
+.stage-gyeoljeong { background: #2e7d32; }
+.stage-sahu { background: #c62828; }
+/* Card grid */
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; }
+.card {
+  background: #fff; border-radius: 8px; border: 1px solid var(--border);
+  padding: 20px; box-shadow: var(--card-shadow);
+  transition: box-shadow 0.2s, transform 0.15s;
+}
+.card:hover { box-shadow: var(--card-hover); transform: translateY(-2px); }
+.card-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+.card-id { font-size: 0.7rem; font-weight: 700; color: var(--gray); letter-spacing: 0.02em; }
+.card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; line-height: 1.4; }
+.card p { font-size: 0.825rem; color: #475569; margin-bottom: 12px; }
+.card ul { list-style: none; font-size: 0.8rem; color: #334155; }
+.card ul li::before { content: '→ '; color: var(--accent); font-weight: 700; }
+.card ul li { margin-bottom: 3px; }
+.card .law { margin-top: 10px; font-size: 0.7rem; color: var(--gray); }
+.card .law span { display: inline-block; background: #eef2ff; padding: 1px 6px; border-radius: 3px; margin: 1px 2px 1px 0; }
+/* Diagnosis box */
+.diag-box {
+  background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
+  border: 1px solid #c7d2fe; border-radius: 8px; padding: 24px; margin-bottom: 32px;
+}
+.diag-box h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+.diag-box p { font-size: 0.85rem; color: #334155; margin-bottom: 12px; }
+.diag-flow { display: flex; flex-direction: column; gap: 12px; }
+.diag-q { background: #fff; border-radius: 6px; padding: 12px 16px; border: 1px solid var(--border); }
+.diag-q strong { display: block; font-size: 0.85rem; margin-bottom: 4px; }
+.diag-q span { font-size: 0.8rem; color: #475569; }
+/* Footer */
+.footer {
+  background: #1e293b; color: #94a3b8; padding: 32px 0; font-size: 0.8rem;
+  line-height: 1.7;
+}
+.footer strong { color: #cbd5e1; }
+.footer .disclaimer {
+  max-width: 720px; margin: 0 auto; text-align: center;
+  border-top: 1px solid #334155; padding-top: 20px; margin-top: 20px;
+}
+/* Stage nav */
+.stage-nav { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+.stage-nav a {
+  text-decoration: none; font-size: 0.8rem; font-weight: 600;
+  padding: 6px 14px; border-radius: 999px; background: #fff;
+  border: 1px solid var(--border); color: var(--ink);
+  transition: all 0.15s;
+}
+.stage-nav a:hover { background: var(--blue); color: #fff; border-color: var(--blue); }
+/* Responsive */
+@media (max-width: 600px) {
+  .hero h1 { font-size: 1.5rem; }
+  .card-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <h1>PROC-LABI &mdash; 노동청 진정·근로감독 대응 절차</h1>
+    <p class="sub">기업·인사·법무팀을 위한 단계별 절차 안내 &middot; B2B</p>
+    <div class="badge-row">
+      <span class="badge b2b">B2B</span>
+      <span class="badge">16개 절차 카드</span>
+      <span class="badge">L2 검증 완료</span>
+      <span class="badge">2026-07-30 기준</span>
+    </div>
+    <p class="meta">근로기준법(MST 265959) · 근로자퇴직급여 보장법(MST 284455) · 임금채권보장법(MST 279735) · 행정절차법(MST 239291) · 질서위반행위규제법(MST 224847) · 행정심판법(MST 249041) · 행정소송법(MST 285913) — 7개 법령 한국법 MCP 조문 전문 확인</p>
+  </div>
+</section>
+
+<!-- Main -->
+<div class="container">
+
+  <!-- Self-Diagnosis -->
+  <section class="section" id="diagnosis">
+    <div class="diag-box">
+      <h2>&#9733; 무료 자가진단 &mdash; 지금 우리 회사에 필요한 대응은?</h2>
+      <p>아래 분기를 따라가며 현재 상황에 맞는 절차 카드를 찾아보세요. 이 진단은 일반 정보이며 법률 자문이 아닙니다.</p>
+      <div class="diag-flow">
+        <div class="diag-q">
+          <strong>Q1. 현재 어떤 상황인가요?</strong>
+          <span>아직 아무 일도 없지만 대비 필요 &rarr; <strong>예방형</strong> (002, 003) &nbsp;|&nbsp; 이미 근로자가 진정 제기 &rarr; <strong>진정 대응</strong> (005&ndash;007) &nbsp;|&nbsp; 노동청 출석 연락 &rarr; <strong>감독 대응</strong> (004&ndash;006)</span>
+        </div>
+        <div class="diag-q">
+          <strong>Q2. [예방형] 위험 신호</strong>
+          <span>퇴직자 임금문제 / 직장 내 괴롭힘 신고 / 서류 미비 / 취업규칙 미신고(10인↑) / 포괄임금제 &rarr; 2개 이상 해당 시 <strong>002(서류정비) &rarr; 003(선제대응)</strong></span>
+        </div>
+        <div class="diag-q">
+          <strong>Q3. [진행형] 가장 필요한 카드</strong>
+          <span>진정 접수 &rarr; <strong>005(출석요구)</strong> &rarr; <strong>007(답변서)</strong> &nbsp;|&nbsp; 조사 중 &rarr; <strong>006(조사당일)</strong> &nbsp;|&nbsp; 시정지시 &rarr; <strong>008(시정대응)</strong> &nbsp;|&nbsp; 과태료 &rarr; <strong>009(과태료)</strong> &nbsp;|&nbsp; 형사 송치 &rarr; <strong>012(송치대응)</strong> &nbsp;|&nbsp; 해고분쟁 &rarr; <strong>013(부당해고)</strong></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stage nav -->
+  <div class="stage-nav">
+    <a href="#sajeon">사전 (4)</a>
+    <a href="#chaksu">착수 (3)</a>
+    <a href="#daeeung">대응 (3)</a>
+    <a href="#gyeoljeong">결정 (2)</a>
+    <a href="#sahu">사후 (4)</a>
+  </div>
+
+  <!-- Stage: 사전 -->
+  <section class="section" id="sajeon">
+    <h2 class="section-title"><span class="stage-tag stage-sajeon">사전</span> 예방·준비</h2>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-head"><span class="card-id">PROC-LABI-001</span><span class="stage-tag stage-sajeon" style="font-size:0.6rem">사전</span></div>
+        <h3>진정·감독 유형 파악</h3>
+        <p>진정·감독의 쟁점과 유형을 최초로 분류하여 이후 절차의 방향과 대응 전략을 결정</p>
+        <ul>
+          <li>쟁점 파악: 임금체불·부당해고·근로시간·괴롭힘·산안·차별</li>
+          <li>감독 유형 확인: 정기·수시·특별·진정 촉발</li>
+          <li>관할 노동청·담당 근로감독관 배정 확인</li>
+        </ul>
+        <div class="law"><span>근기법 101</span><span>근기법 102</span><span>근기법 103</span></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><span class="card-id">PROC-LABI-002</span><span class="stage-tag stage-sajeon" style="font-size:0.6rem">사전</span></div>
+        <h3>근로관계 서류 정비</h3>
+        <p>핵심 증거인 근로관계 서류를 사전 정비하여 조사 부담과 시정지시 범위 축소</p>
+        <ul>
+          <li>근로계약서(근로조건 명시·서면교부) 기재사항 점검</li>
+          <li>임금대장·급여명세서 작성·보존 상태 확인</li>
+          <li>출퇴근 기록(근태자료) 보존 상태 점검</li>
+          <li>취업규칙 작성·신고 여부(10인 이상)</li>
+        </ul>
+        <div class="law"><span>근기법 17</span><span>근기법 48</span><span>근기법 93</span><span>근기법 110</span></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><span class="card-id">PROC-LABI-003</span><span class="stage-tag stage-sajeon" style="font-size:0.6rem">사전</span></div>
+        <h3>진정 접수 전 선제 대응</h3>
+        <p>내부 조사와 시정으로 형사처벌 리스크를 줄이고 시정 의지를 문서화</p>
+        <ul>
+          <li>위반 의심 쟁점 내부 조사</li>
+          <li>시정 가능 사항(체불임금·근로계약서 등) 즉시 시정</li>
+          <li>근로자 협의·합의 시도 및 경과 기록</li>
+          <li>법률 전문가 조력 여부 검토</li>
+        </ul>
+        <div class="law"><span>근기법 109</span></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><span class="card-id">PROC-LABI-004</span><span class="stage-tag stage-sajeon" style="font-size:0.6rem">사전</span></div>
+        <h3>근로감독 유형별 접근법</h3>
+        <p>감독 유형(정기·수시·특별·진정)별 차별화된 대응 전략 수립</p>
+        <ul>
+          <li>감독 유형 확인</li>
+          <li>유형별 조사 범위와 예상 기간 파악</li>
+          <li>유형에 맞춘 자료 준비 계획 수립</li>
+        </ul>
+        <div class="law"><span>근기법 101</span><span>근기법 102</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stage: 착수 -->
+  <section class="section" id="chaksu">
+    <h2 class="section-title"><span class="stage-tag stage-chaksu">착수</span> 조사 개시·초기 대응</h2>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-head"><span class="card-id">PROC-LABI-005</span><span class="stage-tag stage-chaksu" style="font-size:0.6rem">착수</span></div>
+        <h3>출석요구서 수령과 대응 기본</h3>
+        <p>출석요구서 수령 후 진정 내용·증거자료 사전 검토 및 대응 방향 설정</p>
+        <ul>
+          <li>출석요구서·공문 내용 즉시 확인(쟁점·일시·준비서류)</li>
+          <li>출석 일정 조율(부득이한 경우 연기 요청)</li>
+          <li>진정 내용 사전 입수·파악</li>
+          <li>관련 증거자료 취합·검토</li>
+        </ul>
+        <div class="law"><span>근기법 102</span><span>근기법 103</span></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><span class="card-id">PROC-LABI-006</span><span class="stage-tag stage-chaksu" style="font-size:0.6rem">착수</span></div>
+        <h3>조사 당일 대응</h3>
+        <p>진술·자료제출·권리행사의 구체적 방법 안내로 불리한 진술 방지</p>
+        <ul>
+          <li>신분증·위임장·관련 자료 지참</li>
+          <li>진술: 사실 확인 &rarr; 법적 판단 순서(추측 금지)</li>
+          <li>자료제출 요구 범위 확인 후 대응</li>
+          <li>조사 내용 확인·정리 요청</li>
+        </ul>
+        <div class="law"><span>근기법 102</span></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><span class="card-id">PROC-LABI-007</span><span class="stage-tag stage-chaksu" style="font-size:0.6rem">착수</span></div>
+        <h3>진정 답변서 작성·제출</h3>
+        <p>논리적이고 증거에 기반한 답변서 작성으로 근로감독관의 사실관계 판단에 영향</p>
+        <ul>
+          <li>진정 내용 사실관계 확인·정리</li>
+          <li>쟁점별 회사 측 주장과 근거 증빙 매칭</li>
+          <li>답변서 초안 작성(사실 &rarr; 법적 판단 &rarr; 결론)</li>
+          <li>제출 기한 확인 후 기한 내 제출</li>
+        </ul>
+        <div class="law"><span>근기법 102</span><span>행절법 21</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stage: 대응 -->
+  <section class="section" id="daeeung">
+    <h2 class="section-title"><span class="stage-tag stage-daeeung">대응</span> 시정·과태료·재조사</h2>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-head"><span class="card-id">PROC-LABI-008</span><span class="stage-tag stage-daeeung" style="font-size:0.6rem">대응</span></div>
+        <h3>시정지시·개선명령 대응</h3>
+        <p>기한 내 이행·이행계획·이의제기 등 적기 대응으로 불이익 누적 방지</p>
+        <ul>
+          <li>시정지시 내용과 기한 정확히 확인</li>
+          <li>시정 가능 여부 판단(이행 vs 계획 vs 이의)</li>
+          <li>시정 이행 시 증빙자료(결과 보고서) 준비</li>
+          <li>부당 지시 시 소명자료 제출 또는 행정심판 검토</li>
+        </ul>
+        <div class="law"><span>근기법 107</span></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><span class="card-id">PROC-LABI-009</span><span class="stage-tag stage-daeeung" style="font-size:0.6rem">대응</span></div>
+        <h3>과태료·이행강제금 부과 대응</h3>
+        <p>과태료 부과 예정 통지에 대한 의견 제출과 시정 증빙으로 감경·취소 기회 활용</p>
+        <ul>
+          <li>과태료 부과 예정 통지서 내용 확인</li>
+          <li>의견제출 기한 내 소명자료 준비·제출</li>
+          <li>시정 완료 시 증빙 제출로 감경·취소 시도</li>
+          <li>고지서 수령 후 납부 또는 불복 결정</li>
+        </ul>
+        <div class="law"><span>근기법 116</span></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><span class="card-id">PROC-LABI-010</span><span class="stage-tag stage-daeeung" style="font-size:0.6rem">대응</span></div>
+        <h3>추가 조사·재조사 대응</h3>
+        <p>추가 자료 요구에 기한 내 일관된 자료 제출로 조사 장기화와 신뢰 하락 방지</p>
+        <ul>
+          <li>추가 요구 자료의 취지와 범위 파악</li>
+          <li>기한 내 추가 자료 제출</li>
+          <li>재조사 사유 확인 및 대응 방향 설정</li>
+          <li>1차 조사와 중복 여부·신규 쟁점 구분</li>
+        </ul>
+        <div class="law"><span>근기법 102</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stage: 결정 -->
+  <section class="section" id="gyeoljeong">
+    <h2 class="section-title"><span class="stage-tag stage-gyeoljeong">결정</span> 처분·송치</h2>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-head"><span class="card-id">PROC-LABI-011</span><span class="stage-tag stage-gyeoljeong" style="font-size:0.6rem">결정</span></div>
+        <h3>처분 결과 확인·분석</h3>
+        <p>처분 결과 종류(시정·과태료·무혐의·송치)와 법적 효과 분석으로 후속 조치 결정</p>
+        <ul>
+          <li>처분 결과 통지서 즉시 분석</li>
+          <li>시정 완결 시 내역 최종 확인·보관</li>
+          <li>과태료 부과 시 의견제출·행정심판·납부 결정</li>
+          <li>형사 송치 시 변호사 선임·형사 대응 개시</li>
+        </ul>
+        <div class="law"><span>근기법 107</span><span>근기법 109</span><span>근기법 110</span><span>근기법 116</span></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><span class="card-id">PROC-LABI-012</span><span class="stage-tag stage-gyeoljeong" style="font-size:0.6rem">결정</span></div>
+        <h3>형사 송치·수사 대응</h3>
+        <p>송치 통보 시 신속한 변호사 선임과 검찰 수사 대응 전략 수립</p>
+        <ul>
+          <li>송치 통보 수령 즉시 형사 전문 변호사 선임</li>
+          <li>송치 전 의견서 제출 가능 여부 확인</li>
+          <li>검찰 피의자 신문 대비</li>
+          <li>합의·처벌불원서 가능성 검토</li>
+        </ul>
+        <div class="law"><span>근기법 109</span><span>근기법 110</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stage: 사후 -->
+  <section class="section" id="sahu">
+    <h2 class="section-title"><span class="stage-tag stage-sahu">사후</span> 후속 절차·불복·구제</h2>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-head"><span class="card-id">PROC-LABI-013</span><span class="stage-tag stage-sahu" style="font-size:0.6rem">사후</span></div>
+        <h3>부당해고 구제신청(노동위) 연계</h3>
+        <p>노동위원회 부당해고 구제신청의 신청기한과 대응 전략 안내</p>
+        <ul>
+          <li>해고일 확인 &rarr; 3개월(노동위 신청기한) 기산</li>
+          <li>부당해고 여부 판단(사유·절차·양정)</li>
+          <li>구제신청서 작성·제출</li>
+          <li>사용자 측 방어 전략 수립</li>
+        </ul>
+        <div class="law"><span>근기법 23</span><span>근기법 27</span><span>근기법 28</span></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><span class="card-id">PROC-LABI-014</span><span class="stage-tag stage-sahu" style="font-size:0.6rem">사후</span></div>
+        <h3>시정 결과 이행·재발방지</h3>
+        <p>시정 이행 결과 문서화와 재발방지 대책 수립으로 차기 감독 시 유리한 정상 참작</p>
+        <ul>
+          <li>시정지시·과태료 내역 이행 완료</li>
+          <li>이행 증빙자료 보관</li>
+          <li>위반 원인 분석(서류·법령인식·시스템)</li>
+          <li>재발방지 대책 수립·시행(교육·매뉴얼·개선)</li>
+        </ul>
+        <div class="law"><span>근기법 102</span><span>근기법 116</span></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><span class="card-id">PROC-LABI-015</span><span class="stage-tag stage-sahu" style="font-size:0.6rem">사후</span></div>
+        <h3>행정심판·행정소송 불복</h3>
+        <p>과태료·시정명령 등 노동청 처분에 대한 불복 기한과 절차 안내</p>
+        <ul>
+          <li>처분 통지서 수령일 확인 &rarr; 불복 기한 산정</li>
+          <li>행정심판 제기 여부 결정(필수·전략적 선택)</li>
+          <li>집행정지 신청 필요성 검토</li>
+          <li>변호사 선임 여부 결정</li>
+        </ul>
+        <div class="law"><span>행절법 21</span></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><span class="card-id">PROC-LABI-016</span><span class="stage-tag stage-sahu" style="font-size:0.6rem">사후</span></div>
+        <h3>대지급금·체불임금 확인서 활용</h3>
+        <p>체불임금 확인서 기반 대지급금 청구·민사소송 등 권리 구제 수단 안내</p>
+        <ul>
+          <li>체불임금등·사업주 확인서 발급 요청</li>
+          <li>확인서 기재 금액·내역 정확성 확인</li>
+          <li>간이대지급금·도산대지급금 요건 충족 판단</li>
+          <li>민사소송·지급명령 시 확인서 활용 검토</li>
+        </ul>
+        <div class="law"><span>근기법 36</span><span>퇴급법 8</span><span>임금채권법 7</span><span>임금채권법 12</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Verification summary -->
+  <section class="section">
+    <h2 class="section-title">검증 현황</h2>
+    <table style="width:100%; border-collapse: collapse; font-size:0.825rem; background:#fff; border-radius:8px; overflow:hidden; box-shadow:var(--card-shadow);">
+      <thead>
+        <tr style="background:var(--blue); color:#fff;">
+          <th style="padding:10px 12px; text-align:left;">영역</th>
+          <th style="padding:10px 12px; text-align:left;">상태</th>
+          <th style="padding:10px 12px; text-align:left;">비고</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:10px 12px; font-weight:600;">16개 절차 카드</td>
+          <td style="padding:10px 12px; color:var(--green); font-weight:600;">L2 검증 완료</td>
+          <td style="padding:10px 12px; color:var(--gray);">한국법 MCP 조문 전문 확인</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:10px 12px; font-weight:600;">무료 자가진단</td>
+          <td style="padding:10px 12px; color:var(--green); font-weight:600;">L2 검증 완료</td>
+          <td style="padding:10px 12px; color:var(--gray);">일반 정보 수준 진단 도구. 불복 기한 행정심판법·행정소송법 MCP 확인</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:10px 12px; font-weight:600;">등재 조문</td>
+          <td style="padding:10px 12px; color:var(--green); font-weight:600;">29개 조문 확인</td>
+          <td style="padding:10px 12px; color:var(--gray);">근기법 17·23·27·28·36·48·93·101·102·103·107·109·110·116, 퇴급법 8, 임금채권법 7·12, 행절법 21, 질서법 16·17·20, 행심법 27·28, 행소법 20</td>
+        </tr>
+        <tr>
+          <td style="padding:10px 12px; font-weight:600;">참고 사항</td>
+          <td style="padding:10px 12px; color:var(--gray);">행정규칙</td>
+          <td style="padding:10px 12px; color:var(--gray);">근로감독관집무규정(고용노동부 훈령) — 행정규칙으로 법적 구속력 없음, 내부 업무처리 기준으로 참고</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 시행예정 개정 알림 -->
+  <section class="section">
+    <h2 class="section-title">시행예정 개정</h2>
+    <div style="background:#fff4e5; border:1px solid #ffd8a8; border-radius:8px; padding:16px; font-size:0.825rem;">
+      근로기준법: <strong>2026-08-20</strong>(타법개정, MST 283457) · <strong>2026-10-08</strong>(일부개정, MST 285279) · <strong>2026-12-10</strong>(일부개정, MST 286771) · <strong>2027-01-01</strong>(타법개정, MST 284443) 시행예정<br>
+      MCP 확인 결과, 본 상품 카드 내용(근로감독관 권한·과태료·시정지시·형사처벌)에 직접 영향 없는 개정. 체불사업주 제재 강화·출산전후휴가·연차휴가 관련 조문 변경이 있으므로 <strong>2027-01-01 이후 재점검</strong> 권장
+    </div>
+  </section>
+
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div style="display:flex; flex-wrap:wrap; gap:24px; justify-content:center;">
+      <div><strong>제품 코드</strong><br>PROC-LABI</div>
+      <div><strong>트랙</strong><br>기업·인사·법무팀</div>
+      <div><strong>오디언스</strong><br>B2B</div>
+      <div><strong>카드 수</strong><br>16장 (L2 verified)</div>
+    </div>
+    <div class="disclaimer">
+      <strong>면책 고지</strong><br>
+      본 자료는 2026년 7월 30일 기준 일반적 법률 정보이며 특정 사건에 대한 법률 자문이 아닙니다. 법령·실무는 변경될 수 있고 개별 사실관계에 따라 결론이 달라질 수 있습니다. 구체적 사안에 대해서는 노동법 전문 변호사의 조력을 받을 것을 권장합니다.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

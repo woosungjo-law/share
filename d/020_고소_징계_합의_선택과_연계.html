@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>고소·징계·합의 선택과 연계 절차 - 사내조사(비위·내부감사) 절차</title>
+<style>
+:root {
+  --bg: #f7f6f3; --panel: #fff; --panel2: #f1efec;
+  --line: #e4dfda; --line2: #cdc5bd;
+  --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078; --faint: #b0a89f;
+  --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+  --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+  --rH: #c74a3c; --rM: #b45309; --rL: #287a54;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:"Pretendard","Malgun Gothic",sans-serif; font-size:16px; line-height:1.8; color:var(--ink); background:var(--bg); }
+.wrap { max-width:800px; margin:0 auto; padding:40px 20px; }
+.card { background:var(--panel); border-radius:8px; padding:32px 40px; box-shadow:0 1px 4px rgba(0,0,0,0.06); }
+h1 { font-size:26px; font-weight:700; color:var(--accent-d); margin-bottom:24px; padding-bottom:12px; border-bottom:2px solid var(--accent-tint-ln); }
+h2 { font-size:20px; font-weight:600; color:var(--accent); margin:28px 0 12px; }
+h3 { font-size:17px; font-weight:600; color:var(--ink); margin:20px 0 8px; }
+p { margin-bottom:12px; }
+table { width:100%; border-collapse:collapse; margin:12px 0 20px; font-size:14px; }
+th { background:var(--accent-tint); color:var(--accent-d); font-weight:600; text-align:left; padding:8px 12px; border:1px solid var(--line); }
+td { padding:8px 12px; border:1px solid var(--line); }
+tr:nth-child(even) { background:#fafaf8; }
+ul, ol { margin:8px 0 12px 20px; }
+li { margin-bottom:4px; }
+strong { font-weight:600; color:var(--accent-d); }
+code { font-family:"JetBrains Mono","Consolas",monospace; font-size:13px; background:var(--panel2); padding:2px 6px; border-radius:3px; }
+blockquote { border-left:3px solid var(--accent); padding:8px 16px; margin:12px 0; background:var(--accent-tint); border-radius:0 4px 4px 0; font-size:14px; color:var(--ink2); }
+.meta { font-size:13px; color:var(--muted); margin-bottom:20px; padding:12px; background:var(--panel2); border-radius:6px; }
+.footer { margin-top:32px; padding-top:16px; border-top:1px solid var(--line); font-size:13px; color:var(--muted); }
+.web-badge { display:inline-block; background:var(--accent-l); color:#fff; padding:4px 12px; border-radius:4px; font-size:12px; font-weight:600; margin-bottom:16px; }
+</style>
+</head>
+<body>
+<div class="wrap"><div class="card">
+<div class="web-badge">웹게시</div>
+<div class='meta'><span style='margin-right:16px'>ID: PROC-INVS-020</span><span style='margin-right:16px'>단계: 사후</span><span style='margin-right:16px'>검증: L2</span></div>
+<h1>고소·징계·합의 선택과 연계 절차</h1>
+<h2>3줄 요약</h2>
+<ul>
+<li>내부조사 결과에 따른 조치는 징계·형사 고소·민사 청구·합의·무혐의 종결 등 다양하다. 사실과 증거 수준에 맞는 선택지를 제시해야 한다.</li>
+<li>형사 고소는 강력한 수단이지만, 회사 자료가 수사 절차에서 어떻게 다뤄질지와 고소 남용 리스크를 함께 검토해야 한다.</li>
+<li>합의는 피해 회복과 분쟁 종결에 유용하지만, 비밀유지·비방금지·법령상 신고 의무와의 관계를 정리해야 한다.</li>
+</ul>
+<h2>0. 지금 당신의 위치</h2>
+<p>공통 5단계: 사전 → 착수 → 대응 → 결정 → 사후 (현재: <strong>사후</strong>)</p>
+<pre><code class="language-text">경영진 보고(019) -&gt; [고소·징계·합의 선택] -&gt; 재발방지(021)
+</code></pre>
+<h2>1. 이번 단계에서 반드시 할 일</h2>
+<ul>
+<li>[ ] 사실인정·증거 수준에 따른 선택지 목록화</li>
+<li>[ ] 징계 결정 — 취업규칙 근거·양정·절차·소명 기회 확인</li>
+<li>[ ] 형사 고소 검토 — 범죄 성립·증거 충분성·공소시효·회사 자료 노출 리스크</li>
+<li>[ ] 합의 검토 — 피해 회복·비밀 유지·신고 의무·추가 청구 포기 범위</li>
+<li>[ ] 선택한 조치에 대한 법적 근거·절차 문서화</li>
+</ul>
+<h2>2. 준비물</h2>
+<p>| 준비물 | 왜 필요한가 | 준비 상태 |
+|---|---|---|
+| 징계 절차 체크리스트 | 징계위원회·소명 기회·통지 절차 확인 | 미확인 |
+| 형사 고소 검토표 | 범죄 구성 요건·증거·시효·리스크 | 미확인 |
+| 합의서 체크리스트 | 비밀 유지·신고 의무·추가 청구 포기 | 미확인 |</p>
+<h2>3. 작성·제출물</h2>
+<p>| 문서 | 제출처 | 주의점 |
+|---|---|---|
+| 조치 결정서 | 경영진·감사위원회 | 선택 근거·법적 검토 포함 |
+| 징계 의결서(필요 시) | 인사팀·징계위원회 | 절차 정당성 확인 |
+| 합의서(필요 시) | 당사자 | 법령상 신고 의무 유지 조항 필수 |</p>
+<h2>4. 흔한 실수</h2>
+<ul>
+<li>형사 고소를 너무 쉽게 결정 — 증거 부족 시 무고죄·명예훼손 역고소 위험</li>
+<li>징계 절차(소명 기회·징계위원회) 생략 — 부당 징계로 노동위 구제</li>
+<li>합의서에 법령상 신고 의무 면제 조항 누락 — 합의 효력 다툼</li>
+<li>사실 확인되었으나 증거가 약한데 중징계 — 징계 효력 다툼 위험</li>
+</ul>
+<h2>5. 전문가 상담 신호</h2>
+<p><strong>위험도:</strong> 전문가 필요</p>
+<ul>
+<li>형사 고소를 검토하는 경우 — 고소장·증거구성·수사 대응</li>
+<li>임원·고액 자산가 상대 합의 — 조건·비밀 유지·세무 리스크</li>
+<li>노동위원회·검찰·금감원 등 외부 기관 개입이 예상되는 경우</li>
+</ul>
+<h2>6. 인접 절차 연결</h2>
+<ul>
+<li>선행: PROC-INVS-019 · 후속: PROC-INVS-021(재발방지) / PROC-HARS(징계) / PROC-RAID(수사)</li>
+</ul>
+<h2>7. 근거 조문·판례</h2>
+<blockquote>
+<p>⚠️ 검증 전 확정 인용 금지.</p>
+</blockquote>
+<p>| 근거 후보 | 의미 | 검증상태 |
+|---|---|---|
+| 형법 제347조(사기)·제355조(횡령·배임) | 주요 기업 범죄 구성 요건 | 검증대기 |
+| 형법 제156조 | 무고죄(고소 남용 리스크) | 검증대기 |
+| 근로기준법 제23조·제28조 | 징계 정당성·부당 해고 구제 | 검증대기 |</p>
+<h2>8. 다음 단계</h2>
+<p>→ PROC-INVS-021 재발방지·컴플라이언스 개선 연계</p>
+<h2>최신성·면책 고지</h2>
+<p>본 자료는 작성일(2026-07-30) 기준 일반적 법률 정보이며 특정 사건에 대한 자문이 아닙니다.</p>
+<h2>검증 로그</h2>
+<p>| 인용 | 유형 | 웹 화이트리스트 | 한국법 MCP | 판정 |
+|---|---|---|---|---|
+| 형법 제347조·제355조 | 법령 | 대기 | 대기 | 미등재 |
+| 형법 제156조 | 법령 | 대기 | 대기 | 미등재 |
+| 근로기준법 제23조·제28조 | 법령 | 대기 | 대기 | 미등재 |</p>
+
+<div class="footer">
+<p>본 자료는 일반적 법률 정보이며 특정 사건에 대한 자문이 아닙니다. 법령·실무는 변경될 수 있습니다.</p>
+<p>법률 상담: 법무법인(유한) 세종 · 문의: woosungjo@sejong.com</p>
+</div>
+</div></div></body></html>

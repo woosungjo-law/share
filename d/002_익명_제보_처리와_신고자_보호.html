@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>익명 제보 처리와 신고자 보호 - 사내조사(비위·내부감사) 절차</title>
+<style>
+:root {
+  --bg: #f7f6f3; --panel: #fff; --panel2: #f1efec;
+  --line: #e4dfda; --line2: #cdc5bd;
+  --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078; --faint: #b0a89f;
+  --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+  --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+  --rH: #c74a3c; --rM: #b45309; --rL: #287a54;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:"Pretendard","Malgun Gothic",sans-serif; font-size:16px; line-height:1.8; color:var(--ink); background:var(--bg); }
+.wrap { max-width:800px; margin:0 auto; padding:40px 20px; }
+.card { background:var(--panel); border-radius:8px; padding:32px 40px; box-shadow:0 1px 4px rgba(0,0,0,0.06); }
+h1 { font-size:26px; font-weight:700; color:var(--accent-d); margin-bottom:24px; padding-bottom:12px; border-bottom:2px solid var(--accent-tint-ln); }
+h2 { font-size:20px; font-weight:600; color:var(--accent); margin:28px 0 12px; }
+h3 { font-size:17px; font-weight:600; color:var(--ink); margin:20px 0 8px; }
+p { margin-bottom:12px; }
+table { width:100%; border-collapse:collapse; margin:12px 0 20px; font-size:14px; }
+th { background:var(--accent-tint); color:var(--accent-d); font-weight:600; text-align:left; padding:8px 12px; border:1px solid var(--line); }
+td { padding:8px 12px; border:1px solid var(--line); }
+tr:nth-child(even) { background:#fafaf8; }
+ul, ol { margin:8px 0 12px 20px; }
+li { margin-bottom:4px; }
+strong { font-weight:600; color:var(--accent-d); }
+code { font-family:"JetBrains Mono","Consolas",monospace; font-size:13px; background:var(--panel2); padding:2px 6px; border-radius:3px; }
+blockquote { border-left:3px solid var(--accent); padding:8px 16px; margin:12px 0; background:var(--accent-tint); border-radius:0 4px 4px 0; font-size:14px; color:var(--ink2); }
+.meta { font-size:13px; color:var(--muted); margin-bottom:20px; padding:12px; background:var(--panel2); border-radius:6px; }
+.footer { margin-top:32px; padding-top:16px; border-top:1px solid var(--line); font-size:13px; color:var(--muted); }
+.web-badge { display:inline-block; background:var(--accent-l); color:#fff; padding:4px 12px; border-radius:4px; font-size:12px; font-weight:600; margin-bottom:16px; }
+</style>
+</head>
+<body>
+<div class="wrap"><div class="card">
+<div class="web-badge">웹게시</div>
+<div class='meta'><span style='margin-right:16px'>ID: PROC-INVS-002</span><span style='margin-right:16px'>단계: 사전</span><span style='margin-right:16px'>검증: L2</span></div>
+<h1>익명 제보 처리와 신고자 보호</h1>
+<h2>3줄 요약</h2>
+<ul>
+<li>익명 제보의 진짜 함정은 내용 부실이 아니라, 법무팀이 혼자 그 정보를 들고 있는 시간이다.</li>
+<li>접수 즉시 감사위원회에 보고하고, 예비조사(Preliminary Inquiry) 단계를 통해 객관적 사실 확인부터 해야 한다.</li>
+<li>신고자 신원 추적은 절대 금지 — 보호 원칙을 피조사자에게 명확히 고지하고 통화 내용을 기록한다.</li>
+</ul>
+<h2>0. 지금 당신의 위치</h2>
+<p>공통 5단계: 사전 → 착수 → 대응 → 결정 → 사후 (현재: <strong>사전</strong>)</p>
+<pre><code class="language-text">접수·개시(001) -&gt; [익명 제보 처리] -&gt; 증거보전(004)
+</code></pre>
+<h2>1. 이번 단계에서 반드시 할 일</h2>
+<ul>
+<li>[ ] 제보 내용을 3단계(구체형·반구체형·추상형)로 분류</li>
+<li>[ ] 익명 제보 접수 즉시 법무팀장·감사위원회에 서면 보고</li>
+<li>[ ] IT팀·인사팀에 신고자 신원 추적 금지 지시 공문 발송</li>
+<li>[ ] 예비 조사(Preliminary Inquiry) 개시 — 피조사자 통보 없이 객관적 자료만 검토</li>
+</ul>
+<h2>2. 준비물</h2>
+<p>| 준비물 | 왜 필요한가 | 준비 상태 |
+|---|---|---|
+| 익명 제보 3단계 판정 기준표 | 제보 유형별 처리 방향 결정 | 미확인 |
+| 신원 추적 금지 공문 양식 | IT·인사팀에 즉시 하달 | 미확인 |</p>
+<h2>3. 작성·제출물</h2>
+<p>| 문서 | 제출처 | 주의점 |
+|---|---|---|
+| 익명 제보 접수 보고서 | 법무팀장·감사위원회 | 제보 내용 원문 보존, 해석·판단 분리 기록 |
+| IT팀 신원 추적 금지 지시 | IT팀장 | &quot;보복 행위로 간주됨&quot; 문구 포함 |</p>
+<h2>4. 흔한 실수</h2>
+<ul>
+<li>익명이란 이유로 제보를 무시 — 법적 조사 의무 회피로 해석될 위험</li>
+<li>피조사자(특히 임원)의 신원 확인 요구를 수용 — 보복 행위로 전환 가능</li>
+<li>혼자 고민하다 보고 시점을 놓침 — 결정 지연이 은폐로 해석됨</li>
+</ul>
+<h2>5. 전문가 상담 신호</h2>
+<p><strong>위험도:</strong> 상담 권장</p>
+<ul>
+<li>경영진이 피조사자 편에서 압박을 넣는 경우</li>
+<li>익명 제보가 다수 또는 조직적 비위를 지목하는 경우</li>
+</ul>
+<h2>6. 인접 절차 연결</h2>
+<ul>
+<li>선행: PROC-INVS-001 · 후속: PROC-INVS-004(증거보전)</li>
+<li>연계: PROC-HARS 징계</li>
+</ul>
+<h2>7. 근거 조문·판례</h2>
+<blockquote>
+<p>⚠️ 검증 전 확정 인용 금지.</p>
+</blockquote>
+<p>| 근거 후보 | 의미 | 검증상태 |
+|---|---|---|
+| 부패방지법 제2조·제62조 | 내부고발자(공익신고자) 보호 및 보복 금지 | 검증대기 |
+| 공익신고자 보호법 | 공익신고자 신원 보호 및 불이익 금지 | 검증대기 |</p>
+<h2>8. 다음 단계</h2>
+<p>→ PROC-INVS-004 증거보전 긴급조치와 법적 홀드</p>
+<h2>최신성·면책 고지</h2>
+<p>본 자료는 작성일(2026-07-30) 기준 일반적 법률 정보이며 특정 사건에 대한 자문이 아닙니다.</p>
+<h2>검증 로그</h2>
+<p>| 인용 | 유형 | 웹 화이트리스트 | 한국법 MCP | 판정 |
+|---|---|---|---|---|
+| 부패방지법 | 법령 | 대기 | 대기 | 미등재 |
+| 공익신고자 보호법 | 법령 | 대기 | 대기 | 미등재 |</p>
+
+<div class="footer">
+<p>본 자료는 일반적 법률 정보이며 특정 사건에 대한 자문이 아닙니다. 법령·실무는 변경될 수 있습니다.</p>
+<p>법률 상담: 법무법인(유한) 세종 · 문의: woosungjo@sejong.com</p>
+</div>
+</div></div></body></html>

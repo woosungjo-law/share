@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>조사 기록 보존·폐기와 사후 모니터링 - 사내조사(비위·내부감사) 절차</title>
+<style>
+:root {
+  --bg: #f7f6f3; --panel: #fff; --panel2: #f1efec;
+  --line: #e4dfda; --line2: #cdc5bd;
+  --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078; --faint: #b0a89f;
+  --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+  --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+  --rH: #c74a3c; --rM: #b45309; --rL: #287a54;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:"Pretendard","Malgun Gothic",sans-serif; font-size:16px; line-height:1.8; color:var(--ink); background:var(--bg); }
+.wrap { max-width:800px; margin:0 auto; padding:40px 20px; }
+.card { background:var(--panel); border-radius:8px; padding:32px 40px; box-shadow:0 1px 4px rgba(0,0,0,0.06); }
+h1 { font-size:26px; font-weight:700; color:var(--accent-d); margin-bottom:24px; padding-bottom:12px; border-bottom:2px solid var(--accent-tint-ln); }
+h2 { font-size:20px; font-weight:600; color:var(--accent); margin:28px 0 12px; }
+h3 { font-size:17px; font-weight:600; color:var(--ink); margin:20px 0 8px; }
+p { margin-bottom:12px; }
+table { width:100%; border-collapse:collapse; margin:12px 0 20px; font-size:14px; }
+th { background:var(--accent-tint); color:var(--accent-d); font-weight:600; text-align:left; padding:8px 12px; border:1px solid var(--line); }
+td { padding:8px 12px; border:1px solid var(--line); }
+tr:nth-child(even) { background:#fafaf8; }
+ul, ol { margin:8px 0 12px 20px; }
+li { margin-bottom:4px; }
+strong { font-weight:600; color:var(--accent-d); }
+code { font-family:"JetBrains Mono","Consolas",monospace; font-size:13px; background:var(--panel2); padding:2px 6px; border-radius:3px; }
+blockquote { border-left:3px solid var(--accent); padding:8px 16px; margin:12px 0; background:var(--accent-tint); border-radius:0 4px 4px 0; font-size:14px; color:var(--ink2); }
+.meta { font-size:13px; color:var(--muted); margin-bottom:20px; padding:12px; background:var(--panel2); border-radius:6px; }
+.footer { margin-top:32px; padding-top:16px; border-top:1px solid var(--line); font-size:13px; color:var(--muted); }
+.web-badge { display:inline-block; background:var(--accent-l); color:#fff; padding:4px 12px; border-radius:4px; font-size:12px; font-weight:600; margin-bottom:16px; }
+</style>
+</head>
+<body>
+<div class="wrap"><div class="card">
+<div class="web-badge">웹게시</div>
+<div class='meta'><span style='margin-right:16px'>ID: PROC-INVS-022</span><span style='margin-right:16px'>단계: 사후</span><span style='margin-right:16px'>검증: L2</span></div>
+<h1>조사 기록 보존·폐기와 사후 모니터링</h1>
+<h2>3줄 요약</h2>
+<ul>
+<li>조사 기록은 법적 분쟁·규제 대응·감사에 대비해 체계적으로 보존하되, 불필요한 보관은 리스크가 될 수 있다.</li>
+<li>민감 개인정보가 포함된 기록은 조사 목적 달성 후 지체 없이 폐기하고, 폐기 확인서를 작성한다.</li>
+<li>재발방지 조치의 이행 여부를 정기적으로 모니터링하고, 유사 사건 조기 탐지 체계를 가동한다.</li>
+</ul>
+<h2>0. 지금 당신의 위치</h2>
+<p>공통 5단계: 사전 → 착수 → 대응 → 결정 → 사후 (현재: <strong>사후</strong>)</p>
+<pre><code class="language-text">재발방지(021) -&gt; [기록 보존·폐기·모니터링] -&gt; (종료)
+</code></pre>
+<h2>1. 이번 단계에서 반드시 할 일</h2>
+<ul>
+<li>[ ] 조사 기록 분류 — 영구 보존·기간 보존·즉시 폐기 대상 구분</li>
+<li>[ ] 민감 개인정보 기록 폐기(조사 목적 달성 후 지체 없이)</li>
+<li>[ ] 폐기 확인서 작성(일시·담당자·폐기 대상·방법)</li>
+<li>[ ] 재발방지 조치 이행 현황 점검 일정 수립(3개월·6개월·12개월)</li>
+<li>[ ] 유사 사건 조기 탐지 체계(트리거 기준) 점검</li>
+</ul>
+<h2>2. 준비물</h2>
+<p>| 준비물 | 왜 필요한가 | 준비 상태 |
+|---|---|---|
+| 기록 보존·폐기 기준표 | 보존 기간 및 폐기 대상 분류 | 미확인 |
+| 폐기 확인서 양식 | 폐기 일시·담당자·방법 기록 | 미확인 |
+| 사후 모니터링 점검표 | 재발방지 이행 여부 추적 | 미확인 |</p>
+<h2>3. 작성·제출물</h2>
+<p>| 문서 | 제출처 | 주의점 |
+|---|---|---|
+| 기록 보존·폐기 계획서 | 법무팀(내부) | 개인정보 보호법 준수 |
+| 폐기 확인서 | 법무팀(내부 보관) | 폐기 증명·추후 분쟁 대비 |
+| 사후 모니터링 보고서(정기) | 감사위원회·컴플라이언스 | 재발방지 이행률·조기 탐지 현황 |</p>
+<h2>4. 흔한 실수</h2>
+<ul>
+<li>조사 종료 후 모든 자료를 무기한 보관 — 개인정보 보호법 위반·정보 유출 리스크</li>
+<li>민감 정보 폐기 없이 그대로 보관 — 유출 시 손해배상 책임 확대</li>
+<li>재발방지 계획을 수립하고 이행 점검을 하지 않음 — 형식적 계획으로 전락</li>
+<li>사후 모니터링 체계 미구축 — 유사 사건 재발 시 조기 탐지 불가</li>
+</ul>
+<h2>5. 전문가 상담 신호</h2>
+<p><strong>위험도:</strong> 혼자 가능</p>
+<ul>
+<li>조사 기록에 형사 처벌·대규모 소송 관련 정보가 포함된 경우</li>
+<li>외부 규제 기관의 기록 보존 명령이 있는 경우</li>
+</ul>
+<h2>6. 인접 절차 연결</h2>
+<ul>
+<li>선행: PROC-INVS-021 · 후속: (종료) → 필요 시 재조사(PROC-INVS-001)</li>
+</ul>
+<h2>7. 근거 조문·판례</h2>
+<blockquote>
+<p>⚠️ 검증 전 확정 인용 금지.</p>
+</blockquote>
+<p>| 근거 후보 | 의미 | 검증상태 |
+|---|---|---|
+| 개인정보 보호법 제21조 | 개인정보 파기 의무(목적 달성 후) | 검증대기 |
+| 개인정보 보호법 제39조의2 | 손해배상 책임(정보 유출 시) | 검증대기 |</p>
+<h2>8. 다음 단계</h2>
+<p>→ (종료) 추가 제보·징후 발생 시 PROC-INVS-001(제보 접수)로</p>
+<h2>최신성·면책 고지</h2>
+<p>본 자료는 작성일(2026-07-30) 기준 일반적 법률 정보이며 특정 사건에 대한 자문이 아닙니다.</p>
+<h2>검증 로그</h2>
+<p>| 인용 | 유형 | 웹 화이트리스트 | 한국법 MCP | 판정 |
+|---|---|---|---|---|
+| 개인정보 보호법 제21조 | 법령 | 대기 | 대기 | 미등재 |
+| 개인정보 보호법 제39조의2 | 법령 | 대기 | 대기 | 미등재 |</p>
+
+<div class="footer">
+<p>본 자료는 일반적 법률 정보이며 특정 사건에 대한 자문이 아닙니다. 법령·실무는 변경될 수 있습니다.</p>
+<p>법률 상담: 법무법인(유한) 세종 · 문의: woosungjo@sejong.com</p>
+</div>
+</div></div></body></html>

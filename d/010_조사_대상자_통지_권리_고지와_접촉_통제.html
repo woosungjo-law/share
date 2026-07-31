@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>조사 대상자 통지·권리 고지와 접촉 통제 - 사내조사(비위·내부감사) 절차</title>
+<style>
+:root {
+  --bg: #f7f6f3; --panel: #fff; --panel2: #f1efec;
+  --line: #e4dfda; --line2: #cdc5bd;
+  --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078; --faint: #b0a89f;
+  --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+  --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+  --rH: #c74a3c; --rM: #b45309; --rL: #287a54;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:"Pretendard","Malgun Gothic",sans-serif; font-size:16px; line-height:1.8; color:var(--ink); background:var(--bg); }
+.wrap { max-width:800px; margin:0 auto; padding:40px 20px; }
+.card { background:var(--panel); border-radius:8px; padding:32px 40px; box-shadow:0 1px 4px rgba(0,0,0,0.06); }
+h1 { font-size:26px; font-weight:700; color:var(--accent-d); margin-bottom:24px; padding-bottom:12px; border-bottom:2px solid var(--accent-tint-ln); }
+h2 { font-size:20px; font-weight:600; color:var(--accent); margin:28px 0 12px; }
+h3 { font-size:17px; font-weight:600; color:var(--ink); margin:20px 0 8px; }
+p { margin-bottom:12px; }
+table { width:100%; border-collapse:collapse; margin:12px 0 20px; font-size:14px; }
+th { background:var(--accent-tint); color:var(--accent-d); font-weight:600; text-align:left; padding:8px 12px; border:1px solid var(--line); }
+td { padding:8px 12px; border:1px solid var(--line); }
+tr:nth-child(even) { background:#fafaf8; }
+ul, ol { margin:8px 0 12px 20px; }
+li { margin-bottom:4px; }
+strong { font-weight:600; color:var(--accent-d); }
+code { font-family:"JetBrains Mono","Consolas",monospace; font-size:13px; background:var(--panel2); padding:2px 6px; border-radius:3px; }
+blockquote { border-left:3px solid var(--accent); padding:8px 16px; margin:12px 0; background:var(--accent-tint); border-radius:0 4px 4px 0; font-size:14px; color:var(--ink2); }
+.meta { font-size:13px; color:var(--muted); margin-bottom:20px; padding:12px; background:var(--panel2); border-radius:6px; }
+.footer { margin-top:32px; padding-top:16px; border-top:1px solid var(--line); font-size:13px; color:var(--muted); }
+.web-badge { display:inline-block; background:var(--accent-l); color:#fff; padding:4px 12px; border-radius:4px; font-size:12px; font-weight:600; margin-bottom:16px; }
+</style>
+</head>
+<body>
+<div class="wrap"><div class="card">
+<div class="web-badge">웹게시</div>
+<div class='meta'><span style='margin-right:16px'>ID: PROC-INVS-010</span><span style='margin-right:16px'>단계: 착수</span><span style='margin-right:16px'>검증: L2</span></div>
+<h1>조사 대상자 통지·권리 고지와 접촉 통제</h1>
+<h2>3줄 요약</h2>
+<ul>
+<li>조사 대상자에게는 조사 목적, 절차, 권리(진술 거부권·변호인 참여권·외부 전문가 동석권)를 사전에 서면 고지해야 한다.</li>
+<li>임원 조사 시 '비공식 접촉 금지 통지'를 동봉하고, 모든 접촉 시도는 조사 방해 행위로 기록된다는 점을 명확히 한다.</li>
+<li>피조사자 임원의 전화·면담 요청은 30초 이내에 차단하고, 접촉 시도 일지를 작성해 감사위원회에 즉시 보고한다.</li>
+</ul>
+<h2>0. 지금 당신의 위치</h2>
+<p>공통 5단계: 사전 → 착수 → 대응 → 결정 → 사후 (현재: <strong>착수</strong>)</p>
+<pre><code class="language-text">외부 전문가(009) -&gt; [대상자 통지·접촉 통제] -&gt; 면담 실행(011)
+</code></pre>
+<h2>1. 이번 단계에서 반드시 할 일</h2>
+<ul>
+<li>[ ] 조사 대상자에게 서면 통지 — 조사 목적·절차·권리 고지</li>
+<li>[ ] 비공식 접촉 금지 통지서 발송 — 임원 대상 조사 시 동봉 필수</li>
+<li>[ ] IT팀·인사팀에 대상자 접근 권한 차단 지시(기밀 자료)</li>
+<li>[ ] 대상자 전화·면담 요청 대응 스크립트 준비(30초 원칙)</li>
+</ul>
+<h2>2. 준비물</h2>
+<p>| 준비물 | 왜 필요한가 | 준비 상태 |
+|---|---|---|
+| 조사 대상자 권리 고지서 양식 | 진술 거부권·변호인 참여권 안내 | 미확인 |
+| 비공식 접촉 금지 통지문 | 임원 조사 시 동봉 | 미확인 |
+| 접촉 시도 일지 양식 | 비공식 접촉 발생 시 기록 | 미확인 |</p>
+<h2>3. 작성·제출물</h2>
+<p>| 문서 | 제출처 | 주의점 |
+|---|---|---|
+| 조사 착수 통지서 | 조사 대상자 | 권리 고지를 반드시 포함 |
+| 비공식 접촉 금지 통지 | 피조사자 임원 | 접촉 시도=조사 방해 행위임 명시 |
+| 접촉 시도 일지 | 감사위원회(보고용) | 일시·내용·대응 기록 |</p>
+<h2>4. 흔한 실수</h2>
+<ul>
+<li>권리 고지 없이 면담 시작 — 절차 하자, 진술 증거능력 약화</li>
+<li>피조사자 임원의 전화를 받고 장시간 대응 — 비공식 접촉으로 조사 독립성 훼손</li>
+<li>CEO 등의 면담 요청을 단독으로 수용 — 감사위원회 승인 없이 조사 중립성 위험</li>
+</ul>
+<h2>5. 전문가 상담 신호</h2>
+<p><strong>위험도:</strong> 상담 권장</p>
+<ul>
+<li>피조사자가 임원 또는 CEO 측근으로 비공식 접촉 압박이 예상되는 경우</li>
+<li>다수의 조사 대상자가 있는 복수 면담 설계가 필요한 경우</li>
+</ul>
+<h2>6. 인접 절차 연결</h2>
+<ul>
+<li>선행: PROC-INVS-009 · 후속: PROC-INVS-011(면담 실행)</li>
+</ul>
+<h2>7. 근거 조문·판례</h2>
+<blockquote>
+<p>⚠️ 검증 전 확정 인용 금지.</p>
+</blockquote>
+<p>| 근거 후보 | 의미 | 검증상태 |
+|---|---|---|
+| 헌법 제12조 | 진술 거부권(형사 절차상) — 내부조사 참고 | 검증대기 |
+| 근로기준법 제76조의3 | 직장 내 괴롭힘 조사 시 당사자 의견 진술 기회 | 검증대기 |</p>
+<h2>8. 다음 단계</h2>
+<p>→ PROC-INVS-011 진술 청취·면담 실행 기술</p>
+<h2>최신성·면책 고지</h2>
+<p>본 자료는 작성일(2026-07-30) 기준 일반적 법률 정보이며 특정 사건에 대한 자문이 아닙니다.</p>
+<h2>검증 로그</h2>
+<p>| 인용 | 유형 | 웹 화이트리스트 | 한국법 MCP | 판정 |
+|---|---|---|---|---|
+| 헌법 제12조 | 법령 | 대기 | 대기 | 미등재 |
+| 근로기준법 제76조의3 | 법령 | 대기 | 대기 | 미등재 |</p>
+
+<div class="footer">
+<p>본 자료는 일반적 법률 정보이며 특정 사건에 대한 자문이 아닙니다. 법령·실무는 변경될 수 있습니다.</p>
+<p>법률 상담: 법무법인(유한) 세종 · 문의: woosungjo@sejong.com</p>
+</div>
+</div></div></body></html>

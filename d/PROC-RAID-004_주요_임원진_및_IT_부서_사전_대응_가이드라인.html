@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>?愿?낅Т 移대뱶 - 압수수색·현관출동 대응 절차</title>
+<style>@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+:root { --bg:#f7f6f3; --panel:#fff; --panel2:#f1efec; --line:#e4dfda; --line2:#cdc5bd; --ink:#1a1715; --ink2:#4d4742; --muted:#8a8078; --faint:#b0a89f; --accent:#1e3a5f; --accent-d:#13243c; --accent-l:#2c5691; --accent-tint:#eef3f9; --accent-tint-ln:#d6e0ed; --rH:#c74a3c; --rM:#b45309; --rL:#287a54; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:"Pretendard",sans-serif; font-size:16px; line-height:1.8; color:var(--ink); background:var(--bg); }
+.wrap { max-width:800px; margin:0 auto; padding:40px 20px; }
+.card { background:var(--panel); border-radius:8px; padding:32px 40px; box-shadow:0 1px 4px rgba(0,0,0,0.06); }
+h1 { font-size:26px; font-weight:700; color:var(--accent-d); margin-bottom:24px; padding-bottom:12px; border-bottom:2px solid var(--accent-tint-ln); }
+h2 { font-size:20px; font-weight:600; color:var(--accent); margin:28px 0 12px; }
+h3 { font-size:17px; font-weight:600; color:var(--ink); margin:20px 0 8px; }
+p { margin-bottom:12px; }
+table { width:100%; border-collapse:collapse; margin:12px 0 20px; font-size:14px; }
+th { background:var(--accent-tint); color:var(--accent-d); font-weight:600; text-align:left; padding:8px 12px; border:1px solid var(--line); }
+td { padding:8px 12px; border:1px solid var(--line); }
+tr:nth-child(even) { background:#fafaf8; }
+ul, ol { margin:8px 0 12px 20px; }
+li { margin-bottom:4px; }
+strong { font-weight:600; color:var(--accent-d); }
+code { font-family:"JetBrains Mono","Consolas",monospace; font-size:13px; background:var(--panel2); padding:2px 6px; border-radius:3px; }
+blockquote { border-left:3px solid var(--accent); padding:8px 16px; margin:12px 0; background:var(--accent-tint); border-radius:0 4px 4px 0; font-size:14px; color:var(--ink2); }
+.meta { font-size:13px; color:var(--muted); margin-bottom:20px; padding:12px; background:var(--panel2); border-radius:6px; }
+.footer { margin-top:32px; padding-top:16px; border-top:1px solid var(--line); font-size:13px; color:var(--muted); }
+.web-badge { display:inline-block; background:var(--accent-l); color:#fff; padding:4px 12px; border-radius:4px; font-size:12px; font-weight:600; margin-bottom:16px; }</style>
+</head>
+<body>
+<div class="wrap"><div class="card">
+<div class="web-badge">?밴쾶??/div>
+
+<hr>
+<p>type: card</p>
+<p>title: 주요 임원진 및 IT 부서 사전 대응 가이드라인</p>
+<p>product_code: PROC-RAID-004</p>
+<p>stage: 사전</p>
+<p>product_kind: dashboard</p>
+<p>price_krw: 0</p>
+<p>public_status: noindex</p>
+<p>law_basis: 형소법 제200조의3(긴급체포), 제200조의4(체포영장청구기간), 제118조(영장제시)</p>
+<p>verification_level: L2</p>
+<p>status: verified</p>
+<p>created: 2026-07-30</p>
+<hr>
+<h1>PROC-RAID-004 | 주요 임원진 및 IT 부서 사전 대응 가이드라인</h1>
+<h2>3줄 요약</h2>
+<p>- 임원은 압수수색 현장에서 진술거부권·변호인 조력권·영장 사본 교부 요구권이 있으며, 긴급체포 요건(형소법 제200조의3)에 해당하지 않으면 현장 체포는 위법할 가능성이 높다.</p>
+<p>- IT 부서는 수사관의 '협조 요청'과 '영장 집행'을 구분해 응해야 하며, 시스템 접근 권한·서버 물리적 위치·암호화 키를 사전에 정리해 둔다.</p>
+<p>- 임원과 IT 부서는 사전에 역할 분담 훈련을 실시하고, 현장에서 변호사 도착 전까지 취할 수 있는 합법적 협조 범위를 숙지해야 한다.</p>
+<h2>0. 지금 당신의 위치</h2>
+<p>공통 5단계: 사전 → 착수 → 대응 → 결정 → 사후</p>
+<pre><code>
+003(보안점검) -&gt; [004(임원가이드)] -&gt; 005(현장대응) -&gt; 006(압수목록확인)
+</code></pre>
+<h2>1. 이번 단계에서 반드시 할 일</h2>
+<h3>(임원진)</h3>
+<p>- [ ] 진술거부권 행사 가이드 숙지 — "변호사 도착 후 진술하겠습니다" 한마면 충분, 추가 발언 금지</p>
+<p>- [ ] 영장 사본 교부 요구권(형소법 제118조 단서) 확인 — 피고인(임원 개인)에 대해 사본 교부 의무 있음</p>
+<p>- [ ] 긴급체포 요건(형소법 제200조의3: 사형·무기·장기3년 이상 해당 + 증거인멸·도망 우려)을 숙지하고, 현장에서 자신이 체포될 상황인지 객관적 판단 기준 확보</p>
+<p>- [ ] 압수수색 당일의 개인 일정 조정 — 법인카드 사용·출장·회의를 최소화해 수사 대응 가용성 확보</p>
+<p>- [ ] 개인 스마트폰·노트북에 저장된 업무 자료 현황 점검 및 필요시 법무팀 사전 검토</p>
+<p>- [ ] 배우자·가족 대상 사전 설명 — 자택 압수수색 가능성과 이때 취할 태도 안내</p>
+<h3>(IT 부서)</h3>
+<p>- [ ] 서버실·전산실 물리적 접근 통제 체계 점검 — 수사관이 서버실까지 진입할 경우 동행 기준 마련</p>
+<p>- [ ] 암호화 키·비밀번호 관리자(Admin)의 긴급 연락 체계 확보 — 수사 당일 부재 시 서버 접근 불가 상황 방지</p>
+<p>- [ ] 데이터 분류 체계(업무 데이터 / 개인 데이터 / 법률특권 데이터)를 사전에 라벨링하고 법률특권 데이터(변호인-의뢰인 커뮤니케이션)는 별도 암호화 보관</p>
+<p>- [ ] 수사관이 요청할 가능성이 높은 로그(이메일 헤더·접속 IP·파일 다운로드 이력)의 조회·추출 절차 사전 테스트</p>
+<p>- [ ] 외부 클라우드 서비스 계정(AWS·Azure·Google Workspace)의 법적 대응 창구(Security Team / Legal Hold) 사전 등록</p>
+<h2>2. 준비물</h2>
+<h2>3. 작성·제출물</h2>
+<h2>4. 흔한 실수</h2>
+<p>- <strong>실수</strong>: 임원이 '도와주는 게 당연하다'는 생각으로 수사관 질문에 자발적으로 답변 — 변호사 부재 시 한마디가 전체 사건의 결정적 자백 증거가 될 수 있음</p>
+<p>- <strong>실수</strong>: IT 관리자가 수사관 요청으로 서버 관리자 비밀번호를 즉시 제공 — 영장 범위와 무관한 시스템까지 접근 허용 가능성, 반드시 변호사 지시 대기</p>
+<p>- <strong>실수</strong>: 임원이 현장에서 긴급체포되자 당황해 '검사님만 봐주세요' 식으로 회유 발언 — 이후 자백의 임의성 다툼에서 불리한 정황</p>
+<p>- <strong>실수</strong>: 서버 물리 이전·데이터 이전 작업을 수사 임박 시점에 진행 — 수사기관이 증거인멸 의도를 의심해 체포영장 청구 사유로 삼을 수 있음</p>
+<p>- <strong>실수</strong>: 법률특권 자료를 일반 서버 폴더에 별도 구분 없이 보관 — 압수 시 변호인-의뢰인 대화 내용이 수사기관에 노출되어 특권 포기로 간주될 위험</p>
+<h2>5. 전문가 상담 신호</h2>
+<p><strong>위험도:</strong> 상담 권장</p>
+<p>- 임원 중 1명 이상이 영장의 피의자로 적시된 경우 — 개인별 변호인 선임 필요성 검토</p>
+<p>- IT 시스템에 법률특권 자료와 일반 업무 자료가 혼재되어 분리가 어려운 경우</p>
+<p><strong>위험도:</strong> 전문가 필요</p>
+<p>- 해외 서버(역외)에 데이터가 저장되어 있고, 한미·한중 형사사법공조조약의 적용이 의심되는 경우</p>
+<p>- 임원이 과거 비슷한 수사에서 진술한 전력이 있고, 그 진술과 이번 영장 범죄사실이 연결되는 경우</p>
+<h2>6. 인접 절차 연결</h2>
+<p>- 선행: PROC-RAID-003(보안점검) — IT 부서 사전 점검 결과를 임원 가이드에 통합</p>
+<p>- 후속: PROC-RAID-005(현장대응) — 임원·IT의 역할을 구체적 현장 시나리오로 확장</p>
+<h2>7. 근거 조문·판례</h2>
+<h2>8. 다음 단계</h2>
+<p>PROC-RAID-005: 압수수색 현장 초동 대응 시나리오</p>
+<h2>최신성·면책 고지</h2>
+<p>본 자료는 작성일 기준 일반적 법률 정보이며 특정 사건에 대한 자문이 아닙니다. 법령·실무는 변경될 수 있습니다. 구체적 상황에 맞춘 법률 자문이 필요하다면 변호사에게 문의하십시오.</p>
+<h2>검증 로그</h2>
+
+<div class="footer">
+<p>蹂??먮즺???쇰컲??踰뺣쪧 ?뺣낫?대ŉ ?뱀젙 ?ш굔??????먮Ц???꾨떃?덈떎. 踰뺣졊쨌?ㅻТ??蹂寃쎈맆 ???덉뒿?덈떎.</p>
+<p>踰뺣쪧 ?곷떞: 踰뺣Т踰뺤씤(?좏븳) ?몄쥌 쨌 臾몄쓽: woosungjo@sejong.com</p>
+</div>
+</div></div></body></html>
