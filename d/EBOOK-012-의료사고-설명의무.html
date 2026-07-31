@@ -2,26 +2,397 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
+<meta name="robots" content="noindex">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex,nofollow">
-<title>의료사고 설명의무·조정·손해배상 3단계 가이드 | 머스트노우</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;900&display=swap" rel="stylesheet">
-<style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}body{font-family:'Noto Sans KR',sans-serif;font-size:14.5px;line-height:1.75;color:#111827;background:#f0f2f5}.topbar{position:sticky;top:0;height:4px;background:linear-gradient(90deg,#0d9488,#14b8a6);z-index:100}.header-wrap{background:#fff;border-bottom:1px solid #e5e7eb;padding:12px 24px;display:flex;align-items:center;gap:12px;max-width:1000px;margin:0 auto}.header-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#0d9488,#14b8a6);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:16px}.header-name{font-weight:600;font-size:14px;color:#0d9488}.header-badge{background:#e5e7eb;color:#6b7280;font-size:11px;padding:2px 8px;border-radius:4px}.hero{background:linear-gradient(135deg,#0d9488,#14b8a6);color:#fff;padding:48px 24px 64px;text-align:center}.hero-inner{max-width:720px;margin:0 auto}.hero h1{font-size:28px;font-weight:900;line-height:1.3;margin-bottom:12px}.hero .tag{display:inline-block;background:rgba(255,255,255,.2);font-size:12px;padding:4px 12px;border-radius:4px;margin-bottom:12px}.hero .meta{font-size:13px;opacity:.85}.container{max-width:800px;margin:0 auto;padding:0 20px}.tldr{background:#fff;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.08);padding:28px 32px;margin-top:-28px;z-index:10;margin-bottom:32px}.tldr h2{font-size:16px;font-weight:700;color:#0d9488;margin-bottom:12px}.tldr li{list-style:none;padding:6px 0;font-size:14px}.tldr li::before{content:"▸ ";color:#14b8a6;font-weight:700}.card{background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.06);border:1px solid #e5e7eb;padding:28px 32px;margin-bottom:24px}.section-number{display:inline-block;background:#14b8a6;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:4px;margin-bottom:12px}.card h2{font-size:22px;font-weight:700;color:#0d9488;margin-bottom:16px}.card h3{font-size:17px;font-weight:700;color:#0d9488;margin:20px 0 10px}.card p{margin-bottom:12px}.card ul,.card ol{margin:8px 0 12px 20px}.card li{margin-bottom:6px}.eye-catcher{background:#f0fdfa;border-left:4px solid #14b8a6;padding:16px 20px;border-radius:0 8px 8px 0;margin:16px 0}.info-card{background:#f0fdfa;border-radius:8px;padding:16px 20px;margin:16px 0}.info-card strong{color:#0d9488}.warning-box{background:#fef3c7;border:1px solid #fcd34d;border-radius:8px;padding:16px 20px;margin:16px 0}.table-wrap{overflow-x:auto;margin:16px 0}.table-wrap table{width:100%;border-collapse:collapse;font-size:13.5px}.table-wrap th{background:#f3f4f6;color:#0d9488;font-weight:600;padding:10px 12px;text-align:left;border-bottom:2px solid #d1d5db}.table-wrap td{padding:10px 12px;border-bottom:1px solid #e5e7eb}.qa-item{border-bottom:1px solid #e5e7eb;padding:16px 0}.qa-item:last-child{border-bottom:none}.qa-q{font-weight:700;color:#0d9488;margin-bottom:6px}.qa-q::before{content:"Q. ";color:#14b8a6}.qa-a{color:#374151}.qa-a::before{content:"A. ";font-weight:600;color:#6b7280}.footer{text-align:center;color:#6b7280;font-size:12px;padding:32px 20px}.footer a{color:#14b8a6;text-decoration:none}@media(max-width:640px){.card{padding:20px 16px}.tldr{padding:20px 16px}.hero h1{font-size:22px}}</style>
+<title>의료과실과 설명의무 위반 — 수술 결과와 병원 설명의무 위반을 구분하라 | 리걸리스크 전자책</title>
+<style>
+  :root {
+    --primary: #c62828;
+    --primary-dark: #8e0000;
+    --primary-light: #ff5f52;
+    --accent: #ffebee;
+    --bg: #ffffff;
+    --bg-alt: #fafafa;
+    --text: #212121;
+    --text-muted: #616161;
+    --border: #e0e0e0;
+    --success: #2e7d32;
+    --warning: #e65100;
+    --danger-bg: #fff3e0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans KR', -apple-system, 'Segoe UI', sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.7;
+    padding: 0;
+  }
+  .header {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    color: #fff;
+    padding: 48px 24px;
+    text-align: center;
+  }
+  .header h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 12px; line-height: 1.3; }
+  .header .subtitle { font-size: 1em; opacity: 0.9; max-width: 640px; margin: 0 auto; }
+  .header .badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.75em;
+    margin-top: 12px;
+  }
+  .container { max-width: 720px; margin: 0 auto; padding: 32px 20px; }
+  .section { margin-bottom: 40px; }
+  .section h2 {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: var(--primary);
+    border-left: 4px solid var(--primary);
+    padding-left: 12px;
+    margin-bottom: 16px;
+  }
+  .section h3 {
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--text);
+    margin: 20px 0 8px;
+  }
+  .callout {
+    background: var(--accent);
+    border-left: 4px solid var(--primary);
+    padding: 16px 20px;
+    margin: 16px 0;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.95em;
+  }
+  .callout-warning {
+    background: var(--danger-bg);
+    border-left: 4px solid var(--warning);
+  }
+  .callout-success {
+    background: #e8f5e9;
+    border-left: 4px solid var(--success);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 0.9em;
+  }
+  th, td {
+    border: 1px solid var(--border);
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: var(--primary);
+    color: #fff;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  tr:nth-child(even) { background: var(--bg-alt); }
+  .card-grid { display: grid; gap: 12px; margin: 16px 0; }
+  .card {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+  }
+  .card h4 { color: var(--primary); margin-bottom: 6px; font-size: 0.95em; }
+  .step-flow {
+    counter-reset: step;
+    list-style: none;
+    padding: 0;
+  }
+  .step-flow li {
+    counter-increment: step;
+    position: relative;
+    padding: 12px 16px 12px 48px;
+    margin-bottom: 8px;
+    background: var(--bg-alt);
+    border-radius: 8px;
+    border-left: 3px solid var(--primary);
+  }
+  .step-flow li::before {
+    content: counter(step);
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    width: 24px;
+    height: 24px;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 0.8em;
+    font-weight: 700;
+    line-height: 24px;
+  }
+  .redflag-list { list-style: none; padding: 0; }
+  .redflag-list li {
+    padding: 8px 12px;
+    margin-bottom: 4px;
+    border-radius: 6px;
+    font-size: 0.9em;
+  }
+  .redflag-list .bad { background: #ffebee; color: #c62828; }
+  .redflag-list .good { background: #e8f5e9; color: #2e7d32; }
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+  }
+  .faq-item h4 {
+    font-size: 0.95em;
+    color: var(--primary);
+    margin-bottom: 6px;
+    cursor: pointer;
+  }
+  .faq-item p { font-size: 0.9em; color: var(--text-muted); }
+  .cta-box {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: #fff;
+    padding: 32px 24px;
+    border-radius: 12px;
+    text-align: center;
+    margin: 32px 0;
+  }
+  .cta-box h3 { font-size: 1.2em; margin-bottom: 8px; color: #fff; }
+  .cta-box p { opacity: 0.9; font-size: 0.9em; margin-bottom: 16px; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff;
+    color: var(--primary);
+    padding: 12px 32px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1em;
+    transition: all 0.2s;
+  }
+  .cta-btn:hover { background: var(--accent); transform: translateY(-2px); }
+  .evidence-card {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 12px;
+  }
+  .evidence-card h4 {
+    color: var(--primary);
+    font-size: 0.95em;
+    margin-bottom: 4px;
+  }
+  .evidence-card .statute {
+    background: #fff;
+    border-left: 3px solid var(--primary);
+    padding: 12px 16px;
+    margin: 8px 0;
+    font-size: 0.88em;
+    line-height: 1.6;
+    border-radius: 0 6px 6px 0;
+  }
+  .footer {
+    text-align: center;
+    font-size: 0.8em;
+    color: var(--text-muted);
+    padding: 32px 20px;
+    border-top: 1px solid var(--border);
+  }
+  @media (max-width: 600px) {
+    .header h1 { font-size: 1.3em; }
+    table { font-size: 0.8em; }
+    th, td { padding: 6px 8px; }
+  }
+</style>
 </head>
 <body>
-<div class="topbar"></div><div class="header-wrap"><div class="header-avatar">조</div><span class="header-name">조우성 변호사</span><span class="header-badge">머스트노우</span></div>
-<div class="hero"><div class="hero-inner"><span class="tag">의료·피해구제</span><h1>의료사고 — 설명의무·조정·<br>손해배상 3단계 가이드</h1><div class="meta">2026. 7. 28. · 의료법 제24조의2 기준 · 읽기 6분</div></div></div>
+
+<div class="header">
+  <h1>의료과실과 설명의무 위반<br>수술 결과와 병원 설명의무 위반을 구분하라</h1>
+  <p class="subtitle">수술 결과가 마음에 들지 않을 때 — 의료과실인지, 설명 부족인지, 불가피한 결과인지 정확히 판단하는 법</p>
+  <span class="badge">B2C · 의료 · 비교형</span>
+</div>
+
 <div class="container">
-<div class="tldr"><h2>핵심 요약</h2><ul><li><strong>설명의무 위반</strong>(의료법 제24조의2): 수술 전 6가지 설명 필수 — 위반 시 위자료 400~3,000만 원</li><li><strong>과실+인과관계</strong> 인정 시: 개호비·일실이익·위자료 전 손해배상</li><li><strong>의료분쟁조정중재원</strong>: 소송보다 빠르고 저렴 (조정전치주의 아님)</li><li><strong>소멸시효 3년</strong>(민법 제766조): 손해·가해자 안 날부터</li></ul></div>
-<div class="card"><span class="section-number">01</span><h2>설명의무 위반 — 위자료만 청구 가능</h2><p>의료법 제24조의2는 수술·수혈·전신마취 전 의사가 환자에게 6가지 항목(진단명, 필요성·방법·내용, 담당의사, 전형적 후유증·부작용, 준수사항, 회복 어려운 중대 위험)을 설명하도록 의무화합니다.</p><div class="table-wrap"><table><thead><tr><th></th><th>설명의무 위반만</th><th>과실+인과관계까지</th></tr></thead><tbody><tr><td><strong>위자료</strong></td><td>400~3,000만 원</td><td>포함</td></tr><tr><td><strong>개호비·일실이익</strong></td><td>❌</td><td>✅</td></tr></tbody></table></div><div class="eye-catcher">설명의무 위반만으로도 위자료 청구가 가능합니다(제주지법 2017가단59477·부산고법 2023나55262). 위험이 낮더라도 회복이 어려운 중대한 위험은 반드시 설명 대상입니다.</div></div>
-<div class="card"><span class="section-number">02</span><h2>의료분쟁조정중재원 절차</h2><p>강제되는 절차는 아니지만, 조정을 통해 소송보다 빠르고 저렴하게 해결할 수 있습니다.</p><ol><li><strong>신청</strong>: 조정신청서+경위서+위임장+진료기록 사본 제출</li><li><strong>감정</strong>: 개시 60일 이내 (30일 연장 가능)</li><li><strong>감정서</strong>: 사실조사·과실·인과관계·후유장애 포함</li><li><strong>조정결정</strong>: 쌍방 송달, 15일 내 동의 통보 (미통보=동의 간주)</li><li><strong>효과</strong>: 쌍방 동의 시 재판상 화해 효력</li></ol>
-<div class="info-card"><strong>💡 조정전치주의 아님:</strong> 바로 소송 제기가 가능합니다. 다만 조정을 먼저 이용하면 감정이 체계적으로 이루어져 소송에서도 유리할 수 있습니다.</div></div>
-<div class="card"><span class="section-number">03</span><h2>손해배상 산정 항목</h2><div class="table-wrap"><table><thead><tr><th>항목</th><th>산정 기준</th></tr></thead><tbody><tr><td><strong>개호비</strong></td><td>중증 8~12시간/일, 보통인부 일용노임 현가화</td></tr><tr><td><strong>일실이익</strong></td><td>실제 소득 or 보통인부 일용노임, 가동연한 65세</td></tr><tr><td><strong>위자료</strong></td><td>중증뇌손상 약 6,000만 원(수원고법 2020나20940), 경미 400~3,000만 원</td></tr></tbody></table></div><div class="warning-box"><strong>⚠️ 소멸시효 3년:</strong> 불법행위 손해배상청구권의 시효는 손해 및 가해자를 안 날부터 3년(민법 제766조). 증상이 고정되고 손해 규모를 객관적으로 인식할 수 있는 시점부터 진행됩니다.</div></div>
-<div class="card"><span class="section-number">Q&A</span><h2>자주 묻는 질문</h2><div class="qa-item"><div class="qa-q">병원의 과실을 어떻게 증명하나요?</div><div class="qa-a">환자 측이 과학적으로 명백히 증명할 필요는 없습니다. '상당한 개연성'이 있는 사실을 증명하면 법원이 과실과 인과관계를 추정할 수 있습니다. 진료 기록부·설명 동의서·영상 기록이 핵심 증거입니다.</div></div><div class="qa-item"><div class="qa-q">변호사 없이 혼자서 조정 신청할 수 있나요?</div><div class="qa-a">네, 가능합니다. 의료분쟁조정중재원에 직접 신청할 수 있습니다. 변호사 선임은 필수가 아닙니다. 다만 법리 검토와 협상력 측면에서 전문가 도움이 유리할 수 있습니다.</div></div>
+
+  <!-- Section 1: 문제상황 -->
+  <div class="section">
+    <h2>1. 문제상황</h2>
+    <p>수술 후 원하는 결과가 나오지 않았다면? 병원의 과실인지, 설명이 부족했던 것인지, 아니면 원래 의학적으로 불가피했던 결과인지 — 이 셋을 정확히 구분하는 것이 법적 대응의 첫걸음이다.</p>
+    <div class="callout">
+      <strong>핵심 질문:</strong> "병원이 잘못했다"는 주장은 크게 두 가지로 나뉜다.
+    </div>
+    <table>
+      <tr><th>구분</th><th>의료과실</th><th>설명의무 위반</th></tr>
+      <tr><td><strong>쟁점</strong></td><td>수술·치료 과정에서 의사가 잘못했다</td><td>수술 전 설명이 부족했다</td></tr>
+      <tr><td><strong>보호법익</strong></td><td>생명·신체의 완전성</td><td>자기결정권</td></tr>
+      <tr><td><strong>손해 성격</strong></td><td>치료비·개호비·일실수입 + 위자료</td><td>선택권 상실 위자료</td></tr>
+    </table>
+  </div>
+
+  <!-- Section 2: 비교표 -->
+  <div class="section">
+    <h2>2. 설명의무 위반 vs 의료과실 — 비교표</h2>
+    <table>
+      <tr><th>항목</th><th>의료과실</th><th>설명의무 위반</th><th>비고</th></tr>
+      <tr><td><strong>핵심</strong></td><td>의료행위의 기술적 기준 위반</td><td>자기결정권 보장 정보 제공 위반</td><td>병존 가능</td></tr>
+      <tr><td><strong>증명책임</strong></td><td>환자 측 (일응추정 완화 가능)</td><td>의사 측 (2017다248919)</td><td>설명의무 위반 증명 덜 까다로움</td></tr>
+      <tr><td><strong>인과관계</strong></td><td>과실과 결과 사이 필요</td><td>위자료: 불요 / 전손해: 필요</td><td>위자료 인과관계 완화</td></tr>
+      <tr><td><strong>손해범위</strong></td><td>치료비·개호비·일실수입·위자료</td><td>위자료 → 전손해 별도 요건</td><td>위자료만 받는 경우 다수</td></tr>
+      <tr><td><strong>가정적 승낙</strong></td><td>적용 안 됨</td><td>의사 측 항변 가능 (엄격 제한)</td><td>명백히 예상돼야</td></tr>
+      <tr><td><strong>법적 근거</strong></td><td>민법 제750조 + 의료계약</td><td>의료법 제24조의2 + 민법 제750조</td><td>근거 상이</td></tr>
+    </table>
+    <div class="callout callout-warning">
+      <strong>결정적 차이:</strong> 설명의무 위반만으로는 대부분 <strong>위자료</strong>에 그친다. 악결과 전액 배상을 받으려면 의료과실(진료과실)까지 입증해야 하는 경우가 일반적이다.
+    </div>
+  </div>
+
+  <!-- Section 3: 첫 대응 순서 -->
+  <div class="section">
+    <h2>3. 첫 대응 순서</h2>
+    <ol class="step-flow">
+      <li><strong>감정적 대응 금지</strong> — 병원과 즉시 대립하지 마십시오. 감정적 대응은 협상력을 떨어뜨립니다.</li>
+      <li><strong>자료 확보</strong> — 진료기록지·동의서·영상 자료 등 병원에 사본 요청 (의료법 제21조)</li>
+      <li><strong>청구 유형 선택</strong> — 설명의무 위반 위자료 / 전손해 / 의료과실 중 전략 선택</li>
+      <li><strong>법률 전문가 상담</strong> — 자료를 갖춘 후 의료소송 전문 변호사 상담</li>
+      <li><strong>소멸시효 확인</strong> — 불법행위 손해배상청구권: 손해 및 가해자 안 날부터 <strong>3년</strong></li>
+    </ol>
+
+    <h3>자료 확보 체크리스트</h3>
+    <table>
+      <tr><th>자료</th><th>확보 방법</th><th>중요도</th></tr>
+      <tr><td>진료기록지·수술기록지</td><td>병원 사본 요청</td><td>⭐⭐⭐</td></tr>
+      <tr><td>동의서 (수술 동의서)</td><td>병원 사본 요청</td><td>⭐⭐⭐</td></tr>
+      <tr><td>설명 관련 상담 기록지</td><td>병원 요청</td><td>⭐⭐⭐</td></tr>
+      <tr><td>MRI/X-ray 등 영상</td><td>CD/DVD 요청</td><td>⭐⭐</td></tr>
+      <tr><td>환자·보호자 메모·녹취</td><td>보관 중인 자료</td><td>⭐⭐</td></tr>
+    </table>
+  </div>
+
+  <!-- Section 4: 위험 신호 -->
+  <div class="section">
+    <h2>4. 위험 신호 — Red Flags</h2>
+    <h3>병원 측에 유리한 상황 (환자에게 불리)</h3>
+    <ul class="redflag-list">
+      <li class="good">✓ 동의서에 주요 위험·부작용이 구체적으로 기재되어 있음</li>
+      <li class="good">✓ 수술 전 충분한 상담 기록이 남아 있음</li>
+      <li class="good">✓ 설명 및 동의 과정을 녹취·촬영한 기록 존재</li>
+      <li class="good">✓ 환자 기왕증·체질이 악결과의 자연적 원인일 가능성 높음</li>
+      <li class="good">✓ 당시 의료수준에서 최선을 다해도 합병증 범위 내 결과</li>
+    </ul>
+    <h3>환자 측에 유리한 상황 (위험 신호 — 의료사고 의심)</h3>
+    <ul class="redflag-list">
+      <li class="bad">✗ 수술 내용이 동의서와 다르게 시행됨 (범위 확장 등)</li>
+      <li class="bad">✗ 중대한 위험(회복 불가 손상 등)에 대한 설명 누락</li>
+      <li class="bad">✗ 대체 가능한 치료 방법에 대한 설명 없음</li>
+      <li class="bad">✗ 필수 약물 변경(항혈소판제 중단 등)에 대한 설명 부재</li>
+      <li class="bad">✗ 의무기록과 실제 진료 내용 불일치</li>
+      <li class="bad">✗ 동의서가 포괄적·일괄적 양식에 불과</li>
+    </ul>
+  </div>
+
+  <!-- Section 5: 근거 카드 -->
+  <div class="section">
+    <h2>5. 근거 카드</h2>
+
+    <div class="evidence-card">
+      <h4>근거 ①: 의료법 제24조의2 — 설명·동의 의무</h4>
+      <div class="statute">
+        <strong>제24조의2(의료행위에 관한 설명)</strong><br>
+        ① 의사·치과의사·한의사는 생명·신체에 중대한 위해 발생 우려가 있는 수술, 수혈, 전신마취를 하는 경우 제2항 사항을 환자에게 설명하고 서면 동의를 받아야 한다.<br>
+        ② 설명·동의 사항: 1. 진단명 2. 필요성·방법·내용 3. 담당 의사 성명 4. 전형적 후유증·부작용 5. 수술 전후 준수사항
+      </div>
+      <p style="font-size:0.85em;color:var(--text-muted);margin-top:4px;">→ 전형적 위험 + 희박하지만 중대한 위험까지 포함 (2005다5867)</p>
+    </div>
+
+    <div class="evidence-card">
+      <h4>근거 ②: 민법 제750조 — 불법행위 책임</h4>
+      <div class="statute">
+        고의 또는 과실로 인한 위법행위로 타인에게 손해를 가한 자는 그 손해를 배상할 책임이 있다.
+      </div>
+      <p style="font-size:0.85em;color:var(--text-muted);margin-top:4px;">→ 설명의무 위반은 위법행위로서 불법행위 성립</p>
+    </div>
+
+    <div class="evidence-card">
+      <h4>근거 ③: 민법 제751조 — 위자료</h4>
+      <div class="statute">
+        타인의 신체, 자유 또는 명예를 해하거나 기타 정신상고통을 가한 자는 재산 이외의 손해에 대하여도 배상할 책임이 있다.
+      </div>
+      <p style="font-size:0.85em;color:var(--text-muted);margin-top:4px;">→ 설명의무 위반 정신적 고통 → 위자료 청구 근거</p>
+    </div>
+
+    <div class="evidence-card">
+      <h4>근거 ④: 핵심 판례</h4>
+      <table>
+        <tr><th>판례</th><th>요지</th></tr>
+        <tr><td>2011다29666</td><td>위자료 = 설명 결여+선택기회 상실 / 전손해 = 설명 위반 중대+상당인과관계</td></tr>
+        <tr><td>2017다248919</td><td>설명의무 이행 증명책임 = 의사 측 / 가정적 승낙 엄격 제한</td></tr>
+        <tr><td>2014다6749</td><td>위자료 대상 설명의무 = 자기결정 선택 요구되는 경우로 한정</td></tr>
+        <tr><td>2005다5867</td><td>희소해도 전형적 위험·회복 불가 중대 위험 = 설명 대상</td></tr>
+        <tr><td>2018다217974</td><td>희박하지만 중대한 위험도 설명 / 대체 치료방법 설명 의무</td></tr>
+        <tr><td>2022다303995</td><td>수술 전후 중한 결과 + 간접사실 → 과실 추정. 책임제한 비율 사실심 재량</td></tr>
+        <tr><td>2017다253430</td><td>중한 결과 + 간접사실 → 의료상 과실 추정. 개연성 없는 추정 금지</td></tr>
+        <tr><td>2021나72003(인천지법)</td><td>대안 치료방법 설명 의무 인정 / 전손해 부정 → 위자료 한정</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Section 6: FAQ -->
+  <div class="section">
+    <h2>6. FAQ</h2>
+
+    <div class="faq-item">
+      <h4>Q1: 설명의무 위반과 의료과실을 동시에 주장할 수 있나요?</h4>
+      <p>가능합니다. 실무에서는 두 청구를 병행하는 것이 일반적입니다. 다만 설명의무 위반 위자료는 설명 위반과 무관한 악결과를 포함할 수 있도록 산정해서는 안 됩니다(2011다29666).</p>
+    </div>
+
+    <div class="faq-item">
+      <h4>Q2: 동의서에 서명했는데 설명의무 위반이 인정될 수 있나요?</h4>
+      <p>가능합니다. 동의서 서명 자체만으로 설명의무 이행이 인정되지 않습니다. 환자가 합리적으로 선택할 수 있도록 실질적 정보 제공이 필요합니다(서울서부지법 2016나671).</p>
+    </div>
+
+    <div class="faq-item">
+      <h4>Q3: 설명의무 위반 소송에서 환자가 유리한 점은?</h4>
+      <p>증명책임이 의사 측에 있다는 점(2017다248919)입니다. 의사 측이 설명을 충분히 이행했음을 증명해야 합니다. 또한 위자료 청구 시 악결과와의 인과관계까지 입증할 필요가 없습니다.</p>
+    </div>
+
+    <div class="faq-item">
+      <h4>Q4: 수술 결과 불만족만으로 소송이 가능한가요?</h4>
+      <p>어렵습니다. 의료계약은 수단채무이므로 결과 미달만으로 계약해제·손해배상이 자동 인정되지 않습니다(수원지법 2022나21950).</p>
+    </div>
+
+    <div class="faq-item">
+      <h4>Q5: 설명의무 위반만으로 위자료를 얼마나 받을 수 있나요?</h4>
+      <p>설명의무 위반만 인정되고 의료과실이 부정되는 경우 통상 수백만 원~1천만 원 미만의 위자료가 인정됩니다. 의료과실까지 인정되면 별도 위자료와 재산손해를 합산하여 더 큰 금액이 인정될 수 있습니다.</p>
+    </div>
+
+    <div class="faq-item">
+      <h4>Q6: 병원이 "설명 들었으면 동의했을 것"이라고 주장하면?</h4>
+      <p>가정적 승낙 항변입니다. 판례는 이를 엄격히 제한하며(2018다211853, 2017다248919), 환자의 승낙이 명백히 예상되는 경우에만 예외적으로 허용합니다.</p>
+    </div>
+  </div>
+
+  <!-- Section 7: CTA -->
+  <div class="section">
+    <div class="cta-box">
+      <h3>수술 결과에 불만족하시나요?</h3>
+      <p>의료소송 전문 변호사와 상담하세요. 설명의무 위반·의료과실 중 어떤 전략이 유리한지 전문가의 의견을 들어야 합니다.</p>
+      <a href="#" class="cta-btn">의료분쟁 상담 신청하기</a>
+      <p style="font-size:0.8em;margin-top:12px;opacity:0.7;">소멸시효: 불법행위 손해배상청구권 — 손해 및 가해자 안 날부터 3년</p>
+    </div>
+  </div>
+
 </div>
-<div class="card" style="background:#f9fafb"><div class="eye-catcher" style="border-left-color:#6b7280"><strong>최신성·면책 고지</strong><p style="margin-top:6px;font-size:13px;color:#6b7280">본 자료는 <strong>2026. 7. 28.</strong> 기준입니다. 사안마다 결론이 달라질 수 있으므로, 실제 의사결정 전 법률 전문가의 조력을 받으십시오.</p></div></div>
+
+<div class="footer">
+  <p>본 전자책은 일반적 법률 정보 제공을 목적으로 하며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</p>
+  <p>2026년 7월 29일 기준 · EBOOK-012 | 의료법 제24조의2, 민법 제750조·제751조 근거</p>
+  <p>대법원 2011다29666, 2017다248919, 2014다6749, 2018다217974 외 다수 참조</p>
 </div>
-<div class="footer"><p>조우성 변호사 · 로펌 머스트노우 · law@mustknow.co.kr</p></div>
+
 </body>
 </html>
