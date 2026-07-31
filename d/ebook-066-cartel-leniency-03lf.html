@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,follow">
+<title>부당공동행위 자진신고(리니언시) 판단 — 법률 대시보드</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --primary: #1a202c; --primary-light: #2d3748; --accent: #2c7a7b; --accent-light: #68d391;
+    --danger: #c53030; --warning: #975a16; --success: #276749;
+    --bg: #f0fff4; --card-bg: #ffffff; --text: #1a202c; --text-muted: #4a5568;
+    --border: #e2e8f0; --radius: 12px; --shadow: 0 1px 3px rgba(0,0,0,0.08); --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+  }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .container { max-width: 840px; margin: 0 auto; padding: 0 20px; }
+  .hero { background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); color: white; padding: 48px 0 40px; }
+  .hero h1 { font-size: 1.75rem; font-weight: 800; line-height: 1.3; margin-bottom: 8px; }
+  .hero .subtitle { font-size: 1rem; opacity: 0.9; margin-bottom: 20px; }
+  .hero .badge-row { display: flex; flex-wrap: wrap; gap: 6px; }
+  .hero .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; background: rgba(255,255,255,0.2); color: white; }
+  .hero .badge.l3 { background: #ed8936; color: white; }
+  .target-section { background: #e6fffa; border-left: 4px solid var(--accent); padding: 16px 20px; margin: 24px auto; border-radius: 0 var(--radius) var(--radius) 0; }
+  .target-section p { font-size: 0.9rem; margin-bottom: 4px; }
+  .target-section strong { color: var(--accent); }
+  .section { background: var(--card-bg); border-radius: var(--radius); box-shadow: var(--shadow); padding: 28px 24px; margin: 20px auto; transition: box-shadow 0.2s; }
+  .section:hover { box-shadow: var(--shadow-lg); }
+  .section h2 { font-size: 1.25rem; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--border); }
+  .section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin: 16px 0 8px; }
+  .section p { margin-bottom: 12px; font-size: 0.925rem; }
+  .table-wrap { overflow-x: auto; margin: 12px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { background: var(--accent); color: white; font-weight: 600; }
+  th:first-child { border-radius: 6px 0 0 0; }
+  th:last-child { border-radius: 0 6px 0 0; }
+  tr:hover td { background: #f0fff4; }
+  .step { display: flex; gap: 12px; margin: 16px 0; padding: 16px; background: #e6fffa; border-radius: 8px; border-left: 3px solid var(--accent); }
+  .step-num { flex-shrink: 0; width: 32px; height: 32px; background: var(--accent); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; }
+  .step-content { flex: 1; }
+  .step-content strong { color: var(--accent); font-size: 0.95rem; }
+  .step-content p { margin: 4px 0 0; font-size: 0.85rem; }
+  .alert { padding: 14px 16px; border-radius: 8px; margin: 12px 0; font-size: 0.875rem; border-left: 4px solid; }
+  .alert.danger { background: #fff5f5; border-color: var(--danger); color: var(--danger); }
+  .alert.warning { background: #fffaf0; border-color: var(--warning); color: var(--warning); }
+  .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+  @media (max-width: 600px) { .card-grid { grid-template-columns: 1fr; } }
+  .ev-card { border: 1px solid var(--border); border-radius: 8px; padding: 14px; }
+  .ev-card .card-title { font-size: 0.85rem; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+  .ev-card p { font-size: 0.825rem; margin-bottom: 6px; }
+  .ev-card .tag { display: inline-block; font-size: 0.7rem; font-weight: 600; padding: 2px 6px; border-radius: 4px; background: #e6fffa; color: var(--accent); }
+  .faq-item { border-bottom: 1px solid var(--border); padding: 14px 0; }
+  .faq-item:first-child { padding-top: 0; }
+  .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .faq-q { font-weight: 600; color: var(--accent); margin-bottom: 4px; font-size: 0.925rem; }
+  .faq-a { font-size: 0.875rem; color: var(--text-muted); }
+  .cta-box { background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); color: white; border-radius: var(--radius); padding: 28px 24px; margin: 20px auto; text-align: center; }
+  .cta-box h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; color: white; border-bottom: none; }
+  .cta-box .cta-btn { display: inline-block; margin-top: 14px; padding: 12px 28px; background: white; color: var(--primary); border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.95rem; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+  .cta-box .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.25); }
+  .disclaimer { font-size: 0.75rem; color: var(--text-muted); background: var(--border); border-radius: var(--radius); padding: 16px 20px; margin: 20px auto; line-height: 1.6; }
+  @media (max-width: 600px) { .hero h1 { font-size: 1.35rem; } .section { padding: 20px 16px; } }
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="container">
+    <h1>부당공동행위 자진신고(리니언시) 판단<br>신고·협조·감면 전략</h1>
+    <p class="subtitle">담합 조사 리스크, 자진신고 vs 버티기 — 최적의 결정을 위한 4단계 의사결정 프레임워크</p>
+    <div class="badge-row">
+      <span class="badge">공정거래·카르텔</span>
+      <span class="badge">B2B</span>
+      <span class="badge l3">L3 정밀</span>
+      <span class="badge">2026.07.29 기준</span>
+    </div>
+  </div>
+</div>
+<div class="container">
+<div class="target-section">
+  <p><strong>이 글이 도움이 되는 분</strong></p>
+  <p>담합 조사 가능성에 노출된 기업의 법무·컴플라이언스 담당자</p>
+  <p>리니언시 신청을 고려 중이나 판단이 서지 않는 경영진</p>
+  <p>공정위 조사에 대비해 사전 대응 전략을 수립해야 하는 분</p>
+</div>
+
+<div class="section">
+  <h2>문제상황 — 자진신고 vs 버티기</h2>
+  <p>담합(부당공동행위)이 적발되면 과징금(매출액 최대 20%)과 손해배상(3배 징벌적 손해배상 가능)이라는 치명적 타격을 입을 수 있습니다. 공정거래법은 자진신고자에게 과징금을 감면해 주는 리니언시 제도를 운영 중입니다.</p>
+  <p><strong>핵심 딜레마</strong>: 자진신고는 1순위일수록 높은 감면 혜택을 받지만, 이후 손해배상 소송에서 불리해질 수 있습니다. 반면 신고하지 않았다가 적발되면 과징금과 손해배상 리스크가 극대화됩니다.</p>
+  <p><strong>실제 사례</strong>: A사는 입찰 담합 중 공정위 조사 징후를 포착했으나 경영진 반대로 리니언시를 신청하지 않았습니다. 결국 경쟁사가 먼저 리니언시를 신청하여 A사는 과징금 전액 + 손해배상 소송에 직면했습니다.</p>
+</div>
+
+<div class="section">
+  <h2>리니언시 감면 체계</h2>
+  <div class="table-wrap">
+  <table>
+    <tr><th>순위</th><th>요건</th><th>감면</th></tr>
+    <tr><td>1순위</td><td>조사 개시 전 자진신고 + 단독 증거 제공 + 성실협조 유지</td><td>전액 감면</td></tr>
+    <tr><td>2순위</td><td>조사 개시 후 협조 + 단독 증거제공 '두 번째'</td><td>감경</td></tr>
+    <tr><td>배제</td><td>2사업자 담합·2년 경과·증거인멸·신청사실 누설</td><td>감면 불가</td></tr>
+  </table>
+  </div>
+</div>
+
+<div class="section">
+  <h2>의사결정 4단계</h2>
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-content"><strong>리스크 평가 (48시간)</strong><p>담합 의심 행위 법적 평가. 공정위 조사 진행 가능성. 경쟁사 리니언시 신청 가능성. 증거보존 상태 점검.</p></div>
+  </div>
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-content"><strong>내부 조사 및 증거 확보 (1주일)</strong><p>법률 자문. 관련 증거 수집·분석. 담합 참여 직원 면담. 증거인멸 방지(legal hold).</p></div>
+  </div>
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-content"><strong>신청 결정 (2주일)</strong><p>1순위 가능성 평가. 손해배상 리스크와 감면 혜택 비교. 경영진 보고 및 최종 결정.</p></div>
+  </div>
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-content"><strong>신청 및 협조 (지속)</strong><p>리니언시 신청서 제출. 신청사실 누설 금지. 조사 종료까지 성실협조 유지. 처분 대비.</p></div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>위험 신호</h2>
+  <div class="alert danger"><strong>신청사실 누설</strong> — 리니언시 신청 사실이 외부에 누설되면 감면 불인정. Legal 팀 내 최소 인원만 정보 접근.</div>
+  <div class="alert warning"><strong>증거인멸</strong> — 조사 예상 상황에서 증거 삭제·은닉 시 사후 만회 곤란. 사전 legal hold 필수.</div>
+  <div class="alert danger"><strong>2순위 배제</strong> — 2사업자 담합 시 2순위 신청 배제. 1순위 신청 후 2년 경과 시 추가 배제.</div>
+  <div class="alert warning"><strong>형사 리스크 별도 관리</strong> — 리니언시는 과징금 감면만 해당. 형사처벌·손해배상은 별도 대응 필요.</div>
+</div>
+
+<div class="section">
+  <h2>근거 카드</h2>
+  <div class="card-grid">
+    <div class="ev-card">
+      <div class="card-title">공정거래법 제40조</div>
+      <p>부당공동행위 금지 — 가격·입찰 등 9개 유형 금지, 합의 추정 규정(제5항).</p>
+      <span class="tag">법제처 확인</span>
+    </div>
+    <div class="ev-card">
+      <div class="card-title">공정거래법 제43조</div>
+      <p>과징금 — 매출액 최대 20%. 리니언시 감면 근거.</p>
+      <span class="tag">법제처 확인</span>
+    </div>
+    <div class="ev-card">
+      <div class="card-title">대법원 2016두45783</div>
+      <p>신청사실 누설 → 감면 불인정 가능. 재량권 일탈·남용 아님.</p>
+      <span class="tag">doctrine 인용</span>
+    </div>
+    <div class="ev-card">
+      <div class="card-title">대법원 2016두46458</div>
+      <p>증거인멸 → 이후 협조로 만회 곤란. 사전 legal hold 중요.</p>
+      <span class="tag">doctrine 인용</span>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>자주 묻는 질문</h2>
+  <div class="faq-item"><div class="faq-q">리니언시를 신청하면 모든 과징금이 면제되나요?</div><div class="faq-a">1순위(조사 개시 전 신고+단독 증거 제공+성실협조)는 전액 감면됩니다. 2순위는 감경입니다. 요건 미충족 시 감면 불인정될 수 있습니다.</div></div>
+  <div class="faq-item"><div class="faq-q">경쟁사가 먼저 리니언시를 신청하면 어떻게 되나요?</div><div class="faq-a">경쟁사가 1순위면 귀사는 2순위(감경)가 되거나 배제될 수 있습니다. 2사업자 담합 시 2순위가 배제되므로 가장 먼저 신청하는 것이 유리합니다.</div></div>
+  <div class="faq-item"><div class="faq-q">리니언시 신청이 손해배상 소송에 불리한가요?</div><div class="faq-a">네, 제출 증거가 민사 손해배상 소송에서 불리하게 사용될 수 있습니다. 과징금 감면 혜택과 손해배상 리스크를 비교 형량해야 합니다.</div></div>
+  <div class="faq-item"><div class="faq-q">리니언시를 신청해도 임원이 형사처벌을 받을 수 있나요?</div><div class="faq-a">네, 리니언시 감면은 과징금 감면만 해당합니다. 형사처벌과 손해배상 책임은 별도로 관리해야 합니다.</div></div>
+</div>
+
+<div class="cta-box">
+  <h3>담합 리스크, 전문가와 함께 진단하세요</h3>
+  <p>리니언시 신청은 시간과 전략이 중요합니다. 공정거래 전문 변호사의 조력을 받아 최적의 결정을 내리세요.</p>
+  <a href="#" class="cta-btn">전문 변호사 상담 →</a>
+</div>
+
+<div class="disclaimer">
+  <strong>최신성 및 면책 고지</strong><br>이 글은 2026년 7월 29일 기준 법령과 판례를 바탕으로 작성되었습니다.<br>검증된 근거: 공정거래법 제40조·제43조(법제처 DB 확인). 판례는 내부 doctrine 인용.<br>이 글은 일반적 법률 정보 제공 목적입니다.
+</div>
+</div>
+</body>
+</html>
