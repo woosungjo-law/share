@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>구독서비스 해지 버튼 설계 — 해지방해 규제에 적합한 UX 설계 기준 | EBOOK-072</title>
+<style>
+:root{--wine:#7a2e3a;--wine-d:#5a1f2b;--wine-l:#9c4456;--wine-t:#f4e9ec;--wine-tl:#ecd7dd;--bg:#f5f1f2;--panel:#fff;--panel2:#faf6f7;--line:#ebe2e5;--line2:#ddccd2;--ink:#2c1d26;--ink2:#56424c;--muted:#8a7b82;--faint:#b3a6ab;--hb:#3a1525;--hb2:#4e1f32;--ha:#d4a0aa;--rH:#c74a3c;--rM-bg:#f8e4b8;--rM-tx:#7d520a;--rL-bg:#d6ecdb;--rL-tx:#287a54;--amber:#b45309;--green:#287a54;--font:'Noto Sans KR','Malgun Gothic',-apple-system,sans-serif;--maxw:1120px;--readw:760px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;background:linear-gradient(90deg,var(--wine),var(--wine-l));transition:width .1s linear}
+.header{background:linear-gradient(135deg,var(--hb) 0%,var(--hb2) 100%);color:#f4eef0}
+.header .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 26px}
+.header .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;color:var(--ha);border:1px solid rgba(212,160,170,.4);border-radius:999px;padding:4px 12px}
+.header .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--ha)}
+.hero{max-width:var(--maxw);margin:0 auto;padding:30px 26px 8px}
+.hero .eb{font-size:12px;font-weight:700;color:var(--wine);letter-spacing:.02em;margin-bottom:10px}
+.hero h1{font-size:30px;line-height:1.28;font-weight:800;margin:0 0 16px;color:var(--ink);letter-spacing:-.01em}
+.hero .tldr{background:var(--wine-t);border:1px solid var(--wine-tl);border-left:4px solid var(--wine);border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.hero .tldr .lb{font-size:12px;font-weight:700;color:var(--wine-d);margin-bottom:8px}
+.hero .tldr ul{margin:0;padding-left:18px}
+.hero .tldr li{margin:4px 0;font-size:15px;color:var(--ink2)}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:12.5px;color:var(--muted);margin-bottom:18px}
+.hero .meta .vchip{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);font-weight:700;border-radius:6px;padding:3px 9px;font-size:11.5px}
+.hero .cta-row{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:9px;padding:11px 18px;text-decoration:none;cursor:pointer;border:1px solid transparent}
+.btn-p{background:var(--wine);color:#fff}
+.btn-p:hover{background:var(--wine-d)}
+.btn-o{background:#fff;color:var(--wine-d);border-color:var(--line2)}
+.btn-o:hover{background:var(--panel2)}
+.app{max-width:var(--maxw);margin:0 auto;padding:8px 26px 60px;display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:start}
+.toc{position:sticky;top:24px}
+.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:0 0 10px;padding-left:2px}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}
+.toc li{counter-increment:toc;margin:1px 0}
+.toc a{display:flex;gap:9px;font-size:13.5px;color:var(--ink2);text-decoration:none;padding:7px 10px;border-radius:8px;border-left:3px solid transparent;line-height:1.4}
+.toc a::before{content:counter(toc,decimal-leading-zero);color:var(--faint);font-weight:700;font-size:11.5px;flex:none}
+.toc a:hover{background:var(--panel2)}
+.toc a.active{background:var(--wine-t);border-left-color:var(--wine);color:var(--wine-d);font-weight:700}
+.toc-toggle{display:none}
+.content{max-width:var(--readw);min-width:0}
+section.blk{scroll-margin-top:24px;margin-bottom:38px}
+.secl{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin:0 0 12px}
+.secl::before{content:"";width:7px;height:15px;background:var(--wine);border-radius:2px;flex:none}
+section.blk h2{font-size:23px;font-weight:800;line-height:1.35;margin:0 0 14px;color:var(--ink);letter-spacing:-.01em}
+section.blk h3{font-size:17px;font-weight:700;margin:26px 0 10px;color:var(--wine-d)}
+section.blk p{margin:0 0 14px;color:var(--ink2)}
+section.blk ul,section.blk ol{margin:0 0 14px;padding-left:22px;color:var(--ink2)}
+section.blk li{margin:6px 0}
+strong{color:var(--ink);font-weight:700}
+.summary{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.summary .lb{font-size:11px;font-weight:700;color:var(--wine-d);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.summary ul{margin:0;padding-left:18px}
+.ev{background:#fff;border:1px solid var(--line);border-left:4px solid var(--wine);border-radius:10px;padding:13px 15px;margin:0 0 12px}
+.ev .top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px}
+.ev .kind{font-size:11px;font-weight:700;color:#fff;background:var(--wine);border-radius:5px;padding:2px 8px}
+.ev .kind.law{background:var(--wine-d)}
+.ev .kind.case{background:var(--amber)}
+.ev .cite{font-size:13.5px;font-weight:700;color:var(--ink)}
+.ev .vtick{margin-left:auto;font-size:11px;font-weight:700;color:var(--rL-tx);background:var(--rL-bg);border-radius:5px;padding:2px 7px}
+.ev .gist{font-size:14px;color:var(--ink2);margin:0}
+.ev .date{font-size:12px;color:var(--muted);margin-top:5px}
+.figure{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin:0 0 18px}
+.figure .cap{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:12px}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px}
+.flow .step{flex:1;min-width:120px;background:var(--wine-t);border:1px solid var(--wine-tl);border-radius:10px;padding:11px 12px;position:relative}
+.flow .step .n{font-size:11px;font-weight:700;color:var(--wine)}
+.flow .step .t{font-size:13.5px;font-weight:700;color:var(--ink);margin-top:2px}
+.flow .step .d{font-size:12.5px;color:var(--ink2);margin-top:3px}
+.checklist{list-style:none;margin:0;padding:0}
+.checklist li{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+.checklist li:last-child{border-bottom:none}
+.checklist .num{flex:none;width:22px;height:22px;border-radius:5px;background:var(--wine-t);color:var(--wine-d);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800}
+.checklist .c-body{flex:1}
+.checklist .c-body .lbl{font-size:14px;font-weight:600;color:var(--ink)}
+.checklist .c-body .sub{font-size:12px;color:var(--muted)}
+.chip{display:inline-flex;align-items:center;justify-content:center;min-width:34px;font-size:11px;font-weight:500;border-radius:6px;padding:3px 8px;margin-right:4px}
+.c-H{background:var(--rH);color:#fff}
+.c-M{background:var(--rM-bg);color:var(--rM-tx)}
+.c-L{background:var(--rL-bg);color:var(--rL-tx)}
+.risk{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:0 0 14px}
+.risk .r-h{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:var(--rH);margin-bottom:6px}
+.risk .r-h .r-icon{flex:none;width:24px;height:24px;border-radius:6px;background:#fef2f2;color:var(--rH);display:flex;align-items:center;justify-content:center;font-size:14px}
+.risk .r-body{font-size:13.5px;color:var(--ink2)}
+.risk .r-ref{font-size:12px;color:var(--muted);margin-top:6px;padding-top:6px;border-top:1px solid var(--line)}
+.tbl-wrap{overflow-x:auto;margin:0 0 18px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px}
+.star{color:var(--rM-tx);font-size:12px}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:10px;margin:0 0 10px;overflow:hidden}
+.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:15px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:10px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--wine-t);color:var(--wine-d);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+.faq details[open] summary{border-bottom:1px solid var(--line);color:var(--wine-d)}
+.faq .a{padding:14px 16px;font-size:14.5px;color:var(--ink2)}
+.notice{background:#fff;border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;font-size:12.5px;color:var(--muted);line-height:1.7}
+#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;border:1px solid var(--wine-tl);background:var(--wine);color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;box-shadow:0 4px 14px rgba(58,21,37,.28)}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{background:var(--wine-d)}
+.footer{background:linear-gradient(135deg,var(--hb) 0%,var(--hb2) 100%);color:#f4eef0;margin-top:20px}
+.footer .wrap{max-width:var(--maxw);margin:0 auto;padding:34px 26px}
+.footer h3{font-size:20px;font-weight:800;margin:0 0 8px;color:#fff}
+.footer p{font-size:14px;color:rgba(255,255,255,.72);margin:0 0 6px;line-height:1.7}
+.footer .prof{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end}
+.footer .cta-f{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.footer .btn-f{background:#fff;color:var(--wine-d)}
+.footer .btn-f:hover{background:var(--ha)}
+.footer .btn-fo{background:transparent;color:#f4eef0;border-color:rgba(255,255,255,.35)}
+.footer .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:22px;padding-top:14px;font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.7}
+@media(max-width:820px){
+  .hero h1{font-size:24px}
+  .app{grid-template-columns:1fr;gap:0;padding-top:0}
+  .toc{position:static;margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 8px}
+  .toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--wine-d);padding:9px 8px}
+  .toc-toggle .ar{transition:transform .2s}
+  .toc.closed .toc-toggle .ar{transform:rotate(-90deg)}
+  .toc .tt{display:none}
+  .toc ol{max-height:50vh;overflow:auto}
+  .toc.closed ol{display:none}
+  section.blk h2{font-size:20px}
+  th,td{white-space:nowrap}
+}
+@media print{
+  #progress,.toc,.cta-row,.footer .cta-f{display:none}
+  .header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .app{display:block}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<button id="toTop" aria-label="맨 위로" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<header class="header"><div class="wrap"><span class="badge"><span class="dot"></span>조우성 변호사 · 법률 인사이트</span></div></header>
+
+<div class="hero">
+  <div class="eb">전자상거래 · B2B PM·디자이너·법무 대상 체크리스트</div>
+  <h1>구독서비스 해지 버튼 설계 — 해지방해 규제에 적합한 UX 설계 기준</h1>
+  <div class="tldr">
+    <div class="lb">3줄 요약 (TL;DR)</div>
+    <ul>
+      <li>2026년 전자상거래법 개정으로 해지 버튼 위치·크기·단계 수가 규제 대상이 되었습니다</li>
+      <li>해지 절차는 구매 절차와 본질적으로 동등한 노력으로 완료 가능해야 법 위반을 피할 수 있습니다</li>
+      <li>본 체크리스트로 UX 설계 적합성을 진단하고, 6가지 위험 신호를 사전에 식별하십시오</li>
+    </ul>
+  </div>
+  <div class="meta">
+    <span>작성일 2026-07-29</span>
+    <span>· 기준 법령 시행일 2026-07-21</span>
+    <span class="vchip">✓ 조문·판례 2단 검증</span>
+    <span>· 읽는 시간 약 10분</span>
+  </div>
+  <div class="cta-row">
+    <a class="btn btn-p" href="#faq">핵심만 빠르게 (Q&amp;A)</a>
+    <a class="btn btn-o" href="#consult">상담 문의</a>
+  </div>
+</div>
+
+<div class="app">
+<nav class="toc" id="toc">
+  <button class="toc-toggle" onclick="document.getElementById('toc').classList.toggle('closed')">목차 <span class="ar">▾</span></button>
+  <div class="tt">목차</div>
+  <ol id="toc-list">
+    <li><a href="#s1">문제상황</a></li>
+    <li><a href="#s2">해지방해 금지 규제 체계</a></li>
+    <li><a href="#s3">UX 설계 기준</a></li>
+    <li><a href="#s4">체크리스트</a></li>
+    <li><a href="#s5">위험 신호</a></li>
+    <li><a href="#s6">근거 카드</a></li>
+    <li><a href="#faq">자주 묻는 질문</a></li>
+  </ol>
+</nav>
+
+<main class="content">
+
+<section class="blk" id="s1">
+<div class="secl">섹션 1</div>
+<h2>문제상황</h2>
+<div class="summary">
+<div class="lb">한눈에</div>
+<ul>
+  <li>구독서비스 해지 UX의 다크패턴이 전자상거래법 개정으로 직접 규제 대상에 포함</li>
+  <li>공정위는 LG유플러스·구글·트렌비에 시정명령·과태료 부과한 선례 존재</li>
+  <li>해지 버튼 위치·크기·색상·단계 수 평가 기준 부재가 기업의 가장 큰 리스크</li>
+</ul>
+</div>
+<p>구독서비스에서 해지를 어렵게 만드는 UX 설계(다크패턴)가 집중 규제 대상이 되고 있다. 2026년 7월 시행된 전자상거래법 개정은 온라인 인터페이스 설계 자체를 규제 대상에 포함시켜, 해지 버튼의 위치·크기·색상·단계 수까지 평가 대상이 되었다.</p>
+<p><strong>핵심 쟁점:</strong> 해지 절차를 구매 절차보다 복잡하게 설계한 경우, 해지 버튼을 시각적으로 구분(축소·희색·은닉)한 경우, 팝업으로 해지 의사를 반복적으로 변경 요구한 경우, 해지 경로를 가입 경로와 다른 방법으로만 제한한 경우 각각 법 위반에 해당할 수 있다.</p>
+
+<h3>2026년 개정의 의미</h3>
+<p>전자상거래법 제21조의2는 온라인 인터페이스 운영자의 금지행위를 신설했다. 제21조(금지행위)가 콘텐츠·고지 방식의 규제였다면, 제21조의2는 UI/UX 설계 자체를 규제한다는 점에서 질적으로 다르다. 해지 버튼의 <strong>시각적 차별(3호)</strong>, <strong>절차 복잡화(4호)</strong>, <strong>팝업 반복 요구(5호)</strong>가 각각 독립된 금지행위로 열거되었다.</p>
+
+<h3>선행 심결례</h3>
+<p>공정위는 이미 제21조①1호(기만적 해지 방해)를 적용해 LG유플러스, 구글, 트렌비 등에 시정명령을 부과했다. 아래 공정위 심결례는 해지 UX 관련 규제 집행의 방향성을 보여준다.</p>
+<div class="tbl-wrap">
+<table>
+<thead><tr><th>사건</th><th>사업자</th><th>위반 행위</th><th>조치</th></tr></thead>
+<tbody>
+<tr><td>2019전자2259</td><td>LG유플러스</td><td>정액형 상품에 '가입 후 별도 해지 불가/1개월간 해지 불가' 고지</td><td>시정명령·과태료</td></tr>
+<tr><td>2019전자2241</td><td>구글(유튜브프리미엄)</td><td>월정액 '해당 월 청약철회 불가' 허위 안내</td><td>시정명령·과태료</td></tr>
+<tr><td>2022전자0974</td><td>트렌비</td><td>청약철회 기한 '수령 후 1일' 단축, 임의 반품 불가 고지</td><td>시정명령·공표·과태료</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="blk" id="s2">
+<div class="secl">섹션 2</div>
+<h2>해지방해 금지 규제 체계</h2>
+
+<h3>2.1 전자상거래법 제21조①1호 — 기만적 해지 방해 금지</h3>
+<div class="ev">
+<div class="top"><span class="kind law">조문</span><span class="cite">전자상거래법 제21조①1호</span><span class="vtick">✓ 현행 확인</span></div>
+<p class="gist">거짓 또는 과장된 사실을 알리거나 기만적 방법을 사용하여 소비자를 유인 또는 소비자와 거래하거나 청약철회등 또는 계약의 해지를 방해하는 행위 금지</p>
+<div class="date">시행일 2026.7.21. (MST 282793)</div>
+</div>
+<p><strong>적용되는 UX 설계:</strong> 해지 가능 여부 사실과 다르게 고지, 법정 청약철회 기한 임의 단축, 해지 시 불이익 과장 협박성 메시지, 무료체험→유료전환 조건 은닉 등.</p>
+
+<h3>2.2 전자상거래법 제21조의2① — 온라인 인터페이스 규제</h3>
+<div class="tbl-wrap">
+<table>
+<thead><tr><th>호</th><th>내용</th><th>UX 설계 영향</th></tr></thead>
+<tbody>
+<tr><td>3호</td><td>선택항목 간 시각적 현저한 차이 금지</td><td>해지 버튼을 가입 버튼보다 작게·희미하게 표시 금지</td></tr>
+<tr><td>4호 가목</td><td>구매 절차보다 복잡한 해지 절차 금지</td><td>해지 클릭 수·단계 수를 가입보다 많게 설계 금지</td></tr>
+<tr><td>4호 나목</td><td>가입과 다른 방법으로만 해지 제한 금지</td><td>해지는 전화만·방문만으로 제한 금지</td></tr>
+<tr><td>5호</td><td>팝업 반복 요구로 의사결정 방해 금지</td><td>해지 시 할인 제안 팝업 반복 금지 (거부 선택권 제공 시 예외)</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>2.3 약관규제법 제9조 — 해지 제한 약관 무효</h3>
+<div class="ev">
+<div class="top"><span class="kind law">조문</span><span class="cite">약관규제법 제9조</span><span class="vtick">✓ 현행 확인</span></div>
+<p class="gist">법률에 따른 고객의 해제권·해지권을 배제하거나 그 행사를 제한하는 약관 조항은 무효</p>
+<div class="date">시행일 2024.8.7. (MST 260021)</div>
+</div>
+<p><strong>적용:</strong> "해지는 고객센터 전화 문의만 가능" 등 온라인 해지 자체를 원천 차단하는 약관 조항은 약관규제법 제9조제1호에 따라 무효이다.</p>
+</section>
+
+<section class="blk" id="s3">
+<div class="secl">섹션 3</div>
+<h2>UX 설계 기준</h2>
+
+<h3>3.1 해지 버튼 위치</h3>
+<div class="tbl-wrap">
+<table>
+<thead><tr><th>기준</th><th>적합</th><th>위험</th></tr></thead>
+<tbody>
+<tr><td>접근 경로</td><td>계정 설정·구독 관리 1depth 이내</td><td>3depth 이상 경로·FAQ 내 은닉</td></tr>
+<tr><td>가입 버튼 대비</td><td>동등한 시각적 계층</td><td>가입 버튼 대비 현저히 작은 크기·낮은 명도</td></tr>
+<tr><td>검색 가능성</td><td>"해지" 검색 시 1클릭 내 진입</td><td>검색 차단·자동완성 비활성화</td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>설계 원칙:</strong> 가입 경로의 depth를 N이라 할 때, 해지 경로는 N±1 이내여야 한다.</p>
+
+<h3>3.2 해지 단계 수</h3>
+<div class="tbl-wrap">
+<table>
+<thead><tr><th>항목</th><th>적합</th><th>위험</th></tr></thead>
+<tbody>
+<tr><td>최대 단계</td><td>구매 절차 단계 수 ±1 이하</td><td>구매 3단계·해지 6단계</td></tr>
+<tr><td>필수 확인</td><td>1회 (본인 확인)</td><td>3회 이상 재확인</td></tr>
+<tr><td>추가 절차</td><td>없음</td><td>설문·탈퇴 사유 입력 강제·재가입 유도 페이지</td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>설계 원칙:</strong> 해지 절차는 구매 절차와 본질적으로 동등한 노력으로 완료 가능해야 한다. "정말 해지하시겠습니까?" 1회 확인은 허용되나, 이후 할인 제안 페이지를 추가하는 것은 제21조의2①5호 위험.</p>
+
+<h3>3.3 해지 수단</h3>
+<div class="tbl-wrap">
+<table>
+<thead><tr><th>방법</th><th>적합</th><th>위험</th></tr></thead>
+<tbody>
+<tr><td>온라인 해지</td><td>가입과 동일한 웹·앱에서 해지 가능</td><td>해지는 전화·방문·등기만 가능</td></tr>
+<tr><td>해지 버튼 명칭</td><td>"해지", "구독 취소", "멤버십 해지"</td><td>"서비스 설정 변경"·"계정 옵션" 모호 명칭</td></tr>
+<tr><td>해지 확인</td><td>즉시 해지 처리 또는 명확한 일정 안내</td><td>"검토 후 연락" 지연 처리</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>3.4 해지 확인 절차 (적합 예시)</h3>
+<div class="figure">
+<div class="cap">적합한 해지 UX 플로우</div>
+<div class="flow">
+<div class="step"><div class="n">STEP 1</div><div class="t">해지 버튼 클릭</div><div class="d">계정 설정 내 "구독 해지" 버튼 (1depth)</div></div>
+<div class="step"><div class="n">STEP 2</div><div class="t">본인 확인</div><div class="d">ID/PW 인증 또는 생체인증 (1회)</div></div>
+<div class="step"><div class="n">STEP 3</div><div class="t">최종 확인</div><div class="d">"해지하시겠습니까?" 확인 (1회)</div></div>
+<div class="step"><div class="n">STEP 4</div><div class="t">해지 완료</div><div class="d">즉시 처리 + 확인 이메일 발송</div></div>
+</div>
+</div>
+<p>위 4단계 대비 해지 경로가 7단계 이상이거나, 가입이 2단계인데 해지만 6단계면 제21조의2①4호 가목 위반 가능성 높음.</p>
+</section>
+
+<section class="blk" id="s4">
+<div class="secl">섹션 4</div>
+<h2>체크리스트 — UX 설계 자가 진단</h2>
+
+<h3>4.1 해지 접근성</h3>
+<ul class="checklist">
+<li><span class="num">1</span><span class="c-body"><span class="lbl">해지 버튼이 계정 설정 1depth 이내에 위치</span><span class="sub"> — ★★★ 필수</span></span></li>
+<li><span class="num">2</span><span class="c-body"><span class="lbl">해지 버튼이 가입 버튼과 동등한 크기</span><span class="sub"> — ★★★ 가입 버튼 면적의 80% 이상</span></span></li>
+<li><span class="num">3</span><span class="c-body"><span class="lbl">해지 버튼 색상이 비활성화·희색 처리되지 않음</span><span class="sub"> — ★★★ 활성 상태와 동일 명도·채도</span></span></li>
+<li><span class="num">4</span><span class="c-body"><span class="lbl">해지 버튼 명칭이 직관적</span><span class="sub"> — ★★☆ "해지"·"구독 취소" 사용, 모호 명칭 지양</span></span></li>
+</ul>
+
+<h3>4.2 해지 절차</h3>
+<ul class="checklist">
+<li><span class="num">5</span><span class="c-body"><span class="lbl">해지 단계 수가 구매 단계 수 ±1 이내</span><span class="sub"> — ★★★ 구매 3단→해지 4단 이하</span></span></li>
+<li><span class="num">6</span><span class="c-body"><span class="lbl">해지 시 추가 정보 입력(설문·사유)이 강제되지 않음</span><span class="sub"> — ★★☆ 선택적 입력만 허용</span></span></li>
+<li><span class="num">7</span><span class="c-body"><span class="lbl">해지 완료까지 3회 이상의 재확인 없음</span><span class="sub"> — ★★★ 최종 1회 확인만 허용</span></span></li>
+<li><span class="num">8</span><span class="c-body"><span class="lbl">해지 시 할인 제안·재가입 유도가 1회를 초과하지 않음</span><span class="sub"> — ★★★ 0~1회, 반복 금지</span></span></li>
+</ul>
+
+<h3>4.3 해지 수단</h3>
+<ul class="checklist">
+<li><span class="num">9</span><span class="c-body"><span class="lbl">가입한 웹/앱에서 직접 해지 가능</span><span class="sub"> — ★★★ 전화·방문 강제 금지</span></span></li>
+<li><span class="num">10</span><span class="c-body"><span class="lbl">해지 처리 결과가 즉시 또는 명확한 일정으로 안내</span><span class="sub"> — ★★☆ 지연 처리 금지</span></span></li>
+<li><span class="num">11</span><span class="c-body"><span class="lbl">검색 기능으로 "해지" 입력 시 1클릭 내 해지 페이지 진입 가능</span><span class="sub"> — ★★☆ 검색 차단 금지</span></span></li>
+</ul>
+
+<h3>4.4 약관·고지</h3>
+<ul class="checklist">
+<li><span class="num">12</span><span class="c-body"><span class="lbl">약관에 "해지 불가"·"환불 불가" 절대적 표현 없음</span><span class="sub"> — ★★★ 조건부 가능 표현 사용</span></span></li>
+<li><span class="num">13</span><span class="c-body"><span class="lbl">법정 청약철회 기간(7일)보다 짧은 단축 없음</span><span class="sub"> — ★★★ 7일 미만 안내 금지</span></span></li>
+<li><span class="num">14</span><span class="c-body"><span class="lbl">자동 연장 조건이 가입 시 명확히 고지</span><span class="sub"> — ★★★ 첫 화면에서 고지</span></span></li>
+<li><span class="num">15</span><span class="c-body"><span class="lbl">해지 조건·효과·환불 기준이 약관에 명시</span><span class="sub"> — ★★☆ 모호·누락 금지</span></span></li>
+</ul>
+</section>
+
+<section class="blk" id="s5">
+<div class="secl">섹션 5</div>
+<h2>위험 신호 — 6가지 경고</h2>
+
+<div class="risk">
+<div class="r-h"><span class="r-icon">!</span> 신호 1: 해지 경로 4depth 이상</div>
+<div class="r-body">계정 설정 > 결제 정보 > 구독 관리 > 구독 상세 > 설정 변경 > 해지 (6depth). 가입이 메인 화면 1클릭인데 해지가 6클릭이면 <strong>제21조의2①4호 가목 위반</strong>.</div>
+</div>
+
+<div class="risk">
+<div class="r-h"><span class="r-icon">!</span> 신호 2: "해지는 고객센터로 문의"</div>
+<div class="r-body">온라인 해지 버튼 없이 전화 문의만 안내. <strong>제21조의2①4호 나목 위반</strong> + <strong>약관규제법 제9조 위반</strong>.</div>
+</div>
+
+<div class="risk">
+<div class="r-h"><span class="r-icon">!</span> 신호 3: 해지 시 3회 이상 팝업</div>
+<div class="r-body">"정말 해지하시겠습니까?" → "7일 무료 이용권" → "50% 할인 쿠폰" → "정말 떠나시나요?". 3회 이상 반복은 <strong>제21조의2①5호 위반</strong> (단, "다시 보지 않음" 선택권 제공 시 면책 가능).</div>
+</div>
+
+<div class="risk">
+<div class="r-h"><span class="r-icon">!</span> 신호 4: 해지 버튼이 회색·8px 이하</div>
+<div class="r-body">가입 버튼은 청색 44px×240px / 해지 버튼은 회색 10px×60px. <strong>제21조의2①3호 위반</strong> (시각적 현저한 차이).</div>
+</div>
+
+<div class="risk">
+<div class="r-h"><span class="r-icon">!</span> 신호 5: 청약철회 기한 임의 단축</div>
+<div class="r-body">"수령 후 1일 이내만 환불 가능" 안내. <strong>제21조①1호 위반</strong> — 트렌비 심결례와 동일 유형.</div>
+</div>
+
+<div class="risk">
+<div class="r-h"><span class="r-icon">!</span> 신호 6: "해지 시 모든 혜택 소멸" 협박성 멘트</div>
+<div class="r-body">포인트·누적 혜택 전부 소멸 안내를 해지 버튼 옆에 표시. <strong>제21조①1호 위반</strong> 가능성 높음 (기만적 해지 방해).</div>
+</div>
+</section>
+
+<section class="blk" id="s6">
+<div class="secl">섹션 6</div>
+<h2>근거 카드</h2>
+
+<div class="ev">
+<div class="top"><span class="kind law">조문</span><span class="cite">전자상거래법 제21조①1호</span><span class="vtick">✓ 현행 확인</span></div>
+<p class="gist">거짓·과장·기만적 방법으로 소비자의 청약철회 또는 계약 해지를 방해하는 행위 금지. 위반 시 시정명령 + 과태료 1천만 원 이하.</p>
+<div class="date">MST 282793, 시행 2026.7.21. | 심결례: LG유플러스(2019전자2259)·구글(2019전자2241)·트렌비(2022전자0974)</div>
+</div>
+
+<div class="ev">
+<div class="top"><span class="kind law">조문</span><span class="cite">전자상거래법 제21조의2①3호</span><span class="vtick">✓ 현행 확인</span></div>
+<p class="gist">선택항목 사이에 크기·모양·색깔 등 시각적으로 현저한 차이를 두어 표시하는 행위 중 소비자가 특정 항목만 선택할 수 있는 것으로 잘못 알게 할 우려가 있는 행위 금지.</p>
+<div class="date">MST 282793, 시행 2026.7.21. | 해지 버튼 축소·희색 처리 금지</div>
+</div>
+
+<div class="ev">
+<div class="top"><span class="kind law">조문</span><span class="cite">전자상거래법 제21조의2①4호</span><span class="vtick">✓ 현행 확인</span></div>
+<p class="gist">정당한 사유 없이 구매 절차보다 해지 절차를 복잡하게 설계(가목)하거나, 가입과 다른 방법으로만 해지 제한(나목) 금지.</p>
+<div class="date">MST 282793, 시행 2026.7.21. | 2026년 신설 조문 — 직접 적용 심결례 미확인</div>
+</div>
+
+<div class="ev">
+<div class="top"><span class="kind law">조문</span><span class="cite">전자상거래법 제21조의2①5호</span><span class="vtick">✓ 현행 확인</span></div>
+<p class="gist">소비자가 이미 선택·결정한 내용의 변경을 팝업창 등을 통하여 반복적으로 요구하는 방법으로 소비자의 자유로운 의사결정 방해 금지. 단, 거부 선택권(대통령령 기간 이상 미표시) 제공 시 예외.</p>
+<div class="date">MST 282793, 시행 2026.7.21. | 해지 후 할인 제안 반복 금지</div>
+</div>
+
+<div class="ev">
+<div class="top"><span class="kind law">조문</span><span class="cite">약관규제법 제6조·제9조</span><span class="vtick">✓ 현행 확인</span></div>
+<p class="gist">제6조: 신의성실 원칙 위반·공정성 잃은 약관 조항 무효. 제9조: 법률에 따른 고객의 해지권을 배제·제한하는 약관 조항 무효.</p>
+<div class="date">MST 260021, 시행 2024.8.7. | "해지 불가"·"해지는 전화만" 약관 조항 무효</div>
+</div>
+</section>
+
+<section class="blk faq" id="faq">
+<div class="secl">Q&amp;A</div>
+<h2>자주 묻는 질문</h2>
+
+<details open>
+<summary>해지 버튼은 어디에 위치해야 하나요?</summary>
+<div class="a">계정 설정 또는 구독 관리 메뉴의 1depth 이내여야 합니다. "설정 > 계정 > 구독 관리 > 해지"처럼 3depth를 초과하면 위험합니다. 가장 좋은 설계는 계정 설정 첫 화면에 "구독 해지" 버튼을 노출하는 것입니다.</div>
+</details>
+
+<details>
+<summary>"정말 해지하시겠습니까?" 확인 팝업은 몇 번까지 허용되나요?</summary>
+<div class="a">1회 확인 팝업은 통상 허용됩니다. 문제는 해지 확인 후 "7일 무료" → "50% 할인" 등 추가 제안을 2회 이상 반복하는 경우이며, 이는 제21조의2①5호 위반 가능성이 있습니다. 단, "다시 보지 않음" 또는 "거절 후 더 이상 표시 안 함" 선택권을 제공하면 예외가 인정될 수 있습니다.</div>
+</details>
+
+<details>
+<summary>해지 버튼 크기의 구체적 기준이 있나요?</summary>
+<div class="a">법령에 px 단위의 구체적 기준은 없습니다. 규제 기준은 <strong>가입 버튼과의 상대적 차이</strong>입니다. 가입 버튼이 48px인데 해지 버튼이 10px이면 위험합니다. 해지 버튼은 가입 버튼의 동등한 시각적 계층(크기·색상·명도)을 가져야 합니다.</div>
+</details>
+
+<details>
+<summary>가입은 웹으로 했는데 해지는 앱에서만 가능한 경우 위반인가요?</summary>
+<div class="a">네. 제21조의2①4호 나목은 가입 방법과 다른 방법으로만 해지를 제한하는 행위를 금지합니다. 가입 경로(웹·앱·전화)와 동일한 해지 경로를 각각 제공해야 합니다.</div>
+</details>
+
+<details>
+<summary>해지 시 설문 조사나 탈퇴 사유 입력을 강제해도 되나요?</summary>
+<div class="a">선택적 입력은 허용되지만, 필수 입력으로 설정하는 것은 해지 절차를 복잡하게 만드는 행위로 제21조의2①4호 가목 위반 위험이 있습니다. 사유 입력 없이 해지 완료가 가능해야 합니다.</div>
+</details>
+
+<details>
+<summary>구독 해지 시 환불 기준은 어떻게 안내해야 하나요?</summary>
+<div class="a">해지 버튼 옆 또는 해지 확인 단계에서 환불 기준을 명확히 표시해야 합니다. 전자상거래법 제18조(청약철회 효과)에 따라 환불 지연 시 지연배상금이 발생할 수 있습니다.</div>
+</details>
+
+<details>
+<summary>제21조의2①4호 심결례가 없는 이유는?</summary>
+<div class="a">이 조항은 2026년 전자상거래법 개정으로 신설된 조문입니다. 2026년 7월 시행되어 아직 공정위 심결례·판례가 누적되지 않았습니다. 현 시점에서는 유럽 DMA·DSA 사례와 미국 FTC Click-to-Cancel 규칙을 참고하는 것이 실무적입니다. 다만 조문 문언이 명확하므로 시행 즉시 집행 가능합니다.</div>
+</details>
+
+<div class="notice">
+본 자료는 2026년 7월 29일 기준으로 작성되었으며, 인용된 법령·판례는 작성 시점의 현행성을 확인한 것입니다. 법령은 개정될 수 있고 사안마다 결론이 달라질 수 있으므로, 실제 의사결정 전 최신 법령과 개별 사실관계에 대한 확인이 필요합니다. 본 자료는 일반적인 법률 정보 제공이며 특정 사안에 대한 법률 자문이 아닙니다.
+</div>
+</section>
+</main>
+</div>
+
+<footer class="footer" id="consult">
+<div class="wrap">
+<div class="prof">
+<div>
+<h3>조우성 변호사 / 로펌 머스트노우</h3>
+<p>전자상거래·플랫폼 규제 전문. 공정위 심결례·전자상거래법·약관규제법 기반 리걸 스크리닝 제공.</p>
+<p>구독서비스 해지 UX 설계안 검토, 약관 해지 조항 적합성 검토, 글로벌 규제(FTC Click-to-Cancel·EU DSA) 대응.</p>
+<p style="font-size:15px;color:rgba(255,255,255,.92);margin-top:8px">✉ law@mustknow.co.kr</p>
+</div>
+<div class="cta-f"><a class="btn btn-f" href="mailto:law@mustknow.co.kr">상담 문의하기</a></div>
+</div>
+<div class="fine">© 2026 조우성 변호사. 본 콘텐츠는 일반 법률 정보이며 법률 자문을 대체하지 않습니다. 인용 법령·판례는 2026.7.29. 기준 현행성을 확인했습니다.</div>
+</div>
+</footer>
+
+<script>
+var pb=document.getElementById('progress');
+function onScroll(){var h=document.documentElement,b=document.body;var st=h.scrollTop||b.scrollTop;var sh=(h.scrollHeight||b.scrollHeight)-h.clientHeight;pb.style.width=(sh>0?(st/sh*100):0)+'%';}
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+var toTop=document.getElementById('toTop');
+window.addEventListener('scroll',function(){(window.scrollY||window.pageYOffset)>500?toTop.classList.add('show'):toTop.classList.remove('show');},{passive:true});
+var links=Array.prototype.slice.call(document.querySelectorAll('#toc-list a'));
+var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));}).filter(Boolean);
+function spy(){var pos=(window.scrollY||window.pageYOffset)+120,cur=secs[0];for(var i=0;i<secs.length;i++){if(secs[i].offsetTop<=pos)cur=secs[i];}links.forEach(function(a){a.classList.toggle('active',cur&&a.getAttribute('href')==='#'+cur.id);});}
+window.addEventListener('scroll',spy,{passive:true});spy();
+document.querySelectorAll('#toc-list a').forEach(function(a){a.addEventListener('click',function(){if(window.innerWidth<=820)document.getElementById('toc').classList.add('closed');});});
+</script>
+</body>
+</html>
