@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>소수주주 권리보호 — 소액주주의 법적 권리를 행사하는 방법</title>
+<meta name="robots" content="noindex">
+<style>
+  :root {
+    --green-900: #0d3b1e;
+    --green-800: #14532d;
+    --green-700: #166534;
+    --green-600: #16a34a;
+    --green-500: #22c55e;
+    --green-400: #4ade80;
+    --green-100: #dcfce7;
+    --green-50: #f0fdf4;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-600: #4b5563;
+    --gray-700: #374151;
+    --gray-800: #1f2937;
+    --gray-900: #111827;
+    --red-600: #dc2626;
+    --red-100: #fee2e2;
+    --amber-600: #d97706;
+    --amber-100: #fef3c7;
+    --blue-600: #2563eb;
+    --blue-50: #eff6ff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Pretendard', 'Noto Sans KR', -apple-system, sans-serif; color: var(--gray-800); line-height: 1.8; background: var(--gray-50); }
+  .container { max-width: 840px; margin: 0 auto; padding: 40px 24px; }
+  /* header */
+  .header { background: linear-gradient(135deg, var(--green-900), var(--green-700)); color: #fff; border-radius: 20px; padding: 48px 40px; margin-bottom: 40px; }
+  .header .badge { display: inline-block; background: var(--green-500); color: var(--green-900); font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin-bottom: 16px; letter-spacing: 0.5px; }
+  .header h1 { font-size: 28px; font-weight: 800; line-height: 1.3; margin-bottom: 12px; letter-spacing: -0.5px; }
+  .header .subtitle { font-size: 15px; opacity: 0.85; line-height: 1.6; }
+  .header .meta { margin-top: 20px; font-size: 13px; opacity: 0.7; display: flex; gap: 16px; flex-wrap: wrap; }
+  /* tldr */
+  .tldr { background: var(--green-50); border-left: 4px solid var(--green-500); border-radius: 12px; padding: 20px 24px; margin-bottom: 36px; font-size: 14px; color: var(--gray-700); }
+  .tldr strong { color: var(--green-800); }
+  /* section */
+  .section { margin-bottom: 48px; }
+  .section h2 { font-size: 22px; font-weight: 700; color: var(--green-900); padding-bottom: 8px; border-bottom: 2px solid var(--green-200); margin-bottom: 20px; letter-spacing: -0.3px; }
+  .section h3 { font-size: 18px; font-weight: 700; color: var(--green-800); margin: 24px 0 12px; }
+  .section h4 { font-size: 15px; font-weight: 700; color: var(--gray-700); margin: 16px 0 8px; }
+  .section p { font-size: 15px; color: var(--gray-700); margin-bottom: 14px; }
+  /* tables */
+  .table-wrap { overflow-x: auto; margin: 16px 0 20px; border-radius: 12px; border: 1px solid var(--gray-200); }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 600px; }
+  thead { background: var(--green-800); color: #fff; }
+  th { padding: 12px 16px; text-align: left; font-weight: 600; white-space: nowrap; }
+  td { padding: 11px 16px; border-bottom: 1px solid var(--gray-200); color: var(--gray-700); }
+  tr:nth-child(even) td { background: var(--green-50); }
+  tr:last-child td { border-bottom: none; }
+  /* cards */
+  .insight-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 16px 0 20px; }
+  .insight-item { background: #fff; border: 1px solid var(--gray-200); border-radius: 10px; padding: 16px; }
+  .insight-item .label { font-size: 12px; color: var(--gray-600); margin-bottom: 4px; }
+  .insight-item .value { font-size: 15px; font-weight: 700; color: var(--green-800); }
+  /* pratical tip */
+  .tip { background: var(--green-50); border-radius: 10px; padding: 16px 20px; margin: 14px 0; border: 1px solid var(--green-200); font-size: 14px; }
+  .tip strong { color: var(--green-800); }
+  /* red box (warning) */
+  .warning { background: var(--red-100); border-radius: 10px; padding: 16px 20px; margin: 14px 0; border: 1px solid #fca5a5; font-size: 14px; }
+  .warning strong { color: var(--red-600); }
+  /* steps */
+  .steps { counter-reset: step; margin: 16px 0 20px; }
+  .step-item { background: #fff; border: 1px solid var(--gray-200); border-radius: 10px; padding: 16px 20px 16px 56px; margin-bottom: 10px; position: relative; }
+  .step-item::before { counter-increment: step; content: counter(step); position: absolute; left: 16px; top: 14px; width: 28px; height: 28px; background: var(--green-600); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; }
+  .step-item .step-title { font-weight: 700; color: var(--green-800); margin-bottom: 4px; }
+  .step-item .step-desc { font-size: 14px; color: var(--gray-600); }
+  /* faq */
+  .faq-item { border: 1px solid var(--gray-200); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; background: #fff; }
+  .faq-q { font-weight: 700; color: var(--green-800); margin-bottom: 6px; font-size: 15px; }
+  .faq-a { font-size: 14px; color: var(--gray-600); line-height: 1.7; }
+  /* cta */
+  .cta { background: linear-gradient(135deg, var(--green-900), var(--green-700)); color: #fff; border-radius: 20px; padding: 40px; margin-top: 24px; text-align: center; }
+  .cta h2 { color: #fff !important; border-bottom: none !important; font-size: 22px; margin-bottom: 12px; }
+  .cta p { color: rgba(255,255,255,0.85); font-size: 14px; margin-bottom: 8px; }
+  .cta ul { list-style: none; text-align: left; display: inline-block; margin: 16px 0; }
+  .cta ul li { padding: 6px 0 6px 20px; position: relative; font-size: 14px; color: rgba(255,255,255,0.9); }
+  .cta ul li::before { content: "✓"; position: absolute; left: 0; color: var(--green-400); font-weight: 700; }
+  .cta .steps-list { text-align: left; display: inline-block; margin: 12px 0; }
+  .cta .steps-list li { padding: 4px 0; counter-increment: cta-step; font-size: 14px; color: rgba(255,255,255,0.9); }
+  .cta .disclaimer { font-size: 12px; opacity: 0.6; margin-top: 16px; }
+  @media (max-width: 640px) {
+    .container { padding: 20px 16px; }
+    .header { padding: 32px 24px; }
+    .header h1 { font-size: 22px; }
+    .insight-box { grid-template-columns: 1fr; }
+    .cta { padding: 28px 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <span class="badge">비교형 · 회사법</span>
+  <h1>소수주주 권리보호<br>소액주주의 법적 권리를 행사하는 방법</h1>
+  <p class="subtitle">상장사 0.01%만 있어도 이사 책임 추궁 가능 — 권리별 지분율·보유기간·절차 한눈에 비교</p>
+  <div class="meta"><span>EBOOK-024</span><span>B2B</span><span>verification: L2</span></div>
+</div>
+
+<div class="tldr">
+  <strong>TL;DR</strong> — 상법은 소액주주에게 최소 지분율 요건을 충족하면 주주제안·회계장부열람·대표소송·이사해임청구 등 강력한 권리를 보장한다. 상장사 기준 <strong>0.01%(대표소송)~3%(회계장부열람)</strong>의 적은 지분으로도 적극적 권리 행사가 가능하며, 비상장사는 더 높은 요건(1%~3%)이 적용된다.
+</div>
+
+<!-- 1. 문제상황 -->
+<div class="section">
+  <h2>1. 문제상황 — 주주는 있지만 권리는 없습니까?</h2>
+  <p>당신이 보유한 지분이 1%도 안 된다고 해서, 회사 경영진의 부당한 결정을 지켜만 봐야 하는 것은 아니다. 상법은 소액주주(소수주주)에게 일정 요건을 충족하면 경영진을 견제하고 권리를 구제받을 수 있는 특별한 장치를 마련해 두었다.</p>
+  <h4>소액주주가 자주 마주치는 문제 상황</h4>
+  <div class="warning">
+    <strong>⚠ 경고 신호:</strong> 대표이사 자금 유용·횡령 정황 · 주총 표 대결로 부당 안건 통과 · 이사의 법령·정관 위반 · 배당·정관 변경·합병에 의견 미반영 · 경영진의 정당한 주주제안 거부
+  </div>
+</div>
+
+<!-- 2. 권리 체계 -->
+<div class="section">
+  <h2>2. 소수주주 권리 체계 — 네 가지 핵심 권리</h2>
+
+  <h3>2.1 회계장부열람권 (상법 제466조)</h3>
+  <p>가장 많이 활용되는 1차 권리. 문제 징후 포착의 시작이다.</p>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>구분</th><th>내용</th></tr></thead>
+    <tbody>
+      <tr><td><strong>근거</strong></td><td>상법 제466조</td></tr>
+      <tr><td><strong>지분율(비상장)</strong></td><td>3% 이상</td></tr>
+      <tr><td><strong>지분율(상장)</strong></td><td>0.1% (대통령령 지정 0.05%)</td></tr>
+      <tr><td><strong>보유기간</strong></td><td>상장사 6개월 계속보유 필요</td></tr>
+      <tr><td><strong>청구 대상</strong></td><td>회계 장부·서류 일체</td></tr>
+      <tr><td><strong>거부 요건</strong></td><td>회사가 "부당함"을 증명해야 거부 가능 (입증책임 전환)</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="tip"><strong>실무 포인트:</strong> 회계장부열람은 경영권 분쟁의 첫 신호탄이다. 입증책임이 회사에 있으므로, 거부하려면 회사 스스로 "부당함"을 증명해야 한다. 대법원 2010다88682 참조.</div>
+
+  <h3>2.2 이사해임청구권 (상법 제385조 제2항)</h3>
+  <p>주주총회에서 해임이 부결된 이사를 법원에 청구하여 해임할 수 있는 강력한 권리.</p>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>구분</th><th>내용</th></tr></thead>
+    <tbody>
+      <tr><td><strong>근거</strong></td><td>상법 제385조 제2항</td></tr>
+      <tr><td><strong>지분율(비상장)</strong></td><td>3% 이상</td></tr>
+      <tr><td><strong>지분율(상장)</strong></td><td>0.5% (대통령령 지정 0.25%)</td></tr>
+      <tr><td><strong>보유기간</strong></td><td>상장사 6개월 계속보유 필요</td></tr>
+      <tr><td><strong>해임사유</strong></td><td>부정행위 또는 법령·정관 위반의 중대한 사실</td></tr>
+      <tr><td><strong>선행 절차</strong></td><td>주주총회에서 해임안 부결 필요</td></tr>
+      <tr><td><strong>제소기간</strong></td><td>부결일부터 1개월 이내</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="tip">
+    <strong>핵심 판례:</strong> 대법원 2010다35985 — 해임사유는 "고의 또는 중대한 귀책으로 법령·정관을 심히 위배하여 충실의무를 저버리고 회사에 손해를 가하는 경우"여야 한다. 단순 경영 판단 착오는 불가.<br>
+    대법원 2011다1323 — 이사·회사 공동피고 필수(고유필수적 공동소송). 이사만 피고로 하면 각하.
+  </div>
+
+  <h3>2.3 주주대표소송 (상법 제403조)</h3>
+  <p>회사가 이사에 대한 책임 추궁을 게을리할 때, 주주가 회사를 대신하여 제기하는 소송.</p>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>구분</th><th>내용</th></tr></thead>
+    <tbody>
+      <tr><td><strong>근거</strong></td><td>상법 제403조</td></tr>
+      <tr><td><strong>지분율(비상장)</strong></td><td>1% 이상</td></tr>
+      <tr><td><strong>지분율(상장)</strong></td><td><strong>0.01%</strong> (1만분의 1) — 최저 문턱</td></tr>
+      <tr><td><strong>보유기간</strong></td><td>상장사 6개월 계속보유 필요</td></tr>
+      <tr><td><strong>절차</strong></td><td>서면 청구 → 회사 30일 내 미제소 → 주주 직접 제소</td></tr>
+      <tr><td><strong>승소 효과</strong></td><td>회사에 손해배상 (주주 개인 직접 귀속되지 않음)</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="tip"><strong>실무 포인트:</strong> 대표소송은 가장 낮은 지분율(상장 0.01%)로 행사 가능. 승소 시 소송비용은 회사 부담(상법 제405조). 2024다216743 — 제소요건 하자치유 법리로 문턱이 더 낮아졌다.</div>
+
+  <h3>2.4 주주제안권 (상법 제363조의2)</h3>
+  <p>주주총회 6주 전까지 이사회에 특정 안건을 제안할 수 있는 권리.</p>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>구분</th><th>내용</th></tr></thead>
+    <tbody>
+      <tr><td><strong>근거</strong></td><td>상법 제363조의2</td></tr>
+      <tr><td><strong>지분율(비상장)</strong></td><td>3% 이상</td></tr>
+      <tr><td><strong>지분율(상장)</strong></td><td>1% (대통령령 지정 0.5%)</td></tr>
+      <tr><td><strong>보유기간</strong></td><td>상장사 6개월 계속보유 필요</td></tr>
+      <tr><td><strong>제안 시한</strong></td><td>주주총회 6주 전까지 서면·전자문서</td></tr>
+      <tr><td><strong>거부 사유</strong></td><td>상법 시행령 제12조 — 5가지로 한정</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="tip"><strong>실무 포인트:</strong> 이사회는 주주제안을 정당한 사유 없이 거부 불가. 부당 거부 시 이사 개인 손해배상책임 발생 가능(대법원 2019다236385). 거부 사유는 시행령 제12조 5가지(법령 위반·정관 위반·의결권 없는 주식 제안자·동일 제안 반복·형식적 요건 미비)로 제한.</div>
+</div>
+
+<!-- 3. 지분율별 권리 비교 -->
+<div class="section">
+  <h2>3. 지분율별 권리 비교 — 한눈에 보는 전체 지도</h2>
+
+  <h3>3.1 상장회사 기준 (6개월 계속보유 필수)</h3>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>지분율</th><th>행사 가능한 권리</th><th>조문</th></tr></thead>
+    <tbody>
+      <tr><td><strong>0.01%~0.05%</strong></td><td>주주대표소송</td><td>제403조</td></tr>
+      <tr><td><strong>0.05%~0.1%</strong></td><td>+ 위법행위 유지청구</td><td>제402조</td></tr>
+      <tr><td><strong>0.1%~0.5%</strong></td><td>+ 회계장부열람·등사</td><td>제466조</td></tr>
+      <tr><td><strong>0.5%~1%</strong></td><td>+ 이사·감사 해임청구</td><td>제385조·제415조</td></tr>
+      <tr><td><strong>1%~1.5%</strong></td><td>+ 주주제안권</td><td>제363조의2</td></tr>
+      <tr><td><strong>1.5%~3%</strong></td><td>+ 임시주총 소집청구·검사인 선임청구</td><td>제366조·제467조</td></tr>
+      <tr><td><strong>3%~10%</strong></td><td>+ 의결권 제한·정지 청구</td><td>제409조·제413조</td></tr>
+      <tr><td><strong>10%~</strong></td><td>+ 회사해산청구권</td><td>제520조</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>3.2 비상장회사 기준 (보유기간 요건 없음)</h3>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>지분율</th><th>행사 가능한 권리</th><th>조문</th></tr></thead>
+    <tbody>
+      <tr><td><strong>1%~3%</strong></td><td>주주대표소송</td><td>제403조</td></tr>
+      <tr><td><strong>3%~10%</strong></td><td>회계장부열람·임시주총 소집·이사해임청구·주주제안·검사인 선임</td><td>제466조·제366조·제385조·제363조의2·제467조</td></tr>
+      <tr><td><strong>10%~</strong></td><td>회사해산청구권</td><td>제520조</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>3.3 비교형 인사이트</h3>
+  <div class="insight-box">
+    <div class="insight-item"><div class="label">주주대표소송 최소 지분</div><div class="value">상장 0.01% vs 비상장 1%</div></div>
+    <div class="insight-item"><div class="label">보유기간</div><div class="value">상장 6개월 vs 비상장 없음</div></div>
+    <div class="insight-item"><div class="label">공동보유 합산</div><div class="value">상장 명시적 허용 vs 비상장 해석상 가능</div></div>
+    <div class="insight-item"><div class="label">정관 완화</div><div class="value">상장 가능 vs 비상장 불가 (법정 요건 절대)</div></div>
+    <div class="insight-item"><div class="label">전체 권리 행사 최소 지분</div><div class="value">상장 1.5% vs 비상장 3%</div></div>
+  </div>
+</div>
+
+<!-- 4. 첫 대응 -->
+<div class="section">
+  <h2>4. 첫 대응 — 권리 행사를 위한 5단계</h2>
+  <div class="steps">
+    <div class="step-item">
+      <div class="step-title">회사 유형 및 정관 확인</div>
+      <div class="step-desc">비상장/상장/금융회사 여부와 정관의 소수주주권 완화 규정 유무를 확인한다.</div>
+    </div>
+    <div class="step-item">
+      <div class="step-title">지분율·보유기간 산정</div>
+      <div class="step-desc">의결권 있는 발행주식총수 기준 지분율 계산. 상장사는 6개월 계속보유 요건 충족 여부 확인. 복수 주주 합산 행사 검토.</div>
+    </div>
+    <div class="step-item">
+      <div class="step-title">정보 우선 확보 (회계장부열람)</div>
+      <div class="step-desc">행동 전 회계장부열람 청구로 내부 정보 선확보. 입증책임이 회사에 있어 거부 난이도 높음.</div>
+    </div>
+    <div class="step-item">
+      <div class="step-title">권리별 절차 준수</div>
+      <div class="step-desc">주주제안(주총 6주 전) · 이사해임청구(부결→1개월 내) · 대표소송(서면 청구→30일→직접 제소)</div>
+    </div>
+    <div class="step-item">
+      <div class="step-title">전문가 상담</div>
+      <div class="step-desc">소송·가처분 수반 시 회사법 전문 변호사 조력 필수. 공동소송 요건·제소기간 등 절차 요건 누락 시 각하 리스크.</div>
+    </div>
+  </div>
+</div>
+
+<!-- 5. 위험 신호 -->
+<div class="section">
+  <h2>5. 위험 신호 — 이것이 보이면 즉시 행동하라</h2>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>위험 신호</th><th>관련 권리</th><th>권장 조치</th></tr></thead>
+    <tbody>
+      <tr><td>대표이사가 회계장부열람을 이유 없이 거부</td><td>회계장부열람권 (제466조)</td><td>가처분 신청 또는 열람거부 손해배상 검토</td></tr>
+      <tr><td>이사가 자기거래·경업 등 이해충돌 행위</td><td>대표소송 (제403조)</td><td>회계장부열람 선행→자료 확보 후 대표소송</td></tr>
+      <tr><td>주주제안을 5가지 거부 사유 없이 거부</td><td>주주제안권 (제363조의2)</td><td>내용증명 거부 사유 요구, 손해배상 검토</td></tr>
+      <tr><td>주총 소집 통지가 일부 주주 누락</td><td>임시주총 소집청구권 (제366조)</td><td>결의 하자 소송 또는 가처분</td></tr>
+      <tr><td>전자투표·서면투표 미도입 상장사</td><td>전자투표 관련 권리</td><td>정관 변경 제안 또는 금감원 신고</td></tr>
+      <tr><td>감사위원 선임 독립성 미흡</td><td>감사위원 분리선출</td><td>주주제안으로 감사위원 분리선출 요구</td></tr>
+      <tr><td>증자·감자·소각의 주주 통지 누락</td><td>주주 정보권</td><td>주주명부 열람 등사 청구</td></tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<!-- 6. 근거 카드 -->
+<div class="section">
+  <h2>6. 근거 카드 — 상법 조문 · 판례</h2>
+
+  <h3>주요 근거 조문</h3>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>조문</th><th>내용</th></tr></thead>
+    <tbody>
+      <tr><td><strong>제363조의2</strong></td><td>주주제안권 — 3%(상장 1%), 주총 6주 전 서면 제안</td></tr>
+      <tr><td><strong>제366조</strong></td><td>소수주주 주총 소집청구권 — 3%(상장 1.5%)</td></tr>
+      <tr><td><strong>제382조의2</strong></td><td>집중투표제 — 자산 2조 이상 상장사 의무 도입</td></tr>
+      <tr><td><strong>제385조 제2항</strong></td><td>이사해임청구권 — 3%(상장 0.5%), 부결→1개월 내</td></tr>
+      <tr><td><strong>제402조</strong></td><td>이사 위법행위 유지청구권</td></tr>
+      <tr><td><strong>제403조</strong></td><td>주주대표소송 — 1%(상장 0.01%), 30일 경과 후 직접 제소</td></tr>
+      <tr><td><strong>제415조의2</strong></td><td>감사위원 분리선출 — 자산 1조 이상 상장사 의무</td></tr>
+      <tr><td><strong>제466조</strong></td><td>회계장부열람권 — 3%(상장 0.1%), 입증책임 회사 전환</td></tr>
+      <tr><td><strong>제467조</strong></td><td>검사인 선임청구권 — 3%(상장 1.5%)</td></tr>
+      <tr><td><strong>제520조</strong></td><td>회사해산청구권 — 10%</td></tr>
+      <tr><td><strong>제542조의6</strong></td><td>상장회사 소수주주권 특례 — 6개월 계속보유, 공동보유 합산 가능</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>주요 판례</h3>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>판례</th><th>요지</th></tr></thead>
+    <tbody>
+      <tr><td>2010다35985</td><td>이사해임 사유 — 부정행위·법령위반 중대성: 단순 임무해태만으로 불충분</td></tr>
+      <tr><td>92다53583</td><td>부결 요건 — 유회 등 결과적 부결도 포함</td></tr>
+      <tr><td>96다5926</td><td>소의 이익 — 사임·임기만료 시 소멸, 신속 심리 필요</td></tr>
+      <tr><td>2011다1323</td><td>공동소송 — 이사+회사 공동피고 필수</td></tr>
+      <tr><td>2015다248342(전합)</td><td>주주적격 — 주주명부 기재 기준, 실질주주는 예외적</td></tr>
+      <tr><td>2019다236385</td><td>주주제안 부당 거부 시 이사 개인 손해배상책임</td></tr>
+      <tr><td>2024다216743</td><td>대표소송 제소요건 하자치유 법리</td></tr>
+      <tr><td>2010다88682</td><td>회계장부열람 부당성 입증책임 — 회사 부담</td></tr>
+      <tr><td>2004다25123</td><td>소수주주권 요건 산정 — 의결권 있는 발행주식총수 기준</td></tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<!-- 7. FAQ -->
+<div class="section">
+  <h2>7. FAQ</h2>
+
+  <div class="faq-item">
+    <div class="faq-q">Q1. 지분이 0.01%밖에 없는데 무슨 권리를 행사할 수 있나요?</div>
+    <div class="faq-a">상장회사 주주라면 주주대표소송(0.01%)을 제기할 수 있습니다. 상장사 기준 가장 낮은 문턱의 권리로, 이사의 책임을 추궁할 수 있습니다.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Q2. 비상장회사 주주인데 보유기간 요건이 있나요?</div>
+    <div class="faq-a">비상장회사에는 6개월 계속보유 요건이 없습니다. 지분율 요건(1% 또는 3%)만 충족하면 바로 권리 행사가 가능합니다.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Q3. 주주 여러 명이 지분을 합쳐 요건을 충족할 수 있나요?</div>
+    <div class="faq-a">네. 상법 제542조의6 제8항은 상장회사의 경우 복수 주주 합산(공동보유)을 명시적으로 허용합니다. 비상장회사도 해석상 합산 행사가 가능합니다.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Q4. 이사해임청구 소송에서 꼭 지켜야 할 절차가 있나요?</div>
+    <div class="faq-a">(1) 주총 해임안 상정·부결 → (2) 부결일 1개월 내 제소 → (3) 이사+회사 공동피고 지정. 하나라도 어기면 각하 리스크.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Q5. 회계장부열람 청구를 회사가 거부하면 어떻게 하나요?</div>
+    <div class="faq-a">회사는 "부당함"을 증명해야 거부 가능. 거부 시 열람 가처분 신청 또는 부당 거부 손해배상청구 검토.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Q6. 주주제안이 거부되었는데 이의 제기 방법이 있나요?</div>
+    <div class="faq-a">거부 사유가 시행령 제12조 5가지에 해당하는지 확인. 부당 거부 시 내용증명으로 사유 소명 요구, 손해배상청구(2019다236385) 또는 결의 하자 소송 검토.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Q7. 대표소송에서 승소하면 제게 직접 이익이 가나요?</div>
+    <div class="faq-a">승소 효과는 회사에 귀속(제404조). 승소 주주는 소송비용을 회사에 청구 가능(제405조). 회사 재무 개선 → 주주가치 상승의 간접 혜택.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Q8. 전자투표가 도입되지 않은 상장회사는 문제인가요?</div>
+    <div class="faq-a">상장회사는 전자투표제 도입 의무화(자본시장법 개정). 미도입 시 금융감독원 제재 대상.</div>
+  </div>
+</div>
+
+<!-- 8. CTA -->
+<div class="cta">
+  <h2>지금 당신의 권리를 확인하세요</h2>
+  <p>소액주주의 권리는 스스로 행사하지 않으면 보호받을 수 없습니다.</p>
+  <ul>
+    <li>보유 지분 0.01% 이상인 상장회사 주주</li>
+    <li>경영진 부정행위를 의심하지만 증거가 없는 주주</li>
+    <li>주총 부당 의사진행·의결권 제한 경험 주주</li>
+    <li>합병·분할·배당 등에 의견 반영 희망 주주</li>
+    <li>주주제안 거부에 불만이 있는 주주</li>
+  </ul>
+  <div class="steps-list">
+    <p style="text-align:center;color:rgba(255,255,255,0.9);margin-top:12px;font-size:14px;">
+      ① 회사 유형·정관 확인 → ② 지분율·보유기간 계산 → ③ 권리 매칭 → ④ 전문 변호사 상담
+    </p>
+  </div>
+  <p class="disclaimer">본 콘텐츠는 일반적 법률 정보 제공 목적이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다. 권리 행사 전 반드시 전문 변호사와 상담하시기 바랍니다.</p>
+</div>
+
+</div>
+</body>
+</html>
