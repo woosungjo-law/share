@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>EBOOK-015 경업금지 약정 유효성</title>
+<style>
+  :root {
+    --teal: #00897b;
+    --teal-light: #e0f2f1;
+    --teal-dark: #004d40;
+    --gray-50: #fafafa;
+    --gray-100: #f5f5f5;
+    --gray-200: #eee;
+    --gray-600: #666;
+    --gray-800: #333;
+    --gray-900: #111;
+    --red: #c62828;
+    --red-light: #ffebee;
+    --green: #2e7d32;
+    --green-light: #e8f5e9;
+    --orange: #ef6c00;
+    --orange-light: #fff3e0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    color: var(--gray-800);
+    background: var(--gray-50);
+    line-height: 1.8;
+  }
+  .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+
+  /* Cover */
+  .cover {
+    background: linear-gradient(135deg, var(--teal-dark), var(--teal));
+    color: #fff;
+    padding: 80px 24px;
+    text-align: center;
+  }
+  .cover .badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+  }
+  .cover h1 { font-size: 36px; font-weight: 700; margin-bottom: 12px; }
+  .cover .subtitle { font-size: 18px; opacity: 0.9; margin-bottom: 32px; }
+  .cover .meta-list {
+    display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;
+    font-size: 13px; opacity: 0.85;
+  }
+  .cover .meta-list span { display: inline-block; }
+
+  /* Typography */
+  h2 {
+    font-size: 24px;
+    color: var(--teal-dark);
+    margin: 48px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 3px solid var(--teal);
+  }
+  h3 {
+    font-size: 18px;
+    color: var(--teal);
+    margin: 32px 0 12px;
+  }
+  h4 {
+    font-size: 16px;
+    color: var(--gray-800);
+    margin: 24px 0 8px;
+  }
+  p { margin: 0 0 16px; }
+  .lead {
+    font-size: 18px;
+    color: var(--teal-dark);
+    font-weight: 500;
+    padding: 16px 20px;
+    background: var(--teal-light);
+    border-left: 4px solid var(--teal);
+    border-radius: 0 8px 8px 0;
+    margin: 24px 0;
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 24px;
+    font-size: 14px;
+  }
+  th, td {
+    padding: 10px 12px;
+    border: 1px solid var(--gray-200);
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: var(--teal);
+    color: #fff;
+    font-weight: 600;
+  }
+  tr:nth-child(even) { background: var(--gray-100); }
+  .compare-table .valid { background: var(--green-light); }
+  .compare-table .invalid { background: var(--red-light); }
+  .compare-table th.valid-header { background: var(--green); }
+  .compare-table th.invalid-header { background: var(--red); }
+
+  /* Case studies */
+  .case-card {
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    padding: 16px;
+    margin: 12px 0;
+    background: #fff;
+  }
+  .case-card.valid { border-left: 4px solid var(--green); }
+  .case-card.invalid { border-left: 4px solid var(--red); }
+  .case-card .case-title {
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .case-card .case-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .case-card.valid .case-tag { background: var(--green-light); color: var(--green); }
+  .case-card.invalid .case-tag { background: var(--red-light); color: var(--red); }
+
+  /* Red flags */
+  .red-flag {
+    background: var(--red-light);
+    border-left: 4px solid var(--red);
+    padding: 12px 16px;
+    margin: 12px 0;
+    border-radius: 0 8px 8px 0;
+  }
+  .red-flag h4 { color: var(--red); margin: 0 0 4px; }
+  .red-flag p { margin: 0; font-size: 14px; }
+
+  /* Flow chart */
+  .flow-chart {
+    background: #fff;
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    padding: 24px;
+    margin: 16px 0;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 2;
+  }
+  .flow-chart .yes { color: var(--green); font-weight: 600; }
+  .flow-chart .no { color: var(--red); font-weight: 600; }
+
+  /* Steps */
+  .step-box {
+    display: flex;
+    gap: 16px;
+    margin: 16px 0;
+    align-items: flex-start;
+  }
+  .step-num {
+    flex-shrink: 0;
+    width: 36px; height: 36px;
+    background: var(--teal);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .step-content { flex: 1; }
+  .step-content h4 { margin: 0 0 4px; }
+  .step-content p { margin: 0; font-size: 14px; }
+
+  /* FAQ */
+  .faq-item { margin: 16px 0; }
+  .faq-q {
+    font-weight: 600;
+    color: var(--teal-dark);
+    cursor: pointer;
+    padding: 12px 16px;
+    background: var(--teal-light);
+    border-radius: 8px;
+  }
+  .faq-a {
+    padding: 12px 16px;
+    border-left: 3px solid var(--teal);
+    margin: 4px 0 0 16px;
+    font-size: 14px;
+  }
+
+  /* CTA */
+  .cta-box {
+    background: var(--teal-dark);
+    color: #fff;
+    padding: 32px 24px;
+    border-radius: 12px;
+    text-align: center;
+    margin: 48px 0;
+  }
+  .cta-box h3 { color: #fff; margin-bottom: 12px; }
+  .cta-box p { opacity: 0.9; font-size: 14px; margin-bottom: 16px; }
+  .cta-box .cta-list {
+    display: inline-block;
+    text-align: left;
+    margin: 0 auto;
+  }
+  .cta-box .cta-list li {
+    margin: 6px 0;
+    list-style: none;
+  }
+  .cta-box .cta-list li::before { content: "✓ "; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff;
+    color: var(--teal-dark);
+    text-decoration: none;
+    padding: 10px 32px;
+    border-radius: 6px;
+    font-weight: 600;
+    margin-top: 16px;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    font-size: 12px;
+    color: var(--gray-600);
+    padding: 32px 24px;
+    border-top: 1px solid var(--gray-200);
+  }
+
+  @media (max-width: 600px) {
+    .cover h1 { font-size: 26px; }
+    .cover .meta-list { flex-direction: column; gap: 4px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="badge">법률 eBook</div>
+  <h1>경업금지 약정 유효성</h1>
+  <p class="subtitle">업종·지역·기간의 합리적 범위 충족 요건</p>
+  <div class="meta-list">
+    <span>대상: B2B 법무·인사 담당자</span>
+    <span>분야: 노동·영업비밀</span>
+    <span>검증: L2 (판례·조문 인증)</span>
+    <span>상태: noindex</span>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="lead">
+  퇴사 후 경쟁사에 이직하려는 순간, 전 직장에서 보내온 내용증명 한 장. "경업금지 약정 위반이다." 하지만 모든 경업금지 약정이 유효한 것은 아니다. 법원은 근로자의 직업선택의 자유(헌법 제15조)와 사용자의 영업비밀 보호 이익을 비교형량하여, <strong>과도한 제한은 민법 제103조에 따라 무효</strong>로 판단한다.
+</div>
+
+<!-- 01 -->
+<h2>01 문제상황</h2>
+<p>회사는 퇴직 직원이 경쟁업체로 이직하는 것을 막기 위해 경업금지 약정을 활용한다. 특히 영업비밀·고객 정보·핵심 기술이 유출될 위험이 있는 직무일수록 더 강력한 제한을 원한다. 그러나 근로자에게는 생계 수단인 직업을 선택할 자유가 있다.</p>
+<p>법원은 이 충돌을 해결하기 위해 <strong>개별 사안의 구체적 사정을 종합적으로 고려</strong>하여 약정의 효력을 판단한다. 계약서에 조항이 있다는 사실만으로 충분하지 않으며, 오히려 그 제한이 정당화될 수 있는지가 핵심이다.</p>
+
+<!-- 02 -->
+<h2>02 핵심 법리</h2>
+
+<h3>경업금지 유효성의 법적 구조</h3>
+<p>대법원은 경업금지약정의 유효성을 다음 <strong>5요소</strong>를 종합 고려하여 판단한다(2009다82244, 2017다23395 전합).</p>
+
+<table>
+  <tr><th>요소</th><th>세부 내용</th></tr>
+  <tr><td>① 보호할 가치 있는 사용자의 이익</td><td>영업비밀(부정경쟁방지법 제2조 제2호), 사용자 고유의 지식·정보, 고객관계, 영업상 신용</td></tr>
+  <tr><td>② 근로자의 퇴직 전 지위</td><td>핵심 정보에 접근 가능한 직급·직무인지</td></tr>
+  <tr><td>③ 경업 제한의 기간·지역·대상 직종</td><td><strong>합리적 범위 내인지 (본 eBook의 초점)</strong></td></tr>
+  <tr><td>④ 대가 제공 유무</td><td>경업금지에 상응하는 보상이 있었는지</td></tr>
+  <tr><td>⑤ 퇴직 경위</td><td>자발적 퇴직 vs 권고사직·부당해고</td></tr>
+</table>
+
+<p><strong>증명책임</strong>: 사용자가 위 5요소를 충족하여 약정이 유효함을 증명해야 한다(2015다221903).</p>
+
+<h3>업종·지역·기간 3박자의 의미</h3>
+<p>경업금지 약정이 근로자의 직업선택의 자유를 침해하는 정도는 <strong>제한의 범위</strong>에 비례한다. 제한이 넓고 길수록 더 강한 정당화 사유가 필요하며, 그 범위가 보호할 이익의 범위를 초과하면 약정은 무효가 된다.</p>
+<ul>
+  <li><strong>기간</strong>: 보호 이익의 성격과 소멸 시기에 대응하여 설정</li>
+  <li><strong>지역</strong>: 사용자의 실제 영업권이 미치는 범위로 한정</li>
+  <li><strong>업종(대상 직종)</strong>: 근로자의 실제 직무와 관련된 범위로 특정</li>
+</ul>
+<p>이 3가지는 상호 보완적이다. 예를 들어 기간이 짧더라도 지역이 전국이면 무효 가능성이 있고, 지역이 좁더라도 기간이 5년이면 무효 가능성이 높다.</p>
+
+<!-- 03 -->
+<h2>03 비교: 유효 vs 무효</h2>
+
+<h3>유효하다고 인정될 가능성이 높은 경우</h3>
+
+<div class="case-card valid">
+  <span class="case-tag">유효 가능성 높음</span>
+  <div class="case-title">사례 1: 핵심 기술 연구소 퇴직자</div>
+  <p>반도체 핵심 공정 연구개발 15년, 팀장. 약정: 1년 6개월, 동종 반도체 공정 개발 업무로 한정, 지역은 국내 주요 경쟁사 영업권. 대가: 퇴직 시 별도 2년 치 보안수단 일시 지급. <strong>평가: 유효 가능성 높음</strong></p>
+</div>
+
+<div class="case-card valid">
+  <span class="case-tag">유효</span>
+  <div class="case-title">사례 2: 학원 강사 (2019가합531436)</div>
+  <p>학원이 투자한 시설·서비스·브랜드를 통해 형성된 강사의 인지도. 인근 학원으로 이직 시 수강생 이탈 가능성. <strong>법원: 유효 — 학원의 투자와 노력 보호 필요</strong></p>
+</div>
+
+<div class="case-card valid">
+  <span class="case-tag">유효 (일부)</span>
+  <div class="case-title">사례 3: 육가공 기계 회사 부분장 (2018가합523643)</div>
+  <p>24년 근속, 핵심 기술·노하우 접근 가능. 퇴사 후 체결한 경업금지 약정, 3년 기간. <strong>법원: 유효 — 단, 손해배상액 2억원→3,000만원 감액</strong></p>
+</div>
+
+<h3>무효라고 판단될 가능성이 높은 경우</h3>
+
+<div class="case-card invalid">
+  <span class="case-tag">무효</span>
+  <div class="case-title">사례 4: 중개무역회사 직원 (2009다82244)</div>
+  <p>퇴사 후 경쟁사 설립. 정보가 이미 동종업계에 알려져 있었고, 거래처 관계는 업무 중 자연스럽게 습득. 대가 없음. <strong>대법원: 무효</strong></p>
+</div>
+
+<div class="case-card invalid">
+  <span class="case-tag">무효</span>
+  <div class="case-title">사례 5: 연구소 직원 (2010가합10588)</div>
+  <p>전문수탁검사기관 연구소 직원. 거래처와의 인적관계는 보호가치 낮음. 직업선택의 자유 과도 제한. <strong>법원: 무효</strong></p>
+</div>
+
+<div class="case-card invalid">
+  <span class="case-tag">무효</span>
+  <div class="case-title">사례 7: 프랜차이즈 본사 영업팀 (서울고법 2015라916)</div>
+  <p>영업팀 대리·과장, 2년 전직금지. 대가 없음, 일반적 지식·경험까지 금지. 생계 위협. <strong>법원: 무효 (가처분 기각)</strong></p>
+</div>
+
+<h3>비교 요약표</h3>
+<table class="compare-table">
+  <tr>
+    <th>항목</th>
+    <th class="valid-header">유효 가능성 높음</th>
+    <th class="invalid-header">무효 가능성 높음</th>
+  </tr>
+  <tr>
+    <td>보호 이익</td>
+    <td class="valid">영업비밀 구체적 존재, 체계적 관리</td>
+    <td class="invalid">추상적, 일반적 경험·지식</td>
+  </tr>
+  <tr>
+    <td>기간</td>
+    <td class="valid">1~2년</td>
+    <td class="invalid">3년 초과, 무기한</td>
+  </tr>
+  <tr>
+    <td>지역</td>
+    <td class="valid">실제 영업권 범위</td>
+    <td class="invalid">전국, 전 세계</td>
+  </tr>
+  <tr>
+    <td>업종</td>
+    <td class="valid">구체적 직무 특정</td>
+    <td class="invalid">"동종업계 전반", "유사업종 일체"</td>
+  </tr>
+  <tr>
+    <td>대가</td>
+    <td class="valid">별도 수당·일시금 지급</td>
+    <td class="invalid">대가 없음, 연봉 포함 주장만</td>
+  </tr>
+  <tr>
+    <td>지위</td>
+    <td class="valid">임원·핵심 기술직</td>
+    <td class="invalid">일반 사무직, 하위 직급</td>
+  </tr>
+  <tr>
+    <td>퇴직 경위</td>
+    <td class="valid">자발적 퇴직</td>
+    <td class="invalid">권고사직, 부당해고</td>
+  </tr>
+</table>
+
+<!-- 04 -->
+<h2>04 첫 대응 순서</h2>
+
+<div class="step-box">
+  <div class="step-num">1</div>
+  <div class="step-content">
+    <h4>약정 검토</h4>
+    <p>약정서 또는 근로계약서 확인. 체결 시점(입사/승진/퇴사), 금지 범위(업종·지역·기간), 대가 조항, 손해배상 예정액 확인. 약정서 진정성립 및 의사 합의 여부 검토.</p>
+  </div>
+</div>
+
+<div class="step-box">
+  <div class="step-num">2</div>
+  <div class="step-content">
+    <h4>위험 평가</h4>
+    <p>5요소 각각 평가: 보호할 이익의 구체성 → 제한 범위의 합리성 → 대가의 존재 → 지위 → 퇴직 경위. 전체 균형 평가.</p>
+  </div>
+</div>
+
+<div class="step-box">
+  <div class="step-num">3</div>
+  <div class="step-content">
+    <h4>실행 전략 선택</h4>
+    <p>약정 유효 가능성 높음 → 준수 또는 협상을 통한 기간·범위 조정. 약정 무효 가능성 높음 → 무효 주장, 가처분 신청에 대응. 회색지대 → 비밀유지약정(NDA) 전환 협상.</p>
+  </div>
+</div>
+
+<h3>대안: 전직금지 → 비밀유지 전환 협상</h3>
+<p>경업금지 약정보다 덜 제한적인 대안으로 <strong>비밀유지약정(NDA)</strong> 전환을 고려할 수 있다. 경업 자체를 금지하는 대신, 취득한 영업비밀을 사용·공개하지 않을 의무만을 부과하는 방식으로 근로자의 직업선택의 자유를 덜 제한하면서 사용자의 이익도 보호할 수 있다.</p>
+
+<table>
+  <tr><th>구분</th><th>경업금지 약정</th><th>비밀유지약정(NDA)</th></tr>
+  <tr><td>제한 내용</td><td>경쟁사 취업·동종업 창업 자체 금지</td><td>취득한 비밀정보의 사용·공개 금지</td></tr>
+  <tr><td>직업선택 자유 제한</td><td>강함</td><td>약함</td></tr>
+  <tr><td>유효성 인정 난이도</td><td>엄격</td><td>상대적 용이</td></tr>
+  <tr><td>실무 활용</td><td>핵심 직원 한정</td><td>전체 직원 대상 가능</td></tr>
+</table>
+
+<!-- 05 -->
+<h2>05 위험 신호</h2>
+<p class="lead">적신호 하나만 있어도 무효 가능성. 두 개 이상이면 거의 확실.</p>
+
+<div class="red-flag">
+  <h4>🚩 적신호 1: 기간의 불합리</h4>
+  <p>1년 이내: 가장 안전. 1~2년: 통상 인정. 2~3년: 엄격 심사 필요. 3년 초과: 원칙적 무효. 무기한: 확실한 무효.</p>
+</div>
+
+<div class="red-flag">
+  <h4>🚩 적신호 2: 지역의 과도함</h4>
+  <p>"전국" 금지: 무효 가능성 높음 (특히 중소기업). "대한민국 전역 및 해외": 거의 무효. 지역 제한은 사용자의 실질적 영업권이 미치는 범위 내로 한정되어야 한다.</p>
+</div>
+
+<div class="red-flag">
+  <h4>🚩 적신호 3: 대상 업종의 추상성</h4>
+  <p>"동종업계 전반" "IT업종" "유사업종 일체" → 거의 무효. "반도체 공정 개발" "CRM 시스템 개발" → 비교적 안전. 회사의 보호할 이익과 근로자의 실제 직무를 기준으로 구체적으로 특정되어야 한다.</p>
+</div>
+
+<div class="red-flag">
+  <h4>🚩 적신호 4: 대가의 부재</h4>
+  <p>대가 없음 → 원칙적 무효. 연봉에 포함 → 구분 불명확시 불리. 별도 수당 지급(월 10~25만원 보안수당) → 가장 안전.</p>
+</div>
+
+<div class="red-flag">
+  <h4>🚩 적신호 5: 전 직원 일률 적용</h4>
+  <p>"전 직원 경업금지 서약"은 개별 근로자의 직무와 보호 이익 간 관련성이 입증되기 어렵다. 핵심 직원에 한정하여 선별 적용해야 유효성 확보에 유리하다.</p>
+</div>
+
+<!-- 06 -->
+<h2>06 근거 카드</h2>
+
+<h3>법률 근거</h3>
+<table>
+  <tr><th style="width:30%">근거</th><th>내용</th></tr>
+  <tr><td><strong>민법 제103조</strong></td><td>"선량한 풍속 기타 사회질서에 위반한 사항을 내용으로 하는 법률행위는 무효로 한다" — 경업금지 약정의 유효성 심사의 기본 규범</td></tr>
+  <tr><td><strong>부정경쟁방지법 제2조 제2호</strong></td><td>영업비밀 정의: 비공지성 + 경제적 가치성 + 비밀관리성</td></tr>
+  <tr><td><strong>부정경쟁방지법 제10조</strong></td><td>영업비밀 침해 금지청구권 — 약정이 없어도 영업비밀 침해 시 전직 제한 가능</td></tr>
+  <tr><td><strong>부정경쟁방지법 제14조의2</strong></td><td>징벌적 손해배상(고의적 침해 시 손해액의 5배까지)</td></tr>
+  <tr><td><strong>헌법 제15조</strong></td><td>"모든 국민은 직업선택의 자유를 가진다" — 경업금지 약정의 규범적 한계</td></tr>
+</table>
+
+<h3>리딩 판례</h3>
+<table>
+  <tr><th>판례</th><th>요지</th></tr>
+  <tr><td><strong>2009다82244</strong> (2010.3.11.)</td><td>경업금지 유효성 판단 기준 최초 명시. "보호할 가치 있는 사용자의 이익"은 영업비밀 + 사용자 고유 지식·정보 + 고객관계 + 영업신용 포함</td></tr>
+  <tr><td><strong>2015다221903</strong> (2016.10.27.)</td><td>경업금지약정 유효성 입증 책임은 사용자에게 있음</td></tr>
+  <tr><td><strong>2017다23395 전합</strong> (2018.8.30.)</td><td>경업금지 유효성 5요소 기준 정교화</td></tr>
+  <tr><td><strong>2021다234924</strong> (2021.9.9.)</td><td>보호할 가치 있는 사용자의 이익 개념 재확인. 명예퇴직 후 각서 사안에서 제한적 해석</td></tr>
+  <tr><td><strong>2021다248019</strong> (2023.6.1.)</td><td>경업금지 대가 지급의 중요성 — 대가 없는 약정 효력 제한</td></tr>
+</table>
+
+<h3>유효성 판단 흐름도</h3>
+<div class="flow-chart">
+① 보호할 가치 있는 이익 존재?<br>
+&nbsp;&nbsp;<span class="yes">├ Yes</span> → ②<br>
+&nbsp;&nbsp;<span class="no">└ No</span> → <strong>무효</strong><br>
+② 근로자가 해당 이익에 접근 가능한 지위?<br>
+&nbsp;&nbsp;<span class="yes">├ Yes</span> → ③<br>
+&nbsp;&nbsp;<span class="no">└ No</span> → <strong>무효</strong><br>
+③ 기간·지역·대상 합리적?<br>
+&nbsp;&nbsp;<span class="yes">├ Yes</span> → ④<br>
+&nbsp;&nbsp;<span class="no">└ No</span> → <strong>무효 또는 일부 무효</strong><br>
+④ 적정 대가 지급?<br>
+&nbsp;&nbsp;<span class="yes">├ Yes</span> → ⑤<br>
+&nbsp;&nbsp;<span class="no">└ No</span> → <strong>무효 가능성 ↑</strong><br>
+⑤ 사용자 귀책 없는 퇴직?<br>
+&nbsp;&nbsp;<span class="yes">├ Yes</span> → <strong>유효 가능성 ↑</strong><br>
+&nbsp;&nbsp;<span class="no">└ No</span> → <strong>무효 가능성 ↑</strong>
+</div>
+
+<!-- 07 -->
+<h2>07 FAQ</h2>
+
+<div class="faq-item">
+  <div class="faq-q">Q1. 경업금지 약정의 최대 기간이 법적으로 정해져 있나요?</div>
+  <div class="faq-a">법령상 명문 제한은 없습니다. 판례 경향상 1~2년이 합리적 범위이고, 3년을 초과하면 특별한 사정이 없는 한 무효 가능성이 매우 높습니다.</div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">Q2. 경업금지 약정이 없으면 자유롭게 경쟁사에 이직할 수 있나요?</div>
+  <div class="faq-a">약정이 없더라도 부정경쟁방지법 제10조에 따라 영업비밀 침해가 우려되는 경우 법원이 전직 금지를 명할 수 있습니다. 또한 근로계약상 신의칙상 비밀유지의무는 퇴직 후에도 존속합니다.</div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">Q3. 퇴사할 때 사용자가 경업금지 약정을 요구하는데 거절할 수 있나요?</div>
+  <div class="faq-a">네, 거절할 수 있습니다. 퇴사 시점의 약정 체결은 대등한 당사자 간의 계약이므로 강제될 수 없습니다. 다만 기존 근로계약에 포함된 경업금지 조항은 별도 검토가 필요합니다.</div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">Q4. 경업금지 약정이 유효하면 손해배상도 전액 인정되나요?</div>
+  <div class="faq-a">약정이 유효하더라도 손해배상 예정액이 과다하면 법원이 감액할 수 있습니다(2018가합523643: 2억원→3,000만원 감액). 위약금 조항은 근로기준법 제20조 위반 문제도 검토해야 합니다.</div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">Q5. 스타트업 공동창업자 간의 경업금지도 동일한 기준이 적용되나요?</div>
+  <div class="faq-a">공동창업자는 근로자보다 동업자·주주로서의 성격이 강해 근로자 보호 법리의 적용이 제한적일 수 있습니다. 그러나 직업선택의 자유 제한이라는 측면에서 기본적인 법리는 유사하게 적용됩니다.</div>
+</div>
+
+<!-- 08 -->
+<div class="cta-box">
+  <h3>08 CTA — 법률팩</h3>
+  <p>경업금지 약정의 유효성은 개별 사정에 따라 판단이 크게 달라집니다. 본 자료는 일반적 법리를 설명한 것이며, 구체적 사안에 대해서는 반드시 법률 전문가의 자문이 필요합니다.</p>
+  <ul class="cta-list">
+    <li>경업금지 약정 유효성 진단 체크리스트</li>
+    <li>약정서 검토 템플릿 — 위험 조항 식별 가이드</li>
+    <li>협상 가이드 — 전직금지→비밀유지 전환 전략</li>
+    <li>판례 요약집 — 주요 판례 10선</li>
+  </ul>
+  <div class="cta-btn">법률팩 신청: 실장(팀 내) 또는 담당 변호사</div>
+</div>
+
+</div>
+
+<div class="footer">
+  본 자료는 2026년 7월 29일 기준 법령과 판례를 기반으로 작성되었습니다.<br>
+  구체적 사안에 대해서는 반드시 법률 전문가의 자문을 받으십시오.<br>
+  작성: 지식관리 WIKI 법률팀 | EBOOK-015 | noindex
+</div>
+
+</body>
+</html>
