@@ -1,135 +1,363 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<meta name="description" content="분할변제·일부이행 제안 대응 ???쇰컲 踰뺣쪧?뺣낫">
-<title>분할변제·일부이행 제안 대응</title>
+<title>분할변제·일부이행 제안 대응 — 조우성 변호사</title>
+<meta name="description" content="분할변제·일부이행 제안 대응 | 내용증명채권추심 절차 카드">
+<meta property="og:type" content="article">
+<meta property="og:title" content="분할변제·일부이행 제안 대응 — 조우성 변호사">
+<meta property="og:description" content="분할변제·일부이행 제안 대응 | 내용증명채권추심 절차 카드">
 <style>
-:root{--navy:#1a3a6b;--blue:#2e6be6;--bg:#f0f2f5;--card:#fff;--text:#111827;--sub:#6b7280;--amber-bg:#fffbeb;--amber-bd:#f59e0b;--green:#059669;--warn:#d97706;}
+
+:root{
+  --bg:#f5f1f2; --panel:#ffffff; --panel2:#faf6f7;
+  --line:#ebe2e5; --line2:#ddccd2;
+  --ink:#2c1d26; --ink2:#56424c; --muted:#8a7b82; --faint:#b3a6ab;
+  --wine:#7a2e3a; --wine-d:#5a1f2b; --wine-l:#9c4456;
+  --wine-tint:#f4e9ec; --wine-tint-ln:#ecd7dd;
+  --header-bg:#3a1525; --header-bg2:#4e1f32; --header-accent:#d4a0aa;
+  --rH:#c74a3c; --rM-bg:#f8e4b8; --rM-tx:#7d520a; --rL-bg:#d6ecdb; --rL-tx:#287a54;
+  --font:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Noto Sans KR',sans-serif;
+  --maxw:1120px; --readw:760px;
+}
 *{box-sizing:border-box}
-body{margin:0;font-family:'Pretendard','Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:var(--bg);color:var(--text);line-height:1.75;font-size:15px}
-.topbar{height:4px;background:linear-gradient(90deg,var(--navy),var(--blue))}
-.wrap{max-width:820px;margin:0 auto;padding:26px 18px 70px}
-h1{font-size:26px;font-weight:800;line-height:1.4;color:var(--navy);margin:6px 0 18px}
-h2{font-size:20px;font-weight:700;margin:26px 0 10px;padding:10px 14px;background:#fff;border-left:5px solid var(--blue);border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.04)}
-h3{font-size:16px;font-weight:700;margin:16px 0 6px}
-p{margin:9px 0}
-ul,ol{margin:9px 0;padding-left:22px}
-li{margin:5px 0}
-li input[type=checkbox]{margin-right:8px;transform:scale(1.15)}
-hr{border:0;border-top:1px solid #e5e7eb;margin:22px 0}
-blockquote{background:var(--amber-bg);border-left:4px solid var(--amber-bd);margin:10px 0;padding:11px 15px;border-radius:6px;font-size:14px}
-blockquote p{margin:4px 0}
-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
-th,td{border:1px solid #e5e7eb;padding:8px 10px;text-align:left;vertical-align:top}
-th{background:#f3f6fb}
-pre{background:#0f172a;color:#e2e8f0;padding:14px;border-radius:8px;overflow:auto;font-size:13px;line-height:1.6;white-space:pre-wrap}
-code{background:#eef1f6;padding:1px 5px;border-radius:4px;font-size:13px}
-pre code{background:none;padding:0}
-em{color:var(--sub)}
-strong{color:var(--navy)}
-a{color:var(--blue)}
-.footer{margin-top:30px;text-align:center;color:var(--sub);font-size:12px}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;
+  background:linear-gradient(90deg,var(--wine),var(--wine-l));transition:width .1s linear}
+.header{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0}
+.header .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 26px}
+.header .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;
+  color:var(--header-accent);border:1px solid rgba(212,160,170,.4);border-radius:999px;padding:4px 12px}
+.header .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--header-accent)}
+.hero{max-width:var(--maxw);margin:0 auto;padding:30px 26px 8px}
+.hero .eb{font-size:12px;font-weight:700;color:var(--wine);letter-spacing:.02em;margin-bottom:10px}
+.hero h1{font-size:30px;line-height:1.28;font-weight:800;margin:0 0 16px;color:var(--ink);letter-spacing:-.01em}
+.hero .tldr{background:var(--wine-tint);border:1px solid var(--wine-tint-ln);border-left:4px solid var(--wine);
+  border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.hero .tldr .lb{font-size:12px;font-weight:700;color:var(--wine-d);margin-bottom:8px}
+.hero .tldr ul{margin:0;padding-left:18px}
+.hero .tldr li{margin:4px 0;font-size:15px;color:var(--ink2)}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:12.5px;color:var(--muted);margin-bottom:18px}
+.hero .meta .vchip{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);
+  font-weight:700;border-radius:6px;padding:3px 9px;font-size:11.5px}
+.app{max-width:var(--maxw);margin:0 auto;padding:8px 26px 60px;
+  display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:start}
+.toc{position:sticky;top:24px}
+.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;
+  margin:0 0 10px;padding-left:2px}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}
+.toc li{counter-increment:toc;margin:1px 0}
+.toc a{display:flex;gap:9px;font-size:13.5px;color:var(--ink2);text-decoration:none;
+  padding:7px 10px;border-radius:8px;border-left:3px solid transparent;line-height:1.4}
+.toc a::before{content:counter(toc,decimal-leading-zero);color:var(--faint);font-weight:700;font-size:11.5px;flex:none}
+.toc a:hover{background:var(--panel2)}
+.toc a.active{background:var(--wine-tint);border-left-color:var(--wine);color:var(--wine-d);font-weight:700}
+.toc-toggle{display:none}
+.content{max-width:var(--readw);min-width:0}
+section.blk{scroll-margin-top:24px;margin-bottom:38px}
+.secl{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.05em;margin:0 0 12px}
+.secl::before{content:"";width:7px;height:15px;background:var(--wine);border-radius:2px;flex:none}
+section.blk h2{font-size:23px;font-weight:800;line-height:1.35;margin:0 0 14px;color:var(--ink);letter-spacing:-.01em}
+section.blk h3{font-size:17px;font-weight:700;margin:26px 0 10px;color:var(--wine-d)}
+section.blk p{margin:0 0 14px;color:var(--ink2)}
+section.blk ul,section.blk ol{margin:0 0 14px;padding-left:22px;color:var(--ink2)}
+section.blk li{margin:6px 0}
+section.blk ul.check,section.blk ul li.check{list-style:none;padding-left:0}
+section.blk li.check{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-bottom:1px solid var(--line)}
+section.blk li.check .ck{flex:none;width:20px;height:20px;border-radius:5px;background:var(--rL-bg);color:var(--rL-tx);
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+strong{color:var(--ink);font-weight:700}
+a.ln{color:var(--wine-l);text-decoration:none;border-bottom:1px solid var(--wine-tint-ln)}
+a.ln:hover{border-bottom-color:var(--wine-l)}
+.tbl-wrap{overflow-x:auto;margin:0 0 18px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px}
+blockquote{background:var(--wine-tint);border:1px solid var(--wine-tint-ln);border-left:4px solid var(--wine);
+  border-radius:8px;padding:12px 15px;margin:0 0 14px;font-size:14px;color:var(--ink2)}
+blockquote.warn{background:var(--rM-bg);border-left-color:var(--rM-tx);color:var(--rM-tx)}
+pre{background:#22101c;color:#f2e8ec;padding:15px 18px;border-radius:10px;overflow:auto;font-size:13.5px;
+  line-height:1.7;margin:0 0 16px}
+code{background:#f0e7ea;padding:1px 6px;border-radius:5px;font-size:13px;color:var(--wine-d)}
+pre code{background:none;color:inherit;padding:0}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:10px;margin:0 0 10px;overflow:hidden}
+.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:15px;font-weight:700;color:var(--ink);
+  display:flex;align-items:center;gap:10px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--wine-tint);
+  color:var(--wine-d);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+.faq details[open] summary{border-bottom:1px solid var(--line);color:var(--wine-d)}
+.faq .a{padding:14px 16px;font-size:14.5px;color:var(--ink2)}
+section.blk.verify .vn{font-size:12.5px;color:var(--muted);margin-top:10px}
+.notice{background:#fff;border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;
+  font-size:12.5px;color:var(--muted);line-height:1.7}
+#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--wine-tint-ln);background:var(--wine);color:#fff;font-size:18px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;
+  box-shadow:0 4px 14px rgba(58,21,37,.28)}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{background:var(--wine-d)}
+.footer{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0;margin-top:20px}
+.footer .wrap{max-width:var(--maxw);margin:0 auto;padding:34px 26px}
+.footer h3{font-size:20px;font-weight:800;margin:0 0 8px;color:#fff}
+.footer p{font-size:14px;color:rgba(255,255,255,.72);margin:0 0 6px;line-height:1.7}
+.footer .prof{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end}
+.footer .cta-f{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.footer .btn-f{background:#fff;color:var(--wine-d)}
+.footer .btn-f:hover{background:var(--header-accent)}
+.footer .btn-fo{background:transparent;color:#f4eef0;border-color:rgba(255,255,255,.35)}
+.footer .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:22px;padding-top:14px;
+  font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.7}
+@media(max-width:820px){
+  .hero h1{font-size:24px}
+  .app{grid-template-columns:1fr;gap:0;padding-top:0}
+  .toc{position:static;margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 8px}
+  .toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;
+    cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--wine-d);padding:9px 8px}
+  .toc-toggle .ar{transition:transform .2s}
+  .toc.closed .toc-toggle .ar{transform:rotate(-90deg)}
+  .toc .tt{display:none}
+  .toc ol{max-height:50vh;overflow:auto}
+  .toc.closed ol{display:none}
+  section.blk h2{font-size:20px}
+  th,td{white-space:nowrap}
+}
+@media print{
+  #progress,.toc,.cta-row,.footer .cta-f{display:none}
+  .header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .app{display:block}
+}
+
 </style>
 </head>
 <body>
-<div class="topbar"></div>
-<div class="wrap">
-<h1>분할변제·일부이행 제안 대응</h1>
-<h2>3줄 요약</h2>
-<ul>
-<li>채무자가 분할변제나 일부 변제를 제안하면, 채권 전체를 포기하지 않으면서 현실적 회수를 추구할 기회다.</li>
-<li>분할변제 합의는 반드시 문서화하고, 일부라도 이행되지 않을 경우 잔액 전액 청구(기한이익상실) 조항을 넣어야 한다.</li>
-<li>분할변제 제안을 받아들일지 여부는 채무자의 신용도·재산 상황·시효를 종합 판단한다.</li>
-</ul>
-<h2>0. 지금 당신의 위치</h2>
-<p>공통 5단계: 사전 → 착수 → 대응 → 결정 → 사후 (현재: <strong>대응</strong>)</p>
-<pre><code class="language-text">부인·다툼 대응(009) -&gt; [분할변제·일부이행 제안 대응] -&gt; 재산 은닉·처분 위기(011)
-</code></pre>
-<h2>1. 이번 단계에서 반드시 할 일</h2>
-<ul>
-<li><input disabled="" type="checkbox"> 채무자의 변제 능력·의지 평가(재산·소득·과거 이행 이력)</li>
-<li><input disabled="" type="checkbox"> 분할변제 조건(기간·금액·이자·담보) 협상</li>
-<li><input disabled="" type="checkbox"> 합의 시 기한이익상실(일부 미이행 시 잔액 전액 청구) 조항 포함</li>
-<li><input disabled="" type="checkbox"> 합의 불발 시 지급명령·소송 전환 준비</li>
-</ul>
-<h2>2. 준비물</h2>
-<table>
-<thead>
-<tr>
-<th>준비물</th>
-<th>왜 필요한가</th>
-<th>준비 상태</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>채무자 재산·소득 자료</td>
-<td>변제 능력 평가</td>
-<td>미확인</td>
-</tr>
-<tr>
-<td>분할변제 합의서 양식</td>
-<td>조건 명시</td>
-<td>미확인</td>
-</tr>
-</tbody></table>
-<h2>3. 작성·제출물</h2>
-<table>
-<thead>
-<tr>
-<th>문서</th>
-<th>제출처</th>
-<th>주의점</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>분할변제 합의서</td>
-<td>채무자와 각자 1부</td>
-<td>기한이익상실·강제집행인낙 조항 포함(012~013 참조)</td>
-</tr>
-<tr>
-<td>변제 일정표</td>
-<td>본인 관리</td>
-<td>입금 내역 대조·관리</td>
-</tr>
-</tbody></table>
-<h2>4. 흔한 실수</h2>
-<ul>
-<li>구두 합의만 하고 문서화하지 않음 — 채무자가 약속 불이행 시 입증 곤란</li>
-<li>기한이익상실 조항 없이 분할변제만 수락 — 1회 미납 시에도 잔액 전액 청구 불가</li>
-<li>분할변제 기간이 너무 길어 시효 완성 위험 — 변제 도중 시효가 완성될 수 있음</li>
-</ul>
-<h2>5. 전문가 상담 신호</h2>
-<p><strong>위험도:</strong> 혼자 가능</p>
-<ul>
-<li>분할변제 금액이 크거나 장기(1년 이상)인 경우</li>
-<li>채무자에게 담보(보증인·부동산 담보) 설정 필요</li>
-</ul>
-<h2>6. 인접 절차 연결</h2>
-<p>선행: PROC-DEMD-009(부인·다툼 대응) · 후속: PROC-DEMD-011(재산 은닉·처분 위기)</p>
-<h2>7. 근거 조문·판례</h2>
-<table>
-<thead>
-<tr>
-<th>근거</th>
-<th>의미</th>
-<th>검증상태</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>(실무 협상 — 법령 강제 규정 없음)</td>
-<td>분할변제는 당사자 합의 사항</td>
-<td>—</td>
-</tr>
-</tbody></table>
-<h2>8. 다음 단계</h2>
-<p>→ 011 채무자 재산 은닉·처분 위기</p>
-<h2>최신성·면책 고지</h2>
-<p>본 자료는 작성일(2026-07-30) 기준 일반적 법률 정보이며 특정 사건에 대한 자문이 아닙니다.</p>
+<div id="progress"></div>
+<button id="toTop" aria-label="맨 위로" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
-<div class="footer">짤 濡쒗럩 癒몄뒪?몃끂??쨌 臾몄쓽 law@mustknow.co.kr</div>
+<header class="header">
+  <div class="wrap">
+    <span class="badge"><span class="dot"></span>조우성 변호사 · 내용증명채권추심</span>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="eb">내용증명채권추심 · 절차 카드</div>
+  <h1>분할변제·일부이행 제안 대응</h1>
+  <div class="tldr">
+    <div class="lb">3줄 요약</div>
+    <ul>
+            <li>채무자가 분할변제나 일부 변제를 제안하면, 채권 전체를 포기하지 않으면서 현실적 회수를 추구할 기회다.</li>
+      <li>분할변제 합의는 반드시 문서화하고, 일부라도 이행되지 않을 경우 잔액 전액 청구(기한이익상실) 조항을 넣어야 한다.</li>
+      <li>분할변제 제안을 받아들일지 여부는 채무자의 신용도·재산 상황·시효를 종합 판단한다.</li>
+    </ul>
+  </div>
+  <div class="meta">
+    <span>작성일 2026-07-30</span>
+      <span>· 단계 대응</span>
+      <span>· PROC-DEMD-010</span>
+      <span class="vchip">근거 후보 L1 · 게시 전 MCP 재확인</span>
+  </div>
 </div>
+
+<div class="app">
+  <nav class="toc" id="toc">
+    <button class="toc-toggle" onclick="document.getElementById('toc').classList.toggle('closed')">
+      목차 <span class="ar">▾</span>
+    </button>
+    <div class="tt">목차</div>
+    <ol id="toc-list">
+      <li><a href="#s1">지금 당신의 위치</a></li>
+      <li><a href="#s2">이번 단계에서 반드시 할 일</a></li>
+      <li><a href="#s3">준비물</a></li>
+      <li><a href="#s4">작성·제출물</a></li>
+      <li><a href="#s5">흔한 실수</a></li>
+      <li><a href="#s6">전문가 상담 신호</a></li>
+      <li><a href="#s7">인접 절차 연결</a></li>
+      <li><a href="#s8">근거 조문·판례</a></li>
+      <li><a href="#s9">다음 단계</a></li>
+      <li><a href="#s12">실무 판단선</a></li>
+      <li><a href="#s13">오늘 확보할 자료</a></li>
+      <li><a href="#s14">문서 발송·제출 전 점검</a></li>
+      <li><a href="#s15">흔한 오판</a></li>
+      <li><a href="#s16">상담이 필요한 신호</a></li>
+      <li><a href="#s18">근거 카드</a></li>
+    </ol>
+  </nav>
+
+  <main class="content">
+<section class="blk" id="s1">
+  <div class="secl">현재 위치</div>
+  <h2>0. 지금 당신의 위치</h2>
+  <p>공통 5단계: 사전 → 착수 → 대응 → 결정 → 사후 (현재: <strong>대응</strong>)</p>
+  <pre><code>부인·다툼 대응(009) -&gt; [분할변제·일부이행 제안 대응] -&gt; 재산 은닉·처분 위기(011)</code></pre>
+</section>
+<section class="blk" id="s2">
+  <div class="secl">할 일</div>
+  <h2>1. 이번 단계에서 반드시 할 일</h2>
+  <ul><li class="check"><span class="ck">✓</span><span>채무자의 변제 능력·의지 평가(재산·소득·과거 이행 이력)</span></li><li class="check"><span class="ck">✓</span><span>분할변제 조건(기간·금액·이자·담보) 협상</span></li><li class="check"><span class="ck">✓</span><span>합의 시 기한이익상실(일부 미이행 시 잔액 전액 청구) 조항 포함</span></li><li class="check"><span class="ck">✓</span><span>합의 불발 시 지급명령·소송 전환 준비</span></li></ul>
+</section>
+<section class="blk" id="s3">
+  <div class="secl">준비물</div>
+  <h2>2. 준비물</h2>
+  <div class="tbl-wrap"><table><thead><tr><th>준비물</th><th>왜 필요한가</th><th>준비 상태</th></tr></thead><tbody><tr><td>채무자 재산·소득 자료</td><td>변제 능력 평가</td><td>미확인</td></tr><tr><td>분할변제 합의서 양식</td><td>조건 명시</td><td>미확인</td></tr></tbody></table></div>
+</section>
+<section class="blk" id="s4">
+  <div class="secl">작성·제출물</div>
+  <h2>3. 작성·제출물</h2>
+  <div class="tbl-wrap"><table><thead><tr><th>문서</th><th>제출처</th><th>주의점</th></tr></thead><tbody><tr><td>분할변제 합의서</td><td>채무자와 각자 1부</td><td>기한이익상실·강제집행인낙 조항 포함(012~013 참조)</td></tr><tr><td>변제 일정표</td><td>본인 관리</td><td>입금 내역 대조·관리</td></tr></tbody></table></div>
+</section>
+<section class="blk" id="s5">
+  <div class="secl">흔한 실수</div>
+  <h2>4. 흔한 실수</h2>
+  <ul><li>구두 합의만 하고 문서화하지 않음 — 채무자가 약속 불이행 시 입증 곤란</li><li>기한이익상실 조항 없이 분할변제만 수락 — 1회 미납 시에도 잔액 전액 청구 불가</li><li>분할변제 기간이 너무 길어 시효 완성 위험 — 변제 도중 시효가 완성될 수 있음</li></ul>
+</section>
+<section class="blk" id="s6">
+  <div class="secl">상담 신호</div>
+  <h2>5. 전문가 상담 신호</h2>
+  <p><strong>위험도:</strong> 혼자 가능</p>
+  <ul><li>분할변제 금액이 크거나 장기(1년 이상)인 경우</li><li>채무자에게 담보(보증인·부동산 담보) 설정 필요</li></ul>
+</section>
+<section class="blk" id="s7">
+  <div class="secl">절차 연결</div>
+  <h2>6. 인접 절차 연결</h2>
+  <p>선행: PROC-DEMD-009(부인·다툼 대응) · 후속: PROC-DEMD-011(재산 은닉·처분 위기)</p>
+</section>
+<section class="blk" id="s8">
+  <div class="secl">근거</div>
+  <h2>7. 근거 조문·판례</h2>
+  <div class="tbl-wrap"><table><thead><tr><th>근거</th><th>의미</th><th>검증상태</th></tr></thead><tbody><tr><td>(실무 협상 — 법령 강제 규정 없음)</td><td>분할변제는 당사자 합의 사항</td><td>—</td></tr></tbody></table></div>
+</section>
+<section class="blk" id="s9">
+  <div class="secl">다음 단계</div>
+  <h2>8. 다음 단계</h2>
+  <p>→ 011 채무자 재산 은닉·처분 위기</p>
+</section>
+<section class="blk" id="s10">
+  <div class="secl">10</div>
+  <h2>최신성·면책 고지</h2>
+  <p>본 자료는 작성일(2026-07-30) 기준 일반적 법률 정보이며 특정 사건에 대한 자문이 아닙니다.</p>
+</section>
+<section class="blk verify" id="s11">
+  <div class="secl">검증 로그</div>
+  <h2>검증 로그</h2>
+  <div class="tbl-wrap"><table><thead><tr><th>인용</th><th>유형</th><th>웹 화이트리스트</th><th>한국법 MCP</th><th>판정</th></tr></thead><tbody><tr><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr></tbody></table></div>
+  <p class="vn">인용 조문·판례는 내부 WIKI 후보에서 출발해 한국법 MCP 교차검증 후 등재되었습니다. 게시 전 최신 현행성을 재확인합니다.</p>
+</section>
+<section class="blk" id="s12">
+  <div class="secl">판단선</div>
+  <h2>실무 판단선</h2>
+  <p>채무 승인인지 단순 협상인지 구분하고 잔액·기한·불이행 효과를 문서화합니다.</p>
+  <div class="tbl-wrap"><table><thead><tr><th>판단 질문</th><th>확인할 사실</th><th>증거</th><th>미확정이면</th></tr></thead><tbody><tr><td>권리가 존재하는가</td><td>계약·이행·변제기·손해</td><td>원본 계약·거래자료</td><td>확정/추정/미확인 분리</td></tr><tr><td>지금 무엇을 해야 하는가</td><td>시효·송달·재산·분쟁 가능성</td><td>날짜표·주소·재산자료</td><td>기한부터 보수적으로 확보</td></tr><tr><td>다음 단계인가</td><td>무응답·부인·연체·처분위험</td><td>통지·통화·입금 기록</td><td>법률검토 후 전환</td></tr></tbody></table></div>
+</section>
+<section class="blk" id="s13">
+  <div class="secl">증거 확보</div>
+  <h2>오늘 확보할 자료</h2>
+  <ul><li class="check"><span class="ck">✓</span><span>권리 발생일·변제기·최종 변제·최종 연락 타임라인</span></li><li class="check"><span class="ck">✓</span><span>원금·이자·지연손해금·비용을 분리한 청구금액표</span></li><li class="check"><span class="ck">✓</span><span>상대방 이름·법인명·주소·대표자·송달 가능 장소</span></li><li class="check"><span class="ck">✓</span><span>계약·세금계산서·거래명세·입금·문자·통화·반송자료 원본</span></li></ul>
+</section>
+<section class="blk" id="s14">
+  <div class="secl">제출 전 점검</div>
+  <h2>문서 발송·제출 전 점검</h2>
+  <div class="tbl-wrap"><table><thead><tr><th>점검</th><th>기준</th></tr></thead><tbody><tr><td>당사자</td><td>이름·주소·대표자·대리권이 최신 자료와 일치하는가</td></tr><tr><td>사실</td><td>감정·추측 없이 날짜·행위·미지급 사실로 작성했는가</td></tr><tr><td>금액</td><td>원금·이자율·기산일·계산식이 재현되는가</td></tr><tr><td>후속조치</td><td>실제 가능한 지급명령·소송·집행만 예고했는가</td></tr><tr><td>개인정보</td><td>제3자 공개나 과도한 연락을 하지 않았는가</td></tr></tbody></table></div>
+</section>
+<section class="blk" id="s15">
+  <div class="secl">오판 방지</div>
+  <h2>흔한 오판</h2>
+  <ul><li>내용증명을 보내면 자동으로 돈을 받는다 → 내용증명은 의사표시·증거 기능이지 집행권원이 아닙니다.</li><li>수령을 거부하면 송달이 무조건 완료된다 → 반송 사유·주소·후속 절차를 따로 검토해야 합니다.</li><li>상대가 침묵하면 채무를 인정한 것이다 → 침묵만으로 승낙을 단정하지 않습니다.</li><li>일부 돈을 받으면 모든 쟁점이 끝난다 → 충당·잔액·합의 여부를 문서화합니다.</li></ul>
+</section>
+<section class="blk" id="s16">
+  <div class="secl">상담 신호</div>
+  <h2>상담이 필요한 신호</h2>
+  <p><strong>위험도: 상담 권장</strong></p>
+  <ul><li>시효 완성 또는 제척기간 임박 여부가 불명확한 경우</li><li>상대방이 채무·계약·품질·상계·변제를 다투는 경우</li><li>재산 은닉·처분 정황, 폐업·도주·연락두절이 있는 경우</li><li>내용증명 이후 지급명령·소송·가압류·강제집행을 연결해야 하는 경우</li></ul>
+</section>
+<section class="blk" id="s17">
+  <div class="secl">가이드</div>
+  <h2>다음 단계</h2>
+  <p>현재 카드: <strong>분할변제·일부이행 제안 대응</strong>. 위 자료를 확보한 뒤 권리확정 → 증거·주소 → 문안·발송 → 협상 → 지급명령·소송 → 집행 순서로 진행합니다.</p>
+</section>
+<section class="blk" id="s18">
+  <div class="secl">근거 카드</div>
+  <h2>근거 카드</h2>
+  <blockquote class="warn">⚠️ 조문·판례는 게시 전 내부 WIKI, 웹 화이트리스트, 한국법 MCP 순서로 현행성을 검증합니다.</blockquote>
+  <div class="tbl-wrap"><table><thead><tr><th>근거 후보</th><th>확인할 쟁점</th><th>상태</th></tr></thead><tbody><tr><td>민법상 변제·화해계약 후보</td><td>요건·기한·효과·예외</td><td>L1 검증대기</td></tr></tbody></table></div>
+</section>
+<section class="blk" id="s19">
+  <div class="secl">19</div>
+  <h2>최신성·면책 고지</h2>
+  <p>본 자료는 2026-07-31 기준 일반적 법률 정보이며 특정 사건에 대한 자문이 아닙니다. 실제 발송·소송·집행 전 최신 법령과 개별 사실관계를 확인해야 합니다.</p>
+</section>
+<section class="blk verify" id="s20">
+  <div class="secl">검증 로그</div>
+  <h2>검증 로그</h2>
+  <div class="tbl-wrap"><table><thead><tr><th>인용</th><th>유형</th><th>웹 화이트리스트</th><th>한국법 MCP</th><th>판정</th></tr></thead><tbody><tr><td>민법상 변제·화해계약 후보</td><td>법령/판례 후보</td><td>대기</td><td>대기</td><td>L1 검증대기</td></tr></tbody></table></div>
+  <p class="vn">인용 조문·판례는 내부 WIKI 후보에서 출발해 한국법 MCP 교차검증 후 등재되었습니다. 게시 전 최신 현행성을 재확인합니다.</p>
+</section>
+<section class="blk faq" id="s21">
+  <div class="secl">Q&A</div>
+  <h2>FAQ</h2>
+  <details><summary>내용증명만 보내면 시효가 중단되나요?</summary><div class="a">모든 채권에서 그렇다고 단정할 수 없습니다. 채권 종류와 시효 규정, 후속 소송·지급명령 등을 함께 점검해야 합니다.</div></details>
+      <details><summary>상대방이 받지 않으면 의미가 없나요?</summary><div class="a">반송 사유와 주소, 도달 여부를 증거로 남기고 지급명령·소송 등 후속 절차를 검토합니다.</div></details>
+      <details><summary>독촉 연락은 어디까지 가능한가요?</summary><div class="a">정당한 회수 목적이라도 반복·야간 연락, 제3자 공개, 협박성 표현은 위험합니다. 연락일지를 남깁니다.</div></details>
+</section>
+
+    <div class="notice">
+      본 자료는 2026-07-31 기준 일반적 법률 정보이며 특정 사건에 대한 자문이 아닙니다. 실제 발송·소송·집행 전 최신 법령과 개별 사실관계를 확인해야 합니다.
+    </div>
+  </main>
+</div>
+
+<footer class="footer" id="consult">
+  <div class="wrap">
+    <div class="prof">
+      <div>
+        <h3>조우성 변호사 / 로펌 머스트노우</h3>
+        <p>기업 법무·개인 법률 실무 전문 변호사. 현장에서 바로 활용할 수 있는 절차 가이드를 제공합니다.</p>
+      </div>
+      <div class="cta-f">
+        <a class="btn btn-f" href="mailto:law@mustknow.co.kr">상담 문의하기</a>
+        <a class="btn btn-fo" href="https://woosungjo-law.github.io">더 많은 인사이트</a>
+      </div>
+    </div>
+    <div class="fine">
+      © 2026 조우성 변호사 / 로펌 머스트노우. 본 콘텐츠는 일반 법률 정보이며 법률 자문을 대체하지 않습니다.
+      인용 법령·판례는 작성일 기준이며 게시 전 현행성을 재확인합니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+var pb=document.getElementById('progress');
+function onScroll(){
+  var h=document.documentElement,b=document.body;
+  var st=h.scrollTop||b.scrollTop;
+  var sh=(h.scrollHeight||b.scrollHeight)-h.clientHeight;
+  pb.style.width=(sh>0?(st/sh*100):0)+'%';
+}
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+var toTop=document.getElementById('toTop');
+window.addEventListener('scroll',function(){
+  (window.scrollY||window.pageYOffset)>500?toTop.classList.add('show'):toTop.classList.remove('show');
+},{passive:true});
+var links=Array.prototype.slice.call(document.querySelectorAll('#toc-list a'));
+var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));}).filter(Boolean);
+function spy(){
+  var pos=(window.scrollY||window.pageYOffset)+120,cur=secs[0];
+  for(var i=0;i<secs.length;i++){if(secs[i].offsetTop<=pos)cur=secs[i];}
+  links.forEach(function(a){
+    a.classList.toggle('active',cur&&a.getAttribute('href')==='#'+cur.id);
+  });
+}
+window.addEventListener('scroll',spy,{passive:true});spy();
+document.querySelectorAll('#toc-list a').forEach(function(a){
+  a.addEventListener('click',function(){
+    if(window.innerWidth<=820)document.getElementById('toc').classList.add('closed');
+  });
+});
+</script>
 </body>
 </html>
