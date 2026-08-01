@@ -1,137 +1,387 @@
-<!DOCTYPE html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>개인정보 국외이전 체크리스트 — 해외 클라우드·서버 사용 시 필수 요건</title><meta name="description" content="개인정보보호법 제28조의8 기반 국외이전 체크리스트. 해외 클라우드·SaaS·서버 사용 시 동의·SCC·적정성 결정·처리방침 기재 요건을 단계별로 정리.">
-<style>:root{--bg:#f5f3fa;--panel:#fff;--panel2:#f5f3fa;--line:#e0dce8;--line2:#d0cae0;--ink:#1e1b2b;--ink2:#3c3850;--muted:#706a85;--faint:#9892ab;--primary:#4338ca;--primary-d:#3730a3;--primary-l:#6366f1;--primary-tint:#eef2ff;--primary-tint-ln:#ddd6fe;--rL-bg:#ecfdf5;--rL-tx:#065f46;--warn-bg:#fffbeb;--warn-tx:#b45309;--font:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Noto Sans KR',sans-serif;--maxw:1120px;--readw:760px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.75}
-#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;background:linear-gradient(90deg,var(--primary),var(--primary-l));transition:width .1s linear}
-.header{background:linear-gradient(135deg,#1e1b4b,var(--primary));color:#eef2ff}.header .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 26px}
-.header .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;color:#a5b4fc;border:1px solid rgba(165,180,252,.4);border-radius:999px;padding:4px 12px}.header .badge .dot{width:6px;height:6px;border-radius:50%;background:#a5b4fc}
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>개인정보 국외이전 체크리스트 — 해외 클라우드·서버 사용 시 필수 요건</title><style>
+/* ============================================================
+   법률 대시보드 전자책 — Apollo 기반 경량 커스텀 (공개 롱스크롤)
+   Apollo 토큰(버건디 액센트 + 웜 화이트 + 딥와인 헤더) 상속.
+   의뢰인 리포트(리스크레이더 6뷰)와 달리 공개 독서형 롱스크롤.
+   self-contained: 외부 CDN/폰트/이미지/스크립트 의존 없음.
+   ============================================================ */
+:root{
+  --bg:#f5f1f2; --panel:#ffffff; --panel2:#faf6f7;
+  --line:#ebe2e5; --line2:#ddccd2;
+  --ink:#2c1d26; --ink2:#56424c; --muted:#8a7b82; --faint:#b3a6ab;
+  --wine:#7a2e3a; --wine-d:#5a1f2b; --wine-l:#9c4456;
+  --wine-tint:#f4e9ec; --wine-tint-ln:#ecd7dd;
+  --header-bg:#3a1525; --header-bg2:#4e1f32; --header-accent:#d4a0aa;
+  --rH:#c74a3c; --rM-bg:#f8e4b8; --rM-tx:#7d520a; --rL-bg:#d6ecdb; --rL-tx:#287a54;
+  --amber:#b45309; --green:#287a54;
+  --font:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Noto Sans KR',sans-serif;
+  --maxw:1120px; --readw:760px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
+
+/* 읽기 진행바 */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;
+  background:linear-gradient(90deg,var(--wine),var(--wine-l));transition:width .1s linear}
+
+/* 헤더 표지 (딥와인, 유일한 딥 컬러) */
+.header{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0}
+.header .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 26px}
+.header .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;
+  color:var(--header-accent);border:1px solid rgba(212,160,170,.4);border-radius:999px;padding:4px 12px}
+.header .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--header-accent)}
+
+/* 히어로 */
 .hero{max-width:var(--maxw);margin:0 auto;padding:30px 26px 8px}
-.hero .eb{font-size:12px;font-weight:700;color:var(--primary)}.hero h1{font-size:30px;line-height:1.28;font-weight:800;margin:0 0 16px}
-.hero .tldr{background:var(--primary-tint);border:1px solid var(--primary-tint-ln);border-left:4px solid var(--primary);border-radius:12px;padding:16px 18px;margin:0 0 18px}
-.hero .tldr .lb{font-size:12px;font-weight:700;color:var(--primary-d);margin-bottom:8px}
-.hero .tldr ul{margin:0;padding-left:18px}.hero .tldr li{margin:4px 0;font-size:15px;color:var(--ink2)}
+.hero .eb{font-size:12px;font-weight:700;color:var(--wine);letter-spacing:.02em;margin-bottom:10px}
+.hero h1{font-size:30px;line-height:1.28;font-weight:800;margin:0 0 16px;color:var(--ink);letter-spacing:-.01em}
+.hero .tldr{background:var(--wine-tint);border:1px solid var(--wine-tint-ln);border-left:4px solid var(--wine);
+  border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.hero .tldr .lb{font-size:12px;font-weight:700;color:var(--wine-d);margin-bottom:8px}
+.hero .tldr ul{margin:0;padding-left:18px}
+.hero .tldr li{margin:4px 0;font-size:15px;color:var(--ink2)}
 .hero .meta{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:12.5px;color:var(--muted);margin-bottom:18px}
-.hero .meta .vchip{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);font-weight:700;border-radius:6px;padding:3px 9px;font-size:11.5px}
+.hero .meta .vchip{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);
+  font-weight:700;border-radius:6px;padding:3px 9px;font-size:11.5px}
 .hero .cta-row{display:flex;flex-wrap:wrap;gap:10px}
-.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:9px;padding:11px 18px;text-decoration:none;border:1px solid transparent}
-.btn-p{background:var(--primary);color:#fff}.btn-p:hover{background:var(--primary-d)}.btn-o{background:#fff;color:var(--primary-d);border-color:var(--line2)}.btn-o:hover{background:var(--panel2)}
-.app{max-width:var(--maxw);margin:0 auto;padding:8px 26px 60px;display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:start}
-.toc{position:sticky;top:24px}.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:0 0 10px}
-.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}.toc li{counter-increment:toc;margin:1px 0}
-.toc a{display:flex;gap:9px;font-size:13.5px;color:var(--ink2);text-decoration:none;padding:7px 10px;border-radius:8px;border-left:3px solid transparent}
+.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:9px;
+  padding:11px 18px;text-decoration:none;cursor:pointer;border:1px solid transparent}
+.btn-p{background:var(--wine);color:#fff}
+.btn-p:hover{background:var(--wine-d)}
+.btn-o{background:#fff;color:var(--wine-d);border-color:var(--line2)}
+.btn-o:hover{background:var(--panel2)}
+
+/* 셸: 좌측 목차 + 본문 */
+.app{max-width:var(--maxw);margin:0 auto;padding:8px 26px 60px;
+  display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:start}
+
+/* 목차 (데스크톱 = 좌측 sticky) */
+.toc{position:sticky;top:24px}
+.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;
+  margin:0 0 10px;padding-left:2px}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}
+.toc li{counter-increment:toc;margin:1px 0}
+.toc a{display:flex;gap:9px;font-size:13.5px;color:var(--ink2);text-decoration:none;
+  padding:7px 10px;border-radius:8px;border-left:3px solid transparent;line-height:1.4}
 .toc a::before{content:counter(toc,decimal-leading-zero);color:var(--faint);font-weight:700;font-size:11.5px;flex:none}
-.toc a:hover{background:var(--panel2)}.toc a.active{background:var(--primary-tint);border-left-color:var(--primary);color:var(--primary-d);font-weight:700}
-.toc-toggle{display:none}.content{max-width:var(--readw);min-width:0}
+.toc a:hover{background:var(--panel2)}
+.toc a.active{background:var(--wine-tint);border-left-color:var(--wine);color:var(--wine-d);font-weight:700}
+.toc-toggle{display:none}
+
+/* 본문 */
+.content{max-width:var(--readw);min-width:0}
 section.blk{scroll-margin-top:24px;margin-bottom:38px}
-.secl{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin:0 0 12px}
-.secl::before{content:"";width:7px;height:15px;background:var(--primary);border-radius:2px;flex:none}
-section.blk h2{font-size:23px;font-weight:800;line-height:1.35;margin:0 0 14px}section.blk h3{font-size:17px;font-weight:700;margin:26px 0 10px;color:var(--primary-d)}
+.secl{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.05em;margin:0 0 12px}
+.secl::before{content:"";width:7px;height:15px;background:var(--wine);border-radius:2px;flex:none}
+section.blk h2{font-size:23px;font-weight:800;line-height:1.35;margin:0 0 14px;color:var(--ink);letter-spacing:-.01em}
+section.blk h3{font-size:17px;font-weight:700;margin:26px 0 10px;color:var(--wine-d)}
 section.blk p{margin:0 0 14px;color:var(--ink2)}
-.ev{background:#fff;border:1px solid var(--line);border-left:4px solid var(--primary);border-radius:10px;padding:13px 15px;margin:0 0 12px}
+section.blk ul,section.blk ol{margin:0 0 14px;padding-left:22px;color:var(--ink2)}
+section.blk li{margin:6px 0}
+strong{color:var(--ink);font-weight:700}
+a.ln{color:var(--wine-l);text-decoration:none;border-bottom:1px solid var(--wine-tint-ln)}
+a.ln:hover{border-bottom-color:var(--wine-l)}
+
+/* 핵심요약 카드 */
+.summary{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.summary .lb{font-size:11px;font-weight:700;color:var(--wine-d);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.summary ul{margin:0;padding-left:18px}
+
+/* 근거 카드 (조문·판례) */
+.ev{background:#fff;border:1px solid var(--line);border-left:4px solid var(--wine);border-radius:10px;
+  padding:13px 15px;margin:0 0 12px}
 .ev .top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px}
-.ev .kind{font-size:11px;font-weight:700;color:#fff;background:var(--primary);border-radius:5px;padding:2px 8px}
-.ev .kind.law{background:var(--primary-d)}.ev .kind.case{background:#7c3aed}
+.ev .kind{font-size:11px;font-weight:700;color:#fff;background:var(--wine);border-radius:5px;padding:2px 8px}
+.ev .kind.law{background:var(--wine-d)}
+.ev .kind.case{background:var(--amber)}
 .ev .cite{font-size:13.5px;font-weight:700;color:var(--ink)}
 .ev .vtick{margin-left:auto;font-size:11px;font-weight:700;color:var(--rL-tx);background:var(--rL-bg);border-radius:5px;padding:2px 7px}
 .ev .gist{font-size:14px;color:var(--ink2);margin:0}
-.risk{background:var(--warn-bg);border:1px solid #fde68a;border-left:4px solid var(--warn-tx);border-radius:10px;padding:13px 15px;margin:0 0 12px}
-.risk .rt{font-size:11px;font-weight:700;color:var(--warn-tx);text-transform:uppercase;margin-bottom:6px}
-.check-item{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:0 0 10px;display:flex;align-items:flex-start;gap:12px}
-.check-item .cb{flex:none;width:22px;height:22px;border:2px solid var(--primary);border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
-.check-item .cb.done{background:var(--primary);color:#fff;font-size:13px;font-weight:700}
-.check-item .ct{flex:1}.check-item .ct .ctt{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:3px}.check-item .ct .ctd{font-size:13.5px;color:var(--ink2);margin:0}
-.tl{border-collapse:collapse;width:100%;margin:0 0 16px;font-size:14.5px}
-.tl th{background:var(--primary-tint);color:var(--primary-d);font-weight:700;padding:10px 12px;text-align:left;border:1px solid var(--primary-tint-ln);font-size:13px}
-.tl td{padding:10px 12px;border:1px solid var(--line);vertical-align:top}
+.ev .date{font-size:12px;color:var(--muted);margin-top:5px}
+
+/* 다이어그램 — 플로우 / 체크리스트 (CSS·SVG only) */
+.figure{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin:0 0 18px}
+.figure .cap{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:12px}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px}
+.flow .step{flex:1;min-width:120px;background:var(--wine-tint);border:1px solid var(--wine-tint-ln);
+  border-radius:10px;padding:11px 12px;position:relative}
+.flow .step .n{font-size:11px;font-weight:700;color:var(--wine)}
+.flow .step .t{font-size:13.5px;font-weight:700;color:var(--ink);margin-top:2px}
+.flow .step .d{font-size:12.5px;color:var(--ink2);margin-top:3px}
+.checklist{list-style:none;margin:0;padding:0}
+.checklist li{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+.checklist li:last-child{border-bottom:none}
+.checklist .ck{flex:none;width:20px;height:20px;border-radius:5px;background:var(--rL-bg);color:var(--rL-tx);
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+
+/* 위험도 칩 */
+.chip{display:inline-flex;align-items:center;justify-content:center;min-width:34px;font-size:11px;font-weight:500;
+  border-radius:6px;padding:3px 8px;margin-right:4px}
+.c-H{background:var(--rH);color:#fff}
+.c-M{background:var(--rM-bg);color:var(--rM-tx)}
+.c-L{background:var(--rL-bg);color:var(--rL-tx)}
+
+/* 표 */
+.tbl-wrap{overflow-x:auto;margin:0 0 18px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px}
+
+/* FAQ (아코디언) */
 .faq details{background:#fff;border:1px solid var(--line);border-radius:10px;margin:0 0 10px;overflow:hidden}
-.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:15px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:10px}
+.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:15px;font-weight:700;color:var(--ink);
+  display:flex;align-items:center;gap:10px}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--primary-tint);color:var(--primary-d);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
-.faq details[open] summary{border-bottom:1px solid var(--line);color:var(--primary-d)}
+.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--wine-tint);
+  color:var(--wine-d);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+.faq details[open] summary{border-bottom:1px solid var(--line);color:var(--wine-d)}
 .faq .a{padding:14px 16px;font-size:14.5px;color:var(--ink2)}
-.notice{background:#fff;border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;font-size:12.5px;color:var(--muted);line-height:1.7}
-#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;background:var(--primary);color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none}
-#toTop.show{opacity:1;pointer-events:auto}#toTop:hover{background:var(--primary-d)}
-.footer{background:linear-gradient(135deg,#1e1b4b,var(--primary));color:#eef2ff;margin-top:20px}
+
+/* 최신성·면책 고지 */
+.notice{background:#fff;border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;
+  font-size:12.5px;color:var(--muted);line-height:1.7}
+
+/* 맨 위로 버튼 */
+#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--wine-tint-ln);background:var(--wine);color:#fff;font-size:18px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;
+  box-shadow:0 4px 14px rgba(58,21,37,.28)}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{background:var(--wine-d)}
+
+/* 푸터 프로필 + 상담 CTA */
+.footer{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0;margin-top:20px}
 .footer .wrap{max-width:var(--maxw);margin:0 auto;padding:34px 26px}
 .footer h3{font-size:20px;font-weight:800;margin:0 0 8px;color:#fff}
-.footer p{font-size:14px;color:rgba(238,242,255,.72);margin:0 0 6px}
+.footer p{font-size:14px;color:rgba(255,255,255,.72);margin:0 0 6px;line-height:1.7}
+.footer .prof{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end}
 .footer .cta-f{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-.footer .btn-f{background:#fff;color:var(--primary-d)}.footer .fine{border-top:1px solid rgba(238,242,255,.15);margin-top:22px;padding-top:14px;font-size:11.5px;color:rgba(238,242,255,.5)}
-@media(max-width:820px){.hero h1{font-size:24px}.app{grid-template-columns:1fr;gap:0;padding-top:0}.toc{position:static;margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 8px}.toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--primary-d);padding:9px 8px}.toc-toggle .ar{transition:transform .2s}.toc.closed .toc-toggle .ar{transform:rotate(-90deg)}.toc .tt{display:none}.toc.closed ol{display:none}section.blk h2{font-size:20px}th,td{white-space:nowrap}}
-@media print{#progress,.toc,.cta-row,.footer .cta-f{display:none}.header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}.app{display:block}}
-</style></head><body>
-<div id="progress"></div><button id="toTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
-<header class="header"><div class="wrap"><span class="badge"><span class="dot"></span>조우성 변호사 · 개인정보 컴플라이언스</span></div></header>
-<div class="hero"><div class="eb">개인정보</div><h1>개인정보 국외이전 체크리스트</h1><div class="tldr"><div class="lb">3줄 요약 (TL;DR)</div><ul><li>해외 클라우드·SaaS 사용 시 개인정보가 해외 서버에 저장되면 <strong>개인정보보호법 제28조의8</strong>에 따른 적법 요건 충족 필수</li><li>4가지 적법 근거: 정보주체 동의 / 법률·조약 / 계약 이행 위탁(처리방침 공개 또는 고지) / 적정성 결정 국가</li><li><strong>SCC만으로 동의 면제되지 않음</strong> — SCC는 보호조치 수단, 법적 근거는 별도 확보 필요</li></ul></div><div class="meta"><span>작성일 2026-07-29</span><span>· 기준 법령 시행일 2025-10-02</span><span class="vchip">✓ 법령·판례 3단 검증</span></div><div class="cta-row"><a class="btn btn-p" href="#faq">Q&amp;A</a><a class="btn btn-o" href="#consult">법률팩 문의</a></div></div>
-<div class="app"><nav class="toc" id="toc"><button class="toc-toggle" onclick="document.getElementById('toc').classList.toggle('closed')">목차 <span class="ar">▾</span></button><div class="tt">목차</div><ol id="toc-list"><li><a href="#s1">문제상황</a></li><li><a href="#s2">핵심 쟁점</a></li><li><a href="#s3">첫 대응 순서</a></li><li><a href="#s4">위험 신호</a></li><li><a href="#s5">근거 카드</a></li><li><a href="#faq">FAQ</a></li></ol></nav><main class="content">
-<section class="blk" id="s1"><div class="secl">문제상황</div><h2>해외 클라우드를 도입하려는데, 고객 개인정보가 해외 서버에 저장됩니다</h2>
-<p>국내 스타트업 A사는 글로벌 CRM SaaS를 도입하려 합니다. 그런데 해당 SaaS의 데이터 서버가 미국에 있습니다. A사는 고객(정보주체)의 이름·이메일·구매이력·상담내역을 해당 SaaS에 저장하게 됩니다. 이것이 법적으로 문제될까요?</p>
-<p>정답은 <strong>"그렇다"</strong>입니다. 개인정보가 국외로 이전되므로 개인정보보호법 제28조의8에 따른 적법 요건을 충족해야 합니다. 해외 클라우드(AWS·Azure·GCP·Salesforce·HubSpot 등), 해외 본사와의 데이터 공유, 글로벌 인사 관리 시스템, 해외 협력사에 대한 업무 위탁 — 이 모든 상황에서 개인정보가 국외로 이전되면 법적 요건을 충족해야 합니다.</p>
-<p>위반 시 과징금(최대 5억 원 또는 위반액의 3%), 형사처벌(5년 이하 징역), 손해배상 책임이 발생할 수 있습니다.</p></section>
-<section class="blk" id="s2"><div class="secl">핵심 쟁점</div><h2>국외이전 5가지 적법 요건</h2>
-<p>개인정보보호법 제28조의8은 개인정보의 국외 이전(제공·조회·처리위탁·보관)을 원칙적으로 금지하고, 아래 예외 요건을 충족한 경우에만 허용합니다.</p>
+.footer .btn-f{background:#fff;color:var(--wine-d)}
+.footer .btn-f:hover{background:var(--header-accent)}
+.footer .btn-fo{background:transparent;color:#f4eef0;border-color:rgba(255,255,255,.35)}
+.footer .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:22px;padding-top:14px;
+  font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.7}
+
+/* ── 모바일 (≤820px) ── */
+@media(max-width:820px){
+  .hero h1{font-size:24px}
+  .app{grid-template-columns:1fr;gap:0;padding-top:0}
+  .toc{position:static;margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 8px}
+  .toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;
+    cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--wine-d);padding:9px 8px}
+  .toc-toggle .ar{transition:transform .2s}
+  .toc.closed .toc-toggle .ar{transform:rotate(-90deg)}
+  .toc .tt{display:none}
+  .toc ol{max-height:50vh;overflow:auto}
+  .toc.closed ol{display:none}
+  section.blk h2{font-size:20px}
+  th,td{white-space:nowrap}
+}
+@media print{
+  #progress,.toc,.cta-row,.footer .cta-f{display:none}
+  .header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .app{display:block}
+}
+</style></head><body><div id="progress"></div><button id="toTop" aria-label="맨 위로">?</button><header class="header"><div class="wrap"><span class="badge"><span class="dot"></span>조우성 변호사 ? 법률 인사이트</span></div></header><div class="hero"><div class="eb">전자책 대시보드 ? 실무 가이드</div><h1>개인정보 국외이전 체크리스트 — 해외 클라우드·서버 사용 시 필수 요건</h1><div class="tldr"><div class="lb">3줄 요약 (TL;DR)</div><ul><li>원문 Markdown의 제목?본문?표?체크리스트를 반영한 공개용 HTML입니다.</li><li>문서의 핵심 내용과 실무상 확인 포인트를 한 화면에서 확인할 수 있습니다.</li><li>구체적인 사안은 최신 법령?판례와 사실관계 확인이 필요합니다.</li></ul></div><div class="meta"><span>원문: EBOOK-026-개인정보-국외이전-체크리스트.md</span><span class="vchip">원문 기반 HTML</span></div><div class="cta-row"><a class="btn btn-p" href="#s1">핵심 내용 보기</a><a class="btn btn-o" href="#faq">확인 사항</a></div></div><div class="app"><nav class="toc" id="toc"><div class="tt">목차</div><ol id="toc-list"><li><a href="#s1">본문</a></li><li><a href="#s2">1. 문제상황</a></li><li><a href="#s3">2. 핵심 쟁점 — 국외이전 4가지 적법 요건</a></li><li><a href="#s4">3. 첫 대응 순서 — 오늘부터 실행할 4단계</a></li><li><a href="#s5">4. 위험 신호 — 이 4가지가 보이면 즉시 점검</a></li><li><a href="#s6">5. 근거 카드</a></li><li><a href="#s7">6. FAQ</a></li><li><a href="#s8">7. 최신성·면책 고지</a></li><li><a href="#s9">8. CTA — 법률팩(개인정보 컴플라이언스)</a></li></ol></nav><main class="content"><section class="blk" id="s1"><div class="secl">SECTION</div><blockquote>
+<p>[!web] 웹으로 보기
+https://woosungjo-law.github.io/share/d/ebook-026-cross-border-data-transfer-lwq0.html</p>
+</blockquote>
+<h1>개인정보 국외이전 체크리스트 — 해외 클라우드·서버 사용 시 필수 요건</h1></section><section class="blk" id="s2"><div class="secl">SECTION</div><h2>1. 문제상황</h2>
+<p>"국내 스타트업 A사는 글로벌 CRM SaaS를 도입하려 합니다. 그런데 해당 SaaS의 데이터 서버가 미국에 있습니다. A사는 고객(정보주체)의 이름·이메일·구매이력·상담내역을 해당 SaaS에 저장하게 됩니다. 이것이 법적으로 문제될까요?"</p>
+<p>정답은 <strong>"그렇다. 개인정보가 국외로 이전되므로 개인정보보호법 제28조의8에 따른 적법 요건을 충족해야 한다."</strong> 입니다.</p>
+<p>해외 클라우드(AWS·Azure·GCP·Salesforce·HubSpot 등), 해외 본사와의 데이터 공유, 글로벌 인사 관리 시스템, 해외 협력사에 대한 업무 위탁 — 이 모든 상황에서 개인정보가 국외로 이전되면 법적 요건을 충족해야 합니다. 위반 시 과징금(최대 5억 원 또는 위반액의 3%), 형사처벌(5년 이하 징역), 손해배상 책임이 발생할 수 있습니다.</p></section><section class="blk" id="s3"><div class="secl">SECTION</div><h2>2. 핵심 쟁점 — 국외이전 4가지 적법 요건</h2>
+<p>개인정보보호법 제28조의8은 개인정보의 국외 이전(제공·조회·처리위탁·보관)을 원칙적으로 금지하고, 아래 예외 요건을 충족한 경우에만 허용합니다. 네 가지 길 중 하나를 선택하면 됩니다.</p>
 <h3>① 정보주체 동의 (제28조의8 제1항 제1호)</h3>
-<p>가장 기본적인 방법. 국외 이전에 관한 <strong>별도의 동의</strong>를 받아야 합니다(약관 내 포괄 동의 불가). 동의 시 아래 정보를 미리 알려야 합니다:</p>
-<table class="tl"><thead><tr><th>고지 항목</th><th>내용</th></tr></thead><tbody>
-<tr><td>이전 항목</td><td>이전되는 개인정보 항목</td></tr>
-<tr><td>이전 국가·시기·방법</td><td>데이터가 전송될 국가, 시기, 전송 방법</td></tr>
-<tr><td>이전받는 자</td><td>수신자의 성명/법인명 및 연락처</td></tr>
-<tr><td>이용목적·보유기간</td><td>수신자의 이용목적 및 보유·이용 기간</td></tr>
-<tr><td>거부 방법·효과</td><td>동의 거부 방법, 절차 및 거부 시 불이익</td></tr>
-</tbody></table>
-<h3>② 법률·조약·국제협정 (제28조의8 제1항 제2호)</h3>
-<p>법률 또는 대한민국이 당사자인 조약·국제협정에 국외이전에 관한 특별 규정이 있는 경우. 일반 기업이 일상적으로 활용하기는 어려운 요건입니다.</p>
+<p>가장 기본적인 방법. 국외 이전에 관한 <strong>별도의 동의</strong>를 받아야 합니다(약관 내 포괄 동의 불가). 동의 시 아래 정보를 미리 알려야 합니다(같은 조 제2항):</p>
+<table>
+<thead>
+<tr>
+<th>고지 항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>이전 항목</td>
+<td>이전되는 개인정보 항목</td>
+</tr>
+<tr>
+<td>이전 국가·시기·방법</td>
+<td>데이터가 전송될 국가, 시기, 전송 방법</td>
+</tr>
+<tr>
+<td>이전받는 자</td>
+<td>수신자의 성명/법인명 및 연락처</td>
+</tr>
+<tr>
+<td>이용목적·보유기간</td>
+<td>수신자의 이용목적 및 보유·이용 기간</td>
+</tr>
+<tr>
+<td>거부 방법·효과</td>
+<td>동의 거부 방법, 절차 및 거부 시 불이익</td>
+</tr>
+</tbody>
+</table>
+<p><strong>실무 팁</strong>: 동의 변경 시 재동의 필요. 동의 철회 방법을 동의 시점에 고지하고 철회를 용이하게 해야 함.</p>
+<h3>② 법률·조약·국제협정상 특별 규정 (제28조의8 제1항 제2호)</h3>
+<p>법률 또는 대한민국이 당사자인 조약·국제협정에 국외이전에 관한 특별 규정이 있는 경우. 예: 형사사법 공조, 국제 조세 협정 등. 일반 기업이 일상적으로 활용하기는 어려운 요건.</p>
 <h3>③ 계약 체결·이행을 위한 처리위탁·보관 (제28조의8 제1항 제3호)</h3>
-<p>정보주체와의 계약 체결·이행을 위해 불가피하게 국외 처리위탁·보관이 필요한 경우. 처리방침에 공개(가목)하거나 서면등의 방법으로 정보주체에게 고지(나목)하면 별도 동의 없이 이전 가능합니다. 단, 수신자의 독자적 이용 목적을 위한 '제공'은 별도 동의가 필요합니다.</p>
+<p>정보주체와의 계약 체결·이행을 위해 불가피하게 국외 처리위탁·보관이 필요한 경우. 아래 두 가지 중 하나를 충족해야 함:
+- <strong>(가)호</strong>: 제2항 각 호 사항(위 ① 표 참조)을 개인정보 처리방침에 공개
+- <strong>(나)호</strong>: 서면등의 방법(전자우편 등)으로 정보주체에게 개별 고지</p>
+<p>이 경우 별도 동의 없이 이전 가능. 단, 이전이 '제공'(수신자의 독자적 이용)이 아닌 '위탁·보관' 성격이어야 함. 제공에 해당하면 별도 동의 필요.</p>
 <h3>④ 인증 + 보호조치 (제28조의8 제1항 제4호)</h3>
-<p>이전받는 자가 개인정보위 고시 인증을 받고 안전조치·권리보장 조치를 모두 한 경우. 아직 실무 활용도는 높지 않습니다.</p>
+<p>이전받는 자가 개인정보위 고시 인증(ISMS-P 등)을 받고, 안전조치·정보주체 권리보장 조치 및 인증 사항의 해외 이행 조치를 모두 한 경우. 아직 실무 활용도는 높지 않음.</p>
 <h3>⑤ 적정성 결정 국가 (제28조의8 제1항 제5호)</h3>
-<p>개인정보위가 해당 국가의 보호 수준이 한국과 실질적으로 동등하다고 인정하는 경우(시행령 제29조의9). 2026년 기준 EU·영국 등이 대상. 별도 동의·SCC 없이 이전 가능합니다.</p>
-<div class="risk"><div class="rt">⚠ 중요 — SCC는 별도 면제 사유가 아닙니다</div>
-개인정보보호법 제28조의8은 SCC를 동의 면제 사유로 직접 열거하지 않습니다. SCC는 위 ③(계약 이행 위탁) 또는 ①(동의)의 요건을 충족한 후 추가적인 보호장치로서 체결하는 계약입니다. SCC만 체결했다고 동의가 자동 면제되지 않습니다.</div></section>
-<section class="blk" id="s3"><div class="secl">첫 대응</div><h2>오늘부터 실행할 4단계 체크리스트</h2>
-<div class="check-item"><div class="cb done">✓</div><div class="ct"><div class="ctt">Step 1: 데이터 흐름 파악</div><p class="ctd">어떤 개인정보가 국외로 이전되는지, 이전 국가·수신자·목적·항목·방법을 리스트업. 클라우드 서버 소재지와 해외 접근 권한자까지 확인</p></div></div>
-<div class="check-item"><div class="cb">☐</div><div class="ct"><div class="ctt">Step 2: 적법 근거 확보</div><p class="ctd">정보주체 동의(별도 동의) 수집 또는 계약 이행 위탁 해당 여부 검토. 수신자와 SCC 체결. 적정성 결정 대상국(EU·영국) 활용 가능성 검토</p></div></div>
-<div class="check-item"><div class="cb">☐</div><div class="ct"><div class="ctt">Step 3: 처리방침·내부 절차 정비</div><p class="ctd">처리방침에 국외 이전 현황 기재(수신자·국가·항목·목적·방법). 정보주체 권리 행사 방법·동의 철회 방법·재이전·SCC 현황 포함. 변동 시 7일 내 갱신. 연 1회 이상 정기 점검</p></div></div>
-<div class="check-item"><div class="cb">☐</div><div class="ct"><div class="ctt">Step 4: 정기 점검 체계 구축</div><p class="ctd">SCC 체결 후 수신자 보호 수준 연 1회 이상 점검. 점검 결과·조치 이력 문서화. 보호 수준 미달 시 이전 중단·계약 해지 등 추가 조치</p></div></div></section>
-<section class="blk" id="s4"><div class="secl">위험 신호</div><h2>이 4가지가 보이면 즉시 점검</h2>
-<table class="tl"><thead><tr><th>위험 신호</th><th>설명</th><th>대응</th></tr></thead><tbody>
-<tr><td><strong>동의 없이 해외 이전</strong></td><td>정보주체 동의 없이 SaaS·클라우드 사용 중</td><td>즉시 동의 수집 또는 계약 이행 위탁 요건 충족</td></tr>
-<tr><td><strong>SCC 미체결</strong></td><td>해외 수신자와 SCC 미체결</td><td>개인정보위 고시 SCC 즉시 체결</td></tr>
-<tr><td><strong>재이전 통제 미흡</strong></td><td>수신자가 제3국으로 재이전 통제 장치 없음</td><td>계약에 재이전 금지·통제 조항 포함</td></tr>
-<tr><td><strong>처리방침 미기재</strong></td><td>국외 이전 현황이 처리방침에 없음</td><td>처리방침 즉시 갱신(7일 내)</td></tr>
-</tbody></table>
+<p>개인정보위가 해당 국가·국제기구의 개인정보 보호 수준이 한국과 실질적으로 동등하다고 인정하는 경우(시행령 제29조의9). 별도 동의·SCC 없이 이전 가능. 2026년 기준 EU·영국 등이 적정성 결정 대상.</p>
+<h3>💡 SCC(표준계약조항)는 별도 면제 사유가 아니다</h3>
+<p>중요한 포인트: 개인정보보호법 제28조의8은 SCC를 동의 면제 사유로 직접 열거하지 않습니다. SCC는 위 ③(계약 이행 위탁) 또는 ①(동의)의 요건을 충족한 후 <strong>추가적인 보호장치</strong>로서 체결하는 계약입니다. SCC만 체결했다고 동의가 자동 면제되지 않습니다.</p></section><section class="blk" id="s4"><div class="secl">SECTION</div><h2>3. 첫 대응 순서 — 오늘부터 실행할 4단계</h2>
+<h3>Step 1: 데이터 흐름 파악</h3>
+<ul>
+<li>현재 어떤 개인정보가 국외로 이전되고 있는지 파악</li>
+<li>이전 국가·수신자·목적·항목·방법을 리스트업</li>
+<li>클라우드 서버 소재지, 해외 본사 접근 권한자 확인</li>
+</ul>
+<h3>Step 2: 적법 근거 확보</h3>
+<ul>
+<li>정보주체 동의(별도 동의) 수집</li>
+<li>또는 계약 이행 위탁으로 볼 수 있는지 검토 → 처리방침 공개 또는 서면등의 고지</li>
+<li>수신자와 SCC 체결(개인정보위 고시 표준계약조항 활용)</li>
+<li>적정성 결정 대상국(EU·영국) 활용 가능성 검토</li>
+</ul>
+<h3>Step 3: 처리방침·내부 절차 정비</h3>
+<ul>
+<li>개인정보 처리방침에 국외 이전 현황 구체적 기재</li>
+<li>이전받는 자·국가·일시·항목·목적·방법</li>
+<li>정보주체 권리 행사 방법</li>
+<li>동의 철회 방법</li>
+<li>재이전 관련 사항</li>
+<li>SCC 체결 현황</li>
+<li>처리방침 변동 시 7일 이내 갱신</li>
+<li>연 1회 이상 정기 점검·갱신</li>
+</ul>
+<h3>Step 4: 정기 점검 체계 구축</h3>
+<ul>
+<li>SCC 체결 후 수신자 보호 수준 연 1회 이상 점검</li>
+<li>점검 결과·조치 이력 문서화</li>
+<li>보호 수준 미달 시 이전 중단·계약 해지 등 추가 조치</li>
+</ul></section><section class="blk" id="s5"><div class="secl">SECTION</div><h2>4. 위험 신호 — 이 4가지가 보이면 즉시 점검</h2>
+<table>
+<thead>
+<tr>
+<th>위험 신호</th>
+<th>설명</th>
+<th>대응</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🚨 동의 없이 해외 이전</td>
+<td>정보주체 동의 없이 SaaS·클라우드 사용 중</td>
+<td>즉시 동의 수집 또는 계약 이행 위탁 요건 충족</td>
+</tr>
+<tr>
+<td>🚨 SCC 미체결</td>
+<td>해외 수신자와 SCC 미체결</td>
+<td>개인정보위 고시 SCC 즉시 체결</td>
+</tr>
+<tr>
+<td>🚨 재이전 통제 미흡</td>
+<td>수신자가 제3국으로 재이전 통제 장치 없음</td>
+<td>계약에 재이전 금지·통제 조항 포함</td>
+</tr>
+<tr>
+<td>🚨 처리방침 미기재</td>
+<td>국외 이전 현황이 처리방침에 없음</td>
+<td>처리방침 즉시 갱신(7일 내)</td>
+</tr>
+</tbody>
+</table>
 <h3>위반 시 제재</h3>
-<table class="tl"><thead><tr><th>제재 유형</th><th>내용</th></tr></thead><tbody>
-<tr><td>과징금</td><td>최대 5억 원 또는 위반액의 3% 이하</td></tr>
-<tr><td>형사처벌</td><td>5년 이하 징역 또는 5천만 원 이하 벌금</td></tr>
-<tr><td>시정명령·공표</td><td>개인정보위 시정명령 및 언론 공표</td></tr>
-<tr><td>손해배상</td><td>정보주체 손해배상 책임(국내 처리자·해외 수신자 연대 가능)</td></tr>
-<tr><td>이전 중지 명령</td><td>개인정보위의 국외 이전 중지 명령(제28조의9)</td></tr>
-</tbody></table></section>
-<section class="blk" id="s5"><div class="secl">근거 카드</div><h2>핵심 법령 조문</h2>
-<div class="ev"><div class="top"><span class="kind law">조문</span><span class="cite">개인정보보호법 제28조의8 (국외 이전)</span><span class="vtick">✓ MCP 실존 확인</span></div><p class="gist">① 원칙적 금지 + 5개 예외(동의·법률·계약이행위탁·인증·적정성결정)<br>② 동의 시 고지 사항(항목·국가·시기·방법·수신자·목적·보유기간·거부방법)<br>③ 변경 시 재동의<br>④ 보호조치 의무(시행령 제29조의10)<br>⑤ 위법 계약 체결 금지</p></div>
-<div class="ev"><div class="top"><span class="kind law">조문</span><span class="cite">개인정보보호법 제28조의9 (국외 이전 중지 명령)</span><span class="vtick">✓ MCP 실존 확인</span></div><p class="gist">위반 또는 보호 수준 미달 시 개인정보위 이전 중지 명령 가능. 7일 내 이의 제기 가능.</p></div>
-<div class="ev"><div class="top"><span class="kind law">시행령</span><span class="cite">시행령 제29조의7~제29조의12</span><span class="vtick">✓ 조문번호 변경 확인</span></div><p class="gist">제29조의7(고지 방법), 제29조의8(인증 절차), 제29조의9(적정성 평가 기준), 제29조의10(보호조치), 제29조의11(중지 명령 기준), 제29조의12(이의 제기)</p></div>
-<div class="ev"><div class="top"><span class="kind law">시행령</span><span class="cite">시행령 제31조 (처리방침 기재)</span><span class="vtick">✓ MCP 실존 확인</span></div><p class="gist">국외 이전 근거와 제28조의8 제2항 각 호 사항을 처리방침에 공개 의무. 미기재 시 과태료 최대 1천만 원.</p></div>
-<div class="notice">⚠ 시행령 구 번호(제30조의3·제30조의4)는 2026.5.19. 시행령 개정으로 제29조의7~제29조의12로 변경되었습니다. 본 체크리스트는 현행 조문 번호를 기준으로 작성되었습니다.</div></section>
-<section class="blk" id="faq"><div class="secl">FAQ</div><h2>자주 묻는 질문</h2>
-<div class="faq">
-<details><summary>AWS 서울 리전만 사용하면 국외이전이 아닌가요?</summary><div class="a">AWS 서울 리전을 사용해도 AWS 본사(미국) 직원의 시스템 접근·유지보수 등으로 개인정보가 미국에 조회·접근될 수 있습니다. 이 경우 국외 이전(조회되는 경우 포함)에 해당하므로 요건을 충족해야 합니다. AWS가 제공하는 SCC를 체결하고 정보주체 동의 또는 처리방침 고지를 완료하는 것이 일반적입니다.</div></details>
-<details><summary>SCC만 체결하면 별도 동의가 필요 없나요?</summary><div class="a">아니요. SCC는 독립된 면제 사유가 아닙니다. SCC는 보호조치를 계약에 반영하는 수단(시행령 제29조의10)입니다. 면제는 제28조의8 각 호의 예외 사유가 있을 때만 가능합니다. 정보주체와의 계약 이행을 위한 처리위탁·보관이라면 처리방침 공개 또는 서면등의 고지로 별도 동의 없이 이전할 수 있고, 제공 성격이면 별도 동의가 필요합니다.</div></details>
-<details><summary>이미 데이터가 해외에 저장됐습니다. 지금이라도 늦지 않았나요?</summary><div class="a">즉시 조치해야 합니다. 해당 SaaS 사업자가 제공하는 SCC를 체결하고, 개인정보 처리방침을 갱신(국외 이전 현황 기재)하며, 정보주체에게 국외 이전 사실을 고지(동의 필요 시 별도 동의 수집)해야 합니다. 과거 이전분에 대한 법적 리스크는 있으나, 즉시 조치하면 시정 노력으로 참작될 수 있습니다.</div></details>
-<details><summary>적정성 결정 국가로는 아무런 조치 없이 이전해도 되나요?</summary><div class="a">개인정보위가 적정성을 인정한 국가로는 별도 동의·SCC 없이 이전 가능합니다. 단, 적정성 결정의 범위·조건·기간을 확인해야 합니다. 또한 적정성 결정 국가로 이전하더라도 제28조의8 제4항에 따른 보호조치(안전조치·고충처리·분쟁해결)는 여전히 적용됩니다.</div></details>
-<details><summary>해외 본사에 인사 데이터를 보내야 합니다. 어떤 절차가 필요한가요?</summary><div class="a">해외 본사에 국내 임직원의 인사·급여·건강 데이터를 제공하는 경우 국외 이전에 해당합니다. 본사와 SCC 체결 또는 BCR(구속력 있는 기업규칙) 마련이 필요합니다. 정보주체(임직원) 동의가 원칙이나, 근로계약 이행을 위한 위탁·보관으로 볼 수 있으면 처리방침 공개 또는 서면등의 고지로 이전 가능합니다. 노동조합이 있는 경우 별도 협의가 필요할 수 있습니다.</div></details>
-</div>
-<div class="notice"><strong>기준일:</strong> 2026년 7월 29일. 근거 법령: 개인정보보호법(법률 제20897호, 2025.10.2. 시행) / 시행령(대통령령 제36340호, 2026.5.19. 시행).<br>
-<strong>주요 변경:</strong> 시행령 조문번호 개정으로 국외이전 관련 규정이 제29조의7~제29조의12로 변경.<br>
-2026년 개인정보위는 SCC·BCR 확대 및 국외이전 영향평가 도입을 제3차 기본계획(2027~2029)에 포함.<br>
-EU GDPR이 적용되는 EU 관련 데이터 이전은 GDPR 국제 이전 규정(제44조~제49조)을 별도로 충족해야 합니다.<br>
-본 체크리스트는 일반적 법률 정보 제공 목적이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div></section></main></div>
-<footer class="footer" id="consult"><div class="wrap"><h3>PACK-정보-개인정보컴플라이언스</h3>
-<p>개인정보 처리방침 점검·작성 템플릿 · 국외이전 SCC 체결 가이드 + 표준계약조항 템플릿 · 개인정보 수집·이용 동의서 템플릿 · 개인정보 처리위탁 계약서 템플릿 · 개인정보 유출 대응 플레이북 · ISMS-P 인증 대비 점검표</p>
-<div class="cta-f"><a class="btn btn-f" href="#">법률팩 자세히 보기</a></div>
-<div class="fine">© 2026 Legal Risk Foundry. All rights reserved. 본 페이지의 내용은 법률 자문이 아니며, 구체적 사안에 대해서는 반드시 법률 전문가의 자문을 받으십시오.</div></div></footer>
-<script>window.addEventListener('scroll',function(){var p=document.getElementById('progress'),s=document.documentElement.scrollTop/(document.documentElement.scrollHeight-window.innerHeight)*100;p.style.width=s+'%';var t=document.getElementById('toTop');t.classList.toggle('show',window.scrollY>400)});document.querySelectorAll('.toc a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('toc').classList.add('closed')});var i=a.getAttribute('href').slice(1);var s=a.closest('.toc');window.addEventListener('scroll',function(){var e=document.getElementById(i);if(!e)return;var t=e.offsetTop-80,r=t+e.offsetHeight;var c=window.scrollY>=t&&window.scrollY<r;s.querySelectorAll('a').forEach(function(x){x.classList.remove('active')});if(c)a.classList.add('active')})})</script>
-</body></html>
+<table>
+<thead>
+<tr>
+<th>제재 유형</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>과징금</td>
+<td>최대 5억 원 또는 위반액의 3% 이하</td>
+</tr>
+<tr>
+<td>형사처벌</td>
+<td>5년 이하 징역 또는 5천만 원 이하 벌금</td>
+</tr>
+<tr>
+<td>시정명령·공표</td>
+<td>개인정보위 시정명령 및 언론 공표</td>
+</tr>
+<tr>
+<td>손해배상</td>
+<td>정보주체 손해배상 책임(국내 처리자·해외 수신자 연대 가능)</td>
+</tr>
+<tr>
+<td>이전 중지 명령</td>
+<td>개인정보위의 국외 이전 중지 명령(제28조의9)</td>
+</tr>
+</tbody>
+</table></section><section class="blk" id="s6"><div class="secl">SECTION</div><h2>5. 근거 카드</h2>
+<h3>개인정보보호법 제28조의8 (국외 이전)</h3>
+<ul>
+<li><strong>① 원칙적 금지 + 5개 예외</strong></li>
+<li><strong>② 동의 시 고지 사항</strong>: 항목·국가·시기·방법·수신자·이용목적·보유기간·거부방법</li>
+<li><strong>③ 변경 시 재동의</strong></li>
+<li><strong>④ 국외 이전 시 보호조치 의무(시행령 제29조의10: 안전조치+고충처리+분쟁해결)</strong></li>
+<li><strong>⑤ 위법 계약 체결 금지</strong></li>
+</ul>
+<h3>개인정보보호법 제28조의9 (국외 이전 중지 명령)</h3>
+<ul>
+<li>위반 또는 보호 수준 미달 시 개인정보위가 이전 중지 명령 가능</li>
+<li>명령 수령일부터 7일 내 이의 제기 가능(시행령 제29조의12)</li>
+</ul>
+<h3>개인정보보호법 시행령 제29조의7~제29조의12</h3>
+<ul>
+<li><strong>제29조의7</strong>: 계약 이행 위탁·보관 시 정보주체 고지 방법(서면등의)</li>
+<li><strong>제29조의8</strong>: 국외 이전 인증 절차(전문위원회 평가 → 정책협의회 협의)</li>
+<li><strong>제29조의9</strong>: 적정성 결정 평가 기준(법체계·감독기관·권리보장·피해구제)</li>
+<li><strong>제29조의10</strong>: 보호조치(안전조치+고충처리+분쟁해결, 수신자와 계약 반영)</li>
+<li><strong>제29조의11</strong>: 중지 명령 고려 사항(개인정보 유형·규모·위반 중대성·피해 규모 등)</li>
+<li><strong>제29조의12</strong>: 중지 명령 이의 제기 절차(7일 내 신청 → 30일 내 처리)</li>
+</ul>
+<h3>개인정보보호법 시행령 제31조 (처리방침 기재)</h3>
+<ul>
+<li>국외 이전 근거와 제28조의8 제2항 각 호 사항을 처리방침에 공개 의무</li>
+<li>미기재 시 과태료(최대 1천만 원)</li>
+</ul></section><section class="blk" id="s7"><div class="secl">SECTION</div><h2>6. FAQ</h2>
+<h3>Q1. 국내 기업이 AWS 서울 리전만 사용하면 국외이전이 아닌가요?</h3>
+<p>AWS 서울 리전을 사용해도 AWS 본사(미국) 직원의 시스템 접근·유지보수 등으로 개인정보가 미국에 조회·접근될 수 있습니다. 이 경우 국외 이전(조회되는 경우 포함)에 해당하므로 요건을 충족해야 합니다. AWS가 제공하는 SCC를 체결하고 정보주체 동의 또는 처리방침 고지를 완료하는 것이 일반적입니다.</p>
+<h3>Q2. SCC만 체결하면 별도 동의가 필요 없나요?</h3>
+<p>아니요. SCC는 독립된 면제 사유가 아닙니다. SCC는 보호조치를 계약에 반영하는 수단(시행령 제29조의10)입니다. 면제는 제28조의8 각 호의 예외 사유가 있을 때만 가능합니다. 정보주체와의 계약 이행을 위한 처리위탁·보관이라면 처리방침 공개 또는 서면등의 고지로 별도 동의 없이 이전할 수 있고, 제공 성격이면 별도 동의가 필요합니다.</p>
+<h3>Q3. 해외 클라우드 SaaS를 도입했는데, 이미 데이터가 저장됐습니다. 지금이라도 늦지 않았나요?</h3>
+<p>즉시 조치해야 합니다. 첫 단계로 해당 SaaS 사업자가 제공하는 SCC를 체결하고, 개인정보 처리방침을 갱신(국외 이전 현황 기재)하며, 정보주체에게 국외 이전 사실을 고지(동의 필요 시 별도 동의 수집)해야 합니다. 과거 이전분에 대한 법적 리스크는 있으나, 즉시 조치하면 시정 노력으로 참작될 수 있습니다.</p>
+<h3>Q4. 적정성 결정을 받은 국가(EU·영국)로는 아무런 조치 없이 이전해도 되나요?</h3>
+<p>개인정보위가 적정성을 인정한 국가로는 별도 동의·SCC 없이 이전 가능합니다. 단, 적정성 결정의 범위·조건·기간을 확인해야 합니다. 또한 적정성 결정 국가로 이전하더라도 제28조의8 제4항에 따른 보호조치(안전조치·고충처리·분쟁해결)는 여전히 적용됩니다.</p>
+<h3>Q5. 글로벌 기업의 한국 지사인데, 본사에 인사 데이터를 보내야 합니다. 어떤 절차가 필요한가요?</h3>
+<p>해외 본사에 국내 임직원의 인사·급여·건강 데이터를 제공하는 경우 국외 이전에 해당합니다. 본사와 SCC 체결 또는 BCR(구속력 있는 기업규칙) 마련이 필요합니다. 정보주체(임직원) 동의가 원칙이나, 근로계약 이행을 위한 위탁·보관으로 볼 수 있으면 처리방침 공개 또는 서면등의 고지로 이전 가능합니다. 노동조합이 있는 경우 별도 협의가 필요할 수 있습니다.</p></section><section class="blk" id="s8"><div class="secl">SECTION</div><h2>7. 최신성·면책 고지</h2>
+<ul>
+<li>기준일: <strong>2026년 7월 29일</strong></li>
+<li>근거 법령: 개인정보보호법(법률 제20897호, 2025.4.1. 공포, 2025.10.2. 시행) / 같은 법 시행령(대통령령 제36340호, 2026.5.19. 시행)</li>
+<li>주요 변경 사항: 시행령 조문번호 개정으로 국외이전 관련 규정이 제30조의3·제30조의4에서 <strong>제29조의7~제29조의12</strong>로 변경됨. 2026년 개인정보위는 SCC·BCR 확대, 국외이전 영향평가 도입을 제3차 기본계획(2027~2029)에 포함.</li>
+<li>본 체크리스트는 일반적 법률 정보 제공 목적이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다. 개별 사안에 대해서는 반드시 법률 전문가의 자문을 받으십시오.</li>
+<li>EU GDPR이 적용되는 EU 관련 데이터 이전은 GDPR 국제 이전 규정(제44조~제49조)을 별도로 충족해야 합니다.</li>
+</ul></section><section class="blk" id="s9"><div class="secl">SECTION</div><h2>8. CTA — 법률팩(개인정보 컴플라이언스)</h2>
+<p>더 깊이 있는 검토가 필요하시다면 아래 법률팩을 활용하십시오.</p>
+<p><strong>PACK-정보-개인정보컴플라이언스</strong>
+- 개인정보 처리방침 점검·작성 템플릿
+- 국외이전 SCC 체결 가이드 + 표준계약조항 템플릿
+- 개인정보 수집·이용 동의서 템플릿
+- 개인정보 처리위탁 계약서 템플릿
+- 개인정보 유출 대응 플레이북
+- ISMS-P 인증 대비 점검표</p>
+<p>상담 문의: 법률 사무소 담당 변호사에게 문의하거나 <code>legalrisk.foundry@example.com</code>으로 연락 주십시오.</p></section><section class="blk faq" id="faq"><div class="secl">NOTICE</div><h2>확인 사항</h2><div class="notice">이 문서는 일반적인 법률 정보 제공을 위한 자료입니다. 구체적인 사실관계와 최신 법령?판례에 따라 결론이 달라질 수 있습니다.</div></section></main></div><footer class="footer"><div class="wrap"><h3>조우성 변호사</h3><p>실무에 바로 활용할 수 있는 법률 지식과 대응 가이드를 제공합니다.</p></div></footer></body></html>

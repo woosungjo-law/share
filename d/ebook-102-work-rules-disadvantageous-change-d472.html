@@ -1,403 +1,520 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
-<title>취업규칙 불이익변경 동의 절차 — 조우성 변호사</title>
-<meta name="description" content="취업규칙 불이익변경의 적법 요건: 과반수노조 집단적 동의, 사회통념상 합리성 폐기(2023 전원합의체), 근로기준법 제94조 해설. 중소기업 HR·법무팀 필독.">
-<style>
-:root{--bg:#edf4f3;--panel:#fff;--panel2:#edf4f0;--line:#c5d9d3;--line2:#b0c9c0;--ink:#1a2d2a;--ink2:#3a5c54;--muted:#6d9188;--faint:#98b9b0;--cyan:#0d7c7c;--cyan-d:#085a5a;--cyan-l:#1f9e9e;--cyan-tint:#dff0ef;--cyan-tint-ln:#c8e2de;--header-bg:#034343;--header-bg2:#036161;--header-accent:#9cd4d4;--rL-bg:#d0e8d6;--rL-tx:#1f7a4f;--amber:#b45309;--font:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Noto Sans KR',sans-serif;--maxw:1120px;--readw:760px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.75}
-#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;background:linear-gradient(90deg,var(--cyan),var(--cyan-l));transition:width .1s linear}
-.header{background:linear-gradient(135deg,var(--header-bg),var(--header-bg2));color:#def0ee}.header .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 26px}
-.header .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;color:var(--header-accent);border:1px solid rgba(156,212,212,.4);border-radius:999px;padding:4px 12px}.header .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--header-accent)}
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>취업규칙 불이익변경 동의 절차 — 근로자에게 불리한 취업규칙 변경의 적법 요건</title><style>
+/* ============================================================
+   법률 대시보드 전자책 — Apollo 기반 경량 커스텀 (공개 롱스크롤)
+   Apollo 토큰(버건디 액센트 + 웜 화이트 + 딥와인 헤더) 상속.
+   의뢰인 리포트(리스크레이더 6뷰)와 달리 공개 독서형 롱스크롤.
+   self-contained: 외부 CDN/폰트/이미지/스크립트 의존 없음.
+   ============================================================ */
+:root{
+  --bg:#f5f1f2; --panel:#ffffff; --panel2:#faf6f7;
+  --line:#ebe2e5; --line2:#ddccd2;
+  --ink:#2c1d26; --ink2:#56424c; --muted:#8a7b82; --faint:#b3a6ab;
+  --wine:#7a2e3a; --wine-d:#5a1f2b; --wine-l:#9c4456;
+  --wine-tint:#f4e9ec; --wine-tint-ln:#ecd7dd;
+  --header-bg:#3a1525; --header-bg2:#4e1f32; --header-accent:#d4a0aa;
+  --rH:#c74a3c; --rM-bg:#f8e4b8; --rM-tx:#7d520a; --rL-bg:#d6ecdb; --rL-tx:#287a54;
+  --amber:#b45309; --green:#287a54;
+  --font:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Noto Sans KR',sans-serif;
+  --maxw:1120px; --readw:760px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
+
+/* 읽기 진행바 */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;
+  background:linear-gradient(90deg,var(--wine),var(--wine-l));transition:width .1s linear}
+
+/* 헤더 표지 (딥와인, 유일한 딥 컬러) */
+.header{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0}
+.header .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 26px}
+.header .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;
+  color:var(--header-accent);border:1px solid rgba(212,160,170,.4);border-radius:999px;padding:4px 12px}
+.header .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--header-accent)}
+
+/* 히어로 */
 .hero{max-width:var(--maxw);margin:0 auto;padding:30px 26px 8px}
-.hero .eb{font-size:12px;font-weight:700;color:var(--cyan)}.hero h1{font-size:30px;line-height:1.28;font-weight:800;margin:0 0 16px}
-.hero .tldr{background:var(--cyan-tint);border:1px solid var(--cyan-tint-ln);border-left:4px solid var(--cyan);border-radius:12px;padding:16px 18px;margin:0 0 18px}
-.hero .tldr .lb{font-size:12px;font-weight:700;color:var(--cyan-d);margin-bottom:8px}
-.hero .tldr ul{margin:0;padding-left:18px}.hero .tldr li{margin:4px 0;font-size:15px;color:var(--ink2)}
+.hero .eb{font-size:12px;font-weight:700;color:var(--wine);letter-spacing:.02em;margin-bottom:10px}
+.hero h1{font-size:30px;line-height:1.28;font-weight:800;margin:0 0 16px;color:var(--ink);letter-spacing:-.01em}
+.hero .tldr{background:var(--wine-tint);border:1px solid var(--wine-tint-ln);border-left:4px solid var(--wine);
+  border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.hero .tldr .lb{font-size:12px;font-weight:700;color:var(--wine-d);margin-bottom:8px}
+.hero .tldr ul{margin:0;padding-left:18px}
+.hero .tldr li{margin:4px 0;font-size:15px;color:var(--ink2)}
 .hero .meta{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:12.5px;color:var(--muted);margin-bottom:18px}
-.hero .meta .vchip{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);font-weight:700;border-radius:6px;padding:3px 9px;font-size:11.5px}
+.hero .meta .vchip{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);
+  font-weight:700;border-radius:6px;padding:3px 9px;font-size:11.5px}
 .hero .cta-row{display:flex;flex-wrap:wrap;gap:10px}
-.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:9px;padding:11px 18px;text-decoration:none;border:1px solid transparent}
-.btn-p{background:var(--cyan);color:#fff}.btn-p:hover{background:var(--cyan-d)}.btn-o{background:#fff;color:var(--cyan-d);border-color:var(--line2)}.btn-o:hover{background:var(--panel2)}
-.app{max-width:var(--maxw);margin:0 auto;padding:8px 26px 60px;display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:start}
-.toc{position:sticky;top:24px}.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:0 0 10px}
-.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}.toc li{counter-increment:toc;margin:1px 0}
-.toc a{display:flex;gap:9px;font-size:13.5px;color:var(--ink2);text-decoration:none;padding:7px 10px;border-radius:8px;border-left:3px solid transparent}
+.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:9px;
+  padding:11px 18px;text-decoration:none;cursor:pointer;border:1px solid transparent}
+.btn-p{background:var(--wine);color:#fff}
+.btn-p:hover{background:var(--wine-d)}
+.btn-o{background:#fff;color:var(--wine-d);border-color:var(--line2)}
+.btn-o:hover{background:var(--panel2)}
+
+/* 셸: 좌측 목차 + 본문 */
+.app{max-width:var(--maxw);margin:0 auto;padding:8px 26px 60px;
+  display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:start}
+
+/* 목차 (데스크톱 = 좌측 sticky) */
+.toc{position:sticky;top:24px}
+.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;
+  margin:0 0 10px;padding-left:2px}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}
+.toc li{counter-increment:toc;margin:1px 0}
+.toc a{display:flex;gap:9px;font-size:13.5px;color:var(--ink2);text-decoration:none;
+  padding:7px 10px;border-radius:8px;border-left:3px solid transparent;line-height:1.4}
 .toc a::before{content:counter(toc,decimal-leading-zero);color:var(--faint);font-weight:700;font-size:11.5px;flex:none}
-.toc a:hover{background:var(--panel2)}.toc a.active{background:var(--cyan-tint);border-left-color:var(--cyan);color:var(--cyan-d);font-weight:700}
-.toc-toggle{display:none}.content{max-width:var(--readw);min-width:0}
+.toc a:hover{background:var(--panel2)}
+.toc a.active{background:var(--wine-tint);border-left-color:var(--wine);color:var(--wine-d);font-weight:700}
+.toc-toggle{display:none}
+
+/* 본문 */
+.content{max-width:var(--readw);min-width:0}
 section.blk{scroll-margin-top:24px;margin-bottom:38px}
-.secl{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin:0 0 12px}
-.secl::before{content:"";width:7px;height:15px;background:var(--cyan);border-radius:2px;flex:none}
-section.blk h2{font-size:23px;font-weight:800;line-height:1.35;margin:0 0 14px}section.blk h3{font-size:17px;font-weight:700;margin:26px 0 10px;color:var(--cyan-d)}
+.secl{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.05em;margin:0 0 12px}
+.secl::before{content:"";width:7px;height:15px;background:var(--wine);border-radius:2px;flex:none}
+section.blk h2{font-size:23px;font-weight:800;line-height:1.35;margin:0 0 14px;color:var(--ink);letter-spacing:-.01em}
+section.blk h3{font-size:17px;font-weight:700;margin:26px 0 10px;color:var(--wine-d)}
 section.blk p{margin:0 0 14px;color:var(--ink2)}
 section.blk ul,section.blk ol{margin:0 0 14px;padding-left:22px;color:var(--ink2)}
 section.blk li{margin:6px 0}
 strong{color:var(--ink);font-weight:700}
+a.ln{color:var(--wine-l);text-decoration:none;border-bottom:1px solid var(--wine-tint-ln)}
+a.ln:hover{border-bottom-color:var(--wine-l)}
+
+/* 핵심요약 카드 */
 .summary{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:0 0 18px}
-.summary .lb{font-size:11px;font-weight:700;color:var(--cyan-d);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.summary .lb{font-size:11px;font-weight:700;color:var(--wine-d);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
 .summary ul{margin:0;padding-left:18px}
-.ev{background:#fff;border:1px solid var(--line);border-left:4px solid var(--cyan);border-radius:10px;padding:13px 15px;margin:0 0 12px}
+
+/* 근거 카드 (조문·판례) */
+.ev{background:#fff;border:1px solid var(--line);border-left:4px solid var(--wine);border-radius:10px;
+  padding:13px 15px;margin:0 0 12px}
 .ev .top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px}
-.ev .kind{font-size:11px;font-weight:700;color:#fff;background:var(--cyan);border-radius:5px;padding:2px 8px}
-.ev .kind.law{background:var(--cyan-d)}.ev .kind.case{background:var(--amber)}
+.ev .kind{font-size:11px;font-weight:700;color:#fff;background:var(--wine);border-radius:5px;padding:2px 8px}
+.ev .kind.law{background:var(--wine-d)}
+.ev .kind.case{background:var(--amber)}
 .ev .cite{font-size:13.5px;font-weight:700;color:var(--ink)}
 .ev .vtick{margin-left:auto;font-size:11px;font-weight:700;color:var(--rL-tx);background:var(--rL-bg);border-radius:5px;padding:2px 7px}
-.ev .gist{font-size:14px;color:var(--ink2);margin:0}.ev .date{font-size:12px;color:var(--muted);margin-top:5px}
-.risk{background:#fff;border:1px solid #f0d0c0;border-left:4px solid #c0392b;border-radius:10px;padding:13px 15px;margin:0 0 12px}
-.risk .rt{font-size:11px;font-weight:700;color:#c0392b;text-transform:uppercase;margin-bottom:6px}
-.warn{background:#fff;border:1px solid #fce4b8;border-left:4px solid #d97706;border-radius:10px;padding:13px 15px;margin:0 0 12px}
-.warn .rt{font-size:11px;font-weight:700;color:#d97706;text-transform:uppercase;margin-bottom:6px}
+.ev .gist{font-size:14px;color:var(--ink2);margin:0}
+.ev .date{font-size:12px;color:var(--muted);margin-top:5px}
+
+/* 다이어그램 — 플로우 / 체크리스트 (CSS·SVG only) */
 .figure{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin:0 0 18px}
 .figure .cap{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:12px}
 .flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px}
-.flow .step{flex:1;min-width:120px;background:var(--cyan-tint);border:1px solid var(--cyan-tint-ln);border-radius:10px;padding:11px 12px}
-.flow .step .n{font-size:11px;font-weight:700;color:var(--cyan)}
+.flow .step{flex:1;min-width:120px;background:var(--wine-tint);border:1px solid var(--wine-tint-ln);
+  border-radius:10px;padding:11px 12px;position:relative}
+.flow .step .n{font-size:11px;font-weight:700;color:var(--wine)}
 .flow .step .t{font-size:13.5px;font-weight:700;color:var(--ink);margin-top:2px}
 .flow .step .d{font-size:12.5px;color:var(--ink2);margin-top:3px}
 .checklist{list-style:none;margin:0;padding:0}
 .checklist li{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
 .checklist li:last-child{border-bottom:none}
-.checklist .ck{flex:none;width:20px;height:20px;border-radius:5px;background:var(--rL-bg);color:var(--rL-tx);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
-.chip{display:inline-flex;align-items:center;justify-content:center;min-width:34px;font-size:11px;font-weight:500;border-radius:6px;padding:3px 8px;margin-right:4px}
-.c-H{background:#c0392b;color:#fff}.c-M{background:#f8e4b8;color:#7d520a}.c-L{background:var(--rL-bg);color:var(--rL-tx)}
+.checklist .ck{flex:none;width:20px;height:20px;border-radius:5px;background:var(--rL-bg);color:var(--rL-tx);
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+
+/* 위험도 칩 */
+.chip{display:inline-flex;align-items:center;justify-content:center;min-width:34px;font-size:11px;font-weight:500;
+  border-radius:6px;padding:3px 8px;margin-right:4px}
+.c-H{background:var(--rH);color:#fff}
+.c-M{background:var(--rM-bg);color:var(--rM-tx)}
+.c-L{background:var(--rL-bg);color:var(--rL-tx)}
+
+/* 표 */
 .tbl-wrap{overflow-x:auto;margin:0 0 18px}
 table{border-collapse:collapse;width:100%;font-size:14px}
 th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
-th{background:var(--panel2);color:var(--cyan-d);font-weight:700;font-size:12.5px}
+th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px}
+
+/* FAQ (아코디언) */
 .faq details{background:#fff;border:1px solid var(--line);border-radius:10px;margin:0 0 10px;overflow:hidden}
-.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:15px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:10px}
+.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:15px;font-weight:700;color:var(--ink);
+  display:flex;align-items:center;gap:10px}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--cyan-tint);color:var(--cyan-d);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
-.faq details[open] summary{border-bottom:1px solid var(--line);color:var(--cyan-d)}
+.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--wine-tint);
+  color:var(--wine-d);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+.faq details[open] summary{border-bottom:1px solid var(--line);color:var(--wine-d)}
 .faq .a{padding:14px 16px;font-size:14.5px;color:var(--ink2)}
-.notice{background:#fff;border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;font-size:12.5px;color:var(--muted);line-height:1.7}
-#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;background:var(--cyan);color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;box-shadow:0 4px 14px rgba(3,67,67,.28)}
-#toTop.show{opacity:1;pointer-events:auto}#toTop:hover{background:var(--cyan-d)}
-.footer{background:linear-gradient(135deg,var(--header-bg),var(--header-bg2));color:#def0ee;margin-top:20px}
+
+/* 최신성·면책 고지 */
+.notice{background:#fff;border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;
+  font-size:12.5px;color:var(--muted);line-height:1.7}
+
+/* 맨 위로 버튼 */
+#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--wine-tint-ln);background:var(--wine);color:#fff;font-size:18px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;
+  box-shadow:0 4px 14px rgba(58,21,37,.28)}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{background:var(--wine-d)}
+
+/* 푸터 프로필 + 상담 CTA */
+.footer{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0;margin-top:20px}
 .footer .wrap{max-width:var(--maxw);margin:0 auto;padding:34px 26px}
 .footer h3{font-size:20px;font-weight:800;margin:0 0 8px;color:#fff}
-.footer p{font-size:14px;color:rgba(222,240,238,.72);margin:0 0 6px;line-height:1.7}
+.footer p{font-size:14px;color:rgba(255,255,255,.72);margin:0 0 6px;line-height:1.7}
 .footer .prof{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end}
 .footer .cta-f{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-.footer .btn-f{background:#fff;color:var(--cyan-d)}.btn-f:hover{background:var(--header-accent)}
-.footer .btn-fo{background:transparent;color:#def0ee;border-color:rgba(222,240,238,.35)}
-.footer .fine{border-top:1px solid rgba(222,240,238,.15);margin-top:22px;padding-top:14px;font-size:11.5px;color:rgba(222,240,238,.5);line-height:1.7}
-@media(max-width:820px){.hero h1{font-size:24px}.app{grid-template-columns:1fr;gap:0;padding-top:0}.toc{position:static;margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 8px}.toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--cyan-d);padding:9px 8px}.toc-toggle .ar{transition:transform .2s}.toc.closed .toc-toggle .ar{transform:rotate(-90deg)}.toc .tt{display:none}.toc.closed ol{display:none}section.blk h2{font-size:20px}th,td{white-space:nowrap}}
-@media print{#progress,.toc,.cta-row,.footer .cta-f{display:none}.header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}.app{display:block}}
-</style></head><body>
-<div id="progress"></div><button id="toTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+.footer .btn-f{background:#fff;color:var(--wine-d)}
+.footer .btn-f:hover{background:var(--header-accent)}
+.footer .btn-fo{background:transparent;color:#f4eef0;border-color:rgba(255,255,255,.35)}
+.footer .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:22px;padding-top:14px;
+  font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.7}
 
-<header class="header"><div class="wrap"><span class="badge"><span class="dot"></span>조우성 변호사 · 법률 인사이트</span></div></header>
-
-<div class="hero">
-  <div class="eb">노동법 · B2B 절차형 가이드</div>
-  <h1>취업규칙 불이익변경 동의 절차 — 근로자에게 불리한 취업규칙 변경의 적법 요건</h1>
-  <div class="tldr">
-    <div class="lb">3줄 요약 (TL;DR)</div>
-    <ul>
-      <li>취업규칙을 근로자에게 불리하게 변경하려면 과반수노조(또는 과반수근로자)의 집단적 동의가 필수입니다. 개별 서명 수집은 무효입니다.</li>
-      <li>2023년 대법원 전원합의체(2017다35588)는 종전 '사회통념상 합리성' 예외를 폐기했습니다. '내용이 합리적이니까'라는 방어는 더 이상 통하지 않습니다.</li>
-      <li>동의 절차는 회의·토론·투표 방식이어야 하며, 사용자 측 개입이 있거나 충분한 정보 없이 진행된 동의는 무효가 됩니다.</li>
-    </ul>
-  </div>
-  <div class="meta">
-    <span>작성일 2026.07.29</span>
-    <span>· 기준 법령 시행일 2025.10.23</span>
-    <span class="vchip">조문·판례 3단 검증 (L3)</span>
-    <span>· 읽는 시간 약 7분</span>
-  </div>
-  <div class="cta-row">
-    <a class="btn btn-p" href="#faq">핵심만 빠르게 (Q&amp;A)</a>
-    <a class="btn btn-o" href="#consult">상담 문의</a>
-  </div>
-</div>
-
-<div class="app">
-
-<nav class="toc" id="toc">
-  <button class="toc-toggle" onclick="document.getElementById('toc').classList.toggle('closed')">목차 <span class="ar">▾</span></button>
-  <div class="tt">목차</div>
-  <ol id="toc-list">
-    <li><a href="#s1">문제상황</a></li>
-    <li><a href="#s2">취업규칙 변경 유형</a></li>
-    <li><a href="#s3">불이익변경 3대 적법 요건</a></li>
-    <li><a href="#s4">절차 타임라인</a></li>
-    <li><a href="#s5">위험 신호</a></li>
-    <li><a href="#s6">근거 카드</a></li>
-    <li><a href="#faq">자주 묻는 질문</a></li>
-  </ol>
-</nav>
-
-<main class="content">
-
-<section class="blk" id="s1">
-  <div class="secl">쟁점 1</div>
-  <h2>문제상황</h2>
-
-  <div class="summary">
-    <div class="lb">한눈에</div>
-    <ul>
-      <li>회사가 경영 악화·조직 개편을 이유로 임금 체계 개편, 수당 삭감, 근무 시간 변경을 시도할 때, 근로자에게 불리한 변경은 사용자가 일방적으로 결정할 수 없습니다.</li>
-      <li>근로기준법 제94조를 위반한 변경은 무효이며, 임금체불·손해배상·노동위원회 시정명령으로 이어질 수 있습니다.</li>
-    </ul>
-  </div>
-
-  <p>2023년 대법원 전원합의체(2017다35588)는 '내용이 합리적이면 동의 절차를 생략할 수 있다'는 종전 법리를 전면 폐기했습니다. 핵심은 <strong>절차의 적법성</strong>입니다. 변경의 필요성과 내용이 아무리 타당하더라도, 동의 절차를 건너뛰었다면 변경은 무효입니다.</p>
-
-  <p>이 전자책은 취업규칙 불이익변경의 적법 요건을 <strong>불이익/이익 구분 → 동의 요건 → 의견청취 → 신고·게시</strong>의 절차 순서로 정리하고, 2023년 법리 변화를 반영한 실무 체크리스트를 제공합니다.</p>
-</section>
-
-<section class="blk" id="s2">
-  <div class="secl">쟁점 2</div>
-  <h2>취업규칙 변경 유형 — 불이익과 이익의 구분</h2>
-
-  <h3>불이익 변경 (동의 필수)</h3>
-  <p>근로자에게 불리한 변경은 <strong>과반수노조 또는 과반수근로자의 동의</strong>를 받아야 합니다(근기법 제94조 제1항 단서). 불이익 해당 여부는 단일 항목이 아닌 변경 전후 전체 취업규칙을 종합 비교합니다(2021다280781).</p>
-  <p><strong>전형적 불이익 사례:</strong> 임금 삭감, 수당 축소, 상여금 폐지, 퇴직금 산정 방식 변경, 연차일수 감축, 징계 양정 강화, 정년 단축, 정리해고 요건 완화.</p>
-
-  <h3>이익·중립 변경 (의견청취)</h3>
-  <p>근로자에게 유리한 변경 또는 중립적 변경(형식 정비·법령 반영)은 <strong>의견청취</strong>만으로 가능합니다. 의견청취는 동의와 달리 거부권이 없으나, 형식적 통보가 아닌 실질적 의견수렴 절차(설명회·공람·게시)가 필요합니다.</p>
-
-  <h3>혼합 변경</h3>
-  <p>유리 요소와 불리 요소가 혼재된 경우 전체 순손익을 평가합니다. 불이익 항목과 중립 항목을 분리하여 각각 동의와 의견청취 절차를 이행하는 것이 안전합니다.</p>
-
-  <div class="ev">
-    <div class="top">
-      <span class="kind law">조문</span>
-      <span class="cite">근로기준법 제94조</span>
-      <span class="vtick">현행 확인</span>
-    </div>
-    <p class="gist">제94조 제1항: 사용자는 취업규칙 작성·변경에 관해 과반수노조(또는 과반수근로자) 의견을 청취해야 한다. 단, 불리하게 변경하는 경우에는 그 동의를 받아야 한다.</p>
-    <div class="date">시행일 2025.10.23</div>
-  </div>
-
-  <div class="ev">
-    <div class="top">
-      <span class="kind case">판례</span>
-      <span class="cite">대법원 2022.4.14. 선고 2021다280781 판결</span>
-      <span class="vtick">실존·현행 확인</span>
-    </div>
-    <p class="gist">취업규칙 불이익 변경이란 종전 취업규칙의 보호영역에 따라 보호되는 직접적이고 구체적인 이익을 박탈하는 경우를 말하며, 변경 전후를 객관적·종합적으로 비교하여 판단한다.</p>
-  </div>
-</section>
-
-<section class="blk" id="s3">
-  <div class="secl">쟁점 3</div>
-  <h2>불이익변경의 3대 적법 요건</h2>
-
-  <h3>요건 1 — 과반수 집단적 동의</h3>
-  <p><strong>동의 주체:</strong> 근로자 과반수로 조직된 노동조합(과반수노조) 또는 과반수노조가 없는 경우 근로자 과반수. 동의 주체는 변경으로 직접 불이익을 받는 집단뿐 아니라 장차 적용이 예상되는 집단까지 포함한 전체 근로자 집단입니다(2009다49377).</p>
-  <p><strong>동의 방식:</strong> 집단적 의사결정방법 — 회의·토론·투표를 거쳐 사용자 개입 없이 근로자가 자율적으로 결정해야 합니다. 개별 서명 수집은 무효입니다(2009다32362). 과반수노조 동의는 내부 의결 절차(총회·대의원회)를 거친 유효한 동의여야 합니다.</p>
-
-  <div class="warn">
-    <div class="rt">실무 포인트</div>
-    <p>과반수노조가 동의하면 비조합원(관리직 등)에게도 효력이 미칩니다(2007다85997). 단, 유리한 개별 근로계약이 존재하면 그 부분은 개별계약이 우선합니다(2018다200709). 복수노조 사업장에서는 교섭대표노조가 자동으로 과반수노조가 되는 것은 아니므로 주의해야 합니다(2022나12624).</p>
-  </div>
-
-  <h3>요건 2 — 고용노동부 신고</h3>
-  <p>취업규칙 변경 시 고용노동부장관에게 신고하고, 동의 또는 의견을 적은 서면을 첨부해야 합니다(근기법 제93조·제94조 제2항). 신고를 누락하면 과태료 부과 대상이 됩니다.</p>
-
-  <h3>요건 3 — 게시·비치</h3>
-  <p>변경된 취업규칙을 근로자가 상시 열람할 수 있도록 게시·비치해야 합니다(근기법 제95조). 공지는 효력 발생의 실질적 요건이며, 소급 적용은 원칙적으로 금지됩니다.</p>
-
-  <h3>법리 변화: 사회통념상 합리성 폐기</h3>
-  <p>대법원 2023.5.11. 전원합의체(2017다35588)는 종전 '사회통념상 합리성' 예외를 폐기하고, 동의 없는 불이익 변경은 원칙적으로 무효이며 예외는 오직 <strong>근로자 측의 동의권 남용</strong>으로 한정했습니다.</p>
-  <p><strong>동의권 남용 인정 요건(엄격):</strong> ① 변경 필요성 객관적으로 명백, ② 사용자의 진지한 설득·협의 노력(회의록·설명자료·대안·보상안)에도, ③ 근로자 측이 합리적 근거 없이 반대. 입증책임은 사용자에게 있습니다.</p>
-
-  <div class="ev">
-    <div class="top">
-      <span class="kind case">판례</span>
-      <span class="cite">대법원 2023.5.11. 선고 2017다35588·35595 전원합의체 판결</span>
-      <span class="vtick">실존·현행 확인</span>
-    </div>
-    <p class="gist">취업규칙 불이익변경에 근로자 집단적 동의가 없는 경우, 사회통념상 합리성만으로 유효성을 인정할 수 없다. 동의권 남용에 해당하는 특별한 사정이 있을 때만 예외적으로 유효하다.</p>
-  </div>
-
-  <div class="ev">
-    <div class="top">
-      <span class="kind case">판례</span>
-      <span class="cite">대법원 2023.6.29. 선고 2022다297830 판결</span>
-      <span class="vtick">실존·현행 확인</span>
-    </div>
-    <p class="gist">전합 후속: 직위해제 기간 상한(3개월) 폐지·무제한 연장은 불이익 변경, 과반수노조 동의 없음 → 효력 부정. 전합 법리를 구체 사건에서 바로 무효 결론으로 연결.</p>
-  </div>
-</section>
-
-<section class="blk" id="s4">
-  <div class="secl">쟁점 4</div>
-  <h2>절차 타임라인</h2>
-
-  <div class="figure">
-    <div class="cap">취업규칙 불이익변경 절차 8단계</div>
-    <div class="flow">
-      <div class="step"><div class="n">STEP 1</div><div class="t">변경 계획 수립</div><div class="d">변경 내용 확정, 불이익/이익 유형 분류</div></div>
-      <div class="step"><div class="n">STEP 2</div><div class="t">영향 분석</div><div class="d">동의 주체 확정, 단체협약·개별계약 충돌 검토</div></div>
-      <div class="step"><div class="n">STEP 3</div><div class="t">과반수노조 확인</div><div class="d">존재·동의 자격 확인, 복수노조 과반수 주의</div></div>
-      <div class="step"><div class="n">STEP 4</div><div class="t">설명·협의</div><div class="d">변경 필요성·대안·보상안 설명, 회의록 필수</div></div>
-    </div>
-    <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:10px">
-      <div class="step"><div class="n">STEP 5</div><div class="t">집단적 동의 절차</div><div class="d">설명회·토론·투표, 개별 서명 금지</div></div>
-      <div class="step"><div class="n">STEP 6</div><div class="t">동의 확보</div><div class="d">과반수노조 의결 또는 과반수근로자 취합</div></div>
-      <div class="step"><div class="n">STEP 7</div><div class="t">고용노동부 신고</div><div class="d">동의서면 첨부, 변경 취업규칙 제출</div></div>
-      <div class="step"><div class="n">STEP 8</div><div class="t">게시·비치</div><div class="d">근로자 상시 열람, 변경 시행</div></div>
-    </div>
-  </div>
-
-  <div class="figure">
-    <div class="cap">절차 이행 점검표</div>
-    <ul class="checklist">
-      <li><span class="ck"></span><span>변경 내용을 불이익/이익/중립으로 분류했는가</span></li>
-      <li><span class="ck"></span><span>과반수노조 존재 여부와 동의 자격을 확인했는가</span></li>
-      <li><span class="ck"></span><span>단체협약·개별 근로계약 우선 조항을 검토했는가</span></li>
-      <li><span class="ck"></span><span>설명회·토론 등 집단적 의사소통 절차를 거쳤는가</span></li>
-      <li><span class="ck"></span><span>사용자 개입 없이 근로자가 자율적 의사결정했는가</span></li>
-      <li><span class="ck"></span><span>동의를 서면으로 확보했는가 (개별 서명식은 무효)</span></li>
-      <li><span class="ck"></span><span>고용노동부 신고 및 동의서면을 첨부했는가</span></li>
-      <li><span class="ck"></span><span>변경된 취업규칙을 게시·비치했는가</span></li>
-    </ul>
-  </div>
-</section>
-
-<section class="blk" id="s5">
-  <div class="secl">쟁점 5</div>
-  <h2>위험 신호 — 이렇게 하면 무효됩니다</h2>
-
-  <div class="risk">
-    <div class="rt">위험 1 — 개별 서명 동의 수집</div>
-    <p>개별적으로 찾아다니며 동의서를 받는 방식은 집단적 의사결정방법이 아니므로 무효입니다(2009다32362). 반드시 회의·토론·투표의 절차를 거쳐야 합니다.</p>
-  </div>
-
-  <div class="risk">
-    <div class="rt">위험 2 — 사용자가 직접 동의 절차 주관</div>
-    <p>사용자 측이 절차에 개입하거나 부서장들이 동의를 종용하면 사용자 개입·간섭으로 무효 사유가 됩니다. 근로자의 자율적 의사결정이 핵심입니다.</p>
-  </div>
-
-  <div class="risk">
-    <div class="rt">위험 3 — 정보·검토 시간 미제공</div>
-    <p>변경 내용에 대한 충분한 정보와 설명 없이 단기간에 동의를 받으면 절차 하자가 인정될 수 있습니다.</p>
-  </div>
-
-  <div class="risk">
-    <div class="rt">위험 4 — '내용이 합리적이니까' 방어</div>
-    <p>2023 전원합의체 이후 사회통념상 합리성만으로는 무효를 면할 수 없습니다. 합리적 내용이라도 절차를 갖추어야 합니다.</p>
-  </div>
-
-  <div class="risk">
-    <div class="rt">위험 5 — 동의 주체 착오</div>
-    <p>일부 직군만 불이익을 받는다고 그 집단만 동의를 받으면, 근로조건 체계 전체가 동의 주체여야 한다는 법리에 따라 절차 하자가 발생합니다(2009다49377).</p>
-  </div>
-
-  <div class="risk">
-    <div class="rt">위험 6 — 묵시적 동의 추정</div>
-    <p>묵시적 동의만으로는 부족합니다. 명시적 동의를 서면으로 확보하는 것이 안전합니다.</p>
-  </div>
-</section>
-
-<section class="blk" id="s6">
-  <div class="secl">쟁점 6</div>
-  <h2>근거 카드 — 근기법·판례</h2>
-
-  <div class="tbl-wrap">
-    <table>
-      <thead><tr><th>조문</th><th>내용</th><th>비고</th></tr></thead>
-      <tbody>
-        <tr><td>근기법 제93조</td><td>취업규칙 작성·변경 의무</td><td>상시 10인 이상 사업장</td></tr>
-        <tr><td>근기법 제94조 제1항 본문</td><td>작성·변경 시 의견청취</td><td>불이익 아닌 변경</td></tr>
-        <tr><td>근기법 제94조 제1항 단서</td><td>불이익 변경 시 <strong>동의</strong></td><td>핵심 조문</td></tr>
-        <tr><td>근기법 제94조 제2항</td><td>신고 시 동의서면 첨부</td><td>행정적 요건</td></tr>
-        <tr><td>근기법 제95조</td><td>취업규칙 게시·비치</td><td>효력 발생 실질적 요건</td></tr>
-        <tr><td>근기법 제97조</td><td>취업규칙 최저기준 효력</td><td>미달 근로계약 무효</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="tbl-wrap">
-    <table>
-      <thead><tr><th>사건번호</th><th>선고일</th><th>요지</th></tr></thead>
-      <tbody>
-        <tr><td>2017다35588 전합</td><td>2023.5.11</td><td>사회통념상 합리성 폐기, 동의권 남용만 예외</td></tr>
-        <tr><td>2022다297830</td><td>2023.6.29</td><td>전합 후속: 동의 없는 불이익 변경 무효 확인</td></tr>
-        <tr><td>2021다241359</td><td>2022.6.30</td><td>동의 주체 범위: 전체 과반수노조로 절차 충족</td></tr>
-        <tr><td>2021다280781</td><td>2022.4.14</td><td>불이익 변경 개념: 직접적·구체적 이익</td></tr>
-        <tr><td>2009다32362</td><td>2010.1.28</td><td>과반수 동의 = 회의 원칙, 사용자 개입 금지</td></tr>
-        <tr><td>2007다85997</td><td>2008.2.29</td><td>집단적 의사결정방법, 과반수노조 효력</td></tr>
-        <tr><td>2018다200709</td><td>2019.11.14</td><td>집단동의 ≠ 개별계약 우선</td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<section class="blk faq" id="faq">
-  <div class="secl">Q&amp;A</div>
-  <h2>자주 묻는 질문</h2>
-
-  <details open>
-    <summary>취업규칙 변경이 불이익인지 어떻게 판단하나요?</summary>
-    <div class="a">단일 항목만 보지 않고 변경 전후 전체 취업규칙을 종합 비교하여 근로자의 종합적 지위가 불리해졌는지를 객관적으로 판단합니다(2021다280781). 임금 삭감, 수당 축소, 정년 단축, 징계 강화 등이 전형적 불이익 사례입니다.</div>
-  </details>
-
-  <details>
-    <summary>과반수노조가 없으면 어떻게 하나요?</summary>
-    <div class="a">과반수노조가 없는 경우에는 근로자 개개인의 과반수 동의를 받아야 합니다. 이때도 개별 서명 수집이 아닌 집단적 의사결정방법(회의·토론·투표)을 따라야 합니다.</div>
-  </details>
-
-  <details>
-    <summary>동의를 받았는데 일부 근로자가 반대하면?</summary>
-    <div class="a">과반수 동의가 있으면 원칙적으로 적법합니다. 단, 해당 근로자와 체결한 개별 근로계약이 취업규칙보다 유리한 조건을 정하고 있다면 그 부분은 개별계약이 우선합니다(2018다200709).</div>
-  </details>
-
-  <details>
-    <summary>단체협약이 있는 사업장은 어떻게 하나요?</summary>
-    <div class="a">단체협약이 취업규칙에 우선합니다(노동조합법 제29조의3). 단체협약에 반하는 취업규칙 변경은 무효입니다. 단체협약 유효기간 만료 후에도 규범적 부분은 새 협약 체결 시까지 효력을 유지합니다.</div>
-  </details>
-
-  <details>
-    <summary>동의권 남용 예외가 인정된 실제 사례가 있나요?</summary>
-    <div class="a">2023 전원합의체 선고 이후 아직 동의권 남용이 인정된 대법원 판례는 보고되지 않았습니다. 법원은 동의권 남용을 극히 예외적으로 보고 엄격히 심사하므로, 동의 없이 변경을 강행하는 것은 매우 위험합니다.</div>
-  </details>
-
-  <div class="notice">
-    본 자료는 2026.07.29 기준으로 작성되었으며, 인용된 법령·판례는 작성 시점의 현행성을 확인한 것입니다. 법령은 개정될 수 있고 사안마다 결론이 달라질 수 있으므로, 실제 의사결정 전 최신 법령과 개별 사실관계에 대한 확인이 필요합니다. 본 자료는 일반적인 법률 정보 제공이며 특정 사안에 대한 법률 자문이 아닙니다.
-  </div>
-</section>
-
-</main>
-</div>
-
-<footer class="footer" id="consult">
-  <div class="wrap">
-    <div class="prof">
-      <div>
-        <h3>조우성 변호사 / 로펌 머스트노우</h3>
-        <p>대표 변호사 · 노동·인사·HR 리스크 전문</p>
-        <p>취업규칙 변경 자문, 노동위원회 대리, HR 리스크 진단</p>
-        <p style="font-size:15px;color:rgba(222,240,238,.92);margin-top:8px">law@mustknow.co.kr</p>
-      </div>
-      <div class="cta-f">
-        <a class="btn btn-f" href="mailto:law@mustknow.co.kr">상담 문의하기</a>
-      </div>
-    </div>
-    <div class="fine">
-      (c) 2026 조우성 변호사. 본 콘텐츠는 일반 법률 정보이며 법률 자문을 대체하지 않습니다. 심화 법률팩(EBOOK-102-LP) 문의: law@mustknow.co.kr
-    </div>
-  </div>
-</footer>
-
-<script>
-var pb=document.getElementById('progress');
-function onScroll(){var h=document.documentElement,b=document.body;var st=h.scrollTop||b.scrollTop;var sh=(h.scrollHeight||b.scrollHeight)-h.clientHeight;pb.style.width=(sh>0?(st/sh*100):0)+'%'}
-window.addEventListener('scroll',onScroll,{passive:true});onScroll();
-var toTop=document.getElementById('toTop');
-window.addEventListener('scroll',function(){(window.scrollY||window.pageYOffset)>500?toTop.classList.add('show'):toTop.classList.remove('show')},{passive:true});
-var links=Array.prototype.slice.call(document.querySelectorAll('#toc-list a'));
-var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));}).filter(Boolean);
-function spy(){var pos=(window.scrollY||window.pageYOffset)+120,cur=secs[0];for(var i=0;i<secs.length;i++){if(secs[i].offsetTop<=pos)cur=secs[i];}links.forEach(function(a){a.classList.toggle('active',cur&&a.getAttribute('href')==='#'+cur.id);})}
-window.addEventListener('scroll',spy,{passive:true});spy();
-document.querySelectorAll('#toc-list a').forEach(function(a){a.addEventListener('click',function(){if(window.innerWidth<=820)document.getElementById('toc').classList.add('closed')})});
-</script>
-</body>
-</html>
+/* ── 모바일 (≤820px) ── */
+@media(max-width:820px){
+  .hero h1{font-size:24px}
+  .app{grid-template-columns:1fr;gap:0;padding-top:0}
+  .toc{position:static;margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 8px}
+  .toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;
+    cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--wine-d);padding:9px 8px}
+  .toc-toggle .ar{transition:transform .2s}
+  .toc.closed .toc-toggle .ar{transform:rotate(-90deg)}
+  .toc .tt{display:none}
+  .toc ol{max-height:50vh;overflow:auto}
+  .toc.closed ol{display:none}
+  section.blk h2{font-size:20px}
+  th,td{white-space:nowrap}
+}
+@media print{
+  #progress,.toc,.cta-row,.footer .cta-f{display:none}
+  .header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .app{display:block}
+}
+</style></head><body><div id="progress"></div><button id="toTop" aria-label="맨 위로">?</button><header class="header"><div class="wrap"><span class="badge"><span class="dot"></span>조우성 변호사 ? 법률 인사이트</span></div></header><div class="hero"><div class="eb">전자책 대시보드 ? 실무 가이드</div><h1>취업규칙 불이익변경 동의 절차 — 근로자에게 불리한 취업규칙 변경의 적법 요건</h1><div class="tldr"><div class="lb">3줄 요약 (TL;DR)</div><ul><li>원문 Markdown의 제목?본문?표?체크리스트를 반영한 공개용 HTML입니다.</li><li>문서의 핵심 내용과 실무상 확인 포인트를 한 화면에서 확인할 수 있습니다.</li><li>구체적인 사안은 최신 법령?판례와 사실관계 확인이 필요합니다.</li></ul></div><div class="meta"><span>원문: EBOOK-102-취업규칙-불이익변경.md</span><span class="vchip">원문 기반 HTML</span></div><div class="cta-row"><a class="btn btn-p" href="#s1">핵심 내용 보기</a><a class="btn btn-o" href="#faq">확인 사항</a></div></div><div class="app"><nav class="toc" id="toc"><div class="tt">목차</div><ol id="toc-list"><li><a href="#s1">본문</a></li><li><a href="#s2">TL;DR</a></li><li><a href="#s3">1. 문제상황</a></li><li><a href="#s4">2. 취업규칙 변경 유형 — 불이익과 이익의 구분</a></li><li><a href="#s5">3. 불이익변경의 3대 적법 요건</a></li><li><a href="#s6">4. 절차 타임라인</a></li><li><a href="#s7">5. 위험 신호 — 이렇게 하면 무효됩니다</a></li><li><a href="#s8">6. 근거 카드 (근기법·판례)</a></li><li><a href="#s9">7. 자주 묻는 질문 (Q&amp;amp;A)</a></li><li><a href="#s10">8. 다음 행동 (CTA)</a></li><li><a href="#s11">최신성·면책 고지</a></li><li><a href="#s12">검증 로그 (내부용 — 게시 시 제거)</a></li></ol></nav><main class="content"><section class="blk" id="s1"><div class="secl">SECTION</div><blockquote>
+<p>[!web] 웹으로 보기
+https://woosungjo-law.github.io/share/d/ebook-102-work-rules-disadvantageous-change-d472.html</p>
+</blockquote>
+<h1>취업규칙 불이익변경 동의 절차 — 근로자에게 불리한 취업규칙 변경의 적법 요건</h1></section><section class="blk" id="s2"><div class="secl">SECTION</div><h2>TL;DR</h2>
+<p>취업규칙을 근로자에게 불리하게 변경하려면 <strong>과반수노조(또는 과반수근로자)의 집단적 동의</strong>가 필수다. 2023년 대법원 전원합의체(2017다35588)는 종전 '사회통념상 합리성' 예외를 폐기하고, 동의 없는 불이익 변경은 원칙적으로 무효라는 법리를 명확히 했다. 동의 절차는 개별 서명이 아닌 <strong>집단적 의사결정방법(회의·토론·투표)</strong>으로 진행해야 하며, 사용자 측의 개입·간섭이 배제되어야 한다. 동의권 남용 예외는 극히 좁게 인정된다.</p></section><section class="blk" id="s3"><div class="secl">SECTION</div><h2>1. 문제상황</h2>
+<p>회사가 경영 악화나 조직 개편을 이유로 임금 체계를 개편하거나, 수당을 삭감하고, 근무 시간을 변경하는 경우가 빈번하다. 그러나 이러한 변경이 근로자에게 불리하다면 사용자가 일방적으로 결정할 수 없다. 근로기준법 제94조가 정한 엄격한 절차를 따라야 하며, 이를 위반한 변경은 무효가 되어 임금체불 등 추가 분쟁으로 이어질 수 있다.</p>
+<p>특히 2023년 대법원 전원합의체 판결 이후, '내용이 합리적이면 괜찮다'는 접근은 더 이상 통하지 않는다. 핵심은 <strong>절차의 적법성</strong>이다.</p></section><section class="blk" id="s4"><div class="secl">SECTION</div><h2>2. 취업규칙 변경 유형 — 불이익과 이익의 구분</h2>
+<h3>2.1 불이익 변경 (동의 필수)</h3>
+<p>근로자에게 불리한 변경은 <strong>과반수노조 또는 과반수근로자의 동의</strong>를 받아야 한다(근기법 제94조 제1항 단서). 불이익 해당 여부는 단일 항목이 아닌 변경 전후의 취업규칙 전체를 <strong>객관적·종합적</strong>으로 비교하여 판단한다(2021다280781).</p>
+<p><strong>전형적 불이익 사례:</strong>
+- 임금 삭감, 수당 축소, 상여금 폐지
+- 퇴직금 산정 방식 변경
+- 연차일수 감축, 휴일근로 중복할증 폐지
+- 징계 양정 강화, 정년 단축
+- 정리해고 요건 완화</p>
+<h3>2.2 이익·중립 변경 (의견청취)</h3>
+<p>불이익이 아닌 유리한 변경 또는 중립적 변경(형식 정비·법령 반영 등)은 <strong>의견청취</strong>만으로 가능하다. 의견청취는 동의와 달리 거부권이 없으나, 형식적 통보는 허용되지 않으며 실질적 의견수렴 절차(설명회·공람·게시 등)를 갖추어야 한다.</p>
+<h3>2.3 혼합 변경</h3>
+<p>유리한 요소와 불리한 요소가 혼재된 경우에는 전체적 순손익을 평가해야 한다. 실무상 불이익 항목과 중립 항목을 분리하여 각각 동의와 의견청취 절차를 이행하는 것이 안전하며, 분리가 불가능한 통합 변경이라면 동의 요건을 충족하는 것이 바람직하다.</p>
+<blockquote>
+<p>[근거·조문] <strong>근로기준법 제94조</strong> (시행 2025.10.23) — 취업규칙 작성·변경 시 과반수노조 의견청취, 불이익 변경은 동의 필요
+✓ 웹 화이트리스트 + 한국법 MCP 현행 확인</p>
+<p>[근거·판례] <strong>대법원 2022.4.14. 선고 2021다280781 판결</strong> — 불이익 변경은 종전 취업규칙 보호영역에서 보호되는 직접적·구체적 이익을 박탈하는 경우
+✓ 실존·현행 확인</p>
+</blockquote></section><section class="blk" id="s5"><div class="secl">SECTION</div><h2>3. 불이익변경의 3대 적법 요건</h2>
+<h3>3.1 요건 1 — 과반수 집단적 동의</h3>
+<p><strong>동의 주체:</strong> 근로자 과반수로 조직된 노동조합(과반수노조) 또는 과반수노조가 없는 경우 근로자 과반수</p>
+<p><strong>동의 방식:</strong> 집단적 의사결정방법 — 개별 서명 수집은 무효(2009다32362). 회의·설명회·토론·투표의 절차를 거쳐야 하며, 사용자 측의 개입·간섭이 배제된 상태에서 근로자들이 충분한 정보를 바탕으로 자율적으로 의사결정할 수 있어야 한다(2007다85997).</p>
+<p><strong>동의 주체 범위:</strong> 변경으로 직접 불이익을 받는 집단뿐 아니라, 장차 승급 등으로 변경 규정이 적용될 것으로 예상되는 집단까지 포함한 전체 근로자 집단을 동의 주체로 보아야 한다(2009다49377·2009두2238). 하나의 근로조건 체계 아래 있는 모든 근로자가 원칙적 동의 주체다.</p>
+<p><strong>동의의 효과:</strong> 과반수노조가 동의하면 비조합원(관리직 등)에게도 효력이 미친다(2007다85997). 단, 동의를 받았더라도 개별 근로계약이 취업규칙보다 유리한 조건을 정하고 있다면 그 개별계약이 우선한다(2018다200709).</p>
+<h3>3.2 요건 2 — 고용노동부 신고</h3>
+<p>근기법 제93조에 따라 취업규칙 변경 시 고용노동부장관에게 신고하고, 동의 또는 의견을 적은 서면을 첨부해야 한다(제94조 제2항). 신고 자체가 효력 요건인지에 관해 견해 대립이 있으나, 행정처분(과태료) 대상이 되므로 반드시 이행해야 한다.</p>
+<h3>3.3 요건 3 — 공지 (게시·비치)</h3>
+<p>변경된 취업규칙을 근로자가 상시 열람할 수 있도록 게시 또는 비치해야 한다(제95조). 공지는 효력 발생의 실질적 요건으로, 변경 내용을 근로자가 인식할 수 있어야 한다. 소급 적용은 원칙적으로 금지된다.</p>
+<blockquote>
+<p>[근거·조문] <strong>근로기준법 제93조</strong> — 상시 10인 이상 사업장의 취업규칙 작성·변경·신고 의무
+<strong>근로기준법 제95조</strong> — 취업규칙의 게시·비치 의무
+✓ 한국법 MCP 현행 확인</p>
+<p>[근거·판례] <strong>대법원 2010.1.28. 선고 2009다32362 판결</strong> — 과반수 동의는 회의방식 원칙, 사용자 개입 없는 자율적 집단 의사결정 필요
+✓ 실존·현행 확인</p>
+</blockquote>
+<h3>3.4 법리 변화: 사회통념상 합리성 폐기</h3>
+<p>대법원 2023.5.11. 선고 2017다35588 전원합의체 판결은 종래 인정되던 '사회통념상 합리성' 예외를 원칙적으로 폐기하고, 동의 없는 불이익 변경은 원칙 무효, 예외는 <strong>근로자 측의 동의권 남용</strong>으로 한정했다.</p>
+<p><strong>동의권 남용 인정 요건 (엄격):</strong>
+1. 변경 필요성이 객관적으로 명백할 것
+2. 사용자의 진지한 설득·협의 노력(회의록·설명자료·대안·보상안)이 있었음에도
+3. 근로자 측이 합리적 근거 없이 반대한 경우</p>
+<p>사용자에게 입증책임이 있으며, 진지한 협의 노력의 구체적 자료 축적이 핵심이다.</p>
+<blockquote>
+<p>[근거·판례] <strong>대법원 2023.5.11. 선고 2017다35588, 2017다35595 전원합의체 판결</strong> — 사회통념상 합리성 폐기, 동의권 남용으로 예외 축소
+✓ 실존·현행 확인</p>
+<p>[근거·판례] <strong>대법원 2023.6.29. 선고 2022다297830 판결</strong> — 전합 후속: 직위해제 상한 폐지 불이익 변경, 과반수노조 동의 없음 → 효력 부정
+✓ 실존·현행 확인</p>
+<p>[근거·판례] <strong>대법원 2022.6.30. 선고 2021다241359 판결</strong> — 임금피크제 도입, 전체 과반수노조 동의로 절차 충족, 동의 주체 범위 기준 제시
+✓ 실존·현행 확인</p>
+</blockquote></section><section class="blk" id="s6"><div class="secl">SECTION</div><h2>4. 절차 타임라인</h2>
+<p><strong>[다이어그램: 플로우] 취업규칙 불이익변경 절차 8단계</strong>
+1. <strong>변경 계획 수립</strong> — 변경 내용 확정, 불이익/이익 유형 분류
+2. <strong>영향 분석</strong> — 동의 주체 범위 확정, 단체협약 충돌 여부 검토, 개별 근로계약 우선 조항 확인
+3. <strong>과반수노조 확인</strong> — 과반수노조 존재 여부 확인, 복수노조 사업장은 과반수 충족 여부 주의(2022나12624)
+4. <strong>설명·협의</strong> — 변경 필요성, 구체적 내용, 대안·보상안에 대한 진지한 설명 및 협의 (회의록 필수)
+5. <strong>집단적 동의 절차</strong> — 설명회·토론·투표를 통한 집단적 의사결정, 개별 서명 금지, 사용자 개입 금지
+6. <strong>동의 확보</strong> — 과반수노조 동의(내부 의결 절차 준수) 또는 과반수근로자 개별 동의 취합
+7. <strong>고용노동부 신고</strong> — 동의서면 첨부, 변경 취업규칙 제출
+8. <strong>게시·비치</strong> — 근로자가 상시 열람 가능한 장소에 게시·비치, 변경 시행</p>
+<p><strong>[체크리스트] 절차 이행 점검표</strong>
+- [ ] 변경 내용을 불이익/이익/중립으로 분류했는가
+- [ ] 과반수노조 존재 여부와 동의 자격을 확인했는가
+- [ ] 단체협약과의 충돌 여부를 검토했는가
+- [ ] 개별 근로계약 중 취업규칙보다 유리한 조건이 있는지 확인했는가
+- [ ] 설명회·토론 등 집단적 의사소통 절차를 거쳤는가
+- [ ] 사용자 개입 없이 근로자가 자율적으로 의사결정할 수 있었는가
+- [ ] 동의를 서면으로 확보했는가 (개별 서명식은 무효)
+- [ ] 고용노동부 신고 및 동의서면을 첨부했는가
+- [ ] 변경된 취업규칙을 게시·비치했는가</p>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>핵심 행위</th>
+<th>유의사항</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>사전</td>
+<td>변경 유형 분류, 동의 주체 확정</td>
+<td>불이익/이익 오판이 전체 절차를 무효화</td>
+</tr>
+<tr>
+<td>동의</td>
+<td>집단적 의사결정, 과반수 확인</td>
+<td>개별 서명, 사용자 개입, 묵시적 동의 추정 위험</td>
+</tr>
+<tr>
+<td>사후</td>
+<td>신고, 게시, 시행</td>
+<td>신고 누락 시 과태료, 게시 누락 시 효력 발생 지연</td>
+</tr>
+</tbody>
+</table></section><section class="blk" id="s7"><div class="secl">SECTION</div><h2>5. 위험 신호 — 이렇게 하면 무효됩니다</h2>
+<p><strong>위험 1 — 개별 서명 동의 수집</strong>
+개별적으로 찾아다니며 동의서를 받는 방식은 집단적 의사결정방법이 아니므로 무효다(2009다32362). 반드시 회의·토론·투표의 절차를 거쳐야 한다.</p>
+<p><strong>위험 2 — 사용자가 직접 동의 절차를 주관</strong>
+사용자 측이 동의 절차에 개입하거나, 부서장들이 근로자에게 동의를 종용하면 '사용자 개입·간섭'으로 무효 사유가 된다.</p>
+<p><strong>위험 3 — 충분한 검토 시간·정보 미제공</strong>
+변경 내용에 대한 충분한 정보와 설명 없이 단기간에 동의를 받으면 절차 하자가 인정될 수 있다.</p>
+<p><strong>위험 4 — '내용이 합리적이니까' 방어</strong>
+2023 전원합의체 이후 사회통념상 합리성만으로는 무효를 면할 수 없다. 합리적 내용이라도 절차를 갖추어야 한다.</p>
+<p><strong>위험 5 — 동의 주체 착오</strong>
+일부 직군만 불이익을 받는다고 그 집단만 동의를 받으면, 근로조건 체계 전체가 동의 주체여야 한다는 법리에 따라 절차 하자가 발생한다(2009다49377).</p>
+<p><strong>위험 6 — 묵시적 동의 추정</strong>
+묵시적 동의만으로는 부족하다. 대법원 2016다48233 전합이 묵시적 동의 추정 가능성을 언급했으나, 이는 보충적 판단 기준이며 명시적 동의를 받는 것이 안전하다.</p>
+<blockquote>
+<p>[근거·판례] <strong>대법원 2008.2.29. 선고 2007다85997 판결</strong> — 집단적 의사결정방법에 의한 동의 필요, 사용자측 개입·간섭 배제
+<strong>대법원 2009.6.11. 선고 2009다49377·2009두2238 판결</strong> — 동의주체는 근로조건 체계 전체
+✓ 실존·현행 확인</p>
+</blockquote></section><section class="blk" id="s8"><div class="secl">SECTION</div><h2>6. 근거 카드 (근기법·판례)</h2>
+<h3>근거 조문</h3>
+<table>
+<thead>
+<tr>
+<th>조문</th>
+<th>내용</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>근기법 제93조</td>
+<td>취업규칙 작성·변경 의무, 필수 기재 13개 항목</td>
+<td>상시 10인 이상 사업장</td>
+</tr>
+<tr>
+<td>근기법 제94조 제1항 본문</td>
+<td>작성·변경 시 과반수노조 의견청취</td>
+<td>불이익 아닌 변경</td>
+</tr>
+<tr>
+<td>근기법 제94조 제1항 단서</td>
+<td>불이익 변경 시 과반수노조 <strong>동의</strong></td>
+<td>핵심 조문</td>
+</tr>
+<tr>
+<td>근기법 제94조 제2항</td>
+<td>신고 시 의견/동의 서면 첨부</td>
+<td>행정적 요건</td>
+</tr>
+<tr>
+<td>근기법 제95조</td>
+<td>취업규칙 게시·비치 의무</td>
+<td>효력 발생 실질적 요건</td>
+</tr>
+<tr>
+<td>근기법 제97조</td>
+<td>취업규칙 최저기준 효력</td>
+<td>근로계약 우선 무효</td>
+</tr>
+</tbody>
+</table>
+<h3>리딩 판례 요약</h3>
+<table>
+<thead>
+<tr>
+<th>사건번호</th>
+<th>선고일</th>
+<th>요지</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017다35588 전합</td>
+<td>2023.5.11</td>
+<td>사회통념상 합리성 폐기, 동의권 남용만 예외</td>
+</tr>
+<tr>
+<td>2022다297830</td>
+<td>2023.6.29</td>
+<td>전합 후속: 동의 없는 불이익 변경 무효 확인</td>
+</tr>
+<tr>
+<td>2021다241359</td>
+<td>2022.6.30</td>
+<td>동의 주체 범위: 전체 과반수노조로 절차 충족</td>
+</tr>
+<tr>
+<td>2021다280781</td>
+<td>2022.4.14</td>
+<td>불이익 변경 개념: 직접적·구체적 이익</td>
+</tr>
+<tr>
+<td>2009다32362</td>
+<td>2010.1.28</td>
+<td>과반수 동의 = 회의 원칙, 사용자 개입 금지</td>
+</tr>
+<tr>
+<td>2007다85997</td>
+<td>2008.2.29</td>
+<td>집단적 의사결정방법, 과반수노조 효력</td>
+</tr>
+<tr>
+<td>2018다200709</td>
+<td>2019.11.14</td>
+<td>집단동의 ≠ 개별계약 우선</td>
+</tr>
+<tr>
+<td>92다45165 전합</td>
+<td>1992.12.22</td>
+<td>동의 없는 불이익 변경은 기존 근로자에 효력 없음</td>
+</tr>
+</tbody>
+</table></section><section class="blk" id="s9"><div class="secl">SECTION</div><h2>7. 자주 묻는 질문 (Q&amp;A)</h2>
+<p><strong>Q. 취업규칙 변경이 불이익인지 아닌지는 어떻게 판단하나요?</strong>
+단일 항목만 보지 않고 변경 전후 전체 취업규칙을 종합 비교하여 근로자의 종합적 지위가 불리해졌는지를 객관적으로 판단합니다(2021다280781). 임금 삭감, 수당 축소, 정년 단축, 징계 강화 등이 전형적 불이익 사례입니다.</p>
+<p><strong>Q. 과반수노조가 없으면 어떻게 하나요?</strong>
+과반수노조가 없는 경우에는 근로자 개개인의 과반수 동의를 받아야 합니다. 이때도 개별 서명 수집이 아닌 집단적 의사결정방법(회의·토론·투표)을 따라야 합니다.</p>
+<p><strong>Q. 동의를 받았는데 일부 근로자가 반대하면 어떻게 되나요?</strong>
+과반수 동의가 있으면 원칙적으로 적법합니다. 단, 해당 근로자와 체결한 개별 근로계약이 취업규칙보다 유리한 조건을 정하고 있다면 그 부분은 개별계약이 우선합니다(2018다200709).</p>
+<p><strong>Q. 근로자가 동의를 철회할 수 있나요?</strong>
+변경 효력 발생 전까지 철회가 가능하다는 견해가 유력합니다. 따라서 동의 절차는 충분한 시간적 여유를 두고 진행하고, 변경 시행 전까지 동의 현황을 관리해야 합니다.</p>
+<p><strong>Q. 단체협약이 있는 사업장은 어떻게 하나요?</strong>
+단체협약이 취업규칙에 우선합니다(노동조합법 제29조의3). 단체협약에 반하는 취업규칙 변경은 무효입니다. 단체협약 유효기간 만료 후에도 협약의 규범적 부분(임금·근로시간 등)은 새 협약 체결 시까지 효력을 유지합니다.</p>
+<p><strong>Q. 동의권 남용 예외가 인정된 실제 사례가 있나요?</strong>
+2023 전원합의체 선고 이후 아직 동의권 남용이 인정된 대법원 판례는 보고되지 않았습니다. 법원은 동의권 남용을 '극히 예외적'으로 보고 엄격히 심사하므로, 사실상 동의를 받지 않고 변경을 강행하는 것은 극히 위험합니다.</p></section><section class="blk" id="s10"><div class="secl">SECTION</div><h2>8. 다음 행동 (CTA)</h2>
+<h3>즉시 확인 사항</h3>
+<ol>
+<li>현재 사업장의 취업규칙 중 최근 변경된 조항이 있다면 동의 절차를 적법하게 거쳤는지 점검</li>
+<li>과반수노조 존재 여부와 동의 자격 확인</li>
+<li>변경이 예정된 사항이 있다면 불이익/이익 분류부터 시작</li>
+</ol>
+<h3>법률 리스크 점검</h3>
+<p>취업규칙 불이익변경은 절차 하자 하나로 전체 변경이 무효화되고, 임금체불·손해배상·노동위원회 시정명령으로 이어질 수 있습니다. 변경 계획 단계에서 법률 검토를 받는 것이 비용 대비 효과가 가장 큽니다.</p>
+<h3>법률팩 안내</h3>
+<p>본 전자책의 심화 법률팩(EBOOK-102-LP)에서는 다음을 제공합니다:
+- 취업규칙 불이익변경 단계별 체크리스트 (법률검토용)
+- 동의 절차 서식: 설명회 자료 템플릿, 투표 용지, 회의록 표준안
+- 고용노동부 신고 서면 작성 가이드
+- 동의권 남용 대비 사용자 측 증거 자료 구축 로드맵</p>
+<blockquote>
+<p>문의: law@mustknow.co.kr</p>
+</blockquote></section><section class="blk" id="s11"><div class="secl">SECTION</div><h2>최신성·면책 고지</h2>
+<p>본 자료는 2026년 7월 29일 기준으로 작성되었으며, 인용된 법령·판례는 작성 시점의 현행성을 확인한 것입니다. 법령은 개정될 수 있고 사안마다 결론이 달라질 수 있으므로, 실제 의사결정 전 최신 법령과 개별 사실관계에 대한 확인이 필요합니다. 본 자료는 일반적인 법률 정보 제공이며 특정 사안에 대한 법률 자문이 아닙니다.</p></section><section class="blk" id="s12"><div class="secl">SECTION</div><h2>검증 로그 (내부용 — 게시 시 제거)</h2>
+<table>
+<thead>
+<tr>
+<th>인용</th>
+<th>유형</th>
+<th>웹 화이트리스트</th>
+<th>한국법 MCP</th>
+<th>판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>근로기준법 제93조</td>
+<td>조문</td>
+<td>확인</td>
+<td>FOUND</td>
+<td>등재</td>
+</tr>
+<tr>
+<td>근로기준법 제94조</td>
+<td>조문</td>
+<td>확인</td>
+<td>FOUND</td>
+<td>등재</td>
+</tr>
+<tr>
+<td>근로기준법 제95조</td>
+<td>조문</td>
+<td>확인</td>
+<td>FOUND</td>
+<td>등재</td>
+</tr>
+<tr>
+<td>2017다35588 전합</td>
+<td>판례</td>
+<td>확인</td>
+<td>FOUND</td>
+<td>등재</td>
+</tr>
+<tr>
+<td>2022다297830</td>
+<td>판례</td>
+<td>확인</td>
+<td>FOUND</td>
+<td>등재</td>
+</tr>
+<tr>
+<td>2021다280781</td>
+<td>판례</td>
+<td>확인</td>
+<td>FOUND</td>
+<td>등재</td>
+</tr>
+<tr>
+<td>2021다241359</td>
+<td>판례</td>
+<td>확인</td>
+<td>FOUND</td>
+<td>등재</td>
+</tr>
+<tr>
+<td>2009다32362</td>
+<td>판례</td>
+<td>확인</td>
+<td>FOUND</td>
+<td>등재</td>
+</tr>
+<tr>
+<td>2007다85997</td>
+<td>판례</td>
+<td>확인</td>
+<td>FOUND</td>
+<td>등재</td>
+</tr>
+<tr>
+<td>2018다200709</td>
+<td>판례</td>
+<td>확인</td>
+<td>FOUND</td>
+<td>등재</td>
+</tr>
+<tr>
+<td>92다45165 전합</td>
+<td>판례</td>
+<td>확인</td>
+<td>FOUND</td>
+<td>등재</td>
+</tr>
+</tbody>
+</table></section><section class="blk faq" id="faq"><div class="secl">NOTICE</div><h2>확인 사항</h2><div class="notice">이 문서는 일반적인 법률 정보 제공을 위한 자료입니다. 구체적인 사실관계와 최신 법령?판례에 따라 결론이 달라질 수 있습니다.</div></section></main></div><footer class="footer"><div class="wrap"><h3>조우성 변호사</h3><p>실무에 바로 활용할 수 있는 법률 지식과 대응 가이드를 제공합니다.</p></div></footer></body></html>
