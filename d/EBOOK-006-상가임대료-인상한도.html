@@ -1,87 +1,223 @@
-<!DOCTYPE html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>상가 임대료 인상 한도 — 증액 5% 제한과 계약갱신 요구권 — 조우성 변호사</title><meta name="description" content="상가건물임대차보호법 제11조 차임 증감청구권·연 5% 증액 제한·계약갱신 요구권·권리금 보호.">
-<style>:root{--bg:#f2f4f6;--panel:#fff;--panel2:#f4f6f8;--line:#dce1e6;--line2:#c8cfd6;--ink:#1c2128;--ink2:#3d4652;--muted:#6d7888;--faint:#9ca6b4;--ind:#d97706;--ind-d:#b45309;--ind-l:#f59e0b;--ind-tint:#fef3c7;--ind-tint-ln:#fde68a;--header-bg:#7c2d12;--header-bg2:#9a3412;--header-accent:#fde68a;--rL-bg:#dcead6;--rL-tx:#2d764e;--font:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Noto Sans KR',sans-serif;--maxw:1120px;--readw:760px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.75}
-#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;background:linear-gradient(90deg,var(--ind),var(--ind-l));transition:width .1s linear}
-.header{background:linear-gradient(135deg,var(--header-bg),var(--header-bg2));color:#eef2f6}.header .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 26px}
-.header .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;color:var(--header-accent);border:1px solid rgba(253,230,138,.4);border-radius:999px;padding:4px 12px}.header .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--header-accent)}
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>EBOOK-006-상가임대료-인상한도</title><style>
+/* ============================================================
+   법률 대시보드 전자책 — Apollo 기반 경량 커스텀 (공개 롱스크롤)
+   Apollo 토큰(버건디 액센트 + 웜 화이트 + 딥와인 헤더) 상속.
+   의뢰인 리포트(리스크레이더 6뷰)와 달리 공개 독서형 롱스크롤.
+   self-contained: 외부 CDN/폰트/이미지/스크립트 의존 없음.
+   ============================================================ */
+:root{
+  --bg:#f5f1f2; --panel:#ffffff; --panel2:#faf6f7;
+  --line:#ebe2e5; --line2:#ddccd2;
+  --ink:#2c1d26; --ink2:#56424c; --muted:#8a7b82; --faint:#b3a6ab;
+  --wine:#7a2e3a; --wine-d:#5a1f2b; --wine-l:#9c4456;
+  --wine-tint:#f4e9ec; --wine-tint-ln:#ecd7dd;
+  --header-bg:#3a1525; --header-bg2:#4e1f32; --header-accent:#d4a0aa;
+  --rH:#c74a3c; --rM-bg:#f8e4b8; --rM-tx:#7d520a; --rL-bg:#d6ecdb; --rL-tx:#287a54;
+  --amber:#b45309; --green:#287a54;
+  --font:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Noto Sans KR',sans-serif;
+  --maxw:1120px; --readw:760px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
+
+/* 읽기 진행바 */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;
+  background:linear-gradient(90deg,var(--wine),var(--wine-l));transition:width .1s linear}
+
+/* 헤더 표지 (딥와인, 유일한 딥 컬러) */
+.header{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0}
+.header .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 26px}
+.header .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;
+  color:var(--header-accent);border:1px solid rgba(212,160,170,.4);border-radius:999px;padding:4px 12px}
+.header .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--header-accent)}
+
+/* 히어로 */
 .hero{max-width:var(--maxw);margin:0 auto;padding:30px 26px 8px}
-.hero .eb{font-size:12px;font-weight:700;color:var(--ind)}.hero h1{font-size:30px;line-height:1.28;font-weight:800;margin:0 0 16px}
-.hero .tldr{background:var(--ind-tint);border:1px solid var(--ind-tint-ln);border-left:4px solid var(--ind);border-radius:12px;padding:16px 18px;margin:0 0 18px}
-.hero .tldr .lb{font-size:12px;font-weight:700;color:var(--ind-d);margin-bottom:8px}
-.hero .tldr ul{margin:0;padding-left:18px}.hero .tldr li{margin:4px 0;font-size:15px;color:var(--ink2)}
+.hero .eb{font-size:12px;font-weight:700;color:var(--wine);letter-spacing:.02em;margin-bottom:10px}
+.hero h1{font-size:30px;line-height:1.28;font-weight:800;margin:0 0 16px;color:var(--ink);letter-spacing:-.01em}
+.hero .tldr{background:var(--wine-tint);border:1px solid var(--wine-tint-ln);border-left:4px solid var(--wine);
+  border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.hero .tldr .lb{font-size:12px;font-weight:700;color:var(--wine-d);margin-bottom:8px}
+.hero .tldr ul{margin:0;padding-left:18px}
+.hero .tldr li{margin:4px 0;font-size:15px;color:var(--ink2)}
 .hero .meta{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:12.5px;color:var(--muted);margin-bottom:18px}
-.hero .meta .vchip{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);font-weight:700;border-radius:6px;padding:3px 9px;font-size:11.5px}
+.hero .meta .vchip{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);
+  font-weight:700;border-radius:6px;padding:3px 9px;font-size:11.5px}
 .hero .cta-row{display:flex;flex-wrap:wrap;gap:10px}
-.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:9px;padding:11px 18px;text-decoration:none;border:1px solid transparent}
-.btn-p{background:var(--ind);color:#fff}.btn-p:hover{background:var(--ind-d)}.btn-o{background:#fff;color:var(--ind-d);border-color:var(--line2)}.btn-o:hover{background:var(--panel2)}
-.app{max-width:var(--maxw);margin:0 auto;padding:8px 26px 60px;display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:start}
-.toc{position:sticky;top:24px}.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:0 0 10px}
-.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}.toc li{counter-increment:toc;margin:1px 0}
-.toc a{display:flex;gap:9px;font-size:13.5px;color:var(--ink2);text-decoration:none;padding:7px 10px;border-radius:8px;border-left:3px solid transparent}
+.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:9px;
+  padding:11px 18px;text-decoration:none;cursor:pointer;border:1px solid transparent}
+.btn-p{background:var(--wine);color:#fff}
+.btn-p:hover{background:var(--wine-d)}
+.btn-o{background:#fff;color:var(--wine-d);border-color:var(--line2)}
+.btn-o:hover{background:var(--panel2)}
+
+/* 셸: 좌측 목차 + 본문 */
+.app{max-width:var(--maxw);margin:0 auto;padding:8px 26px 60px;
+  display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:start}
+
+/* 목차 (데스크톱 = 좌측 sticky) */
+.toc{position:sticky;top:24px}
+.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;
+  margin:0 0 10px;padding-left:2px}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}
+.toc li{counter-increment:toc;margin:1px 0}
+.toc a{display:flex;gap:9px;font-size:13.5px;color:var(--ink2);text-decoration:none;
+  padding:7px 10px;border-radius:8px;border-left:3px solid transparent;line-height:1.4}
 .toc a::before{content:counter(toc,decimal-leading-zero);color:var(--faint);font-weight:700;font-size:11.5px;flex:none}
-.toc a:hover{background:var(--panel2)}.toc a.active{background:var(--ind-tint);border-left-color:var(--ind);color:var(--ind-d);font-weight:700}
-.toc-toggle{display:none}.content{max-width:var(--readw);min-width:0}
+.toc a:hover{background:var(--panel2)}
+.toc a.active{background:var(--wine-tint);border-left-color:var(--wine);color:var(--wine-d);font-weight:700}
+.toc-toggle{display:none}
+
+/* 본문 */
+.content{max-width:var(--readw);min-width:0}
 section.blk{scroll-margin-top:24px;margin-bottom:38px}
-.secl{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin:0 0 12px}
-.secl::before{content:"";width:7px;height:15px;background:var(--ind);border-radius:2px;flex:none}
-section.blk h2{font-size:23px;font-weight:800;line-height:1.35;margin:0 0 14px}section.blk h3{font-size:17px;font-weight:700;margin:26px 0 10px;color:var(--ind-d)}
+.secl{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.05em;margin:0 0 12px}
+.secl::before{content:"";width:7px;height:15px;background:var(--wine);border-radius:2px;flex:none}
+section.blk h2{font-size:23px;font-weight:800;line-height:1.35;margin:0 0 14px;color:var(--ink);letter-spacing:-.01em}
+section.blk h3{font-size:17px;font-weight:700;margin:26px 0 10px;color:var(--wine-d)}
 section.blk p{margin:0 0 14px;color:var(--ink2)}
-.ev{background:#fff;border:1px solid var(--line);border-left:4px solid var(--ind);border-radius:10px;padding:13px 15px;margin:0 0 12px}
+section.blk ul,section.blk ol{margin:0 0 14px;padding-left:22px;color:var(--ink2)}
+section.blk li{margin:6px 0}
+strong{color:var(--ink);font-weight:700}
+a.ln{color:var(--wine-l);text-decoration:none;border-bottom:1px solid var(--wine-tint-ln)}
+a.ln:hover{border-bottom-color:var(--wine-l)}
+
+/* 핵심요약 카드 */
+.summary{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.summary .lb{font-size:11px;font-weight:700;color:var(--wine-d);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.summary ul{margin:0;padding-left:18px}
+
+/* 근거 카드 (조문·판례) */
+.ev{background:#fff;border:1px solid var(--line);border-left:4px solid var(--wine);border-radius:10px;
+  padding:13px 15px;margin:0 0 12px}
 .ev .top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px}
-.ev .kind{font-size:11px;font-weight:700;color:#fff;background:var(--ind);border-radius:5px;padding:2px 8px}
-.ev .kind.law{background:var(--ind-d)}.ev .kind.case{background:#925309}
+.ev .kind{font-size:11px;font-weight:700;color:#fff;background:var(--wine);border-radius:5px;padding:2px 8px}
+.ev .kind.law{background:var(--wine-d)}
+.ev .kind.case{background:var(--amber)}
 .ev .cite{font-size:13.5px;font-weight:700;color:var(--ink)}
 .ev .vtick{margin-left:auto;font-size:11px;font-weight:700;color:var(--rL-tx);background:var(--rL-bg);border-radius:5px;padding:2px 7px}
 .ev .gist{font-size:14px;color:var(--ink2);margin:0}
+.ev .date{font-size:12px;color:var(--muted);margin-top:5px}
+
+/* 다이어그램 — 플로우 / 체크리스트 (CSS·SVG only) */
+.figure{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin:0 0 18px}
+.figure .cap{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:12px}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px}
+.flow .step{flex:1;min-width:120px;background:var(--wine-tint);border:1px solid var(--wine-tint-ln);
+  border-radius:10px;padding:11px 12px;position:relative}
+.flow .step .n{font-size:11px;font-weight:700;color:var(--wine)}
+.flow .step .t{font-size:13.5px;font-weight:700;color:var(--ink);margin-top:2px}
+.flow .step .d{font-size:12.5px;color:var(--ink2);margin-top:3px}
+.checklist{list-style:none;margin:0;padding:0}
+.checklist li{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+.checklist li:last-child{border-bottom:none}
+.checklist .ck{flex:none;width:20px;height:20px;border-radius:5px;background:var(--rL-bg);color:var(--rL-tx);
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+
+/* 위험도 칩 */
+.chip{display:inline-flex;align-items:center;justify-content:center;min-width:34px;font-size:11px;font-weight:500;
+  border-radius:6px;padding:3px 8px;margin-right:4px}
+.c-H{background:var(--rH);color:#fff}
+.c-M{background:var(--rM-bg);color:var(--rM-tx)}
+.c-L{background:var(--rL-bg);color:var(--rL-tx)}
+
+/* 표 */
+.tbl-wrap{overflow-x:auto;margin:0 0 18px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px}
+
+/* FAQ (아코디언) */
 .faq details{background:#fff;border:1px solid var(--line);border-radius:10px;margin:0 0 10px;overflow:hidden}
-.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:15px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:10px}
+.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:15px;font-weight:700;color:var(--ink);
+  display:flex;align-items:center;gap:10px}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--ind-tint);color:var(--ind-d);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
-.faq details[open] summary{border-bottom:1px solid var(--line);color:var(--ind-d)}
+.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--wine-tint);
+  color:var(--wine-d);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+.faq details[open] summary{border-bottom:1px solid var(--line);color:var(--wine-d)}
 .faq .a{padding:14px 16px;font-size:14.5px;color:var(--ink2)}
-.notice{background:#fff;border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;font-size:12.5px;color:var(--muted);line-height:1.7}
-#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;background:var(--ind);color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none}
-#toTop.show{opacity:1;pointer-events:auto}#toTop:hover{background:var(--ind-d)}
-.footer{background:linear-gradient(135deg,var(--header-bg),var(--header-bg2));color:#eef2f6;margin-top:20px}
+
+/* 최신성·면책 고지 */
+.notice{background:#fff;border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;
+  font-size:12.5px;color:var(--muted);line-height:1.7}
+
+/* 맨 위로 버튼 */
+#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--wine-tint-ln);background:var(--wine);color:#fff;font-size:18px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;
+  box-shadow:0 4px 14px rgba(58,21,37,.28)}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{background:var(--wine-d)}
+
+/* 푸터 프로필 + 상담 CTA */
+.footer{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0;margin-top:20px}
 .footer .wrap{max-width:var(--maxw);margin:0 auto;padding:34px 26px}
 .footer h3{font-size:20px;font-weight:800;margin:0 0 8px;color:#fff}
-.footer p{font-size:14px;color:rgba(238,242,246,.72);margin:0 0 6px}
+.footer p{font-size:14px;color:rgba(255,255,255,.72);margin:0 0 6px;line-height:1.7}
+.footer .prof{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end}
 .footer .cta-f{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-.footer .btn-f{background:#fff;color:var(--ind-d)}.footer .fine{border-top:1px solid rgba(238,242,246,.15);margin-top:22px;padding-top:14px;font-size:11.5px;color:rgba(238,242,246,.5)}
-@media(max-width:820px){.hero h1{font-size:24px}.app{grid-template-columns:1fr;gap:0;padding-top:0}.toc{position:static;margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 8px}.toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--ind-d);padding:9px 8px}.toc-toggle .ar{transition:transform .2s}.toc.closed .toc-toggle .ar{transform:rotate(-90deg)}.toc .tt{display:none}.toc.closed ol{display:none}section.blk h2{font-size:20px}}
-@media print{#progress,.toc,.cta-row,.footer .cta-f{display:none}.header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}.app{display:block}}
-</style></head><body>
-<div id="progress"></div><button id="toTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
-<header class="header"><div class="wrap"><span class="badge"><span class="dot"></span>조우성 변호사 · 법률 인사이트</span></div></header>
-<div class="hero"><div class="eb">상가임대차</div><h1>상가 임대료 인상 한도 — 증액 5% 제한과 계약갱신 요구권</h1><div class="tldr"><div class="lb">3줄 요약 (TL;DR)</div><ul><li>차임·보증금 증액 청구 한도 연 5%(상가임대차법 제11조+시행령)</li><li>임차인 계약갱신 요구권 보유 — 최초계약 포함 5년 보호(소상공인 10년)</li><li>권리금 포기 각서는 강행규정 위반 시 무효 가능</li></ul></div><div class="meta"><span>작성일 2026-07-29</span><span>· 기준 법령 시행일 2026-05-12</span><span class="vchip">✓ 조문·판례 2단 검증</span></div><div class="cta-row"><a class="btn btn-p" href="#faq">Q&amp;A</a><a class="btn btn-o" href="#consult">상담 문의</a></div></div>
-<div class="app"><nav class="toc" id="toc"><button class="toc-toggle" onclick="document.getElementById('toc').classList.toggle('closed')">목차 <span class="ar">▾</span></button><div class="tt">목차</div><ol id="toc-list"><li><a href="#s1">임대료 증액 제한</a></li><li><a href="#s2">계약갱신 요구권</a></li><li><a href="#s3">갱신 거절 사유</a></li><li><a href="#s4">권리금 보호</a></li><li><a href="#faq">자주 묻는 질문</a></li></ol></nav><main class="content">
-<section class="blk" id="s1"><div class="secl">증액제한</div><h2>임대료 증액 청구 제한 — 연 5%</h2>
-<div class="ev"><div class="top"><span class="kind law">조문</span><span class="cite">상가건물임대차보호법 제11조</span><span class="vtick">✓ 실존 확인</span></div><p class="gist">차임·보증금 증액 청구는 대통령령이 정한 비율 초과 불가. 시행령이 연 5%로 규정. 직전 증액 후 1년 내 재증액 불가.</p></div>
-<p><strong>1회 증액 한도</strong>: 기존 차임·보증금의 연 5% 이내. 보증금 월세 환산액도 포함. <strong>증액 금지 기간</strong>: 직전 증액 후 1년 이내 재증액 불가.</p>
-<p><strong>골든타임</strong>: 임대인이 증액 청구하기 전에 법적 보호 요건(환산보증금 기준 이하)을 확인해야 함. 초과 증액분은 무효 → 반환 청구 가능.</p></section>
-<section class="blk" id="s2"><div class="secl">갱신</div><h2>계약갱신 요구권 — 5년 보호</h2>
-<div class="ev"><div class="top"><span class="kind law">조문</span><span class="cite">상가건물임대차보호법 제10조</span><span class="vtick">✓ 실존 확인</span></div><p class="gist">임차인은 계약갱신 요구권 있음. 임대인은 정당한 사유 없이 거절 불가. 최초 계약 포함 총 5년(소상공인 10년).</p></div>
-<p><strong>갱신 조건</strong>: 차임·보증금 증액 가능하나 증액 합계 연 5% 이내. <strong>묵시적 갱신</strong>: 임대차 종료 1개월 전까지 통지 없으면 자동 갱신(제10조의2). 묵시적 갱신 시 조건은 이전과 동일.</p>
-<p><strong>주의</strong>: 계약갱신 요구권 포기 약정은 강행규정 위반으로 무효 가능(2020다237696).</p></section>
-<section class="blk" id="s3"><div class="secl">거절</div><h2>갱신 거절 사유 (제한적)</h2>
-<p>임대인이 갱신 거절 가능한 사유: ① 임차인 3기 차임 연체 ② 임차인 부정행위 ③ 임대인 직접 사용 계획 ④ 건물 철거·재건축 ⑤ 기타 임차인 귀책사유.</p>
-<p>임대인이 허위 사유로 갱신 거절 시 손해배상 책임. 갱신 거절 통지는 서면으로 해야 함.</p></section>
-<section class="blk" id="s4"><div class="secl">권리금</div><h2>권리금 보호</h2>
-<div class="ev"><div class="top"><span class="kind law">조문</span><span class="cite">상가건물임대차보호법 제10조의4</span><span class="vtick">✓ 실존 확인</span></div><p class="gist">임대인은 임차인의 권리금 회수 기회를 방해 불가. 권리금 포기 각서는 강행규정 위반 시 무효.</p></div>
-<p><strong>권리금 정의</strong>(제10조의3): 임차인의 영업활동으로 생긴 신용·영업상 이점 등 유형·무형의 재산적 가치. 임차인이 신규 임차인으로부터 수수 가능.</p>
-<p><strong>보호</strong>: 임대인이 정당한 사유 없이 권리금 회수 방해 시 손해배상 책임(2019다223474).</p></section>
-<section class="blk faq" id="faq"><div class="secl">Q&amp;A</div><h2>자주 묻는 질문</h2>
-<details open><summary>임대인이 갑자기 월세를 20% 올리겠다고 합니다. 막을 방법이 있나요?</summary><div class="a">네, 상가임대차보호법 제11조에 따라 연 5% 초과 증액은 무효입니다. 임대인이 법정 한도를 초과한 증액을 요구하면 내용증명으로 이의를 제기하고, 기존 임대료만 납부하세요. 필요시 상가임대차분쟁조정위원회 조정 신청 가능합니다.</div></details>
-<details><summary>계약 기간이 끝났는데 연장을 거절당했습니다. 어떻게 해야 하나요?</summary><div class="a">임차인에게는 계약갱신 요구권이 있으므로, 임대인이 정당한 사유 없이 거절했다면 갱신 거절의 효력을 다툴 수 있습니다. 단, 갱신 요구는 임대차 종료 1개월 전까지 해야 하며, 총 임대차 기간이 5년을 초과하면 갱신 요구권이 소멸합니다.</div></details>
-<details><summary>권리금을 받고 나가려는데 임대인이 신규 임차인을 막습니다.</summary><div class="a">상가임대차법 제10조의4는 임대인의 권리금 회수 방해를 금지합니다. 임대인이 정당한 사유 없이 신규 임차인을 거절하면 손해배상 청구가 가능합니다. 단, 임차인의 환산보증금이 일정 기준을 초과하면 권리금 보호 규정이 적용되지 않을 수 있습니다.</div></details>
-<div class="notice">본 자료는 2026-07-29 기준. 인용 법령·판례는 작성 시점 현행성 확인.</div></section></main></div>
-<footer class="footer" id="consult"><div class="wrap"><div><h3>조우성 변호사 / 로펌 머스트노우</h3><p>서울대 법학전문대학원 졸업, 변호사(2010). 로펌 머스트노우 대표변호사.</p><p style="font-size:15px;color:rgba(238,242,246,.92);margin-top:8px">✉ law@mustknow.co.kr</p></div><div class="cta-f"><a class="btn btn-f" href="mailto:law@mustknow.co.kr">상담 문의하기</a></div></div><div class="fine">© 2026 조우성 변호사. 일반 법률 정보이며 법률 자문을 대체하지 않습니다.</div></footer>
-<script>
-var pb=document.getElementById('progress');function onScroll(){var h=document.documentElement,b=document.body;var st=h.scrollTop||b.scrollTop;var sh=(h.scrollHeight||b.scrollHeight)-h.clientHeight;pb.style.width=(sh>0?(st/sh*100):0)+'%'}window.addEventListener('scroll',onScroll,{passive:true});onScroll();
-var toTop=document.getElementById('toTop');window.addEventListener('scroll',function(){(document.documentElement.scrollTop||document.body.scrollTop)>500?toTop.classList.add('show'):toTop.classList.remove('show')},{passive:true});
-var links=Array.prototype.slice.call(document.querySelectorAll('#toc-list a'));var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));}).filter(Boolean);
-function spy(){var pos=(document.documentElement.scrollTop||document.body.scrollTop)+120,cur=secs[0];for(var i=0;i<secs.length;i++){if(secs[i].offsetTop<=pos)cur=secs[i];}links.forEach(function(a){a.classList.toggle('active',cur&&a.getAttribute('href')==='#'+cur.id);})}window.addEventListener('scroll',spy,{passive:true});spy();
-document.querySelectorAll('#toc-list a').forEach(function(a){a.addEventListener('click',function(){if(window.innerWidth<=820)document.getElementById('toc').classList.add('closed')})});
-</script>
-</body></html>
+.footer .btn-f{background:#fff;color:var(--wine-d)}
+.footer .btn-f:hover{background:var(--header-accent)}
+.footer .btn-fo{background:transparent;color:#f4eef0;border-color:rgba(255,255,255,.35)}
+.footer .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:22px;padding-top:14px;
+  font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.7}
+
+/* ── 모바일 (≤820px) ── */
+@media(max-width:820px){
+  .hero h1{font-size:24px}
+  .app{grid-template-columns:1fr;gap:0;padding-top:0}
+  .toc{position:static;margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 8px}
+  .toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;
+    cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--wine-d);padding:9px 8px}
+  .toc-toggle .ar{transition:transform .2s}
+  .toc.closed .toc-toggle .ar{transform:rotate(-90deg)}
+  .toc .tt{display:none}
+  .toc ol{max-height:50vh;overflow:auto}
+  .toc.closed ol{display:none}
+  section.blk h2{font-size:20px}
+  th,td{white-space:nowrap}
+}
+@media print{
+  #progress,.toc,.cta-row,.footer .cta-f{display:none}
+  .header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .app{display:block}
+}
+</style></head><body><div id="progress"></div><button id="toTop" aria-label="맨 위로">?</button><header class="header"><div class="wrap"><span class="badge"><span class="dot"></span>조우성 변호사 ? 법률 인사이트</span></div></header><div class="hero"><div class="eb">전자책 대시보드 ? 실무 가이드</div><h1>EBOOK-006-상가임대료-인상한도</h1><div class="tldr"><div class="lb">3줄 요약 (TL;DR)</div><ul><li>원문 Markdown의 제목?본문?표?체크리스트를 반영한 공개용 HTML입니다.</li><li>문서의 핵심 내용과 실무상 확인 포인트를 한 화면에서 확인할 수 있습니다.</li><li>구체적인 사안은 최신 법령?판례와 사실관계 확인이 필요합니다.</li></ul></div><div class="meta"><span>원문: EBOOK-006-상가임대료-인상한도.md</span><span class="vchip">원문 기반 HTML</span></div><div class="cta-row"><a class="btn btn-p" href="#s1">핵심 내용 보기</a><a class="btn btn-o" href="#faq">확인 사항</a></div></div><div class="app"><nav class="toc" id="toc"><div class="tt">목차</div><ol id="toc-list"><li><a href="#s1">본문</a></li><li><a href="#s2">임대료 증액 청구 제한 — 연 5%</a></li><li><a href="#s3">계약갱신 요구권 — 5년 보호</a></li><li><a href="#s4">갱신 거절 사유 (제한적)</a></li><li><a href="#s5">권리금 보호</a></li><li><a href="#s6">주요 판례</a></li><li><a href="#s7">주요 조문</a></li></ol></nav><main class="content"><section class="blk" id="s1"><div class="secl">SECTION</div><blockquote>
+<p>[!web] 웹으로 보기
+https://woosungjo-law.github.io/share/d/EBOOK-006-상가임대료-인상한도.html</p>
+</blockquote>
+<h1>상가 임대료 인상 한도</h1></section><section class="blk" id="s2"><div class="secl">SECTION</div><h2>임대료 증액 청구 제한 — 연 5%</h2>
+<p>상가건물임대차보호법 제11조: 차임·보증금 증액 청구는 <strong>대통령령으로 정한 비율을 초과할 수 없다</strong>. 상가건물임대차보호법 시행령이 그 비율을 연 5%로 정한다.</p>
+<ul>
+<li><strong>1회 증액 한도</strong>: 기존 차임·보증금의 연 5% 이내</li>
+<li><strong>증액 금지 기간</strong>: 직전 증액 후 1년 이내 재증액 불가</li>
+<li><strong>범위</strong>: 순수 임대료(차임)뿐 아니라 보증금 월세 환산액도 포함</li>
+</ul></section><section class="blk" id="s3"><div class="secl">SECTION</div><h2>계약갱신 요구권 — 5년 보호</h2>
+<p>상가건물임대차보호법 제10조: 임차인은 <strong>계약갱신을 요구할 권리</strong>가 있으며, 임대인은 정당한 사유 없이 거절할 수 없다.</p>
+<ul>
+<li><strong>보호 기간</strong>: 최초 임대차 기간 포함 총 5년(영업 중인 소상공인은 10년)</li>
+<li><strong>갱신 조건</strong>: 차임·보증금 증액 요구 가능하나 증액 합계 연 5% 이내</li>
+<li><strong>묵시적 갱신</strong>: 임대차 종료 1개월 전까지 통지 없으면 자동 갱신</li>
+</ul></section><section class="blk" id="s4"><div class="secl">SECTION</div><h2>갱신 거절 사유 (제한적)</h2>
+<p>임대인이 갱신을 거절할 수 있는 사유:
+- 임차인이 3기 차임 연체
+- 임차인의 부정 행위
+- 임대인이 목적 건물을 직접 사용할 계획
+- 건물 철거·재건축
+- 기타 임차인의 귀책 사유</p></section><section class="blk" id="s5"><div class="secl">SECTION</div><h2>권리금 보호</h2>
+<p>상가건물임대차보호법 제10조의4: 임대인은 임차인의 권리금 회수 기회를 방해할 수 없다. 권리금 포기 각서는 강행규정 위반으로 무효 가능.</p></section><section class="blk" id="s6"><div class="secl">SECTION</div><h2>주요 판례</h2>
+<ul>
+<li>대법원 2019다223474 (권리금 포기 약정 효력)</li>
+<li>대법원 2020다237696 (계약갱신 요구권 포기 무효)</li>
+<li>대법원 2020다239756 (임대료 증액 제한)</li>
+</ul></section><section class="blk" id="s7"><div class="secl">SECTION</div><h2>주요 조문</h2>
+<ul>
+<li>상가건물임대차보호법 제9조 (임대차기간)</li>
+<li>상가건물임대차보호법 제10조 (계약갱신 요구권)</li>
+<li>상가건물임대차보호법 제11조 (차임 등의 증감청구권)</li>
+<li>상가건물임대차보호법 제10조의4 (권리금 회수기회 보호)</li>
+<li>상가건물임대차보호법 시행령 (증액 비율 5%)</li>
+</ul></section><section class="blk faq" id="faq"><div class="secl">NOTICE</div><h2>확인 사항</h2><div class="notice">이 문서는 일반적인 법률 정보 제공을 위한 자료입니다. 구체적인 사실관계와 최신 법령?판례에 따라 결론이 달라질 수 있습니다.</div></section></main></div><footer class="footer"><div class="wrap"><h3>조우성 변호사</h3><p>실무에 바로 활용할 수 있는 법률 지식과 대응 가이드를 제공합니다.</p></div></footer></body></html>

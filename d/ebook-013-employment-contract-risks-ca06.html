@@ -1,138 +1,297 @@
-<!DOCTYPE html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>근로계약서 5대 위험 조항 — 조우성 변호사</title><meta name="description" content="근로계약서 체결 전 점검해야 할 5대 독소조항: 포괄임금·경업금지·퇴직금 회피·모호한 징계사유·IP 포괄 양도. 위험 신호-법적 근거-대응 체크리스트.">
-<style>:root{--bg:#f2f4f6;--panel:#fff;--panel2:#f4f6f8;--line:#dce1e6;--line2:#c8cfd6;--ink:#1c2128;--ink2:#3d4652;--muted:#6d7888;--faint:#9ca6b4;--ind:#3a5a8a;--ind-d:#2a4270;--ind-l:#5274aa;--ind-tint:#e2e8f0;--ind-tint-ln:#cdd6e3;--header-bg:#1f2e42;--header-bg2:#2c4058;--header-accent:#b8cce0;--rL-bg:#dcead6;--rL-tx:#2d764e;--rL2-bg:#fbe9e7;--rL2-tx:#b71c1c;--font:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Noto Sans KR',sans-serif;--maxw:1120px;--readw:760px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.75}
-#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;background:linear-gradient(90deg,var(--ind),var(--ind-l));transition:width .1s linear}
-.header{background:linear-gradient(135deg,var(--header-bg),var(--header-bg2));color:#eef2f6}.header .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 26px}
-.header .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;color:var(--header-accent);border:1px solid rgba(184,204,224,.4);border-radius:999px;padding:4px 12px}.header .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--header-accent)}
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>근로계약서 5대 위험 조항 — 채용 전 반드시 점검해야 할 계약 조건</title><style>
+/* ============================================================
+   법률 대시보드 전자책 — Apollo 기반 경량 커스텀 (공개 롱스크롤)
+   Apollo 토큰(버건디 액센트 + 웜 화이트 + 딥와인 헤더) 상속.
+   의뢰인 리포트(리스크레이더 6뷰)와 달리 공개 독서형 롱스크롤.
+   self-contained: 외부 CDN/폰트/이미지/스크립트 의존 없음.
+   ============================================================ */
+:root{
+  --bg:#f5f1f2; --panel:#ffffff; --panel2:#faf6f7;
+  --line:#ebe2e5; --line2:#ddccd2;
+  --ink:#2c1d26; --ink2:#56424c; --muted:#8a7b82; --faint:#b3a6ab;
+  --wine:#7a2e3a; --wine-d:#5a1f2b; --wine-l:#9c4456;
+  --wine-tint:#f4e9ec; --wine-tint-ln:#ecd7dd;
+  --header-bg:#3a1525; --header-bg2:#4e1f32; --header-accent:#d4a0aa;
+  --rH:#c74a3c; --rM-bg:#f8e4b8; --rM-tx:#7d520a; --rL-bg:#d6ecdb; --rL-tx:#287a54;
+  --amber:#b45309; --green:#287a54;
+  --font:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Noto Sans KR',sans-serif;
+  --maxw:1120px; --readw:760px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
+
+/* 읽기 진행바 */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;
+  background:linear-gradient(90deg,var(--wine),var(--wine-l));transition:width .1s linear}
+
+/* 헤더 표지 (딥와인, 유일한 딥 컬러) */
+.header{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0}
+.header .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 26px}
+.header .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;
+  color:var(--header-accent);border:1px solid rgba(212,160,170,.4);border-radius:999px;padding:4px 12px}
+.header .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--header-accent)}
+
+/* 히어로 */
 .hero{max-width:var(--maxw);margin:0 auto;padding:30px 26px 8px}
-.hero .eb{font-size:12px;font-weight:700;color:var(--ind)}.hero h1{font-size:30px;line-height:1.28;font-weight:800;margin:0 0 16px}
-.hero .tldr{background:var(--ind-tint);border:1px solid var(--ind-tint-ln);border-left:4px solid var(--ind);border-radius:12px;padding:16px 18px;margin:0 0 18px}
-.hero .tldr .lb{font-size:12px;font-weight:700;color:var(--ind-d);margin-bottom:8px}
-.hero .tldr ul{margin:0;padding-left:18px}.hero .tldr li{margin:4px 0;font-size:15px;color:var(--ink2)}
+.hero .eb{font-size:12px;font-weight:700;color:var(--wine);letter-spacing:.02em;margin-bottom:10px}
+.hero h1{font-size:30px;line-height:1.28;font-weight:800;margin:0 0 16px;color:var(--ink);letter-spacing:-.01em}
+.hero .tldr{background:var(--wine-tint);border:1px solid var(--wine-tint-ln);border-left:4px solid var(--wine);
+  border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.hero .tldr .lb{font-size:12px;font-weight:700;color:var(--wine-d);margin-bottom:8px}
+.hero .tldr ul{margin:0;padding-left:18px}
+.hero .tldr li{margin:4px 0;font-size:15px;color:var(--ink2)}
 .hero .meta{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:12.5px;color:var(--muted);margin-bottom:18px}
-.hero .meta .vchip{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);font-weight:700;border-radius:6px;padding:3px 9px;font-size:11.5px}
+.hero .meta .vchip{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);
+  font-weight:700;border-radius:6px;padding:3px 9px;font-size:11.5px}
 .hero .cta-row{display:flex;flex-wrap:wrap;gap:10px}
-.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:9px;padding:11px 18px;text-decoration:none;border:1px solid transparent}
-.btn-p{background:var(--ind);color:#fff}.btn-p:hover{background:var(--ind-d)}.btn-o{background:#fff;color:var(--ind-d);border-color:var(--line2)}.btn-o:hover{background:var(--panel2)}
-.app{max-width:var(--maxw);margin:0 auto;padding:8px 26px 60px;display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:start}
-.toc{position:sticky;top:24px}.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:0 0 10px}
-.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}.toc li{counter-increment:toc;margin:1px 0}
-.toc a{display:flex;gap:9px;font-size:13.5px;color:var(--ink2);text-decoration:none;padding:7px 10px;border-radius:8px;border-left:3px solid transparent}
+.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:9px;
+  padding:11px 18px;text-decoration:none;cursor:pointer;border:1px solid transparent}
+.btn-p{background:var(--wine);color:#fff}
+.btn-p:hover{background:var(--wine-d)}
+.btn-o{background:#fff;color:var(--wine-d);border-color:var(--line2)}
+.btn-o:hover{background:var(--panel2)}
+
+/* 셸: 좌측 목차 + 본문 */
+.app{max-width:var(--maxw);margin:0 auto;padding:8px 26px 60px;
+  display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:start}
+
+/* 목차 (데스크톱 = 좌측 sticky) */
+.toc{position:sticky;top:24px}
+.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;
+  margin:0 0 10px;padding-left:2px}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}
+.toc li{counter-increment:toc;margin:1px 0}
+.toc a{display:flex;gap:9px;font-size:13.5px;color:var(--ink2);text-decoration:none;
+  padding:7px 10px;border-radius:8px;border-left:3px solid transparent;line-height:1.4}
 .toc a::before{content:counter(toc,decimal-leading-zero);color:var(--faint);font-weight:700;font-size:11.5px;flex:none}
-.toc a:hover{background:var(--panel2)}.toc a.active{background:var(--ind-tint);border-left-color:var(--ind);color:var(--ind-d);font-weight:700}
-.toc-toggle{display:none}.content{max-width:var(--readw);min-width:0}
+.toc a:hover{background:var(--panel2)}
+.toc a.active{background:var(--wine-tint);border-left-color:var(--wine);color:var(--wine-d);font-weight:700}
+.toc-toggle{display:none}
+
+/* 본문 */
+.content{max-width:var(--readw);min-width:0}
 section.blk{scroll-margin-top:24px;margin-bottom:38px}
-.secl{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin:0 0 12px}
-.secl::before{content:"";width:7px;height:15px;background:var(--ind);border-radius:2px;flex:none}
-section.blk h2{font-size:23px;font-weight:800;line-height:1.35;margin:0 0 14px}section.blk h3{font-size:17px;font-weight:700;margin:24px 0 8px;color:var(--ind-d)}
+.secl{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.05em;margin:0 0 12px}
+.secl::before{content:"";width:7px;height:15px;background:var(--wine);border-radius:2px;flex:none}
+section.blk h2{font-size:23px;font-weight:800;line-height:1.35;margin:0 0 14px;color:var(--ink);letter-spacing:-.01em}
+section.blk h3{font-size:17px;font-weight:700;margin:26px 0 10px;color:var(--wine-d)}
 section.blk p{margin:0 0 14px;color:var(--ink2)}
-.risk{background:#fff;border:1px solid var(--line);border-left:4px solid var(--rL2-tx);border-radius:10px;padding:13px 15px;margin:0 0 12px}
-.risk .top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px}
-.risk .kind{font-size:11px;font-weight:700;color:#fff;background:var(--rL2-tx);border-radius:5px;padding:2px 8px}
-.risk .label{font-size:12px;font-weight:700;color:var(--muted)}
-.ev{background:#fff;border:1px solid var(--line);border-left:4px solid var(--ind);border-radius:10px;padding:13px 15px;margin:0 0 12px}
+section.blk ul,section.blk ol{margin:0 0 14px;padding-left:22px;color:var(--ink2)}
+section.blk li{margin:6px 0}
+strong{color:var(--ink);font-weight:700}
+a.ln{color:var(--wine-l);text-decoration:none;border-bottom:1px solid var(--wine-tint-ln)}
+a.ln:hover{border-bottom-color:var(--wine-l)}
+
+/* 핵심요약 카드 */
+.summary{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.summary .lb{font-size:11px;font-weight:700;color:var(--wine-d);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.summary ul{margin:0;padding-left:18px}
+
+/* 근거 카드 (조문·판례) */
+.ev{background:#fff;border:1px solid var(--line);border-left:4px solid var(--wine);border-radius:10px;
+  padding:13px 15px;margin:0 0 12px}
 .ev .top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px}
-.ev .kind{font-size:11px;font-weight:700;color:#fff;background:var(--ind);border-radius:5px;padding:2px 8px}
-.ev .kind.law{background:var(--ind-d)}.ev .kind.case{background:#925309}
+.ev .kind{font-size:11px;font-weight:700;color:#fff;background:var(--wine);border-radius:5px;padding:2px 8px}
+.ev .kind.law{background:var(--wine-d)}
+.ev .kind.case{background:var(--amber)}
 .ev .cite{font-size:13.5px;font-weight:700;color:var(--ink)}
 .ev .vtick{margin-left:auto;font-size:11px;font-weight:700;color:var(--rL-tx);background:var(--rL-bg);border-radius:5px;padding:2px 7px}
 .ev .gist{font-size:14px;color:var(--ink2);margin:0}
-.act{background:#fff;border:1px solid var(--line);border-left:4px solid var(--rL-tx);border-radius:10px;padding:13px 15px;margin:0 0 12px}
-.act .top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px}
-.act .kind{font-size:11px;font-weight:700;color:#fff;background:var(--rL-tx);border-radius:5px;padding:2px 8px}
-.act .gist{font-size:14px;color:var(--ink2);margin:0}
-.act ul{margin:6px 0 0;padding-left:18px}
-.act li{margin:3px 0;font-size:14px;color:var(--ink2)}
-.chk{border-collapse:collapse;width:100%;margin:0 0 16px;font-size:14.5px}
-.chk th{background:var(--ind-tint);color:var(--ind-d);font-weight:700;padding:8px 10px;text-align:left;border:1px solid var(--ind-tint-ln);font-size:13px}
-.chk td{padding:8px 10px;border:1px solid var(--line);vertical-align:top;font-size:14px}
-.chk .done{color:var(--rL-tx);font-weight:700;font-size:13px}
-.chk .pend{color:var(--muted)}
+.ev .date{font-size:12px;color:var(--muted);margin-top:5px}
+
+/* 다이어그램 — 플로우 / 체크리스트 (CSS·SVG only) */
+.figure{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin:0 0 18px}
+.figure .cap{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:12px}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px}
+.flow .step{flex:1;min-width:120px;background:var(--wine-tint);border:1px solid var(--wine-tint-ln);
+  border-radius:10px;padding:11px 12px;position:relative}
+.flow .step .n{font-size:11px;font-weight:700;color:var(--wine)}
+.flow .step .t{font-size:13.5px;font-weight:700;color:var(--ink);margin-top:2px}
+.flow .step .d{font-size:12.5px;color:var(--ink2);margin-top:3px}
+.checklist{list-style:none;margin:0;padding:0}
+.checklist li{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+.checklist li:last-child{border-bottom:none}
+.checklist .ck{flex:none;width:20px;height:20px;border-radius:5px;background:var(--rL-bg);color:var(--rL-tx);
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+
+/* 위험도 칩 */
+.chip{display:inline-flex;align-items:center;justify-content:center;min-width:34px;font-size:11px;font-weight:500;
+  border-radius:6px;padding:3px 8px;margin-right:4px}
+.c-H{background:var(--rH);color:#fff}
+.c-M{background:var(--rM-bg);color:var(--rM-tx)}
+.c-L{background:var(--rL-bg);color:var(--rL-tx)}
+
+/* 표 */
+.tbl-wrap{overflow-x:auto;margin:0 0 18px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px}
+
+/* FAQ (아코디언) */
 .faq details{background:#fff;border:1px solid var(--line);border-radius:10px;margin:0 0 10px;overflow:hidden}
-.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:15px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:10px}
+.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:15px;font-weight:700;color:var(--ink);
+  display:flex;align-items:center;gap:10px}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--ind-tint);color:var(--ind-d);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
-.faq details[open] summary{border-bottom:1px solid var(--line);color:var(--ind-d)}
+.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--wine-tint);
+  color:var(--wine-d);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+.faq details[open] summary{border-bottom:1px solid var(--line);color:var(--wine-d)}
 .faq .a{padding:14px 16px;font-size:14.5px;color:var(--ink2)}
-.notice{background:#fff;border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;font-size:12.5px;color:var(--muted);line-height:1.7}
-#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;background:var(--ind);color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none}
-#toTop.show{opacity:1;pointer-events:auto}#toTop:hover{background:var(--ind-d)}
-.footer{background:linear-gradient(135deg,var(--header-bg),var(--header-bg2));color:#eef2f6;margin-top:20px}
+
+/* 최신성·면책 고지 */
+.notice{background:#fff;border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;
+  font-size:12.5px;color:var(--muted);line-height:1.7}
+
+/* 맨 위로 버튼 */
+#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--wine-tint-ln);background:var(--wine);color:#fff;font-size:18px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;
+  box-shadow:0 4px 14px rgba(58,21,37,.28)}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{background:var(--wine-d)}
+
+/* 푸터 프로필 + 상담 CTA */
+.footer{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0;margin-top:20px}
 .footer .wrap{max-width:var(--maxw);margin:0 auto;padding:34px 26px}
 .footer h3{font-size:20px;font-weight:800;margin:0 0 8px;color:#fff}
-.footer p{font-size:14px;color:rgba(238,242,246,.72);margin:0 0 6px}
+.footer p{font-size:14px;color:rgba(255,255,255,.72);margin:0 0 6px;line-height:1.7}
+.footer .prof{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end}
 .footer .cta-f{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-.footer .btn-f{background:#fff;color:var(--ind-d)}.footer .fine{border-top:1px solid rgba(238,242,246,.15);margin-top:22px;padding-top:14px;font-size:11.5px;color:rgba(238,242,246,.5)}
-@media(max-width:820px){.hero h1{font-size:24px}.app{grid-template-columns:1fr;gap:0;padding-top:0}.toc{position:static;margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 8px}.toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--ind-d);padding:9px 8px}.toc-toggle .ar{transition:transform .2s}.toc.closed .toc-toggle .ar{transform:rotate(-90deg)}.toc .tt{display:none}.toc.closed ol{display:none}section.blk h2{font-size:20px}.chk{font-size:13px}}
-@media print{#progress,.toc,.cta-row,.footer .cta-f{display:none}.header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}.app{display:block}}
-</style></head><body>
-<div id="progress"></div><button id="toTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&uarr;</button>
-<header class="header"><div class="wrap"><span class="badge"><span class="dot"></span>조우성 변호사 &middot; 법률 인사이트</span></div></header>
-<div class="hero"><div class="eb">EBOOK-013 &middot; B2B &middot; 체크리스트형</div><h1>근로계약서 5대 위험 조항 &mdash; 채용 전 반드시 점검해야 할 계약 조건</h1><div class="tldr"><div class="lb">3줄 요약 (TL;DR)</div><ul><li>근로계약서 속 5대 위험 조항을 위험 신호 &rarr; 법적 근거 &rarr; 대응 구조로 체크리스트화</li><li>포괄임금·경업금지·퇴직금 회피·모호한 징계·IP 포괄 양도는 무효 위험이 높은 대표 조항</li><li>각 항목별 법적 근거(근로기준법·발명진흥법·부정경쟁방지법)와 구체적 대응 방안 제시</li></ul></div><div class="meta"><span>작성일 2026-07-29</span><span>&middot; 기준 법령 시행일 2026-07-01</span><span>&middot; 검증수준 L3 (조문+판례+내부 WIKI)</span><span class="vchip">&check; 조문·판례 3단 검증</span></div><div class="cta-row"><a class="btn btn-p" href="#chk-main">전체 체크리스트</a><a class="btn btn-o" href="#faq">Q&amp;A</a></div></div>
-<div class="app"><nav class="toc" id="toc"><button class="toc-toggle" onclick="document.getElementById('toc').classList.toggle('closed')">목차 <span class="ar">&#9662;</span></button><div class="tt">목차</div><ol id="toc-list"><li><a href="#s1">1. 근로조건 불명시</a></li><li><a href="#s2">2. 경업금지·전직금지</a></li><li><a href="#s3">3. 퇴직금·퇴사 불이익</a></li><li><a href="#s4">4. 징계·해고 사유 모호</a></li><li><a href="#s5">5. 지식재산권 포괄 양도</a></li><li><a href="#chk-main">전체 체크리스트</a></li><li><a href="#faq">자주 묻는 질문</a></li></ol></nav><main class="content">
+.footer .btn-f{background:#fff;color:var(--wine-d)}
+.footer .btn-f:hover{background:var(--header-accent)}
+.footer .btn-fo{background:transparent;color:#f4eef0;border-color:rgba(255,255,255,.35)}
+.footer .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:22px;padding-top:14px;
+  font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.7}
 
-<section class="blk" id="intro"><div class="secl">개요</div><p>근로계약서는 단순한 형식 문서가 아니다. 채용 단계에서 간과한 조항 하나가 퇴사 후 수천만 원의 분쟁으로 이어질 수 있다. 이 체크리스트는 5대 위험 조항을 <strong>위험 신호 &rarr; 법적 근거 &rarr; 대응</strong> 구조로 정리했다. 서명 전 반드시 이 파일로 점검하라.</p></section>
-
-<section class="blk" id="s1"><div class="secl">위험 1</div><h2>근로조건 불명시 &mdash; 포괄임금·고정OT의 함정</h2>
-<div class="risk"><div class="top"><span class="kind">위험 신호</span><span class="label">총액만 기재 / 포괄임금 조항 / 미교부</span></div><ul style="margin:4px 0 0;padding-left:18px"><li style="font-size:14px;color:var(--ink2);margin:2px 0">&quot;야근수당 포함 월 xxx만원&quot; 식 포괄임금</li><li style="font-size:14px;color:var(--ink2);margin:2px 0">기본급·수당 구성 미기재, 총액만 표시</li><li style="font-size:14px;color:var(--ink2);margin:2px 0">소정근로시간·휴게시간 미기재 또는 모호</li><li style="font-size:14px;color:var(--ink2);margin:2px 0">휴일·연차 관련 조항 누락</li><li style="font-size:14px;color:var(--ink2);margin:2px 0">계약서 미교부 또는 교부 증거 부재</li></ul></div>
-<div class="ev"><div class="top"><span class="kind law">조문</span><span class="cite">근로기준법 제17조</span><span class="vtick">&check; 실존 확인</span></div><p class="gist">사용자는 근로계약 체결 시 임금(구성항목·계산방법·지급방법), 소정근로시간, 휴일(제55조), 연차유급휴가(제60조)가 명시된 서면을 근로자에게 교부해야 한다. 위반 시 500만 원 이하 벌금(제114조).</p></div>
-<div class="ev"><div class="top"><span class="kind law">조문</span><span class="cite">근로기준법 제15조·제56조</span><span class="vtick">&check; 실존 확인</span></div><p class="gist">제15조: 법정 기준 미달 근로조건은 무효, 무효 부분은 법정 기준에 따름. 제56조: 연장근로는 통상임금 50% 가산, 휴일 8시간 초과 시 100% 가산.</p></div>
-<div class="ev"><div class="top"><span class="kind case">판례</span><span class="cite">2022헌바154 &middot; 2022고정6</span><span class="vtick">&check; 실존 확인</span></div><p class="gist">2022헌바154: 서면명시의무의 목적(분쟁 예방·입증)과 제재의 합헌성 확인. 2022고정6: 근로 제공 시작 후 서면 교부는 이미 위반 성립 가능, &apos;서면&apos;은 반드시 쌍방 서명된 계약서 형식 불필요.</p></div>
-<div class="act"><div class="top"><span class="kind">대응</span></div><ul><li>기본급·각종 수당을 항목별로 구분 기재 (예: 기본급 200만+식대 10만+교통비 10만)</li><li>소정근로시간은 시업·종업·휴게시간 구체적 명시</li><li>주휴일·법정공휴일·연차유급휴가 부여 기준 명시</li><li>포괄임금은 근로시간 산정이 어려운 예외적 경우만 인정(대법원 2010다13701)</li><li>계약서 2부 작성·1부 교부·교부 증거(서명·이메일 기록) 보존</li></ul></div></section>
-
-<section class="blk" id="s2"><div class="secl">위험 2</div><h2>경업금지·전직금지 &mdash; 과도한 범위 설정</h2>
-<div class="risk"><div class="top"><span class="kind">위험 신호</span><span class="label">장기간·광범위·무보상 경업금지</span></div><ul style="margin:4px 0 0;padding-left:18px"><li style="font-size:14px;color:var(--ink2);margin:2px 0">퇴사 후 2~3년 이상의 장기 경업금지</li><li style="font-size:14px;color:var(--ink2);margin:2px 0">지역 제한이 &apos;전국&apos; 또는 &apos;전세계&apos;</li><li style="font-size:14px;color:var(--ink2);margin:2px 0">&apos;경쟁업체 일체&apos; 등 포괄적 업종 금지</li><li style="font-size:14px;color:var(--ink2);margin:2px 0">경업금지 대가(보상금) 없는 일방적 의무</li><li style="font-size:14px;color:var(--ink2);margin:2px 0">&apos;회사 허가 없는 모든 겸직 금지&apos; 과도 광범위</li></ul></div>
-<div class="ev"><div class="top"><span class="kind case">판례</span><span class="cite">2009다82244</span><span class="vtick">&check; 실존 확인</span></div><p class="gist">경업금지 약정에 별도의 명시적 보상(경업금지 대가)이 없으면 무효로 판단될 가능성이 매우 높다. 대가의 제공 여부가 가장 중요한 유효성 판단 요소.</p></div>
-<div class="ev"><div class="top"><span class="kind case">판례</span><span class="cite">2006도9089</span><span class="vtick">&check; 실존 확인</span></div><p class="gist">근로계약서에 &apos;취업규칙에 따른다&apos;는 조항만으로 경업금지 의무가 자동 발생하지 않는다. 경업금지는 별도의 명시적 약정과 정당한 사유가 필요.</p></div>
-<div class="act"><div class="top"><span class="kind">대응</span></div><ul><li>경업금지 기간: 통상 1~2년 이내로 한정</li><li>업종 제한: 실제 담당 업무 관련 특정 분야로 구체화 (&quot;같은 업계 일체&quot; 불가)</li><li>지역: 사용자의 실제 영업권이 미치는 범위 내로 한정</li><li>경업금지 대가: 별도의 명시적 보상금 지급 조항 필수</li><li>겸직 금지: 합리적 사유와 범위가 있을 때만 유효</li></ul></div></section>
-
-<section class="blk" id="s3"><div class="secl">위험 3</div><h2>퇴직금·퇴사 시 불이익 조항</h2>
-<div class="risk"><div class="top"><span class="kind">위험 신호</span><span class="label">퇴직금 감액·청산 지연·포괄 포기 각서</span></div><ul style="margin:4px 0 0;padding-left:18px"><li style="font-size:14px;color:var(--ink2);margin:2px 0">&quot;자발적 퇴사 시 퇴직금 감액&quot; 또는 &quot;퇴직금 계산에서 특정 수당 제외&quot; 조항</li><li style="font-size:14px;color:var(--ink2);margin:2px 0">&quot;퇴사 시 일체의 손해배상청구 불가&quot; 포괄적 포기 각서 요구</li><li style="font-size:14px;color:var(--ink2);margin:2px 0">퇴직 후 14일 초과 금품 지급 약정</li><li style="font-size:14px;color:var(--ink2);margin:2px 0">퇴직금 포기 각서를 입사 조건으로 요구</li></ul></div>
-<div class="ev"><div class="top"><span class="kind law">조문</span><span class="cite">근로기준법 제36조</span><span class="vtick">&check; 실존 확인</span></div><p class="gist">사용자는 근로자가 사망 또는 퇴직한 경우 지급 사유 발생일부터 14일 이내에 임금·보상금·그 밖의 모든 금품을 지급해야 한다. 특별한 사정이 있는 경우 당사자 합의로 기일 연장 가능.</p></div>
-<div class="ev"><div class="top"><span class="kind law">조문</span><span class="cite">근로자퇴직급여 보장법 제9조</span><span class="vtick">&check; 실존 확인</span></div><p class="gist">사용자는 근로자 퇴직 시 14일 이내 퇴직금 지급. 퇴직금은 근로자 지정 개인형퇴직연금 계정으로 이전 지급이 원칙. 퇴직금 포기 각서는 근로자에게 불리한 조건이면 무효.</p></div>
-<div class="act"><div class="top"><span class="kind">대응</span></div><ul><li>퇴직금 산정 기준(평균임금·통상임금)을 계약서에 명확히 기재</li><li>자발적 퇴사자와 비자발적 퇴사자 간 퇴직금 차별 금지</li><li>금품청산 14일 기한을 계약서에 명시하고 엄수</li><li>퇴직금 포기 각서는 무효이므로 수령하더라도 법적 효력 없음</li></ul></div></section>
-
-<section class="blk" id="s4"><div class="secl">위험 4</div><h2>징계·해고 사유 모호</h2>
-<div class="risk"><div class="top"><span class="kind">위험 신호</span><span class="label">추상적 징계 사유·절차 미비·해고 예고 배제</span></div><ul style="margin:4px 0 0;padding-left:18px"><li style="font-size:14px;color:var(--ink2);margin:2px 0">&quot;회사 명령 위반 시 징계&quot; 등 추상적 사유만 나열</li><li style="font-size:14px;color:var(--ink2);margin:2px 0">징계 절차(인사위원회·의견진술 기회) 전혀 없음</li><li style="font-size:14px;color:var(--ink2);margin:2px 0">&quot;수습기간 중 자유로운 해고 가능&quot; 조항</li><li style="font-size:14px;color:var(--ink2);margin:2px 0">해고 예고(30일) 배제 또는 단축 약정</li></ul></div>
-<div class="ev"><div class="top"><span class="kind law">조문</span><span class="cite">근로기준법 제23조·제26조</span><span class="vtick">&check; 실존 확인</span></div><p class="gist">제23조: 사용자는 정당한 이유 없이 해고·징벌(부당해고등)을 할 수 없다. 제26조: 해고하려면 30일 전 예고 또는 30일분 통상임금 지급. 단, 3개월 미만 근로자 등 예외 있음.</p></div>
-<div class="ev"><div class="top"><span class="kind case">판례</span><span class="cite">2014두2638</span><span class="vtick">&check; 실존 확인</span></div><p class="gist">징계 사유는 구체적으로 명시되어야 무효가 아니다. 추상적·포괄적 징계 사유는 근로자에게 어떤 행위가 징계 대상인지 예측 불가능하게 하여 무효.</p></div>
-<div class="act"><div class="top"><span class="kind">대응</span></div><ul><li>징계 사유: 구체적 유형 열거(품위손상·기밀누설·횡령·무단결근·직장 내 괴롭힘 등)</li><li>징계 절차: 인사위원회 소집·근로자 의견진술 기회·징계 양정 기준 명시</li><li>수습기간 중에도 부당해고 금지 원칙 적용, &quot;자유로운 해고&quot; 조항은 무효</li><li>취업규칙에 징계 사유와 절차를 별도로 상세 명시</li></ul></div></section>
-
-<section class="blk" id="s5"><div class="secl">위험 5</div><h2>지식재산권 귀속 포괄 양도</h2>
-<div class="risk"><div class="top"><span class="kind">위험 신호</span><span class="label">직무·비직무 구분 없는 일괄 양도·사후귀속·보상 누락</span></div><ul style="margin:4px 0 0;padding-left:18px"><li style="font-size:14px;color:var(--ink2);margin:2px 0">&quot;재직 중 작성한 모든 지식재산권 회사 귀속&quot; 포괄 조항</li><li style="font-size:14px;color:var(--ink2);margin:2px 0">직무발명과 비직무발명 구분 없이 일괄 양도 요구</li><li style="font-size:14px;color:var(--ink2);margin:2px 0">&quot;퇴사 후 일정 기간 개발한 발명도 회사 귀속&quot; 사후귀속 조항</li><li style="font-size:14px;color:var(--ink2);margin:2px 0">발명진흥법상 정당한 보상 규정 누락</li></ul></div>
-<div class="ev"><div class="top"><span class="kind law">조문</span><span class="cite">발명진흥법 제2조·제10조</span><span class="vtick">&check; 실존 확인</span></div><p class="gist">제2조: 직무발명은 종업원이 그 직무에 관해 발명한 것으로서 사용자의 업무 범위에 속하고 발명 행위가 현재·과거의 직무에 속하는 발명. 제10조 제3항: 비직무발명을 미리 사용자에게 승계시키는 계약·규정 조항은 무효.</p></div>
-<div class="ev"><div class="top"><span class="kind case">판례</span><span class="cite">2009다7182</span><span class="vtick">&check; 실존 확인</span></div><p class="gist">사용자가 직무발명을 승계하는 경우 종업원에게 정당한 보상을 지급해야 한다. 보상 기준과 절차를 계약서에 반영하지 않은 채 일괄 양도만 요구하는 조항은 무효.</p></div>
-<div class="act"><div class="top"><span class="kind">대응</span></div><ul><li>직무발명 범위 구체적 특정 (업무분야·직무내용 기준으로 한정)</li><li>비직무발명은 근로자에게 귀속됨을 명시</li><li>정당한 보상 기준(매출액 연동·정액 등)과 절차 계약서 반영</li><li>사후귀속 조항(퇴사 후 6개월~1년)은 발명진흥법 제10조 제3항 위반 가능성 검토 필수</li><li>업무와 무관한 개인 창작물은 명시적으로 제외</li></ul></div></section>
-
-<section class="blk" id="chk-main"><div class="secl">체크리스트</div><h2>전체 체크리스트 — 서명 전 확인하라</h2>
-<table class="chk"><thead><tr><th style="width:36px">#</th><th>점검 항목</th><th style="width:72px">상태</th></tr></thead><tbody>
-<tr><td>1</td><td>임금 구성항목(기본급·수당별) 구체 기재</td><td class="pend">&#9634;</td></tr>
-<tr><td>2</td><td>소정근로시간(시업·종업·휴게) 구체적 명시</td><td class="pend">&#9634;</td></tr>
-<tr><td>3</td><td>주휴일·법정공휴일·연차유급휴가 부여 기준 명시</td><td class="pend">&#9634;</td></tr>
-<tr><td>4</td><td>계약서 서면 교부 및 교부 증거(서명·이메일) 확보</td><td class="pend">&#9634;</td></tr>
-<tr><td>5</td><td>경업금지 기간 2년 이내·지역 합리적·대가 명시</td><td class="pend">&#9634;</td></tr>
-<tr><td>6</td><td>퇴직금 산정 기준(평균임금·통상임금) 명확 기재</td><td class="pend">&#9634;</td></tr>
-<tr><td>7</td><td>퇴사 시 금품청산 14일 기한 명시</td><td class="pend">&#9634;</td></tr>
-<tr><td>8</td><td>징계 사유 구체적 유형 열거·징계 절차 명시</td><td class="pend">&#9634;</td></tr>
-<tr><td>9</td><td>해고 예고 30일 조항 포함</td><td class="pend">&#9634;</td></tr>
-<tr><td>10</td><td>직무발명 범위 구체적 특정·비직무발명 제외</td><td class="pend">&#9634;</td></tr>
-<tr><td>11</td><td>발명 보상 기준(정당한 보상) 계약서 반영</td><td class="pend">&#9634;</td></tr>
-</tbody></table></section>
-
-<section class="blk faq" id="faq"><div class="secl">Q&amp;A</div><h2>자주 묻는 질문</h2>
-<details open><summary>&quot;월 xxx만원에 연장수당 포함&quot;이라는 포괄임금 조항, 유효한가요?</summary><div class="a">법원은 포괄임금 약정이 유효하려면 근로자의 근로시간 산정이 어려운 예외적 경우여야 하고, 근로자에게 불이익이 없으며 정당성이 인정되어야 한다고 봅니다(2010다13701). 단순히 총액에 포함시켰다는 이유만으로 유효하지 않으며, 기본급과 수당을 구분 기재하지 않으면 근로기준법 제17조 위반도 별도 성립합니다.</div></details>
-<details><summary>회사가 퇴직금 포기 각서를 요구합니다. 효력이 있나요?</summary><div class="a">퇴직금 포기 각서는 근로자퇴직급여보장법이 정한 퇴직금 지급 의무를 회피하는 것으로, 근로기준법 제15조에 따라 무효입니다. 수령하더라도 법적 효력이 없으며, 퇴직 후 퇴직금 청구가 가능합니다. 다만 증명 문제가 발생할 수 있으므로 거절하고 법정 기준대로 계약서를 작성하길 권장합니다.</div></details>
-<details><summary>수습기간 중인데 해고 통보를 받았습니다. 부당해고인가요?</summary><div class="a">수습기간 중에도 근로기준법 제23조(정당한 이유 없는 해고 금지)는 적용됩니다. 다만 판례는 수습 3개월 이내의 해고에 대해 사용자의 판단 여유를 일부 인정하지만, 완전한 자유를 주는 것은 아닙니다. &quot;수습기간 중 자유로운 해고 가능&quot; 조항은 그 자체로 무효이며, 구체적 부당해고 사유가 있어야 합니다.</div></details>
-<details><summary>회사가 취업규칙에 &quot;경업금지&quot;라고만 돼 있다고 합니다. 효력이 있나요?</summary><div class="a">대법원 2006도9089는 근로계약서에 &apos;취업규칙에 따른다&apos;는 조항만으로 경업금지 의무가 자동 발생하지 않는다고 판시했습니다. 경업금지는 별도의 명시적 약정(업종·지역·기간·대가)이 필요하며, 취업규칙에 막연히 기재된 것만으로는 효력이 없습니다.</div></details>
-<details><summary>퇴사 후 개발한 발명도 회사 귀속이라는 조항이 있습니다. 유효한가요?</summary><div class="a">발명진흥법 제10조 제3항은 직무발명 외의 발명(비직무발명)을 미리 사용자에게 승계시키는 계약이나 규정은 무효라고 정합니다. 퇴사 후 개발한 발명은 직무발명에 해당하지 않으므로, 이를 회사에 귀속시키는 조항은 원칙적으로 무효입니다. 다만 퇴사 전 직무발명과 관련된 기술을 퇴사 직후 사용한 경우 등 예외적 상황은 별도 검토가 필요합니다.</div></details>
-<div class="notice">본 자료는 2026-07-29 기준. 인용 법령·판례는 작성 시점 현행성 확인. 구체적 사안은 변호사 상담 권장.</div></section></main></div>
-<footer class="footer" id="consult"><div class="wrap"><div><h3>조우성 변호사 / 로펌 머스트노우</h3><p>서울대 법학전문대학원 졸업, 변호사(2010). 로펌 머스트노우 대표변호사.</p><p style="font-size:15px;color:rgba(238,242,246,.92);margin-top:8px">&#9993; law@mustknow.co.kr</p></div><div class="cta-f"><a class="btn btn-f" href="mailto:law@mustknow.co.kr">상담 문의하기</a></div></div><div class="fine">&copy; 2026 조우성 변호사. 일반 법률 정보이며 법률 자문을 대체하지 않습니다.</div></footer>
-<script>
-var pb=document.getElementById('progress');function onScroll(){var h=document.documentElement,b=document.body;var st=h.scrollTop||b.scrollTop;var sh=(h.scrollHeight||b.scrollHeight)-h.clientHeight;pb.style.width=(sh>0?(st/sh*100):0)+'%'}window.addEventListener('scroll',onScroll,{passive:true});onScroll();
-var toTop=document.getElementById('toTop');window.addEventListener('scroll',function(){(document.documentElement.scrollTop||document.body.scrollTop)>500?toTop.classList.add('show'):toTop.classList.remove('show')},{passive:true});
-var links=Array.prototype.slice.call(document.querySelectorAll('#toc-list a'));var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));}).filter(Boolean);
-function spy(){var pos=(document.documentElement.scrollTop||document.body.scrollTop)+120,cur=secs[0];for(var i=0;i<secs.length;i++){if(secs[i].offsetTop<=pos)cur=secs[i];}links.forEach(function(a){a.classList.toggle('active',cur&&a.getAttribute('href')==='#'+cur.id);})}window.addEventListener('scroll',spy,{passive:true});spy();
-document.querySelectorAll('#toc-list a').forEach(function(a){a.addEventListener('click',function(){if(window.innerWidth<=820)document.getElementById('toc').classList.add('closed')})});
-</script>
-</body></html>
+/* ── 모바일 (≤820px) ── */
+@media(max-width:820px){
+  .hero h1{font-size:24px}
+  .app{grid-template-columns:1fr;gap:0;padding-top:0}
+  .toc{position:static;margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 8px}
+  .toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;
+    cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--wine-d);padding:9px 8px}
+  .toc-toggle .ar{transition:transform .2s}
+  .toc.closed .toc-toggle .ar{transform:rotate(-90deg)}
+  .toc .tt{display:none}
+  .toc ol{max-height:50vh;overflow:auto}
+  .toc.closed ol{display:none}
+  section.blk h2{font-size:20px}
+  th,td{white-space:nowrap}
+}
+@media print{
+  #progress,.toc,.cta-row,.footer .cta-f{display:none}
+  .header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .app{display:block}
+}
+</style></head><body><div id="progress"></div><button id="toTop" aria-label="맨 위로">?</button><header class="header"><div class="wrap"><span class="badge"><span class="dot"></span>조우성 변호사 ? 법률 인사이트</span></div></header><div class="hero"><div class="eb">전자책 대시보드 ? 실무 가이드</div><h1>근로계약서 5대 위험 조항 — 채용 전 반드시 점검해야 할 계약 조건</h1><div class="tldr"><div class="lb">3줄 요약 (TL;DR)</div><ul><li>원문 Markdown의 제목?본문?표?체크리스트를 반영한 공개용 HTML입니다.</li><li>문서의 핵심 내용과 실무상 확인 포인트를 한 화면에서 확인할 수 있습니다.</li><li>구체적인 사안은 최신 법령?판례와 사실관계 확인이 필요합니다.</li></ul></div><div class="meta"><span>원문: EBOOK-013-근로계약서-5대-위험-조항.md</span><span class="vchip">원문 기반 HTML</span></div><div class="cta-row"><a class="btn btn-p" href="#s1">핵심 내용 보기</a><a class="btn btn-o" href="#faq">확인 사항</a></div></div><div class="app"><nav class="toc" id="toc"><div class="tt">목차</div><ol id="toc-list"><li><a href="#s1">본문</a></li><li><a href="#s2">TL;DR</a></li><li><a href="#s3">1. 근로조건 불명시 (포괄임금·고정OT)</a></li><li><a href="#s4">2. 경업금지·전직금지 과도한 범위</a></li><li><a href="#s5">3. 퇴직금·퇴사 시 불이익 조항</a></li><li><a href="#s6">4. 징계·해고 사유 모호</a></li><li><a href="#s7">5. 지식재산권 귀속 포괄 양도</a></li><li><a href="#s8">총괄 체크리스트</a></li><li><a href="#s9">유의사항</a></li></ol></nav><main class="content"><section class="blk" id="s1"><div class="secl">SECTION</div><blockquote>
+<p>[!web] 웹으로 보기
+https://woosungjo-law.github.io/share/d/ebook-013-employment-contract-risks-ca06.html</p>
+</blockquote>
+<h1>근로계약서 5대 위험 조항 — 채용 전 반드시 점검해야 할 계약 조건</h1></section><section class="blk" id="s2"><div class="secl">SECTION</div><h2>TL;DR</h2>
+<p>근로계약서에 숨은 5대 위험 조항: ① 포괄임금·고정OT 등 근로조건 불명시 → 무효 위험 + 벌금 500만원 ② 경업금지·전직금지 과도 범위 → 직업 선택 자유 침해 ③ 퇴직금 회피·퇴사 불이익 → 금품청산 의무 위반 ④ 징계·해고 사유 모호 → 부당해고 성립 ⑤ 지식재산권 포괄 양도 → 발명진흥법 위반 무효. 각 조항마다 위험 신호 → 법적 근거 → 대응을 체크리스트로 확인하라.</p></section><section class="blk" id="s3"><div class="secl">SECTION</div><h2>1. 근로조건 불명시 (포괄임금·고정OT)</h2>
+<p><strong>위험 신호</strong>
+- 총액만 기재하고 기본급·수당 구성 미기재
+- "야근수당 포함 월 xxx만원" 포괄임금 조항
+- 소정근로시간(시업·종업·휴게) 미기재
+- 휴일·연차 미기재
+- 계약서 미교부 또는 교부 증거 부재</p>
+<p><strong>법적 근거</strong>
+- 근로기준법 제17조: 임금 구성·계산방법·지급방법, 소정근로시간, 휴일, 연차를 서면 명시·교부 의무
+- 근로기준법 제15조: 법정 기준 미달 근로조건 무효
+- 근로기준법 제56조: 연장·야간·휴일근로 가산(통상임금 50%~100%)
+- 근로기준법 제114조: 위반 시 500만원 이하 벌금
+- 대법원 2022헌바154: '임금 계산방법'은 산정 기준액·비율·산식 의미
+- 청주지법 2022고정6: 근로 제공 시작 후 서면 교부는 위반 성립 가능</p>
+<p><strong>대응</strong>
+- 체크리스트 항목: 기본급, 각종 수당(항목별), 산정 기준, 지급 방법, 지급일, 소정근로시간(시업·종업·휴게), 주휴일, 법정공휴일, 연차유급휴가 부여 기준
+- 포괄임금 약정은 근로시간 산정이 어려운 예외적 경우만 인정(대법원 2010다13701)
+- 계약서 2부 작성, 1부 근로자 교부, 교부 증거(서명·이메일 발송 기록) 보존
+- 5인 미만 사업장도 제17조 적용 예외 없음</p></section><section class="blk" id="s4"><div class="secl">SECTION</div><h2>2. 경업금지·전직금지 과도한 범위</h2>
+<p><strong>위험 신호</strong>
+- "퇴사 후 3년간 동종업계 취업 금지"
+- 지역 제한이 '전국' 또는 '전세계'인 조항
+- 업종 제한이 '경쟁업체 일체'로 포괄적
+- 경업금지 대가(보상금) 없는 일방적 의무 부과
+- "회사 허가 없이 겸직 금지"가 지나치게 광범위</p>
+<p><strong>법적 근거</strong>
+- 헌법 제15조: 직업선택의 자유
+- 부정경쟁방지 및 영업비밀보호에 관한 법률: 정당한 경업금지는 영업비밀 보호 목적에 한정
+- 대법원 2009다82244: 경업금지 대가 없는 약정은 무효 가능성 높음
+- 대법원 2006도9089: 근로계약서에 '취업규칙에 따른다'는 조항만으로 경업금지 의무가 자동 발생하지 않음</p>
+<p><strong>대응</strong>
+- 기간: 통상 1~2년 이내, 업종: 실제 담당 업무 관련 특정 분야로 한정
+- 지역: 실제 영업권이 미치는 범위 내
+- 대가: 별도의 명시적 경업금지 보상금 지급 조항 필수
+- 겸직 금지는 합리적 사유와 범위가 있을 때만 인정</p></section><section class="blk" id="s5"><div class="secl">SECTION</div><h2>3. 퇴직금·퇴사 시 불이익 조항</h2>
+<p><strong>위험 신호</strong>
+- "자발적 퇴사 시 퇴직금 감액" 조항
+- "퇴직금 계산 시 특정 수당 제외" 조항
+- "퇴사 시 회사에 손해배상청구 불가" 포괄적 포기 각서 요구
+- 퇴직 후 14일 초과 지급 약정
+- 중간정산 퇴직금 체불 시 낮은 이율 적용</p>
+<p><strong>법적 근거</strong>
+- 근로기준법 제36조: 퇴직 사유 발생 시 14일 이내 금품 전액 청산
+- 근로자퇴직급여 보장법 제9조: 퇴직금 지급 기한, 퇴직연금 계정 이전 의무
+- 근로기준법 제15조: 법정 기준 미달 계약 무효
+- 대법원 2018다227520: 퇴직금 포기 각서는 근로자에게 불리한 조건이면 무효</p>
+<p><strong>대응</strong>
+- 퇴직금 조항은 근로자퇴직급여보장법 기준대로 작성
+- 자발적 퇴사자에 대한 퇴직금 차별 금지
+- 퇴직금 산정 기준(평균임금·통상임금) 명확히 기재
+- 퇴사 시 금품청산은 퇴직일로부터 14일 엄수</p></section><section class="blk" id="s6"><div class="secl">SECTION</div><h2>4. 징계·해고 사유 모호</h2>
+<p><strong>위험 신호</strong>
+- "회사 명령 위반 시 징계" 등 추상적 징계 사유
+- 해고 사유가 "회사 손해 발생 시" 등 포괄적
+- 징계 절차 전혀 기재 없음
+- "수습기간 중 자유로운 해고 가능" 조항
+- 해고 예고(30일) 배제 약정</p>
+<p><strong>법적 근거</strong>
+- 근로기준법 제23조: 정당한 이유 없는 해고 금지(부당해고 금지)
+- 근로기준법 제26조: 해고 30일 전 예고 또는 30일분 통상임금 지급
+- 근로기준법 제15조: 부당해고 면책 약정은 무효
+- 대법원 2014두2638: 징계 사유는 구체적으로 명시되어야 무효 아님</p>
+<p><strong>대응</strong>
+- 징계 사유는 구체적 유형 열거(품위손상, 기밀누설, 횡령, 무단결근 등)
+- 징계 절차(인사위원회 소집·의견진술 기회) 명시
+- 수습기간 중에도 부당해고 금지 원칙 적용
+- 해고 예고 30일 조항 계약서에 반영
+- 취업규칙에 징계 사유와 절차 별도 명시</p></section><section class="blk" id="s7"><div class="secl">SECTION</div><h2>5. 지식재산권 귀속 포괄 양도</h2>
+<p><strong>위험 신호</strong>
+- "재직 중 작성한 모든 지식재산권 회사 귀속" 포괄 조항
+- 직무발명과 비직무발명 구분 없는 일괄 양도
+- "퇴사 후 1년간 개발한 발명도 회사 귀속"(사후귀속 조항)
+- 발명 진흥법상 정당한 보상 규정 누락
+- 업무와 무관한 개인 창작물까지 회사 귀속</p>
+<p><strong>법적 근거</strong>
+- 발명진흥법 제2조: 직무발명 정의(종업원 직무 범위 내 발명)
+- 발명진흥법 제10조: 직무발명에 한해 사용자 승계 가능, 비직무발명 포괄 양도 조항은 무효(제10조 제3항)
+- 대법원 2009다7182: 사용자의 직무발명 승계 시 종업원에게 정당한 보상 의무</p>
+<p><strong>대응</strong>
+- 직무발명의 범위를 구체적으로 특정(업무분야·직무내용 기준)
+- 비직무발명은 근로자에게 귀속됨을 명시
+- 정당한 보상 기준과 절차를 계약서에 반영
+- 사후귀속 조항(퇴사 후 6개월~1년)은 발명진흥법 제10조 제3항 위반 가능성 검토
+- 업무와 무관한 개인 창작물은 명시적으로 제외</p></section><section class="blk" id="s8"><div class="secl">SECTION</div><h2>총괄 체크리스트</h2>
+<ul>
+<li>[ ] 임금 구성항목(기본급·수당별) 구체 기재</li>
+<li>[ ] 소정근로시간(시업·종업·휴게) 기재</li>
+<li>[ ] 주휴일·법정공휴일·연차유급휴가 기재</li>
+<li>[ ] 계약서 서면 교부 증거 확보</li>
+<li>[ ] 경업금지 기간 2년 이내·지역 합리적·대가 명시</li>
+<li>[ ] 퇴직금 산정 기준(평균임금) 명확 기재</li>
+<li>[ ] 퇴사 시 금품청산 14일 기한 명시</li>
+<li>[ ] 징계 사유 구체적 유형 열거·절차 명시</li>
+<li>[ ] 해고 예고 30일 조항 포함</li>
+<li>[ ] 직무발명 범위 구체적 특정·비직무발명 제외</li>
+<li>[ ] 발명 보상 기준 명시</li>
+</ul></section><section class="blk" id="s9"><div class="secl">SECTION</div><h2>유의사항</h2>
+<ul>
+<li>모든 근로계약서는 근로기준법 제4조(동등한 지위에서 자유의사에 따라 결정) 위반 시 무효</li>
+<li>인터넷 표준 양식만으로는 회사 특성 반영 부족, 맞춤 작성 필요(회사법 D-근로계약서아직도인터넷에서복사해)</li>
+<li>계약서 미교부는 서면 작성과 별개로 500만원 이하 벌금 대상</li>
+<li>기간제·단시간근로자는 기간제법 제17조 추가 기재사항(근로일별 근로시간 등) 필수 확인</li>
+<li>5인 미만 사업장도 근로계약서 작성·교부 의무 적용</li>
+<li>분쟁 발생 시 계약서 부재가 사용자에게 가장 불리한 증거로 작용</li>
+</ul></section><section class="blk faq" id="faq"><div class="secl">NOTICE</div><h2>확인 사항</h2><div class="notice">이 문서는 일반적인 법률 정보 제공을 위한 자료입니다. 구체적인 사실관계와 최신 법령?판례에 따라 결론이 달라질 수 있습니다.</div></section></main></div><footer class="footer"><div class="wrap"><h3>조우성 변호사</h3><p>실무에 바로 활용할 수 있는 법률 지식과 대응 가이드를 제공합니다.</p></div></footer></body></html>
