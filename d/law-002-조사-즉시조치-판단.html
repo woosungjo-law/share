@@ -1,129 +1,339 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<meta name="description" content="조사 vs 즉시조치 판단 — 일반 법률정보">
-<title>조사 vs 즉시조치 판단</title>
+<title>조사 vs 즉시조치 판단 — 조우성 변호사</title>
+<meta name="description" content="조사 vs 즉시조치 판단 | 법률 인사이트 절차 카드">
+<meta property="og:type" content="article">
+<meta property="og:title" content="조사 vs 즉시조치 판단 — 조우성 변호사">
+<meta property="og:description" content="조사 vs 즉시조치 판단 | 법률 인사이트 절차 카드">
 <style>
-:root{--navy:#1a3a6b;--blue:#2e6be6;--bg:#f0f2f5;--card:#fff;--text:#111827;--sub:#6b7280;--amber-bg:#fffbeb;--amber-bd:#f59e0b;--green:#059669;--warn:#d97706;}
+
+:root{
+  --bg:#f5f1f2; --panel:#ffffff; --panel2:#faf6f7;
+  --line:#ebe2e5; --line2:#ddccd2;
+  --ink:#2c1d26; --ink2:#56424c; --muted:#8a7b82; --faint:#b3a6ab;
+  --wine:#7a2e3a; --wine-d:#5a1f2b; --wine-l:#9c4456;
+  --wine-tint:#f4e9ec; --wine-tint-ln:#ecd7dd;
+  --header-bg:#3a1525; --header-bg2:#4e1f32; --header-accent:#d4a0aa;
+  --rH:#c74a3c; --rM-bg:#f8e4b8; --rM-tx:#7d520a; --rL-bg:#d6ecdb; --rL-tx:#287a54;
+  --font:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Noto Sans KR',sans-serif;
+  --maxw:1120px; --readw:760px;
+}
 *{box-sizing:border-box}
-body{margin:0;font-family:'Pretendard','Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:var(--bg);color:var(--text);line-height:1.75;font-size:15px}
-.topbar{height:4px;background:linear-gradient(90deg,var(--navy),var(--blue))}
-.wrap{max-width:820px;margin:0 auto;padding:26px 18px 70px}
-h1{font-size:26px;font-weight:800;line-height:1.4;color:var(--navy);margin:6px 0 18px}
-h2{font-size:20px;font-weight:700;margin:26px 0 10px;padding:10px 14px;background:#fff;border-left:5px solid var(--blue);border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.04)}
-h3{font-size:16px;font-weight:700;margin:16px 0 6px}
-p{margin:9px 0}
-ul,ol{margin:9px 0;padding-left:22px}
-li{margin:5px 0}
-li input[type=checkbox]{margin-right:8px;transform:scale(1.15)}
-hr{border:0;border-top:1px solid #e5e7eb;margin:22px 0}
-blockquote{background:var(--amber-bg);border-left:4px solid var(--amber-bd);margin:10px 0;padding:11px 15px;border-radius:6px;font-size:14px}
-blockquote p{margin:4px 0}
-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
-th,td{border:1px solid #e5e7eb;padding:8px 10px;text-align:left;vertical-align:top}
-th{background:#f3f6fb}
-pre{background:#0f172a;color:#e2e8f0;padding:14px;border-radius:8px;overflow:auto;font-size:13px;line-height:1.6;white-space:pre-wrap}
-code{background:#eef1f6;padding:1px 5px;border-radius:4px;font-size:13px}
-pre code{background:none;padding:0}
-em{color:var(--sub)}
-strong{color:var(--navy)}
-a{color:var(--blue)}
-.footer{margin-top:30px;text-align:center;color:var(--sub);font-size:12px}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;
+  background:linear-gradient(90deg,var(--wine),var(--wine-l));transition:width .1s linear}
+.header{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0}
+.header .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 26px}
+.header .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;
+  color:var(--header-accent);border:1px solid rgba(212,160,170,.4);border-radius:999px;padding:4px 12px}
+.header .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--header-accent)}
+.hero{max-width:var(--maxw);margin:0 auto;padding:30px 26px 8px}
+.hero .eb{font-size:12px;font-weight:700;color:var(--wine);letter-spacing:.02em;margin-bottom:10px}
+.hero h1{font-size:30px;line-height:1.28;font-weight:800;margin:0 0 16px;color:var(--ink);letter-spacing:-.01em}
+.hero .tldr{background:var(--wine-tint);border:1px solid var(--wine-tint-ln);border-left:4px solid var(--wine);
+  border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.hero .tldr .lb{font-size:12px;font-weight:700;color:var(--wine-d);margin-bottom:8px}
+.hero .tldr ul{margin:0;padding-left:18px}
+.hero .tldr li{margin:4px 0;font-size:15px;color:var(--ink2)}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:12.5px;color:var(--muted);margin-bottom:18px}
+.hero .meta .vchip{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);
+  font-weight:700;border-radius:6px;padding:3px 9px;font-size:11.5px}
+.app{max-width:var(--maxw);margin:0 auto;padding:8px 26px 60px;
+  display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:start}
+.toc{position:sticky;top:24px}
+.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;
+  margin:0 0 10px;padding-left:2px}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}
+.toc li{counter-increment:toc;margin:1px 0}
+.toc a{display:flex;gap:9px;font-size:13.5px;color:var(--ink2);text-decoration:none;
+  padding:7px 10px;border-radius:8px;border-left:3px solid transparent;line-height:1.4}
+.toc a::before{content:counter(toc,decimal-leading-zero);color:var(--faint);font-weight:700;font-size:11.5px;flex:none}
+.toc a:hover{background:var(--panel2)}
+.toc a.active{background:var(--wine-tint);border-left-color:var(--wine);color:var(--wine-d);font-weight:700}
+.toc-toggle{display:none}
+.content{max-width:var(--readw);min-width:0}
+section.blk{scroll-margin-top:24px;margin-bottom:38px}
+.secl{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.05em;margin:0 0 12px}
+.secl::before{content:"";width:7px;height:15px;background:var(--wine);border-radius:2px;flex:none}
+section.blk h2{font-size:23px;font-weight:800;line-height:1.35;margin:0 0 14px;color:var(--ink);letter-spacing:-.01em}
+section.blk h3{font-size:17px;font-weight:700;margin:26px 0 10px;color:var(--wine-d)}
+section.blk p{margin:0 0 14px;color:var(--ink2)}
+section.blk ul,section.blk ol{margin:0 0 14px;padding-left:22px;color:var(--ink2)}
+section.blk li{margin:6px 0}
+section.blk ul.check,section.blk ul li.check{list-style:none;padding-left:0}
+section.blk li.check{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-bottom:1px solid var(--line)}
+section.blk li.check .ck{flex:none;width:20px;height:20px;border-radius:5px;background:var(--rL-bg);color:var(--rL-tx);
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+strong{color:var(--ink);font-weight:700}
+a.ln{color:var(--wine-l);text-decoration:none;border-bottom:1px solid var(--wine-tint-ln)}
+a.ln:hover{border-bottom-color:var(--wine-l)}
+.tbl-wrap{overflow-x:auto;margin:0 0 18px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px}
+blockquote{background:var(--wine-tint);border:1px solid var(--wine-tint-ln);border-left:4px solid var(--wine);
+  border-radius:8px;padding:12px 15px;margin:0 0 14px;font-size:14px;color:var(--ink2)}
+blockquote.warn{background:var(--rM-bg);border-left-color:var(--rM-tx);color:var(--rM-tx)}
+pre{background:#22101c;color:#f2e8ec;padding:15px 18px;border-radius:10px;overflow:auto;font-size:13.5px;
+  line-height:1.7;margin:0 0 16px}
+code{background:#f0e7ea;padding:1px 6px;border-radius:5px;font-size:13px;color:var(--wine-d)}
+pre code{background:none;color:inherit;padding:0}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:10px;margin:0 0 10px;overflow:hidden}
+.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:15px;font-weight:700;color:var(--ink);
+  display:flex;align-items:center;gap:10px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--wine-tint);
+  color:var(--wine-d);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+.faq details[open] summary{border-bottom:1px solid var(--line);color:var(--wine-d)}
+.faq .a{padding:14px 16px;font-size:14.5px;color:var(--ink2)}
+section.blk.verify .vn{font-size:12.5px;color:var(--muted);margin-top:10px}
+.notice{background:#fff;border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;
+  font-size:12.5px;color:var(--muted);line-height:1.7}
+#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--wine-tint-ln);background:var(--wine);color:#fff;font-size:18px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;
+  box-shadow:0 4px 14px rgba(58,21,37,.28)}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{background:var(--wine-d)}
+.footer{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0;margin-top:20px}
+.footer .wrap{max-width:var(--maxw);margin:0 auto;padding:34px 26px}
+.footer h3{font-size:20px;font-weight:800;margin:0 0 8px;color:#fff}
+.footer p{font-size:14px;color:rgba(255,255,255,.72);margin:0 0 6px;line-height:1.7}
+.footer .prof{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end}
+.footer .cta-f{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.footer .btn-f{background:#fff;color:var(--wine-d)}
+.footer .btn-f:hover{background:var(--header-accent)}
+.footer .btn-fo{background:transparent;color:#f4eef0;border-color:rgba(255,255,255,.35)}
+.footer .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:22px;padding-top:14px;
+  font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.7}
+@media(max-width:820px){
+  .hero h1{font-size:24px}
+  .app{grid-template-columns:1fr;gap:0;padding-top:0}
+  .toc{position:static;margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 8px}
+  .toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;
+    cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--wine-d);padding:9px 8px}
+  .toc-toggle .ar{transition:transform .2s}
+  .toc.closed .toc-toggle .ar{transform:rotate(-90deg)}
+  .toc .tt{display:none}
+  .toc ol{max-height:50vh;overflow:auto}
+  .toc.closed ol{display:none}
+  section.blk h2{font-size:20px}
+  th,td{white-space:nowrap}
+}
+@media print{
+  #progress,.toc,.cta-row,.footer .cta-f{display:none}
+  .header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .app{display:block}
+}
+
 </style>
 </head>
 <body>
-<div class="topbar"></div>
-<div class="wrap">
-<h1>조사 vs 즉시조치 판단</h1>
-<h2>3줄 요약</h2>
-<ul>
-<li>조사를 늦추지 않으면서 피해 주장자의 안전·업무환경을 함께 보호한다.</li>
-<li>분리·근무장소 변경·유급휴가 등은 필요성, 비례성, 당사자 의사를 기록한다.</li>
-<li>신고자·피해 주장자에 대한 불리한 처우가 되지 않도록 인사조치를 별도 검토한다.</li>
-</ul>
-<h2>0. 지금 당신의 위치</h2>
-<p>사전: 신고 접수 → [조사·즉시조치 판단] → 조사위원회 구성(003)</p>
-<h2>1. 반드시 할 일</h2>
-<ul>
-<li><input disabled="" type="checkbox"> 보복·접촉·증거훼손·신체안전 위험 점검</li>
-<li><input disabled="" type="checkbox"> 임시조치의 목적·기간·대상·당사자 의견 기록</li>
-<li><input disabled="" type="checkbox"> 조사 개시와 보호조치를 병행</li>
-</ul>
-<h2>2. 준비물</h2>
-<table>
-<thead>
-<tr>
-<th>준비물</th>
-<th>이유</th>
-<th>상태</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>위험평가 메모</td>
-<td>임시조치 필요성 판단</td>
-<td>확인</td>
-</tr>
-<tr>
-<td>근무·접촉 관계도</td>
-<td>분리 가능성 검토</td>
-<td>확인</td>
-</tr>
-</tbody></table>
-<h2>3. 작성·제출물</h2>
-<table>
-<thead>
-<tr>
-<th>문서</th>
-<th>제출처</th>
-<th>주의점</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>임시조치 결정서·통지</td>
-<td>인사·법무</td>
-<td>불리한 처우로 오인되지 않게 목적 명시</td>
-</tr>
-</tbody></table>
-<h2>4. 흔한 실수</h2>
-<ul>
-<li>피해 주장자만 일방적으로 이동 — 2차 피해 위험</li>
-<li>임시조치를 징계처럼 공표 — 비밀유지·공정성 위험</li>
-</ul>
-<h2>5. 전문가 상담 신호</h2>
-<p><strong>위험도:</strong> 전문가 필요 — 당사자 중 임원·대표가 있거나 안전 위험이 있는 경우</p>
-<h2>6. 인접 절차 연결</h2>
-<p>선행: PROC-HARS-001 · 후속: PROC-HARS-003</p>
-<h2>7. 근거 조문</h2>
-<table>
-<thead>
-<tr>
-<th>근거</th>
-<th>의미</th>
-<th>상태</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>근로기준법 제76조의3 제3항·제6항</td>
-<td>조사 중 보호조치·불리한 처우 금지</td>
-<td>MCP 통과(L2)</td>
-</tr>
-<tr>
-<td>남녀고용평등법 제14조 제3항·제6항</td>
-<td>성희롱 피해자 보호·불리한 처우 금지</td>
-<td>MCP 통과(L2)</td>
-</tr>
-</tbody></table>
-<h2>8. 다음 단계</h2>
-<p>→ PROC-HARS-003 조사위원회 구성·계획</p>
-<h2>상담 CTA</h2>
-<p>임시조치의 필요성과 당사자 의사 기록을 준비해 긴급 준법 상담을 신청한다.</p>
-<h2>최신성·면책 고지</h2>
-<p>일반 정보이며 구체적 인사조치의 적법성을 확정하지 않는다.</p>
+<div id="progress"></div>
+<button id="toTop" aria-label="맨 위로" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
-<div class="footer">© 로펌 머스트노우 · 문의 law@mustknow.co.kr</div>
+<header class="header">
+  <div class="wrap">
+    <span class="badge"><span class="dot"></span>조우성 변호사 · 법률 인사이트</span>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="eb">법률 인사이트 · 절차 카드</div>
+  <h1>조사 vs 즉시조치 판단</h1>
+  <div class="tldr">
+    <div class="lb">3줄 요약</div>
+    <ul>
+            <li>조사를 늦추지 않으면서 피해 주장자의 안전·업무환경을 함께 보호한다.</li>
+      <li>분리·근무장소 변경·유급휴가 등은 필요성, 비례성, 당사자 의사를 기록한다.</li>
+      <li>신고자·피해 주장자에 대한 불리한 처우가 되지 않도록 인사조치를 별도 검토한다.</li>
+    </ul>
+  </div>
+  <div class="meta">
+    <span>· 단계 사전</span>
+      <span>· PROC-HARS-002</span>
+      <span class="vchip">근거 후보 L1 · 게시 전 MCP 재확인</span>
+  </div>
 </div>
+
+<div class="app">
+  <nav class="toc" id="toc">
+    <button class="toc-toggle" onclick="document.getElementById('toc').classList.toggle('closed')">
+      목차 <span class="ar">▾</span>
+    </button>
+    <div class="tt">목차</div>
+    <ol id="toc-list">
+      <li><a href="#s1">지금 당신의 위치</a></li>
+      <li><a href="#s2">반드시 할 일</a></li>
+      <li><a href="#s3">준비물</a></li>
+      <li><a href="#s4">작성·제출물</a></li>
+      <li><a href="#s5">흔한 실수</a></li>
+      <li><a href="#s6">전문가 상담 신호</a></li>
+      <li><a href="#s7">인접 절차 연결</a></li>
+      <li><a href="#s8">근거 조문</a></li>
+      <li><a href="#s9">다음 단계</a></li>
+      <li><a href="#s10">상담 CTA</a></li>
+      <li><a href="#s13">실전 운영 부록 — 신고 접수부터 사후관리까지</a></li>
+      <li><a href="#s14">근거 카드 — 검증 전 후보</a></li>
+      <li><a href="#s15">면책·상담 CTA</a></li>
+    </ol>
+  </nav>
+
+  <main class="content">
+<section class="blk" id="s1">
+  <div class="secl">현재 위치</div>
+  <h2>0. 지금 당신의 위치</h2>
+  <p>사전: 신고 접수 → [조사·즉시조치 판단] → 조사위원회 구성(003)</p>
+</section>
+<section class="blk" id="s2">
+  <div class="secl">할 일</div>
+  <h2>1. 반드시 할 일</h2>
+  <ul><li class="check"><span class="ck">✓</span><span>보복·접촉·증거훼손·신체안전 위험 점검</span></li><li class="check"><span class="ck">✓</span><span>임시조치의 목적·기간·대상·당사자 의견 기록</span></li><li class="check"><span class="ck">✓</span><span>조사 개시와 보호조치를 병행</span></li></ul>
+</section>
+<section class="blk" id="s3">
+  <div class="secl">준비물</div>
+  <h2>2. 준비물</h2>
+  <div class="tbl-wrap"><table><thead><tr><th>준비물</th><th>이유</th><th>상태</th></tr></thead><tbody><tr><td>위험평가 메모</td><td>임시조치 필요성 판단</td><td>확인</td></tr><tr><td>근무·접촉 관계도</td><td>분리 가능성 검토</td><td>확인</td></tr></tbody></table></div>
+</section>
+<section class="blk" id="s4">
+  <div class="secl">작성·제출물</div>
+  <h2>3. 작성·제출물</h2>
+  <div class="tbl-wrap"><table><thead><tr><th>문서</th><th>제출처</th><th>주의점</th></tr></thead><tbody><tr><td>임시조치 결정서·통지</td><td>인사·법무</td><td>불리한 처우로 오인되지 않게 목적 명시</td></tr></tbody></table></div>
+</section>
+<section class="blk" id="s5">
+  <div class="secl">흔한 실수</div>
+  <h2>4. 흔한 실수</h2>
+  <ul><li>피해 주장자만 일방적으로 이동 — 2차 피해 위험</li><li>임시조치를 징계처럼 공표 — 비밀유지·공정성 위험</li></ul>
+</section>
+<section class="blk" id="s6">
+  <div class="secl">상담 신호</div>
+  <h2>5. 전문가 상담 신호</h2>
+  <p><strong>위험도:</strong> 전문가 필요 — 당사자 중 임원·대표가 있거나 안전 위험이 있는 경우</p>
+</section>
+<section class="blk" id="s7">
+  <div class="secl">절차 연결</div>
+  <h2>6. 인접 절차 연결</h2>
+  <p>선행: PROC-HARS-001 · 후속: PROC-HARS-003</p>
+</section>
+<section class="blk" id="s8">
+  <div class="secl">근거</div>
+  <h2>7. 근거 조문</h2>
+  <div class="tbl-wrap"><table><thead><tr><th>근거</th><th>의미</th><th>상태</th></tr></thead><tbody><tr><td>근로기준법 제76조의3 제3항·제6항</td><td>조사 중 보호조치·불리한 처우 금지</td><td>MCP 통과(L2)</td></tr><tr><td>남녀고용평등법 제14조 제3항·제6항</td><td>성희롱 피해자 보호·불리한 처우 금지</td><td>MCP 통과(L2)</td></tr></tbody></table></div>
+</section>
+<section class="blk" id="s9">
+  <div class="secl">다음 단계</div>
+  <h2>8. 다음 단계</h2>
+  <p>→ PROC-HARS-003 조사위원회 구성·계획</p>
+</section>
+<section class="blk" id="s10">
+  <div class="secl">상담</div>
+  <h2>상담 CTA</h2>
+  <p>임시조치의 필요성과 당사자 의사 기록을 준비해 긴급 준법 상담을 신청한다.</p>
+</section>
+<section class="blk" id="s11">
+  <div class="secl">11</div>
+  <h2>최신성·면책 고지</h2>
+  <p>일반 정보이며 구체적 인사조치의 적법성을 확정하지 않는다.</p>
+</section>
+<section class="blk verify" id="s12">
+  <div class="secl">검증 로그</div>
+  <h2>검증 로그</h2>
+  <div class="tbl-wrap"><table><thead><tr><th>인용</th><th>유형</th><th>웹</th><th>한국법 MCP</th><th>판정</th></tr></thead><tbody><tr><td>근로기준법 제76조의3</td><td>법령</td><td>대기</td><td>통과(MST 265959, 2026-07-31)</td><td>등재</td></tr><tr><td>남녀고용평등법 제14조</td><td>법령</td><td>대기</td><td>통과(MST 276851, 2026-07-31)</td><td>등재</td></tr></tbody></table></div>
+  <p class="vn">인용 조문·판례는 내부 WIKI 후보에서 출발해 한국법 MCP 교차검증 후 등재되었습니다. 게시 전 최신 현행성을 재확인합니다.</p>
+</section>
+<section class="blk" id="s13">
+  <div class="secl">운영 부록</div>
+  <h2>실전 운영 부록 — 신고 접수부터 사후관리까지</h2>
+  <p>### 1. 조사 72시간 프로토콜</p>
+  <div class="tbl-wrap"><table><thead><tr><th>구간</th><th>핵심 조치</th><th>산출물</th></tr></thead><tbody><tr><td>0~24시간</td><td>신고 접수·비밀유지·보복 방지·분리 필요성 판단</td><td>접수기록·보호조치 결정표</td></tr><tr><td>24~48시간</td><td>조사 범위·위원·자료보존·면담 순서 확정</td><td>조사계획서·증거보존 통지</td></tr><tr><td>48~72시간</td><td>신고인·피신고인·참고인 면담 준비</td><td>질문지·진술기록 양식</td></tr><tr><td>이후</td><td>사실인정·의견청취·징계·재발방지·불복관리</td><td>조사보고서·조치통지·후속점검표</td></tr></tbody></table></div>
+  <p>### 2. 조사 원칙</p>
+  <ul><li>신고인의 주장을 곧바로 사실로 확정하지 않되, 신고를 이유로 불이익을 주지 않는다.</li><li>피신고인에게 구체적 주장과 소명 기회를 제공하고, 조사자의 선입견을 질문에 반영하지 않는다.</li><li>조사 범위·자료·면담 순서를 기록하고, 개인정보와 명예를 보호하는 최소 범위로 공유한다.</li><li>진술을 요약할 때 핵심 표현을 임의로 바꾸지 않고, 정정 기회를 제공한다.</li><li>사실인정과 징계양정은 분리한다. 사실이 인정되지 않는다는 결론과 신고가 허위라는 결론도 구별한다.</li></ul>
+  <p>### 3. 면담 질문 프레임</p>
+  <div class="tbl-wrap"><table><thead><tr><th>대상</th><th>확인할 내용</th><th>피해야 할 질문</th></tr></thead><tbody><tr><td>신고인</td><td>언제·어디서·누가·무엇을·반복성·업무상 우위·피해·증거</td><td>“왜 바로 거부하지 않았나”처럼 피해자 탓으로 들리는 질문</td></tr><tr><td>피신고인</td><td>발언·행동의 사실, 업무상 필요, 당시 맥락, 목격자, 자료</td><td>결론을 전제한 추궁·모욕·비공식 압박</td></tr><tr><td>참고인</td><td>직접 경험과 전해 들은 말을 구분, 시간·장소·원문</td><td>다른 사람 진술을 보여주고 답을 유도</td></tr></tbody></table></div>
+  <p>### 4. 증거·개인정보 관리</p>
+  <ul><li>메신저·메일·근태·업무지시·회의록은 원본성, 전체 맥락, 작성·수정 시점을 함께 보관한다.</li><li>조사자료 폴더의 접근권한을 제한하고 다운로드·열람 로그를 남긴다.</li><li>관련 없는 건강정보·가족정보·소문은 수집하지 않거나 즉시 분리한다.</li><li>녹음·촬영 자료는 취득 경위와 편집 여부를 기록하고, 조사보고서에는 필요한 부분만 인용한다.</li><li>조사 종료 후 보존기간·폐기권한·노무·소송 대응 필요성을 정한다.</li></ul>
+  <p>### 5. 조사보고서 구조</p>
+  <p>1. 조사 목적·범위·기간·조사자</p>
+  <p>2. 신고 내용과 쟁점별 주장</p>
+  <p>3. 확인한 자료와 진술의 신빙성 평가</p>
+  <p>4. 인정 사실·불인정 사실·판단 유보 사실</p>
+  <p>5. 직장 내 괴롭힘 해당성 및 업무상 필요성·상당성 검토</p>
+  <p>6. 피해자 보호·피신고인 조치·재발방지·불복 안내</p>
+  <p>### 6. 금지행위 체크</p>
+  <ul><li class="check"><span class="ck">✓</span><span>신고인과 피신고인을 불필요하게 대질시키지 않는다.</span></li><li class="check"><span class="ck">✓</span><span>조사 중 인사평가·배치·계약갱신을 보복처럼 보이게 처리하지 않는다.</span></li><li class="check"><span class="ck">✓</span><span>조사 결과를 팀 단체방·외부에 공유하지 않는다.</span></li><li class="check"><span class="ck">✓</span><span>신고 철회를 조건으로 합의·사직·불이익을 요구하지 않는다.</span></li><li class="check"><span class="ck">✓</span><span>허위신고 판단은 객관적 반증과 고의 여부를 별도로 확인한다.</span></li></ul>
+</section>
+<section class="blk" id="s14">
+  <div class="secl">근거 후보</div>
+  <h2>근거 카드 — 검증 전 후보</h2>
+  <blockquote class="">근로기준법상 직장 내 괴롭힘 금지·사용자의 조사·보호·조치 의무와 개인정보·취업규칙·징계절차를 연결한다. 조문·행정해석·판례는 최신 전문 확인 후 확정 인용한다.</blockquote>
+  <div class="tbl-wrap"><table><thead><tr><th>쟁점</th><th>내부 연결</th><th>상태</th></tr></thead><tbody><tr><td>직장 내 괴롭힘 정의·사용자 조치</td><td>노동법 doctrine·내부조사 강의</td><td>검증대기(L1)</td></tr><tr><td>신고자·피해자 불리한 처우 금지</td><td>노동법·보복조치 실무</td><td>검증대기(L1)</td></tr><tr><td>조사자료 개인정보·비밀유지</td><td>개인정보·내부조사 증거 doctrine</td><td>검증대기(L1)</td></tr><tr><td>징계·인사조치 절차와 양정</td><td>노동법 징계·해고 실무</td><td>검증대기(L1)</td></tr></tbody></table></div>
+</section>
+<section class="blk" id="s15">
+  <div class="secl">면책·상담</div>
+  <h2>면책·상담 CTA</h2>
+  <p>본 자료는 일반적인 조사 운영 정보이며 특정 신고의 결론이나 징계 수위를 대신하지 않는다. 신고 접수 직후의 분리·보호조치, 조사자의 독립성, 보복 의심 인사조치, 개인정보 유출, 해고·징계가 연결된 경우 노무·변호사 검토를 즉시 받는다.</p>
+</section>
+
+    <div class="notice">
+      일반 정보이며 구체적 인사조치의 적법성을 확정하지 않는다.
+    </div>
+  </main>
+</div>
+
+<footer class="footer" id="consult">
+  <div class="wrap">
+    <div class="prof">
+      <div>
+        <h3>조우성 변호사 / 로펌 머스트노우</h3>
+        <p>기업 법무·개인 법률 실무 전문 변호사. 현장에서 바로 활용할 수 있는 절차 가이드를 제공합니다.</p>
+      </div>
+      <div class="cta-f">
+        <a class="btn btn-f" href="mailto:law@mustknow.co.kr">상담 문의하기</a>
+        <a class="btn btn-fo" href="https://woosungjo-law.github.io">더 많은 인사이트</a>
+      </div>
+    </div>
+    <div class="fine">
+      © 2026 조우성 변호사 / 로펌 머스트노우. 본 콘텐츠는 일반 법률 정보이며 법률 자문을 대체하지 않습니다.
+      인용 법령·판례는 작성일 기준이며 게시 전 현행성을 재확인합니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+var pb=document.getElementById('progress');
+function onScroll(){
+  var h=document.documentElement,b=document.body;
+  var st=h.scrollTop||b.scrollTop;
+  var sh=(h.scrollHeight||b.scrollHeight)-h.clientHeight;
+  pb.style.width=(sh>0?(st/sh*100):0)+'%';
+}
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+var toTop=document.getElementById('toTop');
+window.addEventListener('scroll',function(){
+  (window.scrollY||window.pageYOffset)>500?toTop.classList.add('show'):toTop.classList.remove('show');
+},{passive:true});
+var links=Array.prototype.slice.call(document.querySelectorAll('#toc-list a'));
+var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));}).filter(Boolean);
+function spy(){
+  var pos=(window.scrollY||window.pageYOffset)+120,cur=secs[0];
+  for(var i=0;i<secs.length;i++){if(secs[i].offsetTop<=pos)cur=secs[i];}
+  links.forEach(function(a){
+    a.classList.toggle('active',cur&&a.getAttribute('href')==='#'+cur.id);
+  });
+}
+window.addEventListener('scroll',spy,{passive:true});spy();
+document.querySelectorAll('#toc-list a').forEach(function(a){
+  a.addEventListener('click',function(){
+    if(window.innerWidth<=820)document.getElementById('toc').classList.add('closed');
+  });
+});
+</script>
 </body>
 </html>
