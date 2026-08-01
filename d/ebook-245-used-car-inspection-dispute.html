@@ -1,0 +1,348 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>중고차 성능점검 분쟁 — 사고이력·침수·주행거리 조작 대응 실무</title><style>
+/* ============================================================
+   법률 대시보드 전자책 — Apollo 기반 경량 커스텀 (공개 롱스크롤)
+   Apollo 토큰(버건디 액센트 + 웜 화이트 + 딥와인 헤더) 상속.
+   의뢰인 리포트(리스크레이더 6뷰)와 달리 공개 독서형 롱스크롤.
+   self-contained: 외부 CDN/폰트/이미지/스크립트 의존 없음.
+   ============================================================ */
+:root{
+  --bg:#f5f1f2; --panel:#ffffff; --panel2:#faf6f7;
+  --line:#ebe2e5; --line2:#ddccd2;
+  --ink:#2c1d26; --ink2:#56424c; --muted:#8a7b82; --faint:#b3a6ab;
+  --wine:#7a2e3a; --wine-d:#5a1f2b; --wine-l:#9c4456;
+  --wine-tint:#f4e9ec; --wine-tint-ln:#ecd7dd;
+  --header-bg:#3a1525; --header-bg2:#4e1f32; --header-accent:#d4a0aa;
+  --rH:#c74a3c; --rM-bg:#f8e4b8; --rM-tx:#7d520a; --rL-bg:#d6ecdb; --rL-tx:#287a54;
+  --amber:#b45309; --green:#287a54;
+  --font:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Noto Sans KR',sans-serif;
+  --maxw:1120px; --readw:760px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
+
+/* 읽기 진행바 */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;
+  background:linear-gradient(90deg,var(--wine),var(--wine-l));transition:width .1s linear}
+
+/* 헤더 표지 (딥와인, 유일한 딥 컬러) */
+.header{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0}
+.header .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 26px}
+.header .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;
+  color:var(--header-accent);border:1px solid rgba(212,160,170,.4);border-radius:999px;padding:4px 12px}
+.header .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--header-accent)}
+
+/* 히어로 */
+.hero{max-width:var(--maxw);margin:0 auto;padding:30px 26px 8px}
+.hero .eb{font-size:12px;font-weight:700;color:var(--wine);letter-spacing:.02em;margin-bottom:10px}
+.hero h1{font-size:30px;line-height:1.28;font-weight:800;margin:0 0 16px;color:var(--ink);letter-spacing:-.01em}
+.hero .tldr{background:var(--wine-tint);border:1px solid var(--wine-tint-ln);border-left:4px solid var(--wine);
+  border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.hero .tldr .lb{font-size:12px;font-weight:700;color:var(--wine-d);margin-bottom:8px}
+.hero .tldr ul{margin:0;padding-left:18px}
+.hero .tldr li{margin:4px 0;font-size:15px;color:var(--ink2)}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:12.5px;color:var(--muted);margin-bottom:18px}
+.hero .meta .vchip{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);
+  font-weight:700;border-radius:6px;padding:3px 9px;font-size:11.5px}
+.hero .cta-row{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:9px;
+  padding:11px 18px;text-decoration:none;cursor:pointer;border:1px solid transparent}
+.btn-p{background:var(--wine);color:#fff}
+.btn-p:hover{background:var(--wine-d)}
+.btn-o{background:#fff;color:var(--wine-d);border-color:var(--line2)}
+.btn-o:hover{background:var(--panel2)}
+
+/* 셸: 좌측 목차 + 본문 */
+.app{max-width:var(--maxw);margin:0 auto;padding:8px 26px 60px;
+  display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:start}
+
+/* 목차 (데스크톱 = 좌측 sticky) */
+.toc{position:sticky;top:24px}
+.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;
+  margin:0 0 10px;padding-left:2px}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}
+.toc li{counter-increment:toc;margin:1px 0}
+.toc a{display:flex;gap:9px;font-size:13.5px;color:var(--ink2);text-decoration:none;
+  padding:7px 10px;border-radius:8px;border-left:3px solid transparent;line-height:1.4}
+.toc a::before{content:counter(toc,decimal-leading-zero);color:var(--faint);font-weight:700;font-size:11.5px;flex:none}
+.toc a:hover{background:var(--panel2)}
+.toc a.active{background:var(--wine-tint);border-left-color:var(--wine);color:var(--wine-d);font-weight:700}
+.toc-toggle{display:none}
+
+/* 본문 */
+.content{max-width:var(--readw);min-width:0}
+section.blk{scroll-margin-top:24px;margin-bottom:38px}
+.secl{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.05em;margin:0 0 12px}
+.secl::before{content:"";width:7px;height:15px;background:var(--wine);border-radius:2px;flex:none}
+section.blk h2{font-size:23px;font-weight:800;line-height:1.35;margin:0 0 14px;color:var(--ink);letter-spacing:-.01em}
+section.blk h3{font-size:17px;font-weight:700;margin:26px 0 10px;color:var(--wine-d)}
+section.blk p{margin:0 0 14px;color:var(--ink2)}
+section.blk ul,section.blk ol{margin:0 0 14px;padding-left:22px;color:var(--ink2)}
+section.blk li{margin:6px 0}
+strong{color:var(--ink);font-weight:700}
+a.ln{color:var(--wine-l);text-decoration:none;border-bottom:1px solid var(--wine-tint-ln)}
+a.ln:hover{border-bottom-color:var(--wine-l)}
+
+/* 핵심요약 카드 */
+.summary{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.summary .lb{font-size:11px;font-weight:700;color:var(--wine-d);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.summary ul{margin:0;padding-left:18px}
+
+/* 근거 카드 (조문·판례) */
+.ev{background:#fff;border:1px solid var(--line);border-left:4px solid var(--wine);border-radius:10px;
+  padding:13px 15px;margin:0 0 12px}
+.ev .top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px}
+.ev .kind{font-size:11px;font-weight:700;color:#fff;background:var(--wine);border-radius:5px;padding:2px 8px}
+.ev .kind.law{background:var(--wine-d)}
+.ev .kind.case{background:var(--amber)}
+.ev .cite{font-size:13.5px;font-weight:700;color:var(--ink)}
+.ev .vtick{margin-left:auto;font-size:11px;font-weight:700;color:var(--rL-tx);background:var(--rL-bg);border-radius:5px;padding:2px 7px}
+.ev .gist{font-size:14px;color:var(--ink2);margin:0}
+.ev .date{font-size:12px;color:var(--muted);margin-top:5px}
+
+/* 다이어그램 — 플로우 / 체크리스트 (CSS·SVG only) */
+.figure{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin:0 0 18px}
+.figure .cap{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:12px}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px}
+.flow .step{flex:1;min-width:120px;background:var(--wine-tint);border:1px solid var(--wine-tint-ln);
+  border-radius:10px;padding:11px 12px;position:relative}
+.flow .step .n{font-size:11px;font-weight:700;color:var(--wine)}
+.flow .step .t{font-size:13.5px;font-weight:700;color:var(--ink);margin-top:2px}
+.flow .step .d{font-size:12.5px;color:var(--ink2);margin-top:3px}
+.checklist{list-style:none;margin:0;padding:0}
+.checklist li{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+.checklist li:last-child{border-bottom:none}
+.checklist .ck{flex:none;width:20px;height:20px;border-radius:5px;background:var(--rL-bg);color:var(--rL-tx);
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+
+/* 위험도 칩 */
+.chip{display:inline-flex;align-items:center;justify-content:center;min-width:34px;font-size:11px;font-weight:500;
+  border-radius:6px;padding:3px 8px;margin-right:4px}
+.c-H{background:var(--rH);color:#fff}
+.c-M{background:var(--rM-bg);color:var(--rM-tx)}
+.c-L{background:var(--rL-bg);color:var(--rL-tx)}
+
+/* 표 */
+.tbl-wrap{overflow-x:auto;margin:0 0 18px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px}
+
+/* FAQ (아코디언) */
+.faq details{background:#fff;border:1px solid var(--line);border-radius:10px;margin:0 0 10px;overflow:hidden}
+.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:15px;font-weight:700;color:var(--ink);
+  display:flex;align-items:center;gap:10px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--wine-tint);
+  color:var(--wine-d);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+.faq details[open] summary{border-bottom:1px solid var(--line);color:var(--wine-d)}
+.faq .a{padding:14px 16px;font-size:14.5px;color:var(--ink2)}
+
+/* 최신성·면책 고지 */
+.notice{background:#fff;border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;
+  font-size:12.5px;color:var(--muted);line-height:1.7}
+
+/* 맨 위로 버튼 */
+#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--wine-tint-ln);background:var(--wine);color:#fff;font-size:18px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;
+  box-shadow:0 4px 14px rgba(58,21,37,.28)}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{background:var(--wine-d)}
+
+/* 푸터 프로필 + 상담 CTA */
+.footer{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0;margin-top:20px}
+.footer .wrap{max-width:var(--maxw);margin:0 auto;padding:34px 26px}
+.footer h3{font-size:20px;font-weight:800;margin:0 0 8px;color:#fff}
+.footer p{font-size:14px;color:rgba(255,255,255,.72);margin:0 0 6px;line-height:1.7}
+.footer .prof{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end}
+.footer .cta-f{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.footer .btn-f{background:#fff;color:var(--wine-d)}
+.footer .btn-f:hover{background:var(--header-accent)}
+.footer .btn-fo{background:transparent;color:#f4eef0;border-color:rgba(255,255,255,.35)}
+.footer .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:22px;padding-top:14px;
+  font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.7}
+
+/* ── 모바일 (≤820px) ── */
+@media(max-width:820px){
+  .hero h1{font-size:24px}
+  .app{grid-template-columns:1fr;gap:0;padding-top:0}
+  .toc{position:static;margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 8px}
+  .toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;
+    cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--wine-d);padding:9px 8px}
+  .toc-toggle .ar{transition:transform .2s}
+  .toc.closed .toc-toggle .ar{transform:rotate(-90deg)}
+  .toc .tt{display:none}
+  .toc ol{max-height:50vh;overflow:auto}
+  .toc.closed ol{display:none}
+  section.blk h2{font-size:20px}
+  th,td{white-space:nowrap}
+}
+@media print{
+  #progress,.toc,.cta-row,.footer .cta-f{display:none}
+  .header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .app{display:block}
+}
+</style></head><body><div id="progress"></div><button id="toTop" aria-label="맨 위로">?</button><header class="header"><div class="wrap"><span class="badge"><span class="dot"></span>조우성 변호사 ? 법률 인사이트</span></div></header><div class="hero"><div class="eb">전자책 대시보드 ? 실무 가이드</div><h1>중고차 성능점검 분쟁 — 사고이력·침수·주행거리 조작 대응 실무</h1><div class="tldr"><div class="lb">3줄 요약 (TL;DR)</div><ul><li>원문 Markdown의 제목?본문?표?체크리스트를 반영한 공개용 HTML입니다.</li><li>문서의 핵심 내용과 실무상 확인 포인트를 한 화면에서 확인할 수 있습니다.</li><li>구체적인 사안은 최신 법령?판례와 사실관계 확인이 필요합니다.</li></ul></div><div class="meta"><span>원문: EBOOK-245-중고차-성능점검-분쟁.md</span><span class="vchip">원문 기반 HTML</span></div><div class="cta-row"><a class="btn btn-p" href="#s1">핵심 내용 보기</a><a class="btn btn-o" href="#faq">확인 사항</a></div></div><div class="app"><nav class="toc" id="toc"><div class="tt">목차</div><ol id="toc-list"><li><a href="#s1">본문</a></li><li><a href="#s2">3줄 요약 (TL;DR)</a></li><li><a href="#s3">1. 성능·상태점검 고지의무 — 자동차관리법 제58조의 실체</a></li><li><a href="#s4">2. 손해배상액 산정 — 고가매수차액 구조가 핵심</a></li><li><a href="#s5">3. 계약해제 요건 — 중대 하자일 때만 해제 가능</a></li><li><a href="#s6">4. 실무 체크리스트 — 오늘 바로 확인할 것</a></li><li><a href="#s7">5. 자주 묻는 질문 (Q&amp;amp;A)</a></li><li><a href="#s8">최신성·면책 고지</a></li><li><a href="#s9">검증 로그 (내부용 — 게시 시 제거)</a></li></ol></nav><main class="content"><section class="blk" id="s1"><div class="secl">SECTION</div><blockquote>
+<p>[!web] 웹으로 보기
+(게시 후 여기에 https://woosungjo-law.github.io/share/d/&lt;토큰&gt;.html 삽입)</p>
+</blockquote>
+<p><em>출처: 조우성 변호사 / 로펌 머스트노우 | 문의: law@mustknow.co.kr</em></p>
+<h1>중고차 성능점검 분쟁 — 사고이력·침수·주행거리 조작 대응 실무</h1></section><section class="blk" id="s2"><div class="secl">SECTION</div><h2>3줄 요약 (TL;DR)</h2>
+<ul>
+<li>자동차관리법 제58조: <strong>매매업자는 계약 전 성능·상태점검 내용(사고이력·침수·주행거리 등)을 서면 고지 의무</strong> — 미고지 시 불법행위 책임 성립 가능(대법원 2022다291702)</li>
+<li>손해배상액은 <strong>전액 환불이 아닌 '고가매수차액' 구조</strong> — 매매대금 − 적정시가(하자 없는 상태 시가) = 차액 산정, 감정·시세자료 확보가 핵심</li>
+<li>계약해제는 <strong>중대 하자(불법개조·침수·시동불가·전기·전장계통 반복 고장 등)</strong> 시에만 인정 — 수원지법 2018가단520751</li>
+</ul>
+<hr /></section><section class="blk" id="s3"><div class="secl">SECTION</div><h2>1. 성능·상태점검 고지의무 — 자동차관리법 제58조의 실체</h2>
+<p><strong>한눈에</strong>
+- 자동차매매업자(종사원 포함)는 계약 체결 전 <strong>서면으로</strong> 성능·상태점검 내용, 사고이력, 압류·저당권 등록 여부, 수수료, 매수가격 조사산정 내용 고지 의무
+- 사고이력·침수·주행거리조작 = <strong>고지대상 중요사항</strong> — 미고지 시 불법행위 책임 성립 가능
+- 딜러가 "몰랐다" 항변해도 사고이력·용도이력 등 중요사항은 <strong>원칙적 고지대상</strong></p>
+<p>자동차관리법 제58조 제1항에 따라 자동차매매업자가 자동차를 매도 또는 매매 알선하는 경우, 국토교통부령으로 정하는 바에 따라 다음 각 호의 사항을 매매계약 체결 전에 매수인에게 <strong>서면으로 고지</strong>하여야 한다.</p>
+<blockquote>
+<p>[근거·조문] <strong>자동차관리법 제58조 제1항</strong> (시행 2026-06-16) — 자동차관리사업자 등의 고지 및 관리의 의무 등
+✓ 웹 화이트리스트 + 한국법 MCP 현행 확인</p>
+<p>[근거·조문] <strong>자동차관리법 시행규칙 제120조 [별지 제82호 서식]</strong> — 중고자동차성능·상태점검기록부(자동차가격조사·산정서) 서식 규정
+✓ 웹 화이트리스트 + 한국법 MCP 현행 확인</p>
+</blockquote>
+<p>고지의무 대상 주요 사항: ① 구조·장치 등 성능·상태 점검 내용(점검 장면 촬영 사진 포함, 점검일로부터 120일 이내) ② 압류 및 저당권 등록 여부 ③ 수수료 또는 요금 ④ 매수인 원하는 경우 자동차가격 조사·산정 내용. 자동차성능·상태점검을 하려는 자는 사업장별로 시설·장비·자격기준을 갖춰 시장·군수·구청장에게 신고해야 한다(제58조 제2항).</p>
+<p>대법원 2022다291702는 자동차매매업자가 매수인에게 보험사고이력 및 대여용도 사용이력을 고지하지 않은 사안에서, <strong>고지의무 위반에 따른 불법행위 책임</strong>을 인정하고, 손해배상액 산정은 <strong>'매매대금 − 적정시가(하자 없는 상태 시가)' = 고가매수차액</strong> 구조로 해야 한다고 판시했다. 매수인이 중고차를 점유·사용함으로써 얻은 사용이익액만 공제한 원심은 법리오해라며 파기환송했다.</p>
+<blockquote>
+<p>[근거·판례] <strong>대법원 2022.8.18. 선고 2022다291702 판결</strong> — 고지의무 위반 불법행위 책임 인정, 손해배상액 = 고가매수차액(매매대금 − 적정시가) 산정, 사용이익 공제만 한 원심 파기
+✓ 실존·현행 확인 (폐기·변경 없음)</p>
+</blockquote>
+<hr /></section><section class="blk" id="s4"><div class="secl">SECTION</div><h2>2. 손해배상액 산정 — 고가매수차액 구조가 핵심</h2>
+<p><strong>한눈에</strong>
+- 단순 전액 환불이 아님 — <strong>매매대금 − 적정시가(하자 없는 상태 시가)</strong> = 고가매수차액 구조
+- 감정·시세자료 확보가 핵심 — 대법원 2022다291702
+- 성능점검자/협회가 이미 지급한 조정금 → 손해에서 <strong>공제</strong>(부진정연대) — 서부지법 2017나30792/35469</p>
+<p>손해배상액은 <strong>단순 전액 환불이 아닌 '매매대금 − 적정시가' = 고가매수차액</strong> 구조로 산정한다. 매수인이 중고차의 성능상태를 제대로 고지받았다면 지급하였을 <strong>적정 시가</strong>를 감정·시세자료로 입증하는 것이 핵심이다(대법원 2022다291702).</p>
+<p>성능점검자/협회가 이미 지급한 조정금은 <strong>부진정연대 관계</strong>로 중복 회수 방지를 위해 손해에서 <strong>공제</strong>된다(서울서부지방법원 2017나30792/35469).</p>
+<p>주행거리 허위 고지의 경우: <strong>허위 주행거리 전제 매매대금 vs 실제 주행거리 기준 적정가액 차액</strong> = 재산손해 중심, 위자료는 제한적(대구지법 2021나312082).</p>
+<p>정품 약속 위반 비정품 수리: 수리비 전액 손해 인정, 대차료도 폭넓게 인정(실무 포인트).</p>
+<hr /></section><section class="blk" id="s5"><div class="secl">SECTION</div><h2>3. 계약해제 요건 — 중대 하자일 때만 해제 가능</h2>
+<p><strong>한눈에</strong>
+- 불법개조·침수·시동불가 등 <strong>계약목적 달성 불능</strong> → 해제 인정
+- 전기·전장계통 반복 고장도 목적 달성 불능 가능 — 수원지법 2018가단520751
+- 단순 수리 가능한 경미 하자는 해제 사유 안 됨 — 손해배상 청구로 정리</p>
+<p>계약해제는 <strong>중대 하자</strong>가 있어야 인정된다. 불법개조·침수·시동불가 등 <strong>계약목적 달성 불능</strong>인 경우 해제 인정되며, 해제 시 부수손해(보험료·세금 등)도 청구 가능(수원지방법원 2018가단520751). 전기·전장계통 반복 고장도 목적 달성 불능으로 볼 여지가 있다. 단순 수리 가능한 경미 하자는 해제 사유가 되지 않고 <strong>손해배상 청구</strong>로 정리된다.</p>
+<hr /></section><section class="blk" id="s6"><div class="secl">SECTION</div><h2>4. 실무 체크리스트 — 오늘 바로 확인할 것</h2>
+<p><strong>한눈에</strong>
+- 고지의무: 딜러가 "몰랐다" 항변해도 사고이력·용도이력 등 중요사항은 원칙적 고지대상
+- 손해 구조: 매매대금 − 적정시가(하자 없는 상태 시가)로 산정, 감정 필수
+- 해제 요건: 침수·불법개조·시동불가 등 중대 하자면 해제 + 부수손해(보험료·세금 등)
+- 정비 후속 분쟁: 정품 약속 위반 비정품 수리 → 수리비 전액 손해, 대차료도 폭넓게 인정
+- 증빙: 광고·구두설명 문서화, 성능점검기록부 보관 필수</p>
+<table>
+<thead>
+<tr>
+<th>확인 항목</th>
+<th>세부 내용</th>
+<th>중요도</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>성능점검기록부 수령 여부</td>
+<td>계약 전 서면 교부 받았는지, 점검일 120일 이내인지, 사진 포함 여부</td>
+<td>★★★</td>
+</tr>
+<tr>
+<td>사고이력·침수·주행거리 고지 누락</td>
+<td>보험사고이력, 대여용도(렌트/리스) 이력, 주행거리계 조작 여부 고지 여부</td>
+<td>★★★</td>
+</tr>
+<tr>
+<td>적정시가 입증 자료</td>
+<td>동일 연식·주행거리·사양 매물 시세, 한국자동차진단보증협회 시세표, 감정평가서</td>
+<td>★★★</td>
+</tr>
+<tr>
+<td>성능점검자 조정금 수령 여부</td>
+<td>이미 지급받은 조정금액 확인 → 손해배상액에서 공제 필요</td>
+<td>★★</td>
+</tr>
+<tr>
+<td>계약서 특약·구두약정 문서화</td>
+<td>'사고 없음', '실주행거리 보장', '정품 수리' 등 특약 기재 및 녹취·문자 보관</td>
+<td>★★</td>
+</tr>
+<tr>
+<td>정비 내역서·견적서</td>
+<td>수리 내역, 부품 구분(정품/비정품), 공임, 표준정비시간 공개 여부</td>
+<td>★★</td>
+</tr>
+</tbody>
+</table>
+<hr /></section><section class="blk" id="s7"><div class="secl">SECTION</div><h2>5. 자주 묻는 질문 (Q&amp;A)</h2>
+<p><strong>Q. 중고차 샀는데 딜러가 사고이력 모르고 팔았대요. 환불받을 수 있나요?</strong>
+딜러가 "몰랐다"고 항변하더라도 자동차관리법 제58조상 <strong>사고이력·용도이력 등 중요사항은 원칙적 고지대상</strong>입니다. 고지의무 위반으로 <strong>불법행위 책임(손해배상)</strong>이 성립할 수 있습니다(대법원 2022다291702). 다만 <strong>전액 환불(계약해제)</strong>은 중대 하자(침수·불법개조·시동불가 등)일 때만 가능하고, 보통은 <strong>고가매수차액(매매대금 − 적정시가) 손해배상</strong>으로 정리됩니다.</p>
+<p><strong>Q. 주행거리가 5만km라고 했는데 실제로는 12만km였어요. 어떻게 대응하나요?</strong>
+주행거리 허위 고지는 <strong>가치하락 손해</strong>(허위 주행거리 전제 매매대금 − 실제 주행거리 기준 적정가액 차액)가 주된 손해입니다(대구지법 2021나312082). 재산손해 중심이고 위자료는 제한적입니다. 계기판 사진, 정비이력, 보험사고이력조회서 등으로 실제 주행거리 입증이 관건입니다.</p>
+<p><strong>Q. 성능점검기록부에 '사고 없음'으로 돼 있는데 나중에 알고 보니 대파 사고 차량이었어요. 성능점검자도 책임지나요?</strong>
+성능점검자/협회가 <strong>거짓 점검</strong>을 했거나 <strong>실제 점검 내용과 다른 내용</strong>을 제공했다면 자동차관리법 제58조 제8항 제2호 위반으로 책임질 수 있습니다. 다만 성능점검자/협회가 이미 지급한 <strong>조정금은 손해배상액에서 공제</strong>됩니다(부진정연대, 서부지법 2017나30792/35469). 중복 회수는 안 됩니다.</p>
+<p><strong>Q. 침수차인 줄 모르고 샀는데 계약 취소하고 전액 돌려받을 수 있나요?</strong>
+침수는 <strong>계약목적 달성 불능</strong>의 중대 하자로 보아 <strong>계약해제(전액 환불 + 부수손해)</strong>가 인정될 가능성이 높습니다(수원지법 2018가단520751). 침수 사실 입증(보험사고이력, 정비이력, 침수 흔적 사진 등)과 성능점검기록부상 침수 고지 누락이 관건입니다.</p>
+<hr /></section><section class="blk" id="s8"><div class="secl">SECTION</div><h2>최신성·면책 고지</h2>
+<p>본 자료는 <strong>2026-07-28</strong> 기준으로 작성되었으며, 인용 법령·판례는 작성 시점의 현행성을 확인한 것입니다.
+법령은 개정될 수 있고 사안마다 결론이 달라질 수 있으므로, 실제 의사결정 전 최신 법령과 개별 사실관계 확인이 필요합니다.
+본 자료는 일반적인 법률 정보 제공이며 특정 사안에 대한 법률 자문이 아닙니다.</p>
+<hr /></section><section class="blk" id="s9"><div class="secl">SECTION</div><h2>검증 로그 (내부용 — 게시 시 제거)</h2>
+<table>
+<thead>
+<tr>
+<th>인용</th>
+<th>유형</th>
+<th>웹 화이트리스트</th>
+<th>한국법 MCP</th>
+<th>판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>자동차관리법 제58조 제1항</td>
+<td>조문</td>
+<td>확인</td>
+<td>FOUND</td>
+<td>등재</td>
+</tr>
+<tr>
+<td>자동차관리법 시행규칙 제120조 [별지 제82호 서식]</td>
+<td>조문</td>
+<td>확인</td>
+<td>FOUND</td>
+<td>등재</td>
+</tr>
+<tr>
+<td>대법원 2022다291702</td>
+<td>판례</td>
+<td>확인</td>
+<td>FOUND</td>
+<td>등재</td>
+</tr>
+<tr>
+<td>수원지법 2018가단520751</td>
+<td>판례</td>
+<td>확인</td>
+<td>FOUND</td>
+<td>등재</td>
+</tr>
+<tr>
+<td>대구지법 2021나312082</td>
+<td>판례</td>
+<td>확인</td>
+<td>FOUND</td>
+<td>등재</td>
+</tr>
+<tr>
+<td>서울서부지법 2017나30792/35469</td>
+<td>판례</td>
+<td>확인</td>
+<td>FOUND</td>
+<td>등재</td>
+</tr>
+</tbody>
+</table></section><section class="blk faq" id="faq"><div class="secl">NOTICE</div><h2>확인 사항</h2><div class="notice">이 문서는 일반적인 법률 정보 제공을 위한 자료입니다. 구체적인 사실관계와 최신 법령?판례에 따라 결론이 달라질 수 있습니다.</div></section></main></div><footer class="footer"><div class="wrap"><h3>조우성 변호사</h3><p>실무에 바로 활용할 수 있는 법률 지식과 대응 가이드를 제공합니다.</p></div></footer></body></html>
