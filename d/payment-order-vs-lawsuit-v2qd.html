@@ -1,180 +1,453 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
-<title>지급명령 vs 소송: 2주 안에 채권 회수하는 간이절차 선택 기준 — 조우성 변호사</title>
-<meta name="description" content="지급명령 vs 소송 선택 기준: 채권 회수 간이절차. 민사소송법 독촉절차. 이의신청 2주. 확정 시 집행권원.">
-<style>
-:root{--bg:#f0f2f5;--panel:#fff;--panel2:#f8f9fb;--line:#e2e5ea;--ink:#111827;--ink2:#374151;--muted:#6b7280;--navy:#1a3a6b;--navy-d:#0f2547;--navy-l:#2e6be6;--navy-tint:#e8edf5;--green-bg:#ecfdf5;--green:#059669;--amber:#f59e0b;--amber-bg:#fffbeb;--red:#dc2626;--font:-apple-system,BlinkMacSystemFont,Malgun Gothic,sans-serif;--readw:760px}
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>지급명령 vs 소송: 2주 안에 채권 회수하는 &#x27;간이절차&#x27; 선택 기준</title><style>
+/* ============================================================
+   법률 대시보드 전자책 — Apollo 기반 경량 커스텀 (공개 롱스크롤)
+   Apollo 토큰(버건디 액센트 + 웜 화이트 + 딥와인 헤더) 상속.
+   의뢰인 리포트(리스크레이더 6뷰)와 달리 공개 독서형 롱스크롤.
+   self-contained: 외부 CDN/폰트/이미지/스크립트 의존 없음.
+   ============================================================ */
+:root{
+  --bg:#f5f1f2; --panel:#ffffff; --panel2:#faf6f7;
+  --line:#ebe2e5; --line2:#ddccd2;
+  --ink:#2c1d26; --ink2:#56424c; --muted:#8a7b82; --faint:#b3a6ab;
+  --wine:#7a2e3a; --wine-d:#5a1f2b; --wine-l:#9c4456;
+  --wine-tint:#f4e9ec; --wine-tint-ln:#ecd7dd;
+  --header-bg:#3a1525; --header-bg2:#4e1f32; --header-accent:#d4a0aa;
+  --rH:#c74a3c; --rM-bg:#f8e4b8; --rM-tx:#7d520a; --rL-bg:#d6ecdb; --rL-tx:#287a54;
+  --amber:#b45309; --green:#287a54;
+  --font:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Noto Sans KR',sans-serif;
+  --maxw:1120px; --readw:760px;
+}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.75}
-#pb{position:fixed;top:0;left:0;height:4px;background:var(--navy-l);width:0%;z-index:9999;transition:width .2s}
-nav{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:12px 20px}
-nav .inner{max-width:1120px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
-nav .subtitle{font-size:13px;color:var(--muted)}
-.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-d) 100%);color:#fff;padding:48px 24px 40px;text-align:center}
-.hero h1{font-size:clamp(22px,4vw,36px);font-weight:800;margin:0 0 8px;line-height:1.35}
-.hero .meta{font-size:14px;opacity:.8;margin-top:12px}
-.wrap{max-width:var(--readw);margin:0 auto;padding:32px 20px 60px}
-h2{font-size:22px;margin:40px 0 16px;padding-bottom:8px;border-bottom:2px solid var(--navy-l);color:var(--navy-d)}
-h3{font-size:17px;margin:24px 0 12px;color:var(--ink2)}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 24px;margin-bottom:20px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
-.card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08)}
-.summary-box{background:var(--amber-bg);border-left:4px solid var(--amber);border-radius:0 8px 8px 0;padding:16px 20px;margin:20px 0}
-.checklist{list-style:none;padding:0}
-.checklist li{padding:8px 0 8px 28px;position:relative}
-.checklist li::before{content:"\2610";position:absolute;left:0;color:var(--navy-l);font-size:18px}
-.faq details{border:1px solid var(--line);border-radius:8px;margin-bottom:10px;overflow:hidden}
-.faq summary{padding:14px 18px;cursor:pointer;font-weight:600;background:var(--panel2);transition:background .2s}
-.faq summary:hover{background:var(--navy-tint)}
-.faq .ans{padding:14px 18px;line-height:1.7}
-footer{background:var(--navy-d);color:rgba(255,255,255,.7);text-align:center;padding:32px 20px;font-size:13px;line-height:1.8}
-#btt{position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:50%;background:var(--navy-l);color:#fff;border:none;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.2);transition:opacity .3s,transform .3s;opacity:0;pointer-events:none}
-#btt.show{opacity:1;pointer-events:auto}
-#btt:hover{transform:translateY(-2px)}
-.flow{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:16px 20px;margin:16px 0;font-family:monospace;font-size:13px;line-height:2;white-space:pre}
-.flow .arrow{color:var(--navy-l)}
-.flow .yes{color:var(--red)}
-.flow .no{color:var(--green)}
-@media(max-width:640px){.hero{padding:32px 16px 28px}.wrap{padding:20px 14px 40px}.card{padding:16px}}
-</style>
-</head>
-<body>
-<div id="pb"></div>
-<nav><div class="inner"><span>민사소송 실무</span><span class="subtitle">조우성 변호사</span></div></nav>
-<div class="hero">
-<h1>지급명령 vs 소송: 2주 안에 채권 회수하는 간이절차 선택 기준</h1>
-<p style="font-size:15px;opacity:.9;max-width:600px;margin:12px auto 0">민사소송법 독촉절차: 지급명령 vs 일반소송, 상황별 선택 기준과 2주 완성 체크리스트!</p>
-<div class="meta">작성일: 2026-07-11 · 읽는 시간: 5분</div>
-</div>
-<div class="wrap">
-<div class="card" style="background:var(--navy-tint);border-left:4px solid var(--navy-l)">
-<h3 style="margin-top:0">3줄 요약 (TL;DR)</h3>
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
+
+/* 읽기 진행바 */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;
+  background:linear-gradient(90deg,var(--wine),var(--wine-l));transition:width .1s linear}
+
+/* 헤더 표지 (딥와인, 유일한 딥 컬러) */
+.header{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0}
+.header .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 26px}
+.header .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;
+  color:var(--header-accent);border:1px solid rgba(212,160,170,.4);border-radius:999px;padding:4px 12px}
+.header .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--header-accent)}
+
+/* 히어로 */
+.hero{max-width:var(--maxw);margin:0 auto;padding:30px 26px 8px}
+.hero .eb{font-size:12px;font-weight:700;color:var(--wine);letter-spacing:.02em;margin-bottom:10px}
+.hero h1{font-size:30px;line-height:1.28;font-weight:800;margin:0 0 16px;color:var(--ink);letter-spacing:-.01em}
+.hero .tldr{background:var(--wine-tint);border:1px solid var(--wine-tint-ln);border-left:4px solid var(--wine);
+  border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.hero .tldr .lb{font-size:12px;font-weight:700;color:var(--wine-d);margin-bottom:8px}
+.hero .tldr ul{margin:0;padding-left:18px}
+.hero .tldr li{margin:4px 0;font-size:15px;color:var(--ink2)}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:12.5px;color:var(--muted);margin-bottom:18px}
+.hero .meta .vchip{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);
+  font-weight:700;border-radius:6px;padding:3px 9px;font-size:11.5px}
+.hero .cta-row{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:9px;
+  padding:11px 18px;text-decoration:none;cursor:pointer;border:1px solid transparent}
+.btn-p{background:var(--wine);color:#fff}
+.btn-p:hover{background:var(--wine-d)}
+.btn-o{background:#fff;color:var(--wine-d);border-color:var(--line2)}
+.btn-o:hover{background:var(--panel2)}
+
+/* 셸: 좌측 목차 + 본문 */
+.app{max-width:var(--maxw);margin:0 auto;padding:8px 26px 60px;
+  display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:start}
+
+/* 목차 (데스크톱 = 좌측 sticky) */
+.toc{position:sticky;top:24px}
+.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;
+  margin:0 0 10px;padding-left:2px}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}
+.toc li{counter-increment:toc;margin:1px 0}
+.toc a{display:flex;gap:9px;font-size:13.5px;color:var(--ink2);text-decoration:none;
+  padding:7px 10px;border-radius:8px;border-left:3px solid transparent;line-height:1.4}
+.toc a::before{content:counter(toc,decimal-leading-zero);color:var(--faint);font-weight:700;font-size:11.5px;flex:none}
+.toc a:hover{background:var(--panel2)}
+.toc a.active{background:var(--wine-tint);border-left-color:var(--wine);color:var(--wine-d);font-weight:700}
+.toc-toggle{display:none}
+
+/* 본문 */
+.content{max-width:var(--readw);min-width:0}
+section.blk{scroll-margin-top:24px;margin-bottom:38px}
+.secl{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.05em;margin:0 0 12px}
+.secl::before{content:"";width:7px;height:15px;background:var(--wine);border-radius:2px;flex:none}
+section.blk h2{font-size:23px;font-weight:800;line-height:1.35;margin:0 0 14px;color:var(--ink);letter-spacing:-.01em}
+section.blk h3{font-size:17px;font-weight:700;margin:26px 0 10px;color:var(--wine-d)}
+section.blk p{margin:0 0 14px;color:var(--ink2)}
+section.blk ul,section.blk ol{margin:0 0 14px;padding-left:22px;color:var(--ink2)}
+section.blk li{margin:6px 0}
+strong{color:var(--ink);font-weight:700}
+a.ln{color:var(--wine-l);text-decoration:none;border-bottom:1px solid var(--wine-tint-ln)}
+a.ln:hover{border-bottom-color:var(--wine-l)}
+
+/* 핵심요약 카드 */
+.summary{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.summary .lb{font-size:11px;font-weight:700;color:var(--wine-d);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.summary ul{margin:0;padding-left:18px}
+
+/* 근거 카드 (조문·판례) */
+.ev{background:#fff;border:1px solid var(--line);border-left:4px solid var(--wine);border-radius:10px;
+  padding:13px 15px;margin:0 0 12px}
+.ev .top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px}
+.ev .kind{font-size:11px;font-weight:700;color:#fff;background:var(--wine);border-radius:5px;padding:2px 8px}
+.ev .kind.law{background:var(--wine-d)}
+.ev .kind.case{background:var(--amber)}
+.ev .cite{font-size:13.5px;font-weight:700;color:var(--ink)}
+.ev .vtick{margin-left:auto;font-size:11px;font-weight:700;color:var(--rL-tx);background:var(--rL-bg);border-radius:5px;padding:2px 7px}
+.ev .gist{font-size:14px;color:var(--ink2);margin:0}
+.ev .date{font-size:12px;color:var(--muted);margin-top:5px}
+
+/* 다이어그램 — 플로우 / 체크리스트 (CSS·SVG only) */
+.figure{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin:0 0 18px}
+.figure .cap{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:12px}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px}
+.flow .step{flex:1;min-width:120px;background:var(--wine-tint);border:1px solid var(--wine-tint-ln);
+  border-radius:10px;padding:11px 12px;position:relative}
+.flow .step .n{font-size:11px;font-weight:700;color:var(--wine)}
+.flow .step .t{font-size:13.5px;font-weight:700;color:var(--ink);margin-top:2px}
+.flow .step .d{font-size:12.5px;color:var(--ink2);margin-top:3px}
+.checklist{list-style:none;margin:0;padding:0}
+.checklist li{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+.checklist li:last-child{border-bottom:none}
+.checklist .ck{flex:none;width:20px;height:20px;border-radius:5px;background:var(--rL-bg);color:var(--rL-tx);
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+
+/* 위험도 칩 */
+.chip{display:inline-flex;align-items:center;justify-content:center;min-width:34px;font-size:11px;font-weight:500;
+  border-radius:6px;padding:3px 8px;margin-right:4px}
+.c-H{background:var(--rH);color:#fff}
+.c-M{background:var(--rM-bg);color:var(--rM-tx)}
+.c-L{background:var(--rL-bg);color:var(--rL-tx)}
+
+/* 표 */
+.tbl-wrap{overflow-x:auto;margin:0 0 18px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px}
+
+/* FAQ (아코디언) */
+.faq details{background:#fff;border:1px solid var(--line);border-radius:10px;margin:0 0 10px;overflow:hidden}
+.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:15px;font-weight:700;color:var(--ink);
+  display:flex;align-items:center;gap:10px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--wine-tint);
+  color:var(--wine-d);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+.faq details[open] summary{border-bottom:1px solid var(--line);color:var(--wine-d)}
+.faq .a{padding:14px 16px;font-size:14.5px;color:var(--ink2)}
+
+/* 최신성·면책 고지 */
+.notice{background:#fff;border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;
+  font-size:12.5px;color:var(--muted);line-height:1.7}
+
+/* 맨 위로 버튼 */
+#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--wine-tint-ln);background:var(--wine);color:#fff;font-size:18px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;
+  box-shadow:0 4px 14px rgba(58,21,37,.28)}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{background:var(--wine-d)}
+
+/* 푸터 프로필 + 상담 CTA */
+.footer{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0;margin-top:20px}
+.footer .wrap{max-width:var(--maxw);margin:0 auto;padding:34px 26px}
+.footer h3{font-size:20px;font-weight:800;margin:0 0 8px;color:#fff}
+.footer p{font-size:14px;color:rgba(255,255,255,.72);margin:0 0 6px;line-height:1.7}
+.footer .prof{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end}
+.footer .cta-f{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.footer .btn-f{background:#fff;color:var(--wine-d)}
+.footer .btn-f:hover{background:var(--header-accent)}
+.footer .btn-fo{background:transparent;color:#f4eef0;border-color:rgba(255,255,255,.35)}
+.footer .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:22px;padding-top:14px;
+  font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.7}
+
+/* ── 모바일 (≤820px) ── */
+@media(max-width:820px){
+  .hero h1{font-size:24px}
+  .app{grid-template-columns:1fr;gap:0;padding-top:0}
+  .toc{position:static;margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 8px}
+  .toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;
+    cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--wine-d);padding:9px 8px}
+  .toc-toggle .ar{transition:transform .2s}
+  .toc.closed .toc-toggle .ar{transform:rotate(-90deg)}
+  .toc .tt{display:none}
+  .toc ol{max-height:50vh;overflow:auto}
+  .toc.closed ol{display:none}
+  section.blk h2{font-size:20px}
+  th,td{white-space:nowrap}
+}
+@media print{
+  #progress,.toc,.cta-row,.footer .cta-f{display:none}
+  .header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .app{display:block}
+}
+</style></head><body><div id="progress"></div><button id="toTop" aria-label="맨 위로">?</button><header class="header"><div class="wrap"><span class="badge"><span class="dot"></span>조우성 변호사 ? 법률 인사이트</span></div></header><div class="hero"><div class="eb">전자책 대시보드 ? 실무 가이드</div><h1>지급명령 vs 소송: 2주 안에 채권 회수하는 &#x27;간이절차&#x27; 선택 기준</h1><div class="tldr"><div class="lb">3줄 요약 (TL;DR)</div><ul><li>원문 Markdown의 제목?본문?표?체크리스트를 반영한 공개용 HTML입니다.</li><li>문서의 핵심 내용과 실무상 확인 포인트를 한 화면에서 확인할 수 있습니다.</li><li>구체적인 사안은 최신 법령?판례와 사실관계 확인이 필요합니다.</li></ul></div><div class="meta"><span>원문: 20260711_payment_order_vs_lawsuit.md</span><span class="vchip">원문 기반 HTML</span></div><div class="cta-row"><a class="btn btn-p" href="#s1">핵심 내용 보기</a><a class="btn btn-o" href="#faq">확인 사항</a></div></div><div class="app"><nav class="toc" id="toc"><div class="tt">목차</div><ol id="toc-list"><li><a href="#s1">본문</a></li><li><a href="#s2">3줄 요약 (TL;DR)</a></li><li><a href="#s3">1. 지급명령(독촉절차) vs 일반소송 개요 비교</a></li><li><a href="#s4">2. 지급명령 선택 기준 — 이럴 때 지급명령이 유리하다</a></li><li><a href="#s5">3. 일반소송 선택 기준 — 이럴 때는 소송이 필요하다</a></li><li><a href="#s6">4. 지급명령 절차 단계별 체크리스트</a></li><li><a href="#s7">FAQ</a></li><li><a href="#s8">종합: 선택 기준 의사결정표</a></li><li><a href="#s9">관련 법령</a></li></ol></nav><main class="content"><section class="blk" id="s1"><div class="secl">SECTION</div><blockquote>
+<p>[!web] 웹으로 보기
+https://woosungjo-law.github.io/share/d/payment-order-vs-lawsuit-v2qd.html</p>
+</blockquote>
+<p><em>출처: 조우성 변호사 / 로펌 머스트노우 | 문의: law@mustknow.co.kr</em></p>
+<h1>지급명령 vs 소송: 2주 안에 채권 회수하는 '간이절차' 선택 기준</h1></section><section class="blk" id="s2"><div class="secl">SECTION</div><h2>3줄 요약 (TL;DR)</h2>
 <ul>
 <li><strong>지급명령</strong>(독촉절차)은 채무자가 다투지 않을 명확한 금전채권에 대해 2주 만에 집행권원을 얻는 신속·저비용 절차이다(민사소송법 제462조).</li>
-<li>지급명령의 핵심은 <strong>송달</strong>: 채무자 주소를 정확히 알아야 하며 공시송달은 불가능하다. 주소 불명 시 일반소송 선택해야 한다.</li>
-<li>지급명령에 대한 이의신청(2주 내)이 있으면 자동으로 일반 민사소송으로 이행된다. 다툼의 여지가 크면 처음부터 소송이 효율적이다.</li>
+<li>지급명령의 핵심은 <strong>송달</strong>: 채무자의 주소를 정확히 알아야 하며, 공시송달은 불가능하다. 주소 불명 시 일반소송을 선택해야 한다.</li>
+<li>지급명령에 대한 이의신청(2주 내)이 있으면 자동으로 일반 민사소송으로 이행되므로, 다툼의 여지가 크면 처음부터 소송을 선택하는 것이 효율적이다.</li>
 </ul>
-</div>
-<h2>1. 지급명령(독촉절차) vs 일반소송 개요 비교</h2>
-<div class="card">
-<p><strong>핵심</strong><br>
-지급명령은 법원이 채무자를 심문하지 않고 서면 심리만으로 지급을 명하는 간이절차다. 채무자가 2주 내 이의신청을 하지 않으면 확정판결과 동일한 효력이 발생한다(민사소송법 제474조).</p>
+<hr /></section><section class="blk" id="s3"><div class="secl">SECTION</div><h2>1. 지급명령(독촉절차) vs 일반소송 개요 비교</h2>
+<p><strong>한눈에</strong>
+- 지급명령은 법원이 채무자를 심문하지 않고 서면 심리만으로 지급을 명하는 간이절차다.
+- 채무자가 2주 내 이의신청을 하지 않으면 확정판결과 동일한 효력이 발생한다(민사소송법 제474조).</p>
+<p><strong>비교표</strong></p>
 <table>
-<tr><th>항목</th><th>지급명령 (독촉절차)</th><th>일반 민사소송</th></tr>
-<tr><td>소요 시간</td><td>2주~1개월 (이의 없을 시)</td><td>3~12개월 이상</td></tr>
-<tr><td>비용 (인지대)</td><td>소송의 약 1/5 수준</td><td>통상 인지대</td></tr>
-<tr><td>절차</td><td>서면 심리만 (변론 없음)</td><td>변론·증거조사·출석 필요</td></tr>
-<tr><td>송달 방식</td><td>보통송달만 (공시송달 불가)</td><td>공시송달 가능</td></tr>
-<tr><td>이의신청 시</td><td>자동 소송 이행</td><td>해당 없음</td></tr>
-<tr><td>확정 시 효력</td><td>확정판결과 동일</td><td>확정판결</td></tr>
+<thead>
+<tr>
+<th>항목</th>
+<th>지급명령 (독촉절차)</th>
+<th>일반 민사소송</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>소요 시간</td>
+<td>2주~1개월 (이의 없을 시)</td>
+<td>3~12개월 이상</td>
+</tr>
+<tr>
+<td>비용 (인지대)</td>
+<td>소송의 약 1/5 수준</td>
+<td>통상 인지대</td>
+</tr>
+<tr>
+<td>절차</td>
+<td>서면 심리만 (변론 없음)</td>
+<td>변론·증거조사·출석 필요</td>
+</tr>
+<tr>
+<td>채무자 심문</td>
+<td>없음</td>
+<td>있음 (변론기일)</td>
+</tr>
+<tr>
+<td>송달 방식</td>
+<td>보통송달만 가능 (공시송달 불가)</td>
+<td>공시송달 가능</td>
+</tr>
+<tr>
+<td>이의신청 시</td>
+<td>자동 소송 이행</td>
+<td>해당 없음</td>
+</tr>
+<tr>
+<td>확정 시 효력</td>
+<td>확정판결과 동일 (집행권원)</td>
+<td>확정판결</td>
+</tr>
+<tr>
+<td>적합 대상</td>
+<td>3천만 원 이하, 다툼 없는 채권</td>
+<td>다툼 있는 사안, 고액 채권</td>
+</tr>
+</tbody>
 </table>
-</div>
-<h2>2. 지급명령 선택 기준</h2>
-<div class="card">
-<p><strong>지급명령이 유리한 경우</strong></p>
+<hr /></section><section class="blk" id="s4"><div class="secl">SECTION</div><h2>2. 지급명령 선택 기준 — 이럴 때 지급명령이 유리하다</h2>
+<p><strong>지급명령이 유리한 경우 (5가지)</strong></p>
 <table>
-<tr><th>기준</th><th>판단 포인트</th></tr>
-<tr><td>채무의 명확성</td><td>채무자가 채무 사실 자체는 부인하지 않을 것으로 예상</td></tr>
-<tr><td>채무자 주소</td><td>주소를 정확히 알고 있고 송달 가능 (공시송달 불가)</td></tr>
-<tr><td>채권 금액</td><td>3천만 원 이하 (소액사건 기준)</td></tr>
-<tr><td>시간</td><td>가능한 한 빠른 집행권원 확보 필요 (2주 목표)</td></tr>
-<tr><td>비용</td><td>소송보다 저렴한 비용으로 진행하고 싶을 때</td></tr>
+<thead>
+<tr>
+<th>기준</th>
+<th>판단 포인트</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>① 채무의 명확성</td>
+<td>채무자가 채무 사실 자체는 부인하지 않을 것으로 예상</td>
+</tr>
+<tr>
+<td>② 채무자 주소</td>
+<td>주소를 정확히 알고 있고 송달 가능 (공시송달 불가!)</td>
+</tr>
+<tr>
+<td>③ 채권 금액</td>
+<td>3천만 원 이하 (소액사건 기준)</td>
+</tr>
+<tr>
+<td>④ 시간</td>
+<td>가능한 한 빠른 집행권원 확보 필요 (2주 목표)</td>
+</tr>
+<tr>
+<td>⑤ 비용</td>
+<td>소송보다 저렴한 비용으로 진행하고 싶을 때</td>
+</tr>
+</tbody>
 </table>
-<div class="summary-box">
-핵심 포인트: 지급명령 신청 자체로 소멸시효 중단 효력이 발생하며, 이의신청 시 소송으로 이행되어도 그 효력이 유지된다. 이의신청은 전략적 패배가 아니라 절차 전환일 뿐이다.
-</div>
-</div>
-<h3>지급명령 신청 흐름</h3>
-<div class="flow">신청서 제출 <span class="arrow">→</span> 법원 심사 <span class="arrow">→</span> 지급명령 발령
-                            <span class="arrow">↓</span>
-               <span class="yes">┌─</span> 채무자 2주 내 이의? <span class="yes">─┐</span>
-                <span class="arrow">↓</span>                      <span class="arrow">↓</span>
-              <span class="yes">YES</span>                       <span class="no">NO</span>
-                <span class="arrow">↓</span>                      <span class="arrow">↓</span>
-      자동 소송 이행              지급명령 확정
-                                      <span class="arrow">↓</span>
-                                  강제집행</div>
-<h2>3. 일반소송 선택 기준</h2>
-<div class="card">
+<p><strong>지급명령 신청 흐름</strong></p>
+<pre><code>신청서 제출 → 법원 심사 → 지급명령 발령
+                             ↓
+                ┌──── 채무자 2주 이내 이의? ────┐
+                ↓                              ↓
+              YES                             NO
+                ↓                              ↓
+      자동으로 일반소송 이행           지급명령 확정
+      (소송으로 전환)                (집행권원 획득)
+                                        ↓
+                                    강제집행
+</code></pre>
+<blockquote>
+<p>[!warning] 핵심 포인트
+"지급명령을 신청했다가 이의신청을 당하면 시간·비용만 낭비하는 것일까?" 그렇지 않다. 지급명령 신청 자체로 소멸시효 중단 효력이 발생하며, 소송 이행 시에도 그 효력이 유지된다. 이의신청은 '전략적 패배'가 아니라 '절차 전환'일 뿐이다.</p>
+</blockquote>
+<hr /></section><section class="blk" id="s5"><div class="secl">SECTION</div><h2>3. 일반소송 선택 기준 — 이럴 때는 소송이 필요하다</h2>
+<p><strong>소송이 필요한 경우 (4가지)</strong></p>
 <table>
-<tr><th>상황</th><th>이유</th></tr>
-<tr><td>채무자가 채무 자체를 부인</td><td>사실관계·법리 다툼 필요, 변론·증거조사 필수</td></tr>
-<tr><td>채무자 주소 불명</td><td>공시송달 필요 (지급명령은 공시송달 불가)</td></tr>
-<tr><td>채권액 3천만 원 초과</td><td>소송비용이 상대적으로 부담되지 않음</td></tr>
-<tr><td>가압류 등 보전처분 병행 필요</td><td>소송과 동시에 가압류 신청 가능</td></tr>
+<thead>
+<tr>
+<th>상황</th>
+<th>이유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>채무자가 채무 자체를 부인</td>
+<td>사실관계·법리 다툼 필요, 변론·증거조사 필수</td>
+</tr>
+<tr>
+<td>채무자 주소 불명</td>
+<td>공시송달 필요 (지급명령은 공시송달 불가)</td>
+</tr>
+<tr>
+<td>채권액이 고액 (3천만 원 초과)</td>
+<td>소송비용이 상대적으로 부담되지 않음</td>
+</tr>
+<tr>
+<td>가압류 등 보전처분 병행 필요</td>
+<td>소송과 동시에 가압류 신청 가능</td>
+</tr>
+</tbody>
 </table>
-</div>
-<h2>4. 지급명령 절차 단계별 체크리스트</h2>
-<h3>Step 1: 신청 전 준비</h3>
-<div class="card">
-<ul class="checklist">
-<li>채권의 존재를 증명할 서류 확보 (계약서, 차용증, 세금계산서)</li>
-<li>채무자의 정확한 주소 확인 (주민등록초본 발급)</li>
-<li>관할 법원 확인 (채무자 주소지 지방법원)</li>
-<li>인지대·송달료 준비 (인지대는 소송의 약 1/5)</li>
-</ul>
-</div>
-<h3>Step 2: 신청 및 진행</h3>
-<div class="card">
-<ul class="checklist">
-<li>지급명령 신청서 작성 (청구금액·채권발생 근거·첨부서류)</li>
-<li>법원 접수 (방문·우편·전자소송)</li>
-<li>법원의 지급명령 발령 대기 (통상 1~2주)</li>
-<li>채무자 송달 확인</li>
-</ul>
-</div>
-<h3>Step 3: 채무자 반응별 대응</h3>
+<hr /></section><section class="blk" id="s6"><div class="secl">SECTION</div><h2>4. 지급명령 절차 단계별 체크리스트</h2>
+<p><strong>Step 1: 신청 전 준비</strong>
+- [ ] 채권의 존재를 증명할 서류 확보 (계약서, 차용증, 세금계산서 등)
+- [ ] 채무자의 정확한 주소 확인 (주민등록초본 발급)
+- [ ] 관할 법원 확인 (채무자 주소지 지방법원)
+- [ ] 인지대·송달료 준비 (인지대는 소송의 약 1/5)</p>
+<p><strong>Step 2: 신청 및 진행</strong>
+- [ ] 지급명령 신청서 작성 (청구금액·채권발생 근거·첨부서류)
+- [ ] 법원 접수 (방문·우편·전자소송)
+- [ ] 법원의 지급명령 발령 대기 (통상 1~2주)
+- [ ] 채무자 송달 확인</p>
+<p><strong>Step 3: 채무자 반응별 대응</strong></p>
 <table>
-<tr><th>채무자 반응</th><th>대응 방안</th></tr>
-<tr><td>2주 내 이의신청 없음</td><td>지급명령 확정 → 강제집행</td></tr>
-<tr><td>2주 내 이의신청</td><td>자동 소송 이행 → 본안소송 진행</td></tr>
-<tr><td>송달 불능</td><td>공시송달 불가 → 소송 재신청</td></tr>
+<thead>
+<tr>
+<th>채무자 반응</th>
+<th>대응 방안</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2주 내 이의신청 없음</td>
+<td>지급명령 확정 → 강제집행 (집행문 불필요)</td>
+</tr>
+<tr>
+<td>2주 내 이의신청</td>
+<td>자동 소송 이행 → 본안소송 진행</td>
+</tr>
+<tr>
+<td>송달 불능</td>
+<td>공시송달 불가 → 소송 재신청 (소송으로 전환)</td>
+</tr>
+</tbody>
 </table>
-<h2>FAQ</h2>
-<div class="faq">
-<details><summary>Q1. 지급명령 신청 비용은 얼마인가요?</summary>
-<div class="ans">인지대가 일반 소송의 약 1/5 수준입니다. 1,000만 원 채권 기준 소송 인지대가 약 5만 원이라면 지급명령은 약 1만 원 수준입니다. 송달료도 적게 듭니다.</div></details>
-<details><summary>Q2. 지급명령이 확정되면 바로 강제집행이 가능한가요?</summary>
-<div class="ans">네, 지급명령이 확정되면 확정판결과 동일한 효력이 발생합니다(민사소송법 제474조). 별도 집행문 부여 없이 지급명령 정본만으로 강제집행을 신청할 수 있습니다.</div></details>
-<details><summary>Q3. 지급명령에 이의신청하면 불이익이 있나요?</summary>
-<div class="ans">전혀 없습니다. 이의신청은 채무자의 당연한 권리이며 사건이 자동으로 일반 민사소송으로 이행됩니다. 지급명령 신청 시 낸 인지대는 소송 인지대로 전환되어 추가 부담이 최소화됩니다.</div></details>
-</div>
-<h2>종합: 선택 기준 의사결정표</h2>
+<hr /></section><section class="blk" id="s7"><div class="secl">SECTION</div><h2>FAQ</h2>
+<p><strong>Q1. 지급명령 신청 비용은 얼마인가요?</strong></p>
+<blockquote>
+<p>인지대가 일반 소송의 약 1/5 수준입니다. 예를 들어 1,000만 원 채권 기준 소송 인지대가 약 5만 원이라면, 지급명령은 약 1만 원 수준입니다. 송달료도 소송보다 적게 듭니다.</p>
+</blockquote>
+<p><strong>Q2. 지급명령이 확정되면 바로 강제집행이 가능한가요?</strong></p>
+<blockquote>
+<p>네, 지급명령이 확정되면 확정판결과 동일한 효력(집행권원)이 발생합니다(민사소송법 제474조). 별도의 집행문 부여 없이 지급명령 정본만으로 강제집행(압류·추심 등)을 신청할 수 있습니다.</p>
+</blockquote>
+<p><strong>Q3. 지급명령에 이의신청하면 불이익이 있나요?</strong></p>
+<blockquote>
+<p>전혀 없습니다. 이의신청은 채무자의 당연한 권리이며, 이의신청이 있으면 사건이 자동으로 일반 민사소송 절차로 이행됩니다. 지급명령 신청 시 낸 인지대는 소송 인지대로 전환되어 추가 부담이 최소화됩니다.</p>
+</blockquote>
+<hr /></section><section class="blk" id="s8"><div class="secl">SECTION</div><h2>종합: 선택 기준 의사결정표</h2>
 <table>
-<tr><th>상황</th><th>추천 절차</th><th>근거</th></tr>
-<tr><td>채무 명확 + 주소 O + 3천만 원 이하</td><td>지급명령</td><td>신속·저비용</td></tr>
-<tr><td>채무 다툼 있음</td><td>일반소송</td><td>변론·증거조사 필요</td></tr>
-<tr><td>주소 불명</td><td>일반소송</td><td>공시송달 필요</td></tr>
-<tr><td>고액 (3천만 원 초과)</td><td>일반소송</td><td>소송비용 부담 낮음</td></tr>
-<tr><td>가압류 병행 필요</td><td>일반소송</td><td>보전처분 병행 가능</td></tr>
-<tr><td>소멸시효 임박</td><td>지급명령 (또는 소송)</td><td>신속한 시효중단 필요</td></tr>
+<thead>
+<tr>
+<th>상황</th>
+<th>추천 절차</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>채무 명확 + 주소 O + 3천만 원 이하</td>
+<td>지급명령</td>
+<td>신속·저비용</td>
+</tr>
+<tr>
+<td>채무 다툼 있음</td>
+<td>일반소송</td>
+<td>변론·증거조사 필요</td>
+</tr>
+<tr>
+<td>주소 불명</td>
+<td>일반소송</td>
+<td>공시송달 필요</td>
+</tr>
+<tr>
+<td>고액 (3천만 원 초과)</td>
+<td>일반소송</td>
+<td>소송비용 부담 낮음</td>
+</tr>
+<tr>
+<td>가압류 병행 필요</td>
+<td>일반소송</td>
+<td>보전처분 병행 가능</td>
+</tr>
+<tr>
+<td>소멸시효 임박</td>
+<td>지급명령 (또는 소송)</td>
+<td>신속한 시효중단 필요</td>
+</tr>
+</tbody>
 </table>
-<h2>관련 법령</h2>
+<hr /></section><section class="blk" id="s9"><div class="secl">SECTION</div><h2>관련 법령</h2>
 <table>
-<tr><th>조문</th><th>내용</th></tr>
-<tr><td>민사소송법 제462조</td><td>독촉절차의 요건 (금전·대체물·유가증권 청구)</td></tr>
-<tr><td>민사소송법 제463조</td><td>관할 법원 (전속관할)</td></tr>
-<tr><td>민사소송법 제469조</td><td>지급명령 송달 및 이의신청 기간 (2주)</td></tr>
-<tr><td>민사소송법 제472조</td><td>이의신청 시 소송 이행</td></tr>
-<tr><td>민사소송법 제474조</td><td>지급명령 확정의 효력 (확정판결과 동일)</td></tr>
+<thead>
+<tr>
+<th>조문</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>민사소송법 제462조</td>
+<td>독촉절차의 요건 (금전·대체물·유가증권 청구)</td>
+</tr>
+<tr>
+<td>민사소송법 제463조</td>
+<td>관할 법원 (전속관할)</td>
+</tr>
+<tr>
+<td>민사소송법 제469조</td>
+<td>지급명령 송달 및 이의신청 기간 (2주)</td>
+</tr>
+<tr>
+<td>민사소송법 제472조</td>
+<td>이의신청 시 소송 이행</td>
+</tr>
+<tr>
+<td>민사소송법 제474조</td>
+<td>지급명령 확정의 효력 (확정판결과 동일)</td>
+</tr>
+</tbody>
 </table>
-<div style="background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:16px 20px;margin:24px 0;font-size:13px;color:var(--ink2)">
-<strong>면책 고지</strong><br>본 가이드는 2026년 7월 기준 민사소송법을 기반으로 합니다. 구체적 사안은 채권액·채무자 상황·소멸시효 등을 종합 고려하여 결정해야 하므로 반드시 전문 변호사와 상담하시기 바랍니다.
-</div>
-</div>
-<footer>
-조우성 변호사 / 로펌 머스트노우<br>
-문의: law@mustknow.co.kr | 2026년 7월
-</footer>
-<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">위로</button>
-<script>
-const pb=document.getElementById('pb');
-const btt=document.getElementById('btt');
-window.addEventListener('scroll',function(){const h=document.documentElement;const p=h.scrollTop/(h.scrollHeight-h.clientHeight);pb.style.width=Math.min(p*100,100)+'%';btt.classList.toggle('show',h.scrollTop>300)});
-</script>
-</body>
-</html>
+<hr />
+<p>[!IMPORTANT]
+본 가이드는 2026년 7월 기준 민사소송법을 기반으로 합니다. 구체적 사안은 채권액·채무자의 자산 상황·소멸시효 임박 여부 등을 종합 고려하여 결정해야 하므로, 반드시 전문 변호사와 상담하시기 바랍니다.</p></section><section class="blk faq" id="faq"><div class="secl">NOTICE</div><h2>확인 사항</h2><div class="notice">이 문서는 일반적인 법률 정보 제공을 위한 자료입니다. 구체적인 사실관계와 최신 법령?판례에 따라 결론이 달라질 수 있습니다.</div></section></main></div><footer class="footer"><div class="wrap"><h3>조우성 변호사</h3><p>실무에 바로 활용할 수 있는 법률 지식과 대응 가이드를 제공합니다.</p></div></footer></body></html>

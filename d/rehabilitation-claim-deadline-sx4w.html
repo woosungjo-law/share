@@ -1,186 +1,431 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
-<title>회생절차 채권신고: 1개월 안에 신고하지 않으면 어떻게 되나 — 조우성 변호사</title>
-<meta name="description" content="회생절차 채권신고 기한과 불이행 시 효과. 채무자회생법 제148조~제151조 기준.">
-<style>
-:root{--bg:#f0f2f5;--panel:#fff;--panel2:#f8f9fb;--line:#e2e5ea;--ink:#111827;--ink2:#374151;--muted:#6b7280;--navy:#1a3a6b;--navy-d:#0f2547;--navy-l:#2e6be6;--navy-tint:#e8edf5;--green-bg:#ecfdf5;--green:#059669;--amber:#f59e0b;--amber-bg:#fffbeb;--red:#dc2626;--red-bg:#fef2f2;--font:-apple-system,BlinkMacSystemFont,Malgun Gothic,sans-serif;--readw:760px}
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>회생절차 채권신고: 법원이 정한 1개월 안에 신고하지 않으면 어떻게 되나</title><style>
+/* ============================================================
+   법률 대시보드 전자책 — Apollo 기반 경량 커스텀 (공개 롱스크롤)
+   Apollo 토큰(버건디 액센트 + 웜 화이트 + 딥와인 헤더) 상속.
+   의뢰인 리포트(리스크레이더 6뷰)와 달리 공개 독서형 롱스크롤.
+   self-contained: 외부 CDN/폰트/이미지/스크립트 의존 없음.
+   ============================================================ */
+:root{
+  --bg:#f5f1f2; --panel:#ffffff; --panel2:#faf6f7;
+  --line:#ebe2e5; --line2:#ddccd2;
+  --ink:#2c1d26; --ink2:#56424c; --muted:#8a7b82; --faint:#b3a6ab;
+  --wine:#7a2e3a; --wine-d:#5a1f2b; --wine-l:#9c4456;
+  --wine-tint:#f4e9ec; --wine-tint-ln:#ecd7dd;
+  --header-bg:#3a1525; --header-bg2:#4e1f32; --header-accent:#d4a0aa;
+  --rH:#c74a3c; --rM-bg:#f8e4b8; --rM-tx:#7d520a; --rL-bg:#d6ecdb; --rL-tx:#287a54;
+  --amber:#b45309; --green:#287a54;
+  --font:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Noto Sans KR',sans-serif;
+  --maxw:1120px; --readw:760px;
+}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.75}
-#pb{position:fixed;top:0;left:0;height:4px;background:linear-gradient(90deg,var(--navy-l),var(--navy));z-index:99;width:0%;transition:width .15s}
-.wrap{margin:0 auto;padding:0 20px;max-width:var(--readw)}
-.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-d) 100%);color:#fff;padding:60px 0 48px;text-align:center}
-.hero h1{font-size:28px;font-weight:700;margin:0 0 12px;line-height:1.4}
-.hero .sub{font-size:14px;color:rgba(255,255,255,0.75);margin:0}
-.hero .badge{display:inline-block;background:rgba(255,255,255,0.15);border-radius:4px;padding:2px 10px;font-size:12px;margin-bottom:8px}
-.tldr{background:var(--navy-tint);border-left:4px solid var(--navy-l);border-radius:0 8px 8px 0;padding:20px 24px;margin:32px 0}
-.tldr h2{margin:0 0 12px;font-size:18px;color:var(--navy)}
-.tldr p{margin:4px 0;font-size:14px;color:var(--ink2)}
-h2{font-size:22px;color:var(--navy);margin:40px 0 16px;padding-bottom:8px;border-bottom:2px solid var(--line)}
-h3{font-size:18px;color:var(--navy);margin:28px 0 12px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:20px 24px;margin:16px 0}
-.card p{margin:4px 0 12px}
-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
-th{background:var(--navy-tint);font-weight:600;text-align:left;padding:10px 12px;border:1px solid var(--line);color:var(--navy)}
-td{padding:10px 12px;border:1px solid var(--line);vertical-align:top}
-tr:nth-child(even){background:var(--panel2)}
-.summary-box{background:var(--green-bg);border-radius:8px;padding:14px 18px;margin:12px 0;font-size:14px;color:var(--ink2);border-left:3px solid var(--green)}
-.alert-box{background:var(--red-bg);border-radius:8px;padding:14px 18px;margin:12px 0;font-size:14px;border-left:3px solid var(--red)}
-.checklist{list-style:none;padding:0;margin:8px 0}
-.checklist li{padding:6px 0 6px 28px;position:relative;font-size:14px;border-bottom:1px solid var(--line)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
+
+/* 읽기 진행바 */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;
+  background:linear-gradient(90deg,var(--wine),var(--wine-l));transition:width .1s linear}
+
+/* 헤더 표지 (딥와인, 유일한 딥 컬러) */
+.header{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0}
+.header .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 26px}
+.header .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;
+  color:var(--header-accent);border:1px solid rgba(212,160,170,.4);border-radius:999px;padding:4px 12px}
+.header .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--header-accent)}
+
+/* 히어로 */
+.hero{max-width:var(--maxw);margin:0 auto;padding:30px 26px 8px}
+.hero .eb{font-size:12px;font-weight:700;color:var(--wine);letter-spacing:.02em;margin-bottom:10px}
+.hero h1{font-size:30px;line-height:1.28;font-weight:800;margin:0 0 16px;color:var(--ink);letter-spacing:-.01em}
+.hero .tldr{background:var(--wine-tint);border:1px solid var(--wine-tint-ln);border-left:4px solid var(--wine);
+  border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.hero .tldr .lb{font-size:12px;font-weight:700;color:var(--wine-d);margin-bottom:8px}
+.hero .tldr ul{margin:0;padding-left:18px}
+.hero .tldr li{margin:4px 0;font-size:15px;color:var(--ink2)}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:12.5px;color:var(--muted);margin-bottom:18px}
+.hero .meta .vchip{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);
+  font-weight:700;border-radius:6px;padding:3px 9px;font-size:11.5px}
+.hero .cta-row{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:9px;
+  padding:11px 18px;text-decoration:none;cursor:pointer;border:1px solid transparent}
+.btn-p{background:var(--wine);color:#fff}
+.btn-p:hover{background:var(--wine-d)}
+.btn-o{background:#fff;color:var(--wine-d);border-color:var(--line2)}
+.btn-o:hover{background:var(--panel2)}
+
+/* 셸: 좌측 목차 + 본문 */
+.app{max-width:var(--maxw);margin:0 auto;padding:8px 26px 60px;
+  display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:start}
+
+/* 목차 (데스크톱 = 좌측 sticky) */
+.toc{position:sticky;top:24px}
+.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;
+  margin:0 0 10px;padding-left:2px}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}
+.toc li{counter-increment:toc;margin:1px 0}
+.toc a{display:flex;gap:9px;font-size:13.5px;color:var(--ink2);text-decoration:none;
+  padding:7px 10px;border-radius:8px;border-left:3px solid transparent;line-height:1.4}
+.toc a::before{content:counter(toc,decimal-leading-zero);color:var(--faint);font-weight:700;font-size:11.5px;flex:none}
+.toc a:hover{background:var(--panel2)}
+.toc a.active{background:var(--wine-tint);border-left-color:var(--wine);color:var(--wine-d);font-weight:700}
+.toc-toggle{display:none}
+
+/* 본문 */
+.content{max-width:var(--readw);min-width:0}
+section.blk{scroll-margin-top:24px;margin-bottom:38px}
+.secl{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.05em;margin:0 0 12px}
+.secl::before{content:"";width:7px;height:15px;background:var(--wine);border-radius:2px;flex:none}
+section.blk h2{font-size:23px;font-weight:800;line-height:1.35;margin:0 0 14px;color:var(--ink);letter-spacing:-.01em}
+section.blk h3{font-size:17px;font-weight:700;margin:26px 0 10px;color:var(--wine-d)}
+section.blk p{margin:0 0 14px;color:var(--ink2)}
+section.blk ul,section.blk ol{margin:0 0 14px;padding-left:22px;color:var(--ink2)}
+section.blk li{margin:6px 0}
+strong{color:var(--ink);font-weight:700}
+a.ln{color:var(--wine-l);text-decoration:none;border-bottom:1px solid var(--wine-tint-ln)}
+a.ln:hover{border-bottom-color:var(--wine-l)}
+
+/* 핵심요약 카드 */
+.summary{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.summary .lb{font-size:11px;font-weight:700;color:var(--wine-d);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.summary ul{margin:0;padding-left:18px}
+
+/* 근거 카드 (조문·판례) */
+.ev{background:#fff;border:1px solid var(--line);border-left:4px solid var(--wine);border-radius:10px;
+  padding:13px 15px;margin:0 0 12px}
+.ev .top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px}
+.ev .kind{font-size:11px;font-weight:700;color:#fff;background:var(--wine);border-radius:5px;padding:2px 8px}
+.ev .kind.law{background:var(--wine-d)}
+.ev .kind.case{background:var(--amber)}
+.ev .cite{font-size:13.5px;font-weight:700;color:var(--ink)}
+.ev .vtick{margin-left:auto;font-size:11px;font-weight:700;color:var(--rL-tx);background:var(--rL-bg);border-radius:5px;padding:2px 7px}
+.ev .gist{font-size:14px;color:var(--ink2);margin:0}
+.ev .date{font-size:12px;color:var(--muted);margin-top:5px}
+
+/* 다이어그램 — 플로우 / 체크리스트 (CSS·SVG only) */
+.figure{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin:0 0 18px}
+.figure .cap{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:12px}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px}
+.flow .step{flex:1;min-width:120px;background:var(--wine-tint);border:1px solid var(--wine-tint-ln);
+  border-radius:10px;padding:11px 12px;position:relative}
+.flow .step .n{font-size:11px;font-weight:700;color:var(--wine)}
+.flow .step .t{font-size:13.5px;font-weight:700;color:var(--ink);margin-top:2px}
+.flow .step .d{font-size:12.5px;color:var(--ink2);margin-top:3px}
+.checklist{list-style:none;margin:0;padding:0}
+.checklist li{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
 .checklist li:last-child{border-bottom:none}
-.checklist li::before{content:"\2611";position:absolute;left:0;color:var(--navy-l)}
-.faq details{margin:8px 0;border:1px solid var(--line);border-radius:8px;overflow:hidden}
-.faq summary{padding:14px 18px;cursor:pointer;font-weight:600;font-size:15px;color:var(--navy);background:var(--panel2)}
-.faq summary:hover{background:var(--navy-tint)}
-.faq details[open] summary{border-bottom:1px solid var(--line)}
-.faq details p{padding:14px 18px;margin:0;font-size:14px}
-.cols{display:grid;grid-template-columns:1fr;gap:16px;margin:16px 0}
-@media(min-width:640px){.cols{grid-template-columns:1fr 1fr 1fr}}
-.step{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px;text-align:center}
-.step .num{display:inline-flex;width:40px;height:40px;border-radius:50%;background:var(--navy);color:#fff;align-items:center;justify-content:center;font-weight:700;font-size:18px;margin-bottom:8px}
-.step h4{margin:4px 0 8px;font-size:15px;color:var(--navy)}
-.step p{margin:0;font-size:13px;color:var(--ink2)}
-.penalty{display:grid;grid-template-columns:1fr;gap:16px;margin:16px 0}
-@media(min-width:640px){.penalty{grid-template-columns:1fr 1fr 1fr}}
-.pen-item{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px;text-align:center}
-.pen-item .icon{font-size:32px;margin-bottom:8px}
-.pen-item h4{margin:4px 0 8px;font-size:15px;color:var(--navy)}
-.pen-item p{margin:0;font-size:13px;color:var(--ink2)}
-.pen-item.danger{border-left:3px solid var(--red)}
-.pen-item.caution{border-left:3px solid var(--amber)}
-.pen-item.safe{border-left:3px solid var(--green)}
-footer{text-align:center;padding:32px 20px;color:var(--muted);font-size:12px;line-height:1.8;border-top:1px solid var(--line);margin-top:48px}
-footer a{color:var(--navy-l);text-decoration:none}
-@media(max-width:480px){.hero h1{font-size:22px}.wrap{padding:0 14px}h2{font-size:19px}}
-</style>
-</head>
-<body>
-<div id="pb"></div>
-<header class="hero">
-<div class="wrap">
-<div class="badge">채무자회생법 · 도산법</div>
-<h1>회생절차 채권신고<br>법원이 정한 1개월 안에 신고하지 않으면?</h1>
-<p class="sub">조우성 변호사 / 로펌 머스트노우 · 2026-07-11</p>
-</div>
-</header>
-<main class="wrap">
-<div class="tldr">
-<h2>3줄 요약 (TL;DR)</h2>
-<p><strong>①</strong> 회생절차 개시 후 법원이 정한 채권신고기간(통상 1개월) 내에 반드시 채권을 신고해야 한다(채무자회생법 제148조).</p>
-<p><strong>②</strong> 기간 내 신고하지 않으면 의결권 상실, 회생계획 변제 제외 위험, 나아가 권리 소멸 가능성까지 발생한다.</p>
-<p><strong>③</strong> 늦었더라도 채권조사기간 종료 전 보충 신고 또는 책임 없는 사유 소명을 통한 추가 신고가 가능하므로 지체 없이 법원에 연락해야 한다.</p>
-</div>
-<h2>1. 채권신고 절차 개요 — 왜 1개월이 중요한가</h2>
-<div class="card">
-<p>회생절차가 개시되면 법원은 회생채권의 <strong>신고기간</strong>과 <strong>조사기간</strong>을 정하여 공고한다. 신고기간은 통상 <strong>1개월</strong> 정도이나 사건의 규모에 따라 달라질 수 있다(제148조). 채권신고는 단순한 형식 요건이 아니라 <strong>실체적 권리 행사의 전제</strong>다.</p>
+.checklist .ck{flex:none;width:20px;height:20px;border-radius:5px;background:var(--rL-bg);color:var(--rL-tx);
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+
+/* 위험도 칩 */
+.chip{display:inline-flex;align-items:center;justify-content:center;min-width:34px;font-size:11px;font-weight:500;
+  border-radius:6px;padding:3px 8px;margin-right:4px}
+.c-H{background:var(--rH);color:#fff}
+.c-M{background:var(--rM-bg);color:var(--rM-tx)}
+.c-L{background:var(--rL-bg);color:var(--rL-tx)}
+
+/* 표 */
+.tbl-wrap{overflow-x:auto;margin:0 0 18px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px}
+
+/* FAQ (아코디언) */
+.faq details{background:#fff;border:1px solid var(--line);border-radius:10px;margin:0 0 10px;overflow:hidden}
+.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:15px;font-weight:700;color:var(--ink);
+  display:flex;align-items:center;gap:10px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--wine-tint);
+  color:var(--wine-d);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+.faq details[open] summary{border-bottom:1px solid var(--line);color:var(--wine-d)}
+.faq .a{padding:14px 16px;font-size:14.5px;color:var(--ink2)}
+
+/* 최신성·면책 고지 */
+.notice{background:#fff;border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;
+  font-size:12.5px;color:var(--muted);line-height:1.7}
+
+/* 맨 위로 버튼 */
+#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--wine-tint-ln);background:var(--wine);color:#fff;font-size:18px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;
+  box-shadow:0 4px 14px rgba(58,21,37,.28)}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{background:var(--wine-d)}
+
+/* 푸터 프로필 + 상담 CTA */
+.footer{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0;margin-top:20px}
+.footer .wrap{max-width:var(--maxw);margin:0 auto;padding:34px 26px}
+.footer h3{font-size:20px;font-weight:800;margin:0 0 8px;color:#fff}
+.footer p{font-size:14px;color:rgba(255,255,255,.72);margin:0 0 6px;line-height:1.7}
+.footer .prof{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end}
+.footer .cta-f{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.footer .btn-f{background:#fff;color:var(--wine-d)}
+.footer .btn-f:hover{background:var(--header-accent)}
+.footer .btn-fo{background:transparent;color:#f4eef0;border-color:rgba(255,255,255,.35)}
+.footer .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:22px;padding-top:14px;
+  font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.7}
+
+/* ── 모바일 (≤820px) ── */
+@media(max-width:820px){
+  .hero h1{font-size:24px}
+  .app{grid-template-columns:1fr;gap:0;padding-top:0}
+  .toc{position:static;margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 8px}
+  .toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;
+    cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--wine-d);padding:9px 8px}
+  .toc-toggle .ar{transition:transform .2s}
+  .toc.closed .toc-toggle .ar{transform:rotate(-90deg)}
+  .toc .tt{display:none}
+  .toc ol{max-height:50vh;overflow:auto}
+  .toc.closed ol{display:none}
+  section.blk h2{font-size:20px}
+  th,td{white-space:nowrap}
+}
+@media print{
+  #progress,.toc,.cta-row,.footer .cta-f{display:none}
+  .header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .app{display:block}
+}
+</style></head><body><div id="progress"></div><button id="toTop" aria-label="맨 위로">?</button><header class="header"><div class="wrap"><span class="badge"><span class="dot"></span>조우성 변호사 ? 법률 인사이트</span></div></header><div class="hero"><div class="eb">전자책 대시보드 ? 실무 가이드</div><h1>회생절차 채권신고: 법원이 정한 1개월 안에 신고하지 않으면 어떻게 되나</h1><div class="tldr"><div class="lb">3줄 요약 (TL;DR)</div><ul><li>원문 Markdown의 제목?본문?표?체크리스트를 반영한 공개용 HTML입니다.</li><li>문서의 핵심 내용과 실무상 확인 포인트를 한 화면에서 확인할 수 있습니다.</li><li>구체적인 사안은 최신 법령?판례와 사실관계 확인이 필요합니다.</li></ul></div><div class="meta"><span>원문: 20260711_rehabilitation_claim_deadline.md</span><span class="vchip">원문 기반 HTML</span></div><div class="cta-row"><a class="btn btn-p" href="#s1">핵심 내용 보기</a><a class="btn btn-o" href="#faq">확인 사항</a></div></div><div class="app"><nav class="toc" id="toc"><div class="tt">목차</div><ol id="toc-list"><li><a href="#s1">본문</a></li><li><a href="#s2">3줄 요약 (TL;DR)</a></li><li><a href="#s3">1. 채권신고 절차 개요 — 왜 1개월이 중요한가</a></li><li><a href="#s4">2. 신고하지 않으면 어떻게 되나 — 3단계 효과</a></li><li><a href="#s5">3. 채권신고 방법 — 구체적 절차</a></li><li><a href="#s6">4. 채권신고 지연 시 구제 방법</a></li><li><a href="#s7">5. 실무 체크리스트</a></li><li><a href="#s8">6. FAQ</a></li><li><a href="#s9">관련 법령</a></li></ol></nav><main class="content"><section class="blk" id="s1"><div class="secl">SECTION</div><blockquote>
+<p>[!web] 웹으로 보기
+https://woosungjo-law.github.io/share/d/rehabilitation-claim-deadline-sx4w.html</p>
+</blockquote>
+<p><em>출처: 조우성 변호사 / 로펌 머스트노우 | 문의: law@mustknow.co.kr</em></p>
+<h1>회생절차 채권신고: 법원이 정한 1개월 안에 신고하지 않으면 어떻게 되나</h1></section><section class="blk" id="s2"><div class="secl">SECTION</div><h2>3줄 요약 (TL;DR)</h2>
+<ul>
+<li>회생절차가 개시되면 법원은 <strong>채권신고기간</strong>(통상 1개월)과 <strong>채권조사기간</strong>을 정한다. 채권자는 반드시 이 기간 내에 채권을 신고해야 한다(채무자회생법 제148조).</li>
+<li><strong>기간 내 신고하지 않으면</strong> 회생계획안에 대한 <strong>의결권이 제한</strong>되고(부실채권), 회생계획에서 <strong>변제에서 제외될 위험</strong>이 있다. 다만 채권 자체가 소멸하는 것은 아니다(제151조).</li>
+<li>신고가 늦어도 <strong>책임 있는 사유</strong>가 없으면 채권조사기간 종료 전까지 보충 신고가 가능하며, 법원의 <strong>보전처분·강제집행 중지</strong>로 인해 신고가 지연된 경우에도 추후 보완이 가능하다.</li>
+</ul>
+<hr /></section><section class="blk" id="s3"><div class="secl">SECTION</div><h2>1. 채권신고 절차 개요 — 왜 1개월이 중요한가</h2>
+<p><strong>한눈에</strong>
+- 회생절차가 개시되면 법원은 회생채권의 신고 기간과 조사 기간을 정하여 공고한다. 신고기간은 통상 <strong>1개월</strong> 정도이나 사건의 규모에 따라 달라질 수 있다(제148조).
+- 채권신고는 단순한 형식 요건이 아니라 <strong>실체적 권리 행사의 전제</strong>다. 신고하지 않은 채권은 회생계획에서 변제 대상에서 제외될 수 있다.</p>
 <table>
-<tr><th>구분</th><th>내용</th><th>법적 근거</th></tr>
-<tr><td>신고기간</td><td>법원이 정한 기간 (통상 1개월)</td><td>제148조</td></tr>
-<tr><td>신고 대상</td><td>회생절차 개시 전 원인으로 발생한 재산상 청구권</td><td>제118조</td></tr>
-<tr><td>신고 방법</td><td>채권신고서에 증거서류 첨부하여 법원 제출</td><td>제149조</td></tr>
-<tr><td>조사기간</td><td>신고기간 종료 후 법원이 정한 기간</td><td>제150조</td></tr>
-<tr><td>의결권</td><td>신고한 채권만 의결권 행사 가능</td><td>제154조</td></tr>
+<thead>
+<tr>
+<th>구분</th>
+<th>내용</th>
+<th>법적 근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>신고기간</td>
+<td>법원이 정한 기간 (통상 1개월)</td>
+<td>채무자회생법 제148조</td>
+</tr>
+<tr>
+<td>신고 대상</td>
+<td>회생절차 개시 전 원인으로 발생한 재산상 청구권</td>
+<td>제118조</td>
+</tr>
+<tr>
+<td>신고 방법</td>
+<td>채권신고서에 증거서류 첨부하여 법원 제출</td>
+<td>제149조</td>
+</tr>
+<tr>
+<td>조사기간</td>
+<td>신고기간 종료 후 법원이 정한 기간</td>
+<td>제150조</td>
+</tr>
+<tr>
+<td>의결권</td>
+<td>신고한 채권만 의결권 행사 가능</td>
+<td>제154조</td>
+</tr>
+</tbody>
 </table>
 <div class="summary-box">
-<strong>실무 포인트:</strong> 채무자의 회생절차 신청 소식을 듣는 즉시 채권신고 준비를 시작해야 한다. 법원의 공고를 기다렸다가 준비하면 늦을 수 있다. 계약서·세금계산서·거래내역 등 증빙서류를 사전에 정리해두는 것이 좋다.
+실무 포인트: 채무자가 회생절차를 신청했다는 소식을 듣는 즉시 채권신고 준비를 시작해야 한다. 법원의 공고를 기다렸다가 준비하면 늦을 수 있다. 사전에 계약서·세금계산서·거래내역 등 증빙서류를 정리해두는 것이 좋다.
 </div>
-</div>
-<h2>2. 신고하지 않으면 어떻게 되나 — 3단계 효과</h2>
-<p>기간 내 신고하지 않은 채권은 단계적으로 권리가 제한된다. 채권 자체가 바로 소멸하는 것은 아니나, 회생계획이 진행됨에 따라 사실상 회수 불가능 상태에 빠질 수 있다.</p>
-<div class="penalty">
-<div class="pen-item danger">
-<div class="icon">🗳️</div>
-<h4>1단계: 의결권 상실</h4>
-<p>회생계획안 의결 불가 — 부실채권으로 분류되어 채권자집회에서 의결권을 행사할 수 없다(제154조).</p>
-</div>
-<div class="pen-item caution">
-<div class="icon">📋</div>
-<h4>2단계: 변제 제외 위험</h4>
-<p>회생계획 변제 대상에서 누락될 위험. 계획에 기재되지 않은 채권은 변제받지 못할 수 있다.</p>
-</div>
-<div class="pen-item danger">
-<div class="icon">⚖️</div>
-<h4>3단계: 권리 소멸 가능</h4>
-<p>회생계획 인가 후 계획에 반영되지 않은 권리는 소멸하거나 행사가 제한된다(제255조).</p>
-</div>
-</div>
-<h2>3. 채권신고 방법 — 구체적 절차</h2>
-<div class="card">
-<p>채권신고는 법원이 정한 양식의 <strong>채권신고서</strong>를 제출하여 한다. 신고서에는 채권의 발생 원인, 채권액, 의결권의 유무 등을 기재해야 한다(제149조). 신고기간이 지난 후에도 <strong>책임 없는 사유</strong>로 신고하지 못한 경우 법원의 허가를 받아 보충 신고할 수 있다.</p>
+
+<hr /></section><section class="blk" id="s4"><div class="secl">SECTION</div><h2>2. 신고하지 않으면 어떻게 되나 — 3단계 효과</h2>
+<p><strong>한눈에</strong>
+- 기간 내 신고하지 않은 채권은 <strong>부실채권</strong>이 되어 의결권이 제한된다. 이는 채권자가 회생계획안에 영향을 미칠 수 없음을 의미한다.
+- 더 심각한 것은 <strong>회생계획에서 변제에서 제외</strong>될 수 있다는 점이다. 회생계획이 인가되면 계획에 기재된 권리는 변경되고, 기재되지 않은 권리는 소멸하거나 행사가 제한된다.
+- 단, 채권 자체가 바로 소멸하는 것은 아니다. 보충 신고나 사후 구제 절차가 존재한다.</p>
+<h3>단계별 효과</h3>
 <table>
-<tr><th>서류</th><th>설명</th><th>비고</th></tr>
-<tr><td>채권신고서</td><td>법원 소정 양식, 채권액·원인 기재</td><td>법원 홈페이지 양식</td></tr>
-<tr><td>채권 발생 증명 서류</td><td>계약서, 차용증, 세금계산서</td><td>원본 또는 사본</td></tr>
-<tr><td>이자·지연손해금 계산서</td><td>채권액 산출 내역</td><td>구체적 기재 필요</td></tr>
-<tr><td>별제권 관련 서류</td><td>담보권 설정 증명 (있는 경우)</td><td>별도 신고 필요</td></tr>
-<tr><td>위임장</td><td>변호사·법무사 선임 시</td><td>인감증명 첨부</td></tr>
+<thead>
+<tr>
+<th>단계</th>
+<th>효과</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1단계: 의결권 상실</td>
+<td>회생계획안 의결 불가</td>
+<td>부실채권으로 분류되어 채권자집회에서 의결권 행사 불가(제154조)</td>
+</tr>
+<tr>
+<td>2단계: 변제 제외 위험</td>
+<td>회생계획 변제 대상에서 누락</td>
+<td>회생계획이 인가되면 계획에 기재되지 않은 채권은 변제받지 못할 위험</td>
+</tr>
+<tr>
+<td>3단계: 권리 소멸 가능</td>
+<td>잔존채권 소멸</td>
+<td>회생계획 인가 후 계획에 반영되지 않은 권리는 소멸하거나 행사 제한(제255조)</td>
+</tr>
+</tbody>
 </table>
-</div>
-<h2>4. 채권신고 지연 시 구제 방법</h2>
-<div class="card">
+<hr /></section><section class="blk" id="s5"><div class="secl">SECTION</div><h2>3. 채권신고 방법 — 구체적 절차</h2>
+<p><strong>한눈에</strong>
+- 채권신고는 법원이 정한 양식의 <strong>채권신고서</strong>를 제출하여 한다. 신고서에는 채권의 발생 원인, 채권액, 의결권의 유무 등을 기재해야 한다(제149조).
+- 신고기간이 지난 후에도 <strong>책임 없는 사유</strong>로 신고하지 못한 경우 법원의 허가를 받아 보충 신고할 수 있다.</p>
+<h3>필요 서류</h3>
 <table>
-<tr><th>상황</th><th>구제 방법</th><th>기한</th></tr>
-<tr><td>신고기간 경과, 조사기간 전</td><td>보충 신고 (별도 허가 불필요)</td><td>채권조사기간 종료 전</td></tr>
-<tr><td>조사기간도 경과</td><td>추가 신고 허가 신청 (법원 허가 필요)</td><td>책임 없는 사유 소명</td></tr>
-<tr><td>회생계획 인가 후</td><td>극히 제한적 — 부당이득반환청구 등 검토</td><td>사실상 어려움</td></tr>
+<thead>
+<tr>
+<th>서류</th>
+<th>설명</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>채권신고서</td>
+<td>법원 소정 양식, 채권액·원인 기재</td>
+<td>법원 홈페이지 양식</td>
+</tr>
+<tr>
+<td>채권 발생 증명 서류</td>
+<td>계약서, 차용증, 세금계산서</td>
+<td>원본 또는 사본</td>
+</tr>
+<tr>
+<td>이자·지연손해금 계산서</td>
+<td>채권액 산출 내역</td>
+<td>구체적 기재 필요</td>
+</tr>
+<tr>
+<td>별제권 관련 서류</td>
+<td>담보권 설정 증명 (있는 경우)</td>
+<td>별도 신고 필요</td>
+</tr>
+<tr>
+<td>위임장</td>
+<td>변호사·법무사 선임 시</td>
+<td>인감증명 첨부</td>
+</tr>
+</tbody>
 </table>
-<div class="alert-box">
-<strong>⚠️ 주의:</strong> 조사기간이 지난 후의 추가 신고는 법원의 허가가 필요하며, 채권자에게 책임 없는 사유가 있었음을 소명해야 한다. 단순한 부주의는 인정되지 않는다.
-</div>
-</div>
-<h2>5. 실무 체크리스트</h2>
+<hr /></section><section class="blk" id="s6"><div class="secl">SECTION</div><h2>4. 채권신고 지연 시 구제 방법</h2>
+<p><strong>한눈에</strong>
+- 신고기간을 놓쳤더라도 채권조사기간이 끝나기 전이라면 <strong>보충 신고</strong>가 가능하다(제148조 제3항).
+- 채권조사기간이 지난 후에도 <strong>채권자에게 책임 없는 사유</strong>가 있었다면 법원의 <strong>추가 신고 허가</strong>를 받을 수 있다(제148조 제4항).</p>
+<table>
+<thead>
+<tr>
+<th>상황</th>
+<th>구제 방법</th>
+<th>기한</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>신고기간 경과, 조사기간 전</td>
+<td>보충 신고 (별도 허가 불필요)</td>
+<td>채권조사기간 종료 전</td>
+</tr>
+<tr>
+<td>조사기간도 경과</td>
+<td>추가 신고 허가 신청 (법원 허가 필요)</td>
+<td>책임 없는 사유 소명</td>
+</tr>
+<tr>
+<td>회생계획 인가 후</td>
+<td>극히 제한적 — 부당이득반환청구 등 검토</td>
+<td>사실상 어려움</td>
+</tr>
+</tbody>
+</table>
+<hr /></section><section class="blk" id="s7"><div class="secl">SECTION</div><h2>5. 실무 체크리스트</h2>
 <div class="card">
 <ul class="checklist">
 <li>채무자의 회생절차 개시 소식을 즉시 포착하고 있는가?</li>
 <li>법원의 채권신고 공고를 확인하였는가?</li>
-<li>채권신고서 작성에 필요한 증빙서류를 확보하였는가?</li>
+<li>채권신고서 작성에 필요한 증빙서류(계약서·세금계산서·거래내역)를 확보하였는가?</li>
 <li>채권액(원금·이자·지연손해금)을 정확히 계산하였는가?</li>
 <li>신고기한을 캘린더에 기록하고 내부 마감일을 설정하였는가?</li>
 <li>별제권(담보권)이 있다면 별도 신고하였는가?</li>
 <li>변호사·법무사 선임이 필요하다면 즉시 위임하였는가?</li>
 </ul>
 </div>
-<h2>6. FAQ</h2>
-<div class="faq">
-<details><summary>Q1. 채권신고를 하지 않으면 채권 자체가 소멸하나요?</summary>
-<p>채권 자체가 바로 소멸하는 것은 아닙니다. 그러나 회생계획이 인가되면 계획에 기재되지 않은 채권은 그 효력이 제한됩니다. 변제를 받지 못할 위험이 매우 크므로 반드시 기간 내 신고해야 합니다.</p></details>
-<details><summary>Q2. 법원의 공고를 보지 못해 신고기간을 놓쳤습니다. 어떻게 해야 하나요?</summary>
-<p>우선 지체 없이 법원에 연락하여 채권조사기간이 남아 있는지 확인하세요. 조사기간이 남아 있다면 보충 신고가 가능합니다. 조사기간도 지났다면 <strong>책임 없는 사유</strong>(예: 주소 불명, 공고 미송달)를 소명하여 추가 신고 허가를 받아야 합니다. 법률 전문가의 도움을 받는 것이 좋습니다.</p></details>
-<details><summary>Q3. 회생절차 개시 전 이미 가압류를 해두었는데, 채권신고도 별도로 해야 하나요?</summary>
-<p><strong>네, 반드시 별도로 해야 합니다.</strong> 가압류는 회생절차 개시로 효력이 중지되고(제44조), 회생계획 인가로 실효됩니다(제256조). 가압류 채권자도 일반 회생채권자와 동일하게 채권신고를 해야 합니다.</p></details>
-<details><summary>Q4. 채권액에 이의가 있는 경우에는 어떻게 하나요?</summary>
-<p>일단 채권신고서에 채권액을 기재하여 신고합니다. 이후 채권조사기간 중 관리인 또는 다른 채권자가 이의를 제기하면, 법원이 별도로 채권조사확정재판을 통해 채권의 존부와 액수를 확정합니다(제164조~제170조).</p></details>
-<details><summary>Q5. 개인회생절차에서도 동일한가요?</summary>
-<p>개인회생절차는 일반 회생절차와 일부 다릅니다. 개인회생에서는 채무자가 제출한 <strong>채권자목록</strong>에 기재된 채권자가 별도 신고 없이도 절차에 참여할 수 있습니다(제581조). 그러나 채권자목록에 누락된 경우 별도 채권신고가 필요할 수 있습니다. 개인회생도 신고기한을 놓치면 유사한 불이익이 있으므로 주의해야 합니다.</p></details>
-</div>
-<h2>관련 법령</h2>
-<div class="card">
+
+<hr /></section><section class="blk" id="s8"><div class="secl">SECTION</div><h2>6. FAQ</h2>
+<details>
+<summary><strong>Q1. 채권신고를 하지 않으면 채권 자체가 소멸하나요?</strong></summary>
+<p>채권 자체가 바로 소멸하는 것은 아닙니다. 그러나 회생계획이 인가되면 계획에 기재되지 않은 채권은 그 효력이 제한됩니다. 변제를 받지 못할 위험이 매우 크므로 반드시 기간 내 신고해야 합니다.</p>
+</details>
+
+<details>
+<summary><strong>Q2. 법원의 공고를 보지 못해 신고기간을 놓쳤습니다. 어떻게 해야 하나요?</strong></summary>
+<p>우선 지체 없이 법원에 연락하여 채권조사기간이 남아 있는지 확인하세요. 조사기간이 남아 있다면 보충 신고가 가능합니다. 조사기간도 지났다면 <strong>책임 없는 사유</strong>(예: 주소 불명, 공고 미송달)를 소명하여 추가 신고 허가를 받아야 합니다. 법률 전문가의 도움을 받는 것이 좋습니다.</p>
+</details>
+
+<details>
+<summary><strong>Q3. 회생절차 개시 전에 이미 가압류를 해두었는데, 채권신고도 별도로 해야 하나요?</strong></summary>
+<p><strong>네, 반드시 별도로 해야 합니다.</strong> 가압류는 회생절차 개시로 효력이 중지되고(제44조), 회생계획 인가로 실효됩니다(제256조). 가압류를 했다고 해서 채권신고 의무가 면제되지 않습니다. 가압류 채권자도 일반 회생채권자와 동일하게 채권신고를 해야 합니다.</p>
+</details>
+
+<details>
+<summary><strong>Q4. 채권액에 이의가 있는 경우에는 어떻게 하나요?</strong></summary>
+<p>일단 채권신고서에 채권액을 기재하여 신고합니다. 이후 채권조사기간 중 관리인 또는 다른 채권자가 이의를 제기하면, 법원이 별도로 채권조사확정재판을 통해 채권의 존부와 액수를 확정합니다(제164조~제170조).</p>
+</details>
+
+<details>
+<summary><strong>Q5. 개인회생절차에서도 동일한가요?</strong></summary>
+<p>개인회생절차는 일반 회생절차와 일부 절차가 다릅니다. 개인회생에서는 채무자가 제출한 <strong>채권자목록</strong>에 기재된 채권자가 별도 신고 없이도 절차에 참여할 수 있습니다(제581조). 그러나 채권자목록에 누락된 경우 별도 채권신고가 필요할 수 있습니다. 개인회생도 신고기한을 놓치면 유사한 불이익이 있으므로 주의해야 합니다.</p>
+</details>
+
+<hr /></section><section class="blk" id="s9"><div class="secl">SECTION</div><h2>관련 법령</h2>
 <table>
-<tr><th>조문</th><th>내용</th></tr>
-<tr><td>제118조</td><td>회생채권의 정의 — 회생절차 개시 전 원인으로 발생한 재산상 청구권</td></tr>
-<tr><td>제148조</td><td>채권신고기간 — 법원이 정한 기간 내 신고 (통상 1개월)</td></tr>
-<tr><td>제149조</td><td>채권신고서 기재 사항 — 채권액·원인·의결권 유무</td></tr>
-<tr><td>제151조</td><td>신고하지 않은 채권의 효과 — 의결권 제한, 변제 제외 위험</td></tr>
-<tr><td>제154조</td><td>의결권 — 신고한 채권에 한해 의결권 행사 가능</td></tr>
-<tr><td>제255조</td><td>회생계획 인가의 효력 — 계획에 기재된 권리만 변경</td></tr>
-<tr><td>제256조</td><td>중지 중인 절차의 실효 — 가압류 등 효력 상실</td></tr>
+<thead>
+<tr>
+<th>조문</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>채무자회생법 제118조</td>
+<td>회생채권의 정의 — 회생절차 개시 전 원인으로 발생한 재산상 청구권</td>
+</tr>
+<tr>
+<td>채무자회생법 제148조</td>
+<td>채권신고기간 — 법원이 정한 기간 내 신고 (통상 1개월)</td>
+</tr>
+<tr>
+<td>채무자회생법 제149조</td>
+<td>채권신고서의 기재 사항 — 채권액·원인·의결권 유무</td>
+</tr>
+<tr>
+<td>채무자회생법 제151조</td>
+<td>신고하지 않은 채권의 효과 — 의결권 제한, 변제 제외 위험</td>
+</tr>
+<tr>
+<td>채무자회생법 제154조</td>
+<td>의결권 — 신고한 채권에 한해 의결권 행사 가능</td>
+</tr>
+<tr>
+<td>채무자회생법 제255조</td>
+<td>회생계획 인가의 효력 — 계획에 기재된 권리만 변경</td>
+</tr>
+<tr>
+<td>채무자회생법 제256조</td>
+<td>중지 중인 절차의 실효 — 가압류 등 효력 상실</td>
+</tr>
+</tbody>
 </table>
-</div>
-</main>
-<footer>
-<div class="wrap">
-<p><strong>면책 공지:</strong> 본 콘텐츠는 법률 정보 제공을 목적으로 하며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</p>
-<p>© 2026 <strong>조우성 변호사</strong> / 로펌 머스트노우 — 무단 전재·재배포 금지, 링크 공유는 환영</p>
-<p>문의: <a href="mailto:law@mustknow.co.kr">law@mustknow.co.kr</a></p>
-</div>
-</footer>
-<script>
-window.addEventListener('scroll',function(){var p=document.getElementById('pb');var h=document.documentElement.scrollHeight-document.documentElement.clientHeight;p.style.width=(window.scrollY/h*100)+'%'});
-</script>
-</body>
-</html>
+<hr />
+<blockquote>
+<p>⚠️ <strong>면책 공지</strong>: 본 콘텐츠는 법률 정보 제공을 목적으로 하며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다. 회생절차 채권신고와 관련하여 개별 사안에 맞는 전문가의 조력을 받으시기 바랍니다.</p>
+</blockquote>
+<hr />
+<p><em>도움이 되셨나요? 이 콘텐츠가 유용했다면 지인과 공유해 주세요. 법률 문제로 어려움을 겪고 계신 분들께 큰 힘이 됩니다.</em></p>
+<hr />
+<p><em>© 2026 조우성 변호사 / 로펌 머스트노우 — 무단 전재·재배포 금지, 링크 공유는 환영</em></p></section><section class="blk faq" id="faq"><div class="secl">NOTICE</div><h2>확인 사항</h2><div class="notice">이 문서는 일반적인 법률 정보 제공을 위한 자료입니다. 구체적인 사실관계와 최신 법령?판례에 따라 결론이 달라질 수 있습니다.</div></section></main></div><footer class="footer"><div class="wrap"><h3>조우성 변호사</h3><p>실무에 바로 활용할 수 있는 법률 지식과 대응 가이드를 제공합니다.</p></div></footer></body></html>

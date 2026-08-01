@@ -1,182 +1,462 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
-<title>가압류 신청 3일 완성: 채권증서→법원→집행까지 단계별 서류 체크리스트 — 조우성 변호사</title>
-<meta name="description" content="가압류 신청 3일 완성: 채권증서 준비, 법원 신청, 집행까지 단계별 서류 체크리스트. 민사집행법 기준.">
-<style>
-:root{--bg:#f0f2f5;--panel:#fff;--panel2:#f8f9fb;--line:#e2e5ea;--ink:#111827;--ink2:#374151;--muted:#6b7280;--navy:#1a3a6b;--navy-d:#0f2547;--navy-l:#2e6be6;--navy-tint:#e8edf5;--green-bg:#ecfdf5;--green:#059669;--amber:#f59e0b;--amber-bg:#fffbeb;--red:#dc2626;--font:-apple-system,BlinkMacSystemFont,Malgun Gothic,sans-serif;--readw:760px}
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>가압류 신청 3일 완성: 채권증서→법원→집행까지 단계별 서류 체크리스트</title><style>
+/* ============================================================
+   법률 대시보드 전자책 — Apollo 기반 경량 커스텀 (공개 롱스크롤)
+   Apollo 토큰(버건디 액센트 + 웜 화이트 + 딥와인 헤더) 상속.
+   의뢰인 리포트(리스크레이더 6뷰)와 달리 공개 독서형 롱스크롤.
+   self-contained: 외부 CDN/폰트/이미지/스크립트 의존 없음.
+   ============================================================ */
+:root{
+  --bg:#f5f1f2; --panel:#ffffff; --panel2:#faf6f7;
+  --line:#ebe2e5; --line2:#ddccd2;
+  --ink:#2c1d26; --ink2:#56424c; --muted:#8a7b82; --faint:#b3a6ab;
+  --wine:#7a2e3a; --wine-d:#5a1f2b; --wine-l:#9c4456;
+  --wine-tint:#f4e9ec; --wine-tint-ln:#ecd7dd;
+  --header-bg:#3a1525; --header-bg2:#4e1f32; --header-accent:#d4a0aa;
+  --rH:#c74a3c; --rM-bg:#f8e4b8; --rM-tx:#7d520a; --rL-bg:#d6ecdb; --rL-tx:#287a54;
+  --amber:#b45309; --green:#287a54;
+  --font:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Noto Sans KR',sans-serif;
+  --maxw:1120px; --readw:760px;
+}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.75}
-#pb{position:fixed;top:0;left:0;height:4px;background:var(--navy-l);width:0%;z-index:9999;transition:width .2s}
-nav{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:12px 20px}
-nav .inner{max-width:1120px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
-nav .subtitle{font-size:13px;color:var(--muted)}
-.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-d) 100%);color:#fff;padding:48px 24px 40px;text-align:center}
-.hero h1{font-size:clamp(22px,4vw,36px);font-weight:800;margin:0 0 8px;line-height:1.35}
-.hero .meta{font-size:14px;opacity:.8;margin-top:12px}
-.wrap{max-width:var(--readw);margin:0 auto;padding:32px 20px 60px}
-h2{font-size:22px;margin:40px 0 16px;padding-bottom:8px;border-bottom:2px solid var(--navy-l);color:var(--navy-d)}
-h3{font-size:17px;margin:24px 0 12px;color:var(--ink2)}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 24px;margin-bottom:20px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
-.card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08)}
-.summary-box{background:var(--amber-bg);border-left:4px solid var(--amber);border-radius:0 8px 8px 0;padding:16px 20px;margin:20px 0}
-.checklist{list-style:none;padding:0}
-.checklist li{padding:8px 0 8px 28px;position:relative}
-.checklist li::before{content:"\2610";position:absolute;left:0;color:var(--navy-l);font-size:18px}
-.faq details{border:1px solid var(--line);border-radius:8px;margin-bottom:10px;overflow:hidden}
-.faq summary{padding:14px 18px;cursor:pointer;font-weight:600;background:var(--panel2);transition:background .2s}
-.faq summary:hover{background:var(--navy-tint)}
-.faq .ans{padding:14px 18px;line-height:1.7}
-footer{background:var(--navy-d);color:rgba(255,255,255,.7);text-align:center;padding:32px 20px;font-size:13px;line-height:1.8}
-#btt{position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:50%;background:var(--navy-l);color:#fff;border:none;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.2);transition:opacity .3s,transform .3s;opacity:0;pointer-events:none}
-#btt.show{opacity:1;pointer-events:auto}
-#btt:hover{transform:translateY(-2px)}
-.three-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:16px 0}
-.three-grid .item{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
-.three-grid .item .icon{font-size:28px;margin-bottom:6px}
-.three-grid .item .label{font-size:13px;color:var(--muted)}
-.three-grid .item .val{font-size:15px;font-weight:700;margin-top:4px}
-@media(max-width:640px){.hero{padding:32px 16px 28px}.wrap{padding:20px 14px 40px}.card{padding:16px}.three-grid{grid-template-columns:1fr}}
-</style>
-</head>
-<body>
-<div id="pb"></div>
-<nav><div class="inner"><span>민사집행 실무</span><span class="subtitle">조우성 변호사</span></div></nav>
-<div class="hero">
-<h1>가압류 신청 3일 완성: 채권증서→법원→집행까지 단계별 서류 체크리스트</h1>
-<p style="font-size:15px;opacity:.9;max-width:600px;margin:12px auto 0">민사집행법 기준: 채권증서 준비, 법원 신청, 담보제공 후 집행까지 3일 완성 프로세스!</p>
-<div class="meta">작성일: 2026-07-11 · 읽는 시간: 5분</div>
-</div>
-<div class="wrap">
-<div class="card" style="background:var(--navy-tint);border-left:4px solid var(--navy-l)">
-<h3 style="margin-top:0">3줄 요약 (TL;DR)</h3>
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
+
+/* 읽기 진행바 */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;
+  background:linear-gradient(90deg,var(--wine),var(--wine-l));transition:width .1s linear}
+
+/* 헤더 표지 (딥와인, 유일한 딥 컬러) */
+.header{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0}
+.header .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 26px}
+.header .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;
+  color:var(--header-accent);border:1px solid rgba(212,160,170,.4);border-radius:999px;padding:4px 12px}
+.header .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--header-accent)}
+
+/* 히어로 */
+.hero{max-width:var(--maxw);margin:0 auto;padding:30px 26px 8px}
+.hero .eb{font-size:12px;font-weight:700;color:var(--wine);letter-spacing:.02em;margin-bottom:10px}
+.hero h1{font-size:30px;line-height:1.28;font-weight:800;margin:0 0 16px;color:var(--ink);letter-spacing:-.01em}
+.hero .tldr{background:var(--wine-tint);border:1px solid var(--wine-tint-ln);border-left:4px solid var(--wine);
+  border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.hero .tldr .lb{font-size:12px;font-weight:700;color:var(--wine-d);margin-bottom:8px}
+.hero .tldr ul{margin:0;padding-left:18px}
+.hero .tldr li{margin:4px 0;font-size:15px;color:var(--ink2)}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:12.5px;color:var(--muted);margin-bottom:18px}
+.hero .meta .vchip{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);
+  font-weight:700;border-radius:6px;padding:3px 9px;font-size:11.5px}
+.hero .cta-row{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:9px;
+  padding:11px 18px;text-decoration:none;cursor:pointer;border:1px solid transparent}
+.btn-p{background:var(--wine);color:#fff}
+.btn-p:hover{background:var(--wine-d)}
+.btn-o{background:#fff;color:var(--wine-d);border-color:var(--line2)}
+.btn-o:hover{background:var(--panel2)}
+
+/* 셸: 좌측 목차 + 본문 */
+.app{max-width:var(--maxw);margin:0 auto;padding:8px 26px 60px;
+  display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:start}
+
+/* 목차 (데스크톱 = 좌측 sticky) */
+.toc{position:sticky;top:24px}
+.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;
+  margin:0 0 10px;padding-left:2px}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}
+.toc li{counter-increment:toc;margin:1px 0}
+.toc a{display:flex;gap:9px;font-size:13.5px;color:var(--ink2);text-decoration:none;
+  padding:7px 10px;border-radius:8px;border-left:3px solid transparent;line-height:1.4}
+.toc a::before{content:counter(toc,decimal-leading-zero);color:var(--faint);font-weight:700;font-size:11.5px;flex:none}
+.toc a:hover{background:var(--panel2)}
+.toc a.active{background:var(--wine-tint);border-left-color:var(--wine);color:var(--wine-d);font-weight:700}
+.toc-toggle{display:none}
+
+/* 본문 */
+.content{max-width:var(--readw);min-width:0}
+section.blk{scroll-margin-top:24px;margin-bottom:38px}
+.secl{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.05em;margin:0 0 12px}
+.secl::before{content:"";width:7px;height:15px;background:var(--wine);border-radius:2px;flex:none}
+section.blk h2{font-size:23px;font-weight:800;line-height:1.35;margin:0 0 14px;color:var(--ink);letter-spacing:-.01em}
+section.blk h3{font-size:17px;font-weight:700;margin:26px 0 10px;color:var(--wine-d)}
+section.blk p{margin:0 0 14px;color:var(--ink2)}
+section.blk ul,section.blk ol{margin:0 0 14px;padding-left:22px;color:var(--ink2)}
+section.blk li{margin:6px 0}
+strong{color:var(--ink);font-weight:700}
+a.ln{color:var(--wine-l);text-decoration:none;border-bottom:1px solid var(--wine-tint-ln)}
+a.ln:hover{border-bottom-color:var(--wine-l)}
+
+/* 핵심요약 카드 */
+.summary{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.summary .lb{font-size:11px;font-weight:700;color:var(--wine-d);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.summary ul{margin:0;padding-left:18px}
+
+/* 근거 카드 (조문·판례) */
+.ev{background:#fff;border:1px solid var(--line);border-left:4px solid var(--wine);border-radius:10px;
+  padding:13px 15px;margin:0 0 12px}
+.ev .top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px}
+.ev .kind{font-size:11px;font-weight:700;color:#fff;background:var(--wine);border-radius:5px;padding:2px 8px}
+.ev .kind.law{background:var(--wine-d)}
+.ev .kind.case{background:var(--amber)}
+.ev .cite{font-size:13.5px;font-weight:700;color:var(--ink)}
+.ev .vtick{margin-left:auto;font-size:11px;font-weight:700;color:var(--rL-tx);background:var(--rL-bg);border-radius:5px;padding:2px 7px}
+.ev .gist{font-size:14px;color:var(--ink2);margin:0}
+.ev .date{font-size:12px;color:var(--muted);margin-top:5px}
+
+/* 다이어그램 — 플로우 / 체크리스트 (CSS·SVG only) */
+.figure{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin:0 0 18px}
+.figure .cap{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:12px}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px}
+.flow .step{flex:1;min-width:120px;background:var(--wine-tint);border:1px solid var(--wine-tint-ln);
+  border-radius:10px;padding:11px 12px;position:relative}
+.flow .step .n{font-size:11px;font-weight:700;color:var(--wine)}
+.flow .step .t{font-size:13.5px;font-weight:700;color:var(--ink);margin-top:2px}
+.flow .step .d{font-size:12.5px;color:var(--ink2);margin-top:3px}
+.checklist{list-style:none;margin:0;padding:0}
+.checklist li{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+.checklist li:last-child{border-bottom:none}
+.checklist .ck{flex:none;width:20px;height:20px;border-radius:5px;background:var(--rL-bg);color:var(--rL-tx);
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+
+/* 위험도 칩 */
+.chip{display:inline-flex;align-items:center;justify-content:center;min-width:34px;font-size:11px;font-weight:500;
+  border-radius:6px;padding:3px 8px;margin-right:4px}
+.c-H{background:var(--rH);color:#fff}
+.c-M{background:var(--rM-bg);color:var(--rM-tx)}
+.c-L{background:var(--rL-bg);color:var(--rL-tx)}
+
+/* 표 */
+.tbl-wrap{overflow-x:auto;margin:0 0 18px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px}
+
+/* FAQ (아코디언) */
+.faq details{background:#fff;border:1px solid var(--line);border-radius:10px;margin:0 0 10px;overflow:hidden}
+.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:15px;font-weight:700;color:var(--ink);
+  display:flex;align-items:center;gap:10px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--wine-tint);
+  color:var(--wine-d);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+.faq details[open] summary{border-bottom:1px solid var(--line);color:var(--wine-d)}
+.faq .a{padding:14px 16px;font-size:14.5px;color:var(--ink2)}
+
+/* 최신성·면책 고지 */
+.notice{background:#fff;border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;
+  font-size:12.5px;color:var(--muted);line-height:1.7}
+
+/* 맨 위로 버튼 */
+#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--wine-tint-ln);background:var(--wine);color:#fff;font-size:18px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;
+  box-shadow:0 4px 14px rgba(58,21,37,.28)}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{background:var(--wine-d)}
+
+/* 푸터 프로필 + 상담 CTA */
+.footer{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0;margin-top:20px}
+.footer .wrap{max-width:var(--maxw);margin:0 auto;padding:34px 26px}
+.footer h3{font-size:20px;font-weight:800;margin:0 0 8px;color:#fff}
+.footer p{font-size:14px;color:rgba(255,255,255,.72);margin:0 0 6px;line-height:1.7}
+.footer .prof{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end}
+.footer .cta-f{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.footer .btn-f{background:#fff;color:var(--wine-d)}
+.footer .btn-f:hover{background:var(--header-accent)}
+.footer .btn-fo{background:transparent;color:#f4eef0;border-color:rgba(255,255,255,.35)}
+.footer .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:22px;padding-top:14px;
+  font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.7}
+
+/* ── 모바일 (≤820px) ── */
+@media(max-width:820px){
+  .hero h1{font-size:24px}
+  .app{grid-template-columns:1fr;gap:0;padding-top:0}
+  .toc{position:static;margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 8px}
+  .toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;
+    cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--wine-d);padding:9px 8px}
+  .toc-toggle .ar{transition:transform .2s}
+  .toc.closed .toc-toggle .ar{transform:rotate(-90deg)}
+  .toc .tt{display:none}
+  .toc ol{max-height:50vh;overflow:auto}
+  .toc.closed ol{display:none}
+  section.blk h2{font-size:20px}
+  th,td{white-space:nowrap}
+}
+@media print{
+  #progress,.toc,.cta-row,.footer .cta-f{display:none}
+  .header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .app{display:block}
+}
+</style></head><body><div id="progress"></div><button id="toTop" aria-label="맨 위로">?</button><header class="header"><div class="wrap"><span class="badge"><span class="dot"></span>조우성 변호사 ? 법률 인사이트</span></div></header><div class="hero"><div class="eb">전자책 대시보드 ? 실무 가이드</div><h1>가압류 신청 3일 완성: 채권증서→법원→집행까지 단계별 서류 체크리스트</h1><div class="tldr"><div class="lb">3줄 요약 (TL;DR)</div><ul><li>원문 Markdown의 제목?본문?표?체크리스트를 반영한 공개용 HTML입니다.</li><li>문서의 핵심 내용과 실무상 확인 포인트를 한 화면에서 확인할 수 있습니다.</li><li>구체적인 사안은 최신 법령?판례와 사실관계 확인이 필요합니다.</li></ul></div><div class="meta"><span>원문: 20260711_provisional_seizure_3days.md</span><span class="vchip">원문 기반 HTML</span></div><div class="cta-row"><a class="btn btn-p" href="#s1">핵심 내용 보기</a><a class="btn btn-o" href="#faq">확인 사항</a></div></div><div class="app"><nav class="toc" id="toc"><div class="tt">목차</div><ol id="toc-list"><li><a href="#s1">본문</a></li><li><a href="#s2">3줄 요약 (TL;DR)</a></li><li><a href="#s3">Day 1: 채권증서 준비 (소명자료 확보)</a></li><li><a href="#s4">Day 2: 법원 신청 (신청서 제출)</a></li><li><a href="#s5">Day 3: 집행 (담보제공 → 결정 → 집행)</a></li><li><a href="#s6">필수 서류 체크리스트 (3일 완성)</a></li><li><a href="#s7">FAQ</a></li><li><a href="#s8">종합: 3일 프로세스 요약표</a></li><li><a href="#s9">관련 법령</a></li></ol></nav><main class="content"><section class="blk" id="s1"><div class="secl">SECTION</div><blockquote>
+<p>[!web] 웹으로 보기
+https://woosungjo-law.github.io/share/d/provisional-seizure-3days-1f3w.html</p>
+</blockquote>
+<p><em>출처: 조우성 변호사 / 로펌 머스트노우 | 문의: law@mustknow.co.kr</em></p>
+<h1>가압류 신청 3일 완성: 채권증서→법원→집행까지 단계별 서류 체크리스트</h1></section><section class="blk" id="s2"><div class="secl">SECTION</div><h2>3줄 요약 (TL;DR)</h2>
 <ul>
-<li>가압류는 채권자의 <strong>금전채권 집행을 보전</strong>하기 위해 채무자의 재산을 임시 동결하는 민사집행법상 보전처분이다(제276조).</li>
-<li><strong>3일 프로세스</strong>: Day 1 채권증서 등 소명자료 준비 → Day 2 법원에 신청서 제출 → Day 3 담보제공 후 집행.</li>
-<li>가압류는 임시 조치이므로 결정 후 <strong>본안소송 제기</strong>가 필수이며(제287조), 제소명령에 응하지 않으면 가압류가 취소될 수 있다.</li>
+<li>가압류는 채권자의 <strong>금전채권 집행을 보전</strong>하기 위해 채무자의 재산을 임시 동결하는 민사집행법상 보전처분이다(민사집행법 제276조).</li>
+<li><strong>3일 프로세스</strong>: 1일차 채권증서 등 소명자료 준비 → 2일차 법원에 신청서 제출 → 3일차 담보제공 후 집행.</li>
+<li>가압류는 임시 조치이므로, 결정 후 <strong>본안소송 제기</strong>가 필수이며(민사집행법 제287조), 제소명령에 응하지 않으면 가압류가 취소될 수 있다.</li>
 </ul>
-</div>
-<div class="three-grid">
-<div class="item"><div class="icon">Day 1</div><div class="label">채권증서 준비</div><div class="val" style="color:var(--navy-l)">소명자료 확보</div></div>
-<div class="item"><div class="icon">Day 2</div><div class="label">법원 신청</div><div class="val" style="color:var(--red)">신청서 제출</div></div>
-<div class="item"><div class="icon">Day 3</div><div class="label">집행</div><div class="val" style="color:var(--green)">담보·결정·집행</div></div>
-</div>
-<h2>Day 1: 채권증서 준비 (소명자료 확보)</h2>
-<div class="card">
-<p><strong>핵심</strong><br>
-가압류 신청의 핵심은 <strong>피보전권리</strong>(채권 존재)와 <strong>보전의 필요성</strong>(긴급성)을 법원에 소명하는 것이다. 소명은 '확실한 증명'보다 완화된 개념으로 법관이 '아마 그럴 것'이라는 정도의 개연성을 인정하면 충분하다.</p>
+<hr /></section><section class="blk" id="s3"><div class="secl">SECTION</div><h2>Day 1: 채권증서 준비 (소명자료 확보)</h2>
+<p><strong>한눈에</strong>
+- 가압류 신청의 핵심은 <strong>피보전권리</strong>(채권의 존재)와 <strong>보전의 필요성</strong>(재산을 묶어둘 긴급성)을 법원에 소명하는 것이다.
+- 소명은 '확실한 증명'보다 완화된 개념으로, 법관이 '아마 그럴 것이다'라는 정도의 개연성을 인정하면 충분하다.</p>
+<p><strong>필요 소명자료 목록</strong></p>
 <table>
-<tr><th>구분</th><th>필수 서류</th><th>보조 서류</th></tr>
-<tr><td>피보전권리</td><td>계약서, 차용증, 공정증서, 세금계산서</td><td>거래명세표, 이체내역, 이메일</td></tr>
-<tr><td>보전의 필요성</td><td>채무자 재산 처분 정황 자료</td><td>신용등급 하락 자료, 타 가압류 사실</td></tr>
-<tr><td>채무자 확인</td><td>주민등록초본 (개인) / 법인등기부등본 (법인)</td><td>사업자등록증, 주거래은행 정보</td></tr>
-<tr><td>부동산 가압류</td><td>부동산 등기부등본</td><td>토지·건물대장</td></tr>
-<tr><td>예금 가압류</td><td>채무자 명의 계좌 정보</td><td>통장사본, 거래내역</td></tr>
+<thead>
+<tr>
+<th>구분</th>
+<th>필수 서류</th>
+<th>보조 서류</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>피보전권리</td>
+<td>계약서, 차용증, 공정증서, 세금계산서</td>
+<td>거래명세표, 이체내역, 이메일·문자</td>
+</tr>
+<tr>
+<td>보전의 필요성</td>
+<td>채무자 재산 처분 정황 자료</td>
+<td>신용등급 하락 자료, 타 채권자 가압류 사실</td>
+</tr>
+<tr>
+<td>채무자 확인</td>
+<td>주민등록초본 (개인) / 법인등기부등본 (법인)</td>
+<td>사업자등록증, 주거래은행 정보</td>
+</tr>
+<tr>
+<td>부동산 가압류</td>
+<td>부동산 등기부등본 (갑구·을구)</td>
+<td>토지·건물대장</td>
+</tr>
+<tr>
+<td>예금 가압류</td>
+<td>채무자 명의 계좌 정보</td>
+<td>통장사본, 거래내역</td>
+</tr>
+</tbody>
 </table>
-<div class="summary-box">
-실무 포인트: 가압류는 속도전이다. 채무자의 재산 처분 정황이 포착되면 내용증명 생략하고 바로 가압류부터 진행하는 것이 효과적이다.
-</div>
-</div>
-<h2>Day 2: 법원 신청 (신청서 제출)</h2>
-<div class="card">
-<p><strong>핵심</strong><br>
-가압류 신청서를 작성하여 <strong>관할 법원</strong>에 제출한다. 관할은 채무자 주소지 또는 가압류 목적물 소재지 법원이다(민사집행법 제278조).</p>
+<blockquote>
+<p>[!warning] 실무 포인트
+가압류는 '속도전'이다. 소문이 들리는 즉시 움직여야 한다. 채무자의 재산 처분 정황이 포착되면 내용증명 생략하고 바로 가압류부터 진행하는 것이 효과적인 전략이다.</p>
+</blockquote>
+<hr /></section><section class="blk" id="s4"><div class="secl">SECTION</div><h2>Day 2: 법원 신청 (신청서 제출)</h2>
+<p><strong>한눈에</strong>
+- 가압류 신청서를 작성하여 <strong>관할 법원</strong>에 제출한다. 관할은 채무자 주소지 또는 가압류 목적물 소재지 법원이다.
+- 신청서에는 당사자 표시, 신청 취지(청구 금액), 신청 이유(피보전권리·보전의 필요성)를 기재해야 한다.</p>
+<p><strong>신청 비용</strong></p>
 <table>
-<tr><th>항목</th><th>금액</th><th>비고</th></tr>
-<tr><td>인지대</td><td>10,000원</td><td>정액, 전자소송 시 감면 가능</td></tr>
-<tr><td>송달료</td><td>당사자 수에 따라 변동</td><td>법원 예납 기준 따름</td></tr>
-<tr><td>담보제공</td><td>청구금액의 10~30%</td><td>보증보험증권 대체 가능 (수수료 0.1~0.2%)</td></tr>
+<thead>
+<tr>
+<th>항목</th>
+<th>금액</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>인지대</td>
+<td>10,000원</td>
+<td>정액, 전자소송 시 감면 가능</td>
+</tr>
+<tr>
+<td>송달료</td>
+<td>당사자 수에 따라 변동</td>
+<td>법원 예납 기준 따름</td>
+</tr>
+<tr>
+<td>담보제공</td>
+<td>통상 청구금액의 10~30%</td>
+<td>보증보험증권으로 대체 가능 (수수료 0.1~0.2%)</td>
+</tr>
+<tr>
+<td>법무사·변호사 수임료</td>
+<td>별도</td>
+<td>필요 시</td>
+</tr>
+</tbody>
 </table>
-</div>
-<h2>Day 3: 집행 (담보제공 → 결정 → 집행)</h2>
-<div class="card">
-<p><strong>핵심</strong><br>
-법원이 가압류 신청을 인용하면 <strong>담보제공명령</strong>이 내려진다. 담보 제공 후 가압류 결정이 내려지고 집행 단계로 넘어간다. 현금 공탁보다 <strong>보증보험증권</strong> 활용이 효율적이다.</p>
+<p><strong>신청 방법</strong></p>
 <table>
-<tr><th>단계</th><th>내용</th><th>소요 시간</th></tr>
-<tr><td>담보제공</td><td>법원 공탁소에 현금 공탁 또는 보증보험증권 제출</td><td>1시간 ~ 1일</td></tr>
-<tr><td>가압류 결정</td><td>법원이 가압류 결정문 발령</td><td>담보 제공 후 즉시</td></tr>
-<tr><td>부동산 집행</td><td>가압류 기입등기 촉탁 (법원이 등기소에 촉탁)</td><td>1~2일</td></tr>
-<tr><td>예금채권 집행</td><td>채권압류·추심명령 신청</td><td>3~7일</td></tr>
+<thead>
+<tr>
+<th>방식</th>
+<th>설명</th>
+<th>장점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>방문 접수</td>
+<td>관할 법원 접수처에 직접 제출</td>
+<td>즉시 접수증 수령</td>
+</tr>
+<tr>
+<td>우편 접수</td>
+<td>등기우편으로 법원에 발송</td>
+<td>시간·비용 절약</td>
+</tr>
+<tr>
+<td>전자소송</td>
+<td>www.ecfs.scourt.go.kr</td>
+<td>24시간 접수 가능, 신속</td>
+</tr>
+</tbody>
 </table>
-</div>
-<h2>필수 서류 체크리스트 (3일 완성)</h2>
+<hr /></section><section class="blk" id="s5"><div class="secl">SECTION</div><h2>Day 3: 집행 (담보제공 → 결정 → 집행)</h2>
+<p><strong>한눈에</strong>
+- 법원이 가압류 신청을 인용하면 <strong>담보제공명령</strong>이 내려진다. 담보를 제공한 후에야 가압류 결정이 내려지고 집행 단계로 넘어간다.
+- 담보는 현금 공탁보다 <strong>보증보험증권</strong>을 활용하는 것이 실무적으로 효율적이다.</p>
+<p><strong>집행 절차</strong></p>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>내용</th>
+<th>소요 시간</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>① 담보제공</td>
+<td>법원 공탁소에 현금 공탁 또는 보증보험증권 제출</td>
+<td>1시간 ~ 1일</td>
+</tr>
+<tr>
+<td>② 가압류 결정</td>
+<td>법원이 가압류 결정문 발령</td>
+<td>담보 제공 후 즉시~1일</td>
+</tr>
+<tr>
+<td>③ 부동산 집행</td>
+<td>가압류 기입등기 촉탁 (법원이 등기소에 촉탁)</td>
+<td>1~2일</td>
+</tr>
+<tr>
+<td>④ 예금채권 집행</td>
+<td>채권압류·추심명령 신청 → 제3채무자(은행)에 송달</td>
+<td>3~7일</td>
+</tr>
+<tr>
+<td>⑤ 급여 등 집행</td>
+<td>채무자 급여 등에 대한 압류·추심명령</td>
+<td>3~7일</td>
+</tr>
+</tbody>
+</table>
+<hr /></section><section class="blk" id="s6"><div class="secl">SECTION</div><h2>필수 서류 체크리스트 (3일 완성)</h2>
 <h3>Day 1: 채권증서 준비</h3>
-<div class="card">
-<ul class="checklist">
-<li>계약서·차용증·공정증서 (피보전권리 증명)</li>
-<li>세금계산서·거래명세표·이체내역</li>
-<li>채무자 주민등록초본 또는 법인등기부등본</li>
-<li>부동산 등기부등본 (부동산 가압류 시)</li>
-<li>채무자 재산 처분 정황 자료 (보전의 필요성)</li>
-<li>신용정보·재산조회 결과 (있다면)</li>
+<ul>
+<li>[ ] 계약서·차용증·공정증서 (피보전권리 증명)</li>
+<li>[ ] 세금계산서·거래명세표·이체내역</li>
+<li>[ ] 채무자 주민등록초본 또는 법인등기부등본</li>
+<li>[ ] 부동산 등기부등본 (부동산 가압류 시)</li>
+<li>[ ] 채무자 재산 처분 정황 자료 (보전의 필요성)</li>
+<li>[ ] 신용정보·재산조회 결과 (있다면)</li>
 </ul>
-</div>
 <h3>Day 2: 법원 신청</h3>
-<div class="card">
-<ul class="checklist">
-<li>가압류 신청서 (당사자·청구금액·신청이유)</li>
-<li>인지대 10,000원 (전자소송 시 감면 확인)</li>
-<li>송달료 납부 (당사자 수 확인)</li>
-<li>소명자료 묶음 (계약서·등기부등본 등)</li>
-<li>위임장 (변호사·법무사 선임 시)</li>
-<li>관할 법원 확인 (채무자 주소지·목적물 소재지)</li>
+<ul>
+<li>[ ] 가압류 신청서 (당사자·청구금액·신청이유)</li>
+<li>[ ] 인지대 10,000원 (전자소송 시 감면 확인)</li>
+<li>[ ] 송달료 납부 (당사자 수 확인)</li>
+<li>[ ] 소명자료 묶음 (계약서·등기부등본 등)</li>
+<li>[ ] 위임장 (변호사·법무사 선임 시)</li>
+<li>[ ] 관할 법원 확인 (채무자 주소지·목적물 소재지)</li>
 </ul>
-</div>
 <h3>Day 3: 집행</h3>
-<div class="card">
-<ul class="checklist">
-<li>담보제공 완료 (보증보험증권 발급 또는 현금 공탁)</li>
-<li>가압류 결정문 수령</li>
-<li>부동산: 등기소에 가압류 기입등기 촉탁</li>
-<li>예금채권: 채권압류·추심명령 신청</li>
-<li>제3채무자(은행·급여 지급처) 송달 확인</li>
+<ul>
+<li>[ ] 담보제공 (보증보험증권 발급 또는 현금 공탁)</li>
+<li>[ ] 가압류 결정문 수령</li>
+<li>[ ] 부동산: 등기소에 가압류 기입등기 촉탁 (법원이 직권 처리)</li>
+<li>[ ] 예금채권: 채권압류·추심명령 신청 (별도 필요)</li>
+<li>[ ] 제3채무자(은행·급여 지급처) 송달 확인</li>
 </ul>
-</div>
-<h2>FAQ</h2>
-<div class="faq">
-<details><summary>Q1. 가압류 신청 비용은 얼마나 드나요?</summary>
-<div class="ans">직접 신청 시 인지대 1만 원 + 송달료 수만 원 수준입니다. 법원이 명하는 담보금(청구액의 10~30%)이 가장 큰 비용이며, 보증보험증권을 활용하면 청구액의 0.1~0.2% 수준의 수수료로 대체 가능합니다.</div></details>
-<details><summary>Q2. 가압류 후 본안소송에서 패소하면 어떻게 되나요?</summary>
-<div class="ans">가압류가 부당한 것으로 확정되면 채권자는 채무자의 손해를 배상해야 합니다. 법원이 요구하는 담보공탁금이 이 손해배상 재원이 됩니다. 가압류 전 본안 승소 가능성을 반드시 검토해야 합니다.</div></details>
-<details><summary>Q3. 가압류 후 본안소송은 언제까지 제기해야 하나요?</summary>
-<div class="ans">채무자가 제소명령을 신청하면 법원이 기간을 정하고, 그 기간 내에 소를 제기하지 않으면 가압류가 취소됩니다(민사집행법 제287조). 통상 2주~1개월 정도의 기간이 부여됩니다.</div></details>
-</div>
-<h2>종합: 3일 프로세스 요약표</h2>
+<hr /></section><section class="blk" id="s7"><div class="secl">SECTION</div><h2>FAQ</h2>
+<p><strong>Q1. 가압류 신청 비용은 얼마나 드나요?</strong></p>
+<blockquote>
+<p>직접 신청 시 인지대 1만 원 + 송달료 수만 원 수준으로 저렴합니다. 다만 법원이 명하는 담보금(청구액의 10~30%)이 가장 큰 비용이며, 보증보험증권을 활용하면 청구액의 0.1~0.2% 수준의 수수료로 대체 가능합니다.</p>
+</blockquote>
+<p><strong>Q2. 가압류 신청 후 본안소송에서 패소하면 어떻게 되나요?</strong></p>
+<blockquote>
+<p>가압류가 부당한 것으로 확정되면 채권자는 채무자의 손해를 배상해야 합니다. 법원이 요구하는 담보공탁금이 이 손해배상 재원이 됩니다. 따라서 가압류 전 본안 승소 가능성을 반드시 검토해야 합니다.</p>
+</blockquote>
+<p><strong>Q3. 가압류 후 본안소송은 언제까지 제기해야 하나요?</strong></p>
+<blockquote>
+<p>법원이 정한 기간 내에 제기해야 합니다. 채무자가 제소명령을 신청하면 법원이 기간을 정하고, 그 기간 내에 소를 제기하지 않으면 가압류가 취소됩니다(민사집행법 제287조). 통상 2주~1개월 정도의 기간이 부여됩니다.</p>
+</blockquote>
+<hr /></section><section class="blk" id="s8"><div class="secl">SECTION</div><h2>종합: 3일 프로세스 요약표</h2>
 <table>
-<tr><th>일차</th><th>단계</th><th>핵심 업무</th><th>완료 조건</th></tr>
-<tr><td>Day 1</td><td>준비</td><td>채권증서·소명자료 확보</td><td>피보전권리 + 보전의 필요성 소명 완료</td></tr>
-<tr><td>Day 2</td><td>신청</td><td>가압류 신청서 법원 제출</td><td>접수증 수령</td></tr>
-<tr><td>Day 3</td><td>집행</td><td>담보제공 + 결정 + 집행</td><td>가압류 결정문 수령, 집행 완료</td></tr>
-<tr><td>이후</td><td>본안</td><td>본안소송 제기 (2주~1개월 내)</td><td>소송 접수증, 가압류 유지</td></tr>
+<thead>
+<tr>
+<th>일차</th>
+<th>단계</th>
+<th>핵심 업무</th>
+<th>완료 조건</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Day 1</td>
+<td>준비</td>
+<td>채권증서·소명자료 확보</td>
+<td>피보전권리 + 보전의 필요성 소명 완료</td>
+</tr>
+<tr>
+<td>Day 2</td>
+<td>신청</td>
+<td>가압류 신청서 법원 제출</td>
+<td>접수증 수령</td>
+</tr>
+<tr>
+<td>Day 3</td>
+<td>집행</td>
+<td>담보제공 + 결정 + 집행</td>
+<td>가압류 결정문 수령, 집행 완료</td>
+</tr>
+<tr>
+<td>이후</td>
+<td>본안</td>
+<td>본안소송 제기 (2주~1개월 내)</td>
+<td>소송 접수증, 가압류 유지</td>
+</tr>
+</tbody>
 </table>
-<h2>관련 법령</h2>
+<hr /></section><section class="blk" id="s9"><div class="secl">SECTION</div><h2>관련 법령</h2>
 <table>
-<tr><th>조문</th><th>내용</th></tr>
-<tr><td>민사집행법 제276조</td><td>가압류의 목적 (금전채권 집행 보전)</td></tr>
-<tr><td>민사집행법 제277조</td><td>보전의 필요성 (집행 곤란 염려)</td></tr>
-<tr><td>민사집행법 제278조</td><td>관할 법원 (채무자 주소지·목적물 소재지)</td></tr>
-<tr><td>민사집행법 제279조</td><td>가압류 신청 (신청서 기재사항)</td></tr>
-<tr><td>민사집행법 제280조</td><td>담보 제공 (법원의 담보명령)</td></tr>
-<tr><td>민사집행법 제287조</td><td>본안 소송 제기 (제소명령·취소 사유)</td></tr>
+<thead>
+<tr>
+<th>조문</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>민사집행법 제276조</td>
+<td>가압류의 목적 (금전채권 집행 보전)</td>
+</tr>
+<tr>
+<td>민사집행법 제277조</td>
+<td>보전의 필요성 (집행 곤란 염려)</td>
+</tr>
+<tr>
+<td>민사집행법 제278조</td>
+<td>관할 법원 (채무자 주소지·목적물 소재지)</td>
+</tr>
+<tr>
+<td>민사집행법 제279조</td>
+<td>가압류 신청 (신청서 기재사항)</td>
+</tr>
+<tr>
+<td>민사집행법 제280조</td>
+<td>담보 제공 (법원의 담보명령)</td>
+</tr>
+<tr>
+<td>민사집행법 제287조</td>
+<td>본안 소송 제기 (제소명령·취소 사유)</td>
+</tr>
+</tbody>
 </table>
-<div style="background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:16px 20px;margin:24px 0;font-size:13px;color:var(--ink2)">
-<strong>면책 고지</strong><br>본 가이드는 2026년 7월 기준 민사집행법을 기반으로 합니다. 가압류는 신속성이 생명이며, 구체적 사정에 따라 법원의 판단이 달라질 수 있습니다. 반드시 전문 변호사와 상담하시기 바랍니다.
-</div>
-</div>
-<footer>
-조우성 변호사 / 로펌 머스트노우<br>
-문의: law@mustknow.co.kr | 2026년 7월
-</footer>
-<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">위로</button>
-<script>
-const pb=document.getElementById('pb');
-const btt=document.getElementById('btt');
-window.addEventListener('scroll',function(){const h=document.documentElement;const p=h.scrollTop/(h.scrollHeight-h.clientHeight);pb.style.width=Math.min(p*100,100)+'%';btt.classList.toggle('show',h.scrollTop>300)});
-</script>
-</body>
-</html>
+<hr />
+<p>[!IMPORTANT]
+본 가이드는 2026년 7월 기준 민사집행법을 기반으로 합니다. 가압류는 신속성이 생명이며, 구체적 사정에 따라 법원의 판단이 달라질 수 있습니다. 반드시 전문 변호사와 상담하시기 바랍니다.</p></section><section class="blk faq" id="faq"><div class="secl">NOTICE</div><h2>확인 사항</h2><div class="notice">이 문서는 일반적인 법률 정보 제공을 위한 자료입니다. 구체적인 사실관계와 최신 법령?판례에 따라 결론이 달라질 수 있습니다.</div></section></main></div><footer class="footer"><div class="wrap"><h3>조우성 변호사</h3><p>실무에 바로 활용할 수 있는 법률 지식과 대응 가이드를 제공합니다.</p></div></footer></body></html>

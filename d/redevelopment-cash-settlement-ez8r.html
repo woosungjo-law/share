@@ -1,165 +1,377 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
-<title>재개발 조합원 분양권: 현물청산 통보 시 대응 선택지 3가지 — 조우성 변호사</title>
-<meta name="description" content="재개발 현물청산 대응 선택지 3가지: 분양신청 재고려·법적 다툼·청산 수용. 도시정비법 기준.">
-<style>
-:root{--bg:#f0f2f5;--panel:#fff;--panel2:#f8f9fb;--line:#e2e5ea;--ink:#111827;--ink2:#374151;--muted:#6b7280;--navy:#1a3a6b;--navy-d:#0f2547;--navy-l:#2e6be6;--navy-tint:#e8edf5;--green-bg:#ecfdf5;--green:#059669;--amber:#f59e0b;--amber-bg:#fffbeb;--red:#dc2626;--red-bg:#fef2f2;--font:-apple-system,BlinkMacSystemFont,Malgun Gothic,sans-serif;--readw:760px}
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>재개발 조합원 분양권: &#x27;현물청산&#x27; 통보를 받았을 때 대응 선택지 3가지</title><style>
+/* ============================================================
+   법률 대시보드 전자책 — Apollo 기반 경량 커스텀 (공개 롱스크롤)
+   Apollo 토큰(버건디 액센트 + 웜 화이트 + 딥와인 헤더) 상속.
+   의뢰인 리포트(리스크레이더 6뷰)와 달리 공개 독서형 롱스크롤.
+   self-contained: 외부 CDN/폰트/이미지/스크립트 의존 없음.
+   ============================================================ */
+:root{
+  --bg:#f5f1f2; --panel:#ffffff; --panel2:#faf6f7;
+  --line:#ebe2e5; --line2:#ddccd2;
+  --ink:#2c1d26; --ink2:#56424c; --muted:#8a7b82; --faint:#b3a6ab;
+  --wine:#7a2e3a; --wine-d:#5a1f2b; --wine-l:#9c4456;
+  --wine-tint:#f4e9ec; --wine-tint-ln:#ecd7dd;
+  --header-bg:#3a1525; --header-bg2:#4e1f32; --header-accent:#d4a0aa;
+  --rH:#c74a3c; --rM-bg:#f8e4b8; --rM-tx:#7d520a; --rL-bg:#d6ecdb; --rL-tx:#287a54;
+  --amber:#b45309; --green:#287a54;
+  --font:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Noto Sans KR',sans-serif;
+  --maxw:1120px; --readw:760px;
+}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.75}
-#pb{position:fixed;top:0;left:0;right:0;height:4px;background:var(--line);z-index:999}
-#pb div{height:100%;width:0;background:var(--navy-l);transition:width .3s}
-.hero{background:linear-gradient(135deg,var(--navy-d),var(--navy));color:#fff;padding:48px 20px 32px;text-align:center}
-.hero h1{font-size:24px;margin:0 0 8px;font-weight:700;line-height:1.4}
-.hero p{font-size:14px;margin:0;opacity:.85}
-.wrap{max-width:var(--readw);margin:0 auto;padding:16px}
-.card{background:var(--panel);border-radius:12px;padding:20px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
-.summary-box{background:var(--navy-tint);padding:14px 16px;border-radius:8px;margin-top:12px;font-size:14px}
-.alert-box{background:var(--red-bg);padding:14px 16px;border-radius:8px;margin-top:12px;font-size:14px;border-left:3px solid var(--red)}
-.tldr{background:var(--green-bg);border-left:3px solid var(--green);padding:14px 16px;border-radius:8px;margin-bottom:16px;font-size:14px}
-h2{font-size:18px;margin:20px 0 12px;color:var(--navy-d)}
-th{background:#f3f4f6;font-weight:600;text-align:left;padding:8px 10px;font-size:13px}
-td{padding:8px 10px;border-top:1px solid var(--line);font-size:13px}
-table{width:100%;border-collapse:collapse;margin:8px 0}
-.checklist{list-style:none;padding:0;margin:8px 0}
-.checklist li{padding:6px 0 6px 28px;position:relative;font-size:14px}
-.checklist li:before{content:"☐";position:absolute;left:0;color:var(--navy-l)}
-details{margin:8px 0}
-details summary{cursor:pointer;font-weight:600;font-size:14px;padding:8px 0;color:var(--navy-l)}
-details p{font-size:14px;margin:4px 0 8px;padding:0 0 0 12px;border-left:2px solid var(--line)}
-.choice-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin:12px 0}
-.choice-card{border-radius:10px;padding:14px;font-size:13px;color:#fff}
-.choice-card h4{margin:0 0 6px;font-size:15px}
-.choice-card p{margin:0;opacity:.9;line-height:1.5}
-.cc1{background:var(--green)}
-.cc2{background:var(--navy-l)}
-.cc3{background:var(--amber);color:var(--ink)}
-.foot{text-align:center;padding:24px 16px;font-size:12px;color:var(--muted)}
-.foot a{color:var(--navy-l)}
-@media(max-width:600px){.hero h1{font-size:20px}.wrap{padding:12px}.choice-grid{grid-template-columns:1fr}}
-</style>
-</head>
-<body>
-<div id="pb"><div></div></div>
-<header class="hero">
-<h1>재개발 조합원 분양권</h1>
-<p>'현물청산' 통보를 받았을 때 대응 선택지 3가지</p>
-</header>
-<main class="wrap">
-<div class="tldr">
-<strong>3줄 요약 (TL;DR)</strong><br>
-1. 현물청산(현금청산)은 분양신청을 하지 않거나 분양대상 제외 시 토지·건물을 현금 보상받고 조합원 지위를 상실하는 절차다(도시정비법 제74조·제76조).<br>
-2. 3가지 선택지: ① 분양신청 재고려 ② 협의·법적 다툼 ③ 청산 수용·전략적 전환<br>
-3. 선택지는 관리처분계획 인가 여부와 분양신청 기간 도과 여부에 따라 달라진다.
-</div>
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
 
-<div class="card">
-<h2>1. 현물청산의 개념과 발생 요건</h2>
-<p><strong>현물청산</strong>이란 재개발·재건축 정비사업에서 조합원이 분양을 포기하거나 분양대상에서 제외될 경우, 종전의 토지·건축물에 대한 권리를 금전으로 보상받고 조합에서 탈퇴하는 제도다(도시정비법 제74조 제2항, 제76조 제1항).</p>
-<table>
-<tr><th>구분</th><th>분양신청 O</th><th>분양신청 X (현물청산)</th></tr>
-<tr><td>조합원 지위</td><td>유지</td><td>상실</td></tr>
-<tr><td>권리 내용</td><td>조합원 입주권 (분양계약 체결)</td><td>청산금 수령권</td></tr>
-<tr><td>사업 위험</td><td>분담금 변동 위험 부담</td><td>청산 후 위험 없음</td></tr>
-<tr><td>유동성</td><td>당분간 유동성 제약</td><td>즉시 현금화 가능</td></tr>
-</table>
-<p><strong>통보 시점:</strong> 관리처분계획 인가·고시 후 분양신청 기간 종료 → 조합이 현금청산 대상자 확정 → 개별 통보.<br><strong>법적 효과:</strong> 조합원 지위 상실, 종전자산 소유권은 조합(사업시행자)으로 이전, 청산금 수령권만 남음.</p>
-</div>
+/* 읽기 진행바 */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;
+  background:linear-gradient(90deg,var(--wine),var(--wine-l));transition:width .1s linear}
 
-<div class="card">
-<h2>2. 현물청산 통보 시 3가지 선택지</h2>
-<div class="choice-grid">
-<div class="choice-card cc1">
-<h4>선택지 1: 분양신청 재고려</h4>
-<p>분양신청 기간 미도과 시 조건부 재신청. 관리처분계획 이의제기(90일 내 행정소송). 조합 정관상 예외 조항 확인.</p>
-</div>
-<div class="choice-card cc2">
-<h4>선택지 2: 협의·법적 다툼</h4>
-<p>감정평가 이의제기(30일 내) → 재결(토지수용위원회) → 행정소송. 청산금 증액 가능하나 시간·비용 소요.</p>
-</div>
-<div class="choice-card cc3">
-<h4>선택지 3: 청산 수용·전략적 전환</h4>
-<p>청산금 수령 → 세무계획(양도세) → 재투자. 즉시 현금화, 분쟁 리스크 제로. 단, 특혜분양 기회 상실.</p>
-</div>
-</div>
-</div>
+/* 헤더 표지 (딥와인, 유일한 딥 컬러) */
+.header{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0}
+.header .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 26px}
+.header .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;
+  color:var(--header-accent);border:1px solid rgba(212,160,170,.4);border-radius:999px;padding:4px 12px}
+.header .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--header-accent)}
 
-<div class="card">
-<h2>3. 선택지 비교표</h2>
-<table>
-<tr><th>비교 항목</th><th>선택지 1 (분양 유지)</th><th>선택지 2 (법적 다툼)</th><th>선택지 3 (청산 수용)</th></tr>
-<tr><td>시간 소요</td><td>장기 (사업 기간)</td><td>6개월~2년</td><td>즉시~3개월</td></tr>
-<tr><td>비용</td><td>분담금 부담</td><td>변호사·감정 수수료</td><td>없음</td></tr>
-<tr><td>리스크</td><td>분담금 상승·사업 지연</td><td>패소·시간 손실</td><td>기회비용</td></tr>
-<tr><td>유동성</td><td>낮음</td><td>중간</td><td>높음</td></tr>
-<tr><td>수익률</td><td>높을 가능성</td><td>청산금 증액 가능성</td><td>확정적</td></tr>
-<tr><td>세무 리스크</td><td>분담금 공제 가능</td><td>소송 비용 공제</td><td>양도세 즉시 과세</td></tr>
-</table>
-</div>
+/* 히어로 */
+.hero{max-width:var(--maxw);margin:0 auto;padding:30px 26px 8px}
+.hero .eb{font-size:12px;font-weight:700;color:var(--wine);letter-spacing:.02em;margin-bottom:10px}
+.hero h1{font-size:30px;line-height:1.28;font-weight:800;margin:0 0 16px;color:var(--ink);letter-spacing:-.01em}
+.hero .tldr{background:var(--wine-tint);border:1px solid var(--wine-tint-ln);border-left:4px solid var(--wine);
+  border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.hero .tldr .lb{font-size:12px;font-weight:700;color:var(--wine-d);margin-bottom:8px}
+.hero .tldr ul{margin:0;padding-left:18px}
+.hero .tldr li{margin:4px 0;font-size:15px;color:var(--ink2)}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:12.5px;color:var(--muted);margin-bottom:18px}
+.hero .meta .vchip{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);
+  font-weight:700;border-radius:6px;padding:3px 9px;font-size:11.5px}
+.hero .cta-row{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:9px;
+  padding:11px 18px;text-decoration:none;cursor:pointer;border:1px solid transparent}
+.btn-p{background:var(--wine);color:#fff}
+.btn-p:hover{background:var(--wine-d)}
+.btn-o{background:#fff;color:var(--wine-d);border-color:var(--line2)}
+.btn-o:hover{background:var(--panel2)}
 
-<div class="card">
-<h2>4. 실무 체크리스트</h2>
-<ul class="checklist">
-<li>관리처분계획 인가일과 분양신청 기간을 정확히 확인하였는가?</li>
-<li>통보서에 기재된 청산금 산정 기준(감정평가액 등)을 검토하였는가?</li>
-<li>감정평가 이의제기 기한(통보 후 30일 이내)을 확인하였는가?</li>
-<li>조합 정관상 분양자격 제한 규정(세대수·주택 수 등)을 확인하였는가?</li>
-<li>추가 분담금 부담 능력을 객관적으로 평가하였는가?</li>
-<li>1세대 1주택 비과세 요건 충족 여부를 세무사와 상담하였는가?</li>
-<li>법적 다툼 시 비용·시간·리스크를 종합적으로 고려하였는가?</li>
-<li>청산금 수령 후 재투자 계획을 수립하였는가?</li>
-<li>행정소송 제기(인가 고시 후 90일 이내) 도과 여부를 확인하였는가?</li>
+/* 셸: 좌측 목차 + 본문 */
+.app{max-width:var(--maxw);margin:0 auto;padding:8px 26px 60px;
+  display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:start}
+
+/* 목차 (데스크톱 = 좌측 sticky) */
+.toc{position:sticky;top:24px}
+.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;
+  margin:0 0 10px;padding-left:2px}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}
+.toc li{counter-increment:toc;margin:1px 0}
+.toc a{display:flex;gap:9px;font-size:13.5px;color:var(--ink2);text-decoration:none;
+  padding:7px 10px;border-radius:8px;border-left:3px solid transparent;line-height:1.4}
+.toc a::before{content:counter(toc,decimal-leading-zero);color:var(--faint);font-weight:700;font-size:11.5px;flex:none}
+.toc a:hover{background:var(--panel2)}
+.toc a.active{background:var(--wine-tint);border-left-color:var(--wine);color:var(--wine-d);font-weight:700}
+.toc-toggle{display:none}
+
+/* 본문 */
+.content{max-width:var(--readw);min-width:0}
+section.blk{scroll-margin-top:24px;margin-bottom:38px}
+.secl{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.05em;margin:0 0 12px}
+.secl::before{content:"";width:7px;height:15px;background:var(--wine);border-radius:2px;flex:none}
+section.blk h2{font-size:23px;font-weight:800;line-height:1.35;margin:0 0 14px;color:var(--ink);letter-spacing:-.01em}
+section.blk h3{font-size:17px;font-weight:700;margin:26px 0 10px;color:var(--wine-d)}
+section.blk p{margin:0 0 14px;color:var(--ink2)}
+section.blk ul,section.blk ol{margin:0 0 14px;padding-left:22px;color:var(--ink2)}
+section.blk li{margin:6px 0}
+strong{color:var(--ink);font-weight:700}
+a.ln{color:var(--wine-l);text-decoration:none;border-bottom:1px solid var(--wine-tint-ln)}
+a.ln:hover{border-bottom-color:var(--wine-l)}
+
+/* 핵심요약 카드 */
+.summary{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.summary .lb{font-size:11px;font-weight:700;color:var(--wine-d);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.summary ul{margin:0;padding-left:18px}
+
+/* 근거 카드 (조문·판례) */
+.ev{background:#fff;border:1px solid var(--line);border-left:4px solid var(--wine);border-radius:10px;
+  padding:13px 15px;margin:0 0 12px}
+.ev .top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px}
+.ev .kind{font-size:11px;font-weight:700;color:#fff;background:var(--wine);border-radius:5px;padding:2px 8px}
+.ev .kind.law{background:var(--wine-d)}
+.ev .kind.case{background:var(--amber)}
+.ev .cite{font-size:13.5px;font-weight:700;color:var(--ink)}
+.ev .vtick{margin-left:auto;font-size:11px;font-weight:700;color:var(--rL-tx);background:var(--rL-bg);border-radius:5px;padding:2px 7px}
+.ev .gist{font-size:14px;color:var(--ink2);margin:0}
+.ev .date{font-size:12px;color:var(--muted);margin-top:5px}
+
+/* 다이어그램 — 플로우 / 체크리스트 (CSS·SVG only) */
+.figure{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin:0 0 18px}
+.figure .cap{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:12px}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px}
+.flow .step{flex:1;min-width:120px;background:var(--wine-tint);border:1px solid var(--wine-tint-ln);
+  border-radius:10px;padding:11px 12px;position:relative}
+.flow .step .n{font-size:11px;font-weight:700;color:var(--wine)}
+.flow .step .t{font-size:13.5px;font-weight:700;color:var(--ink);margin-top:2px}
+.flow .step .d{font-size:12.5px;color:var(--ink2);margin-top:3px}
+.checklist{list-style:none;margin:0;padding:0}
+.checklist li{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+.checklist li:last-child{border-bottom:none}
+.checklist .ck{flex:none;width:20px;height:20px;border-radius:5px;background:var(--rL-bg);color:var(--rL-tx);
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+
+/* 위험도 칩 */
+.chip{display:inline-flex;align-items:center;justify-content:center;min-width:34px;font-size:11px;font-weight:500;
+  border-radius:6px;padding:3px 8px;margin-right:4px}
+.c-H{background:var(--rH);color:#fff}
+.c-M{background:var(--rM-bg);color:var(--rM-tx)}
+.c-L{background:var(--rL-bg);color:var(--rL-tx)}
+
+/* 표 */
+.tbl-wrap{overflow-x:auto;margin:0 0 18px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px}
+
+/* FAQ (아코디언) */
+.faq details{background:#fff;border:1px solid var(--line);border-radius:10px;margin:0 0 10px;overflow:hidden}
+.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:15px;font-weight:700;color:var(--ink);
+  display:flex;align-items:center;gap:10px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--wine-tint);
+  color:var(--wine-d);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+.faq details[open] summary{border-bottom:1px solid var(--line);color:var(--wine-d)}
+.faq .a{padding:14px 16px;font-size:14.5px;color:var(--ink2)}
+
+/* 최신성·면책 고지 */
+.notice{background:#fff;border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;
+  font-size:12.5px;color:var(--muted);line-height:1.7}
+
+/* 맨 위로 버튼 */
+#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--wine-tint-ln);background:var(--wine);color:#fff;font-size:18px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;
+  box-shadow:0 4px 14px rgba(58,21,37,.28)}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{background:var(--wine-d)}
+
+/* 푸터 프로필 + 상담 CTA */
+.footer{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0;margin-top:20px}
+.footer .wrap{max-width:var(--maxw);margin:0 auto;padding:34px 26px}
+.footer h3{font-size:20px;font-weight:800;margin:0 0 8px;color:#fff}
+.footer p{font-size:14px;color:rgba(255,255,255,.72);margin:0 0 6px;line-height:1.7}
+.footer .prof{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end}
+.footer .cta-f{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.footer .btn-f{background:#fff;color:var(--wine-d)}
+.footer .btn-f:hover{background:var(--header-accent)}
+.footer .btn-fo{background:transparent;color:#f4eef0;border-color:rgba(255,255,255,.35)}
+.footer .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:22px;padding-top:14px;
+  font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.7}
+
+/* ── 모바일 (≤820px) ── */
+@media(max-width:820px){
+  .hero h1{font-size:24px}
+  .app{grid-template-columns:1fr;gap:0;padding-top:0}
+  .toc{position:static;margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 8px}
+  .toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;
+    cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--wine-d);padding:9px 8px}
+  .toc-toggle .ar{transition:transform .2s}
+  .toc.closed .toc-toggle .ar{transform:rotate(-90deg)}
+  .toc .tt{display:none}
+  .toc ol{max-height:50vh;overflow:auto}
+  .toc.closed ol{display:none}
+  section.blk h2{font-size:20px}
+  th,td{white-space:nowrap}
+}
+@media print{
+  #progress,.toc,.cta-row,.footer .cta-f{display:none}
+  .header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .app{display:block}
+}
+</style></head><body><div id="progress"></div><button id="toTop" aria-label="맨 위로">?</button><header class="header"><div class="wrap"><span class="badge"><span class="dot"></span>조우성 변호사 ? 법률 인사이트</span></div></header><div class="hero"><div class="eb">전자책 대시보드 ? 실무 가이드</div><h1>재개발 조합원 분양권: &#x27;현물청산&#x27; 통보를 받았을 때 대응 선택지 3가지</h1><div class="tldr"><div class="lb">3줄 요약 (TL;DR)</div><ul><li>원문 Markdown의 제목?본문?표?체크리스트를 반영한 공개용 HTML입니다.</li><li>문서의 핵심 내용과 실무상 확인 포인트를 한 화면에서 확인할 수 있습니다.</li><li>구체적인 사안은 최신 법령?판례와 사실관계 확인이 필요합니다.</li></ul></div><div class="meta"><span>원문: 20260711_redevelopment_cash_settlement.md</span><span class="vchip">원문 기반 HTML</span></div><div class="cta-row"><a class="btn btn-p" href="#s1">핵심 내용 보기</a><a class="btn btn-o" href="#faq">확인 사항</a></div></div><div class="app"><nav class="toc" id="toc"><div class="tt">목차</div><ol id="toc-list"><li><a href="#s1">본문</a></li><li><a href="#s2">3줄 요약 (TL;DR)</a></li><li><a href="#s3">1. 현물청산의 개념과 발생 요건</a></li><li><a href="#s4">2. 현물청산 통보를 받은 경우 3가지 선택지</a></li><li><a href="#s5">3. 선택지 비교표</a></li><li><a href="#s6">4. 실무 체크리스트</a></li><li><a href="#s7">5. FAQ</a></li><li><a href="#s8">6. 관련 법령·판례</a></li></ol></nav><main class="content"><section class="blk" id="s1"><div class="secl">SECTION</div><blockquote>
+<p>[!web] 웹으로 보기
+<a href="https://woosungjo-law.github.io/share/d/redevelopment-cash-settlement-ez8r.html">https://woosungjo-law.github.io/share/d/redevelopment-cash-settlement-ez8r.html</a></p>
+</blockquote>
+<p><em>출처: 조우성 변호사 / 로펌 머스트노우 | 문의: law@mustknow.co.kr</em></p>
+<h1>재개발 조합원 분양권: '현물청산' 통보를 받았을 때 대응 선택지 3가지</h1></section><section class="blk" id="s2"><div class="secl">SECTION</div><h2>3줄 요약 (TL;DR)</h2>
+<ul>
+<li><strong>현물청산(현금청산)</strong>은 재개발 조합원이 분양신청을 하지 않거나 분양대상에서 제외된 경우, 토지·건물을 현금으로 보상받고 조합원 지위를 상실하는 절차다(도시정비법 제74조·제76조).</li>
+<li>현물청산 통보를 받은 조합원에게는 <strong>3가지 선택지</strong>가 있다: ① 분양신청 재고려(기간 미도과 시 조건부 재신청·이의제기), ② 협의·법적 다툼(감정평가 이의 → 재결 → 행정소송), ③ 청산 수용·전략적 전환(청산금 수령 후 세무계획·재투자).</li>
+<li>선택지는 <strong>관리처분계획 인가 여부, 분양신청 기간 도과 여부, 감정평가액의 적정성</strong>에 따라 달라진다. 각 선택지마다 장단점과 소멸시효가 다르므로 신속한 의사결정이 필요하다.</li>
 </ul>
-</div>
-
-<div class="card">
-<h2>5. FAQ</h2>
-<details>
-<summary>Q1. 분양신청 기간이 이미 지났는데 분양을 받을 방법이 없나요?</summary>
-<p>원칙적으로 불가능합니다. 다만 조합의 귀책사유(부실한 통지 등)가 입증되면 예외적으로 분양기회 재부여가 인정될 수 있습니다. 즉시 변호사 상담이 필요합니다.</p>
-</details>
-<details>
-<summary>Q2. 청산금이 너무 낮아요. 얼마나 올릴 수 있나요?</summary>
-<p>감정평가 이의제기 절차(30일 이내)를 통해 시세 반영을 요구할 수 있습니다. 재결 절차에서 감정인의 평가 방법에 하자가 있는지 전문가 검토가 필요합니다.</p>
-</details>
-<details>
-<summary>Q3. 청산금을 받으면 양도소득세가 얼마나 나오나요?</summary>
-<p>재개발로 인한 청산금은 양도소득세 과세 대상입니다. 1세대 1주택 비과세 요건을 충족하면 비과세 가능합니다. 세무사와 반드시 상담해야 합니다.</p>
-</details>
-<details>
-<summary>Q4. 조합이 청산금을 약속한 날짜까지 안 주면 어떻게 하나요?</summary>
-<p>대법원 2016다51170 판결에 따라 조합은 청산금을 이행기한 내 지급해야 하며, 지체 시 연 5% 지연손해금을 부담합니다. 지체 없이 내용증명으로 독촉하고 민사소송을 검토해야 합니다.</p>
-</details>
-<details>
-<summary>Q5. 법적 다툼 중에도 청산금 일부를 먼저 받을 수 있나요?</summary>
-<p>일부 청산금을 먼저 수령하더라도 나머지 청산금에 대한 소송은 가능합니다. 단, '일부 수령, 추가 청구권 유보' 조건을 명시해야 합니다.</p>
-</details>
-</div>
-
-<div class="card">
-<h2>6. 관련 법령·판례</h2>
+<hr /></section><section class="blk" id="s3"><div class="secl">SECTION</div><h2>1. 현물청산의 개념과 발생 요건</h2>
+<p><strong>한눈에</strong>
+- <strong>현물청산</strong>이란 재개발·재건축 정비사업에서 조합원이 분양을 포기하거나 분양대상에서 제외될 경우, 종전의 토지·건축물에 대한 권리를 금전으로 보상받고 조합에서 탈퇴하는 제도다(도시정비법 제74조 제2항, 제76조 제1항).
+- <strong>통보 시점</strong>: 관리처분계획 인가·고시 후 분양신청 기간 종료 → 조합이 현금청산 대상자 확정 → 개별 통보.
+- <strong>법적 효과</strong>: 조합원 지위 상실, 종전자산 소유권은 조합(사업시행자)으로 이전, 청산금 수령권만 남음.</p>
 <table>
-<tr><th>구분</th><th>내용</th></tr>
-<tr><td>도시정비법 제74조</td><td>관리처분계획의 수립 — 분양대상·청산 기준</td></tr>
-<tr><td>도시정비법 제76조</td><td>관리처분계획 인가 — 효력 발생 요건</td></tr>
-<tr><td>도시정비법 제81조</td><td>조합원의 지위 — 분양권 양도 제한</td></tr>
-<tr><td>도시정비법 제129조</td><td>행정소송 — 인가 처분 취소 (90일)</td></tr>
-<tr><td>토지보상법 제34조 이하</td><td>수용재결 절차 — 이의·불복</td></tr>
-<tr><td>대법원 2016다51170</td><td>청산금 지급 의무와 지연손해금</td></tr>
+<thead>
+<tr>
+<th>구분</th>
+<th>분양신청 O</th>
+<th>분양신청 X (현물청산)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>조합원 지위</td>
+<td>유지</td>
+<td>상실</td>
+</tr>
+<tr>
+<td>권리 내용</td>
+<td>조합원 입주권 (분양계약 체결)</td>
+<td>청산금 수령권</td>
+</tr>
+<tr>
+<td>사업 위험</td>
+<td>분담금 변동 위험 부담</td>
+<td>청산 후 위험 없음</td>
+</tr>
+<tr>
+<td>유동성</td>
+<td>당분간 유동성 제약</td>
+<td>즉시 현금화 가능</td>
+</tr>
+</tbody>
 </table>
-</div>
-
-</main>
-<footer class="foot">
-<p>작성: 조우성 변호사 / 로펌 머스트노우 | 문의: law@mustknow.co.kr</p>
-<p>최종 업데이트: 2026-07-11 | 본 자료는 일반적 참고용이며, 구체적 사안은 변호사 상담이 필요합니다.</p>
-</footer>
-<script>
-window.addEventListener('scroll',function(){var p=document.querySelector('#pb div');var h=document.documentElement.scrollHeight-document.documentElement.clientHeight;var s=Math.min(window.scrollY/h*100,100);p.style.width=s+'%'});
-</script>
-</body>
-</html>
+<hr /></section><section class="blk" id="s4"><div class="secl">SECTION</div><h2>2. 현물청산 통보를 받은 경우 3가지 선택지</h2>
+<h3>선택지 1: 분양신청 재고려 — 아직 기회가 있다면</h3>
+<ul>
+<li><strong>적용 상황</strong>: 분양신청 기간이 아직 도과하지 않았거나, 관리처분계획에 이의를 제기할 수 있는 경우.</li>
+<li><strong>방법</strong>:
+  1. 조건부 분양신청 제출 (청산금 부담 능력 검토 후)
+  2. 관리처분계획 이의제기 (인가 고시일부터 90일 이내 행정소송 가능, 도시정비법 제129조)
+  3. 조합 정관상 예외 조항 확인 (예: 세대수 제한 해제, 특별공급 요건)</li>
+<li><strong>장점</strong>: 조합원 입주권 유지 → 분양가 이하의 내부 분양가로 신축 아파트 취득 가능.</li>
+<li><strong>단점</strong>: 추가 분담금 부담 가능성, 사업 지연 위험, 배당 위험.</li>
+</ul>
+<h3>선택지 2: 협의·법적 다툼 — 청산금이 부족하다면</h3>
+<ul>
+<li><strong>적용 상황</strong>: 청산금 액수에 이의가 있거나, 감정평가가 부당하다고 판단될 때.</li>
+<li><strong>방법</strong>:
+  1. 감정평가 이의제기 (통보 수령 후 30일 이내, 조합에 서면 제출)
+  2. 협의 개시 요청 (조합과 감정평가 재의뢰 합의 시도)
+  3. 수용재결 신청 (협의 불성립 시 시·도 토지수용위원회, 토지보상법 제34조 이하)
+  4. 행정소송 (재결 결과 불복 시 중앙토지수용위원회 이의신청 거친 후 행정소송)</li>
+<li><strong>장점</strong>: 적정 청산금 보장 가능, 청산 금액 상향 가능성.</li>
+<li><strong>단점</strong>: 시간·비용 소요, 소송 패소 시 오히려 불이익.</li>
+</ul>
+<h3>선택지 3: 청산 수용·전략적 전환 — 현금을 받고 새 판 짜기</h3>
+<ul>
+<li><strong>적용 상황</strong>: 청산금에 수긍하거나, 조합원 지위 유지보다 현금 유동성이 더 중요한 경우.</li>
+<li><strong>방법</strong>:
+  1. 협의에 따른 청산금 수령 (감정평가액 수용)
+  2. 세무계획 수립 (양도소득세·취득세·종합부동산세 검토; 1세대 1주택 비과세 요건 확인)
+  3. 청산금 재투자 (인근 아파트 구입, 다른 재개발 지역 매수, 분양권 매수 등)</li>
+<li><strong>장점</strong>: 즉시 현금화, 재투자 기회 확보, 법적 분쟁 리스크 제로.</li>
+<li><strong>단점</strong>: 청산금이 시세보다 낮을 가능성, 조합원 특혜 분양 기회 상실.</li>
+</ul>
+<hr /></section><section class="blk" id="s5"><div class="secl">SECTION</div><h2>3. 선택지 비교표</h2>
+<table>
+<thead>
+<tr>
+<th>비교 항목</th>
+<th>선택지 1 (분양 유지)</th>
+<th>선택지 2 (법적 다툼)</th>
+<th>선택지 3 (청산 수용)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>시간 소요</td>
+<td>장기 (사업 기간 따름)</td>
+<td>6개월~2년</td>
+<td>즉시~3개월</td>
+</tr>
+<tr>
+<td>비용</td>
+<td>분담금 부담</td>
+<td>변호사·감정 수수료</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>리스크</td>
+<td>분담금 상승·사업 지연</td>
+<td>패소·시간 손실</td>
+<td>기회비용</td>
+</tr>
+<tr>
+<td>유동성</td>
+<td>낮음</td>
+<td>중간</td>
+<td>높음</td>
+</tr>
+<tr>
+<td>수익률</td>
+<td>높을 가능성</td>
+<td>청산금 증액 가능성</td>
+<td>확정적</td>
+</tr>
+<tr>
+<td>세무 리스크</td>
+<td>분담금 공제 가능</td>
+<td>소송 비용 공제</td>
+<td>양도세 즉시 과세</td>
+</tr>
+</tbody>
+</table>
+<hr /></section><section class="blk" id="s6"><div class="secl">SECTION</div><h2>4. 실무 체크리스트</h2>
+<ul>
+<li>[ ] 관리처분계획 인가일과 분양신청 기간을 정확히 확인하였는가?</li>
+<li>[ ] 통보서에 기재된 청산금 산정 기준(감정평가액, 공동주택 가격 등)을 검토하였는가?</li>
+<li>[ ] 감정평가 이의제기 기한(통보 후 30일 이내)을 확인하였는가?</li>
+<li>[ ] 조합 정관상 분양자격 제한 규정(세대수·주택 수 등)을 확인하였는가?</li>
+<li>[ ] 추가 분담금 부담 능력을 객관적으로 평가하였는가?</li>
+<li>[ ] 1세대 1주택 비과세 요건 충족 여부를 세무사와 상담하였는가?</li>
+<li>[ ] 법적 다툼 시 비용·시간·리스크를 종합적으로 고려하였는가?</li>
+<li>[ ] 청산금 수령 후 재투자 계획을 수립하였는가?</li>
+<li>[ ] 행정소송 제기(인가 고시 후 90일 이내) 도과 여부를 확인하였는가?</li>
+</ul>
+<hr /></section><section class="blk" id="s7"><div class="secl">SECTION</div><h2>5. FAQ</h2>
+<p><strong>Q1. 현물청산 통보를 받았는데, 분양신청 기간이 이미 지났습니다. 분양을 받을 방법이 없나요?</strong>
+A1. 원칙적으로 분양신청 기간 도과 후에는 분양을 받을 수 없다. 다만 조합의 귀책사유(부실한 통지 등)가 입증되면 예외적으로 분양기회 재부여가 인정될 수 있다. 이 경우 즉시 변호사 상담이 필요하다.</p>
+<p><strong>Q2. 청산금이 너무 낮아요. 얼마나 올릴 수 있나요?</strong>
+A2. 감정평가 이의제기 절차(30일 이내)를 통해 시세 반영을 요구할 수 있다. 재결 절차에서 감정인의 평가 방법(수익환원법·원가법·거래사례비교법)에 하자가 있는지 전문가 검토가 필요하다.</p>
+<p><strong>Q3. 청산금을 받으면 양도소득세가 얼마나 나오나요?</strong>
+A3. 재개발로 인한 청산금은 양도소득세 과세 대상이다. 1세대 1주택 비과세 요건을 충족하면 비과세 가능하나, 거주 요건(2년)과 보유 요건을 충족해야 한다. 세무사와 반드시 상담해야 한다.</p>
+<p><strong>Q4. 조합이 청산금을 약속한 날짜까지 안 주면 어떻게 하나요?</strong>
+A4. 대법원 2016다51170 판결에 따라 조합은 청산금을 이행기한 내 지급해야 하며, 지체 시 연 5% 지연손해금(상사 법정이율 연 6%)을 부담한다. 지연 시 지체 없이 내용증명으로 독촉하고 민사소송을 검토해야 한다.</p>
+<p><strong>Q5. 선택지 2(법적 다툼)를 하면서도 선택지 3(청산 수령)처럼 청산금을 일부 먼저 받을 수 있나요?</strong>
+A5. 일부 청산금을 먼저 수령하더라도 나머지 청산금에 대한 소송은 가능하다. 단, 전체 청산금을 수령하고 영수증을 작성하면 추가 청구가 제한될 수 있으므로, 부분 수령 시 '일부 수령, 추가 청구권 유보' 조건을 명시해야 한다.</p>
+<hr /></section><section class="blk" id="s8"><div class="secl">SECTION</div><h2>6. 관련 법령·판례</h2>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>도시정비법 제74조</td>
+<td>관리처분계획의 수립 — 분양대상·청산 기준</td>
+</tr>
+<tr>
+<td>도시정비법 제76조</td>
+<td>관리처분계획 인가 — 효력 발생 요건</td>
+</tr>
+<tr>
+<td>도시정비법 제81조</td>
+<td>조합원의 지위 — 분양권 양도 제한</td>
+</tr>
+<tr>
+<td>도시정비법 제129조</td>
+<td>행정소송 — 인가 처분 취소 (90일)</td>
+</tr>
+<tr>
+<td>토지보상법 제34조 이하</td>
+<td>수용재결 절차 — 이의·불복</td>
+</tr>
+<tr>
+<td>대법원 2016다51170</td>
+<td>청산금 지급 의무와 지연손해금</td>
+</tr>
+<tr>
+<td>대법원 2022다260586</td>
+<td>관리처분계획 인가 후 분양권 구체화</td>
+</tr>
+</tbody>
+</table></section><section class="blk faq" id="faq"><div class="secl">NOTICE</div><h2>확인 사항</h2><div class="notice">이 문서는 일반적인 법률 정보 제공을 위한 자료입니다. 구체적인 사실관계와 최신 법령?판례에 따라 결론이 달라질 수 있습니다.</div></section></main></div><footer class="footer"><div class="wrap"><h3>조우성 변호사</h3><p>실무에 바로 활용할 수 있는 법률 지식과 대응 가이드를 제공합니다.</p></div></footer></body></html>

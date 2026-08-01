@@ -1,187 +1,593 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="index,follow">
-<title>경찰 조사 3시간 대응법: 진술거부권·변호인 참여권·조서 열람·확인 요령 — 조우성 변호사</title>
-<meta name="description" content="경찰 조사 대응 요령. 진술거부권·변호인 참여권·조서 열람·확인·거부 방법. 형사소송법 제244조의3·제243조·제312조.">
-<style>
-:root{--bg:#f0f2f5;--panel:#fff;--panel2:#f8f9fb;--line:#e2e5ea;--ink:#111827;--ink2:#374151;--muted:#6b7280;--navy:#1a3a6b;--navy-d:#0f2547;--navy-l:#2e6be6;--navy-tint:#e8edf5;--green-bg:#ecfdf5;--green:#059669;--amber:#f59e0b;--amber-bg:#fffbeb;--red:#dc2626;--red-bg:#fef2f2;--font:-apple-system,BlinkMacSystemFont,Malgun Gothic,sans-serif;--readw:760px}
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>경찰 조사 3시간 대응법: 진술거부권·변호인 참여권·조서 열람·확인 요령</title><style>
+/* ============================================================
+   법률 대시보드 전자책 — Apollo 기반 경량 커스텀 (공개 롱스크롤)
+   Apollo 토큰(버건디 액센트 + 웜 화이트 + 딥와인 헤더) 상속.
+   의뢰인 리포트(리스크레이더 6뷰)와 달리 공개 독서형 롱스크롤.
+   self-contained: 외부 CDN/폰트/이미지/스크립트 의존 없음.
+   ============================================================ */
+:root{
+  --bg:#f5f1f2; --panel:#ffffff; --panel2:#faf6f7;
+  --line:#ebe2e5; --line2:#ddccd2;
+  --ink:#2c1d26; --ink2:#56424c; --muted:#8a7b82; --faint:#b3a6ab;
+  --wine:#7a2e3a; --wine-d:#5a1f2b; --wine-l:#9c4456;
+  --wine-tint:#f4e9ec; --wine-tint-ln:#ecd7dd;
+  --header-bg:#3a1525; --header-bg2:#4e1f32; --header-accent:#d4a0aa;
+  --rH:#c74a3c; --rM-bg:#f8e4b8; --rM-tx:#7d520a; --rL-bg:#d6ecdb; --rL-tx:#287a54;
+  --amber:#b45309; --green:#287a54;
+  --font:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Noto Sans KR',sans-serif;
+  --maxw:1120px; --readw:760px;
+}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:var(--font);background:var(--bg);color:var(--ink);margin:0;padding:0;line-height:1.8;font-size:15px}
-.hero{background:linear-gradient(135deg,var(--navy-d),var(--navy));color:#fff;padding:32px 20px 28px;position:relative}
-.hero h1{font-size:22px;font-weight:700;margin:0 0 8px;line-height:1.4;letter-spacing:-0.3px}
-.hero p{font-size:13px;margin:0 0 4px;color:rgba(255,255,255,.8)}
-.hero .badge{display:inline-block;background:rgba(255,255,255,.15);border-radius:4px;padding:2px 10px;font-size:11px;margin-top:8px}
-.container{max-width:var(--readw);margin:0 auto;padding:16px}
-.card{background:var(--panel);border-radius:10px;padding:20px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
-.card h2{font-size:17px;font-weight:700;margin:0 0 12px;color:var(--navy);border-left:4px solid var(--navy-l);padding-left:12px}
-.card h3{font-size:14px;font-weight:600;margin:14px 0 8px;color:var(--ink2)}
-.tldr{background:var(--navy-tint);border-radius:10px;padding:16px 18px;margin-bottom:14px;font-size:13px;line-height:1.7;border-left:4px solid var(--navy-l)}
-.tldr strong{color:var(--navy)}
-table{width:100%;border-collapse:collapse;margin:10px 0;font-size:13px}
-table th{background:var(--navy-tint);text-align:left;padding:8px 10px;font-weight:600;color:var(--navy);border:1px solid var(--line);font-size:12px}
-table td{padding:8px 10px;border:1px solid var(--line);vertical-align:top}
-table tr:nth-child(even){background:var(--panel2)}
-.alert-box{background:var(--amber-bg);border-left:4px solid var(--amber);padding:12px 14px;border-radius:6px;margin:10px 0;font-size:13px}
-.info-box{background:var(--navy-tint);border-left:4px solid var(--navy-l);padding:12px 14px;border-radius:6px;margin:10px 0;font-size:13px}
-.green-box{background:var(--green-bg);border-left:4px solid var(--green);padding:12px 14px;border-radius:6px;margin:10px 0;font-size:13px}
-.red-box{background:var(--red-bg);border-left:4px solid var(--red);padding:12px 14px;border-radius:6px;margin:10px 0;font-size:13px}
-.faq-q{font-weight:600;color:var(--navy);margin:12px 0 4px;font-size:14px}
-.faq-a{margin:0 0 10px 0;font-size:13px;line-height:1.7}
-.footer{text-align:center;padding:20px;color:var(--muted);font-size:11px}
-.footer a{color:var(--navy-l)}
-@media(max-width:600px){.hero h1{font-size:19px}.card{padding:16px}}
-</style>
-</head>
-<body>
-<div class="hero">
-<h1>경찰 조사 3시간 대응법</h1>
-<p>진술거부권·변호인 참여권·조서 열람·확인 요령</p>
-<span class="badge">조우성 변호사 · 로펌 머스트노우</span>
-</div>
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
 
-<div class="container">
-<div class="tldr">
-<strong>3줄 요약</strong><br>
-• <strong>진술거부권(묵비권)</strong>은 헌법이 보장하는 권리다. "진술을 거부하겠습니다"라고 말하면 되며, 이를 이유로 불이익을 줄 수 없다(형소법 제244조의3). 언제든지 행사 가능하고 선별적 답변도 허용된다.<br>
-• <strong>변호인 참여권</strong>(형소법 제243조)은 피의자신문에 변호인이 참여해 부당한 신문에 이의제기하고 조력을 제공할 권리다. 정당한 사유 없는 배제 시 조서 증거능력 부정 가능(대법원 2017도5946 전합 취지).<br>
-• <strong>조서 열람·확인</strong> 후 내용이 다르면 수정 요구 또는 <strong>서명·날인 거부</strong> 가능(형소법 제244조의4). 경찰 작성 조서는 법정에서 피고인이 부인하면 증거능력 상실(형소법 제312조 제3항).
-</div>
+/* 읽기 진행바 */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;
+  background:linear-gradient(90deg,var(--wine),var(--wine-l));transition:width .1s linear}
 
-<div class="card">
-<h2>1. 경찰 조사 단계별 타임라인</h2>
+/* 헤더 표지 (딥와인, 유일한 딥 컬러) */
+.header{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0}
+.header .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 26px}
+.header .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;
+  color:var(--header-accent);border:1px solid rgba(212,160,170,.4);border-radius:999px;padding:4px 12px}
+.header .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--header-accent)}
+
+/* 히어로 */
+.hero{max-width:var(--maxw);margin:0 auto;padding:30px 26px 8px}
+.hero .eb{font-size:12px;font-weight:700;color:var(--wine);letter-spacing:.02em;margin-bottom:10px}
+.hero h1{font-size:30px;line-height:1.28;font-weight:800;margin:0 0 16px;color:var(--ink);letter-spacing:-.01em}
+.hero .tldr{background:var(--wine-tint);border:1px solid var(--wine-tint-ln);border-left:4px solid var(--wine);
+  border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.hero .tldr .lb{font-size:12px;font-weight:700;color:var(--wine-d);margin-bottom:8px}
+.hero .tldr ul{margin:0;padding-left:18px}
+.hero .tldr li{margin:4px 0;font-size:15px;color:var(--ink2)}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:12.5px;color:var(--muted);margin-bottom:18px}
+.hero .meta .vchip{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);
+  font-weight:700;border-radius:6px;padding:3px 9px;font-size:11.5px}
+.hero .cta-row{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:9px;
+  padding:11px 18px;text-decoration:none;cursor:pointer;border:1px solid transparent}
+.btn-p{background:var(--wine);color:#fff}
+.btn-p:hover{background:var(--wine-d)}
+.btn-o{background:#fff;color:var(--wine-d);border-color:var(--line2)}
+.btn-o:hover{background:var(--panel2)}
+
+/* 셸: 좌측 목차 + 본문 */
+.app{max-width:var(--maxw);margin:0 auto;padding:8px 26px 60px;
+  display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:start}
+
+/* 목차 (데스크톱 = 좌측 sticky) */
+.toc{position:sticky;top:24px}
+.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;
+  margin:0 0 10px;padding-left:2px}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}
+.toc li{counter-increment:toc;margin:1px 0}
+.toc a{display:flex;gap:9px;font-size:13.5px;color:var(--ink2);text-decoration:none;
+  padding:7px 10px;border-radius:8px;border-left:3px solid transparent;line-height:1.4}
+.toc a::before{content:counter(toc,decimal-leading-zero);color:var(--faint);font-weight:700;font-size:11.5px;flex:none}
+.toc a:hover{background:var(--panel2)}
+.toc a.active{background:var(--wine-tint);border-left-color:var(--wine);color:var(--wine-d);font-weight:700}
+.toc-toggle{display:none}
+
+/* 본문 */
+.content{max-width:var(--readw);min-width:0}
+section.blk{scroll-margin-top:24px;margin-bottom:38px}
+.secl{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.05em;margin:0 0 12px}
+.secl::before{content:"";width:7px;height:15px;background:var(--wine);border-radius:2px;flex:none}
+section.blk h2{font-size:23px;font-weight:800;line-height:1.35;margin:0 0 14px;color:var(--ink);letter-spacing:-.01em}
+section.blk h3{font-size:17px;font-weight:700;margin:26px 0 10px;color:var(--wine-d)}
+section.blk p{margin:0 0 14px;color:var(--ink2)}
+section.blk ul,section.blk ol{margin:0 0 14px;padding-left:22px;color:var(--ink2)}
+section.blk li{margin:6px 0}
+strong{color:var(--ink);font-weight:700}
+a.ln{color:var(--wine-l);text-decoration:none;border-bottom:1px solid var(--wine-tint-ln)}
+a.ln:hover{border-bottom-color:var(--wine-l)}
+
+/* 핵심요약 카드 */
+.summary{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.summary .lb{font-size:11px;font-weight:700;color:var(--wine-d);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.summary ul{margin:0;padding-left:18px}
+
+/* 근거 카드 (조문·판례) */
+.ev{background:#fff;border:1px solid var(--line);border-left:4px solid var(--wine);border-radius:10px;
+  padding:13px 15px;margin:0 0 12px}
+.ev .top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px}
+.ev .kind{font-size:11px;font-weight:700;color:#fff;background:var(--wine);border-radius:5px;padding:2px 8px}
+.ev .kind.law{background:var(--wine-d)}
+.ev .kind.case{background:var(--amber)}
+.ev .cite{font-size:13.5px;font-weight:700;color:var(--ink)}
+.ev .vtick{margin-left:auto;font-size:11px;font-weight:700;color:var(--rL-tx);background:var(--rL-bg);border-radius:5px;padding:2px 7px}
+.ev .gist{font-size:14px;color:var(--ink2);margin:0}
+.ev .date{font-size:12px;color:var(--muted);margin-top:5px}
+
+/* 다이어그램 — 플로우 / 체크리스트 (CSS·SVG only) */
+.figure{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin:0 0 18px}
+.figure .cap{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:12px}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px}
+.flow .step{flex:1;min-width:120px;background:var(--wine-tint);border:1px solid var(--wine-tint-ln);
+  border-radius:10px;padding:11px 12px;position:relative}
+.flow .step .n{font-size:11px;font-weight:700;color:var(--wine)}
+.flow .step .t{font-size:13.5px;font-weight:700;color:var(--ink);margin-top:2px}
+.flow .step .d{font-size:12.5px;color:var(--ink2);margin-top:3px}
+.checklist{list-style:none;margin:0;padding:0}
+.checklist li{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+.checklist li:last-child{border-bottom:none}
+.checklist .ck{flex:none;width:20px;height:20px;border-radius:5px;background:var(--rL-bg);color:var(--rL-tx);
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+
+/* 위험도 칩 */
+.chip{display:inline-flex;align-items:center;justify-content:center;min-width:34px;font-size:11px;font-weight:500;
+  border-radius:6px;padding:3px 8px;margin-right:4px}
+.c-H{background:var(--rH);color:#fff}
+.c-M{background:var(--rM-bg);color:var(--rM-tx)}
+.c-L{background:var(--rL-bg);color:var(--rL-tx)}
+
+/* 표 */
+.tbl-wrap{overflow-x:auto;margin:0 0 18px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px}
+
+/* FAQ (아코디언) */
+.faq details{background:#fff;border:1px solid var(--line);border-radius:10px;margin:0 0 10px;overflow:hidden}
+.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:15px;font-weight:700;color:var(--ink);
+  display:flex;align-items:center;gap:10px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--wine-tint);
+  color:var(--wine-d);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+.faq details[open] summary{border-bottom:1px solid var(--line);color:var(--wine-d)}
+.faq .a{padding:14px 16px;font-size:14.5px;color:var(--ink2)}
+
+/* 최신성·면책 고지 */
+.notice{background:#fff;border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;
+  font-size:12.5px;color:var(--muted);line-height:1.7}
+
+/* 맨 위로 버튼 */
+#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--wine-tint-ln);background:var(--wine);color:#fff;font-size:18px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;
+  box-shadow:0 4px 14px rgba(58,21,37,.28)}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{background:var(--wine-d)}
+
+/* 푸터 프로필 + 상담 CTA */
+.footer{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0;margin-top:20px}
+.footer .wrap{max-width:var(--maxw);margin:0 auto;padding:34px 26px}
+.footer h3{font-size:20px;font-weight:800;margin:0 0 8px;color:#fff}
+.footer p{font-size:14px;color:rgba(255,255,255,.72);margin:0 0 6px;line-height:1.7}
+.footer .prof{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end}
+.footer .cta-f{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.footer .btn-f{background:#fff;color:var(--wine-d)}
+.footer .btn-f:hover{background:var(--header-accent)}
+.footer .btn-fo{background:transparent;color:#f4eef0;border-color:rgba(255,255,255,.35)}
+.footer .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:22px;padding-top:14px;
+  font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.7}
+
+/* ── 모바일 (≤820px) ── */
+@media(max-width:820px){
+  .hero h1{font-size:24px}
+  .app{grid-template-columns:1fr;gap:0;padding-top:0}
+  .toc{position:static;margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 8px}
+  .toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;
+    cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--wine-d);padding:9px 8px}
+  .toc-toggle .ar{transition:transform .2s}
+  .toc.closed .toc-toggle .ar{transform:rotate(-90deg)}
+  .toc .tt{display:none}
+  .toc ol{max-height:50vh;overflow:auto}
+  .toc.closed ol{display:none}
+  section.blk h2{font-size:20px}
+  th,td{white-space:nowrap}
+}
+@media print{
+  #progress,.toc,.cta-row,.footer .cta-f{display:none}
+  .header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .app{display:block}
+}
+</style></head><body><div id="progress"></div><button id="toTop" aria-label="맨 위로">?</button><header class="header"><div class="wrap"><span class="badge"><span class="dot"></span>조우성 변호사 ? 법률 인사이트</span></div></header><div class="hero"><div class="eb">전자책 대시보드 ? 실무 가이드</div><h1>경찰 조사 3시간 대응법: 진술거부권·변호인 참여권·조서 열람·확인 요령</h1><div class="tldr"><div class="lb">3줄 요약 (TL;DR)</div><ul><li>원문 Markdown의 제목?본문?표?체크리스트를 반영한 공개용 HTML입니다.</li><li>문서의 핵심 내용과 실무상 확인 포인트를 한 화면에서 확인할 수 있습니다.</li><li>구체적인 사안은 최신 법령?판례와 사실관계 확인이 필요합니다.</li></ul></div><div class="meta"><span>원문: 20260711_police_investigation_rights.md</span><span class="vchip">원문 기반 HTML</span></div><div class="cta-row"><a class="btn btn-p" href="#s1">핵심 내용 보기</a><a class="btn btn-o" href="#faq">확인 사항</a></div></div><div class="app"><nav class="toc" id="toc"><div class="tt">목차</div><ol id="toc-list"><li><a href="#s1">본문</a></li><li><a href="#s2">3줄 요약 (TL;DR)</a></li><li><a href="#s3">1. 경찰 조사 단계별 대응 타임라인</a></li><li><a href="#s4">2. 진술거부권 (Phase 2 핵심)</a></li><li><a href="#s5">3. 변호인 참여권 (Phase 2 핵심)</a></li><li><a href="#s6">4. 조서 열람·확인·거부 요령 (Phase 2 마무리)</a></li><li><a href="#s7">5. 조사 중 금지되는 신문 방법</a></li><li><a href="#s8">6. 체포·구속 시 권리</a></li><li><a href="#s9">7. FAQ</a></li><li><a href="#s10">8. 관련 법령·판례</a></li></ol></nav><main class="content"><section class="blk" id="s1"><div class="secl">SECTION</div><blockquote>
+<p>[!web] 웹으로 보기
+<a href="https://woosungjo-law.github.io/share/d/police-investigation-rights-9jal.html">https://woosungjo-law.github.io/share/d/police-investigation-rights-9jal.html</a></p>
+</blockquote>
+<p><em>출처: 조우성 변호사 / 로펌 머스트노우 | 문의: law@mustknow.co.kr</em></p>
+<h1>경찰 조사 3시간 대응법: 진술거부권·변호인 참여권·조서 열람·확인 요령</h1></section><section class="blk" id="s2"><div class="secl">SECTION</div><h2>3줄 요약 (TL;DR)</h2>
+<ul>
+<li><strong>진술거부권(묵비권)</strong> 은 헌법이 보장하는 권리다. "진술을 거부하겠습니다"라고 명확히 말하면 되며, 진술거부권 행사를 이유로 불이익을 줄 수 없다(형소법 제244조의3). 조사 전반에 걸쳐 <strong>언제든지 행사 가능</strong>하며, 선별적 답변도 허용된다.</li>
+<li><strong>변호인 참여권</strong>은 피의자신문에 변호인이 참여하여 부당한 신문에 이의를 제기하고 조력을 제공할 권리다(형소법 제243조). 경찰은 변호인 참여를 보장해야 하며, 정당한 사유 없이 배제 시 조서의 증거능력이 부정될 수 있다(대법원 2017도5946 전합 취지).</li>
+<li><strong>조서 열람·확인</strong>은 서명 전 반드시 수행해야 한다. 내용이 다르게 적혔다면 수정 요구 또는 <strong>서명·날인 거부</strong>가 가능하다(형소법 제244조의4). 경찰 작성 피의자신문조서는 피고인이 법정에서 내용을 부인하면 증거능력이 상실된다(형소법 제312조 제3항).</li>
+</ul>
+<hr /></section><section class="blk" id="s3"><div class="secl">SECTION</div><h2>1. 경찰 조사 단계별 대응 타임라인</h2>
+<p>경찰 조사는 크게 3단계로 나뉜다. 각 단계별로 대응 전략이 다르다.</p>
 <table>
-<tr><th>단계</th><th>구분</th><th>핵심 대응</th><th>예상 시간</th></tr>
-<tr><td><strong>Phase 1</strong></td><td>조사 전 (사전 준비)</td><td>변호인 선임·혐의사실 파악·증거 준비</td><td>조사 전 24~48h</td></tr>
-<tr><td><strong>Phase 2</strong></td><td>조사 중 (<strong>핵심 3시간</strong>)</td><td>진술거부권 행사·변호인 참여·조서 확인</td><td><strong>3시간 내외</strong></td></tr>
-<tr><td><strong>Phase 3</strong></td><td>조사 후 (사후 대응)</td><td>조서 내용 재확인·소송기록 열람·항고</td><td>1~4주</td></tr>
+<thead>
+<tr>
+<th>단계</th>
+<th>구분</th>
+<th>핵심 대응</th>
+<th>예상 시간</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Phase 1</strong></td>
+<td>조사 전 (사전 준비)</td>
+<td>변호인 선임·혐의사실 파악·증거 준비</td>
+<td>조사 전 24~48시간</td>
+</tr>
+<tr>
+<td><strong>Phase 2</strong></td>
+<td>조사 중 (핵심 3시간)</td>
+<td>진술거부권 행사 · 변호인 참여 · 조서 확인</td>
+<td><strong>3시간 내외</strong></td>
+</tr>
+<tr>
+<td><strong>Phase 3</strong></td>
+<td>조사 후 (사후 대응)</td>
+<td>조서 내용 재확인·소송기록 열람·항고</td>
+<td>1~4주</td>
+</tr>
+</tbody>
 </table>
-
-<h3>Phase 1: 조사 전 준비</h3>
+<h3>Phase 1: 조사 전 준비 (조사 통보를 받은 즉시)</h3>
 <table>
-<tr><th>준비 사항</th><th>내용</th></tr>
-<tr><td>① 혐의사실 파악</td><td>출석요구서 혐의사실 확인 (참고인 vs 피의자 구분)</td></tr>
-<tr><td>② 변호인 선임</td><td>형사전문 변호사 선임, 조사 동석 요청</td></tr>
-<tr><td>③ 증거 자료 준비</td><td>이메일·계약서·통화내역 등 객관적 증거 수집</td></tr>
-<tr><td>④ 진술 방향 결정</td><td>변호인과 사전 모의조사, 예상 질문 대비</td></tr>
+<thead>
+<tr>
+<th>준비 사항</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>① 혐의사실 파악</strong></td>
+<td>출석요구서에 기재된 혐의사실(참고인/피의자 구분) 확인</td>
+</tr>
+<tr>
+<td><strong>② 변호인 선임</strong></td>
+<td>형사전문 변호사 선임, 조사 동석 요청</td>
+</tr>
+<tr>
+<td><strong>③ 증거 자료 준비</strong></td>
+<td>혐의와 관련된 객관적 증거(이메일·계약서·통화내역 등) 수집</td>
+</tr>
+<tr>
+<td><strong>④ 진술 방향 결정</strong></td>
+<td>변호인과 사전 모의조사, 예상 질문 대비</td>
+</tr>
+</tbody>
 </table>
-<div class="alert-box"><strong>주의:</strong> 경찰이 '참고인' 신분으로 출석 요구해도 실질적 피의자일 수 있다. 피의자 지위는 형식적 입건 전이라도 실질적 수사개시 시점부터 인정(대법원 2009도4118). 진술 전 반드시 변호인과 상담하라.</div>
-</div>
-
-<div class="card">
-<h2>2. 진술거부권 — 행사 방법과 효과</h2>
+<blockquote>
+<p><strong>주의:</strong> 경찰이 '참고인' 신분으로 출석을 요구해도 <strong>실질적 피의자</strong>일 수 있다. 피의자 지위는 형식적 입건 전이라도 실질적 수사개시 시점부터 인정된다(대법원 2009도4118 등). 진술 전 반드시 변호인과 상담하라.</p>
+</blockquote>
+<hr /></section><section class="blk" id="s4"><div class="secl">SECTION</div><h2>2. 진술거부권 (Phase 2 핵심)</h2>
+<h3>2.1. 권리의 내용</h3>
+<ul>
+<li><strong>헌법 제12조 제2항</strong>: 모든 국민은 고문을 받지 아니하며, 형사상 자기에게 불리한 진술을 강요당하지 아니한다.</li>
+<li><strong>형소법 제244조의3</strong>: 수사기관은 피의자에게 진술거부권을 고지해야 하며, 피의자는 언제든지 진술을 거부할 수 있다.</li>
+</ul>
+<h3>2.2. 진술거부권 행사 방법</h3>
 <table>
-<tr><th>상황</th><th>대응법</th><th>예시문</th></tr>
-<tr><td>조사 시작 전</td><td>수사관의 권리고지 후 명확히 의사표시</td><td>"진술거부권을 행사하겠습니다"</td></tr>
-<tr><td>조사 중 불리한 질문</td><td>해당 질문에 선별적 거부</td><td>"그 질문에는 답변할 수 없습니다"</td></tr>
-<tr><td>유도·강압적 신문</td><td>이의제기 및 진술거부</td><td>"강압적 신문에 대해 진술을 거부합니다"</td></tr>
-<tr><td>전체 진술 거부</td><td>모든 질문에 거부 의사 표시</td><td>"모든 질문에 대해 진술을 거부합니다"</td></tr>
+<thead>
+<tr>
+<th>단계</th>
+<th>대응법</th>
+<th>예시문</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>조사 시작 전</strong></td>
+<td>수사관의 권리고지 후 명확히 의사표시</td>
+<td>"진술거부권을 행사하겠습니다"</td>
+</tr>
+<tr>
+<td><strong>조사 중 불리한 질문</strong></td>
+<td>해당 질문에 대해서만 선별적 거부</td>
+<td>"그 질문에는 답변할 수 없습니다"</td>
+</tr>
+<tr>
+<td><strong>유도·강압적 신문</strong></td>
+<td>이의제기 및 진술거부</td>
+<td>"강압적 신문에 대해서는 진술을 거부합니다"</td>
+</tr>
+<tr>
+<td><strong>전체 진술 거부</strong></td>
+<td>모든 질문에 거부 의사 표시</td>
+<td>"모든 질문에 대해 진술을 거부하겠습니다"</td>
+</tr>
+</tbody>
 </table>
-
-<div class="green-box"><strong>진실:</strong> 진술거부권 행사만으로 불리한 추정을 할 수 없음(헌법재판소 2012헌마93). 사실과 다른 자백은 이후 번복이 어렵다. 참고인도 자기부죄 거부권 행사 가능(특정 질문에 답하면 자신이 범죄자로 지목될 우려가 있을 때).</div>
-</div>
-
-<div class="card">
-<h2>3. 변호인 참여권</h2>
+<h3>2.3. 진술거부권 행사의 효과</h3>
 <table>
-<tr><th>권리</th><th>법적 근거</th><th>내용</th></tr>
-<tr><td><strong>변호인 선임권</strong></td><td>형소법 제30조</td><td>피의자는 언제든지 변호인 선임 가능</td></tr>
-<tr><td><strong>접견교통권</strong></td><td>형소법 제34조</td><td>수사기관 방해 없이 변호인과 자유롭게 접견</td></tr>
-<tr><td><strong>신문 참여권</strong></td><td>형소법 제243조</td><td>경찰·검찰 신문에 변호인 참여 허용</td></tr>
-<tr><td><strong>조력권 고지</strong></td><td>형소법 제244조의3</td><td>신문 전 변호인 조력권 고지 의무</td></tr>
+<thead>
+<tr>
+<th>오해</th>
+<th>진실</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"진술거부하면 유죄 추정을 받는다"</td>
+<td><strong>불이익 추정 금지</strong> — 진술거부권 행사만으로 불리한 추정을 할 수 없다(헌법재판소 2012헌마93)</td>
+</tr>
+<tr>
+<td>"무조건 진술하는 게 유리하다"</td>
+<td>사실과 다른 진술·자백은 이후 번복이 어렵고 조서 증거능력 문제 발생</td>
+</tr>
+<tr>
+<td>"참고인은 진술거부권이 없다"</td>
+<td>참고인도 <strong>자기부죄 거부권</strong>(특정 질문에 답하면 자신이 범죄자로 지목될 우려가 있을 때) 행사 가능</td>
+</tr>
+</tbody>
 </table>
-
-<div class="info-box"><strong>변호인 참여의 실질적 보장:</strong> 변호인은 신문 전 피의자와 충분히 상담하고, 신문 중 부당한 신문 방식(유도·강압·회유)에 이의를 제기하며, 신문 후 조서를 열람·확인·이의제기할 수 있다. 정당한 사유 없이 변호인 참여를 배제한 상태의 조서는 증거능력 부정 가능(대법원 2017도5946 전합 취지).</div>
-
-<div class="red-box"><strong>변호인 없는 조사 위험:</strong> ① 진술 왜곡(수사관이 피의자 말을 의도와 다르게 기재) ② 유도신문 ③ 권리 고지 누락 ④ 심리적 압박(장시간·고성·회유).<br><br><strong>실무 팁:</strong> "변호사 선임 후 조사받겠습니다"라고 말하고 조사 연기 요청 가능. 변호인 없이 조사에 응하지 마라.</div>
-</div>
-
-<div class="card">
-<h2>4. 조서 열람·확인·거부 요령</h2>
+<hr /></section><section class="blk" id="s5"><div class="secl">SECTION</div><h2>3. 변호인 참여권 (Phase 2 핵심)</h2>
+<h3>3.1. 권리의 내용</h3>
 <table>
-<tr><th>단계</th><th>행동</th><th>설명</th></tr>
-<tr><td><strong>①</strong></td><td>조서 열람 요청</td><td>"조서를 열람하겠습니다" — 서명 전 반드시 열람권 행사</td></tr>
-<tr><td><strong>②</strong></td><td>내용 정독</td><td>처음부터 끝까지 꼼꼼히, 내가 한 말과 다른 부분 집중 확인</td></tr>
-<tr><td><strong>③</strong></td><td>수정 요구</td><td>"이 부분은 제가 말한 것과 다릅니다" — 구체적으로 수정 요청</td></tr>
-<tr><td><strong>④</strong></td><td>이의제기</td><td>"동의할 수 없습니다" — 불응 시 조서에 이의 내용 기재 요청</td></tr>
-<tr><td><strong>⑤</strong></td><td>서명·날인 결정</td><td>내용이 정확할 때만 서명, 부정확하면 <strong>서명 거부</strong> 가능</td></tr>
+<thead>
+<tr>
+<th>권리</th>
+<th>법적 근거</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>변호인 선임권</strong></td>
+<td>형소법 제30조</td>
+<td>피의자는 언제든지 변호인 선임 가능</td>
+</tr>
+<tr>
+<td><strong>접견교통권</strong></td>
+<td>형소법 제34조</td>
+<td>수사기관의 방해 없이 변호인과 자유롭게 접견</td>
+</tr>
+<tr>
+<td><strong>신문 참여권</strong></td>
+<td>형소법 제243조</td>
+<td>경찰·검찰 신문에 변호인 참여 허용</td>
+</tr>
+<tr>
+<td><strong>조력권</strong></td>
+<td>형소법 제244조의3</td>
+<td>변호인의 조력을 받을 권리 고지 의무</td>
+</tr>
+</tbody>
 </table>
-
-<h3>조서 증거능력 (형소법 제312조)</h3>
+<h3>3.2. 변호인 참여의 실질적 보장</h3>
+<blockquote>
+<p>변호인은 신문 전 피의자와 충분히 상담하고, 신문 중 부당한 신문 방식(유도·강압·회유)에 이의를 제기하며, 신문 후 조서를 열람·확인·이의제기할 수 있다. 수사기관이 정당한 사유 없이 변호인의 참여를 배제한 상태에서 작성한 피의자신문조서는 증거능력이 부정될 수 있다(대법원 2017도5946 전합 취지).</p>
+</blockquote>
+<h3>3.3. 변호인 없는 조사 위험성</h3>
 <table>
-<tr><th>조서 종류</th><th>증거능력 요건</th><th>실무 전략</th></tr>
-<tr><td>경찰 작성 피의자신문조서</td><td>피고인이 법정에서 <strong>내용 인정</strong> 시에만 (제312조 제3항)</td><td>법정에서 내용 부인 → 증거능력 상실</td></tr>
-<tr><td>검사 작성 피의자신문조서</td><td>적법 절차 + 피고인 내용 인정 (제312조 제1항)</td><td>내용 부인 전략 가능</td></tr>
-<tr><td>자필진술서</td><td>실질상 피의자신문조서와 동일 판단 (대법원 2016도3752)</td><td>부인 시 증거능력 다툼 가능</td></tr>
+<thead>
+<tr>
+<th>위험</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>진술의 왜곡</strong></td>
+<td>수사관이 피의자의 말을 의도와 다르게 조서에 기재</td>
+</tr>
+<tr>
+<td><strong>유도신문</strong></td>
+<td>수사관이 특정 답변을 유도하여 불리한 진술 이끌어냄</td>
+</tr>
+<tr>
+<td><strong>권리 고지 누락</strong></td>
+<td>진술거부권·변호인 선임권을 제대로 고지하지 않음</td>
+</tr>
+<tr>
+<td><strong>심리적 압박</strong></td>
+<td>장시간 조사·고성·회유로 인한 임의성 상실</td>
+</tr>
+</tbody>
 </table>
-<div class="alert-box"><strong>핵심:</strong> 경찰 조사 단계에서 조서에 서명했더라도, 법정에서 "내용이 사실과 다르다"고 부인하면 증거능력 상실. 서명했다고 내용까지 모두 인정한 것은 아니다(대법원 2012도7303).</div>
-</div>
-
-<div class="card">
-<h2>5. 금지되는 신문 방법과 대응</h2>
+<blockquote>
+<p><strong>실무 팁:</strong> "변호사 선임 후 조사받겠습니다"라고 말하고 조사 연기를 요청할 수 있다. 변호인 없이 조사에 응하지 마라.</p>
+</blockquote>
+<hr /></section><section class="blk" id="s6"><div class="secl">SECTION</div><h2>4. 조서 열람·확인·거부 요령 (Phase 2 마무리)</h2>
+<h3>4.1. 조서 확인 절차</h3>
 <table>
-<tr><th>금지 유형</th><th>법적 근거</th><th>대응 방법</th></tr>
-<tr><td>야간신문 (21:00~06:00)</td><td>수사준칙</td><td>야간조사 거부, 부득이한 경우 변호인 기록</td></tr>
-<tr><td>장시간 조사 (12h 초과)</td><td>수사준칙</td><td>휴식 요구, 조사 시간 기록·확인 요청</td></tr>
-<tr><td>강압·회유</td><td>형소법 제309조</td><td>"강압에 항의" 명시, 녹음 요청</td></tr>
-<tr><td>기망·속임수</td><td>위법수집증거 배제</td><td>사실과 다른 정보 유도 시 이의제기</td></tr>
+<thead>
+<tr>
+<th>단계</th>
+<th>행동</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>① 조서 열람 요청</strong></td>
+<td>"조서를 열람하겠습니다"</td>
+<td>서명 전 반드시 열람권 행사</td>
+</tr>
+<tr>
+<td><strong>② 내용 정독</strong></td>
+<td>처음부터 끝까지 꼼꼼히 읽기</td>
+<td>내가 한 말과 다른 부분 집중 확인</td>
+</tr>
+<tr>
+<td><strong>③ 수정 요구</strong></td>
+<td>"이 부분은 제가 말한 것과 다릅니다"</td>
+<td>수정 요구는 구체적으로</td>
+</tr>
+<tr>
+<td><strong>④ 이의제기</strong></td>
+<td>"이 부분은 동의할 수 없습니다"</td>
+<td>불응 시 조서에 이의 내용 기재 요청</td>
+</tr>
+<tr>
+<td><strong>⑤ 서명·날인 결정</strong></td>
+<td>내용이 정확할 때에만 서명</td>
+<td>부정확하면 <strong>서명 거부</strong> 가능</td>
+</tr>
+</tbody>
 </table>
-
-<h3>체포·구속 시 권리</h3>
+<h3>4.2. 조서의 증거능력 (형소법 제312조)</h3>
 <table>
-<tr><th>권리</th><th>내용</th><th>청구 기한</th></tr>
-<tr><td>체포적부심</td><td>체포 적법 여부 법원 심사</td><td>체포 후 즉시</td></tr>
-<tr><td>구속적부심</td><td>구속 필요성 법원 심사</td><td>구속 후 즉시</td></tr>
-<tr><td>구속 전 피의자심문</td><td>영장실질심사 구속 사유 다툼</td><td>영장 청구 후 48h</td></tr>
-<tr><td>변호인 의견서 제출</td><td>구속 필요성 없음 입증</td><td>심사 전 제출</td></tr>
+<thead>
+<tr>
+<th>조서 종류</th>
+<th>증거능력 요건</th>
+<th>실무 전략</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>경찰 작성 피의자신문조서</strong></td>
+<td>피고인이 법정에서 <strong>내용 인정</strong> 시에만 증거능력 (제312조 제3항)</td>
+<td>법정에서 내용 부인 → 증거능력 상실</td>
+</tr>
+<tr>
+<td><strong>검사 작성 피의자신문조서</strong></td>
+<td>적법 절차 + 피고인 내용 인정 필요 (제312조 제1항)</td>
+<td>마찬가지로 내용 부인 전략 가능</td>
+</tr>
+<tr>
+<td><strong>자필진술서</strong></td>
+<td>실질상 피의자신문조서와 동일 판단 (대법원 2016도3752)</td>
+<td>부인 시 증거능력 다툼 가능</td>
+</tr>
+</tbody>
 </table>
-</div>
-
-<div class="card">
-<h2>6. FAQ</h2>
-
-<p class="faq-q">Q1. 진술거부권을 행사하면 정말 불이익이 없나요?</p>
-<p class="faq-a">법적으로 진술거부권 행사를 이유로 불리한 추정을 할 수 없습니다(헌법 제12조 제2항, 형소법 제244조의3). 다만 실무적으로 수사관이나 법관이 '반성하지 않는 태도'로 오해할 가능성이 있어, 변호인과 상담 후 전략적으로 진술 여부를 결정하는 것이 바람직합니다.</p>
-
-<p class="faq-q">Q2. 변호사가 없는데 경찰 조사를 앞두고 있습니다. 어떻게 해야 하나요?</p>
-<p class="faq-a">국선변호인 제도를 활용할 수 있습니다(구속·취약계층 등 요건 필요). 대한법률구조공단(132)을 통해 무료 법률상담도 가능합니다. 최소한 "변호사 선임 후 조사받겠습니다"라고 말하고 조사 연기를 요청하세요.</p>
-
-<p class="faq-q">Q3. 조서에 서명하지 않으면 불리한가요?</p>
-<p class="faq-a">서명 거부 자체만으로 불리한 추정을 받지 않습니다. 오히려 사실과 다른 조서에 서명했다가 법정에서 부인하는 경우, 검사가 '피고인이 직접 서명·날인한 조서'를 증거로 제출하며 신빙성을 주장할 수 있어 불리해질 수 있습니다. 내용이 부정확하다면 반드시 서명·날인을 거부하세요.</p>
-
-<p class="faq-q">Q4. 참고인 신분으로 출석요구를 받았습니다. 변호인과 동행해야 하나요?</p>
-<p class="faq-a">참고인 신분이라도 변호인과 동행하는 것이 강력히 권장됩니다. 조사 과정에서 혐의가 발견되면 참고인에서 피의자로 전환될 수 있고(실질적 피의자), 이때 진술이 불리하게 사용될 수 있습니다. '만일의 경우'를 대비해 변호인 동석이 안전합니다.</p>
-
-<p class="faq-q">Q5. 경찰 조사 중 화장실 사용이나 휴식을 요구할 수 있나요?</p>
-<p class="faq-a">가능합니다. 형사소송법과 수사준칙은 피의자의 인간적 기본권을 보장하고 있습니다. 조사 중 필요할 때 언제든지 휴식·화장실 사용·음수 등을 요청할 수 있으며, 이를 이유로 불이익을 주는 것은 위법입니다.</p>
-</div>
-
-<div class="card">
-<h2>7. 관련 법령·판례</h2>
+<blockquote>
+<p><strong>핵심:</strong> 경찰 조사 단계에서 조서 내용에 동의(서명)했더라도, 법정에서 "내용이 사실과 다르다"고 부인하면 증거능력이 상실된다. <strong>서명했다고 해서 내용까지 모두 인정한 것은 아니다.</strong></p>
+</blockquote>
+<hr /></section><section class="blk" id="s7"><div class="secl">SECTION</div><h2>5. 조사 중 금지되는 신문 방법</h2>
 <table>
-<tr><th>구분</th><th>내용</th></tr>
-<tr><td>헌법 제12조 제2항</td><td>진술거부권(자기부죄 강요 금지)</td></tr>
-<tr><td>형소법 제30조</td><td>변호인 선임권</td></tr>
-<tr><td>형소법 제34조</td><td>변호인 접견교통권</td></tr>
-<tr><td>형소법 제243조</td><td>변호인 신문 참여권</td></tr>
-<tr><td>형소법 제244조의3</td><td>진술거부권 고지 의무</td></tr>
-<tr><td>형소법 제244조의4</td><td>조서 작성·열람·확인</td></tr>
-<tr><td>형소법 제312조</td><td>피의자신문조서 증거능력</td></tr>
-<tr><td>대법원 2017도5946 전합</td><td>변호인 참여권 실질적 보장과 조서 증거능력</td></tr>
-<tr><td>대법원 2016도3752</td><td>자필진술서도 실질상 피의자신문조서 증거능력</td></tr>
-<tr><td>대법원 2012도7303</td><td>자백 후 번복 시 내용 부인으로 유죄 증거 차단</td></tr>
+<thead>
+<tr>
+<th>금지 유형</th>
+<th>법적 근거</th>
+<th>대응 방법</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>야간신문</strong> (21:00~06:00)</td>
+<td>수사준칙 제37조</td>
+<td>야간조사 거부 의사 표시, 부득이한 경우 동석 변호인 기록</td>
+</tr>
+<tr>
+<td><strong>장시간 조사</strong> (12시간 초과)</td>
+<td>수사준칙</td>
+<td>휴식 요구, 조사 시간 기록·확인 요청</td>
+</tr>
+<tr>
+<td><strong>강압·회유</strong></td>
+<td>형소법 제309조</td>
+<td>"강압적 신문에 항의합니다" 명시적 발언, 녹음 요청</td>
+</tr>
+<tr>
+<td><strong>기망·속임수</strong></td>
+<td>위법수집증거 배제 법칙</td>
+<td>사실과 다른 정보로 유도하는 경우 이의제기</td>
+</tr>
+</tbody>
 </table>
-
-<div class="info-box">*본 가이드는 2026년 7월 기준 법령·판례에 기반합니다. 개별 사안은 구체적 사실관계에 따라 결론이 달라질 수 있으므로 반드시 전문가(변호사)의 조력을 받으시기 바랍니다.</div>
-</div>
-
-</div>
-<div class="footer">
-출처: 조우성 변호사 · 로펌 머스트노우 | 문의: law@mustknow.co.kr<br>
-© 2026 MustKnow. All rights reserved.
-</div>
-</body>
-</html>
+<hr /></section><section class="blk" id="s8"><div class="secl">SECTION</div><h2>6. 체포·구속 시 권리</h2>
+<table>
+<thead>
+<tr>
+<th>권리</th>
+<th>내용</th>
+<th>청구 기한</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>체포적부심</strong></td>
+<td>체포의 적법 여부 법원 심사</td>
+<td>체포 후 즉시</td>
+</tr>
+<tr>
+<td><strong>구속적부심</strong></td>
+<td>구속의 적법성·필요성 법원 심사</td>
+<td>구속 후 즉시</td>
+</tr>
+<tr>
+<td><strong>구속 전 피의자심문</strong></td>
+<td>영장실질심사에서 구속 사유 다툼</td>
+<td>영장 청구 후 48시간 이내</td>
+</tr>
+<tr>
+<td><strong>보석청구</strong></td>
+<td>구속 취소·석방 청구</td>
+<td>구속 중 언제든지</td>
+</tr>
+<tr>
+<td><strong>변호인 의견서 제출</strong></td>
+<td>구속 필요성 없음 입증 자료 제출</td>
+<td>심사 전 제출</td>
+</tr>
+</tbody>
+</table>
+<hr /></section><section class="blk" id="s9"><div class="secl">SECTION</div><h2>7. FAQ</h2>
+<p><strong>Q1. 진술거부권을 행사하면 정말 불이익이 없나요?</strong></p>
+<p>A: 법적으로 진술거부권 행사를 이유로 불리한 추정을 할 수 없습니다(헌법 제12조 제2항, 형소법 제244조의3). 다만 실무적으로 수사관이나 법관이 '반성하지 않는 태도'로 오해할 가능성이 있어, 변호인과 상담 후 전략적으로 진술 여부를 결정하는 것이 바람직합니다.</p>
+<p><strong>Q2. 변호사가 없는데 경찰 조사를 앞두고 있습니다. 어떻게 해야 하나요?</strong></p>
+<p>A: 국선변호인 제도를 활용할 수 있습니다. 피의자에게는 일정 요건(구속·취약계층 등)에서 국선변호인이 선정됩니다. 또한 대한법률구조공단(132)을 통해 무료 법률상담을 받을 수 있습니다. 최소한 "변호사 선임 후 조사받겠습니다"라고 말하고 조사 연기를 요청하세요.</p>
+<p><strong>Q3. 조서에 서명하지 않으면 불리한가요?</strong></p>
+<p>A: 서명 거부 자체만으로 불리한 추정을 받지 않습니다. 오히려 사실과 다른 조서에 서명했다가 법정에서 부인하는 경우, 검사가 "피고인이 직접 서명·날인한 조서"를 증거로 제출하며 신빙성을 주장할 수 있어 불리해질 수 있습니다. 내용이 부정확하다면 반드시 서명·날인을 거부하세요.</p>
+<p><strong>Q4. 경찰 조사 중 화장실 사용이나 휴식을 요구할 수 있나요?</strong></p>
+<p>A: 네, 가능합니다. 형사소송법과 수사준칙은 피의자의 인간적 기본권을 보장하고 있습니다. 조사 중 필요할 때 언제든지 휴식·화장실 사용·음수 등을 요청할 수 있으며, 이를 이유로 불이익을 주는 것은 위법합니다.</p>
+<p><strong>Q5. 참고인 신분으로 출석요구를 받았습니다. 변호인과 동행해야 하나요?</strong></p>
+<p>A: 참고인 신분이라도 변호인과 동행하는 것이 강력히 권장됩니다. 조사 과정에서 혐의가 발견되면 참고인에서 피의자로 전환될 수 있고(실질적 피의자), 이때 진술이 불리하게 사용될 수 있습니다. "만일의 경우"를 대비해 변호인 동석이 안전합니다.</p>
+<hr /></section><section class="blk" id="s10"><div class="secl">SECTION</div><h2>8. 관련 법령·판례</h2>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>헌법 제12조 제2항</strong></td>
+<td>진술거부권(자기부죄 강요 금지)</td>
+</tr>
+<tr>
+<td><strong>형소법 제30조</strong></td>
+<td>변호인 선임권</td>
+</tr>
+<tr>
+<td><strong>형소법 제34조</strong></td>
+<td>변호인 접견교통권</td>
+</tr>
+<tr>
+<td><strong>형소법 제243조</strong></td>
+<td>변호인 신문 참여권</td>
+</tr>
+<tr>
+<td><strong>형소법 제244조의3</strong></td>
+<td>진술거부권 고지 의무</td>
+</tr>
+<tr>
+<td><strong>형소법 제244조의4</strong></td>
+<td>조서 작성·열람·확인</td>
+</tr>
+<tr>
+<td><strong>형소법 제312조</strong></td>
+<td>피의자신문조서 증거능력</td>
+</tr>
+<tr>
+<td><strong>대법원 2017도5946 전합</strong></td>
+<td>변호인 참여권 실질적 보장과 조서 증거능력</td>
+</tr>
+<tr>
+<td><strong>대법원 2016도3752</strong></td>
+<td>자필진술서도 실질상 피의자신문조서로 증거능력 판단</td>
+</tr>
+<tr>
+<td><strong>헌법재판소 2012헌마93</strong></td>
+<td>진술거부권 행사의 불이익 추정 금지</td>
+</tr>
+<tr>
+<td><strong>대법원 2012도7303</strong></td>
+<td>자백 후 번복 시 조서 내용 부인으로 유죄 증거 사용 차단</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>본 가이드는 2026년 7월 기준 법령·판례에 기반합니다. 개별 사안은 구체적 사실관계에 따라 결론이 달라질 수 있으므로 반드시 전문가(변호사)의 조력을 받으시기 바랍니다.</em></p></section><section class="blk faq" id="faq"><div class="secl">NOTICE</div><h2>확인 사항</h2><div class="notice">이 문서는 일반적인 법률 정보 제공을 위한 자료입니다. 구체적인 사실관계와 최신 법령?판례에 따라 결론이 달라질 수 있습니다.</div></section></main></div><footer class="footer"><div class="wrap"><h3>조우성 변호사</h3><p>실무에 바로 활용할 수 있는 법률 지식과 대응 가이드를 제공합니다.</p></div></footer></body></html>

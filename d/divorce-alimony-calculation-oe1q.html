@@ -1,162 +1,353 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
-<title>이혼 위자료 산정 기준: 혼인기간·재산형성 기여도·유책배우자 3요소 — 조우성 변호사</title>
-<meta name="description" content="이혼 위자료 산정 3대 요소: 혼인기간·재산형성 기여도·유책배우자. 민법 제806조·제843조.">
-<style>
-:root{--bg:#f0f2f5;--panel:#fff;--panel2:#f8f9fb;--line:#e2e5ea;--ink:#111827;--ink2:#374151;--muted:#6b7280;--navy:#1a3a6b;--navy-d:#0f2547;--navy-l:#2e6be6;--navy-tint:#e8edf5;--green-bg:#ecfdf5;--green:#059669;--amber:#f59e0b;--amber-bg:#fffbeb;--red:#dc2626;--red-bg:#fef2f2;--font:-apple-system,BlinkMacSystemFont,Malgun Gothic,sans-serif;--readw:760px}
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>이혼 위자료 산정 기준: 혼인기간·재산형성 기여도·유책배우자 3요소 계산법</title><style>
+/* ============================================================
+   법률 대시보드 전자책 — Apollo 기반 경량 커스텀 (공개 롱스크롤)
+   Apollo 토큰(버건디 액센트 + 웜 화이트 + 딥와인 헤더) 상속.
+   의뢰인 리포트(리스크레이더 6뷰)와 달리 공개 독서형 롱스크롤.
+   self-contained: 외부 CDN/폰트/이미지/스크립트 의존 없음.
+   ============================================================ */
+:root{
+  --bg:#f5f1f2; --panel:#ffffff; --panel2:#faf6f7;
+  --line:#ebe2e5; --line2:#ddccd2;
+  --ink:#2c1d26; --ink2:#56424c; --muted:#8a7b82; --faint:#b3a6ab;
+  --wine:#7a2e3a; --wine-d:#5a1f2b; --wine-l:#9c4456;
+  --wine-tint:#f4e9ec; --wine-tint-ln:#ecd7dd;
+  --header-bg:#3a1525; --header-bg2:#4e1f32; --header-accent:#d4a0aa;
+  --rH:#c74a3c; --rM-bg:#f8e4b8; --rM-tx:#7d520a; --rL-bg:#d6ecdb; --rL-tx:#287a54;
+  --amber:#b45309; --green:#287a54;
+  --font:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Noto Sans KR',sans-serif;
+  --maxw:1120px; --readw:760px;
+}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.75}
-#pb{position:fixed;top:0;left:0;right:0;height:4px;background:var(--line);z-index:999}
-#pb div{height:100%;width:0;background:var(--navy-l);transition:width .3s}
-.hero{background:linear-gradient(135deg,var(--navy-d),var(--navy));color:#fff;padding:48px 20px 32px;text-align:center}
-.hero h1{font-size:24px;margin:0 0 8px;font-weight:700;line-height:1.4}
-.hero p{font-size:14px;margin:0;opacity:.85}
-.wrap{max-width:var(--readw);margin:0 auto;padding:16px}
-.card{background:var(--panel);border-radius:12px;padding:20px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
-.summary-box{background:var(--navy-tint);padding:14px 16px;border-radius:8px;margin-top:12px;font-size:14px}
-.alert-box{background:var(--red-bg);padding:14px 16px;border-radius:8px;margin-top:12px;font-size:14px;border-left:3px solid var(--red)}
-.tldr{background:var(--green-bg);border-left:3px solid var(--green);padding:14px 16px;border-radius:8px;margin-bottom:16px;font-size:14px}
-h2{font-size:18px;margin:20px 0 12px;color:var(--navy-d)}
-th{background:#f3f4f6;font-weight:600;text-align:left;padding:8px 10px;font-size:13px}
-td{padding:8px 10px;border-top:1px solid var(--line);font-size:13px}
-table{width:100%;border-collapse:collapse;margin:8px 0}
-.checklist{list-style:none;padding:0;margin:8px 0}
-.checklist li{padding:6px 0 6px 28px;position:relative;font-size:14px}
-.checklist li:before{content:"☐";position:absolute;left:0;color:var(--navy-l)}
-details{margin:8px 0}
-details summary{cursor:pointer;font-weight:600;font-size:14px;padding:8px 0;color:var(--navy-l)}
-details p{font-size:14px;margin:4px 0 8px;padding:0 0 0 12px;border-left:2px solid var(--line)}
-.factor-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin:12px 0}
-.factor-card{border-radius:10px;padding:14px;font-size:13px;color:#fff}
-.factor-card h4{margin:0 0 6px;font-size:15px}
-.factor-card p{margin:0;opacity:.9;line-height:1.5}
-.fc1{background:var(--green)}
-.fc2{background:var(--navy-l)}
-.fc3{background:var(--red)}
-.foot{text-align:center;padding:24px 16px;font-size:12px;color:var(--muted)}
-.foot a{color:var(--navy-l)}
-@media(max-width:600px){.hero h1{font-size:20px}.wrap{padding:12px}.factor-grid{grid-template-columns:1fr}}
-</style>
-</head>
-<body>
-<div id="pb"><div></div></div>
-<header class="hero">
-<h1>이혼 위자료 산정 기준</h1>
-<p>혼인기간·재산형성 기여도·유책배우자 3요소 계산법</p>
-</header>
-<main class="wrap">
-<div class="tldr">
-<strong>3줄 요약 (TL;DR)</strong><br>
-1. 위자료는 혼인 파탄에 대한 정신적 손해배상(민법 제806조·제843조)으로, 재산분할과는 별개의 제도다.<br>
-2. 법원은 ① 혼인기간 ② 재산형성 기여도 ③ 유책배우자의 책임 정도를 종합적으로 고려한다.<br>
-3. 통상 수천만 원~억대 범위에서 형성되며, 상간세는 유책배우자와 연대하여 지급할 수 있다.
-</div>
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
 
-<div class="card">
-<h2>1. 위자료의 개념과 법적 근거</h2>
-<p><strong>위자료</strong>는 혼인 파탄으로 인한 <strong>정신적 고통</strong>을 배상하는 손해배상이다(민법 제806조, 제843조). <strong>재산분할</strong>과 다른 점은 재산분할이 혼인 중 공동으로 형성한 재산을 기여도에 따라 나누는 것이며, 위자료는 불법행위에 대한 정신적 손해배상이다. 두 제도는 별개로 첪d구·판단된다.</p>
-<table>
-<tr><th>구분</th><th>위자료</th><th>재산분할</th></tr>
-<tr><td>성격</td><td>정신적 손해배상</td><td>공동재산 첪d산</td></tr>
-<tr><td>법적 근거</td><td>민법 제806조·제843조</td><td>민법 제839조의2</td></tr>
-<tr><td>유책 여부</td><td>유책배우자가 지급</td><td>유책 여부 불문</td></tr>
-<tr><td>청구 시기</td><td>이혼과 동시 또는 이혼 후 3년</td><td>이혼 후 2년</td></tr>
-<tr><td>소멸시효</td><td>불법행위 인지일 3년·행위일 10년</td><td>이혼 성립일 2년</td></tr>
-</table>
-</div>
+/* 읽기 진행바 */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;
+  background:linear-gradient(90deg,var(--wine),var(--wine-l));transition:width .1s linear}
 
-<div class="card">
-<h2>2. 위자료 산정 3대 요소</h2>
-<div class="factor-grid">
-<div class="factor-card fc1">
-<h4>① 혼인기간</h4>
-<p>장기 혼인일수록 위자료 증액. 10년 이상 장기 혼인의 경우 정신적 손해가 크다고 평가. 단기혼인이라도 유책 행위가 중대하면 고액 인정 가능.</p>
-</div>
-<div class="factor-card fc2">
-<h4>② 재산형성 기여도</h4>
-<p>배우자의 재산 형성에 기여한 정도. 전업주부의 가사·육아 기여, 사업체 운영 지원, 명의신탁 관리 등 포함.</p>
-</div>
-<div class="factor-card fc3">
-<h4>③ 유책배우자의 책임 정도</h4>
-<p><strong>가장 중요한 요소.</strong> 부정행위(외도)·폭행·학대·가출 등 혼인 파탄의 책임 정도를 평가. 양방 유책이면 감액 또는 기각.</p>
-</div>
-</div>
-</div>
+/* 헤더 표지 (딥와인, 유일한 딥 컬러) */
+.header{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0}
+.header .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 26px}
+.header .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;
+  color:var(--header-accent);border:1px solid rgba(212,160,170,.4);border-radius:999px;padding:4px 12px}
+.header .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--header-accent)}
 
-<div class="card">
-<h2>3. 위자료 액수 경향과 판례</h2>
-<table>
-<tr><th>유형</th><th>통상적 범위</th><th>비고</th></tr>
-<tr><td>일반적 부정행위(외도)</td><td>1,000만~3,000만 원</td><td>혼인기간·자녀 유무에 따라 증감</td></tr>
-<tr><td>장기 혼인 + 중대 유책</td><td>3,000만~5,000만 원</td><td>15년 이상 혼인, 반복적 외도 등</td></tr>
-<tr><td>특별 중대 사유</td><td>5,000만 원 이상</td><td>폭행·학대·중복 유책 사유</td></tr>
-<tr><td>상간자 공동 책임</td><td>유책배우자와 연대</td><td>상간소 별도 첪d구 가능</td></tr>
-</table>
-</div>
+/* 히어로 */
+.hero{max-width:var(--maxw);margin:0 auto;padding:30px 26px 8px}
+.hero .eb{font-size:12px;font-weight:700;color:var(--wine);letter-spacing:.02em;margin-bottom:10px}
+.hero h1{font-size:30px;line-height:1.28;font-weight:800;margin:0 0 16px;color:var(--ink);letter-spacing:-.01em}
+.hero .tldr{background:var(--wine-tint);border:1px solid var(--wine-tint-ln);border-left:4px solid var(--wine);
+  border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.hero .tldr .lb{font-size:12px;font-weight:700;color:var(--wine-d);margin-bottom:8px}
+.hero .tldr ul{margin:0;padding-left:18px}
+.hero .tldr li{margin:4px 0;font-size:15px;color:var(--ink2)}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:12.5px;color:var(--muted);margin-bottom:18px}
+.hero .meta .vchip{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);
+  font-weight:700;border-radius:6px;padding:3px 9px;font-size:11.5px}
+.hero .cta-row{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:9px;
+  padding:11px 18px;text-decoration:none;cursor:pointer;border:1px solid transparent}
+.btn-p{background:var(--wine);color:#fff}
+.btn-p:hover{background:var(--wine-d)}
+.btn-o{background:#fff;color:var(--wine-d);border-color:var(--line2)}
+.btn-o:hover{background:var(--panel2)}
 
-<div class="card">
-<h2>4. 실무 체크리스트</h2>
-<ul class="checklist">
-<li>이혼 사유가 민법 제840조 각호(재판상 이혼 사유) 중 뭐에 해당하는지 확인하였는가?</li>
-<li>위자료와 재산분할을 별개로 첪d구할 것인지 결정하였는가?</li>
-<li>유책 배우자의 불법행위를 증명할 증거(부정행위 증거·폭행 진단서·학대 기록 등)를 확보하였는가?</li>
-<li>혼인기간을 계산(실제 동거 기간 기준)하였는가?</li>
-<li>혼인 중 재산 형성에 기여한 사실(가사·육아·사업 지원 등)을 입증할 자료를 준비하였는가?</li>
-<li>상간자가 있는 경우 상간소(상간자 상대 위자료 첪d구)를 병행할지 검토하였는가?</li>
-<li>위자료 첪d구권의 소멸시효(불법행위 인지일 3년·행위일 10년)를 확인하였는가?</li>
-<li>위자료 합의 시 강제집행을 받을 수 있도록 공증(집행인낙)을 고려하였는가?</li>
+/* 셸: 좌측 목차 + 본문 */
+.app{max-width:var(--maxw);margin:0 auto;padding:8px 26px 60px;
+  display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:start}
+
+/* 목차 (데스크톱 = 좌측 sticky) */
+.toc{position:sticky;top:24px}
+.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;
+  margin:0 0 10px;padding-left:2px}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}
+.toc li{counter-increment:toc;margin:1px 0}
+.toc a{display:flex;gap:9px;font-size:13.5px;color:var(--ink2);text-decoration:none;
+  padding:7px 10px;border-radius:8px;border-left:3px solid transparent;line-height:1.4}
+.toc a::before{content:counter(toc,decimal-leading-zero);color:var(--faint);font-weight:700;font-size:11.5px;flex:none}
+.toc a:hover{background:var(--panel2)}
+.toc a.active{background:var(--wine-tint);border-left-color:var(--wine);color:var(--wine-d);font-weight:700}
+.toc-toggle{display:none}
+
+/* 본문 */
+.content{max-width:var(--readw);min-width:0}
+section.blk{scroll-margin-top:24px;margin-bottom:38px}
+.secl{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.05em;margin:0 0 12px}
+.secl::before{content:"";width:7px;height:15px;background:var(--wine);border-radius:2px;flex:none}
+section.blk h2{font-size:23px;font-weight:800;line-height:1.35;margin:0 0 14px;color:var(--ink);letter-spacing:-.01em}
+section.blk h3{font-size:17px;font-weight:700;margin:26px 0 10px;color:var(--wine-d)}
+section.blk p{margin:0 0 14px;color:var(--ink2)}
+section.blk ul,section.blk ol{margin:0 0 14px;padding-left:22px;color:var(--ink2)}
+section.blk li{margin:6px 0}
+strong{color:var(--ink);font-weight:700}
+a.ln{color:var(--wine-l);text-decoration:none;border-bottom:1px solid var(--wine-tint-ln)}
+a.ln:hover{border-bottom-color:var(--wine-l)}
+
+/* 핵심요약 카드 */
+.summary{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.summary .lb{font-size:11px;font-weight:700;color:var(--wine-d);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.summary ul{margin:0;padding-left:18px}
+
+/* 근거 카드 (조문·판례) */
+.ev{background:#fff;border:1px solid var(--line);border-left:4px solid var(--wine);border-radius:10px;
+  padding:13px 15px;margin:0 0 12px}
+.ev .top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px}
+.ev .kind{font-size:11px;font-weight:700;color:#fff;background:var(--wine);border-radius:5px;padding:2px 8px}
+.ev .kind.law{background:var(--wine-d)}
+.ev .kind.case{background:var(--amber)}
+.ev .cite{font-size:13.5px;font-weight:700;color:var(--ink)}
+.ev .vtick{margin-left:auto;font-size:11px;font-weight:700;color:var(--rL-tx);background:var(--rL-bg);border-radius:5px;padding:2px 7px}
+.ev .gist{font-size:14px;color:var(--ink2);margin:0}
+.ev .date{font-size:12px;color:var(--muted);margin-top:5px}
+
+/* 다이어그램 — 플로우 / 체크리스트 (CSS·SVG only) */
+.figure{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin:0 0 18px}
+.figure .cap{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:12px}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px}
+.flow .step{flex:1;min-width:120px;background:var(--wine-tint);border:1px solid var(--wine-tint-ln);
+  border-radius:10px;padding:11px 12px;position:relative}
+.flow .step .n{font-size:11px;font-weight:700;color:var(--wine)}
+.flow .step .t{font-size:13.5px;font-weight:700;color:var(--ink);margin-top:2px}
+.flow .step .d{font-size:12.5px;color:var(--ink2);margin-top:3px}
+.checklist{list-style:none;margin:0;padding:0}
+.checklist li{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+.checklist li:last-child{border-bottom:none}
+.checklist .ck{flex:none;width:20px;height:20px;border-radius:5px;background:var(--rL-bg);color:var(--rL-tx);
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+
+/* 위험도 칩 */
+.chip{display:inline-flex;align-items:center;justify-content:center;min-width:34px;font-size:11px;font-weight:500;
+  border-radius:6px;padding:3px 8px;margin-right:4px}
+.c-H{background:var(--rH);color:#fff}
+.c-M{background:var(--rM-bg);color:var(--rM-tx)}
+.c-L{background:var(--rL-bg);color:var(--rL-tx)}
+
+/* 표 */
+.tbl-wrap{overflow-x:auto;margin:0 0 18px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px}
+
+/* FAQ (아코디언) */
+.faq details{background:#fff;border:1px solid var(--line);border-radius:10px;margin:0 0 10px;overflow:hidden}
+.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:15px;font-weight:700;color:var(--ink);
+  display:flex;align-items:center;gap:10px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--wine-tint);
+  color:var(--wine-d);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+.faq details[open] summary{border-bottom:1px solid var(--line);color:var(--wine-d)}
+.faq .a{padding:14px 16px;font-size:14.5px;color:var(--ink2)}
+
+/* 최신성·면책 고지 */
+.notice{background:#fff;border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;
+  font-size:12.5px;color:var(--muted);line-height:1.7}
+
+/* 맨 위로 버튼 */
+#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--wine-tint-ln);background:var(--wine);color:#fff;font-size:18px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;
+  box-shadow:0 4px 14px rgba(58,21,37,.28)}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{background:var(--wine-d)}
+
+/* 푸터 프로필 + 상담 CTA */
+.footer{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0;margin-top:20px}
+.footer .wrap{max-width:var(--maxw);margin:0 auto;padding:34px 26px}
+.footer h3{font-size:20px;font-weight:800;margin:0 0 8px;color:#fff}
+.footer p{font-size:14px;color:rgba(255,255,255,.72);margin:0 0 6px;line-height:1.7}
+.footer .prof{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end}
+.footer .cta-f{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.footer .btn-f{background:#fff;color:var(--wine-d)}
+.footer .btn-f:hover{background:var(--header-accent)}
+.footer .btn-fo{background:transparent;color:#f4eef0;border-color:rgba(255,255,255,.35)}
+.footer .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:22px;padding-top:14px;
+  font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.7}
+
+/* ── 모바일 (≤820px) ── */
+@media(max-width:820px){
+  .hero h1{font-size:24px}
+  .app{grid-template-columns:1fr;gap:0;padding-top:0}
+  .toc{position:static;margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 8px}
+  .toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;
+    cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--wine-d);padding:9px 8px}
+  .toc-toggle .ar{transition:transform .2s}
+  .toc.closed .toc-toggle .ar{transform:rotate(-90deg)}
+  .toc .tt{display:none}
+  .toc ol{max-height:50vh;overflow:auto}
+  .toc.closed ol{display:none}
+  section.blk h2{font-size:20px}
+  th,td{white-space:nowrap}
+}
+@media print{
+  #progress,.toc,.cta-row,.footer .cta-f{display:none}
+  .header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .app{display:block}
+}
+</style></head><body><div id="progress"></div><button id="toTop" aria-label="맨 위로">?</button><header class="header"><div class="wrap"><span class="badge"><span class="dot"></span>조우성 변호사 ? 법률 인사이트</span></div></header><div class="hero"><div class="eb">전자책 대시보드 ? 실무 가이드</div><h1>이혼 위자료 산정 기준: 혼인기간·재산형성 기여도·유책배우자 3요소 계산법</h1><div class="tldr"><div class="lb">3줄 요약 (TL;DR)</div><ul><li>원문 Markdown의 제목?본문?표?체크리스트를 반영한 공개용 HTML입니다.</li><li>문서의 핵심 내용과 실무상 확인 포인트를 한 화면에서 확인할 수 있습니다.</li><li>구체적인 사안은 최신 법령?판례와 사실관계 확인이 필요합니다.</li></ul></div><div class="meta"><span>원문: 20260711_divorce_alimony_calculation.md</span><span class="vchip">원문 기반 HTML</span></div><div class="cta-row"><a class="btn btn-p" href="#s1">핵심 내용 보기</a><a class="btn btn-o" href="#faq">확인 사항</a></div></div><div class="app"><nav class="toc" id="toc"><div class="tt">목차</div><ol id="toc-list"><li><a href="#s1">본문</a></li><li><a href="#s2">3줄 요약 (TL;DR)</a></li><li><a href="#s3">1. 위자료의 개념과 법적 근거</a></li><li><a href="#s4">2. 위자료 산정 3대 요소</a></li><li><a href="#s5">3. 위자료 액수 경향과 판례</a></li><li><a href="#s6">4. 실무 체크리스트</a></li><li><a href="#s7">5. FAQ</a></li><li><a href="#s8">6. 관련 법령·판례</a></li></ol></nav><main class="content"><section class="blk" id="s1"><div class="secl">SECTION</div><blockquote>
+<p>[!web] 웹으로 보기
+<a href="https://woosungjo-law.github.io/share/d/divorce-alimony-calculation-oe1q.html">https://woosungjo-law.github.io/share/d/divorce-alimony-calculation-oe1q.html</a></p>
+</blockquote>
+<p><em>출처: 조우성 변호사 / 로펌 머스트노우 | 문의: law@mustknow.co.kr</em></p>
+<h1>이혼 위자료 산정 기준: 혼인기간·재산형성 기여도·유책배우자 3요소 계산법</h1></section><section class="blk" id="s2"><div class="secl">SECTION</div><h2>3줄 요약 (TL;DR)</h2>
+<ul>
+<li><strong>위자료</strong>는 혼인 파탄에 대한 정신적 손해배상(민법 제806조·제843조)으로, <strong>재산분할</strong>과는 별개의 제도다. 위자료는 유책배우자가 상대방에게 지급한다.</li>
+<li>법원은 위자료를 산정할 때 <strong>① 혼인기간 ② 재산형성 기여도 ③ 유책배우자의 책임 정도</strong>를 3대 요소로 종합한다. 여기에 당사자의 연령·경제력·자녀 유무 등이 추가로 고려된다.</li>
+<li>위자료는 <strong>협의</strong>로 정하는 것이 원칙이나, 합의가 안 되면 가정법원이 결정한다. 통상 수천만 원~억대 범위에서 형성되며, 상간자(부정행위 상대)와 유책배우자가 연대하여 지급할 수 있다.</li>
 </ul>
-</div>
-
-<div class="card">
-<h2>5. FAQ</h2>
-<details>
-<summary>Q1. 위자료와 재산분할은 어떻게 다른가요? 하나만 받을 수 있나요?</summary>
-<p>위자료는 정신적 손해배상, 재산분할은 공동재산 첪d산으로 별개의 제도입니다. <strong>둘 다 동시에 첪d구할 수 있습니다.</strong> 위자료가 재산분할에 흡수되거나 상계되지 않습니다.</p>
-</details>
-<details>
-<summary>Q2. 상대방(유책배우자)에게 재산이 없으면 위자료를 받을 수 없나요?</summary>
-<p>유책배우자에게 재산이 없던 위자료 첪d구권은 인정됩니다. 기사적인 필요가 있다면 사전에 재산 가압류를 검토해야 합니다.</p>
-</details>
-<details>
-<summary>Q3. 상간자(내 배우자의 외도 상대)에게도 위자료를 첪d구할 수 있나요?</summary>
-<p>네, 가능합니다. 상간자는 유책배우자와 공동불법행위자로서 연대하여 위자료를 지급할 의무가 있습니다(민법 제750조, 제760조). 별도의 상간소를 제기하거나 이혼 소송에 병합할 수 있습니다.</p>
-</details>
-<details>
-<summary>Q4. 협의이혼 시 위자료를 정하려면 어떻게 해야 하나요?</summary>
-<p>이혼합의서(협의이혼)에 위자료 액수와 지급 방법·기한을 명시합니다. 강제집행력을 확보하려면 공증인의 집행인낙 공증을 받아두는 것이 안전합니다.</p>
-</details>
-<details>
-<summary>Q5. 위자료를 받은 후도 추가 첪d구가 가능한가요?</summary>
-<p>협의이혼 시 '위자료를 포함한 모든 재산 문제를 정산한다'는 합의를 했다면 추가 첪d구가 제한될 수 있습니다. 합의 전 변호사의 검토가 필수적입니다.</p>
-</details>
-</div>
-
-<div class="card">
-<h2>6. 관련 법령·판례</h2>
+<hr /></section><section class="blk" id="s3"><div class="secl">SECTION</div><h2>1. 위자료의 개념과 법적 근거</h2>
+<p><strong>한눈에</strong>
+- 위자료는 혼인 파탄으로 인한 <strong>정신적 고통</strong>을 배상하는 손해배상이다(민법 제806조, 제843조). 
+- <strong>재산분할</strong>과의 차이: 재산분할은 혼인 중 공동으로 형성한 재산을 기여도에 따라 나누는 것이고(민법 제839조의2), 위자료는 불법행위에 대한 정신적 손해배상이다. 두 제도는 별개로 청구·판단된다.
+- <strong>청구 요건</strong>: 재판상 이혼 또는 협의이혼이 성립되어야 한다. 이혼 없이 위자료만 청구하는 것은 원칙적으로 불가능하다.</p>
 <table>
-<tr><th>구분</th><th>내용</th></tr>
-<tr><td>민법 제806조</td><td>약혼 해제 시 손해배상 첪d구권</td></tr>
-<tr><td>민법 제843조</td><td>재판상 이혼 시 손해배상 — 제806조 준용</td></tr>
-<tr><td>민법 제840조</td><td>재판상 이혼 사유 6가지</td></tr>
-<tr><td>민법 제839조의2</td><td>재산분할 첪d구권</td></tr>
-<tr><td>대법원 2015묘0568 전합</td><td>유책배우자 이혼 첪d구 — 유책주의 원칙</td></tr>
-<tr><td>대법원 2003묘2251</td><td>위자료 산정 — 법원의 재량 판단 기준</td></tr>
+<thead>
+<tr>
+<th>구분</th>
+<th>위자료</th>
+<th>재산분할</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>성격</td>
+<td>정신적 손해배상</td>
+<td>공동재산 청산</td>
+</tr>
+<tr>
+<td>법적 근거</td>
+<td>민법 제806조·제843조</td>
+<td>민법 제839조의2</td>
+</tr>
+<tr>
+<td>유책 여부</td>
+<td>유책배우자가 지급</td>
+<td>유책 여부 불문</td>
+</tr>
+<tr>
+<td>청구 시기</td>
+<td>이혼과 동시 또는 이혼 후 3년</td>
+<td>이혼 후 2년</td>
+</tr>
+<tr>
+<td>소멸시효</td>
+<td>불법행위 인지일 3년·행위일 10년</td>
+<td>이혼 성립일 2년</td>
+</tr>
+</tbody>
 </table>
-</div>
-
-</main>
-<footer class="foot">
-<p>작성: 조우성 변호사 / 로펄 머스트노우 | 문의: law@mustknow.co.kr</p>
-<p>최종 업데이트: 2026-07-11 | 본 자료는 일반적 참고용이며, 구체적 사안은 변호사 상담이 필요합니다.</p>
-</footer>
-<script>
-window.addEventListener('scroll',function(){var p=document.querySelector('#pb div');var h=document.documentElement.scrollHeight-document.documentElement.clientHeight;var s=Math.min(window.scrollY/h*100,100);p.style.width=s+'%'});
-</script>
-</body>
-</html>
+<hr /></section><section class="blk" id="s4"><div class="secl">SECTION</div><h2>2. 위자료 산정 3대 요소</h2>
+<h3>요소 1: 혼인기간</h3>
+<ul>
+<li><strong>장기 혼인</strong>일수록 위자료가 증액되는 경향이 있다. 10년 이상 장기 혼인의 경우 단기 혼인에 비해 정신적 손해가 크다고 평가된다.</li>
+<li>다만 단기 혼인(1~2년)이라도 유책 행위가 중대하면 고액 위자료가 인정될 수 있으므로, 혼인기간은 '절대적 기준'이 아닌 '참고 요소'다.</li>
+</ul>
+<h3>요소 2: 재산형성 기여도</h3>
+<ul>
+<li>배우자의 재산 형성에 기여한 정도가 위자료 산정에 영향을 미친다. 전업주부의 가사·육아 기여, 사업체 운영 지원, 명의신탁 재산 관리 등이 포함된다.</li>
+<li>재산분할과 중복 평가되지 않도록 법원은 주의한다. 재산분할에서 이미 기여도가 반영되었다면 위자료에서는 별도 가중하지 않는다.</li>
+</ul>
+<h3>요소 3: 유책배우자의 책임 정도</h3>
+<ul>
+<li><strong>가장 중요한 요소</strong>다. 부정행위(외도)·폭행·정신적 학대·가출·알코올 중독·도박 등 혼인 파탄의 원인과 책임 정도를 평가한다.</li>
+<li>유책 정도가 클수록 위자료가 증액된다. 쌍방 유책(서로 잘못이 있는 경우)이면 위자료가 감액되거나 기각될 수 있다.</li>
+<li><strong>유책주의 원칙</strong>: 한국은 유책배우자의 이혼 청구를 원칙적으로 금지한다(대법원 2015므568 전합). 유책배우자는 상대방에게 위자료를 지급해야 한다.</li>
+</ul>
+<hr /></section><section class="blk" id="s5"><div class="secl">SECTION</div><h2>3. 위자료 액수 경향과 판례</h2>
+<table>
+<thead>
+<tr>
+<th>유형</th>
+<th>통상적 범위</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>일반적 부정행위(외도)</td>
+<td>1,000만~3,000만 원</td>
+<td>혼인기간·자녀 유무에 따라 증감</td>
+</tr>
+<tr>
+<td>장기 혼인 + 중대 유책</td>
+<td>3,000만~5,000만 원</td>
+<td>15년 이상 혼인, 반복적 외도 등</td>
+</tr>
+<tr>
+<td>특별 중대 사유</td>
+<td>5,000만 원 이상</td>
+<td>폭행·학대·중복 유책 사유</td>
+</tr>
+<tr>
+<td>상간자 공동 책임</td>
+<td>유책배우자와 연대</td>
+<td>상간소 별도 청구 가능</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>법원은 <strong>절대적 기준액</strong>을 정해두지 않고, 변론에 나타난 모든 사정을 종합해 재량으로 결정한다(대법원 2003므2251).</li>
+<li>최근 판례는 종전의 '상한선' 관행(약 3,000만 원)을 넘어 <strong>억대 위자료</strong>도 인정하는 추세다(예: 서울고등법원 2억 원).</li>
+</ul>
+<hr /></section><section class="blk" id="s6"><div class="secl">SECTION</div><h2>4. 실무 체크리스트</h2>
+<ul>
+<li>[ ] 이혼 사유가 민법 제840조 각호(재판상 이혼 사유) 중 무엇에 해당하는지 확인하였는가?</li>
+<li>[ ] 위자료와 재산분할을 별개로 청구할 것인지 결정하였는가?</li>
+<li>[ ] 유책 배우자의 불법행위를 증명할 증거(부정행위 증거·폭행 진단서·학대 기록 등)를 확보하였는가?</li>
+<li>[ ] 혼인기간을 계산(실제 동거 기간 기준)하였는가?</li>
+<li>[ ] 혼인 중 재산 형성에 기여한 사실(가사·육아·사업 지원 등)을 입증할 자료를 준비하였는가?</li>
+<li>[ ] 상간자가 있는 경우 상간소(상간자 상대 위자료 청구)를 병행할지 검토하였는가?</li>
+<li>[ ] 위자료 청구권의 소멸시효(불법행위 인지일 3년·행위일 10년)를 확인하였는가?</li>
+<li>[ ] 위자료 합의 시 강제집행을 받을 수 있도록 공증(집행인낙)을 고려하였는가?</li>
+</ul>
+<hr /></section><section class="blk" id="s7"><div class="secl">SECTION</div><h2>5. FAQ</h2>
+<p><strong>Q1. 위자료와 재산분할은 어떻게 다른가요? 하나만 받을 수 있나요?</strong>
+A1. 위자료는 정신적 손해배상, 재산분할은 공동재산 청산으로 별개의 제도입니다. <strong>둘 다 동시에 청구할 수 있습니다.</strong> 위자료가 재산분할에 흡수되거나 상계되지 않습니다.</p>
+<p><strong>Q2. 상대방(유책배우자)에게 재산이 없으면 위자료를 받을 수 없나요?</strong>
+A2. 유책배우자에게 재산이 없더라도 위자료 청구권은 인정됩니다. 다만 실제 집행이 어려울 수 있으므로, 재산 은닉을 막기 위해 사전에 재산 가압류를 검토해야 합니다.</p>
+<p><strong>Q3. 상간자(내 배우자의 외도 상대)에게도 위자료를 청구할 수 있나요?</strong>
+A3. 네, 가능합니다. 상간자는 유책배우자와 공동불법행위자로서 연대하여 위자료를 지급할 의무가 있습니다(민법 제750조, 제760조). 별도의 상간소를 제기하거나, 이혼 소송에 병합할 수 있습니다.</p>
+<p><strong>Q4. 협의이혼 시 위자료를 정하려면 어떻게 해야 하나요?</strong>
+A4. 이혼합의서(협의이혼)에 위자료 액수와 지급 방법·기한을 명시합니다. 강제집행력을 확보하려면 공증인의 집행인낙 공증을 받아두는 것이 안전합니다. 공증이 없다면 불이행 시 별도의 소송이 필요합니다.</p>
+<p><strong>Q5. 위자료를 받은 후에도 추가 청구가 가능한가요?</strong>
+A5. 협의이혼 시 '위자료를 포함한 모든 재산 문제를 정산한다'는 취지의 합의를 했다면 추가 청구가 제한될 수 있습니다. 합의서 문구에 따라 해석이 달라지므로, 합의 전 변호사의 검토가 필수적입니다.</p>
+<hr /></section><section class="blk" id="s8"><div class="secl">SECTION</div><h2>6. 관련 법령·판례</h2>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>민법 제806조</td>
+<td>약혼 해제 시 손해배상 청구권</td>
+</tr>
+<tr>
+<td>민법 제843조</td>
+<td>재판상 이혼 시 손해배상 — 제806조 준용</td>
+</tr>
+<tr>
+<td>민법 제840조</td>
+<td>재판상 이혼 사유 6가지</td>
+</tr>
+<tr>
+<td>민법 제839조의2</td>
+<td>재산분할 청구권</td>
+</tr>
+<tr>
+<td>대법원 2015므568 전합</td>
+<td>유책배우자 이혼 청구 — 유책주의 원칙</td>
+</tr>
+<tr>
+<td>대법원 2003므2251</td>
+<td>위자료 산정 — 법원의 재량 판단 기준</td>
+</tr>
+<tr>
+<td>대법원 1993므143</td>
+<td>위자료청구권의 양도·승계 제한</td>
+</tr>
+</tbody>
+</table></section><section class="blk faq" id="faq"><div class="secl">NOTICE</div><h2>확인 사항</h2><div class="notice">이 문서는 일반적인 법률 정보 제공을 위한 자료입니다. 구체적인 사실관계와 최신 법령?판례에 따라 결론이 달라질 수 있습니다.</div></section></main></div><footer class="footer"><div class="wrap"><h3>조우성 변호사</h3><p>실무에 바로 활용할 수 있는 법률 지식과 대응 가이드를 제공합니다.</p></div></footer></body></html>
