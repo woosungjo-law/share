@@ -1,298 +1,209 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex,follow">
-<title>전세사기 피해자 보증금 회수 3단계 — 법률 대시보드</title>
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --primary: #5a1e1e;
-    --primary-light: #7a2e2e;
-    --accent: #c53030;
-    --accent-light: #e56a6a;
-    --teal: #2c7a7b;
-    --danger: #9b2c2c;
-    --warning: #975a16;
-    --success: #276749;
-    --bg: #fff5f5;
-    --card-bg: #ffffff;
-    --text: #1a202c;
-    --text-muted: #4a5568;
-    --border: #e2e8f0;
-    --radius: 12px;
-    --shadow: 0 1px 3px rgba(0,0,0,0.08);
-    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
-  }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.7;
-  }
-  .container { max-width: 840px; margin: 0 auto; padding: 0 20px; }
-
-  .hero {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-    color: white; padding: 48px 0 40px;
-  }
-  .hero h1 { font-size: 1.75rem; font-weight: 800; line-height: 1.3; margin-bottom: 8px; }
-  .hero .subtitle { font-size: 1rem; opacity: 0.9; margin-bottom: 20px; }
-  .hero .badge-row { display: flex; flex-wrap: wrap; gap: 6px; }
-  .hero .badge {
-    display: inline-block; padding: 3px 10px; border-radius: 20px;
-    font-size: 0.75rem; font-weight: 600; background: rgba(255,255,255,0.2); color: white;
-  }
-
-  .target-section {
-    background: #fff5f5; border-left: 4px solid var(--accent);
-    padding: 16px 20px; margin: 24px auto; border-radius: 0 var(--radius) var(--radius) 0;
-  }
-  .target-section p { font-size: 0.9rem; margin-bottom: 4px; }
-  .target-section strong { color: var(--accent); }
-
-  .section {
-    background: var(--card-bg); border-radius: var(--radius); box-shadow: var(--shadow);
-    padding: 28px 24px; margin: 20px auto; transition: box-shadow 0.2s;
-  }
-  .section:hover { box-shadow: var(--shadow-lg); }
-  .section h2 {
-    font-size: 1.25rem; font-weight: 700; color: var(--primary);
-    margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--border);
-  }
-  .section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin: 16px 0 8px; }
-  .section h4 { font-size: 0.9rem; font-weight: 600; margin: 10px 0 4px; }
-  .section p { margin-bottom: 12px; font-size: 0.925rem; }
-
-  .table-wrap { overflow-x: auto; margin: 12px 0; }
-  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
-  th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
-  th { background: var(--accent); color: white; font-weight: 600; }
-  th:first-child { border-radius: 6px 0 0 0; }
-  th:last-child { border-radius: 0 6px 0 0; }
-  tr:hover td { background: #fff5f5; }
-
-  .step {
-    display: flex; gap: 12px; margin: 16px 0; padding: 16px;
-    background: #fff5f5; border-radius: 8px; border-left: 3px solid var(--accent);
-  }
-  .step-num {
-    flex-shrink: 0; width: 32px; height: 32px;
-    background: var(--accent); color: white; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 0.85rem; font-weight: 700;
-  }
-  .step-content { flex: 1; }
-  .step-content strong { color: var(--accent); font-size: 0.95rem; }
-  .step-content p { margin: 4px 0 0; font-size: 0.85rem; }
-
-  .alert {
-    padding: 14px 16px; border-radius: 8px; margin: 12px 0;
-    font-size: 0.875rem; border-left: 4px solid;
-  }
-  .alert.danger { background: #fff5f5; border-color: var(--danger); color: var(--danger); }
-  .alert.warning { background: #fffaf0; border-color: var(--warning); color: var(--warning); }
-  .alert.info { background: #ebf8ff; border-color: #3182ce; color: #2b6cb0; }
-
-  .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
-  @media (max-width: 600px) { .card-grid { grid-template-columns: 1fr; } }
-  .ev-card {
-    border: 1px solid var(--border); border-radius: 8px; padding: 14px;
-  }
-  .ev-card .card-title { font-size: 0.85rem; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
-  .ev-card p { font-size: 0.825rem; margin-bottom: 6px; }
-  .ev-card .tag {
-    display: inline-block; font-size: 0.7rem; font-weight: 600;
-    padding: 2px 6px; border-radius: 4px; background: #fff5f5; color: var(--accent);
-  }
-
-  .faq-item { border-bottom: 1px solid var(--border); padding: 14px 0; }
-  .faq-item:first-child { padding-top: 0; }
-  .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
-  .faq-q { font-weight: 600; color: var(--accent); margin-bottom: 4px; font-size: 0.925rem; }
-  .faq-a { font-size: 0.875rem; color: var(--text-muted); }
-
-  .axis-box {
-    border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin: 12px 0;
-    border-left: 4px solid var(--accent);
-  }
-  .axis-box h3 { margin-top: 0; color: var(--accent); }
-
-  .cta-box {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-    color: white; border-radius: var(--radius); padding: 28px 24px; margin: 20px auto; text-align: center;
-  }
-  .cta-box h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; color: white; border-bottom: none; }
-  .cta-box .cta-btn {
-    display: inline-block; margin-top: 14px; padding: 12px 28px;
-    background: white; color: var(--primary); border-radius: 8px;
-    text-decoration: none; font-weight: 700; font-size: 0.95rem;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  }
-  .cta-box .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.25); }
-
-  .disclaimer {
-    font-size: 0.75rem; color: var(--text-muted); background: var(--border);
-    border-radius: var(--radius); padding: 16px 20px; margin: 20px auto; line-height: 1.6;
-  }
-
-  @media (max-width: 600px) {
-    .hero h1 { font-size: 1.35rem; }
-    .section { padding: 20px 16px; }
-  }
-</style>
-</head>
-<body>
-
-<div class="hero">
-  <div class="container">
-    <h1>전세사기 피해자 보증금 회수<br>우선변제권·임차권등기·형사고소 3단계</h1>
-    <p class="subtitle">전세보증금을 돌려받지 못했다면 지금 당장 이 3가지 조치를 순서대로 실행하세요</p>
-    <div class="badge-row">
-      <span class="badge">부동산·주택임대차</span>
-      <span class="badge">B2C</span>
-      <span class="badge">L2 검증</span>
-      <span class="badge">2026.07.29 기준</span>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-
-<div class="target-section">
-  <p><strong>이 글이 도움이 되는 분</strong></p>
-  <p>전세보증금을 돌려받지 못해 경매·공매를 앞두고 있는 임차인</p>
-  <p>집주인이 보증금을 돌려주지 않아 임차권등기명령을 고려하는 분</p>
-  <p>전세사기 의심 상황에서 어떻게 대응해야 할지 막막한 분</p>
-</div>
-
-<div class="section">
-  <h2>문제상황 — 보증금을 못 받고 있다면</h2>
-  <p>전세사기는 갭투자, 다가구주택 집중 매수, 신탁부동산 악용 등 다양한 형태로 발생합니다. 피해자들은 공통적으로 보증금을 돌려받지 못할 위험에 처하고, 집행권원을 확보하기 전에 점유를 상실하면 대항력까지 잃어 이중고에 빠집니다.</p>
-  <p><strong>실제 사례</strong>: A씨는 서울 소재 빌라에 전세 1억 5천만 원을 계약하고 입주했습니다. 그런데 집주인이 여러 채의 주택을 갭투자로 매수한 후 보증금을 돌려주지 못하는 상황이 발생했습니다. A씨는 임대차 종료 후에도 점유를 유지하면서 임차권등기명령을 신청하고, 경매 절차에서 최우선변제권을 행사하고, 집주의 사기 혐의로 형사고소를 병행하여 보증금의 상당 부분을 회수할 수 있었습니다.</p>
-</div>
-
-<div class="section">
-  <h2>핵심 쟁점 — 3대 보호 축</h2>
-
-  <div class="axis-box">
-    <h3>축 1: 최우선변제권 (주택임대차보호법 제8조)</h3>
-    <p>소액임차인은 보증금 중 일정액을 다른 담보물권자보다 우선하여 변제받을 권리가 있습니다. 경매신청 등기 전에 대항요건(인도+주민등록)을 갖추어야 합니다.</p>
-    <p><strong>지역별 보증금 한도 (2026년 기준)</strong>: 서울 1.65억 이하 → 5,500만원, 수도권과밀억제권역(서울 제외) 1.45억 이하 → 4,800만원, 광역시(일부) 8,500만원 이하 → 2,800만원, 그 밖의 지역 7,500만원 이하 → 2,500만원.</p>
-  </div>
-
-  <div class="axis-box">
-    <h3>축 2: 임차권등기명령 (주택임대차보호법 제3조의3)</h3>
-    <p>임대차 종료 후 보증금을 반환받지 못한 임차인이 법원에 신청하는 제도입니다. 임차권등기를 마치면 대항력과 우선변제권을 새로 취득하거나 기존 권리를 유지할 수 있습니다.</p>
-    <p><strong>핵심 포인트</strong>: 점유 상실 전 신청이 이상적입니다. 점유 상실 후에도 신청 가능하나(대법원 2024마8598), 등기 시점부터 새 대항력이 발생하여 배당순위 리스크가 있습니다. 임차권등기만으로 소멸시효가 중단되지 않으므로(대법원 2017다226629), 별도 시효중단 조치가 필요합니다.</p>
-  </div>
-
-  <div class="axis-box">
-    <h3>축 3: 형사 고소 (사기죄)</h3>
-    <p>전세사기는 형법상 사기죄에 해당할 수 있습니다. 계약 체결 당시 집주인이 선순위 근저당이나 보증금 반환 능력이 없음을 알면서도 이를 숨기고 계약했다면 사기죄 성립 가능성이 높습니다.</p>
-    <p><strong>중요 판례</strong>: 선순위 보증금·근저당·반환재원 등이 처분을 좌우하는 판단기초사실로 평가(2016도14852). 임대인이 위험 사정을 알고도 침묵한 경우 부작위에 의한 기망 구성 가능(2017도20682).</p>
-  </div>
-</div>
-
-<div class="section">
-  <h2>긴급 행동 3단계</h2>
-
-  <div class="step">
-    <div class="step-num">1</div>
-    <div class="step-content">
-      <strong>상황 파악 및 권리 확인 (24시간 이내)</strong>
-      <p>등기부등본에서 선순위 근저당·가압류·소유자 변경 내역 확인. 대항요건(인도+주민등록) 및 확정일자 취득 여부 확인. 소액임차인 해당 여부(지역별 보증금 한도) 확인.</p>
-    </div>
-  </div>
-
-  <div class="step">
-    <div class="step-num">2</div>
-    <div class="step-content">
-      <strong>권리 보전 조치 (1주일 이내)</strong>
-      <p>관할 법원에 임차권등기명령 신청. 점유 유지 필수. 보증금반환청구 소 제기·지급명령·가압류 등 시효중단 조치 병행. 형사 고소 증거 자료 수집.</p>
-    </div>
-  </div>
-
-  <div class="step">
-    <div class="step-num">3</div>
-    <div class="step-content">
-      <strong>경매·배당 절차 대응 (1개월 이내)</strong>
-      <p>경매개시결정등기 전 임차권등기 경료 시 별도 배당요구 불필요. 배당요구 종기까지 대항요건(인도+주민등록) 유지. 배당순위 이해 및 이의신청 준비.</p>
-    </div>
-  </div>
-</div>
-
-<div class="section">
-  <h2>위험 신호</h2>
-  <div class="alert danger"><strong>점유를 먼저 내주지 말 것</strong> — 점유 상실 시 대항력 소멸. 보증금 실제 수령 전 절대 점유를 내주지 마세요.</div>
-  <div class="alert warning"><strong>임차권등기명령 = 만능 아님</strong> — 소멸시효 중단 효력 없음. 별도 시효중단 조치(소 제기·지급명령) 병행 필수.</div>
-  <div class="alert danger"><strong>갱신·증액 시 지위 상실 위험</strong> — 보증금 증액으로 소액 기준 초과 시 배당시점에 소액임차인 자격 상실 가능.</div>
-  <div class="alert warning"><strong>신탁부동산 주의</strong> — 등기부만 믿지 말고 신탁원부까지 확인. 신탁회사 동의 없으면 불법점유자 위험.</div>
-</div>
-
-<div class="section">
-  <h2>근거 카드</h2>
-  <div class="card-grid">
-    <div class="ev-card">
-      <div class="card-title">주택임대차보호법 제8조</div>
-      <p>최우선변제권 — 소액임차인 보증금 중 일정액 우선 변제.</p>
-      <span class="tag">법제처 확인</span>
-    </div>
-    <div class="ev-card">
-      <div class="card-title">주택임대차보호법 제3조의3</div>
-      <p>임차권등기명령 — 대항력·우선변제권 취득·유지 제도.</p>
-      <span class="tag">법제처 확인</span>
-    </div>
-    <div class="ev-card">
-      <div class="card-title">대법원 2024마8598</div>
-      <p>점유 상실 후에도 임차권등기명령 신청 가능.</p>
-      <span class="tag">doctrine 인용</span>
-    </div>
-    <div class="ev-card">
-      <div class="card-title">대법원 2017다226629</div>
-      <p>임차권등기, 소멸시효 중단 효력 없음 — 별도 조치 필요.</p>
-      <span class="tag">doctrine 인용</span>
-    </div>
-  </div>
-</div>
-
-<div class="section">
-  <h2>자주 묻는 질문</h2>
-  <div class="faq-item">
-    <div class="faq-q">전세사기 피해자인데, 집을 비워달라고 합니다. 일단 나가도 되나요?</div>
-    <div class="faq-a">점유를 내주면 대항력이 상실되어 보증금 회수가 훨씬 어려워집니다. 보증금을 실제로 수령하기 전까지는 절대 점유를 내주지 마세요. 만약 부득이하게 이사해야 한다면, 이사 전에 반드시 임차권등기명령을 신청하여 대항력을 유지하세요.</div>
-  </div>
-  <div class="faq-item">
-    <div class="faq-q">임차권등기명령을 신청하면 보증금을 바로 받을 수 있나요?</div>
-    <div class="faq-a">임차권등기명령은 대항력과 우선변제권을 유지·확보해 주는 제도이지, 보증금을 직접 지급받는 절차는 아닙니다. 보증금을 실제로 회수하려면 별도로 소송·지급명령·경매 신청 등의 절차가 필요합니다. 또한 임차권등기만으로 소멸시효가 중단되지 않으므로 시효중단 조치도 병행해야 합니다.</div>
-  </div>
-  <div class="faq-item">
-    <div class="faq-q">소액임차인 최우선변제는 얼마까지 받을 수 있나요?</div>
-    <div class="faq-a">지역에 따라 다릅니다. 2026년 기준 서울은 보증금 1.65억원 이하일 때 최우선변제 5,500만원, 수도권과밀억제권역(서울 제외)은 1.45억원 이하 4,800만원, 광역시(일부)는 8,500만원 이하 2,800만원, 그 밖의 지역은 7,500만원 이하 2,500만원입니다.</div>
-  </div>
-  <div class="faq-item">
-    <div class="faq-q">이미 점유를 상실했는데, 아무것도 할 수 없나요?</div>
-    <div class="faq-a">아닙니다. 대법원 2024마8598에 따르면 점유 상실 후에도 임차권등기명령을 신청할 수 있습니다. 다만 등기 시점부터 새 대항력이 발생하므로(비소급적), 등기 전 선순위 담보권 설정이나 후속 임차인의 대항력 취득에 주의해야 합니다. 가능한 한 빠르게 임차권등기명령을 신청하세요.</div>
-  </div>
-</div>
-
-<div class="cta-box">
-  <h3>전세사기 피해, 혼자 해결하기 막막하신가요?</h3>
-  <p>전세보증금 회수는 시간과 절차가 중요합니다. 변호사 상담을 통해 귀하의 상황에 맞는 최적의 대응 전략을 세우세요.</p>
-  <a href="#" class="cta-btn" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.25)';" onmouseout="this.style.transform='';this.style.boxShadow='0 2px 8px rgba(0,0,0,0.15)';">전문 변호사 상담 →</a>
-  <p style="font-size:0.8rem; opacity:0.8; margin-top:8px;">※ 상담을 통해 개별 사안에 맞춘 구체적인 대응 방안을 안내받으세요.</p>
-</div>
-
-<div class="disclaimer">
-  <strong>최신성 및 면책 고지</strong><br>
-  이 글은 2026년 7월 29일 기준 법령과 판례를 바탕으로 작성되었습니다.<br>
-  검증된 근거: 주택임대차보호법 제8조·제3조의2·제3조의3(법제처 DB 확인).<br>
-  판례는 내부 doctrine 인용.<br>
-  이 글은 일반적 법률 정보 제공 목적이며, 개별 사안에 대한 법률 자문을 대체하지 않습니다.
-</div>
-
-</div>
-</body>
-</html>
+<!doctype html>
+<html lang="ko-KR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>전세사기 피해자 보증금 회수 — 우선변제권·임차권등기·형사고소 3단계 대응</title>
+<style>body{font-family:"Noto Sans KR","Pretendard","Malgun Gothic",sans-serif;line-height:1.8;color:#202124;background:#f6f7f9;margin:0}main{max-width:860px;margin:40px auto;padding:48px 56px;background:#fff;box-shadow:0 2px 16px #0001}h1{line-height:1.3;border-bottom:2px solid #222;padding-bottom:18px}h2{margin-top:2.2em;border-bottom:1px solid #ddd;padding-bottom:6px}table{border-collapse:collapse;width:100%;margin:1em 0}th,td{border:1px solid #ccc;padding:8px;vertical-align:top}th{background:#f0f2f5}blockquote{border-left:4px solid #6b7280;padding:4px 16px;background:#f7f7f7}code{background:#f1f3f4;padding:2px 4px}pre{background:#202124;color:#f8f8f2;padding:16px;overflow:auto}a{color:#155eef}@media(max-width:700px){main{margin:0;padding:24px 18px;box-shadow:none}}</style>
+</head><body><main><h1 id="3">전세사기 피해자 보증금 회수 — 우선변제권·임차권등기·형사고소 3단계 대응</h1>
+<blockquote>
+<p><strong>이 글이 도움이 되는 분</strong>
+- 전세보증금을 돌려받지 못해 경매·공매를 앞두고 있는 임차인
+- 집주인이 보증금을 돌려주지 않아 임차권등기명령을 고려하는 분
+- 전세사기 의심 상황에서 어떻게 대응해야 할지 막막한 분</p>
+</blockquote>
+<hr />
+<h2 id="1">1. 문제상황</h2>
+<p>전세사기는 갭투자, 다가구주택 집중 매수, 신탁부동산 악용 등 다양한 형태로 발생합니다. 피해자들은 공통적으로 보증금을 돌려받지 못할 위험에 처하고, 집행권원을 확보하기 전에 점유를 상실하면 대항력까지 잃어 이중고에 빠집니다.</p>
+<p><strong>실제 사례</strong>: A씨는 서울 소재 빌라에 전세 1억 5천만 원을 계약하고 입주했습니다. 그런데 집주인이 여러 채의 주택을 갭투자로 매수한 후 보증금을 돌려주지 못하는 상황이 발생했습니다. A씨는 계약 만료 후 집주인의 보증금 반환 요구에 응하지 않자, 어떻게 해야 할지 막막했습니다.</p>
+<p>다행히 A씨는 다음과 같은 조치를 취했습니다:
+1) 임대차 종료 후에도 점유를 유지하면서 임차권등기명령을 신청
+2) 경매 절차에서 최우선변제권을 행사
+3) 집주인의 사기 혐의로 형사고소를 병행</p>
+<p>그 결과 A씨는 보증금의 상당 부분을 회수할 수 있었습니다.</p>
+<hr />
+<h2 id="2">2. 핵심 쟁점</h2>
+<p>전세사기 피해자가 보증금을 회수하기 위해서는 다음 세 가지 축을 동시에 이해해야 합니다.</p>
+<h3 id="1_1">축 1: 주택임대차보호법상 보호 제도</h3>
+<p><strong>최우선변제권(주택임대차보호법 제8조)</strong>: 소액임차인은 보증금 중 일정액을 다른 담보물권자보다 우선하여 변제받을 권리가 있습니다. 경매신청의 등기 전에 대항요건(인도+주민등록)을 갖추어야 합니다.</p>
+<p>지역별 보증금 한도(2026년 기준, 주택임대차보호법 시행령):
+- 서울: 보증금 1.65억원 이하 → 최우선변제 5,500만원
+- 수도권과밀억제권역(서울 제외)·세종·용인·화성·김포: 1.45억원 이하 → 4,800만원
+- 광역시(일부)·안산·광주·파주·이천·평택: 8,500만원 이하 → 2,800만원
+- 그 밖의 지역: 7,500만원 이하 → 2,500만원</p>
+<p><strong>일반 우선변제권(주택임대차보호법 제3조의2)</strong>: 대항요건(인도+주민등록)과 확정일자를 모두 갖춘 임차인은 경매·공매 시 후순위권리자보다 우선하여 보증금을 변제받을 권리가 있습니다. 확정일자가 인도·전입일과 동일하거나 그보다 이전이면, 우선변제권은 인도·전입 다음 날을 기준으로 발생합니다(대법원 97다22393).</p>
+<h3 id="2-33">축 2: 임차권등기명령(주택임대차보호법 제3조의3)</h3>
+<p>임차권등기명령은 임대차가 종료된 후 보증금을 반환받지 못한 임차인이 법원에 신청하는 제도입니다. 임차권등기를 마치면 대항력과 우선변제권을 새로 취득하거나 기존 권리를 유지할 수 있습니다.</p>
+<p><strong>핵심 포인트</strong>:
+- 점유 상실 전 신청이 이상적 — 점유 유지 상태에서 기존 대항력을 유지
+- 점유 상실 후에도 신청 가능(대법원 2024마8598). 다만 등기 시점부터 새 대항력이 발생하여 배당순위 리스크가 존재
+- 임차권등기만으로는 보증금반환채권의 소멸시효가 중단되지 않으므로(대법원 2017다226629), 별도로 소 제기·지급명령·가압류 등 시효중단 조치를 병행해야 함</p>
+<p><strong>주의할 점</strong>:
+- 점유 상실 후 임차권등기를 하면 등기 시점부터 새 대항력이 발생하므로, 그 사이에 선순위 담보권이 설정되거나 후속 임차인이 대항력을 취득하면 배당순위가 불리해질 수 있음
+- 임차권등기 이후 해당 주택을 임차한 후속 임차인은 최우선변제권이 없음(주택임대차보호법 제3조의3 제6항). 그러나 대항력과 일반 우선변제권은 인정됨(대법원 2022다246610·246627)</p>
+<h3 id="3_1">축 3: 형사 고소</h3>
+<p>전세사기는 형법상 사기죄에 해당할 수 있습니다. 사기죄 성립의 핵심은 (i) 기망(부작위 포함), (ii) 착오, (iii) 처분행위, (iv) 인과관계입니다.</p>
+<p><strong>고소 시 유의할 점</strong>:
+- 선순위 보증금·근저당·반환재원 등이 처분을 좌우하는 판단기초사실로 평가됩니다(대법원 2016도14852)
+- 임대인이 선순위 보증금·근저당 등 권리관계, 보증금 반환 위험을 좌우하는 사정을 알고도 침묵한 경우 사기죄 기망(부작위)이 구성될 수 있습니다(대법원 2017도20682)
+- 사기죄 성립 여부는 행위 시(계약 체결·보증금 수령 당시)를 기준으로 판단하며, 임대차 종료 시점의 자금사정 악화나 부동산 가격 하락만으로는 부족합니다(대법원 2016도278)</p>
+<hr />
+<h2 id="3-3">3. 첫 대응 — 3단계 긴급 행동</h2>
+<h3 id="1-24">1단계: 상황 파악 및 권리 확인 (24시간 이내)</h3>
+<p><strong>등기부등본 확인</strong>:
+- 선순위 근저당·가압류 현황 파악
+- 소유자 변경 내역 확인 (갭투자 의심)
+- 신탁부동산 여부 확인 (등기부만으로 부족, 신탁원부까지 확인 필요)</p>
+<p><strong>임차인 권리 확인</strong>:
+- 대항요건(인도+주민등록) 완비 여부 확인
+- 확정일자 취득 여부 확인
+- 소액임차인 해당 여부(지역별 보증금 한도) 확인
+- 경매신청 등기 전에 대항요건을 갖추었는지 확인</p>
+<h3 id="2-1">2단계: 권리 보전 조치 (1주일 이내)</h3>
+<p><strong>임차권등기명령 신청</strong>:
+- 관할 법원(임차주택 소재지)에 임차권등기명령 신청
+- 점유 유지가 가장 중요 — 상대방의 명도 요구에 응하지 말 것
+- 신청서에는 신청 취지·이유, 임대차 목적물, 임차권등기의 원인이 된 사실을 기재하고 소명자료 첨부</p>
+<p><strong>시효중단 조치 병행</strong>:
+- 보증금반환청구 소 제기 또는 지급명령 신청
+- 또는 가압류 신청(임대인의 다른 재산에 대해)
+- 임차권등기만으로 시효중단이 되지 않으므로 반드시 별도 조치 필요</p>
+<p><strong>형사 고소 준비</strong>:
+- 증거 자료 수집: 임대차계약서, 보증금 송금 내역, 집주인의 보증금 반환 거부 또는 지연 정황
+- 집주인이 계약 체결 당시 선순위 채무·근저당 등을 숨긴 정황이 있다면 사기죄 고소 가능</p>
+<h3 id="3-1">3단계: 경매·배당 절차 대응 (1개월 이내)</h3>
+<p><strong>배당요구</strong>:
+- 경매개시결정등기 전에 임차권등기가 경료된 경우 별도 배당요구 불필요(대법원 2005다33039)
+- 경매개시결정등기 후에 임차권등기가 경료된 경우 배당요구 필요(민사집행법 제88조)
+- 배당요구 종기까지 대항요건(인도+주민등록) 유지</p>
+<p><strong>배당순위 이해</strong>:
+- 최우선변제권(소액임차인) &gt; 확정일자부 임차인 &gt; 일반 채권자
+- 확정일자부 임차인과 가압류채권자는 평등배당
+- 확정일자가 담보권 설정일보다 늦으면 후순위</p>
+<hr />
+<h2 id="4">4. 주의할 위험 신호</h2>
+<h3 id="_1">⚠️ 점유를 먼저 내주지 말 것</h3>
+<p>점유를 상실하면 대항력이 소멸합니다. 임대인이 "일단 나가면 보증금을 돌려주겠다"고 해도 믿지 말고, 보증금을 실제로 수령하기 전에는 절대 점유를 내주지 마세요.</p>
+<h3 id="_2">⚠️ 임차권등기명령 = 만능이 아님</h3>
+<p>임차권등기명령은 대항력과 우선변제권을 유지·확보해 주지만, 소멸시효 중단 효력이 없습니다. 반드시 별도로 소 제기나 지급명령 등 시효중단 조치를 병행하세요.</p>
+<h3 id="_3">⚠️ 갱신·증액 시 소액임차인 지위 상실 위험</h3>
+<p>임대차 갱신 시 보증금을 증액하여 소액 기준 한도를 초과하면, 배당시점에 소액임차인 지위를 상실할 수 있습니다(인천지방법원 2024가단267016). 계약 갱신 시 반드시 한도 초과 여부를 확인하세요.</p>
+<h3 id="_4">⚠️ 신탁부동산 주의</h3>
+<p>등기부등본만 믿지 말고 신탁원부까지 반드시 확인하세요. 신탁부동산은 위탁자가 소유권 없이 임대차계약을 체결할 위험이 있고, 신탁회사 동의 없는 임대차계약 체결 시 '불법점유자'로 간주되어 보증금 손실 위험이 있습니다.</p>
+<h3 id="_5">⚠️ 등기부등본 수시 확인</h3>
+<p>집주인 변경 여부를 주기적으로 확인하세요. 잠재적 갭투자 징후(집중 매수, 잦은 소유권 변경)를 조기에 발견하는 것이 중요합니다.</p>
+<hr />
+<h2 id="5">5. 근거 카드</h2>
+<h3 id="1_2">카드 1: 주요 법령</h3>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>근거</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>최우선변제권</td>
+<td>주택임대차보호법 제8조</td>
+<td>소액임차인 보증금 중 일정액 우선 변제, 경매신청 등기 전 대항요건 필요</td>
+</tr>
+<tr>
+<td>일반 우선변제권</td>
+<td>주택임대차보호법 제3조의2</td>
+<td>대항요건+확정일자 갖춘 임차인 우선변제</td>
+</tr>
+<tr>
+<td>임차권등기명령</td>
+<td>주택임대차보호법 제3조의3</td>
+<td>임대차 종료 후 보증금 미반환 시 법원 신청, 대항력·우선변제권 취득·유지</td>
+</tr>
+<tr>
+<td>임차권등기 효력</td>
+<td>주택임대차보호법 제3조의4</td>
+<td>비소급적 새 대항력, 점유 상실 후에도 등기 시점부터 권리 취득</td>
+</tr>
+<tr>
+<td>시효중단</td>
+<td>민법 제168조 이하</td>
+<td>임차권등기에는 시효중단 효력 없음</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2_1">카드 2: 핵심 판례</h3>
+<table>
+<thead>
+<tr>
+<th>판례</th>
+<th>요지</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>대법원 2024마8598 (2025)</td>
+<td>점유 상실 후에도 임차권등기명령 신청 가능</td>
+</tr>
+<tr>
+<td>대법원 2024다326398 (2025)</td>
+<td>점유 상실 → 대항력 소멸, 임차권등기 비소급적 새 대항력</td>
+</tr>
+<tr>
+<td>대법원 2021마6096 (2021)</td>
+<td>양수인 임대인 지위 승계 요건 — 소유권 취득 전 대항력 유지 필요</td>
+</tr>
+<tr>
+<td>대법원 2017다226629 (2019)</td>
+<td>임차권등기, 소멸시효 중단 효력 없음 — 별도 시효중단 조치 필요</td>
+</tr>
+<tr>
+<td>대법원 97다22393 (1997)</td>
+<td>확정일자 기준시점 — 인도·전입 다음 날 효력 발생</td>
+</tr>
+<tr>
+<td>대법원 2017다212194 (2017)</td>
+<td>인도 판단 기준 — 점유 이전(열쇠 교부 등) 종합 판단</td>
+</tr>
+<tr>
+<td>대법원 2016도14852 (2020)</td>
+<td>전세사기 사기죄 — 판단기초사실 기망</td>
+</tr>
+<tr>
+<td>대법원 2017도20682 (2018)</td>
+<td>부작위에 의한 사기죄 — 고지의무 묵비도 기망 가능</td>
+</tr>
+<tr>
+<td>대법원 2022다246610·246627 (2023)</td>
+<td>임차권등기 후 후속 임차인의 대항력·우선변제권 인정</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6">6. 자주 묻는 질문</h2>
+<p><strong>Q: 전세사기 피해자인데, 집을 비워달라고 합니다. 일단 나가도 되나요?</strong>
+A: 점유를 내주면 대항력이 상실되어 보증금 회수가 훨씬 어려워집니다. 보증금을 실제로 수령하기 전까지는 절대 점유를 내주지 마세요. 만약 부득이하게 이사해야 한다면, 이사 전에 반드시 임차권등기명령을 신청하여 대항력을 유지하세요.</p>
+<p><strong>Q: 임차권등기명령을 신청하면 보증금을 바로 받을 수 있나요?</strong>
+A: 임차권등기명령은 대항력과 우선변제권을 유지·확보해 주는 제도이지, 보증금을 직접 지급받는 절차는 아닙니다. 보증금을 실제로 회수하려면 별도로 소송·지급명령·경매 신청 등의 절차가 필요합니다. 또한 임차권등기만으로 소멸시효가 중단되지 않으므로 시효중단 조치도 병행해야 합니다.</p>
+<p><strong>Q: 소액임차인 최우선변제는 얼마까지 받을 수 있나요?</strong>
+A: 지역에 따라 다릅니다. 2026년 기준 서울은 보증금 1.65억원 이하일 때 최우선변제 5,500만원, 수도권과밀억제권역(서울 제외)은 1.45억원 이하 4,800만원, 광역시(일부)는 8,500만원 이하 2,800만원, 그 밖의 지역은 7,500만원 이하 2,500만원입니다.</p>
+<p><strong>Q: 집주인이 보증금을 돌려줄 의사도 능력도 없어 보입니다. 형사 고소할 수 있나요?</strong>
+A: 전세사기는 형법상 사기죄에 해당할 수 있습니다. 특히 집주인이 계약 체결 당시 선순위 근저당이나 보증금 반환 능력이 없음을 알면서도 이를 숨기고 계약한 경우 사기죄가 성립할 가능성이 높습니다. 다만 사기죄 성립 여부는 계약 체결 당시의 집주인의 인식과 의사를 기준으로 판단되므로, 계약 당시의 정황 증거를 최대한 수집해야 합니다.</p>
+<p><strong>Q: 이미 점유를 상실했는데, 아무것도 할 수 없나요?</strong>
+A: 아닙니다. 대법원 2024마8598에 따르면 점유 상실 후에도 임차권등기명령을 신청할 수 있습니다. 다만 등기 시점부터 새 대항력이 발생하므로(비소급적), 등기 전에 이미 선순위 담보권이 설정되어 있거나 후속 임차인이 대항력을 취득한 경우 배당순위가 불리해질 수 있습니다. 가능한 한 빠르게 임차권등기명령을 신청하세요.</p>
+<hr />
+<h2 id="7">7. 다음 행동</h2>
+<p>전세보증금을 돌려받지 못하고 있다면 지금 당장:
+- 등기부등본을 발급받아 권리관계를 확인하세요.
+- 아직 점유를 유지하고 있다면 절대 내주지 마세요.
+- 관할 법원에 임차권등기명령을 신청하세요.
+- 별도로 보증금반환청구 소송이나 지급명령을 통해 소멸시효 중단 조치를 취하세요.
+- 집주인의 사기 정황이 있다면 형사 고소를 준비하세요.</p>
+<blockquote>
+<p>개별 사안의 구체적 판단이 필요하다면 부동산 전문 변호사와 상담하시기 바랍니다.</p>
+</blockquote>
+<hr />
+<h2 id="_6">최신성 및 면책 고지</h2>
+<ul>
+<li>이 글은 2026년 7월 29일 기준 법령과 판례를 바탕으로 작성되었습니다.</li>
+<li>검증된 근거: 주택임대차보호법 제8조·제3조의2·제3조의3(법제처 DB 확인). 판례는 내부 doctrine 인용.</li>
+<li>이 글은 일반적인 법률 정보를 제공하기 위한 것이며, 개별 사안에 대한 법률 자문을 대체하지 않습니다.</li>
+<li>구체적인 전세사기 피해 대응이 필요한 경우 반드시 변호사와 상담하시기 바랍니다.</li>
+</ul></main></body></html>
