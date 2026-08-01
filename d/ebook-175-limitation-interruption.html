@@ -1,0 +1,411 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>EBOOK-175-소멸시효-중단-방법</title><style>
+/* ============================================================
+   법률 대시보드 전자책 — Apollo 기반 경량 커스텀 (공개 롱스크롤)
+   Apollo 토큰(버건디 액센트 + 웜 화이트 + 딥와인 헤더) 상속.
+   의뢰인 리포트(리스크레이더 6뷰)와 달리 공개 독서형 롱스크롤.
+   self-contained: 외부 CDN/폰트/이미지/스크립트 의존 없음.
+   ============================================================ */
+:root{
+  --bg:#f5f1f2; --panel:#ffffff; --panel2:#faf6f7;
+  --line:#ebe2e5; --line2:#ddccd2;
+  --ink:#2c1d26; --ink2:#56424c; --muted:#8a7b82; --faint:#b3a6ab;
+  --wine:#7a2e3a; --wine-d:#5a1f2b; --wine-l:#9c4456;
+  --wine-tint:#f4e9ec; --wine-tint-ln:#ecd7dd;
+  --header-bg:#3a1525; --header-bg2:#4e1f32; --header-accent:#d4a0aa;
+  --rH:#c74a3c; --rM-bg:#f8e4b8; --rM-tx:#7d520a; --rL-bg:#d6ecdb; --rL-tx:#287a54;
+  --amber:#b45309; --green:#287a54;
+  --font:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Noto Sans KR',sans-serif;
+  --maxw:1120px; --readw:760px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
+
+/* 읽기 진행바 */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;
+  background:linear-gradient(90deg,var(--wine),var(--wine-l));transition:width .1s linear}
+
+/* 헤더 표지 (딥와인, 유일한 딥 컬러) */
+.header{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0}
+.header .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 26px}
+.header .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;
+  color:var(--header-accent);border:1px solid rgba(212,160,170,.4);border-radius:999px;padding:4px 12px}
+.header .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--header-accent)}
+
+/* 히어로 */
+.hero{max-width:var(--maxw);margin:0 auto;padding:30px 26px 8px}
+.hero .eb{font-size:12px;font-weight:700;color:var(--wine);letter-spacing:.02em;margin-bottom:10px}
+.hero h1{font-size:30px;line-height:1.28;font-weight:800;margin:0 0 16px;color:var(--ink);letter-spacing:-.01em}
+.hero .tldr{background:var(--wine-tint);border:1px solid var(--wine-tint-ln);border-left:4px solid var(--wine);
+  border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.hero .tldr .lb{font-size:12px;font-weight:700;color:var(--wine-d);margin-bottom:8px}
+.hero .tldr ul{margin:0;padding-left:18px}
+.hero .tldr li{margin:4px 0;font-size:15px;color:var(--ink2)}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:12.5px;color:var(--muted);margin-bottom:18px}
+.hero .meta .vchip{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);
+  font-weight:700;border-radius:6px;padding:3px 9px;font-size:11.5px}
+.hero .cta-row{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:9px;
+  padding:11px 18px;text-decoration:none;cursor:pointer;border:1px solid transparent}
+.btn-p{background:var(--wine);color:#fff}
+.btn-p:hover{background:var(--wine-d)}
+.btn-o{background:#fff;color:var(--wine-d);border-color:var(--line2)}
+.btn-o:hover{background:var(--panel2)}
+
+/* 셸: 좌측 목차 + 본문 */
+.app{max-width:var(--maxw);margin:0 auto;padding:8px 26px 60px;
+  display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:start}
+
+/* 목차 (데스크톱 = 좌측 sticky) */
+.toc{position:sticky;top:24px}
+.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;
+  margin:0 0 10px;padding-left:2px}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}
+.toc li{counter-increment:toc;margin:1px 0}
+.toc a{display:flex;gap:9px;font-size:13.5px;color:var(--ink2);text-decoration:none;
+  padding:7px 10px;border-radius:8px;border-left:3px solid transparent;line-height:1.4}
+.toc a::before{content:counter(toc,decimal-leading-zero);color:var(--faint);font-weight:700;font-size:11.5px;flex:none}
+.toc a:hover{background:var(--panel2)}
+.toc a.active{background:var(--wine-tint);border-left-color:var(--wine);color:var(--wine-d);font-weight:700}
+.toc-toggle{display:none}
+
+/* 본문 */
+.content{max-width:var(--readw);min-width:0}
+section.blk{scroll-margin-top:24px;margin-bottom:38px}
+.secl{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.05em;margin:0 0 12px}
+.secl::before{content:"";width:7px;height:15px;background:var(--wine);border-radius:2px;flex:none}
+section.blk h2{font-size:23px;font-weight:800;line-height:1.35;margin:0 0 14px;color:var(--ink);letter-spacing:-.01em}
+section.blk h3{font-size:17px;font-weight:700;margin:26px 0 10px;color:var(--wine-d)}
+section.blk p{margin:0 0 14px;color:var(--ink2)}
+section.blk ul,section.blk ol{margin:0 0 14px;padding-left:22px;color:var(--ink2)}
+section.blk li{margin:6px 0}
+strong{color:var(--ink);font-weight:700}
+a.ln{color:var(--wine-l);text-decoration:none;border-bottom:1px solid var(--wine-tint-ln)}
+a.ln:hover{border-bottom-color:var(--wine-l)}
+
+/* 핵심요약 카드 */
+.summary{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.summary .lb{font-size:11px;font-weight:700;color:var(--wine-d);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.summary ul{margin:0;padding-left:18px}
+
+/* 근거 카드 (조문·판례) */
+.ev{background:#fff;border:1px solid var(--line);border-left:4px solid var(--wine);border-radius:10px;
+  padding:13px 15px;margin:0 0 12px}
+.ev .top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px}
+.ev .kind{font-size:11px;font-weight:700;color:#fff;background:var(--wine);border-radius:5px;padding:2px 8px}
+.ev .kind.law{background:var(--wine-d)}
+.ev .kind.case{background:var(--amber)}
+.ev .cite{font-size:13.5px;font-weight:700;color:var(--ink)}
+.ev .vtick{margin-left:auto;font-size:11px;font-weight:700;color:var(--rL-tx);background:var(--rL-bg);border-radius:5px;padding:2px 7px}
+.ev .gist{font-size:14px;color:var(--ink2);margin:0}
+.ev .date{font-size:12px;color:var(--muted);margin-top:5px}
+
+/* 다이어그램 — 플로우 / 체크리스트 (CSS·SVG only) */
+.figure{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin:0 0 18px}
+.figure .cap{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:12px}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px}
+.flow .step{flex:1;min-width:120px;background:var(--wine-tint);border:1px solid var(--wine-tint-ln);
+  border-radius:10px;padding:11px 12px;position:relative}
+.flow .step .n{font-size:11px;font-weight:700;color:var(--wine)}
+.flow .step .t{font-size:13.5px;font-weight:700;color:var(--ink);margin-top:2px}
+.flow .step .d{font-size:12.5px;color:var(--ink2);margin-top:3px}
+.checklist{list-style:none;margin:0;padding:0}
+.checklist li{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+.checklist li:last-child{border-bottom:none}
+.checklist .ck{flex:none;width:20px;height:20px;border-radius:5px;background:var(--rL-bg);color:var(--rL-tx);
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+
+/* 위험도 칩 */
+.chip{display:inline-flex;align-items:center;justify-content:center;min-width:34px;font-size:11px;font-weight:500;
+  border-radius:6px;padding:3px 8px;margin-right:4px}
+.c-H{background:var(--rH);color:#fff}
+.c-M{background:var(--rM-bg);color:var(--rM-tx)}
+.c-L{background:var(--rL-bg);color:var(--rL-tx)}
+
+/* 표 */
+.tbl-wrap{overflow-x:auto;margin:0 0 18px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px}
+
+/* FAQ (아코디언) */
+.faq details{background:#fff;border:1px solid var(--line);border-radius:10px;margin:0 0 10px;overflow:hidden}
+.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:15px;font-weight:700;color:var(--ink);
+  display:flex;align-items:center;gap:10px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--wine-tint);
+  color:var(--wine-d);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+.faq details[open] summary{border-bottom:1px solid var(--line);color:var(--wine-d)}
+.faq .a{padding:14px 16px;font-size:14.5px;color:var(--ink2)}
+
+/* 최신성·면책 고지 */
+.notice{background:#fff;border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;
+  font-size:12.5px;color:var(--muted);line-height:1.7}
+
+/* 맨 위로 버튼 */
+#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--wine-tint-ln);background:var(--wine);color:#fff;font-size:18px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;
+  box-shadow:0 4px 14px rgba(58,21,37,.28)}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{background:var(--wine-d)}
+
+/* 푸터 프로필 + 상담 CTA */
+.footer{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0;margin-top:20px}
+.footer .wrap{max-width:var(--maxw);margin:0 auto;padding:34px 26px}
+.footer h3{font-size:20px;font-weight:800;margin:0 0 8px;color:#fff}
+.footer p{font-size:14px;color:rgba(255,255,255,.72);margin:0 0 6px;line-height:1.7}
+.footer .prof{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end}
+.footer .cta-f{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.footer .btn-f{background:#fff;color:var(--wine-d)}
+.footer .btn-f:hover{background:var(--header-accent)}
+.footer .btn-fo{background:transparent;color:#f4eef0;border-color:rgba(255,255,255,.35)}
+.footer .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:22px;padding-top:14px;
+  font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.7}
+
+/* ── 모바일 (≤820px) ── */
+@media(max-width:820px){
+  .hero h1{font-size:24px}
+  .app{grid-template-columns:1fr;gap:0;padding-top:0}
+  .toc{position:static;margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 8px}
+  .toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;
+    cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--wine-d);padding:9px 8px}
+  .toc-toggle .ar{transition:transform .2s}
+  .toc.closed .toc-toggle .ar{transform:rotate(-90deg)}
+  .toc .tt{display:none}
+  .toc ol{max-height:50vh;overflow:auto}
+  .toc.closed ol{display:none}
+  section.blk h2{font-size:20px}
+  th,td{white-space:nowrap}
+}
+@media print{
+  #progress,.toc,.cta-row,.footer .cta-f{display:none}
+  .header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .app{display:block}
+}
+</style></head><body><div id="progress"></div><button id="toTop" aria-label="맨 위로">?</button><header class="header"><div class="wrap"><span class="badge"><span class="dot"></span>조우성 변호사 · 법률 인사이트</span></div></header><div class="hero"><div class="eb">전자책 대시보드 · 실무 가이드</div><h1>EBOOK-175-소멸시효-중단-방법</h1><div class="tldr"><div class="lb">3줄 요약 (TL;DR)</div><ul><li>원문 Markdown의 제목·본문·표·체크리스트를 반영한 공개용 HTML입니다.</li><li>문서의 핵심 내용과 실무상 확인 포인트를 한 화면에서 확인할 수 있습니다.</li><li>구체적인 사안은 최신 법령·판례와 사실관계 확인이 필요합니다.</li></ul></div><div class="meta"><span>원문: EBOOK-175-소멸시효-중단-방법.md</span><span class="vchip">원문 기반 HTML</span></div><div class="cta-row"><a class="btn btn-p" href="#s1">핵심 내용 보기</a><a class="btn btn-o" href="#faq">확인 사항</a></div></div><div class="app"><nav class="toc" id="toc"><div class="tt">목차</div><ol id="toc-list"><li><a href="#s1">본문</a></li><li><a href="#s2">이 글에서 다루는 내용</a></li><li><a href="#s3">Q: &quot;소멸시효가 뭔가요?&quot;</a></li><li><a href="#s4">Q: &quot;시효가 다 되어 가는데 어떻게 중단하나요?&quot;</a></li><li><a href="#s5">Q: &quot;내용증명(최고)만 보내면 영구히 시효가 중단되나요?&quot;</a></li><li><a href="#s6">Q: &quot;상대방이 이메일로 &#x27;곧 갚겠다&#x27;고 했어요. 시효 중단되나요?&quot;</a></li><li><a href="#s7">Q: &quot;가장 안전한 시효 중단 전략은?&quot;</a></li><li><a href="#s8">핵심 요약</a></li></ol></nav><main class="content"><section class="blk" id="s1"><div class="secl">SECTION</div><h1>채권 소멸시효, 이렇게만 하면 '멈출' 수 있습니다 — 시효 중단 4가지 방법 완전 정리</h1>
+<blockquote>
+<p>"빌려준 돈을 받아야 하는데 이미 3년이 지났어요." "내용증명을 보냈으니 괜찮겠죠?" 소멸시효는 시간이 지나면 채권이 소멸하는 제도이지만, 적절한 방법으로 '중단'할 수 있습니다. 단, 방법을 잘못 선택하면 시효가 그대로 진행될 수 있습니다.</p>
+</blockquote>
+<hr /></section><section class="blk" id="s2"><div class="secl">SECTION</div><h2>이 글에서 다루는 내용</h2>
+<ul>
+<li>✅ 채권 종류별 시효 기간 (3년·5년·10년)</li>
+<li>✅ 시효 중단 4가지 방법: 승인·최고·재판상 청구·압류</li>
+<li>✅ "내용증명 보냈으니 끝" — 가장 위험한 오해</li>
+<li>✅ 재최고 불가의 법리 (대법원 87다카2337) — 최고는 1회 한시 티켓</li>
+<li>✅ 묵시적 승인의 기준 — 이메일·문자만으로 시효 중단?</li>
+<li>✅ 실무 최적 전략: 선(先)가압류 → 최고 → 본안소송</li>
+</ul>
+<hr /></section><section class="blk" id="s3"><div class="secl">SECTION</div><h2>Q: "소멸시효가 뭔가요?"</h2>
+<p><strong>A: 권리를 행사하지 않고 일정 기간이 지나면 채권이 소멸하는 제도입니다.</strong></p>
+<p>민법은 채권자가 권리를 행사하지 않고 방치하는 것을 막기 위해 소멸시효를 규정합니다. 주요 채권별 시효 기간은 다음과 같습니다.</p>
+<h3>채권 종류별 소멸시효 기간</h3>
+<table>
+<thead>
+<tr>
+<th>채권 종류</th>
+<th style="text-align: center;">시효 기간</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>대여금(차용금)</td>
+<td style="text-align: center;">10년</td>
+<td>민법 제162조</td>
+</tr>
+<tr>
+<td>매매대금</td>
+<td style="text-align: center;">10년</td>
+<td>민법 제162조</td>
+</tr>
+<tr>
+<td>임대차 보증금</td>
+<td style="text-align: center;">10년</td>
+<td>민법 제162조</td>
+</tr>
+<tr>
+<td>상사채권(상인 간 거래)</td>
+<td style="text-align: center;">5년</td>
+<td>상법 제64조</td>
+</tr>
+<tr>
+<td>임료·월세</td>
+<td style="text-align: center;">3년</td>
+<td>민법 제163조</td>
+</tr>
+<tr>
+<td>공사대금(수급인의 공사비)</td>
+<td style="text-align: center;">3년</td>
+<td>민법 제163조</td>
+</tr>
+<tr>
+<td>변호사·의사 보수</td>
+<td style="text-align: center;">3년</td>
+<td>민법 제163조</td>
+</tr>
+<tr>
+<td>어음·수표금</td>
+<td style="text-align: center;">1년</td>
+<td>어음법·수표법</td>
+</tr>
+<tr>
+<td>불법행위 손해배상</td>
+<td style="text-align: center;">3년 (안 날부터)</td>
+<td>민법 제766조</td>
+</tr>
+</tbody>
+</table>
+<hr /></section><section class="blk" id="s4"><div class="secl">SECTION</div><h2>Q: "시효가 다 되어 가는데 어떻게 중단하나요?"</h2>
+<p><strong>A: 민법 제168조가 정하는 4가지 방법이 있습니다.</strong></p>
+<p>민법 제168조는 소멸시효 중단 사유로 <strong>①청구(재판상), ②압류·가압류·가처분, ③승인</strong>을 규정하고, 제174조는 <strong>④최고</strong>를 추가합니다.</p>
+<h3>4가지 시효 중단 방법</h3>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>핵심</th>
+<th style="text-align: center;">효력</th>
+<th>주의점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>승인</strong> (제168조③)</td>
+<td>채무자가 채무 존재 인정</td>
+<td style="text-align: center;">완전 중단, 시효 재진행</td>
+<td>묵시적 승인도 가능하나 판단 복잡</td>
+</tr>
+<tr>
+<td><strong>최고</strong> (제174조)</td>
+<td>내용증명 등 채무 이행 촉구</td>
+<td style="text-align: center;"><strong>6개월 한시 중단</strong></td>
+<td>6개월 내 후속 조치 없으면 소멸, 재최고 불가</td>
+</tr>
+<tr>
+<td><strong>재판상 청구</strong> (제168조①)</td>
+<td>소송·지급명령 제기</td>
+<td style="text-align: center;">완전 중단</td>
+<td>각하·기각·취하 시 소급 소멸</td>
+</tr>
+<tr>
+<td><strong>압류·가압류·가처분</strong> (제168조②)</td>
+<td>법원 통한 강제 집행</td>
+<td style="text-align: center;">완전 중단</td>
+<td>가장 강력한 방법</td>
+</tr>
+</tbody>
+</table>
+<hr /></section><section class="blk" id="s5"><div class="secl">SECTION</div><h2>Q: "내용증명(최고)만 보내면 영구히 시효가 중단되나요?"</h2>
+<p><strong>A: 아닙니다. 가장 위험한 오해입니다.</strong></p>
+<p>최고(내용증명)는 <strong>6개월 동안만</strong> 시효 중단 효력이 있습니다. 6개월 안에 소송·지급명령·가압류 등 후속 조치를 하지 않으면, <strong>최고가 없었던 것으로 소급</strong>되어 시효가 계속 진행됩니다(민법 제174조).</p>
+<h3>대법원 87다카2337 — 재최고 불가</h3>
+<p>더욱 치명적인 것은 <strong>재최고(두 번째 내용증명)는 시효 중단 효력이 없다</strong>는 점입니다. 대법원은 "최초 최고 후 6개월 내 후속 조치를 하지 않으면 그 최고는 효력을 상실하고, 이미 효력을 상실한 최고를 전제로 한 재최고는 시효 중단 효력이 없다"고 판시했습니다.</p>
+<table>
+<thead>
+<tr>
+<th>오해</th>
+<th>실상</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"내용증명 한 번이면 영구 중단"</td>
+<td>최고는 6개월 한시. 후속 조치 없으면 소멸</td>
+</tr>
+<tr>
+<td>"6개월 지나서 다시 내용증명 하면 되지"</td>
+<td>재최고는 시효 중단 효력 없음 (87다카2337)</td>
+</tr>
+<tr>
+<td>"소송 취하했지만 최고는 유효"</td>
+<td>소송 취하 시 중단 효력 소급 소멸</td>
+</tr>
+</tbody>
+</table>
+<hr /></section><section class="blk" id="s6"><div class="secl">SECTION</div><h2>Q: "상대방이 이메일로 '곧 갚겠다'고 했어요. 시효 중단되나요?"</h2>
+<p><strong>A: 조건에 따라 가능합니다. '묵시적 승인'이 인정될 수 있습니다.</strong></p>
+<p>민법 제168조 제3호의 '승인'은 명시적뿐 아니라 묵시적으로도 가능하며, 형식이 자유롭고 채무자의 처분 능력이나 권한도 필요하지 않습니다(제177조). 중요한 것은 <strong>상대방이 채무 존재를 인식하고 있음을 표시</strong>했는지입니다.</p>
+<h3>승인으로 인정된 사례</h3>
+<table>
+<thead>
+<tr>
+<th>행위</th>
+<th style="text-align: center;">승인 여부</th>
+<th>이유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"내역 확인, 미불금 곧 처리" 이메일</td>
+<td style="text-align: center;">✅ 가능</td>
+<td>채무 존재·액수 인식 표시 (2015다34635)</td>
+</tr>
+<tr>
+<td>"도덕적으로 꼭 갚겠다" 확인서</td>
+<td style="text-align: center;">✅ 가능</td>
+<td>인증 진술서 (2013다207125)</td>
+</tr>
+<tr>
+<td>일부 변제</td>
+<td style="text-align: center;">⚠️ 한정</td>
+<td>변제한 부분만 승인 (2006다22968)</td>
+</tr>
+<tr>
+<td>잔액확인통지서 작성·교부</td>
+<td style="text-align: center;">✅ 가능</td>
+<td>채무 인식 표시 (2006다22852)</td>
+</tr>
+<tr>
+<td>형사합의금 공탁</td>
+<td style="text-align: center;">❌ 불인정 가능</td>
+<td>초과 채무 전부 승인 아님 (2014다85216)</td>
+</tr>
+</tbody>
+</table>
+<h3>승인의 효과</h3>
+<p>승인이 인정되면 시효는 완전히 중단되고, 그 시점부터 <strong>새로 시효가 진행</strong>됩니다. 따라서 승인을 받은 후에도 별도 관리가 필요합니다.</p>
+<hr /></section><section class="blk" id="s7"><div class="secl">SECTION</div><h2>Q: "가장 안전한 시효 중단 전략은?"</h2>
+<p><strong>A: 선(先)가압류 → 내용증명 → 소송 순서가 가장 확실합니다.</strong></p>
+<h3>실무 권장 전략</h3>
+<pre><code>STEP 1. 선가압류
+→ 가압류 자체로 시효 중단 (제168조②)
+→ 집행 종료 시까지 중단 효력 지속
+→ 채무자 재산 동결 효과
+
+STEP 2. 내용증명(최고) 발송
+→ 최고로 추가 중단 (제174조)
+→ 상대방에 심리적 압박
+→ 협상·조정 계기 마련
+
+STEP 3. 6개월 내 본안 소송 또는 지급명령
+→ 최고의 중단 효력을 확정적으로 담보
+→ 미제소 시 최고 효력 소멸
+</code></pre>
+<h3>시효 완성 임박 시 (1~2개월 남음)</h3>
+<p>내용증명보다 <strong>지급명령 또는 가압류를 먼저</strong> 하세요. 내용증명은 6개월 내 후속 조치가 필요하므로, 시효 임박 시에는 직접적인 확정 중단 수단이 더 안전합니다.</p>
+<hr /></section><section class="blk" id="s8"><div class="secl">SECTION</div><h2>핵심 요약</h2>
+<ol>
+<li><strong>소멸시효는 4가지 방법으로 중단 가능</strong>: 승인·최고·재판상 청구·압류/가압류/가처분</li>
+<li><strong>내용증명(최고)은 6개월 한시 티켓</strong>입니다. 6개월 내 소송·가압류 등 후속 조치가 없으면 효력이 소멸되고, <strong>재최고도 효력이 없습니다</strong>(대법원 87다카2337).</li>
+<li><strong>승인(묵시적 포함)은 완전 중단</strong> 효과가 있으나, 그 요건과 범위가 까다롭습니다. 이메일·문자·확인서 등 의사표시는 신중히 관리하세요.</li>
+<li><strong>가장 안전한 전략</strong>: 선가압류로 확실히 중단한 후, 내용증명으로 협상하고, 6개월 내 본안 소송으로 마무리.</li>
+<li><strong>시효 임박 시</strong> 직접 확정 중단 수단(지급명령·가압류)을 우선 사용하세요.</li>
+</ol>
+<hr />
+<p><strong>참고 법령 및 판례</strong>
+- 민법 제162조~제184조 (소멸시효 일반)
+- 민법 제168조 (시효 중단 사유 — 청구·압류·승인)
+- 민법 제174조 (최고에 의한 시효 중단 — 6개월 한시)
+- 민법 제170조 (재판상 청구 각하·취하 시 효력)
+- 민법 제177조 (승인 — 처분 능력 불필요)
+- 상법 제64조 (상사 시효 5년)
+- 대법원 1987. 12. 22. 선고 87다카2337 판결 (재최고 불가)
+- 대법원 2017. 3. 22. 선고 2015다34635 판결 (이메일 묵시적 승인)
+- 대법원 2015. 4. 9. 선고 2014다85216 판결 (형사합의 공탁과 승인)
+- 대법원 2013. 10. 11. 선고 2013다207125 판결 (인증 진술서 승인)
+- 대법원 2009. 8. 20. 선고 2006다22968 판결 (일부 변제 승인 범위)
+- 대법원 2006. 9. 22. 선고 2006다22852 판결 (잔액확인서 승인)</p>
+<p><em>최종 업데이트: 2026. 7. 28.</em></p></section><section class="blk faq" id="faq"><div class="secl">NOTICE</div><h2>확인 사항</h2><div class="notice">이 문서는 일반적인 법률 정보 제공을 위한 자료입니다. 구체적인 사실관계와 최신 법령·판례에 따라 결론이 달라질 수 있습니다.</div></section></main></div><footer class="footer"><div class="wrap"><h3>조우성 변호사</h3><p>실무에 바로 활용할 수 있는 법률 지식과 대응 가이드를 제공합니다.</p></div></footer><script>var b=document.getElementById('progress');window.addEventListener('scroll',function(){var h=document.documentElement,st=h.scrollTop||document.body.scrollTop,sh=h.scrollHeight-h.clientHeight;b.style.width=(sh?st/sh*100:0)+'%';},{passive:true});document.getElementById('toTop').onclick=function(){window.scrollTo({top:0,behavior:'smooth'})};</script></body></html>
