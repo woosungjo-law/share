@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+<meta name="robots" content="noindex,nofollow">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex,nofollow">
 <title>집행정지·신청검토 - 행정심판 · 행정소송 절차</title>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -84,30 +84,46 @@ code { font-family: 'JetBrains Mono', Consolas, monospace; font-size: 13px; back
   .tldr { box-shadow: none; }
   .section { break-inside: avoid; }
 }
+/* === MN-CREDIT-UPGRADE v1 : 로펌 머스트노우 브랜드/크레딧 === */
+.mn-ribbon{max-width:var(--maxw,1120px);margin:0 auto;padding:16px 26px 0}
+.mn-ribbon .in{display:inline-flex;align-items:center;gap:9px;font-size:13px;font-weight:700;
+  color:var(--wine-d,#5a1f2b);background:var(--wine-tint,#f4e9ec);
+  border:1px solid var(--wine-tint-ln,#ecd7dd);border-radius:999px;padding:8px 16px;
+  letter-spacing:-.01em;line-height:1.4}
+.mn-ribbon .in .mk{width:7px;height:7px;border-radius:50%;background:var(--wine,#7a2e3a);flex:none}
+.mn-credit{max-width:var(--readw,760px);margin:30px auto 0;background:var(--panel,#fff);
+  border:1px solid var(--line,#ebe2e5);border-left:4px solid var(--wine,#7a2e3a);
+  border-radius:12px;padding:18px 20px;box-shadow:0 1px 2px rgba(44,29,38,.04)}
+.mn-credit .who{font-size:15px;font-weight:800;color:var(--ink,#2c1d26);margin:0 0 8px;line-height:1.5}
+.mn-credit .who a{color:var(--wine-l,#9c4456);text-decoration:none;border-bottom:1px solid currentColor}
+.mn-credit .msg{font-size:14px;line-height:1.75;color:var(--ink2,#56424c);margin:0}
+@media(max-width:820px){
+  .mn-ribbon{padding:14px 18px 0}
+  .mn-ribbon .in{font-size:12px;padding:7px 13px}
+  .mn-credit{margin:22px 16px 0;padding:15px 16px}
+  .mn-credit .who{font-size:14px}
+}
+/* 다크 배경(푸터 내부) 배치 시 변형 */
+.footer .mn-credit,.mn-credit--dark{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);
+  border-left-color:var(--header-accent,#d4a0aa)}
+.footer .mn-credit .who,.mn-credit--dark .who{color:#fff}
+.footer .mn-credit .who a,.mn-credit--dark .who a{color:var(--header-accent,#d4a0aa)}
+.footer .mn-credit .msg,.mn-credit--dark .msg{color:rgba(255,255,255,.75)}
+
 </style>
 </head>
 <body>
 <div class="topbar"></div>
-<header class="header">
-  <div class="header-inner">
-    <div class="header-avatar">행</div>
-    <div class="header-info">
-      <div class="header-name">조우성 변호사 · 법률 인사이트</div>
-      <div class="header-desc">행정심판 · 행정소송(처분 불복) 절차 안내</div>
-    </div>
-    <span class="header-badge">행정심판 · 소송</span>
-  </div>
-</header>
 <section class="hero">
   <div class="container">
-    <div class="hero-tag">행정심판 · 행정소송 · 긴급보전</div>
+    <!-- MN-CREDIT-UPGRADE v1 :: ribbon -->
+  <div class="mn-ribbon"><span class="in"><span class="mk"></span>로펌 머스트노우의 조우성 변호사가 제공하는 법률컨텐츠입니다</span></div>
     <h1>집행정지·신청검토</h1>
     <p>행정심판 · 행정소송 긴급보전 단계 — 집행정지·신청검토 절차의 실무 포인트를 한눈에 확인한다.</p>
     <div class="hero-meta">
       <span>&#128197; 기준일 2026.07.31</span>
       <span>&#128204; 단계 긴급보전</span>
-      <span>&#9878; 검증 L1 · 검증 전</span>
-      <span>&#128101; 대상 개인 · 소상공인</span>
+<span>&#128101; 대상 개인 · 소상공인</span>
     </div>
   </div>
 </section>
@@ -136,9 +152,13 @@ code { font-family: 'JetBrains Mono', Consolas, monospace; font-size: 13px; back
 <div class="section"><div class="section-header"><div class="section-number">STEP 10</div><h2>다음 단계</h2></div><div class="section-body"><p>다음 카드와 처분서 원본·송달일·기한·청구취지·집행상태·미확인 사실을 연결한다. 재결·판결 후에는 처분청 이행과 실익을 다시 평가한다.</p></div></div>
 <div class="section"><div class="section-body"><div class="eye-catcher" style="border-left-color:#6b7280;background:#f9fafb;"><div class="eye-catcher-title">최신성·면책 고지</div><p>본 자료는 2026-07-31 기준 일반적 법률 정보이며 특정 처분에 대한 자문이 아니다. 행정법령·판례·행정실무·법원 양식은 변경될 수 있으므로 실제 불복 전 최신 원문과 사건기록을 확인한다.</p></div></div></div>
 </div>
+<!-- MN-CREDIT-UPGRADE v1 :: credit -->
+  <div class="mn-credit">
+    <p class="who">작성 : 조우성 변호사 / 로펌 머스트노우 (<a href="mailto:law@mustknow.co.kr">law@mustknow.co.kr</a>)</p>
+    <p class="msg">제공된 사안과 관련있는 법률안건에 대해 자문이 필요한 경우 연락처와 함께 자세한 사안과 질의 요지를 메일로 보내주시면 1차적인 가이드라인을 보내드립니다.</p>
+  </div>
 <footer class="footer">
   <p>© 2026 조우성 변호사. 본 콘텐츠는 일반 법률 정보이며 법률 자문을 대체하지 않습니다.</p>
-  <p>법령·실무는 변경될 수 있습니다. 실제 신청 전 최신 법령과 개별 사실관계를 확인하시기 바랍니다.</p>
-</footer>
+  </footer>
 </body>
 </html>
