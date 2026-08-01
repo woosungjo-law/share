@@ -1,447 +1,518 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
-<title>임원보수한도 주총 승인: '정관상 한도'와 '실제 지급' 사이의 간극 해소 — 조우성 변호사</title>
-<meta name="description" content="임원보수 주총 승인 실무: 상법 제388조, 정관상 한도 vs 실제 지급 간극, 2025다214605 포괄 위임 금지, 2025다219931 주주이사 의결권 제한 완전 정복">
-<meta property="og:type" content="article">
-<meta property="og:title" content="임원보수한도 주총 승인: '정관상 한도'와 '실제 지급' 사이의 간극 해소 — 조우성 변호사">
-<meta property="og:description" content="임원보수 주총 승인 실무: 상법 제388조, 정관상 한도 vs 실제 지급 간극, 2025다214605 포괄 위임 금지, 2025다219931 주주이사 의결권 제한 완전 정복">
-<style>
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>임원보수한도 주총 승인: &#x27;정관상 한도&#x27;와 &#x27;실제 지급&#x27; 사이의 간극 해소</title><style>
+/* ============================================================
+   법률 대시보드 전자책 — Apollo 기반 경량 커스텀 (공개 롱스크롤)
+   Apollo 토큰(버건디 액센트 + 웜 화이트 + 딥와인 헤더) 상속.
+   의뢰인 리포트(리스크레이더 6뷰)와 달리 공개 독서형 롱스크롤.
+   self-contained: 외부 CDN/폰트/이미지/스크립트 의존 없음.
+   ============================================================ */
 :root{
-  --primary:#1a3a6b; --primary-l:#2e6be6; --primary-d:#0f2450;
-  --bg:#f0f2f5; --card:#ffffff; --card2:#f8f9fb;
-  --line:#e2e5ea; --line2:#cdd2da;
-  --ink:#111827; --ink2:#374151; --muted:#6b7280; --faint:#9ca3af;
-  --amber-bg:#fffbeb; --amber-bd:#f59e0b; --amber-tx:#92400e;
-  --green-bg:#ecfdf5; --green-bd:#059669; --green-tx:#065f46;
-  --red-bg:#fef2f2; --red-bd:#dc2626; --red-tx:#991b1b;
-  --blue-bg:#eff6ff; --blue-bd:#3b82f6; --blue-tx:#1e40af;
-  --font:'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',-apple-system,BlinkMacSystemFont,sans-serif;
+  --bg:#f5f1f2; --panel:#ffffff; --panel2:#faf6f7;
+  --line:#ebe2e5; --line2:#ddccd2;
+  --ink:#2c1d26; --ink2:#56424c; --muted:#8a7b82; --faint:#b3a6ab;
+  --wine:#7a2e3a; --wine-d:#5a1f2b; --wine-l:#9c4456;
+  --wine-tint:#f4e9ec; --wine-tint-ln:#ecd7dd;
+  --header-bg:#3a1525; --header-bg2:#4e1f32; --header-accent:#d4a0aa;
+  --rH:#c74a3c; --rM-bg:#f8e4b8; --rM-tx:#7d520a; --rL-bg:#d6ecdb; --rL-tx:#287a54;
+  --amber:#b45309; --green:#287a54;
+  --font:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Noto Sans KR',sans-serif;
   --maxw:1120px; --readw:760px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
-#progress{position:fixed;top:0;left:0;height:4px;width:0;z-index:60;background:linear-gradient(90deg,var(--primary),var(--primary-l));transition:width .1s linear}
-.topbar{position:fixed;top:0;left:0;width:100%;height:4px;z-index:59;background:linear-gradient(90deg,var(--primary-d),var(--primary-l))}
-.header{background:var(--card);border-bottom:1px solid var(--line);padding-top:4px}
-.header .wrap{max-width:var(--maxw);margin:0 auto;padding:14px 26px;display:flex;align-items:center;gap:12px}
-.header .avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-l));display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:800}
-.header .name{font-size:14px;font-weight:700;color:var(--ink)}
-.header .badge{font-size:11px;color:var(--muted);margin-left:auto;background:var(--card2);padding:3px 10px;border-radius:999px}
-.hero{background:linear-gradient(135deg,var(--primary-d) 0%,var(--primary) 40%,var(--primary-l) 100%);color:#fff;padding:40px 0 50px}
-.hero .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
-.hero .tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;background:rgba(255,255,255,.15);border-radius:999px;padding:4px 12px;margin-bottom:12px;border:1px solid rgba(255,255,255,.2);letter-spacing:.03em}
-.hero .tag .dot{width:5px;height:5px;border-radius:50%;background:#60a5fa}
-.hero h1{font-size:28px;line-height:1.3;font-weight:800;margin:0 0 14px;letter-spacing:-.01em}
-.hero .meta{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:13px;opacity:.8;margin-bottom:18px}
-.hero .meta .vchip{background:rgba(255,255,255,.12);border-radius:6px;padding:3px 9px;font-weight:700;font-size:11.5px}
-.cta-row{display:flex;flex-wrap:wrap;gap:10px}
-.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:9px;padding:11px 18px;text-decoration:none;cursor:pointer;border:1px solid transparent}
-.btn-p{background:#fff;color:var(--primary-d)}
-.btn-p:hover{background:rgba(255,255,255,.9)}
-.btn-o{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
-.btn-o:hover{background:rgba(255,255,255,.1)}
-.tldr-wrap{max-width:var(--maxw);margin:-24px auto 0;padding:0 26px;position:relative;z-index:10}
-.tldr{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px;box-shadow:0 4px 14px rgba(0,0,0,.06)}
-.tldr .lb{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
-.tldr ul{margin:0;padding-left:18px}
-.tldr li{margin:5px 0;font-size:14.5px;color:var(--ink2)}
-.tldr li strong{color:var(--primary)}
-.app{max-width:var(--maxw);margin:0 auto;padding:24px 26px 60px;display:grid;grid-template-columns:210px 1fr;gap:32px;align-items:start}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
+
+/* 읽기 진행바 */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;
+  background:linear-gradient(90deg,var(--wine),var(--wine-l));transition:width .1s linear}
+
+/* 헤더 표지 (딥와인, 유일한 딥 컬러) */
+.header{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0}
+.header .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 26px}
+.header .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;
+  color:var(--header-accent);border:1px solid rgba(212,160,170,.4);border-radius:999px;padding:4px 12px}
+.header .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--header-accent)}
+
+/* 히어로 */
+.hero{max-width:var(--maxw);margin:0 auto;padding:30px 26px 8px}
+.hero .eb{font-size:12px;font-weight:700;color:var(--wine);letter-spacing:.02em;margin-bottom:10px}
+.hero h1{font-size:30px;line-height:1.28;font-weight:800;margin:0 0 16px;color:var(--ink);letter-spacing:-.01em}
+.hero .tldr{background:var(--wine-tint);border:1px solid var(--wine-tint-ln);border-left:4px solid var(--wine);
+  border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.hero .tldr .lb{font-size:12px;font-weight:700;color:var(--wine-d);margin-bottom:8px}
+.hero .tldr ul{margin:0;padding-left:18px}
+.hero .tldr li{margin:4px 0;font-size:15px;color:var(--ink2)}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:12.5px;color:var(--muted);margin-bottom:18px}
+.hero .meta .vchip{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);
+  font-weight:700;border-radius:6px;padding:3px 9px;font-size:11.5px}
+.hero .cta-row{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:9px;
+  padding:11px 18px;text-decoration:none;cursor:pointer;border:1px solid transparent}
+.btn-p{background:var(--wine);color:#fff}
+.btn-p:hover{background:var(--wine-d)}
+.btn-o{background:#fff;color:var(--wine-d);border-color:var(--line2)}
+.btn-o:hover{background:var(--panel2)}
+
+/* 셸: 좌측 목차 + 본문 */
+.app{max-width:var(--maxw);margin:0 auto;padding:8px 26px 60px;
+  display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:start}
+
+/* 목차 (데스크톱 = 좌측 sticky) */
 .toc{position:sticky;top:24px}
-.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:0 0 10px}
-.toc ol{list-style:none;margin:0;padding:0}
-.toc li{margin:2px 0}
-.toc a{display:block;font-size:13px;color:var(--ink2);text-decoration:none;padding:7px 10px;border-radius:8px;border-left:3px solid transparent;line-height:1.35}
-.toc a:hover{background:var(--card2)}
-.toc a.active{background:var(--blue-bg);border-left-color:var(--primary-l);color:var(--primary);font-weight:700}
+.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;
+  margin:0 0 10px;padding-left:2px}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}
+.toc li{counter-increment:toc;margin:1px 0}
+.toc a{display:flex;gap:9px;font-size:13.5px;color:var(--ink2);text-decoration:none;
+  padding:7px 10px;border-radius:8px;border-left:3px solid transparent;line-height:1.4}
+.toc a::before{content:counter(toc,decimal-leading-zero);color:var(--faint);font-weight:700;font-size:11.5px;flex:none}
+.toc a:hover{background:var(--panel2)}
+.toc a.active{background:var(--wine-tint);border-left-color:var(--wine);color:var(--wine-d);font-weight:700}
 .toc-toggle{display:none}
+
+/* 본문 */
 .content{max-width:var(--readw);min-width:0}
-section.blk{scroll-margin-top:28px;margin-bottom:40px}
-.secl{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin:0 0 10px}
-.secl .num{background:var(--primary-l);color:#fff;border-radius:5px;padding:2px 8px;font-size:10px}
-section.blk h2{font-size:22px;font-weight:700;line-height:1.35;margin:0 0 14px;color:var(--ink)}
-section.blk h3{font-size:16px;font-weight:700;margin:24px 0 10px;color:var(--primary)}
+section.blk{scroll-margin-top:24px;margin-bottom:38px}
+.secl{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.05em;margin:0 0 12px}
+.secl::before{content:"";width:7px;height:15px;background:var(--wine);border-radius:2px;flex:none}
+section.blk h2{font-size:23px;font-weight:800;line-height:1.35;margin:0 0 14px;color:var(--ink);letter-spacing:-.01em}
+section.blk h3{font-size:17px;font-weight:700;margin:26px 0 10px;color:var(--wine-d)}
 section.blk p{margin:0 0 14px;color:var(--ink2)}
 section.blk ul,section.blk ol{margin:0 0 14px;padding-left:22px;color:var(--ink2)}
-section.blk li{margin:5px 0}
+section.blk li{margin:6px 0}
 strong{color:var(--ink);font-weight:700}
-.eye{background:var(--blue-bg);border-left:4px solid var(--blue-bd);border-radius:10px;padding:14px 16px;margin:0 0 16px;font-size:14.5px;color:var(--blue-tx)}
-.eye ul{margin:6px 0 0;padding-left:18px}
-.eye li{margin:3px 0}
-.ev{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--amber-bd);border-radius:10px;padding:13px 15px;margin:0 0 14px}
+a.ln{color:var(--wine-l);text-decoration:none;border-bottom:1px solid var(--wine-tint-ln)}
+a.ln:hover{border-bottom-color:var(--wine-l)}
+
+/* 핵심요약 카드 */
+.summary{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.summary .lb{font-size:11px;font-weight:700;color:var(--wine-d);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.summary ul{margin:0;padding-left:18px}
+
+/* 근거 카드 (조문·판례) */
+.ev{background:#fff;border:1px solid var(--line);border-left:4px solid var(--wine);border-radius:10px;
+  padding:13px 15px;margin:0 0 12px}
 .ev .top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px}
-.ev .kind{font-size:10.5px;font-weight:700;color:#fff;border-radius:5px;padding:2px 8px}
-.ev .kind.law{background:var(--primary)}
-.ev .kind.case{background:var(--amber-bd)}
+.ev .kind{font-size:11px;font-weight:700;color:#fff;background:var(--wine);border-radius:5px;padding:2px 8px}
+.ev .kind.law{background:var(--wine-d)}
+.ev .kind.case{background:var(--amber)}
 .ev .cite{font-size:13.5px;font-weight:700;color:var(--ink)}
-.ev .vtick{margin-left:auto;font-size:10.5px;font-weight:700;color:var(--green-tx);background:var(--green-bg);border-radius:5px;padding:2px 7px}
+.ev .vtick{margin-left:auto;font-size:11px;font-weight:700;color:var(--rL-tx);background:var(--rL-bg);border-radius:5px;padding:2px 7px}
 .ev .gist{font-size:14px;color:var(--ink2);margin:0}
 .ev .date{font-size:12px;color:var(--muted);margin-top:5px}
-.tbl-wrap{overflow-x:auto;margin:0 0 16px}
-table{border-collapse:collapse;width:100%;font-size:13.5px}
-th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
-th{background:var(--card2);color:var(--primary);font-weight:700;font-size:12.5px}
-tr:hover td{background:var(--card2)}
-.chip{display:inline-flex;align-items:center;justify-content:center;min-width:30px;font-size:10.5px;font-weight:600;border-radius:5px;padding:2px 7px;margin-right:3px}
-.c-H{background:var(--green-bg);color:var(--green-tx)}
-.c-M{background:var(--amber-bg);color:var(--amber-tx)}
-.c-L{background:var(--red-bg);color:var(--red-tx)}
-.chkl{list-style:none;margin:0 0 16px;padding:0;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden}
-.chkl li{display:flex;gap:10px;padding:10px 14px;border-bottom:1px solid var(--line);font-size:14px;color:var(--ink2)}
-.chkl li:last-child{border-bottom:none}
-.chkl .ck{flex:none;width:18px;height:18px;border-radius:4px;background:var(--green-bg);color:var(--green-tx);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800}
-.step-badge{display:inline-block;font-size:10px;font-weight:700;color:var(--green-tx);background:var(--green-bg);border-radius:999px;padding:2px 10px;margin-right:6px}
-.faq details{background:var(--card);border:1px solid var(--line);border-radius:10px;margin:0 0 10px;overflow:hidden}
-.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:14.5px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:10px}
+
+/* 다이어그램 — 플로우 / 체크리스트 (CSS·SVG only) */
+.figure{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin:0 0 18px}
+.figure .cap{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:12px}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px}
+.flow .step{flex:1;min-width:120px;background:var(--wine-tint);border:1px solid var(--wine-tint-ln);
+  border-radius:10px;padding:11px 12px;position:relative}
+.flow .step .n{font-size:11px;font-weight:700;color:var(--wine)}
+.flow .step .t{font-size:13.5px;font-weight:700;color:var(--ink);margin-top:2px}
+.flow .step .d{font-size:12.5px;color:var(--ink2);margin-top:3px}
+.checklist{list-style:none;margin:0;padding:0}
+.checklist li{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+.checklist li:last-child{border-bottom:none}
+.checklist .ck{flex:none;width:20px;height:20px;border-radius:5px;background:var(--rL-bg);color:var(--rL-tx);
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+
+/* 위험도 칩 */
+.chip{display:inline-flex;align-items:center;justify-content:center;min-width:34px;font-size:11px;font-weight:500;
+  border-radius:6px;padding:3px 8px;margin-right:4px}
+.c-H{background:var(--rH);color:#fff}
+.c-M{background:var(--rM-bg);color:var(--rM-tx)}
+.c-L{background:var(--rL-bg);color:var(--rL-tx)}
+
+/* 표 */
+.tbl-wrap{overflow-x:auto;margin:0 0 18px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px}
+
+/* FAQ (아코디언) */
+.faq details{background:#fff;border:1px solid var(--line);border-radius:10px;margin:0 0 10px;overflow:hidden}
+.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:15px;font-weight:700;color:var(--ink);
+  display:flex;align-items:center;gap:10px}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--primary-l);color:#fff;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
-.faq details[open] summary{border-bottom:1px solid var(--line);color:var(--primary)}
-.faq .a{padding:14px 16px;font-size:14px;color:var(--ink2);line-height:1.7}
-.notice{background:var(--card2);border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;font-size:12.5px;color:var(--muted);line-height:1.7}
-#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--primary);color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;box-shadow:0 4px 14px rgba(26,58,107,.28)}
+.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--wine-tint);
+  color:var(--wine-d);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+.faq details[open] summary{border-bottom:1px solid var(--line);color:var(--wine-d)}
+.faq .a{padding:14px 16px;font-size:14.5px;color:var(--ink2)}
+
+/* 최신성·면책 고지 */
+.notice{background:#fff;border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;
+  font-size:12.5px;color:var(--muted);line-height:1.7}
+
+/* 맨 위로 버튼 */
+#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--wine-tint-ln);background:var(--wine);color:#fff;font-size:18px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;
+  box-shadow:0 4px 14px rgba(58,21,37,.28)}
 #toTop.show{opacity:1;pointer-events:auto}
-#toTop:hover{background:var(--primary-d)}
-.footer{background:linear-gradient(135deg,var(--primary-d),var(--primary));color:rgba(255,255,255,.85)}
+#toTop:hover{background:var(--wine-d)}
+
+/* 푸터 프로필 + 상담 CTA */
+.footer{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0;margin-top:20px}
 .footer .wrap{max-width:var(--maxw);margin:0 auto;padding:34px 26px}
 .footer h3{font-size:20px;font-weight:800;margin:0 0 8px;color:#fff}
-.footer p{font-size:14px;color:rgba(255,255,255,.7);margin:0 0 6px;line-height:1.7}
+.footer p{font-size:14px;color:rgba(255,255,255,.72);margin:0 0 6px;line-height:1.7}
 .footer .prof{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end}
 .footer .cta-f{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-.footer .btn-f{background:#fff;color:var(--primary-d)}
-.footer .btn-f:hover{background:rgba(255,255,255,.9)}
-.footer .btn-fo{background:transparent;color:rgba(255,255,255,.85);border-color:rgba(255,255,255,.35)}
-.footer .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:22px;padding-top:14px;font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.7}
+.footer .btn-f{background:#fff;color:var(--wine-d)}
+.footer .btn-f:hover{background:var(--header-accent)}
+.footer .btn-fo{background:transparent;color:#f4eef0;border-color:rgba(255,255,255,.35)}
+.footer .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:22px;padding-top:14px;
+  font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.7}
+
+/* ── 모바일 (≤820px) ── */
 @media(max-width:820px){
-  .hero h1{font-size:22px}
+  .hero h1{font-size:24px}
   .app{grid-template-columns:1fr;gap:0;padding-top:0}
-  .toc{position:static;margin:0 0 22px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 8px}
-  .toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--primary);padding:9px 8px}
+  .toc{position:static;margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 8px}
+  .toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;
+    cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--wine-d);padding:9px 8px}
   .toc-toggle .ar{transition:transform .2s}
   .toc.closed .toc-toggle .ar{transform:rotate(-90deg)}
   .toc .tt{display:none}
   .toc ol{max-height:50vh;overflow:auto}
   .toc.closed ol{display:none}
-  section.blk h2{font-size:19px}
+  section.blk h2{font-size:20px}
   th,td{white-space:nowrap}
 }
 @media print{
   #progress,.toc,.cta-row,.footer .cta-f{display:none}
-  .hero,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   .app{display:block}
 }
-</style>
-</head>
-<body>
-<div id="progress"></div>
-<div class="topbar"></div>
-<button id="toTop" aria-label="맨 위로" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
-
-<header class="header">
-  <div class="wrap">
-    <div class="avatar">조</div>
-    <span class="name">조우성 변호사</span>
-    <span class="badge">법률 인사이트</span>
-  </div>
-</header>
-
-<div class="hero">
-  <div class="wrap">
-    <div class="tag"><span class="dot"></span>회사법 / 이사보수 · 지배구조</div>
-    <h1>임원보수한도 주총 승인:<br>'정관상 한도'와 '실제 지급' 사이의 간극 해소</h1>
-    <div class="meta">
-      <span>작성일 2026-07-10</span>
-      <span>· 기준 법령 상법 현행 (MST 284143)</span>
-      <span class="vchip">✓ 조문·판례 검증</span>
-      <span>· 읽는 시간 약 10분</span>
-    </div>
-    <div class="cta-row">
-      <a class="btn btn-p" href="#s2">간극 해소 액션</a>
-      <a class="btn btn-o" href="#faq">Q&amp;A</a>
-    </div>
-  </div>
-</div>
-
-<div class="tldr-wrap">
-  <div class="tldr">
-    <div class="lb">3줄 요약 (TL;DR)</div>
-    <ul>
-      <li><strong>상법 제388조</strong>: 이사 보수는 정관 또는 주총 결의로 정해야 하며, 한도 초과 지급은 무효. 퇴직금도 '보수'에 포함(2019다296617)</li>
-      <li><strong>핵심 간극 3가지</strong>: ①총액 한도만 있고 항목별·개인별 구분 없는 관행 → 2025다214605로 이사회 개별 분배 결의 필수화, ②주주인 이사의 보수 한도 의결권 배제 → 2025다219931, ③퇴직금·스톡옵션 보수 해당 여부 불명확</li>
-      <li><strong>법무팀 5대 액션</strong>: 정관 진단·개정 → 주총 결의 정비(의결권 배제 포함) → 이사회 결의 내실화 → 보수위원회 활용 → 사후 관리·공시</li>
-    </ul>
-  </div>
-</div>
-
-<div class="app">
-  <nav class="toc" id="toc">
-    <button class="toc-toggle" onclick="document.getElementById('toc').classList.toggle('closed')">목차 <span class="ar">▾</span></button>
-    <div class="tt">목차</div>
-    <ol id="toc-list">
-      <li><a href="#s1">간극 개요</a></li>
-      <li><a href="#s2">간극 ① 한도 설정</a></li>
-      <li><a href="#s3">간극 ② 의결권 제한</a></li>
-      <li><a href="#s4">5대 액션 플랜</a></li>
-      <li><a href="#faq">Q&amp;A</a></li>
-    </ol>
-  </nav>
-
-  <main class="content">
-
-    <!-- 섹션 1: 간극 개요 -->
-    <section class="blk" id="s1">
-      <div class="secl"><span class="num">01</span> 간극 개요</div>
-      <h2>'정관상 한도'와 '실제 지급'의 간극</h2>
-      <div class="eye">
-        상법 제388조는 이사 보수를 정관 또는 주주총회가 결정하도록 강행규정으로 정한다. 그러나 실무에서는 정관이나 주총이 '총액 한도'만 정하고, 이사회나 대표이사가 개별 보수를 결정하는 방식이 관행화되어 있다. 이 <strong>'간극'이 최근 대법원 판결로 위법 리스크에 노출</strong>되었다.
-      </div>
-
-      <h3>보수 결정 3층 체계</h3>
-      <div class="tbl-wrap">
-        <table>
-          <thead><tr><th>층위</th><th>결정 주체</th><th>실무 현실</th><th>리스크</th></tr></thead>
-          <tbody>
-            <tr><td><strong>1층</strong></td><td>정관</td><td>"임원급여지급규정에 따른다"는 포괄 위임</td><td><span class="chip c-L">포괄 위임 무효</span></td></tr>
-            <tr><td><strong>2층</strong></td><td>주주총회</td><td>총액만 승인, 항목별 구분 없음</td><td><span class="chip c-M">퇴직금 등 누락</span></td></tr>
-            <tr><td><strong>3층</strong></td><td>이사회</td><td>대표이사에게 사실상 위임</td><td><span class="chip c-L">위임 범위 위반</span></td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h3>보수 개념의 범위 — 무엇이 보수인가</h3>
-      <div class="tbl-wrap">
-        <table>
-          <thead><tr><th>항목</th><th>보수 해당 여부</th><th>근거</th></tr></thead>
-          <tbody>
-            <tr><td>급여</td><td><span class="chip c-H">✅ 당연히 보수</span></td><td>—</td></tr>
-            <tr><td>상여·성과급</td><td><span class="chip c-H">✅ 보수</span></td><td>실적 연동 여부 불문</td></tr>
-            <tr><td>퇴직금</td><td><span class="chip c-H">✅ 보수</span></td><td>2019다296617</td></tr>
-            <tr><td>스톡옵션 행사이익</td><td><span class="chip c-M">✅ 보수로 보는 견해 다수</span></td><td>부여 시 주총 승인 필요</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="ev">
-        <div class="top">
-          <span class="kind law">조문</span>
-          <span class="cite">상법 제388조 (이사의 보수)</span>
-          <span class="vtick">✓ 현행 확인</span>
-        </div>
-        <p class="gist">이사의 보수는 정관에 그 액을 정하지 아니한 때에는 주주총회의 결의로 이를 정한다.</p>
-        <div class="date">시행일 현행 (MST 284143) — 강행규정</div>
-      </div>
-    </section>
-
-    <!-- 섹션 2: 간극 ① -->
-    <section class="blk" id="s2">
-      <div class="secl"><span class="num">02</span> 간극 ①</div>
-      <h2>한도 설정 — 포괄적 총액만 정하는 관행</h2>
-      <div class="eye">
-        주총이 '보수 총액 50억 원'이라는 포괄적 한도만 정하고 항목별·이사별 구분 없이 운용하면 실질적 통제 불가. <strong>2025다214605</strong>는 이사회가 개별 이사의 보수를 구체적으로 분배하는 결의를 해야 한다고 명시했다.
-      </div>
-
-      <h3>문제되는 관행 vs 적법 방법</h3>
-      <div class="tbl-wrap">
-        <table>
-          <thead><tr><th>관행</th><th>내용</th><th>리스크</th></tr></thead>
-          <tbody>
-            <tr><td>포괄 한도 설정</td><td>"임원 보수 총액 50억 원 이내"</td><td>개별 이사 과다 보수 통제 불가</td></tr>
-            <tr><td>대표이사 위임</td><td>이사회 결의 없이 대표이사 결정</td><td><span class="chip c-L">2025다214605 전면 금지</span></td></tr>
-            <tr><td>임원급여지급규정 위임</td><td>정관→규정에 포괄 위임</td><td><span class="chip c-L">포괄 위임 무효</span></td></tr>
-            <tr><td>항목 미구분</td><td>급여·상여·퇴직금 하나의 한도</td><td><span class="chip c-M">퇴직금 과다 리스크</span></td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="ev">
-        <div class="top">
-          <span class="kind case">판례</span>
-          <span class="cite">대법원 2025. 12. 11. 선고 2025다214605 판결</span>
-          <span class="vtick">✓ 내부 WIKI 확인</span>
-        </div>
-        <p class="gist">정관 또는 주주총회에서 임원의 보수 총액 내지 한도액만을 정하고 개별 이사에 대한 지급액 등 구체적인 사항을 이사회에 위임하는 것은 가능하지만, 이사의 보수에 관한 사항을 이사회에 포괄적으로 위임하거나 대표이사에게 직접 위임하는 것은 허용되지 않는다.</p>
-        <div class="date">포괄 위임·대표이사 위임 전면 금지</div>
-      </div>
-
-      <h3>표준 주총 결의안 예시</h3>
-      <div class="ev" style="border-left-color:var(--green-bd);background:var(--green-bg)">
-        <div class="top">
-          <span class="kind" style="background:var(--green-bd)">표준 결의안</span>
-          <span class="cite">제X호 의안: 이사 보수 한도 승인의 건</span>
-        </div>
-        <p class="gist">①<strong>총액 한도</strong>: 이사 전원의 보수 총액은 50억 원(퇴직금 포함)을 초과하지 아니한다. ②<strong>항목별 한도</strong>: 급여 30억 원, 상여금 15억 원, 퇴직금 5억 원. ③<strong>개별 분배</strong>: 개별 이사에 대한 구체적 보수 분배는 이사회 결의로 정하되, 각 이사의 직책·책임·성과를 반영하여 합리적으로 산정한다. ④<strong>사후 보고</strong>: 집행 결과를 차기 정기주주총회에 보고한다.</p>
-      </div>
-    </section>
-
-    <!-- 섹션 3: 간극 ② -->
-    <section class="blk" id="s3">
-      <div class="secl"><span class="num">03</span> 간극 ②</div>
-      <h2>주주인 이사의 의결권 제한</h2>
-      <div class="eye">
-        대법원 2025다219931은 주주인 이사가 이사 보수 한도 안건에서 <strong>특별이해관계인</strong>으로서 의결권을 행사할 수 없다고 판시했다. 대주주가 이사를 겸하는 가족기업·중견기업에 특히 중요한 변화다.
-      </div>
-
-      <div class="tbl-wrap">
-        <table>
-          <thead><tr><th>상황</th><th>기존 관행</th><th>변경 후</th></tr></thead>
-          <tbody>
-            <tr><td>대주주 겸 이사가 보수 한도 투표</td><td><span class="chip c-H">가능</span></td><td><span class="chip c-L">❌ 불가</span></td></tr>
-            <tr><td>정족수 산정</td><td>대주주 포함 산정</td><td><span class="chip c-L">대주주 주식 제외 후 산정</span></td></tr>
-            <tr><td>보수 한도 인상</td><td>용이</td><td><span class="chip c-M">까다로워짐</span></td></tr>
-            <tr><td>1인 주주 겸 대표이사</td><td>—</td><td><span class="chip c-H">✅ 예외 인정</span></td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="ev">
-        <div class="top">
-          <span class="kind case">판례</span>
-          <span class="cite">대법원 2026. 4. 2. 선고 2025다219931 판결</span>
-          <span class="vtick">✓ 내부 WIKI 확인</span>
-        </div>
-        <p class="gist">"보수한도액은 향후 개별 이사에 대한 구체적인 보수액을 결정하는 데 중요한 영향을 미칠 수밖에 없다"며 주주인 이사는 보수한도액 결의에서 의결권을 행사할 수 없다고 명시. 정족수 산정 시 해당 주식 수 발행주식총수에서 제외.</p>
-        <div class="date">2026.4.2 선고 — 보수 한도 결의 의결권 제한 최초 명시</div>
-      </div>
-
-      <p><strong>대응 방안:</strong></p>
-      <ul>
-        <li><strong>공격 측(소수주주)</strong>: 대주주 겸 이사가 보수 한도 안건에 참여했다면 결의 취소 소송(상법 제376조, 결의일 2개월 내) 제기 가능</li>
-        <li><strong>방어 측(회사)</strong>: ①보수 한도 결의 시 주주인 이사 의결권 행사 자제 ②의사록에 기권 사실·정족수 계산 근거 명시 ③소규모 회사 특례(자본금 10억 미만) 검토</li>
-      </ul>
-    </section>
-
-    <!-- 섹션 4: 5대 액션 플랜 -->
-    <section class="blk" id="s4">
-      <div class="secl"><span class="num">04</span> 액션 플랜</div>
-      <h2>법무팀 5대 액션으로 간극 해소</h2>
-      <div class="eye">아래 5개 액션을 순서대로 실행하면 정관상 한도와 실제 지급 사이의 간극을 <strong>90%</strong> 해소할 수 있다.</div>
-
-      <p style="font-weight:700;color:var(--primary);margin-top:16px">ACTION 1: 정관 진단 및 개정 <span class="step-badge" style="background:var(--red-bg);color:var(--red-tx)">긴급</span></p>
-      <ul class="chkl">
-        <li><span class="ck">✓</span><span><strong>정관 진단</strong> — "임원급여지급규정에 따라 대표이사가 결정" 조항 있는지 확인 → 즉시 개정</span></li>
-        <li><span class="ck">✓</span><span><strong>위임 범위 한정</strong> — 정관 위임을 "주총 한도 내 이사회 결의로 분배"로 명확히 한정</span></li>
-        <li><span class="ck">✓</span><span><strong>퇴직금 명시</strong> — 퇴직금 지급 기준을 정관 또는 주총 결의 사항으로 명시</span></li>
-      </ul>
-
-      <p style="font-weight:700;color:var(--primary);margin-top:10px">ACTION 2: 주총 결의 정비</p>
-      <ul class="chkl">
-        <li><span class="ck">✓</span><span><strong>항목별 한도</strong> — 총액뿐 아니라 급여·상여·퇴직금 항목별 한도 설정</span></li>
-        <li><span class="ck">✓</span><span><strong>의결권 배제</strong> — 주주인 이사는 보수 한도 안건 의결권 배제 (2025다219931)</span></li>
-        <li><span class="ck">✓</span><span><strong>의사록 기록</strong> — 의결권 배제 근거·정족수 계산·분배 기준 명확히 기재</span></li>
-      </ul>
-
-      <p style="font-weight:700;color:var(--primary);margin-top:10px">ACTION 3: 이사회 결의 내실화</p>
-      <ul class="chkl">
-        <li><span class="ck">✓</span><span><strong>개별 분배 결의</strong> — 주총 한도 내 개별 이사별 보수액 구체적 배분 결의 (2025다214605)</span></li>
-        <li><span class="ck">✓</span><span><strong>배분 기준 명시</strong> — 결의록에 직책·책임·성과 기준과 근거 명시</span></li>
-        <li><span class="ck">✓</span><span><strong>포괄 위임 금지</strong> — 대표이사 개인 판단으로 보수 결정 금지</span></li>
-      </ul>
-
-      <p style="font-weight:700;color:var(--primary);margin-top:10px">ACTION 4: 보수위원회 활용</p>
-      <ul class="chkl">
-        <li><span class="ck">✓</span><span><strong>상장사</strong> — 보수위원회 설치 (기관투자자 평가·의결권 자문사 대응)</span></li>
-        <li><span class="ck">✓</span><span><strong>중견기업</strong> — 보수위원회 권장 (독립성·투명성 확보)</span></li>
-      </ul>
-
-      <p style="font-weight:700;color:var(--primary);margin-top:10px">ACTION 5: 사후 관리</p>
-      <ul class="chkl">
-        <li><span class="ck">✓</span><span><strong>차기 주총 보고</strong> — 보수 집행 결과 보고 (투명성 확보)</span></li>
-        <li><span class="ck">✓</span><span><strong>공시 의무</strong> — 임원보수 공시 확인 (상장사, 자본시장법 제159조)</span></li>
-        <li><span class="ck">✓</span><span><strong>D&O 보험 정합성</strong> — 보험 가입 범위와 보수 정책 정합성 확인</span></li>
-      </ul>
-    </section>
-
-    <!-- FAQ -->
-    <section class="blk faq" id="faq">
-      <div class="secl"><span class="num">Q&amp;A</span></div>
-      <h2>자주 묻는 질문</h2>
-
-      <details>
-        <summary>주총 결의 없이 이사회 결의만으로 지급한 보수는 어떻게 되나요?</summary>
-        <div class="a"><strong>무효</strong>입니다. 상법 제388조는 강행규정으로, 이사회 결의만으로 이사 보수를 지급하는 것은 위법입니다(대법원 2018다290436). 회사는 해당 이사에게 이미 지급한 보수를 <strong>부당이득으로 반환 청구</strong>할 수 있습니다(서울동부지법 2023가합102999). 사전에 정관 또는 주총 결의를 통해 보수 지급 근거를 마련해야 합니다.</div>
-      </details>
-
-      <details>
-        <summary>퇴직금도 주총 승인이 필요한가요?</summary>
-        <div class="a"><strong>네, 필요합니다.</strong> 대법원 2019다296617은 퇴직금도 이사 보수에 포함된다고 판시했습니다. 퇴직금 지급 기준과 한도도 주주총회 승인을 받아야 합니다. 퇴직금만 별도의 주총 결의 없이 관행적으로 지급해 온 회사는 즉시 정비가 필요합니다.</div>
-      </details>
-
-      <details>
-        <summary>대표이사가 자신의 보수를 스스로 결정해도 되나요?</summary>
-        <div class="a"><strong>안 됩니다.</strong> 상법 제388조는 이사 스스로 보수를 결정하는 것을 금지합니다. 대표이사도 '이사'이므로 자신의 보수는 주총(또는 정관)이 정해야 합니다. 2025다214605는 대표이사에게 보수 결정권을 위임하는 정관 규정도 무효라고 명시했습니다.</div>
-      </details>
-
-      <details>
-        <summary>비등기 임원 보수도 주총 승인이 필요한가요?</summary>
-        <div class="a"><strong>필요하지 않습니다.</strong> 상법 제388조는 '이사'(등기임원)에 적용되므로, 비등기 임원 보수는 주총 결의 대상이 아닙니다. 다만 비등기 임원에 과도한 보수를 지급하여 등기이사 보수 한도를 우회하는 행위는 상법 제388조 취지를 잠탈하는 것으로 <strong>무효 가능성</strong>이 있으므로 주의해야 합니다.</div>
-      </details>
-
-      <details>
-        <summary>2025다219931 이후 보수 한도 결의는 어떻게 진행하나요?</summary>
-        <div class="a">주주인 이사는 보수 한도 안건에서 의결권을 행사할 수 없습니다. 따라서 ①주총 전 주주인 이사 명단 확정, ②해당 이사 주식 수를 발행주식총수에서 제외 후 정족수 산정, ③의사록에 의결권 배제 사실과 정족수 계산 근거 명확히 기재해야 합니다. 1인 주주 겸 대표이사는 예외 가능하나 법률 자문 권장.</div>
-      </details>
-
-      <div class="notice">
-        본 자료는 <strong>2026-07-10</strong> 기준으로 작성되었으며, 인용 법령·판례는 작성 시점의 현행성을 확인한 것입니다. 법령은 개정될 수 있고 사안마다 결론이 달라질 수 있으므로, 실제 의사결정 전 최신 법령과 개별 사실관계 확인이 필요합니다. 본 자료는 일반적 법률 정보 제공이며 특정 사안에 대한 법률 자문이 아닙니다.
-      </div>
-    </section>
-  </main>
-</div>
-
-<footer class="footer" id="consult">
-  <div class="wrap">
-    <div class="prof">
-      <div>
-        <h3>조우성 변호사</h3>
-        <p>법무법인 머스트노우 | 대표변호사</p>
-        <p>회사법·지배구조·M&A·기업자문</p>
-      </div>
-      <div class="cta-f">
-        <a class="btn btn-f" href="#">상담 문의하기</a>
-        <a class="btn btn-fo" href="#">더 많은 인사이트</a>
-      </div>
-    </div>
-    <div class="fine">
-      © 2026 조우성 변호사. 본 콘텐츠는 일반 법률 정보이며 법률 자문을 대체하지 않습니다. 인용 법령·판례는 2026-07-10 기준 현행성을 확인했습니다.
-    </div>
-  </div>
-</footer>
-
-<script>
-var pb=document.getElementById('progress');
-function onScroll(){
-  var h=document.documentElement,b=document.body;
-  var st=h.scrollTop||b.scrollTop;
-  var sh=(h.scrollHeight||b.scrollHeight)-h.clientHeight;
-  pb.style.width=(sh>0?(st/sh*100):0)+'%';
-}
-window.addEventListener('scroll',onScroll,{passive:true});onScroll();
-
-var toTop=document.getElementById('toTop');
-window.addEventListener('scroll',function(){
-  (window.scrollY||window.pageYOffset)>500?toTop.classList.add('show'):toTop.classList.remove('show');
-},{passive:true});
-
-var links=Array.prototype.slice.call(document.querySelectorAll('#toc-list a'));
-var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));}).filter(Boolean);
-function spy(){
-  var pos=(window.scrollY||window.pageYOffset)+120,cur=secs[0];
-  for(var i=0;i<secs.length;i++){if(secs[i].offsetTop<=pos)cur=secs[i];}
-  links.forEach(function(a){
-    a.classList.toggle('active',cur&&a.getAttribute('href')==='#'+cur.id);
-  });
-}
-window.addEventListener('scroll',spy,{passive:true});spy();
-
-document.querySelectorAll('#toc-list a').forEach(function(a){
-  a.addEventListener('click',function(){
-    if(window.innerWidth<=820)document.getElementById('toc').classList.add('closed');
-  });
-});
-</script>
-</body>
-</html>
+</style></head><body><div id="progress"></div><button id="toTop" aria-label="맨 위로">?</button><header class="header"><div class="wrap"><span class="badge"><span class="dot"></span>조우성 변호사 ? 법률 인사이트</span></div></header><div class="hero"><div class="eb">전자책 대시보드 ? 실무 가이드</div><h1>임원보수한도 주총 승인: &#x27;정관상 한도&#x27;와 &#x27;실제 지급&#x27; 사이의 간극 해소</h1><div class="tldr"><div class="lb">3줄 요약 (TL;DR)</div><ul><li>원문 Markdown의 제목?본문?표?체크리스트를 반영한 공개용 HTML입니다.</li><li>문서의 핵심 내용과 실무상 확인 포인트를 한 화면에서 확인할 수 있습니다.</li><li>구체적인 사안은 최신 법령?판례와 사실관계 확인이 필요합니다.</li></ul></div><div class="meta"><span>원문: 20260710_임원보수한도_주총승인.md</span><span class="vchip">원문 기반 HTML</span></div><div class="cta-row"><a class="btn btn-p" href="#s1">핵심 내용 보기</a><a class="btn btn-o" href="#faq">확인 사항</a></div></div><div class="app"><nav class="toc" id="toc"><div class="tt">목차</div><ol id="toc-list"><li><a href="#s1">본문</a></li><li><a href="#s2">3줄 요약 (TL;DR)</a></li><li><a href="#s3">1. &#x27;정관상 한도&#x27;와 &#x27;실제 지급&#x27; 사이의 간극</a></li><li><a href="#s4">2. 간극 ① — 한도 설정의 문제</a></li><li><a href="#s5">3. 간극 ② — 주주인 이사의 의결권 제한</a></li><li><a href="#s6">4. 간극 해소를 위한 법무팀 5대 액션 플랜</a></li><li><a href="#s7">자주 묻는 질문 (Q&amp;amp;A)</a></li><li><a href="#s8">최신성·면책 고지</a></li><li><a href="#s9">검증 로그 (내부용)</a></li></ol></nav><main class="content"><section class="blk" id="s1"><div class="secl">SECTION</div><blockquote>
+<p>웹으로 보기
+https://woosungjo-law.github.io/share/d/exec-compensation-approval-gap-kj4r.html</p>
+</blockquote>
+<h1>임원보수한도 주총 승인: '정관상 한도'와 '실제 지급' 사이의 간극 해소</h1></section><section class="blk" id="s2"><div class="secl">SECTION</div><h2>3줄 요약 (TL;DR)</h2>
+<ul>
+<li><strong>상법 제388조</strong>: 이사 보수는 정관에 액수를 정하거나 <strong>주주총회 결의로 한도</strong>를 정해야 한다. 한도를 초과한 지급은 <strong>무효</strong>이며, 반환 청구 대상이 될 수 있다(대법원 2018다290436).</li>
+<li><strong>핵심 간극 3가지</strong>: ①정관·주총이 정한 '총액 한도'와 이사회가 분배한 '개별 실제 지급액' 사이의 괴리, ②보수항목(급여·상여·퇴직금)별 한도 설정 누락, ③퇴직금·스톡옵션의 보수 해당 여부 불명확성</li>
+<li><strong>2025년 두 대법원 판결</strong>이 간극을 좁혔다: 2025다214605(포괄 위임 금지→이사회 개별 분배 결의 필수), 2025다219931(주주인 이사 보수 한도 안건 의결권 제한). 법무팀은 정관·내규·주총 결의를 이 기준에 맞춰 전면 정비해야 한다.</li>
+</ul>
+<hr /></section><section class="blk" id="s3"><div class="secl">SECTION</div><h2>1. '정관상 한도'와 '실제 지급' 사이의 간극</h2>
+<p><strong>한눈에</strong>: 상법 제388조는 이사 보수를 정관 또는 주주총회가 결정하도록 강행규정으로 정한다. 그러나 실무에서는 정관이나 주총이 '총액 한도'만 정하고, 이사회나 대표이사가 개별 보수를 결정하는 방식이 관행화되어 있다. 이 <strong>'간극'이 최근 대법원 판결로 위법 리스크에 노출</strong>되었다.</p>
+<h3>1.1 보수 결정 3층 체계</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">층위</th>
+<th style="text-align: center;">결정 주체</th>
+<th style="text-align: center;">결정 사항</th>
+<th style="text-align: center;">실무 현실</th>
+<th style="text-align: center;">리스크</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1층</td>
+<td style="text-align: center;"><strong>정관</strong></td>
+<td style="text-align: center;">보수액 직접 명시 (드문 경우)</td>
+<td style="text-align: center;">"임원급여지급규정에 따른다"는 포괄 위임</td>
+<td style="text-align: center;">❌ 포괄 위임 무효</td>
+</tr>
+<tr>
+<td style="text-align: center;">2층</td>
+<td style="text-align: center;"><strong>주주총회</strong></td>
+<td style="text-align: center;">보수 총액·한도액 승인</td>
+<td style="text-align: center;">총액만 승인, 항목별 구분 없음</td>
+<td style="text-align: center;">⚠️ 퇴직금 등 누락</td>
+</tr>
+<tr>
+<td style="text-align: center;">3층</td>
+<td style="text-align: center;"><strong>이사회</strong></td>
+<td style="text-align: center;">개별 이사 배분 결정</td>
+<td style="text-align: center;">대표이사에게 사실상 위임</td>
+<td style="text-align: center;">❌ 위임 범위 위반</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[근거·조문] <strong>상법 제388조(이사의 보수)</strong> — 이사의 보수는 정관에 그 액을 정하지 아니한 때에는 주주총회의 결의로 이를 정한다.
+내부 WIKI 검증 (D-이사보수결정_위임한계, canonical) + MCP FOUND (MST 284143)</p>
+</blockquote>
+<h3>1.2 보수 개념의 범위 — '급여'만이 아니다</h3>
+<p>대법원은 보수의 개념을 넓게 해석한다. 단순히 급여뿐만 아니라 직무수행의 대가로 지급되는 <strong>모든 금전</strong>이 보수에 포함된다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">항목</th>
+<th style="text-align: center;">보수 해당 여부</th>
+<th style="text-align: center;">근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">급여</td>
+<td style="text-align: center;">✅ 당연히 보수</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td style="text-align: center;">상여·성과급</td>
+<td style="text-align: center;">✅ 보수</td>
+<td style="text-align: center;">실적 연동 여부 불문</td>
+</tr>
+<tr>
+<td style="text-align: center;">퇴직금</td>
+<td style="text-align: center;">✅ <strong>보수</strong>(2019다296617)</td>
+<td style="text-align: center;">주총 승인 없이 지급 시 무효</td>
+</tr>
+<tr>
+<td style="text-align: center;">스톡옵션(행사이익)</td>
+<td style="text-align: center;">✅ <strong>보수</strong>로 보는 견해 다수</td>
+<td style="text-align: center;">부여 시 주총 승인 필요</td>
+</tr>
+<tr>
+<td style="text-align: center;">주택자금 대여</td>
+<td style="text-align: center;">❌ 업무 무관 시 보수 아님</td>
+<td style="text-align: center;">가지급금으로 처리</td>
+</tr>
+<tr>
+<td style="text-align: center;">법인카드 사적 사용</td>
+<td style="text-align: center;">❌ 보수 아님 (횡령 문제)</td>
+<td style="text-align: center;">별도 문제</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[근거·판례] <strong>대법원 2019. 12. 27. 선고 2019다296617 판결</strong> — 퇴직금도 이사 보수에 포함되므로, 주주총회 결의 없이 퇴직금 지급 기준을 정하거나 지급하는 것은 무효
+내부 WIKI 검증 (D-이사보수논란회사가, canonical)</p>
+</blockquote>
+<hr /></section><section class="blk" id="s4"><div class="secl">SECTION</div><h2>2. 간극 ① — 한도 설정의 문제</h2>
+<p><strong>한눈에</strong>: 주총이 '보수 총액 50억 원'이라는 포괄적 한도만 정하고, 항목별·이사별 구분 없이 운용하면 실질적 통제가 불가능하다. 2025다214605는 이사회가 개별 이사의 보수를 구체적으로 분배하는 결의를 해야 한다고 명시했다.</p>
+<h3>2.1 문제되는 관행</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">관행</th>
+<th>내용</th>
+<th style="text-align: center;">리스크</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>포괄 한도 설정</strong></td>
+<td>"임원 보수 총액 50억 원 이내"만 정함</td>
+<td style="text-align: center;">개별 이사 과다 보수 통제 불가</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>대표이사 위임</strong></td>
+<td>이사회 결의 없이 대표이사가 개별 보수 결정</td>
+<td style="text-align: center;"><strong>2025다214605</strong>로 전면 금지</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>임원급여지급규정 위임</strong></td>
+<td>정관이 '임원급여지급규정에 따른다'고만 규정</td>
+<td style="text-align: center;">포괄 위임으로 무효</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>항목별 구분 없음</strong></td>
+<td>급여·상여·퇴직금을 하나의 한도로 통합</td>
+<td style="text-align: center;">퇴직금 과다 지급 리스크</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>비등기 임원과 혼합</strong></td>
+<td>등기·비등기 임원 보수를 혼합하여 한도 설정</td>
+<td style="text-align: center;">등기이사 한도가 비준수될 위험</td>
+</tr>
+</tbody>
+</table>
+<h3>2.2 적법 한도 설정 방법 (2025다214605 기준)</h3>
+<blockquote>
+<p>[근거·판례] <strong>대법원 2025. 12. 11. 선고 2025다214605 판결</strong> — 정관 또는 주주총회에서 임원의 보수 총액 내지 한도액만을 정하고 개별 이사에 대한 지급액 등 구체적인 사항을 이사회에 위임하는 것은 가능하지만, 이사의 보수에 관한 사항을 이사회에 포괄적으로 위임하거나 대표이사에게 직접 위임하는 것은 허용되지 않는다.
+내부 WIKI 검증 (D-이사보수결정_위임한계, canonical)</p>
+</blockquote>
+<p><strong>표준 주총 결의안 예시</strong>:</p>
+<blockquote>
+<p><strong>제X호 의안: 이사 보수 한도 승인의 건</strong></p>
+<p>당기 정기주주총회는 이사의 보수 한도를 다음과 같이 정한다.</p>
+<ol>
+<li><strong>총액 한도</strong>: 이사 전원의 보수 총액은 50억 원(퇴직금 포함)을 초과하지 아니한다.</li>
+<li><strong>항목별 한도</strong>: 급여 30억 원, 상여금 15억 원, 퇴직금 5억 원</li>
+<li><strong>개별 분배</strong>: 개별 이사에 대한 구체적 보수 분배는 이사회 결의로 정하되, 각 이사의 직책·책임·성과를 반영하여 합리적으로 산정한다.</li>
+<li><strong>사후 보고</strong>: 집행 결과를 차기 정기주주총회에 보고한다.</li>
+</ol>
+</blockquote>
+<h3>2.3 실무 정비 체크리스트</h3>
+<ul>
+<li>[ ] 정관이 대표이사에게 보수 결정을 위임하고 있는지 확인 → 개정 필요</li>
+<li>[ ] 주총 보수 한도 결의가 '총액'만 있고 항목별 구분이 없는지 확인 → 개선</li>
+<li>[ ] 퇴직금 지급 기준이 주총 승인을 받았는지 확인 → 미승인 시 정비</li>
+<li>[ ] 이사회 결의로 각 이사의 개별 보수액을 결정하고 있는지 확인</li>
+<li>[ ] 결의록에 개별 보수 분배의 기준과 근거가 명시되어 있는지 확인</li>
+</ul>
+<hr /></section><section class="blk" id="s5"><div class="secl">SECTION</div><h2>3. 간극 ② — 주주인 이사의 의결권 제한</h2>
+<p><strong>한눈에</strong>: 대법원 2025다219931은 주주인 이사가 이사 보수 한도 안건에서 <strong>특별이해관계인</strong>으로서 의결권을 행사할 수 없다고 판시했다. 이는 대주주가 이사를 겸하는 가족기업·중견기업에 특히 중요한 변화다.</p>
+<h3>3.1 적용 요건</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">요건</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">지위 요건</td>
+<td>의결권 행사자가 <strong>주주인 동시에 이사</strong>일 것</td>
+</tr>
+<tr>
+<td style="text-align: left;">안건 요건</td>
+<td>이사 <strong>보수 한도액</strong>을 정하는 안건일 것 (개별 보수뿐 아니라 전체 한도도 포함)</td>
+</tr>
+<tr>
+<td style="text-align: left;">이해관계</td>
+<td>보수 한도가 해당 이사의 장래 보수에 영향을 미칠 수 있을 것</td>
+</tr>
+<tr>
+<td style="text-align: left;">효과</td>
+<td>해당 주주의 의결권 행사 불가 + <strong>정족수 산정 시 발행주식총수에서 제외</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">예외</td>
+<td>1인 주주 겸 대표이사 등 주총 성립 불가능한 경우</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[근거·조례] <strong>대법원 2026. 4. 2. 선고 2025다219931 판결</strong> — "보수한도액은 향후 개별 이사에 대한 구체적인 보수액을 결정하는 데 중요한 영향을 미칠 수밖에 없다"며 주주인 이사는 보수한도액 결의에서 의결권을 행사할 수 없다고 명시
+내부 WIKI 검증</p>
+</blockquote>
+<h3>3.2 실무 영향</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">상황</th>
+<th style="text-align: center;">기존 관행</th>
+<th style="text-align: center;">변경 후</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">대주주 겸 이사가 주총 보수 한도 투표</td>
+<td style="text-align: center;">가능</td>
+<td style="text-align: center;">❌ <strong>불가</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">소수주주만으로 정족수 충족 판단</td>
+<td style="text-align: center;">대주주 포함 산정</td>
+<td style="text-align: center;">❌ <strong>대주주 주식 제외</strong> 후 산정</td>
+</tr>
+<tr>
+<td style="text-align: left;">보수 한도 인상 안건 통과 요건</td>
+<td style="text-align: center;">용이</td>
+<td style="text-align: center;">❌ <strong>까다로워짐</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">1인 주주 겸 대표이사</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✅ 예외 인정 (회사 운영 마비 방지)</td>
+</tr>
+</tbody>
+</table>
+<h3>3.3 대응 방안</h3>
+<ul>
+<li><strong>공격 측(소수주주)</strong>: 대주주 겸 이사가 보수 한도 안건에 참여했다면 결의 취소 소송(상법 제376조, 결의일 2개월) 제기 가능</li>
+<li><strong>방어 측(회사)</strong>: ①보수 한도 결의 시 주주인 이사는 의결권 행사 자제 ②의사록에 기권 사실과 정족수 계산 근거 명시 ③소규모 회사 특례(자본금 10억 미만, 제388조 단서) 검토</li>
+</ul>
+<hr /></section><section class="blk" id="s6"><div class="secl">SECTION</div><h2>4. 간극 해소를 위한 법무팀 5대 액션 플랜</h2>
+<p><strong>한눈에</strong>: 아래 5개 액션을 순서대로 실행하면 정관상 한도와 실제 지급 사이의 간극을 90% 해소할 수 있다. 2025년 두 대법원 판결을 반영한 전면 정비가 필요하다.</p>
+<h3>ACTION 1: 정관 진단 및 개정 (긴급)</h3>
+<ul>
+<li>[ ] 정관에 "임원급여지급규정에 따라 대표이사가 결정" 조항 있는지 확인 → 즉시 개정</li>
+<li>[ ] 정관에 보수 결정 위임 범위를 <strong>"주총 한도 내 이사회 결의로 분배"</strong> 로 한정</li>
+<li>[ ] 퇴직금 지급 기준을 정관 또는 주총 결의 사항으로 명시</li>
+</ul>
+<h3>ACTION 2: 주총 결의 정비</h3>
+<ul>
+<li>[ ] 보수 한도 결의 시 <strong>총액뿐 아니라 항목별(급여·상여·퇴직금) 한도</strong> 설정</li>
+<li>[ ] 주주인 이사는 보수 한도 안건에서 <strong>의결권 배제</strong> (2025다219931)</li>
+<li>[ ] 의사록에 의결권 배제 근거·정족수 계산·분배 기준 명확히 기재</li>
+</ul>
+<h3>ACTION 3: 이사회 결의 내실화</h3>
+<ul>
+<li>[ ] 주총 한도 내 개별 이사별 보수액 <strong>구체적 배분 결의</strong> (2025다214605)</li>
+<li>[ ] 결의록에 배분 기준(직책·책임·성과)과 근거 명시</li>
+<li>[ ] 포괄 위임 금지 — 대표이사 개인 판단으로 보수 결정 금지</li>
+</ul>
+<h3>ACTION 4: 보수위원회 활용</h3>
+<ul>
+<li>[ ] 상장사: 보수위원회 설치(기관투자자 평가·의결권 자문사 대응)</li>
+<li>[ ] 중견기업: 보수위원회 권장 (독립성·투명성 확보)</li>
+<li>[ ] ISO 30414 인센티브 기준 등 객관적 보수 기준 도입 검토</li>
+</ul>
+<h3>ACTION 5: 사후 관리</h3>
+<ul>
+<li>[ ] 보수 집행 결과를 차기 주총에 보고 (투명성 확보)</li>
+<li>[ ] 공시 의무 확인(상장사: 임원보수 공시, 자본시장법 제159조)</li>
+<li>[ ] D&amp;O 보험 가입 범위와 보수 정책의 정합성 확인</li>
+</ul>
+<hr /></section><section class="blk" id="s7"><div class="secl">SECTION</div><h2>자주 묻는 질문 (Q&amp;A)</h2>
+<p><strong>Q1. 정관이나 주총 결의 없이 이사회 결의만으로 지급한 보수는 어떻게 되나요?</strong>
+<strong>무효</strong>입니다. 상법 제388조는 강행규정으로, 이사회 결의만으로 이사 보수를 지급하는 것은 위법입니다(대법원 2018다290436). 회사는 해당 이사에게 이미 지급한 보수를 <strong>부당이득으로 반환 청구</strong>할 수 있습니다(서울동부지법 2023가합102999). 개별 이사 입장에서는 보수 청구권 자체가 발생하지 않으므로, 사전에 정관 또는 주총 결의를 통해 보수 지급 근거를 마련해야 합니다.</p>
+<p><strong>Q2. 퇴직금도 주총 승인이 필요한가요?</strong>
+<strong>네, 필요합니다.</strong> 대법원 2019다296617은 퇴직금도 이사 보수에 포함된다고 판시했습니다. 따라서 퇴직금 지급 기준과 한도도 주주총회 승인을 받아야 합니다. 퇴직금만 별도의 주총 결의 없이 관행적으로 지급해 온 회사는 즉시 정비가 필요합니다.</p>
+<p><strong>Q3. 대표이사가 정관·주총 결의 없이 자신의 보수를 결정해도 되나요?</strong>
+<strong>안 됩니다.</strong> 상법 제388조는 이사 스스로 보수를 결정하는 것을 금지합니다. 대표이사도 '이사'이므로 자신의 보수는 주총(또는 정관)이 정해야 합니다. 2025다214605는 대표이사에게 보수 결정권을 위임하는 정관 규정도 무효라고 명시했습니다.</p>
+<p><strong>Q4. 비등기 임원의 보수도 주총 승인이 필요한가요?</strong>
+<strong>필요하지 않습니다.</strong> 상법 제388조는 '이사'(등기임원)의 보수에 적용되므로, 비등기 임원(미등기 임원)의 보수는 주총 결의 대상이 아닙니다. 다만 비등기 임원에 과도한 보수를 지급하여 등기이사 보수 한도를 우회하는 행위(예: 이사를 비등기로 전환 후 고액 보수)는 상법 제388조 취지를 잠탈하는 것으로 <strong>무효</strong> 가능성이 있으므로 주의해야 합니다.</p>
+<p><strong>Q5. 2025다219931 판결 이후 보수 한도 결의는 어떻게 진행해야 하나요?</strong>
+주주인 이사는 보수 한도 안건에서 <strong>의결권을 행사할 수 없습니다</strong>. 따라서 ①주총 소집 전 주주인 이사 명단을 확정하고, ②해당 이사의 주식 수를 발행주식총수에서 제외한 후 정족수를 산정하며, ③의사록에 의결권 배제 사실과 정족수 계산 근거를 명확히 기재해야 합니다. 1인 주주 겸 대표이사인 경우 예외가 인정될 수 있으나, 법률 자문을 받는 것이 안전합니다.</p>
+<hr /></section><section class="blk" id="s8"><div class="secl">SECTION</div><h2>최신성·면책 고지</h2>
+<p>본 자료는 <strong>2026-07-10</strong> 기준으로 작성되었으며, 인용 법령·판례는 작성 시점의 현행성을 확인한 것입니다.
+법령은 개정될 수 있고 사안마다 결론이 달라질 수 있으므로, 실제 의사결정 전 최신 법령과 개별 사실관계 확인이 필요합니다.
+본 자료는 일반적 법률 정보 제공이며 특정 사안에 대한 법률 자문이 아닙니다.</p>
+<hr /></section><section class="blk" id="s9"><div class="secl">SECTION</div><h2>검증 로그 (내부용)</h2>
+<table>
+<thead>
+<tr>
+<th>인용</th>
+<th style="text-align: center;">유형</th>
+<th>검증 결과</th>
+<th style="text-align: center;">판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>상법 제388조</td>
+<td style="text-align: center;">조문</td>
+<td>MCP FOUND (MST 284143) + 내부 WIKI D-이사보수결정_위임한계 canonical</td>
+<td style="text-align: center;">등재</td>
+</tr>
+<tr>
+<td>상법 제376조</td>
+<td style="text-align: center;">조문</td>
+<td>내부 WIKI canonical</td>
+<td style="text-align: center;">등재</td>
+</tr>
+<tr>
+<td>대법원 2025다214605</td>
+<td style="text-align: center;">판례</td>
+<td>내부 WIKI D-이사보수결정_위임한계 canonical</td>
+<td style="text-align: center;">등재</td>
+</tr>
+<tr>
+<td>대법원 2025다219931</td>
+<td style="text-align: center;">판례</td>
+<td>내부 WIKI D-이사보수의결권제한 canonical</td>
+<td style="text-align: center;">등재</td>
+</tr>
+<tr>
+<td>대법원 2019다296617</td>
+<td style="text-align: center;">판례</td>
+<td>내부 WIKI D-이사보수논란회사가 canonical</td>
+<td style="text-align: center;">등재</td>
+</tr>
+<tr>
+<td>대법원 2018다290436</td>
+<td style="text-align: center;">판례</td>
+<td>내부 WIKI D-이사보수논란회사가 canonical</td>
+<td style="text-align: center;">등재</td>
+</tr>
+</tbody>
+</table></section><section class="blk faq" id="faq"><div class="secl">NOTICE</div><h2>확인 사항</h2><div class="notice">이 문서는 일반적인 법률 정보 제공을 위한 자료입니다. 구체적인 사실관계와 최신 법령?판례에 따라 결론이 달라질 수 있습니다.</div></section></main></div><footer class="footer"><div class="wrap"><h3>조우성 변호사</h3><p>실무에 바로 활용할 수 있는 법률 지식과 대응 가이드를 제공합니다.</p></div></footer></body></html>
