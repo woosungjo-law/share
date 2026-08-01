@@ -1,183 +1,345 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex,nofollow">
-<title>디지털콘텐츠 청약철회 — 게임·구독·캐시 환불 완전 정복</title>
-<style>
-:root { --bg:#0b0f14; --card:#111820; --muted:#8b95a1; --text:#e6edf3; --accent:#3b82f6; --accent-soft:rgba(59,130,246,.12); --border:#1f2a3a; --warn:#f59e0b; --danger:#ef4444; --ok:#22c55e; }
-*{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth}
-body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Noto Sans KR',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
-a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
-.container{max-width:960px;margin:0 auto;padding:24px 16px}
-header{text-align:center;padding:32px 0 16px;border-bottom:1px solid var(--border);margin-bottom:24px}
-header h1{font-size:clamp(1.5rem,4vw,2rem);font-weight:800;line-height:1.3;margin-bottom:8px;color:var(--text)}
-header .meta{font-size:.85rem;color:var(--muted);display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
-header .meta span{display:flex;align-items:center;gap:6px}
-.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:.7rem;font-weight:700;background:var(--accent-soft);color:var(--accent)}
-.badge.warn{background:rgba(245,158,11,.12);color:var(--warn)}
-.badge.danger{background:rgba(239,68,68,.12);color:var(--danger)}
-.tl;dr{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:24px;font-size:.9rem}
-.tl;dr summary{cursor:pointer;font-weight:700;color:var(--accent);margin-bottom:8px}
-.tl;dr ul{margin-left:16px}
-.tl;dr li{margin:6px 0}
-section{margin-bottom:32px}
-h2{font-size:1.35rem;font-weight:800;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--accent);color:var(--text)}
-h3{font-size:1.1rem;font-weight:700;margin:20px 0 10px;color:var(--text)}
-.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:16px}
-.card h3{margin-top:0;border-bottom:1px solid var(--border);padding-bottom:8px;margin-bottom:12px}
-.grid{display:grid;gap:16px}
-.grid-2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-.table-wrap{overflow-x:auto}
-table{width:100%;border-collapse:collapse;font-size:.9rem}
-th,td{border:1px solid var(--border);padding:10px 12px;text-align:left}
-th{background:var(--accent-soft);color:var(--accent);font-weight:700}
-tr:nth-child(even) td{background:rgba(255,255,255,.02)}
-.muted{color:var(--muted);font-size:.9rem}
-.checklist{list-style:none;padding:0}
-.checklist li{position:relative;padding-left:24px;margin:8px 0}
-.checklist li::before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:700}
-.faq details{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 16px;margin-bottom:8px}
-.faq summary{cursor:pointer;font-weight:700;color:var(--text)}
-.faq summary::marker{content:"❓ ";color:var(--accent)}
-.faq p{margin-top:8px;color:var(--muted)}
-.disclaimer{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;margin-top:32px;font-size:.85rem;color:var(--muted)}
-.cta{background:linear-gradient(135deg,var(--accent-soft),rgba(34,197,85,.1));border:1px solid var(--accent);border-radius:12px;padding:20px;margin-top:24px;text-align:center}
-.cta h3{margin:0 0 8px;border:none;color:var(--accent)}
-.cta p{color:var(--muted);margin:0}
-footer{text-align:center;padding:24px 0;color:var(--muted);font-size:.8rem;border-top:1px solid var(--border);margin-top:32px}
-@media (max-width:640px){
-  header{padding:24px 0 12px}
-  .card{padding:16px}
-  h2{font-size:1.2rem}
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>디지털콘텐츠 청약철회 — 게임·구독·캐시 환불의 기준</title><style>
+/* ============================================================
+   법률 대시보드 전자책 — Apollo 기반 경량 커스텀 (공개 롱스크롤)
+   Apollo 토큰(버건디 액센트 + 웜 화이트 + 딥와인 헤더) 상속.
+   의뢰인 리포트(리스크레이더 6뷰)와 달리 공개 독서형 롱스크롤.
+   self-contained: 외부 CDN/폰트/이미지/스크립트 의존 없음.
+   ============================================================ */
+:root{
+  --bg:#f5f1f2; --panel:#ffffff; --panel2:#faf6f7;
+  --line:#ebe2e5; --line2:#ddccd2;
+  --ink:#2c1d26; --ink2:#56424c; --muted:#8a7b82; --faint:#b3a6ab;
+  --wine:#7a2e3a; --wine-d:#5a1f2b; --wine-l:#9c4456;
+  --wine-tint:#f4e9ec; --wine-tint-ln:#ecd7dd;
+  --header-bg:#3a1525; --header-bg2:#4e1f32; --header-accent:#d4a0aa;
+  --rH:#c74a3c; --rM-bg:#f8e4b8; --rM-tx:#7d520a; --rL-bg:#d6ecdb; --rL-tx:#287a54;
+  --amber:#b45309; --green:#287a54;
+  --font:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Noto Sans KR',sans-serif;
+  --maxw:1120px; --readw:760px;
 }
-</style>
-</head>
-<body>
-<div class="container">
-<header>
-<h1>디지털콘텐츠 청약철회</h1>
-<p style="color:var(--muted);margin-top:8px;font-size:1.05rem">게임·구독·캐시 환불 완전 정복</p>
-<div class="meta">
-<span class="badge">B2C</span>
-<span class="badge">플랫폼·소비자법</span>
-<span class="badge warn">절차형</span>
-<span class="badge">L2 검증</span>
-<span class="muted">읽는 시간 약 6분</span>
-</div>
-</header>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
 
-<details class="tl;dr" open>
-<summary>3줄 요약 (TL;DR)</summary>
+/* 읽기 진행바 */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;
+  background:linear-gradient(90deg,var(--wine),var(--wine-l));transition:width .1s linear}
+
+/* 헤더 표지 (딥와인, 유일한 딥 컬러) */
+.header{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0}
+.header .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 26px}
+.header .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;
+  color:var(--header-accent);border:1px solid rgba(212,160,170,.4);border-radius:999px;padding:4px 12px}
+.header .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--header-accent)}
+
+/* 히어로 */
+.hero{max-width:var(--maxw);margin:0 auto;padding:30px 26px 8px}
+.hero .eb{font-size:12px;font-weight:700;color:var(--wine);letter-spacing:.02em;margin-bottom:10px}
+.hero h1{font-size:30px;line-height:1.28;font-weight:800;margin:0 0 16px;color:var(--ink);letter-spacing:-.01em}
+.hero .tldr{background:var(--wine-tint);border:1px solid var(--wine-tint-ln);border-left:4px solid var(--wine);
+  border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.hero .tldr .lb{font-size:12px;font-weight:700;color:var(--wine-d);margin-bottom:8px}
+.hero .tldr ul{margin:0;padding-left:18px}
+.hero .tldr li{margin:4px 0;font-size:15px;color:var(--ink2)}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:12.5px;color:var(--muted);margin-bottom:18px}
+.hero .meta .vchip{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);
+  font-weight:700;border-radius:6px;padding:3px 9px;font-size:11.5px}
+.hero .cta-row{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:9px;
+  padding:11px 18px;text-decoration:none;cursor:pointer;border:1px solid transparent}
+.btn-p{background:var(--wine);color:#fff}
+.btn-p:hover{background:var(--wine-d)}
+.btn-o{background:#fff;color:var(--wine-d);border-color:var(--line2)}
+.btn-o:hover{background:var(--panel2)}
+
+/* 셸: 좌측 목차 + 본문 */
+.app{max-width:var(--maxw);margin:0 auto;padding:8px 26px 60px;
+  display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:start}
+
+/* 목차 (데스크톱 = 좌측 sticky) */
+.toc{position:sticky;top:24px}
+.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;
+  margin:0 0 10px;padding-left:2px}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}
+.toc li{counter-increment:toc;margin:1px 0}
+.toc a{display:flex;gap:9px;font-size:13.5px;color:var(--ink2);text-decoration:none;
+  padding:7px 10px;border-radius:8px;border-left:3px solid transparent;line-height:1.4}
+.toc a::before{content:counter(toc,decimal-leading-zero);color:var(--faint);font-weight:700;font-size:11.5px;flex:none}
+.toc a:hover{background:var(--panel2)}
+.toc a.active{background:var(--wine-tint);border-left-color:var(--wine);color:var(--wine-d);font-weight:700}
+.toc-toggle{display:none}
+
+/* 본문 */
+.content{max-width:var(--readw);min-width:0}
+section.blk{scroll-margin-top:24px;margin-bottom:38px}
+.secl{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.05em;margin:0 0 12px}
+.secl::before{content:"";width:7px;height:15px;background:var(--wine);border-radius:2px;flex:none}
+section.blk h2{font-size:23px;font-weight:800;line-height:1.35;margin:0 0 14px;color:var(--ink);letter-spacing:-.01em}
+section.blk h3{font-size:17px;font-weight:700;margin:26px 0 10px;color:var(--wine-d)}
+section.blk p{margin:0 0 14px;color:var(--ink2)}
+section.blk ul,section.blk ol{margin:0 0 14px;padding-left:22px;color:var(--ink2)}
+section.blk li{margin:6px 0}
+strong{color:var(--ink);font-weight:700}
+a.ln{color:var(--wine-l);text-decoration:none;border-bottom:1px solid var(--wine-tint-ln)}
+a.ln:hover{border-bottom-color:var(--wine-l)}
+
+/* 핵심요약 카드 */
+.summary{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.summary .lb{font-size:11px;font-weight:700;color:var(--wine-d);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.summary ul{margin:0;padding-left:18px}
+
+/* 근거 카드 (조문·판례) */
+.ev{background:#fff;border:1px solid var(--line);border-left:4px solid var(--wine);border-radius:10px;
+  padding:13px 15px;margin:0 0 12px}
+.ev .top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px}
+.ev .kind{font-size:11px;font-weight:700;color:#fff;background:var(--wine);border-radius:5px;padding:2px 8px}
+.ev .kind.law{background:var(--wine-d)}
+.ev .kind.case{background:var(--amber)}
+.ev .cite{font-size:13.5px;font-weight:700;color:var(--ink)}
+.ev .vtick{margin-left:auto;font-size:11px;font-weight:700;color:var(--rL-tx);background:var(--rL-bg);border-radius:5px;padding:2px 7px}
+.ev .gist{font-size:14px;color:var(--ink2);margin:0}
+.ev .date{font-size:12px;color:var(--muted);margin-top:5px}
+
+/* 다이어그램 — 플로우 / 체크리스트 (CSS·SVG only) */
+.figure{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin:0 0 18px}
+.figure .cap{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:12px}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px}
+.flow .step{flex:1;min-width:120px;background:var(--wine-tint);border:1px solid var(--wine-tint-ln);
+  border-radius:10px;padding:11px 12px;position:relative}
+.flow .step .n{font-size:11px;font-weight:700;color:var(--wine)}
+.flow .step .t{font-size:13.5px;font-weight:700;color:var(--ink);margin-top:2px}
+.flow .step .d{font-size:12.5px;color:var(--ink2);margin-top:3px}
+.checklist{list-style:none;margin:0;padding:0}
+.checklist li{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+.checklist li:last-child{border-bottom:none}
+.checklist .ck{flex:none;width:20px;height:20px;border-radius:5px;background:var(--rL-bg);color:var(--rL-tx);
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+
+/* 위험도 칩 */
+.chip{display:inline-flex;align-items:center;justify-content:center;min-width:34px;font-size:11px;font-weight:500;
+  border-radius:6px;padding:3px 8px;margin-right:4px}
+.c-H{background:var(--rH);color:#fff}
+.c-M{background:var(--rM-bg);color:var(--rM-tx)}
+.c-L{background:var(--rL-bg);color:var(--rL-tx)}
+
+/* 표 */
+.tbl-wrap{overflow-x:auto;margin:0 0 18px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px}
+
+/* FAQ (아코디언) */
+.faq details{background:#fff;border:1px solid var(--line);border-radius:10px;margin:0 0 10px;overflow:hidden}
+.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:15px;font-weight:700;color:var(--ink);
+  display:flex;align-items:center;gap:10px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--wine-tint);
+  color:var(--wine-d);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+.faq details[open] summary{border-bottom:1px solid var(--line);color:var(--wine-d)}
+.faq .a{padding:14px 16px;font-size:14.5px;color:var(--ink2)}
+
+/* 최신성·면책 고지 */
+.notice{background:#fff;border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;
+  font-size:12.5px;color:var(--muted);line-height:1.7}
+
+/* 맨 위로 버튼 */
+#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--wine-tint-ln);background:var(--wine);color:#fff;font-size:18px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;
+  box-shadow:0 4px 14px rgba(58,21,37,.28)}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{background:var(--wine-d)}
+
+/* 푸터 프로필 + 상담 CTA */
+.footer{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0;margin-top:20px}
+.footer .wrap{max-width:var(--maxw);margin:0 auto;padding:34px 26px}
+.footer h3{font-size:20px;font-weight:800;margin:0 0 8px;color:#fff}
+.footer p{font-size:14px;color:rgba(255,255,255,.72);margin:0 0 6px;line-height:1.7}
+.footer .prof{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end}
+.footer .cta-f{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.footer .btn-f{background:#fff;color:var(--wine-d)}
+.footer .btn-f:hover{background:var(--header-accent)}
+.footer .btn-fo{background:transparent;color:#f4eef0;border-color:rgba(255,255,255,.35)}
+.footer .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:22px;padding-top:14px;
+  font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.7}
+
+/* ── 모바일 (≤820px) ── */
+@media(max-width:820px){
+  .hero h1{font-size:24px}
+  .app{grid-template-columns:1fr;gap:0;padding-top:0}
+  .toc{position:static;margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 8px}
+  .toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;
+    cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--wine-d);padding:9px 8px}
+  .toc-toggle .ar{transition:transform .2s}
+  .toc.closed .toc-toggle .ar{transform:rotate(-90deg)}
+  .toc .tt{display:none}
+  .toc ol{max-height:50vh;overflow:auto}
+  .toc.closed ol{display:none}
+  section.blk h2{font-size:20px}
+  th,td{white-space:nowrap}
+}
+@media print{
+  #progress,.toc,.cta-row,.footer .cta-f{display:none}
+  .header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .app{display:block}
+}
+</style></head><body><div id="progress"></div><button id="toTop" aria-label="맨 위로">?</button><header class="header"><div class="wrap"><span class="badge"><span class="dot"></span>조우성 변호사 ? 법률 인사이트</span></div></header><div class="hero"><div class="eb">전자책 대시보드 ? 실무 가이드</div><h1>디지털콘텐츠 청약철회 — 게임·구독·캐시 환불의 기준</h1><div class="tldr"><div class="lb">3줄 요약 (TL;DR)</div><ul><li>원문 Markdown의 제목?본문?표?체크리스트를 반영한 공개용 HTML입니다.</li><li>문서의 핵심 내용과 실무상 확인 포인트를 한 화면에서 확인할 수 있습니다.</li><li>구체적인 사안은 최신 법령?판례와 사실관계 확인이 필요합니다.</li></ul></div><div class="meta"><span>원문: EBOOK-242-디지털콘텐츠-청약철회.md</span><span class="vchip">원문 기반 HTML</span></div><div class="cta-row"><a class="btn btn-p" href="#s1">핵심 내용 보기</a><a class="btn btn-o" href="#faq">확인 사항</a></div></div><div class="app"><nav class="toc" id="toc"><div class="tt">목차</div><ol id="toc-list"><li><a href="#s1">본문</a></li><li><a href="#s2">3줄 요약 (TL;DR)</a></li><li><a href="#s3">1. 디지털콘텐츠 청약철회 — 기본 원칙과 예외</a></li><li><a href="#s4">2. 유료재화(캐시·다이아) vs 단일 아이템(스킨·캐릭터) — 무엇이 다른가</a></li><li><a href="#s5">3. 순차 제공·구독형 콘텐츠 — 미제공 분량 환불 가능</a></li><li><a href="#s6">4. 실무 체크리스트 — 소비자 측 vs 사업자 측</a></li><li><a href="#s7">5. 자주 묻는 질문 (Q&amp;amp;A)</a></li><li><a href="#s8">최신성·면책 고지</a></li><li><a href="#s9">검증 로그 (내부용 — 게시 시 제거)</a></li></ol></nav><main class="content"><section class="blk" id="s1"><div class="secl">SECTION</div><blockquote>
+<p>[!web] 웹으로 보기
+(게시 후 여기에 https://woosungjo-law.github.io/share/d/&lt;토큰&gt;.html 삽입)</p>
+</blockquote>
+<p><em>출처: 조우성 변호사 / 로펌 머스트노우 | 문의: law@mustknow.co.kr</em></p>
+<h1>디지털콘텐츠 청약철회 — 게임·구독·캐시 환불의 기준</h1></section><section class="blk" id="s2"><div class="secl">SECTION</div><h2>3줄 요약 (TL;DR)</h2>
 <ul>
-<li>전자상거래법 제17조②⑤: 디지털콘텐츠 <strong>제공개시 시 청약철회 제한</strong>, 단 <strong>가분적 콘텐츠는 미제공 부분 철회 허용</strong> — 입증책임=사업자(대법원 2018다214746)</li>
-<li><strong>캐시·다이아 등 유료재화</strong>(결제수단·이용권) = 미사용 시 청약철회 가능(공정위 2012전자0578), 단일 아이템(스킨·캐릭터)은 계정 귀속 시 제공개시 주장 가능하나 <strong>가분성·시험사용 조치 여부</strong>가 쟁점</li>
-<li><strong>순차 제공·구독형 콘텐츠</strong>도 가분적 디지털콘텐츠로 보아 미제공 부분 환불 인정(서울중앙 2025나12671 — 중 미제공 50% 환불, '1/2 경과 전액불가' 약관 무효)</li>
+<li>전자상거래법상 디지털콘텐츠는 <strong>제공 개시 시 청약철회 제한</strong>되나, <strong>가분적 콘텐츠는 미제공 부분에 대해 철회 가능</strong>하고 사업자가 제공개시·제한사유·시험사용 조치 입증책임 부담(전자상거래법 제17조②⑤·⑥, 대법원 2018다214746)</li>
+<li>게임 캐시(사이버캐쉬)는 <strong>결제수단·이용권 성격</strong>으로 미사용 시 청약철회 가능(공정위 2012전자0578), 단일 아이템(스킨·캐릭터)은 계정 귀속 시 제공개시 주장 가능하나 <strong>가분성·시험사용 조치 여부</strong>가 쟁점</li>
+<li><strong>순차 제공되는 구독형 콘텐츠</strong>도 가분적 디지털콘텐츠로 보아 미제공 부분 환불 인정(서울중앙 2025나12671 — 4주 강의 중 미제공 50% 환불, '1/2 경과 전액불가' 약관 무효)</li>
 </ul>
-</details>
-
-<section>
-<h2>1. 디지털콘텐츠 청약철회 — 기본 원칙과 예외</h2>
-<div class="card">
+<hr /></section><section class="blk" id="s3"><div class="secl">SECTION</div><h2>1. 디지털콘텐츠 청약철회 — 기본 원칙과 예외</h2>
+<p><strong>한눈에</strong>
+- 전자상거래법 제17조②⑤: 디지털콘텐츠 제공개시 시 청약철회 제한
+- 가분적 디지털콘텐츠는 <strong>미제공 부분 철회 허용</strong>, 입증책임=사업자(대법원 2018다214746)
+- 시행령 제21조의2: 시험사용 제공 방법 규정, 제24조: 일부 소비 비용 공제 가능</p>
 <p>전자상거래 등에서의 소비자보호에 관한 법률(전자상거래법) 제17조 제2항 제5호는 디지털콘텐츠가 <strong>'제공이 개시된 경우'</strong> 청약철회를 제한하되, <strong>가분적 디지털콘텐츠</strong>로 구성된 계약의 경우에는 제공이 개시되지 아니한 부분에 대하여는 청약철회를 할 수 있도록 예외를 둔다. 대법원 2018다214746은 제공개시 후에도 계약이 가분적 성격을 가지면 미제공 부분 청약철회 가능성을 열어 두었고, <strong>증명책임은 사업자</strong>에게 있음을 확인했다.</p>
-</div>
-
-<div class="card">
-<h3>핵심 근거 법령</h3>
-<ul class="checklist">
-<li><strong>전자상거래법 제17조②⑤·⑥</strong> (시행 2026-07-21) — 청약철회등의 제한과 예외, 사업자 조치의무</li>
-<li><strong>전자상거래법 시행령 제21조의2</strong> (시험사용 제공방법) / <strong>제24조</strong> (일부 소비 비용)</li>
-</ul>
-</div>
-
-<div class="card">
-<h3>리딩 판례</h3>
-<p><strong>대법원 2018.6.15. 선고 2018다214746 판결</strong> — 제공개시 후 가분적 용역=미제공 부분 청약철회 가능, 증명책임=사업자</p>
-</div>
-</section>
-
-<section>
-<h2>2. 유료재화(캐시·다이아) vs 단일 아이템(스킨·캐릭터) — 무엇이 다른가</h2>
-<div class="card">
+<blockquote>
+<p>[근거·조문] <strong>전자상거래법 제17조②⑤·⑥</strong> (시행 2026-07-21) — 청약철회등의 제한과 예외, 사업자 조치의무
+✓ 웹 화이트리스트 + 한국법 MCP 현행 확인</p>
+<p>[근거·조문] <strong>전자상거래법 시행령 제21조의2</strong> (시험사용 제공방법) / <strong>제24조</strong> (일부 소비 비용)
+✓ 웹 화이트리스트 + 한국법 MCP 현행 확인</p>
+<p>[근거·판례] <strong>대법원 2018.6.15. 선고 2018다214746 판결</strong> — 제공개시 후 가분적 용역=미제공 부분 청약철회 가능, 증명책임=사업자
+✓ 실존·현행 확인 (폐기·변경 없음)</p>
+</blockquote>
+<hr /></section><section class="blk" id="s4"><div class="secl">SECTION</div><h2>2. 유료재화(캐시·다이아) vs 단일 아이템(스킨·캐릭터) — 무엇이 다른가</h2>
+<p><strong>한눈에</strong>
+- 캐시·다이아 등 <strong>유료재화(결제수단·이용권)</strong> = 미사용 시 청약철회 가능 (공정위 2012전자0578)
+- 단일 아이템(스킨 1개·캐릭터 1개) = 계정 귀속 시 <strong>제공개시 주장 가능</strong>, 가분성·시험사용 조치 여부가 쟁점</p>
 <p>게임 내 유료재화(캐시·다이아)는 <strong>결제수단·이용권 성격</strong>으로 미사용 시 청약철회가 가능하다(공정위 2012전자0578 — 넥슨모바일 사이버캐쉬). 게임산업법상 환전금지 조항과 청약철회는 충돌하지 않는다.</p>
 <p>반면 <strong>단일 아이템(스킨·캐릭터 등)</strong>은 계정 귀속 시점에 제공개시됐다고 주장할 수 있으나, <strong>가분성 판단</strong>과 <strong>시험사용 제공 조치(미리보기·한시적 이용) 이행 여부</strong>가 쟁점이 된다. 사업자가 전자상거래법 제17조 제6항에 따른 시험사용 조치를 하지 않았다면 청약철회 제한 주장이 배제된다.</p>
-</div>
-
-<div class="card">
-<h3>근거 심결례</h3>
-<ul class="checklist">
-<li><strong>공정위 2012전자0578</strong> (넥슨모바일 사이버캐쉬) — 사이버캐쉬=결제수단, 가치 현저 감소 부정, 게임법 환전금지≠청약철회 충돌 없음</li>
-<li><strong>공정위 2021전자1052</strong> (메이플스토리 큐브 확률변경 미공지) — 사실관계 확정</li>
-</ul>
-</div>
-</section>
-
-<section>
-<h2>3. 순차 제공·구독형 콘텐츠 — 미제공 분량 환불 가능</h2>
-<div class="card">
+<blockquote>
+<p>[근거·결정례] <strong>공정위 2012전자0578</strong> (넥슨모바일 사이버캐쉬) — 사이버캐쉬=결제수단, 가치 현저 감소 부정, 게임법 환전금지≠청약철회 충돌 없음
+✓ 웹 화이트리스트 + 한국법 MCP 현행 확인</p>
+<p>[근거·결정례] <strong>공정위 2021전자1052</strong> (메이플스토리 큐브 확률변경 미공지) — 사실관계 확정
+✓ 웹 화이트리스트 + 한국법 MCP 현행 확인</p>
+</blockquote>
+<hr /></section><section class="blk" id="s5"><div class="secl">SECTION</div><h2>3. 순차 제공·구독형 콘텐츠 — 미제공 분량 환불 가능</h2>
+<p><strong>한눈에</strong>
+- 서울중앙 2025나12671: 4주 온라인 강의 = 가분적 디지털콘텐츠, 미제공 3·4주차 50% 환불 인정
+- '1/2 경과 전액불가' 약관 = 무효</p>
 <p>순차적으로 제공되는 온라인 강의, 구독형 콘텐츠도 <strong>가분적 디지털콘텐츠</strong>로 보아 미제공 부분에 대한 청약철회(환불)가 인정된다. 서울중앙지법 2025.6.10. 선고 2025나12671 판결은 4주 과정 온라인 강의를 가분적 디지털콘텐츠로 보고, 미제공된 3·4주차(50%)에 대한 환불을 인정했으며, '수강 개시 후 1/2 경과 시 전액 환불 불가' 약관 조항을 <strong>무효</strong>로 판단했다.</p>
-</div>
-
-<div class="card">
-<h3>리딩 판례</h3>
-<p><strong>서울중앙지법 2025.6.10. 선고 2025나12671</strong> — 4주 강의=가분적 디지털콘텐츠, 미제공 50% 환불 인정, '1/2 경과 전액불가' 약관 무효</p>
-</div>
-</section>
-
-<section>
-<h2>4. 실무 체크리스트 — 소비자 측 vs 사업자 측</h2>
-<div class="table-wrap">
+<blockquote>
+<p>[근거·판례] <strong>서울중앙지법 2025.6.10. 선고 2025나12671</strong> — 4주 강의=가분적 디지털콘텐츠, 미제공 50% 환불 인정, '1/2 경과 전액불가' 약관 무효
+✓ 실존·현행 확인 (폐기·변경 없음)</p>
+</blockquote>
+<hr /></section><section class="blk" id="s6"><div class="secl">SECTION</div><h2>4. 실무 체크리스트 — 소비자 측 vs 사업자 측</h2>
+<p><strong>한눈에</strong>
+- 소비자: 미사용 캐시 철회(2012전자0578 원용), 가분성 주장(다수 동일 가분물 vs 단일 아이템 구분), 로그 기반 사용내역 분리 청구
+- 사업자: 단일 아이템 제공개시=계정 귀속 주장, 시험사용 조치 이행으로 §17⑥ 방어, 약관에 가분적 콘텐츠 철회 기준 명시</p>
 <table>
 <thead>
-<tr><th>구분</th><th>체크 포인트</th><th>근거</th></tr>
+<tr>
+<th>구분</th>
+<th>체크 포인트</th>
+<th>근거</th>
+</tr>
 </thead>
 <tbody>
-<tr><td rowspan="3"><strong>공격(소비자)</strong></td><td>캐시 미사용분 청약철회 청구</td><td>공정위 2012전자0578</td></tr>
-<tr><td>가분성 주장 — 다수 동일 가분물(재화 묶음) vs 단일 아이템 구분</td><td>대법원 2018다214746</td></tr>
-<tr><td>로그 기반 사용내역 분리 청구</td><td>전자상거래법 §17⑥ 입증책임 전환</td></tr>
-<tr><td rowspan="3"><strong>방어(사업자)</strong></td><td>단일 아이템 제공개시=계정 귀속 시점 주장</td><td>전자상거래법 §17②⑤</td></tr>
-<tr><td>시험사용 제공 조치(미리보기·한시적 이용) 이행 구축</td><td>전자상거래법 §17⑥, 시행령 §21의2</td></tr>
-<tr><td>약관에 가분적 콘텐츠 청약철회 기준 명시</td><td>서울중앙 2025나12671 약관 무효 회피</td></tr>
+<tr>
+<td><strong>공격(소비자)</strong></td>
+<td>캐시 미사용분 청약철회 청구</td>
+<td>공정위 2012전자0578</td>
+</tr>
+<tr>
+<td></td>
+<td>가분성 주장 — 다수 동일 가분물(재화 묶음) vs 단일 아이템 구분</td>
+<td>대법원 2018다214746</td>
+</tr>
+<tr>
+<td></td>
+<td>로그 기반 사용내역 분리 청구</td>
+<td>전자상거래법 §17⑥ 입증책임 전환</td>
+</tr>
+<tr>
+<td><strong>방어(사업자)</strong></td>
+<td>단일 아이템 제공개시=계정 귀속 시점 주장</td>
+<td>전자상거래법 §17②⑤</td>
+</tr>
+<tr>
+<td></td>
+<td>시험사용 제공 조치(미리보기·한시적 이용) 이행 구축</td>
+<td>전자상거래법 §17⑥, 시행령 §21의2</td>
+</tr>
+<tr>
+<td></td>
+<td>약관에 가분적 콘텐츠 청약철회 기준 명시</td>
+<td>서울중앙 2025나12671 약관 무효 회피</td>
+</tr>
 </tbody>
 </table>
-</div>
-</section>
-
-<section>
-<h2>5. 자주 묻는 질문 (Q&A)</h2>
-<div class="faq">
-<details>
-<summary>게임 캐시(다이아)를 충전만 하고 하나도 안 썼는데 환불받을 수 있나요?</summary>
-<p>네. 게임 캐시는 <strong>결제수단·이용권 성격</strong>으로, 미사용 시 청약철회가 가능합니다(공정위 2012전자0578). 사업자에게 제공개시·시험사용 조치 증명을 요구하세요. 게임산업법상 환전금지 조항과 청약철회는 충돌하지 않습니다.</p>
-</details>
-<details>
-<summary>스킨 하나를 샀는데 마음에 안 들어 환불하려니 '이미 지급돼서 안 된다'고 합니다. 가능한가요?</summary>
-<p>단일 아이템(스킨 1개)은 계정 귀속 시 <strong>제공개시 주장이 가능</strong>하나, <strong>가분성</strong>과 <strong>시험사용 조치(미리보기·한시적 이용) 이행 여부</strong>가 쟁점입니다. 사업자가 시험사용 조치를 하지 않았다면 청약철회 제한 주장이 배제될 수 있습니다(전자상거래법 제17조 제6항). 로그상 실제 사용(착용·장착) 내역이 없다면 미사용 주장도 병행하세요.</p>
-</details>
-<details>
-<summary>월정액 구독 서비스를 중도 해지하려는데 '이용일수만큼만 환불'이라고 합니다. 정당한가요?</summary>
-<p>구독형·순차제공 콘텐츠는 <strong>가분적 디지털콘텐츠</strong>로 보아 <strong>미제공 부분(미경과 기간) 환불</strong>이 원칙입니다(서울중앙 2025나12671). '이용일수 공제 후 잔여분 환불'이 타당하며, '1/2 경과 시 전액 환불 불가' 같은 약관은 무효로 볼 여지가 큽니다. 콘텐츠산업진흥법 제27조·제28조, 표준약관 제32조·제35조도 참고하세요.</p>
-</details>
-</div>
-</section>
-
-<div class="cta">
-<h3>다음 행동</h3>
-<p>구매 유형별 입증자료가 준비되면 <strong>법률팩(체크리스트·서식·문구·행동순서)</strong> 또는 <strong>통합팩(업종별 리스크맵·대응도구)</strong>을 검토해 보세요. 개별 사안에 대한 단정적 자문은 불가능하므로, 최신 법령과 사실관계 확인 후 전문가 상담을 권합니다.</p>
-</div>
-
-<div class="disclaimer">
-<strong>최신성·면책 고지</strong><br>
-본 자료는 <strong>2026-07-28</strong> 기준으로 작성되었으며, 인용 법령·판례는 작성 시점의 현행성을 확인한 것입니다.<br>
-법령은 개정될 수 있고 사안마다 결론이 달라질 수 있으므로, 실제 의사결정 전 최신 법령과 개별 사실관계 확인이 필요합니다.<br>
-본 자료는 일반적인 법률 정보 제공이며 특정 사안에 대한 법률 자문이 아닙니다.
-</div>
-
-<footer>
-© 2026 조우성 변호사 / 로펌 머스트노우 | 문의: law@mustknow.co.kr<br>
-게시 URL: (게시 후 삽입) | 원본: <code>content/EBOOK-242-디지털콘텐츠-청약철회.md</code>
-</footer>
-</div>
-</body>
-</html>
+<hr /></section><section class="blk" id="s7"><div class="secl">SECTION</div><h2>5. 자주 묻는 질문 (Q&amp;A)</h2>
+<p><strong>Q. 게임 캐시(다이아)를 충전만 하고 하나도 안 썼는데 환불받을 수 있나요?</strong>
+네. 게임 캐시는 <strong>결제수단·이용권 성격</strong>으로, 미사용 시 청약철회가 가능합니다(공정위 2012전자0578). 사업자에게 제공개시·시험사용 조치 증명을 요구하세요. 게임산업법상 환전금지 조항과 청약철회는 충돌하지 않습니다.</p>
+<p><strong>Q. 스킨 하나를 샀는데 마음에 안 들어 환불하려니 '이미 지급돼서 안 된다'고 합니다. 가능한가요?</strong>
+단일 아이템(스킨 1개)은 계정 귀속 시 <strong>제공개시 주장이 가능</strong>하나, <strong>가분성</strong>과 <strong>시험사용 조치(미리보기·한시적 이용) 이행 여부</strong>가 쟁점입니다. 사업자가 시험사용 조치를 하지 않았다면 청약철회 제한 주장이 배제될 수 있습니다(전자상거래법 제17조 제6항). 로그상 실제 사용(착용·장착) 내역이 없다면 미사용 주장도 병행하세요.</p>
+<p><strong>Q. 월정액 구독 서비스를 중도 해지하려는데 '이용일수만큼만 환불'이라고 합니다. 정당한가요?</strong>
+구독형·순차제공 콘텐츠는 <strong>가분적 디지털콘텐츠</strong>로 보아 <strong>미제공 부분(미경과 기간) 환불</strong>이 원칙입니다(서울중앙 2025나12671). '이용일수 공제 후 잔여분 환불'이 타당하며, '1/2 경과 시 전액 환불 불가' 같은 약관은 무효로 볼 여지가 큽니다. 콘텐츠산업진흥법 제27조·제28조, 표준약관 제32조·제35조도 참고하세요.</p>
+<hr /></section><section class="blk" id="s8"><div class="secl">SECTION</div><h2>최신성·면책 고지</h2>
+<p>본 자료는 <strong>2026-07-28</strong> 기준으로 작성되었으며, 인용 법령·판례는 작성 시점의 현행성을 확인한 것입니다.
+법령은 개정될 수 있고 사안마다 결론이 달라질 수 있으므로, 실제 의사결정 전 최신 법령과 개별 사실관계 확인이 필요합니다.
+본 자료는 일반적인 법률 정보 제공이며 특정 사안에 대한 법률 자문이 아닙니다.</p>
+<hr /></section><section class="blk" id="s9"><div class="secl">SECTION</div><h2>검증 로그 (내부용 — 게시 시 제거)</h2>
+<table>
+<thead>
+<tr>
+<th>인용</th>
+<th>유형</th>
+<th>웹 화이트리스트</th>
+<th>한국법 MCP</th>
+<th>판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>전자상거래법 제17조②⑤·⑥</td>
+<td>조문</td>
+<td>확인</td>
+<td>FOUND</td>
+<td>등재</td>
+</tr>
+<tr>
+<td>전자상거래법 시행령 제21조의2·제24조</td>
+<td>조문</td>
+<td>확인</td>
+<td>FOUND</td>
+<td>등재</td>
+</tr>
+<tr>
+<td>대법원 2018다214746</td>
+<td>판례</td>
+<td>확인</td>
+<td>FOUND</td>
+<td>등재</td>
+</tr>
+<tr>
+<td>공정위 2012전자0578</td>
+<td>심결례</td>
+<td>확인</td>
+<td>FOUND</td>
+<td>등재</td>
+</tr>
+<tr>
+<td>공정위 2021전자1052</td>
+<td>심결례</td>
+<td>확인</td>
+<td>FOUND</td>
+<td>등재</td>
+</tr>
+<tr>
+<td>서울중앙 2025나12671</td>
+<td>판례</td>
+<td>확인</td>
+<td>FOUND</td>
+<td>등재</td>
+</tr>
+</tbody>
+</table></section><section class="blk faq" id="faq"><div class="secl">NOTICE</div><h2>확인 사항</h2><div class="notice">이 문서는 일반적인 법률 정보 제공을 위한 자료입니다. 구체적인 사실관계와 최신 법령?판례에 따라 결론이 달라질 수 있습니다.</div></section></main></div><footer class="footer"><div class="wrap"><h3>조우성 변호사</h3><p>실무에 바로 활용할 수 있는 법률 지식과 대응 가이드를 제공합니다.</p></div></footer></body></html>
