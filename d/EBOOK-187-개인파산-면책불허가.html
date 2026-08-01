@@ -1,119 +1,375 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
-<title>개인파산 면책불허가 6대 사유 — 조우성 변호사</title>
-<meta name="description" content="개인파산 면책불허가 사유 6가지와 대응법. 채무자회생법 제564조, 재량면책, 비면책채권 제566조, 대법원 2024마6789·2024마6319 판례 분석.">
-<meta property="og:type" content="article">
-<meta property="og:title" content="개인파산 면책불허가 6대 사유 — 조우성 변호사">
-<meta property="og:description" content="개인파산 면책불허가 사유와 채무자·채권자 실무 대응 전략.">
-<style>
-:root{--bg:#f4f3f1;--panel:#ffffff;--panel2:#f9f7f5;--line:#e6e0da;--line2:#d4ccc2;--ink:#26211c;--ink2:#504740;--muted:#877d74;--faint:#b0a69c;--navy:#1a3a6b;--navy-d:#0f2547;--navy-l:#2e5a9e;--navy-tint:#e8edf5;--navy-tint-ln:#d0dae8;--header-bg:#0f2547;--header-bg2:#1a3a6b;--header-accent:#8db4f0;--rH:#c74a3c;--rL-bg:#dcead6;--rL-tx:#2d764e;--amber:#925309;--font:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Noto Sans KR',sans-serif;--maxw:1120px;--readw:760px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
-#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;background:linear-gradient(90deg,var(--navy),var(--navy-l));transition:width .1s linear}
-.header{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#eef4f3}
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>개인파산 면책불허가, 어떤 경우에 면책이 거절될까 — 6대 사유와 대응법</title><style>
+/* ============================================================
+   법률 대시보드 전자책 — Apollo 기반 경량 커스텀 (공개 롱스크롤)
+   Apollo 토큰(버건디 액센트 + 웜 화이트 + 딥와인 헤더) 상속.
+   의뢰인 리포트(리스크레이더 6뷰)와 달리 공개 독서형 롱스크롤.
+   self-contained: 외부 CDN/폰트/이미지/스크립트 의존 없음.
+   ============================================================ */
+:root{
+  --bg:#f5f1f2; --panel:#ffffff; --panel2:#faf6f7;
+  --line:#ebe2e5; --line2:#ddccd2;
+  --ink:#2c1d26; --ink2:#56424c; --muted:#8a7b82; --faint:#b3a6ab;
+  --wine:#7a2e3a; --wine-d:#5a1f2b; --wine-l:#9c4456;
+  --wine-tint:#f4e9ec; --wine-tint-ln:#ecd7dd;
+  --header-bg:#3a1525; --header-bg2:#4e1f32; --header-accent:#d4a0aa;
+  --rH:#c74a3c; --rM-bg:#f8e4b8; --rM-tx:#7d520a; --rL-bg:#d6ecdb; --rL-tx:#287a54;
+  --amber:#b45309; --green:#287a54;
+  --font:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Noto Sans KR',sans-serif;
+  --maxw:1120px; --readw:760px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
+
+/* 읽기 진행바 */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;
+  background:linear-gradient(90deg,var(--wine),var(--wine-l));transition:width .1s linear}
+
+/* 헤더 표지 (딥와인, 유일한 딥 컬러) */
+.header{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0}
 .header .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 26px}
-.header .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;color:var(--header-accent);border:1px solid rgba(141,180,240,.4);border-radius:999px;padding:4px 12px}
+.header .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;
+  color:var(--header-accent);border:1px solid rgba(212,160,170,.4);border-radius:999px;padding:4px 12px}
 .header .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--header-accent)}
+
+/* 히어로 */
 .hero{max-width:var(--maxw);margin:0 auto;padding:30px 26px 8px}
-.hero .eb{font-size:12px;font-weight:700;color:var(--navy);letter-spacing:.02em;margin-bottom:10px}
+.hero .eb{font-size:12px;font-weight:700;color:var(--wine);letter-spacing:.02em;margin-bottom:10px}
 .hero h1{font-size:30px;line-height:1.28;font-weight:800;margin:0 0 16px;color:var(--ink);letter-spacing:-.01em}
-.hero .tldr{background:var(--navy-tint);border:1px solid var(--navy-tint-ln);border-left:4px solid var(--navy);border-radius:12px;padding:16px 18px;margin:0 0 18px}
-.hero .tldr .lb{font-size:12px;font-weight:700;color:var(--navy-d);margin-bottom:8px}
+.hero .tldr{background:var(--wine-tint);border:1px solid var(--wine-tint-ln);border-left:4px solid var(--wine);
+  border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.hero .tldr .lb{font-size:12px;font-weight:700;color:var(--wine-d);margin-bottom:8px}
 .hero .tldr ul{margin:0;padding-left:18px}
 .hero .tldr li{margin:4px 0;font-size:15px;color:var(--ink2)}
 .hero .meta{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:12.5px;color:var(--muted);margin-bottom:18px}
-.hero .meta .vchip{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);font-weight:700;border-radius:6px;padding:3px 9px;font-size:11.5px}
+.hero .meta .vchip{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);
+  font-weight:700;border-radius:6px;padding:3px 9px;font-size:11.5px}
 .hero .cta-row{display:flex;flex-wrap:wrap;gap:10px}
-.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:9px;padding:11px 18px;text-decoration:none;cursor:pointer;border:1px solid transparent}
-.btn-p{background:var(--navy);color:#fff}
-.btn-p:hover{background:var(--navy-d)}
-.btn-o{background:#fff;color:var(--navy-d);border-color:var(--line2)}
+.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:9px;
+  padding:11px 18px;text-decoration:none;cursor:pointer;border:1px solid transparent}
+.btn-p{background:var(--wine);color:#fff}
+.btn-p:hover{background:var(--wine-d)}
+.btn-o{background:#fff;color:var(--wine-d);border-color:var(--line2)}
 .btn-o:hover{background:var(--panel2)}
-.app{max-width:var(--maxw);margin:0 auto;padding:8px 26px 60px;display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:start}
+
+/* 셸: 좌측 목차 + 본문 */
+.app{max-width:var(--maxw);margin:0 auto;padding:8px 26px 60px;
+  display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:start}
+
+/* 목차 (데스크톱 = 좌측 sticky) */
 .toc{position:sticky;top:24px}
-.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:0 0 10px;padding-left:2px}
+.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;
+  margin:0 0 10px;padding-left:2px}
 .toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}
 .toc li{counter-increment:toc;margin:1px 0}
-.toc a{display:flex;gap:9px;font-size:13.5px;color:var(--ink2);text-decoration:none;padding:7px 10px;border-radius:8px;border-left:3px solid transparent;line-height:1.4}
+.toc a{display:flex;gap:9px;font-size:13.5px;color:var(--ink2);text-decoration:none;
+  padding:7px 10px;border-radius:8px;border-left:3px solid transparent;line-height:1.4}
 .toc a::before{content:counter(toc,decimal-leading-zero);color:var(--faint);font-weight:700;font-size:11.5px;flex:none}
 .toc a:hover{background:var(--panel2)}
-.toc a.active{background:var(--navy-tint);border-left-color:var(--navy);color:var(--navy-d);font-weight:700}
+.toc a.active{background:var(--wine-tint);border-left-color:var(--wine);color:var(--wine-d);font-weight:700}
 .toc-toggle{display:none}
+
+/* 본문 */
 .content{max-width:var(--readw);min-width:0}
 section.blk{scroll-margin-top:24px;margin-bottom:38px}
-.secl{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin:0 0 12px}
-.secl::before{content:"";width:7px;height:15px;background:var(--navy);border-radius:2px;flex:none}
+.secl{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.05em;margin:0 0 12px}
+.secl::before{content:"";width:7px;height:15px;background:var(--wine);border-radius:2px;flex:none}
 section.blk h2{font-size:23px;font-weight:800;line-height:1.35;margin:0 0 14px;color:var(--ink);letter-spacing:-.01em}
-section.blk h3{font-size:17px;font-weight:700;margin:26px 0 10px;color:var(--navy-d)}
+section.blk h3{font-size:17px;font-weight:700;margin:26px 0 10px;color:var(--wine-d)}
 section.blk p{margin:0 0 14px;color:var(--ink2)}
 section.blk ul,section.blk ol{margin:0 0 14px;padding-left:22px;color:var(--ink2)}
 section.blk li{margin:6px 0}
 strong{color:var(--ink);font-weight:700}
+a.ln{color:var(--wine-l);text-decoration:none;border-bottom:1px solid var(--wine-tint-ln)}
+a.ln:hover{border-bottom-color:var(--wine-l)}
+
+/* 핵심요약 카드 */
 .summary{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:0 0 18px}
-.summary .lb{font-size:11px;font-weight:700;color:var(--navy-d);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.summary .lb{font-size:11px;font-weight:700;color:var(--wine-d);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
 .summary ul{margin:0;padding-left:18px}
-.ev{background:#fff;border:1px solid var(--line);border-left:4px solid var(--navy);border-radius:10px;padding:13px 15px;margin:0 0 12px}
+
+/* 근거 카드 (조문·판례) */
+.ev{background:#fff;border:1px solid var(--line);border-left:4px solid var(--wine);border-radius:10px;
+  padding:13px 15px;margin:0 0 12px}
 .ev .top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px}
-.ev .kind{font-size:11px;font-weight:700;color:#fff;background:var(--navy);border-radius:5px;padding:2px 8px}
-.ev .kind.law{background:var(--navy-d)}
+.ev .kind{font-size:11px;font-weight:700;color:#fff;background:var(--wine);border-radius:5px;padding:2px 8px}
+.ev .kind.law{background:var(--wine-d)}
 .ev .kind.case{background:var(--amber)}
 .ev .cite{font-size:13.5px;font-weight:700;color:var(--ink)}
 .ev .vtick{margin-left:auto;font-size:11px;font-weight:700;color:var(--rL-tx);background:var(--rL-bg);border-radius:5px;padding:2px 7px}
 .ev .gist{font-size:14px;color:var(--ink2);margin:0}
+.ev .date{font-size:12px;color:var(--muted);margin-top:5px}
+
+/* 다이어그램 — 플로우 / 체크리스트 (CSS·SVG only) */
+.figure{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin:0 0 18px}
+.figure .cap{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:12px}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px}
+.flow .step{flex:1;min-width:120px;background:var(--wine-tint);border:1px solid var(--wine-tint-ln);
+  border-radius:10px;padding:11px 12px;position:relative}
+.flow .step .n{font-size:11px;font-weight:700;color:var(--wine)}
+.flow .step .t{font-size:13.5px;font-weight:700;color:var(--ink);margin-top:2px}
+.flow .step .d{font-size:12.5px;color:var(--ink2);margin-top:3px}
+.checklist{list-style:none;margin:0;padding:0}
+.checklist li{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+.checklist li:last-child{border-bottom:none}
+.checklist .ck{flex:none;width:20px;height:20px;border-radius:5px;background:var(--rL-bg);color:var(--rL-tx);
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+
+/* 위험도 칩 */
+.chip{display:inline-flex;align-items:center;justify-content:center;min-width:34px;font-size:11px;font-weight:500;
+  border-radius:6px;padding:3px 8px;margin-right:4px}
+.c-H{background:var(--rH);color:#fff}
+.c-M{background:var(--rM-bg);color:var(--rM-tx)}
+.c-L{background:var(--rL-bg);color:var(--rL-tx)}
+
+/* 표 */
 .tbl-wrap{overflow-x:auto;margin:0 0 18px}
 table{border-collapse:collapse;width:100%;font-size:14px}
 th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
-th{background:var(--panel2);color:var(--navy-d);font-weight:700;font-size:12.5px}
+th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px}
+
+/* FAQ (아코디언) */
 .faq details{background:#fff;border:1px solid var(--line);border-radius:10px;margin:0 0 10px;overflow:hidden}
-.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:15px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:10px}
+.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:15px;font-weight:700;color:var(--ink);
+  display:flex;align-items:center;gap:10px}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--navy-tint);color:var(--navy-d);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
-.faq details[open] summary{border-bottom:1px solid var(--line);color:var(--navy-d)}
+.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--wine-tint);
+  color:var(--wine-d);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+.faq details[open] summary{border-bottom:1px solid var(--line);color:var(--wine-d)}
 .faq .a{padding:14px 16px;font-size:14.5px;color:var(--ink2)}
-.notice{background:#fff;border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;font-size:12.5px;color:var(--muted);line-height:1.7}
-#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;border:1px solid var(--navy-tint-ln);background:var(--navy);color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;box-shadow:0 4px 14px rgba(15,37,71,.28)}
+
+/* 최신성·면책 고지 */
+.notice{background:#fff;border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;
+  font-size:12.5px;color:var(--muted);line-height:1.7}
+
+/* 맨 위로 버튼 */
+#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--wine-tint-ln);background:var(--wine);color:#fff;font-size:18px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;
+  box-shadow:0 4px 14px rgba(58,21,37,.28)}
 #toTop.show{opacity:1;pointer-events:auto}
-#toTop:hover{background:var(--navy-d)}
-.footer{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#eef4f3;margin-top:20px}
+#toTop:hover{background:var(--wine-d)}
+
+/* 푸터 프로필 + 상담 CTA */
+.footer{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0;margin-top:20px}
 .footer .wrap{max-width:var(--maxw);margin:0 auto;padding:34px 26px}
 .footer h3{font-size:20px;font-weight:800;margin:0 0 8px;color:#fff}
 .footer p{font-size:14px;color:rgba(255,255,255,.72);margin:0 0 6px;line-height:1.7}
 .footer .prof{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end}
 .footer .cta-f{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-.footer .btn-f{background:#fff;color:var(--navy-d)}
+.footer .btn-f{background:#fff;color:var(--wine-d)}
 .footer .btn-f:hover{background:var(--header-accent)}
-.footer .btn-fo{background:transparent;color:#eef4f3;border-color:rgba(255,255,255,.35)}
-.footer .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:22px;padding-top:14px;font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.7}
-@media(max-width:820px){.hero h1{font-size:24px}.app{grid-template-columns:1fr;gap:0;padding-top:0}.toc{position:static;margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 8px}.toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--navy-d);padding:9px 8px}.toc-toggle .ar{transition:transform .2s}.toc.closed .toc-toggle .ar{transform:rotate(-90deg)}.toc .tt{display:none}.toc ol{max-height:50vh;overflow:auto}.toc.closed ol{display:none}section.blk h2{font-size:20px}th,td{white-space:nowrap}}
-@media print{#progress,.toc,.cta-row,.footer .cta-f{display:none}.header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}.app{display:block}}
-</style>
-</head>
-<body>
-<div id="progress"></div>
-<button id="toTop" aria-label="맨 위로" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
-<header class="header"><div class="wrap"><span class="badge"><span class="dot"></span>조우성 변호사 · 법률 인사이트</span></div></header>
-<div class="hero"><div class="eb">도산 · 개인파산 면책의 모든 것</div><h1>개인파산 면책불허가, 어떤 경우에 면책이 거절될까 — 6대 사유와 대응법</h1><div class="tldr"><div class="lb">3줄 요약 (TL;DR)</div><ul><li><strong>면책불허가 6대 사유</strong> — 채무자회생법 제564조 열거, 법원은 엄격·신중하게 판단</li><li><strong>핵심 쟁점</strong> — 재산 은닉·과도한 신용 사용, 적극적 의욕·고의 있어야 불허가</li><li><strong>재량면책·비면책채권</strong> — 불허가사유 있어도 재량 면책 가능. 조세·벌금 등은 면책돼도 제외</li></ul></div><div class="meta"><span>작성일 2026-07-29</span><span>· 기준 법령 시행일 2026-03-01</span><span class="vchip">✓ 조문·판례 2단 검증</span><span>· 읽는 시간 약 7분</span></div><div class="cta-row"><a class="btn btn-p" href="#faq">핵심만 빠르게 (Q&amp;A)</a><a class="btn btn-o" href="#consult">상담 문의</a></div></div>
-<div class="app"><nav class="toc" id="toc"><button class="toc-toggle" onclick="document.getElementById('toc').classList.toggle('closed')">목차 <span class="ar">▾</span></button><div class="tt">목차</div><ol id="toc-list"><li><a href="#s1">면책 기본 구조</a></li><li><a href="#s2">면책불허가 6대 사유</a></li><li><a href="#s3">재량면책</a></li><li><a href="#s4">비면책채권</a></li><li><a href="#s5">실무 포인트</a></li><li><a href="#faq">자주 묻는 질문</a></li></ol></nav><main class="content">
-<section class="blk" id="s1"><div class="secl">출발점</div><h2>개인파산 면책의 기본 구조</h2><div class="summary"><div class="lb">한눈에</div><ul><li>면책 = 채무자에 대한 '새출발의 기회', 파산 후 남은 채무 면제</li><li>면책불허가(§564)와 비면책채권(§566)은 개념이 다름</li><li>면책불허가 → 모든 채무에 면책 효력 없음 / 비면책채권 → 특정 채권만 제외</li></ul></div><p>개인파산 면책은 채무자에게 새출발의 기회를 주는 제도다. 법원은 채무자회생법에 따라 파산선고 후 채무자의 신청으로 면책 여부를 결정한다. 면책이 허가되면 파산절차에서 변제하고 남은 채무에 대한 책임이 면제된다. 다만 채무자회생법 제564조 각호의 면책불허가사유에 해당하면 원칙적으로 면책이 허가되지 않는다.</p><p>면책불허가(제564조)는 면책 자체가 부정되는 것이고, 비면책채권(제566조)은 면책은 허가되나 특정 채권만 면책에서 제외된다는 차이가 있다.</p><div class="ev"><div class="top"><span class="kind law">조문</span><span class="cite">채무자회생법 제564조</span><span class="vtick">✓ MCP 확인</span></div><p class="gist">면책허가 — 6가지 불허가사유. 제2항: 불허가사유가 있어도 재량으로 면책 가능.</p></div><div class="ev"><div class="top"><span class="kind law">조문</span><span class="cite">채무자회생법 제566조</span><span class="vtick">✓ MCP 확인</span></div><p class="gist">면책의 효력 — 파산채권자에 대한 채무 면제. 8가지 비면책채권 제외.</p></div></section>
-<section class="blk" id="s2"><div class="secl">6대 사유</div><h2>면책불허가 6대 사유</h2><p>법원은 각 사유를 엄격하고 신중하게 판단해야 한다. 단순한 채무 불이행이나 경제적 실패만으로 불허가되지 않는다.</p><h3>제1호: 재산 은닉·부정소비</h3><p>실무상 가장 많이 문제되는 사유. 핵심 요건은 '적극적 의욕'으로, 단순 이익 인식이 아닌 적극적 의욕에 이를 정도여야 한다(대법원 2024마6319). 급여를 제3자 계좌로 수령한 사실만으로 재산 은닉으로 단정할 수 없다. 압류금지재산(생계급여·주거급여·장애수당 등)은 파산재단에 속하지 않아 은닉 대상이 아니다.</p><h3>제2호: 허위 신용거래</h3><p>파산선고 전 1년 이내에 파산 원인이 있음에도 이를 속이거나 감추고 신용거래로 재산을 취득한 경우. 단순 지급불능만으로 부족하고 채권자 기망·은폐 의도가 필요하다.</p><h3>제3호: 허위 서류 제출·허위 진술</h3><p>허위의 채권자목록 제출 또는 재산상태 허위 진술. 대법원 2023마5633은 고의와 객관적 명백성의 필요성을 확인했다.</p><h3>제4호: 기간 제한</h3><p>일반파산 면책 후 7년, 개인회생 면책 후 5년 경과 전 재신청 제한.</p><h3>제5호: 채무자 의무 위반</h3><p>파산절차상 의무(재산 설명·출석 등) 위반. 대법원 2024마6789는 설명의무를 절차 진행에 필수적 내용으로 한정했다.</p><h3>제6호: 과다 낭비·도박·사행행위</h3><p>파산 전 과다한 낭비·도박·사행행위로 재산 감소 또는 과대 채무 부담. 정도를 넘어선 사행행위여야 인정된다.</p><div class="ev"><div class="top"><span class="kind case">판례</span><span class="cite">대법원 2024. 4. 8.자 2024마6319 결정</span><span class="vtick">✓ MCP 확인</span></div><p class="gist">재산 은닉의 '적극적 의욕' 엄격 해석. 급여계좌 수령만으로 은닉 단정 어려움.</p></div><div class="ev"><div class="top"><span class="kind case">판례</span><span class="cite">대법원 2024. 11. 21.자 2024마6789 결정</span><span class="vtick">✓ MCP 확인</span></div><p class="gist">파산자 설명의무 = 절차 진행에 필수적 내용 한정. 요구 필수성·불응 정당성 단계 심리.</p></div></section>
-<section class="blk" id="s3"><div class="secl">재량</div><h2>재량면책 — 불허가사유가 있어도 면책 가능</h2><p>채무자회생법 제564조 제2항은 불허가사유가 있어도 법원이 재량으로 면책을 허가할 수 있도록 규정한다. 법원은 채무 발생 경위, 불허가 행위의 정도와 경위, 갱생 의욕, 채권자 이의 여부 등을 종합 고려한다. 면책제도의 핵심 정신인 '채무자 재기'를 실현하기 위한 장치로, 불허가사유가 있다고 무조건 면책이 거절되는 것은 아니다.</p></section>
-<section class="blk" id="s4"><div class="secl">예외</div><h2>면책돼도 남는 채무 — 비면책채권</h2><p>면책이 허가돼도 법정 8가지 채권은 면책되지 않는다. 채권자 입장에서는 먼저 비면책채권 해당 여부를 검토해야 한다.</p><div class="tbl-wrap"><table><thead><tr><th>구분</th><th>내용</th></tr></thead><tbody><tr><td>조세</td><td>국세·지방세 등 공과금</td></tr><tr><td>벌금·과료·추징금·과태료</td><td>형사 제재 관련</td></tr><tr><td>고의 불법행위 손해배상</td><td>고의로 가한 불법행위</td></tr><tr><td>중과실 불법행위(생명·신체)</td><td>중대한 과실로 타인 생명·신체 침해</td></tr><tr><td>임금·퇴직금·재해보상금</td><td>근로자 보호</td></tr><tr><td>양육비·부양비</td><td>가족 부양 의무</td></tr><tr><td>악의의 목록 미기재 채권</td><td>채무자가 일부러 누락한 채권</td></tr></tbody></table></div><div class="ev"><div class="top"><span class="kind case">헌재</span><span class="cite">헌법재판소 2013. 3. 21. 선고 2012헌마569 전합</span><span class="vtick">✓ 확인</span></div><p class="gist">비면책채권 제도는 평등권 침해 아님. 공익성·합리성 인정.</p></div></section>
-<section class="blk" id="s5"><div class="secl">실무</div><h2>채권자와 채무자 각각의 실무 포인트</h2><h3>채무자(면책 신청인) 방어 포인트</h3><ul><li>대상 재산이 파산재단 귀속인지 먼저 확인. 압류금지재산은 은닉 대상 아님</li><li>적극적 의욕·고의 없었음을 입증. 단순 실수·태만은 불허가사유 아님</li><li>관재인 요구의 필수성 다툼. 절차 진행에 필수적인 내용만 설명 의무</li></ul><h3>채권자 공격 포인트</h3><ul><li>먼저 비면책채권(제566조) 해당 여부 검토. 해당하면 면책과 무관하게 채권 회수 가능</li><li>비면책채권 아니라면 면책불허가사유(제564조) 검토</li><li>재산 은닉·허위 서류의 객관적 증거 확보가 관건</li></ul></section>
-<section class="blk faq" id="faq"><div class="secl">Q&amp;A</div><h2>자주 묻는 질문</h2>
-<details open><summary>개인파산을 하면 모든 빚이 없어지나요?</summary><div class="a">면책이 허가되면 원칙적으로 파산채권자에 대한 채무가 면제됩니다. 다만 조세, 벌금, 고의불법행위 손해배상, 임금·퇴직금, 양육비·부양비 등 비면책채권은 면책되지 않고 그대로 남습니다.</div></details>
-<details><summary>면책불허가가 되면 어떻게 되나요?</summary><div class="a">면책 자체가 부정되어 모든 채무에 대해 면책 효력이 발생하지 않습니다. 불허가 결정에 대해서는 즉시항고가 가능합니다.</div></details>
-<details><summary>재산을 조금 은닉한 적이 있는데 면책이 거절되나요?</summary><div class="a">재산 은닉이 불허가사유가 되려면 적극적 의욕이 있어야 합니다. 단순히 알리지 않은 정도만으로는 거절되지 않는 경우가 많으며, 은닉 대상이 파산재단에 속하는 재산인지 먼저 확인되어야 합니다.</div></details>
-<details><summary>개인파산과 개인회생의 차이는 무엇인가요?</summary><div class="a">개인파산은 재산을 정리하고 남은 채무를 면책받는 절차입니다. 개인회생은 일정 기간 변제계획에 따라 채무를 변제하고 나머지를 면책받습니다. 소득이 일정 수준 이상이면 개인회생이, 변제 능력이 부족하면 개인파산이 적합할 수 있습니다.</div></details>
-<div class="notice">본 자료는 2026-07-29 기준으로 작성되었으며, 인용된 법령·판례는 작성 시점의 현행성을 확인한 것입니다. 법령은 개정될 수 있고 사안마다 결론이 달라질 수 있으므로, 실제 파산·면책 신청 전에는 반드시 전문가와 상담하시기 바랍니다.</div></section></main></div>
-<footer class="footer" id="consult"><div class="wrap"><div class="prof"><div><h3>조우성 변호사 / 로펌 머스트노우</h3><p>서울대학교 법학전문대학원 졸업, 변호사(2010). 법무법인(유한) 태평양, 법무법인(유) 율촌 출신. 現 로펌 머스트노우 대표변호사.</p><p style="font-size:15px;color:rgba(255,255,255,.92);margin-top:8px">✉ law@mustknow.co.kr</p></div></div><div class="fine">© 2026 조우성 변호사. 본 콘텐츠는 일반 법률 정보이며 법률 자문을 대체하지 않습니다.</div></div></footer>
-<script>
-var pb=document.getElementById('progress');function onScroll(){var h=document.documentElement,b=document.body;var st=h.scrollTop||b.scrollTop;var sh=(h.scrollHeight||b.scrollHeight)-h.clientHeight;pb.style.width=(sh>0?(st/sh*100):0)+'%'}window.addEventListener('scroll',onScroll,{passive:true});onScroll();
-var toTop=document.getElementById('toTop');window.addEventListener('scroll',function(){(window.scrollY||window.pageYOffset)>500?toTop.classList.add('show'):toTop.classList.remove('show')},{passive:true});
-var links=Array.prototype.slice.call(document.querySelectorAll('#toc-list a'));var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));}).filter(Boolean);function spy(){var pos=(window.scrollY||window.pageYOffset)+120,cur=secs[0];for(var i=0;i<secs.length;i++){if(secs[i].offsetTop<=pos)cur=secs[i];}links.forEach(function(a){a.classList.toggle('active',cur&&a.getAttribute('href')==='#'+cur.id);})}window.addEventListener('scroll',spy,{passive:true});spy();
-document.querySelectorAll('#toc-list a').forEach(function(a){a.addEventListener('click',function(){if(window.innerWidth<=820)document.getElementById('toc').classList.add('closed')})});
-</script>
-</body>
-</html>
+.footer .btn-fo{background:transparent;color:#f4eef0;border-color:rgba(255,255,255,.35)}
+.footer .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:22px;padding-top:14px;
+  font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.7}
+
+/* ── 모바일 (≤820px) ── */
+@media(max-width:820px){
+  .hero h1{font-size:24px}
+  .app{grid-template-columns:1fr;gap:0;padding-top:0}
+  .toc{position:static;margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 8px}
+  .toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;
+    cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--wine-d);padding:9px 8px}
+  .toc-toggle .ar{transition:transform .2s}
+  .toc.closed .toc-toggle .ar{transform:rotate(-90deg)}
+  .toc .tt{display:none}
+  .toc ol{max-height:50vh;overflow:auto}
+  .toc.closed ol{display:none}
+  section.blk h2{font-size:20px}
+  th,td{white-space:nowrap}
+}
+@media print{
+  #progress,.toc,.cta-row,.footer .cta-f{display:none}
+  .header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .app{display:block}
+}
+</style></head><body><div id="progress"></div><button id="toTop" aria-label="맨 위로">?</button><header class="header"><div class="wrap"><span class="badge"><span class="dot"></span>조우성 변호사 · 법률 인사이트</span></div></header><div class="hero"><div class="eb">전자책 대시보드 · 실무 가이드</div><h1>개인파산 면책불허가, 어떤 경우에 면책이 거절될까 — 6대 사유와 대응법</h1><div class="tldr"><div class="lb">3줄 요약 (TL;DR)</div><ul><li>원문 Markdown의 제목·본문·표·체크리스트를 반영한 공개용 HTML입니다.</li><li>문서의 핵심 내용과 실무상 확인 포인트를 한 화면에서 확인할 수 있습니다.</li><li>구체적인 사안은 최신 법령·판례와 사실관계 확인이 필요합니다.</li></ul></div><div class="meta"><span>원문: EBOOK-187-개인파산-면책불허가.md</span><span class="vchip">원문 기반 HTML</span></div><div class="cta-row"><a class="btn btn-p" href="#s1">핵심 내용 보기</a><a class="btn btn-o" href="#faq">확인 사항</a></div></div><div class="app"><nav class="toc" id="toc"><div class="tt">목차</div><ol id="toc-list"><li><a href="#s1">본문</a></li><li><a href="#s2">3줄 요약</a></li><li><a href="#s3">1. 개인파산 면책의 기본 구조</a></li><li><a href="#s4">2. 면책불허가 6대 사유</a></li><li><a href="#s5">3. 재량면책 — 불허가사유가 있어도 면책 가능한 경우</a></li><li><a href="#s6">4. 면책돼도 남는 채무 — 비면책채권</a></li><li><a href="#s7">5. 채권자와 채무자 각각의 실무 포인트</a></li><li><a href="#s8">자주 묻는 질문</a></li><li><a href="#s9">최신성·면책 고지</a></li><li><a href="#s10">검증 로그 (내부용)</a></li></ol></nav><main class="content"><section class="blk" id="s1"><div class="secl">SECTION</div><h1>개인파산 면책불허가, 어떤 경우에 면책이 거절될까 — 6대 사유와 대응법</h1></section><section class="blk" id="s2"><div class="secl">SECTION</div><h2>3줄 요약</h2>
+<ul>
+<li>개인파산 면책이 거절되는 사유는 채무자회생법 제564조에 6가지로 열거되어 있으며, 법원은 이를 엄격하고 신중하게 판단해야 한다.</li>
+<li>가장 많이 문제되는 사유는 '재산 은닉'(제1호)과 '과도한 신용 사용'(제2호)으로, 단순한 행위가 아니라 적극적 의욕이나 기망 의도가 있어야 불허가된다.</li>
+<li>면책불허가사유가 있더라도 법원이 재량으로 면책을 허가할 수 있고(재량면책), 면책이 허가되더라도 조세·벌금·고의불법행위 등 일부 채권은 비면책채권으로 남는다.</li>
+</ul>
+<hr /></section><section class="blk" id="s3"><div class="secl">SECTION</div><h2>1. 개인파산 면책의 기본 구조</h2>
+<p><strong>한눈에</strong>
+- 개인파산은 빚을 갚을 능력이 없는 채무자의 갱생을 위한 제도
+- 법원이 면책을 허가하면 남은 채무의 책임이 면제됨
+- 그러나 일정한 사유가 있으면 면책이 거절될 수 있음</p>
+<p>개인파산 면책은 채무자에게 '새출발의 기회'를 주는 제도다. 채무자회생법에 따라 법원은 파산선고 후 채무자의 신청으로 면책 여부를 결정한다. 면책이 허가되면 파산절차에서 변제하고 남은 채무에 대한 책임이 면제된다.</p>
+<p>다만 모든 경우에 면책이 허가되는 것은 아니다. 면책 신청이 있으면 법원은 채무자회생법 제564조 각호의 면책불허가사유에 해당하는지 심사하고, 하나라도 해당하면 원칙적으로 면책을 허가하지 않는다.</p>
+<h3>면책불허가와 비면책채권의 차이</h3>
+<p>면책과 관련해 자주 혼동되는 개념이 '면책불허가'와 '비면책채권'이다.</p>
+<ul>
+<li><strong>면책불허가</strong>(제564조): 면책 자체가 부정된다. 채무 전부에 대해 면책 효력이 발생하지 않는다.</li>
+<li><strong>비면책채권</strong>(제566조): 면책은 허가되나, 조세·벌금·고의불법행위 등 특정 채권만 면책에서 제외된다. 나머지 채무는 면책된다.</li>
+</ul>
+<blockquote>
+<p>[근거·조문] <strong>채무자회생법 제564조</strong> (시행 2026-03-01) — 면책허가. 6가지 불허가사유. 제2항: 불허가사유가 있어도 재량으로 면책 가능.
+✓ 한국법 MCP FOUND</p>
+<p>[근거·조문] <strong>채무자회생법 제566조</strong> (시행 2026-03-01) — 면책의 효력. 파산채권자에 대한 채무 면제. 단, 8가지 비면책채권 제외.
+✓ 한국법 MCP FOUND</p>
+</blockquote>
+<hr /></section><section class="blk" id="s4"><div class="secl">SECTION</div><h2>2. 면책불허가 6대 사유</h2>
+<p><strong>한눈에</strong>
+- 6가지 사유는 채무자회생법 제564조 제1항 각호에 열거
+- 법원은 각 사유를 엄격하고 신중하게 판단해야 함
+- 단순한 채무 불이행이나 경제적 실패만으로 불허가되지 않음</p>
+<h3>제1호: 재산 은닉·부정소비</h3>
+<p>가장 실무상 많이 문제되는 사유다. 파산재단에 속하는 재산을 은닉·손괴하거나 불이익하게 처분한 경우에 해당한다.</p>
+<p>핵심 요건은 '적극적 의욕'이다. 단순히 재산이 줄어든 것만으로는 부족하다. 자기 또는 타인의 이익을 위한 적극적 의욕이 있어야 불허가사유가 성립한다.</p>
+<p>대법원 2024마6319 결정에 따르면, 급여를 제3자 계좌로 수령한 사정만으로 곧바로 재산 은닉으로 단정할 수 없다. 또한 압류금지재산(생계급여·주거급여·장애수당 등)은 파산재단에 속하지 않으므로 은닉 대상이 아니다.</p>
+<h3>제2호: 허위 신용거래</h3>
+<p>파산선고 전 1년 이내에 파산 원인이 있음에도 이를 속이거나 감추고 신용거래로 재산을 취득한 경우다. 단순한 지급불능 상태만으로는 부족하고, 채권자를 기망하거나 은폐하려는 의도가 있어야 한다.</p>
+<h3>제3호: 허위 서류 제출·허위 진술</h3>
+<p>허위의 채권자목록이나 신청서류를 제출하거나, 법원에 재산상태에 관해 허위 진술을 한 경우다. 대법원 2023마5633 결정은 허위서류·허위진술이 불허가사유가 되려면 고의와 객관적 명백성이 필요하다고 판단했다.</p>
+<h3>제4호: 기간 제한 (재신청 금지)</h3>
+<p>이미 면책을 받은 경우 일정 기간 내 재신청이 제한된다. 일반파산 면책 후 7년, 개인회생 면책 후 5년이 경과하지 않으면 신청할 수 없다.</p>
+<h3>제5호: 채무자 의무 위반</h3>
+<p>파산절차에서 채무자에게 부과된 의무(재산 상태 설명, 출석 등)를 정당한 사유 없이 위반한 경우다. 대법원 2024마6789 결정은 '파산에 관하여 필요한 설명'은 파산관재인의 요구 사항 전부가 아니라 절차 진행에 필수적인 내용으로 한정된다고 보았다.</p>
+<h3>제6호: 과다한 낭비·도박·사행행위</h3>
+<p>파산 전 과다한 낭비, 도박, 그 밖의 사행행위로 현저히 재산을 감소시키거나 과대한 채무를 부담한 경우다. 단순한 소비 생활이나 경제적 무능력이 아니라, 정도를 넘어선 사행행위여야 인정된다.</p>
+<blockquote>
+<p>[근거·판례] <strong>대법원 2024. 11. 21.자 2024마6789 결정</strong> — 파산자 설명의무 = 절차 진행에 필수적 내용 한정. 요구의 필수성·불응의 정당성 단계 심리.
+✓ MCP 검증 완료</p>
+<p>[근거·판례] <strong>대법원 2024. 4. 8.자 2024마6319 결정</strong> — 재산 은닉의 '적극적 의욕'은 단순 이익 인식 아닌 적극적 의욕에 이를 정도로 엄격 해석.
+✓ MCP 검증 완료</p>
+</blockquote>
+<hr /></section><section class="blk" id="s5"><div class="secl">SECTION</div><h2>3. 재량면책 — 불허가사유가 있어도 면책 가능한 경우</h2>
+<p><strong>한눈에</strong>
+- 불허가사유가 인정되더라도 법원이 재량으로 면책을 허가할 수 있다
+- 채무 발생 경위, 불허가 행위의 정도, 갱생 의욕, 채권자 이의 여부 등 종합 고려
+- 면책제도의 사회정책적 기능(채무자 재기)을 고려한 제도</p>
+<p>채무자회생법 제564조 제2항은 불허가사유가 있어도 법원이 재량으로 면책을 허가할 수 있도록 규정한다. 법원은 채무 발생 경위, 불허가 행위의 정도와 그에 이르게 된 경위, 갱생 의욕, 채권자의 이의 여부 등을 종합적으로 고려하여 결정한다.</p>
+<p>재량면책은 면책제도의 핵심 정신인 '채무자 재기'를 실현하기 위한 장치다. 따라서 불허가사유가 있다고 해서 무조건 면책이 거절되는 것은 아니며, 법원의 재량 판단을 적극적으로 다툴 필요가 있다.</p>
+<hr /></section><section class="blk" id="s6"><div class="secl">SECTION</div><h2>4. 면책돼도 남는 채무 — 비면책채권</h2>
+<p><strong>한눈에</strong>
+- 면책이 허가되어도 일부 채권은 면책되지 않고 그대로 남는다
+- 비면책채권은 법정 8가지로 한정된다
+- 채권자 입장에서는 비면책채권 해당 여부를 먼저 검토해야 한다</p>
+<p>면책이 허가되더라도 채무자회생법 제566조 각호의 채권은 면책되지 않는다. 주요 비면책채권은 다음과 같다.</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>조세</td>
+<td>국세·지방세 등 공과금</td>
+</tr>
+<tr>
+<td>벌금·과료·추징금·과태료</td>
+<td>형사 제재 관련</td>
+</tr>
+<tr>
+<td>고의 불법행위 손해배상</td>
+<td>고의로 가한 불법행위</td>
+</tr>
+<tr>
+<td>중과실 불법행위(생명·신체)</td>
+<td>중대한 과실로 타인의 생명·신체 침해</td>
+</tr>
+<tr>
+<td>임금·퇴직금·재해보상금</td>
+<td>근로자 보호</td>
+</tr>
+<tr>
+<td>양육비·부양비</td>
+<td>가족 부양 의무</td>
+</tr>
+<tr>
+<td>악의의 채권자목록 미기재 채권</td>
+<td>채무자가 일부러 누락한 채권</td>
+</tr>
+</tbody>
+</table>
+<p>비면책채권 제도는 헌법적 정당성이 인정된다(헌법재판소 2012헌마569, 2013.3.21). 공익적 성격의 채권이나 응보적 성격의 채권은 면책의 효력에서 제외하는 것이 제도 설계상 타당하다는 판단이다.</p>
+<blockquote>
+<p>[근거·헌재] <strong>헌법재판소 2013. 3. 21. 선고 2012헌마569 전원재판부 결정</strong> — 비면책채권 제도는 평등권을 침해하지 않으며, 공익성·합리성 인정.
+✓ 실존·현행 확인</p>
+</blockquote>
+<hr /></section><section class="blk" id="s7"><div class="secl">SECTION</div><h2>5. 채권자와 채무자 각각의 실무 포인트</h2>
+<h3>채무자(면책 신청인)의 방어 포인트</h3>
+<ol>
+<li>대상 재산이 파산재단에 귀속되는지 먼저 확인한다. 압류금지재산은 은닉 대상이 아니다.</li>
+<li>적극적 의욕이나 고의가 없었음을 입증한다. 단순한 실수나 태만은 불허가사유가 아니다.</li>
+<li>관재인의 요구가 절차 진행에 필수적인 내용인지 다툰다. 요구의 필수성과 불응의 정당성을 단계적으로 주장한다.</li>
+</ol>
+<h3>채권자의 공격 포인트</h3>
+<ol>
+<li>먼저 비면책채권(제566조)에 해당하는지 검토한다. 해당하면 면책 여부와 관계없이 채권 회수가 가능하다.</li>
+<li>비면책채권이 아니라면 면책불허가사유(제564조) 해당 여부를 검토한다.</li>
+<li>재산 은닉이나 허위 서류 제출의 객관적 증거를 확보하는 것이 관건이다.</li>
+</ol>
+<hr /></section><section class="blk" id="s8"><div class="secl">SECTION</div><h2>자주 묻는 질문</h2>
+<p><strong>Q. 개인파산을 하면 모든 빚이 없어지나요?</strong>
+면책이 허가되면 원칙적으로 파산채권자에 대한 채무는 면제됩니다. 다만 조세, 벌금, 고의불법행위 손해배상, 임금·퇴직금, 양육비·부양비 등 비면책채권은 면책되지 않고 그대로 남습니다.</p>
+<p><strong>Q. 면책불허가가 되면 어떻게 되나요?</strong>
+면책 자체가 부정되어 모든 채무에 대해 면책 효력이 발생하지 않습니다. 즉, 파산절차에서 변제되지 않은 채무 전부에 대해 계속 책임을 부담합니다. 불허가 결정에 대해서는 즉시항고가 가능합니다.</p>
+<p><strong>Q. 재산을 조금 은닉한 적이 있는데 면책이 거절되나요?</strong>
+재산 은닉이 불허가사유가 되려면 적극적 의욕이 있어야 합니다. 단순히 재산의 존재를 알리지 않은 정도만으로는 면책이 거절되지 않는 경우가 많습니다. 또한 은닉 대상이 파산재단에 속하는 재산인지가 먼저 확인되어야 합니다.</p>
+<p><strong>Q. 개인파산과 개인회생의 차이는 무엇인가요?</strong>
+개인파산은 재산을 정리하고 남은 채무를 면책받는 절차인 반면, 개인회생은 일정 기간 변제계획에 따라 채무를 변제하고 나머지를 면책받는 절차입니다. 소득이 일정 수준 이상이면 개인회생이, 변제 능력이 부족하면 개인파산이 적합할 수 있습니다.</p>
+<hr /></section><section class="blk" id="s9"><div class="secl">SECTION</div><h2>최신성·면책 고지</h2>
+<p>본 자료는 <strong>2026-07-29</strong> 기준으로 작성되었으며, 인용 법령·판례는 작성 시점의 현행성을 확인한 것입니다.
+법령은 개정될 수 있고 사안마다 결론이 달라질 수 있으므로, 실제 파산·면책 신청 전에는 반드시 전문가와 상담하시기 바랍니다.
+본 자료는 일반적 법률 정보 제공이며 특정 사안에 대한 법률 자문이 아닙니다.</p>
+<hr /></section><section class="blk" id="s10"><div class="secl">SECTION</div><h2>검증 로그 (내부용)</h2>
+<table>
+<thead>
+<tr>
+<th>인용</th>
+<th>유형</th>
+<th>웹 화이트리스트</th>
+<th>한국법 MCP</th>
+<th>판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>채무자회생법 제564조</td>
+<td>조문</td>
+<td>확인</td>
+<td>FOUND</td>
+<td>등재</td>
+</tr>
+<tr>
+<td>채무자회생법 제566조</td>
+<td>조문</td>
+<td>확인</td>
+<td>FOUND</td>
+<td>등재</td>
+</tr>
+<tr>
+<td>대법원 2024마6789</td>
+<td>판례</td>
+<td>확인</td>
+<td>FOUND</td>
+<td>등재</td>
+</tr>
+<tr>
+<td>대법원 2024마6319</td>
+<td>판례</td>
+<td>확인</td>
+<td>FOUND</td>
+<td>등재</td>
+</tr>
+<tr>
+<td>대법원 2023마5633</td>
+<td>판례</td>
+<td>확인</td>
+<td>FOUND</td>
+<td>등재</td>
+</tr>
+<tr>
+<td>헌재 2012헌마569</td>
+<td>헌재</td>
+<td>확인</td>
+<td>FOUND</td>
+<td>등재</td>
+</tr>
+</tbody>
+</table></section><section class="blk faq" id="faq"><div class="secl">NOTICE</div><h2>확인 사항</h2><div class="notice">이 문서는 일반적인 법률 정보 제공을 위한 자료입니다. 구체적인 사실관계와 최신 법령·판례에 따라 결론이 달라질 수 있습니다.</div></section></main></div><footer class="footer"><div class="wrap"><h3>조우성 변호사</h3><p>실무에 바로 활용할 수 있는 법률 지식과 대응 가이드를 제공합니다.</p></div></footer><script>var b=document.getElementById('progress');window.addEventListener('scroll',function(){var h=document.documentElement,st=h.scrollTop||document.body.scrollTop,sh=h.scrollHeight-h.clientHeight;b.style.width=(sh?st/sh*100:0)+'%';},{passive:true});document.getElementById('toTop').onclick=function(){window.scrollTo({top:0,behavior:'smooth'})};</script></body></html>
