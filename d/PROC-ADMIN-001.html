@@ -1,1 +1,144 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>처분내용·불복실익·판단</title><style>body{margin:0;background:#101722;color:#edf3f8;font:16px/1.7 system-ui,sans-serif}main{max-width:1000px;margin:auto;padding:28px 18px}header{background:linear-gradient(135deg,#253c5c,#222334);border:1px solid #526b91;border-radius:18px;padding:24px}h1{margin:4px 0;color:#fff}h2{color:#a9c9ff;margin-top:34px;border-bottom:1px solid #3b4b66;padding-bottom:8px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.card{background:#1b2638;border:1px solid #3e5272;border-radius:12px;padding:15px}table{width:100%;border-collapse:collapse;display:block;overflow-x:auto}th,td{border:1px solid #425572;padding:10px;min-width:130px;text-align:left}th{background:#2c3f60;color:#cde0ff}.warn{border-left:4px solid #ffb86b;background:#2a251d;padding:14px}footer{color:#a5b2c4;margin-top:40px;font-size:.9em}</style></head><body><main><header><div>PROC-ADMIN-001 · 처분검토</div><h1>처분내용·불복실익·판단</h1><p>처분·기한·집행·불복을 연결하는 행정심판·소송 대시보드</p></header><section><h2>핵심 체크</h2><div class="grid"><div class="card">처분서·송달일·기간</div><div class="card">처분사유·증거·재량</div><div class="card">집행정지·회복곤란 손해</div><div class="card">재결·판결·재처분</div></div></section><section><h2>기한 경고</h2><table><tr><th>시점</th><th>통제할 것</th><th>실패 위험</th></tr><tr><td>송달일</td><td>심판·제소기간</td><td>소송 불가</td></tr><tr><td>집행 임박</td><td>집행정지</td><td>회복곤란 손해</td></tr><tr><td>판결 후</td><td>이행·재처분</td><td>실익 상실</td></tr></table></section><section><h2>실무 원칙</h2><div class="warn">처분의 위법성뿐 아니라 기간·집행 위험·구제 목표와 실제 손해를 함께 기록합니다.</div></section><section><h2>근거</h2><p>행정절차법상 처분·이유제시·의견제출 및 행정소송법상 처분성</p><p>발행 전 최신 법령·판례·법원 양식과 사건기록 확인 필요</p></section><footer>일반 법률 정보 · 특정 사건 자문 아님 · 2026-07-31</footer></main></body></html>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>처분내용·불복실익·판단 - 행정심판 · 행정소송 절차</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans KR', 'Malgun Gothic', 'Apple SD Gothic Neo', 'Segoe UI', sans-serif; background: #f0f2f5; color: #111827; line-height: 1.7; }
+.topbar { height: 4px; background: linear-gradient(90deg, #1a3a6b, #2e6be6); position: sticky; top: 0; z-index: 100; }
+.container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+.header { background: #fff; border-bottom: 1px solid #e5e7eb; padding: 20px 0; }
+.header-inner { display: flex; align-items: center; gap: 12px; max-width: 860px; margin: 0 auto; padding: 0 20px; }
+.header-avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #1a3a6b, #2e6be6); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 16px; flex-shrink: 0; }
+.header-info { flex: 1; }
+.header-name { font-size: 14px; font-weight: 700; color: #111827; }
+.header-desc { font-size: 12px; color: #6b7280; }
+.header-badge { font-size: 11px; color: #fff; background: #1a3a6b; padding: 3px 10px; border-radius: 12px; font-weight: 500; letter-spacing: 0.05em; }
+.hero { background: linear-gradient(135deg, #1a3a6b 0%, #1e4d8c 50%, #2e6be6 100%); color: #fff; padding: 44px 0 40px; }
+.hero-tag { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; background: rgba(255,255,255,0.15); padding: 4px 14px; border-radius: 20px; margin-bottom: 16px; }
+.hero h1 { font-size: 28px; font-weight: 900; line-height: 1.35; margin-bottom: 12px; letter-spacing: -0.02em; }
+.hero p { font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.6; }
+.hero-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 20px; font-size: 12px; color: rgba(255,255,255,0.75); }
+.hero-meta span { display: flex; align-items: center; gap: 4px; }
+.tldr { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; margin: -24px auto 32px; padding: 28px 32px; position: relative; z-index: 10; max-width: 820px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+.tldr-label { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #2e6be6; margin-bottom: 12px; }
+.tldr ul { list-style: none; padding: 0; }
+.tldr li { position: relative; padding-left: 20px; margin-bottom: 10px; font-size: 14px; color: #374151; line-height: 1.6; }
+.tldr li:last-child { margin-bottom: 0; }
+.tldr li::before { content: '\25B8'; position: absolute; left: 0; color: #2e6be6; font-weight: 700; }
+.tldr strong { color: #111827; }
+.section { background: #fff; border-radius: 12px; margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); border: 1px solid #e5e7eb; overflow: hidden; }
+.section-header { padding: 24px 28px 0; }
+.section-number { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: #2e6be6; background: #eff6ff; padding: 3px 12px; border-radius: 6px; margin-bottom: 8px; }
+.section h2 { font-size: 22px; font-weight: 700; line-height: 1.35; margin-bottom: 6px; color: #111827; }
+.section-sub { font-size: 13px; color: #6b7280; margin-bottom: 8px; }
+.section-body { padding: 16px 28px 24px; }
+.section-body p { font-size: 14.5px; line-height: 1.75; margin-bottom: 14px; color: #374151; }
+.section-body p:last-child { margin-bottom: 0; }
+.eye-catcher { background: #f8fafc; border-left: 4px solid #2e6be6; border-radius: 0 8px 8px 0; padding: 14px 18px; margin-bottom: 16px; }
+.eye-catcher-title { font-size: 12px; font-weight: 700; color: #2e6be6; letter-spacing: 0.08em; margin-bottom: 6px; }
+.eye-catcher p { font-size: 14px; color: #1e293b; line-height: 1.65; margin-bottom: 0; }
+.legal-quote { background: #fffbeb; border-left: 4px solid #f59e0b; border-radius: 0 8px 8px 0; padding: 12px 18px; margin: 12px 0; }
+.legal-quote .src { font-size: 11px; font-weight: 600; color: #d97706; letter-spacing: 0.05em; margin-bottom: 4px; }
+.legal-quote p { font-size: 13.5px; color: #78350f; line-height: 1.65; margin-bottom: 0; }
+.legal-quote strong { color: #92400e; }
+.info-card { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 12px 18px; margin: 12px 0; }
+.info-card p { font-size: 13.5px; color: #1e3a5f; line-height: 1.65; margin-bottom: 0; }
+.subsection { margin-top: 20px; }
+.subsection h3 { font-size: 17px; font-weight: 700; color: #111827; margin-bottom: 8px; line-height: 1.4; }
+.subsection p { font-size: 14.5px; line-height: 1.75; margin-bottom: 12px; color: #374151; }
+.section-body ul, .section-body ol { margin: 10px 0 14px; padding-left: 20px; }
+.section-body li { font-size: 14.5px; line-height: 1.7; color: #374151; margin-bottom: 5px; }
+.section-body ul.checklist, .section-body ul.warn { list-style: none; padding-left: 2px; }
+.section-body ul.checklist li, .section-body ul.warn li { position: relative; padding-left: 24px; }
+.section-body ul.checklist li::before { content: '\2610'; position: absolute; left: 0; color: #2e6be6; font-weight: 700; }
+.section-body ul.warn li::before { content: '\26A0'; position: absolute; left: 0; color: #d97706; font-weight: 700; }
+.table-wrap { overflow-x: auto; margin: 14px 0; border: 1px solid #e5e7eb; border-radius: 8px; }
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+thead th { background: #f8fafc; padding: 10px 14px; text-align: left; font-weight: 600; color: #374151; border-bottom: 2px solid #e5e7eb; font-size: 12.5px; letter-spacing: 0.03em; }
+tbody td { padding: 10px 14px; border-bottom: 1px solid #f0f2f5; color: #374151; }
+tbody tr:last-child td { border-bottom: none; }
+tbody tr:hover { background: #f8fafc; }
+.qa-item { border: 1px solid #e5e7eb; border-radius: 10px; margin-bottom: 12px; overflow: hidden; }
+.qa-q { background: #f8fafc; padding: 14px 18px; font-weight: 600; font-size: 14.5px; color: #111827; line-height: 1.5; border-bottom: 1px solid #e5e7eb; }
+.qa-q::before { content: 'Q. '; color: #2e6be6; font-weight: 700; }
+.qa-a { padding: 14px 18px; font-size: 14px; color: #374151; line-height: 1.7; }
+pre { background: #0f172a; color: #e2e8f0; padding: 16px 18px; border-radius: 8px; overflow-x: auto; font-size: 13px; line-height: 1.6; margin: 12px 0; }
+pre code { background: transparent; color: inherit; padding: 0; }
+code { font-family: 'JetBrains Mono', Consolas, monospace; font-size: 13px; background: #f1f3f4; padding: 2px 5px; border-radius: 4px; }
+.flow { background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 8px; padding: 12px 16px; font-size: 13.5px; color: #334155; margin-bottom: 12px; }
+.flow strong { color: #1a3a6b; }
+.footer { text-align: center; padding: 32px 20px; color: #6b7280; font-size: 12px; line-height: 1.7; border-top: 1px solid #e5e7eb; margin-top: 8px; }
+@media (max-width: 640px) {
+  .hero h1 { font-size: 22px; }
+  .tldr { padding: 20px; margin-left: 12px; margin-right: 12px; }
+  .section-header { padding: 18px 18px 0; }
+  .section-body { padding: 12px 18px 18px; }
+}
+@media print {
+  .topbar { display: none; }
+  .hero { background: #1a3a6b !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .tldr { box-shadow: none; }
+  .section { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="topbar"></div>
+<header class="header">
+  <div class="header-inner">
+    <div class="header-avatar">행</div>
+    <div class="header-info">
+      <div class="header-name">조우성 변호사 · 법률 인사이트</div>
+      <div class="header-desc">행정심판 · 행정소송(처분 불복) 절차 안내</div>
+    </div>
+    <span class="header-badge">행정심판 · 소송</span>
+  </div>
+</header>
+<section class="hero">
+  <div class="container">
+    <div class="hero-tag">행정심판 · 행정소송 · 처분검토</div>
+    <h1>처분내용·불복실익·판단</h1>
+    <p>행정심판 · 행정소송 처분검토 단계 — 처분내용·불복실익·판단 절차의 실무 포인트를 한눈에 확인한다.</p>
+    <div class="hero-meta">
+      <span>&#128197; 기준일 2026.07.31</span>
+      <span>&#128204; 단계 처분검토</span>
+      <span>&#9878; 검증 L1 · 검증 전</span>
+      <span>&#128101; 대상 개인 · 소상공인</span>
+    </div>
+  </div>
+</section>
+<div class="tldr"><div class="tldr-label">3줄 요약</div><ul><li>행정불복은 억울함을 호소하는 절차가 아니라 <strong>처분·기한·청구취지·증거·집행 위험을 하나의 전략으로 설계하는 일</strong>이다.</li><li>처분서의 송달일과 이유, 처분근거, 사실인정, 재량 판단을 먼저 분해해야 한다.</li><li>행정심판·행정소송·집행정지·집행관리의 선택은 회복하기 어려운 손해와 제소기간을 기준으로 결정한다.</li></ul></div>
+<div class="container">
+<div class="section"><div class="section-header"><div class="section-number">STEP 0</div><h2>지금 당신의 위치</h2></div><div class="section-body"><p>처분·통지 → <strong>처분내용·불복실익·판단</strong> → 심판·소송 → 재결·판결 → 집행·재처분·후속관리</p>
+<div class="info-card"><p>핵심 질문: “처분은 무엇이고 언제 송달됐으며, 지금 막아야 할 집행과 최종적으로 얻을 구제는 무엇인가?”</p></div></div></div>
+<div class="section"><div class="section-header"><div class="section-number">STEP 1</div><h2>반드시 할 일</h2></div><div class="section-body"><ul class="checklist"><li>처분서·통지서·송달일·처분청·처분근거·적용기간을 원본으로 확보한다.</li><li>처분의 종류, 처분성, 원고적격·청구인적격, 관할과 전치절차를 확인한다.</li><li>제소기간·심판기간·집행기한을 달력과 사건관리표에 동시에 입력한다.</li><li>처분사유를 사실·증거·법적 근거·재량판단으로 분해한다.</li><li>본안 승소 가능성과 회복하기 어려운 손해를 별도 평가한다.</li><li>취소·무효·의무이행·집행정지·가처분 등 가능한 구제의 목표를 정한다.</li></ul></div></div>
+<div class="section"><div class="section-header"><div class="section-number">STEP 2</div><h2>하면 안 되는 일</h2></div><div class="section-body"><ul class="warn"><li>처분서를 받았다는 사실만으로 불복기간을 추정하기</li><li>행정심판을 제기하면 제소기간과 집행이 자동으로 해결된다고 생각하기</li><li>처분의 위법성만 주장하고 회복곤란 손해·긴급성을 입증하지 않기</li><li>처분청의 보정·재처분 가능성을 고려하지 않고 청구취지를 작성하기</li><li>재결·판결 후에도 집행·후속처분·간접강제 가능성을 관리하지 않기</li></ul></div></div>
+<div class="section"><div class="section-header"><div class="section-number">STEP 3</div><h2>기한·리스크 경고</h2></div><div class="section-body"><div class="table-wrap"><table><thead><tr><th>시점</th><th>확인할 것</th><th>놓치면</th></tr></thead><tbody><tr><td>처분 송달일</td><td>불복·제소기간 산정</td><td>소송 자체 불가</td></tr><tr><td>집행 임박</td><td>집행정지 필요성·자료</td><td>회복곤란 손해</td></tr><tr><td>청구·소장 전</td><td>관할·적격·전치·청구취지</td><td>각하·보정</td></tr><tr><td>심판·소송 중</td><td>추가 처분·자료·기일</td><td>쟁점 누락</td></tr><tr><td>재결·판결 후</td><td>처분청 이행·재처분</td><td>실익 상실</td></tr></tbody></table></div></div></div>
+<div class="section"><div class="section-header"><div class="section-number">STEP 4</div><h2>사건 파일 구조</h2></div><div class="section-body"><div class="table-wrap"><table><thead><tr><th>파일</th><th>내용</th><th>체크</th></tr></thead><tbody><tr><td>01_처분</td><td>처분서·송달·근거·기간</td><td>[ ]</td></tr><tr><td>02_기간</td><td>심판·제소·집행 기한</td><td>[ ]</td></tr><tr><td>03_사실</td><td>시간순 사실·증거 목록</td><td>[ ]</td></tr><tr><td>04_쟁점</td><td>처분성·사유·재량·절차</td><td>[ ]</td></tr><tr><td>05_구제</td><td>심판·소송·집행정지 목표</td><td>[ ]</td></tr><tr><td>06_후속</td><td>재결·판결·재처분·집행</td><td>[ ]</td></tr></tbody></table></div></div></div>
+<div class="section"><div class="section-header"><div class="section-number">STEP 5</div><h2>처분 분석 매트릭스</h2></div><div class="section-body"><div class="table-wrap"><table><thead><tr><th>질문</th><th>자료</th><th>상태</th><th>판단</th></tr></thead><tbody><tr><td>처분은 무엇인가?</td><td>처분서·법적 효과</td><td>확인/미확인</td><td>처분성·적격</td></tr><tr><td>언제 알게·송달받았나?</td><td>우편·전자송달·수령</td><td>확인/미확인</td><td>기간</td></tr><tr><td>어떤 사실을 인정했나?</td><td>조사자료·회의록</td><td>확인/미확인</td><td>사실오인</td></tr><tr><td>어떤 법을 적용했나?</td><td>처분근거·고시</td><td>확인/미확인</td><td>법리오해</td></tr><tr><td>재량 판단은 합리적인가?</td><td>비교사례·비례자료</td><td>확인/미확인</td><td>재량·비례</td></tr></tbody></table></div></div></div>
+<div class="section"><div class="section-header"><div class="section-number">STEP 6</div><h2>청구·집행정지 문안 골격</h2></div><div class="section-body"><pre><code>처분일·송달일·처분청: ______
+처분 내용과 현재 집행 상태: ______
+청구: 처분 취소/무효 확인/의무이행 중 ______
+위법 사유: 사실오인·법리오해·절차하자·재량일탈 ______
+회복곤란 손해: ______ / 긴급성: ______
+소명자료: 처분서·송달증·계약·사진·회계·비교자료</code></pre>
+<p>청구취지와 집행정지 신청은 처분의 법적 효과와 실제 손해를 구체적으로 연결한다.</p></div></div>
+<div class="section"><div class="section-header"><div class="section-number">STEP 7</div><h2>근거 카드</h2></div><div class="section-body"><div class="info-card"><p><strong>행정절차법상 처분·이유제시·의견제출 및 행정소송법상 처분성</strong> — 이 카드의 법적 출발점이다. 처분서의 문구, 송달자료, 최신 법령·판례·행정실무를 대조해 최종 적용한다.</p></div>
+<p>내부 WIKI의 행정법·소송 doctrine과 recursive doctrine은 처분성, 기간, 집행정지, 처분사유, 재량통제, 재처분의 반복 실패 패턴을 보강한다. 검증되지 않은 판례번호는 인용하지 않는다.</p></div></div>
+<div class="section"><div class="section-header"><div class="section-number">STEP 8</div><h2>자주 묻는 질문</h2></div><div class="section-body"><div class="qa-item"><div class="qa-q">행정심판과 행정소송 중 하나만 해야 하나요?</div><div class="qa-a">사건별 전치 여부, 기간, 집행 위험, 기관의 전문성, 신속성, 증거와 비용을 비교해 선택한다. 심판을 제기해도 별도의 기간·집행 확인이 필요하다.</div></div>
+<div class="qa-item"><div class="qa-q">소송을 하면 처분 집행이 자동으로 멈추나요?</div><div class="qa-a">자동으로 멈춘다고 단정할 수 없다. 집행정지 요건과 회복곤란 손해를 별도로 검토한다.</div></div>
+<div class="qa-item"><div class="qa-q">처분청이 소송 중 처분을 바꾸면 끝인가요?</div><div class="qa-a">처분 변경·철회·재처분의 내용과 소송상 이익, 청구취지 변경 필요성을 다시 확인한다.</div></div></div></div>
+<div class="section"><div class="section-header"><div class="section-number">STEP 9</div><h2>전문가 상담 신호</h2></div><div class="section-body"><ul><li>제소기간·심판기간·집행기한이 임박했거나 송달일이 불명확한 경우</li><li>영업정지·허가취소·자격취소·철거·과징금 등 회복곤란 손해가 예상되는 경우</li><li>처분사유가 조사기록과 다르거나 처분서 이유가 불충분한 경우</li><li>집행정지·가처분·의무이행·무효확인 중 선택이 필요한 경우</li><li>재결·판결 후 재처분·간접강제·후속 집행이 문제 되는 경우</li></ul></div></div>
+<div class="section"><div class="section-header"><div class="section-number">STEP 10</div><h2>다음 단계</h2></div><div class="section-body"><p>다음 카드와 처분서 원본·송달일·기한·청구취지·집행상태·미확인 사실을 연결한다. 재결·판결 후에는 처분청 이행과 실익을 다시 평가한다.</p></div></div>
+<div class="section"><div class="section-body"><div class="eye-catcher" style="border-left-color:#6b7280;background:#f9fafb;"><div class="eye-catcher-title">최신성·면책 고지</div><p>본 자료는 2026-07-31 기준 일반적 법률 정보이며 특정 처분에 대한 자문이 아니다. 행정법령·판례·행정실무·법원 양식은 변경될 수 있으므로 실제 불복 전 최신 원문과 사건기록을 확인한다.</p></div></div></div>
+</div>
+<footer class="footer">
+  <p>© 2026 조우성 변호사. 본 콘텐츠는 일반 법률 정보이며 법률 자문을 대체하지 않습니다.</p>
+  <p>법령·실무는 변경될 수 있습니다. 실제 신청 전 최신 법령과 개별 사실관계를 확인하시기 바랍니다.</p>
+</footer>
+</body>
+</html>
