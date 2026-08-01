@@ -1,552 +1,326 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="UTF-8">
-<meta name="robots" content="noindex">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EBOOK-119 | 스톡옵션 행사이익 과세시점 — 행사 시 세금 부과 기준과 절세 전략</title>
-<style>
-  :root {
-    --gold-50: #fefce8;
-    --gold-100: #fef9c3;
-    --gold-200: #fef08a;
-    --gold-300: #fde047;
-    --gold-400: #facc15;
-    --gold-500: #eab308;
-    --gold-600: #ca8a04;
-    --gold-700: #a16207;
-    --gold-800: #854d0e;
-    --gold-900: #713f12;
-    --slate-50: #f8fafc;
-    --slate-100: #f1f5f9;
-    --slate-200: #e2e8f0;
-    --slate-300: #cbd5e1;
-    --slate-400: #94a3b8;
-    --slate-500: #64748b;
-    --slate-600: #475569;
-    --slate-700: #334155;
-    --slate-800: #1e293b;
-    --slate-900: #0f172a;
-    --red-50: #fef2f2;
-    --red-100: #fee2e2;
-    --red-200: #fecaca;
-    --red-500: #ef4444;
-    --red-600: #dc2626;
-    --red-700: #b91c1c;
-    --amber-50: #fffbeb;
-    --amber-100: #fef3c7;
-    --amber-400: #fbbf24;
-    --amber-500: #f59e0b;
-    --green-50: #f0fdf4;
-    --green-100: #dcfce7;
-    --green-600: #16a34a;
-    --blue-50: #eff6ff;
-    --blue-600: #2563eb;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: 'Pretendard', -apple-system, 'Segoe UI', sans-serif;
-    background: var(--slate-50);
-    color: var(--slate-800);
-    line-height: 1.8;
-    font-size: 15px;
-  }
-  .container { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+<!doctype html>
+<html lang="ko-KR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>스톡옵션 행사이익 과세시점 — 행사 시 세금 부과 기준과 절세 전략</title>
+<style>body{font-family:"Noto Sans KR","Pretendard","Malgun Gothic",sans-serif;line-height:1.8;color:#202124;background:#f6f7f9;margin:0}main{max-width:860px;margin:40px auto;padding:48px 56px;background:#fff;box-shadow:0 2px 16px #0001}h1{line-height:1.3;border-bottom:2px solid #222;padding-bottom:18px}h2{margin-top:2.2em;border-bottom:1px solid #ddd;padding-bottom:6px}table{border-collapse:collapse;width:100%;margin:1em 0}th,td{border:1px solid #ccc;padding:8px;vertical-align:top}th{background:#f0f2f5}blockquote{border-left:4px solid #6b7280;padding:4px 16px;background:#f7f7f7}code{background:#f1f3f4;padding:2px 4px}pre{background:#202124;color:#f8f8f2;padding:16px;overflow:auto}a{color:#155eef}@media(max-width:700px){main{margin:0;padding:24px 18px;box-shadow:none}}</style>
+</head><body><main><h1 id="_1">스톡옵션 행사이익 과세시점 — 행사 시 세금 부과 기준과 절세 전략</h1>
+<h2 id="1">1. 문제상황</h2>
+<blockquote>
+<p>"스톡옵션을 행사했는데, 예상보다 훨씬 큰 세금이 부과됐습니다. 행사 시점에 이미 세금이 확정된다는 걸 몰랐습니다."</p>
+</blockquote>
+<p>스톡옵션(주식매수선택권)은 회사가 임직원에게 미리 정한 가격(행사가격)으로 주식을 살 수 있는 권리다. 행사 당시 주식의 시가와 행사가격의 차액(행사이익)에 대해 근로소득세가 부과된다. 문제는 이 세금이 <strong>주식을 실제 매각해 현금화하기 전</strong>에 발생한다는 점이다. 행사이익은 크지만 주식 매각이 제한된 비상장사 임직원은 세금 납부 자금조차 마련하지 못하는 '세금 폭탄' 상황에 직면할 수 있다.</p>
+<p>이 eBook은 스톡옵션 행사이익의 과세 체계를 유형별로 비교 분석하고, 실무에서 적용 가능한 절세 전략과 위험 신호를 제공한다.</p>
+<h2 id="2">2. 과세 체계</h2>
+<h3 id="21">2.1 기본 구조</h3>
+<p>스톡옵션 과세는 <strong>행사 시점(근로소득세)</strong>과 <strong>매각 시점(양도소득세)</strong>의 2단계로 구성된다.</p>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>과세 대상</th>
+<th>소득 구분</th>
+<th>세율</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>행사 시점</strong></td>
+<td>시가 - 행사가격 = 행사이익</td>
+<td>근로소득(을종)</td>
+<td>종합소득세율(6~45%)</td>
+</tr>
+<tr>
+<td><strong>매각 시점</strong></td>
+<td>매각가 - 행사가격(취득가)</td>
+<td>양도소득</td>
+<td>양도소득세율(6~27.5%+지방세)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>핵심 원칙</strong>: 행사이익은 행사 시점의 '시가'를 기준으로 확정된다. 이후 주가 변동(상승/하락)은 근로소득세에 영향을 주지 않으며, 매각 시 양도소득세에만 반영된다.</p>
+<h3 id="22">2.2 과세 시점</h3>
+<p>스톡옵션 행사이익에 대한 과세는 <strong>행사일</strong>을 기준으로 한다.</p>
+<ul>
+<li>행사일 현재 주식의 <strong>시가(상장 주식: 종가, 비상장 주식: 평가액)</strong>를 기준으로 행사이익 계산</li>
+<li>회사는 행사이익에 대해 원천징수의무자로서 근로소득세를 원천징수해 다음 달 10일까지 납부</li>
+<li>근로소득으로 분류되므로 연말정산 시 합산되어 최종 세액 확정</li>
+</ul>
+<h3 id="23">2.3 소득 구분</h3>
+<table>
+<thead>
+<tr>
+<th>대상자</th>
+<th>소득 구분</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>임직원</strong></td>
+<td>근로소득(을종)</td>
+<td>대법원 2007두1934</td>
+</tr>
+<tr>
+<td><strong>외부 전문가</strong></td>
+<td>기타소득</td>
+<td>소득세법 제21조</td>
+</tr>
+<tr>
+<td><strong>벤처기업 직원(특례)</strong></td>
+<td>과세 이연 → 양도소득세</td>
+<td>조세특례제한법</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3">3. 유형별 비교</h2>
+<h3 id="31-vs">3.1 비상장 vs 상장</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>비상장 기업</th>
+<th>상장 기업</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>시가 산정</strong></td>
+<td>평가액(외부평가·상증법 보충적 평가)</td>
+<td>종가(거래소 시세)</td>
+</tr>
+<tr>
+<td><strong>유동성</strong></td>
+<td>낮음 — 매각 제한(의무보유·시장 미형성)</td>
+<td>높음 — 즉시 매각 가능</td>
+</tr>
+<tr>
+<td><strong>세금 납부 자금</strong></td>
+<td>행사 당시 현금 유출 부담 큼</td>
+<td>매각해 현금 확보 가능</td>
+</tr>
+<tr>
+<td><strong>위험도</strong></td>
+<td>주가 하락 시 세금만 부담하고 손실 위험</td>
+<td>매각 타이밍 조절 가능</td>
+</tr>
+<tr>
+<td><strong>벤처 특례 적용</strong></td>
+<td>가능(요건 충족 시)</td>
+<td>제한적</td>
+</tr>
+</tbody>
+</table>
+<p><strong>실무 포인트</strong>: 비상장 기업 임직원이 가장 주의해야 할 점은 행사 시점의 '시가'가 실제 매각가와 괴리될 수 있다는 것이다. 평가액이 높게 나와 행사이익이 과대 계상되면, 실제로는 큰 차익을 실현하지 못했음에도 높은 세금을 부담해야 할 수 있다.</p>
+<h3 id="32-vs">3.2 국내 스톡옵션 vs 해외 스톡옵션</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>국내법인 스톡옵션</th>
+<th>해외법인 스톡옵션(국내 근무자)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>과세권</strong></td>
+<td>국내(소득세법)</td>
+<td>국내(소득세법) — 국내원천소득 해당 시</td>
+</tr>
+<tr>
+<td><strong>거래명세서</strong></td>
+<td>제출 의무 제한적</td>
+<td><strong>소득세법 제164조의5</strong> — 국외 주식매수선택권 거래명세서 제출 의무</td>
+</tr>
+<tr>
+<td><strong>원천징수</strong></td>
+<td>국내 법인이 의무</td>
+<td>해외법인 — 원천징수 곤란 → 근로자 직접 신고·납부</td>
+</tr>
+<tr>
+<td><strong>조세조약</strong></td>
+<td>해당 없음</td>
+<td>적용 가능(이중과세 방지)</td>
+</tr>
+<tr>
+<td><strong>외국납부세액공제</strong></td>
+<td>해당 없음</td>
+<td>가능(조세조약에 따라)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>실무 포인트</strong>: 해외법인(특히 미국) 스톡옵션(ISO·NSO)을 부여받은 국내 근무자는 한국에서도 과세되고, 미국에서도 과세될 수 있어 이중과세 문제가 발생할 수 있다. 외국납부세액공제를 적극적으로 검토해야 한다.</p>
+<h3 id="33-vs">3.3 일반 기업 vs 벤처기업</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>일반 기업</th>
+<th>벤처기업 특례</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>행사 시 과세</strong></td>
+<td>행사 시점에 즉시 근로소득세 부과</td>
+<td><strong>일정 요건 충족 시 과세 이연 가능</strong></td>
+</tr>
+<tr>
+<td><strong>과세 이연 요건</strong></td>
+<td>없음</td>
+<td>행사 후 매각 시까지 과세 이연</td>
+</tr>
+<tr>
+<td><strong>최종 과세</strong></td>
+<td>양도소득세</td>
+<td>양도소득세(저율 적용 가능)</td>
+</tr>
+<tr>
+<td><strong>근거</strong></td>
+<td>소득세법 제20조</td>
+<td>조세특례제한법</td>
+</tr>
+<tr>
+<td><strong>적용 대상</strong></td>
+<td>모든 법인</td>
+<td>벤처기업육성에 관한 특별법상 벤처기업</td>
+</tr>
+</tbody>
+</table>
+<p><strong>실무 포인트</strong>: 벤처기업 특례는 행사 시점의 근로소득세 부담을 매각 시점까지 이연해 준다. 다만 요건이 까다로우므로 사전에 세무사·변호사와 요건 충족 여부를 반드시 확인해야 한다.</p>
+<h2 id="4">4. 절세 전략</h2>
+<h3 id="41">4.1 행사 시점 분산 전략</h3>
+<p>행사이익은 종합소득에 합산되므로, 특정 연도에 집중 행사 시 높은 세율 구간(최고 45%)이 적용될 위험이 있다.</p>
+<pre><code>[권장] 연도별 분할 행사: 종합소득세 누진세율 구간 고려
+  예: 1억 행사이익을 3년에 나누어 행사 → 각 연도 약 3,300만 원씩
+  vs 1회 행사: 1억 원 → 최고세율 35~45% 적용 위험
 
-  /* Header Gold */
-  .ebook-header {
-    background: linear-gradient(135deg, var(--gold-900), var(--gold-700));
-    color: white;
-    padding: 56px 0 48px;
-    position: relative;
-    overflow: hidden;
-  }
-  .ebook-header::after {
-    content: '';
-    position: absolute;
-    top: -50%; right: -20%;
-    width: 500px; height: 500px;
-    background: rgba(255,255,255,0.04);
-    border-radius: 50%;
-  }
-  .ebook-header .container { position: relative; z-index: 1; }
-  .ebook-badge {
-    display: inline-block;
-    background: rgba(255,255,255,0.15);
-    border-radius: 6px;
-    padding: 4px 12px;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 16px;
-  }
-  .ebook-header h1 {
-    font-size: 28px;
-    font-weight: 800;
-    line-height: 1.3;
-    margin-bottom: 12px;
-  }
-  .ebook-header p {
-    opacity: 0.85;
-    font-size: 15px;
-    line-height: 1.6;
-  }
-  .header-meta {
-    margin-top: 20px;
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-  .header-meta span {
-    font-size: 12px;
-    background: rgba(255,255,255,0.1);
-    border-radius: 4px;
-    padding: 3px 10px;
-  }
-
-  /* Section */
-  section { padding: 40px 0; }
-  section:nth-child(even) { background: white; }
-  h2 {
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: var(--gold-800);
-  }
-  h2 .section-num {
-    display: inline-block;
-    background: var(--gold-100);
-    color: var(--gold-800);
-    font-size: 14px;
-    font-weight: 700;
-    border-radius: 6px;
-    padding: 2px 10px;
-    margin-right: 8px;
-  }
-  h3 {
-    font-size: 17px;
-    font-weight: 700;
-    margin: 24px 0 12px;
-    color: var(--slate-700);
-  }
-
-  /* Blockquote */
-  blockquote {
-    border-left: 4px solid var(--gold-400);
-    background: var(--gold-50);
-    padding: 16px 20px;
-    margin: 20px 0;
-    border-radius: 0 8px 8px 0;
-    color: var(--slate-700);
-    font-size: 14px;
-  }
-  blockquote strong { color: var(--gold-700); }
-
-  /* Tables */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 16px 0;
-    font-size: 14px;
-  }
-  th, td {
-    border: 1px solid var(--slate-200);
-    padding: 10px 12px;
-    text-align: left;
-    vertical-align: top;
-  }
-  th {
-    background: var(--gold-100);
-    color: var(--gold-800);
-    font-weight: 600;
-    font-size: 13px;
-  }
-  tr:nth-child(even) td { background: var(--slate-50); }
-
-  /* Warning / Tip */
-  .warning-box {
-    background: var(--red-50);
-    border: 1px solid var(--red-200);
-    border-radius: 8px;
-    padding: 16px 20px;
-    margin: 16px 0;
-  }
-  .warning-box .label {
-    color: var(--red-600);
-    font-weight: 700;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 4px;
-  }
-  .tip-box {
-    background: var(--blue-50);
-    border: 1px solid #bfdbfe;
-    border-radius: 8px;
-    padding: 16px 20px;
-    margin: 16px 0;
-  }
-  .tip-box .label {
-    color: var(--blue-600);
-    font-weight: 700;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 4px;
-  }
-
-  /* FAQ */
-  .faq-item {
-    border: 1px solid var(--slate-200);
-    border-radius: 8px;
-    margin: 12px 0;
-    overflow: hidden;
-  }
-  .faq-q {
-    background: var(--slate-50);
-    padding: 14px 18px;
-    font-weight: 600;
-    font-size: 14px;
-    cursor: default;
-  }
-  .faq-q::before { content: 'Q. '; color: var(--gold-600); font-weight: 700; }
-  .faq-a {
-    padding: 14px 18px;
-    font-size: 14px;
-    border-top: 1px solid var(--slate-200);
-  }
-  .faq-a::before { content: 'A. '; color: var(--gold-700); font-weight: 700; }
-
-  /* Card grid */
-  .card-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin: 16px 0;
-  }
-  .card {
-    border: 1px solid var(--slate-200);
-    border-radius: 10px;
-    padding: 20px;
-    background: white;
-  }
-  .card h4 {
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--gold-700);
-    margin-bottom: 8px;
-  }
-  .card p, .card ul { font-size: 13px; color: var(--slate-600); }
-  .card ul { padding-left: 16px; }
-  .card ul li { margin-bottom: 4px; }
-
-  /* CTA */
-  .cta-section {
-    background: linear-gradient(135deg, var(--gold-800), var(--gold-700));
-    color: white;
-    padding: 48px 0;
-    text-align: center;
-  }
-  .cta-section h2 { color: white; }
-  .cta-section p { opacity: 0.9; margin: 12px 0 24px; font-size: 15px; }
-  .cta-button {
-    display: inline-block;
-    background: white;
-    color: var(--gold-800);
-    font-weight: 700;
-    padding: 14px 36px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 16px;
-    transition: all 0.2s;
-  }
-  .cta-button:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
-  .cta-sub { font-size: 13px; opacity: 0.7; margin-top: 16px; }
-
-  /* Risk signals */
-  .risk-item {
-    display: flex;
-    gap: 12px;
-    padding: 12px 16px;
-    border-left: 3px solid var(--red-500);
-    background: var(--red-50);
-    margin: 8px 0;
-    border-radius: 0 6px 6px 0;
-    font-size: 14px;
-  }
-  .risk-item .risk-icon { color: var(--red-500); font-weight: 700; }
-
-  /* Strategy */
-  .strategy-box {
-    background: linear-gradient(135deg, var(--amber-50), var(--gold-50));
-    border: 1px solid var(--gold-200);
-    border-radius: 10px;
-    padding: 20px;
-    margin: 16px 0;
-  }
-
-  @media (max-width: 640px) {
-    .card-grid { grid-template-columns: 1fr; }
-    .ebook-header h1 { font-size: 22px; }
-  }
-</style>
-</head>
-<body>
-
-<div class="ebook-header">
-  <div class="container">
-    <div class="ebook-badge">EBOOK-119 · 비교형</div>
-    <h1>스톡옵션 행사이익 과세시점<br>행사 시 세금 부과 기준과 절세 전략</h1>
-    <p>비상장·상장·국내·해외 스톡옵션, 유형별 과세 체계 비교와 실무 절세 전략</p>
-    <div class="header-meta">
-      <span>audience: Mixed</span>
-      <span>domain: 세무·노동</span>
-      <span>template: 비교형</span>
-      <span>verification: L2</span>
-      <span>cta: lawpack</span>
-    </div>
-  </div>
-</div>
-
-<!-- 1. 문제상황 -->
-<section>
-<div class="container">
-  <h2><span class="section-num">01</span>문제상황</h2>
-  <blockquote>
-    <strong>"스톡옵션을 행사했는데, 예상보다 훨씬 큰 세금이 부과됐습니다. 행사 시점에 이미 세금이 확정된다는 걸 몰랐습니다."</strong>
-  </blockquote>
-  <p>스톡옵션(주식매수선택권)은 회사가 임직원에게 미리 정한 가격(행사가격)으로 주식을 살 수 있는 권리다. 행사 당시 주식의 시가와 행사가격의 차액(행사이익)에 대해 <strong>근로소득세</strong>가 부과된다. 문제는 이 세금이 <strong>주식을 실제 매각해 현금화하기 전</strong>에 발생한다는 점이다. 행사이익은 크지만 주식 매각이 제한된 비상장사 임직원은 세금 납부 자금조차 마련하지 못하는 '세금 폭탄' 상황에 직면할 수 있다.</p>
-  <p>이 eBook은 스톡옵션 행사이익의 과세 체계를 유형별로 비교 분석하고, 실무에서 적용 가능한 절세 전략과 위험 신호를 제공한다.</p>
-</div>
-</section>
-
-<!-- 2. 과세 체계 -->
-<section>
-<div class="container">
-  <h2><span class="section-num">02</span>과세 체계</h2>
-
-  <h3>2.1 기본 구조</h3>
-  <p>스톡옵션 과세는 <strong>행사 시점(근로소득세)</strong>과 <strong>매각 시점(양도소득세)</strong>의 2단계로 구성된다.</p>
-
-  <table>
-    <tr><th>단계</th><th>과세 대상</th><th>소득 구분</th><th>세율</th></tr>
-    <tr><td><strong>행사 시점</strong></td><td>시가 - 행사가격 = 행사이익</td><td>근로소득(을종)</td><td>종합소득세율 6~45%</td></tr>
-    <tr><td><strong>매각 시점</strong></td><td>매각가 - 행사가격(취득가)</td><td>양도소득</td><td>양도소득세율 6~27.5%+지방세</td></tr>
-  </table>
-
-  <div class="tip-box">
-    <div class="label">핵심 원칙</div>
-    행사이익은 <strong>행사 시점의 '시가'</strong>를 기준으로 확정된다. 이후 주가 변동(상승/하락)은 근로소득세에 영향을 주지 않으며, 매각 시 양도소득세에만 반영된다.
-  </div>
-
-  <h3>2.2 과세 시점</h3>
-  <p>스톡옵션 행사이익에 대한 과세는 <strong>행사일</strong>을 기준으로 한다.</p>
-  <ul>
-    <li>행사일 현재 주식의 시가(상장: 종가, 비상장: 평가액)를 기준으로 행사이익 계산</li>
-    <li>회사는 행사이익에 대해 원천징수의무자로서 근로소득세를 원천징수해 다음 달 10일까지 납부</li>
-    <li>근로소득으로 분류되므로 연말정산 시 합산되어 최종 세액 확정</li>
-  </ul>
-
-  <h3>2.3 소득 구분</h3>
-  <table>
-    <tr><th>대상자</th><th>소득 구분</th><th>근거</th></tr>
-    <tr><td>임직원</td><td>근로소득(을종)</td><td>대법원 2007두1934, 소득세법 제20조</td></tr>
-    <tr><td>외부 전문가</td><td>기타소득</td><td>소득세법 제21조</td></tr>
-    <tr><td>벤처기업 직원(특례)</td><td>과세 이연 → 양도소득세</td><td>조세특례제한법</td></tr>
-  </table>
-</div>
-</section>
-
-<!-- 3. 유형별 비교 -->
-<section>
-<div class="container">
-  <h2><span class="section-num">03</span>유형별 비교</h2>
-
-  <h3>3.1 비상장 vs 상장</h3>
-  <table>
-    <tr><th>항목</th><th>비상장 기업</th><th>상장 기업</th></tr>
-    <tr><td><strong>시가 산정</strong></td><td>평가액(외부평가·상증법 보충적 평가)</td><td>종가(거래소 시세)</td></tr>
-    <tr><td><strong>유동성</strong></td><td>낮음 — 매각 제한(의무보유·시장 미형성)</td><td>높음 — 즉시 매각 가능</td></tr>
-    <tr><td><strong>세금 납부 자금</strong></td><td>행사 당시 현금 유출 부담 큼</td><td>매각해 현금 확보 가능</td></tr>
-    <tr><td><strong>위험도</strong></td><td>주가 하락 시 세금만 부담하고 손실 위험</td><td>매각 타이밍 조절 가능</td></tr>
-    <tr><td><strong>벤처 특례 적용</strong></td><td>가능(요건 충족 시)</td><td>제한적</td></tr>
-  </table>
-
-  <div class="warning-box">
-    <div class="label">실무 포인트</div>
-    비상장 기업 임직원이 가장 주의해야 할 점은 <strong>행사 시점의 '시가'가 실제 매각가와 괴리</strong>될 수 있다는 것이다. 평가액이 높게 나와 행사이익이 과대 계상되면, 실제로는 큰 차익을 실현하지 못했음에도 높은 세금을 부담해야 할 수 있다.
-  </div>
-
-  <h3>3.2 국내 스톡옵션 vs 해외 스톡옵션</h3>
-  <table>
-    <tr><th>항목</th><th>국내법인 스톡옵션</th><th>해외법인 스톡옵션(국내 근무자)</th></tr>
-    <tr><td><strong>과세권</strong></td><td>국내(소득세법)</td><td>국내(소득세법) — 국내원천소득 해당 시</td></tr>
-    <tr><td><strong>거래명세서</strong></td><td>제출 의무 제한적</td><td>소득세법 제164조의5 — 국외 주식매수선택권 거래명세서 제출 의무</td></tr>
-    <tr><td><strong>원천징수</strong></td><td>국내 법인이 의무</td><td>해외법인 — 원천징수 곤란 → 근로자 직접 신고·납부</td></tr>
-    <tr><td><strong>조세조약</strong></td><td>해당 없음</td><td>적용 가능(이중과세 방지)</td></tr>
-    <tr><td><strong>외국납부세액공제</strong></td><td>해당 없음</td><td>가능(조세조약에 따라)</td></tr>
-  </table>
-
-  <div class="warning-box">
-    <div class="label">실무 포인트</div>
-    해외법인(특히 미국) 스톡옵션(ISO·NSO)을 부여받은 국내 근무자는 한국에서도 과세되고, 미국에서도 과세될 수 있어 <strong>이중과세 문제</strong>가 발생할 수 있다. 외국납부세액공제를 적극적으로 검토해야 한다.
-  </div>
-
-  <h3>3.3 일반 기업 vs 벤처기업</h3>
-  <table>
-    <tr><th>항목</th><th>일반 기업</th><th>벤처기업 특례</th></tr>
-    <tr><td><strong>행사 시 과세</strong></td><td>행사 시점에 즉시 근로소득세 부과</td><td>일정 요건 충족 시 과세 이연 가능</td></tr>
-    <tr><td><strong>과세 이연 요건</strong></td><td>없음</td><td>행사 후 매각 시까지 과세 이연</td></tr>
-    <tr><td><strong>최종 과세</strong></td><td>양도소득세</td><td>양도소득세(저율 적용 가능)</td></tr>
-    <tr><td><strong>근거</strong></td><td>소득세법 제20조</td><td>조세특례제한법</td></tr>
-    <tr><td><strong>적용 대상</strong></td><td>모든 법인</td><td>벤처기업육성에 관한 특별법상 벤처기업</td></tr>
-  </table>
-
-  <div class="tip-box">
-    <div class="label">실무 포인트</div>
-    벤처기업 특례는 행사 시점의 근로소득세 부담을 매각 시점까지 이연해 준다. 다만 요건이 까다로우므로 사전에 세무사·변호사와 요건 충족 여부를 반드시 확인해야 한다.
-  </div>
-</div>
-</section>
-
-<!-- 4. 절세 전략 -->
-<section>
-<div class="container">
-  <h2><span class="section-num">04</span>절세 전략</h2>
-
-  <h3>4.1 행사 시점 분산 전략</h3>
-  <div class="strategy-box">
-    <p><strong>권장</strong>: 연도별 분할 행사 — 종합소득세 누진세율 구간 고려</p>
-    <p style="font-size:13px; margin-top:8px;">예: 1억 원 행사이익을 3년에 나누어 행사 → 각 연도 약 3,300만 원씩 분산<br>
-    vs 1회 행사: 1억 원 → 최고세율 35~45% 적용 위험</p>
-    <p style="font-size:13px; margin-top:8px; color:var(--red-600);"><strong>주의</strong>: 행사 가능 기간 제한 확인 — 부여계약에 행사 기간(통상 5~10년) 확인 필수</p>
-  </div>
-
-  <h3>4.2 주가 하락 리스크 대응</h3>
-  <p>행사 후 주가가 행사가격 이하로 하락하면, 행사이익에 대한 세금만 내고 손실을 보는 역전 현상이 발생한다.</p>
-  <ul>
-    <li><strong>비상장주식</strong>: 행사 전 반드시 주식 평가액의 적정성 검토</li>
-    <li><strong>의무보유 기간</strong>: 상장 후 일정 기간 매각 제한이 있는지 확인</li>
-    <li><strong>행사 전략</strong>: 기업 상황(IPO 계획, M&A 가능성, 배당 정책) 종합 고려</li>
-  </ul>
-
-  <h3>4.3 벤처기업 특례 활용</h3>
-  <p>벤처기업법상 벤처기업의 임직원이 스톡옵션을 행사하는 경우:</p>
-  <ol style="padding-left:18px;">
-    <li>행사 시점 과세 이연 가능(매각 시까지 과세 유예)</li>
-    <li>최종 매각 시 양도소득세(장기 보유 시 낮은 세율) 적용</li>
-    <li>의무보유 기간 주식 매각 제한 완화 가능</li>
-  </ol>
-
-  <h3>4.4 해외 스톡옵션 이중과세 방지</h3>
-  <p>해외법인 스톡옵션 보유 시:</p>
-  <ol style="padding-left:18px;">
-    <li>국내외 과세 관계 확인 — 조세조약 우선 적용</li>
-    <li>외국납부세액공제 신청 — 외국에서 납부한 세액을 국내 세액에서 공제</li>
-    <li>국외 주식매수선택권 거래명세서(소득세법 제164조의5) 제출 의무 준수</li>
-  </ol>
-</div>
-</section>
-
-<!-- 5. 위험 신호 -->
-<section>
-<div class="container">
-  <h2><span class="section-num">05</span>위험 신호</h2>
-
-  <div class="risk-item">
-    <div class="risk-icon">&#9888;&#65039;</div>
-    <div><strong>행사 전 세금 검토 누락</strong> — 행사이익 규모와 세부담을 사전에 계산하지 않고 행사</div>
-  </div>
-  <div class="risk-item">
-    <div class="risk-icon">&#9888;&#65039;</div>
-    <div><strong>비상장 주식 평가 이의</strong> — 평가액이 실제 가치와 괴리, 세무조사 시 부당과세 위험</div>
-  </div>
-  <div class="risk-item">
-    <div class="risk-icon">&#9888;&#65039;</div>
-    <div><strong>원천징수 불이행</strong> — 회사가 원천징수 의무(행사이익 근로소득세) 미이행</div>
-  </div>
-  <div class="risk-item">
-    <div class="risk-icon">&#9888;&#65039;</div>
-    <div><strong>국외 거래명세서 미제출</strong> — 해외 스톡옵션 행사 시 제164조의5 위반 → 가산세 부과</div>
-  </div>
-  <div class="risk-item">
-    <div class="risk-icon">&#9888;&#65039;</div>
-    <div><strong>행사기간 만료 임박</strong> — 무리한 조기 행사 유도로 불필요한 세부담 초래</div>
-  </div>
-  <div class="risk-item">
-    <div class="risk-icon">&#9888;&#65039;</div>
-    <div><strong>벤처 특례 요건 미확인</strong> — 특례 요건 미충족 상태에서 과세 이연 적용 오해</div>
-  </div>
-</div>
-</section>
-
-<!-- 6. 근거 카드 -->
-<section>
-<div class="container">
-  <h2><span class="section-num">06</span>근거 카드</h2>
-
-  <h3>6.1 법령</h3>
-  <table>
-    <tr><th>법령</th><th>조문</th><th>내용</th></tr>
-    <tr><td>소득세법</td><td>제20조</td><td>스톡옵션 행사이익 → 근로소득으로 분류</td></tr>
-    <tr><td>소득세법</td><td>제164조의5</td><td>국외 주식매수선택권 거래명세서 제출 의무</td></tr>
-    <tr><td>벤처기업법</td><td>제16조의3</td><td>벤처기업 스톡옵션 특례 부여 요건</td></tr>
-    <tr><td>조세특례제한법</td><td>(벤처기업 과세 특례)</td><td>행사 시점 과세 이연 및 매각 시 양도소득세 적용</td></tr>
-  </table>
-
-  <h3>6.2 판례</h3>
-  <table>
-    <tr><th>사건번호</th><th>요지</th></tr>
-    <tr><td>대법원 2007두1934</td><td>스톡옵션 행사이익은 을종근로소득으로 종합소득세 과세대상</td></tr>
-    <tr><td>대법원 2019다239842</td><td>행사가격 평가 방법에 관한 법리</td></tr>
-    <tr><td>대법원 2016다237714</td><td>스톡옵션 행사 관련 법리(회사법적 측면)</td></tr>
-  </table>
-</div>
-</section>
-
-<!-- 7. FAQ -->
-<section>
-<div class="container">
-  <h2><span class="section-num">07</span>FAQ</h2>
-
-  <div class="faq-item">
-    <div class="faq-q">스톡옵션 행사일 현재 주식 가치가 하락했다면 이미 납부한 세금을 환급받을 수 있나요?</div>
-    <div class="faq-a">아니오. 행사이익은 <strong>행사 시점의 시가</strong>로 확정되며, 이후 주가 하락은 근로소득세 환급 사유가 되지 않습니다. 다만 주식 매각 시 발생한 손실은 양도소득세 계산 시 반영될 수 있습니다.</div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">스톡옵션 행사이익에 대한 세금을 회사에서 원천징수하지 않으면 어떻게 되나요?</div>
-    <div class="faq-a">근로자가 직접 종합소득세 확정신고 시 행사이익을 포함해 신고·납부해야 합니다. 회사의 원천징수 의무 불이행 시 회사에 가산세가 부과될 수 있습니다.</div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">벤처기업 특례 적용 조건은 무엇인가요?</div>
-    <div class="faq-a">벤처기업육성에 관한 특별법상 벤처기업으로 인정받은 법인의 임직원으로서, 정관·주총결의·부여계약 요건을 모두 충족해야 합니다. 구체적 요건은 세무 전문가의 사전 검토를 권장합니다.</div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">퇴사 후 스톡옵션을 행사할 수 있나요?</div>
-    <div class="faq-a">부여계약에 따라 다릅니다. 일반적으로 퇴사 후 3~6개월 이내에 행사하도록 정해져 있으며, 기간 내 미행사 시 권리가 소멸됩니다. 퇴사 전 반드시 부여계약을 확인하세요.</div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">해외 스톡옵션(미국 ISO/NSO)을 행사했는데 한국에서도 세금을 내야 하나요?</div>
-    <div class="faq-a">네. 한국 거주자(국내에 주소 또는 183일 이상 거소)인 경우 한국에서도 과세됩니다. 다만 조세조약에 따른 외국납부세액공제를 통해 이중과세를 조정할 수 있으므로, 반드시 세무 전문가와 상담하세요.</div>
-  </div>
-</div>
-</section>
-
-<!-- 8. CTA -->
-<div class="cta-section">
-  <div class="container">
-    <h2>스톡옵션 과세, 개인별 맞춤 전략이 필요합니다</h2>
-    <p>소득 수준, 주식 보유 기간, 퇴사 여부, 해외 근무 이력에 따라 최적 전략이 달라집니다.<br>
-    Lawpack-EQ로 행사 전 세금 시뮬레이션, 비상장 주식 평가 적정성 검토,<br>
-    해외 스톡옵션 이중과세 분석, 부여계약 검토를 한 번에 받아보세요.</p>
-    <a href="#" class="cta-button">Lawpack-EQ 문의하기</a>
-    <p class="cta-sub">선행 확인 사항: 스톡옵션 부여계약서, 주주총회 의사록, 정관(스톡옵션 근거조항), 최근 주식 평가 자료</p>
-  </div>
-</div>
-
-</body>
-</html>
+[주의] 행사 가능 기간 제한 확인: 부여계약에 행사 기간(통상 5~10년) 확인 필수
+</code></pre>
+<h3 id="42">4.2 주가 하락 리스크 대응</h3>
+<p>행사 후 주가가 행사가격 이하로 하락하면, 행사이익에 대한 세금만 내고 손실을 보는 역전 현상이 발생한다.</p>
+<ul>
+<li><strong>비상장주식</strong>: 행사 전 반드시 주식 평가액의 적정성 검토</li>
+<li><strong>의무보유 기간</strong>: 상장 후 일정 기간 매각 제한이 있는지 확인</li>
+<li><strong>행사 전략</strong>: 기업 상황(IPO 계획, M&amp;A 가능성, 배당 정책) 종합 고려</li>
+</ul>
+<h3 id="43">4.3 벤처기업 특례 활용</h3>
+<p><strong>벤처기업법</strong>상 벤처기업의 임직원이 스톡옵션을 행사하는 경우:
+1. 행사 시점 과세 이연 가능(매각 시까지 과세 유예)
+2. 최종 매각 시 양도소득세(장기 보유 시 낮은 세율) 적용
+3. 의무보유 기간 주식 매각 제한 완화 가능</p>
+<h3 id="44">4.4 해외 스톡옵션 이중과세 방지</h3>
+<p>해외법인 스톡옵션 보유 시:
+1. 국내외 과세 관계 확인 — 조세조약 우선 적용
+2. 외국납부세액공제 신청 — 외국에서 납부한 세액을 국내 세액에서 공제
+3. 국외 주식매수선택권 거래명세서(소득세법 제164조의5) 제출 의무 준수</p>
+<h2 id="5">5. 위험 신호</h2>
+<table>
+<thead>
+<tr>
+<th>위험 신호</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>행사 전 세금 검토 누락</strong></td>
+<td>행사이익 규모와 세부담을 사전에 계산하지 않고 행사</td>
+</tr>
+<tr>
+<td><strong>비상장 주식 평가 이의</strong></td>
+<td>평가액이 실제 가치와 괴리 — 세무조사 시 부당과세 위험</td>
+</tr>
+<tr>
+<td><strong>원천징수 불이행</strong></td>
+<td>회사가 원천징수 의무(행사이익의 근로소득세)를 이행하지 않은 경우</td>
+</tr>
+<tr>
+<td><strong>국외 거래명세서 미제출</strong></td>
+<td>해외 스톡옵션 행사 시 제164조의5 위반 — 가산세 부과</td>
+</tr>
+<tr>
+<td><strong>행사기간 만료 임박</strong></td>
+<td>무리한 조기 행사 유도로 불필요한 세부담 초래</td>
+</tr>
+<tr>
+<td><strong>벤처 특례 요건 미확인</strong></td>
+<td>특례 요건 미충족 상태에서 과세 이연 적용 오해</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6">6. 근거 카드</h2>
+<h3 id="61">6.1 법령</h3>
+<table>
+<thead>
+<tr>
+<th>법령</th>
+<th>조문</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>소득세법</strong></td>
+<td>제20조(근로소득)</td>
+<td>스톡옵션 행사이익 → 근로소득으로 분류</td>
+</tr>
+<tr>
+<td><strong>소득세법</strong></td>
+<td>제164조의5(국외 주식매수선택권등 거래명세서)</td>
+<td>해외법인 스톡옵션 행사 시 거래명세서 제출 의무</td>
+</tr>
+<tr>
+<td><strong>벤처기업법</strong></td>
+<td>제16조의3(주식매수선택권)</td>
+<td>벤처기업 스톡옵션 특례 부여 요건</td>
+</tr>
+<tr>
+<td><strong>조세특례제한법</strong></td>
+<td>(벤처기업 과세 특례)</td>
+<td>행사 시점 과세 이연 및 매각 시 양도소득세 적용</td>
+</tr>
+</tbody>
+</table>
+<h3 id="62">6.2 판례</h3>
+<table>
+<thead>
+<tr>
+<th>사건번호</th>
+<th>요지</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>대법원 2007두1934</strong></td>
+<td>스톡옵션 행사이익은 을종근로소득으로 종합소득세 과세대상임을 확인</td>
+</tr>
+<tr>
+<td><strong>대법원 2019다239842</strong></td>
+<td>행사가격 평가 방법에 관한 법리 제시</td>
+</tr>
+<tr>
+<td><strong>대법원 2016다237714</strong></td>
+<td>스톡옵션 행사 관련 법리 판시(회사법적 측면)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="63">6.3 행정해석</h3>
+<p>스톡옵션 행사이익 과세와 관련된 국세청 유권해석은 행사 시점의 시가 평가, 행사이익 계산 방법, 원천징수 시기 등에 관한 실무 기준을 제시한다. 구체적 사안에 대해서는 세무 전문가의 조력이 필요하다.</p>
+<h2 id="7-faq">7. FAQ</h2>
+<p><strong>Q1. 스톡옵션 행사일 현재 주식 가치가 하락했다면 이미 납부한 세금을 환급받을 수 있나요?</strong>
+아니오. 행사이익은 <strong>행사 시점의 시가</strong>로 확정되며, 이후 주가 하락은 근로소득세 환급 사유가 되지 않습니다. 다만 주식 매각 시 발생한 손실은 양도소득세 계산 시 반영될 수 있습니다.</p>
+<p><strong>Q2. 스톡옵션 행사이익에 대한 세금을 회사에서 원천징수하지 않으면 어떻게 되나요?</strong>
+근로자가 직접 종합소득세 확정신고 시 행사이익을 포함해 신고·납부해야 합니다. 회사의 원천징수 의무 불이행 시 회사에 가산세가 부과될 수 있습니다.</p>
+<p><strong>Q3. 벤처기업 특례 적용 조건은 무엇인가요?</strong>
+벤처기업육성에 관한 특별법상 벤처기업으로 인정받은 법인의 임직원으로서, 정관·주총결의·부여계약 요건을 모두 충족해야 합니다. 구체적 요건은 세무 전문가의 사전 검토를 권장합니다.</p>
+<p><strong>Q4. 퇴사 후 스톡옵션을 행사할 수 있나요?</strong>
+부여계약에 따라 다릅니다. 일반적으로 퇴사 후 3~6개월 이내에 행사하도록 정해져 있으며, 기간 내 미행사 시 권리가 소멸됩니다. 퇴사 전 반드시 부여계약을 확인하세요.</p>
+<p><strong>Q5. 해외 스톡옵션(미국 ISO/NSO)을 행사했는데 한국에서도 세금을 내야 하나요?</strong>
+네. 한국 거주자(국내에 주소 또는 183일 이상 거소)인 경우 한국에서도 과세됩니다. 다만 조세조약에 따른 외국납부세액공제를 통해 이중과세를 조정할 수 있으므로, 반드시 세무 전문가와 상담하세요.</p>
+<h2 id="8-cta">8. CTA — 더 알아보기</h2>
+<p>스톡옵션 과세 문제는 개인별 상황(소득 수준, 주식 보유 기간, 퇴사 여부, 해외 근무 이력 등)에 따라 최적 전략이 달라집니다.</p>
+<p><strong>Lawpack 이용안내</strong>: 당 법률사무소의 스톡옵션 종합 검토 서비스(Lawpack-EQ)를 이용하시면 개인별 맞춤 전략을 제공받을 수 있습니다. 행사 전 세금 시뮬레이션, 비상장 주식 평가 적정성 검토, 해외 스톡옵션 이중과세 분석, 부여계약 검토 등이 포함됩니다.</p>
+<blockquote>
+<p><strong>문의</strong>: 실장 채널 또는 법률사무소 대표번호로 연락 주시기 바랍니다.
+<strong>선행 확인 사항</strong>: 스톡옵션 부여계약서, 주주총회 의사록, 정관(스톡옵션 근거조항), 최근 주식 평가 자료</p>
+</blockquote></main></body></html>
