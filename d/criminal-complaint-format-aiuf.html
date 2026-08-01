@@ -1,203 +1,566 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
-<title>고소장 1장으로 끝내기: 범죄사실→증거→법률구성→고소인 인적사항 작성 포맷 — 조우성 변호사</title>
-<meta name="description" content="고소장 작성 포맷과 절차. 범죄사실·증거·법률구성·인적사항 4대 구성 요소, 육하원칙 적용법, 친고죄 6개월 기한.">
-<style>
-:root{--bg:#f0f2f5;--panel:#fff;--panel2:#f8f9fb;--line:#e2e5ea;--ink:#111827;--ink2:#374151;--muted:#6b7280;--navy:#1a3a6b;--navy-d:#0f2547;--navy-l:#2e6be6;--navy-tint:#e8edf5;--green-bg:#ecfdf5;--green:#059669;--amber:#f59e0b;--amber-bg:#fffbeb;--red:#dc2626;--red-bg:#fef2f2;--font:-apple-system,BlinkMacSystemFont,Malgun Gothic,sans-serif;--readw:760px}
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>고소장 1장으로 끝내기: &#x27;범죄사실→증거→법률구성→고소인 인적사항&#x27; 작성 포맷</title><style>
+/* ============================================================
+   법률 대시보드 전자책 — Apollo 기반 경량 커스텀 (공개 롱스크롤)
+   Apollo 토큰(버건디 액센트 + 웜 화이트 + 딥와인 헤더) 상속.
+   의뢰인 리포트(리스크레이더 6뷰)와 달리 공개 독서형 롱스크롤.
+   self-contained: 외부 CDN/폰트/이미지/스크립트 의존 없음.
+   ============================================================ */
+:root{
+  --bg:#f5f1f2; --panel:#ffffff; --panel2:#faf6f7;
+  --line:#ebe2e5; --line2:#ddccd2;
+  --ink:#2c1d26; --ink2:#56424c; --muted:#8a7b82; --faint:#b3a6ab;
+  --wine:#7a2e3a; --wine-d:#5a1f2b; --wine-l:#9c4456;
+  --wine-tint:#f4e9ec; --wine-tint-ln:#ecd7dd;
+  --header-bg:#3a1525; --header-bg2:#4e1f32; --header-accent:#d4a0aa;
+  --rH:#c74a3c; --rM-bg:#f8e4b8; --rM-tx:#7d520a; --rL-bg:#d6ecdb; --rL-tx:#287a54;
+  --amber:#b45309; --green:#287a54;
+  --font:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Noto Sans KR',sans-serif;
+  --maxw:1120px; --readw:760px;
+}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:var(--font);background:var(--bg);color:var(--ink);margin:0;padding:0;line-height:1.8;font-size:15px}
-.hero{background:linear-gradient(135deg,var(--navy-d),var(--navy));color:#fff;padding:32px 20px 28px;position:relative}
-.hero h1{font-size:22px;font-weight:700;margin:0 0 8px;line-height:1.4;letter-spacing:-0.3px}
-.hero p{font-size:13px;margin:0 0 4px;color:rgba(255,255,255,.8)}
-.hero .badge{display:inline-block;background:rgba(255,255,255,.15);border-radius:4px;padding:2px 10px;font-size:11px;margin-top:8px}
-.container{max-width:var(--readw);margin:0 auto;padding:16px}
-.card{background:var(--panel);border-radius:10px;padding:20px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
-.card h2{font-size:17px;font-weight:700;margin:0 0 12px;color:var(--navy);border-left:4px solid var(--navy-l);padding-left:12px}
-.card h3{font-size:14px;font-weight:600;margin:14px 0 8px;color:var(--ink2)}
-.tldr{background:var(--navy-tint);border-radius:10px;padding:16px 18px;margin-bottom:14px;font-size:13px;line-height:1.7;border-left:4px solid var(--navy-l)}
-.tldr strong{color:var(--navy)}
-table{width:100%;border-collapse:collapse;margin:10px 0;font-size:13px}
-table th{background:var(--navy-tint);text-align:left;padding:8px 10px;font-weight:600;color:var(--navy);border:1px solid var(--line);font-size:12px}
-table td{padding:8px 10px;border:1px solid var(--line);vertical-align:top}
-table tr:nth-child(even){background:var(--panel2)}
-.alert-box{background:var(--amber-bg);border-left:4px solid var(--amber);padding:12px 14px;border-radius:6px;margin:10px 0;font-size:13px}
-.info-box{background:var(--navy-tint);border-left:4px solid var(--navy-l);padding:12px 14px;border-radius:6px;margin:10px 0;font-size:13px}
-.green-box{background:var(--green-bg);border-left:4px solid var(--green);padding:12px 14px;border-radius:6px;margin:10px 0;font-size:13px}
-.red-box{background:var(--red-bg);border-left:4px solid var(--red);padding:12px 14px;border-radius:6px;margin:10px 0;font-size:13px}
-.faq-q{font-weight:600;color:var(--navy);margin:12px 0 4px;font-size:14px}
-.faq-a{margin:0 0 10px 0;font-size:13px;line-height:1.7}
-.sample-box{background:#f8f9fb;border:1px solid var(--line);border-radius:6px;padding:14px;margin:10px 0;font-size:12px;line-height:1.6;font-family:Menlo,Consolas,monospace;white-space:pre-wrap;overflow-x:auto}
-.footer{text-align:center;padding:20px;color:var(--muted);font-size:11px}
-.footer a{color:var(--navy-l)}
-@media(max-width:600px){.hero h1{font-size:19px}.card{padding:16px}.sample-box{font-size:11px}}
-</style>
-</head>
-<body>
-<div class="hero">
-<h1>고소장 1장으로 끝내기</h1>
-<p>범죄사실→증거→법률구성→고소인 인적사항 작성 포맷</p>
-<span class="badge">조우성 변호사 · 로펌 머스트노우</span>
-</div>
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
 
-<div class="container">
-<div class="tldr">
-<strong>3줄 요약</strong><br>
-• 고소장은 정해진 양식이 없으나 <strong>4대 구성 요소(범죄사실·증거·법률구성·인적사항)</strong>를 빠짐없이 기재해야 수사기관이 접수·수사에 착수한다. 관할 경찰서 또는 검찰청에 제출한다(형사소송법 제223조~제230조).<br>
-• <strong>범죄사실</strong>은 육하원칙(누가·언제·어디서·무엇을·어떻게·왜)으로 시간 순서대로 기재하고, 각 사실에 <strong>증거</strong>를 매핑한다. <strong>법률구성</strong>(적용법조)을 명시하면 수사 방향 설정에 도움이 된다.<br>
-• <strong>친고죄</strong>는 범인 인지일로부터 <strong>6개월 이내</strong> 고소 필수(형소법 제230조). 허위 고소 시 <strong>무고죄</strong>(형법 제156조)로 역고소될 수 있으므로 주의.
-</div>
+/* 읽기 진행바 */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;
+  background:linear-gradient(90deg,var(--wine),var(--wine-l));transition:width .1s linear}
 
-<div class="card">
-<h2>1. 고소장 4대 구성 요소</h2>
+/* 헤더 표지 (딥와인, 유일한 딥 컬러) */
+.header{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0}
+.header .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 26px}
+.header .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;
+  color:var(--header-accent);border:1px solid rgba(212,160,170,.4);border-radius:999px;padding:4px 12px}
+.header .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--header-accent)}
+
+/* 히어로 */
+.hero{max-width:var(--maxw);margin:0 auto;padding:30px 26px 8px}
+.hero .eb{font-size:12px;font-weight:700;color:var(--wine);letter-spacing:.02em;margin-bottom:10px}
+.hero h1{font-size:30px;line-height:1.28;font-weight:800;margin:0 0 16px;color:var(--ink);letter-spacing:-.01em}
+.hero .tldr{background:var(--wine-tint);border:1px solid var(--wine-tint-ln);border-left:4px solid var(--wine);
+  border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.hero .tldr .lb{font-size:12px;font-weight:700;color:var(--wine-d);margin-bottom:8px}
+.hero .tldr ul{margin:0;padding-left:18px}
+.hero .tldr li{margin:4px 0;font-size:15px;color:var(--ink2)}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:12.5px;color:var(--muted);margin-bottom:18px}
+.hero .meta .vchip{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);
+  font-weight:700;border-radius:6px;padding:3px 9px;font-size:11.5px}
+.hero .cta-row{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:9px;
+  padding:11px 18px;text-decoration:none;cursor:pointer;border:1px solid transparent}
+.btn-p{background:var(--wine);color:#fff}
+.btn-p:hover{background:var(--wine-d)}
+.btn-o{background:#fff;color:var(--wine-d);border-color:var(--line2)}
+.btn-o:hover{background:var(--panel2)}
+
+/* 셸: 좌측 목차 + 본문 */
+.app{max-width:var(--maxw);margin:0 auto;padding:8px 26px 60px;
+  display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:start}
+
+/* 목차 (데스크톱 = 좌측 sticky) */
+.toc{position:sticky;top:24px}
+.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;
+  margin:0 0 10px;padding-left:2px}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}
+.toc li{counter-increment:toc;margin:1px 0}
+.toc a{display:flex;gap:9px;font-size:13.5px;color:var(--ink2);text-decoration:none;
+  padding:7px 10px;border-radius:8px;border-left:3px solid transparent;line-height:1.4}
+.toc a::before{content:counter(toc,decimal-leading-zero);color:var(--faint);font-weight:700;font-size:11.5px;flex:none}
+.toc a:hover{background:var(--panel2)}
+.toc a.active{background:var(--wine-tint);border-left-color:var(--wine);color:var(--wine-d);font-weight:700}
+.toc-toggle{display:none}
+
+/* 본문 */
+.content{max-width:var(--readw);min-width:0}
+section.blk{scroll-margin-top:24px;margin-bottom:38px}
+.secl{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.05em;margin:0 0 12px}
+.secl::before{content:"";width:7px;height:15px;background:var(--wine);border-radius:2px;flex:none}
+section.blk h2{font-size:23px;font-weight:800;line-height:1.35;margin:0 0 14px;color:var(--ink);letter-spacing:-.01em}
+section.blk h3{font-size:17px;font-weight:700;margin:26px 0 10px;color:var(--wine-d)}
+section.blk p{margin:0 0 14px;color:var(--ink2)}
+section.blk ul,section.blk ol{margin:0 0 14px;padding-left:22px;color:var(--ink2)}
+section.blk li{margin:6px 0}
+strong{color:var(--ink);font-weight:700}
+a.ln{color:var(--wine-l);text-decoration:none;border-bottom:1px solid var(--wine-tint-ln)}
+a.ln:hover{border-bottom-color:var(--wine-l)}
+
+/* 핵심요약 카드 */
+.summary{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.summary .lb{font-size:11px;font-weight:700;color:var(--wine-d);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.summary ul{margin:0;padding-left:18px}
+
+/* 근거 카드 (조문·판례) */
+.ev{background:#fff;border:1px solid var(--line);border-left:4px solid var(--wine);border-radius:10px;
+  padding:13px 15px;margin:0 0 12px}
+.ev .top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px}
+.ev .kind{font-size:11px;font-weight:700;color:#fff;background:var(--wine);border-radius:5px;padding:2px 8px}
+.ev .kind.law{background:var(--wine-d)}
+.ev .kind.case{background:var(--amber)}
+.ev .cite{font-size:13.5px;font-weight:700;color:var(--ink)}
+.ev .vtick{margin-left:auto;font-size:11px;font-weight:700;color:var(--rL-tx);background:var(--rL-bg);border-radius:5px;padding:2px 7px}
+.ev .gist{font-size:14px;color:var(--ink2);margin:0}
+.ev .date{font-size:12px;color:var(--muted);margin-top:5px}
+
+/* 다이어그램 — 플로우 / 체크리스트 (CSS·SVG only) */
+.figure{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin:0 0 18px}
+.figure .cap{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:12px}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px}
+.flow .step{flex:1;min-width:120px;background:var(--wine-tint);border:1px solid var(--wine-tint-ln);
+  border-radius:10px;padding:11px 12px;position:relative}
+.flow .step .n{font-size:11px;font-weight:700;color:var(--wine)}
+.flow .step .t{font-size:13.5px;font-weight:700;color:var(--ink);margin-top:2px}
+.flow .step .d{font-size:12.5px;color:var(--ink2);margin-top:3px}
+.checklist{list-style:none;margin:0;padding:0}
+.checklist li{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+.checklist li:last-child{border-bottom:none}
+.checklist .ck{flex:none;width:20px;height:20px;border-radius:5px;background:var(--rL-bg);color:var(--rL-tx);
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+
+/* 위험도 칩 */
+.chip{display:inline-flex;align-items:center;justify-content:center;min-width:34px;font-size:11px;font-weight:500;
+  border-radius:6px;padding:3px 8px;margin-right:4px}
+.c-H{background:var(--rH);color:#fff}
+.c-M{background:var(--rM-bg);color:var(--rM-tx)}
+.c-L{background:var(--rL-bg);color:var(--rL-tx)}
+
+/* 표 */
+.tbl-wrap{overflow-x:auto;margin:0 0 18px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px}
+
+/* FAQ (아코디언) */
+.faq details{background:#fff;border:1px solid var(--line);border-radius:10px;margin:0 0 10px;overflow:hidden}
+.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:15px;font-weight:700;color:var(--ink);
+  display:flex;align-items:center;gap:10px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--wine-tint);
+  color:var(--wine-d);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+.faq details[open] summary{border-bottom:1px solid var(--line);color:var(--wine-d)}
+.faq .a{padding:14px 16px;font-size:14.5px;color:var(--ink2)}
+
+/* 최신성·면책 고지 */
+.notice{background:#fff;border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;
+  font-size:12.5px;color:var(--muted);line-height:1.7}
+
+/* 맨 위로 버튼 */
+#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--wine-tint-ln);background:var(--wine);color:#fff;font-size:18px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;
+  box-shadow:0 4px 14px rgba(58,21,37,.28)}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{background:var(--wine-d)}
+
+/* 푸터 프로필 + 상담 CTA */
+.footer{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0;margin-top:20px}
+.footer .wrap{max-width:var(--maxw);margin:0 auto;padding:34px 26px}
+.footer h3{font-size:20px;font-weight:800;margin:0 0 8px;color:#fff}
+.footer p{font-size:14px;color:rgba(255,255,255,.72);margin:0 0 6px;line-height:1.7}
+.footer .prof{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end}
+.footer .cta-f{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.footer .btn-f{background:#fff;color:var(--wine-d)}
+.footer .btn-f:hover{background:var(--header-accent)}
+.footer .btn-fo{background:transparent;color:#f4eef0;border-color:rgba(255,255,255,.35)}
+.footer .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:22px;padding-top:14px;
+  font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.7}
+
+/* ── 모바일 (≤820px) ── */
+@media(max-width:820px){
+  .hero h1{font-size:24px}
+  .app{grid-template-columns:1fr;gap:0;padding-top:0}
+  .toc{position:static;margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 8px}
+  .toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;
+    cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--wine-d);padding:9px 8px}
+  .toc-toggle .ar{transition:transform .2s}
+  .toc.closed .toc-toggle .ar{transform:rotate(-90deg)}
+  .toc .tt{display:none}
+  .toc ol{max-height:50vh;overflow:auto}
+  .toc.closed ol{display:none}
+  section.blk h2{font-size:20px}
+  th,td{white-space:nowrap}
+}
+@media print{
+  #progress,.toc,.cta-row,.footer .cta-f{display:none}
+  .header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .app{display:block}
+}
+</style></head><body><div id="progress"></div><button id="toTop" aria-label="맨 위로">?</button><header class="header"><div class="wrap"><span class="badge"><span class="dot"></span>조우성 변호사 ? 법률 인사이트</span></div></header><div class="hero"><div class="eb">전자책 대시보드 ? 실무 가이드</div><h1>고소장 1장으로 끝내기: &#x27;범죄사실→증거→법률구성→고소인 인적사항&#x27; 작성 포맷</h1><div class="tldr"><div class="lb">3줄 요약 (TL;DR)</div><ul><li>원문 Markdown의 제목?본문?표?체크리스트를 반영한 공개용 HTML입니다.</li><li>문서의 핵심 내용과 실무상 확인 포인트를 한 화면에서 확인할 수 있습니다.</li><li>구체적인 사안은 최신 법령?판례와 사실관계 확인이 필요합니다.</li></ul></div><div class="meta"><span>원문: 20260711_criminal_complaint_format.md</span><span class="vchip">원문 기반 HTML</span></div><div class="cta-row"><a class="btn btn-p" href="#s1">핵심 내용 보기</a><a class="btn btn-o" href="#faq">확인 사항</a></div></div><div class="app"><nav class="toc" id="toc"><div class="tt">목차</div><ol id="toc-list"><li><a href="#s1">본문</a></li><li><a href="#s2">3줄 요약 (TL;DR)</a></li><li><a href="#s3">1. 고소장 4대 구성 요소</a></li><li><a href="#s4">2. 범죄사실 작성법 — &#x27;육하원칙&#x27; 적용</a></li><li><a href="#s5">3. 증거 기재 및 첨부 방법</a></li><li><a href="#s6">4. 법률구성 (적용법조) 작성</a></li><li><a href="#s7">5. 고소 절차 (5단계)</a></li><li><a href="#s8">6. 고소장 각하·기각 사유와 대응</a></li><li><a href="#s9">7. FAQ</a></li><li><a href="#s10">8. 관련 법령·판례</a></li></ol></nav><main class="content"><section class="blk" id="s1"><div class="secl">SECTION</div><blockquote>
+<p>[!web] 웹으로 보기
+<a href="https://woosungjo-law.github.io/share/d/criminal-complaint-format-aiuf.html">https://woosungjo-law.github.io/share/d/criminal-complaint-format-aiuf.html</a></p>
+</blockquote>
+<p><em>출처: 조우성 변호사 / 로펌 머스트노우 | 문의: law@mustknow.co.kr</em></p>
+<h1>고소장 1장으로 끝내기: '범죄사실→증거→법률구성→고소인 인적사항' 작성 포맷</h1></section><section class="blk" id="s2"><div class="secl">SECTION</div><h2>3줄 요약 (TL;DR)</h2>
+<ul>
+<li><strong>고소장</strong>은 형사소송법상 정해진 양식이 없으나, 수사기관이 범죄 혐의를 인지하고 수사에 착수하게 하려면 <strong>4대 구성 요소</strong>(범죄사실·증거·법률구성·인적사항)를 빠짐없이 기재해야 한다. 고소인은 관할 경찰서 또는 검찰청에 제출한다(형사소송법 제223조~제230조).</li>
+<li><strong>범죄사실</strong>에는 육하원칙(누가·언제·어디서·무엇을·어떻게·왜)에 따라 구체적인 사실을 시간 순서대로 기재하고, 각 사실에 대응하는 <strong>증거</strong>(진단서·계좌내역·메시지 캡처·녹취록)를 명시한다. <strong>법률구성</strong>은 해당 범죄의 적용법조(형법·특별법 조문)를 기재하여 수사 방향을 명확히 한다.</li>
+<li><strong>친고죄</strong>(명예훼손·강간 등)는 범인을 안 날로부터 <strong>6개월 이내</strong>에 고소해야 하며(형소법 제230조), <strong>반의사불벌죄</strong>(폭행·협박 등)는 고소 취하 시 처벌이 면제된다. 허위 고소 시 <strong>무고죄</strong>(형법 제156조)로 역고소될 수 있으므로 주의해야 한다.</li>
+</ul>
+<hr /></section><section class="blk" id="s3"><div class="secl">SECTION</div><h2>1. 고소장 4대 구성 요소</h2>
+<p>고소장은 아래 4가지 요소를 모두 포함해야 수사기관이 정식 접수하여 수사에 착수할 수 있다.</p>
 <table>
-<tr><th>요소</th><th>내용</th><th>작성 핵심</th></tr>
-<tr><td><strong>① 범죄사실</strong></td><td>육하원칙에 따른 구체적 피해 사실</td><td>시간·장소·방법·결과를 <strong>특정</strong>하여 기재</td></tr>
-<tr><td><strong>② 증거</strong></td><td>범죄사실을 입증할 객관적 자료</td><td>각 사실에 대응하는 증거를 <strong>매핑</strong></td></tr>
-<tr><td><strong>③ 법률구성</strong></td><td>해당 범죄의 적용법조</td><td>죄명 + 형법/특별법 조문 명시</td></tr>
-<tr><td><strong>④ 인적사항</strong></td><td>고소인·피고소인 특정 정보</td><td><strong>피고소인 특정</strong>이 가장 중요</td></tr>
+<thead>
+<tr>
+<th>요소</th>
+<th>내용</th>
+<th>작성 핵심</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>① 범죄사실</strong></td>
+<td>육하원칙에 따른 구체적 피해 사실</td>
+<td>시간·장소·방법·결과를 <strong>특정</strong>하여 기재</td>
+</tr>
+<tr>
+<td><strong>② 증거</strong></td>
+<td>범죄사실을 입증할 객관적 자료</td>
+<td>각 사실에 대응하는 증거를 <strong>매핑</strong></td>
+</tr>
+<tr>
+<td><strong>③ 법률구성</strong></td>
+<td>해당 범죄의 적용법조</td>
+<td>죄명 + 형법/특별법 조문 명시</td>
+</tr>
+<tr>
+<td><strong>④ 인적사항</strong></td>
+<td>고소인·피고소인 특정 정보</td>
+<td>피고소인 특정이 가장 중요</td>
+</tr>
+</tbody>
 </table>
-
 <h3>고소장 기본 포맷 (예시)</h3>
-<div class="sample-box">[제목] 고 소 장
+<pre><code>[제목] 고 소 장
 
-[고소인] 성명: 홍길동   주민등록번호: XXXXXX-XXXXXXX
-        주소: 서울 서초구 서초동   연락처: 010-XXXX-XXXX
+[고소인] 성명: 홍길동 (주민등록번호: XXXXXX-XXXXXXX)
+        주소: 서울특별시 서초구 서초동 XXXX
+        연락처: 010-XXXX-XXXX
 
-[피고소인] 성명: 김철수   주민등록번호: XXXXXX-XXXXXXX
-          주소: 서울 강남구 역삼동   연락처: 010-XXXX-XXXX
+[피고소인] 성명: 김철수 (주민등록번호: XXXXXX-XXXXXXX)
+          주소: 서울특별시 강남구 역삼동 XXXX
+          연락처: 010-XXXX-XXXX
 
-[고소취지] 피고소인을 사기(형법 제347조) 혐의로 고소합니다.
+[고소취지]
+피고소인을 사기(형법 제347조) 혐의로 고소하오니 수사하여 엄벌하여 주시기 바랍니다.
 
 [범죄사실]
-1. 피고소인은 2026. 6. 1. 서울 서초구 소재 'ㅇㅇ커피'에서
-   "쇼핑몰 투자하면 월 10% 수익"이라고 거짓말하였다.
-2. 이에 속은 고소인은 같은 날 피고소인 계좌로 5,000만 원 송금.
-3. 피고소인은 위 금원을 개인적 용도로 소비하고 수익금 미지급.
-4. 반환 요구에도 연락 두절.
+1. 피고소인은 2026년 6월 1일 서울 서초구 소재 'ㅇㅇ커피숍'에서 피해자인 고소인에게 &quot;내가 운영하는 온라인 쇼핑몰에 투자하면 월 10% 수익을 보장하겠다&quot;고 거짓말하였다.
+2. 이에 속은 고소인은 같은 날 피고소인의 계좌(ㅇㅇ은행 XXX-XX-XXXX)로 5,000만 원을 송금하였다.
+3. 그러나 피고소인은 위 금원을 투자 목적이 아닌 채무 변제 등 개인적 용도로 소비하였고, 약속한 수익금을 단 한 차례도 지급하지 아니하였다.
+4. 고소인은 수차례에 걸쳐 투자금 반환을 요구하였으나, 피고소인은 연락을 두절하였다.
 
-[증거] 1. 계좌이체확인증 2. 카카오톡 메시지 캡처 5매
-       3. 피고소인 통장 사본 4. 문자메시지 내역 3매
+[증거]
+1. 계좌이체 확인증 (5,000만 원 송금 내역) 1부.
+2. 피고소인의 투자 제안 카카오톡 메시지 캡처 5매.
+3. 피고소인 명의 통장 사본 1부.
+4. 수익금 미지급 확인 문자메시지 내역 3매.
 
-[법률구성] 형법 제347조(사기) 및 동법 제30조(정범)
+[법률구성]
+피고소인의 위 행위는 형법 제347조(사기) 및 동법 제30조(정범)에 해당합니다.
 
-2026. 7. 11.  위 고소인 홍길동 (서명)  ㅇㅇ경찰서장 귀하</div>
-</div>
+[고소인 의견]
+본 건은 피고소인이 초기부터 변제 의사나 능력 없이 고소인을 기망하여 거액을 편취한 사안으로, 동종 범죄의 재발 방지와 엄벌이 필요합니다.
 
-<div class="card">
-<h2>2. 범죄사실 작성법 — 육하원칙 적용</h2>
-<p>고소장의 범죄사실은 수사기관이 범죄 혐의를 인지하고 공소사실을 특정할 수 있을 정도로 <strong>구체적</strong>이어야 한다. 포괄일죄(동종 범행 계속)는 시기·종기를 명확히 기재해야 각하를 면할 수 있다.</p>
+2026년 7월 11일
+
+위 고소인 홍길동 (서명 또는 인)
+
+ㅇㅇ경찰서장 귀하
+</code></pre>
+<hr /></section><section class="blk" id="s4"><div class="secl">SECTION</div><h2>2. 범죄사실 작성법 — '육하원칙' 적용</h2>
+<h3>2.1. 범죄사실 특정의 중요성</h3>
+<blockquote>
+<p>고소장의 범죄사실은 수사기관이 범죄 혐의를 인지하고 공소사실을 특정할 수 있을 정도로 구체적이어야 한다. <strong>포괄일죄</strong>(동종 범행이 계속된 경우)는 시기·종기를 명확히 기재하고, 범행 횟수·금액을 특정해야 각하를 면할 수 있다(대법원 2023도9738 취지).</p>
+</blockquote>
+<h3>2.2. 범죄사실 작성 체크리스트</h3>
 <table>
-<tr><th>항목</th><th>기재 예시</th></tr>
-<tr><td><strong>누가</strong></td><td>피고소인 김철수는</td></tr>
-<tr><td><strong>언제</strong></td><td>2026년 6월 1일 14:00경</td></tr>
-<tr><td><strong>어디서</strong></td><td>서울 서초구 'ㅇㅇ카페'에서</td></tr>
-<tr><td><strong>무엇을</strong></td><td>"투자하면 수익"이라고 거짓말하고</td></tr>
-<tr><td><strong>어떻게</strong></td><td>5,000만 원을 송금받아</td></tr>
-<tr><td><strong>왜/결과</strong></td><td>개인 용도로 소비, 5,000만 원 재산상 손해 발생</td></tr>
+<thead>
+<tr>
+<th>항목</th>
+<th>기재 예시</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>누가</strong></td>
+<td>피고소인 김철수는</td>
+</tr>
+<tr>
+<td><strong>언제</strong></td>
+<td>2026년 6월 1일 14:00경</td>
+</tr>
+<tr>
+<td><strong>어디서</strong></td>
+<td>서울 서초구 서초동 'ㅇㅇ카페'에서</td>
+</tr>
+<tr>
+<td><strong>무엇을</strong></td>
+<td>"온라인 쇼핑몰에 투자하면 월 10% 수익"이라고 거짓말하고</td>
+</tr>
+<tr>
+<td><strong>어떻게</strong></td>
+<td>5,000만 원을 자신의 계좌로 송금받아</td>
+</tr>
+<tr>
+<td><strong>왜/결과</strong></td>
+<td>개인적 용도로 소비하여 고소인에게 5,000만 원 상당의 재산상 손해를 가함</td>
+</tr>
+</tbody>
 </table>
-
-<h3>사건 경과 시간순 정리</h3>
-<p>범죄사실은 반드시 시간 순서대로: ①<strong>사전 정황</strong> — 범행 동기·준비 행위 ②<strong>본범 행위</strong> — 핵심 범죄행위(기망·착오·처분·손해) ③<strong>사후 정황</strong> — 피해 확대·연락 두절 등</p>
-<div class="info-box"><strong>Tip:</strong> 범죄사실 특정이 불명확하면 '범죄사실 불특정'을 이유로 각하될 수 있다(대법원 2023도9738 취지). 특히 포괄일죄의 경우 시기·종기·횟수·금액을 구체적으로 기재해야 한다.</div>
-</div>
-
-<div class="card">
-<h2>3. 증거 기재 및 첨부 방법</h2>
+<h3>2.3. 사건 경과 시간순 정리</h3>
+<p>범죄사실은 반드시 <strong>시간 순서대로</strong> 기재한다. 사건 전·중·후를 구분하여:</p>
+<ol>
+<li><strong>사전 정황</strong> — 피고소인의 준비 행위, 고소인과의 관계, 범행 동기</li>
+<li><strong>본범 행위</strong> — 핵심 범죄행위 (기망·착오·처분행위·손해 발생 등 구성요건 해당 행위)</li>
+<li><strong>사후 정황</strong> — 피해 확대, 반환 요구, 연락 두절, 도주 등</li>
+</ol>
+<hr /></section><section class="blk" id="s5"><div class="secl">SECTION</div><h2>3. 증거 기재 및 첨부 방법</h2>
+<h3>3.1. 증거의 종류와 예시</h3>
 <table>
-<tr><th>증거 유형</th><th>예시</th><th>비고</th></tr>
-<tr><td><strong>문서 증거</strong></td><td>계좌이체확인증·계약서·내용증명·진단서</td><td>원본 대조 가능하도록 스캔</td></tr>
-<tr><td><strong>전자 증거</strong></td><td>문자메시지·카카오톡·이메일·SNS 캡처</td><td><strong>원본 파일</strong> 보존이 핵심</td></tr>
-<tr><td><strong>녹취·영상</strong></td><td>통화 녹음파일·CCTV·블랙박스</td><td>통비법 위반 여부 사전 검토</td></tr>
-<tr><td><strong>진술 증거</strong></td><td>목격자 진술서·참고인 연락처</td><td>2인 이상 권장</td></tr>
+<thead>
+<tr>
+<th>증거 유형</th>
+<th>예시</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>문서 증거</strong></td>
+<td>계좌이체확인증·계약서·내용증명·진단서</td>
+<td>원본 대조 가능하도록 스캔</td>
+</tr>
+<tr>
+<td><strong>전자 증거</strong></td>
+<td>문자메시지·카카오톡·이메일·SNS 캡처</td>
+<td><strong>원본 파일</strong> 보존이 핵심</td>
+</tr>
+<tr>
+<td><strong>녹취·영상</strong></td>
+<td>통화 녹음파일·CCTV·블랙박스</td>
+<td>통비법 위반 여부 사전 검토</td>
+</tr>
+<tr>
+<td><strong>진술 증거</strong></td>
+<td>목격자 진술서·참고인 연락처</td>
+<td>2인 이상 권장</td>
+</tr>
+</tbody>
 </table>
-
-<div class="red-box"><strong>증거 제출 주의사항:</strong> ① 원본은 별도 보존하고 사본만 제출 ② 타인의 통신 무단 녹음 시 통신비밀보호법 위반 가능 ③ 증거별로 번호 부여하고 설명 첨부 ④ 캡처본만 제출하지 말고 원본 파일(휴대폰·이메일 등) 별도 보존</div>
-</div>
-
-<div class="card">
-<h2>4. 법률구성 (적용법조) 작성</h2>
+<h3>3.2. 증거 제출 시 주의사항</h3>
 <table>
-<tr><th>범죄 유형</th><th>적용법조</th><th>구성요건 핵심</th></tr>
-<tr><td>사기</td><td>형법 제347조</td><td>기망행위 + 착오 + 처분행위 + 재산상 손해</td></tr>
-<tr><td>횡령</td><td>형법 제355조 제1항</td><td>타인재물 보관 + 불법영득의사</td></tr>
-<tr><td>배임</td><td>형법 제355조 제2항</td><td>타인사무 처리자 + 임무위배 + 손해</td></tr>
-<tr><td>명예훼손</td><td>형법 제307조</td><td>공연성 + 사실적시 + 사회적 평가 저하</td></tr>
-<tr><td>상해</td><td>형법 제257조</td><td>사람의 신체 상해</td></tr>
-<tr><td>무고</td><td>형법 제156조</td><td>허위사실 + 타인 형사처벌 목적</td></tr>
+<thead>
+<tr>
+<th>주의사항</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>원본 보존</strong></td>
+<td>캡처본만 제출하고 원본(휴대폰·이메일 원본)은 별도 보존</td>
+</tr>
+<tr>
+<td><strong>위법수집증거 주의</strong></td>
+<td>타인의 통신을 무단 녹음한 경우 증거능력 부정 가능(통신비밀보호법)</td>
+</tr>
+<tr>
+<td><strong>증거 목록 작성</strong></td>
+<td>각 증거에 번호를 부여하고 간단한 설명 첨부</td>
+</tr>
+<tr>
+<td><strong>사본 제출 원칙</strong></td>
+<td>원본은 소지하고, 사본을 제출함</td>
+</tr>
+</tbody>
 </table>
-<div class="info-box"><strong>Tip:</strong> 정확한 법조를 모르겠다면 "사기 혐의" 정도만 기재해도 수사기관이 직권 검토합니다. 다만 법조를 명시하면 수사 방향 설정에 도움이 됩니다.</div>
-</div>
-
-<div class="card">
-<h2>5. 고소 절차 (5단계)</h2>
+<hr /></section><section class="blk" id="s6"><div class="secl">SECTION</div><h2>4. 법률구성 (적용법조) 작성</h2>
+<h3>4.1. 주요 범죄별 적용법조</h3>
 <table>
-<tr><th>단계</th><th>내용</th><th>소요 기간</th></tr>
-<tr><td><strong>1</strong></td><td>고소장 작성: 범죄사실·증거·법률구성·인적사항 기재</td><td>1~2시간</td></tr>
-<tr><td><strong>2</strong></td><td>관할 경찰서 제출: 직접 방문 또는 등기우편</td><td>1일</td></tr>
-<tr><td><strong>3</strong></td><td>경찰 수사: 피고소인 소환, 증거 분석, 사실 확인</td><td>1~3개월</td></tr>
-<tr><td><strong>4</strong></td><td>검찰 송치: 경찰이 사건을 검찰에 송치</td><td>수사 종료 후</td></tr>
-<tr><td><strong>5</strong></td><td>기소·불기소 결정: 검사가 공소 제기 여부 결정</td><td>송치 후 1~2개월</td></tr>
+<thead>
+<tr>
+<th>범죄 유형</th>
+<th>적용법조</th>
+<th>구성요건 핵심</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>사기</td>
+<td>형법 제347조</td>
+<td>기망행위 + 착오 + 처분행위 + 재산상 손해</td>
+</tr>
+<tr>
+<td>횡령</td>
+<td>형법 제355조 제1항</td>
+<td>타인재물 보관 + 불법영득의사</td>
+</tr>
+<tr>
+<td>배임</td>
+<td>형법 제355조 제2항</td>
+<td>타인사무 처리자 + 임무위배 + 재산상 손해</td>
+</tr>
+<tr>
+<td>명예훼손</td>
+<td>형법 제307조</td>
+<td>공연성 + 사실적시 + 사람의 사회적 평가 저하</td>
+</tr>
+<tr>
+<td>상해</td>
+<td>형법 제257조</td>
+<td>사람의 신체 상해</td>
+</tr>
+<tr>
+<td>폭행</td>
+<td>형법 제260조</td>
+<td>사람의 신체에 폭행 가함</td>
+</tr>
+<tr>
+<td>협박</td>
+<td>형법 제283조</td>
+<td>공포심을 일으킬 정도의 해악 고지</td>
+</tr>
+<tr>
+<td>무고</td>
+<td>형법 제156조</td>
+<td>타인으로 하여금 형사처분을 받게 할 목적 + 허위 사실 신고</td>
+</tr>
+</tbody>
 </table>
-<div class="green-box"><strong>제출처 선택:</strong> 피고소인 주소지 또는 범죄지 관할 경찰서 (가장 일반적) / 검찰청 직접 제출 (대부분 경찰 이첩) / 등기우편 제출 가능</div>
-</div>
-
-<div class="card">
-<h2>6. 고소장 각하·기각 사유와 대응</h2>
+<blockquote>
+<p><strong>Tip:</strong> 적용법조를 모르겠다면 "사기 혐의로 고소합니다" 정도만 기재해도 수사기관이 직권으로 법조를 검토한다. 다만 정확한 법조를 기재하면 수사 방향 설정에 도움이 된다.</p>
+</blockquote>
+<hr /></section><section class="blk" id="s7"><div class="secl">SECTION</div><h2>5. 고소 절차 (5단계)</h2>
 <table>
-<tr><th>사유</th><th>내용</th><th>대응 방법</th></tr>
-<tr><td>범죄사실 불특정</td><td>시간·장소·방법 불명확</td><td>보완하여 재고소</td></tr>
-<tr><td>친고죄 기간 도과</td><td>범인 인지일로부터 6개월 경과</td><td>불가피 사유 소명 또는 민사 전환</td></tr>
-<tr><td>고소권자 아님</td><td>법정 고소권자(피해자)가 아님</td><td>자격 확인 후 재고소</td></tr>
-<tr><td>동일 사건 이미 종결</td><td>동일 사실로 수사 종결</td><td>항고장·재정신청 등 불복</td></tr>
-<tr><td>혐의없음(증거불충분)</td><td>범죄 혐의 입증 부족</td><td>보완수사 요청, 항고, 재정신청</td></tr>
+<thead>
+<tr>
+<th>단계</th>
+<th>내용</th>
+<th>소요 기간</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>고소장 작성: 위 포맷에 따라 범죄사실·증거·법률구성·인적사항 기재</td>
+<td>1~2시간</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>관할 경찰서 제출: 피고소인 주소지·범죄지 중 선택, 직접 방문 또는 우편</td>
+<td>1일</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>경찰 수사: 피고소인 소환 조사, 증거 분석, 사실 관계 확인</td>
+<td>1~3개월</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>검찰 송치: 경찰이 사건을 검찰에 송치</td>
+<td>수사 종료 후</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td>기소·불기소 결정: 검사가 공소 제기 여부 결정</td>
+<td>송치 후 1~2개월</td>
+</tr>
+</tbody>
 </table>
-</div>
-
-<div class="card">
-<h2>7. FAQ</h2>
-
-<p class="faq-q">Q1. 고소장은 반드시 변호사를 선임해야 하나요?</p>
-<p class="faq-a">아닙니다. 고소장은 변호사 없이 직접 작성하여 제출할 수 있습니다(형사소송법 제223조). 다만 범죄 구성요건에 맞는 사실 기재와 증거 수집 전략은 법률 전문가의 도움을 받는 것이 유리합니다.</p>
-
-<p class="faq-q">Q2. 고소장은 어디에 제출해야 하나요?</p>
-<p class="faq-a">원칙적으로 피고소인 주소지 또는 범죄지 관할 경찰서에 제출합니다. 검찰청 직접 제출도 가능하나 대부분 경찰서로 이첩됩니다. 방문이 어려우면 등기우편으로 제출할 수 있습니다.</p>
-
-<p class="faq-q">Q3. 고소 후 취하할 수 있나요?</p>
-<p class="faq-a">네, 1심 판결 선고 전까지 가능합니다(형소법 제232조). 반의사불벌죄는 고소 취하 시 처벌 면제됩니다. '고소 취하서'를 작성하여 수사기관에 제출하면 됩니다. 단, 취하 후 동일 사실로 재고소는 원칙적으로 불가능합니다.</p>
-
-<p class="faq-q">Q4. 허위 사실로 고소하면 어떻게 되나요?</p>
-<p class="faq-a">타인으로 하여금 형사처벌을 받게 할 목적으로 허위 사실을 신고하면 <strong>무고죄</strong>(형법 제156조)로 처벌받을 수 있습니다(10년 이하 징역 또는 1,500만 원 이하 벌금). 사실을 과장한 것과 완전히 허위인 것은 구별되나, 고소 사실의 핵심이 허위로 판명되면 무고죄 성립이 가능합니다.</p>
-
-<p class="faq-q">Q5. 경찰서에서 고소 접수를 거부하면 어떻게 하나요?</p>
-<p class="faq-a">경찰이 정당한 이유 없이 접수를 거부하는 경우, 관할 경찰서 감찰 부서에 이의를 제기하거나 직접 검찰청에 고소장을 제출할 수 있습니다. 또는 경찰청 홈페이지에 고충 민원을 접수하는 방법도 있습니다.</p>
-</div>
-
-<div class="card">
-<h2>8. 관련 법령·판례</h2>
+<p><strong>고소 제출처 선택:</strong>
+- <strong>경찰서</strong> (가장 일반적): 피고소인 주소지 또는 범죄지 관할 경찰서에 제출
+- <strong>검찰청</strong>: 직접 검찰에 고소 가능하나, 대부분 경찰로 이첩됨
+- <strong>우편 제출</strong>: 방문이 어려운 경우 등기우편으로 제출 가능</p>
+<hr /></section><section class="blk" id="s8"><div class="secl">SECTION</div><h2>6. 고소장 각하·기각 사유와 대응</h2>
 <table>
-<tr><th>구분</th><th>내용</th></tr>
-<tr><td>형사소송법 제223조</td><td>고소권자: 범죄로 인한 피해자</td></tr>
-<tr><td>형사소송법 제224조</td><td>고소의 방식: 서면·구술 모두 가능</td></tr>
-<tr><td>형사소송법 제230조</td><td>친고죄 고소기간: 범인을 안 날로부터 6개월</td></tr>
-<tr><td>형사소송법 제232조</td><td>고소 취하: 1심 판결 선고 전까지 가능</td></tr>
-<tr><td>형법 제156조</td><td>무고죄: 허위 고소 시 10년 이하 징역</td></tr>
-<tr><td>형법 제347조</td><td>사기죄</td></tr>
-<tr><td>형법 제355조</td><td>횡령·배임죄</td></tr>
-<tr><td>대법원 2023도9738</td><td>포괄일죄의 공소사실 특정과 고소장 기재</td></tr>
+<thead>
+<tr>
+<th>사유</th>
+<th>내용</th>
+<th>대응 방법</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>범죄사실 불특정</strong></td>
+<td>시간·장소·방법이 불명확하여 수사 불가</td>
+<td>범죄사실을 구체적으로 보완하여 재고소</td>
+</tr>
+<tr>
+<td><strong>친고죄 기간 도과</strong></td>
+<td>범인 인지일로부터 6개월 경과(형소법 제230조)</td>
+<td>불가피한 사유 소명 또는 민사소송 전환</td>
+</tr>
+<tr>
+<td><strong>고소권자 아님</strong></td>
+<td>법정 고소권자(피해자·법정대리인)가 아님</td>
+<td>고소권자 자격 확인 후 재고소</td>
+</tr>
+<tr>
+<td><strong>동일 사건 이미 종결</strong></td>
+<td>동일 사실로 이미 수사 종결</td>
+<td>항고장·재정신청 등 불복 절차 활용</td>
+</tr>
+<tr>
+<td><strong>혐의없음(증거불충분)</strong></td>
+<td>수사 결과 범죄 혐의 입증 부족</td>
+<td>보완 수사 요청, 항고, 재정신청</td>
+</tr>
+</tbody>
 </table>
-
-<div class="info-box">*본 가이드는 2026년 7월 기준 법령·판례에 기반합니다. 개별 사안은 구체적 사실관계에 따라 결론이 달라질 수 있으므로 반드시 전문가(변호사)의 조력을 받으시기 바랍니다.</div>
-</div>
-
-</div>
-<div class="footer">
-출처: 조우성 변호사 · 로펌 머스트노우 | 문의: law@mustknow.co.kr<br>
-© 2026 MustKnow. All rights reserved.
-</div>
-</body>
-</html>
+<hr /></section><section class="blk" id="s9"><div class="secl">SECTION</div><h2>7. FAQ</h2>
+<p><strong>Q1. 고소장은 반드시 변호사를 선임해야 하나요?</strong></p>
+<p>A: 아닙니다. 고소장은 변호사 없이 직접 작성하여 제출할 수 있습니다(형사소송법 제223조). 다만, 범죄 구성요건에 맞는 사실 기재와 증거 수집 전략은 법률 전문가의 도움을 받는 것이 고소장 채택률을 높이는 데 유리합니다.</p>
+<p><strong>Q2. 고소장은 어디에 제출해야 하나요?</strong></p>
+<p>A: 원칙적으로 피고소인의 주소지 또는 범죄지를 관할하는 경찰서에 제출합니다. 검찰청에 직접 제출해도 무방하나, 실무적으로 대부분 경찰서로 이첩되어 처리됩니다. 방문이 어려운 경우 등기우편으로도 제출 가능합니다.</p>
+<p><strong>Q3. 고소 후 고소를 취하할 수 있나요?</strong></p>
+<p>A: 네, 1심 판결 선고 전까지 고소 취하가 가능합니다. 반의사불벌죄(폭행·협박 등)는 고소 취하 시 피고소인의 형사처벌이 면제됩니다. '고소 취하서'를 작성하여 수사기관에 제출하면 됩니다. 단, 고소 취하 후 동일한 사실로 재고소는 원칙적으로 불가능합니다.</p>
+<p><strong>Q4. 허위 사실로 고소하면 어떻게 되나요?</strong></p>
+<p>A: 타인으로 하여금 형사처벌을 받게 할 목적으로 허위 사실을 신고하면 <strong>무고죄</strong>(형법 제156조)로 처벌받을 수 있습니다. 10년 이하의 징역 또는 1,500만 원 이하의 벌금에 처해집니다. 사실을 과장한 것과 완전히 허위인 것은 구별되나, 고소 사실의 핵심이 허위로 판명될 경우 무고죄 성립이 가능합니다.</p>
+<p><strong>Q5. 경찰서에서 고소를 접수해 주지 않으면 어떻게 하나요?</strong></p>
+<p>A: 경찰이 정당한 이유 없이 고소 접수를 거부하는 경우, 관할 경찰서의 감찰 부서에 이의를 제기하거나, 직접 검찰청에 고소장을 제출할 수 있습니다. 또는 경찰서 <strong>민원실</strong>에 고소장 접수 거부 사실을 신고하거나, 경찰청 홈페이지에 고충 민원을 접수할 수 있습니다.</p>
+<hr /></section><section class="blk" id="s10"><div class="secl">SECTION</div><h2>8. 관련 법령·판례</h2>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>형사소송법 제223조</strong></td>
+<td>고소권자: 범죄로 인한 피해자</td>
+</tr>
+<tr>
+<td><strong>형사소송법 제224조</strong></td>
+<td>고소의 방식: 서면·구술 모두 가능</td>
+</tr>
+<tr>
+<td><strong>형사소송법 제230조</strong></td>
+<td>친고죄 고소기간: 범인을 안 날로부터 6개월</td>
+</tr>
+<tr>
+<td><strong>형사소송법 제232조</strong></td>
+<td>고소 취하: 1심 판결 선고 전까지 가능</td>
+</tr>
+<tr>
+<td><strong>형법 제156조</strong></td>
+<td>무고죄: 허위 고소 시 10년 이하 징역</td>
+</tr>
+<tr>
+<td><strong>형법 제347조</strong></td>
+<td>사기죄: 10년 이하 징역 또는 2천만 원 이하 벌금</td>
+</tr>
+<tr>
+<td><strong>형법 제355조</strong></td>
+<td>횡령·배임죄</td>
+</tr>
+<tr>
+<td><strong>대법원 2023도9738</strong></td>
+<td>포괄일죄의 공소사실 특정과 고소장 범죄사실 기재</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>본 가이드는 2026년 7월 기준 법령·판례에 기반합니다. 개별 사안은 구체적 사실관계에 따라 결론이 달라질 수 있으므로 반드시 전문가(변호사)의 조력을 받으시기 바랍니다.</em></p></section><section class="blk faq" id="faq"><div class="secl">NOTICE</div><h2>확인 사항</h2><div class="notice">이 문서는 일반적인 법률 정보 제공을 위한 자료입니다. 구체적인 사실관계와 최신 법령?판례에 따라 결론이 달라질 수 있습니다.</div></section></main></div><footer class="footer"><div class="wrap"><h3>조우성 변호사</h3><p>실무에 바로 활용할 수 있는 법률 지식과 대응 가이드를 제공합니다.</p></div></footer></body></html>

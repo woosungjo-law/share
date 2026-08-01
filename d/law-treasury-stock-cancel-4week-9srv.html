@@ -1,433 +1,481 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
-<title>자기주식 의무소각: 이사회 결의→주총 특별결의→소각까지 4주 플랜 — 조우성 변호사</title>
-<meta name="description" content="자기주식 의무소각 4주 플랜: WEEK 1 현황 파악 · WEEK 2 이사회 결의 · WEEK 3 주총 특별결의 · WEEK 4 소각 실행 완전 정복">
-<meta property="og:type" content="article">
-<meta property="og:title" content="자기주식 의무소각: 이사회 결의→주총 특별결의→소각까지 4주 플랜 — 조우성 변호사">
-<meta property="og:description" content="자기주식 의무소각 4주 플랜: WEEK 1 현황 파악 · WEEK 2 이사회 결의 · WEEK 3 주총 특별결의 · WEEK 4 소각 실행 완전 정복">
-<style>
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>자기주식 의무소각: 이사회 결의→주총 특별결의→소각까지 4주 플랜</title><style>
+/* ============================================================
+   법률 대시보드 전자책 — Apollo 기반 경량 커스텀 (공개 롱스크롤)
+   Apollo 토큰(버건디 액센트 + 웜 화이트 + 딥와인 헤더) 상속.
+   의뢰인 리포트(리스크레이더 6뷰)와 달리 공개 독서형 롱스크롤.
+   self-contained: 외부 CDN/폰트/이미지/스크립트 의존 없음.
+   ============================================================ */
 :root{
-  --primary:#1a3a6b; --primary-l:#2e6be6; --primary-d:#0f2450;
-  --bg:#f0f2f5; --card:#ffffff; --card2:#f8f9fb;
-  --line:#e2e5ea; --line2:#cdd2da;
-  --ink:#111827; --ink2:#374151; --muted:#6b7280; --faint:#9ca3af;
-  --amber-bg:#fffbeb; --amber-bd:#f59e0b; --amber-tx:#92400e;
-  --green-bg:#ecfdf5; --green-bd:#059669; --green-tx:#065f46;
-  --red-bg:#fef2f2; --red-bd:#dc2626; --red-tx:#991b1b;
-  --blue-bg:#eff6ff; --blue-bd:#3b82f6; --blue-tx:#1e40af;
-  --font:'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',-apple-system,BlinkMacSystemFont,sans-serif;
+  --bg:#f5f1f2; --panel:#ffffff; --panel2:#faf6f7;
+  --line:#ebe2e5; --line2:#ddccd2;
+  --ink:#2c1d26; --ink2:#56424c; --muted:#8a7b82; --faint:#b3a6ab;
+  --wine:#7a2e3a; --wine-d:#5a1f2b; --wine-l:#9c4456;
+  --wine-tint:#f4e9ec; --wine-tint-ln:#ecd7dd;
+  --header-bg:#3a1525; --header-bg2:#4e1f32; --header-accent:#d4a0aa;
+  --rH:#c74a3c; --rM-bg:#f8e4b8; --rM-tx:#7d520a; --rL-bg:#d6ecdb; --rL-tx:#287a54;
+  --amber:#b45309; --green:#287a54;
+  --font:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Noto Sans KR',sans-serif;
   --maxw:1120px; --readw:760px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
-#progress{position:fixed;top:0;left:0;height:4px;width:0;z-index:60;background:linear-gradient(90deg,var(--primary),var(--primary-l));transition:width .1s linear}
-.topbar{position:fixed;top:0;left:0;width:100%;height:4px;z-index:59;background:linear-gradient(90deg,var(--primary-d),var(--primary-l))}
-.header{background:var(--card);border-bottom:1px solid var(--line);padding-top:4px}
-.header .wrap{max-width:var(--maxw);margin:0 auto;padding:14px 26px;display:flex;align-items:center;gap:12px}
-.header .avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-l));display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:800}
-.header .name{font-size:14px;font-weight:700;color:var(--ink)}
-.header .badge{font-size:11px;color:var(--muted);margin-left:auto;background:var(--card2);padding:3px 10px;border-radius:999px}
-.hero{background:linear-gradient(135deg,var(--primary-d) 0%,var(--primary) 40%,var(--primary-l) 100%);color:#fff;padding:40px 0 50px}
-.hero .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
-.hero .tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;background:rgba(255,255,255,.15);border-radius:999px;padding:4px 12px;margin-bottom:12px;border:1px solid rgba(255,255,255,.2);letter-spacing:.03em}
-.hero .tag .dot{width:5px;height:5px;border-radius:50%;background:#60a5fa}
-.hero h1{font-size:30px;line-height:1.3;font-weight:800;margin:0 0 14px;letter-spacing:-.01em}
-.hero .meta{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:13px;opacity:.8;margin-bottom:18px}
-.hero .meta .vchip{background:rgba(255,255,255,.12);border-radius:6px;padding:3px 9px;font-weight:700;font-size:11.5px}
-.cta-row{display:flex;flex-wrap:wrap;gap:10px}
-.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:9px;padding:11px 18px;text-decoration:none;cursor:pointer;border:1px solid transparent}
-.btn-p{background:#fff;color:var(--primary-d)}
-.btn-p:hover{background:rgba(255,255,255,.9)}
-.btn-o{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
-.btn-o:hover{background:rgba(255,255,255,.1)}
-.tldr-wrap{max-width:var(--maxw);margin:-24px auto 0;padding:0 26px;position:relative;z-index:10}
-.tldr{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px;box-shadow:0 4px 14px rgba(0,0,0,.06)}
-.tldr .lb{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
-.tldr ul{margin:0;padding-left:18px}
-.tldr li{margin:5px 0;font-size:14.5px;color:var(--ink2)}
-.tldr li strong{color:var(--primary)}
-.app{max-width:var(--maxw);margin:0 auto;padding:24px 26px 60px;display:grid;grid-template-columns:210px 1fr;gap:32px;align-items:start}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
+
+/* 읽기 진행바 */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;
+  background:linear-gradient(90deg,var(--wine),var(--wine-l));transition:width .1s linear}
+
+/* 헤더 표지 (딥와인, 유일한 딥 컬러) */
+.header{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0}
+.header .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 26px}
+.header .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;
+  color:var(--header-accent);border:1px solid rgba(212,160,170,.4);border-radius:999px;padding:4px 12px}
+.header .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--header-accent)}
+
+/* 히어로 */
+.hero{max-width:var(--maxw);margin:0 auto;padding:30px 26px 8px}
+.hero .eb{font-size:12px;font-weight:700;color:var(--wine);letter-spacing:.02em;margin-bottom:10px}
+.hero h1{font-size:30px;line-height:1.28;font-weight:800;margin:0 0 16px;color:var(--ink);letter-spacing:-.01em}
+.hero .tldr{background:var(--wine-tint);border:1px solid var(--wine-tint-ln);border-left:4px solid var(--wine);
+  border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.hero .tldr .lb{font-size:12px;font-weight:700;color:var(--wine-d);margin-bottom:8px}
+.hero .tldr ul{margin:0;padding-left:18px}
+.hero .tldr li{margin:4px 0;font-size:15px;color:var(--ink2)}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:12.5px;color:var(--muted);margin-bottom:18px}
+.hero .meta .vchip{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);
+  font-weight:700;border-radius:6px;padding:3px 9px;font-size:11.5px}
+.hero .cta-row{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:9px;
+  padding:11px 18px;text-decoration:none;cursor:pointer;border:1px solid transparent}
+.btn-p{background:var(--wine);color:#fff}
+.btn-p:hover{background:var(--wine-d)}
+.btn-o{background:#fff;color:var(--wine-d);border-color:var(--line2)}
+.btn-o:hover{background:var(--panel2)}
+
+/* 셸: 좌측 목차 + 본문 */
+.app{max-width:var(--maxw);margin:0 auto;padding:8px 26px 60px;
+  display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:start}
+
+/* 목차 (데스크톱 = 좌측 sticky) */
 .toc{position:sticky;top:24px}
-.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:0 0 10px}
-.toc ol{list-style:none;margin:0;padding:0}
-.toc li{margin:2px 0}
-.toc a{display:block;font-size:13px;color:var(--ink2);text-decoration:none;padding:7px 10px;border-radius:8px;border-left:3px solid transparent;line-height:1.35}
-.toc a:hover{background:var(--card2)}
-.toc a.active{background:var(--blue-bg);border-left-color:var(--primary-l);color:var(--primary);font-weight:700}
+.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;
+  margin:0 0 10px;padding-left:2px}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}
+.toc li{counter-increment:toc;margin:1px 0}
+.toc a{display:flex;gap:9px;font-size:13.5px;color:var(--ink2);text-decoration:none;
+  padding:7px 10px;border-radius:8px;border-left:3px solid transparent;line-height:1.4}
+.toc a::before{content:counter(toc,decimal-leading-zero);color:var(--faint);font-weight:700;font-size:11.5px;flex:none}
+.toc a:hover{background:var(--panel2)}
+.toc a.active{background:var(--wine-tint);border-left-color:var(--wine);color:var(--wine-d);font-weight:700}
 .toc-toggle{display:none}
+
+/* 본문 */
 .content{max-width:var(--readw);min-width:0}
-section.blk{scroll-margin-top:28px;margin-bottom:40px}
-.secl{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin:0 0 10px}
-.secl .num{background:var(--primary-l);color:#fff;border-radius:5px;padding:2px 8px;font-size:10px}
-section.blk h2{font-size:22px;font-weight:700;line-height:1.35;margin:0 0 14px;color:var(--ink)}
-section.blk h3{font-size:16px;font-weight:700;margin:24px 0 10px;color:var(--primary)}
+section.blk{scroll-margin-top:24px;margin-bottom:38px}
+.secl{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.05em;margin:0 0 12px}
+.secl::before{content:"";width:7px;height:15px;background:var(--wine);border-radius:2px;flex:none}
+section.blk h2{font-size:23px;font-weight:800;line-height:1.35;margin:0 0 14px;color:var(--ink);letter-spacing:-.01em}
+section.blk h3{font-size:17px;font-weight:700;margin:26px 0 10px;color:var(--wine-d)}
 section.blk p{margin:0 0 14px;color:var(--ink2)}
 section.blk ul,section.blk ol{margin:0 0 14px;padding-left:22px;color:var(--ink2)}
-section.blk li{margin:5px 0}
+section.blk li{margin:6px 0}
 strong{color:var(--ink);font-weight:700}
-.eye{background:var(--blue-bg);border-left:4px solid var(--blue-bd);border-radius:10px;padding:14px 16px;margin:0 0 16px;font-size:14.5px;color:var(--blue-tx)}
-.eye ul{margin:6px 0 0;padding-left:18px}
-.eye li{margin:3px 0}
-.ev{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--amber-bd);border-radius:10px;padding:13px 15px;margin:0 0 14px}
+a.ln{color:var(--wine-l);text-decoration:none;border-bottom:1px solid var(--wine-tint-ln)}
+a.ln:hover{border-bottom-color:var(--wine-l)}
+
+/* 핵심요약 카드 */
+.summary{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.summary .lb{font-size:11px;font-weight:700;color:var(--wine-d);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.summary ul{margin:0;padding-left:18px}
+
+/* 근거 카드 (조문·판례) */
+.ev{background:#fff;border:1px solid var(--line);border-left:4px solid var(--wine);border-radius:10px;
+  padding:13px 15px;margin:0 0 12px}
 .ev .top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px}
-.ev .kind{font-size:10.5px;font-weight:700;color:#fff;border-radius:5px;padding:2px 8px}
-.ev .kind.law{background:var(--primary)}
-.ev .kind.case{background:var(--amber-bd)}
+.ev .kind{font-size:11px;font-weight:700;color:#fff;background:var(--wine);border-radius:5px;padding:2px 8px}
+.ev .kind.law{background:var(--wine-d)}
+.ev .kind.case{background:var(--amber)}
 .ev .cite{font-size:13.5px;font-weight:700;color:var(--ink)}
-.ev .vtick{margin-left:auto;font-size:10.5px;font-weight:700;color:var(--green-tx);background:var(--green-bg);border-radius:5px;padding:2px 7px}
+.ev .vtick{margin-left:auto;font-size:11px;font-weight:700;color:var(--rL-tx);background:var(--rL-bg);border-radius:5px;padding:2px 7px}
 .ev .gist{font-size:14px;color:var(--ink2);margin:0}
 .ev .date{font-size:12px;color:var(--muted);margin-top:5px}
-.tbl-wrap{overflow-x:auto;margin:0 0 16px}
-table{border-collapse:collapse;width:100%;font-size:13.5px}
-th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
-th{background:var(--card2);color:var(--primary);font-weight:700;font-size:12.5px}
-tr:hover td{background:var(--card2)}
-.chip{display:inline-flex;align-items:center;justify-content:center;min-width:30px;font-size:10.5px;font-weight:600;border-radius:5px;padding:2px 7px;margin-right:3px}
-.c-H{background:var(--green-bg);color:var(--green-tx)}
-.c-M{background:var(--amber-bg);color:var(--amber-tx)}
-.c-L{background:var(--red-bg);color:var(--red-tx)}
-.chkl{list-style:none;margin:0 0 16px;padding:0;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden}
-.chkl li{display:flex;gap:10px;padding:10px 14px;border-bottom:1px solid var(--line);font-size:14px;color:var(--ink2)}
-.chkl li:last-child{border-bottom:none}
-.chkl .ck{flex:none;width:18px;height:18px;border-radius:4px;background:var(--green-bg);color:var(--green-tx);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800}
-.week-card{background:var(--card);border:1px solid var(--line);border-radius:12px;margin:0 0 16px;overflow:hidden}
-.week-card .wc-hdr{background:var(--primary);color:#fff;padding:12px 16px;font-size:15px;font-weight:700;display:flex;align-items:center;gap:10px}
-.week-card .wc-hdr .wc-num{background:rgba(255,255,255,.2);border-radius:999px;padding:2px 10px;font-size:12px}
-.week-card .wc-body{padding:14px 16px}
-.week-card .wc-body .wc-goal{font-size:13px;font-weight:700;color:var(--primary);margin-bottom:8px}
-.step-badge{display:inline-block;font-size:10px;font-weight:700;color:var(--green-tx);background:var(--green-bg);border-radius:999px;padding:2px 10px;margin-right:6px}
-.faq details{background:var(--card);border:1px solid var(--line);border-radius:10px;margin:0 0 10px;overflow:hidden}
-.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:14.5px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:10px}
+
+/* 다이어그램 — 플로우 / 체크리스트 (CSS·SVG only) */
+.figure{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin:0 0 18px}
+.figure .cap{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:12px}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px}
+.flow .step{flex:1;min-width:120px;background:var(--wine-tint);border:1px solid var(--wine-tint-ln);
+  border-radius:10px;padding:11px 12px;position:relative}
+.flow .step .n{font-size:11px;font-weight:700;color:var(--wine)}
+.flow .step .t{font-size:13.5px;font-weight:700;color:var(--ink);margin-top:2px}
+.flow .step .d{font-size:12.5px;color:var(--ink2);margin-top:3px}
+.checklist{list-style:none;margin:0;padding:0}
+.checklist li{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+.checklist li:last-child{border-bottom:none}
+.checklist .ck{flex:none;width:20px;height:20px;border-radius:5px;background:var(--rL-bg);color:var(--rL-tx);
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+
+/* 위험도 칩 */
+.chip{display:inline-flex;align-items:center;justify-content:center;min-width:34px;font-size:11px;font-weight:500;
+  border-radius:6px;padding:3px 8px;margin-right:4px}
+.c-H{background:var(--rH);color:#fff}
+.c-M{background:var(--rM-bg);color:var(--rM-tx)}
+.c-L{background:var(--rL-bg);color:var(--rL-tx)}
+
+/* 표 */
+.tbl-wrap{overflow-x:auto;margin:0 0 18px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px}
+
+/* FAQ (아코디언) */
+.faq details{background:#fff;border:1px solid var(--line);border-radius:10px;margin:0 0 10px;overflow:hidden}
+.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:15px;font-weight:700;color:var(--ink);
+  display:flex;align-items:center;gap:10px}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--primary-l);color:#fff;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
-.faq details[open] summary{border-bottom:1px solid var(--line);color:var(--primary)}
-.faq .a{padding:14px 16px;font-size:14px;color:var(--ink2);line-height:1.7}
-.notice{background:var(--card2);border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;font-size:12.5px;color:var(--muted);line-height:1.7}
-#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--primary);color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;box-shadow:0 4px 14px rgba(26,58,107,.28)}
+.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--wine-tint);
+  color:var(--wine-d);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+.faq details[open] summary{border-bottom:1px solid var(--line);color:var(--wine-d)}
+.faq .a{padding:14px 16px;font-size:14.5px;color:var(--ink2)}
+
+/* 최신성·면책 고지 */
+.notice{background:#fff;border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;
+  font-size:12.5px;color:var(--muted);line-height:1.7}
+
+/* 맨 위로 버튼 */
+#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--wine-tint-ln);background:var(--wine);color:#fff;font-size:18px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;
+  box-shadow:0 4px 14px rgba(58,21,37,.28)}
 #toTop.show{opacity:1;pointer-events:auto}
-#toTop:hover{background:var(--primary-d)}
-.footer{background:linear-gradient(135deg,var(--primary-d),var(--primary));color:rgba(255,255,255,.85)}
+#toTop:hover{background:var(--wine-d)}
+
+/* 푸터 프로필 + 상담 CTA */
+.footer{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0;margin-top:20px}
 .footer .wrap{max-width:var(--maxw);margin:0 auto;padding:34px 26px}
 .footer h3{font-size:20px;font-weight:800;margin:0 0 8px;color:#fff}
-.footer p{font-size:14px;color:rgba(255,255,255,.7);margin:0 0 6px;line-height:1.7}
+.footer p{font-size:14px;color:rgba(255,255,255,.72);margin:0 0 6px;line-height:1.7}
 .footer .prof{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end}
 .footer .cta-f{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-.footer .btn-f{background:#fff;color:var(--primary-d)}
-.footer .btn-f:hover{background:rgba(255,255,255,.9)}
-.footer .btn-fo{background:transparent;color:rgba(255,255,255,.85);border-color:rgba(255,255,255,.35)}
-.footer .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:22px;padding-top:14px;font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.7}
+.footer .btn-f{background:#fff;color:var(--wine-d)}
+.footer .btn-f:hover{background:var(--header-accent)}
+.footer .btn-fo{background:transparent;color:#f4eef0;border-color:rgba(255,255,255,.35)}
+.footer .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:22px;padding-top:14px;
+  font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.7}
+
+/* ── 모바일 (≤820px) ── */
 @media(max-width:820px){
   .hero h1{font-size:24px}
   .app{grid-template-columns:1fr;gap:0;padding-top:0}
-  .toc{position:static;margin:0 0 22px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 8px}
-  .toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--primary);padding:9px 8px}
+  .toc{position:static;margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 8px}
+  .toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;
+    cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--wine-d);padding:9px 8px}
   .toc-toggle .ar{transition:transform .2s}
   .toc.closed .toc-toggle .ar{transform:rotate(-90deg)}
   .toc .tt{display:none}
   .toc ol{max-height:50vh;overflow:auto}
   .toc.closed ol{display:none}
-  section.blk h2{font-size:19px}
+  section.blk h2{font-size:20px}
   th,td{white-space:nowrap}
 }
 @media print{
   #progress,.toc,.cta-row,.footer .cta-f{display:none}
-  .hero,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   .app{display:block}
 }
-</style>
-</head>
-<body>
-<div id="progress"></div>
-<div class="topbar"></div>
-<button id="toTop" aria-label="맨 위로" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
-
-<header class="header">
-  <div class="wrap">
-    <div class="avatar">조</div>
-    <span class="name">조우성 변호사</span>
-    <span class="badge">법률 인사이트</span>
-  </div>
-</header>
-
-<div class="hero">
-  <div class="wrap">
-    <div class="tag"><span class="dot"></span>회사법 / 자본정책 · 자기주식 의무소각</div>
-    <h1>자기주식 의무소각:<br>이사회 결의→주총 특별결의→소각까지 4주 플랜</h1>
-    <div class="meta">
-      <span>작성일 2026-07-10</span>
-      <span>· 기준 법령 3차 개정상법 2026.3.6 시행</span>
-      <span class="vchip">✓ 조문·판례 검증</span>
-      <span>· 읽는 시간 약 10분</span>
-    </div>
-    <div class="cta-row">
-      <a class="btn btn-p" href="#s2">4주 플랜 바로가기</a>
-      <a class="btn btn-o" href="#faq">Q&amp;A</a>
-    </div>
-  </div>
-</div>
-
-<div class="tldr-wrap">
-  <div class="tldr">
-    <div class="lb">3줄 요약 (TL;DR)</div>
-    <ul>
-      <li><strong>의무소각 원칙</strong>: 자기주식 취득일로부터 1년 내 소각 의무화(2026.3.6 시행). 기존 보유분은 2026.9.6부터 기산 → 2027.9.6까지 소각 완료</li>
-      <li><strong>4주 플랜</strong>: ①WEEK 1 현황 파악·소각 방식 결정 → ②WEEK 2 이사회 결의·주총 소집 → ③WEEK 3 주총 특별결의 → ④WEEK 4 소각 실행·등기 완료</li>
-      <li><strong>핵심 판단</strong>: 배당가능이익 충분하면 이사회 결의만으로 소각 가능(이익소각, 1~2주). 자본감소 수반 시 주총 특별결의+채권자보호절차로 6~8주 소요</li>
-    </ul>
-  </div>
-</div>
-
-<div class="app">
-  <nav class="toc" id="toc">
-    <button class="toc-toggle" onclick="document.getElementById('toc').classList.toggle('closed')">목차 <span class="ar">▾</span></button>
-    <div class="tt">목차</div>
-    <ol id="toc-list">
-      <li><a href="#s1">의무소각 개요</a></li>
-      <li><a href="#s2">4주 플랜</a></li>
-      <li><a href="#s3">시나리오</a></li>
-      <li><a href="#s4">체크리스트</a></li>
-      <li><a href="#faq">Q&amp;A</a></li>
-    </ol>
-  </nav>
-
-  <main class="content">
-
-    <!-- 섹션 1: 의무소각 개요 -->
-    <section class="blk" id="s1">
-      <div class="secl"><span class="num">01</span> 개요</div>
-      <h2>자기주식 의무소각 — 왜 4주 플랜인가</h2>
-      <div class="eye">
-        2026년 3월 6일 시행된 3차 개정상법(제341조의4)은 자기주식 취득 후 <strong>1년 내 소각</strong>을 의무화했다. 소각 절차는 복잡하지 않지만, 주주총회 소집·결의·등기까지 최소 4주가 소요된다. 법무팀은 이 일정을 정확히 계산해 소각 데드라인에 맞춰야 한다.
-      </div>
-      <div class="tbl-wrap">
-        <table>
-          <thead><tr><th>구분</th><th>대상</th><th>소각 기한</th></tr></thead>
-          <tbody>
-            <tr><td>신규 취득분</td><td>2026.3.6 이후 취득분</td><td><strong>취득일로부터 1년 이내</strong></td></tr>
-            <tr><td>기존 직접 취득분</td><td>2026.3.6 이전 취득·보유분</td><td><strong>2027.9.6까지</strong></td></tr>
-            <tr><td>신탁 간접 취득분</td><td>신탁계약 보유분</td><td><strong>수탁자 반환일로부터 1년</strong></td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="ev">
-        <div class="top">
-          <span class="kind law">조문</span>
-          <span class="cite">상법 제341조의4 (자기주식의 소각의무 등)</span>
-          <span class="vtick">✓ 현행 확인</span>
-        </div>
-        <p class="gist">①회사가 자기주식을 취득한 때에는 그 취득한 날부터 1년 이내에 소각하여야 한다. ②예외 사유에 해당하고 자기주식보유처분계획을 작성하여 주주총회의 승인을 받은 때에는 보유 또는 처분할 수 있다.</p>
-        <div class="date">시행일 2026.3.6 (MST 284143, 3차 개정상법)</div>
-      </div>
-    </section>
-
-    <!-- 섹션 2: 4주 플랜 -->
-    <section class="blk" id="s2">
-      <div class="secl"><span class="num">02</span> 4주 플랜</div>
-      <h2>주차별 액션 아이템</h2>
-
-      <div class="week-card">
-        <div class="wc-hdr"><span class="wc-num">WEEK 1</span> 현황 파악 및 소각 방식 결정</div>
-        <div class="wc-body">
-          <div class="wc-goal">🎯 목표: 보유 자사주 전수 조사 → 소각 여부 및 방식 결정</div>
-          <div class="tbl-wrap">
-            <table>
-              <thead><tr><th>액션</th><th>담당</th><th>설명</th></tr></thead>
-              <tbody>
-                <tr><td>기존 보유 자사주 전수 조사</td><td>재무팀</td><td>취득 방법·일자·경과 규정별 분류</td></tr>
-                <tr><td>의무소각 기산일 계산</td><td>법무팀</td><td>각 취득분별 소각 기한 확정</td></tr>
-                <tr><td>소각 vs 보유처분계획 결정</td><td>CFO+법무팀</td><td>경영 전략 vs 소각 단순성 비교</td></tr>
-                <tr><td>소각할 주식 수·종류 확정</td><td>이사회</td><td>의안 상정 위한 구체적 수치 확정</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="eye" style="margin:0;font-size:13px">
-            ⚠️ 의무소각 대상 자사주를 보유처분계획 없이 계속 보유 중이라면 <strong>즉시 소각 결정</strong> 필요. 보유처분계획 승인은 주총 소집(2주차) 필요.
-          </div>
-        </div>
-      </div>
-
-      <div class="week-card">
-        <div class="wc-hdr"><span class="wc-num">WEEK 2</span> 이사회 결의 및 주총 소집</div>
-        <div class="wc-body">
-          <div class="wc-goal">🎯 목표: 이사회 결의 → 주주총회 소집 통지 발송</div>
-          <p><strong>이사회 결의 사항:</strong> ①소각할 자기주식의 종류·수 ②소각 방법(이익소각 vs 자본감소) ③주총 소집 일정 및 의안</p>
-          <div class="tbl-wrap">
-            <table>
-              <thead><tr><th>소각 방식</th><th>근거</th><th>절차</th><th>세무 효과</th></tr></thead>
-              <tbody>
-                <tr><td><strong>이익소각</strong></td><td>배당가능이익으로 취득한 자사주</td><td>이사회 결의만으로 가능</td><td>자본거래, 과세 없음</td></tr>
-                <tr><td><strong>자본감소 방식</strong></td><td>배당가능이익 부족 시</td><td>주총 특별결의 + 채권자보호절차</td><td>의제배당 과세 가능</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-
-      <div class="week-card">
-        <div class="wc-hdr"><span class="wc-num">WEEK 3</span> 주주총회 특별결의</div>
-        <div class="wc-body">
-          <div class="wc-goal">🎯 목표: 주주총회 개최 → 자본감소 특별결의 통과</div>
-          <p>자본감소 수반 시 주총 <strong>특별결의</strong>(출석 의결권 3분의 2 이상 + 발행주식총수 3분의 1 이상) 필수(상법 제434조). <strong>자기주식은 의결권 없음</strong>에 유의하여 발행주식총수에서 제외하고 정족수 계산.</p>
-          <p><strong>절차:</strong> 안건 설명 → 질의응답 → 의결(특별결의 요건 충족 확인) → 의사록 작성(찬반 현황·반대 의견·주주이익 고려 근거 명시)</p>
-        </div>
-      </div>
-
-      <div class="week-card">
-        <div class="wc-hdr"><span class="wc-num">WEEK 4</span> 소각 실행 및 등기 완료</div>
-        <div class="wc-body">
-          <div class="wc-goal">🎯 목표: 소각 절차 이행 → 자본금 감소 등기 → 소각 효력 발생</div>
-          <p><strong>소각 실행 순서:</strong> ①자본감소 등기(주총 결의 후 2주 내) ②주권 실효 절차(회사 보유분은 별도 실효 불필요) ③채권자보호절차(자본감소 시, 1개월 이상 공고·최고)</p>
-          <div class="ev">
-            <div class="top">
-              <span class="kind case">판례</span>
-              <span class="cite">대법원 2008.7.10. 선고 2005다24981 판결</span>
-              <span class="vtick">✓ 내부 WIKI 확인</span>
-            </div>
-            <p class="gist">주주의 동의를 얻어 자기주식으로 취득 후 소각하는 임의소각의 경우, 회사가 주식을 취득하고 자본감소 절차뿐 아니라 주식실효 절차까지 마친 때 소각 효력이 발생한다.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 섹션 3: 시나리오 -->
-    <section class="blk" id="s3">
-      <div class="secl"><span class="num">03</span> 시나리오</div>
-      <h2>3가지 시나리오별 적용</h2>
-
-      <h3>시나리오 A: 단순 이익소각 <span class="step-badge">가장 쉬움</span></h3>
-      <p><strong>상황:</strong> 배당가능이익 50억 원으로 취득한 자기주식 10만 주(취득가액 20억 원). 추가 보유 불필요.</p>
-      <p><strong>절차:</strong> 1주차 소각 결정·이사회 결의 준비 → 2주차 이사회 결의(이익소각 → 자본감소 불필요) → <strong>이익소각 시 주총 특별결의 불필요</strong>, 이사회 결의만으로 소각 효력 발생. 단, 주식실효 절차와 등기는 필요.</p>
-
-      <h3>시나리오 B: 자본감소 수반 소각 <span class="step-badge" style="background:var(--amber-bg);color:var(--amber-tx)">시간 필요</span></h3>
-      <p><strong>상황:</strong> 배당가능이익 초과 취득분 또는 결손 보전 목적 자본감소 필요한 경우.</p>
-      <p><strong>절차:</strong> 1주차 자본감소 방식 결정 → 2주차 이사회 결의+주총 소집 통지 → 3주차 주총 특별결의(자본감소)→채권자 공고·최고(1개월) → 4주차 공고 만료→등기. <strong>채권자보호절차(1개월)로 인해 최소 6~8주 소요</strong>될 수 있음에 유의.</p>
-
-      <h3>시나리오 C: 보유처분계획 승인 <span class="step-badge" style="background:var(--blue-bg);color:var(--blue-tx)">매년 갱신</span></h3>
-      <p><strong>상황:</strong> 임직원 보상(RSU) 목적 자기주식 30만 주 계속 보유·처분.</p>
-      <p><strong>절차:</strong> 선행 조건=정관에 '경영상 목적' 규정 신설(주총 특별결의) → 1주차 보유처분계획 작성(5대 필수 기재, 이사 전원 기명날인) → 2주차 이사회 결의+주총 소집 → 3주차 주총 승인(보통결의) → 4주차 이사회 결의로 개별 처분 실행. <strong>매년 갱신 필수.</strong></p>
-    </section>
-
-    <!-- 섹션 4: 체크리스트 -->
-    <section class="blk" id="s4">
-      <div class="secl"><span class="num">04</span> 체크리스트</div>
-      <h2>법무팀 소각 체크리스트</h2>
-      <div class="eye">아래 10개 포인트를 소각 과정 전·중·후에 점검하면 절차 리스크를 <strong>100%</strong> 방어할 수 있다.</div>
-
-      <p style="font-weight:700;color:var(--primary);margin-top:16px">소각 전 (WEEK 1)</p>
-      <ul class="chkl">
-        <li><span class="ck">✓</span><span><strong>자기주식 전수 조사</strong> — 취득 방법·일자·경과 규정별 분류</span></li>
-        <li><span class="ck">✓</span><span><strong>의무소각 기산일 계산</strong> — 신규·기존·신탁분별 구분 정확히</span></li>
-        <li><span class="ck">✓</span><span><strong>소각 vs 보유처분계획 결정</strong> — 경영 전략·세무 영향 검토 완료</span></li>
-        <li><span class="ck">✓</span><span><strong>배당가능이익 확인</strong> — 이익소각 가능 여부 판단 기준</span></li>
-      </ul>
-
-      <p style="font-weight:700;color:var(--primary);margin-top:10px">소각 중 (WEEK 2~3)</p>
-      <ul class="chkl">
-        <li><span class="ck">✓</span><span><strong>이사회 결의 적법</strong> — 정족수 충족·이해충돌 확인·의사록 완전 기재</span></li>
-        <li><span class="ck">✓</span><span><strong>주총 소집 통지 적시 발송</strong> — 회일 2주 전, 의안 명확히 기재</span></li>
-        <li><span class="ck">✓</span><span><strong>주총 특별결의 요건 충족</strong> — 출석 2/3 + 발행주식총수 1/3 이상</span></li>
-        <li><span class="ck">✓</span><span><strong>의사록 기재 완전</strong> — 찬반 현황·반대 의견·주주이익 고려 근거 명시</span></li>
-      </ul>
-
-      <p style="font-weight:700;color:var(--primary);margin-top:10px">소각 후 (WEEK 4)</p>
-      <ul class="chkl">
-        <li><span class="ck">✓</span><span><strong>등기 완료</strong> — 자본금 감소 변경등기 + 주식실효 등기</span></li>
-        <li><span class="ck">✓</span><span><strong>채권자보호절차 이행</strong> — 공고·최고·1개월 경과 확인</span></li>
-      </ul>
-    </section>
-
-    <!-- FAQ -->
-    <section class="blk faq" id="faq">
-      <div class="secl"><span class="num">Q&amp;A</span></div>
-      <h2>자주 묻는 질문</h2>
-
-      <details>
-        <summary>의무소각 대상이 되는 자기주식 취득 범위는?</summary>
-        <div class="a">2026.3.6 이후 <strong>모든 자기주식 취득</strong>이 대상입니다. 시장 매수·공개매수·신탁계약·합병·주식교환·주식매수청구권 행사 등 취득 사유를 불문합니다. 2026.3.6 이전 취득분(기존 보유분)은 2026.9.6부터 의무소각 기간이 기산되어 <strong>2027.9.6까지</strong> 소각 또는 보유처분계획 승인을 완료해야 합니다.</div>
-      </details>
-
-      <details>
-        <summary>이익소각과 자본감소 방식의 차이는?</summary>
-        <div class="a"><strong>이익소각</strong>은 배당가능이익으로 취득한 자기주식을 이사회 결의만으로 소각. 주총 특별결의와 채권자보호절차 불필요(1~2주면 가능). 과세 이슈 없음. <strong>자본감소 방식</strong>은 자본금 직접 감소로 주총 특별결의+채권자보호절차(1개월) 필요, 최소 6~8주 소요. 의제배당 과세 발생 가능. 배당가능이익이 충분하면 이익소각을 선택하는 것이 효율적입니다.</div>
-      </details>
-
-      <details>
-        <summary>보유처분계획 승인받으면 영구 보유 가능한가요?</summary>
-        <div class="a">아닙니다. 보유처분계획은 <strong>매년 주주총회 승인</strong>을 받아야 하며, 승인되지 않으면 소각 의무가 부활합니다. 승인된 계획의 목적(임직원 보상·우리사주 등)에 부합하게 처분해야 하며, 목적 외 사용은 위법입니다. 경영상 목적(제5호)은 정관에 구체적 사유 규정 필수이며, 포괄적 규정 시 국민연금·의결권 자문사의 반대에 직면합니다.</div>
-      </details>
-
-      <details>
-        <summary>자본감소 시 채권자보호절차는?</summary>
-        <div class="a">자본감소 결의 후 <strong>2주 내</strong>에 1개월 이상 기간을 정해 채권자에게 이의제출 기회를 공고하고, 알고 있는 채권자에게는 <strong>개별 통지(최고)</strong>해야 합니다(상법 제439조·제232조 준용). 이의 제출 채권자에게는 변제·담보제공·신탁 등 보호 조치 필요. 이 절차 누락 시 자본감소 <strong>무효</strong> 가능.</div>
-      </details>
-
-      <details>
-        <summary>2026년 주총 시즌의 교훈은?</summary>
-        <div class="a">266개사(10.7%)가 보유처분계획 승인 안건 상정·전부 가결. 462개사(18.6%)가 경영상 목적 정관 개정 추진했으나 국민연금 300건 이상 반대. 핵심 교훈: ①처분 목적 구체적 명시 ②취득 당시 공시 목적과 정합성 유지 ③소수주주 의견 청취 장치(독립위원회 심의 등) 마련.</div>
-      </details>
-
-      <div class="notice">
-        본 자료는 <strong>2026-07-10</strong> 기준으로 작성되었으며, 인용 법령·판례는 작성 시점의 현행성을 확인한 것입니다. 법령은 개정될 수 있고 사안마다 결론이 달라질 수 있으므로, 실제 의사결정 전 최신 법령과 개별 사실관계 확인이 필요합니다. 본 자료는 일반적 법률 정보 제공이며 특정 사안에 대한 법률 자문이 아닙니다.
-      </div>
-    </section>
-  </main>
-</div>
-
-<footer class="footer" id="consult">
-  <div class="wrap">
-    <div class="prof">
-      <div>
-        <h3>조우성 변호사</h3>
-        <p>법무법인 머스트노우 | 대표변호사</p>
-        <p>회사법·지배구조·M&A·기업자문</p>
-      </div>
-      <div class="cta-f">
-        <a class="btn btn-f" href="#">상담 문의하기</a>
-        <a class="btn btn-fo" href="#">더 많은 인사이트</a>
-      </div>
-    </div>
-    <div class="fine">
-      © 2026 조우성 변호사. 본 콘텐츠는 일반 법률 정보이며 법률 자문을 대체하지 않습니다. 인용 법령·판례는 2026-07-10 기준 현행성을 확인했습니다.
-    </div>
-  </div>
-</footer>
-
-<script>
-var pb=document.getElementById('progress');
-function onScroll(){
-  var h=document.documentElement,b=document.body;
-  var st=h.scrollTop||b.scrollTop;
-  var sh=(h.scrollHeight||b.scrollHeight)-h.clientHeight;
-  pb.style.width=(sh>0?(st/sh*100):0)+'%';
-}
-window.addEventListener('scroll',onScroll,{passive:true});onScroll();
-
-var toTop=document.getElementById('toTop');
-window.addEventListener('scroll',function(){
-  (window.scrollY||window.pageYOffset)>500?toTop.classList.add('show'):toTop.classList.remove('show');
-},{passive:true});
-
-var links=Array.prototype.slice.call(document.querySelectorAll('#toc-list a'));
-var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));}).filter(Boolean);
-function spy(){
-  var pos=(window.scrollY||window.pageYOffset)+120,cur=secs[0];
-  for(var i=0;i<secs.length;i++){if(secs[i].offsetTop<=pos)cur=secs[i];}
-  links.forEach(function(a){
-    a.classList.toggle('active',cur&&a.getAttribute('href')==='#'+cur.id);
-  });
-}
-window.addEventListener('scroll',spy,{passive:true});spy();
-
-document.querySelectorAll('#toc-list a').forEach(function(a){
-  a.addEventListener('click',function(){
-    if(window.innerWidth<=820)document.getElementById('toc').classList.add('closed');
-  });
-});
-</script>
-</body>
-</html>
+</style></head><body><div id="progress"></div><button id="toTop" aria-label="맨 위로">?</button><header class="header"><div class="wrap"><span class="badge"><span class="dot"></span>조우성 변호사 ? 법률 인사이트</span></div></header><div class="hero"><div class="eb">전자책 대시보드 ? 실무 가이드</div><h1>자기주식 의무소각: 이사회 결의→주총 특별결의→소각까지 4주 플랜</h1><div class="tldr"><div class="lb">3줄 요약 (TL;DR)</div><ul><li>원문 Markdown의 제목?본문?표?체크리스트를 반영한 공개용 HTML입니다.</li><li>문서의 핵심 내용과 실무상 확인 포인트를 한 화면에서 확인할 수 있습니다.</li><li>구체적인 사안은 최신 법령?판례와 사실관계 확인이 필요합니다.</li></ul></div><div class="meta"><span>원문: 20260710_자기주식_의무소각_4주플랜.md</span><span class="vchip">원문 기반 HTML</span></div><div class="cta-row"><a class="btn btn-p" href="#s1">핵심 내용 보기</a><a class="btn btn-o" href="#faq">확인 사항</a></div></div><div class="app"><nav class="toc" id="toc"><div class="tt">목차</div><ol id="toc-list"><li><a href="#s1">본문</a></li><li><a href="#s2">3줄 요약 (TL;DR)</a></li><li><a href="#s3">1. 자기주식 의무소각 — 왜 4주 플랜인가</a></li><li><a href="#s4">2. 4주 플랜 상세 — 주차별 액션 아이템</a></li><li><a href="#s5">3. 케이스 스터디 — 3가지 시나리오별 적용</a></li><li><a href="#s6">4. 법무팀 체크리스트 — 소각 전·중·후</a></li><li><a href="#s7">자주 묻는 질문 (Q&amp;amp;A)</a></li><li><a href="#s8">최신성·면책 고지</a></li><li><a href="#s9">검증 로그 (내부용)</a></li></ol></nav><main class="content"><section class="blk" id="s1"><div class="secl">SECTION</div><blockquote>
+<p>웹으로 보기
+https://woosungjo-law.github.io/share/d/law-treasury-stock-cancel-4week-9srv.html</p>
+</blockquote>
+<h1>자기주식 의무소각: 이사회 결의→주총 특별결의→소각까지 4주 플랜</h1></section><section class="blk" id="s2"><div class="secl">SECTION</div><h2>3줄 요약 (TL;DR)</h2>
+<ul>
+<li>3차 개정상법(2026.3.6 시행)은 자기주식을 취득일로부터 <strong>1년 이내 소각</strong>을 원칙으로 한다. 예외적으로 보유·처분하려면 <strong>자기주식보유처분계획</strong>을 작성해 주주총회 승인을 받아야 하며, 매년 갱신해야 한다.</li>
+<li>의무소각 대상 자기주식을 소각까지의 <strong>전체 절차는 4주면 완료 가능</strong>하다: <strong>1주차</strong> 현황 파악·소각 방식 결정, <strong>2주차</strong> 이사회 결의·주총 소집, <strong>3주차</strong> 주주총회 특별결의, <strong>4주차</strong> 소각 실행·등기 완료.</li>
+<li>2026년 9월 6일부터 <strong>기존 보유분(2026.3.6 이전 취득분)</strong>에 대한 의무소각 기간이 기산되므로, 2027년 9월 6일까지 소각 또는 보유처분계획 승인을 완료해야 한다. <strong>지금 당장 기존 보유 자사주 전수 조사부터 시작하라.</strong></li>
+</ul>
+<hr /></section><section class="blk" id="s3"><div class="secl">SECTION</div><h2>1. 자기주식 의무소각 — 왜 4주 플랜인가</h2>
+<p><strong>한눈에</strong>: 2026년 3월 6일 시행된 3차 개정상법(제341조의4)은 자기주식 취득 후 1년 내 소각을 의무화했다. 소각 절차는 복잡하지 않지만, <strong>주주총회 소집·결의·등기까지 최소 4주</strong>가 소요된다. 법무팀은 이 일정을 정확히 계산해 소각 데드라인에 맞춰야 한다.</p>
+<h3>1.1 의무소각 대상과 기한</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">구분</th>
+<th>대상</th>
+<th style="text-align: center;">소각 기한</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">신규 취득분</td>
+<td>2026.3.6 이후 취득분</td>
+<td style="text-align: center;"><strong>취득일로부터 1년 이내</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">기존 직접 취득분</td>
+<td>2026.3.6 이전 취득·보유분</td>
+<td style="text-align: center;">2026.9.6부터 1년 → <strong>2027.9.6까지</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">신탁 간접 취득분</td>
+<td>신탁계약으로 보유 중인 분</td>
+<td style="text-align: center;"><strong>수탁자 반환일로부터 1년</strong></td>
+</tr>
+</tbody>
+</table>
+<h3>1.2 소각 vs 보유처분계획 — 선택 기준</h3>
+<p><strong>소각</strong>: 절차가 단순하고 주총 특별결의가 필요 없음(이사회 결의만으로 가능). 단, 발행주식총수가 감소하여 주당 가치 상승 효과.
+<strong>보유처분계획 승인</strong>: 계속 보유·처분 가능. 단, 매년 주총 승인 필요 + 경영상 목적 시 정관 개정(주총 특별결의) 선행 필요.</p>
+<blockquote>
+<p>[근거·조문] <strong>상법 제341조의4(자기주식의 소각의무 등)</strong> (시행 2026.3.6) — ①회사가 자기주식을 취득한 때에는 그 취득한 날부터 1년 이내에 소각하여야 한다. ②예외 사유에 해당하고 자기주식보유처분계획을 작성하여 주주총회의 승인을 받은 때에는 보유 또는 처분할 수 있다.
+내부 WIKI 검증 (D-자기주식의무소각, canonical)</p>
+</blockquote>
+<hr /></section><section class="blk" id="s4"><div class="secl">SECTION</div><h2>2. 4주 플랜 상세 — 주차별 액션 아이템</h2>
+<p><strong>한눈에</strong>: 소각 의사결정부터 등기 완료까지 4주면 충분하다. 각 주차별로 해야 할 일을 정리했다. 기존 보유분 소각의 경우 더 넉넉한 일정(2027.9.6까지)이 있으나, 주총 일정을 고려해 미리 준비해야 한다.</p>
+<h3>2.1 WEEK 1 — 현황 파악 및 소각 방식 결정</h3>
+<p><strong>목표</strong>: 보유 자사주 전수 조사 → 소각 여부 및 방식 결정 → 소각할 주식 수·종류 확정</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">액션</th>
+<th style="text-align: center;">담당</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">기존 보유 자사주 전수 조사</td>
+<td style="text-align: center;">재무팀</td>
+<td>취득 방법(직접·신탁)·일자·경과 규정별 분류</td>
+</tr>
+<tr>
+<td style="text-align: left;">의무소각 기산일 계산</td>
+<td style="text-align: center;">법무팀</td>
+<td>각 취득분별 소각 기한 확정 (2027.9.6 데드라인 확인)</td>
+</tr>
+<tr>
+<td style="text-align: left;">소각 vs 보유처분계획 결정</td>
+<td style="text-align: center;">CFO+법무팀</td>
+<td>경영 전략상 보유 필요성 vs 소각 단순성 비교</td>
+</tr>
+<tr>
+<td style="text-align: left;">소각할 주식 수·종류 확정</td>
+<td style="text-align: center;">이사회</td>
+<td>의안 상정을 위한 구체적 수치 확정</td>
+</tr>
+<tr>
+<td style="text-align: left;">법률 검토</td>
+<td style="text-align: center;">외부 법률 자문</td>
+<td>소각 절차의 적법성, 세무 영향 검토</td>
+</tr>
+</tbody>
+</table>
+<p><strong>체크포인트</strong>: 의무소각 대상인 자기주식을 보유처분계획 없이 계속 보유 중이라면, <strong>1주차에 즉시 소각 결정</strong>을 내려야 한다. 보유처분계획 승인을 받으려면 주총 소집(2주차)이 필요하므로 시간이 더 오래 걸린다.</p>
+<h3>2.2 WEEK 2 — 이사회 결의 및 주총 소집</h3>
+<p><strong>목표</strong>: 이사회에서 소각 결의 → 주주총회 소집 통지 발송</p>
+<p>이사회 결의에서는 다음 사항을 결정한다:
+① 소각할 자기주식의 종류·수
+② 소각 방법(이익소각 vs 자본감소 방식)
+③ 주주총회 소집 일정 및 의안</p>
+<p><strong>소각 방식 비교</strong>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">소각 방식</th>
+<th style="text-align: center;">근거</th>
+<th style="text-align: center;">절차</th>
+<th style="text-align: center;">세무 효과</th>
+<th style="text-align: center;">적합</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>이익소각</strong></td>
+<td style="text-align: center;">배당가능이익으로 취득한 자사주 소각</td>
+<td style="text-align: center;">이사회 결의만으로 가능 (자본감소 절차 불필요)</td>
+<td style="text-align: center;">자본거래, 과세 없음</td>
+<td style="text-align: center;">배당가능이익 충분할 때</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>자본감소 방식</strong></td>
+<td style="text-align: center;">자본금 감소 절차 병행</td>
+<td style="text-align: center;">주총 특별결의 + 채권자보호절차 필요</td>
+<td style="text-align: center;">의제배당 과세 가능</td>
+<td style="text-align: center;">배당가능이익 부족할 때</td>
+</tr>
+</tbody>
+</table>
+<p><strong>소집 통지</strong>: 주총 회일 2주 전까지 각 주주에게 통지 발송(상장사는 2주, 비상장사는 1주). 의안(자기주식 소각을 위한 정관 변경·자본감소 등)을 명확히 기재해야 분쟁 소지를 없앨 수 있다.</p>
+<blockquote>
+<p>[근거·조문] <strong>상법 제363조(주주총회의 소집통지)</strong> — ①주주총회를 소집함에는 회일 2주간 전에 각 주주에 대하여 서면으로 통지를 발송하여야 한다.
+내부 WIKI 검증</p>
+</blockquote>
+<h3>2.3 WEEK 3 — 주주총회 특별결의</h3>
+<p><strong>목표</strong>: 주주총회 개최 → 자본감소(또는 정관 변경) 특별결의 통과</p>
+<p>자기주식 소각이 자본감소를 수반하는 경우, 주총 <strong>특별결의</strong>(출석 의결권 3분의 2 이상 + 발행주식총수 3분의 1 이상)가 필요하다(상법 제434조).</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">단계</th>
+<th>내용</th>
+<th style="text-align: center;">유의사항</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">안건 설명</td>
+<td>이사가 소각 필요성·방식·주주 영향 설명</td>
+<td style="text-align: center;">주주이익 충실의무 고려 근거 명시</td>
+</tr>
+<tr>
+<td style="text-align: center;">질의응답</td>
+<td>주주 질의에 답변</td>
+<td style="text-align: center;">반대주주 의견 청취</td>
+</tr>
+<tr>
+<td style="text-align: center;">의결</td>
+<td>특별결의 요건 충족 확인</td>
+<td style="text-align: center;"><strong>자기주식은 의결권 없음</strong> → 발행주식총수에서 제외</td>
+</tr>
+<tr>
+<td style="text-align: center;">의사록 작성</td>
+<td>결의 내용·찬반 현황·이유 명확히 기재</td>
+<td style="text-align: center;">찬성추정 대비 반대의견 기재</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[근거·조문] <strong>상법 제434조(주주총회 특별결의)</strong> — ①다음 각 호의 어느 하나에 해당하는 결의는 출석한 주주의 의결권의 3분의 2 이상의 수와 발행주식총수의 3분의 1 이상의 수로써 하여야 한다. (중략) 6. 자본금의 감소
+내부 WIKI 검증</p>
+</blockquote>
+<h3>2.4 WEEK 4 — 소각 실행 및 등기 완료</h3>
+<p><strong>목표</strong>: 소각 절차 이행 → 자본금 감소 등기 → 소각 효력 발생</p>
+<p><strong>소각 실행 순서</strong>:</p>
+<ol>
+<li><strong>자본감소 등기</strong>: 주총 결의 후 2주 내 자본금 감소 변경등기</li>
+<li><strong>주권 실효 절차</strong>: 소각 대상 주권의 실효(소각일 현재 회사가 보유 중인 자기주식은 별도 주권 실효 절차 불필요 — 회사 스스로 보유 중이므로)</li>
+<li><strong>주식실효 등기</strong>: 주식실효의 등기 (필요시)</li>
+<li><strong>채권자보호절차</strong>: 자본감소 수반 시 채권자 이의제출 공고·최고 (1개월 이상)</li>
+</ol>
+<blockquote>
+<p>[근거·판례] <strong>대법원 2008.7.10. 선고 2005다24981 판결</strong> — 주주의 동의를 얻어 자기주식으로 취득 후 소각하는 임의소각의 경우, 회사가 주식을 취득하고 자본감소 절차뿐 아니라 주식실효 절차까지 마친 때 소각 효력이 발생한다.
+내부 WIKI 검증 (D-자기주식의무소각, canonical)</p>
+</blockquote>
+<hr /></section><section class="blk" id="s5"><div class="secl">SECTION</div><h2>3. 케이스 스터디 — 3가지 시나리오별 적용</h2>
+<h3>3.1 시나리오 A: 단순 이익소각 (가장 쉬운 경우)</h3>
+<p><strong>상황</strong>: A사는 배당가능이익 50억 원으로 취득한 자기주식 10만 주(취득가액 20억 원)를 보유 중. 추가 보유 필요 없음.</p>
+<p><strong>4주 플랜</strong>:
+- 1주차: 소각 결정, 이사회 결의 준비
+- 2주차: 이사회 결의 → 이익소각 결정 (자본감소 불필요, 주총 특별결의 불필요)
+- <strong>(3~4주차 생략 가능 — 이사회 결의만으로 소각 효력 발생)</strong>
+- 단, 이익소각의 경우에도 <strong>주식실효 절차</strong>와 <strong>등기</strong>는 필요</p>
+<h3>3.2 시나리오 B: 자본감소 수반 소각</h3>
+<p><strong>상황</strong>: B사는 배당가능이익을 초과하여 취득한 자기주식(또는 결손 보전을 위해 자본감소가 필요한 경우) 50만 주를 소각해야 함.</p>
+<p><strong>4주 플랜</strong>:
+- 1주차: 자본감소 방식 결정, 법률 검토, 채권자 리스트 확보
+- 2주차: 이사회 결의 + 주총 소집 통지(2주 전)
+- 3주차: <strong>주총 특별결의</strong>(자본감소) → 채권자 공고·최고(1개월)
+- 4주차: 공고 기간 만료 → 이의 없는 경우 자본감소 등기 + 주식실효 등기</p>
+<blockquote>
+<p>⚠️ <strong>주의</strong>: 자본감소 방식 소각은 채권자보호절차(1개월 이상)로 인해 4주 플랜보다 더 오래 걸릴 수 있다. 4주 플랜은 <strong>이익소각 기준</strong>으로 설계되었으며, 자본감소 방식은 최소 6~8주 소요.</p>
+</blockquote>
+<h3>3.3 시나리오 C: 보유처분계획 승인 (보유 계속)</h3>
+<p><strong>상황</strong>: C사는 임직원 보상(RSU) 목적으로 자기주식 30만 주를 계속 보유·처분하려 함.</p>
+<p><strong>필요 절차</strong>:
+- <strong>선행 조건</strong>: 정관에 '경영상 목적' 규정 신설(주총 특별결의) — 시간 추가 소요
+- 1주차: 자기주식보유처분계획 작성(5대 필수 기재사항 포함, 이사 전원 기명날인·서명)
+- 2주차: 이사회 결의 + 주총 소집 통지
+- 3주차: 주총 승인(보통결의) → 보유처분계획 확정
+- 4주차: 이사회 결의로 개별 처분 실행(주총 승인 범위 내)
+- <strong>매년 갱신</strong>: 매년 정기주총에서 보유처분계획 승인 갱신 필요</p>
+<blockquote>
+<p>[근거·자료] <strong>세종 지배구조전략센터 2026년 정기주총 리뷰 제2호</strong> — 266개사(10.7%)가 보유처분계획 승인 안건 상정, 462개사(18.6%)가 경영상 목적 정관 개정 추진
+내부 WIKI 검증</p>
+</blockquote>
+<hr /></section><section class="blk" id="s6"><div class="secl">SECTION</div><h2>4. 법무팀 체크리스트 — 소각 전·중·후</h2>
+<p><strong>한눈에</strong>: 아래 10개 포인트를 소각 과정 전·중·후에 점검하면 절차 리스크를 100% 방어할 수 있다.</p>
+<h3>소각 전 (WEEK 1)</h3>
+<ul>
+<li>[ ] <strong>자기주식 전수 조사 완료</strong> — 취득 방법·일자·경과 규정별 분류</li>
+<li>[ ] <strong>의무소각 기산일 계산</strong> — 신규 취득분·기존 보유분·신탁분별 구분</li>
+<li>[ ] <strong>소각 vs 보유처분계획 결정</strong> — 경영 전략·세무 영향 검토 완료</li>
+<li>[ ] <strong>배당가능이익 확인</strong> — 이익소각 가능 여부 판단 기준</li>
+</ul>
+<h3>소각 중 (WEEK 2~3)</h3>
+<ul>
+<li>[ ] <strong>이사회 결의 적법</strong> — 정족수 충족, 이해충돌 여부 확인, 의사록 기재 완전</li>
+<li>[ ] <strong>주총 소집 통지 적시 발송</strong> — 회일 2주 전, 의안 명확히 기재</li>
+<li>[ ] <strong>주총 특별결의 요건 충족</strong> — 출석 2/3 + 발행주식총수 1/3 이상 (자본감소 시)</li>
+<li>[ ] <strong>의사록 기재 완전</strong> — 찬반 현황, 반대 의견, 주주이익 고려 근거 명시</li>
+</ul>
+<h3>소각 후 (WEEK 4)</h3>
+<ul>
+<li>[ ] <strong>등기 완료</strong> — 자본금 감소 변경등기 + 주식실효 등기 (필요시)</li>
+<li>[ ] <strong>채권자보호절차 이행</strong> — 공고·최고·1개월 경과 확인 (자본감소 시)</li>
+<li>[ ] <strong>소각 효력 발생 확인</strong> — 대법원 2005다24981: 취득 + 자본감소 + 주식실효 완료</li>
+</ul>
+<hr /></section><section class="blk" id="s7"><div class="secl">SECTION</div><h2>자주 묻는 질문 (Q&amp;A)</h2>
+<p><strong>Q1. 자기주식 의무소각 대상이 되는 취득은 무엇인가요?</strong>
+2026.3.6 이후 모든 자기주식 취득이 대상입니다. 시장 매수, 공개매수, 신탁계약, 합병·주식교환, 주식매수청구권 행사 등 취득 사유를 불문합니다. 2026.3.6 이전 취득분(기존 보유분)은 2026.9.6부터 의무소각 기간이 기산되며, 2027.9.6까지 소각 또는 보유처분계획 승인을 완료해야 합니다.</p>
+<p><strong>Q2. 이익소각과 자본감소 방식 소각의 차이는?</strong>
+이익소각은 배당가능이익으로 취득한 자기주식을 이사회 결의만으로 소각하는 방법으로, 주총 특별결의와 채권자보호절차가 필요 없어 가장 빠릅니다(4주 불필요, 1~2주면 가능). 자본감소 방식은 자본금을 직접 줄이는 방법으로 주총 특별결의와 채권자보호절차(1개월 이상)가 필요하여 최소 6~8주가 소요됩니다. 세무적으로 이익소각은 과세 이슈가 없으나, 자본감소 방식은 의제배당 과세가 발생할 수 있습니다.</p>
+<p><strong>Q3. 자기주식보유처분계획을 승인받으면 영구 보유할 수 있나요?</strong>
+아닙니다. 보유처분계획은 매년 주주총회 승인을 받아야 하며, 승인되지 않으면 소각 의무가 부활합니다. 또한 승인된 계획의 목적(임직원 보상, 우리사주 등)에 부합하게 처분해야 하며, 목적 외 사용 시 위법입니다. 경영상 목적(제5호)으로 보유하려면 정관에 구체적 사유를 규정해야 하며, 포괄적 규정 시 국민연금·의결권 자문사의 반대에 직면할 수 있습니다.</p>
+<p><strong>Q4. 자본감소 시 채권자보호절차는 어떻게 진행하나요?</strong>
+자본감소 결의 후 2주 내에 1개월 이상의 기간을 정해 채권자에게 이의제출 기회를 부여하는 공고를 하고, 알고 있는 채권자에게는 개별 통지(최고)해야 합니다(상법 제439조·제232조 준용). 이의를 제출한 채권자가 있으면 변제·담보제공·신탁 등 보호 조치를 해야 합니다. 이 절차를 누락하면 자본감소가 무효가 될 수 있습니다(대법원 2005다24981 취지).</p>
+<p><strong>Q5. 2026년 주총 시즌의 교훈은 무엇인가요?</strong>
+2026년 정기주총에서 266개사(10.7%)가 보유처분계획 승인 안건을 상정했고, 462개사(18.6%)가 경영상 목적 정관 개정을 추진했습니다. 국민연금은 경영상 목적이 포괄적인 300건 이상에 대해 반대 의결권을 행사했습니다. 핵심 교훈은 ①처분 목적을 구체적으로 명시하고, ②취득 당시 공시 목적과의 정합성을 유지하며, ③소수주주 의견 청취 장치(독립위원회 심의 등)를 마련해야 한다는 점입니다.</p>
+<hr /></section><section class="blk" id="s8"><div class="secl">SECTION</div><h2>최신성·면책 고지</h2>
+<p>본 자료는 <strong>2026-07-10</strong> 기준으로 작성되었으며, 인용 법령·판례는 작성 시점의 현행성을 확인한 것입니다.
+법령은 개정될 수 있고 사안마다 결론이 달라질 수 있으므로, 실제 의사결정 전 최신 법령과 개별 사실관계 확인이 필요합니다.
+본 자료는 일반적 법률 정보 제공이며 특정 사안에 대한 법률 자문이 아닙니다.</p>
+<hr /></section><section class="blk" id="s9"><div class="secl">SECTION</div><h2>검증 로그 (내부용)</h2>
+<table>
+<thead>
+<tr>
+<th>인용</th>
+<th style="text-align: center;">유형</th>
+<th>검증 결과</th>
+<th style="text-align: center;">판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>상법 제341조의4</td>
+<td style="text-align: center;">조문</td>
+<td>내부 WIKI D-자기주식의무소각 canonical + 한국법 MCP FOUND (MST 284143)</td>
+<td style="text-align: center;">등재</td>
+</tr>
+<tr>
+<td>상법 제363조</td>
+<td style="text-align: center;">조문</td>
+<td>내부 WIKI canonical</td>
+<td style="text-align: center;">등재</td>
+</tr>
+<tr>
+<td>상법 제434조</td>
+<td style="text-align: center;">조문</td>
+<td>내부 WIKI canonical</td>
+<td style="text-align: center;">등재</td>
+</tr>
+<tr>
+<td>상법 제439조·제232조</td>
+<td style="text-align: center;">조문</td>
+<td>내부 WIKI canonical</td>
+<td style="text-align: center;">등재</td>
+</tr>
+<tr>
+<td>대법원 2005다24981</td>
+<td style="text-align: center;">판례</td>
+<td>내부 WIKI D-자기주식의무소각 canonical</td>
+<td style="text-align: center;">등재</td>
+</tr>
+<tr>
+<td>세종센터 2026 주총 리뷰</td>
+<td style="text-align: center;">자료</td>
+<td>내부 WIKI 00_raw</td>
+<td style="text-align: center;">등재</td>
+</tr>
+</tbody>
+</table></section><section class="blk faq" id="faq"><div class="secl">NOTICE</div><h2>확인 사항</h2><div class="notice">이 문서는 일반적인 법률 정보 제공을 위한 자료입니다. 구체적인 사실관계와 최신 법령?판례에 따라 결론이 달라질 수 있습니다.</div></section></main></div><footer class="footer"><div class="wrap"><h3>조우성 변호사</h3><p>실무에 바로 활용할 수 있는 법률 지식과 대응 가이드를 제공합니다.</p></div></footer></body></html>

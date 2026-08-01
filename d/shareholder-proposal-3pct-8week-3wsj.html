@@ -1,464 +1,522 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
-<title>주주제안 3%룰 실무: 제안 도착→이사회 검토→주총 부의까지 8주 타임라인 — 조우성 변호사</title>
-<meta name="description" content="주주제안 3%룰 8주 타임라인: WEEK 1-2 제안 접수·요건 검토 · WEEK 3-4 이사회 심층 검토 · WEEK 5 이사회 결의 · WEEK 6-8 부의/거부 대응">
-<meta property="og:type" content="article">
-<meta property="og:title" content="주주제안 3%룰 실무: 제안 도착→이사회 검토→주총 부의까지 8주 타임라인 — 조우성 변호사">
-<meta property="og:description" content="주주제안 3%룰 8주 타임라인: WEEK 1-2 제안 접수·요건 검토 · WEEK 3-4 이사회 심층 검토 · WEEK 5 이사회 결의 · WEEK 6-8 부의/거부 대응">
-<style>
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>주주제안 3%룰 실무: 제안 도착→이사회 검토→주총 부의까지 8주 타임라인</title><style>
+/* ============================================================
+   법률 대시보드 전자책 — Apollo 기반 경량 커스텀 (공개 롱스크롤)
+   Apollo 토큰(버건디 액센트 + 웜 화이트 + 딥와인 헤더) 상속.
+   의뢰인 리포트(리스크레이더 6뷰)와 달리 공개 독서형 롱스크롤.
+   self-contained: 외부 CDN/폰트/이미지/스크립트 의존 없음.
+   ============================================================ */
 :root{
-  --primary:#1a3a6b; --primary-l:#2e6be6; --primary-d:#0f2450;
-  --bg:#f0f2f5; --card:#ffffff; --card2:#f8f9fb;
-  --line:#e2e5ea; --line2:#cdd2da;
-  --ink:#111827; --ink2:#374151; --muted:#6b7280; --faint:#9ca3af;
-  --amber-bg:#fffbeb; --amber-bd:#f59e0b; --amber-tx:#92400e;
-  --green-bg:#ecfdf5; --green-bd:#059669; --green-tx:#065f46;
-  --red-bg:#fef2f2; --red-bd:#dc2626; --red-tx:#991b1b;
-  --blue-bg:#eff6ff; --blue-bd:#3b82f6; --blue-tx:#1e40af;
-  --font:'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',-apple-system,BlinkMacSystemFont,sans-serif;
+  --bg:#f5f1f2; --panel:#ffffff; --panel2:#faf6f7;
+  --line:#ebe2e5; --line2:#ddccd2;
+  --ink:#2c1d26; --ink2:#56424c; --muted:#8a7b82; --faint:#b3a6ab;
+  --wine:#7a2e3a; --wine-d:#5a1f2b; --wine-l:#9c4456;
+  --wine-tint:#f4e9ec; --wine-tint-ln:#ecd7dd;
+  --header-bg:#3a1525; --header-bg2:#4e1f32; --header-accent:#d4a0aa;
+  --rH:#c74a3c; --rM-bg:#f8e4b8; --rM-tx:#7d520a; --rL-bg:#d6ecdb; --rL-tx:#287a54;
+  --amber:#b45309; --green:#287a54;
+  --font:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Noto Sans KR',sans-serif;
   --maxw:1120px; --readw:760px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
-#progress{position:fixed;top:0;left:0;height:4px;width:0;z-index:60;background:linear-gradient(90deg,var(--primary),var(--primary-l));transition:width .1s linear}
-.topbar{position:fixed;top:0;left:0;width:100%;height:4px;z-index:59;background:linear-gradient(90deg,var(--primary-d),var(--primary-l))}
-.header{background:var(--card);border-bottom:1px solid var(--line);padding-top:4px}
-.header .wrap{max-width:var(--maxw);margin:0 auto;padding:14px 26px;display:flex;align-items:center;gap:12px}
-.header .avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-l));display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:800}
-.header .name{font-size:14px;font-weight:700;color:var(--ink)}
-.header .badge{font-size:11px;color:var(--muted);margin-left:auto;background:var(--card2);padding:3px 10px;border-radius:999px}
-.hero{background:linear-gradient(135deg,var(--primary-d) 0%,var(--primary) 40%,var(--primary-l) 100%);color:#fff;padding:40px 0 50px}
-.hero .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
-.hero .tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;background:rgba(255,255,255,.15);border-radius:999px;padding:4px 12px;margin-bottom:12px;border:1px solid rgba(255,255,255,.2);letter-spacing:.03em}
-.hero .tag .dot{width:5px;height:5px;border-radius:50%;background:#60a5fa}
-.hero h1{font-size:28px;line-height:1.3;font-weight:800;margin:0 0 14px;letter-spacing:-.01em}
-.hero .meta{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:13px;opacity:.8;margin-bottom:18px}
-.hero .meta .vchip{background:rgba(255,255,255,.12);border-radius:6px;padding:3px 9px;font-weight:700;font-size:11.5px}
-.cta-row{display:flex;flex-wrap:wrap;gap:10px}
-.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:9px;padding:11px 18px;text-decoration:none;cursor:pointer;border:1px solid transparent}
-.btn-p{background:#fff;color:var(--primary-d)}
-.btn-p:hover{background:rgba(255,255,255,.9)}
-.btn-o{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
-.btn-o:hover{background:rgba(255,255,255,.1)}
-.tldr-wrap{max-width:var(--maxw);margin:-24px auto 0;padding:0 26px;position:relative;z-index:10}
-.tldr{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px;box-shadow:0 4px 14px rgba(0,0,0,.06)}
-.tldr .lb{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
-.tldr ul{margin:0;padding-left:18px}
-.tldr li{margin:5px 0;font-size:14.5px;color:var(--ink2)}
-.tldr li strong{color:var(--primary)}
-.app{max-width:var(--maxw);margin:0 auto;padding:24px 26px 60px;display:grid;grid-template-columns:210px 1fr;gap:32px;align-items:start}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
+
+/* 읽기 진행바 */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;
+  background:linear-gradient(90deg,var(--wine),var(--wine-l));transition:width .1s linear}
+
+/* 헤더 표지 (딥와인, 유일한 딥 컬러) */
+.header{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0}
+.header .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 26px}
+.header .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;
+  color:var(--header-accent);border:1px solid rgba(212,160,170,.4);border-radius:999px;padding:4px 12px}
+.header .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--header-accent)}
+
+/* 히어로 */
+.hero{max-width:var(--maxw);margin:0 auto;padding:30px 26px 8px}
+.hero .eb{font-size:12px;font-weight:700;color:var(--wine);letter-spacing:.02em;margin-bottom:10px}
+.hero h1{font-size:30px;line-height:1.28;font-weight:800;margin:0 0 16px;color:var(--ink);letter-spacing:-.01em}
+.hero .tldr{background:var(--wine-tint);border:1px solid var(--wine-tint-ln);border-left:4px solid var(--wine);
+  border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.hero .tldr .lb{font-size:12px;font-weight:700;color:var(--wine-d);margin-bottom:8px}
+.hero .tldr ul{margin:0;padding-left:18px}
+.hero .tldr li{margin:4px 0;font-size:15px;color:var(--ink2)}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:12.5px;color:var(--muted);margin-bottom:18px}
+.hero .meta .vchip{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);
+  font-weight:700;border-radius:6px;padding:3px 9px;font-size:11.5px}
+.hero .cta-row{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:9px;
+  padding:11px 18px;text-decoration:none;cursor:pointer;border:1px solid transparent}
+.btn-p{background:var(--wine);color:#fff}
+.btn-p:hover{background:var(--wine-d)}
+.btn-o{background:#fff;color:var(--wine-d);border-color:var(--line2)}
+.btn-o:hover{background:var(--panel2)}
+
+/* 셸: 좌측 목차 + 본문 */
+.app{max-width:var(--maxw);margin:0 auto;padding:8px 26px 60px;
+  display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:start}
+
+/* 목차 (데스크톱 = 좌측 sticky) */
 .toc{position:sticky;top:24px}
-.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:0 0 10px}
-.toc ol{list-style:none;margin:0;padding:0}
-.toc li{margin:2px 0}
-.toc a{display:block;font-size:13px;color:var(--ink2);text-decoration:none;padding:7px 10px;border-radius:8px;border-left:3px solid transparent;line-height:1.35}
-.toc a:hover{background:var(--card2)}
-.toc a.active{background:var(--blue-bg);border-left-color:var(--primary-l);color:var(--primary);font-weight:700}
+.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;
+  margin:0 0 10px;padding-left:2px}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}
+.toc li{counter-increment:toc;margin:1px 0}
+.toc a{display:flex;gap:9px;font-size:13.5px;color:var(--ink2);text-decoration:none;
+  padding:7px 10px;border-radius:8px;border-left:3px solid transparent;line-height:1.4}
+.toc a::before{content:counter(toc,decimal-leading-zero);color:var(--faint);font-weight:700;font-size:11.5px;flex:none}
+.toc a:hover{background:var(--panel2)}
+.toc a.active{background:var(--wine-tint);border-left-color:var(--wine);color:var(--wine-d);font-weight:700}
 .toc-toggle{display:none}
+
+/* 본문 */
 .content{max-width:var(--readw);min-width:0}
-section.blk{scroll-margin-top:28px;margin-bottom:40px}
-.secl{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin:0 0 10px}
-.secl .num{background:var(--primary-l);color:#fff;border-radius:5px;padding:2px 8px;font-size:10px}
-section.blk h2{font-size:22px;font-weight:700;line-height:1.35;margin:0 0 14px;color:var(--ink)}
-section.blk h3{font-size:16px;font-weight:700;margin:24px 0 10px;color:var(--primary)}
+section.blk{scroll-margin-top:24px;margin-bottom:38px}
+.secl{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.05em;margin:0 0 12px}
+.secl::before{content:"";width:7px;height:15px;background:var(--wine);border-radius:2px;flex:none}
+section.blk h2{font-size:23px;font-weight:800;line-height:1.35;margin:0 0 14px;color:var(--ink);letter-spacing:-.01em}
+section.blk h3{font-size:17px;font-weight:700;margin:26px 0 10px;color:var(--wine-d)}
 section.blk p{margin:0 0 14px;color:var(--ink2)}
 section.blk ul,section.blk ol{margin:0 0 14px;padding-left:22px;color:var(--ink2)}
-section.blk li{margin:5px 0}
+section.blk li{margin:6px 0}
 strong{color:var(--ink);font-weight:700}
-.eye{background:var(--blue-bg);border-left:4px solid var(--blue-bd);border-radius:10px;padding:14px 16px;margin:0 0 16px;font-size:14.5px;color:var(--blue-tx)}
-.eye ul{margin:6px 0 0;padding-left:18px}
-.eye li{margin:3px 0}
-.ev{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--amber-bd);border-radius:10px;padding:13px 15px;margin:0 0 14px}
+a.ln{color:var(--wine-l);text-decoration:none;border-bottom:1px solid var(--wine-tint-ln)}
+a.ln:hover{border-bottom-color:var(--wine-l)}
+
+/* 핵심요약 카드 */
+.summary{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.summary .lb{font-size:11px;font-weight:700;color:var(--wine-d);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.summary ul{margin:0;padding-left:18px}
+
+/* 근거 카드 (조문·판례) */
+.ev{background:#fff;border:1px solid var(--line);border-left:4px solid var(--wine);border-radius:10px;
+  padding:13px 15px;margin:0 0 12px}
 .ev .top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px}
-.ev .kind{font-size:10.5px;font-weight:700;color:#fff;border-radius:5px;padding:2px 8px}
-.ev .kind.law{background:var(--primary)}
-.ev .kind.case{background:var(--amber-bd)}
+.ev .kind{font-size:11px;font-weight:700;color:#fff;background:var(--wine);border-radius:5px;padding:2px 8px}
+.ev .kind.law{background:var(--wine-d)}
+.ev .kind.case{background:var(--amber)}
 .ev .cite{font-size:13.5px;font-weight:700;color:var(--ink)}
-.ev .vtick{margin-left:auto;font-size:10.5px;font-weight:700;color:var(--green-tx);background:var(--green-bg);border-radius:5px;padding:2px 7px}
+.ev .vtick{margin-left:auto;font-size:11px;font-weight:700;color:var(--rL-tx);background:var(--rL-bg);border-radius:5px;padding:2px 7px}
 .ev .gist{font-size:14px;color:var(--ink2);margin:0}
 .ev .date{font-size:12px;color:var(--muted);margin-top:5px}
-.tbl-wrap{overflow-x:auto;margin:0 0 16px}
-table{border-collapse:collapse;width:100%;font-size:13.5px}
-th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
-th{background:var(--card2);color:var(--primary);font-weight:700;font-size:12.5px}
-tr:hover td{background:var(--card2)}
-.chip{display:inline-flex;align-items:center;justify-content:center;min-width:30px;font-size:10.5px;font-weight:600;border-radius:5px;padding:2px 7px;margin-right:3px}
-.c-H{background:var(--green-bg);color:var(--green-tx)}
-.c-M{background:var(--amber-bg);color:var(--amber-tx)}
-.c-L{background:var(--red-bg);color:var(--red-tx)}
-.chkl{list-style:none;margin:0 0 16px;padding:0;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden}
-.chkl li{display:flex;gap:10px;padding:10px 14px;border-bottom:1px solid var(--line);font-size:14px;color:var(--ink2)}
-.chkl li:last-child{border-bottom:none}
-.chkl .ck{flex:none;width:18px;height:18px;border-radius:4px;background:var(--green-bg);color:var(--green-tx);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800}
-.week-card{background:var(--card);border:1px solid var(--line);border-radius:12px;margin:0 0 16px;overflow:hidden}
-.week-card .wc-hdr{background:var(--primary);color:#fff;padding:12px 16px;font-size:15px;font-weight:700;display:flex;align-items:center;gap:10px}
-.week-card .wc-hdr .wc-num{background:rgba(255,255,255,.2);border-radius:999px;padding:2px 10px;font-size:12px}
-.week-card .wc-body{padding:14px 16px}
-.week-card .wc-body .wc-goal{font-size:13px;font-weight:700;color:var(--primary);margin-bottom:8px}
-.step-badge{display:inline-block;font-size:10px;font-weight:700;color:var(--green-tx);background:var(--green-bg);border-radius:999px;padding:2px 10px;margin-right:6px}
-.faq details{background:var(--card);border:1px solid var(--line);border-radius:10px;margin:0 0 10px;overflow:hidden}
-.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:14.5px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:10px}
+
+/* 다이어그램 — 플로우 / 체크리스트 (CSS·SVG only) */
+.figure{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin:0 0 18px}
+.figure .cap{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:12px}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px}
+.flow .step{flex:1;min-width:120px;background:var(--wine-tint);border:1px solid var(--wine-tint-ln);
+  border-radius:10px;padding:11px 12px;position:relative}
+.flow .step .n{font-size:11px;font-weight:700;color:var(--wine)}
+.flow .step .t{font-size:13.5px;font-weight:700;color:var(--ink);margin-top:2px}
+.flow .step .d{font-size:12.5px;color:var(--ink2);margin-top:3px}
+.checklist{list-style:none;margin:0;padding:0}
+.checklist li{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+.checklist li:last-child{border-bottom:none}
+.checklist .ck{flex:none;width:20px;height:20px;border-radius:5px;background:var(--rL-bg);color:var(--rL-tx);
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+
+/* 위험도 칩 */
+.chip{display:inline-flex;align-items:center;justify-content:center;min-width:34px;font-size:11px;font-weight:500;
+  border-radius:6px;padding:3px 8px;margin-right:4px}
+.c-H{background:var(--rH);color:#fff}
+.c-M{background:var(--rM-bg);color:var(--rM-tx)}
+.c-L{background:var(--rL-bg);color:var(--rL-tx)}
+
+/* 표 */
+.tbl-wrap{overflow-x:auto;margin:0 0 18px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px}
+
+/* FAQ (아코디언) */
+.faq details{background:#fff;border:1px solid var(--line);border-radius:10px;margin:0 0 10px;overflow:hidden}
+.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:15px;font-weight:700;color:var(--ink);
+  display:flex;align-items:center;gap:10px}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--primary-l);color:#fff;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
-.faq details[open] summary{border-bottom:1px solid var(--line);color:var(--primary)}
-.faq .a{padding:14px 16px;font-size:14px;color:var(--ink2);line-height:1.7}
-.notice{background:var(--card2);border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;font-size:12.5px;color:var(--muted);line-height:1.7}
-#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--primary);color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;box-shadow:0 4px 14px rgba(26,58,107,.28)}
+.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--wine-tint);
+  color:var(--wine-d);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+.faq details[open] summary{border-bottom:1px solid var(--line);color:var(--wine-d)}
+.faq .a{padding:14px 16px;font-size:14.5px;color:var(--ink2)}
+
+/* 최신성·면책 고지 */
+.notice{background:#fff;border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;
+  font-size:12.5px;color:var(--muted);line-height:1.7}
+
+/* 맨 위로 버튼 */
+#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--wine-tint-ln);background:var(--wine);color:#fff;font-size:18px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;
+  box-shadow:0 4px 14px rgba(58,21,37,.28)}
 #toTop.show{opacity:1;pointer-events:auto}
-#toTop:hover{background:var(--primary-d)}
-.footer{background:linear-gradient(135deg,var(--primary-d),var(--primary));color:rgba(255,255,255,.85)}
+#toTop:hover{background:var(--wine-d)}
+
+/* 푸터 프로필 + 상담 CTA */
+.footer{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0;margin-top:20px}
 .footer .wrap{max-width:var(--maxw);margin:0 auto;padding:34px 26px}
 .footer h3{font-size:20px;font-weight:800;margin:0 0 8px;color:#fff}
-.footer p{font-size:14px;color:rgba(255,255,255,.7);margin:0 0 6px;line-height:1.7}
+.footer p{font-size:14px;color:rgba(255,255,255,.72);margin:0 0 6px;line-height:1.7}
 .footer .prof{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end}
 .footer .cta-f{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-.footer .btn-f{background:#fff;color:var(--primary-d)}
-.footer .btn-f:hover{background:rgba(255,255,255,.9)}
-.footer .btn-fo{background:transparent;color:rgba(255,255,255,.85);border-color:rgba(255,255,255,.35)}
-.footer .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:22px;padding-top:14px;font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.7}
+.footer .btn-f{background:#fff;color:var(--wine-d)}
+.footer .btn-f:hover{background:var(--header-accent)}
+.footer .btn-fo{background:transparent;color:#f4eef0;border-color:rgba(255,255,255,.35)}
+.footer .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:22px;padding-top:14px;
+  font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.7}
+
+/* ── 모바일 (≤820px) ── */
 @media(max-width:820px){
-  .hero h1{font-size:22px}
+  .hero h1{font-size:24px}
   .app{grid-template-columns:1fr;gap:0;padding-top:0}
-  .toc{position:static;margin:0 0 22px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 8px}
-  .toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--primary);padding:9px 8px}
+  .toc{position:static;margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 8px}
+  .toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;
+    cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--wine-d);padding:9px 8px}
   .toc-toggle .ar{transition:transform .2s}
   .toc.closed .toc-toggle .ar{transform:rotate(-90deg)}
   .toc .tt{display:none}
   .toc ol{max-height:50vh;overflow:auto}
   .toc.closed ol{display:none}
-  section.blk h2{font-size:19px}
+  section.blk h2{font-size:20px}
   th,td{white-space:nowrap}
 }
 @media print{
   #progress,.toc,.cta-row,.footer .cta-f{display:none}
-  .hero,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   .app{display:block}
 }
-</style>
-</head>
-<body>
-<div id="progress"></div>
-<div class="topbar"></div>
-<button id="toTop" aria-label="맨 위로" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
-
-<header class="header">
-  <div class="wrap">
-    <div class="avatar">조</div>
-    <span class="name">조우성 변호사</span>
-    <span class="badge">법률 인사이트</span>
-  </div>
-</header>
-
-<div class="hero">
-  <div class="wrap">
-    <div class="tag"><span class="dot"></span>회사법 / 주주권 · 소수주주권</div>
-    <h1>주주제안 3%룰 실무:<br>제안 도착→이사회 검토→주총 부의까지 8주 타임라인</h1>
-    <div class="meta">
-      <span>작성일 2026-07-10</span>
-      <span>· 기준 법령 상법 현행 (MST 284143)</span>
-      <span class="vchip">✓ 조문·판례 검증</span>
-      <span>· 읽는 시간 약 10분</span>
-    </div>
-    <div class="cta-row">
-      <a class="btn btn-p" href="#s2">8주 타임라인</a>
-      <a class="btn btn-o" href="#faq">Q&amp;A</a>
-    </div>
-  </div>
-</div>
-
-<div class="tldr-wrap">
-  <div class="tldr">
-    <div class="lb">3줄 요약 (TL;DR)</div>
-    <ul>
-      <li><strong>주주제안권(상법 제363조의2)</strong>: 3%(상장 0.5%)+6개월 보유 주주가 주총 6주 전까지 안건 제안 가능. 이사회는 적법 제안을 주총 목적사항으로 상정해야 함. 거부 사유는 시행령 제12조 5가지로 한정</li>
-      <li><strong>8주 타임라인</strong>: ①WEEK 1-2 제안 접수·요건 검토 → ②WEEK 3-4 이사회 심층 검토·법률 자문 → ③WEEK 5 이사회 결의(부의/거부) → ④WEEK 6-7 부의 의안 확정 또는 거부 대응 → ⑤WEEK 8 주총 소집 통지</li>
-      <li><strong>핵심 리스크</strong>: 부당 거부 시 2019다236385 따라 이사 개인 손해배상책임. 거부 결정은 시행령 제12조에 정밀하게 맞춰야 함</li>
-    </ul>
-  </div>
-</div>
-
-<div class="app">
-  <nav class="toc" id="toc">
-    <button class="toc-toggle" onclick="document.getElementById('toc').classList.toggle('closed')">목차 <span class="ar">▾</span></button>
-    <div class="tt">목차</div>
-    <ol id="toc-list">
-      <li><a href="#s1">주주제안 법적 구조</a></li>
-      <li><a href="#s2">8주 타임라인</a></li>
-      <li><a href="#s3">시나리오</a></li>
-      <li><a href="#s4">체크리스트</a></li>
-      <li><a href="#faq">Q&amp;A</a></li>
-    </ol>
-  </nav>
-
-  <main class="content">
-
-    <!-- 섹션 1: 법적 구조 -->
-    <section class="blk" id="s1">
-      <div class="secl"><span class="num">01</span> 법적 구조</div>
-      <h2>주주제안 3%룰 개요</h2>
-      <div class="eye">
-        주주제안권은 소수주주가 회사 경영에 직접 참여할 수 있는 핵심 수단이다. 3%(상장 0.5%)라는 낮은 지분율 요건과 5가지로 한정된 거부 사유로 인해, 법무팀이 반드시 숙지해야 할 절차다.
-      </div>
-
-      <h3>제안 요건</h3>
-      <div class="tbl-wrap">
-        <table>
-          <thead><tr><th>구분</th><th>비상장사</th><th>상장사 특례</th></tr></thead>
-          <tbody>
-            <tr><td>지분율</td><td>3% 이상</td><td><strong>0.5%</strong> 이상</td></tr>
-            <tr><td>보유기간</td><td>제한 없음</td><td><strong>6개월</strong> 계속 보유</td></tr>
-            <tr><td>제안 시한</td><td>주총 6주 전까지</td><td>동일</td></tr>
-            <tr><td>제안 방식</td><td>서면 또는 전자문서</td><td>동일</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="ev">
-        <div class="top">
-          <span class="kind law">조문</span>
-          <span class="cite">상법 제363조의2 (주주의 제안권)</span>
-          <span class="vtick">✓ 현행 확인</span>
-        </div>
-        <p class="gist">①의결권 없는 주식을 제외한 발행주식총수의 100분의 3 이상에 해당하는 주식을 가진 주주는 주주총회일 6주 전까지 서면 또는 전자문서로 주주총회의 목적사항으로 할 사항을 제안할 수 있다. ②이사는 제1항의 제안이 있는 때에는 이를 주주총회의 목적사항으로 하여야 한다.</p>
-        <div class="date">시행일 현행 (MST 284143)</div>
-      </div>
-
-      <h3>거부 사유 5가지 (상법 시행령 제12조)</h3>
-      <div class="tbl-wrap">
-        <table>
-          <thead><tr><th>호</th><th>거부 사유</th><th>실무 체크포인트</th></tr></thead>
-          <tbody>
-            <tr><td>1호</td><td>최근 3년 내 동일 내용 10% 미만 찬성 부결</td><td>제안서 수령 즉시 동일 안건 선행 부결 여부 확인</td></tr>
-            <tr><td>2호</td><td>주주 개인의 고충사항</td><td>회사 전체 아닌 특정 주주 개인 이익인지 판단</td></tr>
-            <tr><td>3호</td><td>소수주주권 요건에 관한 사항</td><td>행사 요건(지분율·보유기간)의 위임입법 한계</td></tr>
-            <tr><td>4호</td><td>상장사 임기 중 임원 해임</td><td>상장사 한정, 경영 안정성 vs 권리남용 경계</td></tr>
-            <tr><td>5호</td><td>실현 불가능·명백히 거짓·명예훼손</td><td>객관적 사실 입증, 법률 검토 필수</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="ev">
-        <div class="top">
-          <span class="kind case">판례</span>
-          <span class="cite">대법원 2025. 10. 16. 선고 2019다236385 판결</span>
-          <span class="vtick">✓ 내부 WIKI 확인</span>
-        </div>
-        <p class="gist">이사가 고의 또는 과실로 주주제안을 거부하고 추인절차를 이행하지 않은 경우, 주식매수청구권 행사기회 상실에 따른 손해배상책임 인정</p>
-        <div class="date">이사 개인 손해배상책임 — 부당 거부 시 핵심 리스크</div>
-      </div>
-    </section>
-
-    <!-- 섹션 2: 8주 타임라인 -->
-    <section class="blk" id="s2">
-      <div class="secl"><span class="num">02</span> 8주 타임라인</div>
-      <h2>주차별 액션 아이템</h2>
-
-      <div class="week-card">
-        <div class="wc-hdr"><span class="wc-num">WEEK 1-2</span> 제안 접수 및 요건 검토</div>
-        <div class="wc-body">
-          <div class="wc-goal">🎯 제안자 요건(지분율·보유기간) 검증 — 가장 중요</div>
-          <div class="tbl-wrap">
-            <table>
-              <thead><tr><th>액션</th><th>담당</th><th>설명</th></tr></thead>
-              <tbody>
-                <tr><td>제안서 수령·접수</td><td>사무국</td><td>도착일·제안자 기재, 원본 보관</td></tr>
-                <tr><td><strong>제안자 요건 검토</strong></td><td>법무팀</td><td>지분율(3%/0.5%), 보유기간(상장 6개월) 확인</td></tr>
-                <tr><td>제안 형식·내용 검토</td><td>법무팀</td><td>서면/전자문서 여부, 의안의 요령 기재 여부</td></tr>
-                <tr><td>거부 사유 예비 판단</td><td>법무팀</td><td>시행령 제12조 해당 여부 1차 검토</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-
-      <div class="week-card">
-        <div class="wc-hdr"><span class="wc-num">WEEK 3-4</span> 이사회 심층 검토</div>
-        <div class="wc-body">
-          <div class="wc-goal">🎯 제안 내용 실질 검토 → 부의/거부 결정 위한 판단 자료 확보</div>
-          <div class="tbl-wrap">
-            <table>
-              <thead><tr><th>검토 항목</th><th>판단 기준</th></tr></thead>
-              <tbody>
-                <tr><td>결의사항 해당성</td><td>이사회 전속사항(제393조)은 주총 부의 불가 → 거부</td></tr>
-                <tr><td>실현 가능성</td><td>법령·정관상 실현 불가 시 제5호 거부 가능</td></tr>
-                <tr><td>주주 이익 영향</td><td>회사 및 총주주 이익 분석 → 의사록 기재</td></tr>
-                <tr><td>선행 부결 이력</td><td>최근 3년 내 10% 미만 찬성 부결 → 제1호 거부</td></tr>
-                <tr><td>권리남용 여부</td><td>경영권 분쟁·명예훼손 목적 → 제5호+신의칙</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-
-      <div class="week-card">
-        <div class="wc-hdr"><span class="wc-num">WEEK 5</span> 이사회 결의</div>
-        <div class="wc-body">
-          <div class="wc-goal">🎯 주주제안 부의 여부 최종 결정</div>
-          <p><strong>의안:</strong> "주주 [성명]이 제안한 [안건명]을 주주총회 목적사항으로 할 것인가의 건"</p>
-          <p><strong>옵션:</strong> ①전면 부의 ②조건부 부의(제안자 동의 필요) ③거부(시행령 제12조 사유 명시)</p>
-          <div class="eye" style="margin:0;font-size:13px">
-            ⚠️ 거부 사유는 시행령 제12조에 정밀하게 맞출 것. "경영 간섭" 등 포괄적 사유 거부 = 부당 거부 → 이사 개인 손해배상책임(2019다236385)
-          </div>
-        </div>
-      </div>
-
-      <div class="week-card">
-        <div class="wc-hdr"><span class="wc-num">WEEK 6-7</span> 부의 의안 확정 / 거부 대응</div>
-        <div class="wc-body">
-          <div class="wc-goal">🎯 부의 시 의안 정리 → 거부 시 대응 시나리오 수립</div>
-          <p><strong>부의 결정 시:</strong> 의안의 요령 확정, 이사·감사 후보 자격 사전 검증, 의안 설명 자료 작성, 의결권 자문사 평가 기준 확인</p>
-          <p><strong>거부 결정 시:</strong> 거부 사유 법률 재검증, 제안자 가처분(2021카합20285) 대비, 손해배상청구 대비, 의사록 보강, 주주·의결권 자문사 커뮤니케이션 계획</p>
-        </div>
-      </div>
-
-      <div class="week-card">
-        <div class="wc-hdr"><span class="wc-num">WEEK 8</span> 주총 소집 통지</div>
-        <div class="wc-body">
-          <div class="wc-goal">🎯 주주총회 회일 확정 → 각 주주에게 소집 통지 발송</div>
-          <p><strong>소집 통지 기한:</strong> 회일 <strong>2주 전</strong>까지 각 주주에게 서면 통지(상법 제363조). 통지 기재 사항: 일시·장소·목적사항(주주제안 포함)·참고서류. 상장사 추가 의무: 금융위·거래소 공시, DART 제출.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 섹션 3: 시나리오 -->
-    <section class="blk" id="s3">
-      <div class="secl"><span class="num">03</span> 시나리오</div>
-      <h2>3가지 시나리오별 대응</h2>
-
-      <h3>시나리오 A: 적법 제안 → 부의 <span class="step-badge">정상 처리</span></h3>
-      <p><strong>상황:</strong> 소수주주(지분 5%, 8개월 보유)가 배당 확대 안건을 주총 8주 전에 제안</p>
-      <p>WEEK 1-2 요건 검토 완료(적법) → WEEK 3-4 이사회 실질 심토(배당 재원·영향 분석) → WEEK 5 부의 결정 → WEEK 6 의안 확정, 참고서류 작성 → WEEK 8 주총 소집 통지 발송. 정기주총에서 배당 확대 안건 통과, 주주 만족도 상승.</p>
-
-      <h3>시나리오 B: 거부 사유 해당 → 적법 거부 <span class="step-badge" style="background:var(--amber-bg);color:var(--amber-tx)">요건 불비</span></h3>
-      <p><strong>상황:</strong> 주주(지분 1.2%, 상장사)가 이사 선임 제안. 6개월 보유요건 미충족.</p>
-      <p>WEEK 1-2 제안 접수, 주주명부 확인 → 6개월 보유 미충족 발견 → 시행령 제3호(소수주주권 요건) 거부 사유 해당 확인. 이사회 결의 → 거부 결정. WEEK 4 제안자에게 거부 통지. (WEEK 5 이후 소요 없음 — 요건 검토 후 즉시 거부 가능)</p>
-
-      <h3>시나리오 C: 부당 거부 리스크 <span class="step-badge" style="background:var(--red-bg);color:var(--red-tx)">위험</span></h3>
-      <p><strong>상황:</strong> 경영진이 소수주주(지분 3%)의 "자회사 주식양도 추인" 제안을 "경영 간섭" 이유로 거부</p>
-      <p><strong>리스크:</strong> "경영 간섭"은 시행령 제12조 5가지 거부 사유 어디에도 해당하지 않음 → 부당 거부. 제안자는 의안상정 가처분(2021카합20285) + 손해배상청구(2019다236385) 가능 → 이사 개인 수억 원대 손해배상책임. <strong>대응:</strong> 거부 통지 후 즉시 법률 검토 → 거부 사유 부적법 확인 → 거부 결정 철회 → 부의 결정으로 전환.</p>
-    </section>
-
-    <!-- 섹션 4: 체크리스트 -->
-    <section class="blk" id="s4">
-      <div class="secl"><span class="num">04</span> 체크리스트</div>
-      <h2>법무팀 주주제안 대응 10대 포인트</h2>
-      <div class="eye">제안 접수부터 주총 소집까지, 아래 10개 포인트를 단계별로 점검하면 절차 리스크를 최소화할 수 있다.</div>
-
-      <p style="font-weight:700;color:var(--primary);margin-top:16px">접수·검토 단계 (WEEK 1-2)</p>
-      <ul class="chkl">
-        <li><span class="ck">✓</span><span><strong>제안서 수령·접수</strong> — 도착일·제안자 명확히 기록, 원본 보관</span></li>
-        <li><span class="ck">✓</span><span><strong>지분율 검증</strong> — 3%(상장 0.5%) 이상 보유 여부 확인</span></li>
-        <li><span class="ck">✓</span><span><strong>보유기간 검증</strong> — 상장사 6개월 계속 보유 요건 충족 여부 (주주명부 대조)</span></li>
-        <li><span class="ck">✓</span><span><strong>제안 시한 확인</strong> — 주총 6주 전까지 도달했는지 확인</span></li>
-      </ul>
-
-      <p style="font-weight:700;color:var(--primary);margin-top:10px">심층 검토·의사결정 단계 (WEEK 3-5)</p>
-      <ul class="chkl">
-        <li><span class="ck">✓</span><span><strong>결의사항 해당성</strong> — 주총 결의사항인지, 이사회 전속사항인지 판단</span></li>
-        <li><span class="ck">✓</span><span><strong>거부 사유 해당 여부</strong> — 시행령 제12조 5가지에 정밀 대조</span></li>
-        <li><span class="ck">✓</span><span><strong>법률 자문</strong> — 거부 결정 시 반드시 외부 법률 자문 의견 청취</span></li>
-        <li><span class="ck">✓</span><span><strong>이사회 결의 및 의사록</strong> — 거부 사유·법적 근거·검토 경과·찬반 현황·반대 의견 명확히 기재</span></li>
-      </ul>
-
-      <p style="font-weight:700;color:var(--primary);margin-top:10px">사후 조치 단계 (WEEK 6-8)</p>
-      <ul class="chkl">
-        <li><span class="ck">✓</span><span><strong>제안자 통지</strong> — 부의·거부 결정 및 사유를 제안자에게 서면 통지</span></li>
-        <li><span class="ck">✓</span><span><strong>주총 소집 통지</strong> — 회일 2주 전, 주주제안 안건 포함 각 주주에게 통지 발송</span></li>
-      </ul>
-    </section>
-
-    <!-- FAQ -->
-    <section class="blk faq" id="faq">
-      <div class="secl"><span class="num">Q&amp;A</span></div>
-      <h2>자주 묻는 질문</h2>
-
-      <details>
-        <summary>주주제안 도착 시 법무팀이 가장 먼저 확인할 것은?</summary>
-        <div class="a"><strong>제안자 요건</strong>(지분율·보유기간)입니다. 지분율(비상장 3%, 상장 0.5%)과 상장사 6개월 계속 보유 요건이 가장 중요합니다. 요건 미충족 시 별도 거부 사유 검토 없이 각하 가능합니다. 두 번째는 제안 시한(주총 6주 전 도달 여부)입니다.</div>
-      </details>
-
-      <details>
-        <summary>'회사에 불리하다'는 이유로 거부해도 되나요?</summary>
-        <div class="a"><strong>안 됩니다.</strong> '회사에 불리하다'는 사유는 시행령 제12조에 없습니다. 이 사유로 거부하면 부당 거부에 해당하여 2019다236385에 따라 이사 개인이 손해배상책임을 부담할 수 있습니다. 거부가 불가피하면 법률 자문을 받아 시행령 각호 사유에 정밀히 대응해야 합니다.</div>
-      </details>
-
-      <details>
-        <summary>이사회 결의 시 특별이해관계인 의결권 배제 필요한가요?</summary>
-        <div class="a">주주제안 부의 안건 자체는 특별이해관계에 해당하지 않는 것이 일반적입니다. 다만 제안 내용이 특정 이사의 보수·해임·책임 추궁 등 개인적 이해관계와 직결된 경우 해당 이사는 의결권을 배제해야 합니다(상법 제368조 제3항).</div>
-      </details>
-
-      <details>
-        <summary>주총에서 주주제안이 부결되면 제안자가 이의제기할 수 있나요?</summary>
-        <div class="a">부의 자체가 정당했다면 부결은 정당한 의사결정으로 이의제기 사유가 되지 않습니다. 다만 부의 과정에서 의안 내용이 제안 취지와 다르게 변형되었거나 정보 제공이 불충분했다면 결의 취소 소송(제376조, 결의일 2개월 내) 대상이 될 수 있습니다.</div>
-      </details>
-
-      <details>
-        <summary>행동주의 펀드의 주주제안 남발을 막을 방법은?</summary>
-        <div class="a">시행령 제12조 제1호(최근 3년 내 동일 내용 10% 미만 찬성 부결 시 거부 가능)가 가장 실효적인 방어 수단입니다. 또한 주총 운영 내규에 주주제안 처리 절차를 표준화하고, 사전에 의결권 자문사(ISS·Glass Lewis)와 소통하는 전략도 효과적입니다.</div>
-      </details>
-
-      <div class="notice">
-        본 자료는 <strong>2026-07-10</strong> 기준으로 작성되었으며, 인용 법령·판례는 작성 시점의 현행성을 확인한 것입니다. 법령은 개정될 수 있고 사안마다 결론이 달라질 수 있으므로, 실제 의사결정 전 최신 법령과 개별 사실관계 확인이 필요합니다. 본 자료는 일반적 법률 정보 제공이며 특정 사안에 대한 법률 자문이 아닙니다.
-      </div>
-    </section>
-  </main>
-</div>
-
-<footer class="footer" id="consult">
-  <div class="wrap">
-    <div class="prof">
-      <div>
-        <h3>조우성 변호사</h3>
-        <p>법무법인 머스트노우 | 대표변호사</p>
-        <p>회사법·지배구조·M&A·기업자문</p>
-      </div>
-      <div class="cta-f">
-        <a class="btn btn-f" href="#">상담 문의하기</a>
-        <a class="btn btn-fo" href="#">더 많은 인사이트</a>
-      </div>
-    </div>
-    <div class="fine">
-      © 2026 조우성 변호사. 본 콘텐츠는 일반 법률 정보이며 법률 자문을 대체하지 않습니다. 인용 법령·판례는 2026-07-10 기준 현행성을 확인했습니다.
-    </div>
-  </div>
-</footer>
-
-<script>
-var pb=document.getElementById('progress');
-function onScroll(){
-  var h=document.documentElement,b=document.body;
-  var st=h.scrollTop||b.scrollTop;
-  var sh=(h.scrollHeight||b.scrollHeight)-h.clientHeight;
-  pb.style.width=(sh>0?(st/sh*100):0)+'%';
-}
-window.addEventListener('scroll',onScroll,{passive:true});onScroll();
-
-var toTop=document.getElementById('toTop');
-window.addEventListener('scroll',function(){
-  (window.scrollY||window.pageYOffset)>500?toTop.classList.add('show'):toTop.classList.remove('show');
-},{passive:true});
-
-var links=Array.prototype.slice.call(document.querySelectorAll('#toc-list a'));
-var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));}).filter(Boolean);
-function spy(){
-  var pos=(window.scrollY||window.pageYOffset)+120,cur=secs[0];
-  for(var i=0;i<secs.length;i++){if(secs[i].offsetTop<=pos)cur=secs[i];}
-  links.forEach(function(a){
-    a.classList.toggle('active',cur&&a.getAttribute('href')==='#'+cur.id);
-  });
-}
-window.addEventListener('scroll',spy,{passive:true});spy();
-
-document.querySelectorAll('#toc-list a').forEach(function(a){
-  a.addEventListener('click',function(){
-    if(window.innerWidth<=820)document.getElementById('toc').classList.add('closed');
-  });
-});
-</script>
-</body>
-</html>
+</style></head><body><div id="progress"></div><button id="toTop" aria-label="맨 위로">?</button><header class="header"><div class="wrap"><span class="badge"><span class="dot"></span>조우성 변호사 ? 법률 인사이트</span></div></header><div class="hero"><div class="eb">전자책 대시보드 ? 실무 가이드</div><h1>주주제안 3%룰 실무: 제안 도착→이사회 검토→주총 부의까지 8주 타임라인</h1><div class="tldr"><div class="lb">3줄 요약 (TL;DR)</div><ul><li>원문 Markdown의 제목?본문?표?체크리스트를 반영한 공개용 HTML입니다.</li><li>문서의 핵심 내용과 실무상 확인 포인트를 한 화면에서 확인할 수 있습니다.</li><li>구체적인 사안은 최신 법령?판례와 사실관계 확인이 필요합니다.</li></ul></div><div class="meta"><span>원문: 20260710_주주제안_3%룰_8주타임라인.md</span><span class="vchip">원문 기반 HTML</span></div><div class="cta-row"><a class="btn btn-p" href="#s1">핵심 내용 보기</a><a class="btn btn-o" href="#faq">확인 사항</a></div></div><div class="app"><nav class="toc" id="toc"><div class="tt">목차</div><ol id="toc-list"><li><a href="#s1">본문</a></li><li><a href="#s2">3줄 요약 (TL;DR)</a></li><li><a href="#s3">1. 주주제안 — 법적 구조와 3%룰</a></li><li><a href="#s4">2. 8주 타임라인 상세</a></li><li><a href="#s5">3. 케이스 스터디 — 3가지 시나리오</a></li><li><a href="#s6">4. 법무팀 체크리스트 — 주주제안 대응 10대 포인트</a></li><li><a href="#s7">자주 묻는 질문 (Q&amp;amp;A)</a></li><li><a href="#s8">최신성·면책 고지</a></li><li><a href="#s9">검증 로그 (내부용)</a></li></ol></nav><main class="content"><section class="blk" id="s1"><div class="secl">SECTION</div><blockquote>
+<p>웹으로 보기
+https://woosungjo-law.github.io/share/d/shareholder-proposal-3pct-8week-3wsj.html</p>
+</blockquote>
+<h1>주주제안 3%룰 실무: 제안 도착→이사회 검토→주총 부의까지 8주 타임라인</h1></section><section class="blk" id="s2"><div class="secl">SECTION</div><h2>3줄 요약 (TL;DR)</h2>
+<ul>
+<li><strong>주주제안권(상법 제363조의2)</strong>: 3%(상장사 0.5%) 이상 보유 주주가 주총 <strong>6주 전까지</strong> 안건을 제안할 수 있는 권리. 이사회는 적법한 제안을 주총 목적사항으로 상정해야 하며, 거부 사유는 <strong>시행령 제12조 5가지</strong>로 엄격히 제한된다.</li>
+<li><strong>8주 타임라인</strong>: ①WEEK 1~2 제안 접수·요건 검토 → ③WEEK 3~4 이사회 심층 검토·법률 자문 → ⑤WEEK 5 이사회 결의(부의/거부 결정) → ⑥WEEK 6 부의 시 의안 확정·거부 시 대응 → ⑧WEEK 8 주총 소집 통지(회일 2주 전)</li>
+<li><strong>핵심 리스크</strong>: 부당 거부 시 대법원 2019다236385에 따라 <strong>이사 개인 손해배상책임</strong>(주식매수청구권 상실 손해)이 발생할 수 있다. 거부 결정은 반드시 법률 검토를 거쳐 시행령 제12조 사유에 정밀하게 맞춰야 한다.</li>
+</ul>
+<hr /></section><section class="blk" id="s3"><div class="secl">SECTION</div><h2>1. 주주제안 — 법적 구조와 3%룰</h2>
+<p><strong>한눈에</strong>: 주주제안권은 소수주주가 회사 경영에 직접 참여할 수 있는 핵심 수단이다. 3%(상장 0.5%)라는 낮은 지분율 요건과 5가지로 한정된 거부 사유로 인해, 실무상 법무팀이 반드시 숙지해야 할 절차다.</p>
+<h3>1.1 제안 요건</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">구분</th>
+<th style="text-align: center;">비상장사</th>
+<th style="text-align: center;">상장사 특례</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">지분율</td>
+<td style="text-align: center;">3% 이상</td>
+<td style="text-align: center;"><strong>0.5%</strong> 이상</td>
+</tr>
+<tr>
+<td style="text-align: center;">보유기간</td>
+<td style="text-align: center;">제한 없음</td>
+<td style="text-align: center;"><strong>6개월</strong> 계속 보유</td>
+</tr>
+<tr>
+<td style="text-align: center;">제안 시한</td>
+<td style="text-align: center;">주총 6주 전까지 도달</td>
+<td style="text-align: center;">동일</td>
+</tr>
+<tr>
+<td style="text-align: center;">제안 방식</td>
+<td style="text-align: center;">서면 또는 전자문서</td>
+<td style="text-align: center;">동일</td>
+</tr>
+<tr>
+<td style="text-align: center;">제안 내용</td>
+<td style="text-align: center;">의안의 요령</td>
+<td style="text-align: center;">의안의 요령 + 이유</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[근거·조문] <strong>상법 제363조의2(주주의 제안권)</strong> — ①의결권 없는 주식을 제외한 발행주식총수의 100분의 3 이상에 해당하는 주식을 가진 주주는 주주총회일(정기주주총회는 6주 전, 임시주주총회는 회일 6주 전)까지 서면 또는 전자문서로 주주총회의 목적사항으로 할 사항을 제안할 수 있다. ②이사는 제1항의 제안이 있는 때에는 이를 주주총회의 목적사항으로 하여야 한다.
+내부 WIKI 검증 (D-주주제안권_행사거부_손해배상, canonical) + MCP FOUND (MST 284143)</p>
+</blockquote>
+<h3>1.2 거부 사유 5가지 (상법 시행령 제12조)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">호</th>
+<th>거부 사유</th>
+<th style="text-align: center;">실무 체크포인트</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1호</td>
+<td>최근 3년 내 동일 내용 10% 미만 찬성 부결</td>
+<td style="text-align: center;">제안서 수령 즉시 동일 안건 선행 부결 여부 확인</td>
+</tr>
+<tr>
+<td style="text-align: center;">2호</td>
+<td>주주 개인의 고충사항(경영 일반 관계 없는 사항)</td>
+<td style="text-align: center;">제안 내용이 회사 전체가 아닌 특정 주주 개인 이익인지 판단</td>
+</tr>
+<tr>
+<td style="text-align: center;">3호</td>
+<td>소수주주권 요건에 관한 사항</td>
+<td style="text-align: center;">행사 요건 자체(지분율·보유기간·제안 방식)의 위임입법 한계</td>
+</tr>
+<tr>
+<td style="text-align: center;">4호</td>
+<td>상장사 임기 중 임원 해임</td>
+<td style="text-align: center;">상장사 한정, 경영 안정성 vs 권리남용 경계</td>
+</tr>
+<tr>
+<td style="text-align: center;">5호</td>
+<td>실현 불가능 또는 이유가 명백히 거짓·명예훼손</td>
+<td style="text-align: center;">객관적 사실 입증 필요, 법률 검토 필수</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[근거·조문] <strong>상법 시행령 제12조(주주제안의 거부)</strong> — 법률 제363조의2제2항 단서에 따라 이사가 주주의 제안을 주주총회의 목적사항으로 하지 아니할 수 있는 사유를 5가지로 한정적으로 열거
+내부 WIKI 검증 (D-주주제안권_행사거부_손해배상, canonical)</p>
+</blockquote>
+<h3>1.3 부당 거부 시 이사 손해배상 리스크</h3>
+<p>대법원 2025. 10. 16. 선고 2019다236385 판결은 주주제안 부당 거부가 단순 절차 하자에 그치지 않고 <strong>재산적 손해</strong>로 연결될 수 있음을 명확히 했다. 자회사 주식양도가 영업양도에 해당하여 주주총회 특별결의가 필요했으나 이 절차를 누락하고, 주주제안(추인 안건)까지 거부한 사안에서, 이사들은 주주들에게 <strong>주식매수청구권 행사기회를 상실시킨 손해</strong>를 배상할 책임이 있다고 판단했다.</p>
+<blockquote>
+<p>[근거·판례] <strong>대법원 2025. 10. 16. 선고 2019다236385 판결</strong> — 이사가 고의 또는 과실로 주주제안을 거부하고 추인절차를 이행하지 않은 경우, 주식매수청구권 행사 기회 상실에 따른 손해배상책임 인정
+내부 WIKI 검증 (D-주주제안권_행사거부_손해배상, canonical)</p>
+</blockquote>
+<hr /></section><section class="blk" id="s4"><div class="secl">SECTION</div><h2>2. 8주 타임라인 상세</h2>
+<p><strong>한눈에</strong>: 주주제안이 도착한 날부터 주주총회 소집 통지까지, 법무팀이 밟아야 할 <strong>8주 로드맵</strong>을 제시한다. 각 단계별 마일스톤과 체크포인트를 명확히 해야 실무에서 착오가 없다.</p>
+<h3>WEEK 1~2: 제안 접수 및 요건 검토</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">액션</th>
+<th style="text-align: center;">담당</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">제안서 수령·접수·보관</td>
+<td style="text-align: center;">사무국</td>
+<td>도착일·제안자 기재, 원본 보관</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>제안자 요건 검토</strong></td>
+<td style="text-align: center;"><strong>법무팀</strong></td>
+<td>지분율(3%/0.5%), 보유기간(상장 6개월) 확인</td>
+</tr>
+<tr>
+<td style="text-align: left;">제안 형식·내용 검토</td>
+<td style="text-align: center;">법무팀</td>
+<td>서면/전자문서 여부, 의안의 요령 기재 여부</td>
+</tr>
+<tr>
+<td style="text-align: left;">거부 사유 예비 판단</td>
+<td style="text-align: center;">법무팀</td>
+<td>시행령 제12조 5가지 해당 여부 1차 검토</td>
+</tr>
+<tr>
+<td style="text-align: left;">법률 자문 의뢰</td>
+<td style="text-align: center;">법무팀</td>
+<td>외부 변호사 의견청취 (특히 거부 사유 해당 애매 시)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>체크포인트</strong>: <strong>제안자 요건이 가장 중요하다.</strong> 상장사의 경우 6개월 계속 보유 요건(상법 제542조의6)을 충족하는지 반드시 확인해야 한다. 주주명부 폐쇄 기간 중 주식을 양수한 자는 소집통지 대상에서 제외된다는 법리(대법원 판례)도 유의한다.</p>
+<blockquote>
+<p>[근거·판례] <strong>서울고등법원 2019. 3. 21.자 2019라20280 결정</strong> — 상장회사 주주제안권은 상법 제542조의6 특례(0.5%+6개월)가 우선 적용되며, 6개월 보유요건 충족이 필수적
+내부 WIKI 검증</p>
+</blockquote>
+<h3>WEEK 3~4: 이사회 심층 검토</h3>
+<p><strong>목표</strong>: 이사회가 제안 내용을 실질적으로 검토하고 부의·거부 결정을 위한 판단 자료 확보</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">검토 항목</th>
+<th>내용</th>
+<th style="text-align: center;">판단 기준</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>결의사항 해당성</strong></td>
+<td>제안이 주총 결의사항인지, 이사회 전속사항인지 판단</td>
+<td style="text-align: center;">이사회 전속사항(제393조)은 주총 부의 불가 → 거부</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>실현 가능성</strong></td>
+<td>제안 내용이 법령·정관상 실현 가능한지 검토</td>
+<td style="text-align: center;">불가능 시 제5호(실현 불가능) 거부 사유 가능</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>주주 이익 영향</strong></td>
+<td>제안이 회사 및 총주주의 이익에 미치는 영향 분석</td>
+<td style="text-align: center;">충실의무 관점 검토, 의사록에 분석 결과 기재</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>선행 부결 이력</strong></td>
+<td>최근 3년 내 동일 내용 10% 미만 찬성 부결 여부</td>
+<td style="text-align: center;">시행령 제1호 거부 사유 해당 여부</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>권리남용 여부</strong></td>
+<td>제안 목적이 경영권 분쟁·명예훼손 등에 해당하는지</td>
+<td style="text-align: center;">시행령 제5호, 민법 제2조 신의칙</td>
+</tr>
+</tbody>
+</table>
+<h3>WEEK 5: 이사회 결의</h3>
+<p><strong>목표</strong>: 이사회에서 주주제안 부의 여부 결정</p>
+<ul>
+<li><strong>안건</strong>: "주주 [성명]이 제안한 [안건명]을 주주총회 목적사항으로 할 것인가의 건"</li>
+<li><strong>결정 옵션</strong>:</li>
+<li><strong>① 전면 부의</strong>: 제안을 그대로 주총 목적사항으로 상정</li>
+<li><strong>② 조건부 부의</strong>: 제안 내용 중 일부 수정·보완 후 부의 (단, 제안자의 동의 필요)</li>
+<li><strong>③ 거부</strong>: 시행령 제12조 거부 사유에 해당함을 의결, 거부 사유를 의사록에 명확히 기재</li>
+<li><strong>의사록 기재 필수 사항</strong>: 거부 사유의 구체적 법적 근거, 이사회 검토 경과, 법률 자문 내용 요약, 찬반표결 현황, 반대의견 기재(찬성추정 방지)</li>
+</ul>
+<blockquote>
+<p>⚠️ <strong>거부 결정 시 반드시 유의</strong>: 거부 사유를 시행령 제12조의 각 호에 정밀하게 맞춰야 한다. "경영 간섭"이나 "회사에 불리" 등 포괄적 사유로 거부하면 <strong>부당 거부</strong>에 해당하여 이사 개인 손해배상책임(2019다236385)이 발생할 수 있다.</p>
+</blockquote>
+<h3>WEEK 6~7: 부의 시 의안 확정 / 거부 시 대응</h3>
+<p><strong>부의 결정 시(WEEK 6)</strong>:
+- 의안의 요령 확정: 제안 내용을 주총 의안 형식에 맞게 정리
+- 이사·감사 후보 추천이 포함된 경우 자격 요건 사전 검증
+- 의안 설명 자료(주주에게 배포할 참고서류) 작성
+- 의결권 자문사(ISS·Glass Lewis) 평가 기준 사전 확인</p>
+<p><strong>거부 결정 시(WEEK 6~7)</strong>:
+- <strong>즉시 법률 검증</strong>: 거부 사유가 시행령 제12조에 정밀하게 부합하는지 재확인
+- <strong>대응 시나리오 수립</strong>: ①제안자의 의안상정 가처분(2021카합20285) 신청 가능성 대비 ②손해배상 청구(2019다236385) 가능성 대비 ③공시 리스크 검토
+- <strong>의사록 보강</strong>: 거부 결정 의사록에 법률 자문 의견·검토 경과·구체적 거부 사유 명시
+- <strong>커뮤니케이션 계획</strong>: 주주·기관투자자·의결권 자문사 대상 설명 자료 준비</p>
+<h3>WEEK 8: 주총 소집 통지</h3>
+<p><strong>목표</strong>: 주주총회 회일을 확정하고, 각 주주에게 소집 통지 발송</p>
+<ul>
+<li><strong>소집 통지 기한</strong>: 회일 <strong>2주 전</strong>까지 각 주주에게 서면 통지(상법 제363조)</li>
+<li><strong>통지 기재 사항</strong>: 일시·장소·목적사항(주주제안 포함)·참고서류</li>
+<li><strong>전자적 방법</strong>: 정관에 규정이 있으면 전자적 방법으로 통지 가능</li>
+<li><strong>상장사 추가 의무</strong>: 금융위·거래소 공시, 전자공시시스템(DART) 제출</li>
+</ul>
+<hr /></section><section class="blk" id="s5"><div class="secl">SECTION</div><h2>3. 케이스 스터디 — 3가지 시나리오</h2>
+<h3>3.1 시나리오 A: 적법 제안 → 부의 (정상 처리)</h3>
+<p><strong>상황</strong>: 소수주주(지분 5%, 8개월 보유)가 배당 확대 안건을 주총 8주 전에 제안.</p>
+<p><strong>프로세스</strong>:
+- WEEK 1~2: 요건 검토 완료(적법), 법률 검토 완료
+- WEEK 3~4: 이사회 실질 심토 — 배당 확대 재원·시기·영향 분석, CFO 보고 청취
+- WEEK 5: 이사회 결의 — <strong>부의 결정</strong>. 배당 확대 안건을 주총 의안에 포함
+- WEEK 6: 의안 확정, 참고서류 작성
+- WEEK 8: 주총 소집 통지 발송 — 배당 확대 안건 포함</p>
+<p><strong>결과</strong>: 정기주총에서 배당 확대 안건 통과. 주주 만족도 상승, 행동주의 리스크 감소.</p>
+<h3>3.2 시나리오 B: 거부 사유 해당 → 적법 거부</h3>
+<p><strong>상황</strong>: 주주(지분 1.2%, 상장사)가 "지난주 취득한 주식인데" 이사 선임 제안. 6개월 보유요건 미충족.</p>
+<p><strong>판단</strong>: 상장사는 6개월 계속 보유 요건(상법 제542조의6)이 필요하므로 <strong>요건 미비 → 각하</strong>.</p>
+<p><strong>프로세스</strong>:
+- WEEK 1~2: 제안 접수, 주주명부 확인 → <strong>6개월 보유 미충족</strong> 발견
+- WEEK 1~2: 법률 검토 — 상장사 0.5%+6개월 요건 충족 못함 확인
+- WEEK 3: 이사회 결의 — <strong>거부 결정(요건 불비)</strong>, 시행령 제3호(소수주주권 요건) 해당
+- WEEK 4: 제안자에게 거부 통지 및 사유 설명
+- <strong>(WEEK 5~8 소요 없음 — 주총 6주 전 제안이므로 요건 검토 후 즉시 거부 가능)</strong></p>
+<h3>3.3 시나리오 C: 부당 거부 리스크 발생</h3>
+<p><strong>상황</strong>: 경영진이 소수주주(지분 3%)의 "자회사 주식양도 추인" 제안을 "경영 간섭"이라는 이유로 거부.</p>
+<p><strong>리스크</strong>:
+- "경영 간섭"은 <strong>시행령 제12조 5가지 거부 사유 중 어디에도 해당하지 않음</strong>
+- 제안자는 <strong>의안상정 가처분</strong>(2021카합20285) + <strong>손해배상청구</strong>(2019다236385) 가능
+- 이사 개인 손해배상책임 — 주식매수청구권 상실 손해(수억 원대 가능)</p>
+<p><strong>대응</strong>:
+- 거부 통지 후 즉시 법률 검토 → 거부 사유 부적법 확인
+- <strong>거부 결정 철회 → 부의 결정으로 전환</strong>
+- 늦어도 주총 2주 전까지는 부의 결정 시정 가능
+- 이사회 의사록에 검토 경과·법률 자문 의견·결정 변경 사유 명확히 기재</p>
+<hr /></section><section class="blk" id="s6"><div class="secl">SECTION</div><h2>4. 법무팀 체크리스트 — 주주제안 대응 10대 포인트</h2>
+<p><strong>한눈에</strong>: 제안 접수부터 주총 소집까지, 아래 10개 포인트를 단계별로 점검하면 절차 리스크를 최소화할 수 있다.</p>
+<h3>접수·검토 단계 (WEEK 1~2)</h3>
+<ul>
+<li>[ ] <strong>제안서 수령·접수</strong> — 도착일·제안자 명확히 기록, 원본 보관</li>
+<li>[ ] <strong>지분율 검증</strong> — 3%(상장 0.5%) 이상 보유 여부 확인</li>
+<li>[ ] <strong>보유기간 검증</strong> — 상장사 6개월 계속 보유 요건 충족 여부 (주주명부·실질주주명부 대조)</li>
+<li>[ ] <strong>제안 시한 확인</strong> — 주총 6주 전까지 도달했는지 확인</li>
+</ul>
+<h3>심층 검토·의사결정 단계 (WEEK 3~5)</h3>
+<ul>
+<li>[ ] <strong>결의사항 해당성</strong> — 주총 결의사항인지, 이사회 전속사항인지 판단</li>
+<li>[ ] <strong>거부 사유 해당 여부</strong> — 시행령 제12조 5가지에 정밀하게 대조</li>
+<li>[ ] <strong>법률 자문</strong> — 거부 결정 시 반드시 외부 법률 자문 의견 청취</li>
+<li>[ ] <strong>이사회 결의 및 의사록</strong> — 거부 사유 법적 근거·검토 경과·찬반 현황·반대 의견 명확히 기재</li>
+</ul>
+<h3>사후 조치 단계 (WEEK 6~8)</h3>
+<ul>
+<li>[ ] <strong>제안자 통지</strong> — 부의·거부 결정 및 사유를 제안자에게 서면 통지</li>
+<li>[ ] <strong>주총 소집 통지</strong> — 회일 2주 전, 주주제안 안건 포함하여 각 주주에게 통지 발송</li>
+</ul>
+<hr /></section><section class="blk" id="s7"><div class="secl">SECTION</div><h2>자주 묻는 질문 (Q&amp;A)</h2>
+<p><strong>Q1. 주주제안이 도착하면 법무팀이 가장 먼저 확인해야 할 것은 무엇인가요?</strong>
+가장 먼저 확인해야 할 것은 <strong>제안자 요건</strong>(지분율·보유기간)입니다. 지분율 요건(비상장 3%, 상장 0.5%)을 충족하는지, 상장사의 경우 6개월 계속 보유 요건을 충족하는지가 가장 중요합니다. 요건을 충족하지 못하면 별도의 거부 사유 검토 없이 각하할 수 있습니다. 두 번째로 확인할 것은 <strong>제안 시한</strong>(주총 6주 전 도달 여부)입니다.</p>
+<p><strong>Q2. 거부 사유가 시행령 제12조에 명시된 5가지 중 어디에도 해당하지 않는 것 같은데, 경영진이 '회사에 불리하다'는 이유로 거부해도 되나요?</strong>
+안 됩니다. '회사에 불리하다'는 사유는 <strong>시행령 제12조에 없습니다</strong>. 이 사유로 거부하면 '부당 거부'에 해당하여 대법원 2019다236385에 따라 이사 개인이 손해배상책임을 부담할 수 있습니다. 거부가 불가피하다고 판단되면, 시행령 각호의 사유에 정밀하게 대응할 수 있도록 법률 자문을 받고 거부 사유를 구성해야 합니다.</p>
+<p><strong>Q3. 이사회 결의에서 주주제안 부의 안건에 대해 특별이해관계인 의결권 배제가 필요한가요?</strong>
+주주제안 부의 안건 자체는 특별이해관계에 해당하지 않는 것이 일반적입니다. 다만 제안 내용이 특정 이사의 보수·해임·책임 추궁 등 개인적 이해관계와 직결된 경우 해당 이사는 의결권을 배제해야 합니다(상법 제368조 제3항). 의결권 배제 여부는 의사록에 명확히 기재하고, 정족수 계산 시 해당 주식을 발행주식총수에서 제외해야 합니다.</p>
+<p><strong>Q4. 주주제안을 부의했는데, 주총에서 해당 안건이 부결되면 제안자는 이의제기할 수 있나요?</strong>
+부의 자체가 정당했다면, 주총에서의 부결은 정당한 의사결정이므로 이의제기 사유가 되지 않습니다. 다만 부의 과정에서 의안 내용이 제안 취지와 다르게 변형되었거나, 주주에 대한 정보 제공이 불충분했다면 결의 취소 소송(상법 제376조, 결의일 2개월 내)의 대상이 될 수 있습니다. 따라서 부의 시 제안 내용을 최대한 존중하고, 참고서류에 충실한 정보를 제공해야 합니다.</p>
+<p><strong>Q5. 행동주의 펀드가 주주제안을 남발하는 것을 막을 방법이 있나요?</strong>
+시행령 제12조 제1호(최근 3년 내 동일 내용 10% 미만 찬성 부결 시 거부 가능)가 가장 실효적인 방어 수단입니다. 또한 주총 운영 내규에 주주제안 처리 절차를 표준화하고, 사전에 의결권 자문사(ISS·Glass Lewis)와 소통하여 제안의 타당성에 대한 이해를 구하는 전략도 효과적입니다. 다만 부당하게 거부하는 것은 오히려 리스크를 키우므로, 적법한 제안은 부의하는 것이 원칙입니다.</p>
+<hr /></section><section class="blk" id="s8"><div class="secl">SECTION</div><h2>최신성·면책 고지</h2>
+<p>본 자료는 <strong>2026-07-10</strong> 기준으로 작성되었으며, 인용 법령·판례는 작성 시점의 현행성을 확인한 것입니다.
+법령은 개정될 수 있고 사안마다 결론이 달라질 수 있으므로, 실제 의사결정 전 최신 법령과 개별 사실관계 확인이 필요합니다.
+본 자료는 일반적 법률 정보 제공이며 특정 사안에 대한 법률 자문이 아닙니다.</p>
+<hr /></section><section class="blk" id="s9"><div class="secl">SECTION</div><h2>검증 로그 (내부용)</h2>
+<table>
+<thead>
+<tr>
+<th>인용</th>
+<th style="text-align: center;">유형</th>
+<th>검증 결과</th>
+<th style="text-align: center;">판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>상법 제363조의2</td>
+<td style="text-align: center;">조문</td>
+<td>MCP FOUND (MST 284143) + 내부 WIKI D-주주제안권 canonical</td>
+<td style="text-align: center;">등재</td>
+</tr>
+<tr>
+<td>상법 제542조의6</td>
+<td style="text-align: center;">조문</td>
+<td>내부 WIKI D-소수주주권 canonical</td>
+<td style="text-align: center;">등재</td>
+</tr>
+<tr>
+<td>상법 시행령 제12조</td>
+<td style="text-align: center;">조문</td>
+<td>내부 WIKI D-주주제안권 canonical</td>
+<td style="text-align: center;">등재</td>
+</tr>
+<tr>
+<td>상법 제376조</td>
+<td style="text-align: center;">조문</td>
+<td>내부 WIKI canonical</td>
+<td style="text-align: center;">등재</td>
+</tr>
+<tr>
+<td>대법원 2019다236385</td>
+<td style="text-align: center;">판례</td>
+<td>내부 WIKI D-주주제안권 canonical</td>
+<td style="text-align: center;">등재</td>
+</tr>
+<tr>
+<td>서울고법 2019라20280</td>
+<td style="text-align: center;">판례</td>
+<td>내부 WIKI D-주주제안권 canonical</td>
+<td style="text-align: center;">등재</td>
+</tr>
+<tr>
+<td>대법원 2021카합20285</td>
+<td style="text-align: center;">판례</td>
+<td>내부 WIKI D-주주제안권 canonical</td>
+<td style="text-align: center;">등재</td>
+</tr>
+</tbody>
+</table></section><section class="blk faq" id="faq"><div class="secl">NOTICE</div><h2>확인 사항</h2><div class="notice">이 문서는 일반적인 법률 정보 제공을 위한 자료입니다. 구체적인 사실관계와 최신 법령?판례에 따라 결론이 달라질 수 있습니다.</div></section></main></div><footer class="footer"><div class="wrap"><h3>조우성 변호사</h3><p>실무에 바로 활용할 수 있는 법률 지식과 대응 가이드를 제공합니다.</p></div></footer></body></html>
