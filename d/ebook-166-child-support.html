@@ -1,0 +1,373 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>양육비 미지급 대응 — 받을 수 있는 3가지 확보 수단</title><style>
+/* ============================================================
+   법률 대시보드 전자책 — Apollo 기반 경량 커스텀 (공개 롱스크롤)
+   Apollo 토큰(버건디 액센트 + 웜 화이트 + 딥와인 헤더) 상속.
+   의뢰인 리포트(리스크레이더 6뷰)와 달리 공개 독서형 롱스크롤.
+   self-contained: 외부 CDN/폰트/이미지/스크립트 의존 없음.
+   ============================================================ */
+:root{
+  --bg:#f5f1f2; --panel:#ffffff; --panel2:#faf6f7;
+  --line:#ebe2e5; --line2:#ddccd2;
+  --ink:#2c1d26; --ink2:#56424c; --muted:#8a7b82; --faint:#b3a6ab;
+  --wine:#7a2e3a; --wine-d:#5a1f2b; --wine-l:#9c4456;
+  --wine-tint:#f4e9ec; --wine-tint-ln:#ecd7dd;
+  --header-bg:#3a1525; --header-bg2:#4e1f32; --header-accent:#d4a0aa;
+  --rH:#c74a3c; --rM-bg:#f8e4b8; --rM-tx:#7d520a; --rL-bg:#d6ecdb; --rL-tx:#287a54;
+  --amber:#b45309; --green:#287a54;
+  --font:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Noto Sans KR',sans-serif;
+  --maxw:1120px; --readw:760px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
+
+/* 읽기 진행바 */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;
+  background:linear-gradient(90deg,var(--wine),var(--wine-l));transition:width .1s linear}
+
+/* 헤더 표지 (딥와인, 유일한 딥 컬러) */
+.header{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0}
+.header .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 26px}
+.header .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;
+  color:var(--header-accent);border:1px solid rgba(212,160,170,.4);border-radius:999px;padding:4px 12px}
+.header .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--header-accent)}
+
+/* 히어로 */
+.hero{max-width:var(--maxw);margin:0 auto;padding:30px 26px 8px}
+.hero .eb{font-size:12px;font-weight:700;color:var(--wine);letter-spacing:.02em;margin-bottom:10px}
+.hero h1{font-size:30px;line-height:1.28;font-weight:800;margin:0 0 16px;color:var(--ink);letter-spacing:-.01em}
+.hero .tldr{background:var(--wine-tint);border:1px solid var(--wine-tint-ln);border-left:4px solid var(--wine);
+  border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.hero .tldr .lb{font-size:12px;font-weight:700;color:var(--wine-d);margin-bottom:8px}
+.hero .tldr ul{margin:0;padding-left:18px}
+.hero .tldr li{margin:4px 0;font-size:15px;color:var(--ink2)}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:12.5px;color:var(--muted);margin-bottom:18px}
+.hero .meta .vchip{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);
+  font-weight:700;border-radius:6px;padding:3px 9px;font-size:11.5px}
+.hero .cta-row{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:9px;
+  padding:11px 18px;text-decoration:none;cursor:pointer;border:1px solid transparent}
+.btn-p{background:var(--wine);color:#fff}
+.btn-p:hover{background:var(--wine-d)}
+.btn-o{background:#fff;color:var(--wine-d);border-color:var(--line2)}
+.btn-o:hover{background:var(--panel2)}
+
+/* 셸: 좌측 목차 + 본문 */
+.app{max-width:var(--maxw);margin:0 auto;padding:8px 26px 60px;
+  display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:start}
+
+/* 목차 (데스크톱 = 좌측 sticky) */
+.toc{position:sticky;top:24px}
+.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;
+  margin:0 0 10px;padding-left:2px}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}
+.toc li{counter-increment:toc;margin:1px 0}
+.toc a{display:flex;gap:9px;font-size:13.5px;color:var(--ink2);text-decoration:none;
+  padding:7px 10px;border-radius:8px;border-left:3px solid transparent;line-height:1.4}
+.toc a::before{content:counter(toc,decimal-leading-zero);color:var(--faint);font-weight:700;font-size:11.5px;flex:none}
+.toc a:hover{background:var(--panel2)}
+.toc a.active{background:var(--wine-tint);border-left-color:var(--wine);color:var(--wine-d);font-weight:700}
+.toc-toggle{display:none}
+
+/* 본문 */
+.content{max-width:var(--readw);min-width:0}
+section.blk{scroll-margin-top:24px;margin-bottom:38px}
+.secl{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.05em;margin:0 0 12px}
+.secl::before{content:"";width:7px;height:15px;background:var(--wine);border-radius:2px;flex:none}
+section.blk h2{font-size:23px;font-weight:800;line-height:1.35;margin:0 0 14px;color:var(--ink);letter-spacing:-.01em}
+section.blk h3{font-size:17px;font-weight:700;margin:26px 0 10px;color:var(--wine-d)}
+section.blk p{margin:0 0 14px;color:var(--ink2)}
+section.blk ul,section.blk ol{margin:0 0 14px;padding-left:22px;color:var(--ink2)}
+section.blk li{margin:6px 0}
+strong{color:var(--ink);font-weight:700}
+a.ln{color:var(--wine-l);text-decoration:none;border-bottom:1px solid var(--wine-tint-ln)}
+a.ln:hover{border-bottom-color:var(--wine-l)}
+
+/* 핵심요약 카드 */
+.summary{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.summary .lb{font-size:11px;font-weight:700;color:var(--wine-d);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.summary ul{margin:0;padding-left:18px}
+
+/* 근거 카드 (조문·판례) */
+.ev{background:#fff;border:1px solid var(--line);border-left:4px solid var(--wine);border-radius:10px;
+  padding:13px 15px;margin:0 0 12px}
+.ev .top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px}
+.ev .kind{font-size:11px;font-weight:700;color:#fff;background:var(--wine);border-radius:5px;padding:2px 8px}
+.ev .kind.law{background:var(--wine-d)}
+.ev .kind.case{background:var(--amber)}
+.ev .cite{font-size:13.5px;font-weight:700;color:var(--ink)}
+.ev .vtick{margin-left:auto;font-size:11px;font-weight:700;color:var(--rL-tx);background:var(--rL-bg);border-radius:5px;padding:2px 7px}
+.ev .gist{font-size:14px;color:var(--ink2);margin:0}
+.ev .date{font-size:12px;color:var(--muted);margin-top:5px}
+
+/* 다이어그램 — 플로우 / 체크리스트 (CSS·SVG only) */
+.figure{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin:0 0 18px}
+.figure .cap{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:12px}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px}
+.flow .step{flex:1;min-width:120px;background:var(--wine-tint);border:1px solid var(--wine-tint-ln);
+  border-radius:10px;padding:11px 12px;position:relative}
+.flow .step .n{font-size:11px;font-weight:700;color:var(--wine)}
+.flow .step .t{font-size:13.5px;font-weight:700;color:var(--ink);margin-top:2px}
+.flow .step .d{font-size:12.5px;color:var(--ink2);margin-top:3px}
+.checklist{list-style:none;margin:0;padding:0}
+.checklist li{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+.checklist li:last-child{border-bottom:none}
+.checklist .ck{flex:none;width:20px;height:20px;border-radius:5px;background:var(--rL-bg);color:var(--rL-tx);
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+
+/* 위험도 칩 */
+.chip{display:inline-flex;align-items:center;justify-content:center;min-width:34px;font-size:11px;font-weight:500;
+  border-radius:6px;padding:3px 8px;margin-right:4px}
+.c-H{background:var(--rH);color:#fff}
+.c-M{background:var(--rM-bg);color:var(--rM-tx)}
+.c-L{background:var(--rL-bg);color:var(--rL-tx)}
+
+/* 표 */
+.tbl-wrap{overflow-x:auto;margin:0 0 18px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px}
+
+/* FAQ (아코디언) */
+.faq details{background:#fff;border:1px solid var(--line);border-radius:10px;margin:0 0 10px;overflow:hidden}
+.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:15px;font-weight:700;color:var(--ink);
+  display:flex;align-items:center;gap:10px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--wine-tint);
+  color:var(--wine-d);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+.faq details[open] summary{border-bottom:1px solid var(--line);color:var(--wine-d)}
+.faq .a{padding:14px 16px;font-size:14.5px;color:var(--ink2)}
+
+/* 최신성·면책 고지 */
+.notice{background:#fff;border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;
+  font-size:12.5px;color:var(--muted);line-height:1.7}
+
+/* 맨 위로 버튼 */
+#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--wine-tint-ln);background:var(--wine);color:#fff;font-size:18px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;
+  box-shadow:0 4px 14px rgba(58,21,37,.28)}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{background:var(--wine-d)}
+
+/* 푸터 프로필 + 상담 CTA */
+.footer{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0;margin-top:20px}
+.footer .wrap{max-width:var(--maxw);margin:0 auto;padding:34px 26px}
+.footer h3{font-size:20px;font-weight:800;margin:0 0 8px;color:#fff}
+.footer p{font-size:14px;color:rgba(255,255,255,.72);margin:0 0 6px;line-height:1.7}
+.footer .prof{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end}
+.footer .cta-f{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.footer .btn-f{background:#fff;color:var(--wine-d)}
+.footer .btn-f:hover{background:var(--header-accent)}
+.footer .btn-fo{background:transparent;color:#f4eef0;border-color:rgba(255,255,255,.35)}
+.footer .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:22px;padding-top:14px;
+  font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.7}
+
+/* ── 모바일 (≤820px) ── */
+@media(max-width:820px){
+  .hero h1{font-size:24px}
+  .app{grid-template-columns:1fr;gap:0;padding-top:0}
+  .toc{position:static;margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 8px}
+  .toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;
+    cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--wine-d);padding:9px 8px}
+  .toc-toggle .ar{transition:transform .2s}
+  .toc.closed .toc-toggle .ar{transform:rotate(-90deg)}
+  .toc .tt{display:none}
+  .toc ol{max-height:50vh;overflow:auto}
+  .toc.closed ol{display:none}
+  section.blk h2{font-size:20px}
+  th,td{white-space:nowrap}
+}
+@media print{
+  #progress,.toc,.cta-row,.footer .cta-f{display:none}
+  .header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .app{display:block}
+}
+</style></head><body><div id="progress"></div><button id="toTop" aria-label="맨 위로">?</button><header class="header"><div class="wrap"><span class="badge"><span class="dot"></span>조우성 변호사 · 법률 인사이트</span></div></header><div class="hero"><div class="eb">전자책 대시보드 · 실무 가이드</div><h1>양육비 미지급 대응 — 받을 수 있는 3가지 확보 수단</h1><div class="tldr"><div class="lb">3줄 요약 (TL;DR)</div><ul><li>원문 Markdown의 제목·본문·표·체크리스트를 반영한 공개용 HTML입니다.</li><li>문서의 핵심 내용과 실무상 확인 포인트를 한 화면에서 확인할 수 있습니다.</li><li>구체적인 사안은 최신 법령·판례와 사실관계 확인이 필요합니다.</li></ul></div><div class="meta"><span>원문: EBOOK-166-양육비-미지급-대응.md</span><span class="vchip">원문 기반 HTML</span></div><div class="cta-row"><a class="btn btn-p" href="#s1">핵심 내용 보기</a><a class="btn btn-o" href="#faq">확인 사항</a></div></div><div class="app"><nav class="toc" id="toc"><div class="tt">목차</div><ol id="toc-list"><li><a href="#s1">본문</a></li><li><a href="#s2">3줄 요약 (TL;DR)</a></li><li><a href="#s3">1. 양육비 미지급 상황 — 인식의 전환이 필요</a></li><li><a href="#s4">2. 트랙 1: 이행명령 → 과태료 → 감치 (가사소송법)</a></li><li><a href="#s5">3. 트랙 2: 급여압류·직접지급명령</a></li><li><a href="#s6">4. 트랙 3: 행정 제재 (운전면허정지·출국금지·명단공개)</a></li><li><a href="#s7">5. 실무 전략 — 상황별 최적 선택</a></li><li><a href="#s8">자주 묻는 질문 (Q&amp;amp;A)</a></li><li><a href="#s9">최신성·면책 고지</a></li><li><a href="#s10">검증 로그 (내부용 — 게시 시 제거)</a></li></ol></nav><main class="content"><section class="blk" id="s1"><div class="secl">SECTION</div><blockquote>
+<p>[!web] 웹으로 보기
+(게시 후 여기에 https://woosungjo-law.github.io/share/d/&lt;토큰&gt;.html 삽입)</p>
+</blockquote>
+<p><em>출처: 조우성 변호사 / 로펌 머스트노우 | 문의: law@mustknow.co.kr</em></p>
+<h1>양육비 미지급 대응 — 받을 수 있는 3가지 확보 수단</h1></section><section class="blk" id="s2"><div class="secl">SECTION</div><h2>3줄 요약 (TL;DR)</h2>
+<ul>
+<li><strong>양육비 미지급에 대한 대응은 3개 트랙으로 나뉜다</strong>: 가사소송법상 이행명령→과태료→감치 트랙, 급여압류·직접지급명령 트랙, 행정 제재(운전면허정지·출국금지·명단공개) 트랙</li>
+<li><strong>이행명령은 확정 전(가집행선고부) 판결·심판으로도 가능</strong> — 상소 중에도 조기 이행확보 시도 가능</li>
+<li><strong>가장 강력한 수단은 감치(구금)</strong> — 3기 이상 양육비 미지급 시 법원이 30일 범위 내 감치 명령 가능(가사소송법 제68조)</li>
+</ul>
+<hr /></section><section class="blk" id="s3"><div class="secl">SECTION</div><h2>1. 양육비 미지급 상황 — 인식의 전환이 필요</h2>
+<p><strong>한눈에</strong>
+- 양육비 미지급은 단순한 금전 문제가 아니라 자녀의 생존권·교육권·건강권 침해
+- 많은 양육 부모가 "어차피 받을 수 없을 것"이라는 생각에 법적 조치를 포기
+- 실제로는 다양한 법적 수단이 존재하며, 단계적으로 접근하면 확보 가능성이 높아짐</p>
+<p>양육비 미지급 문제에서 가장 큰 장벽은 양육 부모의 "받을 수 없을 것"이라는 선입견이다. 실제로 이행명령·급여압류·행정 제재 등 여러 수단이 법적으로 마련되어 있으며, 양육비이행확보및지원에관한법률이 이를 뒷받침한다.</p>
+<hr /></section><section class="blk" id="s4"><div class="secl">SECTION</div><h2>2. 트랙 1: 이행명령 → 과태료 → 감치 (가사소송법)</h2>
+<p><strong>한눈에</strong>
+- 가장 기본적인 양육비 확보 절차
+- 가정법원의 이행명령을 받은 후, 불이행 시 과태료(1천만원 이하) 부과
+- 3기 이상 미지급 시 감치(30일 범위 구금) 명령 가능</p>
+<h3>2.1 이행명령 신청</h3>
+<p>이행명령은 가집행선고부 판결·심판으로도 가능하다(대법원 2020으508). 즉, 항소심에서도 1심 판결에 가집행선고가 붙어 있으면 이행명령을 신청할 수 있어 상소 중에도 조기 이행확보가 가능하다.</p>
+<blockquote>
+<p>[근거·조문] <strong>가사소송법 제64조(이행명령)</strong> (시행 2026-01-01) — 가정법원은 양육비·면접교섭 이행 의무자가 정당한 이유 없이 이행하지 않는 경우, 당사자 신청에 의해 일정 기간 내 이행을 명할 수 있다
+✓ 웹 화이트리스트 + 한국법 MCP 현행 확인</p>
+</blockquote>
+<h3>2.2 이행명령의 핵심 — 기간 특정</h3>
+<p>이행명령을 받을 때 가장 중요한 것은 의무이행 기간을 명확히 특정하는 것이다(대법원 2017으519). 기한이 특정되지 않으면 의무 위반 여부 판단이 모호해져 후속 제재(과태료·감치) 신청이 어려워질 수 있다.</p>
+<blockquote>
+<p>[근거·판례] <strong>대법원 2017. 12. 6.자 2017으519 결정</strong> — 이행명령 주문에 의무이행 기간을 반드시 특정해야 함. 기한 미특정 시 하자 다툼 가능
+✓ 실존·현행 확인</p>
+</blockquote>
+<h3>2.3 감치(구금) 신청</h3>
+<p>가장 강력한 제재 수단이다. 3기(통상 3개월치) 이상 양육비를 미지급한 경우, 가정법원에 감치 신청을 하면 법원이 30일 범위에서 구금을 명령할 수 있다.</p>
+<blockquote>
+<p>[근거·조문] <strong>가사소송법 제68조(특별한 의무 불이행에 대한 제재)</strong> (시행 2026-01-01) — 금전의 정기적 지급을 명령받은 사람이 정당한 이유 없이 3기 이상 그 의무를 이행하지 아니한 경우 가정법원은 결정으로 30일의 범위에서 감치를 명할 수 있다
+✓ 웹 화이트리스트 + 한국법 MCP 현행 확인</p>
+</blockquote>
+<p><strong>[플로우] 이행명령 → 감치 절차</strong>
+1. <strong>가집행선고부 판결 확보</strong>: 양육비 판결에 가집행선고 포함 확인
+2. <strong>이행명령 신청</strong>: 가정법원에 이행명령 신청서 제출
+3. <strong>과태료 부과</strong>: 1차 불이행 시 과태료(1천만원 이하) — 가사소송법 제67조
+4. <strong>3기 이상 미지급 확인</strong>: 3개월치 이상 미지급 내역 증명
+5. <strong>감치 신청</strong>: 가정법원에 감치 결정 신청
+6. <strong>감치 집행</strong>: 경찰이 의무자를 인도하여 구금(최대 30일)</p>
+<hr /></section><section class="blk" id="s5"><div class="secl">SECTION</div><h2>3. 트랙 2: 급여압류·직접지급명령</h2>
+<p><strong>한눈에</strong>
+- 상대방이 직장이 있는 경우 가장 효과적인 수단
+- 사용자(제3채무자)에게 급여 중 양육비 해당액을 직접 양육비 수령자에게 지급하도록 명령
+- 압류 한도: 급여의 1/2</p>
+<h3>3.1 직접지급명령 절차</h3>
+<p><strong>[플로우] 급여압류·직접지급명령 절차</strong>
+1. <strong>양육비 채권 집행권원 확보</strong>: 판결·심판·이행명령 등
+2. <strong>급여압류 신청</strong>: 법원에 상대방 급여 압류 신청
+3. <strong>직접지급명령 신청</strong>: 사용자에게 양육비 직접 지급 명령
+4. <strong>사용자 이행</strong>: 급여에서 공제하여 양육비 수령자에게 직접 지급</p>
+<blockquote>
+<p>[근거·판례] <strong>대법원 2010. 8. 26. 선고 2010다78050 판결</strong> — 압류 경합 시 제3채무자(사용자)는 공탁으로 면책될 수 있음. 공탁은 "합의·약정" 아닌 현실 공탁 완료 확인 필수
+✓ 실존·현행 확인</p>
+</blockquote>
+<p><strong>Q. 상대방이 무직이면 급여압류가 안 되나요?</strong>
+급여압류는 상대방이 직장이 있을 때만 가능하다. 무직이거나 소득이 불규칙한 경우에는 트랙 3(행정 제재) 또는 트랙 1(감치)을 우선 검토해야 한다.</p>
+<hr /></section><section class="blk" id="s6"><div class="secl">SECTION</div><h2>4. 트랙 3: 행정 제재 (운전면허정지·출국금지·명단공개)</h2>
+<p><strong>한눈에</strong>
+- 양육비이행확보및지원에관한법률(시행 2026-04-28)에 근거한 제재
+- 전제: 이행명령·일시금지급명령 등 가사재판 확보 필요
+- 양육비이행관리원의 심의 → 행정청에 제재 요청 구조</p>
+<h3>4.3 행정 제재 종류</h3>
+<table>
+<thead>
+<tr>
+<th>제재 수단</th>
+<th>내용</th>
+<th>요건</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>운전면허정지</td>
+<td>면허 효력 정지</td>
+<td>가사재판 확보 + 일정 기간 미이행</td>
+</tr>
+<tr>
+<td>출국금지</td>
+<td>해외 출국 금지</td>
+<td>가사재판 확보 + 상당 기간 미이행</td>
+</tr>
+<tr>
+<td>명단공개</td>
+<td>양육비 미지급자 명단 공개</td>
+<td>가사재판 확보 + 장기 미이행</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[근거·조문] <strong>양육비 이행확보 및 지원에 관한 법률</strong> (시행 2026-04-28) — 양육비이행관리원의 심의를 거쳐 운전면허정지·출국금지·명단공개 등 행정 제재 가능
+✓ 웹 화이트리스트 + 한국법 MCP 현행 확인</p>
+</blockquote>
+<hr /></section><section class="blk" id="s7"><div class="secl">SECTION</div><h2>5. 실무 전략 — 상황별 최적 선택</h2>
+<p><strong>한눈에</strong>
+- 상대방이 직장有 + 소득 안정 → 급여압류·직접지급명령 우선
+- 상대방이 직장無 + 은닉 소득 의심 → 이행명령→감치 우선
+- 상대방이 운전·출국 필요 → 행정 제재 병행
+- 어느 트랙이든 선행 조건: 가사재판(양육비 판결·심판) 확보</p>
+<p><strong>Q. 과거 양육비(이미 지나간 기간의 양육비)도 청구할 수 있나요?</strong>
+가능하다. 과거 양육비는 자녀가 성년이 된 날로부터 3년(민법 제766조, 불법행위 단기소멸시효), 또는 양육비 채권의 소멸시효(통상 3년) 도과 전에 청구해야 한다. 과거 양육비 청구는 별도의 심판 또는 소송이 필요할 수 있다.</p>
+<p><strong>Q. 양육비 증액도 가능한가요?</strong>
+가능하다. 자녀의 성장에 따른 양육비 증가(교육비·의료비 증가 등) 또는 상대방의 소득 증가 등 사정 변경이 있으면 양육비 증액 심판을 청구할 수 있다. 반대로 양육비 감액도 가능하다.</p>
+<hr /></section><section class="blk" id="s8"><div class="secl">SECTION</div><h2>자주 묻는 질문 (Q&amp;A)</h2>
+<p><strong>Q. 이행명령 신청은 어떻게 하나요?</strong>
+양육비 판결·심판 또는 이행명령을 받은 후, 이를 불이행한 사실을 증명하여 관할 가정법원에 이행명령 신청서를 제출한다. 변호사 선임 없이 본인이 직접 신청할 수 있다.</p>
+<p><strong>Q. 감치 신청하면 상대방이 바로 양육비를 줘야 하나요?</strong>
+감치는 구금 명령이므로, 상대방은 구금을 피하기 위해 체납 양육비를 지급할 유인이 생긴다. 실제로 감치 신청 단계에서 체납액이 일시에 지급되는 사례가 많다.</p>
+<p><strong>Q. 양육비이행관리원의 역할은 무엇인가요?</strong>
+양육비이행확보및지원에관한법률에 따라 설치된 기관으로, 양육비 채권의 상담·조정·이행확보 업무를 수행한다. 행정 제재(운전면허정지·출국금지) 심의도 이 기관의 위원회를 거친다.</p>
+<p><strong>Q. 양육비를 받기 위해 반드시 변호사를 선임해야 하나요?</strong>
+직접 청구할 수 있으나, 절차가 복잡하고 상대방이 법적 대응을 하는 경우 변호사 선임이 유리하다. 특히 감치 신청·급여압류·행정 제재는 각각 다른 법원과 행정청이 관여하므로 전문가 조력이 효과적이다.</p>
+<hr /></section><section class="blk" id="s9"><div class="secl">SECTION</div><h2>최신성·면책 고지</h2>
+<p>본 자료는 <strong>2026-07-28</strong> 기준으로 작성되었으며, 인용 법령·판례는 작성 시점의 현행성을 확인한 것입니다.
+법령은 개정될 수 있고 사안마다 결론이 달라질 수 있으므로, 실제 의사결정 전 최신 법령과 개별 사실관계 확인이 필요합니다.
+본 자료는 일반적 법률 정보 제공이며 특정 사안에 대한 법률 자문이 아닙니다.</p>
+<hr /></section><section class="blk" id="s10"><div class="secl">SECTION</div><h2>검증 로그 (내부용 — 게시 시 제거)</h2>
+<table>
+<thead>
+<tr>
+<th>인용</th>
+<th>유형</th>
+<th>웹 화이트리스트</th>
+<th>한국법 MCP</th>
+<th>판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>가사소송법 제64조(이행명령)</td>
+<td>조문</td>
+<td>확인</td>
+<td>FOUND(265309)</td>
+<td>등재</td>
+</tr>
+<tr>
+<td>가사소송법 제67조(과태료)</td>
+<td>조문</td>
+<td>확인</td>
+<td>FOUND(265309)</td>
+<td>등재</td>
+</tr>
+<tr>
+<td>가사소송법 제68조(감치)</td>
+<td>조문</td>
+<td>확인</td>
+<td>FOUND(265309)</td>
+<td>등재</td>
+</tr>
+<tr>
+<td>양육비이행확보법</td>
+<td>조문</td>
+<td>확인</td>
+<td>FOUND(285711)</td>
+<td>등재</td>
+</tr>
+<tr>
+<td>대법원 2020으508</td>
+<td>판례</td>
+<td>확인</td>
+<td>FOUND</td>
+<td>등재</td>
+</tr>
+<tr>
+<td>대법원 2017으519</td>
+<td>판례</td>
+<td>확인</td>
+<td>FOUND</td>
+<td>등재</td>
+</tr>
+<tr>
+<td>대법원 2010다78050</td>
+<td>판례</td>
+<td>확인</td>
+<td>FOUND</td>
+<td>등재</td>
+</tr>
+</tbody>
+</table></section><section class="blk faq" id="faq"><div class="secl">NOTICE</div><h2>확인 사항</h2><div class="notice">이 문서는 일반적인 법률 정보 제공을 위한 자료입니다. 구체적인 사실관계와 최신 법령·판례에 따라 결론이 달라질 수 있습니다.</div></section></main></div><footer class="footer"><div class="wrap"><h3>조우성 변호사</h3><p>실무에 바로 활용할 수 있는 법률 지식과 대응 가이드를 제공합니다.</p></div></footer><script>var b=document.getElementById('progress');window.addEventListener('scroll',function(){var h=document.documentElement,st=h.scrollTop||document.body.scrollTop,sh=h.scrollHeight-h.clientHeight;b.style.width=(sh?st/sh*100:0)+'%';},{passive:true});document.getElementById('toTop').onclick=function(){window.scrollTo({top:0,behavior:'smooth'})};</script></body></html>

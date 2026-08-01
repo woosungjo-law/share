@@ -1,361 +1,633 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="description" content="소수주주권 행사 요건 완전 정리: 6개월·1%·3%·0.5% 각 권리별 보유요건표. 주주제안·주주대표소송·회계장부열람·이사해임청구 등 상장사/비상장사 지분율 및 보유기간 한눈에 비교.">
-<meta property="og:title" content="소수주주권 행사 요건 완전 정리: 6개월·1%·3%·0.5% 각 권리별 보유요건표">
-<meta property="og:description" content="상장사 0.01%~3% + 6개월, 비상장사 1%~10%. 11대 소수주주권 지분율·보유기간·근거 조문 일람표 제공.">
-<meta property="og:type" content="website">
-<meta name="robots" content="noindex,nofollow">
-<title>소수주주권 행사 요건 완전 정리 — 조우성 변호사</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#f0f2f5;color:#111827;line-height:1.75;font-size:14.5px;-webkit-font-smoothing:antialiased}
-.topbar{position:sticky;top:0;height:4px;background:linear-gradient(90deg,#1a3a6b,#2e6be6);z-index:100}
-.progress-bar{position:sticky;top:4px;height:3px;background:#e5e7eb;z-index:99}
-.progress-bar .fill{height:100%;width:0%;background:linear-gradient(90deg,#2e6be6,#60a5fa);transition:width .2s}
-.header{background:#fff;border-bottom:1px solid #e5e7eb;padding:12px 20px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.header .avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#1a3a6b,#2e6be6);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;flex-shrink:0}
-.header .info{font-size:12px;color:#6b7280}
-.header .info strong{color:#1a3a6b}
-.hero{background:linear-gradient(135deg,#1a3a6b,#2e6be6);color:#fff;padding:40px 20px 56px}
-.hero h1{font-size:clamp(22px,4vw,32px);font-weight:900;margin-bottom:6px;line-height:1.3}
-.hero .tag{display:inline-block;background:rgba(255,255,255,0.2);padding:3px 10px;border-radius:4px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
-.hero .meta{font-size:12px;color:rgba(255,255,255,0.8);margin-top:8px}
-.hero .meta span{margin-right:16px}
-.container{max-width:800px;margin:0 auto;padding:0 16px}
-.tldr{background:#fff;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.08);padding:20px 24px;margin-top:-36px;margin-bottom:24px;border-left:4px solid #2e6be6}
-.tldr h2{font-size:16px;font-weight:700;color:#1a3a6b;margin-bottom:8px;display:flex;align-items:center;gap:6px}
-.tldr ul{list-style:none;padding:0}
-.tldr ul li{padding:4px 0;padding-left:16px;position:relative;font-size:13.5px}
-.tldr ul li::before{content:"▸";position:absolute;left:0;color:#2e6be6;font-weight:700}
-.section{background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.06);padding:24px;margin-bottom:20px;border:1px solid #e5e7eb}
-.section .number{display:inline-block;background:#2e6be6;color:#fff;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:2px 8px;border-radius:3px;margin-bottom:8px}
-.section h2{font-size:20px;font-weight:700;color:#1a3a6b;margin-bottom:12px}
-.section h3{font-size:16px;font-weight:700;color:#374151;margin-top:16px;margin-bottom:8px}
-.section p{margin-bottom:10px;font-size:14px}
-.eye{border-left:4px solid #2e6be6;background:#eff6ff;padding:10px 14px;margin-bottom:12px;border-radius:0 6px 6px 0}
-.eye ul{list-style:none;padding:0}
-.eye ul li{padding:2px 0;padding-left:14px;position:relative;font-size:13px}
-.eye ul li::before{content:"▸";position:absolute;left:0;color:#2e6be6}
-.legal-quote{background:#fffbeb;border-left:4px solid #f59e0b;padding:10px 14px;margin:12px 0;border-radius:0 6px 6px 0;font-size:12.5px;color:#92400e}
-.legal-quote strong{color:#78350f}
-.legal-quote .status{display:inline-block;background:#d1fae5;color:#065f46;padding:1px 6px;border-radius:3px;font-size:10px;font-weight:700;margin-left:4px}
-.table-wrap{overflow-x:auto;margin:12px 0}
-table{width:100%;border-collapse:collapse;font-size:13px}
-thead th{background:#f0f2f5;color:#1a3a6b;font-weight:700;text-align:left;padding:8px 10px;border-bottom:2px solid #e5e7eb;position:sticky;top:0}
-tbody td{padding:8px 10px;border-bottom:1px solid #e5e7eb;vertical-align:top}
-tbody tr:last-child td{border-bottom:none}
-.steps{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0}
-.step-card{flex:1;min-width:180px;background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:14px;border-top:3px solid #2e6be6}
-.step-card .step-num{font-size:10px;font-weight:700;color:#2e6be6;text-transform:uppercase}
-.step-card h4{font-size:14px;font-weight:700;color:#1a3a6b;margin:4px 0}
-.step-card p{font-size:12.5px;color:#4b5563;margin:0}
-.info-card{background:#eff6ff;border-radius:8px;padding:12px 16px;margin:12px 0;font-size:13px}
-.info-card strong{color:#1a3a6b}
-.highlight-box{background:#ecfdf5;border-left:4px solid #059669;padding:10px 14px;margin:12px 0;border-radius:0 6px 6px 0;font-size:13px}
-.highlight-box strong{color:#065f46}
-.warning-box{background:#fef3c7;border-left:4px solid #d97706;padding:10px 14px;margin:12px 0;border-radius:0 6px 6px 0;font-size:13px}
-.warning-box strong{color:#92400e}
-.rank-stars{display:inline-block;background:#1e293b;color:#fbbf24;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700}
-.qa-item{margin:12px 0;padding:12px 14px;background:#f9fafb;border-radius:8px;border:1px solid #e5e7eb}
-.qa-q{font-weight:700;color:#1a3a6b;margin-bottom:4px;font-size:14px}
-.qa-q::before{content:"Q. ";color:#2e6be6}
-.qa-a{font-size:13.5px;color:#374151;padding-left:24px}
-.disclaimer{background:#f9fafb;border-radius:8px;padding:14px 18px;margin-top:20px;font-size:12px;color:#6b7280;border-left:4px solid #9ca3af}
-.footer{text-align:center;padding:24px 16px;color:#9ca3af;font-size:11px;border-top:1px solid #e5e7eb;margin-top:20px}
-.footer a{color:#2e6be6;text-decoration:none}
-.cta-box{background:#1a3a6b;color:#fff;border-radius:12px;padding:20px;margin-top:20px;text-align:center}
-.cta-box h3{font-size:16px;font-weight:700;margin-bottom:6px}
-.cta-box p{font-size:13px;color:rgba(255,255,255,0.85)}
-.cta-box .btn{display:inline-block;background:#fff;color:#1a3a6b;padding:8px 20px;border-radius:6px;font-weight:700;font-size:13px;text-decoration:none;margin-top:8px}
-@media(max-width:640px){
-  .hero{padding:28px 16px 44px}
-  .tldr{padding:14px 16px;margin-top:-28px}
-  .section{padding:16px}
-  .steps{flex-direction:column}
-  .step-card{min-width:auto}
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>소수주주권 행사 요건 완전 정리: 6개월·1%·3%·0.5% 각 권리별 보유요건표</title><style>
+/* ============================================================
+   법률 대시보드 전자책 — Apollo 기반 경량 커스텀 (공개 롱스크롤)
+   Apollo 토큰(버건디 액센트 + 웜 화이트 + 딥와인 헤더) 상속.
+   의뢰인 리포트(리스크레이더 6뷰)와 달리 공개 독서형 롱스크롤.
+   self-contained: 외부 CDN/폰트/이미지/스크립트 의존 없음.
+   ============================================================ */
+:root{
+  --bg:#f5f1f2; --panel:#ffffff; --panel2:#faf6f7;
+  --line:#ebe2e5; --line2:#ddccd2;
+  --ink:#2c1d26; --ink2:#56424c; --muted:#8a7b82; --faint:#b3a6ab;
+  --wine:#7a2e3a; --wine-d:#5a1f2b; --wine-l:#9c4456;
+  --wine-tint:#f4e9ec; --wine-tint-ln:#ecd7dd;
+  --header-bg:#3a1525; --header-bg2:#4e1f32; --header-accent:#d4a0aa;
+  --rH:#c74a3c; --rM-bg:#f8e4b8; --rM-tx:#7d520a; --rL-bg:#d6ecdb; --rL-tx:#287a54;
+  --amber:#b45309; --green:#287a54;
+  --font:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Noto Sans KR',sans-serif;
+  --maxw:1120px; --readw:760px;
 }
-</style>
-</head>
-<body>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
 
-<div class="topbar"></div>
-<div class="progress-bar"><div class="fill" id="progressFill"></div></div>
+/* 읽기 진행바 */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;
+  background:linear-gradient(90deg,var(--wine),var(--wine-l));transition:width .1s linear}
 
-<div class="header">
-  <div class="avatar">조</div>
-  <div class="info"><strong>조우성 변호사</strong> · 머스트노우 법률사무소 &nbsp;|&nbsp; law@mustknow.co.kr</div>
-</div>
+/* 헤더 표지 (딥와인, 유일한 딥 컬러) */
+.header{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0}
+.header .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 26px}
+.header .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;
+  color:var(--header-accent);border:1px solid rgba(212,160,170,.4);border-radius:999px;padding:4px 12px}
+.header .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--header-accent)}
 
-<div class="hero">
-  <div class="container">
-    <span class="tag">회사법 · 주주권·소수주주권</span>
-    <h1>소수주주권 행사 요건 완전 정리<br>6개월·1%·3%·0.5% 각 권리별 보유요건표</h1>
-    <div class="meta">
-      <span>📅 2026-07-11 작성</span>
-      <span>⚖️ 상법 제542조의6 현행</span>
-      <span>🔹 상장사 0.01%~3% + 6개월</span>
-      <span>⏱ 읽기 4분</span>
-    </div>
-  </div>
-</div>
+/* 히어로 */
+.hero{max-width:var(--maxw);margin:0 auto;padding:30px 26px 8px}
+.hero .eb{font-size:12px;font-weight:700;color:var(--wine);letter-spacing:.02em;margin-bottom:10px}
+.hero h1{font-size:30px;line-height:1.28;font-weight:800;margin:0 0 16px;color:var(--ink);letter-spacing:-.01em}
+.hero .tldr{background:var(--wine-tint);border:1px solid var(--wine-tint-ln);border-left:4px solid var(--wine);
+  border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.hero .tldr .lb{font-size:12px;font-weight:700;color:var(--wine-d);margin-bottom:8px}
+.hero .tldr ul{margin:0;padding-left:18px}
+.hero .tldr li{margin:4px 0;font-size:15px;color:var(--ink2)}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:12.5px;color:var(--muted);margin-bottom:18px}
+.hero .meta .vchip{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);
+  font-weight:700;border-radius:6px;padding:3px 9px;font-size:11.5px}
+.hero .cta-row{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:9px;
+  padding:11px 18px;text-decoration:none;cursor:pointer;border:1px solid transparent}
+.btn-p{background:var(--wine);color:#fff}
+.btn-p:hover{background:var(--wine-d)}
+.btn-o{background:#fff;color:var(--wine-d);border-color:var(--line2)}
+.btn-o:hover{background:var(--panel2)}
 
-<div class="container">
+/* 셸: 좌측 목차 + 본문 */
+.app{max-width:var(--maxw);margin:0 auto;padding:8px 26px 60px;
+  display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:start}
 
-<div class="tldr">
-  <h2>📌 3줄 요약</h2>
-  <ul>
-    <li>소수주주권은 <strong>상법이 정한 지분율과 보유기간 요건</strong>을 충족하면 행사할 수 있다. 비상장사는 1~10%, 상장사는 특례로 <strong>0.01%~3% + 6개월 계속보유</strong>가 적용된다.</li>
-    <li>가장 낮은 문턱은 <strong>주주대표소송(상장 0.01%)</strong> — 1만 주 중 1주만 있어도 이사 책임 추궁 가능. 가장 높은 문턱은 <strong>회사해산청구권(10%)</strong>.</li>
-    <li><strong>6개월 계속보유 요건</strong>은 상장사에만 적용된다. 보유기간 산정 시 기준일·계속보유·합산요건을 정확히 계산해야 하며, 1주라도 부족하면 권리 행사가 불가능하다.</li>
-  </ul>
-</div>
+/* 목차 (데스크톱 = 좌측 sticky) */
+.toc{position:sticky;top:24px}
+.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;
+  margin:0 0 10px;padding-left:2px}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}
+.toc li{counter-increment:toc;margin:1px 0}
+.toc a{display:flex;gap:9px;font-size:13.5px;color:var(--ink2);text-decoration:none;
+  padding:7px 10px;border-radius:8px;border-left:3px solid transparent;line-height:1.4}
+.toc a::before{content:counter(toc,decimal-leading-zero);color:var(--faint);font-weight:700;font-size:11.5px;flex:none}
+.toc a:hover{background:var(--panel2)}
+.toc a.active{background:var(--wine-tint);border-left-color:var(--wine);color:var(--wine-d);font-weight:700}
+.toc-toggle{display:none}
 
-<!-- SECTION 1 -->
-<div class="section">
-  <span class="number">쟁점 01</span>
-  <h2>소수주주권 전 권리별 요건 일람표</h2>
+/* 본문 */
+.content{max-width:var(--readw);min-width:0}
+section.blk{scroll-margin-top:24px;margin-bottom:38px}
+.secl{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.05em;margin:0 0 12px}
+.secl::before{content:"";width:7px;height:15px;background:var(--wine);border-radius:2px;flex:none}
+section.blk h2{font-size:23px;font-weight:800;line-height:1.35;margin:0 0 14px;color:var(--ink);letter-spacing:-.01em}
+section.blk h3{font-size:17px;font-weight:700;margin:26px 0 10px;color:var(--wine-d)}
+section.blk p{margin:0 0 14px;color:var(--ink2)}
+section.blk ul,section.blk ol{margin:0 0 14px;padding-left:22px;color:var(--ink2)}
+section.blk li{margin:6px 0}
+strong{color:var(--ink);font-weight:700}
+a.ln{color:var(--wine-l);text-decoration:none;border-bottom:1px solid var(--wine-tint-ln)}
+a.ln:hover{border-bottom-color:var(--wine-l)}
 
-  <div class="eye">
-    <ul>
-      <li>아래 표 하나로 모든 소수주주권의 지분율·보유기간·근거 조문을 한 번에 확인할 수 있다. ★ 표시가 많을수록 행사 문턱이 낮다.</li>
-    </ul>
-  </div>
+/* 핵심요약 카드 */
+.summary{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.summary .lb{font-size:11px;font-weight:700;color:var(--wine-d);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.summary ul{margin:0;padding-left:18px}
 
-  <div class="table-wrap">
-    <table>
-      <thead><tr><th>권리</th><th>근거</th><th>비상장사</th><th>상장사 특례</th></tr></thead>
-      <tbody>
-        <tr><td><span class="rank-stars">★★★</span> 주주대표소송</td><td>제403조</td><td><strong>1%</strong></td><td><strong>0.01% + 6개월</strong></td></tr>
-        <tr><td><span class="rank-stars">★★☆</span> 회계장부열람</td><td>제466조</td><td><strong>3%</strong></td><td><strong>0.1% + 6개월</strong></td></tr>
-        <tr><td><span class="rank-stars">★★☆</span> 주주제안</td><td>제363조의2</td><td><strong>3%</strong></td><td><strong>0.5% + 6개월</strong></td></tr>
-        <tr><td><span class="rank-stars">★★☆</span> 이사·감사 해임청구</td><td>제385조·제415조</td><td><strong>3%</strong></td><td><strong>0.5% + 6개월</strong></td></tr>
-        <tr><td><span class="rank-stars">★☆☆</span> 주총 소집청구</td><td>제366조</td><td><strong>3%</strong></td><td><strong>0.5% + 6개월</strong></td></tr>
-        <tr><td><span class="rank-stars">★☆☆</span> 유지청구(신주발행금지)</td><td>제424조</td><td><strong>1%</strong></td><td><strong>0.1% + 6개월</strong></td></tr>
-        <tr><td><span class="rank-stars">★☆☆</span> 의안상정 가처분</td><td>판례법리</td><td><strong>3%</strong></td><td><strong>0.5% + 6개월</strong></td></tr>
-        <tr><td><span class="rank-stars">☆☆☆</span> 회사해산청구</td><td>제520조</td><td><strong>10%</strong></td><td><strong>0.5% + 6개월</strong></td></tr>
-        <tr><td><span class="rank-stars">☆☆☆</span> 결의취소 소송</td><td>제376조</td><td>의결권 있는 주주면 족함</td><td>동일</td></tr>
-        <tr><td><span class="rank-stars">☆☆☆</span> 부당이득반환청구</td><td>제402조</td><td><strong>1%</strong></td><td><strong>0.01% + 6개월</strong></td></tr>
-      </tbody>
-    </table>
-  </div>
+/* 근거 카드 (조문·판례) */
+.ev{background:#fff;border:1px solid var(--line);border-left:4px solid var(--wine);border-radius:10px;
+  padding:13px 15px;margin:0 0 12px}
+.ev .top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px}
+.ev .kind{font-size:11px;font-weight:700;color:#fff;background:var(--wine);border-radius:5px;padding:2px 8px}
+.ev .kind.law{background:var(--wine-d)}
+.ev .kind.case{background:var(--amber)}
+.ev .cite{font-size:13.5px;font-weight:700;color:var(--ink)}
+.ev .vtick{margin-left:auto;font-size:11px;font-weight:700;color:var(--rL-tx);background:var(--rL-bg);border-radius:5px;padding:2px 7px}
+.ev .gist{font-size:14px;color:var(--ink2);margin:0}
+.ev .date{font-size:12px;color:var(--muted);margin-top:5px}
 
-  <div class="legal-quote">
-    <strong>[근거·조문] 상법 제542조의6(상장회사 소수주주권의 행사)</strong> — 상장회사의 소수주주권 행사 요건을 대폭 완화하고, 6개월 계속보유 조건을 부과.
-    <span class="status">✓ WIKI CANONICAL</span>
-  </div>
+/* 다이어그램 — 플로우 / 체크리스트 (CSS·SVG only) */
+.figure{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin:0 0 18px}
+.figure .cap{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:12px}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px}
+.flow .step{flex:1;min-width:120px;background:var(--wine-tint);border:1px solid var(--wine-tint-ln);
+  border-radius:10px;padding:11px 12px;position:relative}
+.flow .step .n{font-size:11px;font-weight:700;color:var(--wine)}
+.flow .step .t{font-size:13.5px;font-weight:700;color:var(--ink);margin-top:2px}
+.flow .step .d{font-size:12.5px;color:var(--ink2);margin-top:3px}
+.checklist{list-style:none;margin:0;padding:0}
+.checklist li{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+.checklist li:last-child{border-bottom:none}
+.checklist .ck{flex:none;width:20px;height:20px;border-radius:5px;background:var(--rL-bg);color:var(--rL-tx);
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
 
-  <div class="legal-quote">
-    <strong>[근거·조문] 상법 제542조의6 제4항</strong> — 제366조(소집청구권), 제363조의2(주주제안권), 제385조(이사해임청구권), 제403조(대표소송권), 제466조(회계장부열람권) 등 5대 권리에 상장사 특례 적용.
-    <span class="status">✓ WIKI CANONICAL</span>
-  </div>
-</div>
+/* 위험도 칩 */
+.chip{display:inline-flex;align-items:center;justify-content:center;min-width:34px;font-size:11px;font-weight:500;
+  border-radius:6px;padding:3px 8px;margin-right:4px}
+.c-H{background:var(--rH);color:#fff}
+.c-M{background:var(--rM-bg);color:var(--rM-tx)}
+.c-L{background:var(--rL-bg);color:var(--rL-tx)}
 
-<!-- SECTION 2 -->
-<div class="section">
-  <span class="number">쟁점 02</span>
-  <h2>지분율별 권리 맵 — 내 지분으로 무엇을 할 수 있나</h2>
+/* 표 */
+.tbl-wrap{overflow-x:auto;margin:0 0 18px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px}
 
-  <div class="eye">
-    <ul>
-      <li>보유 지분율이 몇 %인지에 따라 행사 가능한 권리가 결정된다. 지분율이 높아질수록 행사 가능한 권리가 추가되는 구조다.</li>
-    </ul>
-  </div>
+/* FAQ (아코디언) */
+.faq details{background:#fff;border:1px solid var(--line);border-radius:10px;margin:0 0 10px;overflow:hidden}
+.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:15px;font-weight:700;color:var(--ink);
+  display:flex;align-items:center;gap:10px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--wine-tint);
+  color:var(--wine-d);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+.faq details[open] summary{border-bottom:1px solid var(--line);color:var(--wine-d)}
+.faq .a{padding:14px 16px;font-size:14.5px;color:var(--ink2)}
 
-  <h3>2.1 상장사 기준 (6개월 계속보유 조건)</h3>
-  <div class="table-wrap">
-    <table>
-      <thead><tr><th>지분율</th><th>행사 가능한 권리</th></tr></thead>
-      <tbody>
-        <tr><td><strong>0.01%</strong></td><td>주주대표소송 · 부당이득반환청구</td></tr>
-        <tr><td><strong>0.1%</strong></td><td>+ 회계장부열람 · 유지청구(신주발행금지)</td></tr>
-        <tr><td><strong>0.5%</strong></td><td>+ 주주제안 · 이사·감사 해임청구 · 의안상정 가처분 · 회사해산청구</td></tr>
-        <tr><td><strong>3%</strong></td><td>일반 소수주주권 원칙 요건 (상장사는 대부분 특례로 완화)</td></tr>
-      </tbody>
-    </table>
-  </div>
+/* 최신성·면책 고지 */
+.notice{background:#fff;border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;
+  font-size:12.5px;color:var(--muted);line-height:1.7}
 
-  <h3>2.2 비상장사 기준 (보유기간 제한 없음)</h3>
-  <div class="table-wrap">
-    <table>
-      <thead><tr><th>지분율</th><th>행사 가능한 권리</th></tr></thead>
-      <tbody>
-        <tr><td><strong>1%</strong></td><td>주주대표소송 · 유지청구 · 부당이득반환청구</td></tr>
-        <tr><td><strong>3%</strong></td><td>+ 주주제안 · 이사·감사 해임청구 · 회계장부열람 · 주총 소집청구</td></tr>
-        <tr><td><strong>10%</strong></td><td>+ 회사해산청구</td></tr>
-      </tbody>
-    </table>
-  </div>
+/* 맨 위로 버튼 */
+#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--wine-tint-ln);background:var(--wine);color:#fff;font-size:18px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;
+  box-shadow:0 4px 14px rgba(58,21,37,.28)}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{background:var(--wine-d)}
 
-  <div class="legal-quote">
-    <strong>[근거·판례] 대법원 2001. 4. 24. 선고 99다58051 판결</strong> — 회계장부열람 청구 대상 문서의 범위는 청구 이유와 실질적 관련성 기준.
-    <span class="status">✓ WIKI CANONICAL</span>
-  </div>
-</div>
+/* 푸터 프로필 + 상담 CTA */
+.footer{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0;margin-top:20px}
+.footer .wrap{max-width:var(--maxw);margin:0 auto;padding:34px 26px}
+.footer h3{font-size:20px;font-weight:800;margin:0 0 8px;color:#fff}
+.footer p{font-size:14px;color:rgba(255,255,255,.72);margin:0 0 6px;line-height:1.7}
+.footer .prof{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end}
+.footer .cta-f{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.footer .btn-f{background:#fff;color:var(--wine-d)}
+.footer .btn-f:hover{background:var(--header-accent)}
+.footer .btn-fo{background:transparent;color:#f4eef0;border-color:rgba(255,255,255,.35)}
+.footer .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:22px;padding-top:14px;
+  font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.7}
 
-<!-- SECTION 3 -->
-<div class="section">
-  <span class="number">쟁점 03</span>
-  <h2>6개월 보유요건 완전 정복</h2>
-
-  <div class="eye">
-    <ul>
-      <li>상장사 소수주주권의 핵심 관문은 <strong>'6개월 계속보유'</strong> 요건이다. 아래 기준을 정확히 이해해야 권리 행사가 가능하다.</li>
-    </ul>
-  </div>
-
-  <h3>3.1 적용 대상 권리</h3>
-  <div class="table-wrap">
-    <table>
-      <thead><tr><th>조문</th><th>권리</th><th>요건</th></tr></thead>
-      <tbody>
-        <tr><td>제363조의2</td><td>주주제안권</td><td><strong>0.5% + 6개월</strong></td></tr>
-        <tr><td>제366조</td><td>주총 소집청구권</td><td><strong>0.5% + 6개월</strong></td></tr>
-        <tr><td>제385조</td><td>이사·감사 해임청구권</td><td><strong>0.5% + 6개월</strong></td></tr>
-        <tr><td>제403조</td><td>주주대표소송권</td><td><strong>0.01% + 6개월</strong></td></tr>
-        <tr><td>제466조</td><td>회계장부열람권</td><td><strong>0.1% + 6개월</strong></td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <h3>3.2 보유기간 계산 실무</h3>
-  <div class="table-wrap">
-    <table>
-      <thead><tr><th>쟁점</th><th>기준</th><th>실무 포인트</th></tr></thead>
-      <tbody>
-        <tr><td><strong>기산일</strong></td><td>권리 행사일 기준 6개월 전부터 계속 보유</td><td>행사일 → 기산일 순서로 계산</td></tr>
-        <tr><td><strong>계속보유</strong></td><td>중단 없이 계속 보유할 것</td><td>하루라도 매도 시 리셋. 대차거래는 포함·제외 다툼 있음</td></tr>
-        <tr><td><strong>합산 보유</strong></td><td>6개월간 매일매일 요건 충족</td><td>소수주주 연합 시 각자 요건 개별 충족 필요</td></tr>
-        <tr><td><strong>주주명부 기준</strong></td><td>명의개서 완료된 주식만 인정</td><td>실질주주는 명의개서 대리인 유의</td></tr>
-        <tr><td><strong>예외</strong></td><td>상속·증여·합병 등 포괄승계 시 승계 가능</td><td>판례법리, 입증 필요</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="legal-quote">
-    <strong>[근거·판례] 서울고등법원 2019. 3. 21.자 2019라20280 결정</strong> — 상장회사 주주제안권은 상법 제542조의6 특례(0.5%+6개월)가 우선 적용되며, 6개월 보유요건 충족이 필수적.
-    <span class="status">✓ WIKI CANONICAL</span>
-  </div>
-
-  <div class="legal-quote">
-    <strong>[근거·판례] 대법원 2025. 10. 16. 선고 2019다236385 판결</strong> — 주주제안 부당 거부 시 주식매수청구권 상실 손해배상책임 인정. 6개월 보유요건을 충족한 주주의 제안을 부당 거부하면 이사 개인 책임 발생.
-    <span class="status">✓ WIKI CANONICAL</span>
-  </div>
-</div>
-
-<!-- SECTION 4 -->
-<div class="section">
-  <span class="number">쟁점 04</span>
-  <h2>소수주주권 4대 필수 권리 행사 절차 개요</h2>
-
-  <div class="eye">
-    <ul>
-      <li>가장 실무에서 많이 활용되는 4대 권리의 행사 절차를 한눈에 비교한다.</li>
-    </ul>
-  </div>
-
-  <div class="table-wrap">
-    <table>
-      <thead><tr><th>단계</th><th>주주제안<br>(제363조의2)</th><th>주주대표소송<br>(제403조)</th><th>회계장부열람<br>(제466조)</th><th>이사해임청구<br>(제385조)</th></tr></thead>
-      <tbody>
-        <tr><td><strong>Step 1</strong></td><td>지분율·6개월 확인</td><td>지분율·6개월 확인</td><td>지분율·6개월 확인</td><td>지분율·6개월 확인</td></tr>
-        <tr><td><strong>Step 2</strong></td><td>서면 제안서 작성</td><td>감사에 서면 제소청구</td><td>이유 기재 서면 청구</td><td>해임 사유 입증 자료 수집</td></tr>
-        <tr><td><strong>Step 3</strong></td><td>주총 6주 전 도달</td><td>30일 대기</td><td>회사가 부당함 증명</td><td>법원 해임청구 소송</td></tr>
-        <tr><td><strong>Step 4</strong></td><td>이사회 부의·거부</td><td>30일 후 주주 직접 제소</td><td>법원 열람허가 결정</td><td>법원 심리·해임 결정</td></tr>
-        <tr><td><strong>Step 5</strong></td><td>주총 의안 표결</td><td>소송 수행</td><td>열람·등사 실행</td><td>해임 결정 → 등기</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="info-card">
-    <strong>🔑 실무 포인트:</strong> 위 4대 권리 중 <strong>회계장부열람</strong>이 가장 먼저 활용된다. 이유는 (i) 지분율 요건이 낮고(0.1%), (ii) 입증책임이 회사에 전환되어 거부가 어렵고, (iii) 후속 권리(주주제안·대표소송)의 증거 수집 수단이기 때문이다. 회계장부열람 청구가 들어오면 경영권 분쟁의 신호탄으로 간주해야 한다.
-  </div>
-</div>
-
-<!-- SECTION 5 -->
-<div class="section">
-  <span class="number">쟁점 05</span>
-  <h2>2025~2026년 상법개정 반영 사항</h2>
-
-  <div class="eye">
-    <ul>
-      <li>최근 개정으로 소수주주권 행사 요건이 더 완화되거나 신설된 사항을 정리한다.</li>
-    </ul>
-  </div>
-
-  <div class="table-wrap">
-    <table>
-      <thead><tr><th>개정 사항</th><th>내용</th><th>시행일</th><th>실무 영향</th></tr></thead>
-      <tbody>
-        <tr><td>주주대표소송 하자치유</td><td>제소 전 30일 대기 요건, 회사 거절 시 생략 가능</td><td>판례</td><td>제소 문턱 실질적 하향</td></tr>
-        <tr><td>다중대표소송 신설</td><td>모회사 주주→자회사 이사 대표소송 가능</td><td>2026년</td><td>기업집단 감시 강화</td></tr>
-        <tr><td>이사 주주충실의무</td><td>충실의무 대상 '회사+주주'로 확대</td><td>2025.7.22</td><td>소수주주 보호 근거 강화</td></tr>
-        <tr><td>집중투표제 의무화</td><td>자산 2조↑ 상장사 정관 배제 불가</td><td>2026.9.10</td><td>소수주주 이사회 진입 용이</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="legal-quote">
-    <strong>[근거·판례] 대법원 2025. 6. 12. 선고 2024다216743 판결</strong> — 주주대표소송 제소요건 하자치유 법리 최초 명시 인정.
-    <span class="status">✓ WIKI CANONICAL</span>
-  </div>
-</div>
-
-<!-- FAQ -->
-<div class="section">
-  <span class="number">Q&A</span>
-  <h2>자주 묻는 질문</h2>
-
-  <div class="qa-item">
-    <div class="qa-q">상장사 주식을 6개월 보유했는데, 중간에 1주를 팔았다가 다시 샀어요. 보유기간이 리셋되나요?</div>
-    <div class="qa-a">네, 원칙적으로 리셋됩니다. '6개월 계속보유'는 권리 행사일 기준으로 역산하여 6개월 동안 하루도 빠짐없이 해당 지분율 이상을 보유하고 있어야 함을 의미합니다. 중간에 1주라도 매도하여 보유 주식 수가 요건 미만으로 떨어지면, 그 시점부터 다시 6개월을 새로 계산해야 합니다.</div>
-  </div>
-
-  <div class="qa-item">
-    <div class="qa-q">소수주주 3명이 각각 0.2%씩 보유하고 있는데, 합쳐서 0.5%가 넘으니 주주제안을 할 수 있나요?</div>
-    <div class="qa-a"><strong>안 됩니다.</strong> 소수주주권 행사 요건(지분율·보유기간)은 각 주주별로 개별 충족해야 합니다. 여러 주주의 지분을 합산하여 요건을 충족할 수 있는 권리는 극히 제한적입니다. 주주제안권(0.5%+6개월)은 각 주주가 개별적으로 요건을 충족해야 하며, 3명의 지분을 합산할 수 없습니다.</div>
-  </div>
-
-  <div class="qa-item">
-    <div class="qa-q">비상장사 주주인데, 3%를 보유하고 있습니다. 어떤 권리를 행사할 수 있나요?</div>
-    <div class="qa-a">비상장사 3% 보유 주주는 ①주주제안권(제363조의2), ②이사·감사 해임청구권(제385조·제415조), ③회계장부열람권(제466조), ④주총 소집청구권(제366조)을 행사할 수 있습니다. 보유기간 제한은 없습니다. 1%만 보유 중이라면 주주대표소송(제403조)과 유지청구(제424조)만 가능합니다.</div>
-  </div>
-
-  <div class="qa-item">
-    <div class="qa-q">6개월 보유요건을 입증하려면 어떤 자료를 준비해야 하나요?</div>
-    <div class="qa-a">증권사 계좌 거래내역(6개월분), 주주명부(명의개서 완료 증명), 한국예탁결제원 실질주주명부가 핵심 증빙 자료입니다. 특히 주주명부 폐쇄 기간 중 권리를 행사하는 경우, 명의개서가 완료된 주주만 권리 행사가 가능하므로, 권리 행사 전에 명의개서 상태를 반드시 확인해야 합니다.</div>
-  </div>
-
-  <div class="qa-item">
-    <div class="qa-q">2025~2026년 상법개정 이후 소수주주권 관련 가장 큰 변화는?</div>
-    <div class="qa-a">①주주대표소송 하자치유 법리(2024다216743)로 제소 문턱 완화, ②다중대표소송(제406조의2) 신설로 자회사 이사까지 책임 추궁 가능, ③이사 주주충실의무(제382조의3) 신설로 소수주주 보호 근거 강화. 지분율 요건 자체(0.01%~3%)는 기존과 동일하지만, 권리 행사가 더 용이해졌습니다.</div>
-  </div>
-</div>
-
-<!-- CTA -->
-<div class="cta-box">
-  <h3>🏛️ 법률사무소 머스트노우</h3>
-  <p>회사법·지배구조 자문 · 소수주주권 대응 전략 · 주총 분쟁 컨설팅</p>
-  <a class="btn" href="mailto:law@mustknow.co.kr">문의하기 law@mustknow.co.kr</a>
-</div>
-
-<div class="disclaimer">
-  <strong>📘 최신성·면책 고지</strong><br>
-  본 자료는 <strong>2026년 7월 11일</strong> 기준으로 작성되었으며, 인용 법령·판례는 작성 시점의 현행성을 확인한 것입니다. 법령은 개정될 수 있고 사안마다 결론이 달라질 수 있으므로, 실제 의사결정 전 최신 법령과 개별 사실관계 확인이 필요합니다. 본 자료는 일반적 법률 정보 제공이며 특정 사안에 대한 법률 자문이 아닙니다.
-</div>
-
-</div> <!-- container -->
-
-<div class="footer">
-  <p>© 2026 조우성 변호사 · 머스트노우 법률사무소</p>
-  <p>문의: <a href="mailto:law@mustknow.co.kr">law@mustknow.co.kr</a></p>
-</div>
-
-<script>
-window.addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-window.innerHeight;var p=window.scrollY/h*100;document.getElementById('progressFill').style.width=Math.min(p,100)+'%'});
-</script>
-
-</body>
-</html>
+/* ── 모바일 (≤820px) ── */
+@media(max-width:820px){
+  .hero h1{font-size:24px}
+  .app{grid-template-columns:1fr;gap:0;padding-top:0}
+  .toc{position:static;margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 8px}
+  .toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;
+    cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--wine-d);padding:9px 8px}
+  .toc-toggle .ar{transition:transform .2s}
+  .toc.closed .toc-toggle .ar{transform:rotate(-90deg)}
+  .toc .tt{display:none}
+  .toc ol{max-height:50vh;overflow:auto}
+  .toc.closed ol{display:none}
+  section.blk h2{font-size:20px}
+  th,td{white-space:nowrap}
+}
+@media print{
+  #progress,.toc,.cta-row,.footer .cta-f{display:none}
+  .header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .app{display:block}
+}
+</style></head><body><div id="progress"></div><button id="toTop" aria-label="맨 위로">?</button><header class="header"><div class="wrap"><span class="badge"><span class="dot"></span>조우성 변호사 ? 법률 인사이트</span></div></header><div class="hero"><div class="eb">전자책 대시보드 ? 실무 가이드</div><h1>소수주주권 행사 요건 완전 정리: 6개월·1%·3%·0.5% 각 권리별 보유요건표</h1><div class="tldr"><div class="lb">3줄 요약 (TL;DR)</div><ul><li>원문 Markdown의 제목?본문?표?체크리스트를 반영한 공개용 HTML입니다.</li><li>문서의 핵심 내용과 실무상 확인 포인트를 한 화면에서 확인할 수 있습니다.</li><li>구체적인 사안은 최신 법령?판례와 사실관계 확인이 필요합니다.</li></ul></div><div class="meta"><span>원문: 20260711_소수주주권_행사요건표.md</span><span class="vchip">원문 기반 HTML</span></div><div class="cta-row"><a class="btn btn-p" href="#s1">핵심 내용 보기</a><a class="btn btn-o" href="#faq">확인 사항</a></div></div><div class="app"><nav class="toc" id="toc"><div class="tt">목차</div><ol id="toc-list"><li><a href="#s1">본문</a></li><li><a href="#s2">3줄 요약 (TL;DR)</a></li><li><a href="#s3">1. 소수주주권 전 권리별 요건 일람표</a></li><li><a href="#s4">2. 지분율별 권리 맵 — 내 지분으로 무엇을 할 수 있나</a></li><li><a href="#s5">3. 6개월 보유요건 완전 정복</a></li><li><a href="#s6">4. 소수주주권 4대 필수 권리 행사 절차 개요</a></li><li><a href="#s7">5. 2025~2026년 상법개정 반영 사항</a></li><li><a href="#s8">자주 묻는 질문 (Q&amp;amp;A)</a></li><li><a href="#s9">최신성·면책 고지</a></li><li><a href="#s10">검증 로그 (내부용)</a></li></ol></nav><main class="content"><section class="blk" id="s1"><div class="secl">SECTION</div><blockquote>
+<p>웹으로 보기
+https://woosungjo-law.github.io/share/d/minority-shareholder-requirements-table-ef3m.html</p>
+</blockquote>
+<p><em>출처: 조우성 변호사 / 로펌 머스트노우 | 문의: law@mustknow.co.kr</em></p>
+<h1>소수주주권 행사 요건 완전 정리: 6개월·1%·3%·0.5% 각 권리별 보유요건표</h1></section><section class="blk" id="s2"><div class="secl">SECTION</div><h2>3줄 요약 (TL;DR)</h2>
+<ul>
+<li>소수주주권은 <strong>상법이 정한 지분율과 보유기간 요건</strong>을 충족하면 행사할 수 있다. 비상장사는 1~10%, 상장사는 특례(제542조의6)로 <strong>0.01%~3% + 6개월 계속보유</strong>가 적용된다.</li>
+<li>가장 낮은 문턱은 <strong>주주대표소송(상장 0.01%)</strong> — 1만 주 중 1주만 있어도 이사 책임 추궁 가능. 가장 높은 문턱은 <strong>회사해산청구권(10%)</strong>.</li>
+<li><strong>6개월 계속보유 요건</strong>은 상장사에만 적용된다. 보유기간 산정 시 <strong>기준일·계속보유·합산요건</strong>을 정확히 계산해야 하며, 1주라도 부족하면 권리 행사가 불가능하다.</li>
+</ul>
+<hr /></section><section class="blk" id="s3"><div class="secl">SECTION</div><h2>1. 소수주주권 전 권리별 요건 일람표</h2>
+<p><strong>한눈에</strong>: 아래 표 하나로 모든 소수주주권의 지분율·보유기간·근거 조문을 한 번에 확인할 수 있다. ★ 표시가 많을수록 행사 문턱이 낮다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">권리</th>
+<th style="text-align: center;">근거 조문</th>
+<th>내 용</th>
+<th style="text-align: center;">비상장사</th>
+<th style="text-align: center;">상장사 특례</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">★★★ 주주대표소송</td>
+<td style="text-align: center;">제403조</td>
+<td>이사 책임 추궁 소송</td>
+<td style="text-align: center;"><strong>1%</strong></td>
+<td style="text-align: center;"><strong>0.01%(1만분의 1) + 6개월</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">★★☆ 회계장부열람</td>
+<td style="text-align: center;">제466조</td>
+<td>경영 정보·증거 자료 확보</td>
+<td style="text-align: center;"><strong>3%</strong></td>
+<td style="text-align: center;"><strong>0.1% + 6개월</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">★★☆ 주주제안</td>
+<td style="text-align: center;">제363조의2</td>
+<td>주총 안건 제안(이사 추천·배당 등)</td>
+<td style="text-align: center;"><strong>3%</strong></td>
+<td style="text-align: center;"><strong>0.5% + 6개월</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">★★☆ 이사·감사 해임청구</td>
+<td style="text-align: center;">제385조·제415조</td>
+<td>위법 행위 이사 해임 법원 청구</td>
+<td style="text-align: center;"><strong>3%</strong></td>
+<td style="text-align: center;"><strong>0.5% + 6개월</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">★☆☆ 주총 소집청구</td>
+<td style="text-align: center;">제366조</td>
+<td>소집통지 없는 주총 직접 소집 청구</td>
+<td style="text-align: center;"><strong>3%</strong></td>
+<td style="text-align: center;"><strong>1.5% + 6개월(변경) → 0.5%(개정)6개월</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">★☆☆ 이사·감사 해임 주총소집</td>
+<td style="text-align: center;">제366조 제2항</td>
+<td>해임 목적 주총 소집청구</td>
+<td style="text-align: center;"><strong>3%</strong></td>
+<td style="text-align: center;"><strong>0.5% + 6개월</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">★☆☆ 유지청구(신주발행금지)</td>
+<td style="text-align: center;">제424조</td>
+<td>위법 신주발행 금지 가처분</td>
+<td style="text-align: center;"><strong>1%</strong></td>
+<td style="text-align: center;"><strong>0.1% + 6개월</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">★☆☆ 의안상정 가처분</td>
+<td style="text-align: center;">판례법리</td>
+<td>주주제안 부당 거부 시 법원 개입</td>
+<td style="text-align: center;"><strong>3%</strong></td>
+<td style="text-align: center;"><strong>0.5% + 6개월</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">☆☆☆ 회사해산청구</td>
+<td style="text-align: center;">제520조</td>
+<td>회사 존속 곤란 시 법원 청구</td>
+<td style="text-align: center;"><strong>10%</strong></td>
+<td style="text-align: center;"><strong>0.5% + 6개월</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">☆☆☆ 주총 결의취소 소송</td>
+<td style="text-align: center;">제376조</td>
+<td>절차 위반 결의 취소 청구</td>
+<td style="text-align: center;"><strong>의결권 있는 주주면 족함</strong></td>
+<td style="text-align: center;">동일</td>
+</tr>
+<tr>
+<td style="text-align: center;">☆☆☆ 부당이득반환청구</td>
+<td style="text-align: center;">제402조</td>
+<td>이사·제3자 부당이득 반환 청구</td>
+<td style="text-align: center;"><strong>1%</strong></td>
+<td style="text-align: center;"><strong>0.01% + 6개월</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[근거·조문] <strong>상법 제542조의6(상장회사 소수주주권의 행사)</strong> — 상장회사의 소수주주권 행사 요건을 대폭 완화하고, 6개월 계속보유 조건을 부과
+내부 WIKI 검증 (D-소수주주권_행사요건_지분율보유기간, canonical)</p>
+<p>[근거·조문] <strong>상법 제542조의6 제4항</strong> — 제366조(소집청구권), 제363조의2(주주제안권), 제385조(이사해임청구권), 제403조(대표소송권), 제466조(회계장부열람권) 등 5대 권리에 상장사 특례 적용
+내부 WIKI 검증</p>
+</blockquote>
+<hr /></section><section class="blk" id="s4"><div class="secl">SECTION</div><h2>2. 지분율별 권리 맵 — 내 지분으로 무엇을 할 수 있나</h2>
+<p><strong>한눈에</strong>: 보유 지분율이 몇 %인지에 따라 행사 가능한 권리가 결정된다. 아래는 지분율이 높아질수록 행사 가능한 권리가 추가되는 구조다.</p>
+<h3>2.1 상장사 기준 (6개월 계속보유 조건)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">지분율</th>
+<th>행사 가능한 권리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>0.01%(1만분의 1)</strong></td>
+<td>★ 주주대표소송 · 부당이득반환청구</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>0.1%(1천분의 1)</strong></td>
+<td>★★ + 회계장부열람 · 유지청구(신주발행금지)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>0.5%(2백분의 1)</strong></td>
+<td>★★★ + 주주제안 · 이사·감사 해임청구 · 의안상정 가처분 · 회사해산청구</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>1.5%</strong></td>
+<td>주총 소집청구 (개정 전 기준, 현행 0.5%로 완화 논의 중)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>3%</strong></td>
+<td>일반 소수주주권 원칙 요건(상장사는 대부분 특례로 완화됨)</td>
+</tr>
+</tbody>
+</table>
+<h3>2.2 비상장사 기준 (보유기간 제한 없음)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">지분율</th>
+<th>행사 가능한 권리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>1%</strong></td>
+<td>주주대표소송 · 유지청구 · 부당이득반환청구</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>3%</strong></td>
+<td>★ + 주주제안 · 이사·감사 해임청구 · 회계장부열람 · 주총 소집청구 · 의안상정</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>10%</strong></td>
+<td>★★ + 회사해산청구</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[근거·판례] <strong>대법원 2001. 4. 24. 선고 99다58051 판결</strong> — 회계장부열람 청구 대상 문서의 범위는 청구 이유와 실질적 관련성 기준
+내부 WIKI 검증 (D-회계장부_열람등사_청구권, canonical)</p>
+</blockquote>
+<hr /></section><section class="blk" id="s5"><div class="secl">SECTION</div><h2>3. 6개월 보유요건 완전 정복</h2>
+<p><strong>한눈에</strong>: 상장사 소수주주권의 핵심 관문은 '6개월 계속보유' 요건이다. 아래 3가지를 정확히 이해해야 권리 행사가 가능하다.</p>
+<h3>3.1 적용 대상 권리 (상법 제542조의6 제4항)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">조문</th>
+<th>권리</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">제363조의2</td>
+<td>주주제안권</td>
+<td>0.5% + 6개월</td>
+</tr>
+<tr>
+<td style="text-align: center;">제366조</td>
+<td>주총 소집청구권</td>
+<td>0.5% + 6개월</td>
+</tr>
+<tr>
+<td style="text-align: center;">제385조</td>
+<td>이사·감사 해임청구권</td>
+<td>0.5% + 6개월</td>
+</tr>
+<tr>
+<td style="text-align: center;">제403조</td>
+<td>주주대표소송권</td>
+<td>0.01% + 6개월</td>
+</tr>
+<tr>
+<td style="text-align: center;">제466조</td>
+<td>회계장부열람권</td>
+<td>0.1% + 6개월</td>
+</tr>
+</tbody>
+</table>
+<h3>3.2 보유기간 계산 실무</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">쟁점</th>
+<th>기준</th>
+<th>실무 포인트</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>기산일</strong></td>
+<td>권리 행사일 기준 <strong>6개월 전</strong>부터 계속 보유</td>
+<td>행사일 &gt; 기산일 순서로 계산</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>계속보유</strong></td>
+<td>중단 없이 계속 보유할 것</td>
+<td>하루라도 매도 시 리셋, 단 대차거래는 포함·제외 다툼 있음</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>합산 보유</strong></td>
+<td>6개월간 평균 잔고가 아닌 <strong>매일매일</strong> 요건 충족</td>
+<td>소수주주 연합 시 각자 요건 개별 충족 필요</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>주주명부 기준</strong></td>
+<td>명의개서 완료된 주식만 인정</td>
+<td>실질주주는 명의개서 대리인(SK증권 사태 등) 유의</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>예외</strong></td>
+<td>상속·증여·합병 등 포괄승계 시 보유기간 승계 가능</td>
+<td>판례법리, 입증 필요</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[근거·판례] <strong>서울고등법원 2019. 3. 21.자 2019라20280 결정</strong> — 상장회사 주주제안권은 상법 제542조의6 특례(0.5%+6개월)가 우선 적용되며, 6개월 보유요건 충족이 필수적
+내부 WIKI 검증 (D-주주제안권_행사거부_손해배상, canonical)</p>
+<p>[근거·판례] <strong>대법원 2025. 10. 16. 선고 2019다236385 판결</strong> — 주주제안 부당 거부 시 주식매수청구권 상실 손해배상책임 인정. 6개월 보유요건을 충족한 주주의 제안을 부당 거부하면 이사 개인 책임 발생
+내부 WIKI 검증</p>
+</blockquote>
+<hr /></section><section class="blk" id="s6"><div class="secl">SECTION</div><h2>4. 소수주주권 4대 필수 권리 행사 절차 개요</h2>
+<p><strong>한눈에</strong>: 가장 실무에서 많이 활용되는 4대 권리의 행사 절차를 한눈에 비교한다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">단계</th>
+<th style="text-align: center;">주주제안(제363조의2)</th>
+<th style="text-align: center;">주주대표소송(제403조)</th>
+<th style="text-align: center;">회계장부열람(제466조)</th>
+<th style="text-align: center;">이사해임청구(제385조)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>Step 1</strong></td>
+<td style="text-align: center;">지분율·6개월 보유 확인</td>
+<td style="text-align: center;">지분율·6개월 보유 확인</td>
+<td style="text-align: center;">지분율·6개월 보유 확인</td>
+<td style="text-align: center;">지분율·6개월 보유 확인</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Step 2</strong></td>
+<td style="text-align: center;">서면 제안서 작성(의안의 요령)</td>
+<td style="text-align: center;">감사(위원회)에 서면 제소청구</td>
+<td style="text-align: center;">이유 기재 서면 청구(내용증명)</td>
+<td style="text-align: center;">해임 사유 입증 자료 수집</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Step 3</strong></td>
+<td style="text-align: center;">주총 6주 전까지 제안서 도달</td>
+<td style="text-align: center;">30일 대기(회사 제소 여부 확인)</td>
+<td style="text-align: center;">회사가 부당함 증명해야 거부 가능</td>
+<td style="text-align: center;">법원에 해임청구 소송 제기</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Step 4</strong></td>
+<td style="text-align: center;">이사회 부의·거부 결정</td>
+<td style="text-align: center;">30일 경과 시 주주 직접 제소</td>
+<td style="text-align: center;">거부 시 법원 열람허가 결정 청구</td>
+<td style="text-align: center;">법원 심리 → 해임 여부 결정</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Step 5</strong></td>
+<td style="text-align: center;">주총에서 의안 표결</td>
+<td style="text-align: center;">소송 수행(회사 공동소송참가)</td>
+<td style="text-align: center;">열람·등사 실행</td>
+<td style="text-align: center;">해임 결정 → 등기</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>실무 포인트 (법무팀 관점)</strong>: 위 4대 권리 중 <strong>회계장부열람</strong>이 가장 먼저 활용된다. 이유는 (i) 지분율 요건이 낮고(0.1%), (ii) 입증책임이 회사에 전환되어 거부가 어렵고, (iii) 후속 권리(주주제안·대표소송)의 증거 수집 수단이기 때문이다. 회계장부열람 청구가 들어오면 경영권 분쟁의 신호탄으로 간주해야 한다.</p>
+</blockquote>
+<hr /></section><section class="blk" id="s7"><div class="secl">SECTION</div><h2>5. 2025~2026년 상법개정 반영 사항</h2>
+<p><strong>한눈에</strong>: 최근 개정으로 소수주주권 행사 요건이 더 완화되거나 신설된 사항을 정리한다.</p>
+<table>
+<thead>
+<tr>
+<th>개정 사항</th>
+<th>내용</th>
+<th style="text-align: center;">시행일</th>
+<th>실무 영향</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>주주대표소송 하자치유</td>
+<td>제소 전 30일 대기 요건, 회사 거절 의사표시 시 생략 가능</td>
+<td style="text-align: center;">판례(2024다216743)</td>
+<td>제소 문턱 실질적 하향</td>
+</tr>
+<tr>
+<td>다중대표소송 신설</td>
+<td>모회사 주주가 자회사 이사 상대 대표소송 가능</td>
+<td style="text-align: center;">2026년 시행</td>
+<td>기업집단 감시 강화</td>
+</tr>
+<tr>
+<td>이사 주주충실의무</td>
+<td>충실의무 대상 '회사+주주'로 확대</td>
+<td style="text-align: center;">2025.7.22</td>
+<td>소수주주 보호 근거 강화</td>
+</tr>
+<tr>
+<td>집중투표제 의무화</td>
+<td>자산 2조↑ 상장사 정관 배제 불가</td>
+<td style="text-align: center;">2026.9.10</td>
+<td>소수주주 이사회 진입 용이</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[근거·판례] <strong>대법원 2025. 6. 12. 선고 2024다216743 판결</strong> — 주주대표소송 제소요건 하자치유 법리 최초 명시 인정
+내부 WIKI 검증 (D-대표소송_제소요건_하자치유, canonical)</p>
+</blockquote>
+<hr /></section><section class="blk" id="s8"><div class="secl">SECTION</div><h2>자주 묻는 질문 (Q&amp;A)</h2>
+<p><strong>Q1. 상장사 주식을 6개월 동안 보유했는데, 중간에 1주를 팔았다가 다시 샀어요. 보유기간이 리셋되나요?</strong></p>
+<p>네, 원칙적으로 리셋됩니다. '6개월 계속보유'는 권리 행사일 기준으로 <strong>역산하여 6개월 동안 하루도 빠짐없이</strong> 해당 지분율 이상을 보유하고 있어야 함을 의미합니다. 중간에 1주라도 매도하여 보유 주식 수가 요건 미만으로 떨어지면, 그 시점부터 다시 6개월을 새로 계산해야 합니다. 다만 동일한 날에 매도 후 재매수한 경우나, 대차거래 등으로 인한 일시적 변동은 다툼의 여지가 있습니다(실무적으로는 보수적으로 접근할 것을 권장).</p>
+<p><strong>Q2. 소수주주 3명이 각각 0.2%씩 보유하고 있는데, 합쳐서 0.5%가 넘으니 주주제안을 할 수 있나요?</strong></p>
+<p><strong>안 됩니다.</strong> 소수주주권 행사 요건(지분율·보유기간)은 <strong>각 주주별로 개별 충족</strong>해야 합니다. 여러 주주의 지분을 합산하여 요건을 충족할 수 있는 권리는 극히 제한적입니다(주총 소집청구권 등 일부만 주주 공동행사를 인정). 주주제안권(0.5%+6개월)은 각 주주가 개별적으로 요건을 충족해야 하며, 3명의 지분을 합산할 수 없습니다. 다만 주주대표소송(0.01%)은 워낙 낮은 요건이라 실무상 문제가 거의 없습니다.</p>
+<p><strong>Q3. 비상장사 주주인데, 3%를 보유하고 있습니다. 어떤 권리를 행사할 수 있나요?</strong></p>
+<p>비상장사 3% 보유 주주는 다음 권리를 행사할 수 있습니다: <strong>①주주제안권</strong>(제363조의2)으로 주총 안건 제안, <strong>②이사·감사 해임청구권</strong>(제385조·제415조), <strong>③회계장부열람권</strong>(제466조)으로 경영 정보 확인, <strong>④주총 소집청구권</strong>(제366조). 보유기간 제한은 없습니다(비상장사는 6개월 요건 미적용). 만약 1%만 보유 중이라면 주주대표소송(제403조)과 유지청구(제424조)만 가능합니다.</p>
+<p><strong>Q4. 6개월 보유요건을 입증하려면 어떤 자료를 준비해야 하나요?</strong></p>
+<p>증권사 계좌 거래내역(6개월분), 주주명부(명의개서 완료 증명), 한국예탁결제원 실질주주명부가 핵심 증빙 자료입니다. 특히 주주명부 폐쇄 기간 중 권리를 행사하는 경우, 명의개서가 완료된 주주만 권리 행사가 가능하므로(대법원 판례), 권리 행사 전에 명의개서 상태를 반드시 확인해야 합니다. 소송이나 법원 청구 시에는 위 자료들을 첨부하여 요건 충족을 입증해야 합니다.</p>
+<p><strong>Q5. 2025~2026년 상법개정으로 소수주주권 행사 요건 중 가장 크게 달라진 점은?</strong></p>
+<p>① <strong>주주대표소송 하자치유 법리</strong>(2024다216743)가 판례로 확립되어 제소 전 30일 대기 요건이 사실상 완화되었고, ② <strong>다중대표소송</strong>(제406조의2)이 신설되어 모회사 주주가 자회사 이사까지 책임을 추궁할 수 있게 되었으며, ③ <strong>이사의 주주충실의무</strong>(제382조의3)가 신설되어 소수주주 보호의 법적 근거가 강화되었습니다. 지분율 요건 자체(0.01%~3%)는 기존과 동일하지만, 권리 행사가 더 용이해진 방향으로 변화하고 있습니다.</p>
+<hr /></section><section class="blk" id="s9"><div class="secl">SECTION</div><h2>최신성·면책 고지</h2>
+<p>본 자료는 <strong>2026-07-11</strong> 기준으로 작성되었으며, 인용 법령·판례는 작성 시점의 현행성을 확인한 것입니다.
+법령은 개정될 수 있고 사안마다 결론이 달라질 수 있으므로, 실제 의사결정 전 최신 법령과 개별 사실관계 확인이 필요합니다.
+본 자료는 일반적 법률 정보 제공이며 특정 사안에 대한 법률 자문이 아닙니다.</p>
+<hr /></section><section class="blk" id="s10"><div class="secl">SECTION</div><h2>검증 로그 (내부용)</h2>
+<table>
+<thead>
+<tr>
+<th>인용</th>
+<th style="text-align: center;">유형</th>
+<th>검증 결과</th>
+<th style="text-align: center;">판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>상법 제542조의6(상장사 특례)</td>
+<td style="text-align: center;">조문</td>
+<td>내부 WIKI D-소수주주권 canonical</td>
+<td style="text-align: center;">등재</td>
+</tr>
+<tr>
+<td>상법 제363조의2(주주제안권)</td>
+<td style="text-align: center;">조문</td>
+<td>내부 WIKI D-주주제안권 canonical</td>
+<td style="text-align: center;">등재</td>
+</tr>
+<tr>
+<td>상법 제403조(주주대표소송)</td>
+<td style="text-align: center;">조문</td>
+<td>내부 WIKI D-대표소송 canonical</td>
+<td style="text-align: center;">등재</td>
+</tr>
+<tr>
+<td>상법 제466조(회계장부열람)</td>
+<td style="text-align: center;">조문</td>
+<td>내부 WIKI D-회계장부 canonical</td>
+<td style="text-align: center;">등재</td>
+</tr>
+<tr>
+<td>상법 제385조(이사해임청구)</td>
+<td style="text-align: center;">조문</td>
+<td>내부 WIKI D-이사해임청구 canonical</td>
+<td style="text-align: center;">등재</td>
+</tr>
+<tr>
+<td>상법 제366조(주총소집청구)</td>
+<td style="text-align: center;">조문</td>
+<td>내부 WIKI canonical</td>
+<td style="text-align: center;">등재</td>
+</tr>
+<tr>
+<td>상법 제424조(유지청구)</td>
+<td style="text-align: center;">조문</td>
+<td>내부 WIKI canonical</td>
+<td style="text-align: center;">등재</td>
+</tr>
+<tr>
+<td>상법 제520조(회사해산청구)</td>
+<td style="text-align: center;">조문</td>
+<td>내부 WIKI canonical</td>
+<td style="text-align: center;">등재</td>
+</tr>
+<tr>
+<td>대법원 99다58051(열람 범위)</td>
+<td style="text-align: center;">판례</td>
+<td>내부 WIKI D-회계장부 canonical</td>
+<td style="text-align: center;">등재</td>
+</tr>
+<tr>
+<td>대법원 2019다236385(부당 거부 손해)</td>
+<td style="text-align: center;">판례</td>
+<td>내부 WIKI D-주주제안권 canonical</td>
+<td style="text-align: center;">등재</td>
+</tr>
+<tr>
+<td>대법원 2024다216743(하자치유)</td>
+<td style="text-align: center;">판례</td>
+<td>내부 WIKI D-대표소송 canonical</td>
+<td style="text-align: center;">등재</td>
+</tr>
+<tr>
+<td>서울고법 2019라20280(상장 특례)</td>
+<td style="text-align: center;">판례</td>
+<td>내부 WIKI D-주주제안권 canonical</td>
+<td style="text-align: center;">등재</td>
+</tr>
+</tbody>
+</table></section><section class="blk faq" id="faq"><div class="secl">NOTICE</div><h2>확인 사항</h2><div class="notice">이 문서는 일반적인 법률 정보 제공을 위한 자료입니다. 구체적인 사실관계와 최신 법령?판례에 따라 결론이 달라질 수 있습니다.</div></section></main></div><footer class="footer"><div class="wrap"><h3>조우성 변호사</h3><p>실무에 바로 활용할 수 있는 법률 지식과 대응 가이드를 제공합니다.</p></div></footer></body></html>

@@ -1,202 +1,446 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="index,follow">
-<title>부당해고 구제신청: 노동위원회 접수→조사→심판까지 60일 타임라인 — 조우성 변호사</title>
-<meta name="description" content="부당해고 구제신청 절차와 노동위원회 60일 타임라인. 근로기준법 제23조·제28조·3개월 제척기간.">
-<style>
-:root{--bg:#f0f2f5;--panel:#fff;--panel2:#f8f9fb;--line:#e2e5ea;--ink:#111827;--ink2:#374151;--muted:#6b7280;--navy:#1a3a6b;--navy-d:#0f2547;--navy-l:#2e6be6;--navy-tint:#e8edf5;--green-bg:#ecfdf5;--green:#059669;--amber:#f59e0b;--amber-bg:#fffbeb;--red:#dc2626;--red-bg:#fef2f2;--font:-apple-system,BlinkMacSystemFont,Malgun Gothic,sans-serif;--readw:760px}
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>부당해고 구제신청: 노동위원회 접수→조사→심판까지 60일 타임라인</title><style>
+/* ============================================================
+   법률 대시보드 전자책 — Apollo 기반 경량 커스텀 (공개 롱스크롤)
+   Apollo 토큰(버건디 액센트 + 웜 화이트 + 딥와인 헤더) 상속.
+   의뢰인 리포트(리스크레이더 6뷰)와 달리 공개 독서형 롱스크롤.
+   self-contained: 외부 CDN/폰트/이미지/스크립트 의존 없음.
+   ============================================================ */
+:root{
+  --bg:#f5f1f2; --panel:#ffffff; --panel2:#faf6f7;
+  --line:#ebe2e5; --line2:#ddccd2;
+  --ink:#2c1d26; --ink2:#56424c; --muted:#8a7b82; --faint:#b3a6ab;
+  --wine:#7a2e3a; --wine-d:#5a1f2b; --wine-l:#9c4456;
+  --wine-tint:#f4e9ec; --wine-tint-ln:#ecd7dd;
+  --header-bg:#3a1525; --header-bg2:#4e1f32; --header-accent:#d4a0aa;
+  --rH:#c74a3c; --rM-bg:#f8e4b8; --rM-tx:#7d520a; --rL-bg:#d6ecdb; --rL-tx:#287a54;
+  --amber:#b45309; --green:#287a54;
+  --font:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Noto Sans KR',sans-serif;
+  --maxw:1120px; --readw:760px;
+}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:var(--font);background:var(--bg);color:var(--ink);margin:0;line-height:1.75;font-size:16px}
-.progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--navy-l),var(--navy));z-index:999;transition:width .3s;width:0%}
-.hero{background:linear-gradient(135deg,var(--navy-d),var(--navy));color:#fff;padding:48px 24px;text-align:center}
-.hero h1{font-size:clamp(1.35rem,4vw,1.85rem);margin:0 0 8px;line-height:1.3}
-.hero .badge{display:inline-block;background:rgba(255,255,255,.15);padding:4px 12px;border-radius:20px;font-size:12px;margin-bottom:12px;letter-spacing:.3px}
-.hero .meta{font-size:14px;opacity:.8;margin:8px 0 0}
-.hero .meta span{margin:0 8px}
-.tldr{background:var(--navy-tint);border-left:4px solid var(--navy-l);padding:16px 20px;margin:24px auto;max-width:var(--readw);border-radius:0 8px 8px 0;font-size:15px}
-.tldr strong{color:var(--navy)}
-.container{max-width:var(--readw);margin:0 auto;padding:0 16px 48px}
-.card{background:var(--panel);border-radius:10px;padding:24px;margin-bottom:20px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid var(--line)}
-.card h2{font-size:1.15rem;margin:0 0 12px;color:var(--navy);padding-bottom:8px;border-bottom:2px solid var(--navy-tint)}
-.card h3{font-size:1rem;margin:16px 0 8px;color:var(--ink2)}
-.card p{margin:0 0 10px;color:var(--ink2);line-height:1.7}
-.card p:last-child{margin-bottom:0}
-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
-th{background:var(--navy-tint);color:var(--navy-d);font-weight:600;padding:8px 10px;text-align:left;border:1px solid var(--line)}
-td{padding:8px 10px;border:1px solid var(--line);vertical-align:top}
-tr:nth-child(even){background:var(--panel2)}
-.alert-box{background:var(--amber-bg);border-left:4px solid var(--amber);padding:12px 16px;margin:12px 0;border-radius:0 6px 6px 0;font-size:14px}
-.alert-box strong{color:#92400e}
-.info-box{background:var(--navy-tint);border-left:4px solid var(--navy);padding:12px 16px;margin:12px 0;border-radius:0 6px 6px 0;font-size:14px}
-.info-box strong{color:var(--navy-d)}
-.checklist{list-style:none;padding:0;margin:8px 0}
-.checklist li{padding:5px 0 5px 24px;position:relative;font-size:14px;border-bottom:1px solid var(--panel2)}
-.checklist li:before{content:"☐";position:absolute;left:0;color:var(--navy-l)}
-details{background:var(--panel2);border-radius:6px;padding:0 14px;margin:6px 0;border:1px solid var(--line)}
-details summary{cursor:pointer;font-weight:600;padding:12px 0;color:var(--navy);font-size:14px}
-details p{padding:0 0 12px;margin:0;font-size:14px}
-.legal-table th:first-child{width:40%}
-.footer{text-align:center;padding:32px 16px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);margin-top:24px}
-@media(max-width:600px){.hero{padding:32px 16px}.card{padding:16px}table{font-size:13px}th,td{padding:6px 8px}}
-</style>
-</head>
-<body>
-<div class="progress" id="progress"></div>
-<div class="hero">
-<div class="badge">📘 법률 대시보드 전자책</div>
-<h1>부당해고 구제신청:<br>노동위원회 접수→조사→심판까지 60일 타임라인</h1>
-<div class="meta">작성일 2026-07-11 · 법령시행일 2026-07-11 · 읽는시간 5분</div>
-</div>
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
 
-<div class="container">
-<div class="tldr">
-<strong>3줄 요약</strong><br>
-• 부당해고 구제신청은 해고일로부터 <strong>3개월 이내</strong>에 지방노동위원회에 제기해야 한다. 단 하루라도 지나면 신청 자체가 각하된다(근로기준법 제28조).<br>
-• 노동위원회는 접수일로부터 <strong>60일 이내</strong>에 심문회의를 개최한다(근로기준법 제29조). 신청부터 판정까지 통상 <strong>2~3개월</strong> 소요된다.<br>
-• 부당해고로 인정되면 <strong>원직복직</strong> 및 <strong>해고기간 임금상당액</strong> 지급 명령이 내려진다. 불이행 시 이행강제금(최대 3천만 원) 및 형사처벌이 가능하다.
-</div>
+/* 읽기 진행바 */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;
+  background:linear-gradient(90deg,var(--wine),var(--wine-l));transition:width .1s linear}
 
-<div class="card">
-<h2>1. 부당해고의 개념과 법적 근거</h2>
-<p><strong>부당해고</strong>란 근로기준법 제23조가 금지하는 '정당한 이유 없는 해고'를 말한다. 해고의 정당성은 <strong>① 실체적 정당성</strong>(징계 사유 존재), <strong>② 절차적 정당성</strong>(서면통지·징계위원회 등), <strong>③ 양정의 적정성</strong>(과잉금지·비례원칙)의 3가지 축으로 판단한다.</p>
-<div class="alert-box"><strong>중요:</strong> 특히 <strong>서면통지</strong>(근로기준법 제27조)가 없으면 해고는 원칙적으로 <strong>무효</strong>가 된다. 구두 통보는 큰 위험!</div>
+/* 헤더 표지 (딥와인, 유일한 딥 컬러) */
+.header{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0}
+.header .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 26px}
+.header .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;
+  color:var(--header-accent);border:1px solid rgba(212,160,170,.4);border-radius:999px;padding:4px 12px}
+.header .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--header-accent)}
+
+/* 히어로 */
+.hero{max-width:var(--maxw);margin:0 auto;padding:30px 26px 8px}
+.hero .eb{font-size:12px;font-weight:700;color:var(--wine);letter-spacing:.02em;margin-bottom:10px}
+.hero h1{font-size:30px;line-height:1.28;font-weight:800;margin:0 0 16px;color:var(--ink);letter-spacing:-.01em}
+.hero .tldr{background:var(--wine-tint);border:1px solid var(--wine-tint-ln);border-left:4px solid var(--wine);
+  border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.hero .tldr .lb{font-size:12px;font-weight:700;color:var(--wine-d);margin-bottom:8px}
+.hero .tldr ul{margin:0;padding-left:18px}
+.hero .tldr li{margin:4px 0;font-size:15px;color:var(--ink2)}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:12.5px;color:var(--muted);margin-bottom:18px}
+.hero .meta .vchip{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);
+  font-weight:700;border-radius:6px;padding:3px 9px;font-size:11.5px}
+.hero .cta-row{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:9px;
+  padding:11px 18px;text-decoration:none;cursor:pointer;border:1px solid transparent}
+.btn-p{background:var(--wine);color:#fff}
+.btn-p:hover{background:var(--wine-d)}
+.btn-o{background:#fff;color:var(--wine-d);border-color:var(--line2)}
+.btn-o:hover{background:var(--panel2)}
+
+/* 셸: 좌측 목차 + 본문 */
+.app{max-width:var(--maxw);margin:0 auto;padding:8px 26px 60px;
+  display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:start}
+
+/* 목차 (데스크톱 = 좌측 sticky) */
+.toc{position:sticky;top:24px}
+.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;
+  margin:0 0 10px;padding-left:2px}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}
+.toc li{counter-increment:toc;margin:1px 0}
+.toc a{display:flex;gap:9px;font-size:13.5px;color:var(--ink2);text-decoration:none;
+  padding:7px 10px;border-radius:8px;border-left:3px solid transparent;line-height:1.4}
+.toc a::before{content:counter(toc,decimal-leading-zero);color:var(--faint);font-weight:700;font-size:11.5px;flex:none}
+.toc a:hover{background:var(--panel2)}
+.toc a.active{background:var(--wine-tint);border-left-color:var(--wine);color:var(--wine-d);font-weight:700}
+.toc-toggle{display:none}
+
+/* 본문 */
+.content{max-width:var(--readw);min-width:0}
+section.blk{scroll-margin-top:24px;margin-bottom:38px}
+.secl{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.05em;margin:0 0 12px}
+.secl::before{content:"";width:7px;height:15px;background:var(--wine);border-radius:2px;flex:none}
+section.blk h2{font-size:23px;font-weight:800;line-height:1.35;margin:0 0 14px;color:var(--ink);letter-spacing:-.01em}
+section.blk h3{font-size:17px;font-weight:700;margin:26px 0 10px;color:var(--wine-d)}
+section.blk p{margin:0 0 14px;color:var(--ink2)}
+section.blk ul,section.blk ol{margin:0 0 14px;padding-left:22px;color:var(--ink2)}
+section.blk li{margin:6px 0}
+strong{color:var(--ink);font-weight:700}
+a.ln{color:var(--wine-l);text-decoration:none;border-bottom:1px solid var(--wine-tint-ln)}
+a.ln:hover{border-bottom-color:var(--wine-l)}
+
+/* 핵심요약 카드 */
+.summary{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.summary .lb{font-size:11px;font-weight:700;color:var(--wine-d);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.summary ul{margin:0;padding-left:18px}
+
+/* 근거 카드 (조문·판례) */
+.ev{background:#fff;border:1px solid var(--line);border-left:4px solid var(--wine);border-radius:10px;
+  padding:13px 15px;margin:0 0 12px}
+.ev .top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px}
+.ev .kind{font-size:11px;font-weight:700;color:#fff;background:var(--wine);border-radius:5px;padding:2px 8px}
+.ev .kind.law{background:var(--wine-d)}
+.ev .kind.case{background:var(--amber)}
+.ev .cite{font-size:13.5px;font-weight:700;color:var(--ink)}
+.ev .vtick{margin-left:auto;font-size:11px;font-weight:700;color:var(--rL-tx);background:var(--rL-bg);border-radius:5px;padding:2px 7px}
+.ev .gist{font-size:14px;color:var(--ink2);margin:0}
+.ev .date{font-size:12px;color:var(--muted);margin-top:5px}
+
+/* 다이어그램 — 플로우 / 체크리스트 (CSS·SVG only) */
+.figure{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin:0 0 18px}
+.figure .cap{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:12px}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px}
+.flow .step{flex:1;min-width:120px;background:var(--wine-tint);border:1px solid var(--wine-tint-ln);
+  border-radius:10px;padding:11px 12px;position:relative}
+.flow .step .n{font-size:11px;font-weight:700;color:var(--wine)}
+.flow .step .t{font-size:13.5px;font-weight:700;color:var(--ink);margin-top:2px}
+.flow .step .d{font-size:12.5px;color:var(--ink2);margin-top:3px}
+.checklist{list-style:none;margin:0;padding:0}
+.checklist li{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+.checklist li:last-child{border-bottom:none}
+.checklist .ck{flex:none;width:20px;height:20px;border-radius:5px;background:var(--rL-bg);color:var(--rL-tx);
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+
+/* 위험도 칩 */
+.chip{display:inline-flex;align-items:center;justify-content:center;min-width:34px;font-size:11px;font-weight:500;
+  border-radius:6px;padding:3px 8px;margin-right:4px}
+.c-H{background:var(--rH);color:#fff}
+.c-M{background:var(--rM-bg);color:var(--rM-tx)}
+.c-L{background:var(--rL-bg);color:var(--rL-tx)}
+
+/* 표 */
+.tbl-wrap{overflow-x:auto;margin:0 0 18px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px}
+
+/* FAQ (아코디언) */
+.faq details{background:#fff;border:1px solid var(--line);border-radius:10px;margin:0 0 10px;overflow:hidden}
+.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:15px;font-weight:700;color:var(--ink);
+  display:flex;align-items:center;gap:10px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--wine-tint);
+  color:var(--wine-d);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+.faq details[open] summary{border-bottom:1px solid var(--line);color:var(--wine-d)}
+.faq .a{padding:14px 16px;font-size:14.5px;color:var(--ink2)}
+
+/* 최신성·면책 고지 */
+.notice{background:#fff;border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;
+  font-size:12.5px;color:var(--muted);line-height:1.7}
+
+/* 맨 위로 버튼 */
+#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--wine-tint-ln);background:var(--wine);color:#fff;font-size:18px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;
+  box-shadow:0 4px 14px rgba(58,21,37,.28)}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{background:var(--wine-d)}
+
+/* 푸터 프로필 + 상담 CTA */
+.footer{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0;margin-top:20px}
+.footer .wrap{max-width:var(--maxw);margin:0 auto;padding:34px 26px}
+.footer h3{font-size:20px;font-weight:800;margin:0 0 8px;color:#fff}
+.footer p{font-size:14px;color:rgba(255,255,255,.72);margin:0 0 6px;line-height:1.7}
+.footer .prof{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end}
+.footer .cta-f{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.footer .btn-f{background:#fff;color:var(--wine-d)}
+.footer .btn-f:hover{background:var(--header-accent)}
+.footer .btn-fo{background:transparent;color:#f4eef0;border-color:rgba(255,255,255,.35)}
+.footer .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:22px;padding-top:14px;
+  font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.7}
+
+/* ── 모바일 (≤820px) ── */
+@media(max-width:820px){
+  .hero h1{font-size:24px}
+  .app{grid-template-columns:1fr;gap:0;padding-top:0}
+  .toc{position:static;margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 8px}
+  .toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;
+    cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--wine-d);padding:9px 8px}
+  .toc-toggle .ar{transition:transform .2s}
+  .toc.closed .toc-toggle .ar{transform:rotate(-90deg)}
+  .toc .tt{display:none}
+  .toc ol{max-height:50vh;overflow:auto}
+  .toc.closed ol{display:none}
+  section.blk h2{font-size:20px}
+  th,td{white-space:nowrap}
+}
+@media print{
+  #progress,.toc,.cta-row,.footer .cta-f{display:none}
+  .header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .app{display:block}
+}
+</style></head><body><div id="progress"></div><button id="toTop" aria-label="맨 위로">?</button><header class="header"><div class="wrap"><span class="badge"><span class="dot"></span>조우성 변호사 ? 법률 인사이트</span></div></header><div class="hero"><div class="eb">전자책 대시보드 ? 실무 가이드</div><h1>부당해고 구제신청: 노동위원회 접수→조사→심판까지 60일 타임라인</h1><div class="tldr"><div class="lb">3줄 요약 (TL;DR)</div><ul><li>원문 Markdown의 제목?본문?표?체크리스트를 반영한 공개용 HTML입니다.</li><li>문서의 핵심 내용과 실무상 확인 포인트를 한 화면에서 확인할 수 있습니다.</li><li>구체적인 사안은 최신 법령?판례와 사실관계 확인이 필요합니다.</li></ul></div><div class="meta"><span>원문: 20260711_unfair_dismissal_remedy.md</span><span class="vchip">원문 기반 HTML</span></div><div class="cta-row"><a class="btn btn-p" href="#s1">핵심 내용 보기</a><a class="btn btn-o" href="#faq">확인 사항</a></div></div><div class="app"><nav class="toc" id="toc"><div class="tt">목차</div><ol id="toc-list"><li><a href="#s1">본문</a></li><li><a href="#s2">3줄 요약 (TL;DR)</a></li><li><a href="#s3">1. 부당해고의 개념과 법적 근거</a></li><li><a href="#s4">2. 구제신청 절차 — 60일 타임라인</a></li><li><a href="#s5">3. 노동위원회 vs 법원 소송 선택 기준</a></li><li><a href="#s6">4. 구제명령의 효과와 불이행 시 제재</a></li><li><a href="#s7">5. 실무 체크리스트</a></li><li><a href="#s8">6. FAQ</a></li><li><a href="#s9">7. 관련 법령·판례</a></li></ol></nav><main class="content"><section class="blk" id="s1"><div class="secl">SECTION</div><blockquote>
+<p>[!web] 웹으로 보기
+<a href="https://woosungjo-law.github.io/share/d/unfair-dismissal-remedy-rc60.html">https://woosungjo-law.github.io/share/d/unfair-dismissal-remedy-rc60.html</a></p>
+</blockquote>
+<p><em>출처: 조우성 변호사 / 로펌 머스트노우 | 문의: law@mustknow.co.kr</em></p>
+<h1>부당해고 구제신청: 노동위원회 접수→조사→심판까지 60일 타임라인</h1></section><section class="blk" id="s2"><div class="secl">SECTION</div><h2>3줄 요약 (TL;DR)</h2>
+<ul>
+<li><strong>부당해고 구제신청</strong>은 해고일로부터 <strong>3개월 이내</strong>에 사업장 관할 지방노동위원회에 제기해야 한다(근로기준법 제28조). 이 기간은 제척기간으로, 단 하루라도 지나면 신청 자체가 각하된다.</li>
+<li>노동위원회는 접수일로부터 <strong>60일 이내</strong>에 심문회의를 개최하고 조사·심판 절차를 진행한다(근로기준법 제29조). 신청부터 판정까지 통상 <strong>2~3개월</strong> 소요된다.</li>
+<li>부당해고로 인정되면 <strong>원직복직</strong> 및 <strong>해고기간 임금상당액</strong> 지급 명령이 내려진다. 사용자가 불이행하면 이행강제금(최대 3천만 원) 및 형사처벌(1년 이하 징역)이 가능하다.</li>
+</ul>
+<hr /></section><section class="blk" id="s3"><div class="secl">SECTION</div><h2>1. 부당해고의 개념과 법적 근거</h2>
+<p><strong>한눈에</strong>
+- <strong>부당해고</strong>란 근로기준법 제23조가 금지하는 '정당한 이유 없는 해고'를 말한다.
+- 해고의 정당성은 <strong>① 실체적 정당성</strong>(징계 사유 존재), <strong>② 절차적 정당성</strong>(서면통지·징계위원회 등 절차 준수), <strong>③ 양정의 적정성</strong>(과잉금지·비례원칙)의 3가지 축으로 판단한다.
+- 특히 <strong>서면통지</strong>(근로기준법 제27조)가 없으면 해고는 원칙적으로 <strong>무효</strong>가 된다. 구두 통보·문자메시지·이메일도 경우에 따라 인정되나, 공식 서면통지가 가장 안전하다.</p>
 <table>
-<tr><th>위법 유형</th><th>내용</th><th>법적 근거</th></tr>
-<tr><td>부당해고</td><td>정당한 이유 없는 해고</td><td>근로기준법 제23조</td></tr>
-<tr><td>서면통지 위반</td><td>해고 사유·시기 서면 미통지</td><td>근로기준법 제27조</td></tr>
-<tr><td>해고예고 위반</td><td>30일 전 예고 없음</td><td>근로기준법 제26조</td></tr>
-<tr><td>정리해고 요건 위반</td><td>4요건 미충족</td><td>근로기준법 제24조</td></tr>
-<tr><td>권고사직 강요</td><td>자발적 동의 없는 사실상 해고</td><td>민법 제110조</td></tr>
+<thead>
+<tr>
+<th>위법 유형</th>
+<th>내용</th>
+<th>법적 근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>부당해고</td>
+<td>정당한 이유 없는 해고</td>
+<td>근로기준법 제23조</td>
+</tr>
+<tr>
+<td>서면통지 위반</td>
+<td>해고 사유·시기 서면 미통지</td>
+<td>근로기준법 제27조</td>
+</tr>
+<tr>
+<td>해고예고 위반</td>
+<td>30일 전 예고 없음 (3개월 미만 근로자 제외)</td>
+<td>근로기준법 제26조</td>
+</tr>
+<tr>
+<td>정리해고 요건 위반</td>
+<td>긴박한 경영 필요·해고회피 노력 부족 등 4요건 미충족</td>
+<td>근로기준법 제24조</td>
+</tr>
+<tr>
+<td>권고사직 강요</td>
+<td>자발적 동의 없는 사실상 해고</td>
+<td>민법 제110조 (강박 의사표시 취소)</td>
+</tr>
+</tbody>
 </table>
-</div>
-
-<div class="card">
-<h2>2. 구제신청 절차 — 60일 타임라인</h2>
+<hr /></section><section class="blk" id="s4"><div class="secl">SECTION</div><h2>2. 구제신청 절차 — 60일 타임라인</h2>
+<h3>타임라인 개요 (접수→조사→심판→판정)</h3>
 <table>
-<tr><th>단계</th><th>내용</th><th>소요 기간</th></tr>
-<tr><td><strong>0</strong></td><td>해고 발생 — 해고일 특정·서면통지 여부 확인</td><td>당일~3일</td></tr>
-<tr><td><strong>1</strong></td><td>관할 지방노동위원회에 구제신청서 접수</td><td>해고일부터 <strong>3개월 이내</strong></td></tr>
-<tr><td><strong>2</strong></td><td>조사관 배정 → 사실조사</td><td>접수 후 10~20일</td></tr>
-<tr><td><strong>3</strong></td><td>심문회의 개최 (3명 공익위원)</td><td>접수일부터 <strong>60일 이내</strong></td></tr>
-<tr><td><strong>4</strong></td><td>판정 — 인용(부당해고) 또는 기각</td><td>심문 후 14~30일</td></tr>
-<tr><td><strong>5</strong></td><td>재심 신청 (불복 시)</td><td>판정서 송달일 10일 이내</td></tr>
-<tr><td><strong>6</strong></td><td>행정소송 (최종 불복 시)</td><td>재심 판정서 송달 후 15일 이내</td></tr>
+<thead>
+<tr>
+<th>단계</th>
+<th>내용</th>
+<th>소요 기간</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>0단계</strong></td>
+<td>해고 발생 — 해고일 특정·서면통지 여부 확인</td>
+<td>당일~3일</td>
+</tr>
+<tr>
+<td><strong>1단계</strong></td>
+<td>관할 지방노동위원회에 구제신청서 접수</td>
+<td>해고일부터 <strong>3개월 이내</strong></td>
+</tr>
+<tr>
+<td><strong>2단계</strong></td>
+<td>조사관 배정 → 사실조사(이유서·답변서·증거 수집)</td>
+<td>접수 후 <strong>10~20일</strong></td>
+</tr>
+<tr>
+<td><strong>3단계</strong></td>
+<td>심문회의 개최 (3명 공익위원)</td>
+<td>접수일부터 <strong>60일 이내</strong></td>
+</tr>
+<tr>
+<td><strong>4단계</strong></td>
+<td>판정 — 인용(부당해고) 또는 기각</td>
+<td>심문 후 <strong>14~30일</strong></td>
+</tr>
+<tr>
+<td><strong>5단계</strong></td>
+<td>재심 신청 (불복 시)</td>
+<td>판정서 송달일 <strong>10일 이내</strong></td>
+</tr>
+<tr>
+<td><strong>6단계</strong></td>
+<td>행정소송 (최종 불복 시)</td>
+<td>재심 판정서 송달일 <strong>15일 이내</strong></td>
+</tr>
+</tbody>
 </table>
-<div class="info-box"><strong>실무 포인트:</strong> 심문회의 개최 기한(60일)과 판정 기한을 합하면 전체 절차는 통상 <strong>2~3개월</strong> 소요된다. 재심·행정소송까지 가면 6개월~1년 이상 걸릴 수 있다.</div>
-
-<h3>2.1. 접수 — 3개월 제척기간</h3>
-<p>부당해고가 있은 날부터 <strong>3개월 이내</strong> 신청 필수. 이 기간은 제척기간으로 도과 시 권리 자체 소멸. 사업장 소재지 관할 지방노동위원회에 접수한다.</p>
-
-<h3>2.2. 조사 — 10~20일</h3>
-<p>조사관 배정 → 신청인 이유서·피신청인 답변서 제출 → 사실관계 확인·증거 수집.</p>
-
-<h3>2.3. 심판 — 접수 후 60일 이내 심문회의</h3>
-<p>3명의 공익위원으로 구성된 심판위원회가 심문회의 개최. 당사자 직접 출석, 의견 진술·증거 제출. 인용 시 원직복직 + 해고기간 임금상당액 지급 명령.</p>
-</div>
-
-<div class="card">
-<h2>3. 노동위원회 vs 법원 소송 선택 기준</h2>
+<p><strong>실무 포인트:</strong> 심문회의 개최 기한(60일)과 판정 기한을 합하면 전체 절차는 통상 <strong>2~3개월</strong> 소요된다. 재심·행정소송까지 가면 6개월~1년 이상 걸릴 수 있다.</p>
+<h3>2.1. 접수 (3개월 제척기간)</h3>
+<ul>
+<li>부당해고가 있은 날부터 <strong>3개월 이내</strong> 신청 필수(근로기준법 제28조 제2항)</li>
+<li>지연 시 구제신청권 자체가 소멸하므로 즉시 행동해야 함</li>
+<li>접수처: 사업장 소재지 관할 지방노동위원회</li>
+</ul>
+<h3>2.2. 조사 (10~20일)</h3>
+<ul>
+<li>조사관 배정 → 신청인 이유서·피신청인 답변서 제출</li>
+<li>사실관계 확인을 위한 증거 수집·관계인 면담</li>
+</ul>
+<h3>2.3. 심판 (접수 후 60일 이내 심문회의)</h3>
+<ul>
+<li>3명의 공익위원으로 구성된 심판위원회가 심문회의 개최</li>
+<li>당사자 직접 출석하여 의견 진술·증거 제출</li>
+<li>판정은 인용(부당해고 인정) 또는 기각</li>
+<li>인용 시: 원직복직 + 해고기간 임금상당액 지급 명령</li>
+</ul>
+<hr /></section><section class="blk" id="s5"><div class="secl">SECTION</div><h2>3. 노동위원회 vs 법원 소송 선택 기준</h2>
 <table>
-<tr><th>구분</th><th>노동위원회 구제신청</th><th>법원 해고무효 확인소송</th></tr>
-<tr><td>처리 기간</td><td>2~3개월 (신속)</td><td>6개월~수년 (장기)</td></tr>
-<tr><td>비용</td><td>수수료 없음 (저비용)</td><td>인지대·변호사 비용</td></tr>
-<tr><td>증명책임</td><td>사용자가 정당성 입증</td><td>근로자가 해고 무효 입증</td></tr>
-<tr><td>구제 내용</td><td>원직복직 + 임금상당액</td><td>해고무효 확인 + 임금 + 손해배상</td></tr>
-<tr><td>강제력</td><td>이행강제금(최대 3천만 원)</td><td>강제집행(압류·매각)</td></tr>
-<tr><td>제척기간</td><td>3개월 (제척기간)</td><td>임금채권 3년·손해배상 3년</td></tr>
-<tr><td>병행 가능</td><td colspan="2" style="text-align:center"><strong>두 절차는 별개로 동시 진행 가능!</strong></td></tr>
+<thead>
+<tr>
+<th>구분</th>
+<th>노동위원회 구제신청</th>
+<th>법원 해고무효 확인소송</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>처리 기간</strong></td>
+<td>2~3개월 (신속)</td>
+<td>6개월~수년 (장기)</td>
+</tr>
+<tr>
+<td><strong>비용</strong></td>
+<td>수수료 없음 (저비용)</td>
+<td>인지대·송달료·변호사 비용</td>
+</tr>
+<tr>
+<td><strong>증명책임</strong></td>
+<td>사용자가 정당성 입증</td>
+<td>근로자가 해고 무효 입증</td>
+</tr>
+<tr>
+<td><strong>구제 내용</strong></td>
+<td>원직복직 + 임금상당액</td>
+<td>해고무효 확인 + 임금청구 + 손해배상</td>
+</tr>
+<tr>
+<td><strong>강제력</strong></td>
+<td>이행강제금(최대 3천만 원) + 형사처벌</td>
+<td>강제집행(압류·매각)</td>
+</tr>
+<tr>
+<td><strong>소멸시효</strong></td>
+<td>3개월 (제척기간)</td>
+<td>임금채권 3년·손해배상 3년</td>
+</tr>
+<tr>
+<td><strong>병행 가능</strong></td>
+<td>노동위원회와 법원 소송은 <strong>병행 가능</strong></td>
+<td>동시 또는 순차 진행</td>
+</tr>
+</tbody>
 </table>
-<div class="info-box"><strong>실무 포인트:</strong> 두 절차는 <strong>별개</strong>로 동시에 진행할 수 있다. 노동위원회에 신속히 구제신청을 하고, 법원에도 해고무효 확인소송을 병행하는 '투 트랙 전략'이 효과적이다.</div>
-</div>
-
-<div class="card">
-<h2>4. 구제명령의 효과와 불이행 시 제재</h2>
+<p><strong>실무 포인트:</strong> 두 절차는 <strong>별개</strong>로 동시에 진행할 수 있다. 노동위원회에 신속히 구제신청을 하고, 법원에도 해고무효 확인소송을 병행하는 '투 트랙 전략'이 효과적이다.</p>
+<hr /></section><section class="blk" id="s6"><div class="secl">SECTION</div><h2>4. 구제명령의 효과와 불이행 시 제재</h2>
 <h3>구제명령 인용 시 효과</h3>
 <ul>
 <li><strong>원직복직</strong>: 해고 당시와 동일한 직급·직무로 복귀</li>
-<li><strong>임금상당액 지급</strong>: 해고기간 동안 받을 수 있었던 임금 전액</li>
-<li><strong>중간수입 공제</strong>: 해고기간 중 다른 직장 수입은 공제하나, 평균임금의 <strong>70%</strong> 한도 내에서만 공제 가능</li>
+<li><strong>임금상당액 지급</strong>: 해고기간 동안 정상 근무 시 받을 수 있었던 임금 전액</li>
+<li><strong>중간수입 공제</strong>: 해고기간 중 다른 직장에서 번 수입은 원칙적으로 공제되나, <strong>평균임금의 70%</strong> 한도 내에서만 공제 가능(휴업수당 법리 적용)</li>
 </ul>
 <h3>불이행 시 제재</h3>
-<table>
-<tr><th>제재</th><th>내용</th><th>근거</th></tr>
-<tr><td>이행강제금</td><td>최대 3천만 원</td><td>근로기준법 제33조</td></tr>
-<tr><td>형사처벌</td><td>1년 이하 징역 또는 1천만 원 이하 벌금</td><td>근로기준법 제111조</td></tr>
-</table>
-<div class="alert-box"><strong>주의:</strong> 이행강제금 납부와 형사처벌은 <strong>별개</strong>로 부과 가능하다. '이행강제금 내면 끝'이라는 생각은 큰 오해다.</div>
-</div>
-
-<div class="card">
-<h2>5. 실무 체크리스트</h2>
-<ul class="checklist">
-<li>해고일과 해고 사유를 정확히 특정하였는가?</li>
-<li>해고 사유·시기가 <strong>서면</strong>으로 통지되었는가? (없으면 무효 주장 가능)</li>
-<li>해고일로부터 <strong>3개월 이내</strong>에 구제신청을 제기할 수 있는가?</li>
-<li>해고의 정당성을 입증할 증거(근무평정·징계위 회의록 등)가 있는가?</li>
-<li>사업장 상시근로자 수가 <strong>5인 이상</strong>인가?</li>
-<li>해고예고수당(30일분 통상임금)을 받았는가?</li>
-<li>권고사직인 경우, 자발적 동의 없이 강요된 것인가?</li>
-<li>해고 전 징계위원회 등 적법한 절차를 거쳤는가?</li>
-<li>해고기간 중 다른 직장에 취업하여 중간수입이 있는가?</li>
-<li>노동위원회 구제신청과 법원 소송 중 선택 또는 병행 결정하였는가?</li>
+<ul>
+<li><strong>이행강제금</strong>: 최대 3천만 원(근로기준법 제33조)</li>
+<li><strong>형사처벌</strong>: 1년 이하 징역 또는 1천만 원 이하 벌금(근로기준법 제111조)</li>
+<li><strong>징역과 이행강제금은 별개</strong>로 부과 가능 — '이행강제금 내면 끝'이라는 생각은 큰 오해</li>
 </ul>
-</div>
-
-<div class="card">
-<h2>6. FAQ</h2>
-<details>
-<summary>Q1. 해고 통보를 문자로 받았습니다. 부당해고 구제신청이 가능한가요?</summary>
-<p>가능합니다. 근로기준법 제27조는 해고 사유와 시기를 <strong>서면</strong>으로 통지하도록 규정하나, 문자·이메일도 내용이 구체적이고 대응에 지장이 없다면 서면통지로 인정될 수 있습니다(대법원 2015두41401). 다만 공식 서면통지가 가장 안전하므로, 내용증명으로 해고 사유·시기 확인을 요구하는 것이 좋습니다.</p>
-</details>
-<details>
-<summary>Q2. 해고된 지 3개월이 넘었습니다. 방법이 없나요?</summary>
-<p>노동위원회 구제신청은 3개월 제척기간이 적용되어 각하됩니다. 그러나 <strong>법원에 해고무효 확인소송</strong>은 제기할 수 있습니다. 해고무효 확인소송의 소멸시효는 임금채권 3년, 손해배상청구권 3년으로 더 길기 때문에 3개월이 지났다면 법원 소송을 검토해야 합니다.</p>
-</details>
-<details>
-<summary>Q3. 5인 미만 사업장에서 일합니다. 부당해고 구제신청을 할 수 있나요?</summary>
-<p>근로기준법 제23조(해고 제한)와 제28조(부당해고 구제신청)는 <strong>상시 5인 이상</strong> 사업장에 적용됩니다. 5인 미만 사업장은 노동위원회 구제신청이 원칙적으로 불가능합니다. 그러나 해고예고수당(30일분) 청구는 가능하며, 민사소송도 별도로 제기할 수 있습니다.</p>
-</details>
-<details>
-<summary>Q4. 노동위원회에서 부당해고 인정을 받으면 바로 복직할 수 있나요?</summary>
-<p>구제명령이 확정(재심 기간 도과 또는 중앙노동위원회 판정 확정)되어야 사용자에게 복직 의무가 발생합니다. 사용자가 불이행하면 이행강제금(최대 3천만 원)이 부과되고, 노동위원회 고발로 형사처벌도 가능합니다.</p>
-</details>
-<details>
-<summary>Q5. 부당해고 구제신청과 해고무효 확인소송을 동시에 진행할 수 있나요?</summary>
-<p><strong>네, 가능합니다.</strong> 두 절차는 별개의 절차로 병행할 수 있습니다. 노동위원회는 신속한 구제(원직복직+임금상당액)를, 법원은 손해배상까지 포함한 포괄적 구제를 제공합니다. 다만 법원은 노동위원회의 판정을 존중하는 경향이 있으므로, 순차적 접근도 효과적입니다.</p>
-</details>
-</div>
-
-<div class="card">
-<h2>7. 관련 법령·판례</h2>
-<table class="legal-table">
-<tr><th>구분</th><th>내용</th></tr>
-<tr><td>근로기준법 제23조</td><td>정당한 이유 없는 해고 등의 금지</td></tr>
-<tr><td>근로기준법 제24조</td><td>경영상 이유에 의한 해고 요건 (4요건)</td></tr>
-<tr><td>근로기준법 제26조</td><td>해고예고 (30일 전)</td></tr>
-<tr><td>근로기준법 제27조</td><td>해고사유 등의 서면통지 (위반 시 무효)</td></tr>
-<tr><td>근로기준법 제28조</td><td>부당해고등의 구제신청 (3개월 제척기간)</td></tr>
-<tr><td>근로기준법 제29조</td><td>노동위원회 심문회의 (60일 이내 개최)</td></tr>
-<tr><td>근로기준법 제33조</td><td>이행강제금 (최대 3천만 원)</td></tr>
-<tr><td>근로기준법 제111조</td><td>구제명령 불이행 형사처벌 (1년 이하 징역)</td></tr>
-<tr><td>대법원 2015두41401</td><td>이메일 등 서면통지 효력 인정 범위</td></tr>
-<tr><td>대법원 2017다16778</td><td>해고예고수당과 부당해고는 별개</td></tr>
-</table>
-</div>
-
-<div class="footer">
-<strong>조우성 변호사</strong> · 로펌 머스트노우<br>
-문의: law@mustknow.co.kr<br>
-본 콘텐츠는 법률 정보 제공 목적으로, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.<br>
-© 2026 MustKnow. All rights reserved. <span style="opacity:.5">· noindex</span>
-</div>
-</div>
-
-<script>
-window.addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-window.innerHeight;var p=window.scrollY/h*100;document.getElementById('progress').style.width=Math.min(p,100)+'%'});
-</script>
-</body>
-</html>
+<hr /></section><section class="blk" id="s7"><div class="secl">SECTION</div><h2>5. 실무 체크리스트</h2>
+<ul>
+<li>[ ] 해고일과 해고 사유를 정확히 특정하였는가?</li>
+<li>[ ] 해고 사유·시기가 <strong>서면</strong>으로 통지되었는가? (없으면 무효 주장 가능)</li>
+<li>[ ] 해고일로부터 <strong>3개월 이내</strong>에 구제신청을 제기할 수 있는가?</li>
+<li>[ ] 해고의 정당성을 입증할 증거(근무평정·징계위원회 회의록·증언 등)가 있는가?</li>
+<li>[ ] 사업장 상시근로자 수가 <strong>5인 이상</strong>인가? (5인 미만은 부당해고 구제 적용 제외)</li>
+<li>[ ] 해고예고수당(30일분 통상임금)을 받았는가? (3개월 미만 근로자 제외)</li>
+<li>[ ] 권고사직인 경우, 자발적 동의 없이 강요된 것인가?</li>
+<li>[ ] 해고 전 징계위원회 등 적법한 절차를 거쳤는가?</li>
+<li>[ ] 해고기간 중 다른 직장에 취업하여 중간수입이 있는가? (공제 여부 판단)</li>
+<li>[ ] 노동위원회 구제신청과 법원 소송 중 어떤 절차를 선택할 것인가? (병행 가능)</li>
+</ul>
+<hr /></section><section class="blk" id="s8"><div class="secl">SECTION</div><h2>6. FAQ</h2>
+<p><strong>Q1. 해고 통보를 문자로 받았습니다. 부당해고 구제신청이 가능한가요?</strong>
+A1. 가능합니다. 근로기준법 제27조는 해고 사유와 시기를 <strong>서면</strong>으로 통지하도록 규정하나, 문자메시지·이메일도 내용이 구체적이고 근로자가 대응에 지장이 없다면 서면통지로 인정될 수 있습니다(대법원 2015두41401). 다만 공식 서면통지가 가장 안전하므로, 내용증명 우편으로 해고 사유와 시기의 확인을 요구하는 것이 좋습니다.</p>
+<p><strong>Q2. 해고된 지 3개월이 넘었습니다. 방법이 없나요?</strong>
+A2. 노동위원회 구제신청은 <strong>3개월 제척기간</strong>이 적용되어 신청이 각하됩니다. 다만, <strong>법원에 해고무효 확인소송</strong>은 제기할 수 있습니다. 해고무효 확인소송의 소멸시효는 임금채권 3년, 손해배상청구권 3년(또는 불법행위 인지일 3년)으로 더 길기 때문에 3개월이 지났다면 법원 소송을 검토해야 합니다.</p>
+<p><strong>Q3. 5인 미만 사업장에서 일합니다. 부당해고 구제신청을 할 수 있나요?</strong>
+A3. 근로기준법 제23조(해고 제한)와 제28조(부당해고 구제신청)는 <strong>상시 5인 이상</strong> 사업장에 적용됩니다. 5인 미만 사업장은 노동위원회 구제신청이 원칙적으로 불가능합니다. 그러나 해고예고(제26조)는 적용되므로 해고예고수당(30일분) 청구는 가능하며, 민사소송(부당이득반환·손해배상)도 별도로 제기할 수 있습니다.</p>
+<p><strong>Q4. 노동위원회에서 부당해고 인정을 받으면 바로 복직할 수 있나요?</strong>
+A4. 구제명령이 확정(재심 기간 도과 또는 중앙노동위원회 판정 확정)되어야 사용자에게 복직 의무가 발생합니다. 사용자가 불이행하면 이행강제금(최대 3천만 원)이 부과되고, 노동위원회 고발로 형사처벌도 가능합니다. 사용자가 복직을 거부하면서 합의를 원한다면 금전 보상에 대한 합의서를 작성할 수 있습니다.</p>
+<p><strong>Q5. 부당해고 구제신청과 해고무효 확인소송을 동시에 진행할 수 있나요?</strong>
+A5. <strong>네, 가능합니다.</strong> 두 절차는 별개의 절차로 병행할 수 있습니다. 노동위원회는 신속한 구제(원직복직 + 임금상당액)를, 법원은 손해배상까지 포함한 포괄적 구제를 제공합니다. 다만 법원은 노동위원회의 판정을 존중하는 경향이 있으므로, 노동위원회에서 먼저 판정을 받은 후 법원 소송을 진행하는 '순차적' 접근도 효과적입니다.</p>
+<hr /></section><section class="blk" id="s9"><div class="secl">SECTION</div><h2>7. 관련 법령·판례</h2>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>근로기준법 제23조</td>
+<td>정당한 이유 없는 해고 등의 금지</td>
+</tr>
+<tr>
+<td>근로기준법 제24조</td>
+<td>경영상 이유에 의한 해고 요건 (4요건)</td>
+</tr>
+<tr>
+<td>근로기준법 제26조</td>
+<td>해고예고 (30일 전)</td>
+</tr>
+<tr>
+<td>근로기준법 제27조</td>
+<td>해고사유 등의 서면통지 (위반 시 무효)</td>
+</tr>
+<tr>
+<td>근로기준법 제28조</td>
+<td>부당해고등의 구제신청 (3개월 제척기간)</td>
+</tr>
+<tr>
+<td>근로기준법 제29조</td>
+<td>노동위원회 심문회의 (60일 이내 개최)</td>
+</tr>
+<tr>
+<td>근로기준법 제33조</td>
+<td>이행강제금 (최대 3천만 원)</td>
+</tr>
+<tr>
+<td>근로기준법 제111조</td>
+<td>구제명령 불이행 형사처벌 (1년 이하 징역)</td>
+</tr>
+<tr>
+<td>대법원 2015두41401</td>
+<td>이메일 등 서면통지 효력 인정 범위</td>
+</tr>
+<tr>
+<td>대법원 2017다16778</td>
+<td>해고예고수당과 부당해고는 별개</td>
+</tr>
+<tr>
+<td>대법원 2011다21962</td>
+<td>해고 정당성 판단 기준 종합</td>
+</tr>
+</tbody>
+</table></section><section class="blk faq" id="faq"><div class="secl">NOTICE</div><h2>확인 사항</h2><div class="notice">이 문서는 일반적인 법률 정보 제공을 위한 자료입니다. 구체적인 사실관계와 최신 법령?판례에 따라 결론이 달라질 수 있습니다.</div></section></main></div><footer class="footer"><div class="wrap"><h3>조우성 변호사</h3><p>실무에 바로 활용할 수 있는 법률 지식과 대응 가이드를 제공합니다.</p></div></footer></body></html>
