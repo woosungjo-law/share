@@ -1,361 +1,198 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
-<title>특별한정승인이 가능한 경우 — 조우성 변호사</title>
-<meta name="description" content="상속개시 후 3개월이 지나도 상속채무 초과 사실을 중대한 과실 없이 몰랐다면 특별한정승인(민법 제1019조 제3항)이 가능하다. 요건·절차·주의사항을 단계별로 설명한다.">
-<meta property="og:type" content="article">
-<meta property="og:title" content="특별한정승인이 가능한 경우 — 조우성 변호사">
-<meta property="og:description" content="상속개시 후 3개월이 지나도 상속채무 초과 사실을 중대한 과실 없이 몰랐다면 특별한정승인(민법 제1019조 제3항)이 가능하다.">
-<style>
-:root{
-  --bg:#f5f1f2; --panel:#ffffff; --panel2:#faf6f7;
-  --line:#ebe2e5; --line2:#ddccd2;
-  --ink:#2c1d26; --ink2:#56424c; --muted:#8a7b82; --faint:#b3a6ab;
-  --wine:#7a2e3a; --wine-d:#5a1f2b; --wine-l:#9c4456;
-  --wine-tint:#f4e9ec; --wine-tint-ln:#ecd7dd;
-  --header-bg:#3a1525; --header-bg2:#4e1f32; --header-accent:#d4a0aa;
-  --rH:#c74a3c; --rM-bg:#f8e4b8; --rM-tx:#7d520a; --rL-bg:#d6ecdb; --rL-tx:#287a54;
-  --amber:#b45309; --green:#287a54;
-  --font:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Noto Sans KR',sans-serif;
-  --maxw:1120px; --readw:760px;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
-#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;background:linear-gradient(90deg,var(--wine),var(--wine-l));transition:width .1s linear}
-.header{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0}
-.header .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 26px}
-.header .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;color:var(--header-accent);border:1px solid rgba(212,160,170,.4);border-radius:999px;padding:4px 12px}
-.header .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--header-accent)}
-.hero{max-width:var(--maxw);margin:0 auto;padding:30px 26px 8px}
-.hero .eb{font-size:12px;font-weight:700;color:var(--wine);letter-spacing:.02em;margin-bottom:10px}
-.hero h1{font-size:30px;line-height:1.28;font-weight:800;margin:0 0 16px;color:var(--ink);letter-spacing:-.01em}
-.hero .tldr{background:var(--wine-tint);border:1px solid var(--wine-tint-ln);border-left:4px solid var(--wine);border-radius:12px;padding:16px 18px;margin:0 0 18px}
-.hero .tldr .lb{font-size:12px;font-weight:700;color:var(--wine-d);margin-bottom:8px}
-.hero .tldr ul{margin:0;padding-left:18px}
-.hero .tldr li{margin:4px 0;font-size:15px;color:var(--ink2)}
-.hero .meta{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:12.5px;color:var(--muted);margin-bottom:18px}
-.hero .meta .vchip{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);font-weight:700;border-radius:6px;padding:3px 9px;font-size:11.5px}
-.hero .cta-row{display:flex;flex-wrap:wrap;gap:10px}
-.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:9px;padding:11px 18px;text-decoration:none;cursor:pointer;border:1px solid transparent}
-.btn-p{background:var(--wine);color:#fff}
-.btn-p:hover{background:var(--wine-d)}
-.btn-o{background:#fff;color:var(--wine-d);border-color:var(--line2)}
-.btn-o:hover{background:var(--panel2)}
-.app{max-width:var(--maxw);margin:0 auto;padding:8px 26px 60px;display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:start}
-.toc{position:sticky;top:24px}
-.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:0 0 10px;padding-left:2px}
-.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}
-.toc li{counter-increment:toc;margin:1px 0}
-.toc a{display:flex;gap:9px;font-size:13.5px;color:var(--ink2);text-decoration:none;padding:7px 10px;border-radius:8px;border-left:3px solid transparent;line-height:1.4}
-.toc a::before{content:counter(toc,decimal-leading-zero);color:var(--faint);font-weight:700;font-size:11.5px;flex:none}
-.toc a:hover{background:var(--panel2)}
-.toc a.active{background:var(--wine-tint);border-left-color:var(--wine);color:var(--wine-d);font-weight:700}
-.toc-toggle{display:none}
-.content{max-width:var(--readw);min-width:0}
-section.blk{scroll-margin-top:24px;margin-bottom:38px}
-.secl{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin:0 0 12px}
-.secl::before{content:"";width:7px;height:15px;background:var(--wine);border-radius:2px;flex:none}
-section.blk h2{font-size:23px;font-weight:800;line-height:1.35;margin:0 0 14px;color:var(--ink);letter-spacing:-.01em}
-section.blk h3{font-size:17px;font-weight:700;margin:26px 0 10px;color:var(--wine-d)}
-section.blk p{margin:0 0 14px;color:var(--ink2)}
-section.blk ul,section.blk ol{margin:0 0 14px;padding-left:22px;color:var(--ink2)}
-section.blk li{margin:6px 0}
-strong{color:var(--ink);font-weight:700}
-.summary{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:0 0 18px}
-.summary .lb{font-size:11px;font-weight:700;color:var(--wine-d);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
-.summary ul{margin:0;padding-left:18px}
-.ev{background:#fff;border:1px solid var(--line);border-left:4px solid var(--wine);border-radius:10px;padding:13px 15px;margin:0 0 12px}
-.ev .top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px}
-.ev .kind{font-size:11px;font-weight:700;color:#fff;background:var(--wine);border-radius:5px;padding:2px 8px}
-.ev .kind.law{background:var(--wine-d)}
-.ev .kind.case{background:var(--amber)}
-.ev .cite{font-size:13.5px;font-weight:700;color:var(--ink)}
-.ev .vtick{margin-left:auto;font-size:11px;font-weight:700;color:var(--rL-tx);background:var(--rL-bg);border-radius:5px;padding:2px 7px}
-.ev .gist{font-size:14px;color:var(--ink2);margin:0}
-.ev .date{font-size:12px;color:var(--muted);margin-top:5px}
-.figure{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin:0 0 18px}
-.figure .cap{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:12px}
-.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px}
-.flow .step{flex:1;min-width:120px;background:var(--wine-tint);border:1px solid var(--wine-tint-ln);border-radius:10px;padding:11px 12px;position:relative}
-.flow .step .n{font-size:11px;font-weight:700;color:var(--wine)}
-.flow .step .t{font-size:13.5px;font-weight:700;color:var(--ink);margin-top:2px}
-.flow .step .d{font-size:12.5px;color:var(--ink2);margin-top:3px}
-.checklist{list-style:none;margin:0;padding:0}
-.checklist li{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
-.checklist li:last-child{border-bottom:none}
-.checklist .ck{flex:none;width:20px;height:20px;border-radius:5px;background:var(--rL-bg);color:var(--rL-tx);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
-.tbl-wrap{overflow-x:auto;margin:0 0 18px}
-table{border-collapse:collapse;width:100%;font-size:14px}
-th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
-th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px}
-.faq details{background:#fff;border:1px solid var(--line);border-radius:10px;margin:0 0 10px;overflow:hidden}
-.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:15px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:10px}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--wine-tint);color:var(--wine-d);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
-.faq details[open] summary{border-bottom:1px solid var(--line);color:var(--wine-d)}
-.faq .a{padding:14px 16px;font-size:14.5px;color:var(--ink2)}
-.notice{background:#fff;border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;font-size:12.5px;color:var(--muted);line-height:1.7}
-#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;border:1px solid var(--wine-tint-ln);background:var(--wine);color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;box-shadow:0 4px 14px rgba(58,21,37,.28)}
-#toTop.show{opacity:1;pointer-events:auto}
-#toTop:hover{background:var(--wine-d)}
-.footer{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0;margin-top:20px}
-.footer .wrap{max-width:var(--maxw);margin:0 auto;padding:34px 26px}
-.footer h3{font-size:20px;font-weight:800;margin:0 0 8px;color:#fff}
-.footer p{font-size:14px;color:rgba(255,255,255,.72);margin:0 0 6px;line-height:1.7}
-.footer .prof{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end}
-.footer .cta-f{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-.footer .btn-f{background:#fff;color:var(--wine-d)}
-.footer .btn-f:hover{background:var(--header-accent)}
-.footer .btn-fo{background:transparent;color:#f4eef0;border-color:rgba(255,255,255,.35)}
-.footer .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:22px;padding-top:14px;font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.7}
-@media(max-width:820px){
-  .hero h1{font-size:24px}
-  .app{grid-template-columns:1fr;gap:0;padding-top:0}
-  .toc{position:static;margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 8px}
-  .toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--wine-d);padding:9px 8px}
-  .toc-toggle .ar{transition:transform .2s}
-  .toc.closed .toc-toggle .ar{transform:rotate(-90deg)}
-  .toc .tt{display:none}
-  .toc ol{max-height:50vh;overflow:auto}
-  .toc.closed ol{display:none}
-  section.blk h2{font-size:20px}
-  th,td{white-space:nowrap}
-}
-@media print{
-  #progress,.toc,.cta-row,.footer .cta-f{display:none}
-  .header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-  .app{display:block}
-}
-</style>
-</head>
-<body>
-<div id="progress"></div>
-<button id="toTop" aria-label="맨 위로" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
-<header class="header"><div class="wrap"><span class="badge"><span class="dot"></span>조우성 변호사 · 법률 인사이트</span></div></header>
-<div class="hero">
-  <div class="eb">상속 · 3개월을 넘겨도 한정승인이 필요한 때</div>
-  <h1>특별한정승인이 가능한 경우 — 3개월을 넘겨도 한정승인이 필요한 때</h1>
-  <div class="tldr">
-    <div class="lb">3줄 요약 (TL;DR)</div>
-    <ul>
-      <li>상속개시(사망) 후 3개월이 지났더라도, 상속채무 초과 사실을 중대한 과실 없이 몰랐다면 특별한정승인(민법 제1019조 제3항)을 검토할 수 있다</li>
-      <li>핵심은 "언제, 어떻게 채무초과 사실을 알았는가" — 독촉장·소장·압류통지 등 객관적 자료로 인지 시점 특정 필요</li>
-      <li>특별한정승인은 예외적 구제 — 최선은 처음 3개월 내 한정승인·상속포기를 선택하는 것</li>
-    </ul>
-  </div>
-  <div class="meta">
-    <span>작성일 2026-07-28</span>
-    <span>· 기준 법령 시행일 2026-03-17</span>
-    <span class="vchip">✓ 조문·판례 2단 검증</span>
-    <span>· 읽는 시간 약 6분</span>
-  </div>
-  <div class="cta-row">
-    <a class="btn btn-p" href="#faq">핵심만 빠르게 (Q&amp;A)</a>
-    <a class="btn btn-o" href="#consult">상담 문의</a>
-  </div>
-</div>
-<div class="app">
-  <nav class="toc" id="toc">
-    <button class="toc-toggle" onclick="document.getElementById('toc').classList.toggle('closed')">목차 <span class="ar">▾</span></button>
-    <div class="tt">목차</div>
-    <ol id="toc-list">
-      <li><a href="#s1">상속개시와 3개월의 벽</a></li>
-      <li><a href="#s2">특별한정승인 요건</a></li>
-      <li><a href="#s3">특별한정승인의 절차</a></li>
-      <li><a href="#s4">검토 시 주의할 점</a></li>
-      <li><a href="#s5">처음 3개월 내 선택이 최선</a></li>
-      <li><a href="#faq">자주 묻는 질문</a></li>
-    </ol>
-  </nav>
-  <main class="content">
-    <section class="blk" id="s1">
-      <div class="secl">쟁점 1</div>
-      <h2>상속개시와 3개월의 벽</h2>
-      <div class="summary">
-        <div class="lb">한눈에</div>
-        <ul>
-          <li>상속인은 상속개시를 안 날부터 3개월 내 단순승인·한정승인·상속포기 선택(민법 제1019조 제1항)</li>
-          <li>3개월을 넘기면 단순승인간주(민법 제1026조) — 모든 채무 승계</li>
-          <li>단, 채무초과 사실을 중대한 과실 없이 몰랐다면 특별한정승인(제1019조 제3항) 가능</li>
-        </ul>
-      </div>
-      <p>대부분의 상속인이 하는 실수는 "3개월이 지났으니 상속포기도 한정승인도 못 한다"고 포기하는 것이다. 채무초과 사실을 몰랐다면 특별한정승인이라는 구제 수단이 여전히 열려 있다.</p>
-      <div class="ev">
-        <div class="top">
-          <span class="kind law">조문</span>
-          <span class="cite">민법 제1019조(승인, 포기의 기간)</span>
-          <span class="vtick">✓ 현행 확인</span>
-        </div>
-        <p class="gist">제3항: 상속인은 상속채무가 상속재산을 초과하는 사실을 중대한 과실 없이 제1항의 기간 내에 알지 못하고 단순승인을 한 경우에는 그 사실을 안 날부터 3개월 내에 한정승인을 할 수 있다</p>
-        <div class="date">시행일 2026-03-17</div>
-      </div>
-    </section>
-    <section class="blk" id="s2">
-      <div class="secl">쟁점 2</div>
-      <h2>특별한정승인 요건 — 누가, 언제, 어떻게</h2>
-      <div class="summary">
-        <div class="lb">한눈에</div>
-        <ul>
-          <li>요건 1: 채무초과 사실을 중대한 과실 없이 3개월 내 알지 못했을 것</li>
-          <li>요건 2: 단순승인(간주 포함) 상태일 것</li>
-          <li>요건 3: 채무초과 사실 안 날부터 3개월 내 한정승인 신청</li>
-        </ul>
-      </div>
-      <h3>"중대한 과실 없이"의 의미</h3>
-      <p>통상의 상속인이 조금만 주의를 기울였으면 채무초과 사실을 알 수 있었는데 그 주의를 게을리한 경우가 중대한 과실에 해당한다. 사망 직후 기본적 재산조사를 했는지, 채권자 연락이 있었는지 등을 종합 판단한다.</p>
-      <div class="ev">
-        <div class="top">
-          <span class="kind case">판례</span>
-          <span class="cite">대법원 2008. 9. 25. 선고 2008다35122 판결</span>
-          <span class="vtick">✓ 실존·현행 확인</span>
-        </div>
-        <p class="gist">상속인의 지위, 피상속인과의 관계, 상속재산 규모, 개인적 능력과 경험, 재산조사 용이성 등을 종합하여 중대한 과실 여부를 판단한다.</p>
-      </div>
-      <h3>채무초과 사실을 안 날의 특정</h3>
-      <div class="figure">
-        <div class="cap">인지 시점 특정 자료</div>
-        <div class="flow">
-          <div class="step"><div class="n">STEP 1</div><div class="t">독촉장·내용증명</div><div class="d">채권자가 보낸 최초 독촉장 수령일</div></div>
-          <div class="step"><div class="n">STEP 2</div><div class="t">소장 송달일</div><div class="d">채권자 소송 소장을 받은 날</div></div>
-          <div class="step"><div class="n">STEP 3</div><div class="t">압류통지</div><div class="d">법원 압류·가압류 결정문 수령일</div></div>
-        </div>
-      </div>
-    </section>
-    <section class="blk" id="s3">
-      <div class="secl">쟁점 3</div>
-      <h2>특별한정승인의 절차</h2>
-      <p>특별한정승인도 일반 한정승인과 동일한 절차로 관할 가정법원에 신청서를 제출한다. 일반 한정승인과 달리 "중대한 과실 없이 채무초과 사실을 몰랐다"는 소명 자료를 함께 제출해야 한다.</p>
-      <div class="figure">
-        <div class="cap">특별한정승인 신청 절차</div>
-        <div class="flow">
-          <div class="step"><div class="n">STEP 1</div><div class="t">채무초과 확인</div><div class="d">피상속인의 부채 목록 파악</div></div>
-          <div class="step"><div class="n">STEP 2</div><div class="t">인지 시점 특정</div><div class="d">객관적 자료로 인지일 확보</div></div>
-          <div class="step"><div class="n">STEP 3</div><div class="t">소명자료 준비</div><div class="d">중과실 없음 입증 자료 정리</div></div>
-          <div class="step"><div class="n">STEP 4</div><div class="t">법원 제출</div><div class="d">한정승인 신청서 + 재산목록 + 소명자료</div></div>
-        </div>
-      </div>
-      <div class="tbl-wrap">
-        <table>
-          <thead><tr><th>구분</th><th>일반 한정승인</th><th>특별한정승인</th></tr></thead>
-          <tbody>
-            <tr><td>신청 기간</td><td>상속개시 인지 후 3개월</td><td>채무초과 인지 후 3개월</td></tr>
-            <tr><td>추가 소명</td><td>없음</td><td>중대한 과실 없음 입증 필요</td></tr>
-            <tr><td>리스크</td><td>낮음</td><td>중간(소명 불충분 시 각하 가능)</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-    <section class="blk" id="s4">
-      <div class="secl">쟁점 4</div>
-      <h2>특별한정승인 검토 시 주의할 점</h2>
-      <p>특별한정승인은 예외적 구제 수단으로 신청이 각하될 리스크를 항상 고려해야 한다. "중대한 과실" 판단은 사후적·종합적 판단이므로 법률 전문가의 검토가 필요하다.</p>
-      <div class="figure">
-        <div class="cap">검토 전 확인사항</div>
-        <ul class="checklist">
-          <li><span class="ck">✓</span><span>상속개시일과 3개월 도과 여부 확인</span></li>
-          <li><span class="ck">✓</span><span>단순승인간주 사유 존재 여부 확인</span></li>
-          <li><span class="ck">✓</span><span>채무초과 사실 안 구체적 일시와 증거 특정</span></li>
-          <li><span class="ck">✓</span><span>중대한 과실 없음 소명 자료 확보</span></li>
-          <li><span class="ck">✓</span><span>법률 전문가 검토 의뢰</span></li>
-        </ul>
-      </div>
-      <div class="ev">
-        <div class="top">
-          <span class="kind law">조문</span>
-          <span class="cite">민법 제1026조(단순승인간주)</span>
-          <span class="vtick">✓ 현행 확인</span>
-        </div>
-        <p class="gist">상속인이 상속재산을 처분한 때 또는 3월 내 한정승인·포기를 하지 않은 때에는 단순승인한 것으로 본다</p>
-        <div class="date">시행일 2026-03-17</div>
-      </div>
-    </section>
-    <section class="blk" id="s5">
-      <div class="secl">쟁점 5</div>
-      <h2>처음 3개월 내 선택이 최선인 이유</h2>
-      <p>특별한정승인은 "중대한 과실 없음" 입증이라는 추가 장벽이 있다. 처음 3개월 내 일반 한정승인·상속포기를 선택하면 이 입증 부담이 없다. 사망 직후 재산조사를 신속히 진행하는 것이 가장 확실한 대책이다.</p>
-    </section>
-    <section class="blk faq" id="faq">
-      <div class="secl">Q&amp;A</div>
-      <h2>자주 묻는 질문</h2>
-      <details open>
-        <summary>3개월이 이미 지났는데 내용증명을 받았습니다. 특별한정승인이 가능한가요?</summary>
-        <div class="a">내용증명(독촉장)을 받은 날이 "채무초과 사실을 안 날"이 될 수 있다. 그 날부터 3개월 내에 한정승인 신청을 하면 특별한정승인이 가능하다. 사망 직후 기본적 재산조사를 했다면 중대한 과실이 없다고 인정될 가능성이 높다.</div>
-      </details>
-      <details>
-        <summary>특별한정승인 비용은 얼마인가요?</summary>
-        <div class="a">가정법원 수수료는 수천원~수만원 수준이다. 변호사 선임비용은 통상 50~150만원이 추가될 수 있다. 비용 대비 채무 규모를 고려하여 결정하는 것이 합리적이다.</div>
-      </details>
-      <details>
-        <summary>미성년 상속인은 기간이 다른가요?</summary>
-        <div class="a">민법 제1019조 제4항에 따라 미성년자 상속인이 성년이 되기 전에 단순승인한 경우, 성년이 된 후 채무초과 사실을 안 날부터 3개월 내 한정승인이 가능하다.</div>
-      </details>
-      <details>
-        <summary>이미 단순승인간주된 상태에서도 가능한가요?</summary>
-        <div class="a">가능하다. 민법 제1019조 제3항은 단순승인간주(제1026조 제1호·제2호)를 포함하여 단순승인한 경우에도 적용된다.</div>
-      </details>
-      <details>
-        <summary>특별한정승인 신청이 각하되면 어떻게 되나요?</summary>
-        <div class="a">각하되면 단순승인간주 상태가 유지된다. 따라서 신청 전에 중대한 과실 없음 입증 가능성을 충분히 검토해야 한다.</div>
-      </details>
-      <details>
-        <summary>특별한정승인 후 채무 변제를 거절할 수 있나요?</summary>
-        <div class="a">한정승인을 하면 상속재산 범위 내에서만 채무를 변제할 책임을 진다(민법 제1028조). 다만 재산을 은닉·부정소비하면 단순승인간주될 수 있으므로 주의해야 한다.</div>
-      </details>
-      <div class="notice">
-        본 자료는 2026-07-28 기준으로 작성되었으며, 인용된 법령·판례는 작성 시점의 현행성을 확인한 것입니다. 법령은 개정될 수 있고 사안마다 결론이 달라질 수 있으므로, 실제 의사결정 전 최신 법령과 개별 사실관계에 대한 확인이 필요합니다. 본 자료는 일반적인 법률 정보 제공이며 특정 사안에 대한 법률 자문이 아닙니다.
-      </div>
-    </section>
-  </main>
-</div>
-<footer class="footer" id="consult">
-  <div class="wrap">
-    <div class="prof">
-      <div>
-        <h3>조우성 변호사 / 로펌 머스트노우</h3>
-        <p>서울대학교 법학전문대학원 졸업, 변호사(2010). 법무법인(유한) 태평양, 법무법인(유) 율촌 출신. 現 로펌 머스트노우 대표변호사.</p>
-        <p style="font-size:15px;color:rgba(255,255,255,.92);margin-top:8px">✉ law@mustknow.co.kr</p>
-      </div>
-      <div class="cta-f">
-        <a class="btn btn-f" href="mailto:law@mustknow.co.kr">상담 문의하기</a>
-      </div>
-    </div>
-    <div class="fine">
-      © 2026 조우성 변호사. 본 콘텐츠는 일반 법률 정보이며 법률 자문을 대체하지 않습니다. 인용 법령·판례는 2026-07-28 기준 현행성을 확인했습니다.
-    </div>
-  </div>
-</footer>
-<script>
-var pb=document.getElementById('progress');
-function onScroll(){
-  var h=document.documentElement,b=document.body;
-  var st=h.scrollTop||b.scrollTop;
-  var sh=(h.scrollHeight||b.scrollHeight)-h.clientHeight;
-  pb.style.width=(sh>0?(st/sh*100):0)+'%';
-}
-window.addEventListener('scroll',onScroll,{passive:true});onScroll();
-var toTop=document.getElementById('toTop');
-window.addEventListener('scroll',function(){
-  (window.scrollY||window.pageYOffset)>500?toTop.classList.add('show'):toTop.classList.remove('show');
-},{passive:true});
-var links=Array.prototype.slice.call(document.querySelectorAll('#toc-list a'));
-var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));}).filter(Boolean);
-function spy(){
-  var pos=(window.scrollY||window.pageYOffset)+120,cur=secs[0];
-  for(var i=0;i<secs.length;i++){if(secs[i].offsetTop<=pos)cur=secs[i];}
-  links.forEach(function(a){
-    a.classList.toggle('active',cur&&a.getAttribute('href')==='#'+cur.id);
-  });
-}
-window.addEventListener('scroll',spy,{passive:true});spy();
-document.querySelectorAll('#toc-list a').forEach(function(a){
-  a.addEventListener('click',function(){
-    if(window.innerWidth<=820)document.getElementById('toc').classList.add('closed');
-  });
-});
-</script>
-</body>
-</html>
+<!doctype html>
+<html lang="ko-KR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>특별한정승인이 가능한 경우 — 3개월을 넘겨도 한정승인이 필요한 때</title>
+<style>body{font-family:"Noto Sans KR","Pretendard","Malgun Gothic",sans-serif;line-height:1.8;color:#202124;background:#f6f7f9;margin:0}main{max-width:860px;margin:40px auto;padding:48px 56px;background:#fff;box-shadow:0 2px 16px #0001}h1{line-height:1.3;border-bottom:2px solid #222;padding-bottom:18px}h2{margin-top:2.2em;border-bottom:1px solid #ddd;padding-bottom:6px}table{border-collapse:collapse;width:100%;margin:1em 0}th,td{border:1px solid #ccc;padding:8px;vertical-align:top}th{background:#f0f2f5}blockquote{border-left:4px solid #6b7280;padding:4px 16px;background:#f7f7f7}code{background:#f1f3f4;padding:2px 4px}pre{background:#202124;color:#f8f8f2;padding:16px;overflow:auto}a{color:#155eef}@media(max-width:700px){main{margin:0;padding:24px 18px;box-shadow:none}}</style>
+</head><body><main><blockquote>
+<p>[!web] 웹으로 보기
+(게시 후 여기에 https://woosungjo-law.github.io/share/d/&lt;토큰&gt;.html 삽입)</p>
+</blockquote>
+<p><em>출처: 조우성 변호사 / 로펌 머스트노우 | 문의: law@mustknow.co.kr</em></p>
+<h1 id="3">특별한정승인이 가능한 경우 — 3개월을 넘겨도 한정승인이 필요한 때</h1>
+<h2 id="3-tldr">3줄 요약 (TL;DR)</h2>
+<ul>
+<li><strong>상속개시(사망) 후 3개월이 지났더라도, 상속채무 초과 사실을 중대한 과실 없이 몰랐다면 특별한정승인(민법 제1019조 제3항)을 검토할 수 있다</strong></li>
+<li><strong>핵심은 "언제, 어떻게 채무초과 사실을 알았는가"</strong> — 독촉장·소장·압류통지·채권자 연락 등 객관적 자료로 인지 시점을 특정해야 한다</li>
+<li><strong>특별한정승인은 예외적 구제</strong> — 최선은 처음 3개월 내 한정승인·상속포기를 선택하는 것이며, 특별한정승인은 기간을 놓친 경우의 마지막 카드</li>
+</ul>
+<hr />
+<h2 id="1-3">1. 상속개시와 3개월의 벽</h2>
+<p><strong>한눈에</strong>
+- 상속인은 상속개시(피상속인 사망)를 안 날부터 3개월 내 단순승인·한정승인·상속포기를 선택해야 함(민법 제1019조 제1항)
+- 3개월을 넘기면 단순승인간주(민법 제1026조) — 상속채무가 재산보다 많아도 모든 채무를 승계
+- 그러나 상속채무 초과 사실을 중대한 과실 없이 알지 못했다면, 그 사실을 안 날부터 3개월 내 특별한정승인 가능(민법 제1019조 제3항)</p>
+<p>대부분의 상속인이 하는 실수는 "3개월이 지났으니 상속포기도 한정승인도 못 한다"고 포기하는 것이다. 채무초과 사실을 몰랐다면 특별한정승인이라는 구제 수단이 여전히 열려 있다.</p>
+<blockquote>
+<p>[근거·조문] <strong>민법 제1019조(승인, 포기의 기간)</strong> (시행 2026-03-17)
+제1항: 상속인은 상속개시있음을 안 날로부터 3월내에 단순승인이나 한정승인 또는 포기를 할 수 있다
+제3항: 상속인은 상속채무가 상속재산을 초과하는 사실을 중대한 과실 없이 제1항의 기간 내에 알지 못하고 단순승인을 한 경우에는 그 사실을 안 날부터 3개월 내에 한정승인을 할 수 있다
+✓ 웹 화이트리스트 + 한국법 MCP 현행 확인</p>
+</blockquote>
+<hr />
+<h2 id="2">2. 특별한정승인 요건 — 누가, 언제, 어떻게</h2>
+<p><strong>한눈에</strong>
+- 요건 1: 상속채무 초과 사실을 중대한 과실 없이 3개월 내 알지 못했을 것
+- 요건 2: 단순승인(간주 포함)을 한 상태일 것
+- 요건 3: 채무초과 사실을 안 날부터 3개월 내 한정승인을 할 것</p>
+<h3 id="21">2.1 "중대한 과실 없이"의 의미</h3>
+<p><strong>중대한 과실이란</strong>: 통상의 상속인이 조금만 주의를 기울였으면 채무초과 사실을 알 수 있었는데, 그 주의를 게을리한 경우다. 구체적 판단 기준은:</p>
+<ul>
+<li>상속재산 목록을 한 번이라도 작성해보지 않은 경우 → 중대한 과실 가능성 높음</li>
+<li>사망 직후 채권자로부터 연락이 있었는데 무시한 경우 → 중대한 과실로 볼 여지 있음</li>
+<li>피상속인이 평소 채무가 많다는 것을 알고 있었는데 조사하지 않은 경우 → 중대한 과실 가능성</li>
+<li>피상속인이 갑자기 사망했고 재산 규모를 전혀 알 수 없었던 경우 → 중대한 과실 없음으로 인정될 가능성 높음</li>
+</ul>
+<blockquote>
+<p>[근거·판례] <strong>대법원 2008. 9. 25. 선고 2008다35122 판결</strong> — 상속인이 상속채무의 존재를 알지 못한 데 중대한 과실이 있는지 여부는 상속인의 지위, 피상속인과의 관계, 상속재산의 규모와 내용, 상속인의 개인적 능력과 경험, 재산조사의 용이성 등을 종합하여 판단하여야 한다
+✓ 실존·현행 확인</p>
+</blockquote>
+<h3 id="22">2.2 "채무초과 사실을 안 날"의 특정</h3>
+<p>특별한정승인을 위해서는 채무초과 사실을 안 구체적 시점을 특정해야 한다. 법원은 다음 자료를 기준으로 인지 시점을 판단한다:</p>
+<p><strong>[플로우] 인지 시점 특정 자료</strong>
+1. <strong>독촉장·내용증명 도착일</strong> — 채권자가 보낸 최초 독촉장 수령일
+2. <strong>소장 송달일</strong> — 채권자가 제기한 소송의 소장을 받은 날
+3. <strong>압류·가압류 통지 도착일</strong> — 법원의 압류·가압류 결정문 수령일
+4. <strong>채권자 직접 연락 내역</strong> — 전화·문자·이메일 등 채권자의 최초 연락 기록
+5. <strong>부채 목록 직접 파악일</strong> — 상속인이 스스로 부채를 조사하여 알게 된 날</p>
+<h3 id="23">2.3 단순승인간주와 특별한정승인의 관계</h3>
+<p>민법 제1026조는 다음 경우 단순승인간주를 규정한다:
+- 제1호: 상속인이 상속재산을 처분한 경우(현금 인출·계좌 이체 포함)
+- 제2호: 상속인이 3개월 내 한정승인 또는 포기를 하지 않은 경우</p>
+<p>특별한정승인(제1019조 제3항)은 이 두 가지 단순승인간주 사유에도 적용된다. 즉, 3개월이 지나 자동으로 단순승인간주된 경우에도, 제1019조 제3항 요건을 충족하면 한정승인이 가능하다.</p>
+<hr />
+<h2 id="3_1">3. 특별한정승인의 절차</h2>
+<p><strong>한눈에</strong>
+- 특별한정승인도 일반 한정승인과 동일한 절차 — 관할 가정법원에 한정승인 신청서 제출
+- 채무초과 사실을 안 날부터 3개월 내 신청 필요
+- 일반 한정승인과 달리 "중대한 과실 없이 채무초과 사실을 몰랐다"는 소명 자료를 함께 제출</p>
+<h3 id="31">3.1 신청 절차</h3>
+<p><strong>[플로우] 특별한정승인 신청 절차</strong>
+1. <strong>채무초과 사실 확인</strong>: 피상속인의 부채 목록(대출·카드·보증·세금 등) 파악
+2. <strong>인지 시점 특정</strong>: 최초로 채무초과 사실을 알게 된 날짜를 객관적 자료로 확보
+3. <strong>중과실 없음 소명 자료 준비</strong>: 사망 직후 재산조사 내역, 채권자 연락 내역, 재산 규모에 대한 인식 등
+4. <strong>한정승인 신청서 작성</strong>: 관할 가정법원(피상속인 사망지 또는 주소지) 제출
+5. <strong>재산목록 첨부</strong>: 상속재산 목록(적극재산 + 소극재산)을 상세히 작성
+6. <strong>가정법원 수리 심사</strong>: 법원이 요건 충족 여부 심사, 수리되면 한정승인 효력 발생</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>일반 한정승인</th>
+<th>특별한정승인</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>신청 기간</td>
+<td>상속개시 인지 후 3개월</td>
+<td>채무초과 인지 후 3개월</td>
+</tr>
+<tr>
+<td>추가 소명</td>
+<td>없음</td>
+<td>중대한 과실 없음 입증 필요</td>
+</tr>
+<tr>
+<td>제출 서류</td>
+<td>기본 서류 동일</td>
+<td>소명 자료 추가</td>
+</tr>
+<tr>
+<td>리스크</td>
+<td>낮음</td>
+<td>중간(소명 불충분 시 각하 가능)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32">3.2 신청 시 제출 서류</h3>
+<ul>
+<li>한정승인 신청서(가정법원 양식)</li>
+<li>피상속인의 사망을 증명하는 서류(사망진단서·가족관계증명서)</li>
+<li>상속인임을 증명하는 서류(가족관계증명서·기본증명서)</li>
+<li>상속재산 목록(적극재산 + 소극재산)</li>
+<li>채무초과 사실을 알게 된 경위서(문서화)</li>
+<li>중대한 과실 없음을 소명하는 자료(독촉장·압류통지·재산조사 경과 등)</li>
+</ul>
+<hr />
+<h2 id="4">4. 특별한정승인을 검토할 때 주의할 점</h2>
+<p><strong>한눈에</strong>
+- 특별한정승인은 예외적 구제 수단 — 신청이 각하될 리스크를 항상 고려해야 함
+- "중대한 과실" 판단은 사후적·종합적 판단이므로 법률 전문가의 검토가 필요
+- 비용 대비 효과 분석 — 상속채무가 재산을 크게 초과하지 않으면 한정승인 실익이 없을 수 있음</p>
+<blockquote>
+<p>[근거·조문] <strong>민법 제1026조(단순승인간주)</strong> (시행 2026-03-17) — 상속인이 상속재산을 처분한 때 또는 3월 내 한정승인·포기를 하지 않은 때에는 단순승인한 것으로 본다
+✓ 웹 화이트리스트 + 한국법 MCP 현행 확인</p>
+</blockquote>
+<p><strong>[체크리스트] 특별한정승인 검토 전 확인사항</strong>
+- [ ] 상속개시(사망)일과 3개월 도과 여부 확인
+- [ ] 단순승인간주 사유(재산처분·기간도과) 존재 여부 확인
+- [ ] 채무초과 사실을 안 구체적 일시와 증거 특정
+- [ ] 중대한 과실 없음을 소명할 자료 확보(사망 직후 조사 내역, 채권자 최초 연락일 등)
+- [ ] 일반 한정승인 가능성 재확인(아직 3개월이 지나지 않은 경우)
+- [ ] 법률 전문가에게 특별한정승인 가능성 검토 의뢰</p>
+<p><strong>Q. 이미 단순승인간주된 상태에서도 특별한정승인이 가능한가요?</strong>
+가능하다. 민법 제1019조 제3항은 단순승인간주(제1026조 제1호·제2호)를 포함하여 단순승인한 경우에도 적용된다. 다만 중대한 과실 없이 채무초과 사실을 몰랐다는 점을 입증해야 하므로, 입증 자료가 부족하면 각하될 위험이 있다.</p>
+<p><strong>Q. 특별한정승인 신청이 각하되면 어떻게 되나요?</strong>
+각하되면 단순승인간주 상태가 유지된다. 즉, 상속인이 상속채무 전액을 부담한다. 따라서 특별한정승인 신청 전에 중대한 과실 없음 입증 가능성을 충분히 검토해야 한다. 리스크가 크면 상속포기(아직 가능한 경우) 또는 파산 등의 대안을 검토할 수 있다.</p>
+<p><strong>Q. 특별한정승인 후에도 채무 변제를 거절할 수 있나요?</strong>
+특별한정승인(한정승인)을 하면 상속인은 상속재산 범위 내에서만 채무를 변제할 책임을 진다(민법 제1028조). 즉, 상속재산보다 많은 채무는 변제하지 않아도 된다. 다만 한정승인인이 상속재산을 은닉·부정소비하면 단순승인간주될 수 있으므로 재산 관리에 주의해야 한다.</p>
+<hr />
+<h2 id="5-3">5. 처음 3개월 내 선택이 최선인 이유</h2>
+<p><strong>한눈에</strong>
+- 특별한정승인은 "중대한 과실 없음" 입증이라는 추가 장벽이 있음
+- 처음 3개월 내 일반 한정승인·상속포기를 선택하면 이 입증 부담이 없음
+- 사망 직후 재산조사(등기부·금융거래·채무)를 신속히 진행하는 것이 가장 확실한 대책</p>
+<blockquote>
+<p>기간이 지났다면 포기보다 먼저 특별한정승인의 요건, 특히 채무초과 인식 시점과 중과실 여부를 검토해야 합니다. 상속 문제는 시간이 지날수록 대응 폭이 좁아지므로, 사망 소식을 접한 즉시 재산조사에 착수하는 것이 최선의 전략입니다.</p>
+</blockquote>
+<hr />
+<h2 id="qa">자주 묻는 질문 (Q&amp;A)</h2>
+<p><strong>Q. 3개월이 이미 지났는데 내용증명을 받았습니다. 특별한정승인이 가능한가요?</strong>
+내용증명(독촉장)을 받은 날이 "채무초과 사실을 안 날"이 될 수 있다. 그 날부터 3개월 내에 한정승인 신청을 하면 특별한정승인이 가능하다. 다만 "그동안 왜 채무조사를 안 했는지"가 중대한 과실 판단의 대상이 된다. 사망 직후에 기본적인 재산조사(등기부·금융거래)를 했다면 중대한 과실이 없다고 인정될 가능성이 높다.</p>
+<p><strong>Q. 특별한정승인 비용은 얼마인가요?</strong>
+가정법원에 납부하는 수수료는 수천원~수만원 수준이다. 다만 복잡한 사건의 경우 변호사 선임비용이 추가로 발생할 수 있다(통상 50~150만원). 비용 대비 채무 규모를 고려하여 결정하는 것이 합리적이다.</p>
+<p><strong>Q. 미성년 상속인은 특별한정승인 기간이 다른가요?</strong>
+민법 제1019조 제4항에 따라 미성년자 상속인이 성년이 되기 전에 단순승인한 경우, 성년이 된 후 채무초과 사실을 안 날부터 3개월 내 한정승인이 가능하다. 미성년자에게는 별도 보호 규정이 적용된다.</p>
+<p><strong>Q. 특별한정승인을 하면 상속세도 줄어드나요?</strong>
+특별한정승인은 상속재산의 승계 범위를 제한할 뿐, 상속세와 직접적 관계는 없다. 상속세는 상속재산 규모에 따라 별도로 산정된다. 다만 한정승인으로 상속재산이 정확히 확정되면 상속세 신고에 도움이 될 수 있다.</p>
+<hr />
+<h2 id="_1">최신성·면책 고지</h2>
+<p>본 자료는 <strong>2026-07-28</strong> 기준으로 작성되었으며, 인용 법령·판례는 작성 시점의 현행성을 확인한 것입니다.
+법령은 개정될 수 있고 사안마다 결론이 달라질 수 있으므로, 실제 의사결정 전 최신 법령과 개별 사실관계 확인이 필요합니다.
+본 자료는 일반적 법률 정보 제공이며 특정 사안에 대한 법률 자문이 아닙니다.</p>
+<hr />
+<h2 id="_2">검증 로그 (내부용 — 게시 시 제거)</h2>
+<table>
+<thead>
+<tr>
+<th>인용</th>
+<th>유형</th>
+<th>웹 화이트리스트</th>
+<th>한국법 MCP</th>
+<th>판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>민법 제1019조(승인, 포기의 기간)</td>
+<td>조문</td>
+<td>확인</td>
+<td>FOUND(284415)</td>
+<td>등재</td>
+</tr>
+<tr>
+<td>민법 제1026조(단순승인간주)</td>
+<td>조문</td>
+<td>확인</td>
+<td>FOUND(284415)</td>
+<td>등재</td>
+</tr>
+<tr>
+<td>대법원 2008다35122</td>
+<td>판례</td>
+<td>확인</td>
+<td>FOUND</td>
+<td>등재</td>
+</tr>
+</tbody>
+</table></main></body></html>
