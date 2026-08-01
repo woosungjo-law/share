@@ -1,85 +1,299 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>이혼 위자료와 상간자 책임 — 조우성 변호사</title><meta name="description" content="이혼위자료 산정 기준, 이혼 원인 위자료 vs 개별 불법행위 위자료 구별, 상간자(제3자) 불법행위 책임과 부진정연대책임을 설명한다.">
-<meta property="og:type" content="article"><meta property="og:title" content="이혼 위자료와 상간자 책임"><meta property="og:description" content="이혼위자료 산정 기준, 청구 요건, 상간자 책임">
-<style>:root{--bg:#f5f1f2;--panel:#fff;--panel2:#faf6f7;--line:#ebe2e5;--line2:#ddccd2;--ink:#2c1d26;--ink2:#56424c;--muted:#8a7b82;--faint:#b3a6ab;--wine:#7a2e3a;--wine-d:#5a1f2b;--wine-l:#9c4456;--wine-tint:#f4e9ec;--wine-tint-ln:#ecd7dd;--header-bg:#3a1525;--header-bg2:#4e1f32;--header-accent:#d4a0aa;--rL-bg:#dcead6;--rL-tx:#2d764e;--amber:#925309;--font:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Noto Sans KR',sans-serif;--maxw:1120px;--readw:760px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.75}#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;background:linear-gradient(90deg,var(--wine),var(--wine-l));transition:width .1s linear}
-.header{background:linear-gradient(135deg,var(--header-bg),var(--header-bg2));color:#f4eef0}
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>이혼 위자료와 상간자 책임 — 산정 기준과 청구 요건</title><style>
+/* ============================================================
+   법률 대시보드 전자책 — Apollo 기반 경량 커스텀 (공개 롱스크롤)
+   Apollo 토큰(버건디 액센트 + 웜 화이트 + 딥와인 헤더) 상속.
+   의뢰인 리포트(리스크레이더 6뷰)와 달리 공개 독서형 롱스크롤.
+   self-contained: 외부 CDN/폰트/이미지/스크립트 의존 없음.
+   ============================================================ */
+:root{
+  --bg:#f5f1f2; --panel:#ffffff; --panel2:#faf6f7;
+  --line:#ebe2e5; --line2:#ddccd2;
+  --ink:#2c1d26; --ink2:#56424c; --muted:#8a7b82; --faint:#b3a6ab;
+  --wine:#7a2e3a; --wine-d:#5a1f2b; --wine-l:#9c4456;
+  --wine-tint:#f4e9ec; --wine-tint-ln:#ecd7dd;
+  --header-bg:#3a1525; --header-bg2:#4e1f32; --header-accent:#d4a0aa;
+  --rH:#c74a3c; --rM-bg:#f8e4b8; --rM-tx:#7d520a; --rL-bg:#d6ecdb; --rL-tx:#287a54;
+  --amber:#b45309; --green:#287a54;
+  --font:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Noto Sans KR',sans-serif;
+  --maxw:1120px; --readw:760px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
+
+/* 읽기 진행바 */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;
+  background:linear-gradient(90deg,var(--wine),var(--wine-l));transition:width .1s linear}
+
+/* 헤더 표지 (딥와인, 유일한 딥 컬러) */
+.header{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0}
 .header .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 26px}
-.header .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;color:var(--header-accent);border:1px solid rgba(212,160,170,.4);border-radius:999px;padding:4px 12px}
+.header .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;
+  color:var(--header-accent);border:1px solid rgba(212,160,170,.4);border-radius:999px;padding:4px 12px}
 .header .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--header-accent)}
+
+/* 히어로 */
 .hero{max-width:var(--maxw);margin:0 auto;padding:30px 26px 8px}
 .hero .eb{font-size:12px;font-weight:700;color:var(--wine);letter-spacing:.02em;margin-bottom:10px}
-.hero h1{font-size:30px;line-height:1.28;font-weight:800;margin:0 0 16px}.hero .tldr{background:var(--wine-tint);border:1px solid var(--wine-tint-ln);border-left:4px solid var(--wine);border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.hero h1{font-size:30px;line-height:1.28;font-weight:800;margin:0 0 16px;color:var(--ink);letter-spacing:-.01em}
+.hero .tldr{background:var(--wine-tint);border:1px solid var(--wine-tint-ln);border-left:4px solid var(--wine);
+  border-radius:12px;padding:16px 18px;margin:0 0 18px}
 .hero .tldr .lb{font-size:12px;font-weight:700;color:var(--wine-d);margin-bottom:8px}
-.hero .tldr ul{margin:0;padding-left:18px}.hero .tldr li{margin:4px 0;font-size:15px;color:var(--ink2)}
+.hero .tldr ul{margin:0;padding-left:18px}
+.hero .tldr li{margin:4px 0;font-size:15px;color:var(--ink2)}
 .hero .meta{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:12.5px;color:var(--muted);margin-bottom:18px}
-.hero .meta .vchip{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);font-weight:700;border-radius:6px;padding:3px 9px;font-size:11.5px}
+.hero .meta .vchip{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);
+  font-weight:700;border-radius:6px;padding:3px 9px;font-size:11.5px}
 .hero .cta-row{display:flex;flex-wrap:wrap;gap:10px}
-.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:9px;padding:11px 18px;text-decoration:none;border:1px solid transparent}
-.btn-p{background:var(--wine);color:#fff}.btn-p:hover{background:var(--wine-d)}
-.btn-o{background:#fff;color:var(--wine-d);border-color:var(--line2)}.btn-o:hover{background:var(--panel2)}
-.app{max-width:var(--maxw);margin:0 auto;padding:8px 26px 60px;display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:start}
-.toc{position:sticky;top:24px}.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:0 0 10px;padding-left:2px}
-.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}.toc li{counter-increment:toc;margin:1px 0}
-.toc a{display:flex;gap:9px;font-size:13.5px;color:var(--ink2);text-decoration:none;padding:7px 10px;border-radius:8px;border-left:3px solid transparent;line-height:1.4}
+.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:9px;
+  padding:11px 18px;text-decoration:none;cursor:pointer;border:1px solid transparent}
+.btn-p{background:var(--wine);color:#fff}
+.btn-p:hover{background:var(--wine-d)}
+.btn-o{background:#fff;color:var(--wine-d);border-color:var(--line2)}
+.btn-o:hover{background:var(--panel2)}
+
+/* 셸: 좌측 목차 + 본문 */
+.app{max-width:var(--maxw);margin:0 auto;padding:8px 26px 60px;
+  display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:start}
+
+/* 목차 (데스크톱 = 좌측 sticky) */
+.toc{position:sticky;top:24px}
+.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;
+  margin:0 0 10px;padding-left:2px}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}
+.toc li{counter-increment:toc;margin:1px 0}
+.toc a{display:flex;gap:9px;font-size:13.5px;color:var(--ink2);text-decoration:none;
+  padding:7px 10px;border-radius:8px;border-left:3px solid transparent;line-height:1.4}
 .toc a::before{content:counter(toc,decimal-leading-zero);color:var(--faint);font-weight:700;font-size:11.5px;flex:none}
-.toc a:hover{background:var(--panel2)}.toc a.active{background:var(--wine-tint);border-left-color:var(--wine);color:var(--wine-d);font-weight:700}
-.toc-toggle{display:none}.content{max-width:var(--readw);min-width:0}
+.toc a:hover{background:var(--panel2)}
+.toc a.active{background:var(--wine-tint);border-left-color:var(--wine);color:var(--wine-d);font-weight:700}
+.toc-toggle{display:none}
+
+/* 본문 */
+.content{max-width:var(--readw);min-width:0}
 section.blk{scroll-margin-top:24px;margin-bottom:38px}
-.secl{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin:0 0 12px}
+.secl{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.05em;margin:0 0 12px}
 .secl::before{content:"";width:7px;height:15px;background:var(--wine);border-radius:2px;flex:none}
-section.blk h2{font-size:23px;font-weight:800;line-height:1.35;margin:0 0 14px}section.blk h3{font-size:17px;font-weight:700;margin:26px 0 10px;color:var(--wine-d)}
-section.blk p{margin:0 0 14px;color:var(--ink2)}.summary{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:0 0 18px}
+section.blk h2{font-size:23px;font-weight:800;line-height:1.35;margin:0 0 14px;color:var(--ink);letter-spacing:-.01em}
+section.blk h3{font-size:17px;font-weight:700;margin:26px 0 10px;color:var(--wine-d)}
+section.blk p{margin:0 0 14px;color:var(--ink2)}
+section.blk ul,section.blk ol{margin:0 0 14px;padding-left:22px;color:var(--ink2)}
+section.blk li{margin:6px 0}
+strong{color:var(--ink);font-weight:700}
+a.ln{color:var(--wine-l);text-decoration:none;border-bottom:1px solid var(--wine-tint-ln)}
+a.ln:hover{border-bottom-color:var(--wine-l)}
+
+/* 핵심요약 카드 */
+.summary{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:0 0 18px}
 .summary .lb{font-size:11px;font-weight:700;color:var(--wine-d);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
-.ev{background:#fff;border:1px solid var(--line);border-left:4px solid var(--wine);border-radius:10px;padding:13px 15px;margin:0 0 12px}
+.summary ul{margin:0;padding-left:18px}
+
+/* 근거 카드 (조문·판례) */
+.ev{background:#fff;border:1px solid var(--line);border-left:4px solid var(--wine);border-radius:10px;
+  padding:13px 15px;margin:0 0 12px}
 .ev .top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px}
 .ev .kind{font-size:11px;font-weight:700;color:#fff;background:var(--wine);border-radius:5px;padding:2px 8px}
-.ev .kind.law{background:var(--wine-d)}.ev .kind.case{background:var(--amber)}
+.ev .kind.law{background:var(--wine-d)}
+.ev .kind.case{background:var(--amber)}
 .ev .cite{font-size:13.5px;font-weight:700;color:var(--ink)}
 .ev .vtick{margin-left:auto;font-size:11px;font-weight:700;color:var(--rL-tx);background:var(--rL-bg);border-radius:5px;padding:2px 7px}
-.ev .gist{font-size:14px;color:var(--ink2);margin:0}.ev .date{font-size:12px;color:var(--muted);margin-top:5px}
-.tbl-wrap{overflow-x:auto;margin:0 0 18px}table{border-collapse:collapse;width:100%;font-size:14px}
+.ev .gist{font-size:14px;color:var(--ink2);margin:0}
+.ev .date{font-size:12px;color:var(--muted);margin-top:5px}
+
+/* 다이어그램 — 플로우 / 체크리스트 (CSS·SVG only) */
+.figure{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin:0 0 18px}
+.figure .cap{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:12px}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px}
+.flow .step{flex:1;min-width:120px;background:var(--wine-tint);border:1px solid var(--wine-tint-ln);
+  border-radius:10px;padding:11px 12px;position:relative}
+.flow .step .n{font-size:11px;font-weight:700;color:var(--wine)}
+.flow .step .t{font-size:13.5px;font-weight:700;color:var(--ink);margin-top:2px}
+.flow .step .d{font-size:12.5px;color:var(--ink2);margin-top:3px}
+.checklist{list-style:none;margin:0;padding:0}
+.checklist li{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+.checklist li:last-child{border-bottom:none}
+.checklist .ck{flex:none;width:20px;height:20px;border-radius:5px;background:var(--rL-bg);color:var(--rL-tx);
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+
+/* 위험도 칩 */
+.chip{display:inline-flex;align-items:center;justify-content:center;min-width:34px;font-size:11px;font-weight:500;
+  border-radius:6px;padding:3px 8px;margin-right:4px}
+.c-H{background:var(--rH);color:#fff}
+.c-M{background:var(--rM-bg);color:var(--rM-tx)}
+.c-L{background:var(--rL-bg);color:var(--rL-tx)}
+
+/* 표 */
+.tbl-wrap{overflow-x:auto;margin:0 0 18px}
+table{border-collapse:collapse;width:100%;font-size:14px}
 th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
 th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px}
+
+/* FAQ (아코디언) */
 .faq details{background:#fff;border:1px solid var(--line);border-radius:10px;margin:0 0 10px;overflow:hidden}
-.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:15px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:10px}
+.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:15px;font-weight:700;color:var(--ink);
+  display:flex;align-items:center;gap:10px}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--wine-tint);color:var(--wine-d);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--wine-tint);
+  color:var(--wine-d);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
 .faq details[open] summary{border-bottom:1px solid var(--line);color:var(--wine-d)}
 .faq .a{padding:14px 16px;font-size:14.5px;color:var(--ink2)}
-.notice{background:#fff;border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;font-size:12.5px;color:var(--muted);line-height:1.7}
-#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;background:var(--wine);color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none}
-#toTop.show{opacity:1;pointer-events:auto}#toTop:hover{background:var(--wine-d)}
-.footer{background:linear-gradient(135deg,var(--header-bg),var(--header-bg2));color:#f4eef0;margin-top:20px}
+
+/* 최신성·면책 고지 */
+.notice{background:#fff;border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;
+  font-size:12.5px;color:var(--muted);line-height:1.7}
+
+/* 맨 위로 버튼 */
+#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--wine-tint-ln);background:var(--wine);color:#fff;font-size:18px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;
+  box-shadow:0 4px 14px rgba(58,21,37,.28)}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{background:var(--wine-d)}
+
+/* 푸터 프로필 + 상담 CTA */
+.footer{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0;margin-top:20px}
 .footer .wrap{max-width:var(--maxw);margin:0 auto;padding:34px 26px}
 .footer h3{font-size:20px;font-weight:800;margin:0 0 8px;color:#fff}
-.footer p{font-size:14px;color:rgba(255,255,255,.72);margin:0 0 6px}
+.footer p{font-size:14px;color:rgba(255,255,255,.72);margin:0 0 6px;line-height:1.7}
+.footer .prof{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end}
 .footer .cta-f{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-.footer .btn-f{background:#fff;color:var(--wine-d)}.footer .btn-f:hover{background:var(--header-accent)}
-.footer .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:22px;padding-top:14px;font-size:11.5px;color:rgba(255,255,255,.5)}
-@media(max-width:820px){.hero h1{font-size:24px}.app{grid-template-columns:1fr;gap:0;padding-top:0}.toc{position:static;margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 8px}.toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--wine-d);padding:9px 8px}.toc-toggle .ar{transition:transform .2s}.toc.closed .toc-toggle .ar{transform:rotate(-90deg)}.toc .tt{display:none}.toc.closed ol{display:none}section.blk h2{font-size:20px}th,td{white-space:nowrap}}
-@media print{#progress,.toc,.cta-row,.footer .cta-f{display:none}.header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}.app{display:block}}
-</style></head><body>
-<div id="progress"></div><button id="toTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
-<header class="header"><div class="wrap"><span class="badge"><span class="dot"></span>조우성 변호사 · 법률 인사이트</span></div></header>
-<div class="hero"><div class="eb">가족 · 이혼</div><h1>이혼 위자료와 상간자 책임 — 산정 기준과 청구 요건</h1><div class="tldr"><div class="lb">3줄 요약 (TL;DR)</div><ul><li>이혼위자료는 유책행위→혼인파탄→이혼까지의 일련 경과를 전체로서 평가하는 정신적 손해배상</li><li>이혼 원인 위자료(가정법원) vs 개별 불법행위 위자료(민사법원)는 관할·시효 기산점이 다름(대법원 2025므10716)</li><li>상간자(제3자)도 배우자 존재 인식 상태에서 부정행위 시 부진정연대책임</li></ul></div><div class="meta"><span>작성일 2026-07-29</span><span>· 기준 법령 시행일 2026-03-17</span><span class="vchip">✓ 조문·판례 2단 검증</span></div><div class="cta-row"><a class="btn btn-p" href="#faq">Q&amp;A</a><a class="btn btn-o" href="#consult">상담 문의</a></div></div>
-<div class="app"><nav class="toc" id="toc"><button class="toc-toggle" onclick="document.getElementById('toc').classList.toggle('closed')">목차 <span class="ar">▾</span></button><div class="tt">목차</div><ol id="toc-list"><li><a href="#s1">위자료 법적 근거</a></li><li><a href="#s2">이혼위자료 vs 개별불법행위</a></li><li><a href="#s3">상간자 책임</a></li><li><a href="#s4">산정 요소</a></li><li><a href="#faq">자주 묻는 질문</a></li></ol></nav><main class="content">
-<section class="blk" id="s1"><div class="secl">근거</div><h2>위자료의 법적 근거</h2><p>이혼위자료는 상대방 배우자의 유책·불법행위로 혼인관계가 파탄→이혼에 이른 경우의 정신적 손해 전보. 파탄 이후 이혼에 이르기까지 사정(소송 중 추가 가해행위 포함)도 산정 요소.</p><div class="ev"><div class="top"><span class="kind law">조문</span><span class="cite">민법 제751조(재산 이외의 손해의 배상)</span><span class="vtick">✓ 현행 확인</span></div><p class="gist">타인의 신체, 자유 또는 명예를 해하거나 기타 정신상고통을 가한 자는 재산 이외의 손해에 대하여도 배상할 책임이 있다.</p><div class="date">시행일 2026-03-17</div></div><div class="ev"><div class="top"><span class="kind law">조문</span><span class="cite">민법 제843조(준용규정)</span><span class="vtick">✓ 현행 확인</span></div><p class="gist">재판상 이혼에 따른 손해배상책임에 관하여는 제806조를 준용한다.</p><div class="date">시행일 2026-03-17</div></div></section>
-<section class="blk" id="s2"><div class="secl">쟁점 1</div><h2>이혼 원인 위자료 vs 개별 불법행위 위자료</h2><div class="tbl-wrap"><table><thead><tr><th>구분</th><th>이혼 원인 위자료</th><th>개별 불법행위 위자료</th></tr></thead><tbody><tr><td>관할</td><td>가정법원</td><td>민사법원</td></tr><tr><td>시효 기산</td><td>혼인 해소 시부터</td><td>불법행위 인지 시부터</td></tr><tr><td>요건</td><td>이혼 전체 경과 평가</td><td>개별 행위 위법성</td></tr></tbody></table></div><div class="ev"><div class="top"><span class="kind case">판례</span><span class="cite">대법원 2026. 1. 29. 선고 2025므10716</span><span class="vtick">✓ 실존 확인</span></div><p class="gist">이혼위자료 vs 개별 불법행위 구별 기준 최초 명확화. 이혼 원인 위자료 시효 기산점=혼인 해소 시.</p></div><div class="ev"><div class="top"><span class="kind case">판례</span><span class="cite">대법원 2024. 10. 25. 선고 2024므11526</span><span class="vtick">✓ 실존 확인</span></div><p class="gist">파탄 이후 행위도 위자료 산정 요소. 소송 계속 중 추가 폭행·폭언도 위자료 인상 요소.</p></div></section>
-<section class="blk" id="s3"><div class="secl">쟁점 2</div><h2>상간자(제3자) 불법행위 책임</h2><p>제3자가 배우자 있는 사람과 부정행위로 부부공동생활을 침해·방해→불법행위 성립. 배우자(부정행위자)와 제3자는 공동불법행위로서 부진정연대책임. 혼인 파탄 책임이 부부 쌍방 대등한 경우 제3자 책임도 부정 가능.</p><div class="ev"><div class="top"><span class="kind case">판례</span><span class="cite">대법원 2026. 1. 29. 선고 2025므10716</span><span class="vtick">✓ 실존 확인</span></div><p class="gist">상간자 사건 시효 기산점: 이혼 원인 위자료는 혼인 해소 시부터. 제3자의 배우자 존재 인식은 주장자가 입증.</p></div></section>
-<section class="blk" id="s4"><div class="secl">쟁점 3</div><h2>위자료 산정 요소</h2><p>법원이 변론 전체 취지 참작, 직권으로 액수 산정 가능. 고려요소: 유책행위 경위·정도, 파탄 원인과 책임, 당사자 연령·재산상태 등.</p><div class="ev"><div class="top"><span class="kind case">판례</span><span class="cite">대법원 1987. 10. 28. 선고 87므55, 87므56</span><span class="vtick">✓ 실존 확인</span></div><p class="gist">위자료 산정 프레임(재량·참작요소) 기본 판례.</p></div></section>
-<section class="blk faq" id="faq"><div class="secl">Q&amp;A</div><h2>자주 묻는 질문</h2>
-<details open><summary>위자료와 재산분할은 같이 청구해야 하나요?</summary><div class="a">같은 가정법원에서 함께 청구 가능. 위자료는 정신적 손해배상, 재산분할은 혼인 중 형성 재산 청산으로 별개 제도.</div></details>
-<details><summary>상간자 위자료 청구는 어떻게 하나요?</summary><div class="a">상간자(제3자)를 상대로 민사법원에 불법행위 손해배상 청구. 배우자 존재 인식 입증이 핵심. 증거: 통화·메시지·만남 정황·지인 진술.</div></details>
-<details><summary>위자료는 보통 얼마인가요?</summary><div class="a">법원 재량으로 편차 큼. 하급심 인용례: 500만 원~3,000만 원 분포. 혼인기간·유책 정도·재산 상태·지역에 따라 변동.</div></details>
-<div class="notice">본 자료는 2026-07-29 기준. 인용 법령·판례는 작성 시점 현행성 확인. 실제 의사결정 전 최신 법령과 개별 사실관계 확인 필요.</div></section></main></div>
-<footer class="footer" id="consult"><div class="wrap"><div class="prof"><div><h3>조우성 변호사 / 로펌 머스트노우</h3><p>서울대 법학전문대학원 졸업, 변호사(2010). 로펌 머스트노우 대표변호사.</p><p style="font-size:15px;color:rgba(255,255,255,.92);margin-top:8px">✉ law@mustknow.co.kr</p></div><div class="cta-f"><a class="btn btn-f" href="mailto:law@mustknow.co.kr">상담 문의하기</a></div></div><div class="fine">© 2026 조우성 변호사. 일반 법률 정보이며 법률 자문을 대체하지 않습니다.</div></div></footer>
-<script>
-var pb=document.getElementById('progress');function onScroll(){var h=document.documentElement,b=document.body;var st=h.scrollTop||b.scrollTop;var sh=(h.scrollHeight||b.scrollHeight)-h.clientHeight;pb.style.width=(sh>0?(st/sh*100):0)+'%'}window.addEventListener('scroll',onScroll,{passive:true});onScroll();
-var toTop=document.getElementById('toTop');window.addEventListener('scroll',function(){(document.documentElement.scrollTop||document.body.scrollTop)>500?toTop.classList.add('show'):toTop.classList.remove('show')},{passive:true});
-var links=Array.prototype.slice.call(document.querySelectorAll('#toc-list a'));var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));}).filter(Boolean);
-function spy(){var pos=(document.documentElement.scrollTop||document.body.scrollTop)+120,cur=secs[0];for(var i=0;i<secs.length;i++){if(secs[i].offsetTop<=pos)cur=secs[i];}links.forEach(function(a){a.classList.toggle('active',cur&&a.getAttribute('href')==='#'+cur.id);})}window.addEventListener('scroll',spy,{passive:true});spy();
-document.querySelectorAll('#toc-list a').forEach(function(a){a.addEventListener('click',function(){if(window.innerWidth<=820)document.getElementById('toc').classList.add('closed')})});
-</script>
-</body></html>
+.footer .btn-f{background:#fff;color:var(--wine-d)}
+.footer .btn-f:hover{background:var(--header-accent)}
+.footer .btn-fo{background:transparent;color:#f4eef0;border-color:rgba(255,255,255,.35)}
+.footer .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:22px;padding-top:14px;
+  font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.7}
+
+/* ── 모바일 (≤820px) ── */
+@media(max-width:820px){
+  .hero h1{font-size:24px}
+  .app{grid-template-columns:1fr;gap:0;padding-top:0}
+  .toc{position:static;margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 8px}
+  .toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;
+    cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--wine-d);padding:9px 8px}
+  .toc-toggle .ar{transition:transform .2s}
+  .toc.closed .toc-toggle .ar{transform:rotate(-90deg)}
+  .toc .tt{display:none}
+  .toc ol{max-height:50vh;overflow:auto}
+  .toc.closed ol{display:none}
+  section.blk h2{font-size:20px}
+  th,td{white-space:nowrap}
+}
+@media print{
+  #progress,.toc,.cta-row,.footer .cta-f{display:none}
+  .header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .app{display:block}
+}
+</style></head><body><div id="progress"></div><button id="toTop" aria-label="맨 위로">?</button><header class="header"><div class="wrap"><span class="badge"><span class="dot"></span>조우성 변호사 · 법률 인사이트</span></div></header><div class="hero"><div class="eb">전자책 대시보드 · 실무 가이드</div><h1>이혼 위자료와 상간자 책임 — 산정 기준과 청구 요건</h1><div class="tldr"><div class="lb">3줄 요약 (TL;DR)</div><ul><li>원문 Markdown의 제목·본문·표·체크리스트를 반영한 공개용 HTML입니다.</li><li>문서의 핵심 내용과 실무상 확인 포인트를 한 화면에서 확인할 수 있습니다.</li><li>구체적인 사안은 최신 법령·판례와 사실관계 확인이 필요합니다.</li></ul></div><div class="meta"><span>원문: EBOOK-163-이혼-위자료-상간자책임.md</span><span class="vchip">원문 기반 HTML</span></div><div class="cta-row"><a class="btn btn-p" href="#s1">핵심 내용 보기</a><a class="btn btn-o" href="#faq">확인 사항</a></div></div><div class="app"><nav class="toc" id="toc"><div class="tt">목차</div><ol id="toc-list"><li><a href="#s1">본문</a></li><li><a href="#s2">3줄 요약 (TL;DR)</a></li><li><a href="#s3">1. 위자료의 법적 성질과 근거</a></li><li><a href="#s4">2. 이혼 원인 위자료 vs 개별 불법행위 위자료</a></li><li><a href="#s5">3. 상간자(제3자) 불법행위 책임</a></li><li><a href="#s6">4. 위자료 산정 요소</a></li><li><a href="#s7">검증 로그</a></li></ol></nav><main class="content"><section class="blk" id="s1"><div class="secl">SECTION</div><h1>이혼 위자료와 상간자 책임 — 산정 기준과 청구 요건</h1></section><section class="blk" id="s2"><div class="secl">SECTION</div><h2>3줄 요약 (TL;DR)</h2>
+<ul>
+<li><strong>이혼위자료</strong>: 상대방 배우자의 유책행위로 이혼에 이른 경우 정신적 손해배상 — 개별 유책행위부터 최종 이혼까지의 일련 경과를 전체로서 불법행위로 평가</li>
+<li><strong>이혼 원인 위자료(가정법원) vs 개별 불법행위 위자료(민사법원)</strong> 는 관할·시효 기산점이 다르므로 전략적 선택 필요</li>
+<li><strong>상간자(제3자)</strong> 도 배우자 존재를 알면서 부정행위를 하면 부진정연대책임(대법원 2025므10716)</li>
+</ul>
+<hr /></section><section class="blk" id="s3"><div class="secl">SECTION</div><h2>1. 위자료의 법적 성질과 근거</h2>
+<p><strong>한눈에</strong>
+- 이혼위자료는 유책·불법행위로 혼인관계가 파탄→이혼에 이른 경우의 정신적 손해 전보
+- 파탄 이후 이혼에 이르기까지의 사정(소송 중 추가 가해행위 포함)도 산정 요소</p>
+<blockquote>
+<p><strong>민법 제751조(재산 이외의 손해의 배상)</strong> (시행 2026-03-17)
+① 타인의 신체, 자유 또는 명예를 해하거나 기타 정신상고통을 가한 자는 재산 이외의 손해에 대하여도 배상할 책임이 있다.
+✓ 한국법 MCP 현행 확인 (MST:284415)</p>
+<p><strong>민법 제843조(준용규정)</strong> (시행 2026-03-17)
+재판상 이혼에 따른 손해배상책임에 관하여는 제806조를 준용하고, 재판상 이혼에 따른 재산분할청구권에 관하여는 제839조의2를 준용한다.
+✓ 한국법 MCP 현행 확인 (MST:284415)</p>
+</blockquote></section><section class="blk" id="s4"><div class="secl">SECTION</div><h2>2. 이혼 원인 위자료 vs 개별 불법행위 위자료</h2>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>이혼 원인 위자료</th>
+<th>개별 불법행위 위자료</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>관할</td>
+<td>가정법원</td>
+<td>민사법원</td>
+</tr>
+<tr>
+<td>시효 기산</td>
+<td>혼인 해소 시부터</td>
+<td>불법행위 인지 시부터</td>
+</tr>
+<tr>
+<td>요건</td>
+<td>이혼 전체 경과 평가</td>
+<td>개별 행위의 위법성</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>대법원 2026. 1. 29. 선고 2025므10716 판결</strong>
+이혼위자료 vs 개별 불법행위 구별 기준 최초 명확화. 이혼 원인 위자료 시효 기산점 = 혼인 해소 시.
+✓ 실존·현행 확인</p>
+<p><strong>대법원 2024. 10. 25. 선고 2024므11526 판결</strong>
+파탄 이후 행위도 위자료 산정 요소임을 명시. 소송 계속 중 추가 폭행·폭언도 위자료 인상 요소.
+✓ 실존·현행 확인</p>
+</blockquote></section><section class="blk" id="s5"><div class="secl">SECTION</div><h2>3. 상간자(제3자) 불법행위 책임</h2>
+<p>제3자가 배우자 있는 사람과 부정행위로 부부공동생활을 침해·방해하면 불법행위 성립. 배우자(부정행위자)와 제3자는 공동불법행위로서 부진정연대책임. 혼인 파탄 책임이 부부 쌍방 대등한 경우 제3자 책임도 부정 가능.</p>
+<blockquote>
+<p><strong>대법원 2026. 1. 29. 선고 2025므10716 판결</strong>
+상간자 사건 시효 기산점: 이혼 원인 위자료는 혼인 해소 시부터. 제3자의 배우자 존재 인식은 주장자가 입증.
+✓ 실존·현행 확인</p>
+</blockquote></section><section class="blk" id="s6"><div class="secl">SECTION</div><h2>4. 위자료 산정 요소</h2>
+<p>법원은 변론 전체 취지 참작, 직권으로 액수 산정 가능. 고려요소: 유책행위의 경위·정도, 파탄 원인과 책임, 당사자 연령·재산상태 등 모든 사정.</p>
+<blockquote>
+<p><strong>대법원 1987. 10. 28. 선고 87므55, 87므56 판결</strong>
+위자료 산정 프레임(재량·참작요소) 기본 판례. 부정행위·폭언·폭행 유형 불문 위자료 액수 주장·방어 기준점.
+✓ 실존·현행 확인</p>
+</blockquote></section><section class="blk" id="s7"><div class="secl">SECTION</div><h2>검증 로그</h2>
+<table>
+<thead>
+<tr>
+<th>인용</th>
+<th>유형</th>
+<th>웹 화이트리스트</th>
+<th>한국법 MCP</th>
+<th>판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>민법 제751조</td>
+<td>조문</td>
+<td>확인</td>
+<td>FOUND(284415)</td>
+<td>등재</td>
+</tr>
+<tr>
+<td>민법 제843조</td>
+<td>조문</td>
+<td>확인</td>
+<td>FOUND(284415)</td>
+<td>등재</td>
+</tr>
+<tr>
+<td>대법원 2025므10716</td>
+<td>판례</td>
+<td>확인</td>
+<td>FOUND(616571)</td>
+<td>등재</td>
+</tr>
+<tr>
+<td>대법원 2024므11526</td>
+<td>판례</td>
+<td>확인</td>
+<td>FOUND(241881)</td>
+<td>등재</td>
+</tr>
+<tr>
+<td>대법원 87므55</td>
+<td>판례</td>
+<td>확인</td>
+<td>FOUND</td>
+<td>등재</td>
+</tr>
+</tbody>
+</table></section><section class="blk faq" id="faq"><div class="secl">NOTICE</div><h2>확인 사항</h2><div class="notice">이 문서는 일반적인 법률 정보 제공을 위한 자료입니다. 구체적인 사실관계와 최신 법령·판례에 따라 결론이 달라질 수 있습니다.</div></section></main></div><footer class="footer"><div class="wrap"><h3>조우성 변호사</h3><p>실무에 바로 활용할 수 있는 법률 지식과 대응 가이드를 제공합니다.</p></div></footer><script>var b=document.getElementById('progress');window.addEventListener('scroll',function(){var h=document.documentElement,st=h.scrollTop||document.body.scrollTop,sh=h.scrollHeight-h.clientHeight;b.style.width=(sh?st/sh*100:0)+'%';},{passive:true});document.getElementById('toTop').onclick=function(){window.scrollTo({top:0,behavior:'smooth'})};</script></body></html>
