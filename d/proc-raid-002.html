@@ -1,55 +1,177 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <meta name="description" content="영장의 구조 이해와 기재된 범죄혐의 파악법 — 일반 법률정보">
-<title>영장의 구조 이해와 기재된 범죄혐의 파악법</title>
+<meta property="og:type" content="article">
+<meta property="og:title" content="영장의 구조 이해와 기재된 범죄혐의 파악법">
+<meta property="og:description" content="영장의 구조 이해와 기재된 범죄혐의 파악법 — 일반 법률정보">
+<title>영장의 구조 이해와 기재된 범죄혐의 파악법 — 조우성 변호사</title>
 <style>
-:root{--navy:#1a3a6b;--blue:#2e6be6;--bg:#f0f2f5;--card:#fff;--text:#111827;--sub:#6b7280;--amber-bg:#fffbeb;--amber-bd:#f59e0b;--green:#059669;--warn:#d97706;}
+:root{
+  --bg:#f5f1f2; --panel:#ffffff; --panel2:#faf6f7;
+  --line:#ebe2e5; --line2:#ddccd2;
+  --ink:#2c1d26; --ink2:#56424c; --muted:#8a7b82; --faint:#b3a6ab;
+  --wine:#7a2e3a; --wine-d:#5a1f2b; --wine-l:#9c4456;
+  --wine-tint:#f4e9ec; --wine-tint-ln:#ecd7dd;
+  --header-bg:#3a1525; --header-bg2:#4e1f32; --header-accent:#d4a0aa;
+  --rH:#c74a3c; --rM-bg:#f8e4b8; --rM-tx:#7d520a; --rL-bg:#d6ecdb; --rL-tx:#287a54;
+  --amber:#b45309; --green:#287a54;
+  --font:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Noto Sans KR',sans-serif;
+  --maxw:1120px; --readw:760px;
+}
 *{box-sizing:border-box}
-body{margin:0;font-family:'Pretendard','Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:var(--bg);color:var(--text);line-height:1.75;font-size:15px}
-.topbar{height:4px;background:linear-gradient(90deg,var(--navy),var(--blue))}
-.wrap{max-width:820px;margin:0 auto;padding:26px 18px 70px}
-h1{font-size:26px;font-weight:800;line-height:1.4;color:var(--navy);margin:6px 0 18px}
-h2{font-size:20px;font-weight:700;margin:26px 0 10px;padding:10px 14px;background:#fff;border-left:5px solid var(--blue);border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.04)}
-h3{font-size:16px;font-weight:700;margin:16px 0 6px}
-p{margin:9px 0}
-ul,ol{margin:9px 0;padding-left:22px}
-li{margin:5px 0}
-li input[type=checkbox]{margin-right:8px;transform:scale(1.15)}
-hr{border:0;border-top:1px solid #e5e7eb;margin:22px 0}
-blockquote{background:var(--amber-bg);border-left:4px solid var(--amber-bd);margin:10px 0;padding:11px 15px;border-radius:6px;font-size:14px}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;
+  background:linear-gradient(90deg,var(--wine),var(--wine-l));transition:width .1s linear}
+.header{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0}
+.header .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 26px}
+.header .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;
+  color:var(--header-accent);border:1px solid rgba(212,160,170,.4);border-radius:999px;padding:4px 12px}
+.header .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--header-accent)}
+.hero{max-width:var(--maxw);margin:0 auto;padding:30px 26px 8px}
+.hero .eb{font-size:12px;font-weight:700;color:var(--wine);letter-spacing:.02em;margin-bottom:10px}
+.hero h1{font-size:28px;line-height:1.3;font-weight:800;margin:0 0 16px;color:var(--ink);letter-spacing:-.01em}
+.hero .tldr{background:var(--wine-tint);border:1px solid var(--wine-tint-ln);border-left:4px solid var(--wine);
+  border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.hero .tldr .lb{font-size:12px;font-weight:700;color:var(--wine-d);margin-bottom:8px}
+.hero .tldr ul{margin:0;padding-left:18px}
+.hero .tldr li{margin:4px 0;font-size:15px;color:var(--ink2)}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:12.5px;color:var(--muted);margin-bottom:18px}
+.hero .meta .vchip{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);
+  font-weight:700;border-radius:6px;padding:3px 9px;font-size:11.5px}
+.hero .cta-row{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:9px;
+  padding:11px 18px;text-decoration:none;cursor:pointer;border:1px solid transparent}
+.btn-p{background:var(--wine);color:#fff}
+.btn-p:hover{background:var(--wine-d)}
+.btn-o{background:#fff;color:var(--wine-d);border-color:var(--line2)}
+.btn-o:hover{background:var(--panel2)}
+.app{max-width:var(--maxw);margin:0 auto;padding:8px 26px 60px;
+  display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:start}
+.toc{position:sticky;top:24px}
+.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;
+  margin:0 0 10px;padding-left:2px}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}
+.toc li{counter-increment:toc;margin:1px 0}
+.toc a{display:flex;gap:9px;font-size:13px;color:var(--ink2);text-decoration:none;
+  padding:7px 10px;border-radius:8px;border-left:3px solid transparent;line-height:1.4}
+.toc a::before{content:counter(toc,decimal-leading-zero);color:var(--faint);font-weight:700;font-size:11.5px;flex:none}
+.toc a:hover{background:var(--panel2)}
+.toc a.active{background:var(--wine-tint);border-left-color:var(--wine);color:var(--wine-d);font-weight:700}
+.toc-toggle{display:none}
+.content{max-width:var(--readw);min-width:0}
+section.blk{scroll-margin-top:24px;margin-bottom:38px}
+.secl{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.05em;margin:0 0 12px}
+.secl::before{content:"";width:7px;height:15px;background:var(--wine);border-radius:2px;flex:none}
+section.blk h2{font-size:22px;font-weight:800;line-height:1.35;margin:0 0 14px;color:var(--ink);letter-spacing:-.01em}
+section.blk h3{font-size:16.5px;font-weight:700;margin:24px 0 10px;color:var(--wine-d)}
+section.blk p{margin:0 0 14px;color:var(--ink2)}
+section.blk ul,section.blk ol{margin:0 0 14px;padding-left:22px;color:var(--ink2)}
+section.blk li{margin:6px 0}
+section.blk li input[type=checkbox]{margin-right:8px;transform:scale(1.2);accent-color:var(--wine)}
+strong{color:var(--ink);font-weight:700}
+a{color:var(--wine-l)}
+pre{background:#fff;border:1px solid var(--line);border-left:4px solid var(--wine);
+  border-radius:10px;padding:13px 15px;margin:0 0 14px;color:var(--ink2);
+  font-family:var(--font);font-size:14px;white-space:pre-wrap;line-height:1.7;overflow-x:auto}
+code{background:var(--wine-tint);padding:1px 5px;border-radius:4px;font-size:13.5px;color:var(--wine-d)}
+pre code{background:none;padding:0;color:inherit}
+blockquote{background:var(--rM-bg);border-left:4px solid var(--amber);margin:0 0 16px;padding:13px 16px;
+  border-radius:8px;font-size:14px;color:var(--rM-tx)}
 blockquote p{margin:4px 0}
-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
-th,td{border:1px solid #e5e7eb;padding:8px 10px;text-align:left;vertical-align:top}
-th{background:#f3f6fb}
-pre{background:#0f172a;color:#e2e8f0;padding:14px;border-radius:8px;overflow:auto;font-size:13px;line-height:1.6;white-space:pre-wrap}
-code{background:#eef1f6;padding:1px 5px;border-radius:4px;font-size:13px}
-pre code{background:none;padding:0}
-em{color:var(--sub)}
-strong{color:var(--navy)}
-a{color:var(--blue)}
-.footer{margin-top:30px;text-align:center;color:var(--sub);font-size:12px}
+.tbl-wrap{overflow-x:auto;margin:0 0 18px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px}
+.notice{background:#fff;border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;
+  font-size:12.5px;color:var(--muted);line-height:1.7}
+#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--wine-tint-ln);background:var(--wine);color:#fff;font-size:18px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;
+  box-shadow:0 4px 14px rgba(58,21,37,.28)}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{background:var(--wine-d)}
+.footer{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0;margin-top:20px}
+.footer .wrap{max-width:var(--maxw);margin:0 auto;padding:34px 26px}
+.footer h3{font-size:20px;font-weight:800;margin:0 0 8px;color:#fff}
+.footer p{font-size:14px;color:rgba(255,255,255,.72);margin:0 0 6px;line-height:1.7}
+.footer .prof{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end}
+.footer .cta-f{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.footer .btn-f{background:#fff;color:var(--wine-d)}
+.footer .btn-f:hover{background:var(--header-accent)}
+.footer .btn-fo{background:transparent;color:#f4eef0;border-color:rgba(255,255,255,.35)}
+.footer .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:22px;padding-top:14px;
+  font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.7}
+@media(max-width:820px){
+  .hero h1{font-size:23px}
+  .app{grid-template-columns:1fr;gap:0;padding-top:0}
+  .toc{position:static;margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 8px}
+  .toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;
+    cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--wine-d);padding:9px 8px}
+  .toc-toggle .ar{transition:transform .2s}
+  .toc.closed .toc-toggle .ar{transform:rotate(-90deg)}
+  .toc .tt{display:none}
+  .toc ol{max-height:50vh;overflow:auto}
+  .toc.closed ol{display:none}
+  section.blk h2{font-size:19px}
+  th,td{white-space:nowrap}
+}
+@media print{
+  #progress,.toc,.cta-row,.footer .cta-f{display:none}
+  .header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .app{display:block}
+}
 </style>
 </head>
 <body>
-<div class="topbar"></div>
-<div class="wrap">
-<h1>PROC-RAID-002 | 영장의 구조 이해와 기재된 범죄혐의 파악법</h1>
-<h2>3줄 요약</h2>
-<ul>
-<li>압수수색영장에는 피의자·죄명·압수물·수색장소·유효기간이 반드시 기재되어야 하며(형소법 제114조), 기재 범위를 벗어난 집행은 위법하다.</li>
-<li>수사기관이 제시한 영장에서 &#39;죄명&#39;과 &#39;압수할 물건&#39; 란을 즉시 확인해 범죄혐의의 범위와 압수 대상을 특정해야 한다.</li>
-<li>영장 기재 범죄혐의를 정확히 파악해야 변호인의 방어 전략과 임원진의 진술 대응 방향을 결정할 수 있다.</li>
-</ul>
-<h2>0. 지금 당신의 위치</h2>
-<p>공통 5단계: 사전 → 착수 → 대응 → 결정 → 사후</p>
+<div id="progress"></div>
+<button id="toTop" aria-label="맨 위로" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<header class="header">
+  <div class="wrap">
+    <span class="badge"><span class="dot"></span>조우성 변호사 · 법률 인사이트</span>
+  </div>
+</header>
+<div class="hero">
+  <div class="eb">PROC-RAID-002 · 사전 단계 · 가압류·가처분(보전처분) 절차 가이드</div>
+  <h1>영장의 구조 이해와 기재된 범죄혐의 파악법</h1>
+  <div class="tldr"><div class="lb">3줄 요약 (TL;DR)</div><ul><li>압수수색영장에는 피의자·죄명·압수물·수색장소·유효기간이 반드시 기재되어야 하며(형소법 제114조), 기재 범위를 벗어난 집행은 위법하다.</li><li>수사기관이 제시한 영장에서 &#39;죄명&#39;과 &#39;압수할 물건&#39; 란을 즉시 확인해 범죄혐의의 범위와 압수 대상을 특정해야 한다.</li><li>영장 기재 범죄혐의를 정확히 파악해야 변호인의 방어 전략과 임원진의 진술 대응 방향을 결정할 수 있다.</li></ul></div>
+  <div class="meta">
+    <span>작성일 2026-07-31</span>
+    <span>· 기준 법령 형사소송법(현행) · 사전 단계</span>
+    <span class="vchip">✓ 내부 법률지식 기반</span>
+    <span>· 읽는 시간 약 8분</span>
+  </div>
+  <div class="cta-row">
+    <a class="btn btn-p" href="#s1">바로 체크리스트</a>
+    <a class="btn btn-o" href="#consult">상담 문의</a>
+  </div>
+</div>
+<div class="app">
+  <nav class="toc" id="toc">
+    <button class="toc-toggle" onclick="document.getElementById('toc').classList.toggle('closed')">
+      목차 <span class="ar">▾</span>
+    </button>
+    <div class="tt">목차</div>
+    <ol id="toc-list"><li><a href="#s1">0. 지금 당신의 위치</a></li><li><a href="#s2">1. 이번 단계에서 반드시 할 일</a></li><li><a href="#s3">2. 준비물</a></li><li><a href="#s4">3. 작성·제출물</a></li><li><a href="#s5">4. 흔한 실수</a></li><li><a href="#s6">5. 전문가 상담 신호</a></li><li><a href="#s7">6. 인접 절차 연결</a></li><li><a href="#s8">7. 근거 조문·판례</a></li><li><a href="#s9">8. 다음 단계</a></li><li><a href="#s10">실전 운영 부록 — 현관에서 사후 불복까지</a></li><li><a href="#s11">근거 카드 — 검증 전 후보와 적용 주의</a></li><li><a href="#s12">면책·상담 CTA</a></li></ol>
+  </nav>
+  <main class="content">
+    <section class="blk" id="s1">
+      <div class="secl">STEP 1</div>
+      <h2>0. 지금 당신의 위치</h2>
+      <p>공통 5단계: 사전 → 착수 → 대응 → 결정 → 사후</p>
 <pre><code class="language-text">001(TF구성) -&gt; [002(영장구조이해)] -&gt; 003(보안점검) -&gt; 004(임원가이드)
 </code></pre>
-<h2>1. 이번 단계에서 반드시 할 일</h2>
-<ul>
+
+    </section><section class="blk" id="s2">
+      <div class="secl">STEP 2</div>
+      <h2>1. 이번 단계에서 반드시 할 일</h2>
+      <ul>
 <li><input disabled="" type="checkbox"> 영장 7대 기재사항(형소법 제114조제1항) 대조표를 출력해 TF에 배포하고, 영장 제시 시 즉시 확인할 수 있도록 준비</li>
 <li><input disabled="" type="checkbox"> &#39;죄명&#39; 란에 기재된 구체적 범죄사실(특정경제범죄가중처벌법위반·업무상배임·횡령·정보통신망법위반 등)을 파악해 해당 구성요건과 법정형을 사전 연구</li>
 <li><input disabled="" type="checkbox"> &#39;압수할 물건&#39; 란의 범위가 포괄적이거나 특정되지 않은 경우 위법성 주장 논리를 TF 변호사와 사전 협의</li>
@@ -57,8 +179,11 @@ a{color:var(--blue)}
 <li><input disabled="" type="checkbox"> 영장 유효기간(발부일로부터 보통 7일)을 확인해 기간 경과 집행의 위법 여부를 판단할 기준 확보</li>
 <li><input disabled="" type="checkbox"> 영장에 &#39;작성기간&#39; 항목이 있는 경우(전기통신 압수 시) 해당 기간이 적법한지 검토</li>
 </ul>
-<h2>2. 준비물</h2>
-<table>
+
+    </section><section class="blk" id="s3">
+      <div class="secl">STEP 3</div>
+      <h2>2. 준비물</h2>
+      <div class="tbl-wrap"><table>
 <thead>
 <tr>
 <th>준비물</th>
@@ -81,9 +206,12 @@ a{color:var(--blue)}
 <td>&#39;압수할 물건&#39;이 지나치게 광범위할 때 이의제기 근거 마련</td>
 <td>미확인</td>
 </tr>
-</tbody></table>
-<h2>3. 작성·제출물</h2>
-<table>
+</tbody></table></div>
+
+    </section><section class="blk" id="s4">
+      <div class="secl">STEP 4</div>
+      <h2>3. 작성·제출물</h2>
+      <div class="tbl-wrap"><table>
 <thead>
 <tr>
 <th>문서</th>
@@ -106,27 +234,39 @@ a{color:var(--blue)}
 <td>법률자문 로펌</td>
 <td>현장에서 즉시 의견을 구할 수 있도록 사전 초안 작성</td>
 </tr>
-</tbody></table>
-<h2>4. 흔한 실수</h2>
-<ul>
+</tbody></table></div>
+
+    </section><section class="blk" id="s5">
+      <div class="secl">STEP 5</div>
+      <h2>4. 흔한 실수</h2>
+      <ul>
 <li><strong>실수</strong>: 영장에 기재된 죄명만 보고 &#39;우리 회사와 무관하다&#39;고 판단해 대응을 소홀히 함 — 영장 범죄사실은 수사기관의 &#39;의심&#39; 단계이므로 방심 금물</li>
 <li><strong>실수</strong>: &#39;압수할 물건&#39; 란에 &#39;전자정보 일체&#39;라고 기재되어 있어도 수사기관이 실제 관련성 있는 파일만 선별한다고 믿고 임의제출 — 포괄영장은 형소법 제215조의 &#39;해당 사건과 관계가 있다고 인정할 수 있는 것&#39; 한정 원칙 위반으로 위법</li>
 <li><strong>실수</strong>: 영장의 유효기간이 지났는데도 집행에 협조 — 기간 경과 영장에 의한 압수수색은 위법수집증거로서 증거능력 배제 대상(형소법 제308조의2)</li>
 </ul>
-<h2>5. 전문가 상담 신호</h2>
-<p><strong>위험도:</strong> 전문가 필요</p>
+
+    </section><section class="blk" id="s6">
+      <div class="secl">STEP 6</div>
+      <h2>5. 전문가 상담 신호</h2>
+      <p><strong>위험도:</strong> 전문가 필요</p>
 <ul>
 <li>영장 &#39;압수할 물건&#39;에 &#39;○○ 관련 자료 일체&#39; 등 포괄적 문구가 포함된 경우 — 사전에 변호사 검토 필수</li>
 <li>수색 대상 장소에 임원 개인 주거지·차량·호텔 등이 포함된 경우 — 개인 영역과 업무 영역의 구분 필요</li>
 <li>영장에 기재된 범죄혐의가 특정경제범죄가중처벌법(5억 이상) 또는 자본시장법 위반인 경우 — 수사 대응 수준 격상</li>
 </ul>
-<h2>6. 인접 절차 연결</h2>
-<ul>
+
+    </section><section class="blk" id="s7">
+      <div class="secl">STEP 7</div>
+      <h2>6. 인접 절차 연결</h2>
+      <ul>
 <li>선행: PROC-RAID-001(TF구성) — TF 구성 후 영장 구조 교육 실시</li>
 <li>후속: PROC-RAID-003(보안점검) — 영장 범위에 따라 보안 점검 범위 결정</li>
 </ul>
-<h2>7. 근거 조문·판례</h2>
-<table>
+
+    </section><section class="blk" id="s8">
+      <div class="secl">STEP 8</div>
+      <h2>7. 근거 조문·판례</h2>
+      <div class="tbl-wrap"><table>
 <thead>
 <tr>
 <th>근거 후보</th>
@@ -164,13 +304,218 @@ a{color:var(--blue)}
 <td>포괄영장·관련성 없는 전자정보 압수 위법</td>
 <td>검증완료(L2)</td>
 </tr>
-</tbody></table>
-<h2>8. 다음 단계</h2>
-<p>PROC-RAID-003: 사내 보안 및 컴플라이언스 점검 (증거인멸금지 교육)</p>
-<h2>최신성·면책 고지</h2>
-<p>본 자료는 작성일 기준 일반적 법률 정보이며 특정 사건에 대한 자문이 아닙니다. 법령·실무는 변경될 수 있습니다. 구체적 상황에 맞춘 법률 자문이 필요하다면 변호사에게 문의하십시오.</p>
+</tbody></table></div>
 
-<div class="footer">© 로펌 머스트노우 · 문의 law@mustknow.co.kr</div>
+    </section><section class="blk" id="s9">
+      <div class="secl">STEP 9</div>
+      <h2>8. 다음 단계</h2>
+      <p>PROC-RAID-003: 사내 보안 및 컴플라이언스 점검 (증거인멸금지 교육)</p>
+
+    </section><section class="blk" id="s10">
+      <div class="secl">STEP 10</div>
+      <h2>실전 운영 부록 — 현관에서 사후 불복까지</h2>
+      <h3>1. 3분 초동 프로토콜</h3>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>시점</th>
+<th>담당</th>
+<th>반드시 할 일</th>
+<th>금지할 일</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0~30초</td>
+<td>보안·프론트</td>
+<td>신분·소속·영장 제시를 정중히 확인하고 법무 호출</td>
+<td>문을 잠그거나 물리적으로 저지</td>
+</tr>
+<tr>
+<td>30초~3분</td>
+<td>법무·임원</td>
+<td>영장의 죄명·장소·압수물·기간·유효기간을 메모</td>
+<td>영장 범위를 읽지 않고 전사 안내</td>
+</tr>
+<tr>
+<td>3분 이후</td>
+<td>TF</td>
+<td>참관인 배치, 자료보존, 이의사항 기록, 부서별 동행</td>
+<td>파일 삭제·서버 종료·직원 단체 대화</td>
+</tr>
+</tbody></table></div>
+<h3>2. 영장과 임의제출 분리표</h3>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>구분</th>
+<th>영장 집행</th>
+<th>임의제출</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>출발점</td>
+<td>법원이 발부한 강제처분</td>
+<td>소유자·소지자·보관자의 자발적 제출</td>
+</tr>
+<tr>
+<td>현장 대응</td>
+<td>범위 안에서는 방해 없이 집행 협조</td>
+<td>자료·기간·목적을 특정한 뒤 승인 여부 결정</td>
+</tr>
+<tr>
+<td>확인 기록</td>
+<td>영장 원본·집행일시·압수목록</td>
+<td>제출자료 목록·동의 범위·확인서 문구</td>
+</tr>
+<tr>
+<td>핵심 리스크</td>
+<td>범위 밖 수색·압수</td>
+<td>압박 속 포괄 동의·불리한 자료 제출</td>
+</tr>
+</tbody></table></div>
+<h3>3. 디지털 자료 보존 체크</h3>
+<ul>
+<li><input disabled="" type="checkbox"> 서버·PC·휴대전화의 전원을 임의로 끄거나 삭제하지 않는다.</li>
+<li><input disabled="" type="checkbox"> 조사관의 이미징·복제 방식, 대상 계정·기간·키워드를 기록한다.</li>
+<li><input disabled="" type="checkbox"> 원본 반출인지 현장 이미징인지 구분하고 해시·매체·봉인 정보를 요청한다.</li>
+<li><input disabled="" type="checkbox"> 업무 중단이 큰 자료는 가환부·사본 제공·업무용 복제본 가능성을 별도로 요청한다.</li>
+<li><input disabled="" type="checkbox"> 압수목록에 파일명·기기번호·수량·상태가 구체적으로 기재됐는지 확인한다.</li>
+</ul>
+<h3>4. 현장 문구</h3>
+<blockquote>
+<p>“집행을 방해할 의사는 없습니다. 다만 영장에 기재된 장소·물건·기간과 다른 범위는 이의를 제기하고 기록해 주시기 바랍니다.”</p>
+</blockquote>
+<blockquote>
+<p>“영장 범위 밖 자료의 임의제출 여부는 자료를 확인하고 법무·책임자의 승인을 거친 뒤 서면으로 답변하겠습니다.”</p>
+</blockquote>
+<blockquote>
+<p>“이 자료가 업무에 필수적이므로 압수목록에 특정해 주시고, 사본·가환부 가능 여부를 함께 검토해 주십시오.”</p>
+</blockquote>
+<h3>5. 사후 48시간 기록 패키지</h3>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>파일</th>
+<th>포함 내용</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>01_현장타임라인</td>
+<td>도착·영장 제시·수색 장소·반출 시각</td>
+</tr>
+<tr>
+<td>02_영장검토표</td>
+<td>죄명·장소·압수물·기간·범위 이탈 이의</td>
+</tr>
+<tr>
+<td>03_압수목록대조표</td>
+<td>목록과 실제 반출물·전자기기·봉인 상태</td>
+</tr>
+<tr>
+<td>04_임의제출기록</td>
+<td>요청자·요청 자료·동의 범위·서명 문서</td>
+</tr>
+<tr>
+<td>05_후속쟁점표</td>
+<td>반환·가환부·준항고·증거능력·소환 연계</td>
+</tr>
+</tbody></table></div>
+
+    </section><section class="blk" id="s11">
+      <div class="secl">STEP 11</div>
+      <h2>근거 카드 — 검증 전 후보와 적용 주의</h2>
+      <blockquote>
+<p>형사소송법상 영장주의·압수수색·임의제출·위법수집증거·변호인 조력권을 중심으로 내부 doctrine과 연결한다. 조문 번호·판례는 현행 전문을 MCP로 확인한 뒤에만 확정 인용한다.</p>
+</blockquote>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>쟁점</th>
+<th>내부 연결</th>
+<th>상태</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>영장주의·압수수색 범위</td>
+<td>형사절차 수사방어 doctrine</td>
+<td>검증대기(L1)</td>
+</tr>
+<tr>
+<td>임의제출의 자발성·범위</td>
+<td>현관출동 강의·증거수집 RD</td>
+<td>검증대기(L1)</td>
+</tr>
+<tr>
+<td>위법수집증거 배제</td>
+<td>형사절차 전문증거·증거법 RD</td>
+<td>검증대기(L1)</td>
+</tr>
+<tr>
+<td>변호인 참여·기록 열람</td>
+<td>변호인 조력권 RD-335</td>
+<td>검증대기(L1)</td>
+</tr>
+</tbody></table></div>
+
+    </section><section class="blk" id="s12">
+      <div class="secl">STEP 12</div>
+      <h2>면책·상담 CTA</h2>
+      <p>압수수색은 수사기관의 권한 행사와 회사의 방어권이 동시에 작동하는 고위험 절차다. 현장에 이미 도착했거나 영장 범위·디지털 자료·임의제출에 이견이 있으면 즉시 형사절차 전문 변호사와 사실관계·자료보존·불복 가능성을 상담한다.</p>
+
+    </section>
+    <div class="notice">
+      본 자료는 2026-07-31 기준 일반 법률정보이며 특정 사건에 대한 법률 자문이 아닙니다.
+      법령·예규·법원 실무와 사건별 요구는 변경될 수 있으므로 제출 전 최신 원문과 관할 법원 안내를 확인해야 합니다.
+    </div>
+  </main>
 </div>
+<footer class="footer" id="consult">
+  <div class="wrap">
+    <div class="prof">
+      <div>
+        <h3>조우성 변호사</h3>
+        <p>민사·상사 분야 전문 변호사. 개인·소상공인의 채권회수와 절차 대응 실무를 지원합니다.</p>
+        <p>가압류·가처분, 지급명령, 강제집행 등 법원 절차를 단계별로 안내합니다.</p>
+      </div>
+      <div class="cta-f">
+        <a class="btn btn-f" href="https://woosungjo-law.github.io">상담 문의하기</a>
+        <a class="btn btn-fo" href="https://woosungjo-law.github.io">더 많은 인사이트</a>
+      </div>
+    </div>
+    <div class="fine">
+      © 2026 조우성 변호사. 본 콘텐츠는 일반 법률 정보이며 법률 자문을 대체하지 않습니다.
+      작성일 2026-07-31 기준 현행성을 확인했습니다.
+    </div>
+  </div>
+</footer>
+<script>
+var pb=document.getElementById('progress');
+function onScroll(){
+  var h=document.documentElement,b=document.body;
+  var st=h.scrollTop||b.scrollTop;
+  var sh=(h.scrollHeight||b.scrollHeight)-h.clientHeight;
+  pb.style.width=(sh>0?(st/sh*100):0)+'%';
+}
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+var toTop=document.getElementById('toTop');
+window.addEventListener('scroll',function(){
+  (window.scrollY||window.pageYOffset)>500?toTop.classList.add('show'):toTop.classList.remove('show');
+},{passive:true});
+var links=Array.prototype.slice.call(document.querySelectorAll('#toc-list a'));
+var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));}).filter(Boolean);
+function spy(){
+  var pos=(window.scrollY||window.pageYOffset)+120,cur=secs[0];
+  for(var i=0;i<secs.length;i++){if(secs[i].offsetTop<=pos)cur=secs[i];}
+  links.forEach(function(a){
+    a.classList.toggle('active',cur&&a.getAttribute('href')==='#'+cur.id);
+  });
+}
+window.addEventListener('scroll',spy,{passive:true});spy();
+document.querySelectorAll('#toc-list a').forEach(function(a){
+  a.addEventListener('click',function(){
+    if(window.innerWidth<=820)document.getElementById('toc').classList.add('closed');
+  });
+});
+</script>
 </body>
 </html>
