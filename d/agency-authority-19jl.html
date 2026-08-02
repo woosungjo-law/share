@@ -1,573 +1,470 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 검색허용(— 검색허용 옵션): 아래 줄을 삭제하지 말고 content를 "index,follow"로 교체.
+     게시 스크립트는 robots 메타가 없을 때만 noindex를 주입하므로, 삭제하면 오히려 noindex가 재주입된다. -->
 <meta name="robots" content="noindex,nofollow">
-<title>회사 간 계약, 이 사람이 도장을 찍어도 될까? — 표현대리·무권대리 완전 정복 가이드</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
+<title>회사 간 계약, 이 사람이 도장을 찍어도 될까? -- 표현대리/무권대리 완전 정복 가이드 — 조우성 변호사</title>
+<!-- 링크 미리보기(카톡·메신저·검색허용 시 SEO)용 메타 -->
+<meta name="description" content="회사 간 계약 시 표현대리와 무권대리의 차이, 안전한 대리권 확인 방법 실무 가이드">
+<meta property="og:type" content="article">
+<meta property="og:title" content="회사 간 계약, 이 사람이 도장을 찍어도 될까? -- 표현대리/무권대리 완전 정복 가이드 — 조우성 변호사">
+<meta property="og:description" content="회사 간 계약 시 표현대리와 무권대리의 차이, 안전한 대리권 확인 방법 실무 가이드">
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif; background: #f0f2f5; color: #111827; line-height: 1.7; }
-.topbar { height: 4px; background: linear-gradient(90deg, #1a3a6b, #2e6be6); position: sticky; top: 0; z-index: 100; }
-.container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
-
-/* header */
-.header { background: #fff; border-bottom: 1px solid #e5e7eb; padding: 24px 0; }
-.header-inner { display: flex; align-items: center; gap: 12px; max-width: 860px; margin: 0 auto; padding: 0 20px; }
-.header-avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #1a3a6b, #2e6be6); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 16px; flex-shrink: 0; }
-.header-info { flex: 1; }
-.header-name { font-size: 14px; font-weight: 700; color: #111827; }
-.header-desc { font-size: 12px; color: #6b7280; }
-.header-badge { font-size: 11px; color: #fff; background: #1a3a6b; padding: 3px 10px; border-radius: 12px; font-weight: 500; letter-spacing: 0.05em; }
-
-/* hero */
-.hero { background: linear-gradient(135deg, #1a3a6b 0%, #1e4d8c 50%, #2e6be6 100%); color: #fff; padding: 48px 0 40px; }
-.hero-tag { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; background: rgba(255,255,255,0.15); padding: 4px 14px; border-radius: 20px; margin-bottom: 16px; }
-.hero h1 { font-size: 28px; font-weight: 900; line-height: 1.35; margin-bottom: 12px; letter-spacing: -0.02em; }
-.hero p { font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.6; }
-.hero-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 20px; font-size: 12px; color: rgba(255,255,255,0.75); }
-.hero-meta span { display: flex; align-items: center; gap: 4px; }
-
-/* tldr */
-.tldr { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; margin: -24px auto 32px; padding: 28px 32px; position: relative; z-index: 10; max-width: 820px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
-.tldr-label { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #2e6be6; margin-bottom: 12px; }
-.tldr ul { list-style: none; padding: 0; }
-.tldr li { position: relative; padding-left: 20px; margin-bottom: 10px; font-size: 14px; color: #374151; line-height: 1.6; }
-.tldr li:last-child { margin-bottom: 0; }
-.tldr li::before { content: '▸'; position: absolute; left: 0; color: #2e6be6; font-weight: 700; }
-.tldr strong { color: #111827; }
-
-/* section */
-.section { background: #fff; border-radius: 12px; margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); border: 1px solid #e5e7eb; overflow: hidden; }
-.section-header { padding: 24px 28px 0; }
-.section-number { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: #2e6be6; background: #eff6ff; padding: 3px 12px; border-radius: 6px; margin-bottom: 8px; }
-.section h2 { font-size: 22px; font-weight: 700; line-height: 1.35; margin-bottom: 6px; color: #111827; }
-.section-sub { font-size: 13px; color: #6b7280; margin-bottom: 8px; }
-.section-body { padding: 16px 28px 24px; }
-.section-body p { font-size: 14.5px; line-height: 1.75; margin-bottom: 14px; color: #374151; }
-.section-body p:last-child { margin-bottom: 0; }
-
-/* eye-catcher */
-.eye-catcher { background: #f8fafc; border-left: 4px solid #2e6be6; border-radius: 0 8px 8px 0; padding: 16px 20px; margin-bottom: 16px; }
-.eye-catcher-title { font-size: 12px; font-weight: 700; color: #2e6be6; letter-spacing: 0.08em; margin-bottom: 6px; }
-.eye-catcher p { font-size: 14px; color: #1e293b; line-height: 1.65; margin-bottom: 0; }
-.eye-catcher ul { margin-top: 8px; list-style: none; padding: 0; }
-.eye-catcher li { font-size: 13.5px; padding: 3px 0 3px 16px; position: relative; color: #1e293b; }
-.eye-catcher li::before { content: '•'; position: absolute; left: 0; color: #2e6be6; font-weight: 700; }
-
-/* sub-section */
-.subsection { margin-top: 20px; }
-.subsection:first-child { margin-top: 0; }
-.subsection h3 { font-size: 17px; font-weight: 700; color: #111827; margin-bottom: 8px; line-height: 1.4; }
-.subsection p { font-size: 14.5px; line-height: 1.75; margin-bottom: 12px; color: #374151; }
-.subsection ul, .subsection ol { margin-bottom: 12px; padding-left: 20px; }
-.subsection li { font-size: 14.5px; line-height: 1.7; color: #374151; margin-bottom: 4px; }
-
-/* legal quote */
-.legal-quote { background: #fffbeb; border-left: 4px solid #f59e0b; border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 12px 0; }
-.legal-quote .src { font-size: 11px; font-weight: 600; color: #d97706; letter-spacing: 0.05em; margin-bottom: 4px; }
-.legal-quote p { font-size: 13.5px; color: #78350f; line-height: 1.65; margin-bottom: 0; }
-.legal-quote .status { display: inline-block; font-size: 10px; background: #d97706; color: #fff; padding: 1px 8px; border-radius: 8px; margin-left: 6px; }
-
-/* table */
-.table-wrap { overflow-x: auto; margin: 14px 0; border: 1px solid #e5e7eb; border-radius: 8px; }
-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
-thead th { background: #f8fafc; padding: 10px 14px; text-align: left; font-weight: 600; color: #374151; border-bottom: 2px solid #e5e7eb; font-size: 12.5px; letter-spacing: 0.03em; }
-tbody td { padding: 10px 14px; border-bottom: 1px solid #f0f2f5; color: #374151; }
-tbody tr:last-child td { border-bottom: none; }
-tbody tr:hover { background: #f8fafc; }
-
-/* checklist table */
-.checklist-table td:last-child { text-align: center; }
-
-/* q&a */
-.qa-item { border: 1px solid #e5e7eb; border-radius: 10px; margin-bottom: 12px; overflow: hidden; }
-.qa-q { background: #f8fafc; padding: 14px 18px; font-weight: 600; font-size: 14.5px; color: #111827; line-height: 1.5; border-bottom: 1px solid #e5e7eb; }
-.qa-q::before { content: 'Q. '; color: #2e6be6; font-weight: 700; }
-.qa-a { padding: 14px 18px; font-size: 14px; color: #374151; line-height: 1.7; }
-
-/* step cards */
-.steps { display: flex; gap: 10px; margin: 12px 0; flex-wrap: wrap; }
-.step { flex: 1; min-width: 140px; background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 14px; text-align: center; }
-.step-num { font-size: 11px; font-weight: 700; color: #2e6be6; letter-spacing: 0.1em; margin-bottom: 4px; }
-.step-text { font-size: 12.5px; color: #374151; line-height: 1.5; }
-
-/* info card */
-.info-card { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 14px 18px; margin: 12px 0; }
-.info-card-title { font-size: 12px; font-weight: 700; color: #1d4ed8; margin-bottom: 6px; }
-.info-card p { font-size: 13.5px; color: #1e3a5f; line-height: 1.65; margin-bottom: 0; }
-
-/* footer */
-.footer { text-align: center; padding: 32px 20px; color: #6b7280; font-size: 12px; line-height: 1.7; border-top: 1px solid #e5e7eb; margin-top: 8px; }
-
-/* responsive */
-@media (max-width: 640px) {
-  .hero h1 { font-size: 22px; }
-  .tldr { padding: 20px; margin-left: 12px; margin-right: 12px; }
-  .section-header { padding: 18px 18px 0; }
-  .section-body { padding: 12px 18px 18px; }
-  .steps { flex-direction: column; }
-  .step { min-width: auto; }
+/* ============================================================
+   법률 대시보드 전자책 — Apollo 기반 경량 커스텀 (공개 롱스크롤)
+   Apollo 토큰(버건디 액센트 + 웜 화이트 + 딥와인 헤더) 상속.
+   의뢰인 리포트(리스크레이더 6뷰)와 달리 공개 독서형 롱스크롤.
+   self-contained: 외부 CDN/폰트/이미지/스크립트 의존 없음.
+   ============================================================ */
+:root{
+  --bg:#f5f1f2; --panel:#ffffff; --panel2:#faf6f7;
+  --line:#ebe2e5; --line2:#ddccd2;
+  --ink:#2c1d26; --ink2:#56424c; --muted:#8a7b82; --faint:#b3a6ab;
+  --wine:#7a2e3a; --wine-d:#5a1f2b; --wine-l:#9c4456;
+  --wine-tint:#f4e9ec; --wine-tint-ln:#ecd7dd;
+  --header-bg:#3a1525; --header-bg2:#4e1f32; --header-accent:#d4a0aa;
+  --rH:#c74a3c; --rM-bg:#f8e4b8; --rM-tx:#7d520a; --rL-bg:#d6ecdb; --rL-tx:#287a54;
+  --amber:#b45309; --green:#287a54;
+  --font:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Noto Sans KR',sans-serif;
+  --maxw:1120px; --readw:760px;
 }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
 
-/* divider */
-.divider { height: 1px; background: #e5e7eb; margin: 24px 0; }
+/* 읽기 진행바 */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;
+  background:linear-gradient(90deg,var(--wine),var(--wine-l));transition:width .1s linear}
 
-/* 위험 표시 */
-.risk-badge { display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 10px; border-radius: 10px; margin-right: 4px; }
-.risk-high { background: #fee2e2; color: #dc2626; }
-.risk-mid { background: #fef3c7; color: #d97706; }
-.risk-low { background: #d1fae5; color: #059669; }
+/* 헤더 표지 (딥와인, 유일한 딥 컬러) */
+.header{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0}
+.header .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 26px}
+.header .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;
+  color:var(--header-accent);border:1px solid rgba(212,160,170,.4);border-radius:999px;padding:4px 12px}
+.header .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--header-accent)}
 
-/* check/warning icons */
-.check-icon { color: #059669; margin-right: 4px; }
-.warn-icon { color: #d97706; margin-right: 4px; }
-.x-icon { color: #dc2626; margin-right: 4px; }
+/* 히어로 */
+.hero{max-width:var(--maxw);margin:0 auto;padding:30px 26px 8px}
+.hero .eb{font-size:12px;font-weight:700;color:var(--wine);letter-spacing:.02em;margin-bottom:10px}
+.hero h1{font-size:30px;line-height:1.28;font-weight:800;margin:0 0 16px;color:var(--ink);letter-spacing:-.01em}
+.hero .tldr{background:var(--wine-tint);border:1px solid var(--wine-tint-ln);border-left:4px solid var(--wine);
+  border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.hero .tldr .lb{font-size:12px;font-weight:700;color:var(--wine-d);margin-bottom:8px}
+.hero .tldr ul{margin:0;padding-left:18px}
+.hero .tldr li{margin:4px 0;font-size:15px;color:var(--ink2)}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:12.5px;color:var(--muted);margin-bottom:18px}
+.hero .meta .vchip{display:inline-flex;align-items:center;gap:5px;background:var(--rL-bg);color:var(--rL-tx);
+  font-weight:700;border-radius:6px;padding:3px 9px;font-size:11.5px}
+.hero .cta-row{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;border-radius:9px;
+  padding:11px 18px;text-decoration:none;cursor:pointer;border:1px solid transparent}
+.btn-p{background:var(--wine);color:#fff}
+.btn-p:hover{background:var(--wine-d)}
+.btn-o{background:#fff;color:var(--wine-d);border-color:var(--line2)}
+.btn-o:hover{background:var(--panel2)}
 
-/* highlight box */
-.highlight-box { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 14px 18px; margin: 12px 0; }
-.highlight-box p { font-size: 13.5px; color: #166534; margin-bottom: 0; }
+/* 셸: 좌측 목차 + 본문 */
+.app{max-width:var(--maxw);margin:0 auto;padding:8px 26px 60px;
+  display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:start}
 
-/* print */
-@media print {
-  .topbar { display: none; }
-  .hero { background: #1a3a6b !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  .tldr { box-shadow: none; }
-  .section { break-inside: avoid; }
+/* 목차 (데스크톱 = 좌측 sticky) */
+.toc{position:sticky;top:24px}
+.toc .tt{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;
+  margin:0 0 10px;padding-left:2px}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}
+.toc li{counter-increment:toc;margin:1px 0}
+.toc a{display:flex;gap:9px;font-size:13.5px;color:var(--ink2);text-decoration:none;
+  padding:7px 10px;border-radius:8px;border-left:3px solid transparent;line-height:1.4}
+.toc a::before{content:counter(toc,decimal-leading-zero);color:var(--faint);font-weight:700;font-size:11.5px;flex:none}
+.toc a:hover{background:var(--panel2)}
+.toc a.active{background:var(--wine-tint);border-left-color:var(--wine);color:var(--wine-d);font-weight:700}
+.toc-toggle{display:none}
+
+/* 본문 */
+.content{max-width:var(--readw);min-width:0}
+section.blk{scroll-margin-top:24px;margin-bottom:38px}
+.secl{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.05em;margin:0 0 12px}
+.secl::before{content:"";width:7px;height:15px;background:var(--wine);border-radius:2px;flex:none}
+section.blk h2{font-size:23px;font-weight:800;line-height:1.35;margin:0 0 14px;color:var(--ink);letter-spacing:-.01em}
+section.blk h3{font-size:17px;font-weight:700;margin:26px 0 10px;color:var(--wine-d)}
+section.blk p{margin:0 0 14px;color:var(--ink2)}
+section.blk ul,section.blk ol{margin:0 0 14px;padding-left:22px;color:var(--ink2)}
+section.blk li{margin:6px 0}
+strong{color:var(--ink);font-weight:700}
+a.ln{color:var(--wine-l);text-decoration:none;border-bottom:1px solid var(--wine-tint-ln)}
+a.ln:hover{border-bottom-color:var(--wine-l)}
+
+/* 핵심요약 카드 */
+.summary{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.summary .lb{font-size:11px;font-weight:700;color:var(--wine-d);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.summary ul{margin:0;padding-left:18px}
+
+/* 근거 카드 (조문·판례) */
+.ev{background:#fff;border:1px solid var(--line);border-left:4px solid var(--wine);border-radius:10px;
+  padding:13px 15px;margin:0 0 12px}
+.ev .top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px}
+.ev .kind{font-size:11px;font-weight:700;color:#fff;background:var(--wine);border-radius:5px;padding:2px 8px}
+.ev .kind.law{background:var(--wine-d)}
+.ev .kind.case{background:var(--amber)}
+.ev .cite{font-size:13.5px;font-weight:700;color:var(--ink)}
+.ev .vtick{margin-left:auto;font-size:11px;font-weight:700;color:var(--rL-tx);background:var(--rL-bg);border-radius:5px;padding:2px 7px}
+.ev .gist{font-size:14px;color:var(--ink2);margin:0}
+.ev .date{font-size:12px;color:var(--muted);margin-top:5px}
+
+/* 다이어그램 — 플로우 / 체크리스트 (CSS·SVG only) */
+.figure{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin:0 0 18px}
+.figure .cap{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:12px}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px}
+.flow .step{flex:1;min-width:120px;background:var(--wine-tint);border:1px solid var(--wine-tint-ln);
+  border-radius:10px;padding:11px 12px;position:relative}
+.flow .step .n{font-size:11px;font-weight:700;color:var(--wine)}
+.flow .step .t{font-size:13.5px;font-weight:700;color:var(--ink);margin-top:2px}
+.flow .step .d{font-size:12.5px;color:var(--ink2);margin-top:3px}
+.checklist{list-style:none;margin:0;padding:0}
+.checklist li{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+.checklist li:last-child{border-bottom:none}
+.checklist .ck{flex:none;width:20px;height:20px;border-radius:5px;background:var(--rL-bg);color:var(--rL-tx);
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+
+/* 위험도 칩 */
+.chip{display:inline-flex;align-items:center;justify-content:center;min-width:34px;font-size:11px;font-weight:500;
+  border-radius:6px;padding:3px 8px;margin-right:4px}
+.c-H{background:var(--rH);color:#fff}
+.c-M{background:var(--rM-bg);color:var(--rM-tx)}
+.c-L{background:var(--rL-bg);color:var(--rL-tx)}
+
+/* 표 */
+.tbl-wrap{overflow-x:auto;margin:0 0 18px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px}
+
+/* FAQ (아코디언) */
+.faq details{background:#fff;border:1px solid var(--line);border-radius:10px;margin:0 0 10px;overflow:hidden}
+.faq summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:15px;font-weight:700;color:var(--ink);
+  display:flex;align-items:center;gap:10px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--wine-tint);
+  color:var(--wine-d);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+.faq details[open] summary{border-bottom:1px solid var(--line);color:var(--wine-d)}
+.faq .a{padding:14px 16px;font-size:14.5px;color:var(--ink2)}
+
+/* 최신성·면책 고지 */
+.notice{background:#fff;border:1px dashed var(--line2);border-radius:10px;padding:14px 16px;margin:24px 0 0;
+  font-size:12.5px;color:var(--muted);line-height:1.7}
+
+/* 맨 위로 버튼 */
+#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--wine-tint-ln);background:var(--wine);color:#fff;font-size:18px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;
+  box-shadow:0 4px 14px rgba(58,21,37,.28)}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{background:var(--wine-d)}
+
+/* 푸터 프로필 + 상담 CTA */
+.footer{background:linear-gradient(135deg,var(--header-bg) 0%,var(--header-bg2) 100%);color:#f4eef0;margin-top:20px}
+.footer .wrap{max-width:var(--maxw);margin:0 auto;padding:34px 26px}
+.footer h3{font-size:20px;font-weight:800;margin:0 0 8px;color:#fff}
+.footer p{font-size:14px;color:rgba(255,255,255,.72);margin:0 0 6px;line-height:1.7}
+.footer .prof{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end}
+.footer .cta-f{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.footer .btn-f{background:#fff;color:var(--wine-d)}
+.footer .btn-f:hover{background:var(--header-accent)}
+.footer .btn-fo{background:transparent;color:#f4eef0;border-color:rgba(255,255,255,.35)}
+.footer .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:22px;padding-top:14px;
+  font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.7}
+
+/* ── 모바일 (≤820px) ── */
+@media(max-width:820px){
+  .hero h1{font-size:24px}
+  .app{grid-template-columns:1fr;gap:0;padding-top:0}
+  .toc{position:static;margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 8px}
+  .toc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;
+    cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--wine-d);padding:9px 8px}
+  .toc-toggle .ar{transition:transform .2s}
+  .toc.closed .toc-toggle .ar{transform:rotate(-90deg)}
+  .toc .tt{display:none}
+  .toc ol{max-height:50vh;overflow:auto}
+  .toc.closed ol{display:none}
+  section.blk h2{font-size:20px}
+  th,td{white-space:nowrap}
 }
+@media print{
+  #progress,.toc,.cta-row,.footer .cta-f{display:none}
+  .header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .app{display:block}
+}
++/* === MN-CREDIT-UPGRADE v1 : 로펌 머스트노우 브랜드/크레딧 === */
+.mn-ribbon{max-width:var(--maxw,1120px);margin:0 auto;padding:16px 26px 0}
+.mn-ribbon .in{display:inline-flex;align-items:center;gap:9px;font-size:13px;font-weight:700;
+  color:var(--wine-d,#5a1f2b);background:var(--wine-tint,#f4e9ec);
+  border:1px solid var(--wine-tint-ln,#ecd7dd);border-radius:999px;padding:8px 16px;
+  letter-spacing:-.01em;line-height:1.4}
+.mn-ribbon .in .mk{width:7px;height:7px;border-radius:50%;background:var(--wine,#7a2e3a);flex:none}
+.mn-credit{max-width:var(--readw,760px);margin:30px auto 0;background:var(--panel,#fff);
+  border:1px solid var(--line,#ebe2e5);border-left:4px solid var(--wine,#7a2e3a);
+  border-radius:12px;padding:18px 20px;box-shadow:0 1px 2px rgba(44,29,38,.04)}
+.mn-credit .who{font-size:15px;font-weight:800;color:var(--ink,#2c1d26);margin:0 0 8px;line-height:1.5}
+.mn-credit .who a{color:var(--wine-l,#9c4456);text-decoration:none;border-bottom:1px solid currentColor}
+.mn-credit .msg{font-size:14px;line-height:1.75;color:var(--ink2,#56424c);margin:0}
+@media(max-width:820px){
+  .mn-ribbon{padding:14px 18px 0}
+  .mn-ribbon .in{font-size:12px;padding:7px 13px}
+  .mn-credit{margin:22px 16px 0;padding:15px 16px}
+  .mn-credit .who{font-size:14px}
+}
+/* 다크 배경(푸터 내부) 배치 시 변형 */
+.footer .mn-credit,.mn-credit--dark{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);
+  border-left-color:var(--header-accent,#d4a0aa)}
+.footer .mn-credit .who,.mn-credit--dark .who{color:#fff}
+.footer .mn-credit .who a,.mn-credit--dark .who a{color:var(--header-accent,#d4a0aa)}
+.footer .mn-credit .msg,.mn-credit--dark .msg{color:rgba(255,255,255,.75)}
 </style>
 </head>
 <body>
-<div class="topbar"></div>
+<div id="progress"></div>
+<button id="toTop" aria-label="맨 위로" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
+<!-- ===== 헤더 배지 ===== -->
 <header class="header">
-  <div class="header-inner">
-    <div class="header-avatar">조</div>
-    <div class="header-info">
-      <div class="header-name">조우성 변호사 · 법률 인사이트</div>
-      <div class="header-desc">상장회사 전문 변호사 · 회사법/민사법 20년 이상 실무 경험</div>
-    </div>
-    <span class="header-badge">법률 가이드</span>
+  <div class="wrap">
+    <span class="badge"><span class="dot"></span>조우성 변호사 · 법률 인사이트</span>
   </div>
 </header>
 
-<section class="hero">
-  <div class="container">
-    <div class="hero-tag">회사법 · 민사법</div>
-    <h1>회사 간 계약, 이 사람이 도장을 찍어도 될까?<br>표현대리·무권대리 완전 정복 가이드</h1>
-    <p>상대방 회사 대표가 아닌 사람이 계약서에 도장을 찍었다. 과연 그 계약은 유효할까?<br>
-    표현대리, 무권대리, 표현대표이사, 공동대표 각자대표의 법리를 실무 체크리스트와 함께 정리했다.</p>
-    <div class="hero-meta">
-      <span>📅 작성일 2026-07-09</span>
-      <span>⚖️ 기준 법령 민법 2026-03-17 / 상법 2026-03-06</span>
-      <span>✓ 조문·판례 2단 검증 완료</span>
-      <span>⏱ 약 25분</span>
-    </div>
+<!-- ===== 히어로 (제목 + TL;DR + 메타 + CTA) ===== -->
+<div class="hero">
+  <!-- MN-CREDIT-UPGRADE v1 :: ribbon -->
+  <div class="mn-ribbon"><span class="in"><span class="mk"></span>로펌 머스트노우의 조우성 변호사가 제공하는 법률컨텐츠입니다</span></div>
+  <div class="eb">회사법 / 민사법 · 표현대리/무권대리 완전 정복</div>
+  <h1>회사 간 계약, 이 사람이 도장을 찍어도 될까? -- 표현대리/무권대리 완전 정복 가이드</h1>
+  <div class="tldr">
+    <div class="lb">3줄 요약 (TL;DR)</div>
+    <ul>
+      <li>무권대리 vs 표현대리 핵심 차이: 본인이 외관을 만들었고 상대방이 선의/무과실이면 표현대리(본인 책임), 아니면 무권대리(본인 효력 없음)</li>
+      <li>표현대표이사(상법 제395조): 사장/부사장/전무/상무 등 대표이사로 오인될 만한 명칭 사용한 사람의 행위, 회사가 허용했다면 선의 상대방에게 회사가 책임</li>
+      <li>대리권 확인 3종 세트: ① 등기사항전부증명서 ② 법인인감증명서 ③ 위임장/이사회 의사록. 이 셋이면 대리권 분쟁의 90% 예방</li>
+    </ul>
   </div>
-</section>
-
-<div class="tldr">
-  <div class="tldr-label">✔ 3줄 요약 (TL;DR)</div>
-  <ul>
-    <li><strong>무권대리 vs 표현대리의 핵심 차이:</strong> 대리권 없는 자가 계약한 경우, 본인이 외관을 만들었고 상대방이 선의·무과실이면 <strong>표현대리(=본인 책임)</strong>, 아니면 <strong>무권대리(=본인 효력 없음)</strong>.</li>
-    <li><strong>표현대표이사(상법 제395조):</strong> 사장·부사장·전무·상무 등 대표이사로 오인될 만한 명칭을 사용한 사람의 행위는, 회사가 그 명칭 사용을 허용했다면 선의의 상대방에게 회사가 책임을 진다.</li>
-    <li><strong>대리권 확인 3종 세트:</strong> ① 등기사항전부증명서 ② 법인인감증명서 ③ 위임장 또는 이사회 의사록. 이 셋을 갖추면 대리권 분쟁의 90%는 예방할 수 있다.</li>
-  </ul>
+  <div class="meta">
+    <span>작성일 2026-07-09</span>
+    <span>· 기준 법령 시행일 민법 2026-03-17 / 상법 2026-03-06</span>
+    <span class="vchip">✓ 조문·판례 2단 검증</span>
+    <span>· 읽는 시간 약 25분</span>
+  </div>
+  <div class="cta-row">
+    <a class="btn btn-p" href="#faq">핵심만 빠르게 (Q&amp;A)</a>
+    <a class="btn btn-o" href="#consult">상담 문의</a>
+  </div>
 </div>
 
-<div class="container">
-  <!-- SECTION 1 -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-number">쟁점 1</div>
-      <h2>무권대리 vs 표현대리 — 기본 구조부터 이해하자</h2>
-      <div class="section-sub">민법 제125조 · 제126조 · 제129조 · 제130조</div>
-    </div>
-    <div class="section-body">
-      <div class="eye-catcher">
-        <div class="eye-catcher-title">한눈에</div>
+<!-- ===== 본문 셸 ===== -->
+<div class="app">
+
+  <!-- 목차 -->
+  <nav class="toc" id="toc">
+    <button class="toc-toggle" onclick="document.getElementById('toc').classList.toggle('closed')">
+      목차 <span class="ar">▾</span>
+    </button>
+    <div class="tt">목차</div>
+    <ol id="toc-list">
+      <li><a href="#s1">1. 무권대리 vs 표현대리</a></li>
+      <li><a href="#s2">2. 상법 제395조 표현대표이사</a></li>
+      <li><a href="#s3">3. 공동대표 vs 각자대표</a></li>
+      <li><a href="#s4">4. 이사회 결의 흠결</a></li>
+      <li><a href="#s5">5. 법인인감만으로 불안전</a></li>
+      <li><a href="#s6">6. 실무 체크리스트 5단계</a></li>
+      <li><a href="#faq">자주 묻는 질문</a></li>
+    </ol>
+  </nav>
+
+  <!-- 본문 -->
+  <main class="content">
+
+    <!-- ===== 대주제 1 ===== -->
+    <section class="blk" id="s1">
+      <div class="secl">쟁점 1</div>
+      <h2>1. 무권대리 vs 표현대리 -- 기본 구조부터 이해하자</h2>
+
+      <div class="summary">
+        <div class="lb">한눈에</div>
         <ul>
-          <li><strong>무권대리(민법 제130조)</strong> = 대리권 없는 자의 계약, 본인 추인 없으면 효력 없음</li>
-          <li><strong>표현대리(민법 제125/126/129조)</strong> = 본인이 외관 만든 경우 본인이 책임</li>
-          <li><strong>결정적 차이</strong>는 '본인의 외관 작출 책임 + 상대방의 선의/무과실'이라는 추가 요건</li>
+          <li>무권대리(제130조)는 본인 효력 없음, 표현대리(제125/126/129조)는 본인 책임</li>
+          <li>결정적 차이는 본인의 외관 작출 책임 + 상대방 선의/무과실이라는 추가 요건</li>
         </ul>
       </div>
 
-      <div class="subsection">
-        <h3>1.1 무권대리(민법 제130조)의 기본 구조</h3>
-        <p>민법 제130조는 "대리권 없는 자가 타인의 대리인으로 한 계약은 본인이 이를 추인하지 아니하면 본인에 대하여 효력이 없다"고 규정한다. 즉, 아무런 권한이 없는 사람(무권대리인)이 회사 이름으로 계약을 체결했다면, 회사가 추인(사후 승인)하지 않는 한 그 계약은 회사에 효력이 없다. 상대방은 계약 이행을 강제할 수 없고, 손해가 있다면 무권대리인 개인에게 청구해야 한다(민법 제135조).</p>
-        <div class="legal-quote">
-          <div class="src">근거/조문 · <strong>민법 제130조(무권대리)</strong> 시행 2026-03-17 <span class="status">현행 확인</span></div>
-          <p>"대리권없는 자가 타인의 대리인으로 한 계약은 본인이 이를 추인하지 아니하면 본인에 대하여 효력이 없다." — 웹+한국법 MCP 현행 확인</p>
+      <p>민법 제130조는 대리권 없는 자의 계약은 본인 추인 없으면 효력 없다고 규정. 표현대리는 본인이 외관을 만들어 상대방이 대리권이 있다고 믿게 한 경우 본인이 책임. 제125조(대리권수여 표시), 제126조(권한을 넘은 표현대리), 제129조(소멸 후 표현대리) 세 유형 있음.</p>
+
+      <!-- 소쟁점 -->
+      <h3>표현대리 3유형 비교</h3>
+      <p>제125조는 본인이 제3자에게 대리권 수여를 표시한 경우. 직함/명칭/서류 교부 등으로 인정 가능. 제126조는 기본대리권이 있고 권한을 넘은 경우, 상대방의 정당한 이유 필요. 제129조는 대리권 소멸에도 선의/무과실 상대방에게 대항 불가(대법원 2007다74713).</p>
+
+      <!-- 근거 카드 (조문) -->
+      <div class="ev">
+        <div class="top">
+          <span class="kind law">조문</span>
+          <span class="cite"> 제조</span>
+          <span class="vtick">✓ 현행 확인</span>
+        </div>
+        <p class="gist"></p>
+        <div class="date">시행일 </div>
+      </div>
+
+      <!-- 근거 카드 (판례) -->
+      <div class="ev">
+        <div class="top">
+          <span class="kind case">판례</span>
+          <span class="cite">  선고  판결</span>
+          <span class="vtick">✓ 실존·현행 확인</span>
+        </div>
+        <p class="gist"></p>
+      </div>
+    </section>
+
+    <!-- ===== 대주제 2 (다이어그램 예시 포함) ===== -->
+    <section class="blk" id="s2">
+      <div class="secl">쟁점 2</div>
+      <h2>2. 상법 제395조 -- 직함 하나가 회사의 책임을 결정한다</h2>
+      <p>상법 제395조는 사장/부사장/전무/상무 등 대표이사로 인정될 만한 명칭을 사용한 자의 행위에 대해, 실제 대표권이 없어도 회사가 선의의 제3자에게 책임진다. 성립요건: ① 명칭 사용 ② 회사의 허용 ③ 영업행위 ④ 제3자의 선의. 중과실 판단 요소: 거래 규모, 상대방 경험, 확인 가능성 등(대법원 99다19797).</p>
+
+      <!-- 플로우 다이어그램 -->
+      <div class="figure">
+        <div class="cap"></div>
+        <div class="flow">
+          <div class="step"><div class="n">STEP 1</div><div class="t"></div><div class="d"></div></div>
+          <div class="step"><div class="n">STEP 2</div><div class="t"></div><div class="d"></div></div>
+          <div class="step"><div class="n">STEP 3</div><div class="t"></div><div class="d"></div></div>
         </div>
       </div>
+    </section>
 
-      <div class="subsection">
-        <h3>1.2 표현대리(민법 제125조/제126조/제129조)</h3>
-        <p>표현대리는 본인이 어떤 외관(표시)을 만들어 상대방이 대리권이 있다고 믿게 한 경우, 본인이 책임을 지는 제도다. 민법은 세 가지 유형을 규정한다.</p>
+    <!-- ===== 대주제 3 (체크리스트 + 표 예시) ===== -->
+    <section class="blk" id="s3">
+      <div class="secl">쟁점 3</div>
+      <h2>3. 공동대표 vs 각자대표 -- 1인 서명의 효력 차이</h2>
+      <p>각자대표는 대표이사 중 1인이 단독 서명해도 유효. 공동대표는 전원 서명 필요하며 1인 단독은 무효(대법원 2000마934). 단, 회사가 1인에게 대표이사 명칭 사용을 용인했다면 표현대표이사 책임 가능. 등기부 확인이 가장 확실한 예방책(상법 제37조).</p>
 
-        <div class="info-card">
-          <div class="info-card-title">제125조 — 대리권 수여 표시에 의한 표현대리</div>
-          <p>본인이 제3자에게 대리권 수여를 표시한 경우. 직함/명칭/서류 교부 등으로도 표시가 인정될 수 있다. 다만 법인인감이나 서류의 단순 유출만으로는 곧바로 '표시'가 성립하지 않는다 — 본인이 '알리려는 의사'로 표시했는지가 핵심이다(대법원 2011다107511).</p>
-        </div>
-        <div class="legal-quote">
-          <div class="src">근거/조문 · <strong>민법 제125조</strong> <span class="status">현행 확인</span></div>
-          <p>"제삼자에 대하여 타인에게 대리권을 수여함을 표시한 자는 그 대리권의 범위내에서 행한 그 타인과 그 제삼자간의 법률행위에 대하여 책임이 있다. 그러나 제삼자가 대리권없음을 알았거나 알 수 있었을 때에는 그러하지 아니하다."</p>
-        </div>
-
-        <div class="info-card">
-          <div class="info-card-title">제126조 — 권한을 넘은 표현대리</div>
-          <p>대리인에게 기본대리권은 있지만 권한을 넘는 행위를 한 경우. 3가지 성립요건: ① 기본대리권 존재, ② 본인을 위한 대리표시, ③ 상대방이 대리권이 있다고 믿은 데 정당한 이유(대법원 2019다203545).</p>
-        </div>
-        <div class="legal-quote">
-          <div class="src">근거/조문 · <strong>민법 제126조</strong> <span class="status">현행 확인</span></div>
-          <p>"대리인이 그 권한외의 법률행위를 한 경우에 제삼자가 그 권한이 있다고 믿을 만한 정당한 이유가 있는 때에는 본인은 그 행위에 대하여 책임이 있다."</p>
-        </div>
-
-        <div class="info-card">
-          <div class="info-card-title">제129조 — 대리권 소멸 후 표현대리</div>
-          <p>대리권이 이미 소멸했음에도 그 소멸을 선의/무과실인 상대방에게 대항하지 못하는 제도. 퇴사/해임된 직원이 회사 명함/사무실 출입/이메일 등 과거 외관을 그대로 유지한 상태에서 계약한 경우 문제된다.</p>
-        </div>
-        <div class="legal-quote">
-          <div class="src">근거/조문 · <strong>민법 제129조</strong> <span class="status">현행 확인</span></div>
-          <p>"대리권의 소멸은 선의의 제삼자에게 대항하지 못한다. 그러나 제삼자가 과실로 인하여 그 사실을 알지 못한 때에는 그러하지 아니하다."</p>
-        </div>
-      </div>
-
-      <div class="subsection">
-        <h3>1.3 무권대리와 표현대리 비교표</h3>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr><th>구분</th><th>무권대리(제130조)</th><th>표현대리(제125/126/129조)</th></tr>
-            </thead>
-            <tbody>
-              <tr><td><strong>본인 효력</strong></td><td>효력 없음 (추인 전)</td><td>본인 책임 인정</td></tr>
-              <tr><td><strong>상대방 요건</strong></td><td>악의/선의 불문</td><td>선의 + 과실 없음(정당한 이유)</td></tr>
-              <tr><td><strong>본인 요건</strong></td><td>없음</td><td>외관 작출/유지 책임</td></tr>
-              <tr><td><strong>무권대리인 책임</strong></td><td>제135조 이행/손배 책임</td><td>본인 책임, 원칙적 없음</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- SECTION 2 -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-number">쟁점 2</div>
-      <h2>상법 제395조 — '대표이사 같은' 직함 쓰면 회사가 책임진다</h2>
-      <div class="section-sub">표현대표이사 제도 · 성립요건 4가지 · 선의/중과실</div>
-    </div>
-    <div class="section-body">
-      <div class="eye-catcher">
-        <div class="eye-catcher-title">한눈에</div>
-        <p>사장/부사장/전무/상무 등 '대표이사로 인정될 만한 명칭' 사용 → 회사 책임. 상대방은 선의면 족하고 무과실까지 필요 없음(단 중대한 과실 제외).</p>
-      </div>
-
-      <div class="subsection">
-        <h3>2.1 표현대표이사 제도</h3>
-        <p>상법 제395조는 대표이사 외의 자에게 사장/부사장/전무/상무 등 회사를 대표할 권한이 있는 것으로 인정될 만한 명칭을 붙여 영업행위를 하게 한 경우, 실제 대표권이 없어도 회사가 선의의 제3자에게 책임을 진다고 규정한다.</p>
-        <div class="legal-quote">
-          <div class="src">근거/조문 · <strong>상법 제395조(표현대표이사)</strong> 시행 2026-03-06 <span class="status">현행 확인</span></div>
-          <p>"사장, 부사장, 전무, 상무 기타 회사를 대표할 권한이 있는 것으로 인정될 만한 명칭을 사용한 이사의 행위에 대하여는 그 이사가 회사를 대표할 권한이 없는 경우에도 회사는 선의의 제3자에 대하여 그 책임을 진다."</p>
-        </div>
-      </div>
-
-      <div class="subsection">
-        <h3>2.2 성립요건 4가지</h3>
-        <div class="steps">
-          <div class="step"><div class="step-num">요건 ①</div><div class="step-text">명칭 사용<br><small>사장/부회장/전무/상무 등</small></div></div>
-          <div class="step"><div class="step-num">요건 ②</div><div class="step-text">회사의 허용<br><small>진정 대표이사 또는 이사회가 적극/묵시적으로 허용</small></div></div>
-          <div class="step"><div class="step-num">요건 ③</div><div class="step-text">영업행위</div></div>
-          <div class="step"><div class="step-num">요건 ④</div><div class="step-text">제3자의 선의</div></div>
-        </div>
-        <p><strong>'회사의 허용'</strong>이 핵심이다. 단순 방임이나 묵인이 아니라 진정한 대표이사의 허용 또는 이사회 결의 성립에 필요한 범위의 이사들이 적극/묵시적으로 허용한 경우여야 한다(대법원 2010다70018).</p>
-      </div>
-
-      <div class="subsection">
-        <h3>2.3 선의/중과실</h3>
-        <p>제3자는 선의면 족하고 무과실까지 필요하지 않다. 다만 <strong>중대한 과실</strong>이 있으면 회사는 책임을 지지 않는다(대법원 2002다65073). 중대한 과실은 '조금만 주의를 기울이면 대표권이 없음을 알 수 있었는데도 만연히 믿은 경우'를 말한다(대법원 2009다57033).</p>
-        <div class="legal-quote">
-          <div class="src">근거/판례 · <strong>대법원 2009. 11. 26. 선고 2009다57033 판결</strong> <span class="status">MCP FOUND</span></div>
-          <p>"중대한 과실이란 조금만 주의하면 직무권한 내 적법행위가 아님을 알 수 있었는데도 만연히 믿은 경우(거의 고의에 가까운 주의결여)를 말한다."</p>
-        </div>
-      </div>
-
-      <div class="subsection">
-        <h3>2.4 등기부와 실제 직함 불일치</h3>
-        <p>명함에 '사장'이라고 되어 있어도 등기부상 대표이사가 아닌 사람이 많다. 법원은 거래 규모/상대방 경험/확인 가능성 등을 종합해 중과실을 판단한다(대법원 99다19797).</p>
-        <div class="legal-quote">
-          <div class="src">근거/판례 · <strong>대법원 1999. 11. 12. 선고 99다19797 판결</strong> <span class="status">MCP FOUND</span></div>
-          <p>"대규모 회사에서 '전무이사' 등의 직함만으로 대표권을 단정하기 어렵고, 거래 당사자/거래 내용/확인 가능성 등을 종합해 중과실을 판단해야 한다."</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- SECTION 3 -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-number">쟁점 3</div>
-      <h2>공동대표인데 1인만 서명했다면? 각자대표와의 결정적 차이</h2>
-      <div class="section-sub">상법 제389조 · 제37조</div>
-    </div>
-    <div class="section-body">
-      <div class="eye-catcher">
-        <div class="eye-catcher-title">한눈에</div>
-        <p>각자대표=원칙(단독 서명 유효) vs 공동대표=예외(공동 서명 필수).<br>공동대표 1인 단독 계약=원칙적 무효(대법원 2000마934).</p>
-      </div>
-
-      <div class="subsection">
-        <h3>3.1 각자대표와 공동대표의 기본 구조</h3>
-        <p>상법 제389조: 제1항에 따라 이사회 결의로 대표이사를 선정하고, 제2항에서 '공동으로 회사를 대표할 것'을 정할 수 있다.</p>
-        <ul>
-          <li><strong>각자대표</strong>: 대표이사 중 1인이 단독 서명/날인해도 유효한 계약</li>
-          <li><strong>공동대표</strong>: 대표이사 전원의 공동 서명/날인이 필요 (1인 단독 = 무권대표)</li>
-        </ul>
-        <div class="legal-quote">
-          <div class="src">근거/조문 · <strong>상법 제389조(대표이사)</strong> <span class="status">현행 확인</span></div>
-          <p>① 회사는 이사회의 결의로 회사를 대표할 이사를 선정하여야 한다. ② 전항의 경우에는 수인의 대표이사가 공동으로 회사를 대표할 것을 정할 수 있다.</p>
-        </div>
-      </div>
-
-      <div class="subsection">
-        <h3>3.2 공동대표 1인 단독 서명의 효력</h3>
-        <div class="legal-quote">
-          <div class="src">근거/판례 · <strong>대법원 2000. 5. 29.자 2000마934 결정</strong> <span class="status">내부 WIKI 확인</span></div>
-          <p>"공동대표의 정함이 있는 경우 공동대표이사 중 1인이 단독으로 회사를 대표하여 한 행위는 회사에 효력이 없다."</p>
-        </div>
-      </div>
-
-      <div class="subsection">
-        <h3>3.3 예외 — 표현대표이사 책임</h3>
-        <p>회사가 공동대표 체제임에도 1인이 '대표이사' 명칭으로 단독 계약을 반복하도록 용인/방임했다면 회사가 표현대표이사 책임(상법 제395조)을 부담할 수 있다. 다만 계약서 첨부 등기사항증명서에 '공동대표'가 명시되어 있었다면 상대방의 중과실로 보호 제한 가능.</p>
-      </div>
-
-      <div class="subsection">
-        <h3>3.4 공동대표 등기 누락의 위험</h3>
-        <p>내부적으로는 공동대표로 정했지만 등기하지 않은 경우, 그 제한을 선의의 제3자에게 대항할 수 없다(상법 제37조 제1항, 대법원 2013다212295).</p>
-        <div class="legal-quote">
-          <div class="src">근거/조문 · <strong>상법 제37조(등기의 효력)</strong> <span class="status">현행 확인</span></div>
-          <p>① 등기할 사항은 이를 등기하지 아니하면 선의의 제3자에게 대항하지 못한다. ② 등기한 후라도 제3자가 정당한 사유로 인하여 이를 알지 못한 때에는 제1항과 같다.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- SECTION 4 -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-number">쟁점 4</div>
-      <h2>'이사회 결의 안 했다'는 내부 사정, 대외적으로 통할까?</h2>
-      <div class="section-sub">상법 제209조 · 2015다45451 전원합의체</div>
-    </div>
-    <div class="section-body">
-      <div class="eye-catcher">
-        <div class="eye-catcher-title">한눈에</div>
-        <p>대법원 2015다45451 전원합의체: 내부 결의 제한 = 원칙적 대항 불가. 상대방은 선의면 족하고, 중대한 과실이 있어야 무효.</p>
-      </div>
-
-      <div class="subsection">
-        <h3>4.1 대표권 제한의 기본 원리</h3>
-        <p>상법 제209조 제1항은 대표사원의 포괄적 대표권을 규정하고, 제2항은 "전항의 권한에 대한 제한은 선의의 제3자에게 대항하지 못한다"고 규정한다(대표이사 준용 via 제389조 제3항).</p>
-        <div class="legal-quote">
-          <div class="src">근거/조문 · <strong>상법 제209조(대표사원의 권한)</strong> <span class="status">현행 확인</span></div>
-          <p>① 회사를 대표하는 사원은 회사의 영업에 관하여 재판상 또는 재판외의 모든 행위를 할 권한이 있다. ② 전항의 권한에 대한 제한은 선의의 제3자에게 대항하지 못한다.</p>
-        </div>
-      </div>
-
-      <div class="subsection">
-        <h3>4.2 2021년 전원합의체 기준</h3>
-        <p>대법원 2015다45451 전원합의체: 대표이사가 내부적 제한을 위반해 거래한 경우, 거래상대방은 <strong>선의이면 족하고 무과실까지 필요하지 않으며</strong>, 다만 <strong>중대한 과실</strong>이 있으면 그 거래는 무효로 본다.</p>
-        <p>판례는 "이사회 결의가 필요한 거래에서 이사회 결의는 회사의 내부 의사결정절차에 불과하므로, 특별한 사정이 없는 한 거래상대방은 대표자가 필요한 내부절차를 마쳤을 것이라고 신뢰하는 것이 경험칙에 부합한다"고 설명한다(대법원 2006다47677, 2005다480).</p>
-        <div class="legal-quote">
-          <div class="src">근거/판례 · <strong>대법원 2021. 2. 18. 선고 2015다45451 전원합의체 판결</strong> <span class="status">MCP FOUND</span></div>
-          <p>대표이사가 이사회 결의 없이 거래한 경우, 상대방은 선의면 족하고 무과실 불요, 다만 중대한 과실이 있으면 무효.</p>
-        </div>
-      </div>
-
-      <div class="subsection">
-        <h3>4.3 중과실 판단 요소</h3>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr><th>요소</th><th>설명</th></tr>
-            </thead>
-            <tbody>
-              <tr><td><strong>이례적 거래 구조</strong></td><td>거래 규모/조건이 시장 관행과 차이</td></tr>
-              <tr><td><strong>종래 거래 관계</strong></td><td>거래 이력에 비추어 의심 상황</td></tr>
-              <tr><td><strong>상대방의 경험/지위</strong></td><td>기본적 확인 의무 이행 여부</td></tr>
-              <tr><td><strong>거래의 이례성</strong></td><td>회사 규모/목적에 비춰 통상적이지 않은 거래</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- SECTION 5 -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-number">쟁점 5</div>
-      <h2>법인인감/인감증명서만으로 안전할까?</h2>
-      <div class="section-sub">대법원 2011다107511 · 부산지법 2017나46455</div>
-    </div>
-    <div class="section-body">
-      <div class="eye-catcher">
-        <div class="eye-catcher-title">한눈에</div>
-        <p>법인인감 소지 ≠ 대리권 증명(대법원 2011다107511). 인감+등기부+위임장+이사회 의사록이 모두 갖춰져야 안전.</p>
-      </div>
-
-      <div class="subsection">
-        <h3>5.1 '인감이 찍혔다'는 것의 법적 의미</h3>
-        <p>대법원 2011다107511: 본인의 인감 등이 외부로 유출/사용된 사실만으로 곧바로 수권표시가 아니라, 본인이 제3자에게 '알리려는 표시'가 있었는지(표시의 귀속)가 핵심.</p>
-      </div>
-
-      <div class="subsection">
-        <h3>5.2 인감만 믿었다가 패한 사례</h3>
-        <p>부산지방법원 2017. 12. 1. 선고 2017나46455 판결: 법인인감만 소지하고 위임장/법인등기부등본을 확인하지 않은 사안에서 표현대리 성립 부정. 월 5억 원 규모 계약에서 단순 인감 소지만 확인한 것은 중대한 과실.</p>
-        <div class="legal-quote">
-          <div class="src">근거/판례 · <strong>부산지법 2017. 12. 1. 선고 2017나46455 판결</strong> <span class="status">내부 WIKI 확인</span></div>
-          <p>월 5억 원 계약에서 법인인감 소지만 확인, 위임장/등기부등본/인감증명서 미확인 → 중대한 과실, 표현대리 배척.</p>
-        </div>
-      </div>
-
-      <div class="subsection">
-        <h3>5.3 안전한 확인 3단계</h3>
-        <div class="steps">
-          <div class="step"><div class="step-num">STEP 1</div><div class="step-text">인감증명서 발급일 확인<br><small>계약일과 가까운 1개월 이내</small></div></div>
-          <div class="step"><div class="step-num">STEP 2</div><div class="step-text">인감 진정성 확인<br><small>등록 법인인감과 날인 인영 일치</small></div></div>
-          <div class="step"><div class="step-num">STEP 3</div><div class="step-text">서명자 권한 확인<br><small>등기부와 위임장으로 검증</small></div></div>
-        </div>
-        <div class="highlight-box">
-          <p><strong>인감증명서는 '인감이 진짜'임만 증명할 뿐, '서명자에게 대리권이 있다'는 것을 증명하지 않는다.</strong></p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- SECTION 6 -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-number">쟁점 6</div>
-      <h2>계약 전 대리권 확인 — 실무 체크리스트 5단계</h2>
-      <div class="section-sub">등기사항증명서 · 법인인감증명서 · 위임장 · 이사회 의사록</div>
-    </div>
-    <div class="section-body">
-      <div class="subsection">
-        <h3>6.1 등기사항전부증명서 확인 (가장 중요)</h3>
-        <p>계약 체결 전 최근 1개월 이내 발급된 등기사항전부증명서에서 확인:</p>
-        <ul>
-          <li>대표이사 명단 (누가 대표이사로 등기되어 있는가?)</li>
-          <li>공동대표 여부 (각자대표인가, 공동대표인가?)</li>
-          <li>대표권 제한 사항 (등기부에 기재되어 있는가?)</li>
-          <li>서명자가 등기된 대표이사와 일치하는가?</li>
-        </ul>
-        <p>등기사항증명서는 인터넷등기소(www.iros.go.kr)에서 발급번호로 진위 확인 가능.</p>
-      </div>
-
-      <div class="subsection">
-        <h3>6.2 법인인감증명서 확인</h3>
-        <p>계약서에 날인된 인감이 법인등기부에 등록된 법인인감과 일치하는지 확인. 발급일로부터 3개월 이내여야 안전.</p>
-      </div>
-
-      <div class="subsection">
-        <h3>6.3 위임장 또는 이사회 의사록 징구</h3>
-        <p>서명자가 등기부상 대표이사가 아니라면:</p>
-        <ul>
-          <li><strong>위임장</strong>: 특정 거래에 한정된 개별 위임장 (포괄적 위임장은 위험)</li>
-          <li><strong>이사회 의사록</strong>: 중요 자산 처분/대규모 차입/보증 등은 이사회 결의 필요(상법 제393조 제1항)</li>
+      <div class="figure">
+        <div class="cap"></div>
+        <ul class="checklist">
+          <li><span class="ck">✓</span><span></span></li>
+          <li><span class="ck">✓</span><span></span></li>
+          <li><span class="ck">✓</span><span></span></li>
         </ul>
       </div>
 
-      <div class="subsection">
-        <h3>6.4 고액/이례 거래는 본인 직접 확인</h3>
-        <p>계약 전 상대방 회사 대표이사에게 직접 전화 또는 이메일로 권한 확인. 확인 내역 기록 보관.</p>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th></th><th></th><th></th></tr></thead>
+          <tbody>
+            <tr><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td></tr>
+          </tbody>
+        </table>
       </div>
+    </section>
 
-      <div class="subsection">
-        <h3>6.5 공동대표면 전원 서명 또는 개별 위임</h3>
-        <p>등기부상 공동대표라면:</p>
-        <ul>
-          <li><strong>원칙</strong>: 대표이사 전원의 서명/날인</li>
-          <li><strong>예외</strong>: 부득이 1인만 서명 시, 나머지 공동대표이사의 개별 위임장(특정 거래 한정) 필수</li>
-        </ul>
-      </div>
+    <!-- ===== 대주제 4 ===== -->
+    <section class="blk" id="s4">
+      <div class="secl">쟁점 4</div>
+      <h2>4. 이사회 결의 흠결 -- 계약을 뒤집을 수 있을까</h2>
+      <p>대법원 2015다45451 전원합의체: 대표이사가 내부적 제한 위반해 거래한 경우, 상대방은 선의면 족하고 중대한 과실이 있어야 무효. 이는 법률상 제한과 내부적 제한 동일 적용. 회사 측은 이사회 결의 부존재만으로 부족, 상대방 악의/중과실을 구체적으로 증명해야.</p>
+    </section>
 
-      <div class="subsection">
-        <h3>체크리스트 표</h3>
-        <div class="table-wrap">
-          <table class="checklist-table">
-            <thead>
-              <tr><th>단계</th><th>확인 사항</th><th>확인 방법</th><th>중요도</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>1</td><td>대표이사/공동/각자대표</td><td>등기사항전부증명서</td><td><span class="risk-badge risk-high">★★★★★</span></td></tr>
-              <tr><td>2</td><td>법인인감 진정 확인</td><td>법인인감증명서</td><td><span class="risk-badge risk-high">★★★★</span></td></tr>
-              <tr><td>3</td><td>서명자 권한 확인</td><td>위임장/이사회의사록</td><td><span class="risk-badge risk-high">★★★★★</span></td></tr>
-              <tr><td>4</td><td>고액 거래 본인 확인</td><td>전화/메일 직접 확인</td><td><span class="risk-badge risk-mid">★★★</span></td></tr>
-              <tr><td>5</td><td>공동대표 전원 서명</td><td>공동 서명/개별 위임장</td><td><span class="risk-badge risk-high">★★★★★</span></td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Q&A SECTION -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-number">Q&A</div>
+    <!-- ===== FAQ ===== -->
+    <section class="blk faq" id="faq">
+      <div class="secl">Q&amp;A</div>
       <h2>자주 묻는 질문</h2>
-    </div>
-    <div class="section-body">
-      <div class="qa-item">
-        <div class="qa-q">등기부에 '대표이사'로 등기된 사람인데 명의대여자였다. 계약이 유효한가?</div>
-        <div class="qa-a">원칙적으로 유효하다. 등기부에 대표이사로 등기되어 있다면 상대방은 진정한 대표권을 가진 것으로 신뢰할 수 있고, 등기의 효력을 선의의 제3자에게 대항할 수 없다(상법 제37조 제1항). 단, 상대방이 명의대여 사실을 알았거나 알 수 있었던 경우에는 보호되지 않는다.</div>
-      </div>
+      <details open>
+        <summary></summary>
+        <div class="a"></div>
+      </details>
+      <details>
+        <summary></summary>
+        <div class="a"></div>
+      </details>
+      <details>
+        <summary></summary>
+        <div class="a"></div>
+      </details>
 
-      <div class="qa-item">
-        <div class="qa-q">'과장' 직함인 사람이 계약서에 회사 도장을 찍었다. 효력이 있나?</div>
-        <div class="qa-a">'과장'은 상법 제395조의 '대표이사로 인정될 만한 명칭'에 해당하지 않아 표현대표이사 책임이 곧바로 성립하기 어렵다. 다만 기본대리권이 있다면 그 범위 내에서는 유효할 수 있다. 안전을 위해 등기부상 대표이사 또는 명시적 위임을 받은 사람의 서명을 별도로 받는 것이 좋다.</div>
+      <!-- 최신성·면책 고지 (Q9·Q10) -->
+      <div class="notice">
+        본 자료는 2026-07-09 기준으로 작성되었으며, 인용된 법령·판례는 작성 시점의 현행성을 확인한 것입니다.
+        법령은 개정될 수 있고 사안마다 결론이 달라질 수 있으므로, 실제 의사결정 전 최신 법령과 개별 사실관계에 대한 확인이 필요합니다.
+        본 자료는 일반적인 법률 정보 제공이며 특정 사안에 대한 법률 자문이 아닙니다.
       </div>
-
-      <div class="qa-item">
-        <div class="qa-q">계약 후 상대방이 "그 사람은 대리권이 없었다"며 이행을 거절한다. 어떻게 대응할까?</div>
-        <div class="qa-a">① 등기사항전부증명서 즉시 확인 ② 법인인감증명서 재확인 ③ 표현대리 성립 여부 검토(회사 외관 작출 여부 + 귀사의 선의/무과실) ④ 무권대리인 개인 책임(민법 제135조) 검토 ⑤ 내용증명 발송 후 필요시 소송 제기</div>
-      </div>
-
-      <div class="qa-item">
-        <div class="qa-q">각자대표인데 은행이 '전원 서명'을 요구한다. 법적 강제력이 있나?</div>
-        <div class="qa-a">법적으로 각자대표라면 1인 단독 서명으로 유효한 계약이 성립한다(상법 제389조 제3항, 제209조 제1항). 은행의 전원 서명 요구는 법적 요건이 아니라 은행 내부 리스크 관리 기준이다. 법적 강제력은 없으나 실무적으로 은행과 협의해 조율해야 한다.</div>
-      </div>
-
-      <div class="qa-item">
-        <div class="qa-q">퇴사 직원이 회사 명함과 이메일을 그대로 사용해 계약했다. 회사가 책임져야 하나?</div>
-        <div class="qa-a">민법 제129조(대리권 소멸 후 표현대리) 문제다. 회사가 퇴사자의 명함/이메일/사원증을 회수하지 않고 방치했다면 외관을 용인한 책임이 인정될 수 있다(대법원 2007다74713). 회사는 퇴사 시 명함/이메일/출입카드 즉시 회수, 거래처에 퇴사 사실 통지가 필수다.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- DISCLAIMER -->
-  <div class="section">
-    <div class="section-body">
-      <div class="eye-catcher" style="border-left-color: #6b7280; background: #f9fafb;">
-        <div class="eye-catcher-title">최신성/면책 고지</div>
-        <p>본 자료는 <strong>2026년 7월 9일</strong> 기준으로 작성되었으며, 인용 법령/판례는 작성 시점의 현행성을 확인한 것입니다. 법령은 개정될 수 있고 사안마다 결론이 달라질 수 있으므로, 실제 의사결정 전 최신 법령과 개별 사실관계에 대한 확인이 필요합니다. 본 자료는 일반적 법률 정보 제공이며 특정 사안에 대한 법률 자문이 아닙니다.</p>
-      </div>
-    </div>
-  </div>
+    </section>
+  </main>
 </div>
 
-<footer class="footer">
-  <p>© 2026 조우성 변호사. 본 콘텐츠는 일반 법률 정보이며 법률 자문을 대체하지 않습니다.</p>
-  <p>인용 법령·판례는 2026-07-09 기준 현행성을 확인했습니다.</p>
+<!-- ===== 푸터: 프로필 + 상담 CTA ===== -->
+<footer class="footer" id="consult">
+  <div class="wrap">
+    <!-- MN-CREDIT-UPGRADE v1 :: credit -->
+    <div class="mn-credit">
+      <p class="who">작성 : 조우성 변호사 / 로펌 머스트노우 (<a href="mailto:law@mustknow.co.kr">law@mustknow.co.kr</a>)</p>
+      <p class="msg">제공된 사안과 관련있는 법률안건에 대해 자문이 필요한 경우 연락처와 함께 자세한 사안과 질의 요지를 메일로 보내주시면 1차적인 가이드라인을 보내드립니다.</p>
+    </div>
+    <div class="prof">
+      <div>
+        <h3>조우성 변호사</h3>
+        <p>상장회사 전문 변호사. 회사법/민사법/기업자문 분야 20년 이상 실무 경험.</p>
+        <p>중소기업 경영진이 실무에서 바로 활용할 수 있는 법률 지식을 제공합니다.</p>
+      </div>
+      <div class="cta-f">
+        <a class="btn btn-f" href="https://woosungjo-law.github.io">상담 문의하기</a>
+        <a class="btn btn-fo" href="https://woosungjo-law.github.io">더 많은 인사이트</a>
+      </div>
+    </div>
+    <div class="fine">
+      © 2026 조우성 변호사. 본 콘텐츠는 일반 법률 정보이며 법률 자문을 대체하지 않습니다.
+      인용 법령·판례는 2026-07-09 기준 현행성을 확인했습니다.
+    </div>
+  </div>
 </footer>
 
+<script>
+/* 읽기 진행바 */
+var pb=document.getElementById('progress');
+function onScroll(){
+  var h=document.documentElement,b=document.body;
+  var st=h.scrollTop||b.scrollTop;
+  var sh=(h.scrollHeight||b.scrollHeight)-h.clientHeight;
+  pb.style.width=(sh>0?(st/sh*100):0)+'%';
+}
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+/* 맨 위로 버튼 표시 */
+var toTop=document.getElementById('toTop');
+window.addEventListener('scroll',function(){
+  (window.scrollY||window.pageYOffset)>500?toTop.classList.add('show'):toTop.classList.remove('show');
+},{passive:true});
+
+/* 목차 스크롤 스파이 */
+var links=Array.prototype.slice.call(document.querySelectorAll('#toc-list a'));
+var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));}).filter(Boolean);
+function spy(){
+  var pos=(window.scrollY||window.pageYOffset)+120,cur=secs[0];
+  for(var i=0;i<secs.length;i++){if(secs[i].offsetTop<=pos)cur=secs[i];}
+  links.forEach(function(a){
+    a.classList.toggle('active',cur&&a.getAttribute('href')==='#'+cur.id);
+  });
+}
+window.addEventListener('scroll',spy,{passive:true});spy();
+
+/* 모바일: 목차 링크 클릭 시 접기 */
+document.querySelectorAll('#toc-list a').forEach(function(a){
+  a.addEventListener('click',function(){
+    if(window.innerWidth<=820)document.getElementById('toc').classList.add('closed');
+  });
+});
+</script>
 </body>
 </html>
