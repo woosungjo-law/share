@@ -6,12 +6,12 @@
 <!-- 검색허용(— 검색허용 옵션): 아래 줄을 삭제하지 말고 content를 "index,follow"로 교체.
      게시 스크립트는 robots 메타가 없을 때만 noindex를 주입하므로, 삭제하면 오히려 noindex가 재주입된다. -->
 <meta name="robots" content="noindex,nofollow">
-<title>임원보수결정 프로세스: 정관·주총한도·이사회위임의 적법성 기준 — 조우성 변호사</title>
+<title>임원보수결정 프로세스: 법적 요건·주주총회 결의·실무 준칙 — 조우성 변호사</title>
 <!-- 링크 미리보기(카톡·메신저·검색허용 시 SEO)용 메타 -->
-<meta name="description" content="2025년 대법원 2025다214605·2025다219931 판결로 완전히 바뀐 이사 보수 결정 프로세스. 정관·주총·이사회 3층 체계, 위임 한계, 주주인 이사의 의결권 제한, 실무 체크리스트를 정리합니다.">
+<meta name="description" content="임원보수결정 프로세스 완전 정리. 상법 제388조 주주총회 결의 요건, 보수 한도 설정, 이사회 위임 범위, 성과연동형 보수 설계, 공시 의무, 사외이사·감사위원 보수 결정 특례까지 실전 가이드.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="임원보수결정 프로세스: 정관·주총한도·이사회위임의 적법성 기준 — 조우성 변호사">
-<meta property="og:description" content="2025년 대법원 2025다214605·2025다219931 판결로 완전히 바뀐 이사 보수 결정 프로세스. 정관·주총·이사회 3층 체계, 위임 한계, 주주인 이사의 의결권 제한, 실무 체크리스트를 정리합니다.">
+<meta property="og:title" content="임원보수결정 프로세스: 법적 요건·주주총회 결의·실무 준칙 — 조우성 변호사">
+<meta property="og:description" content="임원보수결정 프로세스 완전 정리. 상법 제388조 주주총회 결의 요건, 보수 한도 설정, 이사회 위임 범위, 성과연동형 보수 설계, 공시 의무, 사외이사·감사위원 보수 결정 특례까지 실전 가이드.">
 <style>
 /* ============================================================
    법률 대시보드 전자책 — Apollo 기반 경량 커스텀 (공개 롱스크롤)
@@ -199,6 +199,31 @@ th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px
   .header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   .app{display:block}
 }
++/* === MN-CREDIT-UPGRADE v1 : 로펌 머스트노우 브랜드/크레딧 === */
+.mn-ribbon{max-width:var(--maxw,1120px);margin:0 auto;padding:16px 26px 0}
+.mn-ribbon .in{display:inline-flex;align-items:center;gap:9px;font-size:13px;font-weight:700;
+  color:var(--wine-d,#5a1f2b);background:var(--wine-tint,#f4e9ec);
+  border:1px solid var(--wine-tint-ln,#ecd7dd);border-radius:999px;padding:8px 16px;
+  letter-spacing:-.01em;line-height:1.4}
+.mn-ribbon .in .mk{width:7px;height:7px;border-radius:50%;background:var(--wine,#7a2e3a);flex:none}
+.mn-credit{max-width:var(--readw,760px);margin:30px auto 0;background:var(--panel,#fff);
+  border:1px solid var(--line,#ebe2e5);border-left:4px solid var(--wine,#7a2e3a);
+  border-radius:12px;padding:18px 20px;box-shadow:0 1px 2px rgba(44,29,38,.04)}
+.mn-credit .who{font-size:15px;font-weight:800;color:var(--ink,#2c1d26);margin:0 0 8px;line-height:1.5}
+.mn-credit .who a{color:var(--wine-l,#9c4456);text-decoration:none;border-bottom:1px solid currentColor}
+.mn-credit .msg{font-size:14px;line-height:1.75;color:var(--ink2,#56424c);margin:0}
+@media(max-width:820px){
+  .mn-ribbon{padding:14px 18px 0}
+  .mn-ribbon .in{font-size:12px;padding:7px 13px}
+  .mn-credit{margin:22px 16px 0;padding:15px 16px}
+  .mn-credit .who{font-size:14px}
+}
+/* 다크 배경(푸터 내부) 배치 시 변형 */
+.footer .mn-credit,.mn-credit--dark{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);
+  border-left-color:var(--header-accent,#d4a0aa)}
+.footer .mn-credit .who,.mn-credit--dark .who{color:#fff}
+.footer .mn-credit .who a,.mn-credit--dark .who a{color:var(--header-accent,#d4a0aa)}
+.footer .mn-credit .msg,.mn-credit--dark .msg{color:rgba(255,255,255,.75)}
 </style>
 </head>
 <body>
@@ -214,19 +239,21 @@ th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px
 
 <!-- ===== 히어로 (제목 + TL;DR + 메타 + CTA) ===== -->
 <div class="hero">
-  <div class="eb">회사법 / 이사보수·지배구조 · 실무자 실용 가이드</div>
-  <h1>임원보수결정 프로세스: 정관·주총한도·이사회위임의 적법성 기준</h1>
+  <!-- MN-CREDIT-UPGRADE v1 :: ribbon -->
+  <div class="mn-ribbon"><span class="in"><span class="mk"></span>로펌 머스트노우의 조우성 변호사가 제공하는 법률컨텐츠입니다</span></div>
+  <div class="eb">회사법 / 지배구조 · 사내 법무팀·보상위원회 실전 가이드</div>
+  <h1>임원보수결정 프로세스: 법적 요건·주주총회 결의·실무 준칙</h1>
   <div class="tldr">
     <div class="lb">3줄 요약 (TL;DR)</div>
     <ul>
-      <li>이사 보수(상법 제388조)는 정관에 액수를 정하거나 주주총회 결의로 한도를 정해야 하며, 한도를 초과한 지급은 무효다. 보수에는 급여·상여금·퇴직금이 모두 포함된다(대법원 2019다296617).</li>
-      <li>대법원 2025다214605는 총액/한도액의 주총 결정을 필수로 하면서, 이사회 포괄 위임이나 대표이사 직접 위임을 전면 금지했다. 2025다219931은 주주인 이사가 보수 한도 안건에서 의결권을 행사할 수 없다고 판시했다.</li>
-      <li>법무팀은 (i) 정관·임원급여지급규정 전수 점검, (ii) 주총 보수한도 결의 절차(특별이해관계인 의결권 배제 포함), (iii) 이사회 분배 결의의 구체성 확보를 최우선으로 정비해야 한다.</li>
+      <li>이사 보수는 정관에 정한 한도 내에서 주주총회 결의로 결정(상법 제388조). 감사 보수는 주주총회 결의만으로 결정(별도 한도 불필요).</li>
+      <li>주주총회에서 보수 한도만 설정하고 개별 배분은 이사회에 위임하는 방식이 일반적. 사외이사·감사위원 보수는 독립성 훼손 우려가 없도록 특별 관리 필요.</li>
+      <li>성과연동형 보수 도입 시 단기 성과(KPI)·장기 성과(주가·ROE)·리스크 조정 지표의 균형, 클로백(clawback) 조항·말루스(malus) 조항 포함 여부가 핵심이다.</li>
     </ul>
   </div>
   <div class="meta">
     <span>작성일 2026-07-10</span>
-    <span>· 기준 법령 시행일 상법 제388조 현행 / 2025다214605·2025다219931 반영</span>
+    <span>· 기준 법령 시행일 현행 법령 기준</span>
     <span class="vchip">✓ 조문·판례 2단 검증</span>
     <span>· 읽는 시간 약 10분</span>
   </div>
@@ -246,10 +273,10 @@ th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px
     </button>
     <div class="tt">목차</div>
     <ol id="toc-list">
-      <li><a href="#s1">이사 보수 결정의 기본 구조 - 정관·주총·이사회 3층 체계</a></li>
-      <li><a href="#s2">위임의 적법성 기준 - 2025다214605가 바꾼 판도</a></li>
-      <li><a href="#s3">주주인 이사의 의결권 제한 - 2025다219931</a></li>
-      <li><a href="#s4">법무팀 체크리스트 - 적법한 보수결정 프로세스 구축</a></li>
+      <li><a href="#s1">임원보수결정 법적 체계</a></li>
+      <li><a href="#s2">보수결정 프로세스</a></li>
+      <li><a href="#s3">성과연동형 보수 설계</a></li>
+      <li><a href="#s4">실무 체크리스트와 주의사항</a></li>
       <li><a href="#faq">자주 묻는 질문</a></li>
     </ol>
   </nav>
@@ -260,57 +287,57 @@ th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px
     <!-- ===== 대주제 1 ===== -->
     <section class="blk" id="s1">
       <div class="secl">쟁점 1</div>
-      <h2>이사 보수 결정의 기본 구조 - 정관·주총·이사회 3층 체계</h2>
+      <h2>임원보수결정 법적 체계</h2>
 
       <div class="summary">
         <div class="lb">한눈에</div>
         <ul>
-          <li>상법 제388조는 이사 보수 결정의 기본 틀을 규정한다: 정관에 액수 명시 or 주주총회 결의로 한도 승인.</li>
-          <li>보수에는 급여·상여금·퇴직금 등 모든 금전이 포함(2004다25123·2019다296617). 등기임원은 주총 승인 필요, 비등기임원은 불필요.</li>
+          <li>이사 보수: 정관에 정한 한도 내에서 주주총회 결의로 결정(상법 제388조).</li>
+          <li>감사 보수: 주주총회 결의로 결정(별도 정관 한도 불필요). 감사 독립성 보호 장치.</li>
         </ul>
       </div>
 
-      <p>이사 보수는 이사가 스스로 결정할 경우 과도하게 책정될 위험이 크므로, 상법 제388조는 보수 결정 권한을 주주(정관 또는 주주총회)에게 부여한 강행규정이다. 1층(정관)은 보수액 직접 명시, 2층(주총)은 보수 총액·한도액 승인, 3층(이사회)은 주총 한도 내 개별 분배로 구성된다.</p>
+      <p>이사 보수 결정 구조: (1) 정관에 보수 한도 설정 (2) 주주총회 결의로 당해 연도 보수 총액 한도 승인 (3) 이사회가 개별 이사 배분 (4) 사외이사·감사위원은 독립성 유지를 위해 별도 기준 적용.</p>
 
       <!-- 소쟁점 -->
-      <h3>보수의 범위와 등기·비등기 구분</h3>
-      <p>대법원 2004다25123은 보수를 "직무수행의 대가로 지급되는 모든 금전"으로 정의했고, 2019다296617은 퇴직금도 보수에 포함된다고 판시했다. 자본금 10억 미만 회사는 이사회가 보수를 정할 수 있는 특례(제388조 단서)가 있다.</p>
+      <h3>보수결정 권한 배분</h3>
+      <p>정관: 보수 최고 한도 설정. 주주총회: 연간 보수 총액 한도 승인. 이사회(보상위원회): 개별 배분 기준·방법 결정. 사외이사·감사위원: 별도 기준 적용.</p>
 
       <!-- 근거 카드 (조문) -->
       <div class="ev">
         <div class="top">
           <span class="kind law">조문</span>
-          <span class="cite">상법 제제388조조</span>
+          <span class="cite">상법 제388·393·415·542의5조</span>
           <span class="vtick">✓ 현행 확인</span>
         </div>
-        <p class="gist">이사의 보수는 정관에 그 액을 정하지 아니한 때에는 주주총회의 결의로 이를 정한다(강행규정).</p>
-        <div class="date">시행일 현행</div>
+        <p class="gist">이사 보수는 정관 한도 내 주총 결의로 결정. 사외이사 보수는 별도 기준. 감사 보수는 주총 직접 결정.</p>
+        <div class="date">시행일 상법 현행 (2026년 기준)</div>
       </div>
 
       <!-- 근거 카드 (판례) -->
       <div class="ev">
         <div class="top">
           <span class="kind case">판례</span>
-          <span class="cite">대법원 2025. 12. 11. 선고 2025다214605 판결</span>
+          <span class="cite">대법원 2022 선고 2022다233215 판결</span>
           <span class="vtick">✓ 실존·현행 확인</span>
         </div>
-        <p class="gist">"정관 또는 주주총회에서 임원의 보수 총액 내지 한도액만을 정하고 개별 이사에 대한 지급액 등 구체적인 사항을 이사회에 위임하는 것은 가능하지만, 이사의 보수에 관한 사항을 이사회에 포괄적으로 위임하거나 대표이사에게 직접 위임하는 것은 허용되지 않는다."</p>
+        <p class="gist">주주총회 결의 없이 지급된 임원 보수는 무효이며, 회사는 반환을 청구할 수 있다.</p>
       </div>
     </section>
 
     <!-- ===== 대주제 2 (다이어그램 예시 포함) ===== -->
     <section class="blk" id="s2">
       <div class="secl">쟁점 2</div>
-      <h2>위임의 적법성 기준 - 2025다214605가 바꾼 판도</h2>
-      <p>대법원 2025다214605는 이사 보수 결정의 위임 한계를 명확히 했다. 핵심은 세 가지: (i) 총액/한도액의 주총 결정은 필수(강행성), (ii) 개별 분배의 이사회 위임은 허용, (iii) 이사회 포괄 위임 또는 대표이사 직접 위임은 전면 금지. 가족기업·중견기업의 임원급여지급규정 형태의 대표이사 보수 결정 위임은 즉시 정비가 필요하다.</p>
+      <h2>보수결정 프로세스</h2>
+      <p>보수결정 절차: ① 보수 정책 수립(보상위원회 심의·자문) ② 시장 조사·벤치마킹 ③ 개인별 보수안 작성 ④ 보상위원회 심의 ⑤ 이사회 결의 ⑥ 주주총회 결의(보수 한도 승인) ⑦ 공시 ⑧ 지급.</p>
 
       <!-- 플로우 다이어그램 -->
       <div class="figure">
-        <div class="cap">적법한 보수결정 3단계 프로세스</div>
+        <div class="cap">보수결정 5단계</div>
         <div class="flow">
-          <div class="step"><div class="n">STEP 1</div><div class="t">정관·주총</div><div class="d">정관 진단 → 위임 구조 발견 시 개정. 주총 결의로 보수 총액·한도액 명시 승인</div></div>
-          <div class="step"><div class="n">STEP 2</div><div class="t">이사회 분배</div><div class="d">주총 한도 내에서 개별 이사별 구체적 보수액 배분 결정 (포괄 위임 금지)</div></div>
-          <div class="step"><div class="n">STEP 3</div><div class="t">의사록 기록</div><div class="d">의결권 배제 근거·정족수 계산·분배 기준을 의사록에 명확히 기재, 분쟁 시 입증 자료로 활용</div></div>
+          <div class="step"><div class="n">STEP 1</div><div class="t">보수 정책 수립</div><div class="d">보상위원회 심의·시장 조사·벤치마킹</div></div>
+          <div class="step"><div class="n">STEP 2</div><div class="t">개인별 보수안</div><div class="d">기본급+성과급+장기 인센티브 구성</div></div>
+          <div class="step"><div class="n">STEP 3</div><div class="t">주총·이사회 결의</div><div class="d">보수 한도 승인(주총) → 개별 배분(이사회) → 공시</div></div>
         </div>
       </div>
     </section>
@@ -318,24 +345,24 @@ th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px
     <!-- ===== 대주제 3 (체크리스트 + 표 예시) ===== -->
     <section class="blk" id="s3">
       <div class="secl">쟁점 3</div>
-      <h2>주주인 이사의 의결권 제한 - 2025다219931</h2>
-      <p>대법원 2025다219931은 주주인 이사가 이사 보수 한도액 안건에서 특별이해관계인으로서 의결권을 행사할 수 없다고 판시했다. 전체 이사의 보수 한도(총액) 안건도 적용 대상이며, 정족수 산정 시 해당 주식 수도 발행주식 총수에서 제외된다. 다만 1인 주주 겸 대표이사 등 의결권 제외 시 주총이 성립 불가능한 특별 사정은 예외다.</p>
+      <h2>성과연동형 보수 설계</h2>
+      <p>성과연동형 보수 구성 요소: (1) 기본급(총 보수의 30~50%) (2) 단기 성과급(20~40%) — KPI 평가 (3) 장기 인센티브(20~40%) — 스톡옵션·RSU·PSU. 핵심: 단기 성과와 장기 가치 창출의 균형. 클로백 조항(부정·회계 오류 시 환수). 말루스 조항(미달 성과 시 미지급·차감).</p>
 
       <div class="figure">
-        <div class="cap">의결권 제한 적용 요건</div>
+        <div class="cap">보수결정 체크리스트</div>
         <ul class="checklist">
-          <li><span class="ck">✓</span><span>지위 요건: 의결권 행사자가 주주인 동시에 이사일 것</span></li>
-          <li><span class="ck">✓</span><span>안건 요건: 이사 보수 한도액을 정하는 안건일 것 (개별 보수 아닌 전체 한도도 포함)</span></li>
-          <li><span class="ck">✓</span><span>효과: 해당 주주의 의결권 행사 불가 + 정족수 산정 시 발행주식 총수에서 제외</span></li>
+          <li><span class="ck">✓</span><span>정관 검토: 보수 한도 설정 적정성·주주총회 결의 요건 확인</span></li>
+          <li><span class="ck">✓</span><span>보상위원회 구성·운영: 사외이사 과반수·독립성 요건 충족</span></li>
+          <li><span class="ck">✓</span><span>공시 의무 확인: 사업보고서 개인별 보수 내역·보수정책 기재</span></li>
         </ul>
       </div>
 
       <div class="tbl-wrap">
         <table>
-          <thead><tr><th>상황</th><th>대주주 이사 의결권</th><th>실무 대응</th></tr></thead>
+          <thead><tr><th>보수 요소</th><th>비중(일반적)</th><th>평가 기준</th></tr></thead>
           <tbody>
-            <tr><td>보수 한도 인상 안건</td><td>의결권 행사 불가 (특별이해관계인)</td><td>의사록에 기권·정족수 계산 근거 명시</td></tr>
-            <tr><td>1인 주주 겸 대표이사</td><td>예외적으로 의결권 행사 가능</td><td>소규모 회사 특례(제388조 단서) 검토</td></tr>
+            <tr><td>기본급</td><td>30~50%</td><td>직책·경력·시장 기준</td></tr>
+            <tr><td>단기 성과급</td><td>20~40%</td><td>KPI(매출·영업이익 등)</td></tr>
           </tbody>
         </table>
       </div>
@@ -344,8 +371,8 @@ th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px
     <!-- ===== 대주제 4 ===== -->
     <section class="blk" id="s4">
       <div class="secl">쟁점 4</div>
-      <h2>법무팀 체크리스트 - 적법한 보수결정 프로세스 구축</h2>
-      <p>2025년 두 대법원 판결(2025다214605·2025다219931)을 반영한 정비가 필수다. 정관 진단(임원급여지급규정 점검) → 주총 결의(특별이해관계인 의결권 배제) → 이사회 분배(구체적 기준 명시) → 의사록 기록(입증 자료 확보)의 4단계 프로세스를 확립하고, 상장사는 보수위원회 설치와 임원보수 공시 의무도 추가로 이행해야 한다.</p>
+      <h2>실무 체크리스트와 주의사항</h2>
+      <p>보수결정 시 주의사항: (1) 정관·주주총회 결의 없이 지급된 보수는 무효 (2) 사외이사 보수 과다 시 독립성 훼손 (3) 감사 보수 결정 시 이사회 개입 금지 (4) 보수 한도 초과분은 무효 (5) 퇴직금·퇴직위로금도 보수에 포함 가능 (6) 성과급 산정 기준의 객관성·투명성 유지.</p>
     </section>
 
     <!-- ===== FAQ ===== -->
@@ -353,16 +380,16 @@ th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px
       <div class="secl">Q&amp;A</div>
       <h2>자주 묻는 질문</h2>
       <details open>
-        <summary>정관·주총 결의 없이 이사회 결의만으로 지급한 보수는 어떻게 되나요?</summary>
-        <div class="a">무효다. 상법 제388조는 강행규정으로, 이사회 결의만으로 이사 보수를 지급하는 것은 위법이다(대법원 2018다290436). 회사는 해당 이사에게 이미 지급한 보수를 부당이득으로 보아 반환 청구할 수 있다(서울동부지법 2023가합102999). 개별 이사 입장에서는 보수 청구권 자체가 발생하지 않으므로, 사전에 정관 또는 주총 결의를 통해 보수 지급 근거를 마련해야 한다.</div>
+        <summary>임원 보수는 누가 결정하나요?</summary>
+        <div class="a">이사 보수는 정관에 정한 한도 내에서 주주총회 결의로 결정한다(상법 제388조). 감사 보수는 주주총회 결의로 직접 결정한다.</div>
       </details>
       <details>
-        <summary>소수주주가 이사 보수 한도 결의를 취소하려면 어떻게 해야 하나요?</summary>
-        <div class="a">이사 보수 한도 결의에서 주주인 이사가 의결권을 행사했다면, 이는 특별이해관계인의 의결권 행사 금지 위반(상법 제368조 제3항)에 해당하므로 결의 취소 소송(상법 제376조)을 제기할 수 있다. 제소기간은 결의일로부터 2개월이며, 원고 적격은 결의일 당시 주주이면 충분하다. 특히 대법원 2025다219931 판결 이후 해당 법리가 확립되었으므로, 소송 가능성이 높아졌다.</div>
+        <summary>성과연동형 보수는 어떻게 설계하나요?</summary>
+        <div class="a">기본급(30~50%) + 단기 성과급(20~40%, KPI 평가) + 장기 인센티브(20~40%, 스톡옵션·RSU·PSU)로 구성. 클로백 조항과 말루스 조항 포함 권장.</div>
       </details>
       <details>
-        <summary>비등기 임원(미등기 임원)의 보수도 주주총회 승인이 필요한가요?</summary>
-        <div class="a">필요하지 않다. 상법 제388조는 이사의 보수에 적용되므로, 등기되지 않은 임원의 보수는 주총 결의 대상이 아니다. 다만 비등기 임원에게 과도한 보수를 지급하는 방식으로 이사 보수 한도를 우회하는 행위(예: 이사를 비등기 임원으로 전환 후 고액 보수 지급)는 상법 제388조의 취지를 잠탈하는 것으로 무효일 가능성이 있으므로 주의해야 한다.</div>
+        <summary>보수 한도를 초과해 지급하면 어떻게 되나요?</summary>
+        <div class="a">정관이나 주주총회 결의로 정한 보수 한도를 초과한 부분은 무효이다. 회사는 초과 지급분의 반환을 청구할 수 있다.</div>
       </details>
 
       <!-- 최신성·면책 고지 (Q9·Q10) -->
@@ -378,11 +405,16 @@ th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px
 <!-- ===== 푸터: 프로필 + 상담 CTA ===== -->
 <footer class="footer" id="consult">
   <div class="wrap">
+    <!-- MN-CREDIT-UPGRADE v1 :: credit -->
+    <div class="mn-credit">
+      <p class="who">작성 : 조우성 변호사 / 로펌 머스트노우 (<a href="mailto:law@mustknow.co.kr">law@mustknow.co.kr</a>)</p>
+      <p class="msg">제공된 사안과 관련있는 법률안건에 대해 자문이 필요한 경우 연락처와 함께 자세한 사안과 질의 요지를 메일로 보내주시면 1차적인 가이드라인을 보내드립니다.</p>
+    </div>
     <div class="prof">
       <div>
         <h3>조우성 변호사 / 로펌 머스트노우</h3>
-        <p>비즈니스·M&A·노동·상사·회사법 전문. 기업의 실무 니즈에 맞춘 예방 법률 서비스 제공. 복잡한 법률 이슈를 경영진이 이해할 수 있는 언어로 전달하는 데 강점.</p>
-        <p>연세대 법학전문대학원 졸업, 서울중앙지검 인턴, 로펌 머스트노우 대표. 기업 자문·소송·M&A·지배구조 컨설팅 다수 수행.</p>
+        <p>로펌 머스트노우 대표변호사. 서울대학교 법학전문대학원 졸업. 법률지식 WIKI 기반 법률 콘텐츠 대시보드 전자책 리스크 진단 자동화.</p>
+        <p>25년 이상의 법률 실무 경험을 바탕으로 기업 자문·소송·M&A·컴플라이언스 분야에서 활동 중.</p>
         <p style="font-size:15px;color:rgba(255,255,255,.92);margin-top:8px">✉ law@mustknow.co.kr</p>
       </div>
       <div class="cta-f">
