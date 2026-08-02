@@ -157,6 +157,18 @@ th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px
   .app{display:block}
 }
 </style>
+  /* === MN-CREDIT-UPGRADE v1 : 로펌 머스트노우 브랜드/크레딧 === */
+  .mn-ribbon{display:flex;align-items:center;gap:10px;max-width:var(--readw,760px);margin:0 auto 14px;padding:10px 14px;border:1px solid var(--line2,#ddccd2);border-radius:12px;background:var(--wine-tint,#f4e9ec);color:var(--wine-d,#5a1f2b);font-size:13px;font-weight:800;line-height:1.45}
+  .mn-ribbon .mk{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--wine-l,#9c4456);box-shadow:0 0 0 4px rgba(156,68,86,.14)}
+  .mn-credit{max-width:var(--readw,760px);margin:30px auto 0;padding:17px 18px;border:1px solid var(--line2,#ddccd2);border-radius:14px;background:var(--panel,#fff);box-shadow:0 8px 20px rgba(58,21,37,.06)}
+  .mn-credit .who{font-size:15px;font-weight:800;color:var(--ink,#2c1d26);margin:0 0 8px;line-height:1.5}
+  .mn-credit .who a{color:var(--wine-l,#9c4456);text-decoration:none;border-bottom:1px solid currentColor}
+  .mn-credit .msg{font-size:14px;line-height:1.75;color:var(--ink2,#56424c);margin:0}
+  .footer .mn-credit{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);box-shadow:none}
+  .footer .mn-credit .who{color:#fff}
+  .footer .mn-credit .who a{color:var(--header-accent,#d4a0aa)}
+  .footer .mn-credit .msg{color:rgba(255,255,255,.75)}
+  @media (max-width:720px){.mn-ribbon{margin:0 16px 12px;font-size:12px}.mn-credit{margin:22px 16px 0;padding:15px 16px}.mn-credit .who{font-size:14px}}
 </head>
 <body>
 <div id="progress"></div>
@@ -169,6 +181,8 @@ th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px
 </header>
 
 <div class="hero">
+  <!-- MN-CREDIT-UPGRADE v1 :: ribbon -->
+  <div class="mn-ribbon"><span class="in"><span class="mk"></span>로펌 머스트노우의 조우성 변호사가 제공하는 법률컨텐츠입니다</span></div>
   <div class="eb">기업법무 / 내부통제·컴플라이언스 · 법무팀을 위한 실전 가이드</div>
   <h1>내부통제 3선 방어: 법무팀이 2선과 3선 사이에서 해야 할 일 5가지</h1>
   <div class="tldr">
@@ -380,6 +394,11 @@ th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px
       <div class="cta-f">
         <a class="btn btn-f" href="mailto:law@mustknow.co.kr">상담 문의하기</a>
       </div>
+    </div>
+    <!-- MN-CREDIT-UPGRADE v1 :: credit -->
+    <div class="mn-credit">
+      <p class="who">작성 : 조우성 변호사 / 로펌 머스트노우 (<a href="mailto:law@mustknow.co.kr">law@mustknow.co.kr</a>)</p>
+      <p class="msg">제공된 사안과 관련있는 법률안건에 대해 자문이 필요한 경우 연락처와 함께 자세한 사안과 질의 요지를 메일로 보내주시면 1차적인 가이드라인을 보내드립니다.</p>
     </div>
     <div class="fine">
       © 2026 조우성 변호사. 본 콘텐츠는 일반 법률 정보이며 법률 자문을 대체하지 않습니다.
