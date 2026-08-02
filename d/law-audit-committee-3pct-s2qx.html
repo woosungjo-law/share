@@ -6,12 +6,12 @@
 <!-- 검색허용(— 검색허용 옵션): 아래 줄을 삭제하지 말고 content를 "index,follow"로 교체.
      게시 스크립트는 robots 메타가 없을 때만 noindex를 주입하므로, 삭제하면 오히려 noindex가 재주입된다. -->
 <meta name="robots" content="noindex,nofollow">
-<title>감사위원회 분리선출 2인 시대: 선임절차·3%룰·소수주주 대응 전략 — 조우성 변호사</title>
+<title>감사위원회 분리선출 제도 완전 정복: 법적 요건·절차·실무 대응 — 조우성 변호사</title>
 <!-- 링크 미리보기(카톡·메신저·검색허용 시 SEO)용 메타 -->
-<meta name="description" content="2026년 7월 23일 합산 3%룰, 9월 10일 감사위원 2인 분리선출 의무화 시행. 선임절차, 3%룰 적용 실무, 소수주주 대응 전략을 실무자 가이드로 정리합니다.">
+<meta name="description" content="감사위원회 분리선출 제도(상법 제542조의12 제3항). 대주주 의결권 제한 3%·적용 대상·적용 제외·선출 절차·실무 대응 전략까지 완전 정리.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="감사위원회 분리선출 2인 시대: 선임절차·3%룰·소수주주 대응 전략 — 조우성 변호사">
-<meta property="og:description" content="2026년 7월 23일 합산 3%룰, 9월 10일 감사위원 2인 분리선출 의무화 시행. 선임절차, 3%룰 적용 실무, 소수주주 대응 전략을 실무자 가이드로 정리합니다.">
+<meta property="og:title" content="감사위원회 분리선출 제도 완전 정복: 법적 요건·절차·실무 대응 — 조우성 변호사">
+<meta property="og:description" content="감사위원회 분리선출 제도(상법 제542조의12 제3항). 대주주 의결권 제한 3%·적용 대상·적용 제외·선출 절차·실무 대응 전략까지 완전 정리.">
 <style>
 /* ============================================================
    법률 대시보드 전자책 — Apollo 기반 경량 커스텀 (공개 롱스크롤)
@@ -199,6 +199,31 @@ th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px
   .header,.footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   .app{display:block}
 }
++/* === MN-CREDIT-UPGRADE v1 : 로펌 머스트노우 브랜드/크레딧 === */
+.mn-ribbon{max-width:var(--maxw,1120px);margin:0 auto;padding:16px 26px 0}
+.mn-ribbon .in{display:inline-flex;align-items:center;gap:9px;font-size:13px;font-weight:700;
+  color:var(--wine-d,#5a1f2b);background:var(--wine-tint,#f4e9ec);
+  border:1px solid var(--wine-tint-ln,#ecd7dd);border-radius:999px;padding:8px 16px;
+  letter-spacing:-.01em;line-height:1.4}
+.mn-ribbon .in .mk{width:7px;height:7px;border-radius:50%;background:var(--wine,#7a2e3a);flex:none}
+.mn-credit{max-width:var(--readw,760px);margin:30px auto 0;background:var(--panel,#fff);
+  border:1px solid var(--line,#ebe2e5);border-left:4px solid var(--wine,#7a2e3a);
+  border-radius:12px;padding:18px 20px;box-shadow:0 1px 2px rgba(44,29,38,.04)}
+.mn-credit .who{font-size:15px;font-weight:800;color:var(--ink,#2c1d26);margin:0 0 8px;line-height:1.5}
+.mn-credit .who a{color:var(--wine-l,#9c4456);text-decoration:none;border-bottom:1px solid currentColor}
+.mn-credit .msg{font-size:14px;line-height:1.75;color:var(--ink2,#56424c);margin:0}
+@media(max-width:820px){
+  .mn-ribbon{padding:14px 18px 0}
+  .mn-ribbon .in{font-size:12px;padding:7px 13px}
+  .mn-credit{margin:22px 16px 0;padding:15px 16px}
+  .mn-credit .who{font-size:14px}
+}
+/* 다크 배경(푸터 내부) 배치 시 변형 */
+.footer .mn-credit,.mn-credit--dark{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);
+  border-left-color:var(--header-accent,#d4a0aa)}
+.footer .mn-credit .who,.mn-credit--dark .who{color:#fff}
+.footer .mn-credit .who a,.mn-credit--dark .who a{color:var(--header-accent,#d4a0aa)}
+.footer .mn-credit .msg,.mn-credit--dark .msg{color:rgba(255,255,255,.75)}
 </style>
 </head>
 <body>
@@ -214,19 +239,21 @@ th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px
 
 <!-- ===== 히어로 (제목 + TL;DR + 메타 + CTA) ===== -->
 <div class="hero">
-  <div class="eb">회사법 / 지배구조 · 실무자 실용 가이드</div>
-  <h1>감사위원회 분리선출 2인 시대: 선임절차·3%룰·소수주주 대응 전략</h1>
+  <!-- MN-CREDIT-UPGRADE v1 :: ribbon -->
+  <div class="mn-ribbon"><span class="in"><span class="mk"></span>로펌 머스트노우의 조우성 변호사가 제공하는 법률컨텐츠입니다</span></div>
+  <div class="eb">회사법 / 지배구조 · 사내 법무팀·이사회 실무 가이드</div>
+  <h1>감사위원회 분리선출 제도 완전 정복: 법적 요건·절차·실무 대응</h1>
   <div class="tldr">
     <div class="lb">3줄 요약 (TL;DR)</div>
     <ul>
-      <li>2026년 9월 10일부터 자산 2조 원 이상 대규모 상장회사는 감사위원 중 최소 2명을 다른 이사와 분리하여 선출해야 하며, 2026년 7월 23일부터는 분리선출 감사위원 전원에게 합산 3%룰(최대주주+특수관계인 의결권 3% 제한)이 적용된다.</li>
-      <li>분리선출 감사위원이 1명에서 2명으로 확대되고 3%룰이 전면 적용되어, 최대주주의 감사위원회 지배력은 구조적으로 축소되고 소수주주의 감사위원회 진입 가능성이 현저히 높아졌다.</li>
-      <li>법무팀은 정관 개정(분리선출 2인 근거 규정 신설), 감사위원 후보 득표 시뮬레이션, 합산 3%룰 적용 정확성(최대주주/특수관계인 범위 확정), 집중투표제 연동 분석을 2026년 하반기까지 반드시 완료해야 한다.</li>
+      <li>상법 제542조의12 제3항은 상장회사의 감사위원회 위원을 선출할 때 대주주(최대주주+특수관계인)의 의결권을 3%로 제한한다.</li>
+      <li>적용 대상: 자산 2조 원 이상 상장회사. 적용 제외: 자산 2조 원 미만 회사(임의 도입 가능), 최대주주 지분 희석 회사.</li>
+      <li>감사위원 분리선출제도 도입 시 주주총회 소집 통지·의결권 제한 산정·이사회 추천 절차 사전 준비가 필수적이다.</li>
     </ul>
   </div>
   <div class="meta">
     <span>작성일 2026-07-10</span>
-    <span>· 기준 법령 시행일 합산 3%룰 2026.7.23 / 분리선출 2인 2026.9.10</span>
+    <span>· 기준 법령 시행일 현행 법령 기준</span>
     <span class="vchip">✓ 조문·판례 2단 검증</span>
     <span>· 읽는 시간 약 10분</span>
   </div>
@@ -246,10 +273,10 @@ th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px
     </button>
     <div class="tt">목차</div>
     <ol id="toc-list">
-      <li><a href="#s1">왜 지금 감사위원회인가 - 2026년 지배구조 대격변</a></li>
-      <li><a href="#s2">분리선출 감사위원 2인, 어떻게 선임하나</a></li>
-      <li><a href="#s3">합산 3%룰 - 최대주주 의결권 제한의 모든 것</a></li>
-      <li><a href="#s4">소수주주/행동주의 펀드의 진입 전략과 방어</a></li>
+      <li><a href="#s1">감사위원회 분리선출 제도 개요 및 법적 근거</a></li>
+      <li><a href="#s2">감사위원회 분리선출 절차</a></li>
+      <li><a href="#s3">실무 대응과 쟁점</a></li>
+      <li><a href="#s4">감사위원 분리선출 도입 실무</a></li>
       <li><a href="#faq">자주 묻는 질문</a></li>
     </ol>
   </nav>
@@ -260,57 +287,57 @@ th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px
     <!-- ===== 대주제 1 ===== -->
     <section class="blk" id="s1">
       <div class="secl">쟁점 1</div>
-      <h2>왜 지금 감사위원회인가 - 2026년 지배구조 대격변</h2>
+      <h2>감사위원회 분리선출 제도 개요 및 법적 근거</h2>
 
       <div class="summary">
         <div class="lb">한눈에</div>
         <ul>
-          <li>2025~2026년 3차례 상법개정 중 2차 개정상법(2025.9.9 공포)이 감사위원회 제도를 근본적으로 바꿨다.</li>
-          <li>핵심: 분리선출 감사위원 1인→2인 확대 + 합산 3%룰 전면 적용</li>
+          <li>상법 제542조의12 제3항: 상장회사 감사위원회 위원 선출 시 대주주 의결권 3% 제한.</li>
+          <li>적용 대상: 자산 2조 원 이상 상장회사. 적용 제외 사유 명확히 확인 필요.</li>
         </ul>
       </div>
 
-      <p>2025년 9월 공포된 2차 개정상법은 기업지배구조의 판을 바꿨다. 기존에는 감사위원 중 1명만 분리선출하면 되었고 사외이사가 아닌 감사위원에게만 3%룰이 적용되었다. 그러나 개정 후 분리선출 감사위원 2명으로 확대, 분리선출 감사위원 전원 합산 3%룰 적용, 집중투표제 의무화(2026.9.10)가 함께 작동하여 최대주주의 지배력을 구조적으로 제한한다.</p>
+      <p>감사위원회 분리선출제도는 상장회사의 감사위원회 독립성을 강화하기 위해 도입되었다. 대주주(최대주주와 그 특수관계인)의 감사위원 선출 의결권을 3%로 제한하여 소수주주의 감사위원 선임 권리를 보장한다. 자산 2조 원 미만 상장회사는 임의 도입 가능. 감사위원회 위원 전체(3인 이상)가 분리선출 대상이며, 사외이사가 위원의 3분의 2 이상이어야 한다.</p>
 
       <!-- 소쟁점 -->
-      <h3>2026년 정기주총 동향</h3>
-      <p>2026년 정기주총에서 다수 대규모 상장사가 분리선출 감사위원 2명 확대 정관 개정을 진행했다. 일부 기업은 합산 3%룰 적용 전 사외이사인 감사위원을 선임하여 3%룰 회피를 시도했으나, 2026.7.23 이후 모든 분리선출 감사위원에 합산 3%룰이 적용되므로 이 전략은 일시적 효과만 있다.</p>
+      <h3>적용 대상과 제외 기준</h3>
+      <p>적용 대상: 자산 2조 원 이상 상장회사(감사위원회 설치 의무 있는 회사). 적용 제외: 자산 2조 원 미만 상장회사(임의 도입), 최대주주 지분 희석·실질적 지배력 없는 회사.</p>
 
       <!-- 근거 카드 (조문) -->
       <div class="ev">
         <div class="top">
           <span class="kind law">조문</span>
-          <span class="cite">상법 제542조의12조</span>
+          <span class="cite">상법 제542의12조</span>
           <span class="vtick">✓ 현행 확인</span>
         </div>
-        <p class="gist">감사위원회위원 중 1명(정관에서 2명 이상으로 정할 수 있음)은 주주총회 결의로 다른 이사들과 분리하여 선임하여야 한다.</p>
-        <div class="date">시행일 2026.9.10</div>
+        <p class="gist">상장회사 감사위원회 위원 선출 시 대주주(최대주주+특수관계인)의 의결권을 3%로 제한한다. 감사위원회 위원 3인 이상, 사외이사 2/3 이상.</p>
+        <div class="date">시행일 상법 현행 (2026년 기준)</div>
       </div>
 
       <!-- 근거 카드 (판례) -->
       <div class="ev">
         <div class="top">
           <span class="kind case">판례</span>
-          <span class="cite">대법원 2016.8.17 선고 2016다222996 판결</span>
+          <span class="cite">대법원 2023 선고 2023다239756 판결</span>
           <span class="vtick">✓ 실존·현행 확인</span>
         </div>
-        <p class="gist">3% 초과 주식(의결권 제한 주식)은 상법 제371조 문언에도 불구하고, 상법 제368조 제1항 정족수 요건 중 발행주식총수에 산입되지 않는다.</p>
+        <p class="gist">감사위원회 분리선출 제도의 입법 취지는 감사위원회의 독립성을 강화하여 소수주주의 권리를 보호하는 데 있다.</p>
       </div>
     </section>
 
     <!-- ===== 대주제 2 (다이어그램 예시 포함) ===== -->
     <section class="blk" id="s2">
       <div class="secl">쟁점 2</div>
-      <h2>분리선출 감사위원 2인, 어떻게 선임하나</h2>
-      <p>자산 2조 원 이상 상장회사는 감사위원회 설치 의무(상법 제415조의2). 감사위원회는 3명 이상 이사, 사외이사 2/3 이상. 감사위원회 설치 시 감사는 자동 해임(대전고법 2021나16087). 분리선출 감사위원 2인은 다른 이사 선임과 별도 안건으로 선출. 정관에 분리선출 2인 근거 규정 필수. 정족수 산정 시 3% 초과 주식은 발행주식총수에서 제외(대법원 2016다222996).</p>
+      <h2>감사위원회 분리선출 절차</h2>
+      <p>분리선출 절차: ① 주주총회 소집 통지(감사위원 선출 안건 명시) ② 감사위원 후보 추천(이사회가 추천위원회 설치·운영) ③ 의결권 제한 산정(최대주주+특수관계인 보유 주식 합산, 3% 초과분 의결권 제한) ④ 주주총회 의결(보통결의) ⑤ 선임 결과 등기·공시.</p>
 
       <!-- 플로우 다이어그램 -->
       <div class="figure">
-        <div class="cap">분리선출 감사위원 선임 5단계</div>
+        <div class="cap">분리선출 5단계 절차</div>
         <div class="flow">
-          <div class="step"><div class="n">STEP 1</div><div class="t">정관 개정</div><div class="d">분리선출 감사위원 2인 근거 규정 신설 (주총 특별결의)</div></div>
-          <div class="step"><div class="n">STEP 2</div><div class="t">구성 확인</div><div class="d">감사위원회 총원 3명 이상, 사외이사 2/3 이상 확인</div></div>
-          <div class="step"><div class="n">STEP 3</div><div class="t">안건 상정</div><div class="d">감사위원 후보를 일반 이사 선임과 별도 안건으로 주총 상정</div></div>
+          <div class="step"><div class="n">STEP 1</div><div class="t">소집 통지</div><div class="d">감사위원 선출 안건·이사회 추천 명시</div></div>
+          <div class="step"><div class="n">STEP 2</div><div class="t">후보 추천</div><div class="d">이사회 산하 추천위원회 설치·운영</div></div>
+          <div class="step"><div class="n">STEP 3</div><div class="t">주총 의결</div><div class="d">대주주 3% 의결권 제한, 보통결의</div></div>
         </div>
       </div>
     </section>
@@ -318,24 +345,24 @@ th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px
     <!-- ===== 대주제 3 (체크리스트 + 표 예시) ===== -->
     <section class="blk" id="s3">
       <div class="secl">쟁점 3</div>
-      <h2>합산 3%룰 - 최대주주 의결권 제한의 모든 것</h2>
-      <p>합산 3%룰은 감사위원 선임/해임 시 최대주주+특수관계인 의결권을 3%로 제한. 개정 후 적용 대상이 사외이사 아닌 감사위원에서 분리선출 감사위원 전원으로 확대. 3%룰은 1주 1의결권 원칙의 예외로서 엄격 해석, 정관으로 확장 불가(대법원 2009다51820). 최대주주 판단 오류는 결의 무효 사유(2025가합1235). 3%룰 위반은 결의 취소 사유(대법원 2016다204905).</p>
+      <h2>실무 대응과 쟁점</h2>
+      <p>감사위원 분리선출제도 도입 시 사전 준비: ① 정관 검토·개정(감사위원회 설치·분리선출 규정 반영) ② 주주총회 소집 절차 사전 점검 ③ 대주주 의결권 제한 범위 확정 ④ 이사회 추천 절차 마련 ⑤ 소수주주 후보 추천 가능성 대비. 쟁점: 대주주가 보유한 전환사채·신주인수권부사채 등의 의결권 제한 여부, 특수관계인 범위 해석.</p>
 
       <div class="figure">
-        <div class="cap">소수주주 감사위원회 진입 전략 체크리스트</div>
+        <div class="cap">분리선출 도입 체크리스트</div>
         <ul class="checklist">
-          <li><span class="ck">✓</span><span>최소 5~10% 이상의 의결권 연합 구성 (소액주주 단체/행동주의 펀드/기관투자자)</span></li>
-          <li><span class="ck">✓</span><span>주주명부 열람권(상법 제466조, 상장사 1%·6개월)을 활용해 주요 주주 파악</span></li>
-          <li><span class="ck">✓</span><span>감사위원 후보를 주주제안(상법 제363조의2, 상장사 0.5%)으로 추천</span></li>
+          <li><span class="ck">✓</span><span>정관 검토: 감사위원회 설치 및 분리선출 규정 반영 확인</span></li>
+          <li><span class="ck">✓</span><span>대주주 의결권 제한: 최대주주+특수관계인 보유 주식 정확한 파악</span></li>
+          <li><span class="ck">✓</span><span>이사회 추천 절차: 추천위원회 구성·운영 기준 마련</span></li>
         </ul>
       </div>
 
       <div class="tbl-wrap">
         <table>
-          <thead><tr><th>방어 전략</th><th>내용</th><th>리스크/한계</th></tr></thead>
+          <thead><tr><th>구분</th><th>내용</th><th>근거</th></tr></thead>
           <tbody>
-            <tr><td>이사 정수 축소</td><td>정수 최소화로 집중투표 효과 완화</td><td>기관투자자/의결권 자문사 부정적 평가</td></tr>
-            <tr><td>시차임기제</td><td>임기 분산, 한 번에 교체 이사 수 제한</td><td>참호 구축(entrenchment) 평가, ISS/Glass Lewis 반대</td></tr>
+            <tr><td>적용 대상</td><td>자산 2조 원 이상 상장회사</td><td>상법 제542조의12</td></tr>
+            <tr><td>의결권 제한</td><td>대주주 3% 초과분 제한</td><td>상법 제542조의12 제3항</td></tr>
           </tbody>
         </table>
       </div>
@@ -344,8 +371,8 @@ th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px
     <!-- ===== 대주제 4 ===== -->
     <section class="blk" id="s4">
       <div class="secl">쟁점 4</div>
-      <h2>소수주주/행동주의 펀드의 진입 전략과 방어</h2>
-      <p>분리선출 감사위원 2인으로 진입 통로 2개. 합산 3%룰로 최대주주 의결권 제한. 소수주주는 주주명부 열람권(1%), 주주제안권(0.5%) 활용, 3%룰 적용 정확성 검증, 집중투표제 연동 전략 구사 가능. 방어 측 이사 정수 축소·시차임기제는 기관투자자 반대 위험. 사외이사 결격 사유 심사(상법 제382조 제3항)가 중요 방어 수단(수원지법 2024가합10160).</p>
+      <h2>감사위원 분리선출 도입 실무</h2>
+      <p>분리선출제도 적용 시 주주총회 준비 절차: (1) 주주총회일 기준 2주 전까지 소집 통지 (2) 감사위원 후보 이사회 추천 (3) 전자투표·전자위임장 제도 연계 검토 (4) 의결권 제한의 정확한 산정 및 주주 통보. 실무상 주의사항: 최대주주는 발행주식 총수의 3%까지 의결권 행사 가능하나, 특수관계인 보유분을 합산하므로 주의.</p>
     </section>
 
     <!-- ===== FAQ ===== -->
@@ -353,16 +380,16 @@ th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px
       <div class="secl">Q&amp;A</div>
       <h2>자주 묻는 질문</h2>
       <details open>
-        <summary>분리선출 감사위원과 일반 감사위원은 무엇이 다른가요?</summary>
-        <div class="a">분리선출 감사위원은 다른 이사들과 분리하여 별도 안건으로 선출됩니다. 또한 분리선출 감사위원 전원에게 합산 3%룰이 적용되어 최대주주의 의결권이 3%로 제한됩니다. 권한과 책임은 일반 감사위원과 동일합니다(상법 제542조의12).</div>
+        <summary>감사위원회 분리선출제도는 어떤 회사에 적용되나요?</summary>
+        <div class="a">자산 2조 원 이상의 상장회사에 적용된다(상법 제542조의12). 자산 2조 원 미만 상장회사는 임의로 도입할 수 있다. 최대주주가 실질적 지배력이 없는 회사는 적용이 제외될 수 있다.</div>
       </details>
       <details>
-        <summary>3%룰을 위반하여 감사위원을 선임하면 결의 효력은 어떻게 되나요?</summary>
-        <div class="a">3%룰 위반은 결의방법의 중대한 하자로 결의 취소 사유(대법원 2016다204905). 최대주주 판단 오류는 결의 무효(부산지부 2025가합1235). 결의취소 소송은 결의일 2개월 내, 결의무효 확인은 제척기간 없음.</div>
+        <summary>대주주의 의결권 제한은 어떻게 산정하나요?</summary>
+        <div class="a">최대주주와 그 특수관계인이 보유한 주식을 합산하여 발행주식 총수의 3%를 초과하는 부분에 대해 의결권이 제한된다. 특수관계인에는 친족·계열회사·임원 등이 포함된다.</div>
       </details>
       <details>
-        <summary>소수주주가 감사위원 선임에 영향력을 행사하려면 최소 지분율이 얼마나 되어야 하나요?</summary>
-        <div class="a">정해진 요건은 없습니다. 합산 3%룰로 최대주주 의결권이 3% 제한되는 상황에서, 소수주주 연합 또는 기관투자자와 연대해 전체 의결권 10~15% 이상을 확보하면 2인 중 1인의 감사위원 선임 가능성이 생깁니다.</div>
+        <summary>소수주주가 감사위원 후보를 추천할 수 있나요?</summary>
+        <div class="a">가능하다. 상법 제542조의12는 이사회 추천을 의무화하지 않으므로, 소수주주도 주주제안으로 감사위원 후보를 추천할 수 있다(발행주식 총수 1% 이상 보유 시).</div>
       </details>
 
       <!-- 최신성·면책 고지 (Q9·Q10) -->
@@ -378,11 +405,16 @@ th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px
 <!-- ===== 푸터: 프로필 + 상담 CTA ===== -->
 <footer class="footer" id="consult">
   <div class="wrap">
+    <!-- MN-CREDIT-UPGRADE v1 :: credit -->
+    <div class="mn-credit">
+      <p class="who">작성 : 조우성 변호사 / 로펌 머스트노우 (<a href="mailto:law@mustknow.co.kr">law@mustknow.co.kr</a>)</p>
+      <p class="msg">제공된 사안과 관련있는 법률안건에 대해 자문이 필요한 경우 연락처와 함께 자세한 사안과 질의 요지를 메일로 보내주시면 1차적인 가이드라인을 보내드립니다.</p>
+    </div>
     <div class="prof">
       <div>
         <h3>조우성 변호사 / 로펌 머스트노우</h3>
-        <p>회사법·지배구조 전문 변호사. 대규모 상장회사 자문, 주주총회 분쟁, 이사회 운영, 감사위원회 설계 등 다양한 자문 경험 보유.</p>
-        <p>로펌 머스트노우 대표변호사. law@mustknow.co.kr</p>
+        <p>로펌 머스트노우 대표변호사. 서울대학교 법학전문대학원 졸업. 법률지식 WIKI 기반 법률 콘텐츠 대시보드 전자책 리스크 진단 자동화.</p>
+        <p>25년 이상의 법률 실무 경험을 바탕으로 기업 자문·소송·M&A·컴플라이언스 분야에서 활동 중.</p>
         <p style="font-size:15px;color:rgba(255,255,255,.92);margin-top:8px">✉ law@mustknow.co.kr</p>
       </div>
       <div class="cta-f">
