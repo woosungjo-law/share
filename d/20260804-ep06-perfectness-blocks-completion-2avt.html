@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>EP 06. 완벽함이 완성을 막는다</title>
+  <style>
+    :root { color-scheme: light; --bg:#f5f5f2; --paper:#fffefa; --ink:#20262b; --muted:#69747a; --line:#dfe3e1; --navy:#163b52; --navy-soft:#eaf1f3; --gold:#b87929; --gold-soft:#f6ead8; --quote:#304e5f; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif; line-height:1.85; }
+    .shell { width:min(100% - 32px, 1080px); margin:0 auto; }
+    header { position:relative; min-height:430px; padding:76px clamp(28px,7vw,92px) 66px; overflow:hidden; background:var(--navy); color:#f7fbfc; }
+    header::after { content:""; position:absolute; right:9%; bottom:-75px; width:190px; height:190px; border:1px solid rgba(255,255,255,.22); border-radius:50%; box-shadow:0 0 0 22px rgba(255,255,255,.05),0 0 0 44px rgba(255,255,255,.035); }
+    .kicker { position:relative; z-index:1; margin:0 0 24px; color:#c9dfe5; font-size:13px; font-weight:700; letter-spacing:.16em; }
+    h1,h2 { text-wrap:balance; }
+    h1 { position:relative; z-index:1; max-width:720px; margin:0; font-family:Georgia,"Noto Serif KR","Batang",serif; font-size:clamp(36px,6vw,70px); font-weight:500; line-height:1.12; letter-spacing:-.045em; }
+    .subtitle { position:relative; z-index:1; max-width:600px; margin:28px 0 0; color:#dbe8eb; font-size:18px; }
+    .meta { position:relative; z-index:1; display:flex; flex-wrap:wrap; gap:10px 22px; margin-top:42px; color:#a9c5cd; font-size:13px; }
+    .meta span { display:inline-flex; align-items:center; gap:8px; }
+    .meta span::before { content:""; display:inline-block; width:5px; height:5px; border-radius:50%; background:var(--gold); }
+    nav { border-bottom:1px solid var(--line); background:var(--paper); }
+    nav .shell { display:flex; gap:18px; align-items:center; padding:16px 0; overflow-x:auto; }
+    nav a { flex:0 0 auto; color:var(--navy); font-size:13px; text-decoration:none; }
+    nav a:hover,nav a:focus-visible { color:var(--gold); text-decoration:underline; }
+    main { padding:44px 0 84px; }
+    .intro { display:grid; grid-template-columns:minmax(0,1fr) 260px; gap:34px; align-items:start; margin-bottom:50px; }
+    .intro p { margin:0; max-width:700px; font-size:19px; color:#34424a; }
+    .thesis { padding:20px; border-top:3px solid var(--gold); background:var(--gold-soft); color:#5e431f; font-size:14px; }
+    .thesis strong { display:block; margin-bottom:8px; color:#815014; font-size:12px; letter-spacing:.08em; }
+    article { max-width:760px; margin:0 auto; }
+    section { position:relative; margin:0 0 44px; padding:0 0 42px 34px; border-left:2px solid var(--line); }
+    section::before { content:""; position:absolute; top:0; left:-6px; width:10px; height:10px; border-radius:50%; background:var(--gold); }
+    h2 { margin:0 0 18px; color:var(--navy); font-size:22px; font-weight:700; }
+    p { margin:0 0 20px; }
+    .opening { font-family:Georgia,"Noto Serif KR","Batang",serif; font-size:23px; line-height:1.7; color:var(--quote); }
+    blockquote { margin:28px 0; padding:22px 24px; border-left:4px solid var(--gold); background:var(--navy-soft); color:var(--quote); font-family:Georgia,"Noto Serif KR","Batang",serif; font-size:21px; line-height:1.7; }
+    blockquote cite { display:block; margin-top:10px; color:var(--muted); font-family:"Pretendard","Noto Sans KR",sans-serif; font-size:13px; font-style:normal; }
+    .pull { margin:34px 0; color:var(--navy); font-family:Georgia,"Noto Serif KR","Batang",serif; font-size:29px; line-height:1.45; letter-spacing:-.03em; }
+    .ending { margin-top:54px; padding:30px 0 0; border-top:1px solid var(--line); color:var(--navy); font-family:Georgia,"Noto Serif KR","Batang",serif; font-size:26px; line-height:1.5; }
+    .related { max-width:760px; margin:0 auto; padding:24px 0 0 34px; border-left:2px solid var(--line); }
+    .related h2 { font-size:17px; }
+    .related ul { margin:0; padding-left:20px; color:var(--muted); }
+    footer { padding:24px 0 34px; border-top:1px solid var(--line); color:var(--muted); font-size:12px; }
+    :focus-visible { outline:3px solid var(--gold); outline-offset:3px; }
+    @media (prefers-color-scheme:dark) { :root { color-scheme:dark; --bg:#10181d; --paper:#172329; --ink:#e6edef; --muted:#a9b9bf; --line:#34444b; --navy:#102b3b; --navy-soft:#20343d; --gold:#e0a658; --gold-soft:#3a2d1b; --quote:#d6e7eb; } .intro p { color:#d2e0e3; } }
+    @media (max-width:760px) { .shell { width:min(100% - 24px,1080px); } header { min-height:390px; padding:54px 24px 48px; } header::after { right:-35px; bottom:-85px; } .intro { grid-template-columns:1fr; gap:18px; } .intro p { font-size:17px; } article,.related { padding-left:20px; } section { padding-left:24px; } .opening { font-size:20px; } blockquote { margin-left:0; margin-right:0; font-size:18px; } .pull,.ending { font-size:24px; } }
+    @media print { body { background:#fff; } header { min-height:auto; padding:36px; } nav { display:none; } main { padding:30px 0; } section { break-inside:avoid; } .intro { grid-template-columns:1fr 220px; } }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="shell">
+      <p class="kicker">리하우시리즈 · 나세문 · PART 2</p>
+      <h1>완벽함이<br>완성을 막는다</h1>
+      <p class="subtitle">충분함을 아는 순간, 일이 끝나고 삶이 시작된다.</p>
+      <div class="meta"><span>EP 06</span><span>2026.05.16</span><span>철학 · 설득 · 심리</span></div>
+    </div>
+  </header>
+
+  <nav aria-label="문서 목차"><div class="shell">
+    <a href="#begin">시작점</a><a href="#case">김다은의 원고</a><a href="#fear">완벽주의의 다른 얼굴</a><a href="#enough">충분함의 기준</a><a href="#practice">완성의 기준</a><a href="#related">관련 노트</a>
+  </div></nav>
+
+  <main class="shell">
+    <div class="intro">
+      <p>완벽을 향해 가는 것처럼 보이지만 실제로는 판단의 순간을 미루고 있을 때가 있다. 이 글은 완벽이 아니라 충분함을 기준으로 삼는 순간, 비로소 일이 끝날 수 있다고 말한다.</p>
+      <aside class="thesis"><strong>핵심 문장</strong>완성의 기준을 완벽에 두는 한, 어떤 것도 완성되지 않는다.</aside>
+    </div>
+
+    <article>
+      <section id="begin">
+        <h2>시작점 — 이미 가진 것을 아는가</h2>
+        <p class="opening">知足者富<br>지족자부</p>
+        <blockquote>만족할 줄 아는 자가 부유하다.<cite>— 노자 《도덕경》 33장</cite></blockquote>
+        <p>노자는 이 말을 욕망이 넘치는 세상을 향해 남겼다. 더 많이, 더 빠르게, 더 높이를 향해 달리는 사람들에게 묻는다. 당신이 이미 가진 것을 알고 있는가. 가진 것을 알지 못하는 사람은 아무리 가져도 가난하다.</p>
+      </section>
+
+      <section id="case">
+        <h2>김다은의 원고 — “조금만 더”</h2>
+        <p>김다은(36)은 출판사 편집자다. 3년째 같은 원고를 붙들고 있다. 저자의 원고가 처음 들어왔을 때 거칠었지만 힘이 있었다. 그것을 다듬기 시작했다. 한 번 고치면 다른 부분이 보였다. 그 부분을 고치면 또 다른 곳이 걸렸다. 고칠수록 더 고칠 것이 생겼다.</p>
+        <p>동료 편집자들은 그 사이 다음 책을 두 권 냈다. 누군가 조심스럽게 물었다. “언제 나와요?” 김다은은 웃으며 답했다. “조금만 더.” 혼자 남은 사무실에서 가끔 이런 생각이 든다. 완벽하게 만들고 싶은 것인지, 내보내는 것이 무서운 것인지.</p>
+      </section>
+
+      <section id="fear">
+        <h2>완벽주의의 다른 얼굴</h2>
+        <p>완벽주의는 보통 탁월함을 향한 열망으로 이해된다. 대충 하지 않는 사람, 기준이 높은 사람, 끝까지 포기하지 않는 사람. 그런데 완벽주의가 완성을 막을 때, 그것은 여전히 탁월함인가. 완벽을 추구한다는 것이 실패를 유예한다는 것과 어떻게 다른가.</p>
+        <p>원고를 내보내는 순간, 그것은 세상의 평가에 노출된다. 내보내지 않는 한 실패하지 않는다. 고치는 동안은 아직 가능성이 있다. 완벽을 향해 가는 것처럼 보이지만 실제로는 판단의 순간을 미루고 있는 것이다. 김다은이 무서운 것은 원고가 아니다. 원고에 담긴 자신이다.</p>
+      </section>
+
+      <section id="enough">
+        <h2>충분함 — 끝이 없는 기준에서 지금의 기준으로</h2>
+        <p>노자의 지족은 포기를 말하는 것이 아니다. 충분함을 아는 것이다. 지금 이 원고가 충분한가를 묻는 기준이 완벽이 아니라 충분함일 때, 그 질문은 비로소 답이 가능해진다. 완벽의 기준은 끝이 없지만 충분함의 기준은 지금 이 순간에 있다.</p>
+        <p class="pull">/완성의 기준을 완벽에 두는 한, 어떤 것도 완성되지 않는다./</p>
+      </section>
+
+      <section id="practice">
+        <h2>완성을 위한 두 가지 선택</h2>
+        <p>두 가지 선택지가 있다. 하나는 기한을 스스로 설정하는 것이다. “이 날짜에 나온다”고 정하는 것. 그 기한이 완성의 기준을 만든다.</p>
+        <p>다른 하나는 지금 원고에서 단 하나만 남긴다면 무엇을 남기겠는가를 묻는 것이다. 그 하나가 원고의 핵심이다. 그 핵심이 살아있다면 충분하다.</p>
+        <p class="ending">충분함을 아는 순간 일이 끝나고 삶이 시작된다. 완벽한 원고를 기다리는 동안 삶은 계속 지나간다.</p>
+      </section>
+    </article>
+
+    <section id="related" class="related">
+      <h2>관련 노트</h2>
+      <ul>
+        <li>이전: · EP 05. 말하지 않아도 통하는 관계의 조건</li>
+        <li>다음: · EP 07. 인정받으려 할수록 멀어진다</li>
+        <li>관련: 얼마가 되면 멈출 수 있는가</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer><div class="shell">원본 노트: 리하우시리즈 · 나세문 · 개별노트 · EP 06 · 2026-05-16</div></footer>
+</body>
+</html>
