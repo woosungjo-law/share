@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="리하우시리즈 013. 협박 같은 제안 — 상대의 길을 여는 문장을 쓰는 법">
+  <title>13. 협박 같은 제안 — 리하우시리즈</title>
+  <script>
+    (() => {
+      try {
+        const saved = localStorage.getItem('rehouse-theme');
+        if (saved === 'dark' || saved === 'light') document.documentElement.dataset.theme = saved;
+      } catch (_) {}
+    })();
+  </script>
+  <style>
+    :root{
+      --paper:#f7f3ee;--paper-2:#fffdf9;--ink:#27201f;--ink-2:#5f5551;--muted:#8c817b;
+      --line:#e5dcd3;--line-strong:#cfc0b4;--red:#a43a35;--red-dark:#76251f;--red-soft:#f4e4df;
+      --ochre:#c58a3a;--ochre-soft:#f6edda;--dark:#302725;--shadow:0 18px 48px rgba(70,43,30,.09);
+      --display:"Iowan Old Style","Palatino Linotype",Georgia,serif;--body:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif;
+    }
+    @media(prefers-color-scheme:dark){
+      :root{--paper:#211b1a;--paper-2:#2a2221;--ink:#f4ece5;--ink-2:#d2c4bb;--muted:#aa9b92;--line:#493b36;--line-strong:#6a554b;--red:#df7166;--red-dark:#f2a096;--red-soft:#432c29;--ochre:#d8aa60;--ochre-soft:#403627;--dark:#161111;--shadow:0 18px 48px rgba(0,0,0,.28)}
+    }
+    :root[data-theme="light"]{--paper:#f7f3ee;--paper-2:#fffdf9;--ink:#27201f;--ink-2:#5f5551;--muted:#8c817b;--line:#e5dcd3;--line-strong:#cfc0b4;--red:#a43a35;--red-dark:#76251f;--red-soft:#f4e4df;--ochre:#c58a3a;--ochre-soft:#f6edda;--dark:#302725;--shadow:0 18px 48px rgba(70,43,30,.09)}
+    :root[data-theme="dark"]{--paper:#211b1a;--paper-2:#2a2221;--ink:#f4ece5;--ink-2:#d2c4bb;--muted:#aa9b92;--line:#493b36;--line-strong:#6a554b;--red:#df7166;--red-dark:#f2a096;--red-soft:#432c29;--ochre:#d8aa60;--ochre-soft:#403627;--dark:#161111;--shadow:0 18px 48px rgba(0,0,0,.28)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;background:var(--paper)}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.85}
+    button{font:inherit;cursor:pointer}
+    button:focus-visible,a:focus-visible{outline:3px solid var(--ochre);outline-offset:3px}
+    .progress{position:fixed;z-index:10;inset:0 0 auto 0;height:4px;background:transparent}
+    .progress i{display:block;height:100%;width:0;background:var(--red);transition:width .1s linear}
+    .layout{width:min(1180px,calc(100% - 48px));margin:0 auto;display:grid;grid-template-columns:190px minmax(0,760px) 150px;gap:42px;padding:58px 0 96px}
+    .rail{position:sticky;top:42px;height:max-content;padding-top:6px}
+    .series-mark{font-size:11px;font-weight:900;letter-spacing:.12em;color:var(--red);text-transform:uppercase}
+    .series-name{font-family:var(--display);font-size:23px;line-height:1.15;margin:9px 0 24px}
+    .episode-no{font-family:var(--display);font-size:80px;line-height:.9;color:var(--red-soft);-webkit-text-stroke:1px var(--red);margin-left:-5px}
+    .rail-rule{height:1px;background:var(--line);margin:25px 0 17px}
+    .toc{display:grid;gap:7px}
+    .toc a{color:var(--muted);text-decoration:none;font-size:11px;line-height:1.35;padding-left:10px;border-left:2px solid transparent}
+    .toc a:hover,.toc a.active{color:var(--red);border-left-color:var(--red)}
+    .article{min-width:0}
+    .utility{display:flex;justify-content:flex-end;align-items:center;gap:8px;margin-bottom:36px}
+    .utility button{border:1px solid var(--line-strong);background:transparent;color:var(--ink-2);border-radius:99px;padding:7px 11px;font-size:11px}
+    .utility button:hover{border-color:var(--red);color:var(--red)}
+    .kicker{font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--red);margin-bottom:16px}
+    h1{font-family:var(--display);font-size:clamp(46px,7vw,78px);font-weight:400;letter-spacing:-.065em;line-height:.98;margin:0;max-width:740px;text-wrap:balance}
+    .subtitle{font-family:var(--display);font-size:clamp(20px,2.6vw,29px);line-height:1.35;color:var(--red-dark);margin:25px 0 29px;max-width:640px}
+    .meta{display:flex;flex-wrap:wrap;gap:7px;color:var(--muted);font-size:11px;margin-bottom:42px}
+    .meta span{padding:4px 9px;border:1px solid var(--line);border-radius:99px;background:var(--paper-2)}
+    .opening{border-top:5px solid var(--red);border-bottom:1px solid var(--line);padding:20px 0 22px;margin-bottom:56px}
+    .opening-label{font-size:11px;letter-spacing:.12em;color:var(--red);font-weight:900;margin-bottom:8px}
+    .opening p{font-family:var(--display);font-size:24px;line-height:1.55;margin:0;max-width:650px}
+    .act{scroll-margin-top:30px;margin-bottom:58px}
+    .act-head{display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:22px}
+    .act-no{font-size:11px;font-weight:900;color:var(--red);letter-spacing:.14em}
+    .act h2{font-family:var(--display);font-size:27px;font-weight:400;line-height:1.25;margin:0;letter-spacing:-.03em}
+    .prose p{font-family:var(--display);font-size:19px;line-height:1.95;letter-spacing:-.015em;margin:0 0 22px}
+    .prose p:last-child{margin-bottom:0}
+    .before-after{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:23px 0 25px}
+    .quote-card{padding:20px 21px;border:1px solid var(--line);background:var(--paper-2);min-width:0}
+    .quote-card.before{border-top:4px solid var(--red)}
+    .quote-card.after{border-top:4px solid var(--ochre)}
+    .quote-label{display:block;font-size:10px;font-weight:900;letter-spacing:.13em;margin-bottom:10px;color:var(--red)}
+    .after .quote-label{color:var(--ochre)}
+    blockquote{margin:0;font-family:var(--display);font-size:18px;line-height:1.65}
+    .diagnosis{display:grid;grid-template-columns:130px 1fr;gap:18px;background:var(--red-soft);border-left:4px solid var(--red);padding:18px 20px;margin:25px 0}
+    .diagnosis strong{font-size:12px;color:var(--red);letter-spacing:.1em}
+    .diagnosis p{margin:0;font-family:var(--display);font-size:18px;line-height:1.65}
+    .pull{margin:28px 0;padding:25px 26px;background:var(--dark);color:#f7eee7;position:relative;overflow:hidden}
+    .pull::before{content:"“";position:absolute;right:18px;top:-21px;color:rgba(255,255,255,.12);font:150px/1 var(--display)}
+    .pull p{position:relative;font-family:var(--display);font-size:27px;line-height:1.45;margin:0;max-width:620px}
+    .pull small{position:relative;display:block;color:#d8aa8c;font-size:11px;font-family:var(--body);margin-top:16px}
+    .verdict{border:1px solid var(--red);background:var(--red-soft);padding:25px 27px;margin-top:25px}
+    .verdict-label{color:var(--red);font-size:11px;font-weight:900;letter-spacing:.16em}
+    .verdict h2{font-family:var(--display);font-size:31px;font-weight:400;line-height:1.35;margin:11px 0 11px;letter-spacing:-.035em}
+    .verdict p{font-family:var(--display);font-size:18px;line-height:1.8;margin:0}
+    .related{border-top:1px solid var(--line);padding-top:24px;margin-top:65px}
+    .related h2{font-size:12px;letter-spacing:.12em;color:var(--muted);margin:0 0 12px}
+    .related-list{display:flex;flex-wrap:wrap;gap:8px}.related-list span{font-size:12px;color:var(--ink-2);border:1px solid var(--line);padding:6px 10px;border-radius:99px;background:var(--paper-2)}
+    .side-note{position:sticky;top:42px;height:max-content;color:var(--muted);font-size:11px;line-height:1.55;padding-top:6px}
+    .side-note strong{display:block;color:var(--red);font-size:12px;margin-bottom:6px}
+    .side-note p{margin:0 0 20px}
+    .footer{grid-column:2;text-align:center;border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:11px;margin-top:10px}
+    @media(max-width:1020px){.layout{grid-template-columns:155px minmax(0,760px);gap:28px}.side-note{display:none}.footer{grid-column:2}}
+    @media(max-width:720px){.layout{display:block;width:min(100% - 34px,680px);padding:27px 0 62px}.rail{position:static;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding:0 0 14px;margin-bottom:24px}.series-name{font-size:19px;margin:0}.episode-no{font-size:42px;margin:0}.rail-rule,.toc{display:none}.utility{margin-bottom:30px}.subtitle{font-size:22px}.meta{margin-bottom:31px}.opening{margin-bottom:43px}.prose p{font-size:18px;line-height:1.85}.before-after{grid-template-columns:1fr}.diagnosis{grid-template-columns:1fr;gap:5px}.pull p{font-size:23px}.verdict h2{font-size:27px}.footer{margin-top:48px}}
+    @media print{body{background:#fff;color:#222}.layout{display:block;width:100%;padding:0}.rail,.utility,.side-note,.toc,.progress{display:none}.article{max-width:720px;margin:0 auto}.opening,.act,.related{break-inside:avoid}.prose p{font-size:15px;line-height:1.7}.before-after{break-inside:avoid}.pull{print-color-adjust:exact;-webkit-print-color-adjust:exact}.verdict{print-color-adjust:exact;-webkit-print-color-adjust:exact}.footer{display:block;margin-top:35px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.progress i{transition:none}}
+  </style>
+</head>
+<body>
+  <div class="progress" aria-hidden="true"><i id="progressBar"></i></div>
+  <div class="layout">
+    <aside class="rail" aria-label="시리즈 정보">
+      <div>
+        <div class="series-mark">Rehouse series</div>
+        <div class="series-name">변호사의<br>빨간펜</div>
+      </div>
+      <div class="episode-no" aria-label="13편">13</div>
+      <div class="rail-rule"></div>
+      <nav class="toc" aria-label="본문 차례">
+        <a href="#act-1">사건 접수</a>
+        <a href="#act-2">변호인의 공감</a>
+        <a href="#act-3">빨간펜 검사</a>
+        <a href="#act-4">법률가의 처방</a>
+        <a href="#act-5">전술 메모</a>
+        <a href="#act-6">오늘의 판결</a>
+      </nav>
+    </aside>
+
+    <main class="article">
+      <div class="utility">
+        <button type="button" id="themeToggle" aria-label="테마 전환">테마 전환</button>
+        <button type="button" id="printButton">인쇄하기</button>
+      </div>
+
+      <header>
+        <div class="kicker">리하우시리즈 · 글쓰기 · 013</div>
+        <h1>협박 같은<br>제안</h1>
+        <p class="subtitle">상대의 발등을 찍는 문장이 아니라 상대의 길을 여는 문장을 써라</p>
+        <div class="meta" aria-label="문서 정보">
+          <span>주제 · 설득</span><span>전략</span><span>위기대응</span><span>2026.05.16</span>
+        </div>
+      </header>
+
+      <section class="opening" aria-label="이 글의 핵심 질문">
+        <div class="opening-label">THE QUESTION</div>
+        <p>상대의 불안을 자극해 얻은 예스는 설득인가, 강압에 가까운 협박인가.</p>
+      </section>
+
+      <section class="act" id="act-1" aria-labelledby="act-1-title">
+        <div class="act-head"><span class="act-no">01</span><h2 id="act-1-title">사건 접수</h2></div>
+        <div class="prose">
+          <p>공격적인 영업 스타일로 유명한 박 과장의 이메일은 늘 긴박함이 넘친다. 그는 잠재 고객들에게 보내는 제안 메일의 말미에 항상 이렇게 적는다.</p>
+        </div>
+        <div class="before-after">
+          <div class="quote-card before">
+            <span class="quote-label">BEFORE · 문제의 문장</span>
+            <blockquote>“광고주님, 지금 결정하지 않으시면 이 특별 기회는 경쟁사에 돌아가게 됩니다. 이번 기회를 놓치시면 귀사는 큰 영업적 손실을 입게 될 것이며 분명 후회하실 겁니다. 현명한 판단을 기다립니다.”</blockquote>
+          </div>
+        </div>
+        <div class="prose">
+          <p>박 과장은 이 문장이 상대에게 위기감을 주어 빠른 결정을 끌어낼 것이라 확신했다. 행동경제학에서 말하는 '희소성 원칙'을 나름대로 활용한 셈이다. 하지만 이 메일을 받은 고객의 기분은 매우 불쾌하다. 제안을 받는 것이 아니라 협박을 당하는 기분이 들기 때문이다. '아니, 내가 결정을 하든 말든 왜 당신이 내 손해를 운운하며 후회할 거라 그래?' 박 과장의 조급함은 상대의 거부감을 자극해 제안 전체의 신뢰도를 갉아먹는다.</p>
+        </div>
+      </section>
+
+      <section class="act" id="act-2" aria-labelledby="act-2-title">
+        <div class="act-head"><span class="act-no">02</span><h2 id="act-2-title">변호인의 공감</h2></div>
+        <div class="prose">
+          <p>변호인의 시각에서 박 과장을 변론하자면, 이는 성과 압박에 시달리는 영업인의 절박함과 '손실 회피 편향'을 이용한 고도의 심리전을 시도한 결과다. 사람들은 얻는 이익보다 잃는 손해에 더 민감하게 반응한다는 인간의 본성을 파고들어, 상대방이 최선의 선택을 놓치지 않게 도와주려는 의도였을 것이다.</p>
+          <p>법정에서 검사가 범죄의 위험성을 강조하며 중형을 구형함으로써 사회적 경각심을 일깨우려는 전략과도 닮아 있다. 하지만 설득의 본질은 상대방이 스스로 선택했다고 느끼게 만드는 '자발적 동의'에 있다. 공포를 조장하여 결정을 강요하는 행위는 설득이 아니라 강압에 가깝다.</p>
+        </div>
+      </section>
+
+      <section class="act" id="act-3" aria-labelledby="act-3-title">
+        <div class="act-head"><span class="act-no">03</span><h2 id="act-3-title">빨간펜 검사</h2></div>
+        <div class="diagnosis">
+          <strong>진단명</strong>
+          <p>‘강요죄’에 가까운 <b>정서적 협박 유죄</b>이자, 부적절한 공포 마케팅의 오류.</p>
+        </div>
+        <div class="prose">
+          <p>빨간펜 검사의 눈으로 이 문장을 진단하면, 이는 '강요죄'에 가까운 '정서적 협박 유죄'이자 '부적절한 공포 마케팅의 오류'다. 비즈니스에서 '손해'나 '후회' 같은 부정적 단어는 상대를 방어적으로 만들고 적대감을 유발하는 치명적인 어휘다.</p>
+          <p>법률가가 피고인의 권리를 침해하지 않으면서 진실을 밝히듯, 영업인도 상대의 자존심을 건드리지 않으면서 가치를 전달해야 한다. 특히 상대를 가르치려는 듯한 '현명한 판단'이라는 표현은 논리학적으로 '우월적 지위의 오용'으로 비춰질 수 있다. 독자를 쫓기게 만드는 문장은 당장의 예스를 받아낼지는 몰라도, 향후의 긴밀한 파트너십을 붕괴시키는 독이 된다.</p>
+        </div>
+        <div class="pull">
+          <p>공포는 상대를 방어적으로 만들고, 방어적인 사람은 제안보다 제안자를 먼저 심판한다.</p>
+          <small>빨간펜 검사 · 문장이 불러오는 관계의 비용</small>
+        </div>
+      </section>
+
+      <section class="act" id="act-4" aria-labelledby="act-4-title">
+        <div class="act-head"><span class="act-no">04</span><h2 id="act-4-title">법률가의 처방</h2></div>
+        <div class="prose">
+          <p>이제 이 위협적인 문장을 상대의 품격을 높여주면서도 결단을 독려하는 프로의 문장으로 처방한다.</p>
+        </div>
+        <div class="quote-card after">
+          <span class="quote-label">AFTER · 필승의 문장</span>
+          <blockquote>“광고주님, 현재 당사가 보유한 한정된 자원으로 인해 이번 분기에는 선착순 3개 업체에만 초기 집중 마케팅 혜택을 제공해 드리고 있습니다. 귀사의 빠른 검토가 시장 선점을 위한 전략적 우위로 이어지길 진심으로 기대합니다. 추가 논의가 필요하시면 언제든 말씀해 주십시오.”</blockquote>
+        </div>
+        <div class="prose" style="margin-top:24px">
+          <p>보라, '손해'와 '후회'라는 단어가 사라진 자리에 '전략적 우위'와 '기대'라는 긍정적인 가치가 자리 잡았다.</p>
+        </div>
+      </section>
+
+      <section class="act" id="act-5" aria-labelledby="act-5-title">
+        <div class="act-head"><span class="act-no">05</span><h2 id="act-5-title">전술 메모</h2></div>
+        <div class="prose">
+          <p>이 처방의 전술적 핵심은 '부정적 희소성'을 '긍정적 독점성'으로 바꾼 데 있다. 상대를 겁주는 대신, 이 제안을 선택했을 때 상대가 얻게 될 프리미엄을 강조했다. 상대는 이제 쫓기는 패배자가 아니라 기회를 거머쥐는 승리자의 기분으로 제안서를 보게 된다.</p>
+          <p>또한 '진심으로 기대한다'는 표현을 통해 상대를 압박의 대상이 아닌 존중받는 파트너로 대우했다. 이기는 문장은 상대를 굴복시키는 것이 아니라 상대가 스스로 당신의 손을 잡게 만드는 문장이다.</p>
+        </div>
+        <div class="before-after">
+          <div class="quote-card before"><span class="quote-label">삭제한 프레임</span><blockquote>손해 · 후회 · 지금 아니면 늦는다 · 현명한 판단</blockquote></div>
+          <div class="quote-card after"><span class="quote-label">새로 세운 프레임</span><blockquote>우위 · 선점 · 한정된 자원 · 진심으로 기대한다</blockquote></div>
+        </div>
+      </section>
+
+      <section class="act" id="act-6" aria-labelledby="act-6-title">
+        <div class="act-head"><span class="act-no">06</span><h2 id="act-6-title">오늘의 판결</h2></div>
+        <div class="verdict">
+          <div class="verdict-label">TODAY'S VERDICT</div>
+          <h2>상대를 멈추게 하는 공포보다, 움직이게 하는 가치가 강하다.</h2>
+          <p>문장에서 '손해'와 '후회'를 삭제하고 '우위'와 '선점'을 써라. 공포는 상대를 멈추게 하지만 가치는 상대를 움직이게 만든다. 상대의 발등을 찍는 문장이 아니라 상대의 발걸음을 가볍게 만드는 문장이 진정한 설득의 무기다.</p>
+        </div>
+      </section>
+
+      <section class="related" aria-labelledby="related-title">
+        <h2 id="related-title">관련 읽기</h2>
+        <div class="related-list">
+          <span>이전 · 012 근거 없는 최고급 표현</span>
+          <span>다음 · 014 전문 용어의 과시</span>
+          <span>관련 · 011 일방적 혜택 강조</span>
+        </div>
+      </section>
+
+      <footer class="footer">리하우시리즈 · 글쓰기 · 013 · 협박 같은 제안</footer>
+    </main>
+
+    <aside class="side-note" aria-label="읽기 메모">
+      <strong>읽기의 초점</strong>
+      <p>공포를 이용한 희소성과, 가치를 보여주는 독점성은 같은 긴박감을 전혀 다른 관계로 바꾼다.</p>
+      <strong>문장 교정의 축</strong>
+      <p>상대를 쫓는 문장에서 상대의 선택을 돕는 문장으로.</p>
+    </aside>
+  </div>
+
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const themeButton = document.getElementById('themeToggle');
+      const printButton = document.getElementById('printButton');
+      const progressBar = document.getElementById('progressBar');
+      const tocLinks = [...document.querySelectorAll('.toc a')];
+      const sections = [...document.querySelectorAll('.act')];
+
+      themeButton.addEventListener('click', () => {
+        const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+        root.dataset.theme = next;
+        try { localStorage.setItem('rehouse-theme', next); } catch (_) {}
+        themeButton.textContent = next === 'dark' ? '라이트 보기' : '다크 보기';
+      });
+      printButton.addEventListener('click', () => window.print());
+
+      const updateProgress = () => {
+        const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+        progressBar.style.width = `${scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0}%`;
+      };
+      window.addEventListener('scroll', updateProgress, {passive:true});
+      updateProgress();
+
+      const observer = new IntersectionObserver((entries) => {
+        const visible = entries.filter(entry => entry.isIntersecting).sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (!visible) return;
+        tocLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${visible.target.id}`));
+      }, {rootMargin:'-15% 0px -65% 0px', threshold:[0,.25,.6]});
+      sections.forEach(section => observer.observe(section));
+    })();
+  </script>
+</body>
+</html>
