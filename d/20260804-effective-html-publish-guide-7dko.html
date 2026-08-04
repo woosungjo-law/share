@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Effective HTML — GitHub Pages 게시 규칙</title>
+  <style>
+    :root { color-scheme: light; --bg:#f4f6f8; --panel:#fff; --ink:#18222d; --muted:#5d6a76; --line:#d9e0e6; --accent:#1769aa; --accent-soft:#e8f2fb; --good:#147a52; --warn:#9a5d00; --code:#18222d; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif; line-height:1.7; }
+    main { max-width:980px; margin:0 auto; padding:48px 24px 72px; }
+    header { padding:36px 40px; border:1px solid var(--line); border-radius:20px; background:linear-gradient(135deg,#163b5c,#1769aa); color:#fff; box-shadow:0 18px 50px rgba(24,34,45,.12); }
+    .eyebrow { margin:0 0 10px; color:#bfe2ff; font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+    h1,h2,h3 { line-height:1.25; text-wrap:balance; }
+    h1 { margin:0; max-width:720px; font-size:clamp(30px,5vw,54px); letter-spacing:-.04em; }
+    header p { max-width:720px; margin:18px 0 0; color:#e8f4ff; font-size:17px; }
+    .status { display:flex; flex-wrap:wrap; gap:8px; margin-top:24px; }
+    .status span { padding:6px 10px; border:1px solid rgba(255,255,255,.35); border-radius:999px; font-size:13px; }
+    section { margin-top:28px; padding:28px 32px; border:1px solid var(--line); border-radius:16px; background:var(--panel); }
+    h2 { margin:0 0 16px; font-size:25px; letter-spacing:-.025em; }
+    h3 { margin:24px 0 8px; font-size:18px; }
+    p { margin:10px 0; }
+    .lead { color:var(--muted); font-size:17px; }
+    .pipeline { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin-top:22px; }
+    .step { min-height:130px; padding:16px; border:1px solid var(--line); border-top:4px solid var(--accent); border-radius:12px; background:var(--accent-soft); }
+    .step b { display:block; margin-bottom:8px; color:var(--accent); font-size:13px; }
+    .step span { display:block; font-size:15px; font-weight:700; }
+    .callout { padding:16px 18px; border-left:4px solid var(--good); background:#eaf7f1; }
+    .warning { border-left-color:var(--warn); background:#fff5e3; }
+    pre { overflow:auto; margin:14px 0 0; padding:18px; border-radius:12px; background:var(--code); color:#e9f2f8; font:13px/1.65 Consolas,"Cascadia Code",monospace; }
+    code { padding:2px 5px; border-radius:5px; background:#eef1f4; font-family:Consolas,"Cascadia Code",monospace; font-size:.92em; }
+    pre code { padding:0; background:transparent; }
+    ul { margin:8px 0 0; padding-left:22px; }
+    li + li { margin-top:6px; }
+    .grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+    .grid > * { min-width:0; }
+    .card { padding:18px; border:1px solid var(--line); border-radius:12px; }
+    .card h3 { margin-top:0; }
+    footer { margin-top:28px; color:var(--muted); font-size:13px; }
+    :focus-visible { outline:3px solid #ffbf47; outline-offset:3px; }
+    @media (max-width:760px) { main { padding:20px 14px 48px; } header,section { padding:24px 20px; } .pipeline,.grid { grid-template-columns:1fr; } .step { min-height:auto; } }
+    @media (prefers-color-scheme:dark) { :root { color-scheme:dark; --bg:#111820; --panel:#18222d; --ink:#eaf2f7; --muted:#b4c0c9; --line:#34424e; --accent:#79b9e8; --accent-soft:#20384b; --code:#0b1117; } .callout { background:#123326; } .warning { background:#3a2d15; } code { background:#26313a; } }
+    @media print { body { background:#fff; } main { max-width:none; padding:0; } header,section { box-shadow:none; break-inside:avoid; } .pipeline { grid-template-columns:repeat(5,1fr); } }
+    @media (prefers-reduced-motion:reduce) { * { scroll-behavior:auto !important; transition:none !important; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">Effective HTML · 운영 규칙</p>
+      <h1>HTML은 로컬 URL이 아니라 검증된 GitHub URL로 게시한다</h1>
+      <p>HTML 산출물은 브라우저 QA와 실제 공유를 분리한다. 공유가 필요한 경우 GitHub Pages에 게시하고, Pages가 200 OK를 반환한 뒤 원본 노트 frontmatter에 URL을 기록한다.</p>
+      <div class="status"><span>GitHub Pages 정본</span><span>raw 200 + Pages 200</span><span>frontmatter 자동 갱신</span><span>localhost는 QA 전용</span></div>
+    </header>
+
+    <section>
+      <h2>표준 파이프라인</h2>
+      <p class="lead">아래 다섯 단계가 끝나기 전에는 공유 URL을 완료값으로 보고하지 않는다.</p>
+      <div class="pipeline">
+        <div class="step"><b>01 · 원본</b><span>Markdown 읽기·보존범위 확정</span></div>
+        <div class="step"><b>02 · 제작</b><span>self-contained HTML 저장</span></div>
+        <div class="step"><b>03 · 게시</b><span>woosungjo-law/share push</span></div>
+        <div class="step"><b>04 · 검증</b><span>origin/main·raw·Pages 200</span></div>
+        <div class="step"><b>05 · 반영</b><span>web_html과 콜아웃 갱신</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>실제 게시 명령</h2>
+      <p>게시 명령은 실제 HTML과 원본 노트를 함께 지정한다. 스크립트가 Pages 200 OK를 확인한 뒤에만 frontmatter를 수정한다.</p>
+      <pre><code>powershell -ExecutionPolicy Bypass -File "C:\obsidian\지식관리\_WORKFLOWS\html_pdf_tools\publish_html.ps1" `
+  -HtmlPath "C:\obsidian\지식관리\_CREATION\04_시각자료_visuals\20260804_산출물.html" `
+  -Slug "20260804-산출물" `
+  -FrontmatterPath "C:\obsidian\지식관리\원본노트.md"</code></pre>
+      <div class="callout" style="margin-top:18px"><strong>완료 기준:</strong> 마지막 줄에 <code>PUBLISHED_URL=https://woosungjo-law.github.io/share/d/...</code>가 출력되고, frontmatter와 본문 콜아웃이 같은 검증 URL을 가리킨다.</div>
+    </section>
+
+    <section>
+      <h2>원본 노트에 남는 값</h2>
+      <div class="grid">
+        <div class="card"><h3>Frontmatter</h3><pre><code>web_html: https://woosungjo-law.github.io/share/d/&lt;token&gt;.html
+web_html_updated: 2026-08-04
+web_html_artifact: d/&lt;token&gt;.html</code></pre></div>
+        <div class="card"><h3>본문 콜아웃</h3><pre><code>&gt; [!web] 웹으로 보기
+&gt; https://woosungjo-law.github.io/share/d/&lt;token&gt;.html</code></pre></div>
+      </div>
+      <p class="lead">기존 노트에 <code>dashboard_url</code>이 있으면 같은 검증된 GitHub Pages URL로 갱신한다. Netlify는 GitHub Pages 장애 시에만 보조 필드로 기록한다.</p>
+    </section>
+
+    <section>
+      <h2>로컬 QA와 게시의 경계</h2>
+      <div class="grid">
+        <div class="card"><h3>로컬 QA</h3><ul><li><code>file://</code>가 막힐 때 <code>127.0.0.1</code> 서버를 사용한다.</li><li>wide/narrow, 콘솔, 키보드, 인쇄 레이아웃을 확인한다.</li><li>localhost 주소는 공유 URL이나 frontmatter 값이 아니다.</li></ul></div>
+        <div class="card"><h3>공유 게시</h3><ul><li><code>publish_html.ps1</code>로 GitHub Pages에 push한다.</li><li>raw 200과 Pages 200을 모두 확인한다.</li><li>가짜 토큰·임의 slug·로컬 경로를 기록하지 않는다.</li></ul></div>
+      </div>
+      <div class="callout warning" style="margin-top:18px"><strong>404 대응:</strong> raw 200·Pages 404를 구분하고, Pages가 제한시간 안에 회복되지 않으면 정본 런북에 따라 Netlify fallback을 시도한다. 검증 전 URL은 frontmatter에 넣지 않는다.</div>
+    </section>
+
+    <section>
+      <h2>작업 전 체크</h2>
+      <ul>
+        <li>독자·목적·형식·보존범위·상호작용·배포범위를 먼저 확정한다.</li>
+        <li>프로젝트 규칙과 Apollo 등 기존 디자인 시스템을 먼저 읽는다.</li>
+        <li>CSS와 핵심 JavaScript는 HTML 안에 넣고, 외부 CDN·원격 폰트·원격 이미지는 사용하지 않는다.</li>
+        <li>원문 추적성, 모바일 가로 넘침, 접근성, 콘솔 오류, 인쇄 상태를 확인한다.</li>
+      </ul>
+    </section>
+
+    <footer>원본: C:\obsidian\지식관리\_guides\html_보조스킬_사용설명서_20260804.md · 2026-08-04 개정</footer>
+  </main>
+</body>
+</html>
