@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="공유물 분할 청구를 상속받은 세 남매의 갈등에서 출발해 설명하는 5장 슬라이드형 HTML">
+  <title>공유물 분할 청구 — Narrative Tension</title>
+  <style>
+    :root {
+      --ink: #242326;
+      --ink-2: #302f33;
+      --paper: #eee9df;
+      --paper-2: #e2d8ca;
+      --text: #f2eee6;
+      --text-dark: #242326;
+      --muted: #b7b0a5;
+      --muted-dark: #6e6862;
+      --burgundy: #7b3f46;
+      --brass: #b89b69;
+      --line: #5b4c4d;
+      --line-light: #c9bcae;
+      --serif: Georgia, "Noto Serif KR", "Noto Serif CJK KR", serif;
+      --sans: "Pretendard", "Noto Sans KR", "Malgun Gothic", system-ui, sans-serif;
+      --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      --pad-x: clamp(28px, 8vw, 118px);
+      --pad-y: clamp(28px, 7vh, 60px);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: var(--ink); }
+    body { color: var(--text); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    button { font: inherit; }
+    .deck { display: flex; width: 100%; height: 100%; transform: translateX(0); transition: transform .8s cubic-bezier(.77,0,.175,1); }
+    .slide { position: relative; flex: 0 0 100%; width: 100%; height: 100%; padding: var(--pad-y) var(--pad-x); overflow: hidden; display: grid; grid-template-rows: auto 1fr auto; }
+    .dark { background: var(--ink); color: var(--text); }
+    .light { background: var(--paper); color: var(--text-dark); }
+    .dark::after { content: ""; position: absolute; width: 42vw; height: 42vw; right: -11vw; top: 18vh; border: 1px solid rgba(184,155,105,.32); border-radius: 50%; pointer-events: none; }
+    .slide > * { position: relative; z-index: 1; }
+    .chrome, .foot { display: flex; justify-content: space-between; align-items: center; gap: 24px; font-family: var(--mono); font-size: clamp(9px, .75vw, 12px); letter-spacing: .08em; text-transform: uppercase; }
+    .chrome { padding-bottom: 14px; border-bottom: 1px solid var(--line); color: var(--muted); }
+    .light .chrome { border-color: var(--line-light); color: var(--muted-dark); }
+    .foot { padding-top: 14px; border-top: 1px solid var(--line); color: var(--muted); }
+    .light .foot { border-color: var(--line-light); color: var(--muted-dark); }
+    .accent { color: var(--brass); }
+    .burgundy { color: var(--burgundy); }
+    .rule { width: 48px; height: 3px; background: var(--burgundy); }
+    h1, h2, h3, p { margin: 0; }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 600; letter-spacing: -.04em; text-wrap: balance; }
+    h1 { font-size: clamp(44px, 6.4vw, 94px); line-height: .97; }
+    h2 { font-size: clamp(31px, 4.3vw, 64px); line-height: 1.05; }
+    h3 { font-size: clamp(20px, 2vw, 30px); line-height: 1.15; }
+    p, li { font-size: clamp(15px, 1.28vw, 20px); line-height: 1.65; }
+    .label { font-family: var(--mono); font-size: clamp(10px, .8vw, 12px); letter-spacing: .16em; text-transform: uppercase; color: var(--brass); }
+    .lede { max-width: 630px; color: var(--muted); }
+    .light .lede { color: var(--muted-dark); }
+    .cover { display: flex; flex-direction: column; justify-content: flex-end; gap: 24px; }
+    .cover::before { content: ""; position: absolute; left: var(--pad-x); top: 12%; bottom: 18%; width: 1px; background: linear-gradient(var(--brass), transparent); opacity: .75; }
+    .cover .story-mark { position: absolute; right: 16vw; top: 21vh; width: 18vw; height: 18vw; border: 1px solid rgba(184,155,105,.55); border-radius: 50%; }
+    .cover .story-mark::after { content: ""; position: absolute; left: 50%; top: -34%; width: 1px; height: 170%; background: var(--brass); transform: rotate(34deg); transform-origin: center; opacity: .75; }
+    .cover .meta { display: flex; justify-content: space-between; gap: 24px; padding-top: 16px; border-top: 1px solid var(--line); font-family: var(--mono); color: var(--muted); font-size: 11px; letter-spacing: .08em; }
+    .slide-body { min-height: 0; display: flex; flex-direction: column; justify-content: center; gap: clamp(24px, 4vh, 44px); }
+    .scene { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(30px, 7vw, 100px); align-items: center; }
+    .scene .quote { padding-left: 26px; border-left: 2px solid var(--burgundy); }
+    .quote p { margin-top: 14px; color: var(--muted-dark); }
+    .roles { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line-light); }
+    .role { padding: 18px 18px 0 0; border-right: 1px solid var(--line-light); }
+    .role + .role { padding-left: 18px; }
+    .role:last-child { border-right: 0; }
+    .role .line { width: 26px; height: 2px; margin-bottom: 18px; background: var(--burgundy); }
+    .role p { margin-top: 8px; color: var(--muted-dark); font-size: clamp(13px, 1.05vw, 16px); line-height: 1.5; }
+    .turning { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(30px, 7vw, 100px); align-items: center; }
+    .turning .big-line { font-family: var(--serif); font-size: clamp(48px, 7vw, 100px); line-height: .95; color: var(--burgundy); }
+    .turning .note { padding: 24px 0 24px 26px; border-left: 1px solid var(--line-light); }
+    .turning .note p { margin-top: 14px; color: var(--muted-dark); }
+    .routes { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; padding-top: 30px; border-top: 1px solid var(--line); }
+    .routes::before { content: ""; position: absolute; left: 7%; right: 7%; top: 30px; height: 1px; background: var(--brass); }
+    .route { position: relative; padding: 24px 20px 0 0; }
+    .route + .route { padding-left: 20px; }
+    .route::before { content: ""; position: absolute; top: 25px; left: 0; width: 10px; height: 10px; border: 2px solid var(--brass); border-radius: 50%; background: var(--ink); transform: translateY(-50%); }
+    .route:first-child::before { left: 7%; }
+    .route p { margin-top: 10px; color: var(--muted); font-size: clamp(13px, 1.05vw, 16px); line-height: 1.5; }
+    .route .tag { display: inline-block; margin-top: 16px; color: var(--brass); font-family: var(--mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+    .risk { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(30px, 7vw, 100px); align-items: end; }
+    .risk .number { font-family: var(--serif); font-size: clamp(80px, 13vw, 170px); line-height: .75; color: var(--burgundy); opacity: .9; }
+    .risk .text { padding-bottom: 6px; }
+    .risk .text p { margin-top: 15px; color: var(--muted); }
+    .closing { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(30px, 7vw, 100px); align-items: center; }
+    .steps { display: grid; gap: 0; border-top: 1px solid var(--line); }
+    .step { display: grid; grid-template-columns: 54px 1fr; gap: 18px; padding: 17px 0; border-bottom: 1px solid var(--line); }
+    .step .n { color: var(--brass); font-family: var(--mono); font-size: 12px; }
+    .step p { margin-top: 5px; color: var(--muted); font-size: clamp(13px, 1.05vw, 16px); line-height: 1.5; }
+    .notice { color: var(--muted); font-family: var(--mono); font-size: 10px; line-height: 1.5; letter-spacing: .02em; }
+    .light .notice { color: var(--muted-dark); }
+    .controls { position: fixed; right: 24px; bottom: 18px; z-index: 10; display: flex; align-items: center; gap: 12px; }
+    .nav { width: 34px; height: 30px; border: 1px solid rgba(255,255,255,.28); background: rgba(36,35,38,.78); color: #fff; cursor: pointer; }
+    .nav:focus-visible { outline: 3px solid var(--brass); outline-offset: 3px; }
+    .dots { display: flex; gap: 7px; align-items: center; }
+    .dot { width: 6px; height: 6px; padding: 0; border: 0; border-radius: 50%; background: rgba(255,255,255,.28); cursor: pointer; }
+    .dot.active { background: var(--brass); transform: scale(1.35); }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    @media (max-width: 780px) {
+      html, body { overflow: auto; }
+      .deck { display: block; transform: none !important; }
+      .slide { min-height: 100svh; height: auto; }
+      .scene, .turning, .risk, .closing { grid-template-columns: 1fr; }
+      .roles, .routes { grid-template-columns: 1fr; }
+      .role, .role + .role { padding: 18px 0; border-right: 0; border-bottom: 1px solid var(--line-light); }
+      .role:last-child { border-bottom: 0; }
+      .route, .route + .route { padding: 24px 0 0 20px; }
+      .route::before, .route:first-child::before { left: 0; }
+      .routes::before { left: 0; right: auto; top: 30px; bottom: 4px; width: 1px; height: auto; }
+    }
+    @media (prefers-reduced-motion: reduce) { .deck { transition: none; } }
+  </style>
+</head>
+<body>
+  <main class="deck" id="deck" aria-live="polite">
+    <section class="slide dark cover" aria-label="1장 표지">
+      <span class="story-mark" aria-hidden="true"></span>
+      <div class="label">부동산법 · 상속 이후의 선택</div>
+      <div class="rule" aria-hidden="true"></div>
+      <h1>한 채의 아파트,<br><span class="accent">세 사람의 뜻</span></h1>
+      <p class="lede">공동상속으로 생긴 부동산을 둘러싼 갈등은 ‘누가 옳은가’보다 ‘어떤 출구를 선택할 것인가’의 문제가 됩니다.</p>
+      <div class="meta"><span>NARRATIVE TENSION · B2C</span><span>5 SCREENS · 2026.08</span></div>
+    </section>
+
+    <section class="slide light" aria-label="2장 상속 이후의 장면">
+      <header class="chrome">
+<meta name="robots" content="noindex,nofollow"><span>01 · 상속 이후</span><span>한 채 / 세 사람</span></header>
+      <div class="slide-body scene">
+        <div><div class="label burgundy">The scene</div><h2>한 사람은<br><span class="burgundy">팔고 싶고</span>,</h2><p class="lede">다른 사람은 당분간 보존하고 싶습니다. 자신의 지분만 현금화하고 싶은 사람도 있습니다.</p></div>
+        <div class="quote"><h3>갈등의 표면</h3><p>“지금 팔아야 한다”와 “가족 재산으로 남겨야 한다”가 맞섭니다. 하지만 공유자 중 한 사람만 분할을 원해도 법적 출구는 열립니다.</p></div>
+      </div>
+      <div class="roles"><div class="role"><div class="line"></div><h3>처분</h3><p>아파트를 팔아 현금화하자</p></div><div class="role"><div class="line"></div><h3>보존</h3><p>당분간 가족 재산으로 두자</p></div><div class="role"><div class="line"></div><h3>현금화</h3><p>내 지분만 정리하고 싶다</p></div></div>
+      <footer class="foot"><span>갈등은 공유물의 구조에서 시작됩니다</span><span>02 / 05</span></footer>
+    </section>
+
+    <section class="slide dark" aria-label="3장 법적 전환점">
+      <header class="chrome">
+<meta name="robots" content="noindex,nofollow"><span>02 · 법적 전환점</span><span>민법 제268조</span></header>
+      <div class="slide-body turning">
+        <div><div class="label">The turning point</div><span class="big-line">한 사람의<br>의사도<br>출구가 된다.</span></div>
+        <div class="note"><h2>공유자는 원칙적으로<br><span class="accent">언제든지 분할을 청구</span>할 수 있습니다.</h2><p>분할 금지 약정을 하더라도 그 효력은 최대 5년을 넘을 수 없습니다. 문제는 권리가 있느냐가 아니라 어떤 방식으로 나눌 것인가입니다.</p></div>
+      </div>
+      <footer class="foot"><span>권리의 출발점 · 공유물 분할 청구</span><span>03 / 05</span></footer>
+    </section>
+
+    <section class="slide dark" aria-label="4장 세 갈래 출구">
+      <header class="chrome">
+<meta name="robots" content="noindex,nofollow"><span>03 · 세 갈래 출구</span><span>분할 방법</span></header>
+      <div class="slide-body">
+        <div><div class="label">Three exits</div><h2>이제 선택지는<br><span class="accent">세 갈래</span>로 나뉩니다.</h2></div>
+        <div class="routes">
+          <article class="route"><h3>나눠 갖기</h3><p>토지처럼 실제 부분을 나누는 현물 분할. 구조와 가치가 허락해야 합니다.</p><span class="tag">현물 분할</span></article>
+          <article class="route"><h3>팔아 나누기</h3><p>공유물 전체를 경매에 부쳐 매각 대금을 지분대로 나누는 방식.</p><span class="tag">경매 분할</span></article>
+          <article class="route"><h3>한 사람이 사기</h3><p>한 공유자가 다른 공유자의 지분을 시가에 상응하는 금액으로 매수하는 협의형 해법.</p><span class="tag">가격 배상</span></article>
+        </div>
+      </div>
+      <footer class="foot"><span>아파트는 구조상 현물 분할이 어려울 수 있습니다</span><span>04 / 05</span></footer>
+    </section>
+
+    <section class="slide light" aria-label="5장 마지막 선택">
+      <header class="chrome">
+<meta name="robots" content="noindex,nofollow"><span>04 · 마지막 선택</span><span>소송 전 체크</span></header>
+      <div class="slide-body closing">
+        <div class="risk"><span class="number">?</span><div class="text"><div class="label burgundy">Before the auction</div><h2>경매는<br><span class="burgundy">출구의 가격</span>도 함께 데려옵니다.</h2><p>감정료·경매 비용, 시세보다 낮은 낙찰 가능성까지 고려하면 소송 전 협의와 조정의 가치가 커집니다.</p></div></div>
+        <div class="steps"><div class="step"><span class="n">01</span><div><h3>협의</h3><p>다른 공유자에게 지분 매수 의사를 먼저 확인합니다.</p></div></div><div class="step"><span class="n">02</span><div><h3>조정</h3><p>감정평가로 가격과 분할 방법의 차이를 구체화합니다.</p></div></div><div class="step"><span class="n">03</span><div><h3>소송</h3><p>경매로 인한 비용과 가치 감소 가능성까지 검토합니다.</p></div></div></div>
+      </div>
+      <p class="notice">일반적인 법률 정보입니다. 구체적인 부동산·지분·협의 상황에 따라 결론이 달라질 수 있습니다. 근거: 민법 제268조·제269조·제270조, 대법원 2021. 12. 30. 선고 2020다217105.</p>
+      <footer class="foot"><span>공유물 분할 청구 · Narrative Tension</span><span>05 / 05</span></footer>
+    </section>
+  </main>
+
+  <div class="controls" aria-label="슬라이드 탐색">
+    <button class="nav" id="prev" type="button" aria-label="이전 슬라이드">←</button>
+    <div class="dots" id="dots" role="tablist" aria-label="슬라이드 선택"></div>
+    <button class="nav" id="next" type="button" aria-label="다음 슬라이드">→</button>
+  </div>
+  <p class="sr-only" id="status">1장 / 5장</p>
+  <script>
+    (() => {
+      const deck = document.getElementById('deck');
+      const slides = [...document.querySelectorAll('.slide')];
+      const dots = document.getElementById('dots');
+      const status = document.getElementById('status');
+      let current = 0;
+      slides.forEach((_, index) => {
+        const dot = document.createElement('button');
+        dot.className = 'dot' + (index === 0 ? ' active' : '');
+        dot.type = 'button';
+        dot.setAttribute('role', 'tab');
+        dot.setAttribute('aria-label', `${index + 1}장으로 이동`);
+        dot.addEventListener('click', () => go(index));
+        dots.appendChild(dot);
+      });
+      const dotEls = [...dots.children];
+      function go(index) {
+        current = Math.max(0, Math.min(slides.length - 1, index));
+        deck.style.transform = `translateX(-${current * 100}%)`;
+        dotEls.forEach((dot, i) => { dot.classList.toggle('active', i === current); dot.setAttribute('aria-selected', i === current ? 'true' : 'false'); });
+        status.textContent = `${current + 1}장 / ${slides.length}장`;
+      }
+      document.getElementById('prev').addEventListener('click', () => go(current - 1));
+      document.getElementById('next').addEventListener('click', () => go(current + 1));
+      window.addEventListener('keydown', (event) => {
+        if (['ArrowRight', 'PageDown', ' '].includes(event.key)) { event.preventDefault(); go(current + 1); }
+        if (['ArrowLeft', 'PageUp'].includes(event.key)) { event.preventDefault(); go(current - 1); }
+        if (event.key === 'Home') { event.preventDefault(); go(0); }
+        if (event.key === 'End') { event.preventDefault(); go(slides.length - 1); }
+      });
+    })();
+  </script>
+</body>
+</html>
