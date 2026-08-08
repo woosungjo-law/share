@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="공유물 분할 청구의 법적 기준과 세 가지 분할 방식을 5장으로 정리한 슬라이드형 HTML">
+  <title>공유물 분할 청구 — Editorial Ledger</title>
+  <style>
+    :root {
+      --ink: #1c2644;
+      --ink-2: #263354;
+      --paper: #f0ece3;
+      --paper-2: #e6e0d4;
+      --text: #e5dfd3;
+      --text-dark: #1a2030;
+      --muted: #94a0b3;
+      --muted-dark: #5b6473;
+      --gold: #c8a870;
+      --line: #344261;
+      --line-light: #c9c1b2;
+      --serif: Georgia, "Noto Serif KR", "Noto Serif CJK KR", serif;
+      --sans: "Pretendard", "Noto Sans KR", "Malgun Gothic", system-ui, sans-serif;
+      --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      --pad-x: clamp(28px, 7.5vw, 112px);
+      --pad-y: clamp(28px, 7vh, 60px);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: var(--ink); }
+    body { color: var(--text); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    button { font: inherit; }
+    .deck { display: flex; width: 100%; height: 100%; transform: translateX(0); transition: transform .7s cubic-bezier(.77,0,.175,1); }
+    .slide { position: relative; flex: 0 0 100%; width: 100%; height: 100%; padding: var(--pad-y) var(--pad-x); overflow: hidden; display: grid; grid-template-rows: auto 1fr auto; }
+    .dark { background: var(--ink); color: var(--text); }
+    .light { background: var(--paper); color: var(--text-dark); }
+    .dark::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .38; background-image: linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px); background-size: 80px 80px; }
+    .slide > * { position: relative; z-index: 1; }
+    .chrome, .foot { display: flex; justify-content: space-between; align-items: center; gap: 24px; font-family: var(--mono); font-size: clamp(9px, .75vw, 12px); letter-spacing: .08em; text-transform: uppercase; }
+    .chrome { padding-bottom: 14px; border-bottom: 1px solid var(--line); color: var(--muted); }
+    .light .chrome { border-color: var(--line-light); color: var(--muted-dark); }
+    .foot { padding-top: 14px; border-top: 1px solid var(--line); color: var(--muted); }
+    .light .foot { border-color: var(--line-light); color: var(--muted-dark); }
+    .accent { color: var(--gold); }
+    .rule { width: 38px; height: 2px; background: var(--gold); }
+    h1, h2, h3, p { margin: 0; }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 600; letter-spacing: -.035em; text-wrap: balance; }
+    h1 { font-size: clamp(42px, 6.3vw, 92px); line-height: .98; }
+    h2 { font-size: clamp(30px, 4.25vw, 62px); line-height: 1.06; }
+    h3 { font-size: clamp(20px, 2vw, 30px); line-height: 1.15; }
+    p, li { font-size: clamp(15px, 1.28vw, 20px); line-height: 1.65; }
+    .label { font-family: var(--mono); font-size: clamp(10px, .8vw, 12px); letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
+    .lede { max-width: 650px; color: var(--muted); }
+    .light .lede { color: var(--muted-dark); }
+    .cover { display: flex; flex-direction: column; justify-content: flex-end; gap: 26px; }
+    .cover .meta { display: flex; justify-content: space-between; gap: 24px; padding-top: 16px; border-top: 1px solid var(--line); font-family: var(--mono); color: var(--muted); font-size: 11px; letter-spacing: .08em; }
+    .slide-body { min-height: 0; display: flex; flex-direction: column; justify-content: center; gap: clamp(24px, 4vh, 44px); }
+    .split { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(30px, 6vw, 92px); align-items: center; }
+    .statement { display: flex; flex-direction: column; gap: 22px; }
+    .statement strong { font-family: var(--serif); color: var(--gold); font-size: 1.08em; font-weight: 500; }
+    .ledger { display: grid; gap: 0; border-top: 1px solid var(--line-light); }
+    .ledger-row { display: grid; grid-template-columns: 88px 1fr; gap: 22px; padding: 18px 0; border-bottom: 1px solid var(--line-light); }
+    .ledger-row .num { font-family: var(--mono); color: var(--gold); font-size: 14px; }
+    .ledger-row h3 { font-size: clamp(20px, 2vw, 28px); }
+    .ledger-row p { margin-top: 6px; color: var(--muted-dark); font-size: clamp(13px, 1.05vw, 16px); line-height: 1.5; }
+    .path-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--line); }
+    .path { min-width: 0; padding: 22px 22px 0 0; border-right: 1px solid var(--line); }
+    .path + .path { padding-left: 22px; }
+    .path:last-child { border-right: 0; }
+    .path .big { display: block; margin-bottom: 18px; color: var(--gold); font-family: var(--serif); font-size: clamp(48px, 5vw, 72px); line-height: 1; }
+    .path p { margin-top: 11px; color: var(--muted); font-size: clamp(13px, 1.05vw, 16px); line-height: 1.5; }
+    .path .tag { display: inline-block; margin-top: 18px; color: var(--gold); font-family: var(--mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+    .comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--line-light); border-bottom: 1px solid var(--line-light); }
+    .compare-col { padding: 20px 24px 22px 0; }
+    .compare-col + .compare-col { padding-left: 24px; border-left: 1px solid var(--line-light); }
+    .compare-col h3 { color: var(--text-dark); }
+    .compare-col p { margin-top: 11px; color: var(--muted-dark); font-size: clamp(13px, 1.05vw, 16px); line-height: 1.55; }
+    .checklist { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 16px; }
+    .check { padding-top: 15px; border-top: 1px solid var(--line); }
+    .check .k { color: var(--gold); font-family: var(--mono); font-size: 11px; letter-spacing: .12em; }
+    .check h3 { margin-top: 12px; font-size: clamp(20px, 1.9vw, 28px); }
+    .check p { margin-top: 8px; color: var(--muted); font-size: clamp(13px, 1.05vw, 16px); line-height: 1.5; }
+    .notice { color: var(--muted); font-family: var(--mono); font-size: 10px; line-height: 1.5; letter-spacing: .02em; }
+    .light .notice { color: var(--muted-dark); }
+    .controls { position: fixed; right: 24px; bottom: 18px; z-index: 10; display: flex; align-items: center; gap: 12px; }
+    .nav { width: 34px; height: 30px; border: 1px solid rgba(255,255,255,.28); background: rgba(28,38,68,.78); color: #fff; cursor: pointer; }
+    .nav:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+    .dots { display: flex; gap: 7px; align-items: center; }
+    .dot { width: 6px; height: 6px; padding: 0; border: 0; border-radius: 50%; background: rgba(255,255,255,.28); cursor: pointer; }
+    .dot.active { background: var(--gold); transform: scale(1.35); }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    @media (max-width: 780px) {
+      html, body { overflow: auto; }
+      .deck { display: block; transform: none !important; }
+      .slide { min-height: 100svh; height: auto; grid-template-rows: auto 1fr auto; }
+      .split, .comparison { grid-template-columns: 1fr; }
+      .path-grid, .checklist { grid-template-columns: 1fr; }
+      .path, .path + .path { padding: 18px 0; border-right: 0; border-bottom: 1px solid var(--line); }
+      .path:last-child { border-bottom: 0; }
+      .compare-col, .compare-col + .compare-col { padding: 18px 0; border-left: 0; }
+      .controls { position: fixed; }
+    }
+    @media (prefers-reduced-motion: reduce) { .deck { transition: none; } }
+  </style>
+</head>
+<body>
+  <main class="deck" id="deck" aria-live="polite">
+    <section class="slide dark cover" aria-label="1장 표지">
+      <div class="label">부동산법 · 공유물 분할</div>
+      <div class="rule" aria-hidden="true"></div>
+      <h1>한 채의 부동산,<br><em class="accent">세 갈래의 출구</em></h1>
+      <p class="lede">형제자매와 함께 물려받은 부동산을 나누는 법. 공유물 분할 청구의 기준과 세 가지 분할 방식을 5장으로 정리합니다.</p>
+      <div class="meta"><span>LEGAL KNOWLEDGE WIKI · B2C</span><span>5 SCREENS · 2026.08</span></div>
+    </section>
+
+    <section class="slide light" aria-label="2장 법적 출발점">
+      <header class="chrome">
+<meta name="robots" content="noindex,nofollow"><span>01 · 법적 출발점</span><span>민법 제268조</span></header>
+      <div class="slide-body split">
+        <div class="statement">
+          <div class="label">The right to exit</div>
+          <h2>공유자 한 사람만 원해도<br><strong>분할을 청구할 수 있습니다.</strong></h2>
+          <p class="lede">공유자는 원칙적으로 언제든지 공유물의 분할을 청구할 수 있습니다. 분할을 막는 약정을 하더라도 그 기간은 최대 5년입니다.</p>
+        </div>
+        <div class="ledger" aria-label="핵심 기준">
+          <div class="ledger-row"><span class="num">01</span><div><h3>공유자</h3><p>여러 사람이 하나의 부동산을 공동 소유하는 상태</p></div></div>
+          <div class="ledger-row"><span class="num">02</span><div><h3>분할 청구</h3><p>의견이 일치하지 않아도 한 사람이 법원에 청구 가능</p></div></div>
+          <div class="ledger-row"><span class="num">03</span><div><h3>5년의 한계</h3><p>분할 금지 약정도 장기간의 출구 봉쇄가 되지는 않음</p></div></div>
+        </div>
+      </div>
+      <footer class="foot"><span>공유물 분할의 문턱</span><span>02 / 05</span></footer>
+    </section>
+
+    <section class="slide dark" aria-label="3장 세 가지 분할 방식">
+      <header class="chrome">
+<meta name="robots" content="noindex,nofollow"><span>02 · 분할 방식</span><span>민법 제269조·제270조</span></header>
+      <div class="slide-body">
+        <div><div class="label">Three routes</div><h2>나누는 방법은<br><span class="accent">세 가지</span>입니다.</h2></div>
+        <div class="path-grid">
+          <article class="path"><span class="big">01</span><h3>현물 분할</h3><p>토지처럼 실제 부분을 나누어 각자의 지분에 해당하는 부분을 취득합니다.</p><span class="tag">가능성 · 구조와 가치</span></article>
+          <article class="path"><span class="big">02</span><h3>경매 분할</h3><p>공유물 전체를 매각하고 대금을 지분 비율에 따라 나눕니다.</p><span class="tag">주의 · 비용과 낙찰가</span></article>
+          <article class="path"><span class="big">03</span><h3>가격 배상</h3><p>한 공유자가 다른 공유자의 지분을 사들이는 협의형 해법입니다.</p><span class="tag">효율 · 합의와 시가</span></article>
+        </div>
+      </div>
+      <footer class="foot"><span>분할 방법은 물건의 구조와 가치에 달려 있습니다</span><span>03 / 05</span></footer>
+    </section>
+
+    <section class="slide light" aria-label="4장 사례 적용">
+      <header class="chrome">
+<meta name="robots" content="noindex,nofollow"><span>03 · 사례 적용</span><span>공동상속 아파트</span></header>
+      <div class="slide-body">
+        <div class="split">
+          <div class="statement"><div class="label">A shared apartment</div><h2>한 사람은 팔고 싶고,<br>다른 사람은 지키고 싶다면?</h2><p class="lede">아파트처럼 구조상 나누기 어려운 집합건물은 현물 분할이 쉽지 않습니다. 법원은 구체적 사정을 보고 가장 적절한 방법을 선택합니다.</p></div>
+          <div class="comparison" aria-label="세 가지 선택지 비교">
+            <div class="compare-col"><h3>현물 분할</h3><p>아파트 구조상 분할 후 가치가 현저히 줄어들 수 있어 현실성이 낮습니다.</p></div>
+            <div class="compare-col"><h3>경매 분할</h3><p>현물 분할이 곤란하면 경매로 매각해 대금을 나눌 수 있습니다.</p></div>
+          </div>
+        </div>
+        <p class="notice">가격 배상은 다른 공유자의 지분을 시가에 상응하는 금액으로 매수하는 협의형 대안입니다.</p>
+      </div>
+      <footer class="foot"><span>판단 기준 · 구조 / 가치 감소 / 당사자 의사</span><span>04 / 05</span></footer>
+    </section>
+
+    <section class="slide dark" aria-label="5장 실무 대응">
+      <div class="slide-body">
+        <div class="label">Before litigation</div>
+        <h2>소송보다 먼저,<br><span class="accent">출구의 비용</span>을 계산하세요.</h2>
+        <div class="checklist">
+          <article class="check"><span class="k">01 · 협의</span><h3>지분 매수 의사 확인</h3><p>자신의 지분을 현금화하려면 다른 공유자에게 먼저 매수 가능성을 타진합니다.</p></article>
+          <article class="check"><span class="k">02 · 조정</span><h3>감정·조정으로 간격 줄이기</h3><p>감정평가와 조정을 통해 가격과 분할 방법의 차이를 구체화합니다.</p></article>
+          <article class="check"><span class="k">03 · 소송</span><h3>경매의 비용까지 감안</h3><p>감정료·경매 비용과 시세보다 낮은 낙찰 가능성을 함께 검토합니다.</p></article>
+        </div>
+        <p class="notice">일반적인 법률 정보입니다. 구체적인 부동산·지분·협의 상황에 따라 결론이 달라질 수 있습니다. 근거: 민법 제268조·제269조·제270조, 대법원 2021. 12. 30. 선고 2020다217105.</p>
+      </div>
+      <footer class="foot"><span>공유물 분할 청구 · Editorial Ledger</span><span>05 / 05</span></footer>
+    </section>
+  </main>
+
+  <div class="controls" aria-label="슬라이드 탐색">
+    <button class="nav" id="prev" type="button" aria-label="이전 슬라이드">←</button>
+    <div class="dots" id="dots" role="tablist" aria-label="슬라이드 선택"></div>
+    <button class="nav" id="next" type="button" aria-label="다음 슬라이드">→</button>
+  </div>
+  <p class="sr-only" id="status">1장 / 5장</p>
+  <script>
+    (() => {
+      const deck = document.getElementById('deck');
+      const slides = [...document.querySelectorAll('.slide')];
+      const dots = document.getElementById('dots');
+      const status = document.getElementById('status');
+      let current = 0;
+      slides.forEach((_, index) => {
+        const dot = document.createElement('button');
+        dot.className = 'dot' + (index === 0 ? ' active' : '');
+        dot.type = 'button';
+        dot.setAttribute('role', 'tab');
+        dot.setAttribute('aria-label', `${index + 1}장으로 이동`);
+        dot.addEventListener('click', () => go(index));
+        dots.appendChild(dot);
+      });
+      const dotEls = [...dots.children];
+      function go(index) {
+        current = Math.max(0, Math.min(slides.length - 1, index));
+        deck.style.transform = `translateX(-${current * 100}%)`;
+        dotEls.forEach((dot, i) => { dot.classList.toggle('active', i === current); dot.setAttribute('aria-selected', i === current ? 'true' : 'false'); });
+        status.textContent = `${current + 1}장 / ${slides.length}장`;
+      }
+      document.getElementById('prev').addEventListener('click', () => go(current - 1));
+      document.getElementById('next').addEventListener('click', () => go(current + 1));
+      window.addEventListener('keydown', (event) => {
+        if (['ArrowRight', 'PageDown', ' '].includes(event.key)) { event.preventDefault(); go(current + 1); }
+        if (['ArrowLeft', 'PageUp'].includes(event.key)) { event.preventDefault(); go(current - 1); }
+        if (event.key === 'Home') { event.preventDefault(); go(0); }
+        if (event.key === 'End') { event.preventDefault(); go(slides.length - 1); }
+      });
+    })();
+  </script>
+</body>
+</html>
