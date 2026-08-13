@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>담합 의심 징후(Red Flags) 포착 및 내부 정화 — 다이어그램</title>
+  <style>
+    :root{color-scheme:light;--ink:#1f2933;--muted:#5e6b75;--paper:#f6f8f7;--panel:#fff;--line:#a9b7b2;--border:#d7e0dc;--accent:#b64b3e;--accent-soft:#f9e9e5;--safe:#326b61;--safe-soft:#e8f2ef;--warn:#8a641d;--warn-soft:#fff5dc;--shadow:0 14px 35px rgba(31,41,51,.07)}
+    *{box-sizing:border-box} html{background:var(--paper)} body{margin:0;background:var(--paper);color:var(--ink);font-family:"Noto Sans KR","Pretendard","Malgun Gothic",sans-serif;line-height:1.65} .page{max-width:1180px;margin:0 auto;padding:56px 28px 72px}
+    .eyebrow{font-size:12px;letter-spacing:.13em;color:var(--accent);font-weight:800;text-transform:uppercase}.hero{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(250px,.65fr);gap:32px;align-items:end;border-bottom:1px solid var(--border);padding-bottom:30px}.hero h1{margin:10px 0 12px;font-size:clamp(28px,4vw,48px);line-height:1.14;letter-spacing:-.045em;max-width:780px}.hero p{margin:0;color:var(--muted);font-size:16px;max-width:680px}.meta{border-left:3px solid var(--accent);padding:8px 0 8px 18px;color:var(--muted);font-size:13px}.meta strong{display:block;color:var(--ink);font-size:14px;margin-bottom:3px}.question{margin:28px 0 18px;padding:18px 22px;background:var(--ink);color:#fff;box-shadow:var(--shadow)}.question strong{display:block;color:#d8eee8;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px}.question p{margin:0;font-size:20px;line-height:1.45;letter-spacing:-.025em}
+    .diagram-wrap{background:var(--panel);border:1px solid var(--border);box-shadow:var(--shadow);overflow-x:auto;padding:18px 12px 10px}.diagram-wrap svg{display:block;width:100%;max-width:1120px;height:auto;margin:0 auto}.node{fill:#fff;stroke:#82928c;stroke-width:2}.node.red{fill:var(--accent-soft);stroke:var(--accent)}.node.green{fill:var(--safe-soft);stroke:var(--safe)}.node.yellow{fill:var(--warn-soft);stroke:var(--warn)}.node-title{font-size:18px;font-weight:800;fill:var(--ink)}.node-sub{font-size:13px;fill:var(--muted)}.small{font-size:12px;fill:var(--muted)}.edge{fill:none;stroke:#687972;stroke-width:2.4;marker-end:url(#arrow)}.edge.redline{stroke:var(--accent);marker-end:url(#arrow-red)}.edge.dashed{stroke-dasharray:7 6}.edge-label{font-size:12px;font-weight:800;fill:var(--ink)}.label-bg{fill:#fff;stroke:var(--border)}.zone{fill:#fbfcfc;stroke:#dfe7e3;stroke-width:1.5;stroke-dasharray:5 5}.zone-title{font-size:12px;font-weight:800;fill:var(--muted);letter-spacing:.08em}.legend{display:flex;gap:18px;flex-wrap:wrap;padding:14px 4px 4px;color:var(--muted);font-size:12px}.legend span{display:inline-flex;align-items:center;gap:7px}.swatch{width:13px;height:13px;border:2px solid var(--line);background:#fff}.swatch.red{background:var(--accent-soft);border-color:var(--accent)}.swatch.green{background:var(--safe-soft);border-color:var(--safe)}.swatch.yellow{background:var(--warn-soft);border-color:var(--warn)}
+    .notes{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}.card{background:var(--panel);border:1px solid var(--border);padding:20px 22px}.card h2{font-size:17px;margin:0 0 9px;letter-spacing:-.02em}.card p{margin:0;color:var(--muted);font-size:14px}.card.alert{border-top:3px solid var(--accent)}.card.trace{border-top:3px solid var(--safe)}.disclaimer{margin-top:20px;color:var(--muted);font-size:12px;border-top:1px solid var(--border);padding-top:15px}.source{margin-top:8px;color:#7b8782;font-size:11px;word-break:break-all}
+    @media (max-width:760px){.page{padding:34px 16px 52px}.hero{grid-template-columns:1fr;gap:18px}.hero h1{font-size:32px}.meta{border-left:0;border-top:2px solid var(--accent);padding:12px 0 0}.question p{font-size:17px}.notes{grid-template-columns:1fr}.diagram-wrap{margin-left:-4px;margin-right:-4px;padding-left:6px;padding-right:6px}.diagram-wrap svg{width:1120px;max-width:none}}
+    @media print{html,body{background:#fff}.page{max-width:none;padding:12mm}.hero{grid-template-columns:1fr 220px}.diagram-wrap{box-shadow:none;overflow:visible;padding:4mm 0;border:0}.diagram-wrap svg{width:100%;max-width:100%;height:auto}.question{box-shadow:none}.card{break-inside:avoid}.source{word-break:normal}}
+    @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div><div class="eyebrow">Legal column / compliance radar</div><h1>담합 의심 징후를 포착하면,<br>법무팀은 어디서 개입하는가</h1><p>반복되는 이상 신호를 놓치지 않고 내부 제보·데이터 스크리닝·보고·자정 작용으로 연결하는 설명 도식</p></div>
+      <div class="meta"><strong>원문 앵커</strong>「#207. 담합 의심 징후(Red Flags) 포착 및 내부 정화」<br>출처 상태: 기존 컬럼 설명 레이어</div>
+    </header>
+    <section class="question"><strong>독자가 답해야 할 질문</strong><p>담합의 의심 신호가 보였을 때, “설마”로 넘기지 않고 어떤 순서로 내부 정화에 들어가야 하는가?</p></section>
+    <section class="diagram-wrap" aria-label="담합 의심 징후에서 내부 정화까지의 대응 흐름">
+      <svg viewBox="0 0 1120 670" role="img" aria-labelledby="diagram-title diagram-desc">
+        <title id="diagram-title">담합 의심 징후 포착 및 내부 정화 대응 흐름</title>
+        <desc id="diagram-desc">입찰·가격·경쟁사 접촉의 이상 신호를 포착하면 법무팀 레이더를 가동하고, 내부 제보와 영업 데이터 스크리닝을 거쳐 징후가 확실한지 판단한다. 확실하면 경영진 보고와 자정 작용으로 이어지고, 불확실하면 기록·모니터링을 계속한다.</desc>
+        <defs>
+          <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#687972"/></marker>
+          <marker id="arrow-red" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#b64b3e"/></marker>
+        </defs>
+        <rect class="zone" x="28" y="22" width="1064" height="192" rx="6"/><text class="zone-title" x="52" y="51">01 · RED FLAGS — 이상 신호를 레이더에 올린다</text>
+        <rect class="node red" x="52" y="78" width="232" height="104" rx="7"/><text class="node-title" x="168" y="112" text-anchor="middle">이상 신호 포착</text><text class="node-sub" x="168" y="140" text-anchor="middle">특정 업체의 반복 낙찰</text><text class="node-sub" x="168" y="160" text-anchor="middle">동시 가격 인상 · 경쟁사 접촉</text>
+        <path class="edge redline" d="M284 130 H342"/><rect class="label-bg" x="292" y="107" width="43" height="23" rx="4"/><text class="edge-label" x="313" y="123" text-anchor="middle">발견</text>
+        <rect class="node red" x="342" y="78" width="232" height="104" rx="7"/><text class="node-title" x="458" y="112" text-anchor="middle">법무팀 레이더 가동</text><text class="node-sub" x="458" y="141" text-anchor="middle">“설마”로 넘기지 않기</text><text class="node-sub" x="458" y="161" text-anchor="middle">우연의 반복을 검토 대상으로</text>
+        <path class="edge redline" d="M574 130 H632"/><rect class="label-bg" x="581" y="107" width="44" height="23" rx="4"/><text class="edge-label" x="603" y="123" text-anchor="middle">가동</text>
+        <rect class="node" x="632" y="78" width="232" height="104" rx="7"/><text class="node-title" x="748" y="112" text-anchor="middle">제보·데이터 스크리닝</text><text class="node-sub" x="748" y="141" text-anchor="middle">내부 제보 시스템 활성화</text><text class="node-sub" x="748" y="161" text-anchor="middle">E-mail · Log 정기 점검</text>
+        <path class="edge" d="M864 130 H922"/><rect class="label-bg" x="871" y="107" width="44" height="23" rx="4"/><text class="edge-label" x="893" y="123" text-anchor="middle">확인</text>
+        <rect class="node" x="922" y="78" width="140" height="104" rx="7"/><text class="node-title" x="992" y="112" text-anchor="middle">부적절한</text><text class="node-title" x="992" y="137" text-anchor="middle">정보 교환?</text><text class="node-sub" x="992" y="162" text-anchor="middle">경쟁사 동향 명목</text>
+
+        <rect class="zone" x="28" y="250" width="1064" height="188" rx="6"/><text class="zone-title" x="52" y="279">02 · 판단 — 신호를 행동 경로로 분기한다</text>
+        <path class="edge" d="M992 182 V246 H560 V300"/><rect class="label-bg" x="764" y="223" width="67" height="23" rx="4"/><text class="edge-label" x="797" y="239" text-anchor="middle">검토 계속</text>
+        <rect class="node yellow" x="430" y="300" width="260" height="102" rx="7"/><text class="node-title" x="560" y="335" text-anchor="middle">담합 징후가 확실한가?</text><text class="node-sub" x="560" y="365" text-anchor="middle">기록·정황·데이터를 종합</text><text class="node-sub" x="560" y="385" text-anchor="middle">원문: “징후가 확실하다면”</text>
+        <path class="edge redline" d="M430 351 H256 V496"/><rect class="label-bg" x="295" y="328" width="47" height="23" rx="4"/><text class="edge-label" x="318" y="344" text-anchor="middle">확실</text>
+        <path class="edge dashed" d="M690 351 H864 V496"/><rect class="label-bg" x="733" y="328" width="63" height="23" rx="4"/><text class="edge-label" x="764" y="344" text-anchor="middle">불확실</text>
+
+        <rect class="zone" x="28" y="466" width="1064" height="180" rx="6"/><text class="zone-title" x="52" y="495">03 · 내부 정화 — 조기 대응으로 폭발을 막는다</text>
+        <rect class="node green" x="126" y="514" width="260" height="94" rx="7"/><text class="node-title" x="256" y="548" text-anchor="middle">경영진 보고</text><text class="node-sub" x="256" y="576" text-anchor="middle">주저하지 않고 상황 공유</text><text class="node-sub" x="256" y="596" text-anchor="middle">자정 작용에 착수</text>
+        <path class="edge redline" d="M386 561 H456"/><rect class="label-bg" x="396" y="538" width="50" height="23" rx="4"/><text class="edge-label" x="421" y="554" text-anchor="middle">조기 대응</text>
+        <rect class="node green" x="456" y="514" width="260" height="94" rx="7"/><text class="node-title" x="586" y="548" text-anchor="middle">자정 작용</text><text class="node-sub" x="586" y="576" text-anchor="middle">회사를 파멸로부터 보호</text><text class="node-sub" x="586" y="596" text-anchor="middle">리니언시 골든 타임 검토</text>
+        <rect class="node yellow" x="864" y="514" width="198" height="94" rx="7"/><text class="node-title" x="963" y="548" text-anchor="middle">관찰 지속</text><text class="node-sub" x="963" y="576" text-anchor="middle">징후를 묻어두지 않기</text><text class="node-sub" x="963" y="596" text-anchor="middle">데이터 감시 유지</text>
+      </svg>
+      <div class="legend"><span><i class="swatch red"></i>핵심 신호·즉시 가동</span><span><i class="swatch yellow"></i>판단·조건부 경로</span><span><i class="swatch green"></i>내부 정화·보호 조치</span><span>점선: 불확실 상태의 추적 경로</span></div>
+    </section>
+    <section class="notes">
+      <article class="card alert"><h2>이 도식의 핵심</h2><p>담합은 처음부터 명시적으로 드러나지 않는다. 경쟁사 동향 파악이라는 명목의 정보 교환이 가격·입찰 이야기로 넘어가는 순간을 포착하는 것이 법무팀의 역할이다.</p></article>
+      <article class="card trace"><h2>원문 추적</h2><p>주요 앵커: “특정 업체가 돌아가며 낙찰”, “동시에 같은 폭으로 가격 인상”, “경쟁사와의 접촉”, “내부 제보 시스템”, “E-mail, Log”, “경영진에게 보고”, “자정 작용”.</p></article>
+    </section>
+    <p class="disclaimer">이 도식은 해당 컬럼의 논리 구조를 보여주는 설명 레이어이며, 개별 사안의 법률자문이나 담합 성립 판단을 대체하지 않습니다.</p>
+    <p class="source">원문: C:\obsidian\지식관리\_WIKI_법률지식\55_컬럼\법무팀\법무팀일반컬럼\계약_컴플라이언스_예방\207_담합 의심 징후(Red Flags) 포착 및 내부 정화.md</p>
+  </main>
+</body>
+</html>
