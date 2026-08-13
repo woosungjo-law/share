@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%232c4a7c'/%3E%3C/svg%3E">
+<title>재산명시 · 재산조회 · 채무불이행자명부 — 채무자 압박의 3단계</title>
+<style>
+  :root {
+    --paper: #f7f8fa;
+    --surface: #ffffff;
+    --ink: #1b2432;
+    --muted: #5a6577;
+    --faint: #8a94a6;
+    --line: #d8dde4;
+    --line-strong: #b9c1cc;
+    --accent: #2c4a7c;
+    --accent-soft: #eaf0f7;
+    --accent-line: #9fb2cd;
+    --warn: #9a3e3e;
+    --warn-soft: #f9eeec;
+    --warn-line: #d8a3a0;
+    --ok: #2f6b4f;
+    --ok-soft: #ecf4ef;
+    --radius: 10px;
+    --measure: 46rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #14181f;
+      --surface: #1c222c;
+      --ink: #e8edf4;
+      --muted: #a9b3c2;
+      --faint: #7c879a;
+      --line: #303845;
+      --line-strong: #454f60;
+      --accent: #7fa0d0;
+      --accent-soft: #1d2836;
+      --accent-line: #4c6385;
+      --warn: #d88a86;
+      --warn-soft: #2c1f20;
+      --warn-line: #6d4645;
+      --ok: #7fc4a1;
+      --ok-soft: #1c2a23;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Noto Sans KR", "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+    line-height: 1.65;
+    font-size: 16px;
+  }
+  .wrap { max-width: var(--measure); margin: 0 auto; padding: 2rem 1.25rem 3.5rem; }
+
+  /* ---- header ---- */
+  .masthead { border-bottom: 1px solid var(--line); padding-bottom: 1.5rem; margin-bottom: 2rem; }
+  .eyebrow {
+    font-size: .78rem; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--accent); font-weight: 700; margin: 0 0 .6rem;
+  }
+  h1 {
+    font-size: clamp(1.45rem, 3.4vw, 1.9rem); line-height: 1.3; margin: 0 0 1rem;
+    font-weight: 800; letter-spacing: -.02em; text-wrap: balance;
+  }
+  .lede { margin: 0; color: var(--muted); max-width: 40rem; }
+
+  .qa {
+    display: grid; gap: .75rem; margin-top: 1.4rem;
+  }
+  .qa-box { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem 1.1rem; }
+  .qa-box .k { font-size: .72rem; letter-spacing: .12em; color: var(--faint); font-weight: 700; text-transform: uppercase; margin-bottom: .25rem; }
+  .qa-box .q { font-weight: 800; font-size: 1.05rem; }
+  .qa-box .a { color: var(--muted); margin-top: .35rem; }
+
+  /* ---- diagram ---- */
+  .diagram-region { overflow-x: auto; }
+  .flow { list-style: none; margin: 0; padding: 0; min-width: 0; }
+  .flow-step { position: relative; padding-left: 4.25rem; }
+  .flow-step + .flow-step { margin-top: 0; }
+
+  .rail {
+    position: absolute; left: 1.5rem; top: 0; bottom: 0; width: 2px;
+    background: var(--line);
+  }
+  .rail::after {
+    content: ""; position: absolute; left: -5px; top: 0; width: 12px; height: 12px;
+    border-radius: 50%; background: var(--surface); border: 3px solid var(--accent);
+  }
+  .flow-step:last-child .rail { background: transparent; }
+
+  .step { position: relative; padding-bottom: 1.4rem; }
+  .card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 1.1rem 1.25rem;
+  }
+  .card.accent { border-color: var(--accent-line); background: var(--accent-soft); }
+  .card.warn { border-color: var(--warn-line); background: var(--warn-soft); }
+  .card.ok { border-color: #9dbfae; background: var(--ok-soft); }
+
+  .step-tag {
+    display: inline-block; font-size: .7rem; font-weight: 700; letter-spacing: .08em;
+    color: var(--accent); text-transform: uppercase; margin: 0 0 .35rem;
+  }
+  .card.warn .step-tag { color: var(--warn); }
+  .card.ok .step-tag { color: var(--ok); }
+
+  .step-title { font-size: 1.08rem; font-weight: 800; margin: 0 0 .15rem; }
+  .step-law { font-size: .8rem; color: var(--faint); margin: 0 0 .6rem; }
+  .step-desc { margin: 0; color: var(--ink); }
+  .step-desc .hl { font-weight: 700; }
+
+  .connector {
+    display: flex; align-items: center; gap: .6rem;
+    color: var(--muted); font-size: .82rem; padding: .35rem 0 .35rem .25rem;
+  }
+  .connector::before {
+    content: ""; flex: 0 0 auto; width: 22px; height: 14px;
+    background:
+      linear-gradient(var(--accent), var(--accent)) center/2px 100% no-repeat,
+      conic-gradient(from 270deg at 50% 100%, transparent 45deg, var(--accent) 0 315deg, transparent 0) center bottom/10px 8px no-repeat;
+  }
+  .connector strong { color: var(--ink); font-weight: 700; }
+
+  .branches { margin-top: .9rem; display: grid; gap: .5rem; }
+  .branch {
+    display: grid; grid-template-columns: auto 1fr; gap: .6rem; align-items: start;
+    border: 1px solid var(--line); border-radius: 8px; padding: .55rem .75rem; font-size: .88rem;
+    background: var(--paper);
+  }
+  .branch .mark {
+    font-size: .66rem; font-weight: 800; letter-spacing: .04em; line-height: 1.5;
+    padding: .1rem .45rem; border-radius: 4px; white-space: nowrap;
+    background: var(--accent-soft); color: var(--accent); border: 1px solid var(--accent-line);
+  }
+  .branch.warn { border-color: var(--warn-line); background: var(--warn-soft); }
+  .branch.warn .mark { background: var(--warn-soft); color: var(--warn); border-color: var(--warn-line); }
+  .branch.ok { border-color: #9dbfae; background: var(--ok-soft); }
+  .branch.ok .mark { background: var(--ok-soft); color: var(--ok); border-color: #9dbfae; }
+  .branch .b { color: var(--ink); }
+
+  /* ---- legend / source ---- */
+  .legend {
+    margin-top: 2.2rem; border: 1px solid var(--line); border-radius: var(--radius);
+    background: var(--surface); padding: 1rem 1.25rem;
+  }
+  .legend h2, .source h2, .note h2 {
+    font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--faint);
+    font-weight: 800; margin: 0 0 .7rem;
+  }
+  .legend ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .45rem; font-size: .88rem; }
+  .legend li { display: grid; grid-template-columns: auto 1fr; gap: .65rem; align-items: start; }
+  .legend .swatch { width: 14px; height: 14px; border-radius: 4px; border: 1px solid var(--line-strong); margin-top: .22rem; }
+  .swatch.accent { background: var(--accent-soft); border-color: var(--accent-line); }
+  .swatch.warn { background: var(--warn-soft); border-color: var(--warn-line); }
+  .swatch.ok { background: var(--ok-soft); border-color: #9dbfae; }
+  .legend .term { font-weight: 700; }
+
+  .source, .note { margin-top: 1.4rem; font-size: .85rem; color: var(--muted); }
+  .source ul { margin: 0; padding-left: 1.1rem; display: grid; gap: .25rem; }
+  .source code { font-family: ui-monospace, Consolas, "Malgun Gothic", monospace; font-size: .8rem; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: .05rem .35rem; }
+  .note {
+    border-left: 3px solid var(--accent); background: var(--surface);
+    border: 1px solid var(--line); border-left: 3px solid var(--accent);
+    border-radius: 8px; padding: .9rem 1.1rem;
+  }
+  .note p { margin: 0; }
+
+  .caption {
+    font-size: .78rem; color: var(--faint); margin: .6rem 0 0;
+  }
+
+  @media (max-width: 30rem) {
+    .wrap { padding: 1.25rem 1rem 2.5rem; }
+    .flow-step { padding-left: 2.75rem; }
+    .rail { left: .95rem; }
+    .step-title { font-size: 1rem; }
+    .branch { font-size: .84rem; }
+  }
+
+  @media print {
+    :root { --paper: #ffffff; --surface: #ffffff; --ink: #111; --muted: #333; --faint: #555; --line: #ccc; --line-strong: #999; --accent: #2c4a7c; --accent-soft: #eef2f7; --accent-line: #9fb2cd; --warn: #9a3e3e; --warn-soft: #f6eeee; --warn-line: #d8a3a0; --ok: #2f6b4f; --ok-soft: #eef5f0; }
+    body { background: #fff; font-size: 11.5pt; }
+    .wrap { max-width: none; padding: 0; }
+    .diagram-region { overflow: visible; }
+    .card, .qa-box, .legend, .note, .branch { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <p class="eyebrow">강제집행 · 채권 회수</p>
+    <h1>승소 판결을 받았는데 재산을 숨기는 채무자 — 압박의 3단계</h1>
+    <p class="lede">재산명시신청, 재산조회신청, 채무불이행자명부 등재를 순차·보완적으로 활용해 숨겨진 재산을 찾아내고 변제를 압박하는 흐름을 정리합니다.</p>
+
+    <div class="qa">
+      <div class="qa-box">
+        <div class="k">독자 질문</div>
+        <div class="q">승소 판결을 받았는데 채무자가 재산을 숨기고 회피한다면, 어떤 절차를 어떤 순서로 써서 재산을 찾고 압박하는가?</div>
+      </div>
+      <div class="qa-box">
+        <div class="k">결론 요약</div>
+        <div class="a">재산명시로 자발적 협조를 유도하고, 실패하면 재산조회로 숨긴 재산을 찾아내며, 마지막에 채무불이행자명부 등재로 심리적 압박을 가한다.</div>
+      </div>
+    </div>
+  </header>
+
+  <figure class="diagram-region" aria-labelledby="fig-title" aria-describedby="fig-desc">
+    <h2 id="fig-title" class="sr-only" style="position:absolute;left:-9999px;">채무자 압박 3단계 흐름도</h2>
+    <p id="fig-desc" style="position:absolute;left:-9999px;">승소 판결로 집행권원을 확보한 뒤, 1단계 재산명시신청, 2단계 재산조회신청, 3단계 채무불이행자명부 등재를 순차적으로 진행하여 재산을 파악하고 심리적 압박으로 채권을 회수하는 과정.</p>
+
+    <ol class="flow" role="list" aria-label="채권 회수 3단계 절차">
+
+      <!-- 시작 -->
+      <li class="flow-step" role="listitem">
+        <div class="rail" aria-hidden="true"></div>
+        <div class="step">
+          <div class="card">
+            <span class="step-tag">출발점</span>
+            <h3 class="step-title">승소 판결 · 집행권원 확보</h3>
+            <p class="step-law">판결 등 집행권원을 가진 채권자</p>
+            <p class="step-desc">판결문은 <span class="hl">종이 한 장</span>에 불과합니다. 실제 회수를 위해서는 <span class="hl">재산을 찾고 압박하는 적극적 집행 절차</span>가 필요합니다.</p>
+          </div>
+        </div>
+      </li>
+
+      <!-- 1단계 -->
+      <li class="flow-step" role="listitem">
+        <div class="rail" aria-hidden="true"></div>
+        <div class="step">
+          <div class="connector"><strong>1단계</strong> 먼저 채무자의 자발적 협조를 유도한다</div>
+          <div class="card accent">
+            <span class="step-tag">1단계 · 협조 유도</span>
+            <h3 class="step-title">재산명시신청</h3>
+            <p class="step-law">민사집행법 제61조</p>
+            <p class="step-desc">채무자가 법원에 출석하여 <span class="hl">자신의 재산 목록을 작성·제출하고 진실함을 선서</span>하게 하는 제도입니다.</p>
+            <div class="branches">
+              <div class="branch ok">
+                <span class="mark">성공</span>
+                <span class="b">정상 출석하여 목록을 제출하면, 그 재산에 대한 강제집행으로 이어집니다.</span>
+              </div>
+              <div class="branch warn">
+                <span class="mark">한계</span>
+                <span class="b"><strong>주소 불명</strong>이면 송달 자체가 불가능하여 절차를 시작조차 못 합니다.</span>
+              </div>
+              <div class="branch warn">
+                <span class="mark">한계</span>
+                <span class="b">고의로 재산을 <strong>은닉하거나 허위 목록</strong>을 작성하면 이를 밝혀내기 어렵습니다.</span>
+              </div>
+              <div class="branch warn">
+                <span class="mark">제재</span>
+                <span class="b">정당한 사유 없이 <strong>불출석하거나 제출을 거부</strong>하면 <strong>감치(구금)</strong>에 처해질 수 있습니다.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <!-- 2단계 -->
+      <li class="flow-step" role="listitem">
+        <div class="rail" aria-hidden="true"></div>
+        <div class="step">
+          <div class="connector"><strong>명시가 실패하면</strong> 국가기관이 대신 재산을 탐색한다</div>
+          <div class="card accent">
+            <span class="step-tag">2단계 · 재산 탐색</span>
+            <h3 class="step-title">재산조회신청</h3>
+            <p class="step-law">민사집행법 제74조</p>
+            <p class="step-desc">주소 불명 · 불출석 · 거짓 목록 등으로 명시가 실패한 경우, <span class="hl">법원이 직접 국토교통부 · 금융기관 · 국민연금공단</span> 등에 채무자 명의의 재산(부동산 · 예금 · 주식 등)을 공식 조회합니다.</p>
+            <div class="branches">
+              <div class="branch ok">
+                <span class="mark">효과</span>
+                <span class="b">채무자가 숨기려 해도 <strong>국가 시스템에 등록된 재산은 대부분 드러납니다.</strong></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <!-- 3단계 -->
+      <li class="flow-step" role="listitem">
+        <div class="rail" aria-hidden="true"></div>
+        <div class="step">
+          <div class="connector"><strong>3단계</strong> 직접 탐색이 아닌 심리적 압박을 가한다</div>
+          <div class="card warn">
+            <span class="step-tag">3단계 · 심리적 압박</span>
+            <h3 class="step-title">채무불이행자명부 등재</h3>
+            <p class="step-law">민사집행법 제70조</p>
+            <p class="step-desc"><span class="hl">확정판결 후 6개월이 지나도록 변제하지 않거나</span>, 재산명시절차에서 <span class="hl">불성실한 태도</span>를 보인 채무자를 법원의 블랙리스트에 올리는 제도입니다.</p>
+            <div class="branches">
+              <div class="branch warn">
+                <span class="mark">효과</span>
+                <span class="b">금융기관에 정보가 공유되어 <strong>신용카드 발급 · 대출 등 금융거래에 제약</strong>이 생기고, 취업 등 사회생활에도 불이익이 따릅니다.</span>
+              </div>
+              <div class="branch ok">
+                <span class="mark">목적</span>
+                <span class="b">사회·경제적 불이익이 두려워 <strong>채무자가 자진해서 빚을 갚도록 압박</strong>하는 효과가 큽니다.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <!-- 결과 -->
+      <li class="flow-step" role="listitem">
+        <div class="rail" aria-hidden="true"></div>
+        <div class="step">
+          <div class="card ok">
+            <span class="step-tag">결과</span>
+            <h3 class="step-title">재산 파악 + 심리적 압박 → 채권 회수</h3>
+            <p class="step-desc">세 제도를 <span class="hl">상호 보완적으로</span> 활용할 때 효과가 가장 큽니다.</p>
+          </div>
+        </div>
+      </li>
+
+    </ol>
+    <p class="caption">도식 1 — 재산명시 · 재산조회 · 채무불이행자명부를 활용한 채무자 압박 흐름</p>
+  </figure>
+
+  <section class="legend" aria-labelledby="legend-title">
+    <h2 id="legend-title">범례 — 상태 구분</h2>
+    <ul>
+      <li><span class="swatch accent" aria-hidden="true"></span><span><span class="term">절차 단계</span> — 순차적으로 밟는 법적 절차(재산명시 · 재산조회)</span></li>
+      <li><span class="swatch warn" aria-hidden="true"></span><span><span class="term">제재 · 한계</span> — 감치(구금) 같은 불이익과, 송달 불가 · 적발 곤란 같은 한계</span></li>
+      <li><span class="swatch ok" aria-hidden="true"></span><span><span class="term">성공 · 목적</span> — 재산 파악과 자진 변제 압박 등 회수로 이어지는 결과</span></li>
+    </ul>
+  </section>
+
+  <section class="source" aria-labelledby="source-title">
+    <h2 id="source-title">원문 앵커 · 출처 상태</h2>
+    <ul>
+      <li>원문: <code>_WIKI_법률지식/55_컬럼/민사소송/강제집행_채권회수/재산명시재산조회_채무자압박기술.md</code></li>
+      <li>근거 조문: 민사집행법 제61조(재산명시신청) · 제74조(재산조회) · 제70조(채무불이행자명부 등재신청)</li>
+      <li>원문 인용 판례·결정: 대법원 2000다32161 · 2011다78606 · 2021마6371, 헌재 2008헌마663, 울산지법 2016라64 (도식에서 별도 확정하지 않음)</li>
+      <li>출처 상태: <strong>원문 설명 레이어</strong> — 새 조문·판례·통계를 추가하지 않았습니다.</li>
+    </ul>
+  </section>
+
+  <aside class="note">
+    <p>이 도식은 해당 컬럼 원문을 재구성한 <strong>설명 레이어</strong>이며, 개별 사안의 법률자문을 대체하지 않습니다. 적용 여부는 사실관계에 따라 달라질 수 있으므로 구체적 사안은 변호사와 상의하세요.</p>
+  </aside>
+
+</div>
+</body>
+</html>
