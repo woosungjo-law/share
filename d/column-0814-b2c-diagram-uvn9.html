@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="의료법 제24조의2에 근거한 의사 설명의무가 자기결정권 관련 설명의무와 지도설명의무 두 유형으로 나뉘며, 위반 시에는 위자료와 전손해라는 입증 요건이 다른 이중 배상 구조로 연결되는 위계를 보여주는 도식.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2016'%3E%3Crect%20width='16'%20height='16'%20rx='3'%20fill='%23a64b3c'/%3E%3C/svg%3E">
+  <title>의사의 설명의무 위반, 손해배상의 이중 구조</title>
+  <style>
+    /* === 하우스 스타일 동결본 v2.0 — 이 블록은 수정하지 않는다 === */
+    :root {
+      color-scheme: light;
+      --paper: #f7f6f2;
+      --paper-2: #efeee9;
+      --card: #ffffff;
+      --ink: #172235;
+      --muted: #5d6877;
+      --soft: #8792a0;
+      --rule: rgba(23, 34, 53, .16);
+      --rule-strong: #aeb6bf;
+      --accent: #a64b3c;
+      --accent-tint: #f4e5e1;
+      --blue: #355f86;
+      --blue-tint: #e6eef5;
+      --caution: #866b32;
+      --caution-tint: #f4eedc;
+      --shadow: 0 16px 38px rgba(23, 34, 53, .08);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --paper: #172235;
+        --paper-2: #202d40;
+        --card: #1d2a3d;
+        --ink: #f3f1eb;
+        --muted: #c3ccd7;
+        --soft: #a1adbb;
+        --rule: rgba(243, 241, 235, .18);
+        --rule-strong: #52647a;
+        --accent: #e18b78;
+        --accent-tint: rgba(166, 75, 60, .28);
+        --blue: #9fc5e3;
+        --blue-tint: rgba(53, 95, 134, .38);
+        --caution: #e2c778;
+        --caution-tint: rgba(134, 107, 50, .34);
+        --shadow: 0 16px 38px rgba(0, 0, 0, .22);
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { background: var(--paper); }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Noto Sans KR", Pretendard, "Malgun Gothic", sans-serif;
+      line-height: 1.6;
+    }
+    main { width: min(1180px, calc(100% - 40px)); margin: 0 auto; padding: 56px 0 64px; }
+    .eyebrow { margin: 0 0 12px; color: var(--accent); font-size: 12px; font-weight: 800; letter-spacing: .14em; }
+    h1 {
+      max-width: 780px; margin: 0;
+      font-family: "Noto Serif KR", "Batang", Georgia, serif;
+      font-size: clamp(30px, 5vw, 52px); font-weight: 700;
+      line-height: 1.16; letter-spacing: -.045em; text-wrap: balance;
+    }
+    .dek { max-width: 760px; margin: 20px 0 0; color: var(--muted); font-size: 17px; line-height: 1.75; }
+    .notice {
+      display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; padding: 8px 12px;
+      border: 1px solid var(--rule); border-radius: 6px; color: var(--muted); font-size: 13px;
+    }
+    .notice::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex: none; }
+
+    /* 다이어그램 영역 안에서만 가로 스크롤을 허용한다 */
+    .diagram-shell {
+      margin-top: 42px; padding: 20px 20px 10px;
+      border: 1px solid var(--rule); border-radius: 10px;
+      background: var(--paper-2); box-shadow: var(--shadow);
+      overflow-x: auto; max-width: 100%;
+    }
+    figure { margin: 0; min-width: 1040px; }
+    svg.diagram { display: block; width: 1120px; height: auto; max-width: none; }
+
+    .svg-title { font: 700 23px/1.2 "Noto Sans KR", Pretendard, sans-serif; fill: var(--ink); }
+    .svg-kicker { font: 800 12px/1 "Noto Sans KR", Pretendard, sans-serif; letter-spacing: .12em; fill: var(--accent); }
+    .svg-caption { font: 500 13px/1.45 "Noto Sans KR", Pretendard, sans-serif; fill: var(--muted); }
+    .edge { fill: none; stroke: var(--soft); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+    .edge-primary { stroke: var(--accent); stroke-width: 2.8; }
+    .edge-caution { stroke: var(--caution); stroke-width: 2.4; }
+    .edge-blue { stroke: var(--blue); stroke-width: 2.4; }
+    .edge-dashed { stroke-dasharray: 7 6; }
+    .edge-label-bg { fill: var(--paper-2); stroke: var(--rule); stroke-width: 1; }
+    .edge-label { font: 800 12px/1 "Noto Sans KR", Pretendard, sans-serif; fill: var(--muted); }
+    .edge-label-primary { fill: var(--accent); }
+    .node { fill: var(--card); stroke: var(--rule-strong); stroke-width: 1.5; }
+    .node-primary { fill: var(--accent-tint); stroke: var(--accent); stroke-width: 2; }
+    .node-caution { fill: var(--caution-tint); stroke: var(--caution); stroke-width: 1.8; }
+    .node-blue { fill: var(--blue-tint); stroke: var(--blue); stroke-width: 1.8; }
+    .node-tag { font: 800 11px/1 "Noto Sans KR", Pretendard, sans-serif; letter-spacing: .08em; fill: var(--soft); }
+    .node-tag-primary { fill: var(--accent); }
+    .node-tag-caution { fill: var(--caution); }
+    .node-tag-blue { fill: var(--blue); }
+    .node-name { font: 800 16px/1.35 "Noto Sans KR", Pretendard, sans-serif; fill: var(--ink); }
+    .node-sub { font: 500 12.5px/1.45 "Noto Sans KR", Pretendard, sans-serif; fill: var(--muted); }
+    .legend-label { font: 700 11px/1 "Noto Sans KR", Pretendard, sans-serif; fill: var(--muted); }
+
+    .section-head { margin: 50px 0 18px; }
+    .section-head h2 { margin: 0; font-size: 23px; letter-spacing: -.025em; }
+    .section-head p { margin: 6px 0 0; color: var(--muted); }
+    .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .card { min-height: 190px; padding: 22px; border: 1px solid var(--rule); border-radius: 8px; background: var(--card); }
+    .card-wide { grid-column: 1 / -1; min-height: auto; }
+    .card.tone-accent { border-top: 3px solid var(--accent); }
+    .card.tone-blue { border-top: 3px solid var(--blue); }
+    .card.tone-caution { border-top: 3px solid var(--caution); }
+    .card.tone-neutral { border-top: 3px solid var(--rule-strong); }
+    .card h3 { margin: 0 0 12px; font-size: 17px; }
+    .card ul { margin: 0; padding-left: 19px; color: var(--muted); font-size: 14px; }
+    .card li + li { margin-top: 7px; }
+    .clause { margin-top: 12px; padding: 12px 14px; border-radius: 6px; font-size: 13.5px; line-height: 1.55; }
+    .clause-danger { background: var(--accent-tint); border-left: 3px solid var(--accent); }
+    .clause-safe { background: var(--blue-tint); border-left: 3px solid var(--blue); }
+    .clause-neutral { background: var(--paper-2); border-left: 3px solid var(--rule-strong); }
+    .clause .c-label { display: block; margin-bottom: 4px; font-size: 11px; font-weight: 800; letter-spacing: .08em; color: var(--muted); }
+    code { font-family: "Cascadia Mono", Consolas, monospace; font-size: .92em; word-break: break-word; }
+    .reading-note {
+      margin-top: 28px; padding: 18px 20px;
+      border-left: 4px solid var(--accent); background: var(--accent-tint); color: var(--ink);
+    }
+    .reading-note strong { display: block; margin-bottom: 4px; }
+    details { margin-top: 28px; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+    summary { cursor: pointer; padding: 15px 0; font-weight: 800; }
+    details p { max-width: 800px; margin: 0 0 18px; color: var(--muted); font-size: 14px; }
+    footer { margin-top: 42px; padding-top: 16px; border-top: 1px solid var(--rule); color: var(--soft); font-size: 12px; }
+
+    @media (max-width: 760px) {
+      main { width: min(100% - 28px, 1180px); padding-top: 34px; }
+      .dek { font-size: 15px; }
+      .diagram-shell { margin-top: 28px; padding: 12px 12px 4px; }
+      .cards { grid-template-columns: 1fr; }
+      .card { min-height: auto; }
+    }
+    @media print {
+      :root { color-scheme: light; }
+      body { background: #fff; }
+      main { width: 100%; padding: 14mm 10mm; }
+      .diagram-shell { box-shadow: none; break-inside: avoid; overflow: visible; }
+      figure { min-width: 0; }
+      svg.diagram { width: 100%; }
+      .cards { break-inside: avoid; }
+      details { display: none; }
+      footer { margin-top: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">민사법 · 불법행위 · 의사 설명의무</p>
+      <h1>의사의 설명의무 위반,<br>손해배상의 이중 구조</h1>
+      <p class="dek">핵심 질문은 “설명을 제대로 못 받았을 때, 어떤 손해를 배상받을 수 있는가”입니다. 위자료는 설명 결여만 입증해도 청구할 수 있지만, 전체 손해는 ‘설명했더라면 그 중대한 결과가 없었을’ 상당인과관계까지 입증해야 하는 높은 문턱이다.</p>
+      <div class="notice">설명용 도식 · 원문 인용(의료법 §24조의2, 대법원 2014다6749·2011다29666·2020다218925) 기반, 별도 법률자문 아님</div>
+    </header>
+
+    <section class="diagram-shell" aria-label="의사 설명의무 위반과 손해배상의 이중 구조">
+      <figure>
+        <svg class="diagram" viewBox="0 0 1120 1054" role="img" aria-labelledby="column0814b2cdiagram-t column0814b2cdiagram-d">
+          <title id="column0814b2cdiagram-t">의사 설명의무 위반과 손해배상의 이중 구조</title>
+          <desc id="column0814b2cdiagram-d">의료법 제24조의2에 근거한 의사 설명의무가 자기결정권 관련 설명의무와 지도설명의무 두 유형으로 나뉘며, 위반 시에는 위자료와 전손해라는 입증 요건이 다른 이중 배상 구조로 연결되는 위계를 보여주는 도식.</desc>
+          <defs>
+            <marker id="column0814b2cdiagram-ar-neutral" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M 0 0 L 9 3.5 L 0 7 Z" fill="var(--soft)" /></marker>
+            <marker id="column0814b2cdiagram-ar-primary" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M 0 0 L 9 3.5 L 0 7 Z" fill="var(--accent)" /></marker>
+            <marker id="column0814b2cdiagram-ar-blue" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M 0 0 L 9 3.5 L 0 7 Z" fill="var(--blue)" /></marker>
+            <marker id="column0814b2cdiagram-ar-caution" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M 0 0 L 9 3.5 L 0 7 Z" fill="var(--caution)" /></marker>
+          </defs>
+          <text x="40" y="24" class="svg-kicker">INFORMED CONSENT &amp; DAMAGES</text>
+          <text x="40" y="46" class="svg-title">의사 설명의무 위반과 손해배상의 이중 구조</text>
+          <text x="40" y="72" class="svg-caption">설명의무는 두 유형으로 나뉘고, 위반 시 배상은 입증 요건이 다른 두 층으로 작동한다.</text>
+          <g class="edges">
+            <path d="M 560 212 V 241 H 294 V 270" class="edge edge-primary" marker-end="url(#column0814b2cdiagram-ar-primary)" data-edge="n1->n2" />
+            <path d="M 560 212 V 241 H 826 V 270" class="edge edge-primary" marker-end="url(#column0814b2cdiagram-ar-primary)" data-edge="n1->n3" />
+            <path d="M 294 368 V 397 H 560 V 426" class="edge edge-primary" marker-end="url(#column0814b2cdiagram-ar-primary)" data-edge="n2->n4" />
+            <path d="M 826 368 V 397 H 560 V 426" class="edge edge-primary" marker-end="url(#column0814b2cdiagram-ar-primary)" data-edge="n3->n4" />
+            <path d="M 560 524 V 553 H 294 V 582" class="edge edge-primary" marker-end="url(#column0814b2cdiagram-ar-primary)" data-edge="n4->n5" />
+            <path d="M 560 524 V 553 H 826 V 582" class="edge edge-caution" marker-end="url(#column0814b2cdiagram-ar-caution)" data-edge="n4->n6" />
+            <path d="M 560 212 V 738" class="edge" marker-end="url(#column0814b2cdiagram-ar-neutral)" data-edge="n1->n7" />
+            <path d="M 560 212 V 553 H 294 V 894" class="edge" marker-end="url(#column0814b2cdiagram-ar-neutral)" data-edge="n1->n8" />
+            <path d="M 560 524 V 709 H 826 V 894" class="edge edge-blue" marker-end="url(#column0814b2cdiagram-ar-blue)" data-edge="n4->n9" />
+          </g>
+          <g class="edge-labels">
+            <rect x="655.2" y="542" width="75.7" height="22" rx="4" class="edge-label-bg" />
+            <text x="693" y="557" text-anchor="middle" class="edge-label" data-edge-label="n4->n6">높은 문턱</text>
+            <rect x="669.5" y="698" width="47" height="22" rx="4" class="edge-label-bg" />
+            <text x="693" y="713" text-anchor="middle" class="edge-label" data-edge-label="n4->n9">입증</text>
+          </g>
+          <g data-node="n1" data-anchor="§1 설명의무의 법적 근거">
+            <rect x="40" y="114" width="1040" height="98" rx="8" class="node-primary" data-node-rect="n1" />
+            <text x="60" y="140" class="node-tag node-tag-primary" data-node-text="n1">01 · 법적 근거</text>
+            <text x="560" y="176" text-anchor="middle" class="node-name" data-node-text="n1">설명의무 법적 근거</text>
+            <text x="560" y="200" text-anchor="middle" class="node-sub" data-node-text="n1">의료법 제24조의2 · 진료의 모든 단계에서 발생</text>
+          </g>
+          <g data-node="n2" data-anchor="§2 자기결정권 관련 설명의무 vs 지도설명의무">
+            <rect x="40" y="270" width="508" height="98" rx="8" class="node-blue" data-node-rect="n2" />
+            <text x="60" y="296" class="node-tag node-tag-blue" data-node-text="n2">유형 1</text>
+            <text x="294" y="332" text-anchor="middle" class="node-name" data-node-text="n2">자기결정권 설명의무</text>
+            <text x="294" y="356" text-anchor="middle" class="node-sub" data-node-text="n2">침습적 행위·나쁜 결과 개연성에서 환자 선택 (대법원 2014다6749)</text>
+          </g>
+          <g data-node="n3" data-anchor="§2 자기결정권 관련 설명의무 vs 지도설명의무">
+            <rect x="572" y="270" width="508" height="98" rx="8" class="node" data-node-rect="n3" />
+            <text x="592" y="296" class="node-tag" data-node-text="n3">유형 2</text>
+            <text x="826" y="332" text-anchor="middle" class="node-name" data-node-text="n3">지도설명의무</text>
+            <text x="826" y="356" text-anchor="middle" class="node-sub" data-node-text="n3">요양방법·악화징후·대처방법으로 신체손해 방지</text>
+          </g>
+          <g data-node="n4" data-anchor="§3 설명의무 위반의 손해배상 구조">
+            <rect x="40" y="426" width="1040" height="98" rx="8" class="node-primary" data-node-rect="n4" />
+            <text x="60" y="452" class="node-tag node-tag-primary" data-node-text="n4">02 · 위반 시 책임</text>
+            <text x="560" y="488" text-anchor="middle" class="node-name" data-node-text="n4">위반 시 배상 이중구조</text>
+            <text x="560" y="512" text-anchor="middle" class="node-sub" data-node-text="n4">설명의무 위반 → 위자료와 전손해, 서로 다른 입증 구조</text>
+          </g>
+          <g data-node="n5" data-anchor="§3 설명의무 위반의 손해배상 구조">
+            <rect x="40" y="582" width="508" height="98" rx="8" class="node-blue" data-node-rect="n5" />
+            <text x="60" y="608" class="node-tag node-tag-blue" data-node-text="n5">층 1 · 문턱 낮음</text>
+            <text x="294" y="644" text-anchor="middle" class="node-name" data-node-text="n5">위자료</text>
+            <text x="294" y="668" text-anchor="middle" class="node-sub" data-node-text="n5">설명 결여만 입증 → 청구 가능 (대법원 2011다29666)</text>
+          </g>
+          <g data-node="n6" data-anchor="§3 설명의무 위반의 손해배상 구조">
+            <rect x="572" y="582" width="508" height="98" rx="8" class="node-caution" data-node-rect="n6" />
+            <text x="592" y="608" class="node-tag node-tag-caution" data-node-text="n6">층 2 · 문턱 높음</text>
+            <text x="826" y="644" text-anchor="middle" class="node-name" data-node-text="n6">전손해</text>
+            <text x="826" y="668" text-anchor="middle" class="node-sub" data-node-text="n6">상당인과관계까지 입증 필요 → 치료비·상실수익 배상 문턱 높음</text>
+          </g>
+          <g data-node="n7" data-anchor="§4 설명의 범위 — 대안치료·중대 위험·약물변경">
+            <rect x="40" y="738" width="1040" height="98" rx="8" class="node" data-node-rect="n7" />
+            <text x="60" y="764" class="node-tag" data-node-text="n7">03 · 설명 범위</text>
+            <text x="560" y="800" text-anchor="middle" class="node-name" data-node-text="n7">설명 범위 (동의서 초과)</text>
+            <text x="560" y="824" text-anchor="middle" class="node-sub" data-node-text="n7">대안치료 비교·중대 위험·필수 약물변경까지 포함</text>
+          </g>
+          <g data-node="n8" data-anchor="§5 미성년자 환자의 설명의무">
+            <rect x="40" y="894" width="508" height="98" rx="8" class="node" data-node-rect="n8" />
+            <text x="60" y="920" class="node-tag" data-node-text="n8">04 · 예외</text>
+            <text x="294" y="956" text-anchor="middle" class="node-name" data-node-text="n8">미성년자 특례</text>
+            <text x="294" y="980" text-anchor="middle" class="node-sub" data-node-text="n8">친권자 통한 설명이 환자 전달되면 이행 봄 (대법원 2020다218925)</text>
+          </g>
+          <g data-node="n9" data-anchor="§6 실무에서 가장 중요한 것 — 기록">
+            <rect x="572" y="894" width="508" height="98" rx="8" class="node-blue" data-node-rect="n9" />
+            <text x="592" y="920" class="node-tag node-tag-blue" data-node-text="n9">05 · 실무 핵심</text>
+            <text x="826" y="956" text-anchor="middle" class="node-name" data-node-text="n9">실무 핵심 = 기록</text>
+            <text x="826" y="980" text-anchor="middle" class="node-sub" data-node-text="n9">구두 설명만으론 입증 어려움 → 문서화가 분쟁 예방 핵심</text>
+          </g>
+          <line x1="40" y1="1016" x2="1080" y2="1016" stroke="var(--rule)" stroke-width="1" />
+            <circle cx="46" cy="1036" r="5" fill="var(--accent)" />
+            <text x="60" y="1040" class="legend-label">핵심 구조 (법적 근거 · 배상 이중구조)</text>
+            <circle cx="297.9" cy="1036" r="5" fill="var(--blue)" />
+            <text x="311.9" y="1040" class="legend-label">유형·실무 대안 (자기결정권·위자료·기록)</text>
+            <circle cx="571.7" cy="1036" r="5" fill="var(--caution)" />
+            <text x="585.7" y="1040" class="legend-label">높은 입증 문턱 (전손해)</text>
+        </svg>
+      </figure>
+    </section>
+
+    <section aria-labelledby="detail-heading">
+      <div class="section-head">
+        <h2 id="detail-heading">실무 포인트: 설명의무를 둘러싼 쟁점 3가지</h2>
+        <p>유형과 배상구조를 넘어, 실무에서 자주 다투어지는 범위·주체·입증 문제를 정리했습니다.</p>
+      </div>
+      <div class="cards">
+        <article class="card tone-blue">
+          <h3>설명 범위는 동의서 그 이상</h3>
+          <ul>
+            <li>대체 치료방법이 존재하고 실질적 선택 가능성이 있으면 장단점·위험 비교 설명</li>
+            <li>수술에 필수적으로 수반되는 중대 의학적 변동(항혈소판제 중단 등 중요 약물 변경) 포함</li>
+            <li>설명 범위는 수술 동의서 기재사항에 한정되지 않음</li>
+          </ul>
+        </article>
+        <article class="card tone-neutral">
+          <h3>미성년자도 설명의무 대상</h3>
+          <ul>
+            <li>미성년자 환자에게도 의사에게 설명의무 있음 (대법원 2020다218925)</li>
+            <li>친권자를 통한 설명이 환자에게 전달되었다면 이행된 것으로 봄</li>
+            <li>친권자와 환자 본인 모두를 고려한 이중 구조로 이해</li>
+          </ul>
+        </article>
+        <article class="card tone-caution">
+          <h3>기록이 승부를 가른다</h3>
+          <ul>
+            <li>구두 설명만으로는 분쟁 시 입증이 어려움</li>
+            <li>설명 내용·일시·환자의 질문까지 문서화하는 것이 분쟁 예방의 핵심</li>
+            <li>의료기관은 표준화된 설명 동의서와 기록 절차를 갖추어야 함</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <div class="reading-note">
+      <strong>읽는 법</strong>
+      이 도식은 원문 설명 레이어이며 개별 사안의 법률자문을 대체하지 않는다. 설명의무의 유형과 위반 시 배상의 이중 구조(위자료·전손해)를 이해하면, 의료 분쟁에서 무엇을 입증해야 하는지가 선명해집니다. 구체적 사안의 판단은 사실관계와 개별 법률자문에 따라 달라집니다.
+    </div>
+
+    <details>
+      <summary>원문·출처 상태</summary>
+      <p>원문: <code>C:\obsidian\지식관리\_WIKI_법률지식\55_컬럼\민사법\불법행위_제조물책임\B2C-민사법-의사설명의무위반손해배상.md</code></p>
+      <p>이 컬럼의 frontmatter는 분야·주제·출처(D-의사_설명의무_자기결정권)만을 담고 있어 독립 법률 검증 메타데이터가 없다. 이 시각화는 원문의 설명의무 근거 → 유형 분류 → 배상 이중구조 → 범위·미성년자·기록 순서를 재배열한 설명 레이어이며, HTML 자체가 별도의 법률 검증이나 법률자문을 의미하지 않는다.</p>
+      <p>앵커 대응: n1=§1 설명의무의 법적 근거 · n2=§2 자기결정권 관련 설명의무 vs 지도설명의무 · n3=§2 자기결정권 관련 설명의무 vs 지도설명의무 · n4=§3 설명의무 위반의 손해배상 구조 · n5=§3 설명의무 위반의 손해배상 구조 · n6=§3 설명의무 위반의 손해배상 구조 · n7=§4 설명의 범위 — 대안치료·중대 위험·약물변경 · n8=§5 미성년자 환자의 설명의무 · n9=§6 실무에서 가장 중요한 것 — 기록</p>
+    </details>
+
+    <footer>법률컬럼 설명용 다이어그램 · 2026-08-14 · slug <code>column-0814-b2c-diagram</code> · self-contained HTML · 외부 CDN/원격 폰트/원격 이미지 없음 · 생성기 diagram_render.mjs v2.0</footer>
+  </main>
+</body>
+</html>
