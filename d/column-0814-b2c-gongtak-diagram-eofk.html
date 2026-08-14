@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="채권자가 수령을 거절하는 상황에서 채무자가 변제 제공의 세 단계(현실·구두·준비)를 거쳐 법원 공탁소에 공탁함으로써 채무를 소멸시키고, 여러 채무가 있을 때 변제 충당 순서(비용·이자·원본)를 적용하는 흐름을 보여주는 도식.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2016'%3E%3Crect%20width='16'%20height='16'%20rx='3'%20fill='%23a64b3c'/%3E%3C/svg%3E">
+  <title>돈은 갚으려 하는데, 상대가 받지 않으면</title>
+  <style>
+    /* === 하우스 스타일 동결본 v2.0 — 이 블록은 수정하지 않는다 === */
+    :root {
+      color-scheme: light;
+      --paper: #ffffff;
+      --paper-2: #ffffff;
+      --card: #ffffff;
+      --ink: #172235;
+      --muted: #5d6877;
+      --soft: #8792a0;
+      --rule: rgba(23, 34, 53, .16);
+      --rule-strong: #aeb6bf;
+      --accent: #a64b3c;
+      --accent-tint: #f4e5e1;
+      --blue: #355f86;
+      --blue-tint: #e6eef5;
+      --caution: #866b32;
+      --caution-tint: #f4eedc;
+      --shadow: 0 16px 38px rgba(23, 34, 53, .08);
+    }
+
+        * { box-sizing: border-box; }
+    html { background: var(--paper); }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Noto Sans KR", Pretendard, "Malgun Gothic", sans-serif;
+      line-height: 1.6;
+    }
+    main { width: min(1180px, calc(100% - 40px)); margin: 0 auto; padding: 56px 0 64px; }
+    .eyebrow { margin: 0 0 12px; color: var(--accent); font-size: 12px; font-weight: 800; letter-spacing: .14em; }
+    h1 {
+      max-width: 780px; margin: 0;
+      font-family: "Noto Serif KR", "Batang", Georgia, serif;
+      font-size: clamp(30px, 5vw, 52px); font-weight: 700;
+      line-height: 1.16; letter-spacing: -.045em; text-wrap: balance;
+    }
+    .dek { max-width: 760px; margin: 20px 0 0; color: var(--muted); font-size: 17px; line-height: 1.75; }
+    .notice {
+      display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; padding: 8px 12px;
+      border: 1px solid var(--rule); border-radius: 6px; color: var(--muted); font-size: 13px;
+    }
+    .notice::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex: none; }
+
+    /* 다이어그램 영역 안에서만 가로 스크롤을 허용한다 */
+    .diagram-shell {
+      margin-top: 42px; padding: 20px 20px 10px;
+      border: 1px solid var(--rule); border-radius: 10px;
+      background: var(--paper-2); box-shadow: var(--shadow);
+      overflow-x: auto; max-width: 100%;
+    }
+    figure { margin: 0; min-width: 1040px; }
+    svg.diagram { display: block; width: 1120px; height: auto; max-width: none; }
+
+    .svg-title { font: 700 23px/1.2 "Noto Sans KR", Pretendard, sans-serif; fill: var(--ink); }
+    .svg-kicker { font: 800 12px/1 "Noto Sans KR", Pretendard, sans-serif; letter-spacing: .12em; fill: var(--accent); }
+    .svg-caption { font: 500 13px/1.45 "Noto Sans KR", Pretendard, sans-serif; fill: var(--muted); }
+    .edge { fill: none; stroke: var(--soft); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+    .edge-primary { stroke: var(--accent); stroke-width: 2.8; }
+    .edge-caution { stroke: var(--caution); stroke-width: 2.4; }
+    .edge-blue { stroke: var(--blue); stroke-width: 2.4; }
+    .edge-dashed { stroke-dasharray: 7 6; }
+    .edge-label-bg { fill: var(--paper-2); stroke: var(--rule); stroke-width: 1; }
+    .edge-label { font: 800 12px/1 "Noto Sans KR", Pretendard, sans-serif; fill: var(--muted); }
+    .edge-label-primary { fill: var(--accent); }
+    .node { fill: var(--card); stroke: var(--rule-strong); stroke-width: 1.5; }
+    .node-primary { fill: var(--accent-tint); stroke: var(--accent); stroke-width: 2; }
+    .node-caution { fill: var(--caution-tint); stroke: var(--caution); stroke-width: 1.8; }
+    .node-blue { fill: var(--blue-tint); stroke: var(--blue); stroke-width: 1.8; }
+    .node-tag { font: 800 11px/1 "Noto Sans KR", Pretendard, sans-serif; letter-spacing: .08em; fill: var(--soft); }
+    .node-tag-primary { fill: var(--accent); }
+    .node-tag-caution { fill: var(--caution); }
+    .node-tag-blue { fill: var(--blue); }
+    .node-name { font: 800 16px/1.35 "Noto Sans KR", Pretendard, sans-serif; fill: var(--ink); }
+    .node-sub { font: 500 12.5px/1.45 "Noto Sans KR", Pretendard, sans-serif; fill: var(--muted); }
+    .legend-label { font: 700 11px/1 "Noto Sans KR", Pretendard, sans-serif; fill: var(--muted); }
+
+    .section-head { margin: 50px 0 18px; }
+    .section-head h2 { margin: 0; font-size: 23px; letter-spacing: -.025em; }
+    .section-head p { margin: 6px 0 0; color: var(--muted); }
+    .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .card { min-height: 190px; padding: 22px; border: 1px solid var(--rule); border-radius: 8px; background: var(--card); }
+    .card-wide { grid-column: 1 / -1; min-height: auto; }
+    .card.tone-accent { border-top: 3px solid var(--accent); }
+    .card.tone-blue { border-top: 3px solid var(--blue); }
+    .card.tone-caution { border-top: 3px solid var(--caution); }
+    .card.tone-neutral { border-top: 3px solid var(--rule-strong); }
+    .card h3 { margin: 0 0 12px; font-size: 17px; }
+    .card ul { margin: 0; padding-left: 19px; color: var(--muted); font-size: 14px; }
+    .card li + li { margin-top: 7px; }
+    .clause { margin-top: 12px; padding: 12px 14px; border-radius: 6px; font-size: 13.5px; line-height: 1.55; }
+    .clause-danger { background: var(--accent-tint); border-left: 3px solid var(--accent); }
+    .clause-safe { background: var(--blue-tint); border-left: 3px solid var(--blue); }
+    .clause-neutral { background: var(--paper-2); border-left: 3px solid var(--rule-strong); }
+    .clause .c-label { display: block; margin-bottom: 4px; font-size: 11px; font-weight: 800; letter-spacing: .08em; color: var(--muted); }
+    code { font-family: "Cascadia Mono", Consolas, monospace; font-size: .92em; word-break: break-word; }
+    .reading-note {
+      margin-top: 28px; padding: 18px 20px;
+      border-left: 4px solid var(--accent); background: var(--accent-tint); color: var(--ink);
+    }
+    .reading-note strong { display: block; margin-bottom: 4px; }
+    details { margin-top: 28px; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+    summary { cursor: pointer; padding: 15px 0; font-weight: 800; }
+    details p { max-width: 800px; margin: 0 0 18px; color: var(--muted); font-size: 14px; }
+    footer { margin-top: 42px; padding-top: 16px; border-top: 1px solid var(--rule); color: var(--soft); font-size: 12px; }
+
+    @media (max-width: 760px) {
+      main { width: min(100% - 28px, 1180px); padding-top: 34px; }
+      .dek { font-size: 15px; }
+      .diagram-shell { margin-top: 28px; padding: 12px 12px 4px; }
+      .cards { grid-template-columns: 1fr; }
+      .card { min-height: auto; }
+    }
+    @media print {
+      :root { color-scheme: light; }
+      body { background: #fff; }
+      main { width: 100%; padding: 14mm 10mm; }
+      .diagram-shell { box-shadow: none; break-inside: avoid; overflow: visible; }
+      figure { min-width: 0; }
+      svg.diagram { width: 100%; }
+      .cards { break-inside: avoid; }
+      details { display: none; }
+      footer { margin-top: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">민사법 · 채무 변제와 법원 공탁</p>
+      <h1>돈은 갚으려 하는데,<br>상대가 받지 않으면</h1>
+      <p class="dek">핵심 질문은 “갚을 의사는 있는데 채권자가 받지 않으면, 채무자는 어떻게 채무를 끝낼 수 있을까”입니다. 변제 제공(현실·구두·준비 순서)을 거쳐 법원에 공탁하면 채무가 소멸한다. 다만 공탁은 원칙적으로 회수 불가이므로 금액과 수령 거절 증빙을 갖춰야 한다.</p>
+      <div class="notice">설명용 도식 · 원문 인용(민법 §460·§466·§476, 대법원 2018다269387) 기반, 별도 법률자문 아님</div>
+    </header>
+
+    <section class="diagram-shell" aria-label="수령 거절에도 끝내는 채무 — 변제 제공에서 공탁까지">
+      <figure>
+        <svg class="diagram" viewBox="0 0 1120 778" role="img" aria-labelledby="column0814b2cgongtakdiag-t column0814b2cgongtakdiag-d">
+          <title id="column0814b2cgongtakdiag-t">수령 거절에도 끝내는 채무 — 변제 제공에서 공탁까지</title>
+          <desc id="column0814b2cgongtakdiag-d">채권자가 수령을 거절하는 상황에서 채무자가 변제 제공의 세 단계(현실·구두·준비)를 거쳐 법원 공탁소에 공탁함으로써 채무를 소멸시키고, 여러 채무가 있을 때 변제 충당 순서(비용·이자·원본)를 적용하는 흐름을 보여주는 도식.</desc>
+          <defs>
+            <marker id="column0814b2cgongtakdiag-ar-neutral" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M 0 0 L 9 3.5 L 0 7 Z" fill="var(--soft)" /></marker>
+            <marker id="column0814b2cgongtakdiag-ar-primary" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M 0 0 L 9 3.5 L 0 7 Z" fill="var(--accent)" /></marker>
+            <marker id="column0814b2cgongtakdiag-ar-blue" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M 0 0 L 9 3.5 L 0 7 Z" fill="var(--blue)" /></marker>
+            <marker id="column0814b2cgongtakdiag-ar-caution" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M 0 0 L 9 3.5 L 0 7 Z" fill="var(--caution)" /></marker>
+          </defs>
+          <text x="40" y="24" class="svg-kicker">DEBT REPAYMENT &amp; COURT DEPOSIT</text>
+          <text x="40" y="46" class="svg-title">수령 거절에도 끝내는 채무 — 변제 제공에서 공탁까지</text>
+          <text x="40" y="72" class="svg-caption">갚을 의사가 있어도 받지 않으면, 공탁이 채무를 소멸시킨다.</text>
+          <g class="edges">
+            <path d="M 560 212 V 270" class="edge edge-blue" marker-end="url(#column0814b2cgongtakdiag-ar-blue)" data-edge="n1->n2" />
+            <path d="M 560 368 V 426" class="edge edge-primary" marker-end="url(#column0814b2cgongtakdiag-ar-primary)" data-edge="n2->n3" />
+            <path d="M 560 542 V 600" class="edge" marker-end="url(#column0814b2cgongtakdiag-ar-neutral)" data-edge="n3->n4" />
+          </g>
+          <g class="edge-labels">
+          </g>
+          <g data-node="n1" data-anchor="§무엇이 문제인가">
+            <rect x="394.7" y="114" width="330.7" height="98" rx="8" class="node" data-node-rect="n1" />
+            <text x="414.7" y="140" class="node-tag" data-node-text="n1">상황</text>
+            <text x="560" y="176" text-anchor="middle" class="node-name" data-node-text="n1">갚으려 하는데 수령 거절</text>
+            <text x="560" y="200" text-anchor="middle" class="node-sub" data-node-text="n1">채무는 소멸하지 않고 연체 이자만 계속 쌓인다</text>
+          </g>
+          <g data-node="n2" data-anchor="§법은 이렇게 답합니다">
+            <rect x="394.7" y="270" width="330.7" height="98" rx="8" class="node-blue" data-node-rect="n2" />
+            <text x="414.7" y="296" class="node-tag node-tag-blue" data-node-text="n2">① 선행 단계 · §460</text>
+            <text x="560" y="332" text-anchor="middle" class="node-name" data-node-text="n2">변제 제공</text>
+            <text x="560" y="356" text-anchor="middle" class="node-sub" data-node-text="n2">현실 제공 → 구두 제공(내용증명) → 변제 준비 순서</text>
+          </g>
+          <g data-node="n3" data-anchor="§법은 이렇게 답합니다">
+            <rect x="394.7" y="426" width="330.7" height="116" rx="8" class="node-primary" data-node-rect="n3" />
+            <text x="414.7" y="452" class="node-tag node-tag-primary" data-node-text="n3">② 핵심 해결 · §466</text>
+            <text x="560" y="488" text-anchor="middle" class="node-name" data-node-text="n3">법원 공탁</text>
+            <text x="560" y="512" text-anchor="middle" class="node-sub" data-node-text="n3">공탁소에 맡기면 채무 소멸 · 원칙적 회수 불가</text>
+            <text x="560" y="530" text-anchor="middle" class="node-sub" data-node-text="n3">(대법원 2018다269387)</text>
+          </g>
+          <g data-node="n4" data-anchor="§법은 이렇게 답합니다">
+            <rect x="394.7" y="600" width="330.7" height="116" rx="8" class="node" data-node-rect="n4" />
+            <text x="414.7" y="626" class="node-tag" data-node-text="n4">③ 관련 규정 · §476</text>
+            <text x="560" y="662" text-anchor="middle" class="node-name" data-node-text="n4">변제 충당</text>
+            <text x="560" y="686" text-anchor="middle" class="node-sub" data-node-text="n4">여러 빚·변제액 부족 시 비용→이자→원본 순서</text>
+            <text x="560" y="704" text-anchor="middle" class="node-sub" data-node-text="n4">(채무자 지정 가능)</text>
+          </g>
+          <line x1="40" y1="740" x2="1080" y2="740" stroke="var(--rule)" stroke-width="1" />
+            <circle cx="46" cy="760" r="5" fill="var(--accent)" />
+            <text x="60" y="764" class="legend-label">핵심 해결 (공탁)</text>
+            <circle cx="186.2" cy="760" r="5" fill="var(--blue)" />
+            <text x="200.2" y="764" class="legend-label">선행 단계 (변제 제공)</text>
+            <circle cx="352.7" cy="760" r="5" fill="var(--rule-strong)" />
+            <text x="366.7" y="764" class="legend-label">관련 규정 (변제 충당)</text>
+        </svg>
+      </figure>
+    </section>
+
+    <section aria-labelledby="detail-heading">
+      <div class="section-head">
+        <h2 id="detail-heading">세 가지 규정, 실무에서 조심할 점</h2>
+        <p>공탁으로 채무를 끝내기까지, 법정 요건과 효과를 하나씩 정리했습니다.</p>
+      </div>
+      <div class="cards">
+        <article class="card tone-blue">
+          <h3>변제 제공의 순서(§460)</h3>
+          <ul>
+            <li>현실 제공(실제 이행) → 구두 제공(이행 통지+수령 요구) → 변제 준비 순서</li>
+            <li>구두 제공은 내용증명으로 남기는 것이 안전 (추후 입증용)</li>
+            <li>순서를 어기고 공탁하면 공탁 자체가 무효가 될 수 있음</li>
+          </ul>
+        </article>
+        <article class="card tone-accent">
+          <h3>공탁의 요건과 효과(§466)</h3>
+          <ul>
+            <li>채권자가 수령 거절하거나 수령할 수 없는 경우 법원 공탁소에 공탁</li>
+            <li>공탁하면 채무가 소멸 — 가장 확실한 해결 방법</li>
+            <li>원칙적으로 회수 불가하므로 금액을 정확히 계산해야 함</li>
+          </ul>
+        </article>
+        <article class="card tone-neutral">
+          <h3>변제 충당 순서(§476)</h3>
+          <ul>
+            <li>여러 채무가 있고 변제액이 부족하면 비용 → 이자 → 원본 순서로 충당</li>
+            <li>채무자가 변제 시 충당 순서를 미리 지정할 수 있음</li>
+            <li>어느 빚부터 갚을지 정해 두면 추후 다툼을 줄일 수 있음</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <div class="reading-note">
+      <strong>읽는 법</strong>
+      이 도식은 원문 설명 레이어이며 개별 사안의 법률자문을 대체하지 않는다. 채권자가 돈을 받지 않더라도, 변제 제공의 순서를 지켜 법원에 공탁하면 채무를 소멸시킬 수 있습니다. 다만 공탁은 원칙적으로 되돌릴 수 없으므로 금액과 수령 거절 증빙(내용증명·문자)을 반드시 갖춰야 합니다. 구체적 사안은 사실관계와 개별 법률자문에 따라 달라집니다.
+    </div>
+
+    <details>
+      <summary>원문·출처 상태</summary>
+      <p>원문: <code>C:\obsidian\지식관리\_WIKI_법률지식\55_컬럼\민사법\B2C-민사법-변제공탁.md</code></p>
+      <p>이 컬럼의 frontmatter는 citations_verified:true·hallucination_gate:true로 검증 상태가 명시되어 있고, key_caselaw로 대법원 2018다269387을 인용한다. 이 시각화는 원문의 ‘수령 거절 → 변제 제공 → 공탁 → 변제 충당’ 흐름을 재배열한 설명 레이어이며, HTML 자체가 별도의 법률 검증이나 법률자문을 의미하지 않는다.</p>
+      <p>앵커 대응: n1=§무엇이 문제인가 · n2=§법은 이렇게 답합니다 · n3=§법은 이렇게 답합니다 · n4=§법은 이렇게 답합니다</p>
+    </details>
+
+    <footer>법률컬럼 설명용 다이어그램 · 2026-08-14 · slug <code>column-0814-b2c-gongtak-diagram</code> · self-contained HTML · 외부 CDN/원격 폰트/원격 이미지 없음 · 생성기 diagram_render.mjs v2.0</footer>
+  </main>
+</body>
+</html>
