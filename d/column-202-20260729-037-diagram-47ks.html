@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="쉼을 게으름으로 오해하는 생산성 강박에서 출발해, 몸과 마음의 재건을 기다리고, 아주 작은 통제의 경험으로 무기력의 악순환을 풀어내며, 쉼을 재건의 시간으로 부르는 언어 전환에 이르는 순서형 도식.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2016'%3E%3Crect%20width='16'%20height='16'%20rx='3'%20fill='%23a64b3c'/%3E%3C/svg%3E">
+  <title>쉼은 게으름이 아니라 재건이다</title>
+  <style>
+    /* === 하우스 스타일 동결본 v2.0 — 이 블록은 수정하지 않는다 === */
+    :root {
+      color-scheme: light;
+      --paper: #f7f6f2;
+      --paper-2: #efeee9;
+      --card: #ffffff;
+      --ink: #172235;
+      --muted: #5d6877;
+      --soft: #8792a0;
+      --rule: rgba(23, 34, 53, .16);
+      --rule-strong: #aeb6bf;
+      --accent: #a64b3c;
+      --accent-tint: #f4e5e1;
+      --blue: #355f86;
+      --blue-tint: #e6eef5;
+      --caution: #866b32;
+      --caution-tint: #f4eedc;
+      --shadow: 0 16px 38px rgba(23, 34, 53, .08);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --paper: #172235;
+        --paper-2: #202d40;
+        --card: #1d2a3d;
+        --ink: #f3f1eb;
+        --muted: #c3ccd7;
+        --soft: #a1adbb;
+        --rule: rgba(243, 241, 235, .18);
+        --rule-strong: #52647a;
+        --accent: #e18b78;
+        --accent-tint: rgba(166, 75, 60, .28);
+        --blue: #9fc5e3;
+        --blue-tint: rgba(53, 95, 134, .38);
+        --caution: #e2c778;
+        --caution-tint: rgba(134, 107, 50, .34);
+        --shadow: 0 16px 38px rgba(0, 0, 0, .22);
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { background: var(--paper); }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Noto Sans KR", Pretendard, "Malgun Gothic", sans-serif;
+      line-height: 1.6;
+    }
+    main { width: min(1180px, calc(100% - 40px)); margin: 0 auto; padding: 56px 0 64px; }
+    .eyebrow { margin: 0 0 12px; color: var(--accent); font-size: 12px; font-weight: 800; letter-spacing: .14em; }
+    h1 {
+      max-width: 780px; margin: 0;
+      font-family: "Noto Serif KR", "Batang", Georgia, serif;
+      font-size: clamp(30px, 5vw, 52px); font-weight: 700;
+      line-height: 1.16; letter-spacing: -.045em; text-wrap: balance;
+    }
+    .dek { max-width: 760px; margin: 20px 0 0; color: var(--muted); font-size: 17px; line-height: 1.75; }
+    .notice {
+      display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; padding: 8px 12px;
+      border: 1px solid var(--rule); border-radius: 6px; color: var(--muted); font-size: 13px;
+    }
+    .notice::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex: none; }
+
+    /* 다이어그램 영역 안에서만 가로 스크롤을 허용한다 */
+    .diagram-shell {
+      margin-top: 42px; padding: 20px 20px 10px;
+      border: 1px solid var(--rule); border-radius: 10px;
+      background: var(--paper-2); box-shadow: var(--shadow);
+      overflow-x: auto; max-width: 100%;
+    }
+    figure { margin: 0; min-width: 1040px; }
+    svg.diagram { display: block; width: 1120px; height: auto; max-width: none; }
+
+    .svg-title { font: 700 23px/1.2 "Noto Sans KR", Pretendard, sans-serif; fill: var(--ink); }
+    .svg-kicker { font: 800 12px/1 "Noto Sans KR", Pretendard, sans-serif; letter-spacing: .12em; fill: var(--accent); }
+    .svg-caption { font: 500 13px/1.45 "Noto Sans KR", Pretendard, sans-serif; fill: var(--muted); }
+    .edge { fill: none; stroke: var(--soft); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+    .edge-primary { stroke: var(--accent); stroke-width: 2.8; }
+    .edge-caution { stroke: var(--caution); stroke-width: 2.4; }
+    .edge-blue { stroke: var(--blue); stroke-width: 2.4; }
+    .edge-dashed { stroke-dasharray: 7 6; }
+    .edge-label-bg { fill: var(--paper-2); stroke: var(--rule); stroke-width: 1; }
+    .edge-label { font: 800 12px/1 "Noto Sans KR", Pretendard, sans-serif; fill: var(--muted); }
+    .edge-label-primary { fill: var(--accent); }
+    .node { fill: var(--card); stroke: var(--rule-strong); stroke-width: 1.5; }
+    .node-primary { fill: var(--accent-tint); stroke: var(--accent); stroke-width: 2; }
+    .node-caution { fill: var(--caution-tint); stroke: var(--caution); stroke-width: 1.8; }
+    .node-blue { fill: var(--blue-tint); stroke: var(--blue); stroke-width: 1.8; }
+    .node-tag { font: 800 11px/1 "Noto Sans KR", Pretendard, sans-serif; letter-spacing: .08em; fill: var(--soft); }
+    .node-tag-primary { fill: var(--accent); }
+    .node-tag-caution { fill: var(--caution); }
+    .node-tag-blue { fill: var(--blue); }
+    .node-name { font: 800 16px/1.35 "Noto Sans KR", Pretendard, sans-serif; fill: var(--ink); }
+    .node-sub { font: 500 12.5px/1.45 "Noto Sans KR", Pretendard, sans-serif; fill: var(--muted); }
+    .legend-label { font: 700 11px/1 "Noto Sans KR", Pretendard, sans-serif; fill: var(--muted); }
+
+    .section-head { margin: 50px 0 18px; }
+    .section-head h2 { margin: 0; font-size: 23px; letter-spacing: -.025em; }
+    .section-head p { margin: 6px 0 0; color: var(--muted); }
+    .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .card { min-height: 190px; padding: 22px; border: 1px solid var(--rule); border-radius: 8px; background: var(--card); }
+    .card-wide { grid-column: 1 / -1; min-height: auto; }
+    .card.tone-accent { border-top: 3px solid var(--accent); }
+    .card.tone-blue { border-top: 3px solid var(--blue); }
+    .card.tone-caution { border-top: 3px solid var(--caution); }
+    .card.tone-neutral { border-top: 3px solid var(--rule-strong); }
+    .card h3 { margin: 0 0 12px; font-size: 17px; }
+    .card ul { margin: 0; padding-left: 19px; color: var(--muted); font-size: 14px; }
+    .card li + li { margin-top: 7px; }
+    .clause { margin-top: 12px; padding: 12px 14px; border-radius: 6px; font-size: 13.5px; line-height: 1.55; }
+    .clause-danger { background: var(--accent-tint); border-left: 3px solid var(--accent); }
+    .clause-safe { background: var(--blue-tint); border-left: 3px solid var(--blue); }
+    .clause-neutral { background: var(--paper-2); border-left: 3px solid var(--rule-strong); }
+    .clause .c-label { display: block; margin-bottom: 4px; font-size: 11px; font-weight: 800; letter-spacing: .08em; color: var(--muted); }
+    code { font-family: "Cascadia Mono", Consolas, monospace; font-size: .92em; word-break: break-word; }
+    .reading-note {
+      margin-top: 28px; padding: 18px 20px;
+      border-left: 4px solid var(--accent); background: var(--accent-tint); color: var(--ink);
+    }
+    .reading-note strong { display: block; margin-bottom: 4px; }
+    details { margin-top: 28px; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+    summary { cursor: pointer; padding: 15px 0; font-weight: 800; }
+    details p { max-width: 800px; margin: 0 0 18px; color: var(--muted); font-size: 14px; }
+    footer { margin-top: 42px; padding-top: 16px; border-top: 1px solid var(--rule); color: var(--soft); font-size: 12px; }
+
+    @media (max-width: 760px) {
+      main { width: min(100% - 28px, 1180px); padding-top: 34px; }
+      .dek { font-size: 15px; }
+      .diagram-shell { margin-top: 28px; padding: 12px 12px 4px; }
+      .cards { grid-template-columns: 1fr; }
+      .card { min-height: auto; }
+    }
+    @media print {
+      :root { color-scheme: light; }
+      body { background: #fff; }
+      main { width: 100%; padding: 14mm 10mm; }
+      .diagram-shell { box-shadow: none; break-inside: avoid; overflow: visible; }
+      figure { min-width: 0; }
+      svg.diagram { width: 100%; }
+      .cards { break-inside: avoid; }
+      details { display: none; }
+      footer { margin-top: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">마음과 회복 · 비법률 컬럼 037</p>
+      <h1>쉼은 게으름이 아니라<br>재건이다</h1>
+      <p class="dek">핵심 질문은 “쉼을 멈춤이 아니라 회복의 과정으로 읽으면, 우리는 무엇을 다시 시작할 수 있는가”입니다. 답은 무리해서 의지를 끌어올리는 데 있지 않다. 몸과 마음이 재건할 시간을 주고, 아주 작은 통제의 경험부터 되찾는 데 있다.</p>
+      <div class="notice">설명용 도식 · 개인의 회복 속도와 방법은 상태와 사실관계에 따라 달라질 수 있음</div>
+    </header>
+
+    <section class="diagram-shell" aria-label="쉼이 회복으로 전환되는 4개의 움직임">
+      <figure>
+        <svg class="diagram" viewBox="0 0 1120 898" role="img" aria-labelledby="column20220260729037diag-t column20220260729037diag-d">
+          <title id="column20220260729037diag-t">쉼이 회복으로 전환되는 4개의 움직임</title>
+          <desc id="column20220260729037diag-d">쉼을 게으름으로 오해하는 생산성 강박에서 출발해, 몸과 마음의 재건을 기다리고, 아주 작은 통제의 경험으로 무기력의 악순환을 풀어내며, 쉼을 재건의 시간으로 부르는 언어 전환에 이르는 순서형 도식.</desc>
+          <defs>
+            <marker id="column20220260729037diag-ar-neutral" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M 0 0 L 9 3.5 L 0 7 Z" fill="var(--soft)" /></marker>
+            <marker id="column20220260729037diag-ar-primary" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M 0 0 L 9 3.5 L 0 7 Z" fill="var(--accent)" /></marker>
+            <marker id="column20220260729037diag-ar-blue" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M 0 0 L 9 3.5 L 0 7 Z" fill="var(--blue)" /></marker>
+            <marker id="column20220260729037diag-ar-caution" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M 0 0 L 9 3.5 L 0 7 Z" fill="var(--caution)" /></marker>
+          </defs>
+          <text x="40" y="24" class="svg-kicker">REST AS REBUILDING</text>
+          <text x="40" y="46" class="svg-title">쉼이 회복으로 전환되는 4개의 움직임</text>
+          <text x="40" y="72" class="svg-caption">회복은 시간이 흐르기만을 기다리는 일이 아니라, 재건을 방해하지 않고 작은 통제감을 되찾는 과정이다.</text>
+          <g class="edges">
+            <path d="M 560 212 V 270" class="edge" marker-end="url(#column20220260729037diag-ar-neutral)" data-edge="n1->n2" />
+            <path d="M 560 368 V 426" class="edge" marker-end="url(#column20220260729037diag-ar-neutral)" data-edge="n2->n3" />
+            <path d="M 560 524 V 582" class="edge" marker-end="url(#column20220260729037diag-ar-neutral)" data-edge="n3->n4" />
+            <path d="M 560 680 V 738" class="edge" marker-end="url(#column20220260729037diag-ar-neutral)" data-edge="n4->n5" />
+          </g>
+          <g class="edge-labels">
+            <rect x="509.7" y="230" width="100.6" height="22" rx="4" class="edge-label-bg" />
+            <text x="560" y="245" text-anchor="middle" class="edge-label" data-edge-label="n1->n2">오해를 멈추면</text>
+            <rect x="515.9" y="386" width="88.1" height="22" rx="4" class="edge-label-bg" />
+            <text x="560" y="401" text-anchor="middle" class="edge-label" data-edge-label="n2->n3">재건 중에는</text>
+            <rect x="507.8" y="542" width="104.4" height="22" rx="4" class="edge-label-bg" />
+            <text x="560" y="557" text-anchor="middle" class="edge-label" data-edge-label="n3->n4">다시 시작할 때</text>
+            <rect x="495.3" y="698" width="129.3" height="22" rx="4" class="edge-label-bg" />
+            <text x="560" y="713" text-anchor="middle" class="edge-label" data-edge-label="n4->n5">작은 통제가 쌓이면</text>
+          </g>
+          <g data-node="n1" data-anchor="본문 2문단">
+            <rect x="40" y="114" width="1040" height="98" rx="8" class="node-caution" data-node-rect="n1" />
+            <text x="60" y="140" class="node-tag node-tag-caution" data-node-text="n1">출발점 · 오해</text>
+            <text x="560" y="176" text-anchor="middle" class="node-name" data-node-text="n1">쉼을 게으름으로 부른다</text>
+            <text x="560" y="200" text-anchor="middle" class="node-sub" data-node-text="n1">생산성 강박은 침대에 누워 있는 시간을 견디지 못하게 만든다.</text>
+          </g>
+          <g data-node="n2" data-anchor="본문 2문단">
+            <rect x="40" y="270" width="1040" height="98" rx="8" class="node-primary" data-node-rect="n2" />
+            <text x="60" y="296" class="node-tag node-tag-primary" data-node-text="n2">전환 01 · 재건</text>
+            <text x="560" y="332" text-anchor="middle" class="node-name" data-node-text="n2">몸이 스스로 복구할 시간을 준다</text>
+            <text x="560" y="356" text-anchor="middle" class="node-sub" data-node-text="n2">회복은 시간이 흐르는 일이 아니라, 몸이 재건하도록 기다려주는 인내의 과정이다.</text>
+          </g>
+          <g data-node="n3" data-anchor="본문 2문단">
+            <rect x="40" y="426" width="1040" height="98" rx="8" class="node-caution" data-node-rect="n3" />
+            <text x="60" y="452" class="node-tag node-tag-caution" data-node-text="n3">주의 · 무리의 역효과</text>
+            <text x="560" y="488" text-anchor="middle" class="node-name" data-node-text="n3">재형성기에 무리하지 않는다</text>
+            <text x="560" y="512" text-anchor="middle" class="node-sub" data-node-text="n3">새 살이 뒤틀리듯, 회복 중인 몸과 마음을 다시 몰아붙이면 재건을 방해할 수 있다.</text>
+          </g>
+          <g data-node="n4" data-anchor="본문 3문단">
+            <rect x="40" y="582" width="1040" height="98" rx="8" class="node-blue" data-node-rect="n4" />
+            <text x="60" y="608" class="node-tag node-tag-blue" data-node-text="n4">전환 02 · 통제감</text>
+            <text x="560" y="644" text-anchor="middle" class="node-name" data-node-text="n4">아주 작은 행동부터 고른다</text>
+            <text x="560" y="668" text-anchor="middle" class="node-sub" data-node-text="n4">점심 메뉴를 정하거나 방 한쪽을 정리하는 작은 통제가 무기력의 악순환을 푸는 첫걸음이 된다.</text>
+          </g>
+          <g data-node="n5" data-anchor="본문 3문단">
+            <rect x="40" y="738" width="1040" height="98" rx="8" class="node-primary" data-node-rect="n5" />
+            <text x="60" y="764" class="node-tag node-tag-primary" data-node-text="n5">도착점 · 언어 전환</text>
+            <text x="560" y="800" text-anchor="middle" class="node-name" data-node-text="n5">쉼을 재건의 시간이라 부른다</text>
+            <text x="560" y="824" text-anchor="middle" class="node-sub" data-node-text="n5">회복은 측정하고 훈련할 수 있는 기술이며, 언어의 전환이 회복의 시작이 된다.</text>
+          </g>
+          <line x1="40" y1="860" x2="1080" y2="860" stroke="var(--rule)" stroke-width="1" />
+            <circle cx="46" cy="880" r="5" fill="var(--accent)" />
+            <text x="60" y="884" class="legend-label">핵심 전환 · 재건의 관점</text>
+            <circle cx="225.1" cy="880" r="5" fill="var(--blue)" />
+            <text x="239.1" y="884" class="legend-label">실행 가능한 작은 통제</text>
+            <circle cx="394.4" cy="880" r="5" fill="var(--caution)" />
+            <text x="408.4" y="884" class="legend-label">오해·주의할 지점</text>
+        </svg>
+      </figure>
+    </section>
+
+    <section aria-labelledby="detail-heading">
+      <div class="section-head">
+        <h2 id="detail-heading">회복을 방해하지 않는 세 가지 태도</h2>
+        <p>이 도식의 핵심은 더 세게 밀어붙이는 법이 아니라, 재건을 가능하게 하는 조건을 회복하는 데 있습니다.</p>
+      </div>
+      <div class="cards">
+        <article class="card tone-accent">
+          <h3>쉼의 재정의</h3>
+          <ul>
+            <li>쉼은 아무것도 하지 않는 수동적 기다림이 아니라 재건을 방해하지 않는 적극적인 인내</li>
+            <li>몸은 쉬는 동안에도 내면을 복구하고 있음</li>
+            <li>회복의 속도를 생산성의 기준으로 재단하지 않기</li>
+          </ul>
+        </article>
+        <article class="card tone-blue">
+          <h3>무기력에 접근하는 순서</h3>
+          <ul>
+            <li>의지를 무작정 불태우기보다 통제할 수 있는 아주 작은 일을 고르기</li>
+            <li>점심 메뉴 선택이나 방 한쪽 정리처럼 결과보다 선택 경험에 집중하기</li>
+            <li>작은 통제의 경험을 회복의 첫걸음으로 삼기</li>
+          </ul>
+        </article>
+        <article class="card tone-caution card-wide">
+          <h3>마지막 문장</h3>
+          <div class="clause clause-danger">
+            <span class="c-label">낡은 이름</span>
+            <code>쉼 = 게으름</code>
+          </div>
+          <div class="clause clause-safe">
+            <span class="c-label">새로운 이름</span>
+            <code>쉼 = 재건의 시간</code>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="reading-note">
+      <strong>읽는 법</strong>
+      이 도식은 원문 설명 레이어이며 개별 사안의 법률자문을 대체하지 않습니다. 회복의 속도와 방법은 개인의 상태와 사실관계에 따라 달라질 수 있으므로, 이 그림을 보편적인 처방으로 해석하지 마세요.
+    </div>
+
+    <details>
+      <summary>원문·출처 상태</summary>
+      <p>원문: <code>C:\obsidian\지식관리\nonlegal_column_library\outputs\20260729_비법률컬럼_037_쉼은게으름이아니라재건이다.md</code></p>
+      <p>이 시각화는 원문의 도입부 비유와 본문 2~3문단의 논지를 재배열한 설명 레이어다. 웹반영수정본의 추가 근거를 새로 검증하거나 확장하지 않았고, 원문에 없는 의학적·법률적 결론을 보충하지 않았다.</p>
+      <p>앵커 대응: n1=본문 2문단 · n2=본문 2문단 · n3=본문 2문단 · n4=본문 3문단 · n5=본문 3문단</p>
+    </details>
+
+    <footer>법률컬럼 설명용 다이어그램 · 2026-08-15 · slug <code>column-202-20260729-037-diagram</code> · self-contained HTML · 외부 CDN/원격 폰트/원격 이미지 없음 · 생성기 diagram_render.mjs v2.0</footer>
+  </main>
+</body>
+</html>
