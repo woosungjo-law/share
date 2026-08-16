@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>스타가 없어도 시스템은 이긴다 — 레스터 시티 FC</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+:root{
+  --bg:#FFFFFF;
+  --accent:#1A3A6B;
+  --accent2:#2E6BE6;
+  --text:#111827;
+  --sub:#6B7280;
+  --line:#E5E7EB;
+  --card:#F8FAFC;
+  --on-dark:#EDF2FB;
+}
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+html,body{ height:100%; }
+body{
+  font-family:'Noto Sans KR', 'Malgun Gothic', sans-serif;
+  background:var(--bg); color:var(--text);
+  overflow:hidden; -webkit-font-smoothing:antialiased;
+}
+
+.deck{ width:100vw; height:100vh; position:relative; overflow:hidden; }
+
+.slide{ width:100vw; height:100vh; position:absolute; top:0; left:0; display:none; overflow:hidden; }
+.slide.active{ display:flex; }
+
+.slide-inner{
+  width:100%; height:100%; position:relative;
+  display:flex; flex-direction:column;
+  padding:6.5vh 6vw 9.5vh 6vw;
+  min-width:0; min-height:0;
+}
+/* SHARP: 네이비 단색 액센트 바 */
+.slide-inner::before{
+  content:''; position:absolute; top:0; left:0; width:100%; height:0.7vh;
+  background:var(--accent);
+}
+.slide.dark .slide-inner{ background:var(--accent); color:var(--on-dark); }
+.slide.dark .slide-inner::before{ display:none; }
+
+/* 텍스트 위계 (clamp) */
+h1,h2{ font-weight:700; letter-spacing:-0.02em; }
+.head-big{ font-size:clamp(34px,6vw,80px); line-height:1.14; }
+.head-mid{ font-size:clamp(26px,4.2vw,56px); line-height:1.22; }
+.label{
+  font-size:clamp(12px,1.3vw,18px); font-weight:600;
+  letter-spacing:0.14em; text-transform:uppercase; color:var(--accent2);
+}
+.label .dot{ color:var(--accent); }
+p.body{ font-size:clamp(16px,2vw,28px); font-weight:400; line-height:1.72; color:var(--text); word-break:keep-all; overflow-wrap:break-word; }
+p.small{ font-size:clamp(13px,1.4vw,20px); color:var(--sub); line-height:1.65; word-break:keep-all; overflow-wrap:break-word; }
+.strong{ color:var(--accent); font-weight:700; }
+.strong2{ color:var(--accent2); font-weight:700; }
+.dark .strong2{ color:#9FC0FF; }
+
+.grow{ flex:1; min-height:0; display:flex; flex-direction:column; justify-content:center; min-width:0; }
+.hairline{ height:1px; background:var(--line); border:none; }
+
+/* 슬라이드 카운터 */
+.slide-counter{
+  position:absolute; bottom:3.4vh; left:6vw;
+  font-size:clamp(12px,1.2vw,17px); font-weight:600; letter-spacing:0.1em;
+  color:var(--sub); font-variant-numeric:tabular-nums;
+}
+.slide-counter b{ color:var(--accent); }
+.dark .slide-counter{ color:rgba(255,255,255,0.55); }
+.dark .slide-counter b{ color:#fff; }
+
+/* ————— 1장 포스터 ————— */
+.poster{ justify-content:space-between; }
+.wordmark{
+  font-size:clamp(13px,1.4vw,19px); font-weight:700; letter-spacing:0.16em;
+  color:var(--accent);
+}
+.wordmark .slash{ color:var(--accent2); }
+.poster-title{ margin:2.5vh 0 0 0; }
+.poster-title .thin{ color:var(--sub); }
+.meta{ margin-top:4vh; max-width:58vw; }
+.meta-row{
+  display:flex; align-items:baseline; gap:2vw;
+  padding:1.3vh 0; border-top:1px solid var(--line);
+}
+.meta-row:last-child{ border-bottom:1px solid var(--line); }
+.meta-row .m-k{
+  flex:none; width:10vw; min-width:clamp(72px,9vw,120px);
+  font-size:clamp(11px,1.2vw,16px); font-weight:600; letter-spacing:0.12em;
+  color:var(--sub);
+}
+.meta-row .m-v{ font-size:clamp(15px,1.7vw,24px); font-weight:500; color:var(--text); word-break:keep-all; }
+.meta-row .m-v b{ color:var(--accent); }
+
+/* ————— 스플릿 ————— */
+.split{ display:flex; gap:4vw; min-width:0; min-height:0; flex:1; align-items:center; }
+.split > *{ min-width:0; min-height:0; }
+
+/* ————— 대형 수치 ————— */
+.big-figure{
+  font-size:clamp(56px,12vw,160px); font-weight:900; letter-spacing:-0.04em;
+  color:var(--accent); line-height:0.95; font-variant-numeric:tabular-nums;
+}
+.big-figure .unit{ font-size:clamp(22px,3.6vw,48px); font-weight:700; color:var(--accent2); }
+.fig-note{ margin-top:2.4vh; max-width:36vw; }
+
+/* ————— 타임라인 (박스 없음) ————— */
+.timeline{ display:flex; align-items:stretch; margin-top:5vh; min-width:0; }
+.tl-item{ flex:0 0 auto; min-width:0; padding-right:1vw; }
+.tl-time{
+  font-size:clamp(15px,1.7vw,24px); font-weight:700; color:var(--accent);
+  border-top:0.35vh solid var(--accent2); padding-top:1.2vh;
+}
+.tl-desc{ font-size:clamp(13px,1.35vw,19px); color:var(--sub); line-height:1.55; margin-top:0.8vh; word-break:keep-all; }
+.tl-sep{ flex:1; min-width:1.5vw; border-top:0.1vh solid var(--line); margin:0 0.6vw; align-self:flex-start; margin-top:0.6vh; }
+
+/* ————— 이중선 리스트 (박스 없음) ————— */
+.ruled-list{ }
+.ruled-list .rl-label{ font-size:clamp(14px,1.5vw,21px); font-weight:600; color:var(--sub); margin-bottom:1.6vh; }
+.rl-row{
+  display:flex; align-items:baseline; gap:2vw;
+  padding:1.5vh 0; border-top:1px solid var(--line);
+}
+.rl-row:last-child{ border-bottom:1px solid var(--line); }
+.rl-name{ flex:none; width:clamp(120px,14vw,200px); font-size:clamp(17px,2vw,28px); font-weight:700; color:var(--accent); }
+.rl-desc{ font-size:clamp(13px,1.4vw,20px); color:var(--sub); line-height:1.6; word-break:keep-all; }
+.rl-desc b{ color:var(--text); font-weight:500; }
+
+/* ————— 배선 (박스 없음) ————— */
+.wire{ display:flex; align-items:flex-start; gap:1vw; margin-top:4.5vh; min-width:0; flex-wrap:nowrap; }
+.wire-node{ flex:1; min-width:0; }
+.w-name{
+  font-size:clamp(20px,2.4vw,34px); font-weight:900; color:var(--accent);
+  letter-spacing:-0.02em;
+  border-bottom:0.35vh solid var(--accent2); padding-bottom:1vh; display:inline-block;
+}
+.w-role{ font-size:clamp(13px,1.4vw,20px); color:var(--sub); line-height:1.6; margin-top:1vh; word-break:keep-all; }
+.wire-arrow{
+  align-self:center; flex:none;
+  font-size:clamp(20px,2.4vw,32px); color:var(--accent2); font-weight:300;
+  margin-top:3.2vh;
+}
+
+/* ————— 인용 (카드 배경 없음) ————— */
+blockquote.qflat{
+  border-left:0.4vw solid var(--accent2);
+  padding:0.6vh 0 0.6vh 2vw; margin-top:4.5vh;
+}
+blockquote.qflat p{
+  font-size:clamp(17px,2.2vw,31px); font-weight:500; line-height:1.55;
+  color:var(--text); word-break:keep-all; overflow-wrap:break-word;
+}
+blockquote.qflat p + p{ margin-top:1vh; }
+blockquote.qflat footer{
+  font-size:clamp(13px,1.4vw,20px); color:var(--sub); margin-top:1.6vh; line-height:1.6; word-break:keep-all;
+}
+
+/* ————— 큰 질문 ————— */
+.question{
+  font-size:clamp(26px,4vw,54px); font-weight:900; letter-spacing:-0.02em;
+  color:var(--accent); line-height:1.25; margin-top:4vh; word-break:keep-all;
+}
+
+/* ————— 체크 (타이포그래픽 마커) ————— */
+.check-flat{ display:flex; align-items:flex-start; gap:1vw; margin-top:4vh; }
+.check-flat .sq{
+  flex:none; width:clamp(18px,1.8vw,26px); height:clamp(18px,1.8vw,26px);
+  border:0.18vw solid var(--accent2); border-radius:0.2vw;
+  display:flex; align-items:center; justify-content:center; margin-top:0.6vh;
+  color:var(--accent2); font-weight:900; font-size:clamp(12px,1.3vw,18px);
+}
+.check-flat .t{ font-size:clamp(15px,1.7vw,24px); line-height:1.5; color:var(--text); word-break:keep-all; overflow-wrap:break-word; }
+.check-flat .t b{ color:var(--accent); }
+
+/* ————— 6장 다크 클로징 ————— */
+.closing .head-big{ color:#fff; }
+.closing p.body{ color:rgba(255,255,255,0.82); }
+.closing .wordmark{ color:#fff; }
+.closing .wordmark .slash{ color:#9FC0FF; }
+
+/* 내비게이션 — 우하단 원형 화살표 2개 */
+.nav-arrows{ position:fixed; bottom:2.4vh; right:3vw; display:flex; gap:0.8vw; z-index:100; }
+.nav-arrow{
+  width:3vw; height:3vw; max-width:34px; max-height:34px; min-width:26px; min-height:26px;
+  border-radius:50%; background:rgba(26,58,107,0.9); border:1px solid rgba(26,58,107,0.2);
+  color:#fff; font-size:clamp(13px,1.4vw,18px); cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+}
+.nav-arrow:hover{ background:var(--accent2); }
+.nav-arrow:disabled{ opacity:0.3; cursor:default; }
+.nav-arrow:disabled:hover{ background:rgba(26,58,107,0.9); }
+body.on-dark .nav-arrow{ background:#fff; color:var(--accent); border-color:rgba(255,255,255,0.3); }
+body.on-dark .nav-arrow:hover{ background:var(--accent2); color:#fff; }
+body.on-dark .nav-arrow:disabled:hover{ background:#fff; color:var(--accent); }
+
+/* 전환 애니메이션 — 속성 명시 */
+.slide.anim{ display:flex; animation:slideIn 0.5s ease both; }
+@keyframes slideIn{
+  from{ opacity:0; transform:translateX(3.5%); }
+  to{ opacity:1; transform:none; }
+}
+
+@media (max-aspect-ratio: 13/9){
+  .slide-inner{ padding:6vh 5vw 11vh 5vw; }
+  .split{ flex-direction:column; gap:3vh; align-items:flex-start; }
+  .fig-note{ max-width:80vw; }
+  .timeline{ flex-direction:column; gap:2vh; }
+  .tl-sep{ border-top:none; border-left:0.1vh solid var(--line); min-width:0; margin:0 0 0 0.4vw; align-self:stretch; }
+  .wire{ flex-wrap:wrap; }
+  .wire-node{ flex:1 1 38%; }
+  .meta{ max-width:88vw; }
+}
+</style>
+</head>
+<body>
+
+<div class="deck" id="deck">
+
+  <!-- 1. 포스터 -->
+  <section class="slide active" data-s="1">
+    <div class="slide-inner poster">
+      <div class="wordmark">Underdog<span class="slash"> · </span>02</div>
+      <div class="grow" style="justify-content:flex-end;">
+        <h1 class="head-big poster-title">스타가 없어도<br><span class="strong2">시스템은 이긴다</span></h1>
+        <div class="meta">
+          <div class="meta-row"><span class="m-k">부</span><span class="m-v">경기장에서 확률을 뒤집다</span></div>
+          <div class="meta-row"><span class="m-k">주인공</span><span class="m-v">레스터 시티 FC</span></div>
+          <div class="meta-row"><span class="m-k">핵심 생존법</span><span class="m-v">역할을 <b>연결한다</b></span></div>
+        </div>
+      </div>
+      <div class="slide-counter"><b>1</b> / 6</div>
+    </div>
+  </section>
+
+  <!-- 2. 거실에서 확정된 우승 -->
+  <section class="slide" data-s="2">
+    <div class="slide-inner">
+      <div class="label">2016. 5. 2<span class="dot"> · </span>확정의 밤</div>
+      <div class="grow">
+        <h2 class="head-mid">거실에서 확정된 우승</h2>
+        <div class="split" style="margin-top:3vh;">
+          <div style="flex:1 1 52%;">
+            <p class="body">선수들은 경기장이 아니라 <span class="strong">제이미 바디의 집 거실</span>에 모여 있었다. 자기 경기가 없는 날, 런던에서 토트넘과 첼시가 비기면 우승이 확정되는 상황이었다.</p>
+            <p class="body" style="margin-top:1.8vh;">첼시가 후반 막판 동점골을 넣는 순간 <span class="strong2">2 대 2</span>. 거실은 함성으로 무너졌다.</p>
+          </div>
+          <div style="flex:1 1 34%;">
+            <div class="big-figure">2 : 2</div>
+            <p class="small fig-note" style="max-width:20vw;">후반 막판 동점골. 우승이 확정된 순간의 스코어.</p>
+          </div>
+        </div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-time">한 시즌 전</div>
+            <div class="tl-desc">강등을 걱정하던 팀</div>
+          </div>
+          <div class="tl-sep"></div>
+          <div class="tl-item">
+            <div class="tl-time">시즌 초</div>
+            <div class="tl-desc">우승 배당 5,000 : 1</div>
+          </div>
+          <div class="tl-sep"></div>
+          <div class="tl-item">
+            <div class="tl-time">2016. 5. 2</div>
+            <div class="tl-desc">프리미어리그 정상</div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-counter"><b>2</b> / 6</div>
+    </div>
+  </section>
+
+  <!-- 3. 5,000 : 1 -->
+  <section class="slide" data-s="3">
+    <div class="slide-inner">
+      <div class="label">시장의 평가<span class="dot"> · </span>자본과 명단</div>
+      <div class="split" style="margin-top:1vh;">
+        <div style="flex:1 1 42%;">
+          <div class="big-figure">5,000<span class="unit"> : 1</span></div>
+          <p class="small fig-note"><span class="strong">네스 호의 괴물이 발견될 확률</span>과 나란히 적히던 숫자. 상대는 맨체스터의 두 클럽, 첼시, 아스널이 쌓아 올린 자본과 스타 명단이었다.</p>
+        </div>
+        <div style="flex:1 1 58%;">
+          <div class="ruled-list">
+            <p class="rl-label">레스터의 주역은 시장이 저평가한 사람들이었다.</p>
+            <div class="rl-row"><span class="rl-name">제이미 바디</span><span class="rl-desc">8부 리그에서 일당을 받으며 <b>부목 공장</b>에서 일했다</span></div>
+            <div class="rl-row"><span class="rl-name">리야드 마레즈</span><span class="rl-desc">프랑스 2부에서 <b>헐값</b>에 왔다</span></div>
+            <div class="rl-row"><span class="rl-name">응골로 캉테</span><span class="rl-desc">노르망디의 <b>작은 도시</b>에서 왔다</span></div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:3.5vh;">
+        <hr class="hairline">
+        <p class="body" style="margin-top:2vh;">이적 시장에서 그들은 <span class="strong">한 사람의 몸값으로 레스터 주전 절반</span>을 살 수 있었다.</p>
+      </div>
+      <div class="slide-counter"><b>3</b> / 6</div>
+    </div>
+  </section>
+
+  <!-- 4. 강점에 순서가 생길 때 -->
+  <section class="slide" data-s="4">
+    <div class="slide-inner">
+      <div class="label">전술<span class="dot"> · </span>정해진 배선</div>
+      <div class="grow">
+        <h2 class="head-mid">강점에 순서가 생길 때</h2>
+        <p class="body" style="margin-top:2.2vh;">라니에리가 밀어붙인 것은 공을 오래 쥐는 강자의 문법이 아니었다. <span class="strong">낮게 물러서 단단히 버티다</span>, 상대가 앞으로 나온 빈 공간으로 순식간에 전환했다. 한 사람이 모든 것을 해결하는 대신, 수비와 압박과 전환과 마무리가 정해진 순서로 이어졌다.</p>
+        <div class="wire">
+          <div class="wire-node">
+            <div class="w-name">캉테</div>
+            <div class="w-role">중원에서 공을 끊으면</div>
+          </div>
+          <div class="wire-arrow">→</div>
+          <div class="wire-node">
+            <div class="w-name">마레즈</div>
+            <div class="w-role">드리블로 이어지고</div>
+          </div>
+          <div class="wire-arrow">→</div>
+          <div class="wire-node">
+            <div class="w-name">바디</div>
+            <div class="w-role">폭발적 침투로 마무리한다</div>
+          </div>
+        </div>
+        <blockquote class="qflat">
+          <p>강점은 각자 흩어져 있을 때보다 <span class="strong">사이에 순서가 생길 때</span> 커진다.</p>
+          <p>대부분의 조직은 사람이 부족한 것이 아니라 <span class="strong">이음매가 헐거운</span> 것이다.</p>
+          <footer>우리는 골을 넣은 사람의 이름만 기억한다. 하지만 이기게 한 것은 보이지 않는 열 번의 전환이었다.</footer>
+        </blockquote>
+      </div>
+      <div class="slide-counter"><b>4</b> / 6</div>
+    </div>
+  </section>
+
+  <!-- 5. 한 시즌의 증명 -->
+  <section class="slide" data-s="5">
+    <div class="slide-inner">
+      <div class="label">검증<span class="dot"> · </span>마법은 오래가지 않았다</div>
+      <div class="grow">
+        <h2 class="head-mid">한 시즌의 증명</h2>
+        <p class="body" style="margin-top:2.2vh;">우승을 <span class="strong2">‘팀워크면 무엇이든 된다’</span>로 읽으면 곤란하다. 기량, 판단, 행운, 강팀의 흔들림이 함께 작동했다. 그리고 마법은 오래가지 않았다. <span class="strong">이듬해 강등권 추락, 라니에리 경질</span>. 이 전략도 영원한 방패는 아니었다.</p>
+        <div class="question">우리 조직은 지금 누구의 영웅심에 기대어 굴러가는가.</div>
+        <p class="body" style="margin-top:1.6vh;">그 한 사람이 빠지면 무너지는 구조라면, 그것은 강한 것이 아니라 <span class="strong">위태로운 것</span>이다.</p>
+        <div class="check-flat">
+          <div class="sq">✓</div>
+          <div class="t">각자의 일이 다음 사람의 일을 쉽게 만드는 연결 규칙은 <b>머릿속이 아니라 문서에 적혀 있는가</b>.</div>
+        </div>
+      </div>
+      <div class="slide-counter"><b>5</b> / 6</div>
+    </div>
+  </section>
+
+  <!-- 6. 클로징 -->
+  <section class="slide dark closing" data-s="6">
+    <div class="slide-inner">
+      <div class="wordmark">Underdog<span class="slash"> · </span>02</div>
+      <div class="grow" style="justify-content:center;">
+        <h2 class="head-big">몸값은 개인의 값을 매기지만,<br><span class="strong2">승리는 연결의 값에서 나온다</span>.</h2>
+        <p class="body" style="margin-top:3vh; max-width:50vw;">스타가 없어도 역할과 역할이 정확히 맞물리면, 시장이 미처 계산하지 못한 힘이 잠깐 태어난다. 그 힘은 영원하지 않다. 그러나 확률이 결말의 명령이 아니었다는 것을 한 시즌 동안 보여 주기엔 넉넉했다.</p>
+      </div>
+      <div class="slide-counter"><b>6</b> / 6</div>
+    </div>
+  </section>
+
+</div>
+
+<div class="nav-arrows">
+  <button class="nav-arrow" id="prevBtn" title="이전" aria-label="이전">◂</button>
+  <button class="nav-arrow" id="nextBtn" title="다음" aria-label="다음">▸</button>
+</div>
+
+<script>
+(function(){
+  const slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  const total = slides.length;
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  let cur = 0;
+  let busy = false;
+
+  function syncChrome(){
+    prevBtn.disabled = (cur === 0);
+    nextBtn.disabled = (cur === total - 1);
+    document.body.classList.toggle('on-dark', slides[cur].classList.contains('dark'));
+  }
+
+  function show(i){
+    if(busy || i < 0 || i >= total) return;
+    const next = slides[i];
+    slides[cur].classList.remove('active');
+    next.classList.add('anim');
+    next.classList.add('active');
+    cur = i;
+    syncChrome();
+    busy = true;
+    setTimeout(function(){ next.classList.remove('anim'); busy = false; }, 500);
+  }
+
+  prevBtn.addEventListener('click', function(){ show(cur - 1); });
+  nextBtn.addEventListener('click', function(){ show(cur + 1); });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown'){ e.preventDefault(); show(cur + 1); }
+    else if(e.key === 'ArrowLeft' || e.key === 'PageUp'){ e.preventDefault(); show(cur - 1); }
+    else if(e.key === 'Home'){ show(0); }
+    else if(e.key === 'End'){ show(total - 1); }
+  });
+
+  let sx = null;
+  document.addEventListener('touchstart', function(e){ sx = e.touches[0].clientX; }, {passive:true});
+  document.addEventListener('touchend', function(e){
+    if(sx === null) return;
+    const dx = e.changedTouches[0].clientX - sx;
+    if(Math.abs(dx) > 48){ show(dx < 0 ? cur + 1 : cur - 1); }
+    sx = null;
+  }, {passive:true});
+
+  syncChrome();
+})();
+</script>
+</body>
+</html>
