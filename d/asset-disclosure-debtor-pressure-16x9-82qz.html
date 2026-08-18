@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="재산명시·재산조회·채무불이행자명부 등재를 활용한 채권 회수 전략 6장 강의안">
+  <title>재산명시·재산조회·채무자 압박의 기술</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #13233b;
+      --muted: #63738a;
+      --paper: #f7f8fb;
+      --panel: #ffffff;
+      --line: #dce4ef;
+      --navy: #13233b;
+      --blue: #2f67f6;
+      --blue-soft: #eaf0ff;
+      --teal: #0d9488;
+      --amber: #d97706;
+      --red: #c2413b;
+      --shadow: 0 24px 65px rgba(17, 35, 63, .12);
+      --radius: 24px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        color-scheme: dark;
+        --ink: #eef4ff;
+        --muted: #a9b8cf;
+        --paper: #0b1424;
+        --panel: #111f34;
+        --line: #29405d;
+        --navy: #eff5ff;
+        --blue: #82a5ff;
+        --blue-soft: #1b315b;
+        --teal: #53d5c6;
+        --amber: #f5b35b;
+        --red: #f08b83;
+        --shadow: 0 24px 65px rgba(0, 0, 0, .3);
+      }
+    }
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --ink: #eef4ff; --muted: #a9b8cf; --paper: #0b1424; --panel: #111f34;
+      --line: #29405d; --navy: #eff5ff; --blue: #82a5ff; --blue-soft: #1b315b;
+      --teal: #53d5c6; --amber: #f5b35b; --red: #f08b83; --shadow: 0 24px 65px rgba(0,0,0,.3);
+    }
+    :root[data-theme="light"] {
+      color-scheme: light;
+      --ink: #13233b; --muted: #63738a; --paper: #f7f8fb; --panel: #ffffff;
+      --line: #dce4ef; --navy: #13233b; --blue: #2f67f6; --blue-soft: #eaf0ff;
+      --teal: #0d9488; --amber: #d97706; --red: #c2413b; --shadow: 0 24px 65px rgba(17,35,63,.12);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; background: var(--paper); color: var(--ink); }
+    body { font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif; overflow-x: hidden; }
+    button, a { font: inherit; }
+    button { cursor: pointer; }
+    button:focus-visible, a:focus-visible { outline: 4px solid var(--amber); outline-offset: 4px; }
+    .deck-shell { width: min(100vw, 1280px); margin: 0 auto; padding: 18px; }
+    .stage { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border: 1px solid var(--line); border-radius: 28px; background: var(--panel); box-shadow: var(--shadow); }
+    .slide { display: none; position: absolute; inset: 0; padding: clamp(34px, 5vw, 72px) clamp(38px, 6vw, 88px) 76px; overflow: hidden; isolation: isolate; }
+    .slide.active { display: block; }
+    .slide::before { content: ""; position: absolute; z-index: -2; width: 42%; aspect-ratio: 1; right: -13%; top: -35%; border-radius: 50%; background: var(--blue-soft); opacity: .8; }
+    .slide::after { content: ""; position: absolute; z-index: -2; width: 30%; aspect-ratio: 1; left: -17%; bottom: -35%; border: 1px solid var(--line); border-radius: 50%; opacity: .7; }
+    .eyebrow { display: flex; align-items: center; gap: 12px; color: var(--blue); font-size: clamp(.85rem, 1.2vw, 1.12rem); font-weight: 750; letter-spacing: .1em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 28px; height: 4px; border-radius: 2px; background: var(--blue); }
+    h1, h2, h3, p { margin: 0; }
+    h1 { max-width: 950px; margin-top: 22px; font-size: clamp(2.7rem, 5.4vw, 5.7rem); line-height: 1.04; letter-spacing: -.055em; text-wrap: balance; }
+    h2 { max-width: 980px; margin-top: 16px; font-size: clamp(2.1rem, 4vw, 4.15rem); line-height: 1.08; letter-spacing: -.045em; text-wrap: balance; }
+    h3 { font-size: clamp(1.15rem, 1.65vw, 1.7rem); line-height: 1.16; letter-spacing: -.02em; }
+    p, li { font-size: clamp(1.25rem, 2.04vw, 2.1rem); line-height: 1.42; }
+    .lead { max-width: 760px; margin-top: 24px; color: var(--muted); }
+    .small { color: var(--muted); font-size: clamp(.95rem, 1.25vw, 1.28rem); line-height: 1.4; }
+    .source { position: absolute; left: clamp(38px, 6vw, 88px); right: clamp(38px, 6vw, 88px); bottom: 25px; color: var(--muted); font-size: clamp(.7rem, .94vw, .94rem); line-height: 1.25; }
+    .source a { color: inherit; text-decoration-color: var(--blue); text-underline-offset: 3px; }
+    .cover { background: linear-gradient(135deg, var(--panel) 0%, var(--panel) 60%, var(--blue-soft) 100%); }
+    .cover .cover-mark { position: absolute; right: 9%; bottom: 16%; width: 25%; aspect-ratio: 1; border: 1px solid var(--line); border-radius: 50%; }
+    .cover .cover-mark::before, .cover .cover-mark::after { content: ""; position: absolute; inset: 16%; border: 1px solid var(--line); border-radius: 50%; }
+    .cover .cover-mark::after { inset: 32%; border-color: var(--blue); }
+    .cover .mini-tag { display: inline-flex; margin-top: 36px; padding: 9px 15px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: clamp(.85rem, 1.15vw, 1.1rem); font-weight: 700; }
+    .question-band { display: grid; grid-template-columns: 1.15fr .85fr; gap: 34px; align-items: end; height: calc(100% - 110px); }
+    .question-quote { padding: 30px 34px; border-left: 7px solid var(--red); background: color-mix(in srgb, var(--panel) 78%, var(--red) 22%); }
+    .question-quote strong { display: block; font-size: clamp(1.4rem, 2.35vw, 2.45rem); line-height: 1.22; }
+    .question-quote span { display: block; margin-top: 16px; color: var(--muted); font-size: clamp(1rem, 1.35vw, 1.35rem); }
+    .judgment { align-self: center; padding: 28px 30px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); }
+    .judgment .big { display: block; margin: 8px 0 16px; font-size: clamp(2rem, 3.7vw, 3.75rem); font-weight: 800; letter-spacing: -.06em; }
+    .judgment .big em { color: var(--red); font-style: normal; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 40px; }
+    .procedure { min-height: 260px; padding: 28px 26px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); }
+    .procedure .index { display: inline-grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--navy); color: var(--panel); font-size: 1rem; font-weight: 800; }
+    .procedure h3 { margin-top: 22px; }
+    .procedure p { margin-top: 12px; color: var(--muted); font-size: clamp(1rem, 1.45vw, 1.45rem); line-height: 1.4; }
+    .procedure .purpose { display: inline-block; margin-top: 24px; color: var(--blue); font-size: clamp(.95rem, 1.25vw, 1.2rem); font-weight: 750; }
+    .flow { position: relative; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; margin-top: 40px; }
+    .flow::before { content: ""; position: absolute; left: 12%; right: 12%; top: 66px; border-top: 3px dashed var(--line); z-index: -1; }
+    .flow-step { position: relative; padding: 22px; border: 1px solid var(--line); border-radius: 18px; background: var(--panel); }
+    .flow-step .num { display: grid; place-items: center; width: 58px; height: 58px; border-radius: 18px; background: var(--blue); color: #fff; font-size: 1.55rem; font-weight: 800; }
+    .flow-step:nth-child(2) .num { background: var(--teal); }
+    .flow-step:nth-child(3) .num { background: var(--amber); }
+    .flow-step h3 { margin-top: 18px; }
+    .flow-step p { margin-top: 10px; color: var(--muted); font-size: clamp(1rem, 1.4vw, 1.35rem); }
+    .flow-note { margin-top: 25px; color: var(--muted); font-size: clamp(1rem, 1.35vw, 1.35rem); }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 34px; }
+    .panel { padding: 26px 28px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); }
+    .panel.blue { border-top: 7px solid var(--blue); }
+    .panel.teal { border-top: 7px solid var(--teal); }
+    .panel h3 { display: flex; justify-content: space-between; gap: 14px; align-items: baseline; }
+    .law { color: var(--blue); font-size: .95em; font-weight: 800; white-space: nowrap; }
+    .panel ul { display: grid; gap: 11px; margin: 20px 0 0; padding-left: 1.2em; }
+    .panel li { font-size: clamp(1.08rem, 1.55vw, 1.55rem); line-height: 1.35; }
+    .panel li::marker { color: var(--blue); }
+    .panel.teal li::marker { color: var(--teal); }
+    .trigger { display: inline-block; margin-top: 18px; padding: 8px 12px; border-radius: 8px; background: var(--blue-soft); color: var(--blue); font-size: clamp(.82rem, 1.08vw, 1rem); font-weight: 750; }
+    .pressure-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 36px; align-items: center; margin-top: 34px; }
+    .pressure-number { display: grid; place-items: center; width: min(29vw, 270px); aspect-ratio: 1; border: 16px solid var(--amber); border-right-color: var(--red); border-radius: 50%; background: var(--panel); box-shadow: inset 0 0 0 12px var(--paper); }
+    .pressure-number strong { font-size: clamp(3rem, 6vw, 6rem); letter-spacing: -.08em; }
+    .pressure-number span { color: var(--muted); font-size: clamp(.95rem, 1.35vw, 1.3rem); font-weight: 700; }
+    .pressure-copy { display: grid; gap: 17px; }
+    .pressure-copy .callout { padding: 20px 24px; border-left: 6px solid var(--amber); background: color-mix(in srgb, var(--panel) 82%, var(--amber) 18%); }
+    .pressure-copy .callout strong { display: block; font-size: clamp(1.25rem, 1.9vw, 1.9rem); }
+    .pressure-copy .callout span { display: block; margin-top: 7px; color: var(--muted); font-size: clamp(.95rem, 1.25vw, 1.2rem); line-height: 1.4; }
+    .check-layout { display: grid; grid-template-columns: 1fr .85fr; gap: 34px; margin-top: 28px; }
+    .checklist { display: grid; gap: 12px; }
+    .check { display: grid; grid-template-columns: 32px 1fr; gap: 14px; align-items: start; padding: 14px 18px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); }
+    .check i { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--teal); color: #fff; font-style: normal; font-weight: 800; }
+    .check p { font-size: clamp(1.02rem, 1.45vw, 1.4rem); line-height: 1.32; }
+    .memory { align-self: center; padding: 30px; border-radius: var(--radius); background: var(--navy); color: var(--panel); }
+    .memory .label { color: var(--blue); font-size: clamp(.85rem, 1.1vw, 1.05rem); font-weight: 800; letter-spacing: .08em; }
+    .memory strong { display: block; margin-top: 18px; font-size: clamp(1.55rem, 2.65vw, 2.7rem); line-height: 1.18; letter-spacing: -.04em; }
+    .memory p { margin-top: 18px; color: color-mix(in srgb, var(--panel) 78%, var(--blue) 22%); font-size: clamp(1rem, 1.35vw, 1.3rem); }
+    .controls { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 15px 4px 0; color: var(--muted); }
+    .controls .left, .controls .right { display: flex; align-items: center; gap: 9px; }
+    .controls button { min-width: 43px; min-height: 39px; padding: 7px 11px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); color: var(--ink); }
+    .controls button:hover { border-color: var(--blue); color: var(--blue); }
+    .progress { width: min(280px, 35vw); height: 5px; overflow: hidden; border-radius: 3px; background: var(--line); }
+    .progress span { display: block; height: 100%; width: 16.666%; background: var(--blue); transition: width .25s ease; }
+    .counter { min-width: 50px; text-align: right; font-variant-numeric: tabular-nums; font-size: .95rem; }
+    .theme-btn { font-size: .85rem; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    @media (max-width: 760px) {
+      .deck-shell { padding: 0; }
+      .stage { min-height: 100vh; border: 0; border-radius: 0; box-shadow: none; overflow: visible; }
+      .slide { position: relative; min-height: 100vh; padding: 42px 24px 80px; }
+      .slide::before { width: 75%; right: -35%; top: -18%; }
+      h1 { font-size: clamp(2.4rem, 12vw, 4.5rem); }
+      h2 { font-size: clamp(2rem, 10vw, 3.6rem); }
+      p, li { font-size: 1.2rem; }
+      .grid-3, .flow, .two-col, .pressure-layout, .check-layout, .question-band { grid-template-columns: 1fr; height: auto; }
+      .grid-3 { margin-top: 24px; }
+      .procedure { min-height: auto; }
+      .flow { gap: 14px; margin-top: 25px; }
+      .flow::before { display: none; }
+      .flow-step { display: grid; grid-template-columns: 58px 1fr; column-gap: 16px; padding: 16px; }
+      .flow-step h3, .flow-step p { grid-column: 2; }
+      .flow-step .num { grid-row: span 2; }
+      .pressure-number { width: 190px; }
+      .source { position: static; margin-top: 24px; font-size: .78rem; }
+      .controls { position: sticky; bottom: 0; z-index: 5; padding: 12px 14px; background: color-mix(in srgb, var(--paper) 90%, transparent); backdrop-filter: blur(10px); }
+      .progress { width: 25vw; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="deck-shell" aria-label="6장 법률 강의 슬라이드">
+    <div class="stage" id="deck">
+      <section class="slide cover active" data-slide="1" aria-labelledby="s1-title">
+        <div class="eyebrow">민사집행 · 채권회수</div>
+        <h1 id="s1-title">판결문은 끝이 아니다.<br><span style="color:var(--blue)">재산을 찾아야</span> 회수다.</h1>
+        <p class="lead">재산명시 · 재산조회 · 채무불이행자명부 등재를 활용한 채무자 압박의 기술</p>
+        <span class="mini-tag">실전형 6장 브리핑 · 2026. 08. 18.</span>
+        <div class="cover-mark" aria-hidden="true"></div>
+        <p class="source">교육용 일반 정보 · 구체적 사건은 집행권원, 송달 상태, 현행 법령을 개별 확인해야 합니다.</p>
+      </section>
+
+      <section class="slide" data-slide="2" aria-labelledby="s2-title">
+        <div class="eyebrow">01 · 회수의 현실</div>
+        <h2 id="s2-title">승소했는데도 돈이 안 들어온다면,<br>문제는 ‘권리’가 아니라 <span style="color:var(--red)">집행 대상</span>이다.</h2>
+        <div class="question-band">
+          <div class="question-quote">
+            <strong>“어디에 어떤 재산이 있는지 모르는데, 무엇을 압류해야 하죠?”</strong>
+            <span>승소 판결을 받은 채권자가 가장 먼저 마주치는 장면</span>
+          </div>
+          <div class="judgment">
+            <span class="small">핵심 전환</span>
+            <span class="big">판결 <em>→</em> 탐색 <em>→</em> 집행</span>
+            <p class="small">채무자의 재산을 드러내고, 불응의 비용을 높이는 절차가 필요합니다.</p>
+          </div>
+        </div>
+        <p class="source">원문 핵심 논지: 판결만으로는 실제 채권 회수가 완성되지 않으며, 재산을 찾아 강제집행으로 연결해야 합니다.</p>
+      </section>
+
+      <section class="slide" data-slide="3" aria-labelledby="s3-title">
+        <div class="eyebrow">02 · 세 가지 레버</div>
+        <h2 id="s3-title">한 번에 끝내는 ‘비법’이 아니라,<br><span style="color:var(--blue)">요건에 맞춰 조합하는</span> 회수 레버다.</h2>
+        <div class="grid-3">
+          <article class="procedure">
+            <span class="index">A</span>
+            <h3>재산명시</h3>
+            <p>채무자가 법원에 출석해 재산목록을 제출하고 진실함을 선서하게 하는 절차</p>
+            <span class="purpose">자발적 공개를 먼저 유도</span>
+          </article>
+          <article class="procedure">
+            <span class="index" style="background:var(--teal)">B</span>
+            <h3>재산조회</h3>
+            <p>법원이 조회 대상 기관에 채무자 명의 재산 정보를 요청하는 절차</p>
+            <span class="purpose" style="color:var(--teal)">숨은 재산의 공식 탐색</span>
+          </article>
+          <article class="procedure">
+            <span class="index" style="background:var(--amber)">C</span>
+            <h3>채무불이행자명부</h3>
+            <p>불이행 또는 불성실한 절차 대응을 근거로 명부 등재를 신청하는 절차</p>
+            <span class="purpose" style="color:var(--amber)">신용·금융상의 압박</span>
+          </article>
+        </div>
+        <p class="flow-note">기본 흐름은 A → B → C. 다만 주소·목록·불응 사유에 따라 적용 요건과 순서는 달라질 수 있습니다.</p>
+        <p class="source">근거: 대법원 ‘재산명시, 채무불이행자명부, 재산조회’ 안내 · 민사집행법 제61조·제70조·제74조</p>
+      </section>
+
+      <section class="slide" data-slide="4" aria-labelledby="s4-title">
+        <div class="eyebrow">03 · 발견 장치</div>
+        <h2 id="s4-title">먼저 스스로 밝히게 하고,<br>막히면 <span style="color:var(--teal)">법원의 조회</span>로 전환한다.</h2>
+        <div class="two-col">
+          <article class="panel blue">
+            <h3>재산명시신청 <span class="law">민사집행법 §61</span></h3>
+            <ul>
+              <li>집행권원을 가진 채권자가 법원에 신청</li>
+              <li>채무자는 재산목록을 제출하고 진실함을 선서</li>
+              <li>주소·송달이 막히거나 허위·불충분하면 한계</li>
+            </ul>
+            <span class="trigger">첫 질문: 송달 가능한 정확한 주소인가?</span>
+          </article>
+          <article class="panel teal">
+            <h3>재산조회신청 <span class="law" style="color:var(--teal)">민사집행법 §74</span></h3>
+            <ul>
+              <li>주소 보정 불가, 목록만으로 부족, 불응 등 법정 요건 확인</li>
+              <li>법원이 공공기관·금융기관·단체 등에 조회</li>
+              <li>조회 기관을 특정하고 비용을 미리 납부</li>
+            </ul>
+            <span class="trigger" style="color:var(--teal)">두 번째 질문: 어느 기관의 정보가 필요한가?</span>
+          </article>
+        </div>
+        <p class="source">근거: <a href="https://law.go.kr/LSW/lsLinkCommonInfo.do?chrClsCd=010202&amp;lsJoLnkSeq=1031930523" target="_blank" rel="noopener">국가법령정보센터 제61조</a> · <a href="https://www.law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1001482214" target="_blank" rel="noopener">국가법령정보센터 제74조</a></p>
+      </section>
+
+      <section class="slide" data-slide="5" aria-labelledby="s5-title">
+        <div class="eyebrow">04 · 압박 장치</div>
+        <h2 id="s5-title">재산을 찾는 절차와,<br>갚게 만드는 <span style="color:var(--amber)">압박 장치</span>는 구분하라.</h2>
+        <div class="pressure-layout">
+          <div class="pressure-number" aria-label="6개월 요건">
+            <div><strong>6</strong><span>개월 요건</span></div>
+          </div>
+          <div class="pressure-copy">
+            <div class="callout"><strong>채무불이행자명부 등재신청 · 민사집행법 §70</strong><span>확정된 금전 지급 집행권원 후 6개월 이내에 이행하지 않은 경우 등 법정 사유를 소명해 신청합니다.</span></div>
+            <div class="callout"><strong>효과는 ‘직접 압류’가 아니라 간접 압박</strong><span>대법원 안내에 따르면 정보가 신용정보집중기관·금융기관에 제공될 수 있고, 신용거래·금융활동에 제약이 생길 수 있습니다.</span></div>
+            <div class="callout"><strong>기록이 곧 다음 신청의 재료</strong><span>불출석·목록 제출 거부 등 절차상 불성실을 보여주는 법원 기록과 송달 자료를 보관합니다.</span></div>
+          </div>
+        </div>
+        <p class="source">근거: <a href="https://law.go.kr/LSW/lsLinkCommonInfo.do?chrClsCd=010202&amp;lsJoLnkSeq=1026912881" target="_blank" rel="noopener">국가법령정보센터 제70조</a> · <a href="https://www.scourt.go.kr/judiciary/duty/civil/index.html" target="_blank" rel="noopener">대한민국 법원 민사재판 안내</a></p>
+      </section>
+
+      <section class="slide" data-slide="6" aria-labelledby="s6-title">
+        <div class="eyebrow">05 · 바로 실행</div>
+        <h2 id="s6-title">회수 전략은 ‘절차를 많이’가 아니라<br><span style="color:var(--blue)">다음 증거를 남기는 것</span>에서 시작한다.</h2>
+        <div class="check-layout">
+          <div class="checklist">
+            <div class="check"><i>1</i><p><strong>집행권원과 현재 상태</strong>를 확인한다. 확정 여부·집행 가능 여부를 먼저 체크.</p></div>
+            <div class="check"><i>2</i><p><strong>채무자 주소·송달 자료</strong>를 정리한다. 재산명시의 출발점은 송달이다.</p></div>
+            <div class="check"><i>3</i><p><strong>불출석·거부·불충분 목록</strong>의 법원 기록을 확보한다. 다음 신청의 소명자료가 된다.</p></div>
+            <div class="check"><i>4</i><p><strong>재산조회 대상 기관</strong>과 비용을 검토한 뒤, 확인된 재산을 압류·추심 등 집행으로 잇는다.</p></div>
+          </div>
+          <aside class="memory">
+            <span class="label">REMEMBER</span>
+            <strong>판결은 권리의 확인.<br>회수는 재산의 발견.</strong>
+            <p>세 절차는 상호 보완적으로 활용하되, 신청 요건과 송달·증거 상태를 사건별로 점검하세요.</p>
+          </aside>
+        </div>
+        <p class="source">법률 교육용 요약 · 현행 법령과 구체적 사실관계에 따라 결과가 달라질 수 있습니다. 출처: 국가법령정보센터·대한민국 법원</p>
+      </section>
+    </div>
+    <nav class="controls" aria-label="슬라이드 탐색">
+      <div class="left">
+        <button type="button" id="prev" aria-label="이전 슬라이드">←</button>
+        <button type="button" id="next" aria-label="다음 슬라이드">→</button>
+        <span class="counter" id="counter" aria-live="polite">1 / 6</span>
+      </div>
+      <div class="progress" aria-hidden="true"><span id="progress"></span></div>
+      <div class="right">
+        <button type="button" class="theme-btn" id="theme" aria-label="테마 전환">테마 T</button>
+        <span class="small">← → · Space · Home · End</span>
+      </div>
+    </nav>
+    <p class="sr-only" id="status">1번 슬라이드</p>
+  </main>
+  <script>
+    (() => {
+      const slides = [...document.querySelectorAll('.slide')];
+      const counter = document.getElementById('counter');
+      const progress = document.getElementById('progress');
+      const status = document.getElementById('status');
+      const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+      let current = clamp(Number(new URLSearchParams(location.search).get('slide')) || 1, 1, slides.length);
+      function render(push = true) {
+        slides.forEach((slide, index) => {
+          const active = index === current - 1;
+          slide.classList.toggle('active', active);
+          slide.setAttribute('aria-hidden', String(!active));
+        });
+        counter.textContent = `${current} / ${slides.length}`;
+        progress.style.width = `${(current / slides.length) * 100}%`;
+        status.textContent = `${current}번 슬라이드`;
+        if (push) history.replaceState(null, '', `?slide=${current}`);
+      }
+      function go(delta) { current = clamp(current + delta, 1, slides.length); render(); }
+      document.getElementById('prev').addEventListener('click', () => go(-1));
+      document.getElementById('next').addEventListener('click', () => go(1));
+      document.getElementById('theme').addEventListener('click', () => {
+        const root = document.documentElement;
+        const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+        root.dataset.theme = next;
+        localStorage.setItem('deck-theme', next);
+      });
+      const storedTheme = localStorage.getItem('deck-theme');
+      if (storedTheme) document.documentElement.dataset.theme = storedTheme;
+      document.addEventListener('keydown', (event) => {
+        if (['ArrowRight', ' ', 'PageDown'].includes(event.key)) { event.preventDefault(); go(1); }
+        if (['ArrowLeft', 'PageUp'].includes(event.key)) { event.preventDefault(); go(-1); }
+        if (event.key === 'Home') { event.preventDefault(); current = 1; render(); }
+        if (event.key === 'End') { event.preventDefault(); current = slides.length; render(); }
+        if (event.key.toLowerCase() === 't') document.getElementById('theme').click();
+      });
+      render(false);
+    })();
+  </script>
+</body>
+</html>
