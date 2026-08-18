@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>대표님 회사는 법률 문제가 어디에서 시작되는지 알고 계십니까? — CEO 법률 리스크 v2</title>
+  <style>
+    :root {
+      --bg: #0a111b;
+      --stage: #111b29;
+      --panel: #172536;
+      --panel-2: #1c2c3f;
+      --ink: #eef3f6;
+      --muted: #9aabba;
+      --line: rgba(238,243,246,.16);
+      --accent: #f2b85b;
+      --accent-2: #8bd3d7;
+      --critical: #ee7c6b;
+      --quiet: #bfd1dc;
+      --shadow: 0 24px 80px rgba(0,0,0,.33);
+    }
+    :root[data-theme="light"] {
+      --bg: #dfe7eb;
+      --stage: #f7f8f5;
+      --panel: #eaf0ef;
+      --panel-2: #ffffff;
+      --ink: #142332;
+      --muted: #5e7180;
+      --line: rgba(20,35,50,.16);
+      --accent: #a86c17;
+      --accent-2: #287f84;
+      --critical: #b4493b;
+      --quiet: #526979;
+      --shadow: 0 24px 70px rgba(44,62,76,.16);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; background: var(--bg); color: var(--ink); }
+    body { font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif; overflow: hidden; }
+    button, a { font: inherit; }
+    button { color: inherit; }
+    a { color: inherit; }
+    .deck-wrap { min-height: 100vh; display: grid; place-items: center; padding: 26px; }
+    .deck { width: min(1280px, 100vw - 52px); aspect-ratio: 16 / 9; max-height: calc(100vh - 104px); position: relative; }
+    .stage { position: absolute; inset: 0; overflow: hidden; background: var(--stage); border: 1px solid var(--line); box-shadow: var(--shadow); }
+    .slide { position: absolute; inset: 0; display: none; padding: 5.2% 6.2% 5.5%; overflow: hidden; }
+    .slide.active { display: block; }
+    .slide::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(130deg, rgba(139,211,215,.08), transparent 36%, rgba(242,184,91,.05)); }
+    .slide-number { position: absolute; top: 5.5%; right: 6.2%; font-size: 1.05rem; color: var(--muted); letter-spacing: .16em; font-variant-numeric: tabular-nums; }
+    .kicker { position: relative; color: var(--accent); text-transform: uppercase; letter-spacing: .2em; font-size: .95rem; font-weight: 700; }
+    h1, h2, h3, p, ul, ol { position: relative; }
+    h1, h2, h3 { margin: 0; font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif; font-weight: 750; letter-spacing: -.045em; text-wrap: balance; }
+    h1 { font-size: clamp(2.8rem, 5.5vw, 6.4rem); line-height: 1.03; max-width: 10.5ch; }
+    h2 { font-size: clamp(2.1rem, 4vw, 4.5rem); line-height: 1.08; max-width: 14ch; }
+    h3 { font-size: clamp(1.2rem, 2vw, 2rem); line-height: 1.18; }
+    p { font-size: clamp(1.9rem, 2.56vw, 2.56rem); line-height: 1.45; max-width: 62ch; }
+    .lede { color: var(--quiet); max-width: 52ch; margin-top: 1.4rem; }
+    .accent { color: var(--accent); }
+    .ink { color: var(--ink); }
+    .muted { color: var(--muted); }
+    .critical { color: var(--critical); }
+    .stage-mark { position: absolute; left: 6.2%; bottom: 4.2%; display: flex; align-items: center; gap: .7rem; font-size: .95rem; color: var(--muted); letter-spacing: .12em; text-transform: uppercase; }
+    .stage-mark::before { content: ""; width: 26px; height: 1px; background: var(--accent); }
+    .cover { align-content: center; }
+    .slide.active.cover { display: grid; }
+    .cover::after { content: ""; position: absolute; width: 42%; aspect-ratio: 1; right: -12%; top: -26%; border: 1px solid rgba(139,211,215,.3); border-radius: 50%; box-shadow: 0 0 0 42px rgba(139,211,215,.06), 0 0 0 84px rgba(139,211,215,.035); }
+    .cover .lede { font-size: clamp(1rem, 1.55vw, 1.5rem); }
+    .rule { width: 54px; height: 2px; background: var(--accent); margin: 1.7rem 0; }
+    .meta-row { position: absolute; left: 6.2%; bottom: 10%; display: flex; gap: 1.4rem; color: var(--muted); font-size: 1.05rem; }
+    .meta-row span + span { border-left: 1px solid var(--line); padding-left: 1.4rem; }
+    .layout-2 { position: relative; display: grid; grid-template-columns: 1.05fr .95fr; gap: 6%; height: 100%; align-items: center; }
+    .layout-2.top { align-items: start; }
+    .statement { border-left: 3px solid var(--accent); padding: 1.1rem 0 1.1rem 1.4rem; color: var(--quiet); }
+    .statement strong { color: var(--ink); font-size: 1.2em; }
+    .card-grid { position: relative; display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .slide[data-title="다섯 장면을 확인 질문으로 읽는 법"] .card-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 1.4rem !important; }
+    .slide[data-title="다섯 장면을 확인 질문으로 읽는 법"] .card { padding: .8rem .9rem; min-height: 100px; }
+    .slide[data-title="다섯 장면을 확인 질문으로 읽는 법"] .card small { font-size: .8rem; margin-bottom: .35rem; }
+    .slide[data-title="다섯 장면을 확인 질문으로 읽는 법"] .card p { font-size: 1.25rem; line-height: 1.25; }
+    .slide[data-title="Risk Radar 1회성 법률검진"] .scope { margin-top: .7rem; gap: 7px; }
+    .slide[data-title="Risk Radar 1회성 법률검진"] .scope-row { padding: .6rem .7rem; grid-template-columns: 7.5rem 1fr; }
+    .slide[data-title="Risk Radar 1회성 법률검진"] h2 { font-size: clamp(2rem, 3.1vw, 3.5rem); }
+    .slide[data-title="Risk Radar 1회성 법률검진"] .lede { font-size: 1.35rem; line-height: 1.3; margin-top: .8rem; }
+    .slide[data-title="Risk Radar 1회성 법률검진"] .scope-row span { font-size: 1.12rem; line-height: 1.22; }
+    .slide[data-title="Risk Radar 1회성 법률검진"] .scope-row b { font-size: .82rem; }
+    .slide[data-title="Risk Radar 1회성 법률검진"] .radar { width: min(20vw, 190px); margin-top: .7rem; }
+    .slide[data-title="Risk Radar 1회성 법률검진"] .cta-box { padding: .9rem; }
+    .slide[data-title="Risk Radar 1회성 법률검진"] .cta-box h3 { font-size: 1.35rem; }
+    .slide[data-title="Risk Radar 1회성 법률검진"] .cta-box p { font-size: 1.1rem; line-height: 1.25; }
+    .slide[data-title="사례 4 외주 IP 장면"] .case-body .side-row span { font-size: 1.72rem; }
+    .card { border: 1px solid var(--line); background: color-mix(in srgb, var(--panel) 88%, transparent); padding: 1.15rem 1.2rem; min-height: 120px; }
+    .card small { display: block; color: var(--accent); letter-spacing: .12em; font-size: .9rem; text-transform: uppercase; margin-bottom: .7rem; }
+    .card p { margin: .55rem 0 0; font-size: 1.9rem; line-height: 1.35; }
+    .number-list { position: relative; display: grid; gap: 1rem; margin-top: 1.8rem; }
+    .number-list .item { display: grid; grid-template-columns: 2.5rem 1fr; gap: .8rem; align-items: start; }
+    .number-list .n { color: var(--accent); font-size: 1.1rem; font-variant-numeric: tabular-nums; padding-top: .2rem; }
+    .number-list strong { display: block; font-size: 1.05rem; }
+    .number-list span { display: block; color: var(--muted); font-size: 1.8rem; line-height: 1.35; margin-top: .24rem; }
+    .timeline { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 3.2rem; border-top: 1px solid var(--line); }
+    .timeline .t { position: relative; padding: 1.25rem 1rem 0 0; min-height: 150px; }
+    .timeline .t::before { content: ""; position: absolute; top: -5px; left: 0; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); }
+    .timeline .t:not(:last-child)::after { content: ""; position: absolute; top: -1px; left: 9px; right: -1px; height: 1px; background: var(--line); }
+    .timeline b { display: block; font-size: 1.05rem; color: var(--accent); margin-bottom: .7rem; }
+    .timeline span { color: var(--quiet); line-height: 1.35; font-size: 1.9rem; }
+    .case-head { display: flex; align-items: end; gap: 1.3rem; margin-bottom: 2.1rem; }
+    .case-id { color: var(--accent); font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif; font-weight: 750; font-size: 3.5rem; line-height: .8; }
+    .case-head h2 { max-width: 15ch; }
+    .case-body { position: relative; display: grid; grid-template-columns: 1.15fr .85fr; gap: 5%; align-items: start; }
+    .case-body .lead-quote { font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif; font-weight: 650; font-size: clamp(1.35rem, 2.2vw, 2.35rem); line-height: 1.25; max-width: 20ch; }
+    .case-body .side { border-top: 1px solid var(--line); padding-top: 1rem; }
+    .side-row { padding: .8rem 0; border-bottom: 1px solid var(--line); }
+    .side-row b { color: var(--accent); display: block; font-size: 1rem; letter-spacing: .14em; margin-bottom: .34rem; text-transform: uppercase; }
+    .side-row span { color: var(--quiet); line-height: 1.35; font-size: 1.9rem; }
+    .before-after { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 1.3rem; }
+    .before-after .box { padding: 1.35rem; border: 1px solid var(--line); min-height: 170px; }
+    .before-after .box:first-child { background: rgba(238,124,107,.08); border-color: rgba(238,124,107,.35); }
+    .before-after .box:last-child { background: rgba(139,211,215,.08); border-color: rgba(139,211,215,.35); }
+    .before-after b { display: block; font-size: 1rem; letter-spacing: .14em; margin-bottom: .8rem; color: var(--critical); }
+    .before-after .box:last-child b { color: var(--accent-2); }
+    .before-after p { margin: 0; font-size: 2rem; line-height: 1.35; }
+    .lens-grid { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 2.2rem; }
+    .lens { padding: 1rem 1.05rem; border: 1px solid var(--line); background: var(--panel); min-height: 122px; }
+    .lens .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); margin-bottom: .7rem; }
+    .lens:nth-child(2) .dot, .lens:nth-child(5) .dot { background: var(--accent-2); }
+    .lens:nth-child(3) .dot, .lens:nth-child(6) .dot { background: var(--critical); }
+    .lens b { display: block; font-size: 1.2rem; }
+    .lens span { display: block; color: var(--muted); line-height: 1.35; font-size: 1.64rem; margin-top: .35rem; }
+    .radar { position: relative; width: min(34vw, 400px); aspect-ratio: 1; margin: 0 auto; border: 1px solid rgba(139,211,215,.4); border-radius: 50%; background: radial-gradient(circle, rgba(139,211,215,.17) 0 2%, transparent 3% 25%, rgba(139,211,215,.09) 26% 27%, transparent 28% 50%, rgba(139,211,215,.09) 51% 52%, transparent 53% 75%, rgba(139,211,215,.09) 76% 77%, transparent 78%); }
+    .radar::before, .radar::after { content: ""; position: absolute; background: rgba(139,211,215,.27); }
+    .radar::before { width: 1px; top: 0; bottom: 0; left: 50%; }
+    .radar::after { height: 1px; left: 0; right: 0; top: 50%; }
+    .radar .sweep { position: absolute; width: 50%; height: 1px; left: 50%; top: 50%; transform-origin: left; transform: rotate(-28deg); background: linear-gradient(90deg, var(--accent), transparent); }
+    .radar .blip { position: absolute; width: 13px; height: 13px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 6px rgba(242,184,91,.12); }
+    .blip.b1 { left: 26%; top: 30%; } .blip.b2 { left: 66%; top: 22%; background: var(--critical); } .blip.b3 { left: 61%; top: 68%; background: var(--accent-2); } .blip.b4 { left: 32%; top: 70%; background: var(--accent); }
+    .scope { position: relative; display: grid; gap: 10px; margin-top: 1.7rem; }
+    .scope-row { display: grid; grid-template-columns: 10rem 1fr; gap: 1rem; align-items: center; padding: .85rem 1rem; border: 1px solid var(--line); background: var(--panel); }
+    .scope-row b { color: var(--accent); font-size: 1rem; letter-spacing: .12em; }
+    .scope-row span { color: var(--quiet); font-size: 1.84rem; line-height: 1.35; }
+    .cta { position: relative; display: grid; grid-template-columns: 1.1fr .9fr; gap: 5%; align-items: center; height: 100%; }
+    .cta-box { border: 1px solid var(--accent); padding: 1.7rem; background: rgba(242,184,91,.08); }
+    .cta-box h3 { font-size: 1.8rem; }
+    .cta-box p { font-size: 2rem; line-height: 1.35; margin-bottom: 0; }
+    .source-note { position: absolute; left: 6.2%; right: 6.2%; bottom: 4%; color: var(--muted); font-size: 1.16rem; line-height: 1.25; }
+    .source-note a { text-decoration: underline; text-decoration-color: rgba(242,184,91,.55); text-underline-offset: 2px; }
+    .controls { position: fixed; left: 50%; bottom: 12px; transform: translateX(-50%); display: flex; align-items: center; gap: 8px; z-index: 5; }
+    .controls button { border: 1px solid var(--line); background: color-mix(in srgb, var(--panel) 90%, transparent); width: 34px; height: 30px; cursor: pointer; }
+    .controls button:hover, .controls button:focus-visible { border-color: var(--accent); outline: 2px solid rgba(242,184,91,.35); outline-offset: 2px; }
+    .progress { width: 130px; height: 2px; background: var(--line); overflow: hidden; }
+    .progress i { display: block; height: 100%; background: var(--accent); width: 5.55%; transition: width .25s ease; }
+    .hint { position: fixed; right: 18px; bottom: 14px; color: var(--muted); font-size: .68rem; z-index: 5; }
+    .theme { position: fixed; right: 18px; top: 14px; z-index: 5; border: 1px solid var(--line); background: color-mix(in srgb, var(--panel) 90%, transparent); padding: 7px 10px; cursor: pointer; font-size: .7rem; }
+    @media (max-width: 760px) {
+      body { overflow: auto; }
+      .deck-wrap { display: block; padding: 12px; }
+      .deck { width: 100%; max-height: none; aspect-ratio: auto; }
+      .stage { position: relative; width: 100%; min-height: 64vh; aspect-ratio: auto; }
+      .slide { padding: 8% 7% 10%; }
+      h1 { font-size: 2rem; line-height: 1.08; }
+      h2 { font-size: 1.7rem; line-height: 1.12; }
+      h3 { font-size: 1rem; }
+      p, .lede { font-size: 1rem; line-height: 1.35; }
+      .kicker { font-size: .68rem; letter-spacing: .13em; }
+      .slide-number { font-size: .72rem; }
+      .stage-mark { font-size: .62rem; letter-spacing: .06em; }
+      .layout-2, .case-body, .cta { grid-template-columns: 1fr; gap: 1.2rem; }
+      .cta { height: auto; align-items: start; }
+      .statement { padding: .6rem 0 .6rem .8rem; }
+      .statement p { font-size: .95rem; }
+      .case-head { gap: .65rem; margin-bottom: .8rem; }
+      .case-id { font-size: 2rem; }
+      .case-body .lead-quote { font-size: 1rem; line-height: 1.3; }
+      .side-row b { font-size: .8rem; }
+      .side-row { padding: .42rem 0; }
+      .side-row span { font-size: .86rem; line-height: 1.28; }
+      .before-after { gap: 8px; margin-top: .75rem; }
+      .before-after .box { padding: .6rem; min-height: 100px; }
+      .before-after b { font-size: .68rem; margin-bottom: .35rem; }
+      .before-after p { font-size: .84rem; line-height: 1.25; }
+      .number-list { gap: .55rem; margin-top: .85rem; }
+      .number-list .item { grid-template-columns: 1.6rem 1fr; gap: .45rem; }
+      .number-list .n { font-size: .78rem; }
+      .number-list strong { font-size: .88rem; }
+      .number-list span { font-size: .82rem; line-height: 1.25; margin-top: .12rem; }
+      .source-note { font-size: .62rem; line-height: 1.2; }
+      .cta-box { padding: 1rem; }
+      .cta-box p { font-size: 1.1rem; line-height: 1.4; }
+      .slide[data-title="Risk Radar 1회성 법률검진"] .layout-2 { gap: .7rem; }
+      .slide[data-title="Risk Radar 1회성 법률검진"] h2 { font-size: 1.75rem; }
+      .slide[data-title="Risk Radar 1회성 법률검진"] .layout-2 { grid-template-columns: .8fr 1.2fr; gap: .4rem; align-items: start; }
+      .slide[data-title="Risk Radar 1회성 법률검진"] h2 { font-size: 1.35rem; }
+      .slide[data-title="Risk Radar 1회성 법률검진"] .lede { font-size: .68rem; line-height: 1.2; }
+      .slide[data-title="Risk Radar 1회성 법률검진"] .radar { width: min(24vw, 100px); margin-top: .4rem; }
+      .slide[data-title="Risk Radar 1회성 법률검진"] .scope { gap: 4px; margin-top: 0; }
+      .slide[data-title="Risk Radar 1회성 법률검진"] .scope-row { grid-template-columns: 4rem 1fr; padding: .22rem .3rem; }
+      .slide[data-title="Risk Radar 1회성 법률검진"] .scope-row b { font-size: .55rem; }
+      .slide[data-title="Risk Radar 1회성 법률검진"] .scope-row span { font-size: .62rem; line-height: 1.08; }
+      .slide[data-title="Risk Radar 1회성 법률검진"] .cta-box { margin-top: .35rem !important; padding: .4rem; }
+      .slide[data-title="Risk Radar 1회성 법률검진"] .cta-box h3 { font-size: .85rem; }
+      .slide[data-title="Risk Radar 1회성 법률검진"] .cta-box p { font-size: .62rem; line-height: 1.1; }
+      .slide[data-title="사례 4 외주 IP 장면"] .case-body .side-row span { font-size: .72rem; line-height: 1.16; }
+      .radar { width: min(46vw, 260px); }
+      .card-grid { gap: 8px; }
+      .card { padding: .5rem; min-height: 70px; }
+      .card small { font-size: .58rem; margin-bottom: .25rem; }
+      .card p, .lens span, .scope-row span { font-size: .78rem; line-height: 1.22; }
+      .slide[data-title="다섯 장면을 확인 질문으로 읽는 법"] .card { min-height: 70px; padding: .5rem; }
+      .slide[data-title="다섯 장면을 확인 질문으로 읽는 법"] .card p { font-size: .78rem; }
+      .slide[data-title="다섯 장면을 확인 질문으로 읽는 법"] .card small { font-size: .58rem; }
+      .lens-grid { gap: 7px; }
+      .lens { padding: .7rem; min-height: 90px; }
+      .timeline { margin-top: 1.5rem; }
+      .timeline .t { min-height: 105px; padding-right: .4rem; }
+      .timeline b { font-size: .72rem; }
+      .timeline span { font-size: .82rem; line-height: 1.25; }
+      .hint { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; } }
+  </style>
+</head>
+<body>
+  <main class="deck-wrap">
+    <section class="deck" aria-label="대표님 회사는 법률 문제가 어디에서 시작되는지 알고 계십니까? CEO 법률 리스크 v2 슬라이드">
+      <div class="stage">
+        <article class="slide active cover" data-title="표지">
+          <div class="kicker">Guro CEO briefing · 2026.08.20 · v2</div>
+          <div class="rule"></div>
+          <h1>대표님 회사는<br><span class="accent">법률 문제가</span><br>어디에서 시작되는지<br>알고 계십니까?</h1>
+          <p class="lede">CEO를 위한 5가지 법률 리스크<br>결정 장면에서 먼저 보는 법</p>
+          <div class="meta-row"><span>45 min</span><span>5 reconstructed scenes</span><span>for SME CEOs</span></div>
+          <div class="stage-mark">before the dispute · after the decision</div>
+        </article>
+
+        <article class="slide" data-title="법률 리스크는 언제 시작되는가">
+          <div class="slide-number">02 / 20</div><div class="kicker">the shift</div>
+          <div class="layout-2"><div><h2>법률 리스크는<br><span class="accent">언제</span> 시작되는가?</h2><p class="lede">소송장이나 내용증명을 받는 순간이 아니라, 대표가 결정을 내리는 순간입니다.</p></div><div class="statement"><p><strong>오늘은 ‘위법인가?’에서 멈추지 않습니다.</strong><br>우리 회사가 다음에 무엇을 바꿔야 하는지까지 보겠습니다.</p></div></div>
+          <div class="stage-mark">opening question</div>
+        </article>
+
+        <article class="slide" data-title="손실축과 시간축">
+          <div class="slide-number">03 / 20</div><div class="kicker">risk starts here</div>
+          <h2>사건 뒤에는<br><span class="accent">네 개의 손실축</span>이 겹칩니다</h2>
+          <div class="timeline"><div class="t"><b>01 · CASH</b><span>현금이 묶이고<br>회수 선택지가 줄어든다</span></div><div class="t"><b>02 · STOP</b><span>영업중단 기간과<br>생산 슬롯이 생긴다</span></div><div class="t"><b>03 · CORE</b><span>핵심인력과<br>정보가 빠진다</span></div><div class="t"><b>04 · RECORD</b><span>대표의 결정과<br>사유가 남지 않는다</span></div></div>
+          <p class="lede">D-30 신호 → D-7 경고 → D-day 결정 → D+7 손실·대응</p><div class="stage-mark">four loss axes · one decision trail</div>
+        </article>
+
+        <article class="slide" data-title="다섯 장면을 확인 질문으로 읽는 법">
+          <div class="slide-number">04 / 20</div><div class="kicker">the map</div><h2>다섯 장면을<br>같은 <span class="accent">확인 질문</span>으로 읽습니다</h2>
+          <div class="card-grid" style="margin-top:2rem;"><div class="card"><small>01 · 거래</small><h3>검수·잔금</h3><p>조건·기한·이의제기</p></div><div class="card"><small>02 · 돈</small><h3>미수채권</h3><p>증거·자산·중단 기준</p></div><div class="card"><small>03 · 사람</small><h3>핵심정보</h3><p>비밀관리·접근·반환</p></div><div class="card"><small>04 · 외주</small><h3>IP·소스코드</h3><p>권리·인도·운영권</p></div><div class="card"><small>05 · 대표</small><h3>중요결정</h3><p>승인·이해상충·기록</p></div><div class="card"><small>COMMON</small><h3>누가·언제·무엇을</h3><p>조건·권한·기록이 남는가</p></div></div>
+          <div class="stage-mark">five scenes · one decision structure</div>
+        </article>
+
+        <article class="slide" data-title="사례 1 거래중단 장면">
+          <div class="slide-number">05 / 20</div><div class="kicker">scene 01 · transaction stop</div><div class="case-head"><div class="case-id">01</div><h2>“검수 안 끝났는데,<br>왜 잔금을 안 주나요?”</h2></div>
+          <div class="case-body"><p class="lead-quote">검수 기준 한 줄이<br><span class="critical">거래와 현금흐름</span>을 함께 멈춥니다.</p><div class="side"><div class="side-row"><b>D-30 → D-7</b><span>납품 완료 → 품질 이슈 제기. 검수기간·이의제기 방식이 불명확함</span></div><div class="side-row"><b>D-day → D+7</b><span>잔금 보류 → 재검수·생산 슬롯 중단. 약 1억대 잔금은 교육용 재구성 수치</span></div></div></div>
+          <div class="stage-mark">scene 01 · manufacturing · reconstructed</div>
+        </article>
+
+        <article class="slide" data-title="사례 1 놓친 문서">
+          <div class="slide-number">06 / 20</div><div class="kicker">scene 01 · loss</div><h2>검수 기준 한 줄이<br><span class="accent">약 1억대 잔금</span>을 묶었습니다</h2>
+          <div class="before-after"><div class="box"><b>missed</b><p>검수기간·간주합격·서면 이의제기·부분합격·재검수·잔금 조건이 각각 보이지 않는다.</p></div><div class="box"><b>impact</b><p>현금흐름이 묶이고, 재검수와 생산 일정이 겹치며, 분쟁 대응 비용이 커진다.</p></div></div><p class="lede">금액은 교육용 재구성. 실제 지급의무와 책임은 계약·검수·이행 기록으로 판단합니다.</p><div class="stage-mark">cash · business interruption · contract proof</div>
+        </article>
+
+        <article class="slide" data-title="사례 1 예방 질문">
+          <div class="slide-number">07 / 20</div><div class="kicker">scene 01 · check</div><h2>‘품질 문제’보다 먼저<br><span class="accent">조건의 문서화</span>를 묻습니다</h2>
+          <div class="number-list"><div class="item"><div class="n">01</div><div><strong>검수</strong><span>누가 언제 무엇을 검사하고, 언제 완료로 보는가?</span></div></div><div class="item"><div class="n">02</div><div><strong>이의제기</strong><span>어떤 방식과 기간 안에 이의를 제기해야 하는가?</span></div></div><div class="item"><div class="n">03</div><div><strong>지급</strong><span>부분합격·재검수일 때 얼마를 언제 지급하는가?</span></div></div></div><div class="source-note">민법 제390조·제536조 · 검수·인수·매출인식 내부 체크리스트</div>
+        </article>
+
+        <article class="slide" data-title="사례 2 미수채권 장면">
+          <div class="slide-number">08 / 20</div><div class="kicker">scene 02 · receivables</div><div class="case-head"><div class="case-id">02</div><h2>“6개월 밀렸는데도<br>계속 납품했습니다”</h2></div>
+          <div class="case-body"><p class="lead-quote">관계를 지키려던<br>한 번의 출고가 <span class="critical">회수 선택지</span>를 줄입니다.</p><div class="side"><div class="side-row"><b>D-30 → D-7</b><span>첫 연체 → 추가 물량 요청. 신용한도와 출고중단 기준이 없음</span></div><div class="side-row"><b>D-day → D+7</b><span>추가 출고 승인 → 상대방 계좌·자산 동결 소식. 미수 규모와 회수 가능성이 함께 악화</span></div></div></div>
+          <div class="stage-mark">scene 02 · distribution · reconstructed</div>
+        </article>
+
+        <article class="slide" data-title="사례 2 손실과 놓친 결정">
+          <div class="slide-number">09 / 20</div><div class="kicker">scene 02 · loss</div><h2>내용증명보다 늦게 본<br><span class="accent">자산과 증거</span></h2>
+          <div class="before-after"><div class="box"><b>missed</b><p>연체 30·60·90일 행동, 출고중단, 분할변제·담보·보전조치 검토 시점이 정해지지 않았다.</p></div><div class="box"><b>impact</b><p>미수금이 커지고, 관계를 유지하는 동안 상대방 자산과 협상력이 사라졌다.</p></div></div><p class="lede">승소와 회수는 같은 말이 아닙니다. 거래·증거·자산·선택지를 함께 봅니다.</p><div class="stage-mark">cash · asset · option</div>
+        </article>
+
+        <article class="slide" data-title="사례 2 예방 질문">
+          <div class="slide-number">10 / 20</div><div class="kicker">scene 02 · check</div><h2>기다림을<br><span class="accent">세 개의 문턱</span>으로 관리합니다</h2>
+          <div class="number-list"><div class="item"><div class="n">01</div><div><strong>출고</strong><span>몇 일 연체되면 자동으로 출고를 멈추는가?</span></div></div><div class="item"><div class="n">02</div><div><strong>이관</strong><span>어떤 자료가 모이면 재무·법무로 넘기는가?</span></div></div><div class="item"><div class="n">03</div><div><strong>회수</strong><span>분할변제·담보·보전·소송을 언제 비교하는가?</span></div></div></div><div class="source-note">민법 제390조 · 발주·납품·검수·독촉·자산 자료를 한 거래 폴더에 연결</div>
+        </article>
+
+        <article class="slide" data-title="사례 3 핵심인력 장면">
+          <div class="slide-number">11 / 20</div><div class="kicker">scene 03 · core people & information</div><div class="case-head"><div class="case-id">03</div><h2>“두 사람이 같은 날 나가고,<br>고객목록이 사라졌습니다”</h2></div>
+          <div class="case-body"><p class="lead-quote">퇴사일의 문제가 아니라<br>평소의 <span class="critical">비밀관리</span> 문제입니다.</p><div class="side"><div class="side-row"><b>D-30 → D-7</b><span>핵심 개발자·영업리더 이직 조짐 → 계정·자료 권한 정리 미실시</span></div><div class="side-row"><b>D-day → D+7</b><span>동시 퇴사·소스코드/고객목록 접근 → 경쟁사 접촉 정황</span></div></div></div>
+          <div class="stage-mark">scene 03 · IT/service · reconstructed</div>
+        </article>
+
+        <article class="slide" data-title="사례 3 영업비밀 관리 부재">
+          <div class="slide-number">12 / 20</div><div class="kicker">scene 03 · loss</div><h2>영업비밀이라고 부를 수는 있지만,<br><span class="accent">입증할 체계</span>가 없었습니다</h2>
+          <div class="before-after"><div class="box"><b>missed</b><p>영업비밀 서약서 없음. 비밀등급·접근권한·로그·반환확인·내부 관리체계 없음.</p></div><div class="box"><b>impact</b><p>중요한 정보라는 주장만 남고, 비밀관리의 구체적 흔적을 설명하기 어려워진다.</p></div></div><p class="lede">NDA가 없다고 무조건 결론 내리지 않되, 비공지성·경제적 가치와 함께 비밀관리성을 본다.</p><div class="stage-mark">secret · valuable · managed</div>
+        </article>
+
+        <article class="slide" data-title="사례 3 예방 질문">
+          <div class="slide-number">13 / 20</div><div class="kicker">scene 03 · check</div><h2>퇴사일이 아니라<br><span class="accent">평소의 흔적</span>을 만듭니다</h2>
+          <div class="number-list"><div class="item"><div class="n">01</div><div><strong>지정</strong><span>무엇을 영업비밀·핵심정보로 지정하고 표시했는가?</span></div></div><div class="item"><div class="n">02</div><div><strong>접근</strong><span>누가 어떤 범위로 접근했고 로그가 남는가?</span></div></div><div class="item"><div class="n">03</div><div><strong>퇴사</strong><span>무엇을 회수·차단·반환확인했는가?</span></div></div></div><div class="source-note">부정경쟁방지법 제2조 제2호·제10조 · 서약서·등급표·권한대장·로그·반환확인서</div>
+        </article>
+
+        <article class="slide" data-title="사례 4 외주 IP 장면">
+          <div class="slide-number">14 / 20</div><div class="kicker">scene 04 · outsourced IP</div><div class="case-head"><div class="case-id">04</div><h2>“개발비는 다 냈는데,<br>소스코드를 받을 수 없었습니다”</h2></div>
+          <div class="case-body"><p class="lead-quote">돈·권리·인도물은<br><span class="critical">자동으로 한 묶음</span>이 되지 않습니다.</p><div class="side"><div class="side-row"><b>D-30 → D-7</b><span>요구사항 변경 → 납품 일정 압박. 권리·소스코드·기존 모듈 범위가 불명확</span></div><div class="side-row"><b>D-day → D+7</b><span>대금 지급·운영 전환 → 원 개발사가 소스코드와 저작권 범위를 다르게 주장</span></div></div></div>
+          <div class="stage-mark">scene 04 · IT/manufacturing · reconstructed</div>
+        </article>
+
+        <article class="slide" data-title="사례 4 권리와 인도물">
+          <div class="slide-number">15 / 20</div><div class="kicker">scene 04 · loss</div><h2>권리·소스코드·기존 모듈이<br><span class="accent">한 문장</span>에 섞였습니다</h2>
+          <div class="before-after"><div class="box"><b>missed</b><p>프로젝트 코드·기존 코드·오픈소스·2차적저작물·수정권·계정 인도 시점이 분리되지 않았다.</p></div><div class="box"><b>impact</b><p>운영 전환 후에도 권리·소스코드·빌드·계정의 빈칸이 남아 서비스 지속성이 흔들린다.</p></div></div><p class="lede">저작권법 제45조를 출발점으로 계약의 양도·이용허락·특약과 인도목록을 따로 확인합니다.</p><div class="stage-mark">paying is not the same as owning</div>
+        </article>
+
+        <article class="slide" data-title="사례 4 예방 질문">
+          <div class="slide-number">16 / 20</div><div class="kicker">scene 04 · check</div><h2>외주계약을<br><span class="accent">권리·인도·운영</span> 설계서로</h2>
+          <div class="number-list"><div class="item"><div class="n">01</div><div><strong>권리</strong><span>무엇을 양도받고 무엇을 이용허락받는가?</span></div></div><div class="item"><div class="n">02</div><div><strong>인도</strong><span>소스코드·리포지토리·빌드·키·계정을 언제 받는가?</span></div></div><div class="item"><div class="n">03</div><div><strong>운영</strong><span>종료·분쟁 시에도 회사가 서비스를 계속할 수 있는가?</span></div></div></div><div class="source-note">저작권법 제45조 · 산출물 목록·권리표·소스코드 인도표·오픈소스 목록·검수·대금 조건</div>
+        </article>
+
+        <article class="slide" data-title="사례 5 중요자산 처분 장면">
+          <div class="slide-number">17 / 20</div><div class="kicker">scene 05 · governance</div><div class="case-head"><div class="case-id">05</div><h2>“대표가 공장과<br>특허를 먼저 팔았습니다”</h2></div>
+          <div class="case-body"><p class="lead-quote">대표권이 있다는 것과<br><span class="critical">승인 경로가 있다</span>는 것은 다릅니다.</p><div class="side"><div class="side-row"><b>D-30 → D-7</b><span>매수 제안 → 대표가 가격·일정 확정. 중요도·이해상충 검토 기록 없음</span></div><div class="side-row"><b>D-day → D+7</b><span>공장·핵심 특허 양도 → 승인 부재와 상대방 인식이 분쟁 쟁점으로</span></div></div></div>
+          <div class="stage-mark">scene 05 · manufacturing · reconstructed</div>
+        </article>
+
+        <article class="slide" data-title="사례 5 승인 경로 부재">
+          <div class="slide-number">18 / 20</div><div class="kicker">scene 05 · loss</div><h2>결정은 빨랐지만,<br><span class="accent">회사가 설명할 기록</span>이 없었습니다</h2>
+          <div class="before-after"><div class="box"><b>missed</b><p>중요도 판단표·정관·이사회/주주총회 권한·이해상충·가치평가·의사록이 비어 있다.</p></div><div class="box"><b>impact</b><p>생산거점·핵심 IP 상실, 영업중단 가능성, 대표 책임과 거래 상대방의 인식 쟁점이 겹친다.</p></div></div><p class="lede">상법 제393조는 출발점입니다. 회사 형태·정관·자산의 중요성·거래의 일상성·상대방 인식을 함께 봅니다.</p><div class="stage-mark">asset · authority · decision trail</div>
+        </article>
+
+        <article class="slide" data-title="사례 5 예방과 통합">
+          <div class="slide-number">19 / 20</div><div class="kicker">scene 05 · check · integration</div><h2>중요한 결정일수록<br><span class="accent">속도보다 경로</span>입니다</h2>
+          <div class="number-list"><div class="item"><div class="n">01</div><div><strong>결정 전 1쪽</strong><span>자산의 기능·금액·대체 가능성·영업중단·IP·이해상충</span></div></div><div class="item"><div class="n">02</div><div><strong>승인 라우팅</strong><span>정관·법률상 권한과 필요한 이사회·주주 승인 확인</span></div></div><div class="item"><div class="n">03</div><div><strong>기록</strong><span>반대 의견·대표 사유·상대방 확인·최종 의사록을 남김</span></div></div></div><p class="lede">검수·채권·정보·외주·자산처분 — 다섯 장면의 공통 출구는 ‘자료가 있는 결정’입니다.</p><div class="stage-mark">five scenes · one decision structure</div>
+        </article>
+
+        <article class="slide" data-title="Risk Radar 1회성 법률검진">
+          <div class="slide-number">20 / 20</div><div class="kicker">risk radar · final 8 minutes</div>
+          <div class="layout-2 top"><div><h2>리스크레이더는<br>회사의 <span class="accent">다음 행동</span>을 찾습니다</h2><p class="lede">점수나 면죄부가 아닙니다. 확인한 것과 자료대기를 구분하고, 우선순위를 행동으로 바꾸는 1회성 법률검진입니다.</p><div class="radar" aria-label="Risk Radar 우선순위 시각화"><span class="sweep"></span><i class="blip b1"></i><i class="blip b2"></i><i class="blip b3"></i><i class="blip b4"></i></div></div><div><div class="scope"><div class="scope-row"><b>INPUT</b><span>15문항 자가문진 + 기본자료 + 표적 보충자료</span></div><div class="scope-row"><b>VIEW</b><span>6개 렌즈별 H/M/L/✓ + 핵심 유소견</span></div><div class="scope-row"><b>OUTPUT</b><span>2–3쪽 결과지 + 즉시·이번 달·분기 내 액션</span></div><div class="scope-row"><b>10 FIRMS</b><span>이번 프로모션에서 10개 기업 선별 진행</span></div><div class="scope-row"><b>EXCLUDE</b><span>정식 감사·전수검토·소송수행·상시 모니터링</span></div></div><div class="cta-box" style="margin-top:1rem;"><h3>신청 안내</h3><p>주최 측 안내 방식으로 신청해 주세요.<br>선정 기업에 사전문진과 자료 제출 안내를 드립니다.</p></div></div></div>
+          <div class="stage-mark">not a score · a priority map · thank you</div>
+        </article>
+      </div>
+    </section>
+  </main>
+  <button class="theme" type="button" aria-label="테마 전환">light / dark</button>
+  <div class="controls" aria-label="슬라이드 컨트롤"><button type="button" class="prev" aria-label="이전 슬라이드">←</button><div class="progress" aria-hidden="true"><i></i></div><button type="button" class="next" aria-label="다음 슬라이드">→</button></div>
+  <div class="hint">← → / Space · T theme</div>
+  <script>
+    (() => {
+      const slides = [...document.querySelectorAll('.slide')];
+      const progress = document.querySelector('.progress i');
+      const total = slides.length;
+      let index = 0;
+      const querySlide = Number(new URLSearchParams(location.search).get('slide'));
+      if (Number.isFinite(querySlide) && querySlide >= 1 && querySlide <= total) index = querySlide - 1;
+      function render(updateUrl = true) {
+        slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
+        progress.style.width = `${((index + 1) / total) * 100}%`;
+        if (updateUrl) history.replaceState(null, '', `?slide=${index + 1}`);
+        document.title = `${String(index + 1).padStart(2, '0')} · ${slides[index].dataset.title} · CEO 법률 리스크`;
+      }
+      function move(delta) { index = (index + delta + total) % total; render(); }
+      document.querySelector('.prev').addEventListener('click', () => move(-1));
+      document.querySelector('.next').addEventListener('click', () => move(1));
+      document.querySelector('.theme').addEventListener('click', () => {
+        const root = document.documentElement;
+        root.dataset.theme = root.dataset.theme === 'light' ? 'dark' : 'light';
+      });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowRight' || event.key === ' ' || event.key === 'PageDown') { event.preventDefault(); move(1); }
+        if (event.key === 'ArrowLeft' || event.key === 'PageUp') { event.preventDefault(); move(-1); }
+        if (event.key.toLowerCase() === 't') document.querySelector('.theme').click();
+        if (event.key === 'Home') { index = 0; render(); }
+        if (event.key === 'End') { index = total - 1; render(); }
+      });
+      let touchX = null;
+      document.querySelector('.stage').addEventListener('touchstart', (e) => { touchX = e.changedTouches[0].clientX; }, {passive:true});
+      document.querySelector('.stage').addEventListener('touchend', (e) => { if (touchX === null) return; const dx = e.changedTouches[0].clientX - touchX; if (Math.abs(dx) > 40) move(dx < 0 ? 1 : -1); touchX = null; }, {passive:true});
+      render(false);
+    })();
+  </script>
+</body>
+</html>
