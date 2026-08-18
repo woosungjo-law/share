@@ -58,10 +58,12 @@
     button, a { font: inherit; }
     button { cursor: pointer; }
     button:focus-visible, a:focus-visible { outline: 4px solid var(--amber); outline-offset: 4px; }
-    .deck-shell { width: min(100vw, 1280px); margin: 0 auto; padding: 18px; }
+    .deck-shell { width: min(100vw, 1280px); min-height: 100vh; margin: 0 auto; padding: 18px 18px 0; display: flex; flex-direction: column; justify-content: center; }
+    .deck-shell > .stage { width: min(100%, calc((100vh - 72px) * 16 / 9)); align-self: center; }
     .stage { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border: 1px solid var(--line); border-radius: 28px; background: var(--panel); box-shadow: var(--shadow); }
-    .slide { display: none; position: absolute; inset: 0; padding: clamp(34px, 5vw, 72px) clamp(38px, 6vw, 88px) 76px; overflow: hidden; isolation: isolate; }
-    .slide.active { display: block; }
+    .slide { display: none; position: absolute; inset: 0; grid-template-rows: auto minmax(0, 1fr) auto; padding: clamp(34px, 5vw, 72px) clamp(38px, 6vw, 88px) 24px; overflow: hidden; isolation: isolate; }
+    .slide.active { display: grid; }
+    .slide-body { min-width: 0; min-height: 0; display: flex; flex-direction: column; }
     .slide::before { content: ""; position: absolute; z-index: -2; width: 42%; aspect-ratio: 1; right: -13%; top: -35%; border-radius: 50%; background: var(--blue-soft); opacity: .8; }
     .slide::after { content: ""; position: absolute; z-index: -2; width: 30%; aspect-ratio: 1; left: -17%; bottom: -35%; border: 1px solid var(--line); border-radius: 50%; opacity: .7; }
     .eyebrow { display: flex; align-items: center; gap: 12px; color: var(--blue); font-size: clamp(.85rem, 1.2vw, 1.12rem); font-weight: 750; letter-spacing: .1em; text-transform: uppercase; }
@@ -73,14 +75,14 @@
     p, li { font-size: clamp(1.25rem, 2.04vw, 2.1rem); line-height: 1.42; }
     .lead { max-width: 760px; margin-top: 24px; color: var(--muted); }
     .small { color: var(--muted); font-size: clamp(.95rem, 1.25vw, 1.28rem); line-height: 1.4; }
-    .source { position: absolute; left: clamp(38px, 6vw, 88px); right: clamp(38px, 6vw, 88px); bottom: 25px; color: var(--muted); font-size: clamp(.7rem, .94vw, .94rem); line-height: 1.25; }
+    .source { position: static; min-width: 0; color: var(--muted); font-size: clamp(.7rem, .94vw, .94rem); line-height: 1.25; }
     .source a { color: inherit; text-decoration-color: var(--blue); text-underline-offset: 3px; }
     .cover { background: linear-gradient(135deg, var(--panel) 0%, var(--panel) 60%, var(--blue-soft) 100%); }
     .cover .cover-mark { position: absolute; right: 9%; bottom: 16%; width: 25%; aspect-ratio: 1; border: 1px solid var(--line); border-radius: 50%; }
     .cover .cover-mark::before, .cover .cover-mark::after { content: ""; position: absolute; inset: 16%; border: 1px solid var(--line); border-radius: 50%; }
     .cover .cover-mark::after { inset: 32%; border-color: var(--blue); }
     .cover .mini-tag { display: inline-flex; margin-top: 36px; padding: 9px 15px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: clamp(.85rem, 1.15vw, 1.1rem); font-weight: 700; }
-    .question-band { display: grid; grid-template-columns: 1.15fr .85fr; gap: 34px; align-items: end; height: calc(100% - 110px); }
+    .question-band { display: grid; grid-template-columns: 1.15fr .85fr; gap: 34px; align-items: end; min-height: 0; flex: 1; }
     .question-quote { padding: 30px 34px; border-left: 7px solid var(--red); background: color-mix(in srgb, var(--panel) 78%, var(--red) 22%); }
     .question-quote strong { display: block; font-size: clamp(1.4rem, 2.35vw, 2.45rem); line-height: 1.22; }
     .question-quote span { display: block; margin-top: 16px; color: var(--muted); font-size: clamp(1rem, 1.35vw, 1.35rem); }
@@ -140,9 +142,10 @@
     .theme-btn { font-size: .85rem; }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
     @media (max-width: 760px) {
-      .deck-shell { padding: 0; }
-      .stage { min-height: 100vh; border: 0; border-radius: 0; box-shadow: none; overflow: visible; }
-      .slide { position: relative; min-height: 100vh; padding: 42px 24px 80px; }
+      .deck-shell { min-height: 0; padding: 0; display: block; }
+      .stage { width: 100% !important; height: auto; min-height: 100vh; aspect-ratio: auto; border: 0; border-radius: 0; box-shadow: none; overflow-x: clip; overflow-y: visible; }
+      .slide { position: relative; min-height: 100vh; grid-template-rows: auto auto auto; padding: 42px 24px 24px; overflow-x: clip; overflow-y: visible; }
+      .slide-body { overflow: visible; }
       .slide::before { width: 75%; right: -35%; top: -18%; }
       h1 { font-size: clamp(2.4rem, 12vw, 4.5rem); }
       h2 { font-size: clamp(2rem, 10vw, 3.6rem); }
@@ -156,8 +159,8 @@
       .flow-step h3, .flow-step p { grid-column: 2; }
       .flow-step .num { grid-row: span 2; }
       .pressure-number { width: 190px; }
-      .source { position: static; margin-top: 24px; font-size: .78rem; }
-      .controls { position: sticky; bottom: 0; z-index: 5; padding: 12px 14px; background: color-mix(in srgb, var(--paper) 90%, transparent); backdrop-filter: blur(10px); }
+      .source { margin-top: 16px; font-size: .78rem; }
+      .controls { position: static; z-index: auto; padding: 12px 14px 18px; background: var(--paper); }
       .progress { width: 25vw; }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -170,116 +173,128 @@
     <div class="stage" id="deck">
       <section class="slide cover active" data-slide="1" aria-labelledby="s1-title">
         <div class="eyebrow">민사집행 · 채권회수</div>
-        <h1 id="s1-title">판결문은 끝이 아니다.<br><span style="color:var(--blue)">재산을 찾아야</span> 회수다.</h1>
-        <p class="lead">재산명시 · 재산조회 · 채무불이행자명부 등재를 활용한 채무자 압박의 기술</p>
-        <span class="mini-tag">실전형 6장 브리핑 · 2026. 08. 18.</span>
-        <div class="cover-mark" aria-hidden="true"></div>
-        <p class="source">교육용 일반 정보 · 구체적 사건은 집행권원, 송달 상태, 현행 법령을 개별 확인해야 합니다.</p>
+        <div class="slide-body" data-role="body">
+          <h1 id="s1-title">판결문은 끝이 아니다.<br><span style="color:var(--blue)">재산을 찾아야</span> 회수다.</h1>
+          <p class="lead">재산명시 · 재산조회 · 채무불이행자명부 등재를 활용한 채무자 압박의 기술</p>
+          <span class="mini-tag">실전형 6장 브리핑 · 2026. 08. 18.</span>
+        </div>
+        <div class="cover-mark" data-role="decorative" aria-hidden="true"></div>
+        <p class="source" data-role="source">교육용 일반 정보 · 구체적 사건은 집행권원, 송달 상태, 현행 법령을 개별 확인해야 합니다.</p>
       </section>
 
       <section class="slide" data-slide="2" aria-labelledby="s2-title">
         <div class="eyebrow">01 · 회수의 현실</div>
-        <h2 id="s2-title">승소했는데도 돈이 안 들어온다면,<br>문제는 ‘권리’가 아니라 <span style="color:var(--red)">집행 대상</span>이다.</h2>
-        <div class="question-band">
-          <div class="question-quote">
-            <strong>“어디에 어떤 재산이 있는지 모르는데, 무엇을 압류해야 하죠?”</strong>
-            <span>승소 판결을 받은 채권자가 가장 먼저 마주치는 장면</span>
-          </div>
-          <div class="judgment">
-            <span class="small">핵심 전환</span>
-            <span class="big">판결 <em>→</em> 탐색 <em>→</em> 집행</span>
-            <p class="small">채무자의 재산을 드러내고, 불응의 비용을 높이는 절차가 필요합니다.</p>
+        <div class="slide-body" data-role="body">
+          <h2 id="s2-title">승소했는데도 돈이 안 들어온다면,<br>문제는 ‘권리’가 아니라 <span style="color:var(--red)">집행 대상</span>이다.</h2>
+          <div class="question-band">
+            <div class="question-quote">
+              <strong>“어디에 어떤 재산이 있는지 모르는데, 무엇을 압류해야 하죠?”</strong>
+              <span>승소 판결을 받은 채권자가 가장 먼저 마주치는 장면</span>
+            </div>
+            <div class="judgment">
+              <span class="small">핵심 전환</span>
+              <span class="big">판결 <em>→</em> 탐색 <em>→</em> 집행</span>
+              <p class="small">채무자의 재산을 드러내고, 불응의 비용을 높이는 절차가 필요합니다.</p>
+            </div>
           </div>
         </div>
-        <p class="source">원문 핵심 논지: 판결만으로는 실제 채권 회수가 완성되지 않으며, 재산을 찾아 강제집행으로 연결해야 합니다.</p>
+        <p class="source" data-role="source">원문 핵심 논지: 판결만으로는 실제 채권 회수가 완성되지 않으며, 재산을 찾아 강제집행으로 연결해야 합니다.</p>
       </section>
 
       <section class="slide" data-slide="3" aria-labelledby="s3-title">
         <div class="eyebrow">02 · 세 가지 레버</div>
-        <h2 id="s3-title">한 번에 끝내는 ‘비법’이 아니라,<br><span style="color:var(--blue)">요건에 맞춰 조합하는</span> 회수 레버다.</h2>
-        <div class="grid-3">
-          <article class="procedure">
-            <span class="index">A</span>
-            <h3>재산명시</h3>
-            <p>채무자가 법원에 출석해 재산목록을 제출하고 진실함을 선서하게 하는 절차</p>
-            <span class="purpose">자발적 공개를 먼저 유도</span>
-          </article>
-          <article class="procedure">
-            <span class="index" style="background:var(--teal)">B</span>
-            <h3>재산조회</h3>
-            <p>법원이 조회 대상 기관에 채무자 명의 재산 정보를 요청하는 절차</p>
-            <span class="purpose" style="color:var(--teal)">숨은 재산의 공식 탐색</span>
-          </article>
-          <article class="procedure">
-            <span class="index" style="background:var(--amber)">C</span>
-            <h3>채무불이행자명부</h3>
-            <p>불이행 또는 불성실한 절차 대응을 근거로 명부 등재를 신청하는 절차</p>
-            <span class="purpose" style="color:var(--amber)">신용·금융상의 압박</span>
-          </article>
+        <div class="slide-body" data-role="body">
+          <h2 id="s3-title">한 번에 끝내는 ‘비법’이 아니라,<br><span style="color:var(--blue)">요건에 맞춰 조합하는</span> 회수 레버다.</h2>
+          <div class="grid-3">
+            <article class="procedure">
+              <span class="index">A</span>
+              <h3>재산명시</h3>
+              <p>채무자가 법원에 출석해 재산목록을 제출하고 진실함을 선서하게 하는 절차</p>
+              <span class="purpose">자발적 공개를 먼저 유도</span>
+            </article>
+            <article class="procedure">
+              <span class="index" style="background:var(--teal)">B</span>
+              <h3>재산조회</h3>
+              <p>법원이 조회 대상 기관에 채무자 명의 재산 정보를 요청하는 절차</p>
+              <span class="purpose" style="color:var(--teal)">숨은 재산의 공식 탐색</span>
+            </article>
+            <article class="procedure">
+              <span class="index" style="background:var(--amber)">C</span>
+              <h3>채무불이행자명부</h3>
+              <p>불이행 또는 불성실한 절차 대응을 근거로 명부 등재를 신청하는 절차</p>
+              <span class="purpose" style="color:var(--amber)">신용·금융상의 압박</span>
+            </article>
+          </div>
+          <p class="flow-note">기본 흐름은 A → B → C. 다만 주소·목록·불응 사유에 따라 적용 요건과 순서는 달라질 수 있습니다.</p>
         </div>
-        <p class="flow-note">기본 흐름은 A → B → C. 다만 주소·목록·불응 사유에 따라 적용 요건과 순서는 달라질 수 있습니다.</p>
-        <p class="source">근거: 대법원 ‘재산명시, 채무불이행자명부, 재산조회’ 안내 · 민사집행법 제61조·제70조·제74조</p>
+        <p class="source" data-role="source">근거: 대법원 ‘재산명시, 채무불이행자명부, 재산조회’ 안내 · 민사집행법 제61조·제70조·제74조</p>
       </section>
 
       <section class="slide" data-slide="4" aria-labelledby="s4-title">
         <div class="eyebrow">03 · 발견 장치</div>
-        <h2 id="s4-title">먼저 스스로 밝히게 하고,<br>막히면 <span style="color:var(--teal)">법원의 조회</span>로 전환한다.</h2>
-        <div class="two-col">
-          <article class="panel blue">
-            <h3>재산명시신청 <span class="law">민사집행법 §61</span></h3>
-            <ul>
-              <li>집행권원을 가진 채권자가 법원에 신청</li>
-              <li>채무자는 재산목록을 제출하고 진실함을 선서</li>
-              <li>주소·송달이 막히거나 허위·불충분하면 한계</li>
-            </ul>
-            <span class="trigger">첫 질문: 송달 가능한 정확한 주소인가?</span>
-          </article>
-          <article class="panel teal">
-            <h3>재산조회신청 <span class="law" style="color:var(--teal)">민사집행법 §74</span></h3>
-            <ul>
-              <li>주소 보정 불가, 목록만으로 부족, 불응 등 법정 요건 확인</li>
-              <li>법원이 공공기관·금융기관·단체 등에 조회</li>
-              <li>조회 기관을 특정하고 비용을 미리 납부</li>
-            </ul>
-            <span class="trigger" style="color:var(--teal)">두 번째 질문: 어느 기관의 정보가 필요한가?</span>
-          </article>
+        <div class="slide-body" data-role="body">
+          <h2 id="s4-title">먼저 스스로 밝히게 하고,<br>막히면 <span style="color:var(--teal)">법원의 조회</span>로 전환한다.</h2>
+          <div class="two-col">
+            <article class="panel blue">
+              <h3>재산명시신청 <span class="law">민사집행법 §61</span></h3>
+              <ul>
+                <li>집행권원을 가진 채권자가 법원에 신청</li>
+                <li>채무자는 재산목록을 제출하고 진실함을 선서</li>
+                <li>주소·송달이 막히거나 허위·불충분하면 한계</li>
+              </ul>
+              <span class="trigger">첫 질문: 송달 가능한 정확한 주소인가?</span>
+            </article>
+            <article class="panel teal">
+              <h3>재산조회신청 <span class="law" style="color:var(--teal)">민사집행법 §74</span></h3>
+              <ul>
+                <li>주소 보정 불가, 목록만으로 부족, 불응 등 법정 요건 확인</li>
+                <li>법원이 공공기관·금융기관·단체 등에 조회</li>
+                <li>조회 기관을 특정하고 비용을 미리 납부</li>
+              </ul>
+              <span class="trigger" style="color:var(--teal)">두 번째 질문: 어느 기관의 정보가 필요한가?</span>
+            </article>
+          </div>
         </div>
-        <p class="source">근거: <a href="https://law.go.kr/LSW/lsLinkCommonInfo.do?chrClsCd=010202&amp;lsJoLnkSeq=1031930523" target="_blank" rel="noopener">국가법령정보센터 제61조</a> · <a href="https://www.law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1001482214" target="_blank" rel="noopener">국가법령정보센터 제74조</a></p>
+        <p class="source" data-role="source">근거: <a href="https://law.go.kr/LSW/lsLinkCommonInfo.do?chrClsCd=010202&amp;lsJoLnkSeq=1031930523" target="_blank" rel="noopener">국가법령정보센터 제61조</a> · <a href="https://www.law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1001482214" target="_blank" rel="noopener">국가법령정보센터 제74조</a></p>
       </section>
 
       <section class="slide" data-slide="5" aria-labelledby="s5-title">
         <div class="eyebrow">04 · 압박 장치</div>
-        <h2 id="s5-title">재산을 찾는 절차와,<br>갚게 만드는 <span style="color:var(--amber)">압박 장치</span>는 구분하라.</h2>
-        <div class="pressure-layout">
-          <div class="pressure-number" aria-label="6개월 요건">
-            <div><strong>6</strong><span>개월 요건</span></div>
-          </div>
-          <div class="pressure-copy">
-            <div class="callout"><strong>채무불이행자명부 등재신청 · 민사집행법 §70</strong><span>확정된 금전 지급 집행권원 후 6개월 이내에 이행하지 않은 경우 등 법정 사유를 소명해 신청합니다.</span></div>
-            <div class="callout"><strong>효과는 ‘직접 압류’가 아니라 간접 압박</strong><span>대법원 안내에 따르면 정보가 신용정보집중기관·금융기관에 제공될 수 있고, 신용거래·금융활동에 제약이 생길 수 있습니다.</span></div>
-            <div class="callout"><strong>기록이 곧 다음 신청의 재료</strong><span>불출석·목록 제출 거부 등 절차상 불성실을 보여주는 법원 기록과 송달 자료를 보관합니다.</span></div>
+        <div class="slide-body" data-role="body">
+          <h2 id="s5-title">재산을 찾는 절차와,<br>갚게 만드는 <span style="color:var(--amber)">압박 장치</span>는 구분하라.</h2>
+          <div class="pressure-layout">
+            <div class="pressure-number" aria-label="6개월 요건">
+              <div><strong>6</strong><span>개월 요건</span></div>
+            </div>
+            <div class="pressure-copy">
+              <div class="callout"><strong>채무불이행자명부 등재신청 · 민사집행법 §70</strong><span>확정된 금전 지급 집행권원 후 6개월 이내에 이행하지 않은 경우 등 법정 사유를 소명해 신청합니다.</span></div>
+              <div class="callout"><strong>효과는 ‘직접 압류’가 아니라 간접 압박</strong><span>대법원 안내에 따르면 정보가 신용정보집중기관·금융기관에 제공될 수 있고, 신용거래·금융활동에 제약이 생길 수 있습니다.</span></div>
+              <div class="callout"><strong>기록이 곧 다음 신청의 재료</strong><span>불출석·목록 제출 거부 등 절차상 불성실을 보여주는 법원 기록과 송달 자료를 보관합니다.</span></div>
+            </div>
           </div>
         </div>
-        <p class="source">근거: <a href="https://law.go.kr/LSW/lsLinkCommonInfo.do?chrClsCd=010202&amp;lsJoLnkSeq=1026912881" target="_blank" rel="noopener">국가법령정보센터 제70조</a> · <a href="https://www.scourt.go.kr/judiciary/duty/civil/index.html" target="_blank" rel="noopener">대한민국 법원 민사재판 안내</a></p>
+        <p class="source" data-role="source">근거: <a href="https://law.go.kr/LSW/lsLinkCommonInfo.do?chrClsCd=010202&amp;lsJoLnkSeq=1026912881" target="_blank" rel="noopener">국가법령정보센터 제70조</a> · <a href="https://www.scourt.go.kr/judiciary/duty/civil/index.html" target="_blank" rel="noopener">대한민국 법원 민사재판 안내</a></p>
       </section>
 
       <section class="slide" data-slide="6" aria-labelledby="s6-title">
         <div class="eyebrow">05 · 바로 실행</div>
-        <h2 id="s6-title">회수 전략은 ‘절차를 많이’가 아니라<br><span style="color:var(--blue)">다음 증거를 남기는 것</span>에서 시작한다.</h2>
-        <div class="check-layout">
-          <div class="checklist">
-            <div class="check"><i>1</i><p><strong>집행권원과 현재 상태</strong>를 확인한다. 확정 여부·집행 가능 여부를 먼저 체크.</p></div>
-            <div class="check"><i>2</i><p><strong>채무자 주소·송달 자료</strong>를 정리한다. 재산명시의 출발점은 송달이다.</p></div>
-            <div class="check"><i>3</i><p><strong>불출석·거부·불충분 목록</strong>의 법원 기록을 확보한다. 다음 신청의 소명자료가 된다.</p></div>
-            <div class="check"><i>4</i><p><strong>재산조회 대상 기관</strong>과 비용을 검토한 뒤, 확인된 재산을 압류·추심 등 집행으로 잇는다.</p></div>
+        <div class="slide-body" data-role="body">
+          <h2 id="s6-title">회수 전략은 ‘절차를 많이’가 아니라<br><span style="color:var(--blue)">다음 증거를 남기는 것</span>에서 시작한다.</h2>
+          <div class="check-layout">
+            <div class="checklist">
+              <div class="check"><i>1</i><p><strong>집행권원과 현재 상태</strong>를 확인한다. 확정 여부·집행 가능 여부를 먼저 체크.</p></div>
+              <div class="check"><i>2</i><p><strong>채무자 주소·송달 자료</strong>를 정리한다. 재산명시의 출발점은 송달이다.</p></div>
+              <div class="check"><i>3</i><p><strong>불출석·거부·불충분 목록</strong>의 법원 기록을 확보한다. 다음 신청의 소명자료가 된다.</p></div>
+              <div class="check"><i>4</i><p><strong>재산조회 대상 기관</strong>과 비용을 검토한 뒤, 확인된 재산을 압류·추심 등 집행으로 잇는다.</p></div>
+            </div>
+            <aside class="memory">
+              <span class="label">REMEMBER</span>
+              <strong>판결은 권리의 확인.<br>회수는 재산의 발견.</strong>
+              <p>세 절차는 상호 보완적으로 활용하되, 신청 요건과 송달·증거 상태를 사건별로 점검하세요.</p>
+            </aside>
           </div>
-          <aside class="memory">
-            <span class="label">REMEMBER</span>
-            <strong>판결은 권리의 확인.<br>회수는 재산의 발견.</strong>
-            <p>세 절차는 상호 보완적으로 활용하되, 신청 요건과 송달·증거 상태를 사건별로 점검하세요.</p>
-          </aside>
         </div>
-        <p class="source">법률 교육용 요약 · 현행 법령과 구체적 사실관계에 따라 결과가 달라질 수 있습니다. 출처: 국가법령정보센터·대한민국 법원</p>
+        <p class="source" data-role="source">법률 교육용 요약 · 현행 법령과 구체적 사실관계에 따라 결과가 달라질 수 있습니다. 출처: 국가법령정보센터·대한민국 법원</p>
       </section>
     </div>
     <nav class="controls" aria-label="슬라이드 탐색">
