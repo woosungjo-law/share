@@ -97,7 +97,7 @@ a:hover{text-decoration:underline}
     <!-- Search view -->
     <div id="searchView">
       <div class="search-bar">
-        <input type="text" id="searchInput" placeholder="검색어 입력 (예: 임대차보증금, 퇴직금&지급기한, 강제경매)" oninput="doSearch()">
+        <input type="text" id="searchInput" placeholder="검색어 입력 (예: 임대차보증금, 강제경매, 퇴직금)" oninput="doSearch()">
         <select id="catFilter" onchange="doSearch()">
           <option value="">전체 카테고리</option>
         </select>
@@ -177,37 +177,30 @@ function _doSearch() {
     });
   }
 
-  // Keyword search with synonym expansion + AND support
+  // Keyword search with synonym expansion
   if (q) {
-    // AND search: "퇴직금&지급기한" → both terms must match
-    const isAnd = q.includes('&');
-    const groups = isAnd ? q.split('&').map(s => s.trim()).filter(Boolean) : [q];
-
-    // For each group, expand synonyms
-    const termGroups = groups.map(g => {
-      let terms = g.split(/\s+/);
-      let expanded = [...terms];
-      for (const [key, syns] of Object.entries(synonyms)) {
-        if (syns.some(s => g.includes(s.toLowerCase())) || g.includes(key.toLowerCase())) {
-          expanded.push(key.toLowerCase(), ...syns.map(s => s.toLowerCase()));
-        }
+    let terms = q.split(/\s+/);
+    // Synonym expansion
+    let expandedTerms = [...terms];
+    for (const [key, syns] of Object.entries(synonyms)) {
+      if (syns.some(s => q.includes(s.toLowerCase())) || q.includes(key.toLowerCase())) {
+        expandedTerms.push(key.toLowerCase(), ...syns.map(s => s.toLowerCase()));
       }
-      return [...new Set(expanded)];
-    });
+    }
+    const uniqueTerms = [...new Set(expandedTerms)];
 
-    // AND: every group must have at least one match; OR: any group matches
     results = results.filter(c => {
       const hay = (c.title + ' ' + c.question_snippet + ' ' + c.answer_snippet + ' ' + c.category + ' ' + c.subcategory + ' ' + c.tags.join(' ')).toLowerCase();
-      return termGroups.every(group => group.some(t => hay.includes(t)));
+      // BM25-like: at least one term must match
+      return uniqueTerms.some(t => hay.includes(t));
     });
 
     // Score: title match > question match > tag match
-    const allTerms = termGroups.flat();
     results = results.map(c => {
       let score = 0;
       const titleLow = c.title.toLowerCase();
       const qLow = (c.question_snippet || '').toLowerCase();
-      allTerms.forEach(t => {
+      uniqueTerms.forEach(t => {
         if (titleLow.includes(t)) score += 10;
         if (qLow.includes(t)) score += 5;
         if (c.tags.some(tag => tag.toLowerCase().includes(t))) score += 3;
