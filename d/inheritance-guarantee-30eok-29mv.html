@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>돌아가신 아버지의 30억 보증 빚, 먼저 세 시점을 확인하세요</title>
+<!-- EPUB-TTS-HOOK: 단일 장문 스크롤 서술형 전자책. EPUB 변환 지점은 <main> 내 <section id="ch-N"> 챕터 경계이며, TTS 지점은 각 챕터 본문 <div class="chapter-body"> 입니다. 챕터말 대시보드는 .dashboard 블록으로 후속 변환에서 별도 파트로 분리 가능. -->
+<style>
+:root{
+  --bg:#FFFFFF;
+  --accent:#1A3A6B;
+  --accent2:#2E6BE6;
+  --text:#111827;
+  --sub:#6B7280;
+  --line:#E5E7EB;
+  --card:#F8FAFC;
+  --accent-bar:linear-gradient(90deg,#1A3A6B 0%,#2E6BE6 100%);
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0B1220;
+    --accent:#7FA3D9;
+    --accent2:#5C8BE0;
+    --text:#E5EAF2;
+    --sub:#9AA6B8;
+    --line:#26324A;
+    --card:#141D2F;
+    --accent-bar:linear-gradient(90deg,#7FA3D9 0%,#5C8BE0 100%);
+  }
+}
+html,body{overflow-x:clip;}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Noto Sans KR','Pretendard','Malgun Gothic','Apple SD Gothic Neo',sans-serif;
+  line-height:1.8;
+  font-size:clamp(1rem,1.05vw,1.125rem);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+a{color:var(--accent2);text-decoration:none;}
+a:hover{text-decoration:underline;}
+.skip-link{
+  position:absolute;left:-9999px;top:0;
+  background:var(--accent);color:#fff;padding:.5rem 1rem;z-index:300;border-radius:0 0 .5rem 0;
+}
+.skip-link:focus{left:0;}
+
+/* ── 스크롤 프로그레스 바 ── */
+.progress{position:fixed;top:0;left:0;right:0;height:4px;z-index:200;background:transparent;}
+.progress-bar{height:100%;width:0;background:var(--accent-bar);}
+
+/* ── 상단 헤더 ── */
+.book-header{
+  position:relative;
+  padding:clamp(2.5rem,6vh,5rem) clamp(1rem,4vw,4rem) clamp(2rem,4vh,3.5rem);
+  border-bottom:1px solid var(--line);
+}
+.book-header::before{
+  content:"";display:block;height:5px;width:100%;
+  background:var(--accent-bar);
+  margin-bottom:clamp(1.5rem,3vh,2.5rem);
+}
+.book-header .kicker{
+  color:var(--accent2);font-weight:600;font-size:clamp(.8rem,.85vw,.9rem);
+  letter-spacing:.12em;text-transform:uppercase;margin:0 0 .6rem;
+}
+.book-header h1{
+  font-family:'Noto Serif KR','Nanum Myeongjo','Malgun Gothic',serif;
+  font-weight:700;font-style:normal;
+  font-size:clamp(1.7rem,3.4vw,3rem);
+  line-height:1.3;margin:0;max-width:20em;letter-spacing:-.01em;
+}
+.book-header .subtitle{
+  color:var(--sub);font-size:clamp(1rem,1.2vw,1.15rem);
+  margin:1rem 0 0;max-width:34em;
+}
+.book-header .meta{
+  color:var(--sub);font-size:clamp(.82rem,.85vw,.9rem);
+  margin-top:1.4rem;display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;
+}
+.book-header .meta span{display:inline-flex;align-items:center;gap:.35rem;}
+
+/* ── 레이아웃: 목차 + 본문 ── */
+.layout{display:grid;grid-template-columns:minmax(0,17rem) minmax(0,1fr);gap:clamp(1rem,3vw,3rem);align-items:start;max-width:82rem;margin:0 auto;padding:clamp(1.5rem,3vw,3rem) clamp(1rem,3vw,2rem);}
+@media (max-width:1024px){.layout{grid-template-columns:minmax(0,1fr);}}
+
+/* ── 좌측 목차 ── */
+.toc{
+  position:sticky;top:1rem;
+  font-size:clamp(.88rem,.9vw,.95rem);
+  border-left:3px solid var(--line);padding-left:1rem;
+}
+.toc h2{font-size:clamp(.72rem,.78vw,.8rem);letter-spacing:.1em;text-transform:uppercase;color:var(--sub);margin:0 0 .8rem;font-weight:600;}
+.toc ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.3rem;}
+.toc a{
+  display:block;color:var(--sub);padding:.35rem .6rem;border-radius:.35rem;
+  min-width:0;overflow-wrap:anywhere;
+}
+.toc a:hover{color:var(--accent2);text-decoration:none;background:var(--card);}
+.toc a.active{color:var(--accent);background:var(--card);font-weight:600;}
+.toc .dash-tag{font-size:.72rem;color:var(--accent2);}
+@media (max-width:1024px){.toc{position:static;border-left:none;padding-left:0;}}
+
+/* 모바일 드로어 */
+.drawer-toggle{
+  display:none;position:fixed;bottom:1rem;right:1rem;z-index:210;
+  background:var(--accent);color:#fff;border:none;border-radius:50%;
+  width:3rem;height:3rem;font-size:1.1rem;cursor:pointer;
+  box-shadow:0 4px 14px rgba(0,0,0,.2);
+}
+@media (max-width:1024px){.drawer-toggle{display:flex;align-items:center;justify-content:center;}}
+.drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:211;display:none;}
+.drawer-overlay.open{display:block;}
+.drawer-panel{
+  position:fixed;top:0;left:0;bottom:0;width:min(80vw,20rem);z-index:212;
+  background:var(--bg);transform:translateX(-100%);transition:transform .25s ease;
+  padding:1.5rem;overflow-y:auto;border-right:1px solid var(--line);
+}
+.drawer-panel.open{transform:translateX(0);}
+.drawer-panel .close{background:none;border:none;color:var(--sub);font-size:1.4rem;cursor:pointer;margin-bottom:1rem;}
+
+/* ── 본문 ── */
+main{min-width:0;}
+article{max-width:66ch;margin:0 auto;}
+.chapter{padding:clamp(2rem,5vh,4rem) 0;border-bottom:1px solid var(--line);scroll-margin-top:1rem;}
+.chapter:last-of-type{border-bottom:none;}
+.chapter-num{
+  color:var(--accent2);font-weight:600;font-size:clamp(.8rem,.85vw,.9rem);
+  letter-spacing:.12em;text-transform:uppercase;margin:0 0 .5rem;
+}
+.chapter h2{
+  font-family:'Noto Serif KR','Nanum Myeongjo','Malgun Gothic',serif;
+  font-weight:700;font-style:normal;
+  font-size:clamp(1.4rem,2.4vw,2rem);line-height:1.35;margin:0 0 1.2rem;letter-spacing:-.01em;
+}
+.chapter-body p{margin:0 0 1.1rem;word-break:keep-all;overflow-wrap:break-word;}
+.chapter-body strong{color:var(--accent);font-weight:700;}
+.chapter-body .note{
+  background:var(--card);border-left:3px solid var(--accent2);
+  padding:1rem 1.2rem;border-radius:0 .4rem .4rem 0;
+  color:var(--sub);font-size:.95em;margin:1.2rem 0;
+}
+.chapter-body ul{padding-left:1.3rem;margin:0 0 1.1rem;}
+.chapter-body li{margin-bottom:.5rem;word-break:keep-all;overflow-wrap:break-word;}
+
+/* ── 대시보드 ── */
+.dashboard{
+  margin:2rem 0 0;padding:clamp(1.2rem,2.2vw,1.8rem);
+  background:var(--card);border:1px solid var(--line);border-radius:.7rem;
+}
+.dashboard .dash-title{
+  font-size:clamp(.72rem,.78vw,.8rem);letter-spacing:.12em;text-transform:uppercase;
+  color:var(--accent2);font-weight:600;margin:0 0 1rem;
+}
+.dash-card{background:var(--bg);border:1px solid var(--line);border-radius:.5rem;padding:1rem 1.2rem;margin-bottom:.8rem;}
+.dash-card:last-child{margin-bottom:0;}
+.dash-card .lead{font-weight:700;color:var(--accent);margin:0 0 .4rem;}
+.dash-card p{margin:0 0 .4rem;}
+.dash-card .src{font-size:.82em;color:var(--sub);}
+
+/* 요약카드 */
+.summary-card ul{padding-left:1.2rem;margin:.5rem 0 0;}
+.summary-card li{margin-bottom:.4rem;}
+.one-liner{
+  background:var(--accent);color:#fff;border-radius:.5rem;padding:1rem 1.2rem;margin-top:1rem;
+}
+.one-liner p{margin:0;font-weight:600;}
+
+/* 비교표 */
+.compare-table{overflow-x:auto;border-radius:.5rem;border:1px solid var(--line);}
+.compare-table table{border-collapse:collapse;width:100%;min-width:34rem;font-size:.92em;}
+.compare-table th,.compare-table td{
+  border:1px solid var(--line);padding:.65rem .8rem;text-align:left;vertical-align:top;
+  word-break:keep-all;overflow-wrap:break-word;
+}
+.compare-table th{
+  background:var(--accent);color:#fff;font-weight:600;position:sticky;top:0;font-style:normal;
+}
+.compare-table td:first-child{font-weight:600;color:var(--accent);}
+.compare-table .num{font-variant-numeric:tabular-nums;}
+
+/* 타임라인 */
+.timeline{list-style:none;margin:0;padding:0;position:relative;}
+.timeline::before{content:"";position:absolute;left:.85rem;top:.5rem;bottom:.5rem;width:2px;background:var(--accent2);}
+.timeline li{position:relative;padding-left:2.4rem;margin-bottom:1.1rem;}
+.timeline li:last-child{margin-bottom:0;}
+.timeline .dot{
+  position:absolute;left:0;top:.2rem;width:1.7rem;height:1.7rem;border-radius:50%;
+  background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:.85rem;
+}
+.timeline .t-head{font-weight:700;color:var(--accent);margin:0 0 .2rem;}
+.timeline p{margin:0;}
+
+/* 인용강조 */
+.quote-center{
+  background:var(--accent);color:#fff;border-radius:.6rem;
+  padding:clamp(1.4rem,3vw,2.2rem);text-align:center;
+}
+.quote-center blockquote{margin:0;font-family:'Noto Serif KR','Nanum Myeongjo',serif;font-style:normal;font-weight:700;font-size:clamp(1.1rem,2vw,1.5rem);line-height:1.5;}
+.quote-center blockquote::before{content:"“";}
+.quote-center blockquote::after{content:"”";}
+.quote-center .src{margin-top:.8rem;font-size:.85em;color:rgba(255,255,255,.85);}
+
+/* 다음 장 링크 */
+.next-link{
+  display:block;margin-top:1.6rem;padding:1rem 1.2rem;
+  background:var(--card);border:1px solid var(--line);border-radius:.5rem;
+  color:var(--accent);font-weight:600;text-align:center;
+}
+.next-link:hover{background:var(--accent);color:#fff;text-decoration:none;}
+
+/* 참고 각주(근거) */
+.references{background:var(--card);border:1px solid var(--line);border-radius:.7rem;padding:1.2rem 1.4rem;margin-top:2rem;}
+.references h2{font-size:clamp(1rem,1.4vw,1.2rem);margin:0 0 1rem;color:var(--accent);}
+.references ul{padding-left:1.3rem;margin:0;}
+.references li{margin-bottom:.4rem;word-break:keep-all;overflow-wrap:break-word;}
+.references .num{font-variant-numeric:tabular-nums;}
+
+/* 검색 */
+.search-wrap{margin:0 0 1.5rem;}
+.search-input{
+  width:100%;padding:.7rem .9rem;border:1px solid var(--line);border-radius:.5rem;
+  background:var(--bg);color:var(--text);font-family:inherit;font-size:1rem;
+}
+.search-input:focus{outline:2px solid var(--accent2);outline-offset:1px;}
+mark{background:#FFE08A;color:inherit;border-radius:2px;padding:0 .1em;}
+
+/* 푸터 */
+.book-footer{
+  border-top:1px solid var(--line);padding:2rem 1rem;text-align:center;color:var(--sub);
+  font-size:clamp(.82rem,.85vw,.9rem);
+}
+.book-footer .disclaimer{max-width:44em;margin:0 auto 1rem;}
+
+/* ── 인쇄 ── */
+@media print{
+  .progress,.drawer-toggle,.drawer-overlay,.drawer-panel,.toc{display:none !important;}
+  .layout{display:block;}
+  article{max-width:100%;}
+  .chapter{break-inside:auto;padding:1.2rem 0;}
+  .dashboard{break-inside:avoid;}
+  body{font-size:11pt;}
+  a{color:inherit;}
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<div class="progress" aria-hidden="true"><div class="progress-bar" id="progressBar"></div></div>
+
+<header class="book-header">
+  <p class="kicker">가족상속법 · 일반인 대상 · 관점형</p>
+  <h1>돌아가신 아버지의 30억 보증 빚, 먼저 세 시점을 확인하세요</h1>
+  <p class="subtitle">보증채무 상속을 만났을 때 — 금액 계산보다 앞서 확인해야 할 사망·채무초과 인지·재산처분의 세 시점과, 단순승인·한정승인·상속포기의 선택 순서.</p>
+  <div class="meta">
+    <span>챕터 5</span>
+    <span>독서시간 약 7분</span>
+    <span>민법 제1005조·제1019조·제1025조·제1026조·제1028조·제1029조·제1030조</span>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" id="toc" aria-label="목차">
+    <h2>목차</h2>
+    <ol>
+      <li><a href="#ch-1">1. 위험한 말 한 마디 <span class="dash-tag">· 인용</span></a></li>
+      <li><a href="#ch-2">2. 30억 보증 빚을 만난 박서연 <span class="dash-tag">· 요약</span></a></li>
+      <li><a href="#ch-3">3. 승인·한정승인·포기의 선택 <span class="dash-tag">· 비교표</span></a></li>
+      <li><a href="#ch-4">4. 세 시점을 먼저 정리하라 <span class="dash-tag">· 타임라인</span></a></li>
+      <li><a href="#ch-5">5. 정리와 행동 촉구 <span class="dash-tag">· 요약</span></a></li>
+      <li><a href="#ref">참고 근거 (민법 조문)</a></li>
+    </ol>
+  </nav>
+
+  <main id="main">
+    <div class="search-wrap">
+      <input type="search" class="search-input" id="searchInput" placeholder="본문 검색 (예: 한정승인, 3개월, 특별한정승인)" aria-label="본문 검색">
+    </div>
+
+    <article id="searchable">
+
+      <section class="chapter" id="ch-1">
+        <p class="chapter-num">Chapter 1</p>
+        <h2>위험한 말 한 마디</h2>
+        <div class="chapter-body">
+          <p id="a1">상속 상담에서 가장 위험한 말은 “은행에서 상속인이라고 했으니 일단 갚아야겠죠”입니다. 보증채무는 상속 대상이 될 수 있습니다.</p>
+          <p>하지만 채권자가 연락했다는 이유만으로 상속인이 곧바로 자기 재산으로 전액을 갚아야 한다고 단정할 수도 없습니다.</p>
+          <p id="a2">저는 이런 상담을 받으면 <strong>채무 액수보다 먼저 세 시점</strong>을 확인합니다. 사망과 상속을 안 날, 상속채무가 재산보다 많다는 사실을 안 날, 상속재산을 처분하거나 돈을 지급한 날입니다.</p>
+        </div>
+
+        <div class="dashboard">
+          <p class="dash-title">인용강조 · 핵심 문장</p>
+          <div class="quote-center">
+            <blockquote>채무 액수보다 먼저 세 시점을 확인합니다</blockquote>
+            <p class="src">원문 — 사망과 상속을 안 날 · 채무초과를 안 날 · 재산처분·지급한 날</p>
+          </div>
+          <div class="dash-card" style="margin-top:.8rem;">
+            <p class="lead">가장 위험한 전제</p>
+            <p>“은행에서 상속인이라고 했으니 일단 갚아야겠죠”</p>
+            <p class="src">→ 보증채무는 상속 대상이 될 수 있지만, 연락했다는 사실만으로 전액 변제 의무가 생기지는 않습니다.</p>
+          </div>
+        </div>
+
+        <a class="next-link" href="#ch-2">다음 장 → 30억 보증 빚을 만난 박서연</a>
+      </section>
+
+      <section class="chapter" id="ch-2">
+        <p class="chapter-num">Chapter 2</p>
+        <h2>30억 보증 빚을 만난 박서연</h2>
+        <div class="chapter-body">
+          <p>세움기계 대표 박정우가 사망한 뒤, 딸 박서연은 은행으로부터 아버지가 지인의 사업자금에 보증을 섰고 현재 청구액이 30억 원이라는 연락을 받았습니다.</p>
+          <p>가족들은 보증 사실을 몰랐고, 장례를 치르느라 아버지 명의 통장에서 장례비 일부를 지급한 상태였습니다.</p>
+          <p>박서연이 가장 먼저 해야 할 일은 “30억을 어떻게 갚을까”를 계산하는 것이 아닙니다. <strong>보증계약이 실제로 존재하는지, 주채무가 얼마 남았는지, 상속재산은 무엇인지, 가족들이 언제 그 사실을 알았는지를 분리해 기록</strong>하는 일입니다.</p>
+          <p>특히 돈을 일부 갚거나 상속재산을 처분한 행위가 상속의 승인에 어떤 영향을 주는지도 함께 살펴야 합니다.</p>
+          <p class="note">※ 사례의 인물·회사는 이해를 돕기 위한 설정으로 특정 실존 대상과 무관합니다.</p>
+        </div>
+
+        <div class="dashboard">
+          <p class="dash-title">요약카드 · 사례 핵심</p>
+          <div class="dash-card summary-card">
+            <p class="lead">박서연이 마주한 상황</p>
+            <ul>
+              <li>아버지 박정우의 지인 사업자금 보증채무, 은행 청구액 30억 원</li>
+              <li>가족은 보증 사실을 모른 채 장례비 일부를 아버지 통장에서 지급</li>
+            </ul>
+          </div>
+          <div class="dash-card">
+            <p class="lead">먼저 해야 할 일</p>
+            <p>“30억을 어떻게 갚을까”가 아니라 <strong>사실관계를 분리해 기록</strong>하는 것 — 보증계약의 존재, 주채무 잔액, 상속재산, 인지 시점.</p>
+          </div>
+          <div class="one-liner"><p>재산을 손댄 행위가 상속 승인에 어떤 영향을 주는지가 관건입니다.</p></div>
+        </div>
+
+        <a class="next-link" href="#ch-3">다음 장 → 승인·한정승인·포기의 선택</a>
+      </section>
+
+      <section class="chapter" id="ch-3">
+        <p class="chapter-num">Chapter 3</p>
+        <h2>승인·한정승인·포기의 선택</h2>
+        <div class="chapter-body">
+          <p>민법은 상속인이 상속이 개시된 때부터 피상속인의 재산에 관한 권리와 의무를 포괄적으로 승계한다고 정합니다. 따라서 보증채무도 재산상 의무인 이상 원칙적으로 상속 대상이 될 수 있습니다. 다만 보증계약의 내용, 주채무의 변제·소멸 여부, 상속인의 항변 가능성은 서류를 확인해야 합니다.</p>
+          <p>상속인은 상속개시가 있음을 안 날부터 <strong>3개월 안에</strong> 단순승인·한정승인·포기를 선택할 수 있고, 그 전에는 상속재산을 조사할 수 있습니다.</p>
+          <p>단순승인을 하면 피상속인의 권리의무를 제한 없이 승계합니다. 반면 <strong>한정승인</strong>은 상속으로 취득할 재산의 한도에서만 피상속인의 채무와 유증을 변제하는 제도입니다.</p>
+          <p>이미 3개월이 지났더라도 상속채무가 상속재산을 초과한다는 사실을 그 기간 안에 중대한 과실 없이 알지 못했다면, 그 사실을 안 날부터 3개월 안에 <strong>특별한정승인</strong>을 할 수 있는 경우가 있습니다. 그러나 “채권자가 늦게 연락했다”는 사정만으로 자동 인정되는 것은 아닙니다. 왜 몰랐는지, 언제 알았는지, 그 전후에 어떤 재산을 처분했는지를 상속인이 자료로 설명해야 합니다.</p>
+        </div>
+
+        <div class="dashboard">
+          <p class="dash-title">비교표 · 승인 유형</p>
+          <div class="compare-table">
+            <table>
+              <thead>
+                <tr><th>제도</th><th>효과</th><th>선택 시점</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>단순승인</td><td>피상속인의 권리의무를 제한 없이 승계</td><td class="num">상속개시 안 날부터 3개월</td></tr>
+                <tr><td>한정승인</td><td>상속으로 취득할 재산의 한도에서만 채무·유증 변제</td><td class="num">상속개시 안 날부터 3개월</td></tr>
+                <tr><td>상속포기</td><td>상속 지위 자체에서 이탈 (승계하지 않음)</td><td class="num">상속개시 안 날부터 3개월</td></tr>
+                <tr><td>특별한정승인</td><td>3개월 경과 후에도 채무초과를 중대한 과실 없이 모른 경우 예외 허용</td><td class="num">채무초과 안 날부터 3개월</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="dash-card" style="margin-top:.8rem;">
+            <p class="lead">주의 — 자동 인정되지 않습니다</p>
+            <p>“채권자가 늦게 연락했다”는 사정만으로 특별한정승인이 인정되지는 않습니다. 몰랐던 이유·인지 시점·처분 내역을 자료로 설명해야 합니다.</p>
+          </div>
+        </div>
+
+        <a class="next-link" href="#ch-4">다음 장 → 세 시점을 먼저 정리하라</a>
+      </section>
+
+      <section class="chapter" id="ch-4">
+        <p class="chapter-num">Chapter 4</p>
+        <h2>세 시점을 먼저 정리하라</h2>
+        <div class="chapter-body">
+          <p><strong>첫째,</strong> 채권자에게 바로 변제 약속을 하거나 채무를 인정하는 문서에 서명하기 전에 보증계약서, 채무 잔액, 주채무자의 변제 내역, 담보·소송 진행 여부를 요청합니다.</p>
+          <p><strong>둘째,</strong> 세 시점을 표로 만듭니다. ① 사망과 상속인 지위를 안 날, ② 상속채무가 재산을 초과한다는 사실을 안 날, ③ 예금 인출·부동산 처분·채권자 변제 등 상속재산에 손을 댄 날입니다.</p>
+          <p><strong>셋째,</strong> 한정승인이나 포기를 결정하기 전에는 상속재산을 임의로 나누거나 처분하지 않습니다. 상속재산 처분, 기간 내 신고 누락, 한정승인·포기 후 재산 은닉·부정소비·고의 누락은 법정단순승인 문제로 이어질 수 있습니다.</p>
+          <p>공동상속인이 여러 명이면 각자의 상속분과 재산·채무 조사를 따로 정리해야 합니다. 공동상속인의 한정승인은 각 상속분에 응해 취득할 재산의 한도에서 판단되므로, 가족 중 한 사람의 선택만으로 전체 가족의 문제가 끝난다고 생각해서는 안 됩니다.</p>
+        </div>
+
+        <div class="dashboard">
+          <p class="dash-title">타임라인 · 먼저 확인할 세 시점</p>
+          <ol class="timeline">
+            <li><span class="dot">①</span><p class="t-head">사망과 상속인 지위를 안 날</p><p>3개월 승인·포기 기간의 기산점입니다.</p></li>
+            <li><span class="dot">②</span><p class="t-head">상속채무가 재산을 초과한다는 사실을 안 날</p><p>특별한정승인 여부를 가르는 기준점입니다.</p></li>
+            <li><span class="dot">③</span><p class="t-head">상속재산에 손을 댄 날</p><p>예금 인출·부동산 처분·채권자 변제 — 법정단순승인 리스크와 연결됩니다.</p></li>
+          </ol>
+          <div class="one-liner" style="margin-top:1rem;"><p>결정 전에는 상속재산을 임의로 나누거나 처분하지 마십시오.</p></div>
+        </div>
+
+        <a class="next-link" href="#ch-5">다음 장 → 정리와 행동 촉구</a>
+      </section>
+
+      <section class="chapter" id="ch-5">
+        <p class="chapter-num">Chapter 5</p>
+        <h2>정리와 행동 촉구</h2>
+        <div class="chapter-body">
+          <p>이 글은 보증채무 상속을 만났을 때의 판단 순서를 설명한 일반적인 안내입니다. 실제로 한정승인·특별한정승인·상속포기 중 무엇이 맞는지는 가족관계, 재산 목록, 보증계약, 채권자 대응과 재산처분 시점을 함께 확인해야 달라집니다.</p>
+          <p>비슷한 상황이라면 상담을 요청할 때 <strong>① 사망과 상속을 안 날 ② 채권자 연락을 받은 날 ③ 이미 지급·인출·처분한 내역</strong>을 먼저 정리해 보내 주세요.</p>
+          <p>공개 댓글이나 단체 대화방에는 주민등록번호, 계좌번호, 계약서 전문, 사건번호 등 민감한 자료를 올리지 않는 것이 안전합니다. 채무가 보였다는 이유만으로 먼저 갚지 말고, 먼저 세 시점과 자료부터 확인해야 합니다.</p>
+        </div>
+
+        <div class="dashboard">
+          <p class="dash-title">요약카드 · 상담 전 준비</p>
+          <div class="dash-card summary-card">
+            <p class="lead">상담 요청 시 먼저 정리할 세 가지</p>
+            <ul>
+              <li>① 사망과 상속을 안 날</li>
+              <li>② 채권자 연락을 받은 날</li>
+              <li>③ 이미 지급·인출·처분한 내역</li>
+            </ul>
+          </div>
+          <div class="dash-card">
+            <p class="lead">안전 수칙</p>
+            <p>민감한 자료(주민등록번호·계좌번호·계약서 전문·사건번호)는 공개 댓글·단체 대화방에 올리지 않습니다.</p>
+          </div>
+          <div class="one-liner"><p>채무가 보였다는 이유만으로 먼저 갚지 말고, 먼저 세 시점과 자료부터 확인하세요.</p></div>
+        </div>
+      </section>
+
+      <section class="references" id="ref">
+        <h2>참고 근거 (민법 조문)</h2>
+        <ul>
+          <li>민법 <span class="num">제1005조</span> — 상속인의 포괄적 권리·의무 승계</li>
+          <li>민법 <span class="num">제1019조 제1항·제2항·제3항</span> — 승인·포기의 3개월 기간, 상속재산 조사, 특별한정승인</li>
+          <li>민법 <span class="num">제1025조</span> — 단순승인의 효과</li>
+          <li>민법 <span class="num">제1026조</span> — 법정단순승인 사유</li>
+          <li>민법 <span class="num">제1028조</span> — 한정승인의 효과</li>
+          <li>민법 <span class="num">제1029조</span> — 공동상속인의 한정승인</li>
+          <li>민법 <span class="num">제1030조</span> — 한정승인의 방식</li>
+        </ul>
+      </section>
+
+    </article>
+  </main>
+</div>
+
+<footer class="book-footer">
+  <p class="disclaimer">법률상 결론은 일반적 안내이며, 개별 사건의 보증계약·주채무·재산처분·가족관계에 따라 달라질 수 있습니다. 실제 판단은 변호사와의 상담을 통해 확인하시기 바랍니다.</p>
+  <p>본 문서는 일반인 대상 법률 안내 자료입니다.</p>
+</footer>
+
+<button class="drawer-toggle" id="drawerToggle" aria-label="목차 열기" aria-controls="drawerPanel">☰</button>
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer-panel" id="drawerPanel" role="dialog" aria-label="목차">
+  <button class="close" id="drawerClose" aria-label="목차 닫기">×</button>
+  <nav aria-label="모바일 목차">
+    <h2 style="font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--sub);margin:0 0 .8rem;">목차</h2>
+    <ol style="list-style:none;padding:0;display:flex;flex-direction:column;gap:.3rem;font-size:.95rem;">
+      <li><a href="#ch-1">1. 위험한 말 한 마디</a></li>
+      <li><a href="#ch-2">2. 30억 보증 빚을 만난 박서연</a></li>
+      <li><a href="#ch-3">3. 승인·한정승인·포기의 선택</a></li>
+      <li><a href="#ch-4">4. 세 시점을 먼저 정리하라</a></li>
+      <li><a href="#ch-5">5. 정리와 행동 촉구</a></li>
+      <li><a href="#ref">참고 근거</a></li>
+    </ol>
+  </nav>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  // 스크롤 프로그레스 바
+  var bar = document.getElementById("progressBar");
+  function onScroll(){
+    var h = document.documentElement;
+    var scrolled = h.scrollTop || document.body.scrollTop;
+    var total = h.scrollHeight - h.clientHeight;
+    var pct = total > 0 ? (scrolled / total) * 100 : 0;
+    bar.style.width = pct + "%";
+  }
+  document.addEventListener("scroll", onScroll, {passive:true});
+  onScroll();
+
+  // 목차 현재위치 하이라이트
+  var tocLinks = Array.prototype.slice.call(document.querySelectorAll("#toc a"));
+  var chapters = Array.prototype.slice.call(document.querySelectorAll(".chapter, .references"));
+  function onToc(){
+    var y = (document.documentElement.scrollTop || document.body.scrollTop) + 120;
+    var current = null;
+    chapters.forEach(function(c){ if (c.offsetTop <= y) current = c.id; });
+    tocLinks.forEach(function(a){
+      var target = a.getAttribute("href").replace("#","");
+      if (target === current) { a.classList.add("active"); }
+      else { a.classList.remove("active"); }
+    });
+  }
+  document.addEventListener("scroll", onToc, {passive:true});
+  onToc();
+
+  // 모바일 드로어
+  var overlay = document.getElementById("drawerOverlay");
+  var panel = document.getElementById("drawerPanel");
+  var toggle = document.getElementById("drawerToggle");
+  var closeBtn = document.getElementById("drawerClose");
+  function openDrawer(){ panel.classList.add("open"); overlay.classList.add("open"); }
+  function closeDrawer(){ panel.classList.remove("open"); overlay.classList.remove("open"); }
+  toggle.addEventListener("click", openDrawer);
+  closeBtn.addEventListener("click", closeDrawer);
+  overlay.addEventListener("click", closeDrawer);
+  panel.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", closeDrawer); });
+
+  // 전체 텍스트 검색 + 하이라이트 (URL 해시 공유 #q=키워드)
+  var input = document.getElementById("searchInput");
+  var searchable = document.getElementById("searchable");
+  var marks = [];
+  function clearMarks(){
+    marks.forEach(function(m){
+      var p = m.parentNode;
+      p.replaceChild(document.createTextNode(m.textContent), m);
+      p.normalize();
+    });
+    marks = [];
+  }
+  function doSearch(q){
+    clearMarks();
+    if (!q || q.trim() === "") return;
+    q = q.trim();
+    var walker = document.createTreeWalker(searchable, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(n){
+        if (!n.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+        var p = n.parentNode;
+        if (p && (p.tagName === "SCRIPT" || p.tagName === "STYLE" || p.tagName === "MARK")) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var textNodes = [];
+    var n;
+    while ((n = walker.nextNode())) textNodes.push(n);
+    var found = false;
+    textNodes.forEach(function(tn){
+      var val = tn.nodeValue;
+      var lower = val.toLowerCase();
+      var ql = q.toLowerCase();
+      var idx = lower.indexOf(ql);
+      if (idx === -1) return;
+      found = true;
+      var frag = document.createDocumentFragment();
+      var last = 0;
+      while (idx !== -1){
+        frag.appendChild(document.createTextNode(val.slice(last, idx)));
+        var mark = document.createElement("mark");
+        mark.textContent = val.slice(idx, idx + q.length);
+        frag.appendChild(mark);
+        marks.push(mark);
+        last = idx + q.length;
+        var next = lower.indexOf(ql, last);
+        idx = next;
+      }
+      frag.appendChild(document.createTextNode(val.slice(last)));
+      tn.parentNode.replaceChild(frag, tn);
+    });
+    if (found){
+      var first = marks[0];
+      if (first) first.scrollIntoView({behavior:"smooth", block:"center"});
+    }
+  }
+  input.addEventListener("input", function(){ doSearch(input.value); });
+  // URL 해시 공유
+  function applyHash(){
+    var h = location.hash || "";
+    var m = h.match(/[#&]q=([^&]+)/);
+    if (m){
+      var q = decodeURIComponent(m[1]);
+      input.value = q;
+      doSearch(q);
+    }
+  }
+  window.addEventListener("hashchange", applyHash);
+  applyHash();
+})();
+</script>
+</body>
+</html>
