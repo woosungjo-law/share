@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="머스트노우 1인 로펌·AI 중심 수익 포트폴리오 전략 브리핑">
+  <meta name="robots" content="noindex, nofollow">
+  <title>머스트노우 비즈니스모델 | 전략 브리핑</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #19232e;
+      --muted: #64717d;
+      --paper: #f5f7f6;
+      --surface: #ffffff;
+      --surface-2: #edf2ef;
+      --line: #d8e0dc;
+      --accent: #d97722;
+      --accent-strong: #9e4815;
+      --signal: #177a67;
+      --signal-soft: #d9f0e8;
+      --caution: #a86a09;
+      --caution-soft: #fff0c7;
+      --alert: #b34a3c;
+      --alert-soft: #fbe2dc;
+      --shadow: 0 16px 40px rgba(22, 37, 45, .08);
+      --radius: 18px;
+      --display: Georgia, "Times New Roman", serif;
+      --body: "Malgun Gothic", "Apple SD Gothic Neo", "Noto Sans KR", Arial, sans-serif;
+      --mono: "Cascadia Mono", Consolas, monospace;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --ink: #eef5f1;
+        --muted: #a9b7b0;
+        --paper: #11191b;
+        --surface: #182224;
+        --surface-2: #21302e;
+        --line: #344541;
+        --accent: #f3a14c;
+        --accent-strong: #ffc277;
+        --signal: #62cdb2;
+        --signal-soft: #173c35;
+        --caution: #f2bd57;
+        --caution-soft: #493914;
+        --alert: #f28b7e;
+        --alert-soft: #482824;
+        --shadow: 0 16px 40px rgba(0, 0, 0, .22);
+      }
+    }
+    :root[data-theme="light"] { color-scheme: light; --ink:#19232e; --muted:#64717d; --paper:#f5f7f6; --surface:#fff; --surface-2:#edf2ef; --line:#d8e0dc; --accent:#d97722; --accent-strong:#9e4815; --signal:#177a67; --signal-soft:#d9f0e8; --caution:#a86a09; --caution-soft:#fff0c7; --alert:#b34a3c; --alert-soft:#fbe2dc; --shadow:0 16px 40px rgba(22,37,45,.08); }
+    :root[data-theme="dark"] { color-scheme: dark; --ink:#eef5f1; --muted:#a9b7b0; --paper:#11191b; --surface:#182224; --surface-2:#21302e; --line:#344541; --accent:#f3a14c; --accent-strong:#ffc277; --signal:#62cdb2; --signal-soft:#173c35; --caution:#f2bd57; --caution-soft:#493914; --alert:#f28b7e; --alert-soft:#482824; --shadow:0 16px 40px rgba(0,0,0,.22); }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--body); line-height: 1.68; }
+    a { color: var(--accent-strong); }
+    a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    .shell { max-width: 1440px; margin: 0 auto; padding: 28px 28px 80px; }
+    .topbar { display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:22px; }
+    .wordmark { display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.02em; }
+    .mark { width:28px; height:28px; display:grid; place-items:center; border-radius:8px; background:var(--ink); color:var(--paper); font-family:var(--display); font-weight:700; }
+    .top-actions { display:flex; gap:8px; }
+    button { border:1px solid var(--line); border-radius:999px; color:var(--ink); background:var(--surface); padding:8px 13px; cursor:pointer; font:inherit; font-size:.83rem; }
+    button:hover { border-color:var(--accent); color:var(--accent-strong); }
+    .layout { display:grid; grid-template-columns: 230px minmax(0,1fr); gap:28px; align-items:start; }
+    aside { position:sticky; top:18px; }
+    .side-card { background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); }
+    .side-label, .eyebrow, .kicker { color:var(--muted); text-transform:uppercase; letter-spacing:.13em; font-size:.69rem; font-weight:800; }
+    .side-card h2 { font-family:var(--display); font-size:1.35rem; line-height:1.15; margin:8px 0 18px; }
+    .nav { display:grid; gap:3px; }
+    .nav a { padding:7px 8px; border-radius:8px; text-decoration:none; color:var(--muted); font-size:.84rem; line-height:1.3; }
+    .nav a:hover { background:var(--surface-2); color:var(--ink); }
+    .side-note { margin-top:18px; padding-top:15px; border-top:1px solid var(--line); color:var(--muted); font-size:.77rem; }
+    main { min-width:0; }
+    .hero { position:relative; overflow:hidden; background:var(--ink); color:var(--paper); border-radius:26px; padding:42px 46px 38px; box-shadow:var(--shadow); }
+    .hero:after { content:""; position:absolute; right:-100px; top:-140px; width:340px; height:340px; border:1px solid rgba(255,255,255,.16); border-radius:50%; box-shadow:0 0 0 36px rgba(255,255,255,.035), 0 0 0 72px rgba(255,255,255,.025); }
+    .hero .eyebrow { color:#9dd7c8; }
+    .hero h1 { max-width:820px; font-family:var(--display); font-size:clamp(2.5rem,5vw,5.5rem); letter-spacing:-.055em; line-height:.98; margin:16px 0 20px; text-wrap:balance; }
+    .hero h1 em { color:#f3a14c; font-style:normal; }
+    .hero-deck { max-width:720px; color:#d9e6e0; font-size:1.08rem; margin:0; }
+    .hero-meta { display:flex; flex-wrap:wrap; gap:8px; margin-top:28px; }
+    .hero-meta span { border:1px solid rgba(255,255,255,.2); padding:5px 10px; border-radius:999px; color:#c4d5ce; font-size:.78rem; }
+    .verdict { margin-top:26px; display:grid; grid-template-columns:minmax(0,1fr) 250px; gap:18px; align-items:stretch; }
+    .verdict-quote { border-left:4px solid #f3a14c; padding:4px 0 4px 18px; font-family:var(--display); font-size:clamp(1.25rem,2.1vw,1.8rem); line-height:1.35; }
+    .verdict-side { background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.13); border-radius:14px; padding:16px; }
+    .verdict-side strong { display:block; color:#f3a14c; font-size:1.8rem; letter-spacing:-.04em; line-height:1.1; }
+    .verdict-side span { color:#c4d5ce; font-size:.78rem; }
+    .section { margin-top:28px; }
+    .section-head { display:flex; justify-content:space-between; align-items:end; gap:16px; margin-bottom:13px; }
+    .section-head h2 { margin:0; font-family:var(--display); font-size:clamp(1.65rem,2.5vw,2.4rem); letter-spacing:-.04em; line-height:1.12; }
+    .section-head p { max-width:480px; color:var(--muted); font-size:.86rem; margin:0; text-align:right; }
+    .panel { background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:24px; box-shadow:0 6px 20px rgba(22,37,45,.04); }
+    .grid-2 { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+    .grid-3 { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+    .grid-4 { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; }
+    .metric { background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:17px; min-height:112px; }
+    .metric .num { display:block; color:var(--accent-strong); font-family:var(--display); font-size:1.65rem; font-weight:700; line-height:1.08; letter-spacing:-.04em; }
+    .metric .label { display:block; color:var(--muted); margin-top:7px; font-size:.78rem; line-height:1.4; }
+    .metric.signal { border-top:4px solid var(--signal); }
+    .metric.caution { border-top:4px solid var(--caution); }
+    .metric.alert { border-top:4px solid var(--alert); }
+    .lead { font-size:1.04rem; margin:0; }
+    .callout { border-radius:14px; padding:16px 18px; background:var(--surface-2); border-left:4px solid var(--accent); }
+    .callout strong { color:var(--accent-strong); }
+    .callout p { margin:0; }
+    .callout.signal { border-left-color:var(--signal); background:var(--signal-soft); }
+    .callout.signal strong { color:var(--signal); }
+    .callout.alert { border-left-color:var(--alert); background:var(--alert-soft); }
+    .callout.alert strong { color:var(--alert); }
+    .ladder { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:0; overflow:hidden; border:1px solid var(--line); border-radius:16px; }
+    .ladder-step { position:relative; min-height:165px; padding:20px 17px 18px; background:var(--surface); border-right:1px solid var(--line); }
+    .ladder-step:last-child { border-right:0; }
+    .ladder-step:after { content:"→"; position:absolute; right:-11px; top:50%; transform:translateY(-50%); width:20px; height:20px; display:grid; place-items:center; border-radius:50%; background:var(--accent); color:#fff; z-index:2; font-weight:800; }
+    .ladder-step:last-child:after { display:none; }
+    .step-no { color:var(--accent); font-family:var(--mono); font-size:.72rem; font-weight:800; }
+    .ladder-step h3 { margin:11px 0 6px; font-size:1rem; line-height:1.3; }
+    .ladder-step p { margin:0; color:var(--muted); font-size:.79rem; line-height:1.45; }
+    .ladder-step .price { display:block; margin-top:14px; color:var(--accent-strong); font-size:.79rem; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:.84rem; }
+    th, td { padding:11px 12px; text-align:left; vertical-align:top; border-bottom:1px solid var(--line); }
+    th { color:var(--muted); font-size:.71rem; letter-spacing:.04em; font-weight:800; background:var(--surface-2); }
+    tr:last-child td { border-bottom:0; }
+    .table-wrap { overflow-x:auto; border:1px solid var(--line); border-radius:14px; }
+    .tag { display:inline-block; padding:3px 8px; border-radius:999px; background:var(--surface-2); color:var(--muted); font-size:.71rem; white-space:nowrap; }
+    .tag.green { color:var(--signal); background:var(--signal-soft); }
+    .tag.amber { color:var(--caution); background:var(--caution-soft); }
+    .tag.red { color:var(--alert); background:var(--alert-soft); }
+    .product-card { background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:21px; min-height:245px; position:relative; }
+    .product-card:before { content:""; position:absolute; left:0; top:20px; bottom:20px; width:4px; border-radius:0 4px 4px 0; background:var(--accent); }
+    .product-card h3 { margin:0 0 6px 10px; font-size:1.05rem; }
+    .product-card .price { margin-left:10px; color:var(--accent-strong); font-family:var(--display); font-size:1.35rem; font-weight:700; }
+    .product-card ul { margin:15px 0 0 10px; padding-left:17px; color:var(--muted); font-size:.82rem; }
+    .product-card li + li { margin-top:6px; }
+    .tier { border:1px solid var(--line); border-radius:14px; overflow:hidden; background:var(--surface); }
+    .tier-head { padding:15px 17px; background:var(--ink); color:var(--paper); display:flex; justify-content:space-between; align-items:baseline; gap:8px; }
+    .tier-head strong { font-size:1rem; }
+    .tier-head span { color:#f3a14c; font-family:var(--display); font-weight:700; }
+    .tier-body { padding:16px 17px; font-size:.81rem; color:var(--muted); min-height:125px; }
+    .tier-body p { margin:0; }
+    .tier-body strong { color:var(--ink); }
+    .bar-chart { display:grid; gap:12px; }
+    .bar-row { display:grid; grid-template-columns:130px 1fr 170px; gap:12px; align-items:center; font-size:.81rem; }
+    .bar-row label { color:var(--muted); }
+    .bar-track { height:14px; border-radius:99px; background:var(--surface-2); overflow:hidden; }
+    .bar { height:100%; background:var(--accent); border-radius:inherit; }
+    .bar.green { background:var(--signal); }
+    .bar.blue { background:#5a82a7; }
+    .bar-value { color:var(--muted); text-align:right; font-size:.75rem; }
+    .funnel { display:grid; grid-template-columns:repeat(5,1fr); gap:9px; align-items:stretch; }
+    .funnel-item { position:relative; background:var(--surface-2); border-radius:12px; padding:16px 12px; min-height:116px; }
+    .funnel-item:nth-child(1) { background:#e7efe9; }
+    .funnel-item:nth-child(2) { background:#dcebe5; }
+    .funnel-item:nth-child(3) { background:#d4e9e3; }
+    .funnel-item:nth-child(4) { background:#cce6df; }
+    .funnel-item:nth-child(5) { background:#bfe0d8; }
+    @media (prefers-color-scheme: dark) { .funnel-item:nth-child(1){background:#243a34}.funnel-item:nth-child(2){background:#21423a}.funnel-item:nth-child(3){background:#1e493f}.funnel-item:nth-child(4){background:#1b4f44}.funnel-item:nth-child(5){background:#185749} }
+    :root[data-theme="dark"] .funnel-item:nth-child(1){background:#243a34} :root[data-theme="dark"] .funnel-item:nth-child(2){background:#21423a} :root[data-theme="dark"] .funnel-item:nth-child(3){background:#1e493f} :root[data-theme="dark"] .funnel-item:nth-child(4){background:#1b4f44} :root[data-theme="dark"] .funnel-item:nth-child(5){background:#185749}
+    .funnel-item .funnel-kicker { color:var(--signal); font-family:var(--mono); font-size:.68rem; font-weight:800; }
+    .funnel-item h3 { margin:8px 0 5px; font-size:.9rem; line-height:1.25; }
+    .funnel-item p { margin:0; color:var(--muted); font-size:.75rem; line-height:1.4; }
+    .timeline { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+    .phase { border-top:4px solid var(--accent); background:var(--surface); border:1px solid var(--line); border-top-width:4px; border-radius:13px; padding:16px; }
+    .phase:nth-child(2){border-top-color:var(--signal)} .phase:nth-child(3){border-top-color:#5a82a7} .phase:nth-child(4){border-top-color:var(--caution)}
+    .phase .weeks { color:var(--accent-strong); font-family:var(--mono); font-size:.72rem; font-weight:800; }
+    .phase h3 { font-size:.95rem; margin:8px 0 10px; line-height:1.3; }
+    .checks { list-style:none; margin:0; padding:0; color:var(--muted); font-size:.78rem; }
+    .checks li { display:flex; gap:8px; align-items:flex-start; }
+    .checks li + li { margin-top:7px; }
+    .checks li:before { content:"□"; color:var(--accent); font-size:1rem; line-height:1.15; }
+    .guardrail { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+    .guard { padding:16px; border-radius:13px; background:var(--surface-2); }
+    .guard h3 { font-size:.9rem; margin:0 0 8px; }
+    .guard p, .guard ul { color:var(--muted); font-size:.79rem; margin:0; }
+    .guard ul { padding-left:17px; }
+    .guard li + li { margin-top:5px; }
+    .do-not { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; counter-reset:stop; }
+    .do-not div { counter-increment:stop; display:flex; gap:10px; padding:12px 13px; background:var(--alert-soft); border-radius:11px; color:var(--alert); font-size:.8rem; line-height:1.45; }
+    .do-not div:before { content:counter(stop, decimal-leading-zero); font-family:var(--mono); font-size:.7rem; font-weight:800; padding-top:3px; }
+    .evidence td:first-child { width:29%; font-weight:700; color:var(--ink); }
+    .evidence td:nth-child(3) { width:115px; }
+    .source-list { display:grid; gap:9px; margin:0; padding-left:18px; color:var(--muted); font-size:.82rem; }
+    .source-list li::marker { color:var(--accent); }
+    .footer { margin-top:30px; padding-top:18px; border-top:1px solid var(--line); display:flex; justify-content:space-between; gap:20px; color:var(--muted); font-size:.75rem; }
+    .footer strong { color:var(--ink); }
+    .muted { color:var(--muted); }
+    .mono { font-family:var(--mono); font-size:.8em; }
+    .right { text-align:right; }
+    @media (max-width: 1100px) { .layout { grid-template-columns:1fr; } aside { position:static; } .side-card { display:flex; align-items:center; gap:20px; } .side-card h2 { margin:0; } .nav { display:flex; flex-wrap:wrap; } .side-note { display:none; } }
+    @media (max-width: 800px) { .shell { padding:14px 14px 52px; } .topbar { align-items:flex-start; gap:8px; } .wordmark { min-width:0; } .wordmark span:last-child { max-width:112px; line-height:1.25; } .top-actions { flex-shrink:0; } .top-actions button { padding:7px 10px; } .side-card { display:block; } .side-card h2 { margin:8px 0 14px; font-size:1.3rem; line-height:1.12; } .hero { padding:30px 25px; border-radius:20px; } .hero h1 { font-size:clamp(2.5rem,13vw,4.6rem); } .verdict { grid-template-columns:1fr; } .grid-2,.grid-3,.grid-4,.guardrail,.do-not { grid-template-columns:1fr; } .ladder { grid-template-columns:1fr; } .ladder-step { min-height:0; border-right:0; border-bottom:1px solid var(--line); } .ladder-step:last-child { border-bottom:0; } .ladder-step:after { content:"↓"; right:auto; left:50%; top:auto; bottom:-11px; transform:translateX(-50%); } .funnel { grid-template-columns:1fr; } .funnel-item { min-height:0; } .timeline { grid-template-columns:1fr 1fr; } .bar-row { grid-template-columns:100px 1fr; } .bar-value { grid-column:2; text-align:left; margin-top:-10px; } .section-head { display:block; } .section-head p { text-align:left; margin-top:7px; } .footer { display:block; } .footer > * + * { margin-top:6px; } }
+    @media print { body { background:#fff; } .shell { max-width:none; padding:0; } aside,.top-actions { display:none; } .layout { display:block; } .hero { color:#19232e; background:#eef2ef; box-shadow:none; } .hero .eyebrow,.hero-meta span,.hero-deck { color:#52615b; } .hero:after { display:none; } .panel,.metric,.product-card,.tier,.phase { box-shadow:none; break-inside:avoid; } .section { break-inside:avoid; } a { color:inherit; text-decoration:none; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } * { animation-duration:.01ms !important; transition-duration:.01ms !important; } }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="wordmark"><span class="mark">M</span><span>머스트노우 전략실</span></div>
+      <div class="top-actions" aria-label="페이지 도구">
+        <button type="button" id="themeToggle" aria-pressed="false">화면: 자동</button>
+        <button type="button" onclick="window.print()">인쇄 / PDF</button>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside aria-label="문서 목차">
+        <div class="side-card">
+          <div>
+            <div class="side-label">Strategy brief</div>
+            <h2>한 장으로 보는<br>12개월 설계</h2>
+          </div>
+          <nav class="nav">
+            <a href="#verdict">결론</a><a href="#portfolio">상품 사다리</a><a href="#revenue">수익 구조</a><a href="#funnel">퍼널</a><a href="#roadmap">90일 실행</a><a href="#guardrails">가드레일</a><a href="#ledger">근거 장부</a>
+          </nav>
+          <div class="side-note">기준일 2026-08-30<br>상태: 잠정 전략안</div>
+        </div>
+      </aside>
+
+      <main>
+        <section class="hero" id="verdict">
+          <div class="eyebrow">MustKnow · 12개월 실행형 비즈니스모델</div>
+          <h1>법률지식을 파는 대신,<br><em>결정 가능성</em>을 판다.</h1>
+          <p class="hero-deck">업종 집중형 B2B 법률건강검진을 입구로 삼아, 제한형 리스크레이더와 고단가 전문 프로젝트로 확장하는 1인 로펌·AI 중심 수익 포트폴리오.</p>
+          <div class="hero-meta"><span>추가 월매출 목표 1,000만~2,000만 원</span><span>초기 파일럿 3개 기업</span><span>기본 운영상한 5개사</span><span>AI 정리 + 변호사 판단</span></div>
+          <div class="verdict">
+            <div class="verdict-quote">페이스북에서 리스크를 보이고 → 카카오톡에서 자기점검을 받고 → 50만~150만 원 간이진단으로 진입 → 월 100만~300만 원 리스크레이더와 별도 프로젝트로 확장한다.</div>
+            <div class="verdict-side"><strong>5~7개사</strong><span>1인 운영의 현실적 수용 범위<br>10개사는 저접촉 상품 검증 뒤 재검토</span></div>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="agreement-title">
+          <div class="section-head"><h2 id="agreement-title">먼저 고정한 기준</h2><p>이 문서가 풀어야 하는 문제와, 풀지 않기로 한 문제를 한 화면에 둔다.</p></div>
+          <div class="grid-4">
+            <div class="metric signal"><span class="num">1,000만~2,000만</span><span class="label">목표 추가 월매출</span></div>
+            <div class="metric"><span class="num">2~3개</span><span class="label">장기 집중 업종<br>90일에는 1개 웨지</span></div>
+            <div class="metric caution"><span class="num">3단계</span><span class="label">월간 리스크레이더<br>100만·200만·300만 원</span></div>
+            <div class="metric alert"><span class="num">5개사</span><span class="label">매출계획의 기준<br>6~7개사는 조건부</span></div>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="message-title">
+          <div class="section-head"><h2 id="message-title">고객이 실제로 사는 것</h2><p>리포트의 양이 아니라 리스크를 발견하고 실행 순서를 정하는 능력.</p></div>
+          <div class="grid-2">
+            <div class="panel">
+              <p class="lead">고객은 법률지식이나 리포트 자체보다 다음 네 가지를 구매한다.</p>
+              <ol>
+                <li>대표가 놓친 리스크를 발견하는 능력</li>
+                <li>무엇부터 처리할지 정해주는 우선순위</li>
+                <li>내부 담당자가 실행할 수 있는 문서·체크리스트·기한</li>
+                <li>문제가 터졌을 때 이미 회사를 알고 있는 변호사의 대응속도</li>
+              </ol>
+            </div>
+            <div class="callout signal"><strong>외부 메시지의 기준</strong><p>“AI가 법률자문을 자동으로 해준다”가 아니라, <b>AI가 회사 자료를 넓게 정리하고 변호사가 중요한 판단과 우선순위를 확정하는 법률 리스크 운영서비스</b>라고 말한다.</p></div>
+          </div>
+        </section>
+
+        <section class="section" id="portfolio" aria-labelledby="portfolio-title">
+          <div class="section-head"><h2 id="portfolio-title">상품 사다리</h2><p>낮은 마찰의 문제 인식에서 시작해, 반복 업무와 고난도 판단으로 올라간다.</p></div>
+          <div class="ladder">
+            <div class="ladder-step"><span class="step-no">01 · 발견</span><h3>법률 사각지대 자기점검</h3><p>15문항, 위험 가능성 3~5개와 추가자료만 제시.</p><span class="price">무료</span></div>
+            <div class="ladder-step"><span class="step-no">02 · 진입</span><h3>법률 리스크 스타터 진단</h3><p>대표용 2~3쪽 브리프. 전사감사가 아닌 1차 유료 진단.</p><span class="price">50만~150만 원</span></div>
+            <div class="ladder-step"><span class="step-no">03 · 집중</span><h3>규제운영·출시·계약 프로젝트</h3><p>범위를 정한 뒤 문서·기한·증거를 구조화.</p><span class="price">300만~1,500만 원</span></div>
+            <div class="ladder-step"><span class="step-no">04 · 반복</span><h3>제한형 리스크레이더</h3><p>정기 신호, 월간 브리프, 정해진 문서·질의 검토.</p><span class="price">월 100만~300만 원</span></div>
+            <div class="ladder-step"><span class="step-no">05 · 업셀</span><h3>고단가 전문 프로젝트</h3><p>출시·조사·실사·AI 거버넌스·분쟁 초기 대응.</p><span class="price">별도 견적</span></div>
+          </div>
+          <div style="height:16px"></div>
+          <div class="grid-3">
+            <article class="product-card"><h3>무료·저가 진입층</h3><span class="price">5만~15만 원 가설</span><ul><li>자기점검은 법률자문이 아니라 정보제공·신청접수</li><li>전자책·체크리스트는 대표용 설명과 실무자용 실행표를 함께 제공</li><li>무료 단계에서 구체적 조문 해석·결과 보장은 하지 않음</li></ul></article>
+            <article class="product-card"><h3>핵심 단건 프로젝트</h3><span class="price">300만~1,500만 원</span><ul><li>규제운영 진단 2주: Lite / Standard / Full</li><li>출시 전 규제 Sprint, 계약 포트폴리오 건강검진</li><li>Evidence Room은 조사·감독·실사 대비용 별도 상품</li></ul></article>
+            <article class="product-card"><h3>부가 수익축</h3><span class="price">지식상품 + 전문 프로젝트</span><ul><li>전자책·90분 교육·셀프진단 키트·월간 브리프</li><li>AI·데이터 거버넌스, CEO·이사회 브리핑</li><li>반복상품이 위험을 발견하면 프로젝트로 전환</li></ul></article>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="starter-title">
+          <div class="section-head"><h2 id="starter-title">진입상품의 경계</h2><p>50만~150만 원은 매출을 만드는 가격이 아니라, 범위를 지키는 설계다.</p></div>
+          <div class="panel">
+            <div class="table-wrap"><table>
+              <thead><tr><th>항목</th><th>스타터 진단의 약속</th><th>경계선</th></tr></thead>
+              <tbody>
+                <tr><td>입력</td><td>홈페이지·약관·광고물·핵심 계약서 1~3건·문진표</td><td>자료 범위를 초기에 고정</td></tr>
+                <tr><td>산출물</td><td>주요 위험 후보 3개, 우선순위, 추가자료, 다음 단계가 담긴 2~3쪽 브리프</td><td>처방 전체를 무료로 공개하지 않음</td></tr>
+                <tr><td>기간</td><td>자료 수령 후 5~7영업일 가설</td><td>실제 소요시간을 파일럿에서 측정</td></tr>
+                <tr><td>보완</td><td>자료 보완 1회</td><td>무제한 질의·문서 전면 재작성 제외</td></tr>
+                <tr><td>제외</td><td>전수 계약감사·정식 법률의견서·소송수행·상시 모니터링</td><td>필요하면 집중 진단 또는 월간상품으로 전환</td></tr>
+              </tbody>
+            </table></div>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="recurring-title">
+          <div class="section-head"><h2 id="recurring-title">반복상품은 시간을 팔지 않게 만든다</h2><p>“고문”을 넓게 약속하지 않고, 결과물·검토량·응답시간을 계약 단위로 고정한다.</p></div>
+          <div class="grid-3">
+            <div class="tier"><div class="tier-head"><strong>Starter</strong><span>월 100만</span></div><div class="tier-body"><p>월간 리스크 요약, 격주 신호, 제한된 문서·질의 제공. <strong>월 검토건수·응답시간 고정.</strong></p></div></div>
+            <div class="tier"><div class="tier-head"><strong>Standard</strong><span>월 200만</span></div><div class="tier-body"><p>주간 또는 격주 레이더, 월간 대표 브리프, 문서·광고·약관 검토. <strong>월 검토건수·회의횟수 고정.</strong></p></div></div>
+            <div class="tier"><div class="tier-head"><strong>Executive</strong><span>월 300만</span></div><div class="tier-body"><p>주간 레이더, 월간 임원 브리핑, 일정·증거·우선대응. <strong>긴급·대형 업무는 별도 전환.</strong></p></div></div>
+          </div>
+          <div style="height:16px"></div>
+          <div class="callout alert"><strong>운영 금지선</strong><p>무제한 문의·무제한 계약서·24시간 대응을 포함하면 월정액이 아니라 변호사의 시간을 소진하는 대기계약이 된다.</p></div>
+        </section>
+
+        <section class="section" id="revenue" aria-labelledby="revenue-title">
+          <div class="section-head"><h2 id="revenue-title">수익 구조와 capacity</h2><p>목표 매출은 스트레치 숫자가 아니라 5개사 기준으로 먼저 성립해야 한다.</p></div>
+          <div class="grid-2">
+            <div class="panel">
+              <div class="kicker">월 목표 시나리오</div>
+              <div class="bar-chart" style="margin-top:17px">
+                <div class="bar-row"><label>반복상품</label><div class="bar-track"><div class="bar green" style="width:68%"></div></div><span class="bar-value">500만~1,200만 원</span></div>
+                <div class="bar-row"><label>진단·프로젝트</label><div class="bar-track"><div class="bar" style="width:48%"></div></div><span class="bar-value">300만~800만 원</span></div>
+                <div class="bar-row"><label>지식·교육</label><div class="bar-track"><div class="bar blue" style="width:25%"></div></div><span class="bar-value">100만~400만 원</span></div>
+              </div>
+              <p class="muted" style="font-size:.78rem;margin:18px 0 0">합계: 보수적 900만~1,800만 원 · 성장 1,500만~2,400만 원. VAT·미수금·취소 전 총매출 기준의 운영 가설.</p>
+            </div>
+            <div class="panel">
+              <div class="kicker">고객 수 운영 규칙</div>
+              <table style="margin-top:8px"><tbody>
+                <tr><td><b>5개사</b></td><td>기본 운영상한</td><td><span class="tag green">기준</span></td></tr>
+                <tr><td><b>6~7개사</b></td><td>Starter 비중과 실제시간이 통제될 때만</td><td><span class="tag amber">조건부</span></td></tr>
+                <tr><td><b>8~10개사</b></td><td>저접촉 상품을 검증한 뒤의 후속 과제</td><td><span class="tag red">스트레치</span></td></tr>
+                <tr><td><b>중단 신호</b></td><td>위클리 지연·backlog·주 60시간 초과·응답 지연</td><td><span class="tag red">즉시 점검</span></td></tr>
+              </tbody></table>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="funnel" aria-labelledby="funnel-title">
+          <div class="section-head"><h2 id="funnel-title">페이스북 → 카카오톡 퍼널</h2><p>콘텐츠의 임무는 상담을 많이 받는 것이 아니라, 맞는 고객이 자기 문제를 언어화하게 하는 것.</p></div>
+          <div class="funnel">
+            <div class="funnel-item"><span class="funnel-kicker">01</span><h3>문제 인식</h3><p>페이스북에서 대표가 모르던 계약·광고·규제 리스크를 구체적으로 보여준다.</p></div>
+            <div class="funnel-item"><span class="funnel-kicker">02</span><h3>관심 표시</h3><p>게시물 CTA는 하나. 15문항 자기점검 링크로 이동시킨다.</p></div>
+            <div class="funnel-item"><span class="funnel-kicker">03</span><h3>정보 수집</h3><p>카카오톡 채널·비즈니스폼에서 문진·자료·적합성을 확인한다.</p></div>
+            <div class="funnel-item"><span class="funnel-kicker">04</span><h3>유료 전환</h3><p>범위·가격·일정을 확인한 뒤 간이진단으로 전환한다.</p></div>
+            <div class="funnel-item"><span class="funnel-kicker">05</span><h3>반복 전환</h3><p>진단 결과와 다음 단계에서 월간 리스크레이더를 제안한다.</p></div>
+          </div>
+          <div style="height:16px"></div>
+          <div class="grid-2">
+            <div class="panel"><div class="kicker">콘텐츠 4종 순환</div><ol style="margin-bottom:0"><li>사각지대형: 계약·기한·광고·규제 누락</li><li>전후 비교형: 위험한 상태 → 개선상태</li><li>대표 의사결정형: 승인·보류·협상</li><li>자기점검형: 5문항 또는 1페이지 체크리스트</li></ol></div>
+            <div class="panel"><div class="kicker">카카오톡 운영 규칙</div><ul style="margin-bottom:0"><li>자동응답에 운영시간·링크·범위·긴급사건 제외를 명시</li><li>무료 단계는 적합성·범위 확인만, 처방은 유료 단계로 이동</li><li>응답시간은 영업일 기준으로 고정</li><li>고객 식별정보·사건자료를 공개 채널·외부 AI에 그대로 입력하지 않음</li></ul></div>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="industry-title">
+          <div class="section-head"><h2 id="industry-title">업종 전략: 하나의 웨지부터</h2><p>장기적으로 2~3개 업종을 두되, 90일에는 한 업종의 반응을 먼저 확인한다.</p></div>
+          <div class="table-wrap"><table><thead><tr><th>우선순위</th><th>대표 웨지</th><th>하나의 진단 프레임으로 묶이는 이유</th></tr></thead><tbody>
+            <tr><td><span class="tag green">1순위</span></td><td><b>AI·데이터·온라인 서비스</b></td><td>AI 활용·개인정보·약관·광고·벤더계약을 하나의 프레임으로 묶기 좋음</td></tr>
+            <tr><td><span class="tag amber">2순위</span></td><td><b>계약·규제 반복형 B2B</b></td><td>건설·인테리어·유통 등 계약·하도급·거래조건·광고 리스크를 반복상품화</td></tr>
+            <tr><td><span class="tag">3순위</span></td><td><b>규제형 전문서비스</b></td><td>의료·건강·교육·프랜차이즈 등 업종별 모듈로 확장 가능</td></tr>
+          </tbody></table></div>
+          <div class="callout" style="margin-top:14px"><strong>실행 판단</strong><p>첫 판매에서 세 업종을 동시에 광고하지 않는다. 한 업종에 맞춘 콘텐츠 8~12개와 문진으로 반응을 확인한 뒤 두 번째 업종에 이식한다.</p></div>
+        </section>
+
+        <section class="section" id="roadmap" aria-labelledby="roadmap-title">
+          <div class="section-head"><h2 id="roadmap-title">90일 실행계획</h2><p>기술을 키우기 전에 팔리는 단위·실제 소요시간·반복 전환을 확인한다.</p></div>
+          <div class="timeline">
+            <div class="phase"><span class="weeks">1–2주차</span><h3>팔리는 단위 고정</h3><ul class="checks"><li>스타터 진단 1페이지 소개서</li><li>100만·200만·300만 원 비교표</li><li>포함·제외·별도 견적 기준</li><li>15문항 자기점검과 신청폼</li><li>무료·유료 문구 분리</li></ul></div>
+            <div class="phase"><span class="weeks">3–4주차</span><h3>MVP 산출물 구축</h3><ul class="checks"><li>2~3쪽 간이진단 템플릿</li><li>표준 자료요청표</li><li>월간 리스크레이더 샘플</li><li>이번 달 해야 할 3가지 템플릿</li><li>익명화 샘플 2개</li></ul></div>
+            <div class="phase"><span class="weeks">5–8주차</span><h3>유료 파일럿 3건</h3><ul class="checks"><li>기존 접점 기업에 직접 제안</li><li>자기점검 → 유료 진단 전환</li><li>실제 소요시간 측정</li><li>전달 후 7일 내 후속 인터뷰</li><li>반복 리스크 기록</li></ul></div>
+            <div class="phase"><span class="weeks">9–12주차</span><h3>반복상품 전환</h3><ul class="checks"><li>적합 고객에게 월간상품 제안</li><li>검토건수·응답시간·회의횟수 확정</li><li>고난도 업무 전환문구 적용</li><li>실제 질문 중심 콘텐츠 개선</li><li>가격·업종·수용한도 재결정</li></ul></div>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="kpi-title">
+          <div class="section-head"><h2 id="kpi-title">핵심 KPI는 팔로워 수가 아니다</h2><p>첫 90일은 매출 규모보다 전환·시간·미수금의 질을 측정한다.</p></div>
+          <div class="panel"><div class="table-wrap"><table><thead><tr><th>구간</th><th>지표</th><th>1차 판정기준</th></tr></thead><tbody>
+            <tr><td>유입</td><td>페이스북 게시물별 카카오톡 이동수</td><td>게시물별 기록 시작</td></tr>
+            <tr><td>관심</td><td>자기점검 완료율</td><td>폼 이탈 지점 확인</td></tr>
+            <tr><td>판매</td><td>자기점검 → 유료 진단 전환율</td><td>3건 파일럿에서 측정</td></tr>
+            <tr><td>품질·수익</td><td>진단 실제 소요시간·고객별 실효 시간당 매출</td><td>가격 재조정 하한선</td></tr>
+            <tr><td>반복</td><td>진단 → 월간상품 전환율</td><td>90일 핵심 지표</td></tr>
+            <tr><td>운영·유지</td><td>고객별 월 실제시간·검토건수·해지·연장·미수금</td><td>capacity 초과와 반복매출의 질 확인</td></tr>
+            <tr><td>자산화</td><td>재사용 가능한 질문·체크리스트 수</td><td>AI·템플릿 개선</td></tr>
+          </tbody></table></div></div>
+        </section>
+
+        <section class="section" id="guardrails" aria-labelledby="guardrail-title">
+          <div class="section-head"><h2 id="guardrail-title">법률·윤리·기밀 가드레일</h2><p>상품 설계와 마케팅 문구가 동시에 지켜야 하는 세 개의 선.</p></div>
+          <div class="guardrail">
+            <div class="guard"><h3>광고</h3><ul><li>서비스 범위·제외범위 명시</li><li>자동 준법·100% 안전·결과보장 금지</li><li>무료 제공은 자기점검·정보제공으로 명시</li><li>타 변호사·대형로펌 비교 금지</li></ul></div>
+            <div class="guard"><h3>소개·알선</h3><ul><li>채널은 자신의 채널에서 직접 운영</li><li>사건별 소개수수료·성사 커미션 금지</li><li>비변호사와 법률사무 보수분배 금지</li><li>제휴 구조는 별도 검토</li></ul></div>
+            <div class="guard"><h3>AI·개인정보</h3><ul><li>고객 원자료와 공개자료 분리</li><li>식별정보·고유 사실관계는 외부 검색어에서 제거</li><li>AI는 정리·초안, 최종 판단은 변호사</li><li>AI 초안·변호사 확인·자료대기 상태 표시</li></ul></div>
+          </div>
+          <div style="height:16px"></div>
+          <div class="do-not"><div>50만~150만 원에 전사 법률감사·전수 계약검토를 약속하지 않는다.</div><div>무제한 상담·무제한 검토·24시간 대응을 월정액에 넣지 않는다.</div><div>법률 AI 챗봇이 최종 판단을 하는 것처럼 판매하지 않는다.</div><div>초기에 별도 SaaS 플랫폼이나 대규모 대시보드 개발에 매몰되지 않는다.</div><div>업종 3개를 동시에 광고하지 않는다.</div><div>승소율·성공률·결과보장·경쟁자 비교를 사용하지 않는다.</div><div>비변호사에게 사건 소개·알선 대가를 지급하지 않는다.</div><div>클라이언트 원자료를 외부 AI 서비스에 자동 전송하지 않는다.</div></div>
+        </section>
+
+        <section class="section" aria-labelledby="counter-title">
+          <div class="section-head"><h2 id="counter-title">대립검증: 반복상품을 버릴 것인가</h2><p>capacity 위험을 인정하되, 매출 변동성과 운영 통제를 함께 비교했다.</p></div>
+          <div class="grid-2">
+            <div class="callout alert"><strong>반대 가설</strong><p>1인 로펌이고 외부 협업자도 없으므로 월간 반복상품은 운영을 잠식한다. 콘텐츠·단건 진단·고단가 프로젝트만 운영하는 편이 낫다.</p></div>
+            <div class="callout signal"><strong>수렴한 결론</strong><p>반복상품을 폐기하지 않고, 간이진단 또는 2주 프로젝트에서 반복 업무가 확인된 고객에게만 제안한다. 고객 수·검토량·응답시간·긴급대응을 계약서에 고정한다.</p></div>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="recommendation-title">
+          <div class="section-head"><h2 id="recommendation-title">최종 추천안</h2><p>90일에 만들 것은 작고 선명하게, 만들지 않을 것은 명시적으로 보류한다.</p></div>
+          <div class="panel">
+            <div class="callout"><strong>기본 사업모델</strong><p style="font-size:1.08rem"><b>업종별 자기점검 → 50만~150만 원 스타터 진단 → 300만~1,500만 원 집중 프로젝트 → 월 100만~300만 원 제한형 리스크레이더 → 출시·조사·실사 프로젝트 업셀</b></p></div>
+            <div class="grid-2" style="margin-top:16px">
+              <div><h3>최초 90일에 만들 것</h3><ol><li>스타터 진단 1종</li><li>저가 전자책 또는 체크리스트 1종</li><li>출시 전 규제 Sprint 또는 계약 포트폴리오 검진 1종</li><li>월간 리스크레이더 3티어 표</li><li>페이스북 콘텐츠 8~12개</li><li>카카오톡 자기점검폼과 상담 스크립트</li></ol></div>
+              <div><h3>최초 90일에 만들지 않을 것</h3><ul><li>전용 SaaS</li><li>무제한 상담 멤버십</li><li>3개 업종 동시 런칭</li><li>외부 소개수수료 모델</li><li>완전 자동 법률판단 시스템</li></ul></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="ledger" aria-labelledby="ledger-title">
+          <div class="section-head"><h2 id="ledger-title">Evidence Ledger</h2><p>확정된 사실, 운영 가설, 출시 전 확인할 항목을 섞지 않는다.</p></div>
+          <div class="panel"><div class="table-wrap"><table class="evidence"><thead><tr><th>주장·결정</th><th>근거 파일·도구</th><th>상태</th><th>남은 불확실성</th></tr></thead><tbody>
+            <tr><td>기존 OPS·FOUNDRY 자산을 진단→반복→프로젝트 사다리로 묶을 수 있음</td><td><span class="mono">_FOUNDRY_리걸리스크/_edge_strategy.md</span>, <span class="mono">00_settings/tiers.md</span></td><td><span class="tag green">확인됨</span></td><td>가격은 정본상 가설</td></tr>
+            <tr><td>1인 운영상 5~7개 고객이 현실적 상한</td><td><span class="mono">capacity_model.md</span></td><td><span class="tag green">내부 확인</span></td><td>실제시간 측정으로 재보정</td></tr>
+            <tr><td>50만~150만 원은 진입형 간이진단</td><td>사용자 답변·진단사양·가격 문서 대조</td><td><span class="tag amber">전략판단</span></td><td>파일럿 전 가격 확정 불가</td></tr>
+            <tr><td>월 100만~300만 원 3티어 반복상품</td><td>사용자 답변·<span class="mono">tiers.md</span>·사업모델 문서</td><td><span class="tag amber">가격 가설</span></td><td>지불의사·실제시간 검증</td></tr>
+            <tr><td>광고의 과장·오인·결과기대 표현 제한</td><td>국가법령정보센터·대한변협·한국법 MCP</td><td><span class="tag amber">부분 교차</span></td><td>출시 전 최신 원문 재확인</td></tr>
+            <tr><td>카카오톡 채널·비즈니스폼으로 신청·상담 구성 가능</td><td>카카오비즈니스 공식 페이지</td><td><span class="tag green">기능 확인</span></td><td>전환율은 파일럿 측정</td></tr>
+            <tr><td>AI 활용에는 생애주기·안전조치·거버넌스 필요</td><td>개인정보보호위원회 2025 안내자료</td><td><span class="tag green">정책 확인</span></td><td>고객별 처리근거·보안설계 별도</td></tr>
+          </tbody></table></div></div>
+        </section>
+
+        <section class="section" aria-labelledby="hardcheck-title">
+          <div class="section-head"><h2 id="hardcheck-title">출시 전 하드체크</h2><p>페이지를 발행하는 것과 실제 서비스를 출시하는 것은 다르다. 출시 직전에 다시 확인한다.</p></div>
+          <div class="grid-2">
+            <div class="panel"><ol><li><b>실존 확인:</b> 광고·가격·법률문구의 최신 규정과 대한변협 안내 재확인</li><li><b>MCP 교차:</b> 변호사법 제23조·제34조 원문 API 재확인</li><li><b>기밀 확인:</b> 채널·AI 도구에 사건·의뢰인 식별정보가 들어가지 않았는지 확인</li><li><b>범위 확인:</b> 50만~150만 원 진단이 전사감사처럼 오인되지 않는지 확인</li><li><b>capacity 확인:</b> 파일럿 3건 실제시간 측정 후 티어별 고객 수 재설정</li></ol></div>
+            <div class="panel"><div class="kicker">Grounding 배지</div><div class="grid-3" style="margin-top:14px"><div class="metric signal"><span class="num">🟢 5</span><span class="label">확정</span></div><div class="metric caution"><span class="num">🟡 7</span><span class="label">합리적 추정</span></div><div class="metric alert"><span class="num">🔴 3</span><span class="label">확인 필요</span></div></div><p class="muted" style="font-size:.79rem;margin-bottom:0">이 문서는 외부 발행용 법률의견서가 아니라 내부 사업설계 잠정본이다. 🔴 항목은 출시 전 재검증한다.</p></div>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="sources-title">
+          <div class="section-head"><h2 id="sources-title">출처 및 검증 메모</h2><p>전략·가격·운영 가설과 법률·기능 확인을 구분해 기록한다.</p></div>
+          <div class="panel">
+            <ul class="source-list">
+              <li>내부 전략자산: <span class="mono">_OPS_법률사무소/60_strategy/</span>, <span class="mono">_FOUNDRY_리걸리스크/</span>의 상품·capacity·운영 문서.</li>
+              <li>변호사법 및 광고·알선 관련 확인: <a href="https://www.law.go.kr/법령/변호사법">국가법령정보센터 변호사법</a>, <a href="https://koreanbar.or.kr/pages/news/view.asp?category=&page=5&searchstr=&searchtype=&seq=13241&teamcode=&types=1">대한변호사협회 광고 위반 사례 안내</a>, 한국법 MCP.</li>
+              <li>채널 기능 확인: <a href="https://business.kakao.com/info/kakaotalkchannel/">카카오톡 채널</a>, <a href="https://business.kakao.com/info/talkbizform/">카카오 비즈니스폼</a>, <a href="https://www.facebook.com/help/1698046970464236/">Meta 자동 인사말 도움말</a>.</li>
+              <li>AI·개인정보 운영 안내: <a href="https://pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=11410">개인정보보호위원회 생성형 AI 개발·활용 기준</a>.</li>
+              <li>검증 메모: 웹 검증 5회, 한국법 MCP 6회. 변호사법 직접 조문 조회는 실패해 공식 웹 원문·MCP 부분결과를 함께 기록했으며 출시 전 재확인한다.</li>
+            </ul>
+          </div>
+        </section>
+
+        <footer class="footer"><div><strong>머스트노우 비즈니스모델</strong> · 내부 전략 브리핑</div><div>기준일 2026-08-30 · 원문: <span class="mono">머스트노우_비즈모델_20260830.md</span></div></footer>
+      </main>
+    </div>
+  </div>
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const button = document.getElementById('themeToggle');
+      const stored = localStorage.getItem('mustknow-theme');
+      if (stored) root.dataset.theme = stored;
+      const update = () => {
+        const value = root.dataset.theme || 'auto';
+        button.textContent = `화면: ${value === 'dark' ? '어둡게' : value === 'light' ? '밝게' : '자동'}`;
+        button.setAttribute('aria-pressed', value === 'dark');
+      };
+      button.addEventListener('click', () => {
+        const current = root.dataset.theme || 'auto';
+        const next = current === 'auto' ? 'dark' : current === 'dark' ? 'light' : 'auto';
+        if (next === 'auto') delete root.dataset.theme; else root.dataset.theme = next;
+        if (next === 'auto') localStorage.removeItem('mustknow-theme'); else localStorage.setItem('mustknow-theme', next);
+        update();
+      });
+      update();
+    })();
+  </script>
+</body>
+</html>
