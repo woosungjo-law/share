@@ -97,6 +97,8 @@ figure.fig svg{
   display:block;margin:0 auto;color:var(--text);
   width:100%;min-width:34rem;height:auto;
 }
+figure.fig .hl{stroke:var(--warn)}
+figure.fig text.hl,figure.fig polygon.hl{fill:var(--warn);stroke:none}
 figure.fig figcaption{
   color:var(--sub);font-size:0.86rem;line-height:1.7;
   text-align:center;padding:0.7rem 1.1rem 0.9rem;
@@ -315,7 +317,7 @@ footer{padding:clamp(2rem,5vw,3rem) 0 4rem;color:var(--sub);font-size:0.86rem;li
           </marker>
           <marker id="a2w" viewBox="0 0 10 10" refX="9" refY="5"
                   markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-            <polygon points="0,0 10,5 0,10" fill="#A8452A"/>
+            <polygon points="0,0 10,5 0,10" class="hl"/>
           </marker>
         </defs>
 
@@ -338,17 +340,17 @@ footer{padding:clamp(2rem,5vw,3rem) 0 4rem;color:var(--sub);font-size:0.86rem;li
         <text x="272" y="62" text-anchor="middle" font-size="13" font-weight="700" fill="currentColor">2 &middot; 던진다</text>
 
         <rect x="34" y="152" width="188" height="48" rx="9"
-              fill="none" stroke="#A8452A" stroke-width="1.8"/>
-        <text x="128" y="174" text-anchor="middle" font-size="14.5" font-weight="700" fill="#A8452A">4 &middot; 안도한다</text>
-        <text x="128" y="191" text-anchor="middle" font-size="12.5" fill="#A8452A" opacity="0.85">내가 무능한 게 아니구나</text>
+              fill="none" class="hl" stroke-width="1.8"/>
+        <text x="128" y="174" text-anchor="middle" font-size="14.5" font-weight="700" class="hl">4 &middot; 안도한다</text>
+        <text x="128" y="191" text-anchor="middle" font-size="12.5" class="hl" opacity="0.85">내가 무능한 게 아니구나</text>
 
-        <line x1="380" y1="100" x2="240" y2="168" stroke="#A8452A"
+        <line x1="380" y1="100" x2="240" y2="168" class="hl"
               stroke-width="1.8" marker-end="url(#a2w)"/>
-        <text x="322" y="146" text-anchor="middle" font-size="12.5" fill="#A8452A">괴로워하는 모습을 보고</text>
+        <text x="322" y="146" text-anchor="middle" font-size="12.5" class="hl">괴로워하는 모습을 보고</text>
 
         <path d="M 34 176 L 16 176 L 16 70 L 28 70" fill="none"
-              stroke="#A8452A" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#a2w)"/>
-        <text x="76" y="126" text-anchor="middle" font-size="12.5" fill="#A8452A">다시 던진다</text>
+              class="hl" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#a2w)"/>
+        <text x="76" y="126" text-anchor="middle" font-size="12.5" class="hl">다시 던진다</text>
       </svg>
       </div>
       <figcaption>4번의 안도가 1번으로 돌아가기 때문에 이 구조는 한 번으로 끝나지 않는다. 그래서 반복된다.</figcaption>
