@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>쉽게 읽는 &middot; 프리랜서의 덫</title>
+<style>
+:root{
+  --bg:#FAF8F4;
+  --accent:#C4704A;
+  --accent2:#E8A882;
+  --text:#2C2416;
+  --sub:#7A6A55;
+  --line:#E8E2D8;
+  --card:#FFF9F5;
+  --analogy:#F3EADF;
+  --warn:#8C4A2F;
+  --maxw:44rem;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#1C1815;
+    --accent:#E39068;
+    --accent2:#C4704A;
+    --text:#F0EAE2;
+    --sub:#B4A491;
+    --line:#3A322B;
+    --card:#252019;
+    --analogy:#2B2419;
+    --warn:#E39068;
+  }
+}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:system-ui,-apple-system,'Segoe UI','Malgun Gothic','Apple SD Gothic Neo','Noto Sans KR',sans-serif;
+  font-size:clamp(1rem,0.95rem + 0.3vw,1.125rem);
+  line-height:1.85;
+  word-break:keep-all;
+  overflow-wrap:anywhere;
+  -webkit-text-size-adjust:100%;
+}
+#bar{position:fixed;top:0;left:0;height:0.25rem;width:0;z-index:99;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .12s linear}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(1.1rem,4vw,2rem)}
+
+/* hero */
+header.hero{
+  border-top:0.4rem solid transparent;
+  border-image:linear-gradient(90deg,var(--accent),var(--accent2)) 1;
+  padding:clamp(2.4rem,7vw,4.2rem) 0 clamp(1.8rem,5vw,2.8rem);
+  border-bottom:1px solid var(--line);
+}
+.badges{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.3rem}
+.badge{
+  font-size:0.72rem;font-weight:700;letter-spacing:0.1em;
+  padding:0.32rem 0.72rem;border-radius:2rem;
+  background:var(--accent);color:var(--bg);
+}
+.badge.ghost{background:transparent;color:var(--sub);border:1px solid var(--line)}
+h1{
+  font-size:clamp(1.75rem,1.2rem + 3.2vw,2.9rem);
+  font-weight:900;letter-spacing:-0.03em;line-height:1.28;margin:0 0 0.9rem;
+}
+.kicker{color:var(--sub);font-size:0.92rem;margin:0 0 0.4rem;font-weight:600}
+.lede{
+  font-size:clamp(1.06rem,1rem + 0.5vw,1.3rem);
+  color:var(--text);margin:1.4rem 0 0;padding:1.15rem 1.3rem;
+  background:var(--card);border-left:0.28rem solid var(--accent);border-radius:0 0.5rem 0.5rem 0;
+  font-weight:600;line-height:1.7;
+}
+
+/* sections */
+section{padding:clamp(2.2rem,6vw,3.4rem) 0;border-bottom:1px solid var(--line)}
+.step{display:flex;align-items:baseline;gap:0.7rem;margin:0 0 1.2rem}
+.step .n{
+  flex:none;width:2rem;height:2rem;border-radius:50%;
+  background:var(--accent);color:var(--bg);
+  font-size:0.92rem;font-weight:800;
+  display:inline-flex;align-items:center;justify-content:center;
+  transform:translateY(0.2rem);
+}
+h2{font-size:clamp(1.25rem,1.05rem + 1vw,1.65rem);font-weight:800;letter-spacing:-0.02em;margin:0;line-height:1.4}
+h3{font-size:clamp(1.02rem,0.98rem + 0.4vw,1.18rem);font-weight:700;margin:2rem 0 0.7rem;color:var(--accent)}
+p{margin:0 0 1.15rem}
+strong{font-weight:800;color:var(--warn)}
+
+/* analogy card */
+.analogy{
+  background:var(--analogy);border:1px dashed var(--accent2);
+  border-radius:0.9rem;padding:clamp(1.2rem,4vw,1.8rem);margin:0;
+}
+.analogy .tag{
+  display:inline-block;font-size:0.7rem;font-weight:800;letter-spacing:0.14em;
+  color:var(--accent);margin-bottom:0.7rem;
+}
+.analogy p:last-child{margin-bottom:0}
+
+/* list */
+ol.rules{list-style:none;counter-reset:r;padding:0;margin:0}
+ol.rules li{
+  counter-increment:r;position:relative;
+  padding:0.85rem 0 0.85rem 2.6rem;border-bottom:1px solid var(--line);
+}
+ol.rules li:last-child{border-bottom:0}
+ol.rules li::before{
+  content:counter(r);position:absolute;left:0;top:0.95rem;
+  width:1.7rem;height:1.7rem;border-radius:0.45rem;
+  background:var(--card);border:1px solid var(--line);color:var(--accent);
+  font-size:0.82rem;font-weight:800;
+  display:inline-flex;align-items:center;justify-content:center;
+}
+ol.rules b{display:block;font-weight:800;margin-bottom:0.15rem}
+ol.rules span{color:var(--sub);font-size:0.94rem;line-height:1.7}
+
+/* checklist */
+ul.check{list-style:none;padding:0;margin:0}
+ul.check li{
+  position:relative;padding:0.7rem 0 0.7rem 2.1rem;
+  border-bottom:1px solid var(--line);line-height:1.7;
+}
+ul.check li:last-child{border-bottom:0}
+ul.check li::before{
+  content:"\2713";position:absolute;left:0.15rem;top:0.72rem;
+  color:var(--accent);font-weight:900;font-size:1.05rem;
+}
+
+/* cost strip */
+.cost{display:grid;grid-template-columns:repeat(auto-fit,minmax(8.5rem,1fr));gap:0.7rem;margin:1.4rem 0 0}
+.cost div{
+  background:var(--card);border:1px solid var(--line);border-radius:0.7rem;
+  padding:0.95rem 0.9rem;text-align:center;
+}
+.cost b{display:block;font-size:0.94rem;font-weight:800;margin-bottom:0.15rem}
+.cost span{font-size:0.78rem;color:var(--sub);line-height:1.5;display:block}
+
+/* table */
+details.trace{margin:0}
+details.trace summary{
+  cursor:pointer;font-weight:800;font-size:1rem;
+  padding:0.9rem 1.1rem;background:var(--card);
+  border:1px solid var(--line);border-radius:0.6rem;list-style:none;
+}
+details.trace summary::-webkit-details-marker{display:none}
+details.trace summary::before{content:"\25B8 ";color:var(--accent);font-weight:900}
+details.trace[open] summary::before{content:"\25BE "}
+.tw{overflow-x:auto;margin-top:1rem;border:1px solid var(--line);border-radius:0.6rem}
+table{border-collapse:collapse;width:100%;min-width:30rem;font-size:0.88rem;line-height:1.65}
+th,td{padding:0.75rem 0.9rem;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:var(--card);font-weight:800;font-size:0.8rem;letter-spacing:0.04em;color:var(--sub)}
+tr:last-child td{border-bottom:0}
+td.src{color:var(--sub)}
+
+/* footer */
+footer{padding:clamp(2rem,5vw,3rem) 0 4rem;color:var(--sub);font-size:0.86rem;line-height:1.75}
+.disc{
+  background:var(--card);border:1px solid var(--line);border-radius:0.7rem;
+  padding:1.1rem 1.2rem;margin:0 0 1.4rem;
+}
+.disc b{font-weight:800;color:var(--text)}
+.disc > b:first-child{color:var(--warn);display:block;margin-bottom:0.35rem;font-size:0.9rem}
+.meta{margin:0}
+.meta code{
+  background:var(--card);border:1px solid var(--line);border-radius:0.3rem;
+  padding:0.1rem 0.35rem;font-size:0.8rem;
+}
+
+@media print{
+  #bar{display:none}
+  body{background:#fff;color:#000;font-size:10.5pt}
+  section{page-break-inside:avoid;border-bottom:1px solid #ccc}
+  details.trace{display:block}
+  details.trace summary{display:none}
+}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="badges">
+      <span class="badge">쉽게 읽는 버전</span>
+      <span class="badge ghost">대상 &middot; 법률을 전공하지 않은 성인</span>
+      <span class="badge ghost">계약법 &middot; 노동법</span>
+    </div>
+    <p class="kicker">프리랜서의 덫</p>
+    <h1>계약서에 &lsquo;프리랜서&rsquo;라고 써도<br>법은 그 종이를 보지 않는다</h1>
+    <p class="lede">한 줄로 말하면, <strong>계약서에 뭐라고 적혀 있든 실제로 회사가 시키는 대로 일했다면 법은 그 사람을 직원으로 본다</strong>는 이야기입니다.</p>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <div class="wrap">
+    <div class="step"><span class="n">1</span><h2>무엇에 관한 이야기인가</h2></div>
+    <p>회사가 사람을 쓰는 방법에는 크게 두 가지가 있습니다. 하나는 <b>직원으로 채용하는 것</b>이고, 다른 하나는 <b>프리랜서에게 일을 맡기는 것</b>입니다.</p>
+    <p>둘의 차이는 큽니다. 직원이면 회사는 4대 보험료를 내고, 퇴직금을 주고, 연차 휴가를 챙겨야 합니다. 프리랜서면 그럴 의무가 없습니다. 약속한 대가만 주면 끝입니다.</p>
+    <p>그래서 어떤 회사는 <b>계약서에만 &lsquo;프리랜서&rsquo;라고 적고, 실제로는 직원처럼 부리는</b> 선택을 합니다. 이 컬럼은 그 선택이 왜 통하지 않는지, 그리고 통하지 않았을 때 무슨 일이 벌어지는지를 다룹니다.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="step"><span class="n">2</span><h2>이렇게 생각하면 쉽습니다</h2></div>
+    <div class="analogy">
+      <span class="tag">비유</span>
+      <p>식당 간판에 &lsquo;한식당&rsquo;이라고 크게 걸어 두었다고 합시다. 그런데 안에 들어가 보니 파는 것이 전부 파스타와 피자입니다. 손님들은 그 집을 뭐라고 부를까요? 당연히 이탈리안 식당이라고 부릅니다.</p>
+      <p><b>간판은 바깥에 붙어 있고, 정체는 안에서 매일 벌어지는 일이 정합니다.</b></p>
+      <p>계약서도 똑같습니다. 표지에 &lsquo;용역계약서&rsquo;라고 인쇄해 두어도, 안에서 매일 벌어진 일이 출근 시간 지키고 상사 지시 받고 회사 컴퓨터로 일하는 것이었다면, 법은 그것을 근로계약으로 봅니다. 종이가 아니라 실제 벌어진 일을 봅니다.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="step"><span class="n">3</span><h2>법은 무엇을 보고 판단하나</h2></div>
+
+    <p>대법원은 <b>계약의 형식보다 실질적인 근로 제공 관계를 우선한다</b>는 원칙을 세워 두었습니다. 즉 서류에 뭐라고 썼는지가 아니라, 실제로 어떻게 일했는지를 먼저 봅니다.</p>
+    <p>구체적으로 법원이 확인하는 항목은 다음 다섯 가지입니다. 이것을 <b>종속성 지표</b>라고 부릅니다.</p>
+
+    <ol class="rules">
+      <li><b>일을 시키는 사람이 누구인가</b><span>업무 내용을 회사가 정하고 지휘하고 감독하는지 봅니다.</span></li>
+      <li><b>언제 어디서 일하는지가 정해져 있는가</b><span>근무 장소와 시간에 묶여 있는지 봅니다.</span></li>
+      <li><b>일할 도구를 누가 주는가</b><span>비품과 장비를 회사가 제공하는지 봅니다.</span></li>
+      <li><b>돈을 무엇에 대해 주는가</b><span>일한 시간 자체에 대한 대가인지(시간급 등), 만들어 낸 결과물에 대한 대가인지(건별) 봅니다.</span></li>
+      <li><b>다른 곳 일도 할 수 있는가</b><span>제3자와 중복 계약이 가능한지, 즉 그 회사에만 매여 있는지 봅니다.</span></li>
+    </ol>
+
+    <h3>다섯 항목에서 종속성이 인정되면</h3>
+    <p>계약서에 &lsquo;용역계약&rsquo;이라고 표시되어 있어도 <strong>근로기준법상 근로자로 판단됩니다.</strong> 그러면 회사가 아꼈다고 생각했던 비용이 한꺼번에 청구서로 돌아옵니다.</p>
+
+    <div class="cost">
+      <div><b>퇴직금</b><span>소급해서 지급</span></div>
+      <div><b>연차 수당</b><span>소급해서 지급</span></div>
+      <div><b>4대 보험료</b><span>소급해서 부담</span></div>
+      <div><b>형사처벌 위험</b><span>근로기준법 위반<br>(대표이사)</span></div>
+    </div>
+
+    <h3>실제로 이런 일이 있었습니다</h3>
+    <p>컬럼에 실린 사례입니다. 한 개발사가 인건비를 아끼려고 개발자 다섯 명을 프리랜서로 계약했습니다. 계약서에는 &ldquo;4대 보험 및 퇴직금 의무는 없다&rdquo;고 분명히 적어 두었습니다.</p>
+    <p>그런데 실제 운영은 달랐습니다. 대표가 매일 오전 아홉 시 회의를 주재했고, 지각하면 사유서를 받았고, 개발 환경부터 코드 스타일까지 세세하게 지시했습니다. 2년 뒤 계약 종료를 통보하자 개발자들은 &ldquo;말만 프리랜서였다&rdquo;며 퇴직금과 연차 수당 등 <b>총 2억 원</b>을 청구했습니다.</p>
+    <p>법원은 계약서의 문구가 아니라 실제 근로 실태를 보고 <b>개발자들의 손을 들어주었습니다.</b></p>
+    <p style="font-size:0.86rem;color:var(--sub)">※ 이 사례의 인물과 회사는 이해를 돕기 위한 설정으로, 특정 실존 대상과 무관합니다.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="step"><span class="n">4</span><h2>그래서 나에게 무슨 의미인가</h2></div>
+
+    <h3>사람을 쓰는 쪽이라면</h3>
+    <p>진짜 프리랜서 계약을 운영하려면 계약서만 고쳐서는 소용이 없습니다. <strong>계약서와 실제 운영이 같아야 합니다.</strong> 컬럼이 제시하는 점검 항목은 다음과 같습니다.</p>
+    <ul class="check">
+      <li>프리랜서에게 <b>취업규칙이나 인사 규정을 적용하지 않는다</b></li>
+      <li>보수를 시간급이 아니라 <b>프로젝트 건별 대가</b>로 설계한다</li>
+      <li>출퇴근 시간을 지정하거나 <b>근태를 관리하지 않는다</b></li>
+      <li>장소와 시간을 <b>본인이 정하고</b>, 본인 장비를 쓰고, 다른 곳과 중복 계약이 가능하다는 점을 계약서에 명시한다</li>
+      <li>계약서에 지휘 감독권을 행사하지 않는다는 취지의 조항을 넣는다</li>
+    </ul>
+    <p style="margin-top:1.3rem">컬럼이 권하는 계약 문구는 이런 형태입니다. &ldquo;을은 본 계약의 목적물인 결과물의 완성을 위해 자신의 재량으로 업무를 수행하며, 갑은 구체적인 업무 수행 방식에 대해 지휘 감독권을 행사하지 않는다.&rdquo;</p>
+    <p><b>다만 문구를 넣는 것으로 끝나지 않습니다.</b> 실제 운영이 그 문구와 어긋나면 문구는 소용이 없다는 것이 이 컬럼 전체의 요지입니다.</p>
+
+    <h3>프리랜서로 일하는 쪽이라면</h3>
+    <p>계약서에 프리랜서라고 적혀 있다는 이유만으로 퇴직금이나 연차 수당을 포기할 필요는 없습니다. 실제로 어떻게 일했는지가 판단 기준이기 때문입니다. 위 다섯 가지 항목에 비추어 본인의 근무 형태를 확인해 볼 수 있습니다.</p>
+
+    <h3>이 문제가 특히 무거운 이유</h3>
+    <p>컬럼은 마지막으로 이 점을 강조합니다. 프리랜서 문제는 <strong>한 명이 인정되면 나머지 열 명, 백 명에게도 똑같이 적용되는 성격</strong>이 있습니다. 한 사람의 청구가 수억 원 규모의 집단 문제로 번질 수 있다는 뜻입니다. 그래서 처음부터 계약 구조와 실제 운영을 일치시키는 것이 비용과 위험을 줄이는 길이라고 말합니다.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <details class="trace">
+      <summary>근거 대조 &middot; 이 쉬운 설명이 원문 어디에서 왔는지</summary>
+      <div class="tw">
+        <table>
+          <thead><tr><th style="width:44%">쉬운 설명</th><th>원문 근거 문장</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>서류가 아니라 실제 벌어진 일을 본다</td>
+              <td class="src">&ldquo;근로자성 판단의 핵심 원칙은 &lsquo;계약의 형식&rsquo;보다 &lsquo;실질적인 근로 제공 관계&rsquo;를 우선한다는 것이다(대법원 2004다29736).&rdquo;</td>
+            </tr>
+            <tr>
+              <td>법원이 보는 다섯 가지 항목</td>
+              <td class="src">&ldquo;첫째, 업무 내용을 사용자가 정하고 지휘 감독하는지 여부. 둘째, 근무 장소와 시간에 구속되는지 여부. 셋째, 비품 장비를 사용자가 제공하는지 여부. 넷째, 보수가 근로 자체의 대상인지(시간급 등) vs 결과물의 대가인지(건별). 다섯째, 제3자와의 중복 계약이 가능한지(전속성 유무).&rdquo;</td>
+            </tr>
+            <tr>
+              <td>용역계약이라 써도 근로자로 판단된다</td>
+              <td class="src">&ldquo;계약서에 &lsquo;용역계약&rsquo;이라고 표시해도 위 지표에서 종속성이 인정되면 근로기준법상 근로자로 판단된다.&rdquo;</td>
+            </tr>
+            <tr>
+              <td>퇴직금 &middot; 연차 수당 &middot; 4대 보험료 &middot; 형사처벌</td>
+              <td class="src">&ldquo;퇴직금, 연차 수당, 4대 보험료 소급 부담은 물론, 근로기준법 위반으로 인한 형사처벌(대표이사) 리스크까지 발생한다.&rdquo;</td>
+            </tr>
+            <tr>
+              <td>개발자 5명 &middot; 2년 &middot; 2억 원 사례</td>
+              <td class="src">&ldquo;개발자 5명을 프리랜서(개인사업자) 계약으로 채용했다 (중략) 2년 뒤 (중략) 퇴직금과 연차 수당 등 총 2억 원을 청구했다.&rdquo; (원문 명시: 인물 회사는 설정)</td>
+            </tr>
+            <tr>
+              <td>운영 점검 세 가지 (취업규칙 &middot; 건별 대가 &middot; 근태)</td>
+              <td class="src">&ldquo;첫째, 프리랜서에게 취업규칙이나 인사 규정을 적용하지 말 것. 둘째, 보수의 성격을 &lsquo;시간급&rsquo;이 아닌 &lsquo;프로젝트 건별 대가&rsquo;로 설정할 것. 셋째, 출퇴근 시간을 지정하거나 근태를 관리하지 말 것.&rdquo;</td>
+            </tr>
+            <tr>
+              <td>권장 계약 문구</td>
+              <td class="src">&ldquo;을은 본 계약의 목적물인 결과물의 완성을 위해 자신의 재량으로 업무를 수행하며, 갑은 구체적인 업무 수행 방식에 대해 지휘 감독권을 행사하지 않는다.&rdquo;</td>
+            </tr>
+            <tr>
+              <td>한 명이 인정되면 전원으로 번진다</td>
+              <td class="src">&ldquo;프리랜서 리스크는 1명이 인정되면 나머지 10명, 100명에게도 똑같이 수억 원의 비용이 발생하는 &lsquo;집단 소송&rsquo;으로 번지는 속성이 있으므로&rdquo;</td>
+            </tr>
+            <tr>
+              <td>식당 간판 비유</td>
+              <td class="src">원문에 없음 &middot; 이해를 돕기 위해 추가한 비유입니다. 법적 판단 근거가 아닙니다.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disc">
+      <b>읽기 전에 알아 두실 것</b>
+      이 글은 특정 컬럼 한 편을 쉽게 옮긴 일반적인 법률 정보이며, 개별 사안에 대한 법률 자문이 아닙니다. 구체적인 상황은 변호사와 상담하시기 바랍니다.
+      <br><br>
+      원문에 인용된 법령과 판례(<b>근로기준법 제2조</b>, <b>대법원 2004. 7. 22. 선고 2004다29736 판결</b>)는 원문 상태 그대로 옮긴 것으로, <b>원문 자체가 인용 검증 미완료(citations_verified: false) 상태</b>입니다. 확정적인 근거로 사용하기 전에 별도 확인이 필요합니다.
+    </div>
+    <p class="meta">
+      원문 &middot; <code>_WIKI_법률지식/55_컬럼/계약법/계약조항_해석_운영/023_용역계약서에 숨겨진 근로자 조항들.md</code><br>
+      쉽게 읽는 버전 &middot; 대상 &lsquo;법률 비전공 성인&rsquo; &middot; 2026-08-31
+    </p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var bar=document.getElementById('bar');
+  function up(){
+    var h=document.documentElement;
+    var m=h.scrollHeight-h.clientHeight;
+    bar.style.width=(m>0?(h.scrollTop/m)*100:0)+'%';
+  }
+  addEventListener('scroll',up,{passive:true});
+  addEventListener('resize',up);
+  up();
+})();
+</script>
+</body>
+</html>
