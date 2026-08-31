@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>쉽게 읽는 &middot; 비난의 화살</title>
+<style>
+:root{
+  --bg:#FAF8F4;
+  --accent:#C4704A;
+  --accent2:#E8A882;
+  --text:#2C2416;
+  --sub:#7A6A55;
+  --line:#E8E2D8;
+  --card:#FFF9F5;
+  --analogy:#F3EADF;
+  --warn:#8C4A2F;
+  --ok:#4E6E52;
+  --maxw:44rem;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#1C1815;
+    --accent:#E39068;
+    --accent2:#C4704A;
+    --text:#F0EAE2;
+    --sub:#B4A491;
+    --line:#3A322B;
+    --card:#252019;
+    --analogy:#2B2419;
+    --warn:#E39068;
+    --ok:#8FB093;
+  }
+}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:system-ui,-apple-system,'Segoe UI','Malgun Gothic','Apple SD Gothic Neo','Noto Sans KR',sans-serif;
+  font-size:clamp(1rem,0.95rem + 0.3vw,1.125rem);
+  line-height:1.85;
+  word-break:keep-all;
+  overflow-wrap:anywhere;
+  -webkit-text-size-adjust:100%;
+}
+#bar{position:fixed;top:0;left:0;height:0.25rem;width:0;z-index:99;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .12s linear}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(1.1rem,4vw,2rem)}
+
+header.hero{
+  border-top:0.4rem solid transparent;
+  border-image:linear-gradient(90deg,var(--accent),var(--accent2)) 1;
+  padding:clamp(2.4rem,7vw,4.2rem) 0 clamp(1.8rem,5vw,2.8rem);
+  border-bottom:1px solid var(--line);
+}
+.badges{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.3rem}
+.badge{
+  font-size:0.72rem;font-weight:700;letter-spacing:0.1em;
+  padding:0.32rem 0.72rem;border-radius:2rem;
+  background:var(--accent);color:var(--bg);
+}
+.badge.ghost{background:transparent;color:var(--sub);border:1px solid var(--line)}
+h1{
+  font-size:clamp(1.75rem,1.2rem + 3.2vw,2.9rem);
+  font-weight:900;letter-spacing:-0.03em;line-height:1.28;margin:0 0 0.9rem;
+}
+.kicker{color:var(--sub);font-size:0.92rem;margin:0 0 0.4rem;font-weight:600}
+.lede{
+  font-size:clamp(1.06rem,1rem + 0.5vw,1.3rem);
+  color:var(--text);margin:1.4rem 0 0;padding:1.15rem 1.3rem;
+  background:var(--card);border-left:0.28rem solid var(--accent);border-radius:0 0.5rem 0.5rem 0;
+  font-weight:600;line-height:1.7;
+}
+
+section{padding:clamp(2.2rem,6vw,3.4rem) 0;border-bottom:1px solid var(--line)}
+.step{display:flex;align-items:baseline;gap:0.7rem;margin:0 0 1.2rem}
+.step .n{
+  flex:none;width:2rem;height:2rem;border-radius:50%;
+  background:var(--accent);color:var(--bg);
+  font-size:0.92rem;font-weight:800;
+  display:inline-flex;align-items:center;justify-content:center;
+  transform:translateY(0.2rem);
+}
+h2{font-size:clamp(1.25rem,1.05rem + 1vw,1.65rem);font-weight:800;letter-spacing:-0.02em;margin:0;line-height:1.4}
+h3{font-size:clamp(1.02rem,0.98rem + 0.4vw,1.18rem);font-weight:700;margin:2rem 0 0.7rem;color:var(--accent)}
+p{margin:0 0 1.15rem}
+strong{font-weight:800;color:var(--warn)}
+
+.analogy{
+  background:var(--analogy);border:1px dashed var(--accent2);
+  border-radius:0.9rem;padding:clamp(1.2rem,4vw,1.8rem);margin:0;
+}
+.analogy .tag{
+  display:inline-block;font-size:0.7rem;font-weight:800;letter-spacing:0.14em;
+  color:var(--accent);margin-bottom:0.7rem;
+}
+.analogy p:last-child{margin-bottom:0}
+.analogy q{font-style:normal;font-weight:700}
+
+/* 인용 대사 */
+.quote{
+  margin:0 0 1.15rem;padding:1rem 1.2rem;
+  background:var(--card);border:1px solid var(--line);
+  border-left:0.25rem solid var(--accent);border-radius:0 0.6rem 0.6rem 0;
+  font-size:0.98rem;line-height:1.8;
+}
+.quote .lb{display:block;font-size:0.7rem;font-weight:800;letter-spacing:0.12em;color:var(--sub);margin-bottom:0.4rem}
+
+/* 4단계 사슬 */
+ol.chain{list-style:none;counter-reset:c;padding:0;margin:0 0 1.3rem}
+ol.chain li{
+  counter-increment:c;position:relative;
+  padding:0.9rem 0 0.9rem 3rem;
+  border-left:0.15rem solid var(--line);margin-left:1rem;
+}
+ol.chain li:last-child{border-left-color:transparent}
+ol.chain li::before{
+  content:counter(c);position:absolute;left:-1rem;top:0.95rem;
+  width:2rem;height:2rem;border-radius:50%;
+  background:var(--bg);border:0.15rem solid var(--accent);color:var(--accent);
+  font-size:0.85rem;font-weight:800;
+  display:inline-flex;align-items:center;justify-content:center;
+}
+ol.chain b{display:block;font-weight:800;margin-bottom:0.15rem;line-height:1.6}
+ol.chain span{color:var(--sub);font-size:0.94rem;line-height:1.7;display:block}
+
+/* 주의 카브아웃 */
+.caveat{
+  background:var(--card);border:0.15rem solid var(--warn);border-radius:0.8rem;
+  padding:clamp(1.1rem,4vw,1.5rem);margin:0 0 1.3rem;
+}
+.caveat .lb{
+  display:block;font-size:0.72rem;font-weight:800;letter-spacing:0.12em;
+  color:var(--warn);margin-bottom:0.55rem;
+}
+.caveat p:last-child{margin-bottom:0}
+
+/* 전 / 후 대비 */
+.ba{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:0.9rem;margin:0 0 1.3rem}
+.ba > div{border-radius:0.8rem;padding:1.1rem 1.2rem;border:1px solid var(--line);background:var(--card)}
+.ba .lb{display:block;font-size:0.7rem;font-weight:800;letter-spacing:0.12em;margin-bottom:0.55rem;color:var(--sub)}
+.ba .b1{border-left:0.25rem solid var(--warn)}
+.ba .b2{border-left:0.25rem solid var(--ok)}
+.ba q{font-style:normal;font-weight:700;font-size:1rem;line-height:1.75;display:block;margin-bottom:0.55rem}
+.ba .b1 q{color:var(--warn)}
+.ba .b2 q{color:var(--ok)}
+.ba span.d{font-size:0.9rem;color:var(--sub);line-height:1.7;display:block}
+
+ul.check{list-style:none;padding:0;margin:0}
+ul.check li{
+  position:relative;padding:0.7rem 0 0.7rem 2.1rem;
+  border-bottom:1px solid var(--line);line-height:1.7;
+}
+ul.check li:last-child{border-bottom:0}
+ul.check li::before{
+  content:"\2713";position:absolute;left:0.15rem;top:0.72rem;
+  color:var(--accent);font-weight:900;font-size:1.05rem;
+}
+
+details.trace{margin:0}
+details.trace summary{
+  cursor:pointer;font-weight:800;font-size:1rem;
+  padding:0.9rem 1.1rem;background:var(--card);
+  border:1px solid var(--line);border-radius:0.6rem;list-style:none;
+}
+details.trace summary::-webkit-details-marker{display:none}
+details.trace summary::before{content:"\25B8 ";color:var(--accent);font-weight:900}
+details.trace[open] summary::before{content:"\25BE "}
+.tw{overflow-x:auto;margin-top:1rem;border:1px solid var(--line);border-radius:0.6rem}
+table{border-collapse:collapse;width:100%;min-width:30rem;font-size:0.88rem;line-height:1.65}
+th,td{padding:0.75rem 0.9rem;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:var(--card);font-weight:800;font-size:0.8rem;letter-spacing:0.04em;color:var(--sub)}
+tr:last-child td{border-bottom:0}
+td.src{color:var(--sub)}
+
+footer{padding:clamp(2rem,5vw,3rem) 0 4rem;color:var(--sub);font-size:0.86rem;line-height:1.75}
+.disc{
+  background:var(--card);border:1px solid var(--line);border-radius:0.7rem;
+  padding:1.1rem 1.2rem;margin:0 0 1.4rem;
+}
+.disc b{font-weight:800;color:var(--text)}
+.disc > b:first-child{color:var(--warn);display:block;margin-bottom:0.35rem;font-size:0.9rem}
+.meta{margin:0}
+.meta code{
+  background:var(--card);border:1px solid var(--line);border-radius:0.3rem;
+  padding:0.1rem 0.35rem;font-size:0.8rem;
+}
+
+@media print{
+  #bar{display:none}
+  body{background:#fff;color:#000;font-size:10.5pt}
+  section{page-break-inside:avoid;border-bottom:1px solid #ccc}
+  details.trace{display:block}
+  details.trace summary{display:none}
+}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="badges">
+      <span class="badge">쉽게 읽는 버전</span>
+      <span class="badge ghost">대상 &middot; 전문 지식 없이 읽는 성인</span>
+      <span class="badge ghost">경청의 기술 &middot; 리하우시리즈</span>
+    </div>
+    <p class="kicker">비난의 화살을 휘게 하는 법</p>
+    <h1>그 말은 나에 관한 것이<br>아닐 수 있다</h1>
+    <p class="lede">한 줄로 말하면, 누군가 나를 심하게 깎아내릴 때 <strong>그 말이 실은 그 사람 자신의 불안을 나에게 떠넘기는 것일 수 있다</strong>는 이야기입니다.</p>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <div class="wrap">
+    <div class="step"><span class="n">1</span><h2>무엇에 관한 이야기인가</h2></div>
+
+    <p>밤 아홉 시, 세 번째 반려된 기획안을 손에 쥔 직원에게 상사가 이렇게 말합니다.</p>
+    <div class="quote">
+      <span class="lb">원문의 장면</span>
+      &ldquo;이 대리는 기본이 안 되어 있어. 학교에서 뭘 배운 건가?&rdquo;
+    </div>
+    <p>기획안의 수치를 지적한 것이 아니라 <b>사람 자체를 깎아내린</b> 말입니다. 이런 말을 들으면 듣는 사람은 어느새 자신이 정말 무능한 것 같은 기분에 빠집니다.</p>
+
+    <p>이 컬럼은 그 순간에 무슨 일이 벌어지는지, 그리고 그 말이 내 안으로 들어오지 못하게 하려면 어떻게 들어야 하는지를 다룹니다.</p>
+
+    <div class="caveat">
+      <span class="lb">먼저 구분해야 할 것</span>
+      <p>원문은 <strong>모든 비난이 그렇다고 말하지 않습니다.</strong> 비난이 정당한 피드백이라면 그것은 성장의 자양분이 됩니다.</p>
+      <p>다만 <b>상당수의 비난은</b> 비난하는 사람의 내면적 결핍을 상대에게 떠넘기는 행위라는 것이 이 글의 관점입니다. 그러니 먼저 그 둘을 구분하는 것이 시작입니다.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="step"><span class="n">2</span><h2>이렇게 생각하면 쉽습니다</h2></div>
+    <div class="analogy">
+      <span class="tag">원문의 비유 &middot; 거울</span>
+      <p>원문은 이렇게 말합니다. <q>거울은 빛을 받지만 뜨거워지지 않는다. 그저 받은 대로 되돌려줄 뿐이다.</q></p>
+      <p>비난을 <b>거부하는 것</b>이 아닙니다. 거울은 빛을 막지 않습니다. 다 받습니다. 다만 <b>그 빛을 자기 것으로 삼지 않을 뿐</b>입니다.</p>
+      <p>원문은 같은 이야기를 다른 그림으로도 말합니다. <q>누군가 나에게 던진 쓰레기를 내가 받지 않는다면, 그 쓰레기는 여전히 던진 사람의 손에 남아 있게 된다.</q></p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="step"><span class="n">3</span><h2>그 순간 무슨 일이 벌어지나</h2></div>
+
+    <p>심리학에는 이 상황을 가리키는 이름이 있습니다. <b>투사적 동일시</b>(Projective Identification)입니다. 말이 어렵지만 구조는 단순합니다. 네 단계로 벌어집니다.</p>
+
+    <ol class="chain">
+      <li><b>비난하는 사람이 견디기 힘든 감정을 안고 있다</b><span>열등감, 불안, 혹은 자신의 무능함. 스스로 감당하지 못하는 것들입니다.</span></li>
+      <li><b>그것을 상대방에게 던진다</b><span>자기 것으로 두면 아프니까, 다른 사람에게 넘깁니다.</span></li>
+      <li><b>상대방이 그 감정을 자기 것처럼 느끼고 괴로워한다</b><span>여기가 핵심입니다. 던진 감정이 <b>받는 사람 안에서 진짜가 됩니다.</b></span></li>
+      <li><b>던진 사람이 안도한다</b><span>&ldquo;내가 무능한 게 아니라, 저 친구가 무능해서 일이 안 풀리는 거야.&rdquo; 무의식적인 합리화가 완성됩니다.</span></li>
+    </ol>
+
+    <p>그래서 원문은 경청에서 가장 경계해야 할 것이 <b>이 전염</b>이라고 말합니다. 상대의 비난을 <b>듣는 것</b>과 <b>삼키는 것</b>은 다릅니다. 삼키는 순간 그 사람의 감정을 대신 짊어지게 됩니다.</p>
+
+    <h3>이 개념은 어디에서 왔나</h3>
+    <p>원문은 영국의 정신분석학자 <b>멜라니 클라인</b>(Melanie Klein)을 인용합니다. 클라인은 사람이 자신의 감당하기 힘든 내면의 파편들을 타인에게 쏟아붓는 과정을 깊이 있게 연구했습니다.</p>
+    <p>이 관점에서 보면, 앞 장면의 상사가 쏟아낸 독설은 <b>그 사람 본인이 조직 안에서 느끼는 생존의 공포</b>와 맞닿아 있습니다. 자신의 불안을 상대라는 그릇에 담아 버림으로써 잠시 그 무게에서 벗어나려는 것입니다.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="step"><span class="n">4</span><h2>그래서 어떻게 들어야 하나</h2></div>
+
+    <p>원문이 제시하는 방법은 <b>미러링 경청</b>입니다. 세 가지 동작으로 이루어집니다.</p>
+
+    <h3>하나 &middot; 내용이 아니라 온도를 본다</h3>
+    <p>&ldquo;기본이 안 되어 있다&rdquo;는 말을 들었을 때, 그 말의 <b>내용에 반응하는 대신</b> 그 말의 온도를 관찰합니다. 속으로 이렇게 되뇌는 것입니다.</p>
+    <div class="quote">
+      <span class="lb">속으로 하는 관찰</span>
+      &ldquo;아, 이 분이 지금 자신의 자리가 위태롭다고 느끼는구나.&rdquo;<br>
+      &ldquo;자신의 지시가 명확하지 않았다는 사실을 감추고 싶어 하는구나.&rdquo;
+    </div>
+    <p>원문의 표현을 빌리면, 화살이 날아올 때 <b>몸을 비틀어 피하는 것이 아니라</b> 화살의 궤적을 끝까지 지켜보며 그것이 <b>허공에 떨어지게 만드는 여유</b>입니다.</p>
+
+    <h3>둘 &middot; 대화를 다시 사실로 끌어온다</h3>
+    <p>상대의 말을 그대로 복기하며 차분히 되묻습니다. 감정의 영역에 머물지 않고 사실의 영역으로 옮기는 동작입니다.</p>
+
+    <div class="ba">
+      <div class="b1">
+        <span class="lb">들은 말</span>
+        <q>&ldquo;이 대리는 기본이 안 되어 있어.&rdquo;</q>
+        <span class="d">사람에 대한 평가입니다. 여기에 반응하면 감정의 영역에 남게 됩니다.</span>
+      </div>
+      <div class="b2">
+        <span class="lb">되묻는 말</span>
+        <q>&ldquo;이사님께서는 이번 기획안의 수치적 근거가 보완되어야 한다고 보시는군요.&rdquo;</q>
+        <span class="d">일에 대한 확인입니다. 감정적 투사를 차단하고 대화를 사실로 되돌립니다.</span>
+      </div>
+    </div>
+
+    <h3>셋 &middot; 마음에 빗장을 건다</h3>
+    <p>원문은 이것을 <b>나의 경계를 명확히 하는 일</b>이라고 부릅니다. 상대의 말이 나의 자아라는 성벽을 넘지 못하도록, <b>귀에서 한 번, 마음에서 한 번</b> 빗장을 겁니다.</p>
+    <p>비난을 듣되 그것을 평가하지 않습니다. 그저 상대의 일그러진 내면이 밖으로 새어 나오고 있다는 사실을 알아차립니다. 속으로 이 한마디면 충분하다고 원문은 말합니다.</p>
+    <div class="quote">
+      <span class="lb">속으로 하는 한마디</span>
+      &ldquo;당신은 지금 그렇게 느끼고 있군요.&rdquo;
+    </div>
+    <p>원문은 여기에 한 문장을 덧붙입니다. <strong>이것은 상대를 무시하는 오만함이 아니라, 나를 지키기 위한 최소한의 존엄이다.</strong></p>
+
+    <h3>정리하면</h3>
+    <ul class="check">
+      <li><b>먼저 구분한다</b> — 정당한 피드백인가, 떠넘기기인가</li>
+      <li><b>내용이 아니라 온도를 본다</b> — 저 사람은 지금 무엇이 두려운가</li>
+      <li><b>사실로 되돌린다</b> — 들은 말을 일에 대한 확인으로 바꿔 되묻는다</li>
+      <li><b>받지 않는다</b> — 받지 않은 쓰레기는 던진 사람의 손에 남는다</li>
+    </ul>
+    <p style="margin-top:1.3rem">원문의 마지막 문장은 이렇습니다. <b>타인의 입에서 나온 말이 나의 가치를 결정하게 두지 마라.</b></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <details class="trace">
+      <summary>근거 대조 &middot; 이 쉬운 설명이 원문 어디에서 왔는지</summary>
+      <div class="tw">
+        <table>
+          <thead><tr><th style="width:40%">쉬운 설명</th><th>원문 근거 문장</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>상사의 대사</td>
+              <td class="src">&ldquo;이 대리는 기본이 안 되어 있어. 학교에서 뭘 배운 건가?&rdquo;</td>
+            </tr>
+            <tr>
+              <td>모든 비난이 그런 것은 아니다 (구분 카브아웃)</td>
+              <td class="src">&ldquo;그 비난이 정당한 피드백이라면 성장의 자양분이 되겠지만, 상당수의 비난은 비난하는 자의 내면적 결핍을 타인에게 떠넘기는 행위다.&rdquo;</td>
+            </tr>
+            <tr>
+              <td>거울 비유</td>
+              <td class="src">&ldquo;거울은 빛을 받지만 뜨거워지지 않는다. 그저 받은 대로 되돌려줄 뿐이다.&rdquo; (원문의 비유)</td>
+            </tr>
+            <tr>
+              <td>쓰레기 비유</td>
+              <td class="src">&ldquo;누군가 나에게 던진 쓰레기를 내가 받지 않는다면, 그 쓰레기는 여전히 던진 사람의 손에 남아 있게 된다.&rdquo; (원문의 비유)</td>
+            </tr>
+            <tr>
+              <td>투사적 동일시 4단계</td>
+              <td class="src">&ldquo;비난하는 사람은 자신의 열등감, 불안, 혹은 무능함을 견디지 못해 그것을 상대방에게 던진다. 그리고 상대방이 그 감정을 자신의 것처럼 느끼고 고통스러워하는 모습을 보며 비로소 안도감을 느낀다. &lsquo;내가 무능한 게 아니라, 저 친구가 무능해서 일이 안 풀리는 거야&rsquo;라는 무의식적 합리화가 완성되는 것이다.&rdquo;</td>
+            </tr>
+            <tr>
+              <td>듣는 것과 삼키는 것의 차이</td>
+              <td class="src">&ldquo;상대의 비난을 듣는 것이 아니라, 상대의 비난을 &lsquo;삼켜버리는&rsquo; 순간 우리는 그들의 감정적 노예가 된다.&rdquo;</td>
+            </tr>
+            <tr>
+              <td>멜라니 클라인</td>
+              <td class="src">&ldquo;영국의 정신분석학자 멜라니 클라인(Melanie Klein)은 이 투사적 동일시의 역동을 깊이 있게 연구했다.&rdquo;</td>
+            </tr>
+            <tr>
+              <td>상사의 독설이 본인의 공포와 맞닿아 있다</td>
+              <td class="src">&ldquo;박 이사가 이 대리에게 쏟아붓는 독설은 사실 박 이사 본인이 위선적인 조직 문화 속에서 느끼는 생존의 공포와 맞닿아 있다.&rdquo;</td>
+            </tr>
+            <tr>
+              <td>내용이 아니라 온도를 본다 &middot; 속으로 하는 관찰</td>
+              <td class="src">&ldquo;그 말의 내용에 반응하는 대신 그 말의 &lsquo;온도&rsquo;를 관찰한다. &lsquo;아, 이 분이 지금 자신의 자리가 위태롭다고 느끼는구나&rsquo; 혹은 &lsquo;자신의 지시가 명확하지 않았다는 사실을 감추고 싶어 하는구나&rsquo;라고 속으로 되뇌는 것이다.&rdquo;</td>
+            </tr>
+            <tr>
+              <td>화살의 궤적을 지켜본다</td>
+              <td class="src">&ldquo;비난의 화살이 날아올 때 몸을 비틀어 피하는 것이 아니라, 화살의 궤적을 끝까지 지켜보며 그것이 허공에 떨어지게 만드는 여유가 필요하다.&rdquo;</td>
+            </tr>
+            <tr>
+              <td>되묻는 말</td>
+              <td class="src">&ldquo;이사님께서는 이번 기획안의 수치적 근거가 보완되어야 한다고 보시는군요&rdquo;라고 차분히 되묻는 행위는, 상대의 감정적 투사를 차단하고 다시 &lsquo;사실&rsquo;의 영역으로 대화를 끌어오는 강력한 수단이 된다.&rdquo;</td>
+            </tr>
+            <tr>
+              <td>귀에서 한 번, 마음에서 한 번</td>
+              <td class="src">&ldquo;상대의 말이 나의 자아라는 성벽을 넘지 못하도록 귀에서 한 번, 마음에서 한 번 빗장을 걸어야 한다.&rdquo;</td>
+            </tr>
+            <tr>
+              <td>속으로 하는 한마디 &middot; 오만함이 아니라 존엄</td>
+              <td class="src">&ldquo;&lsquo;당신은 지금 그렇게 느끼고 있군요&rsquo;라고 속으로 중얼거리는 것만으로도 충분하다. 이것은 상대를 무시하는 오만함이 아니라, 나를 지키기 위한 최소한의 존엄이다.&rdquo;</td>
+            </tr>
+            <tr>
+              <td>마지막 문장</td>
+              <td class="src">&ldquo;타인의 입에서 나온 말이 나의 가치를 결정하게 두지 마라.&rdquo;</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disc">
+      <b>읽기 전에 알아 두실 것</b>
+      이 글은 컬럼 한 편을 쉽게 옮긴 것으로, 원문 필자의 관점과 제안을 전달합니다. 심리 상담이나 전문가의 조언을 대신하지 않습니다.
+      <br><br>
+      본문에 등장하는 인물과 장면은 <b>원문에 실린 예시</b>이며 특정 실존 인물과 무관합니다. <b>투사적 동일시</b>와 <b>멜라니 클라인</b>에 대한 서술은 원문에 담긴 내용을 그대로 옮긴 것으로, 이 문서에서 별도로 검증하거나 덧붙이지 않았습니다.
+    </div>
+    <p class="meta">
+      원문 &middot; <code>_WIKI_인문비즈니스/90_archive/column/01_리하우시리즈/경청의 기술/개별노트/002_비난의 화살을 휘게 하는 법.md</code><br>
+      쉽게 읽는 버전 &middot; 대상 &lsquo;전문 지식 없이 읽는 성인&rsquo; &middot; 2026-08-31
+    </p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var bar=document.getElementById('bar');
+  function up(){
+    var h=document.documentElement;
+    var m=h.scrollHeight-h.clientHeight;
+    bar.style.width=(m>0?(h.scrollTop/m)*100:0)+'%';
+  }
+  addEventListener('scroll',up,{passive:true});
+  addEventListener('resize',up);
+  up();
+})();
+</script>
+</body>
+</html>
