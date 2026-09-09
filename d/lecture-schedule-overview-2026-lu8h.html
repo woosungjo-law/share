@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="robots" content="noindex">
+  <meta name="description" content="2026년 9월 말부터 11월까지 법률강의별 진행 횟수와 회차별 일정">
+  <title>2026년 강의별 회차 일정</title>
+  <style>
+    :root{--canvas:#f4f7fb;--surface:#fff;--ink:#142235;--muted:#566579;--line:#d8e1eb;--navy:#174a7c;--navy-soft:#eaf2fb;--green:#176b52;--green-soft:#e8f5ef;--amber:#99600c;--amber-soft:#fff3dc;--shadow:0 14px 34px rgba(24,45,69,.08)}
+    *{box-sizing:border-box}
+    html{background:var(--canvas);scroll-behavior:smooth}
+    body{margin:0;background:var(--canvas);color:var(--ink);font-family:"Malgun Gothic","Noto Sans KR",system-ui,sans-serif;line-height:1.55}
+    .page{max-width:1280px;margin:auto;padding:42px 26px 64px}
+    .hero{background:var(--surface);border:1px solid var(--line);border-top:6px solid var(--navy);border-radius:0 0 22px 22px;padding:clamp(28px,5vw,56px);box-shadow:var(--shadow)}
+    .eyebrow{font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--navy);font-weight:850}
+    h1{margin:.55rem 0 .75rem;font-size:clamp(2rem,5vw,3.8rem);line-height:1.08;letter-spacing:-.065em}
+    .lead{margin:0;max-width:70ch;color:var(--muted);font-size:1.03rem}
+    .stats{display:flex;flex-wrap:wrap;gap:9px;margin-top:1.45rem}.stat{border:1px solid var(--line);background:#f8fafc;border-radius:999px;padding:.45rem .75rem;font-size:.8rem;color:var(--muted)}.stat strong{color:var(--ink)}
+    .section{margin-top:24px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:clamp(22px,4vw,36px);box-shadow:var(--shadow)}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:18px}.section-head h2{margin:0;font-size:1.35rem;letter-spacing:-.04em}.section-head p{margin:0;color:var(--muted);font-size:.84rem}
+    .month-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:20px}.month-chip{border:1px solid var(--line);border-radius:12px;padding:14px;background:#f8fafc}.month-chip b{display:block;font-size:1rem}.month-chip span{display:block;margin-top:3px;color:var(--muted);font-size:.8rem}.month-chip.sep{border-left:4px solid var(--navy)}.month-chip.oct{border-left:4px solid var(--green)}.month-chip.nov{border-left:4px solid var(--amber)}
+    .timeline{width:100%;border-collapse:collapse;font-size:.83rem}.timeline th{text-align:left;background:#f1f5f9;color:var(--muted);font-size:.73rem;letter-spacing:.03em}.timeline th,.timeline td{padding:11px 10px;border-bottom:1px solid var(--line);vertical-align:top}.timeline tr:last-child td{border-bottom:0}.timeline .date{white-space:nowrap;font-weight:800}.timeline .lecture{font-weight:750}.timeline .audience{white-space:nowrap;color:var(--muted)}.tag{display:inline-flex;align-items:center;border-radius:999px;padding:3px 8px;font-size:.7rem;font-weight:800;white-space:nowrap}.tag.round{color:var(--navy);background:var(--navy-soft)}.tag.test,.tag.changed{color:var(--amber);background:var(--amber-soft)}.tag.open{color:var(--green);background:var(--green-soft)}
+    .audience{margin-top:26px}.audience h3{margin:0 0 12px;font-size:1.05rem;letter-spacing:-.03em}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.lecture-card{border:1px solid var(--line);border-radius:14px;padding:18px;background:#fff}.lecture-card.legal{border-top:4px solid var(--navy)}.lecture-card.public{border-top:4px solid var(--green)}.card-head{display:flex;justify-content:space-between;gap:12px;align-items:start}.card-head h4{margin:0;font-size:1.05rem;letter-spacing:-.035em;line-height:1.3}.count{flex:none;border-radius:999px;padding:4px 9px;background:#eef3f7;color:var(--ink);font-size:.73rem;font-weight:850}.code{margin-top:4px;color:var(--muted);font-size:.76rem}.dates{display:grid;gap:8px;margin-top:15px}.date-row{display:grid;grid-template-columns:78px 1fr auto;align-items:center;gap:8px;padding:9px 10px;border:1px solid var(--line);border-radius:9px;background:#fafcfe}.date-row time{font-weight:850;font-size:.8rem;white-space:nowrap}.date-row .time{color:var(--muted);font-size:.76rem;white-space:nowrap}.date-row .note{color:var(--muted);font-size:.73rem;text-align:right}.date-row .note.opening{color:var(--green);font-weight:750}.date-row .note.changed{color:var(--amber);font-weight:750}
+    .notice{margin-top:18px;border:1px solid var(--line);border-radius:12px;padding:15px 17px;background:#f8fafc;color:var(--muted);font-size:.83rem}.notice b{color:var(--ink)}
+    .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.links a{display:inline-flex;align-items:center;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:.55rem .8rem;background:#fff;color:var(--navy);font-size:.8rem;font-weight:800}.links a:hover,.links a:focus-visible{border-color:var(--navy);background:var(--navy-soft)}
+    footer{margin-top:20px;color:var(--muted);font-size:.76rem;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    :focus-visible{outline:3px solid rgba(23,74,124,.3);outline-offset:3px}
+    @media(max-width:900px){.cards{grid-template-columns:minmax(0,1fr)}.month-strip{grid-template-columns:minmax(0,1fr)}}
+    @media(max-width:600px){.page{padding:24px 12px 44px}.hero{padding:28px 20px}.section{padding:22px 17px}.section-head{display:block}.section-head p{margin-top:5px}.timeline{font-size:.75rem}.timeline th,.timeline td{padding:9px 6px}.timeline th:nth-child(4),.timeline td:nth-child(4){display:none}.date-row{grid-template-columns:1fr auto}.date-row .time{grid-column:1}.date-row .note{grid-column:2;grid-row:1/3}.date-row time{font-size:.77rem}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+    @media print{body{background:#fff}.page{max-width:none;padding:10mm}.hero,.section{box-shadow:none}.lecture-card{break-inside:avoid}.links{display:none}}
+  </style>
+</head>
+<body>
+<main class="page">
+  <header class="hero">
+    <div class="eyebrow">Legal Lecture Operations · Unified Schedule</div>
+    <h1>2026년 강의별<br>회차 일정</h1>
+    <p class="lead">9월 말 개강부터 11월까지 예정된 모든 강의를 강의별로 묶었습니다. 각 카드에서 총 진행 횟수와 회차별 날짜·요일·시간을 한 번에 확인할 수 있습니다.</p>
+    <div class="stats" aria-label="전체 일정 요약">
+      <span class="stat"><strong>9개</strong> 강의</span><span class="stat"><strong>14회</strong> 확정</span><span class="stat"><strong>9/29~11/12</strong> 운영 기간</span><span class="stat"><strong>14:00~17:00</strong> 기본 시간</span>
+    </div>
+  </header>
+
+  <section class="section" aria-labelledby="overview-title">
+    <div class="section-head"><div><h2 id="overview-title">월별 운영 한눈에 보기</h2><p>회차 번호는 전체 런칭 스케줄 기준입니다.</p></div></div>
+    <div class="month-strip" aria-label="월별 회차 요약">
+      <div class="month-chip sep"><b>9월 말 · 1회</b><span>09/29(화) · 개강 1회차</span></div>
+      <div class="month-chip oct"><b>10월 · 9회</b><span>10/01~10/29 · 확정 강의</span></div>
+      <div class="month-chip nov"><b>11월 · 4회</b><span>11/03~11/12 · 확정 강의</span></div>
+    </div>
+    <div style="overflow-x:auto">
+      <table class="timeline">
+        <thead><tr><th>날짜</th><th>강의</th><th>회차</th><th>대상</th><th>시간</th></tr></thead>
+        <tbody>
+          <tr><td class="date">09/29(화)</td><td class="lecture">2026 상법 개정</td><td><span class="tag round">① · 개강</span></td><td class="audience">법무팀</td><td>14:00~17:00</td></tr>
+          <tr><td class="date">10/01(목)</td><td class="lecture">로펌 200% 활용법</td><td><span class="tag round">①</span></td><td class="audience">법무팀</td><td>14:00~17:00</td></tr>
+          <tr><td class="date">10/06(화)</td><td class="lecture">계약협상 실전</td><td><span class="tag round">①</span></td><td class="audience">법무팀</td><td>14:00~17:00</td></tr>
+          <tr><td class="date">10/08(목)</td><td class="lecture">영업비밀·기술유출 대응</td><td><span class="tag test">테스트</span></td><td class="audience">법무팀</td><td>14:00~17:00</td></tr>
+          <tr><td class="date">10/13(화)</td><td class="lecture">본인소송 전략</td><td><span class="tag round">①</span></td><td class="audience">일반인</td><td>14:00~17:00</td></tr>
+          <tr><td class="date">10/15(목)</td><td class="lecture">AI 활용 민사소송</td><td><span class="tag round">①</span></td><td class="audience">일반인</td><td>14:00~17:00</td></tr>
+          <tr><td class="date">10/20(화)</td><td class="lecture">형사수사 대응</td><td><span class="tag test">테스트</span></td><td class="audience">법무팀</td><td>14:00~17:00</td></tr>
+          <tr><td class="date">10/23(금)</td><td class="lecture">2026 상법 개정</td><td><span class="tag changed">② · 변경</span></td><td class="audience">법무팀</td><td>14:00~17:00</td></tr>
+          <tr><td class="date">10/27(화)</td><td class="lecture">로펌 200% 활용법</td><td><span class="tag round">②</span></td><td class="audience">법무팀</td><td>14:00~17:00</td></tr>
+          <tr><td class="date">10/29(목)</td><td class="lecture">사내정치 생존 코치</td><td><span class="tag test">테스트</span></td><td class="audience">법무팀</td><td>14:00~17:00</td></tr>
+          <tr><td class="date">11/03(화)</td><td class="lecture">계약협상 실전</td><td><span class="tag round">②</span></td><td class="audience">법무팀</td><td>14:00~17:00</td></tr>
+          <tr><td class="date">11/05(목)</td><td class="lecture">본인소송 전략</td><td><span class="tag round">②</span></td><td class="audience">일반인</td><td>14:00~17:00</td></tr>
+          <tr><td class="date">11/10(화)</td><td class="lecture">스타트업 투자계약 독소조항</td><td><span class="tag test">테스트</span></td><td class="audience">법무팀</td><td>14:00~17:00</td></tr>
+          <tr><td class="date">11/12(목)</td><td class="lecture">AI 활용 민사소송</td><td><span class="tag round">②</span></td><td class="audience">일반인</td><td>14:00~17:00</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="lecture-title">
+    <div class="section-head"><div><h2 id="lecture-title">강의별 회차 상세</h2><p>강의 카드 하나가 하나의 신청·운영 단위입니다.</p></div></div>
+    <div class="audience"><h3>법무팀 대상 · 7개 강의</h3><div class="cards">
+      <article class="lecture-card legal"><div class="card-head"><div><h4>2026 상법 개정</h4><div class="code">법무팀-03</div></div><span class="count">2회</span></div><div class="dates"><div class="date-row"><time datetime="2026-09-29">09/29(화)</time><span class="time">14:00~17:00</span><span class="note opening">① 개강</span></div><div class="date-row"><time datetime="2026-10-23">10/23(금)</time><span class="time">14:00~17:00</span><span class="note changed">② 10/22→10/23 변경</span></div></div></article>
+      <article class="lecture-card legal"><div class="card-head"><div><h4>계약협상 실전</h4><div class="code">법무팀-04</div></div><span class="count">2회</span></div><div class="dates"><div class="date-row"><time datetime="2026-10-06">10/06(화)</time><span class="time">14:00~17:00</span><span class="note">①</span></div><div class="date-row"><time datetime="2026-11-03">11/03(화)</time><span class="time">14:00~17:00</span><span class="note">②</span></div></div></article>
+      <article class="lecture-card legal"><div class="card-head"><div><h4>로펌 200% 활용법</h4><div class="code">법무팀-05</div></div><span class="count">2회</span></div><div class="dates"><div class="date-row"><time datetime="2026-10-01">10/01(목)</time><span class="time">14:00~17:00</span><span class="note">①</span></div><div class="date-row"><time datetime="2026-10-27">10/27(화)</time><span class="time">14:00~17:00</span><span class="note">②</span></div></div></article>
+      <article class="lecture-card legal"><div class="card-head"><div><h4>형사수사 대응</h4><div class="code">법무팀-01</div></div><span class="count">1회</span></div><div class="dates"><div class="date-row"><time datetime="2026-10-20">10/20(화)</time><span class="time">14:00~17:00</span><span class="note">테스트</span></div></div></article>
+      <article class="lecture-card legal"><div class="card-head"><div><h4>영업비밀·기술유출 대응</h4><div class="code">법무팀-08</div></div><span class="count">1회</span></div><div class="dates"><div class="date-row"><time datetime="2026-10-08">10/08(목)</time><span class="time">14:00~17:00</span><span class="note">테스트</span></div></div></article>
+      <article class="lecture-card legal"><div class="card-head"><div><h4>사내정치 생존 코치</h4><div class="code">법무팀-07</div></div><span class="count">1회</span></div><div class="dates"><div class="date-row"><time datetime="2026-10-29">10/29(목)</time><span class="time">14:00~17:00</span><span class="note">테스트</span></div></div></article>
+      <article class="lecture-card legal"><div class="card-head"><div><h4>스타트업 투자계약 독소조항</h4><div class="code">법무팀-12</div></div><span class="count">1회</span></div><div class="dates"><div class="date-row"><time datetime="2026-11-10">11/10(화)</time><span class="time">14:00~17:00</span><span class="note">테스트</span></div></div></article>
+    </div></div>
+    <div class="audience"><h3>일반인 대상 · 2개 강의</h3><div class="cards">
+      <article class="lecture-card public"><div class="card-head"><div><h4>본인소송 전략</h4><div class="code">일반인-01</div></div><span class="count">2회</span></div><div class="dates"><div class="date-row"><time datetime="2026-10-13">10/13(화)</time><span class="time">14:00~17:00</span><span class="note">①</span></div><div class="date-row"><time datetime="2026-11-05">11/05(목)</time><span class="time">14:00~17:00</span><span class="note">②</span></div></div></article>
+      <article class="lecture-card public"><div class="card-head"><div><h4>AI 활용 민사소송</h4><div class="code">일반인-02</div></div><span class="count">2회</span></div><div class="dates"><div class="date-row"><time datetime="2026-10-15">10/15(목)</time><span class="time">14:00~17:00</span><span class="note">①</span></div><div class="date-row"><time datetime="2026-11-12">11/12(목)</time><span class="time">14:00~17:00</span><span class="note">②</span></div></div></article>
+    </div></div>
+    <aside class="notice"><b>운영 기준.</b> 모든 회차의 기본 운영시간은 14:00~17:00이며 필요 시 17:30까지 연장됩니다. 11/17·11/19·11/24·11/26은 예비·미배정 슬롯이라 이 통합표에는 포함하지 않았습니다.</aside>
+    <nav class="links" aria-label="관련 일정 페이지"><a href="https://woosungjo-law.github.io/share/d/2026-q4-lecture-calendar-da5p.html" target="_blank" rel="noreferrer noopener">월별 캘린더 보기 ↗</a></nav>
+  </section>
+  <footer><span>2026 Q4 법률강의 런칭 라인업</span><span>운영 일정 기준일 · 2026.09.09</span></footer>
+</main>
+</body>
+</html>
