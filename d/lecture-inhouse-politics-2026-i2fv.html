@@ -210,7 +210,7 @@ footer{padding:20px 5px;color:var(--muted);font-size:.8rem;display:flex;justify-
   const scheduleHead=all.findIndex(line=>/^##\s+운영 일정/.test(line));
   if(scheduleHead>=0){
     const schedule=all.slice(scheduleHead+1).find(line=>/^\s*[-*]\s+/.test(line));
-    if(schedule) document.getElementById('schedule-chip').innerHTML='<strong>일정</strong> '+inline(schedule.replace(/^\s*[-*]\s+/,'')); 
+if(schedule) document.getElementById('schedule-chip').innerHTML='<strong>일정</strong> '+schedule.replace(/^\s*[-*]\s+/, '');
   }
   const lines=titleLine>=0?all.slice(titleLine+1):all;
   let sectionNo=0; const toc=[]; let i=0; let out='';
@@ -268,4 +268,3 @@ footer{padding:20px 5px;color:var(--muted);font-size:.8rem;display:flex;justify-
 </script>
 </body>
 </html>
-
