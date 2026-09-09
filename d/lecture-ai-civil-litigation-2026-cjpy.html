@@ -215,7 +215,7 @@ AI를 잘 쓰는 사람은 답변을 빨리 받는 사람이 아니라, 무엇�
   const scheduleHead=all.findIndex(line=>/^##\s+운영 일정/.test(line));
   if(scheduleHead>=0){
     const schedule=all.slice(scheduleHead+1).find(line=>/^\s*[-*]\s+/.test(line));
-    if(schedule) document.getElementById('schedule-chip').innerHTML='<strong>일정</strong> '+inline(schedule.replace(/^\s*[-*]\s+/,'')); 
+if(schedule) document.getElementById('schedule-chip').innerHTML='<strong>일정</strong> '+schedule.replace(/^\s*[-*]\s+/, '');
   }
   const lines=titleLine>=0?all.slice(titleLine+1):all;
   let sectionNo=0; const toc=[]; let i=0; let out='';
@@ -273,4 +273,3 @@ AI를 잘 쓰는 사람은 답변을 빨리 받는 사람이 아니라, 무엇�
 </script>
 </body>
 </html>
-
