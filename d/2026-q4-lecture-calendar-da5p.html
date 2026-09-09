@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
   <meta name="robots" content="noindex">
-  <title>2026년 10~11월 확정 강의 캘린더</title>
+  <title>2026년 9월 말~11월 확정 강의 캘린더</title>
   <style>
     :root{
       --canvas:#f5f8fb;--surface:#ffffff;--ink:#102033;--muted:#506174;
@@ -28,7 +28,7 @@
     .legend{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 26px}
     .key{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:999px;padding:6px 10px;background:var(--surface);font-size:.8rem;color:var(--muted)}
     .dot{width:9px;height:9px;border-radius:50%;background:var(--accent)}.dot.reserve{background:var(--reserve)}
-    .months{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    .months{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
     .month{min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
     .month-head{padding:19px 20px 14px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:start;gap:12px}
     .month-head h2{font-size:1.28rem;margin:0;letter-spacing:-.03em}.month-head p{margin:3px 0 0;color:var(--muted);font-size:.84rem}
@@ -44,7 +44,8 @@
     .card.reserve{background:var(--reserve-soft);border-left-color:var(--reserve)}.card b{display:block;font-size:.68rem;margin-bottom:3px}.card strong{display:block;letter-spacing:-.02em}.card small{display:block;margin-top:4px;opacity:.85;font-size:.66rem}
     .notice{margin-top:20px;padding:17px 19px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--muted);font-size:.85rem}.notice b{color:var(--ink)}
     :focus-visible{outline:3px solid rgba(23,107,82,.35);outline-offset:3px}
-    @media(max-width:1050px){.months{grid-template-columns:minmax(0,1fr)}.cell,.cell.blank{min-height:120px}}
+    @media(max-width:1250px){.months{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:820px){.months{grid-template-columns:minmax(0,1fr)}.cell,.cell.blank{min-height:120px}}
     @media(max-width:560px){.wrap{padding:30px 12px}.hero{display:block}.stamp{display:inline-block;margin-top:15px}.month-head{padding:15px}.cell,.cell.blank{min-height:96px;padding:5px}.card{padding:5px;font-size:.63rem}.card small{font-size:.59rem}.week span{font-size:.65rem}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
     @media print{body{background:#fff;color:#111}.wrap{max-width:none;padding:12mm}.months{gap:8mm}.month{break-inside:avoid;box-shadow:none}.cell,.cell.blank{min-height:31mm}.notice{break-inside:avoid}.stamp{border-color:#aaa}}
@@ -55,12 +56,13 @@
     <header class="hero">
       <div>
         <div class="eyebrow">Legal Lecture Operations</div>
-        <h1>2026년 10~11월<br>확정 강의 캘린더</h1>
-        <p>10월과 11월에 확정된 강의 13회, 그리고 11월 예비·미배정 4회를 한 화면에서 확인합니다.</p>
+        <h1>2026년 9월 말~11월<br>확정 강의 캘린더</h1>
+        <p>9월 말 개강 1회차부터 10월·11월에 확정된 강의까지, 총 14회의 운영 일정을 한 화면에서 확인합니다.</p>
       </div>
       <div class="stamp">기준일 · 2026.09.09</div>
     </header>
     <div class="summary" aria-label="기간별 요약">
+      <span><strong>9월 말</strong> 확정 1회</span>
       <span><strong>10월</strong> 확정 9회</span>
       <span><strong>11월</strong> 확정 4회</span>
       <span><strong>11월 예비</strong> 4회</span>
@@ -70,7 +72,29 @@
       <span class="key"><i class="dot"></i>확정 강의</span>
       <span class="key"><i class="dot reserve"></i>예비 · 미배정</span>
     </div>
-    <section class="months" aria-label="2026년 10월과 11월 월별 캘린더">
+    <section class="months" aria-label="2026년 9월 말, 10월과 11월 월별 캘린더">
+      <article class="month">
+        <header class="month-head"><div><h2>2026년 9월</h2><p>9월 말 개강 · 확정 1회</p></div><span class="month-badge">1 SESSION</span></header>
+        <div class="week"><span>일</span><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span>토</span></div>
+        <div class="days">
+          <div class="cell blank"></div><div class="cell blank"></div>
+          <div class="cell"><div class="num">1</div></div><div class="cell"><div class="num">2</div></div>
+          <div class="cell"><div class="num">3</div></div><div class="cell"><div class="num">4</div></div><div class="cell sat"><div class="num">5</div></div>
+          <div class="cell sun"><div class="num">6</div></div><div class="cell"><div class="num">7</div></div>
+          <div class="cell"><div class="num">8</div></div><div class="cell"><div class="num">9</div></div>
+          <div class="cell"><div class="num">10</div></div><div class="cell"><div class="num">11</div></div><div class="cell sat"><div class="num">12</div></div>
+          <div class="cell sun"><div class="num">13</div></div><div class="cell"><div class="num">14</div></div>
+          <div class="cell"><div class="num">15</div></div><div class="cell"><div class="num">16</div></div>
+          <div class="cell"><div class="num">17</div></div><div class="cell"><div class="num">18</div></div><div class="cell sat"><div class="num">19</div></div>
+          <div class="cell sun"><div class="num">20</div></div><div class="cell"><div class="num">21</div></div>
+          <div class="cell"><div class="num">22</div></div><div class="cell"><div class="num">23</div></div>
+          <div class="cell"><div class="num">24</div></div><div class="cell"><div class="num">25</div></div><div class="cell sat"><div class="num">26</div></div>
+          <div class="cell sun"><div class="num">27</div></div><div class="cell"><div class="num">28</div></div>
+          <div class="cell"><div class="num">29</div><div class="card"><b>#1 · 14:00~17:00</b><strong>2026 상법 개정</strong><small>법무팀 · ① · 개강</small></div></div>
+          <div class="cell"><div class="num">30</div></div>
+          <div class="cell blank"></div><div class="cell blank"></div><div class="cell blank"></div>
+        </div>
+      </article>
       <article class="month">
         <header class="month-head"><div><h2>2026년 10월</h2><p>확정 강의 9회</p></div><span class="month-badge">9 SESSIONS</span></header>
         <div class="week"><span>일</span><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span>토</span></div>
@@ -129,8 +153,7 @@
         </div>
       </article>
     </section>
-    <aside class="notice"><b>운영 메모.</b> 모든 회차의 기본 운영시간은 14:00~17:00(연장 시 17:30)입니다. 10월 8회차는 10/22(목)에서 10/23(금)으로 변경되었습니다. 11월 예비 4회는 개설 강의 배정 후에만 외부 안내에 반영합니다.</aside>
+    <aside class="notice"><b>운영 메모.</b> 모든 회차의 기본 운영시간은 14:00~17:00(연장 시 17:30)입니다. 9월 29일은 2026년 런칭 라인업의 개강 1회차이며, 10월 8회차는 10/22(목)에서 10/23(금)으로 변경되었습니다. 11월 예비 4회는 개설 강의 배정 후에만 외부 안내에 반영합니다.</aside>
   </main>
 </body>
 </html>
-
