@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="사내 비위 제보를 받았을 때 사실 확인 전에도 즉시 실행하는 세 가지 접수 행동을 쉽게 설명한 버전">
+<title>제보가 들어오면, 확인 전 세 가지를 먼저 한다 — 쉽게 읽는 버전</title>
+<style>
+/* eli5-core v2026-08-31c */
+/* 정본. 새 ELI5 HTML의 <style> 안에 그대로 복사해 넣고, 그 글에만 필요한 규칙을 아래에 덧붙인다. */
+/* 결함을 고치면 이 파일을 먼저 고치고 판을 올린다. 산출물 소급 수정은 재생성 지시가 있을 때만. */
+:root{
+  --bg:#FAF8F4;
+  --accent:#C4704A;
+  --accent2:#E8A882;
+  --text:#2C2416;
+  --sub:#7A6A55;
+  --line:#E8E2D8;
+  --card:#FFF9F5;
+  --analogy:#F3EADF;
+  --warn:#A8452A;
+  --ok:#3F6B4A;
+  --maxw:44rem;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#1C1815;
+    --accent:#E39068;
+    --accent2:#C4704A;
+    --text:#F0EAE2;
+    --sub:#B4A491;
+    --line:#3A322B;
+    --card:#252019;
+    --analogy:#2B2419;
+    --warn:#F0876A;
+    --ok:#7FBF92;
+  }
+}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:system-ui,-apple-system,'Segoe UI','Malgun Gothic','Apple SD Gothic Neo','Noto Sans KR',sans-serif;
+  font-size:clamp(1rem,0.95rem + 0.3vw,1.125rem);
+  line-height:1.85;
+  word-break:keep-all;
+  overflow-wrap:anywhere;
+  -webkit-text-size-adjust:100%;
+}
+#bar{position:fixed;top:0;left:0;height:0.25rem;width:0;z-index:99;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .12s linear}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(1.1rem,4vw,2rem)}
+
+header.hero{
+  border-top:0.4rem solid transparent;
+  border-image:linear-gradient(90deg,var(--accent),var(--accent2)) 1;
+  padding:clamp(2.4rem,7vw,4.2rem) 0 clamp(1.8rem,5vw,2.8rem);
+  border-bottom:1px solid var(--line);
+}
+.badges{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.3rem}
+.badge{
+  font-size:0.72rem;font-weight:700;letter-spacing:0.1em;
+  padding:0.32rem 0.72rem;border-radius:2rem;
+  background:var(--accent);color:var(--bg);
+}
+.badge.ghost{background:transparent;color:var(--sub);border:1px solid var(--line)}
+h1{
+  font-size:clamp(1.75rem,1.2rem + 3.2vw,2.9rem);
+  font-weight:900;letter-spacing:-0.03em;line-height:1.28;margin:0 0 0.9rem;
+}
+.kicker{color:var(--sub);font-size:0.92rem;margin:0 0 0.4rem;font-weight:600}
+.lede{
+  font-size:clamp(1.06rem,1rem + 0.5vw,1.3rem);
+  color:var(--text);margin:1.4rem 0 0;padding:1.15rem 1.3rem;
+  background:var(--card);border-left:0.28rem solid var(--accent);border-radius:0 0.5rem 0.5rem 0;
+  font-weight:600;line-height:1.7;
+}
+
+section{padding:clamp(2.2rem,6vw,3.4rem) 0;border-bottom:1px solid var(--line)}
+.step{display:flex;align-items:baseline;gap:0.7rem;margin:0 0 1.2rem}
+.step .n{
+  flex:none;width:2rem;height:2rem;border-radius:50%;
+  background:var(--accent);color:var(--bg);
+  font-size:0.92rem;font-weight:800;
+  display:inline-flex;align-items:center;justify-content:center;
+  transform:translateY(0.2rem);
+}
+h2{font-size:clamp(1.25rem,1.05rem + 1vw,1.65rem);font-weight:800;letter-spacing:-0.02em;margin:0;line-height:1.4}
+h3{font-size:clamp(1.02rem,0.98rem + 0.4vw,1.18rem);font-weight:700;margin:2rem 0 0.7rem;color:var(--accent)}
+p{margin:0 0 1.15rem}
+strong{font-weight:800;color:var(--warn)}
+
+/* 도해 */
+figure.fig{margin:0 0 1.5rem;padding:1.1rem 0 0.2rem;
+  background:var(--card);border:1px solid var(--line);border-radius:0.8rem}
+figure.fig .figwrap{overflow-x:auto;padding:0 0.7rem}
+figure.fig svg{
+  display:block;margin:0 auto;color:var(--text);
+  width:100%;min-width:34rem;height:auto;
+}
+figure.fig .hl{stroke:var(--warn)}
+figure.fig text.hl,figure.fig polygon.hl{fill:var(--warn);stroke:none}
+figure.fig figcaption{
+  color:var(--sub);font-size:0.86rem;line-height:1.7;
+  text-align:center;padding:0.7rem 1.1rem 0.9rem;
+}
+
+.analogy{
+  background:var(--analogy);border:1px dashed var(--accent2);
+  border-radius:0.9rem;padding:clamp(1.2rem,4vw,1.8rem);margin:0 0 1.3rem;
+}
+.analogy .tag{
+  display:inline-block;font-size:0.7rem;font-weight:800;letter-spacing:0.14em;
+  color:var(--accent);margin-bottom:0.7rem;
+}
+.analogy p:last-child{margin-bottom:0}
+
+.quote{
+  margin:0 0 1.15rem;padding:1rem 1.2rem;
+  background:var(--card);border:1px solid var(--line);
+  border-left:0.25rem solid var(--accent);border-radius:0 0.6rem 0.6rem 0;
+  font-size:0.98rem;line-height:1.8;
+}
+.quote .lb{display:block;font-size:0.7rem;font-weight:800;letter-spacing:0.12em;color:var(--sub);margin-bottom:0.4rem}
+
+ol.chain{list-style:none;counter-reset:c;padding:0;margin:0 0 1.3rem}
+ol.chain li{
+  counter-increment:c;position:relative;
+  padding:0.9rem 0 0.9rem 3rem;
+  border-left:0.15rem solid var(--line);margin-left:1rem;
+}
+ol.chain li:last-child{border-left-color:transparent}
+ol.chain li::before{
+  content:counter(c);position:absolute;left:-1rem;top:0.95rem;
+  width:2rem;height:2rem;border-radius:50%;
+  background:var(--bg);border:0.15rem solid var(--accent);color:var(--accent);
+  font-size:0.85rem;font-weight:800;
+  display:inline-flex;align-items:center;justify-content:center;
+}
+ol.chain b{display:block;font-weight:800;margin-bottom:0.15rem;line-height:1.6}
+ol.chain span{color:var(--sub);font-size:0.94rem;line-height:1.7;display:block}
+
+.caveat{
+  background:var(--card);border:0.15rem solid var(--warn);border-radius:0.8rem;
+  padding:clamp(1.1rem,4vw,1.5rem);margin:0 0 1.3rem;
+}
+.caveat .lb{
+  display:block;font-size:0.72rem;font-weight:800;letter-spacing:0.12em;
+  color:var(--warn);margin-bottom:0.55rem;
+}
+.caveat p:last-child{margin-bottom:0}
+
+.ba{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:0.9rem;margin:0 0 1.3rem}
+.ba > div{border-radius:0.8rem;padding:1.1rem 1.2rem;border:1px solid var(--line);background:var(--card)}
+.ba .lb{display:block;font-size:0.7rem;font-weight:800;letter-spacing:0.12em;margin-bottom:0.55rem;color:var(--sub)}
+.ba .b1{border-left:0.25rem solid var(--warn)}
+.ba .b2{border-left:0.25rem solid var(--ok)}
+.ba q{font-style:normal;font-weight:700;font-size:1rem;line-height:1.75;display:block;margin-bottom:0.55rem}
+.ba .b1 q{color:var(--warn)}
+.ba .b2 q{color:var(--ok)}
+.ba span.d{font-size:0.9rem;color:var(--sub);line-height:1.7;display:block}
+
+ul.check{list-style:none;padding:0;margin:0}
+ul.check li{
+  position:relative;padding:0.7rem 0 0.7rem 2.1rem;
+  border-bottom:1px solid var(--line);line-height:1.7;
+}
+ul.check li:last-child{border-bottom:0}
+ul.check li::before{
+  content:"\2713";position:absolute;left:0.15rem;top:0.72rem;
+  color:var(--accent);font-weight:900;font-size:1.05rem;
+}
+
+details.trace{margin:0}
+details.trace summary{
+  cursor:pointer;font-weight:800;font-size:0.95rem;color:var(--sub);
+  padding:0.9rem 1.1rem;background:var(--card);
+  border:1px solid var(--line);border-radius:0.6rem;list-style:none;
+}
+details.trace summary::-webkit-details-marker{display:none}
+details.trace summary::before{content:"\25B8 ";color:var(--accent);font-weight:900}
+details.trace[open] summary::before{content:"\25BE "}
+.tw{overflow-x:auto;margin-top:1rem;border:1px solid var(--line);border-radius:0.6rem}
+table{border-collapse:collapse;width:100%;min-width:30rem;font-size:0.88rem;line-height:1.65}
+th,td{padding:0.75rem 0.9rem;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:var(--card);font-weight:800;font-size:0.8rem;letter-spacing:0.04em;color:var(--sub)}
+tr:last-child td{border-bottom:0}
+td.src{color:var(--sub)}
+
+footer{padding:clamp(2rem,5vw,3rem) 0 4rem;color:var(--sub);font-size:0.86rem;line-height:1.75}
+.disc{
+  background:var(--card);border:1px solid var(--line);border-radius:0.7rem;
+  padding:1.1rem 1.2rem;margin:0 0 1.4rem;
+}
+.disc > b:first-child{color:var(--warn);display:block;margin-bottom:0.35rem;font-size:0.9rem}
+.meta{margin:0}
+
+@media print{
+  #bar{display:none}
+  body{background:#fff;color:#000;font-size:10.5pt}
+  section{page-break-inside:avoid;border-bottom:1px solid #ccc}
+  figure.fig{page-break-inside:avoid}
+  details.trace{display:block}
+  details.trace summary{display:none}
+}
+/* ── transit-flow 추가 규칙 (이 글 전용) ── */
+:root{
+  --rail:#2E6BE6;
+  --railbg:#EAF0FE;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --rail:#8FADF5;
+    --railbg:#232B45;
+  }
+}
+.line-badge{
+  display:inline-block;font-size:0.72rem;font-weight:800;letter-spacing:0.1em;
+  color:var(--rail);border:0.12rem solid var(--rail);border-radius:2rem;
+  padding:0.28rem 0.8rem;margin-bottom:1rem;
+}
+ol.route{list-style:none;padding:0;margin:0 0 1.3rem}
+ol.route li{
+  position:relative;
+  padding:0.75rem 0 0.75rem 2.8rem;
+  line-height:1.7;
+}
+ol.route li::before{
+  content:"";position:absolute;left:0.85rem;top:0;bottom:0;
+  width:0.22rem;background:var(--railbg);border-radius:1rem;
+}
+ol.route li::after{
+  content:"";position:absolute;left:0.5rem;top:1.15rem;
+  width:0.9rem;height:0.9rem;border-radius:50%;
+  background:var(--bg);border:0.22rem solid var(--rail);
+}
+ol.route li:last-child::before{bottom:auto;height:1.6rem}
+ol.route b{display:block;font-weight:800;line-height:1.6}
+ol.route span{color:var(--sub);font-size:0.93rem;line-height:1.7;display:block}
+figure.fig.rail svg text.st{font-weight:700}
+</style>
+</head>
+<body>
+<div id="bar" aria-hidden="true"></div>
+<div class="wrap">
+
+<header class="hero">
+  <div class="badges" aria-label="문서 정보">
+    <span class="badge">쉽게 읽는 버전</span>
+    <span class="badge ghost">대상: 경영자·실무 책임자</span>
+  </div>
+  <p class="kicker">사내조사 첫 관문 · 접수 프로토콜</p>
+  <h1>제보가 들어오면, 확인 전 세 가지를 먼저 한다</h1>
+  <p class="lede">제보가 들어온 순간, 사실인지 확인되기 전에도 기록·보호 고지·보고 세 가지를 즉시 실행한다.</p>
+</header>
+
+<main>
+<section id="s1" aria-label="한 문장">
+  <div class="step"><span class="n" aria-hidden="true">1</span><h2>한 문장</h2></div>
+  <p>제보 내용은 아직 확인되지 않았고 조사도 시작 전이지만, 해야 할 일은 이미 정해져 있다. <strong>받은 사실을 적고, 제보자를 지키겠다고 알리고, 위로 올린다.</strong></p>
+</section>
+
+<section id="s2" aria-label="비유">
+  <div class="step"><span class="n" aria-hidden="true">2</span><h2>비유 — 화재경보처럼 다룬다</h2></div>
+  <div class="analogy">
+    <span class="tag">ANALOGY · 비유임을 밝힌다</span>
+    <p>공장에 화재경보가 울렸다고 하자. 불이 진짜인지 확인될 때까지 아무것도 안 하는 관리자는 없다. 경보가 울린 시각과 장소를 적고, 대피 안내를 방송하고, 상황실에 알린다. 불 확인은 그 다음이다.</p>
+    <p>제보도 같다. 사실 확인은 나중이고, 접수 절차 세 가지는 경보가 울린 지금 바로 돈다. 가만히 있는 것이 가장 위험한 선택이다.</p>
+  </div>
+</section>
+
+<section id="s3" aria-label="세부">
+  <div class="step"><span class="n" aria-hidden="true">3</span><h2>세부 — 세 정거장을 순서대로 지난다</h2></div>
+  <p><span class="line-badge">PROTOCOL LINE · 접수선</span></p>
+  <p>비용은 거의 들지 않는데, 빠뜨리면 대가가 크다. 사실 확인 전, 조사 개시 전, 내용의 경중과 무관하게 실행한다.</p>
+  <ol class="route">
+    <li><b>1정거장 · 받은 사실을 적는다</b><span>언제, 누구로부터, 어떤 경로로, 어떤 내용인지 객관적인 기록을 만든다. 나중에 왜 조치하지 않았느냐는 책임 추궁에서 법무팀을 지키는 방패가 된다.</span></li>
+    <li><b>2정거장 · 제보자를 지키겠다고 알린다</b><span>제보자가 누구인지 절대 발설하지 않겠다는 확약을 공식적으로 전달한다. 노출이 두려워 제보자가 진술을 철회하거나 후회하게 되면 조사 시스템 전체가 무너진다.</span></li>
+    <li><b>3정거장 · 위로 올린다</b><span>개인 판단으로 혼자 처리하려 들면 온갖 위험에 노출된다. 내용의 경중과 무관하게 제보 자체를 보고하고 공식 결정 체계 안에 올려놓는다.</span></li>
+  </ol>
+  <figure class="fig rail">
+    <div class="figwrap">
+    <svg viewBox="0 0 640 190" role="img" aria-label="접수가 기록과 보호 고지와 보고를 거쳐 결정 체계로 이어지는 순서">
+      <defs>
+        <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <polygon points="0,0 10,5 0,10" fill="currentColor"></polygon>
+        </marker>
+      </defs>
+      <line x1="20" y1="95" x2="620" y2="95" stroke="currentColor" stroke-width="2" opacity="0.25"></line>
+      <rect x="20" y="65" width="104" height="60" rx="30" fill="none" stroke="currentColor" stroke-width="1.5"></rect>
+      <text class="st" x="72" y="100" text-anchor="middle" font-size="13" fill="currentColor">접수</text>
+      <rect x="160" y="65" width="104" height="60" rx="30" fill="none" stroke="currentColor" stroke-width="1.5"></rect>
+      <text class="st" x="212" y="100" text-anchor="middle" font-size="13" fill="currentColor">기록</text>
+      <rect x="300" y="65" width="104" height="60" rx="30" fill="none" stroke="currentColor" stroke-width="1.5"></rect>
+      <text class="st" x="352" y="100" text-anchor="middle" font-size="12" fill="currentColor">보호 고지</text>
+      <rect x="440" y="65" width="104" height="60" rx="30" fill="none" stroke="currentColor" stroke-width="1.5"></rect>
+      <text class="st" x="492" y="100" text-anchor="middle" font-size="13" fill="currentColor">보고</text>
+      <line x1="124" y1="95" x2="156" y2="95" stroke="currentColor" stroke-width="1.5" marker-end="url(#ar)"></line>
+      <line x1="264" y1="95" x2="296" y2="95" stroke="currentColor" stroke-width="1.5" marker-end="url(#ar)"></line>
+      <line x1="404" y1="95" x2="436" y2="95" stroke="currentColor" stroke-width="1.5" marker-end="url(#ar)"></line>
+      <line class="hl" x1="544" y1="95" x2="576" y2="95" stroke-width="2" marker-end="url(#ar)"></line>
+      <text x="212" y="48" text-anchor="middle" font-size="11" fill="currentColor">언제·경로·내용</text>
+      <text x="352" y="48" text-anchor="middle" font-size="11" fill="currentColor">발설 않겠다는 확약</text>
+      <text x="492" y="48" text-anchor="middle" font-size="11" fill="currentColor">경중 무관 즉시</text>
+      <text x="586" y="140" text-anchor="middle" font-size="12" fill="currentColor">결정 체계</text>
+    </svg>
+    </div>
+    <figcaption>네 정거장을 순서대로 지나야 공식 결정 체계에 닿는다.</figcaption>
+  </figure>
+  <div class="caveat">
+    <span class="lb">CONDITIONS · 조건이 살아 있다</span>
+    <p>세 가지 모두 <strong>사실이 확인되기 전에도, 조사 개시 전에도</strong> 한다. 내용의 경중은 실행 여부를 가리지 않는다. 가벼워 보여도 보고하고, 무거워 보여도 혼자 처리하지 않는다.</p>
+  </div>
+</section>
+
+<section id="s4" aria-label="그래서">
+  <div class="step"><span class="n" aria-hidden="true">4</span><h2>그래서 — 당신에게 무슨 의미인가</h2></div>
+  <p>같은 제보라도 접수에서 갈린다. 아무것도 안 하면 책임 추궁과 불신으로 가고, 세 가지를 돌리면 조사 여부를 차분히 정할 시간이 생긴다.</p>
+  <figure class="fig rail">
+    <div class="figwrap">
+    <svg viewBox="0 0 640 230" role="img" aria-label="같은 제보에서 아무것도 안 하면 책임 추궁으로 가고 세 가지를 실행하면 결정 체계로 간다">
+      <defs>
+        <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <polygon points="0,0 10,5 0,10" fill="currentColor"></polygon>
+        </marker>
+      </defs>
+      <rect x="16" y="93" width="120" height="44" rx="8" fill="none" stroke="currentColor" stroke-width="1.5"></rect>
+      <text class="st" x="76" y="120" text-anchor="middle" font-size="13" fill="currentColor">제보 접수</text>
+      <line x1="136" y1="115" x2="230" y2="55" stroke="currentColor" stroke-width="1.5" marker-end="url(#ar2)"></line>
+      <text class="hl" x="185" y="80" text-anchor="middle" font-size="11" fill="currentColor">가만히 있는다</text>
+      <line x1="136" y1="115" x2="230" y2="175" stroke="currentColor" stroke-width="1.5" marker-end="url(#ar2)"></line>
+      <text x="185" y="162" text-anchor="middle" font-size="11" fill="currentColor">세 가지를 돌린다</text>
+      <rect x="240" y="25" width="160" height="60" rx="8" fill="none" stroke="currentColor" stroke-width="1.5"></rect>
+      <text class="hl" x="320" y="51" text-anchor="middle" font-size="12" fill="currentColor">책임 추궁·불신</text>
+      <text x="320" y="70" text-anchor="middle" font-size="11" fill="currentColor">시스템 붕괴</text>
+      <rect x="240" y="145" width="160" height="60" rx="8" fill="none" stroke="currentColor" stroke-width="1.5"></rect>
+      <text x="320" y="171" text-anchor="middle" font-size="12" fill="currentColor">방패·신뢰 유지</text>
+      <text x="320" y="190" text-anchor="middle" font-size="11" fill="currentColor">결정 체계 가동</text>
+      <line x1="400" y1="55" x2="470" y2="55" stroke="currentColor" stroke-width="1.5" marker-end="url(#ar2)"></line>
+      <text class="hl" x="520" y="60" text-anchor="middle" font-size="12" fill="currentColor">가장 위험한 선택</text>
+      <line x1="400" y1="175" x2="470" y2="175" stroke="currentColor" stroke-width="1.5" marker-end="url(#ar2)"></line>
+      <text x="520" y="180" text-anchor="middle" font-size="12" fill="currentColor">차분한 판단 확보</text>
+    </svg>
+    </div>
+    <figcaption>같은 출발점, 정거장을 지나느냐 마느냐로 결과가 갈린다.</figcaption>
+  </figure>
+  <ul class="check">
+    <li>제보 접수대장에 시각·경로·내용을 적었는가</li>
+    <li>제보자에게 신원 보호 확약을 공식 전달했는가</li>
+    <li>내용 경중과 무관하게 상급자에게 보고했는가</li>
+    <li>혼자 판단하고 덮어둔 것은 없는가</li>
+  </ul>
+</section>
+
+<section aria-label="출처 확인">
+  <details class="trace">
+    <summary>출처 확인 — 이 글의 문장과 근거 문장</summary>
+    <div class="tw">
+    <table>
+      <thead><tr><th scope="col">이 글의 문장</th><th scope="col">근거 문장</th></tr></thead>
+      <tbody>
+        <tr><td>사실인지 확인되기 전에도 세 가지를 즉시 실행한다</td><td class="src">제보 사실이 확인되기 전에도, 조사 개시 전에도 반드시 이루어져야 하는 제보 접수 프로토콜의 핵심</td></tr>
+        <tr><td>받은 사실을 적는다 — 언제·누구로부터·경로·내용, 책임 추궁의 방패</td><td class="src">언제, 누구로부터, 어떤 경로로, 어떤 내용의 제보를 받았는지 객관적인 기록. 나중에 왜 조치하지 않았느냐는 책임 추궁에서 법무팀을 지키는 방패</td></tr>
+        <tr><td>제보자를 지키겠다고 알린다 — 발설 않겠다는 확약</td><td class="src">제보자가 누구인지 절대 발설하지 않겠다는 확약을 공식적으로 전달</td></tr>
+        <tr><td>신원 노출 두려움에 철회·후회하면 시스템 전체가 무너진다</td><td class="src">신원이 노출될 것이 두려워 제보자가 진술을 철회하거나 제보를 후회하게 만드는 것은 사내조사 시스템 전체를 무너뜨리는 행위</td></tr>
+        <tr><td>위로 올린다 — 혼자 판단 금지, 경중 무관, 결정 체계 안으로</td><td class="src">법무팀원 개인이 혼자 판단하고 처리하려는 순간 온갖 위험에 노출. 제보 내용의 경중과 무관하게, 제보 자체를 보고하고 공식적인 결정 체계 안에 올려놓아야</td></tr>
+        <tr><td>가만히 있는 것이 가장 위험한 선택</td><td class="src">법무팀이 저지르는 최악의 실수가 바로 아무것도 하지 않는 것. 아무것도 하지 않는 것이 때로는 가장 위험한 선택</td></tr>
+        <tr><td>도해: 사슬 — 접수·기록·보호 고지·보고 순서</td><td class="src">세 가지 행동 절차 서술 전체 (순서 구조를 그림으로 옮김, 비유 아님)</td></tr>
+        <tr><td>도해: 분기 — 가만히 있으면 추궁·붕괴, 돌리면 방패·유지</td><td class="src">섣불리 움직이면 억울한 피해자 / 가만히 있으면 더 큰 불똥 + 세 가지 행동의 효과 서술 (인과는 근거 범위 내)</td></tr>
+        <tr><td>도해 외 비유 문단 (화재경보)</td><td class="src">비유(근거 없음) — 창작 허용 영역. 사실·수치·조건을 주장하지 않음</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </details>
+</section>
+</main>
+
+<footer>
+  <div class="disc" role="note" aria-label="안내">
+    <b>읽기 전 안내</b>
+    <b>일반적인 설명입니다</b>
+    이 글은 사내조사 접수 절차에 대한 일반적인 법률 정보이며, 개별 사안의 법률 자문이 아닙니다. 구체적 사안은 변호사와 상담하십시오. 이해를 돕기 위한 예시는 가상의 상황이다.
+  </div>
+  <p class="meta">분량 목표 130% · 디자인 transit-flow · 명령서판 2026-09-11a · 도해 2개(사슬·분기) · 대상 경영자·실무 책임자</p>
+</footer>
+
+</div>
+<script>
+(function(){
+  var b=document.getElementById('bar');
+  function u(){var h=document.documentElement;var m=h.scrollHeight-h.clientHeight;if(m>0){b.style.width=(h.scrollTop/m*100)+'%';}}
+  document.addEventListener('scroll',u,{passive:true});u();
+})();
+</script>
+</body>
+</html>
