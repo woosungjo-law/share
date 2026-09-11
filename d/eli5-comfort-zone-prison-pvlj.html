@@ -215,6 +215,8 @@ footer{padding:clamp(2rem,5vw,3rem) 0 4rem;color:var(--sub);font-size:0.86rem;li
   --warn:#ff9d7c;--ok:#92d7bb;--grid:rgba(119,209,192,0.075);
 }
 html,body{overflow-x:clip}
+html{scrollbar-width:none}
+html::-webkit-scrollbar{display:none}
 body{
   font-family:'RIDIBatang','Batang',serif;
   width:100vw;
@@ -233,6 +235,7 @@ body{
 .hero{
   position:relative;overflow:clip;
 }
+.hero::after,.hero::before{display:none}
 .hero::after{
   content:"";position:absolute;right:0;top:1.7rem;width:5.5rem;height:3.2rem;
   border:1px solid var(--accent2);transform:rotate(-4deg);opacity:0.8;
