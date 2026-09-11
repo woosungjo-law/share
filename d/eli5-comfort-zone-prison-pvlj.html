@@ -217,6 +217,7 @@ footer{padding:clamp(2rem,5vw,3rem) 0 4rem;color:var(--sub);font-size:0.86rem;li
 html,body{overflow-x:clip}
 body{
   font-family:'RIDIBatang','Batang',serif;
+  width:100vw;
   background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
   background-size:1.35rem 1.35rem;
 }
@@ -230,7 +231,7 @@ body{
 }
 .theme-toggle:hover,.theme-toggle:focus-visible{color:var(--text);border-color:var(--accent);outline:0.15rem solid color-mix(in srgb,var(--accent) 28%,transparent);outline-offset:0.12rem}
 .hero{
-  position:relative;
+  position:relative;overflow:clip;
 }
 .hero::after{
   content:"";position:absolute;right:0;top:1.7rem;width:5.5rem;height:3.2rem;
