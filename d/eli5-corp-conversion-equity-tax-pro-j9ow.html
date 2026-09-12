@@ -237,6 +237,8 @@ footer{padding:clamp(2rem,5vw,3rem) 0 4rem;color:var(--sub);font-size:0.86rem;li
   --hero:#102A4B;
   --hero-text:#F6F8FB;
   --hero-sub:#C5D2E2;
+  --node-focus:#15345B;
+  --node-focus-text:#F6F8FB;
   --maxw:68rem;
 }
 @media (prefers-color-scheme: dark){
@@ -254,17 +256,19 @@ footer{padding:clamp(2rem,5vw,3rem) 0 4rem;color:var(--sub);font-size:0.86rem;li
     --hero:#09192F;
     --hero-text:#F3F7FC;
     --hero-sub:#B8C8DC;
+    --node-focus:#2F5C8F;
+    --node-focus-text:#F3F7FC;
   }
 }
 :root[data-theme="light"]{
   --bg:#F3F6FA;--accent:#15345B;--accent2:#D39A34;--text:#172235;--sub:#5E6D82;
   --line:#D8E1EC;--card:#FFFFFF;--analogy:#EAF0F7;--warn:#A64F2C;--ok:#2C6B57;
-  --hero:#102A4B;--hero-text:#F6F8FB;--hero-sub:#C5D2E2;
+  --hero:#102A4B;--hero-text:#F6F8FB;--hero-sub:#C5D2E2;--node-focus:#15345B;--node-focus-text:#F6F8FB;
 }
 :root[data-theme="dark"]{
   --bg:#0F1724;--accent:#9EBFE8;--accent2:#E6B85B;--text:#EDF3FA;--sub:#AEBBCD;
   --line:#2D3B50;--card:#172235;--analogy:#1B2A3E;--warn:#F09A72;--ok:#86D0B3;
-  --hero:#09192F;--hero-text:#F3F7FC;--hero-sub:#B8C8DC;
+  --hero:#09192F;--hero-text:#F3F7FC;--hero-sub:#B8C8DC;--node-focus:#2F5C8F;--node-focus-text:#F3F7FC;
 }
 html,body{overflow-x:clip}
 body{font-family:'NanumSquare','Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:var(--bg);}
@@ -282,8 +286,8 @@ header.hero .lede{background:rgba(255,255,255,.08);border-left-color:var(--accen
 .brief-grid .panel{min-width:0}
 .fig svg{min-width:54rem}
 figure.fig .node{fill:var(--card);stroke:currentColor;stroke-width:1.5}
-figure.fig .node.focus{fill:var(--accent);stroke:var(--accent)}
-figure.fig text.invert{fill:var(--hero-text);stroke:none}
+figure.fig .node.focus{fill:var(--node-focus);stroke:var(--node-focus)}
+figure.fig text.invert{fill:var(--node-focus-text);stroke:none}
 figure.fig text{font-family:'NanumSquare','Malgun Gothic','Apple SD Gothic Neo',sans-serif}
 .panel{border:1px solid var(--line);border-radius:.7rem;background:var(--card);padding:1.1rem 1.2rem}
 .panel h3{margin-top:0}
