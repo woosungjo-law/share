@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[새옹지마論] 당신의 바퀴는 아직 도는 중인가, 이미 멈췄는가</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Noto+Sans+KR:wght@300;400;500;600;700&family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ==========================================================================
+       RESET & ROOT VARIABLES (Light Luxury Editorial Theme)
+       ========================================================================== */
+    :root {
+      --bg-main: #F9F8F5;
+      --bg-card: #FFFFFF;
+      --bg-soft: #F2EFEB;
+      --text-main: #242220;
+      --text-muted: #67635F;
+      --text-light: #948F89;
+      --border-color: #E6E1D9;
+      --accent-gold: #A87B3C;
+      --accent-gold-light: #F4EEDB;
+      --accent-slate: #314452;
+      --accent-terracotta: #A44936;
+      --accent-teal: #316462;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --shadow-subtle: 0 4px 20px -2px rgba(44, 38, 30, 0.05);
+      --shadow-card: 0 10px 30px -5px rgba(36, 34, 32, 0.07), 0 2px 8px rgba(36, 34, 32, 0.03);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.7;
+      word-break: keep-all;
+      text-wrap: balance;
+      -webkit-font-smoothing: antialiased;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    /* Typography Utilities */
+    .serif-title {
+      font-family: 'Noto Serif KR', serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .latin-serif {
+      font-family: 'Cinzel', serif;
+    }
+
+    /* ==========================================================================
+       HEADER SECTION
+       ========================================================================== */
+    header.hero {
+      text-align: center;
+      padding: 40px 10px 60px;
+      position: relative;
+    }
+
+    .category-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      background: var(--accent-gold-light);
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-bottom: 24px;
+    }
+
+    .hero-title {
+      font-size: clamp(28px, 4.5vw, 44px);
+      line-height: 1.35;
+      color: var(--text-main);
+      margin-bottom: 20px;
+      word-break: keep-all;
+      text-wrap: balance;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(16px, 2vw, 19px);
+      color: var(--text-muted);
+      font-weight: 400;
+      max-width: 760px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    /* ==========================================================================
+       BENTO GRID ARCHITECTURE
+       ========================================================================== */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow-card);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Card 1: 포르투나의 바퀴 vs 새옹의 문 시각화 */
+    .card-duality {
+      grid-column: span 12;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      background: linear-gradient(145deg, #FFFFFF 0%, #FAF8F5 100%);
+    }
+
+    @media (max-width: 860px) {
+      .card-duality {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .duality-column {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .duality-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .symbol-pill {
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      letter-spacing: 0.05em;
+    }
+
+    .pill-east {
+      background: #E8EFEF;
+      color: var(--accent-teal);
+    }
+
+    .pill-west {
+      background: #F8EAE7;
+      color: var(--accent-terracotta);
+    }
+
+    .duality-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .duality-desc {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    /* Interactive Wheel Visualizer */
+    .wheel-visual-container {
+      background: var(--bg-soft);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      text-align: center;
+      border: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 220px;
+    }
+
+    .svg-wheel {
+      width: 140px;
+      height: 140px;
+      animation: spinWheel 26s linear infinite;
+      transition: animation-play-state 0.3s ease;
+    }
+
+    .svg-wheel:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes spinWheel {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .wheel-caption {
+      font-size: 13px;
+      color: var(--text-light);
+      margin-top: 12px;
+      font-weight: 500;
+    }
+
+    /* Door Visualizer */
+    .door-visual-container {
+      background: var(--bg-soft);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      border: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 220px;
+    }
+
+    .door-flow {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .gate-box {
+      width: 80px;
+      height: 110px;
+      border: 3px double var(--accent-teal);
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      font-weight: 700;
+      color: var(--accent-teal);
+      font-size: 14px;
+    }
+
+    .gate-particle {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .gate-badge-fortune {
+      background: #E8EFEF;
+      color: var(--accent-teal);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    .gate-badge-misfortune {
+      background: #F8EAE7;
+      color: var(--accent-terracotta);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    /* Card 2: 통찰과 공통분모 */
+    .card-insight {
+      grid-column: span 12;
+      background: var(--accent-slate);
+      color: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 24px;
+    }
+
+    .card-insight-label {
+      color: #D3B278;
+      font-size: 13px;
+      letter-spacing: 0.15em;
+      font-weight: 700;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .card-insight-quote {
+      font-family: 'Noto Serif KR', serif;
+      font-size: clamp(20px, 3vw, 27px);
+      line-height: 1.5;
+      max-width: 840px;
+      word-break: keep-all;
+      text-wrap: balance;
+      font-weight: 600;
+      color: #F8F9FA;
+    }
+
+    .card-insight-sub {
+      margin-top: 14px;
+      font-size: 15px;
+      color: #C3CCD3;
+      max-width: 680px;
+    }
+
+    /* Card 3: 2대 대응 전략 비교 */
+    .card-strategy-left {
+      grid-column: span 6;
+      border-top: 4px solid var(--accent-teal);
+    }
+
+    .card-strategy-right {
+      grid-column: span 6;
+      border-top: 4px solid var(--accent-terracotta);
+    }
+
+    @media (max-width: 768px) {
+      .card-strategy-left,
+      .card-strategy-right {
+        grid-column: span 12;
+      }
+    }
+
+    .strategy-tag {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .tag-teal { color: var(--accent-teal); }
+    .tag-terracotta { color: var(--accent-terracotta); }
+
+    .strategy-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--text-main);
+    }
+
+    .strategy-core {
+      background: var(--bg-soft);
+      padding: 14px 18px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 16px;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .strategy-list {
+      list-style: none;
+      font-size: 14.5px;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .strategy-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .strategy-list li::before {
+      content: "•";
+      font-weight: bold;
+      color: var(--accent-gold);
+    }
+
+    /* ==========================================================================
+       INTERACTIVE DECISION ENGINE (트렌드 5 적용)
+       ========================================================================== */
+    .decision-section {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-card);
+      margin-bottom: 40px;
+    }
+
+    .decision-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .decision-title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .decision-subtitle {
+      font-size: 15px;
+      color: var(--text-muted);
+    }
+
+    /* Toggle Switch Component */
+    .toggle-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .toggle-box {
+      background: var(--bg-soft);
+      padding: 6px;
+      border-radius: 999px;
+      display: flex;
+      position: relative;
+      border: 1px solid var(--border-color);
+      max-width: 480px;
+      width: 100%;
+    }
+
+    .toggle-btn {
+      flex: 1;
+      padding: 12px 20px;
+      border: none;
+      background: transparent;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-muted);
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      text-align: center;
+    }
+
+    .toggle-btn.active {
+      background: var(--bg-card);
+      color: var(--accent-slate);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Dynamic Output Panel */
+    .decision-panel {
+      padding: 28px;
+      border-radius: var(--radius-md);
+      background: var(--bg-soft);
+      border: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+    }
+
+    .panel-status {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 4px;
+      margin-bottom: 14px;
+    }
+
+    .panel-action {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 10px;
+      word-break: keep-all;
+      text-wrap: balance;
+    }
+
+    .panel-desc {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .status-ongoing {
+      background: #E4ECEB;
+      color: var(--accent-teal);
+    }
+
+    .status-closed {
+      background: #F9E7E3;
+      color: var(--accent-terracotta);
+    }
+
+    /* ==========================================================================
+       FOOTER & QUOTE SECTION
+       ========================================================================== */
+    footer.editorial-footer {
+      border-top: 1px solid var(--border-color);
+      padding: 40px 10px 20px;
+      text-align: center;
+    }
+
+    .epilogue-quote {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-main);
+      max-width: 720px;
+      margin: 0 auto 18px;
+      line-height: 1.6;
+      word-break: keep-all;
+      text-wrap: balance;
+    }
+
+    .source-label {
+      font-size: 13px;
+      color: var(--text-light);
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- ==========================================
+         HERO SECTION
+         ========================================== -->
+    <header class="hero">
+      <div class="category-badge">
+        <span>PHILOSOPHICAL INSIGHT</span>
+        <span>•</span>
+        <span>인생관 비교론</span>
+      </div>
+      <h1 class="hero-title serif-title">
+        당신의 바퀴는 지금 도는 중입니까,<br>
+        아니면 이미 멈춰 섰습니까
+      </h1>
+      <p class="hero-subtitle">
+        동양의 <strong>새옹지마(塞翁之馬)</strong>와 서양의 <strong>포르투나의 바퀴(Rota Fortunae)</strong>가
+        밝히는 삶의 기복을 다루는 두 가지 사유 체계
+      </p>
+    </header>
+
+    <!-- ==========================================
+         BENTO GRID VISUALIZATION
+         ========================================== -->
+    <div class="bento-grid">
+      
+      <!-- Card 1: 동서양 상징 비교 -->
+      <div class="card card-duality">
+        <!-- 서양: 포르투나의 바퀴 -->
+        <div class="duality-column">
+          <div>
+            <div class="duality-header">
+              <span class="symbol-pill pill-west">WESTERN THOUGHT</span>
+              <span class="latin-serif" style="color: var(--accent-terracotta); font-weight:700;">ROTA FORTUNAE</span>
+            </div>
+            <h3 class="duality-title serif-title">보에티우스와 운명의 바퀴</h3>
+            <p class="duality-desc">
+              로마 감옥에서 집행을 기다리던 보에티우스는 《철학의 위안》에서 포르투나를 떠올렸습니다. 
+              수직으로 회전하는 바퀴 위에서 추락은 예외적 사고가 아닌, <strong>시스템의 지극히 정상적인 작동</strong>입니다.
+            </p>
+          </div>
+          <div class="wheel-visual-container">
+            <svg class="svg-wheel" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="44" stroke="#D3B278" stroke-width="2" fill="none" stroke-dasharray="4 3"/>
+              <circle cx="50" cy="50" r="34" stroke="#314452" stroke-width="1.5" fill="none"/>
+              <line x1="50" y1="6" x2="50" y2="94" stroke="#314452" stroke-width="1.5"/>
+              <line x1="6" y1="50" x2="94" y2="50" stroke="#314452" stroke-width="1.5"/>
+              <line x1="19" y1="19" x2="81" y2="81" stroke="#314452" stroke-width="1"/>
+              <line x1="19" y1="81" x2="81" y2="19" stroke="#314452" stroke-width="1"/>
+              <circle cx="50" cy="50" r="6" fill="#A44936"/>
+              <polygon points="50,2 53,8 47,8" fill="#A44936"/>
+              <polygon points="50,98 53,92 47,92" fill="#314452"/>
+            </svg>
+            <span class="wheel-caption">수직적 위치의 순환 (정점과 바닥의 교체)</span>
+          </div>
+        </div>
+
+        <!-- 동양: 회남자의 문 -->
+        <div class="duality-column">
+          <div>
+            <div class="duality-header">
+              <span class="symbol-pill pill-east">EASTERN THOUGHT</span>
+              <span style="color: var(--accent-teal); font-weight:700;">禍福同門</span>
+            </div>
+            <h3 class="duality-title serif-title">변방 노인의 새옹지마</h3>
+            <p class="duality-desc">
+              《회남자》는 복(福)과 화(禍)가 동일한 문을 드나든다고 통찰했습니다. 
+              동양의 사유는 바퀴 대신 <strong>'통로(문)'</strong>를 응시하며, 
+              지금의 불행이 내일의 복이 될 가능성을 향해 판단을 유보합니다.
+            </p>
+          </div>
+          <div class="door-visual-container">
+            <div class="door-flow">
+              <div class="gate-particle">
+                <span class="gate-badge-misfortune">禍 (불운)</span>
+                <span style="font-size: 12px; color: var(--text-light); text-align: center;">유입</span>
+              </div>
+              <div class="gate-box">
+                <span style="font-size: 11px; letter-spacing: 0.1em; margin-bottom: 2px;">GATEWAY</span>
+                <span class="serif-title" style="font-size: 20px;">同門</span>
+              </div>
+              <div class="gate-particle">
+                <span class="gate-badge-fortune">福 (행운)</span>
+                <span style="font-size: 12px; color: var(--text-light); text-align: center;">전환</span>
+              </div>
+            </div>
+            <span class="wheel-caption">통로적 연속성 (화와 복의 상호 침투)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: 중심 통찰 (Quote Full Card) -->
+      <div class="card card-insight">
+        <span class="card-insight-label">The Core Axiom</span>
+        <blockquote class="card-insight-quote">
+          "지금 서 있는 자리는<br>
+          결코 최종 지점이 아니라는 사실이다."
+        </blockquote>
+        <p class="card-insight-sub">
+          동서양 문명이 독립적으로 동일한 구조를 발견했다면,<br>
+          그것은 문화적 취향이 아니라 <strong>거부할 수 없는 세계의 절대적 성질</strong>입니다.
+        </p>
+      </div>
+
+      <!-- Card 3: 대응 전략의 분기 - 새옹 -->
+      <div class="card card-strategy-left">
+        <div class="strategy-tag tag-teal">STRATEGY A • 동양적 해법</div>
+        <h4 class="strategy-title serif-title">시점의 유보 (판정의 보류)</h4>
+        <div class="strategy-core">
+          적용 국면: 사태가 아직 <strong>'진행 중'</strong>일 때
+        </div>
+        <ul class="strategy-list">
+          <li><strong>섣부른 규정 경계:</strong> 눈앞의 성취에 도취되지도, 당장의 실패에 비관하지도 않음.</li>
+          <li><strong>관조적 기다림:</strong> "어찌 다시 복이 되지 않겠는가"라며 최종 판단을 미래로 이월.</li>
+          <li><strong>주의점:</strong> 이미 상황이 확정된 비극 앞에서 쓰는 판정 유보는 자기기만에 불과함.</li>
+        </ul>
+      </div>
+
+      <!-- Card 4: 대응 전략의 분기 - 보에티우스 -->
+      <div class="card card-strategy-right">
+        <div class="strategy-tag tag-terracotta">STRATEGY B • 서양적 해법</div>
+        <h4 class="strategy-title serif-title">사유 대상의 전환 (내면의 고정)</h4>
+        <div class="strategy-core">
+          적용 국면: 결과가 <strong>'이미 확정·종결'</strong>되었을 때
+        </div>
+        <ul class="strategy-list">
+          <li><strong>무력한 저항 중단:</strong> 이미 멈춰버린 바퀴를 되돌리려는 헛된 투쟁의 종식.</li>
+          <li><strong>바깥을 응시:</strong> 회전하는 바퀴 축 바깥의 영원한 진리와 내면적 의미로 시선 이동.</li>
+          <li><strong>주의점:</strong> 아직 바뀔 조건이 남아있는데 일찍 단념하는 태도는 무책임한 회피임.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- ==========================================
+         INTERACTIVE DECISION ENGINE
+         ========================================== -->
+    <section class="decision-section">
+      <div class="decision-header">
+        <h3 class="decision-title serif-title">실천적 진단: 당신의 상황은 어디에 해당합니까?</h3>
+        <p class="decision-subtitle">
+          우리가 겪는 대부분의 혼란은 <strong>'진행 중인 일'</strong>과 <strong>'종료된 일'</strong>의 처방을 뒤바꿔 적용하는 데서 발생합니다.
+        </p>
+      </div>
+
+      <div class="toggle-container">
+        <div class="toggle-box">
+          <button type="button" class="toggle-btn active" id="btn-ongoing" onclick="setDecision('ongoing')">
+            1. 아직 진행 중인 국면
+          </button>
+          <button type="button" class="toggle-btn" id="btn-closed" onclick="setDecision('closed')">
+            2. 이미 종결된 국면
+          </button>
+        </div>
+      </div>
+
+      <div class="decision-panel" id="decision-panel">
+        <span class="panel-status status-ongoing" id="panel-status">CONDITION: 진척 중인 사안</span>
+        <h4 class="panel-action serif-title" id="panel-action">
+          "성패의 경솔한 판정을 늦추고 사태의 흐름을 관조하십시오."
+        </h4>
+        <p class="panel-desc" id="panel-desc">
+          바뀔 여지와 조건이 남아있다면 결말을 지레짐작해 초연해지지 마십시오. 
+          새옹의 노인처럼 <strong>판단을 미래로 유보한 채</strong>, 
+          눈앞의 득실에 흔들리지 않고 묵묵히 변화의 추이를 살피는 것이 올바른 지혜입니다.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         FOOTER EPILOGUE
+         ========================================== -->
+    <footer class="editorial-footer">
+      <p class="epilogue-quote">
+        "보에티우스는 처형당했으나 그가 남긴 철학은 천 년 동안 영혼들을 위로했습니다.<br>
+        진리란 진술자의 결말 따위로 반증되지 않습니다."
+      </p>
+      <div class="source-label">
+        ESSAY ESSENCE • THE WHEEL OF FORTUNE & THE AGED SAIWENG
+      </div>
+    </footer>
+  </div>
+
+  <!-- ==========================================
+       INTERACTIVE SCRIPT
+       ========================================== -->
+  <script>
+    function setDecision(state) {
+      const btnOngoing = document.getElementById('btn-ongoing');
+      const btnClosed = document.getElementById('btn-closed');
+      const panelStatus = document.getElementById('panel-status');
+      const panelAction = document.getElementById('panel-action');
+      const panelDesc = document.getElementById('panel-desc');
+
+      if (state === 'ongoing') {
+        btnOngoing.classList.add('active');
+        btnClosed.classList.remove('active');
+
+        panelStatus.className = 'panel-status status-ongoing';
+        panelStatus.textContent = 'CONDITION: 진척 중인 사안';
+        panelAction.innerHTML = '"성패의 경솔한 판정을 늦추고 사태의 흐름을 관조하십시오."';
+        panelDesc.innerHTML = '바뀔 여지와 조건이 남아있다면 결말을 지레짐작해 초연해지지 마십시오. 새옹의 노인처럼 <strong>판단을 미래로 유보한 채</strong>, 눈앞의 득실에 흔들리지 않고 묵묵히 변화의 추이를 살피는 것이 올바른 지혜입니다.';
+      } else {
+        btnClosed.classList.add('active');
+        btnOngoing.classList.remove('active');
+
+        panelStatus.className = 'panel-status status-closed';
+        panelStatus.textContent = 'CONDITION: 종결된 비극';
+        panelAction.innerHTML = '"결과를 바꾸려는 무력한 투쟁을 멈추고, 사유의 대상을 전환하십시오."';
+        panelDesc.innerHTML = '이미 판결이 확정된 비극 앞에서는 역전의 환상을 내려놓아야 합니다. 보에티우스처럼 <strong>바퀴 바깥의 본질적 가치</strong>로 눈을 돌려, 이 경험에 어떤 의미를 부여하고 다음 선택을 무엇으로 삼을지 내면을 재구성하십시오.';
+      }
+    }
+  </script>
+</body>
+</html>
