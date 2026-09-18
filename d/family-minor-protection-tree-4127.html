@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>미성년 자녀의 법적 보호 체계</title>
+  <!-- 폰트 외부 로드 금지(볼트 DESIGN.md §self-contained). 시스템 한글 폰트 스택 사용 -->
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --color-paper:   #FAF8F4;
+      --color-paper-2: #FFF9F5;
+      --color-ink:     #2C2416;
+      --color-muted:   #7A6A55;
+      --color-accent:  #C4704A;
+      --color-accent-tint: rgba(196,112,74,0.10);
+      --color-rule:    rgba(44,36,22,0.12);
+      --font-sans:  'Pretendard','Malgun Gothic','맑은 고딕',-apple-system,'Segoe UI',sans-serif, system-ui, sans-serif;
+      --font-serif: 'Noto Serif KR','Batang','바탕',Georgia,serif, serif;
+      --font-mono:  'D2Coding','Consolas','Courier New',monospace, ui-monospace, monospace;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--color-paper);
+      color: var(--color-ink);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 2rem;
+    }
+
+    .frame { max-width: 1100px; width: 100%; }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 2.4vw + 0.75rem, 2rem);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: var(--color-ink);
+      margin-bottom: 1.5rem;
+    }
+
+    svg { width: 100%; min-width: 900px; display: block; }
+
+    .colophon {
+      margin-top: 1.25rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--color-rule);
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.08em;
+      color: var(--color-muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <p class="eyebrow">TREE · 가족상속법 컬럼</p>
+    <h1>미성년 자녀의 법적 보호 체계</h1>
+
+    <svg viewBox="0 0 1000 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="minor-protection-title minor-protection-desc">
+      <title id="minor-protection-title">미성년 자녀의 법적 보호 체계</title>
+      <desc id="minor-protection-desc">미성년 자녀는 법률행위 취소권, 친권의 공동행사, 후견의 세 가지 장치로 보호되며 후견인 선임의 근거는 대법원 2019므10664 판결이다.</desc>
+
+      <rect width="100%" height="100%" fill="#FAF8F4"/>
+
+      <!-- 연결선 (노드보다 먼저) -->
+      <!-- 루트 → 버스 -->
+      <line x1="500" y1="88" x2="500" y2="136" stroke="#7A6A55" stroke-width="1"/>
+      <!-- 버스 (자녀 3개를 가로지름) -->
+      <line x1="152" y1="136" x2="848" y2="136" stroke="#7A6A55" stroke-width="1"/>
+      <!-- 버스 → 각 자녀 -->
+      <line x1="152" y1="136" x2="152" y2="176" stroke="#7A6A55" stroke-width="1"/>
+      <line x1="500" y1="136" x2="500" y2="176" stroke="#7A6A55" stroke-width="1"/>
+      <line x1="848" y1="136" x2="848" y2="176" stroke="#7A6A55" stroke-width="1"/>
+      <!-- 후견 → 판례 리프 -->
+      <line x1="848" y1="224" x2="848" y2="312" stroke="#7A6A55" stroke-width="1"/>
+
+      <!-- 루트: 미성년 자녀 법적 보호 -->
+      <rect x="400" y="40" width="200" height="48" rx="6" fill="#FAF8F4"/>
+      <rect x="400" y="40" width="200" height="48" rx="6" fill="#FFF9F5" stroke="#2C2416" stroke-width="1"/>
+      <text x="500" y="69" fill="#2C2416" font-size="12" font-weight="600" font-family="'Pretendard','Malgun Gothic','맑은 고딕',-apple-system,'Segoe UI',sans-serif, sans-serif" text-anchor="middle">미성년 자녀 법적 보호</text>
+
+      <!-- 자녀 1: 법률행위 보호 -->
+      <rect x="64" y="176" width="176" height="48" rx="6" fill="#FAF8F4"/>
+      <rect x="64" y="176" width="176" height="48" rx="6" fill="#FFF9F5" stroke="#2C2416" stroke-width="1"/>
+      <text x="152" y="196" fill="#2C2416" font-size="12" font-weight="600" font-family="'Pretendard','Malgun Gothic','맑은 고딕',-apple-system,'Segoe UI',sans-serif, sans-serif" text-anchor="middle">법률행위 보호</text>
+      <text x="152" y="212" fill="#7A6A55" font-size="11" font-family="'D2Coding','Consolas','Courier New',monospace, monospace" text-anchor="middle">민법 §914 · 동의없으면 취소</text>
+
+      <!-- 자녀 2: 친권 -->
+      <rect x="412" y="176" width="176" height="48" rx="6" fill="#FAF8F4"/>
+      <rect x="412" y="176" width="176" height="48" rx="6" fill="#FFF9F5" stroke="#2C2416" stroke-width="1"/>
+      <text x="500" y="196" fill="#2C2416" font-size="12" font-weight="600" font-family="'Pretendard','Malgun Gothic','맑은 고딕',-apple-system,'Segoe UI',sans-serif, sans-serif" text-anchor="middle">친권</text>
+      <text x="500" y="212" fill="#7A6A55" font-size="11" font-family="'D2Coding','Consolas','Courier New',monospace, monospace" text-anchor="middle">민법 §912 · 부부 공동행사</text>
+
+      <!-- 자녀 3: 후견 -->
+      <rect x="760" y="176" width="176" height="48" rx="6" fill="#FAF8F4"/>
+      <rect x="760" y="176" width="176" height="48" rx="6" fill="#FFF9F5" stroke="#2C2416" stroke-width="1"/>
+      <text x="848" y="196" fill="#2C2416" font-size="12" font-weight="600" font-family="'Pretendard','Malgun Gothic','맑은 고딕',-apple-system,'Segoe UI',sans-serif, sans-serif" text-anchor="middle">후견</text>
+      <text x="848" y="212" fill="#7A6A55" font-size="11" font-family="'D2Coding','Consolas','Courier New',monospace, monospace" text-anchor="middle">민법 §924 · 친권상실→후견인</text>
+
+      <!-- 리프 (focal): 판례 근거 -->
+      <rect x="728" y="312" width="240" height="56" rx="6" fill="#FAF8F4"/>
+      <rect x="728" y="312" width="240" height="56" rx="6" fill="#C4704A1A" stroke="#C4704A" stroke-width="1.2"/>
+      <text x="848" y="336" fill="#2C2416" font-size="12" font-weight="600" font-family="'Pretendard','Malgun Gothic','맑은 고딕',-apple-system,'Segoe UI',sans-serif, sans-serif" text-anchor="middle">대법원 2019므10664</text>
+      <text x="848" y="352" fill="#7A6A55" font-size="11" font-family="'D2Coding','Consolas','Courier New',monospace, monospace" text-anchor="middle">미성년자 후견인 선임</text>
+    </svg>
+
+    <p class="colophon">조우성 변호사 · 가족상속법 컬럼 · 원문: 우리 아이, 법으로는 어떻게 보호받을까</p>
+  </div>
+</body>
+</html>
