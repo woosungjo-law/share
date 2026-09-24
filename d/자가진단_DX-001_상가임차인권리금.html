@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>나, 이 가게 나갈 때 권리금 받을 수 있을까?</title>
+<style>
+  :root{
+    --navy:#12233f;
+    --navy-deep:#0a1626;
+    --charcoal:#2b2f36;
+    --accent:#c9a24b;
+    --bg:#f4f5f7;
+    --card:#ffffff;
+    --text:#1e232b;
+    --muted:#6b7280;
+    --line:#e5e7eb;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:16px;
+    line-height:1.55;
+  }
+  .app{
+    width:100%;
+    max-width:480px;
+    background:var(--card);
+    border-radius:18px;
+    box-shadow:0 8px 30px rgba(18,35,63,0.12);
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    min-height:560px;
+  }
+  .topbar{
+    background:var(--navy);
+    color:#fff;
+    padding:14px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-size:13px;
+  }
+  .topbar .brand{font-weight:700;letter-spacing:0.02em;}
+  .progress-wrap{
+    height:4px;
+    background:var(--line);
+    width:100%;
+  }
+  .progress-bar{
+    height:100%;
+    background:var(--accent);
+    width:0%;
+    transition:width .25s ease;
+  }
+  .screen{
+    flex:1;
+    padding:28px 22px 22px;
+    display:none;
+    flex-direction:column;
+    animation:fadeIn .25s ease;
+  }
+  .screen.active{display:flex;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+
+  /* Intro */
+  .intro-icon{font-size:40px;margin-bottom:14px;}
+  .intro h1{font-size:22px;line-height:1.4;color:var(--navy-deep);margin-bottom:10px;}
+  .intro p{color:var(--muted);font-size:14px;margin-bottom:22px;}
+  .intro .meta{font-size:12px;color:var(--muted);margin-bottom:24px;display:flex;gap:10px;}
+  .intro .meta span{background:var(--bg);padding:4px 10px;border-radius:20px;}
+
+  /* Question */
+  .q-count{font-size:12px;color:var(--accent);font-weight:700;margin-bottom:8px;letter-spacing:.03em;}
+  .q-text{font-size:19px;font-weight:700;color:var(--navy-deep);margin-bottom:22px;line-height:1.45;}
+  .options{display:flex;flex-direction:column;gap:10px;}
+  .opt-btn{
+    text-align:left;
+    background:var(--bg);
+    border:1.5px solid var(--line);
+    border-radius:12px;
+    padding:14px 16px;
+    font-size:14.5px;
+    color:var(--text);
+    cursor:pointer;
+    transition:all .15s ease;
+    min-height:44px;
+  }
+  .opt-btn:hover, .opt-btn:active{
+    border-color:var(--accent);
+    background:#fbf6ea;
+  }
+
+  /* Outcome */
+  .outcome-tag{
+    display:inline-block;
+    font-size:11px;
+    font-weight:700;
+    color:var(--navy);
+    background:#eef1f6;
+    padding:4px 10px;
+    border-radius:20px;
+    margin-bottom:12px;
+    width:fit-content;
+  }
+  .outcome h2{font-size:18px;color:var(--navy-deep);margin-bottom:14px;line-height:1.5;}
+  .block{margin-bottom:16px;}
+  .block-label{font-size:12px;font-weight:700;color:var(--accent);margin-bottom:5px;letter-spacing:.02em;}
+  .block-body{font-size:13.5px;color:var(--text);}
+  .disclaimer{
+    font-size:12px;
+    color:var(--muted);
+    background:var(--bg);
+    border-radius:10px;
+    padding:12px 14px;
+    margin-top:4px;
+    margin-bottom:16px;
+  }
+  .cta-box{
+    background:var(--navy);
+    color:#fff;
+    border-radius:12px;
+    padding:16px 18px;
+    font-size:13.5px;
+    margin-top:auto;
+  }
+  .cta-box strong{color:var(--accent);}
+  .cta-box a{color:#fff;text-decoration:underline;}
+  .restart-btn{
+    margin-top:14px;
+    background:transparent;
+    border:1.5px solid var(--line);
+    color:var(--muted);
+    border-radius:10px;
+    padding:12px;
+    font-size:13px;
+    cursor:pointer;
+    min-height:44px;
+  }
+  .footer-mark{
+    text-align:center;
+    font-size:11px;
+    color:var(--muted);
+    padding:10px 0 16px;
+  }
+</style>
+</head>
+<body>
+
+<div class="app">
+  <div class="topbar">
+    <span class="brand">법률 자가진단</span>
+    <span id="progress-label"></span>
+  </div>
+  <div class="progress-wrap"><div class="progress-bar" id="progress-bar"></div></div>
+
+  <div class="screen active" id="screen-intro">
+    <div class="intro">
+      <div class="intro-icon">🏪</div>
+      <h1>나, 이 가게 나갈 때<br>권리금 받을 수 있을까?</h1>
+      <p>상가건물 임대차보호법 기준으로, 지금 내 상황에서 권리금 회수기회가 보호되는지 1분 안에 확인해보세요.</p>
+      <div class="meta"><span>⏱ 약 1분</span><span>객관식 질문</span></div>
+      <button class="opt-btn" style="text-align:center;font-weight:700;background:var(--navy);color:#fff;border:none;" onclick="goTo('Q1')">진단 시작하기</button>
+    </div>
+  </div>
+
+  <!-- 질문/결과 화면은 JS가 동적으로 렌더링 -->
+  <div class="screen" id="screen-dynamic"></div>
+
+  <div class="footer-mark">제공 : 조우성 변호사 법률사무소</div>
+</div>
+
+<script>
+const CTA_LAWYER = "조우성 변호사";
+const CTA_EMAIL = "law@mustknow.co.kr";
+
+const NODES = {
+  Q1: {
+    type: "question", count: "1/6",
+    text: "지금 운영 중인 가게가 있는 건물은 어떤 곳인가요?",
+    options: [
+      { label: "일반 상가 건물", next: "Q2" },
+      { label: "대형마트·백화점·아울렛 등 대규모점포의 일부", next: "B" },
+      { label: "전통시장·상점가 안의 점포", next: "Q2" },
+      { label: "국가·지자체 소유 건물(국유재산·공유재산)", next: "B" }
+    ]
+  },
+  Q2: {
+    type: "question", count: "2/6",
+    text: "임대차 계약이 끝나는 시점(또는 예상 시점)이 언제인가요?",
+    options: [
+      { label: "6개월 이내 / 이미 종료 통보를 받았다", next: "Q3" },
+      { label: "6개월~1년 사이", next: "C" },
+      { label: "1년 이상 남았다", next: "C" }
+    ]
+  },
+  Q3: {
+    type: "question", count: "3/6",
+    text: "다음 중 나에게 해당하는 것이 있나요? (가장 가까운 것 하나만 선택)",
+    options: [
+      { label: "3개월 치 월세를 연체한 적이 있다", next: "D" },
+      { label: "건물주 동의 없이 가게를 다른 사람에게 전대(재임대)했다", next: "D" },
+      { label: "건물이 노후해 철거·재건축이 예정돼 있고, 계약 당시 그 계획을 고지받았다", next: "D" },
+      { label: "1년 6개월 넘게 가게 문을 닫고 영업을 안 했다", next: "D" },
+      { label: "위 중 해당하는 것이 없다", next: "Q4" }
+    ]
+  },
+  Q4: {
+    type: "question", count: "4/6",
+    text: "가게를 인수할 새로운 임차인(신규임차인)을 직접 구해서 건물주에게 소개했거나, 소개하려는 중인가요?",
+    options: [
+      { label: "이미 구해서 건물주에게 소개했다", next: "Q5" },
+      { label: "아직 구하지 못했다", next: "E" },
+      { label: "건물주가 이미 자기가 원하는 새 세입자를 정하고, 그 사람과 권리금 계약·지급까지 끝냈다", next: "D" }
+    ]
+  },
+  Q5: {
+    type: "question", count: "5/6",
+    text: "건물주가 보인 반응 중 가장 가까운 것은?",
+    options: [
+      { label: "신규임차인에게 직접 권리금을 요구하거나 받으려 한다", next: "A" },
+      { label: "신규임차인에게 주변 시세보다 현저히 높은 월세·보증금을 요구한다", next: "A" },
+      { label: "특별한 이유 설명 없이 신규임차인과 계약 자체를 거절한다", next: "Q6" },
+      { label: "아직 특별한 반응이 없다 / 협의 중이다", next: "F" }
+    ]
+  },
+  Q6: {
+    type: "question", count: "6/6",
+    text: "건물주가 계약을 거절하며 내세운 이유가 다음 중 있나요?",
+    options: [
+      { label: "신규임차인이 보증금·월세를 낼 형편이 안 돼 보인다(구체적 근거 제시)", next: "D" },
+      { label: "신규임차인이 법을 어길 우려가 있다는 등 합리적 이유를 댔다", next: "D" },
+      { label: "별다른 이유가 없거나 납득하기 어려운 이유다", next: "A" }
+    ]
+  },
+
+  A: {
+    type: "outcome", tag: "방해행위 가능성",
+    title: "건물주가 신규임차인과의 권리금 거래를 방해하고 있을 가능성이 있는 상황입니다.",
+    basis: "상가건물 임대차보호법 제10조의4 제1항은 임대차 종료 전 6개월부터 종료 시까지, 건물주가 정당한 사유 없이 신규임차인에게 권리금을 요구·수수하거나, 현저히 고액의 차임·보증금을 요구하거나, 정당한 사유 없이 계약체결을 거절하는 행위를 금지합니다.",
+    caution: "건물주가 이 의무를 위반해 손해가 발생하면 손해배상을 청구할 수 있습니다(제10조의4 제3항). 다만 배상액은 '신규임차인이 지급하기로 한 권리금'과 '임대차 종료 당시 권리금' 중 낮은 금액을 넘지 못합니다. 이 청구권은 임대차 종료일부터 <strong>3년 이내</strong>에 행사하지 않으면 시효로 소멸합니다(제10조의4 제4항). 건물주와의 대화·문자·계약시도 정황을 지금부터 기록·증거화해 두는 것이 중요합니다."
+  },
+  B: {
+    type: "outcome", tag: "법상 적용 제외 가능성",
+    title: "안타깝게도 지금 계신 곳은 상가건물 임대차보호법의 권리금 보호 규정이 적용되지 않는 유형일 가능성이 있습니다.",
+    basis: "제10조의5는 대규모점포·준대규모점포의 일부(전통시장 제외)이거나 국유재산·공유재산인 경우 권리금 회수기회 보호 규정(제10조의4)을 적용하지 않는다고 정합니다.",
+    caution: "법상 보호는 받기 어렵지만, 임대차 계약서에 권리금 관련 별도 특약이 있는지, 임대인과 개별적으로 체결한 약정이 있는지는 별개로 확인이 필요합니다. 계약서를 다시 살펴보는 것을 권합니다."
+  },
+  C: {
+    type: "outcome", tag: "아직 이른 시점",
+    title: "아직 권리금 보호 규정이 적용되는 기간(계약 종료 전 6개월)은 아니지만, 미리 준비해두면 유리합니다.",
+    basis: "제10조의4의 보호 의무는 '임대차기간이 끝나기 6개월 전부터 임대차 종료 시까지' 적용됩니다.",
+    caution: "지금부터 신규임차인 후보를 물색해두고, 권리금 계약 조건(금액, 시설·거래처 목록 등)을 미리 정리해두면 6개월 시점에 곧바로 건물주와의 협의를 시작할 수 있습니다. 계약갱신요구권은 전체 임대기간 10년 한도가 있지만, 권리금 회수기회 보호는 이 10년 제한과 별개로 작동한다는 점도 알아두면 좋습니다."
+  },
+  D: {
+    type: "outcome", tag: "보호 예외 사유 해당 가능성",
+    title: "말씀하신 사정 중 하나가 상가건물 임대차보호법상 권리금 보호의 예외 사유에 해당할 가능성이 있습니다.",
+    basis: "제10조의4 제1항 단서는 제10조 제1항 각호의 갱신거절 정당사유(3기 차임 연체, 무단전대, 철거·재건축 등)가 있으면 권리금 보호 의무를 적용하지 않는다고 정합니다. 또한 건물주가 이미 정한 신규임차인과 권리금 계약을 체결하고 지급까지 마쳤다면(제10조의4 제2항 제4호) 별도의 정당한 사유로 인정됩니다.",
+    caution: "다만 해당 사유가 실제로 법이 정한 요건을 엄격히 충족하는지는 따져볼 부분이 많습니다(예: 연체 사실의 정확한 산정, 철거·재건축 계획이 계약 당시 구체적으로 고지됐는지 등). 예외 사유에 해당한다고 단정하기 전에 사실관계를 다시 점검하는 것이 좋습니다."
+  },
+  E: {
+    type: "outcome", tag: "먼저 해야 할 일",
+    title: "권리금 보호를 받으려면 먼저 신규임차인을 직접 구해 건물주에게 소개하는 절차가 필요합니다.",
+    basis: "제10조의4가 보호하는 것은 '임차인이 주선한 신규임차인이 되려는 자'로부터 권리금을 받는 기회입니다. 건물주가 알아서 새 세입자를 구해 권리금을 챙겨줄 의무는 없습니다 — 임차인이 직접 신규임차인을 찾아 건물주에게 소개하는 것이 출발점입니다.",
+    caution: "계약 종료 6개월 전부터 신규임차인을 물색하는 것이 시간상 유리합니다. 신규임차인을 구하면, 그 사람의 보증금·월세 지급 능력에 관해 알고 있는 정보를 건물주에게 제공할 의무도 있습니다(제10조의4 제5항)."
+  },
+  F: {
+    type: "outcome", tag: "협의 진행 중",
+    title: "아직 건물주의 방해행위로 단정하기는 이른 단계입니다.",
+    basis: "제10조의4는 건물주가 실제로 권리금 수수를 방해하는 행위(요구·수수, 고액 차임 요구, 부당한 계약체결 거절 등)를 했을 때 적용됩니다.",
+    caution: "지금 시점부터 건물주와의 협의 과정(연락 내용, 제시된 조건 등)을 문자·이메일 등으로 기록해두면, 이후 분쟁이 생겼을 때 중요한 증거가 됩니다."
+  }
+};
+
+const dynamicScreen = document.getElementById("screen-dynamic");
+const introScreen = document.getElementById("screen-intro");
+const progressBar = document.getElementById("progress-bar");
+const progressLabel = document.getElementById("progress-label");
+
+function goTo(nodeId){
+  const node = NODES[nodeId];
+  introScreen.classList.remove("active");
+  dynamicScreen.classList.add("active");
+  dynamicScreen.innerHTML = "";
+
+  if(node.type === "question"){
+    const parts = node.count.split("/");
+    const pct = Math.round((parseInt(parts[0],10)/parseInt(parts[1],10))*100);
+    progressBar.style.width = pct + "%";
+    progressLabel.textContent = node.count;
+
+    const wrap = document.createElement("div");
+    wrap.innerHTML = `
+      <div class="q-count">질문 ${node.count}</div>
+      <div class="q-text">${node.text}</div>
+      <div class="options" id="opts"></div>
+    `;
+    dynamicScreen.appendChild(wrap);
+    const optsWrap = wrap.querySelector("#opts");
+    node.options.forEach(opt => {
+      const btn = document.createElement("button");
+      btn.className = "opt-btn";
+      btn.textContent = opt.label;
+      btn.onclick = () => goTo(opt.next);
+      optsWrap.appendChild(btn);
+    });
+  } else {
+    progressBar.style.width = "100%";
+    progressLabel.textContent = "진단 완료";
+
+    const wrap = document.createElement("div");
+    wrap.className = "outcome";
+    wrap.innerHTML = `
+      <div class="outcome-tag">${node.tag}</div>
+      <h2>${node.title}</h2>
+      <div class="block">
+        <div class="block-label">법적 근거</div>
+        <div class="block-body">${node.basis}</div>
+      </div>
+      <div class="block">
+        <div class="block-label">주의할 점</div>
+        <div class="block-body">${node.caution}</div>
+      </div>
+      <div class="disclaimer">이 진단은 일반적인 법률 정보 안내이며, 실제 결론은 구체적인 사실관계와 증거에 따라 달라질 수 있습니다.</div>
+      <div class="cta-box">
+        더 구체적인 사항이 궁금하다면<br>
+        <strong>${CTA_LAWYER}</strong>에게 문의하세요<br>
+        <a href="mailto:${CTA_EMAIL}">${CTA_EMAIL}</a>
+      </div>
+      <button class="restart-btn" onclick="restart()">처음부터 다시 진단하기</button>
+    `;
+    dynamicScreen.appendChild(wrap);
+  }
+}
+
+function restart(){
+  dynamicScreen.classList.remove("active");
+  dynamicScreen.innerHTML = "";
+  introScreen.classList.add("active");
+  progressBar.style.width = "0%";
+  progressLabel.textContent = "";
+}
+</script>
+
+</body>
+</html>
