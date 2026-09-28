@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>패치 비용을 아낀 결정이 아니라, 유출 책임을 키우는 선택이다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 보안 패치·유출 책임</div>
+    <h1>패치 비용을 아낀 결정이 아니라, 유출 책임을 키우는 선택이다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 패치를 미루는 동안 아낀 것은 <b>재시작 비용</b>이지만, 그 사이에 쌓인 것은 <b>제재와 소송이 한꺼번에 열리는 책임</b>입니다. 알려진 취약점을 <b>여섯 달</b> 방치한 공백은, 기본 체계를 갖췄다는 말로 설명되지 않습니다. 그래서 패치는 기술팀의 업무가 아니라 <b>대표가 보고받는 리스크</b>입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      댐의 균열을 떠올려 보십시오. 물을 가둬 두는 동안에는 균열을 막는 공사가 아깝게 느껴집니다. 수문을 닫아야 하고, 그 시간의 손실이 눈에 보이기 때문입니다. 그런데 균열을 여섯 달 방치한 뒤 댐이 터지면, 그때의 비용은 <b>공사비가 아니라 수해 전체</b>가 됩니다. 보안 패치도 같습니다. <b>적용의 중단 비용은 눈에 보이고, 미적용의 비용은 사고 뒤에야 드러납니다.</b> 미루는 동안 책임이 쌓이는 구조이므로, 패치는 비용이 아니라 <b>의무의 이행</b>으로 봐야 합니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>
+      사건의 모양부터 보십시오. 쇼핑몰 서버는 <b>여섯 달째 무중단</b>으로 돌고 있었습니다. 운영팀은 패치를 적용하면 재시작이 필요하고 성수기 트래픽에 지장이 생길 수 있으니 한 번만 더 미루자는 판단을 반복했습니다. 그러다 외부 공격자가 적용되지 않은 취약점을 파고들어 고객 데이터베이스에 침입했고, <b>이름과 이메일, 구매 기록</b>이 빠져나갔습니다. 보호위원회는 패치 미적용을 안전성 확보조치 의무 위반으로 보고 제재 절차에 들어갔고, 고객들의 손해배상 요구도 이어졌습니다. 안정 가동률을 지키려던 결정이 유출의 원인으로 평가받는 자리에 대표가 선 것입니다.
+    </p>
+    <p>
+      경영자의 통념은 보안 패치가 운영팀의 기술 업무라는 것입니다. 법이 보는 구조는 다릅니다. 개인정보처리자는 개인정보가 유출되지 않도록 대통령령으로 정하는 바에 따라 안전성 확보에 필요한 기술적·관리적·물리적 조치를 해야 합니다. <b>개인정보 보호법 제29조</b>의 문구 그대로입니다. 세부적으로 내부관리계획의 수립·시행·점검, 접근 권한 제한과 접근 통제, 암호화와 접속기록 보관, 악성프로그램 대응과 주기적 점검, 물리적 조치가 정해져 있습니다. <b>같은 법 시행령 제30조 제1항</b>의 목록입니다. 기본 체계를 갖췄더라도 알려진 취약점을 장기간 방치한 공백은 이 목록 앞에서 설명하기 어렵습니다.
+    </p>
+    <p>
+      입증 책임의 관점에서 보면, 비용의 계산이 갈립니다. 패치 적용의 중단 비용은 눈에 보이지만 미적용의 비용은 사고 뒤에야 드러납니다. 제재와 소송이 한꺼번에 열리는 구조이므로, 미루는 동안 책임이 쌓인다고 보아야 합니다.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>과실 없음은 회사가 증명하고 중대한 과실은 배상이 커진다</h2>
+    <ul class="points">
+      <li><b>손해배상에서는 입증 책임이 뒤집힙니다</b> — 정보주체는 이 법을 위반한 행위로 손해를 입으면 손해배상을 청구할 수 있고, 개인정보처리자는 고의 또는 과실이 없음을 입증하지 못하면 책임을 면할 수 없습니다. <b>개인정보 보호법 제39조 제1항</b>의 문구 그대로입니다. 외부 공격이 있었다는 말만으로는 과실 없음이 증명되지 않습니다. 무엇을 했는지를 기록으로 보여 주어야 합니다.</li>
+      <li><b>중대한 과실은 배상이 커집니다</b> — 고의 또는 중대한 과실로 유출이 일어나 정보주체에게 손해가 발생한 때에는 법원이 손해액의 <b>5배</b>를 넘지 않는 범위에서 배상액을 정할 수 있습니다. <b>같은 법 제39조 제3항</b>의 문구 그대로입니다. 여섯 달 방치가 중대한 과실로 평가될 여지가 여기서 문제됩니다.</li>
+      <li><b>행정제재와 민사책임은 별개로 굴러갑니다</b> — 제재에서는 의무 위반 여부가, 소송에서는 손해와 위반의 다툼이 각자 진행됩니다.</li>
+      <li><b>운영팀의 판단이었다고 대표의 책임이 사라지지 않습니다</b> — 패치 관리에 법무·컴플라이언스가 관여하는 절차가 있었는지가 경영진의 주의를 가릅니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> "공격당했다"는 설명이 아니라 "무엇을 했는지"의 기록이 회사를 지킵니다. 예외 결정은 서면으로 남기면 근거가 남고, 구두로 하면 공백만 남습니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <p style="margin-bottom:16px;">패치 적용 여부를 기술 보고가 아니라 <b>리스크 보고</b>로 받는 구조부터 만드십시오.</p>
+    <ol>
+      <li><b>① 보고받기</b> — 미적용 패치 목록과 기간, 결정권자를 분기마다 한 장으로 보고받으십시오.</li>
+      <li><b>② 기준 두기</b> — 미적용 기간의 상한을 정하고 넘기면 적용을 원칙으로, 연기는 법무 협의 뒤 서면으로 결정하십시오.</li>
+      <li><b>③ 라인 정하기</b> — 패치 공지부터 적용까지의 책임 라인과 예외 승인 절차를 문서로 고정하십시오.</li>
+      <li><b>④ 기록 남기기</b> — 적용 이력과 예외 결정 과정을 보관해 제재와 소송에 순서대로 낼 재료를 만드십시오.</li>
+      <li><b>⑤ 먼저 움직이기</b> — 유출 확인 뒤 통지와 피해 구제를 지체 없이 돌리고 고객 대응 기록을 남기십시오.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
