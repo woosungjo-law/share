@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ISMS 인증, 벽에 걸어 두는 인증서가 아니라 이행 기록으로 유지되는 체계다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · ISMS 인증과 안전조치</div>
+    <h1>ISMS 인증, 벽에 걸어 두는 인증서가 아니라 이행 기록으로 유지되는 체계다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 문제는 인증을 받았느냐가 아니라, 인증이 요구한 통제를 실제로 돌리고 있었느냐입니다. 인증은 면책이 아니라 관리의 시작입니다. 인증 대상 판단과 안전조치 이행 기록은 서로 다른 층이고, 하나가 다른 하나를 대신하지 못합니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      운전면허증을 가지고 있다는 사실과, 그 사람이 실제로 안전하게 운전한다는 사실은 다릅니다. 사고가 났을 때 면허증이 책임을 면제해 주지 않습니다. <b>ISMS 인증</b>도 같습니다. 인증서는 출발점이고, 그 뒤의 이행 기록이 회사를 지키는 방어선입니다. 인증서와 실제 운영이 벌어져 있으면 인증은 오히려 불리한 자료가 됩니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>
+      <b>정보통신망법 제47조</b>는 정보보호 관리체계, 이른바 ISMS 인증을 정합니다. 전기통신사업자나 집적정보통신시설 사업자, 그리고 일정 요건에 해당하는 정보통신서비스 제공자는 인증을 받아야 하고, 인증의 유효기간은 <b>3년</b>입니다. 인증을 받은 뒤에도 사후관리와 갱신이 이어집니다. 인증은 한 번 받고 끝나는 자격증이 아니라 주기적으로 심사받는 체계입니다.
+    </p>
+    <p>
+      <b>개인정보보호법 제29조</b>는 이와 별개로 <b>모든 개인정보처리자</b>에게 안전조치 의무를 지웁니다. 내부 관리계획 수립, 접속기록 보관 등 안전성 확보에 필요한 기술적·관리적·물리적 조치를 하여야 한다는 것이 조문의 내용입니다. 중요한 것은 이 의무가 인증 대상 여부와 무관하다는 점입니다. 매출이나 이용자 수가 인증 기준에 못 미치는 회사도, 개인정보를 처리한다면 제29조의 안전조치 의무에서는 자유롭지 않습니다.
+    </p>
+    <p>
+      인증 대상은 서비스의 종류와 규모에 따라 나뉩니다. 주요정보통신서비스 제공자, 집적정보통신시설 사업자, 일정 매출·이용자 기준에 해당하는 사업자가 대상이 됩니다. 대상 여부를 감으로 판단하지 말고 서비스 유형과 규모를 기준으로 확인해야 합니다.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>인증은 면책이 아니라 관리의 시작이다</h2>
+    <ul class="points">
+      <li><b>면책이 아니다</b> — 인증은 관리체계가 기준에 적합하다는 평가일 뿐, 사고 뒤의 책임을 자동으로 면제하지 않습니다. 사고가 나면 결국 중요한 것은 그 체계가 실제로 작동했는지, 요구된 조치를 이행하고 있었는지입니다.</li>
+      <li><b>문서와 로그</b> — 안전조치의 이행은 문서와 로그로 남아야 합니다. 어떤 정보에 누가 접근할 수 있는지, 권한을 누가 승인하고 언제 회수했는지, 접속기록을 어떻게 보관하는지가 기록으로 남아 있어야 합니다.</li>
+      <li><b>주장과 증거</b> — 사고가 난 뒤에 "원래 하고 있었다"고 말하는 것과, 사고 전에 기록이 남아 있는 것은 완전히 다릅니다. 전자는 주장이고 후자는 증거입니다.</li>
+      <li><b>증명책임의 무게</b> — 기록이 없다는 사실은 사고 때 "알면서도 하지 않았다"는 평가로 이어질 수 있습니다. 그래서 이행 내역은 사고가 난 뒤에 만드는 것이 아니라 평상시에 갱신해 두어야 합니다.</li>
+      <li><b>기록의 유리함</b> — 인증 대상이 아니어서 형식적 심사를 받지 않는 회사도, 제29조 이행 기록을 남겨 두면 훨씬 유리한 자리에 섭니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 두 층을 함께 보면 법무팀의 역할이 분명해집니다. 인증 대상인지 판단하는 것과, 대상이든 아니든 안전조치를 실제로 이행하고 기록하는 것은 다른 과제입니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">인증 점검과 이행 기록을 <b>한 표에서 관리</b>하십시오. 점검표에는 항상 두 질문을 함께 둡니다 — "우리는 인증 대상인가"와 "대상이든 아니든 안전조치를 기록하고 있는가".</p>
+    <ol>
+      <li><b>① 대상 판단</b> — 회사가 제47조의 ISMS 인증 대상에 드는지 확인합니다.</li>
+      <li><b>② 갱신 관리</b> — 인증 유효기간(3년)과 사후관리·갱신 일정을 고정합니다.</li>
+      <li><b>③ 이행 점검</b> — 제29조 안전조치 항목(관리계획·접속기록·권한)을 항목별로 확인합니다.</li>
+      <li><b>④ 기록 보전</b> — 접근·권한·접속 기록과 이행 내역을 사고 전에 문서로 남깁니다.</li>
+      <li><b>⑤ 면책 인식</b> — 인증이 자동 면책이 아님을 전제로 실제 운영을 점검합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
