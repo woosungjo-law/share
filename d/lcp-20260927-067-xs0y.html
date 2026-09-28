@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>빈 조항은 상대방의 말이 되는 자리다 — 계약서에서 법이 대신 채우는 조항들</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 계약서 조항 설계</div>
+    <h1>빈 조항은 상대방의 말이 되는 자리다 — 계약서에서 법이 대신 채우는 조항들</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 계약서의 빈칸은 공백으로 남지 않습니다. 임의규정과 다른 의사를 표시하면 그 의사에 따르고, 그러한 규정과 다른 관습이 있고 당사자의 의사가 명확하지 아니하면 관습에 따릅니다. 즉 <b>계약서는 "법보다 우선하는 나의 의사"를 적어 두는 문서</b>이고, 비워 둔 자리는 법의 기본값이 채웁니다. 문제는 그 기본값이 대개 우리에게 유리하게 설정돼 있지 않다는 점입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>자동 완성 기능이 켜진 서식 작성기</b>를 떠올려 보십시오. 칸을 비워 두면 시스템이 알아서 기본값을 채워 넣습니다. 그래서 비워 둔 칸은 "빈칸"이 아니라 "이미 채워진 칸"입니다. 그리고 기본값은 대개 나에게 유리하게 설정돼 있지 않습니다. 어떤 칸에는 입력 상한이 걸려 있어 아무리 큰 숫자를 넣어도 잘립니다. 그리고 서면으로 저장하지 않은 합의는 문서에 남지 않습니다. <b>빈칸을 누구의 말로 채울지는 작성하는 순간에만 고를 수 있습니다.</b>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>
+      첫째, 쓰지 않으면 법의 기본값이 적용됩니다. 법률행위의 당사자가 선량한 풍속 기타 사회질서에 관계없는 규정(임의규정)과 다른 의사를 표시하면 그 의사에 따르고(민법 제105조), 법령 중 그러한 규정과 다른 관습이 있고 당사자의 의사가 명확하지 아니하면 관습에 따릅니다(민법 제106조).
+    </p>
+    <p>
+      둘째, 지연이율을 비워 두면 상사법정이율이 들어옵니다. 상행위로 인한 채무의 법정이율은 <b>연 6분, 즉 연 6퍼센트</b>입니다(상법 제54조). 거래 실정에 맞는 이율을 약정하지 않으면 회수 지연의 비용을 사실상 회사가 떠안는 구조가 됩니다.
+    </p>
+    <p>
+      셋째, 아무 조항도 없을 때 최후에 남는 것은 채무불이행 일반 법리입니다. 채무자가 채무의 내용에 좇은 이행을 하지 아니하면 채권자는 손해배상을 청구할 수 있고, 고의·과실 없이 이행할 수 없게 된 때에는 그러하지 아니합니다(민법 제390조). 이 청구권은 넓지만, <b>손해액과 인과관계를 채권자가 직접 증명해야 한다는 부담</b>을 안고 있습니다. 그래서 실무는 이 부담을 조항으로 미리 덜어 두는 쪽으로 설계합니다.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>지연이율의 상한, 위약금의 성격, 해지의 최고, 관할의 서면</h2>
+    <ul class="points">
+      <li><b>지연이율에는 천장이 있다</b> — 금전대차의 계약상 최고이자율은 연 25퍼센트를 초과하지 아니하는 범위에서 대통령령으로 정하고(이자제한법 제2조 제1항), 현행 대통령령의 최고이자율은 연 20퍼센트입니다. 최고이자율을 초과하는 부분은 무효이고(제3항), 초과 이자를 임의로 지급한 경우 그 초과분은 원본에 충당되며 원본이 소멸하면 반환을 청구할 수 있습니다(제4항). 지연이율을 높게 적어 두는 것이 곧 강한 계약은 아닙니다.</li>
+      <li><b>손해배상 조항은 성격에 따라 통제가 다르다</b> — 당사자는 채무불이행에 관한 손해배상액을 예정할 수 있고(민법 제398조 제1항), 예정액이 부당히 과다하면 법원이 적당히 감액할 수 있습니다(제2항). 위약금의 약정은 손해배상액의 예정으로 추정됩니다(제4항).</li>
+      <li><b>예정인지 위약벌인지는 개별 판단</b> — 위약금 약정의 성격은 계약서 등 처분문서의 내용과 체결 경위, 약정의 주된 목적을 종합해 개별적으로 판단하는 의사해석의 문제이고, 이중배상이 되는 등 특별한 사정이 있으면 위약벌로 봅니다. 위약벌에는 민법 제398조 제2항을 유추적용해 감액할 수 없습니다(대법원 2018다248855 전원합의체). 다만 의무 강제로 얻는 채권자 이익에 비해 과도하게 무거운 위약벌은 공서양속 위반으로 일부·전부 무효가 될 수 있습니다. 회사가 원하는 것이 "과하면 줄여 달라"인지 "이행을 확보하는 제재"인지를 먼저 정해야 조항 문언이 정해집니다.</li>
+      <li><b>해지 조항의 실제 효력은 최고 요건에서 갈린다</b> — 해지·해제는 상대방에 대한 의사표시로 하고 그 의사표시는 철회하지 못하며(민법 제543조), 채무불이행을 이유로 해제하려면 상당한 기간을 정하여 이행을 최고한 뒤 그 기간 내에 이행하지 않을 때에야 해제할 수 있습니다. 다만 채무자가 미리 이행하지 아니할 의사를 표시한 경우에는 최고를 요하지 않습니다(민법 제544조).</li>
+      <li><b>그래서 즉시해지 사유를 따로 담아 둔다</b> — "지급정지·부도·이행거절의 표시가 있으면 최고 없이 즉시 해지한다"는 사유를 조항에 담아 두어야 위기에 즉시 대응할 수 있습니다.</li>
+      <li><b>관할 조항은 서면이 아니면 효력이 없다</b> — 당사자는 합의로 제1심 관할법원을 정할 수 있으나, 그 합의는 일정한 법률관계로 말미암은 소에 관하여 서면으로 하여야 합니다(민사소송법 제29조). 구두로 정한 "우리 쪽 법원"은 없는 합의입니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 표준 계약서를 골격으로 삼되 회사 특성 조항을 반드시 더하고, 구두·이메일로 진행된 기존 거래관계는 소급해 문서로 닫으십시오.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">빈칸 목록을 만들고, <b>그 자리를 누가 채우는지</b> 적으십시오.</p>
+    <ol>
+      <li><b>① 임의규정 기준 세우기</b> — 계약서에 써 두면 법의 기본값을 대체한다는 원칙(민법 제105조·제106조)을 조항 검토의 기준으로 삼으십시오.</li>
+      <li><b>② 지연이율</b> — 비워 두면 상사법정이율 연 6퍼센트가 적용되고(상법 제54조), 약정 이율은 연 20퍼센트 상한과 무효·충당 규정(이자제한법 제2조)을 받는다는 점을 함께 적으십시오.</li>
+      <li><b>③ 손해배상</b> — 조항이 손해배상액의 예정인지 위약벌인지 먼저 정하고, 감액 여부와 무효 통제 여부를 문언에 반영하십시오. 위약벌로 둘 경우 공서양속 통제 가능성을 각주로 남기십시오.</li>
+      <li><b>④ 해지</b> — 최고 요건(민법 제544조)과 "최고 없이 즉시 해지" 사유를 구분해 나열하고, 즉시해지 항목을 별도로 표시해 두십시오.</li>
+      <li><b>⑤ 관할</b> — 합의관할은 서면이 아니면 효력이 없다는 점(민사소송법 제29조)을 계약 검토 항목으로 고정하고, 계약서 본문 또는 부속합의서에 담으십시오.</li>
+      <li><b>⑥ 유형별 체크리스트</b> — 정기적으로 쓰는 계약 유형마다 지연이율·해지 사유·손해배상·관할·비밀유지 조항의 유무를 점검하는 체크리스트를 만드십시오.</li>
+      <li><b>⑦ 소급 정리</b> — 구두와 이메일로만 굴러온 기존 거래관계를 소급해 문서로 닫으십시오.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
