@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>거래처 회생 신청, 자동해지 조항을 꺼낼까 — 끊는 결정도 이행 요구도 결국 관리인의 선택권 위에서 이뤄진다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 거래처 도산 리스크</div>
+    <h1>거래처 회생 신청, 자동해지 조항을 꺼낼까 — 끊는 결정도 이행 요구도 결국 관리인의 선택권 위에서 이뤄진다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 거래처가 회생절차를 신청하면 선택지는 "끊는다 / 이어 간다"로 보이지만, 아직 양쪽에 남은 의무가 있는 계약이라면 <b>그 결정의 주도권이 관리인에게 넘어갈 수 있습니다.</b> 자동해지 조항 자체는 유효하지만, 조항은 자동 결론이 아니라 협상의 지렛대입니다. 그래서 대표가 정할 것은 끊느냐 이어 가느냐 그 자체가 아니라 <b>두 시나리오의 비용을 미리 비교하고, 최고 30일이라는 결정의 시점을 통제하는 것</b>입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>버튼은 우리 손에 있지만 배선이 관리인 방에 연결된 비상 정지 스위치</b>를 떠올려 보십시오. "조항이 있으니 끊고 다른 업체로 가자"며 버튼을 눌러도, 아직 양쪽에 남은 의무가 있는 계약(쌍방미이행)이면 실제로 회로를 끊고 살릴지 고르는 권한은 관리인에게 넘어갑니다. 반대로 관리인이 끊기로 선택하면 그 전원은 다시 켜지지 않습니다. 한 번 끊긴 계약은 되살아나지 않습니다. 버튼을 누르기 전에 봐야 할 것은 조항의 문구가 아니라 <b>지금 계약의 배선이 어느 방에 연결돼 있는가</b>, 즉 양쪽에 남은 의무가 무엇인가입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>
+      사건부터 보십시오. 새벽로지스 대표 양시우는 창고 자동화 설비를 유지보수해 온 이음네트웍스가 회생절차를 신청했다는 연락을 받았습니다. 설비는 절반가량 교체가 끝난 상태였고, 남은 구간의 부품 공급과 유지보수가 성능에 직결돼 있었습니다. 계약서에는 "상대방이 회생절차를 신청하면 발주자는 계약을 즉시 해지할 수 있다"는 조항이 있었고, 임원 회의는 "끊고 다른 업체로 간다"와 "교체 반쯤 된 설비를 다른 업체가 이어받을 수 있겠느냐"로 갈렸습니다.
+    </p>
+    <p>
+      먼저, 자동해지 조항 자체는 원칙적으로 유효합니다. 대법원 2005다38263 판결은 이런 도산해지조항을 일률적으로 무효로 보는 것은 계약자유의 원칙을 심각하게 침해하고, 채무자의 도산으로 생길 법적 불안정에 대비하려는 상대방의 보호가치 있는 정당한 이익을 무시하는 것이라고 보았습니다. 부인권의 대상이 되거나 공서양속에 위배되는 경우가 아니면, 회생절차개시 후 회생회사에 영향을 미친다는 사정만으로 무효가 되지 않습니다.
+    </p>
+    <p>
+      그러나 계약이 끝나는 시점과 방식은 조항만으로 정해지지 않습니다. 회생절차개시 당시 채무자와 상대방이 모두 이행을 마치지 않은 쌍방미이행 쌍무계약이면, <b>채무자 회생 및 파산에 관한 법률 제119조 제1항에 따라 관리인이 계약을 해제 또는 해지할지, 이행하고 상대방의 이행을 청구할지를 고릅니다.</b> 같은 판결도 쌍방미이행 쌍무계약에서는 도산해지조항의 효력을 무효로 보거나 적어도 회생절차개시 이후 그 적용이 제한된다고 해석할 여지가 있다고 밝혔습니다. 조항이 우리 편에 서 있어도, 아직 양쪽에 남은 의무가 있는 단계라면 결정의 주도권이 관리인 쪽으로 넘어갈 수 있습니다.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>갈림길은 쌍방미이행 여부 하나다</h2>
+    <ul class="points">
+      <li><b>쌍방미이행 판정</b> — 판례가 말하는 쌍무계약은 쌍방이 상호 대등한 대가관계에서 서로 담보 기능을 하는 채무를 부담하는 계약이고, 대등한 대가관계에 있는 채무의 전부 또는 일부가 미이행이어야 합니다. 출자를 마치고 협조 의무만 남은 합작 형태는 이 틀에 들지 않을 수 있습니다. 설비 교체처럼 우리 회사도 잔금·검수 의무를 남겨 두었다면, 관리인의 선택 여지가 커진다고 보는 편이 안전합니다.</li>
+      <li><b>상대방의 최고 카드</b> — 관리인은 해제·해지 또는 이행 여부를 확답할 것을 최고할 수 있고, <b>최고를 받은 후 30일 이내에 확답하지 않으면 해제권 또는 해지권을 포기한 것으로 봅니다.</b></li>
+      <li><b>종국성</b> — 관리인이 해지를 선택하면 그 효력은 종국적입니다. 대법원 2022다211850 판결은 회생절차폐지결정이 회생계획 인가 전후 어느 쪽이든 소급효가 인정되지 않아 관리인의 해제·해지 효력에 영향을 미치지 않는다고 보았습니다. 한 번 끊긴 계약은 되살아나지 않습니다.</li>
+      <li><b>두 시나리오의 비용</b> — 끊는 선택에는 설비 중단·재계약·일정 지연 비용이 들고, 이어 가는 선택에는 회수 리스크가 따릅니다. 대체 공급 가능성과 재계약 비용을 함께 산출해 비교해 둘 때 결정의 질이 정해집니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 자동해지 조항은 "즉시 정리"의 보증이 아니라 시작점입니다. 지금 계약이 쌍방미이행인지가 결정권의 위치를 정합니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <p style="margin-bottom:16px;">끊기 전에 <b>대안과 비용을 계산하고, 결정의 시점을 통제하는</b> 자리입니다.</p>
+    <ol>
+      <li><b>① 이행 정도 확인</b> — 회생 신청 시점에 양쪽에 남은 의무를 표로 정리해 쌍방미이행 상태인지 판정하고, 대체 공급 가능성과 재계약 비용을 함께 산출하십시오.</li>
+      <li><b>② 끊는 비용 계산</b> — 자동해지로 정리할 때 설비 중단·재계약·일정 지연 비용을 추정하고, 이행을 요구할 때의 회수 리스크와 비교해 결정하십시오.</li>
+      <li><b>③ 종국성 인식</b> — 관리인이 해제·해지를 선택하면 되돌릴 수 없다는 점을 전제로, 해지 통보 전에 대안 업체와의 협의를 끝내 두십시오.</li>
+      <li><b>④ 시한 관리</b> — 상대방의 확답 최고와 30일 기산점을 일정에 넣고, 관리인 측 의사결정 일정을 정기적으로 확인하십시오.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
