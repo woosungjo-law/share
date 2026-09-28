@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>지체상금은 칼이 아니라, 귀책과 비율로 다스리는 예정액이다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 지체상금 산정과 감액</div>
+    <h1>지체상금은 칼이 아니라, 귀책과 비율로 다스리는 예정액이다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> "날짜가 늦으면 계약서 문구대로 곱한다"는 통념은 틀렸습니다. 지체상금 약정은 <b>손해배상액 예정으로 추정</b>되므로 법원이 감액할 수 있고, 발주자 책임으로 늦어진 날은 애초에 계산에서 빠집니다. 즉 지체상금 분쟁은 금액 다툼이 아니라 <b>날짜 다툼</b>입니다. 청구서를 받으면 총액이 아니라 일수부터 가리십시오.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>택시 미터기</b>를 떠올려 보십시오. 요금은 거리에 요율을 곱해 나오지만, 그 전에 <b>면제 구간과 상한</b>이 먼저 적용됩니다. 우회한 구간은 요금에서 빠지고, 요금에는 상한이 걸려 있습니다. 그런데 "내가 그리로 가 달라고 했다"는 주장을 하려면 기록이 있어야 합니다. 구두로 말한 것은 사실 자체가 다툼이 되고, 서면 기록은 계산에서 곧바로 빠집니다. 그리고 우회가 완전히 면책되지 않더라도, 실제 사정을 보고 요금을 깎아 주는 길이 남아 있습니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>
+      실무의 통념은 날짜가 늦으면 기계적으로 곱한다는 것입니다. 법이 보는 구조는 다릅니다. <b>지체상금 약정은 손해배상액 예정으로 추정됩니다.</b> 당사자는 손해배상액을 미리 정할 수 있고, 위약금 약정도 예정으로 추정됩니다. 그리고 예정액이 부당히 과다하면 법원은 적당히 감액할 수 있습니다.
+    </p>
+    <p>
+      공공공사는 국가계약법 시행령 제74조가 적용됩니다. 계약금액에 정해진 율과 지체일수를 곱하고, <b>책임없는 사유의 일수는 빼고, 기성 인수 부분은 공제하며, 상한은 계약금액의 30%</b>입니다. 즉 발주처 책임으로 늦어진 날은 애초에 분모에서 빠집니다.
+    </p>
+    <p>
+      입증 책임의 관점에서 보면, 수급인이 책임없는 사유와 그 일수를 자료로 보여 주어야 합니다. 공사 일지와 회의록, 서면 지시와 공기연장 통보가 그 자료입니다. 여기서 증거 구조가 갈립니다. 구두 지시는 있었다는 사실 자체를 다투게 되고, 서면 지시는 일수 계산으로 직행합니다. 그래서 <b>같은 설계변경이라도 서면이 있으면 제외 일수로, 서면이 없으면 감액 참작 사유로 한 단계 내려앉습니다.</b> 반대 해석의 여지도 함께 봅니다 — 발주처는 수급인의 인력 부족과 공정 만회를 이유로 귀책을 다툴 수 있으므로, 수급인은 공정표 대비 투입 기록까지 묶어 두어야 합니다.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>면책이 안 돼도 감액은 남는다</h2>
+    <ul class="points">
+      <li><b>발주자 책임 지체는 산입 제외</b> — 설계변경과 추가공사, 인허가 지연과 기성금 지급 지연으로 인한 지체는 해당 일수를 빼고 계산합니다.</li>
+      <li><b>면책까지 이르지 못하는 사유도 감액 참작이 된다</b> — 지체 책임을 면할 정도에 이르지 않더라도 제반 사정으로 감액할 수 있다는 것이 대법원 2014다233480의 취지입니다.</li>
+      <li><b>감액의 잣대</b> — 실제 손해와 예정액의 비율, 계약금액 대비 비율, 귀책 정도, 발주자의 실제 손해 유무를 함께 봅니다.</li>
+      <li><b>공공공사 요율의 함정</b> — 일률 요율이 적용되더라도 책임없는 일수 제외와 30% 상한, 기성공제 규정이 함께 작동합니다.</li>
+      <li><b>구두 지시의 위험</b> — 서면이 없으면 발주자 책임을 보여 주기 어렵습니다. 단정할 수는 없으나 판례의 태도에 비추어 볼 때, 기록이 있는 지체와 없는 지체의 결과는 크게 갈립니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 전체 지체일에서 발주자 책임 일수를 빼고, 기성 인수 부분을 공제하고, 상한을 적용해 다시 계산하십시오.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">날짜를 가르고 <b>감액 사유를 묶으십시오.</b></p>
+    <ol>
+      <li><b>① 일수 가르기</b> — 발주자 책임 일수를 빼고 기성 부분을 공제한 뒤 상한을 적용해 다시 계산하십시오.</li>
+      <li><b>② 서면 묶기</b> — 설계변경과 추가 지시, 공기연장 통보를 서면으로 모아 날짜 순으로 정리하십시오.</li>
+      <li><b>③ 비율 보이기</b> — 실손해 대비와 계약 대비 비율, 귀책 정도와 발주자 손해를 한 장에 정리하십시오. 면책이 어렵더라도 감액 참작 사유로 같은 자료를 다시 쓰십시오.</li>
+      <li><b>④ 조항 넣기</b> — 추가공사 서면주의와 공기연장 통보 절차, 지체상금 산정 기준과 상한을 다음 계약서에 명시하십시오.</li>
+      <li><b>⑤ 절차 고정하기</b> — 변경 지시 접수부터 공기연장 통보까지의 기한을 업무 절차에 고정하고, 현장의 구두 합의를 서면 확인으로 전환하는 양식과 미회신 시 최고 절차를 만드십시오.</li>
+      <li><b>⑥ 반대 공격 대비</b> — 발주처가 감액을 다투면 실제 손해의 존재와 규모를 묻는 질문으로 되받아치고, 수급인의 공정 만회 노력을 보여 주는 투입 기록을 함께 내어 감액의 정당성을 보강하십시오.</li>
+      <li><b>⑦ 메모·기록 남기기</b> — 계산표와 감액 사유, 재검토 요건을 구분해 기록하고, 각 통보와 회신의 수발신 기록을 빠짐없이 보관하십시오.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
