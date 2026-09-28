@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>우선주 특약, '계약서에 썼으니 유효하다'가 아니라 정관에 적히고 주주평등 원칙을 통과해야 하는 회사법 설계다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 투자계약 우선주 설계</div>
+    <h1>우선주 특약, '계약서에 썼으니 유효하다'가 아니라 정관에 적히고 주주평등 원칙을 통과해야 하는 회사법 설계다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 우선주에 붙는 권리는 계약서 특약만으로 완성되지 않습니다. 정관에 적혀야 주주가 주장할 근거가 서고, 그 위에서 주주평등 원칙이라는 심사를 통과해야 합니다. 원금 보전형 요구와 절차 통제형 요구는 같은 무게로 다루면 위험한 쪽을 놓칩니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      놀이터 규칙을 생각해 보십시오. 두 사람이 쪽지에 "이 그네는 우리가 먼저 탄다"고 적어 두는 것과, 놀이터 입구 게시판(정관)에 규칙을 붙이는 것은 다릅니다. 쪽지는 둘 사이에만 통하지만, 다른 아이가 게시판 규칙을 근거로 이의를 제기하면 쪽지 한 장으로는 버티기 어렵습니다. <b>우선주 특약</b>도 같습니다. 계약서 조항이 정관이라는 게시판에 옮겨 적혀야 비로소 회사와 다른 주주를 상대로 힘을 갖습니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>
+      우선주는 별도의 이름을 가진 주식이 아니라 상법이 정한 <b>종류주식</b>입니다. <b>상법 제344조 제1항</b>에 따르면 회사는 이익의 배당, 잔여재산의 분배, 주주총회에서의 의결권의 행사, 상환 및 전환 등에 관하여 내용이 다른 종류의 주식을 발행할 수 있고, 같은 조 <b>제2항</b>에 따르면 이 경우 <b>정관으로</b> 각 종류주식의 내용과 수를 정하여야 합니다. 계약서에 특약을 두는 것과 정관에 적는 것은 다른 일이고, 정관이 뒤따르지 않으면 우선주 주주가 주장할 근거가 흔들립니다.
+    </p>
+    <p>
+      잔여재산을 먼저 가져가는 조항에는 정관에 적을 항목이 따로 정해져 있습니다. <b>상법 제344조의2 제2항</b>에 따르면 회사가 잔여재산의 분배에 관하여 내용이 다른 종류주식을 발행하는 경우에는 정관에 잔여재산의 종류, 잔여재산의 가액의 결정방법, 그 밖에 잔여재산분배에 관한 내용을 정하여야 합니다. 회사를 매각했을 때 누가 먼저 얼마를 가져가는지가 이 조항에 걸립니다.
+    </p>
+    <p>
+      투자자가 회사를 상대로 돈을 돌려달라고 청구하는 구조도 정관 사항입니다. <b>상법 제345조 제3항</b>에 따르면 회사는 정관으로 정하는 바에 따라 주주가 회사에 대하여 상환을 청구할 수 있는 종류주식을 발행할 수 있고, 이 경우 정관에 주주가 상환을 청구할 수 있다는 뜻, 상환가액, 상환청구기간, 상환의 방법을 정하여야 합니다. 같은 조 <b>제4항</b>은 상환 대가로 현금 외 자산을 줄 때 그 장부가액이 배당가능이익을 넘을 수 없다고 정합니다. 회수 요구는 약속이 아니라 정관 기재와 재무 한도의 문제입니다.
+    </p>
+    <p>
+      전환가액을 다시 조정하는 장치도 같은 틀 안에 있습니다. <b>상법 제346조 제1항</b>에 따르면 회사가 종류주식을 발행하는 경우 정관으로 정하는 바에 따라 주주는 인수한 주식을 다른 종류주식으로 전환할 것을 청구할 수 있고, 이 경우 전환의 조건, 전환의 청구기간, 전환으로 인하여 발행할 주식의 수와 내용을 정하여야 합니다. 같은 조 <b>제2항</b>은 일정한 사유가 발생할 때 회사가 전환할 수 있음을 정관에 정할 수 있다고 하면서, 그 경우에도 전환의 사유·조건·기간과 발행할 주식의 수와 내용을 정하도록 합니다. 전환가액 조정 조항을 계약서에만 두면 조정의 근거가 약해집니다.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>주주평등 원칙의 심사와 후속 라운드의 희석</h2>
+    <ul class="points">
+      <li><b>무효가 되는 약정</b> — 대법원 2021다293213 판결(2023. 7. 13. 선고)에 따르면 주주평등 원칙을 위반하여 회사가 일부 주주에게만 우월한 권리나 이익을 부여하기로 하는 약정은 특별한 사정이 없는 한 무효입니다. 주식인수대금으로 납입한 돈을 전액 보전해 주기로 하거나, 상법 제462조 등 법률의 규정에 의한 배당 외에 다른 주주들에게는 지급되지 않는 별도의 수익을 지급하기로 하는 약정은 투하자본의 회수를 절대적으로 보장하는 것으로서 주주평등 원칙에 위배되어 무효입니다.</li>
+      <li><b>허용될 수 있는 약정</b> — 다만 자금조달을 위해 주주의 지위를 갖게 되는 자에게 회사의 의사결정에 대한 사전동의권을 주기로 한 약정은 차등적 취급을 정당화할 특별한 사정이 있으면 허용될 수 있고, 그 약정 위반에 따른 손해배상액의 예정은 유효하되 부당히 과다하면 민법 제398조 제2항에 따라 감액될 수 있습니다.</li>
+      <li><b>후속 라운드의 희석</b> — <b>상법 제418조 제1항</b>에 따르면 주주는 그가 가진 주식 수에 따라서 신주의 배정을 받을 권리가 있고, 같은 조 <b>제2항</b>에 따르면 회사는 정관에 정하는 바에 따라 주주 외의 자에게 신주를 배정할 수 있으나 신기술의 도입, 재무구조의 개선 등 회사의 경영상 목적을 달성하기 위하여 필요한 경우에 한합니다. 같은 조 <b>제4항</b>은 주주 외의 자에게 배정할 때 제416조가 정한 사항을 납입기일 2주 전까지 주주에게 통지하거나 공고하도록 합니다.</li>
+      <li><b>유지청구</b> — 회사가 법령·정관에 위반하거나 현저하게 불공정한 방법으로 주식을 발행해 주주가 불이익을 받을 염려가 있으면, <b>상법 제424조</b>에 따라 그 주주는 회사에 발행을 유지할 것을 청구할 수 있습니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 원금 보전형 요구와 절차 통제형 요구를 같은 무게로 다루면 위험한 쪽을 놓칩니다. 조항을 받아들일지가 아니라, 그 조항이 <b>어떤 문서에 어떤 문구로</b> 들어가야 효력을 갖는지가 먼저입니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">먼저 할 일은 계약서 조항과 정관 개정안을 <b>한 표에서 대조</b>하는 것입니다.</p>
+    <ol>
+      <li><b>① 정관 대조표</b> — 계약서의 배당·잔여재산·상환·전환 조항을 정관 개정안과 1대1로 맞추고, 정관에 없는 권리는 협상 대상으로 표시합니다.</li>
+      <li><b>② 회수 구조 구분</b> — 원금 전액 보전·별도 수익 지급형 약정은 주주평등 원칙 위반 위험으로 분류하고, 사전동의권·정보권 같은 절차형 조항과 분리해 검토합니다.</li>
+      <li><b>③ 상환·전환 요건 확인</b> — 상환청구 종류주식은 상환가액·상환청구기간·상환의 방법이, 전환주식은 전환 조건·청구기간·발행할 주식의 수와 내용이 정관에 적혔는지 확인합니다.</li>
+      <li><b>④ 후속 라운드 절차</b> — 주주 외의 자에게 신주를 배정할 때 정관 근거와 경영상 목적, 납입기일 2주 전 통지·공고 일정을 캘린더에 등록합니다.</li>
+      <li><b>⑤ 불공정 발행 대비</b> — 법령·정관 위반이나 현저하게 불공정한 발행이 의심될 때 쓸 수 있는 유지청구 경로를 미리 검토해 둡니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
