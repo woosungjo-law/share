@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>내 가게 고객 정보, 규모가 작아도 지켜야 할 안전조치 의무는 남는다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 소규모 사업자 개인정보</div>
+    <h1>내 가게 고객 정보, 규모가 작아도 지켜야 할 안전조치 의무는 남는다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> 고객 이름과 연락처를 받아 두는 작은 가게도 <b>개인정보처리자</b>이고, 안전조치 의무가 있습니다. 개인정보보호법 제29조는 정보가 유출되지 않도록 내부 관리계획을 세우고 접속기록을 보관하는 등 기술적·관리적·물리적 조치를 하도록 정합니다. ISMS 인증은 일정 규모 이상에 요구되는 제도라, <b>인증 대상이 아니더라도 기본 조치는 필요합니다.</b>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>단골 명단이 담긴 노트북 한 대</b>를 떠올려 보십시오. 1인 쇼핑몰을 운영하는 조은채는 주문자 이름·연락처·주소가 담긴 노트북을 매장 카운터에 두고 일했습니다. 비밀번호도 걸지 않았습니다. 어느 날 손님이 잠깐 자리를 비운 사이 노트북이 사라졌고, 은채 씨는 그제야 고객 정보가 통째로 담겨 있었다는 사실을 깨달았습니다. <b>"작은 가게라 괜찮겠지"가 큰 문제로 다가온 자리</b>입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>
+      개인정보보호법 제29조는 개인정보처리자에게 안전조치 의무를 지웁니다. 개인정보가 유출되지 않도록 내부 관리계획을 세우고, 접속기록을 보관하는 등 안전성 확보에 필요한 기술적·관리적·물리적 조치를 하여야 한다는 것입니다. 여기서 개인정보처리자는 큰 회사만을 뜻하지 않습니다. 고객의 이름과 연락처를 받아 두는 작은 가게나 1인 사업자도 개인정보를 처리하는 사람에 해당합니다.
+    </p>
+    <p>
+      정보통신망법 제47조의 ISMS 인증은 일정 규모 이상의 사업자에게 요구되는 인증 제도입니다. 유효기간이 있고 사후관리도 따릅니다. 은채 씨 같은 소규모 사업자가 이 인증 대상에 드는지는 매출이나 이용자 수 같은 기준에 따라 달라집니다. 내 매출과 이용자 규모가 그 기준에 못 미쳐 인증 대상이 아니더라도, 고객 정보를 다루는 이상 기본 조치는 필요합니다. 인증 대상 여부를 따지기 전에, 내가 고객 정보를 다루고 있다는 사실부터 확인해야 합니다.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>기록이 있으면 다툼에서 다릅니다</h2>
+    <ul class="points">
+      <li><b>개인정보처리자는 큰 회사만이 아닙니다</b> — 개인정보보호법 제29조는 개인정보처리자에게 안전성 확보에 필요한 기술적·관리적·물리적 조치를 하도록 정하고, 고객의 이름과 연락처를 받아 두는 작은 가게나 1인 사업자도 개인정보를 처리하는 사람에 해당합니다.</li>
+      <li><b>ISMS 인증과 기본 의무는 다릅니다</b> — 정보통신망법 제47조의 ISMS 인증은 일정 규모 이상의 사업자에게 요구되는 인증으로 유효기간과 사후관리가 따릅니다. 내 규모가 인증 대상에 못 미쳐도, 고객 정보를 다루는 이상 기본 조치는 필요합니다.</li>
+      <li><b>안전조치는 기록으로 남아야 힘을 갖습니다</b> — 어떤 고객 정보를 어디에 보관하는지, 누가 열람할 수 있는지, 비밀번호나 잠금장치를 어떻게 관리하는지가 남아 있어야 합니다. 사고가 난 뒤에 "원래 조심하고 있었다"고 말하는 것과, 평소에 관리 기록을 남겨 둔 것은 완전히 다릅니다.</li>
+      <li><b>작은 사업자일수록 기본 조치의 효과가 큽니다</b> — 정보가 담긴 기기에는 잠금을 걸고, 오래된 고객 정보는 정리해 보관 기간을 정하고, 명단이 담긴 파일을 아무 데나 두지 않는 것만으로도 위험이 크게 줄어듭니다. 큰 비용이 아니라 습관의 문제입니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 규모가 작아도 안전조치 의무는 남습니다. <b>정보를 줄이고, 잠그고, 기록하는 세 가지 습관부터 시작하십시오.</b></div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;">정보를 줄이고, 잠그고, 기록하십시오.</p>
+    <ol>
+      <li><b>① 정보 파악</b> — 어떤 고객 정보를 어디에 보관하는지 목록으로 정리하십시오.</li>
+      <li><b>② 최소 보관</b> — 꼭 필요한 정보만 남기고 오래된 기록은 정리하십시오.</li>
+      <li><b>③ 잠금·접근</b> — 기기와 파일에 잠금을 걸고 열람자를 좁히십시오.</li>
+      <li><b>④ 기록 남기기</b> — 관리·접속 내역을 간단히라도 남겨 두십시오.</li>
+      <li><b>⑤ 인식 전환</b> — 규모가 작아도 안전조치 의무는 남는다는 점을 기억하십시오.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
