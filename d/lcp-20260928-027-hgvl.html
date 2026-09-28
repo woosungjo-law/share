@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>가게를 넘기면 거래도 따라오는 게 아니라, 양도 문구부터 보는 일이다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 거래 양도와 금지 문구</div>
+    <h1>가게를 넘기면 거래도 따라오는 게 아니라, 양도 문구부터 보는 일이다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> 걱정부터 풀어드리면 — 가게를 넘기기로 했다고 해서 거래처 관계가 자동으로 따라오지는 않습니다. <b>계약서에 양도 금지 문구가 박혀 있으면 당사자 사이에서는 양도가 막힙니다.</b> 계약서부터 꺼내 금지 문구를 확인하십시오.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>단골 납품처가 건넨 양도금지 문구</b>를 떠올려 보십시오. 반찬가게를 운영하는 연다온은 몸이 아파 가게와 단골 납품 거래를 함께 넘기기로 했습니다. 인수자와 손을 잡고 단골 식자재 납품처에 인사 겸 통보를 했습니다. 그런데 납품처 사장은 계약서를 펼치며 고개를 저었습니다. <b>권리·의무를 양도할 수 없다는 문구</b>가 있다는 것이었습니다. 연다온은 가게를 넘기면 거래도 따라오는 줄 알았습니다. 그런데 한 줄짜리 금지 문구가 발목을 잡았습니다. 그날 저녁 그는 계약서 사본을 챙겨 금지 문구와 동의·통보 절차를 처음부터 다시 읽었습니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>
+      흔한 생각은 돈을 주고 가게를 넘기면 거래처 관계도 함께 넘어간다는 것입니다. 법이 보는 구조는 다릅니다. 채권은 양도할 수 있지만, 당사자가 반대의 의사를 표시한 경우에는 양도하지 못합니다. 다만 그 의사표시로써 선의의 제삼자에게 대항하지 못합니다. 민법 제449조의 뼈대입니다. <b>계약서에 양도 금지 특약이 박혀 있으면 당사자 사이에서는 양도가 막히므로, 서명 전 특약의 유무와 범위를 먼저 확정해야 합니다.</b> 연다온의 계약처럼 양도를 금지한 문구가 바로 이 반대의 의사표시에 해당합니다.
+    </p>
+    <p>
+      다음은 알리는 절차입니다. 지명채권의 양도는 상대방에게 통지하거나 승낙받지 않으면 대항하지 못하고, 그 통지나 승낙은 확정일자 있는 증서가 아니면 채무자 이외의 제삼자에게 대항하지 못합니다. 민법 제450조의 문구 그대로입니다. 말로만 알리고 끝내면 뒤에서 다툼이 생깁니다. 회사의 합병에도 같은 갈래가 있습니다. 합병 후 존속·신설 회사는 소멸 회사의 권리의무를 승계합니다. 상법 제235조의 문구 그대로입니다. <b>포괄승계는 임의적 양도와 다른 층위에서 판단해야 합니다.</b>
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>예외 없는 문구가 정상 인수를 가둔다</h2>
+    <ul class="points">
+      <li><b>문구의 모양입니다</b> — 예외 없이 모든 이전을 가두는 문구면, 가게 양도라도 정상 인수가 위반 시비에 걸립니다.</li>
+      <li><b>예외의 모양입니다</b> — 사전 서면 동의 없는 양도 금지를 원칙으로 하되, 포괄승계에는 사전 서면 통보로 갈음하는 예외가 함께 있어야 분쟁을 줄일 수 있습니다. 새 계약에는 이 예외가 있는지 확인하십시오.</li>
+      <li><b>통보의 방법입니다</b> — 포괄승계라 해도 통보를 생략해서는 안 됩니다. 서면으로 미리 알리고 받았다는 확인을 남겨야 합니다.</li>
+      <li><b>동의의 순서입니다</b> — 예외가 없는 계약이라면 상대방의 사전 서면 동의를 구하는 절차부터 밟으십시오. 말로 허락을 받았어도 서면으로 남겨야 합니다.</li>
+      <li><b>예외가 없으면 해석 다툼과 시간·비용 낭비로 이어집니다</b> — 다툼이 길어지면 납품이 끊기고 인수 일정이 흔들립니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 가게 인수는 열쇠가 아니라 <b>문구에서 시작</b>합니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;">가게나 거래를 넘기기 전이라면 오늘 계약서를 꺼내십시오.</p>
+    <ol>
+      <li><b>① 문구 찾기</b> — 양도금지 문구가 있는지, 사전 서면 동의가 필요한지, 합병·영업양도 같은 경우의 예외가 적혀 있는지를 밑줄 그어 확인하십시오.</li>
+      <li><b>② 동의 구하기</b> — 예외가 없으면 상대방에게 서면 동의를 구하는 편지를 내용증명으로 보내고 받았다는 확인을 챙기십시오.</li>
+      <li><b>③ 통보 남기기</b> — 통지나 승낙은 확정일자 있는 증서로 갖추십시오. 새로 계약을 맺을 때는 동의 원칙과 통보 예외가 함께 있는지 보고 서명하십시오.</li>
+      <li><b>④ 예외 넣기</b> — 새 계약에는 사전 서면 동의 원칙과 포괄승계 시 사전 서면 통보 예외를 함께 넣으십시오.</li>
+      <li><b>⑤ 묶어 두기</b> — 계약서 사본과 통보 증서, 상대방 회신은 한 봉투에 묶어 보관하십시오.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
