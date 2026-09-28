@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>잔액 확인서는 회계 감사 서류가 아니라, 매출채권의 시효를 초기화하는 경영 도구다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 매출채권 시효 관리</div>
+    <h1>잔액 확인서는 회계 감사 서류가 아니라, 매출채권의 시효를 초기화하는 경영 도구다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 미수금을 볼 때 "<b>받을 돈의 크기</b>"만 보면 절반을 놓칩니다. 함께 봐야 할 것은 "<b>그 돈의 권리가 얼마나 신선한가</b>"입니다. 채무자가 스스로 잔액을 확인해 준 문서 한 장은 사실관계 입증을 앞당기는 증거이면서, <b>소멸시효 진행 자체를 끊는 법률 행위</b>입니다. 회수가 오래 걸릴수록 이 문서의 값은 커집니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>창고의 재고에 붙는 신선도 스티커</b>를 떠올려 보십시오. 같은 수량이라도 스티커가 오래된 재고는 팔 수 있는 기한이 얼마 남지 않았습니다. 잔액 확인서를 갱신해 받는 일은 <b>스티커를 새로 붙이는 일</b>입니다. 금액은 그대로여도 권리의 수명은 다시 늘어납니다. 반대로 장부에 금액만 적혀 있고 스티커가 갱신되지 않은 채권은, 겉보기 금액이 커도 회수할 수 있는 시간이 줄어들고 있는 채권입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>
+      경영자의 관점에서 잔액 확인서는 "계산 대조용 서류"입니다. 그러나 법은 다른 이름으로 부릅니다. 소멸시효는 <b>청구, 압류 또는 가압류·가처분, 승인</b>의 사유로 중단됩니다(민법 제168조). 승인은 채무자가 상대방에 대하여 <b>권리가 존재함을 인식하고 있음을 표시하는 행위</b>이고, 형식을 요구하지 않으며 명시적·묵시적을 불문합니다. 잔액 확인서의 작성·교부는 채무의 존재와 액수를 인식하는 표시로서 승인에 해당할 수 있고(대법원 2006다22852), 부채증명서의 발급·교부가 채무승인이 되어 소멸시효가 중단되었다는 법리도 있습니다.
+    </p>
+    <p>
+      승인으로 중단된 시효는 <b>경과 기간을 산입하지 않고 중단사유가 종료한 때부터 새로 진행됩니다</b>(민법 제178조 제1항). 재판상 청구와 달리 판결 확정을 기다릴 필요가 없다는 점이 핵심입니다. 즉 확인서를 갱신해 받을 때마다 회사의 미수금은 새로운 시효 기간을 갖게 됩니다. 승인에는 상대방 권리에 대한 처분 능력이나 권한도 필요 없으므로(제177조), 상대 회계 담당자가 도장을 찍었다는 이유만으로 그 표시가 무효가 되지 않습니다.
+    </p>
+    <p>
+      정리하면 잔액 확인서는 한 장 안에 두 가지 가치를 담습니다. <b>채무자가 빚의 존재·금액을 자인한 증거</b>라는 것과, <b>그 자인 행위 자체가 시효를 끊는 법률 행위</b>라는 것입니다. 전자가 회수 소송의 비용을 줄이고, 후자가 회수 지연으로 권리가 소멸하는 최악의 시나리오를 차단합니다.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>승인의 범위는 문구가 정하고, 문구가 곧 관리 대상이다</h2>
+    <ul class="points">
+      <li><b>표시된 채무에 대해서만 승인이다</b> — 확인서에 발생 원인(외상매출금), 금액, 기준일이 명시되어야 승인 대상이 특정됩니다. "일부 정산", "잔여분은 협의" 같은 모호한 문구는 승인 범위의 해석 다툼을 남깁니다.</li>
+      <li><b>기간은 채권 유형마다 다르다</b> — 새로 진행되는 채권의 소멸시효는 원칙적으로 10년이지만(민법 제162조 제1항), 거래 유형에 따라 단기 시효가 적용될 수 있으므로 채권별로 기준을 확인해야 합니다.</li>
+      <li><b>상대방 행위도 승인이 된다</b> — 승인은 형식을 요구하지 않으므로 상대가 보낸 이메일 회신, 일부 입금, 분할 상환 약속이 모두 시효중단 사유가 될 수 있습니다. 이는 <b>회사가 채무자 입장일 때도 동일하게</b> 작동합니다.</li>
+      <li><b>정상 경위로 확보되어야 한다</b> — 거래 기록을 첨부한 요청, 상대 재무팀의 자발적 확인 절차가 문서의 신뢰를 만듭니다. 요청 경위가 부자연스러우면 나중에 문서 성립 자체가 다투어질 수 있으므로, <b>강요나 압박으로 받아내는 방식은 증거 가치를 스스로 깎는 행위</b>입니다.</li>
+      <li><b>처분 권한이 없어도 된다</b> — 상대 회계 담당자 수준에서 확보된 확인서도 효력 다툼의 소지가 상대적으로 줄어듭니다. 다만 진정성립 다툼에 대비해 요청·수령 경위를 기록해 두는 것이 안전합니다.</li>
+      <li><b>개별 확인</b> — 문언·작성 경위에 따라 판단이 달라지므로, 표준 문구를 그대로 돌려 쓰기보다 채권별 문서 상태를 확인하십시오.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 회수 확률이 높아 보여도 권리가 오래된 채권은 <b>회수를 시작하기 전에 이미 시효 위험</b>을 안고 있을 수 있습니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <p style="margin-bottom:16px;">미수금 관리 지표에 <b>확인서 확보율</b>을 넣으십시오.</p>
+    <ol>
+      <li><b>① 지표화</b> — 미수금 잔액과 별개로, 그 권리가 시효상 안전한지를 보여 주는 지표를 두고 분기마다 보고받으십시오.</li>
+      <li><b>② 프로세스화</b> — 결산·반기 주기의 확인서 확보를 영업-재무-법무 협업 프로세스로 지정하십시오. 영업이 접점을, 재무가 계산 검증을, 법무가 문구와 시효 효과를 담당합니다.</li>
+      <li><b>③ 이력으로 우선순위 정하기</b> — 장기 미수 채권은 금액이 아니라 <b>확인서 갱신 이력</b>으로 관리하십시오. 갱신 예정일이 도래한 채권 목록을 분기마다 받으십시오.</li>
+      <li><b>④ 대체 증빙 경로 열기</b> — 확인서가 없는 채권은 이메일 잔액 인정 회신, 입금 기록, 상환 합의서 같은 승인 증빙을 쌓으십시오.</li>
+      <li><b>⑤ 회수의 첫 카드로 쓰기</b> — 연체가 시작된 채권은 확인서를 회수 전략의 첫 카드로 쓰십시오. 채무자가 스스로 확인한 금액은 협상과 소송 어디에서도 기준점이 됩니다.</li>
+      <li><b>⑥ 양방향 점검</b> — 우리가 채무자 입장인 거래에서는 어떤 회신·입금이 우리에게 시효중단으로 작용하는지도 같은 기준으로 점검하십시오.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
