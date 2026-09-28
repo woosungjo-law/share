@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>타일 틈새 누수, 계약을 무르는 문제가 아니라 수리비로 푸는 문제다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 매매 하자와 해제 요건</div>
+    <h1>타일 틈새 누수, 계약을 무르는 문제가 아니라 수리비로 푸는 문제다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 하자를 주장한다는 사실 자체가 곧바로 계약 해제로 이어지지 않습니다. 해제와 손해배상은 나란한 선택지가 아니라 층위가 다른 권리입니다. 국소적이고 수선이 쉬우며 비용이 작은 하자는 원칙적으로 해제가 부정되고 수리비 상당의 손해배상으로 풀립니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      새로 산 차의 문짝에 흠집이 하나 났다고 차를 반품하는 것과, 엔진에 결함이 있어 주행이 불가능한 것은 다른 문제입니다. 앞의 경우는 수리비로 정리하는 것이 자연스럽고, 뒤의 경우에야 계약 자체를 무르는 다툼이 성립합니다. <b>타일 틈새 누수</b>는 원칙적으로 앞의 칸에 놓입니다. 다만 누수로 구조체가 상하거나 곰팡이 등 건강 위험이 확인되면 이야기가 달라집니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>
+      <b>민법 제580조 제1항</b>은 매매 목적물에 하자가 있으면 제575조 제1항을 준용하도록 합니다. <b>제575조 제1항</b>은 하자로 계약의 목적을 달성할 수 없는 경우에만 계약을 해제할 수 있고, 그 외의 경우에는 손해배상만을 청구할 수 있다고 정합니다. 해제와 손해배상이 나란한 선택지가 아니라 층위가 다른 권리라는 뜻입니다.
+    </p>
+    <p>
+      타일 틈새 누수처럼 국소적이고 수선이 쉬우며 비용이 작은 하자는 원칙적으로 계약 목적 달성 불가로 보기 어려워 해제는 부정되고 수리비 상당의 손해배상으로 풀립니다. 하자의 정도와 범위, 수선 가능성과 소요 비용, 매수인의 사용 목적이 저해되는지, 사회통념상 계약을 유지하기 어려운 정도인지를 함께 봅니다. 다만 누수로 구조체에 손상이 있거나 곰팡이 등 건강에 직접 닿는 위험이 확인된 경우와는 선을 그어야 합니다. 그때는 중대한 하자로 다뤄질 여지가 있으므로 같은 잣대를 들이대지 않습니다.
+    </p>
+    <p>
+      종류로 지정한 물건을 나중에 특정한 경우에 적용되는 <b>제581조</b>와도 선을 긋습니다. 제581조 제2항의 하자 없는 물건 청구는 종류매매에서 매수인이 해제나 손해배상 대신 쓸 수 있는 권리이므로, 특정 아파트 한 채의 매매에 그대로 가져오지 않습니다. 이 사건처럼 이미 정해진 집을 사고판 경우에는 해제·손해배상의 갈래로만 검토합니다.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>알았거나 알 수 있었는지, 그리고 6개월의 시계</h2>
+    <ul class="points">
+      <li><b>매수인의 인지</b> — 매수인이 하자 있는 줄 알았거나 부주의로 알지 못한 때에는 제580조의 담보책임을 물을 수 없습니다.</li>
+      <li><b>점검 기록</b> — 잔금 전 하자 점검표를 주고받고 매수인이 서명까지 마쳤다면 그 서명과 점검 범위가 쟁점이 됩니다. 주고받은 점검 기록이 곧 책임의 지도가 됩니다.</li>
+      <li><b>고지 의무</b> — 반대로 회사가 하자를 알면서 고지하지 않았다면 매수인의 과실을 주장하기 어려워집니다.</li>
+      <li><b>경매의 예외</b> — 경매로 취득한 물건에는 제580조가 적용되지 않는다는 점도 함께 확인합니다. 일반 매매가 전제이므로 경매 사건의 서류를 같은 틀로 검토하지 않습니다.</li>
+      <li><b>6개월의 시계</b> — <b>제582조</b>는 전2조에 의한 권리를 매수인이 그 사실을 안 날부터 6개월 안에 행사하도록 정합니다. 하자를 안 날이 언제인지, 그날부터 6개월 안에 해제나 손해배상 청구가 있었는지가 먼저입니다. 기간을 넘긴 뒤 도착한 통보는 내용의 옳고 그름 이전에 행사기간의 문제에 걸립니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 차민서가 먼저 확인한 것은 누수의 크기가 아니라 <b>통보의 성격</b>이었습니다. 해제 통보인지 손해배상 청구인지에 따라 회사가 준비해야 할 서류가 달라집니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">해제 통보를 받자마자 계약 파기 여부부터 답하지 말고, <b>해제 통보를 손해배상 파일로 바꾸는 순서</b>를 밟으십시오.</p>
+    <ol>
+      <li><b>① 성격 구분</b> — 해제 통보인지 손해배상 청구인지, 도달일을 먼저 확정합니다.</li>
+      <li><b>② 기간 계산</b> — 하자를 안 날부터 6개월 안에 행사됐는지 기산점을 특정합니다. 사진 전송일, 내용증명 도달일, 현장 확인일을 날짜 순으로 늘어놓습니다.</li>
+      <li><b>③ 점검 이력</b> — 잔금 전 점검표·사진·영상·감정서·서명 기록을 한 묶음으로 모읍니다.</li>
+      <li><b>④ 중대성 분리</b> — 국소·수선가능 하자는 손해배상 트랙으로, 구조체·건강 위험은 별도 트랙으로 검토합니다.</li>
+      <li><b>⑤ 협의 우선</b> — 해제 요건 미충족과 수리비 상당 정리안을 함께 회신하고 조정 가능성을 먼저 둡니다. 수리 견적은 누수 범위·보수 방법·소요 비용을 두 군데 이상에서 받습니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
