@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>상속등기는 새로 만드는 권리가 아니라, 넘어온 권리를 드러내는 정리다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 상속등기와 협의분할</div>
+    <h1>상속등기는 새로 만드는 권리가 아니라, 넘어온 권리를 드러내는 정리다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 상속은 <b>사망과 동시에</b> 재산관계 전체가 넘어갑니다. 등기는 권리를 새로 만드는 행위가 아니라, 이미 넘어온 권리를 드러내는 정리입니다. 그래서 다툼의 핵심은 누가 더 많이 갖느냐가 아니라 <b>어떤 순서와 형식으로 정리하느냐</b>입니다 — 법정지분대로 한 번 등기했다가 다시 나누면 서류와 비용이 두 번 들고, 처음부터 협의분할로 가면 합의서 한 벌로 끝날 수 있습니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>이미 도착한 짐을 명부에 올리는 일</b>을 떠올려 보십시오. 짐은 이사 당일 새 집으로 옮겨졌지만, 관리 명부에는 아직 예전 이름이 적혀 있습니다. 그래서 지금 하는 일은 짐을 새로 사는 것이 아니라 <b>명부를 실제 상태에 맞추는 정리</b>입니다. 나누는 방식도 두 가지입니다 — 처음부터 적힌 몫대로 나누거나, 가족이 한자리에 모여 다르게 나누기로 하고 그 합의를 한 장에 담는 것입니다. 다만 그 전에 걸려 있던 담보나 세입자 권리는 명부를 고쳐도 사라지지 않습니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>
+      실무의 통념은 등기를 해야 권리가 생긴다고 보는 것입니다. 법이 보는 구조는 다릅니다. 상속인은 상속개시된 때로부터 피상속인의 재산에 관한 <b>포괄적 권리의무를 승계</b>합니다. 다만 피상속인의 일신에 전속한 것은 그러하지 않습니다. 민법 제1005조의 문구 그대로입니다. 사망과 동시에 재산관계 전체가 넘어가는 구조이므로, 등기는 새로 권리를 만드는 행위가 아니라 이미 넘어온 권리를 드러내는 정리입니다.
+    </p>
+    <p>
+      다음으로 나눗셈의 길이 두 갈래입니다. 전조의 경우 외에는 공동상속인은 언제든지 협의에 의하여 상속재산을 분할할 수 있습니다. 민법 제1013조의 문구 그대로이며, 공유물 분할에 관한 규정은 상속재산 분할에 준용됩니다. <b>법정지분대로 나누는 길과 전원 합의로 다르게 나누는 길</b>이 함께 열려 있다는 뜻입니다.
+    </p>
+    <p>
+      이어서 시점의 효과가 옵니다. 상속재산의 분할은 <b>상속개시된 때에 소급하여</b> 효력이 생기지만 <b>제3자의 권리를 해하지는 못합니다.</b> 민법 제1015조의 문구 그대로입니다. 처음부터 그렇게 나눈 것으로 보되, 이미 생긴 제3자의 권리는 지키는 구조입니다. 그래서 상가에 근저당이 있거나 임차인의 대항력이 걸려 있다면, 가족끼리 합의했더라도 그 권리는 그대로 남습니다.
+    </p>
+    <p>
+      마지막으로 신청의 방식입니다. 상속에 따른 등기는 <b>등기권리자가 단독으로 신청</b>합니다. 부동산등기법 제23조 제3항의 문구 그대로입니다. 공동신청이 원칙인 등기에서 상속은 포괄승계라는 이유로 단독신청이 열리는 자리입니다. 반대 해석의 여지도 함께 봅니다. 협의분할 합의서가 있어도 제3자 권리 범위를 두고 다툴 수 있으므로, 법무팀은 분할 합의와 제3자 권리 목록을 <b>같은 회의</b>에 올려야 합니다.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>전원 합의·소급의 한계·단독신청의 범위를 가른다</h2>
+    <ul class="points">
+      <li><b>협의분할은 전원을 전제로 한다</b> — 한 사람이라도 빠진 합의는 협의분할의 형식을 갖추지 못합니다. 상속인 확정부터 다시 하십시오.</li>
+      <li><b>소급효에는 한계가 있다</b> — 상속개시 시점으로 돌아가 효력이 생기되 제3자의 권리를 해하지는 못합니다. 상가 근저당권자와 임차인의 현황을 <b>분할 합의 전에</b> 확정하십시오.</li>
+      <li><b>단독신청은 상속이라는 이유에서 열린다</b> — 상속에 따른 등기는 등기권리자가 단독으로 신청합니다. 협의분할 결과의 이전까지 단독신청으로 해결되는 것은 아니므로, 어떤 등기를 어떤 원인으로 신청하는지를 신청서 기준으로 구분하십시오.</li>
+      <li><b>순서의 선택</b> — 법정지분대로 한 번 등기한 뒤 다시 나누는 방식과 처음부터 협의분할로 나누는 방식은 서류·비용·세금 계산에서 다르게 다뤄질 수 있습니다. 단정적 세율 결론을 내지 말고 등기 순서와 합의 형식을 미리 정해야 한다는 절차 주의로 다루십시오.</li>
+      <li><b>일신전속의 제외</b> — 피상속인의 일신에 전속한 것은 승계되지 않습니다. 상가 지분과 임대인 지위, 관리비 정산금처럼 넘어오는 것과 넘어오지 않는 것을 목록에서 가리십시오.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 단정할 수는 없으나 기록의 태도에 비추어 볼 때, <b>상속인 명단과 합의 경위, 제3자 권리 현황을 날짜 순으로</b> 보여 주는 쪽이 유리합니다. 상속등기 분쟁은 등기소 창구가 아니라 합의 테이블에서 갈립니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">서류를 모으기 전에 <b>합의 형식</b>부터 정하십시오.</p>
+    <ol>
+      <li><b>① 형식 정하기</b> — 법정지분대로 갈지, 처음부터 협의분할로 갈지를 상속인 전원과 문서로 확정하십시오.</li>
+      <li><b>② 명단 묶기</b> — 가족관계증명서와 제적 정리, 상속포기·한정승인 여부를 한 묶음으로 모아 상속인을 확정하십시오.</li>
+      <li><b>③ 합의서 쓰기</b> — 협의분할로 가면 분할 대상과 귀속, 효력 시점에 대한 이해를 같은 문장으로 적고, 분할이 상속개시에 소급하되 제3자 권리를 해하지 못한다는 점을 합의서 앞단에 두십시오.</li>
+      <li><b>④ 권리 가르기</b> — 상가 근저당과 압류, 임차인 대항력 유무를 별도 목록으로 만들어 합의서와 같은 날짜에 결재하십시오.</li>
+      <li><b>⑤ 신청 맞추기</b> — 상속에 따른 등기는 단독신청이 가능하다는 점을 이용해 신청인과 첨부서류를 미리 맞추고, 등기원인을 증명하는 정보와 상속인 지위 소명 자료, 협의분할 합의서의 기재가 서로 어긋나지 않게 대조하십시오. 협의분할 이전 신청과는 구분해 관리하십시오.</li>
+      <li><b>⑥ 세무와 공유</b> — 세금 계산이 문제될 수 있는 사안에서는 등기 순서와 합의 형식을 세무 담당과 공유하는 메모를 남기되, 세목과 금액의 단정은 메모에 넣지 마십시오.</li>
+      <li><b>⑦ 기록 남기기</b> — 검토 메모에 포괄승계 구조표와 협의분할 합의 경위, 제3자 권리 목록, 등기 신청 구분표를 구분해 남기고, 합의부터 등기까지의 기록을 끊지 말고 보관하십시오.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
