@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>지식재산권 귀속 조항, 한 줄로 끝내는 문구가 아니라 범위와 인격권을 나눠 적는 설계다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 지식재산권 귀속 조항</div>
+    <h1>지식재산권 귀속 조항, 한 줄로 끝내는 문구가 아니라 범위와 인격권을 나눠 적는 설계다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> "용역 결과물의 권리는 발주처에 귀속된다"는 한 줄은 분쟁의 씨앗입니다. 재산권은 넘길 수 있어도 인격권은 넘길 수 없습니다. 귀속 조항은 이전 범위, 인격권 처리, 포트폴리오 활용을 나눠 적는 설계여야 합니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      집을 파는 것은 가능하지만, 지은 사람의 이름을 지우는 것은 다른 문제입니다. 집의 소유권(재산권)은 넘겨도, "이 집은 내가 지었다"는 명예(인격권)는 계약으로 넘길 수 없습니다. <b>지식재산권 귀속</b>도 같습니다. 조항이 정할 수 있는 것은 재산권의 양도 범위이고, 인격권은 애초에 넘길 수 없는 권리로 남습니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>
+      <b>저작권법 제10조</b>는 저작자가 저작인격권과 저작재산권을 함께 가진다고 정합니다. 저작인격권에는 공표권(제11조), 성명표시권, 동일성유지권(제13조) 등이 있고, 이 권리는 창작자에게 일신전속하여 <b>양도할 수 없습니다</b>. 반면 저작재산권은 <b>제45조 제1항</b>에 따라 전부 또는 일부를 양도할 수 있습니다. 즉 귀속 조항이 정할 수 있는 것은 재산권의 양도 범위이고, 인격권은 계약으로 넘길 수 없습니다.
+    </p>
+    <p>
+      <b>제45조 제2항</b>은 전부 양도의 경우 특약이 없으면 제22조에 따른 2차적저작물을 작성해 이용할 권리가 포함되지 않은 것으로 추정한다고 정합니다. 프로그램은 반대로 특약이 없으면 함께 양도된 것으로 추정합니다. 같은 "전부 양도"라도 대상이 무엇이냐에 따라 결과가 달라진다는 뜻입니다. 그래서 귀속 조항에는 어떤 권리를 어디까지 넘기는지를 구체적으로 적어야 합니다.
+    </p>
+    <p>
+      실무에서 자주 문제되는 것은 결과물의 성격을 구분하지 않는 것입니다. 로고나 디자인 같은 저작물과 소프트웨어는 전부 양도 시 추정이 다르므로, 어떤 유형인지에 따라 문구를 달리 써야 합니다. 또 저작재산권을 넘기더라도 인격권은 남아 있다는 점을 전제로, 발주처가 수정·변경할 때의 절차를 별도로 정해 두어야 합니다.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>빈칸은 해석 다툼이 된다</h2>
+    <ul class="points">
+      <li><b>빠진 세 가지</b> — "권리는 발주처에 귀속된다"는 문구가 위험한 이유는 첫째, 이전되는 권리의 범위(재산권 전부인지 일부인지, 2차적저작물작성권 포함 여부), 둘째, 인격권의 처리, 셋째, 창작자의 포트폴리오 활용 여부가 정해지지 않았기 때문입니다.</li>
+      <li><b>인격권 처리</b> — 인격권은 양도할 수 없지만, 발주처가 결과물을 수정·변경할 때 동일성유지권 문제가 생기지 않도록 처리 방식을 정해 둘 수 있습니다.</li>
+      <li><b>불명확한 문언의 해석</b> — 문언이 불명확한 경우 법원은 계약 체결의 동기와 경위, 당사자가 달성하려는 목적, 거래 관행을 종합해 합리적으로 해석합니다. 특히 일방에게 중대한 책임을 지우는 내용일수록 문언을 엄격하게 봅니다.</li>
+      <li><b>해석 다툼의 비용</b> — 조항을 애매하게 두는 것이 어느 한쪽에 유리하지 않습니다. 특히 프리랜서·외주 용역에서는 창작자가 자신의 작업 이력조차 남기지 못하는 상황이 생기기 쉽습니다.</li>
+      <li><b>포트폴리오 조항</b> — 비상업적 포트폴리오 활용을 명시적으로 허용하는 조항이 분쟁을 줄이는 데 효과가 있습니다. 조항을 다듬을 때는 이전 범위, 인격권, 포트폴리오를 한 묶음으로 검토해야 합니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 빠진 항목이 무엇인지 하나씩 짚어 채우는 것만으로도 분쟁의 상당 부분이 줄어듭니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">세 가지를 조항에 <b>나눠 적으십시오</b>.</p>
+    <ol>
+      <li><b>① 범위 특정</b> — 이전할 재산권의 종류와 2차적저작물작성권 포함 여부를 명시합니다.</li>
+      <li><b>② 대상 구분</b> — 프로그램과 일반 저작물의 전부 양도 추정이 다르다는 점을 반영합니다.</li>
+      <li><b>③ 인격권 처리</b> — 인격권은 양도 불가임을 전제로 수정·변경 시 통지 방식을 정합니다.</li>
+      <li><b>④ 포트폴리오</b> — 창작자의 비상업적 활용 허용 여부를 명시합니다.</li>
+      <li><b>⑤ 표준 적용</b> — 새 계약부터 표준 조항을 적용하고 위험 계약을 별도 점검합니다. 이미 체결된 계약은 결과물 목록과 양도 범위를 대조해 필요하면 추가 약정이나 확인서로 보완합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
