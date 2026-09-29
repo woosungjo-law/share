@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>용역계약 해지 통보, 해지사유 목록이 아니라 언제든 해지할 수 있다는 원칙과 정산의 문제다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 위임·용역계약 해지 정산</div>
+    <h1>용역계약 해지 통보, 해지사유 목록이 아니라 언제든 해지할 수 있다는 원칙과 정산의 문제다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 위임·용역계약은 계약서의 해지사유 목록과 별개로 언제든 해지할 수 있습니다. 다툼의 중심은 해지의 유효 여부가 아니라, 한 만큼의 보수와 들어간 비용, 불리한 시기 해지의 배상을 어떻게 나누어 정산하는지입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      택시 하차를 떠올려 보십시오. 누리엔지니어링의 한예린 팀장은 설비 감리 용역을 절반쯤 마친 시점에 사유가 구체적으로 적혀 있지 않은 해지 통보서를 받았습니다. 실무 부서는 "남은 기간 용역비 전액을 달라"고 했고, 발주처는 "계약서 해지사유에 없으니 해지 자체가 무효"라고 맞섰습니다. 하지만 위임계약의 해지는 <b>목적지에 다 가기 전에도 내릴 수 있는 하차</b>와 같습니다. 내릴 수 있는지가 문제가 아니라, <b>탄 만큼의 요금(한 만큼의 보수), 이미 돌아온 길의 기름값(지출 비용), 한밤중 외진 곳에서 내린 대가(불리한 시기 배상)</b>를 어떻게 나누어 계산하는지가 문제입니다. 한 팀장이 청구 금액을 정하기 전에 이미 처리한 용역 범위와 지출 비용을 따로 정리하기로 한 이유가 여기에 있습니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>
+      위임계약은 각 당사자가 언제든지 해지할 수 있습니다(민법 제689조 제1항). 계약서에 어떤 사유를 적어 두었는지와 별개로 이 문장이 출발점입니다. 다만 당사자 일방이 부득이한 사유 없이 상대방의 불리한 시기에 계약을 해지한 때에는 그 손해를 배상하여야 합니다(같은 조 제2항). 해지의 자유와 배상의 위험이 한 조문 안에 나란히 있습니다.
+    </p>
+    <p>
+      정산은 세 갈래로 나뉩니다. 수임인은 특별한 약정이 없으면 보수를 청구하지 못하고, 보수를 받기로 한 경우에도 위임사무를 완료한 후가 아니면 청구하지 못합니다. 다만 기간으로 보수를 정한 때에는 그 기간이 경과한 후에 청구할 수 있고(민법 제686조 제1항·제2항), 수임인의 책임 없는 사유로 위임이 중도에 종료되면 수임인은 이미 처리한 사무의 비율에 따른 보수를 청구할 수 있습니다(같은 조 제3항). 남은 기간 전체가 아니라 실제로 한 만큼이라는 뜻입니다.
+    </p>
+    <p>
+      비용은 보수와 따로 계산합니다. 위임사무에 비용이 들면 위임인은 수임인의 청구에 따라 미리 지급해야 하고(같은 법 제687조), 수임인이 필요비를 지출했다면 지출한 날 이후의 이자를, 필요한 채무를 부담했다면 자기에게 갈음한 변제나 상당한 담보를, 과실 없이 손해를 봤다면 그 배상을 청구할 수 있습니다(같은 법 제688조). 용역 수행에 들어간 인건비·장비비·외주비가 여기에 담기므로, 청구서에는 보수와 비용을 나눠 적습니다.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>종료는 알려야 대항하고, 급박하면 계속해야 한다</h2>
+    <ul class="points">
+      <li><b>통지가 기준 시점이다</b> — 위임이 끝났다는 사유는 상대방에게 통지하거나 상대방이 안 때가 아니면 상대방에게 대항하지 못합니다(같은 법 제692조). 통보서를 언제 보냈고 언제 도달했는지가 정산과 배상의 기준 시점이 됩니다. 또 위임은 한쪽의 사망이나 파산으로 종료되고 수임인이 성년후견개시의 심판을 받은 경우에도 같으므로(같은 법 제690조), 상대방 회사의 사정 변화도 종료 원인이 됩니다.</li>
+      <li><b>급박하면 멈출 수 없다</b> — 위임종료의 경우 급박한 사정이 있는 때에는 수임인, 그 상속인이나 법정대리인이 위임인이 사무를 처리할 수 있을 때까지 처리를 계속하여야 하고, 이 경우에는 위임의 존속과 동일한 효력이 있습니다(같은 법 제691조). 감리·운영처럼 중단되면 현장이 멈추는 용역일수록 인계 기간을 계약 종료일 뒤에 남겨 두어야 이 의무와 정산이 어긋나지 않습니다.</li>
+      <li><b>배상의 크기는 자료가 바꾼다</b> — 상대방의 불리한 시기였는지(성수기, 대체 인력 확보가 어려운 시점, 연간 일정의 마감 직전), 부득이한 사유가 있었는지, 해지를 미리 알렸는지가 쟁점이 됩니다. 우리가 해지당한 경우에는 반대로 상대가 사유를 제시했는지와 시점을 기록해 두고, 이미 처리한 사무의 범위를 증빙으로 남깁니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 계약서의 해지사유 열거 조항은 문언 그대로 남겨 두십시오. 그 조항이 임의 해지권을 배제하는지는 판례 해석 영역이므로 그 자체를 결론으로 삼지 않습니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">청구서를 <b>보수·비용·배상</b>으로 나눠 세우십시오.</p>
+    <ol>
+      <li><b>① 수행 구간 확정</b> — 계약 기간과 실제 수행 구간, 이미 처리한 사무의 비율을 적어 제686조 제3항 청구의 기초를 만듭니다.</li>
+      <li><b>② 보수 청구 요건</b> — 보수 약정의 유무, 완료 후 청구 원칙과 기간 보수의 예외(제686조 제1항·제2항)를 확인합니다.</li>
+      <li><b>③ 비용 분리</b> — 필요비·부담한 채무·과실 없는 손해(제687조·제688조)를 보수와 구분해 항목별로 적습니다.</li>
+      <li><b>④ 통지와 인계 기록</b> — 해지 통보의 발송·도달 일자(제692조), 급박한 사정으로 계속한 업무와 인계 내역(제691조)을 묶어 둡니다. 상대 회사의 사망·파산·성년후견개시 심판 같은 종료 사유(제690조)가 있는지도 확인합니다.</li>
+      <li><b>⑤ 불리한 시기 자료</b> — 우리가 먼저 해지하는 경우에는 상대의 일정과 대체 인력 확보 상황을 확인해 불리한 시기에 해당하지 않는다는 자료를 만듭니다. 성수기·일정 마감·대체 인력 확보 상황을 정리해 제689조 제2항 배상 쟁점에 대비합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
