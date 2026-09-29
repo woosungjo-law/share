@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>파트너 계약 중단, 관계 관리가 아니라 중단 시점과 정산 범위를 계산하는 일이다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 운영 파트너 교체와 정산</div>
+    <h1>파트너 계약 중단, 관계 관리가 아니라 중단 시점과 정산 범위를 계산하는 일이다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 계약 기간이 남았으니 위약금을 물어야 한다는 말과 남은 운영비 전액을 달라는 요구는 같은 계산서가 아닙니다. <b>운영 위탁은 언제든 끝낼 수 있지만, 끝내는 시점과 통보 방식이 배상액을 정합니다.</b> 성수기 직전이라면 시점 자체가 쟁점이 됩니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      성수기를 앞둔 매장에서 교체 투입할 아르바이트를 미리 구해 둔 상황과 같습니다. 기존 인력을 그만두게 하는 것은 언제든 가능하지만, 대목 전날 통보하면 그 사람이 당장 구할 수 있었던 다른 일자리를 잃게 됩니다. <b>쇼핑몰 운영 외주 업체의 교체</b>도 같습니다. 계약서의 해지 사유 목록이 전부가 아니라, 언제 알렸는지와 이미 일한 만큼이 얼마인지가 실제 청구서를 정합니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>
+      운영을 맡기는 계약은 위임의 구조를 갖습니다. 위임계약은 각 당사자가 언제든지 해지할 수 있습니다(<b>민법 제689조 제1항</b>). 계약서에 적힌 해지 사유와 무관하게 이 원칙이 출발점입니다. 다만 당사자 일방이 부득이한 사유 없이 상대방의 불리한 시기에 계약을 해지한 때에는 그 손해를 배상하여야 합니다(<b>같은 조 제2항</b>). 성수기 직전이라는 시점 자체가 이 조항의 쟁점이 됩니다.
+    </p>
+    <p>
+      정산 범위는 보수와 비용으로 나뉩니다. 수임인은 특별한 약정이 없으면 보수를 청구하지 못하고, 보수를 받기로 한 경우에도 완료한 후가 아니면 청구하지 못합니다. 기간으로 보수를 정한 때에는 기간 경과 후에 청구할 수 있고(<b>민법 제686조 제1항·제2항</b>), 수임인의 책임 없는 사유로 중도 종료되면 이미 처리한 사무의 비율에 따른 보수를 청구할 수 있습니다(<b>같은 조 제3항</b>). 남은 기간 전액이 아니라 실제로 운영한 만큼이 기준입니다.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>종료를 알려야 하고, 급하면 계속 맡겨야 한다</h2>
+    <ul class="points">
+      <li><b>통보가 기준선</b> — 해지한 사실은 상대방에게 통지하거나 상대방이 안 때가 아니면 상대방에게 주장하지 못합니다(<b>같은 법 제692조</b>). 통보 시점과 도달 시점이 정산의 기준선이 되므로, 구두 통보만으로는 부족합니다.</li>
+      <li><b>상대 사정도 종료 원인</b> — 위임은 한쪽의 사망이나 파산으로 종료되고 수임인이 성년후견개시의 심판을 받은 경우에도 같습니다(<b>같은 법 제690조</b>). 상대 업체의 사정 변화도 계약이 끝나는 원인이므로, 계약 종료 사유를 우리 쪽 사정만으로 세우면 안 됩니다.</li>
+      <li><b>공백은 우리에게 돌아온다</b> — 위임종료 시 급박한 사정이 있으면 수임인 등이 위임인이 사무를 처리할 수 있을 때까지 처리를 계속하여야 하고, 그 처리는 위임이 존속하는 것과 같은 효력을 가집니다(<b>같은 법 제691조</b>). 넘겨받을 사람이 정해지기 전에 접속을 끊으면 그 공백과 비용이 우리에게 돌아옵니다.</li>
+      <li><b>비용 정산</b> — 위임사무에 비용이 들면 위임인은 수임인의 청구에 따라 미리 지급해야 하고(<b>같은 법 제687조</b>), 지출한 필요비에는 그날 이후의 이자가, 부담한 채무에는 변제·담보가, 과실 없이 입은 손해에는 배상이 붙습니다(<b>같은 법 제688조</b>). 인건비·광고비·툴 사용료가 이 조문에 걸려 있습니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 계약서의 해지사유 목록은 참고 자료로만 쓰십시오. 남은 기간 전액 요구는 실제 수행 비율로 다시 계산해 제시해야 합니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <p style="margin-bottom:16px;">중단 시점을 고르고 <b>정산표를 먼저</b> 만드십시오.</p>
+    <ol>
+      <li><b>① 시점 선택</b> — 상대가 대체 일감을 구하기 어려운 시기인지 확인하고(제689조 제2항), 인계 기간을 종료일 뒤에 배치합니다(제691조).</li>
+      <li><b>② 정산표 작성</b> — 이미 처리한 업무 비율의 보수(제686조 제3항)와 지출 비용·이자(제687조·제688조)를 분리해 계산합니다.</li>
+      <li><b>③ 서면 통보</b> — 해지 통보를 서면으로 하고 발송·도달 일자를 기록합니다(제692조).</li>
+      <li><b>④ 종료 사유 확인</b> — 상대의 사망·파산·성년후견개시 심판 등 계약이 끝나는 별도 원인을 확인합니다(제690조).</li>
+      <li><b>⑤ 다음 계약 반영</b> — 인계 기간, 정산 방식, 해지 통보 방법을 계약서에 명시해 같은 분쟁을 반복하지 않습니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
