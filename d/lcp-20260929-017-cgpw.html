@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>거래처 부도, 빨리 움직이는 결단보다 보전처분에 드는 비용과 순서를 정하는 문제다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 부도 거래처 채권 보전</div>
+    <h1>거래처 부도, 빨리 움직이는 결단보다 보전처분에 드는 비용과 순서를 정하는 문제다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 영업은 창고에 남은 자재를 확보하자고 하고, 재무는 담보 공탁과 소송 비용 때문에 분기 현금이 빠듯해진다고 말합니다. 대표가 정할 것은 어느 쪽을 택할지가 아니라, <b>어느 채권을 어떤 순서로 묶어 둘지</b>입니다. 속도를 내고 싶다면 담보 비용을 미리 계산해 둬야 합니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      배가 가라앉기 시작할 때, 갑판 위의 짐을 손으로 붙잡는 것과 닻을 내려 배를 고정하는 것은 다릅니다. 손으로 붙잡은 짐은 곧 흘러가지만, 제대로 내린 닻은 시간을 벌어 줍니다. <b>채권 보전</b>도 같습니다. 다만 닻을 내리는 데도 비용이 들기 때문에, 순서와 현금 계획을 함께 봐야 합니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>
+      채권 보전의 중심 수단은 가압류입니다. 가압류는 금전채권이나 금전으로 환산할 수 있는 채권에 대하여 동산 또는 부동산에 대한 강제집행을 보전하기 위하여 할 수 있고, 조건이 붙은 채권이나 기한이 아직 오지 않은 채권도 대상이 됩니다(<b>민사집행법 제276조</b>). 다만 요건이 있습니다. 가압류는 그것을 하지 아니하면 판결을 집행할 수 없거나 집행이 매우 곤란할 염려가 있을 경우에 할 수 있고(<b>같은 법 제277조</b>), 가압류할 물건이 있는 곳을 관할하는 지방법원이나 본안의 관할법원에 신청합니다(<b>제278조</b>).
+    </p>
+    <p>
+      사라진 재산에는 취소라는 경로가 있습니다. 채무자가 채권자를 해함을 알고 재산권을 목적으로 한 법률행위를 한 때에는 채권자는 그 취소 및 원상회복을 법원에 청구할 수 있고, 이익을 받은 자나 전득한 자가 그 당시 채권자를 해함을 알지 못한 경우에는 그러하지 아니합니다(<b>민법 제406조 제1항</b>). 이 소는 취소원인을 안 날부터 1년, 법률행위가 있은 날부터 5년 내에 제기하여야 합니다(<b>같은 조 제2항</b>). 취소와 원상회복은 모든 채권자의 이익을 위한 효력이 있고(<b>민법 제407조</b>), 원인 없이 이익을 얻고 손해를 가한 자는 그 이익을 반환하여야 합니다(<b>같은 법 제741조</b>).
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>담보 비용, 채무자의 반격, 도산이라는 변수</h2>
+    <ul class="points">
+      <li><b>신청서와 소명</b> — 신청서에는 청구채권의 표시와 가압류의 이유가 될 사실을 적고, 둘 다 소명하여야 합니다(<b>제279조</b>).</li>
+      <li><b>담보로 메우는 소명</b> — 청구채권이나 가압류의 이유를 소명하지 못한 때에도 가압류로 생길 수 있는 채무자의 손해에 대한 담보를 제공하면 법원은 가압류를 명할 수 있고, 소명한 때에도 담보를 제공하게 하고 명할 수 있습니다(<b>제280조</b>).</li>
+      <li><b>채무자의 반격</b> — 가압류명령에는 채무자가 공탁하면 집행을 정지·취소할 수 있는 금액이 적히고(<b>제282조</b>), 채무자는 가압류결정에 이의를 신청할 수 있습니다(<b>제283조 제1항</b>). 다만 그 이의신청은 가압류 집행을 정지하지 아니합니다(<b>같은 조 제3항</b>). 상대가 이의를 냈다는 보고에 흔들려 대응을 멈출 필요는 없습니다.</li>
+      <li><b>가장 큰 변수, 도산</b> — 회생절차개시 신청이 있으면 법원은 결정이 있을 때까지 채무자 재산에 관하여 필요한 보전처분을 명할 수 있고(<b>채무자 회생 및 파산에 관한 법률 제43조 제1항</b>), 이미 행하여진 강제집행·가압류의 중지를 명하거나(<b>같은 법 제44조 제1항</b>) 특히 필요하면 그 취소를 명할 수 있습니다(<b>같은 조 제4항</b>).</li>
+      <li><b>포괄적 금지명령</b> — 중지명령으로 부족하다고 판단되면 포괄적 금지명령이 나올 수 있고, 그 경우 이미 행하여진 강제집행등은 중지됩니다(<b>같은 법 제45조 제1항·제3항</b>).</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 상대의 회생 신청 정황이 확인되면, 이미 걸어 둔 조치가 중지될 수 있다는 전제로 목표를 다시 잡으십시오.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <p style="margin-bottom:16px;">채권 목록을 만들고, 비용과 중단 기준을 함께 정하십시오.</p>
+    <ol>
+      <li><b>① 채권 전수 목록</b> — 담보 유무·금액·근거 서류를 한 장으로 정리해 어느 채권부터 보전할지 우선순위를 정합니다.</li>
+      <li><b>② 비용 계산</b> — 담보 공탁과 소송 비용을 추정해 분기 현금 계획에 반영합니다. 소명이 약하면 담보가 커질 수 있습니다.</li>
+      <li><b>③ 순서 고정</b> — 재산 소재지 관할 법원과 본안 관할 법원을 확인하고, 무담보 채권의 신청 순서를 문서로 정합니다.</li>
+      <li><b>④ 부도 전 이전 점검</b> — 특수관계인 이전 정황을 채권자취소 검토 대상으로 표시하고, 제척기간(안 날부터 1년, 행위일부터 5년)을 일정에 적습니다.</li>
+      <li><b>⑤ 중단 기준</b> — 상대의 회생 신청이나 중지명령·포괄적 금지명령이 확인되면 채권 신고와 담보 확인으로 목표를 바꿉니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
