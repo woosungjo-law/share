@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>원치 않는 자동연장, '알고 나서 대응하면 된다'가 아니라 기한 안에 도달시키지 못하면 한 해를 더 사는 결정이다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 자동연장·만료 관리</div>
+    <h1>원치 않는 자동연장, '알고 나서 대응하면 된다'가 아니라 기한 안에 도달시키지 못하면 한 해를 더 사는 결정이다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 통지 기한을 넘기면, 회사는 원하지 않는 계약을 <b>한 해 더 사는 결정</b>을 한 셈이 됩니다. 대표가 정할 것은 올해 몇 개월의 손해가 아니라, 같은 구조가 반복되지 않게 만드는 일입니다. 문제의 핵심은 이번 연장이 끝나는 시점의 기한도 똑같이 지나기 쉽다는 점입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      자동으로 갱신되는 구독을 떠올려 보십시오. 해지 버튼을 누르지 않으면 다음 해 요금이 그대로 결제됩니다. "요금이 아깝다"는 결정이 아니라 "아무것도 하지 않은 상태"가 곧 갱신 동의로 처리됩니다. 자동연장도 같습니다. <b>아무것도 하지 않은 상태가 거절이 아니라 동의</b>로 처리된다는 점이 이 구조의 본질입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>
+      자동연장 조항을 함정으로만 보면 판단이 흐려집니다. <b>민법 제105조</b>는 법률행위의 당사자가 법령 중의 선량한 풍속 기타 사회질서에 관계없는 규정과 다른 의사를 표시한 때에는 그 의사에 의한다고 정합니다. 통지가 없으면 한 기간 더 같은 조건으로 간다는 약정은 당사자가 정한 내용으로서 그 자체로 유효합니다.
+    </p>
+    <p>
+      끝내려면 의사표시가 있어야 하고, 그 효력은 도달로 정해집니다. <b>민법 제543조 제1항</b>에 따르면 해지 또는 해제는 상대방에 대한 의사표시로 하며, 같은 조 <b>제2항</b>에 따르면 그 의사표시는 철회하지 못합니다. 효력 발생 시점은 <b>민법 제111조 제1항</b>이 정합니다. 상대방이 있는 의사표시는 상대방에게 도달한 때에 그 효력이 생기므로, 발송한 날이 아니라 도달한 날이 기준일입니다. 기한 마지막 날에 보낸 메일이 다음 날 열렸다면 기한을 넘긴 것입니다.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>갱신을 끊는 일과 해지를 다투는 일은 다른 트랙이다</h2>
+    <ul class="points">
+      <li><b>해지 절차의 분리</b> — 갱신을 원하지 않는 것과 상대가 계약을 제대로 이행하지 않은 것은 다른 문제입니다. <b>민법 제544조</b>에 따르면 당사자 일방이 그 채무를 이행하지 아니하는 때에는 상대방은 상당한 기간을 정하여 그 이행을 최고하고, 그 기간 내에 이행하지 아니한 때에 계약을 해제할 수 있습니다. 다만 채무자가 미리 이행하지 아니할 의사를 표시한 경우에는 최고를 요하지 않습니다. 요율이 불리하다는 사정은 이 절차의 사유가 되지 않습니다.</li>
+      <li><b>특별법이 겹치는 영역</b> — 계약의 성격에 따라 당사자가 정한 문구만으로 결론이 나지 않습니다. <b>상가건물 임대차보호법 제10조 제1항</b>에 따르면 임대인은 임차인이 임대차기간이 만료되기 6개월 전부터 1개월 전까지 사이에 계약갱신을 요구할 경우 정당한 사유 없이 거절하지 못합니다.</li>
+      <li><b>특별법의 예외와 상한</b> — 다만 3기 차임 연체 등 같은 항 각 호의 사유가 있으면 그러하지 아니하고, <b>제2항</b>에 따르면 갱신요구권은 최초의 임대차기간을 포함한 전체 임대차기간이 10년을 초과하지 아니하는 범위에서만 행사할 수 있습니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 자동연장 문구를 검토할 때는 그 계약이 어떤 법의 적용을 받는지부터 확인하십시오. 자동연장은 계약서 한 줄로 끝나는 문제가 아니라 매년 반복되는 운영 절차의 문제입니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <p style="margin-bottom:16px;">"이번 연장을 받아들이고 다음 기한을 사수한다"는 선택도 포함해, <b>만료 캘린더와 결정 시점을 사업 계획에 붙이십시오</b>.</p>
+    <ol>
+      <li><b>① 만료 달력 구축</b> — 자동연장 조항이 있는 계약의 만료일과 통지 기한을 한 목록으로 모으고, 결정 시점을 기한 60일 전으로 앞당겨 잡습니다.</li>
+      <li><b>② 도달 경로 지정</b> — 통지 상대방(주소·담당 부서)과 발송 방법을 계약별로 정하고, 이메일만 쓸 경우 수신 확인을 함께 받도록 합니다.</li>
+      <li><b>③ 통지 권한 정리</b> — 갱신 거절을 결정하고 발송할 권한을 가진 직책을 정해 두고, 통지 문안은 계약서가 정한 방식(서면·내용증명·이메일)과 수신인을 그대로 따르게 합니다.</li>
+      <li><b>④ 비용 비교</b> — 자동연장 1년치 비용과 교체 비용(해지·설치·전환 리스크)을 함께 계산해, 지금 끊을 계약과 다음 기한에 끊을 계약을 구분합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
