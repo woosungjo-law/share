@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>하자보수 책임 배분, 시공사의 협조를 기다리는 일이 아니라 분양자 사정과 남은 기간을 계산하는 일이다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 하자보수 책임과 충당금</div>
+    <h1>하자보수 책임 배분, 시공사의 협조를 기다리는 일이 아니라 분양자 사정과 남은 기간을 계산하는 일이다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 열두 장의 청구서가 모두 같은 10년이 아닙니다. 하자마다 남은 기간이 다르고, 부담 주체도 분양자와 시공자로 나뉩니다. <b>충당금과 협의 순서는 시공사의 답을 기다려 정하는 것이 아니라, 남은 개월 수와 책임 배분표로 먼저 고정해야 합니다.</b>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      유통기한이 다른 열두 개의 상자가 한꺼번에 들어왔다고 생각해 보십시오. 겉포장에는 모두 "10년"이라고 적혀 있지만, 열어 보면 어떤 것은 구조용 철골이라 10년이 맞고, 어떤 것은 마감재라 2년이면 끝나는 것도 있습니다. <b>하자보수 청구 열두 건</b>도 같습니다. 외벽 방수, 지하주차장 균열, 세대 창호, 마감 들뜸이 섞여 있고, 청구서마다 적힌 10년이라는 숫자는 출발선일 뿐 결승선이 아닙니다. 은행이 자금 계획표를 다시 내라고 할 때 대표가 내야 하는 답도 "시공사와 협의 중"이 아니라, 어떤 상자의 유통기한이 얼마나 남았는지 적은 재고표입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>
+      분양자와 시공자는 구분소유자에 대하여 담보책임을 지고, 그 담보책임에는 <b>민법 제667조 및 제668조</b>가 준용됩니다. 분양자와의 계약에 따라 건물을 건축한 자로서 대통령령으로 정하는 자가 시공자이고, 그 범위는 건물의 전부 또는 일부를 시공해 완성한 자와, 그 자가 담보책임을 질 수 없을 때 그로부터 일괄 도급받은 자입니다(<b>집합건물법 제9조 제1항, 같은 법 시행령 제4조</b>). 시공자가 분양자에게 부담하는 담보책임에 다른 법률의 특별한 규정이 있으면 그 법률이 정하는 범위에서 책임을 집니다(<b>같은 법 제9조 제2항</b>).
+    </p>
+    <p>
+      준용되는 조문이 청구 내용을 정합니다. 하자가 있으면 상당한 기간을 정하여 보수를 청구할 수 있고, 보수에 갈음하거나 보수와 함께 손해배상을 청구할 수 있습니다. 하자가 중요하지 아니한데 보수에 과다한 비용을 요할 때에는 보수 청구가 되지 않습니다(<b>민법 제667조</b>). 반면 계약을 무르는 길은 없습니다. 하자로 계약의 목적을 달성할 수 없을 때의 해제권은 건물 기타 토지의 공작물에 대하여 인정되지 않습니다(<b>같은 법 제668조</b>).
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>내 자금 사정이 시공사의 책임을 여는 조건이 된다</h2>
+    <ul class="points">
+      <li><b>시공사의 손해배상은 조건부</b> — <b>민법 제667조 제2항</b>에 따른 손해배상책임은 분양자에게 회생절차개시 신청, 파산 신청, 해산, 무자력 또는 이에 준하는 사유가 있을 때에만 지고, 시공사가 이미 배상한 범위에서는 면책됩니다(<b>집합건물법 제9조 제3항</b>). 회생 신청을 검토하는 국면이라면 그 결정이 시공사에 직접 청구할 문을 열어 준다는 점까지 계산해야 합니다.</li>
+      <li><b>기간은 종류와 기산일로 갈린다</b> — 주요구조부 및 지반공사의 하자는 10년, 그 밖의 하자는 중대성·내구연한·교체가능성 등을 고려해 5년 범위에서 대통령령이 정하는 기간 내에 행사합니다(<b>같은 법 제9조의2 제1항</b>). 시행령의 기간은 기산일 전 발생 하자 5년, 구조상·안전상의 하자 5년, 기능상·미관상의 하자 3년, 마감공사 등 발견·교체·보수가 용이한 하자 2년이고(<b>같은 법 시행령 제5조</b>), 기산일은 전유부분은 인도일, 공용부분은 사용검사일 또는 사용승인일이며(<b>같은 법 제9조의2 제2항</b>), 건물이 멸실·훼손되면 그 날부터 1년입니다(<b>같은 조 제3항</b>).</li>
+      <li><b>계약서 문구로 줄이는 데 한계</b> — 이 법과 민법보다 매수인에게 불리한 특약은 효력이 없습니다(<b>같은 법 제9조 제4항</b>). 우리 측이 지급한 자재나 지시에 기인한 하자는 담보책임에서 빠지지만, 수급인이 부적당함을 알고 고지하지 않았다면 빠지지 않습니다(<b>민법 제669조</b>).</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 해제나 대금 반환을 전제로 한 요구는 보수·손해배상 구조로 되돌려야 합니다. 시공사가 이미 분양자에게 배상한 이력과 범위를 문서로 확보하십시오.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <p style="margin-bottom:16px;">남은 기간과 책임 주체를 <b>한 장의 표</b>에 고정하십시오.</p>
+    <ol>
+      <li><b>① 남은 기간표</b> — 하자군별 기간(10년·5년·3년·2년)과 기산일(전유 인도일, 공용 사용검사일·사용승인일)로 남은 개월 수를 계산하고 지난 항목은 비용 배정에서 뺍니다.</li>
+      <li><b>② 책임 배분</b> — 시공자 범위와 다른 법률의 특별한 규정 유무, 하자보수 조항으로 우리 부담액과 시공사 요구액을 나눕니다.</li>
+      <li><b>③ 자금 결정의 부수효과</b> — 회생·파산 신청이나 무자력 상태가 시공사의 직접 손해배상책임을 여는 조건임을 알고 그 배상 이력을 확보합니다.</li>
+      <li><b>④ 특약 점검과 항변</b> — 담보책임을 축소하는 문구는 매수인에게 불리한 특약의 효력을 검토해 협상안에 반영하고, 발주자 지급 자재·시공 지시 문서는 민법 제669조 항변의 자료로 정리합니다.</li>
+      <li><b>⑤ 중단 기준</b> — 기산일이 지난 하자군은 청구 대상이 아니라는 근거를 서면으로 남기고 비용을 더 배정하지 않습니다. 남은 기간이 1년 미만인 하자군은 협의와 시공 일정을 앞당깁니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
