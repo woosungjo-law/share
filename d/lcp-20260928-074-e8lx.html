@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>타일 누수 1건, 계약 전체를 되돌리는 문제가 아니라 수리비로 닫는 문제다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 하자와 해제 요건</div>
+    <h1>타일 누수 1건, 계약 전체를 되돌리는 문제가 아니라 수리비로 닫는 문제다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 하자가 있다는 말과 계약을 깰 수 있다는 말은 같은 말이 아닙니다. 대표가 정할 것은 수리비를 줄 것인지가 아니라, <b>이 요구가 계약 전체를 되돌릴 만한 요구인지, 수리로 닫을 일인지</b>를 가르는 일입니다. 챙길 숫자는 억울함의 크기가 아니라 날짜와 견적입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      새로 지은 집의 화장실 타일 한 줄에서 물이 샌다고 집 전체를 되돌리는 사람은 드뭅니다. 대개는 수리비로 정리합니다. 반면 누수가 구조를 건드려 쓸 수 없다면 이야기가 달라집니다. <b>해제와 손해배상</b>도 같습니다. 감정 섞인 주장보다 하자의 범위와 보수 견적을 먼저 받아야 판단이 섭니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>
+      <b>민법 제580조 제1항</b>은 목적물 하자에 제575조 제1항을 준용합니다. <b>제575조 제1항</b>은 하자로 계약의 목적을 달성할 수 없는 경우에만 해제할 수 있고, 그 외에는 손해배상만 청구할 수 있다고 정합니다. 대표는 이 한 줄을 운영 기준으로 삼아야 합니다.
+    </p>
+    <p>
+      타일 틈새 누수처럼 국소적이고 고치기 쉬우며 비용이 작은 하자는 원칙적으로 계약 목적 달성 불가로 보기 어려워 해제는 어렵고 수리비 상당의 손해배상으로 정리됩니다. 반대로 누수가 구조체를 건드렸거나 건강에 직접 닿는 위험이 확인되면 중대 하자로 다뤄질 수 있습니다. 종류로 찍어 나중에 정한 물건에만 쓰는 <b>제581조 제2항</b>의 교환 권리를 특정 아파트에 끌어오는 주장도 경계하십시오. 이 사건의 갈래는 해제 아니면 손해배상, 둘 중 하나입니다.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>상대가 알았는지, 시간은 지났는지</h2>
+    <ul class="points">
+      <li><b>매수인의 인지</b> — 매수인이 하자를 알았거나 부주의로 몰랐다면 제580조 책임을 묻기 어렵습니다. 잔금 전 점검표를 주고받고 서명까지 받았다면 그 기록이 회사의 방패가 됩니다.</li>
+      <li><b>방패가 사라지는 경우</b> — 반대로 알면서 숨긴 하자가 드러나면 방패는 사라집니다.</li>
+      <li><b>경매의 예외</b> — 경매 물건에는 제580조가 적용되지 않으니 일반 분양 사건과 섞어 판단하지 마십시오.</li>
+      <li><b>6개월의 시계</b> — <b>제582조</b>는 안 날부터 6개월 안에 권리를 행사하도록 정합니다. 매수인이 하자를 안 날이 언제인지, 통보가 그 안에 들어왔는지를 따져야 합니다. 기간이 지난 통보는 내용 다툼 이전에 시간 문제에 걸립니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 해제 통보에 해제 여부부터 답하지 말고, 통보의 성격을 가르고 도달일과 6개월 기산점을 먼저 확정하십시오.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <p style="margin-bottom:16px;">감정 협상이 아니라 <b>금액과 날짜로</b> 답하십시오.</p>
+    <ol>
+      <li><b>① 통보 성격</b> — 해제인지 손해배상인지, 도달일을 확정합니다.</li>
+      <li><b>② 기간 확인</b> — 하자를 안 날부터 6개월 안에 행사됐는지 계산합니다.</li>
+      <li><b>③ 기록 확보</b> — 잔금 전 점검표·사진·감정서를 한 묶음으로 모읍니다.</li>
+      <li><b>④ 금액축 마련</b> — 보수 견적을 두 군데 이상에서 받아 수리비 정리안을 준비합니다.</li>
+      <li><b>⑤ 조기 종결</b> — 감정·소송 비용이 수리비를 넘기 전에 조정으로 닫습니다. 사소한 하자에 대한 해제 요구에는 해제 요건 미충족과 수리비 정리안을 함께 제시하고, 구조체·건강 위험이 새로 나오면 중대 하자로 다시 본다는 단서를 답니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
