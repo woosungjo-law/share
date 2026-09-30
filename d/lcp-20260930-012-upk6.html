@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>직접 본 누수, 나중에 수리비를 청구할 수 있을까</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 하자 인지와 매도인의 책임 범위</div>
+    <h1>직접 본 누수, 나중에 수리비를 청구할 수 있을까</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> 집을 보러 갔을 때 벽지의 얼룩이나 물자국을 직접 확인했다고 해서 수리비 청구가 자동으로 막히거나 인정되지는 않습니다. <b>'봤다'는 사실과 누수의 원인·범위·재발 위험을 알았다는 사실은 같지 않을 수 있기</b> 때문입니다(민법 제580조 제1항 단서의 하자 인지 문제). 분쟁을 줄이려면 발견 순간의 상태와 설명을 <b>구체적으로 남겨야 합니다.</b>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>집 보러 갔을 때 직접 본 물자국</b>을 떠올려 보십시오. 매수인이 벽지의 얼룩을 직접 확인했다면, 나중에 수리비를 청구할 수 있는지 곧바로 답하기 어렵습니다. '봤다'는 사실과 누수의 원인·범위·재발 위험을 알았다는 사실은 <b>같지 않을 수 있기</b> 때문입니다. 하자 분쟁에서 <b>기억에 의존한 진술은 시간이 지나면 서로 달라집니다.</b> 현장에서 본 것, 설명받은 것, 추정한 것을 나누어 기록하고, 수리 전후의 상태를 비교할 수 있게 해 두면 법적 검토와 협상이 모두 선명해지는 자리입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>
+      검증된 소재는 <b>민법 제580조 제1항 단서</b>, 즉 매수인이 하자를 알고 있었던 경우의 하자담보책임 문제를 중심으로 합니다. 누수를 보았다는 사실만으로 모든 청구가 자동 배제되거나 인정되는 것은 아니며, <b>무엇을 언제 어느 정도로 알았는지</b>와 계약에서 어떤 설명이 있었는지를 확인해야 합니다.
+    </p>
+    <p>
+      민법 제580조 제1항 단서가 문제 되면 <b>매수인이 하자를 알고 있었는지가 핵심 출발점</b>이 됩니다. 사진에 물자국이 남아 있다는 것, 매도인이 원인을 설명했다는 것, 매수인이 수리 견적과 범위를 확인했다는 것은 <b>서로 다른 사실</b>입니다. 계약서의 특약과 중개 과정의 설명도 함께 읽어야 합니다. 조항의 적용 여부는 이 기록 위에서만 구체화됩니다.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>원자료부터 잠그기</h2>
+    <ul class="points">
+      <li><b>다음 단계는 비난이 아니라 보존</b> — 상대방을 먼저 비난하는 것이 아니라 원자료를 보존하고 질문을 좁히는 것입니다. 통지·계약·앱 기록·사진처럼 나중에 바뀔 수 있는 자료부터 잠그면 협상과 법률 검토의 출발점이 같아집니다.</li>
+      <li><b>뭉뚱그린 특약은 위험</b> — 계약서에 특약을 넣는다면 '누수 있음'처럼 뭉뚱그리지 말고 <b>위치, 범위, 수리 주체, 완료 시점과 확인 방법</b>을 적어야 합니다.</li>
+      <li><b>함께 적어야 할 자료</b> — 하자 인지와 매도인의 책임 범위를 판단할 때는 결론을 뒷받침하는 자료와 결론을 흔드는 자료를 함께 적어야 합니다. 유리한 자료만 모으면 실제 의사결정에는 오히려 위험합니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 상대방의 표현을 곧바로 법적 결론으로 옮기지 말고, 그 표현이 가리키는 <b>사실과 자료를 다시 확인</b>하십시오. 명칭은 질문을 시작하게 하는 표지이지, 그 자체로 승패를 결정하는 문장이 아닙니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;"><b>원본 보존과 서면 질문</b>으로 움직입니다.</p>
+    <ol>
+      <li><b>① 원본 보관</b> — 누수를 본 날의 사진과 동영상을 원본으로 보관합니다.</li>
+      <li><b>② 서면 질문</b> — 매도인·중개인에게 원인과 수리 이력을 서면으로 물어야 합니다.</li>
+      <li><b>③ 특약은 구체적으로</b> — 계약서에 특약을 넣는다면 위치, 범위, 수리 주체, 완료 시점과 확인 방법을 적습니다.</li>
+      <li><b>④ 사실 구분</b> — 내가 직접 본 사실과 들은 설명을 나누고, 확인된 사실과 아직 확인하지 못한 사실을 같은 문장에 섞지 않습니다.</li>
+      <li><b>⑤ 상담 준비</b> — 상대방의 단정만으로 권리를 포기하지 말고, 상담할 때 날짜와 자료를 함께 제시할 수 있게 준비합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
