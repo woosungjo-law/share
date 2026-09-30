@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 프롬프트 개인정보 문제, 보안팀의 단속 과제가 아닌 경영진이 정할 사용 원칙이다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · AI 사용 원칙과 개인정보</div>
+    <h1>AI 프롬프트 개인정보 문제, 보안팀의 단속 과제가 아닌 경영진이 정할 사용 원칙이다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 누리엔지니어링의 배정훈 대표는 월간 경영회의에서 영업이사가 올린 보고서를 받았습니다. 생성형 AI를 견적 메일 작성에 도입한 뒤 담당자 한 명당 응대 시간이 눈에 띄게 줄었다는 내용이었습니다. 보고서 부록에는 성공 사례라며 실제 입력 화면이 붙어 있었는데, <b>거래처 담당자의 이름과 직통 번호, 단가 협의 내용이 그대로 보였습니다.</b> 대표는 성과에 만족하다가 이 화면 앞에서 손을 멈추었습니다. 이 성과의 대가로 회사가 무엇을 내주고 있는지 아무도 계산해 본 적이 없었기 때문입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      프롬프트 창은 <b>외부에 열린 회의실 창문과 같습니다.</b> 사무실 안이라고 안심하고 담당자 이름과 단가를 말해도, 창문이 열려 있으면 그 말은 회사 밖으로 나갑니다. 문제는 창문을 어떻게 단속할 것인가가 아니라, 어느 창문에서 무엇을 말해도 되는지 회사가 원칙을 정했는가입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>
+      경영진이 알아야 할 법의 뼈대는 세 줄입니다. 첫째, 프롬프트에 입력된 개인정보는 <b>개인정보보호법 제2조</b>가 정한 '처리' 문제로 다뤄집니다. 직원이 개인적으로 물어본 것이라는 설명은 이 성격 규정을 바꾸지 못합니다. 둘째, <b>개인정보보호법 제15조</b>는 개인정보를 수집·이용하려면 정보주체의 동의를 받거나 법령상 근거가 있어야 한다고 규정합니다. 셋째, 업무상 알게 된 정보를 프롬프트에 입력하는 것은 <b>제17조</b>가 다루는 제3자 제공에 해당할 수 있습니다.
+    </p>
+    <p>
+      CEO에게 중요한 것은 조문 해석이 아니라 이 세 줄이 의사결정의 조건이 된다는 점입니다. AI 도구를 쓰는 조직은 동의나 법령상 근거를 말할 수 있는 정보만 입력하게 하든지, 그렇지 못한 정보는 입력하지 않게 막든지 둘 중 하나를 골라야 합니다. 어느 쪽도 정하지 않은 채 각자 알아서 쓰게 두는 것은 선택이 아니라 방치입니다.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>결정 전에 확인할 세 가지</h2>
+    <ul class="points">
+      <li><b>'해당할 수 있다'의 의미</b> — 제17조 표현은 사실관계에 따라 결론이 달라진다는 신호입니다.</li>
+      <li><b>세 가지 보고</b> — ① 어떤 계정으로 쓰고 있는가(직원 개인 계정과 회사 계약 계정은 취급 조건이 다를 수 있음), ② 실제로 입력되는 정보가 무엇인가(개인정보가 섞이는 업무와 순수 기술 문서 요약은 위험의 크기가 다름), ③ 지금까지 이미 입력된 것이 얼마나 되는가(이 숫자를 모르면 비용도, 중단 기준도 정할 수 없음).</li>
+      <li><b>전면 금지의 함정</b> — 위험을 이유로 AI 사용을 전면 금지하면 문제가 사라지는 것이 아니라 보이지 않는 곳으로 숨을 수 있습니다. 금지보다 허용 범위와 금지 항목을 함께 제시하는 편이 실제 통제에 유리합니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 어느 쪽도 정하지 않은 채 각자 알아서 쓰게 두는 것은 선택이 아니라 방치입니다. 사용 원칙은 보안팀의 과제가 아니라 경영진이 정할 결정입니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <p style="margin-bottom:16px;">비용·책임·중단 기준을 문서로 정하십시오.</p>
+    <ol>
+      <li><b>① 성격 인식</b> — 프롬프트 입력을 제2조의 '처리' 문제로 보고 경영 안건으로 올립니다.</li>
+      <li><b>② 근거 기준</b> — 제15조에 따른 동의 또는 법령상 근거를 말할 수 있는 정보만 입력 가능 항목으로 지정합니다.</li>
+      <li><b>③ 제3자 제공 점검</b> — 제17조가 문제 될 수 있는 업무를 파악해 서비스 계약 조건과 계정 유형부터 보고받습니다.</li>
+      <li><b>④ 실태 보고</b> — 법무 담당에게 입력 실태를 계정별로 정리해 일주일 안에 보고하게 합니다.</li>
+      <li><b>⑤ 한 장의 기준표</b> — 입력해도 되는 항목과 입력해서는 안 되는 항목을 한 장짜리 기준표로 만듭니다. 조건이 맞지 않으면 그 계정의 사용을 멈추는 기준과 재개 조건을 미리 정합니다.</li>
+      <li><b>⑥ 보고 원칙</b> — 영업이사의 성과는 인정하되, 성과 보고서에 개인정보가 담긴 화면을 붙이지 않는 원칙을 정합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
