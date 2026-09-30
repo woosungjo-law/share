@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>컴퓨터가 승인했으니 누구에게 물어도 모른다는 통념이 아닌, 입력과 확인 기록이 나를 지킨다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 자동 대출 분쟁 체크포인트</div>
+    <h1>컴퓨터가 승인했으니 누구에게 물어도 모른다는 통념이 아닌, 입력과 확인 기록이 나를 지킨다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> 자동 승인이라는 결과만으로 형사책임이 정해지거나 사라지는 것은 아닙니다. 형법 제347조의 기망 여부와 제347조의2의 컴퓨터등사용사기죄 관련 사람의 개입 여부를 확인할 수 있도록 입력·수정·상담·송금 기록을 원본 그대로 보관해야 합니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      온라인 대출을 신청한 남궁리아 씨는 자동 승인을 받았지만 며칠 뒤 금융회사에서 입력 정보와 대출 과정에 문제가 있었다는 연락을 받았습니다. 컴퓨터가 승인했으니 설명할 사람이 없다고 생각했지만 신청 화면과 제출 자료, 상담 메시지를 먼저 저장하기로 했습니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    형법 제347조의 사기죄에서 기망행위는 사람으로 하여금 착오를 일으키게 하는 행위입니다. 본인이 어떤 정보를 입력했고 상담 직원에게 무엇을 설명했으며 회사가 어떻게 답했는지를 정확히 남기는 것이 중요합니다.
+    사람의 확인·승인·송금 개입이 있었다면 형법 제347조의2의 컴퓨터등사용사기죄나 사기죄 적용 여부를 다시 검토할 수 있습니다. 자동심사라는 말 하나만으로 결론내리지 않고 시스템과 사람의 개입을 자료로 나눠 봅니다.
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>입력 자료와 사람의 개입을 구분합니다</h2>
+    <ul class="points">
+      <li><b>신청 원자료 보관</b> — 소득·매출·사업기간 입력과 업로드 서류, 수정 시각을 저장합니다.</li>
+      <li><b>사람의 확인 기록</b> — 상담원·직원의 이름이나 계정, 통화 날짜와 안내 내용을 적습니다.</li>
+      <li><b>승인·송금 알림 보관</b> — 승인·송금·변경 안내와 고객센터 답변을 함께 둡니다.</li>
+      <li><b>서면으로 처리 과정 질문</b> — 자동심사 여부뿐 아니라 수정·확인·송금 단계가 어떻게 처리됐는지 묻습니다.</li>
+    </ul>
+    <div class="callout">신청 자료를 삭제하거나 나중에 내용을 맞추지 않습니다. 본인이 알고 입력한 사실과 회사 시스템이 처리한 결과를 나누어 원본 그대로 제시해야 형사적 평가의 출발점이 됩니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;">지금 당장 확인할 일 — 원자료를 지우지 않고 상담받습니다.</p>
+    <ol>
+      <li><b>입력 보관</b> — 신청·첨부·수정 자료를 저장합니다.</li>
+      <li><b>사람 확인</b> — 상담·승인·송금 개입의 날짜와 계정을 기록합니다.</li>
+      <li><b>알림 보관</b> — 승인·송금·변경 안내와 고객센터 답변을 함께 둡니다.</li>
+      <li><b>결론 유보</b> — 사실자료를 먼저 제시하고 형사적 평가는 전문가에게 확인합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
