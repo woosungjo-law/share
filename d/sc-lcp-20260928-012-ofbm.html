@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>생전에 받은 재산, 상속 자리에서 다시 셈에 오를까?</title>
+<!-- sc-template v2 · 렌더러: _tools/sc.py build · 이 파일을 직접 고치지 말고 00_운영/app_template.html 과 시나리오 노트를 고친다 -->
+<style>
+  :root{
+    --navy:#12233f; --navy-deep:#0a1626; --accent:#c9a24b; --bg:#f4f5f7; --card:#ffffff;
+    --text:#1e232b; --muted:#5f6673; --line:#e5e7eb;
+    --g-high:#1f7a4d; --g-mid:#b7791f; --g-check:#4a5568;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    background:var(--bg);color:var(--text);min-height:100vh;
+    display:flex;align-items:flex-start;justify-content:center;padding:16px;line-height:1.55;
+    word-break:keep-all;overflow-wrap:anywhere;
+  }
+  .app{width:100%;max-width:480px;background:var(--card);border-radius:18px;box-shadow:0 8px 30px rgba(18,35,63,.12);overflow:hidden;display:flex;flex-direction:column;min-height:560px;}
+  .topbar{background:var(--navy);color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;font-size:13px;}
+  .topbar .brand{font-weight:700;letter-spacing:.02em;}
+  .progress-wrap{height:4px;background:var(--line);width:100%;}
+  .progress-bar{height:100%;background:var(--accent);width:0%;transition:width .25s ease;}
+  .screen{flex:1;padding:26px 22px 22px;display:none;flex-direction:column;animation:fadeIn .22s ease;}
+  .screen.active{display:flex;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+
+  .intro-icon{font-size:38px;margin-bottom:12px;}
+  .intro h1{font-size:22px;line-height:1.4;color:var(--navy-deep);margin-bottom:12px;}
+  .myth{background:#fbf6ea;border-left:4px solid var(--accent);border-radius:8px;padding:12px 14px;margin-bottom:14px;font-size:13.5px;color:#4a3d16;}
+  .myth b{display:block;font-size:11px;letter-spacing:.04em;color:#8a6d1f;margin-bottom:3px;}
+  .intro p{color:var(--muted);font-size:14px;margin-bottom:16px;}
+  .meta{font-size:12px;color:var(--muted);margin-bottom:20px;display:flex;gap:8px;flex-wrap:wrap;}
+  .meta span{background:var(--bg);padding:4px 10px;border-radius:20px;}
+
+  .q-count{font-size:12px;color:#8a6d1f;font-weight:700;margin-bottom:8px;letter-spacing:.03em;}
+  .q-text{font-size:19px;font-weight:700;color:var(--navy-deep);margin-bottom:8px;line-height:1.45;}
+  .q-why{font-size:12.5px;color:var(--muted);margin-bottom:18px;}
+  .options{display:flex;flex-direction:column;gap:10px;margin-top:10px;}
+  .opt-btn{text-align:left;background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;font:inherit;font-size:14.5px;color:var(--text);cursor:pointer;transition:all .15s ease;min-height:44px;width:100%;}
+  .opt-btn:hover,.opt-btn:active,.opt-btn:focus-visible{border-color:var(--accent);background:#fbf6ea;outline:none;}
+  .opt-btn.primary{text-align:center;font-weight:700;background:var(--navy);color:#fff;border:none;}
+  .opt-btn.primary:hover,.opt-btn.primary:focus-visible{background:var(--navy-deep);}
+  .back-btn{margin-top:14px;background:none;border:none;color:var(--muted);font-size:12.5px;text-align:left;cursor:pointer;min-height:36px;text-decoration:underline;}
+
+  .grade{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#fff;padding:5px 12px;border-radius:20px;margin-bottom:10px;width:fit-content;}
+  .grade.high{background:var(--g-high);} .grade.mid{background:var(--g-mid);} .grade.check{background:var(--g-check);}
+  .outcome-tag{display:inline-block;font-size:11px;font-weight:700;color:var(--navy);background:#eef1f6;padding:4px 10px;border-radius:20px;margin-bottom:10px;margin-left:6px;}
+  .outcome h2{font-size:18px;color:var(--navy-deep);margin-bottom:14px;line-height:1.5;}
+  .block{margin-bottom:15px;}
+  .block-label{font-size:12px;font-weight:700;color:#8a6d1f;margin-bottom:5px;letter-spacing:.02em;}
+  .block-body{font-size:13.5px;color:var(--text);}
+  .chips{display:flex;flex-direction:column;gap:5px;margin-bottom:6px;}
+  .chip{font-size:12.5px;background:var(--bg);border-radius:8px;padding:6px 10px;color:#3b4250;}
+  .why-line{font-size:13.5px;}
+  .vs{display:grid;gap:6px;}
+  .vs div{font-size:13px;border-radius:8px;padding:9px 12px;}
+  .vs .m{background:#f6ecec;color:#7a2f2f;} .vs .f{background:#e9f4ee;color:#1d5b3a;}
+  .vs b{display:block;font-size:10.5px;letter-spacing:.05em;margin-bottom:2px;}
+  .checklist{list-style:none;display:flex;flex-direction:column;gap:6px;}
+  .checklist li{font-size:13.5px;padding-left:22px;position:relative;}
+  .checklist li::before{content:"☐";position:absolute;left:0;color:#8a6d1f;}
+  .disclaimer{font-size:12px;color:var(--muted);background:var(--bg);border-radius:10px;padding:12px 14px;margin-bottom:14px;}
+  .actions{display:flex;flex-direction:column;gap:8px;margin-bottom:14px;}
+  .ghost-btn{background:transparent;border:1.5px solid var(--line);color:#3b4250;border-radius:10px;padding:11px;font:inherit;font-size:13px;cursor:pointer;min-height:44px;text-align:center;text-decoration:none;display:block;}
+  .ghost-btn:hover,.ghost-btn:focus-visible{border-color:var(--accent);outline:none;}
+  .cta-box{background:var(--navy);color:#fff;border-radius:12px;padding:16px 18px;font-size:13.5px;margin-top:auto;}
+  .cta-box strong{color:var(--accent);} .cta-box a{color:#fff;text-decoration:underline;}
+  .footer-mark{text-align:center;font-size:11px;color:var(--muted);padding:10px 0 16px;}
+  @media (max-width:380px){ .screen{padding:22px 16px 18px;} .q-text{font-size:18px;} }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topbar"><span class="brand">법률 자가진단</span><span id="progress-label"></span></div>
+  <div class="progress-wrap"><div class="progress-bar" id="progress-bar"></div></div>
+  <div class="screen active" id="screen"></div>
+  <div class="footer-mark" id="footer"></div>
+</div>
+
+<script id="sc-data" type="application/json">{"hook": "생전에 받은 재산, 상속 자리에서 다시 셈에 오를까?", "myth": "증여세를 냈다면 상속 때는 다시 따지지 않는다", "teaser": "세금 셈과 가족 나눔 셈은 기간도 기준도 달라요. 내가 받은 재산이 어느 셈에 오르는지 1분 만에 확인해 보세요.", "icon": "🏠", "time": "약 1분", "start": "Q1", "nq_min": 1, "nq_max": 5, "cta_lawyer": "조우성 변호사", "cta_email": "law@mustknow.co.kr", "disclaimer": "이 진단은 일반적인 법률 정보 안내이며, 구체적인 사안은 개별 상담을 통해 확인해야 합니다.", "mother_url": "https://woosungjo-law.github.io/share/d/lcp-20260928-012-71d5.html", "questions": {"Q1": {"text": "돌아가신 분(피상속인)으로부터 생전에 재산이나 자금을 받은 적이 있나요?", "why": "이 진단의 출발점이에요. 받은 형태에 따라 셈에 오르는 길이 달라져요.", "options": [{"label": "증여(아파트 자금·현금 등)를 받았다", "next": "Q2"}, {"label": "유언(유증)으로 받기로 되어 있었다", "next": "Q2"}, {"label": "받은 적이 없다", "next": "N"}, {"label": "받았는지 기억나지 않는다", "next": "C"}]}, "Q2": {"text": "그 재산을 받은 사람은 상속인(배우자·자녀 등)이었나요?", "why": "받은 사람의 지위에 따라 세금 셈에 더해지는 기간이 10년과 5년으로 갈려요.", "options": [{"label": "상속인이었다", "next": "Q3a"}, {"label": "상속인이 아니었다(손자·제3자 등)", "next": "Q3b"}, {"label": "상속인인지 잘 모르겠다", "next": "C"}]}, "Q3a": {"text": "돌아가신 날(상속 개시일)로부터 그 증여가 10년 안에 해당하나요?", "why": "상속인이 받은 증여는 10년 안의 것이 세금 셈에 더해져요.", "options": [{"label": "10년이 지나지 않았다", "next": "Q4"}, {"label": "10년이 지났다", "next": "T"}, {"label": "정확한 날짜를 모르겠다", "next": "C"}]}, "Q3b": {"text": "돌아가신 날(상속 개시일)로부터 그 증여가 5년 안에 해당하나요?", "why": "상속인이 아닌 사람이 받은 증여는 5년 안의 것이 세금 셈에 더해져요.", "options": [{"label": "5년이 지나지 않았다", "next": "Q4"}, {"label": "5년이 지났다", "next": "T"}, {"label": "정확한 날짜를 모르겠다", "next": "C"}]}, "Q4": {"text": "돌아가신 분을 오래 모시거나 재산을 지키는 데 기여한 사실이 있나요?", "why": "기여가 인정되는 경우 나눔 셈에서 별도로 다투는 길이 있어요.", "options": [{"label": "있다(동거·간호·재산 유지 등)", "next": "G"}, {"label": "없다", "next": "Q5"}]}, "Q5": {"text": "상속재산 나눔(상속분 협의)은 어디까지 진행됐나요?", "why": "미리 받은 재산의 정산은 나눔 단계에서 다뤄져요.", "options": [{"label": "협의가 시작됐거나 의견이 갈리고 있다", "next": "S"}, {"label": "아직 시작 전이다", "next": "P"}]}}, "outcomes": {"P": {"grade": "high", "tag": "셈에 넣을 준비 상태", "title": "미리 받은 재산이 셈에 오르는 상황이 확인되지만, 나눔 전이라 지금이 가장 준비가 쉬운 시기예요.", "why": "기간 안의 증여가 확인되고 나눔이 아직 시작 전이라고 답하셨어요.", "fact": "'증여세를 냈으면 끝'이라는 통념과 달리, 세금 셈과 나눔 셈이 따로 돌아요. 준비된 사람이 나눔에서 유리해요.", "basis": "상속세 과세가액은 상속개시일 전 10년 이내 상속인에 대한 증여와 5년 이내 상속인 아닌 자에 대한 증여를 가산해 정합니다(상속세 및 증여세법 제13조 제1항). 나눔 셈에서는 수증재산이 자기 상속분에 미달할 때 그 부족한 부분의 한도에서 특별수익자의 상속분이 인정됩니다(민법 제1008조).", "caution": "평가 기준·금액은 사안마다 달라지므로, 숫자보다 자료를 먼저 고정하는 편이 안전해요.", "checklist": ["준 날짜·받은 사람·세금 신고 여부를 한 장에 정리하세요(체크포인트 ①).", "계약서·이체 기록·신고서를 한 봉투에 모아 두세요(체크포인트 ②).", "세금 더하기와 가족 나누기를 별개의 표로 정리하세요(체크포인트 ③)."], "disclaimer": "", "cta": ""}, "G": {"grade": "mid", "tag": "기여분 검토", "title": "부양·기여 사실이 있다면, 나눔 셈에서 기여분을 다투는 길이 열려 있는 상태로 보여요.", "why": "동거·간호·재산 유지 등 기여가 있다고 답하셨어요.", "fact": "'미리 받으면 불리하기 마련이다'는 통념과 달리, 기여한 사람은 별도의 몫을 다투는 장치가 마련돼 있어요.", "basis": "상당한 기간 동거·간호 등으로 특별히 부양하거나 재산의 유지·증가에 기여한 자는 기여분을 상속분에 가산하도록 정해져 있습니다(민법 제1008조의2 제1항). 또 증여나 유증이 특별한 부양·기여의 보상으로 행해진 때에는 기여에 상응하는 범위에서 특별수익 상속분이 제한됩니다(민법 제1008조 단서).", "caution": "기여분 인정 여부는 기여의 시기·방법·정도에 대한 사안별 판단이 필요해요.", "checklist": ["기여의 기간과 내용을 연도별로 적어 두세요(마더 체크포인트).", "증여가 기여의 보상이라는 주장이라면 그 근거 자료를 함께 정리하세요.", "기여분은 협의 또는 가정법원 청구로 정해지므로 어느 쪽을 검토할지 정하세요."], "disclaimer": "", "cta": ""}, "S": {"grade": "mid", "tag": "특별수익 정산 국면", "title": "나눔이 진행 중이라면, 미리 받은 재산의 정산(특별수익)이 어떻게 적용되는지 확인할 시점이에요.", "why": "협의가 시작됐거나 의견이 갈리고 있다고 답하셨어요.", "fact": "'세금을 냈으니 나눔은 끝'이라는 통념과 달리, 세금 셈을 했어도 나눔 셈에서는 미리 받은 재산이 다시 등장해요.", "basis": "공동상속인 중 증여·유증을 받은 자는 그 수증재산이 자기 상속분에 미달하는 한도에서 상속분이 있습니다(민법 제1008조). 유류분 계산에는 상속개시 전 1년간의 증여가 산입되고, 쌍방이 유류분권리자의 손해를 알고 한 증여는 1년 전의 것도 산입됩니다(민법 제1114조).", "caution": "정산 금액은 재산 평가·기여 사정에 따라 달라질 수 있어요.", "checklist": ["공동상속인 각자가 생전에 받은 목록을 함께 정리해 비교하세요.", "미리 받은 범위와 평가 기준부터 합의한 뒤 금액으로 들어가세요(마더).", "유류분을 주장하는 가족이 있다면 1년 기준·악의적 증여 문제를 구분해 검토하세요."], "disclaimer": "", "cta": ""}, "T": {"grade": "mid", "tag": "합산 기간 도과", "title": "가산 기간이 지났다면 세금 셈에서는 빠지지만, 나눔 셈은 별개로 검토하는 것이 안전해요.", "why": "증여가 세법상 가산 기간(상속인 10년·상속인 아닌 자 5년)을 넘었다고 답하셨어요.", "fact": "'기간이 지났으니 모든 셈에서 끝'이라는 통념과 달리, 세금 셈과 나눔 셈의 기간은 따로 돌아가요.", "basis": "세법의 가산은 상속개시일 전 10년(상속인)·5년(상속인 아닌 자) 이내 증여를 대상으로 합니다(상속세 및 증여세법 제13조 제1항). 세금을 냈다고 나눔이 끝나는 것은 아니며, 민법의 특별수익 정산은 이 기간과 별개로 검토됩니다(마더 CLM-04, 민법 제1008조).", "caution": "기간 도과 판단은 날짜 하루 차이로 달라질 수 있어, 기억이 아닌 서류로 확인하세요.", "checklist": ["증여일과 상속 개시일을 서류로 확인해 기간 도과를 고정하세요.", "세금 셈이 끝났어도 가족 나눔에서 정산 요구가 나올 수 있음을 대비하세요.", "수증 사실을 보여 줄 계약서·이체 기록·신고서를 보관하세요."], "disclaimer": "", "cta": ""}, "N": {"grade": "check", "tag": "본인 수증 없음", "title": "본인이 생전에 받은 사실이 없다면 이 진단의 합산·정산 축에 해당하지 않지만, 다른 상속인의 수증 여부는 별도로 확인돼요.", "why": "피상속인으로부터 받은 재산이 없다고 답하셨어요.", "fact": "정산은 받은 사람의 상속분을 줄이는 방식이라, 남은 사람의 몫에도 영향을 줄 수 있어요.", "basis": "특별수익자의 상속분은 공동상속인 중 피상속인으로부터 증여·유증을 받은 자에 대해 인정됩니다(민법 제1008조). 그 정산 결과는 다른 공동상속인의 상속분 계산에도 영향을 줍니다.", "caution": "본인이 몰라서 받은 적이 없다고 답한 경우일 수 있으니, 자료로 확인하는 편이 안전해요.", "checklist": ["다른 공동상속인이 생전에 받은 사실이 있는지 확인해 두세요.", "유언장에 유증이 포함돼 있는지 원본을 확인하세요.", "상속 재산 목록과 채무 여부를 함께 정리하세요."], "disclaimer": "", "cta": ""}, "C": {"grade": "check", "tag": "날짜·자료 확인이 먼저", "title": "받은 날짜와 지위를 모르는 상태에서는, 셈 판단보다 자료 확보가 앞서는 상황이에요.", "why": "수증 여부·상속인 지위·날짜 중 확인되지 않는 것이 있다고 답하셨어요.", "fact": "10년·5년·1년의 기간 계산은 모두 날짜에서 시작해요. 종이 없는 지원이 가장 비싸다는 게 마더의 경고예요.", "basis": "세법의 가산 기간과 민법의 유류분 기간은 모두 증여 시점과 상속 개시일을 기준으로 계산됩니다(상속세 및 증여세법 제13조 제1항, 민법 제1114조). 언제 누구에게 주었는지 보여 주는 종이가 결과를 가릅니다(마더 CLM-04).", "caution": "날짜를 모르는 상태에서는 세금·나눔 어느 셈도 계산할 수 없으니, 추측으로 진행하지 않는 편이 안전해요.", "checklist": ["계약서·이체 기록·신고서를 모아 증여일을 먼저 확인하세요(체크포인트 ②).", "받은 사람이 상속인인지 가족관계·상속 개시 상황으로 확인하세요.", "큰 지원은 구두가 아니라 문자·서류로 남기세요(체크포인트 ④)."], "disclaimer": "", "cta": ""}}}</script>
+<script>
+"use strict";
+var D = JSON.parse(document.getElementById("sc-data").textContent);
+var GRADE = {high:"가능성 높음", mid:"살펴볼 것", check:"확인 필요"};
+var screenEl = document.getElementById("screen");
+var pathStack = [];          // [{qid, qtext, label}]
+
+function h(tag, cls, text){
+  var e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(text !== undefined && text !== null) e.textContent = text;
+  return e;
+}
+function clearScreen(){ while(screenEl.firstChild) screenEl.removeChild(screenEl.firstChild); screenEl.className = "screen active"; window.scrollTo(0,0); }
+
+function setProgress(step, done){
+  var bar = document.getElementById("progress-bar");
+  var lab = document.getElementById("progress-label");
+  if(done){ bar.style.width = "100%"; lab.textContent = "진단 완료"; return; }
+  if(step === 0){ bar.style.width = "0%"; lab.textContent = ""; return; }
+  bar.style.width = Math.min(100, Math.round(step / D.nq_max * 100)) + "%";
+  lab.textContent = "질문 " + step;
+}
+
+function showIntro(){
+  pathStack = []; clearScreen(); setProgress(0);
+  var wrap = h("div","intro");
+  wrap.appendChild(h("div","intro-icon", D.icon || "⚖️"));
+  wrap.appendChild(h("h1","", D.hook));
+  if(D.myth){
+    var m = h("div","myth"); m.appendChild(h("b","","많은 분들이 이렇게 알고 있어요")); m.appendChild(document.createTextNode("“" + D.myth + "”"));
+    wrap.appendChild(m);
+  }
+  if(D.teaser) wrap.appendChild(h("p","", D.teaser));
+  var meta = h("div","meta");
+  [D.time || "약 1분", "객관식 질문 최대 " + D.nq_max + "개", "답변은 저장·전송되지 않아요"].forEach(function(t){ meta.appendChild(h("span","",t)); });
+  wrap.appendChild(meta);
+  var b = h("button","opt-btn primary","진단 시작하기"); b.type = "button";
+  b.onclick = function(){ goTo(D.start); };
+  wrap.appendChild(b);
+  screenEl.appendChild(wrap);
+}
+
+function goTo(id){
+  if(D.outcomes[id]) return showOutcome(id);
+  showQuestion(id);
+}
+
+function showQuestion(qid){
+  var q = D.questions[qid];
+  clearScreen();
+  var step = pathStack.length + 1;
+  setProgress(step);
+  screenEl.appendChild(h("div","q-count","질문 " + step));
+  screenEl.appendChild(h("div","q-text", q.text));
+  if(q.why) screenEl.appendChild(h("div","q-why", q.why));
+  var box = h("div","options");
+  q.options.forEach(function(o){
+    var b = h("button","opt-btn", o.label); b.type = "button";
+    b.onclick = function(){ pathStack.push({qid:qid, qtext:q.text, label:o.label}); goTo(o.next); };
+    box.appendChild(b);
+  });
+  screenEl.appendChild(box);
+  var back = h("button","back-btn", pathStack.length ? "← 이전 질문으로" : "← 처음으로"); back.type = "button";
+  back.onclick = function(){
+    if(!pathStack.length) return showIntro();
+    var last = pathStack.pop(); showQuestion(last.qid);
+  };
+  screenEl.appendChild(back);
+}
+
+function copyText(text, btn){
+  function ok(){ var o = btn.textContent; btn.textContent = "복사했어요 ✓"; setTimeout(function(){ btn.textContent = o; }, 1800); }
+  function fallback(){
+    var t = document.createElement("textarea"); t.value = text; t.style.position = "fixed"; t.style.opacity = "0";
+    document.body.appendChild(t); t.select();
+    try{ document.execCommand("copy"); ok(); }catch(e){ btn.textContent = "복사 실패 — 직접 선택해 주세요"; }
+    document.body.removeChild(t);
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(ok, fallback); } else { fallback(); }
+}
+
+function block(label, bodyNode){
+  var b = h("div","block"); b.appendChild(h("div","block-label",label)); b.appendChild(bodyNode); return b;
+}
+
+function showOutcome(oid){
+  var o = D.outcomes[oid];
+  clearScreen(); setProgress(0, true);
+  var head = h("div");
+  var g = h("span","grade " + o.grade, "● " + GRADE[o.grade]);
+  head.appendChild(g);
+  if(o.tag) head.appendChild(h("span","outcome-tag", o.tag));
+  screenEl.appendChild(head);
+  var wrap = h("div","outcome");
+  wrap.appendChild(h("h2","", o.title));
+
+  /* 왜 이 결과인가 — 내가 고른 답 + 근거 1줄 */
+  var why = h("div");
+  var chips = h("div","chips");
+  pathStack.forEach(function(p){ chips.appendChild(h("div","chip","· " + p.label)); });
+  why.appendChild(chips);
+  why.appendChild(h("div","why-line", o.why));
+  wrap.appendChild(block("🔎 왜 이 결과인가요?", why));
+
+  if(o.fact && D.myth){
+    var vs = h("div","vs");
+    var m = h("div","m"); m.appendChild(h("b","","통념")); m.appendChild(document.createTextNode(D.myth));
+    var f = h("div","f"); f.appendChild(h("b","","이 경우엔")); f.appendChild(document.createTextNode(o.fact));
+    vs.appendChild(m); vs.appendChild(f);
+    wrap.appendChild(block("💡 통념 vs 사실", vs));
+  }
+  wrap.appendChild(block("📖 법적 근거", h("div","block-body", o.basis)));
+  if(o.checklist && o.checklist.length){
+    var ul = h("ul","checklist"); o.checklist.forEach(function(c){ ul.appendChild(h("li","",c)); });
+    wrap.appendChild(block("✅ 지금 해볼 것", ul));
+  }
+  wrap.appendChild(block("⚠️ 주의할 점", h("div","block-body", o.caution)));
+  wrap.appendChild(h("div","disclaimer", o.disclaimer || D.disclaimer));
+  screenEl.appendChild(wrap);
+
+  var actions = h("div","actions");
+  var cp = h("button","ghost-btn","📋 결과 요약 복사하기"); cp.type = "button";
+  cp.onclick = function(){
+    var t = "[법률 자가진단] " + D.hook + "\n결과: " + GRADE[o.grade] + " — " + o.title + "\n※ 일반적인 법률 정보이며 개별 사안은 상담이 필요합니다.\n" + location.href;
+    copyText(t, cp);
+  };
+  actions.appendChild(cp);
+  if(D.mother_url){
+    var a = h("a","ghost-btn","📰 원문 컬럼 읽어보기"); a.href = D.mother_url; a.target = "_blank"; a.rel = "noopener"; actions.appendChild(a);
+  }
+  var rs = h("button","ghost-btn","↺ 처음부터 다시"); rs.type = "button"; rs.onclick = showIntro;
+  actions.appendChild(rs);
+  screenEl.appendChild(actions);
+
+  var cta = h("div","cta-box");
+  cta.appendChild(document.createTextNode((o.cta || "지금 상황을 구체적으로 확인하고 싶다면") + " "));
+  var s = h("strong","", D.cta_lawyer);
+  cta.appendChild(s);
+  cta.appendChild(document.createTextNode("("));
+  var ml = h("a","", D.cta_email); ml.href = "mailto:" + D.cta_email; cta.appendChild(ml);
+  cta.appendChild(document.createTextNode(")에게 문의하세요."));
+  screenEl.appendChild(cta);
+}
+
+document.getElementById("footer").textContent = "제공 : " + D.cta_lawyer + " 법률사무소";
+showIntro();
+</script>
+</body>
+</html>
