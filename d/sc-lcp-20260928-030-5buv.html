@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>확정일자, 며칠 늦게 받아도 순서는 같을까?</title>
+<!-- sc-template v2 · 렌더러: _tools/sc.py build · 이 파일을 직접 고치지 말고 00_운영/app_template.html 과 시나리오 노트를 고친다 -->
+<style>
+  :root{
+    --navy:#12233f; --navy-deep:#0a1626; --accent:#c9a24b; --bg:#f4f5f7; --card:#ffffff;
+    --text:#1e232b; --muted:#5f6673; --line:#e5e7eb;
+    --g-high:#1f7a4d; --g-mid:#b7791f; --g-check:#4a5568;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    background:var(--bg);color:var(--text);min-height:100vh;
+    display:flex;align-items:flex-start;justify-content:center;padding:16px;line-height:1.55;
+    word-break:keep-all;overflow-wrap:anywhere;
+  }
+  .app{width:100%;max-width:480px;background:var(--card);border-radius:18px;box-shadow:0 8px 30px rgba(18,35,63,.12);overflow:hidden;display:flex;flex-direction:column;min-height:560px;}
+  .topbar{background:var(--navy);color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;font-size:13px;}
+  .topbar .brand{font-weight:700;letter-spacing:.02em;}
+  .progress-wrap{height:4px;background:var(--line);width:100%;}
+  .progress-bar{height:100%;background:var(--accent);width:0%;transition:width .25s ease;}
+  .screen{flex:1;padding:26px 22px 22px;display:none;flex-direction:column;animation:fadeIn .22s ease;}
+  .screen.active{display:flex;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+
+  .intro-icon{font-size:38px;margin-bottom:12px;}
+  .intro h1{font-size:22px;line-height:1.4;color:var(--navy-deep);margin-bottom:12px;}
+  .myth{background:#fbf6ea;border-left:4px solid var(--accent);border-radius:8px;padding:12px 14px;margin-bottom:14px;font-size:13.5px;color:#4a3d16;}
+  .myth b{display:block;font-size:11px;letter-spacing:.04em;color:#8a6d1f;margin-bottom:3px;}
+  .intro p{color:var(--muted);font-size:14px;margin-bottom:16px;}
+  .meta{font-size:12px;color:var(--muted);margin-bottom:20px;display:flex;gap:8px;flex-wrap:wrap;}
+  .meta span{background:var(--bg);padding:4px 10px;border-radius:20px;}
+
+  .q-count{font-size:12px;color:#8a6d1f;font-weight:700;margin-bottom:8px;letter-spacing:.03em;}
+  .q-text{font-size:19px;font-weight:700;color:var(--navy-deep);margin-bottom:8px;line-height:1.45;}
+  .q-why{font-size:12.5px;color:var(--muted);margin-bottom:18px;}
+  .options{display:flex;flex-direction:column;gap:10px;margin-top:10px;}
+  .opt-btn{text-align:left;background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;font:inherit;font-size:14.5px;color:var(--text);cursor:pointer;transition:all .15s ease;min-height:44px;width:100%;}
+  .opt-btn:hover,.opt-btn:active,.opt-btn:focus-visible{border-color:var(--accent);background:#fbf6ea;outline:none;}
+  .opt-btn.primary{text-align:center;font-weight:700;background:var(--navy);color:#fff;border:none;}
+  .opt-btn.primary:hover,.opt-btn.primary:focus-visible{background:var(--navy-deep);}
+  .back-btn{margin-top:14px;background:none;border:none;color:var(--muted);font-size:12.5px;text-align:left;cursor:pointer;min-height:36px;text-decoration:underline;}
+
+  .grade{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#fff;padding:5px 12px;border-radius:20px;margin-bottom:10px;width:fit-content;}
+  .grade.high{background:var(--g-high);} .grade.mid{background:var(--g-mid);} .grade.check{background:var(--g-check);}
+  .outcome-tag{display:inline-block;font-size:11px;font-weight:700;color:var(--navy);background:#eef1f6;padding:4px 10px;border-radius:20px;margin-bottom:10px;margin-left:6px;}
+  .outcome h2{font-size:18px;color:var(--navy-deep);margin-bottom:14px;line-height:1.5;}
+  .block{margin-bottom:15px;}
+  .block-label{font-size:12px;font-weight:700;color:#8a6d1f;margin-bottom:5px;letter-spacing:.02em;}
+  .block-body{font-size:13.5px;color:var(--text);}
+  .chips{display:flex;flex-direction:column;gap:5px;margin-bottom:6px;}
+  .chip{font-size:12.5px;background:var(--bg);border-radius:8px;padding:6px 10px;color:#3b4250;}
+  .why-line{font-size:13.5px;}
+  .vs{display:grid;gap:6px;}
+  .vs div{font-size:13px;border-radius:8px;padding:9px 12px;}
+  .vs .m{background:#f6ecec;color:#7a2f2f;} .vs .f{background:#e9f4ee;color:#1d5b3a;}
+  .vs b{display:block;font-size:10.5px;letter-spacing:.05em;margin-bottom:2px;}
+  .checklist{list-style:none;display:flex;flex-direction:column;gap:6px;}
+  .checklist li{font-size:13.5px;padding-left:22px;position:relative;}
+  .checklist li::before{content:"☐";position:absolute;left:0;color:#8a6d1f;}
+  .disclaimer{font-size:12px;color:var(--muted);background:var(--bg);border-radius:10px;padding:12px 14px;margin-bottom:14px;}
+  .actions{display:flex;flex-direction:column;gap:8px;margin-bottom:14px;}
+  .ghost-btn{background:transparent;border:1.5px solid var(--line);color:#3b4250;border-radius:10px;padding:11px;font:inherit;font-size:13px;cursor:pointer;min-height:44px;text-align:center;text-decoration:none;display:block;}
+  .ghost-btn:hover,.ghost-btn:focus-visible{border-color:var(--accent);outline:none;}
+  .cta-box{background:var(--navy);color:#fff;border-radius:12px;padding:16px 18px;font-size:13.5px;margin-top:auto;}
+  .cta-box strong{color:var(--accent);} .cta-box a{color:#fff;text-decoration:underline;}
+  .footer-mark{text-align:center;font-size:11px;color:var(--muted);padding:10px 0 16px;}
+  @media (max-width:380px){ .screen{padding:22px 16px 18px;} .q-text{font-size:18px;} }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topbar"><span class="brand">법률 자가진단</span><span id="progress-label"></span></div>
+  <div class="progress-wrap"><div class="progress-bar" id="progress-bar"></div></div>
+  <div class="screen active" id="screen"></div>
+  <div class="footer-mark" id="footer"></div>
+</div>
+
+<script id="sc-data" type="application/json">{"hook": "확정일자, 며칠 늦게 받아도 순서는 같을까?", "myth": "전입신고만 하면 확정일자 없이도 보증금을 먼저 돌려받는다", "teaser": "사는 권리(대항력)와 돈을 돌려받는 순서(우선변제권)는 별개예요. 확정일자를 받은 날짜가 순위를 정해요. 1분 만에 확인해 보세요.", "icon": "🔑", "time": "약 1분", "start": "Q1", "nq_min": 2, "nq_max": 3, "cta_lawyer": "조우성 변호사", "cta_email": "law@mustknow.co.kr", "disclaimer": "이 진단은 일반적인 법률 정보 안내이며, 구체적인 사안은 개별 상담을 통해 확인해야 합니다.", "mother_url": "https://woosungjo-law.github.io/share/d/lcp-20260928-030-59yz.html", "questions": {"Q1": {"text": "지금 상황은 어디에 가장 가까운가요?", "why": "확정일자를 받았는지, 경매가 진행 중인지에 따라 볼 것이 달라요.", "options": [{"label": "전입신고만 했고 확정일자는 아직 안 받았다", "next": "Q2"}, {"label": "확정일자를 늦게 받아 순위가 걱정된다", "next": "Q3"}, {"label": "경매 통지서를 받았다", "next": "Q4"}, {"label": "계약서 주소와 등기부가 다른 것 같다", "next": "Q5"}]}, "Q2": {"text": "전입신고와 확정일자, 어디까지 갖췄나요?", "why": "대항력과 우선변제권은 요건이 달라요.", "options": [{"label": "지금이라도 확정일자를 받을 생각이다", "next": "A"}, {"label": "전입신고만으로 충분한 줄 알았다", "next": "B"}, {"label": "확정일자를 이미 받았지만 늦었다", "next": "Q3"}]}, "Q3": {"text": "확정일자보다 먼저 생긴 담보(근저당·가압류 등)가 있나요?", "why": "우선변제권은 후순위보다 먼저 받는 권리라, 선순위는 뒤집을 수 없어요.", "options": [{"label": "확정일자보다 먼저 근저당 등이 설정됐다", "next": "D"}, {"label": "먼저 생긴 담보는 없다", "next": "E"}, {"label": "등기부를 확인하지 못했다", "next": "D"}]}, "Q4": {"text": "경매 통지서를 받았다면 배당 요구 기한을 확인하셨나요?", "why": "기한을 놓치면 우선변제권이 있어도 배당에서 밀릴 수 있어요.", "options": [{"label": "기한을 확인하고 달력에 표시했다", "next": "G"}, {"label": "기한이 있다는 걸 몰랐다", "next": "H"}]}, "Q5": {"text": "계약서의 주소·동·호수와 등기부 표시가 일치하나요?", "why": "표시가 어긋나면 보호 범위가 흔들려요.", "options": [{"label": "확인해 보니 일치한다", "next": "I"}, {"label": "다르거나 확인하지 못했다", "next": "J"}]}}, "outcomes": {"A": {"grade": "high", "tag": "지금이라도 확정일자", "title": "확정일자를 지금이라도 받으면, 그날부터 순위가 새로 정해져요.", "why": "지금이라도 확정일자를 받을 생각이라고 답하셨어요.", "fact": "전입신고가 확정일자를 대신하지 않아요. 늦었어도 지금 받는 편이 나아요.", "basis": "주택임대차보호법 제3조의2 제2항은 대항요건과 임대차계약증서상의 확정일자를 갖춘 임차인이 경매·공매의 환가대금에서 후순위권리자나 그 밖의 채권자보다 우선하여 보증금을 변제받을 권리가 있다고 정합니다. 이미 생긴 앞순위는 되돌릴 수 없지만, 새로 받은 확정일자 날짜가 그 다음 순위를 정합니다.", "caution": "확정일자보다 먼저 생긴 근저당 등 선순위 권리는 뒤집을 수 없어요.", "checklist": ["주민센터나 온라인으로 확정일자를 받으세요.", "확정일자 확인서로 부여 사실과 날짜를 확인하세요.", "계약서 원본·전입신고 자료·송금 내역과 함께 보관하세요."], "disclaimer": "", "cta": ""}, "B": {"grade": "check", "tag": "우선변제권 미발생", "title": "전입신고만으로는 경매에서 먼저 받을 권리(우선변제권)가 생기지 않아요.", "why": "전입신고만으로 충분한 줄 알았다고 답하셨어요.", "fact": "사는 권리(대항력)와 돈을 돌려받는 순서(우선변제권)는 별개예요.", "basis": "제3조 제1항의 대항력은 주택의 인도와 주민등록을 마친 때 그 다음 날부터 생기지만, 제3조의2 제2항의 우선변제권은 여기에 임대차계약증서상의 확정일자까지 갖춰야 생깁니다. 전입신고를 마쳤다고 확정일자가 자동으로 생기는 것은 아닙니다.", "caution": "전입신고만 하고 안심하는 것이 가장 위험한 상태예요.", "checklist": ["계약서에 확정일자가 부여됐는지 확인하세요.", "없다면 지금 바로 받으세요.", "확정일자 확인서를 계약서 원본과 함께 보관하세요."], "disclaimer": "", "cta": ""}, "D": {"grade": "check", "tag": "선순위 확인 필요", "title": "확정일자보다 먼저 생긴 담보가 있다면, 그 순위는 뒤집기 어려워요.", "why": "확정일자보다 먼저 근저당 등이 설정됐거나 등기부를 확인하지 못했다고 답하셨어요.", "fact": "우선변제권은 후순위권리자보다 먼저 받는다는 뜻이지, 먼저 들어선 담보보다 앞서는 게 아니에요.", "basis": "제3조의2 제2항은 확정일자를 갖춘 임차인이 '후순위권리자나 그 밖의 채권자보다 우선하여' 보증금을 변제받는다고 정합니다. 따라서 확정일자보다 먼저 생긴 근저당 등 선순위 권리보다 앞설 수는 없습니다.", "caution": "순위는 날짜로 정해지므로 등기부로 확인해야 하며, 집을 비워주지 않으면 우선변제 보증금을 받을 수 없어요.", "checklist": ["계약 전과 확정일자 부여 후 등기부를 확인하세요.", "선순위 권리의 설정일과 내 확정일자 날짜를 비교하세요.", "새 담보가 생기는지 가끔 다시 확인하세요."], "disclaimer": "", "cta": ""}, "E": {"grade": "high", "tag": "우선변제권 확보", "title": "먼저 생긴 담보가 없다면, 대항요건과 확정일자를 갖춘 만큼 우선변제권이 생겨요.", "why": "나보다 먼저 생긴 담보는 없다고 답하셨어요.", "fact": "전입신고(대항력)와 확정일자(우선변제권)를 모두 갖추면 경매에서 후순위보다 먼저 받을 수 있어요.", "basis": "제3조의2 제2항은 대항요건과 임대차계약증서상의 확정일자를 갖춘 임차인이 경매·공매의 환가대금에서 후순위권리자나 그 밖의 채권자보다 우선하여 보증금을 변제받을 권리가 있다고 정합니다.", "caution": "나중에 새 담보가 생기면 순위가 밀릴 수 있어, 주기적으로 확인하는 것이 좋아요.", "checklist": ["입주·전입신고 날짜와 확정일자 날짜를 함께 기록하세요.", "등기부에서 선순위 권리가 없는지 다시 확인하세요.", "경매 통지를 받으면 배당 요구 기한을 확인하세요."], "disclaimer": "", "cta": ""}, "G": {"grade": "mid", "tag": "배당 요구 기한", "title": "경매 통지를 받았다면, 배당 요구 기한을 놓치지 않는 것이 핵심이에요.", "why": "배당 요구 기한을 확인하고 달력에 표시했다고 답하셨어요.", "fact": "기한을 놓치면 우선변제권이 있어도 배당에서 밀릴 수 있어요.", "basis": "제3조·제3조의2에 따라 대항요건과 확정일자를 갖춘 임차인은 경매·공매의 환가대금에서 우선변제를 받을 수 있고, 배당 절차에서는 요구 기한을 지켜야 합니다.", "caution": "기한을 놓치면 순위가 있어도 배당에서 불리해질 수 있어요.", "checklist": ["배당 요구 기한을 달력에 표시하세요.", "배당표가 나오면 확정일자 순서와 앞선 권리를 대조하세요.", "필요하면 배당 요구를 접수하세요."], "disclaimer": "", "cta": ""}, "H": {"grade": "check", "tag": "배당 기한 확인", "title": "경매에서는 배당 요구 기한이 따로 있어요. 기한부터 확인하세요.", "why": "배당 요구 기한이 있다는 걸 몰랐다고 답하셨어요.", "fact": "우선변제권이 있어도 기한 안에 배당 요구를 해야 순위가 살아요.", "basis": "주택임대차보호법 제3조의2 제2항의 우선변제권은 경매·공매 절차에서 행사되므로, 배당 절차의 요구 기한을 확인해 기한 안에 대응해야 합니다.", "caution": "기한을 넘기면 우선변제권을 행사하기 어려울 수 있어요.", "checklist": ["경매 통지서를 받은 날과 배당 요구 기한을 확인하세요.", "기한을 달력에 표시하세요.", "배당 요구 방법을 전문가와 확인하세요."], "disclaimer": "", "cta": ""}, "I": {"grade": "mid", "tag": "표시 일치", "title": "계약서 주소와 등기부 표시가 일치하면, 보호 범위가 흔들리지 않아요.", "why": "계약서 주소와 등기부가 일치한다고 답하셨어요.", "fact": "동·호수나 주소 표시가 어긋나면 보호 범위에 영향을 줄 수 있어요.", "basis": "제3조·제3조의2의 보호는 특정 주택을 대상으로 하므로, 계약서의 주소·동·호수와 등기부 표시가 일치해야 보호 범위가 분명해집니다.", "caution": "표시가 어긋나면 보호 범위를 다투게 될 수 있어요.", "checklist": ["계약서와 등기부의 주소·동·호수를 대조하세요.", "차이가 있으면 즉시 정정하세요.", "정정한 뒤 확정일자와 등기부를 다시 확인하세요."], "disclaimer": "", "cta": ""}, "J": {"grade": "check", "tag": "주소 정정", "title": "주소나 동·호수가 어긋나면 보호 범위가 흔들려요. 바로 정정하세요.", "why": "다르거나 확인하지 못했다고 답하셨어요.", "fact": "계약서와 등기부 표시가 다르면 보호 범위를 다투게 될 수 있어요.", "basis": "제3조·제3조의2의 보호는 특정 주택을 대상으로 하므로, 계약서 주소·동·호수와 등기부가 일치해야 합니다. 어긋나면 즉시 정정해야 합니다.", "caution": "표시 불일치는 보호 범위에 영향을 줄 수 있어, 확인이 먼저예요.", "checklist": ["계약서와 등기부의 주소·동·호수를 대조하세요.", "다르면 임대인과 정정하세요.", "정정 내역을 기록으로 남기세요."], "disclaimer": "", "cta": ""}}}</script>
+<script>
+"use strict";
+var D = JSON.parse(document.getElementById("sc-data").textContent);
+var GRADE = {high:"가능성 높음", mid:"살펴볼 것", check:"확인 필요"};
+var screenEl = document.getElementById("screen");
+var pathStack = [];          // [{qid, qtext, label}]
+
+function h(tag, cls, text){
+  var e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(text !== undefined && text !== null) e.textContent = text;
+  return e;
+}
+function clearScreen(){ while(screenEl.firstChild) screenEl.removeChild(screenEl.firstChild); screenEl.className = "screen active"; window.scrollTo(0,0); }
+
+function setProgress(step, done){
+  var bar = document.getElementById("progress-bar");
+  var lab = document.getElementById("progress-label");
+  if(done){ bar.style.width = "100%"; lab.textContent = "진단 완료"; return; }
+  if(step === 0){ bar.style.width = "0%"; lab.textContent = ""; return; }
+  bar.style.width = Math.min(100, Math.round(step / D.nq_max * 100)) + "%";
+  lab.textContent = "질문 " + step;
+}
+
+function showIntro(){
+  pathStack = []; clearScreen(); setProgress(0);
+  var wrap = h("div","intro");
+  wrap.appendChild(h("div","intro-icon", D.icon || "⚖️"));
+  wrap.appendChild(h("h1","", D.hook));
+  if(D.myth){
+    var m = h("div","myth"); m.appendChild(h("b","","많은 분들이 이렇게 알고 있어요")); m.appendChild(document.createTextNode("“" + D.myth + "”"));
+    wrap.appendChild(m);
+  }
+  if(D.teaser) wrap.appendChild(h("p","", D.teaser));
+  var meta = h("div","meta");
+  [D.time || "약 1분", "객관식 질문 최대 " + D.nq_max + "개", "답변은 저장·전송되지 않아요"].forEach(function(t){ meta.appendChild(h("span","",t)); });
+  wrap.appendChild(meta);
+  var b = h("button","opt-btn primary","진단 시작하기"); b.type = "button";
+  b.onclick = function(){ goTo(D.start); };
+  wrap.appendChild(b);
+  screenEl.appendChild(wrap);
+}
+
+function goTo(id){
+  if(D.outcomes[id]) return showOutcome(id);
+  showQuestion(id);
+}
+
+function showQuestion(qid){
+  var q = D.questions[qid];
+  clearScreen();
+  var step = pathStack.length + 1;
+  setProgress(step);
+  screenEl.appendChild(h("div","q-count","질문 " + step));
+  screenEl.appendChild(h("div","q-text", q.text));
+  if(q.why) screenEl.appendChild(h("div","q-why", q.why));
+  var box = h("div","options");
+  q.options.forEach(function(o){
+    var b = h("button","opt-btn", o.label); b.type = "button";
+    b.onclick = function(){ pathStack.push({qid:qid, qtext:q.text, label:o.label}); goTo(o.next); };
+    box.appendChild(b);
+  });
+  screenEl.appendChild(box);
+  var back = h("button","back-btn", pathStack.length ? "← 이전 질문으로" : "← 처음으로"); back.type = "button";
+  back.onclick = function(){
+    if(!pathStack.length) return showIntro();
+    var last = pathStack.pop(); showQuestion(last.qid);
+  };
+  screenEl.appendChild(back);
+}
+
+function copyText(text, btn){
+  function ok(){ var o = btn.textContent; btn.textContent = "복사했어요 ✓"; setTimeout(function(){ btn.textContent = o; }, 1800); }
+  function fallback(){
+    var t = document.createElement("textarea"); t.value = text; t.style.position = "fixed"; t.style.opacity = "0";
+    document.body.appendChild(t); t.select();
+    try{ document.execCommand("copy"); ok(); }catch(e){ btn.textContent = "복사 실패 — 직접 선택해 주세요"; }
+    document.body.removeChild(t);
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(ok, fallback); } else { fallback(); }
+}
+
+function block(label, bodyNode){
+  var b = h("div","block"); b.appendChild(h("div","block-label",label)); b.appendChild(bodyNode); return b;
+}
+
+function showOutcome(oid){
+  var o = D.outcomes[oid];
+  clearScreen(); setProgress(0, true);
+  var head = h("div");
+  var g = h("span","grade " + o.grade, "● " + GRADE[o.grade]);
+  head.appendChild(g);
+  if(o.tag) head.appendChild(h("span","outcome-tag", o.tag));
+  screenEl.appendChild(head);
+  var wrap = h("div","outcome");
+  wrap.appendChild(h("h2","", o.title));
+
+  /* 왜 이 결과인가 — 내가 고른 답 + 근거 1줄 */
+  var why = h("div");
+  var chips = h("div","chips");
+  pathStack.forEach(function(p){ chips.appendChild(h("div","chip","· " + p.label)); });
+  why.appendChild(chips);
+  why.appendChild(h("div","why-line", o.why));
+  wrap.appendChild(block("🔎 왜 이 결과인가요?", why));
+
+  if(o.fact && D.myth){
+    var vs = h("div","vs");
+    var m = h("div","m"); m.appendChild(h("b","","통념")); m.appendChild(document.createTextNode(D.myth));
+    var f = h("div","f"); f.appendChild(h("b","","이 경우엔")); f.appendChild(document.createTextNode(o.fact));
+    vs.appendChild(m); vs.appendChild(f);
+    wrap.appendChild(block("💡 통념 vs 사실", vs));
+  }
+  wrap.appendChild(block("📖 법적 근거", h("div","block-body", o.basis)));
+  if(o.checklist && o.checklist.length){
+    var ul = h("ul","checklist"); o.checklist.forEach(function(c){ ul.appendChild(h("li","",c)); });
+    wrap.appendChild(block("✅ 지금 해볼 것", ul));
+  }
+  wrap.appendChild(block("⚠️ 주의할 점", h("div","block-body", o.caution)));
+  wrap.appendChild(h("div","disclaimer", o.disclaimer || D.disclaimer));
+  screenEl.appendChild(wrap);
+
+  var actions = h("div","actions");
+  var cp = h("button","ghost-btn","📋 결과 요약 복사하기"); cp.type = "button";
+  cp.onclick = function(){
+    var t = "[법률 자가진단] " + D.hook + "\n결과: " + GRADE[o.grade] + " — " + o.title + "\n※ 일반적인 법률 정보이며 개별 사안은 상담이 필요합니다.\n" + location.href;
+    copyText(t, cp);
+  };
+  actions.appendChild(cp);
+  if(D.mother_url){
+    var a = h("a","ghost-btn","📰 원문 컬럼 읽어보기"); a.href = D.mother_url; a.target = "_blank"; a.rel = "noopener"; actions.appendChild(a);
+  }
+  var rs = h("button","ghost-btn","↺ 처음부터 다시"); rs.type = "button"; rs.onclick = showIntro;
+  actions.appendChild(rs);
+  screenEl.appendChild(actions);
+
+  var cta = h("div","cta-box");
+  cta.appendChild(document.createTextNode((o.cta || "지금 상황을 구체적으로 확인하고 싶다면") + " "));
+  var s = h("strong","", D.cta_lawyer);
+  cta.appendChild(s);
+  cta.appendChild(document.createTextNode("("));
+  var ml = h("a","", D.cta_email); ml.href = "mailto:" + D.cta_email; cta.appendChild(ml);
+  cta.appendChild(document.createTextNode(")에게 문의하세요."));
+  screenEl.appendChild(cta);
+}
+
+document.getElementById("footer").textContent = "제공 : " + D.cta_lawyer + " 법률사무소";
+showIntro();
+</script>
+</body>
+</html>
