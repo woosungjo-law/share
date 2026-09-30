@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>억울한 행정처분, 시간이 지나도 다툴 수 있을까?</title>
+<!-- sc-template v2 · 렌더러: _tools/sc.py build · 이 파일을 직접 고치지 말고 00_운영/app_template.html 과 시나리오 노트를 고친다 -->
+<style>
+  :root{
+    --navy:#12233f; --navy-deep:#0a1626; --accent:#c9a24b; --bg:#f4f5f7; --card:#ffffff;
+    --text:#1e232b; --muted:#5f6673; --line:#e5e7eb;
+    --g-high:#1f7a4d; --g-mid:#b7791f; --g-check:#4a5568;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    background:var(--bg);color:var(--text);min-height:100vh;
+    display:flex;align-items:flex-start;justify-content:center;padding:16px;line-height:1.55;
+    word-break:keep-all;overflow-wrap:anywhere;
+  }
+  .app{width:100%;max-width:480px;background:var(--card);border-radius:18px;box-shadow:0 8px 30px rgba(18,35,63,.12);overflow:hidden;display:flex;flex-direction:column;min-height:560px;}
+  .topbar{background:var(--navy);color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;font-size:13px;}
+  .topbar .brand{font-weight:700;letter-spacing:.02em;}
+  .progress-wrap{height:4px;background:var(--line);width:100%;}
+  .progress-bar{height:100%;background:var(--accent);width:0%;transition:width .25s ease;}
+  .screen{flex:1;padding:26px 22px 22px;display:none;flex-direction:column;animation:fadeIn .22s ease;}
+  .screen.active{display:flex;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+
+  .intro-icon{font-size:38px;margin-bottom:12px;}
+  .intro h1{font-size:22px;line-height:1.4;color:var(--navy-deep);margin-bottom:12px;}
+  .myth{background:#fbf6ea;border-left:4px solid var(--accent);border-radius:8px;padding:12px 14px;margin-bottom:14px;font-size:13.5px;color:#4a3d16;}
+  .myth b{display:block;font-size:11px;letter-spacing:.04em;color:#8a6d1f;margin-bottom:3px;}
+  .intro p{color:var(--muted);font-size:14px;margin-bottom:16px;}
+  .meta{font-size:12px;color:var(--muted);margin-bottom:20px;display:flex;gap:8px;flex-wrap:wrap;}
+  .meta span{background:var(--bg);padding:4px 10px;border-radius:20px;}
+
+  .q-count{font-size:12px;color:#8a6d1f;font-weight:700;margin-bottom:8px;letter-spacing:.03em;}
+  .q-text{font-size:19px;font-weight:700;color:var(--navy-deep);margin-bottom:8px;line-height:1.45;}
+  .q-why{font-size:12.5px;color:var(--muted);margin-bottom:18px;}
+  .options{display:flex;flex-direction:column;gap:10px;margin-top:10px;}
+  .opt-btn{text-align:left;background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;font:inherit;font-size:14.5px;color:var(--text);cursor:pointer;transition:all .15s ease;min-height:44px;width:100%;}
+  .opt-btn:hover,.opt-btn:active,.opt-btn:focus-visible{border-color:var(--accent);background:#fbf6ea;outline:none;}
+  .opt-btn.primary{text-align:center;font-weight:700;background:var(--navy);color:#fff;border:none;}
+  .opt-btn.primary:hover,.opt-btn.primary:focus-visible{background:var(--navy-deep);}
+  .back-btn{margin-top:14px;background:none;border:none;color:var(--muted);font-size:12.5px;text-align:left;cursor:pointer;min-height:36px;text-decoration:underline;}
+
+  .grade{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#fff;padding:5px 12px;border-radius:20px;margin-bottom:10px;width:fit-content;}
+  .grade.high{background:var(--g-high);} .grade.mid{background:var(--g-mid);} .grade.check{background:var(--g-check);}
+  .outcome-tag{display:inline-block;font-size:11px;font-weight:700;color:var(--navy);background:#eef1f6;padding:4px 10px;border-radius:20px;margin-bottom:10px;margin-left:6px;}
+  .outcome h2{font-size:18px;color:var(--navy-deep);margin-bottom:14px;line-height:1.5;}
+  .block{margin-bottom:15px;}
+  .block-label{font-size:12px;font-weight:700;color:#8a6d1f;margin-bottom:5px;letter-spacing:.02em;}
+  .block-body{font-size:13.5px;color:var(--text);}
+  .chips{display:flex;flex-direction:column;gap:5px;margin-bottom:6px;}
+  .chip{font-size:12.5px;background:var(--bg);border-radius:8px;padding:6px 10px;color:#3b4250;}
+  .why-line{font-size:13.5px;}
+  .vs{display:grid;gap:6px;}
+  .vs div{font-size:13px;border-radius:8px;padding:9px 12px;}
+  .vs .m{background:#f6ecec;color:#7a2f2f;} .vs .f{background:#e9f4ee;color:#1d5b3a;}
+  .vs b{display:block;font-size:10.5px;letter-spacing:.05em;margin-bottom:2px;}
+  .checklist{list-style:none;display:flex;flex-direction:column;gap:6px;}
+  .checklist li{font-size:13.5px;padding-left:22px;position:relative;}
+  .checklist li::before{content:"☐";position:absolute;left:0;color:#8a6d1f;}
+  .disclaimer{font-size:12px;color:var(--muted);background:var(--bg);border-radius:10px;padding:12px 14px;margin-bottom:14px;}
+  .actions{display:flex;flex-direction:column;gap:8px;margin-bottom:14px;}
+  .ghost-btn{background:transparent;border:1.5px solid var(--line);color:#3b4250;border-radius:10px;padding:11px;font:inherit;font-size:13px;cursor:pointer;min-height:44px;text-align:center;text-decoration:none;display:block;}
+  .ghost-btn:hover,.ghost-btn:focus-visible{border-color:var(--accent);outline:none;}
+  .cta-box{background:var(--navy);color:#fff;border-radius:12px;padding:16px 18px;font-size:13.5px;margin-top:auto;}
+  .cta-box strong{color:var(--accent);} .cta-box a{color:#fff;text-decoration:underline;}
+  .footer-mark{text-align:center;font-size:11px;color:var(--muted);padding:10px 0 16px;}
+  @media (max-width:380px){ .screen{padding:22px 16px 18px;} .q-text{font-size:18px;} }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topbar"><span class="brand">법률 자가진단</span><span id="progress-label"></span></div>
+  <div class="progress-wrap"><div class="progress-bar" id="progress-bar"></div></div>
+  <div class="screen active" id="screen"></div>
+  <div class="footer-mark" id="footer"></div>
+</div>
+
+<script id="sc-data" type="application/json">{"hook": "억울한 행정처분, 시간이 지나도 다툴 수 있을까?", "myth": "소송만 걸면 처분이 바로 멈춘다", "teaser": "행정처분 취소는 '안 날부터 90일'이라는 시계와의 싸움이에요. 소송을 걸어도 처분은 자동으로 멈추지 않아요. 1분 만에 확인해 보세요.", "icon": "📮", "time": "약 1분", "start": "Q1", "nq_min": 2, "nq_max": 2, "cta_lawyer": "조우성 변호사", "cta_email": "law@mustknow.co.kr", "disclaimer": "이 진단은 일반적인 법률 정보 안내이며, 구체적인 사안은 개별 상담을 통해 확인해야 합니다.", "mother_url": "https://woosungjo-law.github.io/share/d/lcp-20260929-063-ub4n.html", "questions": {"Q1": {"text": "받은 문서와 관련해 지금 어디에 가장 가까운가요?", "why": "단계에 따라 확인할 날짜와 절차가 달라요.", "options": [{"label": "행정처분 우편물을 최근에 받았다", "next": "Q2"}, {"label": "받은 지 90일이 지났다", "next": "Q3"}, {"label": "행정심판을 거쳐 재결서를 받았다", "next": "Q4"}, {"label": "처분이 곧바로 집행될까 걱정된다", "next": "Q5"}]}, "Q2": {"text": "받은 문서의 성격과 받은 날을 확인하셨나요?", "why": "'처분'인지 '안내'인지, 그리고 언제 받았는지가 출발점이에요.", "options": [{"label": "처분 문서이고 받은 날을 기록했다", "next": "A"}, {"label": "처분인지 안내문인지 모르겠다", "next": "B"}, {"label": "받은 날을 기록하지 않았다", "next": "C"}]}, "Q3": {"text": "90일이 지났다면 그 사이 어떻게 하셨나요?", "why": "제소기간은 안 날부터 90일이고, 늘릴 수 없는 기간이에요.", "options": [{"label": "그 사이 아무 조치도 하지 않았다", "next": "D"}, {"label": "행정심판이나 소송을 진행 중이다", "next": "E"}, {"label": "잘 모르겠다", "next": "D"}]}, "Q4": {"text": "재결서를 받은 날부터 90일이 새로 시작된다는 걸 아시나요?", "why": "행정심판을 거치면 기산점이 재결서 송달일로 바뀌어요.", "options": [{"label": "안다", "next": "F"}, {"label": "몰랐다", "next": "G"}, {"label": "재결서를 아직 받지 못했다", "next": "G"}]}, "Q5": {"text": "집행정지는 소송과 별개의 절차예요. 알고 계셨나요?", "why": "소송을 제기해도 처분은 자동으로 멈추지 않아요.", "options": [{"label": "알고 긴급한 필요 자료를 준비하고 있다", "next": "H"}, {"label": "소송만 걸면 멈추는 줄 알았다", "next": "I"}, {"label": "잘 모르겠다", "next": "I"}]}}, "outcomes": {"A": {"grade": "high", "tag": "처분·날짜 기록", "title": "처분 문서를 받은 날을 기록했다면, 90일 시계의 출발점을 잡은 거예요.", "why": "처분 문서이고 받은 날을 기록했다고 답하셨어요.", "fact": "행정처분 취소는 '안 날부터 90일'이 승부를 가르므로, 받은 날이 출발점이에요.", "basis": "행정소송법 제20조 제1항은 취소소송을 처분 등이 있음을 안 날부터 90일 이내에 제기하도록 하고, 행정심판을 거친 경우에는 재결서 정본을 송달받은 날부터 기산합니다. 제3항은 이 기간을 불변기간으로 정합니다.", "caution": "처분 등이 있은 날부터 1년이 지나면 원칙적으로 제기할 수 없어요(제20조 제2항).", "checklist": ["처분 문서를 받은 날을 기록하고 달력에 표시하세요.", "문서에 적힌 처분 내용과 근거 조항을 확인하세요.", "90일 안에 다툴지 결정하고 준비하세요."], "disclaimer": "", "cta": ""}, "B": {"grade": "check", "tag": "문서 성격 확인", "title": "그 문서가 '처분'인지 '안내·통보'인지부터 확인해야 해요.", "why": "처분인지 안내문인지 모르겠다고 답하셨어요.", "fact": "단순 통보·안내문·행정지도는 처분이 아니라 취소소송 대상이 아니에요.", "basis": "취소소송의 대상은 '처분 등'입니다. 단순한 통보·안내문·행정지도는 처분이 아니어서 취소소송으로 다투는 대상이 아닙니다. 문서의 머리말과 근거 조항을 읽어 성격을 확인해야 합니다.", "caution": "문서의 성격은 단정하지 말고 내용으로 확인해야 해요.", "checklist": ["문서의 제목·머리말·근거 조항을 확인하세요.", "처분이라면 처분일과 받은 날을 기록하세요.", "성격이 불분명하면 담당 기관이나 전문가에게 확인하세요."], "disclaimer": "", "cta": ""}, "C": {"grade": "check", "tag": "'안 날' 확인", "title": "'안 날'을 모르면 시계가 언제 시작됐는지 알 수 없어요. 날짜부터 확인하세요.", "why": "받은 날을 기록하지 않았다고 답하셨어요.", "fact": "'안 날'은 처분 사실을 현실적으로 안 날(고지 시점)이에요.", "basis": "제20조 제1항의 기산점인 '처분이 있음을 안 날'은 통지·공고 등으로 그 처분이 있었다는 사실을 현실적으로 안 날을 뜻합니다(대법원 2014. 9. 25. 선고 2014두8254). 나중에 자료를 받은 날이 아니라 고지 시점이 기준입니다.", "caution": "정보공개로 나중에 서류를 받았다고 기산점이 바뀌지 않아요.", "checklist": ["처분 문서를 받은 날(봉투·수신 기록)을 확인하세요.", "확인한 날짜를 달력에 표시하세요.", "남은 기간을 계산해 다음 절차를 정하세요."], "disclaimer": "", "cta": ""}, "D": {"grade": "check", "tag": "기한·예외 확인", "title": "90일이 지나도록 아무 조치도 하지 않았다면, 남은 기한과 예외부터 확인해야 해요.", "why": "90일이 지났고 그 사이 아무 조치도 하지 않았다고 답하셨어요.", "fact": "제소기간은 안 날부터 90일이고 불변기간이라 늘릴 수 없어요.", "basis": "제20조 제1항의 90일 기간은 불변기간이고(제3항), 처분 등이 있은 날부터 1년이 지나면 원칙적으로 제기하지 못합니다(제2항, 정당한 사유가 있으면 예외). 남은 기한과 예외 여부를 확인해야 합니다.", "caution": "기한이 지났는지는 처분일·안 날을 기준으로 판단되므로, 추측하지 마세요.", "checklist": ["처분일과 처분을 안 날을 각각 확인하세요.", "기간이 지났는지, 예외 사유가 있는지 점검하세요.", "가능한 선택지를 전문가와 상담하세요."], "disclaimer": "", "cta": ""}, "E": {"grade": "mid", "tag": "심판·소송 진행 중", "title": "행정심판이나 소송을 진행 중이라면, 재결서 송달일을 기준으로 기한을 다시 관리하세요.", "why": "행정심판이나 소송을 진행 중이라고 답하셨어요.", "fact": "행정심판을 거친 경우에는 재결서 정본을 받은 날부터 90일을 다시 계산해요.", "basis": "제20조 제1항은 취소소송을 처분 등이 있음을 안 날부터 90일 이내에 제기하도록 하되, 행정심판청구가 있은 때의 기간은 재결서 정본을 송달받은 날부터 기산한다고 정합니다.", "caution": "재결서 송달일 기준으로도 기한이 지날 수 있으니 계속 관리해야 해요.", "checklist": ["재결서 정본을 받은 날을 확인해 기한을 다시 계산하세요.", "제소 준비 자료를 정리하세요.", "기한을 놓치지 않도록 달력에 표시하세요."], "disclaimer": "", "cta": ""}, "F": {"grade": "high", "tag": "재결서가 새 출발점", "title": "행정심판을 거쳤다면, 재결서를 받은 날부터 90일이 새로 시작돼요.", "why": "재결서를 받은 날이 기산점이 된다는 걸 안다고 답하셨어요.", "fact": "심판을 거친 경우에는 재결서 정본 송달일이 새 출발점이 돼요.", "basis": "제20조 제1항은 행정심판청구가 있은 때의 기간은 재결서의 정본을 송달받은 날부터 기산한다고 정합니다.", "caution": "재결 이후에도 처분 등이 있은 날부터 1년 제한(제2항)은 그대로 적용돼요.", "checklist": ["재결서 정본 송달일을 기록하세요.", "그날부터 90일 마지막 날을 달력에 표시하세요.", "제소 준비를 기한 안에 마치세요."], "disclaimer": "", "cta": ""}, "G": {"grade": "check", "tag": "재결서 송달일 확인", "title": "행정심판을 거친 경우에는 기산점이 달라져요. 재결서 송달일을 확인하세요.", "why": "기산점을 몰랐거나 재결서를 아직 받지 못했다고 답하셨어요.", "fact": "심판을 거친 경우에는 재결서 정본을 받은 날부터 90일을 계산해요.", "basis": "제20조 제1항은 행정심판청구가 있은 때의 기간은 재결서의 정본을 송달받은 날부터 기산한다고 정합니다.", "caution": "재결서 송달일이 기산점이 되므로, 수령 기록을 확인해야 해요.", "checklist": ["재결서 정본을 받았는지, 언제 받았는지 확인하세요.", "송달일부터 기한을 계산해 달력에 표시하세요.", "확인한 내용으로 다음 절차를 상담하세요."], "disclaimer": "", "cta": ""}, "H": {"grade": "mid", "tag": "집행정지 준비", "title": "집행정지는 소송과 별개예요. 긴급한 필요 자료를 준비하고 있다면 그대로 진행하세요.", "why": "집행정지 절차를 알고 자료를 준비하고 있다고 답하셨어요.", "fact": "소송을 제기해도 처분은 자동으로 멈추지 않아요. 집행정지는 별도 결정이에요.", "basis": "제23조 제1항은 취소소송의 제기가 처분 등의 효력이나 집행에 영향을 주지 않는다고 정하고, 제2항은 회복하기 어려운 손해를 예방하기 위한 긴급한 필요가 인정될 때 법원이 집행정지를 결정할 수 있다고 정합니다. 제3항은 공공복리에 중대한 영향을 미칠 우려가 있으면 허용되지 않는다고 정합니다.", "caution": "집행정지가 항상 인정되는 것은 아니에요. 공공복리 우려가 있으면 허용되지 않아요.", "checklist": ["집행정지 신청에는 이유에 대한 소명(제4항)이 필요해요.", "회복하기 어려운 손해를 보여 줄 자료를 모으세요.", "본안 소송과 집행정지 신청을 함께 준비하세요."], "disclaimer": "", "cta": ""}, "I": {"grade": "check", "tag": "집행정지 별도", "title": "소송만 걸면 처분이 멈춘다고 생각하기 쉬워요. 집행정지는 별도 절차예요.", "why": "소송만 걸면 멈추는 줄 알았다고 답하셨어요.", "fact": "취소소송의 제기는 처분의 효력·집행에 영향을 주지 않아요.", "basis": "제23조 제1항은 취소소송의 제기가 처분 등의 효력이나 집행에 영향을 주지 않는다고 정하고, 제2항에 따라 회복하기 어려운 손해 예방을 위한 긴급한 필요가 인정될 때에만 법원이 집행정지를 결정할 수 있습니다.", "caution": "집행정지 여부는 법원 판단이고, 공공복리 우려 시 허용되지 않을 수 있어요.", "checklist": ["집행정지가 별도 신청·결정이라는 점을 기억하세요.", "긴급한 필요와 회복하기 어려운 손해 자료를 모으세요.", "본안 소송과 집행정지 신청을 함께 준비하세요."], "disclaimer": "", "cta": ""}}}</script>
+<script>
+"use strict";
+var D = JSON.parse(document.getElementById("sc-data").textContent);
+var GRADE = {high:"가능성 높음", mid:"살펴볼 것", check:"확인 필요"};
+var screenEl = document.getElementById("screen");
+var pathStack = [];          // [{qid, qtext, label}]
+
+function h(tag, cls, text){
+  var e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(text !== undefined && text !== null) e.textContent = text;
+  return e;
+}
+function clearScreen(){ while(screenEl.firstChild) screenEl.removeChild(screenEl.firstChild); screenEl.className = "screen active"; window.scrollTo(0,0); }
+
+function setProgress(step, done){
+  var bar = document.getElementById("progress-bar");
+  var lab = document.getElementById("progress-label");
+  if(done){ bar.style.width = "100%"; lab.textContent = "진단 완료"; return; }
+  if(step === 0){ bar.style.width = "0%"; lab.textContent = ""; return; }
+  bar.style.width = Math.min(100, Math.round(step / D.nq_max * 100)) + "%";
+  lab.textContent = "질문 " + step;
+}
+
+function showIntro(){
+  pathStack = []; clearScreen(); setProgress(0);
+  var wrap = h("div","intro");
+  wrap.appendChild(h("div","intro-icon", D.icon || "⚖️"));
+  wrap.appendChild(h("h1","", D.hook));
+  if(D.myth){
+    var m = h("div","myth"); m.appendChild(h("b","","많은 분들이 이렇게 알고 있어요")); m.appendChild(document.createTextNode("“" + D.myth + "”"));
+    wrap.appendChild(m);
+  }
+  if(D.teaser) wrap.appendChild(h("p","", D.teaser));
+  var meta = h("div","meta");
+  [D.time || "약 1분", "객관식 질문 최대 " + D.nq_max + "개", "답변은 저장·전송되지 않아요"].forEach(function(t){ meta.appendChild(h("span","",t)); });
+  wrap.appendChild(meta);
+  var b = h("button","opt-btn primary","진단 시작하기"); b.type = "button";
+  b.onclick = function(){ goTo(D.start); };
+  wrap.appendChild(b);
+  screenEl.appendChild(wrap);
+}
+
+function goTo(id){
+  if(D.outcomes[id]) return showOutcome(id);
+  showQuestion(id);
+}
+
+function showQuestion(qid){
+  var q = D.questions[qid];
+  clearScreen();
+  var step = pathStack.length + 1;
+  setProgress(step);
+  screenEl.appendChild(h("div","q-count","질문 " + step));
+  screenEl.appendChild(h("div","q-text", q.text));
+  if(q.why) screenEl.appendChild(h("div","q-why", q.why));
+  var box = h("div","options");
+  q.options.forEach(function(o){
+    var b = h("button","opt-btn", o.label); b.type = "button";
+    b.onclick = function(){ pathStack.push({qid:qid, qtext:q.text, label:o.label}); goTo(o.next); };
+    box.appendChild(b);
+  });
+  screenEl.appendChild(box);
+  var back = h("button","back-btn", pathStack.length ? "← 이전 질문으로" : "← 처음으로"); back.type = "button";
+  back.onclick = function(){
+    if(!pathStack.length) return showIntro();
+    var last = pathStack.pop(); showQuestion(last.qid);
+  };
+  screenEl.appendChild(back);
+}
+
+function copyText(text, btn){
+  function ok(){ var o = btn.textContent; btn.textContent = "복사했어요 ✓"; setTimeout(function(){ btn.textContent = o; }, 1800); }
+  function fallback(){
+    var t = document.createElement("textarea"); t.value = text; t.style.position = "fixed"; t.style.opacity = "0";
+    document.body.appendChild(t); t.select();
+    try{ document.execCommand("copy"); ok(); }catch(e){ btn.textContent = "복사 실패 — 직접 선택해 주세요"; }
+    document.body.removeChild(t);
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(ok, fallback); } else { fallback(); }
+}
+
+function block(label, bodyNode){
+  var b = h("div","block"); b.appendChild(h("div","block-label",label)); b.appendChild(bodyNode); return b;
+}
+
+function showOutcome(oid){
+  var o = D.outcomes[oid];
+  clearScreen(); setProgress(0, true);
+  var head = h("div");
+  var g = h("span","grade " + o.grade, "● " + GRADE[o.grade]);
+  head.appendChild(g);
+  if(o.tag) head.appendChild(h("span","outcome-tag", o.tag));
+  screenEl.appendChild(head);
+  var wrap = h("div","outcome");
+  wrap.appendChild(h("h2","", o.title));
+
+  /* 왜 이 결과인가 — 내가 고른 답 + 근거 1줄 */
+  var why = h("div");
+  var chips = h("div","chips");
+  pathStack.forEach(function(p){ chips.appendChild(h("div","chip","· " + p.label)); });
+  why.appendChild(chips);
+  why.appendChild(h("div","why-line", o.why));
+  wrap.appendChild(block("🔎 왜 이 결과인가요?", why));
+
+  if(o.fact && D.myth){
+    var vs = h("div","vs");
+    var m = h("div","m"); m.appendChild(h("b","","통념")); m.appendChild(document.createTextNode(D.myth));
+    var f = h("div","f"); f.appendChild(h("b","","이 경우엔")); f.appendChild(document.createTextNode(o.fact));
+    vs.appendChild(m); vs.appendChild(f);
+    wrap.appendChild(block("💡 통념 vs 사실", vs));
+  }
+  wrap.appendChild(block("📖 법적 근거", h("div","block-body", o.basis)));
+  if(o.checklist && o.checklist.length){
+    var ul = h("ul","checklist"); o.checklist.forEach(function(c){ ul.appendChild(h("li","",c)); });
+    wrap.appendChild(block("✅ 지금 해볼 것", ul));
+  }
+  wrap.appendChild(block("⚠️ 주의할 점", h("div","block-body", o.caution)));
+  wrap.appendChild(h("div","disclaimer", o.disclaimer || D.disclaimer));
+  screenEl.appendChild(wrap);
+
+  var actions = h("div","actions");
+  var cp = h("button","ghost-btn","📋 결과 요약 복사하기"); cp.type = "button";
+  cp.onclick = function(){
+    var t = "[법률 자가진단] " + D.hook + "\n결과: " + GRADE[o.grade] + " — " + o.title + "\n※ 일반적인 법률 정보이며 개별 사안은 상담이 필요합니다.\n" + location.href;
+    copyText(t, cp);
+  };
+  actions.appendChild(cp);
+  if(D.mother_url){
+    var a = h("a","ghost-btn","📰 원문 컬럼 읽어보기"); a.href = D.mother_url; a.target = "_blank"; a.rel = "noopener"; actions.appendChild(a);
+  }
+  var rs = h("button","ghost-btn","↺ 처음부터 다시"); rs.type = "button"; rs.onclick = showIntro;
+  actions.appendChild(rs);
+  screenEl.appendChild(actions);
+
+  var cta = h("div","cta-box");
+  cta.appendChild(document.createTextNode((o.cta || "지금 상황을 구체적으로 확인하고 싶다면") + " "));
+  var s = h("strong","", D.cta_lawyer);
+  cta.appendChild(s);
+  cta.appendChild(document.createTextNode("("));
+  var ml = h("a","", D.cta_email); ml.href = "mailto:" + D.cta_email; cta.appendChild(ml);
+  cta.appendChild(document.createTextNode(")에게 문의하세요."));
+  screenEl.appendChild(cta);
+}
+
+document.getElementById("footer").textContent = "제공 : " + D.cta_lawyer + " 법률사무소";
+showIntro();
+</script>
+</body>
+</html>
