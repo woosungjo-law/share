@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>투자 유치의 기쁨이 파산의 덫이 되는 순간: 이해관계인 연대보증</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 투자계약과 연대보증</div>
+    <h1>투자 유치의 기쁨이 파산의 덫이 되는 순간: 이해관계인 연대보증</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 스타트업 B사의 대표는 꿈에 그리던 첫 엔젤 투자를 유치했습니다. 투자자 측에서 제시한 계약서는 두꺼웠고 어려운 법률 용어로 가득했지만, 당장 자금이 급했던 대표는 "투자업계의 표준 계약서니 걱정할 것 없다"는 말만 믿고 덜컥 서명했습니다. 몇 달 후 시장 상황 악화로 서비스 런칭이 지연되었고 회사는 자본잠식 상태에 빠졌습니다. 폐업 절차를 밟으려던 대표에게 날아온 것은 투자자의 내용증명이었습니다. "마일스톤을 달성하지 못했으므로 풋옵션을 행사한다. 투자 원금 5억 원과 위약벌 1억 원을 대표이사 개인 자격으로 즉시 변제하라." <b>계약서 구석에 적혀 있던 '이해관계인(대표이사)은 본 계약상 회사의 의무에 대하여 연대하여 책임을 진다'는 조항</b> 때문이었습니다. 투자 유치의 기쁨은 잠시였고, 대표는 평생 갚기 힘든 6억 원의 개인 빚을 지고 신용불량자로 전락할 위기에 처했습니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      주식회사는 높은 물웅덩이를 가로막는 법의 제방 위에 서 있습니다. <b>주주는 제방 위에서 잃을 만큼만 잃지만, 연대보증 조항은 그 제방에 개인 재산으로 낸 다리를 놓는 것과 같습니다.</b> 서명 한 번이면 제방의 원칙이 무너지고, 회사의 실패가 그대로 개인의 빚으로 건너옵니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>
+      주식회사의 주주는 자신이 투자한 돈(출자액)을 잃는 선에서 유한책임을 진다는 것이 대원칙입니다(<b>상법 제331조</b>). 사업이 망해서 회사가 빚더미에 앉더라도, 대표이사나 창업자 개인이 자신의 집을 팔아 그 빚을 갚을 법적인 의무는 없습니다. 투자자는 회사가 성공할 때 큰 수익을 가져가는 대신 실패할 때는 투자금을 잃는 것을 감당해야 합니다.
+    </p>
+    <p>
+      그러나 이 대원칙을 무너뜨리는 무서운 예외가 바로 '계약'입니다. 법원은 당사자가 자유로운 의사로 맺은 계약의 효력을 존중합니다. 투자계약서에 대표이사를 '이해관계인'으로 지정하고, 회사의 의무 위반에 대해 연대책임을 지게 하는 조항에 서명했다면, 이는 <b>민법상 연대보증 계약이 성립한 것</b>으로 봅니다. 이 순간부터 투자금은 더 이상 투자가 아니라 창업자 개인을 향한 가혹한 빚으로 변질됩니다. 회사가 조금만 삐끗해도 투자자는 연대보증 조항을 무기 삼아 대표의 개인 통장과 아파트를 가압류할 수 있습니다.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>가이드라인의 바람과 남은 예외</h2>
+    <ul class="points">
+      <li><b>생태계의 변화</b> — 중소벤처기업부가 배포한 '벤처투자 표준계약서'와 최근의 법적 기준은, 투자계약서에서 창업자에 대한 포괄적 연대보증 조항을 원칙적으로 폐지하도록 권고합니다. 단지 경영 실적이 나쁘다는 이유만으로 창업자 개인에게 돈을 물어내라고 할 수는 없다는 공감대가 형성된 것입니다.</li>
+      <li><b>남은 예외</b> — 창업자가 투자금을 개인적으로 유용하거나, 허위 자료로 투자를 유치(기망)했거나, 핵심 기술을 빼돌려 다른 회사를 차리는 등 명백한 범죄 행위나 도덕적 해이가 있을 때는 책임을 져야 합니다.</li>
+      <li><b>협상의 핵심</b> — 연대보증 조항 자체를 지우는 것이지만, 투자자가 안전장치를 요구한다면 그 책임을 '창업자의 고의 또는 중대한 과실'이 있는 경우로만 좁히는 것입니다.</li>
+      <li><b>서명의 무게</b> — 서명은 1초면 끝나지만, 그 책임은 평생을 따라다닙니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 창업자의 개인 재산과 회사의 재무 리스크를 철저히 분리하는 것, 그것이 가장 유능하고 현명한 CEO의 첫 번째 임무입니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <p style="margin-bottom:16px;">당당한 협상과 개인 자산의 분리를 실행하십시오.</p>
+    <ol>
+      <li><b>① 독소조항 색출</b> — 투자계약서를 받으면 가장 먼저 '연대책임', '연대보증', '손해배상'이라는 단어를 찾으십시오. 회사의 의무 위반이 대표이사 개인의 책임으로 연결되는 조항이 있다면 즉각 찾아내어 방어해야 합니다.</li>
+      <li><b>② 표준계약서를 무기로</b> — "최근 업계 관행과 정부 가이드라인에 따라, 고의나 중과실이 아닌 일반적인 경영 실패에 대한 연대보증 조항은 삭제하는 것이 맞습니다"라고 명확히 요구합니다. 이를 빌미로 투자를 철회하려는 투자자는 함께 성장할 파트너가 아닙니다.</li>
+      <li><b>③ 책임 조건의 축소</b> — 도저히 삭제할 수 없다면 배상의 조건을 '고의 또는 중과실로 인한 중대한 위반'으로 좁힙니다.</li>
+      <li><b>④ 배상 한도(Cap) 설정</b> — 배상 금액도 무제한이 아니라 '내가 가진 주식의 가치 범위 내'로 한정합니다.</li>
+      <li><b>⑤ 자산의 분리</b> — 개인 재산과 회사의 재무 리스크를 철저히 분리하는 구조를 만듭니다.</li>
+      <li><b>⑥ 성과의 재분류</b> — 투자 유치라는 당장의 성과에 눈이 멀어 자신의 미래를 저당 잡히는 우를 범하지 않습니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
