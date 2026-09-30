@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>내 예금이 가압류됐는데 은행이 상계를 말한다면, 먼저 날짜를 모아 보자</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 예금 가압류와 상계 다툼 체크포인트</div>
+    <h1>내 예금이 가압류됐는데 은행이 상계를 말한다면, 먼저 날짜를 모아 보자</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> 지급을 금지하는 명령을 받은 은행 같은 제3채무자는, <b>그 후에 취득한 채권에 의한 상계로 대항할 수 없습니다</b>(민법 제498조). 가압류가 걸린 뒤 새로 만들어진 대출로 예금을 가져가는 것은 법이 막는 행위입니다. 다만 가압류 전부터 상계적상에 있었던 경우라는 예외의 자리도 있습니다. 이 다툼의 재판대는 권리의 크기가 아니라 <b>시간</b>입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>월세 보증금이 막힌 통장</b>을 떠올려 보십시오. 임차인인 강지우 씨는 집주인에게 월세 보증금을 돌려받지 못해 예금 가압류를 걸었습니다. 지급 금지 명령이 은행에 도달했고, 잠시 뒤 은행에서 온 안내는 예상 밖이었습니다. 집주인이 같은 은행에서 대출을 받고 있는데, 그 대출금으로 예금과 상계할 수 있는지 검토 중이라는 것이었습니다. 가압류를 걸었더니 오히려 은행이 돈을 가져가겠다는 말처럼 들려 두려웠지만, <b>날짜의 순서를 알기 전까지는 겁먹을 필요도, 안심할 필요도 없었던</b> 자리입니다. 예금과 대출이 같은 은행에 있어도 그 사이의 시간 순서가 모든 것을 가릅니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>
+      지급을 금지하는 명령을 받은 은행 같은 제3채무자는, <b>그 후에 취득한 채권에 의한 상계로 명령을 신청한 채권자에게 대항하지 못합니다</b>(민법 제498조). 쉽게 말하면 가압류가 걸린 뒤에 새로 만들어진 대출을 들어 예금을 가져가는 것은 법이 막는 행위라는 뜻입니다.
+    </p>
+    <p>
+      다만 예외의 자리도 있습니다. 가압류 후 상계로 대항하려면 <b>압류 효력 발생 시 이미 상계적상에 있었거나, 대출의 변제기가 예금보다 먼저 또는 동시에 도래</b>해야 합니다. 즉 가압류 전부터 이미 상계할 수 있는 자리에 있었던 은행의 권리라면 이야기가 다릅니다. 압류가 언제 효력을 발생했는지, 은행의 대출은 언제 생기고 언제 갚을 날이 찾아오는지. <b>이 날짜들이 답을 정합니다.</b>
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>겁주는 말과 안심시키는 말 모두 조심</h2>
+    <ul class="points">
+      <li><b>'은행은 언제나 자기 대출금으로 상계할 수 있다'</b> — 법의 제한을 무시한 과장된 문장입니다.</li>
+      <li><b>'가압류가 있으면 무조건 가압류채권자가 이긴다'</b> — 가압류 전의 상계적상이라는 여지를 무시한 과장된 문장입니다.</li>
+      <li><b>개별 확인을 존중합니다</b> — 내 사건에서 상계가 인정될지는 개별 확인의 대상이고, 변제기의 시점과 상계적상의 성립 여부는 내가 직접 확인해야 할 자료입니다. 겁먹은 채 포기하는 것도, 편한 말에 의지해 움직이지 않는 것도 권리를 지키는 방법이 아닙니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 겁이 나는 자리일수록 <b>순서를 지키는 사람</b>이 권리를 지킵니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;"><b>날짜를 모으고 서면으로 묻는 순서</b>로 움직입니다.</p>
+    <ol>
+      <li><b>① 날짜 모으기</b> — 가압류 신청일, 접수일, 은행에 명령이 도달한 날, 은행의 안내가 온 날. 이 시간표가 모든 판단의 뼈대입니다.</li>
+      <li><b>② 서면 소통</b> — 은행과는 문자·서면으로 소통합니다. 전화로 오간 이야기는 날짜와 내용이 남지 않습니다.</li>
+      <li><b>③ 대출 정보 확인</b> — 은행의 대출 정보를 묻습니다. 대출이 언제 만들어졌고 변제기가 언제인지가 상계 가능 여부를 가르는 재료입니다.</li>
+      <li><b>④ 기록 남기기</b> — 가압류 이후에 생긴 대출이라는 사실이 확인되면 그 기록을 남깁니다. 명령 후 취득 채권으로는 상계로 대항할 수 없다는 법이 내 편이 되는 자리입니다.</li>
+      <li><b>⑤ 도움 요청</b> — 판단이 어려우면 전문가의 도움을 받습니다. 시간 관계의 해석은 전문가의 영역이고, 내가 할 일은 날짜와 기록을 정확히 모아 주는 것입니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
