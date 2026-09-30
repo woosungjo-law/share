@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>못 받은 대금, 경매가 답이라는 통념이 아닌 회수 가능액이 답이다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 외상대금 회수와 집행의 한계</div>
+    <h1>못 받은 대금, 경매가 답이라는 통념이 아닌 회수 가능액이 답이다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 모아커머스 윤태호 대표는 두 해째 묶인 외상대금 9천만 원 때문에 법무팀 보고를 받았습니다. 채무자는 월급생활자로 부동산 한 채를 갖고 있었습니다. 윤태호는 부동산을 팔면 끝날 일이라고 생각했습니다. 그런데 법무팀 계산서를 보니 앞순위 근저당과 체납액이 두텁게 잡혀 있었고, 월급 압류도 보호 규정에 가로막혀 건질 수 있는 돈이 크지 않았습니다. 엎친 데 덮친 격으로 채무자는 파산 신청을 준비 중이었고, 차량을 친족 명의로 옮겼다는 이야기까지 들려왔습니다. <b>수단의 이름이 아니라 회수 가능액이 먼저였습니다.</b>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      채권 회수는 <b>지하 금고를 열려면 먼저 앞방 문들을 차례로 열어야 하는 일과 같습니다.</b> 경매와 압류라는 열쇠를 쥐었어도 선순위 채권과 집행 비용, 압류금지재산이라는 잠긴 문들이 앞에 겹겹이 놓여 있습니다. 남는 몫이 없으면 열쇠만 든 채 돌아오게 됩니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>
+      집행 수단은 법이 열어주지만, 각 수단의 한계도 법이 정합니다. <b>민사집행법 제78조에 따른 부동산 강제경매는 채권자가 채무자의 부동산을 법원을 통해 매각해 채권을 회수하는 제도</b>로, 법원을 통한 매각과 배당이라는 점에서 임의 매각과 다릅니다. 그러나 <b>민사집행법 제102조에 따라 최저매각가격으로 선순위 채권과 비용을 충당하고 남는 것이 없으면 무잉여로 경매가 취소됩니다.</b> 기준은 감정가가 아니라 배당 후 남는 몫입니다.
+    </p>
+    <p>
+      월급 압류에도 선이 있습니다. <b>민사집행법 제246조에 따라 급여의 2분의 1이 한도이고, 월 250만 원 이하는 전액이 보호됩니다.</b> 개인 예금 250만 원 이하와 생명보험금 등도 압류금지재산입니다. 그리고 <b>채무자회생법 제383조에 따라 이 재산은 파산재단에도 속하지 않습니다.</b> 채무자가 파산 신청을 하면 <b>채무자회생법 제557조 제1항에 따라 파산채권에 기한 강제집행은 중지되고, 이미 진행 중인 절차도 실효됩니다.</b>
+    </p>
+    <p>
+      형사 관점도 열려 있습니다. 강제집행을 면탈할 목적으로 재산을 친족 명의로 이전한 경우라면 <b>형법 제327조의 강제집행면탈죄</b>가 성립합니다. 파산절차 중 재산을 숨기면 <b>채무자회생법 제650조의 사기파산죄</b>로 형사처벌되며, <b>채무자회생법 제564조 제1항 제2호에 따라 면책도 불허됩니다.</b> 윤태호 사안에서는 경매의 실익 계산, 급여 압류의 회수 시뮬레이션, 파산 전환 대비, 형사 고발 카드라는 네 가지가 한 묶음으로 돌아가야 합니다.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>비용을 먼저 빼고 생계비를 먼저 뺀다</h2>
+    <ul class="points">
+      <li><b>경매 실익의 기준</b> — 신청 전에 선순위 채권과 집행 비용을 최저매각가격에서 먼저 뺍니다. 권리관계가 얽힌 물건은 환가 가망이 더 낮아질 수 있습니다.</li>
+      <li><b>급여 압류의 계산</b> — 채무자의 실제 수령액을 기준으로 2분의 1을 가리고, 월 250만 원 이하 구간은 전액 보호를 적용합니다. 개인 예금 250만 원 이하와 생명보험금 등도 제외합니다.</li>
+      <li><b>겹치는 압류</b> — 여러 압류가 겹치면 합산 기준으로 다뤄질 수 있어 단독 계산과 달라집니다.</li>
+      <li><b>파산 전환의 순간</b> — 파산 신청이 접수되면 채무자회생법 제557조 제1항의 중지와 실효가 작동하므로, 개별 집행에서 파산 절차 안의 배당으로 이동해야 합니다. 압류금지재산은 파산재단에도 속하지 않으므로 채무자회생법 제383조의 범위를 벗어날 수 없습니다.</li>
+      <li><b>형사 자료의 묶음</b> — 면탈 목적의 친족 명의 이전은 형법 제327조, 파산 중 은닉은 채무자회생법 제650조, 면책 불허는 채무자회생법 제564조 제1항 제2호의 문제입니다. 민사 회수와 형사 대응을 같은 자료로 묶어 관리해야 합니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 수단의 이름이 아니라 회수 가능액이 의사결정의 기준입니다. 경매·압류·파산·형사의 네 갈래는 별개의 선택지가 아니라 한 묶음입니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <p style="margin-bottom:16px;">경매 신청 지시보다 먼저 여섯 가지를 정하십시오.</p>
+    <ol>
+      <li><b>① 실익 계산</b> — 배당 시뮬레이션으로 선순위와 비용을 뺀 뒤 남는 몫을 먼저 판정합니다. 남는 것이 없으면 신청 비용과 시간을 쓰지 않습니다.</li>
+      <li><b>② 급여 시뮬레이션</b> — 월 250만 원 보호 구간과 2분의 1 한도, 개인 예금 250만 원 이하 제외를 반영해 월 회수액과 회수 기간을 뽑습니다.</li>
+      <li><b>③ 파산 대비</b> — 집행 일정이 아니라 파산 배당 경로를 준비합니다. 강제집행만 고집하지 않고 분할 변제 합의 같은 합의 회수 경로도 함께 열어둡니다.</li>
+      <li><b>④ 형사 카드</b> — 친족 명의 이전은 날짜와 대가 지급 여부로 정리해 형법 제327조 관점에서, 은닉 정황은 채무자회생법 제650조와 제564조 제1항 제2호 관점에서 증거를 묶습니다.</li>
+      <li><b>⑤ 숫자·사실의 기록</b> — 채무자 조사 결과, 계산서, 회수 시뮬레이션 숫자를 그대로 보전하고 기준을 문서로 남깁니다.</li>
+      <li><b>⑥ 미확인의 격리</b> — '친족 명의로 옮겼다'는 이야기는 정황일 뿐입니다. 문구가 아니라 실제 이전 자료를 확인하고, 미확인 사실을 고발 사유처럼 승인하지 않습니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
