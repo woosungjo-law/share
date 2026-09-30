@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>투자계약서의 가장 치명적인 함정: 이해관계인 연대보증</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 투자계약 연대보증</div>
+    <h1>투자계약서의 가장 치명적인 함정: 이해관계인 연대보증</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 상법 제331조는 "주주의 책임은 그가 가진 주식의 인수가액을 한도로 한다"는 <b>주주 유한책임의 원칙</b>을 천명합니다. 그러나 투자계약서에 창업자를 이해관계인으로 묶어 회사의 의무에 '연대하여 책임을 진다'고 명시하는 순간, 이는 민법상 <b>연대보증 계약</b>으로 탈바꿈합니다. 투자라는 이름표가 있어도 실질은 창업자의 인생을 담보로 잡는 덫이 될 수 있습니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      투자 계약이라는 이름표를 달고 있지만, 포괄적 연대책임 조항이 들어가면 <b>투자가 아니라 개인 빚을 지는 것</b>입니다. 회사가 망했을 때 창업자 개인 재산으로 투자금과 이자를 전부 물어내야 하는 구조가 숨어 있습니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점 — 유한책임의 원칙과 계약상 보증의 충돌</h2>
+    <p>
+      주식회사는 자본과 경영을 분리하고, 투자자는 회사의 주식을 취득함으로써 사업의 과실을 나누어 갖는 구조입니다. 상법 제331조는 <b>주주 유한책임의 원칙</b>을 천명합니다. 회사가 사업에 실패하여 파산하더라도, 원칙적으로 주주나 창업자 개인이 회사의 채무나 투자금 손실을 자신의 개인 재산으로 메워야 할 법적인 의무는 없습니다.
+    </p>
+    <p>
+      그러나 당사자 간의 '계약'이 이 원칙을 무력화할 수 있습니다. 투자계약서에 창업자를 이해관계인으로 묶고 회사의 의무나 채무에 대해 '연대하여 책임을 진다'고 명시하는 순간, 이는 상법의 영역을 넘어 <b>민법상 연대보증 계약</b>으로 탈바꿈합니다. 판례는 당사자가 명시적으로 연대책임 조항에 서명했다면 그 효력을 원칙적으로 인정합니다. 투자자는 실적 미달, 주요 임원의 퇴사, 사소한 보고 의무 위반 등을 핑계로 풋옵션(주식매수청구권)을 행사하거나 위약벌을 청구할 수 있고, 회사가 갚을 돈이 없다면 창업자 개인의 재산이 답이 됩니다. 이는 '하이 리스크 하이 리턴'이라는 벤처 투자의 본질을 심각하게 훼손하는 불공정 조항입니다.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>조건과 예외 — 합리적인 책임의 범위 설정</h2>
+    <ul class="points">
+      <li><b>분위기의 변화</b> — 중소벤처기업부가 배포한 '벤처투자 표준계약서' 가이드라인과 최근의 판례 경향은 무조건적인 포괄적 연대보증을 강력히 지양합니다.</li>
+      <li><b>그러나 모든 위험이 보호받지는 않습니다</b> — 창업자가 투자금을 개인적으로 횡령하거나, 고의로 회사의 핵심 자산을 빼돌리거나, 동종 업계를 몰래 창업하는 등 악의적인 행위까지 보호받을 수는 없습니다.</li>
+      <li><b>협상 목표</b> — 연대보증의 '완전한 삭제'가 원칙이되, 투자자가 강력히 반발할 경우 책임의 범위를 '창업자의 <b>고의 또는 중대한 과실</b>로 인한 의무 위반'으로 엄격하게 축소합니다. 단순히 경영난이나 매출 목표 미달성(경영상의 무능력이나 시장 상황 악화)으로는 개인에게 책임을 물을 수 없도록 문구를 정교하게 다듬습니다.</li>
+      <li><b>한도(Cap) 설정</b> — 배상 한도 역시 무한대가 아닌 '이해관계인이 보유한 주식의 가치 이내' 또는 '투자 원금 이내'로 캡을 씌웁니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 회사의 실패가 창업자의 재기로 이어질 수 있도록, 법무팀의 펜끝은 그 어느 때보다 날카롭고 단호해야 합니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">독소조항을 식별하고 끈질기게 협상하십시오.</p>
+    <ol>
+      <li><b>① 조항 식별과 위험 경고</b> — 계약서 전체를 샅샅이 뒤져 '연대하여', '이해관계인 개인의 책임', '손해배상'이라는 단어가 포함된 모든 조항을 식별합니다. 특히 진술 및 보장 위반, 풋옵션 행사, 위약벌 조항에 이해관계인이 연대책임을 지도록 엮여 있는지 확인하고, 경영진에게 개인 파산의 위험성을 강력히 경고합니다.</li>
+      <li><b>② 포괄적 연대보증 삭제 요구</b> — 상법상 유한책임 원칙과 벤처투자 표준계약서를 근거로, 단순한 경영 실패로 인한 연대보증 조항의 전면 삭제를 투자자에게 요구합니다.</li>
+      <li><b>③ 책임 범위의 엄격한 제한</b> — 완전 삭제가 불가피할 경우, 발생 요건을 '이해관계인 개인의 고의 또는 중대한 과실로 인한 의무 위반'으로만 한정하고 입증 책임은 투자자가 부담하도록 문구를 수정합니다.</li>
+      <li><b>④ 책임 한도(Cap) 설정</b> — 최악의 경우를 대비해 개인 배상 한도를 '보유 주식 가치' 또는 '특정 금액'으로 제한하는 안전장치를 계약서에 반드시 명시합니다.</li>
+      <li><b>⑤ 대안 조항의 정교한 설계</b> — 투자자의 불안을 불식시키기 위한 대안을 준비해 협상의 테이블에 올립니다.</li>
+      <li><b>⑥ 조급해진 경영진의 설득</b> — 막대한 투자금 앞에서 조급해진 경영진을 설득하고 합리적인 계약을 끌어내는 것이 법무팀의 핵심 역할입니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
