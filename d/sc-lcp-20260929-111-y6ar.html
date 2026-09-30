@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>가해자가 사망하면, 내 배상 청구도 끝날까?</title>
+<!-- sc-template v2 · 렌더러: _tools/sc.py build · 이 파일을 직접 고치지 말고 00_운영/app_template.html 과 시나리오 노트를 고친다 -->
+<style>
+  :root{
+    --navy:#12233f; --navy-deep:#0a1626; --accent:#c9a24b; --bg:#f4f5f7; --card:#ffffff;
+    --text:#1e232b; --muted:#5f6673; --line:#e5e7eb;
+    --g-high:#1f7a4d; --g-mid:#b7791f; --g-check:#4a5568;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    background:var(--bg);color:var(--text);min-height:100vh;
+    display:flex;align-items:flex-start;justify-content:center;padding:16px;line-height:1.55;
+    word-break:keep-all;overflow-wrap:anywhere;
+  }
+  .app{width:100%;max-width:480px;background:var(--card);border-radius:18px;box-shadow:0 8px 30px rgba(18,35,63,.12);overflow:hidden;display:flex;flex-direction:column;min-height:560px;}
+  .topbar{background:var(--navy);color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;font-size:13px;}
+  .topbar .brand{font-weight:700;letter-spacing:.02em;}
+  .progress-wrap{height:4px;background:var(--line);width:100%;}
+  .progress-bar{height:100%;background:var(--accent);width:0%;transition:width .25s ease;}
+  .screen{flex:1;padding:26px 22px 22px;display:none;flex-direction:column;animation:fadeIn .22s ease;}
+  .screen.active{display:flex;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+
+  .intro-icon{font-size:38px;margin-bottom:12px;}
+  .intro h1{font-size:22px;line-height:1.4;color:var(--navy-deep);margin-bottom:12px;}
+  .myth{background:#fbf6ea;border-left:4px solid var(--accent);border-radius:8px;padding:12px 14px;margin-bottom:14px;font-size:13.5px;color:#4a3d16;}
+  .myth b{display:block;font-size:11px;letter-spacing:.04em;color:#8a6d1f;margin-bottom:3px;}
+  .intro p{color:var(--muted);font-size:14px;margin-bottom:16px;}
+  .meta{font-size:12px;color:var(--muted);margin-bottom:20px;display:flex;gap:8px;flex-wrap:wrap;}
+  .meta span{background:var(--bg);padding:4px 10px;border-radius:20px;}
+
+  .q-count{font-size:12px;color:#8a6d1f;font-weight:700;margin-bottom:8px;letter-spacing:.03em;}
+  .q-text{font-size:19px;font-weight:700;color:var(--navy-deep);margin-bottom:8px;line-height:1.45;}
+  .q-why{font-size:12.5px;color:var(--muted);margin-bottom:18px;}
+  .options{display:flex;flex-direction:column;gap:10px;margin-top:10px;}
+  .opt-btn{text-align:left;background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;font:inherit;font-size:14.5px;color:var(--text);cursor:pointer;transition:all .15s ease;min-height:44px;width:100%;}
+  .opt-btn:hover,.opt-btn:active,.opt-btn:focus-visible{border-color:var(--accent);background:#fbf6ea;outline:none;}
+  .opt-btn.primary{text-align:center;font-weight:700;background:var(--navy);color:#fff;border:none;}
+  .opt-btn.primary:hover,.opt-btn.primary:focus-visible{background:var(--navy-deep);}
+  .back-btn{margin-top:14px;background:none;border:none;color:var(--muted);font-size:12.5px;text-align:left;cursor:pointer;min-height:36px;text-decoration:underline;}
+
+  .grade{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#fff;padding:5px 12px;border-radius:20px;margin-bottom:10px;width:fit-content;}
+  .grade.high{background:var(--g-high);} .grade.mid{background:var(--g-mid);} .grade.check{background:var(--g-check);}
+  .outcome-tag{display:inline-block;font-size:11px;font-weight:700;color:var(--navy);background:#eef1f6;padding:4px 10px;border-radius:20px;margin-bottom:10px;margin-left:6px;}
+  .outcome h2{font-size:18px;color:var(--navy-deep);margin-bottom:14px;line-height:1.5;}
+  .block{margin-bottom:15px;}
+  .block-label{font-size:12px;font-weight:700;color:#8a6d1f;margin-bottom:5px;letter-spacing:.02em;}
+  .block-body{font-size:13.5px;color:var(--text);}
+  .chips{display:flex;flex-direction:column;gap:5px;margin-bottom:6px;}
+  .chip{font-size:12.5px;background:var(--bg);border-radius:8px;padding:6px 10px;color:#3b4250;}
+  .why-line{font-size:13.5px;}
+  .vs{display:grid;gap:6px;}
+  .vs div{font-size:13px;border-radius:8px;padding:9px 12px;}
+  .vs .m{background:#f6ecec;color:#7a2f2f;} .vs .f{background:#e9f4ee;color:#1d5b3a;}
+  .vs b{display:block;font-size:10.5px;letter-spacing:.05em;margin-bottom:2px;}
+  .checklist{list-style:none;display:flex;flex-direction:column;gap:6px;}
+  .checklist li{font-size:13.5px;padding-left:22px;position:relative;}
+  .checklist li::before{content:"☐";position:absolute;left:0;color:#8a6d1f;}
+  .disclaimer{font-size:12px;color:var(--muted);background:var(--bg);border-radius:10px;padding:12px 14px;margin-bottom:14px;}
+  .actions{display:flex;flex-direction:column;gap:8px;margin-bottom:14px;}
+  .ghost-btn{background:transparent;border:1.5px solid var(--line);color:#3b4250;border-radius:10px;padding:11px;font:inherit;font-size:13px;cursor:pointer;min-height:44px;text-align:center;text-decoration:none;display:block;}
+  .ghost-btn:hover,.ghost-btn:focus-visible{border-color:var(--accent);outline:none;}
+  .cta-box{background:var(--navy);color:#fff;border-radius:12px;padding:16px 18px;font-size:13.5px;margin-top:auto;}
+  .cta-box strong{color:var(--accent);} .cta-box a{color:#fff;text-decoration:underline;}
+  .footer-mark{text-align:center;font-size:11px;color:var(--muted);padding:10px 0 16px;}
+  @media (max-width:380px){ .screen{padding:22px 16px 18px;} .q-text{font-size:18px;} }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topbar"><span class="brand">법률 자가진단</span><span id="progress-label"></span></div>
+  <div class="progress-wrap"><div class="progress-bar" id="progress-bar"></div></div>
+  <div class="screen active" id="screen"></div>
+  <div class="footer-mark" id="footer"></div>
+</div>
+
+<script id="sc-data" type="application/json">{"hook": "가해자가 사망하면, 내 배상 청구도 끝날까?", "myth": "가해자가 죽으면 배상도 함께 사라진다", "teaser": "형사 절차가 멈춰도 배상 채무는 상속인에게 넘어가요. 재산이 흩어지기 전에, 3개월의 시간 안에 움직여야 해요. 1분 만에 확인해 보세요.", "icon": "⚖️", "time": "약 1분", "start": "Q1", "nq_min": 2, "nq_max": 2, "cta_lawyer": "조우성 변호사", "cta_email": "law@mustknow.co.kr", "disclaimer": "이 진단은 일반적인 법률 정보 안내이며, 구체적인 사안은 개별 상담을 통해 확인해야 합니다.", "mother_url": "https://woosungjo-law.github.io/share/d/lcp-20260929-111-jcfz.html", "questions": {"Q1": {"text": "가해자 사망 후 지금 어디에 가장 가까운가요?", "why": "형사 종결인지, 상속인 특정인지, 재산 보전인지에 따라 할 일이 달라요.", "options": [{"label": "형사 절차가 공소기각으로 끝났다는 안내를 받았다", "next": "Q2"}, {"label": "상속인이 누구인지 모르겠다", "next": "Q3"}, {"label": "상속 재산이 팔리거나 흩어질까 걱정된다", "next": "Q4"}, {"label": "내 손해를 얼마로 청구할지 모르겠다", "next": "Q5"}]}, "Q2": {"text": "형사 종결과 배상 청구가 별개라는 걸 아시나요?", "why": "형사는 처벌 절차, 배상은 채무의 문제라 목적이 달라요.", "options": [{"label": "안다(배상을 계속 청구할 생각이다)", "next": "A"}, {"label": "형사가 끝나면 민사도 끝난 줄 알았다", "next": "B"}]}, "Q3": {"text": "상속인을 특정해 보셨나요?", "why": "배상 청구의 상대는 가해자의 상속인이에요.", "options": [{"label": "가족관계증명서로 상속인을 확인했다", "next": "C"}, {"label": "아직 확인하지 못했다", "next": "D"}]}, "Q4": {"text": "상속 재산을 묶어 둘 방법을 아시나요?", "why": "상속 재산이 흩어지기 전에 가압류로 보전할 수 있어요.", "options": [{"label": "가압류를 검토하거나 신청하고 있다", "next": "E"}, {"label": "상속인이 상속을 포기하면 어쩌나 걱정된다", "next": "I"}, {"label": "그런 방법이 있는지 몰랐다", "next": "F"}]}, "Q5": {"text": "치료비·장비 손해 등 근거를 문서로 정리하셨나요?", "why": "배상액은 문서 근거로 세워요.", "options": [{"label": "영수증·기록으로 손해 근거를 정리했다", "next": "G"}, {"label": "아직 정리하지 못했다", "next": "H"}]}}, "outcomes": {"A": {"grade": "high", "tag": "형사·민사 별개", "title": "형사가 끝났어도 배상은 사라지지 않아요. 청구를 계속할 수 있어요.", "why": "형사 종결과 배상 청구가 별개임을 안다고 답하셨어요.", "fact": "가해자가 죽으면 형사 처벌은 멈추지만, 배상 채무는 상속인에게 넘어가요.", "basis": "형사소송법 제328조 제1항 제2호는 피고인이 사망하면 결정으로 공소를 기각한다고 정합니다. 그러나 민법 제1005조에 따라 상속인은 상속개시된 때부터 피상속인의 재산에 관한 포괄적 권리의무를 승계하므로, 가해자의 배상 채무는 상속인에게 그대로 남습니다.", "caution": "형사가 끝났으니 배상도 끝났다는 생각은 형사와 민사를 섞은 착각이에요.", "checklist": ["형사 종결 통보와 별개로 배상 청구를 계속하세요.", "가족관계증명서로 상속인을 특정하세요.", "검찰청에 수사기록 등사를 신청해 재료를 확보하세요."], "disclaimer": "", "cta": ""}, "B": {"grade": "check", "tag": "형사·민사 구분", "title": "형사 절차 종결과 배상 청구는 별개예요. 배상은 계속 다툴 수 있어요.", "why": "형사가 끝나면 민사도 끝난 줄 알았다고 답하셨어요.", "fact": "형사 처벌은 불가능해져도, 배상 청구는 다른 절차예요.", "basis": "형사소송법 제328조 제1항 제2호에 따라 피고인 사망 시 공소가 기각되지만, 이는 형사 처벌 절차가 멈추는 것일 뿐입니다. 민법 제1005조에 따라 상속인이 가해자의 재산에 관한 권리의무를 승계하므로 배상 청구는 상속인을 상대로 이어질 수 있습니다.", "caution": "형사와 민사는 목적과 상대가 달라요. 하나가 끝났다고 다른 하나도 끝나는 게 아니에요.", "checklist": ["형사 종결 통보가 와도 배상 청구를 멈추지 마세요.", "상속인을 특정하고 손해 근거를 정리하세요.", "절차 방향을 전문가와 상담하세요."], "disclaimer": "", "cta": ""}, "C": {"grade": "high", "tag": "상속인 특정", "title": "상속인을 특정했다면, 배상 청구의 상대를 잡은 거예요.", "why": "가족관계증명서로 상속인을 확인했다고 답하셨어요.", "fact": "가해자의 배상 채무는 상속인에게 승계되므로, 상속인이 청구의 상대가 돼요.", "basis": "민법 제1005조는 상속인이 상속개시된 때부터 피상속인의 재산에 관한 포괄적 권리의무를 승계한다고 정합니다. 금전채권인 배상 채무도 상속인에게 승계됩니다.", "caution": "상속포기·한정승인의 효과는 개별적으로 따져야 하므로, 단정하지 마세요.", "checklist": ["가족관계증명서로 상속인을 특정하세요.", "상속인의 인적사항과 주소를 확인하세요.", "손해 근거와 함께 청구 자료를 정리하세요."], "disclaimer": "", "cta": ""}, "D": {"grade": "mid", "tag": "상속인 확인", "title": "먼저 상속인이 누구인지 특정하는 것이 출발점이에요.", "why": "상속인을 아직 확인하지 못했다고 답하셨어요.", "fact": "배상 청구의 상대는 상속인이에요. 먼저 그 사람을 특정해야 해요.", "basis": "민법 제1005조에 따라 상속인이 가해자의 재산에 관한 권리의무를 승계하므로, 배상 청구의 상대는 상속인이 됩니다. 가족관계증명서로 상속인을 특정하는 것이 첫 단계입니다.", "caution": "상속인이 여러 명일 수 있어, 범위를 확인해야 해요.", "checklist": ["가족관계증명서로 상속인을 확인하세요.", "확인된 상속인의 인적사항을 정리하세요.", "전문가의 도움을 받으면 상속인 특정이 빠릅니다."], "disclaimer": "", "cta": ""}, "E": {"grade": "mid", "tag": "가압류 검토", "title": "가압류를 검토하고 있다면, 상속포기 전에 재산을 묶어 두는 것이 회수의 핵심이에요.", "why": "가압류를 검토하거나 신청하고 있다고 답하셨어요.", "fact": "상속 재산이 흩어지거나 팔리기 전에 묶어 두는 제도가 가압류예요.", "basis": "민사집행법 제276조는 가압류를 금전채권이나 금전으로 환산할 수 있는 채권에 대하여 강제집행을 보전하기 위하여 할 수 있다고 정합니다. 배상 청구는 금전채권이므로 가압류로 재산을 보전할 수 있습니다.", "caution": "가압류는 재산을 묶어 두는 절차이고, 배상액이 확정되는 것은 아니에요.", "checklist": ["가압류 대상 재산과 관할을 확인하세요.", "상속포기 기간(3개월) 안에 움직이세요.", "가압류 신청 서류를 전문가와 준비하세요."], "disclaimer": "", "cta": ""}, "F": {"grade": "check", "tag": "가압류 인식", "title": "상속 재산이 움직이기 전에 묶어 둘 수 있어요. 가압류부터 알아보세요.", "why": "가압류 방법이 있는지 몰랐다고 답하셨어요.", "fact": "상속 재산이 흩어지기 전에 묶어 두는 것이 회수의 핵심이에요.", "basis": "민사집행법 제276조는 가압류를 금전채권 등에 대하여 강제집행을 보전하기 위하여 할 수 있다고 정합니다. 배상 청구는 금전채권이므로 가압류 대상이 됩니다.", "caution": "가압류는 보전 절차라, 본안 청구와 함께 진행해야 실익이 있어요.", "checklist": ["배상 청구 금액과 근거를 먼저 정리하세요.", "가압류 신청 방법과 관할을 알아보세요.", "상속포기 전에 신청할 수 있도록 상담하세요."], "disclaimer": "", "cta": ""}, "G": {"grade": "mid", "tag": "손해 근거 정리", "title": "치료비·장비 손해 등 근거를 문서로 정리했다면, 청구의 뼈대가 갖춰진 거예요.", "why": "영수증·기록으로 손해 근거를 정리했다고 답하셨어요.", "fact": "배상액은 감정이 아니라 치료비·장비 손해 같은 문서 근거로 세워요.", "basis": "가해자의 배상 채무는 상속인에게 승계되므로(민법 제1005조), 청구 금액의 근거를 문서로 정리하고 가압류 등 보전 절차(민사집행법 제276조)와 함께 준비해야 합니다.", "caution": "배상액의 범위는 개별 사정에 따라 판단되므로, 단정할 수 없어요.", "checklist": ["치료비 영수증과 장비 구입 영수증을 모으세요.", "일을 쉰 기간의 기록을 정리하세요.", "손해 내역을 합산해 청구 금액 근거를 만드세요."], "disclaimer": "", "cta": ""}, "H": {"grade": "check", "tag": "손해 근거 확보", "title": "배상액의 근거를 문서로 정리하는 것이 먼저예요.", "why": "손해 근거를 아직 정리하지 못했다고 답하셨어요.", "fact": "치료비·장비 손해·일을 쉰 기간 기록이 배상액의 근거가 돼요.", "basis": "배상 청구는 금전채권으로서 상속인에게 승계되고(민법 제1005조), 가압류로 보전할 수 있습니다(민사집행법 제276조). 청구 금액의 근거를 문서로 갖춰야 합니다.", "caution": "근거가 없으면 청구가 어려워질 수 있어, 문서부터 모으세요.", "checklist": ["치료비·장비 구입 영수증을 모으세요.", "일을 쉰 기간과 못 번 금액을 기록하세요.", "손해 내역을 정리해 청구 금액을 산정하세요."], "disclaimer": "", "cta": ""}, "I": {"grade": "check", "tag": "포기 전 보전", "title": "상속인이 포기하면 어쩌나 걱정된다면, 그 전에 재산을 묶어 두세요.", "why": "상속인이 상속을 포기할까 걱정된다고 답하셨어요.", "fact": "상속포기가 이뤄지기 전에 가압류로 재산을 보전하는 것이 핵심이에요.", "basis": "민법 제1005조에 따라 상속인이 가해자의 권리의무를 승계하고, 민사집행법 제276조에 따라 그 배상 채무를 보전하기 위한 가압류를 할 수 있습니다. 상속포기·한정승인의 효과는 개별적으로 따져야 합니다.", "caution": "상속포기·한정승인이 되면 회수가 어려워질 수 있으므로, 서둘러 보전하는 것이 좋아요.", "checklist": ["상속인과 상속 재산을 확인하세요.", "상속포기 기간(3개월) 안에 가압류를 검토하세요.", "개별 사정은 전문가와 상담하세요."], "disclaimer": "", "cta": ""}}}</script>
+<script>
+"use strict";
+var D = JSON.parse(document.getElementById("sc-data").textContent);
+var GRADE = {high:"가능성 높음", mid:"살펴볼 것", check:"확인 필요"};
+var screenEl = document.getElementById("screen");
+var pathStack = [];          // [{qid, qtext, label}]
+
+function h(tag, cls, text){
+  var e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(text !== undefined && text !== null) e.textContent = text;
+  return e;
+}
+function clearScreen(){ while(screenEl.firstChild) screenEl.removeChild(screenEl.firstChild); screenEl.className = "screen active"; window.scrollTo(0,0); }
+
+function setProgress(step, done){
+  var bar = document.getElementById("progress-bar");
+  var lab = document.getElementById("progress-label");
+  if(done){ bar.style.width = "100%"; lab.textContent = "진단 완료"; return; }
+  if(step === 0){ bar.style.width = "0%"; lab.textContent = ""; return; }
+  bar.style.width = Math.min(100, Math.round(step / D.nq_max * 100)) + "%";
+  lab.textContent = "질문 " + step;
+}
+
+function showIntro(){
+  pathStack = []; clearScreen(); setProgress(0);
+  var wrap = h("div","intro");
+  wrap.appendChild(h("div","intro-icon", D.icon || "⚖️"));
+  wrap.appendChild(h("h1","", D.hook));
+  if(D.myth){
+    var m = h("div","myth"); m.appendChild(h("b","","많은 분들이 이렇게 알고 있어요")); m.appendChild(document.createTextNode("“" + D.myth + "”"));
+    wrap.appendChild(m);
+  }
+  if(D.teaser) wrap.appendChild(h("p","", D.teaser));
+  var meta = h("div","meta");
+  [D.time || "약 1분", "객관식 질문 최대 " + D.nq_max + "개", "답변은 저장·전송되지 않아요"].forEach(function(t){ meta.appendChild(h("span","",t)); });
+  wrap.appendChild(meta);
+  var b = h("button","opt-btn primary","진단 시작하기"); b.type = "button";
+  b.onclick = function(){ goTo(D.start); };
+  wrap.appendChild(b);
+  screenEl.appendChild(wrap);
+}
+
+function goTo(id){
+  if(D.outcomes[id]) return showOutcome(id);
+  showQuestion(id);
+}
+
+function showQuestion(qid){
+  var q = D.questions[qid];
+  clearScreen();
+  var step = pathStack.length + 1;
+  setProgress(step);
+  screenEl.appendChild(h("div","q-count","질문 " + step));
+  screenEl.appendChild(h("div","q-text", q.text));
+  if(q.why) screenEl.appendChild(h("div","q-why", q.why));
+  var box = h("div","options");
+  q.options.forEach(function(o){
+    var b = h("button","opt-btn", o.label); b.type = "button";
+    b.onclick = function(){ pathStack.push({qid:qid, qtext:q.text, label:o.label}); goTo(o.next); };
+    box.appendChild(b);
+  });
+  screenEl.appendChild(box);
+  var back = h("button","back-btn", pathStack.length ? "← 이전 질문으로" : "← 처음으로"); back.type = "button";
+  back.onclick = function(){
+    if(!pathStack.length) return showIntro();
+    var last = pathStack.pop(); showQuestion(last.qid);
+  };
+  screenEl.appendChild(back);
+}
+
+function copyText(text, btn){
+  function ok(){ var o = btn.textContent; btn.textContent = "복사했어요 ✓"; setTimeout(function(){ btn.textContent = o; }, 1800); }
+  function fallback(){
+    var t = document.createElement("textarea"); t.value = text; t.style.position = "fixed"; t.style.opacity = "0";
+    document.body.appendChild(t); t.select();
+    try{ document.execCommand("copy"); ok(); }catch(e){ btn.textContent = "복사 실패 — 직접 선택해 주세요"; }
+    document.body.removeChild(t);
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(ok, fallback); } else { fallback(); }
+}
+
+function block(label, bodyNode){
+  var b = h("div","block"); b.appendChild(h("div","block-label",label)); b.appendChild(bodyNode); return b;
+}
+
+function showOutcome(oid){
+  var o = D.outcomes[oid];
+  clearScreen(); setProgress(0, true);
+  var head = h("div");
+  var g = h("span","grade " + o.grade, "● " + GRADE[o.grade]);
+  head.appendChild(g);
+  if(o.tag) head.appendChild(h("span","outcome-tag", o.tag));
+  screenEl.appendChild(head);
+  var wrap = h("div","outcome");
+  wrap.appendChild(h("h2","", o.title));
+
+  /* 왜 이 결과인가 — 내가 고른 답 + 근거 1줄 */
+  var why = h("div");
+  var chips = h("div","chips");
+  pathStack.forEach(function(p){ chips.appendChild(h("div","chip","· " + p.label)); });
+  why.appendChild(chips);
+  why.appendChild(h("div","why-line", o.why));
+  wrap.appendChild(block("🔎 왜 이 결과인가요?", why));
+
+  if(o.fact && D.myth){
+    var vs = h("div","vs");
+    var m = h("div","m"); m.appendChild(h("b","","통념")); m.appendChild(document.createTextNode(D.myth));
+    var f = h("div","f"); f.appendChild(h("b","","이 경우엔")); f.appendChild(document.createTextNode(o.fact));
+    vs.appendChild(m); vs.appendChild(f);
+    wrap.appendChild(block("💡 통념 vs 사실", vs));
+  }
+  wrap.appendChild(block("📖 법적 근거", h("div","block-body", o.basis)));
+  if(o.checklist && o.checklist.length){
+    var ul = h("ul","checklist"); o.checklist.forEach(function(c){ ul.appendChild(h("li","",c)); });
+    wrap.appendChild(block("✅ 지금 해볼 것", ul));
+  }
+  wrap.appendChild(block("⚠️ 주의할 점", h("div","block-body", o.caution)));
+  wrap.appendChild(h("div","disclaimer", o.disclaimer || D.disclaimer));
+  screenEl.appendChild(wrap);
+
+  var actions = h("div","actions");
+  var cp = h("button","ghost-btn","📋 결과 요약 복사하기"); cp.type = "button";
+  cp.onclick = function(){
+    var t = "[법률 자가진단] " + D.hook + "\n결과: " + GRADE[o.grade] + " — " + o.title + "\n※ 일반적인 법률 정보이며 개별 사안은 상담이 필요합니다.\n" + location.href;
+    copyText(t, cp);
+  };
+  actions.appendChild(cp);
+  if(D.mother_url){
+    var a = h("a","ghost-btn","📰 원문 컬럼 읽어보기"); a.href = D.mother_url; a.target = "_blank"; a.rel = "noopener"; actions.appendChild(a);
+  }
+  var rs = h("button","ghost-btn","↺ 처음부터 다시"); rs.type = "button"; rs.onclick = showIntro;
+  actions.appendChild(rs);
+  screenEl.appendChild(actions);
+
+  var cta = h("div","cta-box");
+  cta.appendChild(document.createTextNode((o.cta || "지금 상황을 구체적으로 확인하고 싶다면") + " "));
+  var s = h("strong","", D.cta_lawyer);
+  cta.appendChild(s);
+  cta.appendChild(document.createTextNode("("));
+  var ml = h("a","", D.cta_email); ml.href = "mailto:" + D.cta_email; cta.appendChild(ml);
+  cta.appendChild(document.createTextNode(")에게 문의하세요."));
+  screenEl.appendChild(cta);
+}
+
+document.getElementById("footer").textContent = "제공 : " + D.cta_lawyer + " 법률사무소";
+showIntro();
+</script>
+</body>
+</html>
