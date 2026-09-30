@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>타일 틈새 누수 하나로 계약 전체를 해제할 수 있을까</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 하자의 중대성과 계약 해제의 한계</div>
+    <h1>타일 틈새 누수 하나로 계약 전체를 해제할 수 있을까</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> 입주 직전 타일 틈새에서 물이 새면 계약 전체를 취소하고 싶어지지만, <b>누수가 한 곳인지 구조적 문제인지, 수리가 가능한지, 계약 목적을 달성할 수 없는 정도인지</b>에 따라 대응 방향이 달라집니다(민법 제580조·제575조). 국소적이고 수선 가능한 하자는 해제보다 <b>수리비 상당 손해배상이나 대금 조정</b>의 문제가 될 수 있습니다. 발견 즉시 <b>사진과 수리 견적</b>을 남기는 것이 첫 단계입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>입주 직전의 타일 틈새 누수</b>를 떠올려 보십시오. 물이 새면 매수인은 계약 전체를 취소하고 싶어집니다. 그러나 <b>누수가 한 곳인지 구조적 문제인지, 수리가 가능한지, 계약 목적을 달성할 수 없는 정도인지</b>에 따라 대응 방향이 달라집니다. 하자 분쟁에서는 <b>큰 감정적 표현보다 하자의 위치와 범위, 재발 가능성, 수선 가능성, 계약 목적에 미치는 영향</b>이 중요합니다. 잔금 지급을 임의로 거절하기 전에는 <b>계약서와 자료를 함께 검토해 불필요한 채무불이행 위험을 피해야</b> 하는 자리입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>
+      검증된 소재는 <b>민법 제580조의 하자담보책임, 제575조의 계약 목적 달성 가능성에 따른 해제와 손해배상 구분</b>을 제시합니다. <b>국소적이고 수선 가능한 하자는 계약 전체의 해제보다 수리비 상당 손해배상이나 대금 조정의 문제로 검토될 수 있으므로</b>, 하자의 <b>범위·원인·수선 가능성을 먼저 확인</b>해야 합니다.
+    </p>
+    <p>
+      <b>민법 제580조상 하자담보책임과 제575조상 계약 해제 기준을 구분</b>하십시오. 계약 목적을 달성할 수 없는 <b>중대한 하자</b>인지, 수선으로 해결할 수 있는 <b>국소적 하자</b>인지, <b>이미 고지된 하자</b>인지에 따라 <b>해제·손해배상·대금 감액의 선택지</b>가 달라질 수 있습니다.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>선언보다 기록이 먼저</h2>
+    <ul class="points">
+      <li><b>상태부터 남깁니다</b> — 누수를 발견하면 잔금 지급이나 계약 해제를 먼저 선언하기보다 <b>상태를 사진으로 남기고 전문가의 원인·범위·수선 견적</b>을 받아야 합니다.</li>
+      <li><b>기준 조문으로 상담</b> — 민법 제580조·제575조를 기준으로 <b>하자가 계약 목적을 막는지, 수리비 청구로 해결되는지</b> 상담받습니다.</li>
+      <li><b>함께 적어야 할 자료</b> — 하자의 중대성과 계약 해제의 한계를 판단할 때는 결론을 뒷받침하는 자료와 결론을 흔드는 자료를 함께 적어야 합니다. 유리한 자료만 모으면 실제 의사결정에는 오히려 위험합니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 상대방의 표현을 곧바로 법적 결론으로 옮기지 말고, 그 표현이 가리키는 <b>사실과 자료를 다시 확인</b>하십시오. 해제는 감정의 선언이 아니라 하자의 범위가 정하는 선택입니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;"><b>사진·견적·기준 조문</b>으로 움직입니다.</p>
+    <ol>
+      <li><b>① 원본 보관</b> — 사진·문자·계약·통지 원본과 발견 즉시의 상태 기록을 보관합니다.</li>
+      <li><b>② 전문가 견적</b> — 전문가의 원인·범위·수선 견적을 받아 둡니다.</li>
+      <li><b>③ 사실 구분</b> — 내가 직접 본 사실과 들은 설명을 나누고, 확인된 사실과 아직 확인하지 못한 사실을 같은 문장에 섞지 않습니다.</li>
+      <li><b>④ 임의 거절 금지</b> — 잔금 지급을 임의로 거절하기 전에 계약서와 자료를 함께 검토해 채무불이행 위험을 피합니다.</li>
+      <li><b>⑤ 상담 준비</b> — 날짜와 자료를 함께 제시해 민법 제580조·제575조 기준으로 검토받습니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
