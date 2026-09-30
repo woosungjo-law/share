@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>상대방 계좌 내역, 정말 볼 방법이 없을까?</title>
+<!-- sc-template v2 · 렌더러: _tools/sc.py build · 이 파일을 직접 고치지 말고 00_운영/app_template.html 과 시나리오 노트를 고친다 -->
+<style>
+  :root{
+    --navy:#12233f; --navy-deep:#0a1626; --accent:#c9a24b; --bg:#f4f5f7; --card:#ffffff;
+    --text:#1e232b; --muted:#5f6673; --line:#e5e7eb;
+    --g-high:#1f7a4d; --g-mid:#b7791f; --g-check:#4a5568;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    background:var(--bg);color:var(--text);min-height:100vh;
+    display:flex;align-items:flex-start;justify-content:center;padding:16px;line-height:1.55;
+    word-break:keep-all;overflow-wrap:anywhere;
+  }
+  .app{width:100%;max-width:480px;background:var(--card);border-radius:18px;box-shadow:0 8px 30px rgba(18,35,63,.12);overflow:hidden;display:flex;flex-direction:column;min-height:560px;}
+  .topbar{background:var(--navy);color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;font-size:13px;}
+  .topbar .brand{font-weight:700;letter-spacing:.02em;}
+  .progress-wrap{height:4px;background:var(--line);width:100%;}
+  .progress-bar{height:100%;background:var(--accent);width:0%;transition:width .25s ease;}
+  .screen{flex:1;padding:26px 22px 22px;display:none;flex-direction:column;animation:fadeIn .22s ease;}
+  .screen.active{display:flex;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+
+  .intro-icon{font-size:38px;margin-bottom:12px;}
+  .intro h1{font-size:22px;line-height:1.4;color:var(--navy-deep);margin-bottom:12px;}
+  .myth{background:#fbf6ea;border-left:4px solid var(--accent);border-radius:8px;padding:12px 14px;margin-bottom:14px;font-size:13.5px;color:#4a3d16;}
+  .myth b{display:block;font-size:11px;letter-spacing:.04em;color:#8a6d1f;margin-bottom:3px;}
+  .intro p{color:var(--muted);font-size:14px;margin-bottom:16px;}
+  .meta{font-size:12px;color:var(--muted);margin-bottom:20px;display:flex;gap:8px;flex-wrap:wrap;}
+  .meta span{background:var(--bg);padding:4px 10px;border-radius:20px;}
+
+  .q-count{font-size:12px;color:#8a6d1f;font-weight:700;margin-bottom:8px;letter-spacing:.03em;}
+  .q-text{font-size:19px;font-weight:700;color:var(--navy-deep);margin-bottom:8px;line-height:1.45;}
+  .q-why{font-size:12.5px;color:var(--muted);margin-bottom:18px;}
+  .options{display:flex;flex-direction:column;gap:10px;margin-top:10px;}
+  .opt-btn{text-align:left;background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;font:inherit;font-size:14.5px;color:var(--text);cursor:pointer;transition:all .15s ease;min-height:44px;width:100%;}
+  .opt-btn:hover,.opt-btn:active,.opt-btn:focus-visible{border-color:var(--accent);background:#fbf6ea;outline:none;}
+  .opt-btn.primary{text-align:center;font-weight:700;background:var(--navy);color:#fff;border:none;}
+  .opt-btn.primary:hover,.opt-btn.primary:focus-visible{background:var(--navy-deep);}
+  .back-btn{margin-top:14px;background:none;border:none;color:var(--muted);font-size:12.5px;text-align:left;cursor:pointer;min-height:36px;text-decoration:underline;}
+
+  .grade{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#fff;padding:5px 12px;border-radius:20px;margin-bottom:10px;width:fit-content;}
+  .grade.high{background:var(--g-high);} .grade.mid{background:var(--g-mid);} .grade.check{background:var(--g-check);}
+  .outcome-tag{display:inline-block;font-size:11px;font-weight:700;color:var(--navy);background:#eef1f6;padding:4px 10px;border-radius:20px;margin-bottom:10px;margin-left:6px;}
+  .outcome h2{font-size:18px;color:var(--navy-deep);margin-bottom:14px;line-height:1.5;}
+  .block{margin-bottom:15px;}
+  .block-label{font-size:12px;font-weight:700;color:#8a6d1f;margin-bottom:5px;letter-spacing:.02em;}
+  .block-body{font-size:13.5px;color:var(--text);}
+  .chips{display:flex;flex-direction:column;gap:5px;margin-bottom:6px;}
+  .chip{font-size:12.5px;background:var(--bg);border-radius:8px;padding:6px 10px;color:#3b4250;}
+  .why-line{font-size:13.5px;}
+  .vs{display:grid;gap:6px;}
+  .vs div{font-size:13px;border-radius:8px;padding:9px 12px;}
+  .vs .m{background:#f6ecec;color:#7a2f2f;} .vs .f{background:#e9f4ee;color:#1d5b3a;}
+  .vs b{display:block;font-size:10.5px;letter-spacing:.05em;margin-bottom:2px;}
+  .checklist{list-style:none;display:flex;flex-direction:column;gap:6px;}
+  .checklist li{font-size:13.5px;padding-left:22px;position:relative;}
+  .checklist li::before{content:"☐";position:absolute;left:0;color:#8a6d1f;}
+  .disclaimer{font-size:12px;color:var(--muted);background:var(--bg);border-radius:10px;padding:12px 14px;margin-bottom:14px;}
+  .actions{display:flex;flex-direction:column;gap:8px;margin-bottom:14px;}
+  .ghost-btn{background:transparent;border:1.5px solid var(--line);color:#3b4250;border-radius:10px;padding:11px;font:inherit;font-size:13px;cursor:pointer;min-height:44px;text-align:center;text-decoration:none;display:block;}
+  .ghost-btn:hover,.ghost-btn:focus-visible{border-color:var(--accent);outline:none;}
+  .cta-box{background:var(--navy);color:#fff;border-radius:12px;padding:16px 18px;font-size:13.5px;margin-top:auto;}
+  .cta-box strong{color:var(--accent);} .cta-box a{color:#fff;text-decoration:underline;}
+  .footer-mark{text-align:center;font-size:11px;color:var(--muted);padding:10px 0 16px;}
+  @media (max-width:380px){ .screen{padding:22px 16px 18px;} .q-text{font-size:18px;} }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topbar"><span class="brand">법률 자가진단</span><span id="progress-label"></span></div>
+  <div class="progress-wrap"><div class="progress-bar" id="progress-bar"></div></div>
+  <div class="screen active" id="screen"></div>
+  <div class="footer-mark" id="footer"></div>
+</div>
+
+<script id="sc-data" type="application/json">{"hook": "상대방 계좌 내역, 정말 볼 방법이 없을까?", "myth": "남의 계좌 내역은 어떻게 해도 확인할 수 없다", "teaser": "은행은 명의인 동의 없이 알려주지 않지만, 법원의 제출명령은 예외예요. 신청 요건과 범위를 갖추면 확인할 수 있어요. 1분 만에 확인해 보세요.", "icon": "🏦", "time": "약 1분", "start": "Q1", "nq_min": 2, "nq_max": 2, "cta_lawyer": "조우성 변호사", "cta_email": "law@mustknow.co.kr", "disclaimer": "이 진단은 일반적인 법률 정보 안내이며, 구체적인 사안은 개별 상담을 통해 확인해야 합니다.", "mother_url": "https://woosungjo-law.github.io/share/d/lcp-20260929-024-p5m0.html", "questions": {"Q1": {"text": "지금 상황은 어디에 가장 가까운가요?", "why": "은행 창구 문제인지, 소송 중 신청 문제인지에 따라 길이 달라요.", "options": [{"label": "은행에 가서 요구했지만 거절당했다", "next": "Q2"}, {"label": "소송 중이고 상대 계좌 내역이 필요하다", "next": "Q3"}, {"label": "상대가 자료를 안 내고 버티고 있다", "next": "Q4"}, {"label": "무엇을 어떤 범위로 신청할지 모르겠다", "next": "Q5"}]}, "Q2": {"text": "은행은 명의인 동의 없이 알려주지 않아요. 법원을 통하는 길이 있다는 걸 아시나요?", "why": "법원의 제출명령은 금융정보 비밀보장의 예외예요.", "options": [{"label": "법원을 통한 방법을 알고 있다", "next": "A"}, {"label": "은행에 계속 요구해야 하는 줄 알았다", "next": "B"}]}, "Q3": {"text": "문서제출신청에는 '제출의무의 원인'을 밝혀야 해요. 준비되셨나요?", "why": "무엇을, 왜, 어떤 의무로 제출하게 할지 밝혀야 해요.", "options": [{"label": "문서 표시·취지·증명할 사실·제출의무 원인을 적었다", "next": "C"}, {"label": "아직 요건을 갖추지 못했다", "next": "D"}]}, "Q4": {"text": "상대가 자료를 내지 않으면 법원이 어떻게 하는지 아시나요?", "why": "불응하면 오히려 상대가 불리해질 수 있어요.", "options": [{"label": "상대 주장을 진실로 인정할 수 있다는 걸 안다", "next": "E"}, {"label": "몰랐다", "next": "F"}]}, "Q5": {"text": "신청 범위를 어떻게 정하시겠어요?", "why": "법원은 이유 있는 부분만 제출을 명하므로 범위가 중요해요.", "options": [{"label": "계좌번호·기간·항목으로 좁게 특정하겠다", "next": "G"}, {"label": "가능한 많이 넓게 요청하겠다", "next": "H"}]}}, "outcomes": {"A": {"grade": "high", "tag": "법원 경로", "title": "은행은 명의인 동의 없이 알려주지 않지만, 법원을 통하면 확인할 수 있어요.", "why": "법원을 통한 방법을 알고 있다고 답하셨어요.", "fact": "은행은 개인 거래정보를 함부로 알려줄 수 없지만, 법원의 제출명령은 예외예요.", "basis": "금융실명법 제4조 제1항은 금융회사등에 종사하는 자가 명의인의 서면 요구나 동의를 받지 아니하고는 거래정보등을 제공·누설하지 못하도록 하면서, 법원의 제출명령 또는 법관이 발부한 영장에 따른 제공 등 같은 항 각 호의 경우에는 사용 목적에 필요한 최소한의 범위에서 제공할 수 있다고 정합니다. 소송에서는 법원을 통해 확인합니다.", "caution": "제공은 사용 목적에 필요한 최소한의 범위로 이뤄져요.", "checklist": ["채무자 계좌번호와 확인할 기간·항목을 정리하세요.", "법원의 제출명령·조사의 촉탁(제294조) 경로를 확인하세요.", "구두 요구와 거절당한 날짜를 기록하세요."], "disclaimer": "", "cta": ""}, "B": {"grade": "check", "tag": "법원 경로 검토", "title": "은행에 계속 요구하는 것으로는 해결되지 않아요. 법원을 통하는 절차를 검토하세요.", "why": "은행에 계속 요구해야 하는 줄 알았다고 답하셨어요.", "fact": "은행은 명의인 동의 없이 알려줄 수 없고, 법원의 명령이 있어야 제공해요.", "basis": "금융실명법 제4조 제1항은 명의인의 동의 없는 거래정보 제공을 금지하면서, 법원의 제출명령에 따른 제공을 예외로 둡니다. 따라서 소송에서 법원을 통해 확인하는 경로를 검토해야 합니다.", "caution": "은행 창구에서의 요구만으로는 정보를 받을 수 없어요.", "checklist": ["법원을 통한 조회·제출 경로를 알아보세요.", "채무자 계좌번호와 기간을 확인하세요.", "요구·거절 기록을 남기세요."], "disclaimer": "", "cta": ""}, "C": {"grade": "high", "tag": "신청 요건 충족", "title": "문서 표시·취지·증명할 사실·제출의무 원인을 적었다면, 요건을 갖춘 거예요.", "why": "문서제출신청 요건을 적었다고 답하셨어요.", "fact": "문서제출신청은 무엇을, 왜, 어떤 의무로 내야 하는지 밝혀야 해요.", "basis": "민사소송법 제345조는 문서제출신청에 문서의 표시, 문서의 취지, 문서를 가진 사람, 증명할 사실, 문서를 제출하여야 하는 의무의 원인을 밝혀야 한다고 정하고, 제347조 제1항은 법원이 정당한 이유가 있다고 인정하면 결정으로 제출을 명할 수 있다고 정합니다.", "caution": "법원은 신청이 일부에 대해서만 이유 있다고 보면 그 부분만 제출을 명할 수 있어요(제347조 제2항).", "checklist": ["문서의 표시(계좌번호·기간·항목)를 구체적으로 적으세요.", "그 문서로 증명할 사실을 한 문장으로 쓰세요.", "제출의무의 원인을 함께 적으세요."], "disclaimer": "", "cta": ""}, "D": {"grade": "mid", "tag": "요건 갖추기", "title": "문서제출신청 요건을 갖추는 것이 먼저예요.", "why": "아직 요건을 갖추지 못했다고 답하셨어요.", "fact": "무엇을, 왜, 어떤 의무로 제출하게 할지 밝혀야 법원이 명할 수 있어요.", "basis": "제345조는 문서의 표시, 취지, 문서를 가진 사람, 증명할 사실, 제출의무의 원인을 밝혀야 한다고 정하고, 제344조 제1항은 소송에서 인용한 문서·넘겨 달라 요구할 수 있는 권리가 있는 문서 등을 제출을 거부할 수 없는 문서로 정합니다.", "caution": "요건이 갖춰지지 않으면 법원이 제출을 명하기 어려워요.", "checklist": ["확인할 계좌번호·기간·항목을 적으세요.", "그 문서로 증명할 사실과 연결하세요.", "제출의무의 원인을 적으세요."], "disclaimer": "", "cta": ""}, "E": {"grade": "high", "tag": "불응의 효과", "title": "상대가 자료를 내지 않으면, 법원이 상대 주장을 진실로 인정할 수 있어요.", "why": "법원이 상대 주장을 진실로 인정할 수 있다는 걸 안다고 답하셨어요.", "fact": "자료를 감추는 쪽이 오히려 불리해질 수 있어요.", "basis": "민사소송법 제349조는 당사자가 제출명령에 따르지 아니한 때에는 법원이 문서의 기재에 대한 상대방의 주장을 진실한 것으로 인정할 수 있다고 정하고, 제350조는 사용을 방해할 목적으로 문서를 훼손하거나 사용할 수 없게 한 때에도 같다고 정합니다.", "caution": "법원이 반드시 진실로 인정한다고 단정할 수는 없어요('인정할 수 있다').", "checklist": ["제출을 요구한 문서와 그 취지를 기록하세요.", "상대가 응하지 않은 경위를 날짜로 남기세요.", "불응 시 법원에 그 효과를 주장할 자료를 준비하세요."], "disclaimer": "", "cta": ""}, "F": {"grade": "check", "tag": "불응의 효과 인지", "title": "상대가 자료를 안 내도 괜찮은 게 아니에요. 불리해질 수 있어요.", "why": "불응 효과를 몰랐다고 답하셨어요.", "fact": "법원은 제출명령에 따르지 않으면 상대 주장을 진실로 인정할 수 있어요.", "basis": "제349조는 제출명령에 따르지 아니한 때 법원이 문서의 기재에 대한 상대방의 주장을 진실한 것으로 인정할 수 있다고 정하고, 제350조는 사용을 방해할 목적으로 문서를 훼손·사용불능하게 한 때에도 같다고 정합니다.", "caution": "이 효과는 법원의 판단 사항이라, 명령과 불응 사실을 자료로 남겨야 해요.", "checklist": ["제출명령이 있었는지, 상대가 응했는지 확인하세요.", "불응한 경위를 날짜와 함께 기록하세요.", "법원에 그 효과를 주장할 준비를 하세요."], "disclaimer": "", "cta": ""}, "G": {"grade": "mid", "tag": "범위 특정", "title": "계좌번호·기간·항목으로 좁게 특정하면 받아들여지기 쉬워요.", "why": "좁게 특정하겠다고 답하셨어요.", "fact": "문서제출신청은 범위가 좁고 구체적일수록 법원이 이유 있다고 보기 쉬워요.", "basis": "제345조는 문서의 표시와 취지를 밝히도록 하고, 제347조 제1항·제2항은 법원이 정당한 이유가 있는 부분에 대해서만 제출을 명할 수 있다고 정합니다. 계좌번호·기간·항목을 적어 최소 범위로 신청하는 편이 좋습니다.", "caution": "범위가 넓으면 법원이 일부만 받아들이거나 신청이 어려워질 수 있어요.", "checklist": ["채무자 계좌번호와 기간을 적으세요.", "확인할 항목을 좁히세요.", "증명할 사실과 연결하세요."], "disclaimer": "", "cta": ""}, "H": {"grade": "check", "tag": "범위 좁히기", "title": "가능한 많이 요청하기보다, 필요한 범위로 좁히는 편이 유리해요.", "why": "가능한 많이 넓게 요청하겠다고 답하셨어요.", "fact": "법원은 이유 있는 부분만 제출을 명하므로, 범위를 좁게 특정하는 게 낫어요.", "basis": "제345조는 문서의 표시·취지 등을 밝히도록 하고, 제347조는 법원이 정당한 이유가 있는 부분에 대해서만 제출을 명할 수 있다고 정합니다. 계좌번호·기간·항목을 적어 최소 범위로 신청하는 편이 받아들여지기 쉽습니다.", "caution": "범위가 지나치게 넓으면 신청이 받아들여지기 어려울 수 있어요.", "checklist": ["꼭 필요한 계좌·기간·항목만 추리세요.", "각 항목이 무엇을 증명하는지 적으세요.", "범위를 좁힌 신청서를 준비하세요."], "disclaimer": "", "cta": ""}}}</script>
+<script>
+"use strict";
+var D = JSON.parse(document.getElementById("sc-data").textContent);
+var GRADE = {high:"가능성 높음", mid:"살펴볼 것", check:"확인 필요"};
+var screenEl = document.getElementById("screen");
+var pathStack = [];          // [{qid, qtext, label}]
+
+function h(tag, cls, text){
+  var e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(text !== undefined && text !== null) e.textContent = text;
+  return e;
+}
+function clearScreen(){ while(screenEl.firstChild) screenEl.removeChild(screenEl.firstChild); screenEl.className = "screen active"; window.scrollTo(0,0); }
+
+function setProgress(step, done){
+  var bar = document.getElementById("progress-bar");
+  var lab = document.getElementById("progress-label");
+  if(done){ bar.style.width = "100%"; lab.textContent = "진단 완료"; return; }
+  if(step === 0){ bar.style.width = "0%"; lab.textContent = ""; return; }
+  bar.style.width = Math.min(100, Math.round(step / D.nq_max * 100)) + "%";
+  lab.textContent = "질문 " + step;
+}
+
+function showIntro(){
+  pathStack = []; clearScreen(); setProgress(0);
+  var wrap = h("div","intro");
+  wrap.appendChild(h("div","intro-icon", D.icon || "⚖️"));
+  wrap.appendChild(h("h1","", D.hook));
+  if(D.myth){
+    var m = h("div","myth"); m.appendChild(h("b","","많은 분들이 이렇게 알고 있어요")); m.appendChild(document.createTextNode("“" + D.myth + "”"));
+    wrap.appendChild(m);
+  }
+  if(D.teaser) wrap.appendChild(h("p","", D.teaser));
+  var meta = h("div","meta");
+  [D.time || "약 1분", "객관식 질문 최대 " + D.nq_max + "개", "답변은 저장·전송되지 않아요"].forEach(function(t){ meta.appendChild(h("span","",t)); });
+  wrap.appendChild(meta);
+  var b = h("button","opt-btn primary","진단 시작하기"); b.type = "button";
+  b.onclick = function(){ goTo(D.start); };
+  wrap.appendChild(b);
+  screenEl.appendChild(wrap);
+}
+
+function goTo(id){
+  if(D.outcomes[id]) return showOutcome(id);
+  showQuestion(id);
+}
+
+function showQuestion(qid){
+  var q = D.questions[qid];
+  clearScreen();
+  var step = pathStack.length + 1;
+  setProgress(step);
+  screenEl.appendChild(h("div","q-count","질문 " + step));
+  screenEl.appendChild(h("div","q-text", q.text));
+  if(q.why) screenEl.appendChild(h("div","q-why", q.why));
+  var box = h("div","options");
+  q.options.forEach(function(o){
+    var b = h("button","opt-btn", o.label); b.type = "button";
+    b.onclick = function(){ pathStack.push({qid:qid, qtext:q.text, label:o.label}); goTo(o.next); };
+    box.appendChild(b);
+  });
+  screenEl.appendChild(box);
+  var back = h("button","back-btn", pathStack.length ? "← 이전 질문으로" : "← 처음으로"); back.type = "button";
+  back.onclick = function(){
+    if(!pathStack.length) return showIntro();
+    var last = pathStack.pop(); showQuestion(last.qid);
+  };
+  screenEl.appendChild(back);
+}
+
+function copyText(text, btn){
+  function ok(){ var o = btn.textContent; btn.textContent = "복사했어요 ✓"; setTimeout(function(){ btn.textContent = o; }, 1800); }
+  function fallback(){
+    var t = document.createElement("textarea"); t.value = text; t.style.position = "fixed"; t.style.opacity = "0";
+    document.body.appendChild(t); t.select();
+    try{ document.execCommand("copy"); ok(); }catch(e){ btn.textContent = "복사 실패 — 직접 선택해 주세요"; }
+    document.body.removeChild(t);
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(ok, fallback); } else { fallback(); }
+}
+
+function block(label, bodyNode){
+  var b = h("div","block"); b.appendChild(h("div","block-label",label)); b.appendChild(bodyNode); return b;
+}
+
+function showOutcome(oid){
+  var o = D.outcomes[oid];
+  clearScreen(); setProgress(0, true);
+  var head = h("div");
+  var g = h("span","grade " + o.grade, "● " + GRADE[o.grade]);
+  head.appendChild(g);
+  if(o.tag) head.appendChild(h("span","outcome-tag", o.tag));
+  screenEl.appendChild(head);
+  var wrap = h("div","outcome");
+  wrap.appendChild(h("h2","", o.title));
+
+  /* 왜 이 결과인가 — 내가 고른 답 + 근거 1줄 */
+  var why = h("div");
+  var chips = h("div","chips");
+  pathStack.forEach(function(p){ chips.appendChild(h("div","chip","· " + p.label)); });
+  why.appendChild(chips);
+  why.appendChild(h("div","why-line", o.why));
+  wrap.appendChild(block("🔎 왜 이 결과인가요?", why));
+
+  if(o.fact && D.myth){
+    var vs = h("div","vs");
+    var m = h("div","m"); m.appendChild(h("b","","통념")); m.appendChild(document.createTextNode(D.myth));
+    var f = h("div","f"); f.appendChild(h("b","","이 경우엔")); f.appendChild(document.createTextNode(o.fact));
+    vs.appendChild(m); vs.appendChild(f);
+    wrap.appendChild(block("💡 통념 vs 사실", vs));
+  }
+  wrap.appendChild(block("📖 법적 근거", h("div","block-body", o.basis)));
+  if(o.checklist && o.checklist.length){
+    var ul = h("ul","checklist"); o.checklist.forEach(function(c){ ul.appendChild(h("li","",c)); });
+    wrap.appendChild(block("✅ 지금 해볼 것", ul));
+  }
+  wrap.appendChild(block("⚠️ 주의할 점", h("div","block-body", o.caution)));
+  wrap.appendChild(h("div","disclaimer", o.disclaimer || D.disclaimer));
+  screenEl.appendChild(wrap);
+
+  var actions = h("div","actions");
+  var cp = h("button","ghost-btn","📋 결과 요약 복사하기"); cp.type = "button";
+  cp.onclick = function(){
+    var t = "[법률 자가진단] " + D.hook + "\n결과: " + GRADE[o.grade] + " — " + o.title + "\n※ 일반적인 법률 정보이며 개별 사안은 상담이 필요합니다.\n" + location.href;
+    copyText(t, cp);
+  };
+  actions.appendChild(cp);
+  if(D.mother_url){
+    var a = h("a","ghost-btn","📰 원문 컬럼 읽어보기"); a.href = D.mother_url; a.target = "_blank"; a.rel = "noopener"; actions.appendChild(a);
+  }
+  var rs = h("button","ghost-btn","↺ 처음부터 다시"); rs.type = "button"; rs.onclick = showIntro;
+  actions.appendChild(rs);
+  screenEl.appendChild(actions);
+
+  var cta = h("div","cta-box");
+  cta.appendChild(document.createTextNode((o.cta || "지금 상황을 구체적으로 확인하고 싶다면") + " "));
+  var s = h("strong","", D.cta_lawyer);
+  cta.appendChild(s);
+  cta.appendChild(document.createTextNode("("));
+  var ml = h("a","", D.cta_email); ml.href = "mailto:" + D.cta_email; cta.appendChild(ml);
+  cta.appendChild(document.createTextNode(")에게 문의하세요."));
+  screenEl.appendChild(cta);
+}
+
+document.getElementById("footer").textContent = "제공 : " + D.cta_lawyer + " 법률사무소";
+showIntro();
+</script>
+</body>
+</html>
