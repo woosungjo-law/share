@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>전세 갱신요구, 상가와 똑같이 하면 될까?</title>
+<!-- sc-template v2 · 렌더러: _tools/sc.py build · 이 파일을 직접 고치지 말고 00_운영/app_template.html 과 시나리오 노트를 고친다 -->
+<style>
+  :root{
+    --navy:#12233f; --navy-deep:#0a1626; --accent:#c9a24b; --bg:#f4f5f7; --card:#ffffff;
+    --text:#1e232b; --muted:#5f6673; --line:#e5e7eb;
+    --g-high:#1f7a4d; --g-mid:#b7791f; --g-check:#4a5568;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    background:var(--bg);color:var(--text);min-height:100vh;
+    display:flex;align-items:flex-start;justify-content:center;padding:16px;line-height:1.55;
+    word-break:keep-all;overflow-wrap:anywhere;
+  }
+  .app{width:100%;max-width:480px;background:var(--card);border-radius:18px;box-shadow:0 8px 30px rgba(18,35,63,.12);overflow:hidden;display:flex;flex-direction:column;min-height:560px;}
+  .topbar{background:var(--navy);color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;font-size:13px;}
+  .topbar .brand{font-weight:700;letter-spacing:.02em;}
+  .progress-wrap{height:4px;background:var(--line);width:100%;}
+  .progress-bar{height:100%;background:var(--accent);width:0%;transition:width .25s ease;}
+  .screen{flex:1;padding:26px 22px 22px;display:none;flex-direction:column;animation:fadeIn .22s ease;}
+  .screen.active{display:flex;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+
+  .intro-icon{font-size:38px;margin-bottom:12px;}
+  .intro h1{font-size:22px;line-height:1.4;color:var(--navy-deep);margin-bottom:12px;}
+  .myth{background:#fbf6ea;border-left:4px solid var(--accent);border-radius:8px;padding:12px 14px;margin-bottom:14px;font-size:13.5px;color:#4a3d16;}
+  .myth b{display:block;font-size:11px;letter-spacing:.04em;color:#8a6d1f;margin-bottom:3px;}
+  .intro p{color:var(--muted);font-size:14px;margin-bottom:16px;}
+  .meta{font-size:12px;color:var(--muted);margin-bottom:20px;display:flex;gap:8px;flex-wrap:wrap;}
+  .meta span{background:var(--bg);padding:4px 10px;border-radius:20px;}
+
+  .q-count{font-size:12px;color:#8a6d1f;font-weight:700;margin-bottom:8px;letter-spacing:.03em;}
+  .q-text{font-size:19px;font-weight:700;color:var(--navy-deep);margin-bottom:8px;line-height:1.45;}
+  .q-why{font-size:12.5px;color:var(--muted);margin-bottom:18px;}
+  .options{display:flex;flex-direction:column;gap:10px;margin-top:10px;}
+  .opt-btn{text-align:left;background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;font:inherit;font-size:14.5px;color:var(--text);cursor:pointer;transition:all .15s ease;min-height:44px;width:100%;}
+  .opt-btn:hover,.opt-btn:active,.opt-btn:focus-visible{border-color:var(--accent);background:#fbf6ea;outline:none;}
+  .opt-btn.primary{text-align:center;font-weight:700;background:var(--navy);color:#fff;border:none;}
+  .opt-btn.primary:hover,.opt-btn.primary:focus-visible{background:var(--navy-deep);}
+  .back-btn{margin-top:14px;background:none;border:none;color:var(--muted);font-size:12.5px;text-align:left;cursor:pointer;min-height:36px;text-decoration:underline;}
+
+  .grade{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#fff;padding:5px 12px;border-radius:20px;margin-bottom:10px;width:fit-content;}
+  .grade.high{background:var(--g-high);} .grade.mid{background:var(--g-mid);} .grade.check{background:var(--g-check);}
+  .outcome-tag{display:inline-block;font-size:11px;font-weight:700;color:var(--navy);background:#eef1f6;padding:4px 10px;border-radius:20px;margin-bottom:10px;margin-left:6px;}
+  .outcome h2{font-size:18px;color:var(--navy-deep);margin-bottom:14px;line-height:1.5;}
+  .block{margin-bottom:15px;}
+  .block-label{font-size:12px;font-weight:700;color:#8a6d1f;margin-bottom:5px;letter-spacing:.02em;}
+  .block-body{font-size:13.5px;color:var(--text);}
+  .chips{display:flex;flex-direction:column;gap:5px;margin-bottom:6px;}
+  .chip{font-size:12.5px;background:var(--bg);border-radius:8px;padding:6px 10px;color:#3b4250;}
+  .why-line{font-size:13.5px;}
+  .vs{display:grid;gap:6px;}
+  .vs div{font-size:13px;border-radius:8px;padding:9px 12px;}
+  .vs .m{background:#f6ecec;color:#7a2f2f;} .vs .f{background:#e9f4ee;color:#1d5b3a;}
+  .vs b{display:block;font-size:10.5px;letter-spacing:.05em;margin-bottom:2px;}
+  .checklist{list-style:none;display:flex;flex-direction:column;gap:6px;}
+  .checklist li{font-size:13.5px;padding-left:22px;position:relative;}
+  .checklist li::before{content:"☐";position:absolute;left:0;color:#8a6d1f;}
+  .disclaimer{font-size:12px;color:var(--muted);background:var(--bg);border-radius:10px;padding:12px 14px;margin-bottom:14px;}
+  .actions{display:flex;flex-direction:column;gap:8px;margin-bottom:14px;}
+  .ghost-btn{background:transparent;border:1.5px solid var(--line);color:#3b4250;border-radius:10px;padding:11px;font:inherit;font-size:13px;cursor:pointer;min-height:44px;text-align:center;text-decoration:none;display:block;}
+  .ghost-btn:hover,.ghost-btn:focus-visible{border-color:var(--accent);outline:none;}
+  .cta-box{background:var(--navy);color:#fff;border-radius:12px;padding:16px 18px;font-size:13.5px;margin-top:auto;}
+  .cta-box strong{color:var(--accent);} .cta-box a{color:#fff;text-decoration:underline;}
+  .footer-mark{text-align:center;font-size:11px;color:var(--muted);padding:10px 0 16px;}
+  @media (max-width:380px){ .screen{padding:22px 16px 18px;} .q-text{font-size:18px;} }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topbar"><span class="brand">법률 자가진단</span><span id="progress-label"></span></div>
+  <div class="progress-wrap"><div class="progress-bar" id="progress-bar"></div></div>
+  <div class="screen active" id="screen"></div>
+  <div class="footer-mark" id="footer"></div>
+</div>
+
+<script id="sc-data" type="application/json">{"hook": "전세 갱신요구, 상가와 똑같이 하면 될까?", "myth": "전세 갱신요구는 상가 임차인과 똑같이 하면 된다", "teaser": "주택은 주택대로 정해진 기간과 방법이 있어요. 지금 내 계약이 어느 단계인지 1분 만에 확인해 보세요.", "icon": "🔑", "time": "약 1분", "start": "Q1", "nq_min": 1, "nq_max": 3, "cta_lawyer": "조우성 변호사", "cta_email": "law@mustknow.co.kr", "disclaimer": "이 진단은 일반적인 법률 정보 안내이며, 구체적인 사안은 개별 상담을 통해 확인해야 합니다.", "mother_url": "", "questions": {"Q1": {"text": "지금 내 임대차는 어느 단계에 가장 가깝나요?", "why": "갱신요구는 계약 종료 전 정해진 기간 안에서만 하는 것이라, 단계에 따라 갈 길이 달라져요.", "options": [{"label": "아직 한 번도 갱신하지 않았고, 계약 종료까지 6개월 이상 남았다", "next": "B"}, {"label": "아직 한 번도 갱신하지 않았고, 종료까지 6개월~2개월 사이다", "next": "Q2"}, {"label": "아직 한 번도 갱신하지 않았고, 종료까지 2개월도 안 남았거나 이미 그 시점을 지났다", "next": "Q4"}, {"label": "이미 한 번 갱신된 상태로 지금 살고 있다", "next": "Q5"}, {"label": "잘 모르겠다", "next": "C"}]}, "Q2": {"text": "이번 갱신과 관련해 지금 가장 궁금한 것은 무엇인가요?", "why": "갱신을 요구하려는지, 갱신된 뒤 나갈 길이 궁금한지에 따라 확인할 조문이 달라져요.", "options": [{"label": "계속 살고 싶어서 갱신을 요구하려고 한다", "next": "Q3"}, {"label": "갱신된 뒤에 사정이 생기면 나갈 수 있는지가 궁금하다", "next": "G"}]}, "Q3": {"text": "임대인이 갱신을 거절하려는 이유로 무엇을 말했나요?", "why": "법이 정한 거절 사유가 있는지 여부가 결과를 가르는 핵심이에요.", "options": [{"label": "이유를 말한 적이 없거나 아직 연락하기 전이다", "next": "A"}, {"label": "본인이나 부모·자녀가 들어와 살겠다고 한다", "next": "E8"}, {"label": "건물을 철거하거나 재건축하겠다고 한다", "next": "E7"}, {"label": "돈(보상)을 받고 나가는 합의를 논의 중이다", "next": "F"}, {"label": "내가 차임을 2기 분 이상 밀렸거나, 허락 없이 전대했거나, 집을 파손한 일이 있다. 또는 이유를 잘 모르겠다", "next": "X"}]}, "Q4": {"text": "종료 2개월 전까지, 임대인이나 임차인 중 누구라도 갱신 거절이나 조건 변경 통지를 한 적이 있나요?", "why": "양쪽 모두 통지하지 않았다면 법에 따라 갱신된 것으로 보는 경우가 있어요.", "options": [{"label": "임대인도 나도 그런 통지를 하지 않았다", "next": "Q4b"}, {"label": "임대인이 갱신 거절이나 조건 변경 통지를 했다", "next": "K"}, {"label": "내가 나가겠다고 통지했다", "next": "K"}, {"label": "잘 모르겠다", "next": "K"}]}, "Q4b": {"text": "차임을 2기 분 이상 밀린 적이 있거나, 임차인으로서 의무를 중대하게 어긴 일이 있나요?", "why": "이런 경우에는 통지가 없어도 갱신된 것으로 보는 규정이 적용되지 않아요.", "options": [{"label": "그런 적이 없다", "next": "M"}, {"label": "있다", "next": "X2"}, {"label": "잘 모르겠다", "next": "X2"}]}, "Q5": {"text": "이미 갱신된 임대차인데, 어떻게 갱신되었나요?", "why": "갱신 방식과 횟수에 따라 갱신요구권이 남아 있는지, 해지 규정이 적용되는지가 달라져요.", "options": [{"label": "별다른 통지 없이 기간이 지나 저절로 갱신되었다", "next": "Q6"}, {"label": "내가 갱신요구를 해서 갱신되었다", "next": "Q6"}, {"label": "갱신요구로 갱신된 집인데, 이 갱신 기간이 끝나갈 때 또 갱신하고 싶다", "next": "U"}, {"label": "갱신 때 새 계약서를 다시 썼거나, 어떻게 갱신됐는지 잘 모르겠다", "next": "N"}]}, "Q6": {"text": "지금 나가야 할 사정이 있어서 계약을 끝내려는 상황인가요?", "why": "갱신된 임대차는 임차인이 해지를 통지하면 3개월 뒤 효력이 생기는 규정이 있어서, 날짜를 계산해 봐야 해요.", "options": [{"label": "아직 임대인에게 해지 통지를 하지 않았고, 나갈 날까지 3개월 넘게 여유가 있다", "next": "D"}, {"label": "아직 통지를 하지 않았는데, 나갈 날이 3개월보다 가깝다", "next": "W"}, {"label": "이미 임대인에게 해지를 통지했다", "next": "T"}]}}, "outcomes": {"A": {"grade": "high", "tag": "갱신요구 검토", "title": "정해진 기간 안이고 거절 사유도 없다면, 갱신요구를 검토해 볼 만한 상황이에요.", "why": "종료 6개월~2개월 사이이고, 임대인이 갱신을 거절할 이유를 말한 적이 없다고 답하셨어요.", "fact": "상가와 같은 틀이라고만 알고 넘어가기 쉽지만, 주택은 주택임대차보호법이 정한 기간과 거절 사유, 횟수를 따로 봐야 해요.", "basis": "임대인은 임차인이 종료 6개월 전부터 2개월 전까지의 기간 안에 갱신을 요구하면 정당한 사유 없이 거절하지 못합니다(주택임대차보호법 제6조의3 제1항 본문). 임차인은 갱신요구권을 1회에 한해 행사할 수 있고, 갱신되는 임대차의 존속기간은 2년으로 봅니다(제2항).", "caution": "거절 사유가 나중에 생기거나 다툼이 생길 수 있어요. 갱신요구권은 1회만 쓸 수 있다는 점도 기억하세요.", "checklist": ["계약 종료일을 확인해 6개월 전~2개월 전 기간을 달력에 표시하세요.", "갱신요구 사실과 날짜가 남도록 문자나 내용증명 같은 기록으로 남기세요.", "임대인이 거절하면 어떤 이유를 대는지 그대로 기록해 두세요."], "disclaimer": "", "cta": ""}, "B": {"grade": "mid", "tag": "기간 전 준비", "title": "아직 갱신요구를 할 수 있는 기간 전이에요. 일정부터 확인하세요.", "why": "갱신하지 않은 상태이고, 종료까지 6개월 이상 남았다고 답하셨어요.", "fact": "갱신요구는 아무 때나 하는 것이 아니라, 종료 6개월 전부터 2개월 전까지의 기간 안에 해야 해요.", "basis": "제6조의3 제1항은 임차인이 제6조제1항 전단의 기간, 즉 임대차기간이 끝나기 6개월 전부터 2개월 전까지의 기간 이내에 갱신을 요구하는 경우를 전제로 합니다. 마더 컬럼도 상가와 주거는 행사 기간과 거절 사유, 횟수가 서로 다르다고 정리합니다.", "caution": "이 결과는 기간만 안내해요. 실제 종료일은 계약서로 확인해야 해요.", "checklist": ["계약서에서 임대차 종료일을 확인하세요.", "종료일 기준 6개월 전과 2개월 전 날짜를 계산해 달력에 올려 두세요.", "상가 기준으로 알던 기간이 있다면 주택 기준으로 다시 확인하세요."], "disclaimer": "", "cta": ""}, "C": {"grade": "check", "tag": "계약 이력 확인", "title": "계약 이력을 먼저 확인해야 다음 길을 알 수 있어요.", "why": "지금 계약이 어느 단계인지 잘 모르겠다고 답하셨어요.", "fact": "갱신요구는 종료 전 정해진 기간 안에서만 하고, 이미 갱신되었다면 다른 규정을 봐야 해요.", "basis": "이 진단은 임대차기간 종료 시점과 갱신 여부에 따라 길이 갈립니다(제6조, 제6조의3). 계약 이력이 확인되어야 어느 규정이 적용되는지 정할 수 있어요.", "caution": "이력을 모른 채 통지를 보내면 기간을 놓칠 수 있어요.", "checklist": ["계약서에서 계약 시작일과 종료일을 확인하세요.", "이전에 갱신한 적이 있는지 계약서 이력과 통지 기록을 모으세요.", "확인이 끝나면 이 진단을 처음부터 다시 해 보세요."], "disclaimer": "", "cta": ""}, "E8": {"grade": "mid", "tag": "실거주 사유", "title": "임대인 본인이나 가족의 실거주 사유는 갱신을 거절할 수 있는 사유로 법에 정해져 있어요.", "why": "임대인이 본인이나 직계존비속이 들어와 살겠다고 한다고 답하셨어요.", "fact": "갱신요구는 정당한 사유 없이는 거절하지 못하지만, 임대인의 실제 거주 목적은 법이 정한 사유 중 하나예요.", "basis": "제6조의3 제1항 제8호는 임대인(직계존속·직계비속 포함)이 목적 주택에 실제 거주하려는 경우를 거절 사유로 정합니다. 다만 임대인이 이 사유로 거절해 놓고 갱신되었을 기간이 끝나기 전에 정당한 사유 없이 제3자에게 임대하면 임차인의 손해를 배상해야 합니다(제5항).", "caution": "거절 사유가 실제인지는 자료로 따져 봐야 해서 이 화면에서 결론을 낼 수 없어요.", "checklist": ["임대인이 밝힌 실거주 계획(누가, 언제부터)을 문자나 서면으로 남기세요.", "거절 이후 집이 다른 사람에게 임대되는지 확인하세요.", "손해배상 문제는 요건과 금액이 복잡해 자료를 모아 상담을 받으세요."], "disclaimer": "", "cta": ""}, "E7": {"grade": "check", "tag": "철거·재건축 사유", "title": "철거나 재건축 사유는 요건이 정해져 있어서 구체적으로 확인해야 해요.", "why": "임대인이 건물을 철거하거나 재건축하겠다고 한다고 답하셨어요.", "fact": "철거·재건축은 법이 정한 거절 사유이지만, 계약 당시 고지한 계획에 따르는 경우 등 요건이 세분되어 있어요.", "basis": "제6조의3 제1항 제7호는 임대인이 목적 주택의 전부 또는 대부분을 철거하거나 재건축하기 위해 점유를 회복할 필요가 있는 경우를 사유로 들면서, 계약 체결 당시 공사시기와 소요기간을 포함한 계획을 구체적으로 고지하고 그에 따르는 경우, 안전사고 우려가 있는 경우, 다른 법령에 따른 경우 등으로 나눕니다.", "caution": "사유의 해당 여부는 사실관계에 따라 갈려서 여기서 판단할 수 없어요.", "checklist": ["계약 체결 당시 철거·재건축 계획을 들은 적이 있는지 계약서와 기록을 확인하세요.", "임대인이 밝힌 근거(안전 문제, 법령상 절차 등)를 서면으로 요청하세요.", "자료를 모아 상담을 받으세요."], "disclaimer": "", "cta": ""}, "F": {"grade": "mid", "tag": "보상 합의", "title": "서로 합의해 상당한 보상을 받는 경우는 갱신요구를 거절할 수 있는 사유가 될 수 있어요.", "why": "임대인이 보상하는 조건으로 나가는 합의를 논의 중이라고 답하셨어요.", "fact": "합의 자체를 서두르기보다, 그 합의가 갱신을 포기하는 것과 연결되는지를 먼저 봐야 해요.", "basis": "제6조의3 제1항 제3호는 서로 합의하여 임대인이 임차인에게 상당한 보상을 제공한 경우를 갱신 거절이 가능한 사유로 정합니다.", "caution": "합의는 되돌리기 어려울 수 있어요. 서명 전에 내용을 꼭 확인하세요.", "checklist": ["합의 조건(보상 내용, 이사 시점)을 서면으로 남기세요.", "합의서에 서명하기 전에 갱신요구권을 포기하는 내용이 들어 있는지 확인하세요.", "보상이 충분한지 판단이 어려우면 상담을 받으세요."], "disclaimer": "", "cta": ""}, "X": {"grade": "check", "tag": "거절 사유 확인", "title": "거절 사유에 해당할 수 있어서, 사실관계를 먼저 확인해야 해요.", "why": "임차인 측 사유가 있었거나 임대인의 이유를 잘 모르겠다고 답하셨어요.", "fact": "차임 2기 연체, 무단 전대, 고의·중과실 파손 등은 갱신요구를 거절할 수 있는 사유로 법에 정해져 있어요.", "basis": "제6조의3 제1항 각호는 2기의 차임액에 이르도록 차임을 연체한 사실(제1호), 임대인 동의 없는 전대(제4호), 고의나 중대한 과실로 인한 파손(제5호) 등을 갱신 거절이 가능한 사유로 정합니다.", "caution": "해당 여부는 구체적 사실로 갈려서, 여기서는 확인이 필요하다는 안내까지만 해요.", "checklist": ["차임 납부 내역을 정리해 연체 기간이 얼마였는지 확인하세요.", "임대인이 든 이유를 서면으로 요청하세요.", "사실관계가 복잡하면 자료를 모아 상담을 받으세요."], "disclaimer": "", "cta": ""}, "X2": {"grade": "check", "tag": "묵시적 갱신 제외 가능", "title": "차임 연체나 의무 위반이 있었다면 저절로 갱신된다는 규정이 적용되지 않을 수 있어요.", "why": "차임을 2기 분 이상 밀렸거나 의무를 중대하게 어겼거나, 잘 모르겠다고 답하셨어요.", "fact": "통지가 없었다고 해서 언제나 저절로 갱신되는 것은 아니에요.", "basis": "제6조 제3항은 2기의 차임액에 달하도록 연체하거나 그 밖에 임차인으로서의 의무를 현저히 위반한 임차인에 대하여 같은 조 제1항(묵시적 갱신)을 적용하지 않는다고 정합니다.", "caution": "의무 위반이 현저한지는 사실관계로 판단되어 여기서 단정할 수 없어요.", "checklist": ["차임 납부 내역을 정리해 연체 기간을 확인하세요.", "임대인이 연체나 의무 위반을 문제 삼은 기록이 있는지 확인하세요.", "자료를 모아 상담을 받으세요."], "disclaimer": "", "cta": ""}, "K": {"grade": "check", "tag": "기간·통지 확인", "title": "통지가 있었거나 모른다면, 갱신 여부와 갱신요구 기간을 먼저 확인해야 해요.", "why": "종료 시점이 임박했거나 지났고, 통지 사실이 있었거나 확실하지 않다고 답하셨어요.", "fact": "임대인이 정해진 기간에 갱신 거절 통지를 하지 않으면 법에 따라 갱신된 것으로 보는 경우가 있지만, 통지가 있었다면 다르게 볼 수 있어요.", "basis": "제6조 제1항은 임대인이 종료 6개월 전부터 2개월 전까지 갱신 거절이나 조건 변경 통지를 하지 않고 임차인도 종료 2개월 전까지 통지하지 않은 경우를 갱신으로 봅니다. 갱신요구는 같은 기간 안에서만 할 수 있습니다(제6조의3 제1항).", "caution": "날짜가 하루만 어긋나도 결론이 달라질 수 있어요.", "checklist": ["누가 언제 어떤 방식으로 통지했는지 문자·우편 기록을 모으세요.", "종료일에서 6개월 전과 2개월 전 날짜를 계산해 통지 시점과 비교하세요.", "날짜와 기록을 가지고 상담을 받으세요."], "disclaimer": "", "cta": ""}, "M": {"grade": "mid", "tag": "갱신된 것으로 보는 경우", "title": "통지가 없었다면 저절로 갱신된 것으로 보는 경우일 수 있어요.", "why": "양쪽 모두 통지하지 않았고, 차임 연체 등도 없다고 답하셨어요.", "fact": "통지를 못 했다고 계약이 끝나는 것이 아니라, 전과 같은 조건으로 다시 임대차한 것으로 보는 경우가 있어요.", "basis": "제6조 제1항은 임대인이 종료 6개월 전부터 2개월 전까지 갱신 거절이나 조건 변경 통지를 하지 않고 임차인도 종료 2개월 전까지 통지하지 않으면 전 임대차와 동일한 조건으로 다시 임대차한 것으로 본다고 정합니다. 이때 존속기간은 2년으로 봅니다(제2항).", "caution": "이 결과는 통지가 없었다는 답을 전제로 해요. 실제 기록을 꼭 확인하세요.", "checklist": ["종료일 이전에 주고받은 통지가 있는지 다시 확인하세요.", "갱신된 것으로 볼 경우 새 종료일이 언제인지 계산해 기록해 두세요.", "나가야 할 사정이 생기면 해지 통지 규정(제6조의2)을 확인하세요."], "disclaimer": "", "cta": ""}, "G": {"grade": "mid", "tag": "갱신 후 해지", "title": "갱신된 뒤에는 임차인이 해지를 통지하는 길이 있어요. 다만 조건이 있어요.", "why": "갱신된 뒤 사정이 생기면 나갈 수 있는지가 궁금하다고 답하셨어요.", "fact": "마더 컬럼은 '중도해지권'이라고 표현하지만, 조문은 갱신된 경우에 임차인이 언제든 해지를 통지할 수 있고 3개월 뒤 효력이 생긴다고 정해요.", "basis": "제6조제1항에 따라 계약이 갱신된 경우 임차인은 언제든지 임대인에게 계약해지를 통지할 수 있고, 해지는 임대인이 통지를 받은 날부터 3개월이 지나면 효력이 생깁니다(제6조의2). 갱신요구로 갱신되는 임대차의 해지에도 이 규정을 준용합니다(제6조의3 제4항).", "caution": "갱신 전 최초 계약 기간 중의 해지는 이 규정의 대상이 아니에요. 계약서 특약도 함께 확인하세요.", "checklist": ["갱신 방식(저절로 갱신인지, 갱신요구로 갱신인지)을 계약 이력으로 확인하세요.", "나갈 날에서 3개월을 거꾸로 계산해 통지 시점을 정하세요.", "통지는 도달 날짜가 남도록 서면 등 기록으로 하세요."], "disclaimer": "", "cta": ""}, "U": {"grade": "check", "tag": "갱신요구 1회 한도", "title": "갱신요구권은 1회만 쓸 수 있어서, 이미 썼다면 다시 요구하기 어려울 수 있어요.", "why": "갱신요구로 갱신된 집인데 또 갱신하고 싶다고 답하셨어요.", "fact": "상가와 같은 방식으로 여러 번 갱신할 수 있다고 알기 쉽지만, 주택의 갱신요구권은 1회 행사로 정해져 있어요.", "basis": "제6조의3 제2항은 임차인이 계약갱신요구권을 1회에 한하여 행사할 수 있고, 갱신되는 임대차의 존속기간은 2년으로 본다고 정합니다.", "caution": "이전 갱신이 저절로 갱신이었다면 사정이 다를 수 있어 계약 이력 확인이 먼저예요.", "checklist": ["이전 갱신이 갱신요구로 된 것이 맞는지 기록으로 확인하세요.", "갱신 기간이 끝나기 전에 임대인과 다음 계약 조건을 미리 협의하세요.", "새 계약을 하면 계약서에 종료일과 조건을 명확히 적으세요."], "disclaimer": "", "cta": ""}, "N": {"grade": "check", "tag": "갱신 이력 확인", "title": "어떻게 갱신됐는지부터 확인해야 해요.", "why": "새 계약서를 다시 썼거나 갱신 방식을 잘 모르겠다고 답하셨어요.", "fact": "갱신 방식에 따라 해지 규정과 갱신요구권이 남아 있는지가 달라질 수 있어요.", "basis": "제6조의2는 제6조제1항에 따라 갱신된 경우에 적용되고, 갱신요구로 갱신된 경우에는 제6조의3 제4항으로 준용합니다. 새 계약서를 다시 썼다면 이 규정이 그대로 적용되는지 확인이 필요합니다.", "caution": "이 화면은 갱신 방식이 확인되지 않은 상태의 안내까지만 해요.", "checklist": ["새 계약서를 쓴 경우 계약서 문구와 종료일을 확인하세요.", "갱신 이력(누가 언제 통지했는지)을 정리하세요.", "자료를 모아 상담을 받으세요."], "disclaimer": "", "cta": ""}, "D": {"grade": "high", "tag": "해지 통지 검토", "title": "갱신된 임대차라면, 임대인에게 해지를 통지하는 방법을 검토해 볼 만한 상황이에요.", "why": "갱신된 임대차이고, 나갈 날까지 3개월 넘게 여유가 있다고 답하셨어요.", "fact": "갱신되면 계약 기간이 남았다고 꼭 붙잡혀 있어야 하는 것은 아니에요. 임차인이 통지하면 3개월 뒤 해지 효력이 생기는 길이 있어요.", "basis": "제6조제1항에 따라 갱신된 경우 임차인은 언제든지 임대인에게 계약해지를 통지할 수 있고, 통지를 받은 날부터 3개월이 지나면 효력이 생깁니다(제6조의2). 갱신요구로 갱신된 경우에도 준용합니다(제6조의3 제4항).", "caution": "해지 효력이 생기는 날과 보증금을 돌려받는 날이 어긋날 수 있어요. 보증금 문제는 따로 확인하세요.", "checklist": ["나갈 예정일에서 3개월 이전 날짜에 통지가 도달하도록 일정을 잡으세요.", "통지는 서면이나 내용증명처럼 도달 날짜가 남는 방식으로 하세요.", "보증금 반환 시점과 이사 날짜를 임대인과 서면으로 확인해 두세요."], "disclaimer": "", "cta": ""}, "W": {"grade": "mid", "tag": "3개월 시점 주의", "title": "나갈 날이 통지 후 3개월보다 가깝다면 시점을 다시 맞춰 봐야 해요.", "why": "아직 통지하지 않았고 나갈 날이 3개월보다 가깝다고 답하셨어요.", "fact": "해지는 통지한 날이 아니라, 임대인이 통지를 받은 날부터 3개월이 지나야 효력이 생겨요.", "basis": "제6조의2 제2항은 해지가 임대인이 통지를 받은 날부터 3개월이 지나면 효력이 발생한다고 정합니다.", "caution": "효력일 전에 나가려면 임대인과의 합의 내용을 기록으로 남겨 두세요.", "checklist": ["가장 빠른 해지 효력일(통지 도달일 + 3개월)을 계산해 보세요.", "나갈 날을 조정할 수 있는지 임대인과 협의해 보세요.", "협의 내용은 서면으로 남기세요."], "disclaimer": "", "cta": ""}, "T": {"grade": "mid", "tag": "통지 후 기간 확인", "title": "이미 통지했다면, 통지가 도달한 날을 기준으로 3개월 시점을 확인하세요.", "why": "이미 임대인에게 해지를 통지했다고 답하셨어요.", "fact": "해지 효력은 임대인이 통지를 받은 날부터 3개월이 지나면 생겨요.", "basis": "제6조의2 제2항은 해지가 임대인이 그 통지를 받은 날부터 3개월이 지나면 효력이 발생한다고 정합니다.", "caution": "도달일이 확인되지 않으면 효력일을 다투게 될 수 있어요.", "checklist": ["통지가 임대인에게 도달한 날짜를 기록으로 확인하세요.", "그 날짜에 3개월을 더해 해지 효력일을 계산해 두세요.", "효력일에 맞춰 이사와 보증금 정산 일정을 임대인과 서면으로 조율하세요."], "disclaimer": "", "cta": ""}}}</script>
+<script>
+"use strict";
+var D = JSON.parse(document.getElementById("sc-data").textContent);
+var GRADE = {high:"가능성 높음", mid:"살펴볼 것", check:"확인 필요"};
+var screenEl = document.getElementById("screen");
+var pathStack = [];          // [{qid, qtext, label}]
+
+function h(tag, cls, text){
+  var e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(text !== undefined && text !== null) e.textContent = text;
+  return e;
+}
+function clearScreen(){ while(screenEl.firstChild) screenEl.removeChild(screenEl.firstChild); screenEl.className = "screen active"; window.scrollTo(0,0); }
+
+function setProgress(step, done){
+  var bar = document.getElementById("progress-bar");
+  var lab = document.getElementById("progress-label");
+  if(done){ bar.style.width = "100%"; lab.textContent = "진단 완료"; return; }
+  if(step === 0){ bar.style.width = "0%"; lab.textContent = ""; return; }
+  bar.style.width = Math.min(100, Math.round(step / D.nq_max * 100)) + "%";
+  lab.textContent = "질문 " + step;
+}
+
+function showIntro(){
+  pathStack = []; clearScreen(); setProgress(0);
+  var wrap = h("div","intro");
+  wrap.appendChild(h("div","intro-icon", D.icon || "⚖️"));
+  wrap.appendChild(h("h1","", D.hook));
+  if(D.myth){
+    var m = h("div","myth"); m.appendChild(h("b","","많은 분들이 이렇게 알고 있어요")); m.appendChild(document.createTextNode("“" + D.myth + "”"));
+    wrap.appendChild(m);
+  }
+  if(D.teaser) wrap.appendChild(h("p","", D.teaser));
+  var meta = h("div","meta");
+  [D.time || "약 1분", "객관식 질문 최대 " + D.nq_max + "개", "답변은 저장·전송되지 않아요"].forEach(function(t){ meta.appendChild(h("span","",t)); });
+  wrap.appendChild(meta);
+  var b = h("button","opt-btn primary","진단 시작하기"); b.type = "button";
+  b.onclick = function(){ goTo(D.start); };
+  wrap.appendChild(b);
+  screenEl.appendChild(wrap);
+}
+
+function goTo(id){
+  if(D.outcomes[id]) return showOutcome(id);
+  showQuestion(id);
+}
+
+function showQuestion(qid){
+  var q = D.questions[qid];
+  clearScreen();
+  var step = pathStack.length + 1;
+  setProgress(step);
+  screenEl.appendChild(h("div","q-count","질문 " + step));
+  screenEl.appendChild(h("div","q-text", q.text));
+  if(q.why) screenEl.appendChild(h("div","q-why", q.why));
+  var box = h("div","options");
+  q.options.forEach(function(o){
+    var b = h("button","opt-btn", o.label); b.type = "button";
+    b.onclick = function(){ pathStack.push({qid:qid, qtext:q.text, label:o.label}); goTo(o.next); };
+    box.appendChild(b);
+  });
+  screenEl.appendChild(box);
+  var back = h("button","back-btn", pathStack.length ? "← 이전 질문으로" : "← 처음으로"); back.type = "button";
+  back.onclick = function(){
+    if(!pathStack.length) return showIntro();
+    var last = pathStack.pop(); showQuestion(last.qid);
+  };
+  screenEl.appendChild(back);
+}
+
+function copyText(text, btn){
+  function ok(){ var o = btn.textContent; btn.textContent = "복사했어요 ✓"; setTimeout(function(){ btn.textContent = o; }, 1800); }
+  function fallback(){
+    var t = document.createElement("textarea"); t.value = text; t.style.position = "fixed"; t.style.opacity = "0";
+    document.body.appendChild(t); t.select();
+    try{ document.execCommand("copy"); ok(); }catch(e){ btn.textContent = "복사 실패 — 직접 선택해 주세요"; }
+    document.body.removeChild(t);
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(ok, fallback); } else { fallback(); }
+}
+
+function block(label, bodyNode){
+  var b = h("div","block"); b.appendChild(h("div","block-label",label)); b.appendChild(bodyNode); return b;
+}
+
+function showOutcome(oid){
+  var o = D.outcomes[oid];
+  clearScreen(); setProgress(0, true);
+  var head = h("div");
+  var g = h("span","grade " + o.grade, "● " + GRADE[o.grade]);
+  head.appendChild(g);
+  if(o.tag) head.appendChild(h("span","outcome-tag", o.tag));
+  screenEl.appendChild(head);
+  var wrap = h("div","outcome");
+  wrap.appendChild(h("h2","", o.title));
+
+  /* 왜 이 결과인가 — 내가 고른 답 + 근거 1줄 */
+  var why = h("div");
+  var chips = h("div","chips");
+  pathStack.forEach(function(p){ chips.appendChild(h("div","chip","· " + p.label)); });
+  why.appendChild(chips);
+  why.appendChild(h("div","why-line", o.why));
+  wrap.appendChild(block("🔎 왜 이 결과인가요?", why));
+
+  if(o.fact && D.myth){
+    var vs = h("div","vs");
+    var m = h("div","m"); m.appendChild(h("b","","통념")); m.appendChild(document.createTextNode(D.myth));
+    var f = h("div","f"); f.appendChild(h("b","","이 경우엔")); f.appendChild(document.createTextNode(o.fact));
+    vs.appendChild(m); vs.appendChild(f);
+    wrap.appendChild(block("💡 통념 vs 사실", vs));
+  }
+  wrap.appendChild(block("📖 법적 근거", h("div","block-body", o.basis)));
+  if(o.checklist && o.checklist.length){
+    var ul = h("ul","checklist"); o.checklist.forEach(function(c){ ul.appendChild(h("li","",c)); });
+    wrap.appendChild(block("✅ 지금 해볼 것", ul));
+  }
+  wrap.appendChild(block("⚠️ 주의할 점", h("div","block-body", o.caution)));
+  wrap.appendChild(h("div","disclaimer", o.disclaimer || D.disclaimer));
+  screenEl.appendChild(wrap);
+
+  var actions = h("div","actions");
+  var cp = h("button","ghost-btn","📋 결과 요약 복사하기"); cp.type = "button";
+  cp.onclick = function(){
+    var t = "[법률 자가진단] " + D.hook + "\n결과: " + GRADE[o.grade] + " — " + o.title + "\n※ 일반적인 법률 정보이며 개별 사안은 상담이 필요합니다.\n" + location.href;
+    copyText(t, cp);
+  };
+  actions.appendChild(cp);
+  if(D.mother_url){
+    var a = h("a","ghost-btn","📰 원문 컬럼 읽어보기"); a.href = D.mother_url; a.target = "_blank"; a.rel = "noopener"; actions.appendChild(a);
+  }
+  var rs = h("button","ghost-btn","↺ 처음부터 다시"); rs.type = "button"; rs.onclick = showIntro;
+  actions.appendChild(rs);
+  screenEl.appendChild(actions);
+
+  var cta = h("div","cta-box");
+  cta.appendChild(document.createTextNode((o.cta || "지금 상황을 구체적으로 확인하고 싶다면") + " "));
+  var s = h("strong","", D.cta_lawyer);
+  cta.appendChild(s);
+  cta.appendChild(document.createTextNode("("));
+  var ml = h("a","", D.cta_email); ml.href = "mailto:" + D.cta_email; cta.appendChild(ml);
+  cta.appendChild(document.createTextNode(")에게 문의하세요."));
+  screenEl.appendChild(cta);
+}
+
+document.getElementById("footer").textContent = "제공 : " + D.cta_lawyer + " 법률사무소";
+showIntro();
+</script>
+</body>
+</html>
