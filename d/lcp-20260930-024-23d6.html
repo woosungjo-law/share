@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>근로시간 문제는 '몇 시간 일했나'만으로 끝나지 않는다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 근로시간 체계와 기록의 연결</div>
+    <h1>근로시간 문제는 '몇 시간 일했나'만으로 끝나지 않는다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> 출근과 퇴근 시간이 시스템에 찍혀 있어도 <b>실제로 언제 일을 시작하고 끝냈는지는 다를 수 있습니다.</b> 근로기준법 제50조부터 제62조까지가 근로시간·연장근로·휴게·휴일·연차휴가 검토의 범위이지만, 이 범위가 확인되었다고 모든 사업장에 동일한 결론을 적용할 수는 없습니다. 시간 문제는 <b>기억보다 기록의 구조</b>에서 시작됩니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>시스템에 찍힌 출퇴근과 실제 업무의 차이</b>를 떠올려 보십시오. 회의와 메신저, 대기와 이동, 휴게와 업무지시가 뒤섞이면 <b>회사는 관리가 됐다고 생각하고 근로자는 쉬지 못했다고 느낍니다.</b> 시간 분쟁에서는 '늘 그랬다'는 관행보다 <b>특정 날짜의 지시와 기록이 더 선명한 출발점</b>이 됩니다. 제도 문서와 실제 운영이 다르면 어느 쪽이 진실인지부터 다투게 되므로, 회사와 근로자 모두 <b>업무 기록을 바꾸지 않고 보존하는 습관</b>을 만들어야 하는 자리입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>
+      검증된 소재는 <b>근로기준법 제50조부터 제62조까지</b>를 근로시간·연장근로·휴게·휴일·연차휴가 검토의 범위로 제시합니다. 이 범위가 확인되었다고 <b>모든 사업장에 동일한 결론을 적용할 수는 없으므로</b>, 근무표·승인·실제 업무·휴가 사용 기록을 <b>조문별로 대조</b>해야 합니다.
+    </p>
+    <p>
+      근로기준법 제50조부터 제62조까지는 시간보장 체계를 넓게 다루므로, 근로시간·연장근로·휴게·휴일·연차휴가를 <b>하나의 숫자로 합치지 말아야 합니다.</b> 적용 대상, 업무 지시 방식, 기록의 신뢰성, 실제 사용과 승인 과정을 <b>분리해 확인</b>하고, 회사의 제도와 현장의 운영이 같은지 대조하십시오.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>기록을 날짜별로 남기기</h2>
+    <ul class="points">
+      <li><b>근로자가 남길 것</b> — 출퇴근 기록뿐 아니라 실제 업무 지시, 연장근로 승인, 휴게를 사용했는지, 휴일과 연차가 어떻게 처리됐는지를 <b>날짜별로</b> 남겨야 합니다.</li>
+      <li><b>상담 때 함께 제시</b> — 근로기준법 제50조부터 제62조까지가 관련 범위라는 점을 기준으로, <b>회사 기록과 내가 보유한 자료의 차이</b>를 상담 때 함께 제시합니다.</li>
+      <li><b>함께 적어야 할 자료</b> — 근로시간 체계와 기록의 연결을 판단할 때는 결론을 뒷받침하는 자료와 결론을 흔드는 자료를 함께 적어야 합니다. 유리한 자료만 모으면 실제 의사결정에는 오히려 위험합니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 상대방의 표현을 곧바로 법적 결론으로 옮기지 말고, 그 표현이 가리키는 <b>사실과 자료를 다시 확인</b>하십시오. 시간 분쟁의 출발점은 관행이 아니라 날짜가 붙은 기록입니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;"><b>날짜별 기록과 대조</b>로 움직입니다.</p>
+    <ol>
+      <li><b>① 원본 보관</b> — 사진·문자·계약·통지 원본과 출퇴근 기록을 보관했는가부터 확인합니다.</li>
+      <li><b>② 업무 지시 기록</b> — 실제 업무 지시, 연장근로 승인, 휴게 사용 여부를 날짜별로 남깁니다.</li>
+      <li><b>③ 사실 구분</b> — 내가 직접 본 사실과 들은 설명을 나누고, 확인된 사실과 아직 확인하지 못한 사실을 같은 문장에 섞지 않습니다.</li>
+      <li><b>④ 포기하지 않기</b> — 상대방의 단정만으로 권리를 포기하지 않았는가를 점검합니다.</li>
+      <li><b>⑤ 상담 준비</b> — 회사 기록과 내 자료의 차이를 날짜와 함께 제시할 수 있게 준비합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
