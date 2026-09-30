@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>멈춰 있는 담보는 환상이다, 담보 가치를 최악 시나리오로 다시 세는 법무의 계산법</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 담보 가치의 최악 시나리오 계산</div>
+    <h1>멈춰 있는 담보는 환상이다, 담보 가치를 최악 시나리오로 다시 세는 법무의 계산법</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 담보는 돈이 아니라 <b>돈으로 바꾸는 자산</b>입니다. 담보 부동산의 회수가치는 경매 환가, 선순위 담보권, 국세·지방세·최우선변제 임금채권 등에 따라 달라져 겉보기 가치와 다를 수 있습니다. 담보의 평가는 겉보기 가치가 아니라 최악 시나리오의 계산으로 해야 합니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      담보의 그림은 <b>그리는 순서</b>가 있습니다. 부동산의 가치에서 시작해 경매의 경로를 거치고, 먼저 빠져나가는 몫들을 차례로 빼는 것이 그 순서입니다. 계산의 순서가 곧 돈의 순서이고, 회수 계획의 첫 줄은 안심이 아니라 순위입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점 — 겉보기 가치와 회수가치의 차이</h2>
+    <p>
+      담보 부동산의 회수가치는 <b>경매 환가, 선순위 담보권, 국세·지방세·최우선변제 임금채권</b> 등에 따라 달라져 겉보기 가치와 다를 수 있습니다. 시세표의 숫자는 정상 거래의 가격이지만, 채무자가 갚지 못했을 때의 경로는 경매라는 다른 시장입니다.
+    </p>
+    <p>
+      그 시장에서 회수가치는 감소할 수 있고, 그 감소분에 선순위 담보권의 몫이 먼저 빠지며, 국세·지방세와 최우선변제를 받는 임금채권이 그다음 순서를 차지합니다. 경매라는 긴 과정을 거치며 우리 몫이 0원이 될 수도 있다는 실무 정리는 과장이 아니라 앞의 구조를 끝까지 계산한 결론입니다. 계산의 재료는 등기부와 시세와 순위의 목록입니다.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>조건과 예외 — 평가의 맹신과 수치의 격리</h2>
+    <ul class="points">
+      <li><b>계약 시점의 평가를 맹신하지 않기</b> — 담보는 계약 시점에 평가해서 놓아두면 끝나는 것이 아니라, 주기적으로 등기부와 시세를 재확인해야 하는 대상입니다. 가치가 하락하면 추가 담보를 요구하거나 한도를 축소하는 대응이 이어지고, 회수의 시간과 비용을 감안해 거래 규모를 정하는 것이 애초의 설계입니다.</li>
+      <li><b>조심할 문장 1</b> — "근저당이 있으면 회수가 보장된다"는 순위와 환가의 구조를 무시한 과장입니다.</li>
+      <li><b>조심할 문장 2</b> — "경매로 시세의 몇 퍼센트를 받는다"는 식의 수치 단정은 검증되지 않은 통계를 결정으로 바꾸는 위험입니다. 경매 낙찰가율 같은 수치는 출처가 확인되지 않으면 격리해 두어야 합니다.</li>
+      <li><b>개별 확인 사항</b> — 개별 담보의 회수 가능 금액은 개별 확인 사항입니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 법무가 내놓을 것은 안심의 문장이 아니라 재확인의 일정과 계산의 근거입니다. 멈춰 있는 담보는 환상입니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">재평가 일정과 대응 조치의 구조를 만드십시오.</p>
+    <ol>
+      <li><b>① 계약 시점에 최악 시나리오 계산서</b> — 시세, 경매 환가의 보수적 추정, 선순위 담보권의 금액, 국세·지방세와 최우선변제 임금채권의 존재를 항목으로 나열해 우리 몫의 그림을 그려 둡니다.</li>
+      <li><b>② 담보 재평가를 분기 일정에</b> — 등기부 열람으로 새로 설정된 담보권이 있는지, 시세는 어느 방향으로 움직였는지를 기록으로 남깁니다.</li>
+      <li><b>③ 하락 확인 시 대응을 절차로 연결</b> — 추가 담보 요구와 한도 축소로 이어집니다. 대응이 권고에 머물면 하락은 계속되고 대응은 늦어집니다.</li>
+      <li><b>④ 신규 거래 한도에 회수 시간·비용 반영</b> — 담보가 있어도 경매라는 시간이 걸리므로, 거래 규모는 회수 구조가 감당할 수 있는 크기로 정합니다.</li>
+      <li><b>⑤ 중복 담보·선순위 확인을 체크리스트 상단에</b> — 등기부의 순서가 회수의 순서라는 것을 조직의 공통 지식으로 만듭니다.</li>
+      <li><b>⑥ 기존 담보의 등기부도 주기적으로 다시 보기</b> — 멈춰 있는 담보는 환상이라는 경고는 새 계약뿐 아니라 기존 계약에도 적용됩니다. 담보 관리 역량은 평가의 날짜를 다시 정하는 주기에서 나옵니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
