@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>명의신탁은 이름보다 계약 구조를 먼저 봐야 한다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 명의신탁 유형과 소유권 회복 가능성</div>
+    <h1>명의신탁은 이름보다 계약 구조를 먼저 봐야 한다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> 같은 사람의 돈으로 집을 샀는데 등기 명의가 다른 사람이라도, <b>실제 소유자가 언제든 집을 되찾을 수 있다고 생각하기 쉽지만 그렇지 않습니다.</b> 누가 매도인과 계약했는지, 누가 등기를 받았는지, 어떤 약정이 있었는지에 따라 검토 순서가 달라집니다. 명의신탁은 <b>이름보다 계약 구조</b>를 먼저 봐야 합니다(민법 제103조·부동산실명법 제4조).
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>'내 돈으로 샀으니 내 집'이라는 기억</b>을 떠올려 보십시오. 같은 사람의 돈으로 집을 샀는데 등기 명의가 다른 사람이면 언제든 되찾을 수 있다고 생각하기 쉽습니다. 그러나 <b>누가 매도인과 계약했는지, 누가 등기를 받았는지, 어떤 약정이 있었는지</b>에 따라 검토 순서가 달라집니다. 명의신탁 분쟁은 <b>돈의 출처와 소유권의 법적 귀속이 어긋날 때</b> 시작됩니다. 관계가 좋을 때는 약정이 간단해 보여도 분쟁이 생기면 <b>계약 체결 장면과 등기 과정이 핵심 자료</b>가 되므로, 당사자들의 역할과 의사소통을 처음부터 기록해 두는 것이 안전한 자리입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>
+      검증된 소재는 <b>민법 제103조와 부동산실명법 제4조</b>를 기준으로 명의신탁의 유형과 효과를 구분합니다. <b>계약명의신탁</b>에서는 수탁자가 매도인과 직접 계약하고 자기 명의로 등기하는 구조를 별도로 다루며, 약정의 효력과 등기·소유권 회복의 결과가 <b>사실관계에 따라 달라질 수 있음</b>을 전제로 합니다.
+    </p>
+    <p>
+      <b>민법 제103조</b>가 문제 되는 반사회질서 법률행위인지, <b>부동산실명법 제4조</b>가 적용되는 계약명의신탁 구조인지부터 구분해야 합니다. 돈을 누가 냈다는 자료만으로 결론을 내리지 말고 <b>계약서, 매도인과의 연락, 등기 신청, 약정의 목적과 시점</b>을 함께 확인하십시오.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>구조를 묻는 자료 모으기</h2>
+    <ul class="points">
+      <li><b>기억만으로 판단하지 않습니다</b> — '내 돈으로 샀으니 내 집'이라는 기억만으로 판단하지 말고 매도인과 누가 계약했는지, 등기는 누구에게 넘어갔는지, 명의신탁 약정이 무엇이었는지 자료를 모아야 합니다.</li>
+      <li><b>기준 조문과 함께 상담</b> — 민법 제103조와 부동산실명법 제4조를 기준으로 <b>계약 구조 전체</b>를 상담받습니다.</li>
+      <li><b>함께 적어야 할 자료</b> — 명의신탁 유형과 소유권 회복 가능성을 판단할 때는 결론을 뒷받침하는 자료와 결론을 흔드는 자료를 함께 적어야 합니다. 유리한 자료만 모으면 실제 의사결정에는 오히려 위험합니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 상대방의 표현을 곧바로 법적 결론으로 옮기지 말고, 그 표현이 가리키는 <b>사실과 자료를 다시 확인</b>하십시오. 명의신탁의 승패는 이름이 아니라 구조와 기록이 정합니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;"><b>계약 구조 자료 정리</b>로 움직입니다.</p>
+    <ol>
+      <li><b>① 원본 보관</b> — 사진·문자·계약·통지 원본과 명의신탁 약정을 보관했는가부터 확인합니다.</li>
+      <li><b>② 구조 확인</b> — 매도인과 누가 계약했는지, 등기는 누구에게 넘어갔는지, 약정의 목적과 시점을 정리합니다.</li>
+      <li><b>③ 사실 구분</b> — 내가 직접 본 사실과 들은 설명을 나누고, 확인된 사실과 아직 확인하지 못한 사실을 같은 문장에 섞지 않습니다.</li>
+      <li><b>④ 포기하지 않기</b> — 상대방의 단정만으로 권리를 포기하지 않았는가를 점검합니다.</li>
+      <li><b>⑤ 상담 준비</b> — 날짜와 자료를 함께 제시해 기준 조문과 연결해 검토받습니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
