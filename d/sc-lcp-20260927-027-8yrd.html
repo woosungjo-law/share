@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>계약금을 일부만 냈는데, 낸 돈만 포기하면 계약을 깰 수 있을까?</title>
+<!-- sc-template v2 · 렌더러: _tools/sc.py build · 이 파일을 직접 고치지 말고 00_운영/app_template.html 과 시나리오 노트를 고친다 -->
+<style>
+  :root{
+    --navy:#12233f; --navy-deep:#0a1626; --accent:#c9a24b; --bg:#f4f5f7; --card:#ffffff;
+    --text:#1e232b; --muted:#5f6673; --line:#e5e7eb;
+    --g-high:#1f7a4d; --g-mid:#b7791f; --g-check:#4a5568;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    background:var(--bg);color:var(--text);min-height:100vh;
+    display:flex;align-items:flex-start;justify-content:center;padding:16px;line-height:1.55;
+    word-break:keep-all;overflow-wrap:anywhere;
+  }
+  .app{width:100%;max-width:480px;background:var(--card);border-radius:18px;box-shadow:0 8px 30px rgba(18,35,63,.12);overflow:hidden;display:flex;flex-direction:column;min-height:560px;}
+  .topbar{background:var(--navy);color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;font-size:13px;}
+  .topbar .brand{font-weight:700;letter-spacing:.02em;}
+  .progress-wrap{height:4px;background:var(--line);width:100%;}
+  .progress-bar{height:100%;background:var(--accent);width:0%;transition:width .25s ease;}
+  .screen{flex:1;padding:26px 22px 22px;display:none;flex-direction:column;animation:fadeIn .22s ease;}
+  .screen.active{display:flex;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+
+  .intro-icon{font-size:38px;margin-bottom:12px;}
+  .intro h1{font-size:22px;line-height:1.4;color:var(--navy-deep);margin-bottom:12px;}
+  .myth{background:#fbf6ea;border-left:4px solid var(--accent);border-radius:8px;padding:12px 14px;margin-bottom:14px;font-size:13.5px;color:#4a3d16;}
+  .myth b{display:block;font-size:11px;letter-spacing:.04em;color:#8a6d1f;margin-bottom:3px;}
+  .intro p{color:var(--muted);font-size:14px;margin-bottom:16px;}
+  .meta{font-size:12px;color:var(--muted);margin-bottom:20px;display:flex;gap:8px;flex-wrap:wrap;}
+  .meta span{background:var(--bg);padding:4px 10px;border-radius:20px;}
+
+  .q-count{font-size:12px;color:#8a6d1f;font-weight:700;margin-bottom:8px;letter-spacing:.03em;}
+  .q-text{font-size:19px;font-weight:700;color:var(--navy-deep);margin-bottom:8px;line-height:1.45;}
+  .q-why{font-size:12.5px;color:var(--muted);margin-bottom:18px;}
+  .options{display:flex;flex-direction:column;gap:10px;margin-top:10px;}
+  .opt-btn{text-align:left;background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;font:inherit;font-size:14.5px;color:var(--text);cursor:pointer;transition:all .15s ease;min-height:44px;width:100%;}
+  .opt-btn:hover,.opt-btn:active,.opt-btn:focus-visible{border-color:var(--accent);background:#fbf6ea;outline:none;}
+  .opt-btn.primary{text-align:center;font-weight:700;background:var(--navy);color:#fff;border:none;}
+  .opt-btn.primary:hover,.opt-btn.primary:focus-visible{background:var(--navy-deep);}
+  .back-btn{margin-top:14px;background:none;border:none;color:var(--muted);font-size:12.5px;text-align:left;cursor:pointer;min-height:36px;text-decoration:underline;}
+
+  .grade{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#fff;padding:5px 12px;border-radius:20px;margin-bottom:10px;width:fit-content;}
+  .grade.high{background:var(--g-high);} .grade.mid{background:var(--g-mid);} .grade.check{background:var(--g-check);}
+  .outcome-tag{display:inline-block;font-size:11px;font-weight:700;color:var(--navy);background:#eef1f6;padding:4px 10px;border-radius:20px;margin-bottom:10px;margin-left:6px;}
+  .outcome h2{font-size:18px;color:var(--navy-deep);margin-bottom:14px;line-height:1.5;}
+  .block{margin-bottom:15px;}
+  .block-label{font-size:12px;font-weight:700;color:#8a6d1f;margin-bottom:5px;letter-spacing:.02em;}
+  .block-body{font-size:13.5px;color:var(--text);}
+  .chips{display:flex;flex-direction:column;gap:5px;margin-bottom:6px;}
+  .chip{font-size:12.5px;background:var(--bg);border-radius:8px;padding:6px 10px;color:#3b4250;}
+  .why-line{font-size:13.5px;}
+  .vs{display:grid;gap:6px;}
+  .vs div{font-size:13px;border-radius:8px;padding:9px 12px;}
+  .vs .m{background:#f6ecec;color:#7a2f2f;} .vs .f{background:#e9f4ee;color:#1d5b3a;}
+  .vs b{display:block;font-size:10.5px;letter-spacing:.05em;margin-bottom:2px;}
+  .checklist{list-style:none;display:flex;flex-direction:column;gap:6px;}
+  .checklist li{font-size:13.5px;padding-left:22px;position:relative;}
+  .checklist li::before{content:"☐";position:absolute;left:0;color:#8a6d1f;}
+  .disclaimer{font-size:12px;color:var(--muted);background:var(--bg);border-radius:10px;padding:12px 14px;margin-bottom:14px;}
+  .actions{display:flex;flex-direction:column;gap:8px;margin-bottom:14px;}
+  .ghost-btn{background:transparent;border:1.5px solid var(--line);color:#3b4250;border-radius:10px;padding:11px;font:inherit;font-size:13px;cursor:pointer;min-height:44px;text-align:center;text-decoration:none;display:block;}
+  .ghost-btn:hover,.ghost-btn:focus-visible{border-color:var(--accent);outline:none;}
+  .cta-box{background:var(--navy);color:#fff;border-radius:12px;padding:16px 18px;font-size:13.5px;margin-top:auto;}
+  .cta-box strong{color:var(--accent);} .cta-box a{color:#fff;text-decoration:underline;}
+  .footer-mark{text-align:center;font-size:11px;color:var(--muted);padding:10px 0 16px;}
+  @media (max-width:380px){ .screen{padding:22px 16px 18px;} .q-text{font-size:18px;} }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topbar"><span class="brand">법률 자가진단</span><span id="progress-label"></span></div>
+  <div class="progress-wrap"><div class="progress-bar" id="progress-bar"></div></div>
+  <div class="screen active" id="screen"></div>
+  <div class="footer-mark" id="footer"></div>
+</div>
+
+<script id="sc-data" type="application/json">{"hook": "계약금을 일부만 냈는데, 낸 돈만 포기하면 계약을 깰 수 있을까?", "myth": "낸 돈만 포기하면 계약을 깰 수 있다", "teaser": "계약금은 전액이 실제로 오가야 효력이 생기고, 깰 때의 기준도 '낸 돈'이 아니라 약정한 전액이에요. 1분 만에 확인해 보세요.", "icon": "💸", "time": "약 1분", "start": "Q1", "nq_min": 2, "nq_max": 3, "cta_lawyer": "조우성 변호사", "cta_email": "law@mustknow.co.kr", "disclaimer": "이 진단은 일반적인 법률 정보 안내이며, 구체적인 사안은 개별 상담을 통해 확인해야 합니다.", "mother_url": "https://woosungjo-law.github.io/share/d/lcp-20260927-027-7kgf.html", "questions": {"Q1": {"text": "지금 계약금 상황은 어디에 가장 가까운가요?", "why": "계약금을 얼마나 냈는지에 따라 깰 수 있는 권리 자체가 달라져요.", "options": [{"label": "약정한 계약금을 전액 냈고, 내가 계약을 깨고 싶다", "next": "Q2"}, {"label": "계약금의 일부만 냈고, 내가 계약을 깨고 싶다", "next": "Q3"}, {"label": "계약금은 아직 안 냈고 '주겠다'고 약속만 했다", "next": "Q3"}, {"label": "상대방이 이행에 착수했는지가 걱정된다", "next": "Q2"}]}, "Q2": {"text": "상대방이 이행에 착수했나요?", "why": "해약금으로 깰 수 있는 건 상대가 이행에 착수하기 전까지예요.", "options": [{"label": "아직 이행에 착수하지 않았다", "next": "B"}, {"label": "중도금·잔금 일부를 받는 등 착수했다", "next": "D"}, {"label": "잘 모르겠다", "next": "E"}]}, "Q3": {"text": "계약금은 실제로 어떤 상태인가요?", "why": "계약금계약은 실제 계약금이 오가야 성립해요.", "options": [{"label": "아직 한 푼도 내지 않았다", "next": "A"}, {"label": "일부만 낸 상태로 그대로다", "next": "F"}, {"label": "그 뒤 전액을 채워 넣었다", "next": "Q2"}, {"label": "상대가 '실제로 받은 돈의 배액만 주면 깨준다'고 한다", "next": "G"}]}}, "outcomes": {"A": {"grade": "mid", "tag": "요물계약·미지급", "title": "계약금을 실제로 내지 않았다면, 해약금으로 깰 권리 자체가 아직 생기지 않았을 수 있어요.", "why": "계약금을 주기로 약속만 했다고 답하셨어요.", "fact": "계약금은 약속만으로는 부족하고, 실제로 오가야 효력이 생겨요.", "basis": "민법 제565조 제1항은 계약금 등을 상대방에게 교부한 때에 해약금에 의한 해제를 할 수 있다고 정하고, 대법원은 계약금계약이 요물계약이어서 약정에 따른 계약금이 지급되기 전까지는 어느 일방도 그 계약에 구속되지 않으며, 계약금 지급을 약정만 한 단계에서는 제565조 제1항의 해제권이 발생하지 않는다고 보았습니다(대법원 2008. 3. 13. 선고 2007다73611).", "caution": "계약금을 안 냈다고 계약이 아무 효력이 없다고 단정할 수는 없어요. 개별 계약 내용을 확인해야 해요.", "checklist": ["계약서에 적힌 계약금 전액과 실제로 오간 금액을 나눠 적으세요.", "계약금을 실제로 교부했는지, 언제 얼마를 주었는지 확인하세요.", "계약의 진행 상황을 전문가와 점검하세요."], "disclaimer": "", "cta": ""}, "B": {"grade": "high", "tag": "해약금 해제 가능", "title": "전액을 냈고 상대가 이행에 착수하기 전이라면, 계약금을 포기하고 계약을 깰 수 있어요.", "why": "계약금을 전액 냈고 아직 이행에 착수하지 않았다고 답하셨어요.", "fact": "'낸 돈을 포기하면 깰 수 있다'는 말이 이 경우엔 맞아요. 다만 기준은 약속한 전액이에요.", "basis": "민법 제565조 제1항은 매매의 당사자 일방이 계약금 등의 명목으로 금전을 교부한 때에는 당사자 간에 다른 약정이 없는 한 당사자의 일방이 이행에 착수할 때까지 교부자는 이를 포기하고 수령자는 그 배액을 상환하여 매매계약을 해제할 수 있다고 정합니다.", "caution": "상대가 이행에 착수한 뒤에는 이 해약금 해제를 쓸 수 없어요. 시점을 놓치지 마세요.", "checklist": ["계약서에 적힌 계약금 전액과 실제로 낸 금액을 확인하세요.", "상대방이 아직 이행에 착수하지 않았음을 보여 줄 자료를 정리하세요.", "해제 의사표시는 내용증명 등 서면으로 남기세요."], "disclaimer": "", "cta": ""}, "D": {"grade": "check", "tag": "이행 착수 후", "title": "상대방이 이미 이행에 착수했다면, 해약금만으로 깨는 것이 제한될 수 있어요.", "why": "중도금·잔금 일부를 받는 등 착수했다고 답하셨어요.", "fact": "해약금으로 깰 수 있는 건 상대가 이행에 착수하기 전까지예요.", "basis": "민법 제565조 제1항의 해제권은 당사자의 일방이 이행에 착수할 때까지 행사할 수 있습니다. 대법원은 '이행의 착수'를 객관적으로 외부에서 인식할 수 있는 정도로 채무 이행행위의 일부를 하거나 이행에 필요한 전제행위를 하는 경우라고 보았습니다(대법원 2025. 5. 1. 선고 2022다286656·286663).", "caution": "착수 시점은 사실관계로 가려지므로, 스스로 단정하지 마세요.", "checklist": ["상대방이 언제 무엇을 받았는지(중도금·잔금 일부) 날짜를 정리하세요.", "이행착수로 볼 수 있는 행동이 있었는지 기록을 모으세요.", "해제 가능 여부를 전문가와 검토하세요."], "disclaimer": "", "cta": ""}, "E": {"grade": "check", "tag": "착수 시점 확인", "title": "이행착수 시점을 먼저 확인해야 해요.", "why": "상대가 이행에 착수했는지 잘 모르겠다고 답하셨어요.", "fact": "깰 수 있는 시점이 '이행 착수 전'이라, 그 시점이 관건이에요.", "basis": "제565조 제1항의 해제권은 이행에 착수할 때까지 행사할 수 있고, '이행의 착수'는 객관적으로 외부에서 인식할 수 있는 정도의 이행행위나 전제행위를 말합니다(대법원 2025. 5. 1. 선고 2022다286656·286663).", "caution": "착수 여부는 자료로 확인해야 하고, 여기서 단정할 수 없어요.", "checklist": ["상대방이 대금·중도금을 받았거나 준비한 기록이 있는지 확인하세요.", "계약서의 지급 일정과 실제 오간 내역을 대조하세요.", "확인한 자료로 상담하세요."], "disclaimer": "", "cta": ""}, "F": {"grade": "check", "tag": "일부 지급", "title": "일부만 낸 상태라면, 깰 때 기준이 '낸 돈'이 아니라 '약속한 전액'일 수 있어요.", "why": "계약금 일부만 낸 상태로 그대로라고 답하셨어요.", "fact": "계약금이 전액 오가지 않았을 수 있어, 해제권 자체가 생기지 않았을 수 있어요.", "basis": "제565조 제1항의 계약금계약은 실제 계약금이 오가야 성립하고(대법원 2008. 3. 13. 선고 2007다73611), 계약금 일부만 지급된 경우 해약금의 기준이 되는 금원은 '실제 교부받은 계약금'이 아니라 '약정 계약금'입니다(대법원 2015. 4. 23. 선고 2014다231378).", "caution": "일부만 낸 상태에서는 해제권이 생기지 않았을 수 있고, 손실 계산도 약정 전액 기준이 될 수 있어요.", "checklist": ["계약서의 계약금 전액과 실제 낸 금액을 나눠 적으세요.", "남은 계약금을 채울 것인지, 계약을 접을 것인지 정리하세요.", "예상 손실을 약정 전액 기준으로 다시 계산하세요."], "disclaimer": "", "cta": ""}, "G": {"grade": "mid", "tag": "배액 상환 기준", "title": "'실제로 받은 돈의 배액만 주면 깰 수 있다'는 주장은 통하지 않을 수 있어요.", "why": "상대가 실제로 받은 돈의 배액만 주면 깨준다고 한다고 답하셨어요.", "fact": "일부만 지급된 경우에도 해약금의 기준은 실제 받은 돈이 아니라 약정 계약금이에요.", "basis": "대법원은 계약금 일부만 지급된 경우 수령자가 매매계약을 해제할 수 있다 하더라도 해약금의 기준이 되는 금원은 '실제 교부받은 계약금'이 아니라 '약정 계약금'이라고 보았습니다(대법원 2015. 4. 23. 선고 2014다231378). 따라서 일부로서 받은 금원의 배액만 상환하는 것으로는 매매계약을 해제할 수 없습니다.", "caution": "다만 개별 계약에 다른 약정이 있으면 결론이 달라질 수 있어, 계약서 확인이 먼저예요.", "checklist": ["계약서에 적힌 계약금 전액을 확인하세요.", "배액 상환 기준이 약정 전액인지 상대 주장과 대조하세요.", "상대의 해제 통보 내용을 서면으로 보관하세요."], "disclaimer": "", "cta": ""}}}</script>
+<script>
+"use strict";
+var D = JSON.parse(document.getElementById("sc-data").textContent);
+var GRADE = {high:"가능성 높음", mid:"살펴볼 것", check:"확인 필요"};
+var screenEl = document.getElementById("screen");
+var pathStack = [];          // [{qid, qtext, label}]
+
+function h(tag, cls, text){
+  var e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(text !== undefined && text !== null) e.textContent = text;
+  return e;
+}
+function clearScreen(){ while(screenEl.firstChild) screenEl.removeChild(screenEl.firstChild); screenEl.className = "screen active"; window.scrollTo(0,0); }
+
+function setProgress(step, done){
+  var bar = document.getElementById("progress-bar");
+  var lab = document.getElementById("progress-label");
+  if(done){ bar.style.width = "100%"; lab.textContent = "진단 완료"; return; }
+  if(step === 0){ bar.style.width = "0%"; lab.textContent = ""; return; }
+  bar.style.width = Math.min(100, Math.round(step / D.nq_max * 100)) + "%";
+  lab.textContent = "질문 " + step;
+}
+
+function showIntro(){
+  pathStack = []; clearScreen(); setProgress(0);
+  var wrap = h("div","intro");
+  wrap.appendChild(h("div","intro-icon", D.icon || "⚖️"));
+  wrap.appendChild(h("h1","", D.hook));
+  if(D.myth){
+    var m = h("div","myth"); m.appendChild(h("b","","많은 분들이 이렇게 알고 있어요")); m.appendChild(document.createTextNode("“" + D.myth + "”"));
+    wrap.appendChild(m);
+  }
+  if(D.teaser) wrap.appendChild(h("p","", D.teaser));
+  var meta = h("div","meta");
+  [D.time || "약 1분", "객관식 질문 최대 " + D.nq_max + "개", "답변은 저장·전송되지 않아요"].forEach(function(t){ meta.appendChild(h("span","",t)); });
+  wrap.appendChild(meta);
+  var b = h("button","opt-btn primary","진단 시작하기"); b.type = "button";
+  b.onclick = function(){ goTo(D.start); };
+  wrap.appendChild(b);
+  screenEl.appendChild(wrap);
+}
+
+function goTo(id){
+  if(D.outcomes[id]) return showOutcome(id);
+  showQuestion(id);
+}
+
+function showQuestion(qid){
+  var q = D.questions[qid];
+  clearScreen();
+  var step = pathStack.length + 1;
+  setProgress(step);
+  screenEl.appendChild(h("div","q-count","질문 " + step));
+  screenEl.appendChild(h("div","q-text", q.text));
+  if(q.why) screenEl.appendChild(h("div","q-why", q.why));
+  var box = h("div","options");
+  q.options.forEach(function(o){
+    var b = h("button","opt-btn", o.label); b.type = "button";
+    b.onclick = function(){ pathStack.push({qid:qid, qtext:q.text, label:o.label}); goTo(o.next); };
+    box.appendChild(b);
+  });
+  screenEl.appendChild(box);
+  var back = h("button","back-btn", pathStack.length ? "← 이전 질문으로" : "← 처음으로"); back.type = "button";
+  back.onclick = function(){
+    if(!pathStack.length) return showIntro();
+    var last = pathStack.pop(); showQuestion(last.qid);
+  };
+  screenEl.appendChild(back);
+}
+
+function copyText(text, btn){
+  function ok(){ var o = btn.textContent; btn.textContent = "복사했어요 ✓"; setTimeout(function(){ btn.textContent = o; }, 1800); }
+  function fallback(){
+    var t = document.createElement("textarea"); t.value = text; t.style.position = "fixed"; t.style.opacity = "0";
+    document.body.appendChild(t); t.select();
+    try{ document.execCommand("copy"); ok(); }catch(e){ btn.textContent = "복사 실패 — 직접 선택해 주세요"; }
+    document.body.removeChild(t);
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(ok, fallback); } else { fallback(); }
+}
+
+function block(label, bodyNode){
+  var b = h("div","block"); b.appendChild(h("div","block-label",label)); b.appendChild(bodyNode); return b;
+}
+
+function showOutcome(oid){
+  var o = D.outcomes[oid];
+  clearScreen(); setProgress(0, true);
+  var head = h("div");
+  var g = h("span","grade " + o.grade, "● " + GRADE[o.grade]);
+  head.appendChild(g);
+  if(o.tag) head.appendChild(h("span","outcome-tag", o.tag));
+  screenEl.appendChild(head);
+  var wrap = h("div","outcome");
+  wrap.appendChild(h("h2","", o.title));
+
+  /* 왜 이 결과인가 — 내가 고른 답 + 근거 1줄 */
+  var why = h("div");
+  var chips = h("div","chips");
+  pathStack.forEach(function(p){ chips.appendChild(h("div","chip","· " + p.label)); });
+  why.appendChild(chips);
+  why.appendChild(h("div","why-line", o.why));
+  wrap.appendChild(block("🔎 왜 이 결과인가요?", why));
+
+  if(o.fact && D.myth){
+    var vs = h("div","vs");
+    var m = h("div","m"); m.appendChild(h("b","","통념")); m.appendChild(document.createTextNode(D.myth));
+    var f = h("div","f"); f.appendChild(h("b","","이 경우엔")); f.appendChild(document.createTextNode(o.fact));
+    vs.appendChild(m); vs.appendChild(f);
+    wrap.appendChild(block("💡 통념 vs 사실", vs));
+  }
+  wrap.appendChild(block("📖 법적 근거", h("div","block-body", o.basis)));
+  if(o.checklist && o.checklist.length){
+    var ul = h("ul","checklist"); o.checklist.forEach(function(c){ ul.appendChild(h("li","",c)); });
+    wrap.appendChild(block("✅ 지금 해볼 것", ul));
+  }
+  wrap.appendChild(block("⚠️ 주의할 점", h("div","block-body", o.caution)));
+  wrap.appendChild(h("div","disclaimer", o.disclaimer || D.disclaimer));
+  screenEl.appendChild(wrap);
+
+  var actions = h("div","actions");
+  var cp = h("button","ghost-btn","📋 결과 요약 복사하기"); cp.type = "button";
+  cp.onclick = function(){
+    var t = "[법률 자가진단] " + D.hook + "\n결과: " + GRADE[o.grade] + " — " + o.title + "\n※ 일반적인 법률 정보이며 개별 사안은 상담이 필요합니다.\n" + location.href;
+    copyText(t, cp);
+  };
+  actions.appendChild(cp);
+  if(D.mother_url){
+    var a = h("a","ghost-btn","📰 원문 컬럼 읽어보기"); a.href = D.mother_url; a.target = "_blank"; a.rel = "noopener"; actions.appendChild(a);
+  }
+  var rs = h("button","ghost-btn","↺ 처음부터 다시"); rs.type = "button"; rs.onclick = showIntro;
+  actions.appendChild(rs);
+  screenEl.appendChild(actions);
+
+  var cta = h("div","cta-box");
+  cta.appendChild(document.createTextNode((o.cta || "지금 상황을 구체적으로 확인하고 싶다면") + " "));
+  var s = h("strong","", D.cta_lawyer);
+  cta.appendChild(s);
+  cta.appendChild(document.createTextNode("("));
+  var ml = h("a","", D.cta_email); ml.href = "mailto:" + D.cta_email; cta.appendChild(ml);
+  cta.appendChild(document.createTextNode(")에게 문의하세요."));
+  screenEl.appendChild(cta);
+}
+
+document.getElementById("footer").textContent = "제공 : " + D.cta_lawyer + " 법률사무소";
+showIntro();
+</script>
+</body>
+</html>
