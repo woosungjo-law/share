@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>진료기록 분쟁, 기억을 다투는 문제가 아니라 작성·보존·열람의 절차를 다투는 문제다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 진료기록 관리</div>
+    <h1>진료기록 분쟁, 기억을 다투는 문제가 아니라 작성·보존·열람의 절차를 다투는 문제다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> "지정 문양 외에는 못 준다"는 창구 관행이나 담당자 기억에 의존한 상담 기록은 방어 수단이 아니라 리스크입니다. 기억으로 답하는 회사와 <b>문서로 답하는 회사</b>는 같은 항의에서 다른 결과를 만듭니다. 기록이 남아 있는지와 남아 있어야 하는지, 두 층위를 먼저 봅니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      분쟁이 생겼을 때 "그때 분명히 그렇게 말했습니다"라는 기억 대결과, <b>날인된 계약서를 펼치는 것</b>의 차이입니다. 기억은 시간이 지나면 흐려지고 사람마다 다르지만, 문서는 작성된 시점의 상태를 그대로 말합니다. 진료기록은 진료가 끝난 뒤 기억으로 복원하는 문서가 아니라 <b>진료 시점에 남기는 문서</b>입니다. 회사가 관리할 것도 기억이 아니라 작성·보존·열람의 절차입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점 — 권리와 의무</h2>
+    <p>
+      환자의 권리부터 봅니다. 환자는 본인에 관한 기록의 열람이나 사본 발급을 요청할 수 있고, 의료인이나 기관은 정당한 사유가 없으면 이를 거부할 수 없습니다(<b>의료법 제21조 제1항</b>). 접수 창구가 내세운 내부 관행은 법이 정한 권리 앞에서 근거가 되지 못하고, 처리 기준이 없다는 사실 자체가 점검의 출발점입니다. 반대 방향의 구별도 필요합니다. 환자가 아닌 사람에게는 원칙적으로 기록을 확인시킬 수 없고, 배우자·직계친족·대리인, 환자가 사망했거나 의식불명인 경우 같은 요건을 갖춘 예외에 한해서만 확인시킬 수 있습니다(<b>같은 조 제2항·제3항</b>).
+    </p>
+    <p>
+      기록의 생산 쪽도 같은 무게입니다. 의료인은 진료기록부등에 주된 증상과 진단, 치료 내용을 상세히 기록하고 서명하며 보존해야 하고, 거짓으로 작성하거나 고의로 수정해서는 안 됩니다(<b>같은 법 제22조</b>). 기억에 의존해 말로 정리된 상담 기록은 관행으로 남겨 둘 문서가 아니라 제도 안으로 끌어와야 할 대상입니다.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>보존기간과 기록의 증거적 무게</h2>
+    <ul class="points">
+      <li><b>기간도 관행이 아니라 시행규칙</b> — 진료기록부와 수술기록은 10년, 처방전은 2년, 환자명부는 5년 등 종류별로 기간이 다릅니다(<b>의료법 시행규칙 제15조</b>). 보존기간이 지나기 전에 폐기하면 그 자체가 기관의 문제가 됩니다.</li>
+      <li><b>누락·미작성의 효과</b> — 기록의 누락이나 미작성은 절차 자체가 흔들리게 만들고 분쟁에서 불리한 평가로 작용할 수 있습니다. 다만 이것이 곧 의료기관의 패소를 의미하는 것은 아니고, 개별 사안의 과실과 인과관계는 사건별로 가려집니다.</li>
+      <li><b>이 경계를 아는 이유</b> — 항의 대응에서 "기록이 없으면 진다"는 과장된 내부 여론을 가라앉히고, 반대로 기록 관리의 빈자리를 위축하지 않기 위해서입니다.</li>
+      <li><b>입증의 비대칭</b> — 기록이 있는 기관은 자기 문서로 설명할 수 있고, 기록이 없는 기관은 상대방의 주장을 반박할 재료부터 만들어야 합니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 담당자의 기억이 아니라 문서로 답하는 절차가 회사의 첫 방어선입니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">권리·의무·기간의 세 축을 점검하십시오.</p>
+    <ol>
+      <li><b>① 열람·사본 절차 정비</b> — 요청 창구의 내부 관행 문구를 걷어내고, 정당한 사유가 없으면 거부할 수 없다는 취지의 안내와 처리 기한을 문서로 둡니다. 요청 접수 기록을 남기면 반복 요청에도 일관되게 답합니다.</li>
+      <li><b>② 제3자 필터</b> — 환자가 아닌 사람의 요청에는 관계 증명과 예외 요건을 확인하는 체크리스트를 붙여, 무단 제공과 무근거 거부를 동시에 막습니다.</li>
+      <li><b>③ 작성·보존 관행 점검</b> — 주된 증상·진단·치료 내용의 기재 수준과 서명, 수정 방식이 제22조 요건과 맞는지 표로 확인합니다. 상담 내용을 기억으로 정리하던 부분은 기재 항목과 작성 시점을 정해 기록 대상으로 편입합니다.</li>
+      <li><b>④ 보존기간표·폐기 절차</b> — 종류별 기간(진료기록부·수술기록 10년, 환자명부 5년, 처방전 2년)과 폐기 승인 절차를 연결해 경과 전 폐기를 원천적으로 막고, 보관 위치와 담당자를 표로 남겨 장부 대조에 의존하던 관행을 없앱니다.</li>
+      <li><b>⑤ 기록 존재 여부 먼저 확인</b> — 항의나 소송이 예상되는 사안에서는 기록 존재 여부부터 확인하고 답변서를 씁니다. 이 판단이 다음 항의에서도 반복되게 절차로 고정하는 일이 법무팀의 몫입니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
