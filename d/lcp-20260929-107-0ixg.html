@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>담보가 있다는 보고에 안심하기 전에 대표가 물어야 할 최악의 계산</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 담보와 회수 가치</div>
+    <h1>담보가 있다는 보고에 안심하기 전에 대표가 물어야 할 최악의 계산</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 식품 도매·유통을 하는 고른유통의 구하람 대표는 큰 금액의 거래 승인 보고를 받았습니다. 보고서의 결론은 담보 부동산이 확보되었으니 안전하다는 것이었습니다. 그러나 구 대표의 질문은 달랐습니다. <b>이 담보가 경매에 넘어가면 우리 몫이 얼마가 되는가, 그리고 그 계산은 언제 했는가.</b> 실무자의 답은 계약 시점의 평가였고, 그 이후의 재확인 기록은 없었습니다. 구 대표가 요구한 것은 새로운 평가였습니다. 등기부를 다시 열고, 시세를 다시 확인하고, 먼저 줄 서 있는 담보들의 금액을 더한 계산. 담보는 돈이 아니라 돈으로 바꾸는 자산이라는 원칙은 대표의 질문에서 출발합니다. 보고서가 안심의 문장이면 대표는 그 문장을 계산의 문장으로 바꾸게 해야 합니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      담보 부동산은 바로 인출되는 예금이 아니라 <b>줄 서서 나눠 갖는 파이와 같습니다.</b> 경매라는 다른 시장의 가격과 정상 시세는 다를 수 있고, 그 결과에서 선순위 담보권이 먼저 빠지고 국세·지방세와 최우선변제 임금채권이 그다음을 차지합니다. 우리 몫은 마지막에 남는 조각이므로, 파이의 크기만 보지 말고 줄 선 사람들의 몫까지 더한 계산이 필요합니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>
+      담보 부동산의 회수가치는 경매 환가, 선순위 담보권, 국세·지방세·최우선변제 임금채권 등에 따라 달라져 겉보기 가치와 다를 수 있습니다. 채무자가 갚지 못하면 담보 부동산은 경매라는 다른 시장으로 들어가고, 그 시장의 가격과 정상 시세는 다를 수 있습니다.
+    </p>
+    <p>
+      경매의 결과에서 선순위 담보권이 먼저 빠지고, 국세·지방세와 최우선변제를 받는 임금채권이 그다음을 차지합니다. 경매라는 긴 과정을 거치며 우리 몫이 0원이 될 수도 있다는 정리는 이 구조의 끝을 계산한 문장입니다. 그래서 계약 시점의 평가를 맹신하지 않고 주기적으로 등기부와 시세를 재확인하는 것이 관리의 기본이며, 가치가 하락하면 추가 담보나 한도 축소로 대응하고, 회수의 시간과 비용을 감안해 거래 규모를 정하는 것이 설계의 기본입니다.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>보장의 문장과 수치의 유혹</h2>
+    <ul class="points">
+      <li><b>보장의 문장</b> — "근저당이 있으면 회수가 보장된다"는 문장은 회수의 구조를 무시한 과장입니다. 담보의 존재는 순위와 환가라는 조건을 안은 채 존재합니다.</li>
+      <li><b>수치의 유혹</b> — "경매로 시세의 몇 퍼센트를 받는다"는 식의 수치 단정은 위험합니다. 검증되지 않은 수치로 승인 결정을 내리면 그 결정의 책임은 회사에 남습니다.</li>
+      <li><b>개별 확인 사항</b> — 개별 담보의 회수 가능 금액은 개별 확인 사항이고, 대표가 받아야 하는 보고는 수치의 확신이 아니라 계산의 근거와 재확인의 날짜입니다.</li>
+      <li><b>순서의 원칙</b> — 안심은 계산 뒤에 와야지 계산 앞에 올 수 없습니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 멈춰 있는 담보는 환상입니다. 이 경고는 보고서 속의 문구가 아니라 대표의 질문이 습관이 되었을 때 작동합니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <p style="margin-bottom:16px;">안심의 문장을 계산의 문장으로 바꾸십시오.</p>
+    <ol>
+      <li><b>① 최악 계산서 첨부</b> — 담보가 붙는 승인 보고에는 최악 시나리오 계산서를 함께 첨부하게 하십시오. 경매 환가의 보수적 추정, 선순위 담보권의 금액, 국세·지방세·최우선변제 임금채권의 존재 여부가 항목으로 적혀야 합니다.</li>
+      <li><b>② 재평가 분기 고정</b> — 담보 재평가를 분기 일정으로 고정합니다. 등기부와 시세의 재확인 기록이 보고에 올라오게 합니다.</li>
+      <li><b>③ 대응 절차화</b> — 가치 하락 시의 대응을 사전에 정합니다. 추가 담보 요구와 한도 축소가 권고가 아니라 절차로 작동하게 합니다.</li>
+      <li><b>④ 한도 산정 반영</b> — 거래 한도의 산정에 회수의 시간과 비용을 반영하게 합니다. 담보가 있어도 돈이 돌아오는 데는 시간이 걸립니다.</li>
+      <li><b>⑤ 보고 문구 점검</b> — 안전하다는 문장 대신 계산서의 숫자가 오게 하는 것이 대표가 바꿀 수 있는 가장 값싼 관습입니다.</li>
+      <li><b>⑥ 기존 담보 재질문</b> — 구 대표가 그날 한 것처럼 기존 담보도 다시 묻습니다. 대표의 질문이 습관이 되었을 때 이 원칙이 작동합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
