@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>개발부담금 고지서, 내가 내야 할까 — 아니다, 납세의무자 여부와 공제부터 따져라</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 개발부담금 대응 체크포인트</div>
+    <h1>개발부담금 고지서, 내가 내야 할까 — 아니다, 납세의무자 여부와 공제부터 따져라</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> 고지서는 내라는 통지이지 확인이 끝났다는 표시가 아닙니다. 내기 전에 세 가지 질문을 물어야 합니다. 이 돈이 무엇인지, 내가 내는 사람이 맞는지, 나중에 돌아오는 길이 있는지입니다. 질문 없이 납부하는 것은 가장 비싼 습관입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      취직 준비생 노하윤은 상속받은 개발예정지 토지에서 개발부담금 부과 통보를 받았습니다. 고지서의 금액을 보고 재빨리 내는 것이 안전하다고 생각했습니다. 이웃은 "국가가 매기는 돈은 그냥 내는 것"이라고 말했고, 부모님은 "안 내면 불이익"이라고 걱정했습니다. 그러나 내 돈을 내기 전에 물어야 할 질문이 세 개 있습니다. 이 돈이 무엇인지, 내가 내는 사람이 맞는지, 그리고 나중에 이 돈이 돌아오는 길이 있는지입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    개발부담금은 개발 사업으로 인해 증가한 토지 가액의 일부를 국가가 환수하는 준조세적 부담금입니다. 개발로 커진 토지 가치의 일부를 사회에 돌려주는 제도이지만, "국가가 매기니 다 내는 돈"은 아닙니다. 부과 대상(사업 종류·면적·기간)과 산정 방식(개발비용·기여도·경감률)이 정해져 있고, 납부와 불복 절차도 각각 마련되어 있습니다.
+    누가 납부할 의무가 있는지는 지방세법 제107조(납세의무자)가 정하는 틀에서 가려집니다. 사업시행자인지 토지 소유자인지에 따라 내야 하는 사람이 달라지고, 상속이나 공동소유가 얽힌 토지라면 "나"가 아닌 다른 구조가 나올 수도 있습니다.
+    나중에 파는 날을 위한 규정도 있습니다. 개발부담금은 필요경비(취득가액 가산)로 양도소득세 산정 시 공제 가능합니다(소득세법 제97조 제2항). 지금 낸 돈은 나중에 양도세를 계산할 때 세액을 줄이는 재료가 되므로, 납부 통지서와 영수증을 잃어버리면 이 혜택이 사라집니다.
+    다툼의 차례도 있습니다. 첫 관문은 국세기본법 제26조의2가 마련한 과세 전 적부 심사이고, 이어 행정심판과 소송이 붙습니다. 다만 "너무 많다"는 느낌만으로 다투기 전에 부과 대상과 산정 요소가 내 토지의 면적·기간과 맞는지부터 대조해야 하고, 대조가 다툼의 재료가 됩니다.
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>고지서를 내려놓기 전에 세 가지를 확인한다</h2>
+    <ul class="points">
+      <li><b>의무자 확인</b> — 지방세법 제107조의 납세의무자 틀에서 내가 부과 대상인지 먼저 확인합니다.</li>
+      <li><b>금액 대조</b> — 사업 종류·면적·기간과 산정 요소가 고지서와 내 토지 자료에서 일치하는지 봅니다.</li>
+      <li><b>서류 보전</b> — 납부 통지서와 영수증을 보관해 양도 시 필요경비 공제(소득세법 제97조 제2항)를 준비합니다.</li>
+      <li><b>차례 이해</b> — 다툼이 필요하면 과세 전 적부 심사 → 행정심판 → 소송의 순서임을 기억합니다.</li>
+      <li><b>납부 계획</b> — 일시납부가 어려우면 분할납부 가능 여부를 점검해 연체를 막습니다.</li>
+    </ul>
+    <div class="callout">고지서는 내라는 통지이지 확인이 끝났다는 표시가 아닙니다. 납세의무자 판정 근거, 금액 대조, 서류 보전 — 이 세 가지가 내 돈을 지키는 순서입니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;">지금 당장 확인할 일 — 고지서를 내려놓기 전에 세 가지를 확인합니다.</p>
+    <ol>
+      <li><b>의무자 확인</b> — 지방세법 제107조의 납세의무자 틀에서 내가 부과 대상인지 먼저 확인합니다.</li>
+      <li><b>금액 대조</b> — 사업 종류·면적·기간과 산정 요소가 고지서와 내 토지 자료에서 일치하는지 봅니다.</li>
+      <li><b>서류 보전</b> — 납부 통지서와 영수증을 보관해 양도 시 필요경비 공제(소득세법 제97조 제2항)를 준비합니다.</li>
+      <li><b>차례·계획</b> — 불복은 과세 전 적부 심사 → 행정심판 → 소송 순서이고, 분할납부 가능 여부도 점검합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
