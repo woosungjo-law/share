@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>회사가 장부를 안 보여주는데, 소액주주는 눈치만 봐야 할까?</title>
+<!-- sc-template v2 · 렌더러: _tools/sc.py build · 이 파일을 직접 고치지 말고 00_운영/app_template.html 과 시나리오 노트를 고친다 -->
+<style>
+  :root{
+    --navy:#12233f; --navy-deep:#0a1626; --accent:#c9a24b; --bg:#f4f5f7; --card:#ffffff;
+    --text:#1e232b; --muted:#5f6673; --line:#e5e7eb;
+    --g-high:#1f7a4d; --g-mid:#b7791f; --g-check:#4a5568;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    background:var(--bg);color:var(--text);min-height:100vh;
+    display:flex;align-items:flex-start;justify-content:center;padding:16px;line-height:1.55;
+    word-break:keep-all;overflow-wrap:anywhere;
+  }
+  .app{width:100%;max-width:480px;background:var(--card);border-radius:18px;box-shadow:0 8px 30px rgba(18,35,63,.12);overflow:hidden;display:flex;flex-direction:column;min-height:560px;}
+  .topbar{background:var(--navy);color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;font-size:13px;}
+  .topbar .brand{font-weight:700;letter-spacing:.02em;}
+  .progress-wrap{height:4px;background:var(--line);width:100%;}
+  .progress-bar{height:100%;background:var(--accent);width:0%;transition:width .25s ease;}
+  .screen{flex:1;padding:26px 22px 22px;display:none;flex-direction:column;animation:fadeIn .22s ease;}
+  .screen.active{display:flex;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+
+  .intro-icon{font-size:38px;margin-bottom:12px;}
+  .intro h1{font-size:22px;line-height:1.4;color:var(--navy-deep);margin-bottom:12px;}
+  .myth{background:#fbf6ea;border-left:4px solid var(--accent);border-radius:8px;padding:12px 14px;margin-bottom:14px;font-size:13.5px;color:#4a3d16;}
+  .myth b{display:block;font-size:11px;letter-spacing:.04em;color:#8a6d1f;margin-bottom:3px;}
+  .intro p{color:var(--muted);font-size:14px;margin-bottom:16px;}
+  .meta{font-size:12px;color:var(--muted);margin-bottom:20px;display:flex;gap:8px;flex-wrap:wrap;}
+  .meta span{background:var(--bg);padding:4px 10px;border-radius:20px;}
+
+  .q-count{font-size:12px;color:#8a6d1f;font-weight:700;margin-bottom:8px;letter-spacing:.03em;}
+  .q-text{font-size:19px;font-weight:700;color:var(--navy-deep);margin-bottom:8px;line-height:1.45;}
+  .q-why{font-size:12.5px;color:var(--muted);margin-bottom:18px;}
+  .options{display:flex;flex-direction:column;gap:10px;margin-top:10px;}
+  .opt-btn{text-align:left;background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;font:inherit;font-size:14.5px;color:var(--text);cursor:pointer;transition:all .15s ease;min-height:44px;width:100%;}
+  .opt-btn:hover,.opt-btn:active,.opt-btn:focus-visible{border-color:var(--accent);background:#fbf6ea;outline:none;}
+  .opt-btn.primary{text-align:center;font-weight:700;background:var(--navy);color:#fff;border:none;}
+  .opt-btn.primary:hover,.opt-btn.primary:focus-visible{background:var(--navy-deep);}
+  .back-btn{margin-top:14px;background:none;border:none;color:var(--muted);font-size:12.5px;text-align:left;cursor:pointer;min-height:36px;text-decoration:underline;}
+
+  .grade{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#fff;padding:5px 12px;border-radius:20px;margin-bottom:10px;width:fit-content;}
+  .grade.high{background:var(--g-high);} .grade.mid{background:var(--g-mid);} .grade.check{background:var(--g-check);}
+  .outcome-tag{display:inline-block;font-size:11px;font-weight:700;color:var(--navy);background:#eef1f6;padding:4px 10px;border-radius:20px;margin-bottom:10px;margin-left:6px;}
+  .outcome h2{font-size:18px;color:var(--navy-deep);margin-bottom:14px;line-height:1.5;}
+  .block{margin-bottom:15px;}
+  .block-label{font-size:12px;font-weight:700;color:#8a6d1f;margin-bottom:5px;letter-spacing:.02em;}
+  .block-body{font-size:13.5px;color:var(--text);}
+  .chips{display:flex;flex-direction:column;gap:5px;margin-bottom:6px;}
+  .chip{font-size:12.5px;background:var(--bg);border-radius:8px;padding:6px 10px;color:#3b4250;}
+  .why-line{font-size:13.5px;}
+  .vs{display:grid;gap:6px;}
+  .vs div{font-size:13px;border-radius:8px;padding:9px 12px;}
+  .vs .m{background:#f6ecec;color:#7a2f2f;} .vs .f{background:#e9f4ee;color:#1d5b3a;}
+  .vs b{display:block;font-size:10.5px;letter-spacing:.05em;margin-bottom:2px;}
+  .checklist{list-style:none;display:flex;flex-direction:column;gap:6px;}
+  .checklist li{font-size:13.5px;padding-left:22px;position:relative;}
+  .checklist li::before{content:"☐";position:absolute;left:0;color:#8a6d1f;}
+  .disclaimer{font-size:12px;color:var(--muted);background:var(--bg);border-radius:10px;padding:12px 14px;margin-bottom:14px;}
+  .actions{display:flex;flex-direction:column;gap:8px;margin-bottom:14px;}
+  .ghost-btn{background:transparent;border:1.5px solid var(--line);color:#3b4250;border-radius:10px;padding:11px;font:inherit;font-size:13px;cursor:pointer;min-height:44px;text-align:center;text-decoration:none;display:block;}
+  .ghost-btn:hover,.ghost-btn:focus-visible{border-color:var(--accent);outline:none;}
+  .cta-box{background:var(--navy);color:#fff;border-radius:12px;padding:16px 18px;font-size:13.5px;margin-top:auto;}
+  .cta-box strong{color:var(--accent);} .cta-box a{color:#fff;text-decoration:underline;}
+  .footer-mark{text-align:center;font-size:11px;color:var(--muted);padding:10px 0 16px;}
+  @media (max-width:380px){ .screen{padding:22px 16px 18px;} .q-text{font-size:18px;} }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topbar"><span class="brand">법률 자가진단</span><span id="progress-label"></span></div>
+  <div class="progress-wrap"><div class="progress-bar" id="progress-bar"></div></div>
+  <div class="screen active" id="screen"></div>
+  <div class="footer-mark" id="footer"></div>
+</div>
+
+<script id="sc-data" type="application/json">{"hook": "회사가 장부를 안 보여주는데, 소액주주는 눈치만 봐야 할까?", "myth": "소액주주는 회사가 장부를 안 보여줘도 어쩔 수 없다", "teaser": "지분·서면·신청 순서로 움직이면 됩니다. 지금 어디쯤 와 있는지 1분 만에 확인해 보세요.", "icon": "📒", "time": "약 1분", "start": "Q1", "nq_min": 1, "nq_max": 5, "cta_lawyer": "조우성 변호사", "cta_email": "law@mustknow.co.kr", "disclaimer": "이 진단은 일반적인 법률 정보 안내이며, 구체적인 사안은 개별 상담을 통해 확인해야 합니다.", "mother_url": "https://woosungjo-law.github.io/share/d/lcp-20260929-048-xrq3.html", "questions": {"Q1": {"text": "보유 주식(합산 포함)이 발행주식의 몇 % 정도인가요?", "why": "장부를 청구할 수 있는 지분선(3%)을 넘는지부터 갈려요.", "options": [{"label": "3% 이상이다", "next": "Q2a"}, {"label": "3% 미만이다", "next": "D"}, {"label": "지분율을 모르겠다", "next": "C"}]}, "Q2a": {"text": "장부를 보여달라고 요구한 적이 있나요?", "why": "이유를 붙인 서면 청구가 권리 행사의 출발점이에요.", "options": [{"label": "구체적 이유(정황·숫자·날짜)를 붙인 서면으로 청구했다", "next": "Q3a"}, {"label": "말로만 요구했다", "next": "E"}, {"label": "아직 요구하지 않았다", "next": "E"}]}, "Q3a": {"text": "회사의 반응은 어땠나요?", "why": "거절인지, 보여주기로 한 것인지에 따라 다음 길이 갈려요.", "options": [{"label": "보여줬다 / 보여주기로 했다", "next": "A"}, {"label": "영업비밀 등을 이유로 거절했다", "next": "Q4a"}, {"label": "답변·회신이 없다", "next": "Q4a"}]}, "Q4a": {"text": "법원 절차는 어디까지 갔나요?", "why": "거부되면 열람·등사청구의 소로 가고, 판결이 나와야 강제 단계로 넘어가요.", "options": [{"label": "소를 제기해 열람·등사 판결을 받았다", "next": "Q5a"}, {"label": "아직 소를 제기하지 않았다 / 소송 중이다", "next": "B"}]}, "Q5a": {"text": "판결이 나왔는데도 회사가 장부를 안 주나요?", "why": "판결 불이행이면 하루 단위로 돈이 쌓이는 강제 단계로 넘어가요.", "options": [{"label": "안 보여준다", "next": "F"}, {"label": "보여줬다 / 보여주는 중이다", "next": "A"}]}}, "outcomes": {"A": {"grade": "high", "tag": "열람이 열려 보이는 상황", "title": "청구가 통했거나 이행 중이라면, 범위·방법을 정해 받는 것이 관건이에요.", "why": "보여주기로 했거나 보여주는 중이라고 답하셨어요.", "fact": "눈치 볼 일이 아니라, 무엇을·어떻게 볼지 정할 차례예요.", "basis": "발행주식의 100분의 3 이상 주주는 이유를 붙인 서면으로 회계 장부와 서류의 열람·등사를 청구할 수 있고, 회사가 청구의 부당함을 증명하지 못하면 거부하지 못합니다(상법 제466조). 조기 이행 제안을 받으면 열람 범위·방법을 정해 받으세요.", "caution": "범위 없는 열람은 나중에 '어디까지 봤나'는 다툼이 되기 쉬워요.", "checklist": ["열람 범위·방법을 정해 받으세요.", "비밀유지의무 서약을 요구받으면 범위를 확인하고 서명하세요.", "받은 자료와 청구 서면을 함께 보관하세요."], "disclaimer": "", "cta": ""}, "B": {"grade": "mid", "tag": "소를 제기할 단계", "title": "거절·무응답이라면 열람·등사청구의 소를 검토할 단계예요.", "why": "거절했거나 답이 없고, 아직 소 전이라고 답하셨어요.", "fact": "거절의 이유를 댈 쪽은 주주가 아니라 회사예요.", "basis": "상법 제466조는 회사가 청구의 부당함을 증명하지 못하면 거부하지 못하도록 합니다. 거부되면 열람·등사청구의 소로 가며, 소장에는 청구 이유와 거부 경위를 적고 거부 통지문과 청구 서면 사본을 붙입니다.", "caution": "서류 없는 주장은 버티기 어려우니 서류부터 갖추세요.", "checklist": ["청구 서면 사본과 거부 통지문을 모아 두세요.", "소장에는 청구 이유와 거부 경위를 적으세요.", "이유가 구체적일수록 부당함 다툼에서 유리해요."], "disclaimer": "", "cta": ""}, "C": {"grade": "check", "tag": "지분·사실 확인이 먼저", "title": "지금은 지분율부터 확인할 단계예요.", "why": "지분율을 모르겠다고 답하셨어요.", "fact": "3%를 넘는지 아닌지가 전체 일정을 좌우해요.", "basis": "상법 제466조의 청구권은 발행주식 총수의 100분의 3 이상 주주에게 있습니다. 주주명부·증권사 잔고로 지분율을 먼저 합산해 보세요.", "caution": "지분 계산이 틀리면 이후 절차가 흔들려요.", "checklist": ["보유 주식을 합산해 3% 이상인지 확인하세요.", "확인되면 이유 붙인 서면 청구부터 하세요.", "확인이 끝나면 이 진단을 다시 해보세요."], "disclaimer": "", "cta": ""}, "D": {"grade": "check", "tag": "지분 요건 미달 가능성", "title": "3% 미만이라면 이 조항의 청구권은 열리지 않아 보여요.", "why": "3% 미만이라고 답하셨어요.", "fact": "이유가 아무리 정당해도 지분선이 먼저예요.", "basis": "상법 제466조는 100분의 3 이상 주주에게 이유 붙인 서면 청구권을 줍니다. 합산해도 3%에 못 미치면 다른 주주와 연대하거나 다른 수단을 검토해야 합니다.", "caution": "지분을 쪼개 보유한 경우 합산 방식을 먼저 확인하세요.", "checklist": ["합산 누락(가족·특수관계인 보유분)이 없는지 다시 보세요.", "다른 주주와 함께 청구할 수 있는지 살펴보세요.", "주주제안·질의 등 다른 권리 행사를 검토하세요."], "disclaimer": "", "cta": ""}, "E": {"grade": "mid", "tag": "이유 붙인 서면 청구부터", "title": "말로만 했다면, 이유 붙인 서면 청구부터 하세요.", "why": "서면 청구가 아직이라고 답하셨어요.", "fact": "서류가 갖춰져야 소가 살고, 서류 없는 주장은 공허해요.", "basis": "상법 제466조의 청구는 이유를 붙인 서면으로 합니다. 외주비 급증 같은 구체적 정황을 숫자와 날짜로 적을수록 부당함 다툼에서 유리합니다.", "caution": "막연한 의심만 적으면 부당함 다툼에서 밀릴 수 있어요.", "checklist": ["외주비 급증의 시기와 규모를 숫자로 적으세요.", "이유를 붙인 서면으로 청구하세요.", "청구 서면 사본과 발송 기록을 보관하세요."], "disclaimer": "", "cta": ""}, "F": {"grade": "high", "tag": "간접강제·과태료 검토 단계", "title": "판결이 있는데도 안 보여준다면, 간접강제와 과태료를 검토할 단계예요.", "why": "판결 후에도 불이행이라고 답하셨어요.", "fact": "판결이 끝이 아니라, 하루 단위로 돈이 쌓이는 단계가 있어요.", "basis": "판결이 나왔는데도 장부를 안 주면 제1심 법원에 간접강제를 신청할 수 있습니다. 결정에는 이행의무·이행기간과 지연 배상이 명해지고(민사집행법 제261조 제1항), 신청 재판에는 즉시항고가 가능합니다(제2항). 정당한 사유 없는 거부는 500만원 이하 과태료 대상이기도 합니다(상법 제635조 제1항 제4호).", "caution": "간접강제금 액수는 법원 재량이라 얼마가 나올지 단정할 수 없어요.", "checklist": ["집행기간 안에 간접강제를 신청하세요(기간을 놓치면 위태로워져요).", "확정판결 정본·송달·확정 증명을 미리 갖추세요.", "이사 과태료도 함께 검토하세요(간접강제와 별개)."], "disclaimer": "", "cta": ""}}}</script>
+<script>
+"use strict";
+var D = JSON.parse(document.getElementById("sc-data").textContent);
+var GRADE = {high:"가능성 높음", mid:"살펴볼 것", check:"확인 필요"};
+var screenEl = document.getElementById("screen");
+var pathStack = [];          // [{qid, qtext, label}]
+
+function h(tag, cls, text){
+  var e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(text !== undefined && text !== null) e.textContent = text;
+  return e;
+}
+function clearScreen(){ while(screenEl.firstChild) screenEl.removeChild(screenEl.firstChild); screenEl.className = "screen active"; window.scrollTo(0,0); }
+
+function setProgress(step, done){
+  var bar = document.getElementById("progress-bar");
+  var lab = document.getElementById("progress-label");
+  if(done){ bar.style.width = "100%"; lab.textContent = "진단 완료"; return; }
+  if(step === 0){ bar.style.width = "0%"; lab.textContent = ""; return; }
+  bar.style.width = Math.min(100, Math.round(step / D.nq_max * 100)) + "%";
+  lab.textContent = "질문 " + step;
+}
+
+function showIntro(){
+  pathStack = []; clearScreen(); setProgress(0);
+  var wrap = h("div","intro");
+  wrap.appendChild(h("div","intro-icon", D.icon || "⚖️"));
+  wrap.appendChild(h("h1","", D.hook));
+  if(D.myth){
+    var m = h("div","myth"); m.appendChild(h("b","","많은 분들이 이렇게 알고 있어요")); m.appendChild(document.createTextNode("“" + D.myth + "”"));
+    wrap.appendChild(m);
+  }
+  if(D.teaser) wrap.appendChild(h("p","", D.teaser));
+  var meta = h("div","meta");
+  [D.time || "약 1분", "객관식 질문 최대 " + D.nq_max + "개", "답변은 저장·전송되지 않아요"].forEach(function(t){ meta.appendChild(h("span","",t)); });
+  wrap.appendChild(meta);
+  var b = h("button","opt-btn primary","진단 시작하기"); b.type = "button";
+  b.onclick = function(){ goTo(D.start); };
+  wrap.appendChild(b);
+  screenEl.appendChild(wrap);
+}
+
+function goTo(id){
+  if(D.outcomes[id]) return showOutcome(id);
+  showQuestion(id);
+}
+
+function showQuestion(qid){
+  var q = D.questions[qid];
+  clearScreen();
+  var step = pathStack.length + 1;
+  setProgress(step);
+  screenEl.appendChild(h("div","q-count","질문 " + step));
+  screenEl.appendChild(h("div","q-text", q.text));
+  if(q.why) screenEl.appendChild(h("div","q-why", q.why));
+  var box = h("div","options");
+  q.options.forEach(function(o){
+    var b = h("button","opt-btn", o.label); b.type = "button";
+    b.onclick = function(){ pathStack.push({qid:qid, qtext:q.text, label:o.label}); goTo(o.next); };
+    box.appendChild(b);
+  });
+  screenEl.appendChild(box);
+  var back = h("button","back-btn", pathStack.length ? "← 이전 질문으로" : "← 처음으로"); back.type = "button";
+  back.onclick = function(){
+    if(!pathStack.length) return showIntro();
+    var last = pathStack.pop(); showQuestion(last.qid);
+  };
+  screenEl.appendChild(back);
+}
+
+function copyText(text, btn){
+  function ok(){ var o = btn.textContent; btn.textContent = "복사했어요 ✓"; setTimeout(function(){ btn.textContent = o; }, 1800); }
+  function fallback(){
+    var t = document.createElement("textarea"); t.value = text; t.style.position = "fixed"; t.style.opacity = "0";
+    document.body.appendChild(t); t.select();
+    try{ document.execCommand("copy"); ok(); }catch(e){ btn.textContent = "복사 실패 — 직접 선택해 주세요"; }
+    document.body.removeChild(t);
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(ok, fallback); } else { fallback(); }
+}
+
+function block(label, bodyNode){
+  var b = h("div","block"); b.appendChild(h("div","block-label",label)); b.appendChild(bodyNode); return b;
+}
+
+function showOutcome(oid){
+  var o = D.outcomes[oid];
+  clearScreen(); setProgress(0, true);
+  var head = h("div");
+  var g = h("span","grade " + o.grade, "● " + GRADE[o.grade]);
+  head.appendChild(g);
+  if(o.tag) head.appendChild(h("span","outcome-tag", o.tag));
+  screenEl.appendChild(head);
+  var wrap = h("div","outcome");
+  wrap.appendChild(h("h2","", o.title));
+
+  /* 왜 이 결과인가 — 내가 고른 답 + 근거 1줄 */
+  var why = h("div");
+  var chips = h("div","chips");
+  pathStack.forEach(function(p){ chips.appendChild(h("div","chip","· " + p.label)); });
+  why.appendChild(chips);
+  why.appendChild(h("div","why-line", o.why));
+  wrap.appendChild(block("🔎 왜 이 결과인가요?", why));
+
+  if(o.fact && D.myth){
+    var vs = h("div","vs");
+    var m = h("div","m"); m.appendChild(h("b","","통념")); m.appendChild(document.createTextNode(D.myth));
+    var f = h("div","f"); f.appendChild(h("b","","이 경우엔")); f.appendChild(document.createTextNode(o.fact));
+    vs.appendChild(m); vs.appendChild(f);
+    wrap.appendChild(block("💡 통념 vs 사실", vs));
+  }
+  wrap.appendChild(block("📖 법적 근거", h("div","block-body", o.basis)));
+  if(o.checklist && o.checklist.length){
+    var ul = h("ul","checklist"); o.checklist.forEach(function(c){ ul.appendChild(h("li","",c)); });
+    wrap.appendChild(block("✅ 지금 해볼 것", ul));
+  }
+  wrap.appendChild(block("⚠️ 주의할 점", h("div","block-body", o.caution)));
+  wrap.appendChild(h("div","disclaimer", o.disclaimer || D.disclaimer));
+  screenEl.appendChild(wrap);
+
+  var actions = h("div","actions");
+  var cp = h("button","ghost-btn","📋 결과 요약 복사하기"); cp.type = "button";
+  cp.onclick = function(){
+    var t = "[법률 자가진단] " + D.hook + "\n결과: " + GRADE[o.grade] + " — " + o.title + "\n※ 일반적인 법률 정보이며 개별 사안은 상담이 필요합니다.\n" + location.href;
+    copyText(t, cp);
+  };
+  actions.appendChild(cp);
+  if(D.mother_url){
+    var a = h("a","ghost-btn","📰 원문 컬럼 읽어보기"); a.href = D.mother_url; a.target = "_blank"; a.rel = "noopener"; actions.appendChild(a);
+  }
+  var rs = h("button","ghost-btn","↺ 처음부터 다시"); rs.type = "button"; rs.onclick = showIntro;
+  actions.appendChild(rs);
+  screenEl.appendChild(actions);
+
+  var cta = h("div","cta-box");
+  cta.appendChild(document.createTextNode((o.cta || "지금 상황을 구체적으로 확인하고 싶다면") + " "));
+  var s = h("strong","", D.cta_lawyer);
+  cta.appendChild(s);
+  cta.appendChild(document.createTextNode("("));
+  var ml = h("a","", D.cta_email); ml.href = "mailto:" + D.cta_email; cta.appendChild(ml);
+  cta.appendChild(document.createTextNode(")에게 문의하세요."));
+  screenEl.appendChild(cta);
+}
+
+document.getElementById("footer").textContent = "제공 : " + D.cta_lawyer + " 법률사무소";
+showIntro();
+</script>
+</body>
+</html>
