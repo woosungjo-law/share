@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>가게를 샀으면 보수보다 먼저 통지부터다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 상가 하자 통지 체크포인트</div>
+    <h1>가게를 샀으면 보수보다 먼저 통지부터다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> 가게나 상가를 인수한 뒤 하자를 발견했다면 견적과 수리보다 먼저 발견 사실을 기록하고 매도인에게 알려야 합니다. 사업자 사이의 매매라면 상법 제69조의 검사·통지 문제가 생길 수 있어 발견 시점을 늦추지 않는 것이 중요합니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      현우 씨는 점포를 인수한 뒤 뒷방 배관에서 누수 흔적을 발견했지만 견적을 받느라 3주를 보냈습니다. 그 사이 일부가 보수되어 원인 자료가 줄자, 그는 다음부터 이상을 발견한 날 사진을 찍고 매도인에게 문자로 알리기로 했습니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    당사자 쌍방이 상인인 매매에서는 상법 제69조에 따라 매수인이 물건을 받은 뒤 지체 없이 검사하고, 하자를 발견하면 즉시 매도인에게 통지해야 합니다. 점포를 사서 영업하려는 경우에도 거래 목적과 당사자 지위에 따라 이 규정이 문제될 수 있습니다.
+    상인 간 거래가 아니라면 민법 제580조의 하자담보책임 경로가 적용될 수 있고, 매도인이 하자를 알면서 숨긴 경우 등에는 통지 의무가 달라질 수 있습니다. 어떤 경우에도 발견 사실·상태·통지 시점을 먼저 남기는 것이 안전합니다.
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>검사·통지와 수리를 시간순으로 남깁니다</h2>
+    <ul class="points">
+      <li><b>즉시 검사</b> — 인수 후 방마다 열어 보고 물건을 사용하며 이상을 확인합니다.</li>
+      <li><b>발견 기록</b> — 하자 부위·상태·날짜를 사진·동영상과 함께 남깁니다.</li>
+      <li><b>신속 통지</b> — 매도인에게 문자·이메일·내용증명 등 남는 방법으로 알립니다.</li>
+      <li><b>거래 형태</b> — 상인 간 거래인지 민법상 매매인지 상담에서 구분합니다.</li>
+      <li><b>보수 범위</b> — 위험 방지에 필요한 조치만 하고 전후 상태를 기록합니다.</li>
+    </ul>
+    <div class="callout">‘6개월은 괜찮다’는 말만 믿고 기다리면 안 됩니다. 상법 제69조 적용 여부와 잠복 하자 문제는 거래에 따라 달라질 수 있으므로, 발견한 즉시 알리고 증거를 보존하는 것이 출발점입니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;">지금 당장 확인할 일 — 견적보다 통지와 기록을 먼저 합니다.</p>
+    <ol>
+      <li><b>인수일 기록</b> — 점포를 받은 날짜와 검사한 날짜를 적습니다.</li>
+      <li><b>하자 촬영</b> — 부위·상태·원인 단서를 사진과 동영상으로 남깁니다.</li>
+      <li><b>매도인 통지</b> — 상법 제69조를 고려해 발견 즉시 알리고 수신 증빙을 보관합니다.</li>
+      <li><b>거래 구분</b> — 민법 제580조 적용 가능성과 당사자 지위를 확인합니다.</li>
+      <li><b>수리 보존</b> — 긴급 보수 전후의 상태와 견적서를 함께 보관합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
