@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>모아둔 데이터, 그냥 팔아도 될까 — 아니다, 성분 확인과 가명·익명 처리부터 거쳐라</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 데이터 판매 시작 체크포인트</div>
+    <h1>모아둔 데이터, 그냥 팔아도 될까 — 아니다, 성분 확인과 가명·익명 처리부터 거쳐라</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> 데이터를 팔기 전에 성분표부터 봐야 합니다. 개인정보·영업비밀·저작권이 섞여 있는지에 따라 판매 방법이 달라지고, 개인정보가 있으면 가명·익명 처리를 거친 '처리된 데이터'만 판매본이 됩니다. 계약서에 네 항목이 없으면 견적이 아무리 좋아도 서명하지 않습니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      개인 창업을 준비하던 홍지우에게 데이터 거래소 등록 대행 업체의 제안이 왔습니다. 사이드 프로젝트로 모아둔 앱 사용 데이터를 거래소에 올리면 정기 매출이 된다는 것이었습니다. 견적서를 보던 홍지우는 잠시 멈췄습니다. 그 데이터 안에 앱 사용자들의 정보가 그대로 담겨 있다는 것을 떠올린 것입니다. 내가 모은 데이터라고 해서 전부 내가 팔 수 있는 것이 맞는지, 사용자 정보는 어떻게 해야 하는지 알아보기로 했습니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    데이터 거래소를 통해 거래되는 데이터는 개인정보·영업비밀·저작권 등 법적 보호 대상 정보를 포함할 수 있습니다. 거래 당사자는 데이터의 법적 권리 관계를 명확히 하고 필요한 동의·허가 절차를 완료해야 합니다(데이터산업법 제14조~제17조).
+    개인정보가 섞였다고 못 파는 것은 아닙니다. 안전판이 있습니다. 가명처리(개인정보보호법 제28조의8) 또는 익명처리를 통해 개인을 식별할 수 없는 상태로 변환하면 동의 없이 데이터를 거래할 수 있습니다. 다만 열리는 길은 "처리를 거친 데이터"이지 원본이 아닙니다.
+    공공데이터를 활용해 상품을 만들 경우에는 공공데이터법 제9조가 비공개 사유를 제한적으로 열거한다는 점도 기억합니다. 공공데이터는 원칙적으로 열려 있지만 열거된 비공개 사유에 해당하면 상품 재료에서 빼야 합니다.
+    계약서의 기준도 있습니다. 데이터 거래소에 공급하거나 구매하는 쪽은 공급할 데이터의 법적 권리 관계를 명확히 하고, 거래소의 데이터 품질 인증·가치 평가 절차에 참여하며, 데이터 사용 범위·기간·목적을 명시한 계약을 체결하고, 데이터 거래에 따른 법적 책임의 한계를 설정해야 합니다. 개인 판매자에게 특히 중요한 것은 마지막 항목입니다. 책임의 한계가 정해지지 않은 계약은, 데이터를 산 쪽이 그것을 어디에 써도 그 파장이 판 쪽으로 돌아올 수 있는 구조입니다.
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>성분 확인, 처리, 계약서 네 항목 — 세 줄 체크리스트</h2>
+    <ul class="points">
+      <li><b>성분 목록</b> — 개인정보·영업비밀·저작권 포함 여부를 목록으로 뽑습니다(데이터산업법 제14조~제17조).</li>
+      <li><b>처리 거침</b> — 가명처리·익명처리(개인정보보호법 제28조의8)로 식별 불가 상태를 만든 뒤 판매본을 구성합니다. 원본이 아니라 처리본입니다.</li>
+      <li><b>공공데이터 확인</b> — 공공데이터 활용 시 공공데이터법 제9조의 비공개 사유에 걸리지 않는지 봅니다.</li>
+      <li><b>계약 네 항목</b> — 권리관계·품질 절차·사용 범위·책임 한계가 명시된 계약만 서명합니다.</li>
+      <li><b>기록 보관</b> — 성분 목록과 처리 내역, 계약서를 보관해 나중에 설명할 수 있게 둡니다.</li>
+    </ul>
+    <div class="callout">데이터 매출은 서두르는 쪽이 아니라 확인하는 쪽의 것이 됩니다. 사용 범위·기간·목적이 비어 있는 계약서, 책임 조항이 사라진 계약서는 서명하지 않는 것이 원칙입니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;">지금 당장 확인할 일 — 견적서를 내려놓고 데이터부터 열어봅니다.</p>
+    <ol>
+      <li><b>성분 목록</b> — 팔려는 데이터에 어떤 정보가 섞여 있는지 목록으로 뽑습니다.</li>
+      <li><b>처리 거침</b> — 개인정보가 있으면 가명·익명 처리를 거쳐 판매본을 만듭니다.</li>
+      <li><b>계약 네 항목</b> — 권리관계·품질 절차·사용 범위·책임 한계가 다 들어 있는지 확인하고 서명합니다.</li>
+      <li><b>기록 보관</b> — 성분 목록과 처리 내역, 계약서를 보관합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
