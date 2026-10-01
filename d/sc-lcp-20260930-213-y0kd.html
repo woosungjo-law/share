@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>해외 발령으로 이사해야 한다면, 계약을 바로 끝낼 수 있을까?</title>
+<!-- sc-template v2 · 렌더러: _tools/sc.py build · 이 파일을 직접 고치지 말고 00_운영/app_template.html 과 시나리오 노트를 고친다 -->
+<style>
+  :root{
+    --navy:#12233f; --navy-deep:#0a1626; --accent:#c9a24b; --bg:#f4f5f7; --card:#ffffff;
+    --text:#1e232b; --muted:#5f6673; --line:#e5e7eb;
+    --g-high:#1f7a4d; --g-mid:#b7791f; --g-check:#4a5568;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    background:var(--bg);color:var(--text);min-height:100vh;
+    display:flex;align-items:flex-start;justify-content:center;padding:16px;line-height:1.55;
+    word-break:keep-all;overflow-wrap:anywhere;
+  }
+  .app{width:100%;max-width:480px;background:var(--card);border-radius:18px;box-shadow:0 8px 30px rgba(18,35,63,.12);overflow:hidden;display:flex;flex-direction:column;min-height:560px;}
+  .topbar{background:var(--navy);color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;font-size:13px;}
+  .topbar .brand{font-weight:700;letter-spacing:.02em;}
+  .progress-wrap{height:4px;background:var(--line);width:100%;}
+  .progress-bar{height:100%;background:var(--accent);width:0%;transition:width .25s ease;}
+  .screen{flex:1;padding:26px 22px 22px;display:none;flex-direction:column;animation:fadeIn .22s ease;}
+  .screen.active{display:flex;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+
+  .intro-icon{font-size:38px;margin-bottom:12px;}
+  .intro h1{font-size:22px;line-height:1.4;color:var(--navy-deep);margin-bottom:12px;}
+  .myth{background:#fbf6ea;border-left:4px solid var(--accent);border-radius:8px;padding:12px 14px;margin-bottom:14px;font-size:13.5px;color:#4a3d16;}
+  .myth b{display:block;font-size:11px;letter-spacing:.04em;color:#8a6d1f;margin-bottom:3px;}
+  .intro p{color:var(--muted);font-size:14px;margin-bottom:16px;}
+  .meta{font-size:12px;color:var(--muted);margin-bottom:20px;display:flex;gap:8px;flex-wrap:wrap;}
+  .meta span{background:var(--bg);padding:4px 10px;border-radius:20px;}
+
+  .q-count{font-size:12px;color:#8a6d1f;font-weight:700;margin-bottom:8px;letter-spacing:.03em;}
+  .q-text{font-size:19px;font-weight:700;color:var(--navy-deep);margin-bottom:8px;line-height:1.45;}
+  .q-why{font-size:12.5px;color:var(--muted);margin-bottom:18px;}
+  .options{display:flex;flex-direction:column;gap:10px;margin-top:10px;}
+  .opt-btn{text-align:left;background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;font:inherit;font-size:14.5px;color:var(--text);cursor:pointer;transition:all .15s ease;min-height:44px;width:100%;}
+  .opt-btn:hover,.opt-btn:active,.opt-btn:focus-visible{border-color:var(--accent);background:#fbf6ea;outline:none;}
+  .opt-btn.primary{text-align:center;font-weight:700;background:var(--navy);color:#fff;border:none;}
+  .opt-btn.primary:hover,.opt-btn.primary:focus-visible{background:var(--navy-deep);}
+  .back-btn{margin-top:14px;background:none;border:none;color:var(--muted);font-size:12.5px;text-align:left;cursor:pointer;min-height:36px;text-decoration:underline;}
+
+  .grade{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#fff;padding:5px 12px;border-radius:20px;margin-bottom:10px;width:fit-content;}
+  .grade.high{background:var(--g-high);} .grade.mid{background:var(--g-mid);} .grade.check{background:var(--g-check);}
+  .outcome-tag{display:inline-block;font-size:11px;font-weight:700;color:var(--navy);background:#eef1f6;padding:4px 10px;border-radius:20px;margin-bottom:10px;margin-left:6px;}
+  .outcome h2{font-size:18px;color:var(--navy-deep);margin-bottom:14px;line-height:1.5;}
+  .block{margin-bottom:15px;}
+  .block-label{font-size:12px;font-weight:700;color:#8a6d1f;margin-bottom:5px;letter-spacing:.02em;}
+  .block-body{font-size:13.5px;color:var(--text);}
+  .chips{display:flex;flex-direction:column;gap:5px;margin-bottom:6px;}
+  .chip{font-size:12.5px;background:var(--bg);border-radius:8px;padding:6px 10px;color:#3b4250;}
+  .why-line{font-size:13.5px;}
+  .vs{display:grid;gap:6px;}
+  .vs div{font-size:13px;border-radius:8px;padding:9px 12px;}
+  .vs .m{background:#f6ecec;color:#7a2f2f;} .vs .f{background:#e9f4ee;color:#1d5b3a;}
+  .vs b{display:block;font-size:10.5px;letter-spacing:.05em;margin-bottom:2px;}
+  .checklist{list-style:none;display:flex;flex-direction:column;gap:6px;}
+  .checklist li{font-size:13.5px;padding-left:22px;position:relative;}
+  .checklist li::before{content:"☐";position:absolute;left:0;color:#8a6d1f;}
+  .disclaimer{font-size:12px;color:var(--muted);background:var(--bg);border-radius:10px;padding:12px 14px;margin-bottom:14px;}
+  .actions{display:flex;flex-direction:column;gap:8px;margin-bottom:14px;}
+  .ghost-btn{background:transparent;border:1.5px solid var(--line);color:#3b4250;border-radius:10px;padding:11px;font:inherit;font-size:13px;cursor:pointer;min-height:44px;text-align:center;text-decoration:none;display:block;}
+  .ghost-btn:hover,.ghost-btn:focus-visible{border-color:var(--accent);outline:none;}
+  .cta-box{background:var(--navy);color:#fff;border-radius:12px;padding:16px 18px;font-size:13.5px;margin-top:auto;}
+  .cta-box strong{color:var(--accent);} .cta-box a{color:#fff;text-decoration:underline;}
+  .footer-mark{text-align:center;font-size:11px;color:var(--muted);padding:10px 0 16px;}
+  @media (max-width:380px){ .screen{padding:22px 16px 18px;} .q-text{font-size:18px;} }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topbar"><span class="brand">법률 자가진단</span><span id="progress-label"></span></div>
+  <div class="progress-wrap"><div class="progress-bar" id="progress-bar"></div></div>
+  <div class="screen active" id="screen"></div>
+  <div class="footer-mark" id="footer"></div>
+</div>
+
+<script id="sc-data" type="application/json">{"hook": "해외 발령으로 이사해야 한다면, 계약을 바로 끝낼 수 있을까?", "myth": "해외 발령처럼 큰 사정이 생기면 남은 임대차계약도 자동으로 끝난다", "teaser": "이사해야 하는 사정과 계약이 끝나는 시점은 별개일 수 있어요. 계약기간·중도해지 특약·서면 합의를 차례로 확인해 보세요.", "icon": "✈️", "time": "약 1분", "start": "Q1", "nq_min": 3, "nq_max": 4, "cta_lawyer": "조우성 변호사", "cta_email": "law@mustknow.co.kr", "disclaimer": "이 진단은 일반적인 법률 정보 안내이며, 구체적인 사안은 개별 상담을 통해 확인해야 합니다.", "mother_url": "https://woosungjo-law.github.io/share/d/lcp-20260930-213-adng.html", "questions": {"Q1": {"text": "계약서에 임대차 종료일이 정해져 있나요?", "why": "기간이 정해졌는지에 따라 해지통고를 보는 출발점이 달라져요.", "options": [{"label": "종료일이 정해진 계약이다", "next": "Q2"}, {"label": "종료일을 정하지 않은 계약이다", "next": "Q2"}, {"label": "계약서를 찾지 못했거나 종료일을 모르겠다", "next": "Q2"}]}, "Q2": {"text": "계약기간 중 해지할 수 있다는 특약이 있나요?", "why": "기간이 정해진 계약은 중도해지권을 따로 유보했는지가 핵심이에요.", "options": [{"label": "중도해지 또는 일정 사유 발생 시 해지 특약이 있다", "next": "Q3"}, {"label": "그런 특약이 없다", "next": "Q3"}, {"label": "특약 문구를 확인하지 못했다", "next": "Q3"}, {"label": "계약서 자체를 찾지 못해 기간과 특약을 모두 모른다", "next": "Q3"}]}, "Q3": {"text": "임대인과 계약 종료·보증금 반환일을 서면으로 합의했나요?", "why": "이사일과 계약 종료일이 다를 수 있어, 합의 내용을 문서로 남겼는지가 중요해요.", "options": [{"label": "종료일과 보증금 반환일을 서면으로 합의했다", "next": "Q4"}, {"label": "말로만 합의했다", "next": "D"}, {"label": "기간 있는 계약인데 중도해지 합의가 없다", "next": "A"}, {"label": "기간 없는 계약인데 아직 서면 합의가 없다", "next": "E"}, {"label": "기간·특약·합의 내용을 모두 확인하지 못했다", "next": "C"}]}, "Q4": {"text": "중개업소를 이용했다면 누가 중개를 의뢰했나요?", "why": "중개보수는 중개의뢰인과 관련되므로, 의뢰 주체와 별도 약속을 확인해야 해요.", "options": [{"label": "내가 새 임차인 찾기를 중개업소에 의뢰했다", "next": "B"}, {"label": "임대인이 중개업소에 의뢰했다", "next": "F"}, {"label": "누가 의뢰했는지 또는 별도 약속이 무엇인지 모르겠다", "next": "G"}]}}, "outcomes": {"A": {"grade": "check", "tag": "기간·특약 확인 필요", "title": "해외 발령만으로 계약이 바로 끝난다고 보기 어려워, 기간과 특약을 다시 확인해야 해요.", "why": "기간이 정해진 계약인데 중도해지 특약이 없다고 답하셨어요.", "fact": "이사해야 하는 사정과 계약 종료는 별개의 문제일 수 있어요.", "basis": "민법 제635조는 기간의 약정이 없는 임대차의 해지통고를 정하고, 제636조는 기간의 약정이 있는 경우에도 당사자가 기간 중 해지할 권리를 보류한 때에 전조를 준용한다고 정합니다.", "caution": "계약기간이 남았는데 먼저 이사했다고 계약이 자동 종료됐다고 단정하지 마세요.", "checklist": ["계약서의 시작일·종료일과 갱신 여부를 표시하세요.", "중도해지 특약과 해외 발령 관련 약정을 다시 읽어 보세요.", "임대인에게 보낼 통지와 정산 항목을 서면으로 준비하세요."], "disclaimer": "", "cta": ""}, "B": {"grade": "high", "tag": "서면 합의·수수료 확인", "title": "종료 합의와 중개 의뢰 자료를 갖췄다면, 정산 조건을 구체화할 단계예요.", "why": "계약 종료·보증금 반환일을 서면으로 합의했고, 중개 의뢰 주체도 확인했다고 답하셨어요.", "fact": "해외 발령 사정을 설명하는 것보다 종료일·반환일·비용을 문서로 확정하는 일이 중요해요.", "basis": "민법 제635조·제636조에 따라 계약기간과 중도해지권 유보 특약을 확인해야 하고, 공인중개사법 제32조는 개업공인중개사가 중개의뢰인으로부터 중개업무에 관한 보수를 받는다고 정합니다.", "caution": "중개보수의 구체적인 한도·금액은 대상과 관련 규정에 따라 달라질 수 있어 여기서 단정하지 않아요.", "checklist": ["계약 종료일과 보증금 반환일을 합의서에 남기세요.", "수리·미납 차임·중개보수의 부담 주체와 지급 시점을 적으세요.", "계약서·합의서·문자·입금내역을 한곳에 보관하세요.", "중개보수 금액과 지급 시점은 별도 안내·약정까지 확인하세요."], "disclaimer": "", "cta": ""}, "C": {"grade": "check", "tag": "계약서 재확인", "title": "계약기간과 중도해지 특약을 확인하기 전에는 이사 일정을 확정하지 않는 편이 안전해요.", "why": "계약기간 또는 특약 문구를 아직 확인하지 못했다고 답하셨어요.", "fact": "먼저 이사하는 것과 계약을 끝내는 것은 같지 않을 수 있어요.", "basis": "민법 제635조는 기간의 약정 없는 임대차의 해지통고를, 제636조는 기간이 있는 임대차에서 중도해지권을 유보한 경우를 정합니다.", "caution": "계약서를 확인하지 못한 상태에서 해외 발령만으로 해지 가능하다고 결론 내리지 마세요.", "checklist": ["원계약서와 갱신계약서를 찾아 종료일을 확인하세요.", "중도해지·이전·해외 발령 관련 특약을 표시하세요.", "임대인과 합의할 종료일·보증금 반환일·비용 항목을 정리하세요."], "disclaimer": "", "cta": ""}, "D": {"grade": "mid", "tag": "구두 합의 보강", "title": "구두 합의가 있었다면, 계약 종료일과 정산 조건을 문서로 다시 남겨야 해요.", "why": "임대인과 말로는 합의했지만 서면 기록이 없다고 답하셨어요.", "fact": "이사일·계약 종료일·보증금 반환일은 서로 다를 수 있어 문서화가 핵심이에요.", "basis": "민법 제635조·제636조에 따라 해지통고와 중도해지 특약을 계약기간과 함께 확인해야 합니다. 마더는 종료 합의의 실무 자료를 서면으로 남기도록 안내합니다.", "caution": "서면 확인 전에는 계약이 끝났다고 단정하지 않는 편이 안전해요.", "checklist": ["합의한 종료일과 보증금 반환일을 문자나 합의서로 확인하세요.", "수리비·미납 차임·중개보수 부담을 항목별로 적으세요.", "임대인의 답변과 이사 예정일을 함께 보관하세요."], "disclaimer": "", "cta": ""}, "E": {"grade": "mid", "tag": "종료 합의 필요", "title": "아직 계약 종료 합의가 없다면, 이사 전에 정산 조건부터 협의해야 해요.", "why": "계약 종료일과 보증금 반환일을 아직 합의하지 못했다고 답하셨어요.", "fact": "해외로 출국해야 하는 사정이 있어도 계약 종료와 정산이 자동으로 정해지는 것은 아니에요.", "basis": "민법 제635조·제636조에 따라 계약기간과 중도해지권 유보 특약을 먼저 확인해야 합니다.", "caution": "이사부터 한 뒤 계약이 자동으로 끝났다고 생각하지 않도록 상담 자료를 준비하세요.", "checklist": ["계약서의 남은 기간과 중도해지 특약을 확인하세요.", "임대인에게 종료 희망일·보증금 반환일·정산 항목을 서면으로 보내세요.", "합의되지 않은 항목은 미합의로 표시하세요."], "disclaimer": "", "cta": ""}, "F": {"grade": "mid", "tag": "중개 의뢰 확인", "title": "임대인이 중개를 의뢰했다면, 별도 약속과 청구 주체를 문서로 확인하세요.", "why": "임대인이 중개업소에 의뢰했다고 답하셨어요.", "fact": "중개보수는 누가 중개의뢰인인지와 별도 약속이 무엇인지 확인해야 해요.", "basis": "공인중개사법 제32조는 개업공인중개사가 중개업무에 관하여 중개의뢰인으로부터 소정의 보수를 받는다고 정합니다.", "caution": "누가 비용을 부담하는지는 별도 약정과 구체적인 중개 관계를 함께 확인해야 해요.", "checklist": ["중개 의뢰인과 중개보수 청구 대상을 확인하세요.", "수수료 금액과 지급 시점을 문자·계약서로 남기세요.", "임대인과의 계약 종료 합의와 중개업소 안내를 분리해 보관하세요."], "disclaimer": "", "cta": ""}, "G": {"grade": "check", "tag": "수수료 자료 확인", "title": "중개보수 부담을 정하기 전에 의뢰 주체와 청구 내용을 먼저 확인해야 해요.", "why": "중개를 누가 의뢰했는지 또는 별도 약속이 무엇인지 모른다고 답하셨어요.", "fact": "중개업소의 구두 안내만으로 비용 부담을 확정하지 말고 자료를 맞춰 보세요.", "basis": "공인중개사법 제32조는 중개업무에 관한 보수를 중개의뢰인으로부터 받는 구조를 정합니다.", "caution": "구체적인 수수료 금액은 관련 규정과 거래 유형을 확인하기 전에는 단정하지 않아요.", "checklist": ["중개 의뢰 메시지와 계약서의 의뢰 주체를 확인하세요.", "수수료 청구서가 누구 앞으로 왔는지 보관하세요.", "금액·지급 시점·별도 합의를 서면으로 확인하세요."], "disclaimer": "", "cta": ""}}}</script>
+<script>
+"use strict";
+var D = JSON.parse(document.getElementById("sc-data").textContent);
+var GRADE = {high:"가능성 높음", mid:"살펴볼 것", check:"확인 필요"};
+var screenEl = document.getElementById("screen");
+var pathStack = [];          // [{qid, qtext, label}]
+
+function h(tag, cls, text){
+  var e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(text !== undefined && text !== null) e.textContent = text;
+  return e;
+}
+function clearScreen(){ while(screenEl.firstChild) screenEl.removeChild(screenEl.firstChild); screenEl.className = "screen active"; window.scrollTo(0,0); }
+
+function setProgress(step, done){
+  var bar = document.getElementById("progress-bar");
+  var lab = document.getElementById("progress-label");
+  if(done){ bar.style.width = "100%"; lab.textContent = "진단 완료"; return; }
+  if(step === 0){ bar.style.width = "0%"; lab.textContent = ""; return; }
+  bar.style.width = Math.min(100, Math.round(step / D.nq_max * 100)) + "%";
+  lab.textContent = "질문 " + step;
+}
+
+function showIntro(){
+  pathStack = []; clearScreen(); setProgress(0);
+  var wrap = h("div","intro");
+  wrap.appendChild(h("div","intro-icon", D.icon || "⚖️"));
+  wrap.appendChild(h("h1","", D.hook));
+  if(D.myth){
+    var m = h("div","myth"); m.appendChild(h("b","","많은 분들이 이렇게 알고 있어요")); m.appendChild(document.createTextNode("“" + D.myth + "”"));
+    wrap.appendChild(m);
+  }
+  if(D.teaser) wrap.appendChild(h("p","", D.teaser));
+  var meta = h("div","meta");
+  [D.time || "약 1분", "객관식 질문 최대 " + D.nq_max + "개", "답변은 저장·전송되지 않아요"].forEach(function(t){ meta.appendChild(h("span","",t)); });
+  wrap.appendChild(meta);
+  var b = h("button","opt-btn primary","진단 시작하기"); b.type = "button";
+  b.onclick = function(){ goTo(D.start); };
+  wrap.appendChild(b);
+  screenEl.appendChild(wrap);
+}
+
+function goTo(id){
+  if(D.outcomes[id]) return showOutcome(id);
+  showQuestion(id);
+}
+
+function showQuestion(qid){
+  var q = D.questions[qid];
+  clearScreen();
+  var step = pathStack.length + 1;
+  setProgress(step);
+  screenEl.appendChild(h("div","q-count","질문 " + step));
+  screenEl.appendChild(h("div","q-text", q.text));
+  if(q.why) screenEl.appendChild(h("div","q-why", q.why));
+  var box = h("div","options");
+  q.options.forEach(function(o){
+    var b = h("button","opt-btn", o.label); b.type = "button";
+    b.onclick = function(){ pathStack.push({qid:qid, qtext:q.text, label:o.label}); goTo(o.next); };
+    box.appendChild(b);
+  });
+  screenEl.appendChild(box);
+  var back = h("button","back-btn", pathStack.length ? "← 이전 질문으로" : "← 처음으로"); back.type = "button";
+  back.onclick = function(){
+    if(!pathStack.length) return showIntro();
+    var last = pathStack.pop(); showQuestion(last.qid);
+  };
+  screenEl.appendChild(back);
+}
+
+function copyText(text, btn){
+  function ok(){ var o = btn.textContent; btn.textContent = "복사했어요 ✓"; setTimeout(function(){ btn.textContent = o; }, 1800); }
+  function fallback(){
+    var t = document.createElement("textarea"); t.value = text; t.style.position = "fixed"; t.style.opacity = "0";
+    document.body.appendChild(t); t.select();
+    try{ document.execCommand("copy"); ok(); }catch(e){ btn.textContent = "복사 실패 — 직접 선택해 주세요"; }
+    document.body.removeChild(t);
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(ok, fallback); } else { fallback(); }
+}
+
+function block(label, bodyNode){
+  var b = h("div","block"); b.appendChild(h("div","block-label",label)); b.appendChild(bodyNode); return b;
+}
+
+function showOutcome(oid){
+  var o = D.outcomes[oid];
+  clearScreen(); setProgress(0, true);
+  var head = h("div");
+  var g = h("span","grade " + o.grade, "● " + GRADE[o.grade]);
+  head.appendChild(g);
+  if(o.tag) head.appendChild(h("span","outcome-tag", o.tag));
+  screenEl.appendChild(head);
+  var wrap = h("div","outcome");
+  wrap.appendChild(h("h2","", o.title));
+
+  /* 왜 이 결과인가 — 내가 고른 답 + 근거 1줄 */
+  var why = h("div");
+  var chips = h("div","chips");
+  pathStack.forEach(function(p){ chips.appendChild(h("div","chip","· " + p.label)); });
+  why.appendChild(chips);
+  why.appendChild(h("div","why-line", o.why));
+  wrap.appendChild(block("🔎 왜 이 결과인가요?", why));
+
+  if(o.fact && D.myth){
+    var vs = h("div","vs");
+    var m = h("div","m"); m.appendChild(h("b","","통념")); m.appendChild(document.createTextNode(D.myth));
+    var f = h("div","f"); f.appendChild(h("b","","이 경우엔")); f.appendChild(document.createTextNode(o.fact));
+    vs.appendChild(m); vs.appendChild(f);
+    wrap.appendChild(block("💡 통념 vs 사실", vs));
+  }
+  wrap.appendChild(block("📖 법적 근거", h("div","block-body", o.basis)));
+  if(o.checklist && o.checklist.length){
+    var ul = h("ul","checklist"); o.checklist.forEach(function(c){ ul.appendChild(h("li","",c)); });
+    wrap.appendChild(block("✅ 지금 해볼 것", ul));
+  }
+  wrap.appendChild(block("⚠️ 주의할 점", h("div","block-body", o.caution)));
+  wrap.appendChild(h("div","disclaimer", o.disclaimer || D.disclaimer));
+  screenEl.appendChild(wrap);
+
+  var actions = h("div","actions");
+  var cp = h("button","ghost-btn","📋 결과 요약 복사하기"); cp.type = "button";
+  cp.onclick = function(){
+    var t = "[법률 자가진단] " + D.hook + "\n결과: " + GRADE[o.grade] + " — " + o.title + "\n※ 일반적인 법률 정보이며 개별 사안은 상담이 필요합니다.\n" + location.href;
+    copyText(t, cp);
+  };
+  actions.appendChild(cp);
+  if(D.mother_url){
+    var a = h("a","ghost-btn","📰 원문 컬럼 읽어보기"); a.href = D.mother_url; a.target = "_blank"; a.rel = "noopener"; actions.appendChild(a);
+  }
+  var rs = h("button","ghost-btn","↺ 처음부터 다시"); rs.type = "button"; rs.onclick = showIntro;
+  actions.appendChild(rs);
+  screenEl.appendChild(actions);
+
+  var cta = h("div","cta-box");
+  cta.appendChild(document.createTextNode((o.cta || "지금 상황을 구체적으로 확인하고 싶다면") + " "));
+  var s = h("strong","", D.cta_lawyer);
+  cta.appendChild(s);
+  cta.appendChild(document.createTextNode("("));
+  var ml = h("a","", D.cta_email); ml.href = "mailto:" + D.cta_email; cta.appendChild(ml);
+  cta.appendChild(document.createTextNode(")에게 문의하세요."));
+  screenEl.appendChild(cta);
+}
+
+document.getElementById("footer").textContent = "제공 : " + D.cta_lawyer + " 법률사무소";
+showIntro();
+</script>
+</body>
+</html>
