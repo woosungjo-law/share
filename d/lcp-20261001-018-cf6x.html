@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>계약 전에 쓴 돈, 다 돌려받을 수 있다고 믿기보다 통상손해와 특별손해로 나눠 봐야 한다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 계약 전 지출 손해배상 체크포인트</div>
+    <h1>계약 전에 쓴 돈, 다 돌려받을 수 있다고 믿기보다 통상손해와 특별손해로 나눠 봐야 한다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> 계약을 믿고 미리 쓴 돈이라고 전부 배상되는 것은 아닙니다. 민법 제393조의 통상손해·특별손해 구분과 제396조의 채권자 과실을 기준으로 지출의 성격, 상대방에게 알린 내용, 손해를 줄이려 한 조치를 함께 확인해야 합니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      김하랑 씨는 가맹점 계약을 준비하며 보증금·인테리어비·교육비를 먼저 썼지만 계약 직전 본부의 조건 변경으로 준비가 무산됐습니다. 그는 모든 비용을 돌려받을 수 있다고 생각했지만, 비용의 통상성·상대방의 인식·계속 지출한 경위를 나눠 보기로 했습니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    민법 제393조 제1항은 채무불이행 손해배상의 범위를 통상의 손해로 정하고, 제2항은 특별한 사정으로 인한 손해는 채무자가 그 사정을 알았거나 알 수 있었을 때에만 배상책임을 진다고 정합니다.
+    민법 제396조는 채무불이행에 채권자의 과실이 있으면 법원이 책임과 금액을 정할 때 참작하도록 합니다. 이행이 어려운 징후가 있는데도 지출을 계속 키웠다면 그 부분이 감액될 수 있습니다.
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>지출의 성격과 상대방의 인식을 나눕니다</h2>
+    <ul class="points">
+      <li><b>통상·특별 지출 분류</b> — 계약에서 보통 생기는 비용과 이례적으로 큰 비용을 나눕니다.</li>
+      <li><b>지출 규모 알리기</b> — 상대방에게 무엇을 언제 얼마나 지출하는지 알린 기록을 보관합니다.</li>
+      <li><b>손해 경감 기록</b> — 상대방의 이행 곤란을 안 뒤 지출을 멈추거나 줄인 조치를 적습니다.</li>
+      <li><b>계약 조항 확인</b> — 손해배상 범위와 특별한 비용을 알리는 조항을 확인합니다.</li>
+    </ul>
+    <div class="callout">특별손해는 지출이 컸다는 사실만으로 인정되는 것이 아닙니다. 상대방이 그 사정을 알았거나 알 수 있었는지와 손해를 줄이려 한 노력이 함께 문제됩니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;">지금 당장 확인할 일 — 지출을 나누고 알린 기록을 남깁니다.</p>
+    <ol>
+      <li><b>비용 분류</b> — 통상적인 지출과 이례적 지출을 나눕니다.</li>
+      <li><b>증빙 정리</b> — 영수증·계약서·견적서를 항목별로 모읍니다.</li>
+      <li><b>통지 기록</b> — 지출 규모를 알린 기록을 보관합니다.</li>
+      <li><b>경감 조치</b> — 손해를 줄이려 한 조치와 시점을 적습니다.</li>
+      <li><b>계약 확인</b> — 배상 범위와 통지 조항을 확인합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
