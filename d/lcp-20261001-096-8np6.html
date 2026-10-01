@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>원고를 고쳐 영상으로 만들기, 자유로운 수정이 아니라 허락 범위의 문제다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 2차적저작물 이용 체크포인트</div>
+    <h1>원고를 고쳐 영상으로 만들기, 자유로운 수정이 아니라 허락 범위의 문제다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> 얼마나 고쳤는지가 아니라 어떤 권리를 허락받았는지가 먼저입니다. 원저작물을 바탕으로 실질적 유사성을 유지하며 새 창작성이 더해지면 2차적저작물 문제가 생길 수 있고, 허락받더라도 그 이용방법과 조건의 범위 안에서만 쓸 수 있습니다. 공개 전에 허락 문장을 한 줄씩 대조하세요.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      민지는 자신이 쓴 글을 바탕으로 짧은 영상을 만들었습니다. 원고의 문장을 그대로 읽지는 않았고, 장면과 대사를 새로 붙였으니 괜찮다고 생각했습니다. 그런데 원고를 사용한 방식이 처음 약속한 전자책 이용 범위를 넘어섰다는 연락을 받았습니다. 민지는 얼마나 바꿨는지만 설명하려 했지만, 먼저 확인해야 할 것은 어떤 권리를 허락받았는지였습니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    원저작물을 바탕으로 하면서 원저작물과 실질적 유사성을 유지하고 새로운 창작성이 더해지면 2차적저작물 문제가 생길 수 있습니다(저작권법 제5조). 글을 영상으로 바꿨다는 사실만으로 허용되거나 금지된다고 단정할 수는 없습니다. 원저작자의 2차적저작물작성권과 동의 범위가 어떻게 정해졌는지는 계약서와 실제 변경 내용을 같이 확인해야 합니다.
+    허락의 범위는 계약 문구에 달려 있습니다. 저작재산권자로부터 이용허락을 받았더라도 허락받은 이용방법과 조건의 범위 안에서만 사용할 수 있습니다(저작권법 제46조). 전자책을 만들 수 있다는 약속이 영상·오디오·번역까지 포함하는지는 계약 문구에 달려 있습니다. 매체, 지역, 언어, 기간, 2차적저작물 작성과 이용 여부를 따로 적었는지 확인합니다.
+    기록은 힘이 됩니다. 민지는 원고 원본, 상대방에게 보낸 파일, 영상 대본과 메시지를 모았습니다. 원고에 남은 표현과 새로 만든 장면을 나누어 표시하자 무엇이 원고를 바탕으로 했고 무엇이 새로 만들어졌는지 보였습니다. 이 기록은 상대방과 허락 범위를 다시 협의할 때도 도움이 됩니다.
+    묻는 방법에도 기준이 있습니다. '제가 써도 되나요?'처럼 넓게 묻기보다 '이 원고를 영상으로 각색하고 온라인에 공개하는 것까지 허락한 것인가요?'처럼 매체와 이용방법을 나누어 질문합니다. 답변이 구두로만 오면 날짜와 범위를 확인하는 메시지를 다시 보내고, 상대방의 답변과 계약서를 함께 보관합니다.
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>수정량이 아니라 허락 문장이 기준이다</h2>
+    <ul class="points">
+      <li><b>원본 보관</b> — 원고·수정본·대본·영상 파일과 전달 메시지를 함께 보관합니다.</li>
+      <li><b>변경 표시</b> — 원고와 실질적으로 유사한 부분, 새롭게 창작한 부분을 구분합니다(저작권법 제5조).</li>
+      <li><b>허락 확인</b> — 저작권법 제46조에 따라 영상·오디오·번역 등 실제 이용이 계약 범위에 들어가는지 확인합니다.</li>
+      <li><b>동의 질문</b> — 동의 범위가 불명확하면 추가 허락을 받고, 확인 전에는 단정하지 않습니다.</li>
+      <li><b>공개 순서</b> — 허락되지 않은 매체의 공개·배포는 답변과 기록을 받은 뒤 진행합니다.</li>
+    </ul>
+    <div class="callout">나중에 분쟁이 생기면 수정한 양보다 어떤 허락을 받았는지가 먼저 문제될 수 있습니다. 영상을 당장 공개하지 말고 계약서의 이용 범위부터 표시하세요.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;">지금 당장 확인할 일 — 원고와 허락 문장을 한 줄씩 대조합니다.</p>
+    <ol>
+      <li><b>원본 보관</b> — 원고·수정본·대본·영상 파일과 전달 메시지를 함께 보관합니다.</li>
+      <li><b>변경 표시</b> — 원고와 실질적으로 유사한 부분, 새롭게 창작한 부분을 구분합니다(저작권법 제5조).</li>
+      <li><b>허락 확인</b> — 저작권법 제46조에 따라 실제 이용이 계약 범위에 들어가는지 확인합니다.</li>
+      <li><b>동의 질문</b> — 매체와 이용방법을 나누어 구체적으로 묻고, 답변과 계약서를 함께 보관합니다.</li>
+      <li><b>공개 순서</b> — 허락이 확인된 뒤 공개·배포를 진행합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
