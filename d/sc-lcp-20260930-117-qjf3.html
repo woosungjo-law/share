@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>남이 쓰는 내 땅, 가처분 결정만 받으면 시효가 멈출까?</title>
+<!-- sc-template v2 · 렌더러: _tools/sc.py build · 이 파일을 직접 고치지 말고 00_운영/app_template.html 과 시나리오 노트를 고친다 -->
+<style>
+  :root{
+    --navy:#12233f; --navy-deep:#0a1626; --accent:#c9a24b; --bg:#f4f5f7; --card:#ffffff;
+    --text:#1e232b; --muted:#5f6673; --line:#e5e7eb;
+    --g-high:#1f7a4d; --g-mid:#b7791f; --g-check:#4a5568;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    background:var(--bg);color:var(--text);min-height:100vh;
+    display:flex;align-items:flex-start;justify-content:center;padding:16px;line-height:1.55;
+    word-break:keep-all;overflow-wrap:anywhere;
+  }
+  .app{width:100%;max-width:480px;background:var(--card);border-radius:18px;box-shadow:0 8px 30px rgba(18,35,63,.12);overflow:hidden;display:flex;flex-direction:column;min-height:560px;}
+  .topbar{background:var(--navy);color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;font-size:13px;}
+  .topbar .brand{font-weight:700;letter-spacing:.02em;}
+  .progress-wrap{height:4px;background:var(--line);width:100%;}
+  .progress-bar{height:100%;background:var(--accent);width:0%;transition:width .25s ease;}
+  .screen{flex:1;padding:26px 22px 22px;display:none;flex-direction:column;animation:fadeIn .22s ease;}
+  .screen.active{display:flex;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+
+  .intro-icon{font-size:38px;margin-bottom:12px;}
+  .intro h1{font-size:22px;line-height:1.4;color:var(--navy-deep);margin-bottom:12px;}
+  .myth{background:#fbf6ea;border-left:4px solid var(--accent);border-radius:8px;padding:12px 14px;margin-bottom:14px;font-size:13.5px;color:#4a3d16;}
+  .myth b{display:block;font-size:11px;letter-spacing:.04em;color:#8a6d1f;margin-bottom:3px;}
+  .intro p{color:var(--muted);font-size:14px;margin-bottom:16px;}
+  .meta{font-size:12px;color:var(--muted);margin-bottom:20px;display:flex;gap:8px;flex-wrap:wrap;}
+  .meta span{background:var(--bg);padding:4px 10px;border-radius:20px;}
+
+  .q-count{font-size:12px;color:#8a6d1f;font-weight:700;margin-bottom:8px;letter-spacing:.03em;}
+  .q-text{font-size:19px;font-weight:700;color:var(--navy-deep);margin-bottom:8px;line-height:1.45;}
+  .q-why{font-size:12.5px;color:var(--muted);margin-bottom:18px;}
+  .options{display:flex;flex-direction:column;gap:10px;margin-top:10px;}
+  .opt-btn{text-align:left;background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;font:inherit;font-size:14.5px;color:var(--text);cursor:pointer;transition:all .15s ease;min-height:44px;width:100%;}
+  .opt-btn:hover,.opt-btn:active,.opt-btn:focus-visible{border-color:var(--accent);background:#fbf6ea;outline:none;}
+  .opt-btn.primary{text-align:center;font-weight:700;background:var(--navy);color:#fff;border:none;}
+  .opt-btn.primary:hover,.opt-btn.primary:focus-visible{background:var(--navy-deep);}
+  .back-btn{margin-top:14px;background:none;border:none;color:var(--muted);font-size:12.5px;text-align:left;cursor:pointer;min-height:36px;text-decoration:underline;}
+
+  .grade{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#fff;padding:5px 12px;border-radius:20px;margin-bottom:10px;width:fit-content;}
+  .grade.high{background:var(--g-high);} .grade.mid{background:var(--g-mid);} .grade.check{background:var(--g-check);}
+  .outcome-tag{display:inline-block;font-size:11px;font-weight:700;color:var(--navy);background:#eef1f6;padding:4px 10px;border-radius:20px;margin-bottom:10px;margin-left:6px;}
+  .outcome h2{font-size:18px;color:var(--navy-deep);margin-bottom:14px;line-height:1.5;}
+  .block{margin-bottom:15px;}
+  .block-label{font-size:12px;font-weight:700;color:#8a6d1f;margin-bottom:5px;letter-spacing:.02em;}
+  .block-body{font-size:13.5px;color:var(--text);}
+  .chips{display:flex;flex-direction:column;gap:5px;margin-bottom:6px;}
+  .chip{font-size:12.5px;background:var(--bg);border-radius:8px;padding:6px 10px;color:#3b4250;}
+  .why-line{font-size:13.5px;}
+  .vs{display:grid;gap:6px;}
+  .vs div{font-size:13px;border-radius:8px;padding:9px 12px;}
+  .vs .m{background:#f6ecec;color:#7a2f2f;} .vs .f{background:#e9f4ee;color:#1d5b3a;}
+  .vs b{display:block;font-size:10.5px;letter-spacing:.05em;margin-bottom:2px;}
+  .checklist{list-style:none;display:flex;flex-direction:column;gap:6px;}
+  .checklist li{font-size:13.5px;padding-left:22px;position:relative;}
+  .checklist li::before{content:"☐";position:absolute;left:0;color:#8a6d1f;}
+  .disclaimer{font-size:12px;color:var(--muted);background:var(--bg);border-radius:10px;padding:12px 14px;margin-bottom:14px;}
+  .actions{display:flex;flex-direction:column;gap:8px;margin-bottom:14px;}
+  .ghost-btn{background:transparent;border:1.5px solid var(--line);color:#3b4250;border-radius:10px;padding:11px;font:inherit;font-size:13px;cursor:pointer;min-height:44px;text-align:center;text-decoration:none;display:block;}
+  .ghost-btn:hover,.ghost-btn:focus-visible{border-color:var(--accent);outline:none;}
+  .cta-box{background:var(--navy);color:#fff;border-radius:12px;padding:16px 18px;font-size:13.5px;margin-top:auto;}
+  .cta-box strong{color:var(--accent);} .cta-box a{color:#fff;text-decoration:underline;}
+  .footer-mark{text-align:center;font-size:11px;color:var(--muted);padding:10px 0 16px;}
+  @media (max-width:380px){ .screen{padding:22px 16px 18px;} .q-text{font-size:18px;} }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topbar"><span class="brand">법률 자가진단</span><span id="progress-label"></span></div>
+  <div class="progress-wrap"><div class="progress-bar" id="progress-bar"></div></div>
+  <div class="screen active" id="screen"></div>
+  <div class="footer-mark" id="footer"></div>
+</div>
+
+<script id="sc-data" type="application/json">{"hook": "남이 쓰는 내 땅, 가처분 결정만 받으면 시효가 멈출까?", "myth": "점유이전금지가처분 결정을 받으면 취득시효는 바로 멈춘다", "teaser": "결정을 받은 날과 상대방에게 효력이 생긴 날은 다를 수 있어요. 집행·통지와 시점을 1분 안에 확인해 보세요.", "icon": "🚧", "time": "약 1분", "start": "Q1", "nq_min": 3, "nq_max": 4, "cta_lawyer": "조우성 변호사", "cta_email": "law@mustknow.co.kr", "disclaimer": "이 진단은 일반적인 법률 정보 안내이며, 구체적인 사안은 개별 상담을 통해 확인해야 합니다.", "mother_url": "https://woosungjo-law.github.io/share/d/lcp-20260930-117-i04k.html", "questions": {"Q1": {"text": "지금 내 상황은 어디에 가장 가까운가요?", "why": "취득시효를 막을 필요와 가처분 진행 상태에 따라 먼저 볼 자료가 달라져요.", "options": [{"label": "상대방이 내 땅을 오래 점유하고 있어 시효 완성이 걱정된다", "next": "Q2"}, {"label": "시효가 언제 완성되는지 아직 모른다", "next": "Q2"}, {"label": "가처분 결정을 이미 받았다", "next": "Q2"}, {"label": "아직 가처분을 신청하지 않았다", "next": "Q2"}]}, "Q2": {"text": "점유이전금지가처분의 현재 단계와 시효 시점은 어디에 가까운가요?", "why": "결정 전이라도 취득시효 완성 시점과 현재 절차를 함께 확인해야 해요.", "options": [{"label": "아직 신청 전이거나 신청했지만 결정 전이고, 완성 전이다", "next": "Q3"}, {"label": "아직 신청 전이거나 결정 전인데, 완성 시점이 임박했거나 모른다", "next": "Q3"}, {"label": "결정을 받았지만 집행·통지는 확인하지 못했다", "next": "Q3"}, {"label": "결정을 받았고 집행 또는 통지를 했다", "next": "Q3"}]}, "Q3": {"text": "현재 확인되는 집행·통지와 시점은 무엇인가요?", "why": "결정 전이든 결정 후든 상대방에 대한 조치와 취득시효 시점을 함께 맞춰야 해요.", "options": [{"label": "아직 집행·통지 전이고, 완성 전임을 확인했다", "next": "B"}, {"label": "아직 집행·통지 전이고, 완성 시점이 임박했거나 모른다", "next": "E"}, {"label": "결정만 있거나 조치 여부·완성 시점을 모르겠다", "next": "C"}, {"label": "상대방에 대한 집행 또는 통지를 확인했다", "next": "Q4"}]}, "Q4": {"text": "집행 또는 통지가 취득시효 완성 전에 이뤄졌나요?", "why": "마더가 말하는 효력의 실익은 시효가 완성되기 전인지에 따라 달라져요.", "options": [{"label": "완성 전에 이뤄졌다", "next": "A"}, {"label": "완성 뒤에 이뤄졌다", "next": "D"}, {"label": "완성 시점과 조치 시점을 비교하지 못했다", "next": "E"}]}}, "outcomes": {"A": {"grade": "high", "tag": "집행·통지 확인", "title": "완성 전 집행·통지를 확인했다면, 시효중단을 검토할 핵심 자료가 갖춰진 상황이에요.", "why": "가처분 조치가 취득시효 완성 전에 이뤄졌다고 답하셨어요.", "fact": "가처분은 결정을 받는 것만으로 끝나는 것이 아니라, 상대방에 대한 집행 또는 통지가 중요해요.", "basis": "민법 제247조 제2항은 취득시효에 소멸시효 중단 규정을 준용하고, 제176조는 가처분을 시효의 이익을 받는 자에게 직접 하지 않았으면 그에게 통지한 후가 아니면 시효중단의 효력이 없다고 정합니다.", "caution": "시효중단 여부는 실제 집행·통지 내용과 시점에 따라 판단되므로, 결정문만으로 효력을 단정하지 마세요.", "checklist": ["가처분 결정문과 집행 관련 기록을 보관하세요.", "상대방에게 통지한 날짜와 방법을 남기세요.", "취득시효 완성 예상일과 조치일을 같은 달력에 표시하세요.", "가처분 뒤 본안에서 권리를 다투는 절차를 이어갈지 확인하세요."], "disclaimer": "", "cta": ""}, "B": {"grade": "mid", "tag": "가처분 절차 준비", "title": "아직 집행·통지 전이라면, 결정과 상대방에 대한 조치를 함께 준비해야 해요.", "why": "가처분을 신청했거나 준비 중이지만 상대방에 대한 조치가 아직 확인되지 않았어요.", "fact": "취득시효를 막는 문제에서는 소송을 생각하는 것만으로 시효가 멈춘다고 볼 수 없어요.", "basis": "민법 제247조 제2항에 따라 취득시효에는 소멸시효 중단 규정이 준용되고, 민법 제176조는 가처분이 시효의 이익을 받는 자에게 직접 이뤄지지 않은 경우 통지 전에는 시효중단 효력이 없다고 정합니다.", "caution": "시효 완성 시점과 집행·통지 시점이 불명확하면 결론을 서두르지 말고 자료를 먼저 맞춰 보세요.", "checklist": ["점유 시작 시점과 취득시효 완성 예상 시점을 확인하세요.", "가처분 신청·결정·집행 단계별 날짜를 기록하세요.", "상대방에게 조치가 전달됐는지 확인할 자료를 보관하세요."], "disclaimer": "", "cta": ""}, "C": {"grade": "check", "tag": "집행·통지 확인 필요", "title": "가처분 결정만으로 시효가 멈췄다고 보기 어려워, 집행·통지를 먼저 확인해야 해요.", "why": "결정은 받았지만 상대방에 대한 집행 또는 통지가 확인되지 않았어요.", "fact": "결정문을 보관하는 것과 상대방에게 조치가 효력을 갖는 것은 같은 일이 아닐 수 있어요.", "basis": "민법 제176조는 가처분을 시효의 이익을 받는 자에게 하지 않은 경우 그에게 통지한 후가 아니면 시효중단의 효력이 없다고 정합니다.", "caution": "조치가 실제로 누구에게 언제 어떻게 이뤄졌는지가 확인되지 않으면 적용 여부를 판단하기 어려워요.", "checklist": ["집행조서·송달자료·통지 내역을 찾아보세요.", "결정일, 집행·통지일, 취득시효 완성 예상일을 나란히 적으세요.", "자료가 없으면 가처분 결정만으로 결론을 내리지 마세요."], "disclaimer": "", "cta": ""}, "D": {"grade": "check", "tag": "시점 재검토", "title": "집행·통지가 완성 뒤였다면, 시효 완성 시점을 먼저 다시 확인해야 해요.", "why": "상대방에 대한 조치가 취득시효 완성 뒤였다고 답하셨어요.", "fact": "조치를 했다는 사실만으로 완성 전의 효력이 거슬러 올라간다고 단정할 수는 없어요.", "basis": "민법 제176조는 가처분의 시효중단 효력이 생기는 요건을 정하고, 민법 제247조 제2항은 그 규정을 취득시효에 준용합니다. 따라서 조치일과 완성 시점의 선후를 다시 확인해야 합니다.", "caution": "시효 완성 여부는 구체적인 점유와 기간 자료에 따라 달라질 수 있어, 결과를 단정하지 마세요.", "checklist": ["점유 시작일과 시효 완성 계산의 전제를 다시 확인하세요.", "집행·통지일을 객관적 자료로 특정하세요.", "완성 시점이 다투어질 수 있으면 본안 대응 자료를 준비하세요."], "disclaimer": "", "cta": ""}, "E": {"grade": "mid", "tag": "날짜 대조 필요", "title": "집행·통지와 시효 완성의 선후를 대조해야 다음 판단으로 넘어갈 수 있어요.", "why": "조치는 했지만 취득시효 완성 전인지 비교하지 못했다고 답하셨어요.", "fact": "이 문제에서는 '했는가'뿐 아니라 '언제 했는가'가 결과를 가를 수 있어요.", "basis": "민법 제247조 제2항에 따라 취득시효에 소멸시효 중단 규정이 준용되고, 제176조는 가처분의 집행·통지 전에는 시효중단 효력이 없다고 정합니다.", "caution": "날짜가 하나라도 빠지면 효력 판단이 달라질 수 있으므로 전문가에게 자료 전체를 보여 주세요.", "checklist": ["점유 시작일과 중단 조치일을 각각 자료로 확인하세요.", "취득시효 완성 예상일을 계산한 전제를 적어 두세요.", "집행 또는 통지의 상대방·방법·일자를 확인하세요."], "disclaimer": "", "cta": ""}}}</script>
+<script>
+"use strict";
+var D = JSON.parse(document.getElementById("sc-data").textContent);
+var GRADE = {high:"가능성 높음", mid:"살펴볼 것", check:"확인 필요"};
+var screenEl = document.getElementById("screen");
+var pathStack = [];          // [{qid, qtext, label}]
+
+function h(tag, cls, text){
+  var e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(text !== undefined && text !== null) e.textContent = text;
+  return e;
+}
+function clearScreen(){ while(screenEl.firstChild) screenEl.removeChild(screenEl.firstChild); screenEl.className = "screen active"; window.scrollTo(0,0); }
+
+function setProgress(step, done){
+  var bar = document.getElementById("progress-bar");
+  var lab = document.getElementById("progress-label");
+  if(done){ bar.style.width = "100%"; lab.textContent = "진단 완료"; return; }
+  if(step === 0){ bar.style.width = "0%"; lab.textContent = ""; return; }
+  bar.style.width = Math.min(100, Math.round(step / D.nq_max * 100)) + "%";
+  lab.textContent = "질문 " + step;
+}
+
+function showIntro(){
+  pathStack = []; clearScreen(); setProgress(0);
+  var wrap = h("div","intro");
+  wrap.appendChild(h("div","intro-icon", D.icon || "⚖️"));
+  wrap.appendChild(h("h1","", D.hook));
+  if(D.myth){
+    var m = h("div","myth"); m.appendChild(h("b","","많은 분들이 이렇게 알고 있어요")); m.appendChild(document.createTextNode("“" + D.myth + "”"));
+    wrap.appendChild(m);
+  }
+  if(D.teaser) wrap.appendChild(h("p","", D.teaser));
+  var meta = h("div","meta");
+  [D.time || "약 1분", "객관식 질문 최대 " + D.nq_max + "개", "답변은 저장·전송되지 않아요"].forEach(function(t){ meta.appendChild(h("span","",t)); });
+  wrap.appendChild(meta);
+  var b = h("button","opt-btn primary","진단 시작하기"); b.type = "button";
+  b.onclick = function(){ goTo(D.start); };
+  wrap.appendChild(b);
+  screenEl.appendChild(wrap);
+}
+
+function goTo(id){
+  if(D.outcomes[id]) return showOutcome(id);
+  showQuestion(id);
+}
+
+function showQuestion(qid){
+  var q = D.questions[qid];
+  clearScreen();
+  var step = pathStack.length + 1;
+  setProgress(step);
+  screenEl.appendChild(h("div","q-count","질문 " + step));
+  screenEl.appendChild(h("div","q-text", q.text));
+  if(q.why) screenEl.appendChild(h("div","q-why", q.why));
+  var box = h("div","options");
+  q.options.forEach(function(o){
+    var b = h("button","opt-btn", o.label); b.type = "button";
+    b.onclick = function(){ pathStack.push({qid:qid, qtext:q.text, label:o.label}); goTo(o.next); };
+    box.appendChild(b);
+  });
+  screenEl.appendChild(box);
+  var back = h("button","back-btn", pathStack.length ? "← 이전 질문으로" : "← 처음으로"); back.type = "button";
+  back.onclick = function(){
+    if(!pathStack.length) return showIntro();
+    var last = pathStack.pop(); showQuestion(last.qid);
+  };
+  screenEl.appendChild(back);
+}
+
+function copyText(text, btn){
+  function ok(){ var o = btn.textContent; btn.textContent = "복사했어요 ✓"; setTimeout(function(){ btn.textContent = o; }, 1800); }
+  function fallback(){
+    var t = document.createElement("textarea"); t.value = text; t.style.position = "fixed"; t.style.opacity = "0";
+    document.body.appendChild(t); t.select();
+    try{ document.execCommand("copy"); ok(); }catch(e){ btn.textContent = "복사 실패 — 직접 선택해 주세요"; }
+    document.body.removeChild(t);
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(ok, fallback); } else { fallback(); }
+}
+
+function block(label, bodyNode){
+  var b = h("div","block"); b.appendChild(h("div","block-label",label)); b.appendChild(bodyNode); return b;
+}
+
+function showOutcome(oid){
+  var o = D.outcomes[oid];
+  clearScreen(); setProgress(0, true);
+  var head = h("div");
+  var g = h("span","grade " + o.grade, "● " + GRADE[o.grade]);
+  head.appendChild(g);
+  if(o.tag) head.appendChild(h("span","outcome-tag", o.tag));
+  screenEl.appendChild(head);
+  var wrap = h("div","outcome");
+  wrap.appendChild(h("h2","", o.title));
+
+  /* 왜 이 결과인가 — 내가 고른 답 + 근거 1줄 */
+  var why = h("div");
+  var chips = h("div","chips");
+  pathStack.forEach(function(p){ chips.appendChild(h("div","chip","· " + p.label)); });
+  why.appendChild(chips);
+  why.appendChild(h("div","why-line", o.why));
+  wrap.appendChild(block("🔎 왜 이 결과인가요?", why));
+
+  if(o.fact && D.myth){
+    var vs = h("div","vs");
+    var m = h("div","m"); m.appendChild(h("b","","통념")); m.appendChild(document.createTextNode(D.myth));
+    var f = h("div","f"); f.appendChild(h("b","","이 경우엔")); f.appendChild(document.createTextNode(o.fact));
+    vs.appendChild(m); vs.appendChild(f);
+    wrap.appendChild(block("💡 통념 vs 사실", vs));
+  }
+  wrap.appendChild(block("📖 법적 근거", h("div","block-body", o.basis)));
+  if(o.checklist && o.checklist.length){
+    var ul = h("ul","checklist"); o.checklist.forEach(function(c){ ul.appendChild(h("li","",c)); });
+    wrap.appendChild(block("✅ 지금 해볼 것", ul));
+  }
+  wrap.appendChild(block("⚠️ 주의할 점", h("div","block-body", o.caution)));
+  wrap.appendChild(h("div","disclaimer", o.disclaimer || D.disclaimer));
+  screenEl.appendChild(wrap);
+
+  var actions = h("div","actions");
+  var cp = h("button","ghost-btn","📋 결과 요약 복사하기"); cp.type = "button";
+  cp.onclick = function(){
+    var t = "[법률 자가진단] " + D.hook + "\n결과: " + GRADE[o.grade] + " — " + o.title + "\n※ 일반적인 법률 정보이며 개별 사안은 상담이 필요합니다.\n" + location.href;
+    copyText(t, cp);
+  };
+  actions.appendChild(cp);
+  if(D.mother_url){
+    var a = h("a","ghost-btn","📰 원문 컬럼 읽어보기"); a.href = D.mother_url; a.target = "_blank"; a.rel = "noopener"; actions.appendChild(a);
+  }
+  var rs = h("button","ghost-btn","↺ 처음부터 다시"); rs.type = "button"; rs.onclick = showIntro;
+  actions.appendChild(rs);
+  screenEl.appendChild(actions);
+
+  var cta = h("div","cta-box");
+  cta.appendChild(document.createTextNode((o.cta || "지금 상황을 구체적으로 확인하고 싶다면") + " "));
+  var s = h("strong","", D.cta_lawyer);
+  cta.appendChild(s);
+  cta.appendChild(document.createTextNode("("));
+  var ml = h("a","", D.cta_email); ml.href = "mailto:" + D.cta_email; cta.appendChild(ml);
+  cta.appendChild(document.createTextNode(")에게 문의하세요."));
+  screenEl.appendChild(cta);
+}
+
+document.getElementById("footer").textContent = "제공 : " + D.cta_lawyer + " 법률사무소";
+showIntro();
+</script>
+</body>
+</html>
