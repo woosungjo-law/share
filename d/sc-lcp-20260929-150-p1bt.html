@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>내 집 비번 뚫고 들어온 집주인, 꾹 참아야 할까?</title>
+<!-- sc-template v2 · 렌더러: _tools/sc.py build · 이 파일을 직접 고치지 말고 00_운영/app_template.html 과 시나리오 노트를 고친다 -->
+<style>
+  :root{
+    --navy:#12233f; --navy-deep:#0a1626; --accent:#c9a24b; --bg:#f4f5f7; --card:#ffffff;
+    --text:#1e232b; --muted:#5f6673; --line:#e5e7eb;
+    --g-high:#1f7a4d; --g-mid:#b7791f; --g-check:#4a5568;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    background:var(--bg);color:var(--text);min-height:100vh;
+    display:flex;align-items:flex-start;justify-content:center;padding:16px;line-height:1.55;
+    word-break:keep-all;overflow-wrap:anywhere;
+  }
+  .app{width:100%;max-width:480px;background:var(--card);border-radius:18px;box-shadow:0 8px 30px rgba(18,35,63,.12);overflow:hidden;display:flex;flex-direction:column;min-height:560px;}
+  .topbar{background:var(--navy);color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;font-size:13px;}
+  .topbar .brand{font-weight:700;letter-spacing:.02em;}
+  .progress-wrap{height:4px;background:var(--line);width:100%;}
+  .progress-bar{height:100%;background:var(--accent);width:0%;transition:width .25s ease;}
+  .screen{flex:1;padding:26px 22px 22px;display:none;flex-direction:column;animation:fadeIn .22s ease;}
+  .screen.active{display:flex;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+
+  .intro-icon{font-size:38px;margin-bottom:12px;}
+  .intro h1{font-size:22px;line-height:1.4;color:var(--navy-deep);margin-bottom:12px;}
+  .myth{background:#fbf6ea;border-left:4px solid var(--accent);border-radius:8px;padding:12px 14px;margin-bottom:14px;font-size:13.5px;color:#4a3d16;}
+  .myth b{display:block;font-size:11px;letter-spacing:.04em;color:#8a6d1f;margin-bottom:3px;}
+  .intro p{color:var(--muted);font-size:14px;margin-bottom:16px;}
+  .meta{font-size:12px;color:var(--muted);margin-bottom:20px;display:flex;gap:8px;flex-wrap:wrap;}
+  .meta span{background:var(--bg);padding:4px 10px;border-radius:20px;}
+
+  .q-count{font-size:12px;color:#8a6d1f;font-weight:700;margin-bottom:8px;letter-spacing:.03em;}
+  .q-text{font-size:19px;font-weight:700;color:var(--navy-deep);margin-bottom:8px;line-height:1.45;}
+  .q-why{font-size:12.5px;color:var(--muted);margin-bottom:18px;}
+  .options{display:flex;flex-direction:column;gap:10px;margin-top:10px;}
+  .opt-btn{text-align:left;background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;font:inherit;font-size:14.5px;color:var(--text);cursor:pointer;transition:all .15s ease;min-height:44px;width:100%;}
+  .opt-btn:hover,.opt-btn:active,.opt-btn:focus-visible{border-color:var(--accent);background:#fbf6ea;outline:none;}
+  .opt-btn.primary{text-align:center;font-weight:700;background:var(--navy);color:#fff;border:none;}
+  .opt-btn.primary:hover,.opt-btn.primary:focus-visible{background:var(--navy-deep);}
+  .back-btn{margin-top:14px;background:none;border:none;color:var(--muted);font-size:12.5px;text-align:left;cursor:pointer;min-height:36px;text-decoration:underline;}
+
+  .grade{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#fff;padding:5px 12px;border-radius:20px;margin-bottom:10px;width:fit-content;}
+  .grade.high{background:var(--g-high);} .grade.mid{background:var(--g-mid);} .grade.check{background:var(--g-check);}
+  .outcome-tag{display:inline-block;font-size:11px;font-weight:700;color:var(--navy);background:#eef1f6;padding:4px 10px;border-radius:20px;margin-bottom:10px;margin-left:6px;}
+  .outcome h2{font-size:18px;color:var(--navy-deep);margin-bottom:14px;line-height:1.5;}
+  .block{margin-bottom:15px;}
+  .block-label{font-size:12px;font-weight:700;color:#8a6d1f;margin-bottom:5px;letter-spacing:.02em;}
+  .block-body{font-size:13.5px;color:var(--text);}
+  .chips{display:flex;flex-direction:column;gap:5px;margin-bottom:6px;}
+  .chip{font-size:12.5px;background:var(--bg);border-radius:8px;padding:6px 10px;color:#3b4250;}
+  .why-line{font-size:13.5px;}
+  .vs{display:grid;gap:6px;}
+  .vs div{font-size:13px;border-radius:8px;padding:9px 12px;}
+  .vs .m{background:#f6ecec;color:#7a2f2f;} .vs .f{background:#e9f4ee;color:#1d5b3a;}
+  .vs b{display:block;font-size:10.5px;letter-spacing:.05em;margin-bottom:2px;}
+  .checklist{list-style:none;display:flex;flex-direction:column;gap:6px;}
+  .checklist li{font-size:13.5px;padding-left:22px;position:relative;}
+  .checklist li::before{content:"☐";position:absolute;left:0;color:#8a6d1f;}
+  .disclaimer{font-size:12px;color:var(--muted);background:var(--bg);border-radius:10px;padding:12px 14px;margin-bottom:14px;}
+  .actions{display:flex;flex-direction:column;gap:8px;margin-bottom:14px;}
+  .ghost-btn{background:transparent;border:1.5px solid var(--line);color:#3b4250;border-radius:10px;padding:11px;font:inherit;font-size:13px;cursor:pointer;min-height:44px;text-align:center;text-decoration:none;display:block;}
+  .ghost-btn:hover,.ghost-btn:focus-visible{border-color:var(--accent);outline:none;}
+  .cta-box{background:var(--navy);color:#fff;border-radius:12px;padding:16px 18px;font-size:13.5px;margin-top:auto;}
+  .cta-box strong{color:var(--accent);} .cta-box a{color:#fff;text-decoration:underline;}
+  .footer-mark{text-align:center;font-size:11px;color:var(--muted);padding:10px 0 16px;}
+  @media (max-width:380px){ .screen{padding:22px 16px 18px;} .q-text{font-size:18px;} }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topbar"><span class="brand">법률 자가진단</span><span id="progress-label"></span></div>
+  <div class="progress-wrap"><div class="progress-bar" id="progress-bar"></div></div>
+  <div class="screen active" id="screen"></div>
+  <div class="footer-mark" id="footer"></div>
+</div>
+
+<script id="sc-data" type="application/json">{"hook": "내 집 비번 뚫고 들어온 집주인, 꾹 참아야 할까?", "myth": "남의 집에 얹혀사는 세입자는 집주인의 말을 참는 수밖에 없다", "teaser": "터무니없는 인상 요구, 안 고쳐주는 고장, 허락 없는 출입 — 겪고 있는 일부터 골라보세요. 법이 정한 선이 어디인지 1분 만에 확인해 드립니다.", "icon": "🏠", "time": "약 1분", "start": "Q1", "nq_min": 1, "nq_max": 3, "cta_lawyer": "조우성 변호사", "cta_email": "law@mustknow.co.kr", "disclaimer": "이 진단은 일반적인 법률 정보 안내이며, 구체적인 사안은 개별 상담을 통해 확인해야 합니다.", "mother_url": "https://woosungjo-law.github.io/share/d/lcp-20260929-150-2vip.html", "questions": {"Q1": {"text": "집주인과 관련해 지금 가장 곤란한 일은 무엇인가요?", "why": "겪고 있는 일에 따라 적용되는 법이 달라져요. 가장 급한 것 하나를 골라주세요.", "options": [{"label": "보증금·월세를 터무니없이 올려달라고 한다 / 안 올리면 나가라고 한다", "next": "Q2a"}, {"label": "집에 문제가 있는데 고쳐주지 않는다", "next": "Q2b"}, {"label": "허락 없이 집에 들어왔다 (또는 들어오려 한다)", "next": "Q2c"}, {"label": "위 어디에도 해당하지 않는다 / 모르겠다", "next": "C"}]}, "Q2a": {"text": "인상 요구의 구체적인 모습은 어떤가요?", "why": "법이 정한 인상 한도(5%·1년)를 넘는지 아닌지가 결과를 가려요.", "options": [{"label": "기존 보증금·월세의 5%를 넘는 인상을 요구한다", "next": "A1"}, {"label": "계약하거나 직전에 올린 지 1년이 안 됐는데 또 올리자고 한다", "next": "A1"}, {"label": "인상을 거절했더니 나가라고 협박한다", "next": "A1"}, {"label": "5% 이내이고 1년도 지났는데 올려달라고 한다", "next": "B"}, {"label": "인상 폭·시기가 정확히 기억나지 않는다", "next": "C"}]}, "Q2b": {"text": "집의 문제는 어떤 종류인가요?", "why": "살기 힘든 큰 문제인지 사소한 수리인지에 따라 책임지는 쪽이 갈려요.", "options": [{"label": "천장 누수·보일러 고장·수도관 파열 등 살기 힘든 큰 문제다", "next": "Q3b"}, {"label": "전구 교체·도어록 건전지·못자국 등 사소한 것이다", "next": "D"}, {"label": "어느 쪽인지 잘 모르겠다", "next": "C"}]}, "Q3b": {"text": "집주인에게 수리를 요구한 적이 있나요?", "why": "요구를 남겼는지가 직접 고치고 비용을 청구하는 길로 이어져요.", "options": [{"label": "문자·카톡 등 서면으로 요구했다", "next": "A2"}, {"label": "구두·전화로만 말했다", "next": "E"}, {"label": "아직 요구하지 않았다", "next": "B"}]}, "Q2c": {"text": "무단 출입과 관련해 지금 상황은 어떤가요?", "why": "이미 들어왔는지, 들어오려 하는지에 따라 급한 일이 달라져요.", "options": [{"label": "허락 없이 들어온 적이 있다", "next": "Q3c"}, {"label": "아직 들어오진 않았지만 들어오겠다고 한다", "next": "B"}, {"label": "집을 보여주겠다며 시간 조율을 요구한다", "next": "B"}]}, "Q3c": {"text": "들어왔다는 것을 뒷받침할 자료가 있나요?", "why": "출입 흔적·기록이 있으면 대응 수단이 달라져요.", "options": [{"label": "도어록 초기화·물건 이동·CCTV 등 흔적·기록이 있다", "next": "A3"}, {"label": "흔적은 없지만 들어왔다고 한다", "next": "E"}, {"label": "잘 모르겠다", "next": "C"}]}}, "outcomes": {"A1": {"grade": "high", "tag": "부당 인상·퇴거 협박 가능성", "title": "법이 정한 한도를 넘는 인상 요구나 퇴거 협박으로 보여요.", "why": "5% 초과·1년 내 재인상·퇴거 협박 중 하나에 해당한다고 답하셨어요.", "fact": "'얹혀사니까 들어줘야 한다'는 말과 달리, 한도를 넘는 인상 요구는 법적으로 효력이 없어요.", "basis": "주택임대차보호법 제7조는 증액 청구는 직전 증액 후 1년 이내에는 할 수 없고, 약정한 차임·보증금의 20분의 1(5%)을 넘지 못하도록 정합니다. 이를 거절했다는 이유로 세입자를 쫓아낼 권리는 집주인에게 없습니다.", "caution": "5%·1년 계산은 계약서 날짜와 직전 인상일을 기준으로 다시 확인하세요.", "checklist": ["인상 요구 문자·통화 내역을 날짜와 함께 보관하세요.", "기존 보증금의 5%가 얼마인지 계산해 두세요.", "퇴거 협박이 있었다면 그 말도 문자·녹취로 남기세요.", "법정 한도를 넘는 인상을 거부한다는 내용증명을 보내세요."], "disclaimer": "", "cta": ""}, "A2": {"grade": "high", "tag": "수리 거부 대응이 필요한 상황", "title": "큰 문제를 서면으로 요구했는데도 안 고쳐준다면, 직접 대응할 단계예요.", "why": "살기 힘든 문제를 서면으로 요구했다고 답하셨어요.", "fact": "참고 사는 게 아니라, 직접 고치고 비용을 청구하는 길이 있어요.", "basis": "민법 제623조는 임대인이 계약 존속 중 사용·수익에 필요한 상태를 유지할 의무를 진다고 정합니다. 천장 누수·보일러 고장 같은 대수선은 집주인 책임이며, 통보 후 직접 수리하고 그 비용(필요비)을 청구하거나 보증금과 상계할 수 있습니다.", "caution": "전구·건전지 같은 사소한 수리는 세입자 몫일 수 있으니, 큰 문제인지부터 가리세요.", "checklist": ["고장 부위를 사진·영상으로 찍어 두세요.", "'언제까지 수리해 달라'는 문자·카톡을 보내고 기한을 남기세요.", "직접 고쳤다면 영수증을 챙겨 보증금 정산 때 쓰세요.", "내용증명으로 수선 의무 불이행을 통보하세요."], "disclaimer": "", "cta": ""}, "A3": {"grade": "high", "tag": "주거침입 대응이 필요한 상황", "title": "허락 없이 들어온 흔적이 있다면, 범죄로 신고할 수 있는 상황이에요.", "why": "무단 출입의 흔적·기록이 있다고 답하셨어요.", "fact": "'내 집이니까'라는 말은 통하지 않아요. 소유자라도 세입자 동의 없이 들어가면 처벌 대상이에요.", "basis": "형법 제319조는 사람의 주거에 침입한 자를 3년 이하의 징역 또는 500만원 이하의 벌금에 처하도록 합니다. 소유자라는 이유로 무단 출입이 허용되지는 않습니다.", "caution": "감정싸움은 피하고, 출입 일시·흔적을 차갑게 기록으로 남기세요.", "checklist": ["즉시 도어록 비밀번호를 바꾸세요.", "현관 홈캠(CCTV) 등 출입 증거를 확보하세요.", "경찰에 주거침입으로 신고하는 것을 검토하세요.", "무단 출입에 대한 내용증명을 보내세요."], "disclaimer": "", "cta": ""}, "B": {"grade": "mid", "tag": "먼저 요구·협의할 단계", "title": "아직은 요구와 협의가 먼저인 단계예요.", "why": "법정 범위 안의 요구이거나, 아직 요구 전·예방 단계라고 답하셨어요.", "fact": "서두르기보다 통보와 약속을 먼저 굳히는 것이 유리해요.", "basis": "5% 이내·1년 경과 후의 인상 요구는 법이 허용하는 범위 안의 협의 대상입니다. 수리나 출입 문제도 먼저 서면으로 요구하고, 집을 보여주는 일은 약속한 시간·본인 입회 조건을 못 박는 것이 원칙입니다.", "caution": "구두 약속은 나중에 엇갈리기 쉬우니 서면으로 굳히세요.", "checklist": ["인상·수리·출입 요구를 문자·카톡으로 정리해 보내세요.", "집 보여주기는 '약속한 시간·내가 있을 때만'이라고 못 박으세요.", "주고받은 내용을 날짜별로 모아 두세요."], "disclaimer": "", "cta": ""}, "C": {"grade": "check", "tag": "사실관계 확인이 먼저", "title": "지금은 사실관계부터 정리할 단계예요.", "why": "기억나지 않거나 해당 없음이라고 답하셨어요.", "fact": "날짜·금액·흔적이 정리되기 전에는 어느 쪽 주장도 세우기 어려워요.", "basis": "인상 한도는 계약서 날짜와 금액이, 수리·출입은 사진·기록이 출발점입니다. 자료를 모아 이 진단을 다시 해보세요.", "caution": "기억에만 의존하면 나중에 주장이 엇갈리기 쉬워요.", "checklist": ["계약서·인상 요구 문자·고장 사진·출입 흔적을 모아보세요.", "날짜·금액을 육하원칙으로 정리하세요.", "정리가 끝나면 다시 진단하세요."], "disclaimer": "", "cta": ""}, "D": {"grade": "mid", "tag": "세입자 부담일 가능성이 높은 수리", "title": "말씀하신 수리는 세입자가 직접 할 가능성이 높아요.", "why": "전구·건전지 같은 사소한 것이라고 답하셨어요.", "fact": "모든 고장이 집주인 몫은 아니에요. 사소하고 돈이 적게 드는 수리는 세입자가 하는 것이 원칙이에요.", "basis": "민법 제623조의 수선의무는 사용·수익에 필요한 상태 유지가 핵심이라, 일상적인 소모품 교체까지 집주인에게 물을 수는 없습니다. 다만 큰 문제로 번지면 다시 다툴 수 있습니다.", "caution": "겉보기엔 사소해도 누수·누전 낌새가 있으면 큰 문제로 보고 기록하세요.", "checklist": ["직접 교체하고 영수증을 모아 두세요.", "사소한 줄 알았는데 누수·고장으로 번지면 사진부터 찍으세요.", "다음 계약 때는 수리 범위 특약을 확인하세요."], "disclaimer": "", "cta": ""}, "E": {"grade": "mid", "tag": "서면 기록부터 쌓을 단계", "title": "구두로만 했다면, 지금부터 서면 기록을 쌓는 것이 관건이에요.", "why": "서면 요구나 흔적 확보가 아직이라고 답하셨어요.", "fact": "말보다 문자가 힘이 세요. 지금 만드는 기록도 늦지 않아요.", "basis": "수리 요구는 서면 통보와 기한이, 무단 출입은 출입 흔적과 기록이 대응의 출발점입니다. 통화 내용은 '통화하신 대로 이렇게 하겠다'는 문자로 굳히세요.", "caution": "전화 내용은 시간이 지나면 입장이 엇갈리기 쉬워요.", "checklist": ["통화 내용은 문자·카톡으로 다시 보내 확인받으세요.", "고장은 사진·영상부터 찍으세요.", "출입이 걱정되면 도어록 변경과 홈캠을 검토하세요."], "disclaimer": "", "cta": ""}}}</script>
+<script>
+"use strict";
+var D = JSON.parse(document.getElementById("sc-data").textContent);
+var GRADE = {high:"가능성 높음", mid:"살펴볼 것", check:"확인 필요"};
+var screenEl = document.getElementById("screen");
+var pathStack = [];          // [{qid, qtext, label}]
+
+function h(tag, cls, text){
+  var e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(text !== undefined && text !== null) e.textContent = text;
+  return e;
+}
+function clearScreen(){ while(screenEl.firstChild) screenEl.removeChild(screenEl.firstChild); screenEl.className = "screen active"; window.scrollTo(0,0); }
+
+function setProgress(step, done){
+  var bar = document.getElementById("progress-bar");
+  var lab = document.getElementById("progress-label");
+  if(done){ bar.style.width = "100%"; lab.textContent = "진단 완료"; return; }
+  if(step === 0){ bar.style.width = "0%"; lab.textContent = ""; return; }
+  bar.style.width = Math.min(100, Math.round(step / D.nq_max * 100)) + "%";
+  lab.textContent = "질문 " + step;
+}
+
+function showIntro(){
+  pathStack = []; clearScreen(); setProgress(0);
+  var wrap = h("div","intro");
+  wrap.appendChild(h("div","intro-icon", D.icon || "⚖️"));
+  wrap.appendChild(h("h1","", D.hook));
+  if(D.myth){
+    var m = h("div","myth"); m.appendChild(h("b","","많은 분들이 이렇게 알고 있어요")); m.appendChild(document.createTextNode("“" + D.myth + "”"));
+    wrap.appendChild(m);
+  }
+  if(D.teaser) wrap.appendChild(h("p","", D.teaser));
+  var meta = h("div","meta");
+  [D.time || "약 1분", "객관식 질문 최대 " + D.nq_max + "개", "답변은 저장·전송되지 않아요"].forEach(function(t){ meta.appendChild(h("span","",t)); });
+  wrap.appendChild(meta);
+  var b = h("button","opt-btn primary","진단 시작하기"); b.type = "button";
+  b.onclick = function(){ goTo(D.start); };
+  wrap.appendChild(b);
+  screenEl.appendChild(wrap);
+}
+
+function goTo(id){
+  if(D.outcomes[id]) return showOutcome(id);
+  showQuestion(id);
+}
+
+function showQuestion(qid){
+  var q = D.questions[qid];
+  clearScreen();
+  var step = pathStack.length + 1;
+  setProgress(step);
+  screenEl.appendChild(h("div","q-count","질문 " + step));
+  screenEl.appendChild(h("div","q-text", q.text));
+  if(q.why) screenEl.appendChild(h("div","q-why", q.why));
+  var box = h("div","options");
+  q.options.forEach(function(o){
+    var b = h("button","opt-btn", o.label); b.type = "button";
+    b.onclick = function(){ pathStack.push({qid:qid, qtext:q.text, label:o.label}); goTo(o.next); };
+    box.appendChild(b);
+  });
+  screenEl.appendChild(box);
+  var back = h("button","back-btn", pathStack.length ? "← 이전 질문으로" : "← 처음으로"); back.type = "button";
+  back.onclick = function(){
+    if(!pathStack.length) return showIntro();
+    var last = pathStack.pop(); showQuestion(last.qid);
+  };
+  screenEl.appendChild(back);
+}
+
+function copyText(text, btn){
+  function ok(){ var o = btn.textContent; btn.textContent = "복사했어요 ✓"; setTimeout(function(){ btn.textContent = o; }, 1800); }
+  function fallback(){
+    var t = document.createElement("textarea"); t.value = text; t.style.position = "fixed"; t.style.opacity = "0";
+    document.body.appendChild(t); t.select();
+    try{ document.execCommand("copy"); ok(); }catch(e){ btn.textContent = "복사 실패 — 직접 선택해 주세요"; }
+    document.body.removeChild(t);
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(ok, fallback); } else { fallback(); }
+}
+
+function block(label, bodyNode){
+  var b = h("div","block"); b.appendChild(h("div","block-label",label)); b.appendChild(bodyNode); return b;
+}
+
+function showOutcome(oid){
+  var o = D.outcomes[oid];
+  clearScreen(); setProgress(0, true);
+  var head = h("div");
+  var g = h("span","grade " + o.grade, "● " + GRADE[o.grade]);
+  head.appendChild(g);
+  if(o.tag) head.appendChild(h("span","outcome-tag", o.tag));
+  screenEl.appendChild(head);
+  var wrap = h("div","outcome");
+  wrap.appendChild(h("h2","", o.title));
+
+  /* 왜 이 결과인가 — 내가 고른 답 + 근거 1줄 */
+  var why = h("div");
+  var chips = h("div","chips");
+  pathStack.forEach(function(p){ chips.appendChild(h("div","chip","· " + p.label)); });
+  why.appendChild(chips);
+  why.appendChild(h("div","why-line", o.why));
+  wrap.appendChild(block("🔎 왜 이 결과인가요?", why));
+
+  if(o.fact && D.myth){
+    var vs = h("div","vs");
+    var m = h("div","m"); m.appendChild(h("b","","통념")); m.appendChild(document.createTextNode(D.myth));
+    var f = h("div","f"); f.appendChild(h("b","","이 경우엔")); f.appendChild(document.createTextNode(o.fact));
+    vs.appendChild(m); vs.appendChild(f);
+    wrap.appendChild(block("💡 통념 vs 사실", vs));
+  }
+  wrap.appendChild(block("📖 법적 근거", h("div","block-body", o.basis)));
+  if(o.checklist && o.checklist.length){
+    var ul = h("ul","checklist"); o.checklist.forEach(function(c){ ul.appendChild(h("li","",c)); });
+    wrap.appendChild(block("✅ 지금 해볼 것", ul));
+  }
+  wrap.appendChild(block("⚠️ 주의할 점", h("div","block-body", o.caution)));
+  wrap.appendChild(h("div","disclaimer", o.disclaimer || D.disclaimer));
+  screenEl.appendChild(wrap);
+
+  var actions = h("div","actions");
+  var cp = h("button","ghost-btn","📋 결과 요약 복사하기"); cp.type = "button";
+  cp.onclick = function(){
+    var t = "[법률 자가진단] " + D.hook + "\n결과: " + GRADE[o.grade] + " — " + o.title + "\n※ 일반적인 법률 정보이며 개별 사안은 상담이 필요합니다.\n" + location.href;
+    copyText(t, cp);
+  };
+  actions.appendChild(cp);
+  if(D.mother_url){
+    var a = h("a","ghost-btn","📰 원문 컬럼 읽어보기"); a.href = D.mother_url; a.target = "_blank"; a.rel = "noopener"; actions.appendChild(a);
+  }
+  var rs = h("button","ghost-btn","↺ 처음부터 다시"); rs.type = "button"; rs.onclick = showIntro;
+  actions.appendChild(rs);
+  screenEl.appendChild(actions);
+
+  var cta = h("div","cta-box");
+  cta.appendChild(document.createTextNode((o.cta || "지금 상황을 구체적으로 확인하고 싶다면") + " "));
+  var s = h("strong","", D.cta_lawyer);
+  cta.appendChild(s);
+  cta.appendChild(document.createTextNode("("));
+  var ml = h("a","", D.cta_email); ml.href = "mailto:" + D.cta_email; cta.appendChild(ml);
+  cta.appendChild(document.createTextNode(")에게 문의하세요."));
+  screenEl.appendChild(cta);
+}
+
+document.getElementById("footer").textContent = "제공 : " + D.cta_lawyer + " 법률사무소";
+showIntro();
+</script>
+</body>
+</html>
