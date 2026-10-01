@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>이름만 빌려준 주주, 세금은 안전할까 — 아니다, 부족액의 차례는 주주에게도 온다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 제2차 납세의무 체크포인트</div>
+    <h1>이름만 빌려준 주주, 세금은 안전할까 — 아니다, 부족액의 차례는 주주에게도 온다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> 회사의 세금은 회사가 내는 것이 원칙이지만, 법인 재산으로 부족하면 부족액 한도에서 과점주주 등에게 차례가 넘어옵니다. 이름만 빌려줬다는 사정과 법이 보는 지분은 다를 수 있으므로, 명부와 지분, 회사의 재산을 숫자로 확인하는 것이 가장 확실한 준비입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      소상공인 박준서는 카페를 운영하면서 가끔 아버지의 회사 서류에 이름을 올렸습니다. 주주명부에 이름이 들어간 적도 있었고, 대수롭지 않게 생각했습니다. 경영에 참여한 적도 없고 배당을 받은 적도 없으니 세금과는 무관하다고 믿었습니다. 그런데 아버지 회사의 사정이 나빠지면서 체납 소식이 들려왔고, 검색해 보니 과점주주라는 말이 나왔습니다. 박준서는 주주명부를 다시 펼쳤습니다. 내 이름 옆의 지분율이 갑자기 무겁게 느껴졌습니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    제2차 납세의무의 구조부터 봅니다. 법인의 재산으로 그 법인에 부과되거나 납부할 국세를 충당하여도 부족한 경우, 그 부족한 금액에 대하여 과점주주 등이 부족액 한도로 책임을 집니다(국세기본법 제39조). 보충적이라는 것은 체납자인 법인의 재산을 먼저 보고 그래도 모자랄 때 넘어온다는 뜻이고, 한도가 있다는 것은 부족액과 지분 같은 한계 안에서만 묻는다는 뜻입니다.
+    차례가 넘어가는 경우는 과점주주만이 아닙니다. 법인이 해산하여 청산하는 경우에 국세를 납부하지 않고 잔여재산을 분배하거나 인도하였을 때 강제징수를 하여도 징수할 금액에 미치지 못하면, 청산인 또는 잔여재산을 분배받거나 인도받은 자가 부족한 금액에 대해 제2차 납세의무를 집니다(제38조). 회사가 청산 수순에 들어간다면 재산을 나눠 갖기 전에 세금을 먼저 정리해야 하는 이유입니다.
+    사업 양수에도 차례가 있습니다. 사업이 양도·양수된 경우 양도일 이전에 확정된 그 사업의 국세를 양도인의 재산으로 충당하여도 부족할 때, 사업의 양수인은 양수한 재산의 가액을 한도로 제2차 납세의무를 집니다(제41조). 사업을 넘겨받거나 넘겨주는 집이라면 함께 봐야 합니다.
+    다툴 여지도 있습니다. 보충성과 한도를 주장하고, 지배관계와 양수 범위, 계속성의 부재, 체납액의 산정을 다투는 것이 주주와 양수인 측의 방어 축입니다.
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>차례가 오기 전에 숫자를 아는 것이 준비다</h2>
+    <ul class="points">
+      <li><b>보충적·한도</b> — 법인 재산을 먼저 보고 그래도 모자랄 때 부족액과 지분 한도 안에서 묻습니다. 무제한이 아닙니다(제39조).</li>
+      <li><b>청산이라면</b> — 잔여재산을 나눠 갖기 전에 세금을 먼저 정리해야 합니다(제38조).</li>
+      <li><b>양수라면</b> — 양수한 재산의 가액을 한도로 제2차 납세의무가 문제됩니다(제41조).</li>
+      <li><b>방어 축</b> — 지배관계와 양수 범위, 계속성의 부재, 체납액 산정을 다툴 여지를 미리 정리합니다.</li>
+      <li><b>이름의 무게</b> — 이름만 빌려줬다는 사정과 법이 보는 지분은 다를 수 있으므로 명부와 실제 권리 행사 내역을 문서로 둡니다.</li>
+    </ul>
+    <div class="callout">막연한 불안보다 숫자가 먼저입니다. 부족액이 얼마인지, 내 지분 한도가 얼마인지를 모르면 걱정만 커집니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;">지금 당장 확인할 일 — 명부와 지분, 회사의 재산을 숫자로 봅니다.</p>
+    <ol>
+      <li><b>명부 정리</b> — 주주명부와 실제 지분 관계, 권리 행사 내역을 문서로 정리합니다.</li>
+      <li><b>부족액 확인</b> — 회사 재산으로 충당하고 남는 부족액과 본인의 지분 한도를 숫자로 파악합니다.</li>
+      <li><b>청산·양수 점검</b> — 청산이나 양도가 있다면 잔여재산 분배 전에 세금부터 정리하도록 가족과 논의합니다.</li>
+      <li><b>방어 준비</b> — 보충성·한도와 지배관계·산정 다툼의 여지를 정리해 전문가 상담에 가져갑니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
