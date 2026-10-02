@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>개발부담금, 무조건 내는 사업비일까 — 아니다, 납세의무 판정과 공제 설계가 수익을 지킨다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">개발부담금 · 준조세</div>
+    <h1>개발부담금, 무조건 내는 사업비일까 — 아니다, 납세의무 판정과 공제 설계가 수익을 지킨다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    개발부담금 부과 통보를 받자마자 지출 품의를 올리면, 그 ‘품의의 성격’이 바로 ‘부과금을 그대로 비용으로 묻는가’를 결정한다. <b>먼저 납세의무자 판정, 부과·산정 요소 대조, 납부 자료 보전을 끝내야 부담금도 설계된 비용이 된다.</b>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>개발부담금은 ‘사업비 속으로 사라지는 돈’이 아니라, 나중에 양도차익에서 되가져오는 돈이다.</b> 토지를 양도하는 시점에 개발부담금은 필요경비(취득가액 가산)로 양도소득세 산정 시 공제 가능하다(소득세법 제97조 제2항). 그래서 통보를 받자마자 ‘비용을 회계로 넣으면 끝’이라고 치르면, 나중에 돌려받을 기회를 스스로 닫는 셈이 된다. 그러나 아무렇게나 묻었다고 다 공제되는 것은 아니다. 통지서와 영수증이 장부에 정리되어 있어야 회수가 가능하다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <b>개발부담금의 성격:</b> 개발 사업으로 인해 증가한 토지 가액의 일부를 국가가 환수하는 준조세적 부담금(개발이익환수에 관한 법률). 부과 대상·개발비용·산정·납부·불복 등 절차가 각각 다르다.
+    <b>납세의무자 판정:</b> 지방자치단체 부과분의 납세의무자는 지방세법 제107조(납세의무자)가 정하는 틀에서 가려진다. 사업시행자인지 토지 소유자인지에 따라 부담의 귀속이 달라진다.
+    <b>불복 경로:</b> 과세 전 적부 심사 → 행정심판 → 소송. 다툼의 첫 관문인 과세 전 적부 심사는 국세기본법 제26조의2가 마련한 제도.
+    <b>회수 구조:</b> 부담금 납부 통지서와 영수증이 사업 장부에 정리되어 있으면, 토지의 양도 시점에 필요경비(취득가액 가산)로 양도소득세 산정 시 공제할 수 있다(소득세법 제97조 제2항).
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외</h2>
+    <ul class="points">
+      <li><b>성격 확인</b> — 개발부담금을 일반 사업비가 아닌 요건과 절차를 갖춘 준조세적 부담금으로 분류해 관리한다.</li>
+      <li><b>의무자 판정</b> — 지방세법 제107조의 틀 위에서 회사가 납세의무자인지를 확인한 뒤 부담을 계상한다.</li>
+      <li><b>산정 대조</b> — 사업 종류·면적·기간과 개발비용·기여도·경감률을 자료와 대조한 뒤 납부 결정을 내린다.</li>
+      <li><b>회수 설계</b> — 납부 통지서와 영수증을 보전해 양도 시 필요경비 공제(소득세법 제97조 제2항)를 확보한다.</li>
+      <li><b>차례 준수</b> — 다툼이 필요하면 과세 전 적부 심사 → 행정심판 → 소송의 차례를 전제로 계획한다.</li>
+    </ul>
+    <div class="callout"><b>핵심 판단:</b> 지출 품의 전에 세 개의 문을 열어라. 성격이 다르면 사업비 처리가 아니라 접수·대조·보전 이후에야 부담금도 설계가 된다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;">첫째, 납세의무자 판정 근거를 확인하게 한다. 둘째, 부과 대상과 산정 요소를 사업 자료와 대조하게 한다. 셋째, 납부 자료의 보전과 회수 경로를 계획에 넣게 한다. 이 세 문이 열린 뒤에 나온 품의는 부담금이 아니라 설계된 비용이 된다.</p>
+    <ol>
+      <li><b>성격 확인</b> — 개발부담금을 일반 사업비가 아닌 요건과 절차를 갖춘 준조세적 부담금으로 분류해 관리한다.</li>
+      <li><b>의무자 판정</b> — 지방세법 제107조의 틀 위에서 회사가 납세의무자인지를 확인한 뒤 부담을 계상한다.</li>
+      <li><b>산정 대조</b> — 사업 종류·면적·기간과 개발비용·기여도·경감률을 자료와 대조한 뒤 납부 결정을 내린다.</li>
+      <li><b>회수 설계</b> — 납부 통지서와 영수증을 보전해 양도 시 필요경비 공제(소득세법 제97조 제2항)를 확보한다.</li>
+      <li><b>차례 준수</b> — 다툼이 필요하면 과세 전 적부 심사 → 행정심판 → 소송의 차례를 전제로 계획한다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
