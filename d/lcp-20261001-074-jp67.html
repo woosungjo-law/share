@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사업 인수, 세금은 남의 일일까 — 아니다, 부족액의 차례는 양수인에게도 온다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">사업 인수 · 제2차 납세의무</div>
+    <h1>사업 인수, 세금은 남의 일일까 — 아니다, 부족액의 차례는 양수인에게도 온다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    사업만 사 오면 세금은 파는 쪽 일이라고 생각하면 안 된다. <b>양도인의 재산으로 충당하고 모자라면 양수인에게도 차례가 넘어온다.</b> 인수가액 합의 전날 밤의 체납 고지가 다행인 이유는, 도장 찍기 전에 차례를 계산할 시간이 남았기 때문이다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>세금은 ‘낸 사람이 내는 것’이지만, 몇 번은 대신 내는 사람이 있다.</b> 법인의 재산이 바닥나면, 그 차례가 과점주주, 청산인, 그리고 사업을 양수한 사람에게까지 넘어온다. 마치 집주인이 밀린 집세를 안 내면 다음 세입자가 ‘나가고 남은 몫’을 떠안는 것과 비슷하다. 단, 이 ‘대신 내기’는 보충적이고 한도가 있다. 법인의 재산을 먼저 보고 그래도 모자랄 때만, 부족액 한도 안에서만 묻는다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <b>제2차 납세의무 일반:</b> 법인의 재산으로 그 법인에 부과되거나 법인이 납부할 국세에 충당하여도 부족한 경우에, 그 부족한 금액에 대하여 차례가 넘어온다(국세기본법 제39조). 보충적이고 한도가 있다.
+    <b>청산인의 제2차 납세의무:</b> 법인이 해산하여 청산하는 경우, 법인세를 납부하지 않고 잔여재산을 분배·인도했을 때 강제징수를 해도 징수할 금액에 미치지 못하면 청산인 또는 잔여재산을 분배·인도받은 자가 그 부족한 금액의 제2차 납세의무를 진다(국세기본법 제38조). 한도는 분배·인도한 재산의 가액이다.
+    <b>사업 양수인의 제2차 납세의무:</b> 양도일 이전에 양도인의 납세의무가 확정된 그 사업에 관한 국세를 양도인의 재산으로 충당하여도 부족할 때, 사업의 양수인이 양수한 재산의 가액을 한도로 그 부족한 금액(제41조)에 대해 제2차 납세의무를 진다.
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외</h2>
+    <ul class="points">
+      <li><b>부족액 계산</b> — 법인 재산으로 충당하고 남는 부족액이 얼마인지, 양수 재산 가액 한도는 얼마인지 먼저 잰다.</li>
+      <li><b>귀속 확인</b> — 체납이 양도일 이전 확정된 그 사업에 관한 것인지, 양도인 재산으로 충당하고도 부족한지, 양수 재산 가액은 얼마인지를 따져 양수인의 차례를 가른다.</li>
+      <li><b>가액 조정</b> — 넘어올 수 있는 책임 범위만큼 인수가액을 조정하거나 책임 분담을 계약으로 못 박는다.</li>
+      <li><b>중단 기준</b> — 체납의 규모와 귀속이 확인되지 않으면 합의 도장을 미룬다.</li>
+    </ul>
+    <div class="callout"><b>핵심 판단:</b> 인수 협상에서 ‘체납은 파는 쪽 일’로 치부하면, 부족액만큼의 대가를 나중에 치르게 된다. 제2차 납세의무는 보충성·한도·귀속 요건이 핵심이므로, 이를 실사표에 올려 숫자로 확정하는 것이 먼저다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;">양도 회사의 체납세액과 귀속 사업, 양도인의 잔여 재산, 양수 재산의 가액을 실사표에 올리고, 부족액이 생길 경우 양수인에게 넘어오는 범위를 계산한다. 그 범위만큼은 인수가액에서 조정하거나 양도인에게 책임 분담을 계약으로 못 박는다.</p>
+    <ol>
+      <li><b>부족액 계산</b> — 법인 재산으로 충당하고 남는 부족액·양수 재산 가액 한도를 먼저 잰다.</li>
+      <li><b>귀속 확인</b> — 체납이 양도일 이전 확정된 그 사업에 관한 것인지를 따져 양수인의 차례를 가른다.</li>
+      <li><b>가액 조정</b> — 넘어올 수 있는 책임 범위만큼 인수가액을 조정하거나 책임 분담을 계약에 못 박는다.</li>
+      <li><b>중단 기준</b> — 체납의 규모와 귀속이 확인되지 않으면 합의 도장을 미룬다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
