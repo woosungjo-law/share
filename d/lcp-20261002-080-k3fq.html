@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>기밀 리스크, ‘우리 회사와 무관한 남의 일’이 아닌 ‘대표가 접근 권한과 기록을 설계하는 문제’다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">기밀 · 접근 권한</div>
+    <h1>기밀 리스크, ‘우리 회사와 무관한 남의 일’이 아닌 ‘대표가 접근 권한과 기록을 설계하는 문제’다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    기밀 리스크는 ‘남의 일’이 아니라, <b>대표가 접근 권한과 기록 보존을 설계하지 않으면 발생하지 않는 문제</b>다. 기밀·영업비밀·개인정보 등 위험 유형별로 접근 권한·기록·파기 절차를 표준화하라.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      기밀 리스크는 ‘화재’처럼 걱정만 하는 것이 아니라, ‘소방 시스템’을 설계하는 문제다. 어느 문에 누가 접근할 수 있는지, 기록이 어떻게 남는지, 언제 파기되는지를 표준으로 만들면, 사고는 줄어듭니다. 그래서 대표는 기밀 리스크를 ‘남의 일’로 보지 않고, 접근 권한과 기록 보존을 설계한다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <b>부정경쟁방지 및 영업비밀보호에 관한 법률 제2조 제2호(영업비밀):</b> 공공연히 알려져 있지 않고 독립된 경제적 가치를 가지는 것으로서 상당한 노력에 의하여 비밀로 유지된 생산방법·판매방법 기타 영업활동에 유용한 기술상 또는 경영상의 정보를 말한다.
+    <b>개인정보보호법 제29조(안전성 확보 조치):</b> 개인정보처리자는 개인정보가 분실·도난·유출·위조·변조 또는 훼손되지 아니하도록 안전성 확보에 필요한 기술적·관리적 조치를 해야 한다.
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외</h2>
+    <ul class="points">
+      <li><b>접근 권한</b> — 기밀·영업비밀·개인정보별로 접근 권한을 설계한다.</li>
+      <li><b>기록 보존</b> — 민감정보 처리 기록과 인증·승인 이력을 남긴다.</li>
+      <li><b>파기 절차</b> — 보유 기간 경과 후 파기 절차를 표준화한다.</li>
+      <li><b>보안 체계</b> — 임직원 보안 교육과 점검 체계를 갖춘다.</li>
+    </ul>
+    <div class="callout">기밀 리스크는 대표가 접근 권한과 기록 보존을 설계하지 않으면 발생하지 않는 문제다. 위험 유형별로 접근 권한·기록·파기 절차를 표준화하라.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;">기밀 리스크를 검토하려면, 먼저 위험 유형별 접근 권한을 설계한다. 기밀·영업비밀·개인정보별로 접근 권한을 설계하고, 민감정보 처리 기록과 인증·승인 이력을 남긴다. 보유 기간 경과 후 파기 절차를 표준화하고, 임직원 보안 교육과 점검 체계를 갖춘다.</p>
+    <ol>
+      <li><b>접근 권한</b> — 기밀·영업비밀·개인정보별로 접근 권한을 설계한다.</li>
+      <li><b>기록 보존</b> — 민감정보 처리 기록과 인증·승인 이력을 남긴다.</li>
+      <li><b>파기 절차</b> — 보유 기간 경과 후 파기 절차를 표준화한다.</li>
+      <li><b>보안 체계</b> — 임직원 보안 교육과 점검 체계를 갖춘다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
