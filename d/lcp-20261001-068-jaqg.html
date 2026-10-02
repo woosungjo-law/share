@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>데이터 제휴, 동의만 받으면 끝일까 — 아니다, 위탁인지 제공인지부터 정해야 한다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">데이터 제휴 · 성격 확정</div>
+    <h1>데이터 제휴, 동의만 받으면 끝일까 — 아니다, 위탁인지 제공인지부터 정해야 한다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>첫 질문은 동의가 아니라 성격이다.</b> 동의를 받았더라도 그 데이터를 넘기는 것이 <b>처리위탁</b>인지 <b>제3자 제공</b>인지가 계약서에 못 박혀 있지 않으면, 동의는 어느 쪽의 문법도 아니다. 발표는 하룻밤 미뤄져야 했고, 그 지연은 오히려 잘한 일이다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>동의는 통장의 서명일 뿐, 돈의 흐름을 정하지 않는다.</b> 심부름을 맡긴 것(위탁)과 남의 계약에 내 이름을 빌려준 것(제공)은 겉보기엔 비슷해 보여도, 누구에게 이익이 돌아가는지가 다르다. 분석 업체가 내 데이터를 받아 자기 상품을 키우는 데 쓰면 제공이고, 윤슬페이가 시킨 분석만 하고 돌려주면 위탁이다. 같은 파일·같은 전송 방식이라도 이익의 귀속이 규율을 통째로 바꾼다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <b>제3자 제공:</b> 정보를 제공받는 자의 업무처리와 이익을 위해 이전되는 경우(개인정보보호법 시행령 제28조). 제공자는 제3자에 해당하여 별도 동의가 필요하다(개인정보보호법 제26조, 제28조).
+    <b>처리위탁:</b> 위탁자 본인의 업무처리와 이익을 위해 이전되는 경우. 수탁자는 위탁업무 처리 대가 외에 독자적 이익이 없고, 위탁자의 관리와 감독 아래 위탁범위 내에서만 처리하므로 제3자에 해당하지 않는다(개인정보보호법 제26조).
+    <b>제공의 동의 요건:</b> 제공받는 자·이용 목적·제공 항목·보유와 이용 기간 등 법정 고지사항 전부를 통상의 이용자가 용이하게 알 수 있을 정도로 명확히 게재해야 한다(개인정보보호법 제17조). 하나라도 빠지면 동의는 구멍이 난다.
+    <b>혼합형(둘을 가르기 어려운 경우):</b> 내부 판단으로 밀어붙이지 말고 개인정보보호위원회의 유권해석이나 법률 검토를 먼저 받는다.
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외</h2>
+    <ul class="points">
+      <li><b>제공으로 판정되면</b> — 동의의 조건이 엄격해진다. 제공받는 자·이용목적·제공항목·보유기간 고지가 전부 명확한지 직접 확인한다.</li>
+      <li><b>위탁으로 판정되면</b> — 동의가 아니라 계약이 중심이다. 위탁 목적·범위, 재위탁 제한, 안전 조치, 관리 감독, 손해배상을 문서로 묶고 수탁자가 목적 외 사용이나 재위탁을 못 하게 묶는다.</li>
+      <li><b>어느 쪽이든 공짜는 아니다</b> — 제공은 고지의 비용을, 위탁은 관리와 감독의 비용을 요구한다.</li>
+      <li><b>혼합형이 애매하면</b> — 내부 판단으로 결정하지 말고 개인정보보호위원회의 유권해석·법률 검토를 먼저 받는다.</li>
+    </ul>
+    <div class="callout"><b>핵심 판단:</b> 성격이 확정되지 않은 제휴를 ‘발표 먼저, 수습 나중에’로 가면 비용이 훨씬 크다. 제휴 성격을 사업 조건으로 못 박는 것이 첫 번째다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;">제휴 계약의 첫 조항에 이 이전이 위탁인지 제공인지를 못 박고, 그에 맞는 준비를 갖춘다. 수탁자의 보호 수준을 정기적으로 점검하고 미흡하면 시정 요구와 계약 해지로 이어지는 절차도 미리 정해 둔다.</p>
+    <ol>
+      <li><b>신용판단의 첫 문장</b> — 제휴 계약 첫머리에 ‘위탁인지 제공인지’를 명시하고, 상대방의 독자적 활용이 있으면 제공으로 본다.</li>
+      <li><b>제공이라면 동의 점검</b> — 제공받는 자·이용 목적·제공 항목·보유와 이용 기간 고지가 전부 명확한지 직접 확인한다.</li>
+      <li><b>위탁이라면 계약 통제</b> — 목적·범위·재위탁 제한·안전 조치·관리 감독·손해배상을 문서로 묶는다.</li>
+      <li><b>중단 기준</b> — 성격이 모호한 혼합형은 유권해석과 법률 검토가 끝날 때까지 발표와 이전을 멈춘다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
