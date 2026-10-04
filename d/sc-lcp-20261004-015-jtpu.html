@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>내 정보가 샜는데 연락이 없다면, 어느 회사에 물어야 할까?</title>
+<!-- sc-template v3 · 렌더러: _tools/sc.py build · 이 파일을 직접 고치지 말고 00_운영/app_template.html 과 시나리오 노트를 고친다 -->
+<style>
+  :root{
+    --navy:#12233f; --navy-deep:#0a1626; --accent:#c9a24b; --bg:#f4f5f7; --card:#ffffff;
+    --text:#1e232b; --muted:#5f6673; --line:#e5e7eb;
+    --g-high:#1f7a4d; --g-mid:#b7791f; --g-check:#4a5568;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    background:var(--bg);color:var(--text);min-height:100vh;
+    display:flex;align-items:flex-start;justify-content:center;padding:16px;line-height:1.55;
+    word-break:keep-all;overflow-wrap:anywhere;
+  }
+  .app{width:100%;max-width:480px;background:var(--card);border-radius:18px;box-shadow:0 8px 30px rgba(18,35,63,.12);overflow:hidden;display:flex;flex-direction:column;min-height:560px;}
+  .topbar{background:var(--navy);color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;font-size:13px;}
+  .topbar .brand{font-weight:700;letter-spacing:.02em;}
+  .progress-wrap{height:4px;background:var(--line);width:100%;}
+  .progress-bar{height:100%;background:var(--accent);width:0%;transition:width .25s ease;}
+  .screen{flex:1;padding:26px 22px 22px;display:none;flex-direction:column;animation:fadeIn .22s ease;}
+  .screen.active{display:flex;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+
+  .intro-icon{font-size:38px;margin-bottom:12px;}
+  .intro h1{font-size:22px;line-height:1.4;color:var(--navy-deep);margin-bottom:12px;}
+  .myth{background:#fbf6ea;border-left:4px solid var(--accent);border-radius:8px;padding:12px 14px;margin-bottom:14px;font-size:13.5px;color:#4a3d16;}
+  .myth b{display:block;font-size:11px;letter-spacing:.04em;color:#8a6d1f;margin-bottom:3px;}
+  .intro p{color:var(--muted);font-size:14px;margin-bottom:16px;}
+  .meta{font-size:12px;color:var(--muted);margin-bottom:20px;display:flex;gap:8px;flex-wrap:wrap;}
+  .meta span{background:var(--bg);padding:4px 10px;border-radius:20px;}
+
+  .q-count{font-size:12px;color:#8a6d1f;font-weight:700;margin-bottom:8px;letter-spacing:.03em;}
+  .q-text{font-size:19px;font-weight:700;color:var(--navy-deep);margin-bottom:8px;line-height:1.45;}
+  .q-why{font-size:12.5px;color:var(--muted);margin-bottom:18px;}
+  .options{display:flex;flex-direction:column;gap:10px;margin-top:10px;}
+  .opt-btn{text-align:left;background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;font:inherit;font-size:14.5px;color:var(--text);cursor:pointer;transition:all .15s ease;min-height:44px;width:100%;}
+  .opt-btn:hover,.opt-btn:active,.opt-btn:focus-visible{border-color:var(--accent);background:#fbf6ea;outline:none;}
+  .opt-btn.primary{text-align:center;font-weight:700;background:var(--navy);color:#fff;border:none;}
+  .opt-btn.primary:hover,.opt-btn.primary:focus-visible{background:var(--navy-deep);}
+  .back-btn{margin-top:14px;background:none;border:none;color:var(--muted);font-size:12.5px;text-align:left;cursor:pointer;min-height:36px;text-decoration:underline;}
+
+  .grade{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#fff;padding:5px 12px;border-radius:20px;margin-bottom:10px;width:fit-content;}
+  .grade.high{background:var(--g-high);} .grade.mid{background:var(--g-mid);} .grade.check{background:var(--g-check);}
+  .outcome-tag{display:inline-block;font-size:11px;font-weight:700;color:var(--navy);background:#eef1f6;padding:4px 10px;border-radius:20px;margin-bottom:10px;margin-left:6px;}
+  .outcome h2{font-size:18px;color:var(--navy-deep);margin-bottom:14px;line-height:1.5;}
+  .block{margin-bottom:15px;}
+  .block-label{font-size:12px;font-weight:700;color:#8a6d1f;margin-bottom:5px;letter-spacing:.02em;}
+  .block-body{font-size:13.5px;color:var(--text);}
+  .share-summary{font-size:13.5px;color:var(--text);white-space:pre-line;background:#fbf6ea;border:1px solid #ead9ad;border-left:4px solid var(--accent);border-radius:10px;padding:12px 14px;}
+  .basis-details{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:#fafbfc;margin-bottom:15px;}
+  .basis-details summary{cursor:pointer;color:#3b4250;font-size:13px;font-weight:700;}
+  .basis-details .block-body{margin-top:9px;}
+  .chips{display:flex;flex-direction:column;gap:5px;margin-bottom:6px;}
+  .chip{font-size:12.5px;background:var(--bg);border-radius:8px;padding:6px 10px;color:#3b4250;}
+  .why-line{font-size:13.5px;}
+  .vs{display:grid;gap:6px;}
+  .vs div{font-size:13px;border-radius:8px;padding:9px 12px;}
+  .vs .m{background:#f6ecec;color:#7a2f2f;} .vs .f{background:#e9f4ee;color:#1d5b3a;}
+  .vs b{display:block;font-size:10.5px;letter-spacing:.05em;margin-bottom:2px;}
+  .checklist{list-style:none;display:flex;flex-direction:column;gap:6px;}
+  .checklist li{font-size:13.5px;padding-left:22px;position:relative;}
+  .checklist li::before{content:"☐";position:absolute;left:0;color:#8a6d1f;}
+  .disclaimer{font-size:12px;color:var(--muted);background:var(--bg);border-radius:10px;padding:12px 14px;margin-bottom:14px;}
+  .actions{display:flex;flex-direction:column;gap:8px;margin-bottom:14px;}
+  .ghost-btn{background:transparent;border:1.5px solid var(--line);color:#3b4250;border-radius:10px;padding:11px;font:inherit;font-size:13px;cursor:pointer;min-height:44px;text-align:center;text-decoration:none;display:block;}
+  .ghost-btn:hover,.ghost-btn:focus-visible{border-color:var(--accent);outline:none;}
+  .cta-box{background:var(--navy);color:#fff;border-radius:12px;padding:16px 18px;font-size:13.5px;margin-top:auto;}
+  .cta-box strong{color:var(--accent);} .cta-box a{color:#fff;text-decoration:underline;}
+  .footer-mark{text-align:center;font-size:11px;color:var(--muted);padding:10px 0 16px;}
+  button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px;}
+  @media (max-width:380px){ .screen{padding:22px 16px 18px;} .q-text{font-size:18px;} }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topbar"><span class="brand">법률 자가진단</span><span id="progress-label"></span></div>
+  <div class="progress-wrap"><div class="progress-bar" id="progress-bar"></div></div>
+  <div class="screen active" id="screen"></div>
+  <div class="footer-mark" id="footer"></div>
+</div>
+
+<script id="sc-data" type="application/json">{"hook": "내 정보가 샜는데 연락이 없다면, 어느 회사에 물어야 할까?", "myth": "정보 처리를 맡긴 협력사가 사고를 냈으니 그 회사가 나에게 알려야 한다", "teaser": "알릴 의무가 누구에게 남는지, 협력사에도 안전조치 의무가 있는지를 나눠 봐야 합니다.", "icon": "🔐", "time": "약 1분", "start": "Q1", "nq_min": 2, "nq_max": 2, "cta_lawyer": "조우성 변호사", "cta_email": "law@mustknow.co.kr", "disclaimer": "이 진단은 일반적인 법률 정보 안내이며, 구체적인 사안은 개별 상담을 통해 확인해야 합니다.", "mother_url": "", "questions": {"Q1": {"text": "내 정보가 어디서 처리되고 있었나요?", "why": "서비스 회사가 직접 처리했는지, 협력사에 맡겼는지에 따라 확인할 의무가 달라져요.", "options": [{"label": "서비스 회사가 직접 처리했다", "next": "Q2"}, {"label": "협력사(수탁사)에 맡긴 것을 알고 있다", "next": "Q3"}, {"label": "어디서 처리되는지 모르겠다", "next": "Q2"}]}, "Q2": {"text": "유출 통지·신고 안내를 받았나요?", "why": "안내를 받았는지, 누구에게서 받았는지가 지금 할 일을 갈라요.", "options": [{"label": "서비스 회사에서 받았다", "next": "A"}, {"label": "협력사에서만 받았거나 협력사가 신고했다고 들었다", "next": "C"}, {"label": "아무에게도 받지 못했다", "next": "B"}, {"label": "받았는지 모르겠다", "next": "E"}]}, "Q3": {"text": "유출과 관련해 지금 가장 궁금한 것은 무엇인가요?", "why": "무엇이 궁금한지에 따라 확인할 거래·계약의 지점이 달라져요.", "options": [{"label": "어느 회사가 나에게 알려야 하는지", "next": "C"}, {"label": "위탁계약에 보호조치가 있었는지", "next": "D"}, {"label": "협력사의 안전조치가 지켜졌는지", "next": "F"}, {"label": "아직 정리되지 않았다", "next": "E"}]}}, "outcomes": {"A": {"grade": "high", "tag": "처리자 통지 확인", "title": "알릴 의무를 진 서비스 회사로부터 안내를 받아 대응할 수 있는 상황이에요.", "why": "서비스 회사에서 통지·신고 안내를 받았다고 답하셨어요.", "fact": "처리를 맡겼어도 이용자와 관계를 맺은 서비스 회사의 통지 의무는 남아요.", "basis": "개인정보처리자는 개인정보가 유출등이 되었음을 알게 되었을 때 지체 없이 정보주체에게 유출 항목, 시점과 경위, 피해 최소화 방법, 대응조치와 피해 구제절차, 담당부서·연락처, 법적 권리와 행사 방법 등을 알려야 합니다(개인정보 보호법 제34조 제1항).", "caution": "안내 내용이 부실하면 통지 의무 이행을 보완해 달라고 요구할 수 있어요.", "checklist": ["안내 보관: 통지 받은 내용과 시점을 문서로 남기세요.", "피해 점검: 비밀번호 변경과 이상 거래 여부를 확인하세요.", "문의 기록: 추가 문의와 답변을 남겨 두세요."], "share_summary": "판단 이유: 알릴 의무를 진 서비스 회사로부터 안내를 받은 상황이에요.\n지금 할 일: 안내 보관: 통지 내용과 시점을 남기세요. / 피해 점검: 비밀번호 변경과 이상 거래를 확인하세요. / 문의 기록: 추가 문의와 답변을 남기세요.\n주의: 안내가 부실하면 보완을 요구할 수 있어요.\n", "disclaimer": "", "cta": ""}, "B": {"grade": "mid", "tag": "안내 요구", "title": "서비스 회사에 통지 의무 이행을 요구하고 기록을 남길 단계예요.", "why": "아무에게도 유출 안내를 받지 못했다고 답하셨어요.", "fact": "안내가 늦어지면 서비스 회사에 통지 의무 이행을 물을 수 있어요.", "basis": "개인정보처리자는 유출등을 알게 되었을 때 지체 없이 정보주체에게 통지하고, 유출 경로·규모 등을 고려해 보호위원회 등에 신고해야 합니다(개인정보 보호법 제34조 제1항·제4항). 협력사가 처리했더라도 이용자와 관계를 맺은 서비스 회사의 통지·신고 의무가 없어지지 않습니다.", "caution": "안내가 늦어지는 것만으로 책임이 정해지지는 않아요. 문의와 답변을 기록으로 남기세요.", "checklist": ["안내 요구: 유출 경위와 알려야 할 내용을 서비스 회사에 문서로 문의하세요.", "이용 내역: 제공한 정보와 가입 시점을 확인하세요.", "답변 보관: 문의와 답변을 문서로 남기세요."], "share_summary": "판단 이유: 아무에게도 유출 안내를 받지 못한 상황이에요.\n지금 할 일: 안내 요구: 유출 경위와 알려야 할 내용을 문서로 문의하세요. / 이용 내역: 제공 정보와 가입 시점을 확인하세요. / 답변 보관: 문의와 답변을 남기세요.\n주의: 안내 지연만으로 책임이 정해지지는 않으니 기록을 남기세요.\n", "disclaimer": "", "cta": ""}, "C": {"grade": "check", "tag": "의무 주체 구분", "title": "협력사가 알렸더라도 서비스 회사 자신의 의무가 남는지 확인이 필요해요.", "why": "협력사에서만 받았거나 협력사가 신고했다고 들었다고 답하셨어요.", "fact": "협력사가 먼저 신고했더라도 서비스 회사 자신의 의무가 사라지지 않아요.", "basis": "유출 통지·신고 의무의 주체는 개인정보처리자입니다(개인정보 보호법 제34조). 정보 처리를 다른 회사에 맡겼더라도 이용자와 관계를 맺은 처리자의 의무는 남습니다. 한편 수탁자에 관하여도 제34조 등이 준용되어(같은 법 제26조 제8항), 협력사가 먼저 신고했다고 해서 처리자의 통지·신고 의무가 면제되지는 않습니다.", "caution": "누가 신고했는지와 별개로, 나에게 통지할 의무를 누가 지는지가 다툼의 출발점이에요.", "checklist": ["두 회사 구분: 서비스 회사와 협력사 중 누가 무엇을 알렸는지 정리하세요.", "의무 확인: 서비스 회사에 통지 의무 이행 여부를 문의하세요.", "기록 보관: 안내와 문의·답변을 문서로 남기세요."], "share_summary": "판단 이유: 협력사가 알렸더라도 서비스 회사 자신의 의무가 남는지 확인이 필요해요.\n지금 할 일: 두 회사 구분: 누가 무엇을 알렸는지 정리하세요. / 의무 확인: 서비스 회사의 통지 이행을 문의하세요. / 기록 보관: 안내와 문의·답변을 남기세요.\n주의: 신고 주체와 통지 의무 주체는 다를 수 있어요.\n", "disclaimer": "", "cta": ""}, "D": {"grade": "check", "tag": "위탁계약 확인", "title": "위탁계약에 보호조치 사항이 담겼는지 확인이 필요해요.", "why": "위탁계약 내용이 궁금하다고 답하셨어요.", "fact": "계약서에 법이 정한 사항이 빠져 있었다면 그 자체가 문제가 될 수 있어요.", "basis": "개인정보처리자가 개인정보 처리 업무를 위탁할 때에는 위탁업무 수행 목적 외 처리 금지, 기술적·관리적 보호조치, 그 밖에 대통령령으로 정한 사항이 포함된 문서로 해야 하고, 수탁자를 정보주체가 확인할 수 있도록 공개하며, 수탁자를 교육·감독할 의무를 부담합니다(개인정보 보호법 제26조 제1항·제2항·제4항).", "caution": "계약 내용은 대개 공개되지 않아, 문의와 답변을 문서로 남기는 것이 확인의 출발점이에요.", "checklist": ["계약 내용 확인: 위탁 문서에 보호조치·감독 사항이 있는지 확인을 요청하세요.", "수탁자 공개: 수탁자가 정보주체에게 공개되어 있는지 확인하세요.", "재위탁 여부: 처리가 다시 다른 회사로 넘어갔는지 확인하세요."], "share_summary": "판단 이유: 위탁계약에 보호조치 사항이 담겼는지 확인이 필요한 상황이에요.\n지금 할 일: 계약 내용 확인: 위탁 문서의 보호조치·감독 사항을 요청하세요. / 수탁자 공개: 수탁자 공개 여부를 확인하세요. / 재위탁 여부: 다시 위탁됐는지 확인하세요.\n주의: 계약 내용은 잘 공개되지 않으니 문의·답변을 문서로 남기세요.\n", "disclaimer": "", "cta": ""}, "E": {"grade": "check", "tag": "정보 정리", "title": "지금은 안내와 이용 기록을 정리할 단계예요.", "why": "안내를 받았는지 모르겠다거나 아직 정리되지 않았다고 답하셨어요.", "fact": "누구에게 무엇을 요구할지 나누려면 내 이용 기록부터 확인해야 해요.", "basis": "유출 대응의 출발선은 확인입니다. 개인정보 보호법 제34조는 처리자의 통지·신고 의무를, 제26조는 위탁 관계에서 처리자와 수탁자의 의무를 정하므로, 내가 어떤 정보를 어느 회사에 제공했는지부터 정리하면 요구할 지점이 보입니다.", "caution": "모른다고 비워두지 말고 문의·답변으로 채워가세요.", "checklist": ["안내 확인: 서비스 회사에서 안내를 받았는지 시점과 내용을 적으세요.", "이용 내역: 제공한 정보와 가입 시점을 확인하세요.", "요구 정리: 어느 회사에 무엇을 물을지 나눠 적으세요."], "share_summary": "판단 이유: 안내와 이용 기록을 정리할 단계예요.\n지금 할 일: 안내 확인: 안내 시점과 내용을 적으세요. / 이용 내역: 제공 정보와 가입 시점을 확인하세요. / 요구 정리: 어느 회사에 무엇을 물을지 나누세요.\n주의: 모르는 부분은 문의·답변으로 채워가세요.\n", "disclaimer": "", "cta": ""}, "F": {"grade": "mid", "tag": "수탁자 안전조치", "title": "협력사에도 안전조치 의무가 있어 이행 여부를 따져볼 수 있는 상황이에요.", "why": "협력사의 안전조치가 지켜졌는지가 궁금하다고 답하셨어요.", "fact": "안전조치 의무는 위탁자뿐 아니라 협력사에도 적용돼요.", "basis": "수탁자에 관하여 개인정보 보호법 제29조 등이 준용되어(같은 법 제26조 제8항), 수탁자도 접근 권한 제한, 접근 통제, 암호화, 접속기록 보관 등 안전성 확보에 필요한 기술적·관리적·물리적 조치를 해야 합니다(같은 법 제29조, 같은 법 시행령 제30조 제1항).", "caution": "안전조치 위반 여부는 조사가 필요한 영역이라 단정하지 말고 자료로 확인하세요.", "checklist": ["이행 확인: 협력사의 안전조치 이행 여부를 서비스 회사에 문의하세요.", "감독 요구: 위탁자의 교육·감독 의무 이행을 확인하세요.", "기록 보관: 문의와 답변을 문서로 남기세요."], "share_summary": "판단 이유: 협력사에도 안전조치 의무가 있어 이행 여부를 따져볼 수 있는 상황이에요.\n지금 할 일: 이행 확인: 협력사의 안전조치 이행을 문의하세요. / 감독 요구: 위탁자의 교육·감독 이행을 확인하세요. / 기록 보관: 문의와 답변을 남기세요.\n주의: 안전조치 위반 여부는 조사가 필요하니 단정하지 마세요.\n", "disclaimer": "", "cta": ""}}}</script>
+<script>
+"use strict";
+var D = JSON.parse(document.getElementById("sc-data").textContent);
+var GRADE = {high:"가능성 높음", mid:"살펴볼 것", check:"확인 필요"};
+var screenEl = document.getElementById("screen");
+var pathStack = [];          // [{qid, qtext, label}]
+
+function h(tag, cls, text){
+  var e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(text !== undefined && text !== null) e.textContent = text;
+  return e;
+}
+function clearScreen(){ while(screenEl.firstChild) screenEl.removeChild(screenEl.firstChild); screenEl.className = "screen active"; window.scrollTo(0,0); }
+
+function setProgress(step, done){
+  var bar = document.getElementById("progress-bar");
+  var lab = document.getElementById("progress-label");
+  if(done){ bar.style.width = "100%"; lab.textContent = "진단 완료"; return; }
+  if(step === 0){ bar.style.width = "0%"; lab.textContent = ""; return; }
+  bar.style.width = Math.min(100, Math.round(step / D.nq_max * 100)) + "%";
+  lab.textContent = "질문 " + step;
+}
+
+function showIntro(){
+  pathStack = []; clearScreen(); setProgress(0);
+  var wrap = h("div","intro");
+  wrap.appendChild(h("div","intro-icon", D.icon || "⚖️"));
+  wrap.appendChild(h("h1","", D.hook));
+  if(D.myth){
+    var m = h("div","myth"); m.appendChild(h("b","","많은 분들이 이렇게 알고 있어요")); m.appendChild(document.createTextNode("“" + D.myth + "”"));
+    wrap.appendChild(m);
+  }
+  if(D.teaser) wrap.appendChild(h("p","", D.teaser));
+  var meta = h("div","meta");
+  [D.time || "약 1분", "객관식 질문 최대 " + D.nq_max + "개", "답변은 저장·전송되지 않아요"].forEach(function(t){ meta.appendChild(h("span","",t)); });
+  wrap.appendChild(meta);
+  var b = h("button","opt-btn primary","진단 시작하기"); b.type = "button";
+  b.onclick = function(){ goTo(D.start); };
+  wrap.appendChild(b);
+  screenEl.appendChild(wrap);
+}
+
+function goTo(id){
+  if(D.outcomes[id]) return showOutcome(id);
+  showQuestion(id);
+}
+
+function showQuestion(qid){
+  var q = D.questions[qid];
+  clearScreen();
+  var step = pathStack.length + 1;
+  setProgress(step);
+  screenEl.appendChild(h("div","q-count","질문 " + step));
+  screenEl.appendChild(h("div","q-text", q.text));
+  if(q.why) screenEl.appendChild(h("div","q-why", q.why));
+  var box = h("div","options");
+  q.options.forEach(function(o){
+    var b = h("button","opt-btn", o.label); b.type = "button";
+    b.onclick = function(){ pathStack.push({qid:qid, qtext:q.text, label:o.label}); goTo(o.next); };
+    box.appendChild(b);
+  });
+  screenEl.appendChild(box);
+  var back = h("button","back-btn", pathStack.length ? "← 이전 질문으로" : "← 처음으로"); back.type = "button";
+  back.onclick = function(){
+    if(!pathStack.length) return showIntro();
+    var last = pathStack.pop(); showQuestion(last.qid);
+  };
+  screenEl.appendChild(back);
+}
+
+function copyText(text, btn){
+  function ok(){ var o = btn.textContent; btn.textContent = "복사했어요 ✓"; setTimeout(function(){ btn.textContent = o; }, 1800); }
+  function fallback(){
+    var t = document.createElement("textarea"); t.value = text; t.style.position = "fixed"; t.style.opacity = "0";
+    document.body.appendChild(t); t.select();
+    try{ document.execCommand("copy"); ok(); }catch(e){ btn.textContent = "복사 실패 — 직접 선택해 주세요"; }
+    document.body.removeChild(t);
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(ok, fallback); } else { fallback(); }
+}
+
+function block(label, bodyNode){
+  var b = h("div","block"); b.appendChild(h("div","block-label",label)); b.appendChild(bodyNode); return b;
+}
+
+function cleanOne(s){ return String(s || "").replace(/\s+/g," ").trim(); }
+function shortLegal(s){
+  var x = cleanOne(s);
+  if(x.length <= 220) return x;
+  return x.slice(0,220).replace(/[\s,，;；:：]+[^\s]*$/g,"") + "…";
+}
+function fallbackShare(o){
+  var acts = (o.checklist || []).slice(0,3).map(function(x){ return cleanOne(x); }).filter(Boolean);
+  return [
+    "판단 이유: " + cleanOne(o.why),
+    "지금 할 일: " + acts.join(" / "),
+    "주의: " + cleanOne(o.caution)
+  ].join("\n");
+}
+function copySummaryText(o){
+  var answers = pathStack.map(function(p){ return cleanOne(p.label); }).filter(Boolean).join(" / ");
+  var summary = cleanOne(o.share_summary) ? o.share_summary : fallbackShare(o);
+  return [
+    "[법률 자가진단] " + cleanOne(D.hook),
+    "내 답변: " + (answers || "기록 없음"),
+    "결과: " + GRADE[o.grade] + " — " + cleanOne(o.title),
+    summary,
+    "법적 근거: " + shortLegal(o.basis),
+    "※ " + cleanOne(o.disclaimer || D.disclaimer),
+    "진단 링크: " + location.href
+  ].join("\n");
+}
+
+function showOutcome(oid){
+  var o = D.outcomes[oid];
+  clearScreen(); setProgress(0, true);
+  var head = h("div");
+  var g = h("span","grade " + o.grade, "● " + GRADE[o.grade]);
+  head.appendChild(g);
+  if(o.tag) head.appendChild(h("span","outcome-tag", o.tag));
+  screenEl.appendChild(head);
+  var wrap = h("div","outcome");
+  wrap.appendChild(h("h2","", o.title));
+
+  /* 왜 이 결과인가 — 내가 고른 답 + 근거 1줄 */
+  var why = h("div");
+  var chips = h("div","chips");
+  pathStack.forEach(function(p){ chips.appendChild(h("div","chip","· " + p.label)); });
+  why.appendChild(chips);
+  why.appendChild(h("div","why-line", o.why));
+  wrap.appendChild(block("🔎 왜 이 결과인가요?", why));
+
+  if(o.share_summary || o.why || o.caution){
+    wrap.appendChild(block("🧾 한눈에 정리", h("div","share-summary", o.share_summary || fallbackShare(o))));
+  }
+
+  if(o.fact && D.myth){
+    var vs = h("div","vs");
+    var m = h("div","m"); m.appendChild(h("b","","통념")); m.appendChild(document.createTextNode(D.myth));
+    var f = h("div","f"); f.appendChild(h("b","","이 경우엔")); f.appendChild(document.createTextNode(o.fact));
+    vs.appendChild(m); vs.appendChild(f);
+    wrap.appendChild(block("💡 통념 vs 사실", vs));
+  }
+  if(o.checklist && o.checklist.length){
+    var ul = h("ul","checklist"); o.checklist.forEach(function(c){ ul.appendChild(h("li","",c)); });
+    wrap.appendChild(block("✅ 지금 해볼 것", ul));
+  }
+  wrap.appendChild(block("⚠️ 주의할 점", h("div","block-body", o.caution)));
+  var bd = document.createElement("details"); bd.className = "basis-details";
+  bd.appendChild(h("summary","","📖 법적 근거 보기"));
+  bd.appendChild(h("div","block-body", o.basis));
+  wrap.appendChild(bd);
+  wrap.appendChild(h("div","disclaimer", o.disclaimer || D.disclaimer));
+  screenEl.appendChild(wrap);
+
+  var actions = h("div","actions");
+  var cp = h("button","ghost-btn","📋 결과 요약 복사하기"); cp.type = "button";
+  cp.onclick = function(){
+    var t = copySummaryText(o);
+    copyText(t, cp);
+  };
+  actions.appendChild(cp);
+  if(D.mother_url){
+    var a = h("a","ghost-btn","📰 원문 컬럼 읽어보기"); a.href = D.mother_url; a.target = "_blank"; a.rel = "noopener"; actions.appendChild(a);
+  }
+  var rs = h("button","ghost-btn","↺ 처음부터 다시"); rs.type = "button"; rs.onclick = showIntro;
+  actions.appendChild(rs);
+  screenEl.appendChild(actions);
+
+  var cta = h("div","cta-box");
+  cta.appendChild(document.createTextNode((o.cta || "지금 상황을 구체적으로 확인하고 싶다면") + " "));
+  var s = h("strong","", D.cta_lawyer);
+  cta.appendChild(s);
+  cta.appendChild(document.createTextNode("("));
+  var ml = h("a","", D.cta_email); ml.href = "mailto:" + D.cta_email; cta.appendChild(ml);
+  cta.appendChild(document.createTextNode(")에게 문의하세요."));
+  screenEl.appendChild(cta);
+}
+
+document.getElementById("footer").textContent = "제공 : " + D.cta_lawyer + " 법률사무소";
+showIntro();
+</script>
+</body>
+</html>
