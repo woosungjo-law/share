@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>도산해지조항, 상대가 회생하면 계약이 곧 끝난다는 착각이 아니라 이행 상태를 확인해야 하는 문제다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 도산해지조항 확인 체크포인트</div>
+    <h1>도산해지조항, 상대가 회생하면 계약이 곧 끝난다는 착각이 아니라 이행 상태를 확인해야 하는 문제다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> 상대가 회생을 신청했다는 소식만으로 계약이 자동으로 끝난 것은 아닙니다. 우리 법에는 도산해지조항을 무조건 무효로 만드는 규정이 없어 효력은 계약의 종류와 쌍방미이행 쌍무계약 해당 여부에 따라 달라지고, 어디까지 이행했는지와 통지를 언제 보냈는지가 결과를 가릅니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      주문을 가장 많이 주던 거래처가 회생절차를 신청했다는 연락이 왔습니다. 계약서에는 상대가 회생이나 파산을 신청하면 계약을 끝낼 수 있다고 적혀 있어, 이제 물건을 더 만들지 않아도 되고 대금만 받으면 된다고 생각하기 쉽습니다. 그런데 막상 납품을 앞둔 물량과 이미 받지 못한 대금이 얽혀 있어, 계약이 정말 끝난 것인지부터 확인해야 합니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>도산해지조항(Ipso Facto Clause)은 회생신청·개시·파산 등을 이유로 계약을 해지할 수 있게 정한 조항입니다. 우리 법에는 이런 조항을 무조건 무효로 만드는 규정이 없어서, 효력은 계약의 종류와 그 계약이 쌍방미이행 쌍무계약에 해당하는지에 따라 달라집니다.</p>
+    <p>쌍방미이행 쌍무계약이란 양쪽 모두 아직 자기 의무를 다하지 않은 계약을 말합니다. 이때는 관리인이나 파산관재인이 계약을 이어갈지 끝낼지 선택할 수 있습니다. 채무자 회생 및 파산에 관한 법률 제119조가 이를 정하고, 제335조도 쌍방미이행 쌍무계약에 관한 선택을 규정합니다.</p>
+    <p>대법원 2005다38263 판결은 도산해지조항의 효력과 쌍무계약의 의미를 다뤘고, 대법원 2017다273441 판결은 파산관재인이 해지권을 행사할 수 있는지가 문제 된 사안을 판단했습니다. 결국 상대가 회생한다고 해서 조항만 보고 계약이 끝났다고 단정할 수는 없습니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>어디까지 이행했는지, 언제 통지했는지</h2>
+    <ul class="points">
+      <li><b>이행 상태가 결론을 가릅니다</b> — 물건을 다 만들었는데 대금을 못 받았는지, 대금은 일부 받았는데 납품이 남았는지에 따라 결론이 달라집니다.</li>
+      <li><b>해제·해지의 근거 조문</b> — 채무자회생법 제121조는 쌍방미이행 쌍무계약의 해제 또는 해지에 관하여 정합니다.</li>
+      <li><b>통지 시점이 영향을 줍니다</b> — 해지 통지를 회생개시 전에 했는지 후에 했는지가 결과에 영향을 줄 수 있습니다.</li>
+      <li><b>계약 종류에 따라 경향이 다릅니다</b> — 공급이나 라이선스 계약은 조항이 제한되는 편이고, 리스나 금융 계약은 존중되는 편입니다.</li>
+      <li><b>감이 아니라 조문으로 확인합니다</b> — 회생개시 후 관리인이 계약을 이행한 이상 절차가 폐지되더라도 해지 전 계약관계가 되살아나지는 않는다는 해석이 제시되지만, 사안에 따라 달라 단정은 이릅니다.</li>
+    </ul>
+    <div class="callout"><b>조건·예외 점검.</b> 감으로 판단하지 말고 조문과 사실관계로 확인하십시오. 못 받은 대금은 채권 신고 절차와 연결해 확인하고, 계약이 끝난 것인지 이어지는 것인지에 따라 다음 행동을 나눠 준비합니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;">지금 당장 확인할 일 — 어디까지 이행했는지, 언제 통지했는지</p>
+    <ol>
+      <li><b>계약서 확인</b> — 도산 관련 조항의 문언을 다시 읽습니다.</li>
+      <li><b>이행 기록</b> — 납품·대금 지급 내역을 날짜별로 정리합니다.</li>
+      <li><b>이행 상태</b> — 양쪽 의무가 남아 있는지, 한쪽만 남았는지 가릅니다.</li>
+      <li><b>시점 기록</b> — 회생 신청일과 통지일을 기록하고 도달 증거를 남깁니다.</li>
+      <li><b>조문 확인</b> — 채무자회생법 제119조·제121조·제335조 요건을 확인합니다.</li>
+      <li><b>채권 관리</b> — 못 받은 대금은 채권 신고 절차와 연결합니다.</li>
+      <li><b>전문가 상담</b> — 단정하지 말고 변호사와 사실관계를 점검합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
