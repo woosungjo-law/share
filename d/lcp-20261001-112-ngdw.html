@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>판결을 받았는데 돈이 안 들어오면 강제집행의 입구부터 확인</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 강제집행 입구 확인 체크포인트</div>
+    <h1>판결을 받았는데 돈이 안 들어오면 강제집행의 입구부터 확인</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> 판결문을 받는 일과 돈을 실제로 회수하는 일은 이어지는 별도 단계입니다. 상대방이 자발적으로 지급하지 않는다면 법원의 정식 절차로 들어가야 하고, 그 첫 문은 집행법원에서 내가 신청할 수 있는 집행 방식이 열려 있는지 확인하는 일입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      판결이 확정됐는데도 통장에 돈이 들어오지 않으면 많은 분이 “이제 법원이 알아서 받아 주겠지”라고 생각합니다. 실제로는 판결문만 다시 읽는 것으로는 진행되지 않습니다. 판결의 주문, 당사자 이름, 지급할 금액과 기한, 송달·확정 여부를 한 묶음으로 정리해 두는 순간부터, 다음 판단이 훨씬 분명해집니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>민사집행법 제3조는 강제집행의 관할을 집행법원, 즉 지방법원으로 정하고 있습니다. 따라서 상대방에게 계속 연락하는 것만으로 절차가 진행되는 것은 아니며, 집행법원을 통해 정식 절차를 시작해야 합니다.</p>
+    <p>민사집행법 제56조는 금전채권의 집행을 채무자의 재산을 압류하여 추심하거나 매각하는 방법으로 합니다. 핵심은 “판결이 있다”는 사실에서 멈추지 않고, 상대방 재산 중 어떤 대상을 어떤 방법으로 집행할지 정하는 것입니다.</p>
+    <p>집행의 시작점은 재산을 전부 아느냐가 아니라, 확인한 단서를 압류·추심과 매각 중 무엇에 맞출지 가리는 일입니다. 판결문에 적힌 이름이나 금액이 실제 신청 자료와 다르면 보정이 필요할 수 있으므로 서류 대조가 그다음 순서입니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>단서를 모으고 집행 방식에 맞춘다</h2>
+    <ul class="points">
+      <li><b>재산을 모른다고 포기하지 않습니다</b> — 알고 있는 계좌, 급여를 받는 곳, 거래처, 부동산이나 차량 등 확인 가능한 단서를 먼저 모읍니다.</li>
+      <li><b>막연한 추측으로 신청하지 않습니다</b> — 각 단서가 금전채권 압류·추심 대상인지, 매각을 검토할 재산인지 집행 방식과 맞는지 구분합니다.</li>
+      <li><b>서류 불일치는 보정 단계입니다</b> — 판결문에 적힌 이름이나 금액이 실제 신청 자료와 다르면 보정이 필요할 수 있습니다.</li>
+      <li><b>우선순위를 세웁니다</b> — 여러 재산을 한꺼번에 겨냥하기보다 회수 가능성, 비용, 신속성을 비교해 순서를 정합니다.</li>
+      <li><b>협의해도 글로 남깁니다</b> — 마지막으로 협의하더라도 “언제, 얼마를, 어떤 방식으로 지급할지”를 문자나 문서로 남깁니다.</li>
+    </ul>
+    <div class="callout"><b>조건·예외 점검.</b> 판결문에 적힌 채권자·채무자·금액이 신청 자료와 일치하는지 먼저 대조하고, 모르는 부분을 추측으로 채우지 말고 집행법원이나 전문가에게 확인할 질문을 따로 적어 두세요.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;">지금 당장 확인할 일 — 단서를 모으고 집행 방식에 맞춘다</p>
+    <ol>
+      <li><b>판결문 모으기</b> — 판결문과 송달·확정 관련 서류를 한 폴더에 모읍니다.</li>
+      <li><b>재산 단서 기록</b> — 채무자의 재산으로 의심되는 단서를 날짜와 출처와 함께 적습니다.</li>
+      <li><b>방식 나누기</b> — 각 단서를 금전채권 압류·추심 대상인지, 매각을 검토할 재산인지 나눕니다.</li>
+      <li><b>신청 요건 확인</b> — 집행법원에 어떤 신청이 가능한지 확인하고 필요한 서류와 비용을 점검합니다.</li>
+      <li><b>협의도 기록</b> — 상대방과 마지막으로 협의하더라도 언제, 얼마를, 어떤 방식으로 지급할지를 글로 남깁니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
