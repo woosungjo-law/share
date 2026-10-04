@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>서류는 냈는데 왜 불허일까? 가족 초청, 생계요건이 먼저일까?</title>
+<!-- sc-template v3 · 렌더러: _tools/sc.py build · 이 파일을 직접 고치지 말고 00_운영/app_template.html 과 시나리오 노트를 고친다 -->
+<style>
+  :root{
+    --navy:#12233f; --navy-deep:#0a1626; --accent:#c9a24b; --bg:#f4f5f7; --card:#ffffff;
+    --text:#1e232b; --muted:#5f6673; --line:#e5e7eb;
+    --g-high:#1f7a4d; --g-mid:#b7791f; --g-check:#4a5568;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    background:var(--bg);color:var(--text);min-height:100vh;
+    display:flex;align-items:flex-start;justify-content:center;padding:16px;line-height:1.55;
+    word-break:keep-all;overflow-wrap:anywhere;
+  }
+  .app{width:100%;max-width:480px;background:var(--card);border-radius:18px;box-shadow:0 8px 30px rgba(18,35,63,.12);overflow:hidden;display:flex;flex-direction:column;min-height:560px;}
+  .topbar{background:var(--navy);color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;font-size:13px;}
+  .topbar .brand{font-weight:700;letter-spacing:.02em;}
+  .progress-wrap{height:4px;background:var(--line);width:100%;}
+  .progress-bar{height:100%;background:var(--accent);width:0%;transition:width .25s ease;}
+  .screen{flex:1;padding:26px 22px 22px;display:none;flex-direction:column;animation:fadeIn .22s ease;}
+  .screen.active{display:flex;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+
+  .intro-icon{font-size:38px;margin-bottom:12px;}
+  .intro h1{font-size:22px;line-height:1.4;color:var(--navy-deep);margin-bottom:12px;}
+  .myth{background:#fbf6ea;border-left:4px solid var(--accent);border-radius:8px;padding:12px 14px;margin-bottom:14px;font-size:13.5px;color:#4a3d16;}
+  .myth b{display:block;font-size:11px;letter-spacing:.04em;color:#8a6d1f;margin-bottom:3px;}
+  .intro p{color:var(--muted);font-size:14px;margin-bottom:16px;}
+  .meta{font-size:12px;color:var(--muted);margin-bottom:20px;display:flex;gap:8px;flex-wrap:wrap;}
+  .meta span{background:var(--bg);padding:4px 10px;border-radius:20px;}
+
+  .q-count{font-size:12px;color:#8a6d1f;font-weight:700;margin-bottom:8px;letter-spacing:.03em;}
+  .q-text{font-size:19px;font-weight:700;color:var(--navy-deep);margin-bottom:8px;line-height:1.45;}
+  .q-why{font-size:12.5px;color:var(--muted);margin-bottom:18px;}
+  .options{display:flex;flex-direction:column;gap:10px;margin-top:10px;}
+  .opt-btn{text-align:left;background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;font:inherit;font-size:14.5px;color:var(--text);cursor:pointer;transition:all .15s ease;min-height:44px;width:100%;}
+  .opt-btn:hover,.opt-btn:active,.opt-btn:focus-visible{border-color:var(--accent);background:#fbf6ea;outline:none;}
+  .opt-btn.primary{text-align:center;font-weight:700;background:var(--navy);color:#fff;border:none;}
+  .opt-btn.primary:hover,.opt-btn.primary:focus-visible{background:var(--navy-deep);}
+  .back-btn{margin-top:14px;background:none;border:none;color:var(--muted);font-size:12.5px;text-align:left;cursor:pointer;min-height:36px;text-decoration:underline;}
+
+  .grade{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#fff;padding:5px 12px;border-radius:20px;margin-bottom:10px;width:fit-content;}
+  .grade.high{background:var(--g-high);} .grade.mid{background:var(--g-mid);} .grade.check{background:var(--g-check);}
+  .outcome-tag{display:inline-block;font-size:11px;font-weight:700;color:var(--navy);background:#eef1f6;padding:4px 10px;border-radius:20px;margin-bottom:10px;margin-left:6px;}
+  .outcome h2{font-size:18px;color:var(--navy-deep);margin-bottom:14px;line-height:1.5;}
+  .block{margin-bottom:15px;}
+  .block-label{font-size:12px;font-weight:700;color:#8a6d1f;margin-bottom:5px;letter-spacing:.02em;}
+  .block-body{font-size:13.5px;color:var(--text);}
+  .share-summary{font-size:13.5px;color:var(--text);white-space:pre-line;background:#fbf6ea;border:1px solid #ead9ad;border-left:4px solid var(--accent);border-radius:10px;padding:12px 14px;}
+  .basis-details{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:#fafbfc;margin-bottom:15px;}
+  .basis-details summary{cursor:pointer;color:#3b4250;font-size:13px;font-weight:700;}
+  .basis-details .block-body{margin-top:9px;}
+  .chips{display:flex;flex-direction:column;gap:5px;margin-bottom:6px;}
+  .chip{font-size:12.5px;background:var(--bg);border-radius:8px;padding:6px 10px;color:#3b4250;}
+  .why-line{font-size:13.5px;}
+  .vs{display:grid;gap:6px;}
+  .vs div{font-size:13px;border-radius:8px;padding:9px 12px;}
+  .vs .m{background:#f6ecec;color:#7a2f2f;} .vs .f{background:#e9f4ee;color:#1d5b3a;}
+  .vs b{display:block;font-size:10.5px;letter-spacing:.05em;margin-bottom:2px;}
+  .checklist{list-style:none;display:flex;flex-direction:column;gap:6px;}
+  .checklist li{font-size:13.5px;padding-left:22px;position:relative;}
+  .checklist li::before{content:"☐";position:absolute;left:0;color:#8a6d1f;}
+  .disclaimer{font-size:12px;color:var(--muted);background:var(--bg);border-radius:10px;padding:12px 14px;margin-bottom:14px;}
+  .actions{display:flex;flex-direction:column;gap:8px;margin-bottom:14px;}
+  .ghost-btn{background:transparent;border:1.5px solid var(--line);color:#3b4250;border-radius:10px;padding:11px;font:inherit;font-size:13px;cursor:pointer;min-height:44px;text-align:center;text-decoration:none;display:block;}
+  .ghost-btn:hover,.ghost-btn:focus-visible{border-color:var(--accent);outline:none;}
+  .cta-box{background:var(--navy);color:#fff;border-radius:12px;padding:16px 18px;font-size:13.5px;margin-top:auto;}
+  .cta-box strong{color:var(--accent);} .cta-box a{color:#fff;text-decoration:underline;}
+  .footer-mark{text-align:center;font-size:11px;color:var(--muted);padding:10px 0 16px;}
+  button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px;}
+  @media (max-width:380px){ .screen{padding:22px 16px 18px;} .q-text{font-size:18px;} }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topbar"><span class="brand">법률 자가진단</span><span id="progress-label"></span></div>
+  <div class="progress-wrap"><div class="progress-bar" id="progress-bar"></div></div>
+  <div class="screen active" id="screen"></div>
+  <div class="footer-mark" id="footer"></div>
+</div>
+
+<script id="sc-data" type="application/json">{"hook": "서류는 냈는데 왜 불허일까? 가족 초청, 생계요건이 먼저일까?", "myth": "급여와 등본만 내면 가족 초청은 된다", "teaser": "불허 통보를 받았다면 — 가르는 건 서류 양이 아니라, 요건을 어떻게 갖췄는지입니다.", "icon": "✈️", "time": "약 1분", "start": "Q1", "nq_min": 2, "nq_max": 2, "cta_lawyer": "조우성 변호사", "cta_email": "law@mustknow.co.kr", "disclaimer": "이 진단은 일반적인 법률 정보 안내이며, 구체적인 사안은 개별 상담을 통해 확인해야 합니다.", "mother_url": "", "questions": {"Q1": {"text": "지금 가장 가까운 상황은 무엇인가요?", "why": "초청 준비·체류 유지·파탄 대비는 확인할 것이 달라서 먼저 나눕니다.", "options": [{"label": "본국에 있는 가족을 초청하려 준비 중이다", "next": "Q2"}, {"label": "결혼이민 체류자격 유지를 점검하고 싶다", "next": "Q3"}, {"label": "혼인 파탄(폭력·사망·이혼)이 걱정된다", "next": "Q4"}]}, "Q2": {"text": "초청 증빙은 어디까지 준비됐나요?", "why": "소득·주거·가족관계 증빙과 진정성 자료를 어떻게 묶었는지가 출발점입니다.", "options": [{"label": "소득·주거·가족관계 증빙과 진정성 자료를 묶어 두었다", "next": "A"}, {"label": "일부만 모았거나 무엇이 부족한지 모르겠다", "next": "D"}, {"label": "이미 불허·보완 통보를 받았다", "next": "E"}, {"label": "잘 모르겠다", "next": "F"}]}, "Q3": {"text": "내 사안에 맞는 체류자격 유지 요건을 확인했나요?", "why": "유지 요건은 사안에 따라 달라서, 내 경우를 따로 보는 게 핵심입니다.", "options": [{"label": "내 사안의 요건을 따져 보았다", "next": "B"}, {"label": "아직 따져 보지 않았다", "next": "D"}, {"label": "잘 모르겠다", "next": "F"}]}, "Q4": {"text": "혼인 파탄과 관련해 해당하는 것이 있나요?", "why": "파탄 사유에 따라 챙겨야 할 자료가 달라집니다.", "options": [{"label": "배우자의 폭력으로 관계가 깨졌다", "next": "C"}, {"label": "배우자가 사망했다", "next": "C"}, {"label": "이혼했거나 이혼을 앞두고 있다", "next": "C"}, {"label": "파탄은 없지만 미리 대비하고 싶다", "next": "B"}, {"label": "잘 모르겠다 / 말하기 어렵다", "next": "F"}]}}, "outcomes": {"A": {"grade": "high", "tag": "초청 준비 양호", "title": "증빙을 묶어 소명·재신청으로 나아갈 수 있는 상황으로 보여요.", "why": "소득·주거·가족관계 증빙과 진정성 자료를 묶어 두었다고 답하셨어요.", "fact": "이 경우엔 서류 양보다 요건을 어떻게 갖췄는지가 결과를 가릅니다.", "basis": "출입국관리법 제10조는 입국하려는 외국인이 체류자격을 가져야 한다고 정하고, 제10조의2는 일반체류자격을 단기·장기로 구분합니다. 초청은 이 체류자격 틀 안에서 사안별 요건을 따지는 문제이므로, 증빙 묶음과 진정성 소명, 거부 시 소명·재신청 준비가 핵심입니다.", "caution": "증빙이 있다고 해서 결과가 정해지는 것은 아니에요. 요건 충족 여부는 사안별로 다시 보게 됩니다.", "checklist": ["급여·등본·증명서 묶음을 날짜 순으로 정리해 두세요.", "초청 목적의 진정성을 보여주는 자료를 함께 묶으세요.", "거부되면 사유를 확인해 소명·재신청으로 나아가세요."], "share_summary": "판단 이유: 소득·주거·가족관계 증빙과 진정성 자료를 묶어 두었다고 답하셨어요.\n지금 할 일: 급여·등본·증명서 묶음을 날짜 순으로 정리해 두세요. / 초청 목적의 진정성을 보여주는 자료를 함께 묶으세요. / 거부되면 사유를 확인해 소명·재신청으로 나아가세요.\n주의: 증빙이 있다고 해서 결과가 정해지는 것은 아니에요. 요건 충족 여부는 사안별로 다시 보게 됩니다.\n", "disclaimer": "", "cta": ""}, "B": {"grade": "mid", "tag": "유지 요건 점검 단계", "title": "체류자격 유지 요건을 내 사안에 맞게 따져볼 단계예요.", "why": "유지 요건을 점검하고 싶다고 답하셨어요.", "fact": "혼인이 이어지는 동안의 체류와 파탄 뒤의 체류는 따지는 것이 다릅니다.", "basis": "출입국관리법 제10조와 제10조의2는 체류자격을 일반(기간 제한)·영주, 단기·장기로 구분합니다. 결혼이민 체류자격 유지의 요건은 사안에 따라 다르므로, 제10조에 따라 해당 사안의 요건을 따져야 합니다.", "caution": "사안에 따라 요건이 달라서, 다른 사람의 경우가 그대로 적용되지 않을 수 있어요.", "checklist": ["현재 체류자격과 체류기간을 확인해 적어 두세요.", "사안별 유지 요건에 해당하는 자료가 무엇인지 정리하세요.", "파탄이 걱정되면 귀책·양육 관계 자료도 함께 모아 두세요."], "share_summary": "판단 이유: 체류자격 유지 요건을 점검하고 싶다고 답하셨어요.\n지금 할 일: 현재 체류자격과 체류기간을 확인해 적어 두세요. / 사안별 유지 요건에 해당하는 자료가 무엇인지 정리하세요. / 파탄이 걱정되면 귀책·양육 관계 자료도 함께 모아 두세요.\n주의: 사안에 따라 요건이 달라서, 다른 사람의 경우가 그대로 적용되지 않을 수 있어요.\n", "disclaimer": "", "cta": ""}, "C": {"grade": "check", "tag": "파탄 대비 확인 필요", "title": "귀책 입증 자료와 양육 관계를 먼저 정리해야 하는 상황으로 보여요.", "why": "혼인 파탄이 걱정된다고 답하셨어요.", "fact": "파탄 뒤 체류는 책임이 누구에게 있는지, 양육 관계가 어떤지를 함께 보게 됩니다.", "basis": "출입국관리법 제10조와 제10조의2의 체류자격 구분을 전제로, 혼인이 파탄되면 체류의 전제가 흔들리는지를 따지는 단계입니다. 파탄의 책임을 보여주는 자료와 양육 관계를 정리해 확인해야 합니다.", "caution": "파탄 사유와 자료에 따라 결론이 달라질 수 있어요. 혼자 단정하지 말고 자료를 모아 확인하세요.", "checklist": ["파탄 사유별 자료를 모으세요(폭력은 신고·진단 기록, 사망은 증빙, 이혼은 경위 자료).", "양육하고 있는 자녀가 있으면 양육 관계를 정리하세요.", "체류자격 유지·취소 해당 여부는 자료를 갖고 확인하세요."], "share_summary": "판단 이유: 혼인 파탄이 걱정된다고 답하셨어요.\n지금 할 일: 파탄 사유별 자료를 모으세요(폭력은 신고·진단 기록, 사망은 증빙, 이혼은 경위 자료). / 양육하고 있는 자녀가 있으면 양육 관계를 정리하세요. / 체류자격 유지·취소 해당 여부는 자료를 갖고 확인하세요.\n주의: 파탄 사유와 자료에 따라 결론이 달라질 수 있어요. 혼자 단정하지 말고 자료를 모아 확인하세요.\n", "disclaimer": "", "cta": ""}, "D": {"grade": "mid", "tag": "증빙·요건 보완 필요", "title": "무엇이 부족한지부터 가려내 보완할 단계예요.", "why": "증빙 일부가 부족하거나 요건을 아직 따져 보지 않았다고 답하셨어요.", "fact": "부족한 부분을 메우는 순서가 결과를 가릅니다.", "basis": "출입국관리법 제10조와 제10조의2의 체류자격 구분 안에서, 초청은 증빙 묶음과 진정성 소명이, 유지는 사안별 요건 확인이 출발점입니다. 부족한 고리를 먼저 메워야 합니다.", "caution": "부족한 채로 내면 같은 보완 통보가 반복될 수 있어요.", "checklist": ["소득·주거·가족관계 증빙 중 빠진 것을 적어 보세요.", "진정성을 보여주는 자료를 따로 묶으세요.", "유지 요건은 내 사안에 맞게 다시 따져 보세요."], "share_summary": "판단 이유: 증빙 일부가 부족하거나 요건을 아직 따져 보지 않았다고 답하셨어요.\n지금 할 일: 소득·주거·가족관계 증빙 중 빠진 것을 적어 보세요. / 진정성을 보여주는 자료를 따로 묶으세요. / 유지 요건은 내 사안에 맞게 다시 따져 보세요.\n주의: 부족한 채로 내면 같은 보완 통보가 반복될 수 있어요.\n", "disclaimer": "", "cta": ""}, "E": {"grade": "mid", "tag": "불허 후 소명 단계", "title": "불허 사유를 확인해 소명·재신청을 준비할 단계예요.", "why": "이미 불허·보완 통보를 받았다고 답하셨어요.", "fact": "거부 통보가 끝이 아니라, 소명과 재신청으로 나아갈 수 있습니다.", "basis": "출입국관리법 제10조와 제10조의2의 체류자격 틀 안에서, 거부되면 사유에 맞춰 증빙을 보완하고 소명·재신청으로 나아가는 흐름입니다.", "caution": "같은 묶음을 그대로 다시 내면 같은 결과가 나올 수 있어요.", "checklist": ["불허·보완 통보의 사유를 그대로 옮겨 적으세요.", "부족하다고 지적된 증빙부터 보완하세요.", "진정성 자료를 덧붙여 소명 순서를 정리하세요."], "share_summary": "판단 이유: 이미 불허·보완 통보를 받았다고 답하셨어요.\n지금 할 일: 불허·보완 통보의 사유를 그대로 옮겨 적으세요. / 부족하다고 지적된 증빙부터 보완하세요. / 진정성 자료를 덧붙여 소명 순서를 정리하세요.\n주의: 같은 묶음을 그대로 다시 내면 같은 결과가 나올 수 있어요.\n", "disclaimer": "", "cta": ""}, "F": {"grade": "check", "tag": "정보 부족", "title": "지금은 자료를 모아 확인할 것이 먼저인 상황이에요.", "why": "잘 모르겠다고 답하셨어요.", "fact": "모르는 채로 서두르기보다, 증빙과 요건을 정리하는 것이 먼저입니다.", "basis": "출입국관리법 제10조와 제10조의2는 체류자격을 구분하는 출발점입니다. 내 사안의 요건을 따지려면 먼저 사실관계를 정리해야 합니다.", "caution": "사실관계가 정리되기 전에는 어떤 경우에도 해당한다고 보기 어려워요.", "checklist": ["현재 상황(초청 준비·유지 점검·파탄 걱정 중 무엇인지)을 적어 보세요.", "가지고 있는 증빙을 목록으로 정리하세요.", "모르는 부분은 빈칸으로 두고 상담 때 확인하세요."], "share_summary": "판단 이유: 잘 모르겠다고 답하셨어요.\n지금 할 일: 현재 상황(초청 준비·유지 점검·파탄 걱정 중 무엇인지)을 적어 보세요. / 가지고 있는 증빙을 목록으로 정리하세요. / 모르는 부분은 빈칸으로 두고 상담 때 확인하세요.\n주의: 사실관계가 정리되기 전에는 어떤 경우에도 해당한다고 보기 어려워요.\n", "disclaimer": "", "cta": ""}}}</script>
+<script>
+"use strict";
+var D = JSON.parse(document.getElementById("sc-data").textContent);
+var GRADE = {high:"가능성 높음", mid:"살펴볼 것", check:"확인 필요"};
+var screenEl = document.getElementById("screen");
+var pathStack = [];          // [{qid, qtext, label}]
+
+function h(tag, cls, text){
+  var e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(text !== undefined && text !== null) e.textContent = text;
+  return e;
+}
+function clearScreen(){ while(screenEl.firstChild) screenEl.removeChild(screenEl.firstChild); screenEl.className = "screen active"; window.scrollTo(0,0); }
+
+function setProgress(step, done){
+  var bar = document.getElementById("progress-bar");
+  var lab = document.getElementById("progress-label");
+  if(done){ bar.style.width = "100%"; lab.textContent = "진단 완료"; return; }
+  if(step === 0){ bar.style.width = "0%"; lab.textContent = ""; return; }
+  bar.style.width = Math.min(100, Math.round(step / D.nq_max * 100)) + "%";
+  lab.textContent = "질문 " + step;
+}
+
+function showIntro(){
+  pathStack = []; clearScreen(); setProgress(0);
+  var wrap = h("div","intro");
+  wrap.appendChild(h("div","intro-icon", D.icon || "⚖️"));
+  wrap.appendChild(h("h1","", D.hook));
+  if(D.myth){
+    var m = h("div","myth"); m.appendChild(h("b","","많은 분들이 이렇게 알고 있어요")); m.appendChild(document.createTextNode("“" + D.myth + "”"));
+    wrap.appendChild(m);
+  }
+  if(D.teaser) wrap.appendChild(h("p","", D.teaser));
+  var meta = h("div","meta");
+  [D.time || "약 1분", "객관식 질문 최대 " + D.nq_max + "개", "답변은 저장·전송되지 않아요"].forEach(function(t){ meta.appendChild(h("span","",t)); });
+  wrap.appendChild(meta);
+  var b = h("button","opt-btn primary","진단 시작하기"); b.type = "button";
+  b.onclick = function(){ goTo(D.start); };
+  wrap.appendChild(b);
+  screenEl.appendChild(wrap);
+}
+
+function goTo(id){
+  if(D.outcomes[id]) return showOutcome(id);
+  showQuestion(id);
+}
+
+function showQuestion(qid){
+  var q = D.questions[qid];
+  clearScreen();
+  var step = pathStack.length + 1;
+  setProgress(step);
+  screenEl.appendChild(h("div","q-count","질문 " + step));
+  screenEl.appendChild(h("div","q-text", q.text));
+  if(q.why) screenEl.appendChild(h("div","q-why", q.why));
+  var box = h("div","options");
+  q.options.forEach(function(o){
+    var b = h("button","opt-btn", o.label); b.type = "button";
+    b.onclick = function(){ pathStack.push({qid:qid, qtext:q.text, label:o.label}); goTo(o.next); };
+    box.appendChild(b);
+  });
+  screenEl.appendChild(box);
+  var back = h("button","back-btn", pathStack.length ? "← 이전 질문으로" : "← 처음으로"); back.type = "button";
+  back.onclick = function(){
+    if(!pathStack.length) return showIntro();
+    var last = pathStack.pop(); showQuestion(last.qid);
+  };
+  screenEl.appendChild(back);
+}
+
+function copyText(text, btn){
+  function ok(){ var o = btn.textContent; btn.textContent = "복사했어요 ✓"; setTimeout(function(){ btn.textContent = o; }, 1800); }
+  function fallback(){
+    var t = document.createElement("textarea"); t.value = text; t.style.position = "fixed"; t.style.opacity = "0";
+    document.body.appendChild(t); t.select();
+    try{ document.execCommand("copy"); ok(); }catch(e){ btn.textContent = "복사 실패 — 직접 선택해 주세요"; }
+    document.body.removeChild(t);
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(ok, fallback); } else { fallback(); }
+}
+
+function block(label, bodyNode){
+  var b = h("div","block"); b.appendChild(h("div","block-label",label)); b.appendChild(bodyNode); return b;
+}
+
+function cleanOne(s){ return String(s || "").replace(/\s+/g," ").trim(); }
+function shortLegal(s){
+  var x = cleanOne(s);
+  if(x.length <= 220) return x;
+  return x.slice(0,220).replace(/[\s,，;；:：]+[^\s]*$/g,"") + "…";
+}
+function fallbackShare(o){
+  var acts = (o.checklist || []).slice(0,3).map(function(x){ return cleanOne(x); }).filter(Boolean);
+  return [
+    "판단 이유: " + cleanOne(o.why),
+    "지금 할 일: " + acts.join(" / "),
+    "주의: " + cleanOne(o.caution)
+  ].join("\n");
+}
+function copySummaryText(o){
+  var answers = pathStack.map(function(p){ return cleanOne(p.label); }).filter(Boolean).join(" / ");
+  var summary = cleanOne(o.share_summary) ? o.share_summary : fallbackShare(o);
+  return [
+    "[법률 자가진단] " + cleanOne(D.hook),
+    "내 답변: " + (answers || "기록 없음"),
+    "결과: " + GRADE[o.grade] + " — " + cleanOne(o.title),
+    summary,
+    "법적 근거: " + shortLegal(o.basis),
+    "※ " + cleanOne(o.disclaimer || D.disclaimer),
+    "진단 링크: " + location.href
+  ].join("\n");
+}
+
+function showOutcome(oid){
+  var o = D.outcomes[oid];
+  clearScreen(); setProgress(0, true);
+  var head = h("div");
+  var g = h("span","grade " + o.grade, "● " + GRADE[o.grade]);
+  head.appendChild(g);
+  if(o.tag) head.appendChild(h("span","outcome-tag", o.tag));
+  screenEl.appendChild(head);
+  var wrap = h("div","outcome");
+  wrap.appendChild(h("h2","", o.title));
+
+  /* 왜 이 결과인가 — 내가 고른 답 + 근거 1줄 */
+  var why = h("div");
+  var chips = h("div","chips");
+  pathStack.forEach(function(p){ chips.appendChild(h("div","chip","· " + p.label)); });
+  why.appendChild(chips);
+  why.appendChild(h("div","why-line", o.why));
+  wrap.appendChild(block("🔎 왜 이 결과인가요?", why));
+
+  if(o.share_summary || o.why || o.caution){
+    wrap.appendChild(block("🧾 한눈에 정리", h("div","share-summary", o.share_summary || fallbackShare(o))));
+  }
+
+  if(o.fact && D.myth){
+    var vs = h("div","vs");
+    var m = h("div","m"); m.appendChild(h("b","","통념")); m.appendChild(document.createTextNode(D.myth));
+    var f = h("div","f"); f.appendChild(h("b","","이 경우엔")); f.appendChild(document.createTextNode(o.fact));
+    vs.appendChild(m); vs.appendChild(f);
+    wrap.appendChild(block("💡 통념 vs 사실", vs));
+  }
+  if(o.checklist && o.checklist.length){
+    var ul = h("ul","checklist"); o.checklist.forEach(function(c){ ul.appendChild(h("li","",c)); });
+    wrap.appendChild(block("✅ 지금 해볼 것", ul));
+  }
+  wrap.appendChild(block("⚠️ 주의할 점", h("div","block-body", o.caution)));
+  var bd = document.createElement("details"); bd.className = "basis-details";
+  bd.appendChild(h("summary","","📖 법적 근거 보기"));
+  bd.appendChild(h("div","block-body", o.basis));
+  wrap.appendChild(bd);
+  wrap.appendChild(h("div","disclaimer", o.disclaimer || D.disclaimer));
+  screenEl.appendChild(wrap);
+
+  var actions = h("div","actions");
+  var cp = h("button","ghost-btn","📋 결과 요약 복사하기"); cp.type = "button";
+  cp.onclick = function(){
+    var t = copySummaryText(o);
+    copyText(t, cp);
+  };
+  actions.appendChild(cp);
+  if(D.mother_url){
+    var a = h("a","ghost-btn","📰 원문 컬럼 읽어보기"); a.href = D.mother_url; a.target = "_blank"; a.rel = "noopener"; actions.appendChild(a);
+  }
+  var rs = h("button","ghost-btn","↺ 처음부터 다시"); rs.type = "button"; rs.onclick = showIntro;
+  actions.appendChild(rs);
+  screenEl.appendChild(actions);
+
+  var cta = h("div","cta-box");
+  cta.appendChild(document.createTextNode((o.cta || "지금 상황을 구체적으로 확인하고 싶다면") + " "));
+  var s = h("strong","", D.cta_lawyer);
+  cta.appendChild(s);
+  cta.appendChild(document.createTextNode("("));
+  var ml = h("a","", D.cta_email); ml.href = "mailto:" + D.cta_email; cta.appendChild(ml);
+  cta.appendChild(document.createTextNode(")에게 문의하세요."));
+  screenEl.appendChild(cta);
+}
+
+document.getElementById("footer").textContent = "제공 : " + D.cta_lawyer + " 법률사무소";
+showIntro();
+</script>
+</body>
+</html>
