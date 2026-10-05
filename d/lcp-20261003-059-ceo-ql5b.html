@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>하도급법_005_실무</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>하도급법_005_실무</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 하도급법 제3조는 발주·변경위탁의 핵심 조건을 제때 서면으로 남기게 하고, 제16조의2는 공급원가 변동 등으로 조정이 불가피할 때 수급사업자가 대금 조정을 신청할 수 있게 한다. 계약서에 물가 조항이 없다는 이유로 요청을 묵살할 수 없으며, 신청을 검토하고 협의한 경과를 기록해야 한다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      함께 요리하는 식당에서 재료값이 올랐는데도 주문서만 보고 예전 가격을 강요할 수는 없다. 무엇을 언제 어떤 조건으로 맡겼는지와 가격을 다시 논의한 과정이 모두 조리대 옆 장부에 남아야 한다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>발주 서면과 조정 신청 절차</p>
+    <p>하도급법 제3조는 원사업자가 제조 등의 위탁을 하는 경우와 계약내역에 없는 추가·변경위탁을 하는 경우, 일정한 사항을 적은 서면을 정해진 기한까지 수급사업자에게 발급하도록 한다.</p>
+    <p>발주 조건과 대금, 납품 기한 같은 핵심 사항을 서면으로 확정해 두게 하는 장치다.</p>
+    <p>서면이 늦거나 부실하면 원청이 위반 문제를 떠안을 수 있다.</p>
+    <p>하도급법 제16조의2는 수급사업자가 공급원가 변동 등으로 대금 조정이 불가피한 경우 원사업자에게 하도급대금의 조정을 신청할 수 있도록 한다.</p>
+    <p>계약서에 관련 조항이 없더라도 이 절차에 따라 조정 협의를 신청할 수 있다는 점이 실무의 핵심이다.</p>
+    <p>원청이 "계약서에 없다"는 이유로 요청 자체를 봉쇄하면, 협의 의무를 회피하는 것으로 비칠 수 있다.</p>
+    <p>협력사가 이유를 제시하며 서면으로 신청하면 요건 해당 여부를 검토하고 협의에 나서야 한다.</p>
+    <p>또 제3조의 서면 발급 의무는 발주 단계마다 반복되므로, 변경 발주가 잦은 사업일수록 서면 누락이 위반으로 쌓이기 쉽다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외</h2>
+    <ul class="points">
+      <li><b>범위</b> — 적어 둔 각 조문·기준의 범위를 넘겨 새로운 결론을 만들지 않는다.</li>
+      <li>협력사가 보내온 대금 조정 요청서</li>
+      <li>한밭식품 대표 배지훈은 협력 가공업체로부터 납품 단가 조정 요청서를 받았다.</li>
+      <li>원자재 가격이 올라 기존 단가로는 어렵다는 내용이었다.</li>
+      <li>배지훈은 "계약서에 물가 조항이 없으니 그대로 가야 한다"고 판단했지만, 담당 부서에서는 "요청 자체는 받을 수 있고, 서면 발급이나 신고 문제로 번질 수 있다"는 의견도 나왔다.</li>
+      <li>배지훈은 원청으로서 무엇을 해야 하고 무엇을 하면 안 되는지 정리하기로 한다.</li>
+      <li>계약서 조항과 제도적 의무는 다르다</li>
+      <li>묵살하거나 회신하지 않으면 분쟁의 빌미가 된다.</li>
+      <li>발주와 변경이 있었다면 서면이 제때 나갔는지 점검한다.</li>
+      <li>서면 발급 위반 등이 있으면 공정거래위원회 신고 대상이 될 수 있으므로, 내부 통제로 사전에 막는 편이 비용이 작다.</li>
+      <li>협의 자체를 회피하거나 회신을 미룬 기록이 남으면 이후 다툼에서 불리해질 수 있다.</li>
+      <li>경영진은 하도급 대금 문제를 "을의 요구"가 아니라 제도적 절차로 다루어야 한다.</li>
+      <li>발주와 변경 때 서면이 제때 발급되는지 점검하고, 서면에 대금·기한·변경 조건이 담기도록 양식을 표준화한다.</li>
+      <li>협력사가 대금 조정을 신청하면 요건을 검토해 협의하고, 협의 경과와 결과를 기록으로 남긴다.</li>
+      <li>위반 소지가 있는 관행은 내부 통제로 정리해 신고·시정 리스크를 줄인다.</li>
+      <li>원자재 가격 추이와 협력사 요청을 정기적으로 점검해, 조정 필요성이 커지는 시점을 미리 파악해 두는 것도 대응 비용을 낮춘다.</li>
+      <li>이때 담당 부서와 협의 창구를 하나로 정해 두면 대응이 흔들리지 않는다.</li>
+      <li>[경영자를 위한 실무 지침: 하도급 대금 관리 체크포인트] ① 서면 체계: 제3조에 따라 발주·변경위탁 서면을 기한 내 발급하는 절차를 만든다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 하도급 대금 문제를 ‘을의 요구’로 치부하지 말고 제도적 절차로 관리하라. 발주·변경 서면을 표준화하고, 조정 신청이 오면 요건 검토·협의·결과를 기록하며, 회신 지연과 서면 누락이 신고 리스크로 이어지지 않게 내부통제를 두어야 한다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <p>발주 서면과 협의 체계를 정비한다 첫째, 계약서에 물가 연동 조항이 없다는 사실이 조정 신청을 막지 않는다. 둘째, 신청이 있으면 이유를 검토하고 협의 결과를 기록한다. 셋째, 서면 발급 의무는 별개로 관리한다. 넷째, 신고로 이어질 수 있음을 인식한다. 다섯째, 조정의 범위는 협의로 정하되 원가 상승의 근거 자료를 확인해 판단한다. 여섯째, 협의가 결렬되어도 절차를 밟은 기록이 남아야 한다.</p>
+    <ol>
+
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
