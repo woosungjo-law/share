@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>최고(민법 제174조)와 소멸시효중단 — 재최고의 한계와 6개월 법리</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>최고(민법 제174조)와 소멸시효중단 — 재최고의 한계와 6개월 법리</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 민법 제174조의 최고는 시효를 영구히 멈추는 장치가 아니라 6개월 안에 재판상 청구·압류·가압류 등 후속 조치를 하라는 임시 안전판이다. 이미 6개월을 넘겨 효력을 잃은 최고를 다시 보내도 시효가 되살아나지 않으므로, 상사시효 적용 여부와 만료일을 함께 관리해야 한다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      최고장은 주차 시간을 잠깐 연장해 주는 표와 같다. 연장된 시간 안에 실제로 차를 옮기지 않으면 표가 사라지고, 나중에 같은 표를 다시 뽑아도 지나간 시간을 되돌릴 수 없다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>최고의 효력과 상사시효</p>
+    <p>민법 제174조는 최고에 의한 시효중단의 효력을 한시적으로 정한다.</p>
+    <p>최고는 6월 내에 재판상의 청구, 파산절차참가, 화해를 위한 소환, 임의출석, 압류 또는 가압류, 가처분을 하지 아니하면 시효중단의 효력이 없다.</p>
+    <p>최고는 시효를 영구히 멈추는 것이 아니라 6개월의 유예를 주는 장치이며, 그 안에 실제 조치를 해야 효력이 유지된다.</p>
+    <p>재최고도 함정이다.</p>
+    <p>이미 효력을 상실한 최고를 전제로 한 재최고는 시효중단의 효력이 없다.</p>
+    <p>첫 최고 후 6개월 안에 후속 조치를 하지 않아 효력이 사라졌다면, 다시 최고를 보내도 시효는 되살아나지 않는다.</p>
+    <p>시효 기간은 상법 제3조에 따라 당사자 중 1인의 행위가 상행위이면 전원에 대하여 상법이 적용되므로, 일방적 상행위로 인한 채권에도 상법 제64조에 따른 5년의 상사시효가 적용된다.</p>
+    <p>압류 등 집행을 택할 때는 효력 발생 시점이 문제 된다.</p>
+    <p>대법원 2025다212338 판결은 채권압류에 의한 시효중단의 효력 발생 시기를 채권자가 집행기관에 강제집행을 신청하거나 위임한 때로 보았다.</p>
+    <p>상사시효가 적용되면 남은 기간이 생각보다 짧을 수 있으므로, 채권 발생 시점을 기준으로 마감일을 다시 계산해 두어야 한다.</p>
+    <p>또 최고의 도달 사실과 채무자의 승인·일부 변제 기록이 함께 있어야 시효중단을 주장하기 수월하다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외</h2>
+    <ul class="points">
+      <li><b>범위</b> — 적어 둔 각 조문·기준의 범위를 넘겨 새로운 결론을 만들지 않는다.</li>
+      <li>오래된 공사대금과 다가온 5년</li>
+      <li>가온건설 대표 도경민은 몇 해 전 마무리한 현장의 공사대금 일부가 아직 남아 있다는 보고를 받았다.</li>
+      <li>담당자는 내용증명으로 지급을 최고했고, 상대방은 "곧 주겠다"는 답만 반복했다.</li>
+      <li>도경민은 최고장을 보냈으니 채권은 살아 있다고 생각했다.</li>
+      <li>그런데 재무팀이 "상사채권이라 5년이 지나면 소멸시효가 완성될 수 있다"고 보고하면서, 서류함 속 최고장 날짜가 문제로 떠오른다.</li>
+      <li>비용과 중단 기준을 정한다</li>
+      <li>소 제기, 지급명령, 압류·가압류 가운데 비용과 회수 가능성을 따져 선택한다.</li>
+      <li>5년이 적용되면 남은 시간이 짧을 수 있다.</li>
+      <li>상대방이 일부라도 변제하거나 담보를 제공하면 회수 절차를 이어가고, 답변이 계속 지연되고 시효가 임박하면 보전신청으로 전환한다.</li>
+      <li>압류를 선택하면 신청·위임 시점을 기록해 시효중단 효력 발생 시점을 남긴다.</li>
+      <li>시효 마감일과 최고 이력을 한 파일에 모아 두어, 담당자가 바뀌어도 기한을 놓치지 않게 한다.</li>
+      <li>경영진은 채권 회수를 "담당자가 알아서 하는 일"로 두지 말고 일정과 예산을 붙여 관리해야 한다.</li>
+      <li>채권 목록에 기산점과 시효 기간, 상사시효 적용 여부를 적고, 최고를 보낸 채권은 6개월 만료일을 표시한다.</li>
+      <li>회수 조치의 비용과 기대 회수액을 비교해 소 제기·지급명령·보전신청 중 무엇을 할지 결정하고, 시효 임박 채권부터 우선 처리한다.</li>
+      <li>시효 임박 채권은 월 단위로 보고받고, 후속 조치가 실제로 실행되었는지를 경영진이 직접 확인한다.</li>
+      <li>[경영자를 위한 실무 지침: 채권 시효 관리 체크포인트] ① 시효 판정: 상법 제3조에 따라 상사시효(5년) 적용 여부를 먼저 가른다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 채권을 담당자 기억에 맡기지 말고 기산점·시효기간·최고일·6개월 만료일을 한 장부에 넣어라. 상사시효 여부를 먼저 판단하고, 시효가 임박하면 소 제기·지급명령·보전신청 중 비용과 회수 가능성이 맞는 조치를 즉시 선택해야 한다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <p>채권을 일정과 예산으로 관리한다 첫째, 최고를 보낼 때는 6개월 만료일을 함께 정한다. 둘째, 6개월 안에 무엇을 할지 미리 정한다. 셋째, 상사시효 여부를 먼저 판단한다. 넷째, 중단 기준을 둔다. 다섯째, 담당자 교체에 대비한다.</p>
+    <ol>
+
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
