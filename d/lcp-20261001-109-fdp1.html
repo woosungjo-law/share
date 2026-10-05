@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>면접교섭 제한, 부모의 권리 다툼이 아니라 자녀 안전과 복리의 기록이다</title>
+<!--
+  ELI5 디자인 시스템 `guide-paper` v1.0 — 원문: eli5_guide_paper.html
+  빌드: eli5_build_guide.py · 2026-10-05
+  대상 노트: LCP-20261001-109
+-->
+<style>
+:root{
+  --bg:#FBF8F3; --bg-deep:#F1EBE0; --surface:#FFFFFF; --surface-alt:#F5F0E7;
+  --line:#E0D8CA; --line-strong:#B9AE9B;
+  --ink:#22201C; --ink-2:#4A453D; --ink-muted:#5C564D;
+  --accent:#1D6F5C; --accent-deep:#13483E; --accent-soft:#E3F0EB; --on-accent:#FFFFFF;
+  --hi:#F5C94E; --hi-soft:#FDF3D6;
+  --warn:#B3541E; --warn-soft:#FBEDE3;
+  --ok:#2E6B3E; --ok-soft:#E6F1E7;
+  --neutral-soft:#ECEAE4;
+  --r-s:8px; --r-m:14px; --r-l:22px;
+  --pad:clamp(18px,5vw,30px); --maxw:42rem;
+  --shadow:0 1px 2px rgba(34,32,28,.05), 0 6px 20px -8px rgba(34,32,28,.14);
+  --mono:ui-monospace,'D2Coding',Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#14130F; --bg-deep:#1B1915; --surface:#1F1D18; --surface-alt:#262319;
+    --line:#37332B; --line-strong:#6E665A;
+    --ink:#F0EBE1; --ink-2:#D3CCBE; --ink-muted:#B5AC9D;
+    --accent:#6FD7BC; --accent-deep:#0F3A32; --accent-soft:#17332D; --on-accent:#06201B;
+    --hi:#F0C560; --hi-soft:#3A2F13;
+    --warn:#F0A26A; --warn-soft:#3A2315;
+    --ok:#7FCF95; --ok-soft:#16301D;
+    --neutral-soft:#2A2720;
+    --shadow:0 1px 2px rgba(0,0,0,.5), 0 8px 24px -10px rgba(0,0,0,.7);
+  }
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,
+              system-ui,'Apple SD Gothic Neo','Malgun Gothic','맑은 고딕',sans-serif;
+  font-size:1.25rem; line-height:1.85; font-weight:400; letter-spacing:-.005em;
+  word-break:keep-all; overflow-wrap:break-word;
+}
+p,li,h1,h2,h3{word-break:keep-all; text-wrap:pretty}
+p{max-width:34em}
+.nobr{white-space:nowrap}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 clamp(16px,4.5vw,24px)}
+section{margin-block:3.5rem}
+h2{font-size:clamp(1.5rem,5vw,2rem); font-weight:750; line-height:1.35;
+   letter-spacing:-.02em; margin:3.5rem 0 1rem}
+h3{font-size:1.25rem; font-weight:700; line-height:1.45; letter-spacing:-.015em}
+strong{font-weight:750}
+.emo{font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;
+     font-style:normal; font-weight:400; line-height:1;
+     display:inline-block; vertical-align:-.08em; margin-right:.35em}
+@media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important}}
+
+.hero{background:var(--accent-deep); color:#fff;
+      padding:clamp(40px,11vw,76px) 0 clamp(32px,8vw,56px);
+      border-radius:0 0 var(--r-l) var(--r-l)}
+@media (prefers-color-scheme:dark){
+  .hero{color:var(--ink); border-bottom:1px solid var(--line)}
+}
+.hero__kicker{font-size:.8125rem; font-weight:700; letter-spacing:.06em;
+              opacity:.85; margin:0 0 .75rem}
+.hero h1{font-size:clamp(2rem,7.2vw,3.25rem); font-weight:800; line-height:1.22;
+         letter-spacing:-.025em; margin:0 0 1rem}
+.hero__sub{font-size:clamp(1.0625rem,3.4vw,1.25rem); font-weight:500; line-height:1.6;
+           opacity:.9; margin:0 0 1.75rem; max-width:30em}
+.badges{display:flex; flex-wrap:wrap; gap:.5rem; list-style:none; padding:0; margin:0}
+.badge{font-size:.8125rem; font-weight:700; letter-spacing:.02em; line-height:1;
+       padding:.5rem .75rem; border-radius:999px;
+       background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.28)}
+@media (prefers-color-scheme:dark){
+  .badge{background:var(--accent-soft); border-color:var(--line-strong)}
+}
+.badge--time{background:transparent}
+
+.keyline{background:var(--hi-soft); border-block:3px solid var(--hi);
+         padding:clamp(28px,7vw,44px) 0; margin-block:2.5rem}
+.keyline__label{font-size:.8125rem; font-weight:700; letter-spacing:.06em;
+                color:var(--ink-2); margin:0 0 .6rem}
+.keyline__body{font-size:clamp(1.375rem,4.6vw,1.75rem); font-weight:700; line-height:1.55;
+               letter-spacing:-.02em; color:var(--ink); margin:0; max-width:22em}
+.keyline__body em{font-style:normal; font-weight:800; box-shadow:inset 0 -.42em 0 var(--hi)}
+@media (prefers-color-scheme:dark){
+  .keyline__body em{box-shadow:none; color:var(--hi); border-bottom:3px solid var(--hi)}
+}
+
+.analogy{display:flex; gap:1rem; margin:2rem 0; padding:var(--pad);
+         background:var(--accent-soft); border-radius:var(--r-l); border:1px solid var(--line)}
+.analogy__icon{font-size:2rem; line-height:1; flex:0 0 auto;
+               width:3rem; height:3rem; display:grid; place-items:center;
+               background:var(--surface); border-radius:50%; box-shadow:var(--shadow)}
+.analogy__label{font-size:.8125rem; font-weight:700; letter-spacing:.06em;
+                color:var(--accent); margin:.25rem 0 .5rem}
+.analogy__body{margin:0; font-size:1.1875rem; line-height:1.75; font-weight:500; color:var(--ink)}
+.analogy__cap{margin-top:.75rem; font-size:.9375rem; color:var(--ink-muted)}
+@media (max-width:400px){.analogy{flex-direction:column; gap:.75rem}}
+
+.steps{list-style:none; margin:2rem 0; padding:0}
+.step{position:relative; display:flex; gap:1rem; padding-bottom:1.75rem}
+.step::before{content:""; position:absolute; left:1.1rem; top:2.6rem; bottom:0;
+              width:2px; background:var(--line)}
+.step--end::before{display:none}
+.step__num{flex:0 0 auto; width:2.25rem; height:2.25rem; border-radius:50%;
+           display:grid; place-items:center; font-weight:800; font-size:1rem;
+           background:var(--accent); color:var(--on-accent);
+           position:relative; z-index:1; font-variant-numeric:tabular-nums}
+.step__title{margin:.3rem 0 .35rem; font-size:1.25rem; font-weight:700; line-height:1.45}
+.step__desc{margin:0; font-size:1.0625rem; line-height:1.75; color:var(--ink-2); max-width:30em}
+
+.versus{display:grid; gap:1rem; margin:2rem 0}
+@media (min-width:640px){.versus{grid-template-columns:1fr 1fr}}
+.vs-card{padding:var(--pad); border-radius:var(--r-m); border:1px solid var(--line)}
+.vs-card--myth{background:var(--neutral-soft)}
+.vs-card--myth .vs-card__body{color:var(--ink-2); text-decoration:line-through;
+  text-decoration-color:var(--warn); text-decoration-thickness:2px}
+.vs-card--fact{background:var(--ok-soft); border-color:var(--ok); border-width:2px}
+.vs-card__label{font-size:.8125rem; font-weight:700; letter-spacing:.06em;
+                margin:0 0 .6rem; color:var(--ink-2)}
+.vs-card--fact .vs-card__label{color:var(--ok)}
+.vs-card__body{margin:0; font-size:1.125rem; font-weight:500; line-height:1.7}
+
+.stats{display:grid; grid-template-columns:repeat(auto-fit,minmax(9.5rem,1fr));
+       gap:.75rem; margin:2rem 0; padding:0}
+.stat{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-m);
+      padding:1.125rem 1rem; text-align:center; box-shadow:var(--shadow)}
+.stat__label{font-size:.8125rem; font-weight:700; letter-spacing:.06em;
+             color:var(--ink-muted); margin-bottom:.5rem}
+.stat__value{margin:0; font-size:1.875rem; font-weight:800; line-height:1.25;
+             letter-spacing:-.03em; color:var(--accent); font-variant-numeric:tabular-nums}
+.stat__unit{font-size:1rem; font-weight:700; letter-spacing:0}
+.stat__value--law{font-family:var(--mono); font-size:1rem; font-weight:600;
+                  letter-spacing:0; color:var(--ink)}
+
+.alert{margin:2rem 0; padding:var(--pad); border-radius:var(--r-m);
+       background:var(--warn-soft); border:1px solid var(--warn); border-left:6px solid var(--warn)}
+.alert__title{margin:0 0 .5rem; font-size:1.0625rem; font-weight:800;
+              color:var(--warn); letter-spacing:-.01em}
+.alert__title::before{content:"!"; display:inline-grid; place-items:center;
+  width:1.4em; height:1.4em; margin-right:.5em; border-radius:50%;
+  background:var(--warn); color:var(--bg); font-size:.8em; font-weight:800}
+.alert__body{margin:0; font-size:1.0625rem; line-height:1.75; color:var(--ink)}
+
+.check{background:var(--surface-alt); border-radius:var(--r-l);
+       padding:var(--pad); margin:2.5rem 0; border:1px solid var(--line)}
+.check__title{font-size:1.25rem; font-weight:700; margin:0 0 1rem; letter-spacing:-.015em}
+.check__list{list-style:none; margin:0; padding:0; display:grid; gap:.75rem}
+.check__list li{position:relative; padding-left:2.25rem; font-size:1.0625rem; line-height:1.7}
+.check__list li::before{content:""; position:absolute; left:0; top:.35em;
+  width:1.4rem; height:1.4rem; border-radius:6px;
+  border:2px solid var(--accent); background:var(--surface)}
+.check__list li::after{content:""; position:absolute; left:.45rem; top:.6em;
+  width:.42rem; height:.78rem; border:solid var(--accent);
+  border-width:0 2.5px 2.5px 0; transform:rotate(45deg); opacity:.35}
+
+.fig{margin:2.5rem 0}
+.fig__scroll{overflow-x:auto; -webkit-overflow-scrolling:touch;
+  background:var(--surface); border:1px solid var(--line);
+  border-radius:var(--r-m); padding:1.25rem 1rem}
+.fig__scroll svg{display:block; width:100%; min-width:320px; height:auto; color:var(--ink)}
+.fig svg text{font-family:inherit; font-weight:700}
+.fig__cap{margin-top:.75rem; font-size:.9375rem; color:var(--ink-muted); line-height:1.6}
+
+.src{background:var(--bg-deep); border-top:1px solid var(--line);
+     padding:clamp(32px,8vw,52px) 0; margin-top:4rem}
+.src__title{font-size:.8125rem; font-weight:700; letter-spacing:.06em;
+            color:var(--ink-muted); margin:0 0 1rem}
+.src__list{list-style:none; margin:0 0 1.5rem; padding:0; display:grid; gap:.75rem}
+.src__list li{display:grid; grid-template-columns:4.5rem 1fr; gap:.75rem; align-items:baseline}
+.src__k{font-size:.8125rem; font-weight:700; color:var(--ink-muted); letter-spacing:.04em}
+.src__v{font-family:var(--mono); font-size:.9375rem; font-weight:600;
+        line-height:1.6; color:var(--ink); word-break:keep-all}
+.src__disc{font-size:.9375rem; line-height:1.7; color:var(--ink-muted);
+           margin:0 0 .75rem; padding-top:1rem; border-top:1px solid var(--line)}
+.src__by{font-size:.9375rem; font-weight:700; color:var(--ink-2); margin:0}
+@media (max-width:400px){.src__list li{grid-template-columns:1fr; gap:.15rem}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="hero">
+    <p class="hero__kicker">법무팀 · ELI5 실무 안내 · LCP-20261001-109</p>
+    <h1>면접교섭 제한, 부모의 권리 다툼이 아니라 자녀 안전과 복리의 기록이다</h1>
+    <p class="hero__sub">"만남을 막아 달라?" — 아이의 안전과 복리를 기록으로 보여주는 일이다.</p>
+  </div>
+
+  <div class="keyline">
+    <p class="keyline__label">한 문장</p>
+    <p class="keyline__body"><b>면접교섭 제한은 부모의 승리가 아니라 자녀 복리의 기록</b> — 괴롭힘·협박·고소 공세와 아이의 정서 불안을 날짜별로 연결해 보여야 한다.</p>
+  </div>
+
+  <div class="analogy">
+    <div class="analogy__icon">🧸</div>
+    <div>
+      <p class="analogy__label">쉽게 말하면</p>
+      <blockquote class="analogy__body">아이의 불안은 하루아침에 생기지 않는다. 만남 전후에 어떤 반응이 반복됐는지, 상담과 학교에서 어떤 관찰이 쌓였는지를 시간순으로 붙여야 그림이 보인다. '나쁜 부모'라는 평가가 아니라 행동과 기록이 말을 한다.</blockquote>
+      <figcaption class="analogy__cap">비유입니다. 실제 판단 기준은 법에서 정한 요건과 절차다.</figcaption>
+    </div>
+  </div>
+
+  <div class="versus">
+    <div class="vs-card vs-card--myth">
+      <p class="vs-card__label"><span class="emo" aria-hidden="true">❌</span> 흔한 오해</p>
+      <p class="vs-card__body">부모의 권리 다툼이므로, 면접교섭을 제한하려면 상대가 나빠야 한다.</p>
+    </div>
+    <div class="vs-card vs-card--fact">
+      <p class="vs-card__label"><span class="emo" aria-hidden="true">✅</span> 실제로는</p>
+      <p class="vs-card__body">면접교섭은 자녀의 복리를 위한 제도다. 아동학대 가해자의 면접교섭은 예외와 비례 원칙 아래 제한·배제될 수 있고, 학대 가해자의 양육친에 대한 지속적 괴롭힘·협박·고소 공세로 자녀의 정서 불안이 확인되면 면접교섭 배제가 문제될 수 있다(민법 제836조의2, 제924조 관련). 다만 조문과 구체적 사실의 접점이 약한 부분은 행위·기간·아이에게 미친 영향을 개별적으로 확인해야 한다.</p>
+    </div>
+  </div>
+
+  <div class="fig">
+    <div class="fig__scroll">
+      <svg viewBox="0 0 640 134" role="img" aria-label="면접교섭 제한 검토 흐름: 안전 사실 기록 → 법적 연결 검토 → 대안 비교 → 비례 설계" xmlns="http://www.w3.org/2000/svg" style="max-width:100%">
+        <rect x="0.0" y="14" width="298.0" height="34" rx="9" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
+        <text x="149.0" y="38" text-anchor="middle" font-size="16" fill="var(--accent-deep)" font-weight="800">안전 사실 기록</text>
+        <rect x="342.0" y="14" width="298.0" height="34" rx="9" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
+        <text x="491.0" y="38" text-anchor="middle" font-size="16" fill="var(--accent-deep)" font-weight="800">법적 연결 검토</text>
+        <path d="M298.0 31 H334.0" fill="none" stroke="var(--line-strong)" stroke-width="2.5"/>
+        <polygon points="342,31 334,25 334,37" fill="var(--line-strong)"/>
+        <rect x="342.0" y="82" width="298.0" height="34" rx="9" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
+        <text x="491.0" y="106" text-anchor="middle" font-size="16" fill="var(--accent-deep)" font-weight="800">대안 비교</text>
+        <rect x="0.0" y="82" width="298.0" height="34" rx="9" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
+        <text x="149.0" y="106" text-anchor="middle" font-size="16" fill="var(--accent-deep)" font-weight="800">비례 설계</text>
+        <path d="M491.0 48 V74" fill="none" stroke="var(--line-strong)" stroke-width="2.5"/>
+        <polygon points="491.0,82 485.0,74 497.0,74" fill="var(--line-strong)"/>
+        <path d="M342.0 99 H306.0" fill="none" stroke="var(--line-strong)" stroke-width="2.5"/>
+        <polygon points="298,99 306,93 306,105" fill="var(--line-strong)"/>
+        </svg>
+    </div>
+    <figcaption class="fig__cap">그림 1 · 면접교섭 제한은 사실 기록에서 비례 설계까지 순서로 검증한다.</figcaption>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step__num">1</div>
+      <div class="step__title">안전 사실을 날짜별로 배열한다</div>
+      <div class="step__desc">통화 횟수, 메시지 내용, 만남 전후의 아이 반응, 상담·진료 기록, 학교나 보호기관의 관찰을 시간순으로 배열한다. 어떤 행동이 언제 있었으며 면접교섭과 어떤 관련이 있는지 보여야 한다.</div>
+    </div>
+    <div class="step">
+      <div class="step__num">2</div>
+      <div class="step__title">조문·판례의 연결을 별도로 확인한다</div>
+      <div class="step__desc">민법 제836조의2·제924조와 면접교섭 제한의 사실관계를 구분해 검토한다. 대법원 2024다309430·2024마5324는 이 사건의 면접교섭 사실과 직접 연결되는지 판결 원문 대조 전 보류하고, 아동복지법 제51조도 조문 취지와 사건 관련성을 확인한다.</div>
+    </div>
+    <div class="step step--end">
+      <div class="step__num">3</div>
+      <div class="step__title">제한의 필요성과 대안을 함께 기록한다</div>
+      <div class="step__desc">전면 배제를 즉시 결론 내리지 않고 연락 방식 제한·제3자 입회·장소 조정·일시 중단 등 가능한 대안을 나란히 검토한다. 법원 제출 문서에는 확인된 사실, 요청하는 제한의 범위와 기간, 재검토 조건을 구체적으로 적는다.</div>
+    </div>
+  </div>
+
+  <div class="check">
+    <p class="check__title">법무팀 체크포인트</p>
+    <ul class="check__list">
+      <li>① 안전 사실 — 괴롭힘·협박·고소 공세와 아이의 정서 불안을 날짜별로 기록한다.</li>
+      <li>② 법적 연결 — 민법 제836조의2·제924조와 면접교섭 제한의 사실관계를 구분해 검토한다.</li>
+      <li>③ 아동 자료 — 상담·학교·보호기관 자료의 작성자·작성일·관찰 내용을 보존한다.</li>
+      <li>④ 판례 확인 — 2024다309430·2024마5324는 면접교섭과의 직접 관련성을 원문 대조 전 단정하지 않는다.</li>
+      <li>⑤ 비례 설계 — 전면 배제, 일시 중단, 감독·장소 제한과 재검토 조건을 함께 제시한다.</li>
+    </ul>
+  </div>
+
+  <div class="src">
+    <p class="src__title">출처</p>
+    <ul class="src__list">
+      <li class="src__k">원문</li>
+      <li class="src__v">면접교섭 제한, 부모의 권리 다툼이 아니라 자녀 안전과 복리의 기록이다 — LCP-20261001-109</li>
+      <li class="src__k">기준 조문</li>
+      <li class="src__v">민법 제836조의2·제924조 / 아동복지법 제51조(관련성 확인 필요)</li>
+      <li class="src__disc">이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>
