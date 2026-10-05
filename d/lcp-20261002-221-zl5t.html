@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사이버 보안 최소 조치(비밀번호·백업·접근 권한·이메일 보안) 미비 — 정보통신망법·개인정보 안전조치·과태료·랜섬웨어</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>사이버 보안 최소 조치(비밀번호·백업·접근 권한·이메일 보안) 미비 — 정보통신망법·개인정보 안전조치·과태료·랜섬웨어</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 랜섬웨어나 이메일 계정 탈취가 발생하면 복구율만이 아니라 사업 중단·개인정보 노출·계약상 통지·증거 보존을 함께 결정하는 것이 대표의 승인이다. 개인정보 보호법 제29조 안전조치는 내부 관리계획과 접속기록, 기술적·관리적·물리적 통제를 실제로 운영했는지의 문제이고, 정보통신망법 제48조와 관련해서는 타인 계정의 사용·권한 초과·비공개 자료 다운로드를 실제 로그와 권한표로 확인한다. 형법 제20조와 부산지법 서부 2022고단1312는 증거 확보를 이유로 임의 접근해도 된다는 근거가 아니며, 대법원 2023다311184는 실제 손해와 사실관계를 확인한 뒤 참고한다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      비유하면, 사이버 사고 대응은 화재 현장을 정리하는 일과 같다. 불이 난 시스템을 모두 먼저 끄면 대응은 빨라 보여도 원인 규명에 쓸 증거와 복구 자료가 함께 사라진다. 보안팀의 격리 범위·법무팀의 보존 자료·운영팀의 복구 우선순위를 나눠 두어야 백업이 감염되지 않았다는 확인 후에 생산 환경을 다시 연결할 수 있고, 원인이 확정되지 않은 상태에서 직원이나 협력업체를 지목하지 않고도 매일 확인된 사실과 남은 질문을 구분해 보고할 수 있다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>개인정보 보호법 제29조에 연결되는 안전조치는 내부 관리계획과 접속기록, 기술적·관리적·물리적 통제를 실제로 운영했는지 확인하는 문제다.</p>
+    <p>비밀번호 변경, 접근권한 회수, 백업, 로그 보존, 위탁업체 점검을 정책 문서와 실행 기록으로 보고받는다.</p>
+    <p>정보통신망법 제48조 제1항과 관련해서는 타인 계정의 사용, 권한 초과, 비공개 자료 다운로드를 실제 로그와 권한표로 확인한다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외</h2>
+    <ul class="points">
+      <li><b>범위</b> — 적어 둔 각 조문·기준의 범위를 넘겨 새로운 결론을 만들지 않는다.</li>
+      <li>랜섬웨어나 이메일 계정 탈취가 발생하면 대표는 복구율만 보고받지 말고 사업 중단, 개인정보 노출, 계약상 통지, 증거 보존을 함께 결정해야 한다.</li>
+      <li>어느 계정이 언제 접근됐고 백업이 정상인지, 고객·직원 정보가 포함됐는지, 외부 업체가 관여했는지를 한 장의 사고판에 표시한다.</li>
+      <li>원인 조사가 끝나기 전에는 “단순 장애”로 외부에 발표하지 않는다.</li>
+      <li>사고 직후 모든 시스템을 임의로 끄면 증거와 복구 자료가 사라질 수 있다.</li>
+      <li>보안팀이 격리할 범위, 법무팀이 보존할 자료, 운영팀이 복구할 우선순위를 나누어 승인한다.</li>
+      <li>형법 제20조와 부산지법 서부 2022고단1312는 증거 확보를 이유로 임의 접근해도 된다는 근거가 아니다.</li>
+      <li>대법원 2023다311184도 실제 손해와 사실관계를 확인한 뒤 참고한다.</li>
+      <li>복구 예산은 장비 교체비만이 아니라 조사·로그 보존·고객 안내·법률 검토·백업 검증·재발 방지 비용을 포함해야 한다.</li>
+      <li>회사가 운영을 멈출 범위와 유지할 최소 서비스, 복구 성공 여부를 판단할 책임자를 정하고, 백업이 감염되지 않았다는 확인 전에는 생산 환경에 바로 연결하지 않는다.</li>
+      <li>백업 복구, 고객 안내, 신고·통지, 계약상 통지의무를 시간표로 분리한다.</li>
+      <li>자료가 확인되지 않은 부분은 미확인으로 표시하고, 복구와 외부 발표를 한 담당자가 독단으로 결정하지 않게 한다.</li>
+      <li>사고 대응이 길어지면 매일 복구 상태, 개인정보 포함 여부, 로그 보존, 고객·기관 안내 상태를 별도 숫자와 문장으로 보고받는다.</li>
+      <li>원인이 확정되지 않은 상태에서 책임자를 공개적으로 지목하지 않고, 확인된 취약점의 개선 예산과 완료 기한을 승인한다.</li>
+      <li>복구 완료는 서비스 재개가 아니라 권한 회수와 재발 방지 점검까지 포함한다.</li>
+      <li>복구를 완료했다고 보고받을 때는 서비스가 열린 사실만 보지 말고 관리자 권한 회수, 다중인증, 백업 복구 시험, 로그 보존, 고객 안내와 계약상 통지의무가 끝났는지 확인한다.</li>
+      <li>원인과 책임이 확정되기 전에는 직원이나 협력업체를 지목하지 않고, 개선 조치의 기한과 재검토 날짜를 결재한다.</li>
+      <li>법무팀의 사실확인 전에는 원인이나 피해 규모를 외부에 단정하지 않고, 매일 새롭게 확인된 사실과 남은 질문을 구분해 보고받는다.</li>
+      <li>사고가 끝난 뒤에는 계정권한·백업·로그 점검을 정례화하고 재발 방지 비용의 집행 책임자를 지정한다.</li>
+      <li>복구 비용과 고객 신뢰 회복 비용을 별도로 관리한다.</li>
+      <li>서비스 재개일과 사후 점검일을 결재문서에 남긴다.</li>
+      <li>사후 보고의 확인자와 날짜를 기록한다.</li>
+      <li>재발 방지 조치의 완료 증빙도 받는다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 복구 완료는 서비스 재개가 아니라 관리자 권한 회수·다중인증·백업 복구 시험·로그 보존·고객 안내와 계약상 통지의무가 끝난 상태다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <p>제29조 안전조치의 정책·로그·권한 회수 기록을 확인하고, 제48조 관련 접속인지 단순 장애인지 법무·보안의 공동 보고를 받는다.</p>
+    <ol>
+        <li>① 계정·권한·백업·로그·개인정보 포함 여부를 확인한다.</li>
+        <li>② 개인정보 보호법 제29조 이행 자료를 요구한다.</li>
+        <li>③ 정보통신망법 제48조의 권한 초과 여부를 확인한다.</li>
+        <li>④ 형법 제20조를 임의 접근의 면책으로 쓰지 않는다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
