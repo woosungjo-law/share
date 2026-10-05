@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>내부자 거래 차단기간(blackout) 운영과 내부통제</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>내부자 거래 차단기간(blackout) 운영과 내부통제</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 내부자 거래 차단기간은 구두 당부가 아니라 자본시장법 제174조와 제178조를 기준으로 설계하는 내부통제다. 실적·M&A·증자 일정과 연동해 기간을 문서화하고, 사전 승인·사후 보고·예외 승인·위반 보고 창구를 정해 두어야 정상 거래와 문제 거래를 설명할 수 있다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      학교에서 시험지를 나눠 주기 전에는 교실 출입을 잠그고 기록하는 것과 같다. ‘들어오지 마’라는 말만으로는 통제가 되지 않으며, 언제 잠그고 누가 예외를 승인했는지가 남아야 한다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>금지되는 거래와 회사의 운영 책임</p>
+    <p>자본시장법 제174조는 미공개중요정보 이용행위를 금지한다.</p>
+    <p>상장법인의 업무와 관련된 미공개중요정보를 이용해 증권을 매매하거나 타인의 매매를 주선하는 행위가 문제 된다.</p>
+    <p>자본시장법 제178조는 부정거래행위 등을 금지하며, 부정한 수단·계획·기교를 사용하거나 거짓 시세를 이용하는 행위를 막는다.</p>
+    <p>증자·실적 발표 전후의 임직원 거래는 이 두 조항이 함께 검토되는 지점이다.</p>
+    <p>제174조는 본인의 매매뿐 아니라 타인의 매매를 주선하는 행위도 금지하므로, 정보를 전달하거나 거래를 알선한 경우에도 같은 조항이 문제 될 수 있다.</p>
+    <p>기업 입장에서 중요한 것은 차단기간을 제대로 운영하지 못했을 때의 책임이다.</p>
+    <p>거래를 제한하는 차단기간이 부실하게 운영되면, 기간 설정·공지·감독 의무의 내부통제 책임이 문제 되고, 차단기간 중 거래가 미공개중요정보 이용금지나 부정거래 금지로 연결될 수 있다.</p>
+    <p>구두 당부는 통제가 아니라는 점이 핵심이다.</p>
+    <p>또 정상 거래와 문제 거래를 구분할 기준이 없으면, 문제가 생겼을 때 회사가 자체적으로 설명할 근거를 갖지 못한다.</p>
+    <p>불가피한 거래(예정된 청약, 주식보상 정산 등)를 위한 예외 승인 경로도 미리 정해 두어, 기준 없이 예외를 남발하거나 반대로 정상 거래까지 막는 일을 피한다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외</h2>
+    <ul class="points">
+      <li><b>범위</b> — 적어 둔 각 조문·기준의 범위를 넘겨 새로운 결론을 만들지 않는다.</li>
+      <li>증자 계획과 겹친 임원 거래</li>
+      <li>차오름모빌리티 대표 남기훈은 증자를 준비하면서 임원들에게 거래 자제를 당부했다.</li>
+      <li>별도의 절차 없이 구두로 전한 것이 전부였다.</li>
+      <li>증자 공시가 나온 뒤, 한 임원이 준비 기간에 주식을 판 사실이 드러났다.</li>
+      <li>그 임원은 "자제하라는 말은 들었지만 언제부터 언제까지인지 몰랐다"고 했다.</li>
+      <li>남기훈은 당부와 통제가 다르다는 것을 확인하고, 다음 일정까지 통제 체계를 다시 세우기로 한다.</li>
+      <li>책임은 절차에서 갈린다</li>
+      <li>언제부터 언제까지가 차단기간인지, 어떤 일정(실적·M&amp;A·증자)을 기준으로 삼는지 재무팀과 함께 확정한다.</li>
+      <li>거래 전 승인과 거래 후 보고 창구를 만들고, 승인 권한자를 지정한다.</li>
+      <li>발견 즉시 조사하고 보고하는 체계가 없으면 회사 전체가 위험을 떠안는다.</li>
+      <li>기록과 절차를 평소에 갖춰 두면, 문제가 생겼을 때 정상 거래와 문제 거래를 구분해 설명할 수 있다.</li>
+      <li>경영진은 차단기간을 구두 부탁이 아니라 운영 체계로 만들어야 한다.</li>
+      <li>실적·M&amp;A·증자 일정과 연동해 차단기간을 문서로 정하고, 거래 사전 승인과 사후 보고 절차, 거래 창구를 지정한다.</li>
+      <li>위반 발견 시 조치·보고 체계를 마련하고, 내부통제 기준과 교육을 문서화한다.</li>
+      <li>제174조와 제178조의 금지 내용을 기준으로 임직원이 스스로 확인할 수 있는 안내를 제공한다.</li>
+      <li>차단기간이 시작되기 전에 승인 창구가 실제로 열려 있는지, 승인·보고가 문서로 남는지를 담당자에게 확인하도록 한다.</li>
+      <li>위반이 발견되면 거래를 멈추게 하고 사후에 원인을 점검해 통제를 보완한다.</li>
+      <li>[경영자를 위한 실무 지침: 내부자거래 차단기간 대응 체크포인트] ① 기간 문서화: 실적·M&amp;A·증자 일정과 연동해 차단기간을 문서로 확정한다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 경영자는 차단기간을 부탁이 아니라 운영 체계로 만들어라. 일정과 기간을 문서화하고 거래 승인·보고 절차를 실제로 열어 두며, 위반 발견 시 거래 중단과 조사·보고 기준을 작동시켜야 한다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <p>당부를 절차로 바꾼다 첫째, 기간이 문서로 정해져야 한다. 둘째, 절차가 있어야 책임이 흩어지지 않는다. 셋째, 위반 시 조치를 정한다. 넷째, 비용은 사후 대응보다 사전 설계에서 작다.</p>
+    <ol>
+
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
