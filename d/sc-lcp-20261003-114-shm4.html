@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>경찰과 실랑이를 벌였다면, 그대로 공무집행방해일까?</title>
+<!-- sc-template v3 · 렌더러: _tools/sc.py build · 이 파일을 직접 고치지 말고 00_운영/app_template.html 과 시나리오 노트를 고친다 -->
+<style>
+  :root{
+    --navy:#12233f; --navy-deep:#0a1626; --accent:#c9a24b; --bg:#f4f5f7; --card:#ffffff;
+    --text:#1e232b; --muted:#5f6673; --line:#e5e7eb;
+    --g-high:#1f7a4d; --g-mid:#b7791f; --g-check:#4a5568;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    background:var(--bg);color:var(--text);min-height:100vh;
+    display:flex;align-items:flex-start;justify-content:center;padding:16px;line-height:1.55;
+    word-break:keep-all;overflow-wrap:anywhere;
+  }
+  .app{width:100%;max-width:480px;background:var(--card);border-radius:18px;box-shadow:0 8px 30px rgba(18,35,63,.12);overflow:hidden;display:flex;flex-direction:column;min-height:560px;}
+  .topbar{background:var(--navy);color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;font-size:13px;}
+  .topbar .brand{font-weight:700;letter-spacing:.02em;}
+  .progress-wrap{height:4px;background:var(--line);width:100%;}
+  .progress-bar{height:100%;background:var(--accent);width:0%;transition:width .25s ease;}
+  .screen{flex:1;padding:26px 22px 22px;display:none;flex-direction:column;animation:fadeIn .22s ease;}
+  .screen.active{display:flex;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+
+  .intro-icon{font-size:38px;margin-bottom:12px;}
+  .intro h1{font-size:22px;line-height:1.4;color:var(--navy-deep);margin-bottom:12px;}
+  .myth{background:#fbf6ea;border-left:4px solid var(--accent);border-radius:8px;padding:12px 14px;margin-bottom:14px;font-size:13.5px;color:#4a3d16;}
+  .myth b{display:block;font-size:11px;letter-spacing:.04em;color:#8a6d1f;margin-bottom:3px;}
+  .intro p{color:var(--muted);font-size:14px;margin-bottom:16px;}
+  .meta{font-size:12px;color:var(--muted);margin-bottom:20px;display:flex;gap:8px;flex-wrap:wrap;}
+  .meta span{background:var(--bg);padding:4px 10px;border-radius:20px;}
+
+  .q-count{font-size:12px;color:#8a6d1f;font-weight:700;margin-bottom:8px;letter-spacing:.03em;}
+  .q-text{font-size:19px;font-weight:700;color:var(--navy-deep);margin-bottom:8px;line-height:1.45;}
+  .q-why{font-size:12.5px;color:var(--muted);margin-bottom:18px;}
+  .options{display:flex;flex-direction:column;gap:10px;margin-top:10px;}
+  .opt-btn{text-align:left;background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;font:inherit;font-size:14.5px;color:var(--text);cursor:pointer;transition:all .15s ease;min-height:44px;width:100%;}
+  .opt-btn:hover,.opt-btn:active,.opt-btn:focus-visible{border-color:var(--accent);background:#fbf6ea;outline:none;}
+  .opt-btn.primary{text-align:center;font-weight:700;background:var(--navy);color:#fff;border:none;}
+  .opt-btn.primary:hover,.opt-btn.primary:focus-visible{background:var(--navy-deep);}
+  .back-btn{margin-top:14px;background:none;border:none;color:var(--muted);font-size:12.5px;text-align:left;cursor:pointer;min-height:36px;text-decoration:underline;}
+
+  .grade{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#fff;padding:5px 12px;border-radius:20px;margin-bottom:10px;width:fit-content;}
+  .grade.high{background:var(--g-high);} .grade.mid{background:var(--g-mid);} .grade.check{background:var(--g-check);}
+  .outcome-tag{display:inline-block;font-size:11px;font-weight:700;color:var(--navy);background:#eef1f6;padding:4px 10px;border-radius:20px;margin-bottom:10px;margin-left:6px;}
+  .outcome h2{font-size:18px;color:var(--navy-deep);margin-bottom:14px;line-height:1.5;}
+  .block{margin-bottom:15px;}
+  .block-label{font-size:12px;font-weight:700;color:#8a6d1f;margin-bottom:5px;letter-spacing:.02em;}
+  .block-body{font-size:13.5px;color:var(--text);}
+  .share-summary{font-size:13.5px;color:var(--text);white-space:pre-line;background:#fbf6ea;border:1px solid #ead9ad;border-left:4px solid var(--accent);border-radius:10px;padding:12px 14px;}
+  .basis-details{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:#fafbfc;margin-bottom:15px;}
+  .basis-details summary{cursor:pointer;color:#3b4250;font-size:13px;font-weight:700;}
+  .basis-details .block-body{margin-top:9px;}
+  .chips{display:flex;flex-direction:column;gap:5px;margin-bottom:6px;}
+  .chip{font-size:12.5px;background:var(--bg);border-radius:8px;padding:6px 10px;color:#3b4250;}
+  .why-line{font-size:13.5px;}
+  .vs{display:grid;gap:6px;}
+  .vs div{font-size:13px;border-radius:8px;padding:9px 12px;}
+  .vs .m{background:#f6ecec;color:#7a2f2f;} .vs .f{background:#e9f4ee;color:#1d5b3a;}
+  .vs b{display:block;font-size:10.5px;letter-spacing:.05em;margin-bottom:2px;}
+  .checklist{list-style:none;display:flex;flex-direction:column;gap:6px;}
+  .checklist li{font-size:13.5px;padding-left:22px;position:relative;}
+  .checklist li::before{content:"☐";position:absolute;left:0;color:#8a6d1f;}
+  .disclaimer{font-size:12px;color:var(--muted);background:var(--bg);border-radius:10px;padding:12px 14px;margin-bottom:14px;}
+  .actions{display:flex;flex-direction:column;gap:8px;margin-bottom:14px;}
+  .ghost-btn{background:transparent;border:1.5px solid var(--line);color:#3b4250;border-radius:10px;padding:11px;font:inherit;font-size:13px;cursor:pointer;min-height:44px;text-align:center;text-decoration:none;display:block;}
+  .ghost-btn:hover,.ghost-btn:focus-visible{border-color:var(--accent);outline:none;}
+  .cta-box{background:var(--navy);color:#fff;border-radius:12px;padding:16px 18px;font-size:13.5px;margin-top:auto;}
+  .cta-box strong{color:var(--accent);} .cta-box a{color:#fff;text-decoration:underline;}
+  .footer-mark{text-align:center;font-size:11px;color:var(--muted);padding:10px 0 16px;}
+  button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px;}
+  @media (max-width:380px){ .screen{padding:22px 16px 18px;} .q-text{font-size:18px;} }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topbar"><span class="brand">법률 자가진단</span><span id="progress-label"></span></div>
+  <div class="progress-wrap"><div class="progress-bar" id="progress-bar"></div></div>
+  <div class="screen active" id="screen"></div>
+  <div class="footer-mark" id="footer"></div>
+</div>
+
+<script id="sc-data" type="application/json">{"hook": "경찰과 실랑이를 벌였다면, 그대로 공무집행방해일까?", "myth": "경찰관과 몸싸움이 벌어지면 일단 공무집행방해다", "teaser": "몸싸움 자체보다 직무집행이 적법했는지가 먼저예요. 집행 방식과 내 저항의 정도에 따라 준비할 것이 갈립니다.", "icon": "🚨", "time": "약 1분", "start": "Q1", "nq_min": 1, "nq_max": 3, "cta_lawyer": "조우성 변호사", "cta_email": "law@mustknow.co.kr", "disclaimer": "이 진단은 일반적인 법률 정보 안내이며, 구체적인 사안은 개별 상담을 통해 확인해야 합니다.", "mother_url": "", "questions": {"Q1": {"text": "경찰관이 어떤 방식으로 직무를 집행했나요?", "why": "단속·조사 장면인지 현행범 체포 장면인지에 따라 따질 요건이 달라져요.", "options": [{"label": "현행범으로 체포했다", "next": "Q2"}, {"label": "단속·조사 과정에서 실랑이가 벌어졌다", "next": "Q2"}, {"label": "잘 모르겠다", "next": "C"}]}, "Q2": {"text": "그 직무집행이 적법했는지 따져 볼 자료가 있나요?", "why": "혐의의 상당성과 절차 준수 여부가 함께 문제돼요.", "options": [{"label": "혐의 상당성·절차 준수를 보여줄 자료가 있다", "next": "Q3"}, {"label": "일부만 있다", "next": "Q3"}, {"label": "없다", "next": "B"}]}, "Q3": {"text": "당시 내 저항은 어느 정도였나요?", "why": "벗어나려는 정도인지 상대를 다치게 한 것인지에 따라 다툴 내용이 달라져요.", "options": [{"label": "붙잡힌 팔을 뿌리치고 벗어나려는 정도였다", "next": "A"}, {"label": "밀고 당기며 실랑이를 벌였다", "next": "B"}, {"label": "상대를 때려 다치게 했다", "next": "B"}]}}, "outcomes": {"A": {"grade": "high", "tag": "적법성 다툼 준비 단계", "title": "직무집행의 적법성과 저항 정도가 정리돼 다툴 준비가 된 상황이에요.", "why": "집행 방식이 분명하고 적법성을 따질 자료가 있으며, 벗어나려는 정도의 저항이었다고 답하셨어요.", "fact": "몸싸움 자체보다 경찰관의 직무집행이 적법했는지가 먼저입니다.", "basis": "형법 제136조는 직무를 집행하는 공무원에 대하여 폭행 또는 협박한 자를 처벌한다고 정하되, 그 성립에는 공무원의 직무집행이 적법해야 합니다. 형사소송법 제212조는 현행범인은 누구든지 영장 없이 체포할 수 있다고 정합니다. 위법한 직무집행에 대한 저항에는 형법 제21조의 정당방위가 성립할 여지가 있습니다.", "caution": "현장에서 물리적으로 맞서는 것은 위험하니, 사후에 변호인 조력으로 다투는 것이 안전합니다.", "checklist": ["그날의 일을 시간 순서대로 적으세요(말을 건 시점, 잡은 시점, 주고받은 말).", "목격자 연락처와 블랙박스·폐쇄회로 영상을 확보하세요.", "상처가 있으면 사진을 찍어 두세요.", "혐의 상당성과 절차 준수 여부를 변호인과 함께 확인하세요."], "share_summary": "판단 이유: 집행 방식이 분명하고 적법성을 따질 자료가 있으며 벗어나려는 정도의 저항이었던 상태예요.\n지금 할 일: 경위를 시간 순서로 적고, 목격자·영상·상처 사진을 확보해 변호인과 검토하세요.\n주의: 현장에서 맞서기보다 사후에 다투는 것이 안전해요.\n", "disclaimer": "", "cta": ""}, "B": {"grade": "mid", "tag": "자료·정도 정리 단계", "title": "자료를 갖추고 저항 정도를 정리해야 해요.", "why": "적법성 자료가 없거나 실랑이·폭행 정도가 문제될 수 있다고 답하셨어요.", "fact": "체포가 위법했더라도 때린 정도가 심하면 별도 문제가 남을 수 있습니다.", "basis": "형법 제136조의 성립에는 직무집행의 적법성이 전제가 됩니다. 형법 제21조 제2항은 방위행위가 정도를 초과한 경우 정황에 따라 형을 감경하거나 면제할 수 있다고 정하고, 제3항은 야간 등 불안한 상태에서 공포·경악·흥분·당황으로 한 행위는 벌하지 아니한다고 정합니다. 사실과 다른 말로 직무를 방해하면 형법 제137조의 위계 방해가 문제될 수 있습니다.", "caution": "억울하더라도 대응 방향을 혼자 정하지 말고 변호인과 상의하세요.", "checklist": ["기억이 흐려지기 전에 경위를 적으세요.", "적법성 다툼과 과잉방위 감면 사유를 함께 정리하세요.", "사실과 다른 말을 하거나 자료를 꾸미지 마세요."], "share_summary": "판단 이유: 적법성 자료가 없거나 실랑이·폭행 정도가 문제될 수 있는 상태예요.\n지금 할 일: 경위를 적고, 적법성 다툼과 과잉방위 감면 사유를 함께 정리하세요.\n주의: 사실과 다른 말을 하면 위계 방해가 추가될 수 있어요.\n", "disclaimer": "", "cta": ""}, "C": {"grade": "check", "tag": "적법성 확인 필요", "title": "직무집행이 적법했는지부터 확인해야 해요.", "why": "집행 방식이 불명확하다고 답하셨어요.", "fact": "현행범 요건을 갖추지 못한 체포는 위법한 직무집행이 됩니다.", "basis": "형법 제136조가 적용되려면 공무원의 직무집행이 적법해야 하고, 형사소송법 제212조는 현행범인은 누구든지 영장 없이 체포할 수 있다고 정합니다. 현행범 요건을 갖추지 못한 체포는 위법한 직무집행이 됩니다.", "caution": "절차를 모르는 상태에서 진술을 요구받으면 변호인 조력을 받은 뒤 응하는 것이 안전합니다.", "checklist": ["누가 언제 체포·단속에 나섰는지 시간 순서로 확인하세요.", "권리 고지나 영장 제시가 있었는지 확인하세요.", "변호인과 함께 직무집행의 적법성을 검토하세요."], "share_summary": "판단 이유: 경찰관의 집행 방식이 불명확한 상태예요.\n지금 할 일: 체포·단속 경위와 권리 고지 여부를 확인하고, 변호인과 적법성을 검토하세요.\n주의: 진술은 변호인 조력을 받은 뒤 응하는 것이 안전해요.\n", "disclaimer": "", "cta": ""}}}</script>
+<script>
+"use strict";
+var D = JSON.parse(document.getElementById("sc-data").textContent);
+var GRADE = {high:"가능성 높음", mid:"살펴볼 것", check:"확인 필요"};
+var screenEl = document.getElementById("screen");
+var pathStack = [];          // [{qid, qtext, label}]
+
+function h(tag, cls, text){
+  var e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(text !== undefined && text !== null) e.textContent = text;
+  return e;
+}
+function clearScreen(){ while(screenEl.firstChild) screenEl.removeChild(screenEl.firstChild); screenEl.className = "screen active"; window.scrollTo(0,0); }
+
+function setProgress(step, done){
+  var bar = document.getElementById("progress-bar");
+  var lab = document.getElementById("progress-label");
+  if(done){ bar.style.width = "100%"; lab.textContent = "진단 완료"; return; }
+  if(step === 0){ bar.style.width = "0%"; lab.textContent = ""; return; }
+  bar.style.width = Math.min(100, Math.round(step / D.nq_max * 100)) + "%";
+  lab.textContent = "질문 " + step;
+}
+
+function showIntro(){
+  pathStack = []; clearScreen(); setProgress(0);
+  var wrap = h("div","intro");
+  wrap.appendChild(h("div","intro-icon", D.icon || "⚖️"));
+  wrap.appendChild(h("h1","", D.hook));
+  if(D.myth){
+    var m = h("div","myth"); m.appendChild(h("b","","많은 분들이 이렇게 알고 있어요")); m.appendChild(document.createTextNode("“" + D.myth + "”"));
+    wrap.appendChild(m);
+  }
+  if(D.teaser) wrap.appendChild(h("p","", D.teaser));
+  var meta = h("div","meta");
+  [D.time || "약 1분", "객관식 질문 최대 " + D.nq_max + "개", "답변은 저장·전송되지 않아요"].forEach(function(t){ meta.appendChild(h("span","",t)); });
+  wrap.appendChild(meta);
+  var b = h("button","opt-btn primary","진단 시작하기"); b.type = "button";
+  b.onclick = function(){ goTo(D.start); };
+  wrap.appendChild(b);
+  screenEl.appendChild(wrap);
+}
+
+function goTo(id){
+  if(D.outcomes[id]) return showOutcome(id);
+  showQuestion(id);
+}
+
+function showQuestion(qid){
+  var q = D.questions[qid];
+  clearScreen();
+  var step = pathStack.length + 1;
+  setProgress(step);
+  screenEl.appendChild(h("div","q-count","질문 " + step));
+  screenEl.appendChild(h("div","q-text", q.text));
+  if(q.why) screenEl.appendChild(h("div","q-why", q.why));
+  var box = h("div","options");
+  q.options.forEach(function(o){
+    var b = h("button","opt-btn", o.label); b.type = "button";
+    b.onclick = function(){ pathStack.push({qid:qid, qtext:q.text, label:o.label}); goTo(o.next); };
+    box.appendChild(b);
+  });
+  screenEl.appendChild(box);
+  var back = h("button","back-btn", pathStack.length ? "← 이전 질문으로" : "← 처음으로"); back.type = "button";
+  back.onclick = function(){
+    if(!pathStack.length) return showIntro();
+    var last = pathStack.pop(); showQuestion(last.qid);
+  };
+  screenEl.appendChild(back);
+}
+
+function copyText(text, btn){
+  function ok(){ var o = btn.textContent; btn.textContent = "복사했어요 ✓"; setTimeout(function(){ btn.textContent = o; }, 1800); }
+  function fallback(){
+    var t = document.createElement("textarea"); t.value = text; t.style.position = "fixed"; t.style.opacity = "0";
+    document.body.appendChild(t); t.select();
+    try{ document.execCommand("copy"); ok(); }catch(e){ btn.textContent = "복사 실패 — 직접 선택해 주세요"; }
+    document.body.removeChild(t);
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(ok, fallback); } else { fallback(); }
+}
+
+function block(label, bodyNode){
+  var b = h("div","block"); b.appendChild(h("div","block-label",label)); b.appendChild(bodyNode); return b;
+}
+
+function cleanOne(s){ return String(s || "").replace(/\s+/g," ").trim(); }
+function shortLegal(s){
+  var x = cleanOne(s);
+  if(x.length <= 220) return x;
+  return x.slice(0,220).replace(/[\s,，;；:：]+[^\s]*$/g,"") + "…";
+}
+function fallbackShare(o){
+  var acts = (o.checklist || []).slice(0,3).map(function(x){ return cleanOne(x); }).filter(Boolean);
+  return [
+    "판단 이유: " + cleanOne(o.why),
+    "지금 할 일: " + acts.join(" / "),
+    "주의: " + cleanOne(o.caution)
+  ].join("\n");
+}
+function copySummaryText(o){
+  var answers = pathStack.map(function(p){ return cleanOne(p.label); }).filter(Boolean).join(" / ");
+  var summary = cleanOne(o.share_summary) ? o.share_summary : fallbackShare(o);
+  return [
+    "[법률 자가진단] " + cleanOne(D.hook),
+    "내 답변: " + (answers || "기록 없음"),
+    "결과: " + GRADE[o.grade] + " — " + cleanOne(o.title),
+    summary,
+    "법적 근거: " + shortLegal(o.basis),
+    "※ " + cleanOne(o.disclaimer || D.disclaimer),
+    "진단 링크: " + location.href
+  ].join("\n");
+}
+
+function showOutcome(oid){
+  var o = D.outcomes[oid];
+  clearScreen(); setProgress(0, true);
+  var head = h("div");
+  var g = h("span","grade " + o.grade, "● " + GRADE[o.grade]);
+  head.appendChild(g);
+  if(o.tag) head.appendChild(h("span","outcome-tag", o.tag));
+  screenEl.appendChild(head);
+  var wrap = h("div","outcome");
+  wrap.appendChild(h("h2","", o.title));
+
+  /* 왜 이 결과인가 — 내가 고른 답 + 근거 1줄 */
+  var why = h("div");
+  var chips = h("div","chips");
+  pathStack.forEach(function(p){ chips.appendChild(h("div","chip","· " + p.label)); });
+  why.appendChild(chips);
+  why.appendChild(h("div","why-line", o.why));
+  wrap.appendChild(block("🔎 왜 이 결과인가요?", why));
+
+  if(o.share_summary || o.why || o.caution){
+    wrap.appendChild(block("🧾 한눈에 정리", h("div","share-summary", o.share_summary || fallbackShare(o))));
+  }
+
+  if(o.fact && D.myth){
+    var vs = h("div","vs");
+    var m = h("div","m"); m.appendChild(h("b","","통념")); m.appendChild(document.createTextNode(D.myth));
+    var f = h("div","f"); f.appendChild(h("b","","이 경우엔")); f.appendChild(document.createTextNode(o.fact));
+    vs.appendChild(m); vs.appendChild(f);
+    wrap.appendChild(block("💡 통념 vs 사실", vs));
+  }
+  if(o.checklist && o.checklist.length){
+    var ul = h("ul","checklist"); o.checklist.forEach(function(c){ ul.appendChild(h("li","",c)); });
+    wrap.appendChild(block("✅ 지금 해볼 것", ul));
+  }
+  wrap.appendChild(block("⚠️ 주의할 점", h("div","block-body", o.caution)));
+  var bd = document.createElement("details"); bd.className = "basis-details";
+  bd.appendChild(h("summary","","📖 법적 근거 보기"));
+  bd.appendChild(h("div","block-body", o.basis));
+  wrap.appendChild(bd);
+  wrap.appendChild(h("div","disclaimer", o.disclaimer || D.disclaimer));
+  screenEl.appendChild(wrap);
+
+  var actions = h("div","actions");
+  var cp = h("button","ghost-btn","📋 결과 요약 복사하기"); cp.type = "button";
+  cp.onclick = function(){
+    var t = copySummaryText(o);
+    copyText(t, cp);
+  };
+  actions.appendChild(cp);
+  if(D.mother_url){
+    var a = h("a","ghost-btn","📰 원문 컬럼 읽어보기"); a.href = D.mother_url; a.target = "_blank"; a.rel = "noopener"; actions.appendChild(a);
+  }
+  var rs = h("button","ghost-btn","↺ 처음부터 다시"); rs.type = "button"; rs.onclick = showIntro;
+  actions.appendChild(rs);
+  screenEl.appendChild(actions);
+
+  var cta = h("div","cta-box");
+  cta.appendChild(document.createTextNode((o.cta || "지금 상황을 구체적으로 확인하고 싶다면") + " "));
+  var s = h("strong","", D.cta_lawyer);
+  cta.appendChild(s);
+  cta.appendChild(document.createTextNode("("));
+  var ml = h("a","", D.cta_email); ml.href = "mailto:" + D.cta_email; cta.appendChild(ml);
+  cta.appendChild(document.createTextNode(")에게 문의하세요."));
+  screenEl.appendChild(cta);
+}
+
+document.getElementById("footer").textContent = "제공 : " + D.cta_lawyer + " 법률사무소";
+showIntro();
+</script>
+</body>
+</html>
