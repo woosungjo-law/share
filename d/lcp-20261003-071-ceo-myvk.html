@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>부당행위계산 부인의 요건 — 특수관계인 간 거래의 시가 산정</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>부당행위계산 부인의 요건 — 특수관계인 간 거래의 시가 산정</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 특수관계인 거래는 아는 사이니 간단히 넘길 일이 아니라, 시가를 먼저 확인하고 근거를 남기는 일이다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      대표는 계열사에 개발용 토지를 넘기며 서로 아는 사이니까 빠르게 처리하자는 판단을 했고, 시가는 따로 확인하지 않았다. 나중에 세무팀으로부터 가액이 적정했는지 소명이 필요할 수 있다는 보고가 들어온다. 여기서 대표가 먼저 정하는 것은 거래의 정이냐 아니냐가 아니라, 시가를 어떻게 보고 그 근거를 어디에 남기느냐이다. 거래 당시 감정이 앞섰더라도 사후 소명은 자료가 있어야 가능하다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>부당행위계산 부인과 시가</p>
+    <p>법인세법 제52조는 특수관계인과의 거래로 조세 부담을 부당하게 감소시킨 것으로 인정되면, 그 계산과 관계없이 소득금액을 다시 계산한다고 정한다.</p>
+    <p>기준이 되는 시가는 건전한 사회 통념과 상거래 관행, 특수관계인이 아닌 자 간의 정상 거래에서 적용되는 가격이다.</p>
+    <p>즉 회사가 임의로 정한 가액이 아니라 시장에서 통용되는 객관적 교환가치로 판단한다.</p>
+    <p>어떤 거래가 문제 되는지는 법인세법 시행령 제88조가 유형으로 정한다.</p>
+    <p>자산을 시가보다 높은 가액으로 매입하거나, 무수익 자산을 매입하거나, 자산을 무상 또는 시가보다 낮은 가액으로 양도하는 경우 등이다.</p>
+    <p>시가의 범위는 법인세법 시행령 제89조가 정하며, 불특정다수인과 계속 거래한 가격이나 제3자 간 일반 거래 가격이 있으면 그 가격에 따른다.</p>
+    <p>저가양도 여부는 기준시점을 확정한 뒤 판단하고, 적정 절차를 거친 감정가액이 거래 당시 시가로 인정될 수 있다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외</h2>
+    <ul class="points">
+      <li><b>범위</b> — 적어 둔 각 조문·기준의 범위를 넘겨 새로운 결론을 만들지 않는다.</li>
+      <li>계열사에 넘긴 토지와 뒤늦은 세무 연락</li>
+      <li>새봄주택 대표 오현석은 계열사에 개발용 토지를 넘긴 거래를 두고 세무팀으로부터 "가액이 적정했는지 소명이 필요할 수 있다"는 보고를 받았다.</li>
+      <li>거래 당시에는 서로 아는 사이니 빠르게 처리하자는 판단이 앞섰고, 시가를 별도로 확인한 자료는 없었다.</li>
+      <li>오현석은 특수관계인 거래에서 시가를 어떻게 봐야 하고, 지금이라도 무엇을 준비해야 하는지 정리하기로 한다.</li>
+      <li>세금은 한 세목에서 끝나지 않는다</li>
+      <li>경영진은 특수관계인 거래를 "아는 사이니 간단히" 처리할 일이 아니라 시가 입증이 필요한 거래로 다루어야 한다.</li>
+      <li>자산 매매·자금 대여·용역 제공 전에 시가를 확인하고 감정평가서나 비교 자료를 남기도록 절차를 만든다.</li>
+      <li>계약서에 경제적 합리성을 설명하는 근거를 담고, 거래 후에는 법인세와 다른 세목에 미치는 영향을 함께 점검한다.</li>
+      <li>국제 거래라면 이전가격 문서를 사전에 작성·보관하고 정기 갱신한다.</li>
+      <li>거래 유형별로 필요한 자료 목록과 승인 절차를 정해 두고, 계약 전에 세무·법무가 함께 검토하도록 한다.</li>
+      <li>가액이 시가와 다를 경우 그 이유와 합리성을 문서로 남기고, 담당자가 바뀌어도 근거가 이어지도록 관리한다.</li>
+      <li>특수관계인 거래는 사후 소명보다 사전 설계가 훨씬 저렴하다.</li>
+      <li>시가가 비교 가능한 시장 가격으로 확인되는지 먼저 보고, 없으면 감정가액이나 유사 거래 가액으로 보완한다.</li>
+      <li>세무팀과 법무팀이 계약 전에 함께 검토하는 관문을 두어, 나중에 방어 논리를 새로 만들지 않도록 한다.</li>
+      <li>거래 기록은 한곳에 모아 두는 편이 좋다.</li>
+      <li>[경영자를 위한 실무 지침: 특수관계인 거래 체크포인트] ① 사전 시가: 거래 전에 시가를 확인하고 근거를 문서로 남긴다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 특수관계인 거래는 나중에 설명하기 쉬우냐가 아니라, 거래 전에 시가를 확인하고 근거를 남겼느냐가 회사를 지킨다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <p>거래 전에 시가 확인을 의무화한다 첫째, 특수관계인 거래는 사전에 시가를 확인하고 근거를 남긴다. 둘째, 부인은 법인세에 그치지 않고 양도소득세·증여세 등 다른 세목에 영향을 줄 수 있으므로 통합적으로 검토한다. 셋째, 부인되면 가산세와 함께 추징될 수 있어 비용이 커진다. 넷째, 경제적 합리성이나 정상 거래 조건 같은 방어 논리를 미리 준비한다. 다섯째, 기준시점을 확정하지 않으면 시가 비교가 흔들리므로 계약·대금·이전 시점을 정리한다.</p>
+    <ol>
+
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
