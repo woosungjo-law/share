@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+  <meta charset="utf-8">
+  <title>분양광고와 시공품질 기망 — 법적 판단 흐름</title>
+  <style>
+    :root {
+      --paper: #FFFFFF;
+      --paper-2: #F8FAFC;
+      --ink: #111827;
+      --muted: #6B7280;
+      --soft: #9CA3AF;
+      --rule: rgba(17, 24, 39, 0.12);
+      --rule-solid: #E5E7EB;
+      --accent: #1A3A6B;
+      --accent-tint: rgba(26, 58, 107, 0.08);
+      --link: #2E6BE6;
+      --coral: #C95A4A;
+      --coral-tint: #FFF2EF;
+      --font-serif: 'Noto Serif KR', 'Batang', '바탕', Georgia, serif;
+      --font-sans: 'Pretendard', 'Noto Sans KR', 'Malgun Gothic', '맑은 고딕', -apple-system, 'Segoe UI', sans-serif;
+      --font-mono: 'D2Coding', 'Consolas', 'Courier New', monospace;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); }
+    body { font-family: var(--font-sans); }
+    .page { max-width: 1240px; margin: 0 auto; padding: 48px 48px 40px; }
+    .eyebrow { margin: 0 0 12px; color: var(--accent); font: 12px/1.2 var(--font-mono); letter-spacing: 0.12em; }
+    h1 { margin: 0; color: var(--ink); font: 32px/1.25 var(--font-serif); letter-spacing: -0.03em; text-wrap: balance; }
+    .dek { max-width: 720px; margin: 14px 0 28px; color: var(--muted); font-size: 16px; line-height: 1.7; }
+    .diagram-shell { overflow-x: auto; border: 1px solid var(--rule); border-radius: 8px; background: var(--paper-2); }
+    svg { display: block; width: 100%; min-width: 960px; height: auto; }
+    .reading-note { margin: 18px 0 0; padding: 14px 16px; border-left: 3px solid var(--accent); color: var(--muted); background: var(--accent-tint); font-size: 14px; line-height: 1.65; }
+    .reading-note strong { color: var(--ink); font-weight: 700; }
+    .footer { margin-top: 24px; padding-top: 12px; border-top: 1px solid var(--rule-solid); color: var(--soft); font: 11px/1.5 var(--font-mono); }
+
+    @media print {
+      @page { size: A4 landscape; margin: 12mm; }
+      html, body { background: #fff; }
+      .page { max-width: none; padding: 0; }
+      .diagram-shell { border: 1px solid var(--rule-solid); break-inside: avoid; }
+      .reading-note { break-inside: avoid; }
+    }
+
+    @media (max-width: 700px) {
+      .page { padding: 28px 20px 24px; }
+      h1 { font-size: 28px; }
+      .dek { font-size: 15px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <p class="eyebrow">LEGAL PRACTICE / EP-009</p>
+    <h1>분양광고와 시공품질 기망 — 법적 판단 흐름</h1>
+    <p class="dek">광고와 실제 시공품질의 차이를 발견했을 때, 계약 편입·기망취소·표시광고법 위험을 어떤 순서로 검토할지 한 장으로 정리합니다.</p>
+
+    <div class="diagram-shell">
+      <svg viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg" role="img" class="diagram" aria-labelledby="t-column-009-ep-009-diagram d-column-009-ep-009-diagram">
+        <title id="t-column-009-ep-009-diagram">분양광고와 시공품질 기망의 법적 판단 흐름</title>
+        <desc id="d-column-009-ep-009-diagram">광고와 실제 시공품질의 차이를 구체성, 이행청구 가능성, 기망 성립 여부로 나누어 계약 편입과 구제수단을 검토하고 표시광고법 위험을 병행 확인하는 흐름도입니다.</desc>
+        <defs>
+          <marker id="arrow-column-009-ep-009-diagram" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent)" />
+          </marker>
+          <marker id="arrow-muted-column-009-ep-009-diagram" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--muted)" />
+          </marker>
+          <marker id="arrow-coral-column-009-ep-009-diagram" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--coral)" />
+          </marker>
+        </defs>
+
+        <!-- connectors first: every label has an opaque mask and a visible gap from its line -->
+        <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M 600 112 L 600 158" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrow-column-009-ep-009-diagram)" />
+          <path d="M 740 210 L 790 210 L 790 339 L 810 339" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrow-column-009-ep-009-diagram)" />
+          <path d="M 600 262 L 600 338" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrow-column-009-ep-009-diagram)" />
+          <path d="M 950 378 L 950 430" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrow-column-009-ep-009-diagram)" />
+          <path d="M 740 390 L 790 390 L 790 599 L 810 599" stroke="var(--coral)" stroke-width="2" marker-end="url(#arrow-coral-column-009-ep-009-diagram)" />
+          <path d="M 460 390 L 410 390 L 410 599 L 530 599" stroke="var(--muted)" stroke-width="2" marker-end="url(#arrow-muted-column-009-ep-009-diagram)" />
+          <path d="M 750 78 L 950 78 L 950 110" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="6 5" marker-end="url(#arrow-muted-column-009-ep-009-diagram)" />
+          <path d="M 450 78 L 210 78 L 210 300 L 340 300" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="6 5" marker-end="url(#arrow-muted-column-009-ep-009-diagram)" />
+          <path d="M 460 210 L 350 210 L 350 339 L 340 339" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="5 5" marker-end="url(#arrow-muted-column-009-ep-009-diagram)" />
+        </g>
+
+        <!-- connector labels -->
+        <g font-family="var(--font-mono)" font-size="12" text-anchor="middle" fill="var(--accent)">
+          <rect x="752" y="188" width="36" height="20" rx="4" fill="var(--paper-2)" />
+          <text x="770" y="203">예</text>
+          <rect x="614" y="286" width="64" height="20" rx="4" fill="var(--paper-2)" />
+          <text x="646" y="301">아니오</text>
+          <rect x="752" y="368" width="36" height="20" rx="4" fill="var(--paper-2)" fill-opacity="0.98" />
+          <text x="770" y="383" fill="var(--coral)">예</text>
+          <rect x="382" y="368" width="64" height="20" rx="4" fill="var(--paper-2)" />
+          <text x="414" y="383" fill="var(--muted)">아니오</text>
+          <rect x="854" y="60" width="96" height="20" rx="4" fill="var(--paper-2)" />
+          <text x="902" y="75" fill="var(--muted)">병행 검토</text>
+          <rect x="228" y="60" width="72" height="20" rx="4" fill="var(--paper-2)" />
+          <text x="264" y="75" fill="var(--muted)">입증자료</text>
+        </g>
+
+        <!-- nodes -->
+        <g font-family="var(--font-sans)" text-anchor="middle">
+          <ellipse cx="600" cy="78" rx="150" ry="34" fill="var(--paper)" stroke="var(--accent)" stroke-width="2" />
+          <text x="600" y="84" font-size="16" font-weight="700" fill="var(--ink)">광고와 실제 시공품질 차이</text>
+
+          <polygon points="600,158 740,210 600,262 460,210" fill="var(--paper)" stroke="var(--accent)" stroke-width="2" />
+            <text x="600" y="202" font-size="16" font-weight="700" fill="var(--ink)">
+            <tspan x="600" dy="0">구체적 거래조건이며</tspan>
+            <tspan x="600" dy="22">이행청구 가능성이 있는가?</tspan>
+          </text>
+
+          <rect x="810" y="300" width="280" height="78" rx="8" fill="var(--accent-tint)" stroke="var(--accent)" stroke-width="2" />
+          <text x="950" y="333" font-size="16" font-weight="700" fill="var(--accent)">묵시적 계약 편입</text>
+          <text x="950" y="357" font-size="12" fill="var(--muted)">구체성·이행청구 가능성 충족</text>
+
+          <rect x="810" y="430" width="280" height="78" rx="8" fill="var(--paper)" stroke="var(--accent)" stroke-width="2" />
+          <text x="950" y="463" font-size="16" font-weight="700" fill="var(--ink)">이행청구 또는 손해배상</text>
+          <text x="950" y="487" font-size="12" fill="var(--muted)">계약상 이행·불이행 책임 검토</text>
+
+          <polygon points="600,338 740,390 600,442 460,390" fill="var(--paper)" stroke="var(--accent)" stroke-width="2" />
+          <text x="600" y="376" font-size="16" font-weight="700" fill="var(--ink)">
+            <tspan x="600" dy="0">중요 사항을</tspan>
+            <tspan x="600" dy="22">비난받을 정도로 허위 고지했는가?</tspan>
+          </text>
+
+          <rect x="810" y="560" width="280" height="78" rx="8" fill="var(--coral-tint)" stroke="var(--coral)" stroke-width="2" />
+          <text x="950" y="593" font-size="16" font-weight="700" fill="var(--coral)">기망 성립</text>
+          <text x="950" y="617" font-size="12" fill="var(--ink)">계약 취소 + 원상회복</text>
+
+          <rect x="230" y="560" width="300" height="78" rx="8" fill="var(--paper)" stroke="var(--muted)" stroke-width="2" />
+          <text x="380" y="593" font-size="16" font-weight="700" fill="var(--ink)">허용 과장 가능성</text>
+          <text x="380" y="617" font-size="12" fill="var(--muted)">기망취소 문턱이 높을 수 있음</text>
+
+          <rect x="810" y="110" width="280" height="78" rx="8" fill="var(--paper)" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="5 4" />
+          <text x="950" y="143" font-size="16" font-weight="700" fill="var(--ink)">표시광고법 위험</text>
+          <text x="950" y="167" font-size="12" fill="var(--muted)">시정조치·과징금 별도 검토</text>
+
+          <rect x="80" y="300" width="260" height="78" rx="8" fill="var(--paper)" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="5 4" />
+          <text x="210" y="333" font-size="16" font-weight="700" fill="var(--ink)">증거·면책 확인</text>
+          <text x="210" y="357" font-size="12" fill="var(--muted)">광고 원본·도면·상담·특약</text>
+        </g>
+
+        <!-- bounded nuance, kept outside the decision path -->
+        <g>
+          <rect x="80" y="700" width="1040" height="70" rx="8" fill="var(--paper)" stroke="var(--rule-solid)" stroke-width="1" />
+          <text x="108" y="728" font-family="var(--font-mono)" font-size="12" letter-spacing="0.08em" fill="var(--accent)">SPECIAL CASE</text>
+          <text x="108" y="753" font-family="var(--font-sans)" font-size="14" fill="var(--ink)">법령상 불가능한 설계·시공은 계약 해제보다 가액 하락에 대한 손해배상 프레임을 우선 검토할 여지가 있습니다.</text>
+        </g>
+
+        <!-- legend -->
+        <line x1="80" y1="810" x2="1120" y2="810" stroke="var(--rule-solid)" stroke-width="1" />
+        <g font-family="var(--font-mono)" font-size="12" fill="var(--muted)">
+          <text x="80" y="842" letter-spacing="0.12em">LEGEND</text>
+          <ellipse cx="220" cy="838" rx="28" ry="12" fill="var(--paper)" stroke="var(--accent)" stroke-width="1.5" />
+          <text x="260" y="842">시작</text>
+          <rect x="340" y="826" width="28" height="24" rx="4" fill="var(--paper)" stroke="var(--accent)" stroke-width="1.5" />
+          <text x="380" y="842">조치·결과</text>
+          <polygon points="510,838 526,826 542,838 526,850" fill="var(--paper)" stroke="var(--accent)" stroke-width="1.5" />
+          <text x="554" y="842">판단</text>
+          <line x1="630" y1="838" x2="690" y2="838" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="5 4" />
+          <text x="706" y="842">병행·입증 레일</text>
+        </g>
+      </svg>
+    </div>
+
+    <p class="reading-note"><strong>읽는 법:</strong> 구체적 거래조건과 이행청구 가능성이 인정되면 계약 편입과 이행·손해배상으로, 그렇지 않으면 허위 고지의 정도에 따라 기망취소 가능성을 나눕니다. 표시광고법 위험과 광고·면책·상담 자료의 확보는 별도로 병행합니다. 이 도식은 원문 설명 레이어이며 개별 사안의 법률자문을 대체하지 않습니다.</p>
+    <p class="footer">SOURCE NOTE · EP-009 / 분양광고와 시공품질 기망 · static diagram · legal-navy</p>
+  </main>
+</body>
+</html>
