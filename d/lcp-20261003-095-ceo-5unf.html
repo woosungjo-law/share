@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>망중립성·망사용료 분쟁 법리</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>망중립성·망사용료 분쟁 법리</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 망중립성과 망사용료 분쟁은 단순한 비용 협상이 아니라, 어떤 법리와 계약 구조가 네트워크 운영에 적용되는지 확인하는 문제다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      도로 사용료를 두고 다투는 일처럼 보이지만, 실제로는 누가 어떤 규칙으로 도로를 관리하고 어떤 부담을 약속했는지부터 확인해야 한다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>등록·안정성·금지행위</p>
+    <p>전기통신사업법 제22조는 부가통신사업의 신고·등록을 정한다.</p>
+    <p>부가통신사업을 경영하려는 자는 신고하여야 하고, 특수한 유형의 부가통신역무를 제공하는 사업은 일정한 사항을 갖추어 등록하여야 한다.</p>
+    <p>제22조의7은 이용자 수나 트래픽 양 등이 기준에 해당하는 부가통신사업자에게 서비스 안정수단 확보 등 필요한 조치를 취하도록 한다.</p>
+    <p>즉 트래픽이 큰 사업자일수록 안정성 확보 의무의 대상인지를 따져야 한다.</p>
+    <p>제50조는 금지행위를 정한다.</p>
+    <p>설비 제공·상호접속 등에 관하여 불합리하거나 차별적인 조건을 부당하게 부과하는 행위, 협정 체결을 부당하게 거부하거나 정당한 사유 없이 이행하지 않는 행위 등이 금지된다.</p>
+    <p>단순한 트래픽 관리(혼잡 시간대 품질 제어, 바이러스 트래픽 차단)는 합리적 사유로 인정될 수 있지만, 특정 사업자의 트래픽을 의도적으로 지연·차단하는 행위는 원칙적으로 금지된다.</p>
+    <p>위반 시 시행령 제30조의7이 과징금 산정기준을 정한다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외</h2>
+    <ul class="points">
+      <li><b>범위</b> — 적어 둔 각 조문·기준의 범위를 넘겨 새로운 결론을 만들지 않는다.</li>
+      <li>들어온 망사용료 청구서</li>
+      <li>청솔테크 대표 구지원은 자사 서비스가 통신망을 많이 쓰면서 망사용료 청구를 받는 상황을 검토하게 됐다.</li>
+      <li>상대는 "트래픽이 많으니 요금을 내라"고 했고, 내부에서는 "그대로 받아들이면 비용이 계속 늘 것"이라는 우려가 나왔다.</li>
+      <li>구지원은 이것이 단순 비용 협상인지, 규제 위반이 걸린 문제인지에 따라 대응이 전혀 달라진다는 점을 확인하고 쟁점을 정리하기로 한다.</li>
+      <li>서비스가 커질수록 비용 구조가 사업의 명운을 좌우하기 때문이다.</li>
+      <li>청구의 정당성과 형평성</li>
+      <li>산정 기준이 객관적·투명해야 하고, 유사한 트래픽을 유발하는 다른 사업자와 형평을 유지해야 하며, 트래픽 증가분이 상대방 귀책임을 설명할 수 있어야 한다.</li>
+      <li>협상으로 비용을 낮추는 것과 규제 위반을 다투는 것은 다른 싸움이다.</li>
+      <li>경영진은 망사용료 문제를 "청구서를 깎는 협상"이 아니라 규제와 비용이 얽힌 리스크로 다뤄야 한다.</li>
+      <li>자사가 어떤 의무의 대상인지 확인하고, 청구·협의 과정의 산정 기준 자료를 정리한다.</li>
+      <li>같은 상황의 다른 사업자와 비교한 형평성 자료를 확보하고, 트래픽 증가 원인과 귀책을 데이터로 남긴다.</li>
+      <li>트래픽 관리 조치의 목적과 범위를 기록하고, 분쟁이 되면 시행령 제30조의7의 제재 수준까지 고려해 대응 강도를 정한다.</li>
+      <li>분쟁 대응은 두 갈래로 나눈다.</li>
+      <li>하나는 비용 협상이고, 다른 하나는 규제 위반 다툼이다.</li>
+      <li>협상에서는 형평성과 산정 근거가 핵심 자료가 되고, 규제 다툼에서는 차별·차단 여부와 합리적 사유가 쟁점이 된다.</li>
+      <li>두 갈래를 섞으면 전략이 흔들리므로 목적을 분명히 하고 접근한다.</li>
+      <li>협상이 결렬되어 분쟁으로 가면 기록이 곧 무기가 된다.</li>
+      <li>[경영자를 위한 실무 지침: 망사용료 분쟁 대응 체크포인트] ① 의무 확인: 제22조·제22조의7의 등록·안정성 의무 해당 여부를 확인한다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 원문에 적힌 규제 기준·계약 조건·분쟁 절차를 분리해 검토한다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <p>근거와 형평성을 데이터로 관리한다 첫째, 망사용료 청구가 곧 위법은 아니다. 둘째, 차별적 대우가 있으면 제50조 문제가 된다. 셋째, 트래픽 관리를 구실로 한 지연·차단은 합리적 사유를 넘으면 금지된다. 넷째, 비용과 규제 리스크를 함께 본다. 다섯째, 해외 진출이나 글로벌 서비스라면 등록·안정성 의무·상호접속 협정 필요성을 사전에 검토한다.</p>
+    <ol>
+
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
