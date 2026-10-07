@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>해상적하보험(해상보험) 피보험이익과 보험금 청구</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>해상적하보험(해상보험) 피보험이익과 보험금 청구</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 해상적하보험은 보험료를 냈는지가 아니라, 담보 조건·사고 시점·보험가액·피보험이익이 맞는지에 따라 청구 가능성이 갈린다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      보험료를 냈다는 것은 여행 표를 샀다는 뜻일 뿐이다. 어느 노선의 표인지, 사고가 운항 중 일어났는지, 누구의 짐인지까지 맞아야 보상이 열린다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>피보험이익·담보·가액</p>
+    <p>상법 제698조는 해상보험계약의 목적을 해상사업에 관한 피보험이익으로 한정한다.</p>
+    <p>상법 제697조는 보험기간을 당사자의 약정으로 정하며 보통 선적항에서 양하항까지의 항해기간을 기준으로 한다.</p>
+    <p>상법 제706조는 담보되는 위험을 정하는데, 해상고유위험(해난·좌초·충돌·투하·선장의 불법행위 등) 외에 화재·도난·비용(구조료·손해방지비용)이 포함된다.</p>
+    <p>담보 범위는 약정으로 조정된다.</p>
+    <p>상법 제708조는 분손담보(WA) 또는 전손담보만을 정할 수 있게 하고, 상법 제709조는 단독해손(분손) 면책약관의 효력을 규정한다.</p>
+    <p>그래서 같은 사고라도 가입 조건에 따라 부분 손해가 보상될 수도, 되지 않을 수도 있다.</p>
+    <p>담보 조건은 계약 단계에서 정해지므로, 사고 후에는 이미 정해진 틀 안에서 다퉈야 한다.</p>
+    <p>화물과 항로의 특성에 맞춰 조건을 설계하는 것이 사후 분쟁을 줄이는 길이다.</p>
+    <p>전손만 보상하는 조건이면 부분 손해는 애초에 대상이 아니라는 점을 계약 시 확인해야 한다.</p>
+    <p>보험가액은 상법 제676조에 따라 보험사고 발생 시 목적물 가액을 기준으로 하되 당사자가 정한 평가액이 우선하고, 보험금액이 보험가액을 초과하는 초과보험은 상법 제669조·제700조에 의해 무효다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외</h2>
+    <ul class="points">
+      <li><b>범위</b> — 적어 둔 각 조문·기준의 범위를 넘겨 새로운 결론을 만들지 않는다.</li>
+      <li>거부된 적하보험금 청구</li>
+      <li>새론스틸 대표 전태윤은 수출 화물이 운송 중 손상되어 적하보험금을 청구했지만 보험자가 지급을 거부하는 상황을 겪었다.</li>
+      <li>이유는 "가입한 담보 조건상 보상되지 않는 손해"라는 것이었다.</li>
+      <li>전태윤은 보험료를 냈는데 왜 보상이 안 되는지, 담보 조건과 보험가액이 어떤 역할을 하는지 정리하기로 한다.</li>
+      <li>가입 조건과 가액 관리</li>
+      <li>전손만 보상하는 조건이면 부분 손해는 인정되지 않는다.</li>
+      <li>가입 조건을 잘못 정하면 보험료를 냈어도 보상을 못 받을 수 있으므로, 계약 단계의 설계가 사후 청구보다 중요하다.</li>
+      <li>경영진은 적하보험을 "보험료만 내면 되는 것"으로 보지 말고 담보 조건과 가액을 관리해야 한다.</li>
+      <li>화물과 항로에 맞는 담보 조건(WA·TLO·FPA)을 정하고, 보험가액을 실제 가액에 맞춰 초과보험이 되지 않게 한다.</li>
+      <li>사고 시에는 보험기간 내 발생 여부와 담보 범위 해당 여부를 자료로 정리하고, 구조료·손해방지비용 청구 근거도 함께 준비한다.</li>
+      <li>거부 사유가 담보 범위라면 손상 원인이 해상고유위험인지 취급 부주의인지부터 가려야 하므로, 검사·감정 자료를 서둘러 확보한다.</li>
+      <li>원인 규명이 늦어지면 담보 범위 판단 자체가 어려워진다.</li>
+      <li>사고가 담보 위험에 해당하더라도 보험기간 밖이거나 피보험이익이 타인에게 있으면 청구가 어려우므로, 네 가지 요건을 순서대로 점검한다.</li>
+      <li>청구서에는 사고 시점과 원인, 손해액 산정 근거를 함께 적고 검사·감정 자료를 첨부한다.</li>
+      <li>요건 점검이 청구의 기본이다.</li>
+      <li>[경영자를 위한 실무 지침: 해상 적하보험 체크포인트] ① 이익 확인: 제698조의 피보험이익이 자사에 있는지 확인한다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 담보 범위와 보험가액을 계약 단계에서 맞추고, 사고 뒤에는 원인·시점·손해액 자료를 순서대로 확보한다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <p>담보 설계와 가액 관리를 점검한다 첫째, 담보 조건을 확인해야 한다. 둘째, 사고가 항해기간 내에 발생했는지 본다. 셋째, 보험가액과 보험금액을 대조해 초과보험 여부를 점검한다. 넷째, 피보험이익이 자사에 있는지 확인한다. 다섯째, 구조료·손해방지비용이 담보되는지도 본다.</p>
+    <ol>
+
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
