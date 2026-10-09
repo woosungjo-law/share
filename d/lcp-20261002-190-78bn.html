@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>사해행위취소 — 편파변제·본지변제의 사해행위 해당성</title>
+<!--
+  ELI5 디자인 시스템 `guide-paper` v1.0 — 원문: eli5_guide_paper.html
+  빌드: eli5_build_guide.py · 2026-10-05
+  대상 노트: LCP-20261002-190
+-->
+<style>
+:root{
+  --bg:#FBF8F3; --bg-deep:#F1EBE0; --surface:#FFFFFF; --surface-alt:#F5F0E7;
+  --line:#E0D8CA; --line-strong:#B9AE9B;
+  --ink:#22201C; --ink-2:#4A453D; --ink-muted:#5C564D;
+  --accent:#1D6F5C; --accent-deep:#13483E; --accent-soft:#E3F0EB; --on-accent:#FFFFFF;
+  --hi:#F5C94E; --hi-soft:#FDF3D6;
+  --warn:#B3541E; --warn-soft:#FBEDE3;
+  --ok:#2E6B3E; --ok-soft:#E6F1E7;
+  --neutral-soft:#ECEAE4;
+  --r-s:8px; --r-m:14px; --r-l:22px;
+  --pad:clamp(18px,5vw,30px); --maxw:42rem;
+  --shadow:0 1px 2px rgba(34,32,28,.05), 0 6px 20px -8px rgba(34,32,28,.14);
+  --mono:ui-monospace,'D2Coding',Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#14130F; --bg-deep:#1B1915; --surface:#1F1D18; --surface-alt:#262319;
+    --line:#37332B; --line-strong:#6E665A;
+    --ink:#F0EBE1; --ink-2:#D3CCBE; --ink-muted:#B5AC9D;
+    --accent:#6FD7BC; --accent-deep:#0F3A32; --accent-soft:#17332D; --on-accent:#06201B;
+    --hi:#F0C560; --hi-soft:#3A2F13;
+    --warn:#F0A26A; --warn-soft:#3A2315;
+    --ok:#7FCF95; --ok-soft:#16301D;
+    --neutral-soft:#2A2720;
+    --shadow:0 1px 2px rgba(0,0,0,.5), 0 8px 24px -10px rgba(0,0,0,.7);
+  }
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,
+              system-ui,'Apple SD Gothic Neo','Malgun Gothic','맑은 고딕',sans-serif;
+  font-size:1.25rem; line-height:1.85; font-weight:400; letter-spacing:-.005em;
+  word-break:keep-all; overflow-wrap:break-word;
+}
+p,li,h1,h2,h3{word-break:keep-all; text-wrap:pretty}
+p{max-width:34em}
+.nobr{white-space:nowrap}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 clamp(16px,4.5vw,24px)}
+section{margin-block:3.5rem}
+h2{font-size:clamp(1.5rem,5vw,2rem); font-weight:750; line-height:1.35;
+   letter-spacing:-.02em; margin:3.5rem 0 1rem}
+h3{font-size:1.25rem; font-weight:700; line-height:1.45; letter-spacing:-.015em}
+strong{font-weight:750}
+.emo{font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;
+     font-style:normal; font-weight:400; line-height:1;
+     display:inline-block; vertical-align:-.08em; margin-right:.35em}
+@media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important}}
+
+.hero{background:var(--accent-deep); color:#fff;
+      padding:clamp(40px,11vw,76px) 0 clamp(32px,8vw,56px);
+      border-radius:0 0 var(--r-l) var(--r-l)}
+@media (prefers-color-scheme:dark){
+  .hero{color:var(--ink); border-bottom:1px solid var(--line)}
+}
+.hero__kicker{font-size:.8125rem; font-weight:700; letter-spacing:.06em;
+              opacity:.85; margin:0 0 .75rem}
+.hero h1{font-size:clamp(2rem,7.2vw,3.25rem); font-weight:800; line-height:1.22;
+         letter-spacing:-.025em; margin:0 0 1rem}
+.hero__sub{font-size:clamp(1.0625rem,3.4vw,1.25rem); font-weight:500; line-height:1.6;
+           opacity:.9; margin:0 0 1.75rem; max-width:30em}
+.badges{display:flex; flex-wrap:wrap; gap:.5rem; list-style:none; padding:0; margin:0}
+.badge{font-size:.8125rem; font-weight:700; letter-spacing:.02em; line-height:1;
+       padding:.5rem .75rem; border-radius:999px;
+       background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.28)}
+@media (prefers-color-scheme:dark){
+  .badge{background:var(--accent-soft); border-color:var(--line-strong)}
+}
+.badge--time{background:transparent}
+
+.keyline{background:var(--hi-soft); border-block:3px solid var(--hi);
+         padding:clamp(28px,7vw,44px) 0; margin-block:2.5rem}
+.keyline__label{font-size:.8125rem; font-weight:700; letter-spacing:.06em;
+                color:var(--ink-2); margin:0 0 .6rem}
+.keyline__body{font-size:clamp(1.375rem,4.6vw,1.75rem); font-weight:700; line-height:1.55;
+               letter-spacing:-.02em; color:var(--ink); margin:0; max-width:22em}
+.keyline__body em{font-style:normal; font-weight:800; box-shadow:inset 0 -.42em 0 var(--hi)}
+@media (prefers-color-scheme:dark){
+  .keyline__body em{box-shadow:none; color:var(--hi); border-bottom:3px solid var(--hi)}
+}
+
+.analogy{display:flex; gap:1rem; margin:2rem 0; padding:var(--pad);
+         background:var(--accent-soft); border-radius:var(--r-l); border:1px solid var(--line)}
+.analogy__icon{font-size:2rem; line-height:1; flex:0 0 auto;
+               width:3rem; height:3rem; display:grid; place-items:center;
+               background:var(--surface); border-radius:50%; box-shadow:var(--shadow)}
+.analogy__label{font-size:.8125rem; font-weight:700; letter-spacing:.06em;
+                color:var(--accent); margin:.25rem 0 .5rem}
+.analogy__body{margin:0; font-size:1.1875rem; line-height:1.75; font-weight:500; color:var(--ink)}
+.analogy__cap{margin-top:.75rem; font-size:.9375rem; color:var(--ink-muted)}
+@media (max-width:400px){.analogy{flex-direction:column; gap:.75rem}}
+
+.steps{list-style:none; margin:2rem 0; padding:0}
+.step{position:relative; display:flex; gap:1rem; padding-bottom:1.75rem}
+.step::before{content:""; position:absolute; left:1.1rem; top:2.6rem; bottom:0;
+              width:2px; background:var(--line)}
+.step--end::before{display:none}
+.step__num{flex:0 0 auto; width:2.25rem; height:2.25rem; border-radius:50%;
+           display:grid; place-items:center; font-weight:800; font-size:1rem;
+           background:var(--accent); color:var(--on-accent);
+           position:relative; z-index:1; font-variant-numeric:tabular-nums}
+.step__title{margin:.3rem 0 .35rem; font-size:1.25rem; font-weight:700; line-height:1.45}
+.step__desc{margin:0; font-size:1.0625rem; line-height:1.75; color:var(--ink-2); max-width:30em}
+
+.versus{display:grid; gap:1rem; margin:2rem 0}
+@media (min-width:640px){.versus{grid-template-columns:1fr 1fr}}
+.vs-card{padding:var(--pad); border-radius:var(--r-m); border:1px solid var(--line)}
+.vs-card--myth{background:var(--neutral-soft)}
+.vs-card--myth .vs-card__body{color:var(--ink-2); text-decoration:line-through;
+  text-decoration-color:var(--warn); text-decoration-thickness:2px}
+.vs-card--fact{background:var(--ok-soft); border-color:var(--ok); border-width:2px}
+.vs-card__label{font-size:.8125rem; font-weight:700; letter-spacing:.06em;
+                margin:0 0 .6rem; color:var(--ink-2)}
+.vs-card--fact .vs-card__label{color:var(--ok)}
+.vs-card__body{margin:0; font-size:1.125rem; font-weight:500; line-height:1.7}
+
+.stats{display:grid; grid-template-columns:repeat(auto-fit,minmax(9.5rem,1fr));
+       gap:.75rem; margin:2rem 0; padding:0}
+.stat{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-m);
+      padding:1.125rem 1rem; text-align:center; box-shadow:var(--shadow)}
+.stat__label{font-size:.8125rem; font-weight:700; letter-spacing:.06em;
+             color:var(--ink-muted); margin-bottom:.5rem}
+.stat__value{margin:0; font-size:1.875rem; font-weight:800; line-height:1.25;
+             letter-spacing:-.03em; color:var(--accent); font-variant-numeric:tabular-nums}
+.stat__unit{font-size:1rem; font-weight:700; letter-spacing:0}
+.stat__value--law{font-family:var(--mono); font-size:1rem; font-weight:600;
+                  letter-spacing:0; color:var(--ink)}
+
+.alert{margin:2rem 0; padding:var(--pad); border-radius:var(--r-m);
+       background:var(--warn-soft); border:1px solid var(--warn); border-left:6px solid var(--warn)}
+.alert__title{margin:0 0 .5rem; font-size:1.0625rem; font-weight:800;
+              color:var(--warn); letter-spacing:-.01em}
+.alert__title::before{content:"!"; display:inline-grid; place-items:center;
+  width:1.4em; height:1.4em; margin-right:.5em; border-radius:50%;
+  background:var(--warn); color:var(--bg); font-size:.8em; font-weight:800}
+.alert__body{margin:0; font-size:1.0625rem; line-height:1.75; color:var(--ink)}
+
+.check{background:var(--surface-alt); border-radius:var(--r-l);
+       padding:var(--pad); margin:2.5rem 0; border:1px solid var(--line)}
+.check__title{font-size:1.25rem; font-weight:700; margin:0 0 1rem; letter-spacing:-.015em}
+.check__list{list-style:none; margin:0; padding:0; display:grid; gap:.75rem}
+.check__list li{position:relative; padding-left:2.25rem; font-size:1.0625rem; line-height:1.7}
+.check__list li::before{content:""; position:absolute; left:0; top:.35em;
+  width:1.4rem; height:1.4rem; border-radius:6px;
+  border:2px solid var(--accent); background:var(--surface)}
+.check__list li::after{content:""; position:absolute; left:.45rem; top:.6em;
+  width:.42rem; height:.78rem; border:solid var(--accent);
+  border-width:0 2.5px 2.5px 0; transform:rotate(45deg); opacity:.35}
+
+.fig{margin:2.5rem 0}
+.fig__scroll{overflow-x:auto; -webkit-overflow-scrolling:touch;
+  background:var(--surface); border:1px solid var(--line);
+  border-radius:var(--r-m); padding:1.25rem 1rem}
+.fig__scroll svg{display:block; width:100%; min-width:320px; height:auto; color:var(--ink)}
+.fig svg text{font-family:inherit; font-weight:700}
+.fig__cap{margin-top:.75rem; font-size:.9375rem; color:var(--ink-muted); line-height:1.6}
+
+.src{background:var(--bg-deep); border-top:1px solid var(--line);
+     padding:clamp(32px,8vw,52px) 0; margin-top:4rem}
+.src__title{font-size:.8125rem; font-weight:700; letter-spacing:.06em;
+            color:var(--ink-muted); margin:0 0 1rem}
+.src__list{list-style:none; margin:0 0 1.5rem; padding:0; display:grid; gap:.75rem}
+.src__list li{display:grid; grid-template-columns:4.5rem 1fr; gap:.75rem; align-items:baseline}
+.src__k{font-size:.8125rem; font-weight:700; color:var(--ink-muted); letter-spacing:.04em}
+.src__v{font-family:var(--mono); font-size:.9375rem; font-weight:600;
+        line-height:1.6; color:var(--ink); word-break:keep-all}
+.src__disc{font-size:.9375rem; line-height:1.7; color:var(--ink-muted);
+           margin:0 0 .75rem; padding-top:1rem; border-top:1px solid var(--line)}
+.src__by{font-size:.9375rem; font-weight:700; color:var(--ink-2); margin:0}
+@media (max-width:400px){.src__list li{grid-template-columns:1fr; gap:.15rem}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="hero">
+    <p class="hero__kicker">법무팀 · ELI5 실무 안내 · LCP-20261002-190</p>
+    <h1>사해행위취소 — 편파변제·본지변제의 사해행위 해당성</h1>
+    <p class="hero__sub">"한 채권자에게만 갚았으니 사해행위다?" — 변제기 도래 채무의 본지변제라면 출발점이 달라진다.</p>
+  </div>
+
+  <div class="keyline">
+    <p class="keyline__label">한 문장</p>
+    <p class="keyline__body">채무초과 상태에서 <em>변제기 도래 채무를 변제한 것</em>은 원칙적으로 사해행위가 아니다 — 다만 통모 정황이 있으면 판단이 달라지므로, 변제·담보·부동산 매각을 행위 유형별로 나눠 본다.</p>
+  </div>
+
+  <div class="analogy">
+    <div class="analogy__icon">⚖️</div>
+    <div>
+      <p class="analogy__label">쉽게 말하면</p>
+      <blockquote class="analogy__body">돈을 빌린 사람이 원래 갚기로 한 날에 갚은 것을 두고 '왜 저 사람에게만 갔느냐'고 탓하기는 어렵다. 약속한 날짜에 약속한 돈을 갚은 것이기 때문이다. 다만 그 갚은 시점과 방식이 이상하고, 다른 채권자 몰래 짜고 한 일이라면 이야기가 달라진다. 법이 보는 것은 이름표가 아니라, 정상 거래의 마무리였는지 아니면 다른 채권자를 해치려는 짜고 치는 고빠였는지다.</blockquote>
+      <figcaption class="analogy__cap">비유입니다. 실제 판단 기준은 법에서 정한 요건과 절차다.</figcaption>
+    </div>
+  </div>
+
+  <div class="versus">
+    <div class="vs-card vs-card--myth">
+      <p class="vs-card__label"><span class="emo" aria-hidden="true">❌</span> 흔한 오해</p>
+      <p class="vs-card__body">특정 채권자 한 명에게만 돈을 갚았으면 그 자체로 사해행위다.</p>
+    </div>
+    <div class="vs-card vs-card--fact">
+      <p class="vs-card__label"><span class="emo" aria-hidden="true">✅</span> 실제로는</p>
+      <p class="vs-card__body">채무초과 상태에서 변제기 도래 채무를 변제한 경우 원칙적으로 사해행위가 아니다(대법원 2003다60822의 본지변제 원칙). 그러나 특정 채권자와의 통모로 다른 채권자를 해하려 한 정황이 있으면 판단이 달라진다. 담보 제공(대법원 2011다28045)은 변제와 구별해 본다. 민법 제406조의 채권자취소권에서는 채무자의 공동담보 부족 인식과 행위로 인한 공동담보 감소, 수익자의 인식·선의 여부가 축이다.</p>
+    </div>
+  </div>
+
+  <div class="fig">
+    <div class="fig__scroll">
+      <svg viewBox="0 0 640 134" role="img" aria-label="사해행위 판단 흐름: 행위 유형 확정 → 변제기·통상성 → 공동담보 감소 → 통모 정황" xmlns="http://www.w3.org/2000/svg" style="max-width:100%">
+        <rect x="0.0" y="14" width="298.0" height="34" rx="9" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
+        <text x="149.0" y="38" text-anchor="middle" font-size="16" fill="var(--accent-deep)" font-weight="800">행위 유형 확정</text>
+        <rect x="342.0" y="14" width="298.0" height="34" rx="9" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
+        <text x="491.0" y="38" text-anchor="middle" font-size="16" fill="var(--accent-deep)" font-weight="800">변제기·통상성</text>
+        <path d="M298.0 31 H334.0" fill="none" stroke="var(--line-strong)" stroke-width="2.5"/>
+        <polygon points="342,31 334,25 334,37" fill="var(--line-strong)"/>
+        <rect x="342.0" y="82" width="298.0" height="34" rx="9" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
+        <text x="491.0" y="106" text-anchor="middle" font-size="16" fill="var(--accent-deep)" font-weight="800">공동담보 감소</text>
+        <rect x="0.0" y="82" width="298.0" height="34" rx="9" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
+        <text x="149.0" y="106" text-anchor="middle" font-size="16" fill="var(--accent-deep)" font-weight="800">통모 정황</text>
+        <path d="M491.0 48 V74" fill="none" stroke="var(--line-strong)" stroke-width="2.5"/>
+        <polygon points="491.0,82 485.0,74 497.0,74" fill="var(--line-strong)"/>
+        <path d="M342.0 99 H306.0" fill="none" stroke="var(--line-strong)" stroke-width="2.5"/>
+        <polygon points="298,99 306,93 306,105" fill="var(--line-strong)"/>
+        </svg>
+    </div>
+    <figcaption class="fig__cap">그림 1 · 변제인지 담보 제공인지 먼저 가른 뒤, 공동담보와 통모 정황을 순서대로 검증한다.</figcaption>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step__num">1</div>
+      <div class="step__title">행위 유형을 먼저 확정한다</div>
+      <div class="step__desc">변제·담보 제공·부동산 매각 중 어느 유형인지 확정하고 유형별로 별도 파일을 만든다. 변제와 담보 제공은 같은 방식으로 다룰 수 없다.</div>
+    </div>
+    <div class="step">
+      <div class="step__num">2</div>
+      <div class="step__title">시간순으로 사실을 배열한다</div>
+      <div class="step__desc">지급결의서·세금계산서·계약서·계좌 내역·채권자 목록을 한 묶음으로 보존하고, 변제기·실제 채무액·지급 승인자·자금 출처와 사용처·지급 직후 잔여 자산을 시간순으로 대조한다.</div>
+    </div>
+    <div class="step">
+      <div class="step__num">3</div>
+      <div class="step__title">민법 제406조의 축을 나눠 적는다</div>
+      <div class="step__desc">공동담보 감소, 채무자의 인식, 수익자의 인식을 각각의 사실과 증거로 분리해 기록한다. 담보 제공이면 신규 자금 유입과 사용처, 사업 계속을 위한 경제적 합리성을 확인한다.</div>
+    </div>
+    <div class="step step--end">
+      <div class="step__num">4</div>
+      <div class="step__title">미확인 사실은 보강자료로 관리한다</div>
+      <div class="step__desc">당사자 설명과 객관 자료가 충돌하면 어느 쪽이 맞다고 정하지 말고, 충돌 지점과 추가 확보 자료·담당자·기한을 기록한다.</div>
+    </div>
+  </div>
+
+  <div class="check">
+    <p class="check__title">법무팀 체크포인트</p>
+    <ul class="check__list">
+      <li>① 변제기·지급액·지급 승인·계좌 흐름을 시간순으로 대조한다.</li>
+      <li>② 변제인지 담보 제공인지 행위 유형을 먼저 확정한다.</li>
+      <li>③ 통모 정황과 정상 거래 정황을 각각 입증자료와 연결한다.</li>
+      <li>④ 부동산 매각이면 가격·대금 사용처·잔여 변제자력을 확인한다.</li>
+      <li>⑤ 미확인 사실은 결론이 아니라 보강자료와 담당 기한으로 관리한다.</li>
+    </ul>
+  </div>
+
+  <div class="src">
+    <p class="src__title">출처</p>
+    <ul class="src__list">
+      <li class="src__k">원문</li>
+      <li class="src__v">사해행위취소 — 편파변제·본지변제의 사해행위 해당성 — LCP-20261002-190</li>
+      <li class="src__k">기준 조문</li>
+      <li class="src__v">민법 제406조</li>
+      <li class="src__disc">이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>
