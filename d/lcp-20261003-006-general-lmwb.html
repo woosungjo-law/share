@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>협동조합에서 나왔다고 끝이 아닌, 통지와 환급 시효를 챙기는 일이다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 협동조합 제명·환급 체크포인트</div>
+    <h1>협동조합에서 나왔다고 끝이 아닌, 통지와 환급 시효를 챙기는 일이다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> 협동조합에서 나왔다고 끝이 아닙니다. 나가는 방법은 <b>스스로 탈퇴, 자격 상실에 따른 당연 탈퇴, 제명</b>으로 나뉘고(협동조합 기본법 제24조), 제명은 <b>총회 10일 전 사유 통지와 의견을 말할 기회</b>(제25조)가 절차입니다. 출자금 환급(제26조)은 나간 해의 다음 회계연도부터 정관에 따라 청구할 수 있지만, <b>환급청구권은 2년 동안 행사하지 않으면 시효로 사라집니다.</b> 가만히 있으면 없어지는 권리입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>총회 안내문과 함께 제명이 안건에 올랐다는 소식</b>을 들은 조합원의 첫 질문은 세 가지입니다. <b>제명 사유 통지를 총회 10일 전에 받았는지, 총회에서 입장을 말할 기회가 있었는지, 조합을 나온 뒤 낸 출자금을 언제 돌려받을 수 있는지.</b> 세 질문 모두 답이 기록으로 나옵니다 — 통지 기록, 회의록, 납입 내역이 그것입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p><b>협동조합 기본법 제24조</b>는 조합원이 정관에 따라 탈퇴 의사를 알리고 나갈 수 있다고 정하고, 조합원 자격을 잃거나 사망한 경우, 성년후견개시 심판 등이 있으면 당연히 탈퇴된다고 정합니다. <b>스스로 나가는 것과 제명으로 나가는 것, 당연 탈퇴는 각각 다른 경우</b>이므로 내 경우가 어디에 해당하는지부터 가립니다.</p>
+    <p><b>제25조</b>는 제명 절차의 순서를 정합니다. <b>총회를 열기 10일 전까지 제명 사유</b>를 알려주고 총회에서 의견을 말할 기회를 주어야 하므로, 통지를 받았는지와 사유가 분명했는지를 통지 기록과 회의록으로 확인합니다.</p>
+    <p><b>제26조</b>는 출자금 환급의 길입니다. 나간 해의 다음 회계연도부터 정관에 따라 지분 환급을 청구할 수 있고, 지분은 나간 회계연도 말의 조합 자산과 부채로 정해집니다. <b>환급청구권은 2년</b> 동안 행사하지 않으면 시효로 사라지고, 조합에 진 빚을 다 갚기 전에는 환급이 미뤄질 수 있습니다. <b>제27조</b>의 손실액 부담 구조까지 알아두면 조합 살림이 어려운 경우의 정산 방향도 보입니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>날짜와 장부가 결과를 좌우한다</h2>
+    <ul class="points">
+      <li><b>통지와 회의록을 날짜로 확인합니다</b> — 제명 통지의 10일 전 여부는 받은 기록으로 따집니다. 통지가 늦었거나 사유가 막연했다면 결의의 문제를 제기하는 쪽의 입장이 단단해집니다. 총회 회의록에 출석과 찬반, 의결 정족수가 적혀 있는지 보고 비어 있는 대목이 있으면 메모해 둡니다.</li>
+      <li><b>환급은 장부 숫자입니다</b> — 지분은 나간 회계연도 말 기준이므로 조합의 재무제표와 회계자료를 요청해 확인합니다. 나간 해와 다음 해의 경계, 정관이 정한 청구 절차와 시기를 달력에 적습니다.</li>
+      <li><b>2년 시효는 기록으로 지킵니다</b> — 2년 시효는 가만히 있으면 사라지는 권리이므로 <b>최고와 청구, 필요한 절차의 기록</b>을 남깁니다.</li>
+      <li><b>미루는 주장은 내역으로 검증합니다</b> — 조합이 빚을 이유로 환급을 미루겠다면 빚의 내역을 요구해 따집니다. 빚이 실제로 있는지와 범위, 갚을 시기가 됐는지를 나누어 보고 지분액과의 관계를 정리합니다. 결의 다툼과 환급 다툼은 나눠서 준비하고, 합의가 나오면 효력 인정 범위와 지급 시기, 정산 방식을 적은 합의서를 요구합니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 2년 시효는 <b>가만히 있으면 사라지는 권리</b>입니다. 시효의 시작점을 달력에 표시하고, 시효가 다가오면 청구 기록을 먼저 남기십시오.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;">갈래부터 가리고 날짜부터 세고 — <b>장부를 요청합니다.</b></p>
+    <ol>
+      <li><b>① 갈래 가리기</b> — 스스로 나감과 당연 탈퇴, 제명 중 내 경우가 어디인지 협동조합 기본법 제24조와 정관으로 가립니다.</li>
+      <li><b>② 절차 따지기</b> — 총회 10일 전 통지와 의견 말할 기회, 정족수와 회의록을 제25조에 맞춰 기록으로 확인합니다.</li>
+      <li><b>③ 환급 달력</b> — 나간 회계연도 말 기준 지분과 다음 회계연도 청구, 2년 시효를 제26조에 따라 달력에 적습니다.</li>
+      <li><b>④ 미룸 검증</b> — 빚을 이유로 환급을 미루면 내역을 따져보고 제27조의 손실액 부담 구조까지 확인합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
