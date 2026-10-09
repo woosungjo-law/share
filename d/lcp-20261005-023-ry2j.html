@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>플랫폼 게시물 삭제와 운영자 방치 책임</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>플랫폼 게시물 삭제와 운영자 방치 책임</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 방치의 책임은 게시물의 수가 아니라 <b>인식과 조치 사이의 공백</b>으로 계산된다. 경영진이 묻어야 할 질문은 "몇 건을 지웠는지"가 아니라 <b>언제 알았고 언제 조치했는지</b>다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      한 주 동안 접수된 삭제 민원 스무 건과 처리 내역이 경영진 앞에 놓였다. 평균 처리 기간은 길어져 있었고, "처리했다"는 기록에는 어떤 판단을 했는지가 없었다. 민원이 아니라 <b>개별 게시물 단위로 접수 시각부터 처리 시각까지의 공백</b>을 계산하자 공백의 모양이 달라졌다. 흔한 비유로, 가게 주인이 경고를 받고도 물건을 치우지 않으면 책임이 커진다 — 다만 그 경고를 <b>알았느냐</b>가 핵심이고, 알았다는 증거는 시각 기록이다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>책임 제한의 조건과 두 판례의 기준이다.</p>
+    <p>첫째, 책임 제한의 조건이다. 정보통신망 이용촉진 및 정보보호 등에 관한 법률 제44조의3에 따라, 운영자가 약관과 법정 절차에 따라 임시조치를 했거나 게시물의 위법성 판단이 곤란한 경우에는 책임이 제한될 수 있다. 경영이 보장해야 할 것은 처리 건수가 아니라 이 두 가지 조건을 만족시키는 절차다.</p>
+    <p>둘째, 인식의 유무이다. 대법원 2016다271608 판결은 구체적·개별적인 삭제와 차단 요구를 받지 않아 게시된 사정을 구체적으로 인식하지 못하였거나, 기술적·경제적으로 관리·통제를 할 수 없는 경우 적절한 조치 의무를 부담하는지를 원칙적으로 소극으로 본다.</p>
+    <p>셋째, 방조의 책임이다. 대법원 2009다5643 판결은 인터넷 링크 행위가 복제·전송·전시에 해당하는지를 소극으로 보았고, 저작물을 이용한다는 말의 의미와 부작위 방조자로서의 공동불법행위책임을 함께 다루었다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외</h2>
+    <ul class="points">
+      <li><b>첫째, 비용</b> — 처리 기간 단축은 인력 증원이 아니라 기록 체계의 문제다. 판단 근거가 남는 구조를 만들면 이후 대응 비용이 줄어든다.</li>
+      <li><b>둘째, 책임</b> — 인식 정황과 처리 근거의 기록 유무에 따라 방어의 방향이 달라진다.</li>
+      <li><b>셋째, 판단 곤란</b> — 위법성 판단이 어려운 건은 그 사실과 검토한 자료를 남긴다. 판단을 미룬 것처럼 보이면 조건을 채우기 어렵다.</li>
+      <li><b>넷째, 관리 능력</b> — 기술적·경제적으로 관리·통제할 수 없었는지는 시스템 자료로 보여야 한다.</li>
+      <li><b>다섯째, 중단 기준</b> — 접수와 처리의 공백이 기준을 넘는 채널은 보완이 끝날 때까지 기능을 줄인다. 줄인 사실과 복구 조건도 함께 적는다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 책임 제한 조건(제44조의3: 임시조치 + 위법성 판단 곤란) → 인식(2016다271608) → 방조(2009다5643) 순서로, 공백 시간이 모든 계산의 기준이다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <p style="margin-bottom:16px;"><b>처리 건수 대신 공백 시간을 관리한다.</b> 확인이 필요한 사항은 공란으로 두지 않고 담당자와 확인 시기를 적는다.</p>
+    <ol>
+      <li><b>① 지표 교체</b> — 처리 건수와 함께 접수 시각부터 처리 시각까지의 공백 시간을 보고받는다.</li>
+      <li><b>② 단위 전환</b> — 민원 건수가 아니라 개별 게시물 단위로 특정해 각각의 판단 근거를 붙인다.</li>
+      <li><b>③ 절차 확정</b> — 약관상 임시조치와 법정 절차의 순서를 규정으로 고정하고, 어느 쪽을 밟았는지 기록하게 한다.</li>
+      <li><b>④ 능력 점검</b> — 관리·통제 가능 여부의 시스템 자료와 제약 사유를 보고받는다.</li>
+      <li><b>⑤ 기능 축소</b> — 공백이 기준을 넘는 채널을 주 단위로 다시 계산해 목록으로 올리고, 보완 전까지 기능을 줄인다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
