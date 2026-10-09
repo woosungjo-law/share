@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>소장의 전체 구조 이해하기</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>소장의 전체 구조 이해하기</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 소를 내는 것과 재판을 받는 것은 다른 일이다. 소장에 적어야 할 것을 빠뜨리면 보정 명령이 오고, 고치지 못하면 각하로 처음부터 다시다. <b>처음부터 제대로 내는 것이 가장 싸다.</b>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      경기 출전 신청서를 상상해 보십시오. 선수 이름, 종목, 경기 날짜가 빠진 신청서로는 <b>출전 자체가 불가능</b>하다. 보정 명령은 "신청서 고쳐 오라"는 말이고, 기한 안에 고치지 못하면 출전이 취소돼 처음부터 다시 써야 한다. 소장도 마찬가지다. 하고 싶은 말을 길게 쓰는 문서가 아니라, <b>법원이 찾을 수 있게 나누어 적는 입장권</b>이다. 형식을 갖추지 못하면 입장 자체가 안 되고, 그만큼 일정과 비용이 흔들린다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>소장에 적어야 할 것은 법으로 정해져 있다. 민사소송법 제249조는 소장의 기재사항을 정한다. 소장에는 당사자와 법정대리인, 청구의 취지와 원인을 적어야 한다.</p>
+    <p>당사자는 누구와 누구의 다툼인지, 청구의 취지는 무엇을 구하는지, 청구의 원인은 왜 구하는지를 적는 부분이다. 하고 싶은 말을 길게 쓰는 것이 아니라 법원이 찾을 수 있게 나누는 것이 중요하다.</p>
+    <p>틀리게 내면 고쳐 내라는 명령이 온다. 민사소송법 제254조는 재판장 등의 소장심사권을 정한다. 재판장은 소장이 법정 요건을 갖추지 못한 경우 보정을 명할 수 있고, 보정되지 않으면 각하할 수 있다. 보정이란 틀린 부분을 고쳐 내라는 명령이고, 각하란 소송을 내용 판단 없이 끝내는 결정이다. 보정명령을 받으면 기한 안에 고쳐 내야 한다.</p>
+    <p>경영진이 알아둘 대목은 일정이다. 보정이 길어지면 소송 시작이 늦어지고, 각하되면 처음부터 다시 내야 한다.</p>
+    <p>소장을 내면 상대방에게 전달된다. 민사소송법 제255조는 소장부본의 송달을 정한다. 법원은 소장을 접수하면 지체 없이 피고에게 소장 부본을 송달해야 한다. 부본이란 원본과 같은 내용의 사본이다. 송달이 돼야 피고가 소 제기를 알고 답변을 준비한다.</p>
+    <p>피고 주소가 틀리면 송달이 안 돼 절차가 멈춘다. 기재와 보정, 송달이 하나의 흐름으로 이어진다. 제대로 적어야 보정을 피하고, 보정을 마치야 송달로 넘어간다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외</h2>
+    <ul class="points">
+      <li><b>첫째, 청구의 취지와 원인을 나눈다</b> — 취지는 무엇을 구하는지, 원인은 왜 구하는지를 적는 부분이다. 대금 청구라면 취지에는 지급을 구한다는 내용과 금액을, 원인에는 계약 경위와 미지급 사실, 계산 근거를 적는다. 취지와 원인이 뒤섞이면 보정 사유가 돼 일정이 늦어진다.</li>
+      <li><b>둘째, 당사자 표시를 정확히 한다</b> — 회사라면 상호와 대표자, 주소지를 확인한다. 당사자가 틀리면 소송 상대가 바뀌는 문제로 이어진다.</li>
+      <li><b>셋째, 보정 기한을 지킨다</b> — 민사소송법 제254조에 따라 보정명령을 받으면 기한 안에 고쳐 낸다. 보정되지 않으면 각하될 수 있으므로, 명령을 받자마자 담당자에게 기한 보고를 하게 한다. 각하되면 처음부터 다시 내야 하니 시간과 비용이 두 배가 된다.</li>
+      <li><b>넷째, 송달을 확인한다</b> — 민사소송법 제255조에 따라 소장 부본이 피고에게 송달돼야 절차가 진행된다. 소를 내기 전에 피고의 주소지를 확인하고, 바뀌었을 가능성을 점검한다.</li>
+      <li><b>비용 관점</b> — 처음부터 제대로 내는 것이 가장 싸다. 보정과 재제출, 송달 불능에 따른 지연은 모두 비용이다. 기재와 보정, 송달을 나눠 관리하면 소송 일정이 예측 가능해진다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 기재(제249조)로 출발선을 잡고, 보정(제254조)으로 일정을 지키고, 송달(제255조)으로 절차를 굴린다 — 셋이 맞물려야 소송이 시작된다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <p style="margin-bottom:16px;">소송을 결심할 때는 <b>일정과 비용을 함께 묻는다.</b> 담당자에게 아래 세 가지 보고를 받도록 지시한다.</p>
+    <ol>
+      <li><b>① 기재 점검 보고</b> — 소장 작성을 지시할 때 기재 점검을 함께 지시한다. 민사소송법 제249조에 따라 당사자와 법정대리인, 청구의 취지와 원인이 갖춰졌는지를 보고받는다. 취지와 원인이 나뉘어 있는지, 당사자 표시가 정확한지를 확인한다.</li>
+      <li><b>② 보정 기한 보고 체계</b> — 민사소송법 제254조에 따라 보정명령을 받으면 어디를 고치라는 것인지와 기한을 즉시 보고하게 한다. 보정되지 않으면 각하될 수 있으므로 기한을 넘기지 않게 관리한다.</li>
+      <li><b>③ 피고 주소지 확인</b> — 민사소송법 제255조에 따라 소장 부본이 피고에게 송달돼야 하므로, 주소가 틀리면 절차가 멈춘다. 소 제기 전에 주소지를 확인받는다.</li>
+      <li><b>④ 일정·비용 계산</b> — 기재와 보정, 송달이 맞물려 있다는 전제로 소송 일정과 비용을 잡는다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
