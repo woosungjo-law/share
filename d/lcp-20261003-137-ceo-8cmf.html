@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CPO·개인정보보호 교육·내부관리계획</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>CPO·개인정보보호 교육·내부관리계획</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 가입 화면 한 장이 과태료가 되고, 기본 의무가 비어 있는 상태에서 유출 사고가 나면 과태료와 손해배상이 함께 온다. <b>서식 분리와 연령 확인이 가장 싸다.</b> 과태료 한 건으로 끝낼지, 손해배상까지 이어질지는 지금 정할 수 있다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      출입문 옆에 출입증 발급 신청서와 CCTV 설치 동의서를 한 장에 붙여놓고 도장 하나만 받는 격입니다. <b>무엇에 동의했는지 아무도 기억하지 못한다</b>는 것이 문제다. 온라인몰 가입 단계에서 서비스 개통 확인과 개인정보 동의를 한 화면에서 묶어 처리하면, 정보주체가 동의 내용을 명확히 인식하고 선택했다고 보기 어렵다. 게다가 보호책임자 지정과 교육, 내부관리계획 같은 기본까지 비어 있다면, 서식 하나 고치는 비용으로 끝나지 않을 수 있다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>개인정보보호법상 개인정보 보호책임자 지정과 교육, 내부관리계획 수립은 기업의 핵심 의무다. 그런데 중소기업의 인지도와 이행률은 낮다. 개인정보보호법 제32조와 연결해 이해되는 지점이다. 보호책임자를 두고 직원 교육을 실시하며 내부관리계획을 세우는 것이 출발선이고, 동의 서식이 문제된 경우에도 기본 의무 이행 여부가 함께 본다.</p>
+    <p>동의받는 방법도 따로 정해져 있다. 개인정보보호법 제22조는 동의를 받는 방법을 정한다. 서비스 개통 확인 등과 개인정보 동의를 일괄 처리한 서식은 정보주체가 동의 내용을 명확히 인식하고 선택했다고 보기 어렵다. 수집과 이용 목적, 항목과 보유 기간을 알리고 각각 동의를 받아야 한다는 것이 취지다. 가입 편의를 위해 한 번의 클릭으로 묶어 처리하면 동의의 효력이 흔들리고 과태료 사유가 된다.</p>
+    <p>아동의 개인정보는 더 엄격하다. 만 14세 미만 아동의 개인정보를 수집하고 이용하고 제공하려면 법정대리인의 동의를 받아야 한다. 개인정보보호법 제22조의2가 그 근거다. 연령 확인 절차 없이 아동의 정보를 받은 경우 사후에 동의 효력이 문제된다.</p>
+    <p>유출 사고가 났을 때의 책임도 알아둔다. 개인정보보호법 제39조는 손해배상책임을 정한다. 아동과 청소년 개인정보 유출 사고에서 손해배상책임 성립 여부는 유출된 정보의 종류와 성격, 제3자 열람 가능성과 확산 범위, 후속 피해 가능성과 방지조치를 종합해 개별적으로 판단된다. 일률적인 기준이 아니라 사안마다 따진다.</p>
+    <p>판례의 기준도 경영진이 알아둘 대목이다. 대법원 2014다56652 판결의 판시사항은 위치정보의 의미와 수집 금지 취지, 동의 없는 수집과 이용, 제공이 위자료로 배상할 만한 정신적 손해가 되는지 판단하는 기준을 다룬다.</p>
+    <p>대법원 2012다105482 판결의 판시사항은 개인정보자기결정권의 보호대상과 이미 공개된 정보의 포함 여부, 익명표현의 자유와 그 법률에 의한 제한 가능성을 다룬다. 공개된 정보라도 보호 대상이 될 수 있다는 점이 실무상 중요하다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외</h2>
+    <ul class="points">
+      <li><b>첫째, 동의 서식을 나눈다</b> — 개인정보보호법 제22조에 따라 목적과 항목, 보유 기간을 알리고 각각 동의를 받는다. 개통 확인과 동의를 묶어 처리하지 않는다. 서식 수정은 비용이 적게 들고 효과가 바로 난다.</li>
+      <li><b>둘째, 연령 확인 절차를 둔다</b> — 만 14세 미만 아동의 정보를 받는 경우 개인정보보호법 제22조의2에 따라 법정대리인 동의를 받는 흐름을 만든다.</li>
+      <li><b>셋째, 보호책임자와 교육, 내부관리계획을 갖춘다</b> — 개인정보보호법 제32조와 연결되는 의무로, 지정과 교육 실시, 계획 수립 여부를 점검한다.</li>
+      <li><b>넷째, 유출 사고에 대비한다</b> — 개인정보보호법 제39조에 따라 책임은 개별적으로 판단되므로, 통지와 신고, 확산 방지와 방지조치 기록을 남기는 체계를 둔다.</li>
+      <li><b>비용 순서</b> — 서식 분리와 연령 확인이 먼저다. 기본 의무를 갖추지 않은 상태에서 유출 사고가 나면 과태료와 손해배상이 함께 온다.</li>
+      <li>대법원 2014다56652 판결의 손해 기준과 대법원 2012다105482 판결의 보호대상 법리를 내부 교육에 반영하면 재발을 줄일 수 있다.</li>
+      <li>지정과 동의, 계획이 맞물려야 리스크가 줄어든다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 서식 분리(제22조) · 법정대리인 동의(제22조의2) · 기본 의무(제32조) · 유출 배상(제39조) 네 축을 먼저 맞추면 과태료 한 건에서 끝나는 비용으로 막을 수 있다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <p style="margin-bottom:16px;">서식과 연령 확인, 계획 수립을 <b>묶어서 결재</b>한다. 이 순서가 과태료와 손해배상을 줄이는 길이다.</p>
+    <ol>
+      <li><b>① 동의 서식 분리 지시</b> — 개인정보보호법 제22조에 따라 목적과 항목, 보유 기간을 알리고 각각 동의를 받게 한다. 개통 확인과 동의를 묶어 처리하지 않는다.</li>
+      <li><b>② 연령 확인 절차 결재</b> — 만 14세 미만 아동의 정보를 받는 경우 개인정보보호법 제22조의2에 따라 법정대리인 동의를 받는 흐름을 만들게 한다.</li>
+      <li><b>③ 기본 의무 보고</b> — 보호책임자 지정과 교육, 내부관리계획 수립 여부를 보고받는다. 개인정보보호법 제32조와 연결되는 의무로, 지정 문서와 교육 기록, 계획 문서를 챙기게 한다.</li>
+      <li><b>④ 유출 대응 매뉴얼 결재</b> — 개인정보보호법 제39조에 따라 책임은 개별적으로 판단되므로, 통지와 신고, 확산 방지 기록 체계를 두게 한다.</li>
+      <li><b>⑤ 판례 기준 교육 반영</b> — 대법원 2014다56652 판결의 기준과 대법원 2012다105482 판결의 법리를 교육 자료에 넣게 한다. 공개된 정보도 보호 대상이 될 수 있다는 점까지 공유하게 한다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
