@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>개인 금전대여 채권보전 실무 — 차용증·변제·소멸시효·지급명령·압류</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 빌려준 돈 회수 체크포인트</div>
+    <h1>개인 금전대여 채권보전 실무 — 차용증·변제·소멸시효·지급명령·압류</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> 돈을 빌려주고 돌려받지 못했다면 차용증부터 찾되, <b>차용증이 없다고 바로 포기하지 않습니다.</b> 송금 내역, 빌려 달라는 문자, 갚겠다는 약속, 일부 변제 기록을 날짜순으로 모으는 것이 출발점입니다. 시효는 민법 제170조의 재판상 청구, 제171조와 연결된 압류·가압류·가처분, 제176조의 최고와 채무자 승인으로 관리하고, <b>시효가 임박했다면 상담 예약만으로 시간이 멈추지 않는다</b>는 점을 기억해야 합니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>빌려준 돈을 돌려받지 못한 사람</b>의 순서는 이렇습니다. 차용증이 있는지부터 찾되, 없다고 좌절하지 않습니다. 송금 내역, 빌려 달라는 문자, 갚겠다는 약속, 일부 변제 기록과 상대방의 주소를 <b>날짜순으로</b> 모읍니다. 돈을 보낸 이유가 대여인지 다른 거래인지 헷갈리면 <b>기억만으로 정하지 말고 자료를 들고 상담</b>합니다. 기억은 흐려지고 자료만 남습니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>시효를 관리하는 방법에는 <b>민법 제170조의 재판상 청구</b>, <b>제171조와 연결된 압류·가압류·가처분</b>, <b>제176조의 최고와 채무자의 승인</b>이 있습니다. 내용증명을 보냈다는 사실만으로 모든 문제가 끝난다고 생각하지 말고, <b>언제 보냈고 상대방에게 도달했는지</b>를 보관합니다. 변제기와 독촉일, 소송이나 신청일을 한 줄로 정리하면 상담이 쉬워집니다.</p>
+    <p>시효가 끝난 뒤 자발적으로 갚은 돈의 반환 문제는 <b>민법 제178조 및 자연채무</b>와 관련될 수 있습니다. 일부 돈을 받았다고 전체 채권의 시효가 어떻게 되는지 단정하지 말고, 상대방이 어떤 말을 하며 돈을 보냈는지 기록합니다. “곧 갚겠다”는 말도 문자나 계좌 메모로 남겨 둡니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>지급명령은 도착과 이의가 관건이다</h2>
+    <ul class="points">
+      <li><b>서류가 제대로 도착해야 합니다</b> — 지급명령은 상대방에게 서류가 제대로 도착해야 하고, 상대방이 이의를 제기하면 다른 소송 절차로 이어질 수 있습니다. 주소가 바뀌었는지 확인하고, 신청 전 비용과 필요한 자료를 상담기관에 묻습니다.</li>
+      <li><b>집행할 재산을 먼저 봅니다</b> — 상대방 재산에 보전조치가 필요한지, 실제 집행할 재산이 있는지를 함께 확인합니다. 가압류를 생각한다면 비용과 담보, 실제로 집행할 재산이 있는지를 먼저 묻습니다.</li>
+      <li><b>차용증이 없어도 자료는 남습니다</b> — 송금 내역과 대화 원본을 지우지 말고, 돈을 빌려준 이유와 갚기로 한 날을 메모합니다. 상대방의 일부 입금이나 새로운 약속은 날짜와 표현을 따로 적어 법률상담 때 보여 줍니다.</li>
+      <li><b>분할상환은 문서로</b> — 분할상환을 받아들이면 총액, 날짜, 미지급 때의 조치, 입금 방법을 문서로 남깁니다. 주소를 모르면 마지막으로 알고 있는 주소, 연락처, 계좌와 주고받은 우편을 정리해 상담하고, 서류를 보냈다는 화면만 남기지 말고 실제 접수와 송달 여부를 확인합니다.</li>
+      <li><b>시효 임박은 협상만 이어 가지 않습니다</b> — 시효가 얼마 남지 않았다는 말을 들었다면 민법 제170조·제171조·제176조에 연결되는 조치를 언제 어떻게 해야 하는지 즉시 상담합니다. 시효 완성 후 돈을 받은 경우에는 민법 제178조와 관련해 자발적 지급인지, 어떤 약속을 했는지 자료 그대로 보여 줍니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 시효가 임박했다면 <b>상담 예약만으로 시간이 멈추지 않습니다.</b> 변제기와 마지막 독촉일, 지금 남은 날짜를 한 줄로 적어 두십시오.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;">날짜부터 적고 자료를 원본 그대로 — <b>순서대로 정리합니다.</b></p>
+    <ol>
+      <li><b>① 날짜 기록</b> — 빌려준 날·갚기로 한 날·일부 변제일을 적습니다.</li>
+      <li><b>② 독촉·신청일 확인</b> — 독촉과 소송·압류 신청의 실제 날짜를 확인합니다.</li>
+      <li><b>③ 지급명령 문의</b> — 지급명령의 송달과 이의 가능성을 묻고, 주소와 비용·필요 자료를 확인합니다.</li>
+      <li><b>④ 원본 보존</b> — 차용증이 없어도 송금·대화 원본을 보존합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
