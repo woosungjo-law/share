@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>개가 물면, 키운 사람이 먼저 책임진다</title>
+<!-- sc-template v3 · 렌더러: _tools/sc.py build · 이 파일을 직접 고치지 말고 00_운영/app_template.html 과 시나리오 노트를 고친다 -->
+<style>
+  :root{
+    --navy:#12233f; --navy-deep:#0a1626; --accent:#c9a24b; --bg:#f4f5f7; --card:#ffffff;
+    --text:#1e232b; --muted:#5f6673; --line:#e5e7eb;
+    --g-high:#1f7a4d; --g-mid:#b7791f; --g-check:#4a5568;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    background:var(--bg);color:var(--text);min-height:100vh;
+    display:flex;align-items:flex-start;justify-content:center;padding:16px;line-height:1.55;
+    word-break:keep-all;overflow-wrap:anywhere;
+  }
+  .app{width:100%;max-width:480px;background:var(--card);border-radius:18px;box-shadow:0 8px 30px rgba(18,35,63,.12);overflow:hidden;display:flex;flex-direction:column;min-height:560px;}
+  .topbar{background:var(--navy);color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;font-size:13px;}
+  .topbar .brand{font-weight:700;letter-spacing:.02em;}
+  .progress-wrap{height:4px;background:var(--line);width:100%;}
+  .progress-bar{height:100%;background:var(--accent);width:0%;transition:width .25s ease;}
+  .screen{flex:1;padding:26px 22px 22px;display:none;flex-direction:column;animation:fadeIn .22s ease;}
+  .screen.active{display:flex;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+
+  .intro-icon{font-size:38px;margin-bottom:12px;}
+  .intro h1{font-size:22px;line-height:1.4;color:var(--navy-deep);margin-bottom:12px;}
+  .myth{background:#fbf6ea;border-left:4px solid var(--accent);border-radius:8px;padding:12px 14px;margin-bottom:14px;font-size:13.5px;color:#4a3d16;}
+  .myth b{display:block;font-size:11px;letter-spacing:.04em;color:#8a6d1f;margin-bottom:3px;}
+  .intro p{color:var(--muted);font-size:14px;margin-bottom:16px;}
+  .meta{font-size:12px;color:var(--muted);margin-bottom:20px;display:flex;gap:8px;flex-wrap:wrap;}
+  .meta span{background:var(--bg);padding:4px 10px;border-radius:20px;}
+
+  .q-count{font-size:12px;color:#8a6d1f;font-weight:700;margin-bottom:8px;letter-spacing:.03em;}
+  .q-text{font-size:19px;font-weight:700;color:var(--navy-deep);margin-bottom:8px;line-height:1.45;}
+  .q-why{font-size:12.5px;color:var(--muted);margin-bottom:18px;}
+  .options{display:flex;flex-direction:column;gap:10px;margin-top:10px;}
+  .opt-btn{text-align:left;background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;font:inherit;font-size:14.5px;color:var(--text);cursor:pointer;transition:all .15s ease;min-height:44px;width:100%;}
+  .opt-btn:hover,.opt-btn:active,.opt-btn:focus-visible{border-color:var(--accent);background:#fbf6ea;outline:none;}
+  .opt-btn.primary{text-align:center;font-weight:700;background:var(--navy);color:#fff;border:none;}
+  .opt-btn.primary:hover,.opt-btn.primary:focus-visible{background:var(--navy-deep);}
+  .back-btn{margin-top:14px;background:none;border:none;color:var(--muted);font-size:12.5px;text-align:left;cursor:pointer;min-height:36px;text-decoration:underline;}
+
+  .grade{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#fff;padding:5px 12px;border-radius:20px;margin-bottom:10px;width:fit-content;}
+  .grade.high{background:var(--g-high);} .grade.mid{background:var(--g-mid);} .grade.check{background:var(--g-check);}
+  .outcome-tag{display:inline-block;font-size:11px;font-weight:700;color:var(--navy);background:#eef1f6;padding:4px 10px;border-radius:20px;margin-bottom:10px;margin-left:6px;}
+  .outcome h2{font-size:18px;color:var(--navy-deep);margin-bottom:14px;line-height:1.5;}
+  .block{margin-bottom:15px;}
+  .block-label{font-size:12px;font-weight:700;color:#8a6d1f;margin-bottom:5px;letter-spacing:.02em;}
+  .block-body{font-size:13.5px;color:var(--text);}
+  .share-summary{font-size:13.5px;color:var(--text);white-space:pre-line;background:#fbf6ea;border:1px solid #ead9ad;border-left:4px solid var(--accent);border-radius:10px;padding:12px 14px;}
+  .basis-details{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:#fafbfc;margin-bottom:15px;}
+  .basis-details summary{cursor:pointer;color:#3b4250;font-size:13px;font-weight:700;}
+  .basis-details .block-body{margin-top:9px;}
+  .chips{display:flex;flex-direction:column;gap:5px;margin-bottom:6px;}
+  .chip{font-size:12.5px;background:var(--bg);border-radius:8px;padding:6px 10px;color:#3b4250;}
+  .why-line{font-size:13.5px;}
+  .vs{display:grid;gap:6px;}
+  .vs div{font-size:13px;border-radius:8px;padding:9px 12px;}
+  .vs .m{background:#f6ecec;color:#7a2f2f;} .vs .f{background:#e9f4ee;color:#1d5b3a;}
+  .vs b{display:block;font-size:10.5px;letter-spacing:.05em;margin-bottom:2px;}
+  .checklist{list-style:none;display:flex;flex-direction:column;gap:6px;}
+  .checklist li{font-size:13.5px;padding-left:22px;position:relative;}
+  .checklist li::before{content:"☐";position:absolute;left:0;color:#8a6d1f;}
+  .disclaimer{font-size:12px;color:var(--muted);background:var(--bg);border-radius:10px;padding:12px 14px;margin-bottom:14px;}
+  .actions{display:flex;flex-direction:column;gap:8px;margin-bottom:14px;}
+  .ghost-btn{background:transparent;border:1.5px solid var(--line);color:#3b4250;border-radius:10px;padding:11px;font:inherit;font-size:13px;cursor:pointer;min-height:44px;text-align:center;text-decoration:none;display:block;}
+  .ghost-btn:hover,.ghost-btn:focus-visible{border-color:var(--accent);outline:none;}
+  .cta-box{background:var(--navy);color:#fff;border-radius:12px;padding:16px 18px;font-size:13.5px;margin-top:auto;}
+  .cta-box strong{color:var(--accent);} .cta-box a{color:#fff;text-decoration:underline;}
+  .footer-mark{text-align:center;font-size:11px;color:var(--muted);padding:10px 0 16px;}
+  button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px;}
+  @media (max-width:380px){ .screen{padding:22px 16px 18px;} .q-text{font-size:18px;} }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topbar"><span class="brand">법률 자가진단</span><span id="progress-label"></span></div>
+  <div class="progress-wrap"><div class="progress-bar" id="progress-bar"></div></div>
+  <div class="screen active" id="screen"></div>
+  <div class="footer-mark" id="footer"></div>
+</div>
+
+<script id="sc-data" type="application/json">{"hook": "개가 물면, 키운 사람이 먼저 책임진다", "myth": "목줄만 하고 있으면 사고가 나도 책임을 질 필요가 없다", "teaser": "반려동물 사고를 두고 있다면 — 점유자 책임과 면책의 자리를 1분이면 점검합니다.", "icon": "🐕", "time": "약 1분", "start": "Q1", "nq_min": 3, "nq_max": 3, "cta_lawyer": "조우성 변호사", "cta_email": "law@mustknow.co.kr", "disclaimer": "이 진단은 일반적인 법률 정보 안내이며, 구체적인 사안은 개별 상담을 통해 확인해야 합니다.", "mother_url": "", "questions": {"Q1": {"text": "지금 어느 쪽 상황인가요?", "why": "점유자가 먼저 책임지는 구조예요. 직접 키우는지, 맡아 보관하는지, 업체가 관리 중이었는지에 따라 볼 자리가 갈려요.", "options": [{"label": "직접 키우는 개가 행인을 물었다", "next": "Q2"}, {"label": "남의 개를 맡아 보관하다 사고가 났다", "next": "Q2"}, {"label": "맡긴 업체 직원이 관리 중 사고가 났다", "next": "Q3"}, {"label": "목줄·입마개 등 규정 위반 지적이 있다", "next": "Q3"}]}, "Q2": {"text": "면책 쪽 — 무엇이 남아 있나요?", "why": "면책은 상당한 주의를 다했음을 객관적·구체적으로 입증해야 해요. 막연한 말이 아니라 언제 무엇을 했는지가 필요해요.", "options": [{"label": "목줄과 평소 관리 내역이 날짜로 남아 있다", "next": "Q4"}, {"label": "사고 당시 상황만 기억하고 기록은 없다", "next": "Q4"}, {"label": "피해자 쪽 부주의 정황도 함께 있다", "next": "Q4"}]}, "Q3": {"text": "위반·업체 쪽이라면, 확인된 것은 무엇인가요?", "why": "동물보호법 위반은 불리하게 작용할 수 있지만 곧바로 주의 해태의 결론은 아니에요. 업체 피용자 사고는 사용자책임이 함께 문제돼요.", "options": [{"label": "동물보호법 위반 지적을 받았다", "next": "Q4"}, {"label": "업체 피용자가 관리 중이던 사고다", "next": "Q4"}, {"label": "위반 지적과 업체 책임이 함께 걸린다", "next": "Q4"}]}, "Q4": {"text": "마지막으로, 기록은 어떻게 남아 있나요?", "why": "사고 경위와 목줄 여부, 관리 내역을 날짜 순서로 묶어 두면 입증 준비가 달라져요.", "options": [{"label": "사고 경위와 관리 내역을 날짜로 묶었다", "next": "A"}, {"label": "주의를 다했다는 자료를 더 모아야 한다", "next": "B"}, {"label": "위반과 주의 해태를 나눠 봐야 한다", "next": "C"}, {"label": "업체·맡긴 쪽의 책임 구조를 확인해야 한다", "next": "D"}]}}, "outcomes": {"A": {"grade": "high", "tag": "경위·관리 기록 완료", "title": "사고 경위와 관리 기록은 잘 남아 있어요.", "why": "사고 경위와 관리 내역을 날짜로 묶었다고 답하셨어요.", "fact": "목줄을 한 사실만으로 끝나는 것은 아니지만, 언제 무엇을 했는지가 남아 있으면 책임의 자리를 설명할 수 있어요.", "basis": "민법 제759조 제1항은 동물의 점유자가 그 동물이 타인에게 가한 손해를 배상할 책임이 있다면서도, 동물의 종류와 성질에 따라 그 보관에 상당한 주의를 해태하지 아니한 때에는 책임이 없다고 정합니다(제2항: 점유자에 갈음하여 동물을 보관한 자도 동일). 점유자 쪽이 먼저 책임지는 구조라서, 기록으로 보여주는 주의의 밀도가 면책의 자리입니다.", "caution": "피해자 과실이 있으면 비율로 나눠질 수 있지만, 먼저 내 기록을 정리하는 순서는 변하지 않아요.", "checklist": ["경위 정리: 사고 경위를 그날 기준으로 적으세요.", "관리 내역: 목줄·평소 관리 내역을 날짜 순서로 묶으세요.", "유형 가르기: 물림과 파손 등 유형을 나눠 적으세요.", "보험 확인: 일상배상책임·펫보험 여부를 확인하세요."], "share_summary": "판단 이유: 사고 경위와 관리 내역을 날짜로 묶었다고 답하셨어요.\n지금 할 일: 사고 경위를 그날 기준으로 적으세요 / 목줄·평소 관리 내역을 날짜 순서로 묶으세요 / 일상배상책임·펫보험 여부를 확인하세요.\n주의: 피해자 과실이 있으면 비율로 나눠질 수 있지만, 먼저 내 기록을 정리하는 순서는 변하지 않아요.\n", "disclaimer": "", "cta": ""}, "B": {"grade": "check", "tag": "주의 입증 자료 보강", "title": "주의를 다했다는 자료를 더 모으세요.", "why": "주의를 다했다는 자료를 더 모아야 한다고 답하셨어요.", "fact": "기억만으로는 '상당한 주의'를 보여주기 어려워요 — 언제 무엇을 했는지가 객관적으로 남아 있어야 해요.", "basis": "민법 제759조의 면책은 점유자가 보관에 상당한 주의를 해태하지 않았음을 전제로 합니다. 그래서 다툼은 점유자의 입증으로 갈리는데, 막연한 진술이 아니라 목줄 착용 시점, 평소 관리 내역, 사고 당시 조치처럼 객관적·구체적 주의사실의 입증이 필요합니다.", "caution": "기록이 없으면 없는 구간을 설명해야 해요. 확인되지 않은 부분은 추정으로 채우지 마세요.", "checklist": ["날짜 확보: 목줄·관리를 한 날짜를 가능한 한 적으세요.", "통신 보관: 관련 통화·문자를 그대로 두세요.", "사진·영상: 산책 장비와 환경 자료를 모으세요.", "부주의 점검: 스스로 부주의했던 지점도 돌아보세요."], "share_summary": "판단 이유: 주의를 다했다는 자료를 더 모아야 한다고 답하셨어요.\n지금 할 일: 목줄·관리를 한 날짜를 가능한 한 적으세요 / 관련 통화·문자를 그대로 두세요 / 산책 장비와 환경 자료를 모으세요.\n주의: 기록이 없으면 없는 구간을 설명해야 해요. 확인되지 않은 부분은 추정으로 채우지 마세요.\n", "disclaimer": "", "cta": ""}, "C": {"grade": "mid", "tag": "위반·해태 분리 확인", "title": "위반과 주의 해태를 나눠 보세요.", "why": "위반과 주의 해태를 나눠 봐야 한다고 답하셨어요.", "fact": "규정을 어겼다는 지적이 곧바로 배상 책임의 결론이 되지는 않아요 — 두 문제를 각자 봐야 해요.", "basis": "동물보호법 위반(목줄 미착용, 맹견 입마개 미착용 등)이 바로 민법 제759조의 '상당한 주의의 해태'로 추정되는 것은 아닙니다. 위반은 그 자체로 불리한 사정이지만, 민법 제759조의 책임과 면책은 동물의 종류와 성질에 따른 보관의 주의라는 기준으로 따로 살펴야 합니다.", "caution": "위반이 있으면 불리하게 작용할 수 있지만, 곧바로 결론이 되지는 않는 만큼 두 축을 섞어 적지 마세요.", "checklist": ["위반 확인: 어떤 지적을 받았는지 서류로 확인하세요.", "시점 분리: 위반 시점과 사고 시점을 나눠 적으세요.", "관리 기록: 그 외 평소 관리 기록을 이어서 모으세요.", "유형 정리: 사고 유형을 먼저 가려 두세요."], "share_summary": "판단 이유: 위반과 주의 해태를 나눠 봐야 한다고 답하셨어요.\n지금 할 일: 어떤 지적을 받았는지 서류로 확인하세요 / 위반 시점과 사고 시점을 나눠 적으세요 / 평소 관리 기록을 이어서 모으세요.\n주의: 위반이 있으면 불리하게 작용할 수 있지만 곧바로 결론이 되지는 않아요. 두 축을 섞어 적지 마세요.\n", "disclaimer": "", "cta": ""}, "D": {"grade": "check", "tag": "업체·맡긴 쪽 책임 구조", "title": "업체와 맡긴 쪽을 같은 선상에 두지 마세요.", "why": "업체·맡긴 쪽의 책임 구조를 확인해야 한다고 답하셨어요.", "fact": "남의 개를 맡겼다는 사실 하나로 누가 책임지는지가 정해지는 것은 아니에요 — 맡긴 쪽, 맡은 쪽, 업체를 나눠 봐야 해요.", "basis": "민법 제759조 제2항은 점유자에 갈음하여 동물을 보관한 자도 제1항의 책임을 지므로, 맡아 보관한 쪽이 동일한 점유자 책임의 자리에 섭니다. 한편 민법 제756조 제1항은 타인을 사용하여 어느 사무에 종사하게 한 자가 피용자의 사무집행으로 제삼자에게 가한 손해를 배상할 책임이 있으면서, 사용자가 피용자의 선임 및 사무감독에 상당한 주의를 한 때에는 책임이 없다고 정합니다 — 업체 직원이 관리 중 사고라면 업체의 사용자책임이 병행해 문제될 수 있습니다.", "caution": "책임 구조에 따라 대상이 달라져요. 맡긴 쪽과 맡은 쪽을 같은 선상에 두고 협상하면 불리해질 수 있어요.", "checklist": ["구조 파악: 맡긴 사람·맡은 사람·업체를 나눠 적으세요.", "계약 확인: 위탁 계약과 범위를 확인하세요.", "관리 기록: 업체의 관리 내역을 요청하세요.", "경위 기록: 사고 당시 누가 관리하고 있었는지 적으세요."], "share_summary": "판단 이유: 업체·맡긴 쪽의 책임 구조를 확인해야 한다고 답하셨어요.\n지금 할 일: 맡긴 사람·맡은 사람·업체를 나눠 적으세요 / 위탁 계약과 범위를 확인하세요 / 사고 당시 누가 관리하고 있었는지 적으세요.\n주의: 책임 구조에 따라 대상이 달라져요. 맡긴 쪽과 맡은 쪽을 같은 선상에 두고 협상하면 불리해질 수 있어요.\n", "disclaimer": "", "cta": ""}}}</script>
+<script>
+"use strict";
+var D = JSON.parse(document.getElementById("sc-data").textContent);
+var GRADE = {high:"가능성 높음", mid:"살펴볼 것", check:"확인 필요"};
+var screenEl = document.getElementById("screen");
+var pathStack = [];          // [{qid, qtext, label}]
+
+function h(tag, cls, text){
+  var e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(text !== undefined && text !== null) e.textContent = text;
+  return e;
+}
+function clearScreen(){ while(screenEl.firstChild) screenEl.removeChild(screenEl.firstChild); screenEl.className = "screen active"; window.scrollTo(0,0); }
+
+function setProgress(step, done){
+  var bar = document.getElementById("progress-bar");
+  var lab = document.getElementById("progress-label");
+  if(done){ bar.style.width = "100%"; lab.textContent = "진단 완료"; return; }
+  if(step === 0){ bar.style.width = "0%"; lab.textContent = ""; return; }
+  bar.style.width = Math.min(100, Math.round(step / D.nq_max * 100)) + "%";
+  lab.textContent = "질문 " + step;
+}
+
+function showIntro(){
+  pathStack = []; clearScreen(); setProgress(0);
+  var wrap = h("div","intro");
+  wrap.appendChild(h("div","intro-icon", D.icon || "⚖️"));
+  wrap.appendChild(h("h1","", D.hook));
+  if(D.myth){
+    var m = h("div","myth"); m.appendChild(h("b","","많은 분들이 이렇게 알고 있어요")); m.appendChild(document.createTextNode("“" + D.myth + "”"));
+    wrap.appendChild(m);
+  }
+  if(D.teaser) wrap.appendChild(h("p","", D.teaser));
+  var meta = h("div","meta");
+  [D.time || "약 1분", "객관식 질문 최대 " + D.nq_max + "개", "답변은 저장·전송되지 않아요"].forEach(function(t){ meta.appendChild(h("span","",t)); });
+  wrap.appendChild(meta);
+  var b = h("button","opt-btn primary","진단 시작하기"); b.type = "button";
+  b.onclick = function(){ goTo(D.start); };
+  wrap.appendChild(b);
+  screenEl.appendChild(wrap);
+}
+
+function goTo(id){
+  if(D.outcomes[id]) return showOutcome(id);
+  showQuestion(id);
+}
+
+function showQuestion(qid){
+  var q = D.questions[qid];
+  clearScreen();
+  var step = pathStack.length + 1;
+  setProgress(step);
+  screenEl.appendChild(h("div","q-count","질문 " + step));
+  screenEl.appendChild(h("div","q-text", q.text));
+  if(q.why) screenEl.appendChild(h("div","q-why", q.why));
+  var box = h("div","options");
+  q.options.forEach(function(o){
+    var b = h("button","opt-btn", o.label); b.type = "button";
+    b.onclick = function(){ pathStack.push({qid:qid, qtext:q.text, label:o.label}); goTo(o.next); };
+    box.appendChild(b);
+  });
+  screenEl.appendChild(box);
+  var back = h("button","back-btn", pathStack.length ? "← 이전 질문으로" : "← 처음으로"); back.type = "button";
+  back.onclick = function(){
+    if(!pathStack.length) return showIntro();
+    var last = pathStack.pop(); showQuestion(last.qid);
+  };
+  screenEl.appendChild(back);
+}
+
+function copyText(text, btn){
+  function ok(){ var o = btn.textContent; btn.textContent = "복사했어요 ✓"; setTimeout(function(){ btn.textContent = o; }, 1800); }
+  function fallback(){
+    var t = document.createElement("textarea"); t.value = text; t.style.position = "fixed"; t.style.opacity = "0";
+    document.body.appendChild(t); t.select();
+    try{ document.execCommand("copy"); ok(); }catch(e){ btn.textContent = "복사 실패 — 직접 선택해 주세요"; }
+    document.body.removeChild(t);
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(ok, fallback); } else { fallback(); }
+}
+
+function block(label, bodyNode){
+  var b = h("div","block"); b.appendChild(h("div","block-label",label)); b.appendChild(bodyNode); return b;
+}
+
+function cleanOne(s){ return String(s || "").replace(/\s+/g," ").trim(); }
+function shortLegal(s){
+  var x = cleanOne(s);
+  if(x.length <= 220) return x;
+  return x.slice(0,220).replace(/[\s,，;；:：]+[^\s]*$/g,"") + "…";
+}
+function fallbackShare(o){
+  var acts = (o.checklist || []).slice(0,3).map(function(x){ return cleanOne(x); }).filter(Boolean);
+  return [
+    "판단 이유: " + cleanOne(o.why),
+    "지금 할 일: " + acts.join(" / "),
+    "주의: " + cleanOne(o.caution)
+  ].join("\n");
+}
+function copySummaryText(o){
+  var answers = pathStack.map(function(p){ return cleanOne(p.label); }).filter(Boolean).join(" / ");
+  var summary = cleanOne(o.share_summary) ? o.share_summary : fallbackShare(o);
+  return [
+    "[법률 자가진단] " + cleanOne(D.hook),
+    "내 답변: " + (answers || "기록 없음"),
+    "결과: " + GRADE[o.grade] + " — " + cleanOne(o.title),
+    summary,
+    "법적 근거: " + shortLegal(o.basis),
+    "※ " + cleanOne(o.disclaimer || D.disclaimer),
+    "진단 링크: " + location.href
+  ].join("\n");
+}
+
+function showOutcome(oid){
+  var o = D.outcomes[oid];
+  clearScreen(); setProgress(0, true);
+  var head = h("div");
+  var g = h("span","grade " + o.grade, "● " + GRADE[o.grade]);
+  head.appendChild(g);
+  if(o.tag) head.appendChild(h("span","outcome-tag", o.tag));
+  screenEl.appendChild(head);
+  var wrap = h("div","outcome");
+  wrap.appendChild(h("h2","", o.title));
+
+  /* 왜 이 결과인가 — 내가 고른 답 + 근거 1줄 */
+  var why = h("div");
+  var chips = h("div","chips");
+  pathStack.forEach(function(p){ chips.appendChild(h("div","chip","· " + p.label)); });
+  why.appendChild(chips);
+  why.appendChild(h("div","why-line", o.why));
+  wrap.appendChild(block("🔎 왜 이 결과인가요?", why));
+
+  if(o.share_summary || o.why || o.caution){
+    wrap.appendChild(block("🧾 한눈에 정리", h("div","share-summary", o.share_summary || fallbackShare(o))));
+  }
+
+  if(o.fact && D.myth){
+    var vs = h("div","vs");
+    var m = h("div","m"); m.appendChild(h("b","","통념")); m.appendChild(document.createTextNode(D.myth));
+    var f = h("div","f"); f.appendChild(h("b","","이 경우엔")); f.appendChild(document.createTextNode(o.fact));
+    vs.appendChild(m); vs.appendChild(f);
+    wrap.appendChild(block("💡 통념 vs 사실", vs));
+  }
+  if(o.checklist && o.checklist.length){
+    var ul = h("ul","checklist"); o.checklist.forEach(function(c){ ul.appendChild(h("li","",c)); });
+    wrap.appendChild(block("✅ 지금 해볼 것", ul));
+  }
+  wrap.appendChild(block("⚠️ 주의할 점", h("div","block-body", o.caution)));
+  var bd = document.createElement("details"); bd.className = "basis-details";
+  bd.appendChild(h("summary","","📖 법적 근거 보기"));
+  bd.appendChild(h("div","block-body", o.basis));
+  wrap.appendChild(bd);
+  wrap.appendChild(h("div","disclaimer", o.disclaimer || D.disclaimer));
+  screenEl.appendChild(wrap);
+
+  var actions = h("div","actions");
+  var cp = h("button","ghost-btn","📋 결과 요약 복사하기"); cp.type = "button";
+  cp.onclick = function(){
+    var t = copySummaryText(o);
+    copyText(t, cp);
+  };
+  actions.appendChild(cp);
+  if(D.mother_url){
+    var a = h("a","ghost-btn","📰 원문 컬럼 읽어보기"); a.href = D.mother_url; a.target = "_blank"; a.rel = "noopener"; actions.appendChild(a);
+  }
+  var rs = h("button","ghost-btn","↺ 처음부터 다시"); rs.type = "button"; rs.onclick = showIntro;
+  actions.appendChild(rs);
+  screenEl.appendChild(actions);
+
+  var cta = h("div","cta-box");
+  cta.appendChild(document.createTextNode((o.cta || "지금 상황을 구체적으로 확인하고 싶다면") + " "));
+  var s = h("strong","", D.cta_lawyer);
+  cta.appendChild(s);
+  cta.appendChild(document.createTextNode("("));
+  var ml = h("a","", D.cta_email); ml.href = "mailto:" + D.cta_email; cta.appendChild(ml);
+  cta.appendChild(document.createTextNode(")에게 문의하세요."));
+  screenEl.appendChild(cta);
+}
+
+document.getElementById("footer").textContent = "제공 : " + D.cta_lawyer + " 법률사무소";
+showIntro();
+</script>
+</body>
+</html>
