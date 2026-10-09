@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>소기업 퇴직금 체불·미지급·중간정산 분쟁 실무</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>소기업 퇴직금 체불·미지급·중간정산 분쟁 실무</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 퇴직금 미루기는 이자가 붙는 빚이고, 사유 없는 중간정산은 정산이 아니다. <b>체불액부터 확정하고, 무효인 지급은 다시 넣어 계산하라.</b> 감으로 미루는 것과 계산하고 갚는 것은 비용이 다르다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      "다음 달에 주겠다"만 반복하면 빚은 그대로 쌓입니다. 퇴직금도 마찬가지다. 공사대금 회수가 늦어져 지급을 미뤘다면, <b>미루는 동안 그 상태가 그대로 체불로 남는다.</b> 여기에 더해 남에게 미리 준 돈을 "이미 정산해 끝났다"고 셈치는 함정이 있다. 법이 정한 사유 없이 임의로 준 돈은 중간정산이 아니므로, 무효인 지급은 체불액에 다시 들어간다 — 즉 빚은 오히려 커진다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>소기업 퇴직금 분쟁의 출발점은 체불이다. 소기업은 재정적 어려움을 이유로 퇴직금을 체불하거나, 중간정산 제도를 잘못 적용해 퇴직금 산정 기초를 왜곡하는 경우가 많다.</p>
+    <p>근로자퇴직급여 보장법 제8조와 연결해 이해되는 지점이다. 퇴직금제도의 설정과 지급 의무가 정해져 있는데도 자금 사정을 이유로 지급을 미루는 경우다. 재정적 어려움은 사정이 될 수 있어도 면책 사유는 아니다. 미루는 동안 체불 상태가 이어지고 부담이 쌓인다.</p>
+    <p>중간정산은 별개의 문제다. 중간정산이란 퇴직 전에 퇴직금 일부를 미리 정산해 주는 제도로, 근로자퇴직급여 보장법 시행령 제3조가 퇴직금의 중간정산 사유를 정한다. 즉 중간정산은 법령이 정한 사유에 해당할 때만 할 수 있다. 사유 없이 임의로 돈을 주고 정산이 끝났다고 보는 것은 잘못된 적용이다.</p>
+    <p>잘못된 중간정산은 퇴직금 산정 기초를 왜곡한다. 정산 시점을 기준으로 근속기간이 끊기거나 임금이 다시 계산되면서 최종 퇴직금이 줄어드는 것처럼 보이기 때문이다.</p>
+    <p>경영진이 알아둘 대목은 유효성 판단이다. 중간정산의 유효성은 사유와 절차로 판단한다. 시행령 제3조가 정한 사유에 해당하는지가 첫 관문이고, 근로자의 요구와 서면 동의 같은 절차를 갖췄는지가 다음이다. 사유나 절차를 갖추지 못한 지급은 중간정산이 아니라 그냥 돈 준 것에 불과하다. 유효하지 않은 정산은 정산이 아니므로 체불액에 다시 포함된다.</p>
+    <p>체불액을 확정할 때는 산정 기초의 정확성이 핵심이다. 근속기간의 시작과 끝, 퇴직 전 임금의 범위를 급여대장과 계약서로 대조한다. 기초가 틀어지면 체불액 전체가 달라진다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외</h2>
+    <ul class="points">
+      <li><b>선택지는 세 가지다</b> — 미루기, 잘못된 정산 방치, 조기 해결.</li>
+      <li><b>미루기</b> — 단기적으로 편해 보이지만 체불 상태가 이어지면서 부담이 쌓인다. 진정이 제기되면 조사와 시정 지시로 이어지고, 분쟁이 길어질수록 비용이 커진다.</li>
+      <li><b>잘못된 정산 방치</b> — 무효인 지급을 정산으로 믿고 있으면 실제 체불액보다 적게 준비하게 되기 때문이다. 미지급액이 더 커진다.</li>
+      <li><b>조기 해결이 가장 싸다</b> — 체불액을 확정하고 지급 계획을 세워 이행하면 추가 부담을 막을 수 있다.</li>
+      <li><b>재정적 어려움이라도 방법은 있다</b> — 분할 지급 일정과 이행 담보를 제시하면 진정과 분쟁을 줄일 수 있다.</li>
+      <li>중간정산을 새로 할 때는 시행령 제3조의 사유에 해당하는지부터 본다. 사유 없는 정산은 나중에 무효로 돌아온다.</li>
+      <li><b>산정 기초 확정이 첫 순서</b> — 근속기간과 임금을 대조해 체불액을 확정하고, 중간정산의 유효성을 가려 무효인 지급을 체불액에 포함한다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 지급 의무(제8조) → 산정 기초 확정 → 중간정산 유효성(시행령 제3조의 사유·절차) → 무효 지급 재포함 → 지급 계획 결재의 순서로 나눠 계산한다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <p style="margin-bottom:16px;"><b>체불액과 정산 유효성, 지급 계획이 맞아야 비용이 멈춘다.</b> 세 가지를 따로 보고받고 지급 계획은 직접 결재한다.</p>
+    <ol>
+      <li><b>① 체불액 확정 지시</b> — 근로자퇴직급여 보장법 제8조와 연결되는 지급 의무를 전제로, 근속기간과 퇴직 전 임금을 대조해 산정 기초를 확정하게 한다.</li>
+      <li><b>② 중간정산 가리기</b> — 근로자퇴직급여 보장법 시행령 제3조가 정한 사유에 해당하는지, 요구와 서면 동의 같은 절차를 갖췄는지를 본다. 사유나 절차를 갖추지 못한 지급은 체불액에 포함해 다시 계산하게 한다.</li>
+      <li><b>③ 지급 계획 결재</b> — 재정적 어려움이 있어도 분할 지급 일정과 이행 담보를 정해 진정과 분쟁을 줄인다. 계획은 직접 결재한다.</li>
+      <li><b>④ 사후 정비</b> — 급여대장과 계약서 관리를 정례화해 산정 기초 다툼을 줄인다. 중간정산은 사유 확인을 결재 조건으로 건다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
