@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>특허권 침해의 요건 — 청구범위 해석(균등론 포함)</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>특허권 침해의 요건 — 청구범위 해석(균등론 포함)</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 경고장에 적힌 "균등"이라는 주장에 놀라 생산부터 중단하지 마십시오. 보호범위는 청구범위가 정하고, 출원 기록이 균등의 폭을 줄인다. <b>기록 검토가 가장 싼 대응</b>이다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      출원 심사 과정에서 특허청에 "우리 권리에는 저 구성이 들어가지 않는다"라고 스스로 말해 둔 사람이, 뒤늦게 "사실 저것도 우리 권리다"라고 달라는 격입니다. <b>도장 찍기 전에 관청에 남긴 말</b>이 사후 분쟁에서 다툼을 끝내는 재료가 될 수 있다. 경고장을 받으면 협박의 크기가 아니라, 상대방이 출원 과정에서 무엇을 말했는지를 먼저 들여다봐야 한다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>경고장을 받은 대표가 먼저 봐야 할 것은 협박의 크기가 아니라 청구범위의 문장이다.</p>
+    <p>특허발명의 보호범위는 청구범위에 기재된 사항을 기초로 정해진다. 특허법 제97조가 그 기준이다. 권리의 범위는 청구범위에 적힌 문장으로 정해진다는 뜻이다.</p>
+    <p>그래서 침해 여부를 다툴 때는 청구범위의 문언 해석이 출발점이다. 문언 그대로 읽어서 들어가는지는 문언침해의 문제고, 문언에서 벗어나지만 실질적으로 같다고 보는지는 균등의 문제다.</p>
+    <p>균등론은 문언과 다르더라도 과제 해결 원리와 효과가 같으면 보호범위에 속다고 보는 법리다. 경고장이 균등을 내세우면 문언 대조만으로는 끝나지 않는다.</p>
+    <p>여기서 출원 과정의 말이 결정적인 변수가 된다. 출원인이나 특허권자가 출원 과정에서 특정 제품을 청구범위에서 의식적으로 제외했다고 볼 수 있는 경우, 나중에 그 제품을 만드는 사람을 상대로 보호범위에 속다고 주장하는 것은 허용되지 않는다.</p>
+    <p>대법원 2015다244517 판결은 이 법리를 다룬다. 출원인 또는 특허권자가 출원과정에서 대비대상이 되는 제품을 청구범위로부터 의식적으로 제외했다고 볼 수 있는 경우, 그 대상제품을 제조하고 판매하는 자를 상대로 대상제품이 보호범위에 속한다고 주장하는 것이 허용되는지 여부가 문제됐고, 법원은 소극으로 판단했다.</p>
+    <p>같은 판결은 대상제품이 청구범위에서 제외된 것인지 판단하는 방법도 밝혔다. 심사관의 거절이유와 보정서, 의견서의 문구, 정정 이유를 종합해 배제하려는 의사가 드러나는지를 본다.</p>
+    <p>분할출원 관련 법리도 경영진이 알아둘 대목이다. 대법원 2006다35308 판결의 판시사항은 특허출원인이 거절이유통지를 받고 원출원의 청구범위를 한정하는 보정을 하면서 일부를 별개의 발명으로 분할출원한 경우, 분할출원한 발명이 보정된 발명의 보호범위에서 의식적으로 제외한 것에 해당하는지 여부가 문제됐고, 법원은 적극적으로 판단했다.</p>
+    <p>등록을 위해 청구범위를 좁히면서 일부를 떼어냈다면, 좁혀진 청구범위에서는 그 부분이 제외된 것으로 본다는 뜻이다. 출원 때 권리를 얻기 위해 했던 말이 사후 분쟁에서는 균등의 범위를 줄이는 방향으로 돌아온다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외</h2>
+    <ul class="points">
+      <li><b>선택지는 네 가지다</b> — 생산 중단, 라이선스 협상, 소송 대응, 회피설계. 무엇을 고를지는 청구범위 해석과 출원기록 검토가 정한다.</li>
+      <li><b>균등 주장의 논리 구조</b> — 권리자 측은 특허발명이 해결한 기술과제와 핵심 해결수단을 특정하고, 침해대상도 같은 과제를 같은 방식으로 해결함을 중심으로 효과 동일성을 구성한다. 이 흐름이 일관돼야 균등 주장이 힘을 얻는다.</li>
+      <li><b>침해자 측의 항변</b> — 심사관 거절이유와 보정서, 의견서 문구, 정정 이유를 종합해 배제하려는 의사가 드러나는지를 정리한다. 의견서에 적었던 차별화 사유가 지금 문제된 구성과 겹친다면 그 자체로 항변의 재료가 된다.</li>
+      <li><b>출원과 정정 단계의 선택이 사후 분쟁을 좌우</b> — 분할출원과 감축보정, 정정은 권리 취득에 도움이 되더라도 사후 분쟁에서는 의식적으로 제외한 것으로 해석되어 균등의 범위를 줄일 수 있다. 대법원 2006다35308 판결이 그런 경우를 다룬다.</li>
+      <li>상대방 특허에 그런 이력이 있으면 소송 대응의 승산이 높아지고, 자사 특허에 그런 이력이 있다면 권리 행사의 한계가 된다.</li>
+      <li><b>비용 관점</b> — 출원기록 검토는 가장 싼 대응이다. 기록 검토만으로 균등 주장이 막히면 라이선스 비용과 소송 비용을 함께 아낄 수 있다.</li>
+      <li>반대로 기록 검토 없이 생산을 중단하면 회피 가능한 분쟁에 매출을 내주는 셈이 된다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 청구범위(제97조)로 문언을 가르고, 출원기록(2015다244517의 판단 방법)으로 균등의 폭을 재고, 분할·보정 이력(2006다35308)이 있는지 확인한 뒤 네 가지 중 하나를 고른다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <p style="margin-bottom:16px;">돌이키기 어려운 결정은 보류하고 <b>기록 검토부터 지시</b>한 다음, 검토 결과에 맞춰 네 가지 중 하나를 정한다.</p>
+    <ol>
+      <li><b>① 기록 검토 지시</b> — 생산 중단 같은 돌이키기 어려운 결정을 보류한다. 청구범위와 자사 제품의 구성을 대비표로 정리하게 하고, 특허법 제97조를 기준으로 문언침해 여부를 판단하게 한다. 문언에서 벗어난 부분이 있으면 균등 성립 가능성을 검토시킨다 — 기술과제와 해결수단, 효과 동일성의 흐름이 이어지는지를 본다.</li>
+      <li><b>② 출원 기록 확보</b> — 거절이유통지와 보정서, 의견서와 정정 이유를 모아 대법원 2015다244517 판결의 판단 방법에 따라 의식적 제외 여부를 검토시킨다. 의견서의 차별화 사유가 지금 문제된 구성과 겹치는지, 분할출원 이력이 있는지(대법원 2006다35308 판결의 법리에 따라 의식적 제외로 평가될 수 있다)도 확인시킨다.</li>
+      <li><b>③ 네 가지 중 하나 결정</b> — 문언침해도 균등도 성립하기 어려우면 소송 대응으로 가고, 균등이 문제되지만 의식적 제외 항변이 있으면 서면 협상의 지렛대로 삼는다. 침해 가능성이 높으면 라이선스 조건을 따져보고, 회피설계가 가능하면 설계 변경 비용과 라이선스 비용을 비교한다.</li>
+      <li><b>④ 자사 특허 관리 지침</b> — 자사 특허를 출원할 때는 문언 설계와 의견서 논리를 함께 관리하라는 지침을 내린다. 차별화 사유를 적을 때는 당장의 등록만이 아니라 장래 분쟁에서 어떻게 읽힐지를 함께 보게 한다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
