@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사업자등록 업종코드 오판 리스크 — KSIC(한국표준산업분류) 코드 오선택 시 세무·인허가·보험·과태료 4중 리스크</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>사업자등록 업종코드 오판 리스크 — KSIC(한국표준산업분류) 코드 오선택 시 세무·인허가·보험·과태료 4중 리스크</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 업종코드는 단순한 통계 분류가 아니라 부가세 과세 유형·세율, 인허가, 4대보험에 직접 연결된다. <b>코드 선택을 행정이 아니라 비용으로 보라</b> — 정확히 고르는 것이 가장 싼 예방이다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      신설 법인의 사업자등록을 서두르던 대표가 비슷해 보이는 업종코드 앞에서 멈췄다. 업종코드는 <b>호수 주소처럼 한 번 찍으면 뒤의 모든 것이 정해지는 좌표</b>다. 같은 번호로 두고 다른 일을 하면, 세금(일반·간이 과세 구분과 세율)·인허가(업종별 허가 요건)·보험(4대보험 적용)이 한꺼번에 어긋난다. 빨리 내고 싶은 마음이 나중에 4중으로 돌아온다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>기준이 두 개다.</p>
+    <p>첫째, 연결 구조다. 업종코드는 부가세 과세 유형인 일반과 간이의 구분과 세율, 소득공제, 업종별 인허가, 4대보험 적용 등에 직접 연결된다. 부가가치세법 제61조가 간이과세 적용 범위와 연결되는 근거다. 코드를 잘못 고르면 내는 세금부터 달라질 수 있다는 뜻이다.</p>
+    <p>둘째, 등록이다. 부가가치세법 제8조는 사업자등록을 정한다. 등록할 때 적는 업종이 출발점이다.</p>
+    <p>경영 관점에서는 코드 선택을 행정이 아니라 비용으로 보는 것이 출발점이다. 실제 사업과 코드의 적합성을 먼저 보고 코드별 효과를 따진다. 적합성이 무너지면 뒤에서 4중으로 돌아온다. 코드를 가리는 시간이 가장 싸다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외</h2>
+    <ul class="points">
+      <li><b>첫째, 사업 실체</b> — 실제 사업이 무엇인지를 본다. 실체가 불분명하면 코드도 흔들린다. 실체부터 문서로 묶는다.</li>
+      <li><b>둘째, 코드</b> — 실제 사업에 맞는 코드를 고른다. 비슷해 보이는 코드의 차이를 표로 둔다.</li>
+      <li><b>셋째, 과세 효과</b> — 부가가치세법 제61조 연결의 일반·간이 구분과 세율·공제 차이를 본다. 구분이 바뀌면 내는 세금이 바뀐다.</li>
+      <li><b>넷째, 인허가</b> — 업종별 인허가 요건이 코드에 따라 달라지는지를 본다. 인허가가 비면 영업을 멈춘다.</li>
+      <li><b>다섯째, 보험</b> — 4대보험 적용이 코드에 따라 달라지는지를 본다. 보험료 차이가 쌓인다.</li>
+      <li><b>여섯째, 등록·정정</b> — 부가가치세법 제8조의 업종 기재를 확인하고, 어긋나면 빨리 정정 절차를 밟는다. 미루면 4중 리스크가 커진다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 실체 → 코드 → 과세(제61조) → 인허가 → 보험 → 등록(제8조)의 순서로 점검한다. 코드 하나가 세금·인허가·보험·과태료 네 갈래로 퍼진다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <p style="margin-bottom:16px;"><b>코드를 아는 회사가 4중 리스크를 막는다.</b> 대조표에는 코드별 과세·인허가·보험 칸을 둔다 — 칸이 비면 채운 표가 방어가 된다.</p>
+    <ol>
+      <li><b>① 실체 정리</b> — 실제 사업 내용을 묶은 문서가 대조의 기준이 된다.</li>
+      <li><b>② 코드 대조</b> — 후보 코드별 효과를 표로 둔다. 표가 있으면 차이가 보인다.</li>
+      <li><b>③ 과세 확인</b> — 일반·간이 구분과 세율·공제 차이를 본다.</li>
+      <li><b>④ 인허가·보험</b> — 코드별 요건과 적용 차이를 본다.</li>
+      <li><b>⑤ 등록 점검</b> — 부가가치세법 제8조의 업종 기재를 확인하고, 어긋나면 정정 절차를 밟는다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
