@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>빚을 못 갚겠다며 재산을 정리하면 채권자는 손 놓고 있어야 할까?</title>
+<!-- sc-template v3 · 렌더러: _tools/sc.py build · 이 파일을 직접 고치지 말고 00_운영/app_template.html 과 시나리오 노트를 고친다 -->
+<style>
+  :root{
+    --navy:#12233f; --navy-deep:#0a1626; --accent:#c9a24b; --bg:#f4f5f7; --card:#ffffff;
+    --text:#1e232b; --muted:#5f6673; --line:#e5e7eb;
+    --g-high:#1f7a4d; --g-mid:#b7791f; --g-check:#4a5568;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    background:var(--bg);color:var(--text);min-height:100vh;
+    display:flex;align-items:flex-start;justify-content:center;padding:16px;line-height:1.55;
+    word-break:keep-all;overflow-wrap:anywhere;
+  }
+  .app{width:100%;max-width:480px;background:var(--card);border-radius:18px;box-shadow:0 8px 30px rgba(18,35,63,.12);overflow:hidden;display:flex;flex-direction:column;min-height:560px;}
+  .topbar{background:var(--navy);color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;font-size:13px;}
+  .topbar .brand{font-weight:700;letter-spacing:.02em;}
+  .progress-wrap{height:4px;background:var(--line);width:100%;}
+  .progress-bar{height:100%;background:var(--accent);width:0%;transition:width .25s ease;}
+  .screen{flex:1;padding:26px 22px 22px;display:none;flex-direction:column;animation:fadeIn .22s ease;}
+  .screen.active{display:flex;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+
+  .intro-icon{font-size:38px;margin-bottom:12px;}
+  .intro h1{font-size:22px;line-height:1.4;color:var(--navy-deep);margin-bottom:12px;}
+  .myth{background:#fbf6ea;border-left:4px solid var(--accent);border-radius:8px;padding:12px 14px;margin-bottom:14px;font-size:13.5px;color:#4a3d16;}
+  .myth b{display:block;font-size:11px;letter-spacing:.04em;color:#8a6d1f;margin-bottom:3px;}
+  .intro p{color:var(--muted);font-size:14px;margin-bottom:16px;}
+  .meta{font-size:12px;color:var(--muted);margin-bottom:20px;display:flex;gap:8px;flex-wrap:wrap;}
+  .meta span{background:var(--bg);padding:4px 10px;border-radius:20px;}
+
+  .q-count{font-size:12px;color:#8a6d1f;font-weight:700;margin-bottom:8px;letter-spacing:.03em;}
+  .q-text{font-size:19px;font-weight:700;color:var(--navy-deep);margin-bottom:8px;line-height:1.45;}
+  .q-why{font-size:12.5px;color:var(--muted);margin-bottom:18px;}
+  .options{display:flex;flex-direction:column;gap:10px;margin-top:10px;}
+  .opt-btn{text-align:left;background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;font:inherit;font-size:14.5px;color:var(--text);cursor:pointer;transition:all .15s ease;min-height:44px;width:100%;}
+  .opt-btn:hover,.opt-btn:active,.opt-btn:focus-visible{border-color:var(--accent);background:#fbf6ea;outline:none;}
+  .opt-btn.primary{text-align:center;font-weight:700;background:var(--navy);color:#fff;border:none;}
+  .opt-btn.primary:hover,.opt-btn.primary:focus-visible{background:var(--navy-deep);}
+  .back-btn{margin-top:14px;background:none;border:none;color:var(--muted);font-size:12.5px;text-align:left;cursor:pointer;min-height:36px;text-decoration:underline;}
+
+  .grade{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#fff;padding:5px 12px;border-radius:20px;margin-bottom:10px;width:fit-content;}
+  .grade.high{background:var(--g-high);} .grade.mid{background:var(--g-mid);} .grade.check{background:var(--g-check);}
+  .outcome-tag{display:inline-block;font-size:11px;font-weight:700;color:var(--navy);background:#eef1f6;padding:4px 10px;border-radius:20px;margin-bottom:10px;margin-left:6px;}
+  .outcome h2{font-size:18px;color:var(--navy-deep);margin-bottom:14px;line-height:1.5;}
+  .block{margin-bottom:15px;}
+  .block-label{font-size:12px;font-weight:700;color:#8a6d1f;margin-bottom:5px;letter-spacing:.02em;}
+  .block-body{font-size:13.5px;color:var(--text);}
+  .share-summary{font-size:13.5px;color:var(--text);white-space:pre-line;background:#fbf6ea;border:1px solid #ead9ad;border-left:4px solid var(--accent);border-radius:10px;padding:12px 14px;}
+  .basis-details{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:#fafbfc;margin-bottom:15px;}
+  .basis-details summary{cursor:pointer;color:#3b4250;font-size:13px;font-weight:700;}
+  .basis-details .block-body{margin-top:9px;}
+  .chips{display:flex;flex-direction:column;gap:5px;margin-bottom:6px;}
+  .chip{font-size:12.5px;background:var(--bg);border-radius:8px;padding:6px 10px;color:#3b4250;}
+  .why-line{font-size:13.5px;}
+  .vs{display:grid;gap:6px;}
+  .vs div{font-size:13px;border-radius:8px;padding:9px 12px;}
+  .vs .m{background:#f6ecec;color:#7a2f2f;} .vs .f{background:#e9f4ee;color:#1d5b3a;}
+  .vs b{display:block;font-size:10.5px;letter-spacing:.05em;margin-bottom:2px;}
+  .checklist{list-style:none;display:flex;flex-direction:column;gap:6px;}
+  .checklist li{font-size:13.5px;padding-left:22px;position:relative;}
+  .checklist li::before{content:"☐";position:absolute;left:0;color:#8a6d1f;}
+  .disclaimer{font-size:12px;color:var(--muted);background:var(--bg);border-radius:10px;padding:12px 14px;margin-bottom:14px;}
+  .actions{display:flex;flex-direction:column;gap:8px;margin-bottom:14px;}
+  .ghost-btn{background:transparent;border:1.5px solid var(--line);color:#3b4250;border-radius:10px;padding:11px;font:inherit;font-size:13px;cursor:pointer;min-height:44px;text-align:center;text-decoration:none;display:block;}
+  .ghost-btn:hover,.ghost-btn:focus-visible{border-color:var(--accent);outline:none;}
+  .cta-box{background:var(--navy);color:#fff;border-radius:12px;padding:16px 18px;font-size:13.5px;margin-top:auto;}
+  .cta-box strong{color:var(--accent);} .cta-box a{color:#fff;text-decoration:underline;}
+  .footer-mark{text-align:center;font-size:11px;color:var(--muted);padding:10px 0 16px;}
+  button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px;}
+  @media (max-width:380px){ .screen{padding:22px 16px 18px;} .q-text{font-size:18px;} }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topbar"><span class="brand">법률 자가진단</span><span id="progress-label"></span></div>
+  <div class="progress-wrap"><div class="progress-bar" id="progress-bar"></div></div>
+  <div class="screen active" id="screen"></div>
+  <div class="footer-mark" id="footer"></div>
+</div>
+
+<script id="sc-data" type="application/json">{"hook": "빚을 못 갚겠다며 재산을 정리하면 채권자는 손 놓고 있어야 할까?", "myth": "빚을 못 갚겠다며 재산을 정리하면 채권자는 손 놓고 있어야 한다", "teaser": "처분 날짜·확정 날짜·행위 정황을 순서대로 모으는 게 먼저예요. 1분 안에 확인해 보세요.", "icon": "🔍", "time": "약 1분", "start": "Q1", "nq_min": 1, "nq_max": 4, "cta_lawyer": "조우성 변호사", "cta_email": "law@mustknow.co.kr", "disclaimer": "이 진단은 일반적인 법률 정보 안내이며, 구체적인 사안은 개별 상담을 통해 확인해야 합니다.", "mother_url": "", "questions": {"Q1": {"text": "돈을 빌려간 채무자는 개인인가요, 법인인가요?", "why": "주체가 누구인지에 따라 볼 지점이 달라져요.", "options": [{"label": "개인이다", "next": "Q2"}, {"label": "법인이다", "next": "Q2"}, {"label": "잘 모르겠다", "next": "D"}]}, "Q2": {"text": "채무자에 대한 파산선고가 확정됐나요?", "why": "확정이 돼야 형사 쪽으로 물을 수 있어요.", "options": [{"label": "파산선고가 확정됐다", "next": "Q3"}, {"label": "파산 절차는 진행 중이나 확정 전이다", "next": "Q4"}, {"label": "파산 절차 자체가 없다·모르겠다", "next": "B"}]}, "Q3": {"text": "채권자를 해칠 목적의 재산 처분 정황이 있나요?", "why": "빚이 늘었다는 사실만으로는 부족하고 구체적 처분이 필요해요.", "options": [{"label": "은닉·손괴·불이익 처분 정황이 있다", "next": "Q5"}, {"label": "명의만 바뀌고 자산은 그대로 보인다", "next": "E"}, {"label": "적극적 처분 정황은 없다", "next": "E"}]}, "Q4": {"text": "처분 정황 자료를 모으고 있나요?", "why": "확정 전에도 모아 두었다가 확정 시점에 쓸 수 있어요.", "options": [{"label": "출금·이전 내역을 날짜 순으로 모으는 중이다", "next": "C"}, {"label": "아직 모으지 않았다", "next": "D"}]}, "Q5": {"text": "처분 날짜·확정 날짜 대조와 대가(매각가·시세) 비교가 돼 있나요?", "why": "목적·행위·시점이 함께 입증돼야 해요.", "options": [{"label": "날짜 대조·대가 비교까지 정리돼 있다", "next": "A"}, {"label": "아직 정리되지 않았다", "next": "C"}]}}, "outcomes": {"A": {"grade": "high", "tag": "고소·고발 검토 가능", "title": "고소·고발을 검토해 볼 수 있는 상황이에요.", "why": "확정·목적·행위 정황·자료 정리가 모두 돼 있다고 답하셨어요.", "fact": "손 놓고 있을 사안이 아니라 순서대로 모은 자료로 물을 수 있어요.", "basis": "채무자가 파산선고 전후를 불문하고 채권자를 해할 목적으로 파산재단 재산을 은닉·손괴·불이익 처분하고 파산선고가 확정되면 사기파산죄가 성립합니다(채무자 회생 및 파산에 관한 법률 제650조). 재산의 은닉이란 발견을 불가능·곤란하게 만드는 것입니다.", "caution": "일부만 맞는 자료로 결론을 미리 정하지 마세요.", "checklist": ["처분 내역과 확정 날짜를 대조한 표를 만드세요.", "매각가와 시세 비교, 통장·계약서·대화 기록을 한곳에 모으세요.", "확정 시점에 맞춰 고소·고발 여부를 다시 판단하세요."], "share_summary": "판단 이유: 확정·목적·행위 정황·자료 정리가 모두 돼 있다고 답하셨어요.\n지금 할 일: 처분 내역과 확정 날짜를 대조한 표를 만드세요. / 매각가와 시세 비교, 통장·계약서·대화 기록을 한곳에 모으세요. / 확정 시점에 맞춰 고소·고발 여부를 다시 판단하세요.\n주의: 일부만 맞는 자료로 결론을 미리 정하지 마세요.\n", "disclaimer": "", "cta": ""}, "B": {"grade": "check", "tag": "전제 확인 필요", "title": "파산 절차가 없으면 이 죄의 전제가 맞는지 확인할 필요가 있어요.", "why": "파산 절차가 없거나 모른다고 답하셨어요.", "fact": "사기파산죄는 파산선고 확정을 전제로 하니 절차 확인이 먼저예요.", "basis": "사기파산죄는 파산선고가 확정됐을 때 성립합니다(채무자 회생 및 파산에 관한 법률 제650조). 절차가 없으면 이 죄로는 다툴 수 없으니, 처분 정황 자료는 모아 두되 전제부터 확인하세요.", "caution": "전제가 아닌데 형사 결론을 미리 정하지 마세요.", "checklist": ["파산 절차 진행·확정 여부를 먼저 확인하세요.", "처분 정황(출금·이전 내역)은 날짜 순으로 모아 두세요."], "share_summary": "판단 이유: 파산 절차가 없거나 모른다고 답하셨어요.\n지금 할 일: 파산 절차 진행·확정 여부를 먼저 확인하세요. / 처분 정황(출금·이전 내역)은 날짜 순으로 모아 두세요.\n주의: 전제가 아닌데 형사 결론을 미리 정하지 마세요.\n", "disclaimer": "", "cta": ""}, "C": {"grade": "mid", "tag": "확정 대비 자료 수집", "title": "지금은 확정 시점에 쓸 자료를 모으는 단계예요.", "why": "확정 전이거나 날짜·대가 정리가 아직이라고 답하셨어요.", "fact": "확정 전에는 형사로 기대하기 어렵지만 준비는 지금 해요.", "basis": "파산선고 확정 전의 처분이라면 형사 쪽으로는 기대하기 어렵습니다. 다만 은닉·처분 정황을 모아 두었다가 확정되면 고소·고발로 이어갈 수 있어요. 들은 말과 확인한 사실을 나눠 적으세요.", "caution": "소문으로 판단을 채우면 자료 모으는 속도가 늦어져요.", "checklist": ["출금·이전 내역을 날짜 순으로 뽑으세요.", "매각가와 시세 비교를 같은 표에 넣으세요.", "확정 시점을 달력에 표시해 두세요."], "share_summary": "판단 이유: 확정 전이거나 날짜·대가 정리가 아직이라고 답하셨어요.\n지금 할 일: 출금·이전 내역을 날짜 순으로 뽑으세요. / 매각가와 시세 비교를 같은 표에 넣으세요. / 확정 시점을 달력에 표시해 두세요.\n주의: 소문으로 판단을 채우면 자료 모으는 속도가 늦어져요.\n", "disclaimer": "", "cta": ""}, "D": {"grade": "check", "tag": "주체·사실 확인 필요", "title": "누가 무엇을 했는지부터 가려야 해요.", "why": "주체·절차·자료 중 불분명한 부분이 있다고 답하셨어요.", "fact": "상대가 개인인지 법인인지, 누가 결정했는지가 먼저예요.", "basis": "대응 순서는 무엇을 언제 처분했는지, 파산선고가 확정됐는지, 그 처분을 누가 결정했는지입니다. 법인이라면 이사 등에게 적용되는 범위를 따로 확인해야 해요(채무자 회생 및 파산에 관한 법률 제652조).", "caution": "감정적으로 밀어붙이지 말고 순서를 정해 확인하세요.", "checklist": ["상대가 개인인지 법인인지, 처분을 누가 결정했는지 확인하세요.", "통장 사본·계약서·대화 기록 원본 위치를 적어 두세요.", "사진·화면 캡처는 날짜가 보이도록 저장하세요."], "share_summary": "판단 이유: 주체·절차·자료 중 불분명한 부분이 있다고 답하셨어요.\n지금 할 일: 상대가 개인인지 법인인지, 처분을 누가 결정했는지 확인하세요. / 통장 사본·계약서·대화 기록 원본 위치를 적어 두세요. / 사진·화면 캡처는 날짜가 보이도록 저장하세요.\n주의: 감정적으로 밀어붙이지 말고 순서를 정해 확인하세요.\n", "disclaimer": "", "cta": ""}, "E": {"grade": "mid", "tag": "은닉 해당 어려움", "title": "지금 정황만으로는 은닉으로 보기 어려울 수 있어요.", "why": "적극적 처분 정황이 없다고 답하셨어요.", "fact": "명의만 바뀌고 자산이 그대로 보이면 문제가 달라요.", "basis": "적극적 행위가 있어야 합니다. 빚이 늘었다는 사실만으로는 부족하고, 잔고를 빼거나 물건을 옮기거나 기록을 지우는 등 발견을 곤란하게 만드는 행위가 필요합니다(채무자 회생 및 파산에 관한 법률 제650조).", "caution": "정황이 없다고 단정하고 자료를 지우지 마세요.", "checklist": ["명의 변경 외에 실제 이동·은폐가 있었는지 다시 보세요.", "잔고·물건·기록의 이동 내역을 날짜별로 확인하세요.", "새 정황이 나오면 그때 다시 점검하세요."], "share_summary": "판단 이유: 적극적 처분 정황이 없다고 답하셨어요.\n지금 할 일: 명의 변경 외에 실제 이동·은폐가 있었는지 다시 보세요. / 잔고·물건·기록의 이동 내역을 날짜별로 확인하세요. / 새 정황이 나오면 그때 다시 점검하세요.\n주의: 정황이 없다고 단정하고 자료를 지우지 마세요.\n", "disclaimer": "", "cta": ""}}}</script>
+<script>
+"use strict";
+var D = JSON.parse(document.getElementById("sc-data").textContent);
+var GRADE = {high:"가능성 높음", mid:"살펴볼 것", check:"확인 필요"};
+var screenEl = document.getElementById("screen");
+var pathStack = [];          // [{qid, qtext, label}]
+
+function h(tag, cls, text){
+  var e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(text !== undefined && text !== null) e.textContent = text;
+  return e;
+}
+function clearScreen(){ while(screenEl.firstChild) screenEl.removeChild(screenEl.firstChild); screenEl.className = "screen active"; window.scrollTo(0,0); }
+
+function setProgress(step, done){
+  var bar = document.getElementById("progress-bar");
+  var lab = document.getElementById("progress-label");
+  if(done){ bar.style.width = "100%"; lab.textContent = "진단 완료"; return; }
+  if(step === 0){ bar.style.width = "0%"; lab.textContent = ""; return; }
+  bar.style.width = Math.min(100, Math.round(step / D.nq_max * 100)) + "%";
+  lab.textContent = "질문 " + step;
+}
+
+function showIntro(){
+  pathStack = []; clearScreen(); setProgress(0);
+  var wrap = h("div","intro");
+  wrap.appendChild(h("div","intro-icon", D.icon || "⚖️"));
+  wrap.appendChild(h("h1","", D.hook));
+  if(D.myth){
+    var m = h("div","myth"); m.appendChild(h("b","","많은 분들이 이렇게 알고 있어요")); m.appendChild(document.createTextNode("“" + D.myth + "”"));
+    wrap.appendChild(m);
+  }
+  if(D.teaser) wrap.appendChild(h("p","", D.teaser));
+  var meta = h("div","meta");
+  [D.time || "약 1분", "객관식 질문 최대 " + D.nq_max + "개", "답변은 저장·전송되지 않아요"].forEach(function(t){ meta.appendChild(h("span","",t)); });
+  wrap.appendChild(meta);
+  var b = h("button","opt-btn primary","진단 시작하기"); b.type = "button";
+  b.onclick = function(){ goTo(D.start); };
+  wrap.appendChild(b);
+  screenEl.appendChild(wrap);
+}
+
+function goTo(id){
+  if(D.outcomes[id]) return showOutcome(id);
+  showQuestion(id);
+}
+
+function showQuestion(qid){
+  var q = D.questions[qid];
+  clearScreen();
+  var step = pathStack.length + 1;
+  setProgress(step);
+  screenEl.appendChild(h("div","q-count","질문 " + step));
+  screenEl.appendChild(h("div","q-text", q.text));
+  if(q.why) screenEl.appendChild(h("div","q-why", q.why));
+  var box = h("div","options");
+  q.options.forEach(function(o){
+    var b = h("button","opt-btn", o.label); b.type = "button";
+    b.onclick = function(){ pathStack.push({qid:qid, qtext:q.text, label:o.label}); goTo(o.next); };
+    box.appendChild(b);
+  });
+  screenEl.appendChild(box);
+  var back = h("button","back-btn", pathStack.length ? "← 이전 질문으로" : "← 처음으로"); back.type = "button";
+  back.onclick = function(){
+    if(!pathStack.length) return showIntro();
+    var last = pathStack.pop(); showQuestion(last.qid);
+  };
+  screenEl.appendChild(back);
+}
+
+function copyText(text, btn){
+  function ok(){ var o = btn.textContent; btn.textContent = "복사했어요 ✓"; setTimeout(function(){ btn.textContent = o; }, 1800); }
+  function fallback(){
+    var t = document.createElement("textarea"); t.value = text; t.style.position = "fixed"; t.style.opacity = "0";
+    document.body.appendChild(t); t.select();
+    try{ document.execCommand("copy"); ok(); }catch(e){ btn.textContent = "복사 실패 — 직접 선택해 주세요"; }
+    document.body.removeChild(t);
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(ok, fallback); } else { fallback(); }
+}
+
+function block(label, bodyNode){
+  var b = h("div","block"); b.appendChild(h("div","block-label",label)); b.appendChild(bodyNode); return b;
+}
+
+function cleanOne(s){ return String(s || "").replace(/\s+/g," ").trim(); }
+function shortLegal(s){
+  var x = cleanOne(s);
+  if(x.length <= 220) return x;
+  return x.slice(0,220).replace(/[\s,，;；:：]+[^\s]*$/g,"") + "…";
+}
+function fallbackShare(o){
+  var acts = (o.checklist || []).slice(0,3).map(function(x){ return cleanOne(x); }).filter(Boolean);
+  return [
+    "판단 이유: " + cleanOne(o.why),
+    "지금 할 일: " + acts.join(" / "),
+    "주의: " + cleanOne(o.caution)
+  ].join("\n");
+}
+function copySummaryText(o){
+  var answers = pathStack.map(function(p){ return cleanOne(p.label); }).filter(Boolean).join(" / ");
+  var summary = cleanOne(o.share_summary) ? o.share_summary : fallbackShare(o);
+  return [
+    "[법률 자가진단] " + cleanOne(D.hook),
+    "내 답변: " + (answers || "기록 없음"),
+    "결과: " + GRADE[o.grade] + " — " + cleanOne(o.title),
+    summary,
+    "법적 근거: " + shortLegal(o.basis),
+    "※ " + cleanOne(o.disclaimer || D.disclaimer),
+    "진단 링크: " + location.href
+  ].join("\n");
+}
+
+function showOutcome(oid){
+  var o = D.outcomes[oid];
+  clearScreen(); setProgress(0, true);
+  var head = h("div");
+  var g = h("span","grade " + o.grade, "● " + GRADE[o.grade]);
+  head.appendChild(g);
+  if(o.tag) head.appendChild(h("span","outcome-tag", o.tag));
+  screenEl.appendChild(head);
+  var wrap = h("div","outcome");
+  wrap.appendChild(h("h2","", o.title));
+
+  /* 왜 이 결과인가 — 내가 고른 답 + 근거 1줄 */
+  var why = h("div");
+  var chips = h("div","chips");
+  pathStack.forEach(function(p){ chips.appendChild(h("div","chip","· " + p.label)); });
+  why.appendChild(chips);
+  why.appendChild(h("div","why-line", o.why));
+  wrap.appendChild(block("🔎 왜 이 결과인가요?", why));
+
+  if(o.share_summary || o.why || o.caution){
+    wrap.appendChild(block("🧾 한눈에 정리", h("div","share-summary", o.share_summary || fallbackShare(o))));
+  }
+
+  if(o.fact && D.myth){
+    var vs = h("div","vs");
+    var m = h("div","m"); m.appendChild(h("b","","통념")); m.appendChild(document.createTextNode(D.myth));
+    var f = h("div","f"); f.appendChild(h("b","","이 경우엔")); f.appendChild(document.createTextNode(o.fact));
+    vs.appendChild(m); vs.appendChild(f);
+    wrap.appendChild(block("💡 통념 vs 사실", vs));
+  }
+  if(o.checklist && o.checklist.length){
+    var ul = h("ul","checklist"); o.checklist.forEach(function(c){ ul.appendChild(h("li","",c)); });
+    wrap.appendChild(block("✅ 지금 해볼 것", ul));
+  }
+  wrap.appendChild(block("⚠️ 주의할 점", h("div","block-body", o.caution)));
+  var bd = document.createElement("details"); bd.className = "basis-details";
+  bd.appendChild(h("summary","","📖 법적 근거 보기"));
+  bd.appendChild(h("div","block-body", o.basis));
+  wrap.appendChild(bd);
+  wrap.appendChild(h("div","disclaimer", o.disclaimer || D.disclaimer));
+  screenEl.appendChild(wrap);
+
+  var actions = h("div","actions");
+  var cp = h("button","ghost-btn","📋 결과 요약 복사하기"); cp.type = "button";
+  cp.onclick = function(){
+    var t = copySummaryText(o);
+    copyText(t, cp);
+  };
+  actions.appendChild(cp);
+  if(D.mother_url){
+    var a = h("a","ghost-btn","📰 원문 컬럼 읽어보기"); a.href = D.mother_url; a.target = "_blank"; a.rel = "noopener"; actions.appendChild(a);
+  }
+  var rs = h("button","ghost-btn","↺ 처음부터 다시"); rs.type = "button"; rs.onclick = showIntro;
+  actions.appendChild(rs);
+  screenEl.appendChild(actions);
+
+  var cta = h("div","cta-box");
+  cta.appendChild(document.createTextNode((o.cta || "지금 상황을 구체적으로 확인하고 싶다면") + " "));
+  var s = h("strong","", D.cta_lawyer);
+  cta.appendChild(s);
+  cta.appendChild(document.createTextNode("("));
+  var ml = h("a","", D.cta_email); ml.href = "mailto:" + D.cta_email; cta.appendChild(ml);
+  cta.appendChild(document.createTextNode(")에게 문의하세요."));
+  screenEl.appendChild(cta);
+}
+
+document.getElementById("footer").textContent = "제공 : " + D.cta_lawyer + " 법률사무소";
+showIntro();
+</script>
+</body>
+</html>
