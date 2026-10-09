@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>함께 산 기간이 길면 헤어질 때 재산을 당연히 나눌 수 있을까?</title>
+<!-- sc-template v3 · 렌더러: _tools/sc.py build · 이 파일을 직접 고치지 말고 00_운영/app_template.html 과 시나리오 노트를 고친다 -->
+<style>
+  :root{
+    --navy:#12233f; --navy-deep:#0a1626; --accent:#c9a24b; --bg:#f4f5f7; --card:#ffffff;
+    --text:#1e232b; --muted:#5f6673; --line:#e5e7eb;
+    --g-high:#1f7a4d; --g-mid:#b7791f; --g-check:#4a5568;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    background:var(--bg);color:var(--text);min-height:100vh;
+    display:flex;align-items:flex-start;justify-content:center;padding:16px;line-height:1.55;
+    word-break:keep-all;overflow-wrap:anywhere;
+  }
+  .app{width:100%;max-width:480px;background:var(--card);border-radius:18px;box-shadow:0 8px 30px rgba(18,35,63,.12);overflow:hidden;display:flex;flex-direction:column;min-height:560px;}
+  .topbar{background:var(--navy);color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;font-size:13px;}
+  .topbar .brand{font-weight:700;letter-spacing:.02em;}
+  .progress-wrap{height:4px;background:var(--line);width:100%;}
+  .progress-bar{height:100%;background:var(--accent);width:0%;transition:width .25s ease;}
+  .screen{flex:1;padding:26px 22px 22px;display:none;flex-direction:column;animation:fadeIn .22s ease;}
+  .screen.active{display:flex;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+
+  .intro-icon{font-size:38px;margin-bottom:12px;}
+  .intro h1{font-size:22px;line-height:1.4;color:var(--navy-deep);margin-bottom:12px;}
+  .myth{background:#fbf6ea;border-left:4px solid var(--accent);border-radius:8px;padding:12px 14px;margin-bottom:14px;font-size:13.5px;color:#4a3d16;}
+  .myth b{display:block;font-size:11px;letter-spacing:.04em;color:#8a6d1f;margin-bottom:3px;}
+  .intro p{color:var(--muted);font-size:14px;margin-bottom:16px;}
+  .meta{font-size:12px;color:var(--muted);margin-bottom:20px;display:flex;gap:8px;flex-wrap:wrap;}
+  .meta span{background:var(--bg);padding:4px 10px;border-radius:20px;}
+
+  .q-count{font-size:12px;color:#8a6d1f;font-weight:700;margin-bottom:8px;letter-spacing:.03em;}
+  .q-text{font-size:19px;font-weight:700;color:var(--navy-deep);margin-bottom:8px;line-height:1.45;}
+  .q-why{font-size:12.5px;color:var(--muted);margin-bottom:18px;}
+  .options{display:flex;flex-direction:column;gap:10px;margin-top:10px;}
+  .opt-btn{text-align:left;background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;font:inherit;font-size:14.5px;color:var(--text);cursor:pointer;transition:all .15s ease;min-height:44px;width:100%;}
+  .opt-btn:hover,.opt-btn:active,.opt-btn:focus-visible{border-color:var(--accent);background:#fbf6ea;outline:none;}
+  .opt-btn.primary{text-align:center;font-weight:700;background:var(--navy);color:#fff;border:none;}
+  .opt-btn.primary:hover,.opt-btn.primary:focus-visible{background:var(--navy-deep);}
+  .back-btn{margin-top:14px;background:none;border:none;color:var(--muted);font-size:12.5px;text-align:left;cursor:pointer;min-height:36px;text-decoration:underline;}
+
+  .grade{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#fff;padding:5px 12px;border-radius:20px;margin-bottom:10px;width:fit-content;}
+  .grade.high{background:var(--g-high);} .grade.mid{background:var(--g-mid);} .grade.check{background:var(--g-check);}
+  .outcome-tag{display:inline-block;font-size:11px;font-weight:700;color:var(--navy);background:#eef1f6;padding:4px 10px;border-radius:20px;margin-bottom:10px;margin-left:6px;}
+  .outcome h2{font-size:18px;color:var(--navy-deep);margin-bottom:14px;line-height:1.5;}
+  .block{margin-bottom:15px;}
+  .block-label{font-size:12px;font-weight:700;color:#8a6d1f;margin-bottom:5px;letter-spacing:.02em;}
+  .block-body{font-size:13.5px;color:var(--text);}
+  .share-summary{font-size:13.5px;color:var(--text);white-space:pre-line;background:#fbf6ea;border:1px solid #ead9ad;border-left:4px solid var(--accent);border-radius:10px;padding:12px 14px;}
+  .basis-details{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:#fafbfc;margin-bottom:15px;}
+  .basis-details summary{cursor:pointer;color:#3b4250;font-size:13px;font-weight:700;}
+  .basis-details .block-body{margin-top:9px;}
+  .chips{display:flex;flex-direction:column;gap:5px;margin-bottom:6px;}
+  .chip{font-size:12.5px;background:var(--bg);border-radius:8px;padding:6px 10px;color:#3b4250;}
+  .why-line{font-size:13.5px;}
+  .vs{display:grid;gap:6px;}
+  .vs div{font-size:13px;border-radius:8px;padding:9px 12px;}
+  .vs .m{background:#f6ecec;color:#7a2f2f;} .vs .f{background:#e9f4ee;color:#1d5b3a;}
+  .vs b{display:block;font-size:10.5px;letter-spacing:.05em;margin-bottom:2px;}
+  .checklist{list-style:none;display:flex;flex-direction:column;gap:6px;}
+  .checklist li{font-size:13.5px;padding-left:22px;position:relative;}
+  .checklist li::before{content:"☐";position:absolute;left:0;color:#8a6d1f;}
+  .disclaimer{font-size:12px;color:var(--muted);background:var(--bg);border-radius:10px;padding:12px 14px;margin-bottom:14px;}
+  .actions{display:flex;flex-direction:column;gap:8px;margin-bottom:14px;}
+  .ghost-btn{background:transparent;border:1.5px solid var(--line);color:#3b4250;border-radius:10px;padding:11px;font:inherit;font-size:13px;cursor:pointer;min-height:44px;text-align:center;text-decoration:none;display:block;}
+  .ghost-btn:hover,.ghost-btn:focus-visible{border-color:var(--accent);outline:none;}
+  .cta-box{background:var(--navy);color:#fff;border-radius:12px;padding:16px 18px;font-size:13.5px;margin-top:auto;}
+  .cta-box strong{color:var(--accent);} .cta-box a{color:#fff;text-decoration:underline;}
+  .footer-mark{text-align:center;font-size:11px;color:var(--muted);padding:10px 0 16px;}
+  button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px;}
+  @media (max-width:380px){ .screen{padding:22px 16px 18px;} .q-text{font-size:18px;} }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topbar"><span class="brand">법률 자가진단</span><span id="progress-label"></span></div>
+  <div class="progress-wrap"><div class="progress-bar" id="progress-bar"></div></div>
+  <div class="screen active" id="screen"></div>
+  <div class="footer-mark" id="footer"></div>
+</div>
+
+<script id="sc-data" type="application/json">{"hook": "함께 산 기간이 길면 헤어질 때 재산을 당연히 나눌 수 있을까?", "myth": "함께 살았으면 헤어질 때 재산을 당연히 나눌 수 있다", "teaser": "나눔의 기준은 함께 산 기간이 아니라 관계의 성격으로 갈려요. 1분 안에 확인해 보세요.", "icon": "🏠", "time": "약 1분", "start": "Q1", "nq_min": 1, "nq_max": 4, "cta_lawyer": "조우성 변호사", "cta_email": "law@mustknow.co.kr", "disclaimer": "이 진단은 일반적인 법률 정보 안내이며, 구체적인 사안은 개별 상담을 통해 확인해야 합니다.", "mother_url": "", "questions": {"Q1": {"text": "두 사람은 혼인신고를 했나요?", "why": "신고한 혼인과 신고 없는 동거는 적용 기준이 달라요.", "options": [{"label": "혼인신고를 했다", "next": "B"}, {"label": "혼인신고를 하지 않았다", "next": "Q2"}, {"label": "신고 여부가 애매하다", "next": "Q2"}]}, "Q2": {"text": "주변에서 부부로 인식하고 생활비를 함께 부담하며 상당 기간 함께 살았나요?", "why": "사실혼에 해당하는지가 나눔 기준을 통째로 바꿔요.", "options": [{"label": "그렇다(부부 인식·공동 부담·상당한 기간)", "next": "Q3"}, {"label": "아니다(그런 인식·공동생활은 없었다)", "next": "Q4"}, {"label": "잘 모르겠다", "next": "D"}]}, "Q3": {"text": "함께 산 기간·부담 비율·특별히 보탠 부분과 재산 목록이 정리돼 있나요?", "why": "사실혼 기준에서도 나눌 대상은 기록으로 정해져요.", "options": [{"label": "기간·부담·재산 목록까지 정리돼 있다", "next": "A"}, {"label": "아직 정리되지 않았다", "next": "C"}]}, "Q4": {"text": "주고받은 돈의 성격은 다음 중 어디에 가깝나요?", "why": "갚기로 한 돈인지 나눠 쓴 돈인지에 따라 기준이 달라져요.", "options": [{"label": "갚기로 하고 빌려주거나 대신 내준 돈이다", "next": "E"}, {"label": "생활비로 나눠 쓴 돈이다", "next": "C"}, {"label": "미리 정한 약속 문서가 있다", "next": "Q5"}, {"label": "성격이 섞여 있어 구분이 어렵다", "next": "D"}]}, "Q5": {"text": "그 약속은 어떤 상태인가요?", "why": "약속이 있어도 내용에 따라 효력이 달라질 수 있어요.", "options": [{"label": "서로 합의한 정상적인 내용이다", "next": "E"}, {"label": "강요 정황이나 심하게 불공정한 내용이 있다", "next": "D"}, {"label": "내용을 확인하기 어렵다", "next": "D"}]}}, "outcomes": {"A": {"grade": "high", "tag": "사실혼 기준 검토 가능", "title": "사실혼에 준하는 기준으로 재산 나눔을 검토해 볼 수 있는 상황이에요.", "why": "사실혼에 해당하는 생활을 했고 기간·부담·재산 목록까지 정리돼 있다고 답하셨어요.", "fact": "함께 산 기간 자체가 아니라 사실혼 해당 여부와 기록이 기준을 정해요.", "basis": "사실혼이면 재산분할청구권(민법 제839조의2)이 준용돼 혼인에 준하는 보호를 받는 관계로 봅니다. 함께 산 기간·생활비 공동 부담·주변 인식이 함께 검토되고, 나눌 재산은 협력으로 이룬 범위에서 정해져요.", "caution": "사실혼 해당 여부는 여러 요소를 함께 보는 판단이라 스스로 단정하지 마세요.", "checklist": ["함께 산 기간과 부담 비율을 표로 정리하세요.", "특별히 보탠 부분(보증금·가구·가게 자금 등)을 따로 적으세요.", "통장 거래·카드 내역과 대화 자료를 한곳에 모으세요."], "share_summary": "판단 이유: 사실혼에 해당하는 생활을 했고 기간·부담·재산 목록까지 정리돼 있다고 답하셨어요.\n지금 할 일: 함께 산 기간과 부담 비율을 표로 정리하세요. / 특별히 보탠 부분(보증금·가구·가게 자금 등)을 따로 적으세요. / 통장 거래·카드 내역과 대화 자료를 한곳에 모으세요.\n주의: 사실혼 해당 여부는 여러 요소를 함께 보는 판단이라 스스로 단정하지 마세요.\n", "disclaimer": "", "cta": ""}, "B": {"grade": "check", "tag": "진단 범위 밖 확인 필요", "title": "신고한 혼인이라면 이 진단이 아니라 혼인 해소 절차로 봐야 해요.", "why": "혼인신고를 했다고 답하셨어요.", "fact": "신고한 혼인의 재산 나눔은 이 진단의 동거 기준이 아니라 혼인 해소 절차에서 정해져요.", "basis": "이 진단은 혼인신고 없이 함께 산 경우를 전제로 합니다. 민법 제839조의2의 재산분할청구권은 협의상 이혼한 경우를 정하고 있어, 신고한 혼인이라면 협의·재판상 이혼 절차에서 다뤄야 해요.", "caution": "신고한 혼인에 동거 정산 기준을 그대로 대입하지 마세요.", "checklist": ["혼인신고 여부와 혼인 기간을 먼저 확정하세요.", "혼인 해소 절차에서의 재산분할은 별도 상담으로 확인하세요."], "share_summary": "판단 이유: 혼인신고를 했다고 답하셨어요.\n지금 할 일: 혼인신고 여부와 혼인 기간을 먼저 확정하세요. / 혼인 해소 절차에서의 재산분할은 별도 상담으로 확인하세요.\n주의: 신고한 혼인에 동거 정산 기준을 그대로 대입하지 마세요.\n", "disclaimer": "", "cta": ""}, "C": {"grade": "mid", "tag": "기록 정리가 관건", "title": "지금은 기록 정리가 관건인 단계예요.", "why": "기록이 아직 정리되지 않았거나 생활비 성격의 돈이라고 답하셨어요.", "fact": "일상 생활비는 나누기 어려운 경우가 많아 특별히 보탠 부분을 따로 적어야 해요.", "basis": "사실혼이든 아니든 나눌 대상은 자료로 정해집니다. 계좌 이체 기록·대화 내용·이체 메모가 핵심이고, 일상 생활비와 특별히 보탠 부분은 나눠 적어야 해요. 사실혼이 아니라면 부당이득 등 일반 민사 법리로 다투게 됩니다(민법 제741조).", "caution": "확인되지 않은 내용은 추측으로 채우지 마세요.", "checklist": ["통장 거래·카드 내역과 이체 메모를 모으세요.", "일상 생활비와 특별히 보탠 돈을 나눠 적으세요.", "함께 산 기간과 부담 방식을 표로 정리하세요."], "share_summary": "판단 이유: 기록이 아직 정리되지 않았거나 생활비 성격의 돈이라고 답하셨어요.\n지금 할 일: 통장 거래·카드 내역과 이체 메모를 모으세요. / 일상 생활비와 특별히 보탠 돈을 나눠 적으세요. / 함께 산 기간과 부담 방식을 표로 정리하세요.\n주의: 확인되지 않은 내용은 추측으로 채우지 마세요.\n", "disclaimer": "", "cta": ""}, "D": {"grade": "check", "tag": "관계·약속 확인 필요", "title": "관계 성격과 약속 내용이 먼저 가려져야 해요.", "why": "사실혼 해당 여부가 불분명하거나 약속 내용에 문제가 있어 보인다고 답하셨어요.", "fact": "관계 판단과 약속 유효성이 바뀌면 나눔 기준이 통째로 바뀌어요.", "basis": "사실혼인지 아닌지는 사회관념상 혼인생활을 했는지로 판단하고, 사실혼이 아니면 재산분할청구권 대신 부당이득 등 일반 민사 법리로 정산합니다(민법 제741조). 미리 정한 약속은 원칙적으로 유효하지만 반사회질서 법률행위에 해당하면 무효가 될 수 있어요(민법 제103조).", "caution": "관계나 약속을 스스로 단정하고 돈을 먼저 주거나 받지 마세요.", "checklist": ["함께 산 기간·부담 방식·주변 인식을 하나씩 적어 보세요.", "약속 문서가 있으면 원문을 확보해 내용을 확인하세요.", "혼자 결론 내리지 말고 상담을 받아보세요."], "share_summary": "판단 이유: 사실혼 해당 여부가 불분명하거나 약속 내용에 문제가 있어 보인다고 답하셨어요.\n지금 할 일: 함께 산 기간·부담 방식·주변 인식을 하나씩 적어 보세요. / 약속 문서가 있으면 원문을 확보해 내용을 확인하세요. / 혼자 결론 내리지 말고 상담을 받아보세요.\n주의: 관계나 약속을 스스로 단정하고 돈을 먼저 주거나 받지 마세요.\n", "disclaimer": "", "cta": ""}, "E": {"grade": "mid", "tag": "일반 민사·약속 기준", "title": "빌려준 돈·약속 기준으로 정리해 볼 수 있는 상황이에요.", "why": "갚기로 한 돈이거나 서로 합의한 약속이 있다고 답하셨어요.", "fact": "사실혼이 아니라도 돈의 성격과 약속에 따라 물을 수 있는 길이 달라져요.", "basis": "사실혼으로 보기 어려우면 부당이득 등 일반 민사 법리로 정산합니다. 법률상 원인 없이 이익을 얻고 손해를 가했다면 반환 의무가 생깁니다(민법 제741조). 돈의 성격이 대여인지 증여인지, 갚기로 했는지는 이체 메모·대화 내용으로 가려요. 미리 정한 약속은 원칙적으로 유효합니다(민법 제103조에 반하지 않는 한).", "caution": "돈의 성격을 임의로 단정하지 말고 남긴 기록 그대로 정리하세요.", "checklist": ["이체할 때 남긴 메모와 대화 내용을 찾아 두세요.", "갚기로 한 내역과 나눠 쓰기로 한 내역을 나눠 적으세요.", "약속 문서가 있으면 원문과 작성 경위를 함께 정리하세요."], "share_summary": "판단 이유: 갚기로 한 돈이거나 서로 합의한 약속이 있다고 답하셨어요.\n지금 할 일: 이체할 때 남긴 메모와 대화 내용을 찾아 두세요. / 갚기로 한 내역과 나눠 쓰기로 한 내역을 나눠 적으세요. / 약속 문서가 있으면 원문과 작성 경위를 함께 정리하세요.\n주의: 돈의 성격을 임의로 단정하지 말고 남긴 기록 그대로 정리하세요.\n", "disclaimer": "", "cta": ""}}}</script>
+<script>
+"use strict";
+var D = JSON.parse(document.getElementById("sc-data").textContent);
+var GRADE = {high:"가능성 높음", mid:"살펴볼 것", check:"확인 필요"};
+var screenEl = document.getElementById("screen");
+var pathStack = [];          // [{qid, qtext, label}]
+
+function h(tag, cls, text){
+  var e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(text !== undefined && text !== null) e.textContent = text;
+  return e;
+}
+function clearScreen(){ while(screenEl.firstChild) screenEl.removeChild(screenEl.firstChild); screenEl.className = "screen active"; window.scrollTo(0,0); }
+
+function setProgress(step, done){
+  var bar = document.getElementById("progress-bar");
+  var lab = document.getElementById("progress-label");
+  if(done){ bar.style.width = "100%"; lab.textContent = "진단 완료"; return; }
+  if(step === 0){ bar.style.width = "0%"; lab.textContent = ""; return; }
+  bar.style.width = Math.min(100, Math.round(step / D.nq_max * 100)) + "%";
+  lab.textContent = "질문 " + step;
+}
+
+function showIntro(){
+  pathStack = []; clearScreen(); setProgress(0);
+  var wrap = h("div","intro");
+  wrap.appendChild(h("div","intro-icon", D.icon || "⚖️"));
+  wrap.appendChild(h("h1","", D.hook));
+  if(D.myth){
+    var m = h("div","myth"); m.appendChild(h("b","","많은 분들이 이렇게 알고 있어요")); m.appendChild(document.createTextNode("“" + D.myth + "”"));
+    wrap.appendChild(m);
+  }
+  if(D.teaser) wrap.appendChild(h("p","", D.teaser));
+  var meta = h("div","meta");
+  [D.time || "약 1분", "객관식 질문 최대 " + D.nq_max + "개", "답변은 저장·전송되지 않아요"].forEach(function(t){ meta.appendChild(h("span","",t)); });
+  wrap.appendChild(meta);
+  var b = h("button","opt-btn primary","진단 시작하기"); b.type = "button";
+  b.onclick = function(){ goTo(D.start); };
+  wrap.appendChild(b);
+  screenEl.appendChild(wrap);
+}
+
+function goTo(id){
+  if(D.outcomes[id]) return showOutcome(id);
+  showQuestion(id);
+}
+
+function showQuestion(qid){
+  var q = D.questions[qid];
+  clearScreen();
+  var step = pathStack.length + 1;
+  setProgress(step);
+  screenEl.appendChild(h("div","q-count","질문 " + step));
+  screenEl.appendChild(h("div","q-text", q.text));
+  if(q.why) screenEl.appendChild(h("div","q-why", q.why));
+  var box = h("div","options");
+  q.options.forEach(function(o){
+    var b = h("button","opt-btn", o.label); b.type = "button";
+    b.onclick = function(){ pathStack.push({qid:qid, qtext:q.text, label:o.label}); goTo(o.next); };
+    box.appendChild(b);
+  });
+  screenEl.appendChild(box);
+  var back = h("button","back-btn", pathStack.length ? "← 이전 질문으로" : "← 처음으로"); back.type = "button";
+  back.onclick = function(){
+    if(!pathStack.length) return showIntro();
+    var last = pathStack.pop(); showQuestion(last.qid);
+  };
+  screenEl.appendChild(back);
+}
+
+function copyText(text, btn){
+  function ok(){ var o = btn.textContent; btn.textContent = "복사했어요 ✓"; setTimeout(function(){ btn.textContent = o; }, 1800); }
+  function fallback(){
+    var t = document.createElement("textarea"); t.value = text; t.style.position = "fixed"; t.style.opacity = "0";
+    document.body.appendChild(t); t.select();
+    try{ document.execCommand("copy"); ok(); }catch(e){ btn.textContent = "복사 실패 — 직접 선택해 주세요"; }
+    document.body.removeChild(t);
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(ok, fallback); } else { fallback(); }
+}
+
+function block(label, bodyNode){
+  var b = h("div","block"); b.appendChild(h("div","block-label",label)); b.appendChild(bodyNode); return b;
+}
+
+function cleanOne(s){ return String(s || "").replace(/\s+/g," ").trim(); }
+function shortLegal(s){
+  var x = cleanOne(s);
+  if(x.length <= 220) return x;
+  return x.slice(0,220).replace(/[\s,，;；:：]+[^\s]*$/g,"") + "…";
+}
+function fallbackShare(o){
+  var acts = (o.checklist || []).slice(0,3).map(function(x){ return cleanOne(x); }).filter(Boolean);
+  return [
+    "판단 이유: " + cleanOne(o.why),
+    "지금 할 일: " + acts.join(" / "),
+    "주의: " + cleanOne(o.caution)
+  ].join("\n");
+}
+function copySummaryText(o){
+  var answers = pathStack.map(function(p){ return cleanOne(p.label); }).filter(Boolean).join(" / ");
+  var summary = cleanOne(o.share_summary) ? o.share_summary : fallbackShare(o);
+  return [
+    "[법률 자가진단] " + cleanOne(D.hook),
+    "내 답변: " + (answers || "기록 없음"),
+    "결과: " + GRADE[o.grade] + " — " + cleanOne(o.title),
+    summary,
+    "법적 근거: " + shortLegal(o.basis),
+    "※ " + cleanOne(o.disclaimer || D.disclaimer),
+    "진단 링크: " + location.href
+  ].join("\n");
+}
+
+function showOutcome(oid){
+  var o = D.outcomes[oid];
+  clearScreen(); setProgress(0, true);
+  var head = h("div");
+  var g = h("span","grade " + o.grade, "● " + GRADE[o.grade]);
+  head.appendChild(g);
+  if(o.tag) head.appendChild(h("span","outcome-tag", o.tag));
+  screenEl.appendChild(head);
+  var wrap = h("div","outcome");
+  wrap.appendChild(h("h2","", o.title));
+
+  /* 왜 이 결과인가 — 내가 고른 답 + 근거 1줄 */
+  var why = h("div");
+  var chips = h("div","chips");
+  pathStack.forEach(function(p){ chips.appendChild(h("div","chip","· " + p.label)); });
+  why.appendChild(chips);
+  why.appendChild(h("div","why-line", o.why));
+  wrap.appendChild(block("🔎 왜 이 결과인가요?", why));
+
+  if(o.share_summary || o.why || o.caution){
+    wrap.appendChild(block("🧾 한눈에 정리", h("div","share-summary", o.share_summary || fallbackShare(o))));
+  }
+
+  if(o.fact && D.myth){
+    var vs = h("div","vs");
+    var m = h("div","m"); m.appendChild(h("b","","통념")); m.appendChild(document.createTextNode(D.myth));
+    var f = h("div","f"); f.appendChild(h("b","","이 경우엔")); f.appendChild(document.createTextNode(o.fact));
+    vs.appendChild(m); vs.appendChild(f);
+    wrap.appendChild(block("💡 통념 vs 사실", vs));
+  }
+  if(o.checklist && o.checklist.length){
+    var ul = h("ul","checklist"); o.checklist.forEach(function(c){ ul.appendChild(h("li","",c)); });
+    wrap.appendChild(block("✅ 지금 해볼 것", ul));
+  }
+  wrap.appendChild(block("⚠️ 주의할 점", h("div","block-body", o.caution)));
+  var bd = document.createElement("details"); bd.className = "basis-details";
+  bd.appendChild(h("summary","","📖 법적 근거 보기"));
+  bd.appendChild(h("div","block-body", o.basis));
+  wrap.appendChild(bd);
+  wrap.appendChild(h("div","disclaimer", o.disclaimer || D.disclaimer));
+  screenEl.appendChild(wrap);
+
+  var actions = h("div","actions");
+  var cp = h("button","ghost-btn","📋 결과 요약 복사하기"); cp.type = "button";
+  cp.onclick = function(){
+    var t = copySummaryText(o);
+    copyText(t, cp);
+  };
+  actions.appendChild(cp);
+  if(D.mother_url){
+    var a = h("a","ghost-btn","📰 원문 컬럼 읽어보기"); a.href = D.mother_url; a.target = "_blank"; a.rel = "noopener"; actions.appendChild(a);
+  }
+  var rs = h("button","ghost-btn","↺ 처음부터 다시"); rs.type = "button"; rs.onclick = showIntro;
+  actions.appendChild(rs);
+  screenEl.appendChild(actions);
+
+  var cta = h("div","cta-box");
+  cta.appendChild(document.createTextNode((o.cta || "지금 상황을 구체적으로 확인하고 싶다면") + " "));
+  var s = h("strong","", D.cta_lawyer);
+  cta.appendChild(s);
+  cta.appendChild(document.createTextNode("("));
+  var ml = h("a","", D.cta_email); ml.href = "mailto:" + D.cta_email; cta.appendChild(ml);
+  cta.appendChild(document.createTextNode(")에게 문의하세요."));
+  screenEl.appendChild(cta);
+}
+
+document.getElementById("footer").textContent = "제공 : " + D.cta_lawyer + " 법률사무소";
+showIntro();
+</script>
+</body>
+</html>
