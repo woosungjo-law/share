@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>통장이 압류됐다는 연락, 무엇부터 확인해야 할까?</title>
+<!-- sc-template v3 · 렌더러: _tools/sc.py build · 이 파일을 직접 고치지 말고 00_운영/app_template.html 과 시나리오 노트를 고친다 -->
+<style>
+  :root{
+    --navy:#12233f; --navy-deep:#0a1626; --accent:#c9a24b; --bg:#f4f5f7; --card:#ffffff;
+    --text:#1e232b; --muted:#5f6673; --line:#e5e7eb;
+    --g-high:#1f7a4d; --g-mid:#b7791f; --g-check:#4a5568;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    background:var(--bg);color:var(--text);min-height:100vh;
+    display:flex;align-items:flex-start;justify-content:center;padding:16px;line-height:1.55;
+    word-break:keep-all;overflow-wrap:anywhere;
+  }
+  .app{width:100%;max-width:480px;background:var(--card);border-radius:18px;box-shadow:0 8px 30px rgba(18,35,63,.12);overflow:hidden;display:flex;flex-direction:column;min-height:560px;}
+  .topbar{background:var(--navy);color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;font-size:13px;}
+  .topbar .brand{font-weight:700;letter-spacing:.02em;}
+  .progress-wrap{height:4px;background:var(--line);width:100%;}
+  .progress-bar{height:100%;background:var(--accent);width:0%;transition:width .25s ease;}
+  .screen{flex:1;padding:26px 22px 22px;display:none;flex-direction:column;animation:fadeIn .22s ease;}
+  .screen.active{display:flex;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+
+  .intro-icon{font-size:38px;margin-bottom:12px;}
+  .intro h1{font-size:22px;line-height:1.4;color:var(--navy-deep);margin-bottom:12px;}
+  .myth{background:#fbf6ea;border-left:4px solid var(--accent);border-radius:8px;padding:12px 14px;margin-bottom:14px;font-size:13.5px;color:#4a3d16;}
+  .myth b{display:block;font-size:11px;letter-spacing:.04em;color:#8a6d1f;margin-bottom:3px;}
+  .intro p{color:var(--muted);font-size:14px;margin-bottom:16px;}
+  .meta{font-size:12px;color:var(--muted);margin-bottom:20px;display:flex;gap:8px;flex-wrap:wrap;}
+  .meta span{background:var(--bg);padding:4px 10px;border-radius:20px;}
+
+  .q-count{font-size:12px;color:#8a6d1f;font-weight:700;margin-bottom:8px;letter-spacing:.03em;}
+  .q-text{font-size:19px;font-weight:700;color:var(--navy-deep);margin-bottom:8px;line-height:1.45;}
+  .q-why{font-size:12.5px;color:var(--muted);margin-bottom:18px;}
+  .options{display:flex;flex-direction:column;gap:10px;margin-top:10px;}
+  .opt-btn{text-align:left;background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;font:inherit;font-size:14.5px;color:var(--text);cursor:pointer;transition:all .15s ease;min-height:44px;width:100%;}
+  .opt-btn:hover,.opt-btn:active,.opt-btn:focus-visible{border-color:var(--accent);background:#fbf6ea;outline:none;}
+  .opt-btn.primary{text-align:center;font-weight:700;background:var(--navy);color:#fff;border:none;}
+  .opt-btn.primary:hover,.opt-btn.primary:focus-visible{background:var(--navy-deep);}
+  .back-btn{margin-top:14px;background:none;border:none;color:var(--muted);font-size:12.5px;text-align:left;cursor:pointer;min-height:36px;text-decoration:underline;}
+
+  .grade{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#fff;padding:5px 12px;border-radius:20px;margin-bottom:10px;width:fit-content;}
+  .grade.high{background:var(--g-high);} .grade.mid{background:var(--g-mid);} .grade.check{background:var(--g-check);}
+  .outcome-tag{display:inline-block;font-size:11px;font-weight:700;color:var(--navy);background:#eef1f6;padding:4px 10px;border-radius:20px;margin-bottom:10px;margin-left:6px;}
+  .outcome h2{font-size:18px;color:var(--navy-deep);margin-bottom:14px;line-height:1.5;}
+  .block{margin-bottom:15px;}
+  .block-label{font-size:12px;font-weight:700;color:#8a6d1f;margin-bottom:5px;letter-spacing:.02em;}
+  .block-body{font-size:13.5px;color:var(--text);}
+  .share-summary{font-size:13.5px;color:var(--text);white-space:pre-line;background:#fbf6ea;border:1px solid #ead9ad;border-left:4px solid var(--accent);border-radius:10px;padding:12px 14px;}
+  .basis-details{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:#fafbfc;margin-bottom:15px;}
+  .basis-details summary{cursor:pointer;color:#3b4250;font-size:13px;font-weight:700;}
+  .basis-details .block-body{margin-top:9px;}
+  .chips{display:flex;flex-direction:column;gap:5px;margin-bottom:6px;}
+  .chip{font-size:12.5px;background:var(--bg);border-radius:8px;padding:6px 10px;color:#3b4250;}
+  .why-line{font-size:13.5px;}
+  .vs{display:grid;gap:6px;}
+  .vs div{font-size:13px;border-radius:8px;padding:9px 12px;}
+  .vs .m{background:#f6ecec;color:#7a2f2f;} .vs .f{background:#e9f4ee;color:#1d5b3a;}
+  .vs b{display:block;font-size:10.5px;letter-spacing:.05em;margin-bottom:2px;}
+  .checklist{list-style:none;display:flex;flex-direction:column;gap:6px;}
+  .checklist li{font-size:13.5px;padding-left:22px;position:relative;}
+  .checklist li::before{content:"☐";position:absolute;left:0;color:#8a6d1f;}
+  .disclaimer{font-size:12px;color:var(--muted);background:var(--bg);border-radius:10px;padding:12px 14px;margin-bottom:14px;}
+  .actions{display:flex;flex-direction:column;gap:8px;margin-bottom:14px;}
+  .ghost-btn{background:transparent;border:1.5px solid var(--line);color:#3b4250;border-radius:10px;padding:11px;font:inherit;font-size:13px;cursor:pointer;min-height:44px;text-align:center;text-decoration:none;display:block;}
+  .ghost-btn:hover,.ghost-btn:focus-visible{border-color:var(--accent);outline:none;}
+  .cta-box{background:var(--navy);color:#fff;border-radius:12px;padding:16px 18px;font-size:13.5px;margin-top:auto;}
+  .cta-box strong{color:var(--accent);} .cta-box a{color:#fff;text-decoration:underline;}
+  .footer-mark{text-align:center;font-size:11px;color:var(--muted);padding:10px 0 16px;}
+  button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px;}
+  @media (max-width:380px){ .screen{padding:22px 16px 18px;} .q-text{font-size:18px;} }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topbar"><span class="brand">법률 자가진단</span><span id="progress-label"></span></div>
+  <div class="progress-wrap"><div class="progress-bar" id="progress-bar"></div></div>
+  <div class="screen active" id="screen"></div>
+  <div class="footer-mark" id="footer"></div>
+</div>
+
+<script id="sc-data" type="application/json">{"hook": "통장이 압류됐다는 연락, 무엇부터 확인해야 할까?", "myth": "계좌가 압류되면 돈을 모두 잃는다", "teaser": "명령의 범위와 돈의 출처, 집행 문서가 확인됐는지에 따라 대응이 갈려요. 1분이면 확인됩니다.", "icon": "🏦", "time": "약 1분", "start": "Q1", "nq_min": 1, "nq_max": 3, "cta_lawyer": "조우성 변호사", "cta_email": "law@mustknow.co.kr", "disclaimer": "이 진단은 일반적인 법률 정보 안내이며, 구체적인 사안은 개별 상담을 통해 확인해야 합니다.", "mother_url": "", "questions": {"Q1": {"text": "은행이나 채권자에게서 무엇을 받았나요?", "why": "문서를 확인했는지에 따라 지금 할 수 있는 대응이 달라져요.", "options": [{"label": "계좌가 압류됐다는 연락을 받았다", "next": "Q2"}, {"label": "압류·추심명령문(사건번호·채권자·금액)을 받아 보았다", "next": "Q2"}, {"label": "아직 문서를 확인하지 못했다", "next": "C"}, {"label": "잘 모르겠다", "next": "C"}]}, "Q2": {"text": "계좌에 보호될 수 있는 돈(급여·연금 등)이 들어오나요?", "why": "압류가 금지되는 채권이 섞였는지가 대응의 갈림길이에요.", "options": [{"label": "급여·연금 등이 정기적으로 들어온다", "next": "Q3"}, {"label": "사업대금·일회성 송금만 들어온다", "next": "D"}, {"label": "보호되는 돈과 일반 입금이 섞여 있다", "next": "Q3"}, {"label": "잘 모르겠다", "next": "C"}]}, "Q3": {"text": "명령 범위와 송달일·채무 금액을 확인했나요?", "why": "명령문과 집행 문서를 맞춰 봐야 다툴 지점이 보여요.", "options": [{"label": "명령문·사건번호·송달일·금액을 확인했다", "next": "A"}, {"label": "일부만 확인했다", "next": "B"}, {"label": "내가 아는 채무와 금액이 다르다", "next": "D"}, {"label": "아직 확인하지 못했다", "next": "C"}]}}, "outcomes": {"A": {"grade": "high", "tag": "명령·문서 확인 완료", "title": "명령 범위와 금액을 확인한 상태로, 대응 방향을 정할 수 있어요.", "why": "명령문·사건번호·송달일·금액까지 확인했다고 답하셨어요.", "fact": "압류됐다는 연락만으로 끝난 게 아니라, 문서를 확인한 사람이 대응할 수 있어요.", "basis": "추심명령은 그 채권전액에 미치지만, 법원은 채무자의 신청에 따라 압류액수를 채권자의 요구액수로 제한하고 초과 부분의 처분을 허가할 수 있습니다(민사집행법 제232조 제1항 단서). 강제집행에는 집행문이 있는 정본이 필요하므로(제28조 제1항), 명령문과 집행권원이 맞는지 대조해 두면 다툴 지점이 분명해집니다.", "caution": "명령에 이의를 제기할 수 있는지와 기한은 사건마다 달라 법원·전문가 확인이 필요해요.", "checklist": ["명령문 사본과 사건번호·채권자·금액·송달일을 한 장에 적어 두세요.", "집행권원(판결·지급명령 등)의 확정 여부와 집행문 유무를 확인하세요.", "이미 갚은 금액이 있으면 이체내역·영수증과 명령 금액을 대조해 두세요."], "share_summary": "판단 이유: 명령문·사건번호·송달일·금액까지 확인했다고 답하셨어요.\n지금 할 일: 명령문 사본과 사건번호·채권자·금액·송달일을 한 장에 적어 두세요. / 집행권원(판결·지급명령 등)의 확정 여부와 집행문 유무를 확인하세요. / 이미 갚은 금액이 있으면 이체내역·영수증과 명령 금액을 대조해 두세요.\n주의: 명령에 이의를 제기할 수 있는지와 기한은 사건마다 달라 법원·전문가 확인이 필요해요.\n", "disclaimer": "", "cta": ""}, "B": {"grade": "mid", "tag": "문서 확보 관건", "title": "남은 문서를 확보해 명령 범위를 확정하는 것이 관건이에요.", "why": "명령문·금액을 일부만 확인했다고 답하셨어요.", "fact": "추심명령은 계좌의 전액에 미칠 수 있어, 범위를 확인하는 일이 먼저예요.", "basis": "추심명령은 그 채권전액에 미치고, 법원이 채무자의 신청으로 압류액수를 제한·허가할 수 있는 구조입니다(민사집행법 제232조 제1항). 어느 계좌가 얼마나 포함됐는지와 집행권원·집행문 상태를 확인해야 다툴 지점을 가릴 수 있으니, 은행에 명령 포함 계좌와 금액을 서면으로 물어 두세요.", "caution": "확인 전에 다른 계좌로 돈을 옮기면 상황이 더 복잡해질 수 있어요.", "checklist": ["은행에 사건번호·채권자·압류금액·송달일·대상 계좌를 서면으로 문의하세요.", "통장이 여러 개면 각 계좌가 명령에 포함되는지 계좌별로 확인하세요.", "문의한 날짜와 받은 답변을 그대로 기록해 두세요."], "share_summary": "판단 이유: 명령문·금액을 일부만 확인했다고 답하셨어요.\n지금 할 일: 은행에 사건번호·채권자·압류금액·송달일·대상 계좌를 서면으로 문의하세요. / 통장이 여러 개면 각 계좌가 명령에 포함되는지 계좌별로 확인하세요. / 문의한 날짜와 받은 답변을 그대로 기록해 두세요.\n주의: 확인 전에 다른 계좌로 돈을 옮기면 상황이 더 복잡해질 수 있어요.\n", "disclaimer": "", "cta": ""}, "C": {"grade": "check", "tag": "문서·사실 확인 먼저", "title": "명령문과 집행 문서를 확보하는 일이 먼저예요.", "why": "문서를 아직 확인하지 못했거나 상황이 분명하지 않다고 답하셨어요.", "fact": "명령의 내용을 모르면 무엇을 다툴지도 정할 수 없어요.", "basis": "강제집행은 집행문이 있는 집행력 있는 정본이 있어야 할 수 있고(민사집행법 제28조 제1항), 추심명령이 어떤 채권에 얼마나 미치는지는 명령문에 적혀 있습니다(제232조). 은행에서 명령문 사본을 받아 사건번호·채권자·금액·송달일을 확인한 뒤 이 진단을 다시 해 보세요.", "caution": "놀라서 현금을 빼거나 계좌를 바꾸면 상황이 더 복잡해질 수 있어요.", "checklist": ["은행에서 명령문 사본과 사건번호, 채권자, 금액, 송달일을 확인하세요.", "집행권원(판결·지급명령 등) 문서의 제목과 확정 여부를 확인하세요.", "확인이 끝나면 이 진단을 처음부터 다시 해 보세요."], "share_summary": "판단 이유: 문서를 아직 확인하지 못했거나 상황이 분명하지 않다고 답하셨어요.\n지금 할 일: 은행에서 명령문 사본과 사건번호, 채권자, 금액, 송달일을 확인하세요. / 집행권원(판결·지급명령 등) 문서의 제목과 확정 여부를 확인하세요. / 확인이 끝나면 이 진단을 처음부터 다시 해 보세요.\n주의: 놀라서 현금을 빼거나 계좌를 바꾸면 상황이 더 복잡해질 수 있어요.\n", "disclaimer": "", "cta": ""}, "D": {"grade": "mid", "tag": "보호 채권·금액 다툼", "title": "보호되는 돈인지, 금액이 맞는지 따져 볼 지점이 있어요.", "why": "급여 등 보호될 수 있는 돈이 관련되거나, 내가 아는 채무와 금액이 다르다고 답하셨어요.", "fact": "급여도 전부가 아니라 일정 부분이 보호 대상이에요.", "basis": "민사집행법 제246조 제1항은 부양료·유족부조료, 구호사업이나 제3자의 도움으로 계속 받는 수입, 병사 급료, 급여·연금·봉급·상여금·퇴직연금 등 급여채권의 2분의 1에 해당하는 금액 등을 압류하지 못하는 채권으로 정하고 있습니다. 보호 대상인 돈이 일반 입금과 섞였다면 그 원천을 보여 줄 자료가 필요하고, 금액이 다르면 이미 갚은 내역과 대조해 다툴 근거를 정리하세요.", "caution": "보호되는 돈인지, 다툴 수 있는 기한은 사건별 사실관계에 따라 달라요.", "checklist": ["급여명세서·연금 지급 내역·입금내역으로 보호될 수 있는 돈의 원천을 정리하세요.", "이미 갚은 금액의 이체내역·영수증과 명령 금액을 대조하세요.", "어떤 절차로 다툴지 법원·전문가에게 확인하고 문의 날짜를 남기세요."], "share_summary": "판단 이유: 급여 등 보호될 수 있는 돈이 관련되거나, 내가 아는 채무와 금액이 다르다고 답하셨어요.\n지금 할 일: 급여명세서·연금 지급 내역·입금내역으로 보호될 수 있는 돈의 원천을 정리하세요. / 이미 갚은 금액의 이체내역·영수증과 명령 금액을 대조하세요. / 어떤 절차로 다툴지 법원·전문가에게 확인하고 문의 날짜를 남기세요.\n주의: 보호되는 돈인지, 다툴 수 있는 기한은 사건별 사실관계에 따라 달라요.\n", "disclaimer": "", "cta": ""}}}</script>
+<script>
+"use strict";
+var D = JSON.parse(document.getElementById("sc-data").textContent);
+var GRADE = {high:"가능성 높음", mid:"살펴볼 것", check:"확인 필요"};
+var screenEl = document.getElementById("screen");
+var pathStack = [];          // [{qid, qtext, label}]
+
+function h(tag, cls, text){
+  var e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(text !== undefined && text !== null) e.textContent = text;
+  return e;
+}
+function clearScreen(){ while(screenEl.firstChild) screenEl.removeChild(screenEl.firstChild); screenEl.className = "screen active"; window.scrollTo(0,0); }
+
+function setProgress(step, done){
+  var bar = document.getElementById("progress-bar");
+  var lab = document.getElementById("progress-label");
+  if(done){ bar.style.width = "100%"; lab.textContent = "진단 완료"; return; }
+  if(step === 0){ bar.style.width = "0%"; lab.textContent = ""; return; }
+  bar.style.width = Math.min(100, Math.round(step / D.nq_max * 100)) + "%";
+  lab.textContent = "질문 " + step;
+}
+
+function showIntro(){
+  pathStack = []; clearScreen(); setProgress(0);
+  var wrap = h("div","intro");
+  wrap.appendChild(h("div","intro-icon", D.icon || "⚖️"));
+  wrap.appendChild(h("h1","", D.hook));
+  if(D.myth){
+    var m = h("div","myth"); m.appendChild(h("b","","많은 분들이 이렇게 알고 있어요")); m.appendChild(document.createTextNode("“" + D.myth + "”"));
+    wrap.appendChild(m);
+  }
+  if(D.teaser) wrap.appendChild(h("p","", D.teaser));
+  var meta = h("div","meta");
+  [D.time || "약 1분", "객관식 질문 최대 " + D.nq_max + "개", "답변은 저장·전송되지 않아요"].forEach(function(t){ meta.appendChild(h("span","",t)); });
+  wrap.appendChild(meta);
+  var b = h("button","opt-btn primary","진단 시작하기"); b.type = "button";
+  b.onclick = function(){ goTo(D.start); };
+  wrap.appendChild(b);
+  screenEl.appendChild(wrap);
+}
+
+function goTo(id){
+  if(D.outcomes[id]) return showOutcome(id);
+  showQuestion(id);
+}
+
+function showQuestion(qid){
+  var q = D.questions[qid];
+  clearScreen();
+  var step = pathStack.length + 1;
+  setProgress(step);
+  screenEl.appendChild(h("div","q-count","질문 " + step));
+  screenEl.appendChild(h("div","q-text", q.text));
+  if(q.why) screenEl.appendChild(h("div","q-why", q.why));
+  var box = h("div","options");
+  q.options.forEach(function(o){
+    var b = h("button","opt-btn", o.label); b.type = "button";
+    b.onclick = function(){ pathStack.push({qid:qid, qtext:q.text, label:o.label}); goTo(o.next); };
+    box.appendChild(b);
+  });
+  screenEl.appendChild(box);
+  var back = h("button","back-btn", pathStack.length ? "← 이전 질문으로" : "← 처음으로"); back.type = "button";
+  back.onclick = function(){
+    if(!pathStack.length) return showIntro();
+    var last = pathStack.pop(); showQuestion(last.qid);
+  };
+  screenEl.appendChild(back);
+}
+
+function copyText(text, btn){
+  function ok(){ var o = btn.textContent; btn.textContent = "복사했어요 ✓"; setTimeout(function(){ btn.textContent = o; }, 1800); }
+  function fallback(){
+    var t = document.createElement("textarea"); t.value = text; t.style.position = "fixed"; t.style.opacity = "0";
+    document.body.appendChild(t); t.select();
+    try{ document.execCommand("copy"); ok(); }catch(e){ btn.textContent = "복사 실패 — 직접 선택해 주세요"; }
+    document.body.removeChild(t);
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(ok, fallback); } else { fallback(); }
+}
+
+function block(label, bodyNode){
+  var b = h("div","block"); b.appendChild(h("div","block-label",label)); b.appendChild(bodyNode); return b;
+}
+
+function cleanOne(s){ return String(s || "").replace(/\s+/g," ").trim(); }
+function shortLegal(s){
+  var x = cleanOne(s);
+  if(x.length <= 220) return x;
+  return x.slice(0,220).replace(/[\s,，;；:：]+[^\s]*$/g,"") + "…";
+}
+function fallbackShare(o){
+  var acts = (o.checklist || []).slice(0,3).map(function(x){ return cleanOne(x); }).filter(Boolean);
+  return [
+    "판단 이유: " + cleanOne(o.why),
+    "지금 할 일: " + acts.join(" / "),
+    "주의: " + cleanOne(o.caution)
+  ].join("\n");
+}
+function copySummaryText(o){
+  var answers = pathStack.map(function(p){ return cleanOne(p.label); }).filter(Boolean).join(" / ");
+  var summary = cleanOne(o.share_summary) ? o.share_summary : fallbackShare(o);
+  return [
+    "[법률 자가진단] " + cleanOne(D.hook),
+    "내 답변: " + (answers || "기록 없음"),
+    "결과: " + GRADE[o.grade] + " — " + cleanOne(o.title),
+    summary,
+    "법적 근거: " + shortLegal(o.basis),
+    "※ " + cleanOne(o.disclaimer || D.disclaimer),
+    "진단 링크: " + location.href
+  ].join("\n");
+}
+
+function showOutcome(oid){
+  var o = D.outcomes[oid];
+  clearScreen(); setProgress(0, true);
+  var head = h("div");
+  var g = h("span","grade " + o.grade, "● " + GRADE[o.grade]);
+  head.appendChild(g);
+  if(o.tag) head.appendChild(h("span","outcome-tag", o.tag));
+  screenEl.appendChild(head);
+  var wrap = h("div","outcome");
+  wrap.appendChild(h("h2","", o.title));
+
+  /* 왜 이 결과인가 — 내가 고른 답 + 근거 1줄 */
+  var why = h("div");
+  var chips = h("div","chips");
+  pathStack.forEach(function(p){ chips.appendChild(h("div","chip","· " + p.label)); });
+  why.appendChild(chips);
+  why.appendChild(h("div","why-line", o.why));
+  wrap.appendChild(block("🔎 왜 이 결과인가요?", why));
+
+  if(o.share_summary || o.why || o.caution){
+    wrap.appendChild(block("🧾 한눈에 정리", h("div","share-summary", o.share_summary || fallbackShare(o))));
+  }
+
+  if(o.fact && D.myth){
+    var vs = h("div","vs");
+    var m = h("div","m"); m.appendChild(h("b","","통념")); m.appendChild(document.createTextNode(D.myth));
+    var f = h("div","f"); f.appendChild(h("b","","이 경우엔")); f.appendChild(document.createTextNode(o.fact));
+    vs.appendChild(m); vs.appendChild(f);
+    wrap.appendChild(block("💡 통념 vs 사실", vs));
+  }
+  if(o.checklist && o.checklist.length){
+    var ul = h("ul","checklist"); o.checklist.forEach(function(c){ ul.appendChild(h("li","",c)); });
+    wrap.appendChild(block("✅ 지금 해볼 것", ul));
+  }
+  wrap.appendChild(block("⚠️ 주의할 점", h("div","block-body", o.caution)));
+  var bd = document.createElement("details"); bd.className = "basis-details";
+  bd.appendChild(h("summary","","📖 법적 근거 보기"));
+  bd.appendChild(h("div","block-body", o.basis));
+  wrap.appendChild(bd);
+  wrap.appendChild(h("div","disclaimer", o.disclaimer || D.disclaimer));
+  screenEl.appendChild(wrap);
+
+  var actions = h("div","actions");
+  var cp = h("button","ghost-btn","📋 결과 요약 복사하기"); cp.type = "button";
+  cp.onclick = function(){
+    var t = copySummaryText(o);
+    copyText(t, cp);
+  };
+  actions.appendChild(cp);
+  if(D.mother_url){
+    var a = h("a","ghost-btn","📰 원문 컬럼 읽어보기"); a.href = D.mother_url; a.target = "_blank"; a.rel = "noopener"; actions.appendChild(a);
+  }
+  var rs = h("button","ghost-btn","↺ 처음부터 다시"); rs.type = "button"; rs.onclick = showIntro;
+  actions.appendChild(rs);
+  screenEl.appendChild(actions);
+
+  var cta = h("div","cta-box");
+  cta.appendChild(document.createTextNode((o.cta || "지금 상황을 구체적으로 확인하고 싶다면") + " "));
+  var s = h("strong","", D.cta_lawyer);
+  cta.appendChild(s);
+  cta.appendChild(document.createTextNode("("));
+  var ml = h("a","", D.cta_email); ml.href = "mailto:" + D.cta_email; cta.appendChild(ml);
+  cta.appendChild(document.createTextNode(")에게 문의하세요."));
+  screenEl.appendChild(cta);
+}
+
+document.getElementById("footer").textContent = "제공 : " + D.cta_lawyer + " 법률사무소";
+showIntro();
+</script>
+</body>
+</html>
