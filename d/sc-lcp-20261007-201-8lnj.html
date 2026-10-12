@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>통관이 틀어져 물건이 묶였다면, 손해는 누가 물까?</title>
+<!-- sc-template v3 · 렌더러: _tools/sc.py build · 이 파일을 직접 고치지 말고 00_운영/app_template.html 과 시나리오 노트를 고친다 -->
+<style>
+  :root{
+    --navy:#12233f; --navy-deep:#0a1626; --accent:#c9a24b; --bg:#f4f5f7; --card:#ffffff;
+    --text:#1e232b; --muted:#5f6673; --line:#e5e7eb;
+    --g-high:#1f7a4d; --g-mid:#b7791f; --g-check:#4a5568;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    background:var(--bg);color:var(--text);min-height:100vh;
+    display:flex;align-items:flex-start;justify-content:center;padding:16px;line-height:1.55;
+    word-break:keep-all;overflow-wrap:anywhere;
+  }
+  .app{width:100%;max-width:480px;background:var(--card);border-radius:18px;box-shadow:0 8px 30px rgba(18,35,63,.12);overflow:hidden;display:flex;flex-direction:column;min-height:560px;}
+  .topbar{background:var(--navy);color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;font-size:13px;}
+  .topbar .brand{font-weight:700;letter-spacing:.02em;}
+  .progress-wrap{height:4px;background:var(--line);width:100%;}
+  .progress-bar{height:100%;background:var(--accent);width:0%;transition:width .25s ease;}
+  .screen{flex:1;padding:26px 22px 22px;display:none;flex-direction:column;animation:fadeIn .22s ease;}
+  .screen.active{display:flex;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+
+  .intro-icon{font-size:38px;margin-bottom:12px;}
+  .intro h1{font-size:22px;line-height:1.4;color:var(--navy-deep);margin-bottom:12px;}
+  .myth{background:#fbf6ea;border-left:4px solid var(--accent);border-radius:8px;padding:12px 14px;margin-bottom:14px;font-size:13.5px;color:#4a3d16;}
+  .myth b{display:block;font-size:11px;letter-spacing:.04em;color:#8a6d1f;margin-bottom:3px;}
+  .intro p{color:var(--muted);font-size:14px;margin-bottom:16px;}
+  .meta{font-size:12px;color:var(--muted);margin-bottom:20px;display:flex;gap:8px;flex-wrap:wrap;}
+  .meta span{background:var(--bg);padding:4px 10px;border-radius:20px;}
+
+  .q-count{font-size:12px;color:#8a6d1f;font-weight:700;margin-bottom:8px;letter-spacing:.03em;}
+  .q-text{font-size:19px;font-weight:700;color:var(--navy-deep);margin-bottom:8px;line-height:1.45;}
+  .q-why{font-size:12.5px;color:var(--muted);margin-bottom:18px;}
+  .options{display:flex;flex-direction:column;gap:10px;margin-top:10px;}
+  .opt-btn{text-align:left;background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;font:inherit;font-size:14.5px;color:var(--text);cursor:pointer;transition:all .15s ease;min-height:44px;width:100%;}
+  .opt-btn:hover,.opt-btn:active,.opt-btn:focus-visible{border-color:var(--accent);background:#fbf6ea;outline:none;}
+  .opt-btn.primary{text-align:center;font-weight:700;background:var(--navy);color:#fff;border:none;}
+  .opt-btn.primary:hover,.opt-btn.primary:focus-visible{background:var(--navy-deep);}
+  .back-btn{margin-top:14px;background:none;border:none;color:var(--muted);font-size:12.5px;text-align:left;cursor:pointer;min-height:36px;text-decoration:underline;}
+
+  .grade{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#fff;padding:5px 12px;border-radius:20px;margin-bottom:10px;width:fit-content;}
+  .grade.high{background:var(--g-high);} .grade.mid{background:var(--g-mid);} .grade.check{background:var(--g-check);}
+  .outcome-tag{display:inline-block;font-size:11px;font-weight:700;color:var(--navy);background:#eef1f6;padding:4px 10px;border-radius:20px;margin-bottom:10px;margin-left:6px;}
+  .outcome h2{font-size:18px;color:var(--navy-deep);margin-bottom:14px;line-height:1.5;}
+  .block{margin-bottom:15px;}
+  .block-label{font-size:12px;font-weight:700;color:#8a6d1f;margin-bottom:5px;letter-spacing:.02em;}
+  .block-body{font-size:13.5px;color:var(--text);}
+  .share-summary{font-size:13.5px;color:var(--text);white-space:pre-line;background:#fbf6ea;border:1px solid #ead9ad;border-left:4px solid var(--accent);border-radius:10px;padding:12px 14px;}
+  .basis-details{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:#fafbfc;margin-bottom:15px;}
+  .basis-details summary{cursor:pointer;color:#3b4250;font-size:13px;font-weight:700;}
+  .basis-details .block-body{margin-top:9px;}
+  .chips{display:flex;flex-direction:column;gap:5px;margin-bottom:6px;}
+  .chip{font-size:12.5px;background:var(--bg);border-radius:8px;padding:6px 10px;color:#3b4250;}
+  .why-line{font-size:13.5px;}
+  .vs{display:grid;gap:6px;}
+  .vs div{font-size:13px;border-radius:8px;padding:9px 12px;}
+  .vs .m{background:#f6ecec;color:#7a2f2f;} .vs .f{background:#e9f4ee;color:#1d5b3a;}
+  .vs b{display:block;font-size:10.5px;letter-spacing:.05em;margin-bottom:2px;}
+  .checklist{list-style:none;display:flex;flex-direction:column;gap:6px;}
+  .checklist li{font-size:13.5px;padding-left:22px;position:relative;}
+  .checklist li::before{content:"☐";position:absolute;left:0;color:#8a6d1f;}
+  .disclaimer{font-size:12px;color:var(--muted);background:var(--bg);border-radius:10px;padding:12px 14px;margin-bottom:14px;}
+  .actions{display:flex;flex-direction:column;gap:8px;margin-bottom:14px;}
+  .ghost-btn{background:transparent;border:1.5px solid var(--line);color:#3b4250;border-radius:10px;padding:11px;font:inherit;font-size:13px;cursor:pointer;min-height:44px;text-align:center;text-decoration:none;display:block;}
+  .ghost-btn:hover,.ghost-btn:focus-visible{border-color:var(--accent);outline:none;}
+  .cta-box{background:var(--navy);color:#fff;border-radius:12px;padding:16px 18px;font-size:13.5px;margin-top:auto;}
+  .cta-box strong{color:var(--accent);} .cta-box a{color:#fff;text-decoration:underline;}
+  .footer-mark{text-align:center;font-size:11px;color:var(--muted);padding:10px 0 16px;}
+  button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px;}
+  @media (max-width:380px){ .screen{padding:22px 16px 18px;} .q-text{font-size:18px;} }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topbar"><span class="brand">법률 자가진단</span><span id="progress-label"></span></div>
+  <div class="progress-wrap"><div class="progress-bar" id="progress-bar"></div></div>
+  <div class="screen active" id="screen"></div>
+  <div class="footer-mark" id="footer"></div>
+</div>
+
+<script id="sc-data" type="application/json">{"hook": "통관이 틀어져 물건이 묶였다면, 손해는 누가 물까?", "myth": "통관 서류 문제는 결국 화주(수입자) 책임으로 끝난다", "teaser": "서류를 누가 작성했는지, 손해가 어디까지 예견 가능했는지가 갈림길이에요. 1분 안에 확인해 보세요.", "icon": "📦", "time": "약 1분", "start": "Q1", "nq_min": 1, "nq_max": 3, "cta_lawyer": "조우성 변호사", "cta_email": "law@mustknow.co.kr", "disclaimer": "이 진단은 일반적인 법률 정보 안내이며, 구체적인 사안은 개별 상담을 통해 확인해야 합니다.", "mother_url": "", "questions": {"Q1": {"text": "통관 서류를 누가 작성·제출했나요?", "why": "누가 작성했는지에 따라 주의의무와 책임 영역이 달라져요.", "options": [{"label": "포워더·관세사 등 업체가 대신 작성·제출했다", "next": "Q2"}, {"label": "내가 직접 작성·신고했다", "next": "Q4"}, {"label": "잘 모르겠다", "next": "D"}]}, "Q2": {"text": "무엇이 잘못됐는지 확인했나요?", "why": "틀린 항목이 특정되어야 주의의무 위반을 짚을 수 있어요.", "options": [{"label": "품명·HS코드·원산지·가격·수량 중 틀린 항목을 확인했다", "next": "Q3"}, {"label": "물건이 묶였다는 사실만 알고 원인은 모른다", "next": "E"}, {"label": "잘 모르겠다", "next": "D"}]}, "Q3": {"text": "손해 자료는 어디까지 모았나요?", "why": "통상손해인지 알았거나 알 수 있었던 특별손해인지에 따라 배상 범위가 달라져요.", "options": [{"label": "보관료·디머리지·영업손실 등 손해 자료를 모았다", "next": "A"}, {"label": "아직 손해 자료를 정리하지 못했다", "next": "B"}, {"label": "잘 모르겠다", "next": "D"}]}, "Q4": {"text": "신고 내용의 정확성 책임이 누구에게 있는지 확인했나요?", "why": "수입신고 내용의 정확성은 신고인(수입자 또는 대리인)의 책임 영역이에요.", "options": [{"label": "신고 내용 정확성은 신고인 책임이라는 점을 확인했다", "next": "F"}, {"label": "업체가 알아서 해줄 것으로 생각했다", "next": "G"}, {"label": "잘 모르겠다", "next": "D"}]}}, "outcomes": {"A": {"grade": "high", "tag": "손해배상 검토", "title": "작성 업체의 주의의무 위반과 손해 자료가 갖춰졌다면, 배상을 청구해 볼 만한 상황이에요.", "why": "업체가 서류를 대신 작성했고 틀린 항목 확인과 손해 자료 확보까지 마쳤다고 답하셨어요.", "fact": "서류를 대신 맡긴 경우에도 책임이 한쪽으로만 끝나지 않아요.", "basis": "포워더·관세사 등이 화주를 대신해 수입신고·통관서류를 작성하면 품명·HS코드·원산지·가격·수량을 확인할 주의의무를 집니다. 계약상 의무를 다하지 못해 손해가 생기면 채무불이행 손해배상을 청구할 수 있고(민법 제390조), 배상 범위는 통상손해를 원칙으로 합니다(민법 제393조 제1항). 특별한 사정에 따른 손해는 그 사정을 알았거나 알 수 있었을 때에만 배상됩니다(같은 조 제2항).", "caution": "배상 여부와 범위는 과실과 예견 가능성에 따라 갈려 이 화면에서 단정할 수 없어요.", "checklist": ["계약서·위임 범위와 서류 작성 내역을 모으세요.", "틀린 항목과 발생 시점을 문서로 정리하세요.", "보관료·디머리지·영업손실 증빙을 모아 손해를 계산하세요."], "share_summary": "판단 이유: 업체가 서류를 대신 작성했고 틀린 항목 확인과 손해 자료 확보까지 마쳤다고 답하셨어요.\n지금 할 일: 계약서·위임 범위와 서류 작성 내역을 모으세요. / 틀린 항목과 발생 시점을 문서로 정리하세요. / 보관료·디머리지·영업손실 증빙을 모아 손해를 계산하세요.\n주의: 배상 여부와 범위는 과실과 예견 가능성에 따라 갈려 이 화면에서 단정할 수 없어요.\n", "disclaimer": "", "cta": ""}, "B": {"grade": "mid", "tag": "손해 범위 정리 관건", "title": "책임은 짚였어도, 손해 범위 정리가 관건인 단계예요.", "why": "틀린 항목은 확인했지만 손해 자료를 아직 정리하지 못했다고 답하셨어요.", "fact": "통상손해인지 알 수 있었던 특별손해인지에 따라 배상 범위가 달라져요.", "basis": "채무불이행 손해배상은 통상의 손해를 한도로 하고(민법 제393조 제1항), 특별한 사정으로 인한 손해는 채무자가 그 사정을 알았거나 알 수 있었을 때에만 배상합니다(같은 조 제2항). 통관 지연으로 인한 보관료·디머리지·영업손실은 통상손해에 포함될 수 있으나, 계약 지연 손해 같은 특별한 사정은 예견 가능성을 자료로 보여야 합니다.", "caution": "특별손해는 예견 가능성 자료가 없으면 배상받기 어려워요.", "checklist": ["지연 기간과 발생 비용(보관료·디머리지)을 날짜별로 정리하세요.", "영업손실은 계약·발주 자료로 연결해 증빙하세요.", "상대가 예견할 수 있었는지 보여 줄 자료를 함께 모으세요."], "share_summary": "판단 이유: 틀린 항목은 확인했지만 손해 자료를 아직 정리하지 못했다고 답하셨어요.\n지금 할 일: 지연 기간과 발생 비용(보관료·디머리지)을 날짜별로 정리하세요. / 영업손실은 계약·발주 자료로 연결해 증빙하세요. / 상대가 예견할 수 있었는지 보여 줄 자료를 함께 모으세요.\n주의: 특별손해는 예견 가능성 자료가 없으면 배상받기 어려워요.\n", "disclaimer": "", "cta": ""}, "D": {"grade": "check", "tag": "작성·원인 확인 필요", "title": "누가 서류를 작성했고 무엇이 틀렸는지부터 확인해야 해요.", "why": "작성 주체나 오류 원인이 정리되지 않았다고 답하셨어요.", "fact": "작성 주체와 책임 영역이 확인되어야 청구 방향이 정해져요.", "basis": "포워더가 대신 작성했다면 주의의무 위반과 채무불이행 손해배상(민법 제390조)이, 직접 신고했다면 신고 내용의 정확성 책임(관세법 제241조)이 문제 됩니다. 누가 작성했고 무엇이 틀렸는지부터 확인하세요.", "caution": "원인을 확인하지 않은 채 책임만 주장하면 설명이 어려워져요.", "checklist": ["신고서·통관서류 사본과 작성 주체를 확인하세요.", "묶인 사유서와 세관 안내문을 받아 두세요.", "확인이 끝나면 이 진단을 처음부터 다시 해 보세요."], "share_summary": "판단 이유: 작성 주체나 오류 원인이 정리되지 않았다고 답하셨어요.\n지금 할 일: 신고서·통관서류 사본과 작성 주체를 확인하세요. / 묶인 사유서와 세관 안내문을 받아 두세요. / 확인이 끝나면 이 진단을 처음부터 다시 해 보세요.\n주의: 원인을 확인하지 않은 채 책임만 주장하면 설명이 어려워져요.\n", "disclaimer": "", "cta": ""}, "E": {"grade": "mid", "tag": "오류 원인 확인", "title": "무엇이 틀렸는지 특정하는 것이 먼저예요.", "why": "물건이 묶였다는 사실만 알고 원인은 모른다고 답하셨어요.", "fact": "틀린 항목이 특정되어야 주의의무 위반을 짚을 수 있어요.", "basis": "포워더·관세사는 품명·HS코드·원산지·가격·수량을 확인할 주의의무를 지므로, 어떤 항목이 틀렸는지가 확인되어야 주의의무 위반 여부를 따질 수 있습니다. 세관에 사유 확인을 요청하고 서류 원본을 받아 두세요.", "caution": "원인을 모른 채 배상부터 요구하면 방향이 어긋날 수 있어요.", "checklist": ["세관에 묶인 사유와 해당 항목을 서면으로 확인하세요.", "제출된 신고서 사본을 받아 대조하세요.", "수정신고·보정 절차와 기한을 확인하세요."], "share_summary": "판단 이유: 물건이 묶였다는 사실만 알고 원인은 모른다고 답하셨어요.\n지금 할 일: 세관에 묶인 사유와 해당 항목을 서면으로 확인하세요. / 제출된 신고서 사본을 받아 대조하세요. / 수정신고·보정 절차와 기한을 확인하세요.\n주의: 원인을 모른 채 배상부터 요구하면 방향이 어긋날 수 있어요.\n", "disclaimer": "", "cta": ""}, "F": {"grade": "mid", "tag": "신고인 책임 영역", "title": "직접 신고했다면, 신고 내용의 정확성 책임은 내 쪽에 있어요.", "why": "신고 내용 정확성은 신고인 책임이라는 점을 확인했다고 답하셨어요.", "fact": "신고 내용의 정확성은 신고인(수입자 또는 대리인)의 책임 영역이에요.", "basis": "관세법 제241조는 품명·규격·수량·가격 등을 세관장에게 신고하도록 하고, 신고 내용의 정확성은 신고인(수입자 또는 대리인)의 책임 영역입니다. 다만 업체에 위임한 부분이 있다면 그 부분의 주의의무 위반은 별도로 문제 될 수 있으니, 위임 범위를 나눠 확인하세요.", "caution": "책임 영역을 나누지 않으면 다툼이 길어질 수 있어요.", "checklist": ["내가 직접 신고한 범위와 위임한 범위를 구분하세요.", "신고서 원본과 근거 자료를 보관하세요.", "수정신고·보정 필요 여부를 확인하세요."], "share_summary": "판단 이유: 신고 내용 정확성은 신고인 책임이라는 점을 확인했다고 답하셨어요.\n지금 할 일: 내가 직접 신고한 범위와 위임한 범위를 구분하세요. / 신고서 원본과 근거 자료를 보관하세요. / 수정신고·보정 필요 여부를 확인하세요.\n주의: 책임 영역을 나누지 않으면 다툼이 길어질 수 있어요.\n", "disclaimer": "", "cta": ""}, "G": {"grade": "check", "tag": "책임 영역 오해", "title": "'업체가 알아서 해주겠지'는 통하지 않을 수 있어요.", "why": "업체가 알아서 해줄 것으로 생각했다고 답하셨어요.", "fact": "신고 내용의 정확성은 신고인(수입자 또는 대리인)의 책임 영역이에요.", "basis": "관세법 제241조에 따른 수입신고에서 내용의 정확성은 신고인(수입자 또는 대리인)의 책임 영역입니다. 업체에 맡긴 부분이라도 무엇을 위임했는지, 어떤 자료를 제공했는지를 확인해 책임 영역을 나눠 두어야 합니다.", "caution": "구두로만 맡긴 내용은 나중에 다투기 어려워요.", "checklist": ["업체에 제공한 자료와 위임 범위를 문서로 확인하세요.", "신고서 사본과 수정 내역을 받아 두세요.", "문제된 항목이 위임 범위였는지 확인하세요."], "share_summary": "판단 이유: 업체가 알아서 해줄 것으로 생각했다고 답하셨어요.\n지금 할 일: 업체에 제공한 자료와 위임 범위를 문서로 확인하세요. / 신고서 사본과 수정 내역을 받아 두세요. / 문제된 항목이 위임 범위였는지 확인하세요.\n주의: 구두로만 맡긴 내용은 나중에 다투기 어려워요.\n", "disclaimer": "", "cta": ""}}}</script>
+<script>
+"use strict";
+var D = JSON.parse(document.getElementById("sc-data").textContent);
+var GRADE = {high:"가능성 높음", mid:"살펴볼 것", check:"확인 필요"};
+var screenEl = document.getElementById("screen");
+var pathStack = [];          // [{qid, qtext, label}]
+
+function h(tag, cls, text){
+  var e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(text !== undefined && text !== null) e.textContent = text;
+  return e;
+}
+function clearScreen(){ while(screenEl.firstChild) screenEl.removeChild(screenEl.firstChild); screenEl.className = "screen active"; window.scrollTo(0,0); }
+
+function setProgress(step, done){
+  var bar = document.getElementById("progress-bar");
+  var lab = document.getElementById("progress-label");
+  if(done){ bar.style.width = "100%"; lab.textContent = "진단 완료"; return; }
+  if(step === 0){ bar.style.width = "0%"; lab.textContent = ""; return; }
+  bar.style.width = Math.min(100, Math.round(step / D.nq_max * 100)) + "%";
+  lab.textContent = "질문 " + step;
+}
+
+function showIntro(){
+  pathStack = []; clearScreen(); setProgress(0);
+  var wrap = h("div","intro");
+  wrap.appendChild(h("div","intro-icon", D.icon || "⚖️"));
+  wrap.appendChild(h("h1","", D.hook));
+  if(D.myth){
+    var m = h("div","myth"); m.appendChild(h("b","","많은 분들이 이렇게 알고 있어요")); m.appendChild(document.createTextNode("“" + D.myth + "”"));
+    wrap.appendChild(m);
+  }
+  if(D.teaser) wrap.appendChild(h("p","", D.teaser));
+  var meta = h("div","meta");
+  [D.time || "약 1분", "객관식 질문 최대 " + D.nq_max + "개", "답변은 저장·전송되지 않아요"].forEach(function(t){ meta.appendChild(h("span","",t)); });
+  wrap.appendChild(meta);
+  var b = h("button","opt-btn primary","진단 시작하기"); b.type = "button";
+  b.onclick = function(){ goTo(D.start); };
+  wrap.appendChild(b);
+  screenEl.appendChild(wrap);
+}
+
+function goTo(id){
+  if(D.outcomes[id]) return showOutcome(id);
+  showQuestion(id);
+}
+
+function showQuestion(qid){
+  var q = D.questions[qid];
+  clearScreen();
+  var step = pathStack.length + 1;
+  setProgress(step);
+  screenEl.appendChild(h("div","q-count","질문 " + step));
+  screenEl.appendChild(h("div","q-text", q.text));
+  if(q.why) screenEl.appendChild(h("div","q-why", q.why));
+  var box = h("div","options");
+  q.options.forEach(function(o){
+    var b = h("button","opt-btn", o.label); b.type = "button";
+    b.onclick = function(){ pathStack.push({qid:qid, qtext:q.text, label:o.label}); goTo(o.next); };
+    box.appendChild(b);
+  });
+  screenEl.appendChild(box);
+  var back = h("button","back-btn", pathStack.length ? "← 이전 질문으로" : "← 처음으로"); back.type = "button";
+  back.onclick = function(){
+    if(!pathStack.length) return showIntro();
+    var last = pathStack.pop(); showQuestion(last.qid);
+  };
+  screenEl.appendChild(back);
+}
+
+function copyText(text, btn){
+  function ok(){ var o = btn.textContent; btn.textContent = "복사했어요 ✓"; setTimeout(function(){ btn.textContent = o; }, 1800); }
+  function fallback(){
+    var t = document.createElement("textarea"); t.value = text; t.style.position = "fixed"; t.style.opacity = "0";
+    document.body.appendChild(t); t.select();
+    try{ document.execCommand("copy"); ok(); }catch(e){ btn.textContent = "복사 실패 — 직접 선택해 주세요"; }
+    document.body.removeChild(t);
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(ok, fallback); } else { fallback(); }
+}
+
+function block(label, bodyNode){
+  var b = h("div","block"); b.appendChild(h("div","block-label",label)); b.appendChild(bodyNode); return b;
+}
+
+function cleanOne(s){ return String(s || "").replace(/\s+/g," ").trim(); }
+function shortLegal(s){
+  var x = cleanOne(s);
+  if(x.length <= 220) return x;
+  return x.slice(0,220).replace(/[\s,，;；:：]+[^\s]*$/g,"") + "…";
+}
+function fallbackShare(o){
+  var acts = (o.checklist || []).slice(0,3).map(function(x){ return cleanOne(x); }).filter(Boolean);
+  return [
+    "판단 이유: " + cleanOne(o.why),
+    "지금 할 일: " + acts.join(" / "),
+    "주의: " + cleanOne(o.caution)
+  ].join("\n");
+}
+function copySummaryText(o){
+  var answers = pathStack.map(function(p){ return cleanOne(p.label); }).filter(Boolean).join(" / ");
+  var summary = cleanOne(o.share_summary) ? o.share_summary : fallbackShare(o);
+  return [
+    "[법률 자가진단] " + cleanOne(D.hook),
+    "내 답변: " + (answers || "기록 없음"),
+    "결과: " + GRADE[o.grade] + " — " + cleanOne(o.title),
+    summary,
+    "법적 근거: " + shortLegal(o.basis),
+    "※ " + cleanOne(o.disclaimer || D.disclaimer),
+    "진단 링크: " + location.href
+  ].join("\n");
+}
+
+function showOutcome(oid){
+  var o = D.outcomes[oid];
+  clearScreen(); setProgress(0, true);
+  var head = h("div");
+  var g = h("span","grade " + o.grade, "● " + GRADE[o.grade]);
+  head.appendChild(g);
+  if(o.tag) head.appendChild(h("span","outcome-tag", o.tag));
+  screenEl.appendChild(head);
+  var wrap = h("div","outcome");
+  wrap.appendChild(h("h2","", o.title));
+
+  /* 왜 이 결과인가 — 내가 고른 답 + 근거 1줄 */
+  var why = h("div");
+  var chips = h("div","chips");
+  pathStack.forEach(function(p){ chips.appendChild(h("div","chip","· " + p.label)); });
+  why.appendChild(chips);
+  why.appendChild(h("div","why-line", o.why));
+  wrap.appendChild(block("🔎 왜 이 결과인가요?", why));
+
+  if(o.share_summary || o.why || o.caution){
+    wrap.appendChild(block("🧾 한눈에 정리", h("div","share-summary", o.share_summary || fallbackShare(o))));
+  }
+
+  if(o.fact && D.myth){
+    var vs = h("div","vs");
+    var m = h("div","m"); m.appendChild(h("b","","통념")); m.appendChild(document.createTextNode(D.myth));
+    var f = h("div","f"); f.appendChild(h("b","","이 경우엔")); f.appendChild(document.createTextNode(o.fact));
+    vs.appendChild(m); vs.appendChild(f);
+    wrap.appendChild(block("💡 통념 vs 사실", vs));
+  }
+  if(o.checklist && o.checklist.length){
+    var ul = h("ul","checklist"); o.checklist.forEach(function(c){ ul.appendChild(h("li","",c)); });
+    wrap.appendChild(block("✅ 지금 해볼 것", ul));
+  }
+  wrap.appendChild(block("⚠️ 주의할 점", h("div","block-body", o.caution)));
+  var bd = document.createElement("details"); bd.className = "basis-details";
+  bd.appendChild(h("summary","","📖 법적 근거 보기"));
+  bd.appendChild(h("div","block-body", o.basis));
+  wrap.appendChild(bd);
+  wrap.appendChild(h("div","disclaimer", o.disclaimer || D.disclaimer));
+  screenEl.appendChild(wrap);
+
+  var actions = h("div","actions");
+  var cp = h("button","ghost-btn","📋 결과 요약 복사하기"); cp.type = "button";
+  cp.onclick = function(){
+    var t = copySummaryText(o);
+    copyText(t, cp);
+  };
+  actions.appendChild(cp);
+  if(D.mother_url){
+    var a = h("a","ghost-btn","📰 원문 컬럼 읽어보기"); a.href = D.mother_url; a.target = "_blank"; a.rel = "noopener"; actions.appendChild(a);
+  }
+  var rs = h("button","ghost-btn","↺ 처음부터 다시"); rs.type = "button"; rs.onclick = showIntro;
+  actions.appendChild(rs);
+  screenEl.appendChild(actions);
+
+  var cta = h("div","cta-box");
+  cta.appendChild(document.createTextNode((o.cta || "지금 상황을 구체적으로 확인하고 싶다면") + " "));
+  var s = h("strong","", D.cta_lawyer);
+  cta.appendChild(s);
+  cta.appendChild(document.createTextNode("("));
+  var ml = h("a","", D.cta_email); ml.href = "mailto:" + D.cta_email; cta.appendChild(ml);
+  cta.appendChild(document.createTextNode(")에게 문의하세요."));
+  screenEl.appendChild(cta);
+}
+
+document.getElementById("footer").textContent = "제공 : " + D.cta_lawyer + " 법률사무소";
+showIntro();
+</script>
+</body>
+</html>
