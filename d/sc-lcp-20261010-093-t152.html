@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>교회가 갈라지면 재산도 나뉜다고 들으셨나요?</title>
+<!-- sc-template v3 · 렌더러: _tools/sc.py build · 이 파일을 직접 고치지 말고 00_운영/app_template.html 과 시나리오 노트를 고친다 -->
+<style>
+  :root{
+    --navy:#12233f; --navy-deep:#0a1626; --accent:#c9a24b; --bg:#f4f5f7; --card:#ffffff;
+    --text:#1e232b; --muted:#5f6673; --line:#e5e7eb;
+    --g-high:#1f7a4d; --g-mid:#b7791f; --g-check:#4a5568;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    background:var(--bg);color:var(--text);min-height:100vh;
+    display:flex;align-items:flex-start;justify-content:center;padding:16px;line-height:1.55;
+    word-break:keep-all;overflow-wrap:anywhere;
+  }
+  .app{width:100%;max-width:480px;background:var(--card);border-radius:18px;box-shadow:0 8px 30px rgba(18,35,63,.12);overflow:hidden;display:flex;flex-direction:column;min-height:560px;}
+  .topbar{background:var(--navy);color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;font-size:13px;}
+  .topbar .brand{font-weight:700;letter-spacing:.02em;}
+  .progress-wrap{height:4px;background:var(--line);width:100%;}
+  .progress-bar{height:100%;background:var(--accent);width:0%;transition:width .25s ease;}
+  .screen{flex:1;padding:26px 22px 22px;display:none;flex-direction:column;animation:fadeIn .22s ease;}
+  .screen.active{display:flex;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+
+  .intro-icon{font-size:38px;margin-bottom:12px;}
+  .intro h1{font-size:22px;line-height:1.4;color:var(--navy-deep);margin-bottom:12px;}
+  .myth{background:#fbf6ea;border-left:4px solid var(--accent);border-radius:8px;padding:12px 14px;margin-bottom:14px;font-size:13.5px;color:#4a3d16;}
+  .myth b{display:block;font-size:11px;letter-spacing:.04em;color:#8a6d1f;margin-bottom:3px;}
+  .intro p{color:var(--muted);font-size:14px;margin-bottom:16px;}
+  .meta{font-size:12px;color:var(--muted);margin-bottom:20px;display:flex;gap:8px;flex-wrap:wrap;}
+  .meta span{background:var(--bg);padding:4px 10px;border-radius:20px;}
+
+  .q-count{font-size:12px;color:#8a6d1f;font-weight:700;margin-bottom:8px;letter-spacing:.03em;}
+  .q-text{font-size:19px;font-weight:700;color:var(--navy-deep);margin-bottom:8px;line-height:1.45;}
+  .q-why{font-size:12.5px;color:var(--muted);margin-bottom:18px;}
+  .options{display:flex;flex-direction:column;gap:10px;margin-top:10px;}
+  .opt-btn{text-align:left;background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;font:inherit;font-size:14.5px;color:var(--text);cursor:pointer;transition:all .15s ease;min-height:44px;width:100%;}
+  .opt-btn:hover,.opt-btn:active,.opt-btn:focus-visible{border-color:var(--accent);background:#fbf6ea;outline:none;}
+  .opt-btn.primary{text-align:center;font-weight:700;background:var(--navy);color:#fff;border:none;}
+  .opt-btn.primary:hover,.opt-btn.primary:focus-visible{background:var(--navy-deep);}
+  .back-btn{margin-top:14px;background:none;border:none;color:var(--muted);font-size:12.5px;text-align:left;cursor:pointer;min-height:36px;text-decoration:underline;}
+
+  .grade{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#fff;padding:5px 12px;border-radius:20px;margin-bottom:10px;width:fit-content;}
+  .grade.high{background:var(--g-high);} .grade.mid{background:var(--g-mid);} .grade.check{background:var(--g-check);}
+  .outcome-tag{display:inline-block;font-size:11px;font-weight:700;color:var(--navy);background:#eef1f6;padding:4px 10px;border-radius:20px;margin-bottom:10px;margin-left:6px;}
+  .outcome h2{font-size:18px;color:var(--navy-deep);margin-bottom:14px;line-height:1.5;}
+  .block{margin-bottom:15px;}
+  .block-label{font-size:12px;font-weight:700;color:#8a6d1f;margin-bottom:5px;letter-spacing:.02em;}
+  .block-body{font-size:13.5px;color:var(--text);}
+  .share-summary{font-size:13.5px;color:var(--text);white-space:pre-line;background:#fbf6ea;border:1px solid #ead9ad;border-left:4px solid var(--accent);border-radius:10px;padding:12px 14px;}
+  .basis-details{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:#fafbfc;margin-bottom:15px;}
+  .basis-details summary{cursor:pointer;color:#3b4250;font-size:13px;font-weight:700;}
+  .basis-details .block-body{margin-top:9px;}
+  .chips{display:flex;flex-direction:column;gap:5px;margin-bottom:6px;}
+  .chip{font-size:12.5px;background:var(--bg);border-radius:8px;padding:6px 10px;color:#3b4250;}
+  .why-line{font-size:13.5px;}
+  .vs{display:grid;gap:6px;}
+  .vs div{font-size:13px;border-radius:8px;padding:9px 12px;}
+  .vs .m{background:#f6ecec;color:#7a2f2f;} .vs .f{background:#e9f4ee;color:#1d5b3a;}
+  .vs b{display:block;font-size:10.5px;letter-spacing:.05em;margin-bottom:2px;}
+  .checklist{list-style:none;display:flex;flex-direction:column;gap:6px;}
+  .checklist li{font-size:13.5px;padding-left:22px;position:relative;}
+  .checklist li::before{content:"☐";position:absolute;left:0;color:#8a6d1f;}
+  .disclaimer{font-size:12px;color:var(--muted);background:var(--bg);border-radius:10px;padding:12px 14px;margin-bottom:14px;}
+  .actions{display:flex;flex-direction:column;gap:8px;margin-bottom:14px;}
+  .ghost-btn{background:transparent;border:1.5px solid var(--line);color:#3b4250;border-radius:10px;padding:11px;font:inherit;font-size:13px;cursor:pointer;min-height:44px;text-align:center;text-decoration:none;display:block;}
+  .ghost-btn:hover,.ghost-btn:focus-visible{border-color:var(--accent);outline:none;}
+  .cta-box{background:var(--navy);color:#fff;border-radius:12px;padding:16px 18px;font-size:13.5px;margin-top:auto;}
+  .cta-box strong{color:var(--accent);} .cta-box a{color:#fff;text-decoration:underline;}
+  .footer-mark{text-align:center;font-size:11px;color:var(--muted);padding:10px 0 16px;}
+  button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px;}
+  @media (max-width:380px){ .screen{padding:22px 16px 18px;} .q-text{font-size:18px;} }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topbar"><span class="brand">법률 자가진단</span><span id="progress-label"></span></div>
+  <div class="progress-wrap"><div class="progress-bar" id="progress-bar"></div></div>
+  <div class="screen active" id="screen"></div>
+  <div class="footer-mark" id="footer"></div>
+</div>
+
+<script id="sc-data" type="application/json">{"hook": "교회가 갈라지면 재산도 나뉜다고 들으셨나요?", "myth": "교회가 분열되면 재산도 둘로 나뉜다", "teaser": "대법원 전원합의체가 '분열'이라는 전제를 바꿨어요. 남는 쪽과 떠나는 쪽이 기대할 수 있는 것이 왜 다른지 1분이면 확인됩니다.", "icon": "⛪", "time": "약 1분", "start": "Q1", "nq_min": 1, "nq_max": 3, "cta_lawyer": "조우성 변호사", "cta_email": "law@mustknow.co.kr", "disclaimer": "이 진단은 일반적인 법률 정보 안내이며, 구체적인 사안은 개별 상담을 통해 확인해야 합니다.", "mother_url": "", "questions": {"Q1": {"text": "지금 어느 입장에 가까우세요?", "why": "남는 쪽과 떠나는 쪽의 확인 경로가 완전히 달라요.", "options": [{"label": "교회에 남아 있고 재산 문제를 확인 중이다", "next": "Q2"}, {"label": "교회를 떠났거나 떠날 예정이다", "next": "Q3"}, {"label": "내 교인 지위를 잘 모르겠다", "next": "E"}]}, "Q2": {"text": "재산 처분이나 교단 변경에 관한 총회 결의가 있었나요?", "why": "총유물의 관리·처분은 사원총회의 결의 몫이고, 결의가 있었는지가 이후 절차를 좌우해요.", "options": [{"label": "결의가 있었고 절차·기록도 챙겨 보고 있다", "next": "F"}, {"label": "그런 결의는 없다", "next": "Q4"}, {"label": "잘 모르겠다", "next": "E"}]}, "Q3": {"text": "교회를 떠날 때 재산 관련 논의나 정산 약정이 있었나요?", "why": "떠나는 쪽은 재산 분할이 아니라 기여 부분에 관한 정산을 논의하게 돼요.", "options": [{"label": "기여한 부분에 관한 정산 약정을 맺었다", "next": "G"}, {"label": "별도 논의 없이 떠났다", "next": "H"}, {"label": "잘 모르겠다", "next": "E"}]}, "Q4": {"text": "교회 부동산의 등기 명의는 어떻게 되어 있나요?", "why": "등기 명의와 실제 사용이 어긋나면 판단이 복잡해져요.", "options": [{"label": "교회 또는 법인 명의로 등기돼 있다", "next": "I"}, {"label": "개인 명의로 등기돼 있다", "next": "J"}, {"label": "잘 모르겠다", "next": "E"}]}}, "outcomes": {"F": {"grade": "mid", "tag": "결의 절차 확인", "title": "총회 결의가 있었던 상태 — 절차 기록을 확인할 단계예요.", "why": "재산 처분이나 교단 변경 총회 결의가 있었다고 답하셨어요.", "fact": "총유물의 관리·처분은 사원총회의 결의 몫이고, 개별 교인의 사용·수익은 규약 범위 안에서 인정돼요.", "basis": "법인이 아닌 사단의 사원이 집합체로서 물건을 소유하면 총유로 하고, 총유물의 관리 및 처분은 사원총회의 결의에 의하며 각 사원은 정관 기타의 규약에 좇아 총유물을 사용·수익할 수 있습니다(민법 제275조·제276조). 소속 교단의 탈퇴나 변경 결의는 의결권을 가진 교인 3분의 2 이상의 찬성이 필요합니다(대법원 2006. 4. 20. 선고 2004다37775 전원합의체 판결).", "caution": "결의 기록이 남지 않으면 이후에 절차를 설명하기 어려워져요.", "checklist": ["총회 일시·안건·참석자·결정 내용을 문서로 정리하세요.", "의결권을 가진 교인 3분의 2 이상 찬성 요건을 결의 기록에서 확인하세요.", "재산 처분 결의가 있다면 등기 서류와 함께 보관하세요."], "share_summary": "판단 이유: 재산 처분이나 교단 변경 총회 결의가 있었다고 답하셨어요.\n지금 할 일: 총회 일시·안건·참석자·결정 내용을 문서로 정리하세요. / 의결권을 가진 교인 3분의 2 이상 찬성 요건을 결의 기록에서 확인하세요. / 재산 처분 결의가 있다면 등기 서류와 함께 보관하세요.\n주의: 결의 기록이 남지 않으면 이후에 절차를 설명하기 어려워져요.\n", "disclaimer": "", "cta": ""}, "G": {"grade": "mid", "tag": "정산 약정 근거", "title": "정산 약정이 있는 상태 — 약정이 근거가 돼요.", "why": "떠나면서 기여한 부분에 관한 정산 약정을 맺었다고 답하셨어요.", "fact": "떠나는 쪽이 기대할 수 있는 것은 재산 분할이 아니라 기여 부분에 관한 정산이에요.", "basis": "총유물에 관한 사원의 권리의무는 사원의 지위를 취득·상실함으로써 취득·상실됩니다(민법 제277조). 대법원 전원합의체는 교회 분열이라는 개념을 인정하지 않고, 탈퇴한 교인은 종전 교회 재산에 대한 권리를 보유할 수 없다고 판단했으므로(대법원 2006. 4. 20. 선고 2004다37775 판결), 재산 형성에 기여한 부분에 관한 정산 약정이 별도의 근거가 됩니다.", "caution": "약정이 구두라면 서면으로 정리하는 절차가 먼저예요.", "checklist": ["약정서에 적힌 기여 부분과 금액·시점을 확인하세요.", "기여를 보여 주는 자료(송금·기부·공사 기록)를 약정과 함께 보관하세요.", "약정 이행 시기와 방법이 문서에 있는지 확인하세요."], "share_summary": "판단 이유: 떠나면서 기여한 부분에 관한 정산 약정을 맺었다고 답하셨어요.\n지금 할 일: 약정서에 적힌 기여 부분과 금액·시점을 확인하세요. / 기여를 보여 주는 자료(송금·기부·공사 기록)를 약정과 함께 보관하세요. / 약정 이행 시기와 방법이 문서에 있는지 확인하세요.\n주의: 약정이 구두라면 서면으로 정리하는 절차가 먼저예요.\n", "disclaimer": "", "cta": ""}, "H": {"grade": "check", "tag": "정산 경로 확인", "title": "별도 논의 없이 떠난 상태 — 남은 경로를 확인해야 해요.", "why": "재산 관련 논의 없이 떠났다고 답하셨어요.", "fact": "떠나는 쪽은 재산의 분할을 기대하기 어려워요 — 기여 부분의 정산이 남은 논의예요.", "basis": "탈퇴한 교인은 종전 교회 재산에 대한 권리를 보유할 수 없고(대법원 2006. 4. 20. 선고 2004다37775 전원합의체 판결), 총유물에 관한 권리의무는 사원의 지위 상실로 함께 상실됩니다(민법 제277조). 재산 형성에 기여한 부분에 관하여는 정산 약정이나 부당이득 반환 검토가 남습니다.", "caution": "권리 상실이 원칙이어서 늦어질수록 기여 입증이 어려워져요 — 자료부터 모으세요.", "checklist": ["교회 재산 형성에 기여한 부분의 자료를 모으세요.", "정산 논의를 제안한 날짜와 상대를 기록으로 남기세요.", "등기 명의와 실제 사용 관계를 확인해 보세요."], "share_summary": "판단 이유: 재산 관련 논의 없이 떠났다고 답하셨어요.\n지금 할 일: 교회 재산 형성에 기여한 부분의 자료를 모으세요. / 정산 논의를 제안한 날짜와 상대를 기록으로 남기세요. / 등기 명의와 실제 사용 관계를 확인해 보세요.\n주의: 권리 상실이 원칙이어서 늦어질수록 기여 입증이 어려워져요 — 자료부터 모으세요.\n", "disclaimer": "", "cta": ""}, "I": {"grade": "high", "tag": "구조 정리 완료", "title": "교회·법인 명의에 결의 문제도 없는 상태 — 구조가 정리돼 있어요.", "why": "총회 결의가 없는데다 부동산도 교회 또는 법인 명의라고 답하셨어요.", "fact": "재산이 총유로 정리돼 있고 임의 처분 결의가 없다면, 지금은 구조를 기록으로 유지하면 되는 단계예요.", "basis": "교회 재산은 교인들이 총유로 소유하고 사원총회의 결의로 관리·처분하며(민법 제275조·제276조), 주무관청의 허가와 등기를 마친 교회는 민법상 비영리법인으로 성립해 정관을 기준으로 합니다(민법 제40조). 등기 명의와 실제 사용이 일치하는지 확인해 두면 이후 다툼을 줄일 수 있습니다.", "caution": "지금 정리돼 있어도 처분 결의가 생기면 다시 확인이 필요해요.", "checklist": ["등기부 등본으로 명의가 교회·법인과 일치하는지 확인하세요.", "정관 또는 총유 관련 규약 문서의 보관처를 정하세요.", "총회 결의가 새로 생기면 기록을 남기는 절차를 확인하세요."], "share_summary": "판단 이유: 총회 결의가 없는데다 부동산도 교회 또는 법인 명의라고 답하셨어요.\n지금 할 일: 등기부 등본으로 명의가 교회·법인과 일치하는지 확인하세요. / 정관 또는 총유 관련 규약 문서의 보관처를 정하세요. / 총회 결의가 새로 생기면 기록을 남기는 절차를 확인하세요.\n주의: 지금 정리돼 있어도 처분 결의가 생기면 다시 확인이 필요해요.\n", "disclaimer": "", "cta": ""}, "J": {"grade": "check", "tag": "명의 쟁점 확인", "title": "개인 명의 등기 — 명의와 실질을 대조해 봐야 해요.", "why": "교회 부동산이 개인 명의로 등기돼 있다고 답하셨어요.", "fact": "등기부의 명의와 실제 소유가 다르면 명의신탁이나 부당이득 문제가 더해져요.", "basis": "교회 재산은 법인이 아닌 사단의 사원이 집합체로서 소유하는 총유 구조입니다(민법 제275조). 등기 명의가 개인으로 되어 있으면 명의와 실제 사용 관계를 따져 보는 절차가 필요하고, 교회가 비영리법인으로 성립해 있는지에 따라 근거 문서가 정관으로 바뀝니다(민법 제40조).", "caution": "명의 문제는 사실관계 확인이 먼저예요 — 서류부터 정리하세요.", "checklist": ["등기부 등본을 떼어 명의자와 실제 사용자를 대조하세요.", "교회 법인 등기 여부를 확인하세요.", "매입 자료와 관리·사용 기록을 한곳에 모으세요."], "share_summary": "판단 이유: 교회 부동산이 개인 명의로 등기돼 있다고 답하셨어요.\n지금 할 일: 등기부 등본을 떼어 명의자와 실제 사용자를 대조하세요. / 교회 법인 등기 여부를 확인하세요. / 매입 자료와 관리·사용 기록을 한곳에 모으세요.\n주의: 명의 문제는 사실관계 확인이 먼저예요 — 서류부터 정리하세요.\n", "disclaimer": "", "cta": ""}, "E": {"grade": "check", "tag": "지위 확인 먼저", "title": "내 지위와 명의부터 확인해야 해요.", "why": "지금 상황을 명확히 파악하지 못했다고 답하셨어요.", "fact": "남는 쪽과 떠나는 쪽의 경로가 완전히 달라요 — 내 위치 확인이 먼저예요.", "basis": "총유물에 관한 권리의무는 사원의 지위 취득·상실과 함께 움직이고(민법 제277조), 탈퇴한 교인의 재산 권리 상실이 기준입니다(대법원 2006. 4. 20. 선고 2004다37775 전원합의체 판결).", "caution": "확인 전에는 재산 관련 주장을 섣불리 하지 마세요.", "checklist": ["내 교인 지위가 유지되는지 먼저 확인하세요.", "교회 법인 여부와 등기 명의를 확인하세요.", "확인이 끝나면 이 진단을 처음부터 다시 해 보세요."], "share_summary": "판단 이유: 지금 상황을 명확히 파악하지 못했다고 답하셨어요.\n지금 할 일: 내 교인 지위가 유지되는지 먼저 확인하세요. / 교회 법인 여부와 등기 명의를 확인하세요. / 확인이 끝나면 이 진단을 처음부터 다시 해 보세요.\n주의: 확인 전에는 재산 관련 주장을 섣불리 하지 마세요.\n", "disclaimer": "", "cta": ""}}}</script>
+<script>
+"use strict";
+var D = JSON.parse(document.getElementById("sc-data").textContent);
+var GRADE = {high:"가능성 높음", mid:"살펴볼 것", check:"확인 필요"};
+var screenEl = document.getElementById("screen");
+var pathStack = [];          // [{qid, qtext, label}]
+
+function h(tag, cls, text){
+  var e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(text !== undefined && text !== null) e.textContent = text;
+  return e;
+}
+function clearScreen(){ while(screenEl.firstChild) screenEl.removeChild(screenEl.firstChild); screenEl.className = "screen active"; window.scrollTo(0,0); }
+
+function setProgress(step, done){
+  var bar = document.getElementById("progress-bar");
+  var lab = document.getElementById("progress-label");
+  if(done){ bar.style.width = "100%"; lab.textContent = "진단 완료"; return; }
+  if(step === 0){ bar.style.width = "0%"; lab.textContent = ""; return; }
+  bar.style.width = Math.min(100, Math.round(step / D.nq_max * 100)) + "%";
+  lab.textContent = "질문 " + step;
+}
+
+function showIntro(){
+  pathStack = []; clearScreen(); setProgress(0);
+  var wrap = h("div","intro");
+  wrap.appendChild(h("div","intro-icon", D.icon || "⚖️"));
+  wrap.appendChild(h("h1","", D.hook));
+  if(D.myth){
+    var m = h("div","myth"); m.appendChild(h("b","","많은 분들이 이렇게 알고 있어요")); m.appendChild(document.createTextNode("“" + D.myth + "”"));
+    wrap.appendChild(m);
+  }
+  if(D.teaser) wrap.appendChild(h("p","", D.teaser));
+  var meta = h("div","meta");
+  [D.time || "약 1분", "객관식 질문 최대 " + D.nq_max + "개", "답변은 저장·전송되지 않아요"].forEach(function(t){ meta.appendChild(h("span","",t)); });
+  wrap.appendChild(meta);
+  var b = h("button","opt-btn primary","진단 시작하기"); b.type = "button";
+  b.onclick = function(){ goTo(D.start); };
+  wrap.appendChild(b);
+  screenEl.appendChild(wrap);
+}
+
+function goTo(id){
+  if(D.outcomes[id]) return showOutcome(id);
+  showQuestion(id);
+}
+
+function showQuestion(qid){
+  var q = D.questions[qid];
+  clearScreen();
+  var step = pathStack.length + 1;
+  setProgress(step);
+  screenEl.appendChild(h("div","q-count","질문 " + step));
+  screenEl.appendChild(h("div","q-text", q.text));
+  if(q.why) screenEl.appendChild(h("div","q-why", q.why));
+  var box = h("div","options");
+  q.options.forEach(function(o){
+    var b = h("button","opt-btn", o.label); b.type = "button";
+    b.onclick = function(){ pathStack.push({qid:qid, qtext:q.text, label:o.label}); goTo(o.next); };
+    box.appendChild(b);
+  });
+  screenEl.appendChild(box);
+  var back = h("button","back-btn", pathStack.length ? "← 이전 질문으로" : "← 처음으로"); back.type = "button";
+  back.onclick = function(){
+    if(!pathStack.length) return showIntro();
+    var last = pathStack.pop(); showQuestion(last.qid);
+  };
+  screenEl.appendChild(back);
+}
+
+function copyText(text, btn){
+  function ok(){ var o = btn.textContent; btn.textContent = "복사했어요 ✓"; setTimeout(function(){ btn.textContent = o; }, 1800); }
+  function fallback(){
+    var t = document.createElement("textarea"); t.value = text; t.style.position = "fixed"; t.style.opacity = "0";
+    document.body.appendChild(t); t.select();
+    try{ document.execCommand("copy"); ok(); }catch(e){ btn.textContent = "복사 실패 — 직접 선택해 주세요"; }
+    document.body.removeChild(t);
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(ok, fallback); } else { fallback(); }
+}
+
+function block(label, bodyNode){
+  var b = h("div","block"); b.appendChild(h("div","block-label",label)); b.appendChild(bodyNode); return b;
+}
+
+function cleanOne(s){ return String(s || "").replace(/\s+/g," ").trim(); }
+function shortLegal(s){
+  var x = cleanOne(s);
+  if(x.length <= 220) return x;
+  return x.slice(0,220).replace(/[\s,，;；:：]+[^\s]*$/g,"") + "…";
+}
+function fallbackShare(o){
+  var acts = (o.checklist || []).slice(0,3).map(function(x){ return cleanOne(x); }).filter(Boolean);
+  return [
+    "판단 이유: " + cleanOne(o.why),
+    "지금 할 일: " + acts.join(" / "),
+    "주의: " + cleanOne(o.caution)
+  ].join("\n");
+}
+function copySummaryText(o){
+  var answers = pathStack.map(function(p){ return cleanOne(p.label); }).filter(Boolean).join(" / ");
+  var summary = cleanOne(o.share_summary) ? o.share_summary : fallbackShare(o);
+  return [
+    "[법률 자가진단] " + cleanOne(D.hook),
+    "내 답변: " + (answers || "기록 없음"),
+    "결과: " + GRADE[o.grade] + " — " + cleanOne(o.title),
+    summary,
+    "법적 근거: " + shortLegal(o.basis),
+    "※ " + cleanOne(o.disclaimer || D.disclaimer),
+    "진단 링크: " + location.href
+  ].join("\n");
+}
+
+function showOutcome(oid){
+  var o = D.outcomes[oid];
+  clearScreen(); setProgress(0, true);
+  var head = h("div");
+  var g = h("span","grade " + o.grade, "● " + GRADE[o.grade]);
+  head.appendChild(g);
+  if(o.tag) head.appendChild(h("span","outcome-tag", o.tag));
+  screenEl.appendChild(head);
+  var wrap = h("div","outcome");
+  wrap.appendChild(h("h2","", o.title));
+
+  /* 왜 이 결과인가 — 내가 고른 답 + 근거 1줄 */
+  var why = h("div");
+  var chips = h("div","chips");
+  pathStack.forEach(function(p){ chips.appendChild(h("div","chip","· " + p.label)); });
+  why.appendChild(chips);
+  why.appendChild(h("div","why-line", o.why));
+  wrap.appendChild(block("🔎 왜 이 결과인가요?", why));
+
+  if(o.share_summary || o.why || o.caution){
+    wrap.appendChild(block("🧾 한눈에 정리", h("div","share-summary", o.share_summary || fallbackShare(o))));
+  }
+
+  if(o.fact && D.myth){
+    var vs = h("div","vs");
+    var m = h("div","m"); m.appendChild(h("b","","통념")); m.appendChild(document.createTextNode(D.myth));
+    var f = h("div","f"); f.appendChild(h("b","","이 경우엔")); f.appendChild(document.createTextNode(o.fact));
+    vs.appendChild(m); vs.appendChild(f);
+    wrap.appendChild(block("💡 통념 vs 사실", vs));
+  }
+  if(o.checklist && o.checklist.length){
+    var ul = h("ul","checklist"); o.checklist.forEach(function(c){ ul.appendChild(h("li","",c)); });
+    wrap.appendChild(block("✅ 지금 해볼 것", ul));
+  }
+  wrap.appendChild(block("⚠️ 주의할 점", h("div","block-body", o.caution)));
+  var bd = document.createElement("details"); bd.className = "basis-details";
+  bd.appendChild(h("summary","","📖 법적 근거 보기"));
+  bd.appendChild(h("div","block-body", o.basis));
+  wrap.appendChild(bd);
+  wrap.appendChild(h("div","disclaimer", o.disclaimer || D.disclaimer));
+  screenEl.appendChild(wrap);
+
+  var actions = h("div","actions");
+  var cp = h("button","ghost-btn","📋 결과 요약 복사하기"); cp.type = "button";
+  cp.onclick = function(){
+    var t = copySummaryText(o);
+    copyText(t, cp);
+  };
+  actions.appendChild(cp);
+  if(D.mother_url){
+    var a = h("a","ghost-btn","📰 원문 컬럼 읽어보기"); a.href = D.mother_url; a.target = "_blank"; a.rel = "noopener"; actions.appendChild(a);
+  }
+  var rs = h("button","ghost-btn","↺ 처음부터 다시"); rs.type = "button"; rs.onclick = showIntro;
+  actions.appendChild(rs);
+  screenEl.appendChild(actions);
+
+  var cta = h("div","cta-box");
+  cta.appendChild(document.createTextNode((o.cta || "지금 상황을 구체적으로 확인하고 싶다면") + " "));
+  var s = h("strong","", D.cta_lawyer);
+  cta.appendChild(s);
+  cta.appendChild(document.createTextNode("("));
+  var ml = h("a","", D.cta_email); ml.href = "mailto:" + D.cta_email; cta.appendChild(ml);
+  cta.appendChild(document.createTextNode(")에게 문의하세요."));
+  screenEl.appendChild(cta);
+}
+
+document.getElementById("footer").textContent = "제공 : " + D.cta_lawyer + " 법률사무소";
+showIntro();
+</script>
+</body>
+</html>
