@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>부담금이 &quot;제재&quot;라면 비용 처리가 불가능할까요?</title>
+<!-- sc-template v3 · 렌더러: _tools/sc.py build · 이 파일을 직접 고치지 말고 00_운영/app_template.html 과 시나리오 노트를 고친다 -->
+<style>
+  :root{
+    --navy:#12233f; --navy-deep:#0a1626; --accent:#c9a24b; --bg:#f4f5f7; --card:#ffffff;
+    --text:#1e232b; --muted:#5f6673; --line:#e5e7eb;
+    --g-high:#1f7a4d; --g-mid:#b7791f; --g-check:#4a5568;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    background:var(--bg);color:var(--text);min-height:100vh;
+    display:flex;align-items:flex-start;justify-content:center;padding:16px;line-height:1.55;
+    word-break:keep-all;overflow-wrap:anywhere;
+  }
+  .app{width:100%;max-width:480px;background:var(--card);border-radius:18px;box-shadow:0 8px 30px rgba(18,35,63,.12);overflow:hidden;display:flex;flex-direction:column;min-height:560px;}
+  .topbar{background:var(--navy);color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;font-size:13px;}
+  .topbar .brand{font-weight:700;letter-spacing:.02em;}
+  .progress-wrap{height:4px;background:var(--line);width:100%;}
+  .progress-bar{height:100%;background:var(--accent);width:0%;transition:width .25s ease;}
+  .screen{flex:1;padding:26px 22px 22px;display:none;flex-direction:column;animation:fadeIn .22s ease;}
+  .screen.active{display:flex;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+
+  .intro-icon{font-size:38px;margin-bottom:12px;}
+  .intro h1{font-size:22px;line-height:1.4;color:var(--navy-deep);margin-bottom:12px;}
+  .myth{background:#fbf6ea;border-left:4px solid var(--accent);border-radius:8px;padding:12px 14px;margin-bottom:14px;font-size:13.5px;color:#4a3d16;}
+  .myth b{display:block;font-size:11px;letter-spacing:.04em;color:#8a6d1f;margin-bottom:3px;}
+  .intro p{color:var(--muted);font-size:14px;margin-bottom:16px;}
+  .meta{font-size:12px;color:var(--muted);margin-bottom:20px;display:flex;gap:8px;flex-wrap:wrap;}
+  .meta span{background:var(--bg);padding:4px 10px;border-radius:20px;}
+
+  .q-count{font-size:12px;color:#8a6d1f;font-weight:700;margin-bottom:8px;letter-spacing:.03em;}
+  .q-text{font-size:19px;font-weight:700;color:var(--navy-deep);margin-bottom:8px;line-height:1.45;}
+  .q-why{font-size:12.5px;color:var(--muted);margin-bottom:18px;}
+  .options{display:flex;flex-direction:column;gap:10px;margin-top:10px;}
+  .opt-btn{text-align:left;background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;font:inherit;font-size:14.5px;color:var(--text);cursor:pointer;transition:all .15s ease;min-height:44px;width:100%;}
+  .opt-btn:hover,.opt-btn:active,.opt-btn:focus-visible{border-color:var(--accent);background:#fbf6ea;outline:none;}
+  .opt-btn.primary{text-align:center;font-weight:700;background:var(--navy);color:#fff;border:none;}
+  .opt-btn.primary:hover,.opt-btn.primary:focus-visible{background:var(--navy-deep);}
+  .back-btn{margin-top:14px;background:none;border:none;color:var(--muted);font-size:12.5px;text-align:left;cursor:pointer;min-height:36px;text-decoration:underline;}
+
+  .grade{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#fff;padding:5px 12px;border-radius:20px;margin-bottom:10px;width:fit-content;}
+  .grade.high{background:var(--g-high);} .grade.mid{background:var(--g-mid);} .grade.check{background:var(--g-check);}
+  .outcome-tag{display:inline-block;font-size:11px;font-weight:700;color:var(--navy);background:#eef1f6;padding:4px 10px;border-radius:20px;margin-bottom:10px;margin-left:6px;}
+  .outcome h2{font-size:18px;color:var(--navy-deep);margin-bottom:14px;line-height:1.5;}
+  .block{margin-bottom:15px;}
+  .block-label{font-size:12px;font-weight:700;color:#8a6d1f;margin-bottom:5px;letter-spacing:.02em;}
+  .block-body{font-size:13.5px;color:var(--text);}
+  .share-summary{font-size:13.5px;color:var(--text);white-space:pre-line;background:#fbf6ea;border:1px solid #ead9ad;border-left:4px solid var(--accent);border-radius:10px;padding:12px 14px;}
+  .basis-details{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:#fafbfc;margin-bottom:15px;}
+  .basis-details summary{cursor:pointer;color:#3b4250;font-size:13px;font-weight:700;}
+  .basis-details .block-body{margin-top:9px;}
+  .chips{display:flex;flex-direction:column;gap:5px;margin-bottom:6px;}
+  .chip{font-size:12.5px;background:var(--bg);border-radius:8px;padding:6px 10px;color:#3b4250;}
+  .why-line{font-size:13.5px;}
+  .vs{display:grid;gap:6px;}
+  .vs div{font-size:13px;border-radius:8px;padding:9px 12px;}
+  .vs .m{background:#f6ecec;color:#7a2f2f;} .vs .f{background:#e9f4ee;color:#1d5b3a;}
+  .vs b{display:block;font-size:10.5px;letter-spacing:.05em;margin-bottom:2px;}
+  .checklist{list-style:none;display:flex;flex-direction:column;gap:6px;}
+  .checklist li{font-size:13.5px;padding-left:22px;position:relative;}
+  .checklist li::before{content:"☐";position:absolute;left:0;color:#8a6d1f;}
+  .disclaimer{font-size:12px;color:var(--muted);background:var(--bg);border-radius:10px;padding:12px 14px;margin-bottom:14px;}
+  .actions{display:flex;flex-direction:column;gap:8px;margin-bottom:14px;}
+  .ghost-btn{background:transparent;border:1.5px solid var(--line);color:#3b4250;border-radius:10px;padding:11px;font:inherit;font-size:13px;cursor:pointer;min-height:44px;text-align:center;text-decoration:none;display:block;}
+  .ghost-btn:hover,.ghost-btn:focus-visible{border-color:var(--accent);outline:none;}
+  .cta-box{background:var(--navy);color:#fff;border-radius:12px;padding:16px 18px;font-size:13.5px;margin-top:auto;}
+  .cta-box strong{color:var(--accent);} .cta-box a{color:#fff;text-decoration:underline;}
+  .footer-mark{text-align:center;font-size:11px;color:var(--muted);padding:10px 0 16px;}
+  button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px;}
+  @media (max-width:380px){ .screen{padding:22px 16px 18px;} .q-text{font-size:18px;} }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topbar"><span class="brand">법률 자가진단</span><span id="progress-label"></span></div>
+  <div class="progress-wrap"><div class="progress-bar" id="progress-bar"></div></div>
+  <div class="screen active" id="screen"></div>
+  <div class="footer-mark" id="footer"></div>
+</div>
+
+<script id="sc-data" type="application/json">{"hook": "부담금이 \"제재\"라면 비용 처리가 불가능할까요?", "myth": "장애인 고용부담금은 제재성 공과금이라 비용으로 처리할 수 없다", "teaser": "대법원 전원합의체가 장애인 고용부담금을 손금산입 대상으로 정리했어요. 처리 방식부터 경정청구 기한까지 1분이면 확인됩니다.", "icon": "🧮", "time": "약 1분", "start": "Q1", "nq_min": 1, "nq_max": 3, "cta_lawyer": "조우성 변호사", "cta_email": "law@mustknow.co.kr", "disclaimer": "이 진단은 일반적인 법률 정보 안내이며, 구체적인 사안은 개별 상담을 통해 확인해야 합니다.", "mother_url": "", "questions": {"Q1": {"text": "장애인 고용부담금은 지금 어떻게 처리하고 있나요?", "why": "처리 방식에 따라 지난 연도 신고를 되돌릴 수 있는지가 달라져요.", "options": [{"label": "비용으로 잡아 손금산입 처리를 하고 있다", "next": "Q2"}, {"label": "비용이 아니라고 보아 손금불산입 처리를 하고 있다", "next": "Q3"}, {"label": "아직 장애인 고용부담금을 납부한 적이 없다", "next": "F"}, {"label": "잘 모르겠다", "next": "G"}]}, "Q2": {"text": "장애인 고용부담금을 다른 부담금·부과금과 구분해 기록하고 있나요?", "why": "이번 판단은 장애인 고용부담금에 관한 것이고, 다른 항목은 각각 성격이 다를 수 있어요.", "options": [{"label": "따로 구분해 기록한다", "next": "Q4"}, {"label": "다른 항목과 함께 묶어 기록한다", "next": "B"}, {"label": "잘 모르겠다", "next": "G"}]}, "Q3": {"text": "경정청구 기한(법정신고기한이 지난 후 5년) 안에 들어오는 연도가 있나요?", "why": "5년 안의 연도는 되돌릴 수 있고, 지난 연도는 환급 대상이 되지 않아 연도별 계산이 필요해요.", "options": [{"label": "5년 안에 들어오는 연도가 있다", "next": "Q5"}, {"label": "5년이 모두 지난 연도가 있다", "next": "E"}, {"label": "아직 연도별 계산을 해 보지 않았다", "next": "C"}, {"label": "잘 모르겠다", "next": "G"}]}, "Q4": {"text": "손금산입 처리의 근거(조문·판결 요지)를 문서로 남겨 두었나요?", "why": "신고 담당자가 바뀌어도 같은 기준으로 처리되려면 근거 문서가 필요해요.", "options": [{"label": "근거 문서를 남겨 두었다", "next": "A"}, {"label": "아직 남겨 두지 않았다", "next": "H"}, {"label": "잘 모르겠다", "next": "G"}]}, "Q5": {"text": "해당 연도의 신고서와 납부 근거 자료는 준비돼 있나요?", "why": "경정청구를 하려면 해당 연도 신고 내용과 납부 근거가 필요해요.", "options": [{"label": "신고서와 납부 자료를 모아 두었다", "next": "D"}, {"label": "아직 모으지 않았다", "next": "C"}, {"label": "잘 모르겠다", "next": "G"}]}}, "outcomes": {"A": {"grade": "high", "tag": "기준에 맞춰 관리 중", "title": "처리 기준과 기록 구분이 정리된 상태예요.", "why": "항목을 구분해 기록하고 손금산입 근거 문서도 남겨 두었다고 답하셨어요.", "fact": "장애인 고용부담금은 제재가 아니라 손금산입 대상이에요 — 대법원 전원합의체가 정리한 기준을 따르고 있어요.", "basis": "법인세법 제21조는 각 호의 세금과 공과금을 손금불산입으로 정하며, 쟁점이 된 제5호는 '법령에 따른 의무의 불이행 또는 금지·제한 등의 위반을 이유로 부과되는 공과금'입니다. 대법원은 장애인 고용부담금이 이에 해당하지 않아 손금산입 대상이라고 판단했습니다(대법원 2026. 3. 12. 선고 2024두30809 판결). 지난 연도 신고를 고치려면 법정신고기한이 지난 후 5년 이내에 경정을 청구해야 합니다(국세기본법 제45조의2 제1항).", "caution": "처리 방식이 같아도 기록 구분이 없으면 나중에 근거를 확인하기 어려워요.", "checklist": ["연도별로 사업연도·부담금 납부액·처리 방식을 한 표에 정리하세요.", "손금산입 근거 문서에 조문과 판결 요지를 함께 적어 두세요.", "법정신고기한이 지난 후 5년 기준으로 연도별 기한을 표시하세요."], "share_summary": "판단 이유: 항목을 구분해 기록하고 손금산입 근거 문서도 남겨 두었다고 답하셨어요.\n지금 할 일: 연도별로 사업연도·부담금 납부액·처리 방식을 한 표에 정리하세요. / 손금산입 근거 문서에 조문과 판결 요지를 함께 적어 두세요. / 법정신고기한이 지난 후 5년 기준으로 연도별 기한을 표시하세요.\n주의: 처리 방식이 같아도 기록 구분이 없으면 나중에 근거를 확인하기 어려워요.\n", "disclaimer": "", "cta": ""}, "B": {"grade": "mid", "tag": "항목 구분 관건", "title": "손금산입은 맞지만 항목 구분이 다음 단계예요.", "why": "장애인 고용부담금을 다른 항목과 함께 묶어 기록하고 있다고 답하셨어요.", "fact": "장애인 고용부담금의 손금산입은 확정된 기준이에요 — 다만 다른 부담금은 각각 근거가 다를 수 있어요.", "basis": "법인세법 제21조는 손금불산입 대상을 각 호로 나열하며, 장애인 고용부담금은 제5호의 공과금에 해당하지 않아 손금산입 대상입니다(대법원 2026. 3. 12. 선고 2024두30809 판결). 다만 다른 부담금이나 부과금은 각각의 근거와 성격이 달라 항목을 나누어 별도로 살펴야 합니다.", "caution": "묶어 기록하면 어떤 항목에 어떤 근거를 썼는지 나중에 확인하기 어려워요.", "checklist": ["부담금·부과금 항목을 이름별로 나누어 목록을 만드세요.", "장애인 고용부담금 납부액만 따로 표에 분리하세요.", "각 항목의 손금 처리 근거를 항목별로 적어 두세요."], "share_summary": "판단 이유: 장애인 고용부담금을 다른 항목과 함께 묶어 기록하고 있다고 답하셨어요.\n지금 할 일: 부담금·부과금 항목을 이름별로 나누어 목록을 만드세요. / 장애인 고용부담금 납부액만 따로 표에 분리하세요. / 각 항목의 손금 처리 근거를 항목별로 적어 두세요.\n주의: 묶어 기록하면 어떤 항목에 어떤 근거를 썼는지 나중에 확인하기 어려워요.\n", "disclaimer": "", "cta": ""}, "C": {"grade": "mid", "tag": "연도 계산이 먼저", "title": "연도별 계산과 자료 수집부터 시작할 단계예요.", "why": "연도별 계산이나 자료 수집을 아직 해 보지 않았다고 답하셨어요.", "fact": "경정청구 기한은 5년으로 연도별로 계산해야 해요 — 기간이 지난 연도는 따로 취급됩니다.", "basis": "법정신고기한이 지난 후 5년 이내에만 경정을 청구할 수 있습니다(국세기본법 제45조의2 제1항). 장애인 고용부담금은 손금산입 대상이라는 기준이 정해져 있어(대법원 2026. 3. 12. 선고 2024두30809 판결), 어느 연도가 기한 안에 들어오는지 계산하는 것이 출발점입니다.", "caution": "기간 계산은 법정신고기한 기준이에요 — 담당자와 함께 확인하세요.", "checklist": ["사업연도별로 부담금 납부액과 신고 당시 처리 방식을 한 표로 만드세요.", "각 연도의 법정신고기한과 경정청구 기한을 표시하세요.", "해당 연도 신고서와 납부 영수증을 한곳에 모으세요."], "share_summary": "판단 이유: 연도별 계산이나 자료 수집을 아직 해 보지 않았다고 답하셨어요.\n지금 할 일: 사업연도별로 부담금 납부액과 신고 당시 처리 방식을 한 표로 만드세요. / 각 연도의 법정신고기한과 경정청구 기한을 표시하세요. / 해당 연도 신고서와 납부 영수증을 한곳에 모으세요.\n주의: 기간 계산은 법정신고기한 기준이에요 — 담당자와 함께 확인하세요.\n", "disclaimer": "", "cta": ""}, "D": {"grade": "mid", "tag": "경정청구 검토 관건", "title": "기한 안의 연도가 있어 경정청구를 검토할 수 있는 상태예요.", "why": "5년 안에 들어오는 연도가 있고 자료도 모아 두었다고 답하셨어요.", "fact": "손금산입 기준이 확정됐어도 환급은 경정청구로만 가능해요 — 기한 안의 연도인지가 관건이에요.", "basis": "장애인 고용부담금은 손금산입 대상입니다(대법원 2026. 3. 12. 선고 2024두30809 판결, 법인세법 제21조). 이미 신고·납부한 법인세는 법정신고기한이 지난 후 5년 이내에 경정을 청구해 환급받을 수 있습니다(국세기본법 제45조의2 제1항).", "caution": "경정청구에도 요건과 절차가 있어요 — 기한과 요건을 함께 확인하세요.", "checklist": ["5년 안에 들어오는 연도와 금액을 한 표에서 먼저 확인하세요.", "해당 연도 신고서·납부 자료·부담금 납부액 근거를 준비하세요.", "경정청구 방법과 접수 절차를 세무 담당자와 확인하세요."], "share_summary": "판단 이유: 5년 안에 들어오는 연도가 있고 자료도 모아 두었다고 답하셨어요.\n지금 할 일: 5년 안에 들어오는 연도와 금액을 한 표에서 먼저 확인하세요. / 해당 연도 신고서·납부 자료·부담금 납부액 근거를 준비하세요. / 경정청구 방법과 접수 절차를 세무 담당자와 확인하세요.\n주의: 경정청구에도 요건과 절차가 있어요 — 기한과 요건을 함께 확인하세요.\n", "disclaimer": "", "cta": ""}, "E": {"grade": "check", "tag": "기한 경과 확인", "title": "5년 기한이 지난 연도인지부터 확인해야 해요.", "why": "5년이 모두 지난 연도가 있다고 답하셨어요.", "fact": "경정청구 기한은 법정신고기한이 지난 후 5년이에요 — 지난 연도는 환급 대상이 되지 않아요.", "basis": "법정신고기한이 지난 후 5년 이내에만 경정을 청구할 수 있습니다(국세기본법 제45조의2 제1항). 기한이 지난 연도는 환급 대상이 되지 않으므로, 실제 기한과 맞는지부터 확인한 뒤 남은 연도를 정리합니다.", "caution": "기간 경과 여부도 계산 결과예요 — 담당자 확인 후 결론을 정하세요.", "checklist": ["연도별로 법정신고기한과 경정청구 기한을 정확히 계산해 보세요.", "확인된 기한과 실제 기한이 맞는지 세무 담당자와 대조하세요.", "확인이 끝나면 남은 연도만 다시 이 진단을 해 보세요."], "share_summary": "판단 이유: 5년이 모두 지난 연도가 있다고 답하셨어요.\n지금 할 일: 연도별로 법정신고기한과 경정청구 기한을 정확히 계산해 보세요. / 확인된 기한과 실제 기한이 맞는지 세무 담당자와 대조하세요. / 확인이 끝나면 남은 연도만 다시 이 진단을 해 보세요.\n주의: 기간 경과 여부도 계산 결과예요 — 담당자 확인 후 결론을 정하세요.\n", "disclaimer": "", "cta": ""}, "F": {"grade": "check", "tag": "적용 여부 확인", "title": "아직 부담금이 없어 기준 확인이 먼저예요.", "why": "아직 장애인 고용부담금을 납부한 적이 없다고 답하셨어요.", "fact": "부담금이 생기는 순간 처리 방식이 문제가 돼요 — 미리 기준을 알아 두면 시작부터 정리돼요.", "basis": "법인세법 제21조는 각 호의 세금과 공과금만 손금불산입으로 정하고, 장애인 고용부담금은 손금산입 대상입니다(대법원 2026. 3. 12. 선고 2024두30809 판결). 부담금 부과 여부와 시점은 고용 현황에 따라 확인이 필요합니다.", "caution": "부과 여부는 고용 현황에 따라 달라요 — 확인부터 하세요.", "checklist": ["사업장의 장애인 고용 현황과 부담금 부과 여부를 확인하세요.", "부담금이 부과되면 손금산입으로 처리할지 기준을 미리 정하세요.", "항목 구분이 필요한 다른 부담금·부과금도 함께 목록으로 만드세요."], "share_summary": "판단 이유: 아직 장애인 고용부담금을 납부한 적이 없다고 답하셨어요.\n지금 할 일: 사업장의 장애인 고용 현황과 부담금 부과 여부를 확인하세요. / 부담금이 부과되면 손금산입으로 처리할지 기준을 미리 정하세요. / 항목 구분이 필요한 다른 부담금·부과금도 함께 목록으로 만드세요.\n주의: 부과 여부는 고용 현황에 따라 달라요 — 확인부터 하세요.\n", "disclaimer": "", "cta": ""}, "G": {"grade": "check", "tag": "확인 먼저", "title": "지금 처리 상태부터 확인해야 해요.", "why": "지금 처리·기록 상태를 명확히 파악하지 못했다고 답하셨어요.", "fact": "처리 방식은 신고서에 그대로 반영돼요 — 기억이 아니라 기록으로 확인해 보세요.", "basis": "법인세법 제21조는 손금불산입 대상을 각 호로 정하며, 장애인 고용부담금은 손금산입 대상입니다(대법원 2026. 3. 12. 선고 2024두30809 판결). 지난 연도 신고를 고치려면 법정신고기한이 지난 후 5년 이내에 경정을 청구해야 합니다(국세기본법 제45조의2 제1항).", "caution": "기억에 의지하지 말고 신고서와 기록으로 확인하세요.", "checklist": ["이번 연도 신고서에 부담금이 어떻게 반영됐는지 확인하세요.", "연도별 납부액과 처리 방식을 한 표로 적어 보세요.", "확인이 끝나면 이 진단을 처음부터 다시 해 보세요."], "share_summary": "판단 이유: 지금 처리·기록 상태를 명확히 파악하지 못했다고 답하셨어요.\n지금 할 일: 이번 연도 신고서에 부담금이 어떻게 반영됐는지 확인하세요. / 연도별 납부액과 처리 방식을 한 표로 적어 보세요. / 확인이 끝나면 이 진단을 처음부터 다시 해 보세요.\n주의: 기억에 의지하지 말고 신고서와 기록으로 확인하세요.\n", "disclaimer": "", "cta": ""}, "H": {"grade": "mid", "tag": "근거 문서 정리", "title": "구분 기록은 돼 있지만 근거 문서가 다음 단계예요.", "why": "항목은 구분해 기록하지만 손금산입 근거 문서는 아직 남겨 두지 않았다고 답하셨어요.", "fact": "손금산입 근거는 조문과 판결 요지 두 줄이면 충분히 남길 수 있어요.", "basis": "장애인 고용부담금은 법인세법 제21조 제5호의 손금불산입 대상 공과금에 해당하지 않아 손금산입 대상입니다(대법원 2026. 3. 12. 선고 2024두30809 판결). 근거를 문서로 남겨 두면 신고 담당자가 바뀌어도 같은 기준으로 처리됩니다.", "caution": "근거 없이 관행으로 처리하면 담당자 교체 시 기준이 흔들릴 수 있어요.", "checklist": ["조문 문구와 판결 요지를 두 줄로 적은 근거 문서를 만드세요.", "근거 문서를 신고 파일과 함께 보관하세요.", "처리 방식을 바꾼 연도가 있다면 그 근거도 함께 적으세요."], "share_summary": "판단 이유: 항목은 구분해 기록하지만 손금산입 근거 문서는 아직 남겨 두지 않았다고 답하셨어요.\n지금 할 일: 조문 문구와 판결 요지를 두 줄로 적은 근거 문서를 만드세요. / 근거 문서를 신고 파일과 함께 보관하세요. / 처리 방식을 바꾼 연도가 있다면 그 근거도 함께 적으세요.\n주의: 근거 없이 관행으로 처리하면 담당자 교체 시 기준이 흔들릴 수 있어요.\n", "disclaimer": "", "cta": ""}}}</script>
+<script>
+"use strict";
+var D = JSON.parse(document.getElementById("sc-data").textContent);
+var GRADE = {high:"가능성 높음", mid:"살펴볼 것", check:"확인 필요"};
+var screenEl = document.getElementById("screen");
+var pathStack = [];          // [{qid, qtext, label}]
+
+function h(tag, cls, text){
+  var e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(text !== undefined && text !== null) e.textContent = text;
+  return e;
+}
+function clearScreen(){ while(screenEl.firstChild) screenEl.removeChild(screenEl.firstChild); screenEl.className = "screen active"; window.scrollTo(0,0); }
+
+function setProgress(step, done){
+  var bar = document.getElementById("progress-bar");
+  var lab = document.getElementById("progress-label");
+  if(done){ bar.style.width = "100%"; lab.textContent = "진단 완료"; return; }
+  if(step === 0){ bar.style.width = "0%"; lab.textContent = ""; return; }
+  bar.style.width = Math.min(100, Math.round(step / D.nq_max * 100)) + "%";
+  lab.textContent = "질문 " + step;
+}
+
+function showIntro(){
+  pathStack = []; clearScreen(); setProgress(0);
+  var wrap = h("div","intro");
+  wrap.appendChild(h("div","intro-icon", D.icon || "⚖️"));
+  wrap.appendChild(h("h1","", D.hook));
+  if(D.myth){
+    var m = h("div","myth"); m.appendChild(h("b","","많은 분들이 이렇게 알고 있어요")); m.appendChild(document.createTextNode("“" + D.myth + "”"));
+    wrap.appendChild(m);
+  }
+  if(D.teaser) wrap.appendChild(h("p","", D.teaser));
+  var meta = h("div","meta");
+  [D.time || "약 1분", "객관식 질문 최대 " + D.nq_max + "개", "답변은 저장·전송되지 않아요"].forEach(function(t){ meta.appendChild(h("span","",t)); });
+  wrap.appendChild(meta);
+  var b = h("button","opt-btn primary","진단 시작하기"); b.type = "button";
+  b.onclick = function(){ goTo(D.start); };
+  wrap.appendChild(b);
+  screenEl.appendChild(wrap);
+}
+
+function goTo(id){
+  if(D.outcomes[id]) return showOutcome(id);
+  showQuestion(id);
+}
+
+function showQuestion(qid){
+  var q = D.questions[qid];
+  clearScreen();
+  var step = pathStack.length + 1;
+  setProgress(step);
+  screenEl.appendChild(h("div","q-count","질문 " + step));
+  screenEl.appendChild(h("div","q-text", q.text));
+  if(q.why) screenEl.appendChild(h("div","q-why", q.why));
+  var box = h("div","options");
+  q.options.forEach(function(o){
+    var b = h("button","opt-btn", o.label); b.type = "button";
+    b.onclick = function(){ pathStack.push({qid:qid, qtext:q.text, label:o.label}); goTo(o.next); };
+    box.appendChild(b);
+  });
+  screenEl.appendChild(box);
+  var back = h("button","back-btn", pathStack.length ? "← 이전 질문으로" : "← 처음으로"); back.type = "button";
+  back.onclick = function(){
+    if(!pathStack.length) return showIntro();
+    var last = pathStack.pop(); showQuestion(last.qid);
+  };
+  screenEl.appendChild(back);
+}
+
+function copyText(text, btn){
+  function ok(){ var o = btn.textContent; btn.textContent = "복사했어요 ✓"; setTimeout(function(){ btn.textContent = o; }, 1800); }
+  function fallback(){
+    var t = document.createElement("textarea"); t.value = text; t.style.position = "fixed"; t.style.opacity = "0";
+    document.body.appendChild(t); t.select();
+    try{ document.execCommand("copy"); ok(); }catch(e){ btn.textContent = "복사 실패 — 직접 선택해 주세요"; }
+    document.body.removeChild(t);
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(ok, fallback); } else { fallback(); }
+}
+
+function block(label, bodyNode){
+  var b = h("div","block"); b.appendChild(h("div","block-label",label)); b.appendChild(bodyNode); return b;
+}
+
+function cleanOne(s){ return String(s || "").replace(/\s+/g," ").trim(); }
+function shortLegal(s){
+  var x = cleanOne(s);
+  if(x.length <= 220) return x;
+  return x.slice(0,220).replace(/[\s,，;；:：]+[^\s]*$/g,"") + "…";
+}
+function fallbackShare(o){
+  var acts = (o.checklist || []).slice(0,3).map(function(x){ return cleanOne(x); }).filter(Boolean);
+  return [
+    "판단 이유: " + cleanOne(o.why),
+    "지금 할 일: " + acts.join(" / "),
+    "주의: " + cleanOne(o.caution)
+  ].join("\n");
+}
+function copySummaryText(o){
+  var answers = pathStack.map(function(p){ return cleanOne(p.label); }).filter(Boolean).join(" / ");
+  var summary = cleanOne(o.share_summary) ? o.share_summary : fallbackShare(o);
+  return [
+    "[법률 자가진단] " + cleanOne(D.hook),
+    "내 답변: " + (answers || "기록 없음"),
+    "결과: " + GRADE[o.grade] + " — " + cleanOne(o.title),
+    summary,
+    "법적 근거: " + shortLegal(o.basis),
+    "※ " + cleanOne(o.disclaimer || D.disclaimer),
+    "진단 링크: " + location.href
+  ].join("\n");
+}
+
+function showOutcome(oid){
+  var o = D.outcomes[oid];
+  clearScreen(); setProgress(0, true);
+  var head = h("div");
+  var g = h("span","grade " + o.grade, "● " + GRADE[o.grade]);
+  head.appendChild(g);
+  if(o.tag) head.appendChild(h("span","outcome-tag", o.tag));
+  screenEl.appendChild(head);
+  var wrap = h("div","outcome");
+  wrap.appendChild(h("h2","", o.title));
+
+  /* 왜 이 결과인가 — 내가 고른 답 + 근거 1줄 */
+  var why = h("div");
+  var chips = h("div","chips");
+  pathStack.forEach(function(p){ chips.appendChild(h("div","chip","· " + p.label)); });
+  why.appendChild(chips);
+  why.appendChild(h("div","why-line", o.why));
+  wrap.appendChild(block("🔎 왜 이 결과인가요?", why));
+
+  if(o.share_summary || o.why || o.caution){
+    wrap.appendChild(block("🧾 한눈에 정리", h("div","share-summary", o.share_summary || fallbackShare(o))));
+  }
+
+  if(o.fact && D.myth){
+    var vs = h("div","vs");
+    var m = h("div","m"); m.appendChild(h("b","","통념")); m.appendChild(document.createTextNode(D.myth));
+    var f = h("div","f"); f.appendChild(h("b","","이 경우엔")); f.appendChild(document.createTextNode(o.fact));
+    vs.appendChild(m); vs.appendChild(f);
+    wrap.appendChild(block("💡 통념 vs 사실", vs));
+  }
+  if(o.checklist && o.checklist.length){
+    var ul = h("ul","checklist"); o.checklist.forEach(function(c){ ul.appendChild(h("li","",c)); });
+    wrap.appendChild(block("✅ 지금 해볼 것", ul));
+  }
+  wrap.appendChild(block("⚠️ 주의할 점", h("div","block-body", o.caution)));
+  var bd = document.createElement("details"); bd.className = "basis-details";
+  bd.appendChild(h("summary","","📖 법적 근거 보기"));
+  bd.appendChild(h("div","block-body", o.basis));
+  wrap.appendChild(bd);
+  wrap.appendChild(h("div","disclaimer", o.disclaimer || D.disclaimer));
+  screenEl.appendChild(wrap);
+
+  var actions = h("div","actions");
+  var cp = h("button","ghost-btn","📋 결과 요약 복사하기"); cp.type = "button";
+  cp.onclick = function(){
+    var t = copySummaryText(o);
+    copyText(t, cp);
+  };
+  actions.appendChild(cp);
+  if(D.mother_url){
+    var a = h("a","ghost-btn","📰 원문 컬럼 읽어보기"); a.href = D.mother_url; a.target = "_blank"; a.rel = "noopener"; actions.appendChild(a);
+  }
+  var rs = h("button","ghost-btn","↺ 처음부터 다시"); rs.type = "button"; rs.onclick = showIntro;
+  actions.appendChild(rs);
+  screenEl.appendChild(actions);
+
+  var cta = h("div","cta-box");
+  cta.appendChild(document.createTextNode((o.cta || "지금 상황을 구체적으로 확인하고 싶다면") + " "));
+  var s = h("strong","", D.cta_lawyer);
+  cta.appendChild(s);
+  cta.appendChild(document.createTextNode("("));
+  var ml = h("a","", D.cta_email); ml.href = "mailto:" + D.cta_email; cta.appendChild(ml);
+  cta.appendChild(document.createTextNode(")에게 문의하세요."));
+  screenEl.appendChild(cta);
+}
+
+document.getElementById("footer").textContent = "제공 : " + D.cta_lawyer + " 법률사무소";
+showIntro();
+</script>
+</body>
+</html>
