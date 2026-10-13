@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="전문성과 권위가 충돌하는 순간을 근거·조건·오류 가능성으로 점검하는 3분 Lead Read 브리핑">
+  <title>전문성은 언제 권위에 눌리는가 — Lead Read</title>
+  <style>
+    :root { color-scheme: light; --ink:#2b3038; --muted:#70747c; --paper:#f2f0ec; --surface:#fffdfa; --line:#ddd8cf; --accent:#445b8a; --hot:#b86545; --soft:#ebe7df; --shadow:0 18px 48px rgba(43,48,56,.11); --serif:Georgia,"Times New Roman",serif; --sans:"Noto Sans KR",Pretendard,"Malgun Gothic",sans-serif; }
+    @media (prefers-color-scheme: dark) { :root { color-scheme:dark; --ink:#f0eee9; --muted:#b3b0a9; --paper:#222427; --surface:#2e3034; --line:#4b4d52; --accent:#a9bbf3; --hot:#f0a078; --soft:#3a3733; --shadow:0 18px 48px rgba(0,0,0,.32); } }
+    :root[data-theme="light"] { color-scheme:light; --ink:#2b3038; --muted:#70747c; --paper:#f2f0ec; --surface:#fffdfa; --line:#ddd8cf; --accent:#445b8a; --hot:#b86545; --soft:#ebe7df; --shadow:0 18px 48px rgba(43,48,56,.11); }
+    :root[data-theme="dark"] { color-scheme:dark; --ink:#f0eee9; --muted:#b3b0a9; --paper:#222427; --surface:#2e3034; --line:#4b4d52; --accent:#a9bbf3; --hot:#f0a078; --soft:#3a3733; --shadow:0 18px 48px rgba(0,0,0,.32); }
+    * { box-sizing:border-box; }
+    html { min-width:0; background:var(--paper); }
+    body { margin:0; color:var(--ink); background:var(--paper); font-family:var(--sans); line-height:1.72; word-break:keep-all; overflow-x:hidden; }
+    button,summary { font:inherit; }
+    button:focus-visible,summary:focus-visible { outline:3px solid var(--hot); outline-offset:4px; }
+    .header { border-bottom:1px solid var(--line); }
+    .header-inner,main,footer { width:min(100% - 40px,1080px); margin:0 auto; }
+    .header-inner { display:flex; justify-content:space-between; align-items:center; gap:18px; padding:21px 0; }
+    .brand { color:var(--accent); font-size:.78rem; font-weight:800; letter-spacing:.16em; text-transform:uppercase; }
+    .theme-toggle { border:1px solid var(--line); color:var(--ink); background:var(--surface); padding:8px 13px; border-radius:999px; cursor:pointer; font-size:.8rem; }
+    main { padding:55px 0 82px; }
+    .eyebrow,.kicker { color:var(--hot); font-size:.78rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
+    h1,h2,h3 { margin:0; text-wrap:balance; }
+    h1 { max-width:850px; margin-top:11px; font-family:var(--serif); font-size:clamp(2.5rem,7vw,5.2rem); line-height:1.02; letter-spacing:-.05em; }
+    .dek { max-width:740px; margin:24px 0 0; color:var(--muted); font-size:clamp(1.05rem,2vw,1.25rem); }
+    .question { margin-top:43px; padding:25px 28px; border:1px solid var(--line); border-top:5px solid var(--accent); background:var(--surface); box-shadow:var(--shadow); }
+    .question p { margin:9px 0 0; font-family:var(--serif); font-size:clamp(1.28rem,2.8vw,1.85rem); line-height:1.35; }
+    .section { margin-top:72px; }
+    h2 { margin-top:8px; font-family:var(--serif); font-size:clamp(1.82rem,4vw,2.85rem); line-height:1.14; }
+    h3 { font-size:1.04rem; line-height:1.35; }
+    p { max-width:70ch; margin:16px 0 0; }
+    .lead { font-size:1.17rem; }
+    .triad { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-top:30px; }
+    .axis { min-width:0; padding:24px; border:1px solid var(--line); background:var(--surface); }
+    .axis:nth-child(1) { border-top:5px solid var(--accent); }
+    .axis:nth-child(2) { border-top:5px solid var(--hot); }
+    .axis:nth-child(3) { border-top:5px solid var(--ink); }
+    .axis-mark { color:var(--accent); font-family:var(--serif); font-size:2.4rem; line-height:1; }
+    .axis:nth-child(2) .axis-mark { color:var(--hot); }
+    .axis:nth-child(3) .axis-mark { color:var(--ink); }
+    .axis-label { margin-top:18px; color:var(--muted); font-size:.74rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }
+    .axis h3 { margin-top:8px; font-family:var(--serif); font-size:1.32rem; }
+    .axis p { color:var(--muted); font-size:.94rem; }
+    .split { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; margin-top:28px; }
+    .panel { min-width:0; padding:24px; border:1px solid var(--line); background:var(--surface); }
+    .panel:first-child { border-top:4px solid var(--accent); }
+    .panel:last-child { border-top:4px solid var(--hot); }
+    .panel-label { color:var(--muted); font-size:.75rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }
+    .panel h3 { margin-top:10px; font-family:var(--serif); font-size:1.34rem; }
+    .panel p { color:var(--muted); font-size:.95rem; }
+    .map { display:grid; grid-template-columns:.7fr 1.3fr; gap:30px; align-items:start; }
+    .map-mark { color:var(--hot); font-family:var(--serif); font-size:3.2rem; line-height:1.02; }
+    .map-copy p { margin-top:0; }
+    .checks { display:grid; gap:11px; margin-top:26px; }
+    .check { display:grid; grid-template-columns:32px 1fr; gap:14px; padding:17px 19px; border:1px solid var(--line); background:var(--surface); }
+    .check-number { color:var(--accent); font-family:var(--serif); font-size:1.35rem; }
+    .check p { margin-top:4px; color:var(--muted); font-size:.93rem; }
+    details { margin-top:22px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    summary { padding:16px 0; cursor:pointer; color:var(--accent); font-weight:800; }
+    .evidence { padding:0 0 22px; color:var(--muted); font-size:.93rem; }
+    .evidence p { margin-top:10px; }
+    .closing { margin-top:70px; padding:31px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .closing p { margin-top:8px; font-family:var(--serif); font-size:clamp(1.3rem,3vw,2.1rem); line-height:1.35; }
+    footer { padding:24px 0 48px; color:var(--muted); font-size:.82rem; }
+    footer p { margin:4px 0 0; }
+    .author-credit { color:var(--ink); font-weight:700; }
+    @media (max-width:720px) { .header-inner,main,footer { width:min(100% - 28px,1080px); } .triad,.split,.map { grid-template-columns:1fr; } .axis,.panel,.check { padding:18px; } .map-mark { font-size:2.7rem; } }
+    @media (prefers-reduced-motion:reduce) { * { scroll-behavior:auto !important; transition:none !important; } }
+  </style>
+</head>
+<body>
+  <header class="header"><div class="header-inner"><div class="brand">Lead Read · 3분 브리핑</div><button class="theme-toggle" type="button" aria-label="화면 테마 전환" aria-pressed="false">다크 모드</button></div></header>
+  <main>
+    <div class="eyebrow">Expertise / authority / dissent</div>
+    <h1>전문성은 언제 권위에 눌리는가</h1>
+    <p class="dek">전문가의 결론을 믿는 것과 전문가에게 질문하지 않는 것은 다르다. 조직은 판단의 근거와 적용 조건, 틀릴 수 있는 경계를 함께 설계해야 한다.</p>
+    <section class="question" aria-labelledby="question-title"><div class="kicker" id="question-title">핵심 질문</div><p>지금 조직이 신뢰하는 것은 실제 전문성인가, 아니면 전문성의 이름을 빌린 권위인가?</p></section>
+
+    <section class="section" aria-labelledby="conclusion-title"><div class="kicker">한 문장 결론</div><h2 id="conclusion-title">전문성을 보호하는 가장 좋은 방법은 판단의 조건을 공개하는 것이다.</h2><p class="lead">전문성은 특정 영역에서 반복된 학습과 실천을 통해 형성된 지식 구조와 판단 능력이다. 직함과 연차는 단서일 수 있지만 대리물이 아니다. 누가 무엇을 보았는지, 어떤 상황에 적용되는지, 무엇을 포기해야 하는지를 드러낼 때 전문성은 권위와 분리되어 오래 작동한다.</p></section>
+
+    <section class="section" aria-labelledby="triad-title"><div class="kicker">판단의 세 축</div><h2 id="triad-title">전문가의 말보다 먼저 세 가지를 확인하라.</h2><div class="triad">
+      <article class="axis"><div class="axis-mark">01</div><div class="axis-label">출처</div><h3>누가 무엇을 보았는가?</h3><p>전문성을 근속연수나 직함으로만 증명하지 않는다. 어떤 문제를 다뤘고, 어떤 피드백을 받았으며, 새로운 상황에 지식을 적용했는지를 묻는다.</p></article>
+      <article class="axis"><div class="axis-mark">02</div><div class="axis-label">조건</div><h3>이 판단은 어디까지 유효한가?</h3><p>전문가는 만능 조언자가 아니다. 적용되는 상황과 적용되지 않는 예외를 말할 수 있어야 지식이 결정에 정확히 들어간다.</p></article>
+      <article class="axis"><div class="axis-mark">03</div><div class="axis-label">대가</div><h3>다른 목표와 충돌하면 무엇을 포기하는가?</h3><p>기술적 판단은 우선순위와 연결되어야 한다. 비용·속도·안전처럼 충돌하는 목표를 숨기면 권위가 결정을 대신한다.</p></article>
+    </div></section>
+
+    <section class="section" aria-labelledby="tension-title"><div class="kicker">두 관점의 긴장</div><h2 id="tension-title">전문 지식은 판단을 높이지만, 권위는 판단의 시야를 좁힐 수 있다.</h2><div class="split">
+      <article class="panel"><div class="panel-label">관점 A · 지식의 가치</div><h3>전문성은 복잡성과 예외를 결정 안으로 가져온다.</h3><p>Rousseau·Stouten의 2025년 종합은 전문성을 반복된 학습과 실천, 지식의 적용 능력으로 본다. 전문가는 비전문가가 보지 못한 맥락과 오류 가능성을 설명해 결정의 질을 높일 수 있다.</p></article>
+      <article class="panel"><div class="panel-label">관점 B · 권위의 역설</div><h3>높은 지위가 이견을 더 어렵게 만들 수 있다.</h3><p>Kennedy·Anderson의 2017년 연구는 높은 지위의 구성원이 조직과 자신을 강하게 동일시하면서 문제를 덜 비윤리적으로 인식하고 이의를 덜 제기할 수 있음을 보였다. 권한은 수정 능력과 정상화의 위험을 함께 키운다.</p></article>
+    </div><p>전문성의 이름으로 외부 질문을 거부하면 전문가 집단도 권위주의가 된다. 높은 지위의 의견도 현장 관찰과 같은 방식으로 검토해야 한다.</p></section>
+
+    <section class="section" aria-labelledby="map-title"><div class="kicker">적용 장면</div><h2 id="map-title">조직의 분류표가 읽지 못하는 전문성을 찾아라.</h2><div class="map"><div class="map-mark">보이지<br>않는<br>전문성도<br>있다</div><div class="map-copy"><p>Monteiro의 2025년 항공우주 조직 연구는 조직 구조가 전문가의 전문 영역을 단순히 담는 것이 아니라 적극적으로 만들어 낸다고 분석했다. 어떤 지식이 높은 가치로 등급화되는지, 누가 전문가로 인정받는지, 어떤 언어가 경영진에게 번역되는지가 전문성의 가시성을 바꾼다.</p><p>의사결정 문서에는 직위가 아니라 판단의 근거와 적용 조건을 기록한다. 서로 다른 전문 분야가 충돌하면 한 분야의 승패보다 공통으로 확인할 현상을 정한다. 전문가는 결론뿐 아니라 틀릴 조건을 말하고, 조직은 평가체계 밖의 전문성을 정기적으로 찾는다.</p></div></div></section>
+
+    <section class="section" aria-labelledby="checks-title"><div class="kicker">리더의 판단 질문</div><h2 id="checks-title">권위가 전문성의 이름을 빌려 말하기 전에 멈춰라.</h2><div class="checks">
+      <article class="check"><div class="check-number">01</div><div><h3>우리 조직에서 전문가는 직함으로 인정되는가, 실제 판단 능력으로 인정되는가?</h3><p>연차와 지위를 전문성의 대리물로 쓰면 새로운 상황에 대한 적용 능력을 놓칠 수 있다.</p></div></article>
+      <article class="check"><div class="check-number">02</div><div><h3>가장 높은 사람이 말하기 전에 현장의 반례가 올라오는가?</h3><p>전문가의 독립성과 질문의 절차가 없다면 권위와 동일시된 지위가 이견을 먼저 닫을 수 있다.</p></div></article>
+      <article class="check"><div class="check-number">03</div><div><h3>전문가는 자신의 판단이 틀릴 조건을 말할 수 있는가?</h3><p>오류 가능성을 말할 수 있어야 전문 지식은 정당화가 아니라 검토 가능한 근거가 된다.</p></div></article>
+    </div></section>
+
+    <section class="section" aria-labelledby="evidence-title"><div class="kicker">근거의 자리</div><h2 id="evidence-title">암묵지를 신비화하지도, 직함으로 단순화하지도 말 것.</h2><details><summary>연구·자료의 핵심을 펼쳐 읽기</summary><div class="evidence"><p>Rousseau, D. M., &amp; Stouten, J. (2025), “Experts and expertise in organizations: An integrative review on individual expertise.” 전문성을 학습·실천·적용 능력의 구조로 검토했다.</p><p>Kennedy, J. A., &amp; Anderson, C. (2017), “Hierarchical rank and principled dissent: How holding higher rank suppresses objection to unethical practices.” 높은 지위와 원칙적 이견의 관계를 분석했다.</p><p>Monteiro, P. (2025), “Generating, grading, and ghosting: How organizing experts shapes expertise.” 조직 구조가 전문 분야와 전문성의 가시성을 만드는 방식을 현장 연구했다.</p></div></details></section>
+
+    <div class="closing"><div class="kicker">기억할 문장</div><p>전문성은 질문을 멈추게 하는 권위가 아니라, 더 정확한 질문을 가능하게 하는 근거다.</p></div>
+  </main>
+  <footer><p>Lead Read Briefing · 지식의 출처와 경계를 드러낼 것.</p><p class="author-credit">&lt;조우성 변호사 작성&gt;</p></footer>
+  <script>
+    (() => { const root=document.documentElement; const button=document.querySelector('.theme-toggle'); const saved=localStorage.getItem('leadread-theme'); if(saved==='dark'||saved==='light') root.dataset.theme=saved; const sync=()=>{const dark=root.dataset.theme==='dark'||(!root.dataset.theme&&matchMedia('(prefers-color-scheme: dark)').matches); button.textContent=dark?'라이트 모드':'다크 모드'; button.setAttribute('aria-pressed',dark?'true':'false');}; button.addEventListener('click',()=>{const next=root.dataset.theme==='dark'?'light':'dark'; root.dataset.theme=next; localStorage.setItem('leadread-theme',next); sync();}); sync(); })();
+  </script>
+</body>
+</html>
