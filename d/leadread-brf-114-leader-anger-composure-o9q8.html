@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>리더는 화를 내야 하는가 — Lead Read</title>
+  <style>
+    :root { color-scheme: light; --bg:#f7f4f1; --panel:#fffdfa; --ink:#2b222d; --muted:#706974; --line:#ded7d8; --coral:#b84e52; --teal:#267e7b; --soft:#f0e7e3; --shadow:0 18px 50px rgba(43,34,45,.11); }
+    :root[data-theme="dark"] { color-scheme: dark; --bg:#211c29; --panel:#30263a; --ink:#f5efe9; --muted:#c4bac6; --line:#55455f; --coral:#ff8b87; --teal:#70d0c2; --soft:#3d3048; --shadow:0 18px 50px rgba(0,0,0,.28); }
+    @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { color-scheme: dark; --bg:#211c29; --panel:#30263a; --ink:#f5efe9; --muted:#c4bac6; --line:#55455f; --coral:#ff8b87; --teal:#70d0c2; --soft:#3d3048; --shadow:0 18px 50px rgba(0,0,0,.28); } }
+    * { box-sizing:border-box; }
+    html { background:var(--bg); }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family: Georgia, "Noto Serif KR", serif; line-height:1.72; word-break:keep-all; }
+    button { font:inherit; }
+    .wrap { width:min(100% - 32px, 980px); margin:0 auto; padding:24px 0 60px; }
+    .topbar { display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:46px; font:600 12px/1.2 system-ui, sans-serif; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
+    .brand { color:var(--teal); }
+    .theme { cursor:pointer; border:1px solid var(--line); border-radius:999px; padding:8px 12px; background:var(--panel); color:var(--ink); }
+    .hero { padding:clamp(28px, 7vw, 76px); border:1px solid var(--line); border-radius:28px; background:linear-gradient(135deg, var(--panel), var(--soft)); box-shadow:var(--shadow); }
+    .eyebrow { margin:0 0 16px; color:var(--coral); font:700 13px/1.3 system-ui, sans-serif; letter-spacing:.09em; }
+    h1 { max-width:760px; margin:0; font-size:clamp(38px, 7vw, 76px); line-height:1.08; letter-spacing:-.055em; }
+    .dek { max-width:650px; margin:26px 0 0; font-size:clamp(18px, 2.5vw, 24px); color:var(--muted); }
+    .meta { display:flex; flex-wrap:wrap; gap:10px; margin-top:30px; font:600 12px/1.3 system-ui, sans-serif; color:var(--muted); }
+    .meta span { border:1px solid var(--line); border-radius:999px; padding:7px 10px; }
+    main { margin-top:50px; }
+    .question { margin:0 0 18px; font-size:clamp(25px, 4vw, 42px); line-height:1.2; letter-spacing:-.035em; }
+    .lead { font-size:20px; }
+    .grid { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:18px; margin:34px 0; }
+    .card { padding:28px; border:1px solid var(--line); border-radius:20px; background:var(--panel); }
+    .card h3 { margin:0 0 10px; font:700 16px/1.35 system-ui, sans-serif; letter-spacing:.01em; }
+    .card p { margin:0; color:var(--muted); }
+    .coral { border-top:5px solid var(--coral); }
+    .teal { border-top:5px solid var(--teal); }
+    .section { margin:54px 0; }
+    .section h2 { margin:0 0 15px; font-size:clamp(26px, 4vw, 38px); line-height:1.2; letter-spacing:-.035em; }
+    .section p { max-width:760px; }
+    .callout { margin:28px 0; padding:24px 28px; border-left:5px solid var(--coral); background:var(--soft); border-radius:0 16px 16px 0; font-size:21px; }
+    ol { padding-left:1.25em; }
+    li { margin:12px 0; padding-left:5px; }
+    details { margin-top:22px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    summary { cursor:pointer; padding:18px 0; font:700 15px/1.4 system-ui, sans-serif; }
+    details p { color:var(--muted); }
+    .sources { font-size:14px; color:var(--muted); }
+    footer { margin-top:60px; padding-top:22px; border-top:1px solid var(--line); color:var(--muted); font:14px/1.6 system-ui, sans-serif; }
+    .author { color:var(--ink); font-weight:700; }
+    :focus-visible { outline:3px solid var(--teal); outline-offset:3px; }
+    @media (max-width:700px) { .wrap { width:min(100% - 22px, 980px); padding-top:16px; } .topbar { margin-bottom:26px; } .hero { border-radius:20px; padding:27px 22px; } .grid { grid-template-columns:1fr; } .card { padding:23px; } .lead { font-size:18px; } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior:auto !important; transition:none !important; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar"><div class="brand">Lead Read / 3 min briefing</div><button class="theme" type="button" aria-label="테마 전환">테마 전환</button></header>
+    <section class="hero" aria-labelledby="title">
+      <p class="eyebrow">ANGER · STATUS · COMPOSURE</p>
+      <h1 id="title">리더는 화를 내야 하는가</h1>
+      <p class="dek">분노는 확신과 유능함의 신호처럼 읽힐 수 있다. 그러나 사람을 향한 폭발은 지위를 깎고, 문제를 향한 절제된 화만이 조직을 깨운다.</p>
+      <div class="meta"><span>의사결정자를 위한 읽기</span><span>두 관점의 논쟁</span><span>에피쿠로스 렌즈</span></div>
+    </section>
+    <main>
+      <section class="section">
+        <h2 class="question">화내는 사람이 회의의 주인이 되는가?</h2>
+        <p class="lead">조직은 감정을 숨기라고 가르치지만, 목소리를 높이는 사람의 의견이 통과되는 장면도 반복된다. 분노가 확신의 신호로 읽히는 순간이 있기 때문이다. 문제는 화의 유무가 아니라, 화가 향하는 대상과 표현이 넘는 선이다.</p>
+        <div class="callout">한 문장 결론: <strong>리더의 화는 표현의 선은 넘되 부적절함의 선은 넘지 않고, 사람보다 문제를 향할 때만 권위가 된다.</strong></div>
+      </section>
+      <section class="grid" aria-label="두 관점">
+        <article class="card coral"><h3>관점 A · 분노는 지위의 신호다</h3><p>Tiedens(2001)는 네 차례 실험에서 화내는 정치인에게 더 많은 표가 모이고, 화내는 지원자에게 더 높은 자리와 연봉이 주어지며, 화내는 직원이 승진 후보로 선택되는 경향을 보였다. 분노가 확신과 유능함의 신호로 읽힌다는 설명이다.</p></article>
+        <article class="card teal"><h3>관점 B · 두 문턱 사이의 화만 약이다</h3><p>Geddes와 Callister(2007)는 분노 표현의 이중 문턱을 제시했다. 화를 말로 꺼내는 표현의 문턱은 넘어야 하지만, 조직의 표현 규범을 어기는 부적절함의 문턱은 넘지 않아야 한다. 참으면 곪고 폭발하면 처벌된다.</p></article>
+      </section>
+      <section class="section">
+        <h2>분노는 위치를 가져야 한다</h2>
+        <p>두 관점은 화를 내라와 참으라는 대립이 아니다. 어디까지 표현하고 무엇을 향할지를 정하라는 말이다. “네가 문제다”는 사람을 겨냥하지만, “이 숫자가 문제다”는 현상을 겨냥한다. 전자는 관계를 깨고 후자는 개선의 문을 연다.</p>
+      </section>
+      <section class="section">
+        <h2>머스크: 두 선을 넘나든 전화 한 통</h2>
+        <p>2018년 5월 전기차 업체의 실적 발표 전화회의에서 최고경영자는 애널리스트의 질문을 “지루하고 멍청하다”고 잘랐고, 다른 질문에는 청취자로 넘어갔다. 주가는 시간외 거래에서 5퍼센트 넘게 빠졌다. 분노의 힘은 있었지만 부적절함의 선을 넘은 대가였다.</p>
+        <p>3개월 뒤 그는 지난번 무례를 사과하고 무시했던 애널리스트의 질문을 가장 먼저 받았다. 주가는 시간외 거래에서 8.5퍼센트 올랐다. 같은 사람의 분노가 사과와 복귀의 절차를 거치자, 화는 약함이 아니라 선 안으로 돌아오는 기술이 됐다.</p>
+      </section>
+      <section class="section">
+        <h2>에피쿠로스의 마음의 평정</h2>
+        <p>에피쿠로스에게 평정은 감정이 없는 상태가 아니라 욕망과 두려움을 가려내는 상태였다. 화도 없애는 대상이 아니라 쓸 곳을 고르는 대상이다. 평정의 리더는 화가 없을 때가 아니라 화가 있어도 방향을 잃지 않을 때 알아볼 수 있다.</p>
+        <ol>
+          <li>이 화는 사람을 향하는가, 문제를 향하는가?</li>
+          <li>이 조직에서 어디까지가 말이고 어디부터가 폭발인가?</li>
+          <li>선을 넘었다면 어떻게 사과하고 다시 돌아올 것인가?</li>
+          <li>화의 뒤에 재발 방지의 약속과 절차를 남길 것인가?</li>
+        </ol>
+      </section>
+      <section class="section">
+        <h2>결정 전에 남길 문장</h2>
+        <p>화의 자를 먼저 그어라. 어디까지 말할지, 선을 넘으면 어떻게 돌아올지를 정하라. 좋은 리더는 화를 내지 않는 리더가 아니라 두 선 사이에서 문제를 향해 화내는 리더다.</p>
+        <details><summary>출처와 읽는 법</summary><p class="sources">Tiedens(2001)는 분노 표현과 지위 수여의 관계를 실험했고, Geddes와 Callister(2007)는 분노 표현의 이중 문턱 모형을 제시했다. 머스크 사례는 두 차례 실적 발표 전화회의와 사과라는 공개 흐름에 한정해 적용했다. 에피쿠로스의 마음의 평정은 감정을 제거하기보다 방향을 다스리는 렌즈로 사용했다.</p></details>
+      </section>
+    </main>
+    <footer><div class="author">&lt;조우성 변호사 작성&gt;</div><div>Lead Read · 평정은 화가 없는 상태가 아니라 화의 방향을 아는 상태입니다.</div></footer>
+  </div>
+  <script>
+    (() => { const root = document.documentElement; const button = document.querySelector('.theme'); button.addEventListener('click', () => { root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark'; }); })();
+  </script>
+</body>
+</html>
