@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko" data-theme="light">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>책임은 언제 학습을 막는가 — Lead Read</title>
+<style>
+:root{--bg:#f0f1ef;--paper:#fffefa;--ink:#20262b;--muted:#69747b;--line:#d3d9d6;--blue:#285d72;--blue-soft:#dcecef;--red:#a34f43;--red-soft:#f3dfda;--gold:#b18442;--shadow:0 16px 45px rgba(35,48,45,.09)}
+[data-theme="dark"]{--bg:#172329;--paper:#223139;--ink:#eef3f1;--muted:#b5c3c4;--line:#43545b;--blue:#91c9da;--blue-soft:#2a4b56;--red:#efa08e;--red-soft:#523631;--gold:#e2bb70;--shadow:0 16px 45px rgba(0,0,0,.26)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.72}button{font:inherit}
+.top{max-width:1080px;margin:0 auto;padding:26px 28px 0;display:flex;justify-content:space-between;align-items:center;color:var(--muted);font:600 12px/1.2 Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase}.mark{color:var(--blue)}.toggle{border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:8px 12px;cursor:pointer;font-size:12px}
+main{max-width:860px;margin:38px auto 72px;padding:0 28px}.kicker{color:var(--red);font:700 13px/1.3 Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase}.hero{padding:30px 0 36px;border-bottom:1px solid var(--line)}h1{font-size:clamp(40px,7vw,74px);line-height:1.05;letter-spacing:-.05em;margin:16px 0 22px;max-width:760px}.dek{font-size:20px;line-height:1.55;max-width:700px;color:var(--muted);margin:0}.byline{margin-top:24px;color:var(--muted);font:13px/1.5 Arial,sans-serif}.byline strong{color:var(--ink)}
+.lead-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:18px;margin:28px 0}.panel{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow)}.panel h2{margin:0 0 8px;font-size:21px;line-height:1.25}.panel p{margin:0;color:var(--muted)}.signal{border-top:5px solid var(--red)}.lens{border-top:5px solid var(--blue)}
+article{font-size:18px}article h2{font-size:29px;line-height:1.25;margin:52px 0 13px;letter-spacing:-.02em}article h3{font-size:20px;margin:28px 0 8px;color:var(--blue)}article p{margin:13px 0}article strong{color:var(--red)}.quote{margin:28px 0;padding:22px 24px;border-left:4px solid var(--gold);background:var(--paper);font-size:22px;line-height:1.45}.duo{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:22px 0}.duo .card{padding:21px;border-radius:14px;border:1px solid var(--line);background:var(--paper)}.duo .card h3{margin:0 0 7px}.steps{counter-reset:item;list-style:none;padding:0;margin:20px 0}.steps li{counter-increment:item;display:grid;grid-template-columns:34px 1fr;gap:12px;margin:16px 0}.steps li:before{content:counter(item);display:grid;place-items:center;width:29px;height:29px;border-radius:50%;background:var(--blue);color:#fff;font:700 14px Arial,sans-serif}.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--paper);margin:20px 0}table{border-collapse:collapse;width:100%;min-width:620px;font-size:16px}th,td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--line);vertical-align:top}th{background:var(--blue-soft);color:var(--blue);font:700 13px Arial,sans-serif;letter-spacing:.04em}tr:last-child td{border-bottom:0}details{margin:34px 0;border:1px solid var(--line);border-radius:14px;background:var(--paper);padding:0 18px}summary{cursor:pointer;padding:16px 0;font-weight:700;color:var(--blue)}details p{color:var(--muted);font-size:16px}.foot{border-top:1px solid var(--line);margin-top:52px;padding-top:20px;color:var(--muted);font:12px/1.6 Arial,sans-serif}
+@media(max-width:680px){.top{padding:20px 18px 0}.top span{font-size:10px}main{padding:0 18px;margin-top:25px}h1{font-size:44px}.dek{font-size:18px}.lead-grid,.duo{grid-template-columns:1fr}article{font-size:17px}article h2{font-size:26px}.quote{font-size:19px;padding:18px}.panel{padding:18px}}
+</style>
+</head>
+<body>
+<div class="top"><span class="mark">Lead Read / 책임의 설계</span><button class="toggle" id="themeToggle" type="button">화면 전환</button></div>
+<main>
+<header class="hero">
+<div class="kicker">책임과 학습 · 조직의 기억</div>
+<h1>책임은 언제 학습을 막는가</h1>
+<p class="dek">사고 뒤에 범인을 찾는 일은 질서를 세울 수 있다. 그러나 더 나은 판단을 위해서는 누가 무엇을 알았고 어떤 선택지가 있었는지까지 복원해야 한다.</p>
+<div class="byline"><strong>&lt;조우성 변호사 작성&gt;</strong> · Lead Read Briefing</div>
+</header>
+<section class="lead-grid" aria-label="브리핑 요약">
+<div class="panel signal"><h2>핵심 관찰</h2><p>책임성이 학습 목표와 연결되면 보고의 속도와 정확도를 높인다. 평판 보호와 결합되면 같은 책임 제도가 침묵을 만든다.</p></div>
+<div class="panel lens"><h2>오늘의 렌즈</h2><p>한스 요나스의 책임: 현재의 제재를 넘어 아직 오지 않은 피해를 줄이도록 기억과 절차를 설계하는 태도.</p></div>
+</section>
+<article>
+<div class="quote">책임은 처벌의 종착점이 아니라, 다음 판단이 더 나아졌는지 확인하는 경계여야 한다.</div>
+<h2>1. 책임은 왜 학습을 닫는가</h2>
+<p>사고가 나면 조직은 먼저 “누가 책임자인가”를 묻는다. 질문은 정당하다. 책임이 사라진 곳에서는 같은 문제가 반복되고, 피해를 입은 사람은 설명을 들을 권리마저 잃는다.</p>
+<p>하지만 책임을 곧바로 개인의 과실과 처벌로 좁히면 사람들은 다음 사고를 막기 위해 말하는 대신 자신을 보호하기 위해 보고를 고른다. 책임은 질서를 세우는 장치이면서 동시에 학습을 닫는 장치가 될 수 있다.</p>
+<div class="duo"><div class="card"><h3>학습을 여는 책임</h3><p>무슨 일이 일어났는지 설명하고, 다음 행동을 정하고, 결과를 다시 확인한다. 보고는 전문성을 드러내는 신호가 된다.</p></div><div class="card"><h3>침묵을 만드는 책임</h3><p>회의가 원인 해석보다 실수한 사람 찾기에 집중한다. 보고자는 사실을 축소하고 관리자는 방어적 설명을 만든다.</p></div></div>
+<h2>2. 책임성은 두 얼굴을 가진다</h2>
+<p>Baxter는 영국 왕립공군의 조직학습 사례를 통해 책임성과 학습의 관계를 살폈다. 학습 목표와 책임 체계가 정렬된 경우 구성원은 문제를 더 빠르고 정확하게 보고했다. 상급자에게 설명해야 한다는 사실이 사건을 숨기지 않게 만든 것이다.</p>
+<p>반대로 Vince와 Saleem은 공공 부문 조직에서 조심성과 비난의 정치가 성찰과 소통을 막는 방식을 보여준다. 차이는 책임의 유무보다 책임을 통해 조직이 무엇을 보상하고 무엇을 처벌하는가에 있다.</p>
+<ol class="steps"><li><span><strong>설명</strong><br>무엇이 일어났고, 당시 어떤 정보가 있었는지 복원한다.</span></li><li><span><strong>변경</strong><br>다음 행동과 바꿔야 할 업무 조건을 결정한다.</span></li><li><span><strong>확인</strong><br>변경 뒤 같은 경고가 다르게 처리되는지 다시 본다.</span></li></ol>
+<h2>3. 같은 제도, 다른 학습 결과</h2>
+<p>미국 보훈 의료시설 네 곳의 환자안전 프로그램을 조사한 보고서는 이 차이를 구체적으로 보여준다. 일부 시설에서는 가까스로 막은 사고와 실제 위해 사건을 다학제 팀이 분석했다. 보고한 사람이 곧바로 범인으로 지목되지 않고 업무 흐름·인력·절차·의사소통을 함께 살필 때 보고는 시스템을 다시 설계하는 자료가 되었다.</p>
+<p>신뢰가 낮은 시설에서는 보고를 꺼리는 사람이 많았고, 보고 절차가 진료 시간을 빼앗는다는 불만도 나왔다. 같은 ‘책임’이라는 이름 아래에서도 한쪽은 질문을 넓혔고, 다른 쪽은 방어막을 두껍게 했다.</p>
+<div class="check"><h3>보고가 학습으로 이어지는 증거</h3><p>사건 뒤 업무 흐름이 바뀌었는가 · 정보와 권한의 빈틈이 보완되었는가 · 다학제 관점이 기록되었는가 · 보고한 사람이 불이익을 받지 않았다는 신호가 있는가</p></div>
+<h2>4. 한스 요나스: 아직 오지 않은 피해까지</h2>
+<p>한스 요나스의 책임은 현재의 행위자를 꾸짖는 데서 끝나지 않는다. 행위가 미래에 미칠 결과를 떠맡고, 아직 오지 않은 피해를 줄이도록 현재의 선택을 설계하는 태도에 가깝다.</p>
+<p>이 관점에서 리더의 책임은 과거의 범인을 골라내는 데서 멈추지 않는다. 조직이 기억하고 절차를 바꾸도록 만드는 데까지 이어진다. 책임의 해상도를 높인다는 것은 책임자를 없애는 일이 아니라, 권한·정보·제약을 구분해 다음 행동의 책임을 더 정확히 배분하는 일이다.</p>
+<h2>5. 결정에 대입하기</h2>
+<p>최근 사건 하나를 골라 개인의 선택과 시스템이 만든 선택지를 두 칸으로 나눠 적어보자.</p>
+<div class="table-wrap"><table><thead><tr><th>개인의 선택</th><th>시스템이 만든 선택지</th></tr></thead><tbody><tr><td>당시 담당자가 실제로 한 행동은 무엇인가?</td><td>그 행동 외에 현실적으로 선택할 수 있었던 길은 무엇인가?</td></tr><tr><td>어떤 경고를 알고도 넘겼는가?</td><td>정보·권한·인력·시간은 어떻게 배치되어 있었는가?</td></tr><tr><td>다음에 바꿀 개인 습관은 무엇인가?</td><td>같은 판단을 반복하지 않도록 바꿀 절차는 무엇인가?</td></tr></tbody></table></div>
+<p>책임성의 질은 제재의 강도가 아니라 다음 사건에서 더 나은 판단이 가능해졌는지로 측정해야 한다. 이미 바뀐 절차가 작동하면 기억은 역량이 된다. 지난번 담당자에게 다시 주의를 주는 데 그치면 기억은 평판 기록으로만 남는다.</p>
+<details><summary>출처와 개념 메모 열기</summary><p>Baxter(2017)는 조직학습 두 프레임워크에서 학습을 위한 책임성의 중요성을 다룬다. Vince와 Saleem(2004)은 조심성과 비난이 조직학습에 미치는 영향을 분석한다. 미국 회계감사원(GAO)의 2005년 환자안전 프로그램 보고서는 네 의료시설의 문화와 보고 경험을 조사했다. 한스 요나스의 책임의 원리는 미래의 결과를 현재의 판단에 포함시키는 관점을 제공한다.</p></details>
+</article>
+<footer class="foot">Lead Read Briefing · 책임은 기억을 처벌로 남길 수도, 역량으로 바꿀 수도 있다.<br>&lt;조우성 변호사 작성&gt;</footer>
+</main>
+<script>
+const root=document.documentElement;const button=document.getElementById('themeToggle');button.addEventListener('click',()=>{root.dataset.theme=root.dataset.theme==='dark'?'light':'dark'});
+</script>
+</body>
+</html>
