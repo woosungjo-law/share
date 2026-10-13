@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko" data-theme="light">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>통제는 언제 신뢰를 파괴하는가 — Lead Read</title>
+<style>
+:root{--bg:#f3f0e9;--paper:#fffdf8;--ink:#20272d;--muted:#6d757a;--line:#d8d2c8;--blue:#285f78;--blue-soft:#dcecf1;--red:#a85041;--red-soft:#f4dfd8;--gold:#b58741;--shadow:0 16px 45px rgba(48,43,35,.09)}
+[data-theme="dark"]{--bg:#17232a;--paper:#22323a;--ink:#eef3f2;--muted:#b6c2c3;--line:#46565d;--blue:#91c9df;--blue-soft:#2b4d5a;--red:#efa08c;--red-soft:#523630;--gold:#e4bc6e;--shadow:0 16px 45px rgba(0,0,0,.27)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.72}button{font:inherit}
+.top{max-width:1080px;margin:0 auto;padding:26px 28px 0;display:flex;justify-content:space-between;align-items:center;color:var(--muted);font:600 12px/1.2 Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase}.mark{color:var(--blue)}.toggle{border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:8px 12px;cursor:pointer;font-size:12px}
+main{max-width:860px;margin:38px auto 72px;padding:0 28px}.kicker{color:var(--red);font:700 13px/1.3 Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase}.hero{padding:30px 0 36px;border-bottom:1px solid var(--line)}h1{font-size:clamp(39px,7vw,73px);line-height:1.05;letter-spacing:-.05em;margin:16px 0 22px;max-width:790px}.dek{font-size:20px;line-height:1.55;max-width:720px;color:var(--muted);margin:0}.byline{margin-top:24px;color:var(--muted);font:13px/1.5 Arial,sans-serif}.byline strong{color:var(--ink)}
+.lead-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:18px;margin:28px 0}.panel{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow)}.panel h2{margin:0 0 8px;font-size:21px;line-height:1.25}.panel p{margin:0;color:var(--muted)}.signal{border-top:5px solid var(--red)}.lens{border-top:5px solid var(--blue)}
+article{font-size:18px}article h2{font-size:29px;line-height:1.25;margin:52px 0 13px;letter-spacing:-.02em}article h3{font-size:20px;margin:28px 0 8px;color:var(--blue)}article p{margin:13px 0}article strong{color:var(--red)}.quote{margin:28px 0;padding:22px 24px;border-left:4px solid var(--gold);background:var(--paper);font-size:22px;line-height:1.45}.duo{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:22px 0}.duo .card{padding:21px;border-radius:14px;border:1px solid var(--line);background:var(--paper)}.duo .card h3{margin:0 0 7px}.steps{counter-reset:item;list-style:none;padding:0;margin:20px 0}.steps li{counter-increment:item;display:grid;grid-template-columns:34px 1fr;gap:12px;margin:16px 0}.steps li:before{content:counter(item);display:grid;place-items:center;width:29px;height:29px;border-radius:50%;background:var(--blue);color:#fff;font:700 14px Arial,sans-serif}.dial{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}.dial .side{padding:20px;border-radius:16px;background:var(--paper);border:1px solid var(--line)}.dial .side:first-child{border-top:5px solid var(--blue)}.dial .side:last-child{border-top:5px solid var(--red)}.dial h3{margin:0 0 7px}.dial p{margin:0;color:var(--muted);font-size:16px}.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--paper);margin:20px 0}table{border-collapse:collapse;width:100%;min-width:650px;font-size:16px}th,td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--line);vertical-align:top}th{background:var(--blue-soft);color:var(--blue);font:700 13px Arial,sans-serif;letter-spacing:.04em}tr:last-child td{border-bottom:0}.check{margin:28px 0;padding:22px;background:var(--red-soft);border-radius:16px}.check h3{margin-top:0;color:var(--red)}details{margin:34px 0;border:1px solid var(--line);border-radius:14px;background:var(--paper);padding:0 18px}summary{cursor:pointer;padding:16px 0;font-weight:700;color:var(--blue)}details p{color:var(--muted);font-size:16px}.foot{border-top:1px solid var(--line);margin-top:52px;padding-top:20px;color:var(--muted);font:12px/1.6 Arial,sans-serif}
+@media(max-width:680px){.top{padding:20px 18px 0}.top span{font-size:10px}main{padding:0 18px;margin-top:25px}h1{font-size:43px}.dek{font-size:18px}.lead-grid,.duo,.dial{grid-template-columns:1fr}article{font-size:17px}article h2{font-size:26px}.quote{font-size:19px;padding:18px}.panel{padding:18px}}
+</style>
+</head>
+<body>
+<div class="top"><span class="mark">Lead Read / 통제의 설계</span><button class="toggle" id="themeToggle" type="button">화면 전환</button></div>
+<main>
+<header class="hero">
+<div class="kicker">통제와 신뢰 · 사회계약의 조직</div>
+<h1>통제는 언제 신뢰를 파괴하는가</h1>
+<p class="dek">통제는 위험을 줄이는 장치다. 그러나 목적·범위·종료 조건이 보이지 않으면 보호의 언어를 빌린 의심으로 읽힌다.</p>
+<div class="byline"><strong>&lt;조우성 변호사 작성&gt;</strong> · Lead Read Briefing</div>
+</header>
+<section class="lead-grid" aria-label="브리핑 요약">
+<div class="panel signal"><h2>핵심 관찰</h2><p>통제가 예측 가능성과 공정성을 제공하면 신뢰를 보완한다. 재량을 전부 의심하고 기준을 사후적으로 바꾸면 통제는 처벌 장치가 된다.</p></div>
+<div class="panel lens"><h2>오늘의 렌즈</h2><p>홉스의 사회계약: 공동의 불안을 줄이기 위해 모두가 일정한 권한과 제약을 받아들이는 질서의 문제.</p></div>
+</section>
+<article>
+<div class="quote">좋은 통제는 상대를 묶는 장치가 아니라 서로의 기대를 번역하는 장치다.</div>
+<h2>1. 통제는 신뢰를 보완할 수 있다</h2>
+<p>리더는 신뢰를 원하면서 목표·절차·승인·감사를 만든다. 협력사가 약속을 지키길 바라면서 계약서와 성과지표도 세밀하게 작성한다. 신뢰는 선의를 기대하는 일이고 통제는 약속이 어겨질 가능성을 관리하는 일처럼 보인다.</p>
+<p>Long은 관리자들이 결과·행동·인사 통제와 신뢰성·역량·선의의 표현을 함께 사용한다고 설명한다. 결과 기준을 분명히 하면서 약속을 지키고 전문성을 보여주는 식이다. 통제는 무엇을 기대하는지 알려주고, 협력의 불확실성을 줄일 수 있다.</p>
+<div class="dial"><div class="side"><h3>신뢰를 보완하는 통제</h3><p>결과 기준과 결정권의 범위가 명확하다. 문제가 생기면 도움을 요청할 보고 절차가 있다.</p></div><div class="side"><h3>신뢰를 대체하는 통제</h3><p>모든 재량을 의심하고 불리한 기록만 모으며 기준을 사후적으로 바꾼다.</p></div></div>
+<h2>2. 신뢰와 통제의 방향은 고정되어 있지 않다</h2>
+<p>Schumacher는 독일 중소기업 67곳의 협력관계를 분석해 신뢰와 통제가 대체재인지 보완재인지 물었다. 실제 관계에서 둘의 연결은 관계의 단계·위험·권력 차이에 따라 달라진다.</p>
+<p>통제가 신뢰를 대신하는 경우도 있고, 신뢰가 형성된 뒤에도 새로운 위험이나 책임 때문에 통제가 늘어날 수 있다. “신뢰하면 통제를 줄여라”는 처방은 관계의 구체적 조건을 지운다.</p>
+<ol class="steps"><li><span><strong>목적</strong><br>무엇을 보호하고 어떤 위험을 줄이는 통제인지 말한다.</span></li><li><span><strong>공정성</strong><br>관리자와 구성원에게 같은 기준이 적용되는지 공개한다.</span></li><li><span><strong>종료</strong><br>위험이 줄었을 때 통제도 축소·폐기될 조건을 정한다.</span></li></ol>
+<h2>3. 임상시험의 제도적 역설</h2>
+<p>임상시험은 사람의 안전과 의약품 승인에 영향을 주므로 자료 제출·정보 제공·동의 절차가 필요하다. 이런 통제는 위험을 줄이는 정당한 장치다.</p>
+<p>그러나 절차가 기업의 비밀 보호와 순응 확보를 우선하면 참여자는 충분한 정보를 알지 못한 채 시스템에 협조한다고 느낄 수 있다. 통제가 신뢰를 보호하는 동시에 제도적 불신을 만드는 역설이다.</p>
+<div class="check"><h3>통제의 신뢰 비용</h3><p>승인 지연 · 보고의 축소 · 자율성의 위축 · 관계의 방어적 연기</p></div>
+<h2>4. 홉스의 사회계약</h2>
+<p>홉스의 사회계약은 인간이 서로를 완전히 믿어서 질서를 만드는 이야기가 아니다. 불안정한 충돌을 줄이기 위해 모두가 일정한 권한과 제약을 받아들이는 계약의 문제다.</p>
+<p>구성원은 모든 통제를 좋아해서가 아니라 통제가 자신에게만 불리하게 적용되지 않고 공동의 위험을 줄인다고 믿을 때 받아들인다. 리더가 먼저 답해야 할 질문은 “어떻게 더 감시할까”가 아니라 “누구의 어떤 불안을 줄이기 위한 통제인가”다.</p>
+<h2>5. 결정에 대입하기</h2>
+<p>조직에서 가장 촘촘한 승인 절차 하나를 골라, 줄이는 위험과 새로 만드는 불안을 각각 적어보자.</p>
+<div class="table-wrap"><table><thead><tr><th>확인할 질문</th><th>기록할 내용</th></tr></thead><tbody><tr><td>무엇을 막는가?</td><td>사고·오류·은폐 중 어떤 위험을 줄이는가?</td></tr><tr><td>누구를 보호하는가?</td><td>고객·구성원·파트너 중 누가 보호되는가?</td></tr><tr><td>누가 예외인가?</td><td>관리자와 실무자에게 같은 기준이 적용되는가?</td></tr><tr><td>언제 줄이는가?</td><td>위험이 사라지면 통제도 축소·폐기되는가?</td></tr></tbody></table></div>
+<p>통제 완화가 항상 신뢰는 아니며 통제 강화가 항상 책임도 아니다. 통제가 공정하고 예측 가능하며 끝날 수 있을 때, 통제는 신뢰를 침식하는 감시가 아니라 공동의 불안을 다루는 약속이 된다.</p>
+<details><summary>출처와 개념 메모 열기</summary><p>Long(2018)은 조직 통제와 신뢰 구축 활동이 구성원 협력을 만드는 방식을 분석했다. Schumacher(2005)는 독일 중소기업 협력관계에서 신뢰와 통제의 대체·보완 관계를 분석했다. 제약 임상시험의 제도적 불신 연구(2010)는 통제가 위험을 줄이는 동시에 정보 비대칭과 순응의 불안을 만들 수 있음을 보여준다. 홉스의 사회계약은 공동의 불안을 줄이기 위해 권한과 제약을 받아들이는 질서의 관점이다.</p></details>
+</article>
+<footer class="foot">Lead Read Briefing · 신뢰는 통제가 없는 상태가 아니라 통제가 자의적으로 쓰이지 않을 것이라는 믿음이다.<br>&lt;조우성 변호사 작성&gt;</footer>
+</main>
+<script>
+const root=document.documentElement;const button=document.getElementById('themeToggle');button.addEventListener('click',()=>{root.dataset.theme=root.dataset.theme==='dark'?'light':'dark'});
+</script>
+</body>
+</html>
