@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="협업 과부하는 개인의 시간 관리만으로 풀리지 않는다. 요청의 쏠림과 조직 구조를 함께 살펴보는 3분 리더 메모.">
+  <title>협업의 비용은 어디서 생기는가 | Lead Read</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f3f5f2;
+      --sheet: #fbfcfa;
+      --ink: #18252d;
+      --muted: #59666a;
+      --line: #d5dfdc;
+      --accent: #147d75;
+      --accent-soft: #e0efeb;
+      --note: #edf2ef;
+      --focus: #ac4a29;
+      --shadow: 0 18px 50px rgba(24, 37, 45, .07);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --paper: #111a1e;
+        --sheet: #192428;
+        --ink: #e8efed;
+        --muted: #b4c1bd;
+        --line: #35464a;
+        --accent: #80d0c2;
+        --accent-soft: #203c39;
+        --note: #202e31;
+        --focus: #ffae8e;
+        --shadow: 0 18px 50px rgba(0, 0, 0, .2);
+      }
+    }
+    :root[data-theme="light"] {
+      color-scheme: light;
+      --paper: #f3f5f2; --sheet: #fbfcfa; --ink: #18252d; --muted: #59666a;
+      --line: #d5dfdc; --accent: #147d75; --accent-soft: #e0efeb; --note: #edf2ef;
+      --focus: #ac4a29; --shadow: 0 18px 50px rgba(24, 37, 45, .07);
+    }
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --paper: #111a1e; --sheet: #192428; --ink: #e8efed; --muted: #b4c1bd;
+      --line: #35464a; --accent: #80d0c2; --accent-soft: #203c39; --note: #202e31;
+      --focus: #ffae8e; --shadow: 0 18px 50px rgba(0, 0, 0, .2);
+    }
+    * { box-sizing: border-box; }
+    html { background: var(--paper); scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--paper); color: var(--ink);
+      font-family: "Noto Sans KR", Pretendard, "Malgun Gothic", sans-serif;
+      word-break: keep-all; line-height: 1.78; letter-spacing: -.018em;
+    }
+    a { color: var(--accent); text-underline-offset: .2em; }
+    a:focus-visible, button:focus-visible, summary:focus-visible {
+      outline: 3px solid var(--focus); outline-offset: 4px; border-radius: 3px;
+    }
+    .masthead {
+      max-width: 1080px; margin: auto; padding: 26px 28px 18px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      color: var(--muted); font-size: .78rem; letter-spacing: .08em;
+    }
+    .brand { color: var(--ink); font-weight: 800; letter-spacing: .12em; }
+    .masthead-note { text-align: right; }
+    .sheet {
+      max-width: 1080px; margin: 0 auto 44px; padding: clamp(26px, 6vw, 72px);
+      background: var(--sheet); box-shadow: var(--shadow); border: 1px solid var(--line);
+    }
+    .eyebrow { margin: 0 0 18px; color: var(--accent); font-weight: 800; font-size: .76rem; letter-spacing: .12em; }
+    h1, h2, h3 { text-wrap: balance; }
+    h1 {
+      max-width: 760px; margin: 0; font-family: Georgia, "Batang", "바탕", serif;
+      font-weight: 500; font-size: clamp(2.15rem, 5vw, 4rem); line-height: 1.22; letter-spacing: -.055em;
+    }
+    .dek { max-width: 720px; margin: 24px 0 0; color: var(--muted); font-size: clamp(1rem, 1.8vw, 1.18rem); }
+    .lead-note {
+      margin: 42px 0 54px; padding: 26px 30px; border-left: 4px solid var(--accent);
+      background: var(--accent-soft); font-size: clamp(1.08rem, 2.2vw, 1.35rem); line-height: 1.65;
+    }
+    .lead-note strong { display: block; margin-bottom: 8px; color: var(--accent); font-size: .73rem; letter-spacing: .12em; }
+    .memo {
+      display: grid; grid-template-columns: minmax(0, 1fr) 210px; gap: 28px 44px;
+      padding: 28px 0; border-top: 1px solid var(--line);
+    }
+    .memo:last-of-type { border-bottom: 1px solid var(--line); }
+    .memo-main { max-width: 650px; }
+    .memo-main h2 { margin: 0 0 16px; font-family: Georgia, "Batang", "바탕", serif; font-size: clamp(1.4rem, 2.7vw, 1.9rem); line-height: 1.35; letter-spacing: -.04em; }
+    .memo-main p { margin: 0 0 14px; }
+    .memo-main p:last-child { margin-bottom: 0; }
+    .margin-note {
+      align-self: start; margin: 5px 0 0; padding: 14px 16px; border-top: 2px solid var(--accent);
+      color: var(--muted); background: var(--note); font-size: .88rem; line-height: 1.65;
+    }
+    .margin-note b { display: block; margin-bottom: 4px; color: var(--ink); font-size: .72rem; letter-spacing: .08em; }
+    .two-lenses { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 20px; }
+    .lens { padding: 18px 20px; border: 1px solid var(--line); }
+    .lens h3 { margin: 0 0 9px; color: var(--accent); font-size: .94rem; }
+    .lens p { margin: 0; font-size: .94rem; }
+    .questions { margin: 14px 0 0; padding: 0; list-style: none; counter-reset: question; }
+    .questions li { counter-increment: question; display: grid; grid-template-columns: 2rem 1fr; gap: 10px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+    .questions li::before { content: "Q" counter(question); color: var(--accent); font-size: .78rem; font-weight: 800; letter-spacing: .04em; }
+    details { margin-top: 25px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    summary { padding: 16px 2px; color: var(--accent); font-weight: 750; cursor: pointer; }
+    details p { max-width: 760px; color: var(--muted); font-size: .9rem; }
+    .sources { margin: 0; padding-left: 1.2rem; }
+    .sources li { padding: 5px 0; }
+    .closing { margin: 46px 0 0; padding-top: 24px; border-top: 2px solid var(--ink); font-family: Georgia, "Batang", "바탕", serif; font-size: 1.28rem; }
+    footer { max-width: 1080px; margin: auto; padding: 0 28px 34px; color: var(--muted); font-size: .76rem; }
+    footer .author-credit { margin: 0; text-align: right; color: var(--ink); font-size: .9rem; font-weight: 700; }
+    @media (max-width: 700px) {
+      .masthead { padding: 18px 18px 14px; }
+      .sheet { margin: 0 10px 28px; padding: 28px 22px; }
+      .lead-note { margin: 30px 0 38px; padding: 20px 21px; }
+      .memo { grid-template-columns: 1fr; gap: 12px; padding: 24px 0; }
+      .margin-note { max-width: 450px; margin: 0; }
+      .two-lenses { grid-template-columns: 1fr; }
+      footer { padding: 0 18px 26px; }
+    }
+    @media (max-width: 390px) {
+      .sheet { margin-inline: 0; border-inline: 0; padding-inline: 18px; }
+      .masthead { padding-inline: 18px; }
+      h1 { font-size: 2.05rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+    @media print {
+      :root { color-scheme: light; --paper: #fff; --sheet: #fff; --ink: #111; --muted: #444; --line: #bbb; --accent: #145a54; --accent-soft: #eef5f3; --note: #f3f6f5; }
+      .sheet { max-width: none; margin: 0; box-shadow: none; border: 0; }
+      details > * { display: block; }
+      a { color: inherit; }
+    }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="brand">LEAD READ</div>
+    <div class="masthead-note">3분 브리핑 · 조직의 일하는 방식</div>
+  </header>
+  <main class="sheet">
+    <p class="eyebrow">리더 메모 · 협업의 비용</p>
+    <h1>협업의 비용은<br>어디서 생기는가</h1>
+    <p class="dek">도움을 잘 주는 사람이 더 많이 불려 다니고, 정작 자기 일을 마치지 못한다. 이 문제는 개인의 시간 관리일까, 조직이 만든 병목일까?</p>
+
+    <div class="lead-note">
+      <strong>한 문장 결론</strong>
+      협업 과부하는 개인의 거절 능력만으로 풀리지 않는다. 요청이 특정 사람에게 몰리는 방식과 불필요한 결정·회의를 만드는 운영 구조를 함께 바꿔야 한다.
+    </div>
+
+    <section class="memo" aria-labelledby="scene-title">
+      <div class="memo-main">
+        <h2 id="scene-title">도울수록 본업이 밀리는 장면</h2>
+        <p>팀에서 가장 경험 많은 사람이 작은 질문에도 답하고 회의마다 불려 간다. 동료들은 덕분에 빨리 움직이지만, 그 사람의 기획·분석 같은 집중 업무는 저녁으로 밀린다. 도와주는 행동은 칭찬받는데, 정작 맡은 일을 끝내지 못했다는 평가를 받는다.</p>
+        <p>여기서 “우선순위를 잘 정하라”고만 하면 비용을 개인에게 넘기게 된다. 먼저 봐야 할 것은 누가 어떤 요청을 받고, 그 요청이 왜 회의나 승인으로 커지는지다.</p>
+      </div>
+      <aside class="margin-note"><b>질문의 방향</b>누군가 바쁘다는 사실보다, 그 사람만이 할 수 있는 일이 실제로 무엇인지 살핀다.</aside>
+    </section>
+
+    <section class="memo" aria-labelledby="research-title">
+      <div class="memo-main">
+        <h2 id="research-title">부담은 양보다 쏠림에서 커진다</h2>
+        <p>Rob Cross, Reb Rebele, Adam Grant는 협업 활동이 늘어나는 가운데 가치 있는 도움과 조언이 소수의 연결자에게 집중될 수 있다고 설명한다. 이들은 시간만 줄이라고 하지 않는다. 요청과 제공을 살펴보고, 정보 전달은 공동 문서나 다른 담당자로 옮기며, 꼭 필요한 사람의 시간을 더 중요한 협업에 남기라고 제안한다.</p>
+        <p>그렇지만 요청을 재배치해도 조직의 승인선과 책임 구조가 그대로면 회의는 다시 생긴다. Michael Mankins는 협업 과부하를 더 깊은 운영 모델의 문제로 본다. 불필요한 결정 지점과 새 과제를 계속 더하는 방식이 상호작용을 키우는지 살펴야 한다.</p>
+        <div class="two-lenses" aria-label="협업 과부하를 보는 두 관점">
+          <div class="lens">
+            <h3>부담을 다시 나누기</h3>
+            <p>누구에게 요청이 몰리는가? 정보·자문·결정 요청을 나누고, 담당과 경로를 다시 배치한다.</p>
+          </div>
+          <div class="lens">
+            <h3>필요한 협업을 줄이기</h3>
+            <p>왜 여러 사람의 확인이 필요한가? 책임과 권한을 단순화해 불필요한 연결을 없앤다.</p>
+          </div>
+        </div>
+      </div>
+      <aside class="margin-note"><b>근거의 경계</b>두 글은 같은 질문을 다른 층위에서 다룬다. 하나의 만능 처방이나 보편적 수치로 합치지 않는다.</aside>
+    </section>
+
+    <section class="memo" aria-labelledby="meeting-title">
+      <div class="memo-main">
+        <h2 id="meeting-title">회의 시간은 구조를 보여주는 신호</h2>
+        <p>Leslie A. Perlow, Constance Noonan Hadley, Eunice Eun은 임원들이 회의에 주당 거의 23시간을 쓰며, 1960년대에는 10시간 미만이었다는 연구를 소개했다. 이 수치는 모든 직장인의 평균은 아니지만, 회의가 집중 시간을 잠식하는 문제를 보여주는 신호다.</p>
+        <p>따라서 회의를 하나 없애는 데서 멈추지 말자. 그 회의가 결정을 위한 것인지 정보 공유를 위한 것인지 구분하고, 참석자·권한·대체 경로를 다시 정한다. 회의가 사라진 뒤에도 같은 사람들이 다른 회의에 모인다면, 일정이 아니라 결정 구조를 고쳐야 한다.</p>
+      </div>
+      <aside class="margin-note"><b>작은 실험</b>회의 초대에 목적과 기대 산출물을 적고, 결정 책임자와 꼭 필요한 참석자만 남긴 뒤 결과를 살핀다.</aside>
+    </section>
+
+    <section class="memo" aria-labelledby="ethics-title">
+      <div class="memo-main">
+        <h2 id="ethics-title">도움과 무제한 응답은 다르다</h2>
+        <p>레비나스의 철학은 타자를 내가 편하게 분류하는 대상으로만 보지 말라고 환기한다. 이 관점은 요청을 처리량으로만 세지 말고, 그 요청을 한 사람이 실제로 무엇을 필요로 하는지 묻게 한다.</p>
+        <p>이 철학이 모든 요청에 응하라고 명령하는 것은 아니다. 오히려 사람의 필요를 듣는 일과 특정 개인이 반복해서 대신 처리하는 일을 구분하게 한다. 공동 문서나 더 알맞은 담당자로 해결할 수 있는 요청을 나누는 것도 책임 있는 응답이 될 수 있다.</p>
+      </div>
+      <aside class="margin-note"><b>편집 렌즈</b>철학에서 조직 운영 처방을 직접 끌어내지 않는다. 타인을 업무 티켓으로만 보지 말자는 질문에 한정한다.</aside>
+    </section>
+
+    <section class="memo" aria-labelledby="questions-title">
+      <div class="memo-main">
+        <h2 id="questions-title">다음 회의 전에 던질 세 가지</h2>
+        <ol class="questions">
+          <li>우리 팀에서 반복 요청이 가장 많이 몰리는 사람은 누구이며, 어떤 종류의 요청을 받고 있는가?</li>
+          <li>그 요청 가운데 공동 문서·명확한 담당자·한 번의 결정으로 바꿀 수 있는 것은 무엇인가?</li>
+          <li>새 회의를 만들 때 없앨 회의나 줄일 승인 단계도 함께 정하고 있는가?</li>
+        </ol>
+      </div>
+      <aside class="margin-note"><b>판단 기준</b>개인의 일정만 가벼워졌는가, 아니면 조직이 같은 일을 더 적은 연결로 해내게 되었는가?</aside>
+    </section>
+
+    <details>
+      <summary>근거와 더 읽을 자료</summary>
+      <p>아래 글은 본 브리핑의 논지를 확인할 수 있는 출처다. 수치와 사례는 각 연구의 맥락 안에서 읽어야 한다.</p>
+      <ol class="sources">
+        <li>Rob Cross, Reb Rebele &amp; Adam Grant, “<a href="https://hbr.org/2016/01/collaborative-overload">Collaborative Overload</a>,” <i>Harvard Business Review</i>, January–February 2016.</li>
+        <li>Michael Mankins, “<a href="https://hbr.org/2017/03/collaboration-overload-is-a-symptom-of-a-deeper-organizational-problem">Collaboration Overload Is a Symptom of a Deeper Organizational Problem</a>,” <i>Harvard Business Review</i>, March 27, 2017.</li>
+        <li>Leslie A. Perlow, Constance Noonan Hadley &amp; Eunice Eun, “<a href="https://hbr.org/2017/07/stop-the-meeting-madness">Stop the Meeting Madness</a>,” <i>Harvard Business Review</i>, July–August 2017.</li>
+        <li>Stanford Encyclopedia of Philosophy, “<a href="https://plato.stanford.edu/entries/levinas/">Emmanuel Levinas</a>.”</li>
+      </ol>
+    </details>
+    <p class="closing">협업을 잘하는 사람에게 더 맡기기 전에, 그 도움이 꼭 그 사람에게서 나와야 하는지부터 물어보자.</p>
+  </main>
+  <footer>
+    <div>Lead Read · 리더의 판단을 돕는 짧은 브리핑</div>
+    <p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+  </footer>
+</body>
+</html>
