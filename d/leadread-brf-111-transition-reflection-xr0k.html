@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>빨리 바꾸는가 천천히 배우는가 — Lead Read</title>
+  <style>
+    :root { color-scheme: light; --bg:#f3f6f6; --panel:#ffffff; --ink:#172b35; --muted:#60727a; --line:#d4dfe1; --gold:#b67917; --teal:#247d7a; --soft:#e8f0ee; --shadow:0 18px 50px rgba(23,43,53,.11); }
+    :root[data-theme="dark"] { color-scheme: dark; --bg:#111f27; --panel:#19313a; --ink:#edf5f2; --muted:#b4c7c9; --line:#38545b; --gold:#e7b85d; --teal:#70d1c1; --soft:#224047; --shadow:0 18px 50px rgba(0,0,0,.28); }
+    @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { color-scheme: dark; --bg:#111f27; --panel:#19313a; --ink:#edf5f2; --muted:#b4c7c9; --line:#38545b; --gold:#e7b85d; --teal:#70d1c1; --soft:#224047; --shadow:0 18px 50px rgba(0,0,0,.28); } }
+    * { box-sizing:border-box; }
+    html { background:var(--bg); }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family: Georgia, "Noto Serif KR", serif; line-height:1.72; word-break:keep-all; }
+    button { font:inherit; }
+    .wrap { width:min(100% - 32px, 980px); margin:0 auto; padding:24px 0 60px; }
+    .topbar { display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:46px; font:600 12px/1.2 system-ui, sans-serif; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
+    .brand { color:var(--teal); }
+    .theme { cursor:pointer; border:1px solid var(--line); border-radius:999px; padding:8px 12px; background:var(--panel); color:var(--ink); }
+    .hero { padding:clamp(28px, 7vw, 76px); border:1px solid var(--line); border-radius:28px; background:linear-gradient(135deg, var(--panel), var(--soft)); box-shadow:var(--shadow); }
+    .eyebrow { margin:0 0 16px; color:var(--gold); font:700 13px/1.3 system-ui, sans-serif; letter-spacing:.09em; }
+    h1 { max-width:760px; margin:0; font-size:clamp(38px, 7vw, 76px); line-height:1.08; letter-spacing:-.055em; }
+    .dek { max-width:650px; margin:26px 0 0; font-size:clamp(18px, 2.5vw, 24px); color:var(--muted); }
+    .meta { display:flex; flex-wrap:wrap; gap:10px; margin-top:30px; font:600 12px/1.3 system-ui, sans-serif; color:var(--muted); }
+    .meta span { border:1px solid var(--line); border-radius:999px; padding:7px 10px; }
+    main { margin-top:50px; }
+    .question { margin:0 0 18px; font-size:clamp(25px, 4vw, 42px); line-height:1.2; letter-spacing:-.035em; }
+    .lead { font-size:20px; }
+    .grid { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:18px; margin:34px 0; }
+    .card { padding:28px; border:1px solid var(--line); border-radius:20px; background:var(--panel); }
+    .card h3 { margin:0 0 10px; font:700 16px/1.35 system-ui, sans-serif; letter-spacing:.01em; }
+    .card p { margin:0; color:var(--muted); }
+    .gold { border-top:5px solid var(--gold); }
+    .teal { border-top:5px solid var(--teal); }
+    .section { margin:54px 0; }
+    .section h2 { margin:0 0 15px; font-size:clamp(26px, 4vw, 38px); line-height:1.2; letter-spacing:-.035em; }
+    .section p { max-width:760px; }
+    .callout { margin:28px 0; padding:24px 28px; border-left:5px solid var(--gold); background:var(--soft); border-radius:0 16px 16px 0; font-size:21px; }
+    ol { padding-left:1.25em; }
+    li { margin:12px 0; padding-left:5px; }
+    details { margin-top:22px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    summary { cursor:pointer; padding:18px 0; font:700 15px/1.4 system-ui, sans-serif; }
+    details p { color:var(--muted); }
+    .sources { font-size:14px; color:var(--muted); }
+    footer { margin-top:60px; padding-top:22px; border-top:1px solid var(--line); color:var(--muted); font:14px/1.6 system-ui, sans-serif; }
+    .author { color:var(--ink); font-weight:700; }
+    :focus-visible { outline:3px solid var(--teal); outline-offset:3px; }
+    @media (max-width:700px) { .wrap { width:min(100% - 22px, 980px); padding-top:16px; } .topbar { margin-bottom:26px; } .hero { border-radius:20px; padding:27px 22px; } .grid { grid-template-columns:1fr; } .card { padding:23px; } .lead { font-size:18px; } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior:auto !important; transition:none !important; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar"><div class="brand">Lead Read / 3 min briefing</div><button class="theme" type="button" aria-label="테마 전환">테마 전환</button></header>
+    <section class="hero" aria-labelledby="title">
+      <p class="eyebrow">TRANSITION · LEARNING · SEQUENCE</p>
+      <h1 id="title">빨리 바꾸는가 천천히 배우는가</h1>
+      <p class="dek">새 리더에게 필요한 속도는 손의 속도와 발의 속도가 다르다. 빨리 배우고 새는 일을 막되, 재편은 판을 읽은 뒤에 해야 한다.</p>
+      <div class="meta"><span>의사결정자를 위한 읽기</span><span>두 관점의 논쟁</span><span>쇤 렌즈</span></div>
+    </section>
+    <main>
+      <section class="section">
+        <h2 class="question">새 자리에서는 속도가 생명인가?</h2>
+        <p class="lead">새 리더는 취임 100일의 성적표를 의식한다. 가만히 있으면 무능해 보이므로 조직도와 사람을 바꾸고, 눈에 보이는 승리를 만든다. 그러나 변화의 속도와 학습의 속도는 같지 않다. 전환의 핵심은 빨리 손대는 것이 아니라 빨리 판을 읽는 것이다.</p>
+        <div class="callout">한 문장 결론: <strong>새 리더는 빠르게 배우고 새는 일을 막아야 하지만, 구조를 바꾸는 손은 진단과 평가가 끝날 때까지 늦춰야 한다.</strong></div>
+      </section>
+      <section class="grid" aria-label="두 관점">
+        <article class="card gold"><h3>관점 A · 학습과 초기 승리를 앞당겨라</h3><p>Watkins(2003)는 새 리더의 전환을 열 가지 과제로 정리했다. 학습을 앞당기고, 전략을 상황에 맞추고, 초기의 승리를 확보해 조직이 리더를 필요로 하는 시점을 앞당기는 방식이다. 전환은 재능보다 관리의 문제이며, 속도는 적응의 조건이 된다.</p></article>
+        <article class="card teal"><h3>관점 B · 단계를 건너뛰지 마라</h3><p>Gabarro(1987)는 승계를 오리엔테이션·평가·정착·재편·정교화의 순서로 보았다. 성공한 리더는 단계를 건너뛰지 않았고, 실패한 리더는 판을 파악하기도 전에 재편에 들어갔다. 전환의 성패는 속도보다 순서에 달려 있다.</p></article>
+      </section>
+      <section class="section">
+        <h2>빠른 승리는 빠른 매몰이 될 수 있다</h2>
+        <p>두 관점은 속도를 둘러싼 말싸움이 아니다. 학습과 손실 방지는 앞당기되, 원인 진단 전의 재편은 늦추라는 구분이다. 새 리더의 첫 분기 평가표에 바꾼 개수만 있으면, 조직은 가장 눈에 띄는 행동을 가장 중요한 성과로 착각한다.</p>
+      </section>
+      <section class="section">
+        <h2>야후: 빠른 손과 느린 발</h2>
+        <p>2012년 7월 마리사 메이어는 흔들리던 야후의 지휘봉을 잡았다. 취임 한 달 만의 심야 이메일과 무료 식사·주차 장벽 철거, 플리커 개편, 텀블러 인수는 빠른 손의 신호였다. 취임 300일 만에 주가가 수년 만의 고점을 찍으며 초기 승리가 나타났다.</p>
+        <p>하지만 2013년 재택근무 금지는 조직의 속도를 올리는 동시에 논쟁과 인재 유출의 불씨가 됐고, 모바일 전환의 지체와 본업의 부진은 끝내 남았다. 2017년 야후의 매각은 빠른 손이 시간을 벌었지만 판을 읽는 느린 발이 부족했다는 사실을 보여준다. 속도가 방향을 대신할 수는 없다.</p>
+      </section>
+      <section class="section">
+        <h2>쇤의 성찰적 실천</h2>
+        <p>쇤은 전문가의 일이 배운 이론을 현장에 대입하는 것이 아니라, 낯선 상황에서 생각하며 행동하는 과정이라고 보았다. 새 자리에서 필요한 것은 빠른 답보다 느린 질문이다. 행동하면서 되돌아보고, 되돌아보면서 다시 행동하는 리듬이 빠른 손과 느린 발을 함께 만든다.</p>
+        <ol>
+          <li>첫 90일 보고서가 처방전인가, 판을 읽은 진단서인가?</li>
+          <li>바꾼 목록보다 막은 손실과 파악한 사실의 목록이 있는가?</li>
+          <li>전임자의 사람들에게 판을 읽을 열쇠가 있을 가능성을 열어 두었는가?</li>
+          <li>고객과 최전선의 일을 직접 마주하고 매일 되돌아보는 시간이 있는가?</li>
+        </ol>
+      </section>
+      <section class="section">
+        <h2>결정 전에 남길 문장</h2>
+        <p>취임 90일의 과제를 처방전이 아니라 진단서로 받아라. 빨리 배우게는 하되 빨리 바꾸지는 말라. 좋은 리더는 빨리 이기는 리더가 아니라 오래 남는 판을 읽는 리더다.</p>
+        <details><summary>출처와 읽는 법</summary><p class="sources">Watkins(2003)는 새 리더 전환의 열 가지 과제를, Gabarro(1987)는 승계의 단계와 성패 요인을 다룬다. 야후와 마리사 메이어 사례는 취임 초기 조치·재택근무 금지·텀블러 인수·매각이라는 공개 흐름에 한정해 적용했다. 쇤의 성찰적 실천은 현장에서 행동하고 되돌아보는 학습의 리듬을 묻는 렌즈로 사용했다.</p></details>
+      </section>
+    </main>
+    <footer><div class="author">&lt;조우성 변호사 작성&gt;</div><div>Lead Read · 빠른 손과 느린 발이 함께 있어야 전환이 오래 갑니다.</div></footer>
+  </div>
+  <script>
+    (() => { const root = document.documentElement; const button = document.querySelector('.theme'); button.addEventListener('click', () => { root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark'; }); })();
+  </script>
+</body>
+</html>
