@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="교육에서 배운 행동이 현장에 남도록 조직 조건과 단계별 지원을 설계하는 3분 브리핑">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23176b63'/%3E%3Cpath d='M8 9h16v3H8zm0 6h11v3H8zm0 6h16v3H8z' fill='white'/%3E%3C/svg%3E">
+  <title>배운 것은 왜 현장에서 사라지는가 | Lead Read</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f5f3ec;
+      --surface: #fffefa;
+      --ink: #20303b;
+      --muted: #58666b;
+      --line: #d8d5cb;
+      --system: #176b63;
+      --system-wash: #e7f0ec;
+      --support: #a84f2a;
+      --support-wash: #f8ece2;
+      --focus: #075fcc;
+      --shadow: 0 18px 45px rgba(32, 48, 59, .08);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        color-scheme: dark;
+        --paper: #172126;
+        --surface: #202d32;
+        --ink: #edf2ef;
+        --muted: #bac7c2;
+        --line: #44534f;
+        --system: #8ed0bb;
+        --system-wash: #263c38;
+        --support: #ffb98d;
+        --support-wash: #42332b;
+        --focus: #8dbbff;
+        --shadow: 0 18px 45px rgba(0, 0, 0, .22);
+      }
+    }
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --paper: #172126;
+      --surface: #202d32;
+      --ink: #edf2ef;
+      --muted: #bac7c2;
+      --line: #44534f;
+      --system: #8ed0bb;
+      --system-wash: #263c38;
+      --support: #ffb98d;
+      --support-wash: #42332b;
+      --focus: #8dbbff;
+      --shadow: 0 18px 45px rgba(0, 0, 0, .22);
+    }
+    :root[data-theme="light"] {
+      color-scheme: light;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Noto Sans KR", Pretendard, "Malgun Gothic", sans-serif;
+      line-height: 1.72;
+      word-break: keep-all;
+      overflow-wrap: anywhere;
+    }
+    a { color: var(--system); text-underline-offset: .2em; }
+    a:hover { text-decoration-thickness: 2px; }
+    :focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; border-radius: 3px; }
+    .shell { width: min(100% - 36px, 1040px); margin: 0 auto; }
+    .topline { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+    .brand { color: var(--muted); font-size: .76rem; letter-spacing: .14em; text-transform: uppercase; }
+    .theme-toggle { border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 999px; padding: 8px 13px; font: inherit; font-size: .82rem; cursor: pointer; }
+    main { padding: 32px 0 64px; }
+    .eyebrow { color: var(--system); font-size: .77rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    h1, h2, h3 { line-height: 1.28; }
+    h1 { max-width: 800px; margin: 12px 0; font-family: Georgia, "Batang", serif; font-size: clamp(2.25rem, 6vw, 4.5rem); letter-spacing: -.045em; }
+    .dek { max-width: 760px; margin: 0; color: var(--muted); font-size: clamp(1.05rem, 2.4vw, 1.3rem); }
+    .hero { padding: 48px 0 38px; }
+    .answer { display: grid; grid-template-columns: 150px 1fr; gap: 22px; align-items: start; margin-top: 34px; padding: 24px; background: var(--ink); color: var(--paper); border-radius: 16px; box-shadow: var(--shadow); }
+    .answer-label { color: #a9d8c9; font-size: .76rem; font-weight: 800; letter-spacing: .12em; }
+    .answer p { margin: 0; font-size: clamp(1.05rem, 2.5vw, 1.35rem); font-weight: 650; line-height: 1.55; }
+    .section-head { max-width: 720px; margin: 0 0 22px; }
+    .section-head h2 { margin: 0 0 8px; font-family: Georgia, "Batang", serif; font-size: clamp(1.6rem, 4vw, 2.35rem); }
+    .section-head p { margin: 0; color: var(--muted); }
+    .scene { margin: 20px 0 58px; padding: 28px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); }
+    .scene p { max-width: 760px; margin: 0; }
+    .scene p + p { margin-top: 14px; }
+    .comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .lens { min-width: 0; padding: 25px; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); }
+    .lens.system { border-top: 5px solid var(--system); }
+    .lens.support { border-top: 5px solid var(--support); }
+    .lens .tag { font-size: .72rem; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+    .system .tag { color: var(--system); }
+    .support .tag { color: var(--support); }
+    .lens h3 { margin: 9px 0 12px; font-family: Georgia, "Batang", serif; font-size: 1.45rem; }
+    .lens p { color: var(--muted); margin: 0; }
+    .lens ul { margin: 18px 0 0; padding-left: 1.2em; }
+    .lens li + li { margin-top: 8px; }
+    .hinge { margin: 18px 0 58px; padding: 17px 21px; border-left: 4px solid var(--ink); background: var(--surface); color: var(--muted); }
+    .hinge strong { color: var(--ink); }
+    .field-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; counter-reset: field; }
+    .field-card { padding: 20px; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); }
+    .field-card::before { counter-increment: field; content: "0" counter(field); display: block; margin-bottom: 12px; color: var(--system); font-size: .78rem; font-weight: 850; letter-spacing: .1em; }
+    .field-card h3 { margin: 0 0 8px; font-size: 1rem; }
+    .field-card p { margin: 0; color: var(--muted); font-size: .94rem; }
+    .questions { margin: 58px 0; padding: 30px; border-radius: 16px; background: var(--system-wash); }
+    .questions h2 { margin: 0 0 18px; font-family: Georgia, "Batang", serif; font-size: 1.8rem; }
+    .questions ol { margin: 0; padding-left: 1.25em; }
+    .questions li { padding-left: 5px; }
+    .questions li + li { margin-top: 10px; }
+    details { margin: 18px 0 0; padding: 18px 20px; border: 1px solid var(--line); background: var(--surface); border-radius: 12px; }
+    summary { color: var(--ink); font-weight: 750; cursor: pointer; }
+    details p { color: var(--muted); margin: 15px 0 0; }
+    .sources { margin-top: 58px; padding-top: 28px; border-top: 1px solid var(--line); }
+    .sources h2 { font-size: 1.3rem; }
+    .sources ol { padding-left: 1.25em; }
+    .sources li + li { margin-top: 12px; }
+    .source-note { display: block; color: var(--muted); font-size: .9rem; }
+    footer { border-top: 1px solid var(--line); padding: 25px 0 34px; color: var(--muted); font-size: .85rem; }
+    .author-credit { margin: 5px 0 0; color: var(--ink); font-weight: 750; }
+    @media (max-width: 700px) {
+      .shell { width: min(100% - 24px, 1040px); }
+      .hero { padding-top: 34px; }
+      .answer { grid-template-columns: 1fr; gap: 9px; padding: 20px; }
+      .comparison, .field-grid { grid-template-columns: 1fr; }
+      .scene, .questions { padding: 21px; }
+      .topline { padding: 16px 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <div class="topline">
+      <div class="brand">Lead Read · 3분 브리핑</div>
+      <button class="theme-toggle" type="button" aria-label="화면 색상 전환" aria-pressed="false">밝은 화면</button>
+    </div>
+    <main>
+      <header class="hero">
+        <div class="eyebrow">Learning at work</div>
+        <h1>배운 것은 왜<br>현장에서 사라지는가</h1>
+        <p class="dek">교육에서 익힌 말을 실제 회의와 업무에 쓰려는 순간, 왜 예전 방식으로 돌아갈까요?</p>
+        <div class="answer" aria-label="핵심 결론">
+          <div class="answer-label">먼저 답하면</div>
+          <p>배움을 개인의 의지에만 맡기면 현장의 오래된 역할과 규칙이 이긴다. 조직의 장애물을 살피고, 실제로 시도하는 단계마다 필요한 지원을 붙여야 한다.</p>
+        </div>
+      </header>
+
+      <section class="scene" aria-labelledby="scene-title">
+        <div class="section-head">
+          <div class="eyebrow">The moment</div>
+          <h2 id="scene-title">교육장 밖, 첫 회의</h2>
+        </div>
+        <p>팀장이 교육에서 질문으로 회의를 여는 방법을 배웠다. 다음 주 회의에서 팀원들에게 의견을 물었지만, 돌아온 대답은 “팀장님이 정해주세요”였다. 승인 절차와 책임 배분은 예전 그대로였다. 팀장은 결국 다시 지시했다.</p>
+        <p>이 상황을 의지 부족으로만 보면 복습이나 재교육을 더하게 된다. 하지만 배운 행동을 막은 것이 지식 부족인지, 해볼 기회가 없어서인지, 주변의 기대가 반대해서인지 먼저 나눠 볼 필요가 있다.</p>
+      </section>
+
+      <section aria-labelledby="two-lenses">
+        <div class="section-head">
+          <div class="eyebrow">Two lenses</div>
+          <h2 id="two-lenses">막힘은 어디에 있는가</h2>
+          <p>교육이 현장에 이어지지 않는다는 질문에, 두 연구는 서로 다른 높이에서 답한다.</p>
+        </div>
+        <div class="comparison">
+          <article class="lens system">
+            <div class="tag">관점 A · 시스템 먼저</div>
+            <h3>조직의 낡은 규칙이 배움을 되돌린다</h3>
+            <p>전략이 모호하고 책임이 맞지 않거나, 리더가 예전 행동을 계속 보상하면 교육만으로 일하는 방식은 잘 바뀌지 않는다. 먼저 고위팀이 조직의 장애물을 찾아 역할과 관계를 손봐야 한다.</p>
+            <ul>
+              <li>무엇을 위해 이 행동을 바꾸는가?</li>
+              <li>누가 어떤 결정을 맡는가?</li>
+              <li>기존 절차가 새 행동을 막지는 않는가?</li>
+            </ul>
+          </article>
+          <article class="lens support">
+            <div class="tag">관점 B · 단계별 지원</div>
+            <h3>시도와 지속에는 서로 다른 도움이 필요하다</h3>
+            <p>현장 전이는 한 번에 끝나지 않는다. 직무와 연결된 연습 기회, 상사와 동료의 도움, 조직의 시간과 자원이 각각 필요하다. 필요한 지원은 배우고, 처음 써보고, 계속 쓰는 단계마다 달라질 수 있다.</p>
+            <ul>
+              <li>실제 업무에서 써볼 기회가 있는가?</li>
+              <li>시도할 때 설명·시범·피드백을 받을 수 있는가?</li>
+              <li>계속 쓰도록 시간과 자원이 남아 있는가?</li>
+            </ul>
+          </article>
+        </div>
+        <div class="hinge"><strong>두 관점의 접점</strong>은 교육 횟수를 늘리기 전에 현장의 방해물과 필요한 도움을 확인하는 것이다. 구조가 행동을 막으면 구조를 바꾸고, 실행 단계가 막히면 그 단계에 맞는 지원을 붙인다.</div>
+      </section>
+
+      <section aria-labelledby="field-title">
+        <div class="section-head">
+          <div class="eyebrow">A practical diagnosis</div>
+          <h2 id="field-title">다음 교육 전에 살필 세 곳</h2>
+          <p>다음은 연구 내용을 업무에서 써볼 질문으로 바꾼 편집 도구다.</p>
+        </div>
+        <div class="field-grid">
+          <article class="field-card">
+            <h3>업무의 순간</h3>
+            <p>성과가 갈리는 실제 장면은 무엇인가? 그 순간에 배운 기술을 쓸 권한과 시간이 있는가?</p>
+          </article>
+          <article class="field-card">
+            <h3>주변의 반응</h3>
+            <p>상사와 동료는 새 행동을 설명하고, 보여주고, 시도 뒤에 피드백을 주는가?</p>
+          </article>
+          <article class="field-card">
+            <h3>조직의 규칙</h3>
+            <p>역할·승인·성과 기준 가운데 새 행동과 충돌하는 것이 있는가? 작은 팀에서 조건을 바꿔 살펴볼 수 있는가?</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="questions" aria-labelledby="questions-title">
+        <h2 id="questions-title">리더의 판단 질문</h2>
+        <ol>
+          <li>팀이 교육에서 배운 행동을 실제 업무에 써볼 자리를 하나 정했는가?</li>
+          <li>해보지 못하는 이유는 지식 부족, 기회 부족, 주변의 반대 가운데 무엇에 가까운가?</li>
+          <li>첫 시도 때 도울 사람과, 계속 쓰는지 확인할 방법은 무엇인가?</li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="meaning-title">
+        <div class="section-head">
+          <div class="eyebrow">A human lens</div>
+          <h2 id="meaning-title">혼자 해내라는 요구를 줄이기</h2>
+          <p>비고츠키의 근접발달영역은 혼자서는 어렵지만 도움과 도구가 있으면 해낼 수 있는 범위를 가리킨다. 이 개념은 교육전이 연구의 결론이 아니라, 리더에게 던지는 별도의 질문이다.</p>
+        </div>
+        <details>
+          <summary>이 렌즈를 현장에 적용하면</summary>
+          <p>“배웠으니 알아서 해보라”고 끝내기보다, 누가 함께 첫 시도를 할지 정한다. 필요한 절차나 도구를 마련하고, 지원을 줄여도 되는 시점은 실제 행동을 살펴본 뒤 판단한다.</p>
+        </details>
+      </section>
+
+      <section class="sources" aria-labelledby="sources-title">
+        <h2 id="sources-title">근거와 더 읽을 자료</h2>
+        <ol>
+          <li><a href="https://hbr.org/2016/10/why-leadership-training-fails-and-what-to-do-about-it" target="_blank" rel="noopener noreferrer">Michael Beer, Magnus Finnström, Derek Schrader, “Why Leadership Training Fails—and What to Do About It”</a><span class="source-note">Harvard Business Review, 2016년 10월. 교육 후 기존 업무 방식으로 돌아가는 문제와 조직 차원의 장애물에 대한 저자들의 분석.</span></li>
+          <li><a href="https://doi.org/10.1016/j.edurev.2018.04.001" target="_blank" rel="noopener noreferrer">Jolanda A. Botke, Paul G. W. Jansen, Svetlana N. Khapova, Maria Tims, “Work Factors Influencing the Transfer Stages of Soft Skills Training: A Literature Review”</a><span class="source-note">Educational Research Review, 2018, 24권, 130–147쪽. 직무 요인·사회적 지원·조직의 학습 촉진과 전이 단계를 검토한 논문.</span></li>
+          <li><a href="https://hbr.org/2017/06/to-better-train-workers-figure-out-where-they-struggle" target="_blank" rel="noopener noreferrer">Ali Jaffer, Mona Mourshed, “To Better Train Workers, Figure Out Where They Struggle”</a><span class="source-note">Harvard Business Review, 2017년 6월 30일. 훈련 전에 업무에서 막히는 지점을 확인하자는 실무 제안.</span></li>
+          <li><a href="https://plato.stanford.edu/entries/vygotsky/" target="_blank" rel="noopener noreferrer">Stanford Encyclopedia of Philosophy, “Lev Semyonovich Vygotsky”</a><span class="source-note">도움과 학습의 관계를 살피는 인문학적 렌즈의 참고 자료.</span></li>
+        </ol>
+      </section>
+    </main>
+  <script>
+    (() => {
+      const button = document.querySelector('.theme-toggle');
+      const root = document.documentElement;
+      button.addEventListener('click', () => {
+        const dark = root.dataset.theme !== 'dark';
+        root.dataset.theme = dark ? 'dark' : 'light';
+        button.setAttribute('aria-pressed', String(dark));
+        button.textContent = dark ? '어두운 화면' : '밝은 화면';
+      });
+    })();
+  </script>
+    <footer>
+      <div>Lead Read · 리더를 위한 판단 브리핑</div>
+      <p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+    </footer>
+  </div>
+</body>
+</html>
