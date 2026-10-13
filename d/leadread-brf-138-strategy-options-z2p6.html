@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="전략에서 선택지를 열어 둘 때와 실행을 위해 닫아야 할 때를 구분하는 3분 Lead Read 브리핑">
+  <title>전략은 언제 선택지가 되어 실행을 멈추는가 — Lead Read</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #202b32; --muted: #64727a; --paper: #f3f5f2; --surface: #ffffff;
+      --line: #d3dcda; --accent: #176b6d; --accent-2: #d36a3a; --soft: #e8f0ed;
+      --shadow: 0 15px 42px rgba(32, 43, 50, .10);
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: "Noto Sans KR", Pretendard, "Malgun Gothic", sans-serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { color-scheme: dark; --ink: #edf2ef; --muted: #aab8b5; --paper: #172326; --surface: #202e31;
+        --line: #40575a; --accent: #84d0c4; --accent-2: #f09a70; --soft: #293f40;
+        --shadow: 0 15px 42px rgba(0, 0, 0, .30); }
+    }
+    :root[data-theme="light"] { color-scheme: light; --ink: #202b32; --muted: #64727a; --paper: #f3f5f2; --surface: #ffffff; --line: #d3dcda; --accent: #176b6d; --accent-2: #d36a3a; --soft: #e8f0ed; --shadow: 0 15px 42px rgba(32, 43, 50, .10); }
+    :root[data-theme="dark"] { color-scheme: dark; --ink: #edf2ef; --muted: #aab8b5; --paper: #172326; --surface: #202e31; --line: #40575a; --accent: #84d0c4; --accent-2: #f09a70; --soft: #293f40; --shadow: 0 15px 42px rgba(0, 0, 0, .30); }
+    * { box-sizing: border-box; }
+    html { min-width: 0; background: var(--paper); }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); line-height: 1.7; word-break: keep-all; overflow-x: hidden; }
+    button, summary { font: inherit; }
+    button:focus-visible, summary:focus-visible { outline: 3px solid var(--accent-2); outline-offset: 4px; }
+    .bar { border-bottom: 1px solid var(--line); }
+    .bar-inner, main, footer { width: min(100% - 40px, 1100px); margin: 0 auto; }
+    .bar-inner { display: flex; justify-content: space-between; align-items: center; gap: 18px; padding: 20px 0; }
+    .brand { color: var(--accent); font-size: .78rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    .theme-toggle { border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 999px; padding: 8px 13px; cursor: pointer; font-size: .8rem; }
+    main { padding: 54px 0 82px; }
+    .eyebrow, .kicker { color: var(--accent-2); font-size: .78rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+    h1, h2, h3 { margin: 0; text-wrap: balance; }
+    h1 { max-width: 850px; margin-top: 10px; font-family: var(--serif); font-size: clamp(2.45rem, 7vw, 5rem); line-height: 1.02; letter-spacing: -.05em; }
+    .dek { max-width: 730px; margin: 23px 0 0; color: var(--muted); font-size: clamp(1.06rem, 2vw, 1.25rem); }
+    .triad { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 42px; }
+    .triad-card { min-width: 0; padding: 20px; border: 1px solid var(--line); background: var(--surface); }
+    .triad-card:nth-child(1) { border-top: 5px solid var(--accent); }
+    .triad-card:nth-child(2) { border-top: 5px solid var(--accent-2); }
+    .triad-card:nth-child(3) { border-top: 5px solid var(--ink); }
+    .triad-card span { color: var(--muted); font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .triad-card h3 { margin-top: 9px; font-family: var(--serif); font-size: 1.45rem; }
+    .triad-card p { margin: 7px 0 0; color: var(--muted); font-size: .92rem; }
+    .question { margin-top: 25px; padding: 22px 24px; background: var(--soft); border-left: 5px solid var(--accent-2); }
+    .question p { margin: 7px 0 0; font-family: var(--serif); font-size: clamp(1.22rem, 2.6vw, 1.72rem); line-height: 1.35; }
+    .section { margin-top: 72px; }
+    h2 { margin-top: 8px; font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.13; }
+    h3 { font-size: 1.05rem; line-height: 1.35; }
+    p { max-width: 70ch; margin: 16px 0 0; }
+    .lead { font-size: 1.16rem; }
+    .split { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 28px; }
+    .panel { min-width: 0; padding: 24px; border: 1px solid var(--line); background: var(--surface); }
+    .panel-label { color: var(--muted); font-size: .74rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .panel h3 { margin-top: 10px; font-family: var(--serif); font-size: 1.35rem; }
+    .panel p { color: var(--muted); font-size: .95rem; }
+    .panel.open { border-top: 4px solid var(--accent); }
+    .panel.closed { border-top: 4px solid var(--accent-2); }
+    .gate { margin-top: 28px; border-top: 1px solid var(--line); }
+    .gate-row { display: grid; grid-template-columns: 180px 1fr; gap: 24px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+    .gate-row strong { color: var(--accent); }
+    .gate-row p { margin: 0; color: var(--muted); }
+    .case { display: grid; grid-template-columns: .7fr 1.3fr; gap: 30px; align-items: start; }
+    .case-mark { color: var(--accent-2); font-family: var(--serif); font-size: 3.3rem; line-height: 1.03; }
+    .case-copy p { margin-top: 0; }
+    .checks { display: grid; gap: 11px; margin-top: 26px; }
+    .check { display: grid; grid-template-columns: 32px 1fr; gap: 14px; padding: 17px 19px; background: var(--surface); border: 1px solid var(--line); }
+    .check-number { color: var(--accent); font-family: var(--serif); font-size: 1.35rem; }
+    .check p { margin-top: 4px; color: var(--muted); font-size: .93rem; }
+    details { margin-top: 22px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    summary { padding: 16px 0; cursor: pointer; color: var(--accent); font-weight: 800; }
+    .evidence { padding: 0 0 22px; color: var(--muted); font-size: .93rem; }
+    .evidence p { margin-top: 10px; }
+    .closing { margin-top: 70px; padding: 31px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .closing p { margin-top: 8px; font-family: var(--serif); font-size: clamp(1.3rem, 3vw, 2.12rem); line-height: 1.34; }
+    footer { padding: 24px 0 48px; color: var(--muted); font-size: .82rem; }
+    footer p { margin: 4px 0 0; }
+    .author-credit { color: var(--ink); font-weight: 700; }
+    @media (max-width: 700px) {
+      .bar-inner, main, footer { width: min(100% - 28px, 1100px); }
+      .triad, .split, .case { grid-template-columns: 1fr; }
+      .gate-row { grid-template-columns: 1fr; gap: 6px; }
+      .question { padding: 19px; }
+      .panel, .check { padding: 18px; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; } }
+  </style>
+</head>
+<body>
+  <header class="bar">
+    <div class="bar-inner">
+      <div class="brand">Lead Read · 3분 브리핑</div>
+      <button class="theme-toggle" type="button" aria-label="화면 테마 전환" aria-pressed="false">다크 모드</button>
+    </div>
+  </header>
+  <main>
+    <div class="eyebrow">Strategy / choice / execution</div>
+    <h1>전략은 언제 선택지가 되어 실행을 멈추는가</h1>
+    <p class="dek">선택지를 열어 두는 일은 불확실성에 대응하는 방법이다. 하지만 행동·책임자·첫 결과·포기 조건까지 열어 두면 전략은 유연성이 아니라 대기의 언어가 된다.</p>
+    <div class="triad" aria-label="전략의 세 단계">
+      <article class="triad-card"><span>열어 두기</span><h3>목적과 가설</h3><p>무엇을 위해 움직이는지, 무엇이 통할지 아직 배울 수 있게 둔다.</p></article>
+      <article class="triad-card"><span>시험하기</span><h3>작은 행동</h3><p>이번 기간에 확인할 가설과 자원·담당자를 정해 실제로 움직인다.</p></article>
+      <article class="triad-card"><span>닫기</span><h3>실행 약속</h3><p>결과를 읽을 시점과 포기 조건을 정해 책임의 공백을 막는다.</p></article>
+    </div>
+    <section class="question" aria-labelledby="question-title">
+      <div class="kicker" id="question-title">핵심 질문</div>
+      <p>지금 보존하는 선택지는 실험을 위한 것인가, 아니면 책임을 미루기 위한 것인가?</p>
+    </section>
+
+    <section class="section" aria-labelledby="conclusion-title">
+      <div class="kicker">한 문장 결론</div>
+      <h2 id="conclusion-title">좋은 모호성은 탐색의 여백이고, 나쁜 모호성은 책임의 공백이다.</h2>
+      <p class="lead">목적을 열어 두면 협력이 가능하고 가설을 열어 두면 학습이 가능하다. 그러나 실행 약속까지 열어 두면 자원과 책임이 흩어진다. 전략은 영원히 열려 있는 문이 아니라, 일정한 시간 동안 열어 둔 뒤 행동을 위해 닫는 문이어야 한다.</p>
+    </section>
+
+    <section class="section" aria-labelledby="tension-title">
+      <div class="kicker">두 관점의 긴장</div>
+      <h2 id="tension-title">불확실성은 실험을 부르지만, 번역되지 않은 전략은 지연을 만든다.</h2>
+      <div class="split">
+        <article class="panel open">
+          <div class="panel-label">관점 A · 계산적 실험</div>
+          <h3>정답을 고르기 전에 가설을 시험한다.</h3>
+          <p>Mosakowski의 1997년 연구는 성공과 실패를 만든 인과 구조를 완전히 알기 어려운 상황에서, 가설을 세우고 행동한 뒤 결과를 읽어 규칙을 갱신하는 계산적 실험을 제시한다. 모호함은 전략을 멈추는 핑계가 아니라 학습 주기를 설계하는 조건이 될 수 있다.</p>
+        </article>
+        <article class="panel closed">
+          <div class="panel-label">관점 B · 실행의 번역</div>
+          <h3>구조·자원·모니터링이 없으면 선택지는 지연이 된다.</h3>
+          <p>Morgan·Menon·Jaworski·Musarra의 2021년 실행 연구는 전략이 좋은 문장인지보다 구조·자원·모니터링·프레이밍·협상 같은 실천으로 번역되는지가 중요하다고 본다. 실행 주체, 자원 한도, 검토 시점이 없으면 다양한 가능성은 아무것도 검증하지 못한다.</p>
+        </article>
+      </div>
+      <p>둘은 모순되지 않는다. 초기에 목적과 가설을 열어 두는 것은 합리적일 수 있다. 반면 첫 실험이 시작된 뒤에도 성공 기준과 중단 조건을 열어 두면 학습은 평가로 이어지지 않는다.</p>
+    </section>
+
+    <section class="section" aria-labelledby="gate-title">
+      <div class="kicker">실행 스캔</div>
+      <h2 id="gate-title">선택지를 늘릴수록 닫아야 할 항목을 표시하라.</h2>
+      <div class="gate">
+        <div class="gate-row"><strong>열린 항목</strong><p>가설·필요 정보·재검토 날짜. 아직 모르는 것을 무엇으로 확인할지 적는다.</p></div>
+        <div class="gate-row"><strong>닫힌 항목</strong><p>이번 기간의 행동·책임자·예산·완료 기준. 실행을 기다리게 하지 않는다.</p></div>
+        <div class="gate-row"><strong>관문</strong><p>어떤 증거가 어느 대안을 탈락시키는지 공개한다. 최고안을 고르는 장치보다 선택지를 줄이는 이유를 남긴다.</p></div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="case-title">
+      <div class="kicker">적용 장면</div>
+      <h2 id="case-title">메가프로젝트는 목적을 열고 운영을 닫아야 한다.</h2>
+      <div class="case">
+        <div class="case-mark">열어 둘<br>것과<br>닫을 것</div>
+        <div class="case-copy">
+          <p>대형 교통·도시 프로젝트는 미래 수요, 정치적 요구, 기술 조건이 움직이기 때문에 처음부터 모든 목적과 경로를 확정하기 어렵다. 너무 일찍 하나의 설계에 고정하면 나중의 수정 비용이 커질 수 있다.</p>
+          <p>Giezen·Verheul·Porter의 2015년 연구가 보여주는 핵심은 “모호하게 가자”가 아니다. 프로젝트의 목적을 일정 정도 열어 두되, 필요한 순간에는 운영 결정을 닫는 능력을 설계하라는 것이다.</p>
+          <p>따라서 전략 문서에서 열린 항목과 닫힌 항목을 별도 표기한다. 대안을 유지하는 비용도 적는다. 선택지 하나는 분석·공급망·인력·의사결정 시간을 요구하기 때문이다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="checks-title">
+      <div class="kicker">리더의 판단 질문</div>
+      <h2 id="checks-title">이번 기간에 실제로 닫을 문을 정하라.</h2>
+      <div class="checks">
+        <article class="check"><div class="check-number">01</div><div><h3>이번 달에 무엇을 시도하고, 어떤 결과에서 방향을 바꿀 것인가?</h3><p>첫 행동과 결과를 읽을 시점을 정하지 못하면 선택지는 토론의 재료로만 남는다.</p></div></article>
+        <article class="check"><div class="check-number">02</div><div><h3>열린 항목 하나가 요구하는 유지 비용은 무엇인가?</h3><p>대안의 수가 늘어날수록 분석·인력·공급망·회의 시간이 함께 늘어난다는 사실을 계산한다.</p></div></article>
+        <article class="check"><div class="check-number">03</div><div><h3>누가 어느 증거를 보고 선택지를 줄일 권한을 갖는가?</h3><p>상황을 보며 결정하자는 말이 검토 책임자와 판단 기준까지 미루는 말이 되지 않게 한다.</p></div></article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="evidence-title">
+      <div class="kicker">근거의 자리</div>
+      <h2 id="evidence-title">판단은 규칙의 적용보다 공통 세계의 가늠에 가깝다.</h2>
+      <details>
+        <summary>연구·자료의 핵심을 펼쳐 읽기</summary>
+        <div class="evidence">
+          <p>Mosakowski, E. (1997), “Strategy making under causal ambiguity: Conceptual issues and empirical evidence.” 인과적 모호성 아래에서 계산적 실험으로 전략을 갱신하는 문제를 다뤘다.</p>
+          <p>Morgan, N. A., Menon, A., Jaworski, B. J., &amp; Musarra, G. (2021), “Strategy implementation: Taking stock and moving forward.” 전략을 구체적 실행 실천으로 번역하는 연구를 정리했다.</p>
+          <p>Giezen, M., Verheul, W. J., &amp; Porter, L. (2015), “Adding value to the decision-making process of mega projects: Fostering strategic ambiguity, redundancy, and resilience.” 메가프로젝트에서 전략적 모호성과 회복탄력성을 함께 설계하는 문제를 다뤘다.</p>
+        </div>
+      </details>
+    </section>
+
+    <div class="closing"><div class="kicker">기억할 문장</div><p>선택지를 보존하는 시간과, 실행을 위해 닫아야 하는 순간을 함께 설계하라.</p></div>
+  </main>
+  <footer>
+    <p>Lead Read Briefing · 열어 둘 것과 닫아야 할 것을 분리할 때 전략은 움직인다.</p>
+    <p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+  </footer>
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const button = document.querySelector('.theme-toggle');
+      const saved = localStorage.getItem('leadread-theme');
+      if (saved === 'dark' || saved === 'light') root.dataset.theme = saved;
+      const sync = () => {
+        const dark = root.dataset.theme === 'dark' || (!root.dataset.theme && matchMedia('(prefers-color-scheme: dark)').matches);
+        button.textContent = dark ? '라이트 모드' : '다크 모드';
+        button.setAttribute('aria-pressed', dark ? 'true' : 'false');
+      };
+      button.addEventListener('click', () => {
+        const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+        root.dataset.theme = next;
+        localStorage.setItem('leadread-theme', next);
+        sync();
+      });
+      sync();
+    })();
+  </script>
+</body>
+</html>
+
