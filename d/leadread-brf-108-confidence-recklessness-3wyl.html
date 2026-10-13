@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>확신은 언제 무모함이 되는가 — Lead Read</title>
+  <style>
+    :root { color-scheme: light; --bg:#f7f4ee; --panel:#fffdf8; --ink:#17243a; --muted:#5d6877; --line:#d8d2c8; --gold:#b77a19; --coral:#b94738; --soft:#eee8dd; --shadow:0 18px 50px rgba(23,36,58,.10); }
+    :root[data-theme="dark"] { color-scheme: dark; --bg:#111a2a; --panel:#18243a; --ink:#f4efe5; --muted:#b8c0cc; --line:#34445e; --gold:#e6b65b; --coral:#ff806d; --soft:#223149; --shadow:0 18px 50px rgba(0,0,0,.25); }
+    @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { color-scheme: dark; --bg:#111a2a; --panel:#18243a; --ink:#f4efe5; --muted:#b8c0cc; --line:#34445e; --gold:#e6b65b; --coral:#ff806d; --soft:#223149; --shadow:0 18px 50px rgba(0,0,0,.25); } }
+    * { box-sizing:border-box; }
+    html { background:var(--bg); }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family: Georgia, "Noto Serif KR", serif; line-height:1.72; word-break:keep-all; }
+    button { font:inherit; }
+    .wrap { width:min(100% - 32px, 980px); margin:0 auto; padding:24px 0 60px; }
+    .topbar { display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:46px; font:600 12px/1.2 system-ui, sans-serif; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
+    .brand { color:var(--gold); }
+    .theme { cursor:pointer; border:1px solid var(--line); border-radius:999px; padding:8px 12px; background:var(--panel); color:var(--ink); }
+    .hero { padding:clamp(28px, 7vw, 76px); border:1px solid var(--line); border-radius:28px; background:linear-gradient(135deg, var(--panel), var(--soft)); box-shadow:var(--shadow); }
+    .eyebrow { margin:0 0 16px; color:var(--coral); font:700 13px/1.3 system-ui, sans-serif; letter-spacing:.09em; }
+    h1 { max-width:760px; margin:0; font-size:clamp(38px, 7vw, 76px); line-height:1.08; letter-spacing:-.055em; }
+    .dek { max-width:650px; margin:26px 0 0; font-size:clamp(18px, 2.5vw, 24px); color:var(--muted); }
+    .meta { display:flex; flex-wrap:wrap; gap:10px; margin-top:30px; font:600 12px/1.3 system-ui, sans-serif; color:var(--muted); }
+    .meta span { border:1px solid var(--line); border-radius:999px; padding:7px 10px; }
+    main { margin-top:50px; }
+    .question { margin:0 0 18px; font-size:clamp(25px, 4vw, 42px); line-height:1.2; letter-spacing:-.035em; }
+    .lead { font-size:20px; }
+    .grid { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:18px; margin:34px 0; }
+    .card { padding:28px; border:1px solid var(--line); border-radius:20px; background:var(--panel); }
+    .card h3 { margin:0 0 10px; font:700 16px/1.35 system-ui, sans-serif; letter-spacing:.01em; }
+    .card p { margin:0; color:var(--muted); }
+    .gold { border-top:5px solid var(--gold); }
+    .coral { border-top:5px solid var(--coral); }
+    .section { margin:54px 0; }
+    .section h2 { margin:0 0 15px; font-size:clamp(26px, 4vw, 38px); line-height:1.2; letter-spacing:-.035em; }
+    .section p { max-width:760px; }
+    .callout { margin:28px 0; padding:24px 28px; border-left:5px solid var(--gold); background:var(--soft); border-radius:0 16px 16px 0; font-size:21px; }
+    ol { padding-left:1.25em; }
+    li { margin:12px 0; padding-left:5px; }
+    details { margin-top:22px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    summary { cursor:pointer; padding:18px 0; font:700 15px/1.4 system-ui, sans-serif; }
+    details p { color:var(--muted); }
+    .sources { font-size:14px; color:var(--muted); }
+    footer { margin-top:60px; padding-top:22px; border-top:1px solid var(--line); color:var(--muted); font:14px/1.6 system-ui, sans-serif; }
+    .author { color:var(--ink); font-weight:700; }
+    :focus-visible { outline:3px solid var(--coral); outline-offset:3px; }
+    @media (max-width:700px) { .wrap { width:min(100% - 22px, 980px); padding-top:16px; } .topbar { margin-bottom:26px; } .hero { border-radius:20px; padding:27px 22px; } .grid { grid-template-columns:1fr; } .card { padding:23px; } .lead { font-size:18px; } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior:auto !important; transition:none !important; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar"><div class="brand">Lead Read / 3 min briefing</div><button class="theme" type="button" aria-label="테마 전환">테마 전환</button></header>
+    <section class="hero" aria-labelledby="title">
+      <p class="eyebrow">JUDGMENT · CONFIDENCE · CONSEQUENCE</p>
+      <h1 id="title">확신은 언제 무모함이 되는가</h1>
+      <p class="dek">확신은 혁신의 연료가 될 수 있다. 그러나 업종과 실패 비용을 묻지 않는 확신은 투자와 판단을 함께 왜곡한다.</p>
+      <div class="meta"><span>의사결정자를 위한 읽기</span><span>두 관점의 논쟁</span><span>아우렐리우스 렌즈</span></div>
+    </section>
+    <main>
+      <section class="section">
+        <h2 class="question">과감함은 언제 좋은 판단을 멈추는가?</h2>
+        <p class="lead">조직은 망설이는 리더보다 밀어붙이는 리더를 선호한다. 하지만 확신은 결단의 속도만 높이는 것이 아니라, 반대 신호를 작게 만들기도 한다. 핵심은 확신의 양이 아니라 확신이 놓인 자리와 실패의 가격이다.</p>
+        <div class="callout">한 문장 결론: <strong>확신은 업종에 맞는 베팅이고 철회 가능한 검증이 붙어 있을 때 연료가 되며, 그 둘이 없을 때 무모함이 된다.</strong></div>
+      </section>
+      <section class="grid" aria-label="두 관점">
+        <article class="card gold"><h3>관점 A · 확신은 투자 왜곡을 만든다</h3><p>Malmendier와 Tate(2005)는 477개 대기업 최고경영자의 옵션 행사와 자사주 매입 행동으로 과신을 측정했다. 과신한 리더는 자기 프로젝트의 수익을 높게 보고 외부 자금 조달을 비싸게 여겼다. 현금이 있을 때는 과잉 투자하고, 외부 자금이 필요할 때는 좋은 기회까지 움츠렸다.</p></article>
+        <article class="card coral"><h3>관점 B · 확신은 혁신을 밀어 올린다</h3><p>Hirshleifer, Low와 Teoh(2012)는 같은 측정법으로 과신한 리더의 연구개발비·특허·인용을 살폈다. 혁신적인 업종에서는 과신이 더 큰 혁신 성과와 연결됐다. 다만 성숙한 업종에서는 그 효과가 사라지고 왜곡이 남았다.</p></article>
+      </section>
+      <section class="section">
+        <h2>같은 확신, 다른 자리</h2>
+        <p>두 연구는 서로 모순되지 않는다. 과신의 효과는 리더의 성격만이 아니라 과업의 구조에 달려 있다. 기술과 시장이 아직 열려 있고 실험의 실패를 흡수할 수 있는 자리라면 큰 베팅이 학습 속도를 높인다. 반대로 성숙한 시장의 수성전이나 실패 한 번으로 생존이 흔들리는 자리라면, 확신은 검증 회피와 자본 배분의 왜곡으로 빠르게 변한다.</p>
+      </section>
+      <section class="section">
+        <h2>AOL–Time Warner: 역사를 사려 한 베팅</h2>
+        <p>2000년 1월 AOL과 Time Warner가 발표한 1,640억 달러 규모의 합병은 새 미디어 시대를 열겠다는 거대한 확신이었다. 그러나 고평가 주식과 닷컴 거품의 붕괴, 빠른 인터넷 기업과 전통 미디어 기업 사이의 문화 충돌이 겹쳤다. 합병 회사는 2002년 990억 달러의 손실을 기록했고, 2003년 회사 이름에서 AOL이 빠졌으며, 2009년 AOL은 분사됐다.</p>
+        <p>교훈은 큰 베팅을 하지 말라는 것이 아니다. 베팅의 크기를 심사하는 회의와 그 베팅이 놓인 자리를 심사하는 회의를 분리하라는 것이다. 혁신전의 확신을 성숙한 시장의 수성전에 가져오면, 비전은 검증을 밀어내는 장치가 된다.</p>
+      </section>
+      <section class="section">
+        <h2>아우렐리우스의 작은 심문란</h2>
+        <p>아우렐리우스는 자신의 인상이 사실인지 욕망인지 살폈다. 황제에게 필요한 것은 확신을 없애는 일이 아니라 확신을 판단대 위에 올리는 일이었다. 이 질문을 큰 결재 옆에 작게 붙이면, 과신은 성격이 아니라 관리 가능한 일의 방식이 된다.</p>
+        <ol>
+          <li>이 판단은 관찰된 사실인가, 내가 바라는 결과인가?</li>
+          <li>우리 업종은 탐험이 필요한가, 검증과 수성이 필요한가?</li>
+          <li>실패하면 배우고 다음 시도를 할 수 있는가, 아니면 한 번에 끝나는가?</li>
+          <li>외부 자금·반대 의견·철회 조건을 일부러 피하고 있지는 않은가?</li>
+        </ol>
+      </section>
+      <section class="section">
+        <h2>결정 전에 남길 문장</h2>
+        <p>가장 큰 베팅 하나를 고르고 실패의 가격을 먼저 적어 보라. 확신을 꺾기 위한 문장이 아니라, 확신이 어떤 조건에서 유효한지 확인하기 위한 문장이다. 좋은 리더는 확신이 없는 리더가 아니라 확신을 심문할 시간을 설계하는 리더다.</p>
+        <details><summary>출처와 읽는 법</summary><p class="sources">Malmendier & Tate(2005)는 과신한 최고경영자의 투자 왜곡을, Hirshleifer, Low & Teoh(2012)는 혁신 산업에서의 과신과 혁신 성과를 다룬다. AOL–Time Warner 사례는 거래·손실·사명 변경·분사라는 공개 기록의 흐름에 한정해 적용했다. 아우렐리우스의 《명상록》은 판단과 욕망을 구분하는 성찰의 렌즈로 사용했다.</p></details>
+      </section>
+    </main>
+    <footer><div class="author">&lt;조우성 변호사 작성&gt;</div><div>Lead Read · 판단은 확신의 크기보다 검증의 출구에서 선명해집니다.</div></footer>
+  </div>
+  <script>
+    (() => { const root = document.documentElement; const button = document.querySelector('.theme'); button.addEventListener('click', () => { root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark'; }); })();
+  </script>
+</body>
+</html>
