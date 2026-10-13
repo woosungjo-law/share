@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="목표 설정이 성과를 높이는 조건과 다른 성과를 밀어내는 위험을 비교하는 3분 브리핑">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232456a6'/%3E%3Cpath d='M8 9h16v3H8zm0 6h11v3H8zm0 6h16v3H8z' fill='white'/%3E%3C/svg%3E">
+  <title>목표는 왜 성과를 만들고 무너뜨리는가 | Lead Read</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f6f2e9;
+      --surface: #fffdf8;
+      --ink: #242a35;
+      --muted: #5c6068;
+      --line: #d9d2c5;
+      --gain: #2456a6;
+      --gain-wash: #e8eef8;
+      --risk: #a8382e;
+      --risk-wash: #f8e9e5;
+      --focus: #074da8;
+      --shadow: 0 16px 40px rgba(36, 42, 53, .09);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        color-scheme: dark;
+        --paper: #171a20;
+        --surface: #222630;
+        --ink: #f1eee7;
+        --muted: #c0bfbd;
+        --line: #454956;
+        --gain: #a7c4ff;
+        --gain-wash: #27344d;
+        --risk: #ffaaa0;
+        --risk-wash: #432d2e;
+        --focus: #a9c8ff;
+        --shadow: 0 16px 40px rgba(0, 0, 0, .24);
+      }
+    }
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --paper: #171a20; --surface: #222630; --ink: #f1eee7; --muted: #c0bfbd;
+      --line: #454956; --gain: #a7c4ff; --gain-wash: #27344d; --risk: #ffaaa0;
+      --risk-wash: #432d2e; --focus: #a9c8ff; --shadow: 0 16px 40px rgba(0,0,0,.24);
+    }
+    :root[data-theme="light"] { color-scheme: light; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Noto Sans KR", Pretendard, "Malgun Gothic", sans-serif; line-height: 1.7; word-break: keep-all; overflow-wrap: anywhere; }
+    a { color: var(--gain); text-underline-offset: .2em; }
+    :focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; border-radius: 3px; }
+    .wrap { width: min(100% - 36px, 1060px); margin: 0 auto; }
+    .masthead { display: flex; justify-content: space-between; align-items: center; gap: 15px; border-bottom: 1px solid var(--line); padding: 19px 0; }
+    .brand { color: var(--muted); font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; }
+    .theme-toggle { border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--ink); padding: 8px 13px; font: inherit; font-size: .82rem; cursor: pointer; }
+    main { padding: 34px 0 64px; }
+    .kicker { color: var(--gain); font-size: .76rem; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+    h1, h2, h3 { line-height: 1.28; }
+    h1 { max-width: 850px; margin: 11px 0 14px; font-family: Georgia, "Batang", serif; font-size: clamp(2.2rem, 6vw, 4.5rem); letter-spacing: -.045em; }
+    .lead { max-width: 760px; color: var(--muted); font-size: clamp(1.03rem, 2.4vw, 1.27rem); margin: 0; }
+    .hero { padding: 25px 0 42px; }
+    .thesis { display: grid; grid-template-columns: 132px 1fr; gap: 20px; align-items: start; margin-top: 28px; padding: 23px; border-radius: 15px; background: var(--ink); color: var(--paper); box-shadow: var(--shadow); }
+    .thesis-label { color: #c9d9f7; font-size: .76rem; font-weight: 850; letter-spacing: .1em; }
+    .thesis p { margin: 0; font-size: clamp(1.04rem, 2.4vw, 1.32rem); font-weight: 650; line-height: 1.55; }
+    .scene { display: grid; grid-template-columns: .85fr 1.15fr; gap: 22px; align-items: center; margin: 0 0 46px; padding: 24px; border: 1px solid var(--line); border-radius: 15px; background: var(--surface); }
+    .scene h2 { margin: 0; font-family: Georgia, "Batang", serif; font-size: 1.65rem; }
+    .scene p { margin: 0; color: var(--muted); }
+    .section-title { margin: 0 0 18px; }
+    .section-title h2 { margin: 0 0 7px; font-family: Georgia, "Batang", serif; font-size: clamp(1.55rem, 4vw, 2.2rem); }
+    .section-title p { margin: 0; color: var(--muted); }
+    .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .card { min-width: 0; position: relative; padding: 23px 24px 25px; border: 1px solid var(--line); border-radius: 15px; background: var(--surface); }
+    .card.gain { border-top: 5px solid var(--gain); }
+    .card.risk { border-top: 5px solid var(--risk); }
+    .card-label { color: var(--muted); font-size: .72rem; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+    .card h3 { margin: 8px 0 10px; font-family: Georgia, "Batang", serif; font-size: 1.42rem; }
+    .card p { margin: 0; color: var(--muted); }
+    .card ul { margin: 15px 0 0; padding-left: 1.2em; }
+    .card li + li { margin-top: 6px; }
+    .bridge { margin: 15px 0 46px; padding: 17px 20px; border-left: 4px solid var(--ink); background: var(--surface); color: var(--muted); }
+    .bridge strong { color: var(--ink); }
+    .table-shell { overflow: hidden; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+    table { width: 100%; border-collapse: collapse; text-align: left; }
+    th, td { padding: 15px 17px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { background: var(--gain-wash); font-size: .82rem; }
+    tbody tr:last-child td { border-bottom: 0; }
+    td:first-child { width: 22%; font-weight: 750; }
+    .checklist { margin: 46px 0; padding: 26px; border-radius: 15px; background: var(--risk-wash); }
+    .checklist h2 { margin: 0 0 15px; font-family: Georgia, "Batang", serif; font-size: 1.75rem; }
+    .checklist ol { margin: 0; padding-left: 1.3em; }
+    .checklist li { padding-left: 4px; }
+    .checklist li + li { margin-top: 9px; }
+    details { margin: 16px 0 0; padding: 17px 19px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+    summary { font-weight: 750; cursor: pointer; }
+    details p { color: var(--muted); margin: 13px 0 0; }
+    .sources { margin-top: 48px; padding-top: 25px; border-top: 1px solid var(--line); }
+    .sources h2 { font-size: 1.28rem; }
+    .sources li + li { margin-top: 12px; }
+    .source-note { display: block; color: var(--muted); font-size: .9rem; }
+    footer { border-top: 1px solid var(--line); padding: 24px 0 34px; color: var(--muted); font-size: .85rem; }
+    .author-credit { margin: 5px 0 0; color: var(--ink); font-weight: 750; }
+    @media (max-width: 720px) {
+      .wrap { width: min(100% - 24px, 1060px); }
+      .thesis { grid-template-columns: 1fr; gap: 8px; padding: 20px; }
+      .scene { grid-template-columns: 1fr; gap: 10px; }
+      .cards { grid-template-columns: 1fr; }
+      .table-shell { overflow: visible; border: 0; background: transparent; }
+      table, tbody, tr, td { display: block; width: 100%; }
+      thead { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+      tbody { display: grid; gap: 10px; }
+      tbody tr { border: 1px solid var(--line); border-radius: 12px; background: var(--surface); overflow: hidden; }
+      td { border-bottom: 1px solid var(--line) !important; padding: 12px 15px; }
+      td::before { display: block; margin-bottom: 4px; color: var(--muted); font-size: .72rem; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+      td:nth-child(1)::before { content: "점검 항목"; }
+      td:nth-child(2)::before { content: "질문"; }
+      tr td:last-child { border-bottom: 0 !important; }
+      .checklist { padding: 22px; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="masthead">
+      <div class="brand">Lead Read · 3분 브리핑</div>
+      <button class="theme-toggle" type="button" aria-label="화면 색상 전환" aria-pressed="false">밝은 화면</button>
+    </div>
+    <main>
+      <header class="hero">
+        <div class="kicker">Goals &amp; trade-offs</div>
+        <h1>목표는 왜 성과를<br>만들고 무너뜨리는가</h1>
+        <p class="lead">분기 숫자가 또렷해질수록 팀은 정말 더 나은 일을 할까요? 목표가 주는 집중과, 목표가 밀어내는 일을 함께 살펴봅니다.</p>
+        <div class="thesis">
+          <div class="thesis-label">한 줄 판단</div>
+          <p>목표는 행동의 방향을 선명하게 만들 수 있다. 다만 하나의 수치가 모든 판단을 대신하면, 측정되지 않는 고객 가치·윤리·학습이 뒤로 밀릴 수 있다.</p>
+        </div>
+      </header>
+
+      <section class="scene" aria-labelledby="scene-title">
+        <div>
+          <div class="kicker">A familiar scene</div>
+          <h2 id="scene-title">숫자는 맞는데 일이 나빠진다면</h2>
+        </div>
+        <p>한 조직이 매출과 신규 고객 목표를 정했다. 영업팀은 계약을 위해 할인 폭을 키우고, 지원팀은 이탈을 막으려 해결할 수 없는 약속까지 한다. 목표 수치는 좋아져도 이익·신뢰·협업이 손상될 수 있다. 목표의 성과만 세면 이런 비용은 늦게 보인다.</p>
+      </section>
+
+      <section aria-labelledby="tradeoff-title">
+        <div class="section-title">
+          <div class="kicker">Two sides of one tool</div>
+          <h2 id="tradeoff-title">집중을 만드는 도구, 시야를 좁히는 도구</h2>
+          <p>연구는 목표 설정의 힘과 위험을 각각 조명한다. 둘 가운데 하나만 고르는 대신 작동 조건을 따져야 한다.</p>
+        </div>
+        <div class="cards">
+          <article class="card gain">
+            <div class="card-label">가능성 · Locke &amp; Latham</div>
+            <h3>구체적이고 어려운 목표는 노력을 모은다</h3>
+            <p>“최선을 다하자”보다 구체적인 목표가 행동의 방향과 노력을 돕는 경우가 있다. 효과는 능력, 목표에 대한 몰입, 피드백, 과업을 아는 정도 등 조건과 함께 봐야 한다.</p>
+            <ul><li>무엇을 달성할지 분명한가?</li><li>해낼 지식·자원·피드백이 있는가?</li></ul>
+          </article>
+          <article class="card risk">
+            <div class="card-label">위험 · Ordóñez et al.</div>
+            <h3>좁은 목표는 보이지 않는 일을 밀어낸다</h3>
+            <p>목표가 지나치게 좁거나 강하게 걸리면 사람들은 지표에만 집중할 수 있다. 그 결과 중요한 다른 업무가 방치되거나 위험한 선택과 윤리적 실수가 늘어날 수 있다는 경고다.</p>
+            <ul><li>지표 밖에 놓인 중요한 결과는 무엇인가?</li><li>목표를 맞추려 어떤 대가를 치르고 있는가?</li></ul>
+          </article>
+        </div>
+        <div class="bridge"><strong>합의할 수 있는 운영 원칙:</strong> 목표는 정하는 날보다 실행 중 점검이 중요하다. 자주 논의하고, 지표를 구체화하며, 관련된 사람들이 진행 상황을 볼 수 있게 하자는 FAST 제안은 목표를 계속 조정하는 실무 방식이다. 이는 모든 상황에서 SMART보다 우월하다고 입증된 법칙이 아니라, Sull 부부가 제시한 운영 제안이다.</div>
+      </section>
+
+      <section aria-labelledby="matrix-title">
+        <div class="section-title">
+          <div class="kicker">Fast scan</div>
+          <h2 id="matrix-title">목표 회의에서 함께 볼 세 줄</h2>
+        </div>
+        <div class="table-shell">
+          <table>
+            <thead><tr><th scope="col">점검 항목</th><th scope="col">질문</th></tr></thead>
+            <tbody>
+              <tr><td>핵심 성과</td><td>목표 수치를 달성하면 고객과 조직에도 실제로 좋은 결과가 남는가?</td></tr>
+              <tr><td>놓친 결과</td><td>이 목표 때문에 덜 측정되거나 덜 보상받는 중요한 일은 무엇인가?</td></tr>
+              <tr><td>실행 조건</td><td>팀이 목표를 달성할 권한·능력·자원과 중간 피드백을 갖췄는가?</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="checklist" aria-labelledby="checklist-title">
+        <h2 id="checklist-title">목표를 확정하기 전에</h2>
+        <ol>
+          <li>어떤 성과를 바꾸려는지 한 문장으로 설명한다.</li>
+          <li>그 성과와 함께 지켜야 할 안전·윤리·고객 기준을 정한다.</li>
+          <li>진척을 논의할 주기와 목표를 조정할 권한을 합의한다.</li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="human-title">
+        <div class="section-title">
+          <div class="kicker">A human lens</div>
+          <h2 id="human-title">목표를 선택한 사람의 책임</h2>
+          <p>사르트르의 자유와 책임은 목표를 선택하고 그 결과를 돌아보게 하는 보조 질문이다. 목표 설정 연구가 이 철학을 검증했다는 뜻은 아니다.</p>
+        </div>
+        <details>
+          <summary>회의에서 이렇게 물을 수 있다</summary>
+          <p>“이 목표를 선택하면서 무엇을 더 중요하게 만들었나? 그 선택이 다른 사람과 고객에게 어떤 부담을 주는지 언제 확인할까?” 목표는 숫자를 적는 행위에서 끝나지 않는다. 선택의 효과를 살피고 고치는 책임도 포함한다.</p>
+        </details>
+      </section>
+
+      <section class="sources" aria-labelledby="sources-title">
+        <h2 id="sources-title">근거와 더 읽을 자료</h2>
+        <ol>
+          <li><a href="https://doi.org/10.1037/0003-066X.57.9.705" target="_blank" rel="noopener noreferrer">Edwin A. Locke &amp; Gary P. Latham, “Building a Practically Useful Theory of Goal Setting and Task Motivation: A 35-Year Odyssey”</a><span class="source-note">American Psychologist, 2002, 57(9), 705–717. 목표 설정 이론과 그 작동 조건을 종합한 논문.</span></li>
+          <li><a href="https://doi.org/10.5465/AMP.2009.37007999" target="_blank" rel="noopener noreferrer">Lisa D. Ordóñez, Maurice E. Schweitzer, Adam D. Galinsky &amp; Max H. Bazerman, “Goals Gone Wild: The Systematic Side Effects of Overprescribing Goal Setting”</a><span class="source-note">Academy of Management Perspectives, 2009, 23(1), 6–16. 목표 설정의 잠재적 부작용을 경고한 논문.</span></li>
+          <li><a href="https://shop.sloanreview.mit.edu/store/with-goals-fast-beats-smart" target="_blank" rel="noopener noreferrer">Donald Sull &amp; Charles Sull, “With Goals, FAST Beats SMART”</a><span class="source-note">MIT Sloan Management Review, 2018. 빈번한 논의, 야심, 구체적 지표, 투명성을 목표 운영 원리로 제안한 글.</span></li>
+          <li><a href="https://plato.stanford.edu/entries/sartre/" target="_blank" rel="noopener noreferrer">Stanford Encyclopedia of Philosophy, “Jean-Paul Sartre”</a><span class="source-note">목표 선택과 책임을 묻는 보조 렌즈의 참고 자료.</span></li>
+        </ol>
+      </section>
+    </main>
+    <script>
+      (() => {
+        const button = document.querySelector('.theme-toggle');
+        const root = document.documentElement;
+        button.addEventListener('click', () => {
+          const dark = root.dataset.theme !== 'dark';
+          root.dataset.theme = dark ? 'dark' : 'light';
+          button.setAttribute('aria-pressed', String(dark));
+          button.textContent = dark ? '어두운 화면' : '밝은 화면';
+        });
+      })();
+    </script>
+    <footer>
+      <div>Lead Read · 리더를 위한 판단 브리핑</div>
+      <p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+    </footer>
+  </div>
+</body>
+</html>
