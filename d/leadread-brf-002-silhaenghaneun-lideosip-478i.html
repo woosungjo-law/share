@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="description" content="Lead Read 3분 브리핑 — 실행하는 리더십">
+  <title>실행하는 리더십 — Lead Read</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f5f4ee;
+      --surface: #fffefa;
+      --ink: #1d2924;
+      --muted: #64716a;
+      --line: #d8ddd7;
+      --green: #2e5b4d;
+      --orange: #bf6a4c;
+      --soft-green: #e7f0eb;
+      --soft-orange: #faece5;
+      --shadow: 0 16px 42px rgba(36, 68, 56, .10);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --paper: #111916;
+        --surface: #1b2520;
+        --ink: #edf3ee;
+        --muted: #b5c2ba;
+        --line: #34453d;
+        --green: #9dceb9;
+        --orange: #f0a384;
+        --soft-green: #20392f;
+        --soft-orange: #3a2823;
+        --shadow: 0 16px 42px rgba(0, 0, 0, .28);
+      }
+    }
+    :root[data-theme="light"] { color-scheme: light; }
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --paper: #111916; --surface: #1b2520; --ink: #edf3ee; --muted: #b5c2ba;
+      --line: #34453d; --green: #9dceb9; --orange: #f0a384; --soft-green: #20392f;
+      --soft-orange: #3a2823; --shadow: 0 16px 42px rgba(0, 0, 0, .28);
+    }
+    * { box-sizing: border-box; }
+    html { background: var(--paper); }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: "Noto Sans KR", Pretendard, "Malgun Gothic", sans-serif; line-height: 1.78; word-break: keep-all; -webkit-font-smoothing: antialiased; }
+    a { color: var(--green); }
+    .page { max-width: 980px; margin: 0 auto; padding: 28px 22px 64px; }
+    .masthead { display: flex; justify-content: space-between; gap: 18px; align-items: baseline; border-bottom: 1px solid var(--line); padding-bottom: 14px; }
+    .brand { color: var(--green); font-weight: 800; letter-spacing: .11em; font-size: .8rem; }
+    .meta { color: var(--muted); font-size: .8rem; }
+    .hero { padding: 54px 0 32px; max-width: 790px; }
+    .eyebrow { color: var(--orange); font-size: .78rem; font-weight: 800; letter-spacing: .12em; }
+    h1, h2, h3 { line-height: 1.22; text-wrap: balance; }
+    h1 { margin: 12px 0 18px; font-family: Georgia, "Noto Serif KR", serif; font-size: clamp(2.25rem, 6vw, 4.8rem); letter-spacing: -.055em; }
+    h2 { margin: 0 0 16px; font-size: clamp(1.3rem, 2.5vw, 1.75rem); }
+    h3 { margin: 0 0 8px; font-size: 1.03rem; }
+    .dek { margin: 0; color: var(--muted); font-size: clamp(1.02rem, 2vw, 1.24rem); max-width: 64ch; }
+    .verdict { display: grid; grid-template-columns: 1fr .8fr; gap: 22px; align-items: stretch; margin: 0 0 42px; }
+    .verdict-main { background: var(--green); color: #fff; padding: 30px; }
+    .verdict-main h2 { color: #fff; }
+    .verdict-main p { margin: 0; font-size: 1.18rem; }
+    .question-box { background: var(--soft-orange); border: 1px solid var(--orange); padding: 26px; }
+    .question-box .label { color: var(--orange); font-weight: 800; font-size: .78rem; letter-spacing: .1em; }
+    .question-box p { margin: 12px 0 0; font-size: 1.18rem; font-weight: 700; }
+    section { margin: 0 0 42px; }
+    .section-rule { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+    .section-rule::after { content: ""; height: 1px; flex: 1; background: var(--line); }
+    .section-kicker { color: var(--orange); font-size: .78rem; font-weight: 800; letter-spacing: .12em; }
+    .prose { max-width: 68ch; }
+    .prose p { margin: 0 0 16px; }
+    .argument { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 26px 0 18px; }
+    .argument-card { background: var(--surface); border: 1px solid var(--line); padding: 22px; box-shadow: var(--shadow); }
+    .argument-card:first-child { border-top: 5px solid var(--green); }
+    .argument-card:last-child { border-top: 5px solid var(--orange); }
+    .argument-card p { margin: 0; color: var(--muted); }
+    .skill-list { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; margin: 0 0 26px; }
+    .skill-list div { border-left: 3px solid var(--green); background: var(--soft-green); padding: 14px 12px; }
+    .skill-list strong { display: block; font-size: .92rem; margin-bottom: 4px; }
+    .skill-list span { display: block; color: var(--muted); font-size: .82rem; line-height: 1.45; }
+    .window-mirror { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0 0; }
+    .window-mirror > div { padding: 22px; border: 1px solid var(--line); background: var(--surface); }
+    .window-mirror > div:first-child { border-top: 5px solid var(--green); }
+    .window-mirror > div:last-child { border-top: 5px solid var(--orange); }
+    .window-mirror p { margin: 0; color: var(--muted); }
+    .questions { counter-reset: decision; display: grid; gap: 10px; padding: 0; }
+    .questions li { list-style: none; counter-increment: decision; display: grid; grid-template-columns: 32px 1fr; gap: 12px; align-items: start; background: var(--surface); border: 1px solid var(--line); padding: 15px 17px; }
+    .questions li::before { content: counter(decision); color: var(--orange); font-weight: 900; font-variant-numeric: tabular-nums; }
+    details { background: var(--surface); border: 1px solid var(--line); padding: 14px 17px; }
+    details + details { border-top: 0; }
+    summary { cursor: pointer; color: var(--green); font-weight: 800; }
+    summary:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
+    .source-note { color: var(--muted); font-size: .93rem; }
+    footer { border-top: 1px solid var(--line); margin-top: 56px; padding-top: 18px; color: var(--muted); font-size: .82rem; display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+    .author-credit { color: var(--ink); font-weight: 800; }
+    @media (max-width: 720px) {
+      .page { padding: 18px 16px 46px; }
+      .masthead, .verdict, .argument, .window-mirror { grid-template-columns: 1fr; display: grid; }
+      .skill-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .masthead { display: flex; }
+      .hero { padding-top: 38px; }
+      h1 { font-size: clamp(2.25rem, 13vw, 3.6rem); }
+      .verdict-main, .question-box, .argument-card, .window-mirror > div { padding: 22px; }
+      footer { display: block; }
+      footer > * { margin-bottom: 7px; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; } }
+    @media print { body { background: #fff; color: #111; } .page { max-width: none; } .verdict-main { print-color-adjust: exact; -webkit-print-color-adjust: exact; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="masthead">
+      <div class="brand">LEAD READ</div>
+      <div class="meta">3분 브리핑 · 능력과 방향</div>
+    </header>
+
+    <header class="hero">
+      <div class="eyebrow">LEADERSHIP IN PRACTICE</div>
+      <h1>실행하는 리더십</h1>
+      <p class="dek">좋은 리더는 능력이 많은 사람에 그치지 않는다. 그 능력을 자신을 돋보이게 하는 데 쓰지 않고, 팀이 스스로 움직이게 만드는 데 써야 한다.</p>
+    </header>
+
+    <section class="verdict" aria-labelledby="verdict-title">
+      <div class="verdict-main">
+        <h2 id="verdict-title">한 문장 결론</h2>
+        <p>감정을 다루는 능력은 출발점이다. 그 능력을 팀을 키우는 방향으로 쓰고, 반복되는 규칙으로 만들어야 실행하는 리더십이 된다.</p>
+      </div>
+      <div class="question-box">
+        <div class="label">핵심 질문</div>
+        <p>내가 잘하는 능력을 나를 드러내는 데 쓰고 있는가, 팀을 키우는 데 쓰고 있는가?</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="why-title">
+      <div class="section-rule"><div class="section-kicker">01 · 왜 중요한가</div></div>
+      <h2 id="why-title">좋은 리더십은 성격보다 습관에 가깝다</h2>
+      <div class="prose">
+        <p>리더가 겸손한 사람인지 아닌지만으로는 충분하지 않다. 겸손한 사람도 바쁜 순간에는 팀원의 일을 빼앗아 직접 처리할 수 있다. 반대로 평소에 자신감이 강한 사람도 팀이 판단할 수 있는 규칙을 만들 수 있다.</p>
+        <p>그래서 중요한 질문은 “나는 어떤 사람인가?”에서 끝나지 않는다. “내가 자리를 비워도 팀이 성장하고 판단할 수 있는가?”까지 물어야 한다.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="debate-title">
+      <div class="section-rule"><div class="section-kicker">02 · 두 관점</div></div>
+      <h2 id="debate-title">한 연구는 능력을 말하고, 다른 연구는 그 능력의 방향을 묻는다</h2>
+      <div class="argument">
+        <article class="argument-card">
+          <h3>먼저, 사람을 다루는 능력을 키워라</h3>
+          <p>Goleman은 리더의 성과를 감정을 다루는 능력과 연결한다. 자기 마음을 알아차리고, 감정을 조절하고, 다른 사람을 이해하고, 관계를 움직이는 힘은 연습으로 키울 수 있다는 주장이다.</p>
+        </article>
+        <article class="argument-card">
+          <h3>다음으로, 그 능력을 누구를 위해 쓰는지 보라</h3>
+          <p>Collins는 뛰어난 기업을 만든 리더에게 개인적인 겸손과 일에 대한 강한 의지가 함께 있었다고 설명한다. 능력과 존재감이 커질수록 조직보다 자기 이름이 커지는 위험도 살펴야 한다.</p>
+        </article>
+      </div>
+      <div class="skill-list" aria-label="리더가 연습할 다섯 가지 능력">
+        <div><strong>자기 인식</strong><span>내 감정을 알아차리기</span></div>
+        <div><strong>자기 조절</strong><span>감정에 바로 끌려가지 않기</span></div>
+        <div><strong>동기</strong><span>끝까지 밀고 가기</span></div>
+        <div><strong>공감</strong><span>상대의 마음 읽기</span></div>
+        <div><strong>관계 기술</strong><span>함께 움직이기</span></div>
+      </div>
+      <div class="window-mirror">
+        <div><h3>일이 잘되었을 때는 창밖을 본다</h3><p>성과를 팀과 동료, 상황의 도움으로도 설명한다. 그래야 다음에도 사람들이 목소리를 내고 위험을 감수할 수 있다.</p></div>
+        <div><h3>일이 잘못되었을 때는 거울을 본다</h3><p>자신의 판단과 선택을 먼저 돌아본다. 그래야 실패를 남의 탓으로 돌리지 않고 다음 행동을 고칠 수 있다.</p></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="case-title">
+      <div class="section-rule"><div class="section-kicker">03 · 대입해보기</div></div>
+      <h2 id="case-title">첫 팀장이 해야 할 일은 직접 해결하는 것이 아니다</h2>
+      <div class="prose">
+        <p>시니어 엔지니어에서 처음 팀장이 된 사람이 있다고 하자. 코드는 누구보다 잘하지만, 팀원이 상담을 요청하면 직접 문제를 해결해버린다. 회의에서도 정답을 먼저 말한다.</p>
+        <p>당장은 빨라 보이지만 팀원은 스스로 생각하고 성장할 기회를 잃는다. 이 리더에게 필요한 것은 공감 교육 한 번이 아니다. 질문을 먼저 하고, 직접 코딩하는 시간을 팀원의 성장을 돕는 대화로 바꾸는 규칙이다.</p>
+        <p>성공한 사람의 이름을 기록하고, 실패 회의에서는 책임자보다 다음 실험을 먼저 적는 것도 같은 원리다. 좋은 태도를 개인의 성격에 맡기지 않고 팀의 습관으로 만드는 것이다.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="questions-title">
+      <div class="section-rule"><div class="section-kicker">04 · 당신의 결정에 대입하기</div></div>
+      <h2 id="questions-title">리더가 지금 던질 질문</h2>
+      <ol class="questions">
+        <li>나는 팀원의 말을 듣기 전에 해결책부터 말하고 있지 않은가?</li>
+        <li>일이 잘되었을 때 공을 누구에게 돌리는가?</li>
+        <li>내가 자리를 비워도 팀이 계속 판단할 수 있는 규칙이 있는가?</li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="evidence-title">
+      <div class="section-rule"><div class="section-kicker">05 · 근거</div></div>
+      <h2 id="evidence-title">이렇게 읽었습니다</h2>
+      <details open>
+        <summary>감성지능의 관점</summary>
+        <p class="source-note">Goleman, 1998 — 리더의 성과를 가르는 감정 이해·조절·공감·관계 능력을 설명한다.</p>
+      </details>
+      <details>
+        <summary>5단계 리더십의 관점</summary>
+        <p class="source-note">Collins, 2001 — 개인적 겸손과 직업적 의지를 함께 가진 리더의 특징을 설명한다.</p>
+      </details>
+      <details>
+        <summary>이 브리핑의 핵심 기준</summary>
+        <p class="source-note">능력을 키우고, 그 능력을 조직을 위해 쓰고, 반복 가능한 규칙으로 남긴다. 부족함과 과함 사이에서 상황에 맞는 균형을 찾는다는 아리스토텔레스의 중용 개념도 이 기준을 돕는다.</p>
+      </details>
+    </section>
+
+    <footer>
+      <div>Lead Read · 리더십 브리핑</div>
+      <div class="author-credit">&lt;조우성 변호사 작성&gt;</div>
+    </footer>
+  </div>
+</body>
+</html>
