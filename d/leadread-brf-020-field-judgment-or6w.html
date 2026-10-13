@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko" data-theme="system">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="간결한 판단 규칙과 현장의 경험 공유를 함께 설계하는 3분 브리핑">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" href="data:,">
+  <title>현장은 무엇으로 판단하는가 | Lead Read</title>
+  <style>
+    :root{color-scheme:light dark;--paper:#f4f1e9;--surface:#fffdf7;--ink:#202b2a;--muted:#586562;--line:#c9cec4;--green:#286b53;--green-soft:#e5eee7;--orange:#a94d28;--orange-soft:#f8e9df;--focus:#a94d28;--shadow:0 14px 36px rgba(30,48,41,.08)}
+    @media(prefers-color-scheme:dark){:root{--paper:#141b19;--surface:#1d2723;--ink:#edf3ee;--muted:#bbc8be;--line:#405049;--green:#8dc6a7;--green-soft:#263b31;--orange:#ffad82;--orange-soft:#462d23;--focus:#ffb28c;--shadow:0 14px 36px rgba(0,0,0,.24)}}
+    html[data-theme="light"]{color-scheme:light;--paper:#f4f1e9;--surface:#fffdf7;--ink:#202b2a;--muted:#586562;--line:#c9cec4;--green:#286b53;--green-soft:#e5eee7;--orange:#a94d28;--orange-soft:#f8e9df;--focus:#a94d28;--shadow:0 14px 36px rgba(30,48,41,.08)}
+    html[data-theme="dark"]{color-scheme:dark;--paper:#141b19;--surface:#1d2723;--ink:#edf3ee;--muted:#bbc8be;--line:#405049;--green:#8dc6a7;--green-soft:#263b31;--orange:#ffad82;--orange-soft:#462d23;--focus:#ffb28c;--shadow:0 14px 36px rgba(0,0,0,.24)}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif;word-break:keep-all;overflow-wrap:anywhere}a{color:var(--green);text-underline-offset:.2em}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--focus);outline-offset:4px;border-radius:3px}.sheet{max-width:960px;margin:auto;padding:22px clamp(16px,4vw,54px) 46px}.mast{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding:9px 0 17px;color:var(--muted);font-size:.82rem;letter-spacing:.09em;text-transform:uppercase}.theme{border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:7px 11px;font:inherit;font-size:.8rem;cursor:pointer;border-radius:2px}.hero{padding:clamp(44px,8vw,84px) 0 34px;max-width:760px}.kicker{color:var(--green);font-weight:750;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase}.hero h1{font-size:clamp(2.3rem,6vw,4.7rem);line-height:1.07;letter-spacing:-.06em;margin:16px 0 19px}.hero p{color:var(--muted);font-size:clamp(1.08rem,2vw,1.28rem);max-width:680px;margin:0}.thesis{border-left:4px solid var(--orange);padding:16px 22px;margin:22px 0 48px;background:var(--surface);box-shadow:var(--shadow);font-size:1.06rem}.thesis b{color:var(--orange);font-size:.76rem;letter-spacing:.09em;text-transform:uppercase;margin-right:10px}.section{margin:48px 0}.section-title{display:grid;grid-template-columns:58px 1fr;gap:14px;border-top:1px solid var(--line);padding-top:23px;margin-bottom:23px}.section-title .num{font:700 .8rem ui-monospace,monospace;color:var(--green);padding-top:5px}.section-title h2{font-size:clamp(1.42rem,3vw,2.05rem);line-height:1.24;letter-spacing:-.03em;margin:0}.section-title p{grid-column:2;margin:0;color:var(--muted)}.split{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:22px 0}.lens{padding:4px 0 4px 18px;border-left:3px solid var(--green)}.lens.memory{border-left-color:var(--orange)}.lens h3{font-size:1.08rem;margin:4px 0 7px}.lens p{margin:0;color:var(--muted)}.small-label{font-size:.71rem;letter-spacing:.13em;color:var(--green);font-weight:800;text-transform:uppercase}.memory .small-label{color:var(--orange)}.rule-types{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}.rule-types span{border:1px solid var(--line);background:var(--surface);padding:6px 10px;font-size:.82rem}.rule-types span:nth-child(5){border-color:var(--orange);color:var(--orange)}.timeline{position:relative;margin:32px 0 14px;padding:0;list-style:none;counter-reset:moment}.timeline:before{content:"";position:absolute;top:18px;bottom:20px;left:19px;width:2px;background:var(--green)}.timeline li{position:relative;counter-increment:moment;display:grid;grid-template-columns:40px 1fr;gap:17px;padding:0 0 27px}.timeline li:before{content:counter(moment,decimal-leading-zero);position:relative;z-index:1;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--paper);border:2px solid var(--green);color:var(--green);font:700 .73rem ui-monospace,monospace}.timeline li.exception:before{border-color:var(--orange);color:var(--orange)}.timeline h3{margin:2px 0 4px;font-size:1rem}.timeline p{margin:0;color:var(--muted)}.callout{padding:20px 22px;background:var(--orange-soft);border-left:4px solid var(--orange);margin:18px 0}.callout .label{color:var(--orange);font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}.callout p{margin:6px 0 0}.decision-question{padding:22px 0;border-top:2px solid var(--ink);border-bottom:1px solid var(--line);font-size:1.15rem;font-weight:650}.decision-question small{display:block;font-size:.73rem;letter-spacing:.12em;color:var(--green);text-transform:uppercase;margin-bottom:8px}.sources{margin-top:55px;padding-top:22px;border-top:1px solid var(--line)}.sources h2{font-size:1.2rem;margin:0 0 10px}.sources details{padding:13px 0;border-bottom:1px solid var(--line)}.sources summary{cursor:pointer;font-weight:650}.sources p{color:var(--muted);font-size:.9rem;margin:10px 0 4px}.sources a{font-weight:650}footer{margin-top:48px;border-top:2px solid var(--ink);padding-top:15px;display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:.84rem}@media(max-width:620px){.sheet{padding-top:12px}.mast{align-items:flex-start}.hero{padding-top:52px}.section-title{grid-template-columns:36px 1fr;gap:9px}.split{grid-template-columns:1fr;gap:20px}.thesis{padding:15px 17px}.timeline li{gap:12px}.timeline:before{left:18px}footer{flex-direction:column}}@media(max-width:360px){.mast{font-size:.72rem}.theme{padding:6px 8px}.section-title h2{font-size:1.35rem}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <div class="sheet">
+    <div class="mast"><span>Lead Read · 3분 브리핑</span><button class="theme" id="theme-toggle" type="button" aria-label="색상 테마 변경">테마: 시스템</button></div>
+    <header class="hero"><div class="kicker">현장 의사결정 · 위임과 학습</div><h1>현장은 무엇으로<br>판단하는가</h1><p>결정이 모두 위로 올라오면 조직은 느려진다. 그렇다고 권한만 나누면 현장이 혼자 기준을 만들어야 한다. 기준과 경험을 어떻게 나눠 줄까?</p></header>
+    <main>
+      <div class="thesis"><b>핵심 판단</b>반복되는 일에는 현장 사용자가 만든 간결한 기준을 두고, 낯선 예외에는 사람과 함께 배우며 기준을 고칠 통로를 남긴다.</div>
+      <section class="section" aria-labelledby="bottleneck-title">
+        <div class="section-title"><span class="num">01 / 병목</span><h2 id="bottleneck-title">위임 전에 판단의 조건을 보라</h2><p>결정이 계속 상급자에게 올라오면 구성원의 역량만 탓하기 쉽다. 하지만 그들이 기준을 알지 못하거나, 상황이 매번 달라 이전 기준이 맞지 않는 것일 수도 있다.</p></div>
+        <div class="split"><article class="lens"><span class="small-label">단순한 규칙</span><h3>반복 판단에 좌표를 놓는다</h3><p>Eisenhardt와 Sull은 빠르게 바뀌는 환경에서 전략을 실행하는 방법으로 몇 가지 구체적인 규칙을 설명했다. 규칙은 모든 답을 미리 쓰는 절차서보다 선택의 경계를 알려 주는 기준에 가깝다.</p></article><article class="lens memory"><span class="small-label">지식의 순환</span><h3>사람 사이에 경험을 옮긴다</h3><p>Nonaka는 조직의 지식이 새로 만들어지고, 널리 공유되고, 제품과 행동에 반영되는 과정을 설명했다. 숫자나 문서에 다 담기지 않는 경험과 통찰도 함께 살펴야 한다.</p></article></div>
+        <p>한쪽은 결정 순간의 기준을, 다른 쪽은 경험이 쌓이고 옮겨 가는 과정을 비춘다. 두 관점을 한 운영 절차로 묶는 것은 이 브리핑의 적용 제안이며, 어느 한 연구가 그 결합을 직접 증명했다는 뜻은 아니다.</p>
+      </section>
+      <section class="section" aria-labelledby="rules-title">
+        <div class="section-title"><span class="num">02 / 규칙</span><h2 id="rules-title">규칙은 몇 줄보다 어디에 쓰이는지가 중요하다</h2><p>저자들은 기회를 고르는 전략 규칙을 다섯 범주로 나눠 설명한다. 한 조직에 다섯 종류가 모두 필요하다는 처방은 아니다.</p></div>
+        <div class="rule-types" aria-label="단순한 규칙의 다섯 범주"><span>실행 방법</span><span>경계 조건</span><span>우선순위</span><span>타이밍</span><span>철수 기준</span></div>
+        <p>예를 들어 고객 예외를 처리하는 팀이라면 “무엇을 할지”만 적지 말고, 어떤 조건이면 현장에서 처리하고 언제 상급자와 함께 검토할지 사용자의 말로 정할 수 있다. 좋은 기준은 넓은 구호가 아니라 실제 병목에서 나온 구체적인 질문에 답해야 한다.</p>
+      </section>
+      <section class="section" aria-labelledby="sequence-title">
+        <div class="section-title"><span class="num">03 / 순환</span><h2 id="sequence-title">기준을 만들고, 써 보고, 다시 배운다</h2><p>현장 위임을 한 번의 권한 이양으로 끝내지 말고, 판단이 규칙과 경험 사이를 오가는 과정으로 설계한다.</p></div>
+        <ol class="timeline">
+          <li><div><h3>반복해서 올라오는 결정을 찾는다</h3><p>최근의 승인 요청을 유형별로 살펴 같은 이유로 멈추는 판단이 무엇인지 찾는다.</p></div></li>
+          <li><div><h3>사용자와 경계·우선순위를 적는다</h3><p>규칙을 실제로 쓸 사람과 함께 짧고 구체적인 선택 기준을 만든다. 모든 경우를 미리 규정하려 들지 않는다.</p></div></li>
+          <li class="exception"><div><h3>낯선 예외는 함께 검토한다</h3><p>규칙 밖의 결정이나 큰 영향이 걸린 사안은 혼자 떠넘기지 않는다. 경험을 공유하고 맥락을 살펴본다.</p></div></li>
+          <li><div><h3>판단의 결과로 기준을 고친다</h3><p>무엇이 통했고 어떤 가정이 틀렸는지 돌아본다. 바뀐 환경에 맞춰 규칙과 학습 기회를 함께 갱신한다.</p></div></li>
+        </ol>
+      </section>
+      <section class="section" aria-labelledby="example-title">
+        <div class="section-title"><span class="num">04 / 적용</span><h2 id="example-title">가정 사례: 승인 요청이 쌓이는 팀</h2><p>아래 상황은 절차를 이해하기 위한 가정이며, 특정 회사에서 실제 발생한 사건이 아니다.</p></div>
+        <div class="callout"><span class="label">가정 상황</span><p>한 팀에서는 매번 비슷한 고객 요청이 담당자에서 팀장, 임원 순서로 올라간다. 팀은 먼저 요청 유형을 함께 살펴 반복되는 판단 기준을 짧게 만들고, 기준 밖의 사례는 담당자와 팀장이 함께 검토해 다음 기준에 반영할 수 있다.</p></div>
+        <p>이 방식은 결정을 무조건 아래로 내리자는 말이 아니다. 반복 가능하고 되돌릴 수 있는 판단은 규칙과 함께 맡기고, 새롭거나 영향이 큰 판단은 학습과 검토를 붙인다. 그 경계를 정하는 일도 조직의 전략과 위험에 맞춰야 한다.</p>
+      </section>
+      <section class="section"><div class="decision-question"><small>리더의 판단 질문</small>우리 조직에서 자주 위로 올라오는 결정은 무엇이며, 그 기준은 사용자가 직접 만들고 경험에 따라 고칠 수 있는가?</div></section>
+      <section class="sources" aria-labelledby="sources-title"><h2 id="sources-title">근거와 더 읽을 자료</h2>
+        <details><summary>Eisenhardt &amp; Sull · Strategy as Simple Rules (2001)</summary><p>단순한 규칙을 빠르게 변하는 시장에서 기회를 선택하고 실행하는 전략으로 설명한 HBR 경영 글이다.</p><p><a href="https://hbr.org/2001/01/strategy-as-simple-rules" target="_blank" rel="noopener noreferrer">HBR article</a> · <a href="https://hbr.org/archive-toc/BR0101" target="_blank" rel="noopener noreferrer">2001년 1월호 아카이브</a></p></details>
+        <details><summary>Nonaka · The Knowledge-Creating Company (1991)</summary><p>조직이 지식을 만들고 널리 나누며 기술과 제품으로 구현하는 과정을 다룬 HBR 글이다.</p><p><a href="https://hbr.org/1991/11/the-knowledge-creating-company-2" target="_blank" rel="noopener noreferrer">HBR article</a> · <a href="https://hbr.org/archive-toc/3916" target="_blank" rel="noopener noreferrer">1991년 11–12월호 아카이브</a></p></details>
+        <details><summary>Sull &amp; Eisenhardt · Simple Rules for a Complex World (2012)</summary><p>후속 글은 규칙이 구체적이어야 하고, 실제 병목을 다루며, 사용자가 만들고 환경 변화에 따라 발전해야 한다고 설명한다.</p><p><a href="https://hbr.org/2012/09/simple-rules-for-a-complex-world" target="_blank" rel="noopener noreferrer">HBR article</a> · <a href="https://hbr.org/archive-toc/BR1209" target="_blank" rel="noopener noreferrer">2012년 9월호 아카이브</a></p></details>
+      </section>
+    </main>
+    <footer><span>Lead Read · 조직과 의사결정</span><span>&lt;조우성 변호사 작성&gt;</span></footer>
+  </div>
+  <script>(()=>{const root=document.documentElement,button=document.getElementById('theme-toggle'),modes=['system','light','dark'];let i=0;const labels={system:'시스템',light:'라이트',dark:'다크'};button.addEventListener('click',()=>{i=(i+1)%modes.length;root.dataset.theme=modes[i];button.textContent='테마: '+labels[modes[i]];button.setAttribute('aria-label','색상 테마 변경, 현재 '+labels[modes[i]])})})();</script>
+</body>
+</html>
