@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="data:,">
+  <title>위로 말하려면 누가 열어야 하는가 · Lead Read</title>
+  <style>
+    :root{color-scheme:light;--paper:#f1f2ed;--surface:#fafaf6;--ink:#202d34;--muted:#5c696d;--line:#cbd0cc;--accent:#355e62;--accent-soft:#e1eae7;--rust:#a74f3e;--rust-soft:#f1e2dc;--shadow:0 16px 48px rgba(32,45,52,.08);--body:"Noto Sans KR",Pretendard,"Malgun Gothic",sans-serif;--display:"Noto Serif KR",Batang,"Nanum Myeongjo",serif}
+    @media(prefers-color-scheme:dark){:root{color-scheme:dark;--paper:#151d20;--surface:#202a2d;--ink:#f0f0e8;--muted:#b7c0bd;--line:#414b4d;--accent:#99c2bd;--accent-soft:#273b3b;--rust:#e0967e;--rust-soft:#412d2b;--shadow:0 16px 48px rgba(0,0,0,.3)}}
+    :root[data-theme="light"]{color-scheme:light;--paper:#f1f2ed;--surface:#fafaf6;--ink:#202d34;--muted:#5c696d;--line:#cbd0cc;--accent:#355e62;--accent-soft:#e1eae7;--rust:#a74f3e;--rust-soft:#f1e2dc;--shadow:0 16px 48px rgba(32,45,52,.08)}
+    :root[data-theme="dark"]{color-scheme:dark;--paper:#151d20;--surface:#202a2d;--ink:#f0f0e8;--muted:#b7c0bd;--line:#414b4d;--accent:#99c2bd;--accent-soft:#273b3b;--rust:#e0967e;--rust-soft:#412d2b;--shadow:0 16px 48px rgba(0,0,0,.3)}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.72;word-break:keep-all}a{color:var(--accent);text-underline-offset:.2em}a:focus-visible,summary:focus-visible{outline:3px solid var(--rust);outline-offset:4px;border-radius:3px}
+    .page{width:min(100% - 34px,960px);margin:38px auto 70px}.mast{display:flex;justify-content:space-between;align-items:center;padding-bottom:13px;border-bottom:1px solid var(--line);font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}.mast strong{color:var(--ink)}
+    .intro{padding:clamp(26px,6vw,58px) 0 24px}.eyebrow{color:var(--rust);font-size:.76rem;font-weight:800;letter-spacing:.13em}.intro h1{max-width:800px;margin:15px 0 18px;font:500 clamp(2.1rem,6.4vw,4.35rem)/1.22 var(--display);letter-spacing:-.045em;text-wrap:balance}.intro p{max-width:740px;margin:0;color:var(--muted);font-size:clamp(1rem,2.3vw,1.2rem)}
+    .question{display:flex;gap:18px;align-items:baseline;margin:12px 0 22px;padding:17px 0;border-top:2px solid var(--ink);border-bottom:1px solid var(--line)}.question span{flex:none;color:var(--rust);font-size:.72rem;font-weight:800;letter-spacing:.12em}.question strong{font-size:clamp(1.08rem,2.8vw,1.42rem)}
+    main{display:grid;gap:20px}section{background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);padding:clamp(20px,4vw,34px)}h2{margin:0 0 12px;font:600 clamp(1.32rem,3vw,1.75rem)/1.35 var(--display);text-wrap:balance}h3{margin:0;font-size:1.05rem}p{max-width:72ch;margin:0 0 12px}p:last-child{margin-bottom:0}.sub{color:var(--muted)}
+    .lenses{display:grid;grid-template-columns:1fr 1fr;margin-top:22px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.lens{padding:22px 24px}.lens+.lens{border-left:1px solid var(--line)}.lens-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding-bottom:12px;border-bottom:2px solid var(--rust)}.lens:nth-child(2) .lens-head{border-color:var(--accent)}.lens-head small{font-size:.7rem;letter-spacing:.1em;color:var(--muted)}.lens p{margin-top:14px}.lens ul{margin:14px 0 0;padding:0;list-style:none}.lens li{padding:11px 0;border-top:1px solid var(--line)}.lens li strong{display:block;margin-bottom:3px}.lens li span{color:var(--muted);font-size:.92rem}
+    .hinge{display:grid;grid-template-columns:125px 1fr;gap:18px;margin-top:18px;padding:17px 19px;background:var(--accent-soft);border-left:3px solid var(--accent)}.hinge b{color:var(--accent);font-size:.78rem;letter-spacing:.06em}.hinge p{margin:0}.scene{margin-top:16px;padding:17px 19px;background:var(--paper);border:1px dashed var(--line)}.scene strong{display:block;margin-bottom:6px}
+    .record{margin-top:18px;border-top:1px solid var(--line)}.record-row{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}.record-row strong{color:var(--accent);font-size:.86rem}.record-row span{color:var(--muted)}.checks{list-style:none;margin:14px 0 0;padding:0}.checks li{display:grid;grid-template-columns:30px 1fr;gap:10px;padding:13px 0;border-top:1px solid var(--line)}.checks li:before{content:"↳";color:var(--rust);font-weight:800}.caveat{margin-top:14px;padding:13px 16px;background:var(--rust-soft);color:var(--ink);font-size:.9rem}
+    details{margin-top:18px;padding-top:15px;border-top:1px solid var(--line)}summary{cursor:pointer;color:var(--accent);font-weight:750}.sources{margin:13px 0 0;padding-left:20px}.sources li{margin:11px 0}.sources span{color:var(--muted)}footer{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}footer .author-credit{color:var(--ink);font-weight:750}
+    @media(max-width:650px){.page{width:min(100% - 22px,960px);margin:18px auto 42px}.mast{font-size:.66rem}.question{align-items:start;flex-direction:column;gap:5px}.lenses{grid-template-columns:1fr}.lens+.lens{border-left:0;border-top:1px solid var(--line)}.lens{padding:20px 17px}.hinge,.record-row{grid-template-columns:1fr;gap:5px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+    /* 게시 호스트가 light 기본 속성을 넣더라도 OS 다크 설정에 맞춘다. */
+    @media(prefers-color-scheme:dark){:root[data-theme="light"]{--paper:#151d20;--surface:#202a2d;--ink:#f0f0e8;--muted:#b7c0bd;--line:#414b4d;--accent:#99c2bd;--accent-soft:#273b3b;--rust:#e0967e;--rust-soft:#412d2b;--shadow:0 16px 48px rgba(0,0,0,.3)}}
+  </style>
+</head>
+<body><div class="page">
+  <header class="mast"><strong>Lead Read</strong><span>3분 브리핑 · 위로 말하기</span></header>
+  <div class="intro"><div class="eyebrow">침묵을 직원의 성격으로 설명하기 전에</div><h1>위로 말하려면<br>누가 열어야 하는가</h1><p>현장의 문제를 아는 직원이 회의에서 말하지 않습니다. 리더가 “언제든 말해도 된다”고 해도 침묵이 이어질 수 있습니다. 말하기를 가로막는 믿음과, 그 믿음을 굳히는 리더의 행동을 함께 살펴야 합니다.</p></div>
+  <div class="question"><span>핵심 질문</span><strong>직원의 믿음을 바꾸기 전에 리더가 먼저 바꿀 수 있는 행동은 무엇인가?</strong></div>
+  <main>
+    <section><h2>침묵을 여는 두 개의 렌즈</h2><p class="sub">두 연구는 같은 현상을 다루지만, 같은 원인을 주장하거나 서로를 반박하지 않습니다. 한쪽은 직원이 말하기 전에 떠올리는 규칙을 조사했고, 다른 쪽은 여러 단계의 리더가 발언 기대를 만드는 방식을 살폈습니다.</p>
+      <div class="lenses" role="group" aria-label="직원 믿음과 리더 행동을 보는 두 연구 렌즈">
+        <article class="lens"><div class="lens-head"><h3>직원은 어떤 규칙을 믿나</h3><small>Detert · Edmondson</small></div><p>사람들은 발언이 위험하거나 부적절하다고 느끼게 하는 당연한 규칙을 가질 수 있습니다. 예를 들면 근거가 완벽해야 말할 수 있다거나, 위에 의견을 내면 무례해 보인다는 생각입니다.</p><ul><li><strong>이 렌즈가 비추는 것</strong><span>말을 꺼내기 전에 머릿속에서 작동하는 자기검열.</span></li><li><strong>리더가 할 수 있는 일</strong><span>어떤 순간에 말이 막히는지 물어보고, 말하기를 위험하게 느끼게 하는 전제를 드러낸다.</span></li></ul></article>
+        <article class="lens"><div class="lens-head"><h3>리더는 어떤 기록을 남겼나</h3><small>Detert · Treviño</small></div><p>직원은 직속 상사뿐 아니라 더 위에 있는 리더도 관찰합니다. 상사가 의견을 듣는지, 상위 리더가 발언을 실제로 다루는지가 말하기를 안전하거나 무익하게 느끼게 할 수 있습니다.</p><ul><li><strong>이 렌즈가 비추는 것</strong><span>여러 위계 리더의 직접·간접 행동이 쌓이는 방식.</span></li><li><strong>리더가 할 수 있는 일</strong><span>질문을 받아 적는 데서 끝내지 않고, 후속 검토와 반영 여부를 보여 준다.</span></li></ul></article>
+      </div>
+      <div class="hinge"><b>두 렌즈의 접점</b><p>직원의 믿음은 리더의 행동과 분리된 섬이 아닙니다. 반복해서 관찰한 반응이 “말해도 되는가”에 대한 예상을 만들 수 있습니다. 그렇다고 모든 침묵을 리더 한 사람의 책임으로 단정할 수도 없습니다.</p></div>
+    </section>
+    <section><h2>말할 기회를 줬다는 말로 충분할까</h2><p>회의에서 팀장이 “다른 의견 있나요?”라고 물었다고 해 봅시다. 누군가 말을 시작했지만, 팀장이 곧바로 요약하고 다음 안건으로 넘어갑니다. 회의 뒤 그 직원은 “제 생각은 조금 달랐지만 흐름이 빨라서 말하지 않았다”고 설명합니다.</p><p>이 장면에서 리더는 발언 시간을 열었다고 생각할 수 있습니다. 직원은 말해도 결론이 달라지지 않는다고 받아들였을 수 있습니다. 어느 쪽 해석이 맞는지 추측하는 대신, 다음 회의에서 리더가 질문을 더하고 아이디어의 후속 처리를 확인할 수 있습니다.</p>
+      <div class="scene"><strong>대화를 이어 가는 듣기</strong>Zenger와 Folkman은 좋은 듣기를 조용히 앉아 있는 태도에만 한정하지 않습니다. 질문으로 상대의 생각을 구체화하고, 그 사람의 관점을 더 살펴보며, 대화를 자기 의제로 가로채지 않는 행동을 강조합니다.</div>
+    </section>
+    <section><h2>발언을 초대한 뒤 기록까지 남긴다</h2><p>직원의 믿음을 교육으로만 바꾸려 하면, 그 믿음을 만든 실제 반응은 그대로 남을 수 있습니다. 반대로 리더가 자기 행동만 바꾸면 직원의 과거 경험과 위험 예상이 바로 사라진다고 장담할 수도 없습니다. 리더는 자신이 바꿀 수 있는 회의 행동부터 시작하고, 그 뒤 직원의 경험이 달라졌는지 확인해야 합니다.</p>
+      <div class="record" aria-label="발언을 듣고 후속 조치를 기록하는 순서"><div class="record-row"><strong>회의 중</strong><span>급히 정리하기 전에 “무엇이 다르게 보이나요?” “제가 놓친 전제가 있나요?”라고 더 묻는다.</span></div><div class="record-row"><strong>회의 뒤</strong><span>제안·우려를 검토할 사람과 시점을 정하고, 채택 여부와 이유를 팀에 되돌린다.</span></div><div class="record-row"><strong>다음 회의</strong><span>지난번 발언이 어떻게 처리됐는지 먼저 확인해 말한 뒤의 경험을 연결한다.</span></div></div>
+      <ul class="checks"><li>팀원이 마지막으로 반대 의견을 냈을 때, 리더는 질문으로 더 들었나요 아니면 바로 결론을 냈나요?</li><li>제안이 받아들여지지 않았을 때도 검토한 이유와 다음 선택을 설명했나요?</li><li>상위 리더가 발언을 어떻게 다루는지 팀원에게 실제로 보여 주고 있나요?</li></ul>
+      <div class="caveat">리더가 바꿀 수 있는 것은 자신의 질문, 회의 운영, 후속 조치입니다. 직원이 어떤 믿음을 갖는지는 대신 결정할 수 없습니다. 믿음의 변화는 새로운 경험이 쌓였는지 살피며 확인해야 합니다.</div>
+    </section>
+    <section><h2>연구와 공개 자료</h2><p class="sub">직원의 자기검열 믿음과 리더의 다층적 영향은 서로 다른 연구 질문입니다. 아래 연구는 침묵의 한 가지 원인을 확정하기보다, 리더가 어떤 질문을 더 살펴야 하는지 보여 줍니다.</p>
+      <details><summary>논문과 자료 보기</summary><ol class="sources">
+        <li><a href="https://doi.org/10.5465/amj.2011.61967925">James R. Detert &amp; Amy C. Edmondson (2011), “Implicit Voice Theories: Taken-for-Granted Rules of Self-Censorship at Work”</a>. <span>Academy of Management Journal, 54(3), 461–488. 네 연구에서 직장 발언을 위험하거나 부적절하게 느끼게 하는 암묵적 믿음을 조사했다.</span></li>
+        <li><a href="https://doi.org/10.1287/orsc.1080.0405">James R. Detert &amp; Linda K. Treviño (2010), “Speaking Up to Higher-Ups: How Supervisors and Skip-Level Leaders Influence Employee Voice”</a>. <span>Organization Science, 21(1), 249–270. 여러 위계 리더의 직접·간접 영향에 관한 질적 인터뷰 연구. 온라인 선게재는 2008년이다.</span></li>
+        <li><a href="https://hbr.org/2016/07/what-great-listeners-actually-do">Jack Zenger &amp; Joseph Folkman (2016), “What Great Listeners Actually Do”</a>. <span>Harvard Business Review, July 14, 2016. 질문과 대화 확장을 다루는 경영 실천 글.</span></li>
+      </ol></details>
+    </section>
+  </main>
+  <footer><div>Lead Read · 발언과 경청을 설계하는 리더십 브리핑</div><p class="author-credit">&lt;조우성 변호사 작성&gt;</p></footer>
+</div></body></html>
