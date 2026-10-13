@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>먼저 들어가야 이기는가 — Lead Read</title>
+  <style>
+    :root { color-scheme: light; --bg:#f4f7f5; --panel:#ffffff; --ink:#172c35; --muted:#60737a; --line:#d4e0dd; --gold:#b57917; --teal:#217c78; --soft:#e8f0ed; --shadow:0 18px 50px rgba(23,44,53,.11); }
+    :root[data-theme="dark"] { color-scheme: dark; --bg:#102027; --panel:#19343a; --ink:#edf5f0; --muted:#b4c8c8; --line:#38575b; --gold:#e7b75d; --teal:#6fd1c0; --soft:#224247; --shadow:0 18px 50px rgba(0,0,0,.28); }
+    @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { color-scheme: dark; --bg:#102027; --panel:#19343a; --ink:#edf5f0; --muted:#b4c8c8; --line:#38575b; --gold:#e7b75d; --teal:#6fd1c0; --soft:#224247; --shadow:0 18px 50px rgba(0,0,0,.28); } }
+    * { box-sizing:border-box; }
+    html { background:var(--bg); }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family: Georgia, "Noto Serif KR", serif; line-height:1.72; word-break:keep-all; }
+    button { font:inherit; }
+    .wrap { width:min(100% - 32px, 980px); margin:0 auto; padding:24px 0 60px; }
+    .topbar { display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:46px; font:600 12px/1.2 system-ui, sans-serif; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
+    .brand { color:var(--teal); }
+    .theme { cursor:pointer; border:1px solid var(--line); border-radius:999px; padding:8px 12px; background:var(--panel); color:var(--ink); }
+    .hero { padding:clamp(28px, 7vw, 76px); border:1px solid var(--line); border-radius:28px; background:linear-gradient(135deg, var(--panel), var(--soft)); box-shadow:var(--shadow); }
+    .eyebrow { margin:0 0 16px; color:var(--gold); font:700 13px/1.3 system-ui, sans-serif; letter-spacing:.09em; }
+    h1 { max-width:760px; margin:0; font-size:clamp(38px, 7vw, 76px); line-height:1.08; letter-spacing:-.055em; }
+    .dek { max-width:650px; margin:26px 0 0; font-size:clamp(18px, 2.5vw, 24px); color:var(--muted); }
+    .meta { display:flex; flex-wrap:wrap; gap:10px; margin-top:30px; font:600 12px/1.3 system-ui, sans-serif; color:var(--muted); }
+    .meta span { border:1px solid var(--line); border-radius:999px; padding:7px 10px; }
+    main { margin-top:50px; }
+    .question { margin:0 0 18px; font-size:clamp(25px, 4vw, 42px); line-height:1.2; letter-spacing:-.035em; }
+    .lead { font-size:20px; }
+    .grid { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:18px; margin:34px 0; }
+    .card { padding:28px; border:1px solid var(--line); border-radius:20px; background:var(--panel); }
+    .card h3 { margin:0 0 10px; font:700 16px/1.35 system-ui, sans-serif; letter-spacing:.01em; }
+    .card p { margin:0; color:var(--muted); }
+    .gold { border-top:5px solid var(--gold); }
+    .teal { border-top:5px solid var(--teal); }
+    .section { margin:54px 0; }
+    .section h2 { margin:0 0 15px; font-size:clamp(26px, 4vw, 38px); line-height:1.2; letter-spacing:-.035em; }
+    .section p { max-width:760px; }
+    .callout { margin:28px 0; padding:24px 28px; border-left:5px solid var(--gold); background:var(--soft); border-radius:0 16px 16px 0; font-size:21px; }
+    ol { padding-left:1.25em; }
+    li { margin:12px 0; padding-left:5px; }
+    details { margin-top:22px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    summary { cursor:pointer; padding:18px 0; font:700 15px/1.4 system-ui, sans-serif; }
+    details p { color:var(--muted); }
+    .sources { font-size:14px; color:var(--muted); }
+    footer { margin-top:60px; padding-top:22px; border-top:1px solid var(--line); color:var(--muted); font:14px/1.6 system-ui, sans-serif; }
+    .author { color:var(--ink); font-weight:700; }
+    :focus-visible { outline:3px solid var(--teal); outline-offset:3px; }
+    @media (max-width:700px) { .wrap { width:min(100% - 22px, 980px); padding-top:16px; } .topbar { margin-bottom:26px; } .hero { border-radius:20px; padding:27px 22px; } .grid { grid-template-columns:1fr; } .card { padding:23px; } .lead { font-size:18px; } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior:auto !important; transition:none !important; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar"><div class="brand">Lead Read / 3 min briefing</div><button class="theme" type="button" aria-label="테마 전환">테마 전환</button></header>
+    <section class="hero" aria-labelledby="title">
+      <p class="eyebrow">FIRST MOVER · TIMING · ALLIANCE</p>
+      <h1 id="title">먼저 들어가야 이기는가</h1>
+      <p class="dek">선점은 출시일이 아니라 때의 문제다. 먼저 길을 낸 자와 늦게 들어와 길을 차지한 자 사이에서, 조직은 시장의 징조를 읽어야 한다.</p>
+      <div class="meta"><span>의사결정자를 위한 읽기</span><span>두 관점의 논쟁</span><span>카이로스 렌즈</span></div>
+    </section>
+    <main>
+      <section class="section">
+        <h2 class="question">먼저 깃발을 꽂으면 지킬 수 있는가?</h2>
+        <p class="lead">새 시장에서는 먼저 들어간 자가 고객의 기억과 유통을 장악한다고 믿는다. 그러나 개척자의 실패를 뒤따르는 자가 무료로 배우는 경우도 많다. 핵심은 출시일이 아니라, 먼저 들어간 뒤 장벽을 만들 수 있는지와 늦게 들어와도 이길 무기를 갖췄는지다.</p>
+        <div class="callout">한 문장 결론: <strong>먼저 들어가는 것보다 중요한 것은 때가 왔을 때 기술·고객·연합을 한꺼번에 묶어 시장의 임계점을 넘는 일이다.</strong></div>
+      </section>
+      <section class="grid" aria-label="두 관점">
+        <article class="card gold"><h3>관점 A · 선점 우위를 쌓아라</h3><p>Lieberman과 Montgomery(1988)는 기술의 선도, 희소 자원의 선점, 고객의 전환 비용이라는 세 가지 장치를 제시했다. 먼저 들어가 학습곡선과 특허를 쌓고, 좋은 입지와 원재료를 확보하며, 고객의 익숙함을 만들면 후발자의 진입 비용이 커진다.</p></article>
+        <article class="card teal"><h3>관점 B · 개척자의 시체를 읽어라</h3><p>Golder와 Tellis(1993)는 50개 제품 범주 500여 개 브랜드의 역사를 추적했다. 개척자의 절반 가까이가 실패했고 장기 승자는 평균 13년 늦게 들어왔다. 먼저 시장을 교육하고 기술을 시행착오한 비용을 뒤의 리더가 공짜로 쓰는 구조다.</p></article>
+      </section>
+      <section class="section">
+        <h2>생존자만 보고 있지는 않은가?</h2>
+        <p>선점의 성공담에는 살아남은 개척자만 등장하기 쉽다. 실패한 개척자가 표본에서 빠지면 먼저 들어가는 것이 실제보다 훨씬 안전해 보인다. 진입 계획의 첫 장에는 성공한 선례보다 그 시장의 무덤에 새겨진 이름과 사망 원인을 먼저 적어야 한다.</p>
+      </section>
+      <section class="section">
+        <h2>HD DVD와 Blu-ray: 먼저 만든 자와 많이 모은 자</h2>
+        <p>도시바 진영의 HD DVD는 2006년 3월 먼저 플레이어를 출시했다. 기존 DVD 설비를 활용하는 저비용과 호환 지원이 무기였다. 소니 진영의 Blu-ray는 늦었지만 플레이스테이션3에 드라이브를 기본 탑재하고 디즈니·폭스와의 연합을 지켰다.</p>
+        <p>2008년 1월 워너브라더스가 Blu-ray 단독을 선언하자 소매점과 대여점이 줄줄이 돌아섰고, 2월 도시바는 철수했다. 기술의 우열보다 편의 수가 승부를 갈랐다. 먼저 길을 낸 자가 아니라, 임계점에 맞춰 연합을 모은 자가 길을 차지했다.</p>
+      </section>
+      <section class="section">
+        <h2>카이로스: 때는 빠름이 아니라 맞음이다</h2>
+        <p>그리스인들은 흐르는 시간인 크로노스와 결단의 순간인 카이로스를 구분했다. 카이로스는 빨리 오는 시간이 아니라 알맞게 오는 때다. 연합의 수가 임계점을 넘었는지, 고객의 불만이 폭발 직전인지, 기술의 값이 바닥을 쳤는지를 읽는 일은 출시일을 앞당기는 것보다 어렵지만 중요하다.</p>
+        <ol>
+          <li>이 시장의 개척자들은 무엇 때문에 실패했는가?</li>
+          <li>늦게 들어가도 이길 유통·자금·연합의 무기를 갖췄는가?</li>
+          <li>고객의 불만과 기술의 가격이 진입의 임계점에 도달했는가?</li>
+          <li>출시일보다 동맹 명단과 표준을 만들 힘을 먼저 확인했는가?</li>
+        </ol>
+      </section>
+      <section class="section">
+        <h2>결정 전에 남길 문장</h2>
+        <p>진입 계획서 첫 장에 개척자의 사망 원인부터 적어라. 늦게 들어가도 이길 무기가 없으면 서두르지 말라. 좋은 리더는 빨리 들어가는 리더가 아니라 때에 들어가는 리더다.</p>
+        <details><summary>출처와 읽는 법</summary><p class="sources">Lieberman과 Montgomery(1988)는 선점 우위의 기술·자원·전환 비용을, Golder와 Tellis(1993)는 개척자의 생존 편향과 후발자의 장기 승리를 다룬다. HD DVD와 Blu-ray 사례는 출시·플레이스테이션3·콘텐츠 연합·워너브라더스 이탈이라는 공개 흐름에 한정해 적용했다. 카이로스는 흐르는 시간과 결단의 때를 구분하는 렌즈로 사용했다.</p></details>
+      </section>
+    </main>
+    <footer><div class="author">&lt;조우성 변호사 작성&gt;</div><div>Lead Read · 선점의 속도보다 진입의 때를 읽습니다.</div></footer>
+  </div>
+  <script>
+    (() => { const root = document.documentElement; const button = document.querySelector('.theme'); button.addEventListener('click', () => { root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark'; }); })();
+  </script>
+</body>
+</html>
