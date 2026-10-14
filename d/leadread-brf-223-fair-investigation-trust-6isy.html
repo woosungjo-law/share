@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>공정한 조사는 언제 신뢰가 되고 언제 면책이 되는가 · Lead Read 3분 브리핑</title>
+<style>
+  :root{
+    --ink:#1b1a17; --sub:#57514a; --line:#e4dfd5; --bg:#faf8f4; --card:#fff;
+    --accent:#2f5d80; --accent-soft:#eaf1f6; --warm:#8a5a26; --warm-soft:#f8f1e8;
+    --mark:#9c3f2e; --ok:#2f5d50; --ok-soft:#ecf3f0;
+    --closing-bg:#1b1a17; --closing-fg:#f4f1ea; --on-accent:#fff;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --ink:#e9e7e2; --sub:#a9a49b; --line:#333944; --bg:#14171d; --card:#1b1f26;
+      --accent:#8db8d8; --accent-soft:#1b2733; --warm:#d9a066; --warm-soft:#2a231a;
+      --mark:#e08a72; --ok:#8fc3ae; --ok-soft:#17261f;
+      --closing-bg:#20242d; --closing-fg:#f0ede6; --on-accent:#14171d;
+    }
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Noto Sans KR","Pretendard","Malgun Gothic",sans-serif;
+    line-height:1.85;word-break:keep-all;}
+  a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px;}
+  .wrap{max-width:760px;margin:0 auto;padding:44px 20px 64px;}
+  header{border-bottom:3px solid var(--ink);padding-bottom:20px;margin-bottom:30px;}
+  .kicker{font-size:12.5px;letter-spacing:.16em;color:var(--accent);font-weight:700;margin-bottom:12px;}
+  h1{font-size:29px;line-height:1.42;margin:0 0 10px;font-weight:800;}
+  .lede{font-size:16px;color:var(--sub);margin:0;}
+  main section{margin:40px 0;}
+  h2{font-size:20px;font-weight:800;margin:0 0 14px;padding-left:12px;border-left:5px solid var(--accent);line-height:1.5;}
+  h3{font-size:15.5px;font-weight:800;margin:0 0 8px;line-height:1.5;}
+  p{margin:0 0 16px;font-size:16px;}
+  b{font-weight:700;}
+  .leadbox{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--accent);
+    border-radius:12px;padding:18px 20px;margin:18px 0;}
+  .leadbox .lb-label{font-size:12.5px;letter-spacing:.1em;font-weight:800;color:var(--accent);margin:0 0 6px;}
+  .leadbox .lb-q{font-size:16.5px;font-weight:700;margin:0 0 14px;}
+  .leadbox .lb-a{font-size:16.5px;font-weight:800;margin:0;line-height:1.6;}
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0;}
+  @media(max-width:640px){.duo{grid-template-columns:1fr;}}
+  .duo>div{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--card);}
+  .duo .t-a{background:var(--accent-soft);} .duo .t-b{background:var(--warm-soft);}
+  .duo .tag{font-size:12.5px;font-weight:800;letter-spacing:.08em;margin-bottom:6px;}
+  .t-a .tag{color:var(--accent);} .t-b .tag{color:var(--warm);}
+  .duo p{font-size:14.8px;margin:0 0 8px;color:var(--ink);}
+  .cite{font-size:13.8px;color:var(--sub);background:var(--accent-soft);border-radius:8px;padding:10px 14px;margin:12px 0 0;}
+  .cite.w{background:var(--warm-soft);}
+  .clash{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--mark);
+    border-radius:12px;padding:20px 22px;margin:22px 0;}
+  .clash p{font-size:15.2px;margin:0 0 10px;color:var(--ink);}
+  .clash p:last-child{margin-bottom:0;}
+  .timeline{border-left:3px solid var(--line);margin:22px 0 20px 6px;padding-left:20px;}
+  .tl{position:relative;margin-bottom:16px;}
+  .tl::before{content:"";position:absolute;left:-26.5px;top:7px;width:11px;height:11px;border-radius:50%;
+    background:var(--accent);border:2.5px solid var(--bg);}
+  .tl .yr{font-weight:800;font-size:15px;color:var(--accent);}
+  .tl p{font-size:15px;margin:2px 0 0;}
+  .steps{counter-reset:s;margin:20px 0;}
+  .steps .st{counter-increment:s;background:var(--card);border:1px solid var(--line);
+    border-radius:12px;padding:16px 18px 16px 54px;margin-bottom:12px;position:relative;}
+  .steps .st::before{content:counter(s);position:absolute;left:16px;top:14px;width:26px;height:26px;
+    border-radius:50%;background:var(--accent);color:var(--on-accent);font-weight:800;font-size:14px;
+    display:flex;align-items:center;justify-content:center;}
+  .steps p{font-size:15px;margin:0;color:var(--ink);}
+  .mnote{border-left:4px solid var(--warm);background:var(--warm-soft);border-radius:0 10px 10px 0;
+    padding:12px 16px;margin:16px 0;font-size:14.5px;color:var(--ink);}
+  .mnote .mn-label{font-size:12px;font-weight:800;letter-spacing:.08em;color:var(--warm);margin:0 0 4px;}
+  .mnote p{font-size:14.5px;margin:0;}
+  .signal{background:var(--accent-soft);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:20px 0;}
+  .signal .siglabel{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.1em;color:var(--on-accent);
+    background:var(--accent);border-radius:999px;padding:3px 12px;margin:0 8px 10px 0;}
+  .signal p{font-size:16px;margin:0 0 10px;}
+  .signal p:last-child{margin-bottom:0;}
+  details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:14px 0;}
+  summary{font-size:15px;font-weight:700;cursor:pointer;color:var(--accent);}
+  details li{font-size:14.5px;margin-bottom:8px;}
+  details ul{margin:12px 0 0;padding-left:20px;}
+  .ask{background:var(--accent-soft);border-radius:12px;padding:20px 22px;margin:22px 0;}
+  .ask ol{margin:0;padding-left:22px;}
+  .ask li{font-size:15.5px;margin-bottom:9px;}
+  .ask li:last-child{margin-bottom:0;}
+  .closing{background:var(--closing-bg);color:var(--closing-fg);border-radius:14px;padding:26px;margin:36px 0 0;}
+  .closing h2{color:var(--closing-fg);border-left-color:var(--mark);}
+  .closing p{font-size:15.4px;margin-bottom:0;}
+  footer{margin-top:38px;padding-top:16px;border-top:1px solid var(--line);font-size:13.5px;color:var(--sub);text-align:center;}
+  .author-credit{margin:8px 0 0;font-size:13.5px;color:var(--sub);}
+  @media(max-width:480px){
+    h1{font-size:24px;}
+    .wrap{padding:32px 16px 52px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Lead Read · 3분 브리핑 · 신뢰의 설계</div>
+  <h1>공정한 조사는 언제 신뢰가 되고 언제 면책이 되는가</h1>
+  <p class="lede">사건을 보고한 사람이 어떤 대접을 받는가는, 다음 사건이 올라오느냐를 가른다. 조사 이후의 경험을 시간 순서로 따라가는 브리핑이다.</p>
+</header>
+
+<main>
+
+<section>
+  <h2>왜 지금 이 문제인가</h2>
+  <p>사고가 나면 조직은 "누가 잘못했는가"와 "다음에는 어떻게 막을 것인가"를 묻는다. 첫 문장은 책임을 세우고, 둘째 문장은 학습을 약속한다. 그러나 현장 구성원에게 더 결정적인 질문은 그 사이에 있다. <b>내가 사실을 말하면 공정한 조사를 받을 것인가, 아니면 조사라는 이름으로 책임을 떠안을 것인가.</b> 이 질문에 답하지 못하면 보고 체계는 남아 있어도 신뢰는 사라진다.</p>
+  <div class="leadbox">
+    <p class="lb-label">핵심 질문</p>
+    <p class="lb-q">이 조직에서 사실을 말한 사람은 공정한 조사를 받는가, 조사라는 이름으로 책임을 떠안는가.</p>
+    <p class="lb-label">한 문장 결론</p>
+    <p class="lb-a">보고를 늘리려면 양식보다 보고 이후의 경험을 고쳐야 한다. 조사 기준의 공개, 불이익 금지, 결과 회신, 업무 조건의 변화가 신뢰의 재료다.</p>
+  </div>
+</section>
+
+<section>
+  <h2>왜 중요한가 — 작은 이상 징후가 올라오지 않는다</h2>
+  <p>신뢰가 없으면 작은 이상 징후는 보고되지 않고, 조직은 큰 사고 뒤에야 이미 알고 있었어야 할 사실을 발견한다. 리더가 통제할 수 있는 것은 <b>조사 기준, 정보 접근권, 피드백 시점</b>이다. 통제할 수 없는 것은 모두가 결과에 만족할지 여부다.</p>
+  <p>그리고 나머지는 약속의 질이다. 신뢰란 결과가 마음에 드는 것이 아니라, <b>과정이 임의적으로 뒤집히지 않는다</b>는 확인에 가깝다. 보고 양식을 아무리 단순하게 만들어도 보고한 사람이 겪는 일이 그대로라면 제도만 남고 신뢰는 사라진다.</p>
+  <p class="cite">Paradiso·Sweeney (2017)</p>
+</section>
+
+<section>
+  <h2>두 견해가 갈리는 지점</h2>
+  <div class="duo">
+    <div class="t-a">
+      <div class="tag">프레임 — 공정성은 보고의 조건이다</div>
+      <h3>보고자의 예상이 보고를 결정한다</h3>
+      <p>정당한 조직문화를 표방하는 의료기관에서 1,580명을 대상으로 한 연구다. 현장 간호사와 관리자 사이에 신뢰와 정당한 문화에 대한 <b>인식 차이</b>가 나타났고, 현장 간호사 다수는 사건에 관여했을 때 공정하고 객관적인 후속 절차를 보장받는다고 느끼지 못했으며, 비난이나 징계 가능성을 두려워했다.</p>
+      <p>보고를 늘리려면 <b>보고 이후의 경험</b>을 고치라는 실무적 통찰로 이어진다.</p>
+    </div>
+    <div class="t-b">
+      <div class="tag">반증 — 무비난은 환원이 아니다</div>
+      <h3>정당한 문화는 감정과 책임까지 다룬다</h3>
+      <p>네덜란드 다섯 의료기관의 과정을 질적으로 살핀 연구는, 학습을 위해 비난을 줄여야 한다는 원칙에 동의하면서도 정당한 문화를 신뢰나 보고율 하나로 환원하지 않았다. <b>열린 의사소통, 사건이 낳은 감정의 처리, 개인의 책임, 사생활 보호</b>를 함께 다뤄야 한다고 보았다.</p>
+      <p>투명성을 높이면 사생활이 흔들리고, 개인 책임을 분명히 하면 사람들이 다시 말하기를 두려워한다는 긴장이 실제 현장에서 드러났다.</p>
+    </div>
+  </div>
+  <p class="cite">프레임: Paradiso·Sweeney (2017) · 반증: van Baarle 외 (2022), BMC Health Services Research 22</p>
+  <div class="clash">
+    <h3>갈리는 지점 — 공정함을 어디에서 측정하는가</h3>
+    <p>첫 번째 견해는 현장 구성원이 조사와 징계를 어떻게 예상하는지가 보고와 신뢰에 미치는 영향을 전면에 둔다. 두 번째 견해는 공정한 문화를 만드는 과정 자체가 이해관계와 감정을 조정하는 일이라고 강조한다.</p>
+    <p>따라서 "보고한 사람은 처벌하지 않는다"를 선언하는 것만으로는 부족하다. 행위의 의도와 선택 가능성, 업무 조건, 반복되는 위험 신호를 살피되, <b>고의적 은폐나 타인에게 위험을 넘긴 선택까지 학습이라는 말로 덮어서는 안 된다.</b> 무비난은 공정한 판단을 회피하는 가면이 될 수 있다.</p>
+    <p>설계로 옮기면, 결과 통보문에 개인의 잘못·시스템의 취약성·즉시 바꿀 절차·확인할 지표를 분리해 적고, 처분보다 무엇이 달라졌는지를 추적해야 한다.</p>
+  </div>
+</section>
+
+<section>
+  <h2>실제 사례 — 하나의 병원이 2년 동안 일곱 가지를 순서대로 바꾼 방식</h2>
+  <div class="timeline">
+    <div class="tl">
+      <div class="yr">시작 전 — 현장 의견</div>
+      <p>런던 Imperial College Healthcare NHS Trust는 현장 의견을 모은 뒤 설계에 착수했다. 다학제 참조그룹을 두어 현장 구성원이 보고체계의 설계에 참여하도록 했다.</p>
+    </div>
+    <div class="tl">
+      <div class="yr">2016년 10월 — 일곱 가지 개입 시작</div>
+      <p>보고 양식 단순화, 자주 발생 사건의 현장 기준 마련, 사건 검토 절차 재설계, 품질 확인의 병목 완화, 익명 보고 개방, 좋은 수행도를 학습 대상으로 보고하게 하는 작업을 순차 시행했다.</p>
+    </div>
+    <div class="tl">
+      <div class="yr">2018년 8월 — 평가와 한계 보고</div>
+      <p>일부 안전문화 지표와 보고율이 개선되었고, 일곱 개 개입 중 여섯 개에 대한 직원 인식이 긍정적이었다. 실제 현장 개입이라 무작위 배정이 불가능했다는 한계도 함께 밝혔다.</p>
+    </div>
+  </div>
+  <p>이 사례의 핵심은 특정 장치 하나가 아니라 <b>순환</b>이다. 현장 의견을 듣고, 데이터를 보고, 절차를 바꾸고, 구성원의 인식과 보고율을 확인한다. 그 순환이 한 바퀴 도는 동안 신뢰가 문구가 아니라 경험으로 쌓인다.</p>
+  <div class="mnote">
+    <p class="mn-label">주의 — 지표 하나로 단정하지 않기</p>
+    <p>보고 건수만으로 안전이 좋아졌다고 단정하지 않는다. 보고율·피해 수준·중대 사건·직원 인식을 함께 보아야 한다. 보고가 늘어난 것은 실제 사건이 늘었는지, 말하기가 쉬워졌는지의 겹친 신호이기 때문이다.</p>
+  </div>
+  <p class="cite">Flott 외 (2018), Health Affairs 37(11)</p>
+</section>
+
+<section>
+  <h2>실무 적용 — 신뢰를 문구가 아니라 피드백 순환으로 만들기</h2>
+  <div class="steps">
+    <div class="st">
+      <p>사건 접수 후 <b>결과를 돌려줄 시점</b>을 먼저 정한다.</p>
+    </div>
+    <div class="st">
+      <p>조사 서식에 <b>'개인의 선택'과 '업무 조건'</b>을 분리해 기록한다.</p>
+    </div>
+    <div class="st">
+      <p>조치마다 <b>담당자와 확인 날짜</b>를 붙인다.</p>
+    </div>
+    <div class="st">
+      <p>보고 건수만 보지 않고 <b>near miss, 피해, 미해결 권고, 현장 신뢰</b>를 함께 본다.</p>
+    </div>
+    <div class="st">
+      <p>익명성 뒤에도 <b>피드백 통로</b>를 둔다.</p>
+    </div>
+  </div>
+  <p>이 다섯 항목은 선언문이 아니라 순환이다. 각 항목이 다음 항목을 다시 확인하게 만들 때, 공정성은 인상이 아니라 기록으로 남는다.</p>
+</section>
+
+<section class="ask">
+  <h2>리더가 던질 질문</h2>
+  <ol>
+    <li>사건을 보고한 사람은 결과를 언제 들었는가.</li>
+    <li>조사 결과는 개인 처분과 시스템 개선을 구분했는가.</li>
+    <li>지난달 권고 가운데 실제 업무 조건을 바꾼 것은 무엇인가.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>근거와 출처</h2>
+  <p class="cite">Paradiso·Sweeney (2017) · van Baarle 외 (2022), BMC Health Services Research 22, 1035 · Flott 외 (2018), Health Affairs 37(11), 1797–1804</p>
+  <details>
+    <summary>세 가지 출처 자세히 보기</summary>
+    <ul>
+      <li>Paradiso, L. A., &amp; Sweeney, N. (2017). The Relationship Between Just Culture, Trust and Patient Safety. — 1,580명 대상, 현장 간호사와 관리자의 신뢰·정당성 인식 차이. 공개된 연구 초록과 원문 정보를 바탕으로 재구성했다.</li>
+      <li>van Baarle, E., Hartman, L., Rooijakkers, S., et al. (2022). Fostering a just culture in healthcare organizations: experiences in practice. <i>BMC Health Services Research</i>, 22, 1035. — 네덜란드 다섯 의료기관의 질적 연구.</li>
+      <li>Flott, K., Nelson, D., Moorcroft, T., Mayer, E. K., Gage, W., Redhead, J., &amp; Darzi, A. W. (2018). Enhancing Safety Culture Through Improved Incident Reporting: A Case Study In Translational Research. <i>Health Affairs</i>, 37(11), 1797–1804. — 2016년 10월~2018년 8월의 일곱 가지 개입.</li>
+    </ul>
+  </details>
+  <details>
+    <summary>공자의 서 원리로 보기</summary>
+    <ul>
+      <li>서는 타인을 나와 같은 방식으로 대하는 감상적 친절이 아니라, <b>내가 그 자리에 놓였을 때 원하는 설명과 절차를 기준으로 삼는 태도</b>다.</li>
+      <li>서는 책임을 없애지 않는다. 나와 타인에게 같은 사실 기준과 설명 의무를 적용한다는 뜻이다.</li>
+      <li>따라서 공정한 조사는 누구도 불편하지 않게 만드는 절차가 아니라, 사실을 말한 사람과 판단을 받은 사람 모두가 근거를 확인하게 하는 절차다.</li>
+    </ul>
+  </details>
+</section>
+
+<section class="closing">
+  <h2>한 줄로</h2>
+  <p>공정한 조사는 면책의 문구가 아니라 피드백의 순환이다. 기준을 공개하고, 말한 사람을 보호하고, 결과를 돌려주고, 권고가 업무 조건을 바꾼 기록까지 남길 때만, 보고 체계는 신뢰가 된다. <b>지난달 권고 가운데 실제로 무엇이 달라졌는지를 확인하는 순간</b>, 조직은 학습을 약속한 문장의 다음 문장을 쓰기 시작한다.</p>
+</section>
+
+</main>
+
+<footer>
+  Lead Read
+  <p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+
+</div>
+</body>
+</html>
