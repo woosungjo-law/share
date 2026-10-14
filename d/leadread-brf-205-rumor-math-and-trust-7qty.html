@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>소문은 언제 약점을 때리고 언제 조직을 말라붙게 하는가 · Lead Read 3분 브리핑</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231d3a5f'/%3E%3Ctext x='16' y='22' font-size='15' fill='white' text-anchor='middle' font-family='serif'%3ELR%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#f7f6f2; --surface:#ffffff; --ink:#20242c; --muted:#5b6270;
+  --line:#dcd8cc; --math:#1f5d8f; --trust:#8a5a1f; --wash-a:#eaf1f8; --wash-b:#f7f0e2; --tag-a:#1f5d8f; --tag-b:#8a5a1f;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#14171d; --surface:#1c2028; --ink:#e8e6df; --muted:#a2a8b4;
+    --line:#333a46; --math:#7db6e0; --trust:#d4a860; --wash-a:#192634; --wash-b:#2a2313; --tag-a:#7db6e0; --tag-b:#d4a860; }
+}
+html[data-theme="dark"]{ --bg:#14171d; --surface:#1c2028; --ink:#e8e6df; --muted:#a2a8b4;
+  --line:#333a46; --math:#7db6e0; --trust:#d4a860; --wash-a:#192634; --wash-b:#2a2313; --tag-a:#7db6e0; --tag-b:#d4a860; }
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);word-break:keep-all;line-height:1.75;font-size:17px;
+  font-family:"Noto Sans KR","Pretendard","Malgun Gothic",sans-serif;-webkit-font-smoothing:antialiased}
+.page{max-width:760px;margin:0 auto;padding:0 20px 64px}
+header.site{border-bottom:3px solid var(--ink);padding:26px 0 14px;margin-bottom:32px}
+.brand{font-size:13px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}
+h1{font-size:26px;line-height:1.4;margin-top:8px}
+.kicker{font-size:14px;color:var(--muted);margin-top:6px}
+section{margin:38px 0}
+h2{font-size:20px;margin-bottom:14px;padding-left:12px;border-left:4px solid var(--ink)}
+h3{font-size:17px;margin:18px 0 8px}
+p{margin:10px 0}
+.qbox{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:16px 0}
+.qbox .q{font-size:14px;color:var(--muted)}
+.qbox .a{font-size:19px;font-weight:700;margin-top:6px;line-height:1.55}
+.duo{display:flex;gap:16px;margin:18px 0;flex-wrap:wrap}
+.side{flex:1 1 300px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
+.side .tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.1em;color:#fff;padding:5px 12px}
+.side.a .tag{background:var(--tag-a)} .side.b .tag{background:var(--tag-b)}
+.side .head{padding:14px 18px 4px}
+.side .head .who{font-size:16px;font-weight:700;line-height:1.45}
+.side .head .what{font-size:13.5px;color:var(--muted);margin-top:2px}
+.side .body{padding:8px 18px 18px;font-size:15.5px}
+.side.a{border-top:4px solid var(--math)} .side.b{border-top:4px solid var(--trust)}
+.side.a .body{background:var(--wash-a)} .side.b .body{background:var(--wash-b)}
+.side ul{margin:8px 0 0 18px;font-size:15px}
+.side li{margin:5px 0}
+.clash{border:2px dashed var(--line);border-radius:12px;padding:18px 20px;margin:18px 0;background:var(--surface)}
+.clash .lbl{font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--muted)}
+.clash p{margin-top:8px}
+.deadlock{margin-top:12px;font-size:15.5px}
+.deadlock b{color:var(--trust)}
+.scene{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--trust);border-radius:10px;padding:16px 18px;margin:14px 0}
+.scene .cap{font-size:13px;font-weight:700;color:var(--trust);letter-spacing:.08em}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--wash-a);font-size:14px}
+.qlist{counter-reset:q;list-style:none;margin:12px 0 0}
+.qlist li{counter-increment:q;position:relative;padding:10px 0 10px 42px;border-bottom:1px solid var(--line);font-size:16px}
+.qlist li::before{content:counter(q);position:absolute;left:0;top:10px;width:28px;height:28px;border-radius:50%;
+  background:var(--ink);color:var(--bg);font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}
+details{border:1px solid var(--line);border-radius:10px;background:var(--surface);margin:12px 0}
+summary{cursor:pointer;padding:12px 16px;font-weight:700;font-size:15px}
+details .inner{padding:0 16px 14px;font-size:15px}
+details .inner p{margin:8px 0}
+.refs{font-size:14.5px;color:var(--muted)}
+.refs li{margin:8px 0}
+footer.site{border-top:1px solid var(--line);margin-top:48px;padding-top:18px;font-size:14px;color:var(--muted)}
+.author-credit{margin-top:10px;font-size:15px;color:var(--ink);font-weight:700}
+@media (max-width:480px){body{font-size:16px}h1{font-size:22px}h2{font-size:18px}.qbox .a{font-size:17.5px}}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="page">
+<header class="site">
+  <div class="brand">Lead Read · 3분 브리핑</div>
+  <h1>소문은 언제 약점을 때리고 언제 조직을 말라붙게 하는가</h1>
+  <div class="kicker">소문의 조건을 계산하지 않으면 소문은 걷고, 계산만 하면 조직은 말라붙는다</div>
+</header>
+<main>
+
+<section aria-labelledby="s1">
+  <h2 id="s1">지금 무엇을 판단하는가</h2>
+  <div class="qbox">
+    <div class="q">핵심 질문</div>
+    <div class="a">우리 조직 안에서 지금 퍼지는 그 소문은, 상황의 공백을 메우는 정보인가, 아니면 신뢰의 결핍을 알리는 증거인가?</div>
+  </div>
+  <p><b>한 문장 결론:</b> 소문의 양은 중요함과 모호함의 산수다. 그러나 소문은 또한 조직의 신뢰가 갈증을 더는 대사 활동이다. 두 명제를 함께 들어야 이중사고의 함정을 피한다.</p>
+  <p>소통과 위기 관리를 책임지는 리더는 소문을 없애려 한다. 이 브리핑은 그 목표 자체를 잠시 내려놓고, 소문이 언제 조직을 때리고 언제 조직을 말라붙게 하는지 그 경계를 보여 준다.</p>
+</section>
+
+<section aria-labelledby="s2">
+  <h2 id="s2">왜 중요한가</h2>
+  <p>소문은 저절로 퍼지는 것이 아니라 조건이 맞을 때 걷는다. 소문의 양은 <b>주제의 중요함과 상황의 모호함이 더해진 것에 비례</b>한다. 두 조건 중 하나만 있어도 소문은 크지 않다. 나와 상관없는 일은 중요해도 퍼지지 않고, 다 안다면 모호함이 없어 퍼지지 않는다.</p>
+  <p>두 조건이 겹치는 자리가 소문의 온실이다. 사람들은 소문을 그냥 흥미로 해서 옮기지 않는다. <b>두려움과 갈증을 달래는 물을 마시듯 옮긴다.</b> 소문의 씨앗은 중요하고, 흙은 모호함이다. 씨앗을 부릴 수 없는 리더에게 남은 일은 흙을 마르게 하는 것이다.</p>
+</section>
+
+<section aria-labelledby="s3">
+  <h2 id="s3">두 연구가 갈리는 지점</h2>
+  <div class="duo">
+    <div class="side a">
+      <div class="head">
+        <span class="tag">관점 A · 산수</span>
+        <div class="who">소문의 양은 상황의 산수다</div>
+        <div class="what">Allport &amp; Postman (1947), The Psychology of Rumor</div>
+      </div>
+      <div class="body">
+        <p>전시의 소문과 유언비어 사건을 추적해 소문의 기본 법칙을 세웠다.</p>
+        <ul>
+          <li>소문의 양은 <b>중요함 × 모호함</b>에 비례한다.</li>
+          <li>급한 배급의 중요함과 정보 부재의 모호함이 겹친 자리가 소문 연구의 발상지였다.</li>
+          <li>전달되며 단순화·왜곡·포착되어, 얼굴과 꼬리는 빠르게 떨어져 나가고 <b>몸통만 남는다.</b></li>
+        </ul>
+        <p>처방: 중요함을 줄일 수 없다면 모호함을 줄여라. 모호함이 사라지면 소문의 엔진이 꺼진다.</p>
+      </div>
+    </div>
+    <div class="side b">
+      <div class="head">
+        <span class="tag">관점 B · 대사</span>
+        <div class="who">소문은 조직을 잇는 대사 활동이다</div>
+        <div class="what">Rosnow (1991), American Psychologist</div>
+      </div>
+      <div class="body">
+        <p>그 공식을 실험과 필드로 4분의 1세기쯤 점검한 뒤 다른 그림을 세웠다. 공식은 1947년 이후 상수로 쓰였지만 경험적 검증이 약했다는 것이다.</p>
+        <ul>
+          <li>중요함·모호함·불안·관여의 관계는 합산 공식이 아니라 <b>훨씬 뒤엉킨 격자</b>다.</li>
+          <li>신뢰가 낮을수록 소문은 빨라진다. 정보의 공백은 <b>공정 절차의 결핍</b>으로 읽힌다.</li>
+          <li>공포가 소문의 엔진이지만, 엔진을 만드는 것은 조직이다.</li>
+        </ul>
+        <p>처방: 소문의 분량을 줄이는 것보다, 구성원이 공정하게 다뤄진다고 믿는 상태를 먼저 만들라.</p>
+      </div>
+    </div>
+  </div>
+  <div class="clash">
+    <div class="lbl">충돌 지점</div>
+    <p>한쪽은 중요함에 모호함을 곱해 소문의 양을 계산하고, 다른 쪽은 공식 너머에서 소문을 만드는 조직의 공정 절차와 신뢰를 본다. <b>같은 소문을 한쪽은 상황의 산수로, 다른 한쪽은 관계의 대사로 본다.</b></p>
+    <p>신뢰가 빠진 조직에 소문이 흐르고, 소문이 흐른 조직에 신뢰가 더 빠진다. 소문은 불안을 덜기 위해 흐르지만, 그 과정에서 <b>조직의 수분을 함께 빨아간다.</b></p>
+    <p class="deadlock"><b>합의할 수 없는 선:</b> 소문의 제조원을 상황이 아니라 조직 안에서 찾는지, 조직 밖의 모호함에서 찾는지가 두 처방을 갈라놓는 선이다. 소문은 어디까지나 조직의 상태가 던지는 결과물이라는 요구와, 소문의 양은 계산 가능한 상황의 함수라는 요구는 함께 들어야 한다. 하나를 택하고 다른 하나를 편의상 지우면 이중사고의 함정에 빠진다.</p>
+  </div>
+</section>
+
+<section aria-labelledby="s4">
+  <h2 id="s4">실제로 무슨 일이 있었나 — 25년을 재생산된 로고 괴담</h2>
+  <div class="scene">
+    <div class="cap">사례 · 생활용품 기업의 달과 별 괴담 (1980~2007)</div>
+    <p>1980년, 한 미국 신문은 한 생활용품 기업의 오래된 로고를 둘러싼 괴담을 실었다. 1851년부터 쓴 달과 별 13개의 로고가 사탄의 표식이라는 이야기였다.</p>
+    <p>뒤로 갈수록 괴담은 구체해졌다. 수염과 별 무늬에서 숫자 666이 읽힌다는가, 회사 이익이 사탄 교회로 흐른다는가, 방송 진행자가 출연해 회사를 직접 확인해 주었다는가.</p>
+    <p>1982년 여름 두 달 동안 <b>15,000통이 넘는 전화와 편지</b>가 회사로 쏟아졌고, 여성 인권 단체의 보이콧 탄원 서명도 뒤따랐다.</p>
+    <p>이 기업의 대응을 두 처방으로 읽을 수 있다. 공식의 흙을 마르게 한 것은 프레임의 처방이었다. 완성 시점이 1,882년이 아니라는 것이 확인되면, 소문의 원료가 되는 모호함이 흔들린다. 상황이 풀리면 소문도 빠르게 사그라든다.</p>
+    <p>그러나 그 기업이 지지자를 향해 들이댄 <b>건조한 사실 침묵</b>은 반증이 경고한 길이었다. 1985년에는 로고를 인쇄물에서 완전히 철거했다. 1995년에는 경쟁 네트워크 판매회사의 상급 배급사들이 라디오와 팩스, 메시지 음성과 전자우편을 통해 이 괴담을 되살렸다. 2007년 배급사들에 <b>19,250,000달러</b> 손해배상을 졌다.</p>
+  </div>
+  <p>소문은 공식대로 중요함에 모호함이 더해질 때 걷지만, <b>걸어들어오는 소문을 괴물로 취급하는 방식은 조직의 대사 기능을 말라붙게 한다.</b> 첫 소문이 사그라들어도 조직의 신뢰가 아니라 회사가 보여준 처세 방식을 남기며, 그 신뢰 잔량이 다음 소문의 속도를 정한다.</p>
+  <p>사례가 남긴 기준은 세 가지다. 첫째, 소문의 분량과 조직의 태세를 분리하라. 소문의 양은 상황의 산수다. 둘째, 소문의 출처를 즉시 접촉하지 마라. 괴담의 재생산을 조직의 노동으로 취급하면 어느 쪽에도 약점이 생기지 않는다. 셋째, 소문의 질서를 조직의 산소로 두지 마라. 말라붙은 대사 기능은 신뢰의 잔량이다. <b>신뢰가 크면 소문이 커도 조직은 괜찮다.</b></p>
+</section>
+
+<section aria-labelledby="s5">
+  <h2 id="s5">리더의 판단 질문</h2>
+  <table>
+    <thead><tr><th>점검 칸</th><th>지금 확인할 것</th></tr></thead>
+    <tbody>
+      <tr><td>산수</td><td>지금 도는 소문의 주제가 얼마나 중요하고, 상황이 얼마나 모호한가</td></tr>
+      <tr><td>공정의 겉보기</td><td>소문의 공백이 공정 절차의 결핍으로 읽히고 있지는 않은가</td></tr>
+      <tr><td>처세</td><td>소문에 대한 우리 회사의 반응은 엔진을 끄는가, 조직의 수분을 빨아가는가</td></tr>
+      <tr><td>잔량</td><td>지난 소문 이후 우리 조직의 신뢰 잔량은 얼마나 남았는가</td></tr>
+      <tr><td>동시 유지</td><td>소문의 산수와 조직의 상태, 두 명제를 동시에 보고 있는가</td></tr>
+    </tbody>
+  </table>
+  <h3>조직에 대입해 물어 볼 질문</h3>
+  <ol class="qlist">
+    <li>우리가 지금 없애려는 그 소문의 “중요함”은 무엇이며, 그 “모호함”은 무엇으로부터 오는가?</li>
+    <li>지난번 조직을 휩쓴 소문이 사그라진 뒤, 우리에게 남은 것은 무엇인가. 신뢰인가, 처세의 인상인가?</li>
+    <li>소문이 흐르는 경로(누가 누구에게)를 우리가 안다면, 그 경로가 왜 거기 있는가?</li>
+  </ol>
+</section>
+
+<section aria-labelledby="s6">
+  <h2 id="s6">근거와 출처</h2>
+  <details>
+    <summary>프레임 — 소문의 기본 법칙</summary>
+    <div class="inner">
+      <p>Allport, G. W., &amp; Postman, L. J. (1947). <i>The Psychology of Rumor.</i> Henry Holt.</p>
+      <p>소문의 양이 중요함과 모호함에 비례한다는 기본 법칙과, 전달 중 단순화·왜곡·포착되는 양상을 제시.</p>
+    </div>
+  </details>
+  <details>
+    <summary>반증 — 공식 너머의 대사</summary>
+    <div class="inner">
+      <p>Rosnow, R. L. (1991). <i>Inside Rumor: A Personal Journey.</i> American Psychologist, 46(5), 484–496.</p>
+      <p>공식의 경험적 재검토와, 불안·신뢰·관여가 뒤엉킨 격자로서의 소문 재구성.</p>
+    </div>
+  </details>
+  <details>
+    <summary>인문 렌즈와 사례 출처</summary>
+    <div class="inner">
+      <p>Orwell, G. (1949). <i>Nineteen Eighty-Four.</i> Secker &amp; Warburg — 상반된 명제를 동시에 진심으로 믿는 정신의 습관, 이중사고(doublethink)에 대한 경고. 소문의 산수와 소문의 상태라는 두 명제를 함께 들을 때 이 렌즈가 필요하다.</p>
+      <p>Atlas Obscura (2017. 7. 13.) — 1851년 로고, 1982년 전화·편지 폭주, 1985년 로고 철거.</p>
+      <p>NBC News (2007. 3. 20.) / CBS News (2007) — 1995년 재확산과 배심원 평결 19,250,000달러 손해배상.</p>
+      <p>The New York Times (2007. 3. 20.) — 1995년 경쟁 네트워크 판매회사의 배급사들이 괴담을 재부활시킨 경위.</p>
+    </div>
+  </details>
+  <ul class="refs">
+    <li>사례의 연표와 손해배상 금액은 언론 보도와 정리 자료에 기반한 정보이며, 재인용 시 1차 출처 확인을 권장한다.</li>
+    <li>이 브리핑은 정보 제공과 주의 환기를 위한 것이며, 소문·위기 관리의 최종 판단과 책임은 이를 사용하는 조직에 있다.</li>
+  </ul>
+</section>
+
+</main>
+<footer class="site">
+  <div>Lead Read · 조직 의사결정자를 위한 3분 브리핑</div>
+  <p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+(function(){
+  var root=document.documentElement,btn=document.createElement('button');
+  btn.textContent='테마 전환';btn.setAttribute('aria-label','라이트 다크 테마 전환');
+  btn.style.cssText='position:fixed;right:14px;bottom:14px;padding:8px 14px;font-size:13px;border:1px solid var(--line);border-radius:20px;background:var(--surface);color:var(--ink);cursor:pointer;z-index:10';
+  btn.addEventListener('click',function(){
+    var sysDark=window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var cur=root.getAttribute('data-theme')||(sysDark?'dark':'light');
+    root.setAttribute('data-theme',cur==='dark'?'light':'dark');
+  });
+  document.body.appendChild(btn);
+})();
+</script>
+</body>
+</html>
