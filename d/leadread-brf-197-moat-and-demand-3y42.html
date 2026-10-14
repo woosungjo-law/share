@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>지속가능한 우위는 안에서 오는가 밖에서 오는가 · Lead Read 3분 브리핑</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231d3a5f'/%3E%3Ctext x='16' y='22' font-size='15' fill='white' text-anchor='middle' font-family='serif'%3ELR%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#f7f6f2; --surface:#ffffff; --ink:#20242c; --muted:#5b6270;
+  --line:#dcd8cc; --signal:#1d3a5f; --signal-wash:#e9eff6; --warn:#9c4126; --warn-wash:#faeee8;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#14171d; --surface:#1c2028; --ink:#e8e6df; --muted:#a2a8b4;
+    --line:#333a46; --signal:#8fc0e8; --signal-wash:#192634; --warn:#e29172; --warn-wash:#331f17; }
+}
+html[data-theme="dark"]{ --bg:#14171d; --surface:#1c2028; --ink:#e8e6df; --muted:#a2a8b4;
+  --line:#333a46; --signal:#8fc0e8; --signal-wash:#192634; --warn:#e29172; --warn-wash:#331f17; }
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);word-break:keep-all;line-height:1.75;font-size:17px;
+  font-family:"Noto Sans KR","Pretendard","Malgun Gothic",sans-serif;-webkit-font-smoothing:antialiased}
+.page{max-width:760px;margin:0 auto;padding:0 20px 64px}
+header.site{border-bottom:3px solid var(--ink);padding:26px 0 14px;margin-bottom:26px}
+.brand{font-size:13px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}
+h1{font-size:26px;line-height:1.4;margin-top:8px}
+.kicker{font-size:14px;color:var(--muted);margin-top:6px}
+section{margin:36px 0}
+h2{font-size:20px;margin-bottom:14px;padding-left:12px;border-left:4px solid var(--ink)}
+h3{font-size:17px;margin:18px 0 8px}
+p{margin:10px 0}
+.verdict{background:var(--signal);color:#fff;border-radius:14px;padding:22px 24px;margin:8px 0 22px}
+.verdict .lbl{font-size:12.5px;letter-spacing:.16em;opacity:.85}
+.verdict .one{font-size:21px;font-weight:800;line-height:1.55;margin-top:8px}
+.qbox{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--signal);border-radius:10px;padding:16px 20px;margin:16px 0}
+.qbox .q{font-size:14px;color:var(--muted)}
+.qbox .a{font-size:18.5px;font-weight:700;margin-top:6px;line-height:1.55}
+.signals{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+.sigcard{flex:1 1 220px;border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:var(--surface)}
+.sigcard .tag{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.1em;padding:4px 10px;border-radius:14px}
+.sigcard.keep .tag{background:var(--signal-wash);color:var(--signal)}
+.sigcard.warn .tag{background:var(--warn-wash);color:var(--warn)}
+.sigcard .who{font-size:15.5px;font-weight:700;margin:8px 0 4px;line-height:1.45}
+.sigcard .src{font-size:12.5px;color:var(--muted)}
+.sigcard p{font-size:14.5px;margin-top:6px}
+.four{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:14px 0}
+.four .cell{border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--surface)}
+.four .cell .k{font-size:14px;font-weight:700;color:var(--signal)}
+.four .cell p{font-size:14px;margin-top:4px}
+.scene{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--warn);border-radius:10px;padding:16px 18px;margin:14px 0}
+.scene .cap{font-size:13px;font-weight:700;color:var(--warn);letter-spacing:.08em}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--signal-wash);font-size:14px}
+.qlist{counter-reset:q;list-style:none;margin:12px 0 0}
+.qlist li{counter-increment:q;position:relative;padding:10px 0 10px 42px;border-bottom:1px solid var(--line);font-size:16px}
+.qlist li::before{content:counter(q);position:absolute;left:0;top:10px;width:28px;height:28px;border-radius:50%;
+  background:var(--ink);color:var(--bg);font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}
+details{border:1px solid var(--line);border-radius:10px;background:var(--surface);margin:12px 0}
+summary{cursor:pointer;padding:12px 16px;font-weight:700;font-size:15px}
+details .inner{padding:0 16px 14px;font-size:15px}
+details .inner p{margin:8px 0}
+.refs{font-size:14.5px;color:var(--muted)}
+.refs li{margin:8px 0}
+footer.site{border-top:1px solid var(--line);margin-top:48px;padding-top:18px;font-size:14px;color:var(--muted)}
+.author-credit{margin-top:10px;font-size:15px;color:var(--ink);font-weight:700}
+@media (max-width:480px){body{font-size:16px}h1{font-size:22px}h2{font-size:18px}.verdict .one{font-size:19px}.qbox .a{font-size:17px}}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="page">
+<header class="site">
+  <div class="brand">Lead Read · 3분 브리핑</div>
+  <h1>지속가능한 우위는 안에서 오는가 밖에서 오는가</h1>
+  <div class="kicker">해자는 안에서 파지만, 수위는 바깥 수요가 정한다</div>
+</header>
+<main>
+
+<div class="verdict">
+  <div class="lbl">한 문장 결론</div>
+  <div class="one">남들이 못 가진 것을 가진 기업은 오래 이긴다. 그런데 그 자원의 가치는 자원 안에서가 아니라 바깥 수요가 정한다. 첫 물음에만 답하면 해자는 박물관이 된다.</div>
+</div>
+
+<section aria-labelledby="s1">
+  <h2 id="s1">지금 무엇을 판단하는가</h2>
+  <div class="qbox">
+    <div class="q">핵심 질문</div>
+    <div class="a">우리가 우위라고 믿는 그 자원은, 지금도 시장이 값을 매기는 자원인가, 아니면 과거에 값을 매기던 자원인가?</div>
+  </div>
+  <p>경쟁과 자원을 책임지는 리더는 “우리의 해자는 무엇인가”라는 질문을 받는다. 이 브리핑은 그 물음에 두 개의 답이 있다고 말한다. 안에서 자원의 조건을 점검하는 답과, 밖에서 수요의 이동을 재는 답이다. 둘 중 하나만 쓰면 절반의 판단이다.</p>
+</section>
+
+<section aria-labelledby="s2">
+  <h2 id="s2">왜 중요한가</h2>
+  <p>오래 이기는 기업의 비결을 묻는 질문에 가장 유명한 답은 “안에서 찾으라”는 것이다. 자원이 우위를 만들려면 네 조건을 갖춰야 한다. <b>가치가 있고, 드물고, 따라 하기 어렵고, 대신할 것이 없는</b> 것이다. 이 조건을 갖춘 자원은 경쟁자가 사 오거나 베낄 수 없다.</p>
+  <p>그러나 반대쪽 연구는 그 논리의 구멍을 지적한다. 가치 있다는 말이 우위를 만든다는 말을 증명하는 구조라면, 무엇이 가치 있는 자원인지 가려낼 기준이 없다는 것이다. 자원의 가치는 자원 안에서가 아니라 <b>바깥 수요가 판정한다.</b> 시장이 바뀌면 같은 자원이 다른 값으로 매겨진다.</p>
+</section>
+
+<section aria-labelledby="s3">
+  <h2 id="s3">두 신호 — 판단을 가르는 두 개의 지표</h2>
+  <div class="signals">
+    <div class="sigcard keep">
+      <span class="tag">안의 신호 · 해자</span>
+      <div class="who">네 조건을 갖춘 자원은 따라 하기 어렵다</div>
+      <div class="src">Barney (1991), Journal of Management</div>
+      <p>가치는 환경의 기회를 살리고 위험을 막는 데 쓰이는 자원, 희소는 경쟁자가 갖지 못한 상태, 따라 하기 어려움은 역사적 경로와 복잡한 얽힘, 대체불가는 같은 효과의 다른 자원이 없다는 뜻이다.</p>
+    </div>
+    <div class="sigcard warn">
+      <span class="tag">밖의 신호 · 수요</span>
+      <div class="who">자원의 가치는 시장이 판정한다</div>
+      <div class="src">Priem &amp; Butler (2001), Academy of Management Review</div>
+      <p>자원의 가치는 자원 안에서 정해지지 않고, 수요의 이질성과 시장의 변화가 무엇을 가치 있게 만드는지 결정한다. 안의 자원을 아무리 들여다봐도 가치는 판정되지 않는다.</p>
+    </div>
+  </div>
+  <p>갈리는 지점은 여기다. 한쪽은 우위의 답이 자원의 속성에 있다고 보고, 다른 쪽은 자원을 평가하는 바깥 수요에 있다고 본다. <b>같은 자원이라도 시장이 바뀌면 가치가 바뀌고, 가치가 바뀌면 우위가 무너진다.</b> 자원을 기르되, 그 가치의 판정권을 시장이 쥐고 있음을 잊지 않는 것이 반증의 요구다.</p>
+  <h3>네 조건을 점검하는 칸</h3>
+  <div class="four">
+    <div class="cell"><div class="k">가치</div><p>이 자원은 지금의 기회를 살리고 위험을 막는 데 실제로 쓰이고 있는가</p></div>
+    <div class="cell"><div class="k">희소</div><p>경쟁자가 지금도 갖지 못한 상태인가</p></div>
+    <div class="cell"><div class="k">모방곤란</div><p>역사적 경로와 얽힘 때문에 따라 하기 어려운가</p></div>
+    <div class="cell"><div class="k">대체불가</div><p>같은 효과를 내는 다른 자원이 없는가</p></div>
+  </div>
+</section>
+
+<section aria-labelledby="s4">
+  <h2 id="s4">실제로 무슨 일이 있었나 — 웃음 뒤에 있던 10년</h2>
+  <div class="scene">
+    <div class="cap">사례 · 영상 대여 기업의 인수 거절과 파산 (2000~2011)</div>
+    <p>2000년 9월, 한 미국 영상 대여 기업이 신생 우편 DVD 기업의 인수 제안을 받았다. 신생기업은 설립 3년 차의 적자 기업이었고, 제안가는 5천만 달러였다. 대여 기업의 최고경영자는 웃음을 참기 어려웠다고 전해진다.</p>
+    <p>당시 대여 기업은 전성기를 향해 가는 중이었다. 2004년 정점에는 전 세계 9천 개가 넘는 매장과 8만 명이 넘는 직원을 거느렸다. 매장망과 브랜드, 스튜디오와의 관계는 네 조건을 통과하는 자원처럼 보였다. <b>가치 있고 드물며 따라 하기 어렵고 대신할 것이 없어 보였다.</b></p>
+    <p>그러나 자원의 바깥에서 수요가 움직였다. 2007년부터 신생기업이 스트리밍을 시작했고, 고객은 매장 방문을 우편과 인터넷으로 옮겼다. <b>매장망은 자산에서 부담으로 바뀌었다.</b></p>
+    <p>대여 기업은 2010년 9월 23일 파산보호를 신청했고, 부채는 10억 달러 가까이에서 정리됐으며, 이듬해 위성방송 기업에 3억 2천만 달러에 팔렸다. 거절할 때는 자원이 단단해 보였고, 무너질 때는 같은 자원이 무거웠다. <b>바뀐 것은 자원이 아니라 자원을 평가하는 수요였다.</b></p>
+  </div>
+  <p>사례가 남긴 기준은 세 가지다. 첫째, 자원의 등급은 영구하지 않고 수요가 매긴다. 둘째, 네 조건을 통과한 자원도 조건의 바깥이 바뀌면 다시 매겨야 한다. 셋째, 인수 제안을 거절한 판단보다 수요의 이동을 읽지 못한 것이 더 비쌌다. 안에서 단단한 것과 밖에서 가치 있는 것은 다른 질문이다.</p>
+</section>
+
+<section aria-labelledby="s5">
+  <h2 id="s5">리더의 판단 질문</h2>
+  <table>
+    <thead><tr><th>점검 칸</th><th>지금 확인할 것</th></tr></thead>
+    <tbody>
+      <tr><td>조건 점검</td><td>우리 자원 목록을 네 조건으로 점검해 둔 적이 있는가</td></tr>
+      <tr><td>수요 계측</td><td>그 자원값을 매기는 수요가 어디에 있고 어떻게 움직이는지 따로 재고 있는가</td></tr>
+      <tr><td>증거 분리</td><td>가치 있다는 평가와 우위가 있다는 평가를 같은 증거로 쓰고 있지는 않은가</td></tr>
+      <tr><td>재평가</td><td>시장이 바뀌면 자원의 등급을 다시 매기는 절차가 있는가</td></tr>
+      <tr><td>구분</td><td>지킬 자원과 바꿀 자원을 수요의 이동으로 나누고 있는가</td></tr>
+    </tbody>
+  </table>
+  <h3>조직에 대입해 물어 볼 질문</h3>
+  <ol class="qlist">
+    <li>우리가 자랑하는 자원(브랜드·채널·기술·관계)은 지금 누구의 지갑이 움직이게 하는가, 과거의 지갑을 지키는가?</li>
+    <li>그 자원을 사 줄 수요가 지난 3년 사이 어디로 옮겼는가. 그 이동의 첫 신호는 언제 있었는가?</li>
+    <li>만약 우리 경쟁사가 이 자원을 내일 따라한다면, 우리는 몇 개월의 여유가 있는가?</li>
+  </ol>
+</section>
+
+<section aria-labelledby="s6">
+  <h2 id="s6">근거와 출처</h2>
+  <details>
+    <summary>프레임 — 안의 자원이 우위를 만든다</summary>
+    <div class="inner">
+      <p>Barney, J. B. (1991). <i>Firm Resources and Sustained Competitive Advantage.</i> Journal of Management, 17(1), 99–120.</p>
+      <p>가치·희소·모방곤란·대체불가의 네 조건으로 지속가능한 우위의 자원 원천을 정리했다.</p>
+    </div>
+  </details>
+  <details>
+    <summary>반증 — 가치는 밖에서 판정된다</summary>
+    <div class="inner">
+      <p>Priem, R. L., &amp; Butler, J. E. (2001). <i>Is the Resource-Based “View” a Useful Perspective for Strategic Management Research?</i> Academy of Management Review, 26(1), 22–40. (같은 호에 후속 공방 실림)</p>
+      <p>기본 명제의 동어반복 문제와 자원 가치의 외부 판정 명제를 제시했다.</p>
+    </div>
+  </details>
+  <details>
+    <summary>인문 렌즈와 사례 출처</summary>
+    <div class="inner">
+      <p>Bourdieu, P. (1986). <i>The Forms of Capital.</i> — 자본의 가치가 자본 자체가 아니라 그것이 통용되는 장에서 정해진다는 관점. 같은 학력이 다른 장에서 다른 값으로 통용되는 것처럼, 같은 자원도 다른 수요 앞에서 다른 값으로 매겨진다.</p>
+      <p>Fortune (2023. 4. 14.) / Daily Mail (2019. 9. 17.) — 2000년 9월 5천만 달러 인수 제안과 거절 경위.</p>
+      <p>ABC News (2010. 9. 23.) / Forbes (2010. 5. 18.) — 2010년 9월 23일 파산보호 신청, 부채 규모, 2011년 3억 2천만 달러 매각 연표.</p>
+      <p>The Mercury News (2010. 9. 23.) — 우편·스트리밍·자판기로의 수요 이동과 파산의 연결.</p>
+    </div>
+  </details>
+  <ul class="refs">
+    <li>사례의 연표와 금액은 언론 보도에 기반한 정보이며, 재인용 시 1차 출처 확인을 권장한다.</li>
+    <li>이 브리핑은 정보 제공과 주의 환기를 위한 것이며, 자원·우위 판단의 최종 책임은 이를 사용하는 조직에 있다.</li>
+  </ul>
+</section>
+
+</main>
+<footer class="site">
+  <div>Lead Read · 조직 의사결정자를 위한 3분 브리핑</div>
+  <p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+(function(){
+  var root=document.documentElement,btn=document.createElement('button');
+  btn.textContent='테마 전환';btn.setAttribute('aria-label','라이트 다크 테마 전환');
+  btn.style.cssText='position:fixed;right:14px;bottom:14px;padding:8px 14px;font-size:13px;border:1px solid var(--line);border-radius:20px;background:var(--surface);color:var(--ink);cursor:pointer;z-index:10';
+  btn.addEventListener('click',function(){
+    var sysDark=window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var cur=root.getAttribute('data-theme')||(sysDark?'dark':'light');
+    root.setAttribute('data-theme',cur==='dark'?'light':'dark');
+  });
+  document.body.appendChild(btn);
+})();
+</script>
+</body>
+</html>
