@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>먼 연결은 언제 자산이 되고 언제 부채가 되는가 · Lead Read 3분 브리핑</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231d3a5f'/%3E%3Ctext x='16' y='22' font-size='15' fill='white' text-anchor='middle' font-family='serif'%3ELR%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#f7f6f2; --surface:#ffffff; --ink:#20242c; --muted:#5b6270;
+  --line:#dcd8cc; --accent:#1d3a5f; --accent-wash:#e9eff6; --warn:#9c4126; --warn-wash:#faeee8; --ok:#20604a;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#14171d; --surface:#1c2028; --ink:#e8e6df; --muted:#a2a8b4;
+    --line:#333a46; --accent:#8fc0e8; --accent-wash:#192634; --warn:#e29172; --warn-wash:#331f17; --ok:#6fbf9c; }
+}
+html[data-theme="dark"]{ --bg:#14171d; --surface:#1c2028; --ink:#e8e6df; --muted:#a2a8b4;
+  --line:#333a46; --accent:#8fc0e8; --accent-wash:#192634; --warn:#e29172; --warn-wash:#331f17; --ok:#6fbf9c; }
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);word-break:keep-all;line-height:1.75;font-size:17px;
+  font-family:"Noto Sans KR","Pretendard","Malgun Gothic",sans-serif;-webkit-font-smoothing:antialiased}
+.page{max-width:760px;margin:0 auto;padding:0 20px 64px}
+header.site{border-bottom:3px solid var(--ink);padding:26px 0 14px;margin-bottom:26px}
+.brand{font-size:13px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}
+h1{font-size:26px;line-height:1.4;margin-top:8px}
+.kicker{font-size:14px;color:var(--muted);margin-top:6px}
+section{margin:36px 0}
+h2{font-size:20px;margin-bottom:14px;padding-left:12px;border-left:4px solid var(--ink)}
+h3{font-size:17px;margin:18px 0 8px}
+p{margin:10px 0}
+.summary{background:var(--accent);color:#fff;border-radius:14px;padding:20px 24px;margin:8px 0 20px}
+.summary .lbl{font-size:12.5px;letter-spacing:.16em;opacity:.85}
+.summary .one{font-size:19.5px;font-weight:800;line-height:1.6;margin-top:8px}
+.qbox{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;padding:16px 20px;margin:16px 0}
+.qbox .q{font-size:14px;color:var(--muted)}
+.qbox .a{font-size:18px;font-weight:700;margin-top:6px;line-height:1.55}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--accent-wash);font-size:14px}
+td.good{color:var(--ok);font-weight:700}
+td.bad{color:var(--warn);font-weight:700}
+.scene{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--warn);border-radius:10px;padding:16px 18px;margin:14px 0}
+.scene .cap{font-size:13px;font-weight:700;color:var(--warn);letter-spacing:.08em}
+.check{list-style:none;margin:12px 0 0;counter-reset:c}
+.check li{counter-increment:c;position:relative;padding:12px 0 12px 44px;border-bottom:1px solid var(--line);font-size:16px}
+.check li::before{content:counter(c);position:absolute;left:0;top:12px;width:26px;height:26px;border-radius:6px;
+  background:var(--accent);color:var(--bg);font-size:13.5px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.qlist{counter-reset:q;list-style:none;margin:12px 0 0}
+.qlist li{counter-increment:q;position:relative;padding:10px 0 10px 42px;border-bottom:1px solid var(--line);font-size:16px}
+.qlist li::before{content:counter(q);position:absolute;left:0;top:10px;width:28px;height:28px;border-radius:50%;
+  background:var(--ink);color:var(--bg);font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}
+details{border:1px solid var(--line);border-radius:10px;background:var(--surface);margin:12px 0}
+summary{cursor:pointer;padding:12px 16px;font-weight:700;font-size:15px}
+details .inner{padding:0 16px 14px;font-size:15px}
+details .inner p{margin:8px 0}
+.refs{font-size:14.5px;color:var(--muted)}
+.refs li{margin:8px 0}
+footer.site{border-top:1px solid var(--line);margin-top:48px;padding-top:18px;font-size:14px;color:var(--muted)}
+.author-credit{margin-top:10px;font-size:15px;color:var(--ink);font-weight:700}
+@media (max-width:480px){body{font-size:16px}h1{font-size:22px}h2{font-size:18px}.summary .one{font-size:18px}.qbox .a{font-size:16.5px}}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="page">
+<header class="site">
+  <div class="brand">Lead Read · 3분 브리핑</div>
+  <h1>먼 연결은 언제 자산이 되고 언제 부채가 되는가</h1>
+  <div class="kicker">찾을 때는 멀리 손을 뻗고, 옮길 때는 가까이 붙는다</div>
+</header>
+<main>
+
+<div class="summary">
+  <div class="lbl">한 문장 결론</div>
+  <div class="one">먼 연결은 새 소식을 가져온다. 그러나 복잡한 지식은 옮기지 못한다. 찾는 일과 옮기는 일이 다른 과제이므로, 연결의 강도도 달라야 한다.</div>
+</div>
+
+<section aria-labelledby="s1">
+  <h2 id="s1">지금 무엇을 판단하는가</h2>
+  <div class="qbox">
+    <div class="q">핵심 질문</div>
+    <div class="a">우리 조직이 지금 ‘다리’로 쓰고 있는 관계는, 새 소식을 가져오는 다리인가, 어려운 일을 옮기는 다리인가?</div>
+  </div>
+  <p>조직이 새 정보를 얻는 통로는 가까운 사이가 아니라 먼 사이다. 가까운 사람들은 서로 아는 사람이 겹치므로 같은 소식을 돌려 듣는다. 반면 가끔 만나는 지인은 서로 다른 세계에 발을 걸치고 있어 겹치지 않는 소식을 가져온다(<b>약한 연결</b>, 즉 강도가 약한 관계).</p>
+  <p>그러나 ‘소식을 얻는 일’과 ‘그 지식을 실제로 쓰는 일’은 다른 과제다. 이 브리핑은 이 둘을 나눠, 어디에 시간을 써야 하는지 축을 제시한다.</p>
+</section>
+
+<section aria-labelledby="s2">
+  <h2 id="s2">두 연구를 나란히 놓은 비교표</h2>
+  <table>
+    <thead><tr><th>구분</th><th>먼 연결은 자산이다</th><th>먼 연결은 부채가 된다</th></tr></thead>
+    <tbody>
+      <tr><td>연구</td><td>Granovetter (1973)<br>American Journal of Sociology</td><td>Hansen (1999)<br>Administrative Science Quarterly</td></tr>
+      <tr><td>방법</td><td>연결의 강도와 정보의 새로움의 관계를 이론·사례로 정리</td><td>대형 전자 기업의 41개 사업부, 120개 개발 프로젝트 추적</td></tr>
+      <tr><td>핵심 주장</td><td>강한 연결끼리는 서로 연결될 확률이 높아 닫힌 삼각형을 만들고, 약한 연결은 서로 다른 집단을 잇는 <b>다리</b>가 된다. 다리 되는 것은 약한 연결뿐이다.</td><td>약한 연결은 지식을 <b>찾는</b> 수색에는 도움이 되지만, 찾아낸 지식을 <b>옮겨 쓰는</b> 이전 단계에서는 복잡한 지식일수록 발목을 잡는다.</td></tr>
+      <tr><td>갈라지는 지점</td><td class="good">정보의 도달 범위</td><td class="bad">지식의 복잡도</td></tr>
+      <tr><td>처방</td><td>새 소식이 필요하면 가까운 팀을 더 모으지 말고 먼 연결을 늘린다.</td><td>옮길 지식의 복잡도를 먼저 판정하고, 복잡한 이전에는 강한 연결을 붙인다.</td></tr>
+    </tbody>
+  </table>
+  <p>둘 다 측정된 결과다. 한쪽이 틀렸다기보다, <b>찾는 일과 옮기는 일은 다른 일</b>이라는 뜻이다. 수색에는 먼 연결을 쓰되, 이전에는 지식의 복잡도에 맞는 연결의 강도를 붙여야 한다. 복잡한 지식은 자주 만나고 깊이 얽힌 사이(강한 연결)에서만 옮겨졌다.</p>
+</section>
+
+<section aria-labelledby="s3">
+  <h2 id="s3">사례 스냅샷 — 배선 530킬로미터가 멈춘 이유</h2>
+  <div class="scene">
+    <div class="cap">사례 · 초대형 여객기의 인도 지연 (2004~2019)</div>
+    <p>2006년, 한 유럽 항공기 제작사가 초대형 여객기의 인도 지연을 발표했다. 원인은 기체 한 대당 <b>530킬로미터</b>에 이르는 배선이었다. 9만 8천 가닥의 전선과 4만 개의 연결기가 동체 벽과 바닥을 따라 들어가는데, 독일 공장에서 온 동체 구간의 전선이 짧아 다음 구간과 만나지 못했다.</p>
+    <p>원인은 연결의 방식이 아니라 <b>지식의 복잡도</b>에 있었다. 독일·스페인 공장은 구버전 설계 소프트웨어를 쓰고 영국·프랑스 공장은 신버전을 썼는데, 알루미늄 배선의 특수 설계 규칙이 버전 사이를 옮겨 다니지 못했다. 복잡한 지식이 약한 연결 위를 건너지 못한 것이다.</p>
+    <p>2006년 6월 13일 두 번째 지연이 공시되자 주가는 하루에 3분의 1 가까이 빠졌고 시가총액 70억 달러 가까이가 사라졌다. 같은 해 10월 3일 세 번째 지연으로 첫 인도는 2007년 10월로 밀렸다. 회사는 이후 강도 높은 통합을 밀어붙였지만, 2년의 지연과 수십억 유로의 추가 비용이 남았다. 2019년 프로그램 종료가 발표될 때까지 개발비 250억 달러 안팎은 회수되지 못했다.</p>
+    <p><b>수색의 실패가 아니라 이전의 실패였다.</b></p>
+  </div>
+  <p>사례가 남긴 기준은 세 가지다. 첫째, 떨어진 조직을 잇는 것과 복잡한 지식을 옮기는 것은 다른 과제다. 둘째, 도구가 다르면 같은 도면도 다른 지식이 된다. 셋째, 통합의 비용을 아끼면 이전의 비용으로 돌려낸다. 다리를 놓는 일과 다리 위를 건너는 일은 다른 설계다.</p>
+</section>
+
+<section aria-labelledby="s4">
+  <h2 id="s4">결정 체크리스트</h2>
+  <ol class="check">
+    <li>새 지식을 찾는 일인가, 찾은 지식을 옮겨 쓰는 일인가를 먼저 분류한다.</li>
+    <li>옮길 지식이 복잡한지 단순한지를 판정한다(공통 도구·공통 언어·공통 경험이 필요한가).</li>
+    <li>복잡한 이전에는 강한 연결을 붙이고 일정을 넉넉히 잡는다.</li>
+    <li>단순한 이전에는 약한 연결로 속도를 낸다.</li>
+    <li>수색의 성공을 이전의 성공으로 착각하지 않는다.</li>
+  </ol>
+  <h3>조직에 대입해 물어 볼 질문</h3>
+  <ol class="qlist">
+    <li>우리가 ‘전문가와 연결됐다’고 말할 때, 그 연결은 소식을 가져오는 다리인가 일을 함께 옮기는 다리인가?</li>
+    <li>지난 프로젝트에서 실패한 지식 이전이 있다면, 그 실패는 사람 사이의 거리 때문이었는가 지식의 복잡도 때문이었는가?</li>
+    <li>다리를 몇 개 더 놓기로 했다면, 그 다리는 수색용인가 이전용인가. 이전용이라면 붙일 강한 연결은 무엇인가?</li>
+  </ol>
+</section>
+
+<section aria-labelledby="s5">
+  <h2 id="s5">근거와 출처</h2>
+  <details>
+    <summary>프레임 — 약한 연결의 힘</summary>
+    <div class="inner">
+      <p>Granovetter, M. S. (1973). <i>The Strength of Weak Ties.</i> American Journal of Sociology, 78(6), 1360–1380.</p>
+      <p>약한 연결이 서로 다른 집단을 잇는 다리가 되어 새 정보의 도달 범위를 넓힌다는 명제.</p>
+    </div>
+  </details>
+  <details>
+    <summary>반증 — 수색과 이전의 문제</summary>
+    <div class="inner">
+      <p>Hansen, M. T. (1999). <i>The Search-Transfer Problem: The Role of Weak Ties in Sharing Knowledge across Organization Subunits.</i> Administrative Science Quarterly, 44(1), 82–111.</p>
+      <p>41개 사업부의 120개 프로젝트에서 약한 연결이 수색을 돕고 복잡한 지식의 이전을 막는 이중 효과를 확인했다.</p>
+    </div>
+  </details>
+  <details>
+    <summary>인문 렌즈와 사례 출처</summary>
+    <div class="inner">
+      <p>Bakhtin, M. M. (1981). <i>The Dialogic Imagination.</i> — 서로 다른 목소리와 언어가 만날 때 비로소 새로운 의미가 생긴다는 관점. 먼 연결의 가치가 ‘다른 목소리 데려오기’에 있고, 그 목소리를 내 일로 옮기는 데는 함께 부대끼는 시간이 필요함을 설명한다.</p>
+      <p>Airbus (2007). <i>Annual Review 2006</i> — 2006년 6월 13일 인도 일정 개정 공시와 공정·도구 통합 부족의 근본 원인 분석의 1차 출처.</p>
+      <p>The New York Times / International Herald Tribune (2006. 6. 14. 및 12. 11.) — 배선 불일치 경위와 주가·이익 영향 보도.</p>
+      <p>Aviation Week (2021. 12. 16.) — 설계 소프트웨어 버전 불일치와 2019년 생산 종료 결정 보도.</p>
+    </div>
+  </details>
+  <ul class="refs">
+    <li>사례의 연표와 금액은 회사 발표와 언론 보도에 기반한 정보이며, 재인용 시 1차 출처 확인을 권장한다.</li>
+    <li>이 브리핑은 정보 제공과 주의 환기를 위한 것이며, 조직 설계의 최종 판단과 책임은 이를 사용하는 조직에 있다.</li>
+  </ul>
+</section>
+
+</main>
+<footer class="site">
+  <div>Lead Read · 조직 의사결정자를 위한 3분 브리핑</div>
+  <p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+(function(){
+  var root=document.documentElement,btn=document.createElement('button');
+  btn.textContent='테마 전환';btn.setAttribute('aria-label','라이트 다크 테마 전환');
+  btn.style.cssText='position:fixed;right:14px;bottom:14px;padding:8px 14px;font-size:13px;border:1px solid var(--line);border-radius:20px;background:var(--surface);color:var(--ink);cursor:pointer;z-index:10';
+  btn.addEventListener('click',function(){
+    var sysDark=window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var cur=root.getAttribute('data-theme')||(sysDark?'dark':'light');
+    root.setAttribute('data-theme',cur==='dark'?'light':'dark');
+  });
+  document.body.appendChild(btn);
+})();
+</script>
+</body>
+</html>
