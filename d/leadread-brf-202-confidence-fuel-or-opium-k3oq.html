@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>자신감은 언제 연료가 되고 언제 아편이 되는가 · Lead Read 3분 브리핑</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231d3a5f'/%3E%3Ctext x='16' y='22' font-size='15' fill='white' text-anchor='middle' font-family='serif'%3ELR%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#f7f6f2; --surface:#ffffff; --ink:#20242c; --muted:#5b6270;
+  --line:#dcd8cc; --fuel:#1f6b4f; --opium:#8a3f6b;
+  --fuel-wash:#e9f3ee; --opium-wash:#f6ecf3; --tag-fuel:#1f6b4f; --tag-opium:#8a3f6b;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#14171d; --surface:#1c2028; --ink:#e8e6df; --muted:#a2a8b4;
+    --line:#333a46; --fuel:#6cc39b; --opium:#cf8fb8;
+    --fuel-wash:#182a22; --opium-wash:#2a1c26; --tag-fuel:#6cc39b; --tag-opium:#cf8fb8; }
+}
+html[data-theme="dark"]{ --bg:#14171d; --surface:#1c2028; --ink:#e8e6df; --muted:#a2a8b4;
+  --line:#333a46; --fuel:#6cc39b; --opium:#cf8fb8;
+  --fuel-wash:#182a22; --opium-wash:#2a1c26; --tag-fuel:#6cc39b; --tag-opium:#cf8fb8; }
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);word-break:keep-all;line-height:1.75;font-size:17px;
+  font-family:"Noto Sans KR","Pretendard","Malgun Gothic",sans-serif;-webkit-font-smoothing:antialiased}
+.page{max-width:760px;margin:0 auto;padding:0 20px 64px}
+header.site{border-bottom:3px solid var(--ink);padding:26px 0 14px;margin-bottom:32px}
+.brand{font-size:13px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}
+h1{font-size:26px;line-height:1.4;margin-top:8px}
+.kicker{font-size:14px;color:var(--muted);margin-top:6px}
+section{margin:38px 0}
+h2{font-size:20px;margin-bottom:14px;padding-left:12px;border-left:4px solid var(--ink)}
+h3{font-size:17px;margin:18px 0 8px}
+p{margin:10px 0}
+.qbox{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:16px 0}
+.qbox .q{font-size:14px;color:var(--muted)}
+.qbox .a{font-size:19px;font-weight:700;margin-top:6px;line-height:1.55}
+.duo{display:flex;gap:16px;margin:18px 0;flex-wrap:wrap}
+.side{flex:1 1 300px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
+.side .tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.1em;color:#fff;padding:5px 12px}
+.side.a .tag{background:var(--tag-fuel)} .side.b .tag{background:var(--tag-opium)}
+.side .head{padding:14px 18px 4px}
+.side .head .who{font-size:16px;font-weight:700;line-height:1.45}
+.side .head .what{font-size:13.5px;color:var(--muted);margin-top:2px}
+.side .body{padding:8px 18px 18px;font-size:15.5px}
+.side.a{border-top:4px solid var(--fuel)} .side.b{border-top:4px solid var(--opium)}
+.side.a .body{background:var(--fuel-wash)} .side.b .body{background:var(--opium-wash)}
+.side ul{margin:8px 0 0 18px;font-size:15px}
+.side li{margin:5px 0}
+.clash{border:2px dashed var(--line);border-radius:12px;padding:18px 20px;margin:18px 0;background:var(--surface)}
+.clash .lbl{font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--muted)}
+.clash p{margin-top:8px}
+.deadlock{margin-top:12px;font-size:15.5px}
+.deadlock b{color:var(--opium)}
+.scene{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--opium);border-radius:10px;padding:16px 18px;margin:14px 0}
+.scene .cap{font-size:13px;font-weight:700;color:var(--opium);letter-spacing:.08em}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--fuel-wash);font-size:14px}
+.qlist{counter-reset:q;list-style:none;margin:12px 0 0}
+.qlist li{counter-increment:q;position:relative;padding:10px 0 10px 42px;border-bottom:1px solid var(--line);font-size:16px}
+.qlist li::before{content:counter(q);position:absolute;left:0;top:10px;width:28px;height:28px;border-radius:50%;
+  background:var(--ink);color:var(--bg);font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}
+details{border:1px solid var(--line);border-radius:10px;background:var(--surface);margin:12px 0}
+summary{cursor:pointer;padding:12px 16px;font-weight:700;font-size:15px}
+details .inner{padding:0 16px 14px;font-size:15px}
+details .inner p{margin:8px 0}
+.refs{font-size:14.5px;color:var(--muted)}
+.refs li{margin:8px 0}
+footer.site{border-top:1px solid var(--line);margin-top:48px;padding-top:18px;font-size:14px;color:var(--muted)}
+.author-credit{margin-top:10px;font-size:15px;color:var(--ink);font-weight:700}
+@media (max-width:480px){body{font-size:16px}h1{font-size:22px}h2{font-size:18px}.qbox .a{font-size:17.5px}}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="page">
+<header class="site">
+  <div class="brand">Lead Read · 3분 브리핑</div>
+  <h1>자신감은 언제 연료가 되고 언제 아편이 되는가</h1>
+  <div class="kicker">믿음이 클 때 손이 멈추면 아편이고, 움직이면 연료다</div>
+</header>
+<main>
+
+<section aria-labelledby="s1">
+  <h2 id="s1">지금 무엇을 판단하는가</h2>
+  <div class="qbox">
+    <div class="q">핵심 질문</div>
+    <div class="a">우리 팀의 자신감은, 실제로 다음 일을 부추기는 연료인가, 아니면 준비를 미루게 만드는 아편인가?</div>
+  </div>
+  <p><b>한 문장 결론:</b> 자신감은 손을 움직이는 연료다. 그런데 한 사람 안의 흐름에서는 같은 믿음이 손을 멈추는 아편이 된다. 그래서 “우리 팀의 믿음이 몇 점인가”가 아니라 “믿음이 클 때 손이 멈추는가”를 물어야 한다.</p>
+  <p>팀의 사기와 성과를 책임지는 리더는 자신감을 키우라는 조언을 자주 듣는다. 이 브리핑은 그 조언을 반쪽짜리로 보여 준다. 같은 자신감이라도 남과 비교하면 연료이고, 어제의 나와 비교하면 아편이 될 수 있다.</p>
+</section>
+
+<section aria-labelledby="s2">
+  <h2 id="s2">왜 중요한가</h2>
+  <p>할 수 있다는 믿음은 실적의 기름이다. 믿음이 클수록 손이 움직이고, 손이 움직일수록 결과가 난다는 것은 수만 명의 자료에서 확인된 방향이다. 믿음은 장식이 아니라 기제다. 목표를 세우게 하고, 어려워도 버티게 하며, 실패 뒤에 다시 손대게 한다.</p>
+  <p>그러나 그 믿음이 곧 “준비를 늦춰도 된다”는 신호로 바뀌는 순간이 있다. 여유가 있다고 느끼면 손을 덜 대기 때문이다. <b>믿음이 나쁜 것이 아니라, 믿음이 노력의 배분을 바꾸는 지점이 문제다.</b></p>
+</section>
+
+<section aria-labelledby="s3">
+  <h2 id="s3">두 연구가 갈리는 지점</h2>
+  <div class="duo">
+    <div class="side a">
+      <div class="head">
+        <span class="tag">관점 A · 연료</span>
+        <div class="who">할 수 있다는 믿음이 실적을 만든다</div>
+        <div class="what">Stajkovic &amp; Luthans (1998), Psychological Bulletin</div>
+      </div>
+      <div class="body">
+        <p>114개 연구, 2만 1천여 명의 자료를 합쳐 자기효능감(할 수 있다는 믿음)과 업무 성과의 관계를 쟀다.</p>
+        <ul>
+          <li>평균 상관은 <b>0.38</b>로 유의미했다.</li>
+          <li>단순한 일에서는 믿음이 곧바로 손으로 이어졌고, 복잡한 일에서는 믿음이 버팀으로 바뀌어 손을 지켰다.</li>
+          <li>과제의 복잡도에 따라 효과의 크기는 달랐으나 방향은 같았다.</li>
+        </ul>
+        <p>믿음은 목표를 세우게 하고, 버티게 하고, 실패 뒤에 다시 손대게 한다. 넣을수록 기계가 잘 돈다.</p>
+      </div>
+    </div>
+    <div class="side b">
+      <div class="head">
+        <span class="tag">관점 B · 아편</span>
+        <div class="who">할 수 있다는 믿음이 손을 멈춘다</div>
+        <div class="what">Vancouver et al. (2002), Journal of Applied Psychology</div>
+      </div>
+      <div class="body">
+        <p>같은 사람을 여러 번 재면, 믿음이 클 때 <b>다음 성과가 떨어지는 구간</b>이 나타났다. 이유는 노력의 배분이었다.</p>
+        <ul>
+          <li>할 수 있다고 느끼면 손을 덜 댄다.</li>
+          <li>여유가 있다고 느끼면 준비를 미룬다.</li>
+          <li>성과가 <b>모호할 때</b>는 믿음이 다음 성과를 낮췄고, <b>분명할 때</b>는 높였다.</li>
+        </ul>
+        <p>사람 사이의 비교에서는 믿음이 클수록 잘했지만, 한 사람 안의 흐름에서는 믿음이 클수록 다음에 못 했다.</p>
+      </div>
+    </div>
+  </div>
+  <div class="clash">
+    <div class="lbl">충돌 지점</div>
+    <p>한쪽은 믿음이 성과를 만든다고 보고, 다른 쪽은 믿음이 노력을 줄여 성과를 깎는다고 본다. 둘 다 측정된 결과다. <b>같은 자신감이라도 남과 비교하면 연료고, 어제의 나와 비교하면 아편이다.</b> 이 근거는 서로 다른 비교 방식에서 나온다.</p>
+    <p class="deadlock"><b>합의할 수 없는 선:</b> 믿음이 노력으로 바뀌는 비율은 리더가 정하지 않고, 일의 모호함이 정한다. 모호한 일에서는 믿음이 아편이 되기 쉽다. 리더가 통제할 수 있는 것은 믿음의 수준 측정이 아니라, <b>믿음이 클 때 손이 멈추는지의 점검</b>이다. 다만 믿음이 나쁘다는 결론은 아니다. 믿음을 키우되, 믿음이 노력의 배분을 바꾸는 순간을 잡아야 한다.</p>
+  </div>
+  <p>두 처방은 배타적이지 않다. 믿음을 키우되, 성과가 모호한 곳에는 기준을 분명히 세워 아편이 되지 않게 해야 한다.</p>
+</section>
+
+<section aria-labelledby="s4">
+  <h2 id="s4">실제로 무슨 일이 있었나 — 키보드를 놓지 못한 6년</h2>
+  <div class="scene">
+    <div class="cap">사례 · 캐나다 스마트폰 기업의 자신감 (2007~2013)</div>
+    <p>2007년 여름, 한 캐나다 스마트폰 기업의 주가는 236달러로 정점이었다. 그해 등장한 터치스크린 스마트폰을 두고 경영진은 <b>“우리 핵심 사업의 위협이 아니다”</b>라고 했다. 자판 없는 화면에서는 열쇠도 못 칠 것이라는 조롱이 뒤따랐다.</p>
+    <p>믿음의 근거는 있었다. 2009년 이 회사는 세계에서 가장 빨리 크는 기업으로 뽑혔고, 세계 시장의 20퍼센트 넘게를 쥐었다. 키보드와 보안과 기업 고객이 해자였다. <b>그러나 믿음이 손을 멈췄다.</b> 2008년 내놓은 첫 터치스크린 제품은 혹평이었고, 무선랜도 없이 나왔다.</p>
+    <p>이사회에서 기술책임자는 키보드 달린 제품을 들어 “이건 알겠다”고 하고, 터치스크린 제품을 들어 “이건 모르겠다”고 했다. 뒤이은 키보드 병행 제품으로 한숨 돌렸으나 시장의 방향은 이미 정해져 있었다.</p>
+    <p>2013년 내놓은 반전 카드는 분기 680만 대에 그쳐 경쟁사의 5분의 1이었고, 그해 말 세계 점유율은 1퍼센트 아래로 떨어졌다. 할 수 있다는 믿음이 <b>할 필요가 없다는 믿음</b>으로 바뀌는 데 6년이 걸렸다. 연료가 아편이 되는 시간이었다.</p>
+  </div>
+  <p>사례가 남긴 기준은 세 가지다. 첫째, 믿음의 근거(점유율·성장률)는 <b>과거의 영수증</b>이지 미래의 보증서가 아니다. 둘째, 조롱은 분석이 아니라 마취다. 셋째, 해자를 지키는 일과 해자 밖을 보는 일은 다른 사람에게 맡겨야 한다. 같은 눈은 둘을 같이 못 본다.</p>
+</section>
+
+<section aria-labelledby="s5">
+  <h2 id="s5">리더의 판단 질문</h2>
+  <table>
+    <thead><tr><th>점검 칸</th><th>지금 확인할 것</th></tr></thead>
+    <tbody>
+      <tr><td>분리 측정</td><td>믿음의 수준과 노력의 양을 따로 재고 있는가</td></tr>
+      <tr><td>준비 시간</td><td>믿음이 클수록 준비 시간을 줄이지 않는지 확인하는가</td></tr>
+      <tr><td>기준 올리기</td><td>잘될 때일수록 다음 일의 기준을 올리고 있는가</td></tr>
+      <tr><td>비교의 분리</td><td>사람 사이 비교와 한 사람 안의 흐름을 같은 표에 놓지 않는가</td></tr>
+      <tr><td>교육 후 점검</td><td>자신감 교육 뒤에 성과가 아니라 노력을 점검하는가</td></tr>
+    </tbody>
+  </table>
+  <h3>조직에 대입해 물어 볼 질문</h3>
+  <ol class="qlist">
+    <li>우리 팀에서 “우리가 해낼 수 있다”는 말이 가장 자주 나오는 프로젝트는, 실제로 그만큼의 준비가 뒤따르고 있는가?</li>
+    <li>성과가 모호한 일(새 시장·신제품)에 우리 팀의 자신감은 어느 정도인가. 그 모호함이 자신감을 아편으로 바꾸고 있지 않은가?</li>
+    <li>지난번 “알겠다”고 했던 일이 실제로 무엇이었고, “모르겠다”고 했던 일은 지금 어떻게 되어 있는가?</li>
+  </ol>
+</section>
+
+<section aria-labelledby="s6">
+  <h2 id="s6">근거와 출처</h2>
+  <details>
+    <summary>프레임 — 믿음은 손을 움직인다</summary>
+    <div class="inner">
+      <p>Stajkovic, A. D., &amp; Luthans, F. (1998). <i>Self-Efficacy and Work-Related Performance: A Meta-Analysis.</i> Psychological Bulletin, 124(2), 240–261.</p>
+      <p>114개 연구를 합쳐 자기효능감과 성과의 평균 상관 0.38을 확인한 메타분석.</p>
+    </div>
+  </details>
+  <details>
+    <summary>반증 — 믿음이 손을 멈춘다</summary>
+    <div class="inner">
+      <p>Vancouver, J. B., Thompson, C. M., Tischner, E. C., &amp; Putka, D. J. (2002). <i>Two Studies Examining the Negative Effect of Self-Efficacy on Performance.</i> Journal of Applied Psychology, 87(3), 506–516.</p>
+      <p>한 사람 안의 흐름에서 믿음이 다음 성과를 낮춘다는 반증. 선행 연구(Vancouver, Thompson &amp; Williams, 2001)와 같은 방향. 경계 조건으로 성과의 모호함을 확인했다.</p>
+      <p>대외 발행 전 참고: 효능감 논쟁에는 Bandura와 Locke의 반박이 있어, 최신 논의를 함께 확인하는 편이 낫다.</p>
+    </div>
+  </details>
+  <details>
+    <summary>인문 렌즈와 사례 출처</summary>
+    <div class="inner">
+      <p>Chekhov, A. P. (1901). <i>Three Sisters</i> — 거창한 파국이 아니라 일상의 자잘한 좌절로 멈추는 인물들을 그린 희곡. 조롱과 자기확신이 서서히 손을 멈추는 양상을 이해하는 렌즈다.</p>
+      <p>The New Yorker (2013. 8. 12.) — 2007년 정점 주가, 터치스크린 무시, 2009년 성장 정점.</p>
+      <p>The Globe and Mail (2013. 9. 27.) — 키보드 고수 발언, 2008년 첫 터치스크린 실패, 2013년 점유율 1퍼센트 하락.</p>
+      <p>The Wall Street Journal (2015. 5. 22.) — 경영진의 초기 오판 경위.</p>
+    </div>
+  </details>
+  <ul class="refs">
+    <li>사례의 수치와 발언은 언론 보도에 기반한 정보이며, 재인용 시 1차 출처 확인을 권장한다.</li>
+    <li>이 브리핑은 정보 제공과 주의 환기를 위한 것이며, 팀 사기·성과 관리의 최종 판단과 책임은 이를 사용하는 조직에 있다.</li>
+  </ul>
+</section>
+
+</main>
+<footer class="site">
+  <div>Lead Read · 조직 의사결정자를 위한 3분 브리핑</div>
+  <p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+(function(){
+  var root=document.documentElement,btn=document.createElement('button');
+  btn.textContent='테마 전환';btn.setAttribute('aria-label','라이트 다크 테마 전환');
+  btn.style.cssText='position:fixed;right:14px;bottom:14px;padding:8px 14px;font-size:13px;border:1px solid var(--line);border-radius:20px;background:var(--surface);color:var(--ink);cursor:pointer;z-index:10';
+  btn.addEventListener('click',function(){
+    var sysDark=window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var cur=root.getAttribute('data-theme')||(sysDark?'dark':'light');
+    root.setAttribute('data-theme',cur==='dark'?'light':'dark');
+  });
+  document.body.appendChild(btn);
+})();
+</script>
+</body>
+</html>
