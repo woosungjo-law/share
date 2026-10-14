@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>빠른 결정은 언제 무기가 되고 언제 덫이 되는가 · Lead Read 3분 브리핑</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231d3a5f'/%3E%3Ctext x='16' y='22' font-size='15' fill='white' text-anchor='middle' font-family='serif'%3ELR%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#f7f6f2; --surface:#ffffff; --ink:#21242c; --muted:#5c6270;
+  --line:#dcd8cc; --fast:#1f5d8f; --trap:#a04028;
+  --fast-wash:#eaf1f8; --trap-wash:#faeee9; --node:#1d3a5f;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#14171d; --surface:#1c2028; --ink:#e8e6df; --muted:#a2a8b4;
+    --line:#343b47; --fast:#7db6e0; --trap:#e0917f;
+    --fast-wash:#192634; --trap-wash:#332019; --node:#8cc4ec; }
+}
+html[data-theme="dark"]{ --bg:#14171d; --surface:#1c2028; --ink:#e8e6df; --muted:#a2a8b4;
+  --line:#343b47; --fast:#7db6e0; --trap:#e0917f;
+  --fast-wash:#192634; --trap-wash:#332019; --node:#8cc4ec; }
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);word-break:keep-all;line-height:1.75;font-size:17px;
+  font-family:"Noto Sans KR","Pretendard","Malgun Gothic",sans-serif;-webkit-font-smoothing:antialiased}
+.page{max-width:760px;margin:0 auto;padding:0 20px 64px}
+header.site{border-bottom:3px solid var(--ink);padding:26px 0 14px;margin-bottom:30px}
+.brand{font-size:13px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}
+h1{font-size:26px;line-height:1.4;margin-top:8px}
+.kicker{font-size:14px;color:var(--muted);margin-top:6px}
+section{margin:36px 0}
+h2{font-size:20px;margin-bottom:14px;padding-left:12px;border-left:4px solid var(--ink)}
+h3{font-size:17px;margin:18px 0 8px}
+p{margin:10px 0}
+.qbox{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:16px 0}
+.qbox .q{font-size:14px;color:var(--muted)}
+.qbox .a{font-size:19px;font-weight:700;margin-top:6px;line-height:1.55}
+.faces{display:flex;gap:14px;flex-wrap:wrap;margin:16px 0}
+.face{flex:1 1 280px;border-radius:12px;padding:14px 18px;border:1px solid var(--line)}
+.face.good{background:var(--fast-wash);border-top:4px solid var(--fast)}
+.face.bad{background:var(--trap-wash);border-top:4px solid var(--trap)}
+.face .cap{font-size:12.5px;font-weight:700;letter-spacing:.1em}
+.face.good .cap{color:var(--fast)} .face.bad .cap{color:var(--trap)}
+.face .who{font-size:15.5px;font-weight:700;margin:4px 0 2px}
+.face .src{font-size:13px;color:var(--muted)}
+.face p{font-size:15px;margin-top:8px}
+.tl{position:relative;margin:22px 0 8px;padding-left:30px}
+.tl::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:3px;background:var(--line)}
+.tl .ev{position:relative;margin:0 0 22px}
+.tl .ev::before{content:"";position:absolute;left:-27px;top:6px;width:15px;height:15px;border-radius:50%;
+  background:var(--surface);border:4px solid var(--node)}
+.tl .ev.down::before{border-color:var(--trap)}
+.tl .ev.after::before{border-color:var(--fast)}
+.tl .date{font-size:13.5px;font-weight:700;letter-spacing:.04em;color:var(--node)}
+.tl .ev.down .date{color:var(--trap)}
+.tl .ev.after .date{color:var(--fast)}
+.tl .title{font-size:16.5px;font-weight:700;margin:2px 0 4px}
+.tl .desc{font-size:15.5px}
+.tl .desc .num{font-weight:700}
+.doors{display:flex;gap:14px;flex-wrap:wrap;margin:16px 0}
+.door{flex:1 1 280px;border:1px solid var(--line);border-radius:12px;padding:14px 18px;background:var(--surface)}
+.door .cap{font-size:12.5px;font-weight:700;letter-spacing:.08em;color:var(--muted)}
+.door .name{font-size:16px;font-weight:700;margin:4px 0 6px}
+.door p{font-size:15px}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--fast-wash);font-size:14px}
+.qlist{counter-reset:q;list-style:none;margin:12px 0 0}
+.qlist li{counter-increment:q;position:relative;padding:10px 0 10px 42px;border-bottom:1px solid var(--line);font-size:16px}
+.qlist li::before{content:counter(q);position:absolute;left:0;top:10px;width:28px;height:28px;border-radius:50%;
+  background:var(--ink);color:var(--bg);font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}
+details{border:1px solid var(--line);border-radius:10px;background:var(--surface);margin:12px 0}
+summary{cursor:pointer;padding:12px 16px;font-weight:700;font-size:15px}
+details .inner{padding:0 16px 14px;font-size:15px}
+details .inner p{margin:8px 0}
+.refs{font-size:14.5px;color:var(--muted)}
+.refs li{margin:8px 0}
+footer.site{border-top:1px solid var(--line);margin-top:48px;padding-top:18px;font-size:14px;color:var(--muted)}
+.author-credit{margin-top:10px;font-size:15px;color:var(--ink);font-weight:700}
+@media (max-width:480px){body{font-size:16px}h1{font-size:22px}h2{font-size:18px}.qbox .a{font-size:17.5px}}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="page">
+<header class="site">
+  <div class="brand">Lead Read · 3분 브리핑</div>
+  <h1>빠른 결정은 언제 무기가 되고 언제 덫이 되는가</h1>
+  <div class="kicker">이 결정은 여러 번 열리는 문인가, 한 번만 열리는 문인가</div>
+</header>
+<main>
+
+<section aria-labelledby="s1">
+  <h2 id="s1">지금 무엇을 판단하는가</h2>
+  <div class="qbox">
+    <div class="q">핵심 질문</div>
+    <div class="a">우리 조직이 “더 빨리 결정하라”고 말할 때, 그 명령은 정보와 절차가 갖춰진 팀에서 나오는가, 압박이 설계를 눌러 닫힌 팀에서 나오는가?</div>
+  </div>
+  <p><b>한 문장 결론:</b> 빠른 결정은 정보와 대안, 자문의 설계가 갖춰졌을 때 경쟁 무기다. 그런데 압박이 절차를 뒤틀면, 같은 속도 명령이 기다림과 혼잡을 만드는 덫이 된다.</p>
+  <p>전략과 실행을 책임지는 리더는 속도를 늘 요구받는다. 이 브리핑은 “속도가 좋은가 나쁜가”를 묻지 않는다. 대신 속도가 무기가 되는 조건과 덫이 되는 조건을 나누고, 결정을 두 종류로 나누는 기준을 제시한다.</p>
+</section>
+
+<section aria-labelledby="s2">
+  <h2 id="s2">왜 중요한가</h2>
+  <p>환경이 빠르게 바뀌는 산업에서 결정 속도는 규모나 자본만큼 중요한 변수다. 속도를 높이려는 시도는 대부분 사람을 바꾸는 일에서 시작한다. 그러나 연구들은 속도가 사람의 재능이 아니라 절차의 설계에서 나온다는 쪽의 증거가 강하다.</p>
+  <p>또한 속도 압박은 그 자체로 조직의 행동을 바꾼다. 압박이 심해지면 사람들이 서로를 기다리는 시간이 늘고, 그 기다림을 없애려 마감을 앞당기면 기다림이 다시 늘어나는 순환이 생긴다. <b>“빨라져라”는 명령이 오히려 조직을 늦추는 일</b>이 실제로 관찰됐다는 뜻이다.</p>
+</section>
+
+<section aria-labelledby="s3">
+  <h2 id="s3">두 연구가 갈리는 지점</h2>
+  <div class="faces">
+    <div class="face good">
+      <div class="cap">무기의 얼굴</div>
+      <div class="who">빠르게 결정하는 팀은 더 많은 정보를 쓴다</div>
+      <div class="src">Eisenhardt (1989), Academy of Management Journal</div>
+      <p>급변하던 마이크로컴퓨터 산업의 기업 여덟 곳을 비교했다. 빠른 결정자에게서 먼저 사라진 가설은 직관이었다. 통찰과 직관은 결정 속도와 관련이 없었다. 대신 빠른 결정자들은 <b>더 많은 정보</b>를 쓰고 <b>더 많은 대안</b>을 만들었으며 <b>두 층위의 자문</b> 과정을 돌렸다. 갈등은 다수결이나 상사 재정이 아니라 더 많은 정보로 풀었다.</p>
+    </div>
+    <div class="face bad">
+      <div class="cap">덫의 얼굴</div>
+      <div class="who">속도 압박은 스스로를 늦추는 균형을 만든다</div>
+      <div class="src">Perlow, Okhuysen &amp; Repenning (2002), Academy of Management Journal</div>
+      <p>소프트웨어 회사를 길게 관찰하고 또 다른 개발 조직에서 실험을 돌렸다. 마감이 가까워질수록 <b>서로를 기다리는 시간</b>이 늘었다. 회사는 마감을 앞당겼고, 앞당길수록 기다림이 다시 늘었다. 실험에서는 시간 압박 아래에서 통상 효과적이라 알려진 집중 전략이 오히려 성과를 해쳤다.</p>
+    </div>
+  </div>
+  <p>갈리는 지점은 여기다. 한쪽은 속도를 정보와 절차의 설계 문제로 보고, 다른 쪽은 속도 압박 자체가 그 설계를 뒤틀어 같은 설계가 같은 성과를 내지 못하게 만든다고 본다. 두 처방은 배타적이지 않다. <b>설계를 고치되, 압박이 임계를 넘은 팀에는 속도 명령 대신 부하의 재배분이 먼저다.</b></p>
+</section>
+
+<section aria-labelledby="s4">
+  <h2 id="s4">시간축으로 보는 사례 — 빠른 출시가 남긴 1억 7천만 달러</h2>
+  <p>2014년, 출하 속도를 무기로 삼아온 한 미국 인터넷 유통 기업이 자사 최초의 휴대전화를 내놨다. 3차원 화면과 한 손 조작이라는 새 기능을 앞세웠다.</p>
+  <div class="tl">
+    <div class="ev">
+      <div class="date">2014년 6월</div>
+      <div class="title">자사 최초 휴대전화 공개</div>
+      <div class="desc">3차원 화면과 한 손 조작이라는 새 기능을 앞세운 공개.</div>
+    </div>
+    <div class="ev">
+      <div class="date">2014년 7월</div>
+      <div class="title">판매 시작</div>
+      <div class="desc">통신사 약정 포함 가격은 경쟁 스마트폰과 비슷한 수준이었다.</div>
+    </div>
+    <div class="ev down">
+      <div class="date">2014년 8월</div>
+      <div class="title">출시 약 6주 만에 가격 인하</div>
+      <div class="desc">약정 가격을 <span class="num">99센트</span>로 내리고 비약정 가격도 수백 달러 깎는 등 사실상 철수 전 감액에 들어갔다. 회사는 물량을 비축해 뒀는데 팔리지 않았다.</div>
+    </div>
+    <div class="ev down">
+      <div class="date">2014년 10월</div>
+      <div class="title">3분기 실적에서 재고 평가 손실 인정</div>
+      <div class="desc">팔지 못한 재고 <span class="num">1억 7천만 달러</span>를 평가 손실로 인정했다. 임원 한 명이 회사를 떠났다.</div>
+    </div>
+    <div class="ev after">
+      <div class="date">2015년 8월</div>
+      <div class="title">제품 판매 종료</div>
+      <div class="desc">출시부터 약 13개월 만에 판매가 끝났다.</div>
+    </div>
+    <div class="ev after">
+      <div class="date">2015년 주주 서한</div>
+      <div class="title">결정을 두 종류로 분류한 원칙 공개</div>
+      <div class="desc">회사의 수장이 결정을 <b>한 번만 열리는 문</b>과 <b>여러 번 열리는 문</b>으로 나누고, 후자는 일곱 할의 정보만으로도 결정해야 속도를 지킨다고 썼다. 그러나 이 휴대전화는 생태계·하드웨어·가격이 한 번에 묶인 한 번만 열리는 문에 가까웠고, 이 구분이 출시 결정에는 적용되지 않았다.</div>
+    </div>
+  </div>
+  <p>시장 검증 전에 생산과 비축을 밀어붙인 설계는 느린 결정이 아니라 <b>빠른 결정이 남긴 피적이었다.</b> 빠른 출시가 문제가 아니라, 출시 전 시장 검증의 자리가 속도로 비워진 것이 문제였다. 실패 뒤에 제도로 남은 것도 속도의 절제가 아니라 결정의 분류였다.</p>
+</section>
+
+<section aria-labelledby="s5">
+  <h2 id="s5">리더의 판단 질문</h2>
+  <div class="doors">
+    <div class="door">
+      <div class="cap">여러 번 열리는 문</div>
+      <div class="name">뒤집을 수 있는 결정</div>
+      <p>잘못돼도 되돌릴 수 있다. 작은 실험, 가격 조정, 기능 조정처럼 재시도 비용이 낮은 결정. <b>일곱 할의 정보로 빠르게 가는 편이 낫다.</b></p>
+    </div>
+    <div class="door">
+      <div class="cap">한 번만 열리는 문</div>
+      <div class="name">되돌릴 수 없는 결정</div>
+      <p>한 번 밀면 철수·손실·평판 비용이 붙는다. 생태계·대규모 투자·브랜드를 건 출시처럼 되돌리기 어려운 결정. <b>속도가 아니라 분류가 먼저다.</b></p>
+    </div>
+  </div>
+  <table>
+    <thead><tr><th>점검 칸</th><th>지금 확인할 것</th></tr></thead>
+    <tbody>
+      <tr><td>기다림</td><td>마감을 앞당기기 전에 사람들이 서로 기다리는 시간을 먼저 재고 있는가</td></tr>
+      <tr><td>회의의 정보</td><td>결정 회의에 실시간 정보가 들어오는가, 안 건이 회의 후에 만들어지는가</td></tr>
+      <tr><td>대안의 수</td><td>대안이 하나뿐인 결정 회의를 속도 점검 대상으로 분류하고 있는가</td></tr>
+      <tr><td>압박 수준</td><td>압박이 임계를 넘은 팀에 속도 명령을 더하고 있지 않은가</td></tr>
+      <tr><td>결정 분류</td><td>뒤집을 수 있는 결정과 못 뒤집는 결정을 나눠, 후자에만 깊은 절차를 쓰고 있는가</td></tr>
+    </tbody>
+  </table>
+  <h3>조직에 대입해 물어 볼 질문</h3>
+  <ol class="qlist">
+    <li>지금 검토 중인 결정 가운데, 되돌릴 수 있는 결정이 몇 건이고 되돌릴 수 없는 결정은 몇 건인가?</li>
+    <li>우리가 “속도가 느리다”고 판단한 팀의 병목은 사람의 판단인가, 앞 단계가 밀린 일로 인한 기다림인가?</li>
+    <li>마감을 앞당길 때마다 기다림이 줄어드는가, 늘어나는가. 그 변화를 재본 적이 있는가?</li>
+  </ol>
+</section>
+
+<section aria-labelledby="s6">
+  <h2 id="s6">근거와 출처</h2>
+  <details>
+    <summary>프레임 연구 — 빠른 결정자의 설계</summary>
+    <div class="inner">
+      <p>Eisenhardt, K. M. (1989). <i>Making Fast Strategic Decisions in High-Velocity Environments.</i> Academy of Management Journal, 32(3), 543–576.</p>
+      <p>급변 산업의 기업 여덟 곳을 비교한 사례 연구로, 빠른 결정자가 더 많은 정보·더 많은 대안·두 층위의 자문을 썼다는 점을 정리했다.</p>
+    </div>
+  </details>
+  <details>
+    <summary>반증 연구 — 속도 함정</summary>
+    <div class="inner">
+      <p>Perlow, L. A., Okhuysen, G. A., &amp; Repenning, N. P. (2002). <i>The Speed Trap: Exploring the Relationship between Decision Making and Temporal Context.</i> Academy of Management Journal, 45(5), 931–955.</p>
+      <p>관찰과 실험 두 가지 방법으로 시간 압박이 기다림·혼잡·협업 악화를 부르는 순환을 확인했다.</p>
+    </div>
+  </details>
+  <details>
+    <summary>사례 출처와 인문 렌즈</summary>
+    <div class="inner">
+      <p>Amazon.com, Inc. (2015). <i>2015 Letter to Shareholders</i> — 한 번만 열리는 문과 여러 번 열리는 문의 구분, 일곱 할 정보 규칙의 1차 출처.</p>
+      <p>Wikipedia, Fire Phone — 2014년 6월 18일 공개, 7월 출시, 약정 가격 인하, 2015년 8월 판매 종료 연표.</p>
+      <p>The Guardian (2014. 10. 24.) — 미판매 재고 1억 7천만 달러 평가 손실.</p>
+      <p>GeekWire (2014. 10. 23.) — 재무 최고책임자 발표 기준 손실 배분.</p>
+      <p>TIME (2014. 10. 24.) — 출시가와 경쟁 스마트폰과의 가격 비교.</p>
+      <p>Keynes, J. M. (1936). <i>The General Theory of Employment, Interest and Money</i> — “사실이 바뀌면 내 생각도 바꾼다”로 전해지는 태도.</p>
+    </div>
+  </details>
+  <ul class="refs">
+    <li>사례의 연표·손실액은 주주 서한과 언론 보도에 기반한 정보이며, 재인용 시 1차 출처 확인을 권장한다.</li>
+    <li>이 브리핑은 정보 제공과 주의 환기를 위한 것이며, 결정 속도의 최종 판단과 책임은 이를 사용하는 조직에 있다.</li>
+  </ul>
+</section>
+
+</main>
+<footer class="site">
+  <div>Lead Read · 조직 의사결정자를 위한 3분 브리핑</div>
+  <p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+(function(){
+  var root=document.documentElement,btn=document.createElement('button');
+  btn.textContent='테마 전환';btn.setAttribute('aria-label','라이트 다크 테마 전환');
+  btn.style.cssText='position:fixed;right:14px;bottom:14px;padding:8px 14px;font-size:13px;border:1px solid var(--line);border-radius:20px;background:var(--surface);color:var(--ink);cursor:pointer;z-index:10';
+  btn.addEventListener('click',function(){
+    var sysDark=window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var cur=root.getAttribute('data-theme')||(sysDark?'dark':'light');
+    root.setAttribute('data-theme',cur==='dark'?'light':'dark');
+  });
+  document.body.appendChild(btn);
+})();
+</script>
+</body>
+</html>
