@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>안의 돈은 언제 연료가 되고 언제 누수가 되는가 · Lead Read 3분 브리핑</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231d3a5f'/%3E%3Ctext x='16' y='22' font-size='15' fill='white' text-anchor='middle' font-family='serif'%3ELR%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#f7f6f2; --surface:#ffffff; --ink:#20242c; --muted:#5c6270;
+  --line:#dcd8cc; --fuel:#1f6b4f; --leak:#a04028;
+  --fuel-wash:#e9f3ee; --leak-wash:#faeee9; --node:#1d3a5f;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#14171d; --surface:#1c2028; --ink:#e8e6df; --muted:#a2a8b4;
+    --line:#343b47; --fuel:#6cc39b; --leak:#e08f7c;
+    --fuel-wash:#182a22; --leak-wash:#31201c; --node:#8cc4ec; }
+}
+html[data-theme="dark"]{ --bg:#14171d; --surface:#1c2028; --ink:#e8e6df; --muted:#a2a8b4;
+  --line:#343b47; --fuel:#6cc39b; --leak:#e08f7c;
+  --fuel-wash:#182a22; --leak-wash:#31201c; --node:#8cc4ec; }
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);word-break:keep-all;line-height:1.75;font-size:17px;
+  font-family:"Noto Sans KR","Pretendard","Malgun Gothic",sans-serif;-webkit-font-smoothing:antialiased}
+.page{max-width:760px;margin:0 auto;padding:0 20px 64px}
+header.site{border-bottom:3px solid var(--ink);padding:26px 0 14px;margin-bottom:30px}
+.brand{font-size:13px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}
+h1{font-size:26px;line-height:1.4;margin-top:8px}
+.kicker{font-size:14px;color:var(--muted);margin-top:6px}
+section{margin:36px 0}
+h2{font-size:20px;margin-bottom:14px;padding-left:12px;border-left:4px solid var(--ink)}
+h3{font-size:17px;margin:18px 0 8px}
+p{margin:10px 0}
+.qbox{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:16px 0}
+.qbox .q{font-size:14px;color:var(--muted)}
+.qbox .a{font-size:19px;font-weight:700;margin-top:6px;line-height:1.55}
+.faces{display:flex;gap:14px;flex-wrap:wrap;margin:16px 0}
+.face{flex:1 1 280px;border-radius:12px;padding:14px 18px;border:1px solid var(--line)}
+.face.fuel{background:var(--fuel-wash);border-top:4px solid var(--fuel)}
+.face.leak{background:var(--leak-wash);border-top:4px solid var(--leak)}
+.face .cap{font-size:12.5px;font-weight:700;letter-spacing:.1em}
+.face.fuel .cap{color:var(--fuel)} .face.leak .cap{color:var(--leak)}
+.face .who{font-size:15.5px;font-weight:700;margin:4px 0 2px}
+.face .src{font-size:13px;color:var(--muted)}
+.face p{font-size:15px;margin-top:8px}
+.tl{position:relative;margin:22px 0 8px;padding-left:30px}
+.tl::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:3px;background:var(--line)}
+.tl .ev{position:relative;margin:0 0 22px}
+.tl .ev::before{content:"";position:absolute;left:-27px;top:6px;width:15px;height:15px;border-radius:50%;
+  background:var(--surface);border:4px solid var(--node)}
+.tl .ev.leak::before{border-color:var(--leak)}
+.tl .ev.after::before{border-color:var(--fuel)}
+.tl .date{font-size:13.5px;font-weight:700;letter-spacing:.04em;color:var(--node)}
+.tl .ev.leak .date{color:var(--leak)}
+.tl .ev.after .date{color:var(--fuel)}
+.tl .title{font-size:16.5px;font-weight:700;margin:2px 0 4px}
+.tl .desc{font-size:15.5px}
+.tl .desc .num{font-weight:700}
+.clash{border:2px dashed var(--line);border-radius:12px;padding:16px 18px;margin:16px 0;background:var(--surface)}
+.clash .lbl{font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--muted)}
+.clash p{margin-top:8px;font-size:15.5px}
+.clash b{color:var(--leak)}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--fuel-wash);font-size:14px}
+.qlist{counter-reset:q;list-style:none;margin:12px 0 0}
+.qlist li{counter-increment:q;position:relative;padding:10px 0 10px 42px;border-bottom:1px solid var(--line);font-size:16px}
+.qlist li::before{content:counter(q);position:absolute;left:0;top:10px;width:28px;height:28px;border-radius:50%;
+  background:var(--ink);color:var(--bg);font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}
+details{border:1px solid var(--line);border-radius:10px;background:var(--surface);margin:12px 0}
+summary{cursor:pointer;padding:12px 16px;font-weight:700;font-size:15px}
+details .inner{padding:0 16px 14px;font-size:15px}
+details .inner p{margin:8px 0}
+.refs{font-size:14.5px;color:var(--muted)}
+.refs li{margin:8px 0}
+footer.site{border-top:1px solid var(--line);margin-top:48px;padding-top:18px;font-size:14px;color:var(--muted)}
+.author-credit{margin-top:10px;font-size:15px;color:var(--ink);font-weight:700}
+@media (max-width:480px){body{font-size:16px}h1{font-size:22px}h2{font-size:18px}.qbox .a{font-size:17.5px}}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="page">
+<header class="site">
+  <div class="brand">Lead Read · 3분 브리핑</div>
+  <h1>안의 돈은 언제 연료가 되고 언제 누수가 되는가</h1>
+  <div class="kicker">승자를 고르려던 지갑이 9년간 패자에게 대던 돈의 청구서가 되기까지</div>
+</header>
+<main>
+
+<section aria-labelledby="s1">
+  <h2 id="s1">지금 무엇을 판단하는가</h2>
+  <div class="qbox">
+    <div class="q">핵심 질문</div>
+    <div class="a">본사가 사업부에 나누어 주는 이 돈은, 이기는 사업에 몰아주는 승자 고르기인가, 아니면 평화를 사는 조공인가?</div>
+  </div>
+  <p><b>한 문장 결론:</b> 본사가 이기는 사업에 돈을 몰아주면 전체가 산다. 그런데 평화를 사는 값이 커지면 돈은 안 되는 사업으로 거꾸로 흐른다. 지갑을 닫는 용기가 지갑을 여는 용기보다 비싸다.</p>
+  <p>자본 배분과 사업구조를 책임지는 리더는 “본사가 돈을 제대로 고르고 있는가”라는 질문을 마주한다. 이 브리핑은 본사의 지갑이 엔진이 되는 조건과 세금이 되는 조건을 나누고, 그 경계를 사례의 연표로 보여 준다.</p>
+</section>
+
+<section aria-labelledby="s2">
+  <h2 id="s2">왜 중요한가</h2>
+  <p>여러 사업을 거느린 회사에서 본사의 일은 돈을 고르는 일이다. 은행은 빌려주고 지켜보지만 본사는 빼앗아 옮길 수 있다. 이 통제권으로 본사는 잘 되는 사업에 돈을 몰아주는 <b>승자 고르기</b>를 한다.</p>
+  <p>승자 고르기를 잘하면 회사의 자금 사정이 빠듯해도 가치가 생긴다. 바깥에서 돈을 빌려오는 문이 좁아도, 안에서 돈을 옮기는 손이 정확하면 된다. 사업이 적고 초점이 맞을수록 안의 자본시장이 잘 돈다. <b>고를 것이 적어야 고르는 눈이 선다.</b></p>
+  <div class="faces">
+    <div class="face fuel">
+      <div class="cap">연료의 얼굴</div>
+      <div class="who">본사가 승자를 골라 가치를 만든다</div>
+      <div class="src">Stein (1997), Journal of Finance</div>
+      <p>은행은 담보를 보지만 본사는 앞날을 본다. 앞날을 보는 눈이 정확하면 적은 돈으로도 큰일을 한다. 본사가 심판이 되어 이기는 사업에 물을 대면 전체가 산다. 공평은 정치고, 고르기는 경영이다.</p>
+    </div>
+    <div class="face leak">
+      <div class="cap">누수의 얼굴</div>
+      <div class="who">본사는 평화를 사느라 패자에게 돈을 댄다</div>
+      <div class="src">Rajan, Servaes &amp; Zingales (2000), Journal of Finance</div>
+      <p>1979~1993년 미국 다각화 기업의 사업부 자료를 뒤져 본사의 힘이 제한적일 때 돈의 흐름을 추적했다. 돈은 잘 되는 사업이 아니라 안 되는 사업으로 흘렀다. 다각화 기업의 초과 가치는 평균 마이너스 9.6퍼센트였다.</p>
+    </div>
+  </div>
+  <div class="clash">
+    <div class="lbl">충돌 지점</div>
+    <p>한쪽은 본사가 승자를 골라 가치를 만든다고 보고, 다른 쪽은 본사가 평화를 사느라 패자에게 돈을 댄다고 본다. <b>같은 지갑이라도 심판의 호루라기가 될 수도 있고, 조공의 바구니가 될 수도 있다.</b></p>
+    <p>갈라지는 지점은 다양성이다. 사업부의 투자 기회가 서로 다를수록 왜곡은 커졌고, 본사는 사업부들을 협조시키려 재량 자금을 썼다. 협조를 사 오는 대가로 돈은 기회가 적은 사업부로 거꾸로 흘렀다. 협조를 막나면 한쪽이 자기 이익만 챙길 때 전체가 무너진다. <b>고르되, 고르는 대가로 새는 돈이 얼마인지 재야 한다.</b></p>
+  </div>
+</section>
+
+<section aria-labelledby="s3">
+  <h2 id="s3">시간축으로 보는 사례 — 9년의 결합과 그 청구서</h2>
+  <div class="tl">
+    <div class="ev">
+      <div class="date">1998년</div>
+      <div class="title">대서양 횡단 결합 선포</div>
+      <div class="desc">한 독일 완성차 기업이 미국 3위 완성차 기업을 <span class="num">360억 달러</span>에 인수했다. “천상의 결혼”이라는 말과 함께 자동차 강국이 선포됐다. 기대는 본사의 지갑이었다. 고급과 대중, 유럽과 미국을 한 지갑에 담으면 돈이 제값을 할 것이라는 계산이었다.</div>
+    </div>
+    <div class="ev leak">
+      <div class="date">2006년</div>
+      <div class="title">미국 사업 적자와 대규모 감원</div>
+      <div class="desc">미국 사업이 <span class="num">15억 달러</span> 적자와 <span class="num">1만 3천 명</span> 감원을 냈다. 9년 뒤 계산서는 기대와 달랐다.</div>
+    </div>
+    <div class="ev leak">
+      <div class="date">2007년 2월</div>
+      <div class="title">구조조정 발표</div>
+      <div class="desc">적자를 감당하기 위한 구조조정이 발표됐다.</div>
+    </div>
+    <div class="ev leak">
+      <div class="date">2007년 5월 14일</div>
+      <div class="title">미국 사업 80.1퍼센트 매각</div>
+      <div class="desc">독일 기업이 미국 사업의 <span class="num">80.1퍼센트</span>를 사모펀드에 <span class="num">74억 달러</span>에 넘겼다. 그 돈의 대부분은 미국 사업의 재건에 들어갔고, 독일 기업 손에 남은 것은 <span class="num">13억 달러</span> 안팎이었다. <b>되레 순유출이 났다.</b> 180억 달러 안팎의 연금·의료 부채는 미국 사업에 남았다.</div>
+    </div>
+    <div class="ev after">
+      <div class="date">2007년 5월 14일 (당일)</div>
+      <div class="title">발표 당일 주가 7퍼센트 상승</div>
+      <div class="desc">시장은 결합의 끝을 실패가 아니라 <b>구원</b>으로 읽었다.</div>
+    </div>
+    <div class="ev after">
+      <div class="date">2009년</div>
+      <div class="title">남은 지분 19.9퍼센트 매각</div>
+      <div class="desc">남은 지분마저 넘겨 <b>9년의 결합은 완전히 끝났다.</b> 독일 기업은 사명을 바꿔 고급차 전통으로 돌아갔다.</div>
+    </div>
+  </div>
+  <p>이 사례는 승자를 고르려던 지갑이 9년간 패자에게 대던 돈의 청구서였다는 것을 보여 준다. 사례가 남긴 기준은 세 가지다. 첫째, 결합의 시너지는 선언이 아니라 <b>배분</b>으로 증명된다. 둘째, 다양성이 클수록 평화의 값이 비싸진다. 셋째, 떼어내는 결정을 늦추면 청구서가 커진다.</p>
+</section>
+
+<section aria-labelledby="s4">
+  <h2 id="s4">리더의 판단 질문</h2>
+  <table>
+    <thead><tr><th>점검 칸</th><th>지금 확인할 것</th></tr></thead>
+    <tbody>
+      <tr><td>역할</td><td>본사가 지금 심판인가, 중재자인가. 그 구분이 명확한가</td></tr>
+      <tr><td>격차</td><td>사업부 간 기회 격차가 얼마나 벌어졌는지 재고 있는가</td></tr>
+      <tr><td>누수</td><td>안 되는 사업으로 흐르는 돈의 규모를 따로 계산하고 있는가</td></tr>
+      <tr><td>평가</td><td>평화를 사는 값이 가치보다 비싸지면 묶음을 푸는 기준이 있는가</td></tr>
+      <tr><td>보고</td><td>고르는 눈과 새는 구멍을 같은 보고서에 올리고 있는가</td></tr>
+    </tbody>
+  </table>
+  <h3>조직에 대입해 물어 볼 질문</h3>
+  <ol class="qlist">
+    <li>지난해 본사가 나누어 준 재량 자금 가운데, 이기는 사업에 간 금액과 평화를 사기 위해 간 금액은 각각 얼마인가?</li>
+    <li>우리가 “협조”라고 부르는 것의 실제 값은 무엇인가. 그 값을 사업부가 아닌 본사가 정하고 있는가?</li>
+    <li>만약 내년에 한 사업부를 떼어낸다면, 그 결정을 지금 미루고 있는 이유는 무엇인가. 그 미룸의 값은 얼마인가?</li>
+  </ol>
+</section>
+
+<section aria-labelledby="s5">
+  <h2 id="s5">근거와 출처</h2>
+  <details>
+    <summary>프레임 — 본사의 통제권과 승자 고르기</summary>
+    <div class="inner">
+      <p>Stein, J. C. (1997). <i>Internal Capital Markets and the Competition for Corporate Resources.</i> Journal of Finance, 52(1), 111–133. (1995년 NBER Working Paper 5101로 선공개)</p>
+      <p>본사가 은행과 달리 자원을 빼앗아 옮길 수 있는 통제권을 갖므로, 잘 되는 사업에 돈을 몰아주는 승자 고르기가 일어난다는 명제.</p>
+    </div>
+  </details>
+  <details>
+    <summary>반증 — 다양성의 비용</summary>
+    <div class="inner">
+      <p>Rajan, R., Servaes, H., &amp; Zingales, L. (2000). <i>The Cost of Diversity: The Diversification Discount and Inefficient Investment.</i> Journal of Finance, 55(1), 35–80. (1998년 NBER Working Paper 6368로 선공개)</p>
+      <p>사업부의 투자 기회가 서로 다를수록 비효율 사업부로 돈이 흘러 초과 가치가 평균 마이너스 9.6퍼센트에 이른다는 반증.</p>
+    </div>
+  </details>
+  <details>
+    <summary>인문 렌즈와 사례 출처</summary>
+    <div class="inner">
+      <p>Gramsci, A. (1929–1935). <i>Quaderni del carcere.</i> — 지배가 강제가 아니라 동의로 유지되는 헤게모니 개념. 본사가 사업부의 동의를 사 오는 순간 지갑이 심판의 호루라기가 아니라 조공의 바구니가 된다는 관점의 근거.</p>
+      <p>The New York Times (2007. 5. 14.) / CBS News (2007. 5. 14.) — 1998년 360억 달러 인수, 2007년 80.1퍼센트 매각, 19.9퍼센트 잔류의 연표.</p>
+      <p>The Guardian (2007. 5. 15.) / Reuters (2007. 8. 9.) — 순유출 구조, 부채 이전, 사명 변경의 보도.</p>
+      <p>Mercedes-Benz Group, Company History 1995–2007 — 합병 계약·매각·사명 변경의 회사 공식 기록.</p>
+    </div>
+  </details>
+  <ul class="refs">
+    <li>사례의 금액과 연표는 회사 발표와 언론 보도에 기반한 정보이며, 재인용 시 1차 출처 확인을 권장한다.</li>
+    <li>이 브리핑은 정보 제공과 주의 환기를 위한 것이며, 자본 배분의 최종 판단과 책임은 이를 사용하는 조직에 있다.</li>
+  </ul>
+</section>
+
+</main>
+<footer class="site">
+  <div>Lead Read · 조직 의사결정자를 위한 3분 브리핑</div>
+  <p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+(function(){
+  var root=document.documentElement,btn=document.createElement('button');
+  btn.textContent='테마 전환';btn.setAttribute('aria-label','라이트 다크 테마 전환');
+  btn.style.cssText='position:fixed;right:14px;bottom:14px;padding:8px 14px;font-size:13px;border:1px solid var(--line);border-radius:20px;background:var(--surface);color:var(--ink);cursor:pointer;z-index:10';
+  btn.addEventListener('click',function(){
+    var sysDark=window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var cur=root.getAttribute('data-theme')||(sysDark?'dark':'light');
+    root.setAttribute('data-theme',cur==='dark'?'light':'dark');
+  });
+  document.body.appendChild(btn);
+})();
+</script>
+</body>
+</html>
