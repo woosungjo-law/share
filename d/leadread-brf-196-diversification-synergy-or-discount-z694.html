@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>다각화는 언제 시너지가 되고 언제 할인이 되는가 · Lead Read 3분 브리핑</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231d3a5f'/%3E%3Ctext x='16' y='22' font-size='15' fill='white' text-anchor='middle' font-family='serif'%3ELR%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#f7f6f2; --surface:#ffffff; --ink:#21242c; --muted:#5c6270;
+  --line:#dcd8cc; --accent-a:#20604a; --accent-b:#9c4126;
+  --wash-a:#e9f2ee; --wash-b:#faeee8; --tag-a:#20604a; --tag-b:#9c4126;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#14171d; --surface:#1c2028; --ink:#e8e6df; --muted:#a2a8b4;
+    --line:#333a46; --accent-a:#6fbf9c; --accent-b:#e29172;
+    --wash-a:#172a22; --wash-b:#331f17; --tag-a:#6fbf9c; --tag-b:#e29172; }
+}
+html[data-theme="dark"]{ --bg:#14171d; --surface:#1c2028; --ink:#e8e6df; --muted:#a2a8b4;
+  --line:#333a46; --accent-a:#6fbf9c; --accent-b:#e29172;
+  --wash-a:#172a22; --wash-b:#331f17; --tag-a:#6fbf9c; --tag-b:#e29172; }
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);word-break:keep-all;line-height:1.75;font-size:17px;
+  font-family:"Noto Sans KR","Pretendard","Malgun Gothic",sans-serif;-webkit-font-smoothing:antialiased}
+.page{max-width:760px;margin:0 auto;padding:0 20px 64px}
+header.site{border-bottom:3px solid var(--ink);padding:26px 0 14px;margin-bottom:32px}
+.brand{font-size:13px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}
+h1{font-size:26px;line-height:1.4;margin-top:8px}
+.kicker{font-size:14px;color:var(--muted);margin-top:6px}
+section{margin:38px 0}
+h2{font-size:20px;margin-bottom:14px;padding-left:12px;border-left:4px solid var(--ink)}
+h3{font-size:17px;margin:18px 0 8px}
+p{margin:10px 0}
+.qbox{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:16px 0}
+.qbox .q{font-size:14px;color:var(--muted)}
+.qbox .a{font-size:19px;font-weight:700;margin-top:6px;line-height:1.55}
+.duo{display:flex;gap:16px;margin:18px 0;flex-wrap:wrap}
+.side{flex:1 1 300px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
+.side .tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.1em;color:#fff;padding:5px 12px}
+.side.a .tag{background:var(--tag-a)} .side.b .tag{background:var(--tag-b)}
+.side .head{padding:14px 18px 4px}
+.side .head .who{font-size:16px;font-weight:700;line-height:1.45}
+.side .head .what{font-size:13.5px;color:var(--muted);margin-top:2px}
+.side .body{padding:8px 18px 18px;font-size:15.5px}
+.side.a{border-top:4px solid var(--accent-a)} .side.b{border-top:4px solid var(--accent-b)}
+.side.a .body{background:var(--wash-a)} .side.b .body{background:var(--wash-b)}
+.side ul{margin:8px 0 0 18px;font-size:15px}
+.side li{margin:5px 0}
+.clash{border:2px dashed var(--line);border-radius:12px;padding:18px 20px;margin:18px 0;background:var(--surface)}
+.clash .lbl{font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--muted)}
+.clash p{margin-top:8px}
+.deadlock{margin-top:12px;font-size:15.5px}
+.deadlock b{color:var(--accent-b)}
+.scene{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent-a);border-radius:10px;padding:16px 18px;margin:14px 0}
+.scene .cap{font-size:13px;font-weight:700;color:var(--accent-a);letter-spacing:.08em}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--wash-a);font-size:14px}
+.qlist{counter-reset:q;list-style:none;margin:12px 0 0}
+.qlist li{counter-increment:q;position:relative;padding:10px 0 10px 42px;border-bottom:1px solid var(--line);font-size:16px}
+.qlist li::before{content:counter(q);position:absolute;left:0;top:10px;width:28px;height:28px;border-radius:50%;
+  background:var(--ink);color:var(--bg);font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}
+details{border:1px solid var(--line);border-radius:10px;background:var(--surface);margin:12px 0}
+summary{cursor:pointer;padding:12px 16px;font-weight:700;font-size:15px}
+details .inner{padding:0 16px 14px;font-size:15px}
+details .inner p{margin:8px 0}
+.refs{font-size:14.5px;color:var(--muted)}
+.refs li{margin:8px 0}
+footer.site{border-top:1px solid var(--line);margin-top:48px;padding-top:18px;font-size:14px;color:var(--muted)}
+.author-credit{margin-top:10px;font-size:15px;color:var(--ink);font-weight:700}
+@media (max-width:480px){body{font-size:16px}h1{font-size:22px}h2{font-size:18px}.qbox .a{font-size:17.5px}}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="page">
+<header class="site">
+  <div class="brand">Lead Read · 3분 브리핑</div>
+  <h1>다각화는 언제 시너지가 되고 언제 할인이 되는가</h1>
+  <div class="kicker">장부에서는 시너지로 보이고, 시장 가격에서는 할인으로 읽히는 넓히기</div>
+</header>
+<main>
+
+<section aria-labelledby="s1">
+  <h2 id="s1">지금 무엇을 판단하는가</h2>
+  <div class="qbox">
+    <div class="q">핵심 질문</div>
+    <div class="a">우리가 지금 묶어 두고 있는 사업들은, 서로의 지식을 나눠 이익을 키우고 있는가, 아니면 시장에서 묶음 할인을 받고 있는가?</div>
+  </div>
+  <p><b>한 문장 결론:</b> 아는 일의 옆으로 넓히면 이익이 자란다. 그런데 시장은 다각화된 묶음을 낱개보다 싸게 평가하기도 한다. 넓힐 때는 관련성을 따지고, 할인이 시작되면 떼어낼 준비를 해야 한다.</p>
+  <p>성장 전략을 책임지는 리더는 “사업을 넓힐 것인가”라는 질문을 받는다. 이 브리핑은 넓히기 자체를 옳고 그름으로 재단하지 않는다. 대신 같은 넓히기가 왜 회계 장부에서는 시너지로, 시장 가격에서는 할인으로 읽히는지 그 두 가격을 나란히 놓는다.</p>
+</section>
+
+<section aria-labelledby="s2">
+  <h2 id="s2">왜 중요한가</h2>
+  <p>성장의 병목이 바깥 기회가 아니라 ‘안의 지식이 옮겨 다닐 수 있는가’에 있다면, 다각화는 도박이 아니라 따져볼 수 있는 선택이 된다. 진출 후보가 지금 가진 지식과 이어져 있는지를 따지는 작업만으로 판단의 절반은 끝난다.</p>
+  <p>반대로, 안의 성장 기회가 바닥나서 넓히기로 나서는 결정은 위험하다. 그때는 관련성 계산이 아니라 자원을 돌려보내려는 충동이 결정을 이끈다. 시장은 그런 결정을 평가하고, 그 평가가 할인으로 나타난다. <b>좁혀 보면 문제는 ‘이 묶음이 무엇을 함께 쓰고 있는가’다.</b></p>
+</section>
+
+<section aria-labelledby="s3">
+  <h2 id="s3">두 연구가 갈리는 지점</h2>
+  <div class="duo">
+    <div class="side a">
+      <div class="head">
+        <span class="tag">관점 A · 시너지</span>
+        <div class="who">비슷한 사업끼리 모으면 이익이 더 자란다</div>
+        <div class="what">Palepu (1985), Strategic Management Journal</div>
+      </div>
+      <div class="body">
+        <p>사업별 실적 자료를 엔트로피라는 다각화 측정치로 정리해, 연관 다각화 위주 기업과 무연관 다각화 위주 기업의 이익 성장을 나란히 놓고 비교했다.</p>
+        <ul>
+          <li>연관된 사업에 진출한 기업이 이익 성장이 유의미하게 높았다.</li>
+          <li>첫 번째 통로: 제품 사이를 옮겨 다니는 노하우의 <b>판매 시너지</b>.</li>
+          <li>두 번째 통로: 사업부를 옮겨 다녀도 통하는 경영 기술의 <b>관리 시너지</b>.</li>
+        </ul>
+        <p>지식이 옮겨 다니면 넓히기가 이익을 키운다. 관련성이 없으면 그 통로가 없어 성장이 멈춘다.</p>
+      </div>
+    </div>
+    <div class="side b">
+      <div class="head">
+        <span class="tag">관점 B · 할인</span>
+        <div class="who">묶인 기업은 낱개 묶음보다 싸게 팔린다</div>
+        <div class="what">Lang &amp; Stulz (1994), Journal of Political Economy</div>
+      </div>
+      <div class="body">
+        <p>1980년대 전체 표본에서 다각화 정도와 기업 가치의 대리치(토빈 큐)의 관계를 추적하고, 다각화 기업을 같은 업종의 전업 기업 묶음과 비교했다.</p>
+        <ul>
+          <li>다각화 정도가 높을수록 기업 가치가 낮았다.</li>
+          <li>다각화 기업은 전업 기업 묶음보다 일관되게 낮게 평가됐다.</li>
+          <li>다각화가 값진 무형자산을 준다는 증거는 없었다.</li>
+        </ul>
+        <p>다각화를 택한 기업은 애초에 실적이 처지는 기업이었고, 안의 성장 기회가 바닥났을 때 넓힌 것이라는 해석이 뒤따랐다.</p>
+      </div>
+    </div>
+  </div>
+  <div class="clash">
+    <div class="lbl">충돌 지점</div>
+    <p>한쪽은 관련성이 있으면 이익이 자란다고 보고, 다른 쪽은 시장이 다각화 기업을 깎아 판다고 본다. <b>같은 넓히기라도 회계 장부에서는 시너지로 보이고, 시장 가격에서는 할인으로 읽힌다.</b> 두 결과 모두 측정된 것이다.</p>
+    <p class="deadlock"><b>합의할 수 없는 선:</b> 시너지의 효용이 줄어드는 시점은 지표만으로는 미리 알 수 없다. 그 시점은 감정이나 논쟁이 아니라 평가 할인의 크기로만 판단할 수 있다. 리더가 통제할 수 있는 것은 진출 후보와 기존 지식의 연결, 그리고 묶음이 받는 할인을 주기적으로 잰다는 절차다. 통제할 수 없는 것은 본사가 다 모았다고 믿는 지식의 완전성이다.</p>
+  </div>
+  <p>두 처방은 배타적이지 않다. 넓힐 때는 관련성을 따지되, 묶음이 할인을 받기 시작하면 분할이 성장의 수단이 된다.</p>
+</section>
+
+<section aria-labelledby="s4">
+  <h2 id="s4">실제로 무슨 일이 있었나 — 결제 자회사의 분리</h2>
+  <div class="scene">
+    <div class="cap">사례 · 전자상거래 기업과 결제 자회사의 분사 (2014~2015)</div>
+    <p>2014년 9월 30일, 한 미국 전자상거래 기업이 결제 자회사의 분사를 발표했다. 자회사는 2002년 15억 달러에 인수된 뒤 12년 넘게 함께 있었고, 2014년 매출 80억 달러 규모의 세계적 결제 조직으로 자랐다.</p>
+    <p>발표의 이유는 분명했다. 상거래와 결제 각자가 마주한 경쟁과 기회가 달라졌고, 2015년을 넘겨 함께 있는 것이 전략과 경쟁 양쪽에서 불리해진다는 판단이었다. 기존 관계의 효용이 사라진 것이 아니라, 시간이 지나며 자연히 줄어들고 남은 부분은 대등한 협약으로 유지할 수 있다는 계산이 뒤따랐다.</p>
+    <p>분사는 이듬해 하반기 세금 부담 없는 분배 방식으로 예고됐고, 행동주의 주주의 공개 압박이 그 결정을 앞당겼다. 2015년 7월 8일 기준 주주에게 1대 1로 자회사 주식이 배분됐고, 7월 17일 분배가 끝나 <b>7월 20일부터 두 회사는 각자의 종목으로 정규 거래</b>를 시작했다.</p>
+    <p>인수할 때는 상거래의 품에 결제를 넣어 키우는 것이 시너지였다. 10년 넘게 자란 뒤에는 함께 있는 것이 각자의 속도를 늦추는 구조가 됐다. <b>발표 당일 주가가 7퍼센트 넘게 오른 것</b>은 시장이 이 분리를 넓히기의 포기가 아니라 성장의 재설계로 읽었다는 뜻이다.</p>
+  </div>
+  <p>사례가 남긴 기준은 세 가지다. 첫째, 시너지는 영속 자산이 아니라 <b>유효기간이 있는 계약</b>이다. 둘째, 분할의 기준은 사이가 나빠졌는지가 아니라 각자의 경쟁 조건이 달라졌는지다. 셋째, 떼어낸 뒤에도 필요한 연결은 대등한 협약으로 남기면 된다. 묶는 것이 성장의 기술이라면, 푸는 것도 성장의 기술이다.</p>
+</section>
+
+<section aria-labelledby="s5">
+  <h2 id="s5">리더의 판단 질문</h2>
+  <table>
+    <thead><tr><th>점검 칸</th><th>지금 확인할 것</th></tr></thead>
+    <tbody>
+      <tr><td>연결성</td><td>진출 후보가 기존 지식과 이어져 있는지 먼저 따지고 있는가</td></tr>
+      <tr><td>할인 계측</td><td>다각화 묶음이 전업 기업 묶음보다 싸게 평가받는지 주기적으로 재고 있는가</td></tr>
+      <tr><td>동기</td><td>안의 성장 기회가 바닥났다는 이유로 넓히기를 택하고 있지는 않은가</td></tr>
+      <tr><td>시너지의 끝</td><td>시너지의 효용이 줄어드는 시점을 평가 할인으로 판단하고 있는가</td></tr>
+      <tr><td>분리 설계</td><td>떼어낼 때 대립이 아니라 각자의 속도를 위한 분리로 설계하고 있는가</td></tr>
+    </tbody>
+  </table>
+  <h3>조직에 대입해 물어 볼 질문</h3>
+  <ol class="qlist">
+    <li>우리의 각 사업부는 서로 무엇을 실제로 나누고 있는가. 공용 자원이 아니라 공통 지식이라 말할 수 있는가?</li>
+    <li>지금 묶음이 받고 있는 평가 할인이 있다면, 그 할인은 어떤 질문에 답함으로써 줄일 수 있는가?</li>
+    <li>만약 내년에 이 사업을 새로 인수한다면, 지금의 가격과 조건으로 다시 묶겠는가?</li>
+  </ol>
+</section>
+
+<section aria-labelledby="s6">
+  <h2 id="s6">근거와 출처</h2>
+  <details>
+    <summary>프레임 연구 — 관련성이 이익 성장의 통로가 된다</summary>
+    <div class="inner">
+      <p>Palepu, K. (1985). <i>Diversification Strategy, Profit Performance and the Entropy Measure.</i> Strategic Management Journal, 6(3), 239–255.</p>
+      <p>엔트로피 측정치로 다각화 유형을 나누고, 연관 다각화 기업의 높은 이익 성장을 확인했다.</p>
+    </div>
+  </details>
+  <details>
+    <summary>반증 연구 — 시장은 묶음을 할인해 산다</summary>
+    <div class="inner">
+      <p>Lang, L. H. P., &amp; Stulz, R. M. (1994). <i>Tobin's q, Corporate Diversification, and Firm Performance.</i> Journal of Political Economy, 102(6), 1248–1280. (1993년 NBER Working Paper 4376로 선공개)</p>
+      <p>다각화 정도와 기업 가치의 음의 관계, 전업 기업 묶음 대비 할인을 확인했다.</p>
+    </div>
+  </details>
+  <details>
+    <summary>인문 렌즈와 사례 출처</summary>
+    <div class="inner">
+      <p>Hayek, F. A. (1945). <i>The Use of Knowledge in Society.</i> American Economic Review, 35(4), 519–530. — 사회의 지식이 한 머리에 모이지 않고 시간과 장소의 구체적 사정으로 흩어져 있다는 명제. 본사의 배분표가 현장 지식을 대신할 수 없다는 전제를 준다.</p>
+      <p>eBay Inc. (2014. 9. 30.) — 2015년 하반기 분사 예고 발표.</p>
+      <p>eBay Inc. (2015. 6. 26.) 이사회 승인 / PayPal Holdings, Inc. (2015. 7. 20.) 분리 완료 발표 — 7월 8일 기준 1대 1 배분, 7월 17일 분배 완료, 7월 20일 정규 거래 개시의 연표.</p>
+      <p>PayPal Holdings, Inc. 회사 설명 자료 — 2014년 매출 80억 달러, 2002년 15억 달러 인수 이력.</p>
+      <p>BBC News (2014. 9. 30.) / Los Angeles Times (2014. 10. 1.) — 행동주의 주주 압박과 발표 당일 주가 상승 보도.</p>
+    </div>
+  </details>
+  <ul class="refs">
+    <li>사례의 연표와 금액은 회사 발표와 언론 보도에 기반한 정보이며, 재인용 시 1차 출처 확인을 권장한다.</li>
+    <li>이 브리핑은 정보 제공과 주의 환기를 위한 것이며, 다각화·분할의 최종 판단과 책임은 이를 사용하는 조직에 있다.</li>
+  </ul>
+</section>
+
+</main>
+<footer class="site">
+  <div>Lead Read · 조직 의사결정자를 위한 3분 브리핑</div>
+  <p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+(function(){
+  var root=document.documentElement,btn=document.createElement('button');
+  btn.textContent='테마 전환';btn.setAttribute('aria-label','라이트 다크 테마 전환');
+  btn.style.cssText='position:fixed;right:14px;bottom:14px;padding:8px 14px;font-size:13px;border:1px solid var(--line);border-radius:20px;background:var(--surface);color:var(--ink);cursor:pointer;z-index:10';
+  btn.addEventListener('click',function(){
+    var sysDark=window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var cur=root.getAttribute('data-theme')||(sysDark?'dark':'light');
+    root.setAttribute('data-theme',cur==='dark'?'light':'dark');
+  });
+  document.body.appendChild(btn);
+})();
+</script>
+</body>
+</html>
