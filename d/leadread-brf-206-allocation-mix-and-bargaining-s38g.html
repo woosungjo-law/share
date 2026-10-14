@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>본부의 돈은 언제 승자를 키우고 언제 전쟁만 남기는가 · Lead Read 3분 브리핑</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231d3a5f'/%3E%3Ctext x='16' y='22' font-size='15' fill='white' text-anchor='middle' font-family='serif'%3ELR%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#f7f6f2; --surface:#ffffff; --ink:#20242c; --muted:#5c6270;
+  --line:#dcd8cc; --mix:#1f6b4f; --war:#a04028; --mix-wash:#e9f3ee; --war-wash:#faeee9; --node:#1d3a5f;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#14171d; --surface:#1c2028; --ink:#e8e6df; --muted:#a2a8b4;
+    --line:#343b47; --mix:#6cc39b; --war:#e08f7c; --mix-wash:#182a22; --war-wash:#31201c; --node:#8cc4ec; }
+}
+html[data-theme="dark"]{ --bg:#14171d; --surface:#1c2028; --ink:#e8e6df; --muted:#a2a8b4;
+  --line:#343b47; --mix:#6cc39b; --war:#e08f7c; --mix-wash:#182a22; --war-wash:#31201c; --node:#8cc4ec; }
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);word-break:keep-all;line-height:1.75;font-size:17px;
+  font-family:"Noto Sans KR","Pretendard","Malgun Gothic",sans-serif;-webkit-font-smoothing:antialiased}
+.page{max-width:760px;margin:0 auto;padding:0 20px 64px}
+header.site{border-bottom:3px solid var(--ink);padding:26px 0 14px;margin-bottom:30px}
+.brand{font-size:13px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}
+h1{font-size:26px;line-height:1.4;margin-top:8px}
+.kicker{font-size:14px;color:var(--muted);margin-top:6px}
+section{margin:36px 0}
+h2{font-size:20px;margin-bottom:14px;padding-left:12px;border-left:4px solid var(--ink)}
+h3{font-size:17px;margin:18px 0 8px}
+p{margin:10px 0}
+.qbox{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:16px 0}
+.qbox .q{font-size:14px;color:var(--muted)}
+.qbox .a{font-size:19px;font-weight:700;margin-top:6px;line-height:1.55}
+.faces{display:flex;gap:14px;flex-wrap:wrap;margin:16px 0}
+.face{flex:1 1 280px;border-radius:12px;padding:14px 18px;border:1px solid var(--line)}
+.face.mix{background:var(--mix-wash);border-top:4px solid var(--mix)}
+.face.war{background:var(--war-wash);border-top:4px solid var(--war)}
+.face .cap{font-size:12.5px;font-weight:700;letter-spacing:.1em}
+.face.mix .cap{color:var(--mix)} .face.war .cap{color:var(--war)}
+.face .who{font-size:15.5px;font-weight:700;margin:4px 0 2px}
+.face .src{font-size:13px;color:var(--muted)}
+.face p{font-size:15px;margin-top:8px}
+.clash{border:2px dashed var(--line);border-radius:12px;padding:16px 18px;margin:16px 0;background:var(--surface)}
+.clash .lbl{font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--muted)}
+.clash p{margin-top:8px;font-size:15.5px}
+.clash b{color:var(--war)}
+.tl{position:relative;margin:22px 0 8px;padding-left:30px}
+.tl::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:3px;background:var(--line)}
+.tl .ev{position:relative;margin:0 0 22px}
+.tl .ev::before{content:"";position:absolute;left:-27px;top:6px;width:15px;height:15px;border-radius:50%;
+  background:var(--surface);border:4px solid var(--node)}
+.tl .ev.pain::before{border-color:var(--war)}
+.tl .ev.win::before{border-color:var(--mix)}
+.tl .date{font-size:13.5px;font-weight:700;letter-spacing:.04em;color:var(--node)}
+.tl .ev.pain .date{color:var(--war)}
+.tl .ev.win .date{color:var(--mix)}
+.tl .title{font-size:16.5px;font-weight:700;margin:2px 0 4px}
+.tl .desc{font-size:15.5px}
+.tl .desc .num{font-weight:700}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--mix-wash);font-size:14px}
+.qlist{counter-reset:q;list-style:none;margin:12px 0 0}
+.qlist li{counter-increment:q;position:relative;padding:10px 0 10px 42px;border-bottom:1px solid var(--line);font-size:16px}
+.qlist li::before{content:counter(q);position:absolute;left:0;top:10px;width:28px;height:28px;border-radius:50%;
+  background:var(--ink);color:var(--bg);font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}
+details{border:1px solid var(--line);border-radius:10px;background:var(--surface);margin:12px 0}
+summary{cursor:pointer;padding:12px 16px;font-weight:700;font-size:15px}
+details .inner{padding:0 16px 14px;font-size:15px}
+details .inner p{margin:8px 0}
+.refs{font-size:14.5px;color:var(--muted)}
+.refs li{margin:8px 0}
+footer.site{border-top:1px solid var(--line);margin-top:48px;padding-top:18px;font-size:14px;color:var(--muted)}
+.author-credit{margin-top:10px;font-size:15px;color:var(--ink);font-weight:700}
+@media (max-width:480px){body{font-size:16px}h1{font-size:22px}h2{font-size:18px}.qbox .a{font-size:17.5px}}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="page">
+<header class="site">
+  <div class="brand">Lead Read · 3분 브리핑</div>
+  <h1>본부의 돈은 언제 승자를 키우고 언제 전쟁만 남기는가</h1>
+  <div class="kicker">배합만 하면 협상이 잠복하고, 협상만 하면 종자가 흩어진다</div>
+</header>
+<main>
+
+<section aria-labelledby="s1">
+  <h2 id="s1">지금 무엇을 판단하는가</h2>
+  <div class="qbox">
+    <div class="q">핵심 질문</div>
+    <div class="a">우리 본부가 사업부에 나누어 주는 돈은, 무엇을 키울지의 기준이 있는 배합인가, 아니면 무엇을 얻어낼지의 협상인가?</div>
+  </div>
+  <p><b>한 문장 결론:</b> 본부가 배합의 관점을 제공하면 사업부가 종자를 준비한다. 관리되지 않는 협상은 정보의 벽을 높여 자원을 틀리게 배분한다. 그래서 배합과 협상을 한 팀에 두지 마라.</p>
+  <p>자원 배분과 자본 예산을 책임지는 리더는 “어디에 투자할 것인가”를 묻는다. 이 브리핑은 그 질문을 “투자 결정을 내리는 절차가 어떤 동기를 만드는가”로 바꾼다. 심장 박동처럼 매년 도는 그 절차가 조직의 방향을 정하기 때문이다.</p>
+</section>
+
+<section aria-labelledby="s2">
+  <h2 id="s2">왜 중요한가</h2>
+  <p>조직이 누구를 먹일지 정하는 일이 조직의 심장 박동이다. 서류의 자본 예산제와 실제의 자원 흐름은 다른 그림이었다. 프로젝트는 하부에서 씨앗으로 올라오고, 사업부 관리자가 처음에 범위를 그리며, 본부가 승인에서 가려낸다.</p>
+  <p><b>승인은 문의 여닫이가 아니라, 다음 해에 어떤 아이디어가 씨앗으로 심길지 결정하는 배합 명세다.</b> 본부가 키우는 논쟁과 요구 수위가 투자처를 정하는 실질 조건이 된다. 안정·성장·실험에 어떤 비중을 둘지 정하면, 사업부는 그 신호를 읽고 다음 해의 종자를 미리 준비한다.</p>
+  <div class="faces">
+    <div class="face mix">
+      <div class="cap">배합의 얼굴</div>
+      <div class="who">자원 배분은 조율의 문제다</div>
+      <div class="src">Bower (1970), Managing the Resource Allocation Process</div>
+      <p>대기업 3곳의 투자 계획 수립 과정을 6년쯤 추적했다. 자원 배분이 일회성 계약이 아니라 매년 도는 순환 과정이라는 통찰이 여기서 나온다. 본부가 해야 할 일은 제안서를 숫자로 심사하는 것이 아니라, 키워야 할 종자와 버려야 할 종자를 구분하는 배합 기준을 명확히 정하는 일이다.</p>
+    </div>
+    <div class="face war">
+      <div class="cap">전쟁의 얼굴</div>
+      <div class="who">승자 고르기는 협상의 시합이 된다</div>
+      <div class="src">Harris &amp; Raviv (1996), Journal of Finance</div>
+      <p>같은 투자 계획 수립을 정보 비대칭의 언어로 다시 물었다. 사업부 관리자는 자기 프로젝트를 좋게 꾸민다. 본부는 관리자에게 낮은 예산을 건네며 협상을 벌인다. 그런데 <b>정보의 벽이 높아질수록 본부의 심사는 프로젝트의 질이 아니라 사업부의 협상력 시합이 된다.</b></p>
+    </div>
+  </div>
+  <div class="clash">
+    <div class="lbl">충돌 지점</div>
+    <p>프레임은 본부가 배합의 관점을 제공하면 협상이 관리되는 흐름이 된다고 보고, 반증은 본부의 심사 자체가 협상의 함정을 열어 정보의 벽을 높인다고 본다. <b>같은 자원 배분을 한쪽은 조율 문제로, 다른 한쪽은 유인 문제로 본다.</b></p>
+    <p>프로젝트가 틀리는 것이 아니라 <b>자원이 틀리는 것</b>이다. 사업부는 이번 배합의 결과를 근거로 다음 배합의 규모를 예상하고, 본부의 관심이 배합의 절차 안에 있다면 사업부의 관심은 다음 배합의 잠재력 안에 있다. 두 시선은 좁은 곳에서 충돌한다.</p>
+    <p class="deadlock"><b>정리:</b> 배합만 하면 협상이 잠복하고, 협상만 하면 종자가 흩어진다. 사업부의 제안이 무의미해지지 않게 본부가 관점을 제공하되, 협상으로 자원을 배분하지 말고 관리자의 정보를 유리하게 꺼내는 구조를 함께 짜야 한다.</p>
+  </div>
+</section>
+
+<section aria-labelledby="s3">
+  <h2 id="s3">시간축으로 보는 사례 — 흐름을 되돌린 배합</h2>
+  <div class="tl">
+    <div class="ev pain">
+      <div class="date">1999년 10월 (발표 시점)</div>
+      <div class="title">7년째 흑자, 그러나 성장 불가</div>
+      <div class="desc">한 일본 완성차 기업이 3년 재생계획을 발표했다. 프랑스 차 기업과의 제휴로 경영이 개선된 직후였다. 7년째 흑자였지만 연결 순자산부채는 <span class="num">1조 4,000억 엔</span>, 연결 영업이익률 <span class="num">1.4퍼센트</span>로는 성장 투자가 불가능했다.</div>
+    </div>
+    <div class="ev win">
+      <div class="date">1999년 10월 (계획의 배합 기준)</div>
+      <div class="title">3년 재생계획 — 세 개의 목표</div>
+      <div class="desc">목표는 연결 영업이익률 <span class="num">4.5퍼센트</span>, 부채 <span class="num">7,000억 엔</span> 이하, 연쇄 기업 구조조정이었다. 본부가 잡은 배합의 기준은 구매·생산·판매 관리비 <span class="num">1조 엔</span> 절감, 부동산과 유가증권 처분, 국내 공장 3곳과 파워트레인 2곳 폐쇄, <span class="num">21,000명</span> 감원, 보유 지분 1,394개의 비용편익 기준 매각이었다.</div>
+    </div>
+    <div class="ev win">
+      <div class="date">1999~2000년 (과정)</div>
+      <div class="title">협상이 아니라 지식으로 심사</div>
+      <div class="desc">200인 국제 관리자팀이 3개월간 문제의 근본 원인을 공유하는 과정에서 나온 지식으로 심사했다. 사업부의 정보를 흐리는 협상이 아니라, 프레임의 배합과 반증의 경고를 함께 쓴 절차였다.</div>
+    </div>
+    <div class="ev win">
+      <div class="date">2000년 5월 (1차 성과)</div>
+      <div class="title">계획 조기 달성</div>
+      <div class="desc">연결 영업이익률 <span class="num">4.75퍼센트</span>, 순자산부채 <span class="num">9,530억 엔</span>, 구매비 <span class="num">11퍼센트</span> 절감이 달성됐다. 절감으로 나온 여유 자금은 신차 플랫폼 개발과 미국 시장 4개 신모델 투자라는 성장 영역으로 흘러갔다. 계획은 <b>2년 조기 달성</b>으로 종료됐다.</div>
+    </div>
+  </div>
+  <p>이 사례는 두 처방을 함께 쓴다. 프레임의 처방대로 <b>흐름을 되돌리는 배합</b>을 짰고, 반증의 경고대로 사업부의 정보를 흐리는 협상이 아니라 공유된 지식으로 심사한 것이다.</p>
+  <p>사례가 남긴 기준은 세 가지다. 첫째, 자본 배분의 절차를 공개하라. 절차가 보이지 않는 조직에서는 사업부가 자신의 규모를 걸고 협상한다. 둘째, 배합의 기준이 흐려질 때마다 사업부는 다음 해의 종자를 배합이 아니라 본부의 임시 방침에 맞춘다. 셋째, <b>관점과 협상을 같은 팀에 두지 마라.</b> 관점을 잃으면 절차가 협상 시합이 되고, 협상을 잃으면 배합이 승자 독식이 된다.</p>
+</section>
+
+<section aria-labelledby="s4">
+  <h2 id="s4">리더의 판단 질문</h2>
+  <table>
+    <thead><tr><th>점검 칸</th><th>지금 확인할 것</th></tr></thead>
+    <tbody>
+      <tr><td>배합 기준</td><td>안정·성장·실험에 어떤 비중을 둘지의 기준이 명문화되어 있는가</td></tr>
+      <tr><td>절차 공개</td><td>자본 배분의 절차가 사업부에 보이는가</td></tr>
+      <tr><td>정보의 벽</td><td>본부의 심사가 프로젝트의 질을 보는가, 사업부의 협상력을 보는가</td></tr>
+      <tr><td>순환</td><td>이번 배합의 결과가 다음 배합의 규모를 어떻게 정하는지 규칙이 있는가</td></tr>
+      <tr><td>분리</td><td>배합의 관점과 협상의 절차를 같은 팀에 두고 있지는 않은가</td></tr>
+    </tbody>
+  </table>
+  <h3>조직에 대입해 물어 볼 질문</h3>
+  <ol class="qlist">
+    <li>우리가 올해 “성장”이라고 부른 투자 가운데, 실제로 다음 해의 종자를 키운 것은 몇 건인가, 협상에서 이긴 것은 몇 건인가?</li>
+    <li>사업부가 우리 본부의 배합 기준을 안다고 말한다면, 그 기준을 한 문장으로 외울 수 있는 사람이 몇 명인가?</li>
+    <li>지난 배합에서 떨어진 프로젝트가 ‘내용이 부족해서’인가 ‘협상이 부족해서’인가. 그 구분을 우리가 실제로 하는가?</li>
+  </ol>
+</section>
+
+<section aria-labelledby="s5">
+  <h2 id="s5">근거와 출처</h2>
+  <details>
+    <summary>프레임 — 자원 배분의 순환</summary>
+    <div class="inner">
+      <p>Bower, J. L. (1970). <i>Managing the Resource Allocation Process: A Study of Corporate Planning and Investment.</i> Division of Research, Graduate School of Business Administration / Richard D. Irwin.</p>
+      <p>투자 계획 수립의 3단계(시작·구조·선택)와 배합 명세. 자원 배분이 매년 도는 순환 과정임을 보여준 연구.</p>
+    </div>
+  </details>
+  <details>
+    <summary>반증 — 협상 게임의 정보 벽</summary>
+    <div class="inner">
+      <p>Harris, M., &amp; Raviv, A. (1996). <i>The Capital Budgeting Process: Incentives and Information.</i> Journal of Finance, 51(4), 1139–1174.</p>
+      <p>정보 비대칭 아래 본부-사업부 협상 게임. 정보의 벽이 높아질수록 심사가 협상력 시합이 됨을 보여준 반증.</p>
+    </div>
+  </details>
+  <details>
+    <summary>인문 렌즈와 사례 출처</summary>
+    <div class="inner">
+      <p>Bonhoeffer, D. (1949). <i>Widerstand und Ergebung</i> (Ethik 항목 포함). Chr. Kaiser Verlag — 행위의 결과를 알고 대비하는 책임윤리. 본부의 자원 배분도 결심의 높이만큼이나, 그 결심이 어떤 정보의 벽과 동기를 만드는지까지 알고 있는지가 책임이라는 렌즈다.</p>
+      <p>Nissan Motor Co., Ltd. (1999. 10. 18.), <i>Nissan Unveils Revival Plan</i> — 1조 엔 절감, 부채 7,000억 엔, 공장 폐쇄, 21,000명 감원, 지분 매각의 1차 출처.</p>
+      <p>Nissan Motor Co., Ltd. (2001. 5. 16.), <i>Nissan Announces Record Results for FY 2000</i> — 영업이익률 4.75퍼센트, 순자산부채 9,530억 엔, 구매비 11퍼센트 절감의 1차 출처.</p>
+      <p>The New York Times (1999. 10. 19.) — 7년 흑자, 공장 폐쇄, 공급사 절반 정리 보도.</p>
+    </div>
+  </details>
+  <ul class="refs">
+    <li>사례의 연표와 재무 수치는 회사 공시(1999·2001)에 기반한 정보이며, 재인용 시 1차 출처 확인을 권장한다.</li>
+    <li>이 브리핑은 정보 제공과 주의 환기를 위한 것이며, 자원 배분의 최종 판단과 책임은 이를 사용하는 조직에 있다.</li>
+  </ul>
+</section>
+
+</main>
+<footer class="site">
+  <div>Lead Read · 조직 의사결정자를 위한 3분 브리핑</div>
+  <p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+(function(){
+  var root=document.documentElement,btn=document.createElement('button');
+  btn.textContent='테마 전환';btn.setAttribute('aria-label','라이트 다크 테마 전환');
+  btn.style.cssText='position:fixed;right:14px;bottom:14px;padding:8px 14px;font-size:13px;border:1px solid var(--line);border-radius:20px;background:var(--surface);color:var(--ink);cursor:pointer;z-index:10';
+  btn.addEventListener('click',function(){
+    var sysDark=window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var cur=root.getAttribute('data-theme')||(sysDark?'dark':'light');
+    root.setAttribute('data-theme',cur==='dark'?'light':'dark');
+  });
+  document.body.appendChild(btn);
+})();
+</script>
+</body>
+</html>
