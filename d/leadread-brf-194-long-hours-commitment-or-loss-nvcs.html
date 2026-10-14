@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>오래 일하는 것은 언제 헌신이 되고 언제 손실이 되는가 · Lead Read 3분 브리핑</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231d3a5f'/%3E%3Ctext x='16' y='22' font-size='15' fill='white' text-anchor='middle' font-family='serif'%3ELR%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#f7f6f2; --surface:#ffffff; --ink:#20242c; --muted:#5b6270;
+  --line:#dcd8cc; --accent-a:#2c6e49; --accent-b:#9c3f2e;
+  --wash-a:#eaf3ed; --wash-b:#f9eeea; --tag-a:#2c6e49; --tag-b:#9c3f2e;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#14171d; --surface:#1c2028; --ink:#e8e6df; --muted:#a2a8b4;
+    --line:#333a46; --accent-a:#7cc49b; --accent-b:#e0917f;
+    --wash-a:#182a22; --wash-b:#33211d; --tag-a:#7cc49b; --tag-b:#e8a593; }
+}
+html[data-theme="dark"]{ --bg:#14171d; --surface:#1c2028; --ink:#e8e6df; --muted:#a2a8b4;
+  --line:#333a46; --accent-a:#7cc49b; --accent-b:#e0917f;
+  --wash-a:#182a22; --wash-b:#33211d; --tag-a:#7cc49b; --tag-b:#e8a593; }
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);word-break:keep-all;line-height:1.75;font-size:17px;
+  font-family:"Noto Sans KR","Pretendard","Malgun Gothic",sans-serif;-webkit-font-smoothing:antialiased}
+.page{max-width:760px;margin:0 auto;padding:0 20px 64px}
+header.site{border-bottom:3px solid var(--ink);padding:26px 0 14px;margin-bottom:32px}
+.brand{font-size:13px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}
+h1{font-size:26px;line-height:1.4;margin-top:8px}
+.kicker{font-size:14px;color:var(--muted);margin-top:6px}
+section{margin:38px 0}
+h2{font-size:20px;margin-bottom:14px;padding-left:12px;border-left:4px solid var(--ink)}
+h3{font-size:17px;margin:18px 0 8px}
+p{margin:10px 0}
+.qbox{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:16px 0}
+.qbox .q{font-size:14px;color:var(--muted)}
+.qbox .a{font-size:19px;font-weight:700;margin-top:6px;line-height:1.55}
+.duo{display:flex;gap:16px;margin:18px 0;flex-wrap:wrap}
+.side{flex:1 1 300px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
+.side .tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.1em;color:#14171d;padding:5px 12px}
+.side.a .tag{background:var(--tag-a)} .side.b .tag{background:var(--tag-b);color:#fff}
+.side .head{padding:14px 18px 4px}
+.side .head .who{font-size:16px;font-weight:700;line-height:1.45}
+.side .head .what{font-size:13.5px;color:var(--muted);margin-top:2px}
+.side .body{padding:8px 18px 18px;font-size:15.5px}
+.side.a{border-top:4px solid var(--accent-a)} .side.b{border-top:4px solid var(--accent-b)}
+.side.a .body{background:var(--wash-a)} .side.b .body{background:var(--wash-b)}
+.side ul{margin:8px 0 0 18px;font-size:15px}
+.side li{margin:5px 0}
+.clash{border:2px dashed var(--line);border-radius:12px;padding:18px 20px;margin:18px 0;background:var(--surface)}
+.clash .lbl{font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--muted)}
+.clash p{margin-top:8px}
+.deadlock{margin-top:12px;font-size:15.5px}
+.deadlock b{color:var(--accent-b)}
+.scene{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent-b);border-radius:10px;padding:16px 18px;margin:14px 0}
+.scene .cap{font-size:13px;font-weight:700;color:var(--accent-b);letter-spacing:.08em}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--wash-a);font-size:14px}
+.qlist{counter-reset:q;list-style:none;margin:12px 0 0}
+.qlist li{counter-increment:q;position:relative;padding:10px 0 10px 42px;border-bottom:1px solid var(--line);font-size:16px}
+.qlist li::before{content:counter(q);position:absolute;left:0;top:10px;width:28px;height:28px;border-radius:50%;
+  background:var(--ink);color:var(--bg);font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}
+details{border:1px solid var(--line);border-radius:10px;background:var(--surface);margin:12px 0}
+summary{cursor:pointer;padding:12px 16px;font-weight:700;font-size:15px}
+details .inner{padding:0 16px 14px;font-size:15px}
+details .inner p{margin:8px 0}
+.refs{font-size:14.5px;color:var(--muted)}
+.refs li{margin:8px 0}
+footer.site{border-top:1px solid var(--line);margin-top:48px;padding-top:18px;font-size:14px;color:var(--muted)}
+.author-credit{margin-top:10px;font-size:15px;color:var(--ink);font-weight:700}
+@media (max-width:480px){body{font-size:16px}h1{font-size:22px}h2{font-size:18px}.qbox .a{font-size:17.5px}}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="page">
+<header class="site">
+  <div class="brand">Lead Read · 3분 브리핑</div>
+  <h1>오래 일하는 것은 언제 헌신이 되고 언제 손실이 되는가</h1>
+  <div class="kicker">48시간의 선, 그리고 시간을 줄이지 못하게 만드는 신호</div>
+</header>
+<main>
+
+<section aria-labelledby="s1">
+  <h2 id="s1">지금 무엇을 판단하는가</h2>
+  <div class="qbox">
+    <div class="q">핵심 질문</div>
+    <div class="a">우리 조직에서 늦게까지 남아 있는 시간은, 실제로 산출을 만드는가, 아니면 사람을 가르는 신호로만 작동하는가?</div>
+  </div>
+  <p><b>한 문장 결론:</b> 노동시간은 일정 선을 넘으면 산출을 깎는다. 그런데 동시에 시간은 능력을 알려 주는 신호로도 쓰인다. 그래서 시간을 줄이려면 근무표가 아니라 평가 기준을 먼저 바꿔야 한다.</p>
+  <p>인사와 조직을 책임지는 리더는 이 두 가지를 동시에 본다. 한쪽에서는 잔업이 늘수록 결과가 줄어드는 관측이 나온다. 다른 한쪽에서는 시간을 줄인 사람이 “덜 헌신하는 사람”으로 읽히는 현실이 있다. 이 브리핑은 이 긴장을 한쪽으로 재단하지 않고, 어디서 무엇을 바꿔야 하는지 축을 나눈다.</p>
+</section>
+
+<section aria-labelledby="s2">
+  <h2 id="s2">왜 중요한가</h2>
+  <p>“얼마나 오래 일하는가”는 가장 보기 쉬운 지표다. 출퇴근 기록만 있으면 누구나 볼 수 있고, 재는 비용도 없다. 그래서 많은 조직이 이 지표에 의존한다.</p>
+  <p>문제는 그 지표가 산출과 어긋나는 순간이다. 연구는 그 어긋남을 측정했고, 현장은 그 어긋남이 개인이 통제하기 어려운 구조에서 나온다는 것을 보여 준다. <b>야근을 없애겠다고 선언하는 것과, 실제로 야근이 줄어드는 것은 다른 문제다.</b></p>
+</section>
+
+<section aria-labelledby="s3">
+  <h2 id="s3">두 연구가 갈리는 지점</h2>
+  <div class="duo">
+    <div class="side a">
+      <div class="head">
+        <span class="tag">관점 A · 손실</span>
+        <div class="who">시간이 길어지면 산출은 줄어든다</div>
+        <div class="what">Pencavel (2015), The Economic Journal</div>
+      </div>
+      <div class="body">
+        <p>1차 세계대전 당시 영국 탄약 공장 노동자들의 주당 노동시간과 생산량 기록을 정리한 연구다.</p>
+        <ul>
+          <li>주당 <b>48시간까지</b>는 산출이 시간에 거의 비례해 늘었다.</li>
+          <li>그 선을 넘으면 산출이 오히려 줄었다.</li>
+          <li>하루 열두 시간씩 이어 붙인 시간은 앞의 시간과 같은 값을 내지 못했다.</li>
+        </ul>
+        <p>피로가 누적되면 같은 사람이 같은 일을 해도 단위 시간의 결과가 달라진다. 긴 시간은 헌신의 증거가 아니라 계산의 오류다.</p>
+      </div>
+    </div>
+    <div class="side b">
+      <div class="head">
+        <span class="tag">관점 B · 신호</span>
+        <div class="who">비생산적인 시간도 신호로 값을 갖는다</div>
+        <div class="what">Landers, Rebitzer &amp; Taylor (1996), American Economic Review</div>
+      </div>
+      <div class="body">
+        <p>미국 로펌 변호사들을 조사해, 능력이 높은 사람일수록 더 긴 시간을 선택하는 경향을 확인했다.</p>
+        <ul>
+          <li>회사는 사람의 능력을 직접 볼 수 없으므로 노동시간을 <b>선별 신호</b>로 쓴다.</li>
+          <li>그러면 시간을 줄이는 선택은 곧 능력이 낮다는 신호가 된다.</li>
+          <li>개인에게는 오래 일하는 편이 합리적이 되고, 모두가 더 오래 일하는 균형이 만들어진다.</li>
+        </ul>
+        <p>그 시간이 산출을 늘리지 못해도, 개인은 그 균형에서 빠져나올 수 없다.</p>
+      </div>
+    </div>
+  </div>
+  <div class="clash">
+    <div class="lbl">충돌 지점</div>
+    <p>A는 긴 시간의 <b>산출 가치</b>를 문제 삼는다. B는 긴 시간의 <b>신호 가치</b>를 문제 삼는다. 둘 다 측정된 결과다. 한쪽이 틀렸다기보다, 시간에는 두 개의 가격이 동시에 붙어 있다는 뜻이다.</p>
+    <p class="deadlock"><b>합의할 수 없는 선:</b> 산출 가치가 0에 가까워도 신호 가치가 남아 있으면 장시간 노동은 사라지지 않는다. 이 균형은 누구도 원해서 만든 것이 아니다. 개인은 남보다 적게 일하면 불리해질까 봐 시간을 늘리고, 회사는 사람을 직접 볼 장치가 없어 그 신호를 계속 쓴다. 그래서 상한을 정하는 규제만으로는 이 균형이 흔들리지 않는다. 리더가 통제할 수 있는 것은 <b>사람을 무엇으로 판단하는가</b>다.</p>
+  </div>
+  <p>두 처방은 배타적이지 않다. 산출을 늘리려면 시간을 줄여야 하고, 시간을 줄이려면 사람을 재는 방식을 바꿔야 한다.</p>
+</section>
+
+<section aria-labelledby="s4">
+  <h2 id="s4">실제로 무슨 일이 있었나 — 과로 사망과 50만 엔</h2>
+  <div class="scene">
+    <div class="cap">사례 · 2015년 광고대행사 신입 사원의 죽음 (2015~2017)</div>
+    <p>2015년 12월 25일, 한 일본 대형 광고대행사의 24세 신입 사원이 스스로 목숨을 끊었다. 입사한 지 아홉 달쯤 지난 시점이었다.</p>
+    <p>조사에서 그해 10월 한 달 초과근무 시간이 <b>105시간</b>으로 확인됐고, 그전에도 비슷한 수준이 이어진 것으로 나타났다. 이듬해 10월 노동기준감독서는 이 죽음을 업무상 재해로 인정했고, 12월에는 회사 대표가 책임을 지고 물러났다.</p>
+    <p>2017년 7월 검찰은 노동기준법 위반으로 회사를 기소했다. 같은 해 9월 회사는 노동조합과 합의한 초과근무 상한을 넘긴 사실을 법정에서 인정했고, 10월 법원은 <b>벌금 50만 엔</b>을 선고했다. 상한을 넘긴 대상에는 이 사원을 포함해 네 명이 있었다.</p>
+    <p>이 사례에서 눈에 띄는 것은 벌금의 크기다. 50만 엔은 사람 하나의 죽음에 붙은 법적 가격이었고, 회사의 연매출과 견주기 어려운 규모였다. 규정된 상한은 있었지만 현장에서 지켜지지 않았고, 그 사실이 드러난 것은 사람이 죽은 뒤였다. 이 회사가 이후 초과근무 관리 방식을 바꾸게 만든 것은 벌금이 아니라, 그 벌금이 상징한 공개적 평가였다.</p>
+  </div>
+  <p>사례가 남긴 기준은 세 가지다. 첫째, 상한 규정은 시간을 재는 장치일 뿐이며 지켜지지 않으면 아무것도 막지 못한다. 둘째, 장시간 노동이 신호로 쓰이는 조직에서는 상한을 넘긴 사람이 아니라 <b>넘기도록 만든 업무량</b>을 문제 삼아야 한다. 셋째, 회복 시간은 성과를 낮추는 비용이 아니라 산출을 유지하는 조건이다.</p>
+</section>
+
+<section aria-labelledby="s5">
+  <h2 id="s5">리더의 판단 질문</h2>
+  <table>
+    <thead><tr><th>점검 칸</th><th>지금 확인할 것</th></tr></thead>
+    <tbody>
+      <tr><td>지표</td><td>야근 시간을 성실의 지표로 쓰고 있지 않은가</td></tr>
+      <tr><td>평가 기준</td><td>평가 항목에 ‘무엇을 만들었는가’가 시간과 분리되어 적혀 있는가</td></tr>
+      <tr><td>상한 이후</td><td>초과근무 상한을 넘겼을 때 원인을 업무 배분에서 찾고 있는가</td></tr>
+      <tr><td>일정 설계</td><td>회복 시간을 일정에 먼저 넣고 나머지에 일을 채우고 있는가</td></tr>
+      <tr><td>승진 신호</td><td>오래 남아 있는 사람을 승진 기준으로 삼고 있지 않은가</td></tr>
+    </tbody>
+  </table>
+  <h3>조직에 대입해 물어 볼 질문</h3>
+  <ol class="qlist">
+    <li>우리 팀에서 가장 늦게까지 남는 사람은 가장 생산적인 사람인가, 가장 불안한 사람인가?</li>
+    <li>평가 회의에서 “열심히 일했다”는 말이 무엇을 가리키는가. 그 말이 결과를 가리키지 않는다면 무엇을 가리키는가?</li>
+    <li>시간을 줄여 보겠다고 했을 때, 조직 안에서 먼저 저항할 부서와 이유는 무엇인가?</li>
+  </ol>
+</section>
+
+<section aria-labelledby="s6">
+  <h2 id="s6">근거와 출처</h2>
+  <details>
+    <summary>프레임 연구 — 48시간의 선</summary>
+    <div class="inner">
+      <p>Pencavel, J. (2015). <i>The Productivity of Working Hours.</i> The Economic Journal, 125(589), 2052–2076.</p>
+      <p>1차 세계대전 영국 탄약 공장의 노동자 기록에서 주당 48시간까지는 산출이 시간에 비례하고, 그 이상에서는 감소한다는 점을 분석했다.</p>
+    </div>
+  </details>
+  <details>
+    <summary>반증 연구 — 시간은 선별 신호다</summary>
+    <div class="inner">
+      <p>Landers, R. M., Rebitzer, J. B., &amp; Taylor, L. J. (1996). <i>Rat Race Redux: Adverse Selection in the Determination of Work Hours in Law Firms.</i> American Economic Review, 86(3), 329–348.</p>
+      <p>노동시간이 능력의 선별 신호로 쓰이기 때문에 장시간 균형이 유지된다는 설명을 제시했다.</p>
+    </div>
+  </details>
+  <details>
+    <summary>인문 렌즈와 사례 출처</summary>
+    <div class="inner">
+      <p>Sen, A. (1999). <i>Development as Freedom.</i> — 자유를 선택지의 개수가 아니라 실제로 할 수 있는 것의 범위(역량)로 보는 관점. 장시간 노동이 반복되면 건강·관계·학습의 범위가 줄어든다는 점을 읽는 렌즈다.</p>
+      <p>Mainichi (2016. 10. 8.) — 노동기준감독서의 업무상 재해 인정과 10월 초과근무 105시간 확인.</p>
+      <p>BBC News (2017. 7. 8.) — 노동기준법 위반 기소.</p>
+      <p>Business Insider (2016. 12. 28.) — 대표 사임.</p>
+      <p>회사 공식 발표(2017. 10.) — 재판 과정의 상한 위반 인정과 환경개선 조치.</p>
+      <p>Reuters (2017. 10. 6.) — 법원의 벌금 50만 엔 선고.</p>
+    </div>
+  </details>
+  <ul class="refs">
+    <li>사례의 날짜·시간·금액은 당국 발표와 언론 보도에 기반한 정보이며, 재인용 시 1차 출처 확인을 권장한다. 고인의 신원은 밝히지 않았다.</li>
+    <li>이 브리핑은 정보 제공과 주의 환기를 위한 것이며, 노동시간 기준의 최종 판단과 책임은 이를 사용하는 조직에 있다.</li>
+  </ul>
+</section>
+
+</main>
+<footer class="site">
+  <div>Lead Read · 조직 의사결정자를 위한 3분 브리핑</div>
+  <p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+(function(){
+  var root=document.documentElement,btn=document.createElement('button');
+  btn.textContent='테마 전환';btn.setAttribute('aria-label','라이트 다크 테마 전환');
+  btn.style.cssText='position:fixed;right:14px;bottom:14px;padding:8px 14px;font-size:13px;border:1px solid var(--line);border-radius:20px;background:var(--surface);color:var(--ink);cursor:pointer;z-index:10';
+  btn.addEventListener('click',function(){
+    var sysDark=window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var cur=root.getAttribute('data-theme')||(sysDark?'dark':'light');
+    root.setAttribute('data-theme',cur==='dark'?'light':'dark');
+  });
+  document.body.appendChild(btn);
+})();
+</script>
+</body>
+</html>
