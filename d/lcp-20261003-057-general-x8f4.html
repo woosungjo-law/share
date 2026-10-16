@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>회생을 신청했는데도 집행이 계속될 때, 무엇을 확인해야 할까</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 채무자 회생·파산과 강제집행 중지 — 중지명령·포괄금지·인가후효력·공탁</div>
+    <h1>회생을 신청했는데도 집행이 계속될 때, 무엇을 확인해야 할까</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> 회생을 신청했다는 사실만으로 집행이 저절로 멈추지 않습니다. <b>채무자 회생 및 파산에 관한 법률 제593조</b>의 중지명령이 내려져 <b>채권자에게 송달되어야</b> 효력이 생깁니다. 회생계획이 <b>인가</b>되면 종전 판결에 기한 집행의 효력이 달라질 수 있고, 급여 압류는 인가 후 효력이 상실되는 구조도 확인할 일입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>카페를 운영하다 자금이 돌지 않아 개인회생 절차를 신청한 박준서</b>는 신청했다는 사실만으로 채권자들의 독촉이 멈출 줄 알았습니다. 하지만 거래처가 가져간 판결로 급여와 통장이 압류되어 있었고, “회생을 신청했는데 왜 집행이 계속되느냐”는 질문에 누구도 명확히 답해 주지 않았습니다. 신청과 실제 집행 중지 사이에는 <b>법원의 중지명령과 그 송달</b>이 있어야 합니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p><b>채무자 회생 및 파산에 관한 법률 제593조</b>의 중지명령은 법원이 개인회생절차개시 신청이 있으면 필요하다고 인정하는 때에 이해관계인의 신청이나 직권으로, <b>개시 결정이 있을 때까지 강제집행·가압류·가처분, 담보권 실행 경매 등을 중지하거나 금지</b>할 수 있게 합니다.</p>
+    <p>집행이 어떤 요건으로 진행되는지도 알아 두면 도움이 됩니다. <b>민사집행법 제30조</b>는 집행문이 판결 확정이나 가집행 선고가 있을 때 나오고, 조건이 붙은 집행은 <b>조건 성취를 증명</b>해야 집행문이 나온다고 정합니다. 증명이 어려우면 채권자는 <b>민사집행법 제33조</b>의 집행문부여의 소를 제기할 수 있습니다. 강제집행은 <b>민사집행법 제39조</b>에 따라 신청인과 피집행인의 이름이 판결·집행문에 표시되고 <b>판결이 송달된 때에만</b> 개시할 수 있습니다.</p>
+    <p>내가 채권자 입장이라면 실체에 이의가 있을 때 <b>민사집행법 제44조</b>의 청구에 관한 이의의 소로 다툴 수 있습니다. <b>대법원 2020다229987</b> 판결은 간접강제결정의 배상금 의무가 확정적이면 <b>조건 성취 증명 없이</b> 집행문을 부여받을 수 있다고 보았습니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>신청과 결정, 인가를 구분한다</h2>
+    <ul class="points">
+      <li><b>첫째, 회생 신청과 중지명령은 다릅니다</b> — 중지명령이 <b>송달</b>되었는지 법원이나 담당자에게 확인합니다.</li>
+      <li><b>둘째, 인가 여부와 시점을 챙깁니다</b> — 회생계획이 인가되면 <b>종전 판결에 기한 집행의 효력이 달라질 수 있으므로</b> 인가 여부와 시점을 적어 둡니다.</li>
+      <li><b>셋째, 급여 압류는 구조가 바뀝니다</b> — 압류가 급여에 걸려 있으면 <b>인가 후 효력이 상실되어 급여가 전액 귀속되는 구조 변경</b>도 확인합니다.</li>
+      <li><b>넷째, 공탁금을 나눕니다</b> — <b>가압류공탁인지 배당공탁인지</b> 구분하고, 본안 판결이 확정되는 시점을 함께 정리합니다.</li>
+      <li><b>다섯째, 집행 중에만 다툴 수 있습니다</b> — 집행이 끝난 뒤에는 다툴 수 없는 경우가 있으므로, <b>집행이 진행 중일 때 이의를 제기</b>합니다.</li>
+    </ul>
+    <div class="callout"><b>주의.</b> 집행이 끝난 뒤에는 다툴 수 없는 경우가 있습니다. 실체에 다툼이 있으면 <b>청구이의·집행문부여 이의 같은 절차를 진행 중일 때</b> 검토하십시오.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;">중지명령과 집행 단계를 순서대로 확인합니다.</p>
+    <ol>
+      <li><b>① 중지 확인</b> — 제593조 중지명령이 내려져 송달되었는지 확인합니다.</li>
+      <li><b>② 신청 검토</b> — 중지명령이 없으면 법원에 신청할 수 있는지 알아봅니다.</li>
+      <li><b>③ 집행 파악</b> — 압류·가압류·경매의 대상과 근거 판결·집행문을 확인합니다.</li>
+      <li><b>④ 요건 점검</b> — 제30조·제39조의 집행문·송달 요건이 갖춰졌는지 봅니다.</li>
+      <li><b>⑤ 실체 다툼</b> — 다툼이 있으면 제33조·제44조 등 이의 절차를 검토합니다.</li>
+      <li><b>⑥ 인가·공탁</b> — 회생계획 인가 시점과 공탁금 종류·본안 확정 시점을 정리하고, 어려우면 법률구조공단이나 변호사의 도움을 구합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
