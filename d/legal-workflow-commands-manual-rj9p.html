@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Harvey를 중심으로 법률업무 10개 명령서의 역할, 선택 기준, 조합 방법을 안내합니다.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>법률업무 명령서 안내서 · Harvey 선택 지도</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f3f5f7;
+      --surface: #ffffff;
+      --ink: #14283d;
+      --muted: #566b7e;
+      --line: #cbd5df;
+      --blue: #195b88;
+      --blue-soft: #e2eef6;
+      --copper: #9c4b2c;
+      --copper-soft: #f6e8df;
+      --green: #28634f;
+      --shadow: 0 16px 42px rgba(20, 40, 61, .08);
+      --serif: Georgia, "Noto Serif KR", "Batang", serif;
+      --sans: "Segoe UI", "Malgun Gothic", "Noto Sans KR", sans-serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --paper: #101b25;
+        --surface: #172633;
+        --ink: #edf3f8;
+        --muted: #b0bfcb;
+        --line: #314554;
+        --blue: #9bc9e8;
+        --blue-soft: #213c4d;
+        --copper: #f0a27e;
+        --copper-soft: #3d2b27;
+        --green: #8cc4a5;
+        --shadow: 0 16px 42px rgba(0, 0, 0, .22);
+      }
+    }
+    :root[data-theme="light"] {
+      color-scheme: light; --paper:#f3f5f7; --surface:#fff; --ink:#14283d; --muted:#566b7e; --line:#cbd5df;
+      --blue:#195b88; --blue-soft:#e2eef6; --copper:#9c4b2c; --copper-soft:#f6e8df; --green:#28634f; --shadow:0 16px 42px rgba(20,40,61,.08);
+    }
+    :root[data-theme="dark"] {
+      color-scheme: dark; --paper:#101b25; --surface:#172633; --ink:#edf3f8; --muted:#b0bfcb; --line:#314554;
+      --blue:#9bc9e8; --blue-soft:#213c4d; --copper:#f0a27e; --copper-soft:#3d2b27; --green:#8cc4a5; --shadow:0 16px 42px rgba(0,0,0,.22);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.72 var(--sans); }
+    a { color:var(--blue); text-underline-offset:3px; }
+    button { color:inherit; font:inherit; }
+    button:focus-visible, a:focus-visible { outline:3px solid var(--copper); outline-offset:3px; }
+    .page { max-width:1180px; margin:0 auto; padding:32px 24px 80px; }
+    .topline { display:flex; justify-content:space-between; align-items:center; gap:16px; border-bottom:1px solid var(--line); padding-bottom:14px; color:var(--muted); font-size:.84rem; letter-spacing:.04em; }
+    .theme { border:1px solid var(--line); border-radius:2px; background:var(--surface); padding:7px 11px; cursor:pointer; }
+    .hero { display:grid; grid-template-columns:minmax(0,1.35fr) minmax(230px,.65fr); gap:34px; align-items:end; padding:64px 0 44px; }
+    .eyebrow { color:var(--copper); font-size:.8rem; font-weight:700; letter-spacing:.13em; text-transform:uppercase; }
+    h1,h2,h3 { line-height:1.22; text-wrap:balance; }
+    h1 { margin:12px 0 18px; max-width:760px; font:500 clamp(2.6rem,6vw,5.4rem)/1.02 var(--serif); letter-spacing:-.045em; }
+    .dek { max-width:670px; margin:0; color:var(--muted); font-size:1.08rem; }
+    .hero-note { border-left:3px solid var(--copper); padding:15px 0 15px 18px; color:var(--muted); }
+    .hero-note strong { display:block; color:var(--ink); font:500 1.25rem var(--serif); margin-bottom:5px; }
+    .section { margin-top:38px; }
+    .section-head { display:flex; justify-content:space-between; align-items:end; gap:20px; margin-bottom:18px; }
+    h2 { margin:0; font:500 clamp(1.7rem,3vw,2.5rem) var(--serif); letter-spacing:-.025em; }
+    h3 { margin:0 0 8px; font-size:1.08rem; }
+    .section-head p { margin:0; max-width:510px; color:var(--muted); }
+    .selector { display:grid; grid-template-columns:280px 1fr; border:1px solid var(--line); background:var(--surface); box-shadow:var(--shadow); }
+    .choices { padding:14px; border-right:1px solid var(--line); }
+    .choice { width:100%; text-align:left; border:0; border-bottom:1px solid var(--line); background:transparent; padding:13px 10px; cursor:pointer; color:var(--muted); }
+    .choice:last-child { border-bottom:0; }
+    .choice[aria-pressed="true"] { color:var(--ink); background:var(--blue-soft); box-shadow:inset 3px 0 var(--blue); font-weight:700; }
+    .answer { padding:26px 30px 30px; min-height:280px; }
+    .answer .kicker { color:var(--copper); font-size:.76rem; letter-spacing:.12em; font-weight:700; text-transform:uppercase; }
+    .answer h3 { margin:9px 0 12px; font:500 clamp(1.55rem,3vw,2rem) var(--serif); }
+    .answer p { max-width:710px; color:var(--muted); margin:0 0 18px; }
+    .route { display:inline-flex; flex-wrap:wrap; gap:8px; align-items:center; border-top:1px solid var(--line); padding-top:15px; }
+    .pill { padding:5px 9px; background:var(--blue-soft); color:var(--blue); font-size:.86rem; }
+    .arrow { color:var(--copper); }
+    .triad { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
+    .triad article { padding:22px; background:var(--surface); }
+    .triad .num { color:var(--copper); font:italic 1.6rem var(--serif); }
+    .triad p { margin:0; color:var(--muted); }
+    .table-wrap { overflow-x:auto; border:1px solid var(--line); background:var(--surface); }
+    table { width:100%; border-collapse:collapse; min-width:760px; }
+    th,td { padding:14px 15px; text-align:left; vertical-align:top; border-bottom:1px solid var(--line); }
+    th { color:var(--muted); font-size:.78rem; letter-spacing:.07em; text-transform:uppercase; }
+    tbody tr:last-child td { border-bottom:0; }
+    td:first-child { width:22%; font-weight:700; }
+    td:nth-child(2) { width:39%; }
+    td:last-child { color:var(--muted); font-size:.93rem; }
+    code { overflow-wrap:anywhere; color:var(--blue); font: .82rem/1.5 ui-monospace,Consolas,monospace; }
+    .pair-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .pair { border-top:3px solid var(--blue); background:var(--surface); padding:22px; }
+    .pair:nth-child(2) { border-color:var(--copper); }
+    .pair p { color:var(--muted); margin:8px 0 0; }
+    .sequence { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .step { padding:20px 22px 22px 0; }
+    .step + .step { padding-left:22px; border-left:1px solid var(--line); }
+    .step b { display:block; color:var(--blue); margin-bottom:7px; }
+    .step p { margin:0; color:var(--muted); }
+    .callout { border-left:3px solid var(--green); background:var(--surface); padding:18px 22px; margin-top:18px; }
+    .callout p { margin:0; }
+    .prompt { background:#10253a; color:#edf4f8; padding:22px 26px; font: .98rem/1.8 var(--serif); }
+    .prompt code { color:#b9d9ef; font-size:.88rem; }
+    footer { margin-top:52px; border-top:1px solid var(--line); padding-top:16px; display:flex; justify-content:space-between; gap:20px; color:var(--muted); font-size:.82rem; }
+    @media(max-width:760px) {
+      .page { padding:20px 16px 52px; }
+      .hero { grid-template-columns:1fr; gap:20px; padding:42px 0 30px; }
+      .selector { grid-template-columns:1fr; }
+      .choices { display:grid; grid-template-columns:1fr 1fr; border-right:0; border-bottom:1px solid var(--line); }
+      .choice { border:1px solid var(--line); margin:-1px 0 0 -1px; font-size:.9rem; }
+      .answer { padding:22px; }
+      .triad,.pair-grid,.sequence { grid-template-columns:1fr; }
+      .step + .step { padding-left:0; border-left:0; border-top:1px solid var(--line); }
+      .section-head { display:block; }
+      .section-head p { margin-top:8px; }
+      footer { display:block; }
+    }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } * { animation-duration:.01ms !important; transition-duration:.01ms !important; } }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="topline"><span>HARVEY · LEGAL WORKFLOW GUIDE</span><button class="theme" id="theme" type="button" aria-label="화면 색상 전환">화면 색상</button></div>
+    <header class="hero">
+      <div><div class="eyebrow">법률업무 도구 안내</div><h1>무슨 명령서를<br>불러야 할까?</h1><p class="dek">Harvey는 접수부터 적합한 절차 선택까지 맡습니다. 아래에서 필요한 결과를 고르면 어떤 명령서가 맞는지와 함께 쓰는 순서를 볼 수 있습니다.</p></div>
+      <aside class="hero-note"><strong>Harvey 하나로 시작</strong>열 개를 모두 돌리는 대신, 주 경로 하나와 필요한 보조 절차만 고릅니다.</aside>
+    </header>
+
+    <section class="section" aria-labelledby="choose-title">
+      <div class="section-head"><h2 id="choose-title">지금 필요한 결과</h2><p>막힌 지점에 가까운 항목을 누르세요. Harvey가 선택할 주 경로와 권장 연결을 보여줍니다.</p></div>
+      <div class="selector">
+        <div class="choices" role="group" aria-label="필요한 결과 선택">
+          <button class="choice" aria-pressed="true" data-key="single">한 가지 법률 해법을 강화</button>
+          <button class="choice" aria-pressed="false" data-key="compete">독립 해법을 경쟁</button>
+          <button class="choice" aria-pressed="false" data-key="neutral">중립적으로 기록 심의</button>
+          <button class="choice" aria-pressed="false" data-key="strategy">우리 쪽 전략 설계</button>
+          <button class="choice" aria-pressed="false" data-key="evidence">자료의 모순·누락 추적</button>
+          <button class="choice" aria-pressed="false" data-key="civil">민사사건 전체 종합</button>
+          <button class="choice" aria-pressed="false" data-key="premise">전제·결정 정렬</button>
+          <button class="choice" aria-pressed="false" data-key="ideas">새로운 해결안 탐색</button>
+          <button class="choice" aria-pressed="false" data-key="repeat">반복 업무 개선</button>
+        </div>
+        <div class="answer" aria-live="polite" id="answer">
+          <span class="kicker">기본 법률 검토 경로</span><h3>연구원장</h3>
+          <p>한 가지 통합안을 법리·기록·레드팀·재판부 시각으로 압박해 누락을 보완합니다. 복합 법률 검토의 기본 선택입니다.</p>
+          <div class="route"><span class="pill">자료가 복잡하면 탐정모드</span><span class="arrow">→</span><span class="pill">연구원장</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="three-title">
+      <div class="section-head"><h2 id="three-title">먼저 가를 세 가지</h2><p>이 구분이 서면 열 개 중 무엇이 필요한지 대부분 정해집니다.</p></div>
+      <div class="triad">
+        <article><span class="num">A</span><h3>중립 심의인가, 지원 전략인가</h3><p>기록의 무게는 배심원장, 우리 쪽 실행 계획은 공격형 어벤저스입니다. 둘 다 필요하면 단계와 산출물을 나눕니다.</p></article>
+        <article><span class="num">B</span><h3>한 안의 강화인가, 복수안 경쟁인가</h3><p>단일 통합안은 연구원장, 실질적으로 다른 해법의 독립 경쟁은 리걸심판관입니다.</p></article>
+        <article><span class="num">C</span><h3>사실 추적인가, 법률 판단인가</h3><p>기록의 빈틈은 탐정모드가 찾고, 법률 검토자가 그 사실에 법리를 적용합니다.</p></article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="all-title">
+      <div class="section-head"><h2 id="all-title">10개 명령서 한눈에 보기</h2><p>각 이름을 선택하면 쓰임과 정본 경로를 확인할 수 있습니다.</p></div>
+      <div class="table-wrap"><table><thead><tr><th>명령서</th><th>이럴 때 선택</th><th>정본 위치</th></tr></thead><tbody>
+        <tr><td>엣지 브레인스토밍</td><td>정형적 답 바깥의 대담하고 합법적인 대안이 필요할 때</td><td><code>_COMMANDS/엣지브레인스토밍_마스터명령서.md</code></td></tr>
+        <tr><td>공격형 어벤저스</td><td>우리 측의 실행 전략·설득 프레임·순서를 만들 때</td><td><code>_WORKFLOWS/공격형어벤저스_오케스트레이터.md</code></td></tr>
+        <tr><td>민사소송 위원회</td><td>민사사건 전체를 법리·증거·서면·협상·위험까지 종합할 때</td><td><code>_WIKI_법률업무/_guides/민사소송_위원회_작업명령서.md</code></td></tr>
+        <tr><td>배심원장</td><td>양측 기록을 중립적으로 심의하고 다수·소수 의견을 낼 때</td><td><code>_WORKFLOWS/배심원장_오케스트레이터.md</code></td></tr>
+        <tr><td>DOE</td><td>반복 업무의 프롬프트·절차를 비교 실험해 개선할 때</td><td><code>_WORKFLOWS/DOE_작업명령서_20260822.md</code></td></tr>
+        <tr><td>탐정모드</td><td>자료 사이 모순·누락·시간·금액 흐름을 추적할 때</td><td><code>_WORKFLOWS/탐정모드_발동명령서.md</code></td></tr>
+        <tr><td>사고법 풀가동</td><td>실행 전에 전제·사실·사용자 결정을 정렬할 때</td><td><code>_WORKFLOWS/사고법/사고법_풀가동.md</code></td></tr>
+        <tr><td>TRIZ 풀가동</td><td>목표·제약이 충돌해 문제 구조를 바꿀 필요가 있을 때</td><td><code>_WORKFLOWS/사고법/TRIZ_풀가동.md</code></td></tr>
+        <tr><td>연구원장</td><td>한 가지 통합 법률안을 여러 렌즈로 강화할 때</td><td><code>_WORKFLOWS/법률연구팀_오케스트레이터.md</code></td></tr>
+        <tr><td>리걸심판관</td><td>독립된 해법을 A/B로 겨뤄 최선 요소를 병합할 때</td><td><code>_WORKFLOWS/리걸심판관_배틀_오케스트레이터.md</code></td></tr>
+      </tbody></table></div>
+    </section>
+
+    <section class="section" aria-labelledby="chain-title">
+      <div class="section-head"><h2 id="chain-title">연결은 이렇게</h2><p>주 경로 하나를 정하고, 별도 병목이 있을 때 보조 절차를 붙입니다.</p></div>
+      <div class="sequence">
+        <div class="step"><b>01 · 접수</b><p>“harvey, [업무]”로 시작합니다. 목표·자료·제출 여부·남은 결정을 파악합니다.</p></div>
+        <div class="step"><b>02 · 확인</b><p>기록에서 닫히는 사실은 먼저 찾고, 사용자가 정해야 할 질문만 묶어 묻습니다.</p></div>
+        <div class="step"><b>03 · 실행</b><p>주 경로 한 개를 고르고, 필요성이 확인된 보조 명령만 연결합니다.</p></div>
+      </div>
+      <div class="callout"><p><strong>기본 연결 예:</strong> 자료 모순이 크면 <b>탐정모드 → 연구원장</b>. 전제가 흔들리면 <b>사고법 → 주 경로 하나</b>. 사실 판단 뒤 전략이 필요하면 <b>배심원장 → 공격형 어벤저스</b>.</p></div>
+    </section>
+
+    <section class="section" aria-labelledby="prompt-title">
+      <div class="section-head"><h2 id="prompt-title">바로 복사해 쓸 요청 예시</h2><p>원하는 결과와 자료 위치를 함께 주면 선택이 더 정확해집니다.</p></div>
+      <div class="prompt">harvey, 이 사건의 답변서 초안을 검토해줘. 먼저 기록상 놓친 사실이나 모순이 있는지 보고, 한 가지 통합안을 강화하면 돼. 자료 경로는 <code>[경로]</code>야.</div>
+      <div class="pair-grid" style="margin-top:16px">
+        <article class="pair"><h3>연구원장을 직접 부를 때</h3><p>“이 준비서면의 단일 초안을 법리·반론·재판부 관점으로 보강해줘.”</p></article>
+        <article class="pair"><h3>리걸심판관을 직접 부를 때</h3><p>“같은 기록에서 가능한 두 해법을 독립적으로 만들어 경쟁시켜줘.”</p></article>
+      </div>
+    </section>
+
+    <footer><span>Harvey는 명령서 선택을 자동화하지만, 필요 없는 도구는 호출하지 않습니다.</span><span>법률 근거·기밀·발행 게이트가 모든 절차보다 우선합니다.</span></footer>
+  </main>
+  <script>
+    const routes = {
+      single: {k:'단일 통합안 강화',title:'연구원장',text:'한 가지 법률 해법을 법리·기록·레드팀·재판부 관점으로 압박해 누락을 보완합니다. 복합 법률 검토의 기본 경로입니다.',chain:['자료가 복잡하면 탐정모드','연구원장']},
+      compete: {k:'독립 해법 경쟁',title:'리걸심판관',text:'실질적으로 다른 두 해법을 독립 작성하고 교차 검토해 강한 요소를 병합합니다. 방향이 갈리고 사안의 비중·위험이 높을 때 선택합니다.',chain:['자료 정리','A/B 독립안','통합안']},
+      neutral: {k:'중립 심의',title:'배심원장',text:'양측 주장을 대칭적으로 살피고 쟁점별 다수·소수 의견, 증거 평가, 보류점을 정리합니다.',chain:['기록 심의','쟁점별 평결','필요하면 별도 전략']},
+      strategy: {k:'우리 측 전략 설계',title:'공격형 어벤저스',text:'확인된 사실과 법리를 토대로 합법적 공격 전략, 설득 구조, 상대방의 강한 반론, 실행·철회 기준을 만듭니다.',chain:['근거 확인','공격형 어벤저스','실행 계획']},
+      evidence: {k:'기록·증거 추적',title:'탐정모드',text:'문서 원문과 요약, 사건의 시간·금액 흐름에서 누락과 모순을 찾습니다. 발견·추론·가설·추가 질문을 나눕니다.',chain:['자료 목록','탐정모드','연구원장 또는 리걸심판관']},
+      civil: {k:'민사사건 전 과정',title:'민사소송 위원회',text:'법리·증거·서면·협상·리스크를 한 종합보고서로 다룹니다. 같은 범위의 다른 전체 오케스트레이터를 중복 실행하지 않습니다.',chain:['입력·기밀 확인','7인 위원회','종합 전략보고서']},
+      premise: {k:'착수 전 정렬',title:'사고법 풀가동',text:'목표·전제·자료 사실·사용자 결정을 먼저 정렬합니다. 이미 답한 결정은 다시 묻지 않고 이후 주 경로에 넘깁니다.',chain:['전제 정리','필요 결정만 질문','주 경로 하나']},
+      ideas: {k:'새 해결안 탐색',title:'엣지 브레인스토밍 또는 TRIZ',text:'선택지가 고착되면 엣지로 대안을 넓히고, 목표와 제약이 충돌하면 TRIZ로 문제 구조를 재설계합니다. 아이디어는 법률 검증 전 후보입니다.',chain:['문제 성격 판별','엣지 또는 TRIZ','연구원장 검증']},
+      repeat: {k:'반복 업무 개선',title:'DOE',text:'반복 업무의 프롬프트·절차를 비교 실험합니다. 측정 기준과 비교 가능한 표본이 있어야 하며 단발 법률 결론에는 쓰지 않습니다.',chain:['기준선·지표','요인 실험','확인 후 레시피']}
+    };
+    const buttons=[...document.querySelectorAll('.choice')], answer=document.getElementById('answer');
+    buttons.forEach(btn=>btn.addEventListener('click',()=>{
+      buttons.forEach(b=>b.setAttribute('aria-pressed',String(b===btn)));
+      const r=routes[btn.dataset.key];
+      answer.innerHTML=`<span class="kicker">${r.k}</span><h3>${r.title}</h3><p>${r.text}</p><div class="route">${r.chain.map((x,i)=>`${i?'<span class="arrow" aria-hidden="true">→</span>':''}<span class="pill">${x}</span>`).join('')}</div>`;
+    }));
+    const theme=document.getElementById('theme');
+    theme.addEventListener('click',()=>{const root=document.documentElement;root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';});
+  </script>
+</body>
+</html>
