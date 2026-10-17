@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>창작컴파일러 사용방법 — 한 장 총정리 (2026-10-17)</title>
+<style>
+  :root{
+    --ink:#1c1a17; --ink-soft:#4b463f; --muted:#8a8177;
+    --paper:#faf7f2; --panel:#ffffff; --line:#e7e0d6;
+    --accent:#9a5b2b; --accent-soft:#f3e7da;
+    --gold:#b9892f; --good:#3f7d52; --warn:#b4552f;
+    --shadow:0 1px 2px rgba(60,45,25,.05),0 12px 30px -18px rgba(60,45,25,.28);
+    --maxw:860px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"Pretendard","Noto Sans KR","Malgun Gothic","Apple SD Gothic Neo",-apple-system,sans-serif;
+    line-height:1.75; font-size:16px; letter-spacing:-.01em;
+  }
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 22px 96px}
+  header.hero{
+    background:linear-gradient(155deg,#2b2119 0%,#463121 52%,#6b4423 100%);
+    color:#fdf8f0; padding:64px 22px 54px; margin-bottom:44px;
+    border-bottom:3px solid var(--gold);
+  }
+  header.hero .inner{max-width:var(--maxw); margin:0 auto}
+  .eyebrow{
+    font-size:12px; letter-spacing:.28em; text-transform:uppercase;
+    color:var(--gold); font-weight:700; margin:0 0 14px;
+  }
+  header.hero h1{
+    font-size:clamp(26px,4.6vw,40px); line-height:1.25; margin:0 0 16px;
+    font-weight:800; letter-spacing:-.02em;
+  }
+  header.hero p.lead{
+    margin:0; font-size:clamp(15px,2.2vw,17.5px); color:#eadfce; max-width:62ch;
+  }
+  .hero .meta{margin-top:22px; font-size:13px; color:#c8b7a0; letter-spacing:.02em}
+  .hero .meta b{color:var(--gold)}
+  .tagline{
+    margin:30px 0 0; padding:18px 22px; border-radius:12px;
+    background:rgba(255,255,255,.07); border:1px solid rgba(185,137,47,.4);
+    font-size:16.5px; color:#fdf5e8;
+  }
+  .tagline strong{color:var(--gold)}
+  h2{
+    font-size:clamp(20px,3vw,25px); font-weight:800; letter-spacing:-.02em;
+    margin:56px 0 6px; padding-bottom:12px; border-bottom:2px solid var(--line);
+    scroll-margin-top:20px;
+  }
+  h2 .num{color:var(--accent); font-weight:800; margin-right:10px}
+  h3{font-size:18px; font-weight:800; margin:34px 0 8px; letter-spacing:-.01em}
+  h4{font-size:15.5px; font-weight:800; margin:22px 0 4px; color:var(--ink-soft)}
+  p{margin:12px 0}
+  a{color:var(--accent); text-decoration:none; border-bottom:1px solid rgba(154,91,43,.35)}
+  a:hover{border-bottom-color:var(--accent)}
+  code{
+    font-family:"Cascadia Code","D2Coding",Consolas,monospace; font-size:.86em;
+    background:var(--accent-soft); color:#6b3d18; padding:2px 6px; border-radius:5px;
+  }
+  pre{
+    background:#221b14; color:#f0e6d8; padding:18px 20px; border-radius:12px;
+    overflow-x:auto; font-size:13.5px; line-height:1.6; box-shadow:var(--shadow);
+  }
+  pre code{background:none; color:inherit; padding:0}
+  blockquote{
+    margin:18px 0; padding:14px 20px; background:var(--panel);
+    border-left:4px solid var(--gold); border-radius:0 10px 10px 0;
+    color:var(--ink-soft); box-shadow:var(--shadow);
+  }
+  blockquote p{margin:4px 0}
+  .tablewrap{overflow-x:auto; margin:18px 0; border-radius:12px; box-shadow:var(--shadow)}
+  table{border-collapse:collapse; width:100%; background:var(--panel); font-size:14.5px}
+  th,td{padding:11px 14px; text-align:left; border-bottom:1px solid var(--line); vertical-align:top}
+  thead th{background:#f4ede2; font-weight:800; color:var(--ink); white-space:nowrap}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr:nth-child(even){background:#fdfbf7}
+  .grid{display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); margin:20px 0}
+  .card{
+    background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:18px 20px; box-shadow:var(--shadow);
+  }
+  .card h4{margin:0 0 8px; color:var(--accent); font-size:14px; letter-spacing:.02em}
+  .card p{margin:6px 0; font-size:14.5px; color:var(--ink-soft)}
+  .callout{
+    margin:20px 0; padding:16px 20px; border-radius:12px; font-size:15px;
+    background:var(--accent-soft); border:1px solid #e6d2ba;
+  }
+  .callout.ok{background:#eaf3ec; border-color:#cfe4d5}
+  .callout.warn{background:#fbede4; border-color:#f0d4c1}
+  .callout b{color:var(--accent)}
+  ul,ol{padding-left:22px}
+  li{margin:6px 0}
+  .kv{font-size:14.5px}
+  .pill{
+    display:inline-block; font-size:12.5px; font-weight:700; letter-spacing:.02em;
+    padding:3px 10px; border-radius:999px; background:var(--accent-soft); color:#7a4519;
+    border:1px solid #e6d2ba; margin:0 4px 4px 0;
+  }
+  hr{border:none; border-top:1px solid var(--line); margin:44px 0}
+  footer{
+    margin-top:56px; padding-top:22px; border-top:1px solid var(--line);
+    color:var(--muted); font-size:13px; text-align:center;
+  }
+  .toc{
+    background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:20px 24px; box-shadow:var(--shadow); margin:0 0 8px;
+  }
+  .toc h4{margin-top:0; color:var(--ink); font-size:13px; letter-spacing:.14em; text-transform:uppercase}
+  .toc ol{margin:6px 0 0; padding-left:20px; columns:2; column-gap:28px}
+  @media (max-width:560px){ .toc ol{columns:1} header.hero{padding:46px 20px 40px} }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="inner">
+    <p class="eyebrow">_WIKI_창작컴파일러 · 사용방법</p>
+    <h1>창작컴파일러 사용방법 — 한 장 총정리</h1>
+    <p class="lead">이 폴더가 무엇이고, 어떻게 여기까지 왔고, 결과물이 어디에 쌓이며, 어떻게 잘 쓰는지를 한 번에 잡는다.</p>
+    <p class="meta">원본 노트: <b>70_lab/사용방법_20261017.md</b> · 정문 [[_주문서]] · 구역 [[_구역안내]] · 건강 [[_계기판]] · 규칙 [[CLAUDE]] v3 · 갱신 <b>2026-10-17</b></p>
+    <div class="tagline">이 WIKI는 <strong>글 창고가 아니라 “재료 팬트리 + 밀키트 저장고”</strong>다. &nbsp;재료는 미리 풍부하게, 요리는 주문이 올 때.</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <nav class="toc">
+    <h4>목차</h4>
+    <ol>
+      <li><a href="#s0">한 줄 정체성</a></li>
+      <li><a href="#s1">정확한 기능 — 두 개의 문 + 3구역</a></li>
+      <li><a href="#s2">그동안의 작업 과정 (연혁)</a></li>
+      <li><a href="#s3">결과물이 어디에 모여 있나</a></li>
+      <li><a href="#s4">어떻게 잘 활용하나</a></li>
+      <li><a href="#s5">관련 스킬 · 명령 정리</a></li>
+      <li><a href="#s6">한 줄 결론</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="s0"><span class="num">0</span>한 줄 정체성</h2>
+  <p>컬럼을 부담 없이 드롭하면 → <b>심층 분석 + 웹보강</b>을 거쳐 <b>재료(재사용 조각)</b>가 되고 → 서로 합성해 <b>밀키트(반조리 시리즈 설계)</b>가 되고 → 주문이 오면 <b><code>_ATELIER</code>에서 요리(초안)</b>한다.</p>
+  <div class="callout"><b>재료는 미리 풍부하게, 요리는 주문이 올 때.</b> &nbsp;성공의 정의 = 요구가 오면 몇 시간 안에 좋은 초안이 나온다.</div>
+
+  <h3>핵심 규칙 3줄</h3>
+  <ol>
+    <li>정본 소스는 원래 위치에 그대로 둔다. 이 WIKI는 복제 저장소가 아니라 <b>포인터 + 추출 재료 + 변형 설계</b>를 관리한다.</li>
+    <li>기본 단위는 “글 1편”이 아니라 <b>재료(Module) / 패턴(Pattern) / 소스팩(Source Pack) / 밀키트(Meal-kit)</b>다.</li>
+    <li>목표는 축적이 아니라 <b>같은 재료로 여러 톤·독자용 결과물을 반복 생산</b>하는 것이다.</li>
+  </ol>
+
+  <h2 id="s1"><span class="num">1</span>정확한 기능 — 두 개의 문 + 3구역</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h4>🚪 문 ① 재료 투입 (공급 · 자유)</h4>
+      <p>1. <code>00_raw/</code>에 컬럼을 드롭</p>
+      <p>2. “창작컴파일러 재료로 인제스트해줘” → SPACK 편입 → 재료 추출(프레임·비유·사례·데이터·질문·오프닝·결론·반론) → 필요 시 웹보강 → 교차 가능하면 밀키트 후보 제안</p>
+      <p>3. 원문은 <code>00_raw_ingested/</code>로 이동(보관)</p>
+    </div>
+    <div class="card">
+      <h4>🍳 문 ② 요리 주문 (수요 · 온디맨드)</h4>
+      <p>1. [[_주문서]]에서 밀키트를 고르거나 주제만 적는다</p>
+      <p>2. “[주제/밀키트]로 [플랫폼] 초안 만들어줘” → 재료·밀키트 자동 소집 → 실물 초안 저장</p>
+      <p>3. 이 WIKI엔 <code>50_outputs/</code>에 <b>포인터만</b> 남는다</p>
+    </div>
+  </div>
+
+  <h3>🥫🍱🍽 3구역 모델</h3>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>구역</th><th>폴더</th><th>역할</th></tr></thead>
+    <tbody>
+      <tr><td rowspan="4">🥫 팬트리(재료)</td><td><code>10_source_packs/</code></td><td>SPACK — 주제별 재료지도(재료 선반)</td></tr>
+      <tr><td><code>20_modules/</code></td><td>재료(Ingredient) — 유형·등급·검증 메타. 프레임/소재 2계층</td></tr>
+      <tr><td><code>30_patterns/</code></td><td>패턴 — 재료의 ‘전개유형’</td></tr>
+      <tr><td><code>60_tones/</code></td><td>톤 — 조미료 층</td></tr>
+      <tr><td rowspan="2">🍱 밀키트</td><td><code>40_mealkits/</code></td><td>KIT — 신규 밀키트(단일/크로스). <b>크로스가 이 WIKI의 꽃</b></td></tr>
+      <tr><td><code>40_compile_notes/</code></td><td>COMP — 레거시 밀키트(점진 이관)</td></tr>
+      <tr><td>🍽 출력</td><td><code>50_outputs/</code></td><td>OUT — 완성본 포인터 + 변형 이력(정본은 <code>_ATELIER</code>/허브)</td></tr>
+      <tr><td>🗄 보관·운영</td><td><code>00_raw/</code> · <code>00_raw_ingested/</code> · <code>70_lab/</code> · <code>80_templates/</code></td><td>드롭존 · 원문보관 · 실험로그 · 템플릿</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="kv"><b>재료 유형</b> — 프레임 · 비유 · 사례 · 데이터 · 질문 · 오프닝 · 결론 · 전개패턴 · 반론(counter) …<br>
+  <b>재료 등급</b> — 원석(추출만) → 가공(웹보강·정제) → 밀키트급(앵커). <code>verified</code> = 실제 출력에 쓰여 검증됨.</p>
+
+  <h3>⚙ 자동 장부 (손 관리 금지)</h3>
+  <p>자산을 더하거나 요리한 뒤 폴더 루트에서 한 줄이면 카운트·등급·검증·status가 전부 자동 갱신된다.</p>
+  <pre><code>cd C:\obsidian\지식관리\_WIKI_창작컴파일러
+python _index_generator.py</code></pre>
+  <div class="callout warn">모든 <code>_index.md</code> · <code>index.md</code> 카운트 · <code>_계기판</code> · 등급 · <code>verified</code> · status가 자동 생성된다. <b>인덱스를 손으로 고치지 않는다.</b></div>
+
+  <h2 id="s2"><span class="num">2</span>그동안의 작업 과정 (연혁)</h2>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>시기</th><th>사건</th><th>의미</th></tr></thead>
+    <tbody>
+      <tr><td>2026-07-18</td><td>초기 설계</td><td>글 창고에서 “컴파일러”로 출발</td></tr>
+      <tr><td>2026-07-19</td><td><b>v2 개편</b></td><td>죽은 장부 자동화(<code>_index_generator.py</code>), 재료를 frame/material 2종으로 분리</td></tr>
+      <tr><td>2026-07-19</td><td><b>v3 개편(핵심)</b></td><td>정체성을 “재료 팬트리 + 밀키트 저장고”로 확정. 두 문·재료 유형/등급·웹보강 기본값</td></tr>
+      <tr><td>2026-07-25</td><td><b>v4 배치 인제스트</b></td><td>프레임 97% 편중 진단 → 유형 쿼터·프레임 40% 상한·<b>반론(counter) 배치당 3개 필수</b>·꽂힘성 심사</td></tr>
+      <tr><td>2026-09-25~</td><td><b>콜드스타트 재가동</b></td><td>문②(요리) 드라이런. 재료를 1,500자 컬럼 초안으로 조합하는 생산 라인 가동</td></tr>
+      <tr><td>2026-09-27~28</td><td><b>충전·소비 체계</b></td><td>배치 인제스트 + 1500자 초안 + 10배치 연속. 미포화 계열 쿼터로 축포화 방지</td></tr>
+      <tr><td>2026-09-30</td><td><b>명령서 v3 + 원장</b></td><td>충전·초안 명령서 개정, 검사 스크립트 <code>_cc_tools/</code> 신설(selftest 83/83), <code>_cc_ledger.jsonl</code> 원장 최초 백필</td></tr>
+      <tr><td>2026-10-14</td><td><b>현재 상태</b></td><td>재료 1,443 · 밀키트 311 · OUT 403 · 재료다양성 20종</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="callout"><b>관통하는 교훈.</b> 부피(파일 수)가 아니라 <b>참조 그래프</b>로 건강을 재야 한다. 그래서 계기판은 다양성·재사용률·교차율을 측정하고, 장부는 스크립트가 생성한다.</div>
+
+  <h2 id="s3"><span class="num">3</span>결과물이 어디에 모여 있나</h2>
+
+  <h3>① 재료·밀키트 자산 (이 폴더 안)</h3>
+  <ul>
+    <li>재료: <code>_WIKI_창작컴파일러/20_modules/</code> (약 1,440+)</li>
+    <li>SPACK 선반: <code>10_source_packs/</code> (약 390)</li>
+    <li>밀키트: <code>40_mealkits/</code> (KIT 300) + <code>40_compile_notes/</code> (COMP 11)</li>
+    <li>패턴·톤: <code>30_patterns/</code> · <code>60_tones/</code></li>
+    <li>출력 포인터: <code>50_outputs/</code> (약 403개)</li>
+    <li>상태·이력: <code>_계기판.md</code> · <code>log.md</code> · <code>_cc_ledger.jsonl</code>(정본 원장) · <code>_batch_manifest.md</code> · <code>70_lab/</code></li>
+  </ul>
+
+  <h3>② 실제 완성 컬럼(초안 정본) — 이 폴더 밖</h3>
+  <p>문②로 요리한 1,500자 컬럼 실물은 여기 쌓인다.</p>
+  <pre><code>_WIKI_인문비즈니스/90_archive/column/04_창작컴파일러/1500자컬럼/{클러스터}/</code></pre>
+  <ul>
+    <li>클러스터(주제 폴더) 예: 인재와평가 · 돈과계약 · 협상과교착 · 침묵과경청 · 평정심과선택 · 퇴장과끝맺음 · 칭찬과인정 · 판단과질문 등 13개 + <code>_미분류/</code></li>
+    <li>현재 약 <b>784편+</b> 실물 저장. <code>status: draft</code></li>
+    <li><code>50_outputs/OUT-*.md</code> 파일이 그 실물을 가리키는 <b>포인터</b>다.</li>
+  </ul>
+  <div class="callout ok">즉, “뭘 만들었나”는 <code>50_outputs/_index.md</code>와 <code>1500자컬럼/</code> 폴더에서 본다. 이 WIKI 안에는 완성 원고를 복제 저장하지 않는다.</div>
+
+  <h2 id="s4"><span class="num">4</span>이걸 어떻게 잘 활용하나</h2>
+
+  <h3>원칙 4가지</h3>
+  <ol>
+    <li><b>시작은 언제나 [[_주문서]].</b> 재료를 넣든 요리를 시키든.</li>
+    <li><b>요리는 이 폴더에서 하지 않는다.</b> 여기엔 재료·밀키트·포인터만.</li>
+    <li><b>작업 뒤 스크립트 한 줄이 마감.</b> <code>python _index_generator.py</code></li>
+    <li><b>부피가 아니라 [[_계기판]]으로 평가.</b> 다양성·재사용률·교차율.</li>
+  </ol>
+
+  <div class="grid">
+    <div class="card">
+      <h4>루틴 A · 새 재료가 생겼을 때 (문①)</h4>
+      <p><code>00_raw</code>에 드롭 후 — “창작컴파일러 재료로 인제스트해줘. 유형(비유·사례·데이터·질문·반론)도 다양하게, 사실은 웹보강, 교차 가능성 보이면 밀키트 후보까지.”</p>
+    </div>
+    <div class="card">
+      <h4>루틴 B · 글이 필요할 때 (문②)</h4>
+      <p>“[밀키트명 또는 주제]로 [플랫폼] 초안을 써줘.”<br>예: “교착 밀키트로 경영컬럼 EP01 초안 써줘”</p>
+    </div>
+    <div class="card">
+      <h4>루틴 C · 글감이 막힐 때</h4>
+      <p>[[_계기판]]과 <code>40_mealkits/_index</code>를 열어 <b>아직 요리 안 한 밀키트</b>를 고른다.</p>
+    </div>
+    <div class="card">
+      <h4>루틴 D · 새 시리즈 (크로스가 꽃)</h4>
+      <p>“서로 다른 SPACK의 재료를 교차해 [주제] 크로스 밀키트를 만들어줘.” 공통 질문 하나로 여러 재료를 꿴다.</p>
+    </div>
+  </div>
+
+  <h3>대량 작업 명령 (그대로 붙여넣기)</h3>
+  <ul>
+    <li>재료 충전(문① 대량): <code>창작컴파일러 배치 인제스트 v4 해줘. 대상 폴더: {경로}</code> → [[창작컴파일러_컬럼배치인제스트_워크플로우_v4|v4 정본]]</li>
+    <li>2차 재마이닝: [[_2차재마이닝_마스터명령]]</li>
+    <li>정비·보수(중복 격리·COMP 이관): [[_정비보수_마스터명령]]</li>
+  </ul>
+
+  <h3>건강 확인 ([[_계기판]])</h3>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>지표</th><th>건강선</th><th>경고 시 조치</th></tr></thead>
+    <tbody>
+      <tr><td>재료 다양성</td><td>≥ 3종</td><td>비프레임 유형 재마이닝</td></tr>
+      <tr><td>재사용률</td><td>≥ 20%</td><td>요리(문②) 시작</td></tr>
+      <tr><td>교차율</td><td>≥ 30%</td><td>크로스 밀키트 가동</td></tr>
+      <tr><td>아카이브 후보</td><td>—</td><td>참조 0 재료 수동 정리</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2 id="s5"><span class="num">5</span>관련 스킬 · 명령 정리</h2>
+
+  <h3>이 WIKI 전용 슬래시 명령 (정본 <code>_COMMANDS/</code>)</h3>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>명령</th><th>무엇을 하나</th><th>트리거</th></tr></thead>
+    <tbody>
+      <tr><td><code>/컴파일러충전</code></td><td>문① 재료 투입 — 컬럼 폴더를 재료·밀키트로 배치 인제스트 (v4)</td><td>창작컴파일러 배치 인제스트 v4 해줘</td></tr>
+      <tr><td><code>/컴파일러초안</code></td><td>문② 요리 주문 — 재료·밀키트로 1,500자 컬럼 초안 생성</td><td><code>/컴파일러초안 [KIT명] [편수]</code></td></tr>
+      <tr><td><code>/컴파일러10배치연속</code></td><td>1500자 초안 배치를 10회 순차 실행</td><td>중단 질문 없이 연속</td></tr>
+      <tr><td><code>/컴파일러충전10배치연속</code></td><td>재료 충전을 10배치 연속(미포화 계열 쿼터)</td><td>축포화 방지 층</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>재사용 가능한 스킬 (볼트 실존)</h3>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>스킬</th><th>언제</th><th>호출</th></tr></thead>
+    <tbody>
+      <tr><td><code>html-pdf-pipeline</code></td><td>문서 → HTML → PDF(긴 한 장/A4)</td><td>문서→HTML→PDF 해줘</td></tr>
+      <tr><td><code>design-artifact</code> / <code>html</code> (+plan/diagram)</td><td>HTML 보고서·계획·도해 시각 설계</td><td>이 노트를 html로 등</td></tr>
+      <tr><td><code>bookforge</code> / <code>조판</code></td><td>완성 원고 → 상용 품질 전자책 PDF</td><td><code>/조판 &lt;원고&gt;</code></td></tr>
+      <tr><td><code>leadership-facebook-column</code></td><td>1,300자 리더십 페북 칼럼 초안</td><td>리더십 컬럼 요청</td></tr>
+      <tr><td><code>컬럼시각화</code></td><td>컬럼 1편을 공개 URL 시각화로</td><td><code>/컬럼시각화 &lt;파일&gt;</code></td></tr>
+      <tr><td><code>흑백변호사</code></td><td>컬럼 1편을 두 변호사 대결극으로</td><td><code>/흑백변호사 &lt;파일&gt;</code></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="callout warn">구분 주의 — <code>/법창작컴파일러</code>는 <b>법률 도메인 별도 라인</b>이다(<code>_WIKI_법률지식</code>). 이 WIKI(인문·비즈니스 창작)와 이름만 비슷하고 계보가 다르다.</div>
+
+  <h2 id="s6"><span class="num">6</span>한 줄 결론</h2>
+  <blockquote><p>이 폴더를 잘 쓴다는 것은 <b>재료를 많이 넣는 것이 아니라, 유형별로 잘 차려두고(팬트리) 미리 조합해(밀키트) 두었다가, 주문이 오면 빠르게 요리(초안)하는 흐름을 도는 것</b>이다. 그 흐름의 건강은 [[_계기판]]이 알려주고, 장부는 스크립트가 지킨다. 사람은 무엇을 낼지 정하고, 요리하면 된다.</p></blockquote>
+
+  <hr>
+  <h3>파일 지도 (어디에 뭐가 있나)</h3>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>찾는 것</th><th>위치</th></tr></thead>
+    <tbody>
+      <tr><td>시작·주문</td><td>[[_주문서]]</td></tr>
+      <tr><td>구역 지도</td><td>[[_구역안내]]</td></tr>
+      <tr><td>건강 지표</td><td>[[_계기판]]</td></tr>
+      <tr><td>운영규칙 정본</td><td>[[CLAUDE]] (v3)</td></tr>
+      <tr><td>빠른 온보딩</td><td>[[_시작하기]]</td></tr>
+      <tr><td>상세 가이드</td><td>[[창작컴파일러_사용설명서_20260719]] · [[위키_창작컴파일_사용방법_20260719]]</td></tr>
+      <tr><td>배치 인제스트 정본</td><td>[[창작컴파일러_컬럼배치인제스트_워크플로우_v4]]</td></tr>
+      <tr><td>인덱스 생성기</td><td><code>_index_generator.py</code> · 검사 도구 <code>_cc_tools/</code></td></tr>
+      <tr><td>완성 컬럼 정본</td><td><code>_WIKI_인문비즈니스/90_archive/column/04_창작컴파일러/1500자컬럼/</code></td></tr>
+      <tr><td>개편 이력</td><td><code>70_lab/LAB-2026*</code> · [[log]]</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <footer>
+    _WIKI_창작컴파일러 · 사용방법 총정리 · 2026-10-17 · 원본 노트 <code>70_lab/사용방법_20261017.md</code>
+  </footer>
+</div>
+</body>
+</html>
