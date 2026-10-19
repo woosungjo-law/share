@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>빠른 결정은 민첩함인가 성급함인가 · Lead Read 3분 브리핑</title>
+<style>
+  :root{
+    --ink:#1b1a16; --sub:#57514a; --line:#e4dfd4; --bg:#faf8f4; --card:#fff;
+    --accent:#1e5a4c; --accent-soft:#eaf2ee; --warm:#8a5a26; --warm-soft:#f8f1e6;
+    --mark:#9c3f2e; --ok:#2f5d50; --ok-soft:#ecf3f0;
+    --closing-bg:#1b1a16; --closing-fg:#f4f1ea; --on-accent:#fff;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --ink:#e9e7e2; --sub:#a9a49b; --line:#333944; --bg:#14171d; --card:#1b1f26;
+      --accent:#8fc3a8; --accent-soft:#16241e; --warm:#d9a066; --warm-soft:#2a231a;
+      --mark:#e08a72; --ok:#8fc3ae; --ok-soft:#17261f;
+      --closing-bg:#20242d; --closing-fg:#f0ede6; --on-accent:#14171d;
+    }
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Noto Sans KR","Pretendard","Malgun Gothic",sans-serif;
+    line-height:1.85;word-break:keep-all;}
+  a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px;}
+  .wrap{max-width:760px;margin:0 auto;padding:44px 20px 64px;}
+  header{border-bottom:3px solid var(--ink);padding-bottom:20px;margin-bottom:30px;}
+  .kicker{font-size:12.5px;letter-spacing:.16em;color:var(--accent);font-weight:700;margin-bottom:12px;}
+  h1{font-size:29px;line-height:1.42;margin:0 0 10px;font-weight:800;}
+  .lede{font-size:16px;color:var(--sub);margin:0;}
+  main section{margin:40px 0;}
+  h2{font-size:20px;font-weight:800;margin:0 0 14px;padding-left:12px;border-left:5px solid var(--accent);line-height:1.5;}
+  h3{font-size:15.5px;font-weight:800;margin:0 0 8px;line-height:1.5;}
+  p{margin:0 0 16px;font-size:16px;}
+  b{font-weight:700;}
+  .leadbox{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--accent);
+    border-radius:12px;padding:18px 20px;margin:18px 0;}
+  .leadbox .lb-label{font-size:12.5px;letter-spacing:.1em;font-weight:800;color:var(--accent);margin:0 0 6px;}
+  .leadbox .lb-q{font-size:16.5px;font-weight:700;margin:0 0 14px;}
+  .leadbox .lb-a{font-size:16.5px;font-weight:800;margin:0;line-height:1.6;}
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0;}
+  @media(max-width:640px){.duo{grid-template-columns:1fr;}}
+  .duo>div{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--card);}
+  .duo .t-a{background:var(--accent-soft);} .duo .t-b{background:var(--warm-soft);}
+  .duo .tag{font-size:12.5px;font-weight:800;letter-spacing:.08em;margin-bottom:6px;}
+  .t-a .tag{color:var(--accent);} .t-b .tag{color:var(--warm);}
+  .duo p{font-size:14.8px;margin:0 0 8px;color:var(--ink);}
+  .clash{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--mark);
+    border-radius:12px;padding:20px 22px;margin:22px 0;}
+  .clash p{font-size:15.2px;margin:0 0 10px;color:var(--ink);}
+  .clash p:last-child{margin-bottom:0;}
+  .timeline{position:relative;margin:20px 0;padding-left:8px;}
+  .timeline .tl{position:relative;margin:0 0 18px;padding:0 0 0 30px;border-left:3px solid var(--line);}
+  .timeline .tl:last-child{border-left-color:transparent;margin-bottom:0;}
+  .timeline .tl::before{content:"";position:absolute;left:-9px;top:5px;width:13px;height:13px;border-radius:50%;
+    background:var(--accent);box-shadow:0 0 0 3px var(--bg);}
+  .timeline .tl .tl-date{font-size:12.5px;font-weight:800;color:var(--accent);letter-spacing:.04em;}
+  .timeline .tl p{font-size:15px;margin:4px 0 0;}
+  .cite{font-size:13.8px;color:var(--sub);background:var(--accent-soft);border-radius:8px;padding:10px 14px;margin:12px 0 0;}
+  .cite.w{background:var(--warm-soft);}
+  .steps{counter-reset:s;margin:20px 0;}
+  .steps .st{counter-increment:s;background:var(--card);border:1px solid var(--line);
+    border-radius:12px;padding:16px 18px 16px 54px;margin-bottom:12px;position:relative;}
+  .steps .st::before{content:counter(s);position:absolute;left:16px;top:14px;width:26px;height:26px;
+    border-radius:50%;background:var(--accent);color:var(--on-accent);font-weight:800;font-size:14px;
+    display:flex;align-items:center;justify-content:center;}
+  .steps p{font-size:15px;margin:0;color:var(--ink);}
+  details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:14px 0;}
+  summary{font-size:15px;font-weight:700;cursor:pointer;color:var(--accent);}
+  details li{font-size:14.5px;margin-bottom:8px;}
+  details ul{margin:12px 0 0;padding-left:20px;}
+  .ask{background:var(--accent-soft);border-radius:12px;padding:20px 22px;margin:22px 0;}
+  .ask ol{margin:0;padding-left:22px;}
+  .ask li{font-size:15.5px;margin-bottom:9px;}
+  .ask li:last-child{margin-bottom:0;}
+  .closing{background:var(--closing-bg);color:var(--closing-fg);border-radius:14px;padding:26px;margin:36px 0 0;}
+  .closing h2{color:var(--closing-fg);border-left-color:var(--mark);}
+  .closing p{font-size:15.4px;margin-bottom:0;}
+  footer{margin-top:38px;padding-top:16px;border-top:1px solid var(--line);font-size:13.5px;color:var(--sub);text-align:center;}
+  .author-credit{margin:8px 0 0;font-size:13.5px;color:var(--sub);}
+  @media(max-width:480px){
+    h1{font-size:24px;}
+    .wrap{padding:32px 16px 52px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Lead Read · 3분 브리핑 · 속도와검증</div>
+  <h1>빠른 결정은 민첩함인가 성급함인가</h1>
+  <p class="lede">속도가 경쟁력이 된 시대에 조직은 빠른 결정을 칭찬합니다. 회의가 짧고, 승인 단계가 적고, 시장의 변화에 먼저 반응하는 팀은 민첩해 보입니다. 하지만 빠르다는 말에는 두 가지가 섞여 있습니다. 필요한 정보를 미리 준비해 지연 없이 판단하는 빠름과, 불확실성을 확인할 시간을 아끼는 성급함입니다.</p>
+</header>
+
+<main>
+
+<section>
+  <h2>왜 지금 이 문제인가</h2>
+  <p>결과가 좋으면 두 빠름을 구분하기 어렵고, 사고가 나면 둘 다 "판단 착오"라는 말로 뭉뚱그려집니다. 리더가 이동해야 할 질문은 <b>"얼마나 빨리 결정했는가"에서 "무엇을 미리 준비했기에 빨랐고, 무엇을 생략해서 위험했는가"</b>입니다. 속도만 칭찬하면 조직은 준비의 내용을 기록하지 않고 결과의 우연을 실력으로 착각합니다.</p>
+  <div class="leadbox">
+    <p class="lb-label">핵심 질문</p>
+    <p class="lb-q">빠른 결정은 준비된 민첩함인가, 확인을 생략한 성급함인가.</p>
+    <p class="lb-label">한 문장 결론</p>
+    <p class="lb-a">민첩함은 속도와 숙고를 반대말로 만들지 않는 설계다. 빠른 결정의 품질은 시계가 아니라 되돌릴 수 있는 학습 경로로 측정된다.</p>
+  </div>
+</section>
+
+<section>
+  <h2>두 견해가 갈리는 지점</h2>
+  <div class="duo">
+    <div class="t-a">
+      <div class="tag">프레임 — 고속 환경의 의사결정</div>
+      <h3>Bourgeois·Eisenhardt — 속도의 조건 (1988)</h3>
+      <p>경영학자 레온 버주와 캐슬린 아이젠하트는 고속 환경의 전략적 의사결정이 느린 합의보다 반드시 열등하지 않다고 봤습니다. 불확실성이 큰 산업에서는 시장·기술·경쟁자의 움직임을 <b>기다리기만 할 수 없기</b> 때문입니다.</p>
+      <p>빠른 팀은 한 사람의 직관에만 의존하지 않습니다. 여러 대안을 동시에 비교하고, 작은 실험으로 정보를 얻으며, 결정의 기준을 명확히 합니다. 속도는 <b>생각을 덜 하는 결과가 아니라 우선순위와 정보 처리 구조를 미리 설계한 결과</b>일 수 있습니다. 중요한 것은 결정을 빨리 내리는 것과 결정을 되돌릴 수 있게 만드는 것을 함께 관리하는 일입니다.</p>
+    </div>
+    <div class="t-b">
+      <div class="tag">반증 — 시간의 기아</div>
+      <h3>Perlow 외 — 시간 압박의 함정 (2002)</h3>
+      <p>조직학자 레슬리 펄로와 동료들은 빠른 의사결정이 시간의 압박과 조직의 리듬 속에서 만들어지는 함정을 보여줍니다. 일정이 촘촘해지면 구성원은 <b>중요한 논의를 다음 단계로 미루고, 회의 사이의 짧은 틈에서 결정을 봉합</b>합니다.</p>
+      <p>속도를 높이려던 장치가 오히려 재작업과 조정 비용을 키우는 시간 기아의 함정이 될 수 있습니다. 문제는 속도 자체가 아니라 <b>시간의 배치</b>입니다. 결정에 필요한 숙고 시간을 확보하지 않고 실행 시간만 압축하면, 조직은 빠르게 움직이는 것이 아니라 같은 문제를 더 자주 되풀이합니다.</p>
+    </div>
+  </div>
+  <p class="cite">프레임: Bourgeois·Eisenhardt (1988), 고속 환경의 전략적 의사결정 · 반증: Perlow·Hadley·Ng (2002), 시간 기아와 업무 시간의 사회학</p>
+  <div class="clash">
+    <h3>갈리는 지점 — 속도는 어디서 자원이 되는가</h3>
+    <p>프레임은 <b>선택지·정보·실험의 구조</b>가 있으면 속도가 불확실성에 대응하는 자원이 될 수 있다고 봅니다. "결정을 늦추는 것은 기회를 잃는 일"이라는 명제는, 되돌릴 수 없는 판단과 검증되지 않은 가정이 누적되는 순간 깨집니다.</p>
+    <p>반증은 <b>시간 압박이 논의를 잘게 쪼개고 재작업을 숨길 수 있다</b>고 봅니다. 다만 "충분히 논의한 뒤 결정해야 한다"는 명제도, 정보가 계속 변하는데 기준과 실험 없이 회의를 연장하는 순간 무너집니다.</p>
+  </div>
+</section>
+
+<section>
+  <h2>실제 사례 — 인텔 펜티엄 FDIV 결함</h2>
+  <p>1994년, 인텔의 펜티엄 프로세서에서 부동소수점 나눗셈 오류가 문제가 되었습니다. 초기 칩의 특정 나눗셈 계산에서 드물지만 재현 가능한 오류가 발견되었고, 이 사건은 속도와 검증의 긴장을 보여주는 공개 사례가 됐습니다.</p>
+  <div class="timeline">
+    <div class="tl">
+      <div class="tl-date">초기 판단</div>
+      <p>인텔은 처음에는 오류의 실제 발생 빈도를 근거로 일반 사용자에게 영향이 제한적이라고 판단했습니다. 기술적 확률로 계산한 판단이었습니다.</p>
+    </div>
+    <div class="tl">
+      <div class="tl-date">공개 논쟁</div>
+      <p>공개 논쟁과 고객 요구가 커지면서, 고객이 중요하게 여긴 것은 오류가 얼마나 자주 발생하는지뿐 아니라 <b>제조사가 어떤 종류의 위험을 고객에게 떠넘길지</b>라는 점이 드러났습니다.</p>
+    </div>
+    <div class="tl">
+      <div class="tl-date">1994년 12월</div>
+      <p>인텔은 모든 고객에게 프로세서 교체를 제공하겠다고 발표했습니다. 기술적 확률과 신뢰의 확률이 달랐다는 사실을 정책으로 인정한 결정이었습니다.</p>
+    </div>
+  </div>
+  <p>이 사건을 단순히 "인텔이 처음에 틀렸다"라고만 읽으면 의사결정의 조건이 사라집니다. 초기 판단에는 실제 사용 빈도와 성능·공급 일정에 관한 가정이 있었습니다. 다만 <b>결함을 대하는 기준과 고객 관계의 지평</b>이 바뀌면서 교체 정책이 넓어졌습니다.</p>
+  <p>빠른 판단은 시장의 반응을 읽고 <b>되돌릴 수 있는 조치를 준비했을 때만</b> 민첩함으로 남습니다. 성급함과 민첩함을 가르는 것은 결정 당시의 자신감이 아니라, 반대 신호가 나왔을 때 판단을 다시 열 수 있는가입니다.</p>
+  <p class="cite">인텔의 펜티엄 프로세서 전면 교체 발표(1994년 12월)와 기술 설명 자료 — FDIV 결함의 발생 조건과 교체 정책 범위를 확인한 공식 기록</p>
+</section>
+
+<section>
+  <h2>실무 적용 — 가역성으로 속도를 나누기</h2>
+  <div class="steps">
+    <div class="st">
+      <p><b>가역성 구분</b> — 되돌릴 수 있는 가격 실험과 되돌리기 어려운 안전·품질·신뢰 판단은 같은 승인 속도를 요구하지 않습니다.</p>
+    </div>
+    <div class="st">
+      <p><b>가정 분리</b> — 결정 전에 틀리면 안 되는 가정과 틀려도 회복할 수 있는 가정을 나눕니다.</p>
+    </div>
+    <div class="st">
+      <p><b>신호 기록</b> — 짧은 시간 안에 확인할 수 있는 선행 신호와 늦게 나타나는 부작용을 함께 기록합니다.</p>
+    </div>
+    <div class="st">
+      <p><b>재검토 약속</b> — 결정 이후 언제 다시 판단할지와 누가 중단을 제안할 수 있는지를 정합니다.</p>
+    </div>
+  </div>
+  <p>회의에서는 "지금 결정할 것"과 "지금 확인할 것"을 따로 적습니다. 결정할 수 있는 것은 책임자와 기한을 붙이고, 확인할 것은 최소 실험과 중단 기준을 붙입니다. 논의가 길어지는 이유가 <b>정보 부족인지 책임 회피인지</b>도 구분해야 합니다. 빠른 팀은 회의를 줄이는 팀이 아니라, 반복해서 같은 질문을 하지 않도록 판단의 전제와 재검토 조건을 기록하는 팀입니다. 결정문에 반대 시나리오와 재검토 날짜가 들어가면 속도는 기억을 잃지 않습니다.</p>
+</section>
+
+<section class="ask">
+  <h2>리더가 던질 질문</h2>
+  <ol>
+    <li>우리가 빠르게 내린 최근 결정 중, 되돌리기 어려운 판단은 무엇이었는가.</li>
+    <li>그 결정에는 틀리면 안 되는 가정과 재검토 날짜가 기록되어 있는가.</li>
+    <li>속도가 성과가 되었을 때 어떤 준비가 그것을 가능하게 했는지 기록하고 있는가.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>근거와 출처</h2>
+  <p class="cite">Bourgeois·Eisenhardt (1988) — 고속 환경의 의사결정 · Perlow·Hadley·Ng (2002) — 시간 기아의 구조 · 인텔 공식 기록 (1994) — 펜티엄 FDIV 결함과 전면 교체</p>
+  <details>
+    <summary>세 가지 출처 자세히 보기</summary>
+    <ul>
+      <li>Bourgeois와 Eisenhardt, "Strategic Decision Processes in High Velocity Environments" (1988) — 고속 환경의 마이크로컴퓨터 산업 네 사례를 비교해 속도와 정보 구조를 분석한 연구입니다.</li>
+      <li>Leslie A. Perlow, Constance N. Hadley, Eun E. K. Ng, "The Time Famine" (2002) — 시간 압박이 업무 리듬과 의사결정에 만드는 구조적 함정을 다룬 논문입니다.</li>
+      <li>인텔의 1994년 12월 교체 발표와 펜티엄 FDIV 결함에 관한 기술 설명 — 결함의 발생 조건과 전면 교체 정책을 확인한 회사 공식 기록입니다.</li>
+    </ul>
+  </details>
+  <details>
+    <summary>가다머의 "해석과 지평"으로 보기</summary>
+    <ul>
+      <li>철학자 한스게오르크 가다머의 관점에서 판단은 현재의 정보만 계산하는 일이 아닙니다. 사람은 자신이 가진 전제와 경험을 통해 사건을 읽고, 다른 지평과 만날 때 자신의 해석을 수정합니다.</li>
+      <li>빠른 결정은 전제를 없애지 않습니다. 오히려 시간이 짧을수록 <b>어떤 전제가 보이지 않게 작동하는지 더 명시</b>해야 합니다.</li>
+      <li>좋은 결정은 한쪽 지평을 정답으로 선언하는 대신, 서로 다른 해석이 어떤 조건에서 바뀌는지 대화의 문턱을 만듭니다. 기술팀의 확률 해석과 고객의 신뢰 해석이 처음부터 같지 않았던 사례가 그 본보기입니다.</li>
+    </ul>
+  </details>
+</section>
+
+<section class="closing">
+  <h2>한 줄로</h2>
+  <p>빠른 결정은 민첩함인가 성급함인가 — 민첩한 조직은 항상 먼저 결정하는 조직이 아니라 무엇을 빨리 결정해 되고 무엇은 늦더라도 확인해야 하는지 구분하는 조직이다. 속도가 성과를 만들었다면 어떤 준비와 기준이 그것을 가능하게 했는지 기록하고, 속도가 사고를 만들었다면 <b>무엇을 생략했는지</b> 공개하라. 빠른 결정의 품질은 시계가 아니라 되돌릴 수 있는 학습 경로로 측정된다.</p>
+</section>
+
+</main>
+
+<footer>
+  Lead Read
+  <p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+
+</div>
+</body>
+</html>
