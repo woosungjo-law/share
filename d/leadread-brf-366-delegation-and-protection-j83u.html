@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>권한 위임은 자유인가 책임 전가인가 · Lead Read 3분 브리핑</title>
+<style>
+  :root{
+    --ink:#1b1a16; --sub:#57514a; --line:#e4dfd4; --bg:#faf8f4; --card:#fff;
+    --accent:#1e5a4c; --accent-soft:#eaf2ee; --warm:#8a5a26; --warm-soft:#f8f1e6;
+    --mark:#9c3f2e; --ok:#2f5d50; --ok-soft:#ecf3f0;
+    --closing-bg:#1b1a16; --closing-fg:#f4f1ea; --on-accent:#fff;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --ink:#e9e7e2; --sub:#a9a49b; --line:#333944; --bg:#14171d; --card:#1b1f26;
+      --accent:#8fc3a8; --accent-soft:#16241e; --warm:#d9a066; --warm-soft:#2a231a;
+      --mark:#e08a72; --ok:#8fc3ae; --ok-soft:#17261f;
+      --closing-bg:#20242d; --closing-fg:#f0ede6; --on-accent:#14171d;
+    }
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Noto Sans KR","Pretendard","Malgun Gothic",sans-serif;
+    line-height:1.85;word-break:keep-all;}
+  a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px;}
+  .wrap{max-width:760px;margin:0 auto;padding:44px 20px 64px;}
+  header{border-bottom:3px solid var(--ink);padding-bottom:20px;margin-bottom:30px;}
+  .kicker{font-size:12.5px;letter-spacing:.16em;color:var(--accent);font-weight:700;margin-bottom:12px;}
+  h1{font-size:29px;line-height:1.42;margin:0 0 10px;font-weight:800;}
+  .lede{font-size:16px;color:var(--sub);margin:0;}
+  main section{margin:40px 0;}
+  h2{font-size:20px;font-weight:800;margin:0 0 14px;padding-left:12px;border-left:5px solid var(--accent);line-height:1.5;}
+  h3{font-size:15.5px;font-weight:800;margin:0 0 8px;line-height:1.5;}
+  p{margin:0 0 16px;font-size:16px;}
+  b{font-weight:700;}
+  .leadbox{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--accent);
+    border-radius:12px;padding:18px 20px;margin:18px 0;}
+  .leadbox .lb-label{font-size:12.5px;letter-spacing:.1em;font-weight:800;color:var(--accent);margin:0 0 6px;}
+  .leadbox .lb-q{font-size:16.5px;font-weight:700;margin:0 0 14px;}
+  .leadbox .lb-a{font-size:16.5px;font-weight:800;margin:0;line-height:1.6;}
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0;}
+  @media(max-width:640px){.duo{grid-template-columns:1fr;}}
+  .duo>div{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--card);}
+  .duo .t-a{background:var(--accent-soft);} .duo .t-b{background:var(--warm-soft);}
+  .duo .tag{font-size:12.5px;font-weight:800;letter-spacing:.08em;margin-bottom:6px;}
+  .t-a .tag{color:var(--accent);} .t-b .tag{color:var(--warm);}
+  .duo p{font-size:14.8px;margin:0 0 8px;color:var(--ink);}
+  .clash{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--mark);
+    border-radius:12px;padding:20px 22px;margin:22px 0;}
+  .clash p{font-size:15.2px;margin:0 0 10px;color:var(--ink);}
+  .clash p:last-child{margin-bottom:0;}
+  .timeline{position:relative;margin:20px 0;padding-left:8px;}
+  .timeline .tl{position:relative;margin:0 0 18px;padding:0 0 0 30px;border-left:3px solid var(--line);}
+  .timeline .tl:last-child{border-left-color:transparent;margin-bottom:0;}
+  .timeline .tl::before{content:"";position:absolute;left:-9px;top:5px;width:13px;height:13px;border-radius:50%;
+    background:var(--accent);box-shadow:0 0 0 3px var(--bg);}
+  .timeline .tl .tl-date{font-size:12.5px;font-weight:800;color:var(--accent);letter-spacing:.04em;}
+  .timeline .tl p{font-size:15px;margin:4px 0 0;}
+  .cite{font-size:13.8px;color:var(--sub);background:var(--accent-soft);border-radius:8px;padding:10px 14px;margin:12px 0 0;}
+  .cite.w{background:var(--warm-soft);}
+  .steps{counter-reset:s;margin:20px 0;}
+  .steps .st{counter-increment:s;background:var(--card);border:1px solid var(--line);
+    border-radius:12px;padding:16px 18px 16px 54px;margin-bottom:12px;position:relative;}
+  .steps .st::before{content:counter(s);position:absolute;left:16px;top:14px;width:26px;height:26px;
+    border-radius:50%;background:var(--accent);color:var(--on-accent);font-weight:800;font-size:14px;
+    display:flex;align-items:center;justify-content:center;}
+  .steps p{font-size:15px;margin:0;color:var(--ink);}
+  details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:14px 0;}
+  summary{font-size:15px;font-weight:700;cursor:pointer;color:var(--accent);}
+  details li{font-size:14.5px;margin-bottom:8px;}
+  details ul{margin:12px 0 0;padding-left:20px;}
+  .ask{background:var(--accent-soft);border-radius:12px;padding:20px 22px;margin:22px 0;}
+  .ask ol{margin:0;padding-left:22px;}
+  .ask li{font-size:15.5px;margin-bottom:9px;}
+  .ask li:last-child{margin-bottom:0;}
+  .closing{background:var(--closing-bg);color:var(--closing-fg);border-radius:14px;padding:26px;margin:36px 0 0;}
+  .closing h2{color:var(--closing-fg);border-left-color:var(--mark);}
+  .closing p{font-size:15.4px;margin-bottom:0;}
+  footer{margin-top:38px;padding-top:16px;border-top:1px solid var(--line);font-size:13.5px;color:var(--sub);text-align:center;}
+  .author-credit{margin:8px 0 0;font-size:13.5px;color:var(--sub);}
+  @media(max-width:480px){
+    h1{font-size:24px;}
+    .wrap{padding:32px 16px 52px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Lead Read · 3분 브리핑 · 위임과보호</div>
+  <h1>권한 위임은 자유인가 책임 전가인가</h1>
+  <p class="lede">조직이 수평화되면 사람은 더 자유롭게 일할 것처럼 보입니다. 상사의 승인을 기다리지 않고 판단하고, 고객 문제를 현장에서 해결하며, 자신의 업무를 스스로 설계할 수 있기 때문입니다. 그러나 권한이 사라진 자리에 책임과 불확실성만 남으면 자유는 부담이 됩니다. "스스로 결정하라"는 말이 자원·정보·보호 없이 결과만 떠안으라는 뜻으로 바뀔 수 있습니다.</p>
+</header>
+
+<main>
+
+<section>
+  <h2>왜 지금 이 문제인가</h2>
+  <p>리더가 이동해야 할 질문은 "얼마나 많은 권한을 아래로 내릴 것인가"가 아니라 <b>"결정할 권한과 감당할 조건을 함께 어떻게 설계할 것인가"</b>입니다. 위임은 직급을 없애는 선언이 아니라, 통제와 책임의 위치를 다시 배치하는 작업입니다. 권한을 주었다고 말하면서 실패를 처벌하면 구성원은 다시 승인과 안전한 선택을 찾습니다.</p>
+  <div class="leadbox">
+    <p class="lb-label">핵심 질문</p>
+    <p class="lb-q">권한 위임은 통제를 없애는 일인가, 통제와 책임의 위치를 다시 설계하는 일인가.</p>
+    <p class="lb-label">한 문장 결론</p>
+    <p class="lb-a">위임의 품질은 자유의 선언이 아니라 결정·지원·책임의 연결로 측정해야 한다. 자유는 혼자 떠맡는 의무가 아니라 함께 수정할 수 있는 능력이다.</p>
+  </div>
+</section>
+
+<section>
+  <h2>두 견해가 갈리는 지점</h2>
+  <div class="duo">
+    <div class="t-a">
+      <div class="tag">프레임 — 임파워먼트의 조건</div>
+      <h3>Conger·Kanungo — 심리적 과정 (1988)</h3>
+      <p>경영학자 제이 컨거와 라빈드라 카누고는 임파워먼트를 단순히 권한을 나누는 행정 조치로 보지 않습니다. 구성원이 <b>자신의 일이 의미 있고, 일을 해낼 능력이 있으며, 결과에 영향을 줄 수 있고, 선택할 자율성이 있다고 느끼는 심리적 상태</b>가 중요합니다.</p>
+      <p>관리자가 통제권 일부를 포기한다고 해서 구성원이 자동으로 임파워되는 것은 아닙니다. 정보·자원·지원·자기효능감이 함께 생겨야 권한 위임이 실제 행동으로 이어집니다. 권한을 주었다고 말하면서 <b>실패를 처벌</b>하면 구성원은 다시 승인과 안전한 선택을 찾습니다.</p>
+    </div>
+    <div class="t-b">
+      <div class="tag">반증 — 네 차원의 균형</div>
+      <h3>Spreitzer — 임파워먼트의 측정 (1995)</h3>
+      <p>경영학자 그레천 슈프라이처는 심리적 임파워먼트를 <b>의미성, 역량감, 자기결정성, 영향력</b>의 네 차원으로 측정합니다. 네 요소 중 하나만 높아도 자유로운 조직이 되지 않습니다.</p>
+      <p>의미를 느끼지만 영향력이 없으면 냉소가 생기고, 자율성은 있어도 역량과 자원이 없으면 불안이 커집니다. 임파워먼트는 직급의 반대말이 아니라 <b>자신이 하는 일이 중요하고, 할 수 있으며, 선택할 수 있고, 결과를 바꿀 수 있다는 경험의 결합</b>입니다. 위임은 직무기술서보다 일상적 의사결정의 구조에서 드러납니다.</p>
+    </div>
+  </div>
+  <p class="cite">프레임: Conger·Kanungo (1988), 임파워먼트의 심리적 과정 · 반증: Spreitzer (1995), 의미성·역량감·자기결정성·영향력의 균형</p>
+  <div class="clash">
+    <h3>갈리는 지점 — 무엇이 위임을 실제 자유로 만드는가</h3>
+    <p>프레임은 <b>권한을 심리적 역량과 정보·자원의 공급으로 연결</b>할 것을 요구합니다. "상사를 줄이면 구성원이 자유로워진다"는 명제는, 자원과 보호가 사라져 결과만 개인이 떠안는 순간 깨집니다.</p>
+    <p>반증은 <b>네 차원의 균형</b>을 요구합니다. 다만 "모든 결정은 위에서 통제해야 한다"는 명제도, 현장의 정보와 책임감을 약화시켜 작은 문제를 위로 올리는 순간 무너집니다.</p>
+  </div>
+</section>
+
+<section>
+  <h2>실제 사례 — 자포스의 홀라크라시 전환</h2>
+  <p>온라인 신발 판매 회사 자포스의 홀라크라시 전환은 이 긴장을 보여주는 공개 사례입니다. 자포스는 조직을 전통적 직급과 부서 중심에서 <b>역할·서클·거버넌스 회의 중심</b>으로 바꾸는 홀라크라시를 도입했습니다.</p>
+  <div class="timeline">
+    <div class="tl">
+      <div class="tl-date">역할 중심 재편</div>
+      <p>회사의 공개 설명은 역할이 구체화되고 의사결정이 현장에 가까워지는 장점을 강조했습니다.</p>
+    </div>
+    <div class="tl">
+      <div class="tl-date">전환기의 부담</div>
+      <p>직원은 동시에 역할의 중복과 경력 경로의 불확실성, 자기관리의 부담을 경험해야 했습니다.</p>
+    </div>
+    <div class="tl">
+      <div class="tl-date">2015년 선택 요구</div>
+      <p>직원들에게 새로운 운영 방식에 적응할지 선택하라는 메시지가 보내졌습니다. 적응하지 않는 사람에게 퇴직 선택을 제시한 정책은 <b>자유와 압박이 같은 문장 안에</b> 들어갈 수 있음을 보여줍니다.</p>
+    </div>
+  </div>
+  <p>이 사례를 수평화의 성공이나 실패로만 판정하면 핵심이 사라집니다. 직급을 줄인 뒤에도 <b>누가 예산을 배정하고, 역할 충돌을 해결하고, 성과를 평가하며, 갈등 때 구성원을 보호하는지</b> 정하지 않으면 권한은 분산된 것처럼 보이면서 책임은 개인에게 집중됩니다.</p>
+  <p>전환기에 특히 중요한 것은 직급이 사라진 뒤에도 <b>비공식 권력</b>이 남는다는 사실입니다. 오래 일한 사람의 발언권, 특정 고객과의 친분, 시스템을 먼저 배운 사람의 정보 우위가 새로운 서열이 될 수 있습니다. 홀라크라시가 던진 질문은 "상사가 없어도 되는가"가 아니라, <b>"상사가 하던 조정·보호·우선순위 설정 기능을 어떤 투명한 절차로 대체할 것인가"</b>입니다. 권한 위임은 조직도를 바꾸는 작업이 아니라 영향력의 흐름을 보이게 만드는 작업입니다.</p>
+  <p class="cite">자포스의 홀라크라시 전환 공식 자료와 2014~2015년 직원 전환 안내 — 역할·서클·거버넌스 회의와 전환 절차를 확인한 회사 공개 기록</p>
+</section>
+
+<section>
+  <h2>실무 적용 — 위임의 네 조건 점검</h2>
+  <div class="steps">
+    <div class="st">
+      <p><b>정보와 예산</b> — 이 결정에 필요한 정보와 예산이 실제 담당자에게 있는가.</p>
+    </div>
+    <div class="st">
+      <p><b>학습과 보호</b> — 실수했을 때 학습할 시간과 보호가 있는가.</p>
+    </div>
+    <div class="st">
+      <p><b>조정 절차</b> — 역할과 우선순위가 충돌하면 누가 조정하는가.</p>
+    </div>
+    <div class="st">
+      <p><b>거절 통로</b> — 구성원이 거절하거나 구조를 바꿔달라고 말할 통로가 있는가.</p>
+    </div>
+  </div>
+  <p>권한을 주고 보고서만 늘리면 자율성은 감시로 변합니다. 반대로 결과 기준과 경계가 전혀 없으면 자율성은 각자의 판단을 서로 충돌시킵니다. 위임 뒤에는 <b>결정의 흔적</b>도 필요합니다. 누가 어떤 정보를 바탕으로 선택했는지, 다른 선택지는 왜 보류했는지, 다시 판단할 조건은 무엇인지 남기면 구성원은 결과를 숨기지 않고 다음 판단을 개선할 수 있습니다. 기록은 자율성을 감시하는 족쇄가 아니라 <b>권한이 실제로 존재했다는 증거</b>가 됩니다.</p>
+</section>
+
+<section class="ask">
+  <h2>리더가 던질 질문</h2>
+  <ol>
+    <li>위임한 결정에 필요한 정보와 예산이 실제로 담당자 손에 있는가.</li>
+    <li>실수한 구성원에게 학습의 시간과 보호가 돌아가는가.</li>
+    <li>직급이 사라진 자리에서 비공식 권력이 어디에 있는지 점검해 본 적이 있는가.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>근거와 출처</h2>
+  <p class="cite">Conger·Kanungo (1988) — 임파워먼트의 심리적 과정 · Spreitzer (1995) — 임파워먼트의 네 차원 · 자포스 공식 자료 — 홀라크라시 전환</p>
+  <details>
+    <summary>세 가지 출처 자세히 보기</summary>
+    <ul>
+      <li>Jay A. Conger, Rabindra N. Kanungo, "The Empowerment Process" (1988) — 임파워먼트의 심리적 과정과 권한·정보·지원의 관계를 정리한 논문입니다.</li>
+      <li>Gretchen M. Spreitzer, "Psychological Empowerment in the Workplace" (1995) — 의미성·역량감·자기결정성·영향력의 네 차원을 측정·검증한 연구입니다.</li>
+      <li>자포스의 홀라크라시 전환 자료와 직원 안내(2014~2015) — 역할·서클·거버넌스 회의의 운영과 전환 절차를 확인한 회사 공개 기록입니다.</li>
+    </ul>
+  </details>
+  <details>
+    <summary>프롬의 "자유로부터의 도피"로 보기</summary>
+    <ul>
+      <li>철학자 에리히 프롬의 관점에서 자유는 선택지가 많아지는 기쁨만이 아니라 <b>결정의 책임과 불안을 견디는 조건</b>이기도 합니다.</li>
+      <li>권위가 약해지면 사람은 해방될 수 있지만, 동시에 무엇이 옳은지 판단하고 실패의 결과를 감당해야 합니다. 조직이 자율성을 말하면서 구성원을 고립시키면, 사람은 다시 강한 상사·규칙·숫자에 의존하고 싶어질 수 있습니다.</li>
+      <li>자유로운 조직은 권위를 없애는 조직이 아니라, <b>권위에 복종하지 않아도 서로의 판단을 지지하고 수정할 수 있는 관계와 절차</b>를 만드는 조직입니다.</li>
+    </ul>
+  </details>
+</section>
+
+<section class="closing">
+  <h2>한 줄로</h2>
+  <p>권한 위임은 자유인가 책임 전가인가 — 조직은 "주인이 되라"고 말하기 전에 주인이 감당해야 할 권리와 자원을 줘야 한다. 결정할 권한이 있다면 결정에 필요한 정보가 있어야 하고, 책임이 있다면 우선순위와 보호 절차가 있어야 한다. 좋은 위임은 <b>상사의 손을 놓는 일이 아니라, 서로의 판단을 연결하고 실패 뒤에도 다시 배울 수 있게 하는 구조</b>를 만드는 일이다.</p>
+</section>
+
+</main>
+
+<footer>
+  Lead Read
+  <p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+
+</div>
+</body>
+</html>
