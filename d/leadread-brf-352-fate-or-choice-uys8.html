@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>경로는 운명인가 선택인가 · Lead Read 3분 브리핑</title>
+<style>
+  :root{
+    --ink:#1b1a16; --sub:#57514a; --line:#e4dfd4; --bg:#faf8f4; --card:#fff;
+    --accent:#1e5a4c; --accent-soft:#eaf2ee; --warm:#8a5a26; --warm-soft:#f8f1e6;
+    --mark:#9c3f2e; --ok:#2f5d50; --ok-soft:#ecf3f0;
+    --closing-bg:#1b1a16; --closing-fg:#f4f1ea; --on-accent:#fff;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --ink:#e9e7e2; --sub:#a9a49b; --line:#333944; --bg:#14171d; --card:#1b1f26;
+      --accent:#8fc3a8; --accent-soft:#16241e; --warm:#d9a066; --warm-soft:#2a231a;
+      --mark:#e08a72; --ok:#8fc3ae; --ok-soft:#17261f;
+      --closing-bg:#20242d; --closing-fg:#f0ede6; --on-accent:#14171d;
+    }
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Noto Sans KR","Pretendard","Malgun Gothic",sans-serif;
+    line-height:1.85;word-break:keep-all;}
+  a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px;}
+  .wrap{max-width:760px;margin:0 auto;padding:44px 20px 64px;}
+  header{border-bottom:3px solid var(--ink);padding-bottom:20px;margin-bottom:30px;}
+  .kicker{font-size:12.5px;letter-spacing:.16em;color:var(--accent);font-weight:700;margin-bottom:12px;}
+  h1{font-size:29px;line-height:1.42;margin:0 0 10px;font-weight:800;}
+  .lede{font-size:16px;color:var(--sub);margin:0;}
+  main section{margin:40px 0;}
+  h2{font-size:20px;font-weight:800;margin:0 0 14px;padding-left:12px;border-left:5px solid var(--accent);line-height:1.5;}
+  h3{font-size:15.5px;font-weight:800;margin:0 0 8px;line-height:1.5;}
+  p{margin:0 0 16px;font-size:16px;}
+  b{font-weight:700;}
+  .leadbox{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--accent);
+    border-radius:12px;padding:18px 20px;margin:18px 0;}
+  .leadbox .lb-label{font-size:12.5px;letter-spacing:.1em;font-weight:800;color:var(--accent);margin:0 0 6px;}
+  .leadbox .lb-q{font-size:16.5px;font-weight:700;margin:0 0 14px;}
+  .leadbox .lb-a{font-size:16.5px;font-weight:800;margin:0;line-height:1.6;}
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0;}
+  @media(max-width:640px){.duo{grid-template-columns:1fr;}}
+  .duo>div{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--card);}
+  .duo .t-a{background:var(--accent-soft);} .duo .t-b{background:var(--warm-soft);}
+  .duo .tag{font-size:12.5px;font-weight:800;letter-spacing:.08em;margin-bottom:6px;}
+  .t-a .tag{color:var(--accent);} .t-b .tag{color:var(--warm);}
+  .duo p{font-size:14.8px;margin:0 0 8px;color:var(--ink);}
+  .clash{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--mark);
+    border-radius:12px;padding:20px 22px;margin:22px 0;}
+  .clash p{font-size:15.2px;margin:0 0 10px;color:var(--ink);}
+  .clash p:last-child{margin-bottom:0;}
+  .timeline{position:relative;margin:20px 0;padding-left:8px;}
+  .timeline .tl{position:relative;margin:0 0 18px;padding:0 0 0 30px;border-left:3px solid var(--line);}
+  .timeline .tl:last-child{border-left-color:transparent;margin-bottom:0;}
+  .timeline .tl::before{content:"";position:absolute;left:-9px;top:5px;width:13px;height:13px;border-radius:50%;
+    background:var(--accent);box-shadow:0 0 0 3px var(--bg);}
+  .timeline .tl .tl-date{font-size:12.5px;font-weight:800;color:var(--accent);letter-spacing:.04em;}
+  .timeline .tl p{font-size:15px;margin:4px 0 0;}
+  .cite{font-size:13.8px;color:var(--sub);background:var(--accent-soft);border-radius:8px;padding:10px 14px;margin:12px 0 0;}
+  .cite.w{background:var(--warm-soft);}
+  .steps{counter-reset:s;margin:20px 0;}
+  .steps .st{counter-increment:s;background:var(--card);border:1px solid var(--line);
+    border-radius:12px;padding:16px 18px 16px 54px;margin-bottom:12px;position:relative;}
+  .steps .st::before{content:counter(s);position:absolute;left:16px;top:14px;width:26px;height:26px;
+    border-radius:50%;background:var(--accent);color:var(--on-accent);font-weight:800;font-size:14px;
+    display:flex;align-items:center;justify-content:center;}
+  .steps p{font-size:15px;margin:0;color:var(--ink);}
+  details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:14px 0;}
+  summary{font-size:15px;font-weight:700;cursor:pointer;color:var(--accent);}
+  details li{font-size:14.5px;margin-bottom:8px;}
+  details ul{margin:12px 0 0;padding-left:20px;}
+  .ask{background:var(--accent-soft);border-radius:12px;padding:20px 22px;margin:22px 0;}
+  .ask ol{margin:0;padding-left:22px;}
+  .ask li{font-size:15.5px;margin-bottom:9px;}
+  .ask li:last-child{margin-bottom:0;}
+  .closing{background:var(--closing-bg);color:var(--closing-fg);border-radius:14px;padding:26px;margin:36px 0 0;}
+  .closing h2{color:var(--closing-fg);border-left-color:var(--mark);}
+  .closing p{font-size:15.4px;margin-bottom:0;}
+  footer{margin-top:38px;padding-top:16px;border-top:1px solid var(--line);font-size:13.5px;color:var(--sub);text-align:center;}
+  .author-credit{margin:8px 0 0;font-size:13.5px;color:var(--sub);}
+  @media(max-width:480px){
+    h1{font-size:24px;}
+    .wrap{padding:32px 16px 52px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Lead Read · 3분 브리핑 · 경로와실험</div>
+  <h1>경로는 운명인가 선택인가</h1>
+  <p class="lede">조직의 과거는 전략의 재료이면서 제약입니다. 오래 투자한 기술과 익숙한 고객, 반복해 온 성과 지표는 다음 결정을 빠르게 만듭니다. 다만 그 빠름이 다른 길을 보지 못하는 속도일 수도 있습니다. 반대로 과거와 단절하겠다는 선언만으로 새 경로가 만들어지는 것도 아닙니다.</p>
+</header>
+
+<main>
+
+<section>
+  <h2>왜 지금 이 문제인가</h2>
+  <p>강한 조직일수록 과거의 선택이 다음 선택의 조건이 됩니다. 잘해 왔기 때문에 또 그 일을 하고, 또 그 일을 하기 때문에 다른 가능성이 보이지 않습니다. 반대로 축적된 역량을 무시하고 새로운 길만 외치면, 이미 낸 비용과 길러 둔 사람들을 과소평가하게 됩니다. 전략의 질문은 "우리가 어디에서 왔는가"에 멈추지 않고 <b>"현재의 선택이 어떤 미래의 경로를 만들고 있는가"</b>로 이어져야 합니다.</p>
+  <div class="leadbox">
+    <p class="lb-label">핵심 질문</p>
+    <p class="lb-q">회사가 가고 있는 경로는 과거가 만든 운명인가, 우리가 계속하는 선택인가.</p>
+    <p class="lb-label">한 문장 결론</p>
+    <p class="lb-a">경로는 운명처럼 보이지만 선택의 결과가 축적된 것이고, 선택은 과거의 흔적 없이 시작할 수 없다. 미래는 과거와 단절하는 데서가 아니라, 과거의 자원을 새로운 약속에 연결하는 데서 열린다.</p>
+  </div>
+</section>
+
+<section>
+  <h2>두 견해가 갈리는 지점</h2>
+  <div class="duo">
+    <div class="t-a">
+      <div class="tag">프레임 — 잠금의 해부</div>
+      <h3>Sydow·Schreyögg·Koch — 경로는 굳는다 (2009)</h3>
+      <p>경영학자 요르크 자이도우, 게오르크 슈뢰그, 요헨 코흐는 2009년, 조직이 어떻게 하나의 길에 갇히는지를 <b>세 단계</b>로 나누어 설명했습니다.</p>
+      <p>처음에는 여러 선택지가 열려 있지만, 특정 선택이 반복되고 자원이 그 선택에 맞춰 쌓이면 경로가 강화됩니다. 이후 <b>잠금 단계</b>에서는 대안이 존재해도 전환 비용·학습 관성·관계의 기대가 선택을 좁힙니다. 과거의 성공이 현재의 능력을 자동으로 보장하지 않는다는 것이 이 틀의 핵심입니다.</p>
+    </div>
+    <div class="t-b">
+      <div class="tag">반증 — 경로의 창조</div>
+      <h3>Garud·Kumaraswamy·Karnøe — 경로는 만들어진다 (2010)</h3>
+      <p>경영학자 라구 가루드, 아룬 쿠마라스와미, 페테르 카르뇌는 2010년, 경로의존성의 반대편에서 <b>경로창조</b>를 제안했습니다. 행위자는 과거의 제약 안에 갇힌 수동적 존재가 아니라, 미래를 상상하고 현재의 자원과 기술을 재배열해 새 경로를 만들 수 있다는 것입니다.</p>
+      <p>다만 창조는 백지에서 시작하지 않습니다. <b>기존 규칙을 우회하거나 재해석하고, 여러 시도를 반복하며, 다른 행위자와 의미를 맞추는 실천</b>으로 새로운 방향을 현실에 붙입니다. "경로가 이미 정해졌다"는 설명이 행동의 가능성을 지나치게 줄인다는 반론입니다.</p>
+    </div>
+  </div>
+  <p class="cite">프레임: Jörg Sydow·Georg Schreyögg·Jochen Koch (2009), 조직 경로의존성 · 반증: Raghu Garud·Arun Kumaraswamy·Peter Karnøe (2010), 경로의존성인가 경로창조인가</p>
+  <div class="clash">
+    <h3>갈리는 지점 — 제약인가, 재배열인가</h3>
+    <p>프레임은 <b>"잠금을 식별하고 전환 비용을 계산하라"</b>고 말합니다. 반복되는 투자가 대안을 보이지 않게 만드는 메커니즘을 추적하는 처방입니다.</p>
+    <p>반증은 <b>"기존 재료를 새 경로의 실험으로 재배치하라"</b>고 말합니다. 행위자의 시간 감각과 실험이 과거의 제약을 다른 미래로 연결할 수 있다는 처방입니다. 한쪽은 갇히는 과정을, 다른 쪽은 빠져나오는 실천을 봅니다.</p>
+  </div>
+</section>
+
+<section>
+  <h2>실제 사례 — 아마존에서 AWS로</h2>
+  <p>온라인 서점으로 시작한 아마존은, 이후 클라우드 컴퓨팅 서비스 회사로 불리게 됩니다. 그 사이의 전환은 하룻밤에 일어나지 않았습니다.</p>
+  <div class="timeline">
+    <div class="tl">
+      <div class="tl-date">소매 사업의 축적</div>
+      <p>초기 온라인 서점 운영을 위해 검색·주문·결제·서버 인프라를 키웠습니다. 상품 카탈로그와 고객 계정, 주문 처리, 분산 시스템에 계속 투자해 대규모 웹 운영 역량이 쌓였습니다.</p>
+    </div>
+    <div class="tl">
+      <div class="tl-date">2006년 봄</div>
+      <p>자체 정보기술 인프라를 구축·관리하는 어려움을 경험한 뒤, 아마존 웹 서비스(AWS)를 시작했다고 회사 자료는 설명합니다.</p>
+    </div>
+    <div class="tl">
+      <div class="tl-date">2006년 3월</div>
+      <p>저장 서비스(S3)가 아마존이 사용하던 확장 가능한 저장 인프라를 외부 개발자에게 제공한다고 발표되었습니다.</p>
+    </div>
+  </div>
+  <p>자이도우·슈뢰그·코흐의 눈으로 보면, 아마존의 역량 축적은 전형적인 경로 강화입니다. 전자상거래 회사로서 계속 투자했기 때문에 대규모 인프라가 생겼고, 그 인프라는 다음 사업의 출발점이 되었습니다. <b>과거의 성공이 새로운 가능성을 만들 수 있다는 관찰</b>입니다.</p>
+  <p>가루드·쿠마라스와미·카르뇌의 눈으로 보면, 역량이 자동으로 사업을 낳은 것은 아닙니다. 내부 시스템을 모듈화하고, 가격을 사용량 기반으로 바꾸고, 외부 개발자가 접근할 통로를 만들며, <b>소매 사업의 우선순위와 다른 고객 문제를 받아들이는 재배열</b>이 필요했습니다. 자산은 과거에서 왔지만, 경로는 새로운 약속과 사용 방식 속에서 만들어졌습니다.</p>
+  <p class="cite">AWS 공식 자료 — 2006년 봄 시작과 내부 인프라의 서비스 전환 · 2006년 3월 S3 발표 자료 — 두 출처를 교차 확인해 요약</p>
+</section>
+
+<section>
+  <h2>실무 적용 — 경로를 세 질문으로 점검하기</h2>
+  <div class="steps">
+    <div class="st">
+      <p><b>출발점 확인</b> — 지금의 강점이 어떤 과거 선택과 투자의 누적에서 나왔는지 적습니다.</p>
+    </div>
+    <div class="st">
+      <p><b>보이지 않는 것 확인</b> — 그 누적이 어떤 고객·기술·수익 모델을 보이지 않게 만드는지 적습니다.</p>
+    </div>
+    <div class="st">
+      <p><b>작은 실험 설계</b> — 기존 자산을 다른 사용자와 다른 약속에 연결하는 실험을 정합니다. 기존 경로의 핵심 기능을 보존한 채 다른 고객군에 제공해 보고, 가격·접근 방식·품질 기준을 별도로 측정합니다.</p>
+    </div>
+    <div class="st">
+      <p><b>결과의 처리</b> — 실패하면 경로가 틀렸다고 단정하지 말고 어떤 전제가 작동하지 않았는지 기록하고, 성공하면 조직·예산·지표를 분리해 줍니다.</p>
+    </div>
+  </div>
+  <p>두 번째 질문만 하면 조직은 과거를 족쇄로만 보고, 세 번째 질문만 하면 축적된 역량과 비용을 과소평가합니다. <b>경로를 읽는 일은 제약을 확인한 뒤 행동의 여지를 설계하는 일</b>입니다. 경로창조는 과거를 지우는 혁명이 아니라, 과거 자원의 의미와 연결을 다시 만드는 관리입니다.</p>
+</section>
+
+<section class="ask">
+  <h2>리더가 던질 질문</h2>
+  <ol>
+    <li>우리가 잘해서 계속하는 것은 무엇인가.</li>
+    <li>계속하기 때문에 다른 가능성을 보지 못하는 것은 무엇인가.</li>
+    <li>기존 자산을 다른 사용자와 다른 약속에 연결하는 실험이 지금 있는가.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>근거와 출처</h2>
+  <p class="cite">Sydow·Schreyögg·Koch (2009) — 경로의존성의 세 단계 · Garud·Kumaraswamy·Karnøe (2010) — 경로창조 · AWS 공식 자료 — 2006년 서비스 전환 경과</p>
+  <details>
+    <summary>세 가지 출처 자세히 보기</summary>
+    <ul>
+      <li>Jörg Sydow, Georg Schreyögg, Jochen Koch, "Organizational Path Dependence: Opening the Black Box" (2009) — 경로의존성을 형성·강화·잠금의 세 단계로 설명한 연구입니다.</li>
+      <li>Raghu Garud, Arun Kumaraswamy, Peter Karnøe, "Path Dependence or Path Creation?" (2010) — 행위자의 미래 지향·재배열·실험을 통한 경로창조 관점을 제시한 논문입니다.</li>
+      <li>아마존 웹 서비스 공식 자료와 2006년 3월 발표 자료 — 2006년 AWS·S3 출시와 내부 인프라의 외부 서비스 전환 경과를 확인한 회사 공식 기록입니다.</li>
+    </ul>
+  </details>
+  <details>
+    <summary>찰스 테일러의 "사회적 상상"으로 보기</summary>
+    <ul>
+      <li>철학자 찰스 테일러의 사회적 상상은, 사람들이 함께 살아가는 방식을 제도와 관행과 기대 속에서 이해하는 <b>배경</b>을 가리킵니다.</li>
+      <li>내부 인프라를 외부 개발자도 쓸 수 있는 서비스로 바꾸려면, "기업의 서버는 기업 안에 있어야 한다"는 상상과 "컴퓨팅 능력은 필요할 때 빌려 쓰는 기반이 될 수 있다"는 상상이 경쟁해야 합니다.</li>
+      <li>AWS는 기계의 재배치가 아니라, <b>누가 기술을 사용할 수 있고 어떤 비용으로 무엇을 만들 수 있는지에 관한 공동의 기대</b>를 바꾼 사례입니다.</li>
+    </ul>
+  </details>
+</section>
+
+<section class="closing">
+  <h2>한 줄로</h2>
+  <p>경로는 운명인가 선택인가 — 경로는 운명처럼 보이지만 선택의 결과가 축적된 것이며, 선택은 과거의 흔적 없이 시작할 수 없다. 조직의 미래는 과거와 단절하는 데서가 아니라, <b>과거의 자원을 어떤 새로운 약속과 상상에 연결하느냐</b>에서 열린다. "우리가 잘해서 계속하는 것은 무엇인가"와 "계속하기 때문에 보지 못하는 것은 무엇인가"를 함께 물어라.</p>
+</section>
+
+</main>
+
+<footer>
+  Lead Read
+  <p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+
+</div>
+</body>
+</html>
