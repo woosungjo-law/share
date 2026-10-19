@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>협상은 거래인가 관계설계인가 · Lead Read 3분 브리핑</title>
+<style>
+  :root{
+    --ink:#1b1a16; --sub:#57514a; --line:#e4dfd4; --bg:#faf8f4; --card:#fff;
+    --accent:#1e5a4c; --accent-soft:#eaf2ee; --warm:#8a5a26; --warm-soft:#f8f1e6;
+    --mark:#9c3f2e; --ok:#2f5d50; --ok-soft:#ecf3f0;
+    --closing-bg:#1b1a16; --closing-fg:#f4f1ea; --on-accent:#fff;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --ink:#e9e7e2; --sub:#a9a49b; --line:#333944; --bg:#14171d; --card:#1b1f26;
+      --accent:#8fc3a8; --accent-soft:#16241e; --warm:#d9a066; --warm-soft:#2a231a;
+      --mark:#e08a72; --ok:#8fc3ae; --ok-soft:#17261f;
+      --closing-bg:#20242d; --closing-fg:#f0ede6; --on-accent:#14171d;
+    }
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Noto Sans KR","Pretendard","Malgun Gothic",sans-serif;
+    line-height:1.85;word-break:keep-all;}
+  a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px;}
+  .wrap{max-width:760px;margin:0 auto;padding:44px 20px 64px;}
+  header{border-bottom:3px solid var(--ink);padding-bottom:20px;margin-bottom:30px;}
+  .kicker{font-size:12.5px;letter-spacing:.16em;color:var(--accent);font-weight:700;margin-bottom:12px;}
+  h1{font-size:29px;line-height:1.42;margin:0 0 10px;font-weight:800;}
+  .lede{font-size:16px;color:var(--sub);margin:0;}
+  main section{margin:40px 0;}
+  h2{font-size:20px;font-weight:800;margin:0 0 14px;padding-left:12px;border-left:5px solid var(--accent);line-height:1.5;}
+  h3{font-size:15.5px;font-weight:800;margin:0 0 8px;line-height:1.5;}
+  p{margin:0 0 16px;font-size:16px;}
+  b{font-weight:700;}
+  .leadbox{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--accent);
+    border-radius:12px;padding:18px 20px;margin:18px 0;}
+  .leadbox .lb-label{font-size:12.5px;letter-spacing:.1em;font-weight:800;color:var(--accent);margin:0 0 6px;}
+  .leadbox .lb-q{font-size:16.5px;font-weight:700;margin:0 0 14px;}
+  .leadbox .lb-a{font-size:16.5px;font-weight:800;margin:0;line-height:1.6;}
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0;}
+  @media(max-width:640px){.duo{grid-template-columns:1fr;}}
+  .duo>div{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--card);}
+  .duo .t-a{background:var(--accent-soft);} .duo .t-b{background:var(--warm-soft);}
+  .duo .tag{font-size:12.5px;font-weight:800;letter-spacing:.08em;margin-bottom:6px;}
+  .t-a .tag{color:var(--accent);} .t-b .tag{color:var(--warm);}
+  .duo p{font-size:14.8px;margin:0 0 8px;color:var(--ink);}
+  .clash{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--mark);
+    border-radius:12px;padding:20px 22px;margin:22px 0;}
+  .clash p{font-size:15.2px;margin:0 0 10px;color:var(--ink);}
+  .clash p:last-child{margin-bottom:0;}
+  .timeline{position:relative;margin:20px 0;padding-left:8px;}
+  .timeline .tl{position:relative;margin:0 0 18px;padding:0 0 0 30px;border-left:3px solid var(--line);}
+  .timeline .tl:last-child{border-left-color:transparent;margin-bottom:0;}
+  .timeline .tl::before{content:"";position:absolute;left:-9px;top:5px;width:13px;height:13px;border-radius:50%;
+    background:var(--accent);box-shadow:0 0 0 3px var(--bg);}
+  .timeline .tl .tl-date{font-size:12.5px;font-weight:800;color:var(--accent);letter-spacing:.04em;}
+  .timeline .tl p{font-size:15px;margin:4px 0 0;}
+  .cite{font-size:13.8px;color:var(--sub);background:var(--accent-soft);border-radius:8px;padding:10px 14px;margin:12px 0 0;}
+  .cite.w{background:var(--warm-soft);}
+  .steps{counter-reset:s;margin:20px 0;}
+  .steps .st{counter-increment:s;background:var(--card);border:1px solid var(--line);
+    border-radius:12px;padding:16px 18px 16px 54px;margin-bottom:12px;position:relative;}
+  .steps .st::before{content:counter(s);position:absolute;left:16px;top:14px;width:26px;height:26px;
+    border-radius:50%;background:var(--accent);color:var(--on-accent);font-weight:800;font-size:14px;
+    display:flex;align-items:center;justify-content:center;}
+  .steps p{font-size:15px;margin:0;color:var(--ink);}
+  details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:14px 0;}
+  summary{font-size:15px;font-weight:700;cursor:pointer;color:var(--accent);}
+  details li{font-size:14.5px;margin-bottom:8px;}
+  details ul{margin:12px 0 0;padding-left:20px;}
+  .ask{background:var(--accent-soft);border-radius:12px;padding:20px 22px;margin:22px 0;}
+  .ask ol{margin:0;padding-left:22px;}
+  .ask li{font-size:15.5px;margin-bottom:9px;}
+  .ask li:last-child{margin-bottom:0;}
+  .closing{background:var(--closing-bg);color:var(--closing-fg);border-radius:14px;padding:26px;margin:36px 0 0;}
+  .closing h2{color:var(--closing-fg);border-left-color:var(--mark);}
+  .closing p{font-size:15.4px;margin-bottom:0;}
+  footer{margin-top:38px;padding-top:16px;border-top:1px solid var(--line);font-size:13.5px;color:var(--sub);text-align:center;}
+  .author-credit{margin:8px 0 0;font-size:13.5px;color:var(--sub);}
+  @media(max-width:480px){
+    h1{font-size:24px;}
+    .wrap{padding:32px 16px 52px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Lead Read · 3분 브리핑 · 거래와관계</div>
+  <h1>협상은 거래인가 관계설계인가</h1>
+  <p class="lede">협상을 가격표 앞의 줄다리기로만 보면, 합의문에 숫자를 채우는 순간 일이 끝난 것처럼 보입니다. 그러나 조직의 중요한 협상은 합의 뒤에 더 긴 시간을 요구합니다. 인수 이후 누가 결정하는지, 공급사가 어떤 정보를 공유하는지, 공동 프로젝트에서 실패를 누가 먼저 알리는지가 합의의 생존을 가릅니다.</p>
+</header>
+
+<main>
+
+<section>
+  <h2>왜 지금 이 문제인가</h2>
+  <p>같은 양보라도 다음 라운드의 신뢰를 사는 양보가 있고, 상대의 약점을 잠시 이용하는 양보가 있습니다. 협상의 질문은 "얼마를 얻었는가"에서 <b>"다음 상호작용의 조건을 어떻게 바꾸었는가"</b>로 이동해야 합니다. 서명은 빠르게 끝나지만, 합의가 만들어낸 관계는 오래 남기 때문입니다.</p>
+  <div class="leadbox">
+    <p class="lb-label">핵심 질문</p>
+    <p class="lb-q">협상은 숫자를 정하는 거래인가, 합의 뒤의 조건을 만드는 관계 설계인가.</p>
+    <p class="lb-label">한 문장 결론</p>
+    <p class="lb-a">거래의 숫자는 서명을 남기지만, 관계의 설계는 다음 의사결정의 품질을 남긴다. 좋은 협상은 상대를 안심시키는 문장보다, 불확실성과 손실을 말할 수 있는 절차를 만든다.</p>
+  </div>
+</section>
+
+<section>
+  <h2>두 견해가 갈리는 지점</h2>
+  <div class="duo">
+    <div class="t-a">
+      <div class="tag">프레임 — 협상판의 설계</div>
+      <h3>Lax·Sebenius — 협력과 경쟁을 함께 (1986)</h3>
+      <p>하버드 경영대학원의 데이비드 랙스와 제임스 세베니우스는 1986년, 협상을 <b>협력과 경쟁이 동시에 들어 있는 활동</b>으로 보았습니다. 상대의 몫을 가져오는 협상만으로는 공동의 가치를 만들 수 없고, 공동의 가치에 몰두하면 자신이 감당할 비용과 대안을 잃습니다.</p>
+      <p>그래서 협상가는 <b>쟁점의 수를 늘려 서로 다른 우선순위를 교환</b>하고, 합의하지 않을 경우의 대안과 권한 구조를 함께 설계해야 합니다. 이 관점에서 관계는 따뜻한 분위기가 아니라 거래를 가능하게 하는 자원입니다. 누가 어떤 약속을 지킬 수 있는지, 재협상은 어떤 조건에서 가능한지가 관계의 구조를 이룹니다.</p>
+    </div>
+    <div class="t-b">
+      <div class="tag">반증 — 계산의 엄밀함</div>
+      <h3>Raiffa — 선의는 계산을 대신하지 않는다 (1982)</h3>
+      <p>경영학자 하워드 라이파는 1982년, 관계의 서사가 판단을 흐릴 수 있다는 다른 강조점을 제시했습니다. 상대의 선의를 믿는다고 해도, <b>선호·확률·위험·대안의 차이를 계산하지 않으면</b> 좋은 의도가 나쁜 합의를 가릴 수 있습니다.</p>
+      <p>가능한 결과의 범위를 나누고, 각 선택이 가져올 손실과 이득을 비교하며, 불확실한 정보에는 조건부 제안을 붙여야 합니다. <b>상대를 이해하는 일은 상대에게 양보하는 일이 아니라, 상대의 선택 구조를 정확히 읽는 일</b>입니다. 관계를 지나치게 앞세우면 "함께 가야 한다"는 문장이 불리한 조건을 숨기는 방패가 될 수 있습니다.</p>
+    </div>
+  </div>
+  <p class="cite">프레임: David A. Lax·James K. Sebenius (1986), 협상을 관리자의 관점에서 · 반증: Howard Raiffa (1982), 협상의 예술과 과학</p>
+  <div class="clash">
+    <h3>갈리는 지점 — 관계인가, 비교인가</h3>
+    <p>프레임은 <b>협상판 자체를 넓히라</b>고 말합니다. 쟁점과 관계의 구조에서 출발하는 처방입니다.</p>
+    <p>반증은 <b>판을 넓히는 과정에서도 각 선택의 기대값과 위험을 검토하라</b>고 말합니다. 비교 가능한 선택지와 정보의 질에서 출발하는 처방입니다. "공동의 미래를 설계하면 거래의 질이 좋아진다"는 명제는, 관계를 지키려는 압력이 현실적인 대안을 말하지 못하게 만드는 순간 깨집니다.</p>
+  </div>
+</section>
+
+<section>
+  <h2>실제 사례 — 휴렛패커드와 컴팩의 합병</h2>
+  <p>2001년, 미국의 컴퓨터 회사 휴렛패커드(HP)는 또 다른 컴퓨터 회사 컴팩과의 합병을 추진했습니다. 최고경영자 칼리 피오리나는 개인용 컴퓨터·서버·서비스를 묶어 경쟁력을 키우겠다는 논리로 <b>약 250억 달러 규모의 주식 교환 합병</b>을 제안했습니다.</p>
+  <div class="timeline">
+    <div class="tl">
+      <div class="tl-date">2001년 9월</div>
+      <p>합병 계약이 발표됐습니다. 하지만 창업자 가문의 대표 격인 월터 휴렛은 회사의 정체성과 연구개발 역량이 희석될 수 있다며 반대했습니다.</p>
+    </div>
+    <div class="tl">
+      <div class="tl-date">2002년 3월</div>
+      <p>주주 표결에서 근소한 차이로 합병안이 통과됐습니다. 양측 모두 지지 세력을 모았고, 반대 진영은 합병이 주주 가치를 훼손할 것이라고 주장했습니다.</p>
+    </div>
+    <div class="tl">
+      <div class="tl-date">2005년</div>
+      <p>통합과 비용 절감을 진행한 뒤, 피오리나는 이사회와의 충돌 속에 자리에서 물러났습니다.</p>
+    </div>
+  </div>
+  <p>표면의 쟁점은 주식 교환비율과 시너지 수치였지만, 실제 협상은 <b>"HP가 무엇을 위해 존재하는가", "누가 미래의 회사를 대표하는가", "반대 의견을 어떤 절차로 남길 것인가"</b>를 둘러싼 관계 설계였습니다. 이 경과를 "합병이 성공했는가"로만 평가하면 협상의 학습이 사라집니다.</p>
+  <p>두 렌즈가 함께 요구하는 질문은 이렇습니다. 합의에 이르는 동안 반대자의 정보와 창업자 가문의 정체성 자산을 어떻게 다뤘는지(관계의 설계), 합병 뒤 약속한 시너지를 어떤 지표로 검증했는지(계산의 엄밀함), 불리한 신호를 누가 공개할 권한을 가졌는지(둘의 접점). 합의는 거래의 종착지가 아니라 <b>관계의 새로운 헌법</b>이었고, 그 헌법에 이견을 수정하는 조항이 약했습니다.</p>
+  <p class="cite">HP 2001년 합병 발표 자료와 주주 위임장, 2002년 표결 관련 공개 기록 — 합병 발표·주주 표결·반대 진영의 쟁점을 교차 확인해 요약</p>
+</section>
+
+<section>
+  <h2>실무 적용 — 협상 전후의 장부를 나누기</h2>
+  <div class="steps">
+    <div class="st">
+      <p><b>협상 전 장부</b> — 가격·일정·지분 같은 비교 가능한 항목뿐 아니라, 각 당사자가 지키려는 정체성, 양보할 수 없는 권한, 합의 실패 때 감당할 비용을 적습니다.</p>
+    </div>
+    <div class="st">
+      <p><b>협상 후 장부</b> — 약속의 수신자, 공개 시점, 검증 지표, 이견 처리자를 적고, 일정한 간격으로 다시 엽니다.</p>
+    </div>
+    <div class="st">
+      <p><b>반대 의견 사전 기록</b> — 반대 의견을 미리 적어두는 일은 합의에 대한 불충성이 아니라, 합의가 현실을 견디는지 시험하는 안전장치입니다.</p>
+    </div>
+    <div class="st">
+      <p><b>속도와 목소리 점검</b> — 경영진이 합의를 서두를수록, 한 사람의 낙관이 아니라 여러 당사자의 이견이 남아 있는지를 따로 확인합니다.</p>
+    </div>
+  </div>
+  <p>이렇게 하면 관계를 말로만 보호하지 않고 <b>검증 가능한 약속</b>으로 바꿀 수 있습니다. 빠른 서명은 창구를 단순화하지만, 그만큼 뒤늦게 발견되는 비용을 조직 전체에 퍼뜨릴 수 있습니다. 한 사람의 낙관이 아니라 여러 당사자의 이견이 남아 있을 때 합의는 비로소 실행 가능한 설계가 됩니다.</p>
+</section>
+
+<section class="ask">
+  <h2>리더가 던질 질문</h2>
+  <ol>
+    <li>이번 합의가 만들어낼 공동의 가치와 각자의 최소 대안이 분리되어 있는가.</li>
+    <li>합의 뒤에 반드시 공개되어야 할 정보와 재협상 조건이 적혀 있는가.</li>
+    <li>가장 약한 목소리가 이견을 제기해도 관계가 끊기지 않을 통로가 있는가.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>근거와 출처</h2>
+  <p class="cite">Lax·Sebenius (1986) — 협력과 경쟁의 동시 설계 · Raiffa (1982) — 비교와 조건부 제안 · HP-Compaq 합병 공개 기록 (2001~2002) — 협상과 표결 경과</p>
+  <details>
+    <summary>세 가지 출처 자세히 보기</summary>
+    <ul>
+      <li>David A. Lax, James K. Sebenius, "The Manager as Negotiator" (1986) — 협력적 가치 창출과 경쟁적 가치 확보를 함께 다루는 협상 관점을 제시한 책입니다.</li>
+      <li>Howard Raiffa, "The Art and Science of Negotiation" (1982) — 불확실한 선호와 결과를 비교·분석하는 협상 접근을 정리한 책입니다.</li>
+      <li>HP의 2001년 합병 발표 자료와 주주 위임장, 2002년 주주 표결 관련 공개 기록 — 합병 발표, 반대 진영의 쟁점, 표결 경과를 교차 확인한 자료입니다.</li>
+    </ul>
+  </details>
+  <details>
+    <summary>마사 누스바움의 "역량과 취약성"으로 보기</summary>
+    <ul>
+      <li>철학자 마사 누스바움의 역량 관점에서, 협상 당사자는 단순히 더 많은 몫을 받아야 하는 사람이 아닙니다. <b>자신의 이유를 말하고, 다른 선택을 검토하고, 공동의 결정에 영향을 미칠 수 있는 실질적 능력</b>을 가져야 합니다.</li>
+      <li>주주와 이사회, 창업자 가문, 경영진이 각자의 목소리를 낼 수 있었는지는 합병 가격만큼 중요합니다.</li>
+      <li>취약성은 협상에서 숨겨야 할 흠이 아니라, <b>약속이 깨졌을 때 누가 비용을 지는지를 보여주는 정보</b>입니다. 좋은 협상은 불확실성과 손실을 말할 수 있는 절차를 만듭니다.</li>
+    </ul>
+  </details>
+</section>
+
+<section class="closing">
+  <h2>한 줄로</h2>
+  <p>협상은 거래인가 관계설계인가 — 거래의 숫자는 서명을 남기지만, 관계의 설계는 다음 의사결정의 품질을 남긴다. 협상 전후의 장부를 나누고, <b>합의 뒤에 공개될 정보와 재협상 조건, 이견을 제기할 통로</b>를 미리 적어라. 좋은 협상은 상대를 안심시키는 문장이 아니라, 불확실성과 손실을 말할 수 있는 절차에서 시작된다.</p>
+</section>
+
+</main>
+
+<footer>
+  Lead Read
+  <p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+
+</div>
+</body>
+</html>
