@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>리더는 지휘하는가 연결하는가 · Lead Read 3분 브리핑</title>
+<style>
+  :root{
+    --ink:#1b1a16; --sub:#57514a; --line:#e4dfd4; --bg:#faf8f4; --card:#fff;
+    --accent:#1e5a4c; --accent-soft:#eaf2ee; --warm:#8a5a26; --warm-soft:#f8f1e6;
+    --mark:#9c3f2e; --ok:#2f5d50; --ok-soft:#ecf3f0;
+    --closing-bg:#1b1a16; --closing-fg:#f4f1ea; --on-accent:#fff;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --ink:#e9e7e2; --sub:#a9a49b; --line:#333944; --bg:#14171d; --card:#1b1f26;
+      --accent:#8fc3a8; --accent-soft:#16241e; --warm:#d9a066; --warm-soft:#2a231a;
+      --mark:#e08a72; --ok:#8fc3ae; --ok-soft:#17261f;
+      --closing-bg:#20242d; --closing-fg:#f0ede6; --on-accent:#14171d;
+    }
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Noto Sans KR","Pretendard","Malgun Gothic",sans-serif;
+    line-height:1.85;word-break:keep-all;}
+  a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px;}
+  .wrap{max-width:760px;margin:0 auto;padding:44px 20px 64px;}
+  header{border-bottom:3px solid var(--ink);padding-bottom:20px;margin-bottom:30px;}
+  .kicker{font-size:12.5px;letter-spacing:.16em;color:var(--accent);font-weight:700;margin-bottom:12px;}
+  h1{font-size:29px;line-height:1.42;margin:0 0 10px;font-weight:800;}
+  .lede{font-size:16px;color:var(--sub);margin:0;}
+  main section{margin:40px 0;}
+  h2{font-size:20px;font-weight:800;margin:0 0 14px;padding-left:12px;border-left:5px solid var(--accent);line-height:1.5;}
+  h3{font-size:15.5px;font-weight:800;margin:0 0 8px;line-height:1.5;}
+  p{margin:0 0 16px;font-size:16px;}
+  b{font-weight:700;}
+  .leadbox{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--accent);
+    border-radius:12px;padding:18px 20px;margin:18px 0;}
+  .leadbox .lb-label{font-size:12.5px;letter-spacing:.1em;font-weight:800;color:var(--accent);margin:0 0 6px;}
+  .leadbox .lb-q{font-size:16.5px;font-weight:700;margin:0 0 14px;}
+  .leadbox .lb-a{font-size:16.5px;font-weight:800;margin:0;line-height:1.6;}
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0;}
+  @media(max-width:640px){.duo{grid-template-columns:1fr;}}
+  .duo>div{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--card);}
+  .duo .t-a{background:var(--accent-soft);} .duo .t-b{background:var(--warm-soft);}
+  .duo .tag{font-size:12.5px;font-weight:800;letter-spacing:.08em;margin-bottom:6px;}
+  .t-a .tag{color:var(--accent);} .t-b .tag{color:var(--warm);}
+  .duo p{font-size:14.8px;margin:0 0 8px;color:var(--ink);}
+  .clash{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--mark);
+    border-radius:12px;padding:20px 22px;margin:22px 0;}
+  .clash p{font-size:15.2px;margin:0 0 10px;color:var(--ink);}
+  .clash p:last-child{margin-bottom:0;}
+  .timeline{position:relative;margin:20px 0;padding-left:8px;}
+  .timeline .tl{position:relative;margin:0 0 18px;padding:0 0 0 30px;border-left:3px solid var(--line);}
+  .timeline .tl:last-child{border-left-color:transparent;margin-bottom:0;}
+  .timeline .tl::before{content:"";position:absolute;left:-9px;top:5px;width:13px;height:13px;border-radius:50%;
+    background:var(--accent);box-shadow:0 0 0 3px var(--bg);}
+  .timeline .tl .tl-date{font-size:12.5px;font-weight:800;color:var(--accent);letter-spacing:.04em;}
+  .timeline .tl p{font-size:15px;margin:4px 0 0;}
+  .cite{font-size:13.8px;color:var(--sub);background:var(--accent-soft);border-radius:8px;padding:10px 14px;margin:12px 0 0;}
+  .cite.w{background:var(--warm-soft);}
+  .steps{counter-reset:s;margin:20px 0;}
+  .steps .st{counter-increment:s;background:var(--card);border:1px solid var(--line);
+    border-radius:12px;padding:16px 18px 16px 54px;margin-bottom:12px;position:relative;}
+  .steps .st::before{content:counter(s);position:absolute;left:16px;top:14px;width:26px;height:26px;
+    border-radius:50%;background:var(--accent);color:var(--on-accent);font-weight:800;font-size:14px;
+    display:flex;align-items:center;justify-content:center;}
+  .steps p{font-size:15px;margin:0;color:var(--ink);}
+  details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:14px 0;}
+  summary{font-size:15px;font-weight:700;cursor:pointer;color:var(--accent);}
+  details li{font-size:14.5px;margin-bottom:8px;}
+  details ul{margin:12px 0 0;padding-left:20px;}
+  .ask{background:var(--accent-soft);border-radius:12px;padding:20px 22px;margin:22px 0;}
+  .ask ol{margin:0;padding-left:22px;}
+  .ask li{font-size:15.5px;margin-bottom:9px;}
+  .ask li:last-child{margin-bottom:0;}
+  .closing{background:var(--closing-bg);color:var(--closing-fg);border-radius:14px;padding:26px;margin:36px 0 0;}
+  .closing h2{color:var(--closing-fg);border-left-color:var(--mark);}
+  .closing p{font-size:15.4px;margin-bottom:0;}
+  footer{margin-top:38px;padding-top:16px;border-top:1px solid var(--line);font-size:13.5px;color:var(--sub);text-align:center;}
+  .author-credit{margin:8px 0 0;font-size:13.5px;color:var(--sub);}
+  @media(max-width:480px){
+    h1{font-size:24px;}
+    .wrap{padding:32px 16px 52px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Lead Read · 3분 브리핑 · 지휘와연결</div>
+  <h1>리더는 지휘하는가 연결하는가</h1>
+  <p class="lede">리더십을 말할 때 가장 먼저 떠오르는 장면은 위에서 아래로 내려오는 결정입니다. 책임자가 방향을 정하고 구성원이 실행하면 속도가 빠르고 책임선도 선명해 보입니다. 그러나 지식이 여러 사람에게 흩어지고 문제가 현장에서 계속 바뀌는 조직에서는 한 사람의 지휘만으로 모든 판단을 처리할 수 없습니다.</p>
+</header>
+
+<main>
+
+<section>
+  <h2>왜 지금 이 문제인가</h2>
+  <p>지휘만 늘리면 병목이 되고, 권한만 나누면 공동의 방향이 생기지 않습니다. 지식이 분산된 조직에서 리더십의 질문은 <b>"누가 최종 결정을 내리는가"에서 "누가 어떤 순간에 서로의 판단을 연결하는가"</b>로 옮겨갑니다. 이 두 문장은 다른 조직을 만듭니다.</p>
+  <div class="leadbox">
+    <p class="lb-label">핵심 질문</p>
+    <p class="lb-q">리더는 판단을 위에서 지휘하는 사람인가, 현장의 판단을 서로 연결하는 사람인가.</p>
+    <p class="lb-label">한 문장 결론</p>
+    <p class="lb-a">공유 리더십은 권한을 흩어 놓는 기술이 아니라, 필요한 순간에 영향력이 이동하고 다시 공동의 책임으로 묶이는 운영 방식이다. 조직의 리더십은 꼭대기의 명령보다 연결된 약속이 실제로 지켜지는지에서 드러난다.</p>
+  </div>
+</section>
+
+<section>
+  <h2>두 견해가 갈리는 지점</h2>
+  <div class="duo">
+    <div class="t-a">
+      <div class="tag">프레임 — 전문성을 따라 이동</div>
+      <h3>Carson·Tesluk·Marrone — 공유 리더십의 조건 (2007)</h3>
+      <p>조직심리학자 제이 카슨, 폴 테슬럭, 제니퍼 마론은 2007년, 59개 컨설팅 팀을 조사해 <b>공유 리더십의 조건과 성과</b>를 분석했습니다. 공동의 목적, 사회적 지원, 발언 기회가 있는 팀에서 공유 리더십이 더 잘 나타났고, 고객이 평가한 팀 성과와도 연결되었습니다.</p>
+      <p>여기서 공유란 책임자가 사라진다는 뜻이 아닙니다. <b>팀 안에서 과업에 필요한 영향력이 여러 구성원에게 이동하고, 외부 코칭이 그 과정을 지지</b>한다는 뜻입니다. 리더는 직함보다 문제를 해결할 지식과 동료가 실제로 따를 이유를 통해 나타납니다.</p>
+    </div>
+    <div class="t-b">
+      <div class="tag">반증 — 구조로 연결</div>
+      <h3>Hoch·Kozlowski — 분산에는 구조가 필요하다 (2014)</h3>
+      <p>조직심리학자 줄라아 호흐와 스티브 코즐로스키는 2014년, 가상 팀 101개를 대상으로 위계적 리더십, 구조적 지원, 공유 팀 리더십의 관계를 검토했습니다. 팀이 멀리 흩어질수록 <b>전통적 지휘만으로는 성과를 설명하기 어렵고</b>, 구조적 지원과 공유 팀 리더십의 중요성이 커질 수 있습니다.</p>
+      <p>다만 공유 리더십을 낭만적으로 포장하지 않습니다. <b>목표·정보·역할이 연결되는 구조가 없으면, 영향력의 분산은 조정 비용과 책임 공백을 만듭니다.</b> "리더십을 나누라"는 문장은 구조의 질문을 생략할 때 처방이 되지 못합니다.</p>
+    </div>
+  </div>
+  <p class="cite">프레임: Jay B. Carson·Paul E. Tesluk·Jennifer A. Marrone (2007), 59개 컨설팅 팀 · 반증: Julia E. Hoch·Steve W. J. Kozlowski (2014), 가상 팀 101개</p>
+  <div class="clash">
+    <h3>갈리는 지점 — 이동인가, 연결인가</h3>
+    <p>프레임은 <b>"전문성을 따라 리더십을 이동시켜라"</b>고 말합니다. 목적·지원·발언이라는 팀 내부의 조건에서 영향력의 분산이 난다는 처방입니다.</p>
+    <p>반증은 <b>"이동한 리더십을 구조로 연결하라"</b>고 말합니다. 분산된 영향력이 성과로 이어지려면 목표·정보·역할의 연결 장치가 필요하다는 압박입니다. 한쪽은 권한의 분산을, 다른 쪽은 조정의 설계를 요구합니다.</p>
+  </div>
+</section>
+
+<section>
+  <h2>실제 사례 — W. L. Gore의 격자 구조</h2>
+  <p>방수막을 만드는 소재 회사 W. L. Gore &amp; Associates는 1958년 창업 이래, 전통적인 위계 대신에 다른 방식을 실험해 왔습니다. 회사 공식 자료는 그 운영 원리를 이렇게 설명합니다.</p>
+  <div class="timeline">
+    <div class="tl">
+      <div class="tl-date">격자형 소통</div>
+      <p>지휘 사슬을 따라가는 대신, 동료가 직접 소통합니다. 필요한 사람에게 곧바로 물을 수 있습니다.</p>
+    </div>
+    <div class="tl">
+      <div class="tl-date">동료의 약속</div>
+      <p>구성원은 동료에게 약속합니다. 상사의 지시가 아니라, 스스로 한 약속과 그 책임이 작동합니다.</p>
+    </div>
+    <div class="tl">
+      <div class="tl-date">상황에 따른 리더</div>
+      <p>그 문제에 가장 가까운 사람이 그 순간 이끕니다. 신뢰를 얻어야 다른 사람이 그를 따릅니다.</p>
+    </div>
+  </div>
+  <p>고어에서 지휘가 사라진 자리에 <b>연결의 일</b>이 들어갑니다. 제품과 고객 문제에 필요한 사람을 찾고, 그 사람이 가진 전문성을 작업의 약속으로 묶고, 결정이 조직 전체의 수면선을 건드릴 때 동료와 상의합니다. 이 구조는 정보가 여러 단계의 승인선을 통과하느라 늦어지는 문제를 줄일 수 있습니다.</p>
+  <p>동시에 <b>누가 무엇을 약속했는지 기록하지 않으면 자유는 책임 회피로 변합니다.</b> 분산된 리더십은 직함의 부재가 아니라, 약속·동료 피드백·성과 책임을 더 촘촘히 설계하는 일입니다. 2015년 경제지의 사례 보도도 고어가 엄격한 위계 대신 서로 연결된 역량의 격자 구조를 유지해 왔다고 기록합니다.</p>
+  <p class="cite">W. L. Gore &amp; Associates 공식 문화 자료 — 격자형 소통·동료 약속·상황적 리더 · 2015년 경제지 사례 보도 — 위계 완화와 지속 운영을 교차 확인해 요약</p>
+</section>
+
+<section>
+  <h2>실무 적용 — 리더십을 세 층으로 나누기</h2>
+  <div class="steps">
+    <div class="st">
+      <p><b>방향의 층</b> — 조직이 절대 놓치지 않을 목적과 위험선을 중앙에서 명확히 합니다.</p>
+    </div>
+    <div class="st">
+      <p><b>판단의 층</b> — 전문 지식이 있는 사람이 과업에 맞는 순간 리더가 될 수 있도록 접근 권한과 발언권을 엽니다.</p>
+    </div>
+    <div class="st">
+      <p><b>연결의 층</b> — 누가 누구와 무엇을 합의했고, 어떤 결과를 언제 확인할지 남깁니다.</p>
+    </div>
+    <div class="st">
+      <p><b>회의에서 확인</b> — 결정권자와 실행 책임자, 재검토 시점을 명시합니다. 발언 기회를 열었다는 사실만으로 참여가 끝난 것은 아닙니다.</p>
+    </div>
+  </div>
+  <p>이 세 층이 없으면 위계는 병목이 되고 분산은 소음이 됩니다. 반대로 <b>방향은 중앙에서 지키되 판단과 연결은 현장으로 이동</b>하면, 책임과 전문성을 함께 살릴 수 있습니다. 누가 말했는지보다 그 말이 어떤 조정과 약속으로 변했는지를 확인할 때, 연결은 많은 대화가 아니라 다음 행동의 구조가 됩니다.</p>
+</section>
+
+<section class="ask">
+  <h2>리더가 던질 질문</h2>
+  <ol>
+    <li>우리 조직의 목적과 위험선이 중앙에서 명확히 지켜지고 있는가.</li>
+    <li>문제에 가까운 사람이 발언권과 접근 권한을 실제로 갖고 있는가.</li>
+    <li>이번 회의의 말이 누가 언제 무엇을 바꾸는 약속으로 변했는가.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>근거와 출처</h2>
+  <p class="cite">Carson·Tesluk·Marrone (2007) — 공유 리더십의 조건 · Hoch·Kozlowski (2014) — 위계·구조·공유의 관계 · W. L. Gore 공식 자료 — 격자 구조의 운영 원리</p>
+  <details>
+    <summary>세 가지 출처 자세히 보기</summary>
+    <ul>
+      <li>Jay B. Carson, Paul E. Tesluk, Jennifer A. Marrone, "Shared Leadership in Teams" (2007) — 59개 컨설팅 팀에서 공동 목적·사회적 지원·발언 기회와 공유 리더십, 팀 성과의 관계를 확인한 연구입니다.</li>
+      <li>Julia E. Hoch, Steve W. J. Kozlowski, "Leading Virtual Teams" (2014) — 가상 팀 101개를 대상으로 위계적 리더십, 구조적 지원, 공유 팀 리더십의 관계를 검토한 연구입니다.</li>
+      <li>W. L. Gore &amp; Associates 공식 문화 자료와 2015년 경제지 사례 보도 — 격자형 소통, 동료의 약속, 상황에 따라 나타나는 리더의 원리를 교차 확인한 공개 자료입니다.</li>
+    </ul>
+  </details>
+  <details>
+    <summary>에디트 슈타인의 "공감과 공동체"로 보기</summary>
+    <ul>
+      <li>철학자 에디트 슈타인의 렌즈에서 공감은 "다른 사람의 관점을 이해하라"는 친절한 구호보다 엄격합니다. <b>나와 다른 주체가 별도의 관점과 자유를 가진다는 사실을 인정하면서</b> 그 관점에 접근하는 행위이기 때문입니다.</li>
+      <li>공동체는 모두가 같은 생각을 하는 집단이 아니라, <b>서로 다른 판단이 공동의 일을 위해 관계를 맺는 자리</b>입니다.</li>
+      <li>따라서 연결하는 리더는 사람을 하나의 합의로 녹이지 않습니다. 각자의 차이가 언제 의사결정에 필요한지 드러내고, 그 차이를 책임 있는 약속으로 바꿉니다.</li>
+    </ul>
+  </details>
+</section>
+
+<section class="closing">
+  <h2>한 줄로</h2>
+  <p>리더는 지휘자이면서 연결자여야 한다. 방향과 최종 책임을 포기하지 않되, 모든 지식을 자신에게 모으려는 습관은 버려라. 공유 리더십은 권한을 흩어 놓는 기술이 아니라 <b>필요한 순간에 영향력이 이동하고 다시 공동의 책임으로 묶이는 운영 방식</b>이다. "누가 결정할까"와 함께 "누가 현장의 판단을 연결해 결정의 질을 높일까"를 물어라.</p>
+</section>
+
+</main>
+
+<footer>
+  Lead Read
+  <p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+
+</div>
+</body>
+</html>
