@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>변화는 설계인가 흐름인가 · Lead Read 3분 브리핑</title>
+<style>
+  :root{
+    --ink:#1b1a16; --sub:#57514a; --line:#e4dfd4; --bg:#faf8f4; --card:#fff;
+    --accent:#1e5a4c; --accent-soft:#eaf2ee; --warm:#8a5a26; --warm-soft:#f8f1e6;
+    --mark:#9c3f2e; --ok:#2f5d50; --ok-soft:#ecf3f0;
+    --closing-bg:#1b1a16; --closing-fg:#f4f1ea; --on-accent:#fff;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --ink:#e9e7e2; --sub:#a9a49b; --line:#333944; --bg:#14171d; --card:#1b1f26;
+      --accent:#8fc3a8; --accent-soft:#16241e; --warm:#d9a066; --warm-soft:#2a231a;
+      --mark:#e08a72; --ok:#8fc3ae; --ok-soft:#17261f;
+      --closing-bg:#20242d; --closing-fg:#f0ede6; --on-accent:#14171d;
+    }
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Noto Sans KR","Pretendard","Malgun Gothic",sans-serif;
+    line-height:1.85;word-break:keep-all;}
+  a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px;}
+  .wrap{max-width:760px;margin:0 auto;padding:44px 20px 64px;}
+  header{border-bottom:3px solid var(--ink);padding-bottom:20px;margin-bottom:30px;}
+  .kicker{font-size:12.5px;letter-spacing:.16em;color:var(--accent);font-weight:700;margin-bottom:12px;}
+  h1{font-size:29px;line-height:1.42;margin:0 0 10px;font-weight:800;}
+  .lede{font-size:16px;color:var(--sub);margin:0;}
+  main section{margin:40px 0;}
+  h2{font-size:20px;font-weight:800;margin:0 0 14px;padding-left:12px;border-left:5px solid var(--accent);line-height:1.5;}
+  h3{font-size:15.5px;font-weight:800;margin:0 0 8px;line-height:1.5;}
+  p{margin:0 0 16px;font-size:16px;}
+  b{font-weight:700;}
+  .leadbox{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--accent);
+    border-radius:12px;padding:18px 20px;margin:18px 0;}
+  .leadbox .lb-label{font-size:12.5px;letter-spacing:.1em;font-weight:800;color:var(--accent);margin:0 0 6px;}
+  .leadbox .lb-q{font-size:16.5px;font-weight:700;margin:0 0 14px;}
+  .leadbox .lb-a{font-size:16.5px;font-weight:800;margin:0;line-height:1.6;}
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0;}
+  @media(max-width:640px){.duo{grid-template-columns:1fr;}}
+  .duo>div{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--card);}
+  .duo .t-a{background:var(--accent-soft);} .duo .t-b{background:var(--warm-soft);}
+  .duo .tag{font-size:12.5px;font-weight:800;letter-spacing:.08em;margin-bottom:6px;}
+  .t-a .tag{color:var(--accent);} .t-b .tag{color:var(--warm);}
+  .duo p{font-size:14.8px;margin:0 0 8px;color:var(--ink);}
+  .clash{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--mark);
+    border-radius:12px;padding:20px 22px;margin:22px 0;}
+  .clash p{font-size:15.2px;margin:0 0 10px;color:var(--ink);}
+  .clash p:last-child{margin-bottom:0;}
+  .timeline{position:relative;margin:20px 0;padding-left:8px;}
+  .timeline .tl{position:relative;margin:0 0 18px;padding:0 0 0 30px;border-left:3px solid var(--line);}
+  .timeline .tl:last-child{border-left-color:transparent;margin-bottom:0;}
+  .timeline .tl::before{content:"";position:absolute;left:-9px;top:5px;width:13px;height:13px;border-radius:50%;
+    background:var(--accent);box-shadow:0 0 0 3px var(--bg);}
+  .timeline .tl .tl-date{font-size:12.5px;font-weight:800;color:var(--accent);letter-spacing:.04em;}
+  .timeline .tl p{font-size:15px;margin:4px 0 0;}
+  .cite{font-size:13.8px;color:var(--sub);background:var(--accent-soft);border-radius:8px;padding:10px 14px;margin:12px 0 0;}
+  .cite.w{background:var(--warm-soft);}
+  .steps{counter-reset:s;margin:20px 0;}
+  .steps .st{counter-increment:s;background:var(--card);border:1px solid var(--line);
+    border-radius:12px;padding:16px 18px 16px 54px;margin-bottom:12px;position:relative;}
+  .steps .st::before{content:counter(s);position:absolute;left:16px;top:14px;width:26px;height:26px;
+    border-radius:50%;background:var(--accent);color:var(--on-accent);font-weight:800;font-size:14px;
+    display:flex;align-items:center;justify-content:center;}
+  .steps p{font-size:15px;margin:0;color:var(--ink);}
+  details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:14px 0;}
+  summary{font-size:15px;font-weight:700;cursor:pointer;color:var(--accent);}
+  details li{font-size:14.5px;margin-bottom:8px;}
+  details ul{margin:12px 0 0;padding-left:20px;}
+  .ask{background:var(--accent-soft);border-radius:12px;padding:20px 22px;margin:22px 0;}
+  .ask ol{margin:0;padding-left:22px;}
+  .ask li{font-size:15.5px;margin-bottom:9px;}
+  .ask li:last-child{margin-bottom:0;}
+  .closing{background:var(--closing-bg);color:var(--closing-fg);border-radius:14px;padding:26px;margin:36px 0 0;}
+  .closing h2{color:var(--closing-fg);border-left-color:var(--mark);}
+  .closing p{font-size:15.4px;margin-bottom:0;}
+  footer{margin-top:38px;padding-top:16px;border-top:1px solid var(--line);font-size:13.5px;color:var(--sub);text-align:center;}
+  .author-credit{margin:8px 0 0;font-size:13.5px;color:var(--sub);}
+  @media(max-width:480px){
+    h1{font-size:24px;}
+    .wrap{padding:32px 16px 52px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Lead Read · 3분 브리핑 · 설계와흐름</div>
+  <h1>변화는 설계인가 흐름인가</h1>
+  <p class="lede">조직이 변할 때 리더는 보통 새 상태를 그립니다. 그런데 고객의 반응, 기술의 속도, 구성원의 해석이 계속 계획에 들어와 처음의 목표 자체가 바뀝니다. 변화는 누군가가 설계한 프로젝트인가, 아니면 매일의 상호작용에서 계속 생겨나는 흐름인가.</p>
+</header>
+
+<main>
+
+<section>
+  <h2>왜 지금 이 문제인가</h2>
+  <p>변화 프로젝트를 맡은 리더의 상황은 대개 비슷합니다. 지금의 방식에서 벗어나 목표 상태로 옮기고, 저항을 낮추고, 끝난 뒤 새 질서를 정착시키려 합니다. 하지만 조직은 도면대로 움직이는 기계가 아니라, <b>고객·기술·구성원의 해석이 매일 들어오는 현장</b>입니다. 그때마다 아래 두 대답이 서로 다른 길을 가리킵니다.</p>
+  <div class="leadbox">
+    <p class="lb-label">핵심 질문</p>
+    <p class="lb-q">변화는 리더가 설계하는 프로젝트인가, 매일의 상호작용에서 계속 생겨나는 흐름인가.</p>
+    <p class="lb-label">한 문장 결론</p>
+    <p class="lb-a">좋은 변화 관리는 목표 상태를 선명하게 그리되, 그 목표가 현장의 상호작용 속에서 달라질 권리를 인정한다.</p>
+  </div>
+</section>
+
+<section>
+  <h2>두 견해가 갈리는 지점</h2>
+  <div class="duo">
+    <div class="t-a">
+      <div class="tag">프레임 — 설계의 처방</div>
+      <h3>Bernard Burnes — 변화를 설계하라 (2004)</h3>
+      <p>영국의 변화관리 연구자 버나드 번스는 2004년, 심리학자 쿠르트 레빈이 1940~50년대에 제안한 "계획된 변화" 접근을 다시 평가했습니다. 겉보기에는 조직을 얼리고-해체하고-다시 얼리는 단계 공식으로 보이지만, 번스가 복원한 핵심은 다릅니다.</p>
+      <p>집단의 힘을 이해하고, <b>현장에서 자료를 직접 얻는 행동 연구</b>로 상황을 보고, 구성원이 자기 처지를 다시 보게 하며, 갈등을 민주적으로 조정하는 것이 계획된 변화의 핵심입니다. 설계는 위에서 내려오는 시간표가 아니라 <b>공동의 진단과 실험을 위한 구조</b>라는 뜻입니다.</p>
+    </div>
+    <div class="t-b">
+      <div class="tag">반증 — 흐름의 처방</div>
+      <h3>초우카스·치아 — 변화는 이미 일상이다 (2002)</h3>
+      <p>경영학자 하리디모스 초우카스와 로버트 치아는 2002년 "조직적 생성"이라는 논문에서 출발점을 바꿉니다. <b>안정과 질서를 정상으로, 변화를 예외로 놓는 관점</b>에 그대로 반대합니다.</p>
+      <p>이들에 따르면 조직은 매 순간 경험을 해석하고 습관과 믿음을 다시 엮으며 만들어집니다. 관리자가 "변화를 끝내고 새 균형을 고정했다"고 생각하는 순간에도 상호작용은 계속됩니다. 그래서 <b>"변화 프로젝트가 끝났다"는 선언부터 의심하라</b>고 말합니다.</p>
+    </div>
+  </div>
+  <p class="cite">프레임: Bernard Burnes (2004), 쿠르트 레빈의 계획된 변화 재평가 · 반증: Haridimos Tsoukas·Robert Chia (2002), 조직적 생성</p>
+  <div class="clash">
+    <h3>갈리는 지점 — 변화의 주체와 시간</h3>
+    <p>프레임은 <b>"공동 진단과 행동 연구로 이동 경로를 설계하라"</b>고 합니다. 계획을 포기하지 말고, 현장의 갈등과 학습을 계획 안에 넣으라는 처방입니다.</p>
+    <p>반증은 <b>"새 경험이 습관과 의미를 어떻게 다시 엮는지 계속 읽으라"</b>고 말합니다. 변화가 이미 일상에 스며들었으니, 완료 선언보다 관찰이 먼저라는 처방입니다. 같은 질문에 다른 처방입니다. 계획은 방향과 보호 장치를 주지만, 계획에 없는 반응을 실패로 지우면 조직의 실제 변화를 놓칩니다.</p>
+  </div>
+</section>
+
+<section>
+  <h2>실제 사례 — 어도비의 크리에이티브 클라우드 전환</h2>
+  <p>포토샵과 일러스트레이터로 유명한 소프트웨어 회사 어도비는, 오랫동안 고객이 한 번 사면 계속 쓰던 패키지 판매 방식을 구독으로 바꿨습니다. 이는 가격표만 바꾸는 일이 아니었습니다. 제품을 언제 내놓을지, 업데이트를 어떻게 약속할지, 고객과 무엇으로 대화할지가 함께 바뀌어야 했습니다.</p>
+  <div class="timeline">
+    <div class="tl">
+      <div class="tl-date">2011년</div>
+      <p>어도비가 창작 도구를 묶은 구독 서비스 "크리에이티브 클라우드"의 방향을 공개했습니다.</p>
+    </div>
+    <div class="tl">
+      <div class="tl-date">2013년 5월</div>
+      <p>새 크리에이티브 기능을 구독자에게만 제공하고, 2012년에 나온 CS6를 영구 라이선스 방식의 마지막 주요 업데이트로 삼겠다고 선언했습니다.</p>
+    </div>
+    <div class="tl">
+      <div class="tl-date">2014 회계연도</div>
+      <p>디지털 미디어의 연간 반복 매출(ARR)이 2013년 말 9억 4,400만 달러에서 2014년 말 19억 5,000만 달러로 늘었다고 회사는 밝혔습니다.</p>
+    </div>
+  </div>
+  <p>번스의 눈으로 보면 어도비는 <b>변화의 장을 설계</b>한 셈입니다. 구독 상품을 만들고, 영구 라이선스의 끝을 정하고, 신규 기능을 어느 고객에게 줄지 결정했으며, 성과를 판매 건수가 아니라 반복 매출이라는 새 지표로 읽기 시작했습니다. 이 계획이 없었다면 개발·영업·지원이 각자 다른 방향으로 흘렀을 것입니다. 계획은 사람을 통제하는 명령서가 아니라, <b>무엇을 실험하고 어떤 신호를 함께 볼지 정하는 공동 작업대</b>였습니다.</p>
+  <p>초우카스·치아의 눈으로 보면 그보다 중요한 것은 작업대에서 생긴 새 습관입니다. 고객은 한 번 사는 사람이 아니라 계속 업데이트를 받고 비용을 내며 피드백을 주는 참여자가 되었습니다. 개발팀은 완성본을 납품하던 방식에서 반복적으로 기능을 내놓는 방식으로, 재무팀은 한 번의 판매와 누적 구독을 서로 다른 시간으로 계산하는 방식으로 바뀌었습니다. 회사가 전환을 "완료"라고 부르는 순간에도 <b>고객의 이탈, 기능의 채택, 가격의 해석</b>은 조직을 다시 만들었습니다.</p>
+  <p class="cite">Adobe Inc., Adobe 2014 Form 10-K (2014) · 크리에이티브 클라우드 전환 발표 (2011) · 2013년 영구 라이선스 종료 방향 — 공개 자료 기반 요약</p>
+</section>
+
+<section>
+  <h2>실무 적용 — 고정할 것과 열어 둘 것</h2>
+  <div class="steps">
+    <div class="st">
+      <p><b>고정할 것 먼저 적기</b> — 공동의 문제 정의, 고객에게 지킬 약속, 중단해야 할 위험한 관행은 계획에서 움직이지 않습니다.</p>
+    </div>
+    <div class="st">
+      <p><b>열어 둘 것 표시하기</b> — 실행 순서, 현장 피드백을 반영하는 지표, 목표 상태에 대한 해석은 의도적으로 열어 둡니다.</p>
+    </div>
+    <div class="st">
+      <p><b>질문 두 개로 바꾸기</b> — 매주 "계획 대비 얼마나 갔는가"만 묻지 말고, 어떤 경험이 구성원의 습관과 고객의 기대를 바꿨는지도 기록합니다.</p>
+    </div>
+    <div class="st">
+      <p><b>완료 뒤를 한 줄로</b> — "언제 완료되는가"와 함께 "완료라고 부른 뒤에도 무엇이 계속 달라지는가"를 한 줄로 적습니다.</p>
+    </div>
+  </div>
+  <p>계획이 살아 있으려면 <b>수정의 흔적</b>이 남아야 하고, 흐름이 방향을 가지려면 <b>선택과 중단의 기준</b>이 필요합니다. 둘 중 하나만 남기면 변화는 우연에 맡겨지거나 현실과 싸우게 됩니다.</p>
+</section>
+
+<section class="ask">
+  <h2>리더가 던질 질문</h2>
+  <ol>
+    <li>우리 변화 계획에서 고정한 것과 열어 둔 것이 각각 무엇인가.</li>
+    <li>완료라고 부른 뒤에도 무엇이 계속 달라지는가.</li>
+    <li>현장의 반응 가운데 계획에 없던 것을 지금 실패로 지우고 있지는 않은가.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>근거와 출처</h2>
+  <p class="cite">Bernard Burnes (2004) — 레빈의 계획된 변화 재평가 · Tsoukas·Chia (2002) — 조직적 생성 · Adobe 2014 Form 10-K (2014) — 전환 중간 결과</p>
+  <details>
+    <summary>세 가지 출처 자세히 보기</summary>
+    <ul>
+      <li>Bernard Burnes, "Kurt Lewin and the Planned Approach to Change: A Re-appraisal" (2004) — 계획된 변화가 시간표가 아니라 집단 진단과 행동 연구의 구조임을 확인한 연구입니다.</li>
+      <li>Haridimos Tsoukas, Robert Chia, "On Organizational Becoming: Rethinking Organizational Change" (2002) — 변화를 조직생활의 정상 조건이자 경험·습관의 재엮기로 보는 관점을 제시한 논문입니다.</li>
+      <li>Adobe Inc., "Adobe 2014 Form 10-K" (2014) — 크리에이티브 클라우드 전환의 방향과 디지털 미디어 반복 매출의 변화를 담은 회사 공시입니다. 2011년 전환 발표 자료와 2013년 종료 방향 발표도 함께 확인했습니다.</li>
+    </ul>
+  </details>
+  <details>
+    <summary>질 들뢰즈의 "되기"로 보기</summary>
+    <ul>
+      <li>질 들뢰즈와 펠릭스 가타리는 1980년 『천 개의 고원』에서, 이미 정해진 정체성으로 도착하는 것이 아니라 <b>관계 속에서 차이가 생겨나는 과정</b>을 "되기"라고 불렀습니다.</li>
+      <li>어도비도 패키지 회사에서 구독 회사로 단번에 변신한 것이 아니라, 업데이트·결제·피드백·개발 리듬이 달라지면서 <b>다른 회사가 되어 갔습니다.</b></li>
+      <li>차이는 계획의 방해물이 아니라 고객과 조직이 같은 서비스를 다르게 쓰면서 생긴 정보입니다. 그 정보를 억누르면 전환은 가격 정책이 되고, 읽어 내면 변화의 다음 방향이 됩니다.</li>
+    </ul>
+  </details>
+</section>
+
+<section class="closing">
+  <h2>한 줄로</h2>
+  <p>변화는 설계인가 흐름인가 — 설계 없는 흐름은 우연에 맡겨지고, 흐름을 읽지 않는 설계는 현실과 싸운다. 목표 상태를 선명하게 그리되 <b>그 목표가 달라질 권리를 인정하라.</b> 리더의 일은 변화의 끝을 선언하는 것이 아니라, 사람들이 새 경험을 해석하고 다음 행동을 선택할 수 있는 구조를 만드는 것이다.</p>
+</section>
+
+</main>
+
+<footer>
+  Lead Read
+  <p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+
+</div>
+</body>
+</html>
