@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>갈등은 협업을 깨뜨리는가 협업을 만드는가 · Lead Read 3분 브리핑</title>
+<style>
+  :root{
+    --ink:#1b1a16; --sub:#57514a; --line:#e4dfd4; --bg:#faf8f4; --card:#fff;
+    --accent:#1e5a4c; --accent-soft:#eaf2ee; --warm:#8a5a26; --warm-soft:#f8f1e6;
+    --mark:#9c3f2e; --ok:#2f5d50; --ok-soft:#ecf3f0;
+    --closing-bg:#1b1a16; --closing-fg:#f4f1ea; --on-accent:#fff;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --ink:#e9e7e2; --sub:#a9a49b; --line:#333944; --bg:#14171d; --card:#1b1f26;
+      --accent:#8fc3a8; --accent-soft:#16241e; --warm:#d9a066; --warm-soft:#2a231a;
+      --mark:#e08a72; --ok:#8fc3ae; --ok-soft:#17261f;
+      --closing-bg:#20242d; --closing-fg:#f0ede6; --on-accent:#14171d;
+    }
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Noto Sans KR","Pretendard","Malgun Gothic",sans-serif;
+    line-height:1.85;word-break:keep-all;}
+  a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px;}
+  .wrap{max-width:760px;margin:0 auto;padding:44px 20px 64px;}
+  header{border-bottom:3px solid var(--ink);padding-bottom:20px;margin-bottom:30px;}
+  .kicker{font-size:12.5px;letter-spacing:.16em;color:var(--accent);font-weight:700;margin-bottom:12px;}
+  h1{font-size:29px;line-height:1.42;margin:0 0 10px;font-weight:800;}
+  .lede{font-size:16px;color:var(--sub);margin:0;}
+  main section{margin:40px 0;}
+  h2{font-size:20px;font-weight:800;margin:0 0 14px;padding-left:12px;border-left:5px solid var(--accent);line-height:1.5;}
+  h3{font-size:15.5px;font-weight:800;margin:0 0 8px;line-height:1.5;}
+  p{margin:0 0 16px;font-size:16px;}
+  b{font-weight:700;}
+  .leadbox{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--accent);
+    border-radius:12px;padding:18px 20px;margin:18px 0;}
+  .leadbox .lb-label{font-size:12.5px;letter-spacing:.1em;font-weight:800;color:var(--accent);margin:0 0 6px;}
+  .leadbox .lb-q{font-size:16.5px;font-weight:700;margin:0 0 14px;}
+  .leadbox .lb-a{font-size:16.5px;font-weight:800;margin:0;line-height:1.6;}
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0;}
+  @media(max-width:640px){.duo{grid-template-columns:1fr;}}
+  .duo>div{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--card);}
+  .duo .t-a{background:var(--accent-soft);} .duo .t-b{background:var(--warm-soft);}
+  .duo .tag{font-size:12.5px;font-weight:800;letter-spacing:.08em;margin-bottom:6px;}
+  .t-a .tag{color:var(--accent);} .t-b .tag{color:var(--warm);}
+  .duo p{font-size:14.8px;margin:0 0 8px;color:var(--ink);}
+  .clash{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--mark);
+    border-radius:12px;padding:20px 22px;margin:22px 0;}
+  .clash p{font-size:15.2px;margin:0 0 10px;color:var(--ink);}
+  .clash p:last-child{margin-bottom:0;}
+  .timeline{position:relative;margin:20px 0;padding-left:8px;}
+  .timeline .tl{position:relative;margin:0 0 18px;padding:0 0 0 30px;border-left:3px solid var(--line);}
+  .timeline .tl:last-child{border-left-color:transparent;margin-bottom:0;}
+  .timeline .tl::before{content:"";position:absolute;left:-9px;top:5px;width:13px;height:13px;border-radius:50%;
+    background:var(--accent);box-shadow:0 0 0 3px var(--bg);}
+  .timeline .tl .tl-date{font-size:12.5px;font-weight:800;color:var(--accent);letter-spacing:.04em;}
+  .timeline .tl p{font-size:15px;margin:4px 0 0;}
+  .cite{font-size:13.8px;color:var(--sub);background:var(--accent-soft);border-radius:8px;padding:10px 14px;margin:12px 0 0;}
+  .cite.w{background:var(--warm-soft);}
+  .steps{counter-reset:s;margin:20px 0;}
+  .steps .st{counter-increment:s;background:var(--card);border:1px solid var(--line);
+    border-radius:12px;padding:16px 18px 16px 54px;margin-bottom:12px;position:relative;}
+  .steps .st::before{content:counter(s);position:absolute;left:16px;top:14px;width:26px;height:26px;
+    border-radius:50%;background:var(--accent);color:var(--on-accent);font-weight:800;font-size:14px;
+    display:flex;align-items:center;justify-content:center;}
+  .steps p{font-size:15px;margin:0;color:var(--ink);}
+  details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:14px 0;}
+  summary{font-size:15px;font-weight:700;cursor:pointer;color:var(--accent);}
+  details li{font-size:14.5px;margin-bottom:8px;}
+  details ul{margin:12px 0 0;padding-left:20px;}
+  .ask{background:var(--accent-soft);border-radius:12px;padding:20px 22px;margin:22px 0;}
+  .ask ol{margin:0;padding-left:22px;}
+  .ask li{font-size:15.5px;margin-bottom:9px;}
+  .ask li:last-child{margin-bottom:0;}
+  .closing{background:var(--closing-bg);color:var(--closing-fg);border-radius:14px;padding:26px;margin:36px 0 0;}
+  .closing h2{color:var(--closing-fg);border-left-color:var(--mark);}
+  .closing p{font-size:15.4px;margin-bottom:0;}
+  footer{margin-top:38px;padding-top:16px;border-top:1px solid var(--line);font-size:13.5px;color:var(--sub);text-align:center;}
+  .author-credit{margin:8px 0 0;font-size:13.5px;color:var(--sub);}
+  @media(max-width:480px){
+    h1{font-size:24px;}
+    .wrap{padding:32px 16px 52px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Lead Read · 3분 브리핑 · 갈등과협업</div>
+  <h1>갈등은 협업을 깨뜨리는가 협업을 만드는가</h1>
+  <p class="lede">협업을 말할 때 우리는 종종 좋은 분위기를 떠올립니다. 서로의 말을 끊지 않고, 결정에 고개를 끄덕이며, 회의가 갈등 없이 끝나는 장면입니다. 그러나 동의가 너무 빨리 끝나면 중요한 차이가 사라집니다. 반대로 모든 이견을 생산적인 논쟁이라고 부르면, 사람을 둘러싼 충돌이 과업의 차이와 섞입니다.</p>
+</header>
+
+<main>
+
+<section>
+  <h2>왜 지금 이 문제인가</h2>
+  <p>리더가 결정해야 할 것은 "갈등을 줄일 것인가"가 아니라 <b>"어떤 차이를 과업의 개선으로 바꾸고, 어떤 차이를 관계의 손상으로 번지지 않게 할 것인가"</b>입니다. 조용한 팀은 합의가 튼튼한 팀일 수도 있고, 차이를 말하지 않기로 한 팀일 수도 있습니다. 충돌의 빈도만 보면 둘을 구별할 수 없습니다.</p>
+  <div class="leadbox">
+    <p class="lb-label">핵심 질문</p>
+    <p class="lb-q">갈등은 협업을 깨뜨리는 비용인가, 협업을 만드는 절차인가.</p>
+    <p class="lb-label">한 문장 결론</p>
+    <p class="lb-a">협업의 수준은 충돌의 빈도가 아니라 충돌 뒤에 더 나은 선택지가 남는지로 확인해야 한다. 필요한 것은 협력적 목표, 과업 중심의 언어, 결정권의 명확성, 결정 뒤에도 관계가 이어지는 인정의 절차다.</p>
+  </div>
+</section>
+
+<section>
+  <h2>두 견해가 갈리는 지점</h2>
+  <div class="duo">
+    <div class="t-a">
+      <div class="tag">프레임 — 목표 구조가 갈등을 만든다</div>
+      <h3>Tjosvold — 협력적 목표 구조 (1998)</h3>
+      <p>심리학자 딘 조스볼드는 갈등을 협력과 경쟁의 목표 구조 속에서 봅니다. 구성원이 <b>서로의 성공이 연결되어 있다고 느끼면</b> 의견 차이는 공동의 문제를 해결하는 토론이 될 수 있습니다. 상대를 이겨야만 내가 성공하는 구조에서는 같은 정보가 방어와 은폐의 이유가 됩니다.</p>
+      <p>협력적 갈등은 상대의 주장을 듣고, 자신의 판단을 설명하고, 둘의 차이를 시험할 수 있는 조건을 필요로 합니다. 갈등이 있다는 사실보다 <b>갈등이 누구의 승패를 위해 조직되었는지</b>가 중요합니다.</p>
+    </div>
+    <div class="t-b">
+      <div class="tag">반증 — 갈등에는 종류가 있다</div>
+      <h3>Amason — 인지적 갈등과 정서적 갈등 (1996)</h3>
+      <p>경영학자 마이클 에이메이슨은 최고경영진의 전략적 의사결정에서 갈등의 종류를 구분합니다. <b>아이디어·정보·대안에 관한 인지적 갈등</b>은 복잡한 선택의 질을 높일 수 있지만, <b>사람의 가치·능력·충성심을 공격하는 정서적 갈등</b>은 만족과 결속을 해칩니다.</p>
+      <p>둘은 현장에서 완전히 분리되지 않기 때문에 "세게 논쟁하되 사람은 공격하지 말라"는 구호만으로는 부족합니다. 과업의 차이를 다루는 절차, 발언권의 균형, 결정 뒤의 관계 회복 장치가 함께 있어야 인지적 갈등이 기능합니다.</p>
+    </div>
+  </div>
+  <p class="cite">프레임: Dean Tjosvold (1998), 협력·경쟁 목표 접근법과 갈등 · 반증: Michael A. Amason (1996), 기능적·역기능적 갈등과 전략적 의사결정</p>
+  <div class="clash">
+    <h3>갈리는 지점 — 무엇이 갈등을 조직하는가</h3>
+    <p>프레임은 <b>협력적 목표 구조가 서로 다른 판단을 공동의 탐구로 바꿀 수 있다</b>고 봅니다. "좋은 팀은 갈등이 없다"는 명제는, 조용한 합의가 정보의 차이를 지우는 순간 깨집니다.</p>
+    <p>반증은 <b>갈등의 내용과 정서적 결과를 분리해 보라고 요구</b>합니다. 다만 "논쟁이 많을수록 좋은 결정이 나온다"는 명제도, 승패와 지위 경쟁이 질문을 사람에 대한 공격으로 바꾸는 순간 무너집니다. 협업의 수준은 충돌의 빈도가 아니라 충돌 뒤에 남는 선택지로 확인해야 합니다.</p>
+  </div>
+</section>
+
+<section>
+  <h2>실제 사례 — 픽사의 브레인트러스트</h2>
+  <p>영화 제작사 픽사의 브레인트러스트는 이 긴장을 보여주는 공개 사례입니다. 제작 중인 감독과 주요 창작자가 완성되지 않은 장면을 함께 보고, 이야기의 문제와 관객이 느낄 혼란을 직설적으로 말하는 검토 모임입니다.</p>
+  <p>창립자인 에드 캣멀은 이 모임의 가치가 정답을 지시하는 데 있지 않고, <b>감독이 최종 결정권을 가진 상태에서 동료가 문제를 숨기지 않는 데</b> 있다고 설명합니다. 픽사의 공개 경영 자료와 경영 기록에 따르면, 브레인트러스트는 작품을 대신 연출하는 위원회가 아니라, 창작자가 방어적으로 굳기 전에 서사의 약점을 발견하는 피드백 구조였습니다.</p>
+  <p>그러나 브레인트러스트를 그대로 복사하면 협업이 되지 않습니다. 픽사처럼 <b>공통의 전문 언어와 강한 작품 목표</b>가 있는 조직에서 가능한 직설성이, 권한과 평가가 불균형한 팀에서는 모욕이나 검열로 변할 수 있습니다. 감독이 피드백을 거부해도 불이익을 받지 않는다는 신뢰가 없다면, 회의는 형식적 승인 절차가 됩니다. 반대로 모든 참가자가 의견을 내고 최종 책임자가 사라지면 작품의 방향은 끝없이 흔들립니다. 사례의 핵심은 <b>"강하게 말할 자유"와 "결정할 책임"을 동시에 설계</b>한 데 있습니다.</p>
+  <p class="cite">Ed Catmull·Amy Wallace, Creativity, Inc.(2014)와 Ed Catmull의 HBR 기고(2008년 9월) — 브레인트러스트의 검토 구조와 결정권 배치를 설명한 공개 기록</p>
+</section>
+
+<section>
+  <h2>실무 적용 — 발언을 세 층으로 나누기</h2>
+  <div class="steps">
+    <div class="st">
+      <p><b>관찰층</b> — 관찰 가능한 장면과 데이터에 대한 이견입니다. 공개 토론해야 합니다.</p>
+    </div>
+    <div class="st">
+      <p><b>해석층</b> — 그 장면을 어떻게 해석할지에 대한 가설입니다. 역시 공개 토론의 대상입니다.</p>
+    </div>
+    <div class="st">
+      <p><b>정체성층</b> — 누가 옳은 사람인가를 둘러싼 판단입니다. 여기가 섞이면 상대의 자격을 공격하는 방향으로 흐릅니다.</p>
+    </div>
+    <div class="st">
+      <p><b>네 가지 기록</b> — 갈등 회의마다 어떤 사실에서 의견이 갈렸는가, 각 판단의 근거와 아직 모르는 것은 무엇인가, 논쟁이 과업에서 사람의 자격으로 이동한 순간은 언제였는가, 최종 결정에 반대 의견을 어떻게 반영하거나 보류했는가를 적습니다.</p>
+    </div>
+  </div>
+  <p>회의 시작 전에 "무엇을 보고 무엇을 추론했는가"를 분리하면 사람이 아니라 문제를 다룰 여지가 커집니다. 결정권자는 논쟁을 끝내야 하지만, 논쟁을 제기한 사람을 패배자로 만들 필요는 없습니다. 회의가 끝난 뒤에는 <b>반대 의견의 흔적을 결정문에 남기십시오.</b> 어떤 주장이 채택되었고 어떤 주장이 보류되었는지, 보류된 주장을 다시 볼 조건은 무엇인지 적으면 다음 회의가 처음부터 시작되지 않습니다. 결과가 달라졌을 때 조직은 누가 옳았는지를 겨루기보다 어떤 신호를 놓쳤는지 확인할 수 있습니다.</p>
+</section>
+
+<section class="ask">
+  <h2>리더가 던질 질문</h2>
+  <ol>
+    <li>우리 팀의 조용한 합의는 차이가 없는 것인가, 차이를 말하지 않기로 한 것인가.</li>
+    <li>논쟁이 사람의 자격을 공격하는 방향으로 간 순간을 포착하는 장치가 있는가.</li>
+    <li>결정문에 반대 의견과 재검토 조건이 남는가.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>근거와 출처</h2>
+  <p class="cite">Tjosvold (1998) — 협력·경쟁 목표 구조 · Amason (1996) — 기능적·역기능적 갈등 · Catmull·Wallace (2014)·Catmull HBR(2008) — 픽사 브레인트러스트</p>
+  <details>
+    <summary>세 가지 출처 자세히 보기</summary>
+    <ul>
+      <li>Dean Tjosvold, "Cooperative and Competitive Goal Approach to Conflict" (1998) — 협력과 경쟁의 목표 구조가 갈등의 결과를 어떻게 바꾸는지 정리한 연구입니다.</li>
+      <li>Michael A. Amason, "Distinguishing the Effects of Functional and Dysfunctional Conflict on Strategic Decision Making" (1996) — 기능적 갈등과 역기능적 갈등이 전략적 의사결정에 미치는 영향을 분석한 논문입니다.</li>
+      <li>Ed Catmull과 Amy Wallace의 Creativity, Inc.(2014), 그리고 Ed Catmull의 "How Pixar Fosters Collective Creativity"(2008년 9월) — 브레인트러스트의 운영 방식과 결정권 배치를 정리한 공개 기록입니다.</li>
+    </ul>
+  </details>
+  <details>
+    <summary>헤겔의 "인정과 변증법"으로 보기</summary>
+    <ul>
+      <li>철학자 게오르크 헤겔의 관점에서 자아는 혼자 완성되는 실체가 아니라, 타자의 응답 속에서 자신을 확인합니다.</li>
+      <li>하지만 인정받고 싶은 욕구는 대화를 진리 탐구가 아니라 지위 싸움으로 바꿀 수 있습니다. 상대의 반대를 내 존재에 대한 부정으로 읽는 순간, 논점은 사라지고 승리만 남습니다.</li>
+      <li>변증법적 협업은 상대를 없애는 데서 끝나지 않습니다. <b>서로의 한계와 의존성을 드러내고, 처음에는 어느 한쪽에도 없던 더 나은 형태로 판단을 다시 만드는 과정</b>입니다. 그러려면 반대 뒤에 관계가 지속될 수다는 인정이 필요합니다.</li>
+    </ul>
+  </details>
+</section>
+
+<section class="closing">
+  <h2>한 줄로</h2>
+  <p>갈등은 협업을 깨뜨리는가 만드는가 — 갈등을 제거하는 조직은 문제를 늦게 발견하고, 갈등을 숭배하는 조직은 문제보다 자아를 키운다. 협업의 수준은 충돌의 빈도가 아니라 <b>충돌 뒤에 더 나은 선택지가 남는지</b>로 확인하라. 협력적 목표, 과업 중심의 언어, 결정권의 명확성, 결정 뒤에도 관계가 이어지는 인정의 절차를 함께 설계하라.</p>
+</section>
+
+</main>
+
+<footer>
+  Lead Read
+  <p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+
+</div>
+</body>
+</html>
