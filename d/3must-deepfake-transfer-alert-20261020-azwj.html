@@ -4,67 +4,58 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>임원 사칭 이체 요구 대응 · 3MUST</title>
+<title>임원을 사칭한 음성·영상으로 이체를 요구받았을 때 · 3MUST</title>
 <link rel="icon" href="data:,">
 <style>
-:root{color-scheme:light dark;--bg:#e9eeea;--paper:#fff;--ink:#1d3028;--muted:#5b6e64;--line:#c5d7cc;--accent:#126d57;--wash:#e4f1eb;font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);line-height:1.42}
-main{width:min(860px,calc(100% - 28px));margin:20px auto;padding:clamp(22px,4vw,38px);background:var(--paper);border:1px solid var(--line);border-top:7px solid var(--accent)}
-.eyebrow{font-size:.7rem;font-weight:800;letter-spacing:.13em;color:var(--accent);margin:0 0 8px}
-h1{font-size:clamp(1.7rem,4.4vw,2.5rem);line-height:1.15;letter-spacing:-.025em;margin:0;text-wrap:balance}
-.situation{color:var(--muted);margin:12px 0 16px;font-size:.92rem}
-.flow{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 14px;padding:0;list-style:none;font-size:.74rem;font-weight:800}
-.flow li{color:var(--accent);border-bottom:2px solid var(--accent);padding:1px 4px}
-.flow li+li:before{content:"→ ";opacity:.6}
-.route{position:relative;padding-left:22px}
-.route:before{content:"";position:absolute;top:10px;bottom:10px;left:5px;width:2px;background:var(--accent);opacity:.4}
-section{position:relative;padding:10px 0 12px 4px;border-top:1px solid var(--line)}
-section:before{content:"";position:absolute;left:-22px;top:17px;width:9px;height:9px;border:2px solid var(--accent);border-radius:50%;background:var(--paper)}
-h2{font-size:.82rem;color:var(--accent);margin:0 0 6px}
-section p,section ul,section ol{margin:0;padding-left:1.15rem;font-size:.89rem}
-section p{padding:0}section li{margin:2px 0}
-.pause{margin-top:12px;padding:11px 14px;background:var(--wash);border-left:3px solid var(--accent);font-size:.87rem}
-.source,.foot{font-size:.72rem;color:var(--muted);margin-top:8px}
-.source p{margin:2px 0}
-@media(prefers-color-scheme:dark){:root{--bg:#111a17;--paper:#1b2822;--line:#40564a;--ink:#eaf3ed;--muted:#b4c8bc;--accent:#78d4a8;--wash:#20382f}}
-@media(max-width:640px){main{width:calc(100% - 18px);margin:8px auto;padding:20px 16px}.route{padding-left:18px}}
-@media print{@page{size:A4 portrait;margin:9mm}:root{color-scheme:light}body{background:#fff}main{width:100%;margin:0;padding:6mm;border:0;border-top:3mm solid var(--accent)}section{padding:6px 0 7px 4px}section p,section ul,section ol{font-size:8.3pt;line-height:1.27}.situation{margin:7px 0;font-size:8.4pt}.pause{margin-top:7px;padding:7px;font-size:8pt}.source,.foot{font-size:7.1pt;margin-top:5px}.flow{font-size:7pt;margin-bottom:7px}}
+:root { color-scheme:light dark; --bg:#edf1f3; --paper:#fff; --ink:#202d3d; --muted:#596b80; --line:#cbd6e4; --accent:#245aa6; --wash:#e7eef8; font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif; }
+@media(prefers-color-scheme:dark){:root{--bg:#111a20;--paper:#1a252d;--ink:#eff4f4;--muted:#bac7c8;--line:#394a52;--wash:#253541;}}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);line-height:1.55}
+main{width:min(850px,100% - 28px);margin:24px auto;padding:clamp(22px,5vw,48px);background:var(--paper);border:1px solid var(--line);border-top:7px solid var(--accent)}
+.eyebrow{font-size:.75rem;font-weight:750;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin:0 0 10px}
+h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.12;letter-spacing:-.035em;margin:0;text-wrap:balance}
+.situation{color:var(--muted);max-width:64ch;margin:14px 0 24px}
+.three{display:grid;gap:0}
+section{padding:17px 0;border-top:1px solid var(--line)}
+h2{font-size:.9rem;color:var(--accent);margin:0 0 7px;letter-spacing:.02em}
+p,li{max-width:68ch} section p{margin:0} section ul,section ol{margin:0;padding-left:1.25rem}
+.pause{margin-top:20px;padding:13px 15px;background:var(--wash);border-left:3px solid var(--accent)}
+.pause strong{display:block;margin-bottom:4px}.sources{margin-top:20px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+.sources p{margin:4px 0}.disclaimer{font-size:.75rem;color:var(--muted);margin-top:18px}
+html[data-design="M1"]{--accent:#bd4d28;--wash:#f8e7df;--bg:#ece9e5;--line:#dfc7bb;--ink:#252b2c;--muted:#59615f}
+html[data-design="M1"] main{border-top-width:10px}.m1 .three{grid-template-columns:1fr 1fr;gap:12px}.m1 section{border:1px solid var(--line);padding:14px;background:color-mix(in srgb,var(--wash) 35%,var(--paper))}.m1 section:last-child{grid-column:1/-1}
+html[data-design="M2"]{--accent:#176b68;--wash:#e3efed;--bg:#e7eeee;--line:#c5d7d4;--ink:#162c31;--muted:#52696a}
+html[data-design="M2"] h1{font-family:Georgia,"Batang",serif;font-weight:600}.m2 .three{grid-template-columns:1fr 1fr;gap:22px}.m2 section:nth-child(2){background:var(--wash);padding:15px;border-top:0}.m2 section:last-child{grid-column:1/-1}
+html[data-design="M3"]{--accent:#126d57;--wash:#e4f1eb;--bg:#e9eeea;--line:#c5d7cc;--ink:#1d3028;--muted:#5b6e64}
+.m3 .three{position:relative;padding-left:20px}.m3 .three:before{content:"";position:absolute;top:18px;bottom:18px;left:4px;width:2px;background:var(--accent);opacity:.45}.m3 section{position:relative;padding-left:14px}.m3 section:before{content:"";position:absolute;left:-20px;top:20px;width:9px;height:9px;border:2px solid var(--accent);border-radius:50%;background:var(--paper)}
+html[data-design="M4"]{--accent:#714d83;--wash:#eee8f3;--bg:#ece8ef;--line:#d7ccdf;--ink:#292331;--muted:#686071}
+.m4 .situation{background:var(--wash);border-left:3px solid var(--accent);padding:12px 15px}.m4 .three{grid-template-columns:1fr 1fr;gap:12px}.m4 section{border:1px solid var(--line);padding:15px}.m4 section:last-child{grid-column:1/-1}
+html[data-design="M5"]{--accent:#245aa6;--wash:#e7eef8;--bg:#edf1f3;--line:#cbd6e4;--ink:#202d3d;--muted:#596b80}
+.m5 .situation{background:var(--wash);padding:10px 12px;border:1px solid var(--line)}.m5 section{display:grid;grid-template-columns:minmax(145px,.34fr) 1fr;gap:18px}.m5 h2{color:var(--ink)}
+@media(prefers-color-scheme:dark){
+ html[data-design="M1"]{--accent:#f29a72;--wash:#392d29;--bg:#131a1a;--paper:#202929;--line:#48524f;--ink:#edf1ed;--muted:#b9c5bf}
+ html[data-design="M2"]{--accent:#73c6be;--wash:#203936;--bg:#101a1b;--paper:#1b292b;--line:#405452;--ink:#eaf3f2;--muted:#afc6c3}
+ html[data-design="M3"]{--accent:#78d4a8;--wash:#20382f;--bg:#111a17;--paper:#1b2822;--line:#40564a;--ink:#eaf3ed;--muted:#b4c8bc}
+ html[data-design="M4"]{--accent:#d0a5e2;--wash:#342b3a;--bg:#19151d;--paper:#28212e;--line:#51445b;--ink:#f1eaf4;--muted:#c7b9ce}
+ html[data-design="M5"]{--accent:#8cb7ff;--wash:#24364d;--bg:#141a22;--paper:#202a37;--line:#3d4d62;--ink:#edf2fa;--muted:#b8c5d8}
+}
+@media(max-width:620px){main{width:min(100% - 18px,850px);margin:9px auto;padding:22px 17px}.m1 .three,.m2 .three,.m4 .three{grid-template-columns:1fr}.m1 section:last-child,.m2 section:last-child,.m4 section:last-child{grid-column:auto}.m5 section{grid-template-columns:1fr;gap:5px}}
+@media print{@page{size:A4 portrait;margin:10mm}html{color-scheme:light}body{background:#fff}main{width:100%;margin:0;padding:10mm;border:0;border-top:4mm solid var(--accent);box-shadow:none}.sources,.disclaimer{font-size:8.5pt}a{color:inherit;text-decoration:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
-<main>
-<p class="eyebrow">3MUST · AI 사칭 사고 대응</p>
-<h1>임원을 사칭한 음성·영상으로 이체를 요구받았을 때</h1>
-<p class="situation"><b>적용 상황:</b> 임원·거래처를 사칭한 전화·영상통화·메신저로 긴급 이체나 자료 전달을 요구받아 AI 합성 콘텐츠를 의심하는 경우.</p>
-<ul class="flow"><li>보전</li><li>차단</li><li>삭제</li><li>법적 조치</li></ul>
-<div class="route">
-<section><h2>Must Know · 알아야 할 것</h2>
-<p>목소리·얼굴이 같다는 것만으로 신원이 확인된 것은 아닙니다. <b>다른 채널의 이중 확인</b>이 유일한 방어선입니다. 회사 자금과 평판에 직접 닿는 사건이므로 담당자 개인에게 맡기지 않습니다. 삭제 요청만 하면 증거가 사라지므로 <b>보전 → 차단 → 삭제 → 법적 조치</b> 순서를 지킵니다.</p></section>
-<section><h2>Must Check · 확인할 것</h2>
-<ul>
-<li>요구 경로(전화·영상·메신저·메일)와 시각</li>
-<li>계좌·금액·수취인·송금 사유</li>
-<li>이체 실행 여부와 실행 시각·경로</li>
-<li>사내 인증·결재 절차 준수 여부</li>
-<li>콘텐츠 URL·게시 플랫폼·확산 범위</li>
-<li>스크린샷·통화 기록·메타데이터·메일 헤더</li>
-<li>다른 임직원·거래처에 같은 요구가 갔는지</li>
-<li>피해 범위와 통보 대상</li>
-</ul></section>
-<section><h2>Must Do · 지금 할 일</h2>
-<ol>
-<li>즉시 이체를 중단하고 다른 채널로 재확인합니다.</li>
-<li>이미 이체했다면 은행에 지급정지·회수를 요청하고 시각을 기록합니다.</li>
-<li>URL·스크린샷·통화 로그·메일 헤더를 원본으로 보전합니다.</li>
-<li>법무·보안·경영지원에 동시 보고하고 책임자·채널을 하나로 정합니다.</li>
-<li>플랫폼에 게시 중단·삭제, 필요하면 검색엔진 제외를 요청합니다.</li>
-<li>수사기관 신고·민사 조치는 외부 법률검토 후 결정하고 근거를 남깁니다.</li>
-<li>외부 이체 이중 확인·다중 요소 인증·임직원 교육을 즉시 보강합니다.</li>
-</ol></section>
-</div>
-<aside class="pause"><b>멈추고 검토:</b> 이체가 이미 실행된 경우, 임원·거래처·고객에게 사칭이 확산된 경우, 콘텐츠에 아동·청소년이 관련된 경우, 언론·SNS로 확산된 경우.</aside>
-<div class="source"><p><b>출처:</b> 개인정보·AI법 EP-009 · 위험 신호·탐지→차단→삭제→구제 프레임·이체 승인 문안</p><p><b>검토:</b> 2026-10-20 · 처벌 조문·플랫폼 책임·표시의무 판단은 제외</p></div>
-<p class="foot">일반적인 실무 참고자료입니다. 개별 사안의 법적 책임과 대응 방향은 사실관계와 적용 법령을 확인해 판단하세요.</p>
+<main class="m3">
+  <p class="eyebrow">3MUST · 개인정보·AI법</p>
+  <h1>임원을 사칭한 음성·영상으로 이체를 요구받았을 때</h1>
+  <p class="situation"><strong>적용 상황:</strong> 임원·거래처를 사칭한 전화·영상통화·메신저로 긴급 이체나 자료 전달을 요구받아 AI 합성 콘텐츠를 의심하는 경우. <strong>범위:</strong> 관련 법령의 처벌 수위와 표시·고지 의무, 손해배상 범위는 판단하지 않습니다. 이체 차단, 증거 보전, 신고·삭제 요청, 재발 방지 절차만 정리합니다.</p>
+  <div class="three">
+    <section><h2>Must Know · 알아야 할 것</h2><ul><li>목소리와 얼굴이 실제와 같다는 것만으로 신원이 확인된 것은 아닙니다. 음성·영상은 합성될 수 있으므로 <strong>별도 채널의 이중 확인</strong>이 유일한 방어선입니다.</li><li>임원 사칭 이체 요구는 개인 사기가 아니라 회사 자금과 평판에 직접 닿는 사건입니다. 담당자 개인이 처리하게 두지 않습니다.</li><li>삭제 요청만으로 끝내면 증거가 사라지고 후속 조치가 막힙니다. <strong>보전 → 차단 → 삭제 → 법적 조치</strong> 순서를 지킵니다.</li><li>AI 생성물 표시·고지 의무는 별개 축입니다. 표시 의무를 지켰다는 이유로 이 사고의 대응이 끝나는 것이 아닙니다.</li></ul></section>
+    <section><h2>Must Check · 확인할 것</h2><ul><li>요구가 들어온 경로(전화·영상통화·메신저·이메일)와 시각</li><li>요구한 계좌, 금액, 수취인, 송금 사유</li><li>이체가 실제로 실행되었는지, 실행되었다면 시각과 경로</li><li>요구 내용에 사내 인증·결재 절차가 지켜졌는지</li><li>관련 콘텐츠의 URL, 게시 플랫폼, 확산 범위</li><li>스크린샷, 통화 기록, 메타데이터, 메일 헤더 등 원본 증거</li><li>같은 수법의 요구가 다른 임직원·거래처에도 갔는지</li><li>피해 범위(자금, 개인정보, 평판)와 관련 임원·거래처 통보 대상</li></ul></section>
+    <section><h2>Must Do · 실행할 것</h2><ol><li>담당자는 즉시 이체를 중단하고 지정된 담당자에게 <strong>다른 채널로</strong> 재확인합니다.</li><li>이미 이체했다면 은행에 지급정지·회수 절차를 요청하고 시각을 기록합니다.</li><li>증거를 원본 형태로 보전합니다(URL, 스크린샷, 통화 로그, 메일 헤더, 수신 시각).</li><li>법무·보안·경영지원에 동시 보고하고 사건 책임자와 대응 채널을 하나로 정합니다.</li><li>플랫폼에 게시 중단·삭제를 요청하고, 필요하면 검색엔진 제외를 함께 요청합니다.</li><li>수사기관 신고와 민사 조치는 외부 법률검토를 거쳐 결정하고, 결정 근거와 시각을 남깁니다.</li><li>재발 방지를 위해 외부 이체 이중 확인, 다중 요소 인증, 임직원 교육을 즉시 보강합니다.</li></ol></section>
+  </div>
+  <aside class="pause"><strong>잠깐 멈추고 검토할 때</strong><p>이체가 이미 실행된 경우 · 임원·거래처·고객에게 사칭이 확산된 경우 · 콘텐츠에 아동·청소년이 관련된 경우 · 언론·SNS로 확산되어 평판 대응이 필요한 경우</p></aside>
+  <div class="sources"><p><strong>원자료:</strong> 개인정보·AI법 EP-009(AI 악용 시나리오, 위험 신호, 탐지→차단→삭제→구제 프레임, 이체 승인 프로토콜 문안)</p><p><strong>제한:</strong> 형사 처벌 조문·수위, 플랫폼 책임 범위, 표시·고지 의무 판단은 본 카드에서 제외했습니다. 법적 조치의 성부는 외부 법률검토가 필요합니다.</p><p><strong>검토일:</strong> 2026-10-20</p><p><strong>변경 기록:</strong> 초안. 원자료의 조문·처벌 수위·판례 인용을 제거하고 이체 차단·증거 보전·신고·재발 방지 절차로 재구성했습니다.</p></div>
+  <p class="disclaimer">일반적인 실무 참고자료입니다. 개별 사안에서는 사실관계와 적용 기준을 확인하세요.</p>
 </main>
 </body>
 </html>
