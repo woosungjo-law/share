@@ -4,67 +4,58 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>공정위 신고 해당 여부 확인 · 3MUST</title>
+<title>인수 계약을 검토할 때 공정위 신고 해당 여부부터 확인 · 3MUST</title>
 <link rel="icon" href="data:,">
 <style>
-:root{color-scheme:light dark;--bg:#ece8ef;--paper:#fff;--ink:#292331;--muted:#686071;--line:#d7ccdf;--accent:#714d83;--wash:#eee8f3;font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);line-height:1.42}
-main{width:min(860px,calc(100% - 28px));margin:20px auto;padding:clamp(22px,4vw,36px);background:var(--paper);border:1px solid var(--line);border-top:7px solid var(--accent)}
-.eyebrow{font-size:.7rem;font-weight:800;letter-spacing:.13em;color:var(--accent);margin:0 0 8px}
-h1{font-size:clamp(1.7rem,4.4vw,2.45rem);line-height:1.14;letter-spacing:-.025em;margin:0;text-wrap:balance}
-.situation{background:var(--wash);border-left:3px solid var(--accent);padding:9px 12px;color:var(--ink);margin:13px 0 15px;font-size:.9rem}
-.branch{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px;padding:0;list-style:none}
-.branch li{font-size:.74rem;font-weight:700;border:1px solid var(--accent);color:var(--accent);padding:3px 8px;border-radius:2px}
-.three{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-section{padding:11px 13px;border:1px solid var(--line)}
-section.know{background:var(--wash);border-top:3px solid var(--accent)}
-section.do{grid-column:1/-1}
-h2{font-size:.82rem;color:var(--accent);margin:0 0 5px}
-section p,section ul,section ol{margin:0;padding-left:1.1rem;font-size:.88rem}
-section p{padding:0}section li{margin:2px 0}
-.pause{margin-top:10px;padding:9px 12px;background:var(--wash);border-left:3px solid var(--accent);font-size:.85rem}
-.source,.foot{font-size:.71rem;color:var(--muted);margin-top:7px}
-.source p{margin:2px 0}
-@media(prefers-color-scheme:dark){:root{--bg:#19151d;--paper:#28212e;--line:#51445b;--ink:#f1eaf4;--muted:#c7b9ce;--accent:#d0a5e2;--wash:#342b3a}}
-@media(max-width:640px){main{width:calc(100% - 18px);margin:8px auto;padding:20px 16px}.three{grid-template-columns:1fr}.three section.do{grid-column:auto}}
-@media print{@page{size:A4 portrait;margin:9mm}:root{color-scheme:light}body{background:#fff}main{width:100%;margin:0;padding:6mm;border:0;border-top:2.5mm solid var(--accent)}.three{gap:6px}.three section{padding:7px}.three p,.three ul,.three ol{font-size:8.3pt;line-height:1.28}.situation{margin:7px 0;padding:6px 8px;font-size:8.3pt}.pause{margin-top:7px;padding:7px;font-size:8pt}.source,.foot{font-size:7.2pt;margin-top:5px}.branch li{font-size:7pt}}
+:root { color-scheme:light dark; --bg:#edf1f3; --paper:#fff; --ink:#202d3d; --muted:#596b80; --line:#cbd6e4; --accent:#245aa6; --wash:#e7eef8; font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif; }
+@media(prefers-color-scheme:dark){:root{--bg:#111a20;--paper:#1a252d;--ink:#eff4f4;--muted:#bac7c8;--line:#394a52;--wash:#253541;}}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);line-height:1.55}
+main{width:min(850px,100% - 28px);margin:24px auto;padding:clamp(22px,5vw,48px);background:var(--paper);border:1px solid var(--line);border-top:7px solid var(--accent)}
+.eyebrow{font-size:.75rem;font-weight:750;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin:0 0 10px}
+h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.12;letter-spacing:-.035em;margin:0;text-wrap:balance}
+.situation{color:var(--muted);max-width:64ch;margin:14px 0 24px}
+.three{display:grid;gap:0}
+section{padding:17px 0;border-top:1px solid var(--line)}
+h2{font-size:.9rem;color:var(--accent);margin:0 0 7px;letter-spacing:.02em}
+p,li{max-width:68ch} section p{margin:0} section ul,section ol{margin:0;padding-left:1.25rem}
+.pause{margin-top:20px;padding:13px 15px;background:var(--wash);border-left:3px solid var(--accent)}
+.pause strong{display:block;margin-bottom:4px}.sources{margin-top:20px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+.sources p{margin:4px 0}.disclaimer{font-size:.75rem;color:var(--muted);margin-top:18px}
+html[data-design="M1"]{--accent:#bd4d28;--wash:#f8e7df;--bg:#ece9e5;--line:#dfc7bb;--ink:#252b2c;--muted:#59615f}
+html[data-design="M1"] main{border-top-width:10px}.m1 .three{grid-template-columns:1fr 1fr;gap:12px}.m1 section{border:1px solid var(--line);padding:14px;background:color-mix(in srgb,var(--wash) 35%,var(--paper))}.m1 section:last-child{grid-column:1/-1}
+html[data-design="M2"]{--accent:#176b68;--wash:#e3efed;--bg:#e7eeee;--line:#c5d7d4;--ink:#162c31;--muted:#52696a}
+html[data-design="M2"] h1{font-family:Georgia,"Batang",serif;font-weight:600}.m2 .three{grid-template-columns:1fr 1fr;gap:22px}.m2 section:nth-child(2){background:var(--wash);padding:15px;border-top:0}.m2 section:last-child{grid-column:1/-1}
+html[data-design="M3"]{--accent:#126d57;--wash:#e4f1eb;--bg:#e9eeea;--line:#c5d7cc;--ink:#1d3028;--muted:#5b6e64}
+.m3 .three{position:relative;padding-left:20px}.m3 .three:before{content:"";position:absolute;top:18px;bottom:18px;left:4px;width:2px;background:var(--accent);opacity:.45}.m3 section{position:relative;padding-left:14px}.m3 section:before{content:"";position:absolute;left:-20px;top:20px;width:9px;height:9px;border:2px solid var(--accent);border-radius:50%;background:var(--paper)}
+html[data-design="M4"]{--accent:#714d83;--wash:#eee8f3;--bg:#ece8ef;--line:#d7ccdf;--ink:#292331;--muted:#686071}
+.m4 .situation{background:var(--wash);border-left:3px solid var(--accent);padding:12px 15px}.m4 .three{grid-template-columns:1fr 1fr;gap:12px}.m4 section{border:1px solid var(--line);padding:15px}.m4 section:last-child{grid-column:1/-1}
+html[data-design="M5"]{--accent:#245aa6;--wash:#e7eef8;--bg:#edf1f3;--line:#cbd6e4;--ink:#202d3d;--muted:#596b80}
+.m5 .situation{background:var(--wash);padding:10px 12px;border:1px solid var(--line)}.m5 section{display:grid;grid-template-columns:minmax(145px,.34fr) 1fr;gap:18px}.m5 h2{color:var(--ink)}
+@media(prefers-color-scheme:dark){
+ html[data-design="M1"]{--accent:#f29a72;--wash:#392d29;--bg:#131a1a;--paper:#202929;--line:#48524f;--ink:#edf1ed;--muted:#b9c5bf}
+ html[data-design="M2"]{--accent:#73c6be;--wash:#203936;--bg:#101a1b;--paper:#1b292b;--line:#405452;--ink:#eaf3f2;--muted:#afc6c3}
+ html[data-design="M3"]{--accent:#78d4a8;--wash:#20382f;--bg:#111a17;--paper:#1b2822;--line:#40564a;--ink:#eaf3ed;--muted:#b4c8bc}
+ html[data-design="M4"]{--accent:#d0a5e2;--wash:#342b3a;--bg:#19151d;--paper:#28212e;--line:#51445b;--ink:#f1eaf4;--muted:#c7b9ce}
+ html[data-design="M5"]{--accent:#8cb7ff;--wash:#24364d;--bg:#141a22;--paper:#202a37;--line:#3d4d62;--ink:#edf2fa;--muted:#b8c5d8}
+}
+@media(max-width:620px){main{width:min(100% - 18px,850px);margin:9px auto;padding:22px 17px}.m1 .three,.m2 .three,.m4 .three{grid-template-columns:1fr}.m1 section:last-child,.m2 section:last-child,.m4 section:last-child{grid-column:auto}.m5 section{grid-template-columns:1fr;gap:5px}}
+@media print{@page{size:A4 portrait;margin:10mm}html{color-scheme:light}body{background:#fff}main{width:100%;margin:0;padding:10mm;border:0;border-top:4mm solid var(--accent);box-shadow:none}.sources,.disclaimer{font-size:8.5pt}a{color:inherit;text-decoration:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
-<main>
-<p class="eyebrow">3MUST · M&amp;A 사전 점검</p>
-<h1>인수 계약을 검토할 때 공정위 신고 해당 여부부터 확인</h1>
-<p class="situation"><b>적용 상황:</b> M&amp;A·지분 인수·합병·영업양수 거래에서 "공정위 신고가 필요한가"를 먼저 판단해야 합니다. 기준금액 수치와 최종 판정은 카드에서 다루지 않습니다.</p>
-<ul class="branch"><li>사전신고</li><li>사후신고</li><li>해당 없음</li><li>사전 문의</li></ul>
-<div class="three">
-<section class="know"><h2>Must Know · 알아야 할 것</h2>
-<p>신고 대상은 <b>양측 각각</b>의 규모로 판단합니다. 계열회사 합산 여부가 결론을 바꾸고, 거래 유형에 따라 사전·사후가 갈리며 사전신고에는 <b>이행 대기 의무</b>가 붙습니다. 외국회사는 국내 매출을 따로 보고, 기준금액은 개정되므로 최신 시행령을 확인합니다. 불확실하면 사전 문의로 정리합니다.</p></section>
-<section><h2>Must Check · 확인할 것</h2>
-<ul>
-<li>양측 직전 사업연도 자산총액·매출액</li>
-<li>계열회사 합산 대상과 제외 대상</li>
-<li>거래 유형과 취득 지분율</li>
-<li>20% 미만이라도 의결권·이사 선임 영향력</li>
-<li>외국회사 국내 매출과 산정 범위</li>
-<li>금융업 자산총액 산정 특칙</li>
-<li>매출할인·환입·에누리 차감 일관성</li>
-<li>신고 시기 기준일과 계약 일정</li>
-<li>계약서의 신고·대기 조항</li>
-</ul></section>
-<section class="do"><h2>Must Do · 지금 할 일</h2>
-<ol>
-<li>거래 구조를 한 장으로 요약합니다(당사자·유형·지분율·일정·계열관계).</li>
-<li>재무·기획에서 양측 규모와 계열 합산 대상 목록을 받습니다.</li>
-<li>유형 분류표로 "사전/사후/해당 없음/사전 문의"를 표시합니다.</li>
-<li>최신 시행령·고시 기준금액으로 분류를 확정합니다.</li>
-<li>경계 사안이면 공정위 사전 문의를 검토하고 문의·회신을 기록합니다.</li>
-<li>사전신고 대상이면 계약서에 신고·대기 조항을 넣고 일정표에 반영합니다.</li>
-<li>신고·심사 대응 담당과 외부 자문 필요 여부를 정합니다.</li>
-</ol></section>
-</div>
-<aside class="pause"><b>멈추고 검토:</b> 사전신고 대상 가능성이 있는데 이미 이행·대금 납입이 진행된 경우, 계열 합산 범위가 애매한 경우, 외국회사 국내 매출이 기준선 부근인 경우, 금융업 특칙이 함께 적용되는 경우.</aside>
-<div class="source"><p><b>출처:</b> 공정거래법 EP-006 · 신고 구조·판단 프레임·체크리스트</p><p><b>검토:</b> 2026-10-20 · 기준금액·조문·판례와 최종 판정은 제외</p></div>
-<p class="foot">일반적인 실무 참고자료입니다. 신고 대상 여부는 거래 구조와 최신 시행령을 확인해 판단하세요.</p>
+<main class="m4">
+  <p class="eyebrow">3MUST · 공정거래법</p>
+  <h1>인수 계약을 검토할 때 공정위 신고 해당 여부부터 확인</h1>
+  <p class="situation"><strong>적용 상황:</strong> M&amp;A·지분 인수·합병·영업양수 거래를 검토하며 "공정위 신고가 필요한가"를 먼저 판단해야 하는 경우. <strong>범위:</strong> 구체적 기준금액, 시행령 해석, 최종 신고 대상 판정은 다루지 않습니다. 확인할 데이터와 분기 순서, 사전 문의 절차만 정리합니다.</p>
+  <div class="three">
+    <section><h2>Must Know · 알아야 할 것</h2><ul><li>신고 대상은 자사 규모만으로 판단하지 않습니다. <strong>신고대상회사와 상대회사 양측</strong>이 각각 기준을 충족하는지 봅니다.</li><li>계열회사 자산·매출을 합산해야 하는지가 결론을 바꿉니다. 합산 대상 범위를 먼저 확정합니다.</li><li>거래 유형(주식취득, 합병, 영업양수, 신설회사 설립)에 따라 사전신고와 사후신고가 갈립니다. 사전신고에는 <strong>이행 대기 의무</strong>가 붙습니다.</li><li>외국회사가 당사자이면 국내 매출 기준을 별도로 확인합니다. 글로벌 규모만 보고 판단하면 놓칩니다.</li><li>기준금액과 시행령은 개정됩니다. 카드에 수치를 고정하지 않고, 거래 구조 확정 전 최신 시행령·고시를 확인합니다.</li><li>판단이 불확실하면 공정위 사전 문의로 리스크를 정리합니다. 추정으로 넘기지 않습니다.</li></ul></section>
+    <section><h2>Must Check · 확인할 것</h2><ul><li>신고대상회사와 상대회사의 직전 사업연도 자산총액·매출액</li><li>계열회사 중 합산 대상과 제외 대상, 기업결합 전후 계열 지위 유지 여부</li><li>거래 유형(주식취득·합병·영업양수·신설회사)과 취득 지분율</li><li>20% 미만 취득이라도 의결권·이사 선임 등 경영 영향력이 있는지</li><li>외국회사가 당사자이면 국내 매출액과 산정 범위</li><li>금융업 회사이면 자산총액 산정 특칙 적용 여부</li><li>매출액 산정에서 매출할인·환입·에누리 차감을 일관되게 적용했는지</li><li>신고 시기 기준일(대금 납입일, 합병 등기일)과 계약상 일정</li><li>계약서에 신고 이행·대기 의무 조항이 있는지</li></ul></section>
+    <section><h2>Must Do · 실행할 것</h2><ol><li>법무는 거래 구조를 한 장으로 요약합니다(당사자, 유형, 지분율, 일정, 계열관계).</li><li>재무·기획은 양측 규모 데이터와 계열 합산 대상 목록을 제공합니다.</li><li>법무는 유형 분류표를 만들어 "사전신고 / 사후신고 / 해당 없음 / 사전 문의" 중 어디에 해당하는지 표시합니다.</li><li>최신 시행령·고시의 기준금액을 확인해 분류를 확정합니다.</li><li>판단이 경계에 있으면 공정위 사전 문의를 검토하고, 문의 내용과 회신을 기록합니다.</li><li>사전신고 대상이면 계약서에 신고·대기 조항을 넣고, 신고일과 대기 기간을 일정표에 반영합니다.</li><li>신고·심사 대응 담당과 외부 자문 필요 여부를 정합니다.</li></ol></section>
+  </div>
+  <aside class="pause"><strong>잠깐 멈추고 검토할 때</strong><p>사전신고 대상일 가능성이 있는데 이미 계약 이행·대금 납입이 진행된 경우 · 계열회사 합산 범위 판단이 애매한 경우 · 외국회사 국내 매출이 기준선 부근에 있는 경우 · 금융업 특칙과 일반 규정이 함께 적용되는 경우</p></aside>
+  <div class="sources"><p><strong>원자료:</strong> 공정거래법 EP-006(위험 신호, 신고 구조, 판단 프레임, 체크리스트, 점검 메모 양식)</p><p><strong>제한:</strong> 구체적 기준금액·시행령 조문·판례 인용과 최종 신고 대상 판정은 본 카드에서 제외했습니다. 기준금액은 개정되므로 최신 시행령을 별도로 확인해야 합니다.</p><p><strong>검토일:</strong> 2026-10-20</p><p><strong>변경 기록:</strong> 초안. 원자료의 수치·조문·판례 인용을 제거하고 확인 데이터·분기·사전 문의 절차로 재구성했습니다.</p></div>
+  <p class="disclaimer">일반적인 실무 참고자료입니다. 개별 사안에서는 사실관계와 적용 기준을 확인하세요.</p>
 </main>
 </body>
 </html>
