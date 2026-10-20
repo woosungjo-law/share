@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko" data-design="M3">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>채무자 소재가 확인되지 않아 지급명령이 막혔을 때 · 3MUST</title>
+<link rel="icon" href="data:,">
+<style>
+:root { color-scheme:light dark; --bg:#edf1f3; --paper:#fff; --ink:#202d3d; --muted:#596b80; --line:#cbd6e4; --accent:#245aa6; --wash:#e7eef8; font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif; }
+@media(prefers-color-scheme:dark){:root{--bg:#111a20;--paper:#1a252d;--ink:#eff4f4;--muted:#bac7c8;--line:#394a52;--wash:#253541;}}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);line-height:1.55}
+main{width:min(850px,100% - 28px);margin:24px auto;padding:clamp(22px,5vw,48px);background:var(--paper);border:1px solid var(--line);border-top:7px solid var(--accent)}
+.eyebrow{font-size:.75rem;font-weight:750;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin:0 0 10px}
+h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.12;letter-spacing:-.035em;margin:0;text-wrap:balance}
+.situation{color:var(--muted);max-width:64ch;margin:14px 0 24px}
+.three{display:grid;gap:0}
+section{padding:17px 0;border-top:1px solid var(--line)}
+h2{font-size:.9rem;color:var(--accent);margin:0 0 7px;letter-spacing:.02em}
+p,li{max-width:68ch} section p{margin:0} section ul,section ol{margin:0;padding-left:1.25rem}
+.pause{margin-top:20px;padding:13px 15px;background:var(--wash);border-left:3px solid var(--accent)}
+.pause strong{display:block;margin-bottom:4px}.sources{margin-top:20px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+.sources p{margin:4px 0}.disclaimer{font-size:.75rem;color:var(--muted);margin-top:18px}
+html[data-design="M1"]{--accent:#bd4d28;--wash:#f8e7df;--bg:#ece9e5;--line:#dfc7bb;--ink:#252b2c;--muted:#59615f}
+html[data-design="M1"] main{border-top-width:10px}.m1 .three{grid-template-columns:1fr 1fr;gap:12px}.m1 section{border:1px solid var(--line);padding:14px;background:color-mix(in srgb,var(--wash) 35%,var(--paper))}.m1 section:last-child{grid-column:1/-1}
+html[data-design="M2"]{--accent:#176b68;--wash:#e3efed;--bg:#e7eeee;--line:#c5d7d4;--ink:#162c31;--muted:#52696a}
+html[data-design="M2"] h1{font-family:Georgia,"Batang",serif;font-weight:600}.m2 .three{grid-template-columns:1fr 1fr;gap:22px}.m2 section:nth-child(2){background:var(--wash);padding:15px;border-top:0}.m2 section:last-child{grid-column:1/-1}
+html[data-design="M3"]{--accent:#126d57;--wash:#e4f1eb;--bg:#e9eeea;--line:#c5d7cc;--ink:#1d3028;--muted:#5b6e64}
+.m3 .three{position:relative;padding-left:20px}.m3 .three:before{content:"";position:absolute;top:18px;bottom:18px;left:4px;width:2px;background:var(--accent);opacity:.45}.m3 section{position:relative;padding-left:14px}.m3 section:before{content:"";position:absolute;left:-20px;top:20px;width:9px;height:9px;border:2px solid var(--accent);border-radius:50%;background:var(--paper)}
+html[data-design="M4"]{--accent:#714d83;--wash:#eee8f3;--bg:#ece8ef;--line:#d7ccdf;--ink:#292331;--muted:#686071}
+.m4 .situation{background:var(--wash);border-left:3px solid var(--accent);padding:12px 15px}.m4 .three{grid-template-columns:1fr 1fr;gap:12px}.m4 section{border:1px solid var(--line);padding:15px}.m4 section:last-child{grid-column:1/-1}
+html[data-design="M5"]{--accent:#245aa6;--wash:#e7eef8;--bg:#edf1f3;--line:#cbd6e4;--ink:#202d3d;--muted:#596b80}
+.m5 .situation{background:var(--wash);padding:10px 12px;border:1px solid var(--line)}.m5 section{display:grid;grid-template-columns:minmax(145px,.34fr) 1fr;gap:18px}.m5 h2{color:var(--ink)}
+@media(prefers-color-scheme:dark){
+ html[data-design="M1"]{--accent:#f29a72;--wash:#392d29;--bg:#131a1a;--paper:#202929;--line:#48524f;--ink:#edf1ed;--muted:#b9c5bf}
+ html[data-design="M2"]{--accent:#73c6be;--wash:#203936;--bg:#101a1b;--paper:#1b292b;--line:#405452;--ink:#eaf3f2;--muted:#afc6c3}
+ html[data-design="M3"]{--accent:#78d4a8;--wash:#20382f;--bg:#111a17;--paper:#1b2822;--line:#40564a;--ink:#eaf3ed;--muted:#b4c8bc}
+ html[data-design="M4"]{--accent:#d0a5e2;--wash:#342b3a;--bg:#19151d;--paper:#28212e;--line:#51445b;--ink:#f1eaf4;--muted:#c7b9ce}
+ html[data-design="M5"]{--accent:#8cb7ff;--wash:#24364d;--bg:#141a22;--paper:#202a37;--line:#3d4d62;--ink:#edf2fa;--muted:#b8c5d8}
+}
+@media(max-width:620px){main{width:min(100% - 18px,850px);margin:9px auto;padding:22px 17px}.m1 .three,.m2 .three,.m4 .three{grid-template-columns:1fr}.m1 section:last-child,.m2 section:last-child,.m4 section:last-child{grid-column:auto}.m5 section{grid-template-columns:1fr;gap:5px}}
+@media print{@page{size:A4 portrait;margin:10mm}html{color-scheme:light}body{background:#fff}main{width:100%;margin:0;padding:10mm;border:0;border-top:4mm solid var(--accent);box-shadow:none}.sources,.disclaimer{font-size:8.5pt}a{color:inherit;text-decoration:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="m3">
+  <p class="eyebrow">3MUST · 민사소송</p>
+  <h1>채무자 소재가 확인되지 않아 지급명령이 막혔을 때</h1>
+  <p class="situation"><strong>적용 상황:</strong> 게시 URL 확인 후 입력 <strong>적용 상황:</strong> 대금·대여금 채권을 회수하려 했으나 채무자 주소가 확인되지 않거나, 지급명령 보정 요구를 받고 주소를 제시하지 못하는 경우. <strong>범위:</strong> 채권의 존부, 송달의 적법성, 승소 가능성은 판단하지 않습니다. 확보한 정보로 절차를 전환할지 결정하고, 필요한 확인 경로를 정리하는 카드입니다.</p>
+  <div class="three">
+    <section><h2>Must Know · 알아야 할 것</h2><ul><li>지급명령은 채무자 주소가 있어야 진행됩니다. 주소를 모르는 상태에서 신청만 반복하면 각하와 재신청으로 시간만 잃습니다.</li><li>주소 확인은 법원을 통한 절차로 하는 것이 원칙입니다. 지인·통신사 직원에게 부탁해 개인정보를 얻는 방식은 그 자체로 문제가 됩니다.</li><li>확인 경로는 두 갈래로 나눠 봅니다. 법인은 등기·사업자 정보, 개인은 주민등록 관련 공적 자료와 소송 단계의 조회 절차입니다.</li><li>소송으로 전환하면 송달이 어려운 경우에도 절차를 진행할 수 있는 방법이 있습니다. 다만 그 경우 방어 기회가 제한된다는 점을 내부에 설명해야 합니다.</li><li>회수 가능성이 낮은 채무라면 비용·기간을 먼저 계산합니다. 절차 전환 결정은 비용 승인과 함께 가야 합니다.</li></ul></section>
+    <section><h2>Must Check · 확인할 것</h2><ul><li>현재 확보한 정보(성명·상호·연락처·과거 주소·계좌·거래 기록)를 한 표로 정리했는가.</li><li>계약서·세금계산서·거래처 등록 정보에 남은 주소가 최신인지 확인했는가.</li><li>법인 채무자라면 등기 정보와 사업자 정보를 최근 자료로 확인했는가.</li><li>개인 채무자라면 공적 자료로 확인 가능한 범위가 어디까지인지 정리했는가.</li><li>지급명령 단계에서 받은 보정 요구·각하 사유를 문서로 보관하고 있는가.</li><li>소송 전환 시 비용·기간·회수 가능성 추정치를 사업부와 공유했는가.</li><li>진행 중인 다른 채권 회수(가압류·담보 실행)와 순서가 충돌하지 않는가.</li></ul></section>
+    <section><h2>Must Do · 실행할 것</h2><ol><li>담당자는 채무자 관련 정보를 <code>확인됨 / 미확인 / 확인 불가</code>로 정리해 한 장으로 만듭니다.</li><li>지급명령 유지가 어렵다고 판단되면 소송 전환 여부를 결정하고, 결정 사유와 비용을 기록합니다.</li><li>소송으로 전환할 경우, 주소 확인을 위한 조회가 필요하다는 사유를 정리해 신청 준비를 합니다.</li><li>개인정보를 임의로 수집하지 않도록 담당 범위를 정하고, 외부 확인은 정식 절차나 전문가를 통해서만 진행합니다.</li><li>주소가 확인되면 절차를 이어가고, 확인되지 않으면 송달 불능에 대비한 다음 단계를 준비합니다.</li><li>진행 상황과 비용을 사업부에 주기적으로 알리고, 중단·계속 판단 시점을 정합니다.</li></ol></section>
+  </div>
+  <aside class="pause"><strong>잠깐 멈추고 검토할 때</strong><p>주소 확인을 위해 사적 경로로 개인정보를 얻으려는 요구가 있는 경우 · 채무자가 회생·파산 절차에 들어갔거나 들어갈 조짐이 있는 경우 · 채권 금액보다 절차 비용이 커질 가능성이 높은 경우 · 이미 다른 채권자가 가압류·압류를 마친 경우 · 송달 불능 상태로 진행해 상대방이 뒤늦게 다투는 상황이 예상되는 경우</p></aside>
+  <div class="sources"><p><strong>원자료:</strong> 민사소송 EP-007의 한 줄 처방, 위험 신호, 절차 설명, 실무 체크리스트, 실패 패턴</p><p><strong>제한:</strong> 민사소송법 조문, 공시송달의 효력, 사실조회의 법적 요건 판단은 제외했습니다.</p><p><strong>검토일:</strong> 2026-10-20</p><p><strong>변경 기록:</strong> 초안. 원자료의 조문 설명을 제거하고 정보 정리·절차 전환 결정·조회 준비·비용 관리로 재구성했습니다.</p></div>
+  <p class="disclaimer">일반적인 실무 참고자료입니다. 개별 사안에서는 사실관계와 적용 기준을 확인하세요.</p>
+</main>
+</body>
+</html>
