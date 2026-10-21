@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>상계로 밀어내지 못하게 하려면, 청구를 어떻게 잡을지 먼저 정하라</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>상계로 밀어내지 못하게 하려면, 청구를 어떻게 잡을지 먼저 정하라</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 같은 금액을 받는 일이라도 청구의 성질이 결과를 바꾼다. 고의의 불법행위로 인한 배상금은 상계로 지울 수 없지만(민법 제496조), 계약상 채권으로 잡으면 상계가 막히지 않을 수 있다 — <b>상계 통지가 오면 먼저 할 일은 답장이 아니라 청구의 성질을 정하는 것이다.</b>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      고른유통 대표 오현석은 거래 상대가 손해배상금과 자기가 가진 채권을 맞바꾸겠다는 상계 통지를 보내오자 법무와 회의를 열었다. 상대는 <b>고의로 회사에 손해를 끼친 뒤, 그 배상금을 자기 채권과 상계로 지우려 했다.</b> 현석은 여기서 결정을 미뤘다. 청구를 어떻게 잡느냐에 따라 상대의 상계가 막힐 수도, 허용될 수도 있었기 때문이다. 그는 손해 내역과 계약서를 함께 놓고, 고의를 어떻게 입증할지와 어떤 청구로 갈지를 두 축으로 세웠다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, 상계 금지의 원칙이다. 민법 제496조는 채무가 고의의 불법행위로 인한 것인 때에는 그 채무자가 상계로 채권자에게 대항하지 못한다고 정한다. 이 규정은 문언상 고의의 불법행위로 인한 손해배상채권을 수동채권으로 한 상계에 적용된다. 가해자가 자기 채권으로 배상금 채무를 지우지 못하게 하는 취지다.</p>
+    <p>둘째, 청구의 선택이다. 상대가 기망으로 계약을 체결하게 한 경우에는, 상계를 막으려면 불법행위 손해배상을 선택하는 것이 유리하다. 반대로 상대의 기망으로 소비대차계약을 체결한 사람이 불법행위 손해배상 대신 계약상 채권에 따른 대여금 청구를 하는 경우에는 제496조가 유추적용되지 않아 상계가 금지되지 않는다고 본 흐름도 있으므로, 청구의 성질을 어떻게 잡는지가 결정적이다.</p>
+    <p>셋째, 유추적용의 가능성이다. 대법원 2024다204696의 판시사항에 따르면, 민사법의 실정법 조항을 문리해석 또는 논리해석만으로는 현실적인 분쟁을 해결할 수 없거나 사회적 정의관념에 현저히 반하는 결과가 초래되는 경우에는 유추적용을 할 수 있다. 같은 판결은 수동채권이 고의의 불법행위로 인한 채권은 아니지만 실질적으로 그 채권과 마찬가지라고 평가할 수 있는 경우에는 제496조가 유추적용될 수 있다고 보았다. 문언에 없어도 실질이 같으면 상계가 막힐 수 있다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외</h2>
+    <ul class="points">
+      <li><b>첫째, 청구의 성질이다</b> — 계약상 채권과 불법행위 채권 중 어느 것으로 갈지에 따라 상계 방어가 달라지므로, 소송 전략을 먼저 정한다.</li>
+      <li><b>둘째, 고의 입증이다</b> — 상계 금지는 고의의 불법행위를 전제로 하므로, 동기와 경위를 간접사실로 쌓아야 한다.</li>
+      <li><b>셋째, 실질 평가다</b> — 문언상 해당하지 않아도 실질이 같다고 평가되면 유추적용이 가능하다.</li>
+      <li><b>넷째, 비용의 상한이다</b> — 고의 입증과 유추적용 주장에 드는 비용을 회수 예상액과 비교한다.</li>
+      <li><b>다섯째, 책임 배분이다</b> — 증거 수집은 실무진, 청구 선택과 주장 구성은 법무, 최종 결정은 대표가 맡는다.</li>
+      <li><b>여섯째, 실행 순서다</b> — 통지 확인, 청구 성질 판단, 고의 입증, 유추적용 검토의 순서를 고정한다.</li>
+      <li><b>일곱째, 중단 기준이다</b> — 고의 입증이 어렵고 실질 평가도 약하면, 상계 방어보다 다른 회수 수단으로 전환한다.</li>
+      <li><b>여덟째, 경합 청구다</b> — 손해배상과 부당이득 등이 경합할 때 어느 것을 주장할지 미리 정한다.</li>
+      <li><b>아홉째, 평판 관리다</b> — 상대와의 분쟁이 거래 관계에 미칠 영향을 함께 고려한다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 고의 불법행위 채무는 상계 대항이 막힌다(민법 제496조) · 청구 성질이 상계 방어를 가른다 · 문언에 없어도 실질이 같으면 유추적용 가능(대법원 2024다204696).</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <p style="margin-bottom:16px;"><b>통지·청구·고의·유추적용을 한 장에 모은다.</b> 표에는 통지, 청구, 고의, 실질, 유추적용, 비용 여섯 칸을 둔다. 빈 칸은 회의에서 먼저 이야기한다. 회의가 끝나면 네 줄이 남는다 — 네 줄이 있어야 실무진과 법무가 같은 전략으로 움직인다.</p>
+    <ol>
+      <li><b>① 통지 확인·성질 판단</b> — 언제 어떤 채권으로 무엇을 상계하겠다는 것인지 적고, 민법 제496조가 적용되는 고의 불법행위 채무인지 본다.</li>
+      <li><b>② 청구 선택</b> — 계약상 채권과 불법행위 손해배상 중 어느 것으로 갈지 정하고, 그 선택이 상계 방어에 미치는 영향을 적는다.</li>
+      <li><b>③ 고의 입증</b> — 동기·경위의 간접사실을 모은다.</li>
+      <li><b>④ 실질 평가·유추적용</b> — 문언과 실질이 같은지 검토하고, 대법원 2024다204696의 구조에 사안을 배치한다.</li>
+      <li><b>⑤ 경합 비교·비용 상한·중단 기준</b> — 손해배상·부당이득 등 청구 수단을 비교하고, 입증·주장 비용을 회수 예상액과 비교하며, 고의 입증이 어려우면 다른 회수 수단으로 전환한다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
