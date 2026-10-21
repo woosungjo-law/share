@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>가격이 비슷한 것과 담합은 다르다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>가격이 비슷한 것과 담합은 다르다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 가격이 비슷한 것은 우연이나 시장 상황일 수 있다. 하지만 경쟁사와 정보를 주고받거나 가격 변경을 미리 알렸다면 이야기가 달라진다 — <b>외형이 아니라 의사연결의 흔적이 담합을 가르고, 증명책임은 공정거래위원회에 있다.</b>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      정운산업의 배정훈 대표는 영업팀 보고를 받고 마음이 무거워졌다. 경쟁사와 자사 제품의 가격 인상 시점과 폭이 비슷하게 움직인다는 지적이었다. <b>배 대표는 곧바로 두 가지를 나눠 생각했다. 하나는 결과의 모양이고, 다른 하나는 의사연결의 실체다.</b> 그는 준법 담당에게 접촉·정보교환·내부문건을 확인하게 하고, 임직원에게 경쟁사와의 접촉 규칙을 다시 알리라고 지시했다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, 금지의 뼈대다. 독점규제 및 공정거래에 관한 법률 제40조는 사업자가 계약·협정·결의 또는 그 밖의 방법으로 다른 사업자와 공동으로 부당하게 경쟁을 제한하는 행위를 할 것을 합의하는 것을 금지한다. 금지 대상에는 가격을 결정·유지·변경하는 행위 등이 포함된다. 같은 법 제45조는 이와 구별되는 불공정거래행위를 따로 금지한다.</p>
+    <p>둘째, 합의의 개념이다. 합의는 명시적 합의뿐 아니라 묵시적 합의, 즉 의식적 병행행위도 포함한다. 그러나 단순히 외형상 행위가 일치했다는 것만으로는 인정되지 않고, 의사연결의 상호성을 뒷받침하는 추가 정황이 필요하다.</p>
+    <p>셋째, 판례다. 대법원 2017두56346 판결은 묵시적 합의도 포함된다고 보면서도, 합의의 존재를 인정하기 위한 증명책임은 공정거래위원회에 있고, 정보를 교환했다는 사실만으로 곧바로 가격 합의가 인정되는 것은 아니라고 보았다. 대법원 2011두23085 판결은 과점시장에서 합의의 존재와 개별 사업자의 가담 여부를 판단하는 방법을 제시했다.</p>
+    <p>경영진의 판단 기준은 명확하다. 외형이 아니라 의사연결의 흔적을 본다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외</h2>
+    <ul class="points">
+      <li><b>첫째, 접촉 통제다</b> — 경쟁사와의 모임·연락에 대한 규칙을 정한다.</li>
+      <li><b>둘째, 정보 교환의 경계다</b> — 가격·물량 같은 민감 정보를 주고받지 않도록 한다.</li>
+      <li><b>셋째, 사전통지 금지다</b> — 가격 변경을 경쟁사에 미리 알리는 행위를 금한다.</li>
+      <li><b>넷째, 이탈 제재 금지다</b> — 가격을 유지하지 않는 업체에 불이익을 주는 관행을 없앤다.</li>
+      <li><b>다섯째, 내부문건 관리다</b> — 회의록과 메모에 민감한 표현이 남지 않게 한다.</li>
+      <li><b>여섯째, 가담 판단이다</b> — 문제가 생겼을 때 개별 사업자 단위로 시점과 범위를 나눠 다툰다.</li>
+      <li><b>일곱째, 증명책임의 이해다</b> — 합의를 주장하는 쪽에 증명책임이 있다는 점을 방어 전략의 출발점으로 삼는다.</li>
+      <li><b>여덟째, 보고 체계다</b> — 접촉이나 민감 정보 교환 의심이 제기되면 곧바로 보고되도록 통로를 만든다.</li>
+      <li><b>아홉째, 계약 구조다</b> — 거래 조건을 정할 때도 경쟁사와 협의했다는 오해를 살 만한 방식을 피한다.</li>
+      <li><b>열째, 기록 정리의 원칙이다</b> — 문제가 생기기 전에 관련 문건을 정리해 두면 대응이 빨라진다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 부당 공동행위는 공정거래법 제40조(가격 결정·유지·변경 포함) · 묵시적 합의도 포함되지만 외형 일치만으로 부족 · 증명책임은 공정거래위원회(대법원 2017두56346) · 정보 교환만으로 합의 인정 안 됨.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <p style="margin-bottom:16px;"><b>규칙·교육·점검 세 줄.</b> 정기 점검 결과는 이사회에 간단히 보고하도록 한다.</p>
+    <ol>
+      <li><b>① 접촉 규칙 승인</b> — 경쟁사와의 모임·연락 기준을 정한다.</li>
+      <li><b>② 민감 정보·사전통지 금지</b> — 가격·물량 정보 교환을 금하고, 가격 변경의 사전 통지도 금한다.</li>
+      <li><b>③ 이탈 제재 금지·내부문건 관리</b> — 가격 유지 강요 관행을 없애고, 회의록·메모의 민감 표현을 관리한다.</li>
+      <li><b>④ 정기 교육</b> — 준법 교육을 상시화한다.</li>
+      <li><b>⑤ 대응 절차</b> — 문제 발생 시 증명책임 구조에 맞춰 대응 담당과 외부 자문 시점을 정해 둔다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
