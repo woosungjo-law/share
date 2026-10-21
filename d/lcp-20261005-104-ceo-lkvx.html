@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>선박 충돌 대응, 사과 먼저가 아니라 항적 확보와 기한 계산이 먼저다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>선박 충돌 대응, 사과 먼저가 아니라 항적 확보와 기한 계산이 먼저다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 충돌이 일방의 잘못인지 양쪽의 잘못인지가 정해지기 전의 합의는 빈 수표와 같다. 사과는 사람을 움직이지만 숫자는 서류를 움직인다. <b>항적을 먼저 확보하고 2년 소멸시효를 역산한 뒤에 합의선을 정하는 것</b>이 충돌 대응 리스크를 줄인다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      충돌 대응은 교통사고 블랙박스 확보와 같다. 너울물류의 대표 남지완은 용선한 화물선의 충돌 보고를 받았다. 상대방 선주는 자사 과실이라 주장하며 전액 배상을 요구했고, 사과와 합의를 재촉했다. 남지완은 서두르지 않았다. 먼저 지시한 것은 항적 확보였다. 침로와 속도, 신호와 교신, AIS와 VDR을 오늘 안에 묶어 두라는 것이었다. <b>기억이 아니라 기록이 싸우는 자리</b>이기 때문이다. 결정을 미룬 것이 아니라 순서를 정한 것이다. 항적이 굳고 과실 그림이 나오면 그때 합의의 말을 한다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, 책임의 갈림길이다. 두 선박 충돌에서 일방 과실이면 그 선박소유자가 전부 배상하고, 쌍방 과실이면 과실 경중에 따라 나누며, 제3자 사상에는 연대책임이 문제된다는 것이 상법 제878조와 제879조의 틀이다. 우리 배만의 잘못인지 양쪽의 잘못인지가 배상 총액을 정한다.</p>
+    <p>둘째, 일방 과실의 의미이다. 충돌이 일방 선원의 과실로 생긴 때에는 그 일방의 선박소유자가 피해자에게 손해를 배상한다는 것이 상법 제878조의 규정이다. 상대방 과실이 입증되면 우리 측 부담은 줄어든다.</p>
+    <p>셋째, 쌍방 과실의 계산이다. 양쪽 과실이면 경중에 따라 분담하고 경중을 가릴 수 없으면 균분한다는 것이 상법 제879조 제1항의 규정이다. 몇 대 몇이 곧 비용이므로 증거에 돈을 쓰는 것이 아깝지 않다.</p>
+    <p>넷째, 제3자 사상의 연대이다. 쌍방 과실일 때 제3자의 사상에 대한 배상은 양쪽 선주가 연대해 진다는 것이 같은 조 제2항의 취지이다. 화물 손해와 인명 피해를 같은 주머니로 보지 않는다.</p>
+    <p>다섯째, 2년의 시계이다. 충돌로 인한 손해배상청구권은 충돌일부터 2년 안에 재판상 청구가 없으면 소멸한다는 것이 상법 제881조의 규정이다. 협상이 길어져도 시계는 멈추지 않으므로 역산 일정을 경영 일정에 넣는다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외</h2>
+    <ul class="points">
+      <li><b>첫째, 성급한 합의의 비용</b> — 과실 비율이 굳기 전의 합의는 뒤에 손해로 돌아온다. 항적이 고정된 뒤에 합의선을 정한다.</li>
+      <li><b>둘째, 증거의 유통기한</b> — AIS와 VDR은 덮어쓰기 전에, 교신 기록은 보관 기한 안에 확보해야 한다. 시간이 증거를 지우므로 확보 비용을 먼저 쓴다.</li>
+      <li><b>셋째, 책임제한 절차의 분리</b> — 한도를 다투는 절차와 한도 채권 계산은 과실 다툼과 별개로 준비한다. 두 싸움을 한 테이블에 올리면 둘 다 진다.</li>
+      <li><b>넷째, 보험의 통지</b> — P&amp;I 보험의 통지 기한을 넘기면 보장 다툼이 생긴다. 사고 보고와 보험 통지를 같은 날 묶는다.</li>
+      <li><b>다섯째, 화물의 구분</b> — 누구의 짐이 누구 배에 실렸는지에 따라 청구 구조가 달라진다. 화주별 손해를 나누어 본다.</li>
+      <li><b>여섯째, 중단의 기준</b> — 과실 그림이 우리에게 불리하게 굳으면 장기전보다 조기 합의를, 유리하게 굳으면 원칙 대응을 택한다. 기준 없이 버티면 비용만 는다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 일방 과실(제878조) · 쌍방 과실 경중·균분(제879조) · 2년 소멸시효(제881조) — 협상이 길어져도 시계는 멈추지 않는다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <p style="margin-bottom:16px;"><b>항적·기한·합의선의 결정을 한 번에 내린다.</b> 네 줄이 서면 현장의 말이 하나로 모인다.</p>
+    <ol>
+      <li><b>① 항적 확보 지시</b> — 침로, 속도, 신호, 교신, AIS, VDR을 오늘 안에 묶는다. 일방 과실인지 쌍방 과실인지는 이 자료로 갈린다.</li>
+      <li><b>② 기한 잡기</b> — 상법 제881조가 정한 2년을 충돌일부터 역산해 재판상 청구 마감일을 경영 일정에 넣는다.</li>
+      <li><b>③ 합의선 통제</b> — 과실 그림이 나오기 전에는 사과와 유감 표명에 그치고 금액 말은 아낀다.</li>
+      <li><b>④ 보험 묶기</b> — P&amp;I 통지 기한과 보장 범위를 확인해 사고 보고와 같은 날 처리한다.</li>
+      <li><b>⑤ 절차 분리</b> — 책임제한 절차와 한도 계산은 과실 다툼과 다른 트랙으로 돌린다.</li>
+      <li><b>⑥ 날짜 붙이기</b> — 결정은 한 장에 남기고 네 줄 옆에 날짜를 적는다. 날짜가 있는 결정은 실행되고, 날짜가 없는 결정은 잊힌다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
