@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko" data-design="M3">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>지급명령에 이의신청이 들어온 뒤, 소송으로 넘어간 사건에서 기한과 답변서를 어떻게 관리할지 · 3MUST</title>
+<link rel="icon" href="data:,">
+<style>
+:root { color-scheme:light dark; --bg:#edf1f3; --paper:#fff; --ink:#202d3d; --muted:#596b80; --line:#cbd6e4; --accent:#245aa6; --wash:#e7eef8; font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif; }
+@media(prefers-color-scheme:dark){:root{--bg:#111a20;--paper:#1a252d;--ink:#eff4f4;--muted:#bac7c8;--line:#394a52;--wash:#253541;}}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);line-height:1.55}
+main{width:min(850px,100% - 28px);margin:24px auto;padding:clamp(22px,5vw,48px);background:var(--paper);border:1px solid var(--line);border-top:7px solid var(--accent)}
+.eyebrow{font-size:.75rem;font-weight:750;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin:0 0 10px}
+h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.12;letter-spacing:-.035em;margin:0;text-wrap:balance}
+.situation{color:var(--muted);max-width:64ch;margin:14px 0 24px}
+.three{display:grid;gap:0}
+section{padding:17px 0;border-top:1px solid var(--line)}
+h2{font-size:.9rem;color:var(--accent);margin:0 0 7px;letter-spacing:.02em}
+p,li{max-width:68ch} section p{margin:0} section ul,section ol{margin:0;padding-left:1.25rem}
+.pause{margin-top:20px;padding:13px 15px;background:var(--wash);border-left:3px solid var(--accent)}
+.pause strong{display:block;margin-bottom:4px}.sources{margin-top:20px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+.sources p{margin:4px 0}.disclaimer{font-size:.75rem;color:var(--muted);margin-top:18px}
+html[data-design="M1"]{--accent:#bd4d28;--wash:#f8e7df;--bg:#ece9e5;--line:#dfc7bb;--ink:#252b2c;--muted:#59615f}
+html[data-design="M1"] main{border-top-width:10px}.m1 .three{grid-template-columns:1fr 1fr;gap:12px}.m1 section{border:1px solid var(--line);padding:14px;background:color-mix(in srgb,var(--wash) 35%,var(--paper))}.m1 section:last-child{grid-column:1/-1}
+html[data-design="M2"]{--accent:#176b68;--wash:#e3efed;--bg:#e7eeee;--line:#c5d7d4;--ink:#162c31;--muted:#52696a}
+html[data-design="M2"] h1{font-family:Georgia,"Batang",serif;font-weight:600}.m2 .three{grid-template-columns:1fr 1fr;gap:22px}.m2 section:nth-child(2){background:var(--wash);padding:15px;border-top:0}.m2 section:last-child{grid-column:1/-1}
+html[data-design="M3"]{--accent:#126d57;--wash:#e4f1eb;--bg:#e9eeea;--line:#c5d7cc;--ink:#1d3028;--muted:#5b6e64}
+.m3 .three{position:relative;padding-left:20px}.m3 .three:before{content:"";position:absolute;top:18px;bottom:18px;left:4px;width:2px;background:var(--accent);opacity:.45}.m3 section{position:relative;padding-left:14px}.m3 section:before{content:"";position:absolute;left:-20px;top:20px;width:9px;height:9px;border:2px solid var(--accent);border-radius:50%;background:var(--paper)}
+html[data-design="M4"]{--accent:#714d83;--wash:#eee8f3;--bg:#ece8ef;--line:#d7ccdf;--ink:#292331;--muted:#686071}
+.m4 .situation{background:var(--wash);border-left:3px solid var(--accent);padding:12px 15px}.m4 .three{grid-template-columns:1fr 1fr;gap:12px}.m4 section{border:1px solid var(--line);padding:15px}.m4 section:last-child{grid-column:1/-1}
+html[data-design="M5"]{--accent:#245aa6;--wash:#e7eef8;--bg:#edf1f3;--line:#cbd6e4;--ink:#202d3d;--muted:#596b80}
+.m5 .situation{background:var(--wash);padding:10px 12px;border:1px solid var(--line)}.m5 section{display:grid;grid-template-columns:minmax(145px,.34fr) 1fr;gap:18px}.m5 h2{color:var(--ink)}
+@media(prefers-color-scheme:dark){
+ html[data-design="M1"]{--accent:#f29a72;--wash:#392d29;--bg:#131a1a;--paper:#202929;--line:#48524f;--ink:#edf1ed;--muted:#b9c5bf}
+ html[data-design="M2"]{--accent:#73c6be;--wash:#203936;--bg:#101a1b;--paper:#1b292b;--line:#405452;--ink:#eaf3f2;--muted:#afc6c3}
+ html[data-design="M3"]{--accent:#78d4a8;--wash:#20382f;--bg:#111a17;--paper:#1b2822;--line:#40564a;--ink:#eaf3ed;--muted:#b4c8bc}
+ html[data-design="M4"]{--accent:#d0a5e2;--wash:#342b3a;--bg:#19151d;--paper:#28212e;--line:#51445b;--ink:#f1eaf4;--muted:#c7b9ce}
+ html[data-design="M5"]{--accent:#8cb7ff;--wash:#24364d;--bg:#141a22;--paper:#202a37;--line:#3d4d62;--ink:#edf2fa;--muted:#b8c5d8}
+}
+@media(max-width:620px){main{width:min(100% - 18px,850px);margin:9px auto;padding:22px 17px}.m1 .three,.m2 .three,.m4 .three{grid-template-columns:1fr}.m1 section:last-child,.m2 section:last-child,.m4 section:last-child{grid-column:auto}.m5 section{grid-template-columns:1fr;gap:5px}}
+@media print{@page{size:A4 portrait;margin:10mm}html{color-scheme:light}body{background:#fff}main{width:100%;margin:0;padding:10mm;border:0;border-top:4mm solid var(--accent);box-shadow:none}.sources,.disclaimer{font-size:8.5pt}a{color:inherit;text-decoration:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="m3">
+  <p class="eyebrow">3MUST · 민사소송</p>
+  <h1>지급명령에 이의신청이 들어온 뒤, 소송으로 넘어간 사건에서 기한과 답변서를 어떻게 관리할지</h1>
+  <p class="situation"><strong>적용 상황:</strong> 지급명령을 신청했는데 상대방이 이의신청을 해 사건이 통상 소송으로 넘어갔거나, 반대로 지급명령을 받고 이의신청을 한 뒤 소장을 받은 법무 담당자가 사용합니다. <strong>범위:</strong> 이 카드는 사건이 소송으로 전환된 뒤의 기한, 보정, 답변서 관리 방법만 다룹니다. 승소나 패소가 예상되는지, 청구가 인용되는지, 비용이 누구에게 귀속되는지에 대한 결론은 다루지 않습니다.</p>
+  <div class="three">
+    <section><h2>Must Know · 알아야 할 것</h2><ul><li>이의신청이 적법하게 들어오면 지급명령은 효력을 잃고, 사건은 처음부터 통상 소송으로 진행됩니다. 지급명령 절차가 이어지는 것이 아닙니다.</li><li>다만 소송이 제기된 시점은 지급명령을 신청한 때로 소급해 처리되므로, 시효 중단이나 관할 판단에서 기준일이 달라질 수 있습니다.</li><li>소송으로 넘어가면 법원은 채권자에게 소송에 필요한 인지액을 보정하라고 명합니다. 이 보정을 기한 안에 하지 않으면 소가 각하될 수 있습니다.</li><li>보정명령은 사건 진행에서 가장 먼저 놓치기 쉬운 기한이므로, 받은 즉시 일정에 등록해야 합니다.</li><li>보정 단계는 청구취지와 청구원인을 최종 점검할 수 있는 시점이기도 합니다. 금액이나 범위를 조정할 필요가 있으면 이때 정리해야 인지액도 정확해집니다.</li><li>피고가 답변서를 내지 않거나, 답변서에 다투는 취지가 없으면 청구 원인을 인정한 것으로 처리되어 변론 없이 판결이 날 수 있습니다.</li><li>다만 공시송달로 기일 통지가 이루어진 사건에서는 이런 처리가 되지 않으므로, 채권자는 증거를 직접 준비해야 합니다.</li><li>채무자 입장에서는 이의신청만 하고 이후 절차를 방치하면 답변서 미제출로 불리한 판결을 받을 수 있어, 이의신청은 대응의 시작일 뿐입니다.</li><li>소송으로 넘어간 뒤에는 증빙을 다시 정리해야 합니다. 지급명령 단계에서 낸 자료가 그대로 소송 기록으로 이어지지 않는 부분이 있습니다.</li></ul></section>
+    <section><h2>Must Check · 확인할 것</h2><ul><li>이의신청이 적법한 방식과 기간에 이루어졌는가</li><li>소송 전환 통지와 사건번호를 확인했는가</li><li>인지 보정명령의 내용과 기한을 확인했는가</li><li>보정할 인지액과 산정 기준을 확인했는가</li><li>청구취지와 청구원인을 최종 확정했는가</li><li>소송기록이 관할 법원으로 넘어가기 전인지 확인했는가</li><li>피고의 답변서 제출 여부를 확인했는가</li><li>답변서 제출 기한을 일정에 등록했는가</li><li>송달이 공시송달 방식인지 확인했는가</li><li>청구를 뒷받침할 증거 목록을 다시 정리했는가</li><li>지급명령 신청 시 낸 자료와 소송에서 낼 자료를 구분했는가</li><li>비용 처리와 집행 가능성을 함께 검토했는가</li></ul></section>
+    <section><h2>Must Do · 실행할 것</h2><ol><li>소송 전환 통지와 보정명령을 받은 날짜를 기록하고, 기한을 일정에 등록합니다. 담당은 법무, 확인은 팀장이 맡습니다.</li><li>보정명령서를 읽고 무엇을 얼마나 보정해야 하는지 한 줄로 요약합니다.</li><li>청구취지를 다시 확인해 금액과 범위를 조정할 필요가 있는지 판단하고, 필요하면 보정 전에 정리합니다.</li><li>인지액을 계산해 납부하고, 납부 영수증과 접수 기록을 보관합니다.</li><li>채무자 측이면 소장 부본을 받은 날짜를 기준으로 답변서 기한을 계산하고, 담당자를 지정합니다.</li><li>답변서에는 청구를 다투는 취지를 분명히 적고, 변제, 면제, 시효 같은 항변을 사실과 증빙에 붙여 정리합니다.</li><li>공시송달 사건이면 무변론 처리를 기대하지 말고, 청구를 뒷받침할 증거를 직접 제출할 준비를 합니다.</li><li>사업부에는 전환 사실, 추가 비용, 다음 기한을 한 장으로 보고하고, 합의나 지급 약속은 법무 검토 후에 하도록 안내합니다.</li></ol></section>
+  </div>
+  <aside class="pause"><strong>잠깐 멈추고 검토할 때</strong><p>보정명령 기한이 임박했는데 인지액 산정이 끝나지 않았을 때 · 청구취지를 바꾸면 인지액과 관할이 함께 달라질 때 · 피고가 답변서 없이 기일만 넘기고 있을 때 · 송달이 공시송달로 진행되고 있을 때 · 채무자가 이의신청 후 연락이 끊겼을 때 · 지급명령 신청 이후 사정이 바뀌어 청구 금액을 다시 따져야 할 때</p></aside>
+  <div class="sources"><p><strong>원자료:</strong> 「이의신청 후 소송 전환, 채권자와 채무자의 첫 수는」(지급명령 실무). 위험 신호, 최소 법리, 판단 프레임, 실무 체크리스트, 바로 쓰는 문안, 실패 패턴을 활용했습니다.</p><p><strong>제한:</strong> 조문 번호를 모두 제외했고, 원자료에 예시로 제시된 인지액과 소송가액 수치도 카드에서 삭제했습니다. 승패 예상, 청구 인용 여부, 비용 부담에 대한 결론은 담지 않았습니다.</p><p><strong>검토일:</strong> 2026-10-21</p><p><strong>변경 기록:</strong> 초안. 원자료의 판단 프레임을 채권자와 채무자의 대응 순서로 풀고, 체크리스트를 기한 관리 항목으로, 실패 패턴을 중단 검토 신호로 재배치했습니다.</p></div>
+  <p class="disclaimer">일반적인 실무 참고자료입니다. 개별 사안에서는 사실관계와 적용 기준을 확인하세요.</p>
+</main>
+</body>
+</html>
