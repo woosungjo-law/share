@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>위약금은 계산으로 방어하는 것이지, 문장으로 방어하는 것이 아니다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>위약금은 계산으로 방어하는 것이지, 문장으로 방어하는 것이 아니다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 크리에이터가 해지를 통보하면 막을 수는 없다. 남은 것은 정산과 위약금이고, 그 두 가지는 문장이 아니라 계산으로 방어한다. <b>정산 표준과 공제 근거, 교섭 기록을 규칙으로 둬 빈 칸이 없는 정산표를 만드는 것</b>이 위약금 리스크를 줄인다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      해지 통보는 이별 통보 같은 것이다. 다솜소프트의 대표 백서준은 크리에이터의 해지 통보와 함께 정산 내역을 들여다보았는데, 비용 공제 항목이 네 개였는데 근거 자료는 하나뿐이었다. 법률 담당은 위임이라 해지 자체는 막기 어렵다고 했다. 백서준은 해지가 아니라 정산과 위약금을 두고 무엇이 있는지부터 보자고 했다. <b>상대가 문제 삼는 것도 결국 그 두 가지</b>다. 빈 칸이 있는 항목부터 나란히 놓아야 무엇이 약한지 보인다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, 해지의 한계이다. 위임이므로 언제든 해지 가능하다는 민법 제689조 논리만으로 결론을 내리기 어렵다(민법 제689조). 정산과 위약금 조항이 어떤 내용인지가 함께 봐야 한다.</p>
+    <p>둘째, 약관의 무효 가능성이다. 신의성실에 반하여 공정성을 잃은 약관조항은 무효로 다툴 수 있다(약관규제법 제6조). 계약서가 일방이 미리 만들어 둔 것이라면 그 가능성이 커진다.</p>
+    <p>셋째, 불공정거래행위의 금지이다. 공정거래법 제45조는 불공정거래행위를 금지한다(공정거래법 제45조).</p>
+    <p>넷째, 위약벌의 감액 문제이다. 대법원 2013다27015 판결은 손해배상의 예정에 관한 규정을 유추적용하여 위약벌을 감액할 수 있는지의 여부를 부정적으로 보았고, 미리 마련된 계약서라도 특정 조항에 개별 교섭이 있었다면 약관 규제의 적용이 달라질 수 있음을 다루었다.</p>
+    <p>다섯째, 배타조건의 부당성이다. 대법원 2010두25909 판결은 배타조건부 거래행위의 부당성 판단 기준을 제시한다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외</h2>
+    <ul class="points">
+      <li><b>첫째, 비용을 가른다</b> — 정산 자료를 제때 만들지 않으면 나중에 다시 계산하는 비용이 든다.</li>
+      <li><b>둘째, 책임을 가른다</b> — 정산, 공제 근거, 위약금 계산의 담당이 비어 있으면 책임이 한 사람에게 몰린다.</li>
+      <li><b>셋째, 중단 기준을 가른다</b> — 근거 없는 공제 항목은 다음 정산에서 멈춘다.</li>
+      <li><b>넷째, 교섭을 가른다</b> — 특정 조항에 개별 교섭이 있었는지가 약관 적용을 가른다. 대법원 2013다27015 판결이 다룬 지점이다.</li>
+      <li><b>다섯째, 금액을 가른다</b> — 위약금은 액수와 실제 손해의 관계로 설명될 수 있어야 한다.</li>
+      <li><b>여섯째, 배타 조건을 가른다</b> — 배타성이 남기는 제한의 범위가 얼마나 되는지 계산해 두지 않으면 다툼에서 약해진다. 대법원 2010두25909 판결의 판단 기준이 거기에 있다.</li>
+      <li><b>일곱째, 자료 제공을 가른다</b> — 정산 자료를 언제까지 주기로 했는지 조항이 있는지 본다. 조항이 있으면 지키지 못한 쪽이 불리해진다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 해지는 막을 수 없어도 정산은 방어할 수 있다 — 공제 근거와 교섭 기록, 위약금 계산이 방어의 재료다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <p style="margin-bottom:16px;"><b>정산 표준과 교섭 기록을 규칙으로 둔다.</b> 해지가 끝이 아니라 정산과 위약금이 문제라는 점을 먼저 아는 것이 출발이다.</p>
+    <ol>
+      <li><b>① 정산 표준</b> — 수익 항목과 공제 항목, 각각의 근거 자료를 한 표로 정해 모든 계약에 같은 형식으로 적용하게 한다.</li>
+      <li><b>② 공제 근거</b> — 근거가 붙지 않는 공제 항목은 다음 정산부터 쓰지 않게 한다.</li>
+      <li><b>③ 교섭 기록</b> — 특정 조항에 대해 어떤 협의가 있었는지 회의록으로 남기게 한다. 개별 교섭의 흔적이 약관 적용을 가른다.</li>
+      <li><b>④ 위약금 계산</b> — 액수와 실제 손해의 관계를 표로 보고하게 하고, 배타 조건이 남기는 제한의 범위도 함께 계산하게 한다.</li>
+      <li><b>⑤ 문장 관리</b> — 해지·정산·위약금에 대한 대외 문장은 법률 검토를 거쳐 쓰게 한다. 확인이 필요한 항목은 공란으로 두지 않고 담당자와 확인 시기를 적어 둔다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
