@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사람을 속인 사기인가, 시스템을 속인 사기인가</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>사람을 속인 사기인가, 시스템을 속인 사기인가</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 같은 결과라도 원인이 다르면 대응도 달라진다. 사람을 속여 결재를 받아낸 것인지, 시스템에 허위 정보를 넣어 자동 지급을 유도한 것인지 — <b>무엇이 조작되었고 어떤 통제가 뚫렸는지가 죄명과 대응을 가른다.</b>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      소담가구의 제갈윤 대표는 결재가 끝난 것처럼 보이는 지급에서 돈이 사라졌다는 보고를 받았다. 서류상으로는 정상이었지만, 입력된 정보가 조작되어 있었다. 제 대표는 회계와 보안 담당에게 두 가지를 확인하게 했다. <b>사람을 속여 결재를 받아낸 것인지, 시스템에 허위 정보를 넣어 자동 지급을 유도한 것인지</b>였다. 같은 결과라도 원인이 다르면 대응도 달라진다는 점을 그는 알고 있었다. 그는 로그 보존과 권한 점검을 동시에 지시했다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, 컴퓨터등사용사기죄다. 형법 제347조의2는 컴퓨터 등 정보처리장치에 허위의 정보 또는 부정한 명령을 입력하거나 권한 없이 정보를 입력·변경하여 정보처리를 하게 함으로써 재산상의 이익을 취득하거나 제3자로 하여금 취득하게 한 자를 처벌한다고 정한다. 형량은 20년 이하의 징역 또는 5천만원 이하의 벌금이다.</p>
+    <p>둘째, 일반 사기죄와의 차이다. 일반 사기죄는 사람을 기망해 재물을 교부받거나 재산상 이익을 취득하는 것을 요건으로 한다. 컴퓨터등사용사기죄는 전산처리장치에 허위 정보나 부정한 명령을 입력·변경하는 행위 자체를 규정한다. 기계적 처리에 대한 범죄와 사람의 착오를 이용하는 범죄의 경계를 가르는 것이 핵심이다.</p>
+    <p>셋째, 판례다. 대법원 2022도1862 판결은 컴퓨터 등 정보처리장치에 정보를 입력하는 행위가 담당자의 오인·착각·부지를 일으킬 목적으로 행해진 경우 담당자를 직접 대상으로 하지 않았더라도 위계에 해당한다고 보았고, 사람에 대한 기망행위를 수반하지 않는 경우의 사기죄 성립 문제도 다루었다. 대법원 2013도16099와 2011도4440 판결도 관련 판단을 담고 있다. 이 판례들은 행위 태양과 목적, 기망의 유무를 기준으로 죄명을 나누는 참고가 되므로 사실관계와 대조한다.</p>
+    <p>경영진의 판단 기준은 명확하다. 무엇이 조작되었고, 어떤 통제가 뚫렸는지다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외</h2>
+    <ul class="points">
+      <li><b>첫째, 권한 관리다</b> — 누가 어떤 입력과 승인 권한을 가졌는지 확인한다.</li>
+      <li><b>둘째, 검증 절차다</b> — 한 사람의 승인만으로 지급이 이뤄지지 않게 한다.</li>
+      <li><b>셋째, 로그 보존이다</b> — 접속과 입력, 승인 기록을 원본으로 남긴다.</li>
+      <li><b>넷째, 목적성 판단이다</b> — 담당자의 오인을 노린 행위인지 살핀다.</li>
+      <li><b>다섯째, 이익의 규모다</b> — 사라진 금액과 귀속을 계산한다.</li>
+      <li><b>여섯째, 책임 점검이다</b> — 내부통제가 어디서 뚫렸는지 되돌아본다.</li>
+      <li><b>일곱째, 재발 방지다</b> — 권한 분리와 이상거래 감지를 정비한다.</li>
+      <li><b>여덟째, 민사 회수다</b> — 형사 절차와 별개로 손해배상 청구와 재산 보전을 검토한다.</li>
+      <li><b>아홉째, 외부 전문가 활용이다</b> — 손실이 큰 경우 보안과 법률 전문가의 도움을 받아 대응 체계를 점검한다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 시스템 기망은 형법 제347조의2 컴퓨터등사용사기(20년 이하 징역 또는 5천만원 이하 벌금) · 사람 기망은 제347조 사기 · 입력이 담당자 오인을 노렸으면 위계로 볼 수 있다(대법원 2022도1862).</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <p style="margin-bottom:16px;"><b>보존·차단·보고 세 줄.</b> 대응이 길어질 수 있으므로 핵심 인력과 자원을 미리 배분하고, 내부 조사와 수사 대응의 역할을 나눈다.</p>
+    <ol>
+      <li><b>① 증거 보존·추가 차단</b> — 접속·입력·승인 로그를 원본으로 남기고, 같은 방식의 추가 유출을 막는다.</li>
+      <li><b>② 권한 점검·검증 강화</b> — 입력과 승인 권한의 분리를 확인하고, 이중 승인 등 통제를 정비한다.</li>
+      <li><b>③ 이익 계산</b> — 사라진 금액과 귀속을 계산한다.</li>
+      <li><b>④ 대응 분리</b> — 형사 대응과 민사 회수를 나눠 계획한다.</li>
+      <li><b>⑤ 재발 방지</b> — 이상거래 감지와 교육을 정비하고, 손실이 크면 외부 전문가와 대응 체계를 점검한다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
