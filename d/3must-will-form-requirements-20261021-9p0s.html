@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko" data-design="M5">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>유언서를 발견했을 때 방식 요건부터 확인할 때 · 3MUST</title>
+<link rel="icon" href="data:,">
+<style>
+:root { color-scheme:light dark; --bg:#edf1f3; --paper:#fff; --ink:#202d3d; --muted:#596b80; --line:#cbd6e4; --accent:#245aa6; --wash:#e7eef8; font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif; }
+@media(prefers-color-scheme:dark){:root{--bg:#111a20;--paper:#1a252d;--ink:#eff4f4;--muted:#bac7c8;--line:#394a52;--wash:#253541;}}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);line-height:1.55}
+main{width:min(850px,100% - 28px);margin:24px auto;padding:clamp(22px,5vw,48px);background:var(--paper);border:1px solid var(--line);border-top:7px solid var(--accent)}
+.eyebrow{font-size:.75rem;font-weight:750;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin:0 0 10px}
+h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.12;letter-spacing:-.035em;margin:0;text-wrap:balance}
+.situation{color:var(--muted);max-width:64ch;margin:14px 0 24px}
+.three{display:grid;gap:0}
+section{padding:17px 0;border-top:1px solid var(--line)}
+h2{font-size:.9rem;color:var(--accent);margin:0 0 7px;letter-spacing:.02em}
+p,li{max-width:68ch} section p{margin:0} section ul,section ol{margin:0;padding-left:1.25rem}
+.pause{margin-top:20px;padding:13px 15px;background:var(--wash);border-left:3px solid var(--accent)}
+.pause strong{display:block;margin-bottom:4px}.sources{margin-top:20px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+.sources p{margin:4px 0}.disclaimer{font-size:.75rem;color:var(--muted);margin-top:18px}
+html[data-design="M1"]{--accent:#bd4d28;--wash:#f8e7df;--bg:#ece9e5;--line:#dfc7bb;--ink:#252b2c;--muted:#59615f}
+html[data-design="M1"] main{border-top-width:10px}.m1 .three{grid-template-columns:1fr 1fr;gap:12px}.m1 section{border:1px solid var(--line);padding:14px;background:color-mix(in srgb,var(--wash) 35%,var(--paper))}.m1 section:last-child{grid-column:1/-1}
+html[data-design="M2"]{--accent:#176b68;--wash:#e3efed;--bg:#e7eeee;--line:#c5d7d4;--ink:#162c31;--muted:#52696a}
+html[data-design="M2"] h1{font-family:Georgia,"Batang",serif;font-weight:600}.m2 .three{grid-template-columns:1fr 1fr;gap:22px}.m2 section:nth-child(2){background:var(--wash);padding:15px;border-top:0}.m2 section:last-child{grid-column:1/-1}
+html[data-design="M3"]{--accent:#126d57;--wash:#e4f1eb;--bg:#e9eeea;--line:#c5d7cc;--ink:#1d3028;--muted:#5b6e64}
+.m3 .three{position:relative;padding-left:20px}.m3 .three:before{content:"";position:absolute;top:18px;bottom:18px;left:4px;width:2px;background:var(--accent);opacity:.45}.m3 section{position:relative;padding-left:14px}.m3 section:before{content:"";position:absolute;left:-20px;top:20px;width:9px;height:9px;border:2px solid var(--accent);border-radius:50%;background:var(--paper)}
+html[data-design="M4"]{--accent:#714d83;--wash:#eee8f3;--bg:#ece8ef;--line:#d7ccdf;--ink:#292331;--muted:#686071}
+.m4 .situation{background:var(--wash);border-left:3px solid var(--accent);padding:12px 15px}.m4 .three{grid-template-columns:1fr 1fr;gap:12px}.m4 section{border:1px solid var(--line);padding:15px}.m4 section:last-child{grid-column:1/-1}
+html[data-design="M5"]{--accent:#245aa6;--wash:#e7eef8;--bg:#edf1f3;--line:#cbd6e4;--ink:#202d3d;--muted:#596b80}
+.m5 .situation{background:var(--wash);padding:10px 12px;border:1px solid var(--line)}.m5 section{display:grid;grid-template-columns:minmax(145px,.34fr) 1fr;gap:18px}.m5 h2{color:var(--ink)}
+@media(prefers-color-scheme:dark){
+ html[data-design="M1"]{--accent:#f29a72;--wash:#392d29;--bg:#131a1a;--paper:#202929;--line:#48524f;--ink:#edf1ed;--muted:#b9c5bf}
+ html[data-design="M2"]{--accent:#73c6be;--wash:#203936;--bg:#101a1b;--paper:#1b292b;--line:#405452;--ink:#eaf3f2;--muted:#afc6c3}
+ html[data-design="M3"]{--accent:#78d4a8;--wash:#20382f;--bg:#111a17;--paper:#1b2822;--line:#40564a;--ink:#eaf3ed;--muted:#b4c8bc}
+ html[data-design="M4"]{--accent:#d0a5e2;--wash:#342b3a;--bg:#19151d;--paper:#28212e;--line:#51445b;--ink:#f1eaf4;--muted:#c7b9ce}
+ html[data-design="M5"]{--accent:#8cb7ff;--wash:#24364d;--bg:#141a22;--paper:#202a37;--line:#3d4d62;--ink:#edf2fa;--muted:#b8c5d8}
+}
+@media(max-width:620px){main{width:min(100% - 18px,850px);margin:9px auto;padding:22px 17px}.m1 .three,.m2 .three,.m4 .three{grid-template-columns:1fr}.m1 section:last-child,.m2 section:last-child,.m4 section:last-child{grid-column:auto}.m5 section{grid-template-columns:1fr;gap:5px}}
+@media print{@page{size:A4 portrait;margin:10mm}html{color-scheme:light}body{background:#fff}main{width:100%;margin:0;padding:10mm;border:0;border-top:4mm solid var(--accent);box-shadow:none}.sources,.disclaimer{font-size:8.5pt}a{color:inherit;text-decoration:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="m5">
+  <p class="eyebrow">3MUST · 가족·상속법</p>
+  <h1>유언서를 발견했을 때 방식 요건부터 확인할 때</h1>
+  <p class="situation"><strong>적용 상황:</strong> 상속이 개시된 뒤 유언서를 발견한 상속인이나 법무팀이, 그 유언의 효력과 집행 가능성을 검토해야 하는 경우. <strong>범위:</strong> 유언 내용의 해석, 유류분 산정, 상속재산 분할의 최종 결론은 다루지 않습니다. 방식 요건 확인과 증거 보존, 절차 진행만 정리합니다.</p>
+  <div class="three">
+    <section><h2>Must Know · 알아야 할 것</h2><ul><li>유언은 법이 정한 방식을 갖추지 못하면 내용이 아무리 타당해도 효력이 인정되지 않습니다.</li><li>자필증서는 전문, 연월일, 주소, 성명을 모두 유언자가 직접 손으로 쓰고 날인해야 합니다.</li><li>연월일 가운데 일이 빠지면 무효 위험이 커지며, 실무에서 가장 자주 나타나는 흠입니다.</li><li>인쇄되거나 타자된 부분이 섞이면 전문 자서 요건이 깨지므로, 양식에 일부만 손으로 채우는 방식은 위험합니다.</li><li>날인이 흐릿해 식별되지 않거나 무인이 유언자 본인의 것임이 증명되지 않으면 날인 요건이 문제됩니다.</li><li>주소는 생활 근거지를 알 수 있을 정도여야 하며, 봉투에 적힌 주소로 보완하려면 유언서와의 일체성이 인정되어야 합니다.</li><li>공정증서는 유언자의 구수, 공증인의 필기와 낭독, 증인 두 사람의 승인과 서명이라는 순서가 핵심이며, 증인 수뿐 아니라 증인 자격도 확인해야 합니다.</li><li>여러 장으로 된 유언은 한 통의 유언서임이 인정되면 유효하고, 방식 기재가 한 장에만 있어도 무방합니다.</li><li>검인은 유언의 효력 요건이 아니라 보존과 위조 방지를 위한 절차이며, 검인 전에 함부로 개봉하면 분쟁만 커집니다.</li></ul></section>
+    <section><h2>Must Check · 확인할 것</h2><ul><li>유언 방식의 식별(자필·공정·구수·녹음·비밀증서)</li><li>전문을 직접 썼는지, 인쇄·타자 부분이 섞였는지</li><li>연월일이 년·월·일 모두 기재되었는지</li><li>주소 기재와 생활 근거지 확인 가능성</li><li>성명 기재와 서명 상태</li><li>날인 여부와 인영의 식별 가능성, 무인의 동일성</li><li>공정증서의 증인 수와 증인 자격</li><li>구수·낭독·승인 절차의 이행 기록</li><li>여러 장·봉투의 일체성을 뒷받침할 사정</li><li>유언집행자 지정 여부</li><li>유언서 발견 경위와 보관자, 개봉 시점</li><li>철회나 후행 유언의 존재 여부</li></ul></section>
+    <section><h2>Must Do · 실행할 것</h2><ol><li>유언서 원본의 보관 상태와 발견 경위를 사진과 함께 기록합니다.</li><li>방식별 요건 체크표를 만들어 항목마다 충족·흠결을 표시합니다.</li><li>흠결이 확인되면 무효 가능성과 그에 따른 법정상속분 처리를 문서화합니다.</li><li>진정 성립이 다퉈지면 필적 감정에 쓸 비교 자료를 확보합니다.</li><li>유언서를 법원에 제출해 검인 절차를 진행합니다.</li><li>상속인 전원에게 유언서의 존재와 내용을 통지합니다.</li><li>유언집행자 지정 여부를 확인하고, 없으면 선임 절차를 검토합니다.</li><li>유류분과 상속포기가 서로 영향을 주는 관계를 함께 검토합니다.</li></ol></section>
+  </div>
+  <aside class="pause"><strong>잠깐 멈추고 검토할 때</strong><p>요건 일부만 갖춘 유언서가 발견된 경우 · 필적이나 인영의 진위가 다퉈지는 경우 · 공정증서 작성 당시의 절차 기록이 남아 있지 않은 경우 · 유언 내용이 법정상속분과 크게 어긋나는 경우 · 상속인 사이에 유언서의 존재 자체를 두고 분쟁이 있는 경우 · 철회나 후행 유언이 있다는 주장이 제기된 경우</p></aside>
+  <div class="sources"><p><strong>원자료:</strong> 가족·상속법 123_상속실무_기본 EP-006(현장 장면, 위험 신호, 최소 법리, 판단 프레임, 실패 패턴)</p><p><strong>제한:</strong> 조문 번호·판례 사건번호·유언 효력의 최종 결론은 본 카드에서 제외했습니다.</p><p><strong>검토일:</strong> 2026-10-21</p><p><strong>변경 기록:</strong> 초안. 방식별 요건 점검을 한 장의 확인 절차로 재구성하고, 증인 자격과 검인 전 개봉 주의를 별도 항목으로 추가했습니다.</p></div>
+  <p class="disclaimer">일반적인 실무 참고자료입니다. 개별 사안에서는 사실관계와 적용 기준을 확인하세요.</p>
+</main>
+</body>
+</html>
