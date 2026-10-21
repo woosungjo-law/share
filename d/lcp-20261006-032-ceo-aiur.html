@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>기록은 비용이 아니라 보험이다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>기록은 비용이 아니라 보험이다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 권리에는 수명이 있다(민법 제162조 — 채권 10년, 그 밖의 재산권 20년). 그 수명 안에 근거를 꺼낼 수 있어야 하는데, <b>담당자가 바뀌고 파일 위치가 사라지면 이긴 소송도 무용지물이 된다 — 보관에 드는 비용은 사후 분쟁 비용보다 대체로 작다.</b>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      튼튼기계의 남지완 대표는 몇 해 전 마무리한 소송을 다시 떠올려야 했다. 승소로 끝났던 그 사건이, 비슷한 거래에서 다시 문제가 되면서 <b>과거 이행 내역을 증명하라는 요구로 돌아왔다.</b> 남 대표는 서류가 제대로 보관되어 있는지 확신이 없었다. 담당자가 바뀌었고, 파일 위치도 기억이 흐릿했다. 그는 기록 보관을 비용이 아니라 보험으로 보기로 했다. 권리에는 수명이 있고, 그 수명 안에 근거를 꺼낼 수 있어야 한다는 점을 확인했다. 보관 기준과 책임자를 정하는 일이 다음 분쟁을 미리 막는 일이었다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, 권리의 수명이다. 민법 제162조는 채권은 10년간, 채권 및 소유권 이외의 재산권은 20년간 행사하지 아니하면 소멸시효가 완성한다고 정한다. 이 기간이 지나면 자료를 찾아도 권리를 주장하기 어려울 수 있다.</p>
+    <p>둘째, 끝난 소송의 기록에 접근할 권리다. 민사소송법 제162조는 당사자나 이해관계를 소명한 제3자가 소송기록의 열람·복사, 재판서·조서의 정본·등본·초본 교부, 소송에 관한 사항의 증명서 교부를 신청할 수 있다고 정한다. 확정된 소송기록도 권리구제·학술연구·공익 목적의 열람을 신청할 수 있으나, 공개 금지 변론에 관련된 기록이나 소송관계인이 동의하지 않은 경우에는 제한된다.</p>
+    <p>경영 판단의 핵심은 두 가지다. 어떤 권리를 언제까지 지켜야 하는지, 그리고 그 근거를 어디에서 다시 꺼낼 수 있는지다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외</h2>
+    <ul class="points">
+      <li><b>첫째, 보관 기간의 기준이다</b> — 제162조가 정한 10년·20년을 회사의 문서 보존 정책에 반영한다.</li>
+      <li><b>둘째, 자격과 소명이다</b> — 당사자가 아니면 이해관계를 소명해야 법원 기록에 접근할 수 있다.</li>
+      <li><b>셋째, 제한 사유다</b> — 공개 금지 변론과 소송관계인 동의 문제를 미리 확인한다.</li>
+      <li><b>넷째, 접근 비용이다</b> — 법원에서 서류를 다시 받는 데 드는 시간과 절차를 계산한다.</li>
+      <li><b>다섯째, 담당자 교체 대비다</b> — 파일 위치와 색인을 남겨 사람이 바뀌어도 찾을 수 있게 한다.</li>
+      <li><b>여섯째, 폐기 기준이다</b> — 보관 기간이 지난 서류를 언제 어떻게 폐기할지 정한다.</li>
+      <li><b>일곱째, 접근 절차의 표준화다</b> — 법원 기록을 다시 받는 절차를 담당자가 바뀌어도 알 수 있게 매뉴얼로 정리한다.</li>
+      <li><b>여덟째, 보험의 관점이다</b> — 보관에 드는 비용은 사후 분쟁에 드는 비용보다 대체로 작으므로, 최소한 지켜야 할 보관 세트를 정해 두는 편이 낫다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 시효는 민법 제162조(채권 10년·재산권 20년) · 끝난 소송 기록도 열람·교부 신청 가능(민사소송법 제162조) · 공개 금지 변론과 동의 문제는 제한 사유 · 보관이 곧 방어다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <p style="margin-bottom:16px;"><b>기준·책임·점검 세 줄.</b> 보관 담당이 바뀌어도 기준이 유지되도록 문서로 남긴다.</p>
+    <ol>
+      <li><b>① 보존 기준·핵심 서류</b> — 민법 제162조의 10년·20년을 반영해 판결문·합의서·계약서·이행 증빙의 보관 기한을 정한다.</li>
+      <li><b>② 책임자 지정</b> — 기록 관리 담당과 색인 유지 책임을 정하고, 인수인계 절차를 함께 마련한다.</li>
+      <li><b>③ 접근 절차·제한 확인</b> — 제162조의 열람·교부청구 절차를 정리하고, 공개 금지와 소송관계인 동의 문제를 점검한다.</li>
+      <li><b>④ 정기 점검</b> — 종료 사건 목록과 서류 위치를 주기적으로 확인하고, 빠진 항목은 바로 보완한다.</li>
+      <li><b>⑤ 폐기 기준</b> — 보관 기간이 지난 서류의 폐기 기준을 정하고, 점검 결과를 경영진 회의에 보고한다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
