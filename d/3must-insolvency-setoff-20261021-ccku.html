@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko" data-design="M2">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>거래처가 회생절차를 신청했을 때, 기존 채권으로 상계를 주장할 수 있는지 · 3MUST</title>
+<link rel="icon" href="data:,">
+<style>
+:root { color-scheme:light dark; --bg:#edf1f3; --paper:#fff; --ink:#202d3d; --muted:#596b80; --line:#cbd6e4; --accent:#245aa6; --wash:#e7eef8; font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif; }
+@media(prefers-color-scheme:dark){:root{--bg:#111a20;--paper:#1a252d;--ink:#eff4f4;--muted:#bac7c8;--line:#394a52;--wash:#253541;}}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);line-height:1.55}
+main{width:min(850px,100% - 28px);margin:24px auto;padding:clamp(22px,5vw,48px);background:var(--paper);border:1px solid var(--line);border-top:7px solid var(--accent)}
+.eyebrow{font-size:.75rem;font-weight:750;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin:0 0 10px}
+h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.12;letter-spacing:-.035em;margin:0;text-wrap:balance}
+.situation{color:var(--muted);max-width:64ch;margin:14px 0 24px}
+.three{display:grid;gap:0}
+section{padding:17px 0;border-top:1px solid var(--line)}
+h2{font-size:.9rem;color:var(--accent);margin:0 0 7px;letter-spacing:.02em}
+p,li{max-width:68ch} section p{margin:0} section ul,section ol{margin:0;padding-left:1.25rem}
+.pause{margin-top:20px;padding:13px 15px;background:var(--wash);border-left:3px solid var(--accent)}
+.pause strong{display:block;margin-bottom:4px}.sources{margin-top:20px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+.sources p{margin:4px 0}.disclaimer{font-size:.75rem;color:var(--muted);margin-top:18px}
+html[data-design="M1"]{--accent:#bd4d28;--wash:#f8e7df;--bg:#ece9e5;--line:#dfc7bb;--ink:#252b2c;--muted:#59615f}
+html[data-design="M1"] main{border-top-width:10px}.m1 .three{grid-template-columns:1fr 1fr;gap:12px}.m1 section{border:1px solid var(--line);padding:14px;background:color-mix(in srgb,var(--wash) 35%,var(--paper))}.m1 section:last-child{grid-column:1/-1}
+html[data-design="M2"]{--accent:#176b68;--wash:#e3efed;--bg:#e7eeee;--line:#c5d7d4;--ink:#162c31;--muted:#52696a}
+html[data-design="M2"] h1{font-family:Georgia,"Batang",serif;font-weight:600}.m2 .three{grid-template-columns:1fr 1fr;gap:22px}.m2 section:nth-child(2){background:var(--wash);padding:15px;border-top:0}.m2 section:last-child{grid-column:1/-1}
+html[data-design="M3"]{--accent:#126d57;--wash:#e4f1eb;--bg:#e9eeea;--line:#c5d7cc;--ink:#1d3028;--muted:#5b6e64}
+.m3 .three{position:relative;padding-left:20px}.m3 .three:before{content:"";position:absolute;top:18px;bottom:18px;left:4px;width:2px;background:var(--accent);opacity:.45}.m3 section{position:relative;padding-left:14px}.m3 section:before{content:"";position:absolute;left:-20px;top:20px;width:9px;height:9px;border:2px solid var(--accent);border-radius:50%;background:var(--paper)}
+html[data-design="M4"]{--accent:#714d83;--wash:#eee8f3;--bg:#ece8ef;--line:#d7ccdf;--ink:#292331;--muted:#686071}
+.m4 .situation{background:var(--wash);border-left:3px solid var(--accent);padding:12px 15px}.m4 .three{grid-template-columns:1fr 1fr;gap:12px}.m4 section{border:1px solid var(--line);padding:15px}.m4 section:last-child{grid-column:1/-1}
+html[data-design="M5"]{--accent:#245aa6;--wash:#e7eef8;--bg:#edf1f3;--line:#cbd6e4;--ink:#202d3d;--muted:#596b80}
+.m5 .situation{background:var(--wash);padding:10px 12px;border:1px solid var(--line)}.m5 section{display:grid;grid-template-columns:minmax(145px,.34fr) 1fr;gap:18px}.m5 h2{color:var(--ink)}
+@media(prefers-color-scheme:dark){
+ html[data-design="M1"]{--accent:#f29a72;--wash:#392d29;--bg:#131a1a;--paper:#202929;--line:#48524f;--ink:#edf1ed;--muted:#b9c5bf}
+ html[data-design="M2"]{--accent:#73c6be;--wash:#203936;--bg:#101a1b;--paper:#1b292b;--line:#405452;--ink:#eaf3f2;--muted:#afc6c3}
+ html[data-design="M3"]{--accent:#78d4a8;--wash:#20382f;--bg:#111a17;--paper:#1b2822;--line:#40564a;--ink:#eaf3ed;--muted:#b4c8bc}
+ html[data-design="M4"]{--accent:#d0a5e2;--wash:#342b3a;--bg:#19151d;--paper:#28212e;--line:#51445b;--ink:#f1eaf4;--muted:#c7b9ce}
+ html[data-design="M5"]{--accent:#8cb7ff;--wash:#24364d;--bg:#141a22;--paper:#202a37;--line:#3d4d62;--ink:#edf2fa;--muted:#b8c5d8}
+}
+@media(max-width:620px){main{width:min(100% - 18px,850px);margin:9px auto;padding:22px 17px}.m1 .three,.m2 .three,.m4 .three{grid-template-columns:1fr}.m1 section:last-child,.m2 section:last-child,.m4 section:last-child{grid-column:auto}.m5 section{grid-template-columns:1fr;gap:5px}}
+@media print{@page{size:A4 portrait;margin:10mm}html{color-scheme:light}body{background:#fff}main{width:100%;margin:0;padding:10mm;border:0;border-top:4mm solid var(--accent);box-shadow:none}.sources,.disclaimer{font-size:8.5pt}a{color:inherit;text-decoration:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="m2">
+  <p class="eyebrow">3MUST · 금융·투자법</p>
+  <h1>거래처가 회생절차를 신청했을 때, 기존 채권으로 상계를 주장할 수 있는지</h1>
+  <p class="situation"><strong>적용 상황:</strong> 거래처나 대출 채무자가 회생 또는 파산 절차에 들어갔거나 들어갈 조짐이 보이는 상황에서, 우리가 보유한 채권과 상대방에 대한 채무를 상계할 수 있는지 검토해야 하는 금융기관·기업 법무 담당자가 사용합니다. <strong>범위:</strong> 이 카드는 상계 주장 가능성을 검토하기 위해 시점과 근거를 정리하는 방법만 다룹니다. 상계가 인정되는지, 부인권이 행사될지, 회수 금액이 얼마인지에 대한 결론은 다루지 않습니다.</p>
+  <div class="three">
+    <section><h2>Must Know · 알아야 할 것</h2><ul><li>도산절차에서도 상계는 원칙적으로 허용됩니다. 전면 금지가 아니라 예외를 두는 구조입니다.</li><li>제한의 목적은 위기가 드러난 뒤 새로 만든 채권이나 채무로 사실상 우선변제하는 것을 막는 데 있습니다.</li><li>그래서 판단의 출발점은 언제 채권을 취득했고 언제 채무를 부담했는지, 그리고 언제 위기를 인식했는지입니다.</li><li>회생과 파산은 표현이 다를 뿐 같은 구조를 취합니다. 다만 기준이 되는 시점은 절차에 따라 달라질 수 있습니다.</li><li>예외적으로 인정되는 경우가 있습니다. 채권과 채무가 실질적으로 같은 거래에서 나왔다고 볼 수 있어야 하고, 그렇게 볼 만한 정당성이 있어야 합니다.</li><li>계속거래를 해 왔거나 계좌를 유지해 왔다는 사정만으로는 부족합니다. 구체적인 상계 예정이나 담보 기능이 확인되어야 합니다.</li><li>관리인이 부인권을 행사해 발생한 원상회복 의무에 대해서는 상계가 인정되기 어렵습니다. 이 경우 법정 원인이라는 예외가 통하지 않습니다.</li><li>회생이 파산으로 이어지는 경우에는 회생 신청 시점이 기준 시점으로 다루어질 수 있고, 회생절차가 진행된 기간은 계산에서 빠지는 것으로 다루어집니다.</li><li>상계를 방어하는 쪽은 상계 가부보다 부인권 행사 요건을 먼저 다투는 것이 순서입니다.</li></ul></section>
+    <section><h2>Must Check · 확인할 것</h2><ul><li>우리 채권이 발생한 시점과 그 근거 자료를 특정했는가</li><li>상대방에 대한 우리 채무를 부담한 시점을 특정했는가</li><li>위기시기, 즉 지급정지나 절차 신청 사실을 우리가 안 시점은 언제인가</li><li>계약이나 약정에 상계 관련 조항이 있는가</li><li>특정 계좌의 구조나 운용 관행이 상계를 전제로 한 것인지 확인했는가</li><li>해당 채권이 실질적 담보 기능을 했음을 보여 주는 자료가 있는가</li><li>현재 절차가 회생인지 파산인지, 견련파산으로 다루어지는지 확인했는가</li><li>문제 된 변제나 담보 제공이 위기 전후 어느 시점에 있었는가</li><li>그 행위가 어떤 유형의 부인 대상에 해당하는지 검토했는가</li><li>부인권 행사에 시간적 제한이 걸리는지 확인했는가</li><li>관리인 또는 상대방이 이미 제기한 주장과 그 근거는 무엇인가</li><li>절차 진행 중 채권 신고와 이의 기한을 놓치지 않았는가</li></ul></section>
+    <section><h2>Must Do · 실행할 것</h2><ol><li>채권 발생 시점과 채무 부담 시점을 시간축에 나란히 놓은 도표를 만듭니다. 담당은 여신·회계, 검토는 법무가 맡습니다.</li><li>위기시기 인식 시점을 뒷받침하는 자료, 즉 통지서, 공시, 신용정보 변동 기록을 모읍니다.</li><li>상계 약정과 계좌 운용 구조를 원문 그대로 확보하고, 통상 거래와 다른 점을 표시합니다.</li><li>상계 주장과 부인권 방어를 분리해 각각 필요한 사실과 자료를 목록화합니다.</li><li>부인 대상 행위가 있다면 그 시점과 유형을 정리하고, 관련 자료를 별도 보관합니다.</li><li>채권 신고 기한과 이의 절차를 일정표에 넣고 담당자를 지정합니다.</li><li>관리인 또는 상대방의 예상 주장을 먼저 적어 보고, 우리 쪽 반박 지점을 표시합니다.</li><li>외부 자문 검토를 요청하고, 검토 범위와 회신 일자를 기록으로 남깁니다.</li></ol></section>
+  </div>
+  <aside class="pause"><strong>잠깐 멈추고 검토할 때</strong><p>위기시기 인식 시점과 채권 취득 시점의 선후가 뒤집힐 여지가 있을 때 · 상계 근거가 계속거래 관행뿐이고 구체적 약정이 없을 때 · 관리인이 부인권을 행사해 원상회복을 요구할 조짐이 보일 때 · 회생이 파산으로 전환되어 기준 시점이 달라질 수 있을 때 · 금융기관으로서 위기 정보를 언제 알았는지가 쟁점이 될 때 · 상대방이 상계 금지를 이유로 채권 신고액 자체를 다툴 때</p></aside>
+  <div class="sources"><p><strong>원자료:</strong> 「도산상계권, 상계 제한의 범위와 예외」(금융·투자법 회생파산 실무). 상계 허용과 금지의 기본 구조, 전의 원인 예외, 부인권과의 교차, 견련파산 기준 시점, 실무 포인트를 활용했습니다.</p><p><strong>제한:</strong> 조문 번호와 사건번호를 모두 제외했고, 원자료에 등장하는 일수·기간 기준도 카드에서 삭제했습니다. 상계 인정 여부와 부인권 행사 결과에 대한 결론은 담지 않았습니다.</p><p><strong>검토일:</strong> 2026-10-21</p><p><strong>변경 기록:</strong> 초안. 원자료의 법리 해설 순서를 그대로 따르지 않고, 시점 확인을 맨 앞에 두고 부인권 선결 검토를 중간에 배치해 검토 순서로 재구성했습니다.</p></div>
+  <p class="disclaimer">일반적인 실무 참고자료입니다. 개별 사안에서는 사실관계와 적용 기준을 확인하세요.</p>
+</main>
+</body>
+</html>
