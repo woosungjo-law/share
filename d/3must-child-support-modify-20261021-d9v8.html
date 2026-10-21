@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko" data-design="M2">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>양육비를 올리거나 줄여야 한다는 요청을 받았을 때 · 3MUST</title>
+<link rel="icon" href="data:,">
+<style>
+:root { color-scheme:light dark; --bg:#edf1f3; --paper:#fff; --ink:#202d3d; --muted:#596b80; --line:#cbd6e4; --accent:#245aa6; --wash:#e7eef8; font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif; }
+@media(prefers-color-scheme:dark){:root{--bg:#111a20;--paper:#1a252d;--ink:#eff4f4;--muted:#bac7c8;--line:#394a52;--wash:#253541;}}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);line-height:1.55}
+main{width:min(850px,100% - 28px);margin:24px auto;padding:clamp(22px,5vw,48px);background:var(--paper);border:1px solid var(--line);border-top:7px solid var(--accent)}
+.eyebrow{font-size:.75rem;font-weight:750;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin:0 0 10px}
+h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.12;letter-spacing:-.035em;margin:0;text-wrap:balance}
+.situation{color:var(--muted);max-width:64ch;margin:14px 0 24px}
+.three{display:grid;gap:0}
+section{padding:17px 0;border-top:1px solid var(--line)}
+h2{font-size:.9rem;color:var(--accent);margin:0 0 7px;letter-spacing:.02em}
+p,li{max-width:68ch} section p{margin:0} section ul,section ol{margin:0;padding-left:1.25rem}
+.pause{margin-top:20px;padding:13px 15px;background:var(--wash);border-left:3px solid var(--accent)}
+.pause strong{display:block;margin-bottom:4px}.sources{margin-top:20px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+.sources p{margin:4px 0}.disclaimer{font-size:.75rem;color:var(--muted);margin-top:18px}
+html[data-design="M1"]{--accent:#bd4d28;--wash:#f8e7df;--bg:#ece9e5;--line:#dfc7bb;--ink:#252b2c;--muted:#59615f}
+html[data-design="M1"] main{border-top-width:10px}.m1 .three{grid-template-columns:1fr 1fr;gap:12px}.m1 section{border:1px solid var(--line);padding:14px;background:color-mix(in srgb,var(--wash) 35%,var(--paper))}.m1 section:last-child{grid-column:1/-1}
+html[data-design="M2"]{--accent:#176b68;--wash:#e3efed;--bg:#e7eeee;--line:#c5d7d4;--ink:#162c31;--muted:#52696a}
+html[data-design="M2"] h1{font-family:Georgia,"Batang",serif;font-weight:600}.m2 .three{grid-template-columns:1fr 1fr;gap:22px}.m2 section:nth-child(2){background:var(--wash);padding:15px;border-top:0}.m2 section:last-child{grid-column:1/-1}
+html[data-design="M3"]{--accent:#126d57;--wash:#e4f1eb;--bg:#e9eeea;--line:#c5d7cc;--ink:#1d3028;--muted:#5b6e64}
+.m3 .three{position:relative;padding-left:20px}.m3 .three:before{content:"";position:absolute;top:18px;bottom:18px;left:4px;width:2px;background:var(--accent);opacity:.45}.m3 section{position:relative;padding-left:14px}.m3 section:before{content:"";position:absolute;left:-20px;top:20px;width:9px;height:9px;border:2px solid var(--accent);border-radius:50%;background:var(--paper)}
+html[data-design="M4"]{--accent:#714d83;--wash:#eee8f3;--bg:#ece8ef;--line:#d7ccdf;--ink:#292331;--muted:#686071}
+.m4 .situation{background:var(--wash);border-left:3px solid var(--accent);padding:12px 15px}.m4 .three{grid-template-columns:1fr 1fr;gap:12px}.m4 section{border:1px solid var(--line);padding:15px}.m4 section:last-child{grid-column:1/-1}
+html[data-design="M5"]{--accent:#245aa6;--wash:#e7eef8;--bg:#edf1f3;--line:#cbd6e4;--ink:#202d3d;--muted:#596b80}
+.m5 .situation{background:var(--wash);padding:10px 12px;border:1px solid var(--line)}.m5 section{display:grid;grid-template-columns:minmax(145px,.34fr) 1fr;gap:18px}.m5 h2{color:var(--ink)}
+@media(prefers-color-scheme:dark){
+ html[data-design="M1"]{--accent:#f29a72;--wash:#392d29;--bg:#131a1a;--paper:#202929;--line:#48524f;--ink:#edf1ed;--muted:#b9c5bf}
+ html[data-design="M2"]{--accent:#73c6be;--wash:#203936;--bg:#101a1b;--paper:#1b292b;--line:#405452;--ink:#eaf3f2;--muted:#afc6c3}
+ html[data-design="M3"]{--accent:#78d4a8;--wash:#20382f;--bg:#111a17;--paper:#1b2822;--line:#40564a;--ink:#eaf3ed;--muted:#b4c8bc}
+ html[data-design="M4"]{--accent:#d0a5e2;--wash:#342b3a;--bg:#19151d;--paper:#28212e;--line:#51445b;--ink:#f1eaf4;--muted:#c7b9ce}
+ html[data-design="M5"]{--accent:#8cb7ff;--wash:#24364d;--bg:#141a22;--paper:#202a37;--line:#3d4d62;--ink:#edf2fa;--muted:#b8c5d8}
+}
+@media(max-width:620px){main{width:min(100% - 18px,850px);margin:9px auto;padding:22px 17px}.m1 .three,.m2 .three,.m4 .three{grid-template-columns:1fr}.m1 section:last-child,.m2 section:last-child,.m4 section:last-child{grid-column:auto}.m5 section{grid-template-columns:1fr;gap:5px}}
+@media print{@page{size:A4 portrait;margin:10mm}html{color-scheme:light}body{background:#fff}main{width:100%;margin:0;padding:10mm;border:0;border-top:4mm solid var(--accent);box-shadow:none}.sources,.disclaimer{font-size:8.5pt}a{color:inherit;text-decoration:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="m2">
+  <p class="eyebrow">3MUST · 가족·상속법</p>
+  <h1>양육비를 올리거나 줄여야 한다는 요청을 받았을 때</h1>
+  <p class="situation"><strong>적용 상황:</strong> 이혼 후 양육비 증액을 요구받았거나, 반대로 소득 감소를 이유로 감액을 요청하려는 상황에서 자료와 청구 범위를 정리해야 하는 경우. <strong>범위:</strong> 양육비 액수의 최종 적정성, 소급 인정 여부, 과거양육비 분담 비율의 판단은 다루지 않습니다. 자료 준비와 청구·방어 논리 정리만 다룹니다.</p>
+  <div class="three">
+    <section><h2>Must Know · 알아야 할 것</h2><ul><li>양육비 산정은 자녀 복리를 최우선으로 하고, 부모 소득 비율과 자녀의 필요, 기준표를 함께 봅니다. 기준표 하나로 금액이 확정되지 않습니다.</li><li>양육비 산정기준표는 법적 구속력이 있는 기준이 아니라 실무 참고 기준입니다. 기준표를 벗어나려면 합리적 이유를 제시해야 합니다.</li><li>기준표는 기본 양육비만 담습니다. 학원비·치료비 같은 특별비용은 별도로 합의하거나 심판을 받아야 합니다.</li><li>변경은 원칙적으로 장래를 향해서만 가능합니다. 이미 정해진 양육비를 과거로 되돌리는 소급 변경은 특별한 사정이 있어야 합니다.</li><li>감액은 자녀 복리에 반할 위험이 있어 엄격하게 심사됩니다. 소득이 줄었다는 사실만으로 감액이 인정되지는 않습니다.</li><li>감액 주장에는 소득 감소의 실질성·지속성·확정성과 귀책 사유 없음이 함께 필요합니다. 일시적 이직이나 자발적 퇴직은 약한 근거입니다.</li><li>협의·심판으로 양육비를 정한 적이 없으면 과거양육비 분담을 청구할 여지가 있습니다. 다만 상대방의 부양 인식·양육 경위·재산분할 관계를 종합해야 합니다.</li><li>청구취지는 지급 주체·금액·기간·지급일이 주문만으로 특정되도록 써야 집행 단계에서 다툼이 없습니다.</li></ul></section>
+    <section><h2>Must Check · 확인할 것</h2><ul><li>기존 양육비 결정 경위(협의서·조정조서·판결·심판)</li><li>부모 각각의 최근 3년 소득·재산·부채 증빙</li><li>자녀 연령·건강·교육 상황과 실제 지출 내역</li><li>특별비용(학원·치료·교재) 영수증과 월별 합계</li><li>기준표상 연령·가구원수 기준 금액</li><li>사정 변경 발생 시점과 지속성</li><li>과거 미지급·일부 지급 내역</li><li>감액 시 자녀 복리에 미치는 영향과 대안</li><li>재산분할·위자료와의 관계</li><li>협의 시도 기록(내용증명·회신)</li><li>집행력 확보 수단(공정증서·심판)</li></ul></section>
+    <section><h2>Must Do · 실행할 것</h2><ol><li>부모 양측 소득·지출을 같은 양식으로 표준화해 3년치 표를 만듭니다.</li><li>기준표 금액과 현재 양육비를 나란히 놓은 비교표를 작성합니다.</li><li>증액·감액 사유를 사실 단위로 쪼개 각각 증빙을 붙입니다.</li><li>장래 효과와 소급 범위를 구분해 청구취지 초안을 작성합니다.</li><li>협의를 시도하고 그 경과를 서면으로 남깁니다.</li><li>감액을 주장할 때는 자녀 복리 영향과 최소화 방안을 함께 정리합니다.</li><li>합의 시 공정증서 등 집행력 확보 방안을 검토하고 일정을 잡습니다.</li></ol></section>
+  </div>
+  <aside class="pause"><strong>잠깐 멈추고 검토할 때</strong><p>상대방 소득 자료가 은폐·축소된 정황이 있는 경우 · 자녀의 특수교육·치료비가 급증한 경우 · 양육비가 장기간 미지급되어 이행확보 수단이 필요한 경우 · 재산분할 재협상 요구와 양육비 변경이 결합된 경우 · 과거양육비 청구가 성년 후 오랜 기간 지난 시점에 제기되는 경우</p></aside>
+  <div class="sources"><p><strong>원자료:</strong> 가족·상속법 이혼가사소송 실무 EP-003(산정 기준, 변경·감액 요건, 4단계 프레임, 실패 패턴)</p><p><strong>제한:</strong> 민법·가사소송법 조문 번호와 판례 사건번호, 과거양육비 소멸시효·소급 인정에 대한 최종 판단은 본 카드에서 제외했습니다.</p><p><strong>검토일:</strong> 2026-10-21</p><p><strong>변경 기록:</strong> 초안. 원자료의 산정·변경·감액 설명을 자료 표준화와 청구취지 설계 중심으로 재구성하고, 기준표의 참고적 성격과 특별비용 분리를 강조했습니다.</p></div>
+  <p class="disclaimer">일반적인 실무 참고자료입니다. 개별 사안에서는 사실관계와 적용 기준을 확인하세요.</p>
+</main>
+</body>
+</html>
