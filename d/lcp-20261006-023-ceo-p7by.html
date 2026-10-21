@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>영향평가는 '나중 일'이 아니라 출시 전에 끝내야 하는 관문이다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>영향평가는 '나중 일'이 아니라 출시 전에 끝내야 하는 관문이다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 개인정보 영향평가는 나중에 붙일 수 있는 서류가 아니라 출시 전에 지나야 하는 관문이다. 대상 판정이 안 된 채 출시를 밀면 <b>관문을 늦게 지나는 순간 출시를 되돌려야 할 수도 있다 — 평가는 비용이 아니라 일정의 문제다.</b>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      두루리조트 대표 민경원은 신규 예약 서비스의 출시 일정과 개인정보 평가 일정이 부딪히는 상황을 보고받았다. 팀은 출시를 앞당기고 싶어 했고, 평가는 나중에 하자고 제안했다. <b>경원은 순서를 바꿨다.</b> 먼저 대상 여부를 판정하고, 대상이면 출시 전에 평가를 붙이자고 했다. 우리가 다루는 정보의 규모와 성질이 기준에 드는지, 해외 이용자 정보까지 다루는지가 관건이었다. 해외 이용자가 있으면 별도 평가가 하나 더 얹힐 수 있었고, 그러면 일정도 함께 늘어난다. 경원은 평가를 비용이 아니라 관문으로 보았다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, 영향평가의 근거다. 개인정보 보호법 제33조는 공공기관의 장이 대통령령으로 정하는 기준에 해당하는 개인정보파일의 운용으로 정보주체의 개인정보 침해가 우려되는 경우에는 위험요인의 분석과 개선 사항 도출을 위한 평가를 하고 그 결과를 보호위원회에 제출하여야 한다고 정한다. 같은 조는 보호위원회가 요건을 갖춘 자를 평가기관으로 지정할 수 있고, 평가할 때 처리하는 개인정보의 수 등 정해진 사항을 고려하도록 한다.</p>
+    <p>둘째, 대상 기준이다. 개인정보 보호법 시행령 제35조는 전자적으로 처리할 수 있는 개인정보파일로서 5만명 이상의 정보주체에 관한 민감정보 또는 고유식별정보의 처리가 수반되는 경우, 다른 개인정보파일과 연계하여 50만명 이상의 정보주체 정보가 포함되는 경우, 100만명 이상의 정보주체에 관한 개인정보파일 등을 대상으로 정한다. 규모와 정보의 성질이 기준이다.</p>
+    <p>셋째, 국외 이전과의 충돌이다. EU 역내 정보주체의 개인정보를 처리하면 GDPR상의 평가를 별도로 수행해야 하므로, 한국의 영향평가와 항목·위험평가를 정합시켜 중복을 줄이는 통합 프레임워크가 필요하다. 하나의 평가로 두 제도를 갈음할 수는 없다.</p>
+    <p>넷째, 평가의 목적이다. 위험요인을 분석하고 개선 사항을 도출해 개인정보 침해를 줄이는 것이 목적이므로, 절차를 채우는 데 그치면 의미가 없다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외</h2>
+    <ul class="points">
+      <li><b>첫째, 일정 선행이다</b> — 대상 판정과 평가를 출시 전에 배치하고, 그만큼 출시 일정을 조정한다.</li>
+      <li><b>둘째, 비용 산정이다</b> — 평가 비용과 일정 지연 비용을 함께 계산한다.</li>
+      <li><b>셋째, 대상의 재확인이다</b> — 이용자 수와 정보의 성질이 바뀌면 대상이 될 수 있으므로 성장 계획과 함께 본다.</li>
+      <li><b>넷째, 국외 대응이다</b> — 해외 이용자를 다루면 추가 평가를 일정에 넣는다.</li>
+      <li><b>다섯째, 책임 배분이다</b> — 대상 판정과 항목 구성은 개인정보 담당, 일정과 자원은 제품 조직, 최종 결정은 대표가 맡는다.</li>
+      <li><b>여섯째, 실행 순서다</b> — 대상 판정, 평가 설계, 위험 분석, 개선 반영의 순서를 고정한다.</li>
+      <li><b>일곱째, 중단 기준이다</b> — 대상 여부가 확인되지 않으면 출시를 멈추고 판정부터 끝낸다.</li>
+      <li><b>여덟째, 통합 설계다</b> — 한국과 EU 평가의 항목을 대응시켜 중복 작업을 줄인다.</li>
+      <li><b>아홉째, 개선의 반영이다</b> — 평가에서 나온 개선 사항을 실제 기능에 넣었는지 확인한다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 근거 조항은 개인정보 보호법 제33조 · 대상 기준은 시행령 제35조(5만명 민감정보·50만명 연계·100만명 이상) · EU는 별도 평가, 하나로 갈음 불가 · 절차만 채우면 무의미하다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <p style="margin-bottom:16px;"><b>대상·일정·항목·국외를 한 장에 모은다.</b> 표에는 대상, 일정, 항목, 제출, 국외, 비용 여섯 칸을 둔다. 빈 칸은 회의에서 먼저 이야기한다. 회의가 끝나면 네 줄이 남는다 — 네 줄이 있어야 제품 조직과 개인정보 담당이 같은 일정으로 움직인다.</p>
+    <ol>
+      <li><b>① 대상 판정</b> — 시행령 제35조 기준에 규모와 정보 성질을 대입한다.</li>
+      <li><b>② 일정 선행</b> — 평가를 출시 전에 배치하고 마일스톤을 조정한다.</li>
+      <li><b>③ 근거 확인·항목 설계</b> — 제33조의 평가·제출 구조를 확인하고, 처리 정보 수·위험요인·개선 사항을 정한다.</li>
+      <li><b>④ 국외 대응·통합 설계</b> — 해외 이용자 데이터 처리 시 추가 평가를 일정에 넣고, 한국과 EU 평가 항목을 대응시켜 중복을 줄인다.</li>
+      <li><b>⑤ 비용 계산·중단 기준·개선 반영</b> — 평가 비용과 일정 지연 비용을 함께 보고, 대상 여부가 확인되지 않으면 출시를 멈추며, 개선 사항의 반영을 확인한다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
