@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>운송 클레임의 시계 — '사고일'이 아니라 '인도할 날'부터 1년</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>운송 클레임의 시계 — '사고일'이 아니라 '인도할 날'부터 1년</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 국제운송 클레임의 패배는 손해액이 아니라 기한에서 나온다. 기간 안에 재판상 청구가 없으면 권리가 소멸하고, 그 시계의 시작점은 사고일이 아니라 <b>인도할 날이다 — 구간이 불명확하면 최장 구간의 법이 정한다.</b>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      솔바람물류 대표 민경원은 해상 화물의 훼손 클레임 보고를 받았다. 어느 구간에서 사고가 났는지 분명치 않았다. 경원은 물음을 둘로 줄였다. <b>어느 법이 적용되는가, 제소기간은 언제까지인가.</b> 선하증권과 인도 기록을 한 장에 모았다. 대표의 자리에서 클레임은 손해액보다 기한의 문제다. 기한을 놓치면 권리째 사라진다. 국제운송은 구간이 섞여 있어 적용 법이 하나로 정해지지 않는다. 그래서 법은 사고구간이 불명확할 때의 규칙을 따로 두었다. 대표가 알아야 할 것은 손해액이 아니라 시계의 시작점이다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, 준거법의 결정이다. 사고구간이 불명확하면 운송거리가 가장 긴 구간의 법이 적용되어(상법 제816조) 제소기간도 해당 법령에 따른다.</p>
+    <p>둘째, 제소기간의 원칙이다. 운송인의 송하인·수하인에 대한 채권·채무는 인도한 날 또는 인도할 날부터 1년 이내에 재판상 청구가 없으면 소멸한다(상법 제814조 제1항).</p>
+    <p>셋째, 기산점의 확장이다. 운송물이 멸실되거나 인도가 거절·중단된 경우에도 인도할 날을 기준으로 도과를 판단한다(대법원 2019다213009). 실제 인도가 없어도 기준일은 선다.</p>
+    <p>넷째, 실권의 위험이다. 기간 안에 재판상 청구를 하지 않으면 권리가 소멸한다.</p>
+    <p>다섯째, 양방향 기한이다. 운송인도 상대에 대한 채권·채무가 같은 기간에 묶이므로 우리 쪽 기한 관리가 상대 청구에도 영향을 준다.</p>
+    <p>여섯째, 통지의 효과다. 수령 시 외관 검사와 통지가 이후 다툼의 출발점이 된다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외</h2>
+    <ul class="points">
+      <li><b>첫째, 사고구간의 확인이다</b> — 어느 구간에서 사고가 났는지가 적용 법을 가른다.</li>
+      <li><b>둘째, 기간의 확인이다</b> — 해상은 1년, 항공은 2년 등 법령과 조약에 따라 다르다.</li>
+      <li><b>셋째, 인도할 날의 확인이다</b> — 인도 거절·중단 사안에서는 따로 계산한다.</li>
+      <li><b>넷째, 책임의 소재다</b> — 통지와 청구 일정을 누가 맡는지 정한다.</li>
+      <li><b>다섯째, 실권 항변이다</b> — 상대가 기간을 근거로 항변할 수 있으므로 우리 쪽 기한도 함께 관리한다.</li>
+      <li><b>여섯째, 서류의 확인이다</b> — 선하증권·항공운송장·포워더 약관을 먼저 모아 적용 규범을 정한다.</li>
+      <li><b>일곱째, 확인 과제다</b> — 조약·약관의 기간 차이는 확인 과제로 둔다.</li>
+      <li><b>여덟째, 준거법·관할 조항의 확인이다</b> — 계약서 조항이 있으면 그에 따른다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 구간 불명확 → 최장 구간의 법(상법 제816조) · 제소기간 인도일 기준 1년(제814조 제1항) · 멸실·인도 거절도 인도할 날 기준(대법원 2019다213009) · 기한은 양방향으로 묶인다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <p style="margin-bottom:16px;"><b>준거법·기간·청구를 한 화면에 둔다.</b> 여섯 칸이 채워지면 대응이 하나로 모인다. 화면은 클레임이 생길 때마다 갱신하고, 청구 일정은 달력에 적는다.</p>
+    <ol>
+      <li><b>① 사고구간</b> — 어느 구간에서 났는지 적는다.</li>
+      <li><b>② 준거법</b> — 상법 제816조의 구조로 최장 구간의 법을 적는다.</li>
+      <li><b>③ 제소기간</b> — 상법 제814조의 구조로 인도일과 1년을 적는다.</li>
+      <li><b>④ 기산점</b> — 대법원 2019다213009 판결의 구조로 인도할 날을 적는다.</li>
+      <li><b>⑤ 통지 요건</b> — 수령 시 통지를 점검한다.</li>
+      <li><b>⑥ 청구 일정</b> — 기간 내 재판상 청구를 정하고, 적용 조약·약관과 양방향 기한을 표시한다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
