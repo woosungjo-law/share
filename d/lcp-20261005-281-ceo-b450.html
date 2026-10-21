@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>방역 손실의 보상 — '기대'가 아니라 '근거'가 정한다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>방역 손실의 보상 — '기대'가 아니라 '근거'가 정한다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 영업제한으로 난 손실은 위로금이 아니라 근거의 문제다. 감염병예방법 제70조에 보상 근거가 있는지, 조치의무를 지켰는지, 별도 보상체계가 있는지 — <b>근거가 서면 청구도 빨라지고, 근거가 없으면 기대만 남는다.</b>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      너울물류 대표 유지안은 방역 당국의 영업제한 통보를 받았다. 물류 거점 운영이 멈췄고 손실이 쌓였다. 지원은 물음을 둘로 줄였다. <b>보상의 근거는 무엇인가, 배상은 따로 물을 수 있는가.</b> 조치 통보와 손실 내역을 한 장에 모았다. 대표의 자리에서 보상은 기대가 아니라 근거의 문제다. 대표의 자리에서 방역 손실은 예상 밖의 비용이다. 다만 보상은 재량이 아니라 근거로 정해진다. 어느 조항에 어떤 손실이 걸리는지 먼저 확인해야 헛된 청구를 줄인다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, 보상의 중심 조항이다. 격리·집합금지·영업제한·의료기관 동원 등 방역조치로 인한 재산상 손실의 보상 문제는 감염병예방법 제70조를 중심으로 전개된다.</p>
+    <p>둘째, 조항의 범위다. 제70조는 심의·의결을 거쳐 보상하도록 하고, 조치의무를 위반해 손실을 키웠다면 보상금을 주지 않거나 감액할 수 있다. 보상 대상은 넓지 않다.</p>
+    <p>셋째, 입법정책의 자리다. 헌법재판소는 손실보상 도입과 범위를 입법정책 사항으로 보았다.</p>
+    <p>넷째, 국가배상의 별도 문이다. 하급심은 국가배상책임을 부정하면서도 일부 사안에서 행정청 재량일탈을 인정하였다.</p>
+    <p>다섯째, 평등권의 한계다. 헌법재판소 2021헌마175 결정은 집합금지조치로 인한 손실을 보상하는 규정을 두지 않은 구 감염병예방법 제70조 제1항이 평등권을 침해하지 않는다고 보았다. 보상 규정의 부재가 곧 위헌은 아니다.</p>
+    <p>여섯째, 심의·의결의 관문이다. 제70조의 보상은 손실보상심의위원회의 심의·의결을 거치므로, 요건과 절차를 갖추지 않으면 실체 판단에 이르지 못한다.</p>
+    <p>일곱째, 감액의 사유다. 조치의무를 위반해 손실을 키웠다면 감액·배제될 수 있으므로 협조 기록을 남겨 둔다.</p>
+    <p>여덟째, 보상과 배상의 순서다. 보상을 먼저 보고 배상을 뒤에 보되, 두 청구가 서로를 막지 않는지 확인한다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외</h2>
+    <ul class="points">
+      <li><b>첫째, 조치의 종류다</b> — 어느 조치를 받았는지가 보상 범위를 가른다.</li>
+      <li><b>둘째, 별도 보상체계다</b> — 제70조 직접 적용이 어려우면 소상공인법 등 별도 체계를 우선 검토한다.</li>
+      <li><b>셋째, 조치의무다</b> — 방역 수칙을 어겨 손실을 키우면 감액·배제될 수 있다.</li>
+      <li><b>넷째, 국가배상의 문턱이다</b> — 비례원칙 위반과 재량일탈 입증이 핵심이다.</li>
+      <li><b>다섯째, 산정 방식이다</b> — 일률 감액은 합리성 결여로 위법이 될 수 있다.</li>
+      <li><b>여섯째, 조치와 손실의 인과다</b> — 조치 때문에 생긴 손실인지 다른 원인인지 나눠 본다.</li>
+      <li><b>일곱째, 확인 과제다</b> — 사실관계에 달린 부분은 확인 과제로 둔다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 보상의 근거는 감염병예방법 제70조의 구조 · 심의·의결은 손실보상심의위원회의 관문 · 구법 부재가 위헌은 아니다(2021헌마175) · 조치의무 위반은 감액·배제 사유다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <p style="margin-bottom:16px;"><b>근거·범위·증명을 한 화면에 둔다.</b> 여섯 칸이 채워지면 청구가 하나로 모인다. 화면은 조치가 있을 때마다 갱신한다.</p>
+    <ol>
+      <li><b>① 조치 확인</b> — 어떤 방역조치인지 적는다.</li>
+      <li><b>② 보상 근거</b> — 감염병예방법 제70조의 구조로 범위를 본다.</li>
+      <li><b>③ 조치의무</b> — 방역 수칙 이행을 확인한다.</li>
+      <li><b>④ 별도 체계</b> — 소상공인법 등을 검토한다.</li>
+      <li><b>⑤ 국가배상</b> — 재량일탈 여부를 적는다.</li>
+      <li><b>⑥ 확인 과제</b> — 사실관계는 확인 과제로 둔다.</li>
+      <li><b>⑦ 청구 상대</b> — 어느 기관에 청구할지 적는다. 심의·의결 절차를 표시한다.</li>
+      <li><b>⑧ 보상·배상</b> — 두 청구의 순서와 인과관계를 정한다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
