@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>검수를 맡겼다는 것이 곧 책임의 시작이다 — 3PL 계약의 세 가지 판단</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>검수를 맡겼다는 것이 곧 책임의 시작이다 — 3PL 계약의 세 가지 판단</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 검수를 맡았다는 이유로 책임이 무한히 늘어나지도, 없어지지도 않는다. 책임은 계약서의 검수 기준에서 나오는데, 기준이 없는 배상 요구가 가장 비싸다. <b>검수 기준을 항목별로 쓰고 금액을 한 표로 보는 것</b>이 3PL 검수 분쟁 리스크를 줄인다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      검수 위임은 우체국 소포 접수와 비슷하다. 새벽로지스의 대표 신재훈은 화주로부터 온 배상 요구서를 열었다. 이유는 간단했다. 검수를 맡았다는 것이다. 그런데 계약서의 검수 조항에는 외관 확인과 수량 확인만 적혀 있었다. 소포 접수할 때 무엇을 세고 무엇은 세지 않는지가 창구에 적혀 있지 않으면, 나중에 깨진 것의 책임을 접수자가 지게 되는 것과 같은 구조다. 먼저 본 것은 얼마였다. 이번 건의 금액, 그리고 <b>이 조항이 그대로 남으면 다음 분쟁의 크기</b>다. 금액만 나와 있고 기준이 없는 상태가 가장 비쌌다. 기준이 없으면 다음 건도 같은 자리에서 다시 계산하기 때문이다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, 관계의 성격이다. 위임은 일방이 상대방에게 사무의 처리를 위탁하고 상대방이 이를 승낙함으로써 효력이 생긴다(민법 제680조). 검수가 위임으로 묶여 있는 한, 책임은 계약서의 기준에서 나온다.</p>
+    <p>둘째, 기준의 내용이다. 수임인은 위임의 본지에 따라 선량한 관리자의 주의로 위임사무를 처리하여야 한다(민법 제681조).</p>
+    <p>셋째, 실제 적용이다. 수임인은 선량한 관리자의 주의의무를 부담하며, 이를 위반한 과실로 위임인에게 손해를 발생시킨 경우 배상 책임을 진다(민법 제681조). 즉, 맡겼다는 이유만으로 책임이 없어지지도, 무한히 늘어나지도 않는다. 무엇을 어떻게 봤는지가 기준이 된다.</p>
+    <p>넷째, 항목의 구분이다. 외관 검사와 수량 확인, 내부 품질 확인이 계약서에서 갈려 있는지가 실무의 결정을 가른다(민법 제681조).</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외</h2>
+    <ul class="points">
+      <li><b>첫째, 기준의 유무를 본다</b> — 객관적이고 구체적인 검수 기준이 계약서에 있는지가 첫 질문이다. 없으면 분쟁의 소지부터 커진다.</li>
+      <li><b>둘째, 범위를 본다</b> — 외관과 수량만 볼지 내부 품질까지 볼지가 나뉘어 있는지 확인한다.</li>
+      <li><b>셋째, 통지를 본다</b> — 이상 소견을 언제 알렸는지가 과실 판단을 가른다.</li>
+      <li><b>넷째, 정보를 본다</b> — 화주가 사전에 필요한 정보를 줬는지가 확인 범위를 정한다.</li>
+      <li>네 가지 중 기준이 비어 있으면 <b>계약을 갱신하기 전까지 신규 검수 물량을 늘리지 않는다.</b></li>
+      <li>기준이 있고 기록만 뒤처져 있다면 조건부로 이어가되 주간 점검을 붙인다.</li>
+      <li>파손이 반복되는 품목은 한 품목씩 골라 기준을 다시 쓴다. 전부 고치려면 끝이 없다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 위임(제680조) · 선량한 관리자의 주의(제681조) — 무엇을 어떻게 봤는지가 기준이므로, 기준이 없는 계약에서 신규 물량을 늘리지 않는다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <p style="margin-bottom:16px;"><b>기준을 쓰고 금액을 한 표로 본다.</b> 기준이 쓰여 있어야 현장이 멈출 필요가 없어진다.</p>
+    <ol>
+      <li><b>① 기준 확정</b> — 외관, 수량, 내부 품질, 규격 적합성을 각각 나누고 어디까지 보는지, 어디서 화주 정보에 의존하는지 한 문장씩 적는다.</li>
+      <li><b>② 담당 붙이기</b> — 검수 운영은 현장 책임자, 계약 조항과 분쟁 대응은 법무, 손해 계산은 재무가 각각 맡는다.</li>
+      <li><b>③ 금액 합치기</b> — 이번 배상 요구액, 기준 보완 비용, 분쟁 재발 시의 손실을 한 표에 둔다.</li>
+      <li><b>④ 갱신 주기</b> — 계약 갱신은 분쟁 이후가 아니라 기준이 바뀌는 시점마다 한다. 표에는 항목, 담당, 금액, 다음 확인일 네 칸을 둔다.</li>
+      <li><b>⑤ 결정 기록</b> — 결정은 날짜와 함께 남긴다. 언제 기준을 정했고 언제 갱신했는지가 나중에 가장 먼저 나온다. 구두로 정한 기준은 현장에서 지켜지지 않는다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
