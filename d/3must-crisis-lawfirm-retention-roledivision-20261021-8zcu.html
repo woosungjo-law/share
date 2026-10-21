@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko" data-design="M5">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>위기 상황에서 외부 로펌을 선임하고 역할을 나눌 때 · 3MUST</title>
+<link rel="icon" href="data:,">
+<style>
+:root { color-scheme:light dark; --bg:#edf1f3; --paper:#fff; --ink:#202d3d; --muted:#596b80; --line:#cbd6e4; --accent:#245aa6; --wash:#e7eef8; font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif; }
+@media(prefers-color-scheme:dark){:root{--bg:#111a20;--paper:#1a252d;--ink:#eff4f4;--muted:#bac7c8;--line:#394a52;--wash:#253541;}}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);line-height:1.55}
+main{width:min(850px,100% - 28px);margin:24px auto;padding:clamp(22px,5vw,48px);background:var(--paper);border:1px solid var(--line);border-top:7px solid var(--accent)}
+.eyebrow{font-size:.75rem;font-weight:750;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin:0 0 10px}
+h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.12;letter-spacing:-.035em;margin:0;text-wrap:balance}
+.situation{color:var(--muted);max-width:64ch;margin:14px 0 24px}
+.three{display:grid;gap:0}
+section{padding:17px 0;border-top:1px solid var(--line)}
+h2{font-size:.9rem;color:var(--accent);margin:0 0 7px;letter-spacing:.02em}
+p,li{max-width:68ch} section p{margin:0} section ul,section ol{margin:0;padding-left:1.25rem}
+.pause{margin-top:20px;padding:13px 15px;background:var(--wash);border-left:3px solid var(--accent)}
+.pause strong{display:block;margin-bottom:4px}.sources{margin-top:20px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+.sources p{margin:4px 0}.disclaimer{font-size:.75rem;color:var(--muted);margin-top:18px}
+html[data-design="M1"]{--accent:#bd4d28;--wash:#f8e7df;--bg:#ece9e5;--line:#dfc7bb;--ink:#252b2c;--muted:#59615f}
+html[data-design="M1"] main{border-top-width:10px}.m1 .three{grid-template-columns:1fr 1fr;gap:12px}.m1 section{border:1px solid var(--line);padding:14px;background:color-mix(in srgb,var(--wash) 35%,var(--paper))}.m1 section:last-child{grid-column:1/-1}
+html[data-design="M2"]{--accent:#176b68;--wash:#e3efed;--bg:#e7eeee;--line:#c5d7d4;--ink:#162c31;--muted:#52696a}
+html[data-design="M2"] h1{font-family:Georgia,"Batang",serif;font-weight:600}.m2 .three{grid-template-columns:1fr 1fr;gap:22px}.m2 section:nth-child(2){background:var(--wash);padding:15px;border-top:0}.m2 section:last-child{grid-column:1/-1}
+html[data-design="M3"]{--accent:#126d57;--wash:#e4f1eb;--bg:#e9eeea;--line:#c5d7cc;--ink:#1d3028;--muted:#5b6e64}
+.m3 .three{position:relative;padding-left:20px}.m3 .three:before{content:"";position:absolute;top:18px;bottom:18px;left:4px;width:2px;background:var(--accent);opacity:.45}.m3 section{position:relative;padding-left:14px}.m3 section:before{content:"";position:absolute;left:-20px;top:20px;width:9px;height:9px;border:2px solid var(--accent);border-radius:50%;background:var(--paper)}
+html[data-design="M4"]{--accent:#714d83;--wash:#eee8f3;--bg:#ece8ef;--line:#d7ccdf;--ink:#292331;--muted:#686071}
+.m4 .situation{background:var(--wash);border-left:3px solid var(--accent);padding:12px 15px}.m4 .three{grid-template-columns:1fr 1fr;gap:12px}.m4 section{border:1px solid var(--line);padding:15px}.m4 section:last-child{grid-column:1/-1}
+html[data-design="M5"]{--accent:#245aa6;--wash:#e7eef8;--bg:#edf1f3;--line:#cbd6e4;--ink:#202d3d;--muted:#596b80}
+.m5 .situation{background:var(--wash);padding:10px 12px;border:1px solid var(--line)}.m5 section{display:grid;grid-template-columns:minmax(145px,.34fr) 1fr;gap:18px}.m5 h2{color:var(--ink)}
+@media(prefers-color-scheme:dark){
+ html[data-design="M1"]{--accent:#f29a72;--wash:#392d29;--bg:#131a1a;--paper:#202929;--line:#48524f;--ink:#edf1ed;--muted:#b9c5bf}
+ html[data-design="M2"]{--accent:#73c6be;--wash:#203936;--bg:#101a1b;--paper:#1b292b;--line:#405452;--ink:#eaf3f2;--muted:#afc6c3}
+ html[data-design="M3"]{--accent:#78d4a8;--wash:#20382f;--bg:#111a17;--paper:#1b2822;--line:#40564a;--ink:#eaf3ed;--muted:#b4c8bc}
+ html[data-design="M4"]{--accent:#d0a5e2;--wash:#342b3a;--bg:#19151d;--paper:#28212e;--line:#51445b;--ink:#f1eaf4;--muted:#c7b9ce}
+ html[data-design="M5"]{--accent:#8cb7ff;--wash:#24364d;--bg:#141a22;--paper:#202a37;--line:#3d4d62;--ink:#edf2fa;--muted:#b8c5d8}
+}
+@media(max-width:620px){main{width:min(100% - 18px,850px);margin:9px auto;padding:22px 17px}.m1 .three,.m2 .three,.m4 .three{grid-template-columns:1fr}.m1 section:last-child,.m2 section:last-child,.m4 section:last-child{grid-column:auto}.m5 section{grid-template-columns:1fr;gap:5px}}
+@media print{@page{size:A4 portrait;margin:10mm}html{color-scheme:light}body{background:#fff}main{width:100%;margin:0;padding:10mm;border:0;border-top:4mm solid var(--accent);box-shadow:none}.sources,.disclaimer{font-size:8.5pt}a{color:inherit;text-decoration:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="m5">
+  <p class="eyebrow">3MUST · 기업법무</p>
+  <h1>위기 상황에서 외부 로펌을 선임하고 역할을 나눌 때</h1>
+  <p class="situation"><strong>적용 상황:</strong> 압수수색·수사·규제조사 등 위기가 발생했거나 발생이 임박해, 외부 로펌을 긴급 선임하고 사내 법무팀과의 역할을 나눠야 하는 법무 담당자가 사용합니다. <strong>범위:</strong> 이 카드는 평시 프리선임 준비, 긴급 선임 판단, 사내·외부 역할 분담, 진행 관리·문서 보호, 위기 후 정리 절차만 다룹니다. 조문·판례 번호, 수임료·기한 수치, 특권 인정 여부에 대한 법적 결론과 개별 사안의 대응 결과는 다루지 않습니다.</p>
+  <div class="three">
+    <section><h2>Must Know · 알아야 할 것</h2><ul><li>위기 상황의 로펌 선임은 "가장 유명한 로펌"이 아니라 "이 사안에 가장 적합한 로펌"을 고르는 문제입니다. 속도·전문성·신뢰성의 균형이 필요합니다.</li><li>선임은 위기 인지 후 최대한 빠르게 결정해야 합니다. 막상 위기가 닥치면 추천에 의존하게 되므로, 평시에 유형별 프리선임 리스트를 준비해 둡니다.</li><li>전문 분야 적합성, 위기 대응 경험, 사내 법무팀과의 협업 가능성 3가지를 선임 기준으로 삼습니다. 유명세·수임료 수준은 대응 역량을 보장하지 않습니다.</li><li>역할 분담은 사내 법무팀(전체 조정·경영진 보고·전략) 과 외부 로펌(법률 자문·조사 대응·문서 관리) 으로 나누고, 보고 라인을 외부 로펌 → 법무팀 → 경영진으로 문서화합니다.</li><li>로펌과의 커뮤니케이션은 법률 자문 목적·비공개·변호인-의뢰인 간이라는 요건을 갖춰야 보호를 기대할 수 있습니다. 사업적 판단·홍보 전략 등 자문 외 내용은 분리해 기록합니다.</li><li>비싼 수임료가 현장 대응 역량을 보장하지는 않습니다. 조사 동행 전에 참여권 행사 계획과 현장 역할·성과 기준을 합의하고, 계약에 명시합니다.</li><li>위기가 끝난 뒤 로펌 관계를 정리하지 않으면, 다음 위기 때 조건이 달라져 비용·대응 모두 불리해질 수 있습니다.</li></ul></section>
+    <section><h2>Must Check · 확인할 것</h2><p>### 평시 준비 점검표</p><p>| 준비 항목 | 확인 | 담당 | |---|---|---| | 위기 유형별 프리선임 로펌 리스트 | 형사·규제·노동·지식재산 등 분야별로 있는가 | 법무 | | 프리선임 리스트 갱신 주기 | 분기별로 갱신·검증했는가 | 법무 | | 24시간 연락 가능 체계 | 비상 연락망이 확보되어 있는가 | 법무 | | 비상 선임 프로세스 문서 | 승인 라인·계약 절차가 문서화되어 있는가 | 법무·경영지원 | | 특권 보호 커뮤니케이션 채널 | 암호화 메신저·전용 이메일이 준비되었는가 | 법무·IT | | 위기 대응 예비 예산 | 긴급 지출 한도가 설정되어 있는가 | 재무·법무 |</p><p>### 긴급 선임 판단표</p><p>| 판단 항목 | 확인할 것 | |---|---| | 전문 분야 | 이 사안에 필요한 형사·규제·노동 등 전문성이 있는가 | | 위기 대응 경험 | 유사 위기 대응 실적·조사 동행 경험이 있는가 | | 이해충돌 | 상대방·관계사와 이해충돌이 없는가 | | 가용성 | 즉시 투입 가능한 인력·일정이 있는가 | | 협업 적합성 | 사내 법무팀과 보고 라인·역할을 맞출 수 있는가 |</p><p>### 역할 분담·진행 관리 점검</p><p>| 점검 항목 | 확인 | |---|---| | 역할 분담 매트릭스 | 사내·외부·경영진 역할이 문서화되어 있는가 | | 보고 라인 | 외부 로펌 → 법무팀 → 경영진 흐름이 정해졌는가 | | 문서 특권 표시 | 자문 문서에 보호 표시가 일관되게 붙는가 | | 사업·홍보 내용 분리 | 자문 외 기록이 별도 관리되는가 | | 상황 보고 주기 | 일일·주간 보고 체계가 정해졌는가 | | 현장 역할 합의 | 조사 동행 시 참여권 행사·성과 기준이 합의되었는가 |</p><p>### 흔한 오해 점검</p><p>| 흔한 오해 | 확인 | |---|---| | 유명 로펌이면 실무도 강하다 | 전문 경험·동행 실적을 따로 확인한다 | | 수임료가 높으면 현장도 알아서 한다 | 조사 동행 전 역할·성과 기준을 합의한다 | | 특권은 자동으로 보호된다 | 요건 충족·문서 표시·분리 기록을 관리한다 | | 선임하면 법무팀은 물러난다 | 보고 라인·전략 수립은 법무팀이 유지한다 | | 위기가 끝나면 관계는 끝난다 | 평가·조건 재정비를 남긴다 |</p></section>
+    <section><h2>Must Do · 실행할 것</h2><ol><li>현재 위기 유형을 판별하고, 평시 프리선임 리스트에서 1·2순위 로펌을 확인합니다.</li><li>사건 개요·필요 전문 분야·긴급도·이해충돌·가용성을 담아 비상 연락을 보내고, 회신 기한을 명시합니다.</li><li>선임 결정 시 전문 분야 적합성·위기 대응 경험·협업 가능성을 확인하고 즉시 계약·리테이너 조건을 정합니다.</li><li>사내 법무팀·외부 로펌·경영진의 역할 분담 매트릭스와 보고 라인을 문서화합니다.</li><li>자문 문서에 보호 표시를 일관되게 붙이고, 사업적 판단·홍보 내용은 분리 기록합니다.</li><li>일일·주간 상황 보고 체계를 정하고, 경영진 보고를 준비합니다.</li><li>조사 동행이 예상되면 참여권 행사 계획과 현장 역할·성과 기준을 사전에 합의합니다.</li><li>위기 종료 후 로펌 평가와 계약 조건 재정비를 남기고, 프리선임 리스트를 갱신합니다.</li></ol></section>
+  </div>
+  <aside class="pause"><strong>잠깐 멈추고 검토할 때</strong></aside>
+  <div class="sources"><p><strong>원자료:</strong> <code>_WIKI_법률지식/_55_업무사전/기업법무/111_로펌핸들링/111_로펌핸들링_EP-009_위기_상황에서_로펌_활용_압수수색_수사_규제조사.md</code></p><p><strong>검토일:</strong> 2026-10-21</p><p><strong>검토 상태:</strong> 원자료의 실무 부분(프리선임 준비·긴급 선임 판단·역할 분담·진행 관리·특권 문서 관리·실패 패턴)은 확인된 범위로 반영하고, 조문·판례 번호와 수임료·기한 수치, 법률자문특권·변호인 참여권의 인정 범위에 대한 법적 결론은 이 카드에서 제외했습니다. 개별 위기 대응 설계와 특권 판단은 별도 검토가 필요합니다.</p></div>
+  <p class="disclaimer">일반적인 실무 참고자료입니다. 개별 사안에서는 사실관계와 적용 기준을 확인하세요.</p>
+</main>
+</body>
+</html>
