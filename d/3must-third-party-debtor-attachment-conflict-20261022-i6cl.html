@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko" data-design="M1">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>거래처 대금에 압류·가압류가 겹쳐 들어왔을 때 · 3MUST</title>
+<link rel="icon" href="data:,">
+<style>
+:root { color-scheme:light dark; --bg:#edf1f3; --paper:#fff; --ink:#202d3d; --muted:#596b80; --line:#cbd6e4; --accent:#245aa6; --wash:#e7eef8; font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif; }
+@media(prefers-color-scheme:dark){:root{--bg:#111a20;--paper:#1a252d;--ink:#eff4f4;--muted:#bac7c8;--line:#394a52;--wash:#253541;}}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);line-height:1.55}
+main{width:min(850px,100% - 28px);margin:24px auto;padding:clamp(22px,5vw,48px);background:var(--paper);border:1px solid var(--line);border-top:7px solid var(--accent)}
+.eyebrow{font-size:.75rem;font-weight:750;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin:0 0 10px}
+h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.12;letter-spacing:-.035em;margin:0;text-wrap:balance}
+.situation{color:var(--muted);max-width:64ch;margin:14px 0 24px}
+.three{display:grid;gap:0}
+section{padding:17px 0;border-top:1px solid var(--line)}
+h2{font-size:.9rem;color:var(--accent);margin:0 0 7px;letter-spacing:.02em}
+p,li{max-width:68ch} section p{margin:0} section ul,section ol{margin:0;padding-left:1.25rem}
+.table-wrap{max-width:100%;overflow-x:auto;margin:10px 0 0;border:1px solid var(--line);border-radius:8px;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;min-width:560px;font-size:.88rem;line-height:1.45}
+th,td{padding:9px 11px;text-align:left;vertical-align:top;border-right:1px solid var(--line);border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+th:last-child,td:last-child{border-right:0} tbody tr:last-child td{border-bottom:0}
+th{background:var(--wash);font-weight:700;color:var(--ink)}
+.pause{margin-top:20px;padding:13px 15px;background:var(--wash);border-left:3px solid var(--accent)}
+.pause strong{display:block;margin-bottom:4px}.sources{margin-top:20px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+.sources p{margin:4px 0}.disclaimer{font-size:.75rem;color:var(--muted);margin-top:18px}
+html[data-design="M1"]{--accent:#bd4d28;--wash:#f8e7df;--bg:#ece9e5;--line:#dfc7bb;--ink:#252b2c;--muted:#59615f}
+html[data-design="M1"] main{border-top-width:10px}.m1 .three{grid-template-columns:1fr 1fr;gap:12px}.m1 section{border:1px solid var(--line);padding:14px;background:color-mix(in srgb,var(--wash) 35%,var(--paper))}.m1 section:last-child{grid-column:1/-1}
+html[data-design="M2"]{--accent:#176b68;--wash:#e3efed;--bg:#e7eeee;--line:#c5d7d4;--ink:#162c31;--muted:#52696a}
+html[data-design="M2"] h1{font-family:Georgia,"Batang",serif;font-weight:600}.m2 .three{grid-template-columns:1fr 1fr;gap:22px}.m2 section:nth-child(2){background:var(--wash);padding:15px;border-top:0}.m2 section:last-child{grid-column:1/-1}
+html[data-design="M3"]{--accent:#126d57;--wash:#e4f1eb;--bg:#e9eeea;--line:#c5d7cc;--ink:#1d3028;--muted:#5b6e64}
+.m3 .three{position:relative;padding-left:20px}.m3 .three:before{content:"";position:absolute;top:18px;bottom:18px;left:4px;width:2px;background:var(--accent);opacity:.45}.m3 section{position:relative;padding-left:14px}.m3 section:before{content:"";position:absolute;left:-20px;top:20px;width:9px;height:9px;border:2px solid var(--accent);border-radius:50%;background:var(--paper)}
+html[data-design="M4"]{--accent:#714d83;--wash:#eee8f3;--bg:#ece8ef;--line:#d7ccdf;--ink:#292331;--muted:#686071}
+.m4 .situation{background:var(--wash);border-left:3px solid var(--accent);padding:12px 15px}.m4 .three{grid-template-columns:1fr 1fr;gap:12px}.m4 section{border:1px solid var(--line);padding:15px}.m4 section:last-child{grid-column:1/-1}
+/* M4-wide is reserved for cards whose text and table need equal full-width measure. */
+.m4-wide .three{grid-template-columns:1fr;gap:14px}.m4-wide section:last-child{grid-column:auto}
+html[data-design="M5"]{--accent:#245aa6;--wash:#e7eef8;--bg:#edf1f3;--line:#cbd6e4;--ink:#202d3d;--muted:#596b80}
+.m5 .situation{background:var(--wash);padding:10px 12px;border:1px solid var(--line)}.m5 section{display:grid;grid-template-columns:minmax(145px,.34fr) 1fr;gap:18px}.m5 h2{color:var(--ink)}
+@media(prefers-color-scheme:dark){
+ html[data-design="M1"]{--accent:#f29a72;--wash:#392d29;--bg:#131a1a;--paper:#202929;--line:#48524f;--ink:#edf1ed;--muted:#b9c5bf}
+ html[data-design="M2"]{--accent:#73c6be;--wash:#203936;--bg:#101a1b;--paper:#1b292b;--line:#405452;--ink:#eaf3f2;--muted:#afc6c3}
+ html[data-design="M3"]{--accent:#78d4a8;--wash:#20382f;--bg:#111a17;--paper:#1b2822;--line:#40564a;--ink:#eaf3ed;--muted:#b4c8bc}
+ html[data-design="M4"]{--accent:#d0a5e2;--wash:#342b3a;--bg:#19151d;--paper:#28212e;--line:#51445b;--ink:#f1eaf4;--muted:#c7b9ce}
+ html[data-design="M5"]{--accent:#8cb7ff;--wash:#24364d;--bg:#141a22;--paper:#202a37;--line:#3d4d62;--ink:#edf2fa;--muted:#b8c5d8}
+}
+@media(max-width:620px){main{width:min(100% - 18px,850px);margin:9px auto;padding:22px 17px}.m1 .three,.m2 .three,.m4 .three{grid-template-columns:1fr}.m1 section:last-child,.m2 section:last-child,.m4 section:last-child{grid-column:auto}.m5 section{grid-template-columns:1fr;gap:5px}}
+@media print{@page{size:A4 portrait;margin:10mm}html{color-scheme:light}body{background:#fff}main{width:100%;margin:0;padding:10mm;border:0;border-top:4mm solid var(--accent);box-shadow:none}.sources,.disclaimer{font-size:8.5pt}a{color:inherit;text-decoration:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="m1">
+  <p class="eyebrow">3MUST · 기업법무</p>
+  <h1>거래처 대금에 압류·가압류가 겹쳐 들어왔을 때</h1>
+  <p class="situation"><strong>적용 상황:</strong> 우리가 거래처에 지급할 대금에 채권압류·가압류·추심명령 결정문이 여러 건 송달되어, 누구에게 얼마를 지급해야 하는지 판단이 안 될 때 사용합니다.</p>
+  <div class="three">
+    <section><h2>Must Know · 알아야 할 것</h2><ul><li>제3채무자 지위에서 압류 결정문이 송달된 뒤에는 거래처에 대금을 임의로 지급할 수 없습니다. 한쪽에 지급하면 다른 채권자에게 같은 돈을 다시 물어줄 수 있습니다.</li><li>압류·가압류가 겹치면 임의변제 대신 법원에 집행공탁하고 사유를 신고하는 절차로 전환하는 것이 기본입니다. 공탁과 사유신고가 함께 이루어져야 지급 의무가 정리됩니다.</li><li>거래처와 '일부 감액·정산' 합의를 했다고 해서 공탁 의무가 대체되지는 않습니다. 합의는 보조 자료로만 두고 공탁은 별도로 이행합니다.</li><li>공탁 이후에 도착한 압류는 공탁금에 대해 효력이 미치지 않는 것이 원칙이지만, 배당요구로서의 지위는 남을 수 있어 현황을 계속 관리해야 합니다.</li><li>추심채권자가 우리에게 청구할 수 있는 범위는 전액이 아니라 '정상적으로 공탁했다면 배당에서 받았을 금액'으로 제한되고, 그 배당관계는 우리가 설명해야 합니다.</li></ul></section>
+    <section><h2>Must Check · 확인할 것</h2><ul><li>송달된 압류·가압류·추심명령 결정문 전체 목록과 송달 일시</li><li>지급해야 할 채권의 종류·금액·지급기일(계약서·세금계산서 기준)</li><li>압류 금액 합계와 지급 채권액 비교표</li><li>공탁서와 첨부서류(결정문 사본 등) 구비 상태</li><li>사유신고서 초안과 경합 내역 반영 여부</li><li>ERP·정산 시스템의 해당 거래처 지급 잠금(Lock) 처리 여부</li><li>거래처의 용역 중단·임의지급 요구 내용(내용증명·회의록)</li><li>배당요구 현황표(채권자·금액·접수일)</li></ul></section>
+    <section><h2>Must Do · 실행할 것</h2><ol><li>결정문을 송달일 순서로 정리하고, 채권자·금액·사건번호를 한 표에 담습니다.</li><li>재무팀과 미지급금 잔액·지급기일을 확정하고, 즉시 지급 잠금을 걸어 자동이체를 막습니다.</li><li>압류액 합계와 지급 채권액을 비교해 경합 여부를 확인합니다.</li><li>채권액 범위에서 집행공탁을 진행하고, 공탁서 사본을 확보합니다.</li><li>공탁 직후 사유신고서를 법원에 제출하고, 채권자들에게 공탁 사실을 통지합니다.</li><li>거래처에는 지급 보류·공탁의 근거와 절차를 문서로 설명하고, 용역 중단 주장에 대응할 기록을 남깁니다.</li><li>경합·배당요구 현황표를 계속 갱신해 배당가능액 한도 방어 자료로 유지합니다.</li></ol></section>
+  </div>
+  <aside class="pause"><strong>잠깐 멈추고 검토할 때</strong><p>압류액이 지급 채권액을 넘어 배분 판단이 필요할 때 · 거래처와 체결한 정산합의·조정합의가 있는 경우 · 공탁 후 추가 압류·배당요구가 들어왔을 때 · 추심채권자가 소송·강제집행을 예고할 때</p></aside>
+  <div class="sources"><p><strong>원자료:</strong> 위 <code>source_files</code> 참조</p><p><strong>검토일:</strong> 2026-10-22</p><p><strong>미확인·제한:</strong> 공탁으로 면책되는 범위와 배당가능액 한도의 구체적 판단은 조문·판례 확인이 필요한 영역으로 남겨 두었습니다.</p><p><strong>변경 기록:</strong> 원문의 조문 번호·판례 사건번호를 제거하고, 지급 잠금·공탁·사유신고·현황 관리 절차로 재구성했습니다.</p></div>
+  <p class="disclaimer">일반적인 실무 참고자료입니다. 개별 사안에서는 사실관계와 적용 기준을 확인하세요.</p>
+</main>
+</body>
+</html>
