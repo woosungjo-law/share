@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko" data-design="M2">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>채무자가 낸 이의신청에 하자가 보일 때 · 3MUST</title>
+<link rel="icon" href="data:,">
+<style>
+:root { color-scheme:light dark; --bg:#edf1f3; --paper:#fff; --ink:#202d3d; --muted:#596b80; --line:#cbd6e4; --accent:#245aa6; --wash:#e7eef8; font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif; }
+@media(prefers-color-scheme:dark){:root{--bg:#111a20;--paper:#1a252d;--ink:#eff4f4;--muted:#bac7c8;--line:#394a52;--wash:#253541;}}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);line-height:1.55}
+main{width:min(850px,100% - 28px);margin:24px auto;padding:clamp(22px,5vw,48px);background:var(--paper);border:1px solid var(--line);border-top:7px solid var(--accent)}
+.eyebrow{font-size:.75rem;font-weight:750;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin:0 0 10px}
+h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.12;letter-spacing:-.035em;margin:0;text-wrap:balance}
+.situation{color:var(--muted);max-width:64ch;margin:14px 0 24px}
+.three{display:grid;gap:0}
+section{padding:17px 0;border-top:1px solid var(--line)}
+h2{font-size:.9rem;color:var(--accent);margin:0 0 7px;letter-spacing:.02em}
+p,li{max-width:68ch} section p{margin:0} section ul,section ol{margin:0;padding-left:1.25rem}
+.table-wrap{max-width:100%;overflow-x:auto;margin:10px 0 0;border:1px solid var(--line);border-radius:8px;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;min-width:560px;font-size:.88rem;line-height:1.45}
+th,td{padding:9px 11px;text-align:left;vertical-align:top;border-right:1px solid var(--line);border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+th:last-child,td:last-child{border-right:0} tbody tr:last-child td{border-bottom:0}
+th{background:var(--wash);font-weight:700;color:var(--ink)}
+.pause{margin-top:20px;padding:13px 15px;background:var(--wash);border-left:3px solid var(--accent)}
+.pause strong{display:block;margin-bottom:4px}.sources{margin-top:20px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+.sources p{margin:4px 0}.disclaimer{font-size:.75rem;color:var(--muted);margin-top:18px}
+html[data-design="M1"]{--accent:#bd4d28;--wash:#f8e7df;--bg:#ece9e5;--line:#dfc7bb;--ink:#252b2c;--muted:#59615f}
+html[data-design="M1"] main{border-top-width:10px}.m1 .three{grid-template-columns:1fr 1fr;gap:12px}.m1 section{border:1px solid var(--line);padding:14px;background:color-mix(in srgb,var(--wash) 35%,var(--paper))}.m1 section:last-child{grid-column:1/-1}
+html[data-design="M2"]{--accent:#176b68;--wash:#e3efed;--bg:#e7eeee;--line:#c5d7d4;--ink:#162c31;--muted:#52696a}
+html[data-design="M2"] h1{font-family:Georgia,"Batang",serif;font-weight:600}.m2 .three{grid-template-columns:1fr 1fr;gap:22px}.m2 section:nth-child(2){background:var(--wash);padding:15px;border-top:0}.m2 section:last-child{grid-column:1/-1}
+html[data-design="M3"]{--accent:#126d57;--wash:#e4f1eb;--bg:#e9eeea;--line:#c5d7cc;--ink:#1d3028;--muted:#5b6e64}
+.m3 .three{position:relative;padding-left:20px}.m3 .three:before{content:"";position:absolute;top:18px;bottom:18px;left:4px;width:2px;background:var(--accent);opacity:.45}.m3 section{position:relative;padding-left:14px}.m3 section:before{content:"";position:absolute;left:-20px;top:20px;width:9px;height:9px;border:2px solid var(--accent);border-radius:50%;background:var(--paper)}
+html[data-design="M4"]{--accent:#714d83;--wash:#eee8f3;--bg:#ece8ef;--line:#d7ccdf;--ink:#292331;--muted:#686071}
+.m4 .situation{background:var(--wash);border-left:3px solid var(--accent);padding:12px 15px}.m4 .three{grid-template-columns:1fr 1fr;gap:12px}.m4 section{border:1px solid var(--line);padding:15px}.m4 section:last-child{grid-column:1/-1}
+/* M4-wide is reserved for cards whose text and table need equal full-width measure. */
+.m4-wide .three{grid-template-columns:1fr;gap:14px}.m4-wide section:last-child{grid-column:auto}
+html[data-design="M5"]{--accent:#245aa6;--wash:#e7eef8;--bg:#edf1f3;--line:#cbd6e4;--ink:#202d3d;--muted:#596b80}
+.m5 .situation{background:var(--wash);padding:10px 12px;border:1px solid var(--line)}.m5 section{display:grid;grid-template-columns:minmax(145px,.34fr) 1fr;gap:18px}.m5 h2{color:var(--ink)}
+@media(prefers-color-scheme:dark){
+ html[data-design="M1"]{--accent:#f29a72;--wash:#392d29;--bg:#131a1a;--paper:#202929;--line:#48524f;--ink:#edf1ed;--muted:#b9c5bf}
+ html[data-design="M2"]{--accent:#73c6be;--wash:#203936;--bg:#101a1b;--paper:#1b292b;--line:#405452;--ink:#eaf3f2;--muted:#afc6c3}
+ html[data-design="M3"]{--accent:#78d4a8;--wash:#20382f;--bg:#111a17;--paper:#1b2822;--line:#40564a;--ink:#eaf3ed;--muted:#b4c8bc}
+ html[data-design="M4"]{--accent:#d0a5e2;--wash:#342b3a;--bg:#19151d;--paper:#28212e;--line:#51445b;--ink:#f1eaf4;--muted:#c7b9ce}
+ html[data-design="M5"]{--accent:#8cb7ff;--wash:#24364d;--bg:#141a22;--paper:#202a37;--line:#3d4d62;--ink:#edf2fa;--muted:#b8c5d8}
+}
+@media(max-width:620px){main{width:min(100% - 18px,850px);margin:9px auto;padding:22px 17px}.m1 .three,.m2 .three,.m4 .three{grid-template-columns:1fr}.m1 section:last-child,.m2 section:last-child,.m4 section:last-child{grid-column:auto}.m5 section{grid-template-columns:1fr;gap:5px}}
+@media print{@page{size:A4 portrait;margin:10mm}html{color-scheme:light}body{background:#fff}main{width:100%;margin:0;padding:10mm;border:0;border-top:4mm solid var(--accent);box-shadow:none}.sources,.disclaimer{font-size:8.5pt}a{color:inherit;text-decoration:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="m2">
+  <p class="eyebrow">3MUST · 민사소송</p>
+  <h1>채무자가 낸 이의신청에 하자가 보일 때</h1>
+  <p class="situation"><strong>적용 상황:</strong> 채무자가 이의신청서를 냈는데 서명·위임장이 없거나 기간이 지난 것 같을 때, 또는 반대로 우리가 낸 이의신청이 각하될 위기에 있을 때 사용합니다.</p>
+  <div class="three">
+    <section><h2>Must Know · 알아야 할 것</h2><ul><li>이의신청이 형식 요건을 못 갖추면 법원이 결정으로 각하할 수 있습니다. 내용보다 형식이 먼저입니다.</li><li>하자 유형은 네 가지입니다. 기간 도과, 대리권 없는 사람의 제출, 방식 위반, 부당한 목적이 명백한 경우입니다.</li><li>이의신청서에는 지급명령 표시, 이의한다는 취지, 본인 또는 대리인의 서명·날인이 있어야 합니다. 하나라도 빠지면 형식 하자입니다.</li><li>그런데 하자가 있으면 법원이 곧바로 각하하지 않고 보정을 명하는 경우가 많습니다. 보정되면 이의신청은 적법해집니다.</li><li>그래서 하자를 발견했다고 끝이 아닙니다. 보정이 이뤄질 가능성을 전제로 대비해야 합니다.</li><li>각하되면 지급명령은 이의신청이 없었던 상태로 돌아가 원래 효력을 유지합니다. 곧 강제집행 준비로 넘어갑니다.</li><li>반대로 각하결정에도 불복 수단이 있습니다. 뒤집히면 소송으로 전환되므로 그 대비도 병행해야 합니다.</li><li>일부에 대해서만 이의를 낸 경우, 나머지 부분은 그대로 확정됩니다. 이 구조를 활용하면 일부는 즉시 집행할 수 있습니다.</li></ul></section>
+    <section><h2>Must Check · 확인할 것</h2><div class="table-wrap" role="region" aria-label="표" tabindex="0"><table><thead><tr><th scope="col">하자 유형</th><th scope="col">확인 방법</th><th scope="col">치유 가능성</th><th scope="col">대응 우선순위</th></tr></thead><tbody><tr><td>기간 도과</td><td>이의신청서 접수일과 송달일 대조</td><td>원칙적으로 치유 곤란</td><td>높음</td></tr><tr><td>대리권 없음</td><td>위임장·대표권 증명 첨부 여부</td><td>보정으로 치유 가능</td><td>중간</td></tr><tr><td>서명·날인 누락</td><td>서명·날인 기재 확인</td><td>보정으로 치유 가능</td><td>중간</td></tr><tr><td>방식 위반·대상 불특정</td><td>이의 취지와 금액 특정 여부</td><td>보정으로 치유 가능</td><td>낮음</td></tr><tr><td>부당 목적 명백</td><td>반복 제출·회피 정황</td><td>사안에 따라 다름</td><td>낮음</td></tr><tr><td>일부 이의</td><td>이의 범위와 잔여 금액 확정</td><td>해당 없음</td><td>잔여 부분 집행</td></tr></tbody></table></div></section>
+    <section><h2>Must Do · 실행할 것</h2><ol><li>이의신청서 사본을 확보해 접수일·제출자·서명·첨부 서류를 확인합니다.</li><li>도과 여부를 먼저 계산합니다. 다른 하자보다 강한 사유입니다.</li><li>하자 사유를 정리해 법원에 각하 의견서를 제출합니다. 근거는 사실과 조항 단위로 씁니다.</li><li>보정명령이 나올 가능성을 전제로 본안 준비를 병행합니다. 증거 목록을 미리 만듭니다.</li><li>일부 이의라면 잔여 부분에 대한 확정과 집행 절차를 분리해 진행합니다.</li><li>각하결정에 대한 불복 가능성을 지켜봅니다. 뒤집히면 소송 전환 대응으로 전환합니다.</li><li>각하가 확정되면 정본을 발급받아 강제집행을 준비합니다.</li><li>우리가 이의를 낸 쪽이면 위임장·대표권 증명을 즉시 보완합니다. 이때는 하자 다툼보다 치유가 우선입니다.</li><li>이의 범위·일자·결과를 기록해 이후 절차의 기준 자료로 남깁니다.</li></ol></section>
+  </div>
+  <aside class="pause"><strong>잠깐 멈추고 검토할 때</strong><p>하자가 보정으로 치유될 가능성이 높을 때 · 이의가 일부에 그쳐 잔여 부분 처리를 별도로 정해야 할 때 · 각하 신청과 본안 준비를 동시에 해야 하는 상황일 때 · 우리가 낸 이의신청의 대리권이 불명확할 때 · 각하결정이 번복되어 이미 준비한 집행 계획이 무의미해질 때</p></aside>
+  <div class="sources"><p><strong>원자료:</strong> 위 <code>source_files</code> 참조</p><p><strong>검토일:</strong> 2026-10-22</p><p><strong>미확인·제한:</strong> 관련 조문 번호·기간 일수·보정 기간·판례 사건번호는 카드에서 제외했습니다. 각하 여부와 보정 허용은 법원의 재량과 제출 서류 상태에 따라 달라지므로 단정하지 않았습니다.</p><p><strong>변경 기록:</strong> 원문의 조문·기간·판례를 제거하고, 하자 유형별 대조표와 도과 계산·각하 의견서 제출·보정 대비·일부 이의 분리·불복 감시·정본 발급 절차로 재구성했습니다.</p></div>
+  <p class="disclaimer">일반적인 실무 참고자료입니다. 개별 사안에서는 사실관계와 적용 기준을 확인하세요.</p>
+</main>
+</body>
+</html>
