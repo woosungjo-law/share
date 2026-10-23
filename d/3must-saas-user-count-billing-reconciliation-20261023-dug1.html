@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko" data-design="M2">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>SaaS 계약의 사용자 수와 추가요금 기준을 서명 전에 대조할 때 · 3MUST</title>
+<link rel="icon" href="data:,">
+<style>
+:root { color-scheme:light dark; --bg:#edf1f3; --paper:#fff; --ink:#202d3d; --muted:#596b80; --line:#cbd6e4; --accent:#245aa6; --wash:#e7eef8; font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif; }
+@media(prefers-color-scheme:dark){:root{--bg:#111a20;--paper:#1a252d;--ink:#eff4f4;--muted:#bac7c8;--line:#394a52;--wash:#253541;}}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);line-height:1.55}
+main{width:calc(100% - 28px);max-width:850px;margin:24px auto;padding:clamp(22px,5vw,48px);background:var(--paper);border:1px solid var(--line);border-top:7px solid var(--accent)}
+.eyebrow{font-size:.75rem;font-weight:750;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin:0 0 10px}
+h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.12;letter-spacing:-.035em;margin:0;text-wrap:balance}
+.situation{color:var(--muted);max-width:64ch;margin:14px 0 24px}
+.three{display:grid;gap:0}
+section{padding:17px 0;border-top:1px solid var(--line)}
+h2{font-size:.9rem;color:var(--accent);margin:0 0 7px;letter-spacing:.02em}
+p,li{max-width:68ch} section p{margin:0} section ul,section ol{margin:0;padding-left:1.25rem}
+.table-wrap{max-width:100%;overflow-x:auto;margin:10px 0 0;border:1px solid var(--line);border-radius:8px;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;min-width:560px;font-size:.88rem;line-height:1.45}
+th,td{padding:9px 11px;text-align:left;vertical-align:top;border-right:1px solid var(--line);border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+th:last-child,td:last-child{border-right:0} tbody tr:last-child td{border-bottom:0}
+th{background:var(--wash);font-weight:700;color:var(--ink)}
+.pause{margin-top:20px;padding:13px 15px;background:var(--wash);border-left:3px solid var(--accent)}
+.pause strong{display:block;margin-bottom:4px}.sources{margin-top:20px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+.sources p{margin:4px 0}.disclaimer{font-size:.75rem;color:var(--muted);margin-top:18px}
+html[data-design="M1"]{--accent:#bd4d28;--wash:#f8e7df;--bg:#ece9e5;--line:#dfc7bb;--ink:#252b2c;--muted:#59615f}
+html[data-design="M1"] main{border-top-width:10px}.m1 .three{grid-template-columns:1fr 1fr;gap:12px}.m1 section{border:1px solid var(--line);padding:14px;background:color-mix(in srgb,var(--wash) 35%,var(--paper))}.m1 section:last-child{grid-column:1/-1}
+html[data-design="M2"]{--accent:#176b68;--wash:#e3efed;--bg:#e7eeee;--line:#c5d7d4;--ink:#162c31;--muted:#52696a}
+html[data-design="M2"] h1{font-family:Georgia,"Batang",serif;font-weight:600}.m2 .three{grid-template-columns:1fr 1fr;gap:22px}.m2 section:nth-child(2){background:var(--wash);padding:15px;border-top:0}.m2 section:last-child{grid-column:1/-1}
+html[data-design="M3"]{--accent:#126d57;--wash:#e4f1eb;--bg:#e9eeea;--line:#c5d7cc;--ink:#1d3028;--muted:#5b6e64}
+.m3 .three{position:relative;padding-left:20px}.m3 .three:before{content:"";position:absolute;top:18px;bottom:18px;left:4px;width:2px;background:var(--accent);opacity:.45}.m3 section{position:relative;padding-left:14px}.m3 section:before{content:"";position:absolute;left:-20px;top:20px;width:9px;height:9px;border:2px solid var(--accent);border-radius:50%;background:var(--paper)}
+html[data-design="M4"]{--accent:#714d83;--wash:#eee8f3;--bg:#ece8ef;--line:#d7ccdf;--ink:#292331;--muted:#686071}
+.m4 .situation{background:var(--wash);border-left:3px solid var(--accent);padding:12px 15px}.m4 .three{grid-template-columns:1fr 1fr;gap:12px}.m4 section{border:1px solid var(--line);padding:15px}.m4 section:last-child{grid-column:1/-1}
+/* M4-wide is reserved for cards whose text and table need equal full-width measure. */
+.m4-wide .three{grid-template-columns:1fr;gap:14px}.m4-wide section:last-child{grid-column:auto}
+html[data-design="M5"]{--accent:#245aa6;--wash:#e7eef8;--bg:#edf1f3;--line:#cbd6e4;--ink:#202d3d;--muted:#596b80}
+.m5 .situation{background:var(--wash);padding:10px 12px;border:1px solid var(--line)}.m5 section{display:grid;grid-template-columns:minmax(145px,.34fr) 1fr;gap:18px}.m5 h2{color:var(--ink)}
+@media(prefers-color-scheme:dark){
+ html[data-design="M1"]{--accent:#f29a72;--wash:#392d29;--bg:#131a1a;--paper:#202929;--line:#48524f;--ink:#edf1ed;--muted:#b9c5bf}
+ html[data-design="M2"]{--accent:#73c6be;--wash:#203936;--bg:#101a1b;--paper:#1b292b;--line:#405452;--ink:#eaf3f2;--muted:#afc6c3}
+ html[data-design="M3"]{--accent:#78d4a8;--wash:#20382f;--bg:#111a17;--paper:#1b2822;--line:#40564a;--ink:#eaf3ed;--muted:#b4c8bc}
+ html[data-design="M4"]{--accent:#d0a5e2;--wash:#342b3a;--bg:#19151d;--paper:#28212e;--line:#51445b;--ink:#f1eaf4;--muted:#c7b9ce}
+ html[data-design="M5"]{--accent:#8cb7ff;--wash:#24364d;--bg:#141a22;--paper:#202a37;--line:#3d4d62;--ink:#edf2fa;--muted:#b8c5d8}
+}
+@media(max-width:620px){main{width:calc(100% - 18px);max-width:850px;margin:9px auto;padding:22px 17px}.m1 .three,.m2 .three,.m4 .three{grid-template-columns:1fr}.m1 section:last-child,.m2 section:last-child,.m4 section:last-child{grid-column:auto}.m5 section{grid-template-columns:1fr;gap:5px}}
+@media print{@page{size:A4 portrait;margin:10mm}html{color-scheme:light}body{background:#fff}main{width:100%;max-width:none;margin:0;padding:10mm;border:0;border-top:4mm solid var(--accent);box-shadow:none}.sources,.disclaimer{font-size:8.5pt}a{color:inherit;text-decoration:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="m2">
+  <p class="eyebrow">3MUST · 기업법무</p>
+  <h1>SaaS 계약의 사용자 수와 추가요금 기준을 서명 전에 대조할 때</h1>
+  <p class="situation"><strong>적용 상황:</strong> 사용자·계정 수에 따라 요금이 달라지는 SaaS 계약을 새로 체결하거나 갱신하는 경우. <strong>범위:</strong> 계약 문서에 적힌 과금 단위와 주문 수량, 관리자 계정 현황, 청구 수량을 대조하는 운영 절차다. 조항의 법적 효력이나 세무 처리는 판단하지 않는다.</p>
+  <div class="three">
+    <section><h2>Must Know · 알아야 할 것</h2><ul><li>제품마다 과금 기준의 표현과 정의가 다를 수 있다. <code>user</code>, <code>seat</code>, <code>registered</code>, <code>active</code>, <code>named</code>, <code>concurrent</code> 같은 단어만 보고 포함 범위를 추정하지 말고, 계약 본문과 가격표·주문서·별첨에서 정의와 예외를 함께 확인한다.</li><li>관리자 화면의 계정 수와 청구 대상 수량이 다를 수 있으므로, 계정 수 하나만으로 청구의 맞고 틀림을 결론 내리지 않는다.</li><li><code>표준 계약</code> 또는 번역본이라는 설명은 확인을 대신하지 않는다. 실제 적용할 계약 버전과 연결 문서를 한 묶음으로 검토한다.</li></ul></section>
+    <section><h2>Must Check · 확인할 것</h2><ul><li>계약 본문·가격표·주문서·편입된 별첨의 버전과 적용 순서를 확인하고, 본문에서 언급한 문서가 빠지지 않았는지 대조한다.</li><li>과금 단위의 원문 정의, 계정 포함·제외 기준, 산정 시점과 청구 기간을 문서에 적힌 그대로 발췌한다. 비활성·시험·공유·서비스 계정 등의 취급은 계약이나 공급자 설명에서 확인된 경우에만 기록한다.</li><li>주문서에 적힌 수량, 요금 구간, 초과 수량의 산정·통지·정산 문구를 확인한다. 문구가 없거나 여러 문서가 다르면 임의로 해석하지 않는다.</li><li>IT 담당자로부터 추출 기준일과 기간이 표시된 관리자 계정 내보내기를 받고, 계정 상태·유형별 수량을 확인한다. 사용자 식별정보는 필요한 최소 범위로 제한한다.</li><li>청구서의 수량·측정 기간·과금 단위가 계약 문서 및 계정 자료와 같은 기준인지 확인하고, 출처별 수량 차이를 남긴다.</li></ul></section>
+    <section><h2>Must Do · 실행할 것</h2><div class="table-wrap" role="region" aria-label="표" tabindex="0"><table><thead><tr><th scope="col">대조 항목</th><th scope="col">기록할 내용</th></tr></thead><tbody><tr><td>계약 정의</td><td>과금 단위의 원문 및 포함·제외 기준</td></tr><tr><td>주문 조건</td><td>수량, 요금 구간, 측정 시점·기간, 초과 산정 문구</td></tr><tr><td>계정 현황</td><td>추출 기준일, 기간, 계정 유형별 수량과 자료 위치</td></tr><tr><td>청구 내역</td><td>청구 수량, 적용 단위, 측정 기간, 청구 문서 위치</td></tr><tr><td>미해결 차이</td><td>문서 간 불일치, 공급자 질문, 내부 담당자와 확인 기한</td></tr></tbody></table></div></section>
+  </div>
+  <aside class="pause"><strong>잠깐 멈추고 검토할 때</strong><p>과금 정의가 계약 문서마다 다르거나, 주문서·별첨이 누락되어 어느 문서가 적용되는지 확인할 수 없는 경우. · 관리자 자료의 기준일·계정 범위와 청구 기간을 맞출 수 없거나, 추가요금 산출 근거가 서면으로 설명되지 않는 경우. · 공급자 설명이 계약 문구와 다르거나 변경 문서에 합의되지 않은 수량·가격 조건이 포함된 경우.</p></aside>
+  <div class="sources"><p><strong>원자료:</strong> <code>_WIKI_법률지식/_55_업무사전/기업법무/157_글로벌국제_법무실무/157-EP-001_LTC-GL-001_영문계약서_서명해도됩니까.md</code></p><p><strong>검토일:</strong> 2026-10-23</p><p><strong>미확인·제한:</strong> 원문 사례의 수치와 외국법 해석·법적 효과 주장은 사용하지 않았다. 과금 단위별 보편적 의미나 청구의 적법성을 단정하지 않는다.</p><p><strong>변경 기록:</strong> SaaS 사용자 수 정의가 청구에 영향을 줄 수 있다는 현장 소재만 남기고, 금액·계약 효력 결론을 제거해 자료 대조와 질문·인계 절차로 재구성했다.</p></div>
+  <p class="disclaimer">일반적인 실무 참고자료입니다. 개별 사안에서는 사실관계와 적용 기준을 확인하세요.</p>
+</main>
+</body>
+</html>
