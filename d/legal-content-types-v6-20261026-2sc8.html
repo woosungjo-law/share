@@ -110,6 +110,17 @@
     .state { display: inline-flex; width: fit-content; max-width: 100%; padding: 4px 8px; border-radius: 3px; background: var(--accent-pale); color: var(--accent); font-size: .72rem; font-weight: 750; line-height: 1.4; }
     .state.partial { background: var(--amber-pale); color: var(--amber); }
     .state.unknown { background: var(--red-pale); color: var(--red); }
+    .entry-meta { display: grid; justify-items: start; gap: 9px; }
+    .sample-link { display: inline-flex; min-height: 34px; align-items: center; padding: 5px 10px; border: 1px solid var(--accent); border-radius: 4px; color: var(--accent); font-size: .76rem; font-weight: 750; text-decoration: none; }
+    .sample-link:hover { background: var(--accent-pale); }
+    .sample-dialog { width: min(620px, calc(100% - 28px)); max-height: min(80vh, 720px); padding: 0; border: 1px solid var(--rule); border-radius: 8px; background: var(--paper); color: var(--ink); box-shadow: var(--shadow); }
+    .sample-dialog::backdrop { background: rgba(8, 20, 24, .65); }
+    .sample-dialog-inner { padding: 22px; }
+    .sample-dialog h2 { margin: 0 40px 8px 0; font-size: 1.3rem; }
+    .sample-dialog p { color: var(--ink-soft); }
+    .sample-dialog .demo-note { padding: 11px 13px; border-left: 3px solid var(--amber); background: var(--amber-pale); font-size: .83rem; }
+    .sample-dialog pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 14px; border: 1px solid var(--rule); background: var(--paper-2); color: var(--ink); font: .88rem/1.6 Consolas, "Malgun Gothic", monospace; }
+    .sample-close { float: right; min-height: 36px; padding: 6px 11px; border: 1px solid var(--rule); border-radius: 4px; background: var(--paper); color: var(--ink); cursor: pointer; }
     .empty { display: none; padding: 24px; border: 1px dashed var(--rule); color: var(--muted); text-align: center; }
     .empty.show { display: block; }
     .note-strip { margin-top: 12px; padding: 12px 14px; background: var(--paper-2); color: var(--ink-soft); font-size: .85rem; }
@@ -142,7 +153,7 @@
     footer p { padding-top: 13px; border-top: 1px solid var(--rule); }
     @media (max-width: 900px) {
       .entry { grid-template-columns: 80px minmax(170px, .8fr) minmax(240px, 1.5fr); }
-      .entry-state { grid-column: 2 / -1; }
+      .entry-meta { grid-column: 2 / -1; grid-template-columns: 1fr auto; align-items: center; }
       .toolbar { grid-template-columns: 1fr; }
     }
     @media (max-width: 620px) {
@@ -158,7 +169,7 @@
       .entry { grid-template-columns: 45px 1fr; gap: 5px 10px; padding: 12px; }
       .entry-name { grid-column: 2; }
       .entry-copy { grid-column: 2; }
-      .entry-state { grid-column: 2; }
+      .entry-meta { grid-column: 2; display: flex; flex-wrap: wrap; align-items: center; }
       .bar-row { grid-template-columns: 88px 1fr 28px; }
     }
     @media print {
@@ -267,27 +278,36 @@
       <div class="source-note"><strong>원본:</strong> 컨텐츠형태_전수조사_20261026.md · v6 · 2026-10-26<br><strong>상태:</strong> inventory-provisional · 새로 재평가한 법리·상품성 없음</div>
     </section>
   </main>
+  <dialog class="sample-dialog" id="sampleDialog" aria-labelledby="sampleTitle">
+    <div class="sample-dialog-inner">
+      <button class="sample-close" id="sampleClose" type="button">닫기</button>
+      <p class="section-kicker">FORMAT SAMPLE</p>
+      <h2 id="sampleTitle">형식 샘플</h2>
+      <p class="demo-note">이 창은 형식의 모양을 보여주는 짧은 시연입니다. 실제 재고가 확인되지 않은 후보 형식의 시연은 실물 콘텐츠를 뜻하지 않습니다.</p>
+      <pre id="sampleBody"></pre>
+    </div>
+  </dialog>
   <footer class="wrap"><p>내부 인벤토리 대시보드 · 공유 URL을 아는 사람은 열 수 있습니다. `noindex`는 검색 억제이며 접근 통제가 아닙니다.</p></footer>
 
   <script>
     (() => {
       const rows = [
         // Formats
-        {kind:"format", name:"설명·서술형 원고", copy:"컬럼·사례 해설·뉴스레터·전자책·단행본·법률소설", proof:"기존 광역목록 1·4·5·8·11 및 관련 인덱스", state:"확인", cls:""},
-        {kind:"format", name:"절차·실무 안내", copy:"AtoZ·실무 가이드·단계별 플레이북·업무사전 EP 카드", proof:"_WIKI_전자소송/ · _WIKI_법률지식/_idx_worklex.md", state:"확인", cls:""},
-        {kind:"format", name:"서식·문안·체크리스트", copy:"계약·소송 서식, 통지문, 체크리스트·점검표", proof:"_WIKI_법률지식/_idx_templates.md", state:"확인", cls:""},
-        {kind:"format", name:"판례·법리·전문 레퍼런스", copy:"판례 해설·DB, 교리·실무 지식, 용어사전, 주제별 전문 컬렉션", proof:"_WIKI_법률지식/_MASTER_INDEX.md", state:"확인", cls:""},
-        {kind:"format", name:"진단 입력폼·개별 결과 리포트", copy:"진단 인테이크폼과 고객용 결과 리포트의 한 쌍", proof:"_WIKI_법률지식/35_templates/15_진단팩상품/", state:"확인", cls:""},
-        {kind:"format", name:"구조화된 평가·의사결정 납품물", copy:"Review Table, 증거 보강 로드맵, 리스크 우선순위, 소명논리, 조항별 판정·수정안, UI 위반 스캔·개선안", proof:"workflow_product_catalog.md WP-01~04 · risk_regulation_pack_factory.md", state:"워크플로우 산출형 확인 · 실물 수 미집계", cls:"partial"},
-        {kind:"format", name:"대상별 대화 스크립트·설명 대본", copy:"같은 쟁점을 경영진·현장·일반 독자 등 대상에 맞춰 설명하는 대화문", proof:"_WIKI_법률지식/50_outputs/ 근로자추정제 대화 스크립트", state:"확인", cls:""},
-        {kind:"format", name:"독자군별 법률 콘텐츠 판본", copy:"동일 소재를 법무팀·CEO·일반개인 등의 장면·문제·언어에 맞춰 재구성", proof:"_COMMANDS/법창작컴파일러.md · 법창작컴파일러결과물", state:"산출 경로 확인", cls:""},
-        {kind:"format", name:"강의·교육 납품물", copy:"강의안·슬라이드·핸드북·강의자 스크립트·워크북·질문카드·실습자료·일정·홍보문구", proof:"_WIKI_법률강의/index.md · 90_archive 강의자료", state:"확인", cls:""},
-        {kind:"format", name:"모의사건·역할/절차 실습 시나리오", copy:"사건 개요·증거·대응자료를 묶어 역할이나 절차를 연습하는 자료", proof:"_WIKI_본인법무/10_기획 · 법률강의 L4 실습자료", state:"확인", cls:""},
-        {kind:"format", name:"시각·도해·카드뉴스 자료", copy:"인포그래픽·도해·ELI5·슬라이드·웹 대시보드·카드뉴스 HTML", proof:"기존 12·23·24 · 법창작컴파일러 카드뉴스 명령서", state:"형식·전용 제작 경로 확인", cls:""},
-        {kind:"format", name:"오디오·영상 형식", copy:"팟캐스트·강의/설명 영상·영상 대본·오디오 콘텐츠", proof:"기존 9·11 및 관련 콘텐츠 위치", state:"일부 확인 · 완성 재고 미확인", cls:"partial"},
-        {kind:"format", name:"인터랙티브·응답형 콘텐츠", copy:"자가진단 앱·챗봇·RAG", proof:"기존 22·28", state:"확인", cls:""},
-        {kind:"format", name:"분기형 웹 콘텐츠", copy:"이용자 선택에 따라 법률 설명·실습 경로가 달라지는 웹 콘텐츠", proof:"현 검색 근거에서 해당 전개 실물은 확인 못함", state:"후보 · 미확인", cls:"unknown"},
-        {kind:"format", name:"알림·정기 브리핑", copy:"법령·판례·규제 변화 알림, 정기 브리프·구독형 업데이트", proof:"기존 상품 라인 후보 · 정기 운영 여부 추가 확인 필요", state:"후보 · 추가 확인", cls:"unknown"},
+        {kind:"format", name:"설명·서술형 원고", copy:"컬럼·사례 해설·뉴스레터·전자책·단행본·법률소설", proof:"기존 광역목록 1·4·5·8·11 및 관련 인덱스", state:"확인", cls:"", sampleUrl:"https://woosungjo-law.github.io/share/d/20260711_inheritance_renunciation_guide.html"},
+        {kind:"format", name:"절차·실무 안내", copy:"AtoZ·실무 가이드·단계별 플레이북·업무사전 EP 카드", proof:"_WIKI_전자소송/ · _WIKI_법률지식/_idx_worklex.md", state:"확인", cls:"", sampleUrl:"https://woosungjo-law.github.io/share/d/20260711_payment_order_vs_lawsuit.html"},
+        {kind:"format", name:"서식·문안·체크리스트", copy:"계약·소송 서식, 통지문, 체크리스트·점검표", proof:"_WIKI_법률지식/_idx_templates.md", state:"확인", cls:"", sampleUrl:"https://woosungjo-law.github.io/share/d/20260711_criminal_complaint_format.html"},
+        {kind:"format", name:"판례·법리·전문 레퍼런스", copy:"판례 해설·DB, 교리·실무 지식, 용어사전, 주제별 전문 컬렉션", proof:"_WIKI_법률지식/_MASTER_INDEX.md", state:"확인", cls:"", sampleUrl:"https://woosungjo-law.github.io/share/d/law-900-판례-검증-카드.html"},
+        {kind:"format", name:"진단 입력폼·개별 결과 리포트", copy:"진단 인테이크폼과 고객용 결과 리포트의 한 쌍", proof:"_WIKI_법률지식/35_templates/15_진단팩상품/", state:"확인", cls:"", sampleUrl:"https://woosungjo-law.github.io/share/d/자가진단_DX-001_상가임차인권리금.html"},
+        {kind:"format", name:"구조화된 평가·의사결정 납품물", copy:"Review Table, 증거 보강 로드맵, 리스크 우선순위, 소명논리, 조항별 판정·수정안, UI 위반 스캔·개선안", proof:"workflow_product_catalog.md WP-01~04 · risk_regulation_pack_factory.md", state:"워크플로우 산출형 확인 · 실물 수 미집계", cls:"partial", sampleUrl:"https://woosungjo-law.github.io/share/d/riskradar-aurora-weekly-w26-egxj.html"},
+        {kind:"format", name:"대상별 대화 스크립트·설명 대본", copy:"같은 쟁점을 경영진·현장·일반 독자 등 대상에 맞춰 설명하는 대화문", proof:"_WIKI_법률지식/50_outputs/ 근로자추정제 대화 스크립트", state:"확인", cls:"", samplePreview:"경영진: 이 제도가 바뀌면 우리 조직의 어떤 운영 기준부터 점검해야 합니까?\n변호사: 우선 계약 명칭보다 실제 지휘·감독 구조를 확인해야 합니다. 근무표, 업무 배정, 대체 가능성, 보수 산정 방식을 함께 보겠습니다.\n현장 책임자: 그럼 다음 주까지 어떤 자료를 준비하면 됩니까?\n변호사: 근무표와 업무 지시 기록을 먼저 모으고, 각 자료가 어떤 판단 요소를 보여주는지 표로 연결하겠습니다."},
+        {kind:"format", name:"독자군별 법률 콘텐츠 판본", copy:"동일 소재를 법무팀·CEO·일반개인 등의 장면·문제·언어에 맞춰 재구성", proof:"_COMMANDS/법창작컴파일러.md · 법창작컴파일러결과물", state:"산출 경로 확인", cls:"", samplePreview:"같은 주제: 지급명령\n\nCEO 판본 — 상대방이 이의를 제기할 가능성과 회수 비용을 비교해 신청 여부를 결정합니다.\n\n법무팀 판본 — 송달 가능성, 청구원인·증빙의 완결성, 이의신청 후 본안 전환 비용을 확인합니다.\n\n일반개인 판본 — 상대가 다투지 않을 것 같고 주소를 알고 있다면 지급명령을 고려할 수 있습니다. 이의가 들어오면 소송으로 이어질 수 있습니다.\n\n시연문입니다. 실제 세 독자군 원고는 원본 노트의 샘플 링크에서 확인하세요."},
+        {kind:"format", name:"강의·교육 납품물", copy:"강의안·슬라이드·핸드북·강의자 스크립트·워크북·질문카드·실습자료·일정·홍보문구", proof:"_WIKI_법률강의/index.md · 90_archive 강의자료", state:"확인", cls:"", sampleUrl:"https://woosungjo-law.github.io/share/d/lecture-commercial-act-2026-10in.html"},
+        {kind:"format", name:"모의사건·역할/절차 실습 시나리오", copy:"사건 개요·증거·대응자료를 묶어 역할이나 절차를 연습하는 자료", proof:"_WIKI_본인법무/10_기획 · 법률강의 L4 실습자료", state:"확인", cls:"", samplePreview:"[모의사건 시나리오 시연]\n\n상황: 납품대금 일부가 지급되지 않았고, 거래처는 품질 하자를 주장한다.\n역할: 공급사 대표 / 거래처 구매팀 / 양측 법률자문\n자료: 기본계약서, 발주서, 검수 기록, 미지급 내역\n과제: 사실관계를 시간순으로 정리하고, 추가로 확보할 증거와 첫 대응 문안을 결정한다.\n\n볼트 내 실습 기획 원문은 원본 노트의 샘플 링크에서 확인하세요."},
+        {kind:"format", name:"시각·도해·카드뉴스 자료", copy:"인포그래픽·도해·ELI5·슬라이드·웹 대시보드·카드뉴스 HTML", proof:"기존 12·23·24 · 법창작컴파일러 카드뉴스 명령서", state:"형식·전용 제작 경로 확인", cls:"", sampleUrl:"https://woosungjo-law.github.io/share/d/foundry-onetime-infographic-rzfy.html"},
+        {kind:"format", name:"오디오·영상 형식", copy:"팟캐스트·강의/설명 영상·영상 대본·오디오 콘텐츠", proof:"기존 9·11 및 관련 콘텐츠 위치", state:"일부 확인 · 완성 재고 미확인", cls:"partial", samplePreview:"[60초 영상 대본 시연]\n\n0–5초 | 질문: 계약서에 서명했는데도 돈을 못 받는다면?\n5–20초 | 핵심: 서명만으로 회수되는 것은 아닙니다. 지급기일과 이행 사실을 입증할 자료가 필요합니다.\n20–45초 | 장면: 발주서·검수확인서·세금계산서를 날짜순으로 맞춰 봅니다.\n45–60초 | 마무리: 자료가 빠져 있다면 먼저 보완하고, 상대방의 예상 반박을 함께 점검하세요.\n\n영상/오디오 완성물 재고는 미확인입니다."},
+        {kind:"format", name:"인터랙티브·응답형 콘텐츠", copy:"자가진단 앱·챗봇·RAG", proof:"기존 22·28", state:"확인", cls:"", sampleUrl:"https://woosungjo-law.github.io/share/d/자가진단_PROC-GOVR-DIAG-001_대관업무_자가진단.html"},
+        {kind:"format", name:"분기형 웹 콘텐츠", copy:"이용자 선택에 따라 법률 설명·실습 경로가 달라지는 웹 콘텐츠", proof:"현 검색 근거에서 해당 전개 실물은 확인 못함", state:"후보 · 미확인", cls:"unknown", samplePreview:"[분기형 웹 형식 시연 — 실재 재고 확인 아님]\n\n질문 1: 계약 상대가 대금을 지급하지 않았나요?\n→ 예: 지급기한·검수 여부를 확인합니다.\n→ 아니오: 계약 이행 전이라면 해제·이행청구 조건을 확인합니다.\n\n검수는 끝났나요?\n→ 예: 미지급 내역과 독촉 기록을 정리합니다.\n→ 아니오: 하자·검수 조항과 증거 확보 경로를 안내합니다.\n\n선택에 따라 다음 안내가 달라지는 UI 흐름을 보여주기 위한 시연입니다. 현재 볼트에서 이 형식의 실물을 확인하지 못했습니다."},
+        {kind:"format", name:"알림·정기 브리핑", copy:"법령·판례·규제 변화 알림, 정기 브리프·구독형 업데이트", proof:"기존 상품 라인 후보 · 정기 운영 여부 추가 확인 필요", state:"후보 · 추가 확인", cls:"unknown", sampleUrl:"https://woosungjo-law.github.io/share/d/riskradar-aurora-weekly-w26-egxj.html"},
 
         // Identities
         {kind:"identity", name:"흑백변호사", copy:"고정 캐릭터·세계관·대립 구조의 법률 토론극 연재", proof:"_COMMANDS/흑백변호사.md · 에피소드 작성명령서", state:"시리즈 계약 확인 · 실물 수 미집계", cls:"partial"},
@@ -343,12 +363,25 @@
         article.className = 'entry';
         article.dataset.kind = row.kind;
         article.dataset.state = row.cls || 'confirmed';
+        if (row.kind === 'format') article.id = `format-${index + 1}`;
         const id = document.createElement('span'); id.className = 'entry-id'; id.textContent = `${labels[row.kind]} · ${String(index + 1).padStart(2, '0')}`;
         const name = document.createElement('h3'); name.className = 'entry-name'; name.textContent = row.name;
         const copy = document.createElement('p'); copy.className = 'entry-copy'; copy.textContent = row.copy;
         const proof = document.createElement('small'); proof.className = 'entry-proof'; proof.textContent = `근거 · ${row.proof}`; copy.append(proof);
         const status = document.createElement('span'); status.className = `state entry-state ${row.cls}`; status.textContent = row.state;
-        article.append(id, name, copy, status); entries.append(article);
+        const meta = document.createElement('div'); meta.className = 'entry-meta'; meta.append(status);
+        if (row.sampleUrl) {
+          const sample = document.createElement('a'); sample.className = 'sample-link'; sample.href = row.sampleUrl; sample.target = '_blank'; sample.rel = 'noopener noreferrer'; sample.textContent = '확인'; sample.setAttribute('aria-label', `${row.name} 샘플 콘텐츠 열기`); meta.append(sample);
+        } else if (row.samplePreview) {
+          const sample = document.createElement('button'); sample.className = 'sample-link'; sample.type = 'button'; sample.textContent = '확인'; sample.setAttribute('aria-label', `${row.name} 샘플 시연 보기`);
+          sample.addEventListener('click', () => {
+            document.getElementById('sampleTitle').textContent = row.name;
+            document.getElementById('sampleBody').textContent = row.samplePreview;
+            document.getElementById('sampleDialog').showModal();
+          });
+          meta.append(sample);
+        }
+        article.append(id, name, copy, meta); entries.append(article);
       });
       const apply = () => {
         const query = search.value.trim().toLocaleLowerCase('ko');
@@ -384,6 +417,10 @@
         const next = current === 'dark' ? 'light' : 'dark';
         root.dataset.theme = next;
         themeButton.textContent = next === 'dark' ? '밝은 화면' : '어두운 화면';
+      });
+      document.getElementById('sampleClose').addEventListener('click', () => document.getElementById('sampleDialog').close());
+      document.getElementById('sampleDialog').addEventListener('click', event => {
+        if (event.target === event.currentTarget) event.currentTarget.close();
       });
       apply();
     })();
