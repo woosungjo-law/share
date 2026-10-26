@@ -113,6 +113,8 @@
     .sample-card p { margin: 7px 0 0; color: var(--ink-2); font-size: .9rem; }
     .sample-card .sample-label { color: var(--muted); font-size: .76rem; font-weight: 750; }
     .sample-steps { margin: 8px 0 0; padding-left: 20px; color: var(--ink-2); font-size: .88rem; }
+    .branch-result { display: none; margin-top: 10px; }
+    .branch-result:target { display: block; }
     .status { display: inline-flex; align-items: center; width: fit-content; max-width: 100%; padding: 4px 8px; border-radius: 4px; font-size: .75rem; font-weight: 750; line-height: 1.35; }
     .status.confirmed { color: var(--teal); background: var(--teal-soft); }
     .status.partial { color: var(--amber); background: var(--amber-soft); }
@@ -247,7 +249,7 @@
         <article class="sample-card" id="sample-06"><span class="sample-label">06 · 설명 대화 스크립트 · 형식 시연</span><h3>계약서 변경 요청을 받은 현장 담당자</h3><p><b>현장 담당자:</b> 상대방이 책임 제한 조항을 삭제해 달라고 합니다. 바로 동의해도 될까요?</p><p><b>법무 담당자:</b> 먼저 삭제 이유와 대체 문안을 확인해 주세요. 책임 범위가 넓어지는 효과와 금액 한도를 함께 설명한 뒤, 승인권자에게 선택지를 올리는 흐름이 안전합니다.</p><p><b>현장 담당자:</b> 그럼 오늘은 수용 여부를 확답하지 않고, 수정 제안과 검토 기한을 회신하겠습니다.</p></article>
         <article class="sample-card" id="sample-08"><span class="sample-label">08 · 모의사건 실습 시나리오 · 형식 시연</span><h3>상가 임대차 원상회복 분쟁</h3><ol class="sample-steps"><li><b>상황:</b> 임차인이 퇴거했고, 임대인은 보증금 일부를 공제하겠다고 통지했다.</li><li><b>제공 자료:</b> 임대차계약서 발췌, 입·퇴거 사진 목록, 공사비 견적서, 문자 대화.</li><li><b>역할:</b> 임차인 대리인·임대인 담당자·조정자.</li><li><b>과제:</b> 쟁점표 작성 → 증거 공백 확인 → 협상안과 추가 확인 질문 제시.</li></ol></article>
         <article class="sample-card" id="sample-10"><span class="sample-label">10 · 오디오/영상 대본 · 형식 시연</span><h3>60초 설명 영상 구성</h3><ol class="sample-steps"><li><b>0–8초 · 질문:</b> “계약서에 도장을 찍었는데, 설명을 못 들었다면 어떻게 하나요?”</li><li><b>8–35초 · 핵심 설명:</b> 계약 문구, 설명 경위, 주고받은 자료를 함께 살펴야 합니다.</li><li><b>35–52초 · 행동 안내:</b> 계약서와 안내 메시지를 보관하고, 쟁점 조항을 표시해 확인합니다.</li><li><b>52–60초 · 마무리:</b> 구체적인 효력은 사실관계와 계약 내용에 따라 달라질 수 있습니다.</li></ol></article>
-        <article class="sample-card" id="sample-12"><span class="sample-label">12 · 분기형 웹 콘텐츠 · 구조 시연 · 실재 재고 미확인</span><h3>먼저 상황을 선택하세요</h3><p>아래 선택은 분기형 콘텐츠의 화면 구조를 보여주는 예시입니다. 실제 법률 판단이나 개별 사건의 안내가 아닙니다.</p><div class="tagline"><a class="tag" href="#sample-12-employee">근로계약 종료 통보를 받음</a><a class="tag" href="#sample-12-employer">직원에게 종료를 통보하려 함</a></div><div id="sample-12-employee" class="source-note" style="margin-top:10px"><b>근로자 경로:</b> 통보 시점·사유·서면 여부를 정리하고 관련 문서를 확인하는 안내로 이어집니다.</div><div id="sample-12-employer" class="source-note" style="margin-top:10px"><b>사용자 경로:</b> 적용 법령·내부 절차·통보 근거와 기록을 점검하는 안내로 이어집니다.</div></article>
+        <article class="sample-card" id="sample-12"><span class="sample-label">12 · 분기형 웹 콘텐츠 · 구조 시연 · 실재 재고 미확인</span><h3>먼저 상황을 선택하세요</h3><p>아래 선택은 분기형 콘텐츠의 화면 구조를 보여주는 예시입니다. 실제 법률 판단이나 개별 사건의 안내가 아닙니다.</p><div class="tagline"><a class="tag" href="#sample-12-employee">근로계약 종료 통보를 받음</a><a class="tag" href="#sample-12-employer">직원에게 종료를 통보하려 함</a></div><div id="sample-12-employee" class="source-note branch-result"><b>근로자 경로:</b> 통보 시점·사유·서면 여부를 정리하고 관련 문서를 확인하는 안내로 이어집니다.</div><div id="sample-12-employer" class="source-note branch-result"><b>사용자 경로:</b> 적용 법령·내부 절차·통보 근거와 기록을 점검하는 안내로 이어집니다.</div></article>
       </div>
     </section>
 
