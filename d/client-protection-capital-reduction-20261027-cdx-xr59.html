@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="description" content="차등 무상감자 검토에서 변호사가 의뢰인과 주주의 권리를 보호하기 위해 먼저 확인할 사항을 쉬운 말로 정리합니다.">
+  <title>차등 무상감자 검토 | 먼저 확인할 다섯 가지</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f4f6f7;
+      --surface: #ffffff;
+      --ink: #172c3d;
+      --muted: #566a78;
+      --line: #cbd5db;
+      --blue: #1e4b68;
+      --blue-soft: #e7eff3;
+      --signal: #a84d32;
+      --signal-soft: #f7ece7;
+      --gold: #8c691e;
+      --gold-soft: #f4edda;
+      --measure: 68rem;
+      --serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Batang", serif;
+      --sans: "Noto Sans KR", "Pretendard", "Malgun Gothic", sans-serif;
+      font-family: var(--sans);
+      background: var(--paper);
+      color: var(--ink);
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --paper: #121b22;
+        --surface: #1b2832;
+        --ink: #e8eef1;
+        --muted: #b5c2c9;
+        --line: #40515d;
+        --blue: #9cc4d9;
+        --blue-soft: #233845;
+        --signal: #f0a48b;
+        --signal-soft: #3a2925;
+        --gold: #e0c47f;
+        --gold-soft: #332e20;
+      }
+    }
+    :root[data-theme="light"] {
+      color-scheme: light;
+      --paper: #f4f6f7; --surface: #fff; --ink: #172c3d; --muted: #566a78;
+      --line: #cbd5db; --blue: #1e4b68; --blue-soft: #e7eff3;
+      --signal: #a84d32; --signal-soft: #f7ece7; --gold: #8c691e; --gold-soft: #f4edda;
+    }
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --paper: #121b22; --surface: #1b2832; --ink: #e8eef1; --muted: #b5c2c9;
+      --line: #40515d; --blue: #9cc4d9; --blue-soft: #233845;
+      --signal: #f0a48b; --signal-soft: #3a2925; --gold: #e0c47f; --gold-soft: #332e20;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); line-height: 1.72; }
+    a { color: var(--blue); text-underline-offset: .18em; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+    .page { width: min(100% - 2rem, var(--measure)); margin-inline: auto; }
+    .topline { border-bottom: 1px solid var(--line); }
+    .topline-inner { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding: .85rem 0; }
+    .brand { color:var(--blue); font-size:.77rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
+    .theme-toggle { border:1px solid var(--line); border-radius:2px; padding:.45rem .7rem; color:var(--ink); background:var(--surface); font:600 .8rem var(--sans); cursor:pointer; }
+    main { padding: clamp(2rem, 6vw, 4.8rem) 0 3rem; }
+    .eyebrow { margin:0 0 .8rem; color:var(--signal); font-size:.76rem; font-weight:800; letter-spacing:.12em; }
+    h1,h2,h3,p { margin-top:0; }
+    h1 { max-width: 15ch; margin-bottom:1.15rem; font: 500 clamp(2.5rem, 6.5vw, 5.2rem)/1.08 var(--serif); letter-spacing:-.045em; text-wrap:balance; }
+    .dek { max-width: 46rem; margin:0; color:var(--muted); font-size:clamp(1.08rem, 2vw, 1.35rem); }
+    .lead-rule { display:grid; grid-template-columns: .35rem 1fr; gap:1.1rem; margin:2.3rem 0 2.7rem; align-items:stretch; }
+    .lead-rule::before { content:""; background:var(--signal); }
+    .lead-rule p { max-width:56rem; margin:0; font-size:clamp(1.2rem,2.5vw,1.65rem); font-weight:750; line-height:1.48; text-wrap:balance; }
+    .overview { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .overview article { padding:1.2rem 1.25rem 1.35rem 0; }
+    .overview article + article { border-left:1px solid var(--line); padding-left:1.25rem; }
+    .overview b { display:block; margin-bottom:.35rem; color:var(--blue); font-size:.78rem; letter-spacing:.06em; }
+    .overview p { margin:0; font-size:.97rem; }
+    .section-head { display:flex; align-items:baseline; justify-content:space-between; gap:1rem; margin:3.4rem 0 1.25rem; border-bottom:1px solid var(--line); padding-bottom:.75rem; }
+    h2 { margin:0; font:500 clamp(1.65rem,3vw,2.25rem)/1.2 var(--serif); letter-spacing:-.025em; }
+    .section-note { color:var(--muted); font-size:.82rem; }
+    .plain-explainer { display:grid; grid-template-columns:minmax(9rem,.75fr) 2fr; gap:2rem; padding:1.5rem 0; border-bottom:1px solid var(--line); }
+    .plain-explainer h3 { margin:0; color:var(--blue); font-size:1rem; }
+    .plain-explainer p { margin:0 0 .7rem; }
+    .plain-explainer p:last-child { margin-bottom:0; }
+    .warning { padding:1rem 1.2rem; border-left:3px solid var(--gold); background:var(--gold-soft); }
+    .checkpoints { counter-reset:step; border-top:1px solid var(--line); }
+    .checkpoint { counter-increment:step; display:grid; grid-template-columns:4.4rem minmax(0,1fr) minmax(11rem,.55fr); gap:1.2rem; padding:1.45rem 0; border-bottom:1px solid var(--line); }
+    .checkpoint::before { content:counter(step, decimal-leading-zero); color:var(--signal); font:500 1.6rem/1.2 var(--serif); }
+    .checkpoint h3 { margin:0 0 .45rem; font-size:1.12rem; }
+    .checkpoint p { margin:0; color:var(--muted); }
+    .checkpoint .ask { align-self:start; padding:.65rem .8rem; border-left:2px solid var(--blue); background:var(--blue-soft); color:var(--ink); font-size:.88rem; }
+    .timeline { display:grid; grid-template-columns:repeat(4,1fr); margin:1.3rem 0 0; padding:0; list-style:none; counter-reset:move; }
+    .timeline li { counter-increment:move; position:relative; padding:2.5rem 1.1rem .3rem 0; border-top:2px solid var(--blue); }
+    .timeline li::before { content:counter(move); position:absolute; top:-1.1rem; display:grid; place-items:center; width:2rem; height:2rem; border:2px solid var(--blue); border-radius:50%; background:var(--paper); color:var(--blue); font-weight:800; }
+    .timeline b { display:block; margin-bottom:.35rem; }
+    .timeline span { display:block; color:var(--muted); font-size:.9rem; }
+    .law-note { display:grid; grid-template-columns:1fr 1.3fr; gap:1.5rem; margin-top:2.8rem; padding:1.3rem 1.4rem; background:var(--surface); border:1px solid var(--line); }
+    .law-note h2 { font-size:1.35rem; }
+    .law-note p { margin:0; color:var(--muted); }
+    .law-note a { font-weight:700; }
+    footer { padding:1.4rem 0 2.5rem; border-top:1px solid var(--line); color:var(--muted); font-size:.83rem; }
+    footer p { max-width:65ch; margin:0; }
+    @media (max-width:700px) {
+      .overview { grid-template-columns:1fr; }
+      .overview article,.overview article + article { padding:1rem 0; border-left:0; }
+      .overview article + article { border-top:1px solid var(--line); }
+      .plain-explainer { grid-template-columns:1fr; gap:.5rem; }
+      .checkpoint { grid-template-columns:2.4rem 1fr; gap:.8rem; }
+      .checkpoint .ask { grid-column:2; }
+      .timeline { grid-template-columns:1fr; gap:0; margin-left:.9rem; }
+      .timeline li { padding:0 0 1.35rem 1.7rem; border-top:0; border-left:2px solid var(--blue); }
+      .timeline li::before { top:0; left:-1.05rem; width:1.8rem; height:1.8rem; }
+      .law-note { grid-template-columns:1fr; gap:.65rem; }
+      .section-head { align-items:flex-start; flex-direction:column; gap:.35rem; }
+    }
+    @media print {
+      :root { color-scheme:light; --paper:#fff; --surface:#fff; --ink:#172c3d; --muted:#405562; --line:#b8c3c9; --blue:#1e4b68; --blue-soft:#e7eff3; --signal:#963e25; --signal-soft:#f7ece7; --gold:#745415; --gold-soft:#f4edda; }
+      body { background:#fff; }
+      .theme-toggle { display:none; }
+      main { padding-top:1rem; }
+      .checkpoint,.plain-explainer,.law-note { break-inside:avoid; }
+      a { color:inherit; }
+      a::after { content:" (" attr(href) ")"; font-size:.75em; overflow-wrap:anywhere; }
+    }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } * { animation-duration:.01ms !important; transition-duration:.01ms !important; } }
+  </style>
+</head>
+<body>
+  <div class="topline">
+    <div class="page topline-inner">
+      <div class="brand">법률 검토 메모 · 쉬운 요약</div>
+      <button class="theme-toggle" type="button" aria-label="색상 테마 전환">화면 테마 바꾸기</button>
+    </div>
+  </div>
+  <main class="page">
+    <header>
+      <p class="eyebrow">차등 무상감자 검토</p>
+      <h1>먼저 확인할<br>다섯 가지</h1>
+      <p class="dek">회사의 자본금을 줄이는 절차를 검토할 때, 변호사는 날짜부터 확정하기보다 누구를 대리하는지와 각 주주의 권리가 어떻게 달라지는지부터 확인해야 합니다.</p>
+      <div class="lead-rule"><p>지금 가장 안전한 다음 행동은 일정을 약속하는 것이 아니라, 의뢰인과 최신 자료를 확인하는 것입니다.</p></div>
+    </header>
+
+    <section class="overview" aria-label="먼저 기억할 세 가지">
+      <article><b>먼저 확인</b><p>누가 의뢰인이고, 누가 비용을 내며, 누가 변호사에게 지시하는가?</p></article>
+      <article><b>따로 판단</b><p>회사의 결의, 주주의 계약상 동의, 투자자 협의는 서로 다른 절차다.</p></article>
+      <article><b>확정 보류</b><p>정관·주주명부·투자계약을 보기 전에는 감자 방식과 날짜를 확정하지 않는다.</p></article>
+    </section>
+
+    <section aria-labelledby="plain-title">
+      <div class="section-head"><h2 id="plain-title">쉬운 말로 설명하면</h2><span class="section-note">‘결손금’과 ‘빚’은 같은 말이 아닙니다</span></div>
+      <div class="plain-explainer">
+        <h3>회사의 장부를 떠올려 보세요</h3>
+        <div>
+          <p>결손금은 회사가 지난 기간에 낸 손실이 장부에 쌓인 것입니다. 채권자에게 갚아야 할 돈 그 자체는 아닙니다.</p>
+          <p>감자는 회사의 자본금을 줄이는 일입니다. 감자를 했다고 회사의 빚이 자동으로 없어지거나, 남은 주주의 권리가 그대로 유지되는 것은 아닙니다.</p>
+        </div>
+      </div>
+      <div class="plain-explainer">
+        <h3>무엇이 위험한가요?</h3>
+        <div>
+          <p>특정 주주의 주식만 줄이면 주주마다 손해와 이익이 달라질 수 있습니다. 회사가 정한 절차와 별도로, 정관·투자계약에서 정한 권리도 영향을 받을 수 있습니다.</p>
+          <p class="warning"><strong>그래서 “모두 동의했다”거나 “결손금이 있다”는 말만으로 절차와 법적 효과를 단정하면 안 됩니다.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="checks-title">
+      <div class="section-head"><h2 id="checks-title">변호사가 확인할 다섯 가지</h2><span class="section-note">자료를 받기 전에는 모두 열린 질문입니다</span></div>
+      <div class="checkpoints">
+        <article class="checkpoint">
+          <div><h3>누구를 대리하는가</h3><p>회사, 최대주주, 투자자 중 누가 의뢰인인지, 비용·지시권이 누구에게 있는지 확인합니다. 관계가 정리되기 전에 본안 자문 범위를 넓히면 이해충돌이나 책임 범위가 흐려질 수 있습니다.</p></div>
+          <div class="ask">확인할 자료: 의뢰·위임 문서, 비용 약정, 기존에 주고받은 메일</div>
+        </article>
+        <article class="checkpoint">
+          <div><h3>감자의 실제 목적과 방식</h3><p>투자자 가치 조정, 최대주주 측 책임분담, 결손 보전처럼 목적이 함께 있을 수 있습니다. 목적을 한 단어로 붙인다고 법에서 정한 절차가 자동으로 정해지지는 않습니다.</p></div>
+          <div class="ask">확인할 자료: 최신 재무제표, 감자안, 회계처리와 결의 문안</div>
+        </article>
+        <article class="checkpoint">
+          <div><h3>주주별 권리가 어떻게 바뀌는가</h3><p>누구의 주식을 얼마나 줄이는지, 감자 전후 지분과 주식 종류가 어떻게 되는지 비교합니다. 우선주 전환·희석방지·상환·청산 우선권도 계약과 정관에서 따로 확인합니다.</p></div>
+          <div class="ask">확인할 자료: 주주명부, 전후 지분표, 정관, 투자계약</div>
+        </article>
+        <article class="checkpoint">
+          <div><h3>각 동의가 어떤 효력을 갖는가</h3><p>투자자 모임의 합의는 그 자체로 회사의 주주총회 결의가 되는 것은 아닙니다. 다만 계약상 동의권이나 위임에 따른 효력이 있을 수 있으므로 문서와 서명 권한을 확인해야 합니다.</p></div>
+          <div class="ask">구분할 것: 회사의 결의 · 주주별 의결권 · 계약상 동의</div>
+        </article>
+        <article class="checkpoint">
+          <div><h3>일정의 전제가 맞는가</h3><p>소집기간, 결의 방식, 채권자 보호, 주권 발행 여부 등 전제가 확인되어야 날짜를 계산할 수 있습니다. 기존 일정표의 예시 날짜를 확정 약속으로 전달하지 않습니다.</p></div>
+          <div class="ask">확인할 자료: 정관, 주권 발행·불소지 자료, 채권자 목록</div>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="sequence-title">
+      <div class="section-head"><h2 id="sequence-title">안전한 검토 순서</h2><span class="section-note">자료가 모이면 다음 단계로 이동합니다</span></div>
+      <ol class="timeline">
+        <li><b>대리 관계 확인</b><span>의뢰인, 지시권, 이해충돌, 기존 자문 범위를 정리</span></li>
+        <li><b>원자료 수령</b><span>정관·주주명부·투자계약·최신 재무자료 확인</span></li>
+        <li><b>권리와 절차 비교</b><span>주주별 영향, 결의, 계약 동의, 채권자 절차를 나눠 검토</span></li>
+        <li><b>조건부 일정 제시</b><span>확정된 전제와 남은 불확실성을 함께 설명</span></li>
+      </ol>
+    </section>
+
+    <aside class="law-note" aria-labelledby="law-title">
+      <h2 id="law-title">기간 규정도 오해하지 않기</h2>
+      <p>상법상 감자 무효소송은 변경등기 뒤 6개월 안에 제기해야 합니다. 이 6개월이 남아 있다는 이유만으로 감자 효력이 자동 정지되거나 거래가 아직 끝나지 않았다고 볼 수는 없습니다. 실제 사건에 적용할 때는 절차와 사실관계를 별도로 검토해야 합니다.<br><br><a href="https://law.go.kr/LSW/lsLinkCommonInfo.do?chrClsCd=010202&amp;lsJoLnkSeq=1028617273" rel="noopener noreferrer">국가법령정보센터 상법 제445조</a> · <a href="https://www.law.go.kr/precInfoP.do?precSeq=215481" rel="noopener noreferrer">대법원 2009다83599</a></p>
+    </aside>
+  </main>
+  <footer><div class="page"><p>이 페이지는 법률 검토 메모를 쉽게 풀어 쓴 일반 요약입니다. 특정 회사나 주주에 대한 법률 의견이 아니며, 최신 정관·계약·재무자료를 확인하기 전에는 감자 방식, 적법성, 세무 효과 또는 일정을 확정하지 않습니다.</p></div></footer>
+  <script>
+    (() => {
+      const button = document.querySelector('.theme-toggle');
+      const root = document.documentElement;
+      const saved = localStorage.getItem('theme');
+      if (saved === 'light' || saved === 'dark') root.dataset.theme = saved;
+      button.addEventListener('click', () => {
+        const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+        root.dataset.theme = next;
+        localStorage.setItem('theme', next);
+      });
+    })();
+  </script>
+</body>
+</html>
