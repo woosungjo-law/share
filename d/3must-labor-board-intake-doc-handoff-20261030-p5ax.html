@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ko" data-design="M3">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="노동위원회 접수 통지 자료를 정리해 법무에 인계하는 3MUST 실무 안내">
+<title>노동위원회 접수 통지를 받은 뒤 자료를 법무에 넘길 때 · 3MUST</title>
+<link rel="icon" href="data:,">
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #e8eff0;
+  --paper: #ffffff;
+  --ink: #193239;
+  --muted: #536d71;
+  --line: #bfd0d0;
+  --teal: #14535b;
+  --teal-soft: #e5f0ef;
+  --coral: #c75345;
+  --coral-soft: #f8e9e5;
+  font-family: "Pretendard", "Noto Sans KR", "Malgun Gothic", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #101b1e;
+    --paper: #19282b;
+    --ink: #edf5f3;
+    --muted: #b7c9c6;
+    --line: #40585b;
+    --teal: #88c5c1;
+    --teal-soft: #213b3c;
+    --coral: #f18c79;
+    --coral-soft: #432c2a;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); line-height: 1.58; }
+main { width: min(100% - 28px, 900px); margin: 24px auto; padding: clamp(22px, 5vw, 52px); background: var(--paper); border: 1px solid var(--line); }
+.topline { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; color: var(--muted); font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; }
+h1 { max-width: 18ch; margin: 24px 0 14px; font-family: Georgia, "Batang", "BatangChe", serif; font-size: clamp(2rem, 6vw, 3.25rem); line-height: 1.13; letter-spacing: -.035em; text-wrap: balance; }
+.intro { max-width: 68ch; color: var(--muted); font-size: 1.02rem; }
+.scope { margin: 24px 0 34px; padding: 16px 18px; border-left: 4px solid var(--coral); background: var(--coral-soft); }
+.scope strong { display: block; margin-bottom: 4px; color: var(--ink); }
+h2 { margin: 36px 0 14px; font-size: 1.2rem; letter-spacing: -.02em; }
+.label { color: var(--teal); font-family: Georgia, "Batang", serif; font-size: .9rem; font-weight: 700; letter-spacing: .1em; }
+.route { display: grid; gap: 0; margin: 20px 0 28px; }
+.step { display: grid; grid-template-columns: 52px 1fr; gap: 14px; position: relative; padding: 0 0 22px; }
+.step:not(:last-child)::before { content: ""; position: absolute; top: 38px; bottom: 0; left: 19px; width: 2px; background: var(--line); }
+.node { z-index: 1; display: grid; place-items: center; width: 40px; height: 40px; border: 2px solid var(--teal); border-radius: 50%; color: var(--teal); background: var(--paper); font-variant-numeric: tabular-nums; font-size: .78rem; font-weight: 800; }
+.step h3 { margin: 2px 0 4px; font-size: 1rem; }
+.step p { margin: 0; color: var(--muted); }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.check, .stop { padding: 16px; border: 1px solid var(--line); }
+.check { background: var(--teal-soft); }
+.stop { background: var(--coral-soft); }
+.check h3, .stop h3 { margin: 0 0 8px; font-size: .96rem; }
+ul { margin: 0; padding-left: 1.2rem; }
+li + li { margin-top: 7px; }
+.check li::marker { color: var(--teal); }
+.stop li::marker { color: var(--coral); }
+.footer { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 30px; padding-top: 14px; border-top: 1px solid var(--line); color: var(--muted); font-size: .82rem; }
+@media (max-width: 600px) { main { width: min(100% - 18px, 900px); margin: 9px auto; padding: 21px 18px; } .grid { grid-template-columns: 1fr; } .step { grid-template-columns: 44px 1fr; gap: 10px; } }
+@media print { :root { color-scheme: light; --bg: #fff; --paper: #fff; --ink: #172d32; --muted: #425b60; --line: #b8c8c8; --teal: #14535b; --teal-soft: #edf5f4; --coral: #a74338; --coral-soft: #fbefec; } body { background: #fff; } main { width: 100%; margin: 0; padding: 12mm; border: 0; } .step, .check, .stop, .scope { break-inside: avoid; } }
+</style>
+</head>
+<body>
+<main>
+  <div class="topline"><span>3MUST · 노동법</span><span>자료 정리 · 법무 인계</span></div>
+  <h1>노동위원회 접수 통지를 받은 뒤 자료를 법무에 넘길 때</h1>
+  <p class="intro">접수 통지의 날짜와 자료를 원문 그대로 보존하고, 주장·확인 사실·미확인 사항을 나눠 검토를 인계합니다.</p>
+  <div class="scope"><strong>이 카드가 다루는 범위</strong>자료 정리와 법무 인계만 다룹니다. 제출기한, 구제요건, 해고 정당성, 답변 전략은 판단하지 않습니다.</div>
+
+  <h2><span class="label">MUST KNOW</span> 먼저 알아야 할 것</h2>
+  <ul>
+    <li>접수 통지의 내용, 신청인의 주장, 회사가 확인한 사실, 아직 확인하지 못한 내용을 구분합니다.</li>
+    <li>법적 기한과 대응 방향은 스스로 계산·결정하지 않습니다. 통지서 원문을 보존해 법무 또는 담당 변호사에게 확인을 요청합니다.</li>
+  </ul>
+
+  <h2><span class="label">MUST CHECK</span> 자료를 네 갈래로 정리</h2>
+  <div class="grid">
+    <section class="check"><h3>접수 원본</h3><ul><li>문서·봉투·첨부 파일과 전달 경로</li><li>수령 날짜·시간과 통지서 표기 날짜</li></ul></section>
+    <section class="check"><h3>확인 자료</h3><ul><li>사건의 주요 날짜와 조치</li><li>인사기록·회의자료·전자문서의 보관 위치와 담당자</li></ul></section>
+    <section class="check"><h3>미확인·불일치</h3><ul><li>신청서 주장과 회사 확인 사실을 분리</li><li>자료 간 차이와 아직 찾지 못한 자료를 별도 표시</li></ul></section>
+    <section class="check"><h3>접근 범위</h3><ul><li>개인정보·민감정보 포함 여부</li><li>열람자와 전달 범위 지정</li></ul></section>
+  </div>
+
+  <h2><span class="label">MUST DO</span> 인계까지 순서대로</h2>
+  <div class="route">
+    <section class="step"><span class="node">01</span><div><h3>원본 보존</h3><p>접수 담당자가 문서 원본, 수령 시각, 전달 경로, 첨부 목록을 기록합니다.</p></div></section>
+    <section class="step"><span class="node">02</span><div><h3>시간순 사실표</h3><p>인사 담당자가 주요 날짜와 조치를 적고 각 항목에 확인 자료를 연결합니다.</p></div></section>
+    <section class="step"><span class="node">03</span><div><h3>주장과 사실 분리</h3><p>각 항목을 신청서 주장, 회사 확인 사실, 미확인, 자료 간 불일치로 나눕니다.</p></div></section>
+    <section class="step"><span class="node">04</span><div><h3>검토 질문과 인계</h3><p>법무 담당자가 자료 공백과 통지서 날짜를 확인할 질문을 만들고, 보관 위치·열람 담당자와 함께 담당 변호사에게 전달합니다.</p></div></section>
+  </div>
+
+  <section class="stop"><h3>멈추고 검토할 때</h3><ul><li>통지서 날짜나 제출 표시의 의미를 판단해야 할 때</li><li>회사 기록과 신청서가 다르거나 원본 자료가 사라졌을 때</li><li>민감정보·제한 자료가 있거나 당사자 연락·합의·회신 방향을 정해야 할 때</li></ul></section>
+  <div class="footer"><span>원자료: PCK-HR-034 DOC-001 · 법률 주장은 초안에서 제외</span><span>검토일 2026-10-30</span></div>
+</main>
+</body>
+</html>
