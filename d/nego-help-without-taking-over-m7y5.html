@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ko" data-design="N4" data-theme="light">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="동료가 자료 분석이나 문서 작성을 도와 달라고 했지만, 어떤 자료를 찾아봤는지 또는 어디서 막혔는지 설명하기 전에 일을 통째로 넘기려 합니다. 돕는 사람은 빠르게 대신 처리하면 오늘의 일정은 맞출 수 있지만, 같은 요청이 반복되고 문제의 책임이 자신에게 옮겨올까 걱정됩니다. 요">
+<title>도움을 청한 사람 대신 문제를 풀지 않는 지원 방식 · 3MUST</title>
+<link rel="icon" href="data:,">
+<style>
+:root{color-scheme:light dark;--page:#f3eee4;--paper:#fffdf8;--ink:#292823;--muted:#6e685d;--line:#dbd3c5;--accent:#9d4f3d;--wash:#eee4d6;font-family:"Aptos","Malgun Gothic","Apple SD Gothic Neo",sans-serif}
+@media(prefers-color-scheme:dark){:root{--page:#191d1b;--paper:#222724;--ink:#ecebe3;--muted:#c1bfb4;--line:#454a43;--accent:#e0a18b;--wash:#34352e}}
+:root[data-theme="light"]{color-scheme:light;--page:#f3eee4;--paper:#fffdf8;--ink:#292823;--muted:#6e685d;--line:#dbd3c5;--accent:#9d4f3d;--wash:#eee4d6}
+:root[data-theme="dark"]{color-scheme:dark;--page:#191d1b;--paper:#222724;--ink:#ecebe3;--muted:#c1bfb4;--line:#454a43;--accent:#e0a18b;--wash:#34352e}
+*{box-sizing:border-box}body{margin:0;background:var(--page);color:var(--ink);font:16px/1.68 "Aptos","Malgun Gothic","Apple SD Gothic Neo",sans-serif}
+main{width:min(920px,100% - 32px);margin:28px auto 60px;background:var(--paper);border:1px solid var(--line);padding:clamp(22px,5vw,54px)}
+.topline{display:flex;justify-content:space-between;align-items:center;gap:16px;border-bottom:1px solid var(--line);padding-bottom:14px;color:var(--muted);font-size:.76rem;font-weight:750;letter-spacing:.1em;text-transform:uppercase}
+.theme{border:1px solid var(--line);background:var(--paper);color:var(--ink);font:inherit;font-size:.76rem;padding:6px 10px;cursor:pointer}.theme:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+h1{font:500 clamp(2rem,5.2vw,3.55rem)/1.1 "Iowan Old Style","Palatino Linotype","Batang",serif;letter-spacing:-.035em;text-wrap:balance;margin:23px 0 14px}
+.situation{font-size:1.03rem;line-height:1.75;max-width:68ch;margin:0;color:var(--ink)}.scope{margin:17px 0 0;padding:13px 16px;border-left:3px solid var(--accent);background:var(--wash);font-size:.9rem}.scope strong{display:block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+.lead{max-width:68ch;color:var(--muted);margin:19px 0 26px}.musts{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+.must-block{min-width:0;border:1px solid var(--line);padding:clamp(17px,3vw,25px);background:var(--paper)}.must-block h2{font-size:1rem;line-height:1.35;letter-spacing:.01em;margin:0 0 14px;color:var(--accent)}.must-block h2 small{display:block;color:var(--muted);font-size:.75rem;font-weight:500;letter-spacing:0;margin-top:3px}
+.must-block ul,.must-block ol{list-style:none;padding:0;margin:0;display:grid;gap:13px}.must-block li{position:relative;max-width:68ch;padding-left:19px}.must-block li p{margin:0}.must-block li strong{display:block;font-weight:750;margin:0 0 3px}.must-block li span{display:block}.know{grid-column:1/-1;border:0;border-top:3px solid var(--accent);padding:20px 0 4px;background:transparent}.know ul{grid-template-columns:1fr 1fr;column-gap:30px;row-gap:16px}.know li{padding-left:0}.check{background:var(--wash)}.check li:before{content:"";position:absolute;left:0;top:.48em;width:10px;height:10px;border:1px solid var(--accent);border-radius:2px}.do li:before{content:counter(step,decimal-leading-zero);counter-increment:step;position:absolute;left:0;top:0;color:var(--accent);font-size:.77rem;font-weight:800;font-variant-numeric:tabular-nums}.do ol{counter-reset:step}.pause,.example,.sources{margin-top:22px;padding:18px 20px;border:1px solid var(--line)}.pause{background:var(--wash);border-left:4px solid var(--accent)}.pause h2,.example h2,.sources h2{margin:0 0 10px;font-size:.86rem;letter-spacing:.04em}.pause ul{margin:0;padding-left:1.1em;display:grid;gap:7px}.pause li{padding-left:2px}.example blockquote{margin:0;padding:12px 15px;background:var(--wash);border-left:3px solid var(--accent);font-size:1.02rem}.example p{margin:0}.example small{display:block;color:var(--muted);margin-top:8px}.sources{color:var(--muted);font-size:.82rem}.sources p{margin:5px 0}.sources strong{color:var(--ink)}footer{margin-top:18px;color:var(--muted);font-size:.77rem;max-width:75ch}
+body.n2{--page:#e9efeb;--paper:#fbfdf9;--ink:#26322e;--muted:#617168;--line:#cbd7cf;--accent:#3e7464;--wash:#e0eae3}body.n3{--page:#e9eef3;--paper:#fbfdff;--ink:#23303d;--muted:#5e6d7c;--line:#cdd7e1;--accent:#b65e48;--wash:#e2ebf2}body.n4{--page:#f1ecdc;--paper:#fffdf5;--ink:#293432;--muted:#65716a;--line:#d8d0b8;--accent:#806643;--wash:#ebe3cb}
+:root[data-theme="dark"] body.n2{--page:#151f1b;--paper:#1e2924;--ink:#e7eee9;--muted:#b5c4ba;--line:#3d5147;--accent:#8ec4ad;--wash:#293a32}:root[data-theme="dark"] body.n3{--page:#171e27;--paper:#202c38;--ink:#e6edf4;--muted:#b5c2cf;--line:#3a4a59;--accent:#f0a088;--wash:#293949}:root[data-theme="dark"] body.n4{--page:#211f17;--paper:#2d291e;--ink:#eee8d7;--muted:#c5bea8;--line:#504a37;--accent:#d4b57c;--wash:#393222}
+body.n1 .know{padding:24px 0}body.n1 .check{border-top:4px solid #6c7c72}body.n2 .musts{grid-template-columns:1fr}body.n2 .must-block{border:0;border-left:3px solid var(--line);padding:12px 18px;background:transparent}body.n2 .know{border-left-color:var(--accent);border-top:0;padding:12px 18px}body.n2 .check{margin-left:5%}body.n2 .do{margin-left:10%;border-left-color:var(--accent)}body.n2 .know ul{grid-template-columns:1fr}body.n3 .know{border-top-color:#466886}body.n3 .check{border-top:4px solid #466886}body.n3 .do{border-top:4px solid var(--accent)}body.n4 .know{background:var(--wash);padding:20px}body.n4 .check,body.n4 .do{padding:16px}body.n4 .must-block h2{padding-bottom:10px;border-bottom:1px solid var(--line)}
+@media(max-width:680px){main{width:calc(100% - 18px);margin:9px auto 26px;padding:23px 18px}.musts,body.n2 .musts{grid-template-columns:1fr}.know,body.n2 .know{grid-column:auto}.know ul,body.n2 .know ul{grid-template-columns:1fr}.check,body.n2 .check,body.n2 .do{margin-left:0}.topline{align-items:flex-start}}
+@media print{@page{size:A4 portrait;margin:12mm}:root{color-scheme:light;--page:#fff;--paper:#fff;--ink:#111;--muted:#444;--line:#bbb;--accent:#444;--wash:#f2f0eb}body{background:#fff}main{width:100%;margin:0;padding:0;border:0}.theme{display:none}.must-block,.pause,.example,.sources{break-inside:avoid}.know ul{grid-template-columns:1fr 1fr}a{color:inherit;text-decoration:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body class="n4">
+<main>
+  <div class="topline"><span>3MUST · 문제해결 · N4</span><button class="theme" type="button" aria-label="색상 모드 바꾸기">화면 모드</button></div>
+  <h1>도움을 청한 사람 대신 문제를 풀지 않는 지원 방식</h1>
+  <p class="situation">동료가 자료 분석이나 문서 작성을 도와 달라고 했지만, 어떤 자료를 찾아봤는지 또는 어디서 막혔는지 설명하기 전에 일을 통째로 넘기려 합니다. 돕는 사람은 빠르게 대신 처리하면 오늘의 일정은 맞출 수 있지만, 같은 요청이 반복되고 문제의 책임이 자신에게 옮겨올까 걱정됩니다. 요청자를 무조건 거절하면 필요한 지원을 놓칠 수 있습니다. 이 카드는 시도한 내용과 막힌 지점을 먼저 묻고, 도움의 범위를 좁혀 요청자가 다음 행동의 주체로 남도록 협의하는 상황을 다룹니다.</p>
+  <aside class="scope"><strong>다루는 범위와 한계</strong>동료·구성원이 문제 해결을 부탁할 때 지원과 대리 실행의 범위를 정하는 업무 안내입니다. 도움이 필요한 사람을 게으르다고 단정하거나 지원을 일률적으로 거부하지 않으며, 권한·역량·안전 문제가 있으면 필요한 직접 지원과 책임자를 별도로 정합니다.</aside>
+  <p class="lead">대신 처리하기 전에 상대가 시도한 것과 막힌 지점을 듣고, 요청자가 실행할 다음 단계와 내가 도울 부분을 나눕니다.</p>
+  <div class="musts">
+    <section class="must-block know"><h2>Must Know <small>이 상황을 이해하고 판단할 기준</small></h2><ul><li><span>부탁을 받자마자 대신 해결하면 당장의 마감은 맞출 수 있지만, 요청자가 어떤 판단을 했고 어디서 막혔는지 알 기회를 놓칠 수 있습니다.</span></li>
+<li><span>시도한 내용이 없다고 해서 요청자가 노력하지 않았거나 도움받을 자격이 없다고 단정할 수는 없습니다. 시간·정보·권한·경험 부족 등 막힌 이유를 먼저 확인해야 합니다.</span></li>
+<li><span>도움은 방향을 제시하고 다음 단계를 함께 찾는 형태일 수 있고, 직접 실행을 맡는 대리 형태일 수도 있습니다. 요청자·지원자·결정권자의 책임을 구분해 협의해야 합니다.</span></li>
+<li><span>질문은 상대를 시험하거나 혼내기 위한 것이 아닙니다. 무엇을 시도했는지, 어떤 결과였는지, 지금 어떤 도움이 필요한지 알아야 지원의 크기를 정할 수 있습니다.</span></li>
+<li><span>상대가 직접 해결을 이어가도록 돌려주는 일은 방치와 다릅니다. 첫 시도가 안전하고 가능한지, 필요한 자료·권한·짧은 코칭이 있는지 확인하고 후속 점검을 정합니다.</span></li></ul></section>
+    <section class="must-block check"><h2>Must Check <small>결정 전에 확인할 사실과 질문</small></h2><ul><li><span>요청자가 해결하려는 문제와 마감·품질 기준이 무엇인지 먼저 확인합니다.</span></li>
+<li><span>이미 찾아보거나 시도한 방법, 결과, 사용한 자료를 구체적인 사례로 듣습니다.</span></li>
+<li><span>요청자가 막힌 지점이 정보 부족·기술 문제·권한·시간 중 무엇과 관련되는지 확인합니다.</span></li>
+<li><span>요청자가 원하는 도움의 종류가 방향 확인·자료 공유·검토·공동 작업·대리 실행 중 무엇인지 묻습니다.</span></li>
+<li><span>직접 처리해야 할 안전·권한·전문성 문제가 있는지와 그 판단 책임자가 누구인지 확인합니다.</span></li>
+<li><span>내가 제공할 지원의 범위와 요청자가 직접 실행할 다음 행동을 함께 정합니다.</span></li>
+<li><span>후속 점검 시점과 첫 시도에서 또 막힐 경우 도움을 다시 요청하는 방법을 합의합니다.</span></li></ul></section>
+    <section class="must-block do"><h2>Must Do <small>대화와 실행을 이어가는 순서</small></h2><ol><li><span>요청을 받은 뒤 바로 작업을 가져오지 말고 문제와 마감, 원하는 결과가 무엇인지 먼저 묻습니다.</span></li>
+<li><span>‘지금까지 무엇을 해 보셨고 어디에서 막혔나요?’라고 물어 시도와 장애물을 구체적으로 듣습니다.</span></li>
+<li><span>시도가 없더라도 비난하지 말고 자료·권한·기술 중 무엇이 먼저 필요한지 확인해 첫 단계부터 막힌 이유를 함께 좁힙니다.</span></li>
+<li><span>방향 제시·자료 공유·초안 검토처럼 내가 도울 범위를 제안하고, 요청자가 맡을 첫 행동을 함께 정합니다.</span></li>
+<li><span>안전이나 권한 때문에 내가 직접 처리해야 한다면 그 이유와 책임자를 밝히고, 다음번에 요청자가 맡을 수 있는 부분을 정합니다.</span></li>
+<li><span>첫 시도 뒤 확인할 시점과 다시 도움을 요청할 기준을 합의해 문제 해결이 한 번의 대리 처리로 끝나지 않게 합니다.</span></li></ol></section>
+  </div>
+  <aside class="pause"><h2>멈추고 다시 살필 때</h2><ul><li><span>요청자가 무엇을 해 봤는지 묻기 전에 일을 전부 가져와 대신 해결하고 있다면 필요한 도움의 종류와 역할을 다시 나눕니다.</span></li>
+<li><span>시도가 없다는 이유로 상대를 게으르다고 평가하거나 도움을 완전히 끊으려 한다면 막힌 원인과 가능한 첫 단계를 먼저 확인합니다.</span></li>
+<li><span>요청자가 다음 행동을 맡기로 했는데 내가 계속 결정을 대신하고 결과까지 책임지려 한다면 지원 범위와 결정 주체를 다시 명확히 합니다.</span></li>
+<li><span>역량·안전·권한 문제를 확인하지 않은 채 혼자 하라고 돌려보내면 필요한 지원이나 공식 승인 절차가 빠졌는지 살핍니다.</span></li></ul></aside>
+  <section class="example"><h2>대화 예시</h2><blockquote>어떤 자료를 확인해 보셨고 지금 어디에서 막혔는지 먼저 볼까요? 제가 기준을 함께 정리하거나 초안을 검토할 수 있습니다. 그 다음 직접 진행할 첫 단계와 다시 점검할 시간을 정하겠습니다.</blockquote><small>요청자를 시험하지 말고, 실제로 제공할 수 있는 지원과 맡길 행동을 분명히 제안합니다.</small></section>
+</main>
+<script>document.querySelector('.theme').addEventListener('click',()=>{const root=document.documentElement;root.dataset.theme=root.dataset.theme==='dark'?'light':'dark'});</script>
+</body></html>
