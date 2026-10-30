@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>거래처 도산 전 받은 담보나 변제에 부인권 주장이 제기되면 무엇부터 확인해야 할까요?</title>
+<!-- sc-template v3 · 렌더러: _tools/sc.py build · 이 파일을 직접 고치지 말고 00_운영/app_template.html 과 시나리오 노트를 고친다 -->
+<style>
+  :root{
+    --navy:#12233f; --navy-deep:#0a1626; --accent:#c9a24b; --bg:#f4f5f7; --card:#ffffff;
+    --text:#1e232b; --muted:#5f6673; --line:#e5e7eb;
+    --g-high:#1f7a4d; --g-mid:#b7791f; --g-check:#4a5568;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    background:var(--bg);color:var(--text);min-height:100vh;
+    display:flex;align-items:flex-start;justify-content:center;padding:16px;line-height:1.55;
+    word-break:keep-all;overflow-wrap:anywhere;
+  }
+  .app{width:100%;max-width:480px;background:var(--card);border-radius:18px;box-shadow:0 8px 30px rgba(18,35,63,.12);overflow:hidden;display:flex;flex-direction:column;min-height:560px;}
+  .topbar{background:var(--navy);color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;font-size:13px;}
+  .topbar .brand{font-weight:700;letter-spacing:.02em;}
+  .progress-wrap{height:4px;background:var(--line);width:100%;}
+  .progress-bar{height:100%;background:var(--accent);width:0%;transition:width .25s ease;}
+  .screen{flex:1;padding:26px 22px 22px;display:none;flex-direction:column;animation:fadeIn .22s ease;}
+  .screen.active{display:flex;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+
+  .intro-icon{font-size:38px;margin-bottom:12px;}
+  .intro h1{font-size:22px;line-height:1.4;color:var(--navy-deep);margin-bottom:12px;}
+  .myth{background:#fbf6ea;border-left:4px solid var(--accent);border-radius:8px;padding:12px 14px;margin-bottom:14px;font-size:13.5px;color:#4a3d16;}
+  .myth b{display:block;font-size:11px;letter-spacing:.04em;color:#8a6d1f;margin-bottom:3px;}
+  .intro p{color:var(--muted);font-size:14px;margin-bottom:16px;}
+  .meta{font-size:12px;color:var(--muted);margin-bottom:20px;display:flex;gap:8px;flex-wrap:wrap;}
+  .meta span{background:var(--bg);padding:4px 10px;border-radius:20px;}
+
+  .q-count{font-size:12px;color:#8a6d1f;font-weight:700;margin-bottom:8px;letter-spacing:.03em;}
+  .q-text{font-size:19px;font-weight:700;color:var(--navy-deep);margin-bottom:8px;line-height:1.45;}
+  .q-why{font-size:12.5px;color:var(--muted);margin-bottom:18px;}
+  .options{display:flex;flex-direction:column;gap:10px;margin-top:10px;}
+  .opt-btn{text-align:left;background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;font:inherit;font-size:14.5px;color:var(--text);cursor:pointer;transition:all .15s ease;min-height:44px;width:100%;}
+  .opt-btn:hover,.opt-btn:active,.opt-btn:focus-visible{border-color:var(--accent);background:#fbf6ea;outline:none;}
+  .opt-btn.primary{text-align:center;font-weight:700;background:var(--navy);color:#fff;border:none;}
+  .opt-btn.primary:hover,.opt-btn.primary:focus-visible{background:var(--navy-deep);}
+  .back-btn{margin-top:14px;background:none;border:none;color:var(--muted);font-size:12.5px;text-align:left;cursor:pointer;min-height:44px;text-decoration:underline;}
+
+  .grade{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#fff;padding:5px 12px;border-radius:20px;margin-bottom:10px;width:fit-content;}
+  .grade.high{background:var(--g-high);} .grade.mid{background:var(--g-mid);} .grade.check{background:var(--g-check);}
+  .outcome-tag{display:inline-block;font-size:11px;font-weight:700;color:var(--navy);background:#eef1f6;padding:4px 10px;border-radius:20px;margin-bottom:10px;margin-left:6px;}
+  .outcome h2{font-size:18px;color:var(--navy-deep);margin-bottom:14px;line-height:1.5;}
+  .block{margin-bottom:15px;}
+  .block-label{font-size:12px;font-weight:700;color:#8a6d1f;margin-bottom:5px;letter-spacing:.02em;}
+  .block-body{font-size:13.5px;color:var(--text);}
+  .share-summary{font-size:13.5px;color:var(--text);white-space:pre-line;background:#fbf6ea;border:1px solid #ead9ad;border-left:4px solid var(--accent);border-radius:10px;padding:12px 14px;}
+  .basis-details{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:#fafbfc;margin-bottom:15px;}
+  .basis-details summary{cursor:pointer;color:#3b4250;font-size:13px;font-weight:700;}
+  .basis-details .block-body{margin-top:9px;}
+  .chips{display:flex;flex-direction:column;gap:5px;margin-bottom:6px;}
+  .chip{font-size:12.5px;background:var(--bg);border-radius:8px;padding:6px 10px;color:#3b4250;}
+  .why-line{font-size:13.5px;}
+  .vs{display:grid;gap:6px;}
+  .vs div{font-size:13px;border-radius:8px;padding:9px 12px;}
+  .vs .m{background:#f6ecec;color:#7a2f2f;} .vs .f{background:#e9f4ee;color:#1d5b3a;}
+  .vs b{display:block;font-size:10.5px;letter-spacing:.05em;margin-bottom:2px;}
+  .checklist{list-style:none;display:flex;flex-direction:column;gap:6px;}
+  .checklist li{font-size:13.5px;padding-left:22px;position:relative;}
+  .checklist li::before{content:"☐";position:absolute;left:0;color:#8a6d1f;}
+  .disclaimer{font-size:12px;color:var(--muted);background:var(--bg);border-radius:10px;padding:12px 14px;margin-bottom:14px;}
+  .actions{display:flex;flex-direction:column;gap:8px;margin-bottom:14px;}
+  .ghost-btn{background:transparent;border:1.5px solid var(--line);color:#3b4250;border-radius:10px;padding:11px;font:inherit;font-size:13px;cursor:pointer;min-height:44px;text-align:center;text-decoration:none;display:block;}
+  .ghost-btn:hover,.ghost-btn:focus-visible{border-color:var(--accent);outline:none;}
+  .cta-box{background:var(--navy);color:#fff;border-radius:12px;padding:16px 18px;font-size:13.5px;margin-top:auto;}
+  .cta-box strong{color:var(--accent);} .cta-box a{color:#fff;text-decoration:underline;}
+  .footer-mark{text-align:center;font-size:11px;color:var(--muted);padding:10px 0 16px;}
+  button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px;}
+  @media (max-width:380px){ .screen{padding:22px 16px 18px;} .q-text{font-size:18px;} }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topbar"><span class="brand">법무팀 실무 점검</span><span id="progress-label"></span></div>
+  <div class="progress-wrap"><div class="progress-bar" id="progress-bar"></div></div>
+  <div class="screen active" id="screen"></div>
+  <div class="footer-mark" id="footer"></div>
+</div>
+
+<script id="sc-data" type="application/json">{"hook": "거래처 도산 전 받은 담보나 변제에 부인권 주장이 제기되면 무엇부터 확인해야 할까요?", "myth": "도산 전 60일 안에 받은 담보나 변제는 모두 자동으로 되돌려줘야 한다", "teaser": "회생인지 파산인지, 행위 시점과 담보·채무소멸의 유형이 무엇인지 나눠 봅니다.", "icon": "⚖️", "time": "약 1분", "start": "Q1", "nq_min": 1, "nq_max": 5, "cta_lawyer": "조우성 변호사", "cta_email": "law@mustknow.co.kr", "disclaimer": "이 진단은 일반적인 법률 정보 안내이며, 구체적인 사안은 개별 상담을 통해 확인해야 합니다.", "mother_url": "", "questions": {"Q1": {"text": "현재 진행 중인 도산 절차는 회생인가요, 파산인가요?", "why": "회생과 파산은 부인권 조문과 유형별 요건이 다르므로 절차부터 분리합니다.", "options": [{"label": "회생절차다", "next": "Q2_rehab"}, {"label": "파산절차다", "next": "Q2_bankruptcy"}, {"label": "절차의 현재 단계나 종류를 확인하지 못했다", "next": "C"}]}, "Q2_rehab": {"text": "문제가 된 거래는 지급정지·회생신청 이후에 이루어졌나요?", "why": "회생절차의 부인 유형을 검토하려면 거래일과 지급정지·신청 시점을 대조해야 합니다.", "options": [{"label": "그 이후이고, 당시 상대방의 인식 자료도 확인할 수 있다", "next": "Q3_rehab"}, {"label": "그 이전에 이루어졌거나 상대방이 관련 사정을 몰랐다는 자료가 있다", "next": "B_rehab"}, {"label": "거래일·지급정지일·신청일 중 하나를 확인하지 못했다", "next": "C"}]}, "Q2_bankruptcy": {"text": "파산절차에서 문제 된 거래일은 지급정지·파산신청 전 60일 구간 또는 그 이후인가요?", "why": "60일 기준은 모든 거래에 일률 적용되지 않으므로 행위 유형과 날짜를 함께 확인합니다.", "options": [{"label": "그 구간에 담보를 제공했거나 채무가 소멸했다", "next": "Q3_60day"}, {"label": "지급정지·파산신청 이후 거래이나 60일 구간의 유형은 아니다", "next": "Q3_general"}, {"label": "날짜나 거래 유형을 확인하지 못했다", "next": "C"}]}, "Q3_rehab": {"text": "회생절차에서 채무자의 채권자 해함 인식과 거래 상대방의 인식을 뒷받침할 자료가 있나요?", "why": "회생절차의 부인 유형은 채무자의 인식과 이익을 받은 자의 선의 여부가 갈림 요소가 될 수 있습니다.", "options": [{"label": "거래 당시 사정을 보여 주는 통지·협상·회계 자료가 있다", "next": "R"}, {"label": "상대방이 당시 관련 사정을 몰랐다는 기록이 있다", "next": "B_rehab"}, {"label": "기록이 없거나 양쪽의 인식을 가리기 어렵다", "next": "C"}]}, "Q3_60day": {"text": "그 담보 제공이나 채무소멸은 채무자의 의무에 속하지 않거나 방법·시기가 의무와 달랐나요?", "why": "파산절차의 60일 유형은 의무에 속하지 않는 행위 또는 방법·시기가 의무에 속하지 않는 행위로 한정해 살핍니다.", "options": [{"label": "그런 유형일 가능성을 보여 주는 약정·정산 자료가 있다", "next": "Q4_bankruptcy"}, {"label": "정해진 의무에 따라 통상적인 방법·시기에 이행한 거래다", "next": "Q3_general"}, {"label": "의무 내용이나 이행 시점을 확인하지 못했다", "next": "C"}]}, "Q3_general": {"text": "지급정지·파산신청 뒤 거래라면 상대방의 인식, 그 밖의 유형이라면 해함 인식 자료가 있나요?", "why": "60일 유형에 바로 해당하지 않아도 다른 부인 근거가 문제 될 수 있어 해당 유형의 인식 요건을 따로 확인합니다.", "options": [{"label": "거래 경위와 당시 인식에 관한 자료가 있다", "next": "Q4_bankruptcy"}, {"label": "상대방이 당시 관련 사실을 몰랐다는 자료가 있다", "next": "B_bankruptcy"}, {"label": "당시 사정을 확인할 자료가 부족하다", "next": "C"}]}, "Q4_bankruptcy": {"text": "부인권 행사로 생긴 원상회복 의무를 다른 채권과 상계하려는 계획이 있나요?", "why": "대법원 2025다202598은 해당 원상회복 의무와 법정 상계 요건의 관계를 다뤘습니다.", "options": [{"label": "그런 상계를 주장하거나 검토 중이다", "next": "D"}, {"label": "상계는 검토하지 않고 거래 유형·반환 범위만 확인한다", "next": "A"}, {"label": "상계 여부나 원상회복 의무의 성격이 불분명하다", "next": "C"}]}}, "outcomes": {"A": {"grade": "high", "tag": "", "title": "파산절차의 거래 유형과 효과를 구분해 살펴볼 수 있어요", "why": "파산절차의 시점·거래 유형과 상계 쟁점을 구분해 확인했습니다.", "fact": "파산절차는 제391조의 유형별 요건을 적용하며, 부인권 행사는 제397조에 따라 파산재단을 원상회복시키는 효과가 있습니다.", "basis": "거래별 날짜·담보·변제의무·인식 자료를 제391조와 대조하고 원상회복 효과는 제397조 범위에서 확인합니다.", "caution": "회생절차에서 부인권 행사 후의 법적 효과는 이 앱에서 확정하지 않으며 별도 조문·기록 확인이 필요합니다.", "checklist": ["회생·파산 중 어느 절차인지와 관련 날짜를 확정한다", "파산 60일 유형이라면 의무 여부와 이행 방법·시기를 확인한다", "거래 당시 채무자와 상대방의 인식을 자료로 정리한다"], "share_summary": "판단 이유: 파산절차에서 시점·거래 유형과 효과를 구분해 확인했습니다.\n지금 할 일: 거래별 기록을 파산 제391조의 요건과 대조하세요.\n주의: 60일 기준을 회생절차나 모든 파산 거래에 확대하지 마세요.\n", "disclaimer": "", "cta": ""}, "B_rehab": {"grade": "mid", "tag": "", "title": "회생절차의 거래 요건을 자료와 대조할 필요가 있어요", "why": "거래 시점이나 상대방의 인식 자료만으로 회생절차의 적용 여부를 확정하기 어렵습니다.", "fact": "회생절차의 부인 근거는 제100조의 유형별 요건을 따릅니다.", "basis": "행위 당시의 지급정지·회생신청, 채무자의 인식, 이익을 받은 자의 인식 자료를 거래별로 대조합니다.", "caution": "회생절차의 부인권 행사 효과는 이 앱에서 판단하지 않습니다.", "checklist": ["거래일과 지급정지·회생신청일을 원문 기록으로 확인한다", "당시 채무자와 상대방의 인식 자료를 분리해 정리한다", "회생절차의 효과는 별도 근거를 확인한 뒤 검토한다"], "share_summary": "판단 이유: 회생절차의 거래 시점 또는 인식 자료에 추가 확인이 필요합니다.\n지금 할 일: 약정, 거래 날짜, 당시 통지·협상 기록을 모으세요.\n주의: 한 가지 요건의 자료만으로 부인 가능성 전체를 단정하지 않습니다.\n", "disclaimer": "", "cta": ""}, "B_bankruptcy": {"grade": "mid", "tag": "", "title": "60일 유형 외의 파산 부인 근거도 따로 확인해야 해요", "why": "일반적인 의무 이행이거나 상대방 선의 자료가 있어도 다른 파산 부인 유형이 남는지 확인해야 합니다.", "fact": "파산절차 제391조는 제3호의 60일 유형 외에도 다른 부인 유형을 둡니다.", "basis": "약정상 의무, 실제 이행 방식·시기, 거래 당시 인식 자료를 각각 대조합니다.", "caution": "60일 유형에 해당하지 않는다는 사실만으로 부인 가능성이 모두 배제되지는 않습니다.", "checklist": ["담보·변제가 채무자의 의무에 속했는지 확인한다", "지급정지·파산신청과 거래 시점을 기록으로 대조한다", "다른 부인 유형의 요건과 선의 항변 자료를 살핀다"], "share_summary": "판단 이유: 60일 특정 유형과 다르더라도 다른 파산 부인 근거가 남을 수 있습니다.\n지금 할 일: 약정상 의무·이행 방식·시점과 상대방 인식 자료를 대조하세요.\n주의: 60일 구간에 해당하지 않는다고 부인 위험이 전부 사라지지는 않습니다.\n", "disclaimer": "", "cta": ""}, "R": {"grade": "mid", "tag": "", "title": "회생절차에서 부인 쟁점을 거래별로 검토할 필요가 있어요", "why": "거래 경위와 인식 자료가 확인되어 회생절차의 부인 요건을 구체적으로 대조할 수 있습니다.", "fact": "회생절차의 부인 근거는 제100조의 유형별 요건을 따릅니다. 파산절차의 60일 기준을 회생절차에 옮겨 적용하지 않습니다.", "basis": "채무자의 해함 인식, 지급정지·신청 시점, 이익을 받은 자의 인식 자료를 거래별로 대조합니다.", "caution": "회생절차의 부인권 행사 효과는 이 앱에서 확정하지 않으며 별도 조문·기록 확인이 필요합니다.", "checklist": ["행위 당시 지급정지·회생신청 및 채권자 해함에 관한 자료를 확인한다", "이익을 받은 자가 알고 있었는지 보여 주는 거래 기록을 정리한다", "회생절차 효과는 별도 근거를 확인한 뒤 검토한다"], "share_summary": "판단 이유: 거래 경위와 인식 자료가 있어 회생절차 요건을 구체적으로 대조할 수 있습니다.\n지금 할 일: 거래일·지급정지·신청일과 상대방의 인식 자료를 함께 정리하세요.\n주의: 파산절차의 60일 기준이나 제397조 효과를 회생절차에 그대로 적용하지 않습니다.\n", "disclaimer": "", "cta": ""}, "C": {"grade": "check", "tag": "", "title": "절차와 거래 기록을 먼저 확인해야 해요", "why": "도산 절차의 종류, 거래 시점 또는 의무·인식 자료가 확인되지 않았습니다.", "fact": "회생·파산의 부인 조문은 별개이며 파산절차의 60일 기준도 특정 유형에만 적용됩니다.", "basis": "절차 결정문과 거래별 자료를 확보한 뒤 적용 조문을 고릅니다.", "caution": "사건의 회생 단계와 부인권 행사 후 효과는 이 진단만으로 확정하지 않습니다.", "checklist": ["절차 종류와 지급정지·신청 관련 날짜를 확인한다", "담보 설정·변제·상계의 근거 계약과 실행 기록을 모은다", "상대방이 당시 알고 있던 사실을 보여 줄 통지를 확인한다"], "share_summary": "판단 이유: 적용 절차와 거래의 시점·유형을 아직 나누지 못했습니다.\n지금 할 일: 절차 결정문과 거래별 날짜·약정·통지를 확보하세요.\n주의: 회생의 효과는 별도 근거 확인 전 확정하지 않습니다.\n", "disclaimer": "", "cta": ""}, "D": {"grade": "mid", "tag": "", "title": "원상회복 의무와 상계 주장을 별도로 검토해야 해요", "why": "부인권 행사로 생긴 원상회복 의무를 다른 채권과 상계하는 방안이 쟁점이라고 답했습니다.", "fact": "대법원 2025다202598은 부인권 행사로 파산채권자가 부담하게 된 원상회복 의무가 채무자회생법 제422조 제2호 단서 (가)목의 법정 원인 채무인지 문제에서 부정했습니다.", "basis": "판례는 특정 법정 상계 요건을 다룬 것이므로 주장하는 상계의 법적 근거와 채권 관계를 따로 대조합니다.", "caution": "이 판결을 모든 상계 유형의 일률적 금지로 확대하지 않습니다.", "checklist": ["원상회복 의무가 발생한 절차와 법적 근거를 확인한다", "상계하려는 반대채권의 발생 원인과 시점을 분리한다", "제422조 제2호 단서와 판결의 쟁점이 같은지 검토한다"], "share_summary": "판단 이유: 부인권에 따른 원상회복 의무와 반대채권의 상계 가능성이 쟁점입니다.\n지금 할 일: 상계 근거 조항·채권 발생 시점·판례의 적용 범위를 대조하세요.\n주의: 2025다202598의 판단 범위를 다른 상계 사안에 그대로 넓히지 마세요.\n", "disclaimer": "", "cta": ""}}}</script>
+<script>
+"use strict";
+var D = JSON.parse(document.getElementById("sc-data").textContent);
+var GRADE = {high:"자료 확보", mid:"자료 보강", check:"확인 필요"};
+var screenEl = document.getElementById("screen");
+var pathStack = [];          // [{qid, qtext, label}]
+
+function h(tag, cls, text){
+  var e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(text !== undefined && text !== null) e.textContent = text;
+  return e;
+}
+function clearScreen(){ while(screenEl.firstChild) screenEl.removeChild(screenEl.firstChild); screenEl.className = "screen active"; window.scrollTo(0,0); }
+
+function setProgress(step, done){
+  var bar = document.getElementById("progress-bar");
+  var lab = document.getElementById("progress-label");
+  if(done){ bar.style.width = "100%"; lab.textContent = "진단 완료"; return; }
+  if(step === 0){ bar.style.width = "0%"; lab.textContent = ""; return; }
+  bar.style.width = Math.min(100, Math.round(step / D.nq_max * 100)) + "%";
+  lab.textContent = "질문 " + step;
+}
+
+function showIntro(){
+  pathStack = []; clearScreen(); setProgress(0);
+  var wrap = h("div","intro");
+  wrap.appendChild(h("div","intro-icon", D.icon || "⚖️"));
+  wrap.appendChild(h("h1","", D.hook));
+  if(D.myth){
+    var m = h("div","myth"); m.appendChild(h("b","","많은 분들이 이렇게 알고 있어요")); m.appendChild(document.createTextNode("“" + D.myth + "”"));
+    wrap.appendChild(m);
+  }
+  if(D.teaser) wrap.appendChild(h("p","", D.teaser));
+  var meta = h("div","meta");
+  [D.time || "약 1분", "객관식 질문 최대 " + D.nq_max + "개", "답변은 저장·전송되지 않아요"].forEach(function(t){ meta.appendChild(h("span","",t)); });
+  wrap.appendChild(meta);
+  var b = h("button","opt-btn primary","진단 시작하기"); b.type = "button";
+  b.onclick = function(){ goTo(D.start); };
+  wrap.appendChild(b);
+  screenEl.appendChild(wrap);
+}
+
+function goTo(id){
+  if(D.outcomes[id]) return showOutcome(id);
+  showQuestion(id);
+}
+
+function showQuestion(qid){
+  var q = D.questions[qid];
+  clearScreen();
+  var step = pathStack.length + 1;
+  setProgress(step);
+  screenEl.appendChild(h("div","q-count","질문 " + step));
+  screenEl.appendChild(h("div","q-text", q.text));
+  if(q.why) screenEl.appendChild(h("div","q-why", q.why));
+  var box = h("div","options");
+  q.options.forEach(function(o){
+    var b = h("button","opt-btn", o.label); b.type = "button";
+    b.onclick = function(){ pathStack.push({qid:qid, qtext:q.text, label:o.label}); goTo(o.next); };
+    box.appendChild(b);
+  });
+  screenEl.appendChild(box);
+  var back = h("button","back-btn", pathStack.length ? "← 이전 질문으로" : "← 처음으로"); back.type = "button";
+  back.onclick = function(){
+    if(!pathStack.length) return showIntro();
+    var last = pathStack.pop(); showQuestion(last.qid);
+  };
+  screenEl.appendChild(back);
+}
+
+function copyText(text, btn){
+  function ok(){ var o = btn.textContent; btn.textContent = "복사했어요 ✓"; setTimeout(function(){ btn.textContent = o; }, 1800); }
+  function fallback(){
+    var t = document.createElement("textarea"); t.value = text; t.style.position = "fixed"; t.style.opacity = "0";
+    document.body.appendChild(t); t.select();
+    try{ document.execCommand("copy"); ok(); }catch(e){ btn.textContent = "복사 실패 — 직접 선택해 주세요"; }
+    document.body.removeChild(t);
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(ok, fallback); } else { fallback(); }
+}
+
+function block(label, bodyNode){
+  var b = h("div","block"); b.appendChild(h("div","block-label",label)); b.appendChild(bodyNode); return b;
+}
+
+function cleanOne(s){ return String(s || "").replace(/\s+/g," ").trim(); }
+function shortLegal(s){
+  var x = cleanOne(s);
+  if(x.length <= 220) return x;
+  return x.slice(0,220).replace(/[\s,，;；:：]+[^\s]*$/g,"") + "…";
+}
+function fallbackShare(o){
+  var acts = (o.checklist || []).slice(0,3).map(function(x){ return cleanOne(x); }).filter(Boolean);
+  return [
+    "판단 이유: " + cleanOne(o.why),
+    "지금 할 일: " + acts.join(" / "),
+    "주의: " + cleanOne(o.caution)
+  ].join("\n");
+}
+function copySummaryText(o){
+  var answers = pathStack.map(function(p){ return cleanOne(p.label); }).filter(Boolean).join(" / ");
+  var summary = cleanOne(o.share_summary) ? o.share_summary : fallbackShare(o);
+  return [
+    "[법무팀 실무 점검] " + cleanOne(D.hook),
+    "내 답변: " + (answers || "기록 없음"),
+    "결과: " + GRADE[o.grade] + " — " + cleanOne(o.title),
+    summary,
+    "법적 근거: " + shortLegal(o.basis),
+    "※ " + cleanOne(o.disclaimer || D.disclaimer),
+    "진단 링크: " + location.href
+  ].join("\n");
+}
+
+function showOutcome(oid){
+  var o = D.outcomes[oid];
+  clearScreen(); setProgress(0, true);
+  var head = h("div");
+  var g = h("span","grade " + o.grade, "● " + GRADE[o.grade]);
+  head.appendChild(g);
+  if(o.tag) head.appendChild(h("span","outcome-tag", o.tag));
+  screenEl.appendChild(head);
+  var wrap = h("div","outcome");
+  wrap.appendChild(h("h2","", o.title));
+
+  /* 왜 이 결과인가 — 내가 고른 답 + 근거 1줄 */
+  var why = h("div");
+  var chips = h("div","chips");
+  pathStack.forEach(function(p){ chips.appendChild(h("div","chip","· " + p.label)); });
+  why.appendChild(chips);
+  why.appendChild(h("div","why-line", o.why));
+  wrap.appendChild(block("🔎 왜 이 결과인가요?", why));
+
+  if(o.share_summary || o.why || o.caution){
+    wrap.appendChild(block("🧾 한눈에 정리", h("div","share-summary", o.share_summary || fallbackShare(o))));
+  }
+
+  if(o.fact && D.myth){
+    var vs = h("div","vs");
+    var m = h("div","m"); m.appendChild(h("b","","통념")); m.appendChild(document.createTextNode(D.myth));
+    var f = h("div","f"); f.appendChild(h("b","","이 경우엔")); f.appendChild(document.createTextNode(o.fact));
+    vs.appendChild(m); vs.appendChild(f);
+    wrap.appendChild(block("💡 통념 vs 사실", vs));
+  }
+  if(o.checklist && o.checklist.length){
+    var ul = h("ul","checklist"); o.checklist.forEach(function(c){ ul.appendChild(h("li","",c)); });
+    wrap.appendChild(block("✅ 지금 해볼 것", ul));
+  }
+  wrap.appendChild(block("⚠️ 주의할 점", h("div","block-body", o.caution)));
+  var bd = document.createElement("details"); bd.className = "basis-details";
+  bd.appendChild(h("summary","","📖 법적 근거 보기"));
+  bd.appendChild(h("div","block-body", o.basis));
+  wrap.appendChild(bd);
+  wrap.appendChild(h("div","disclaimer", o.disclaimer || D.disclaimer));
+  screenEl.appendChild(wrap);
+
+  var actions = h("div","actions");
+  var cp = h("button","ghost-btn","📋 결과 요약 복사하기"); cp.type = "button";
+  cp.onclick = function(){
+    var t = copySummaryText(o);
+    copyText(t, cp);
+  };
+  actions.appendChild(cp);
+  if(D.mother_url){
+    var a = h("a","ghost-btn","📰 원문 컬럼 읽어보기"); a.href = D.mother_url; a.target = "_blank"; a.rel = "noopener"; actions.appendChild(a);
+  }
+  var rs = h("button","ghost-btn","↺ 처음부터 다시"); rs.type = "button"; rs.onclick = showIntro;
+  actions.appendChild(rs);
+  screenEl.appendChild(actions);
+
+  var cta = h("div","cta-box");
+  cta.appendChild(document.createTextNode((o.cta || "지금 상황을 구체적으로 확인하고 싶다면") + " "));
+  var s = h("strong","", D.cta_lawyer);
+  cta.appendChild(s);
+  cta.appendChild(document.createTextNode("("));
+  var ml = h("a","", D.cta_email); ml.href = "mailto:" + D.cta_email; cta.appendChild(ml);
+  cta.appendChild(document.createTextNode(")에게 문의하세요."));
+  screenEl.appendChild(cta);
+}
+
+document.getElementById("footer").textContent = "제공 : " + D.cta_lawyer + " 법률사무소";
+showIntro();
+</script>
+</body>
+</html>
