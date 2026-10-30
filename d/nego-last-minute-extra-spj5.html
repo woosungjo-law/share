@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ko" data-design="N1" data-theme="light">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="여러 차례 조건을 맞추고 서명하려는 순간 상대가 부가 서비스를 추가해 달라고 합니다. 요청은 작아 보여도 작업 범위와 일정, 투입 인력이나 지급 조건을 바꿀 수 있고, 이미 들인 시간이 아까워 선뜻 받아들이기 쉽습니다. 요구의 의도를 추측하기보다 무엇이 달라지는지 확인하고 교환">
+<title>서명 직전에 부가 서비스를 더해 달라는 요구를 받을 때 · 3MUST</title>
+<link rel="icon" href="data:,">
+<style>
+:root{color-scheme:light dark;--page:#f3eee4;--paper:#fffdf8;--ink:#292823;--muted:#6e685d;--line:#dbd3c5;--accent:#9d4f3d;--wash:#eee4d6;font-family:"Aptos","Malgun Gothic","Apple SD Gothic Neo",sans-serif}
+@media(prefers-color-scheme:dark){:root{--page:#191d1b;--paper:#222724;--ink:#ecebe3;--muted:#c1bfb4;--line:#454a43;--accent:#e0a18b;--wash:#34352e}}
+:root[data-theme="light"]{color-scheme:light;--page:#f3eee4;--paper:#fffdf8;--ink:#292823;--muted:#6e685d;--line:#dbd3c5;--accent:#9d4f3d;--wash:#eee4d6}
+:root[data-theme="dark"]{color-scheme:dark;--page:#191d1b;--paper:#222724;--ink:#ecebe3;--muted:#c1bfb4;--line:#454a43;--accent:#e0a18b;--wash:#34352e}
+*{box-sizing:border-box}body{margin:0;background:var(--page);color:var(--ink);font:16px/1.68 "Aptos","Malgun Gothic","Apple SD Gothic Neo",sans-serif}
+main{width:min(920px,100% - 32px);margin:28px auto 60px;background:var(--paper);border:1px solid var(--line);padding:clamp(22px,5vw,54px)}
+.topline{display:flex;justify-content:space-between;align-items:center;gap:16px;border-bottom:1px solid var(--line);padding-bottom:14px;color:var(--muted);font-size:.76rem;font-weight:750;letter-spacing:.1em;text-transform:uppercase}
+.theme{border:1px solid var(--line);background:var(--paper);color:var(--ink);font:inherit;font-size:.76rem;padding:6px 10px;cursor:pointer}.theme:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+h1{font:500 clamp(2rem,5.2vw,3.55rem)/1.1 "Iowan Old Style","Palatino Linotype","Batang",serif;letter-spacing:-.035em;text-wrap:balance;margin:23px 0 14px}
+.situation{font-size:1.03rem;line-height:1.75;max-width:68ch;margin:0;color:var(--ink)}.scope{margin:17px 0 0;padding:13px 16px;border-left:3px solid var(--accent);background:var(--wash);font-size:.9rem}.scope strong{display:block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+.lead{max-width:68ch;color:var(--muted);margin:19px 0 26px}.musts{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+.must-block{min-width:0;border:1px solid var(--line);padding:clamp(17px,3vw,25px);background:var(--paper)}.must-block h2{font-size:1rem;line-height:1.35;letter-spacing:.01em;margin:0 0 14px;color:var(--accent)}.must-block h2 small{display:block;color:var(--muted);font-size:.75rem;font-weight:500;letter-spacing:0;margin-top:3px}
+.must-block ul,.must-block ol{list-style:none;padding:0;margin:0;display:grid;gap:13px}.must-block li{position:relative;max-width:68ch;padding-left:19px}.must-block li p{margin:0}.must-block li strong{display:block;font-weight:750;margin:0 0 3px}.must-block li span{display:block}.know{grid-column:1/-1;border:0;border-top:3px solid var(--accent);padding:20px 0 4px;background:transparent}.know ul{grid-template-columns:1fr 1fr;column-gap:30px;row-gap:16px}.know li{padding-left:0}.check{background:var(--wash)}.check li:before{content:"";position:absolute;left:0;top:.48em;width:10px;height:10px;border:1px solid var(--accent);border-radius:2px}.do li:before{content:counter(step,decimal-leading-zero);counter-increment:step;position:absolute;left:0;top:0;color:var(--accent);font-size:.77rem;font-weight:800;font-variant-numeric:tabular-nums}.do ol{counter-reset:step}.pause,.example,.sources{margin-top:22px;padding:18px 20px;border:1px solid var(--line)}.pause{background:var(--wash);border-left:4px solid var(--accent)}.pause h2,.example h2,.sources h2{margin:0 0 10px;font-size:.86rem;letter-spacing:.04em}.pause ul{margin:0;padding-left:1.1em;display:grid;gap:7px}.pause li{padding-left:2px}.example blockquote{margin:0;padding:12px 15px;background:var(--wash);border-left:3px solid var(--accent);font-size:1.02rem}.example p{margin:0}.example small{display:block;color:var(--muted);margin-top:8px}.sources{color:var(--muted);font-size:.82rem}.sources p{margin:5px 0}.sources strong{color:var(--ink)}footer{margin-top:18px;color:var(--muted);font-size:.77rem;max-width:75ch}
+body.n2{--page:#e9efeb;--paper:#fbfdf9;--ink:#26322e;--muted:#617168;--line:#cbd7cf;--accent:#3e7464;--wash:#e0eae3}body.n3{--page:#e9eef3;--paper:#fbfdff;--ink:#23303d;--muted:#5e6d7c;--line:#cdd7e1;--accent:#b65e48;--wash:#e2ebf2}body.n4{--page:#f1ecdc;--paper:#fffdf5;--ink:#293432;--muted:#65716a;--line:#d8d0b8;--accent:#806643;--wash:#ebe3cb}
+:root[data-theme="dark"] body.n2{--page:#151f1b;--paper:#1e2924;--ink:#e7eee9;--muted:#b5c4ba;--line:#3d5147;--accent:#8ec4ad;--wash:#293a32}:root[data-theme="dark"] body.n3{--page:#171e27;--paper:#202c38;--ink:#e6edf4;--muted:#b5c2cf;--line:#3a4a59;--accent:#f0a088;--wash:#293949}:root[data-theme="dark"] body.n4{--page:#211f17;--paper:#2d291e;--ink:#eee8d7;--muted:#c5bea8;--line:#504a37;--accent:#d4b57c;--wash:#393222}
+body.n1 .know{padding:24px 0}body.n1 .check{border-top:4px solid #6c7c72}body.n2 .musts{grid-template-columns:1fr}body.n2 .must-block{border:0;border-left:3px solid var(--line);padding:12px 18px;background:transparent}body.n2 .know{border-left-color:var(--accent);border-top:0;padding:12px 18px}body.n2 .check{margin-left:5%}body.n2 .do{margin-left:10%;border-left-color:var(--accent)}body.n2 .know ul{grid-template-columns:1fr}body.n3 .know{border-top-color:#466886}body.n3 .check{border-top:4px solid #466886}body.n3 .do{border-top:4px solid var(--accent)}body.n4 .know{background:var(--wash);padding:20px}body.n4 .check,body.n4 .do{padding:16px}body.n4 .must-block h2{padding-bottom:10px;border-bottom:1px solid var(--line)}
+@media(max-width:680px){main{width:calc(100% - 18px);margin:9px auto 26px;padding:23px 18px}.musts,body.n2 .musts{grid-template-columns:1fr}.know,body.n2 .know{grid-column:auto}.know ul,body.n2 .know ul{grid-template-columns:1fr}.check,body.n2 .check,body.n2 .do{margin-left:0}.topline{align-items:flex-start}}
+@media print{@page{size:A4 portrait;margin:12mm}:root{color-scheme:light;--page:#fff;--paper:#fff;--ink:#111;--muted:#444;--line:#bbb;--accent:#444;--wash:#f2f0eb}body{background:#fff}main{width:100%;margin:0;padding:0;border:0}.theme{display:none}.must-block,.pause,.example,.sources{break-inside:avoid}.know ul{grid-template-columns:1fr 1fr}a{color:inherit;text-decoration:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body class="n1">
+<main>
+  <div class="topline"><span>3MUST · 협상 · N1</span><button class="theme" type="button" aria-label="색상 모드 바꾸기">화면 모드</button></div>
+  <h1>서명 직전에 부가 서비스를 더해 달라는 요구를 받을 때</h1>
+  <p class="situation">여러 차례 조건을 맞추고 서명하려는 순간 상대가 부가 서비스를 추가해 달라고 합니다. 요청은 작아 보여도 작업 범위와 일정, 투입 인력이나 지급 조건을 바꿀 수 있고, 이미 들인 시간이 아까워 선뜻 받아들이기 쉽습니다. 요구의 의도를 추측하기보다 무엇이 달라지는지 확인하고 교환 가능한 조건을 함께 정해야 합니다.</p>
+  <aside class="scope"><strong>다루는 범위와 한계</strong>이 카드는 마지막 순간에 나온 추가 요구의 업무상 영향을 살피고 대안과 교환 조건을 문서로 정리하는 방법을 안내합니다. 추가 서비스가 기존 문서에 미치는 법적 효과나 계약상 의무는 평가하지 않습니다.</aside>
+  <p class="lead">요청을 곧바로 수락하거나 잘라 거절하지 말고, 필요한 결과와 추가 부담을 확인한 뒤 조건이 붙은 대안을 제시합니다.</p>
+  <div class="musts">
+    <section class="must-block know"><h2>Must Know <small>이 상황을 이해하고 판단할 기준</small></h2><ul><li><span>그 정도나 그냥이라는 표현은 추가 서비스에 드는 실제 시간과 비용을 가릴 수 있습니다. 작아 보이는 요구도 누적되면 범위와 다음 거래의 기본 기대를 바꿀 수 있습니다.</span></li>
+<li><span>서명 직전까지 들인 시간과 노력이 아까우면 새 요구를 받아들이는 편이 손쉬워 보입니다. 이미 쓴 비용과 앞으로 부담할 비용을 구분해야 이전 노력이 다음 선택을 대신하지 않습니다.</span></li>
+<li><span>상대가 의도적으로 협상 전술을 썼는지 추측할 필요는 없습니다. 추가 요구가 일정, 업무 범위, 필요한 인력이나 지급 조건 중 무엇을 바꾸는지 확인하는 편이 실행에 도움이 됩니다.</span></li>
+<li><span>단칼에 거절하면 이미 맞춘 다른 조건까지 흔들 수 있고, 무상으로 수락하면 다음에도 같은 요구가 반복될 수 있습니다. 관계를 유지하면서 교환 조건을 함께 묻는 선택지가 있습니다.</span></li>
+<li><span>추가 업무를 받아들이려면 내 쪽에서 무엇을 조정할 수 있는지와 결정권자가 누구인지 먼저 맞춰야 합니다. 내부 선을 정하지 않으면 회의 분위기에 따라 조건이 바뀔 수 있습니다.</span></li></ul></section>
+    <section class="must-block check"><h2>Must Check <small>결정 전에 확인할 사실과 질문</small></h2><ul><li><span>추가해 달라는 서비스의 구체적인 내용과 상대가 기대하는 결과를 확인합니다.</span></li>
+<li><span>추가 업무에 필요한 시간과 인력, 납기나 사후 지원의 변화를 담당 팀과 살펴봅니다.</span></li>
+<li><span>현재까지 합의된 범위와 이번 요청으로 새로 달라지는 항목을 구분합니다.</span></li>
+<li><span>일정, 범위, 지급 시점 중 교환 조건으로 조정할 수 있는 항목을 확인합니다.</span></li>
+<li><span>제안 가능한 조건과 양보하기 어려운 내부 기준을 팀장이나 승인권자와 맞춥니다.</span></li>
+<li><span>상대의 담당자가 추가 조건을 결정할 권한이 있는지, 추가 확인이 필요한지 묻습니다.</span></li>
+<li><span>수정안을 누가 작성하고 누가 확인할지, 서명 전에 어떤 문서로 남길지 정합니다.</span></li></ul></section>
+    <section class="must-block do"><h2>Must Do <small>대화와 실행을 이어가는 순서</small></h2><ol><li><span>추가 요구를 들은 즉시 수락하지 말고 검토할 수 있다고 답해 대화를 닫지 않습니다.</span></li>
+<li><span>그 서비스가 필요한 이유와 상대가 기대하는 결과를 질문해 요청의 범위를 좁힙니다.</span></li>
+<li><span>일정, 업무 범위, 인력과 지급 조건에서 달라질 부담을 담당 팀과 구체적으로 살펴봅니다.</span></li>
+<li><span>추가 서비스를 포함할 때 조정할 수 있는 항목과 내부 승인 기준을 팀장과 맞춥니다.</span></li>
+<li><span>상대가 고를 수 있도록 범위를 줄이는 안과 다른 조건을 조정하는 안 등 대안을 제시합니다.</span></li>
+<li><span>포함하기로 한 서비스와 맞바꾼 조건을 수정안에 함께 적어 한쪽의 무상 양보로 남지 않게 합니다.</span></li>
+<li><span>상대와 내부 담당자가 같은 수정 내용을 확인한 뒤 다음 서명이나 실행 일정을 정합니다.</span></li></ol></section>
+  </div>
+  <aside class="pause"><h2>멈추고 다시 살필 때</h2><ul><li><span>추가 서비스의 작업량이나 일정 영향을 담당 팀이 계산하지 못하면 포함 여부를 즉석에서 확정하지 않습니다.</span></li>
+<li><span>추가 요구를 승인할 결정권자가 없거나 팀 내부의 합의가 다르면 먼저 내부 기준을 맞춥니다.</span></li>
+<li><span>교환 조건을 제시할 수 없고 한쪽의 무상 제공만 요구되는 상황이라면 예상 부담을 다시 검토합니다.</span></li>
+<li><span>요구가 업무 범위를 넘어 계약상 의무나 문서의 법적 효과 변경으로 이어지면 별도 검토를 받습니다.</span></li></ul></aside>
+  <section class="example"><h2>대화 예시</h2><blockquote>포함은 검토할 수 있습니다. 추가되는 범위와 일정 영향을 확인한 뒤, 함께 조정할 조건을 정리해 수정안으로 보내겠습니다.</blockquote><small>원문의 추가 부담 확인과 조건 교환 원칙을 바탕으로 새로 구성한 예시 문구입니다.</small></section>
+  <section class="sources"><h2>출처와 검토</h2><p><strong>원문:</strong> 도장 찍기 직전 이것도 넣어 주시죠 — 덤 요구에 값을 매기는 법</p><p><strong>검토일:</strong> 2026-10-30</p><p><strong>적용 한계:</strong> 원문은 가상의 거래 장면에서 추가 서비스와 조건 교환의 대화를 제안한다. 실제 업무 원가·승인 기준은 조직마다 다르며, 계약 변경의 법적 효력이나 의무는 이 카드에서 판단하지 않는다.</p></section>
+  <footer>일반적인 대화·협상·문제해결 참고자료입니다. 상대의 반응과 상황을 살피며 조정해 사용하세요. 법률 판단은 별도 기준으로 확인하세요.</footer>
+</main>
+<script>document.querySelector('.theme').addEventListener('click',()=>{const root=document.documentElement;root.dataset.theme=root.dataset.theme==='dark'?'light':'dark'});</script>
+</body></html>
