@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ko" data-design="N4" data-theme="light">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="팀에서 데이터 점수나 자동화된 평가 결과를 성과 판단에 사용하지만, 구성원은 점수가 실제 업무 기여와 맞지 않는다고 느낍니다. 평가를 만든 사람은 객관적인 숫자라고 설명하고, 평가받는 사람은 무엇이 빠졌는지 알기 어려워 서로의 판단이 충돌합니다. 점수 하나를 옳고 그르다고 다투">
+<title>평가 점수가 실제 기여와 다를 때, 기준부터 확인하는 법 · 3MUST</title>
+<link rel="icon" href="data:,">
+<style>
+:root{color-scheme:light dark;--page:#f3eee4;--paper:#fffdf8;--ink:#292823;--muted:#6e685d;--line:#dbd3c5;--accent:#9d4f3d;--wash:#eee4d6;font-family:"Aptos","Malgun Gothic","Apple SD Gothic Neo",sans-serif}
+@media(prefers-color-scheme:dark){:root{--page:#191d1b;--paper:#222724;--ink:#ecebe3;--muted:#c1bfb4;--line:#454a43;--accent:#e0a18b;--wash:#34352e}}
+:root[data-theme="light"]{color-scheme:light;--page:#f3eee4;--paper:#fffdf8;--ink:#292823;--muted:#6e685d;--line:#dbd3c5;--accent:#9d4f3d;--wash:#eee4d6}
+:root[data-theme="dark"]{color-scheme:dark;--page:#191d1b;--paper:#222724;--ink:#ecebe3;--muted:#c1bfb4;--line:#454a43;--accent:#e0a18b;--wash:#34352e}
+*{box-sizing:border-box}body{margin:0;background:var(--page);color:var(--ink);font:16px/1.68 "Aptos","Malgun Gothic","Apple SD Gothic Neo",sans-serif}
+main{width:min(920px,100% - 32px);margin:28px auto 60px;background:var(--paper);border:1px solid var(--line);padding:clamp(22px,5vw,54px)}
+.topline{display:flex;justify-content:space-between;align-items:center;gap:16px;border-bottom:1px solid var(--line);padding-bottom:14px;color:var(--muted);font-size:.76rem;font-weight:750;letter-spacing:.1em;text-transform:uppercase}
+.theme{border:1px solid var(--line);background:var(--paper);color:var(--ink);font:inherit;font-size:.76rem;padding:6px 10px;cursor:pointer}.theme:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+h1{font:500 clamp(2rem,5.2vw,3.55rem)/1.1 "Iowan Old Style","Palatino Linotype","Batang",serif;letter-spacing:-.035em;text-wrap:balance;margin:23px 0 14px}
+.situation{font-size:1.03rem;line-height:1.75;max-width:68ch;margin:0;color:var(--ink)}.scope{margin:17px 0 0;padding:13px 16px;border-left:3px solid var(--accent);background:var(--wash);font-size:.9rem}.scope strong{display:block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+.lead{max-width:68ch;color:var(--muted);margin:19px 0 26px}.musts{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+.must-block{min-width:0;border:1px solid var(--line);padding:clamp(17px,3vw,25px);background:var(--paper)}.must-block h2{font-size:1rem;line-height:1.35;letter-spacing:.01em;margin:0 0 14px;color:var(--accent)}.must-block h2 small{display:block;color:var(--muted);font-size:.75rem;font-weight:500;letter-spacing:0;margin-top:3px}
+.must-block ul,.must-block ol{list-style:none;padding:0;margin:0;display:grid;gap:13px}.must-block li{position:relative;max-width:68ch;padding-left:19px}.must-block li p{margin:0}.must-block li strong{display:block;font-weight:750;margin:0 0 3px}.must-block li span{display:block}.know{grid-column:1/-1;border:0;border-top:3px solid var(--accent);padding:20px 0 4px;background:transparent}.know ul{grid-template-columns:1fr 1fr;column-gap:30px;row-gap:16px}.know li{padding-left:0}.check{background:var(--wash)}.check li:before{content:"";position:absolute;left:0;top:.48em;width:10px;height:10px;border:1px solid var(--accent);border-radius:2px}.do li:before{content:counter(step,decimal-leading-zero);counter-increment:step;position:absolute;left:0;top:0;color:var(--accent);font-size:.77rem;font-weight:800;font-variant-numeric:tabular-nums}.do ol{counter-reset:step}.pause,.example,.sources{margin-top:22px;padding:18px 20px;border:1px solid var(--line)}.pause{background:var(--wash);border-left:4px solid var(--accent)}.pause h2,.example h2,.sources h2{margin:0 0 10px;font-size:.86rem;letter-spacing:.04em}.pause ul{margin:0;padding-left:1.1em;display:grid;gap:7px}.pause li{padding-left:2px}.example blockquote{margin:0;padding:12px 15px;background:var(--wash);border-left:3px solid var(--accent);font-size:1.02rem}.example p{margin:0}.example small{display:block;color:var(--muted);margin-top:8px}.sources{color:var(--muted);font-size:.82rem}.sources p{margin:5px 0}.sources strong{color:var(--ink)}footer{margin-top:18px;color:var(--muted);font-size:.77rem;max-width:75ch}
+body.n2{--page:#e9efeb;--paper:#fbfdf9;--ink:#26322e;--muted:#617168;--line:#cbd7cf;--accent:#3e7464;--wash:#e0eae3}body.n3{--page:#e9eef3;--paper:#fbfdff;--ink:#23303d;--muted:#5e6d7c;--line:#cdd7e1;--accent:#b65e48;--wash:#e2ebf2}body.n4{--page:#f1ecdc;--paper:#fffdf5;--ink:#293432;--muted:#65716a;--line:#d8d0b8;--accent:#806643;--wash:#ebe3cb}
+:root[data-theme="dark"] body.n2{--page:#151f1b;--paper:#1e2924;--ink:#e7eee9;--muted:#b5c4ba;--line:#3d5147;--accent:#8ec4ad;--wash:#293a32}:root[data-theme="dark"] body.n3{--page:#171e27;--paper:#202c38;--ink:#e6edf4;--muted:#b5c2cf;--line:#3a4a59;--accent:#f0a088;--wash:#293949}:root[data-theme="dark"] body.n4{--page:#211f17;--paper:#2d291e;--ink:#eee8d7;--muted:#c5bea8;--line:#504a37;--accent:#d4b57c;--wash:#393222}
+body.n1 .know{padding:24px 0}body.n1 .check{border-top:4px solid #6c7c72}body.n2 .musts{grid-template-columns:1fr}body.n2 .must-block{border:0;border-left:3px solid var(--line);padding:12px 18px;background:transparent}body.n2 .know{border-left-color:var(--accent);border-top:0;padding:12px 18px}body.n2 .check{margin-left:5%}body.n2 .do{margin-left:10%;border-left-color:var(--accent)}body.n2 .know ul{grid-template-columns:1fr}body.n3 .know{border-top-color:#466886}body.n3 .check{border-top:4px solid #466886}body.n3 .do{border-top:4px solid var(--accent)}body.n4 .know{background:var(--wash);padding:20px}body.n4 .check,body.n4 .do{padding:16px}body.n4 .must-block h2{padding-bottom:10px;border-bottom:1px solid var(--line)}
+@media(max-width:680px){main{width:calc(100% - 18px);margin:9px auto 26px;padding:23px 18px}.musts,body.n2 .musts{grid-template-columns:1fr}.know,body.n2 .know{grid-column:auto}.know ul,body.n2 .know ul{grid-template-columns:1fr}.check,body.n2 .check,body.n2 .do{margin-left:0}.topline{align-items:flex-start}}
+@media print{@page{size:A4 portrait;margin:12mm}:root{color-scheme:light;--page:#fff;--paper:#fff;--ink:#111;--muted:#444;--line:#bbb;--accent:#444;--wash:#f2f0eb}body{background:#fff}main{width:100%;margin:0;padding:0;border:0}.theme{display:none}.must-block,.pause,.example,.sources{break-inside:avoid}.know ul{grid-template-columns:1fr 1fr}a{color:inherit;text-decoration:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body class="n4">
+<main>
+  <div class="topline"><span>3MUST · 갈등해소 · N4</span><button class="theme" type="button" aria-label="색상 모드 바꾸기">화면 모드</button></div>
+  <h1>평가 점수가 실제 기여와 다를 때, 기준부터 확인하는 법</h1>
+  <p class="situation">팀에서 데이터 점수나 자동화된 평가 결과를 성과 판단에 사용하지만, 구성원은 점수가 실제 업무 기여와 맞지 않는다고 느낍니다. 평가를 만든 사람은 객관적인 숫자라고 설명하고, 평가받는 사람은 무엇이 빠졌는지 알기 어려워 서로의 판단이 충돌합니다. 점수 하나를 옳고 그르다고 다투기 전에 그 지표가 무엇을 측정하고 어떤 중요한 일을 놓치는지 함께 확인해야 합니다.</p>
+  <aside class="scope"><strong>다루는 범위와 한계</strong>데이터 기반 평가에서 지표의 의미와 빠진 맥락을 확인하고 이견을 대화하는 일반 안내입니다. 특정 시스템의 정확성·공정성이나 관련 법적 권리를 판정하지 않습니다.</aside>
+  <p class="lead">숫자를 곧바로 반박하거나 그대로 받아들이지 말고, 점수의 목적·입력·빠진 업무 맥락을 나눠 검토합니다.</p>
+  <div class="musts">
+    <section class="must-block know"><h2>Must Know <small>이 상황을 이해하고 판단할 기준</small></h2><ul><li><span>점수는 정해진 지표를 요약할 뿐 조직이 중요하게 여기는 모든 가치를 자동으로 담지 않습니다. 어떤 성과를 평가하려는지 먼저 알아야 숫자의 의미를 논의할 수 있습니다.</span></li>
+<li><span>과거 기록에 잘 잡히는 활동은 측정하기 쉽지만 새 시도나 장기적으로 돕는 일은 점수에 늦게 나타날 수 있습니다. 점수와 실제 기여의 차이를 사례로 확인해야 합니다.</span></li>
+<li><span>평가 결과가 낮다고 곧바로 시스템 전체가 틀렸다고 결론내리면 구체적인 오류를 찾기 어렵습니다. 어떤 입력이나 기준이 어떤 결과를 만들었는지 좁혀 묻는 편이 낫습니다.</span></li>
+<li><span>점수에 이견이 있어도 결과를 설명하고 재검토할 통로가 불분명하면 당사자는 문제를 해결하기 어렵습니다. 설명 책임자와 재검토 절차를 함께 확인해야 합니다.</span></li></ul></section>
+    <section class="must-block check"><h2>Must Check <small>결정 전에 확인할 사실과 질문</small></h2><ul><li><span>해당 점수가 평가하려는 업무 목표와 실제로 반영하는 지표가 무엇인지 평가 책임자에게 확인합니다.</span></li>
+<li><span>평가 기간과 입력 자료가 정확한지, 빠졌거나 중복된 업무 기록이 있는지 사례와 함께 살펴봅니다.</span></li>
+<li><span>팀이 중요하게 여기지만 수치에 반영되지 않는 협업·창의적 시도·장기 지원이 있는지 구체 사례로 확인합니다.</span></li>
+<li><span>점수에 포함된 기준이나 가중치를 누가 정했고 변경할 수 있는 권한이 누구에게 있는지 확인합니다.</span></li>
+<li><span>비슷한 역할과 조건에 같은 기준이 적용되는지, 점수 차이를 설명할 수 있는 다른 맥락이 있는지 살펴봅니다.</span></li>
+<li><span>평가를 설명받고 자료를 보완하거나 사람의 재검토를 요청할 공식 절차와 답변 시점을 확인합니다.</span></li></ul></section>
+    <section class="must-block do"><h2>Must Do <small>대화와 실행을 이어가는 순서</small></h2><ol><li><span>평가 결과 중 이견이 있는 항목을 하나 고르고, 점수와 다르게 보이는 실제 업무 사례를 날짜와 결과로 정리합니다.</span></li>
+<li><span>평가 담당자에게 지표의 목적과 입력 자료를 질문해 숫자가 무엇을 포함하고 무엇을 제외하는지 확인합니다.</span></li>
+<li><span>누락된 맥락을 업무 기록·협업 결과·품질 사례로 보완하되, 확인 가능한 사실과 해석을 구분해 제시합니다.</span></li>
+<li><span>현재 점수의 오류를 수정하는 요청과 앞으로 지표를 바꿔 달라는 제안을 분리해 각각의 담당자에게 전달합니다.</span></li>
+<li><span>재검토 결과와 남은 이견, 다음 확인 시점을 기록하고 점수만으로 해결되지 않은 판단은 책임자와 다시 논의합니다.</span></li></ol></section>
+  </div>
+  <aside class="pause"><h2>멈추고 다시 살필 때</h2><ul><li><span>평가 기준이나 입력 자료에 접근할 수 없고 결과에 대한 설명도 받지 못합니다.</span></li>
+<li><span>점수 이견이 개인에 대한 공격이나 보복 우려로 번져 안전하게 말하기 어렵습니다.</span></li>
+<li><span>특정 법적 권리나 차별 판단이 핵심이 되면 이 일반 대화 안내만으로 결론내리지 않습니다.</span></li></ul></aside>
+  <section class="example"><h2>대화 예시</h2><blockquote>이 점수가 어떤 업무를 반영하는지 이해하고 싶습니다. 제가 맡은 협업 업무 사례가 빠져 있는 것 같은데 입력 자료와 재검토 절차를 함께 확인해도 될까요?</blockquote><small>실제 평가 항목과 확인 가능한 업무 사례를 넣어 차분하게 질문합니다.</small></section>
+</main>
+<script>document.querySelector('.theme').addEventListener('click',()=>{const root=document.documentElement;root.dataset.theme=root.dataset.theme==='dark'?'light':'dark'});</script>
+</body></html>
