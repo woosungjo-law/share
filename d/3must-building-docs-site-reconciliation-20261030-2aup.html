@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko" data-design="M3">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>공사 진행 중 건축 관련 문서와 현장 상태를 대조할 때 · 3MUST</title>
+<link rel="icon" href="data:,">
+<style>
+:root { color-scheme:light dark; --bg:#edf1f3; --paper:#fff; --ink:#202d3d; --muted:#596b80; --line:#cbd6e4; --accent:#245aa6; --wash:#e7eef8; font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif; }
+@media(prefers-color-scheme:dark){:root{--bg:#111a20;--paper:#1a252d;--ink:#eff4f4;--muted:#bac7c8;--line:#394a52;--wash:#253541;}}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);line-height:1.55}
+main{width:calc(100% - 28px);max-width:850px;margin:24px auto;padding:clamp(22px,5vw,48px);background:var(--paper);border:1px solid var(--line);border-top:7px solid var(--accent)}
+.eyebrow{font-size:.75rem;font-weight:750;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin:0 0 10px}
+h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.12;letter-spacing:-.035em;margin:0;text-wrap:balance}
+.situation{color:var(--muted);max-width:64ch;margin:14px 0 24px}
+.three{display:grid;gap:0}
+section{padding:17px 0;border-top:1px solid var(--line)}
+h2{font-size:.9rem;color:var(--accent);margin:0 0 7px;letter-spacing:.02em}
+p,li{max-width:68ch} section p{margin:0} section ul,section ol{margin:0;padding-left:1.25rem}
+.table-wrap{max-width:100%;overflow-x:auto;margin:10px 0 0;border:1px solid var(--line);border-radius:8px;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;min-width:560px;font-size:.88rem;line-height:1.45}
+th,td{padding:9px 11px;text-align:left;vertical-align:top;border-right:1px solid var(--line);border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+th:last-child,td:last-child{border-right:0} tbody tr:last-child td{border-bottom:0}
+th{background:var(--wash);font-weight:700;color:var(--ink)}
+.pause{margin-top:20px;padding:13px 15px;background:var(--wash);border-left:3px solid var(--accent)}
+.pause strong{display:block;margin-bottom:4px}.sources{margin-top:20px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+.sources p{margin:4px 0}.disclaimer{font-size:.75rem;color:var(--muted);margin-top:18px}
+html[data-design="M1"]{--accent:#bd4d28;--wash:#f8e7df;--bg:#ece9e5;--line:#dfc7bb;--ink:#252b2c;--muted:#59615f}
+html[data-design="M1"] main{border-top-width:10px}.m1 .three{grid-template-columns:1fr 1fr;gap:12px}.m1 section{border:1px solid var(--line);padding:14px;background:color-mix(in srgb,var(--wash) 35%,var(--paper))}.m1 section:last-child{grid-column:1/-1}
+html[data-design="M2"]{--accent:#176b68;--wash:#e3efed;--bg:#e7eeee;--line:#c5d7d4;--ink:#162c31;--muted:#52696a}
+html[data-design="M2"] h1{font-family:Georgia,"Batang",serif;font-weight:600}.m2 .three{grid-template-columns:1fr 1fr;gap:22px}.m2 section:nth-child(2){background:var(--wash);padding:15px;border-top:0}.m2 section:last-child{grid-column:1/-1}
+html[data-design="M3"]{--accent:#126d57;--wash:#e4f1eb;--bg:#e9eeea;--line:#c5d7cc;--ink:#1d3028;--muted:#5b6e64}
+.m3 .three{position:relative;padding-left:20px}.m3 .three:before{content:"";position:absolute;top:18px;bottom:18px;left:4px;width:2px;background:var(--accent);opacity:.45}.m3 section{position:relative;padding-left:14px}.m3 section:before{content:"";position:absolute;left:-20px;top:20px;width:9px;height:9px;border:2px solid var(--accent);border-radius:50%;background:var(--paper)}
+html[data-design="M4"]{--accent:#714d83;--wash:#eee8f3;--bg:#ece8ef;--line:#d7ccdf;--ink:#292331;--muted:#686071}
+.m4 .situation{background:var(--wash);border-left:3px solid var(--accent);padding:12px 15px}.m4 .three{grid-template-columns:1fr 1fr;gap:12px}.m4 section{border:1px solid var(--line);padding:15px}.m4 section:last-child{grid-column:1/-1}
+/* M4-wide is reserved for cards whose text and table need equal full-width measure. */
+.m4-wide .three{grid-template-columns:1fr;gap:14px}.m4-wide section:last-child{grid-column:auto}
+html[data-design="M5"]{--accent:#245aa6;--wash:#e7eef8;--bg:#edf1f3;--line:#cbd6e4;--ink:#202d3d;--muted:#596b80}
+.m5 .situation{background:var(--wash);padding:10px 12px;border:1px solid var(--line)}.m5 section{display:grid;grid-template-columns:minmax(145px,.34fr) 1fr;gap:18px}.m5 h2{color:var(--ink)}
+@media(prefers-color-scheme:dark){
+ html[data-design="M1"]{--accent:#f29a72;--wash:#392d29;--bg:#131a1a;--paper:#202929;--line:#48524f;--ink:#edf1ed;--muted:#b9c5bf}
+ html[data-design="M2"]{--accent:#73c6be;--wash:#203936;--bg:#101a1b;--paper:#1b292b;--line:#405452;--ink:#eaf3f2;--muted:#afc6c3}
+ html[data-design="M3"]{--accent:#78d4a8;--wash:#20382f;--bg:#111a17;--paper:#1b2822;--line:#40564a;--ink:#eaf3ed;--muted:#b4c8bc}
+ html[data-design="M4"]{--accent:#d0a5e2;--wash:#342b3a;--bg:#19151d;--paper:#28212e;--line:#51445b;--ink:#f1eaf4;--muted:#c7b9ce}
+ html[data-design="M5"]{--accent:#8cb7ff;--wash:#24364d;--bg:#141a22;--paper:#202a37;--line:#3d4d62;--ink:#edf2fa;--muted:#b8c5d8}
+}
+@media(max-width:620px){main{width:calc(100% - 18px);max-width:850px;margin:9px auto;padding:22px 17px}.m1 .three,.m2 .three,.m4 .three{grid-template-columns:1fr}.m1 section:last-child,.m2 section:last-child,.m4 section:last-child{grid-column:auto}.m5 section{grid-template-columns:1fr;gap:5px}}
+@media print{@page{size:A4 portrait;margin:10mm}html{color-scheme:light}body{background:#fff}main{width:100%;max-width:none;margin:0;padding:10mm;border:0;border-top:4mm solid var(--accent);box-shadow:none}.sources,.disclaimer{font-size:8.5pt}a{color:inherit;text-decoration:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="m3">
+  <p class="eyebrow">3MUST · 부동산법</p>
+  <h1>공사 진행 중 건축 관련 문서와 현장 상태를 대조할 때</h1>
+  <p class="situation"><strong>적용 상황:</strong> 공사 담당자나 건물 관리자가 여러 버전의 도면·공문·공사 기록을 갖고 있고, 현재 현장과 어느 문서를 비교해야 할지 불분명할 때 사용합니다. <strong>범위:</strong> 받은 문서의 발급·작성 정보와 현장 사진·공정 기록을 보존하고, 차이와 미확인 항목을 담당자에게 전달하는 절차입니다. 허가·신고 대상인지, 공사가 적법한지, 시정명령이나 제재가 가능한지 판단하지 않습니다.</p>
+  <div class="three">
+    <section><h2>Must Know · 알아야 할 것</h2><ul><li>도면이나 안내문에 적힌 내용과 현장 모습이 다르더라도 그 차이만으로 위법 여부나 문서의 효력을 단정할 수 없습니다.</li><li>문서에 적힌 명칭과 발급기관을 그대로 기록합니다. 직접 “허가됨”, “위반건축물” 등으로 법적 상태를 새로 판정하지 않습니다.</li><li>최초 문서와 변경 문서를 모두 보존하고, 현장에서 확인한 날짜와 위치를 함께 적어야 나중에 서로 다른 시점을 섞지 않습니다.</li><li>현재 문서가 최신본인지, 현장 변경이 있었는지 모르면 추측 대신 미확인으로 남깁니다.</li></ul></section>
+    <section><h2>Must Check · 확인할 것</h2><ul><li>주소·지번·건물명·동·층 등 자료에 표시된 대상 식별 정보</li><li>허가·신고 관련 문서, 승인 도면, 변경본, 전달받은 공문과 발급·수신 날짜</li><li>공사 일정표, 작업일지, 변경 요청과 승인·회신 기록, 사진 원본과 촬영 위치·날짜</li><li>문서마다 작성자·발급기관·버전·파일명·수정일이 표시되어 있는지</li><li>현재 현장에서 관찰한 항목과 문서에서 확인한 항목이 각각 무엇인지</li><li>미확인 사항을 설명할 담당자(건축사·시공 담당자·소유자·문서 발급기관)</li></ul></section>
+    <section><h2>Must Do · 실행할 것</h2><ol><li>원본 문서를 수정하지 않고 보관합니다. 같은 문서의 이전본과 변경본은 파일명과 날짜를 구분해 둡니다.</li><li>현장 사진은 촬영한 날짜·위치·방향을 덧붙이고 원본 파일을 보존합니다. 사진만으로 원인이나 법적 상태를 추정하지 않습니다.</li><li>표에 <code>확인 항목 / 문서의 기재 / 현장 관찰 / 자료 날짜·버전 / 차이 / 확인 담당자 / 확인 상태</code>를 기록합니다.</li><li>문서 간 표시가 다르거나 변경 이력이 비어 있으면, 어느 문서가 기준인지 스스로 선택하지 말고 관련 문서와 질문을 묶어 담당자에게 보냅니다.</li><li>공사·운영·거래 결정이 필요한 경우, 확인되지 않은 차이를 먼저 공유하고 답변·결정·근거 문서의 위치를 기록합니다.</li></ol></section>
+  </div>
+  <aside class="pause"><strong>잠깐 멈추고 검토할 때</strong><p>관할 기관의 시정·보완·중지 등 공식 통지나 답변을 받았을 때 · 현재 도면과 현장 상태가 다르거나 어떤 버전이 유효한지 확인되지 않을 때 · 공사·사용·매매 등 일정이 임박했는데 확인할 담당자나 의사결정자가 정해지지 않았을 때 · 안전에 영향을 줄 수 있는 현장 상태를 발견했을 때</p></aside>
+  <div class="sources"><p><strong>원자료:</strong> 건축 관련 문서와 공사 단계가 함께 등장하는 원문의 주제 범위만 참고했습니다.</p><p><strong>검토일:</strong> 2026-10-30</p><p><strong>미확인·제한:</strong> 건축법·국토계획법 조문, 허가·신고 요건, 신고·사용승인 절차, 제재 기준·금액·횟수, 판례 및 권리효과는 검증하거나 주장하지 않았습니다.</p><p><strong>변경 기록:</strong> 법률 결론을 모두 제외하고 문서 버전·현장 관찰·불일치·인계 기록 절차로 새로 작성했습니다.</p></div>
+  <p class="disclaimer">일반적인 실무 참고자료입니다. 개별 사안에서는 사실관계와 적용 기준을 확인하세요.</p>
+</main>
+</body>
+</html>
