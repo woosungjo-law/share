@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>침해사고 대응, 로그 체계가 비용을 가른다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>침해사고 대응, 로그 체계가 비용을 가른다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 침해사고에서 가장 비싼 것은 대응 인건비가 아니라 <b>증명하지 못하는 것</b>이다. 접속기록·관리자 로그·DB 감사로그가 없으면 원인과 손해 범위를 밝히지 못하고, <b>밝히지 못한 쪽이 불이익을 진다</b>. 방어의 첫 문장은 "우리는 조치했다"가 아니라 <b>"우리는 기록을 보관하고 있었다"</b>다. 로그 체계와 권한 체계는 별개 과제가 아니라 <b>하나의 계획</b>이다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      임도현은 너울물류를 운영하는 대표다. 시스템 침해 사고가 났는데, 로그가 제대로 남아 있지 않아 원인과 손해 규모를 밝히지 못했다. 대응 비용은 쌓이는데 결론은 나지 않았다. 임도현은 <b>로그를 지키지 못한 대가가 얼마인지</b>를 먼저 알아야 한다고 봤다. 그는 없는 구간의 사유가 <b>보존 기간 때문인지 기술 때문인지</b>를 나눠 보게 했다. 권한 관리도 함께 봤다. 퇴사자 계정과 승인 절차가 있었는지가 함께 문제될 수 있기 때문이다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, <b>보존 의무</b>다. 접속기록과 관리자 로그, DB 감사로그가 없어 원인과 손해범위를 밝히지 못하면, 접속기록 보존과 입증불이익, 내부통제 책임이 문제된다. 개인정보보호법 제30조가 그 기준에 있다. 개인정보 처리자는 접속기록을 일정 기간 보존해야 한다. <b>보존 체계가 있었는지를 보여주는 일</b>이 첫 번째 방어다.</p>
+    <p>둘째, <b>안전조치</b>다. 최소권한과 다중 인증, 권한 승인과 퇴사자 계정 회수가 부실해 침입을 허용하면, 안전조치와 권한관리, 보안관리 과실이 문제된다. 개인정보보호법 제29조가 그 근거다. 개인정보 처리자의 안전조치에는 접근 권한과 계정 관리가 포함된다. <b>계정 하나가 남아 있는지</b>가 사고의 출발점이 될 수 있다.</p>
+    <div class="callout">
+      <b>입증의 방향.</b> 기록이 없으면 원인을 밝히지 못한 쪽이 불이익을 진다. 접속기록의 보관 체계가 있었다는 것을 보여주지 못하면, 로그 부재의 사유를 설명하는 부담이 따른다. 계정 관리의 흔적이 없으면 안전조치의 부실로 평가될 수 있다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>놓치기 쉬운 조건과 예외</h2>
+    <p>로그 부재의 사유를 나누는 것이 조건이다. <b>보존 기간의 문제인지 기술의 문제인지</b>에 따라 대응이 달라진다. 종류별로 보관 현황을 나눠 본다. 권한 흔적도 조건이다. 승인 내역과 회수 기록이 있어야 부실을 벗어난다.</p>
+    <p>투자 순서를 정할 때는 로그 보관 체계와 권한 관리 체계를 함께 본다. <b>한쪽만 고치고 다른 쪽을 비워 두면</b> 다음 사고에서 같은 대가를 치른다. 보존 기간이 지난 기록은 왜 지워졌는지를 설명할 수 있어야 한다. 기간 경과 삭제를 정한 내부 기준이 있었는지가 관건이다. 처음부터 남기지 않은 구간은 기술 사유를 구체적으로 밝혀야 한다.</p>
+    <ul class="points">
+      <li>보관 주체·보관 위치·보관 기간이 정리되지 않으면 "체계가 있다"고 말할 수 없다.</li>
+      <li>퇴사일과 계정 회수일을 대조한다. 하루의 간격이 곧 취약 구간이다.</li>
+      <li>승인자와 승인 시점을 묶어 관리해야 안전조치가 흔적으로 남는다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>체계 투자와 대응 순서를 정한다.</b> 임도현이 세운 기준은 다음과 같다.</p>
+      <ol>
+        <li><b>① 보관을 본다</b> — 접속·관리자·DB 로그의 보관 현황을 확인한다(개인정보보호법 제30조).</li>
+        <li><b>② 보존을 본다</b> — 접속기록의 일정 기간 보관을 확인한다(개인정보보호법 제30조).</li>
+        <li><b>③ 사유를 나눈다</b> — 보존 기간 문제와 기술 문제를 구분한다.</li>
+        <li><b>④ 승인을 본다</b> — 최소권한·다중 인증·권한 승인을 점검한다(개인정보보호법 제29조).</li>
+        <li><b>⑤ 계정을 본다</b> — 퇴사자 계정 회수와 권한 관리를 확인한다(개인정보보호법 제29조).</li>
+        <li><b>⑥ 투자를 묶는다</b> — 로그 체계와 권한 체계를 같은 계획에 둔다.</li>
+        <li><b>⑦ 비용을 가늠한다</b> — 입증불이익과 내부통제 책임을 전제로 본다.</li>
+        <li><b>⑧ 현황표를 만든다</b> — 종류별 보관 현황과 없는 구간의 사유를 표에 둔다.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;">임도현은 로그 종류별 보관 현황과 권한 승인·계정 회수 기록을 보고받아 표로 정리하게 했다. 없는 구간의 사유를 나눠 적게 했고, <b>보존 체계와 권한 체계에 대한 투자를 같은 계획에 묶었다</b>. 승인 내역과 회수 기록은 날짜 순서로 묶어 달라고 했다. <b>입증불이익과 내부통제 책임을 전제로 대응 비용을 가늠</b>하게 한 것이다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
