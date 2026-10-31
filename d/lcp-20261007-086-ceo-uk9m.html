@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>유치권 주장, 점유와 대항력의 요건을 본다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>유치권 주장, 점유와 대항력의 요건을 본다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 유치권은 <b>채권과 점유가 함께 있어야</b> 성립한다. 그리고 경락인이 유치권을 인수하는 구조(민사집행법 제91조 제5항)에서는 <b>점유 요건이 곧 가격</b>이 된다. 판단 기준은 두 개다. 점유를 계속 유지하고 있는가(민법 제328조), 그리고 <b>담보권 설정 전에</b> 점유를 취득했는가(민법 제320조). 시점 비교표가 없으면, 이 다툼은 감으로 하게 된다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      서이든은 건설사를 운영하는 대표다. 공사를 마쳤지만 대금을 받지 못한 채 경매가 시작됐고, 현장을 점유한 업체가 유치권을 주장했다. 경락을 노리던 쪽은 점유 요건을 의심했다. 서이든은 <b>유치권이 성립하려면 무엇이 필요한지</b>부터 확인해야 한다고 봤다. 그는 언제 점유가 시작됐고 담보권이 언제 설정됐는지를 맞춰 보는 일을 먼저 시켰다. 그리고 <b>유치권이 인정되면 경락가격이 낮아지고 그 부담이 경락인에게 넘어간다</b>는 점을 먼저 이해했다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, <b>점유의 유지</b>다. 민법 제328조에 따르면 유치권자는 목적물을 점유해야 하며, 점유를 상실하면 유치권도 소멸한다. 직접 점유든 간접 점유든 가능하지만, 임의로 철수하거나 도급인의 동의로 건물을 인도하면 점유 상실로 본다.</p>
+    <p>둘째, <b>점유의 적법성, 즉 대항력</b>이다. 민법 제320조에 따르면 불법행위로 인한 점유나 담보권자의 동의 없는 점유에서 취득한 유치권은 담보권자에게 대항할 수 없다. 대법원 2011다55214 취지는 저당권 설정 후에 점유를 취득한 경우 저당권자나 경락인에게 유치권을 대항할 수 없다고 본다. <b>시점의 선후</b>가 결론을 뒤집는다.</p>
+    <p>셋째, <b>인수주의</b>다. 경매에서는 인수주의가 적용된다. 민사집행법 제91조 제5항에 따라 유치권은 경락인이 인수한다. 그래서 허위 신고는 형법 제315조의 경매방해죄로 문제될 수 있다.</p>
+    <div class="callout">
+      <b>경영 판단의 전제.</b> 유치권 부담을 안은 채 경락에 나설지, 협상으로 채권을 정리할지를 가르는 기준이 필요하다. 인수주의 아래에서는 유치권 부담이 경락가격에 반영되므로, 부담이 큰 경매에 무리하게 들어가기보다 <b>채권과 점유의 실재를 먼저 따져</b> 방향을 정하는 편이 낫다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>놓치기 쉬운 조건과 예외</h2>
+    <p>쟁점은 <b>점유 개시 시점과 담보권 설정 시점의 선후</b>다. 착공일 증빙과 현장일지가 그 순서를 보여 준다. 점유를 유지하려면 관리 기록을 남겨야 하고, 도급인의 퇴거 요청을 무시하면 불법점유로 평가될 수 있다.</p>
+    <p>점유보조자를 두고 관리 흔적을 남기면 점유 유지가 분명해진다. 반대로 점유의 적법성이 무너지면 대항력도 함께 무너지므로, <b>퇴거 요청을 받은 뒤의 대응 기록</b>이 특히 중요하다. 허위 유치권 신고는 경매방해죄로 문제될 수 있으므로, 채권과 점유의 실재 여부를 확인하는 일이 무엇보다 중요하다.</p>
+    <ul class="points">
+      <li>채권이 없거나 점유가 없으면 주장은 힘을 잃는다. 두 요소를 나눠 확인한다.</li>
+      <li>임의 철수 한 번으로 유치권이 소멸한다. 현장 통제권을 물리적으로 유지해야 한다.</li>
+      <li>점유 계속 증거가 확보되지 않으면, 비용을 더 쓰기 전에 협상 순서를 다시 짜야 한다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>요건과 대응을 나눠 정한다.</b> 서이든이 세운 기준은 다음과 같다.</p>
+      <ol>
+        <li><b>① 점유 유지를 본다</b> — 점유가 상실되지 않았는지 확인한다(민법 제328조).</li>
+        <li><b>② 대항력을 따진다</b> — 담보권 설정 전후로 점유를 취득했는지 확인한다(민법 제320조).</li>
+        <li><b>③ 시점을 대조한다</b> — 착공일과 담보권 설정일의 선후를 확인한다(대법원 2011다55214).</li>
+        <li><b>④ 허위 여부를 본다</b> — 채권과 점유가 실재하는지 확인한다(형법 제315조).</li>
+        <li><b>⑤ 관리 기록을 남긴다</b> — 점유보조자 배치와 관리 흔적으로 점유 유지를 뒷받침한다.</li>
+        <li><b>⑥ 대응 순서를 정한다</b> — 채권·점유 실재 확인을 협상에 앞세운다.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;">서이든은 점유와 시점, 대항력을 구분해 확인하는 절차를 세우고, 유치권 주장에는 채권과 점유의 실재 여부를 근거로 대응하도록 했다. 시점 비교표를 만들어 경매 자료와 대조하게 했고, <b>유치권 부담을 안은 채 경락에 나설지, 협상으로 채권을 정리할지</b>를 가르는 기준도 함께 세웠다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
