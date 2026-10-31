@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>낡은 간판에 다쳤다면, 그 건물 주인이 다 물어 줄까?</title>
+<!-- sc-template v3 · 렌더러: _tools/sc.py build · 이 파일을 직접 고치지 말고 00_운영/app_template.html 과 시나리오 노트를 고친다 -->
+<style>
+  :root{
+    --navy:#12233f; --navy-deep:#0a1626; --accent:#c9a24b; --bg:#f4f5f7; --card:#ffffff;
+    --text:#1e232b; --muted:#5f6673; --line:#e5e7eb;
+    --g-high:#1f7a4d; --g-mid:#b7791f; --g-check:#4a5568;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    background:var(--bg);color:var(--text);min-height:100vh;
+    display:flex;align-items:flex-start;justify-content:center;padding:16px;line-height:1.55;
+    word-break:keep-all;overflow-wrap:anywhere;
+  }
+  .app{width:100%;max-width:480px;background:var(--card);border-radius:18px;box-shadow:0 8px 30px rgba(18,35,63,.12);overflow:hidden;display:flex;flex-direction:column;min-height:560px;}
+  .topbar{background:var(--navy);color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;font-size:13px;}
+  .topbar .brand{font-weight:700;letter-spacing:.02em;}
+  .progress-wrap{height:4px;background:var(--line);width:100%;}
+  .progress-bar{height:100%;background:var(--accent);width:0%;transition:width .25s ease;}
+  .screen{flex:1;padding:26px 22px 22px;display:none;flex-direction:column;animation:fadeIn .22s ease;}
+  .screen.active{display:flex;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+
+  .intro-icon{font-size:38px;margin-bottom:12px;}
+  .intro h1{font-size:22px;line-height:1.4;color:var(--navy-deep);margin-bottom:12px;}
+  .myth{background:#fbf6ea;border-left:4px solid var(--accent);border-radius:8px;padding:12px 14px;margin-bottom:14px;font-size:13.5px;color:#4a3d16;}
+  .myth b{display:block;font-size:11px;letter-spacing:.04em;color:#8a6d1f;margin-bottom:3px;}
+  .intro p{color:var(--muted);font-size:14px;margin-bottom:16px;}
+  .meta{font-size:12px;color:var(--muted);margin-bottom:20px;display:flex;gap:8px;flex-wrap:wrap;}
+  .meta span{background:var(--bg);padding:4px 10px;border-radius:20px;}
+
+  .q-count{font-size:12px;color:#8a6d1f;font-weight:700;margin-bottom:8px;letter-spacing:.03em;}
+  .q-text{font-size:19px;font-weight:700;color:var(--navy-deep);margin-bottom:8px;line-height:1.45;}
+  .q-why{font-size:12.5px;color:var(--muted);margin-bottom:18px;}
+  .options{display:flex;flex-direction:column;gap:10px;margin-top:10px;}
+  .opt-btn{text-align:left;background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;font:inherit;font-size:14.5px;color:var(--text);cursor:pointer;transition:all .15s ease;min-height:44px;width:100%;}
+  .opt-btn:hover,.opt-btn:active,.opt-btn:focus-visible{border-color:var(--accent);background:#fbf6ea;outline:none;}
+  .opt-btn.primary{text-align:center;font-weight:700;background:var(--navy);color:#fff;border:none;}
+  .opt-btn.primary:hover,.opt-btn.primary:focus-visible{background:var(--navy-deep);}
+  .back-btn{margin-top:14px;background:none;border:none;color:var(--muted);font-size:12.5px;text-align:left;cursor:pointer;min-height:36px;text-decoration:underline;}
+
+  .grade{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#fff;padding:5px 12px;border-radius:20px;margin-bottom:10px;width:fit-content;}
+  .grade.high{background:var(--g-high);} .grade.mid{background:var(--g-mid);} .grade.check{background:var(--g-check);}
+  .outcome-tag{display:inline-block;font-size:11px;font-weight:700;color:var(--navy);background:#eef1f6;padding:4px 10px;border-radius:20px;margin-bottom:10px;margin-left:6px;}
+  .outcome h2{font-size:18px;color:var(--navy-deep);margin-bottom:14px;line-height:1.5;}
+  .block{margin-bottom:15px;}
+  .block-label{font-size:12px;font-weight:700;color:#8a6d1f;margin-bottom:5px;letter-spacing:.02em;}
+  .block-body{font-size:13.5px;color:var(--text);}
+  .share-summary{font-size:13.5px;color:var(--text);white-space:pre-line;background:#fbf6ea;border:1px solid #ead9ad;border-left:4px solid var(--accent);border-radius:10px;padding:12px 14px;}
+  .basis-details{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:#fafbfc;margin-bottom:15px;}
+  .basis-details summary{cursor:pointer;color:#3b4250;font-size:13px;font-weight:700;}
+  .basis-details .block-body{margin-top:9px;}
+  .chips{display:flex;flex-direction:column;gap:5px;margin-bottom:6px;}
+  .chip{font-size:12.5px;background:var(--bg);border-radius:8px;padding:6px 10px;color:#3b4250;}
+  .why-line{font-size:13.5px;}
+  .vs{display:grid;gap:6px;}
+  .vs div{font-size:13px;border-radius:8px;padding:9px 12px;}
+  .vs .m{background:#f6ecec;color:#7a2f2f;} .vs .f{background:#e9f4ee;color:#1d5b3a;}
+  .vs b{display:block;font-size:10.5px;letter-spacing:.05em;margin-bottom:2px;}
+  .checklist{list-style:none;display:flex;flex-direction:column;gap:6px;}
+  .checklist li{font-size:13.5px;padding-left:22px;position:relative;}
+  .checklist li::before{content:"☐";position:absolute;left:0;color:#8a6d1f;}
+  .disclaimer{font-size:12px;color:var(--muted);background:var(--bg);border-radius:10px;padding:12px 14px;margin-bottom:14px;}
+  .actions{display:flex;flex-direction:column;gap:8px;margin-bottom:14px;}
+  .ghost-btn{background:transparent;border:1.5px solid var(--line);color:#3b4250;border-radius:10px;padding:11px;font:inherit;font-size:13px;cursor:pointer;min-height:44px;text-align:center;text-decoration:none;display:block;}
+  .ghost-btn:hover,.ghost-btn:focus-visible{border-color:var(--accent);outline:none;}
+  .cta-box{background:var(--navy);color:#fff;border-radius:12px;padding:16px 18px;font-size:13.5px;margin-top:auto;}
+  .cta-box strong{color:var(--accent);} .cta-box a{color:#fff;text-decoration:underline;}
+  .footer-mark{text-align:center;font-size:11px;color:var(--muted);padding:10px 0 16px;}
+  button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px;}
+  @media (max-width:380px){ .screen{padding:22px 16px 18px;} .q-text{font-size:18px;} }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topbar"><span class="brand">법률 자가진단</span><span id="progress-label"></span></div>
+  <div class="progress-wrap"><div class="progress-bar" id="progress-bar"></div></div>
+  <div class="screen active" id="screen"></div>
+  <div class="footer-mark" id="footer"></div>
+</div>
+
+<script id="sc-data" type="application/json">{"hook": "낡은 간판에 다쳤다면, 그 건물 주인이 다 물어 줄까?", "myth": "시설물에 하자가 있었다면 배상은 당연히 다 받는다", "teaser": "하자가 있었다는 사실만으로 배상이 정해지지는 않습니다 — 그 하자 때문에 다쳤다는 고리, 그리고 사고 당시 내 행동까지 함께 봅니다.", "icon": "🏗️", "time": "약 1분", "start": "Q1", "nq_min": 3, "nq_max": 5, "cta_lawyer": "조우성 변호사", "cta_email": "law@mustknow.co.kr", "disclaimer": "이 진단은 일반적인 법률 정보 안내이며, 구체적인 사안은 개별 상담을 통해 확인해야 합니다.", "mother_url": "", "questions": {"Q1": {"text": "다치게 한 시설물은 어느 쪽에 가깝나요?", "why": "설치나 보존에 하자가 문제 되면, 건물에 붙은 구조물이든 딸린 시설이든 같은 규정이 적용돼요.", "options": [{"label": "간판·차양·외벽처럼 건물에 붙은 구조물", "next": "Q2"}, {"label": "계단·바닥·수목·조경처럼 건물에 딸린 시설", "next": "Q2"}]}, "Q2": {"text": "사고가 나기 전, 그 시설물의 상태는 어땠나요?", "why": "사고 전에 그 하자를 알 수 있었는지가 배상의 출발점이에요.", "options": [{"label": "기울거나 부식되고 깨진 흔적이 뚜렷했다", "next": "Q3"}, {"label": "낡아 보였지만 사고 전까지는 문제가 없어 보였다", "next": "Q3"}, {"label": "사고가 나고 나서야 그 상태를 알았다", "next": "Q3"}]}, "Q3": {"text": "사고는 어떤 식으로 났나요?", "why": "같은 사고라도 시설물의 하자 때문에 다친 것인지에 따라 결론이 갈려요.", "options": [{"label": "시설물이 떨어지거나 부서지면서 다쳤다", "next": "Q4"}, {"label": "시설물은 멀쩡했는데 내가 넘어지거나 부딪혔다", "next": "E"}, {"label": "다른 사람·공사 등 다른 원인이 섞였거나, 잘 모르겠다", "next": "F"}]}, "Q4": {"text": "사고 당시 그 자리에 출입 통제나 안내 표시가 있었나요?", "why": "사고 당시 내 행동은 배상 범위를 정할 때 참작될 수 있어요.", "options": [{"label": "통제 표시를 알고도 들어갔다", "next": "D"}, {"label": "못 봤거나, 있었는지 기억나지 않는다", "next": "Q5"}]}, "Q5": {"text": "그 시설물을 관리하거나 소유한 사람이 누구인지 확인했나요?", "why": "청구할 상대가 점유자인지 소유자인지가 먼저 정해져야 해요.", "options": [{"label": "소유자(건물주)를 알고 있고 이야기해 본 적이 있다", "next": "A"}, {"label": "임차인·관리업체가 얽혀 있거나, 아직 누구인지 확인하지 못했다", "next": "G"}]}}, "outcomes": {"A": {"grade": "high", "tag": "배상 청구 검토", "title": "하자로 인한 사고이고 내 행동에 문제가 없었다면, 배상 책임을 물을 가능성이 높은 상황이에요.", "why": "시설물의 하자 때문에 다쳤고, 출입 통제를 알고 들어간 사정도 없다고 답하셨어요.", "fact": "하자가 있었다는 사실만으로 끝나지 않고, 그 하자가 실제로 사고를 일으켰다는 점까지 정리되어 있을 때 청구가 단단해집니다.", "basis": "민법 제758조 제1항은 공작물의 설치 또는 보존의 하자로 타인에게 손해를 가한 때에는 공작물점유자가 배상할 책임이 있고, 점유자가 손해의 방지에 필요한 주의를 해태하지 않은 때에는 소유자가 배상할 책임이 있다고 정합니다. 여기서 말하는 손해는 하자와 관련한 위험이 현실화되어 발생한 손해를 뜻하며, 소유자의 무과실책임이라도 모든 손해를 예외 없이 부담시키는 것은 아닙니다.", "caution": "청구한 금액 전부가 그대로 인정된다고 단정할 수는 없어요. 사고 경위와 관리 상태에 따라 배상 범위가 달라질 수 있습니다.", "checklist": ["현장 기록: 다친 부위와 하자로 보이는 부분을 사진과 날짜로 남기세요.", "고리 정리: 하자의 위험이 현실화되어 다쳤다는 점을 보여 줄 사고 경위를 메모하세요.", "과실 정리: 사고 당시 내 행동에 원인이 있었는지도 빠짐없이 적어 두세요.", "상대 확인: 점유자·소유자, 관리업체 중 누가 관리하는지 계약서와 등기로 확인하세요."], "share_summary": "판단 이유: 시설물의 하자 때문에 다쳤고, 출입 통제를 알고 들어간 사정도 없다고 답하셨어요.\n지금 할 일: 다친 부위와 하자로 보이는 부분을 사진과 날짜로 남기세요. / 하자의 위험이 현실화되어 다쳤다는 점을 보여 줄 사고 경위를 메모하세요. / 점유자·소유자, 관리업체 중 누가 관리하는지 계약서와 등기로 확인하세요.\n주의: 청구한 금액 전부가 그대로 인정된다고 단정할 수는 없어요. 사고 경위와 관리 상태에 따라 배상 범위가 달라질 수 있습니다.\n", "disclaimer": "", "cta": ""}, "D": {"grade": "mid", "tag": "내 행동도 함께 봅니다", "title": "사고 당시 내 행동이 배상 범위에 반영될 수 있는 상황이에요.", "why": "통제 표시를 알고도 들어갔다고 답하셨어요.", "fact": "시설물 주인의 책임만 남는 것이 아니라, 통제를 무시한 사정도 함께 저울에 올라갑니다.", "basis": "민법 제758조가 시설물 점유자·소유자에게 배상 책임을 지우면서도, 판례는 피해자에게 손해의 발생이나 확대에 과실이 있거나 책임을 제한할 사유가 있으면 배상 범위를 정할 때 이를 참작하여야 한다고 봅니다(대법원 2022다233713 판결). 참작 비율을 정하는 일은 원칙적으로 사실심의 판단 영역입니다.", "caution": "내 과실이 어느 정도 반영될지는 사고 경위에 따라 달라져, 처음부터 사실관계를 정리해 두는 편이 낫습니다.", "checklist": ["사고 당시 들어간 경위와 통제 표시를 본 시점을 시간 순서대로 적어 두세요.", "치료비·휴업 손해 등 실제 지출 자료를 모아 두세요.", "상대와 이야기할 때 하자 문제와 내 사정을 함께 놓고 범위를 정하세요."], "share_summary": "판단 이유: 통제 표시를 알고도 들어갔다고 답하셨어요.\n지금 할 일: 사고 당시 들어간 경위와 통제 표시를 본 시점을 시간 순서대로 적어 두세요. / 치료비·휴업 손해 등 실제 지출 자료를 모아 두세요. / 상대와 이야기할 때 하자 문제와 내 사정을 함께 놓고 범위를 정하세요.\n주의: 내 과실이 어느 정도 반영될지는 사고 경위에 따라 달라져, 처음부터 사실관계를 정리해 두는 편이 낫습니다.\n", "disclaimer": "", "cta": ""}, "E": {"grade": "mid", "tag": "고리 확인 필요", "title": "하자와 사고를 잇는 고리가 약해 보이는 상황이에요.", "why": "시설물은 멀쩡했는데 내가 넘어지거나 부딪혔다고 답하셨어요.", "fact": "낡은 시설물이 있었다는 사실과 그 낡음 때문에 다쳤다는 판단은 같은 말이 아닙니다.", "basis": "민법 제758조 제1항에 따른 손해는 공작물의 하자와 관련한 위험이 현실화되어 발생한 손해를 말합니다. 하자가 있었더라도 그 하자와 무관한 위험이 현실화된 것이라면 이 규정의 손해로 보기 어려울 수 있으므로, 사고 당시 상황을 구체적으로 정리해 두는 것이 중요합니다.", "caution": "고리가 약하면 배상 청구 자체가 다툼이 될 수 있어, 원인을 단정하지 말고 자료로 확인하세요.", "checklist": ["사고 지점의 바닥·계단 상태를 사진과 날짜로 남기세요.", "신발·조명·장애물 등 다른 원인이 될 만한 사정을 메모하세요.", "병원 기록과 현장 사진이 서로 어긋나지 않는지 확인하세요."], "share_summary": "판단 이유: 시설물은 멀쩡했는데 내가 넘어지거나 부딪혔다고 답하셨어요.\n지금 할 일: 사고 지점의 바닥·계단 상태를 사진과 날짜로 남기세요. / 신발·조명·장애물 등 다른 원인이 될 만한 사정을 메모하세요. / 병원 기록과 현장 사진이 서로 어긋나지 않는지 확인하세요.\n주의: 고리가 약하면 배상 청구 자체가 다툼이 될 수 있어, 원인을 단정하지 말고 자료로 확인하세요.\n", "disclaimer": "", "cta": ""}, "F": {"grade": "check", "tag": "자료 확인 먼저", "title": "다친 원인과 시설물 상태를 더 확인해야 하는 상황이에요.", "why": "다른 원인이 섞였거나 하자 때문에 다친 것인지 아직 판단하기 어렵다고 답하셨어요.", "fact": "누가 책임질지 정하기 전에, 무엇 때문에 다쳤는지를 먼저 가려야 합니다.", "basis": "민법 제758조 제1항은 공작물의 설치 또는 보존의 하자로 손해가 발생한 경우를 전제로 합니다. 하자가 있었는지, 그 하자가 손해의 원인이 되었는지는 사고 현장과 치료 기록을 대조해 확인할 영역입니다.", "caution": "원인을 서둘러 단정하면 청구 상대를 잘못 정할 수 있어, 자료를 모은 뒤 판단하는 편이 안전합니다.", "checklist": ["사고 직후 촬영한 현장 사진과 목격자 연락처를 모으세요.", "진단서와 치료 기록으로 다친 부위와 시기를 정리하세요.", "시설물 관리·점검 기록이 있는지 관리 주체에 요청해 보세요."], "share_summary": "판단 이유: 다른 원인이 섞였거나 하자 때문에 다친 것인지 아직 판단하기 어렵다고 답하셨어요.\n지금 할 일: 사고 직후 촬영한 현장 사진과 목격자 연락처를 모으세요. / 진단서와 치료 기록으로 다친 부위와 시기를 정리하세요. / 시설물 관리·점검 기록이 있는지 관리 주체에 요청해 보세요.\n주의: 원인을 서둘러 단정하면 청구 상대를 잘못 정할 수 있어, 자료를 모은 뒤 판단하는 편이 안전합니다.\n", "disclaimer": "", "cta": ""}, "G": {"grade": "check", "tag": "청구 상대 정리", "title": "누구에게 책임을 물을지(점유자·소유자·관리업체)를 먼저 정리해야 하는 상황이에요.", "why": "임차인·관리업체가 얽혀 있거나 아직 관리 주체를 확인하지 못했다고 답하셨어요.", "fact": "건물주에게만 물을 수 있는 것이 아니라, 관리·시공 주체에 따라 최종 부담하는 사람이 달라질 수 있습니다.", "basis": "민법 제758조 제1항은 원칙적으로 공작물점유자가 배상할 책임을 지고, 점유자가 손해의 방지에 필요한 주의를 해태하지 않은 때에는 소유자가 책임을 진다고 정합니다. 같은 조 제3항은 점유자나 소유자가 그 손해의 원인에 책임 있는 자에게 구상권을 행사할 수 있다고 규정합니다.", "caution": "상대를 잘못 정하면 절차가 길어질 수 있어, 서류로 확인한 뒤 청구하는 편이 낫습니다.", "checklist": ["임대차계약서·등기부로 소유자와 점유자를 확인하세요.", "관리업체나 시공사가 따로 있으면 계약 관계를 확인하세요.", "현장 안내문·점검표에 적힌 관리 주체 이름을 사진으로 남기세요."], "share_summary": "판단 이유: 임차인·관리업체가 얽혀 있거나 아직 관리 주체를 확인하지 못했다고 답하셨어요.\n지금 할 일: 임대차계약서·등기부로 소유자와 점유자를 확인하세요. / 관리업체나 시공사가 따로 있으면 계약 관계를 확인하세요. / 현장 안내문·점검표에 적힌 관리 주체 이름을 사진으로 남기세요.\n주의: 상대를 잘못 정하면 절차가 길어질 수 있어, 서류로 확인한 뒤 청구하는 편이 낫습니다.\n", "disclaimer": "", "cta": ""}}}</script>
+<script>
+"use strict";
+var D = JSON.parse(document.getElementById("sc-data").textContent);
+var GRADE = {high:"가능성 높음", mid:"살펴볼 것", check:"확인 필요"};
+var screenEl = document.getElementById("screen");
+var pathStack = [];          // [{qid, qtext, label}]
+
+function h(tag, cls, text){
+  var e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(text !== undefined && text !== null) e.textContent = text;
+  return e;
+}
+function clearScreen(){ while(screenEl.firstChild) screenEl.removeChild(screenEl.firstChild); screenEl.className = "screen active"; window.scrollTo(0,0); }
+
+function setProgress(step, done){
+  var bar = document.getElementById("progress-bar");
+  var lab = document.getElementById("progress-label");
+  if(done){ bar.style.width = "100%"; lab.textContent = "진단 완료"; return; }
+  if(step === 0){ bar.style.width = "0%"; lab.textContent = ""; return; }
+  bar.style.width = Math.min(100, Math.round(step / D.nq_max * 100)) + "%";
+  lab.textContent = "질문 " + step;
+}
+
+function showIntro(){
+  pathStack = []; clearScreen(); setProgress(0);
+  var wrap = h("div","intro");
+  wrap.appendChild(h("div","intro-icon", D.icon || "⚖️"));
+  wrap.appendChild(h("h1","", D.hook));
+  if(D.myth){
+    var m = h("div","myth"); m.appendChild(h("b","","많은 분들이 이렇게 알고 있어요")); m.appendChild(document.createTextNode("“" + D.myth + "”"));
+    wrap.appendChild(m);
+  }
+  if(D.teaser) wrap.appendChild(h("p","", D.teaser));
+  var meta = h("div","meta");
+  [D.time || "약 1분", "객관식 질문 최대 " + D.nq_max + "개", "답변은 저장·전송되지 않아요"].forEach(function(t){ meta.appendChild(h("span","",t)); });
+  wrap.appendChild(meta);
+  var b = h("button","opt-btn primary","진단 시작하기"); b.type = "button";
+  b.onclick = function(){ goTo(D.start); };
+  wrap.appendChild(b);
+  screenEl.appendChild(wrap);
+}
+
+function goTo(id){
+  if(D.outcomes[id]) return showOutcome(id);
+  showQuestion(id);
+}
+
+function showQuestion(qid){
+  var q = D.questions[qid];
+  clearScreen();
+  var step = pathStack.length + 1;
+  setProgress(step);
+  screenEl.appendChild(h("div","q-count","질문 " + step));
+  screenEl.appendChild(h("div","q-text", q.text));
+  if(q.why) screenEl.appendChild(h("div","q-why", q.why));
+  var box = h("div","options");
+  q.options.forEach(function(o){
+    var b = h("button","opt-btn", o.label); b.type = "button";
+    b.onclick = function(){ pathStack.push({qid:qid, qtext:q.text, label:o.label}); goTo(o.next); };
+    box.appendChild(b);
+  });
+  screenEl.appendChild(box);
+  var back = h("button","back-btn", pathStack.length ? "← 이전 질문으로" : "← 처음으로"); back.type = "button";
+  back.onclick = function(){
+    if(!pathStack.length) return showIntro();
+    var last = pathStack.pop(); showQuestion(last.qid);
+  };
+  screenEl.appendChild(back);
+}
+
+function copyText(text, btn){
+  function ok(){ var o = btn.textContent; btn.textContent = "복사했어요 ✓"; setTimeout(function(){ btn.textContent = o; }, 1800); }
+  function fallback(){
+    var t = document.createElement("textarea"); t.value = text; t.style.position = "fixed"; t.style.opacity = "0";
+    document.body.appendChild(t); t.select();
+    try{ document.execCommand("copy"); ok(); }catch(e){ btn.textContent = "복사 실패 — 직접 선택해 주세요"; }
+    document.body.removeChild(t);
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(ok, fallback); } else { fallback(); }
+}
+
+function block(label, bodyNode){
+  var b = h("div","block"); b.appendChild(h("div","block-label",label)); b.appendChild(bodyNode); return b;
+}
+
+function cleanOne(s){ return String(s || "").replace(/\s+/g," ").trim(); }
+function shortLegal(s){
+  var x = cleanOne(s);
+  if(x.length <= 220) return x;
+  return x.slice(0,220).replace(/[\s,，;；:：]+[^\s]*$/g,"") + "…";
+}
+function fallbackShare(o){
+  var acts = (o.checklist || []).slice(0,3).map(function(x){ return cleanOne(x); }).filter(Boolean);
+  return [
+    "판단 이유: " + cleanOne(o.why),
+    "지금 할 일: " + acts.join(" / "),
+    "주의: " + cleanOne(o.caution)
+  ].join("\n");
+}
+function copySummaryText(o){
+  var answers = pathStack.map(function(p){ return cleanOne(p.label); }).filter(Boolean).join(" / ");
+  var summary = cleanOne(o.share_summary) ? o.share_summary : fallbackShare(o);
+  return [
+    "[법률 자가진단] " + cleanOne(D.hook),
+    "내 답변: " + (answers || "기록 없음"),
+    "결과: " + GRADE[o.grade] + " — " + cleanOne(o.title),
+    summary,
+    "법적 근거: " + shortLegal(o.basis),
+    "※ " + cleanOne(o.disclaimer || D.disclaimer),
+    "진단 링크: " + location.href
+  ].join("\n");
+}
+
+function showOutcome(oid){
+  var o = D.outcomes[oid];
+  clearScreen(); setProgress(0, true);
+  var head = h("div");
+  var g = h("span","grade " + o.grade, "● " + GRADE[o.grade]);
+  head.appendChild(g);
+  if(o.tag) head.appendChild(h("span","outcome-tag", o.tag));
+  screenEl.appendChild(head);
+  var wrap = h("div","outcome");
+  wrap.appendChild(h("h2","", o.title));
+
+  /* 왜 이 결과인가 — 내가 고른 답 + 근거 1줄 */
+  var why = h("div");
+  var chips = h("div","chips");
+  pathStack.forEach(function(p){ chips.appendChild(h("div","chip","· " + p.label)); });
+  why.appendChild(chips);
+  why.appendChild(h("div","why-line", o.why));
+  wrap.appendChild(block("🔎 왜 이 결과인가요?", why));
+
+  if(o.share_summary || o.why || o.caution){
+    wrap.appendChild(block("🧾 한눈에 정리", h("div","share-summary", o.share_summary || fallbackShare(o))));
+  }
+
+  if(o.fact && D.myth){
+    var vs = h("div","vs");
+    var m = h("div","m"); m.appendChild(h("b","","통념")); m.appendChild(document.createTextNode(D.myth));
+    var f = h("div","f"); f.appendChild(h("b","","이 경우엔")); f.appendChild(document.createTextNode(o.fact));
+    vs.appendChild(m); vs.appendChild(f);
+    wrap.appendChild(block("💡 통념 vs 사실", vs));
+  }
+  if(o.checklist && o.checklist.length){
+    var ul = h("ul","checklist"); o.checklist.forEach(function(c){ ul.appendChild(h("li","",c)); });
+    wrap.appendChild(block("✅ 지금 해볼 것", ul));
+  }
+  wrap.appendChild(block("⚠️ 주의할 점", h("div","block-body", o.caution)));
+  var bd = document.createElement("details"); bd.className = "basis-details";
+  bd.appendChild(h("summary","","📖 법적 근거 보기"));
+  bd.appendChild(h("div","block-body", o.basis));
+  wrap.appendChild(bd);
+  wrap.appendChild(h("div","disclaimer", o.disclaimer || D.disclaimer));
+  screenEl.appendChild(wrap);
+
+  var actions = h("div","actions");
+  var cp = h("button","ghost-btn","📋 결과 요약 복사하기"); cp.type = "button";
+  cp.onclick = function(){
+    var t = copySummaryText(o);
+    copyText(t, cp);
+  };
+  actions.appendChild(cp);
+  if(D.mother_url){
+    var a = h("a","ghost-btn","📰 원문 컬럼 읽어보기"); a.href = D.mother_url; a.target = "_blank"; a.rel = "noopener"; actions.appendChild(a);
+  }
+  var rs = h("button","ghost-btn","↺ 처음부터 다시"); rs.type = "button"; rs.onclick = showIntro;
+  actions.appendChild(rs);
+  screenEl.appendChild(actions);
+
+  var cta = h("div","cta-box");
+  cta.appendChild(document.createTextNode((o.cta || "지금 상황을 구체적으로 확인하고 싶다면") + " "));
+  var s = h("strong","", D.cta_lawyer);
+  cta.appendChild(s);
+  cta.appendChild(document.createTextNode("("));
+  var ml = h("a","", D.cta_email); ml.href = "mailto:" + D.cta_email; cta.appendChild(ml);
+  cta.appendChild(document.createTextNode(")에게 문의하세요."));
+  screenEl.appendChild(cta);
+}
+
+document.getElementById("footer").textContent = "제공 : " + D.cta_lawyer + " 법률사무소";
+showIntro();
+</script>
+</body>
+</html>
