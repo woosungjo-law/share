@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>점검 대응은 버티기가 아니라, 멈출 것과 묶을 것을 정하는 일이다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>점검 대응은 버티기가 아니라, 멈출 것과 묶을 것을 정하는 일이다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 점검에서 문제가 되는 것은 자료가 없는 경우보다 <b>자료가 흩어져 있는 경우</b>다. 허가증은 경영지원실 금고에, 광고심의 결과는 마케팅팀 메일함에, 표시기재 승인본은 품질 담당자 폴더에, 상세페이지 캡처는 외주 업체 대화방에, 소비자 불만 기록은 고객센터 시스템에 있다. 이 상태에서 대표가 정할 것은 "버틸 수 있는가"가 아니라 <b>누가 언제까지 무엇을 한 묶음으로 만들 것인가, 그리고 광고 표현을 언제 멈출 것인가</b>다. 의료기기법 제24조·제28조·제31조·제34조는 각기 다른 갈래에서 자료를 요구할 수 있는 근거가 된다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      여울바이오는 의료기기 관련 제품을 다루는 회사다. 대표 천유진은 점검 통보를 받고 임원 회의를 열었는데, 보고 내용은 자료의 부재가 아니라 <b>분산</b>이었다. 다섯 곳에 흩어진 서류를 앞에 두고 천유진이 물은 것은 "누가 얼마나 빨리 묶어서 내놓을 수 있는가"였다. 그는 <b>묶음의 속도와 책임의 분명함이 성패를 가른다</b>고 봤다. 창고에 물건이 다 있는데 어느 선반에 무엇이 있는지 아무도 모르는 상태 — 점검은 그 선반 배치도를 요구하는 절차에 가깝다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>의료기기 영역의 점검에서는 광고와 품질관리, 이상사례와 회수라는 서로 다른 네 갈래에서 각각 자료 제출이 요구될 수 있다.</p>
+    <p>첫째, <b>광고 갈래</b>다. 의료기기법 제24조는 기재와 광고에서 거짓이나 오해할 염려가 있는 표현, 허가받은 내용과 다른 성능이나 효능에 관한 표현, 위해 우려가 있는 사용방법에 관한 표현을 다루는 규정이다. 허가증과 광고심의 결과, 표시기재 승인본, 상세페이지 캡처, 소비자 불만 기록이 이 규정과 함께 살필 대상이 된다.</p>
+    <p>둘째, <b>품질관리 갈래</b>다. 의료기기법 제28조는 제조와 품질관리체계에 대한 적합성인정과 관련된 규정으로 이해된다. 심사 과정과 연결되는 자료가 문제될 여지도 염두에 두는 조심스러운 접근이 필요하다.</p>
+    <p>셋째, <b>이상사례 갈래</b>다. 의료기기법 제31조는 부작용 관리와 관련된 규정으로, 보고와 기록 유지, 회수에 필요한 조치와 연결되는 대목으로 이해된다. 소비자 불만 기록과 이상사례 관련 기록이 이 규정과 관련해 함께 정리될 수 있다는 취지에서 조심스럽게 살핀다.</p>
+    <p>넷째, <b>회수 갈래</b>다. 의료기기법 제34조는 판매중지나 회수, 폐기나 공표 명령과 관련된 규정이다. 회수 경위와 판매중지 대응, 공표 대응 자료가 요구될 수 있는 갈래다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외</h2>
+    <ul class="points">
+      <li><b>광고 — 심의 문구와 게시 화면의 일치</b> — 심의받은 문구와 실제 게시 화면의 일치가 확인 대상이 되기 쉽다. 문제 표현이 발견되면 게시 중단과 수정, 재발 방지 기록까지 책임자를 정해 둔다.</li>
+      <li><b>품질관리 — 결론을 단정하지 않는다</b> — 의료기기법 제28조와 관련해 적합성인정 심사 과정과 연결될 수 있는 자료를 조심스럽게 살피는 영역이다. 특정 결론을 단정하지 않고 목록 정리 담당과 기한부터 정한다.</li>
+      <li><b>이상사례 — 누락 여부가 확인 대상</b> — 의료기기법 제31조와 관련해 보고와 기록 유지, 회수에 필요한 조치와 연결될 수 있는 대목이다. 이상 징후 기록의 누락 여부와 대응 경위가 확인 대상이다.</li>
+      <li><b>회수 — 결정권자와 중단 기준을 먼저</b> — 의료기기법 제34조와 관련해 판매중지나 회수, 폐기나 공표 명령에 대응하는 기록이 문제될 수 있는 영역이다. 판매중지 범위와 회수 실행, 공표 대응의 결정권자와 중단 기준을 미리 정해 둔다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 네 갈래 = 광고(제24조)·품질관리(제28조)·이상사례(제31조)·회수(제34조) · 갈래별로 요구 자료가 다르다 · 흩어진 자료는 갈래별로 묶어야 대응이 된다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <p style="margin-bottom:16px;"><b>중단 기준과 묶음 책임자를 정한다.</b> 천유진이 정한 것은 세 가지다.</p>
+    <ol>
+      <li><b>① 묶음 책임자를 한 사람으로 정한다</b> — 허가증부터 소비자 불만 기록까지 한 묶음으로 모으는 일을 특정 임원에게 맡기고 기한을 정한다. 제품별 증거 묶음의 책임자가 흩어져 있으면 안 된다.</li>
+      <li><b>② 광고 표현 문제 시 게시 중단 기준을 정한다</b> — 심의 문구와 다른 표현이 확인되면 즉시 게시를 멈춘다. 의료기기법 제24조와 맞물리는 확인이라는 취지에서 문서로 남긴다.</li>
+      <li><b>③ 이상사례 기록과 회수 경위의 보고선을 정한다</b> — 이상 징후로 볼 수 있는 대목은 의료기기법 제31조, 회수 대응은 제34조와 연결될 수 있다는 취지에서 조심스럽게 다루되 누락 없이 보고되게 한다.</li>
+      <li><b>④ 적합성인정 관련 목록은 목록 수준으로만</b> — 의료기기법 제28조와 관련될 수 있다는 취지에서 정리하고, 특정 결론을 단정하는 보고는 올리지 않게 한다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
