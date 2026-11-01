@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ko" data-design="N4" data-theme="light">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="협상이나 업무 조율에서 상대가 같은 요구를 거듭 말하는데, 조건을 조금 바꿔 맞춰 줘도 만족하지 않고 다음 자리에서 또 같은 말이 돌아옵니다. 요구대로 밀어주면 계속 요구가 늘 것 같고, 그대로 거절하면 관계가 상할 것 같아 맴돕니다. 반복되는 요구 뒤에 무엇이 있는지 확인하지">
+<title>상대가 같은 요구를 반복할 때 · 3MUST</title>
+<link rel="icon" href="data:,">
+<style>
+:root{color-scheme:light dark;--page:#f3eee4;--paper:#fffdf8;--ink:#292823;--muted:#6e685d;--line:#dbd3c5;--accent:#9d4f3d;--wash:#eee4d6;font-family:"Aptos","Malgun Gothic","Apple SD Gothic Neo",sans-serif}
+@media(prefers-color-scheme:dark){:root{--page:#191d1b;--paper:#222724;--ink:#ecebe3;--muted:#c1bfb4;--line:#454a43;--accent:#e0a18b;--wash:#34352e}}
+:root[data-theme="light"]{color-scheme:light;--page:#f3eee4;--paper:#fffdf8;--ink:#292823;--muted:#6e685d;--line:#dbd3c5;--accent:#9d4f3d;--wash:#eee4d6}
+:root[data-theme="dark"]{color-scheme:dark;--page:#191d1b;--paper:#222724;--ink:#ecebe3;--muted:#c1bfb4;--line:#454a43;--accent:#e0a18b;--wash:#34352e}
+*{box-sizing:border-box}body{margin:0;background:var(--page);color:var(--ink);font:16px/1.68 "Aptos","Malgun Gothic","Apple SD Gothic Neo",sans-serif}
+main{width:min(920px,100% - 32px);margin:28px auto 60px;background:var(--paper);border:1px solid var(--line);padding:clamp(22px,5vw,54px)}
+.topline{display:flex;justify-content:space-between;align-items:center;gap:16px;border-bottom:1px solid var(--line);padding-bottom:14px;color:var(--muted);font-size:.76rem;font-weight:750;letter-spacing:.1em;text-transform:uppercase}
+.theme{border:1px solid var(--line);background:var(--paper);color:var(--ink);font:inherit;font-size:.76rem;padding:6px 10px;cursor:pointer}.theme:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+h1{font:500 clamp(2rem,5.2vw,3.55rem)/1.1 "Iowan Old Style","Palatino Linotype","Batang",serif;letter-spacing:-.035em;text-wrap:balance;margin:23px 0 14px}
+.situation{font-size:1.03rem;line-height:1.75;max-width:68ch;margin:0;color:var(--ink)}.scope{margin:17px 0 0;padding:13px 16px;border-left:3px solid var(--accent);background:var(--wash);font-size:.9rem}.scope strong{display:block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+.lead{max-width:68ch;color:var(--muted);margin:19px 0 26px}.musts{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+.must-block{min-width:0;border:1px solid var(--line);padding:clamp(17px,3vw,25px);background:var(--paper)}.must-block h2{font-size:1rem;line-height:1.35;letter-spacing:.01em;margin:0 0 14px;color:var(--accent)}.must-block h2 small{display:block;color:var(--muted);font-size:.75rem;font-weight:500;letter-spacing:0;margin-top:3px}
+.must-block ul,.must-block ol{list-style:none;padding:0;margin:0;display:grid;gap:13px}.must-block li{position:relative;max-width:68ch;padding-left:19px}.must-block li p{margin:0}.must-block li strong{display:block;font-weight:750;margin:0 0 3px}.must-block li span{display:block}.know{grid-column:1/-1;border:0;border-top:3px solid var(--accent);padding:20px 0 4px;background:transparent}.know ul{grid-template-columns:1fr 1fr;column-gap:30px;row-gap:16px}.know li{padding-left:0}.check{background:var(--wash)}.check li:before{content:"";position:absolute;left:0;top:.48em;width:10px;height:10px;border:1px solid var(--accent);border-radius:2px}.do li:before{content:counter(step,decimal-leading-zero);counter-increment:step;position:absolute;left:0;top:0;color:var(--accent);font-size:.77rem;font-weight:800;font-variant-numeric:tabular-nums}.do ol{counter-reset:step}.pause,.example,.sources{margin-top:22px;padding:18px 20px;border:1px solid var(--line)}.pause{background:var(--wash);border-left:4px solid var(--accent)}.pause h2,.example h2,.sources h2{margin:0 0 10px;font-size:.86rem;letter-spacing:.04em}.pause ul{margin:0;padding-left:1.1em;display:grid;gap:7px}.pause li{padding-left:2px}.example blockquote{margin:0;padding:12px 15px;background:var(--wash);border-left:3px solid var(--accent);font-size:1.02rem}.example p{margin:0}.example small{display:block;color:var(--muted);margin-top:8px}.sources{color:var(--muted);font-size:.82rem}.sources p{margin:5px 0}.sources strong{color:var(--ink)}footer{margin-top:18px;color:var(--muted);font-size:.77rem;max-width:75ch}
+body.n2{--page:#e9efeb;--paper:#fbfdf9;--ink:#26322e;--muted:#617168;--line:#cbd7cf;--accent:#3e7464;--wash:#e0eae3}body.n3{--page:#e9eef3;--paper:#fbfdff;--ink:#23303d;--muted:#5e6d7c;--line:#cdd7e1;--accent:#b65e48;--wash:#e2ebf2}body.n4{--page:#f1ecdc;--paper:#fffdf5;--ink:#293432;--muted:#65716a;--line:#d8d0b8;--accent:#806643;--wash:#ebe3cb}
+:root[data-theme="dark"] body.n2{--page:#151f1b;--paper:#1e2924;--ink:#e7eee9;--muted:#b5c4ba;--line:#3d5147;--accent:#8ec4ad;--wash:#293a32}:root[data-theme="dark"] body.n3{--page:#171e27;--paper:#202c38;--ink:#e6edf4;--muted:#b5c2cf;--line:#3a4a59;--accent:#f0a088;--wash:#293949}:root[data-theme="dark"] body.n4{--page:#211f17;--paper:#2d291e;--ink:#eee8d7;--muted:#c5bea8;--line:#504a37;--accent:#d4b57c;--wash:#393222}
+body.n1 .know{padding:24px 0}body.n1 .check{border-top:4px solid #6c7c72}body.n2 .musts{grid-template-columns:1fr}body.n2 .must-block{border:0;border-left:3px solid var(--line);padding:12px 18px;background:transparent}body.n2 .know{border-left-color:var(--accent);border-top:0;padding:12px 18px}body.n2 .check{margin-left:5%}body.n2 .do{margin-left:10%;border-left-color:var(--accent)}body.n2 .know ul{grid-template-columns:1fr}body.n3 .know{border-top-color:#466886}body.n3 .check{border-top:4px solid #466886}body.n3 .do{border-top:4px solid var(--accent)}body.n4 .know{background:var(--wash);padding:20px}body.n4 .check,body.n4 .do{padding:16px}body.n4 .must-block h2{padding-bottom:10px;border-bottom:1px solid var(--line)}
+@media(max-width:680px){main{width:calc(100% - 18px);margin:9px auto 26px;padding:23px 18px}.musts,body.n2 .musts{grid-template-columns:1fr}.know,body.n2 .know{grid-column:auto}.know ul,body.n2 .know ul{grid-template-columns:1fr}.check,body.n2 .check,body.n2 .do{margin-left:0}.topline{align-items:flex-start}}
+@media print{@page{size:A4 portrait;margin:12mm}:root{color-scheme:light;--page:#fff;--paper:#fff;--ink:#111;--muted:#444;--line:#bbb;--accent:#444;--wash:#f2f0eb}body{background:#fff}main{width:100%;margin:0;padding:0;border:0}.theme{display:none}.must-block,.pause,.example,.sources{break-inside:avoid}.know ul{grid-template-columns:1fr 1fr}a{color:inherit;text-decoration:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body class="n4">
+<main>
+  <div class="topline"><span>3MUST · 설득 · 요구 이면 확인 · N4</span><button class="theme" type="button" aria-label="색상 모드 바꾸기">화면 모드</button></div>
+  <h1>상대가 같은 요구를 반복할 때</h1>
+  <p class="situation">협상이나 업무 조율에서 상대가 같은 요구를 거듭 말하는데, 조건을 조금 바꿔 맞춰 줘도 만족하지 않고 다음 자리에서 또 같은 말이 돌아옵니다. 요구대로 밀어주면 계속 요구가 늘 것 같고, 그대로 거절하면 관계가 상할 것 같아 맴돕니다. 반복되는 요구 뒤에 무엇이 있는지 확인하지 않으면 같은 자리를 계속 돕니다.</p>
+  <aside class="scope"><strong>다루는 범위와 한계</strong>상대가 반복하는 요구를 필요와 구분해 확인하고, 같은 필요를 다른 수단으로 채우는 협상·조율 대화를 다룹니다. 요구의 근거가 권리나 법정 기준인 사안의 법적 판단은 하지 않고, 확인이 필요한 경우 별도 검토로 넘깁니다.</aside>
+  <p class="lead">반복되는 요구를 그대로 맞추거나 그대로 거절하기 전에, 그 요구로 상대가 하려는 일을 확인해 협상의 재료를 바꿉니다.</p>
+  <div class="musts">
+    <section class="must-block know"><h2>Must Know <small>이 상황을 이해하고 판단할 기준</small></h2><ul><li><strong>요구와 필요는 다르다</strong><span>원문의 임금 협상 사례에서 노조의 요구는 &#x27;8% 인상&#x27;이었지만 개별 면담으로 확인된 실제 필요는 야간 교대 주기 개선과 사내 어린이집 확충이었습니다. 겉으로 내뱉는 요구를 곧 필요라고 믿으면 매번 같은 숫자를 두고 다시 싸우게 됩니다.</span></li>
+<li><strong>가장 세게 고집하는 지점이 단서다</strong><span>&#x27;절대 안 된다&#x27;고 버티는 지점에는 그 사람이 지키려는 것이 가장 크게 걸려 있습니다. 원문은 이 지점을 숨은 이해관계가 있는 곳으로 봅니다. 요구의 크기보다 반응의 세기를 보면 어디를 먼저 확인해야 하는지 알 수 있습니다.</span></li>
+<li><strong>요구 뒤에 불안이 있다</strong><span>원문은 요구 뒤에 필요가 있고 그 필요 뒤에 두려움이 있다고 설명합니다. 임금 인상 요구의 밑에는 고단함과 불안이 있었고, 그 불안을 다루는 대안이 나왔을 때 타결이 가능했습니다. 숫자를 낮추는 협상보다 두려움을 확인하는 질문이 먼저입니다.</span></li>
+<li><strong>숫자는 단서이고 답이 아니다</strong><span>상대가 말한 비율·금액·기한은 그 자체가 목표가 아니라 무엇을 하려는지 알려 주는 단서입니다. 원문이 든 납기 재촉 사례처럼 마감이 급한 이유가 상부 보고 날짜인지에 따라 결과물의 형식을 줄이는 합의가 가능해집니다.</span></li>
+<li><strong>모든 요구가 협상 대상은 아니다</strong><span>권리, 법정 기준, 계약 조항에 근거한 요구는 조건을 깎는 협상의 대상이 아닙니다. 원문의 틀은 이해관계를 조정할 수 있는 장면에 대한 것이며, 근거가 법이나 계약에 걸린 사안은 해당 내용을 확인한 뒤 별도 검토로 넘겨야 합니다.</span></li></ul></section>
+    <section class="must-block check"><h2>Must Check <small>결정 전에 확인할 사실과 질문</small></h2><ul><li><span>상대가 반복하는 요구를 표현 그대로 적어 두고, 그 요구로 무엇을 하려는지 확인했는지 점검합니다.</span></li>
+<li><span>그 요구가 해결하려는 문제가 비용·시간·불안·체면·통제 중 어디에 가까운지 후보를 세워 확인합니다.</span></li>
+<li><span>상대가 최근 가장 강하게 반응한 지점이 어디였는지, 대화 기록이나 메모에서 확인합니다.</span></li>
+<li><span>요구의 배경에 상부 보고·마감·평가처럼 상대가 통제하기 어려운 외부 조건이 있는지 확인합니다.</span></li>
+<li><span>내가 줄 수 있는 것과 줄 수 없는 것을 구분해 두었는지, 대안으로 채울 수 있는 범위를 점검합니다.</span></li>
+<li><span>그 요구가 권리·법정 기준·계약 조항에 근거한 것인지 확인하고, 그렇다면 협상 대상에서 분리합니다.</span></li>
+<li><span>상대 조직에서 결정권자와 실무자의 이해관계가 다른지, 누구와 이야기해야 결론이 나는지 확인합니다.</span></li></ul></section>
+    <section class="must-block do"><h2>Must Do <small>대화와 실행을 이어가는 순서</small></h2><ol><li><strong>요구를 그대로 받아 적는다</strong><span>반복되는 요구를 내 말로 바꾸지 않고 상대가 쓴 표현 그대로 적습니다. 표현을 다듬는 순간 요구의 강조점이 사라져, 무엇이 문제인지 다시 물어야 하는 상황이 생깁니다.</span></li>
+<li><strong>그것으로 무엇을 하려는지 묻는다</strong><span>&#x27;그 금액이 확보되면 어디에 쓰시려는지&#x27;, &#x27;그 일정이 왜 중요한지&#x27;처럼 요구의 사용처를 묻습니다. 원문의 5 Why 방식처럼 한 번 더 들어가면 요구 뒤의 필요가 드러납니다.</span></li>
+<li><strong>이해한 필요를 되짚어 확인한다</strong><span>들은 내용을 &#x27;지금 필요한 것은 금액 자체보다 야간 근무 부담을 줄이는 것이라고 이해했습니다&#x27;처럼 한 문장으로 확인받습니다. 이 확인이 틀리면 이후 제안이 모두 어긋나므로 여기서 멈추고 맞춥니다.</span></li>
+<li><strong>같은 필요를 채우는 다른 수단을 낸다</strong><span>요구를 그대로 맞추는 대신 같은 필요를 채우는 수단 두 가지를 제안합니다. 원문 사례처럼 임금 인상 폭을 조금 양보하고 근무 조 개편과 복지 확충으로 채우는 식입니다.</span></li>
+<li><strong>교환 구조로 만든다</strong><span>조건을 바꿀 때 무엇을 주고 무엇을 받는지 명시합니다. 한쪽만 양보하는 형태로 끝나면 남은 요구가 다시 돌아오므로, 대안마다 상대가 지켜야 할 조건을 붙입니다.</span></li>
+<li><strong>합의한 필요와 수단을 남긴다</strong><span>확인된 필요, 선택한 수단, 조정된 조건, 다음 검토 시점을 문서로 남깁니다. 남은 요구를 &#x27;다음에 다시&#x27;로 미뤘다면 그 시점과 조건을 함께 적어 반복 요구를 줄입니다.</span></li></ol></section>
+  </div>
+  <aside class="pause"><h2>멈추고 다시 살필 때</h2><ul><li><span>요구가 권리·법정 기준·계약 조항에 근거해 조건 협상의 대상이 아닐 때는 협상이 아니라 확인 절차가 먼저입니다.</span></li>
+<li><span>상대가 필요를 말하지 않고 요구만 반복하며, 확인 질문에도 답하지 않을 때는 대화를 다른 자리로 옮겨야 합니다.</span></li>
+<li><span>내가 줄 수 없는 것을 계속 요구받아 관계를 지키는 일이 압박으로 바뀌고 있다고 느낄 때입니다.</span></li>
+<li><span>이해관계를 확인하는 과정에서 상대의 개인정보나 내부 기밀을 요구하게 될 때는 범위를 좁혀 다시 묻습니다.</span></li></ul></aside>
+  <section class="example"><h2>대화 예시</h2><blockquote>금액을 조정하기 전에 한 가지만 확인하고 싶습니다. 그 인상분으로 해결하시려는 가장 급한 문제가 무엇인지 여쭤봐도 될까요?</blockquote><small>실제 출처 인용이 아니라 상황에 맞춰 작성한 대화 예시입니다. 적용 전에 원문 검토와 맥락 조정이 필요합니다.</small></section>
+</main>
+<script>document.querySelector('.theme').addEventListener('click',()=>{const root=document.documentElement;root.dataset.theme=root.dataset.theme==='dark'?'light':'dark'});</script>
+</body></html>
