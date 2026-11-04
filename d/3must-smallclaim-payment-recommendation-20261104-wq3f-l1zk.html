@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko" data-design="M3">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>소액사건에서 이행권고결정이 나오지 않거나 송달이 안 될 때 · 3MUST</title>
+<link rel="icon" href="data:,">
+<style>
+:root { color-scheme:light dark; --bg:#edf1f3; --paper:#fff; --ink:#202d3d; --muted:#596b80; --line:#cbd6e4; --accent:#245aa6; --wash:#e7eef8; font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif; }
+@media(prefers-color-scheme:dark){:root{--bg:#111a20;--paper:#1a252d;--ink:#eff4f4;--muted:#bac7c8;--line:#394a52;--wash:#253541;}}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);line-height:1.55}
+main{width:calc(100% - 28px);max-width:850px;margin:24px auto;padding:clamp(22px,5vw,48px);background:var(--paper);border:1px solid var(--line);border-top:7px solid var(--accent)}
+.eyebrow{font-size:.75rem;font-weight:750;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin:0 0 10px}
+h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.12;letter-spacing:-.035em;margin:0;text-wrap:balance}
+.situation{color:var(--muted);max-width:64ch;margin:14px 0 24px}
+.three{display:grid;gap:0}
+section{padding:17px 0;border-top:1px solid var(--line)}
+h2{font-size:.9rem;color:var(--accent);margin:0 0 7px;letter-spacing:.02em}
+p,li{max-width:68ch} section p{margin:0} section ul,section ol{margin:0;padding-left:1.25rem}
+.table-wrap{max-width:100%;overflow-x:auto;margin:10px 0 0;border:1px solid var(--line);border-radius:8px;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;min-width:560px;font-size:.88rem;line-height:1.45}
+th,td{padding:9px 11px;text-align:left;vertical-align:top;border-right:1px solid var(--line);border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+th:last-child,td:last-child{border-right:0} tbody tr:last-child td{border-bottom:0}
+th{background:var(--wash);font-weight:700;color:var(--ink)}
+.pause{margin-top:20px;padding:13px 15px;background:var(--wash);border-left:3px solid var(--accent)}
+.pause strong{display:block;margin-bottom:4px}.sources{margin-top:20px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+.sources p{margin:4px 0}.disclaimer{font-size:.75rem;color:var(--muted);margin-top:18px}
+html[data-design="M1"]{--accent:#bd4d28;--wash:#f8e7df;--bg:#ece9e5;--line:#dfc7bb;--ink:#252b2c;--muted:#59615f}
+html[data-design="M1"] main{border-top-width:10px}.m1 .three{grid-template-columns:1fr 1fr;gap:12px}.m1 section{border:1px solid var(--line);padding:14px;background:color-mix(in srgb,var(--wash) 35%,var(--paper))}.m1 section:last-child{grid-column:1/-1}
+html[data-design="M2"]{--accent:#176b68;--wash:#e3efed;--bg:#e7eeee;--line:#c5d7d4;--ink:#162c31;--muted:#52696a}
+html[data-design="M2"] h1{font-family:Georgia,"Batang",serif;font-weight:600}.m2 .three{grid-template-columns:1fr 1fr;gap:22px}.m2 section:nth-child(2){background:var(--wash);padding:15px;border-top:0}.m2 section:last-child{grid-column:1/-1}
+html[data-design="M3"]{--accent:#126d57;--wash:#e4f1eb;--bg:#e9eeea;--line:#c5d7cc;--ink:#1d3028;--muted:#5b6e64}
+.m3 .three{position:relative;padding-left:20px}.m3 .three:before{content:"";position:absolute;top:18px;bottom:18px;left:4px;width:2px;background:var(--accent);opacity:.45}.m3 section{position:relative;padding-left:14px}.m3 section:before{content:"";position:absolute;left:-20px;top:20px;width:9px;height:9px;border:2px solid var(--accent);border-radius:50%;background:var(--paper)}
+html[data-design="M4"]{--accent:#714d83;--wash:#eee8f3;--bg:#ece8ef;--line:#d7ccdf;--ink:#292331;--muted:#686071}
+.m4 .situation{background:var(--wash);border-left:3px solid var(--accent);padding:12px 15px}.m4 .three{grid-template-columns:1fr 1fr;gap:12px}.m4 section{border:1px solid var(--line);padding:15px}.m4 section:last-child{grid-column:1/-1}
+.m4-wide .three{grid-template-columns:1fr;gap:14px}.m4-wide section:last-child{grid-column:auto}
+html[data-design="M5"]{--accent:#245aa6;--wash:#e7eef8;--bg:#edf1f3;--line:#cbd6e4;--ink:#202d3d;--muted:#596b80}
+.m5 .situation{background:var(--wash);padding:10px 12px;border:1px solid var(--line)}.m5 section{display:grid;grid-template-columns:minmax(145px,.34fr) 1fr;gap:18px}.m5 h2{color:var(--ink)}
+@media(prefers-color-scheme:dark){
+ html[data-design="M1"]{--accent:#f29a72;--wash:#392d29;--bg:#131a1a;--paper:#202929;--line:#48524f;--ink:#edf1ed;--muted:#b9c5bf}
+ html[data-design="M2"]{--accent:#73c6be;--wash:#203936;--bg:#101a1b;--paper:#1b292b;--line:#405452;--ink:#eaf3f2;--muted:#afc6c3}
+ html[data-design="M3"]{--accent:#78d4a8;--wash:#20382f;--bg:#111a17;--paper:#1b2822;--line:#40564a;--ink:#eaf3ed;--muted:#b4c8bc}
+ html[data-design="M4"]{--accent:#d0a5e2;--wash:#342b3a;--bg:#19151d;--paper:#28212e;--line:#51445b;--ink:#f1eaf4;--muted:#c7b9ce}
+ html[data-design="M5"]{--accent:#8cb7ff;--wash:#24364d;--bg:#141a22;--paper:#202a37;--line:#3d4d62;--ink:#edf2fa;--muted:#b8c5d8}
+}
+@media(max-width:620px){main{width:calc(100% - 18px);max-width:850px;margin:9px auto;padding:22px 17px}.m1 .three,.m2 .three,.m4 .three{grid-template-columns:1fr}.m1 section:last-child,.m2 section:last-child,.m4 section:last-child{grid-column:auto}.m5 section{grid-template-columns:1fr;gap:5px}}
+@media print{@page{size:A4 portrait;margin:10mm}html{color-scheme:light}body{background:#fff}main{width:100%;max-width:none;margin:0;padding:10mm;border:0;border-top:4mm solid var(--accent);box-shadow:none}.sources,.disclaimer{font-size:8.5pt}a{color:inherit;text-decoration:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="m3">
+  <p class="eyebrow">3MUST · 민사소송</p>
+  <h1>소액사건에서 이행권고결정이 나오지 않거나 송달이 안 될 때</h1>
+  <p class="situation"><strong>적용 상황:</strong> 소액사건으로 소를 제기했는데 이행권고결정이 나오지 않거나, 결정서가 피고에게 송달되지 않아 절차가 진행되지 않는 경우. 이의신청 기간·효력과 확정 후 집행은 다루지 않으며 법무가 확인합니다.</p>
+  <div class="three">
+    <section><h2>Must Know · 알아야 할 것</h2><ul><li><strong>법원은 소가 제기되면 결정으로 이행을 권고할 수 있습니다.</strong> 소장 부본이나 제소조서 등본을 첨부해 피고에게 청구취지대로 이행할 것을 권고할 수 있습니다(소액사건심판법 제5조의3 제1항).</li><li><strong>권고할 수 없는 사건이 정해져 있습니다.</strong> 독촉절차 또는 조정절차에서 소송절차로 이행된 경우, 청구취지나 청구원인이 분명하지 아니한 경우, 그 밖에 이행권고를 하는 것이 적절하지 아니하다고 인정하는 경우에는 할 수 없습니다(같은 항 각 호).</li><li><strong>결정서에는 정해진 기재사항이 있습니다.</strong> 당사자, 법정대리인, 청구의 취지와 원인 및 이행조항을 적고, 피고가 이의신청을 할 수 있음과 이행권고결정의 효력의 취지를 덧붙여 적어야 합니다(같은 조 제2항).</li><li><strong>송달 방법에 제한이 있습니다.</strong> 법원사무관등이 결정서 등본을 피고에게 송달하되, 민사소송법 제187조 및 제194조부터 제196조까지에서 규정한 방법으로는 할 수 없습니다(같은 조 제3항).</li><li><strong>그 방법으로만 송달할 수 있으면 변론기일을 지정합니다.</strong> 제3항에도 불구하고 그 방법으로만 송달할 수 있는 경우에는 법원이 지체 없이 변론기일을 지정해야 합니다(같은 조 제4항).</li><li><strong>청구를 쪼개 소액사건으로 만들 수 없습니다.</strong> 금전 등의 일정한 수량 지급을 목적으로 하는 청구는 이 법을 적용받기 위해 분할해 일부만 청구할 수 없고, 위반한 소는 판결로 각하해야 합니다(같은 법 제5조의2).</li></ul></section>
+    <section><h2>Must Check · 확인할 것</h2><ul><li>소가와 사건 유형이 소액사건 요건에 맞는지</li><li>독촉절차나 조정절차에서 이행된 사건인지</li><li>청구취지와 청구원인이 분명하게 기재되었는지</li><li>피고의 주소지와 송달 가능성(주민등록·법인등기 주소)</li><li>결정서에 당사자·청구취지·원인·이행조항과 이의신청 안내가 모두 적혔는지</li><li>송달이 민사소송법 제187조, 제194조부터 제196조까지의 방법에 해당하는지</li><li>그 방법으로만 송달할 수 있어 변론기일이 지정되었는지, 기일 통지가 왔는지</li><li>청구금액을 분할해 일부만 청구한 사건인지</li></ul></section>
+    <section><h2>Must Do · 실행할 것</h2><ol><li>사건이 소액사건 요건에 맞는지 소가와 청구 유형으로 확인합니다.</li><li>독촉·조정 절차에서 이행된 사건인지 확인하고, 그렇다면 이행권고가 나오지 않는 것이 정상임을 기록합니다.</li><li>청구취지와 청구원인을 다시 읽어 금액·기간·이행 내용이 특정되었는지 점검합니다.</li><li>피고 주소를 등기·주민등록 기준으로 확인하고, 송달 불가 우려가 있으면 보정 자료를 준비합니다.</li><li>결정서 사본을 받았다면 기재사항과 이의신청 안내가 모두 있는지 확인합니다.</li><li>송달이 되지 않아 변론기일이 지정된 경우 기일 통지서와 준비서면 제출 일정을 함께 관리합니다.</li><li>청구를 분할한 사건이면 각하 위험을 기록하고 청구 변경 여부를 법무와 상의합니다.</li></ol></section>
+  </div>
+  <aside class="pause"><strong>잠깐 멈추고 검토할 때</strong><p>독촉·조정에서 넘어온 사건인데 이행권고가 나오기를 기다리는 경우 · 청구취지가 금액·기간 없이 서술로만 적힌 경우 · 피고 주소가 확인되지 않아 송달이 반복해서 실패하는 경우 · 결정서에 이의신청 안내가 빠진 것을 발견한 경우 · 청구금액을 나눠 여러 건으로 제기한 경우 · 변론기일 통지를 받고도 준비서면을 준비하지 않은 경우</p></aside>
+  <div class="sources"><p><strong>원자료:</strong> 법무팀 업무사전 소액재판 실무 EP-002 '이행권고결정의 두 얼굴 — 집행력과 기판력 부재, 전략적 활용법'</p><p><strong>검토일:</strong> 2026-11-04</p><p><strong>확인한 조문:</strong> 소액사건심판법 제5조의3 제1항~제4항, 제5조의2 (한국법 MCP 조회, 조회기준일 2026-11-04, 시행 2026-03-28)</p><p><strong>미확인·제한:</strong> 이의신청 기간과 그 효력(제5조의4 이하), 확정된 이행권고결정의 집행력(제5조의7·제5조의8), 기판력 부재에 관한 판례(2006다34190), 강제집행 실무는 조문을 확인하지 않아 쓰지 않았습니다. 절차 판단과 대응 방향은 법무가 정합니다.</p><p><strong>변경 기록:</strong> 초안. 원자료의 '2주 불변기간·기판력 부재·선집행 후다툼' 서술을 빼고, 확인된 제5조의3의 요건과 송달·변론기일 절차, 제5조의2의 일부청구 제한만 남겼습니다.</p></div>
+  <p class="disclaimer">일반적인 실무 참고자료입니다. 개별 사안에서는 사실관계와 적용 기준을 확인하세요.</p>
+</main>
+</body>
+</html>
