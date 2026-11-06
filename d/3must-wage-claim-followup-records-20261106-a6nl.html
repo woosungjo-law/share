@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko" data-design="M3">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>임금체불 신고를 접수한 뒤 보완 요청과 회신을 추적할 때 · 3MUST</title>
+<link rel="icon" href="data:,">
+<style>
+:root { color-scheme:light dark; --bg:#edf1f3; --paper:#fff; --ink:#202d3d; --muted:#596b80; --line:#cbd6e4; --accent:#245aa6; --wash:#e7eef8; font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif; }
+@media(prefers-color-scheme:dark){:root{--bg:#111a20;--paper:#1a252d;--ink:#eff4f4;--muted:#bac7c8;--line:#394a52;--wash:#253541;}}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);line-height:1.55}
+main{width:calc(100% - 28px);max-width:850px;margin:24px auto;padding:clamp(22px,5vw,48px);background:var(--paper);border:1px solid var(--line);border-top:7px solid var(--accent)}
+.eyebrow{font-size:.75rem;font-weight:750;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin:0 0 10px}
+h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.12;letter-spacing:-.035em;margin:0;text-wrap:balance}
+.situation{color:var(--muted);max-width:64ch;margin:14px 0 24px}
+.three{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+section{min-width:0;padding:17px 0;border-top:1px solid var(--line)}
+h2{font-size:.9rem;color:var(--accent);margin:0 0 7px;letter-spacing:.02em}
+p,li{max-width:68ch} section p{margin:0} section ul,section ol{margin:0;padding-left:1.25rem}
+.table-wrap{max-width:100%;overflow-x:auto;margin:10px 0 0;border:1px solid var(--line);border-radius:8px;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;min-width:560px;font-size:.88rem;line-height:1.45}
+th,td{padding:9px 11px;text-align:left;vertical-align:top;border-right:1px solid var(--line);border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+th:last-child,td:last-child{border-right:0} tbody tr:last-child td{border-bottom:0}
+th{background:var(--wash);font-weight:700;color:var(--ink)}
+.pause{margin-top:20px;padding:13px 15px;background:var(--wash);border-left:3px solid var(--accent)}
+.pause strong{display:block;margin-bottom:4px}.sources{margin-top:20px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+.sources p{margin:4px 0}.disclaimer{font-size:.75rem;color:var(--muted);margin-top:18px}
+html[data-design="M1"]{--accent:#bd4d28;--wash:#f8e7df;--bg:#ece9e5;--line:#dfc7bb;--ink:#252b2c;--muted:#59615f}
+html[data-design="M1"] main{border-top-width:10px}.m1 .three{grid-template-columns:1fr 1fr;gap:12px}.m1 section{border:1px solid var(--line);padding:14px;background:color-mix(in srgb,var(--wash) 35%,var(--paper))}.m1 section:last-child{grid-column:1/-1}
+html[data-design="M2"]{--accent:#176b68;--wash:#e3efed;--bg:#e7eeee;--line:#c5d7d4;--ink:#162c31;--muted:#52696a}
+html[data-design="M2"] h1{font-family:Georgia,"Batang",serif;font-weight:600}.m2 .three{grid-template-columns:1fr 1fr;gap:22px}.m2 section:nth-child(2){background:var(--wash);padding:15px;border-top:0}.m2 section:last-child{grid-column:1/-1}
+html[data-design="M3"]{--accent:#126d57;--wash:#e4f1eb;--bg:#e9eeea;--line:#c5d7cc;--ink:#1d3028;--muted:#5b6e64}
+.m3 .three{position:relative;padding-left:20px}.m3 .three:before{content:"";position:absolute;top:18px;bottom:18px;left:4px;width:2px;background:var(--accent);opacity:.45}.m3 section{position:relative;padding-left:14px}.m3 section:before{content:"";position:absolute;left:-20px;top:20px;width:9px;height:9px;border:2px solid var(--accent);border-radius:50%;background:var(--paper)}
+html[data-design="M4"]{--accent:#714d83;--wash:#eee8f3;--bg:#ece8ef;--line:#d7ccdf;--ink:#292331;--muted:#686071}
+.m4 .situation{background:var(--wash);border-left:3px solid var(--accent);padding:12px 15px}.m4 .three{grid-template-columns:1fr 1fr;gap:12px}.m4 section{border:1px solid var(--line);padding:15px}.m4 section:last-child{grid-column:1/-1}
+/* M4-wide is reserved for cards whose text and table need equal full-width measure. */
+.m4-wide .three{grid-template-columns:1fr;gap:14px}.m4-wide section:last-child{grid-column:auto}
+html[data-design="M5"]{--accent:#245aa6;--wash:#e7eef8;--bg:#edf1f3;--line:#cbd6e4;--ink:#202d3d;--muted:#596b80}
+.m5 .situation{background:var(--wash);padding:10px 12px;border:1px solid var(--line)}.m5 section{display:grid;grid-template-columns:minmax(145px,.34fr) 1fr;gap:18px}.m5 h2{color:var(--ink)}
+@media(prefers-color-scheme:dark){
+ html[data-design="M1"]{--accent:#f29a72;--wash:#392d29;--bg:#131a1a;--paper:#202929;--line:#48524f;--ink:#edf1ed;--muted:#b9c5bf}
+ html[data-design="M2"]{--accent:#73c6be;--wash:#203936;--bg:#101a1b;--paper:#1b292b;--line:#405452;--ink:#eaf3f2;--muted:#afc6c3}
+ html[data-design="M3"]{--accent:#78d4a8;--wash:#20382f;--bg:#111a17;--paper:#1b2822;--line:#40564a;--ink:#eaf3ed;--muted:#b4c8bc}
+ html[data-design="M4"]{--accent:#d0a5e2;--wash:#342b3a;--bg:#19151d;--paper:#28212e;--line:#51445b;--ink:#f1eaf4;--muted:#c7b9ce}
+ html[data-design="M5"]{--accent:#8cb7ff;--wash:#24364d;--bg:#141a22;--paper:#202a37;--line:#3d4d62;--ink:#edf2fa;--muted:#b8c5d8}
+}
+@media(max-width:620px){main{width:calc(100% - 18px);max-width:850px;margin:9px auto;padding:22px 17px}.m1 .three,.m2 .three,.m4 .three{grid-template-columns:1fr}.m1 section:last-child,.m2 section:last-child,.m4 section:last-child{grid-column:auto}.m5 section{grid-template-columns:1fr;gap:5px}}
+@media print{@page{size:A4 portrait;margin:10mm}html{color-scheme:light}body{background:#fff}main{width:100%;max-width:none;margin:0;padding:10mm;border:0;border-top:4mm solid var(--accent);box-shadow:none}.sources,.disclaimer{font-size:8.5pt}a{color:inherit;text-decoration:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="m3">
+  <p class="eyebrow">3MUST · 노동법</p>
+  <h1>임금체불 신고를 접수한 뒤 보완 요청과 회신을 추적할 때</h1>
+  <p class="situation"><strong>적용 상황:</strong> 임금 관련 신고를 접수한 뒤 담당 기관과 자료·문의·회신을 주고받고 있어, 제출 내역과 다음 확인 사항을 놓치지 않도록 정리하려는 사람.</p>
+  <div class="three">
+    <section><h2>Must Know · 알아야 할 것</h2><ul><li>이 카드는 신고 후 연락과 자료 제출 이력을 정리하는 도구다. 신고가 받아들여질지, 처리에 얼마나 걸릴지, 어떤 금액을 받을지 판단하지 않는다.</li><li>기관 안내의 문구와 내가 이해한 내용을 구분하고, 안내받지 않은 기한이나 결과를 임의로 추정하지 않는다.</li></ul></section>
+    <section><h2>Must Check · 확인할 것</h2><ul><li>접수 확인자료에 적힌 접수일·담당 부서·사건 또는 접수 식별정보</li><li>기관이 요청한 자료·질문·확인사항과 안내받은 전달 방법</li><li>자료를 제출하거나 문의한 날짜·채널·파일 목록과 보관 위치</li><li>기관의 회신 원문·회신 시점·추가로 확인할 내용</li><li>아직 제출하지 못한 자료와 그 이유, 자료를 확보할 담당자</li><li>다음 연락이나 확인 시점이 실제 안내에 적혀 있는지</li></ul></section>
+    <section><h2>Must Do · 실행할 것</h2><ol><li>연락 한 건마다 <code>날짜 | 보낸 곳·받은 곳 | 채널 | 요청·회신 요지 | 관련 파일 | 다음 확인</code> 칸을 채웁니다.</li><li>제출자료는 사본과 파일명을 목록에 남기고, 실제로 전달한 버전과 전달 일시를 확인합니다.</li><li>기관의 요청을 항목별로 나누어 <code>요청 받음 / 준비 중 / 제출함 / 회신 대기 / 추가 확인</code>으로 표시합니다.</li><li>전화로 들은 안내는 통화 일시·상대 부서·핵심 문구·내가 다시 확인할 질문을 메모하고, 공식 서면이 있으면 그 원문과 함께 보관합니다.</li><li>예정일은 기관 안내나 본인이 합의한 일정에 근거해 적고, 법정 기한이라고 추정해 표시하지 않습니다.</li><li>식별정보와 금융자료가 포함된 파일은 안전한 저장 위치에 두고, 요청된 범위만 전달합니다.</li></ol></section>
+  </div>
+  <aside class="pause"><strong>잠깐 멈추고 검토할 때</strong><p>신고 절차·처리 기한·대지급금 자격과 금액·지연이자·시효처럼 법률 판단이 필요한 부분은 이 기록표만으로 결론 내리지 않습니다. · 서로 다른 안내를 받았거나 제출 여부가 확인되지 않으면 상태를 확정하지 말고, 접수 확인자료와 전달 기록을 가지고 담당 기관에 확인합니다. · 기관 연락을 사칭하는 메시지나 불필요한 개인정보 요구가 있으면 링크·파일을 열기 전에 공식 연락 경로로 진위를 확인합니다.</p></aside>
+  <div class="sources"><p><strong>원자료:</strong> 근로기준법 플레인 012 「임금체불 신고절차·기간·간이대지급금」</p><p><strong>검토일:</strong> 2026-11-06</p><p><strong>미확인·제한:</strong> 원문에 적힌 신고 절차·기한·시효·자격·지급액 및 법률 효과는 현행 검증하지 않았고 카드에 사용하지 않음. 사례 인물·금액·결과는 옮기지 않음.</p><p><strong>변경 기록:</strong> 접수 뒤 연락·요청·자료 제출 상태를 추적하는 비법률적 행정 기록 절차로 범위를 한정.</p></div>
+  <p class="disclaimer">일반적인 실무 참고자료입니다. 개별 사안에서는 사실관계와 적용 기준을 확인하세요.</p>
+</main>
+</body>
+</html>
