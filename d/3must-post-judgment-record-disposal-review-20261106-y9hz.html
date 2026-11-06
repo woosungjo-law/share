@@ -14,8 +14,8 @@ main{width:calc(100% - 28px);max-width:850px;margin:24px auto;padding:clamp(22px
 .eyebrow{font-size:.75rem;font-weight:750;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin:0 0 10px}
 h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.12;letter-spacing:-.035em;margin:0;text-wrap:balance}
 .situation{color:var(--muted);max-width:64ch;margin:14px 0 24px}
-.three{display:grid;gap:0}
-section{padding:17px 0;border-top:1px solid var(--line)}
+.three{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+section{min-width:0;padding:17px 0;border-top:1px solid var(--line)}
 h2{font-size:.9rem;color:var(--accent);margin:0 0 7px;letter-spacing:.02em}
 p,li{max-width:68ch} section p{margin:0} section ul,section ol{margin:0;padding-left:1.25rem}
 .table-wrap{max-width:100%;overflow-x:auto;margin:10px 0 0;border:1px solid var(--line);border-radius:8px;-webkit-overflow-scrolling:touch}
