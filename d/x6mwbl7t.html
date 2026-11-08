@@ -1,0 +1,3086 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="risk-radar-design" content="a">
+<meta name="description" content="의뢰인으로부터 받을 자료의 3단 검진 입력 설계 검토본. 변호사 승인 전 내부 검토용 초안입니다.">
+<title>의뢰인으로부터 받을 자료 — 3단 검진 입력 설계 Codex 검토본 ver 2.0</title>
+<style>
+:root{--paper:#f3f6f8;--ink:#183244;--muted:#5c6c78;--navy:#12334a;--blue:#1c6d91;--line:#d9e1e6;--white:#fff;--soft:#eaf1f5;--callout:#d68a16;--shadow:0 14px 40px rgba(18,51,74,.08);color-scheme:light dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Pretendard,"Noto Sans KR","Malgun Gothic",sans-serif;line-height:1.76;font-size:16px}
+a{color:var(--blue);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid #d68a16;outline-offset:3px}
+.masthead{background:var(--navy);color:#fff;padding:clamp(28px,6vw,72px) 22px 44px}
+.masthead-inner{max-width:1160px;margin:auto}
+.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#b9d6e4;font-weight:700}
+h1{font-size:clamp(28px,4vw,42px);line-height:1.28;max-width:900px;margin:14px 0 20px;letter-spacing:-.035em}
+.lead{max-width:780px;color:#e0ebf0;font-size:16px;margin:0}
+.status-row{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}
+.badge{display:inline-flex;align-items:center;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:5px 12px;font-size:12px;font-weight:700;letter-spacing:.02em}
+.badge-warning{background:#fff0d6;border-color:#f3d29d;color:#704400}
+.layout{max-width:1240px;margin:26px auto 80px;padding:0 22px;display:grid;grid-template-columns:260px minmax(0,1fr);gap:26px;align-items:start}
+.toc{position:sticky;top:18px;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:18px 16px;max-height:calc(100vh - 36px);overflow:auto;box-shadow:var(--shadow)}
+.toc h2{font-size:14px;margin:0 0 12px;color:var(--navy)}
+.toc ol{list-style:none;padding:0;margin:0;display:grid;gap:4px}
+.toc li{font-size:12px;line-height:1.45}
+.toc .toc-h2{padding-top:6px;font-weight:700}
+.toc .toc-h3{padding-left:12px}
+.toc a{display:block;text-decoration:none;color:var(--muted);padding:3px 5px;border-radius:5px}
+.toc a:hover{background:var(--soft);color:var(--navy)}
+.document{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:clamp(22px,4vw,54px);box-shadow:var(--shadow);min-width:0}
+.document h1{font-size:32px;color:var(--navy);margin-top:0}
+.document h2{font-size:25px;line-height:1.35;color:var(--navy);margin:2.5em 0 .8em;padding-top:.8em;border-top:1px solid var(--line);letter-spacing:-.025em}
+.document h3{font-size:19px;color:var(--navy);margin:2em 0 .6em}
+.document h4{font-size:16px;color:var(--blue);margin:1.7em 0 .5em}
+.document p,.document li{max-width:76ch}
+.document table{border-collapse:collapse;width:100%;display:block;overflow-x:auto;margin:1.2em 0 1.8em;font-size:14px;line-height:1.55}
+.document th,.document td{border:1px solid var(--line);padding:9px 11px;vertical-align:top;text-align:left;min-width:110px}
+.document th{background:var(--soft);color:var(--navy);font-weight:700}
+.document blockquote{margin:1.2em 0;padding:13px 18px;border-left:4px solid var(--blue);background:#f1f6f8;color:#314d5e;border-radius:0 8px 8px 0}
+.document blockquote p:last-child{margin-bottom:0}
+.document hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+.document code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:#edf2f5;padding:.1em .35em;border-radius:4px;font-size:.9em;overflow-wrap:anywhere}
+.document pre{overflow:auto;padding:16px;background:#102b3d;color:#f1f6f8;border-radius:9px}
+.document pre code{background:none;padding:0;color:inherit}
+.document ul,.document ol{padding-left:1.4em}
+.footer-note{border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:13px;margin-top:32px}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.toc{position:static;max-height:340px}}
+@media(max-width:600px){body{font-size:15px}.layout{padding:0 12px;margin-top:12px}.document{padding:20px 17px;border-radius:12px}.document h2{font-size:22px}.document table{font-size:13px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+@media(prefers-color-scheme:dark){:root{--paper:#101b22;--ink:#e6eef2;--muted:#b1c0c8;--navy:#d8eaf2;--blue:#7bc4e3;--line:#334650;--white:#18262e;--soft:#243943;--callout:#eab65f;--shadow:0 14px 40px rgba(0,0,0,.18)}.masthead{background:#0d202b}.eyebrow{color:#a7cfe0}.lead{color:#d1e0e7}.badge-warning{background:#473719;border-color:#765922;color:#ffe5b0}.document blockquote{background:#20343e;color:#d4e3ea}.document pre{background:#0b161d}}
+@media print{body{background:#fff;color:#111;font-size:11pt}.masthead{background:#fff;color:#111;padding:0 0 20px}.lead,.eyebrow{color:#333}.layout{display:block;max-width:none;padding:0;margin:0}.toc{display:none}.document{border:0;box-shadow:none;padding:0}.document h2{break-after:avoid}.document table{display:table;overflow:visible;font-size:9pt}a{color:inherit}}
+</style>
+</head>
+<body>
+<header class="masthead"><div class="masthead-inner">
+<div class="eyebrow">LEGAL CHECKUP · OPERATING DESIGN</div>
+<h1>의뢰인으로부터 받을 자료 — 3단 검진 입력 설계 Codex 검토본 ver 2.0</h1>
+<p class="lead">의뢰인에게 요청할 자료의 범위와 순서를 정리한 내부 설계 검토본입니다. 본문은 원문 전체를 펼쳐 제공합니다.</p>
+<div class="status-row"><span class="badge badge-warning">승인 대기 · 내부 검토용</span><span class="badge">2026-11-08 · ver 2.0</span><span class="badge">변호사 승인 전 고객 발송 금지</span></div>
+</div></header>
+<div class="layout"><nav class="toc" aria-label="문서 목차"><h2>문서 목차</h2><ol><li class="toc-h1"><a href="#의뢰인으로부터-받을-자료-3단-검진-입력-설계-ver-2-0">의뢰인으로부터 받을 자료 — 3단 검진 입력 설계 ver 2.0</a></li>
+<li class="toc-h2"><a href="#0-3분-요약">0. 3분 요약</a></li>
+<li class="toc-h3"><a href="#0-1-한-문장">0-1. 한 문장</a></li>
+<li class="toc-h3"><a href="#0-2-왜-이렇게-바뀌는가-한-문단">0-2. 왜 이렇게 바뀌는가 — 한 문단</a></li>
+<li class="toc-h3"><a href="#0-3-3단-한-표">0-3. 3단 한 표</a></li>
+<li class="toc-h3"><a href="#0-4-건강검진-대응표-0부터-6까지">0-4. 건강검진 대응표 — 0부터 6까지</a></li>
+<li class="toc-h3"><a href="#0-5-이-문서가-바꾸는-것-3개">0-5. 이 문서가 바꾸는 것 3개</a></li>
+<li class="toc-h3"><a href="#0-6-이-문서가-답하는-질문-5개">0-6. 이 문서가 답하는 질문 5개</a></li>
+<li class="toc-h2"><a href="#1-왜-받을-자료-가-계속-모호했나">1. 왜 &quot;받을 자료&quot;가 계속 모호했나</a></li>
+<li class="toc-h3"><a href="#1-1-검사와-준비물이-한-표에-섞여-있었다">1-1. 검사와 준비물이 한 표에 섞여 있었다</a></li>
+<li class="toc-h3"><a href="#1-2-문진이-설문지였다">1-2. 문진이 설문지였다</a></li>
+<li class="toc-h3"><a href="#1-3-22종은-입력-목록이지-요청-목록이-아니다">1-3. 22종은 입력 목록이지 요청 목록이 아니다</a></li>
+<li class="toc-h3"><a href="#1-4-단계가-가격-으로-읽혔다">1-4. 단계가 &quot;가격&quot;으로 읽혔다</a></li>
+<li class="toc-h3"><a href="#1-5-없음-의-처리가-없었다">1-5. &quot;없음&quot;의 처리가 없었다</a></li>
+<li class="toc-h3"><a href="#1-6-문진의-보상이-없었다">1-6. 문진의 보상이 없었다</a></li>
+<li class="toc-h2"><a href="#2-설계-원칙-7">2. 설계 원칙 7</a></li>
+<li class="toc-h2"><a href="#3-건강검진-순서를-법률검진으로-옮기기">3. 건강검진 순서를 법률검진으로 옮기기</a></li>
+<li class="toc-h3"><a href="#3-1-왜-이-순서인가">3-1. 왜 이 순서인가</a></li>
+<li class="toc-h3"><a href="#3-2-결정적-차이-검체는-고객만-낼-수-있다">3-2. 결정적 차이 — 검체는 고객만 낼 수 있다</a></li>
+<li class="toc-h3"><a href="#3-3-0-6-상세-대응">3-3. 0~6 상세 대응</a></li>
+<li class="toc-h3"><a href="#3-4-단계와-순서의-관계">3-4. 단계와 순서의 관계</a></li>
+<li class="toc-h3"><a href="#3-5-추가-검사-규칙-1회-이유를-적는다">3-5. &quot;추가 검사&quot; 규칙 — 1회, 이유를 적는다</a></li>
+<li class="toc-h2"><a href="#4-선택안-법률-문진-40분-자문-1건">4. 선택안 — 법률 문진 40분 + 자문 1건</a></li>
+<li class="toc-h3"><a href="#4-1-문진의-3층-구조">4-1. 문진의 3층 구조</a></li>
+<li class="toc-h3"><a href="#4-2-누가-하나">4-2. 누가 하나</a></li>
+<li class="toc-h3"><a href="#4-3-대화-9문항-순서대로-묻는다">4-3. 대화 9문항 — 순서대로 묻는다</a></li>
+<li class="toc-h3"><a href="#4-4-문진-검사-처방표">4-4. 문진 → 검사 처방표</a></li>
+<li class="toc-h3"><a href="#4-5-문진-소견-3줄-검사-계획서-맨-위에-쓴다">4-5. 문진 소견 3줄 — 검사 계획서 맨 위에 쓴다</a></li>
+<li class="toc-h3"><a href="#4-6-자문-1건-문진의-보상">4-6. 자문 1건 — 문진의 보상</a></li>
+<li class="toc-h3"><a href="#4-7-정지선-3개-자문이-상담-창구가-되지-않게">4-7. 정지선 3개 — 자문이 상담 창구가 되지 않게</a></li>
+<li class="toc-h3"><a href="#4-8-서면-모드-대면이-어려운-고객">4-8. 서면 모드 — 대면이 어려운 고객</a></li>
+<li class="toc-h3"><a href="#4-9-문진-기록지">4-9. 문진 기록지</a></li>
+<li class="toc-h2"><a href="#5-1단계-기초검진">5. 1단계 — 기초검진</a></li>
+<li class="toc-h3"><a href="#5-1-받는-것-3개">5-1. 받는 것 — 3개</a></li>
+<li class="toc-h3"><a href="#5-2-받지-않는-것-1단계에서-명시한다">5-2. 받지 않는 것 — 1단계에서 명시한다</a></li>
+<li class="toc-h3"><a href="#5-3-순서-7단">5-3. 순서 7단</a></li>
+<li class="toc-h3"><a href="#5-4-계약-1건-선택-질문-1개와-대체-3개">5-4. 계약 1건 선택 — 질문 1개와 대체 3개</a></li>
+<li class="toc-h3"><a href="#5-5-검사-범위-무엇을-판정하나">5-5. 검사 범위 — 무엇을 판정하나</a></li>
+<li class="toc-h3"><a href="#5-6-결과지에-나오는-것-못-보는-것">5-6. 결과지에 나오는 것 / 못 보는 것</a></li>
+<li class="toc-h3"><a href="#5-7-원가-경고-가격은-여기서-정하지-않는다">5-7. 원가 경고 — 가격은 여기서 정하지 않는다</a></li>
+<li class="toc-h2"><a href="#6-2단계-종합검진">6. 2단계 — 종합검진</a></li>
+<li class="toc-h3"><a href="#6-1-계약-3칸-자료-보유-여부-확인">6-1. 계약 3칸 + 자료 보유 여부 확인</a></li>
+<li class="toc-h3"><a href="#6-2-슬롯-3개-고르세요-가-아니라-채우세요">6-2. 슬롯 3개 — &quot;고르세요&quot;가 아니라 &quot;채우세요&quot;</a></li>
+<li class="toc-h3"><a href="#6-3-사무소-추가-선정-2-3건-한-번만">6-3. 사무소 추가 선정 2~3건 — 한 번만</a></li>
+<li class="toc-h3"><a href="#6-4-없을-때의-대체">6-4. 없을 때의 대체</a></li>
+<li class="toc-h3"><a href="#6-5-추가-요청-1회">6-5. 추가 요청 1회</a></li>
+<li class="toc-h3"><a href="#6-6-결과지">6-6. 결과지</a></li>
+<li class="toc-h2"><a href="#7-3단계-정밀검진">7. 3단계 — 정밀검진</a></li>
+<li class="toc-h3"><a href="#7-1-4-wave-자료를-한꺼번에-받지-않는다">7-1. 4 wave — 자료를 한꺼번에 받지 않는다</a></li>
+<li class="toc-h3"><a href="#7-2-원문-전수-상한과-표본">7-2. 원문 전수 — 상한과 표본</a></li>
+<li class="toc-h3"><a href="#7-3-인터뷰-설계-승인-시-범위별-구성">7-3. 인터뷰 설계 — 승인 시 범위별 구성</a></li>
+<li class="toc-h3"><a href="#7-4-부속자료-3단계에서만-받는-것">7-4. 부속자료 — 3단계에서만 받는 것</a></li>
+<li class="toc-h3"><a href="#7-5-결정-시나리오-3개">7-5. 결정 시나리오 3개</a></li>
+<li class="toc-h3"><a href="#7-6-90일-이행확인-서면-1회">7-6. 90일 이행확인 — 서면 1회</a></li>
+<li class="toc-h3"><a href="#7-7-결과지">7-7. 결과지</a></li>
+<li class="toc-h2"><a href="#8-자료별-사전-a-b-c-d">8. 자료별 사전 — A / B / C / D</a></li>
+<li class="toc-h3"><a href="#8-1-a레인-사무소가-뽑는다">8-1. A레인 — 사무소가 뽑는다</a></li>
+<li class="toc-h3"><a href="#8-2-b레인-고객이-낸다">8-2. B레인 — 고객이 낸다</a></li>
+<li class="toc-h3"><a href="#8-3-c레인-인터뷰로-만든다">8-3. C레인 — 인터뷰로 만든다</a></li>
+<li class="toc-h3"><a href="#8-4-d레인-받지-않는다">8-4. D레인 — 받지 않는다</a></li>
+<li class="toc-h3"><a href="#8-5-자료-상태-소견-미검-응답-기준">8-5. 자료 상태 — 소견 / 미검 / 응답 기준</a></li>
+<li class="toc-h2"><a href="#9-검사실-루틴">9. 검사실 루틴</a></li>
+<li class="toc-h3"><a href="#9-1-접수-5단-승인-전에는-현행-절차가-우선">9-1. 접수 5단 — 승인 전에는 현행 절차가 우선</a></li>
+<li class="toc-h3"><a href="#9-2-완비-확인-단계별-납기는-현행-정본에-맞춘다">9-2. 완비 확인 — 단계별 납기는 현행 정본에 맞춘다</a></li>
+<li class="toc-h3"><a href="#9-3-보완-1회">9-3. 보완 1회</a></li>
+<li class="toc-h3"><a href="#9-4-지연-2회">9-4. 지연 2회</a></li>
+<li class="toc-h3"><a href="#9-5-파기-반송">9-5. 파기·반송</a></li>
+<li class="toc-h2"><a href="#10-실패-패턴-10">10. 실패 패턴 10</a></li>
+<li class="toc-h2"><a href="#11-파일럿-측정-7">11. 파일럿 측정 7</a></li>
+<li class="toc-h2"><a href="#12-정본과의-관계">12. 정본과의 관계</a></li>
+<li class="toc-h3"><a href="#12-1-승계-종합판에서-그대로-가져온-것">12-1. 승계 — 종합판에서 그대로 가져온 것</a></li>
+<li class="toc-h3"><a href="#12-2-변경-3개-이-문서가-새로-제안하는-것">12-2. 변경 3개 — 이 문서가 새로 제안하는 것</a></li>
+<li class="toc-h3"><a href="#12-3-개정-대상">12-3. 개정 대상</a></li>
+<li class="toc-h3"><a href="#12-4-게이트">12-4. 게이트</a></li>
+<li class="toc-h2"><a href="#13-검증-상태-미확인">13. 검증 상태 / 미확인</a></li>
+<li class="toc-h3"><a href="#13-1-확인한-것">13-1. 확인한 것</a></li>
+<li class="toc-h3"><a href="#13-2-미확인-출구-계약">13-2. 미확인 — 출구 계약</a></li>
+<li class="toc-h2"><a href="#부록-a-고객용-안내문-1단계-내부-시안-발송-금지">부록 A. 고객용 안내문 — 1단계 (내부 시안 · 발송 금지)</a></li>
+<li class="toc-h2"><a href="#부록-b-고객용-안내문-2-3단계-내부-시안-발송-금지">부록 B. 고객용 안내문 — 2·3단계 (내부 시안 · 발송 금지)</a></li>
+<li class="toc-h2"><a href="#부록-c-문진-상담-기록지">부록 C. 문진 상담 기록지</a></li>
+<li class="toc-h2"><a href="#부록-d-검사-계획서-1장">부록 D. 검사 계획서 (1장)</a></li>
+<li class="toc-h2"><a href="#부록-e-없음-확인서">부록 E. 없음 확인서</a></li>
+<li class="toc-h2"><a href="#부록-f-자료-요청-메일-3종-내부-시안-승인-정본-개정-전-발송-금지">부록 F. 자료 요청 메일 3종 (내부 시안 · 승인·정본 개정 전 발송 금지)</a></li>
+<li class="toc-h3"><a href="#f-1-1단계">F-1. 1단계</a></li>
+<li class="toc-h3"><a href="#f-2-2단계">F-2. 2단계</a></li>
+<li class="toc-h3"><a href="#f-3-3단계">F-3. 3단계</a></li>
+<li class="toc-h2"><a href="#부록-g-내부-완비-체크표">부록 G. 내부 완비 체크표</a></li>
+<li class="toc-h2"><a href="#부록-h-문진-스크립트-카드-상담-책상에-둔다">부록 H. 문진 스크립트 카드 (상담 책상에 둔다)</a></li>
+<li class="toc-h2"><a href="#부록-i-자문-1건-기록지">부록 I. 자문 1건 기록지</a></li>
+<li class="toc-h2"><a href="#이-문서를-읽고-나서-할-일">이 문서를 읽고 나서 할 일</a></li>
+<li class="toc-h2"><a href="#변경-기록">변경 기록</a></li></ol></nav>
+<main class="document" id="content"><blockquote>
+<p><strong>⚠️ 주의 — 이 문서의 지위</strong>
+<strong><code>status: draft</code> · <code>visibility: internal</code>.</strong> 승인 전에는 고객에게 보내지 않는다.
+이 문서는 <code>리걸체크업_3단서비스_종합판보고서_20261102.md</code>(이하 <strong>종합판</strong>)를 <strong>대체하지 않는다.</strong> 종합판이 정한 3단 구조·4색·근거 사다리·게이트를 승계하고, 그중 <strong>“의뢰인에게 무엇을 어떤 순서로 받는가”</strong> 한 장을 다시 쓴 것이다.
+이 문서가 제안하는 <strong>문진 40분 기본</strong>과 <strong>문진 자문 1건</strong>은 종합판의 “문진 서면 유지 + 보조 인터뷰 20~30분”(A#7·§5-5)과 <strong>다르다.</strong> 변호사 승인 전에는 종합판이 우선한다.</p>
+</blockquote>
+<blockquote>
+<p><strong>📌 운영 원칙 — 운영 우선순위</strong>
+이 문서는 <strong>승인 대기 설계안</strong>이다. 변호사 승인과 <code>01_문진표_20문항.md</code>·<code>02_자료요청서.md</code>·<code>11_티어설계.md</code> 등 정본 개정 전에는 현행 엔진과 종합판 절차를 적용한다. 아래 고객 안내·이메일·양식은 모두 <strong>내부 검토 시안</strong>이며 발송할 수 없다. 40분 문진·문진 자문 1건은 채택 전까지 선택 제안이지 기본 서비스가 아니다.</p>
+</blockquote>
+<blockquote>
+<p><strong>ℹ️ 참고 — 검진 은유 고정문 — 모든 고객 문서 첫 화면에 넣는다</strong>
+&quot;검진&quot;은 <strong>순서와 표기 방식을 알기 쉽게 빌린 표현</strong>입니다. 의료 검진과 달리 법률 위험은 <strong>전수 확인이 아니며</strong>, 이 서비스는 법률감사나 법률의견서를 대체하지 않습니다.</p>
+</blockquote>
+<h1 id="의뢰인으로부터-받을-자료-3단-검진-입력-설계-ver-2-0">의뢰인으로부터 받을 자료 — 3단 검진 입력 설계 ver 2.0</h1>
+<p><strong>2026-11-08 · <code>draft</code> · 내부 설계 검토본</strong></p>
+<hr>
+<h2 id="0-3분-요약">0. 3분 요약</h2>
+<h3 id="0-1-한-문장">0-1. 한 문장</h3>
+<blockquote>
+<p><strong>이 설계안은 자료 요청을 세 범주로 나눈다. ① 승인된 문진 방식 ② 단계별로 합의한 원문 범위 ③ 계약·위수탁 등 서류.</strong> 40분 문진·자문 1건은 미승인 선택안이며 현재 고객 요청사항으로 안내하지 않는다.
+사무소 대행 자료와 고객 보유 자료를 구분한다. 사무소가 문서나 표를 새로 작성하는 경우에는 인터뷰·작업 범위·시간을 별도 합의한다.</p>
+</blockquote>
+<h3 id="0-2-왜-이렇게-바뀌는가-한-문단">0-2. 왜 이렇게 바뀌는가 — 한 문단</h3>
+<p>현행 <code>02_자료요청서.md</code>는 필수자료·보강자료와 자료 수령 절차를 함께 다룬다. 이 설계안은 자료별로 <strong>고객이 제출할 것, 사무소가 확인할 것, 이번 범위에서 받지 않을 것</strong>을 분리한다. 사무소가 작성·수집하는 일을 무상·무제한으로 약속하지 않도록 사전 합의 범위도 둔다.</p>
+<h3 id="0-3-3단-한-표">0-3. 3단 한 표</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>1단계 기초검진</strong></th>
+<th><strong>2단계 종합검진</strong></th>
+<th><strong>3단계 정밀검진</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>답하는 질문</strong></td>
+<td>90일 안에 우리를 다치게 할 것은?</td>
+<td>1년 안에 구조로 굳어 옥죄는 것은?</td>
+<td>다음 결정을 막는 것은?</td>
+</tr>
+<tr>
+<td><strong>문진</strong></td>
+<td>사전 5문항 + 본 문진 서면. 필요 시 20~30분 보조 인터뷰</td>
+<td>동일</td>
+<td>착수 인터뷰 범위는 별도 합의</td>
+</tr>
+<tr>
+<td><strong>고객이 내는 원문</strong></td>
+<td><strong>계약 1건</strong></td>
+<td><strong>3칸</strong> (+ 추가 요청은 선택)</td>
+<td>합의된 계약군 전수 또는 합의 표본</td>
+</tr>
+<tr>
+<td><strong>추가 서류</strong></td>
+<td>보유 자료·해당 업종만</td>
+<td>보유·해당 여부 확인. 미보유면 새로 만들지 않음</td>
+<td>관련 자료 범위 사전 합의</td>
+</tr>
+<tr>
+<td><strong>서명</strong></td>
+<td>1장 (위수탁 통합)</td>
+<td>1장</td>
+<td>1장 + 별지</td>
+</tr>
+<tr>
+<td><strong>인터뷰</strong></td>
+<td>필요 시 20~30분 보조 인터뷰</td>
+<td>필요 시 20~30분 보조 인터뷰</td>
+<td>대상·횟수·시간을 계획서에서 사전 합의</td>
+</tr>
+<tr>
+<td><strong>고객 총 시간</strong></td>
+<td>종합판 가설 25~55분. 파일럿 전 확정 약속 금지</td>
+<td>종합판 가설 50~80분. 추가 자료 요청 시간은 별도</td>
+<td>자료 정리·인터뷰를 나눠 산정. 사전 합의 전 총시간 약속 금지</td>
+</tr>
+<tr>
+<td><strong>사무소가 뽑는 것</strong></td>
+<td>등기부·공시·인허가</td>
+<td>+ 인허가 부관</td>
+<td>+ 상대방 공개정보·부동산</td>
+</tr>
+<tr>
+<td><strong>사무소가 만드는 것</strong></td>
+<td>보증현황(Q17 모름 시)</td>
+<td>계약대장·조직도·보증현황</td>
+<td>+ 분쟁목록·전수 목록·인터뷰 기록</td>
+</tr>
+<tr>
+<td><strong>검사</strong></td>
+<td>계약 1건 + 등기부</td>
+<td>3~6건 + 계약 밖 원문</td>
+<td>합의된 계약 범위 + 인터뷰·선택 모듈</td>
+</tr>
+<tr>
+<td><strong>결과</strong></td>
+<td>3p</td>
+<td>12p</td>
+<td>20~30p + 임원 2p</td>
+</tr>
+</tbody>
+</table>
+<h3 id="0-4-건강검진-대응표-0부터-6까지">0-4. 건강검진 대응표 — 0부터 6까지</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">#</th>
+<th>건강검진</th>
+<th>무엇을 보나</th>
+<th>리걸체크업 대응</th>
+<th>누가</th>
+<th style="text-align:right">고객 시간</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><strong>0</strong></td>
+<td><strong>문진</strong> (설문 + 필요 시 대화)</td>
+<td>우선순위·확인할 신호</td>
+<td>현행 서면 문진 + 필요 시 20~30분 보조 인터뷰(종합판 기준)</td>
+<td>고객 + 변호사</td>
+<td style="text-align:right">고객별 상이</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>1</strong></td>
+<td><strong>혈액·소변</strong></td>
+<td>전신의 최소 지표</td>
+<td><strong>공개정보 자동채집</strong> — 등기부·법인 공시·인허가 공개정보</td>
+<td><strong>사무소</strong></td>
+<td style="text-align:right">0분</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>2</strong></td>
+<td><strong>시력·청력·호흡</strong></td>
+<td>기본 기능</td>
+<td><strong>표준 기능검사</strong> — 정관·계약대장·인허가표·조직도</td>
+<td>고객(보유분) + 사무소(표준화)</td>
+<td style="text-align:right">5~10분</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>3</strong></td>
+<td><strong>X-ray</strong></td>
+<td>한 장으로 폐·흉곽</td>
+<td><strong>계약 1건 정독</strong></td>
+<td>고객 1건 + 사무소 판독</td>
+<td style="text-align:right">5분</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>4</strong></td>
+<td><strong>초음파</strong></td>
+<td>부위별 단면</td>
+<td><strong>계약 3~6건 + 부속</strong></td>
+<td>고객 3칸 + 사무소 추가</td>
+<td style="text-align:right">10~15분</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>5</strong></td>
+<td><strong>CT</strong></td>
+<td>특정 부위 단면</td>
+<td>계약 원문 검토 범위 확대 + 합의된 인터뷰</td>
+<td>고객 + 사무소</td>
+<td style="text-align:right">사전 합의</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>6</strong></td>
+<td><strong>MRI</strong></td>
+<td>세부 영상</td>
+<td>결정 시나리오 등 선택 분석 모듈</td>
+<td>사무소 주도</td>
+<td style="text-align:right">사전 합의</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>0~3은 설계상 공통 기반이다.</strong> 실제 기본 검진은 현행 문진표·자료요청서·검사항목에서 정한 범위로 운영한다. 이 문서의 확장 검사 은유가 현행 범위를 자동 변경하지 않는다.</li>
+<li><strong>4~6은 제안된 추가 단계다.</strong> 실제 적용 범위·산출물·시간은 승인과 정본 개정 후 확정한다.</li>
+<li>의료검사와 법률검토는 대상·방법·보장 범위가 다르다. 은유는 설명 보조로만 쓰며, 의료행위와 동등하거나 위험을 빠짐없이 탐지한다는 인상을 주지 않는다. 광고규정 검토 전 고객 배포 금지.</li>
+</ul>
+<h3 id="0-5-이-문서가-바꾸는-것-3개">0-5. 이 문서가 바꾸는 것 3개</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">#</th>
+<th>지금</th>
+<th>바뀌는 것</th>
+<th>어디에</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">1</td>
+<td>22종 체크리스트</td>
+<td><strong>검사 계획서 1장</strong> — 문진이 검사를 처방한다</td>
+<td>부록 D</td>
+</tr>
+<tr>
+<td style="text-align:right">2</td>
+<td>문진 = 20문항 설문지</td>
+<td><strong>문진 = 서면 + 필요 시 보조 인터뷰</strong>. 40분 상담·자문 1건은 승인 대기안</td>
+<td>§4</td>
+</tr>
+<tr>
+<td style="text-align:right">3</td>
+<td>“자료를 주세요”</td>
+<td><strong>“이 검사는 우리가 합니다”</strong> — 3레인(A/B/C)</td>
+<td>§8</td>
+</tr>
+</tbody>
+</table>
+<h3 id="0-6-이-문서가-답하는-질문-5개">0-6. 이 문서가 답하는 질문 5개</h3>
+<ol>
+<li>의뢰인에게 <strong>정확히 무엇을 몇 개</strong> 받는가? → §5·§6·§7</li>
+<li><strong>문진은 무엇이고 몇 분</strong>인가? → §4</li>
+<li>3단계는 <strong>무엇이 다른가</strong>? → §0-3·§3-4</li>
+<li><strong>없으면</strong> 어떻게 되는가? → §8-5·부록 E</li>
+<li><strong>우리가 대신 하는 것</strong>은 무엇인가? → §8-1·§8-3</li>
+</ol>
+<hr>
+<h2 id="1-왜-받을-자료-가-계속-모호했나">1. 왜 &quot;받을 자료&quot;가 계속 모호했나</h2>
+<h3 id="1-1-검사와-준비물이-한-표에-섞여-있었다">1-1. 검사와 준비물이 한 표에 섞여 있었다</h3>
+<p>현행 <code>02_자료요청서.md</code> §1~§3은 <strong>검사 항목</strong>과 <strong>고객 준비물</strong>을 한 표에 담았다. 그래서 고객은 &quot;이걸 다 준비해야 검진을 받는다&quot;로 읽는다. 실제로는 절반 이상이 사무소가 하거나, 없어도 진행되는 것이다.</p>
+<p>22종을 다시 세면 이렇게 나뉜다.</p>
+<table>
+<thead>
+<tr>
+<th>누가</th>
+<th style="text-align:right">종수</th>
+<th>무엇</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>사무소가 뽑는다</strong></td>
+<td style="text-align:right">1</td>
+<td>법인등기부등본</td>
+</tr>
+<tr>
+<td><strong>사무소가 인터뷰로 만든다</strong></td>
+<td style="text-align:right">4</td>
+<td>계약대장 · 조직도 · 분쟁 목록 · 보증·담보 현황</td>
+</tr>
+<tr>
+<td><strong>고객만 낼 수 있다</strong></td>
+<td style="text-align:right">17</td>
+<td>문진 · 정관 · 계약 원문 · 인허가 사본 · 의사록 · 근로서류 · 분쟁 서면 · 주주명부 · 투자·차입·IP·개인정보·임대차·수출입 자료 등</td>
+</tr>
+</tbody>
+</table>
+<p><strong>1단계에서 고객이 실제로 내는 것은 22종 중 1종(계약 원문)과 문진, 그리고 허가 업종이면 인허가표다.</strong> 나머지 20종은 &quot;이번에 보지 않는다&quot;고 적는 것이 정직하다.</p>
+<h3 id="1-2-문진이-설문지였다">1-2. 문진이 설문지였다</h3>
+<p>20문항 서면은 <strong>접수 양식</strong>이지 문진이 아니다. 건강검진의 문진은 <strong>의사와의 대화</strong>이고, 그 대화에서 검사가 처방된다. 서면 20문항은 그 대화의 <strong>준비물</strong>이다.</p>
+<p>현행 자료 흐름과 검사 계획의 연결을 고객에게 설명할 필요가 있다. 이 설계안은 문진 결과와 검사 범위를 계획서에서 연결하도록 제안한다. 고객 시간과 이해도 개선 효과는 파일럿 전까지 미검증이다.</p>
+<h3 id="1-3-22종은-입력-목록이지-요청-목록이-아니다">1-3. 22종은 입력 목록이지 요청 목록이 아니다</h3>
+<p>룰팩이 판정에 필요로 하는 자료(내부 입력)를 그대로 고객에게 전가했다. 룰팩의 “필요 자료” 열은 <strong>판정자가 갖춰야 할 입력</strong>이고, <strong>고객에게 요청할 목록</strong>이 아니다. 이 둘을 구분하지 않으면 고객은 &quot;회사 문서를 전부 복사해 오는 사람&quot;이 된다.</p>
+<h3 id="1-4-단계가-가격-으로-읽혔다">1-4. 단계가 &quot;가격&quot;으로 읽혔다</h3>
+<p>3단을 보여 주면 고객은 &quot;돈을 더 내면 더 많이 봐준다&quot;로 읽는다. 건강검진은 <strong>“무엇을 보는가”</strong> 가 먼저다. 그래서 이 문서는 단계표보다 <strong>검사 순서표(§0-4)</strong> 를 먼저 놓는다.</p>
+<h3 id="1-5-없음-의-처리가-없었다">1-5. &quot;없음&quot;의 처리가 없었다</h3>
+<p>자료가 없거나 확인할 수 없을 때 상태를 서로 다르게 기록해야 한다. 부록 E와 §8-5는 고객이 아는 범위의 자료 상태와 판정자의 별도 판정을 분리한다. 자료가 없다는 사실만으로 소견을 자동 생성하지 않는다.</p>
+<h3 id="1-6-문진의-보상이-없었다">1-6. 문진의 보상이 없었다</h3>
+<p>이 설계안은 문진 결과가 고객에게 보이도록 검사 계획서를 제안한다. 자문 1건을 포함하는 안은 승인 전까지 선택 제안이며 고객 이탈·만족도 효과는 검증되지 않았다.</p>
+<hr>
+<h2 id="2-설계-원칙-7">2. 설계 원칙 7</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">#</th>
+<th>원칙</th>
+<th>뜻</th>
+<th>어기면</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">1</td>
+<td><strong>제출·대행·작성 역할을 나눈다</strong></td>
+<td>고객 보유자료, 사무소 확인자료, 사무소 작성자료를 구분하고 작성 범위는 합의한다</td>
+<td>요청 항목과 책임이 섞인다</td>
+</tr>
+<tr>
+<td style="text-align:right">2</td>
+<td><strong>순서는 고정, 깊이만 조절</strong></td>
+<td>0→3은 전원 동일. 4→6만 추가</td>
+<td>단계마다 다른 상품처럼 보인다</td>
+</tr>
+<tr>
+<td style="text-align:right">3</td>
+<td><strong>문진이 검사를 처방한다</strong></td>
+<td>문진 → 검사 계획서 → 자료 요청</td>
+<td>22종 목록이 다시 돌아온다</td>
+</tr>
+<tr>
+<td style="text-align:right">4</td>
+<td><strong>고객에게 새 표 작성 부담을 주지 않는다</strong></td>
+<td>보유 자료는 확인하고, 사무소 작성자료는 시간·범위 합의 후 작성</td>
+<td>사무소 업무가 무상·무제한 약속으로 보일 수 있다</td>
+</tr>
+<tr>
+<td style="text-align:right">5</td>
+<td><strong>받지 않을 자료를 먼저 정한다</strong></td>
+<td>최소수집. 이 상품이 판정하지 않는 영역은 받지 않는다</td>
+<td>개인정보 리스크·문턱 상승</td>
+</tr>
+<tr>
+<td style="text-align:right">6</td>
+<td><strong>자료 상태를 구분한다</strong></td>
+<td>보유 / 미보유 / 해당 없음 / 확인하지 못함 / 확인 중</td>
+<td>모름을 없음이나 확인으로 오인할 수 있다</td>
+</tr>
+<tr>
+<td style="text-align:right">7</td>
+<td><strong>문진에는 보상이 있다</strong></td>
+<td>40분 끝에 검사 계획서 + 자문 1건</td>
+<td>문진이 형식이 되고, 결과지가 남의 이야기가 된다</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>원칙 1과 4가 이 문서의 절반이다.</strong> 나머지는 이 두 개를 3단에 배치한 것이다.</p>
+</blockquote>
+<hr>
+<h2 id="3-건강검진-순서를-법률검진으로-옮기기">3. 건강검진 순서를 법률검진으로 옮기기</h2>
+<h3 id="3-1-왜-이-순서인가">3-1. 왜 이 순서인가</h3>
+<p>건강검진의 순서는 <strong>비용·위험·정보량</strong>으로 정해져 있다.</p>
+<ol>
+<li><strong>문진</strong> — 가장 싸고, 가장 많은 가설을 만든다.</li>
+<li><strong>혈액·소변</strong> — 전신을 한 번에 훑는다. 싸다.</li>
+<li><strong>시력·청력·호흡</strong> — 기본 기능. 빠르다.</li>
+<li><strong>X-ray</strong> — 한 장. 폐와 흉곽을 본다.</li>
+<li><strong>초음파</strong> — 부위별 단면. 이상이 잡힌 곳을 좁힌다.</li>
+<li><strong>CT</strong> — 전신 단면. 비싸고 조영제가 필요하다.</li>
+<li><strong>MRI</strong> — 조직 대조. 가장 비싸고, 가장 좁다.</li>
+</ol>
+<p>법률검진도 같다. <strong>문진에서 가설을 세우고, 공개정보로 전신을 훑고, 계약 1건으로 흉곽을 찍고, 3~6건으로 부위를 좁히고, 전수와 인터뷰로 단면을 얻는다.</strong> 순서를 건너뛰면 비싼 검사부터 하게 되고, 마진이 사라진다.</p>
+<h3 id="3-2-결정적-차이-검체는-고객만-낼-수-있다">3-2. 결정적 차이 — 검체는 고객만 낼 수 있다</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>건강검진</th>
+<th>법률검진</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>혈액</td>
+<td>병원이 뽑는다</td>
+<td><strong>사무소가 뽑는다</strong> (등기부·공시·인허가)</td>
+</tr>
+<tr>
+<td>X-ray</td>
+<td>병원이 찍는다</td>
+<td><strong>사무소가 판독한다</strong> (계약 원문은 고객이 낸다)</td>
+</tr>
+<tr>
+<td>조직 검체</td>
+<td>병원이 채취한다</td>
+<td><strong>고객만 낼 수 있다</strong> (회사 안의 문서)</td>
+</tr>
+<tr>
+<td>조영제</td>
+<td>병원이 주입한다</td>
+<td><strong>인터뷰</strong> — 서류만으로는 &quot;누가 결정하는가&quot;가 보이지 않는다</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>그래서 자료 요청은 고객 제출, 사무소 확인, 범위 밖 자료를 나눠 써야 한다.</strong> 현행 목록의 항목 수와 수령 역할은 적용할 버전의 <code>02_자료요청서.md</code>와 대조해 확정한다.</p>
+</blockquote>
+<h3 id="3-3-0-6-상세-대응">3-3. 0~6 상세 대응</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">단계</th>
+<th>무엇을</th>
+<th>입력</th>
+<th>누가</th>
+<th style="text-align:right">고객 시간</th>
+<th>산출</th>
+<th>없으면</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><strong>0 문진</strong></td>
+<td>우선순위 파악</td>
+<td>현행 사전·본 문진, 필요 시 보조 인터뷰</td>
+<td>고객 + 변호사</td>
+<td style="text-align:right">현행 기준</td>
+<td>문진 기록지 + 승인된 검사 계획서</td>
+<td>승인된 서면 절차 적용</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>1 공개정보</strong></td>
+<td>해당 자료 확인</td>
+<td>등기부·법인 공시·인허가 공개정보</td>
+<td>사무소(가능 범위)</td>
+<td style="text-align:right">별도 안내</td>
+<td>출처·기준일 기재</td>
+<td>발급·열람 불가 시 미검/대체 가능성 안내</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>2 보유자료</strong></td>
+<td>문서 상태 확인</td>
+<td>정관·계약대장·인허가 자료 등</td>
+<td>고객 보유분 + 합의된 사무소 작업</td>
+<td style="text-align:right">사전 안내</td>
+<td>검사 계획서</td>
+<td>상태 구분 후 적용 기준 확인</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>3 계약 표본</strong></td>
+<td>지정 범위 검토</td>
+<td>계약 원문</td>
+<td>합의 범위에 따라 고객·사무소</td>
+<td style="text-align:right">사전 안내</td>
+<td>확인 범위가 표시된 결과</td>
+<td>미수령이면 해당 항목 미검</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>4 확장검토</strong></td>
+<td>추가 계약·부속 검토</td>
+<td>합의된 원문 범위</td>
+<td>고객·사무소</td>
+<td style="text-align:right">사전 합의</td>
+<td>표본·제외 범위 공개</td>
+<td>범위 조정 또는 별도 합의</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>5 정밀 인터뷰</strong></td>
+<td>운영·결정 흐름 보완</td>
+<td>필요 정보만</td>
+<td>합의된 참석자</td>
+<td style="text-align:right">계획서에 확정</td>
+<td>요약·확인사항</td>
+<td>미실시 범위 표시</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>6 선택 모듈</strong></td>
+<td>사전 합의된 결정 시나리오 등</td>
+<td>합의된 자료</td>
+<td>사무소·고객</td>
+<td style="text-align:right">사전 합의</td>
+<td>모듈별 산출물</td>
+<td>선택하지 않은 모듈은 범위 밖</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-4-단계와-순서의-관계">3-4. 단계와 순서의 관계</h3>
+<blockquote>
+<p>아래 3단 순서는 이 문서가 제안하는 상품 설계도다. 현행 <code>11_티어설계.md</code>는 2단이므로 승인 전 운영 순서로 쓰지 않는다.</p>
+</blockquote>
+<pre><code>1단계 기초   = 0 문진 → 1 혈액 → 2 기능 → 3 X-ray
+2단계 종합   = 0 문진 → 1 혈액 → 2 기능 → 3 X-ray → 4 초음파
+3단계 정밀   = 0 문진 → 1 혈액 → 2 기능 → 3 X-ray → 4 초음파 → 5 CT → 6 MRI
+</code></pre>
+<ul>
+<li><strong>상위 단계는 하위 단계를 포함한다.</strong> 2단계는 1단계의 검사를 다시 하지 않는다. 문진·등기부는 재사용한다(종합판 §4-4).</li>
+<li><strong>하위 단계에서 상위 검사를 당겨 쓰지 않는다.</strong> 1단계에서 초음파를 하면 1단계가 아니라 2단계다. 이것이 &quot;가격은 범위의 함수&quot;라는 설명의 근거다.</li>
+<li><strong>추가 검사는 문진에서만 처방한다.</strong> 고객이 &quot;이것도 봐 주세요&quot;라고 하면 검사 계획서에 <strong>1회</strong> 추가할 수 있다. 추가하면 납기와 범위를 다시 안내한다.</li>
+</ul>
+<h3 id="3-5-추가-검사-규칙-1회-이유를-적는다">3-5. “추가 검사” 규칙 — 1회, 이유를 적는다</h3>
+<table>
+<thead>
+<tr>
+<th>상황</th>
+<th>처리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>문진에서 신호가 강함</td>
+<td>검사 계획서에 <strong>처방 사유 1줄</strong>과 함께 추가</td>
+</tr>
+<tr>
+<td>고객이 요청</td>
+<td>1회만 수용. 범위·납기 재안내. <strong>검진 범위를 넘으면 별도 업무</strong></td>
+</tr>
+<tr>
+<td>검사 중 발견</td>
+<td>결과지 카드에 &quot;추가 확인 필요&quot;로 적고, 상담에서 안내. <strong>즉시 재검사하지 않는다</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="4-선택안-법률-문진-40분-자문-1건">4. 선택안 — 법률 문진 40분 + 자문 1건</h2>
+<blockquote>
+<p><strong>⚠️ 주의 — 채택되지 않은 변경안</strong>
+이 절은 종합판의 문진(서면 + 조건부 20~30분 보조 인터뷰)을 대체할지 검토하는 <strong>선택 설계안</strong>이다. 변호사 승인과 문진표·티어 설계 개정 전에는 적용하지 않는다. 40분 상담과 자문 1건을 포함한다고 고객에게 확약하거나, 아래 문안을 발송하지 않는다.</p>
+</blockquote>
+<blockquote>
+<p>이 절이 이 문서의 심장이다. 문진이 설문지면 나머지가 전부 목록으로 돌아간다.</p>
+</blockquote>
+<h3 id="4-1-문진의-3층-구조">4-1. 문진의 3층 구조</h3>
+<table>
+<thead>
+<tr>
+<th>층</th>
+<th style="text-align:right">시간</th>
+<th>무엇</th>
+<th>왜</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1층 자유 서술</strong></td>
+<td style="text-align:right">10분</td>
+<td>&quot;요즘 가장 신경 쓰이는 것&quot;을 <strong>고객의 말로</strong></td>
+<td>문진표에 없는 신호. 고객 동의·범위 내 기록</td>
+</tr>
+<tr>
+<td><strong>2층 20문항 확인</strong></td>
+<td style="text-align:right">12분</td>
+<td>미리 받은 서면 답을 <strong>확인</strong>한다. 애매한 것만 캔다</td>
+<td>서면 답의 오해를 줄인다. <code>모름</code>을 캐묻지 않는다</td>
+</tr>
+<tr>
+<td><strong>3층 자문 1건</strong></td>
+<td style="text-align:right">11분</td>
+<td>가장 고민하는 문제 <strong>1개</strong>에 답 <strong>1개</strong></td>
+<td>문진의 보상. 이게 없으면 40분은 비용이다</td>
+</tr>
+<tr>
+<td><strong>마무리</strong></td>
+<td style="text-align:right">7분</td>
+<td>검사 계획서 낭독·확인, 다음 단계 예약</td>
+<td>고객이 “무엇을 받는지” 알고 나간다</td>
+</tr>
+</tbody>
+</table>
+<p><strong>합계 40분.</strong> 5분 버퍼를 두어 45분 예약으로 잡는다.</p>
+<h3 id="4-2-누가-하나">4-2. 누가 하나</h3>
+<table>
+<thead>
+<tr>
+<th>역할</th>
+<th>누가</th>
+<th>무엇</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>진행</td>
+<td><strong>변호사</strong></td>
+<td>질문·판단·자문. 실무자가 대신하지 않는다</td>
+</tr>
+<tr>
+<td>기록</td>
+<td>실무자 1명 또는 AI 전사</td>
+<td>고객의 표현을 <strong>그대로</strong> 적는다. 요약하지 않는다</td>
+</tr>
+<tr>
+<td>사후</td>
+<td>실무자</td>
+<td>24시간 안에 문진 기록지 정리 → 변호사 확인 → 고객 서명</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>녹음은 별도 동의 없이 하지 않는다.</strong> 녹음·전사 여부, 사용 도구, 처리 범위, 저장·삭제 방식과 외부 전송 여부를 사전에 확정해 안내하고, 필요한 동의·계약 근거를 기록한다.</li>
+<li>실제 처리 방식이 <code>10_AI처리고지.md</code>·<code>09_개인정보처리.md</code> 및 위수탁 문안과 일치하는지 확인되기 전에는 고객 자료를 AI 전사·처리에 투입하지 않는다. 이름·상호 마스킹만으로 고지·동의 절차를 대체하지 않는다.</li>
+</ul>
+<h3 id="4-3-대화-9문항-순서대로-묻는다">4-3. 대화 9문항 — 순서대로 묻는다</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">#</th>
+<th>질문</th>
+<th>왜 묻나</th>
+<th>어디로 가나</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">1</td>
+<td>“요즘 회사에서 법률 문제로 가장 신경 쓰이는 게 뭡니까?”</td>
+<td>문진표에 없는 진짜 신호</td>
+<td>Q20 · 1면 재료</td>
+</tr>
+<tr>
+<td style="text-align:right">2</td>
+<td>“그게 언제부터였습니까?”</td>
+<td>계기가 급성/만성의 단서</td>
+<td>병기 판단</td>
+</tr>
+<tr>
+<td style="text-align:right">3</td>
+<td>“지금 그 일은 누가 보고 있습니까?”</td>
+<td>담당자 유무 = 적합성</td>
+<td>자료 완비 가능성</td>
+</tr>
+<tr>
+<td style="text-align:right">4</td>
+<td>“계약서는 어디에 있습니까? 모으면 몇 건쯤 됩니까?”</td>
+<td>계약 규모·보관 상태</td>
+<td>Q5 · L2-06</td>
+</tr>
+<tr>
+<td style="text-align:right">5</td>
+<td>“그중에 서명하고 다시 읽지 않은 것이 있습니까?”</td>
+<td>자동갱신·독소조항 후보</td>
+<td>Q6 · L2-01</td>
+</tr>
+<tr>
+<td style="text-align:right">6</td>
+<td>“대표님이 개인으로 서명하거나 보증한 것이 있습니까?”</td>
+<td>대표 개인 리스크</td>
+<td>Q17 · L1-02·L8-01</td>
+</tr>
+<tr>
+<td style="text-align:right">7</td>
+<td>“인허가 중에 만료일을 챙기는 게 있습니까?”</td>
+<td>불가역 기한</td>
+<td>Q10 · L2-02·L4-01</td>
+</tr>
+<tr>
+<td style="text-align:right">8</td>
+<td>“올해 안에 투자·신사업·큰 계약 계획이 있습니까?”</td>
+<td>CoC·동의권 트리거</td>
+<td>Q19 · L2-04·L6-05</td>
+</tr>
+<tr>
+<td style="text-align:right">9</td>
+<td>“이 검진이 끝나면 무엇이 정리되어 있으면 좋겠습니까?”</td>
+<td>기대치·1면 5번</td>
+<td>결과지 범위 문장</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>9문항은 순서를 바꾸지 않는다.</strong> 1번에서 나온 말이 2~9번의 답을 바꾸기 때문이다.</li>
+<li><strong>고객이 1번에서 분쟁 이야기를 시작하면 §4-7 정지선으로 전환한다.</strong></li>
+<li>3번에서 &quot;아무도 없다&quot;가 나오면 <strong>적합성 경고</strong>다. 자료가 안 모이면 검진이 반쪽이 된다(초회상담 스크립트 §3-2).</li>
+</ul>
+<h3 id="4-4-문진-검사-처방표">4-4. 문진 → 검사 처방표</h3>
+<p>문진 답이 나오면 <strong>검사 계획서에 넣을 검사</strong>가 자동으로 정해진다. 이 표가 &quot;문진이 검사를 처방한다&quot;의 실제 작동표다.</p>
+<table>
+<thead>
+<tr>
+<th>문진 신호</th>
+<th>처방 검사</th>
+<th>필요한 원문</th>
+<th style="text-align:right">최소 단계</th>
+<th>룰</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q7 3곳 이상</td>
+<td>매출 집중도 검사</td>
+<td>매출 1등 계약 (2단계는 슬롯 ①)</td>
+<td style="text-align:right">1</td>
+<td>L1-03·L2-05</td>
+</tr>
+<tr>
+<td>Q6 아니오</td>
+<td>계약 조항 스캔</td>
+<td>계약 원문</td>
+<td style="text-align:right">1</td>
+<td>L2-01</td>
+</tr>
+<tr>
+<td>Q10 관리 안 함·모름</td>
+<td>인허가 만료 캘린더</td>
+<td>인허가 현황표 + 부관 사본</td>
+<td style="text-align:right">1 (표가 있으면)</td>
+<td>L2-02·L4-01</td>
+</tr>
+<tr>
+<td>Q17 모름</td>
+<td>보증·담보 현황</td>
+<td>인터뷰로 생성</td>
+<td style="text-align:right">1</td>
+<td>L8-05</td>
+</tr>
+<tr>
+<td>Q17 예</td>
+<td>보증·담보 대장</td>
+<td>보증서·차입계약</td>
+<td style="text-align:right">2</td>
+<td>L8-01</td>
+</tr>
+<tr>
+<td>Q1 아니오</td>
+<td>이사회 결의 표본</td>
+<td>정관·의사록</td>
+<td style="text-align:right">2</td>
+<td>L6-01</td>
+</tr>
+<tr>
+<td>Q2 아니오·일부</td>
+<td>의사록 존재 확인</td>
+<td>최근 2년 의사록</td>
+<td style="text-align:right">2</td>
+<td>L6-02</td>
+</tr>
+<tr>
+<td>Q3 예</td>
+<td>자기거래·겸업</td>
+<td>등기부·거래내역</td>
+<td style="text-align:right">2</td>
+<td>L6-03·L6-04</td>
+</tr>
+<tr>
+<td>Q4 아니오</td>
+<td>주주간계약 확인</td>
+<td>주주간계약</td>
+<td style="text-align:right">2</td>
+<td>L6-05</td>
+</tr>
+<tr>
+<td>Q5 아니오</td>
+<td>계약대장 보유 여부·확인 범위 점검</td>
+<td>사무소 작성은 작업량·범위 별도 합의</td>
+<td style="text-align:right">2</td>
+<td>L2-06</td>
+</tr>
+<tr>
+<td>Q8 예</td>
+<td>구두 거래 목록</td>
+<td>거래내역 1장</td>
+<td style="text-align:right">2</td>
+<td>L1-06</td>
+</tr>
+<tr>
+<td>Q9 예</td>
+<td>분쟁 목록 + 범위 밖 안내</td>
+<td>분쟁 목록(상대·쟁점·단계)</td>
+<td style="text-align:right">2</td>
+<td>L3-01·L3-05</td>
+</tr>
+<tr>
+<td>Q11 예</td>
+<td>처분 통지서</td>
+<td>행정처분 문서</td>
+<td style="text-align:right">2</td>
+<td>L4-02</td>
+</tr>
+<tr>
+<td>Q12 아니오·일부</td>
+<td>IP 귀속 확인</td>
+<td>IP 등록·외주계약</td>
+<td style="text-align:right">2</td>
+<td>L5-01·L5-02</td>
+</tr>
+<tr>
+<td>Q13 아니오</td>
+<td>개인정보 정비</td>
+<td>처리방침·위수탁 목록</td>
+<td style="text-align:right">2</td>
+<td>L5-03</td>
+</tr>
+<tr>
+<td>Q14 칸별 아니오</td>
+<td>근로 서면 확인</td>
+<td>표준 근로계약·취업규칙</td>
+<td style="text-align:right">2</td>
+<td>L7-01·L7-02</td>
+</tr>
+<tr>
+<td>Q15 예</td>
+<td>인사 이슈 확인</td>
+<td>내부 규정·집계표</td>
+<td style="text-align:right">3</td>
+<td>L7-03·L7-06·L7-07</td>
+</tr>
+<tr>
+<td>Q16 아니오</td>
+<td>도급 실태</td>
+<td>도급·프리랜서 계약</td>
+<td style="text-align:right">3</td>
+<td>L7-04</td>
+</tr>
+<tr>
+<td>Q18 아니오</td>
+<td>차입 크로스디폴트</td>
+<td>차입계약</td>
+<td style="text-align:right">3</td>
+<td>L2-03·L8-03</td>
+</tr>
+<tr>
+<td>Q19 예</td>
+<td>CoC·동의권</td>
+<td>주주간·투자계약</td>
+<td style="text-align:right">2</td>
+<td>L2-04·L6-05</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>문진 신호가 없으면 검사를 처방하지 않는다.</strong> &quot;그래도 다 보고 싶다&quot;면 상위 단계로 올리는 것이지, 같은 단계에서 검사를 늘리는 것이 아니다.</p>
+</blockquote>
+<h3 id="4-5-문진-소견-3줄-검사-계획서-맨-위에-쓴다">4-5. 문진 소견 3줄 — 검사 계획서 맨 위에 쓴다</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">#</th>
+<th>문장</th>
+<th>예</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">1</td>
+<td><strong>가장 급한 축</strong></td>
+<td>“6월 자동갱신 1건과 대표 보증 1건이 겹칩니다”</td>
+</tr>
+<tr>
+<td style="text-align:right">2</td>
+<td><strong>이번에 못 볼 것</strong></td>
+<td>“정관·의사록이 없어 지배구조는 이번 범위 밖입니다”</td>
+</tr>
+<tr>
+<td style="text-align:right">3</td>
+<td><strong>필요한 원문</strong></td>
+<td>“매출 1등 계약 1건, 그리고 보증계약 1건”</td>
+</tr>
+</tbody>
+</table>
+<p>이 3줄이 없으면 문진은 기록이 아니라 잡담이다.</p>
+<h3 id="4-6-자문-1건-문진의-보상">4-6. 자문 1건 — 문진의 보상</h3>
+<blockquote>
+<p><strong>설계 메모:</strong> 요청 원문은 필요하면 자문 형태의 응답도 포함하도록 제안했다. 이 절은 그 제안을 검토 가능한 형태로 제한한다. <strong>승인 전에는 제공 서비스나 고객 약속이 아니다.</strong></p>
+</blockquote>
+<p><strong>무엇을 하나.</strong> 문진 3층에서 <strong>가장 고민하는 문제 1개</strong>를 골라, 그 자리에서 <strong>답 1개</strong>를 준다.</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>규칙</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>대상</strong></td>
+<td>계약 구조 / 인사 제도 / 인허가 관리 — 분쟁·개별 사건 대응을 제외한 검토 후보 영역</td>
+</tr>
+<tr>
+<td><strong>형식</strong></td>
+<td>“지금 할 일 1개 + 하지 말 것 1개 + 확인할 서류 1개” — 예상 11분, 서면 1쪽. 실제 소요·제공 범위는 승인·파일럿 전 미확정</td>
+</tr>
+<tr>
+<td><strong>근거</strong></td>
+<td>자문에서 나온 사실은 <strong>E0(응답)</strong>. 원문 확인 전까지 판정하지 않는다</td>
+</tr>
+<tr>
+<td><strong>기록</strong></td>
+<td><strong>문진 기록지에만</strong> 적는다. 결과지 카드에 올리지 않는다</td>
+</tr>
+<tr>
+<td><strong>횟수</strong></td>
+<td><strong>1건.</strong> 두 번째 질문은 &quot;검진에서 확인하겠습니다&quot;로 미룬다</td>
+</tr>
+<tr>
+<td><strong>표기</strong></td>
+<td>&quot;검진 소견이 아니라 문진 자문입니다&quot;를 서면에 쓴다</td>
+</tr>
+</tbody>
+</table>
+<p><strong>설계 가설.</strong> 문진 후 검사 계획서가 다음 단계와 고객의 준비자료를 분명히 할 수 있다. 자문 1건이 참여·만족도에 미치는 효과와 업무 범위는 승인·파일럿 전 검증되지 않았다.</p>
+<p><strong>왜 결과지에 안 올리나.</strong> 자문은 원문 확인 전의 답이다. 결과지에 올리면 E0가 카드가 되고, &quot;확인하지 않고 판정했다&quot;는 결함이 된다. 자문은 <strong>문진 기록지</strong>에 남기고, 검진 결과와 분리한다.</p>
+<h3 id="4-7-정지선-3개-자문이-상담-창구가-되지-않게">4-7. 정지선 3개 — 자문이 상담 창구가 되지 않게</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">#</th>
+<th>정지선</th>
+<th>이유</th>
+<th>이렇게 말한다</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">1</td>
+<td><strong>진행 중 분쟁의 상세</strong></td>
+<td>이해충돌·수임 가능성 확인 전 사건 내용을 받지 않도록 하는 접수 게이트. 법적 근거·정확한 문구는 별도 검증</td>
+<td>“그 건은 상세 내용을 받기 전에 이해충돌부터 확인하겠습니다. 우선 접수에 필요한 최소 정보만 알려주세요.”</td>
+</tr>
+<tr>
+<td style="text-align:right">2</td>
+<td><strong>진행 중인 협상의 조건</strong></td>
+<td>협상 상대가 우리 고객일 수 있다</td>
+<td>“협상 중인 조건은 듣지 않겠습니다. 확정된 계약서로 보겠습니다”</td>
+</tr>
+<tr>
+<td style="text-align:right">3</td>
+<td><strong>상대방 평가·비방</strong></td>
+<td>기록에 남기면 분쟁 자료가 된다</td>
+<td>“상대방 이야기는 적지 않겠습니다. 사실만 적겠습니다”</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>1번은 초회상담 스크립트 §정지선과 같은 문장을 쓴다.</strong> 문진이라고 완화하지 않는다.</li>
+<li>정지선에 걸리면 <strong>자문 1건을 다른 영역으로 바꾼다.</strong> 자문을 없애지 않는다.</li>
+</ul>
+<h3 id="4-8-서면-모드-대면이-어려운-고객">4-8. 서면 모드 — 대면이 어려운 고객</h3>
+<table>
+<thead>
+<tr>
+<th>상황</th>
+<th>처리</th>
+<th>표기</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>대면 불가</td>
+<td>승인된 문진표 서면 + 필요 시 보조 인터뷰. 별도 자문은 승인·범위 합의 시에만</td>
+<td>실제 시간·납기 별도 합의</td>
+</tr>
+<tr>
+<td>문진 거부</td>
+<td>1단계 진행 가능. 자문 없음</td>
+<td>결과지에 <strong>“문진 상담 없이 서면 기준”</strong> 고정 표기</td>
+</tr>
+<tr>
+<td>해외·지방</td>
+<td>화상 40분</td>
+<td>동일</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>검사 계획서는 승인된 서식과 절차에 따라 발행한다.</strong> 현행 서면 문진만으로 발행할 수 있는지는 관련 정본 개정·확인 전 미확정.</li>
+<li>문진 거부 고객의 결과지는 <strong>&quot;못 봄&quot;이 많아진다.</strong> 그 사실을 미리 고지한다.</li>
+</ul>
+<h3 id="4-9-문진-기록지">4-9. 문진 기록지</h3>
+<p>부록 C에 양식을 둔다. 기록지는 <strong>고객 확인 서명</strong>을 받는다. 서명이 없으면 문진은 완료되지 않는다.</p>
+<hr>
+<h2 id="5-1단계-기초검진">5. 1단계 — 기초검진</h2>
+<blockquote>
+<p><strong>제안 범위: 계약 1건 + 사무소 확인자료 + 현행 문진.</strong> 아래 40분 상담을 포함하는 구성은 승인 대기안이다.</p>
+</blockquote>
+<h3 id="5-1-받는-것-3개">5-1. 받는 것 — 3개</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">#</th>
+<th>무엇</th>
+<th style="text-align:right">분량</th>
+<th>왜</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">1</td>
+<td><strong>문진</strong></td>
+<td style="text-align:right">현행 서면 문진. 40분 상담은 선택안</td>
+<td>확인할 신호</td>
+</tr>
+<tr>
+<td style="text-align:right">2</td>
+<td><strong>계약 원문 1건</strong></td>
+<td style="text-align:right">1건</td>
+<td>X-ray. 등기부 밖의 원문 근거 1개</td>
+</tr>
+<tr>
+<td style="text-align:right">3</td>
+<td><strong>서명 1장</strong></td>
+<td style="text-align:right">1장</td>
+<td>계약 + 개인정보 위수탁 통합</td>
+</tr>
+</tbody>
+</table>
+<p><strong>플러스 알파(필수 아님):</strong> 정관·계약대장·인허가표가 있으면 받는다. 없으면 <strong>받지 않는다.</strong> &quot;있으면 좋습니다&quot;는 필수가 아니라는 뜻이고, 검사 계획서에는 <strong>필수만</strong> 적는다.</p>
+<h3 id="5-2-받지-않는-것-1단계에서-명시한다">5-2. 받지 않는 것 — 1단계에서 명시한다</h3>
+<table>
+<thead>
+<tr>
+<th>받지 않는 것</th>
+<th>왜</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>정관</td>
+<td>없으면 등기부로 대체. 정관 미보유 자체가 소견</td>
+</tr>
+<tr>
+<td>계약대장</td>
+<td>1건만 보므로 불필요. 없으면 “없음”</td>
+</tr>
+<tr>
+<td>의사록·근로서류·IP·재무</td>
+<td>1단계 범위 밖. 정밀군 18행</td>
+</tr>
+<tr>
+<td>두 번째 계약</td>
+<td>1단계는 1건. 추가는 2단계</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-3-순서-7단">5-3. 순서 7단</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">단</th>
+<th>무엇</th>
+<th>산출</th>
+<th style="text-align:right">소요</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">1</td>
+<td>접수에 필요한 최소 식별정보만 수령 → <strong>이해충돌 5항목</strong> + <code>conflict_check.py</code></td>
+<td>통과 / 거절</td>
+<td style="text-align:right">1일</td>
+</tr>
+<tr>
+<td style="text-align:right">2</td>
+<td>충돌 통과 후 사전 문진 등 필요한 최소 정보 수령</td>
+<td>티어 권고 1줄</td>
+<td style="text-align:right">시간 미확정</td>
+</tr>
+<tr>
+<td style="text-align:right">3</td>
+<td>견적 · 계약 · 위수탁 및 AI 처리 고지 확정·서명</td>
+<td>서명 기록</td>
+<td style="text-align:right">계약 조건에 따름</td>
+</tr>
+<tr>
+<td style="text-align:right">4</td>
+<td>계약 상대방 상호 등 추가 충돌 대조</td>
+<td>통과 / 거절</td>
+<td style="text-align:right">—</td>
+</tr>
+<tr>
+<td style="text-align:right">5</td>
+<td><strong>CK 채번</strong></td>
+<td><code>30_clients/CK-NNN/</code></td>
+<td style="text-align:right">운영 기준에 따름</td>
+</tr>
+<tr>
+<td style="text-align:right">6</td>
+<td>본 문진 및 필요 시 보조 인터뷰 → 검사 계획서</td>
+<td>기록지 + 계획서</td>
+<td style="text-align:right">현행 절차/승인된 안 적용</td>
+</tr>
+<tr>
+<td style="text-align:right">7</td>
+<td>동의·충돌 확인 후 자료 수령 → 완비 체크 → 단계별 납기 시작</td>
+<td>결과물</td>
+<td style="text-align:right">현행 납기 기준</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>사전 접수와 본 자료를 분리한다.</strong> 충돌 검토 전에는 접수에 필요한 최소 식별정보만 받는다. 분쟁 내용·계약서·문진 상세 등 민감 자료는 받지 않는다. 충돌 통과, 계약·위수탁 및 처리 고지 확인, CK 채번의 정확한 선후는 현행 접수 절차와 대조해 확정한다. 본 문진·원문 수령은 승인된 순서를 따른다.</p>
+</blockquote>
+<h3 id="5-4-계약-1건-선택-질문-1개와-대체-3개">5-4. 계약 1건 선택 — 질문 1개와 대체 3개</h3>
+<p><strong>질문은 하나다.</strong></p>
+<blockquote>
+<p>“대표님이 <strong>개인으로 보증하거나 서명한 계약</strong>이 있습니까? 있으면 그 계약, 없으면 <strong>다음 분기 매출이 가장 큰 계약</strong>을 주세요.”</p>
+</blockquote>
+<p>이 한 건이 ① 대표 개인 카드 ② 매출 카드 ③ 등기부 R-02를 동시에 살린다(종합판 C1).</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">#</th>
+<th>고르지 못할 때</th>
+<th>대체</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">1</td>
+<td>1건도 고르지 못함</td>
+<td>“최근 1년 계약서 <strong>5건을 폴더째</strong> 주세요. 저희가 고르겠습니다”</td>
+</tr>
+<tr>
+<td style="text-align:right">2</td>
+<td>계약서가 없음(구두)</td>
+<td><strong>L1-06 M</strong> + “거래내역 1장”</td>
+</tr>
+<tr>
+<td style="text-align:right">3</td>
+<td>분쟁 중인 계약</td>
+<td><strong>제외</strong>하고 다른 1건. 그 건은 별도 상담</td>
+</tr>
+<tr>
+<td style="text-align:right">4</td>
+<td>비밀유지 조항</td>
+<td>가려서 제출. 제3자 제공 가능 여부는 고객 확인</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-5-검사-범위-무엇을-판정하나">5-5. 검사 범위 — 무엇을 판정하나</h3>
+<table>
+<thead>
+<tr>
+<th>근거</th>
+<th>범위</th>
+<th>판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>계약 1건 원문</strong></td>
+<td>L1-01·02·03·04·07·08 / L2-01·05·07 / L3-02·03·04</td>
+<td>이상 없음 ~ H</td>
+</tr>
+<tr>
+<td><strong>등기부</strong></td>
+<td>R-02 <strong>확정</strong> / R-01·R-04 <strong>추정</strong></td>
+<td>M 상한 (추정)</td>
+</tr>
+<tr>
+<td><strong>문진 응답</strong></td>
+<td>응답군 8행 + 선별군 19행 중 신호</td>
+<td><strong>M 상한</strong>, “응답 기준”</td>
+</tr>
+<tr>
+<td><strong>미검</strong></td>
+<td>정밀군 18행 + 자료 없는 원문군</td>
+<td>“못 봄”</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>R-01은 정관이 없으면 표시하지 않는다.</strong> <code>취임일 + 3년 + 6개월</code> 보수 기준 전에는 관찰로도 올리지 않는다(종합판 §6-4).</li>
+<li><strong>&quot;이상 없음&quot;은 계약 1건과 등기부에서 원문으로 확인한 항목에만</strong> 쓴다.</li>
+</ul>
+<h3 id="5-6-결과지에-나오는-것-못-보는-것">5-6. 결과지에 나오는 것 / 못 보는 것</h3>
+<table>
+<thead>
+<tr>
+<th>나오는 것</th>
+<th>못 보는 것 (결과지에 명시)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5문장 (3발견 + 2한계)</td>
+<td>정관·의사록 → 지배구조</td>
+</tr>
+<tr>
+<td>카드 1~3</td>
+<td>인사·노무 전수</td>
+</tr>
+<tr>
+<td>5영역 지도 (4색)</td>
+<td>IP 등록·영업비밀</td>
+</tr>
+<tr>
+<td>“다음에 낼 서류 3개”</td>
+<td>재무비율·차입 크로스디폴트</td>
+</tr>
+<tr>
+<td>근거 대장 (요약)</td>
+<td>두 번째 계약</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-7-원가-경고-가격은-여기서-정하지-않는다">5-7. 원가 경고 — 가격은 여기서 정하지 않는다</h3>
+<blockquote>
+<p><strong>⚠️ 주의 — 문진 40분을 1단계에 넣으면 원가가 바뀐다</strong>
+종합판의 1단계 가설 가격은 <strong>검수 1.5시간</strong>을 전제로 한다. 여기에 <strong>문진 40분 + 기록 정리 20분 + 자문 검토 15분</strong>을 더하면 1단계 총 투입이 <strong>2시간 45분</strong>이 된다.
+이 문서는 <strong>가격을 정하지 않는다.</strong> 파일럿에서 실측한 뒤 <code>08_가격결정표.md</code>에서만 정한다. 그 전에는 견적서에 새 구조를 쓰지 않는다.</p>
+</blockquote>
+<hr>
+<h2 id="6-2단계-종합검진">6. 2단계 — 종합검진</h2>
+<blockquote>
+<p><strong>도는 검사: 0~4.</strong> 초음파(계약 3~6건 + 부속)가 추가된다.</p>
+</blockquote>
+<h3 id="6-1-계약-3칸-자료-보유-여부-확인">6-1. 계약 3칸 + 자료 보유 여부 확인</h3>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>무엇</th>
+<th>필수?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>3칸</strong></td>
+<td>계약 3건 (슬롯 ①매출 ②매입·외주 ③보증)</td>
+<td><strong>필수</strong></td>
+</tr>
+<tr>
+<td><strong>추가 자료</strong></td>
+<td>정관 · 기존 계약대장 · 인허가 자료(해당 업종)</td>
+<td>보유·해당 여부 확인. 보유 시 전달, 미보유면 새로 작성하지 않고 “없음” 또는 &quot;확인하지 못함&quot;으로 표시</td>
+</tr>
+<tr>
+<td><strong>추가</strong></td>
+<td>사무소가 고른 2~3건</td>
+<td>선택 (1회 요청)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="6-2-슬롯-3개-고르세요-가-아니라-채우세요">6-2. 슬롯 3개 — &quot;고르세요&quot;가 아니라 “채우세요”</h3>
+<table>
+<thead>
+<tr>
+<th>슬롯</th>
+<th>채우는 계약</th>
+<th>잡는 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>① <strong>매출</strong></td>
+<td>매출이 가장 큰 거래처와의 계약</td>
+<td>단가 일방 변경·해지 비대칭·자동갱신·최소구매</td>
+</tr>
+<tr>
+<td>② <strong>매입·외주</strong></td>
+<td>끊기면 생산·서비스가 멈추는 계약</td>
+<td>책임한도·위약벌·결과물 권리 귀속</td>
+</tr>
+<tr>
+<td>③ <strong>보증</strong></td>
+<td>대표가 개인으로 보증하거나 서명한 계약 (없으면 리스·차입)</td>
+<td>연대보증·기한이익상실·크로스디폴트</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>분쟁 중인 계약은 넣지 않는다.</strong></li>
+<li><strong>비밀유지 조항</strong>은 고객이 제3자 제공 가능 여부를 확인한다. 필요하면 가린다.</li>
+<li>한 유형에 몰리면 사무소가 <strong>한 번만</strong> &quot;○○ 유형이 빠졌습니다. 1건만 더 주세요&quot;라고 묻는다. 재선택을 요구하지 않는다.</li>
+<li><strong>폴더 전달 예외:</strong> 고르기 어려우면 대체 자료 수령을 제안할 수 있으나, 이해충돌·계약·처리 절차를 마친 뒤 자료 범위·납기·비용을 서면 합의한다. 승인 전 다량 자료 수령 금지.</li>
+</ul>
+<h3 id="6-3-사무소-추가-선정-2-3건-한-번만">6-3. 사무소 추가 선정 2~3건 — 한 번만</h3>
+<p>계약대장이 있으면 사무소가 고른다.</p>
+<table>
+<thead>
+<tr>
+<th>기준</th>
+<th style="text-align:right">몇 건</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>금액 상위</td>
+<td style="text-align:right">2</td>
+</tr>
+<tr>
+<td>자동갱신·해지통지 임박</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td><strong>합계</strong></td>
+<td style="text-align:right"><strong>3</strong> (최근 신규는 위 3건에 없을 때 1건을 대체)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>요청은 <strong>1회</strong>. 거절하면 3건으로 진행하고 결과지에 <strong>“확인한 계약 3건”</strong> 이라고 적는다.</li>
+<li>추가 선정 이유를 결과지에 한 줄로 쓴다: “금액 상위 2건과 자동갱신 1건을 추가로 확인했습니다.”</li>
+</ul>
+<h3 id="6-4-없을-때의-대체">6-4. 없을 때의 대체</h3>
+<table>
+<thead>
+<tr>
+<th>없는 것</th>
+<th>대체</th>
+<th>결과지 표기</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>정관</strong></td>
+<td>등기부 등 대체자료로 확인 가능한 범위를 제한적으로 확인</td>
+<td>대체 근거·미검 범위를 기록. 미보유만으로 소견을 자동 생성하지 않음</td>
+</tr>
+<tr>
+<td><strong>계약대장</strong></td>
+<td>기존 자료 보유 여부 확인. 미보유면 사무소 작성 필요성·범위 별도 합의</td>
+<td>현행 룰팩·판정규약 적용. 자동 소견 금지</td>
+</tr>
+<tr>
+<td><strong>인허가 자료</strong></td>
+<td>공개정보로 확인 가능한 범위 검토</td>
+<td>부관 등 미수령 자료는 미검으로 구분</td>
+</tr>
+<tr>
+<td><strong>계약 3칸 선택 곤란</strong></td>
+<td>추가 원문을 받기 전에 충돌·계약·처리 절차 및 범위 합의</td>
+<td>합의한 자료만 수령하고 사무소 선정 여부 표시</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>자료 미보유만으로 소견을 자동 생성하지 않는다. 대체자료로 확인할 수 있는 범위와 남는 미검 범위를 구분하고, 판정은 현행 룰팩·판정규약을 따른다.</p>
+</blockquote>
+<h3 id="6-5-추가-요청-1회">6-5. 추가 요청 1회</h3>
+<ul>
+<li><strong>2단계는 1회.</strong> 문진·3서류에서 신호가 잡힌 영역에 한해 추가 자료를 요청한다.</li>
+<li>요청 시점에 <strong>납기 카운트가 멈춘다.</strong> 회신하면 다시 시작한다.</li>
+<li>1단계는 추가 요청이 <strong>없다.</strong> &quot;못 봄&quot;으로 두고 필요한 자료 1개씩만 안내한다.</li>
+</ul>
+<h3 id="6-6-결과지">6-6. 결과지</h3>
+<p>12p — 1~3면은 1단계와 동일, 4~8면 카드 4~8장, 9~12면 근거 대장·미검. 상담 60분.</p>
+<hr>
+<h2 id="7-3단계-정밀검진">7. 3단계 — 정밀검진</h2>
+<blockquote>
+<p><strong>제안 범위:</strong> 합의된 계약군·기준기간·전수 또는 표본 범위에 따라 검토를 확장한다. CT/MRI 은유와 선택 모듈은 승인 전 확정 상품 설명이 아니다.</p>
+</blockquote>
+<h3 id="7-1-4-wave-자료를-한꺼번에-받지-않는다">7-1. 4 wave — 자료를 한꺼번에 받지 않는다</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">Wave</th>
+<th>시점</th>
+<th>무엇</th>
+<th>누가</th>
+<th>산출</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><strong>1</strong></td>
+<td>계획 단계</td>
+<td>대표 인터뷰(시간 별도 합의) + 공개정보 확인</td>
+<td>변호사 + 사무소</td>
+<td>검사 계획서</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>2</strong></td>
+<td>계획서 합의 후</td>
+<td>보유 자료 확인(자료 종류·해당성 별도 표시)</td>
+<td>고객 + 사무소</td>
+<td>자료 상태표</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>3</strong></td>
+<td>범위 합의 후</td>
+<td>합의한 계약군·기간·원문 범위 확정</td>
+<td>고객 + 사무소</td>
+<td>자료 목록·표본 기준</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>4</strong></td>
+<td>자료 확인 뒤</td>
+<td>필요한 실무자 인터뷰(수·시간 사전 합의) + 현장(별도 선택)</td>
+<td>변호사</td>
+<td>인터뷰 기록</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>납기 시작일</strong></td>
+<td>완비 확인</td>
+<td>현행 정본·계약의 완비 기준 적용</td>
+<td>사무소</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>wave는 요청 방식의 설계안이다.</strong> 분할 요청이 고객 부담이나 완비율을 개선하는지는 파일럿으로 확인한다. 일정·납기는 승인 후 계획서에 기재한다.</p>
+<h3 id="7-2-원문-전수-상한과-표본">7-2. 원문 전수 — 상한과 표본</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">계약 수</th>
+<th>방식</th>
+<th>결과지 표기</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><strong>50건 이하</strong></td>
+<td>계약군·기간·자료 완비 여부를 합의한 경우 해당 계약군 전수</td>
+<td>“합의된 범위의 계약 N건 전수 확인”</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>51건 이상</strong></td>
+<td>사전 합의한 선정 규칙에 따른 표본</td>
+<td>“대상 N건 중 M건 표본 — 선정 기준: 금액 상위, 자동갱신, 대표 보증, 신규, 해지 임박”</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>표본 상한</strong></td>
+<td>최대 30건. 31~50건 전수 대상이지만 고객·사무소가 범위·상한을 합의하지 못하면 착수 전 재산정</td>
+<td>별도 범위·납기·비용 합의 전 표본 수를 약속하지 않음</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>&quot;전수&quot;는 합의된 계약군과 기준기간 안의 자료에만 적용한다.</strong> 다른 문서군·부속자료까지 전수 확인한다는 의미가 아니다. 대상·기준일·건수·제외자료·표본 여부를 검사 계획서에 기록한다.</li>
+<li><strong>부속자료는 보유·관련성이 확인된 것만</strong> 받는다. 미보유와 고객이 존재 여부를 확인하지 못한 상태를 구분한다.</li>
+</ul>
+<h3 id="7-3-인터뷰-설계-승인-시-범위별-구성">7-3. 인터뷰 설계 — 승인 시 범위별 구성</h3>
+<table>
+<thead>
+<tr>
+<th>대상</th>
+<th style="text-align:right">시간</th>
+<th>무엇을</th>
+<th>왜</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>대표</strong></td>
+<td style="text-align:right">제안 90분. 보조 인터뷰와 별도 여부를 사전 확정</td>
+<td>결정·우선순위·승인 구조</td>
+<td>문서에 없는 운영 정보를 확인</td>
+</tr>
+<tr>
+<td><strong>재무 담당</strong>(선택)</td>
+<td style="text-align:right">최대 45분</td>
+<td>차입·보증 현황의 확인 필요성</td>
+<td>개인별 재무자료는 기본 요청하지 않음</td>
+</tr>
+<tr>
+<td><strong>인사 담당</strong>(선택)</td>
+<td style="text-align:right">최대 45분</td>
+<td>근로 서식·운영 실태</td>
+<td>개인별 인사기록은 기본 요청하지 않음</td>
+</tr>
+<tr>
+<td><strong>영업 담당</strong>(선택)</td>
+<td style="text-align:right">최대 45분</td>
+<td>계약 유형·고객 집중</td>
+<td>계약대장과 실제 업무 차이</td>
+</tr>
+<tr>
+<td><strong>현장 담당</strong>(별도 선택)</td>
+<td style="text-align:right">최대 60분</td>
+<td>인허가·안전·자산 관련 확인</td>
+<td>서류와 현장 차이</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>대상 수·총시간:</strong> 재무·인사·영업 중 필요한 대상을 최대 3개까지 선택하는 안이다. 대표 90분과 실무자 인터뷰를 합산한 총시간을 검사 계획서에 적고 사전 합의한다. 현장 인터뷰는 별도 선택·별도 시간이다. 승인 전 확정 약속 금지.</li>
+<li><strong>질문 원칙:</strong> 자료로 확인할 수 있는 사실은 자료로 대조하고, 인터뷰는 자료 위치·운영 흐름·추가 확인이 필요한 점을 파악하는 보조 수단으로 쓴다.</li>
+<li><strong>분쟁 상세는 인터뷰에서도 캐묻지 않는다.</strong> 상대방 상호와 진행 단계까지만.</li>
+<li>인터뷰 기록은 <strong>고객 확인 서명</strong>을 받는다.</li>
+</ul>
+<h3 id="7-4-부속자료-3단계에서만-받는-것">7-4. 부속자료 — 3단계에서만 받는 것</h3>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>왜</th>
+<th>없으면</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>주주간계약·투자계약</td>
+<td>CoC·우선매수권·동의권·풋옵션</td>
+<td>미검</td>
+</tr>
+<tr>
+<td>차입계약·보증서</td>
+<td>기한이익상실·크로스디폴트</td>
+<td>미검</td>
+</tr>
+<tr>
+<td>IP 등록현황·외주 결과물 계약</td>
+<td>권리 귀속</td>
+<td>미검</td>
+</tr>
+<tr>
+<td>임대차계약·신탁원부</td>
+<td>보증금 회수(L8-07)</td>
+<td>미검</td>
+</tr>
+<tr>
+<td>개인정보 처리방침·위수탁 목록</td>
+<td>L5-03</td>
+<td>미검</td>
+</tr>
+<tr>
+<td>수출입·라벨(해당 업종)</td>
+<td>L4-08</td>
+<td>미검</td>
+</tr>
+</tbody>
+</table>
+<h3 id="7-5-결정-시나리오-3개">7-5. 결정 시나리오 3개</h3>
+<p>결정이 있을 때만 만든다. 각 시나리오에 <strong>6개 조항</strong>이 어떻게 걸리는지 적는다.</p>
+<table>
+<thead>
+<tr>
+<th>조항</th>
+<th>질문</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CoC(지배권 변경)</td>
+<td>지배권이 바뀌면 상대방 동의가 필요한가</td>
+</tr>
+<tr>
+<td>우선매수권</td>
+<td>주식을 팔 때 누가 먼저 살 수 있나</td>
+</tr>
+<tr>
+<td>동의권</td>
+<td>투자·차입·자산처분에 누구 동의가 필요한가</td>
+</tr>
+<tr>
+<td>진술보장</td>
+<td>실사에서 무엇을 보장했고, 틀리면 얼마인가</td>
+</tr>
+<tr>
+<td>경업</td>
+<td>창업·이직 시 어디까지 막히나</td>
+</tr>
+<tr>
+<td>양도제한</td>
+<td>계약·지분을 넘길 수 있나</td>
+</tr>
+</tbody>
+</table>
+<h3 id="7-6-90일-이행확인-서면-1회">7-6. 90일 이행확인 — 서면 1회</h3>
+<ul>
+<li>납품 후 <strong>90일</strong>, 서면 1회. <strong>새 판정은 하지 않는다.</strong></li>
+<li>카드 실행 여부만 확인한다: 했음 / 안 했음 / 못 함(이유).</li>
+<li>이행확인은 <strong>고문 상품과의 경계</strong>다. 추가 자문은 별도 계약.</li>
+</ul>
+<h3 id="7-7-결과지">7-7. 결과지</h3>
+<p>기본형 4주 — 임원보고 2p + 상세 20~30p + 실행표 + 90일 캘린더 + 이행확인 1회. 옵션(＋2주) — 보드덱 10장 + 워크숍 2회.</p>
+<hr>
+<h2 id="8-자료별-사전-a-b-c-d">8. 자료별 사전 — A / B / C / D</h2>
+<h3 id="8-1-a레인-사무소가-뽑는다">8-1. A레인 — 사무소가 뽑는다</h3>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>단계</th>
+<th>왜</th>
+<th>없으면</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>법인등기부등본</strong></td>
+<td>1~3</td>
+<td>R-02·R-01·R-04, 임원·목적·자본금</td>
+<td>고객 사본 요청</td>
+<td>사무소 발급, <strong>실비 별도</strong></td>
+</tr>
+<tr>
+<td><strong>법인 공시 요약</strong></td>
+<td>1~3</td>
+<td>규모·재무 개요 <strong>참고</strong></td>
+<td>생략</td>
+<td><strong>재무비율 판정 안 함</strong></td>
+</tr>
+<tr>
+<td><strong>인허가 공개정보</strong></td>
+<td>1~3</td>
+<td>L4-01·L2-02</td>
+<td>미검</td>
+<td>허가 업종만</td>
+</tr>
+<tr>
+<td><strong>상대방 공개정보</strong></td>
+<td>3</td>
+<td>L3-06 도산·회생</td>
+<td>미검</td>
+<td><strong>검색엔진 질의 금지</strong> — 고객이 준 상호로 공시·공고 열람만</td>
+</tr>
+<tr>
+<td><strong>부동산 등기·신탁원부</strong></td>
+<td>3</td>
+<td>L8-07 보증금 회수</td>
+<td>미검</td>
+<td>임대차계약 필요</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>상대방 공개정보의 함정.</strong> 위키 금지선은 &quot;기업명·대표자명·거래처명을 웹/MCP 검색어에 넣지 않는다&quot;이다. L3-06은 이 금지선 안에서만 수행한다. 검색으로 확인하지 못하면 <strong>미검</strong>으로 적는다.</p>
+</blockquote>
+<h3 id="8-2-b레인-고객이-낸다">8-2. B레인 — 고객이 낸다</h3>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>단계</th>
+<th>왜</th>
+<th>없으면</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>계약 원문</strong></td>
+<td>1: 1건 / 2: 3~6 / 3: 전수</td>
+<td>L1·L2·L3</td>
+<td>미검</td>
+<td><strong>최초본 + 수정본</strong> 함께</td>
+</tr>
+<tr>
+<td><strong>정관</strong></td>
+<td>2~3</td>
+<td>L6-01·R-01</td>
+<td>등기부 등 대체 가능 범위를 제한적으로 확인</td>
+<td>미보유만으로 자동 소견을 만들지 않고 룰팩 적용</td>
+</tr>
+<tr>
+<td><strong>인허가 사본(부관 포함)</strong></td>
+<td>1~3</td>
+<td>L4-07</td>
+<td>미검</td>
+<td><strong>부관 없으면 판정 불가</strong></td>
+</tr>
+<tr>
+<td><strong>의사록</strong></td>
+<td>3</td>
+<td>L6-02</td>
+<td>보유분·기준기간을 사전 합의</td>
+<td>미보유만으로 자동 소견을 만들지 않고 룰팩 적용</td>
+</tr>
+<tr>
+<td><strong>표준 근로계약·취업규칙</strong></td>
+<td>2~3</td>
+<td>L7-01·02</td>
+<td>미검</td>
+<td><strong>개인별 계약은 받지 않음</strong></td>
+</tr>
+<tr>
+<td><strong>분쟁 목록</strong></td>
+<td>2~3</td>
+<td>L3-01</td>
+<td>미검</td>
+<td><strong>상대·쟁점·단계만</strong></td>
+</tr>
+<tr>
+<td><strong>주주간·투자계약</strong></td>
+<td>2~3</td>
+<td>L6-05·L2-04</td>
+<td>미검</td>
+<td>Q19=예일 때</td>
+</tr>
+<tr>
+<td><strong>차입·보증서</strong></td>
+<td>2~3</td>
+<td>L8-01·L2-03</td>
+<td>미검</td>
+<td>Q17=예일 때</td>
+</tr>
+<tr>
+<td><strong>IP 등록·외주계약</strong></td>
+<td>2~3</td>
+<td>L5-01·02</td>
+<td>미검</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>개인정보 처리방침·위수탁 목록</strong></td>
+<td>2~3</td>
+<td>L5-03</td>
+<td>미검</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>임대차계약</strong></td>
+<td>3</td>
+<td>L8-07</td>
+<td>미검</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>주주명부(마스킹)</strong></td>
+<td>3</td>
+<td>L6-06·07</td>
+<td>미검</td>
+<td><strong>지분율·주식수만</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="8-3-c레인-인터뷰로-만든다">8-3. C레인 — 인터뷰로 만든다</h3>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>단계</th>
+<th>왜</th>
+<th>만드는 법</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>계약대장</strong></td>
+<td>2~3</td>
+<td>L2-01·L2-06</td>
+<td>기존 대장이 있으면 고객 전달. 없으면 고객이 새로 작성하지 않으며, 사무소 작성 여부·범위를 인터뷰 후 합의</td>
+</tr>
+<tr>
+<td><strong>조직도</strong></td>
+<td>2~3</td>
+<td>L6-03·L7</td>
+<td>대표·인사 인터뷰</td>
+</tr>
+<tr>
+<td><strong>보증·담보 현황</strong></td>
+<td>1~3</td>
+<td>L8-05</td>
+<td>문진 Q17 + 재무 인터뷰(2단계~)</td>
+</tr>
+<tr>
+<td><strong>분쟁 목록</strong></td>
+<td>2~3</td>
+<td>L3-01</td>
+<td>기존 목록이 있는 경우에만 최소 항목으로 전달. 새로 작성 요구하지 않으며, 세부 사건 내용은 수령하지 않음</td>
+</tr>
+<tr>
+<td><strong>인허가 갱신 캘린더</strong></td>
+<td>1~3</td>
+<td>L2-02</td>
+<td>공개정보 + 고객 확인</td>
+</tr>
+<tr>
+<td><strong>업무 분장·결재 흐름</strong></td>
+<td>3</td>
+<td>L6-01</td>
+<td>대표·실무자 인터뷰</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>고객에게 새 표를 만들라고 요구하지 않는 것이 제안 원칙이다. 사무소가 표를 작성할 경우 입력 자료·인터뷰·작업 시간과 검증 책임을 먼저 합의한다.</p>
+</blockquote>
+<h3 id="8-4-d레인-받지-않는다">8-4. D레인 — 받지 않는다</h3>
+<table>
+<thead>
+<tr>
+<th>받지 않는 것</th>
+<th>왜</th>
+<th>대신 보는 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>재무제표·세무신고서</strong></td>
+<td>이 상품은 세무·회계 판정을 하지 않는다. L8-04는 정밀군이고 원문으로도 확정 불가</td>
+<td>공시 요약 + 차입계약</td>
+</tr>
+<tr>
+<td><strong>4대보험 가입자 명부</strong></td>
+<td>개인정보 과다</td>
+<td>문진 Q14의 상시 인원</td>
+</tr>
+<tr>
+<td><strong>주민등록등본·법인인감증명서</strong></td>
+<td>목적 불명, 최소수집 위반</td>
+<td>등기부(사무소 발급)</td>
+</tr>
+<tr>
+<td><strong>전체 계약서</strong></td>
+<td>3단계도 상한 협의. 전수는 별도 감사</td>
+<td>1건 / 3칸 / 표본</td>
+</tr>
+<tr>
+<td><strong>전체 근로계약서</strong></td>
+<td>개인별 계약은 표준양식 1부 + 인원 수로 판정 가능</td>
+<td>표준 근로계약 1부 + 취업규칙</td>
+</tr>
+<tr>
+<td><strong>소송 기록 전체</strong></td>
+<td>개별 분쟁 대응은 별도 업무. 접수·이해충돌 절차가 허용하는 최소 정보 외에는 받지 않음</td>
+<td>별도 업무 여부를 승인 절차에 따라 판단</td>
+</tr>
+<tr>
+<td><strong>급여대장·개인별 급여</strong></td>
+<td>개인정보 과다</td>
+<td>임금 구조표(직군별)</td>
+</tr>
+<tr>
+<td><strong>고객 개인정보 원본(DB·CSV)</strong></td>
+<td>처리방침·위수탁 목록으로 판정</td>
+<td>처리방침·위수탁 목록</td>
+</tr>
+<tr>
+<td><strong>주주명부 원본</strong></td>
+<td>주민번호·주소 과다</td>
+<td>지분율·주식수만 (마스킹)</td>
+</tr>
+<tr>
+<td><strong>통장·카드·세금계산서</strong></td>
+<td>거래 실사 영역</td>
+<td>계약 원문의 금액 조항</td>
+</tr>
+<tr>
+<td><strong>의사록 전체</strong></td>
+<td>최근 2년 중요 안건만</td>
+<td>안건 목록 + 해당 의사록</td>
+</tr>
+<tr>
+<td><strong>인사평가·징계 기록</strong></td>
+<td>개인정보</td>
+<td>내부 규정 유무</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>D레인을 먼저 정하는 이유.</strong> 받지 않을 것을 정하면 요청서가 짧아지고, 짧아지면 회신율이 오른다. 그리고 개인정보 리스크가 줄어든다.</p>
+</blockquote>
+<h3 id="8-5-자료-상태-소견-미검-응답-기준">8-5. 자료 상태 — 소견 / 미검 / 응답 기준</h3>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>고객 상태 표시</th>
+<th>판정자 처리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>정관·계약대장·의사록·근로 서식</td>
+<td>없음 / 해당 없음 / 확인하지 못함 / 확인 중 / 보유</td>
+<td>해당 룰의 발동 요건과 근거에 따라 소견 또는 미검. 자동 판정 금지</td>
+</tr>
+<tr>
+<td>인허가 자료</td>
+<td>해당 없음 / 보유 / 미보유 / 확인하지 못함</td>
+<td>허가 해당성·공개정보·원문 여부를 별도 확인</td>
+</tr>
+<tr>
+<td>보증·담보·분쟁 정보</td>
+<td>문진 응답 / 기존 목록 보유 / 확인하지 못함</td>
+<td>응답 기준과 원문 확인을 구분. 분쟁 상세는 수집하지 않음</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>없음</code>, <code>해당 없음</code>, <code>확인하지 못함</code>, <code>확인 중</code>을 구분한다. 고객이 확실하지 않은 항목에 &quot;없음&quot;을 확약하도록 요구하지 않는다.</li>
+<li><strong>미보유 확인만으로 법적·운영상 소견을 자동 생성하지 않는다.</strong> 해당 룰의 발동 요건과 근거 등급을 따르고, 자료가 없어 판정할 수 없으면 미검으로 표시한다.</li>
+<li>응답만으로 원문 확인 색상(✓)을 부여하지 않는다. 구체 판정은 현행 판정 규약·룰팩을 따른다.</li>
+</ul>
+<hr>
+<h2 id="9-검사실-루틴">9. 검사실 루틴</h2>
+<h3 id="9-1-접수-5단-승인-전에는-현행-절차가-우선">9-1. 접수 5단 — 승인 전에는 현행 절차가 우선</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">단</th>
+<th>무엇</th>
+<th>산출</th>
+<th style="text-align:right">소요</th>
+<th>게이트</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">1</td>
+<td><strong>문의</strong> — 이해충돌 확인에 필요한 최소 식별정보와 문의 취지만</td>
+<td>LD 기록</td>
+<td style="text-align:right">운영 기준에 따름</td>
+<td>—</td>
+</tr>
+<tr>
+<td style="text-align:right">2</td>
+<td><strong>이해충돌</strong> — 현행 확인 항목·<code>conflict_check.py</code></td>
+<td>통과 / 거절</td>
+<td style="text-align:right">운영 기준에 따름</td>
+<td>★</td>
+</tr>
+<tr>
+<td style="text-align:right">3</td>
+<td><strong>계약·위수탁·처리 고지</strong> — 현행 승인 서식으로 완료</td>
+<td>서명 기록</td>
+<td style="text-align:right">계약 조건에 따름</td>
+<td>★</td>
+</tr>
+<tr>
+<td style="text-align:right">4</td>
+<td>지정 계약 상대방 등 추가 대조 후 CK 채번</td>
+<td><code>30_clients/CK-NNN/</code></td>
+<td style="text-align:right">운영 기준에 따름</td>
+<td>★</td>
+</tr>
+<tr>
+<td style="text-align:right">5</td>
+<td>충돌·계약·CK 선후 게이트 완료 후 문진·자료 수령</td>
+<td>완비 기록</td>
+<td style="text-align:right">현행 기준 적용</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>충돌 검토 전에 문진·분쟁 내용·계약서 등 사건·회사 민감 자료를 받지 않는다. 접수 식별정보 범위는 현행 충돌검사 절차를 따른다.</li>
+<li>계약 상대방 상호 대조와 CK 채번의 순서는 현행 엔진·기업안내 실무가이드와 일치시켜 확정한다. 이 문서만으로 새로운 순서를 만들지 않는다.</li>
+<li>계약·위수탁 및 필요한 AI 처리 고지 전 자료 수령 금지. 정확한 순서는 승인된 현행 정본에 따른다.</li>
+</ul>
+<h3 id="9-2-완비-확인-단계별-납기는-현행-정본에-맞춘다">9-2. 완비 확인 — 단계별 납기는 현행 정본에 맞춘다</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">#</th>
+<th>체크</th>
+<th>확인</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">1</td>
+<td>해당 단계의 필수자료 도착 또는 자료 미보유·해당없음·확인불가 상태 기록</td>
+<td>☐</td>
+</tr>
+<tr>
+<td style="text-align:right">2</td>
+<td>수령 자료의 텍스트 판독 가능 여부와 스캔 비중 확인</td>
+<td>☐</td>
+</tr>
+<tr>
+<td style="text-align:right">3</td>
+<td>개인정보 위수탁·AI 처리 관련 승인 절차 완료 여부 확인</td>
+<td>☐</td>
+</tr>
+<tr>
+<td style="text-align:right">4</td>
+<td>이해충돌·지정 상대방 대조 완료</td>
+<td>☐</td>
+</tr>
+<tr>
+<td style="text-align:right">5</td>
+<td>합의 범위·기준일·제외 항목·납기 시작일을 고객과 확인</td>
+<td>☐</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>납기 시작일과 필수자료 기준은 현재 <code>02_자료요청서.md</code> 및 종합판 §8-2와 일치시킨다. 미보유·해당없음 응답은 해당 정본이 허용하는 경우 완비로 기록한다.</li>
+<li>스캔본은 현행 자료요청서의 납기 기준으로 안내한다. 이 문서의 D+5 표기는 승인 전 고객 약속으로 사용하지 않는다.</li>
+</ul>
+<h3 id="9-3-보완-1회">9-3. 보완 1회</h3>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>보완</th>
+<th>범위</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1단계</td>
+<td><strong>없음</strong></td>
+<td>“못 봄” + 필요한 자료 1개씩</td>
+</tr>
+<tr>
+<td>2단계</td>
+<td><strong>1회 제안</strong></td>
+<td>검사 계획서에 적은 미확인 신호 영역. 현행 자료요청서와 일치시켜 승인</td>
+</tr>
+<tr>
+<td>3단계</td>
+<td><strong>1회</strong></td>
+<td>wave 3에서 확정</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>보완 요청 시점에 <strong>납기 카운트가 멈춘다.</strong> 회신하면 재개.</li>
+</ul>
+<h3 id="9-4-지연-2회">9-4. 지연 2회</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">회차</th>
+<th>무엇</th>
+<th>문구</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">1</td>
+<td>미정 — 현행 운영정본 확인</td>
+<td>미응답 자료와 현재 상태를 중립적으로 안내</td>
+</tr>
+<tr>
+<td style="text-align:right">2</td>
+<td>미정 — 현행 운영정본 확인</td>
+<td>있는 자료로 진행할지, 범위·납기를 다시 합의할지 서면 확인</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>리마인드 횟수·시점은 현행 운영정본을 확인해 고정한다. 자료가 없거나 미응답이라는 이유만으로 동의한 범위를 자동 변경하지 않는다. 범위를 바꾸려면 서면 합의 후 미검을 표시한다.</li>
+</ul>
+<h3 id="9-5-파기-반송">9-5. 파기·반송</h3>
+<ul>
+<li>보존·파기 시점은 현행 <code>09_개인정보처리.md</code>·계약에 따른다. 원본 외 사본·작업본·전사본·임시파일의 대상과 파기 기록 방식도 승인 전 확인한다.</li>
+<li>요청하지 않은 개인정보가 오면 <strong>지체 없이 삭제·마스킹</strong>하고 고객에게 알린다.</li>
+<li>파기 예정일을 <strong>CK 폴더 개설 시</strong> 등록한다.</li>
+</ul>
+<hr>
+<h2 id="10-실패-패턴-10">10. 실패 패턴 10</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">#</th>
+<th>증상</th>
+<th>원인</th>
+<th>처방</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">1</td>
+<td>문진이 답변만 수집하고 확인할 항목을 좁히지 못한다</td>
+<td>설계·운영시간 미검증</td>
+<td>현행 서면 문진과 조건부 보조 인터뷰부터 파일럿 측정. 40분안은 별도 승인</td>
+</tr>
+<tr>
+<td style="text-align:right">2</td>
+<td>22종 목록을 그대로 보낸다</td>
+<td>템플릿이 있다</td>
+<td><strong>검사 계획서 1장</strong>만 보낸다</td>
+</tr>
+<tr>
+<td style="text-align:right">3</td>
+<td>계약 1건을 못 고른다</td>
+<td>선택지가 없다</td>
+<td><strong>폴더 5건 예외</strong>를 먼저 제시한다</td>
+</tr>
+<tr>
+<td style="text-align:right">4</td>
+<td>정관이 없어 지배구조 판정 근거가 부족하다</td>
+<td>대체 근거·미검 규칙 미정</td>
+<td>현행 룰팩·판정규약에 따라 대체 또는 미검. 자동으로 소견 생성하지 않음</td>
+</tr>
+<tr>
+<td style="text-align:right">5</td>
+<td>스캔본을 텍스트로 착각</td>
+<td>접수 시 확인 없음</td>
+<td><strong>완비 5체크 3번</strong></td>
+</tr>
+<tr>
+<td style="text-align:right">6</td>
+<td>3단계 범위·투입이 예상보다 커진다</td>
+<td>문서군·기간·건수·인터뷰 범위 미합의</td>
+<td>착수 전 범위·표본·시간·납기·비용 합의</td>
+</tr>
+<tr>
+<td style="text-align:right">7</td>
+<td>인터뷰에서 분쟁 상세를 듣는다</td>
+<td>인터뷰는 자유롭다</td>
+<td><strong>정지선 3개</strong>를 인터뷰에도 적용</td>
+</tr>
+<tr>
+<td style="text-align:right">8</td>
+<td>승인된 범위 밖 상담으로 이어진다</td>
+<td>업무 경계·계약·기록이 불명확</td>
+<td>상담·검진·별도 자문 범위를 사전 고지하고 승인된 계약에 기록</td>
+</tr>
+<tr>
+<td style="text-align:right">9</td>
+<td>&quot;없음&quot;을 ✓로 표시한다</td>
+<td>처리 규칙 없음</td>
+<td><strong>§8-5 3분류</strong></td>
+</tr>
+<tr>
+<td style="text-align:right">10</td>
+<td>검사 계획서 없이 자료만 요청</td>
+<td>문진 산출물 없음</td>
+<td><strong>문진 3줄 + 계획서</strong> 필수</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="11-파일럿-측정-7">11. 파일럿 측정 7</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">#</th>
+<th>지표</th>
+<th>목표</th>
+<th>기록</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">1</td>
+<td>현행 문진·보조 인터뷰 소요</td>
+<td>파일럿에서 측정 후 목표 설정</td>
+<td>분 단위·단계별</td>
+</tr>
+<tr>
+<td style="text-align:right">2</td>
+<td>자문 1건 소요 (선택안 채택 시에만)</td>
+<td>승인 전 미제공, 이후 파일럿에서 기준 설정</td>
+<td>분 단위</td>
+</tr>
+<tr>
+<td style="text-align:right">3</td>
+<td>자료 완비까지 걸린 시간</td>
+<td>수치 목표 없이 실제 분포 기록</td>
+<td>기간·분모 병기</td>
+</tr>
+<tr>
+<td style="text-align:right">4</td>
+<td>고객 총 투입 시간</td>
+<td>파일럿에서 실측 후 목표 설정</td>
+<td>자기기입·작업별</td>
+</tr>
+<tr>
+<td style="text-align:right">5</td>
+<td>검수 시간</td>
+<td>현행 가격·범위 가정과 실제 편차 측정</td>
+<td>분 단위</td>
+</tr>
+<tr>
+<td style="text-align:right">6</td>
+<td><strong>“못 봄” 비율</strong></td>
+<td>관찰값</td>
+<td>영역 수</td>
+</tr>
+<tr>
+<td style="text-align:right">7</td>
+<td><strong>2단계 전환 사유</strong></td>
+<td>관찰값</td>
+<td>사유 코드</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>파일럿은 탐색 표본이다. 작은 표본으로 완비율·고객 일반의 반응·서비스 효과를 단정하지 않는다.</li>
+<li>투입시간이 예상과 다르면 가격만 또는 범위만 기계적으로 조정하지 말고, <code>08_가격결정표.md</code>와 담당자 승인을 거쳐 함께 재검토한다.</li>
+</ul>
+<hr>
+<h2 id="12-정본과의-관계">12. 정본과의 관계</h2>
+<h3 id="12-1-승계-종합판에서-그대로-가져온-것">12-1. 승계 — 종합판에서 그대로 가져온 것</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3단 축</td>
+<td><strong>자료량</strong>. 계약 1건 / 3~6건 / 전수</td>
+</tr>
+<tr>
+<td>4색</td>
+<td>조치·관찰·확인·못 봄 = H·M·✓·미검</td>
+</tr>
+<tr>
+<td>근거 사다리</td>
+<td>E0~E3. 응답은 H 불가, M 상한</td>
+</tr>
+<tr>
+<td>슬롯</td>
+<td>매출 / 매입·외주 / 보증</td>
+</tr>
+<tr>
+<td>납기</td>
+<td>D+3 / D+3 / 4주</td>
+</tr>
+<tr>
+<td>게이트</td>
+<td>이해충돌 · 개인정보 · AI · 파기 4종</td>
+</tr>
+<tr>
+<td>문법</td>
+<td>1면 5문장 = 3발견 + 2한계</td>
+</tr>
+</tbody>
+</table>
+<h3 id="12-2-변경-3개-이-문서가-새로-제안하는-것">12-2. 변경 3개 — 이 문서가 새로 제안하는 것</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">#</th>
+<th>종합판</th>
+<th>이 문서</th>
+<th>상태</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">1</td>
+<td>문진 <strong>서면 유지</strong> + 보조 인터뷰 20~30분(A#7·§5-5)</td>
+<td><strong>문진 상담 40분 기본</strong></td>
+<td><strong>선택안 · 승인 필요</strong></td>
+</tr>
+<tr>
+<td style="text-align:right">2</td>
+<td><code>02_자료요청서</code> 22종 3단 재편</td>
+<td><strong>검사 계획서 1장</strong>으로 대체</td>
+<td><strong>개정 필요</strong></td>
+</tr>
+<tr>
+<td style="text-align:right">3</td>
+<td>(없음)</td>
+<td><strong>문진 자문 1건</strong> 신설</td>
+<td><strong>승인 필요</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>1번은 종합판과 다르다.</strong> 종합판 A#7·§5-5는 &quot;문진 서면 + 보조 인터뷰&quot;를 채택했다. 이 문서는 문진을 <strong>기본 40분 대면</strong>으로 올린다. 이유는 §1-2·§1-6(문진이 설문지가 되고 보상이 없다)이다. <strong>변호사 승인 전에는 종합판이 우선한다.</strong></p>
+</blockquote>
+<h3 id="12-3-개정-대상">12-3. 개정 대상</h3>
+<table>
+<thead>
+<tr>
+<th>문서</th>
+<th>무엇</th>
+<th>언제</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>10_engine/01_문진표_20문항.md</code></td>
+<td>문진 방식 변경 여부를 먼저 결정. 변경 시 Q1~Q20 번호 유지</td>
+<td>승인 뒤</td>
+</tr>
+<tr>
+<td><code>10_engine/02_자료요청서.md</code></td>
+<td>고객 요청·보강자료·사무소 작업 구분 검토 후 승인된 자료요청서로 개정</td>
+<td>승인 뒤</td>
+</tr>
+<tr>
+<td><code>10_engine/11_티어설계.md</code></td>
+<td>현행 2단 엔진과 종합판 3단 제안 중 적용 구조 결정 후 동기화</td>
+<td>선결정 뒤</td>
+</tr>
+<tr>
+<td><code>10_engine/06_판정규약.md</code></td>
+<td>자문 기록 표기와 근거 분리 필요성 검토 (자문 승인 시)</td>
+<td>조건부</td>
+</tr>
+<tr>
+<td><code>20_templates/</code></td>
+<td>승인된 절차와 계약 문구에 맞춘 양식만 신설</td>
+<td>승인 뒤</td>
+</tr>
+<tr>
+<td><code>_index/lint.py</code></td>
+<td>검사 계획서 필수 항목 검사</td>
+<td>W3</td>
+</tr>
+</tbody>
+</table>
+<h3 id="12-4-게이트">12-4. 게이트</h3>
+<ul>
+<li><strong>변호사 승인 전</strong>: 이 문서는 <code>draft</code>. 고객 발송 금지.</li>
+<li><strong>구조 충돌 해소 전</strong>: <code>리걸체크업_3단서비스_종합판보고서_20261102.md</code>는 3단 제안을, 현재 <code>10_engine/11_티어설계.md</code>는 기본·정밀 2단을 정본으로 둔다. 어느 구조를 채택할지 결정하고 <code>01</code>·<code>02</code>·<code>11</code>·<code>08</code>·고객 템플릿을 같은 변경 단위로 맞춘다. 승인 전 현행 엔진 적용.</li>
+<li><strong>정본 개정 전</strong>: 견적서·상품소개서에 새 구조를 쓰지 않는다.</li>
+<li><strong>가격</strong>: 이 문서에서 정하지 않는다. <code>08_가격결정표.md</code>에서만.</li>
+<li><strong>광고</strong>: 변협 「변호사업무광고규정」 및 의료 메타포 허용 여부 <strong>미확인</strong>. 고정문만으로 적법성·오인 가능성이 해소된다고 단정하지 않는다. 검토 완료 전 고객 배포 금지.</li>
+</ul>
+<hr>
+<h2 id="13-검증-상태-미확인">13. 검증 상태 / 미확인</h2>
+<h3 id="13-1-확인한-것">13-1. 확인한 것</h3>
+<table>
+<thead>
+<tr>
+<th>주장</th>
+<th>근거</th>
+<th>상태</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>기존 자료요청서의 기본·정밀 필수자료, 보강자료, 스캔·개인정보 규정</td>
+<td><code>10_engine/02_자료요청서.md</code></td>
+<td>확인 — 새 양식과의 동기화는 미완</td>
+</tr>
+<tr>
+<td>문진 5+15문항 및 Q 번호 고정</td>
+<td><code>10_engine/01_문진표_20문항.md</code></td>
+<td>확인 — 시간은 사전 5분 + 본문진 예상 10분으로 문서에 기재</td>
+</tr>
+<tr>
+<td>기본검진/정밀검진 2단·기초 1~3계약·정밀 약 5건 등</td>
+<td><code>10_engine/11_티어설계.md</code></td>
+<td>확인 — 종합판의 3단 제안과 충돌</td>
+</tr>
+<tr>
+<td>문진 Q1~Q20 번호</td>
+<td><code>01_문진표_20문항.md</code></td>
+<td>확인 (재번호 금지)</td>
+</tr>
+<tr>
+<td>3단 구조·4색·E0~E3·슬롯·D+3</td>
+<td>종합판 §4·§6·§8</td>
+<td>확인</td>
+</tr>
+<tr>
+<td>이해충돌·계약·자료수령 게이트</td>
+<td><code>10_engine/07_이해충돌검사.md</code>, <code>10_engine/09_개인정보처리.md</code>, 종합판</td>
+<td>내부 절차만 대조. 외부 법률 적합성은 이 문서에서 재검증하지 않음</td>
+</tr>
+<tr>
+<td>개인정보 위수탁 조항 수·표현</td>
+<td><code>10_engine/09_개인정보처리.md</code>와 종합판</td>
+<td>문서 간 표기 차이 존재. 확정 문안은 담당 변호사 검토 필요</td>
+</tr>
+</tbody>
+</table>
+<h3 id="13-2-미확인-출구-계약">13-2. 미확인 — 출구 계약</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">#</th>
+<th>못 찾은 것</th>
+<th>닫는 방법</th>
+<th>못 닫으면</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">1</td>
+<td>40분 문진 + 자문 1건 채택 여부</td>
+<td>변호사 승인 및 파일럿</td>
+<td>승인 전에는 현행 서면 문진·조건부 인터뷰</td>
+</tr>
+<tr>
+<td style="text-align:right">2</td>
+<td>자문 1건의 업무 범위·계약·기록·법적 성격</td>
+<td>변호사 확인</td>
+<td>설계안에서 제외</td>
+</tr>
+<tr>
+<td style="text-align:right">3</td>
+<td>변경된 문진·사무소 작성자료의 원가·소요시간</td>
+<td>파일럿 실측 → <code>08</code> 개정안</td>
+<td>현행 가격·범위 유지</td>
+</tr>
+<tr>
+<td style="text-align:right">4</td>
+<td><strong>변협 「변호사업무광고규정」</strong></td>
+<td>변호사 확인</td>
+<td>고객 문서 <code>draft</code> 유지</td>
+</tr>
+<tr>
+<td style="text-align:right">5</td>
+<td><strong>“검진” 의료 메타포</strong></td>
+<td>광고규정 재검토</td>
+<td>표현 교체</td>
+</tr>
+<tr>
+<td style="text-align:right">6</td>
+<td>스캔본 납기</td>
+<td>현행 <code>02_자료요청서.md</code>와 종합판 §8-2의 일치 확인</td>
+<td>승인 전 고객 약속은 현행 정본 사용</td>
+</tr>
+<tr>
+<td style="text-align:right">7</td>
+<td><strong>고객이 &quot;못 봄&quot;을 이해하는가</strong></td>
+<td>대표 3~5명 5분 테스트</td>
+<td>4색 출시 보류</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="부록-a-고객용-안내문-1단계-내부-시안-발송-금지">부록 A. 고객용 안내문 — 1단계 (내부 시안 · 발송 금지)</h2>
+<blockquote>
+<p><strong>[내부 검토 시안 — 변호사 승인·정본 개정 전 발송 금지] 기초검진 안내</strong></p>
+<p>이 서비스는 합의한 자료 범위 안에서 법률상 확인이 필요한 신호를 살펴봅니다. 문진은 현행 서면 양식을 사용하고, 필요한 경우 보조 인터뷰를 진행합니다. 계약 원문과 확인 범위는 계약 전에 안내합니다.</p>
+<p><strong>대표님이 준비하실 것은 세 가지입니다.</strong></p>
+<ol>
+<li><strong>문진 서면</strong> — 사전 문항과 본 문진의 예상 시간을 각각 안내합니다. 보조 인터뷰가 필요하면 방식과 시간을 미리 협의합니다.</li>
+<li><strong>계약 1건</strong> — 대표님이 개인으로 보증하거나 서명한 계약. 없으면 다음 분기 매출이 가장 큰 계약.</li>
+<li><strong>서명 1장</strong> — 계약과 개인정보 위수탁을 함께 담았습니다.</li>
+</ol>
+<p><strong>사무소가 하는 일:</strong> 등기부 발급, 공시·인허가 확인, 계약 판독. <strong>추가로 준비하실 표는 없습니다.</strong></p>
+<p><strong>받으시는 것:</strong> 3장 — ① 가장 급한 것 3가지와 한계 2가지 ② 카드 1~3장 ③ 영역 지도.</p>
+<p><strong>하지 않는 것:</strong> 전수 감사, 소송 대응, 법률의견서, 계약서 재작성. 진행 중인 분쟁의 대응은 포함되지 않습니다.</p>
+<p><strong>개인정보·AI 처리:</strong> 승인된 계약·처리 고지에 명시된 범위와 절차에 따라 처리합니다. 발송 전에 실제 도구·전송·보관·파기 방식과 문구가 일치하는지 확인합니다.</p>
+<p><strong>이해충돌:</strong> 접수에 필요한 최소 식별정보로 먼저 확인합니다. 확인·계약·위수탁 등 필요한 절차가 끝나기 전에는 계약서·문진 상세 등 본 자료를 보내지 마세요.</p>
+<p>※ &quot;검진&quot;은 순서를 알기 쉽게 빌린 표현입니다. 의료 검진과 달리 법률 위험은 전수 확인이 아니며, 법률감사나 법률의견서를 대체하지 않습니다.</p>
+</blockquote>
+<blockquote>
+<p><strong>AI·전사 안내:</strong> 실제 사용 여부·도구·전송·보관·삭제 및 동의 문구는 승인된 처리 안내와 일치시킨 뒤에만 발송본에 반영합니다.</p>
+</blockquote>
+<hr>
+<h2 id="부록-b-고객용-안내문-2-3단계-내부-시안-발송-금지">부록 B. 고객용 안내문 — 2·3단계 (내부 시안 · 발송 금지)</h2>
+<blockquote>
+<p><strong>종합검진 / 정밀검진 안내</strong></p>
+<p><strong>종합검진</strong>은 계약 <strong>3칸</strong>을 중심으로 확인합니다. 정관·기존 계약대장·인허가 자료는 보유 여부와 해당 여부를 먼저 확인합니다. 보유한 자료만 요청하며, 추가 원문 범위는 별도로 합의합니다. 계약대장을 새로 만들 필요가 있으면 작업 범위·시간을 협의합니다.</p>
+<p><strong>정밀검진</strong>은 합의된 계약군·기준기간·건수의 원문을 확인합니다. 50건 초과 시 표본 최대 30건을 제안합니다. 31~50건은 전수 가능 여부와 상한을 착수 전에 서면 합의합니다. 인터뷰 대상·횟수·시간·납기를 계획서에 확정해 안내합니다.</p>
+<p><strong>고객님이 새로 만드는 표는 없습니다.</strong> 기존 자료가 없을 때 사무소가 별도 표를 만들지, 인터뷰할지는 범위·시간을 따로 합의합니다.</p>
+<p>자료 상태는 <strong>보유 / 미보유 / 해당 없음 / 확인하지 못함 / 확인 중</strong>으로 나눠 알려주세요. 확실하지 않은 항목을 추측해 확정하실 필요는 없습니다.</p>
+<p>※ &quot;검진&quot;은 순서와 표기 방식을 알기 쉽게 빌린 표현입니다. 의료 검진과 달리 법률 위험은 전수 확인이 아니며, 법률감사나 법률의견서를 대체하지 않습니다.</p>
+</blockquote>
+<hr>
+<h2 id="부록-c-문진-상담-기록지">부록 C. 문진 상담 기록지</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>회사 / CK</td>
+<td></td>
+</tr>
+<tr>
+<td>일시 / 장소</td>
+<td></td>
+</tr>
+<tr>
+<td>참석</td>
+<td>대표 · 실무자 · 변호사 · 기록자</td>
+</tr>
+<tr>
+<td>방식</td>
+<td>대면 / 화상 / 통화(서면 모드)</td>
+</tr>
+<tr>
+<td>녹음</td>
+<td>사용 안 함 ☐ / 별도 안내·동의 완료 ☐</td>
+</tr>
+<tr>
+<td>전사·AI 처리</td>
+<td>사용 안 함 ☐ / 승인된 안내·동의·계약 근거 확인 ☐</td>
+</tr>
+<tr>
+<td>도구·처리방식</td>
+<td>승인된 처리 고지/계약 문서 참조:</td>
+</tr>
+</tbody>
+</table>
+<p><strong>1층 — 고객의 표현 그대로 (인용 3개)</strong></p>
+<ol>
+<li>“________________________________________”</li>
+<li>“________________________________________”</li>
+<li>“________________________________________”</li>
+</ol>
+<p><strong>2층 — 20문항 신호 5개</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">Q</th>
+<th>답</th>
+<th>메모</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right"></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right"></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right"></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right"></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>3층 — 자문 1건</strong></p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>질문</td>
+<td></td>
+</tr>
+<tr>
+<td>지금 할 일 1개</td>
+<td></td>
+</tr>
+<tr>
+<td>하지 말 것 1개</td>
+<td></td>
+</tr>
+<tr>
+<td>확인할 서류 1개</td>
+<td></td>
+</tr>
+<tr>
+<td>표기</td>
+<td>“검진 소견이 아니라 문진 자문입니다”</td>
+</tr>
+</tbody>
+</table>
+<p><strong>문진 소견 3줄</strong></p>
+<ol>
+<li>가장 급한 축:</li>
+<li>이번에 못 볼 것:</li>
+<li>필요한 원문:</li>
+</ol>
+<p><strong>다음 단계</strong></p>
+<ul>
+<li>검사 계획서 발행 ☐</li>
+<li>20문항 회수 ☐</li>
+<li>예약: __________</li>
+</ul>
+<p><strong>고객 확인</strong> — 위 기록이 상담 내용과 다르지 않음을 확인합니다.</p>
+<p>서명: ______________ (     /     )</p>
+<hr>
+<h2 id="부록-d-검사-계획서-1장">부록 D. 검사 계획서 (1장)</h2>
+<blockquote>
+<p><strong>검토 시안 — 승인과 정본 개정 전 발송 금지.</strong> 이 장이 기존 자료요청서의 대체 서식으로 채택되는 경우에만 사용한다.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>회사 / CK</td>
+<td></td>
+</tr>
+<tr>
+<td>단계</td>
+<td>1단계 기초 / 2단계 종합 / 3단계 정밀</td>
+</tr>
+<tr>
+<td>기준일</td>
+<td></td>
+</tr>
+<tr>
+<td>납기</td>
+<td>현행 자료요청서·계약에 따른 단계별 납기와 완비 기준을 기입</td>
+</tr>
+</tbody>
+</table>
+<p><strong>문진 소견 3줄</strong></p>
+<ol>
+<li>가장 급한 축:</li>
+<li>이번에 못 볼 것:</li>
+<li>필요한 원문:</li>
+</ol>
+<p><strong>이번에 확인할 것</strong> (문진이 처방한 검사 — 최대 7개)</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">#</th>
+<th>검사</th>
+<th>왜</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">1</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">2</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">3</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>이번에 보지 않을 것</strong> (숨기지 않는다)</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">#</th>
+<th>영역</th>
+<th>이유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">1</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">2</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">3</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>주실 것</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">#</th>
+<th>자료</th>
+<th>왜 필요한가</th>
+<th>상태·대체</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">1</td>
+<td>계약 원문 __건</td>
+<td></td>
+<td>없음 / 해당 없음 / 확인하지 못함 / 확인 중을 구분</td>
+</tr>
+<tr>
+<td style="text-align:right">2</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">3</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>자료 상태 확인</strong> — 아래 항목마다 부록 E의 상태 중 하나를 표시합니다. 미보유 사실을 확정할 수 없으면 &quot;확인하지 못함&quot;을 선택합니다.</p>
+<p>☐ 정관 ☐ 계약대장 ☐ 인허가 현황표 ☐ 의사록 ☐ 취업규칙 ☐ 보증·담보 ☐ 분쟁</p>
+<p><strong>고객 확인</strong> — 위 범위와 납기를 확인했습니다.</p>
+<p>서명: ______________ (     /     )</p>
+<hr>
+<h2 id="부록-e-없음-확인서">부록 E. 없음 확인서</h2>
+<blockquote>
+<p><strong>자료를 찾지 못했거나 보유 여부가 불확실하면 그대로 표시합니다.</strong> 이 표시는 고객의 절대적 확약이 아니며, 실제 판정은 자료·응답·적용 기준을 별도로 대조합니다.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">#</th>
+<th>자료</th>
+<th>상태 (하나 선택)</th>
+<th>확인 기준일 / 범위 / 담당</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">1</td>
+<td>정관</td>
+<td>☐ 보유 ☐ 미보유 ☐ 해당 없음 ☐ 확인하지 못함 ☐ 확인 중</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">2</td>
+<td>계약대장</td>
+<td>☐ 보유 ☐ 미보유 ☐ 해당 없음 ☐ 확인하지 못함 ☐ 확인 중</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">3</td>
+<td>인허가 자료</td>
+<td>☐ 보유 ☐ 미보유 ☐ 해당 없음 ☐ 확인하지 못함 ☐ 확인 중</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">4</td>
+<td>이사회 의사록</td>
+<td>☐ 보유 ☐ 미보유 ☐ 해당 없음 ☐ 확인하지 못함 ☐ 확인 중</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">5</td>
+<td>취업규칙·근로 서식</td>
+<td>☐ 보유 ☐ 미보유 ☐ 해당 없음 ☐ 확인하지 못함 ☐ 확인 중</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">6</td>
+<td>보증·담보 자료</td>
+<td>☐ 보유 ☐ 미보유 ☐ 해당 없음 ☐ 확인하지 못함 ☐ 확인 중</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">7</td>
+<td>분쟁 관련 기존 목록</td>
+<td>☐ 보유 ☐ 미보유 ☐ 해당 없음 ☐ 확인하지 못함 ☐ 확인 중</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">8</td>
+<td>기타:</td>
+<td>☐ 보유 ☐ 미보유 ☐ 해당 없음 ☐ 확인하지 못함 ☐ 확인 중</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>확인</strong> — 위 표시는 작성자가 기준일 현재 알고 있는 범위의 자료 상태입니다. 판정자는 필요한 경우 추가 확인을 요청할 수 있습니다.</p>
+<p>서명: ______________ (     /     )</p>
+<hr>
+<h2 id="부록-f-자료-요청-메일-3종-내부-시안-승인-정본-개정-전-발송-금지">부록 F. 자료 요청 메일 3종 (내부 시안 · 승인·정본 개정 전 발송 금지)</h2>
+<h3 id="f-1-1단계">F-1. 1단계</h3>
+<blockquote>
+<p><strong>제목:</strong> [리걸체크업] 기초검진 — 문진과 준비자료 안내</p>
+<p>대표님, 문의 주셔서 감사합니다. 먼저 이해충돌 확인과 계약·처리 고지를 진행하겠습니다. 안내받기 전에는 계약서나 문진 상세를 보내지 마세요.</p>
+<ol>
+<li><strong>문진 서면</strong> — 사전 문항과 본 문진을 작성해 주세요. 예상 시간을 문항별로 안내하고, 필요한 보조 인터뷰는 별도로 협의하겠습니다.</li>
+<li><strong>계약 원문</strong> — 검사 계획서에 지정된 1건을 제출해 주세요. 고르기 어려운 경우 여러 계약을 보내기 전에 별도 범위·절차를 협의합니다.</li>
+<li><strong>서명 서류</strong> — 해당 단계에 적용되는 승인된 계약·위수탁 문서를 안내드리겠습니다.</li>
+</ol>
+<p>등기부는 사무소가 확인할 수 있는지 계약 전에 안내드리겠습니다. <strong>검사 계획서에 적힌 자료만</strong> 요청합니다. 보유 여부가 불확실한 자료는 &quot;확인하지 못함&quot;으로 표시해 주세요.</p>
+<p>납기는 현행 자료요청서의 완비 기준과 자료 형태에 따라 확정해 안내드립니다.</p>
+</blockquote>
+<h3 id="f-2-2단계">F-2. 2단계</h3>
+<blockquote>
+<p><strong>제목:</strong> [리걸체크업] 종합검진 — 계약 3칸과 보유자료 확인</p>
+<p>대표님, <strong>계약 3칸</strong>만 채워 주시면 됩니다.</p>
+<p>① 매출이 가장 큰 계약 ② 끊기면 생산·서비스가 멈추는 계약 ③ 대표님이 개인으로 보증하거나 서명한 계약.</p>
+<p>정관·기존 계약대장·인허가 자료는 <strong>보유 여부와 해당 여부만 먼저 알려주세요.</strong> 보유 자료만 제출하고, 미보유·해당 없음·확인하지 못함을 나눠 표시합니다. 계약대장을 새로 만들 필요가 있으면 작업 범위를 따로 협의합니다.</p>
+<p>3칸을 고르기 어려우시면 먼저 알려주세요. 추가 원문을 받는 방식은 절차 완료 후 범위·납기·비용을 협의하겠습니다.</p>
+<p>추가 자료가 필요한 경우 필요한 이유와 자료를 안내하는 방안을 검토합니다. 추가 범위는 별도 합의 없이 진행하지 않습니다.</p>
+</blockquote>
+<h3 id="f-3-3단계">F-3. 3단계</h3>
+<blockquote>
+<p><strong>제목:</strong> [리걸체크업] 정밀검진 — 자료 범위와 진행 단계 안내</p>
+<p>자료 요청 단계를 나누어 누락과 준비 부담을 줄이는 안입니다. 실제 요청 항목과 일정을 먼저 합의하겠습니다.</p>
+<ol>
+<li><strong>착수 인터뷰와 공개정보 확인</strong> — 시간·참석자·작업 범위를 검사 계획서에 기재합니다.</li>
+<li><strong>보유 자료 확인</strong> — 정관·기존 계약대장·해당 인허가·표준 근로 서식 등. 분쟁 자료는 기존 목록이 있을 때만 범위를 정해 요청합니다.</li>
+<li><strong>계약 원문 범위</strong> — 계약군·기준기간·건수·제외자료를 검사 계획서에 적습니다. 50건 초과 시 표본 최대 30건을 제안하며, 31~50건은 전수 가능 여부와 상한을 별도 합의합니다.</li>
+<li><strong>인터뷰</strong> — 대상·횟수·시간·일정을 사전에 협의하고 검사 계획서에 기록합니다.</li>
+</ol>
+<p>분쟁 자료는 기존 목록이 있는 경우에도 접수·이해충돌 절차가 허용하는 최소 정보만 다룹니다. 사건 상세를 새로 작성하거나 보내지 마세요.</p>
+</blockquote>
+<hr>
+<h2 id="부록-g-내부-완비-체크표">부록 G. 내부 완비 체크표</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">#</th>
+<th>체크</th>
+<th>확인자</th>
+<th>일시</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">1</td>
+<td>이해충돌 통과 (<code>conflict_check.py</code> 로그)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">2</td>
+<td>계약·위수탁 서명</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">3</td>
+<td>지정 계약 상대방 상호 대조 (<strong>CK 전</strong>)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">4</td>
+<td>CK 채번 · 폴더 개설</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">5</td>
+<td>20문항 회수</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">6</td>
+<td>승인된 문진 방식 완료 및 기록 상태 확인</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">7</td>
+<td>자문 선택안이 승인된 경우에만 별도 범위·기록 확인</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">8</td>
+<td>검사 계획서 발행</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">9</td>
+<td>원문 도착 <strong>또는</strong> 없음 확인서</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">10</td>
+<td>텍스트 판독 가능 (스캔 여부)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">11</td>
+<td><strong>D-day 설정</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">12</td>
+<td>검수 상한 설정 (1.5h / 4h / 15h)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">13</td>
+<td>파기 예정일 등록 (D+1년)</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="부록-h-문진-스크립트-카드-상담-책상에-둔다">부록 H. 문진 스크립트 카드 (상담 책상에 둔다)</h2>
+<blockquote>
+<p><strong>⚠️ 주의 — 승인 대기 스크립트</strong>
+이 카드는 40분 문진·자문 1건 선택안이 승인되고 현행 문진표·접수 절차에 반영된 뒤에만 쓴다.</p>
+</blockquote>
+<p><strong>여는 말</strong></p>
+<blockquote>
+<p>“오늘 다룰 내용과 시간은 사전에 합의한 범위에 따릅니다. 분쟁 관련 내용은 상세히 듣기 전에 이해충돌 및 접수 절차를 확인하겠습니다. 필요한 최소 정보만 먼저 말씀해 주세요.”</p>
+</blockquote>
+<p><strong>9문항</strong></p>
+<ol>
+<li>요즘 가장 신경 쓰이는 게 뭡니까?</li>
+<li>그게 언제부터였습니까?</li>
+<li>지금 그 일은 누가 보고 있습니까?</li>
+<li>계약서는 어디에 있습니까? 모으면 몇 건쯤 됩니까?</li>
+<li>그중에 서명하고 다시 읽지 않은 것이 있습니까?</li>
+<li>대표님이 개인으로 서명하거나 보증한 것이 있습니까?</li>
+<li>인허가 중에 만료일을 챙기는 게 있습니까?</li>
+<li>올해 안에 투자·신사업·큰 계약 계획이 있습니까?</li>
+<li>이 검진이 끝나면 무엇이 정리되어 있으면 좋겠습니까?</li>
+</ol>
+<p><strong>자문 선택안 규칙 (승인된 경우에만)</strong></p>
+<ul>
+<li>질문 1건으로 한정하고 시간·서면 형식·업무 범위를 계약 전에 합의</li>
+<li>원문 확인 전 응답에 근거한 내용과 검진 결과를 분리</li>
+<li>검진 결과지에 반영할지는 현행 판정규약에 따라 결정</li>
+</ul>
+<p><strong>정지선</strong></p>
+<ul>
+<li>분쟁 상세 → 상대 상호까지만</li>
+<li>협상 조건 → 듣지 않는다</li>
+<li>상대방 평가 → 적지 않는다</li>
+</ul>
+<hr>
+<h2 id="부록-i-자문-1건-기록지">부록 I. 자문 1건 기록지</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>일시</td>
+<td></td>
+</tr>
+<tr>
+<td>영역</td>
+<td>계약 구조 / 인사 제도 / 인허가 관리</td>
+</tr>
+<tr>
+<td>질문 (고객 말 그대로)</td>
+<td></td>
+</tr>
+<tr>
+<td>지금 할 일 1개</td>
+<td></td>
+</tr>
+<tr>
+<td>하지 말 것 1개</td>
+<td></td>
+</tr>
+<tr>
+<td>확인할 서류 1개</td>
+<td></td>
+</tr>
+<tr>
+<td>근거 등급</td>
+<td><strong>E0 (응답)</strong> — 원문 확인 전</td>
+</tr>
+<tr>
+<td>결과지 반영</td>
+<td><strong>하지 않음</strong> (카드 제외)</td>
+</tr>
+<tr>
+<td>변호사 확인</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="이-문서를-읽고-나서-할-일">이 문서를 읽고 나서 할 일</h2>
+<ol>
+<li><strong>구조 결정</strong> — 종합판의 3단 제안과 현행 <code>11_티어설계.md</code> 2단 중 적용 구조를 정한다.</li>
+<li><strong>변호사 승인</strong> — 문진 방식·자문 포함 여부·고객 요청자료·정밀 단계 계약군/기간/표본 상한·AI/개인정보/광고 문구를 승인한다.</li>
+<li><strong>정본 동기화</strong> — 승인된 내용만 <code>01</code>·<code>02</code>·<code>06</code>·<code>08</code>·<code>11</code>·관련 위수탁 및 고객 템플릿에 반영하고, 납기·자료수령 순서·파기 정책을 교차 확인한다.</li>
+<li><strong>파일럿</strong> — 승인 범위로 시작하고 실제 고객시간·사무소시간·자료 완비 경과·미검 사유·이해도를 관찰한다. 표본이 작으면 목표율·효과를 주장하지 않는다.</li>
+</ol>
+<hr>
+<h2 id="변경-기록">변경 기록</h2>
+<ul>
+<li>2026-11-08 v2.0 — 원본 복사 후 Codex 검토본 작성. 레드팀과 독립 운영·고객 렌즈 검토 2건을 반영해 승인 대기/현행 정본 경계, 자료상태, 전수·표본 정의, 인터뷰 시간, 개인정보·AI 고지, 납기, 2단/3단 충돌을 정리. 외부 법률·광고 검증 미수행. <code>draft</code>, 변호사 승인 전 고객 발송·정본 대체 금지.</li>
+</ul>
+<p class="footer-note">이 웹 문서는 내부 설계 검토본입니다. 변호사 승인 및 정본 개정 전에는 현행 엔진 문서와 종합판 절차를 적용합니다.</p></main></div>
+</body></html>
