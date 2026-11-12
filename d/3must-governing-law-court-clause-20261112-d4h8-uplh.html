@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko" data-design="M2">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>계약서에 준거법만 쓰고 관할조항을 뺐을 때 — 두 조항이 다른 나라를 가리키면 · 3MUST</title>
+<link rel="icon" href="data:,">
+<style>
+:root { color-scheme:light dark; --bg:#edf1f3; --paper:#fff; --ink:#202d3d; --muted:#596b80; --line:#cbd6e4; --accent:#245aa6; --wash:#e7eef8; font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif; }
+@media(prefers-color-scheme:dark){:root{--bg:#111a20;--paper:#1a252d;--ink:#eff4f4;--muted:#bac7c8;--line:#394a52;--wash:#253541;}}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);line-height:1.55}
+main{width:calc(100% - 28px);max-width:850px;margin:24px auto;padding:clamp(22px,5vw,48px);background:var(--paper);border:1px solid var(--line);border-top:7px solid var(--accent)}
+.eyebrow{font-size:.75rem;font-weight:750;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin:0 0 10px}
+h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.12;letter-spacing:-.035em;margin:0;text-wrap:balance}
+.situation{color:var(--muted);max-width:64ch;margin:14px 0 24px}
+.three{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+section{min-width:0;padding:17px 0;border-top:1px solid var(--line)}
+h2{font-size:.9rem;color:var(--accent);margin:0 0 7px;letter-spacing:.02em}
+p,li{max-width:68ch} section p{margin:0} section ul,section ol{margin:0;padding-left:1.25rem}
+.table-wrap{max-width:100%;overflow-x:auto;margin:10px 0 0;border:1px solid var(--line);border-radius:8px;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;min-width:560px;font-size:.88rem;line-height:1.45}
+th,td{padding:9px 11px;text-align:left;vertical-align:top;border-right:1px solid var(--line);border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+th:last-child,td:last-child{border-right:0} tbody tr:last-child td{border-bottom:0}
+th{background:var(--wash);font-weight:700;color:var(--ink)}
+.pause{margin-top:20px;padding:13px 15px;background:var(--wash);border-left:3px solid var(--accent)}
+.pause strong{display:block;margin-bottom:4px}.sources{margin-top:20px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+.sources p{margin:4px 0}.disclaimer{font-size:.75rem;color:var(--muted);margin-top:18px}
+html[data-design="M1"]{--accent:#bd4d28;--wash:#f8e7df;--bg:#ece9e5;--line:#dfc7bb;--ink:#252b2c;--muted:#59615f}
+html[data-design="M1"] main{border-top-width:10px}.m1 .three{grid-template-columns:1fr 1fr;gap:12px}.m1 section{border:1px solid var(--line);padding:14px;background:color-mix(in srgb,var(--wash) 35%,var(--paper))}.m1 section:last-child{grid-column:1/-1}
+html[data-design="M2"]{--accent:#176b68;--wash:#e3efed;--bg:#e7eeee;--line:#c5d7d4;--ink:#162c31;--muted:#52696a}
+html[data-design="M2"] h1{font-family:Georgia,"Batang",serif;font-weight:600}.m2 .three{grid-template-columns:1fr 1fr;gap:22px}.m2 section:nth-child(2){background:var(--wash);padding:15px;border-top:0}.m2 section:last-child{grid-column:1/-1}
+html[data-design="M3"]{--accent:#126d57;--wash:#e4f1eb;--bg:#e9eeea;--line:#c5d7cc;--ink:#1d3028;--muted:#5b6e64}
+.m3 .three{position:relative;padding-left:20px}.m3 .three:before{content:"";position:absolute;top:18px;bottom:18px;left:4px;width:2px;background:var(--accent);opacity:.45}.m3 section{position:relative;padding-left:14px}.m3 section:before{content:"";position:absolute;left:-20px;top:20px;width:9px;height:9px;border:2px solid var(--accent);border-radius:50%;background:var(--paper)}
+html[data-design="M4"]{--accent:#714d83;--wash:#eee8f3;--bg:#ece8ef;--line:#d7ccdf;--ink:#292331;--muted:#686071}
+.m4 .situation{background:var(--wash);border-left:3px solid var(--accent);padding:12px 15px}.m4 .three{grid-template-columns:1fr 1fr;gap:12px}.m4 section{border:1px solid var(--line);padding:15px}.m4 section:last-child{grid-column:1/-1}
+/* M4-wide is reserved for cards whose text and table need equal full-width measure. */
+.m4-wide .three{grid-template-columns:1fr;gap:14px}.m4-wide section:last-child{grid-column:auto}
+html[data-design="M5"]{--accent:#245aa6;--wash:#e7eef8;--bg:#edf1f3;--line:#cbd6e4;--ink:#202d3d;--muted:#596b80}
+.m5 .situation{background:var(--wash);padding:10px 12px;border:1px solid var(--line)}.m5 section{display:grid;grid-template-columns:minmax(145px,.34fr) 1fr;gap:18px}.m5 h2{color:var(--ink)}
+@media(prefers-color-scheme:dark){
+ html[data-design="M1"]{--accent:#f29a72;--wash:#392d29;--bg:#131a1a;--paper:#202929;--line:#48524f;--ink:#edf1ed;--muted:#b9c5bf}
+ html[data-design="M2"]{--accent:#73c6be;--wash:#203936;--bg:#101a1b;--paper:#1b292b;--line:#405452;--ink:#eaf3f2;--muted:#afc6c3}
+ html[data-design="M3"]{--accent:#78d4a8;--wash:#20382f;--bg:#111a17;--paper:#1b2822;--line:#40564a;--ink:#eaf3ed;--muted:#b4c8bc}
+ html[data-design="M4"]{--accent:#d0a5e2;--wash:#342b3a;--bg:#19151d;--paper:#28212e;--line:#51445b;--ink:#f1eaf4;--muted:#c7b9ce}
+ html[data-design="M5"]{--accent:#8cb7ff;--wash:#24364d;--bg:#141a22;--paper:#202a37;--line:#3d4d62;--ink:#edf2fa;--muted:#b8c5d8}
+}
+@media(max-width:620px){main{width:calc(100% - 18px);max-width:850px;margin:9px auto;padding:22px 17px}.m1 .three,.m2 .three,.m4 .three{grid-template-columns:1fr}.m1 section:last-child,.m2 section:last-child,.m4 section:last-child{grid-column:auto}.m5 section{grid-template-columns:1fr;gap:5px}}
+@media print{@page{size:A4 portrait;margin:10mm}html{color-scheme:light}body{background:#fff}main{width:100%;max-width:none;margin:0;padding:10mm;border:0;border-top:4mm solid var(--accent);box-shadow:none}.sources,.disclaimer{font-size:8.5pt}a{color:inherit;text-decoration:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="m2">
+  <p class="eyebrow">3MUST · 계약법</p>
+  <h1>계약서에 준거법만 쓰고 관할조항을 뺐을 때 — 두 조항이 다른 나라를 가리키면</h1>
+  <p class="situation"><strong>적용 상황:</strong> 해외 거래처와 계약서를 최종 확정하는 단계에서 준거법 조항은 있는데 국제재판관할(관할) 조항이 빠졌거나, 두 조항이 서로 다른 나라를 가리키는지 점검해야 하는 기업 법무·담당자</p>
+  <div class="three">
+    <section><h2>Must Know · 알아야 할 것</h2><ul><li><strong>준거법과 관할은 별개의 합의입니다.</strong> 준거법은 "어느 나라 법으로 판단할까"를, 관할은 "어느 나라 법원에서 싸울까"를 정합니다. 준거법에 대한민국 법을 써도 관할 조항이 없으면 상대방은 자기 본국 법원에 소를 제기할 수 있습니다. 국제사법 제45조 제1항은 계약의 준거법을 당사자가 명시적 또는 묵시적으로 선택할 수 있게 정하지만, 그 선택이 관할을 자동으로 가져다주지는 않습니다.</li><li>관할은 국제사법 제2조의 <strong>실질적 관련성</strong>으로 판단합니다. 당사자 또는 분쟁이 된 사안이 대한민국과 실질적 관련이 있으면 대한민국 법원의 국제재판관할권이 인정됩니다. 대법원은 "국제재판관할권과 준거법은 서로 다른 이념에 따라 지배되므로, 준거법이 외국법이라는 사정만으로 실질적 관련을 부정할 수 없다"고 판시했습니다(대법원 2021. 3. 25. 선고 2018다230588 판결). 반대로 준거법을 한국법으로 정했다고 해서 한국 법원의 관할이 생기지도 않습니다.</li><li>외국 법원을 지정하는 <strong>전속적 국제관할합의</strong>는 ① 대한민국 법원의 전속관할에 속하지 않을 것, ② 지정된 외국법원이 그 외국법상 관할권을 가질 것, ③ 당해 사건이 그 외국법원에 합리적인 관련성을 가질 것, ④ 현저하게 불합리·불공정하여 공서양속에 반하지 않을 것 — 이 요건을 갖추어야 유효합니다(대법원 2010. 8. 26. 선고 2010다28185 판결).</li><li>한국의 강행규정은 계약이 외국법을 준거법으로 하여도 적용될 수 있습니다(국제사법 제20조). 준거법을 고를 때 이 병행 여부도 함께 봅니다.</li></ul></section>
+    <section><h2>Must Check · 확인할 것</h2><ul><li>관할 조항이 계약서 최종본에 실제로 남아 있는지 — 협상 막판 수정본에서 빠지지 않았는지 문단 위치를 직접 확인했는지</li><li>준거법 조항과 관할 조항이 가리키는 나라가 의도와 일치하는지 — "한국법 + 외국 법원" 조합이 아닌지</li><li>전속관할로 쓸지, 국제중재로 갈지 정했는지 — 중재로 가면 관할 조항과 역할이 달라지므로 중재합의(기관·규칙·관할지)를 함께 특정했는지</li><li>"적절한 법", "적절한 관할" 같은 모호한 표현이 없는지</li><li>소비자·근로 등 보호 대상 거래가 섞여 있으면 한국의 강행규정이 병행 적용될 여지가 있는지</li><li>물품매매처럼 국제협약이 우선 적용될 수 있는 계약인지 별도로 확인했는지</li></ul></section>
+    <section><h2>Must Do · 실행할 것</h2><ol><li>계약서에서 준거법 조항과 분쟁해결 조항을 찾아 한 화면에 나란히 붙여 넣습니다.</li><li>두 조항의 문언을 읽고 "싸울 나라"와 "적용할 나라"가 우리 의도와 일치하는지 표에 답합니다.</li><li>관할 조항이 없다면 전속관할(우리가 원하는 법원) 또는 국제중재 조항을 넣을 것을 협상안으로 제시합니다.</li><li>이미 체결됐다면, 분쟁 시 우리가 제기할 수 있는 관할 근거(실질적 관련성)와 대응 시나리오를 미리 정리합니다.</li><li>전사 표준 계약서 템플릿에 분쟁해결 조항을 필수 항목으로 고정하고, 빠진 계약서가 나올 수 없는 절차를 만듭니다.</li></ol></section>
+  </div>
+  <aside class="pause"><strong>잠깐 멈추고 검토할 때</strong><p>상대방이 이미 외국 법원에 소를 제기했다면 — 관할 항변과 병행할지, 한국 법원에 선제적으로 제기할지는 시효·비용 문제와 함께 즉시 전문가와 상의하세요. · 분쟁 금액이 작다면 — 외국법 내용 입증 비용이 회수액을 넘을 수 있으므로 관할·중재 선택지를 다시 봅니다. · 중재조항과 관할 조항이 서로 다른 기관·법원을 가리키면 — 어느 조항이 우선할지 해석 다툼이 생기므로 체결 전에 통일합니다.</p></aside>
+  <div class="sources"><p><strong>원자료:</strong> 에스 영문계약 관할조항 001 — "준거법 썼는데 왜 뉴욕 법원에서 싸우나" 사례 가이드</p><p><strong>법률 확인(2026-11-12, 한국법 MCP 현행 조문 대조):</strong> 국제사법 제2조(실질적 관련성에 따른 국제재판관할), 제45조 제1항(당사자 자치 — 계약 준거법 선택), 제20조(대한민국 법의 강행적 적용), 대법원 2021. 3. 25. 선고 2018다230588 판결(준거법과 국제재판관할의 관계 — 판시 대조), 대법원 2010. 8. 26. 선고 2010다28185 판결(전속적 국제관할합의 유효요건 — 판시 대조)</p><p><strong>미확인·제한:</strong> 미국 연방민사소송규칙·EU 브뤼셀 규정 등 외국 법령, 원문의 사례 회사명·금액은 확인하지 않아 쓰지 않았습니다. 대법원 2019. 6. 13. 선고 2016다33752, 2022. 1. 13. 선고 2021다269388은 존재만 확인하고 인용하지 않았습니다. 계약 체결 단계의 조항 설계만 다룹니다 — 외국법 내용의 유리불리 검토는 기존 외국법준거 카드, 소 제기 후 법원 선택은 관할전략 카드, 해외 미수금 회수 소송지는 해외기업 소송관할 카드가 각각 다룹니다.</p><p><strong>변경 기록:</strong> 2026-11-12 최초 작성 — 두 조항 대조표와 예방 절차로 재구성</p></div>
+  <p class="disclaimer">일반적인 실무 참고자료입니다. 개별 사안에서는 사실관계와 적용 기준을 확인하세요.</p>
+</main>
+</body>
+</html>
