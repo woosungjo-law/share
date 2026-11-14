@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>묻지도 않은 동의는 동의가 아니다, 클릭 한 번의 의미를 안다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 개인정보 동의·아동·유출</div>
+    <h1>묻지도 않은 동의는 동의가 아니다, 클릭 한 번의 의미를 안다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> 동의를 받는 방법에는 <b>정해진 방식이 있습니다.</b> <b>개인정보보호법 제22조</b>는 무엇을 위해 어떤 정보를 얼마나 보관하는지를 알고 <b>각각 선택할 수 있어야 한다</b>는 취지이므로, 서비스 개통 확인과 개인정보 동의를 한 화면에 묶어 한 번의 클릭으로 처리하면 <b>동의의 효력이 흔들립니다.</b> 만 14세 미만 아동은 <b>제22조의2</b>에 따라 법정대리인의 동의가 필요하고, 정보가 샜을 때의 책임은 <b>제39조</b>에 따라 사안마다 개별적으로 판단됩니다. <b>동의 철회와 정보 삭제를 요구하는 것</b>이 자신을 지키는 길입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>가입 화면의 일괄 동의 버튼을 누른 자리</b>를 떠올려 보십시오. 인공지능 서비스를 이용하는 한소미는 새로 가입한 앱의 약관 화면에서 <b>서비스 개통 확인과 개인정보 동의가 한 화면에 묶여 있는 것</b>을 보고, 자세히 보지 않고 동의 버튼을 눌렀습니다. 얼마 뒤 광고 전화가 걸려오기 시작했습니다. 자신의 정보가 어디까지 쓰이는지 몰랐던 한소미는 동의를 철회하고 싶어졌지만, 고객센터는 <b>이미 동의했다</b>는 답만 돌려주었습니다. <b>내용을 알지도 못하고 누른 버튼이 동의가 될 수 있는지 묻는 자리</b>입니다. 상담에서 들은 말은 이랬습니다. 동의를 받는 방법에는 정해진 방식이 있고, <b>묶어 처리한 동의는 효력이 흔들릴 수 있다</b>는 것입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>동의를 받는 방법에는 정해진 방식이 있습니다. <b>개인정보보호법 제22조</b>는 동의를 받는 방법을 정합니다. <b>서비스 개통 확인 등과 개인정보 동의를 일괄 처리한 서식은 정보주체가 동의 내용을 명확히 인식하고 선택했다고 보기 어렵습니다.</b> 정보주체란 자기 정보의 주인을 말합니다. <b>무엇을 위해 어떤 정보를 얼마나 보관하는지를 알고 각각 선택할 수 있어야 한다</b>는 것이 취지입니다. 한 번의 클릭으로 묶어 처리하면 동의의 효력이 흔들립니다.</p>
+    <p>기업의 의무도 알아둡니다. <b>개인정보보호법상 보호책임자 지정과 교육, 내부관리계획 수립은 기업의 핵심 의무</b>입니다. 그런데 중소기업의 인지도와 이행률은 낮습니다. <b>개인정보보호법 제32조</b>와 연결해 이해되는 지점입니다. <b>맡긴 정보를 다루는 회사가 책임자와 교육, 관리계획을 갖춰야 한다</b>는 뜻입니다.</p>
+    <p>아동의 정보는 더 엄격합니다. <b>만 14세 미만 아동의 개인정보를 수집하고 이용하고 제공하려면 법정대리인의 동의를 받아야 합니다. 개인정보보호법 제22조의2</b>가 그 근거입니다. 자녀 명의로 가입한 앱이 있다면 <b>부모의 동의가 있었는지가 쟁점</b>이 됩니다.</p>
+    <p>정보가 샜을 때의 책임도 정해져 있습니다. <b>개인정보보호법 제39조</b>는 손해배상책임을 정합니다. 아동과 청소년 개인정보 유출 사고에서 손해배상책임 성립 여부는 <b>유출된 정보의 종류와 성격, 제3자 열람 가능성과 확산 범위, 후속 피해 가능성과 방지조치를 종합해 개별적으로 판단</b>됩니다. 일률적인 기준이 아니라 사안마다 따집니다.</p>
+    <p>법원의 기준도 알아둡니다. <b>대법원 2014다56652 판결</b>의 판시사항은 위치정보의 의미와 수집 금지 취지, 동의 없는 수집과 이용, 제공이 위자료로 배상할 만한 정신적 손해가 되는지 판단하는 기준을 다룹니다. <b>동의 없이 위치정보를 가져간 경우</b>가 여기에 해당할 수 있습니다. <b>대법원 2012다105482 판결</b>의 판시사항은 개인정보자기결정권의 보호대상과 이미 공개된 정보의 포함 여부, 표현의 자유와 그 법률에 의한 제한 가능성을 다룹니다. <b>공개된 정보라도 보호 대상이 될 수 있다</b>는 점이 중요합니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>철회·아동·유출 때 할 일</h2>
+    <ul class="points">
+      <li><b>동의는 철회할 수 있습니다</b> — 묶어 처리한 동의는 효력이 흔들릴 수 있으므로, 회사에 <b>동의 철회와 정보 삭제를 요구</b>합니다. 개인정보보호법 제22조에 따라 각각 인식하고 선택할 수 있어야 한다는 점을 근거로 듭니다. 그래도 광고 연락이 오면 <b>거부 의사를 남는 방식으로</b> 밝힙니다.</li>
+      <li><b>아동 명의 가입은 부모가 챙깁니다</b> — 만 14세 미만 아동의 정보는 <b>개인정보보호법 제22조의2</b>에 따라 법정대리인의 동의가 있어야 합니다. 자녀 명의 앱의 가입 경위와 동의 여부를 확인하고, <b>동의 없이 받았다면 삭제와 동의를 요구</b>합니다.</li>
+      <li><b>정보가 샌 경우 기록을 남깁니다</b> — <b>개인정보보호법 제39조</b>에 따라 책임은 정보의 종류와 성격, 열람 가능성과 확산 범위, 후속 피해 가능성과 방지조치를 종합해 개별적으로 판단됩니다. <b>유출 통지를 받았는지, 어디까지 퍼졌는지, 2차 피해가 있는지를 적어둡니다.</b></li>
+      <li><b>법원 기준을 자료로</b> — <b>대법원 2014다56652 판결</b>의 기준에 따라 동의 없는 수집과 이용이 정신적 손해로 이어지는지를 보고, <b>대법원 2012다105482 판결</b>에 따라 공개된 정보라도 보호를 요구할 수 있다는 점을 알아둡니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 클릭 한 번의 의미를 알고, <b>철회와 삭제를 요구하는 것</b>이 자신을 지키는 길입니다. 동의 내역과 아동 가입, 유출 기록을 묶어 움직입니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;">가입한 서비스의 동의 내역을 확인해 <b>목적과 항목, 보유 기간을 알리고 각각 동의를 받았는지</b>를 봅니다. 회사의 관리 상태도 <b>고객센터와 공지사항</b>에서 확인하고, 정보가 샌 경우에는 유출 통지와 확산 범위, 후속 피해와 회사의 방지조치를 적어둡니다.</p>
+    <ol>
+      <li><b>① 내역 보기</b> — 개인정보보호법 제22조에 따라 목적·항목·기간을 알리고 받았는지 본다.</li>
+      <li><b>② 철회 요구</b> — 묶어 처리한 동의는 철회와 삭제를 요구한다.</li>
+      <li><b>③ 아동 챙기기</b> — 개인정보보호법 제22조의2에 따라 자녀 명의 가입의 동의를 본다.</li>
+      <li><b>④ 회사 보기</b> — 개인정보보호법 제32조와 연결되는 지정·교육·계획이 있는지 본다.</li>
+      <li><b>⑤ 기록 남기기</b> — 개인정보보호법 제39조에 따라 유출 통지·확산·피해를 적어둔다.</li>
+      <li><b>⑥ 기준 알기</b> — 대법원 2014다56652 판결의 손해 기준을 알아둔다.</li>
+      <li><b>⑦ 범위 알기</b> — 대법원 2012다105482 판결에 따라 공개 정보도 보호 대상임을 알아둔다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
