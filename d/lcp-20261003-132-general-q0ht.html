@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>퇴직금을 못 받았다면 감정이 아니라 계산이 먼저다, 기초부터 챙긴다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 퇴직금 체불과 중간정산</div>
+    <h1>퇴직금을 못 받았다면 감정이 아니라 계산이 먼저다, 기초부터 챙긴다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> <b>회사가 어렵다는 말은 퇴직금을 지급하지 않아도 된다는 뜻이 아닙니다.</b> 퇴직금제도의 설정과 지급 의무가 정해져 있는데도 자금 사정을 이유로 미루는 것은 체불입니다(<b>근로자퇴직급여 보장법 제8조</b>와 연결되는 지점). 그리고 <b>예전에 중간정산 명목으로 받은 돈이 있다고 해서 퇴직금이 끝난 것이 아닙니다.</b> 중간정산은 <b>근로자퇴직급여 보장법 시행령 제3조</b>가 정한 사유에 해당할 때만 할 수 있고, 본인의 요구와 서면 동의 같은 절차도 갖춰야 합니다. <b>못 받은 돈이 얼마인지 계산하고, 그 정산이 유효한지를 먼저 가리는 것</b>이 출발점입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>계약이 끝난 뒤 들어오지 않은 퇴직금 앞에 선 자리</b>를 떠올려 보십시오. 계약직 근로자 탁은비는 계약이 끝나고 회사를 나왔는데 퇴직금이 들어오지 않았습니다. 회사에 물으니 <b>자금 사정이 어렵다</b>는 답이 돌아왔고, <b>예전에 중간정산 명목으로 받은 돈이 있지 않으냐</b>는 말도 들었습니다. 중간정산으로 받은 돈은 생활비로 쓴 지 오래고 퇴직금은 별개라고 생각했기에 답답했습니다. 지인은 노동관서에 진정을 넣으라고 했지만 무엇을 어떻게 주장해야 할지 몰랐습니다. 상담에서 들은 말은 이랬습니다. <b>못 받은 돈이 얼마인지 계산이 먼저고, 중간정산으로 받은 돈이 정산으로 유효한지를 따져야 한다</b>는 것입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>퇴직금 분쟁의 출발점은 <b>체불</b>입니다. 소기업은 재정적 어려움을 이유로 퇴직금을 체불하거나, <b>중간정산 제도를 잘못 적용해 퇴직금 산정 기초를 왜곡</b>하는 경우가 많습니다. <b>근로자퇴직급여 보장법 제8조</b>와 연결해 이해되는 지점입니다. 퇴직금제도의 설정과 지급 의무가 정해져 있는데도 자금 사정을 이유로 지급을 미루는 경우입니다. <b>회사가 어렵다는 말이 지급하지 않아도 된다는 뜻은 아닙니다.</b></p>
+    <p>중간정산은 별개의 문제입니다. 중간정산이란 <b>퇴직 전에 퇴직금 일부를 미리 정산해 주는 제도</b>로, <b>근로자퇴직급여 보장법 시행령 제3조</b>가 퇴직금의 중간정산 사유를 정합니다. 즉 <b>중간정산은 법령이 정한 사유에 해당할 때만 할 수 있습니다.</b> 사유 없이 임의로 돈을 주고 정산이 끝났다고 보는 것은 잘못된 적용입니다.</p>
+    <p>잘못된 중간정산은 <b>퇴직금 산정 기초를 왜곡</b>합니다. 정산 시점을 기준으로 <b>근속기간이 끊기거나 임금이 다시 계산</b>되면서 최종 퇴직금이 줄어드는 것처럼 보이기 때문입니다. 그래서 두 가지를 나눠 봅니다. <b>체불 갈래</b>에서는 지급 의무의 발생과 미지급액, 산정 기초의 정확성을 봅니다. 일한 기간의 시작과 끝, 그만두기 전 임금의 범위가 맞는지 <b>급여명세서와 계약서로 대조</b>합니다. <b>중간정산 갈래</b>에서는 시행령 제3조가 정한 사유에 해당하는지, <b>본인이 요구했고 서면으로 동의했는지</b>를 봅니다. <b>사유나 절차를 갖추지 못한 지급은 중간정산이 아니라 그냥 받은 돈에 불과합니다. 유효하지 않은 정산은 정산이 아니므로 못 받은 돈에 다시 포함됩니다.</b></p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>유효한 정산과 그냥 받은 돈을 가른다</h2>
+    <ul class="points">
+      <li><b>유효성은 사유와 절차</b> — 중간정산으로 받은 돈이 있다고 해서 퇴직금이 끝난 것은 아닙니다. <b>근로자퇴직급여 보장법 시행령 제3조가 정한 사유에 해당하는지</b>가 첫 관문이고, <b>사유에 해당하지 않는 지급은 중간정산이 아닙니다.</b></li>
+      <li><b>절차도 봅니다</b> — <b>본인의 요구와 서면 동의</b> 같은 절차를 갖췄는지 확인합니다. 요구한 적도 없고 동의서에 서명한 적도 없는데 회사가 일방적으로 돈을 주고 정산이라고 하면 <b>효력을 갖기 어렵습니다.</b></li>
+      <li><b>산정 기초의 왜곡</b> — 중간정산을 잘못 적용해 <b>일한 기간이나 임금이 틀어졌다면 최종 퇴직금을 다시 계산</b>합니다. 체불액을 정할 때는 기초가 핵심이므로, 일한 기간의 시작과 끝, 그만두기 전 임금의 범위를 급여명세서와 계약서로 대조해 틀린 부분을 바로잡습니다.</li>
+      <li><b>미루지 말고 움직입니다</b> — <b>회사가 어렵다는 말에 미루기만 하면 체불 상태가 이어집니다.</b> 진정과 상담으로 빨리 움직이는 것이 돈을 찾는 길입니다.</li>
+      <li><b>무효인 지급은 다시 포함</b> — 중간정산이 섞인 경우 <b>정산의 유효성을 먼저 가리고, 무효인 지급은 못 받은 돈에 포함해 다시 계산</b>합니다. 유효한 정산과 그냥 받은 돈을 가르는 것이 순서입니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 요구할 때는 <b>계산 내역을 함께 적어 얼마를 왜 달라는지를 분명히</b> 합니다. 명세서와 계약서, 정산 서류를 한 묶음으로 모아 움직이는 것이 못 받은 돈을 찾는 길입니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;">급여명세서와 근로계약서를 모아 일한 기간의 시작과 끝, 그만두기 전 임금의 범위를 대조해 산정 기초를 확정합니다. 회사에 <b>내용증명 등으로 지급을 요구</b>하고, 지급하지 않으면 <b>노동관서 진정과 상담</b>으로 나아갑니다. 산정 기초가 틀어졌는지도 함께 봅니다.</p>
+    <ol>
+      <li><b>① 기초 모으기</b> — 근로자퇴직급여 보장법 제8조와 연결되는 지급 의무를 전제로 명세서와 계약서를 모은다.</li>
+      <li><b>② 미지급 계산</b> — 일한 기간과 그만두기 전 임금을 대조해 못 받은 돈을 계산한다.</li>
+      <li><b>③ 정산 보기</b> — 근로자퇴직급여 보장법 시행령 제3조의 사유와 본인 요구·서면 동의를 본다.</li>
+      <li><b>④ 다시 계산</b> — 무효인 지급은 못 받은 돈에 포함해 다시 계산한다.</li>
+      <li><b>⑤ 요구·진정</b> — 계산 내역을 적어 지급을 요구하고 필요하면 진정으로 나아간다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
