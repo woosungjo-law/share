@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>계약이 깨졌을 때, 성사됐다면 얻었을 돈이 아니라 쓴 돈을 따진다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 계약교섭 파기와 신뢰손해</div>
+    <h1>계약이 깨졌을 때, 성사됐다면 얻었을 돈이 아니라 쓴 돈을 따진다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> 계약이 체결되기 전이라도 <b>교섭단계에서 상대방이 계약이 확실히 체결되리라는 정당한 기대와 신뢰를 심어 주었고</b>, 내가 그 신뢰에 따라 행동했는데도 <b>상당한 이유 없이 체결을 거부하거나 절차를 게을리해 손해를 입혔다면 불법행위가 될 수 있습니다.</b> <b>민법 제750조</b>가 이 기준을 담고 있습니다. <b>중요한 것은 배상 범위</b>입니다. <b>계약이 성사됐다면 얻었을 이익이 아니라, 성사될 것을 믿고 지출한 신뢰손해가 기준</b>이 됩니다. 여기에 <b>교섭 파기나 절차위반이 인격적 법익을 침해해 정신적 고통을 초래했다면 민법 제751조에 따라 그 손해를 따로 배상받을 수 있습니다.</b> <b>대법원 2023다258658 판결</b>도 이 두 가지를 확인했습니다. <b>확신 자료와 지출 내역을 묶는 것</b>이 손해 주장의 출발점입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>계약 직전에 끊긴 연락</b>을 떠올려 보십시오. 박준서는 오랜 협의 끝에 점포 인수 계약을 앞두고 있었습니다. <b>상대방은 조건을 거의 확정한 듯했고, 계약서 초안까지 주고받았습니다.</b> 그래서 박준서는 <b>인테리어 견적을 받고 직원 채용 공고까지 내는 등 준비를 시작</b>했습니다. 그런데 <b>계약 직전에 상대방이 연락을 끊어 버렸습니다.</b> 이미 쓴 돈과 시간이 아까웠지만, <b>계약이 안 됐으니 어쩔 수 없는 것인지</b> 판단이 서지 않았습니다. <b>계약서 초안, 조건 확정, 승인 절차 공유처럼 곧 계약된다는 인상을 준 자료</b>가 핵심이 되는 자리입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>먼저 알아 둘 것이 있습니다. <b>계약이 체결되기 전이라도, 교섭단계에서 상대방이 계약이 확실히 체결되리라는 정당한 기대와 신뢰를 심어 주었고 내가 그 신뢰에 따라 행동했는데도 상당한 이유 없이 체결을 거부하거나 절차를 게을리해 손해를 입혔다면, 그것이 불법행위가 될 수 있다</b>는 점입니다. <b>민법 제750조</b>가 이 기준을 담고 있습니다. <b>계약서 초안, 조건 확정, 승인 절차 공유처럼 곧 계약된다는 인상을 준 자료가 핵심</b>이 됩니다.</p>
+    <p>중요한 것은 배상 범위입니다. <b>계약이 성사됐다면 얻었을 이익이 아니라, 성사될 것을 믿고 지출한 신뢰손해가 기준이 됩니다.</b> <b>신뢰손해</b>란 계약이 될 줄 알고 미리 쓴 돈을 말합니다. <b>장사로 벌었을 돈이 아니라, 준비하며 실제로 쓴 돈을 적어내는 일</b>이 곧 청구의 중심입니다.</p>
+    <p>여기에 별도의 축이 하나 더 있습니다. <b>교섭 파기나 절차위반이 인격적 법익을 침해해 정신적 고통을 초래했다면, 민법 제751조에 따라 그 손해를 따로 배상받을 수 있습니다.</b> <b>대법원 2023다258658 판결</b>도 이 두 가지를 확인했습니다. <b>부당한 중도파기가 불법행위가 될 수 있고 배상은 신뢰손해에 한정되며, 인격적 법익이 침해되면 정신적 고통에 대한 별도 배상이 가능하다</b>는 취지입니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>확신과 지출, 그리고 정신적 고통</h2>
+    <ul class="points">
+      <li><b>첫째, 확신을 준 자료를 봅니다</b> — <b>상대방이 계약이 임박했다는 인상을 준 문서와 발언이 있는지 확인합니다.</b> 계약서 초안과 조건 확정, 승인 절차 공유가 여기에 해당합니다.</li>
+      <li><b>둘째, 파기 사유를 봅니다</b> — <b>상당한 이유가 있었는지, 절차를 게을리한 것인지를 가릅니다.</b> 민법 제750조의 기준은 <b>상당한 이유 없이</b> 거부하거나 절차를 게을리한 경우입니다.</li>
+      <li><b>셋째, 지출 내역을 정리합니다</b> — <b>준비 과정에서 실제로 쓴 돈이 신뢰손해의 기준이 됩니다.</b> 성사됐다면 얻었을 이익이 아니라 쓴 돈을 적습니다.</li>
+      <li><b>넷째, 정신적 고통을 봅니다</b> — <b>민법 제751조와 대법원 2023다258658 판결에 따라 별도 배상이 문제될 수 있습니다.</b> 인격적 법익 침해가 있었는지를 봅니다.</li>
+      <li><b>다섯째, 단정하지 않습니다</b> — <b>확신의 정도와 손해 범위는 다툼이 될 수 있으므로 확인되지 않은 부분은 사실대로 남겨 둡니다.</b></li>
+    </ul>
+    <div class="callout"><b>핵심.</b> <b>배상은 성사됐다면 얻었을 이익이 아니라 성사될 것을 믿고 지출한 신뢰손해에 한정됩니다.</b> <b>확신의 정도와 손해 범위는 다툼이 될 수 있으므로 단정하지 말고</b>, 확신 자료와 지출 내역을 묶어 <b>전문가 확인</b>을 받으십시오.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;">먼저 확신 자료를 모으고, 지출 내역과 중단 경위를 정리합니다. 이어서 정신적 고통의 근거를 남긴 뒤 <b>전문가 확인</b>을 받아 손해 주장의 근거를 세울 수 있는지 판단합니다.</p>
+    <ol>
+      <li><b>① 확신 자료</b> — 계약서 초안·조건 확정·약속 문자를 시간순으로 모은다.</li>
+      <li><b>② 지출 내역</b> — 견적서·영수증·지급 기록으로 실제 쓴 돈을 정리한다.</li>
+      <li><b>③ 중단 경위</b> — 연락이 끊긴 시점과 상대방 설명을 적어 둔다.</li>
+      <li><b>④ 정신적 고통</b> — 준비 과정에서 생긴 피해 상황을 기록한다.</li>
+      <li><b>⑤ 사전 자문</b> — 확신 자료와 지출 내역을 묶어 전문가 확인을 받는다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
