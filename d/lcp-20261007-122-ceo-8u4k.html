@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>창업자 이탈 정리, 나눠 달라는 말이 아니라 절차로 푼다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>창업자 이탈 정리, 나눠 달라는 말이 아니라 절차로 푼다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 공동창업자가 낸 돈 비율대로 재산을 나눠 달라고 할 때, 그 요구를 그대로 받으면 회사 절차를 건너뛰게 된다. 출자해 함께 회사를 세운 동업약정은 원칙적으로 민법상 조합 결성을 목적으로 한 것으로 보지 않는다(대법원 2022다307379). 지금 정할 것은 얼마를 줄지가 아니라, 약정·정관·청산 절차·자기주식 한도를 대조해 줄 수 있는 범위부터 확정하는 일이다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      양시우는 미르게임즈를 운영하는 대표다. 공동창업자 한 명이 나가면서 낸 돈 비율대로 재산을 나눠 달라고 했다. 남은 쪽은 회사 절차를 거쳐야 한다고 봤다. 양시우는 동업의 말과 회사의 법리를 나눠야 한다고 봤다. 동업약정서와 출자 내역, 지분 비율과 정관, 이탈 경위와 한도 계산을 한 표에 묶어 보게 했다. 약정인지와 절차가 필요한지를 나란히 놓고 본 것이다. 약정이 조합을 만든 것인지가 첫 번째 질문이었다. 출자 내역과 지분 비율, 정관과 이탈 경위를 항목별로 묶고, 나가는 쪽이 원하는 정리가 청산 절차를 거친 것인지도 보게 했다. 요구대로 나누는 것과 절차대로 나누는 것은 다르다. 자기주식 취득 안의 한도도 함께 보게 했는데, 배당가능이익 한도 내에서만 가능하고 한도를 넘으면 막히기 때문이다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, <b>조합으로 보지 않는다</b>. 출자해 함께 회사를 세우고 지분대로 나누기로 한 동업약정은 민법상 조합 결성을 목적으로 하는 것으로 원칙적으로 보지 않는다. 대법원 2022다307379 판결의 판시사항이다. 출자 재산이 합유로 되는 것도 아니다.</p>
+    <p>둘째, <b>절차가 필요하다</b>. 청산 규정에 따른 절차 없이 잔여재산을 나눠 받을 수 있는지도 소극이다. 대법원 2022다302022 판결의 판시사항이다. 회사를 세운 뒤에는 절차를 거쳐야 한다. 요구대로 나누는 것과 절차대로 나누는 것은 다르다.</p>
+    <p>셋째, <b>자기주식 취득의 한도</b>다. 자기주식 취득으로 정리하려면 배당가능이익 한도 내에서만 가능하다. 상법 제341조가 그 근거다. 한도를 넘으면 막힌다. 한도를 계산해 보고, 한도 계산서를 따로 묶어 둔다.</p>
+    <div class="callout">
+      <b>요구와 절차를 갈라 적는다.</b> 낸 돈 비율대로 달라는 요구와 회사 절차대로 정리하는 경로를 한 칸에 두지 않는다. 절차를 거쳤는지를 먼저 본다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>놓치기 쉬운 조건과 예외</h2>
+    <p><b>계약의 촘촘함</b>이 조건이다. 조합 기반 정산을 원한다면 동업체 독자성과 조합재산 특정, 탈퇴·해지 시 평가와 정산 방식을 계약서에 미리 정한다. 정하지 않으면 조합으로 보지 않는다. 원칙적 소극을 뒤집으려면 계약이 말해야 한다.</p>
+    <p><b>기간과 처분 통제</b>도 조건이다. 청구와 옵션의 행사기간을 트리거별로 명시해 언제부터 언제까지인지를 적는다. 트리거마다 기간이 다르다. 제3자 처분 방지와 위반 효과를 함께 정한다.</p>
+    <ul class="points">
+        <li>출자 재산이 합유로 되는 것이 아니다. 동업약정이 곧 조합 재산 분배로 이어지지 않는다.</li>
+        <li>청산 규정에 따른 절차 없이 잔여재산을 나눠 받는 데는 소극이다.</li>
+        <li>자기주식 취득은 배당가능이익 한도 내에서만 가능하므로 한도 계산이 먼저다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>약정과 절차를 나눠 지시한다.</b> 양시우가 세운 정리 순서는 다음과 같다.</p>
+      <ol>
+        <li><b>① 약정을 본다</b> — 조합 결성 목적인지, 출자 재산의 합유 여부를 본다(대법원 2022다307379).</li>
+        <li><b>② 청산을 본다</b> — 절차 없는 분배가 되는지, 설립 뒤 절차가 필요한지를 본다(대법원 2022다302022).</li>
+        <li><b>③ 한도를 계산한다</b> — 자기주식 취득은 배당가능이익 한도 내에서만 가능하다(상법 제341조).</li>
+        <li><b>④ 항목을 나눈다</b> — 출자·지분·정관·이탈 경위를 항목별로 묶는다.</li>
+        <li><b>⑤ 요구와 절차를 대조한다</b> — 요구대로 나누기와 절차대로 나누기를 구분하고 절차 필요 여부를 먼저 본다.</li>
+        <li><b>⑥ 계약을 점검한다</b> — 정산 방식·평가·조합재산 특정이 계약서에 있는지 확인한다.</li>
+        <li><b>⑦ 기간과 처분을 본다</b> — 행사기간을 트리거별로 보고 제3자 처분 방지와 위반 효과를 확인한다.</li>
+        <li><b>⑧ 한 표에 묶는다</b> — 약정·출자·지분·경위를 한 표에 놓고 확정되지 않은 부분은 서두르지 않는다.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;">양시우는 약정과 출자·지분 내역, 청산 절차와 자기주식 한도를 나눠 보고받았다. 출자와 지분, 정관과 경위를 항목별로 묶고 이탈 시 정리 조항의 촘촘함을 점검하게 했다. <b>요구대로 나누는 길과 절차대로 나누는 길을 갈라 둔 것</b>이 핵심이다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
