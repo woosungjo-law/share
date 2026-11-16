@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ko" data-design="M3">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>대표이사가 회사 어음으로 개인 빚을 막았을 때 — 회사가 책임지는 경우와 아닌 경우 · 3MUST</title>
+<link rel="icon" href="data:,">
+<style>
+:root { color-scheme:light dark; --bg:#edf1f3; --paper:#fff; --ink:#202d3d; --muted:#596b80; --line:#cbd6e4; --accent:#245aa6; --wash:#e7eef8; font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif; }
+@media(prefers-color-scheme:dark){:root{--bg:#111a20;--paper:#1a252d;--ink:#eff4f4;--muted:#bac7c8;--line:#394a52;--wash:#253541;}}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);line-height:1.55}
+main{width:calc(100% - 28px);max-width:850px;margin:24px auto;padding:clamp(22px,5vw,48px);background:var(--paper);border:1px solid var(--line);border-top:7px solid var(--accent)}
+.eyebrow{font-size:.75rem;font-weight:750;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin:0 0 10px}
+h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.12;letter-spacing:-.035em;margin:0;text-wrap:balance}
+.situation{color:var(--muted);max-width:64ch;margin:14px 0 24px}
+.three{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+section{min-width:0;padding:17px 0;border-top:1px solid var(--line)}
+h2{font-size:.9rem;color:var(--accent);margin:0 0 7px;letter-spacing:.02em}
+p,li{max-width:68ch} section p{margin:0} section ul,section ol{margin:0;padding-left:1.25rem}
+.table-wrap{max-width:100%;overflow-x:auto;margin:10px 0 0;border:1px solid var(--line);border-radius:8px;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;min-width:560px;font-size:.88rem;line-height:1.45}
+th,td{padding:9px 11px;text-align:left;vertical-align:top;border-right:1px solid var(--line);border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+th:last-child,td:last-child{border-right:0} tbody tr:last-child td{border-bottom:0}
+th{background:var(--wash);font-weight:700;color:var(--ink)}
+.pause{margin-top:20px;padding:13px 15px;background:var(--wash);border-left:3px solid var(--accent)}
+.pause strong{display:block;margin-bottom:4px}.sources{margin-top:20px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+.sources p{margin:4px 0}.disclaimer{font-size:.75rem;color:var(--muted);margin-top:18px}
+html[data-design="M1"]{--accent:#bd4d28;--wash:#f8e7df;--bg:#ece9e5;--line:#dfc7bb;--ink:#252b2c;--muted:#59615f}
+html[data-design="M1"] main{border-top-width:10px}.m1 .three{grid-template-columns:1fr 1fr;gap:12px}.m1 section{border:1px solid var(--line);padding:14px;background:color-mix(in srgb,var(--wash) 35%,var(--paper))}.m1 section:last-child{grid-column:1/-1}
+html[data-design="M2"]{--accent:#176b68;--wash:#e3efed;--bg:#e7eeee;--line:#c5d7d4;--ink:#162c31;--muted:#52696a}
+html[data-design="M2"] h1{font-family:Georgia,"Batang",serif;font-weight:600}.m2 .three{grid-template-columns:1fr 1fr;gap:22px}.m2 section:nth-child(2){background:var(--wash);padding:15px;border-top:0}.m2 section:last-child{grid-column:1/-1}
+html[data-design="M3"]{--accent:#126d57;--wash:#e4f1eb;--bg:#e9eeea;--line:#c5d7cc;--ink:#1d3028;--muted:#5b6e64}
+.m3 .three{position:relative;padding-left:20px}.m3 .three:before{content:"";position:absolute;top:18px;bottom:18px;left:4px;width:2px;background:var(--accent);opacity:.45}.m3 section{position:relative;padding-left:14px}.m3 section:before{content:"";position:absolute;left:-20px;top:20px;width:9px;height:9px;border:2px solid var(--accent);border-radius:50%;background:var(--paper)}
+html[data-design="M4"]{--accent:#714d83;--wash:#eee8f3;--bg:#ece8ef;--line:#d7ccdf;--ink:#292331;--muted:#686071}
+.m4 .situation{background:var(--wash);border-left:3px solid var(--accent);padding:12px 15px}.m4 .three{grid-template-columns:1fr 1fr;gap:12px}.m4 section{border:1px solid var(--line);padding:15px}.m4 section:last-child{grid-column:1/-1}
+/* M4-wide is reserved for cards whose text and table need equal full-width measure. */
+.m4-wide .three{grid-template-columns:1fr;gap:14px}.m4-wide section:last-child{grid-column:auto}
+html[data-design="M5"]{--accent:#245aa6;--wash:#e7eef8;--bg:#edf1f3;--line:#cbd6e4;--ink:#202d3d;--muted:#596b80}
+.m5 .situation{background:var(--wash);padding:10px 12px;border:1px solid var(--line)}.m5 section{display:grid;grid-template-columns:minmax(145px,.34fr) 1fr;gap:18px}.m5 h2{color:var(--ink)}
+@media(prefers-color-scheme:dark){
+ html[data-design="M1"]{--accent:#f29a72;--wash:#392d29;--bg:#131a1a;--paper:#202929;--line:#48524f;--ink:#edf1ed;--muted:#b9c5bf}
+ html[data-design="M2"]{--accent:#73c6be;--wash:#203936;--bg:#101a1b;--paper:#1b292b;--line:#405452;--ink:#eaf3f2;--muted:#afc6c3}
+ html[data-design="M3"]{--accent:#78d4a8;--wash:#20382f;--bg:#111a17;--paper:#1b2822;--line:#40564a;--ink:#eaf3ed;--muted:#b4c8bc}
+ html[data-design="M4"]{--accent:#d0a5e2;--wash:#342b3a;--bg:#19151d;--paper:#28212e;--line:#51445b;--ink:#f1eaf4;--muted:#c7b9ce}
+ html[data-design="M5"]{--accent:#8cb7ff;--wash:#24364d;--bg:#141a22;--paper:#202a37;--line:#3d4d62;--ink:#edf2fa;--muted:#b8c5d8}
+}
+@media(max-width:620px){main{width:calc(100% - 18px);max-width:850px;margin:9px auto;padding:22px 17px}.m1 .three,.m2 .three,.m4 .three{grid-template-columns:1fr}.m1 section:last-child,.m2 section:last-child,.m4 section:last-child{grid-column:auto}.m5 section{grid-template-columns:1fr;gap:5px}}
+@media print{@page{size:A4 portrait;margin:10mm}html{color-scheme:light}body{background:#fff}main{width:100%;max-width:none;margin:0;padding:10mm;border:0;border-top:4mm solid var(--accent);box-shadow:none}.sources,.disclaimer{font-size:8.5pt}a{color:inherit;text-decoration:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="m3">
+  <p class="eyebrow">3MUST · 회사법</p>
+  <h1>대표이사가 회사 어음으로 개인 빚을 막았을 때 — 회사가 책임지는 경우와 아닌 경우</h1>
+  <p class="situation"><strong>적용 상황:</strong> 대표이사가 자기 개인 채무를 담보하려고 회사 명의의 약속어음을 발행했고, 그 어음이 제3자에게 넘어가거나 회사에 어음금 청구가 들어온 경우</p>
+  <div class="three">
+    <section><h2>Must Know · 알아야 할 것</h2><ul><li>대표이사는 회사의 영업에 관하여 재판상·재판외의 모든 행위를 할 권한이 있고, 그 권한에 대한 제한은 선의의 제3자에게 대항하지 못합니다(상법 제389조 제3항이 같은 법 제209조를 준용). 회사 명의로 어음을 발행했다면 우선 회사의 행위로 다뤄지는 이유입니다.</li><li>예외가 있습니다. 대표이사가 대표권을 남용해 자기 채무를 담보하려고 회사 명의 의무를 부담한 경우, 상대방이 그 진의를 알았거나 알 수 있었을 때에는 그 행위가 회사에 대하여 효력이 없습니다(대법원 2017. 7. 20. 선고 2014도1104 전원합의체 판결 다수의견).</li><li>상대방이 몰랐고 알 수도 없었다면 그 의무부담행위는 회사에 대하여 유효합니다. 이때는 회사가 어음금 채무를 부담합니다.</li><li>어음은 배서로 양도할 수 있고(어음법 제11조 제1항), 약속어음에도 배서에 관한 규정이 준용됩니다(같은 법 제77조 제1항 제1호). 어음법 제17조에 따라, 어음으로 청구를 받은 자는 소지인이 채무자를 해할 것을 알고 어음을 취득한 경우가 아니면 인적 관계에 기한 항변으로 소지인에게 대항하지 못합니다.</li><li>그래서 회사가 발행 상대방에게 \"대표권 남용이라 무효\"라고 다투는 데 성공해도, 그 어음이 제3자에게 유통되면 회사는 선의의 소지인에게 어음금 채무를 부담할 수 있습니다. 무효인 어음이라도 회사에 닿는 위험이 끝나지 않는 구조입니다.</li><li>형사 책임(배임)은 판례가 바뀐 지점입니다. 종전에는 제3자 유통 위험만으로 재산상 실해 발생의 위험이 초래되었다고 보아 기수를 인정했습니다(대법원 2012. 12. 27. 선고 2012도10822 판결).</li><li>전원합의체는 견해를 달리했습니다. 상대방이 대표권 남용 사실을 알았거나 알 수 있었던 경우 그 의무부담행위는 원칙적으로 회사에 효력이 없고, 실제로 채무가 이행됐다거나 회사가 불법행위책임을 부담하게 됐다는 등의 사정이 없으면 배임죄의 기수에 이르지 않는다고 보았습니다. 다만 약속어음이 실제 제3자에게 유통되었다면 그때는 어음채무 부담 위험이 구체적으로 발생한 것이므로 기수가 됩니다. 무효이면서 유통도 되지 않았다면 배임미수입니다(대법원 2017. 7. 20. 선고 2014도1104 전원합의체 판결).</li><li>상대방에 대한 회사의 책임도 별개로 봅니다. 대표권 남용이 회사에 대하여 무효인 국면에서는 회사가 상대방에게 민법 제35조 제1항에 따른 법인의 불법행위책임이나 같은 법 제756조 제1항의 사용자책임을 지지 않는다는 것이 원자료의 설명입니다.</li><li>결국 회사의 어음금 채무는 ⑴ 상대방이 대표권 남용을 알았는지(선의인지 악의·중과실인지)와 ⑵ 어음이 제3자에게 유통됐는지, 두 축으로 갈립니다. 두 축을 확인하기 전에는 결론을 정할 수 없습니다.</li></ul></section>
+    <section><h2>Must Check · 확인할 것</h2><ul><li>약속어음 원본 또는 사본 — 발행일, 액면금액, 만기, 지급지, 발행인 표시</li><li>배서란의 연속과 최종 소지인 — 제3자에게 넘어갔는지, 몇 차례 배서됐는지</li><li>상대방이 대표권 남용을 알았거나 알 수 있었는지를 보여주는 자료(협의 경위, 자금 흐름, 이사회 결의서 유무)</li><li>회사의 어음용지·인감 관리 실태와 사용대장 기록</li><li>회사 장부와 이사회 의사록에 해당 어음 발행이 기재됐는지</li><li>대표이사의 개인 채무와 회사 채무를 구분하는 자료</li><li>회사가 어음금을 실제로 지급했는지, 지급정지나 소송이 진행 중인지</li><li>어음 발행에 주주총회·이사회 승인이 있었는지, 정관상 대표권 제한이 있는지</li></ul></section>
+    <section><h2>Must Do · 실행할 것</h2><ol><li>어음 사본을 먼저 확보하고 배서의 연속과 유통 경로를 확인합니다. 유통 여부가 형사와 민사의 결론을 동시에 가릅니다.</li><li>상대방의 인식을 입증할 자료를 모읍니다. 대표권 남용을 알았거나 알 수 있었던 정황이 있으면 회사에 대한 효력이 부정될 수 있습니다.</li><li>소지인이 제3자라면 그 소지인이 어음 취득 당시 채무자를 해할 것을 알았는지 확인합니다. 어음법 제17조의 항변은 이 점을 입증해야 관철됩니다.</li><li>지급정지 가처분, 사고신고 등 어음금 지급을 막을 수단을 검토합니다. 다만 선의의 소지인에 대한 항변은 별도로 판단해야 합니다.</li><li>회사 내부 대응을 정리합니다. 이사회 소집, 대표이사 해임이나 직무집행정지 가처분, 회사가 입은 손해의 배상을 청구하는 절차를 검토합니다.</li><li>형사 고소를 검토할 때는 기수와 미수를 구분합니다. 어음이 유통됐는지에 따라 결론이 달라지므로, 유통 전이라면 미수로 정리됩니다.</li><li>대표이사 개인에 대한 손해배상 청구는 실제 손해 발생을 기준으로 산정합니다. 회사가 어음금을 지급했는지, 소지인에게 청구를 받았는지가 청구액의 전제가 됩니다.</li><li>상대방과 합의한다면 어음 회수·폐기와 배서 말소까지 확인하고, 회수 사실을 서면으로 남깁니다.</li></ol>
+      <div class="table-wrap"><table><thead><tr><th>상대방의 인식</th><th>어음 유통</th><th>회사의 어음금 채무</th><th>배임죄</th></tr></thead><tbody><tr><td>선의(몰랐고 알 수 없었음)</td><td>유통 전</td><td>부담</td><td>기수</td></tr><tr><td>악의 또는 중과실</td><td>유통 전</td><td>부담하지 않음</td><td>미수</td></tr><tr><td>악의 또는 중과실</td><td>제3자에게 유통</td><td>선의의 소지인에게 부담</td><td>기수</td></tr></tbody></table></div>
+    </section>
+  </div>
+  <div class="pause"><strong>여기서 멈추고 검토받기</strong>어음이 이미 제3자에게 넘어갔거나, 상대방이 선의인지 악의인지 자료가 엇갈리거나, 회사가 어음금을 일부 지급한 경우에는 이 기준만으로 결론을 내리지 않습니다. 어음법상 항변의 관철 여부와 손해액 산정은 개별 검토가 필요합니다.</div>
+  <div class="sources">
+    <p>원자료: 대한법률구조공단 법률상담사례 「회사의 대표이사가 대표권을 남용하여 회사 명의의 약속어음을 발행한다는 사정을 상대방이 알았거나 중대한 과실로 알지 못한 경우」(case-004-00719, 원문수집·현행법 검증 미실시)</p>
+    <p>법령 검증: 상법(법령ID 001702, 시행 2026-09-10) 제389조 제3항·제209조, 어음법(법령ID 001230) 제11조 제1항·제17조·제77조 제1항 제1호, 민법(법령ID 001706, 시행 2026-03-17) 제35조 제1항·제756조 제1항 본문 확인(2026-11-16 한국법 MCP 조회).</p>
+    <p>판례: 대법원 2012. 12. 27. 선고 2012도10822 판결, 대법원 2017. 7. 20. 선고 2014도1104 전원합의체 판결 — 원자료가 인용한 판시 내용을 사용했으며, 이번 세션에서 판결 원문·후속 인용은 별도 조회하지 않았습니다.</p>
+    <p>정정: 원자료 답변은 \"배임죄에 해당하고 손해배상 책임이 있다\"는 결론과 \"판례 취지에 따라 미수로 처벌될 여지가 있다\"는 서술을 함께 두어 결론이 혼재합니다. 이 카드는 2014도1104 전원합의체의 취지에 따라 인식과 유통 두 축으로 다시 정리했습니다.</p>
+    <p>미확인·제한: 표현대표이사(상법 제395조) 적용 여부, 배임죄 성립의 최종 판단, 어음 소지인과의 소송에서 항변이 관철되는지는 개별 사안의 검토가 필요합니다. 손해액 산정 기준은 제시하지 않았습니다.</p>
+    <p>관련 카드: 정관상 대표권 제한과 이사회 결의는 「정관 기재사항과 변태설립을 대조하는 방법」, 계약서상 책임 전가는 「계약서에 '을'에게 책임을 넘기는 조항이 있을 때」에서 다룹니다.</p>
+  </div>
+  <p class="disclaimer">일반적인 실무 참고자료입니다. 개별 사안에서는 사실관계와 적용 기준을 확인하세요.</p>
+</main>
+</body>
+</html>
