@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ko" data-design="M3">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>법무 의견이 보고 과정에서 잘렸거나 순화됐을 때 — 원본과 전달본을 대조하는 순서 · 3MUST</title>
+<link rel="icon" href="data:,">
+<style>
+:root { color-scheme:light dark; --bg:#edf1f3; --paper:#fff; --ink:#202d3d; --muted:#596b80; --line:#cbd6e4; --accent:#245aa6; --wash:#e7eef8; font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif; }
+@media(prefers-color-scheme:dark){:root{--bg:#111a20;--paper:#1a252d;--ink:#eff4f4;--muted:#bac7c8;--line:#394a52;--wash:#253541;}}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);line-height:1.55}
+main{width:calc(100% - 28px);max-width:850px;margin:24px auto;padding:clamp(22px,5vw,48px);background:var(--paper);border:1px solid var(--line);border-top:7px solid var(--accent)}
+.eyebrow{font-size:.75rem;font-weight:750;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin:0 0 10px}
+h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.12;letter-spacing:-.035em;margin:0;text-wrap:balance}
+.situation{color:var(--muted);max-width:64ch;margin:14px 0 24px}
+.three{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+section{min-width:0;padding:17px 0;border-top:1px solid var(--line)}
+h2{font-size:.9rem;color:var(--accent);margin:0 0 7px;letter-spacing:.02em}
+p,li{max-width:68ch} section p{margin:0} section ul,section ol{margin:0;padding-left:1.25rem}
+.table-wrap{max-width:100%;overflow-x:auto;margin:10px 0 0;border:1px solid var(--line);border-radius:8px;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;min-width:560px;font-size:.88rem;line-height:1.45}
+th,td{padding:9px 11px;text-align:left;vertical-align:top;border-right:1px solid var(--line);border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+th:last-child,td:last-child{border-right:0} tbody tr:last-child td{border-bottom:0}
+th{background:var(--wash);font-weight:700;color:var(--ink)}
+.pause{margin-top:20px;padding:13px 15px;background:var(--wash);border-left:3px solid var(--accent)}
+.pause strong{display:block;margin-bottom:4px}.sources{margin-top:20px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+.sources p{margin:4px 0}.disclaimer{font-size:.75rem;color:var(--muted);margin-top:18px}
+html[data-design="M1"]{--accent:#bd4d28;--wash:#f8e7df;--bg:#ece9e5;--line:#dfc7bb;--ink:#252b2c;--muted:#59615f}
+html[data-design="M1"] main{border-top-width:10px}.m1 .three{grid-template-columns:1fr 1fr;gap:12px}.m1 section{border:1px solid var(--line);padding:14px;background:color-mix(in srgb,var(--wash) 35%,var(--paper))}.m1 section:last-child{grid-column:1/-1}
+html[data-design="M2"]{--accent:#176b68;--wash:#e3efed;--bg:#e7eeee;--line:#c5d7d4;--ink:#162c31;--muted:#52696a}
+html[data-design="M2"] h1{font-family:Georgia,"Batang",serif;font-weight:600}.m2 .three{grid-template-columns:1fr 1fr;gap:22px}.m2 section:nth-child(2){background:var(--wash);padding:15px;border-top:0}.m2 section:last-child{grid-column:1/-1}
+html[data-design="M3"]{--accent:#126d57;--wash:#e4f1eb;--bg:#e9eeea;--line:#c5d7cc;--ink:#1d3028;--muted:#5b6e64}
+.m3 .three{position:relative;padding-left:20px}.m3 .three:before{content:"";position:absolute;top:18px;bottom:18px;left:4px;width:2px;background:var(--accent);opacity:.45}.m3 section{position:relative;padding-left:14px}.m3 section:before{content:"";position:absolute;left:-20px;top:20px;width:9px;height:9px;border:2px solid var(--accent);border-radius:50%;background:var(--paper)}
+html[data-design="M4"]{--accent:#714d83;--wash:#eee8f3;--bg:#ece8ef;--line:#d7ccdf;--ink:#292331;--muted:#686071}
+.m4 .situation{background:var(--wash);border-left:3px solid var(--accent);padding:12px 15px}.m4 .three{grid-template-columns:1fr 1fr;gap:12px}.m4 section{border:1px solid var(--line);padding:15px}.m4 section:last-child{grid-column:1/-1}
+/* M4-wide is reserved for cards whose text and table need equal full-width measure. */
+.m4-wide .three{grid-template-columns:1fr;gap:14px}.m4-wide section:last-child{grid-column:auto}
+html[data-design="M5"]{--accent:#245aa6;--wash:#e7eef8;--bg:#edf1f3;--line:#cbd6e4;--ink:#202d3d;--muted:#596b80}
+.m5 .situation{background:var(--wash);padding:10px 12px;border:1px solid var(--line)}.m5 section{display:grid;grid-template-columns:minmax(145px,.34fr) 1fr;gap:18px}.m5 h2{color:var(--ink)}
+@media(prefers-color-scheme:dark){
+ html[data-design="M1"]{--accent:#f29a72;--wash:#392d29;--bg:#131a1a;--paper:#202929;--line:#48524f;--ink:#edf1ed;--muted:#b9c5bf}
+ html[data-design="M2"]{--accent:#73c6be;--wash:#203936;--bg:#101a1b;--paper:#1b292b;--line:#405452;--ink:#eaf3f2;--muted:#afc6c3}
+ html[data-design="M3"]{--accent:#78d4a8;--wash:#20382f;--bg:#111a17;--paper:#1b2822;--line:#40564a;--ink:#eaf3ed;--muted:#b4c8bc}
+ html[data-design="M4"]{--accent:#d0a5e2;--wash:#342b3a;--bg:#19151d;--paper:#28212e;--line:#51445b;--ink:#f1eaf4;--muted:#c7b9ce}
+ html[data-design="M5"]{--accent:#8cb7ff;--wash:#24364d;--bg:#141a22;--paper:#202a37;--line:#3d4d62;--ink:#edf2fa;--muted:#b8c5d8}
+}
+@media(max-width:620px){main{width:calc(100% - 18px);max-width:850px;margin:9px auto;padding:22px 17px}.m1 .three,.m2 .three,.m4 .three{grid-template-columns:1fr}.m1 section:last-child,.m2 section:last-child,.m4 section:last-child{grid-column:auto}.m5 section{grid-template-columns:1fr;gap:5px}}
+@media print{@page{size:A4 portrait;margin:10mm}html{color-scheme:light}body{background:#fff}main{width:100%;max-width:none;margin:0;padding:10mm;border:0;border-top:4mm solid var(--accent);box-shadow:none}.sources,.disclaimer{font-size:8.5pt}a{color:inherit;text-decoration:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="m3">
+  <p class="eyebrow">3MUST · 법무운영</p>
+  <h1>법무 의견이 보고 과정에서 잘렸거나 순화됐을 때 — 원본과 전달본을 대조하는 순서</h1>
+  <p class="situation"><strong>적용 상황:</strong> 법무팀이 낸 검토 의견이 경영진 보고 자료나 계약 진행 과정에서 축약·순화된 것으로 보여, 원본과 실제로 무엇이 달라졌는지 확인해야 하는 경우</p>
+  <div class="three">
+    <section><h2>Must Know · 알아야 할 것</h2><ul><li>왜곡은 대개 여덟 가지 형태로 나타납니다. ⑴ 핵심 수정 요청이 빠지는 <strong>내용 축약</strong> ⑵ 경고한 리스크가 사라지는 <strong>경고 삭제</strong> ⑶ "조건부 동의"가 "동의"로 바뀌는 <strong>결론 왜곡</strong> ⑷ "법무팀 검토 완료"만 남는 <strong>책임 회피성 표현</strong> ⑸ 법령·판례 근거가 지워지는 <strong>근거 삭제</strong> ⑹ "반대"가 "검토 중"으로 순화되는 <strong>의견 전도</strong> ⑺ 법무팀이 쓰지 않은 "문제없음"이 붙는 <strong>단정 추가</strong> ⑻ 의견 제출일이 실제보다 늦게 적히는 <strong>시점 왜곡</strong>입니다.</li><li>원본을 남기는 것이 첫 단계입니다. 상인은 10년간 상업장부와 영업에 관한 중요서류를 보존해야 하고, 전표 또는 이와 유사한 서류는 5년간 보존합니다(상법 제33조 제1항). 회사는 상행위를 하지 않더라도 상인으로 보므로(같은 법 제5조 제2항) 이 조항이 적용됩니다. 다만 법무 의견서가 "영업에 관한 중요서류"에 해당하는지는 문서의 성격과 내용에 따라 판단이 갈릴 수 있으므로, 내부 보존 기준을 이 기간보다 짧게 잡지 않는 편이 안전합니다.</li><li>전자 파일로만 두는 것과 보관 요건을 갖추는 것은 다릅니다. 전자문서가 ⑴ 서면으로 보는 전자문서이고 ⑵ 작성자·수신자·송신수신 일시에 관한 사항이 포함된 경우 그 부분이 보존되어 있을 때에는, 그 전자문서를 보관함으로써 관계 법령이 정한 문서 보관을 갈음할 수 있습니다(전자문서 및 전자거래 기본법 제5조 제1항). 메일함에 남아 있는 것만으로는 누가 언제 주고받았는지가 함께 보존되는지 확인해야 합니다.</li><li>밖으로 나가는 순간 다른 의무가 붙습니다. 변호사 또는 변호사였던 자는 직무상 알게 된 비밀을 누설해서는 안 됩니다(변호사법 제26조). 법무 의견서를 발췌해 외부에 전달하는 과정은 이 의무와 충돌할 수 있으므로, 외부 전달 전에 법무팀 확인을 거치는 절차를 두는 것이 좋습니다.</li><li>사후 탐지보다 발송 전 설계가 쌉니다. 의견서 상단에 전문 인용을 요구하는 문구를 넣고, 의견을 [권고/반대/조건부/정보]로 분류해 제목에도 표기하고, 결론과 조건·전제를 첫 문단에 함께 적고, "미반영 시 리스크"를 별도 절로 떼어 두면 발췌 자체가 어려워집니다.</li><li>조건부 동의는 조건을 함께 적어야 유지됩니다. 조건과 그 조건을 이행하지 않았을 때의 효력을 같은 문단에 두지 않으면, 다음 사람이 읽을 때 "동의"로 정리되기 쉽습니다.</li><li>이 카드는 기록·대조·비밀유지까지 다룹니다. 왜곡이 확인됐을 때 누가 어떤 법적 책임을 지는지는 사안마다 사실관계와 귀책 판단이 필요하므로, 이 카드로 결론을 내리지 않습니다.</li></ul>
+      <div class="table-wrap"><table><thead><tr><th>왜곡 유형</th><th>대조할 질문</th></tr></thead><tbody><tr><td>내용 축약</td><td>핵심 수정 요청이 보고 자료에서 빠졌는가</td></tr><tr><td>경고 삭제</td><td>경고한 리스크 내용이 보고 자료에 없는가</td></tr><tr><td>결론 왜곡</td><td>"조건부 동의"가 "동의"로 바뀌었는가</td></tr><tr><td>책임 회피성 표현</td><td>"법무팀 검토 완료"만 남고 구체적 리스크가 빠졌는가</td></tr><tr><td>근거 삭제</td><td>법령·판례 근거가 지워졌는가</td></tr><tr><td>의견 전도</td><td>"반대"가 "검토 중"으로 순화됐는가</td></tr><tr><td>단정 추가</td><td>법무팀이 쓰지 않은 "문제없음"이 붙었는가</td></tr><tr><td>시점 왜곡</td><td>의견 제출일이 실제보다 늦게 적혔는가</td></tr></tbody></table></div>
+    </section>
+    <section><h2>Must Check · 확인할 것</h2><ul><li>법무팀이 작성한 원본 의견서를 일자·타임스탬프와 함께 보존했는가</li><li>사업팀이 경영진에게 보고한 자료(PPT·이메일·회의록)를 확보했는가</li><li>해당 계약서 원본과 최종 서명본, 전자결재 이력을 함께 갖고 있는가</li><li>법무 의견을 보낸 이메일과 수신 확인 기록이 남아 있는가</li><li>사업팀과 법무팀 사이의 관련 회의록이 있는가</li><li>여덟 가지 왜곡 유형을 항목별로 대조했는가</li><li>"법무팀 검토 완료" 같은 표현만 있고 구체적 리스크가 빠진 곳은 없는가</li><li>조건부 동의의 조건과 불이행 시 효력이 전달본에도 남아 있는가</li><li>의견 제출일자가 실제 발송일과 같은가</li><li>외부 전달본이 있다면 법무팀 사전 확인을 거쳤는가</li></ul></section>
+    <section><h2>Must Do · 실행할 것</h2><ol><li>대조표를 만듭니다. 왼쪽에 원본 의견서 문장을, 오른쪽에 전달본의 해당 문장을 옮기고, 가운데에 차이(누락·변경·추가)를 적습니다. 문장 단위로 맞춰야 "요약했다"는 말로 넘어가지 않습니다.</li><li>차이만 따로 목록화합니다. 요약하지 말고 원문을 그대로 인용합니다. 인용이 있어야 나중에 정정 요청의 근거가 됩니다.</li><li>유형과 심각도를 붙입니다. 여덟 유형 중 무엇인지, 계약 진행이나 의사결정에 영향을 줬는지를 적습니다.</li><li>의도성과 단순 오류를 구분합니다. 같은 사업팀·같은 담당자에게서 반복되는 패턴인지, 시점이 특정 이해관계와 겹치는지 확인합니다.</li><li>CLO에게 차이 자체를 보고합니다. "왜곡이 있었습니다"가 아니라 대조표와 원문 인용을 붙여 보냅니다.</li><li>경영진 직접 보고가 필요한지 판단합니다. 결론이 뒤집혔거나 이미 계약이 체결된 건이면 대조표만으로 끝내지 않습니다.</li><li>정정 요청과 미반영 확인서를 남깁니다. 구두로 정정하고 끝내면 같은 일이 반복되므로, 발송 규칙(발송 전 설계·발송 시 통제·발송 후 확인)을 문서로 정하고 분기마다 점검합니다.</li></ol></section>
+  </div>
+  <div class="pause"><strong>여기서 멈추고 검토받기</strong>조건부 동의가 "동의"로 처리되어 계약이 이미 체결됐거나, 발췌본이 외부에 나갔거나, 같은 담당자에게서 반복 패턴이 확인되면 이 표 작성만으로 진행하지 말고 검토를 받습니다. 왜곡의 법적 효과와 책임 범위는 개별 사안으로 판단해야 하며 이 카드로 확정하지 않습니다.</div>
+  <div class="sources"><p><strong>원자료:</strong> <code>_WIKI_법률지식/_55_업무사전/90_bundles/법무키트/20_drafting/PCK-OPS-141_사업팀계약검토축소대응/01_법무의견왜곡탐지체크리스트.md</code>, <code>.../PCK-OPS-142_법무의견왜곡자기보호/04_의견서발췌배신방지3Gate체크리스트.md</code> (둘 다 status: drafting)</p><p><strong>법령 검증:</strong> 상법(법령ID 001702, 시행 2026-09-10) <strong>제5조 제2항</strong>, <strong>제33조 제1항</strong> / 변호사법(법령ID 001708, 시행 2026-10-02) <strong>제26조</strong> / 전자문서 및 전자거래 기본법(법령ID 002000, 시행 2022-10-20) <strong>제5조 제1항</strong> 본문 확인(2026-11-16 한국법 MCP 조회).</p><p><strong>원자료에서 조정한 부분:</strong> 원자료의 보존기간 표(법무 원본 의견서 영구, 경영진 보고 자료 5년 등)와 심각도 상·중 구분은 내부 권장 기준이지 조문이 정한 기한이 아니므로, 카드에서는 "내부 기준"으로만 쓰고 조문 근거와 섞지 않았습니다. 3Gate 위반 시 대응 프로토콜의 법적 효과도 확인되지 않아 절차 서술로만 남겼습니다.</p><p><strong>미확인·제한:</strong> 왜곡이 확인된 경우의 손해배상·징계 등 법적 효과, 발췌본 외부 유출 시 구체적 제재 수준은 이번 세션에서 확인하지 않았습니다. 원자료가 연결한 비교표·경영진 직접 보고·조건부 의견서 양식은 원문을 열지 않아 내용을 인용하지 않았습니다.</p><p><strong>관련 카드:</strong> 의견 이력을 감사·분쟁에 대비해 남기는 방법은 「감사나 분쟁에서 '그때 법무가 뭐라고 했나'를 증명해야 할 때」, 경영진 갈등 상황의 중립성은 「경영진이 둘로 갈렸을 때 법무팀이 어느 편도 들 수 없을 때」에서 다룹니다.</p><p><strong>변경 기록:</strong> 초안 작성(배치 8 첫 번째 카드)</p></div>
+  <p class="disclaimer">일반적인 실무 참고자료입니다. 개별 사안에서는 사실관계와 적용 기준을 확인하세요.</p>
+</main>
+</body>
+</html>
