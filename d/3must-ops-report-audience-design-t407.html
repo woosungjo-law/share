@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko" data-design="M5">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>법무 보고를 받는 사람이 바뀌면 같은 사안도 다르게 써야 한다 — 독자별 보고 설계 · 3MUST</title>
+<link rel="icon" href="data:,">
+<style>
+:root { color-scheme:light dark; --bg:#edf1f3; --paper:#fff; --ink:#202d3d; --muted:#596b80; --line:#cbd6e4; --accent:#245aa6; --wash:#e7eef8; font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif; }
+@media(prefers-color-scheme:dark){:root{--bg:#111a20;--paper:#1a252d;--ink:#eff4f4;--muted:#bac7c8;--line:#394a52;--wash:#253541;}}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);line-height:1.55}
+main{width:calc(100% - 28px);max-width:850px;margin:24px auto;padding:clamp(22px,5vw,48px);background:var(--paper);border:1px solid var(--line);border-top:7px solid var(--accent)}
+.eyebrow{font-size:.75rem;font-weight:750;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin:0 0 10px}
+h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.12;letter-spacing:-.035em;margin:0;text-wrap:balance}
+.situation{color:var(--muted);max-width:64ch;margin:14px 0 24px}
+.three{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+section{min-width:0;padding:17px 0;border-top:1px solid var(--line)}
+h2{font-size:.9rem;color:var(--accent);margin:0 0 7px;letter-spacing:.02em}
+p,li{max-width:68ch} section p{margin:0} section ul,section ol{margin:0;padding-left:1.25rem}
+.table-wrap{max-width:100%;overflow-x:auto;margin:10px 0 0;border:1px solid var(--line);border-radius:8px;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;min-width:560px;font-size:.88rem;line-height:1.45}
+th,td{padding:9px 11px;text-align:left;vertical-align:top;border-right:1px solid var(--line);border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+th:last-child,td:last-child{border-right:0} tbody tr:last-child td{border-bottom:0}
+th{background:var(--wash);font-weight:700;color:var(--ink)}
+.pause{margin-top:20px;padding:13px 15px;background:var(--wash);border-left:3px solid var(--accent)}
+.pause strong{display:block;margin-bottom:4px}.sources{margin-top:20px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+.sources p{margin:4px 0}.disclaimer{font-size:.75rem;color:var(--muted);margin-top:18px}
+html[data-design="M1"]{--accent:#bd4d28;--wash:#f8e7df;--bg:#ece9e5;--line:#dfc7bb;--ink:#252b2c;--muted:#59615f}
+html[data-design="M1"] main{border-top-width:10px}.m1 .three{grid-template-columns:1fr 1fr;gap:12px}.m1 section{border:1px solid var(--line);padding:14px;background:color-mix(in srgb,var(--wash) 35%,var(--paper))}.m1 section:last-child{grid-column:1/-1}
+html[data-design="M2"]{--accent:#176b68;--wash:#e3efed;--bg:#e7eeee;--line:#c5d7d4;--ink:#162c31;--muted:#52696a}
+html[data-design="M2"] h1{font-family:Georgia,"Batang",serif;font-weight:600}.m2 .three{grid-template-columns:1fr 1fr;gap:22px}.m2 section:nth-child(2){background:var(--wash);padding:15px;border-top:0}.m2 section:last-child{grid-column:1/-1}
+html[data-design="M3"]{--accent:#126d57;--wash:#e4f1eb;--bg:#e9eeea;--line:#c5d7cc;--ink:#1d3028;--muted:#5b6e64}
+.m3 .three{position:relative;padding-left:20px}.m3 .three:before{content:"";position:absolute;top:18px;bottom:18px;left:4px;width:2px;background:var(--accent);opacity:.45}.m3 section{position:relative;padding-left:14px}.m3 section:before{content:"";position:absolute;left:-20px;top:20px;width:9px;height:9px;border:2px solid var(--accent);border-radius:50%;background:var(--paper)}
+html[data-design="M4"]{--accent:#714d83;--wash:#eee8f3;--bg:#ece8ef;--line:#d7ccdf;--ink:#292331;--muted:#686071}
+.m4 .situation{background:var(--wash);border-left:3px solid var(--accent);padding:12px 15px}.m4 .three{grid-template-columns:1fr 1fr;gap:12px}.m4 section{border:1px solid var(--line);padding:15px}.m4 section:last-child{grid-column:1/-1}
+/* M4-wide is reserved for cards whose text and table need equal full-width measure. */
+.m4-wide .three{grid-template-columns:1fr;gap:14px}.m4-wide section:last-child{grid-column:auto}
+html[data-design="M5"]{--accent:#245aa6;--wash:#e7eef8;--bg:#edf1f3;--line:#cbd6e4;--ink:#202d3d;--muted:#596b80}
+.m5 .situation{background:var(--wash);padding:10px 12px;border:1px solid var(--line)}.m5 section{display:grid;grid-template-columns:minmax(145px,.34fr) 1fr;gap:18px}.m5 h2{color:var(--ink)}
+@media(prefers-color-scheme:dark){
+ html[data-design="M1"]{--accent:#f29a72;--wash:#392d29;--bg:#131a1a;--paper:#202929;--line:#48524f;--ink:#edf1ed;--muted:#b9c5bf}
+ html[data-design="M2"]{--accent:#73c6be;--wash:#203936;--bg:#101a1b;--paper:#1b292b;--line:#405452;--ink:#eaf3f2;--muted:#afc6c3}
+ html[data-design="M3"]{--accent:#78d4a8;--wash:#20382f;--bg:#111a17;--paper:#1b2822;--line:#40564a;--ink:#eaf3ed;--muted:#b4c8bc}
+ html[data-design="M4"]{--accent:#d0a5e2;--wash:#342b3a;--bg:#19151d;--paper:#28212e;--line:#51445b;--ink:#f1eaf4;--muted:#c7b9ce}
+ html[data-design="M5"]{--accent:#8cb7ff;--wash:#24364d;--bg:#141a22;--paper:#202a37;--line:#3d4d62;--ink:#edf2fa;--muted:#b8c5d8}
+}
+@media(max-width:620px){main{width:calc(100% - 18px);max-width:850px;margin:9px auto;padding:22px 17px}.m1 .three,.m2 .three,.m4 .three{grid-template-columns:1fr}.m1 section:last-child,.m2 section:last-child,.m4 section:last-child{grid-column:auto}.m5 section{grid-template-columns:1fr;gap:5px}}
+@media print{@page{size:A4 portrait;margin:10mm}html{color-scheme:light}body{background:#fff}main{width:100%;max-width:none;margin:0;padding:10mm;border:0;border-top:4mm solid var(--accent);box-shadow:none}.sources,.disclaimer{font-size:8.5pt}a{color:inherit;text-decoration:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="m5">
+  <p class="eyebrow">3MUST · 법무운영</p>
+  <h1>법무 보고를 받는 사람이 바뀌면 같은 사안도 다르게 써야 한다 — 독자별 보고 설계</h1>
+  <p class="situation"><strong>적용 상황:</strong> 법무 보고를 받는 사람이 바뀌면 같은 사안도 다르게 써야 한다 — 독자별 보고 설계</p>
+  <div class="three">
+    <section><h2>Must Know · 알아야 할 것</h2><ul><li>보고는 같은 내용을 여러 번 보내는 일이 아니라, 각 독자가 자기 자리에서 결정할 수 있게 만드는 일입니다. 독자가 다르면 관심사, 쓸 수 있는 시간, 읽고 나서 할 행동이 다릅니다.</li><li>원칙은 다섯 가지입니다. ① 독자가 놓인 상황·시간·관심사 파악 ② 독자별 맞춤 ③ 1페이지로 압축 ④ 결론·권고를 첫 3문장에 ⑤ 읽은 뒤 무엇을 해야 하는지 명시.</li><li>결론은 독자별로 달라지면 안 됩니다. 사실관계와 판단이 같고 표현의 깊이만 달라져야 합니다. 독자에 따라 결론이 바뀌는 보고는 보고가 아니라 협상 자료입니다.</li><li>독자별로 쓰면 안 되는 것이 분명히 있습니다. CEO에게는 법률 용어와 장문, CFO에게는 근거 없는 추상적 위험, 사업팀장에게는 불가 통보만, 이사회에는 미확정 정보, 로펌에는 요약과 생략입니다.</li><li>한 문서로 다섯 명을 만족시키려 하면 대개 아무도 만족하지 못합니다. 공통 본문 하나를 두고 독자별 한 장을 따로 만드는 편이 빠릅니다.</li></ul></section>
+    <section><h2>Must Check · 확인할 것</h2><ul><li>이 보고를 읽는 사람이 누구인지 적었는가</li><li>그 사람이 이 보고에 쓸 수 있는 시간은 어느 정도인가</li><li>그 사람이 이 보고로 내려야 하는 결정은 무엇인가</li><li>이 보고의 단 한 가지 핵심 메시지를 한 문장으로 쓸 수 있는가</li><li>첫 3문장 안에 결론과 권고가 들어갔는가</li><li>1페이지를 넘지 않았는가</li><li>법률 용어를 그 독자의 언어로 바꿨는가</li><li><code>항상</code>·<code>무조건</code>·<code>절대</code> 같은 단정 표현이 남아 있지 않은가</li><li>오해를 막을 조건문이 들어갔는가</li><li>독자별 금지 항목(미확정 정보·요약 생략·불가 통보만)을 피했는가</li></ul></section>
+    <section><h2>Must Do · 실행할 것</h2><ol><li>독자 명단과 각자가 내려야 할 결정을 먼저 표로 적습니다. 보고서를 쓰기 전에 이 표가 먼저 나와야 합니다.</li><li>사실관계와 결론이 담긴 공통 본문을 하나 만듭니다. 이 본문은 독자별로 바꾸지 않습니다.</li><li>공통 본문에서 독자별 한 장을 따로 만듭니다. 바꾸는 것은 언어, 예시, 강조 순서, 부록의 깊이입니다.</li><li>첫 3문장에 결론·권고·요청을 배치하고, 마지막에 그 독자가 해야 할 행동과 기한을 한 줄로 적습니다.</li><li>독자별 금지 항목을 지웁니다. CEO용에서는 법률 용어를, 사업팀장용에서는 <code>불가</code>만 남은 문장을, 이사회용에서는 미확정 수치를 뺍니다.</li><li>표와 수치는 독자의 관심 열로 다시 짭니다. CFO용은 비용·일정·변동, 사업팀장용은 담당·기한·대안 순으로 바꿉니다.</li><li>보고 뒤 실제로 받은 질문을 기록해 다음 보고의 예상질문 목록에 반영합니다.</li></ol></section>
+  </div>
+  
+  <div class="sources"><p><strong>원자료:</strong> <code>_WIKI_법률지식/_55_업무사전/90_bundles/법무키트/20_drafting/PCK-OPS-103_법무팀보고기술/01_법무보고원칙체크리스트.md</code> (DOC-001, status: drafting)</p><p><strong>검토일:</strong> 2026-11-16</p><p><strong>미확인·제한:</strong> 법무키트 초안 문서라 원칙·체크 항목은 원자료 기준이며 조직별 보고 규정에 따라 조정이 필요합니다. 조문·판례 인용 없음. 「외부 법률의견을 경영진 의사결정용 한 페이지로 정리할 때」, 「CEO향 법률의견 작성요령」 카드와 겹치는 부분은 이 카드에서 다루지 않았습니다(압축 절차·의견서 6원칙은 해당 카드 참조).</p><p><strong>변경 기록:</strong> 초안 작성(배치 1 첫 번째 카드)</p></div>
+  <p class="disclaimer">일반적인 실무 참고자료입니다. 개별 사안에서는 사실관계와 적용 기준을 확인하세요.</p>
+</main>
+</body>
+</html>
