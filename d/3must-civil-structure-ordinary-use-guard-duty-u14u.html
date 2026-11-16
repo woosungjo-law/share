@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko" data-design="M2">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>울타리가 무너져 다쳤는데, 그렇게 쓰는 곳이 아니었다면 — 방호조치 의무의 기준선 · 3MUST</title>
+<link rel="icon" href="data:,">
+<style>
+:root { color-scheme:light dark; --bg:#edf1f3; --paper:#fff; --ink:#202d3d; --muted:#596b80; --line:#cbd6e4; --accent:#245aa6; --wash:#e7eef8; font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif; }
+@media(prefers-color-scheme:dark){:root{--bg:#111a20;--paper:#1a252d;--ink:#eff4f4;--muted:#bac7c8;--line:#394a52;--wash:#253541;}}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);line-height:1.55}
+main{width:calc(100% - 28px);max-width:850px;margin:24px auto;padding:clamp(22px,5vw,48px);background:var(--paper);border:1px solid var(--line);border-top:7px solid var(--accent)}
+.eyebrow{font-size:.75rem;font-weight:750;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin:0 0 10px}
+h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.12;letter-spacing:-.035em;margin:0;text-wrap:balance}
+.situation{color:var(--muted);max-width:64ch;margin:14px 0 24px}
+.three{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+section{min-width:0;padding:17px 0;border-top:1px solid var(--line)}
+h2{font-size:.9rem;color:var(--accent);margin:0 0 7px;letter-spacing:.02em}
+p,li{max-width:68ch} section p{margin:0} section ul,section ol{margin:0;padding-left:1.25rem}
+.table-wrap{max-width:100%;overflow-x:auto;margin:10px 0 0;border:1px solid var(--line);border-radius:8px;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;min-width:560px;font-size:.88rem;line-height:1.45}
+th,td{padding:9px 11px;text-align:left;vertical-align:top;border-right:1px solid var(--line);border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+th:last-child,td:last-child{border-right:0} tbody tr:last-child td{border-bottom:0}
+th{background:var(--wash);font-weight:700;color:var(--ink)}
+.pause{margin-top:20px;padding:13px 15px;background:var(--wash);border-left:3px solid var(--accent)}
+.pause strong{display:block;margin-bottom:4px}.sources{margin-top:20px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+.sources p{margin:4px 0}.disclaimer{font-size:.75rem;color:var(--muted);margin-top:18px}
+html[data-design="M1"]{--accent:#bd4d28;--wash:#f8e7df;--bg:#ece9e5;--line:#dfc7bb;--ink:#252b2c;--muted:#59615f}
+html[data-design="M1"] main{border-top-width:10px}.m1 .three{grid-template-columns:1fr 1fr;gap:12px}.m1 section{border:1px solid var(--line);padding:14px;background:color-mix(in srgb,var(--wash) 35%,var(--paper))}.m1 section:last-child{grid-column:1/-1}
+html[data-design="M2"]{--accent:#176b68;--wash:#e3efed;--bg:#e7eeee;--line:#c5d7d4;--ink:#162c31;--muted:#52696a}
+html[data-design="M2"] h1{font-family:Georgia,"Batang",serif;font-weight:600}.m2 .three{grid-template-columns:1fr 1fr;gap:22px}.m2 section:nth-child(2){background:var(--wash);padding:15px;border-top:0}.m2 section:last-child{grid-column:1/-1}
+html[data-design="M3"]{--accent:#126d57;--wash:#e4f1eb;--bg:#e9eeea;--line:#c5d7cc;--ink:#1d3028;--muted:#5b6e64}
+.m3 .three{position:relative;padding-left:20px}.m3 .three:before{content:"";position:absolute;top:18px;bottom:18px;left:4px;width:2px;background:var(--accent);opacity:.45}.m3 section{position:relative;padding-left:14px}.m3 section:before{content:"";position:absolute;left:-20px;top:20px;width:9px;height:9px;border:2px solid var(--accent);border-radius:50%;background:var(--paper)}
+html[data-design="M4"]{--accent:#714d83;--wash:#eee8f3;--bg:#ece8ef;--line:#d7ccdf;--ink:#292331;--muted:#686071}
+.m4 .situation{background:var(--wash);border-left:3px solid var(--accent);padding:12px 15px}.m4 .three{grid-template-columns:1fr 1fr;gap:12px}.m4 section{border:1px solid var(--line);padding:15px}.m4 section:last-child{grid-column:1/-1}
+/* M4-wide is reserved for cards whose text and table need equal full-width measure. */
+.m4-wide .three{grid-template-columns:1fr;gap:14px}.m4-wide section:last-child{grid-column:auto}
+html[data-design="M5"]{--accent:#245aa6;--wash:#e7eef8;--bg:#edf1f3;--line:#cbd6e4;--ink:#202d3d;--muted:#596b80}
+.m5 .situation{background:var(--wash);padding:10px 12px;border:1px solid var(--line)}.m5 section{display:grid;grid-template-columns:minmax(145px,.34fr) 1fr;gap:18px}.m5 h2{color:var(--ink)}
+@media(prefers-color-scheme:dark){
+ html[data-design="M1"]{--accent:#f29a72;--wash:#392d29;--bg:#131a1a;--paper:#202929;--line:#48524f;--ink:#edf1ed;--muted:#b9c5bf}
+ html[data-design="M2"]{--accent:#73c6be;--wash:#203936;--bg:#101a1b;--paper:#1b292b;--line:#405452;--ink:#eaf3f2;--muted:#afc6c3}
+ html[data-design="M3"]{--accent:#78d4a8;--wash:#20382f;--bg:#111a17;--paper:#1b2822;--line:#40564a;--ink:#eaf3ed;--muted:#b4c8bc}
+ html[data-design="M4"]{--accent:#d0a5e2;--wash:#342b3a;--bg:#19151d;--paper:#28212e;--line:#51445b;--ink:#f1eaf4;--muted:#c7b9ce}
+ html[data-design="M5"]{--accent:#8cb7ff;--wash:#24364d;--bg:#141a22;--paper:#202a37;--line:#3d4d62;--ink:#edf2fa;--muted:#b8c5d8}
+}
+@media(max-width:620px){main{width:calc(100% - 18px);max-width:850px;margin:9px auto;padding:22px 17px}.m1 .three,.m2 .three,.m4 .three{grid-template-columns:1fr}.m1 section:last-child,.m2 section:last-child,.m4 section:last-child{grid-column:auto}.m5 section{grid-template-columns:1fr;gap:5px}}
+@media print{@page{size:A4 portrait;margin:10mm}html{color-scheme:light}body{background:#fff}main{width:100%;max-width:none;margin:0;padding:10mm;border:0;border-top:4mm solid var(--accent);box-shadow:none}.sources,.disclaimer{font-size:8.5pt}a{color:inherit;text-decoration:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="m2">
+  <p class="eyebrow">3MUST · 민사법</p>
+  <h1>울타리가 무너져 다쳤는데, 그렇게 쓰는 곳이 아니었다면 — 방호조치 의무의 기준선</h1>
+  <p class="situation"><strong>적용 상황:</strong> 울타리가 무너져 다쳤는데, 그렇게 쓰는 곳이 아니었다면 — 방호조치 의무의 기준선</p>
+  <div class="three">
+    <section><h2>Must Know · 알아야 할 것</h2><ul><li>공작물 책임의 출발 조문은 민법 제758조입니다. 공작물의 설치 또는 보존의 하자로 타인에게 손해를 가한 때에는 점유자가 배상할 책임이 있고, 점유자가 손해 방지에 필요한 주의를 해태하지 않은 때에는 소유자가 배상합니다(같은 조 제1항). 점유자·소유자는 손해의 원인에 책임 있는 자에게 구상권을 행사할 수 있습니다(같은 조 제3항).</li><li>그런데 "하자"의 판단에는 기준선이 있습니다. 안전성 구비 여부는 그 공작물의 위험성에 비례하여 사회통념상 일반적으로 요구되는 정도의 방호조치의무를 다했는지로 판단합니다. 즉 위험이 큰 시설일수록 요구되는 조치 수준도 올라갑니다.</li><li>여기에 하나 더 붙습니다. 사고가 그 공작물의 <strong>통상의 용법에 따르지 않은 이례적인 행동</strong>의 결과 발생한 것이라면, 특별한 사정이 없는 한 설치·보존자에게 그런 사고까지 대비할 방호조치의무가 있다고 볼 수 없습니다.</li><li>그래서 판단은 두 축의 대조로 정리됩니다. ⑴ 그 시설의 위험성과 요구되는 조치 수준 ⑵ 사고 당시 행동이 통상의 용법 안에 있었는지. 두 축을 함께 놓아야 결론이 서고, 어느 하나만으로는 정해지지 않습니다.</li><li>"특별한 사정"이 붙는 자리가 있습니다. 평소에도 그런 사용이 반복되었거나 관리자가 이를 알았거나 알 수 있었던 경우, 또는 시설 자체가 쉽게 무너질 상태였다면 이례성 항변은 힘을 잃습니다.</li><li>여기서 다루는 것은 시설·구조물의 하자 책임입니다. 사람의 행동에 대한 사용자 책임이나 도급 관계의 책임은 별도 조문·별도 판단 구조를 가집니다.</li></ul></section>
+    <section><h2>Must Check · 확인할 것</h2><ul><li>사고가 발생한 시설의 용도와 설치 목적을 확인했는가</li><li>그 시설에 통상적으로 요구되는 방호 수준을 판단할 자료가 있는가</li><li>시설의 위험성(높이, 하중, 접근 가능성, 주변 환경)을 기록했는가</li><li>사고 당시 피해자의 행동이 그 시설의 통상적 사용 범위 안이었는가</li><li>그런 사용이 이전에도 있었고 관리자가 알고 있었는가</li><li>시설의 유지·점검·보수 기록이 있는가</li><li>붕괴·파손의 원인이 시설 상태인지 외력인지 구분했는가</li><li>점유자와 소유자가 누구인지, 점유자가 주의를 해태했는지 확인했는가</li><li>현장 사진·영상, 목격자 진술, 전문가 감정 자료가 있는가</li></ul></section>
+    <section><h2>Must Do · 실행할 것</h2><ol><li>시설의 용도표를 먼저 만듭니다. 설치 목적, 통상 사용 방식, 출입 통제 여부, 접근 가능한 사람의 범위를 적습니다. 이 표가 "통상의 용법" 판단의 기준선이 됩니다.</li><li>위험성 항목을 정량으로 적습니다. 높이, 하중, 재질, 노후도, 주변 통행량, 야간 조도, 인근 위험 요소를 가능한 수치로 기록합니다. 위험성이 곧 요구 조치 수준을 정합니다.</li><li>사고 당시 행동을 시간순으로 재구성합니다. 어디서 출발해 어떤 이유로 그 위치에 있었는지, 그 행동이 시설의 용도와 어떤 관계가 있는지 적습니다.</li><li>관리자의 인지 여부를 확인합니다. 같은 장소에서 유사한 사용이 있었는지, 민원·지적·순찰 기록이 있는지, 안내 표지나 통제 조치가 있었는지 모읍니다.</li><li>요구 조치 수준과 실제 조치를 대조표로 만듭니다. 요구되는 조치 / 실제로 있었던 조치 / 차이를 세 칸으로 나눠 적습니다. 이 표가 하자 판단의 뼈대입니다.</li><li>점유자·소유자 지위를 확인합니다. 임대·위탁·관리 용역 계약에서 누가 보존 책임을 지는지 확인하고, 점유자가 주의를 다했는지 판단할 자료를 붙입니다.</li><li>결론이 어느 쪽으로 기울든 근거를 축별로 분리해 적습니다. 위험성 축에서 결론이 나는지, 이례성 축에서 나는지 구분해 두면 이후 다툼에서 논점이 흐려지지 않습니다.</li></ol></section>
+  </div>
+  
+  <div class="sources"><p><strong>원자료:</strong> <code>_WIKI_법률자료/20_sources/법률구조공단/기타/손해배상_기타 손해배상/case-004-00808_...md</code> (대한법률구조공단 법률상담사례, "원문수집; 현행법 검증 미실시")</p><p><strong>법령 검증:</strong> 민법(법령ID 001706, 시행 2026-03-17) <strong>제758조 제1항·제2항·제3항</strong> 본문 확인(2026-11-16 한국법 MCP 조회).</p><p><strong>판례 검증:</strong> 대법원 1998. 1. 23. 선고 97다25118 — citator 조회 결과 후속 인용 3건(대법원 2006. 1. 26. 선고 2004다21053 등). <strong>다만 citator가 전원합의체 후속 판결 1건(2017두45933, 유족급여및장의비부지급처분취소)을 미스캔 상태로 표시</strong>해, 법리 변경 여부를 본문으로 확인하지 못했습니다. 이 카드는 원자료가 전한 판시 요지를 그대로 정리한 것이며, 인용 시 현행 법리 재확인을 권합니다.</p><p><strong>미확인·제한:</strong> 원자료는 판시 요지만 전하는 상담사례입니다. 공작물 하자의 구체적 판단 기준, 점유자 주의의무의 정도, 과실상계 비율, 어린이·노약자 사고의 특칙, 시설물안전법상 별도 의무는 이번 세션에서 확인하지 않았습니다. 관련 카드로 「전신주 전도·화재 사고 — 여러 당사자 중 누구에게 책임을 물을 수 있나」, 「국도 적설·결빙 교통사고 — 도로관리 하자로 손해배상을 청구할 수 있는가」가 있습니다.</p><p><strong>변경 기록:</strong> 초안 작성(배치 7 첫 번째 카드)</p></div>
+  <p class="disclaimer">일반적인 실무 참고자료입니다. 개별 사안에서는 사실관계와 적용 기준을 확인하세요.</p>
+</main>
+</body>
+</html>
