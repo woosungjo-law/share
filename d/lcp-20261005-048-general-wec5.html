@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>어디서 망가졌는지 모르면, 가장 긴 구간의 법이 우선된다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 복합운송 사고구간과 책임한도</div>
+    <h1>어디서 망가졌는지 모르면, 가장 긴 구간의 법이 우선된다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> <b>손해가 난 구간을 특정할 수 없으면 운송거리가 가장 긴 구간에 적용되는 법에 따라 책임을 지고, 거리가 같으면 운임이 가장 비싼 구간이 기준이 됩니다.</b> <b>상법 제816조 제2항</b>이 그 기준을 정하고, 구간이 특정되면 <b>상법 제816조 제1항</b>에 따라 <b>손해가 발생한 운송구간에 적용될 법</b>에 따릅니다. 그리고 <b>상법 제814조</b>에 따라 <b>운송물 인도일부터 1년 안에 재판상 청구가 없으면 소멸</b>합니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>깨진 채 도착한 국제 특송 화물을 접수한 수하인</b>을 떠올려 보십시오. 제갈윤의 화면에는 <b>배송 완료로만 표시되어 있었고 어느 구간에서 손상됐는지는 적혀 있지 않았습니다.</b> 그래서 <b>사진을 찍고 운송장 번호를 적은 뒤, 언제 받았는지를 날짜로 확인</b>했습니다. <b>구간이 적혀 있지 않은 순간, 다툼은 기록을 찾는 일에서 시작됩니다.</b>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, <b>구간이 불분명할 때의 기준</b>입니다. <b>상법 제816조</b>가 <b>복합운송인의 책임</b>을 정합니다. <b>손해가 난 구간을 특정할 수 없으면 운송인은 운송거리가 가장 긴 구간에 적용되는 법에 따라 책임을 지고, 거리가 같으면 운임이 가장 비싼 구간이 기준</b>이 됩니다(<b>상법 제816조 제2항</b>).</p>
+    <p>둘째, <b>구간이 특정될 때의 기준과 제소 기간</b>입니다. <b>해상 외 구간이 포함된 복합운송에서 손해가 발생한 운송구간에 적용될 법에 따라 책임</b>을 집니다(<b>상법 제816조 제1항</b>). <b>해상운송 규정이 적용되는 경우 운송인에 대한 채권과 채무는 운송물 인도일, 또는 인도할 날부터 1년 안에 재판상 청구가 없으면 소멸</b>합니다(<b>상법 제814조</b>).</p>
+    <p>셋째, <b>계약 명의</b>입니다. <b>국제물류주선업자가 자기 명의로 운송계약을 체결하면 복합운송인 지위를 취득</b>합니다(<b>대법원 2019다213009</b>). <b>운송장에 누가 계약했는지 적혀 있는지 보면 책임을 물을 주체가 정해집니다.</b></p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>사진·날짜·기록이 답을 가른다</h2>
+    <ul class="points">
+      <li><b>첫째, 사진을 가릅니다</b> — <b>도착 당시의 포장과 파손 부위를 여러 각도에서</b> 찍습니다. <b>포장만 남으면 손상 시점과 위치를 설명하기 어렵습니다.</b></li>
+      <li><b>둘째, 날짜를 가릅니다</b> — <b>언제 받았는지, 운송장에 인도 표시가 언제 됐는지</b> 확인합니다. <b>이 날짜는 1년 제소 기간의 출발점입니다.</b></li>
+      <li><b>셋째, 기록을 가릅니다</b> — <b>운송 단계마다 남는 게이트 기록과 운송문서</b>를 요청합니다. <b>기록이 이어지면 구간이 정해집니다.</b></li>
+      <li><b>넷째, 금액을 가릅니다</b> — <b>어떤 항목을 얼마로 보상받을지 영수증과 견적</b>을 함께 모읍니다.</li>
+      <li><b>다섯째, 기한을 가릅니다</b> — <b>1년이 지나면 청구 자체가 막히므로 접수한 날과 답변이 온 날</b>을 함께 적어 둡니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> <b>사고 구간이 불분명하면 가장 긴 구간의 법이, 거리가 같으면 운임이 가장 비싼 구간이 기준이 되고, 해상 규정이 적용되면 1년 안에 재판상 청구해야 합니다.</b> <b>구간을 정하는 것은 결국 운송 단계의 기록입니다.</b> <b>사진을 찍고, 받은 날과 인도 표시일을 적고, 운송 기록을 서면으로 요청하고, 1년 기한을 확인하는 순서</b>가 섭니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;">먼저 <b>포장·파손 부위·운송장 번호를 함께 찍고 원본을 지우며</b>, <b>받은 날과 인도 표시된 날</b>을 메모로 남깁니다. 이어서 <b>운송 단계와 문서를 서면으로 요청해 구간을 확인</b>하고, <b>상품값·운송료·추가 비용을 영수증과 함께 목록</b>으로 만든 뒤, 답변을 날짜와 함께 보관하며 <b>1년 제소 기간</b>을 확인합니다.</p>
+    <ol>
+      <li><b>① 사진 확보</b> — 포장·파손 부위·운송장 번호를 함께 찍고 원본을 지운다.</li>
+      <li><b>② 날짜 확인</b> — 받은 날과 인도 표시된 날을 메모로 남긴다.</li>
+      <li><b>③ 기록 요청</b> — 운송 단계와 문서를 서면으로 요청해 구간을 확인한다.</li>
+      <li><b>④ 보상 목록</b> — 상품값·운송료·추가 비용을 영수증과 함께 목록으로 만든다.</li>
+      <li><b>⑤ 기한 확인</b> — 답변을 날짜와 함께 보관하고 1년 제소 기간을 확인한다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
