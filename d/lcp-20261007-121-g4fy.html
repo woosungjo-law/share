@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>공동창업 정리, 동업 말이 아니라 회사 법리로 푼다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 공동창업 지분 정리</div>
+    <h1>공동창업 정리, 동업 말이 아니라 회사 법리로 푼다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> <b>'동업'</b>이라는 말이 곧 <b>민법상 조합</b>은 아닙니다. <b>자금을 출자해 함께 주식회사를 세우고 이익을 지분대로 나누기로 한 약정</b>은 <b>원칙적으로 조합을 결성할 것을 목적으로 하지 않고</b>, <b>출자 재산이 조합원 합유로 되지도 않습니다</b>(<b>2022다307379</b>). 그리고 <b>회사 설립 뒤에는 청산 규정에 따른 절차 없이 잔여재산을 나눠 받을 수 없습니다</b>(<b>2022다302022</b>). <b>자기주식 정리</b>는 <b>배당가능이익 한도</b>가 조건입니다(<b>상법 제341조</b>).
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>공동 명의 사업장</b>과 같습니다. <b>셋이 돈을 모아 가게를 열었어도</b>, <b>법인으로 등기를 했다면</b> <b>가게 물건은 법인 소유</b>입니다. <b>한 명이 나간다고 해서</b> <b>냉장고와 오븐을 지분대로 가져갈 수는 없습니다</b>. <b>법인을 정리하는 절차</b>를 거쳐야 하고, <b>나가는 몫은 그 절차 안에서</b> 계산됩니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+        <p>첫째, <b>조합인지 여부</b>입니다. <b>자금을 출자해 함께 주식회사를 세우고 비용과 이익을 지분대로 나누기로 한 동업약정</b>은 <b>공동사업을 위해 민법상 조합을 결성할 것을 목적으로 하는 것으로 원칙적으로 보지 않습니다</b>(<b>2022다307379</b>). 그래서 <b>약정에 따른 출자 재산이 조합원의 합유로 되지도 않습니다</b>. <b>동업이라는 말이 곧 조합은 아닙니다.</b> <b>회사라는 그릇을 만든 순간</b>, 재산의 귀속 주체가 달라집니다.</p>
+    <p>둘째, <b>청산 절차의 필요</b>입니다. <b>같은 취지의 동업약정에서 일방이 회사의 청산 규정에 따른 청산절차를 거치지 않고 잔여재산을 나눠 받을 수 있는지</b>도 <b>소극</b>으로 봅니다(<b>2022다302022</b>). <b>회사를 세운 뒤에는 청산 절차를 거쳐야 합니다.</b> <b>나가는 쪽이 '출자 비율대로 나눠 달라'고 해도</b>, <b>절차를 건너뛸 수는 없습니다</b>. <b>요구대로 나누는 것과 절차대로 나누는 것</b>이 여기서 갈립니다.</p>
+    <p>셋째, <b>자기주식이라는 우회로</b>입니다. <b>회사가 나가는 창업자의 주식을 사들이는 방식</b>으로 정리하려면 <b>배당가능이익 한도 내에서만</b> 가능합니다(<b>상법 제341조</b>). <b>한도를 넘으면 그 안은 막힙니다.</b> 그래서 <b>자기주식 안을 검토할 때는 한도 계산이 선행</b>되어야 합니다. <b>정리 금액이 큰 경우</b>에는 <b>한도가 실제 병목</b>이 됩니다 — <b>금액 협상보다 한도 확인이 먼저</b>입니다.</p>
+    <p>넷째, <b>계약이 뒤집는 지점</b>입니다. <b>조합 기반 정산을 원한다면 계약서에 촘촘히 정해야</b> 합니다 — <b>동업체의 독자성, 조합재산의 특정, 탈퇴·해지 시 지분가치 평가와 현금정산 방식</b>입니다. <b>정하지 않으면 원칙적 소극을 뒤집기 어렵습니다.</b> 그리고 <b>주식매수청구·콜옵션은 트리거별로 행사기간</b>을 명시하고, <b>제3자 처분 방지와 위반 효과</b>를 함께 정해야 합니다. <b>적어 두지 않은 것은 나중에 다툼이 됩니다.</b></p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>조합여부·합유부정·청산절차·자기주식한도·계약특정·옵션기간이 갈림길이다</h2>
+    <ul class="points">
+      <li><b>조합 여부</b> — <b>회사를 세웠는지</b>부터 봅니다. 세웠다면 조합 논리는 원칙적으로 서지 않습니다.</li>
+      <li><b>합유 부정</b> — <b>출자 재산이 회사 소유</b>임을 확인합니다. 조합원 합유가 아닙니다.</li>
+      <li><b>청산 절차</b> — <b>정관·청산 규정</b>을 꺼내 절차 요건을 확인합니다.</li>
+      <li><b>자기주식 한도</b> — <b>배당가능이익</b>을 계산합니다. 한도가 협상의 상한입니다.</li>
+      <li><b>계약 특정</b> — <b>조합 기반 정산</b>을 원하면 독자성·재산 특정·평가 방식을 적습니다.</li>
+      <li><b>옵션 기간</b> — <b>트리거별 행사기간</b>과 <b>제3자 처분 방지·위반 효과</b>를 확인합니다.</li>
+    </ul>
+    <div class="callout"><b>'출자 비율대로 나누자'는 요구를 그대로 표에 옮기지 마세요.</b> 대신 표를 <b>약정 / 회사 설립 여부 / 청산 절차 / 자기주식 한도</b> 네 칸으로 만드세요. 두 번째 칸이 <b>'설립됨'</b>이면, 첫 번째 칸의 조합 논리는 <b>원칙적으로 막힙니다</b>. 그리고 <b>자기주식 안을 검토한다면 한도 계산을 맨 앞에</b> 두세요 — <b>한도를 넘는 금액은 협상 테이블에 올릴 수 없습니다</b>. 마지막으로 <b>앞으로 창업할 일이 있다면</b> 이탈 조항을 <b>트리거별 기간까지</b> 적어 두세요.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">약정·절차·한도를 한 표로 묶는 여섯 단계입니다. 표의 행 이름은 바꾸지 않습니다.</p>
+    <ol>
+      <li><b>① 약정 성질</b> — 대법원 2022다307379의 취지로 동업약정이 조합 결성을 목적으로 하는지 판단합니다.</li>
+      <li><b>② 합유 여부</b> — 출자 재산이 조합원 합유로 되는지, 회사 소유인지를 확인합니다.</li>
+      <li><b>③ 청산 절차</b> — 대법원 2022다302022의 취지로 절차 없는 잔여재산 분배 가능성을 검토합니다.</li>
+      <li><b>④ 자기주식 한도</b> — 상법 제341조의 구조로 배당가능이익 한도 내 가능성을 계산합니다.</li>
+      <li><b>⑤ 계약 특정</b> — 조합 기반 정산을 위한 독자성·재산 특정·평가·현금정산 조항을 점검합니다.</li>
+      <li><b>⑥ 옵션·방지</b> — 주식매수청구·콜옵션의 트리거별 행사기간과 제3자 처분 방지·위반 효과를 확인합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
