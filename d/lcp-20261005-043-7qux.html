@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>상속 재산분할은 협의서가 아니라 순서로 끝난다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 상속·재산분할</div>
+    <h1>상속 재산분할은 협의서가 아니라 순서로 끝난다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 상속 재산분할은 서명이 아니라 <b>순서</b>에서 갈립니다. 상속인 확인 → 재산 확정 → 법정상속분 계산 → 기한 관리 순으로 서야 협의서가 유효합니다. 순서가 뒤바뀐 협의서는 나중에 <b>다툼의 첫 페이지</b>가 됩니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      이사 견적을 받기 전에 날짜부터 잡는 것과 비슷합니다. 무엇을 옮기는지, 얼마나 되는지, 계단이 있는지를 세지 않고 날짜를 정하면 당일에 인력이 모자라 일정이 무너집니다. 서명은 마지막 단계이고, 앞의 세 단계가 서명의 값을 정합니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+        <p>첫째, <b>절차의 구조</b>입니다. 상속 개시 후 상속인 간 합의가 이루어지지 않거나 분할 방법·비율·대상 재산을 두고 다툼이 생기면 <b>분할 협의 → 가사조정 → 분할심판 청구</b>로 이어집니다(<b>민법 제1013조·제1014조</b>).</p>
+    <p>둘째, <b>법정상속분</b>입니다. <b>민법 제1009조</b>가 법정상속분을 규정하며, 협의든 심판이든 그 계산의 기준이 됩니다.</p>
+    <p>셋째, <b>유류분</b>입니다. <b>민법 제1112조</b>는 유류분권자에게 유류분을 인정하므로, 협의 결과가 최소한의 몫을 밑돌면 문제가 됩니다.</p>
+    <p>넷째, <b>유류분 반환청구의 기한</b>입니다. <b>민법 제1117조</b>에 따라 상속이 개시된 것을 <b>안 날부터 1년, 상속 개시일부터 10년</b> 이내에 청구해야 합니다. 언제 알았는지가 기록으로 남아야 기한 계산이 흔들리지 않습니다.</p>
+    <p>다섯째, <b>승인·포기의 기한</b>입니다. <b>민법 제1019조</b>에 따라 상속인은 상속개시일로부터 <b>3개월 이내</b>에 승인·포기·한정승인을 결정해야 합니다. 분할은 협의 또는 법원의 조정·심판으로 이루어집니다.</p>
+    <p>여섯째, <b>등기 절차</b>입니다. 상속등기는 상속인 확인 → 상속재산 확인 → 법정상속분 확인 → 분할 합의 → 등기 신청의 순서를 거칩니다. 자료의 기준일이 흩어져 있으면 같은 계산을 두 번 하게 됩니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>기한·범위·계산·합의의 흠이 실무를 가른다</h2>
+    <ul class="points">
+      <li><b>기한</b> — 3개월 승인·포기 기한과 유류분 반환청구 기한이 서로 다르므로 하나의 일정표로 관리합니다. 기한을 놓치면 선택지가 달라집니다.</li>
+      <li><b>범위</b> — 어떤 재산이 상속재산인지, 이미 처분된 것이 있는지, 채무가 있는지를 구분합니다.</li>
+      <li><b>계산</b> — 법정상속분과 유류분을 <b>다른 칸</b>에서 계산합니다. 협의서에 몫만 있고 근거가 없으면 나중에 다시 계산해야 합니다.</li>
+      <li><b>합의의 흠</b> — 특정 상속인의 동의가 빠졌거나 기재된 몫이 법정상속분 아래면 합의 자체가 다투어질 수 있습니다.</li>
+      <li><b>경로</b> — 협의가 되면 협의서로, 되지 않으면 조정·심판으로 갈라집니다. 어느 쪽이든 같은 자료가 기반입니다.</li>
+      <li><b>출처</b> — 등기부등본·통장·주식 잔고 증명이 같은 날짜 기준으로 모여야 계산이 한 번에 끝납니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 서명을 받기 전에 세 가지만 확인하십시오. 전원 동의, 계산 근거 첨부, 기한 확인. 하나라도 비면 서명 후에 다시 열어야 합니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">상속인·재산·계산·기한·경로의 검토표를 표준화하십시오. 다섯 단계로 나눕니다.</p>
+    <ol>
+      <li><b>① 상속인 확인</b> — 가족관계증명서와 제적등본으로 누구에게 권리가 있는지 확정하고 확인 날짜를 남깁니다.</li>
+      <li><b>② 재산 확정</b> — 부동산은 등기부등본으로, 예금과 주식은 잔액과 지분으로 구분해 목록을 만듭니다.</li>
+      <li><b>③ 계산 고정</b> — 법정상속분을 먼저 계산하고, 유류분이 문제되는지는 별도 칸에서 따로 봅니다.</li>
+      <li><b>④ 기한 관리</b> — 승인·포기 기한과 유류분 반환청구 기한을 한 일정표에 넣고, '안 날'을 언제 알았는지 기록합니다.</li>
+      <li><b>⑤ 경로 선택</b> — 협의가 되면 분할 협의서에 계산 근거를 붙이고, 되지 않으면 조정·심판을 준비합니다. 확인이 필요한 항목은 공란으로 두지 않고 담당자와 확인 시기를 적습니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
