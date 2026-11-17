@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ISMS-P 인증을 받았다 해도 피해는 면책되지 않는다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 인증과 침해사고 책임</div>
+    <h1>ISMS-P 인증을 받았다 해도 피해는 면책되지 않는다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> <b>인증은 기준을 갖췄다는 표시일 뿐, 침해사고 책임을 없애 주지 않습니다.</b> <b>정보통신망 이용촉진 및 정보보호 등에 관한 법률 제47조</b>는 <b>관리적·기술적·물리적 보호조치를 포함한 종합적 관리체계를 수립·운영하는 자에게 인증을 할 수 있도록</b> 정하고, <b>같은 조 제2항</b>은 <b>일정 규모의 정보 제공자가 인증을 받도록</b> 합니다. 그리고 <b>개인정보 보호법 제29조</b>는 <b>유출 등을 방지하기 위해 내부 관리계획을 세우고 접속기록을 보관하는 등 안전성 확보에 필요한 조치</b>를 하도록 정합니다. <b>사고가 이런 조치의 부실에서 비롯됐다면 인증을 받았다는 사실만으로 책임이 없어지지 않습니다.</b>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>침해사고 안내문을 받은 다음 날 전화를 건 사람</b>을 떠올려 보십시오. 하도경은 가게 회원정보가 유출됐다는 안내를 받고 회사에 전화했고, 상대는 <b>ISMS-P 인증을 받은 사업자</b>라며 문제가 없다고 답했습니다. 하도경이 물은 것은 두 가지였습니다. <b>인증서를 언제 받았는지</b>, 그리고 <b>자신이 쓰던 기능이 인증 범위에 들어가는지</b>였습니다. 상대는 범위를 확인해 주겠다며 말을 잇지 못했습니다. <b>안내문 한 장과 인증서 한 장이 같은 사건을 두고 다른 말을 하는 상황</b>이었기 때문입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, <b>인증의 뜻</b>을 봅니다. <b>정보통신망 이용촉진 및 정보보호 등에 관한 법률 제47조</b>는 <b>관리적·기술적·물리적 보호조치를 포함한 종합적 관리체계를 수립·운영하는 자에 대하여 인증을 할 수 있도록</b> 정하고, <b>같은 조 제2항</b>은 <b>일정 규모의 정보 제공자가 인증을 받도록</b> 합니다. <b>인증은 일정 규모 사업자에게 요구되는 확인 절차</b>라는 뜻입니다.</p>
+    <p>둘째, <b>안전조치의 의무</b>를 봅니다. <b>개인정보 보호법 제29조</b>는 <b>유출 등을 방지하기 위해 내부 관리계획을 세우고 접속기록을 보관하는 등 안전성 확보에 필요한 조치를 하도록</b> 정합니다. <b>사고가 이런 조치의 부실에서 비롯됐다면 인증을 받았다는 사실만으로 책임이 없어지지 않습니다.</b></p>
+    <p>셋째, <b>면책의 한계</b>를 봅니다. <b>인증은 안전조치의 노력과 기준을 갖추었다는 점을 추정하게 할 뿐, 침해사고 자체를 면책해 주지 않습니다.</b> <b>인증 범위 밖에서 난 사고라도 안전조치가 부실했는지는 별도로 판단됩니다.</b></p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>범위·시점·자료가 쟁점을 가른다</h2>
+    <ul class="points">
+      <li><b>첫째, 범위를 봅니다</b> — <b>안내문에 적힌 서비스와 인증서의 범위 문서가 맞는지</b> 봅니다. <b>협력사 계정이나 범위 밖 기능에서 난 사고는 인증의 문턱 밖</b>에 놓일 수 있습니다. 다만 <b>그렇다고 면책이 확정되는 것은 아닙니다.</b></li>
+      <li><b>둘째, 시점을 봅니다</b> — <b>인증을 받은 시점과 사고가 난 시점</b>을 나란히 적습니다. 두 시점의 안내 문서가 다르면 <b>사고 시점의 기록을 우선</b>으로 봅니다.</li>
+      <li><b>셋째, 자료를 봅니다</b> — <b>가입 시점의 화면, 통지 받은 문자와 메일, 접속 기록 요청 내역</b>을 한 폴더에 모읍니다.</li>
+      <li><b>넷째, 주장을 봅니다</b> — 회사가 인증을 근거로 설명할 때 <b>안전조치가 어떻게 이행됐는지</b>를 구체적으로 묻습니다. <b>인증서는 그 자체로 대답이 되지 않습니다.</b></li>
+      <li><b>다섯째, 단정하지 않습니다</b> — <b>개별 사안의 결론은 사실관계에 따라 달라지므로 확인되지 않은 부분은 사실대로 남기고, 모은 자료를 갖고 전문가의 확인을 받습니다.</b></li>
+    </ul>
+    <div class="callout"><b>핵심.</b> <b>인증은 종합적 관리체계를 갖췄다는 확인 절차이고 안전조치 노력의 추정 자료일 뿐, 침해사고 자체를 면책하지 않습니다.</b> <b>사고가 안전조치 부실에서 비롯됐다면 인증과 무관하게 책임이 남고, 인증 범위 밖 사고라도 안전조치 이행 여부는 따로 판단됩니다.</b> <b>범위 문서와 인증·사고 시점을 맞대어 보고 안전조치 이행 설명을 서면으로 요구하는 순서</b>가 섭니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;">먼저 <b>침해사고 안내문을 보관</b>하고 <b>인증 범위</b>를 서면으로 확인합니다. 이어서 <b>가입 화면·결제 내역·접속 알림</b>을 한 폴더에 모으고 <b>안전조치 이행 설명</b>을 요구한 뒤, 서면 답변을 받아 전문가 확인으로 넘어갑니다.</p>
+    <ol>
+      <li><b>① 통지 보관</b> — 안내문은 삭제하지 않고 날짜·발신 주체를 적어 둔다.</li>
+      <li><b>② 범위 확인</b> — 내가 쓰던 기능이 인증 범위에 드는지 서면으로 요청한다.</li>
+      <li><b>③ 자료 묶음</b> — 가입 화면·결제 내역·접속 알림을 한 폴더에 모은다.</li>
+      <li><b>④ 이행 설명</b> — 안전조치가 어떻게 이행됐는지 구체적으로 묻는다.</li>
+      <li><b>⑤ 응답 대기</b> — 설명이 없는 답은 미완으로 남기고 서면 답변을 요구한다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
