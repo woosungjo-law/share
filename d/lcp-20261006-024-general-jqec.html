@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>내 정보가 대규모로 다뤄진다면 — 서비스가 어떤 점검을 했는지 물어볼 수 있다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 내 정보 점검</div>
+    <h1>내 정보가 대규모로 다뤄진다면 — 서비스가 어떤 점검을 했는지 물어볼 수 있다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> 정보의 양이 많고 성질이 민감할수록, 법은 서비스에 <b>위험을 미리 살피는 절차</b>를 요구합니다. <b>개인정보 보호법 제33조</b>는 기준에 해당하는 개인정보파일의 운용으로 침해가 우려되면 <b>위험요인의 분석과 개선 사항 도출을 위한 평가</b>를 하고 그 결과를 보호위원회에 제출하도록 정하고 있습니다. 대상 기준은 <b>시행령 제35조</b>에 숫자로 적혀 있습니다. 내가 그 서비스의 이용자라면, <b>무엇을 어떻게 점검했는지 물어볼 수 있는 자리</b>가 있다는 뜻입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>사람이 많이 오가는 건물에 소방 점검 기록이 붙어 있는 것</b>을 떠올려 보십시오. 건물주가 친절해서 붙인 것이 아니라, <b>규모가 일정 기준을 넘으면 점검을 받고 기록을 남겨야 하기 때문</b>입니다. 평가도 서류를 채우는 일이 아니라 <b>위험을 줄이는 절차</b>입니다. 그래서 이용자인 나는 "이 정보를 왜 받는지, 위험은 어떻게 줄였는지"를 <b>안내 문구에서 확인하고, 없으면 물어볼 수 있습니다</b>.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>먼저 <b>제도</b>입니다. <b>개인정보 보호법 제33조</b>는 <b>공공기관의 장</b>이 대통령령으로 정하는 기준에 해당하는 <b>개인정보파일의 운용으로 정보주체의 개인정보 침해가 우려되는 경우</b>에는 <b>위험요인의 분석과 개선 사항 도출을 위한 평가</b>를 하고 그 결과를 <b>보호위원회에 제출</b>하여야 한다고 정합니다. 같은 조는 <b>요건을 갖춘 평가기관을 지정하고 의뢰</b>하도록 하며, 평가할 때 <b>처리하는 개인정보의 수 등 정해진 사항</b>을 고려하게 합니다.</p>
+    <p>다음은 <b>대상 기준</b>입니다. <b>시행령 제35조</b>는 전자적으로 처리할 수 있는 개인정보파일로서 <b>5만명 이상의 정보주체에 관한 민감정보 또는 고유식별정보의 처리가 수반되는 경우</b>, <b>다른 개인정보파일과 연계하여 50만명 이상의 정보주체 정보가 포함되는 경우</b>, <b>100만명 이상의 정보주체에 관한 개인정보파일</b> 등을 대상으로 정합니다. <b>규모가 크고 정보의 성질이 민감할수록 점검 대상이 된다</b>는 뜻입니다.</p>
+    <p>다음은 <b>국외</b>입니다. <b>해외 이용자의 정보를 처리하는 서비스라면 다른 제도의 평가가 하나 더 얹힐 수 있어, 사업자는 두 제도를 함께 맞춰야 합니다.</b></p>
+    <p>마지막은 <b>목적</b>입니다. 평가는 <b>위험요인을 분석하고 개선 사항을 도출해 침해를 줄이는 절차</b>입니다. <b>서류를 채우는 것이 아니라 위험을 줄이는 일</b>이라는 점을 기억해 두면 좋습니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>내가 물어볼 것들 — 정보 요청 앞에서 확인할 아홉 가지</h2>
+    <ul class="points">
+      <li><b>① 무엇을 다루는지</b> — 내가 제공한 정보의 종류와 목적을 확인합니다.</li>
+      <li><b>② 얼마나 모으는지</b> — 서비스가 다루는 정보주체의 규모를 가늠합니다.</li>
+      <li><b>③ 민감정보인지</b> — 건강·생활 등 민감한 정보가 포함되는지 봅니다.</li>
+      <li><b>④ 연계 여부</b> — 내 정보가 다른 데이터와 연결되는지 확인합니다.</li>
+      <li><b>⑤ 위험 점검</b> — 서비스가 어떤 위험을 어떻게 줄였는지 안내가 있는지 봅니다.</li>
+      <li><b>⑥ 국외 여부</b> — 내 정보가 해외로 이전되는지 확인합니다.</li>
+      <li><b>⑦ 동의 내용</b> — 어떤 항목에 동의했고 거부할 수 있었는지 살핍니다.</li>
+      <li><b>⑧ 삭제·정정</b> — 잘못 제공한 정보를 고칠 수 있는지 확인합니다.</li>
+      <li><b>⑨ 기록</b> — 화면과 요청 경위를 남겨 둡니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 앱이 요청하는 정보의 <b>이유를 묻는 것만으로도 대응의 첫걸음</b>이 됩니다. 안내 문구에 종류·목적·보관 기간이 없으면, 그것 자체가 물어볼 거리입니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;">먼저 <b>화면을 캡처</b>해 언제 어떤 정보를 요청받았는지 남기십시오. 그다음 안내 문구와 동의 내역을 확인하면, 내 정보가 어떤 점검 아래 다뤄지는지 확인하는 데 도움이 됩니다.</p>
+    <ol>
+      <li><b>① 화면 보존</b> — 정보 요청 화면을 캡처해 남긴다.</li>
+      <li><b>② 안내 확인</b> — 정보 종류·목적·보관 기간의 안내를 확인한다.</li>
+      <li><b>③ 규모 가늠</b> — 서비스가 다루는 정보 규모를 살핀다.</li>
+      <li><b>④ 민감정보</b> — 건강·생활 등 민감한 정보 포함 여부를 확인한다.</li>
+      <li><b>⑤ 연계 점검</b> — 내 정보가 다른 데이터와 연계되는지 살핀다.</li>
+      <li><b>⑥ 국외 이전</b> — 해외로 이전되는지 확인한다.</li>
+      <li><b>⑦ 동의 내역</b> — 어떤 항목에 동의했고 거부가 가능했는지 본다.</li>
+      <li><b>⑧ 삭제·정정</b> — 삭제·정정 요청 방법을 확인한다.</li>
+      <li><b>⑨ 경위 기록</b> — 언제 어떤 정보를 요청받았는지 적는다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
