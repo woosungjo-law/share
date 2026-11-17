@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>확인만 눌렀는데, 동의를 다 한 게 아닌 무엇을 알았는지부터 따져야 할 일이다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 가입 화면 동의</div>
+    <h1>확인만 눌렀는데, 동의를 다 한 게 아닌 무엇을 알았는지부터 따져야 할 일이다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> <b>확인을 눌렀다는 사실만으로 모든 항목에 동의한 것이 되지는 않습니다.</b> <b>개인정보보호법 제15조</b>는 <b>정보주체의 사전 동의 없이 개인정보를 수집하고 이용하는 일을 금지</b>하고, 동의는 <b>수집 목적과 항목, 보유 기간을 구체적으로 알린 뒤 자발적 의사</b>에 따라 받아야 합니다. <b>제16조</b>는 <b>목적에 필요한 최소한의 개인정보만 수집</b>하도록 정합니다. 그래서 따질 것은 클릭이 아니라 <b>무엇을 알았는지</b>입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>계약서 맨 아래 서명란에 서명했는데, 그 위 조항을 한 번도 보여 주지 않은 상황</b>과 같습니다. 서명이 있으니 계약은 있는 것처럼 보이지만, <b>무엇에 서명하는지 알 수 없었다면</b> 그 서명의 실질은 흔들립니다. 가입 화면의 '확인'도 같아서, <b>목적·항목·보유 기간이 눈에 보였는지</b>가 서명의 실질을 가릅니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>먼저 <b>사전 동의</b>입니다. <b>개인정보보호법 제15조</b>는 <b>정보주체의 사전 동의 없이 개인정보를 수집하고 이용하는 일을 금지</b>합니다. 동의는 <b>수집 목적과 항목, 보유 기간을 구체적으로 알린 뒤 자발적 의사</b>에 따라 받아야 합니다.</p>
+    <p>다음은 <b>최소 수집</b>입니다. <b>제16조</b>는 <b>목적에 필요한 최소한의 개인정보만 수집</b>하도록 정합니다. <b>필요 최소한 외의 정보 수집에는 동의하지 않을 수 있다는 사실을 구체적으로 알려야 하고, 그 거부를 이유로 재화나 서비스 제공을 거부해서는 안 됩니다.</b></p>
+    <p>다음은 <b>판례</b>입니다. <b>대법원 2014두2638</b>은 <b>수집 항목과 목적, 보유 기간 안내 없이 확인 클릭을 동의로 간주할 수 없다</b>는 취지를 밝혔습니다. <b>확인을 눌렀다는 사실만으로 모든 항목에 동의한 것이 되지는 않는다</b>는 뜻입니다. <b>대법원 2016도13263</b>은 <b>거짓이나 부정한 수단으로 개인정보를 취득하거나 그 처리에 관한 동의를 받아서는 안 된다</b>는 취지를 밝혔습니다. <b>실제와 다른 설명으로 눌리게 된 확인은 동의로서의 실질이 없다</b>는 뜻입니다.</p>
+    <p>마지막은 <b>이용자의 기준</b>입니다. <b>무엇을 위해 무엇을 언제까지 맡기는지를 알았는지, 원치 않는 항목은 뺄 수 있었는지</b>를 따지는 것입니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>확인을 누르기 전에 볼 세 가지</h2>
+    <ul class="points">
+      <li><b>① 사전 고지</b> — 수집 목적과 항목, 보유 기간이 가입 화면에서 확인되어야 합니다. 셋 중 하나라도 빠져 있거나 막연한 표현으로 뭉뚱그려져 있으면 구체적 고지라고 보기 어렵습니다.</li>
+      <li><b>② 자발적 선택</b> — 필요 최소한 외의 정보는 동의하지 않아도 됩니다. 선택 정보를 빼면 가입이 막히는 구조라면 자발적 동의라고 보기 어렵습니다.</li>
+      <li><b>③ 최소 수집</b> — 목적에 필요한 범위를 넘어서는 정보를 관행적으로 더 받는 일은 허용되지 않습니다.</li>
+      <li><b>④ 입증책임</b> — 최소 수집 범위를 지켰다는 점에 대한 입증책임은 개인정보를 수집하는 쪽이 집니다.</li>
+      <li><b>⑤ 요구할 수 있는 것</b> — 분쟁이 생기면 목적과 항목, 보유 기간 안내 화면과 동의 기록을 확인해 달라고 요구할 수 있습니다.</li>
+      <li><b>⑥ 우선순위</b> — 확인 클릭이라는 외형보다 고지와 자발성의 실질이 먼저입니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 판단 기준은 <b>클릭 여부가 아니라 고지와 자발성</b>입니다. 목적·항목·보유 기간이 보였는지, 선택 정보를 비워도 가입이 되는지 — 이 두 가지가 실질을 가릅니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;">안내를 보고 동의했는지를 <b>캡처로 남기는 것</b>까지가 한 묶음입니다. 나중에 확인할 때 목적과 항목, 보유 기간 화면이 근거가 됩니다.</p>
+    <ol>
+      <li><b>① 고지 확인</b> — 수집 목적과 항목, 보유 기간이 화면에서 각각 보이는지 본다. 하나라도 빠져 있거나 막연하면 확인을 누르지 않는다.</li>
+      <li><b>② 분리 확인</b> — 선택 정보는 별도 동의란으로 떨어져 있는지 본다. 전체 동의 하나로 묶여 있으면 목적별 동의를 요구한다.</li>
+      <li><b>③ 거부 테스트</b> — 선택 정보를 비워도 가입이 진행되는지 본다. 거부했다는 이유로 가입이 막히면 그대로 두지 않는다.</li>
+      <li><b>④ 기록 남기기</b> — 어떤 안내를 보고 동의했는지를 캡처로 남긴다. 나중에 확인할 때 목적과 항목, 보유 기간 화면이 근거가 된다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
