@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>게시물 하나를 지우라고 요구하려면, 무엇이 왜 문제인지를 한 건씩 증명해야 한다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 게시물 삭제와 운영자 책임</div>
+    <h1>게시물 하나를 지우라고 요구하려면, 무엇이 왜 문제인지를 한 건씩 증명해야 한다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> <b>운영자의 책임은 그가 언제 무엇을 알았는지에 달려 있고, 그 사실은 요청 기록으로 증명됩니다.</b> <b>정보통신망 이용촉진 및 정보보호 등에 관한 법률 제44조의3</b>에 따라 <b>운영자가 약관과 법정 절차에 따라 임시조치를 했거나 게시물의 위법성 판단이 곤란한 경우에는 책임이 제한</b>될 수 있습니다. <b>요청을 받고도 아무것도 하지 않은 경우와는 결이 다릅니다.</b> 그리고 <b>대법원 2016다271608 판결</b>은 <b>구체적·개별적인 삭제와 차단 요구를 받지 않아 게시된 사정을 구체적으로 인식하지 못하였거나, 기술적·경제적으로 관리·통제를 할 수 없는 경우 적절한 조치 의무를 부담하는지를 원칙적으로 소극으로</b> 봤습니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>허위 후기가 붙은 홍보글 아래에서 삭제 요청을 누른 판매자</b>를 떠올려 보십시오. 남궁리아는 삭제 요청을 눌렀지만 <b>몇 주가 지나도 게시물은 그대로</b>였고 <b>같은 문구가 또 올라왔습니다</b>. 그래서 <b>요청 접수 화면을 캡처하고 게시물 주소와 게시 시각을 따로 적어</b> 두었습니다. <b>한꺼번에 신고하면 뭉개질 수 있다</b>는 조언을 받아 한 건씩 나누어 다시 요청했습니다. <b>운영자가 언제 알았는지가 문제라면 내가 언제 무엇을 요청했는지가 먼저 기록되어야 하기 때문</b>입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, <b>책임이 제한되는 경우</b>를 봅니다. <b>정보통신망 이용촉진 및 정보보호 등에 관한 법률 제44조의3</b>에 따라 <b>운영자가 약관과 법정 절차에 따라 임시조치를 했거나 게시물의 위법성 판단이 곤란한 경우에는 책임이 제한</b>될 수 있습니다. <b>요청을 받고도 아무것도 하지 않은 경우와는 결이 다릅니다.</b></p>
+    <p>둘째, <b>인식의 문제</b>를 봅니다. <b>대법원 2016다271608 판결</b>은 <b>구체적·개별적인 삭제와 차단 요구를 받지 않아 게시된 사정을 구체적으로 인식하지 못하였거나, 기술적·경제적으로 관리·통제를 할 수 없는 경우 적절한 조치 의무를 부담하는지를 원칙적으로 소극으로</b> 봤습니다. <b>즉 묻는 질문이 운영자가 언제 알았는지에 맞춰집니다.</b></p>
+    <p>셋째, <b>링크와 방조</b>를 봅니다. <b>대법원 2009다5643 판결</b>은 <b>인터넷 링크 행위가 복제·전송·전시에 해당하는지를 소극으로</b> 보았고, <b>저작물을 이용한다는 말의 의미와 부작위 방조자로서의 공동불법행위책임</b>을 함께 다루었습니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>특정·시점·증거가 쟁점을 가른다</h2>
+    <ul class="points">
+      <li><b>첫째, 특정을 봅니다</b> — <b>게시물을 한 건씩 특정하고 주소와 게시 시각을 붙입니다.</b> 여러 건을 한 번에 요청하면 <b>어느 것이 어느 요청에 해당하는지 나중에 확인하기 어렵습니다.</b></li>
+      <li><b>둘째, 시점을 봅니다</b> — <b>운영자가 언제 알았고 얼마 동안 방치했는지</b>를 확인할 수 있도록 <b>내가 요청한 시각과 확인한 시각</b>을 나란히 남깁니다.</li>
+      <li><b>셋째, 증거를 봅니다</b> — <b>어떤 점이 왜 문제인지 불법성 명백성을 뒷받침할 자료</b>를 붙입니다. <b>느낌이 아니라 확인 가능한 사실로</b> 적습니다.</li>
+      <li><b>넷째, 절차를 봅니다</b> — <b>약관상 신고 절차와 법이 정한 절차를 각각 밟았는지</b> 기록합니다.</li>
+      <li><b>다섯째, 관리 능력을 봅니다</b> — <b>운영자가 관리·통제하기 어려웠다는 설명</b>이 나오면 <b>어떤 제약이었는지 구체적으로</b> 묻습니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> <b>운영자의 조치 의무는 구체적·개별적 삭제 요구로 그가 사정을 인식했는지에 걸려 있고, 인식하지 못했거나 관리·통제가 불가능했다면 원칙적으로 소극으로 판단됩니다.</b> <b>임시조치를 했거나 위법성 판단이 곤란한 경우에는 책임이 제한될 수 있습니다.</b> <b>게시물을 한 건씩 특정해 주소·게시 시각·요청 시각을 남기는 순서</b>가 섭니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;">먼저 <b>게시물마다 주소·게시 시각·작성 계정</b>을 따로 적고 <b>요청 화면·접수 번호·요청 시각</b>을 보관합니다. 이어서 <b>허위를 뒷받침할 화면과 자료</b>를 붙이고 <b>일정 간격으로 잔존 여부</b>를 확인한 뒤, 응답이 없으면 같은 자료로 다른 창구에 문의합니다.</p>
+    <ol>
+      <li><b>① 개별 특정</b> — 게시물마다 주소·게시 시각·작성 계정을 따로 적는다.</li>
+      <li><b>② 요청 기록</b> — 요청 화면·접수 번호·요청 시각을 날짜와 함께 보관한다.</li>
+      <li><b>③ 증거 첨부</b> — 허위라는 점을 뒷받침할 화면과 자료를 붙인다.</li>
+      <li><b>④ 재확인</b> — 일정 간격으로 잔존 여부를 확인하고 재요청 사실을 기록한다.</li>
+      <li><b>⑤ 창구 확장</b> — 응답이 없으면 같은 자료로 다른 창구에 문의한다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
