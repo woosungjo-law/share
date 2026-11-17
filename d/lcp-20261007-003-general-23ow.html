@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>파산하면 신고부터 해야 한다는 생각은 순서 착각이고, 채권신고 여부가 아닌 담보 실행과 부족액 정리의 순서가 본질이다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 담보권과 파산</div>
+    <h1>파산하면 신고부터 해야 한다는 생각은 순서 착각이고, 채권신고 여부가 아닌 담보 실행과 부족액 정리의 순서가 본질이다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> 담보(근저당권 등)를 잡아 둔 사람은 <b>파산절차와 별도로 담보권을 실행할 수 있습니다.</b> <b>채무자회생법 제412조</b>가 <b>별제권은 파산절차에 의하지 아니하고 행사한다</b>고 정하고 있기 때문입니다. 그래서 파산선고가 났다고 해서 담보 실행까지 자동으로 멈추지는 않습니다. 다만 <b>관재인이 먼저 환가할 수 있고</b>, 처분 후 <b>부족액을 어떻게 정리할지</b>는 따로 준비해야 합니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>집을 담보로 잡아 둔 사람에게 "파산했다니 이제 아무것도 못 한다"고 말하는 것</b>은 순서를 뒤집은 이야기입니다. 담보는 <b>다른 채권자들과 같은 줄에 서는 권리</b>가 아니라 <b>그 물건에서 먼저 받는 권리</b>입니다. 다만 그 물건을 <b>내가 먼저 팔지, 관재인이 먼저 팔지</b>는 별개의 문제이고, 팔고 남은 돈이 모자라면 <b>그 모자란 몫을 어떻게 줄에 세울지</b>가 다음 문제입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>먼저 <b>출발점</b>입니다. <b>채무자회생법 제412조</b>는 <b>별제권은 파산절차에 의하지 아니하고 행사한다</b>고 정합니다. <b>근저당권처럼 담보를 가진 사람은 파산절차와 별도로 담보권을 실행할 수 있다</b>는 취지입니다. <b>파산선고가 났다고 해서 담보 실행까지 자동으로 멈추는 것은 아닙니다.</b></p>
+    <p>다음은 <b>판례</b>입니다. <b>대법원 96다19840</b>도 <b>별제권자가 파산절차에 의하지 않고 별제권을 행사하는 경우 파산절차상의 신고와 조사절차를 반드시 거쳐야 하는 것은 아니다</b>고 봅니다. <b>먼저 확인할 것은 통지서의 신고 기간이 아니라 등기상 자신의 담보 순위와 피담보채권 범위</b>입니다.</p>
+    <p>다음은 <b>관재인의 환가</b>입니다. <b>제497조</b>는 <b>파산관재인도 별제권 목적물을 환가할 수 있다</b>고 정합니다. 관재인은 <b>민사집행법에 의하여 별제권 목적인 재산을 환가</b>할 수 있고, <b>이 경우 별제권자는 이를 거절할 수 없습니다.</b> <b>관재인이 먼저 나서면 이를 막을 수는 없습니다.</b> 다만 <b>대금이 아직 확정되지 않았다면 관재인은 대금을 따로 임치해야 하고, 이 경우 별제권은 그 대금 위에 존재</b>합니다.</p>
+    <p>마지막은 <b>부족액</b>입니다. 점포를 처분한 돈으로 외상대금을 다 받지 못하면 <b>남은 금액을 어떻게 정리할지</b>가 문제 됩니다. <b>부족분을 파산채권으로 행사하기 위한 절차와 채권신고 필요 여부는 사안에 따라 불명확할 수 있습니다.</b> <b>실행과 부족액 정리는 나누어 준비합니다.</b></p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>관재인이 먼저 팔 수 있고 부족액은 따로 본다</h2>
+    <ul class="points">
+      <li><b>① 담보 상태</b> — 등기상 순위와 채권최고액, 외상대금 잔액을 정리합니다.</li>
+      <li><b>② 실행 경로</b> — 별제권은 파산절차에 의하지 아니하고 행사할 수 있습니다(제412조).</li>
+      <li><b>③ 관재인 환가</b> — 관재인은 민사집행법에 의하여 환가할 수 있고 별제권자는 이를 거절할 수 없습니다(제497조).</li>
+      <li><b>④ 대금 임치</b> — 대금이 확정되지 않았다면 관재인은 대금을 따로 임치해야 하고, 별제권은 그 대금 위에 존재합니다.</li>
+      <li><b>⑤ 신고·조사</b> — 별제권 행사에 신고·조사절차가 반드시 필요한 것은 아닙니다(대법원 96다19840).</li>
+      <li><b>⑥ 부족액</b> — 처분 후 남는 금액의 파산채권 행사 절차와 채권신고 필요 여부는 불명확할 수 있으므로 신고 기간과 증빙을 함께 관리합니다.</li>
+      <li><b>⑦ 순서</b> — 실행과 부족액 정리는 나누어 준비합니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> "신고부터"가 아니라 <b>담보 순위 확인 → 관재인 환가 계획 문의 → 부족액 자료 준비</b> 순서입니다. 순서를 바꾸면 담보가 있어도 서류 앞에서 멈춥니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;">통지서에서 <b>관재인 연락처와 채권신고 기간</b>을 적고, 등기사항증명서에서 <b>근저당권 순위와 채권최고액</b>을 확인하십시오. 서두르기보다 <b>주체와 부족액 정리를 나누어</b> 확인하는 것이 낫습니다.</p>
+    <ol>
+      <li><b>① 담보 상태를 확인한다</b> — 채무자회생법 제412조에 따라 별제권은 파산절차에 의하지 아니하고 행사할 수 있다. 등기상 순위와 채권최고액, 외상대금 잔액을 정리하고 담보 실행 경로를 검토한다.</li>
+      <li><b>② 관재인 환가 가능성을 확인한다</b> — 채무자회생법 제497조에 따라 관재인은 민사집행법에 의하여 환가할 수 있고 별제권자는 거절할 수 없다. 환가 계획과 대금 임치 방식을 문의하고, 별제권은 임치된 대금 위에 존재한다는 점을 기준으로 설명을 듣는다.</li>
+      <li><b>③ 부족액 자료를 따로 챙긴다</b> — 대법원 96다19840 취지상 별제권 행사에 신고·조사절차가 필수인 것은 아니지만, 처분 후 남는 금액의 파산채권 행사 절차와 채권신고 필요 여부는 불명확할 수 있으므로 신고 기간과 증빙을 함께 관리한다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
