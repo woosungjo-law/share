@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>배를 빌린 방식이 사고 비용을 가른다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>배를 빌린 방식이 사고 비용을 가른다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 정기용선계약은 선원이 승무하고 항해장비를 갖춘 선박을 일정 기간 빌려 쓰는 계약이다(상법 제842조). 항해용선은 운송을 맡기는 계약에 가깝고, 정기용선은 배를 빌려 쓰는 계약에 가깝다. 빌린 방식에 따라 지시권과 관리 책임의 주인이 달라진다. 발항 전 계약을 해제하면 운임의 반액을 지급하는 규정이 있다(상법 제832조). 계약서 제목이 아니라 누가 배를 통제하는지를 봐야 한다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      임도현은 새벽로지스의 대표다. <b>회사가 빌려 쓰던 선박에서 화물 사고가 났는데, 선주는 용선자의 지시 문제라며 비용을 청구했고 용선료는 용선료대로 나가고 있었다.</b> 대표는 책임 공방이 아니라 계약이 어떤 용선인지부터 물었다. 계약 형태가 정해져야 누구의 지시였는지, 누구의 관리였는지가 갈리기 때문이다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, <b>계약의 형태</b>다. 정기용선계약은 선원이 승무하고 항해장비를 갖춘 선박을 일정 기간 빌려 쓰는 계약이다(상법 제842조). 항해용선은 운송을 맡기는 계약에 가깝고, 정기용선은 배를 빌려 쓰는 계약에 가깝다.</p>
+    <p>둘째, <b>통제의 주인</b>이다. 빌린 방식에 따라 지시권과 관리 책임의 주인이 달라진다. 계약서를 볼 때 제목이 아니라 누가 배를 통제하는지를 봐야 한다.</p>
+    <p>셋째, <b>해제의 비용</b>이다. 발항 전 계약을 해제하면 운임의 반액을 지급하는 규정이 있다(상법 제832조). 계약을 시작하기 전에 접을 때의 비용과, 시작한 뒤 사고가 났을 때의 비용은 다른 계산이다.</p>
+    <p>넷째, <b>조문의 연결</b>이다. 선장·선원의 공급과 지시, 화물 적재와 항로 선택에 관한 검토 명제는 상법 제838조·제842조와 연결되어 있다. 다만 상법 제838조는 운송물의 양륙 규정이라 명제와의 연결이 약하다. 양륙 문제는 양륙대로, 배의 사용과 지시 문제는 상법 제842조의 틀로 나눠 봐야 한다.</p>
+    <div class="callout">
+      <b>용선료 협상과 사고 비용 협상을 같은 자리에서 섞지 않는다.</b> 발항 전 해제 비용과 사고 뒤 비용은 계산의 출발점부터 다르다. 두 비용을 같은 회의에서 섞으면 어느 쪽도 정리되지 않는다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>놓치기 쉬운 조건과 예외</h2>
+    <p><b>비용</b>이 조건이다. 용선료, 사고 처리 비용, 해제할 때의 정산금을 나눠 본다. 발항 전 해제 비용은 상법 제832조의 틀로 미리 계산하고, 사고 뒤 비용은 지시 기록과 관리 기록에 따라 달라진다.</p>
+    <p><b>책임</b>이 조건이다. 용선자의 운항 지시가 있었는지, 선박 관리에 빈틈이 있었는지를 나눠 본다. 지시서와 이메일이 있으면 용선자 쪽 검토가, 점검 기록이 비어 있으면 선주 쪽 검토가 필요해진다.</p>
+    <p><b>중단</b>이 조건이다. 사고 선박을 계속 쓸지 계약을 접을지는 비용 비교로 정한다. 해제 비용과 대체 선박 비용, 화물 지연 손실을 한 장에 놓고 본다.</p>
+    <ul class="points">
+      <li>용선계약 승인 양식에 책임·면책·항로·안전항 조항 확인란을 넣는다. 항해용선인지 정기용선인지가 표시되지 않으면 승인이 나지 않게 한다.</li>
+      <li>말로 한 지시는 이메일로 다시 확인하고, 항로 결정은 기록으로 남긴다. 기록이 있어야 사고 때 누구의 지시였는지를 설명할 수 있다.</li>
+      <li>선박 감항성과 선원 관리 자료를 선주에게 요구하는 절차를 만든다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>지시 기록을 경영 숫자로 바꾼다.</b> 임도현이 세운 순서는 다음과 같다.</p>
+      <ol>
+        <li><b>① 방식을 본다</b> — 항해용선인지 정기용선인지 확인한다.</li>
+        <li><b>② 해제 비용을 본다</b> — 상법 제832조의 발항 전 정산을 계산한다.</li>
+        <li><b>③ 용선 틀을 본다</b> — 상법 제842조에 비춰 통제 주체를 본다.</li>
+        <li><b>④ 양륙을 본다</b> — 상법 제838조는 양륙 관련으로만 본다.</li>
+        <li><b>⑤ 지시를 본다</b> — 운항 지시 기록이 있는지 확인한다.</li>
+        <li><b>⑥ 관리를 본다</b> — 감항성·선원 관리 자료를 요구한다.</li>
+        <li><b>⑦ 메모를 본다</b> — 연결이 약한 명제는 주의 표시로 받는다.</li>
+        <li><b>⑧ 중단을 본다</b> — 해제·대체·지연 비용을 비교한다.</li>
+        <li><b>⑨ 일정을 본다</b> — 법무 검토 마감과 운항 일정을 함께 정한다.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;">그는 상법 제832조의 해제 비용과 상법 제842조의 용선 틀을 같은 보고서에서 나눠 보고, 연결이 약한 명제는 단정하지 말고 주의 표시와 함께 올리게 했다. 사고 뒤 회의에서는 책임자 처벌이 아니라 기록 점검부터 했다. 지시서와 이메일, 점검 기록이 어디까지 있는지를 보고 비용 협상의 출발점을 정했다. <b>대표가 정해야 할 것은 배의 사양이 아니라 지시와 기록의 규칙이다.</b> 빌린 방식에 맞는 책임 구조를 계약 전에 잡으면 사고 뒤 청구서가 와도 흔들리지 않는다. 다음 용선계약에는 같은 확인 양식을 쓰기로 했다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
