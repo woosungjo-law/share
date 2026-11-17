@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>개발부담금 — '부과 금액'이 아니라 '대상 사업과 종료시점'에서 승부가 갈린다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 개발부담금</div>
+    <h1>개발부담금 — '부과 금액'이 아니라 '대상 사업과 종료시점'에서 승부가 갈린다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 개발부담금은 <b>개발이익 환수에 관한 법률이 정한 대상 사업</b>에만 부과됩니다(<b>제5조</b>). 그래서 첫 질문은 금액이 아니라 <b>'내 사업이 그 목록에 있는가'</b>입니다. 목록 밖이면 <b>산정을 다툴 필요 없이 부과 자체가 문제</b>됩니다. 대상이 맞다면 <b>제11조의 산정 항목</b>과 <b>종료시점</b>을 대조하고, 불복은 <b>취소소송</b>으로 갑니다(<b>행정소송법 제19조</b>). <b>통지서에 없는 두 줄 — 종료시점과 공제 내역 — 이 승부처</b>입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      건물 준공 검사와 같습니다. 도면대로 지었는지(대상 사업), 자재비가 장부와 맞는지(비용 산정), <b>언제 공사를 끝난 것으로 볼지</b>(종료시점)를 봅니다. 그런데 검사 서류에는 <b>총액만</b> 적혀 있고 <b>어느 날짜를 끝으로 봤는지</b>가 빠져 있는 경우가 많습니다. 총액을 먼저 따지면 <b>기준일이 틀렸다는 사실</b>을 놓칩니다. 날짜가 틀리면 금액도 통째로 틀립니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+        <p>첫째, <b>부과 대상의 확정</b>입니다. 개발부담금은 <b>법이 정한 대상 사업</b>에 부과되고(<b>제5조</b>), 택지개발·산업단지개발·관광단지조성 등이 <b>열거</b>되어 있습니다. <b>열거 방식이므로 목록에 없으면 대상이 아닙니다.</b> 목록 밖이면 <b>금액 다툼 이전에 부과 자체가 문제</b>됩니다.</p>
+    <p>둘째, <b>개발비용의 산정</b>입니다. <b>제11조</b>의 기준에 따라 <b>순공사비·조사비·설계비·일반관리비</b>를 합산하고, <b>인가 조건에 따른 기부채납 가액</b> 같은 항목을 더해 산출합니다. <b>무엇을 넣고 빼는지가 금액을 가릅니다.</b></p>
+    <p>셋째, <b>쟁점의 구조</b>입니다. 완료 후 다툼은 <b>개발이익·정상지가상승분·공제비용·종료시점</b> 네 곳에서 생깁니다. 사업자는 <b>산정 오류와 공제 누락</b>을, 행정청은 <b>산정 근거와 종료시점·공제 적용</b>을 내세웁니다. <b>네 항목을 분리해 두어야 논점이 섞이지 않습니다.</b></p>
+    <p>넷째, <b>불복의 경로와 인접 절차</b>입니다. 부과처분을 다투는 수단은 <b>취소소송</b>입니다(<b>행정소송법 제19조</b>). 토지 수용이 얽혔다면 <b>사업인정</b>이 별도로 확정되고(<b>공익사업법 제20조</b>), 그 불복도 취소소송의 틀을 씁니다. <b>부담금 단계와 수용 단계의 처분이 섞이면 다툼의 대상이 흐려집니다.</b></p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>대상·산정·종료시점·공제·불복이 갈림길이다</h2>
+    <ul class="points">
+      <li><b>대상 사업</b> — 제5조의 열거와 인가 조건을 대조합니다. <b>목록 밖이면 산정 다툼은 의미가 없습니다.</b></li>
+      <li><b>산정 항목</b> — 제11조의 구조로 순공사비·조사비·설계비·일반관리비·기부채납 가액을 각각 나눕니다.</li>
+      <li><b>종료시점</b> — 준공일·사업 종료일·인가 조건상 완료 시점이 다를 수 있습니다. <b>어느 날짜로 잘랐는지</b>를 확인합니다.</li>
+      <li><b>정상지가상승분</b> — 산정의 승부처입니다. 산출 근거를 항목별로 분리해 둡니다.</li>
+      <li><b>공제비용</b> — 누락된 항목이 있는지 표시합니다. <b>정산서와 인가 조건이 어긋나면 근거가 약해집니다.</b></li>
+      <li><b>불복 대상</b> — 부과처분인지 사업인정 처분인지 가릅니다. <b>대상이 다르면 청구도 다릅니다.</b></li>
+    </ul>
+    <div class="callout"><b>통지서에서 '없는 줄'을 먼저 찾으세요.</b> 총액과 산정 금액은 적혀 있는데 <b>종료시점</b>과 <b>공제 내역</b>이 빠져 있는 경우가 많습니다. 그 두 줄이 없으면 금액을 검증할 방법 자체가 없습니다. 통지서를 받은 날, <b>(1) 대상 사업 (2) 종료시점 (3) 공제 항목</b> 세 칸을 먼저 채우고, 빈 칸을 회의 안건 1번으로 올리세요.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">대상·산정·불복을 한 표로 묶는 여섯 단계입니다. 표의 행 이름은 바꾸지 않습니다.</p>
+    <ol>
+      <li><b>① 대상 사업</b> — 개발이익 환수에 관한 법률 제5조의 열거와 인가 조건을 대조해 대상 여부를 적습니다.</li>
+      <li><b>② 산정 항목</b> — 같은 법 제11조의 구조로 순공사비·조사비·설계비·일반관리비·기부채납 가액을 분해합니다.</li>
+      <li><b>③ 종료시점</b> — 어느 날짜를 사업 종료로 보았는지, 그 근거를 한 줄로 적습니다.</li>
+      <li><b>④ 정상지가·공제</b> — 두 항목을 분리해 산출 근거와 누락 여부를 표시합니다.</li>
+      <li><b>⑤ 불복 대상</b> — 행정소송법 제19조의 구조로 부과처분과 사업인정 처분을 갈라 청구를 적습니다.</li>
+      <li><b>⑥ 기간·기록</b> — 처분을 안 날과 제소기간을 달력에 적고, 통지·청문 경위를 서면으로 남긴 뒤 네 줄로 할 일을 정리합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
