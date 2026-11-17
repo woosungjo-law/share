@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>한도 없는 보증은 없다, 근보증 숫자를 정하라</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>한도 없는 보증은 없다, 근보증 숫자를 정하라</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 근보증은 특정 채권 하나가 아니라 현재와 장래에 발생하는 불특정 채무를 일정 한도까지 보증하는 구조이고, 민법 제429조가 그 근거다. 한도액은 원금을 기준으로 하며 이자·지연손해금·부대 비용은 원칙적으로 한도액에 포함되지 않는다(같은 조 제2항). 그리고 보증인은 보증인 보호를 위한 특별법 제7조의 네 가지 사유 중 하나에 해당하면 계약을 해지할 수 있다. 대표가 정할 것은 보증을 설지가 아니라 한도 숫자와 해지 조항을 계약서에 넣는 일이다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      유지안은 소규모 시행사 대표다. <b>자재업체와 계속 거래하려면 앞으로 생길 외상대금까지 보증해 달라는 요구를 받았는데, 개별 거래가 아니라 앞으로의 불특정 채무를 담보하는 형태였다.</b> 유지안은 어디까지 책임지는지 숫자로 확인해야 한다고 봤다. 그는 거래 계약서와 예상 매출 자료를 확인하게 했고, 보증을 서는 주체와 거래 규모도 함께 봤다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, <b>근보증의 구조</b>다. 근보증은 특정 채권 하나를 보증하는 것이 아니다. 특정 거래로 인해 현재와 장래에 발생하는 불특정 채무를 일정 한도까지 보증하는 구조다. 민법 제429조가 그 근거다. 그래서 계약서 문구가 책임 범위를 정한다.</p>
+    <p>둘째, <b>한도의 의미</b>다. 근보증 한도액은 원금을 기준으로 한다. 이자와 지연손해금, 부대 비용은 별도로 한도액에 포함되지 않는 것이 원칙이다. 같은 조문의 제2항이 이 기준을 정한다.</p>
+    <p>셋째, <b>초과분</b>이다. 한도를 넘는 채무가 발생하면 그 초과분에는 보증 효력이 미치지 않는다. 그래서 한도를 어떻게 잡는지가 위험 관리의 핵심이 된다.</p>
+    <p>넷째, <b>해지</b>다. 보증인은 계약 체결 후 재산이나 신용 상태가 현저히 악화된 경우, 주채무자가 채무를 이행하지 않은 경우, 예측할 수 없는 사정 변경이 있는 경우, 체결 후 3년이 경과한 경우에 계약을 해지할 수 있다. 보증인 보호를 위한 특별법 제7조가 그 근거다.</p>
+    <p>다섯째, <b>해지의 효과와 구상</b>이다. 해지는 장래 효력만 소멸시킨다. 이미 발생한 채무는 남으므로 해지 시점의 잔존 채무를 따로 계산해야 한다. 대신 갚은 뒤에는 구상할 수 있다. 민법 제442조부터 제448조까지가 그 근거다. 주계약이 소멸하거나 당사자가 파산하면 보증도 종료된다(민법 제428조).</p>
+    <div class="callout">
+      <b>한도를 넘는 부분에는 보증 효력이 미치지 않는다.</b> 그래서 한도 숫자가 곧 위험의 상한이다. 예상 거래 규모와 한도를 견주어 잡는다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>놓치기 쉬운 조건과 예외</h2>
+    <p><b>한도</b>가 조건이다. 원금 기준으로 정하고 부대 비용은 별도로 본다. <b>해지 요건</b>도 조건이다. 네 가지 사유 중 하나에 해당하면 해지할 수 있으므로, 사유별 입증 자료를 준비해 둔다.</p>
+    <p><b>해지 효과</b>도 조건이다. 잔존 채무를 산정하지 않으면 정리가 어렵다. <b>구상</b>도 조건이다. 구상 절차와 담보 확보를 미리 정해 두면 회수가 쉬워진다.</p>
+    <ul class="points">
+      <li>거래를 계속할지 중단할지도 함께 정한다.</li>
+      <li>노출이 커지면 한도 조정으로 줄인다.</li>
+      <li>한도 소진 현황을 정기적으로 보고받는다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>한도와 해지 기준을 정한다.</b> 유지안이 세운 순서는 다음과 같다.</p>
+      <ol>
+        <li><b>① 구조를 본다</b> — 근보증 범위를 확인한다(민법 제429조).</li>
+        <li><b>② 한도를 본다</b> — 원금 기준 한도를 정한다(민법 제429조).</li>
+        <li><b>③ 부대비용을 본다</b> — 이자·지연손해금 취급을 본다.</li>
+        <li><b>④ 초과분을 본다</b> — 한도 초과 효과를 확인한다.</li>
+        <li><b>⑤ 해지를 본다</b> — 해지 요건을 확인한다(보증인 보호를 위한 특별법 제7조).</li>
+        <li><b>⑥ 경과기간을 본다</b> — 3년 경과를 관리한다.</li>
+        <li><b>⑦ 잔존채무를 본다</b> — 해지 후 잔존 채무를 계산한다.</li>
+        <li><b>⑧ 구상을 본다</b> — 구상권 행사를 확인한다(민법 제442조).</li>
+        <li><b>⑨ 종료를 본다</b> — 종료 사유를 확인한다(민법 제428조).</li>
+        <li><b>⑩ 담보를 본다</b> — 구상 담보를 확보한다.</li>
+        <li><b>⑪ 소진을 본다</b> — 한도 소진을 점검한다.</li>
+        <li><b>⑫ 중단을 본다</b> — 거래 중단 기준을 정한다.</li>
+        <li><b>⑬ 보고를 받는다</b> — 정기 점검을 보고받는다.</li>
+        <li><b>⑭ 기록을 남긴다</b> — 결정 근거를 남긴다.</li>
+        <li><b>⑮ 재검토를 건다</b> — 조건 변경 시 다시 본다.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;">유지안은 보증 범위와 한도 산정 기준을 확인하게 했다. 해지 사유를 계약에 반영하고 잔존 채무 산정 방법을 정하게 했으며, 구상 절차와 담보 방안도 검토하게 했다. 한도 소진 현황을 정기적으로 보고받고 거래 조건이 바뀌면 다시 판단하게 했다. <b>한도를 숫자로 못 박는 것</b>이 그의 결정이었다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
