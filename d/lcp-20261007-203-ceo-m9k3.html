@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>거래 화면 하나가 무허가 시장이 된다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>거래 화면 하나가 무허가 시장이 된다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 자본시장법 제8조의2 제1항은 증권이나 장내파생상품의 매매를 하는 시장을 다루면서, 실제 매매가 이루어지는 시장뿐 아니라 통상의 주의력을 가진 평균적인 시장 참여자들이 매매가 실제로 이루어진다고 인식할 만한 외관을 갖춘 시장도 포함한다. 사설 거래 사이트는 외관의 구체성에 따라 무허가 금융투자상품시장 개설·운영죄로 처벌될 수 있고(자본시장법 제444조), 대법원 2026도459도 평균적인 시장 참여자의 인식을 기준으로 본다. 대표가 정할 것은 실제 거래 유무에 대한 해명이 아니라 외관을 얼마나 줄일지다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      윤태호는 중소기업 대표다. <b>회사가 새로 만든 투자 서비스 화면이 실제 거래소와 비슷하다는 지적을 받았고, 실제 매매는 우리 서버에서 이뤄지지 않는다는 설명에도 불안은 남았다.</b> 윤태호는 허가 범위와 위험을 함께 판단해야 했다. 그는 화면 구성과 운영 방식, 결제 흐름, 광고 문구를 확인하게 했고, 허가 범위와 사업 설명 자료도 함께 봤다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, <b>외관 시장</b>이다. 자본시장법 제8조의2 제1항은 증권이나 장내파생상품의 매매를 하는 시장을 다룬다. 실제 매매가 이루어지는 시장뿐 아니라, 통상의 주의력을 가진 평균적인 시장 참여자들이 매매가 실제로 이루어진다고 인식할 만한 외관을 갖춘 시장도 포함된다.</p>
+    <p>둘째, <b>전체 인상</b>이다. 외관은 화면 하나가 아니라 전체 인상으로 판단한다. 시장 명칭과 거래 절차, 결제 방식, 광고 내용, 참여자 구성을 종합한다.</p>
+    <p>셋째, <b>허위 사이트</b>다. 허위 투자 사이트를 개설하고 운영하는 행위도 같은 판단을 거쳐 시장 개설·운영으로 볼 수 있다. 실제 거래가 없다는 점이 곧 안전을 뜻하지는 않는다.</p>
+    <p>넷째, <b>제재</b>다. 사설 거래 사이트는 외관의 구체성에 따라 무허가 금융투자상품시장 개설·운영죄로 처벌될 수 있다. 자본시장법 제444조가 그 근거다. 제재를 최우선 위험으로 두어야 하는 이유다.</p>
+    <p>다섯째, <b>판례 기준</b>이다. 대법원 2026도459는 외관을 갖춘 시장도 포함되고 평균적인 시장 참여자의 인식을 기준으로 판단한다고 본다. 점검은 화면 문구에서 기능까지 이어진다. 체결 표시나 자동 주문 기능이 있으면 외관이 강해진다.</p>
+    <div class="callout">
+      <b>실제 거래가 없다는 설명만으로는 부족하다.</b> 외관을 어떻게 줄일지가 대응의 핵심이다. 거래소와 같은 표현을 쓰면 인식이 달라진다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>놓치기 쉬운 조건과 예외</h2>
+    <p><b>외관 요소</b>가 조건이다. 명칭과 절차, 결제, 광고, 참여자 구성을 하나씩 본다. <b>허가 범위</b>도 조건이다. 받은 허가로 어디까지 할 수 있는지가 먼저다.</p>
+    <p><b>중단 기준</b>도 정한다. 법무 검토가 끝나기 전에는 새 기능을 열지 않는다. <b>비용</b>도 함께 본다. 기능 수정과 서비스 중단에 드는 비용을 비교한다.</p>
+    <ul class="points">
+      <li>임직원 교육을 정한다. 외관 문제를 모르면 같은 실수가 반복된다.</li>
+      <li>문제 기능을 표시하고 보완 방안을 문서로 남긴다.</li>
+      <li>점검 주기를 정하고, 기능이 바뀌면 다시 검토한다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>위험선과 중단 기준을 정한다.</b> 윤태호가 세운 순서는 다음과 같다.</p>
+      <ol>
+        <li><b>① 조항을 본다</b> — 시장 정의를 확인한다(자본시장법 제8조의2).</li>
+        <li><b>② 외관을 본다</b> — 외관 포함 여부를 본다(자본시장법 제8조의2).</li>
+        <li><b>③ 인식을 본다</b> — 참여자 인식 기준을 본다.</li>
+        <li><b>④ 구성을 본다</b> — 명칭·절차·결제 구성을 본다.</li>
+        <li><b>⑤ 광고를 본다</b> — 광고 문구를 확인한다.</li>
+        <li><b>⑥ 제재를 본다</b> — 개설·운영죄를 검토한다(자본시장법 제444조).</li>
+        <li><b>⑦ 판례를 본다</b> — 외관 기준을 확인한다(대법원 2026도459).</li>
+        <li><b>⑧ 허가를 본다</b> — 허가 범위를 확인한다.</li>
+        <li><b>⑨ 중단을 둔다</b> — 검토 전 개방 금지 원칙을 둔다.</li>
+        <li><b>⑩ 비용을 본다</b> — 수정·중단 비용을 비교한다.</li>
+        <li><b>⑪ 점검을 정한다</b> — 점검 주기를 정한다.</li>
+        <li><b>⑫ 기록을 남긴다</b> — 결정 근거를 남긴다.</li>
+        <li><b>⑬ 재검토를 건다</b> — 기능 변경 시 재검토한다.</li>
+        <li><b>⑭ 기능을 본다</b> — 체결 표시 기능을 확인한다.</li>
+        <li><b>⑮ 문구를 본다</b> — 마케팅 문구를 점검한다.</li>
+        <li><b>⑯ 교육을 본다</b> — 임직원 교육을 정한다.</li>
+        <li><b>⑰ 일정을 정한다</b> — 보완 일정을 잡는다.</li>
+        <li><b>⑱ 대응을 준비한다</b> — 지적 시 대응 자료를 만든다.</li>
+        <li><b>⑲ 기록을 남긴다</b> — 점검 결과를 남긴다.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;">윤태호는 외관 요소와 허가 범위를 확인하게 했다. 문제 기능을 표시하고 보완 방안을 받아 결정하게 했으며, 제재 가능성은 검토 대상으로 두게 했다. 검토 전 기능 개방 금지 원칙을 세우고 점검 주기를 정하게 했고, 보완 일정을 정해 결과를 문서로 남기게 했다. <b>외관을 줄이는 순서</b>가 그의 결정이었다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
