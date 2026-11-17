@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>물류 데이터 이전, 소유권 말이 아니라 계약 조항으로 지킨다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 물류 데이터 이전</div>
+    <h1>물류 데이터 이전, 소유권 말이 아니라 계약 조항으로 지킨다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 답은 <b>계약서의 데이터 조항</b>에서 먼저 나옵니다. 조항이 있으면 <b>조항대로</b>, 없으면 <b>위임 법리</b>로 갑니다 — <b>수임인은 위임사무로 받은 물건·권리와 결과물을 인도·이전할 의무</b>가 있습니다(<b>민법 제684조</b>, <b>제703조</b>). 그리고 <b>종료 뒤 접근 차단·삭제는 채무불이행</b>이 되어 <b>이행청구와 손해배상</b>이 문제 됩니다(<b>제390조</b>). <b>개인정보가 섞여 있으면 별도 법리</b>가 붙습니다(<b>개인정보 보호법 제35조</b>).
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>세탁소에 맡긴 옷</b>과 같습니다. <b>맡긴 옷은 내 것</b>이지만, <b>세탁소가 만든 수선 흔적이나 작업 기록</b>까지 내 것인지는 <b>맡길 때 정한 말</b>에 달려 있습니다. 그리고 <b>찾으러 갔더니 문을 잠갔다면</b>, 그건 <b>돌려주지 않은 것</b>입니다. <b>무엇이 내 것인지, 언제 어떤 형태로 돌려받는지</b>를 <b>맡길 때 적어 두는 일</b>이 전부입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+        <p>첫째, <b>계약 조항이 1순위</b>입니다. <b>데이터 소유권·이전·파기 조항</b>이 있으면 <b>조항대로</b> 갑니다. 조항이 없을 때만 <b>법리로</b> 내려갑니다. 그래서 <b>검토 첫 단계는 계약서의 데이터 조항 확인</b>입니다. 그리고 <b>종료 시 포맷·기간·비용</b>을 약정했는지도 함께 봅니다. <b>포맷이 없으면 이전 자체가 막힙니다</b> — <b>'이전한다'는 말만으로는 파일이 나오지 않습니다.</b></p>
+    <p>둘째, <b>위임 법리</b>입니다. <b>물류서비스는 위임의 성격</b>이 있어, <b>수임인이 위임사무 수행으로 받은 물건·권리와 결과물을 위임인에게 인도·이전할 의무</b>가 문제 됩니다(<b>제684조</b>). <b>위임인지가 먼저, 이전 의무가 다음</b>입니다. 그래서 <b>무엇이 '결과물'인지</b>를 가려야 합니다 — <b>배송추적 자료·수하인 정보·운송 실적</b>이 각각 결과물인지, <b>원시 데이터인지 가공 데이터인지</b>를 나눕니다.</p>
+    <p>셋째, <b>차단·삭제의 법적 성질</b>입니다. <b>계약 종료 뒤 데이터 접근을 차단하거나 삭제하면</b>, 화주는 <b>이행청구와 손해배상</b>을 검토할 수 있습니다(<b>제390조</b>). <b>차단·삭제가 채무불이행이 되는지</b>를 봅니다. <b>이행을 청구할지, 손해배상을 물을지</b>는 <b>따로 정해야</b> 합니다 — <b>이행청구는 데이터를 받는 것이고, 손해배상은 그동안의 손실</b>입니다. <b>두 청구를 섞으면 협상이 어긋납니다.</b></p>
+    <p>넷째, <b>개인정보의 별도 층</b>입니다. <b>배송추적·수하인 정보에 성명·전화·주소가 있으면 개인정보 보호법이 함께 적용</b>됩니다(<b>제35조</b>). <b>화주의 열람·정정·삭제 권리</b>와 <b>물류사의 처리 위탁·이전 의무</b>가 붙습니다. 그래서 <b>데이터 이전 계약과 개인정보 처리가 겹치는 지점</b>을 따로 표시해야 합니다. 그리고 <b>타사·자기 사업에 쓰지 않겠다는 보장 조항</b>이 있는지도 확인합니다 — <b>그 조항이 없으면 이전 이후의 사용을 막기 어렵습니다.</b></p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>계약조항·위임이전·결과물구분·차단삭제·개인정보·미사용보장이 갈림길이다</h2>
+    <ul class="points">
+      <li><b>계약 조항</b> — <b>소유권·이전·파기</b> 조항 유무를 가장 먼저 확인합니다.</li>
+      <li><b>포맷·기간·비용</b> — <b>이전의 실행 조건</b>을 약정했는지 봅니다. 포맷 없으면 실행 불가입니다.</li>
+      <li><b>위임 법리</b> — 조항이 없을 때 <b>결과물 이전 의무</b>로 갑니다.</li>
+      <li><b>결과물 구분</b> — <b>원시·가공</b>과 <b>추적·수하인·실적</b>을 각각 나눠 귀속을 정합니다.</li>
+      <li><b>차단·삭제</b> — <b>이행청구</b>와 <b>손해배상</b>을 분리해 검토합니다.</li>
+      <li><b>개인정보·보장</b> — <b>열람·정정·삭제 권리</b>와 <b>타사 미사용 보장</b> 조항을 확인합니다.</li>
+    </ul>
+    <div class="callout"><b>계약서를 펼쳐 '데이터'라는 단어를 검색하세요.</b> 조항이 <b>없다면 그 자체가 가장 큰 발견</b>입니다 — <b>지금부터는 법리로 싸워야 하고, 그 싸움은 깁니다</b>. 표를 <b>조항 유무 / 결과물 구분 / 포맷·기간·비용 / 개인정보</b> 네 칸으로 만들고, <b>빈 칸을 그대로 남기세요</b>. 그리고 <b>차단·삭제 사실은 날짜와 함께</b> 기록하세요 — <b>이행청구의 출발점</b>이 됩니다. <b>앞으로 체결하는 계약에는 데이터 조항을 필수로</b> 넣으세요.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">조항·법리·실행을 한 표로 묶는 여섯 단계입니다. 표의 행 이름은 바꾸지 않습니다.</p>
+    <ol>
+      <li><b>① 계약 조항</b> — 데이터 소유권·이전·파기 조항의 유무와 내용을 먼저 확인합니다.</li>
+      <li><b>② 위임 성격</b> — 민법 제703조의 구조로 물류서비스의 위임 성격을 확인합니다.</li>
+      <li><b>③ 이전 의무</b> — 민법 제684조의 구조로 받은 물건·권리·결과물의 인도·이전 의무를 검토합니다.</li>
+      <li><b>④ 결과물 구분</b> — 원시 데이터와 가공 데이터, 추적·수하인·실적 자료의 귀속을 나눕니다.</li>
+      <li><b>⑤ 차단·삭제</b> — 민법 제390조의 구조로 이행청구와 손해배상을 분리해 검토합니다.</li>
+      <li><b>⑥ 개인정보·보장</b> — 개인정보 보호법 제35조의 열람·정정·삭제와 타사 미사용 보장 조항을 확인합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
