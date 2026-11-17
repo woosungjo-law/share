@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>취약점 통보를 받았을 때 대표가 먼저 물을 네 가지가 있다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>취약점 통보를 받았을 때 대표가 먼저 물을 네 가지가 있다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 내부회계관리제도의 중요한 취약점이 발견됐다는 통보는 곧바로 책임을 뜻하지 않는다. 취약점 자체는 공시와 개선의 문제이고, 회계오류나 허위기재와 투자자의 손해가 이어져야 임원과 대표자의 배상 문제가 열린다(자본시장과 금융투자업에 관한 법률 제162조). 대표가 먼저 물을 것은 무엇을 발견했는지, 규정과 운영을 갖췄는지, 어떻게 공시할지, 책임의 범위를 어떻게 확인할지 — 이 네 가지다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>사건의 시작: 중간 검토에서 나온 한마디</h2>
+    <div class="analogy">
+      한밭식품의 대표 오현석은 감사인의 중간 검토에서 내부회계관리제도의 중요한 취약점이 발견됐다는 말을 들었다. 재무팀은 취약점이 곧바로 책임을 뜻하는지 물었고, 이사회는 공시를 어떻게 해야 하는지 물었다. <b>그가 미룬 결정은 대응 여부가 아니라, 발견과 조치와 책임이 각각 다른 층이라는 판단이었다.</b> 네 가지가 문서로 나오기 전에는 어떤 말도 확정하지 않는다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 보는 핵심: 네 개의 층</h2>
+    <p>첫째, <b>발견과 배상은 두 단계</b>다. 자본시장과 금융투자업에 관한 법률 제162조를 근거로, 취약점 자체는 공시와 개선의 문제이고 허위기재와 손해가 이어져야 배상의 문제가 열린다. 취약점이 곧바로 배상이라는 말은 성립하지 않는다.</p>
+    <p>둘째, <b>규정과 조직</b>이다. 회사는 신뢰할 수 있는 회계정보의 작성과 공시를 위해 내부회계관리규정과 이를 관리·운영하는 조직을 갖춰야 한다(주식회사 등의 외부감사에 관한 법률 제8조). 식별과 측정, 기록과 보고, 오류 통제와 수정, 내부검증과 장부 관리, 업무분장을 함께 갖춘다. 서류의 유무가 아니라 실제 돌아가는지가 기준이다.</p>
+    <p>셋째, <b>공시</b>다. 감사인의 검토와 감사에서 중요한 취약점이 발견되면 사업보고서와 감사보고서에 취약점의 내용과 개선계획이 공시된다(자본시장과 금융투자업에 관한 법률 제159조). 과장도 축소도 없이, 발견된 내용과 고칠 계획을 적는다.</p>
+    <p>넷째, <b>임원 책임의 범위</b>다. 내부통제 미비로 인한 임원 책임과 배상의 인정 범위는 사안마다 달리 보므로 개별 확인이 필요하다. 취약점의 존재만으로 책임을 단정하지 않는다.</p>
+    <div class="callout">
+      <b>층을 섞으면 판단이 먼저 굳는다.</b> 발견은 공시·개선으로, 허위기재와 손해는 배상으로 — 보고도 두 단계로 나눠 받아야 한다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>놓치기 쉬운 조건과 예외</h2>
+    <p><b>발견과 허위기재는 다른 층이다.</b> 발견되면 공시와 개선으로 가고, 허위기재와 손해가 이어져야 배상으로 간다.</p>
+    <ul class="points">
+      <li>규정과 운영을 함께 본다 — 규정만 있고 운영 기록이 없으면 방어가 서지 않는다.</li>
+      <li>공시의 시기와 범위를 감사인과 맞춘다.</li>
+      <li>대표자의 운영 보고와 관리자 지정을 본다.</li>
+      <li>의무 대상인지를 먼저 본다.</li>
+      <li>경미한 미비와 중요한 취약점을 구분한다.</li>
+      <li>개선계획은 일정과 담당과 증빙을 붙인다.</li>
+    </ul>
+    <p>예외를 말하기 전에 기록을 먼저 갖춘다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>판정이 아니라 순서를 정한다.</b> 한 묶음으로 보고받을 것은 다음과 같다.</p>
+      <ol>
+        <li><b>① 결과문과 내용</b> — 취약점의 내용과 개선계획 초안을 문서로 묶어 받는다.</li>
+        <li><b>② 규정과 운영</b> — 제8조의 운영 점검 기록, 운영 보고와 관리자 지정 기록을 함께 본다.</li>
+        <li><b>③ 공시 초안</b> — 제159조의 공시 초안을 사실관계와 개선 일정에 맞춰 확인하고, 시기와 범위를 감사인과 문서로 맞춘다.</li>
+        <li><b>④ 책임의 범위</b> — 임원 책임·배상의 범위는 개별 확인 과제로 남긴다.</li>
+        <li><b>⑤ 개선의 이행</b> — 일정과 담당을 정하고 이행의 증빙을 모으게 한다. 분기마다 운영 기록을 점검한다.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;">확정되지 않은 부분은 서두르지 않게 한다. <b>발견의 기록과 개선의 증빙과 공시의 문구가 서면 신뢰는 흔들리지 않는다.</b></p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
