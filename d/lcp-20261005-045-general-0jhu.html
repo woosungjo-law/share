@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>먼저 날짜를 적고, 그다음에 몫을 이야기해야 한다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 상속 재산분할 협의와 심판</div>
+    <h1>먼저 날짜를 적고, 그다음에 몫을 이야기해야 한다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> <b>재산분할은 몫보다 기한이 먼저이고, 기한은 내가 언제 알았는지로 계산됩니다.</b> <b>민법 제1019조</b>에 따라 <b>상속개시일로부터 3개월 이내에 상속 승인·포기·한정승인을 결정</b>해야 하고, <b>민법 제1117조</b>에 따라 <b>유류분 반환청구는 상속이 개시된 것을 안 날로부터 1년, 상속 개시일로부터 10년 이내</b>에 해야 합니다. 협의가 되지 않으면 <b>민법 제1013조</b>·<b>민법 제1014조</b>에 따라 <b>가사조정을 거쳐 분할심판 청구</b>로 넘어갑니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>숫자만 적힌 협의서를 받아든 상속인</b>을 떠올려 보십시오. 고아름은 부동산과 예금, 주식이 적혀 있지만 <b>각자 얼마씩인지 계산 근거는 없다</b>는 것을 확인했습니다. 그래서 사인 대신 <b>날짜부터</b> 적었습니다. <b>상속이 언제 개시됐고, 자신이 언제 알았는지, 언제까지 승인과 포기를 정해야 하는지</b>입니다. <b>날짜가 있으면 기한을 계산할 수 있고, 기한이 보이면 협의의 속도가 정해집니다.</b>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, <b>절차의 구조와 법정상속분</b>입니다. <b>상속인 간에 재산 분할 합의가 이루어지지 않거나 방법과 비율, 대상 재산을 두고 다툼이 생기면, 분할 협의에서 가사조정을 거쳐 분할심판 청구로 이어지는 법적 절차를 밟습니다</b>(<b>민법 제1013조</b>, <b>민법 제1014조</b>). <b>협의가 안 되면 끝나는 것이 아니라 다른 길로 넘어간다는 뜻입니다.</b> 얼마씩인지는 <b>민법 제1009조</b>가 계산 기준이므로 이 조항을 먼저 봐야 정해집니다.</p>
+    <p>둘째, <b>유류분과 그 기한</b>입니다. <b>민법 제1112조</b>는 <b>유류분권자에게 유류분을 인정</b>하므로, <b>협의 결과가 최소한의 몫보다 작으면 문제가 됩니다.</b> <b>민법 제1117조</b>에 따라 <b>유류분 반환청구는 상속이 개시된 것을 안 날로부터 1년, 상속 개시일로부터 10년 이내</b>에 하여야 합니다. <b>언제 알았는지를 적어 두지 않으면 기한 계산을 두고 다툼이 생깁니다.</b></p>
+    <p>셋째, <b>승인·포기의 기한과 등기 절차</b>입니다. <b>민법 제1019조</b>에 따라 <b>상속개시일로부터 3개월 이내에 상속 승인·포기·한정승인을 결정</b>해야 합니다. 등기는 <b>상속인 확인, 재산 확인, 법정상속분 확인, 분할 합의, 등기 신청의 순서</b>로 진행합니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>기록·기한·합의가 답을 가른다</h2>
+    <ul class="points">
+      <li><b>첫째, 기록을 가릅니다</b> — <b>알았던 날짜와 받은 서류</b>를 남깁니다. <b>기억만으로는 기한을 계산할 수 없습니다.</b></li>
+      <li><b>둘째, 기한을 가릅니다</b> — <b>승인·포기의 3개월과 유류분 반환청구의 기한이 서로 다르므로</b> 한 일정표에 넣습니다.</li>
+      <li><b>셋째, 범위를 가릅니다</b> — <b>어떤 재산이 상속재산인지, 채무가 함께 있는지, 이미 처분된 것이 있는지</b> 구분합니다.</li>
+      <li><b>넷째, 계산을 가릅니다</b> — <b>몫만 적힌 협의서는 근거가 없는 것이므로 계산표를 함께 요구</b>합니다.</li>
+      <li><b>다섯째, 동의와 경로를 가릅니다</b> — <b>상속인 중 한 사람의 동의가 빠졌으면 그 합의는 다시 열 수밖에 없고</b>, 협의가 되지 않으면 <b>조정과 심판으로 넘어가며 같은 자료가 그때도 쓰입니다.</b></li>
+    </ul>
+    <div class="callout"><b>핵심.</b> <b>분할의 몫보다 승인·포기 3개월과 유류분 기한이 먼저이고, 그 기한은 내가 언제 알았는지로 계산됩니다.</b> <b>몫만 적힌 협의서에는 근거가 없으므로 법정상속분 기준의 계산표를 함께 요구해야 합니다.</b> <b>날짜를 적고, 서류를 모으고, 기한을 날짜로 확인하고, 서면으로 답하는 순서</b>가 섭니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;">먼저 <b>상속 개시일과 자신이 안 날</b>을 메모로 남기고, <b>가족관계증명서·제적등본·등기부등본·통장 사본</b>을 한 폴더에 둡니다. 이어서 <b>승인·포기 기한과 유류분 관련 기한</b>을 날짜로 확인하고, <b>법정상속분 기준의 계산 근거와 각자의 몫</b>을 문서로 받은 뒤, 동의 여부와 이유를 기한 안에 서면으로 보냅니다.</p>
+    <ol>
+      <li><b>① 날짜 기록</b> — 상속 개시일과 자신이 안 날을 메모로 남긴다.</li>
+      <li><b>② 서류 모으기</b> — 가족관계증명서·제적등본·등기부등본·통장 사본을 한 폴더에 둔다.</li>
+      <li><b>③ 기한 확인</b> — 승인·포기 기한과 유류분 관련 기한을 날짜로 확인한다.</li>
+      <li><b>④ 계산표 요구</b> — 법정상속분 기준의 계산 근거와 각자의 몫을 문서로 받는다.</li>
+      <li><b>⑤ 서면 답신</b> — 동의 여부와 이유를 기한 안에 문서로 보내고 통화는 메모로 남긴다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
