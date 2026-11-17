@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>'우리는 중개만 한다'로 끝나지 않는다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>'우리는 중개만 한다'로 끝나지 않는다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 통신판매중개자에게는 일반 판매자와 다른 고지 의무가 있고(전자상거래법 제20조), 고지의무를 어기면 판매자와 연대하여 배상책임이 문제 되는 구조가 된다(전자상거래법 제20조의2). 문구를 두는 것과 정보를 채우는 것은 다른 문제다. 대표가 지금 정할 것은 중개 책임의 범위가 아니라, 결제 전 고지 위치·판매자 정보 항목·갱신 담당과 주기다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      오재현은 생활용품을 중개하는 온라인 플랫폼을 운영하는 대표다. <b>입점 판매자와 소비자의 환불 다툼이 커지면서 소비자가 플랫폼을 함께 문제 삼았는데, 회사는 그동안 중개만 한다는 입장을 유지해 왔다.</b> 오재현은 그 입장이 어디까지 통하는지 확인해야 한다고 봤다. 그는 첫 화면 고지 문구와 판매자 정보 표시 상태를 보고받았고, 입점 계약 구조와 판매자 심사 절차도 함께 봤다. 소비자 분쟁이 늘면 비용과 평판이 함께 흔들린다는 점도 계산하게 했다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, <b>중개자의 고지 의무</b>다. 통신판매중개자에게는 일반 판매자와 다른 의무가 있다. 전자상거래법 제20조는 중개자의 고지 등에 관한 의무를 정하고, 자신이 통신판매의 당사자가 아님을 알리고 판매자 정보를 제공해야 한다.</p>
+    <p>둘째, <b>고지가 부족할 때의 책임 구조</b>다. 전자상거래법 제20조의2는 통신판매중개자의 책임을 다룬다. 고지의무 위반이 있으면 판매자와 연대하여 배상책임이 문제 되는 구조가 된다. 그래서 고지는 홍보 문구가 아니라 위험 관리 항목이다.</p>
+    <p>셋째, <b>판매자 정보의 범위</b>다. 대표자 성명과 주소, 전화번호처럼 소비자가 판매자를 특정할 수 있어야 한다. 정보가 흐릿하면 소비자는 플랫폼에 책임을 묻는다.</p>
+    <p>넷째, <b>연대책임이 문제 된 사안</b>이다. 첫 화면에서 비당사자를 알리지 않거나 판매자 정보를 충분히 알리지 않은 경우다. 문구를 두는 것과 정보를 채우는 것은 다른 문제다.</p>
+    <div class="callout">
+      <b>문구만 있고 정보가 비어 있으면 고지가 아니다.</b> 결제 전에 소비자가 판매자를 특정할 수 있어야 한다. 위치와 내용을 함께 봐야 한다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>놓치기 쉬운 조건과 예외</h2>
+    <p><b>고지 위치</b>가 첫 조건이다. 소비자가 결제 전에 볼 수 있어야 한다. 약관 속에만 묻어 두면 고지로 보기 어렵다. <b>갱신</b>도 조건이다. 판매자 정보가 바뀌면 화면도 바뀌어야 하므로 갱신 담당과 주기를 정한다.</p>
+    <p><b>판매 유형</b>도 조건이다. 직접 판매와 중개를 섞어 두면 소비자가 구분하지 못한다. <b>책임 범위</b>는 사안마다 다르다. 고지 누락이 전액 배상으로 이어지는지는 개별 확인이 필요하므로 결론을 단정하지 않고 검토 대상으로 둔다.</p>
+    <ul class="points">
+      <li>소비자 분쟁 비용과 평판 영향을 함께 계산해 대응 수준을 정한다.</li>
+      <li>위험 상품 판매 중단 기준을 미리 정해 둔다.</li>
+      <li>보완 이행을 보고받는 절차를 정해 두어야 점검이 한 번으로 끝나지 않는다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>책임선과 점검 주기를 정한다.</b> 오재현이 세운 순서는 다음과 같다.</p>
+      <ol>
+        <li><b>① 고지를 본다</b> — 중개자 고지 의무를 확인한다(전자상거래법 제20조).</li>
+        <li><b>② 비당사자 고지를 본다</b> — 화면에 실제로 보이는지 본다.</li>
+        <li><b>③ 판매자 정보를 본다</b> — 성명·주소·전화번호 표시를 본다.</li>
+        <li><b>④ 위치를 본다</b> — 결제 전 노출 위치를 확인한다.</li>
+        <li><b>⑤ 책임을 본다</b> — 중개자 책임 규정을 확인한다(전자상거래법 제20조의2).</li>
+        <li><b>⑥ 연대를 본다</b> — 연대책임 위험을 검토한다.</li>
+        <li><b>⑦ 유형을 가른다</b> — 직접 판매와 중개를 구분한다.</li>
+        <li><b>⑧ 갱신을 본다</b> — 정보 갱신 담당과 주기를 정한다.</li>
+        <li><b>⑨ 주기를 정한다</b> — 점검 주기를 정한다.</li>
+        <li><b>⑩ 매뉴얼을 둔다</b> — 대응 매뉴얼을 만든다.</li>
+        <li><b>⑪ 비용을 본다</b> — 분쟁 비용과 평판 영향을 본다.</li>
+        <li><b>⑫ 중단을 둔다</b> — 위험 상품 판매 중단 기준을 정한다.</li>
+        <li><b>⑬ 기록을 남긴다</b> — 결정 근거를 남긴다.</li>
+        <li><b>⑭ 보고를 받는다</b> — 보완 이행을 보고받는다.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;">오재현은 고지 문구와 판매자 정보 표시 상태를 확인하게 했다. 누락 항목을 목록으로 받아 보완을 지시하고, 직접 판매와 중개를 화면에서 구분하게 했다. 갱신 담당과 점검 주기를 정하고 대응 매뉴얼을 만들게 했으며, 확인되지 않은 부분은 추정으로 채우지 않았다. <b>고지를 위험 관리 항목으로 옮겨 놓는 것</b>이 그의 결정이었다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
