@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>대기발령은 대기 상태일 때 이미 설계가 끝나야 한다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>대기발령은 대기 상태일 때 이미 설계가 끝나야 한다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 경영상 필요에 의한 대기발령은 휴업수당 리스크를 수반하므로 누구의 귀책인지부터 구조화해야 한다(근로기준법 제46조). 정당성은 여러 사정을 종합해 판단하고, 근로자 본인과 성실한 협의절차를 거치지 않았다는 사정만으로 곧바로 권리남용이라 단정할 수는 없다(대법원 2018다251486). 사용자 귀책의 경영상 필요로 개별 근로자에게 대기발령을 한 경우 휴업수당 지급 문제가 별도로 붙을 수 있다(대법원 2012다12870). 대표가 정할 것은 발령 여부가 아니라 근거·불이익 최소화·기간과 출구전략이다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      임도현은 전동 차량 운영 사업을 하는 대표다. <b>조직 정비를 이유로 일부 직원에게 대기발령이 먼저 내려졌고, 그는 인사권 행사라는 이유만으로 충분하다고 보지 않았다.</b> 왜 대기발령이 필요한지, 직원에게 어떤 불이익이 생기는지, 그 부담이 회사에 어떻게 돌아올지부터 나눠 보기로 했다. 조직개편안, 감사자료, 인사 결정 경위를 한 묶음으로 놓고 대기발령이 정말 부득이한 조치인지부터 보게 했다. 겉으로는 조직 정비처럼 보여도, 왜 그 조치가 필요한지는 따로 남아 있어야 한다고 생각했다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, <b>휴업수당 리스크</b>다. 경영상 필요에 의한 대기발령은 휴업수당 리스크를 수반하므로 누구의 귀책인지부터 구조화해야 한다. 근로기준법 제46조가 이 지점과 연결된다. 대기발령 자체를 금지하는 조문이라기보다, 귀책에 따라 임금 보전 문제가 붙을 수 있다는 점으로 읽어야 한다.</p>
+    <p>둘째, <b>정당성의 종합 판단</b>이다. 대기발령이 정당한 인사권 범위 안에 있는지는 여러 사정을 종합해 판단한다. 근로자 본인과 성실한 협의절차를 거치지 않았다는 사정만으로 권리남용에 해당해 당연히 무효가 된다고 보기는 어렵다. 대법원 2018다251486 판결이 이 지점을 다룬다. 협의 누락 하나를 곧바로 무효 사유로 단정하지 않는다.</p>
+    <p>셋째, <b>귀책의 방향</b>이다. 사용자가 자신의 귀책사유에 해당하는 경영상 필요로 개별 근로자에게 대기발령을 한 경우, 근로자들에게 휴업수당을 지급해야 하는지가 문제될 수 있다. 대법원 2012다12870 판결은 이 문제를 다룬다. 경영상 필요가 회사 쪽에서 비롯된 사정이 인정될 때의 임금 문제까지 함께 봐야 한다.</p>
+    <div class="callout">
+      <b>협의가 없었다는 사실 하나로 결론이 나지 않는다.</b> 그 대신 근거·불이익 최소화·기간이 함께 있어야 정당화된다. 대기발령이 업무상 필요로 시작됐더라도 목적이 흐려지면 정당화하기가 어려워진다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>놓치기 쉬운 조건과 예외</h2>
+    <p><b>근거</b>가 필요하다. 조직개편안, 감사자료처럼 업무상 필요성의 구체적 근거가 남아 있어야 한다. 설명만으로는 충분하지 않다. <b>불이익 최소화</b> 방안도 함께 봐야 한다. 임금 보전, 대체업무 배치처럼 피해를 줄일 방법이 있는지 확인한다.</p>
+    <p><b>사전 설명·협의</b>도 중요하다. 다만 협의가 없었다는 사실만으로 곧바로 무효로 연결되지는 않고, 여러 사정을 함께 본다. <b>장기화</b>는 위험 신호다. 수개월 이상 이어지면 그 자체로 무효 위험이 커질 수 있다.</p>
+    <ul class="points">
+      <li>귀책 구조화는 선택이 아니라 출발점이다. 경영상 필요의 성격, 회사 책임 여부, 직원에게 미칠 영향을 나눠 본다.</li>
+      <li>예상 기간, 중간 점검 기준, 직무복귀나 전보 같은 출구전략을 미리 정해 둔다.</li>
+      <li>이유가 무엇인지, 언제까지 이어질 수 있는지, 언제 끝낼 것인지를 함께 남긴다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>문서화, 귀책, 장기화 방지를 함께 본다.</b> 임도현이 세운 순서는 다음과 같다.</p>
+      <ol>
+        <li><b>① 필요성을 본다</b> — 업무상 필요성의 구체적 근거를 확인한다.</li>
+        <li><b>② 근거를 본다</b> — 조직개편안, 감사자료 등 확인 가능한 자료가 있는지 본다.</li>
+        <li><b>③ 불이익을 본다</b> — 임금 보전, 대체업무 등 최소화 방안을 확인한다.</li>
+        <li><b>④ 절차를 본다</b> — 사전 설명과 협의 절차가 있었는지 확인한다.</li>
+        <li><b>⑤ 협의만 보지는 않는다</b> — 협의 누락만으로 당연 무효라 단정하지 않는다(대법원 2018다251486).</li>
+        <li><b>⑥ 귀책을 본다</b> — 경영상 필요가 누구에게 귀속되는지 구조화한다.</li>
+        <li><b>⑦ 휴업수당을 본다</b> — 사용자 귀책 경영상 필요라면 임금 문제가 붙을 수 있다(근로기준법 제46조).</li>
+        <li><b>⑧ 임금 문제를 본다</b> — 휴업수당 지급 여부가 별도로 검토될 수 있다(대법원 2012다12870).</li>
+        <li><b>⑨ 기간을 본다</b> — 예상 기간과 중간 점검 기준을 정한다.</li>
+        <li><b>⑩ 장기화를 본다</b> — 수개월 이상 유지 시 무효 위험이 커질 수 있음을 본다.</li>
+        <li><b>⑪ 출구전략을 본다</b> — 직무복귀, 전보 등 복귀 계획을 미리 정한다.</li>
+        <li><b>⑫ 문서를 본다</b> — 필요성과 불이익 최소화 방안을 패키지로 남긴다.</li>
+        <li><b>⑬ 시점을 본다</b> — 발령 시점, 사유 명시 여부, 통지 방식을 확인한다.</li>
+        <li><b>⑭ 비교형량을 본다</b> — 업무상 필요와 생활상 불이익을 함께 본다.</li>
+        <li><b>⑮ 직무를 본다</b> — 직무 수행 가능 여부, 대체 업무 가능성을 확인한다.</li>
+        <li><b>⑯ 복귀를 본다</b> — 복귀 조건과 복귀 시점을 정리한다.</li>
+        <li><b>⑰ 자료를 본다</b> — 필요한 경우 감사자료, 인사자료를 대조한다.</li>
+        <li><b>⑱ 개별성을 본다</b> — 개별 직원에게 미치는 영향을 따로 본다.</li>
+        <li><b>⑲ 기록을 본다</b> — 협의 내용과 통지 내용을 남겨 둔다.</li>
+        <li><b>⑳ 판단을 미룬다</b> — 단정하기 어려운 부분은 추정으로 채우지 않는다.</li>
+        <li><b>㉑ 종합한다</b> — 필요성, 불이익, 절차, 장기화를 함께 본다.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;">임도현은 대기발령의 근거를 문서로 남기게 했다. 업무상 필요성을 추상적으로 적지 않고 조직개편안이나 감사자료처럼 확인 가능한 근거를 붙이게 했다. 협의 절차를 형식적 통지로 끝내지 않게 했고, 장기화 위험을 미리 보게 했다. 휴업수당 문제도 나중으로 미루지 않게 했다. <b>이유와 절차, 복귀 계획을 함께 남기게 한 것</b>이 그의 결정이었다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
