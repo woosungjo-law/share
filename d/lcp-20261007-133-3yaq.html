@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>공동채무 정산, '함께'라는 말이 아니라 유형으로 가른다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 공동채무와 내부정산</div>
+    <h1>공동채무 정산, '함께'라는 말이 아니라 유형으로 가른다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> <b>'공동채무'</b>라는 문구는 <b>법적 유형을 정해주지 않습니다</b>. <b>특약이 없으면 균등 비율의 분할채무로 추정</b>되고(<b>민법 제408조</b>), <b>연대채무로 묶으려면 그 취지를 문서에 적어야</b> 합니다(<b>제409조</b>). 그리고 <b>한 사람에 대한 채무면제는 그 사람의 부담부분에 한하여</b> 다른 연대채무자의 이익을 위해 효력이 있습니다(<b>제419조</b>). <b>청구 상대와 내부 정산이 유형에 따라 완전히 달라집니다.</b>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>더치페이</b>와 같습니다. <b>'같이 내자'</b>고 했을 때, <b>각자 자기 몫만 내는 것</b>과 <b>아무나 전액을 내고 나중에 나눠 받는 것</b>은 전혀 다릅니다. 그리고 <b>한 명 몫을 면제해 줬다면</b>, <b>나머지 사람들이 그 몫까지 떠안는 것</b>이 아니라 <b>면제된 사람 몫만큼만</b> 정리됩니다. <b>말이 아니라 약속이 유형을 정합니다.</b>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+        <p>첫째, <b>분할채무가 원칙</b>입니다. <b>특약이 없으면 수인의 채무자는 균등한 비율로 분담하는 분할채무로 추정</b>됩니다(<b>제408조</b>). <b>각 채무자는 자기 분담분에 대해서만 책임</b>을 지고, <b>채권자도 각자에게 자기 몫만 청구</b>할 수 있습니다. <b>반대로 말하면 연대채무로 하려면 문서에 적어야</b> 합니다. 그래서 <b>계약서에서 연대 문구를 먼저 확인</b>해야 합니다. <b>없으면 분할로 추정됩니다.</b></p>
+    <p>둘째, <b>연대채무의 효과</b>입니다. <b>각 연대채무자가 전액에 대해 책임</b>을 지고, <b>채권자는 누구에게든 전액 또는 일부를 청구</b>할 수 있습니다(<b>제409조 이하</b>). <b>한 사람이 갚으면 채권은 그 범위에서 소멸</b>합니다. <b>채권자에게는 회수하기 쉬운 구조</b>이고, <b>채무자 사이에서는 정산을 미리 정해 둬야 하는 구조</b>입니다. <b>같은 문서라도 어느 쪽에 서 있느냐로 유리함이 뒤집힙니다.</b></p>
+    <p>셋째, <b>불가분채무의 별도 축</b>입니다. <b>급부의 성질이 나눌 수 없는 경우</b>에 성립하고, <b>특정 물건의 인도</b>가 대표적입니다(<b>제409조</b>). 이때는 <b>각 채무자가 전부 이행 책임</b>을 집니다 — <b>물건은 쪼개어 넘길 수 없기 때문</b>입니다. 그래서 <b>금전 채무인지 물건 인도 채무인지</b>가 유형 판단의 첫 갈림길이 됩니다. <b>금액만 보고 분할로 단정하면 틀립니다.</b></p>
+    <p>넷째, <b>면제와 부담부분</b>입니다. <b>어느 연대채무자에 대한 채무면제는 그 채무자의 부담부분에 한하여 다른 연대채무자의 이익을 위해 효력</b>이 있습니다(<b>제419조</b>). <b>면제가 나머지 몫까지 지우지는 않습니다.</b> 그리고 <b>내부 정산은 부담부분을 기준</b>으로 하고, <b>정한 적이 없으면 균등</b>으로 봅니다(<b>제408조</b>). <b>먼저 갚은 채무자는 자기 부담부분을 넘긴 범위</b>로 정산을 요구합니다. <b>부담부분과 실제 갚은 금액을 나란히 적어 두면 다툼이 줄어듭니다.</b></p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>분할추정·연대특약·불가분성질·면제범위·부담부분·초과분계산이 갈림길이다</h2>
+    <ul class="points">
+      <li><b>분할 추정</b> — <b>특약이 없으면 균등 분할</b>로 추정됨을 전제로 삼습니다.</li>
+      <li><b>연대 문구</b> — 계약서에 <b>연대</b>라는 취지가 적혀 있는지 확인합니다.</li>
+      <li><b>급부 성질</b> — <b>금전인지 물건 인도인지</b>를 먼저 가립니다.</li>
+      <li><b>면제 범위</b> — <b>부담부분 한정 효력</b>을 확인합니다. 전액 면제가 아닙니다.</li>
+      <li><b>부담부분</b> — <b>합의가 있는지</b>, 없으면 <b>균등</b>임을 표시합니다.</li>
+      <li><b>초과분</b> — <b>갚은 금액 − 부담부분</b>을 계산해 정산 청구 범위를 정합니다.</li>
+    </ul>
+    <div class="callout"><b>계약서에서 '연대'라는 단어를 검색하세요.</b> 없으면 <b>분할채무로 추정</b>되고, <b>전액을 청구받을 이유가 약해집니다</b>. 표를 <b>유형 / 부담부분 / 실제 지급액 / 초과분</b> 네 칸으로 만드세요. 네 번째 칸이 <b>정산 청구의 숫자</b>입니다. 그리고 <b>면제가 있었다면 그 범위를 부담부분 기준으로</b> 계산하세요 — <b>전액이 지워진다고 착각하면 나머지 사람에게 청구할 돈을 놓칩니다</b>. 마지막으로 <b>정산 요구는 서면으로</b> 남기세요.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">유형·부담·면제를 한 표로 묶는 여섯 단계입니다. 표의 행 이름은 바꾸지 않습니다.</p>
+    <ol>
+      <li><b>① 분할 추정</b> — 민법 제408조의 구조로 특약 없는 균등 분담 추정을 확인합니다.</li>
+      <li><b>② 연대 특약</b> — 제409조의 구조로 전액 책임과 청구 상대를 확인합니다.</li>
+      <li><b>③ 불가분 성질</b> — 급부의 성질이 나눌 수 없는지, 전부 이행 책임인지 확인합니다.</li>
+      <li><b>④ 면제 범위</b> — 제419조의 구조로 부담부분 한정 효력을 확인합니다.</li>
+      <li><b>⑤ 부담부분</b> — 부담 비율 합의 유무를 확인하고, 없으면 균등으로 표시합니다.</li>
+      <li><b>⑥ 초과분·기록</b> — 갚은 금액에서 부담부분을 뺀 초과분을 계산하고 정산 요구를 서면으로 남깁니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
