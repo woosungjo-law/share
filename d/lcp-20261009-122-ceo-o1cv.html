@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>하자가 있으면 일단 책임이고 매수인의 소홀은 금액에서 본다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>하자가 있으면 일단 책임이고 매수인의 소홀은 금액에서 본다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 하자담보책임은 매도인의 과실을 요구하지 않는 무과실책임이다(민법 제580조). 잘못했는지를 묻지 않고 하자가 있었는지를 묻는다. 다만 매수인에게 하자 발생이나 확대에 기여한 과실이 있으면 과실상계로 배상액을 줄일 수 있는지가 별도 쟁점이고(민법 제396조·제763조), 판례도 금액 산정 단계에서의 참작을 인정한다. <b>성립에서는 과실을 묻지 않지만, 금액에서는 과실을 본다.</b>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>사건의 시작: 전문가가 꼼꼼히 보지 않았다</h2>
+    <div class="analogy">
+      두빛하우징의 대표 유지안은 상가 매매의 하자 분쟁 보고를 받았다. 매수인은 부동산 전문가였는데 인수 전에 하자를 꼼꼼히 보지 않았고, 뒤늦게 배상을 청구했다. 매도인 측은 전문가의 소홀을 이유로 깎아야 한다고 했다. <b>그가 미룬 결정은 누구 잘못인가가 아니라, 하자의 존재가 먼저고 매수인의 소홀은 금액의 문제라는 판단이었다.</b> 하자가 있는지, 매수인이 기여했는지, 얼마를 분담할지 — 세 가지가 문서로 나오기 전에는 확정하지 않는다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 보는 핵심: 성립과 금액을 나눈다</h2>
+    <p>첫째, <b>성립</b>이다. 하자담보책임은 매도인의 과실을 요구하지 않는 무과실책임이다(민법 제580조). 존재가 서야 책임이 선다.</p>
+    <p>둘째, <b>기여</b>다. 매수인에게도 하자 발생이나 확대에 기여한 과실이 있으면 과실상계로 배상액을 줄일 수 있는지가 핵심 쟁점이다(민법 제396조·제763조). 기여의 정도가 서야 분담의 말이 선다.</p>
+    <p>셋째, <b>단계의 분리</b>다. 무과실책임이지만 손해배상액의 산정 단계에서 과실상계가 적용될 수 있다는 것이 판례의 입장이다(민법 제396조). 단계를 섞으면 방어가 흐려진다.</p>
+    <p>넷째, <b>참작의 기준</b>이다. 전문성과 확인 가능성, 발견 용이성을 함께 본다. <b>전문가라는 사실만으로 깎는 것이 아니라 기여를 본다.</b></p>
+    <div class="callout">
+      <b>성립과 금액은 다른 문이다.</b> 성립에서 과실을 꺼내면 무과실책임이라는 말이 흔들리고, 금액에서 과실을 빼면 방어의 근거가 사라진다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>놓치기 쉬운 조건과 예외</h2>
+    <p><b>하자의 존재와 목적과의 관계</b>를 먼저 본다. 그다음 매수인의 전문성과 확인 기록을 함께 본다.</p>
+    <ul class="points">
+      <li>기여의 정도와 참작의 범위를 기록으로 묶는다.</li>
+      <li>발견 뒤 방치 기간을 묻는다.</li>
+      <li>인수 전의 확인 기회를 본다.</li>
+      <li>숨긴 하자와 보인 하자를 나눈다.</li>
+    </ul>
+    <p>예외를 말하기 전에 기록을 먼저 갖춘다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>단정적인 금액을 먼저 듣지 않는다.</b> 한 묶음으로 보고받을 것은 다음과 같다.</p>
+      <ol>
+        <li><b>① 하자의 기록</b> — 존재를 확정하고 민법 제580조의 성립 요건을 갖췄는지 본다.</li>
+        <li><b>② 성립 검토표</b> — 성립과 금액의 단계를 분리해 정리한다.</li>
+        <li><b>③ 확인 기록</b> — 매수인의 기여와 인수 전 확인 기회를 문서로 묶는다.</li>
+        <li><b>④ 금액 검토표</b> — 보수 비용, 가치 하락분, 확대 손해를 다른 줄에 적는다.</li>
+        <li><b>⑤ 기여율</b> — 따로 정하고, 어느 항목에 미치는지를 함께 본다(민법 제396조·제763조).</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;">발견 뒤에 방치한 기간의 손해는 분리한다 — 알았으면서 두어서 커진 부분은 기여의 무게가 달라진다. 기회를 주고도 보지 않은 소홀과 기회를 주지 않은 채 숨긴 하자도 무게가 다르므로, 숨긴 쪽의 책임은 무겁게 보고 보인 쪽의 소홀도 가볍게 보지 않는다. 수선의 기회와 비용을 함께 보고, <b>인수 확인 절차의 표준을 손본다.</b></p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
