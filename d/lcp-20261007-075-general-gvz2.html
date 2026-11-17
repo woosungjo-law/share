@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>담합 피해, 계약이 무효인지 손해배상인지 나눠 봐야 한다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 담합과 계약 효력</div>
+    <h1>담합 피해, 계약이 무효인지 손해배상인지 나눠 봐야 한다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> <b>담합을 약정한 계약</b>과 <b>내가 맺은 거래계약</b>은 다릅니다. <b>공정거래법 제40조</b>는 <b>부당한 공동행위를 약정하는 계약이 사업자 상호 간에 무효</b>라고 정합니다. 그러나 <b>그 담합으로 체결된 대외적 거래계약이 곧바로 무효가 되는 것은 아니고</b>, <b>민법 제103조</b>에 따라 <b>반사회질서의 법률행위인지를 개별적으로 판단</b>해야 합니다. 피해를 되돌리는 길은 주로 <b>손해배상</b>(<b>공정거래법 제109조</b>)입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>가게들이 가격을 짜고 치는 약속을 했다고 해서, 그 가게에서 물건을 산 손님의 영수증까지 무효가 되는 것</b>은 아닙니다. 짜고 친 약속은 그들 사이에서 효력이 없고, <b>내 거래는 별도로 따져야</b> 합니다. 그래서 "무효다"와 "배상받는다"는 <b>서로 다른 문</b>입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>먼저 <b>약정의 무효</b>입니다. <b>공정거래법 제40조</b>는 <b>부당한 공동행위를 약정하는 계약이 사업자 상호 간에 무효</b>라고 정합니다. <b>담합 자체를 약정한 계약이 효력이 없다</b>는 뜻입니다.</p>
+    <p>다음은 <b>내 계약</b>입니다. <b>그 담합으로 체결된 대외적 거래계약이 곧바로 무효가 되는 것은 아니고, 민법 제103조에 따라 반사회질서의 법률행위인지를 개별적으로 판단</b>해야 합니다. 그래서 <b>내가 맺은 계약이 무효인지는 계약의 내용과 사정을 따로 따져야 합니다.</b></p>
+    <p>마지막은 <b>배상 경로</b>입니다. <b>피해를 되돌리는 길은 주로 손해배상</b>입니다. <b>공정거래법 제109조</b>가 그 근거가 됩니다. <b>무효를 주장하는 것과 배상을 청구하는 것은 목적과 요건이 다르므로, 둘을 구분해 접근</b>해야 합니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>입증이 관건이다</h2>
+    <ul class="points">
+      <li><b>① 입증책임</b> — 손해배상은 청구하는 사람이 손해와 인과관계를 입증해야 합니다.</li>
+      <li><b>② 손해액 산정</b> — 손해액이 어떻게 산정되는지도 다툼이 됩니다. 가격이 얼마나 높았는지, 시장 상황이 어땠는지를 함께 봐야 합니다.</li>
+      <li><b>③ 교섭상 신뢰</b> — 계약 교섭 과정에서 정당한 신뢰를 침해당한 경우에는 불법행위가 문제될 수도 있습니다.</li>
+      <li><b>④ 판례</b> — 대법원은 교섭 과정의 신뢰를 침해해 손해를 입힌 경우 불법행위가 성립할 수 있고, 계약 성립을 기대하고 지출한 비용이 배상 범위에 포함될 수 있다고 보았습니다.</li>
+      <li><b>⑤ 기록</b> — 당시의 가격표와 견적, 거래 명세가 근거가 됩니다. 기록을 날짜별로 정리해 두는 편이 낫습니다.</li>
+      <li><b>⑥ 경로 선택</b> — 무효와 배상 중 어느 쪽이 유리한지는 사안에 따라 다릅니다. 계약을 계속 이행하는 편이 나을 수도 있습니다.</li>
+      <li><b>⑦ 비교</b> — 두 경로를 함께 놓고 이익과 비용을 비교하는 편이 좋습니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> "무효다"는 말이 <b>이행을 멈춰도 된다는 뜻은 아닙니다.</b> 무효를 주장할 부분과 배상을 청구할 부분을 <b>나눠</b> 준비하십시오.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;">계약서와 영수증, 거래 기록을 <b>날짜 순서로 정리</b>하고, 무효를 주장할 부분과 배상을 청구할 부분을 나눠 적으십시오.</p>
+    <ol>
+      <li><b>① 약정 무효 이해</b> — 담합을 약정한 계약은 사업자 간 무효다(공정거래법 제40조).</li>
+      <li><b>② 내 계약 따로 보기</b> — 대외 계약은 반사회질서 여부를 개별로 판단한다(민법 제103조).</li>
+      <li><b>③ 배상 경로 확인</b> — 피해구제는 손해배상이 중심임을 알고 자료를 준비한다(공정거래법 제109조).</li>
+      <li><b>④ 기록 남기기</b> — 계약서와 거래 기록, 지출 증빙을 정리해 둔다.</li>
+      <li><b>⑤ 손해액 근거</b> — 당시 가격과 거래 명세를 정리해 배상 범위를 가늠한다.</li>
+      <li><b>⑥ 두 경로 비교</b> — 무효 주장과 배상 청구 중 어느 쪽이 유리한지 비용과 함께 따진다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
