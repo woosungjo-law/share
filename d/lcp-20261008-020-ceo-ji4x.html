@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동해지 조항은 중단의 근거이지 중단의 명령이 아니다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>자동해지 조항은 중단의 근거이지 중단의 명령이 아니다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 채무자 회생 및 파산에 관한 법률 제121조는 회생절차개시를 이유로 한 해지와 해제가 효력이 없다고 정한다. 조항이 있어도 법이 그 효과를 막을 수 있다. 효력은 계약 유형과 쌍방미이행 쌍무계약 해당 여부에 따라 결정되고(같은 법 제119조), 도산해지조항을 일률적으로 무효로 보는 것도 아니다(대법원 2005다38263). 관리인이 개시 후 계약을 이행한 경우에는 조항이 소멸한다(대법원 2022다211850). 대표가 정할 것은 끊을지 여부가 아니라 확인 순서와 중단 단계다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      민경원은 온새미로파트너스의 대표다. <b>주거래 협력사가 회생절차개시신청을 냈다는 보고가 올라오자, 경영진 회의에서 그날로 발주를 멈추자는 요구가 나왔고, 계약서에는 도산 신청 시 자동해지 조항이 적혀 있었다.</b> 민경원은 문구 하나로 하루 아침에 관계를 끊는 판단을 하지 않기로 했다. 조항이 언제 힘을 발휘하는지, 끊었을 때 우리가 무엇을 잃는지를 먼저 물었다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, <b>법이 조항의 효과를 조정한다</b>. 채무자 회생 및 파산에 관한 법률 제121조는 회생절차개시를 이유로 한 해지와 해제가 효력이 없다고 정한다. 조항이 있어도 법이 그 효과를 막을 수 있다.</p>
+    <p>둘째, <b>계약 유형이 답을 가른다</b>. 효력은 계약 유형과 쌍방미이행 쌍무계약 해당 여부에 따라 결정된다(같은 법 제119조). 어떤 계약이냐에 따라 답이 갈리므로, 지금 우리 계약이 어디에 있는지가 먼저다.</p>
+    <p>셋째, <b>일률적 무효는 아니다</b>. 우리 법은 도산해지조항을 일률적으로 무효로 보지 않는다(대법원 2005다38263). 조항이 쓸모없다는 뜻이 아니라, 개별 계약의 내용과 상황을 봐야 한다는 뜻이다.</p>
+    <p>넷째, <b>이행이 조항을 소멸시킨다</b>. 관리인이 개시 후 계약을 이행한 경우에는 도산해지조항이 소멸한다(대법원 2022다211850). 상대가 이행을 계속하는지가 관계 유지의 판단 재료가 된다.</p>
+    <div class="callout">
+      <b>질문의 순서가 감정이 개입할 자리를 줄인다.</b> 먼저 조항이 어디에 붙는지, 다음으로 상대의 이행이 있었는지, 마지막으로 우리가 무엇을 잃는지를 본다. 효력 없는 통보는 협상의 카드를 먼저 버리는 일이다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>놓치기 쉬운 조건과 예외</h2>
+    <p><b>근거</b>가 조건이다. 지금 거래를 멈춘다면 그 근거가 무엇인지 적어야 한다. 조항뿐 아니라 미이행 상태와 담보 여부까지 함께 본다. <b>이행</b>도 조건이다. 상대가 계속 이행하고 있다면 우리가 먼저 끊는 판단의 무게가 달라진다.</p>
+    <p><b>비용</b>이 조건이다. 갑작스러운 중단이 조달 비용과 위약 금액을 불러오는지 계산해야 한다. <b>관계</b>도 조건이다. 오래 거래해 온 상대라면 끊는 대안으로 조건을 붙이는 협상이 남을 수 있다.</p>
+    <ul class="points">
+      <li>법무의 확인 전에 통보가 나가지 않게 한다.</li>
+      <li>확인에 며칠이 걸리는지, 그 사이 공급이 멈추면 무엇이 멈추는지를 한 장에 적는다.</li>
+      <li>조항의 유형, 이행 여부, 법의 제한을 각각 한 줄씩 회의록에 남긴다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>중단 기준을 세 단계로 나눈다.</b> 민경원이 세운 순서는 다음과 같다.</p>
+      <ol>
+        <li><b>① 시점을 본다</b> — 회생절차개시 신청과 결정 시점을 확인한다.</li>
+        <li><b>② 조항을 본다</b> — 자동해지 조항의 문구를 확인한다.</li>
+        <li><b>③ 효력을 본다</b> — 개시를 이유로 한 해지의 무효를 이해한다(채무자 회생 및 파산에 관한 법률 제121조).</li>
+        <li><b>④ 유형을 본다</b> — 계약 유형을 나눈다.</li>
+        <li><b>⑤ 쌍무를 본다</b> — 쌍방미이행 해당 여부를 확인한다(채무자 회생 및 파산에 관한 법률 제119조).</li>
+        <li><b>⑥ 방향을 본다</b> — 일률적 무효가 아님을 기억한다(대법원 2005다38263).</li>
+        <li><b>⑦ 이행을 본다</b> — 개시 후 이행 여부를 확인한다(대법원 2022다211850).</li>
+        <li><b>⑧ 단계를 본다</b> — 중단 기준을 세 단계로 나눈다.</li>
+        <li><b>⑨ 통보를 본다</b> — 법무 확인 전 통보를 막는다.</li>
+        <li><b>⑩ 비용을 본다</b> — 중단의 비용을 계산한다.</li>
+        <li><b>⑪ 기록을 본다</b> — 결정의 근거를 회의록에 남긴다.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;">민경원은 중단 기준을 세 단계로 적었다. 첫째는 발주량 조정, 둘째는 신규 발주 보류, 셋째는 계약 종료 통보다. 어느 단계까지 갈지는 확인된 사실이 정한다. 대체 조달의 시한을 정하고, 거래 중단 시의 공급 대안을 목록으로 만들었다. <b>결정의 근거와 보류의 사유를 한 장에 적어 다음 회의에서 같은 논쟁을 반복하지 않게 한 것</b>이 그의 결정이었다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
