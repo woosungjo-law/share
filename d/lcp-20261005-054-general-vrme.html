@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>기준이 있어도, 그 기준이 무엇을 정하는지는 따로 확인해야 한다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 소비자분쟁해결기준의 성격과 활용</div>
+    <h1>기준이 있어도, 그 기준이 무엇을 정하는지는 따로 확인해야 한다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> <b>소비자분쟁해결기준은 접수와 협의에서 가장 자주 쓰이는 실무 기준이지만, 판결처럼 그 자체로 구속력이 생기는 것은 아닙니다.</b> 근거는 <b>소비자기본법 제16조</b>에 있고, <b>청약철회나 표시광고 같은 개별 사안은 전자상거래법 제17조</b>처럼 <b>따로 조문을 확인해야 합니다.</b> <b>그래서 기준의 이름과 근거 조문, 품목별 세부 기준을 함께 확인하지 않으면 담당자마다 답이 달라질 수 있습니다.</b>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>같은 접수 창구에서 서로 다른 두 말을 들은 소비자</b>를 떠올려 보십시오. 하윤슬은 <b>기준이 있다</b>는 말과 <b>그 기준이 판결처럼 효력이 있는 것은 아니다</b>는 말을 함께 들었습니다. 그래서 <b>어느 쪽이 맞는지 적어 두고, 무엇을 기준으로 삼았는지 이름과 품목을 물었습니다.</b> <b>기준의 이름이 보이지 않으면 확인도 시작되지 않기 때문</b>입니다. 그는 <b>들은 말을 그대로, 언제 나온 말인지와 함께</b> 메모에 옮겨 적었습니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, <b>실무적 지위</b>입니다. <b>소비자분쟁해결기준은 연간 수만 건의 소비자 분쟁에서 실무적으로 가장 중요한 기준으로 활용</b>됩니다. <b>한국소비자원의 2025년 접수 기준만 해도 7만여 건</b>에 이르므로, 접수와 협의에서 자주 마주치게 됩니다. 근거 조항으로 보면 <b>소비자기본법 제16조</b>를 보면 됩니다.</p>
+    <p>둘째, <b>통합 분석의 부재</b>입니다. <b>그 기준의 법적 성격, 권고적 효력의 한계, 품목별 세부 기준, 조정과 소송과의 관계를 한 장에서 볼 수 있는 분석이 부족</b>합니다. <b>그래서 담당자마다 답이 달라질 수 있습니다.</b></p>
+    <p>셋째, <b>기존 자료의 초점</b>입니다. <b>기존 자료는 청약철회, 표시광고, 할부거래 같은 개별 법령에 초점</b>이 맞춰져 있어 기준 자체를 깊이 다룬 것이 없습니다(<b>전자상거래법 제17조</b> 같은 개별 법령을 다루는 쪽). <b>기준과 개별 법령을 따로 확인해야 하는 이유입니다.</b></p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>이름·품목·단계·금액·기록이 답을 가른다</h2>
+    <ul class="points">
+      <li><b>첫째, 이름을 가릅니다</b> — <b>어떤 기준을 적용했는지 이름과 근거 조문</b>을 물어 봅니다. <b>이름이 없으면 무엇과 다른지도 말할 수 없습니다.</b></li>
+      <li><b>둘째, 품목을 가릅니다</b> — <b>같은 사고 유형이라도 품목별 세부 기준이 다릅니다.</b> 무엇을 기준으로 삼았는지 품목까지 확인합니다.</li>
+      <li><b>셋째, 단계를 가릅니다</b> — <b>접수와 협의, 조정, 소송에서 준비물이 다릅니다.</b> 지금 어느 단계인지부터 봅니다.</li>
+      <li><b>넷째, 금액을 가릅니다</b> — <b>얼마를 얼마로 산정했는지 근거와 함께</b> 적어 두지 않으면 나중에 다시 설명해야 합니다.</li>
+      <li><b>다섯째, 기록을 가릅니다</b> — <b>누가 언제 무엇을 말했는지</b> 메모로 남깁니다. <b>같은 창구에서 두 가지 말이 나온 이상, 들은 말을 남기는 일이 중요합니다.</b></li>
+    </ul>
+    <div class="callout"><b>핵심.</b> <b>소비자분쟁해결기준은 실무의 중심 기준이지만 그 자체로 판결과 같은 효력이 있는 것은 아니고, 개별 사안은 개별 법령을 따로 봐야 합니다.</b> <b>그래서 적용 기준의 이름과 근거 조문, 품목, 단계가 특정되어야 답이 흔들리지 않습니다.</b> <b>이름을 묻고, 품목을 적고, 단계와 금액 근거를 확인하고, 통화를 기록하는 순서</b>가 섭니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;">먼저 <b>적용 기준의 이름과 근거 조항</b>을 서면으로 요청하고, <b>어느 품목의 어떤 세부 기준</b>인지 적습니다. 이어서 <b>협의인지 조정인지, 단계별 제출물</b>을 목록으로 받고, <b>산정 금액의 항목별 근거 자료</b>를 요청한 뒤, 들은 말을 날짜·직원 이름과 함께 남깁니다.</p>
+    <ol>
+      <li><b>① 이름 확인</b> — 적용 기준의 이름과 근거 조항을 서면으로 요청한다.</li>
+      <li><b>② 품목 특정</b> — 어느 품목의 어떤 세부 기준인지 적어 둔다.</li>
+      <li><b>③ 단계 확인</b> — 협의인지 조정인지, 단계별 제출물을 목록으로 받는다.</li>
+      <li><b>④ 금액 근거</b> — 산정 금액의 항목별 근거 자료를 요청한다.</li>
+      <li><b>⑤ 통화 기록</b> — 들은 말을 날짜와 직원 이름과 함께 메모로 남긴다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
