@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>내 이름이 기사 댓글에 올랐다면, 보존·요구·기록을 순서대로 둡니다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 댓글 삭제요구와 임시조치</div>
+    <h1>내 이름이 기사 댓글에 올랐다면, 보존·요구·기록을 순서대로 둡니다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> 국내의 삭제요구권은 <b>일반적 권리라기보다 인격권·명예·사생활·개인정보자기결정권 침해의 구제와 정보통신망법상 삭제요청·임시조치 절차를 통해 구현</b>됩니다(<b>정보통신망법 제44조의3</b>). <b>포털이 기사를 보관하면서 스스로 일부를 선별해 게시한 경우에는 명예훼손에 대한 불법행위책임을 집니다</b>(<b>대법원 2008다53812</b> 판결). 다만 <b>구체적·개별적인 삭제·차단 요구를 받지 않아 구체적으로 인식하지 못했거나 기술적·경제적으로 관리·통제할 수 없는 경우에는 적절한 조치 의무를 부담하지 않는다고 원칙적으로 본 판례</b>가 있습니다(<b>대법원 2016다271608</b> 판결). <b>요구가 있어야 인식이 섭니다.</b>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>자사 기사 포털의 댓글에 자신을 겨냥한 글이 올라온 것을 발견한 사람</b>을 떠올려 보십시오. 화가 나지만 <b>무엇부터 해야 할지</b>가 문제입니다. 그래서 <b>댓글 전문과 기사 원문을 먼저 캡처하고, 삭제요청 시각과 포털 조치 시각을 적습니다.</b> <b>기록이 서면 요구할 것이 보입니다.</b>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, <b>삭제요구권의 실체</b>입니다. <b>국내의 삭제요구권은 일반적 권리라기보다 인격권·명예·사생활·개인정보자기결정권 침해의 구제와 정보통신망법상 삭제요청·임시조치 절차를 통해 구현됩니다</b>(<b>정보통신망법 제44조의3</b>).</p>
+    <p>둘째, <b>포털의 선별 책임</b>입니다. <b>대법원 2008다53812</b> 판결은 <b>포털이 기사를 보관하면서 스스로 일부를 선별해 게시한 경우 명예훼손에 대한 불법행위책임을 진다고 보았습니다.</b> <b>스스로 고른 순간 책임이 생깁니다.</b></p>
+    <p>셋째, <b>방치 책임의 한계</b>입니다. <b>대법원 2016다271608</b> 판결은 <b>구체적·개별적인 삭제·차단 요구를 받지 않아 구체적으로 인식하지 못했거나 기술적·경제적으로 관리·통제할 수 없는 경우, 적절한 조치 의무를 부담하지 않는다고 원칙적으로 보았습니다.</b> <b>요구가 있어야 인식이 서고, 그래서 요구의 방식과 시각이 다툼을 가릅니다.</b></p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>기록·요구·한계를 가릅니다</h2>
+    <ul class="points">
+      <li><b>첫째, 기록을 남깁니다</b> — <b>댓글 전문, 기사 원문, 삭제요청 시각, 포털 조치 시각을 캡처해 보존</b>합니다. <b>기록이 없으면 다툼이 길어집니다.</b></li>
+      <li><b>둘째, 요구의 방식을 갖춥니다</b> — <b>구체적·개별적으로 삭제·차단을 요구합니다.</b> <b>요구가 있어야 포털의 인식이 성립합니다.</b></li>
+      <li><b>셋째, 인식과 통제의 한계를 봅니다</b> — <b>포털이 알지 못했거나 기술적·경제적으로 통제할 수 없었다면 의무는 약해집니다.</b></li>
+      <li><b>넷째, 게시공간별로 나눕니다</b> — <b>책임은 개별 게시공간별로 포괄적으로 평가될 수 있으므로</b> 공간을 나누어 봅니다.</li>
+      <li><b>다섯째, 절차를 확인합니다</b> — <b>정보통신망법 제44조의3의 임시조치 구조는 확인 과제로 두고</b>, <b>단정하지 않고 확인합니다.</b></li>
+    </ul>
+    <div class="callout"><b>핵심.</b> <b>삭제요구는 정보통신망법상 삭제요청·임시조치 절차로 구현되고</b>(<b>정보통신망법 제44조의3</b>), <b>포털이 스스로 선별해 게시했다면 불법행위책임을 집니다</b>(<b>대법원 2008다53812</b> 판결). 반대로 <b>구체적 요구가 없어 인식하지 못했거나 통제할 수 없었다면 조치 의무를 지지 않습니다</b>(<b>대법원 2016다271608</b> 판결). <b>그래서 요구와 시각 기록이 핵심</b>입니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;">먼저 <b>댓글 전문과 기사 원문을 캡처</b>합니다. 다음으로 <b>포털에 삭제와 차단을 구체적으로 요청</b>합니다. 이어서 <b>요청 시각과 포털 조치 시각을 적습니다.</b> 그리고 <b>정보통신망법 제44조의3의 임시조치 구조를 확인 과제로</b> 두고, 마지막으로 <b>요구의 흔적을 한 장에 모아 상담</b>합니다.</p>
+    <ol>
+      <li><b>① 보존하기</b> — 댓글 전문과 기사 원문을 캡처한다.</li>
+      <li><b>② 요구하기</b> — 삭제와 차단을 구체적으로 요청한다.</li>
+      <li><b>③ 시각 적기</b> — 요청 시각과 포털 조치 시각을 적는다.</li>
+      <li><b>④ 공간 나누기</b> — 게시공간별로 나누어 본다.</li>
+      <li><b>⑤ 흔적 모으기</b> — 요구의 흔적을 한 장에 모아 상담받는다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
