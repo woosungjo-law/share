@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>우리 플랫폼이 '외관상 거래시장'으로 보이면</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 외관 시장 위험</div>
+    <h1>우리 플랫폼이 '외관상 거래시장'으로 보이면</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> <b>실제 매매가 없어도 시장으로 볼 수 있습니다.</b> 자본시장법 <b>제8조의2 제1항</b>은 <b>증권이나 장내파생상품의 매매를 하는 시장</b>을 다루면서, <b>매매가 실제로 이루어지는 시장뿐 아니라 "통상의 주의력을 가진 평균적인 시장 참여자들이 매매가 실제로 이루어진다고 인식할 만한 외관을 갖춘 시장"도 포함</b>합니다. <b>허위 투자 플랫폼이나 사설 거래 사이트는 외관의 구체성에 따라 무허가 금융투자상품시장 개설·운영죄로 처벌될 수</b> 있습니다(<b>제444조</b>).
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>간판만 보고 들어간 가게</b>와 같습니다. <b>문을 열어 보니 물건이 없다</b>고 해도, <b>간판·진열·계산대·직원 복장이 전부 정상 가게처럼 꾸며져 있었다면</b> 손님은 <b>"여긴 가게"</b>라고 인식합니다. 법은 <b>그 인식</b>을 봅니다. <b>"실제 거래는 없었다"</b>는 사실만으로 <b>책임이 사라지지 않습니다.</b>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, <b>외관 시장</b>입니다. <b>자본시장법 제8조의2 제1항</b>은 <b>매매가 실제로 이루어지는 시장뿐 아니라, 통상의 주의력을 가진 평균적인 시장 참여자들이 매매가 실제로 이루어진다고 인식할 만한 외관을 갖춘 시장도 포함</b>합니다. 그리고 <b>판례도 이 기준을 확인해 줍니다</b> — <b>대법원 2026도459</b>는 <b>금융투자상품시장에 외관을 갖춘 시장도 포함되고, 통상의 주의력을 가진 평균적인 시장 참여자의 인식을 기준으로 판단</b>한다고 봅니다.</p>
+    <p>둘째, <b>종합 판단</b>입니다. <b>외관은 화면 하나로 정해지지 않습니다.</b> <b>시장 명칭과 운영 방식, 거래 절차, 결제 방식, 광고 내용, 참여자 구성을 종합해 판단</b>합니다. <b>허위 투자 사이트를 개설하고 운영하는 행위도 이 종합 판단을 거쳐 시장 개설·운영으로 볼 수</b> 있습니다.</p>
+    <p>셋째, <b>제재</b>입니다. <b>자본시장법 제444조</b>가 <b>무허가 금융투자상품시장 개설·운영죄</b>를 규정합니다. <b>시장 개설·운영은 허가가 필요한 영역</b>이고, <b>우리가 받은 허가로 무엇까지 할 수 있는지가 먼저</b>입니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>외관 요소·종합 판단·허가 범위 — 셋이 조건</h2>
+    <ul class="points">
+      <li><b>외관 요소</b> — <b>명칭과 절차, 결제, 광고, 참여자 구성을 하나씩</b> 확인합니다.</li>
+      <li><b>종합 판단</b> — <b>한 요소만으로 결론이 나지 않고 전체 인상으로</b> 판단합니다.</li>
+      <li><b>허가 범위</b> — <b>받은 허가와 실제 운영이 어긋나면 위험이 커집니다.</b></li>
+      <li><b>기능</b> — <b>자동 주문이나 체결 표시 기능이 있으면 외관이 강해집니다.</b> <b>새 기능이 외관을 강화할 수 있으므로 기능이 바뀌면 다시 점검</b>합니다.</li>
+      <li><b>문구</b> — <b>거래소와 같은 표현을 쓰면 인식이 달라집니다.</b></li>
+      <li><b>인식 교육</b> — <b>외관이 문제가 된다는 점을 모르면 위험이 커집니다.</b></li>
+    </ul>
+    <div class="callout"><b>실제 거래의 부재가 곧 면책은 아닙니다.</b> 그 점을 오해하면 판단이 흔들립니다. 그래서 점검은 <b>화면 문구에서 시작해 기능까지</b> 이어서 봐야 하고, <b>문제가 되는 표현과 기능을 표시한 뒤 보완 방안</b>을 정해야 합니다. <b>보완 일정을 정하고 개선 결과를 다시 확인</b>하는 것까지가 한 세트입니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">외관·허가·제재를 한 표에 묶는 스물다섯 단계입니다.</p>
+    <ol>
+      <li><b>① 조항을 본다</b> — 금융투자상품시장 정의를 확인합니다(자본시장법 제8조의2).</li>
+      <li><b>② 외관을 본다</b> — 외관 포함 여부를 확인합니다(자본시장법 제8조의2).</li>
+      <li><b>③ 인식을 본다</b> — 평균적 시장 참여자 인식 기준을 확인합니다.</li>
+      <li><b>④ 명칭을 본다</b> — 시장 명칭 사용을 확인합니다.</li>
+      <li><b>⑤ 절차를 본다</b> — 거래 절차 구성을 확인합니다.</li>
+      <li><b>⑥ 결제를 본다</b> — 결제 방식 구성을 확인합니다.</li>
+      <li><b>⑦ 광고를 본다</b> — 광고 내용을 확인합니다.</li>
+      <li><b>⑧ 참여자를 본다</b> — 참여자 구성을 확인합니다.</li>
+      <li><b>⑨ 제재를 본다</b> — 무허가 개설·운영죄를 확인합니다(자본시장법 제444조).</li>
+      <li><b>⑩ 판례를 본다</b> — 외관 기준 판례를 확인합니다(대법원 2026도459).</li>
+      <li><b>⑪ 허가를 본다</b> — 허가 범위를 확인합니다.</li>
+      <li><b>⑫ 보완을 세운다</b> — 문제 기능의 보완 방안을 정합니다.</li>
+      <li><b>⑬ 기록을 남긴다</b> — 점검 결과를 문서로 남깁니다.</li>
+      <li><b>⑭ 재확인을 건다</b> — 기능 변경 시 재점검합니다.</li>
+      <li><b>⑮ 기능을 본다</b> — 체결·주문 표시 기능을 확인합니다.</li>
+      <li><b>⑯ 문구를 본다</b> — 마케팅 문구를 점검합니다.</li>
+      <li><b>⑰ 교육을 본다</b> — 임직원 인식 교육을 정합니다.</li>
+      <li><b>⑱ 보고를 한다</b> — 경영진에 결과를 보고합니다.</li>
+      <li><b>⑲ 일정을 정한다</b> — 보완 일정을 정합니다.</li>
+      <li><b>⑳ 외부 검토를 본다</b> — 필요 시 외부 검토를 받습니다.</li>
+      <li><b>㉑ 대응을 준비한다</b> — 지적 시 대응 자료를 만듭니다.</li>
+      <li><b>㉒ 점검을 남긴다</b> — 점검 기록을 남깁니다.</li>
+      <li><b>㉓ 재점검을 건다</b> — 기능 변경 시 다시 봅니다.</li>
+      <li><b>㉔ 외관을 낮춘다</b> — 표현과 기능을 조정합니다.</li>
+      <li><b>㉕ 개선을 확인한다</b> — 보완 결과를 확인합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
