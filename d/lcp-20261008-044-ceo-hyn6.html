@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>누가 수사하고 누가 기소하는지가 사건을 가른다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>누가 수사하고 누가 기소하는지가 사건을 가른다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 수사와 기소는 한 기관의 연속된 일이 아니라 두 주체 사이의 확인 절차다. 검사는 기소 여부 판단을 위해 사실관계를 확인할 수 있고(형사소송법 제245조의13), 구속영장 신청 사건의 면담도 가능하다(형소법 제201조 제7항). 경찰은 검사에게 법률 판단과 증거수집의 적절성 의견을 요청할 수 있고 검사는 특별한 사정이 없는 한 응한다(형소법 제195조 제3항). 회사가 읽어야 할 것은 결론이 아니라 이 요청과 응답의 흐름이다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      윤가람은 누리엔지니어링의 대표다. <b>회사 사건의 수사가 진행되면서 경찰의 수사와 검찰의 기소 판단이 어떤 관계로 움직이는지가 경영 회의의 안건이 됐다.</b> 외부 조력의 지표를 어떻게 읽을지가 질문이었다. 윤가람은 절차를 두 갈래로 봤다. 확인이 오가는 경로와, 그 경로에 남는 문서다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, <b>사실관계 확인</b>이다. 검사는 기소 여부 판단을 위해 사실관계를 확인할 수 있다. 형사소송법 제245조의13은 검사의 사실관계 확인을 정하고, 기소 여부 판단을 위한 의견 청취와 의견서 제출이 가능하며, 구속영장 신청 사건의 면담도 가능하다(형소법 제201조 제7항).</p>
+    <p>둘째, <b>의견 요청</b>이다. 경찰이 검사에게 법률 판단과 증거수집의 적절성 의견을 요청할 수 있고, 검사는 특별한 사정이 없는 한 응한다(형사소송법 제195조 제3항). 요청과 응답이 이뤄지는 순간이 어떤 신호인지가 여기서 갈린다.</p>
+    <p>셋째, <b>주체의 교체</b>다. 공소청은 해당 경찰관의 직무배제와 징계를 요구하거나, 상급 관서와 다른 수사기관을 지정할 수 있다(형사소송법 제197조의2 제7·8항). 수사의 주체가 바뀌는 신호가 제도로 마련돼 있다.</p>
+    <p>넷째, <b>회사의 몫</b>이다. 회사가 무엇을 말할 수 있는지는 법률 판단이 아니라 회사의 입장 정리에서 나온다. 절차를 읽는 일과 입장을 정하는 일은 서로 다른 작업이다.</p>
+    <div class="callout">
+      <b>사실관계 확인의 요청은 기소 판단이 움직였다는 신호로 읽힌다.</b> 무엇이 요청되고 무엇이 응되었는지가 문서로 남아야 사건의 흐름을 읽는다. 신호가 없으면 대응도 없다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>놓치기 쉬운 조건과 예외</h2>
+    <p><b>신호</b>가 조건이다. 사실관계 확인의 요청은 기소 판단이 움직였다는 신호로 읽힌다. <b>기록</b>도 조건이다. 무엇이 요청되고 무엇이 응되었는지가 문서로 남아야 사건의 흐름을 읽는다.</p>
+    <p><b>범위</b>가 조건이다. 회사가 무엇을 말할 수 있는지는 법률 판단이 아니라 회사의 입장 정리에서 나온다. <b>주체</b>도 조건이다. 어느 관서가 사건을 쥐고 있는지에 따라 요청의 경로도 답의 속도도 달라지고, 주체가 바뀌는 시점을 놓치면 보고가 뒤늦게 된다.</p>
+    <p><b>대응의 강도</b>가 조건이다. 절차의 신호가 하나일 때와 여러 개가 이어질 때의 대응이 같아서는 안 된다. 몇 번째 신호인지가 정중함과 단호함의 비율을 정한다.</p>
+    <ul class="points">
+      <li>법무 보고에 절차의 신호 항목을 넣는다. 어떤 확인이 요청되었고 어떤 의견이 제출되었는지를 한 줄로 받는다.</li>
+      <li>회사의 입장 문서를 하나로 모은다. 여러 사람이 각자 쓴 문서는 서로 어긋나기 쉽다.</li>
+      <li>대외 발언의 기준을 정한다. 확인되지 않은 사실은 말하지 않고, 말한 것은 문서로 남긴다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>보고의 형식으로 절차를 읽는다.</b> 윤가람이 세운 순서는 다음과 같다.</p>
+      <ol>
+        <li><b>① 주체를 본다</b> — 수사·기소 주체의 관계를 확인한다.</li>
+        <li><b>② 확인을 본다</b> — 검사의 사실관계 확인을 이해한다(형소법 제245조의13).</li>
+        <li><b>③ 면담을 본다</b> — 구속영장 신청 사건의 면담을 이해한다(형소법 제201조 제7항).</li>
+        <li><b>④ 요청을 본다</b> — 의견 요청·응답을 확인한다(형소법 제195조 제3항).</li>
+        <li><b>⑤ 공소청을 본다</b> — 직무배제·징계 요구를 이해한다(형소법 제197조의2 제7·8항).</li>
+        <li><b>⑥ 신호를 본다</b> — 절차의 움직임을 신호로 읽는다.</li>
+        <li><b>⑦ 보고를 본다</b> — 절차 신호 항목을 보고에 넣는다.</li>
+        <li><b>⑧ 문서를 모은다</b> — 입장 문서를 하나로 모은다.</li>
+        <li><b>⑨ 발언을 본다</b> — 대외 발언의 기준을 정한다.</li>
+        <li><b>⑩ 기록을 한다</b> — 말한 것은 문서로 남긴다.</li>
+        <li><b>⑪ 주체를 본다</b> — 담당 관서와 담당자의 변화를 보고받는다.</li>
+        <li><b>⑫ 범위를 정한다</b> — 자료 제출의 기한과 범위를 먼저 정한다.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;">그는 외부 전문가의 조언을 절차의 지표로 함께 읽게 했다. 절차가 어디서 움직이는지가 보여야 대응의 강도가 정해진다. 사건 보고에는 담당 관서와 담당 검사의 변화를 별도 항목으로 넣었다. 주체가 바뀌면 앞선 합의와 약속이 그대로 이어지지 않는 경우가 많기 때문이다. 회사 측 자료 제출의 기한과 범위는 먼저 정했다. <b>무엇을 언제까지 낼 수 있는지가 정해져 있어야 임직원이 혼자 답하지 않는다.</b> 대외 발언 한 번에도 담당자를 지정했고, 회의록에는 무엇을 알았고 무엇을 몰랐는지를 한 줄씩 남겼다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
