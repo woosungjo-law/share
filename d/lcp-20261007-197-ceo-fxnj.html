@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>소송에서 정보를 캐내는 두 가지 창구</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>소송에서 정보를 캐내는 두 가지 창구</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 상대 재산을 확인하는 길은 두 갈래다. 법원이 행정기관이나 공사단체 등에 필요한 조사를 촉탁하는 절차(민사소송법 제294조)와, 학식과 경험이 있는 제3자가 법원이 명하는 감정을 하는 절차(민사소송법 제334조)다. 둘 다 법원이 필요하다고 판단해야 실제로 이루어지므로, 대표가 정할 것은 무엇을 확인할지와 그 항목이 사실 확인인지 전문적 판단인지다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      신우철은 건축자재업체 대표다. <b>승소 판결을 받았는데도 상대가 돈을 주지 않았고, 재산이 있는지 확인하려 해도 방법을 몰랐다.</b> 신우철은 법원을 통해 무엇을 확인할 수 있고 비용이 얼마나 드는지 판단해야 했다. 그는 판결문과 집행 기록, 상대 재산 관련 자료를 확인하게 했고, 확인하고 싶은 항목을 목록으로 만들게 했다. 회수 예상액과 절차 비용도 함께 계산하게 했다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, <b>조사촉탁</b>이다. 법원은 필요한 조사를 다른 기관에 맡길 수 있다. 민사소송법 제294조는 법원이 행정기관이나 공사단체 등에 필요한 조사를 촉탁할 수 있다고 정한다. 그래서 당사자가 직접 확인하기 어려운 정보도 법원을 통해 확인할 수 있다.</p>
+    <p>둘째, <b>감정</b>이다. 민사소송법 제334조는 학식과 경험이 있는 제3자가 법원이 명하는 감정을 할 의무가 있다고 정한다. 금액 산정이나 전문적 판단이 필요한 항목이 여기에 해당한다.</p>
+    <p>셋째, <b>목적의 구분</b>이다. 두 제도는 목적이 다르다. 사실 확인과 전문적 판단은 준비 방식도 다르므로, 확인하려는 항목의 성격을 먼저 정해야 한다.</p>
+    <p>넷째, <b>신청</b>이다. 신청이 출발점이고, 법원이 필요하다고 판단해야 실제로 이루어진다. 이유와 필요성을 구체적으로 적는 편이 낫다. 절차가 받아들여지지 않으면 이유를 확인해 다시 정리해야 하므로, 신청서는 한 번에 끝내려 하지 않는다.</p>
+    <p>다섯째, <b>비용 구조</b>다. 감정은 비용이 먼저 들고 조사는 시간이 걸린다. 확인된 재산이 있으면 집행 대상이 정해지고, 없으면 다른 회수 경로를 찾아야 한다.</p>
+    <div class="callout">
+      <b>두 절차는 비용 구조가 다르다.</b> 감정은 비용이 선행하고 조사는 시간이 걸린다. 이 차이를 회수 예상액과 함께 견주는 것이 판단의 급소다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>놓치기 쉬운 조건과 예외</h2>
+    <p><b>관련성</b>이 조건이다. 사건과 무관한 항목까지 넓게 요청하면 받아들여지기 어렵다. <b>범위</b>도 조건이다. 확인할 항목을 좁히면 절차가 빨라진다.</p>
+    <p><b>비용</b>도 조건이다. 감정 비용과 시간을 회수 예상액과 견줘야 한다. <b>일정</b>도 조건이다. 집행 절차 일정에 맞춰 신청 시점을 정한다. <b>상대 협조 여부</b>도 조건이다. 협조하면 절차 없이 확인될 수 있다.</p>
+    <ul class="points">
+      <li>확인 목적과 항목을 먼저 확정하고, 촉탁과 감정 중 맞는 방법을 고른다.</li>
+      <li>비용 초과 시 중단 기준을 미리 정한다.</li>
+      <li>결과는 문서로 남기고 다음 확인 시점을 정한다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>창구와 한도를 정한다.</b> 신우철이 세운 순서는 다음과 같다.</p>
+      <ol>
+        <li><b>① 촉탁을 본다</b> — 조사촉탁 근거를 확인한다(민사소송법 제294조).</li>
+        <li><b>② 감정을 본다</b> — 감정의무 규정을 확인한다(민사소송법 제334조).</li>
+        <li><b>③ 목적을 본다</b> — 확인 목적을 적는다.</li>
+        <li><b>④ 관련성을 본다</b> — 사건과의 관련성을 본다.</li>
+        <li><b>⑤ 범위를 본다</b> — 항목을 좁힌다.</li>
+        <li><b>⑥ 방법을 가른다</b> — 촉탁과 감정을 구분한다.</li>
+        <li><b>⑦ 비용을 본다</b> — 비용과 회수를 견준다.</li>
+        <li><b>⑧ 일정을 본다</b> — 집행 일정과 맞춘다.</li>
+        <li><b>⑨ 한도를 정한다</b> — 추진 한도를 정한다.</li>
+        <li><b>⑩ 중단을 둔다</b> — 비용 초과 시 중단 기준을 둔다.</li>
+        <li><b>⑪ 보고를 받는다</b> — 진행 상황을 본다.</li>
+        <li><b>⑫ 기록을 남긴다</b> — 판단 근거를 남긴다.</li>
+        <li><b>⑬ 재확인을 건다</b> — 다음 시점을 정한다.</li>
+        <li><b>⑭ 반려를 본다</b> — 이유를 확인해 보완한다.</li>
+        <li><b>⑮ 비용 구조를 본다</b> — 감정·조사 비용을 비교한다.</li>
+        <li><b>⑯ 협조를 본다</b> — 상대 협조 가능성을 본다.</li>
+        <li><b>⑰ 결과를 본다</b> — 집행 대상 확정 여부를 본다.</li>
+        <li><b>⑱ 대안을 본다</b> — 다른 회수 경로를 찾는다.</li>
+        <li><b>⑲ 공유를 한다</b> — 담당자와 공유한다.</li>
+        <li><b>⑳ 기록을 남긴다</b> — 결과를 문서로 남긴다.</li>
+        <li><b>㉑ 다음 시점을 정한다</b> — 재확인 일정을 잡는다.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;">신우철은 확인할 항목과 목적을 확정하게 했다. 조사촉탁과 감정 중 맞는 방법을 고르고 비용과 효과를 비교해 결정하게 했으며, 추진 여부와 한도를 정하고 진행 상황을 보고받게 했다. 다음 조치 시점을 정하고 결과를 문서로 남기게 했다. 확인되지 않은 부분은 추정으로 채우지 않았다. <b>항목의 성격을 먼저 가르는 것</b>이 그의 결정이었다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
