@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>개인정보 영향평가 — '평가서 한 장'이 아니라 '대상 판정'에서 시작된다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 개인정보 영향평가</div>
+    <h1>개인정보 영향평가 — '평가서 한 장'이 아니라 '대상 판정'에서 시작된다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 영향평가는 <b>평가서를 잘 쓰는 일이 아니라 대상인지 판정하는 일</b>에서 시작합니다. 대상이면 <b>위험요인 분석과 개선사항 도출</b>을 거쳐 <b>보호위원회에 제출</b>해야 합니다(<b>개인정보 보호법 제33조</b>). 대상 기준은 <b>시행령 제35조</b>의 숫자입니다 — <b>민감·고유식별정보 5만명 이상</b>, <b>연계 시 50만명 이상</b>, <b>100만명 이상</b>. 그리고 <b>해외 이용자</b>가 있으면 <b>EU 평가가 하나 더 얹힐 수 있습니다</b>.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      건축 허가와 같습니다. <b>설계도를 잘 그리는 것</b>보다 <b>이 건물이 허가 대상인지</b>를 먼저 확인해야 합니다. 창고를 짓는데 대형 건축 심의를 준비하면 <b>시간만 사라지고</b>, 반대로 심의 대상인데 작은 창고로 봤다면 <b>나중에 철거</b>입니다. 그래서 첫 회의 안건은 도면이 아니라 <b>'우리 것이 어느 칸에 들어가는가'</b>입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+        <p>첫째, <b>영향평가의 근거</b>입니다. <b>대통령령이 정하는 기준에 해당하는 개인정보파일</b>의 운용으로 <b>정보주체의 침해가 우려</b>되면 <b>위험요인 분석과 개선사항 도출</b>을 위한 평가를 하고 <b>그 결과를 보호위원회에 제출</b>해야 합니다(<b>제33조</b>). 같은 조는 <b>평가기관 지정</b>과 <b>의뢰</b>, 그리고 평가 시 <b>처리하는 개인정보의 수 등</b>을 고려하도록 정합니다.</p>
+    <p>둘째, <b>대상 기준의 숫자</b>입니다. <b>시행령 제35조</b>는 <b>전자적으로 처리 가능한 파일</b>로서 <b>5만명 이상</b>의 정보주체에 관한 <b>민감정보·고유식별정보</b> 처리, <b>연계 시 50만명 이상</b>, <b>100만명 이상</b>의 개인정보파일 등을 규정합니다. <b>규모와 정보의 성질이 판정 기준</b>입니다. <b>기준은 '대략'이 아니라 숫자로 대입</b>해야 합니다.</p>
+    <p>셋째, <b>국외 이전과의 충돌</b>입니다. <b>EU 역내 정보주체</b>의 정보를 처리하면 <b>GDPR상 평가를 별도로</b> 수행해야 합니다. <b>두 제도의 요건이 달라 하나의 평가로 갈음되지 않으므로</b>, 항목과 위험평가를 <b>정합시킨 통합 프레임워크</b>가 필요합니다. <b>해외 이용자가 한 명이라도 있으면 표에 칸을 하나 더 만들어야 합니다.</b></p>
+    <p>넷째, <b>운영의 순서</b>입니다. <b>대상 판정 → 평가 시점 → 평가 항목 → 제출·의뢰 → 국외 → 정합</b> 순입니다. 특히 <b>개선사항을 실제로 반영했는지</b>가 점검 대상이고, <b>서비스 변경·연계 확대 시 재평가</b>가 필요한지 판단해야 합니다. <b>평가서를 만든 것과 위험을 낮춘 것은 다릅니다.</b></p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>대상·시점·항목·제출·국외·정합이 갈림길이다</h2>
+    <ul class="points">
+      <li><b>대상 판정</b> — 시행령 제35조의 숫자에 우리 규모를 <b>대입</b>합니다. <b>여기서 틀리면 뒤가 전부 무의미</b>합니다.</li>
+      <li><b>평가 시점</b> — 구축·운용·변경 중 <b>어느 단계</b>에 붙일지. 출시 일정과 먼저 맞춥니다.</li>
+      <li><b>평가 항목</b> — 처리 정보의 수·위험요인·개선사항을 <b>칸으로 나눕니다</b>.</li>
+      <li><b>제출·의뢰</b> — 제33조의 구조로 담당과 기한을 적습니다. 평가기관 의뢰 여부도 포함합니다.</li>
+      <li><b>국외 이전</b> — 해외 이용자가 있으면 <b>추가 평가</b>가 필요한지 표시합니다.</li>
+      <li><b>정합·재평가</b> — 한국·EU 항목을 대응시키고, 변경 시 재평가 기준을 정합니다.</li>
+    </ul>
+    <div class="callout"><b>첫 회의 안건을 '대상 판정'으로 바꾸세요.</b> 평가서 목차를 먼저 잡으면 <b>대상이 아닌 경우에도 몇 주를 씁니다</b>. 그리고 숫자를 <b>표에 그대로 적으세요</b> — 정보주체 수, 민감정보 포함 여부, 연계 규모. 세 숫자가 기준선을 넘는지 <b>한 화면에서 보이게</b> 만드는 것이 가장 빠른 판정입니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">대상·항목·정합을 한 표로 묶는 여섯 단계입니다. 표의 행 이름은 바꾸지 않습니다.</p>
+    <ol>
+      <li><b>① 대상 판정</b> — 개인정보 보호법 시행령 제35조의 규모·정보 성질 기준에 우리 숫자를 대입합니다.</li>
+      <li><b>② 근거·시점</b> — 제33조의 구조로 평가·제출 의무를 확인하고, 구축·운용·변경 중 시점을 정합니다.</li>
+      <li><b>③ 평가 항목</b> — 처리 정보 수·위험요인·개선사항을 표로 나눠 적습니다.</li>
+      <li><b>④ 제출·의뢰</b> — 평가기관 지정과 의뢰 흐름, 담당과 기한을 적습니다.</li>
+      <li><b>⑤ 국외·정합</b> — 해외 이용자 여부를 확인하고, 한국·EU 평가 항목을 대응시킵니다.</li>
+      <li><b>⑥ 기록·재평가</b> — 위험과 개선 조치의 이행을 기록하고 재평가 주기를 정해 네 줄로 남깁니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
