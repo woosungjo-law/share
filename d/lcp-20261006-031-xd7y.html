@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사건이 끝나도 기록은 끝나지 않는다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 사건 종료 후 기록 관리</div>
+    <h1>사건이 끝나도 기록은 끝나지 않는다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 승소로 끝난 사건도 <b>기록은 계속 살아 있습니다</b>. 채권은 <b>10년</b>, 채권·소유권 이외의 재산권은 <b>20년</b> 행사하지 않으면 <b>소멸시효가 완성</b>됩니다(<b>민법 제162조</b>). 그래서 기록은 <b>권리를 행사하는 근거</b>이자 <b>시효 항변의 근거</b>입니다. 그리고 파일을 잃어버렸어도 길은 남아 있습니다 — <b>당사자·이해관계 소명 제3자</b>는 <b>소송기록 열람·복사, 재판서 등본·증명서 교부</b>를 신청할 수 있습니다(<b>민사소송법 제162조</b>). <b>보관 기간을 정하지 않은 정리는 정리가 아니라 폐기</b>입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      이사하면서 <b>보증금 반환 청구권 서류</b>를 버리는 것과 같습니다. 이사는 끝났지만 <b>돈을 돌려받을 권리는 남아 있습니다</b>. 그 권리는 <b>일정 기간 안에 행사해야</b> 하고, 그 기간이 지나면 서류가 있어도 힘이 없어집니다. 반대로 서류를 잃어버려도 <b>집주인이 발급한 확인서나 계좌 이체 기록</b>으로 다시 만들 수 있습니다. 핵심은 <b>무엇을 언제까지 보관하는지 미리 정해 두는 것</b>입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+        <p>첫째, <b>권리의 수명</b>입니다. 채권은 <b>10년</b>, 채권·소유권 이외의 재산권은 <b>20년</b> 행사하지 않으면 <b>소멸시효가 완성</b>됩니다(<b>민법 제162조</b>). <b>이 기간을 넘겨 자료를 찾으면 이미 권리를 잃었을 수 있습니다.</b> 기록은 <b>권리 행사의 근거</b>이면서, 상대의 청구에 <b>시효 항변으로 맞서는 근거</b>가 됩니다. <b>같은 서류가 양방향으로 쓰입니다.</b></p>
+    <p>둘째, <b>끝난 소송의 기록에 접근할 권리</b>입니다. <b>당사자 또는 이해관계를 소명한 제3자</b>는 <b>소송기록의 열람·복사</b>, <b>재판서·조서의 정본·등본·초본 교부</b>, <b>소송에 관한 사항의 증명서 교부</b>를 법원사무관등에게 신청할 수 있습니다(<b>민사소송법 제162조</b>). 즉 <b>사건이 끝나도 필요한 서류는 법원에서 다시 받을 수 있습니다</b>. 다만 <b>공개를 금지한 변론에 관련된 기록은 제외</b>되고, <b>소송관계인이 동의하지 않으면 열람이 제한</b>됩니다.</p>
+    <p>셋째, <b>두 통로의 결합</b>입니다. 권리를 행사하려는 쪽은 <b>소멸시효가 끝나기 전에 근거를 확보</b>해야 하고, 이미 끝난 소송의 서류는 <b>법원을 통해 다시 받을 수 있다</b>는 두 가지를 함께 알아야 합니다. <b>보관은 1차 방어, 법원 접근은 2차 방어</b>입니다. <b>1차를 포기한 채 2차만 믿으면 절차와 비용이 배로 듭니다.</b></p>
+    <p>넷째, <b>재발 방지의 설계</b>입니다. 종료 시점에 <b>합의 내용과 이행 확인 방법을 문서로</b> 남기면 같은 문제의 재발을 줄일 수 있습니다. 그리고 <b>종이와 전자 파일을 나눠 보관</b>하면 한쪽이 손상·분실돼도 근거를 지킬 수 있습니다. <b>목록을 정기적으로 갱신하지 않으면 담당자가 바뀔 때 관리가 끊깁니다.</b></p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>기간·서류·위치·접근·제한·예방이 갈림길이다</h2>
+    <ul class="points">
+      <li><b>사건 목록</b> — 소송·합의·조정으로 끝난 건을 빠짐없이 적습니다. <b>목록이 없으면 보관도 없습니다.</b></li>
+      <li><b>핵심 서류</b> — 판결문·합의서·계약서·이행 증빙을 구분합니다. <b>성격이 다르면 기간도 다릅니다.</b></li>
+      <li><b>보관 기간</b> — 제162조가 정한 10년·20년을 기준으로 기한을 정합니다. <b>기준 없이 보관하면 영원히 보관</b>하게 됩니다.</li>
+      <li><b>위치 색인</b> — 서류명·보관 장소·담당자·최종 확인일을 적습니다. <b>찾는 시간이 곧 비용</b>입니다.</li>
+      <li><b>법원 접근</b> — 열람·교부청구 절차와 <b>이해관계 소명</b> 방법을 적습니다.</li>
+      <li><b>제한·폐기</b> — 공개 금지 변론·소송관계인 동의 여부, 그리고 <b>폐기 기준</b>을 함께 정합니다.</li>
+    </ul>
+    <div class="callout"><b>표의 마지막 칸에 '폐기일'을 넣으세요.</b> 보관 기간만 정하고 폐기 기준이 없으면, 아무도 버리지 못해 창고가 차고 <b>정작 필요한 서류를 못 찾습니다</b>. 그리고 <b>합의서 말미에 '다음 거래 조건' 한 줄</b>을 넣는 것만으로도 같은 분쟁의 반복을 줄일 수 있습니다. 종료 회의에서 <b>그 한 줄을 쓸지 말지</b>를 결정하세요.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">기간·위치·접근을 한 표로 묶는 여섯 단계입니다. 표의 행 이름은 바꾸지 않습니다.</p>
+    <ol>
+      <li><b>① 사건 목록</b> — 종료된 소송·합의·조정 건을 빠짐없이 적습니다.</li>
+      <li><b>② 핵심 서류</b> — 판결문·합의서·계약서·이행 증빙을 구분해 표시합니다.</li>
+      <li><b>③ 보관 기간</b> — 민법 제162조가 정한 10년·20년을 기준으로 서류별 기한을 정합니다.</li>
+      <li><b>④ 위치 색인</b> — 서류명·보관 장소·담당자·최종 확인일을 적고 정기 갱신 주기를 정합니다.</li>
+      <li><b>⑤ 법원 접근</b> — 민사소송법 제162조의 열람·교부청구 절차와 이해관계 소명 자료를 정리합니다.</li>
+      <li><b>⑥ 제한·예방</b> — 공개 금지·동의 요건을 확인하고, 합의서의 예방 조항과 폐기 기준을 네 줄로 남깁니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
