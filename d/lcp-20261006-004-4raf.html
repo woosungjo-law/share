@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>채권 확정 — '얼마를 받을 권리인가'가 아니라 '어떤 절차로 확정되는가'의 문제다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 채권 확정 절차</div>
+    <h1>채권 확정 — '얼마를 받을 권리인가'가 아니라 '어떤 절차로 확정되는가'의 문제다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 신고만으로 권리는 확정되지 않습니다. <b>이의가 달리면</b> 이의자 전원을 상대방으로 <b>채권조사확정재판</b>을 신청하고(<b>제170조</b>), 그 결정에 불복하면 <b>1개월 이내 이의의 소</b>를 제기해야 합니다(<b>제171조</b>). 결정적 제약은 <b>제173조</b>입니다 — 채권자표·담보권자표에 <b>기재된 사항만 주장</b>할 수 있습니다. <b>표에 없는 주장은 절차 안에서 꺼낼 수 없습니다.</b> 금액보다 <b>표와 기간</b>이 먼저입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      경매 물건의 <b>권리분석표</b>와 같습니다. 내가 '이 집에 3억을 받을 권리가 있다'고 아무리 확신해도, <b>배당표에 그 채권이 어떤 순위로 적혀 있는지</b>가 실제 회수를 정합니다. 표에 적히지 않은 권리는 <b>줄을 서지 못한 것과 같습니다</b>. 그리고 이 표는 <b>정해진 날짜 안에만</b> 고칠 수 있습니다. 날짜가 지나면 표가 곧 판결이 됩니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+        <p>첫째, <b>확정재판의 구조</b>입니다. 목록 기재 또는 신고된 회생채권·회생담보권에 <b>관리인·회생채권자·회생담보권자·주주·지분권자가 이의</b>하면, 그 채권을 보유한 권리자는 <b>이의자 전원을 상대방</b>으로 법원에 <b>채권조사확정재판</b>을 신청할 수 있습니다(<b>제170조</b>). 신청은 <b>조사기간 말일 또는 특별조사기일부터 1개월 이내</b>입니다. <b>기간이 짧고, 상대방을 빠뜨리면 그 자체로 흠</b>이 됩니다.</p>
+    <p>둘째, <b>이의의 소</b>입니다. 확정재판에 불복하는 자는 <b>결정서 송달일부터 1개월 이내</b>에 이의의 소를 제기할 수 있고, <b>회생계속법원의 전속관할</b>입니다(<b>제171조</b>). <b>누가 누구를 피고로 삼아야 하는지도 정해져 있으므로</b>, 당사자 표시를 먼저 확인합니다.</p>
+    <p>셋째, <b>수계</b>입니다. 회생절차개시 당시 이의채권에 관해 <b>소송이 계속 중</b>이었다면, 권리 확정을 구하려는 채권자는 <b>이의자 전원을 상대방으로 소송절차를 수계</b>해야 합니다(<b>제172조</b>). <b>수계하지 않으면 확정을 구할 길이 닫힙니다.</b></p>
+    <p>넷째, <b>주장의 제한</b>입니다. 확정재판·이의의 소·수계한 소송에서는 <b>이의채권의 원인과 내용에 관해 표에 기재된 사항만</b> 주장할 수 있습니다(<b>제173조</b>). <b>표에 없는 주장은 절차 안에서 꺼낼 수 없습니다.</b> 추가 주장이 필요하면 <b>절차 밖의 별도 다툼</b>을 검토해야 합니다. 그리고 <b>집행권원이나 종국판결이 있는 채권</b>은 <b>제174조</b>의 특례를 따르고, 인정된 권리의 표 기재는 인가 결정 확정 시 <b>확정판결과 같은 효력</b>을 가지며 <b>종결 후 강제집행의 근거</b>가 됩니다(<b>제255조</b>).</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>기재·기간·당사자·수계·권원·효력이 갈림길이다</h2>
+    <ul class="points">
+      <li><b>표의 기재</b> — 원인·금액·신고일을 <b>그대로</b> 옮깁니다. 이후 주장의 범위가 여기에 묶입니다.</li>
+      <li><b>이의 내용</b> — 누가 어떤 이유로 이의했는지 적습니다. 상대방 특정의 출발점입니다.</li>
+      <li><b>기간</b> — 확정재판 신청 1개월, 이의의 소 1개월. <b>달력에 먼저 적습니다.</b></li>
+      <li><b>당사자</b> — <b>이의자 전원</b>이 상대방인지 확인합니다. 한 명이라도 빠지면 흠이 됩니다.</li>
+      <li><b>수계</b> — 개시 당시 계속 중인 소송이 있었는지. 있으면 <b>수계가 필수</b>입니다.</li>
+      <li><b>집행권원·효력</b> — 제174조 특례 여부와 제255조의 집행 근거를 확인합니다.</li>
+    </ul>
+    <div class="callout"><b>달력부터 채우세요.</b> 이 절차에서 가장 흔한 손실은 <b>금액 다툼에서 지는 것</b>이 아니라 <b>기간을 놓치는 것</b>입니다. 결정서가 온 날짜를 적고 <b>+1개월</b>을 표시하세요. 그리고 <b>표 기재 사항을 그대로 복사</b>해 두세요. 나중에 주장을 덧붙이고 싶어도 <b>표에 없으면 꺼낼 수 없습니다.</b></div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">표·기간·당사자를 한 표로 묶는 여섯 단계입니다. 표의 행 이름은 바꾸지 않습니다.</p>
+    <ol>
+      <li><b>① 기재 확인</b> — 채권자표·담보권자표의 원인·금액·신고일을 그대로 옮겨 적습니다.</li>
+      <li><b>② 이의 정리</b> — 누가 어떤 이유로 이의했는지 적고, 이의자 전원을 목록화합니다.</li>
+      <li><b>③ 확정재판</b> — 제170조의 구조로 신청 요건·상대방·1개월 기간을 적습니다.</li>
+      <li><b>④ 이의의 소</b> — 제171조의 구조로 전속관할과 결정서 송달일부터의 기간을 적습니다.</li>
+      <li><b>⑤ 수계·권원</b> — 제172조의 수계 필요성과 제174조의 집행권원 특례를 확인합니다.</li>
+      <li><b>⑥ 주장·집행</b> — 제173조의 주장 제한과 제255조의 집행 근거를 적고, 누가 어떤 기한까지 무엇을 낼지 네 줄로 남깁니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
