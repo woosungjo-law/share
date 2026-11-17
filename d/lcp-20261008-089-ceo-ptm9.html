@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>받을 돈과 줄 돈, 맞바꾸기 전에 확인할 것</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>받을 돈과 줄 돈, 맞바꾸기 전에 확인할 것</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 상계는 쌍방이 서로 같은 종류를 목적으로 한 채무를 부담하고 쌍방 채무의 이행기가 도래하면 대등액에서 상계할 수 있는 제도다(민법 제492조). 상계는 상대방에 대한 의사표시로 하고 조건이나 기한을 붙일 수 없으며, 효과는 상계할 수 있는 때로 거슬러 올라간다(민법 제493조). 수동채권이 고의의 불법행위로 인한 채권이면 상계가 금지된다(민법 제496조). 맞바꾸기는 통보가 아니라 요건이 먼저다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      남기훈은 중소기업의 대표다. <b>같은 거래처에 받을 돈과 줄 돈이 함께 있었고, 재무팀은 서로 깎자고 했다.</b> 대표는 깎기 전에 깎을 수 있는 돈인지를 물었다. 요건이 안 맞으면 통보해도 정리되지 않는다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, <b>요건</b>이다. 상계는 쌍방이 서로 같은 종류를 목적으로 한 채무를 부담하고 쌍방 채무의 이행기가 도래하면 대등액에서 상계할 수 있는 제도다(민법 제492조). 같은 종류의 돈이어야 하고, 양쪽의 갚을 때가 와야 한다. 돈과 물건은 맞바꿀 수 없고, 갚을 때가 오지 않은 돈도 깎을 수 없다.</p>
+    <p>둘째, <b>방법</b>이다. 상계는 상대방에 대한 의사표시로 하고 조건이나 기한을 붙일 수 없으며, 효과는 상계할 수 있는 때로 거슬러 올라간다(민법 제493조). 상계한다는 말을 해야 하고, 그 말에 단서를 달 수 없다.</p>
+    <p>셋째, <b>금지</b>다. 수동채권이 고의의 불법행위로 인한 채권이면 상계가 금지된다(민법 제496조). 줄 돈의 성격을 먼저 보고, 불법행위 돈이 섞였는지를 가리는 일이 통보보다 앞선다.</p>
+    <p>넷째, <b>결재의 대상</b>이다. 대표가 결재할 것은 맞바꾸기 자체가 아니라 요건의 확인이다. 종류·시기·성격·방법이 맞으면 통보 한 장이 돈을 정리한다.</p>
+    <div class="callout">
+      <b>조건부 통보는 피한다.</b> 상계 의사표시에 단서를 붙이면 정리되지 않는다. 고의 불법행위 손해배상채권이 수동채권인지 확인되지 않으면 보류하는 것이 기준이다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>놓치기 쉬운 조건과 예외</h2>
+    <p><b>비용</b>이 조건이다. 상계로 줄이는 금액과 별도 소송의 비용을 비교한다. 상계가 되면 소송 없이 정리되고, 안 되면 두 갈래로 간다. 상계 검토는 소송보다 싸고 빠르지만, 요건이 안 맞으면 시간만 버린다.</p>
+    <p><b>책임</b>이 조건이다. 누가 요건을 확인할지를 정한다. 재무팀이 금액과 시기를, 법무팀이 종류와 성격과 방법을 맡고, 불법행위 돈이 섞였는지는 법무팀이 본다.</p>
+    <p><b>중단</b>이 조건이다. 상계 통보 뒤 거래를 계속할지를 정한다. 맞바꾸기와 앞으로의 거래를 같은 회의에서 섞지 않고, 계속 거래한다면 결제 조건을 손본다.</p>
+    <ul class="points">
+      <li>상계 결재 양식에 두 채권의 종류·금액·이행기를 넣고, 요건이 채워지지 않으면 결재가 나지 않게 한다.</li>
+      <li>통보 문안은 조건 없는 의사표시로 하고, 발송과 도달의 기록을 남긴다. 소급효가 미치는 시점도 함께 적는다.</li>
+      <li>결재 전에 상계 대상과 대등액을 한 줄로 확정한다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>상계 결재란을 만든다.</b> 남기훈이 세운 순서는 다음과 같다.</p>
+      <ol>
+        <li><b>① 종류를 본다</b> — 동종 채권인지 확인한다.</li>
+        <li><b>② 시기를 본다</b> — 쌍방 이행기가 왔는지 본다.</li>
+        <li><b>③ 요건을 본다</b> — 민법 제492조를 확인한다.</li>
+        <li><b>④ 성격을 본다</b> — 불법행위 채권 여부를 본다.</li>
+        <li><b>⑤ 금지를 본다</b> — 민법 제496조를 확인한다.</li>
+        <li><b>⑥ 방법을 본다</b> — 민법 제493조의 통보를 챙긴다.</li>
+        <li><b>⑦ 조건을 뺀다</b> — 통보에 단서를 붙이지 않는다.</li>
+        <li><b>⑧ 비용을 본다</b> — 상계와 소송의 비용을 비교한다.</li>
+        <li><b>⑨ 기록을 본다</b> — 통보와 도달을 남긴다.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;">그는 수동채권의 성격을 따로 챙기게 했다. 고의 불법행위 채권이 수동채권이면 상계가 금지되므로, 손해배상의 원인을 먼저 가린다. 금지되는 상계를 통보하면 분쟁만 커진다. 상계 결재 뒤에도 통보의 도달을 확인했다. <b>도달 기록이 있어야 소급효의 시점이 선다.</b> 세 조문의 검토를 한 장에 놓고, 다음 거래처에도 같은 양식을 쓰기로 했다. 상계 의사표시는 가능한 조속히 해 상대방의 이행지체 기간을 줄이는 쪽으로 했다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
