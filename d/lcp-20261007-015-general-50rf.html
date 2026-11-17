@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>병원 광고 고르기, 후기 순위가 아닌 표시 확인이다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 의료광고</div>
+    <h1>병원 광고 고르기, 후기 순위가 아닌 표시 확인이다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> 검색 순위와 후기의 양은 <b>판단 기준이 아닙니다.</b> 의료광고는 <b>의료법 제56조부터 제58조까지</b>의 틀에서 <b>사전심의와 내용 규제, 표시 방법 규제</b>를 함께 받습니다. <b>거짓이나 과장된 내용의 광고는 금지</b>되고, 위반하면 <b>1년 이하의 징역이나 500만원 이하의 벌금</b>에 처해질 수 있습니다. 그래서 볼 것은 <b>광고 화면에 무엇이 적혀 있는지</b>입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>간판이 크다고 음식이 맛있는 것이 아니고, 리뷰가 많다고 재료가 좋은 것도 아닙니다.</b> 광고에서 확인할 것은 <b>조건이 적혀 있는지</b>입니다. 기간·대상·조건·기준가격 — 이 네 가지가 작은 글씨에도 없다면, 그 광고는 <b>확인할 것이 남아 있는 광고</b>입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>먼저 <b>규제의 틀</b>입니다. 의료광고는 <b>의료법 제56조부터 제58조까지</b>의 틀에서 <b>사전심의와 내용 규제, 표시 방법 규제</b>를 함께 받습니다. <b>심의를 받는 제도와 어떤 내용을 쓸 수 있는지는 별개의 문제</b>입니다.</p>
+    <p>다음은 <b>내용 규제</b>입니다. <b>거짓이나 과장된 내용의 광고는 금지</b>되며, 위반하면 <b>1년 이하의 징역이나 500만원 이하의 벌금</b>에 처해질 수 있다는 점이 <b>헌법재판소 2012헌마685</b>의 맥락에서 확인됩니다. <b>효과를 장담하는 전후사진과 체험담</b>이 바로 이 선에 걸릴 수 있습니다.</p>
+    <p>다음은 <b>온라인 광고</b>입니다. 온라인이라고 규제가 비어 있는 것도 아닙니다. <b>포털과 사회관계망의 키워드 광고, 배너, 체험담 형식</b>도 <b>의료법 제57조</b>에 따른 심의와 내용 기준의 적용 대상으로 볼 여지가 있어, <b>지면 광고와 같은 잣대로 볼 수 있다</b>는 취지로 이해할 수 있습니다.</p>
+    <p>마지막은 <b>심의 제도 자체의 다툼</b>입니다. <b>사전심의를 받지 않은 광고를 금지하고 처벌하는 규정</b>을 두고는 위헌성 다툼이 있었고, <b>헌법재판소 2015헌바75</b>가 그 다툼을 다룬 맥락으로 읽힙니다. <b>심의를 거치지 않았다는 이유만으로 제재하는 것이 정당한지</b>가 쟁점이 된 셈입니다. <b>심의 제도 자체도 주체와 절차의 실질이 행정권 영향 아래에 있다면 사전검열 금지 원칙에 어긋날 수 있다</b>는 점이 함께 거론됩니다. 정리하면 <b>제56조가 금지, 제57조가 심의, 제58조가 제도 운영의 축</b>입니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>세 가지를 찬찬히 본다</h2>
+    <ul class="points">
+      <li><b>① 전후사진·후기·체험담</b> — 정보 제공을 넘어 만족감이나 기적, 보장으로 읽히는 서사 구조는 일단 거리를 두고 봅니다. 효과를 보장하거나 확신을 주는 표현은 판단 자료에서 제외하는 편이 낫습니다.</li>
+      <li><b>② 할인·무료 이벤트</b> — 정상가 표시가 실재하는지, 오늘이 마감이라는 말이 누구에게나 열리는 조건인지 따져봅니다. 조건이 작은 글씨에만 있다면 없는 표시와 비슷하게 취급합니다.</li>
+      <li><b>③ 전문병원·최고·유일·보장</b> — 법정 명칭과 혼동될 가능성이 있는지, 치료 효과 보장으로 오인될 가능성이 있는지 점검합니다.</li>
+      <li><b>④ 걸러낼 것</b> — 객관적 근거가 보이지 않는 순위 단정과 결과 장담은 걸러냅니다.</li>
+      <li><b>⑤ 조건 네 가지</b> — 기간과 대상, 조건, 기준가격이 모두 적혀 있는지 봅니다. 하나라도 빠지면 문의하거나 후보에서 제외합니다.</li>
+      <li><b>⑥ 판단의 축</b> — 소비자의 오인 가능성이 핵심이라는 점을 기준으로 삼습니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 만족감·기적·보장으로 읽히는 서사는 <b>판단 자료에서 빼고</b>, 남은 조건 네 가지로 비교하십시오. 순위가 아니라 <b>적힌 표시</b>가 기준입니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;">광고 화면 <b>전체</b>를 날짜와 함께 저장하십시오. 조건 문구는 확대해서 다시 읽고, <b>기준가격과 기간, 대상</b>을 메모합니다.</p>
+    <ol>
+      <li><b>① 화면 전체 저장</b> — 포털 키워드와 배너, 사회관계망 체험담을 날짜와 함께 갈무리하고, 전후사진의 보장 표현과 할인·무료의 조건 문구를 표시해 둔다.</li>
+      <li><b>② 조건 네 가지 확인</b> — 기간과 대상, 조건, 기준가격이 모두 적혀 있는지 보고, 하나라도 빠지면 문의하거나 후보에서 제외한다. 소비자의 오인 가능성이 핵심이라는 점을 기준으로 삼는다.</li>
+      <li><b>③ 보장 언어 걸러내기</b> — 만족감과 기적, 보장으로 읽히는 서사와 전문병원·최고·유일·보장 표현은 판단 자료에서 제외한다. 거짓·과장 광고는 1년 이하의 징역이나 500만원 이하의 벌금 대상이 될 수 있다는 점이 헌법재판소 2012헌마685의 맥락에서 확인된다는 점을 기억한다.</li>
+      <li><b>④ 심의·처벌 맥락 알아두기</b> — 사전심의를 받지 않은 광고의 금지·처벌 규정을 두고 위헌성 다툼이 있었고 헌법재판소 2015헌바75가 그 다툼을 다룬 맥락이라는 점, 심의 주체·절차가 행정권 영향 아래에 실질적으로 놓이면 사전검열 금지 원칙에 어긋날 수 있다는 점을 알아두면 광고를 읽는 눈이 달라진다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
