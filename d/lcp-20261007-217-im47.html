@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>동거 정산, 사실혼인지부터 가른다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 동거 정산</div>
+    <h1>동거 정산, 사실혼인지부터 가른다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> <b>사실혼이면 재산분할청구권이 준용</b>되고(<b>민법 제839조의2</b>), <b>사실혼으로 보기 어렵다면 재산분할청구권 대신 부당이득 등 일반 민사 법리로 다툽니다</b>(<b>민법 제741조</b>). 그런데 <b>합의가 있으면 그 내용을 먼저</b> 봐야 합니다 — <b>생활비 분담과 재산 귀속에 관한 합의는 원칙적으로 유효</b>하지만, <b>민법 제103조에 따라 반사회질서 법률행위에 해당하면 무효가 될 수 있습니다.</b>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>같이 산 기간의 회계를 어떻게 나누느냐</b>의 문제입니다. <b>부부에 준하는 관계로 인정되면</b> <b>"재산을 나누는 전용 계산대"</b>가 열립니다. 그 계산대가 열리지 않으면 <b>건별로 "이 돈은 빌린 것인지, 같이 쓴 것인지"</b>를 하나씩 따져 <b>일반 계산대</b>로 갑니다. 그래서 <b>첫 질문은 금액이 아니라 "어느 계산대인가"</b>입니다. <b>미리 합의서를 써 뒀다면</b> 그 문구가 <b>계산대를 정하는 지도</b>가 됩니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, <b>사실혼</b>입니다. <b>사실혼이면 재산분할청구권이 준용</b>됩니다(<b>민법 제839조의2</b>). <b>사실혼 여부는 사회관념상 혼인생활을 했는지로 판단</b>하고, <b>동거 기간과 생활비 공동 부담, 주변의 인식 같은 요소를 함께</b> 봅니다.</p>
+    <p>둘째, <b>일반 법리</b>입니다. <b>사실혼으로 보기 어렵다면 재산분할청구권 대신 부당이득 등 일반 민사 법리로 다툽니다</b>(<b>민법 제741조</b>). <b>법률상 원인 없이 타인의 재산이나 노무로 이익을 얻고 손해를 가하면 반환 의무가 생깁니다.</b> 그리고 <b>대여와 증여는 다르게 봅니다</b> — <b>갚기로 한 돈인지 나눠 쓰기로 한 돈인지</b>에 따라 결론이 갈립니다.</p>
+    <p>셋째, <b>합의의 유효성</b>입니다. <b>합의가 있으면 그 내용을 먼저 보고</b>, <b>원칙적으로 유효</b>하지만 <b>민법 제103조에 따라 반사회질서 법률행위에 해당하면 무효</b>가 될 수 있습니다. <b>배우자를 유지하거나 이혼을 조장하는 내용이 대표적</b>입니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>성격·입증·유효성 — 셋이 조건</h2>
+    <ul class="points">
+      <li><b>사실혼 여부</b> — <b>이 판단에 따라 정산 법리가 통째로 바뀝니다.</b></li>
+      <li><b>자금 성격</b> — <b>생활비인지 대여인지 증여인지</b>에 따라 결론이 달라집니다.</li>
+      <li><b>입증 자료</b> — <b>계좌 이체 기록과 대화 자료가 핵심</b>입니다. <b>일상 생활비는 정산이 어려운 경우가 많아 특별한 기여를 따로 기록</b>합니다.</li>
+      <li><b>합의의 유효성</b> — <b>반사회질서에 해당하면 무효가 될 수 있으므로 문구를 그대로</b> 확인합니다.</li>
+      <li><b>회사 자금 혼입</b> — <b>법인 비용으로 처리된 지출은 개인 정산과 분리</b>합니다.</li>
+      <li><b>기간 구분</b> — <b>함께 살기 전과 후, 별거 이후를 나눠 보면 자금 흐름이 선명</b>해집니다.</li>
+    </ul>
+    <div class="callout"><b>일상 생활비는 대개 정산 대상이 되기 어렵습니다.</b> 그래서 <b>목돈이 오간 건만 따로 뽑아 성격을 확인</b>하고, <b>큰 금액부터 확인하는 순서</b>를 정하세요. 그리고 <b>감정이 섞이면 합의가 깨지므로</b> <b>쟁점을 금액과 시기로 좁혀 대화</b>하도록 안내해야 합니다. <b>회사 자금이 섞인 부분은 별도 검토표로 분리</b>하는 것이 출발점입니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">개인 문제와 회사 문제를 한 표에 묶는 스물여섯 단계입니다.</p>
+    <ol>
+      <li><b>① 관계를 본다</b> — 사실혼 여부를 판단합니다(민법 제839조의2).</li>
+      <li><b>② 기간을 본다</b> — 동거 기간을 확인합니다.</li>
+      <li><b>③ 부담을 본다</b> — 생활비 공동 부담을 확인합니다.</li>
+      <li><b>④ 인식을 본다</b> — 주변의 인식을 확인합니다.</li>
+      <li><b>⑤ 법리를 가른다</b> — 준용 법리와 일반 법리를 구분합니다.</li>
+      <li><b>⑥ 부당이득을 본다</b> — 반환 근거를 확인합니다(민법 제741조).</li>
+      <li><b>⑦ 성격을 가른다</b> — 대여와 증여를 구분합니다.</li>
+      <li><b>⑧ 출처를 본다</b> — 자금 출처를 확인합니다.</li>
+      <li><b>⑨ 명의를 본다</b> — 재산 명의를 확인합니다.</li>
+      <li><b>⑩ 시점을 본다</b> — 취득 시점을 정리합니다.</li>
+      <li><b>⑪ 합의를 본다</b> — 합의서 존재를 확인합니다.</li>
+      <li><b>⑫ 유효성을 본다</b> — 반사회질서 여부를 확인합니다(민법 제103조).</li>
+      <li><b>⑬ 문구를 본다</b> — 합의서 문구를 조항별로 읽습니다.</li>
+      <li><b>⑭ 증빙을 모은다</b> — 이체 기록을 모읍니다.</li>
+      <li><b>⑮ 대화를 본다</b> — 대화 자료를 확인합니다.</li>
+      <li><b>⑯ 기여를 본다</b> — 특별한 기여를 기록합니다.</li>
+      <li><b>⑰ 회사자금을 본다</b> — 법인 비용 혼입을 확인합니다.</li>
+      <li><b>⑱ 분리를 한다</b> — 개인과 회사를 분리합니다.</li>
+      <li><b>⑲ 범위를 정한다</b> — 자문 범위를 정합니다.</li>
+      <li><b>⑳ 보고를 받는다</b> — 진행 상황을 보고받습니다.</li>
+      <li><b>㉑ 기록을 남긴다</b> — 검토 근거를 남깁니다.</li>
+      <li><b>㉒ 재검토를 건다</b> — 조건 변경 시 다시 봅니다.</li>
+      <li><b>㉓ 기간을 가른다</b> — 시기별로 자금을 나눕니다.</li>
+      <li><b>㉔ 목돈을 본다</b> — 큰 금액을 먼저 확인합니다.</li>
+      <li><b>㉕ 쟁점을 좁힌다</b> — 쟁점 목록을 만듭니다.</li>
+      <li><b>㉖ 안내를 한다</b> — 대화 방식을 안내합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
