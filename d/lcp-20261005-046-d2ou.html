@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사고구간이 불명확할수록, 적용 법은 가장 긴 구간 쪽으로 기울어진다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 복합운송·책임한도</div>
+    <h1>사고구간이 불명확할수록, 적용 법은 가장 긴 구간 쪽으로 기울어진다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 복합운송에서 손해 구간이 <b>특정되면 그 구간의 법</b>이, <b>불분명하면 운송거리가 가장 긴 구간의 법</b>이 적용됩니다. 거리가 같으면 <b>운임이 가장 비싼 구간</b>이 기준입니다(<b>상법 제816조 제2항</b>). 그래서 기록이 끊긴 자리가 곧 책임의 크기를 정합니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      택배가 여러 업체를 거쳐 오다 파손됐을 때를 떠올려 보십시오. 어디서 깨졌는지 모르면 가장 오래 맡았던 구간의 규정으로 책임을 따집니다. 기록이 없을수록 <b>기본값</b>이 정해져 있다는 뜻이고, 그 기본값은 대개 운송인에게 유리하지 않습니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+        <p>첫째, <b>복합운송인의 책임</b>입니다. <b>상법 제816조</b>가 육상·해상·항공 가운데 둘 이상이 결합된 운송에서 무엇을 기준으로 책임을 질지를 정합니다.</p>
+    <p>둘째, <b>구간이 불분명할 때</b>입니다. 손해가 난 구간이 불분명하거나 특정할 수 없으면 운송인은 <b>운송거리가 가장 긴 구간</b>에 적용되는 법에 따라 책임을 지고, <b>거리가 같으면 운임이 가장 비싼 구간</b>이 기준이 됩니다(제816조 제2항).</p>
+    <p>셋째, <b>구간이 특정될 때</b>입니다. 복합운송인이 인수한 운송에 해상 외 운송구간이 포함된 경우, 손해가 발생한 <b>운송구간에 적용될 법</b>에 따라 책임을 집니다(제816조 제1항). 어느 구간에서 났는지가 밝혀지면 그 구간의 법이 그대로 걸립니다.</p>
+    <p>넷째, <b>제소 기간</b>입니다. 해상운송 규정이 적용되면 운송인에 대한 채권·채무는 <b>운송물 인도일 또는 인도할 날부터 1년</b> 안에 재판상 청구가 없으면 소멸합니다(<b>상법 제814조</b>). 인도 날짜가 곧 청구의 생사를 정합니다.</p>
+    <p>다섯째, <b>지위의 취득</b>입니다. 국제물류주선업자가 <b>자기 명의로</b> 운송계약을 체결하면 복합운송인 지위를 취득합니다(<b>대법원 2019다213009</b>). 서명한 주체가 책임의 주체를 가릅니다.</p>
+    <p>여섯째, <b>보험과의 관계</b>입니다. 화주·보험사 측에서는 사고구간이 불명확하면 최장 구간의 법이 적용되는지 먼저 확인하고, 배상 범위와 제소 기간을 함께 검토합니다. 보험 청구와 운송인 청구가 같은 기록을 씁니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>기록·거리·시점·명의·면책이 실무를 가른다</h2>
+    <ul class="points">
+      <li><b>기록</b> — 터미널 게이트 기록·항공운송장·선하증권이 이어지는지 봅니다. 끊긴 지점이 곧 다툴 지점입니다.</li>
+      <li><b>거리·운임</b> — 각 구간의 거리와 운임을 표로 적어 최장 구간과 최고 운임 구간이 같은지 확인합니다. 기준이 달라지면 적용 법도 달라집니다.</li>
+      <li><b>시점</b> — 운송물 인도일 또는 인도할 날을 확인합니다. 이 날짜가 1년 제소 기간의 출발점이고, 기록에 없으면 계산 자체가 막힙니다.</li>
+      <li><b>명의</b> — 누구 명의로 운송계약을 체결했는지 봅니다. 자기 명의면 복합운송인 지위를 취득합니다.</li>
+      <li><b>책임한도</b> — 선하증권·운송장에 책임한도와 면책 조항이 있는지, 히말라야 약관 같은 특약이 붙었는지 확인합니다.</li>
+      <li><b>대응 시점</b> — 손해가 나면 빨리 화물 상태와 운송 기록을 확보합니다. 늦어지면 구간 판단의 기초가 사라집니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 사고 직후에 할 일은 원인 추정이 아니라 <b>기록 봉인</b>입니다. 게이트 기록과 운송장을 먼저 확보하십시오. 그다음에 구간을 따집니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">기록·구간·적용법·기간·계약의 점검표를 표준화하십시오. 다섯 단계로 나눕니다.</p>
+    <ol>
+      <li><b>① 기록 확보</b> — 화물 상태와 운송 기록을 손해 접수와 함께 확보하고, 끊긴 구간이 어디인지 표시합니다.</li>
+      <li><b>② 구간 계산</b> — 각 구간의 거리와 운임을 표로 만들어 가장 긴 구간과 가장 비싼 구간을 각각 표시합니다.</li>
+      <li><b>③ 적용 법 특정</b> — 구간이 특정되면 그 구간의 법을, 불명확하면 가장 긴 구간의 법을 근거와 함께 적습니다.</li>
+      <li><b>④ 기간 관리</b> — 인도일 또는 인도할 날을 확인하고 1년 제소 기간을 일정표에 넣습니다.</li>
+      <li><b>⑤ 계약 점검</b> — 계약 명의와 책임한도, 면책 조항 기재 여부를 선하증권·운송장과 대조합니다. 보험사 통지 시점과 회신도 같은 일지에 적습니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
