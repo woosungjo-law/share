@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>교육사업이 커질수록 등록과 알선 기능을 나눠라</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>교육사업이 커질수록 등록과 알선 기능을 나눠라</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 교육 스타트업은 고객이 늘면 수강생을 기업에 연결하거나 현장에 배치하는 기능을 붙이게 된다. 이때 사업의 이름을 바꾸는 것보다 어떤 행위를 하고 어떤 대가를 받는지 나누어 보는 것이 중요하다. 학원법 제6조의 등록과 직업안정법 제32조의 금품 흐름을 각각 적용해 교육과 알선을 분리하면, 대표가 비용·책임·중단 기준을 더 일찍 결정할 수 있다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>사건의 시작: 강의 사업이 취업 연계까지 확장됐다</h2>
+    <div class="analogy">
+      처음에는 강의와 커뮤니티로 시작했지만, 고객이 늘면서 수강생을 기업에 연결하거나 현장에 배치하는 기능이 붙었다. <b>사업의 이름만 바꾸면 정리가 될 것처럼 보였지만, 실제로는 어떤 행위를 하고 누가 대가를 받는지가 달라져 있었다.</b>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 보는 핵심: 교육과 알선의 비용·책임</h2>
+    <p>첫째, <b>등록</b>이다. 학원법 제6조와 관련해 대표는 강의 제공자, 수강료 수령자, 강사, 교육 장소, 수료 기준을 한 장의 운영표로 확인해야 한다. 온라인 과정이라도 정기적인 강의와 수강생 관리가 결합되어 있다면 등록 여부를 검토해야 한다.</p>
+    <p>둘째, <b>알선의 대가</b>다. 직업안정법 제32조와 관련된 리스크는 취업 연계가 유료로 작동하는지에서 커진다. 교육비와 취업 알선 대가를 분리하고, 기업으로부터 받는 돈이 있는지, 수강생에게 별도 비용을 받는지, 현장 배치 후 어떤 책임을 부담하는지 명확히 한다.</p>
+    <p>셋째, <b>광고 문구</b>다. ‘교육’, ‘자격’, ‘취업 보장’ 같은 표현은 실제 제공 서비스와 일치해야 한다. 한 계약서에 모든 기능을 넣으면 환불과 책임의 기준도 불분명해진다.</p>
+    <div class="callout">
+      <b>등록 또는 신고가 필요한지 모호한 단계에서 전문가와 관할 기관에 확인하는 비용이 신규 모집을 중단하는 비용보다 작을 수 있다.</b> 보장 문구도 대표 승인 항목으로 두는 편이 안전하다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>놓치기 쉬운 조건과 예외</h2>
+    <p><b>지표</b>가 조건이다. 등록 상태, 교육과정 변경, 수강생 민원, 환불률, 취업 연계 건수, 배치 후 사고, 광고 문구 변경을 월별로 보고받는다. 단순히 매출이 늘고 있다는 이유로 기능을 확장하면 법적 의무와 운영능력의 차이가 커진다.</p>
+    <p><b>현장 배치의 책임</b>도 조건이다. 교육이 끝난 뒤 기업 현장에 배치한다면 누구의 지시를 받고 어떤 사고 대응을 하는지 정해야 한다. 배치가 단순 정보 제공인지 실제 직업 소개인지, 대가가 누구에게 지급되는지 기록한다.</p>
+    <p><b>문제 제기 후의 순서</b>가 조건이다. 무등록 운영 가능성이 제기되면 증거를 없애거나 광고를 급히 바꾸기보다 현재 운영 구조를 보존하고 신규 모집·결제를 잠정 점검해야 한다.</p>
+    <ul class="points">
+      <li>새 강의나 취업 연계 상품을 출시하기 전 수강료·소개비·기업 지급금의 흐름을 한 장으로 보고받는다.</li>
+      <li>민원이 들어오면 광고를 삭제하기보다 원본을 보존하고 수강생 명단, 결제 내역, 수업 제공 자료를 확보한다.</li>
+      <li>대표는 처리 기한과 담당자를 정하고, 확인 전에는 신규 약속을 확대하지 않도록 지시한다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>운영 모델과 중단 기준을 승인한다.</b> 기준은 다음과 같다.</p>
+      <ol>
+        <li><b>① 강의 제공자와 수강료 수령자를 확인한다.</b></li>
+        <li><b>② 학원법 제6조 등록 여부를 검토한다.</b></li>
+        <li><b>③ 취업 연계 비용과 교육비를 구분한다.</b></li>
+        <li><b>④ 직업안정법 제32조 관련 금품 흐름을 본다.</b></li>
+        <li><b>⑤ 문제가 생기면 자료 보존과 신규 모집 중단을 판단한다.</b></li>
+        <li><b>⑥ 배치 후 지시 체계와 사고 대응을 정한다.</b></li>
+        <li><b>⑦ 보장 문구를 대표 승인 항목으로 둔다.</b></li>
+        <li><b>⑧ 환불 기준이 어느 계약을 따르는지 명확히 한다.</b></li>
+        <li><b>⑨ 결정과 보류 사유를 회의록에 남긴다.</b></li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;">법무가 제6조와 제32조를 기준으로 사실관계를 분류한 뒤 대표가 모집 중단·환불·기관 문의의 순서를 승인하도록 한다. <b>교육사업의 성장 속도보다 중요한 것은 사업 기능의 경계다.</b> 수강생이 누구에게 무엇을 지불하는지, 환불은 어느 계약을 기준으로 하는지 명확해야 하며, 직업안정법 제32조 검토가 필요한 구조라면 매출 목표보다 등록·신고 가능성을 먼저 확인해야 한다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
