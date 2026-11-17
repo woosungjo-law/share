@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>근보증의 한도와 기간 — 갱신인지 확인인지가 보증의 운명을 가른다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 근보증 한도·기간</div>
+    <h1>근보증의 한도와 기간 — 갱신인지 확인인지가 보증의 운명을 가른다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 한정근보증은 <b>거래 종류·결산기·한도액</b> 세 칸이 모두 차면, 이후의 기한 갱신이나 한도 증액이 있어도 <b>보증인의 별도 동의 없이 피보증채무에 포함</b>될 수 있습니다(<b>민법 제428조의3</b>). 반대로 만기·금액 변경 때마다 <b>추가약정서 서명을 받았다는 사정만으로 계약 자체가 갱신됐다고 볼 수는 없습니다</b>(<b>보증인보호를위한특별법 제6조</b>). 서명이 갱신인지 확인인지가 보증의 운명을 가릅니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      정기권과 같습니다. 정기권에 <b>구간·기간·금액</b>이 적혀 있으면 그 범위 안의 탑승은 다시 표를 사지 않아도 됩니다. 하지만 정기권을 <b>새로 발급한 것</b>과 <b>개찰구에서 한 번 확인한 것</b>은 전혀 다릅니다. 확인 도장을 받았다고 기간이 늘어나지는 않습니다. 기간이 끝나면 남은 노선도 함께 끝납니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+        <p>첫째, <b>피보증채무의 포함</b>입니다. 미리 정한 기본거래의 <b>종류</b>로 장래 거래를 특정할 수 있으면, 이후의 <b>새 거래·기한 갱신·한도 증액</b>이 그 종류에 속하고 <b>결산기 이전</b> 발생이며 <b>근보증한도액</b>을 넘지 않을 때, 특별한 사정이 없는 한 <b>보증인의 별도 동의 없이도 포함</b>됩니다(<b>민법 제428조의3</b>). 세 칸이 갈림길입니다.</p>
+    <p>둘째, <b>사망 시 지위의 승계</b>입니다. <b>보증기간과 보증한도액의 정함이 없는</b> 계속적 보증계약은 보증인이 사망하면 <b>보증인 지위가 상속인에게 승계되지 않고</b>, 이미 발생한 보증채무만 상속됩니다(<b>보증인보호를위한특별법 제4조</b>). 기간과 한도를 정해 두는 일이 상속 다툼을 막습니다.</p>
+    <p>셋째, <b>갱신인지 확인인지</b>입니다. 채권자가 주채무의 만기·금액 변경 때마다 추가약정서에 서명을 받았다는 사정만으로 <b>근보증계약 자체가 갱신됐다고 볼 수 없고</b>, 이는 <b>보증의사를 확인한 것에 불과</b>할 수 있습니다(<b>제6조</b>). 서명했다고 다 갱신은 아닙니다.</p>
+    <p>넷째, <b>확정 시점의 갈림길</b>입니다. 주계약 거래기간이 연장됐더라도 <b>보증기간은 연장되지 않아 보증관계가 먼저 종료</b>되면, <b>그 종료 시점에 보증채무가 확정</b>되고 보증인은 그때 존재하는 주계약 채무에만 책임을 부담합니다(<b>제7조</b>). 끝난 뒤의 채무는 책임지지 않습니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>종류·결산기·갱신·승계·종료가 갈림길이다</h2>
+    <ul class="points">
+      <li><b>거래 종류</b> — 미리 정한 기본거래 종류에 속해야 포함됩니다. 속하지 않으면 보증 밖입니다.</li>
+      <li><b>결산기·한도</b> — 민법 제428조의3의 두 칸이 모두 차야 합니다. 하나라도 비면 포함되지 않습니다.</li>
+      <li><b>갱신 판단</b> — 계약 자체의 갱신인지 단순 확인인지. <b>추가약정서 서명만으로 갱신이라 볼 수 없습니다.</b></li>
+      <li><b>기간·한도 없는 계약</b> — 제4조에 따라 사망 시 지위가 승계되지 않습니다. 기간과 한도를 두는 것이 예방입니다.</li>
+      <li><b>종료 시점</b> — 보증관계가 먼저 끝나면 그 시점에 채무가 확정됩니다. 제7조로 종료 시점을 박습니다.</li>
+      <li><b>특별한 사정</b> — 있으면 포함 판단이 달라집니다. 기록에 남기지 않으면 없는 사정이 됩니다.</li>
+    </ul>
+    <div class="callout"><b>표의 첫 칸은 '거래 종류'입니다.</b> 종류가 특정되지 않는 근보증은 뒤의 갱신·한도 논의가 전부 흔들립니다. 그리고 추가약정서를 볼 때 <b>서명 옆에 무엇이 적혀 있었는지</b>를 먼저 확인하세요. '확인'과 '갱신'은 종이 위에서 한 단어 차이지만 결과는 반대입니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">종류·갱신·승계·확정을 한 표로 묶는 다섯 단계입니다. 표의 행 이름은 바꾸지 않습니다.</p>
+    <ol>
+      <li><b>① 종류 보기</b> — 민법 제428조의3의 기본거래 종류·결산기·한도액 세 칸을 표에 적습니다. 빈 칸은 포함이 안 됩니다.</li>
+      <li><b>② 갱신 보기</b> — 보증인보호를위한특별법 제6조의 선에서 계약 자체의 갱신인지 단순 확인인지 가릅니다.</li>
+      <li><b>③ 승계 보기</b> — 같은 법 제4조의 선에서 기간·한도 없는 계약의 사망 시 취급을 확인합니다.</li>
+      <li><b>④ 확정 두기</b> — 같은 법 제7조의 선에서 보증관계 종료 시점과 그때 존재하는 채무를 확정합니다.</li>
+      <li><b>⑤ 기록 묶기</b> — 계약서·추가약정서·거래 내역을 한 표에 두고, 누가 언제까지 무엇을 갖출지 네 줄로 적습니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
