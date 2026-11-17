@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>계약을 끊으면 청구도 끝난다는 생각(통념)이나 해제냐 이행 요구냐(쟁점)가 아닌 해제 뒤에도 손해배상이 남는 구조(본질)다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>계약을 끊으면 청구도 끝난다는 생각(통념)이나 해제냐 이행 요구냐(쟁점)가 아닌 해제 뒤에도 손해배상이 남는 구조(본질)다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 계약을 해제하더라도 손해배상청구권은 원칙적으로 존속한다. 민법 제551조는 해제나 해지가 손해배상 청구에 영향을 주지 않는다고 정한다. 따라서 회사는 계약을 끝내는 것과 손해를 되찾는 것을 동시에 선택할 수 있다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>사건의 시작: 해외 원재료 지연에 매장 신메뉴 출시가 걸린 날</h2>
+    <div class="analogy">
+      해외 원재료 공급사가 약속한 납기를 두 달 넘겼다. 신메뉴 출시가 이미 광고에 나갔고, 가맹점에 보낸 공지도 되돌릴 수 없었다. 공급사는 물량을 줄여 맞추자고 제안했고, 내부에서는 계약을 해제하고 다른 공급처를 찾자는 의견이 나왔다. <b>그러나 이미 지급한 선급금과 가맹점 보상 부담이 얼마나 되는지 계산되지 않은 상태였다.</b>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 보는 핵심: 해제해도 손해배상을 청구할 권리는 남는다</h2>
+    <p>첫째, <b>권리의 병존</b>이다. 계약을 해제하더라도 손해배상청구권은 원칙적으로 존속한다. 민법 제551조는 해제나 해지가 손해배상 청구에 영향을 주지 않는다고 정한다. 계약을 끊었으니 더 이상 청구할 것이 없다고 생각하면 중요한 권리를 놓친다.</p>
+    <p>둘째, <b>계산 방식의 분리</b>다. 되돌려 받을 돈은 해제에 따른 원상회복의 문제이고, 청구할 손해는 이행이익이나 신뢰이익, 또는 미리 정해 둔 손해배상 예정의 문제로 따로 설계된다. 두 항목을 하나의 금액으로 뭉치면 상대는 중복이라고 공격하기 쉽다.</p>
+    <p>셋째, <b>예정액의 조정</b>이다. 고액의 손해배상 예정액이나 배액 청구에 대해서는 민법 제398조 제2항에 따른 감액, 신의칙, 권리남용 항변을 검토한다. 계약서에 큰 숫자가 있다고 그대로 받아 낼 수 있다고 보면 안 된다.</p>
+    <div class="callout">
+      <b>해제와 손해배상을 하나의 금액으로 뭉치면 중복 공격을 받는다.</b> 선급금 반환과 손해배상, 가맹점 보상을 서로 다른 항목으로 계산해야 협상이 빨라진다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>놓치기 쉬운 조건과 예외: 협약상 구제수단은 근거 범위 안에서만 말한다</h2>
+    <p><b>근거의 범위</b>가 조건이다. 이 거래는 국제물품매매협약이 함께 문제 될 수 있는 구조다. 그러나 이번 자료의 근거는 민법 조문과 판례 범위에 한정되어 있다. 협약의 세부 규정으로 결론을 내리려면 따로 확인이 필요하다. 경영진이 “협약상 이렇게 된다”는 말을 근거 없이 믿고 결정하면 나중에 큰 손실이 날 수 있다.</p>
+    <p><b>항목의 혼합</b>도 조건이다. 선급금 반환과 손해배상을 섞으면 계산이 흐려진다. 되돌려 받을 금액은 확정된 지급 기록으로, 손해는 실제 피해 자료로 나누어야 협상이 빨라진다.</p>
+    <ul class="points">
+      <li>가맹점 보상 부담도 손해배상의 항목에 들어갈 수 있는지 법무와 함께 따져야 한다.</li>
+      <li>예정 금액이 감액될 가능성을 반영해 최악과 기대 시나리오를 나란히 본다.</li>
+      <li>협상 테이블에서 오간 중요한 제안과 거절은 서면으로 남긴다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>해제와 청구의 합산 한도와 협상 순서를 정한다.</b> 점검 순서는 다음과 같다.</p>
+      <ol>
+        <li><b>① 병존 구조</b> — 해제해도 손해배상청구권은 남으므로, 해제 결정과 청구 결정을 따로 승인받는다.</li>
+        <li><b>② 항목 분리</b> — 선급금 반환과 손해배상, 가맹점 보상을 서로 다른 항목으로 계산해 중복 청구를 막는다.</li>
+        <li><b>③ 한 장의 표</b> — 해제 여부를 정하기 전에 선급금 반환액, 손해배상 예상액, 가맹점 보상 부담을 한 장의 표로 만든다.</li>
+        <li><b>④ 청구 상한</b> — 공급사에 대한 청구 상한을 이사회 승인 범위 안에서 정하고, 그 안에서 물량 조정 제안을 받을지 결정한다.</li>
+        <li><b>⑤ 예정액 점검</b> — 고액 예정액이나 배액 청구는 감액 가능성을 함께 보고 시나리오를 나눈다.</li>
+        <li><b>⑥ 근거 확인</b> — 협약상 구제수단을 결정 근거로 쓰기 전에 법무가 근거 범위를 확인한다.</li>
+        <li><b>⑦ 중단 기준</b> — 공급사가 기한 안에 물량을 확정하지 않으면 해제 통지로 넘어간다.</li>
+        <li><b>⑧ 자료 보강</b> — 예정 금액의 감액 가능성이 크다고 판단되면 협상 대신 손해 자료를 더 모은다.</li>
+        <li><b>⑨ 서면화</b> — 구두 합의를 했다면 같은 날 요지를 메일로 정리해 보내 상대의 확인을 받는다.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;">협상 테이블에서 오간 말은 나중에 증거가 될 수 있다. <b>이 절차 하나로 나중에 “그런 말을 한 적이 없다”는 다툼을 크게 줄일 수 있다.</b></p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
