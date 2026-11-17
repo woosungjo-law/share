@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>시간이 지났다고 끝이 아니다, 안 날부터 따진다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 불법행위 손해배상과 시효 기산점</div>
+    <h1>시간이 지났다고 끝이 아니다, 안 날부터 따진다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> 시효는 <b>계약한 날</b>이 아니라 <b>손해와 가해자를 구체적으로 안 날</b>부터 따집니다. <b>민법 제766조 제1항</b>이 근거입니다. 여기에 하나가 더 붙습니다. <b>불법행위 손해배상책임은 원칙적으로 위법행위 시에 성립하지만, 위법행위와 손해 발생 사이에 시간적 간격이 있으면 손해가 발생한 때에 성립</b>합니다. <b>민법 제750조</b>가 근거입니다. 그래서 물을 것은 달력이 아니라 <b>두 가지</b>입니다. <b>언제 구체적으로 알았는지</b>, 그리고 <b>손해가 언제 현실화됐는지</b>입니다. <b>대법원 2020다225848 판결</b>도 같은 취지로 성립 시점과 기산점의 인정 방법을 다룹니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>은행 창구에서 들은 설명 한 마디를 믿고 가입한 상품</b>을 떠올려 보십시오. 김도윤은 직원의 설명만 믿고 가입한 금융상품에서 큰 손실을 봤습니다. 문제를 제기하려 하자 돌아온 말은 <b>가입한 지 오래됐다</b>는 것이었습니다. 여기서 갈리는 것이 있습니다. <b>계약한 날</b>과 <b>손해가 확정된 날</b>은 다를 수 있습니다. <b>언제 알았는지</b>와 <b>언제 현실화됐는지</b>가 시효의 기준이 되기 때문입니다. 김도윤은 날짜를 셈하기 전에 <b>무엇을 언제 알았는지</b>를 정리하기로 했습니다. 막연한 느낌이 아니라 <b>구체적으로 알게 된 때</b>가 기준이므로, 알게 된 경위를 적어보기로 했습니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>먼저 알아 둘 것이 있습니다. <b>민법 제766조 제1항</b>의 <b>손해 및 가해자를 안 날</b>은 손해의 발생과 위법한 가해행위의 존재, 그 사이의 상당인과관계 같은 <b>요건사실을 현실적이고 구체적으로 인식한 때</b>를 뜻합니다. 막연히 이상하다고 느낀 때가 아니라 <b>구체적으로 알게 된 때</b>입니다. 언제 무엇을 알았는지를 적어 두면 기산점이 보입니다.</p>
+    <p>다음으로 책임의 성립입니다. <b>불법행위 손해배상책임은 원칙적으로 위법행위 시에 성립</b>하지만, <b>위법행위와 손해 발생 사이에 시간적 간격이 있으면 손해가 발생한 때에 성립</b>합니다. <b>민법 제750조</b>가 근거입니다. <b>대법원 2020다225848 판결</b>의 판시사항도 같은 취지로 성립 시점과 기산점의 인정 방법을 다룹니다.</p>
+    <p>즉 물을 것은 달력이 아니라 두 가지입니다. <b>언제 구체적으로 알았는지</b>, 그리고 <b>손해가 언제 현실화됐는지</b>입니다. <b>손해 발생 때가 성립 시점이 될 수 있고, 안 날은 요건사실의 구체적 인식</b>입니다. 두 날짜를 함께 놓고 보아야 기한이 보입니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>인식과 확정이 쟁점을 가른다</h2>
+    <ul class="points">
+      <li><b>첫째, 안 날을 봅니다</b> — <b>요건사실이 구체적으로 인식된 때</b>가 언제인지 가립니다. 막연한 느낌이 아니라 확인된 사실을 기준으로 삼습니다.</li>
+      <li><b>둘째, 손해 발생 시점을 봅니다</b> — <b>위법행위와 손해 사이의 간격</b>을 따집니다. 간격이 있으면 손해가 발생한 때가 성립 시점이 될 수 있습니다.</li>
+      <li><b>셋째, 증빙을 모읍니다</b> — <b>손실 확정 통지와 제재조치 시점 같은 기록</b>이 기산점을 지킵니다. 통지와 문자를 버리지 말고 모아 둡니다.</li>
+      <li><b>넷째, 간격을 정리합니다</b> — <b>위법행위 때와 손해 확정 때</b>를 시간 순으로 적습니다. 순서대로 놓으면 어느 날이 문제인지 보입니다.</li>
+      <li><b>다섯째, 단정하지 않습니다</b> — <b>인식 시점과 적용은 사안에 따라 달라질 수 있으므로 확인되지 않은 부분은 사실대로 남깁니다.</b> 여기에 <b>확정 시점</b>을 함께 봅니다. 손실이 언제 현실화됐는지를 통지로 확인합니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> <b>시효는 가입한 날이 아니라 안 날부터</b>입니다. <b>안 날은 막연히 이상하다고 느낀 때가 아니라 요건사실을 현실적·구체적으로 인식한 때</b>이고, <b>위법행위와 손해 사이에 간격이 있으면 손해가 발생한 때가 책임 성립 시점</b>이 될 수 있습니다. <b>통지와 문자를 버리면 기산점을 다툴 자료가 사라지므로</b> 한 건으로 묶어 보관하십시오. <b>적용 여부는 사안에 따라 달라질 수 있으니 정리한 기록을 갖고 확인</b>하시기 바랍니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;">먼저 <b>언제 알았는지</b>를 적고, 이어서 <b>손해 확정 시점</b>을 통지와 기록으로 묶습니다. 그다음 증빙을 한 건으로 모아 기한을 계산하고, 마지막에 전문가 확인을 받습니다.</p>
+    <ol>
+      <li><b>① 안 날 정리</b> — 손해와 가해행위를 구체적으로 인식한 시점을 시간 순으로 적는다. 막연한 느낌이 아니라 확인된 사실을 적는다.</li>
+      <li><b>② 확정 정리</b> — 손실이 언제 현실화됐는지를 통지와 기록으로 묶는다.</li>
+      <li><b>③ 증빙 보관</b> — 손실 확정 통지, 제재조치 기록, 오간 문자를 한 건으로 보관한다.</li>
+      <li><b>④ 기한 계산</b> — 안 날과 발생 시점을 기준으로 청구 기한을 따져본다.</li>
+      <li><b>⑤ 사전 자문</b> — 정리한 기록을 갖고 자문을 구해 시효가 지났는지 판단한다. 기록은 버리지 말고 모아 둔다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
