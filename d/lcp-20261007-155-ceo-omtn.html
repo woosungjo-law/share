@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>직원이 저지른 일, 어디까지 회사 책임인가</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>직원이 저지른 일, 어디까지 회사 책임인가</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 함께 실행한 사람은 정범과 같은 형으로 처벌되고(형법 제30조), 시킨 사람과 거든 사람은 유형에 따라 가벼워질 수 있다(형법 제31조). 반대로 뒤에서 사람을 도구처럼 부린 경우는 정범이 된다(형법 제34조). 대표가 지금 정할 것은 누구를 내보낼지가 아니라, 사람별 역할을 네 유형으로 갈라 확정하고 비용·조치·대응 순서를 세우는 일이다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      배정훈은 산업설비업체를 운영하는 대표다. <b>임직원 몇 명이 함께 연루된 형사 사건이 생겼는데, 누가 시켰고 누가 거들었는지가 뒤섞여 있었다.</b> 대표로서 어디까지 책임을 지고 누구에게 어떤 조치를 할지 정해야 했다. 그는 사건 개요와 각자의 관여 내역을 묶어 보고받았다. 직접 실행한 사람과 지시한 사람, 거든 사람을 갈라 적게 했고, 단순히 알고만 있었다는 사람도 표시하게 했다. 비용과 대응 순서도 함께 정하게 했다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, <b>공동정범</b>이다. 2인 이상이 공동으로 범죄를 실행하는 경우이고, 형법 제30조가 그 근거이며 각자는 정범과 동일한 형으로 처벌된다. 함께 실행한 사람은 같은 책임을 진다. 그래서 누가 실행에 나섰는지부터 확인해야 한다.</p>
+    <p>둘째, <b>교사와 방조</b>다. 유형에 따라 처벌이 갈린다. 공동정범은 정범과 동일한 형이고, 교사범은 법정감경이 가능하며, 방조범은 감경이 가능하다. 형법 제31조가 교사와 방조를 다룬다. 그래서 시킨 사람과 거든 사람은 실행한 사람보다 가벼워질 수 있다.</p>
+    <p>셋째, <b>네 가지 유형</b>이다. 공동정범·간접정범·교사범·방조범을 구분하고 각각의 성립 요건과 처벌 수위를 본다. 형법 제34조가 간접정범을 다루고, 뒤에서 사람을 도구처럼 부린 경우도 정범이 될 수 있다.</p>
+    <p>넷째, <b>'함께 있었다'의 한계</b>다. 단순히 함께 있었다는 것만으로는 부족하다. 대법원 2008도1274 판결은 공동가공의 의사와 기능적 행위지배를 통한 범죄 실행이 필요하다고 밝혔다. 단순 의사연락만으로는 부족하고 본질적 기여가 있어야 한다. 그래서 각자의 행위가 본질적 기여에 이르렀는지 따져야 한다.</p>
+    <div class="callout">
+      <b>역할이 형량을 가른다.</b> 같은 사건에 연루돼도 실행·교사·방조·간접정범 중 어디에 서 있는지에 따라 처벌 수위가 달라진다. 사람마다 따로 판단해야 한다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>놓치기 쉬운 조건과 예외</h2>
+    <p><b>역할의 범위</b>가 첫 조건이다. 실행·교사·방조·간접정범에 따라 처벌 수위가 다르다. <b>본질적 기여</b>가 있었는지도 조건이다. 단순히 알고 있었다는 사실만으로는 공동정범이 되기 어렵다. <b>공동가공 의사</b>가 있었는지도 조건이다.</p>
+    <p><b>비용과 책임 배분</b>도 정한다. 개인 사건과 회사 관련 사건을 구분하고, 변호 비용을 어디까지 댈지 정한다. <b>대응 순서</b>도 정한다. 사실 확인, 유형 확정, 인사 조치의 순서를 세운다.</p>
+    <ul class="points">
+      <li>본질적 기여는 행위의 무게로 판단한다. 계획에 참여하고 실행을 분담했으면 기여가 크다.</li>
+      <li>한 사람은 실행으로, 다른 사람은 거듦으로 갈릴 수 있으므로 사람마다 유형을 따로 본다.</li>
+      <li>조사가 길어지면 잠정 조치를 두고 판단하는 기준도 둔다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>역할과 유형을 확정한다.</b> 배정훈이 세운 순서는 다음과 같다.</p>
+      <ol>
+        <li><b>① 공동정범을 본다</b> — 공동 실행 시 동일 형량을 본다(형법 제30조).</li>
+        <li><b>② 수위를 본다</b> — 정범·교사·방조의 수위를 본다(형법 제31조).</li>
+        <li><b>③ 유형을 가른다</b> — 네 가지 공범 유형을 나눈다(형법 제34조).</li>
+        <li><b>④ 기여를 본다</b> — 본질적 기여를 본다(대법원 2008도1274).</li>
+        <li><b>⑤ 의사를 본다</b> — 공동가공 의사를 본다(대법원 2008도1274).</li>
+        <li><b>⑥ 역할을 본다</b> — 각자 역할을 표로 나눈다.</li>
+        <li><b>⑦ 비용을 본다</b> — 변호 비용 부담 범위를 정한다.</li>
+        <li><b>⑧ 순서를 둔다</b> — 사실 확인·유형 확정·조치 순으로 둔다.</li>
+        <li><b>⑨ 조치를 본다</b> — 인사 조치 기준을 정한다.</li>
+        <li><b>⑩ 중단을 둔다</b> — 조사 장기화 시 판단 기준을 둔다.</li>
+        <li><b>⑪ 사람별로 본다</b> — 사람마다 유형을 따로 본다.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;">배정훈은 각자의 관여 내역을 모아 유형을 먼저 확정하게 했다. 실행·교사·방조·간접정범을 표로 나눠 보고받았고, 본질적 기여와 공동가공 의사를 확인하게 했다. 비용과 인사 조치 기준을 정하게 했으며, 확정되지 않은 부분은 서두르지 않게 했다. <b>사람별로 유형을 갈라 두어야 조치의 근거가 남는다</b>는 판단이었다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
