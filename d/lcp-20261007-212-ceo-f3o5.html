@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>군 수사 압수수색, 영장 범위를 먼저 본다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>군 수사 압수수색, 영장 범위를 먼저 본다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 군검사의 수사상 압수·수색에도 한계가 있다. 군사법원법 제258조에 따라 준용되는 같은 법 제146조 제1항과 제149조 제1항도 사건과 관계가 있는 것에 한정해 압수·수색을 허용하므로, 관련성 제한이 그대로 적용된다. 대법원 2021도8284는 그 관련성의 의미와 인정 범위를 다룬다. 대표가 지금 정할 것은 항의가 아니라 압수 목록 확보와 항목별 관련성 대조다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      임도현은 운송업체 대표다. <b>군 관련 계약을 둘러싼 수사로 군검사가 사무실 압수수색을 진행했는데, 영장에 적힌 범위보다 넓게 자료를 가져간 듯했다.</b> 임도현은 영업비밀 유출도 걱정되어 대응을 정리해야 한다고 봤다. 그는 영장 사본과 압수 목록을 확보하게 했고, 반출된 항목과 사내에 남은 항목도 나눠 보게 했다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, <b>관련성이라는 선</b>이다. 군검사의 수사상 압수·수색에도 한계가 있다. 군사법원법 제258조에 따라 준용되는 같은 법 제146조 제1항과 제149조 제1항도 사건과 관계가 있는 것에 한정해 압수·수색을 허용한다. 그래서 군검사의 압수·수색도 관련성 제한을 받는다.</p>
+    <p>둘째, <b>관련성의 두 갈래</b>다. 영장에 적힌 혐의사실과의 객관적 관련성, 그리고 피의자나 피고인과의 인적 관련성이다. 두 기준을 나눠 확인해야 한다.</p>
+    <p>셋째, <b>범위를 벗어난 자료</b>다. 관련성이 인정되기 어렵다. 그래서 무엇이 반출됐는지 목록으로 남기는 것이 먼저다.</p>
+    <p>넷째, <b>판례 기준</b>이다. 대법원 2021도8284는 사건과 관계가 있다는 것의 의미와 객관적·인적 관련성의 인정 범위 및 기준을 다룬다. 이 판시가 검토 기준이 된다.</p>
+    <p>다섯째, <b>비밀과 추가 요구</b>다. 영업비밀과 다른 거래처 정보가 섞여 나가면 회복이 어렵다. 또한 수사가 이어지면 추가 요구가 올 수 있어 요구마다 범위를 확인하는 절차가 필요하다.</p>
+    <div class="callout">
+      <b>압수 목록이 없으면 이의도 없다.</b> 기록이 조건이다. 압수 목록과 진행 기록이 있어야 이의를 제기할 수 있으므로, 이의는 현장 기록을 근거로 즉시 남긴다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>놓치기 쉬운 조건과 예외</h2>
+    <p><b>영장 범위</b>가 조건이다. 압수·수색은 영장에 적힌 범위에서 이뤄져야 한다. <b>관련성 판단</b>도 조건이다. 객관적 관련성과 인적 관련성을 각각 본다.</p>
+    <p><b>기록</b>도 조건이다. 압수 목록과 진행 기록이 있어야 이의를 제기할 수 있다. <b>비밀 유지</b>도 조건이다. 반출 항목의 복사본을 요청해 보관을 관리한다.</p>
+    <ul class="points">
+      <li>시점도 조건이다. 이의는 현장 기록을 근거로 이뤄지므로 즉시 남긴다.</li>
+      <li>전자자료 복사본을 요청하면 반출 범위를 확인할 수 있다.</li>
+      <li>추가 요구는 목록으로 관리하고, 요구마다 범위를 다시 확인한다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>범위와 비밀을 함께 지킨다.</b> 임도현이 세운 순서는 다음과 같다.</p>
+      <ol>
+        <li><b>① 제한을 본다</b> — 관련성 제한을 확인한다(군사법원법 제258조).</li>
+        <li><b>② 준용을 본다</b> — 준용 조문을 확인한다(군사법원법 제146조).</li>
+        <li><b>③ 범위를 본다</b> — 영장 기재 범위를 확인한다.</li>
+        <li><b>④ 객관성을 본다</b> — 혐의사실 관련성을 본다.</li>
+        <li><b>⑤ 인적관련성을 본다</b> — 당사자 관련성을 본다.</li>
+        <li><b>⑥ 판례를 본다</b> — 인정 기준을 확인한다(대법원 2021도8284).</li>
+        <li><b>⑦ 목록을 본다</b> — 압수 항목을 확인한다.</li>
+        <li><b>⑧ 이의를 본다</b> — 이의 근거를 정리한다.</li>
+        <li><b>⑨ 비밀을 본다</b> — 영업비밀 보호를 지시한다.</li>
+        <li><b>⑩ 복사를 요청한다</b> — 반출 항목 복사본을 요청한다.</li>
+        <li><b>⑪ 담당을 정한다</b> — 대응 담당자를 지정한다.</li>
+        <li><b>⑫ 보고를 받는다</b> — 진행 상황을 받는다.</li>
+        <li><b>⑬ 기록을 남긴다</b> — 대응 결론을 남긴다.</li>
+        <li><b>⑭ 재검토를 건다</b> — 상황 변화 시 다시 본다.</li>
+        <li><b>⑮ 요구를 기록한다</b> — 추가 요구를 관리한다.</li>
+        <li><b>⑯ 복사를 요청한다</b> — 전자자료 복사본을 요청한다.</li>
+        <li><b>⑰ 범위를 확인한다</b> — 반출 범위를 재확인한다.</li>
+        <li><b>⑱ 보고를 한다</b> — 이사회에 보고한다.</li>
+        <li><b>⑲ 향후를 정한다</b> — 이후 절차를 정한다.</li>
+        <li><b>⑳ 담당을 정한다</b> — 추가 대응 담당자를 지정한다.</li>
+        <li><b>㉑ 기록을 남긴다</b> — 대응 기록을 남긴다.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;">임도현은 영장 사본과 압수 목록을 확보하게 했다. 항목별 관련성을 확인하고 범위를 벗어난 항목을 표시하게 했으며, 이의 제기와 비밀 유지 조치를 동시에 진행하게 했다. 대응 결과는 이사회에 보고하고 향후 절차를 정하게 했다. 확인되지 않은 부분은 추정으로 채우지 않았다. <b>범위를 기록으로 고정하는 것</b>이 그의 결정이었다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
