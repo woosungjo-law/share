@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>회계장부 열람 청구 — 입증책임은 누구에게 있는가</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 회계장부 열람 청구</div>
+    <h1>회계장부 열람 청구 — 입증책임은 누구에게 있는가</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 발행주식 총수의 <b>100분의 3 이상</b>을 가진 주주는 <b>이유를 붙인 서면</b>으로 회계장부 열람·등사를 청구할 수 있고(<b>상법 제466조 제1항</b>), 회사는 <b>청구가 부당함을 증명하지 못하면 거부하지 못합니다</b>(<b>같은 조 제2항</b>). 즉 <b>거부의 입증책임은 회사</b>에 있습니다. 주주가 배임 의혹을 완벽히 증명해야 하는 구조가 아닙니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      도서관 대출과 같습니다. 회원증이 있고 <b>대출 사유를 적은 신청서</b>를 내면 책을 빌릴 수 있습니다. 사서가 <b>'이 사람은 못 빌린다'</b>고 하려면 <b>그럴 이유를 대야</b> 합니다. '왠지 수상하다'는 이유가 되지 않습니다. 반대로 회원이 <b>'이 책이 문제 있다'</b>를 증명해야 빌릴 수 있는 것도 아닙니다. <b>막는 쪽이 이유를 대는 구조</b>입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+        <p>첫째, <b>청구권의 근거와 문턱</b>입니다. 발행주식 총수의 <b>100분의 3 이상</b>을 보유한 주주가 <b>이유를 붙인 서면</b>으로 회계장부와 서류의 열람·등사를 청구할 수 있습니다(<b>상법 제466조 제1항</b>). <b>지분과 형식이 문턱</b>입니다. 둘 중 하나가 빠지면 청구 자체가 흔들립니다.</p>
+    <p>둘째, <b>거부의 제한</b>입니다. 회사는 <b>주주의 청구가 부당함을 증명하지 아니하면 거부하지 못합니다</b>(<b>같은 조 제2항</b>). <b>거부하려면 회사가 먼저 증명</b>해야 합니다. '부당하다'는 주장과 '부당함을 증명했다'는 다른 말입니다.</p>
+    <p>셋째, <b>입증책임의 자리</b>입니다. 주주가 청구 이유로 제시한 <b>배임 의혹의 사실 여부</b>를 주주 스스로 <b>합리적 의심이 들 정도로 소명</b>해야 하는지, 아니면 <b>회사가 부당함을 증명하지 못하는 한 허용</b>해야 하는지가 핵심 쟁점입니다. <b>이 갈림길이 어디로 서느냐에 따라 준비할 자료와 대응 순서가 달라집니다.</b></p>
+    <p>넷째, <b>두 항의 짝</b>입니다. 제1항이 <b>청구권을 열고</b>, 제2항이 <b>거부의 조건</b>을 정합니다. 한쪽만 보면 판단이 기웁니다. 청구가 부당하다는 <b>주장</b>과 그 <b>증명</b>을 분리해 표에 적어야 합니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>지분·형식·증명·범위가 갈림길이다</h2>
+    <ul class="points">
+      <li><b>지분</b> — 100분의 3 이상. 문턱이므로 보유 내역으로 먼저 확인합니다.</li>
+      <li><b>형식</b> — 이유를 붙인 서면. 이유 없는 청구는 <b>형식에서 흔들립니다.</b></li>
+      <li><b>부당함 증명</b> — 회사가 자료로 보입니다. <b>증명하지 못하면 거부하지 못합니다.</b></li>
+      <li><b>입증책임</b> — 배임 의혹의 소명 주체를 먼저 정합니다. 이 정리가 방어의 방향을 가릅니다.</li>
+      <li><b>범위 한정</b> — 허용하더라도 필요한 범위로 좁힙니다. 넓히면 노출이 커집니다.</li>
+      <li><b>보존</b> — 청구서·이유 기재·보유 내역·대응 문서를 한 묶음에 둡니다.</li>
+    </ul>
+    <div class="callout"><b>거부 검토의 순서를 바꾸지 마세요.</b> ① 지분 ② 서면 형식 ③ 부당함 증명 — 이 세 칸 중 앞의 두 칸이 흠이면 <b>거부보다 형식 보완 요구가 먼저</b>입니다. 세 칸이 모두 갖춰졌을 때만 '부당함'을 자료로 준비합니다. 청구서에 적힌 이유는 <b>사실과 의견으로 나눠</b> 표시하세요.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">지분·형식·증명·범위를 한 표로 묶는 여섯 단계입니다. 표의 행 이름은 바꾸지 않습니다.</p>
+    <ol>
+      <li><b>① 지분 확인</b> — 상법 제466조 제1항의 100분의 3 요건을 보유 내역으로 확인합니다.</li>
+      <li><b>② 형식 확인</b> — 이유를 붙인 서면인지, 접수일과 접수 경로가 기록됐는지 확인합니다.</li>
+      <li><b>③ 부당함 증명</b> — 같은 조 제2항의 구조로 거부 근거 자료를 모읍니다. 증명이 없으면 거부하지 않습니다.</li>
+      <li><b>④ 입증책임 정리</b> — 배임 의혹의 소명 주체를 표에 명시하고, 사실과 의견을 나눠 적습니다.</li>
+      <li><b>⑤ 범위 한정</b> — 허용 시 필요한 범위로 좁히고 비밀유지 조건을 서면으로 붙입니다.</li>
+      <li><b>⑥ 보존·기록</b> — 청구서·이유·보유 내역·대응 문서를 보존하고, 누가 언제까지 무엇을 갖출지 네 줄로 적습니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
