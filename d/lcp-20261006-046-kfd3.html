@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>해외 클라우드에 올리는 게 쟁점, 동의만 받으면 된다는 생각이 아닌 이전 요건을 갖췄는지가 본질이다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 개인정보 국외이전</div>
+    <h1>해외 클라우드에 올리는 게 쟁점, 동의만 받으면 된다는 생각이 아닌 이전 요건을 갖췄는지가 본질이다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 국외이전은 <b>원칙적으로 금지</b>이고, <b>예외 요건을 충족했을 때만 허용</b>됩니다(<b>개인정보 보호법 제28조의8</b>). 예외는 네 가지입니다 — <b>정보주체의 사전 동의</b>, <b>적정성 평가를 받은 국가로의 이전</b>, <b>표준계약조항 체결</b>, <b>구속력 있는 내부 규정 승인</b>. <b>해외 클라우드에 올렸다는 사정만으로 허용 여부가 정해지지 않습니다.</b> 그래서 첫 질문은 기술 방식이 아니라 <b>'무엇을 근거로 이전하는가'</b>입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      해외로 물건을 보내는 일과 같습니다. <b>택배가 출발했다</b>는 사실은 통관 서류를 대신하지 못합니다. <b>수출 신고서, 목적지, 수취인, 품목</b>이 서류에 적혀 있어야 하고, <b>'대충 잡화'</b>라고 적으면 반송됩니다. 그리고 <b>서류 종류를 골랐으면 그 한 가지를 끝까지</b> 갖춰야 합니다. <b>두 방식을 반씩 섞으면 어느 쪽도 성립하지 않습니다.</b>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+        <p>첫째, <b>원칙 금지와 예외 요건</b>입니다. 국외이전은 <b>원칙적으로 금지</b>되고, <b>정보주체 동의, 적정성 평가, 표준계약조항, 구속력 있는 내부 규정</b> 등의 <b>예외 요건을 충족한 경우에만 허용</b>됩니다(<b>제28조의8</b>). <b>'이전'이라는 말이 붙는 순간 원칙 금지의 문턱을 먼저 넘습니다.</b> 글로벌 인사 데이터를 해외 본사와 공유하는 일도 <b>같은 잣대</b>입니다.</p>
+    <p>둘째, <b>네 가지 방식의 내용</b>입니다(<b>제28조의9</b>와 함께 보는 실무 정리). <b>사전 동의</b>는 <b>이전 목적·항목·이전되는 국가·받는 쪽</b>을 분명히 밝혀야 하고, <b>막연한 안내나 포괄 문구로는 부족</b>합니다. <b>적정성 평가</b>는 <b>평가받은 국가인지 명단으로 확인</b>합니다. <b>표준계약조항</b>은 <b>받는 쪽과의 계약에 보호 장치를 넣는</b> 방식이고, <b>구속력 있는 내부 규정</b>은 <b>같은 기업집단 안에서 이전 규율을 갖추는</b> 방식입니다.</p>
+    <p>셋째, <b>하나를 골라 끝까지</b>입니다. 네 가지 중 <b>회사 사정에 맞는 하나를 골라 끝까지 갖추는 것</b>이 핵심입니다. <b>둘을 반씩 섞어 어정쩡하게 두는 편이 가장 위험</b>합니다. 사전 동의를 택했다면 <b>안내와 동의서에 같은 말로</b> 적혀 있는지 보고, 표준계약조항을 택했다면 <b>계약에 이전 관련 정리</b>가 들어 있는지, 내부 규정을 택했다면 <b>집단 안의 규율 문서</b>가 있는지 확인합니다.</p>
+    <p>넷째, <b>순서와 재개 관리</b>입니다. <b>이전이 시작된 뒤에 요건을 맞추는 일은 어렵습니다.</b> 그래서 <b>이전 지도(리전·복제 경로·수신자·항목·시점)</b>를 먼저 확정하고, <b>방식을 정한 뒤에 이전을 여는</b> 순서를 규칙으로 남겨야 합니다. <b>새 리전이 생기면 현황판에 먼저 올리고</b> 방식을 정합니다. 그리고 <b>요건을 갖추지 못해 멈춘 이전은 '재개 대장'으로 관리</b>해, <b>먼저 열지 않도록</b> 합니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>지도·방식·안내·계약·재개가 갈림길이다</h2>
+    <ul class="points">
+      <li><b>이전 지도</b> — 리전·복제 경로·수신자·항목·시점을 <b>한 장</b>에 올립니다. <b>지도가 없으면 판정도 없습니다.</b></li>
+      <li><b>방식 선택</b> — 네 가지 중 <b>항목별로 하나</b>를 정합니다. 섞으면 어느 쪽도 성립하지 않습니다.</li>
+      <li><b>안내 정비</b> — 사전 동의를 택했다면 <b>목적·항목·국가·받는 쪽</b>을 모두 적고 <b>포괄 문구를 걷어냅니다</b>.</li>
+      <li><b>계약 정비</b> — 표준계약조항·내부 규정을 택했다면 <b>계약서·규정에 반영하고 보관</b>합니다.</li>
+      <li><b>적정성 확인</b> — 평가받은 국가인지 <b>명단으로 대조</b>합니다. 기억으로 판단하지 않습니다.</li>
+      <li><b>재개 관리</b> — 멈춘 이전은 <b>대장으로 관리</b>하고, 요건을 갖춘 뒤에만 다시 엽니다.</li>
+    </ul>
+    <div class="callout"><b>회의실 첫 줄에 '원칙 금지'를 적으세요.</b> 그다음 <b>현황판 한 장</b>을 만드세요 — 어느 데이터가, 언제부터, 어디로, 누가 받는지. 이 표가 비어 있으면 <b>요건을 논의할 대상 자체가 없습니다</b>. 그리고 <b>이미 이전된 항목</b>부터 표시하세요. 아직 안 된 항목보다 <b>이미 넘어간 항목</b>이 훨씬 급합니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">지도·방식·재개를 한 표로 묶는 여섯 단계입니다. 표의 행 이름은 바꾸지 않습니다.</p>
+    <ol>
+      <li><b>① 이전 지도</b> — 클라우드 리전·복제 경로·해외 수신자·항목·이전 시점을 한 장으로 정리합니다.</li>
+      <li><b>② 원칙 확인</b> — 개인정보 보호법 제28조의8의 구조로 원칙 금지와 예외 요건을 확인합니다.</li>
+      <li><b>③ 방식 선택</b> — 사전 동의·적정성 평가·표준계약조항·내부 규정 중 항목별로 하나를 정합니다.</li>
+      <li><b>④ 안내·계약</b> — 택한 방식에 맞춰 안내 문구 또는 계약서·내부 규정을 정비하고 보관합니다.</li>
+      <li><b>⑤ 적정성 확인</b> — 평가 대상 국가 명단과 대조해 해당 여부를 표시합니다.</li>
+      <li><b>⑥ 재개·갱신</b> — 멈춘 이전의 재개 대장과 현황판 갱신 규칙을 정해 네 줄로 남깁니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
