@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>상장의 속도보다 신고서의 숫자가 남는다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>상장의 속도보다 신고서의 숫자가 남는다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> SPAC 합병 발행 주식이 모집이나 매출에 해당하면 증권신고서의 대상이 되고, 합병가액과 예측정보, 영업 전망의 거짓 기재나 누락에 대해 신고인과 이사, 인수인 등이 배상책임을 진다(자본시장법 제125조). 합병가액과 예측정보의 부실 기재는 증권신고서 배상책임과 반대주주의 주식매수청구권(자본시장법 제165조의5), 우회상장 심사 기준 미충족 시의 합병·상장 제한을 함께 불러온다. 대표가 정할 것은 일정이 아니라 숫자의 순서다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      오현석은 한결정밀의 대표다. <b>특수목적법인과의 합병으로 우회상장하는 안이 올라왔고, 주간사는 일정 확정을, 실사팀은 숫자 검증을 요구했다.</b> 어느 쪽이 먼저인지를 정해야 했다. 오현석은 일정보다 숫자를 먼저 보기로 했다. 합병가액과 예측정보는 뒤에 개인의 책임으로 돌아온다는 점을 들었기 때문이다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, <b>신고서와 배상책임</b>이다. SPAC 합병 발행 주식이 모집이나 매출에 해당하면 증권신고서의 대상이 되고, 합병가액과 예측정보, 영업 전망의 거짓 기재나 누락에 대해 신고인과 이사, 인수인 등이 배상책임을 진다(자본시장법 제125조). 이사의 이름이 숫자 위에 올라간다.</p>
+    <p>둘째, <b>연쇄되는 결과</b>다. 합병가액과 예측정보의 부실 기재는 증권신고서 배상책임과 반대주주의 주식매수청구권(자본시장법 제165조의5), 우회상장 심사 기준 미충족 시의 합병·상장 제한을 불러온다.</p>
+    <p>셋째, <b>네 가지의 얽힘</b>이다. SPAC 합병은 심사와 공시, 보호예수, 매수청구권이 얽혀 있어 통합적인 일정과 문서 관리가 필요하다(자본시장법 제165조의5). 네 가지를 한 장에서 보지 않으면 놓치는 것이 생긴다.</p>
+    <div class="callout">
+      <b>심사 기준 미충족을 알리는 확인 보고가 가장 중요한 보고다.</b> 영업실체와 재무, 지배구조의 기준 미충족이 확인되는 순간 합병 일정은 멈춘다. 시가의 근거도 협상보다 실사에서 나온다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>놓치기 쉬운 조건과 예외</h2>
+    <p><b>근거</b>가 조건이다. 숫자의 출처가 실사로 검증되지 않으면 그 숫자는 나중에 문제가 된다. <b>책임</b>도 조건이다. 개인의 배상책임이 붙어 있기 때문에 회의록에 남는 것이 곧 의사결정의 근거다.</p>
+    <p><b>중단</b>이 조건이다. 심사 기준 미충족이 확인되면 합병 자체가 제한된다. <b>시가</b>도 조건이다. 합병가액이 기대와 어긋나면 반대주주의 움직임이 커진다.</p>
+    <ul class="points">
+      <li>숫자 확정과 일정 확정을 분리하고, 근거가 확인된 항목만 일정에 넣는다.</li>
+      <li>누가 어느 숫자를 확인했는지 이사별 검토 범위를 회의록에 남긴다.</li>
+      <li>일정만 먼저 확정되면 나중에 숫자를 고치는 비용이 커진다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>숫자 확정과 일정 확정을 분리한다.</b> 오현석이 세운 순서는 다음과 같다.</p>
+      <ol>
+        <li><b>① 신고를 본다</b> — 증권신고서 대상 여부를 확인한다(자본시장법 제125조).</li>
+        <li><b>② 가액을 본다</b> — 합병가액 근거를 확인한다.</li>
+        <li><b>③ 책임을 본다</b> — 신고인·이사·인수인의 배상책임을 이해한다(자본시장법 제125조).</li>
+        <li><b>④ 청구를 본다</b> — 주식매수청구권을 확인한다(자본시장법 제165조의5).</li>
+        <li><b>⑤ 기준을 본다</b> — 우회상장 심사 기준을 점검한다.</li>
+        <li><b>⑥ 분리를 한다</b> — 숫자 확정과 일정 확정을 나눈다.</li>
+        <li><b>⑦ 기록을 한다</b> — 이사별 검토 범위를 남긴다.</li>
+        <li><b>⑧ 준비를 한다</b> — 매수청구권 대응을 준비한다.</li>
+        <li><b>⑨ 보고를 본다</b> — 기준 미충족 시 보고를 최우선으로 둔다.</li>
+        <li><b>⑩ 통합을 본다</b> — 심사·공시·보호예수·매수청구권을 한 장에서 본다.</li>
+        <li><b>⑪ 시가를 본다</b> — 합병가액 근거를 실사에서 확인한다.</li>
+        <li><b>⑫ 단계를 본다</b> — 일정 확정 전에 숫자 확인 단계를 넣는다.</li>
+        <li><b>⑬ 첨부를 본다</b> — 이사회 자료에 근거 문서를 첨부한다.</li>
+        <li><b>⑭ 설명을 본다</b> — 주주 설명의 순서를 정한다.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;">오현석은 이사별 검토 범위를 정하고, 반대주주에 대응할 준비를 먼저 했다. 심사 기준 점검을 보고 안건으로 올려 기준 미충족이 확인되는 순간 일정이 멈추게 했고, 주간사와의 일정 협의에 숫자 확인 단계를 넣었다. <b>이사회 자료에 근거 문서를 첨부하게 한 것</b>이 그의 결정이었다. 결의만 남고 근거가 남지 않으면 나중에 결의의 이유를 설명할 수 없다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
