@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>공사현장 유치권, 점유 요건부터 확인한다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 유치권과 점유 요건</div>
+    <h1>공사현장 유치권, 점유 요건부터 확인한다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 유치권은 <b>채권과 점유가 함께 있어야</b> 하는 권리이고, <b>점유를 상실하면 유치권도 소멸</b>합니다(<b>민법 제328조</b>). 그리고 <b>불법행위로 인한 점유</b>나 <b>공사개시 전 등기된 담보권자의 동의 없는 점유</b>에서 취득한 유치권은 <b>담보권자에게 대항할 수 없습니다</b>(<b>제320조</b>). 경매에서는 <b>인수주의</b>가 적용되어 <b>경락인이 유치권을 인수</b>합니다(<b>민사집행법 제91조 제5항</b>). 그래서 <b>점유 개시 시점과 담보권 설정 시점의 선후</b>가 첫 쟁점입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      주차장 <b>출입권</b>과 같습니다. 차를 <b>세워 둔 동안</b>만 권리가 살아 있고, <b>차를 빼면</b> 끝납니다. 그리고 <b>주차 금지 구역에 세워 둔 차</b>는 <b>관리인에게 권리를 주장할 수 없습니다</b>. <b>언제부터 세워 뒀는지</b>가 핵심이고, <b>잠깐 자리를 비운 것</b>과 <b>아예 뺀 것</b>은 다릅니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+        <p>첫째, <b>점유의 유지</b>입니다. 유치권자는 <b>목적물을 점유해야 하며</b>, <b>점유를 상실하면 유치권도 소멸</b>합니다(<b>제328조</b>). 점유는 <b>직접·간접 모두 가능</b>하지만, <b>임의로 현장에서 철수</b>하거나 <b>도급인의 동의로 건물을 인도</b>하면 <b>점유 상실</b>로 봅니다. 그래서 <b>점유가 계속되고 있다는 사실을 어떻게 증명하느냐</b>가 관건입니다. <b>잠시 현장을 비운 것</b>과 <b>점유를 포기한 것</b>은 다르고, <b>어느 쪽인지는 관리·통제의 흔적</b>으로 갈립니다.</p>
+    <p>둘째, <b>대항력</b>입니다. <b>불법행위로 인한 점유</b>나, <b>공사개시 전 등기된 담보권자의 동의 없는 점유 상태</b>에서 취득한 유치권은 <b>담보권자에게 대항할 수 없습니다</b>(<b>제320조</b>). 대법원은 <b>저당권 설정 후에 수급인이 점유를 취득한 경우</b> <b>저당권자나 경락인에게 유치권을 대항할 수 없다</b>고 봅니다(<b>2011다55214</b>). <b>시점의 선후가 대항력의 문턱</b>입니다.</p>
+    <p>셋째, <b>경매에서의 인수주의</b>입니다. <b>민사집행법 제91조 제5항</b>에 따라 <b>유치권은 경락인이 인수</b>하게 되므로, <b>경락가격에 영향을 미칩니다</b>. 그리고 <b>허위 유치권 신고는 경매방해죄</b>로 문제 될 수 있습니다(<b>형법 제315조</b>). <b>절차를 지켰다는 사실만으로 실체 요건이 충족되는 것은 아니므로</b>, <b>점유와 시점을 함께</b> 갖춰야 합니다.</p>
+    <p>넷째, <b>두 요소로 나눠 공격</b>입니다. 유치권은 <b>채권과 점유가 함께 있어야</b> 하는 권리입니다. <b>채권이 실재하지 않거나 점유가 없으면 성립하지 않습니다.</b> 그래서 <b>상대 주장을 탄핵할 때도 두 요소를 나눠</b> 공격해야 합니다. 그리고 <b>점유 유지를 위해 관리 증거를 남기는 일</b>이 중요합니다 — <b>도급인의 퇴거 요청을 무시하면 불법점유로 평가</b>될 수 있어, <b>점유보조자를 두고 관리 기록을 남기는 방식</b>이 쓰입니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>점유유지·대항력·시점선후·인수주의·허위신고·관리증거가 갈림길이다</h2>
+    <ul class="points">
+      <li><b>점유 유지</b> — <b>지금도 점유 중인지</b>를 먼저 확인합니다. 상실이면 유치권도 끝입니다.</li>
+      <li><b>대항력</b> — <b>담보권 설정 전후</b> 어느 시점에 점유를 취득했는지 가릅니다.</li>
+      <li><b>시점 대조</b> — <b>계약일·착공일·담보권 설정일</b>을 한 표에 놓고 선후를 표시합니다.</li>
+      <li><b>인수주의</b> — 경락인이 <b>유치권을 인수</b>하는 구조와 가격 영향을 이해합니다.</li>
+      <li><b>허위 신고</b> — <b>채권과 점유의 실재</b>를 각각 확인합니다. 허위면 경매방해 문제입니다.</li>
+      <li><b>관리 증거</b> — 점유보조자 배치·출입 통제 내역을 <b>기간별로</b> 남깁니다.</li>
+    </ul>
+    <div class="callout"><b>시점 비교표를 먼저 만드세요 — 계약일 / 착공일 / 담보권 설정일 / 점유 개시일.</b> 네 날짜의 <b>선후만으로 절반이 정리</b>됩니다. 그리고 그 옆에 <b>관리 기록의 공백 기간</b>을 표시하세요 — <b>공백이 길수록 점유 유지 주장의 설득력이 떨어집니다</b>. 마지막으로 <b>상대 주장에는 채권과 점유를 따로</b> 공격하세요. <b>한 덩어리로 반박하면 둘 다 놓칩니다.</b></div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">점유·시점·기록을 한 표로 묶는 여섯 단계입니다. 표의 행 이름은 바꾸지 않습니다.</p>
+    <ol>
+      <li><b>① 점유 확인</b> — 민법 제328조의 구조로 점유 유지·상실 여부를 먼저 판단합니다.</li>
+      <li><b>② 대항력</b> — 민법 제320조의 구조로 담보권 설정 전후 점유 취득 시점을 확인합니다.</li>
+      <li><b>③ 시점 대조</b> — 대법원 2011다55214의 취지로 착공일과 담보권 설정일의 선후를 기록으로 확인합니다.</li>
+      <li><b>④ 인수·허위신고</b> — 민사집행법 제91조 제5항의 인수주의와 형법 제315조의 경매방해 문제를 검토합니다.</li>
+      <li><b>⑤ 관리 증거</b> — 점유보조자 배치·출입 통제·현장일지로 점유 유지를 기간별로 뒷받침합니다.</li>
+      <li><b>⑥ 두 요소 공격</b> — 상대 주장을 채권 실재와 점유 사실로 나눠 각각 탄핵할 근거를 모읍니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
