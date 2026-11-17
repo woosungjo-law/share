@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>특수관계자 거래는 가격이 아니라 시가가 기준이다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 특수관계자 거래·시가</div>
+    <h1>특수관계자 거래는 가격이 아니라 시가가 기준이다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 특수관계자와 자산을 시가보다 싸게 넘기거나 비싸게 사면, 당사자가 합의한 가격이 아니라 <b>적법하게 산정된 시가</b>가 기준이 됩니다. 상속세및증여세법상 <b>증여의제</b>와 법인세법상 <b>부당행위계산부인</b>이 함께 문제될 수 있으므로, 어느 제도로 문제되는지를 먼저 가려야 합니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      같은 물건을 가족끼리 주고받을 때 가격표를 마음대로 적을 수 있다고 생각하기 쉽습니다. 하지만 세무에서는 <b>시장에서 그 물건이 실제로 얼마에 거래되는지</b>를 먼저 봅니다. 시장 가격보다 훨씬 싸게 넘겼다면, 그 차액을 선물로 받은 것으로 볼 수 있고, 반대로 비싸게 샀다면 회사 돈이 밖으로 샌 것으로 볼 수 있습니다. 어느 쪽인지에 따라 다투는 법 자체가 달라집니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+        <p>축이 세 개입니다. 첫째, <b>이중 구조</b>입니다. 특수관계자 간 자산을 시가보다 저가 양수 또는 고가 양도한 경우, <b>상속세및증여세법상 증여의제</b>와 <b>법인세법상 부당행위계산부인</b>이 함께 문제될 수 있습니다. 두 제도 모두 시가 산정의 적법성이 핵심 쟁점입니다. <b>상속세및증여세법 제35조</b>가 저가 양수와 고가 양도에 따른 이익의 증여와 연결되는 근거입니다.</p>
+    <p>둘째, <b>부당행위</b>입니다. 특수관계자 간 저가·고가 양도는 법인세법상 부당행위계산부인의 대상이 될 수 있습니다. <b>법인세법 제52조</b>가 근거입니다. 특수관계라는 이유만으로 부인되는 것이 아니라 부당한 계산이 있었는지가 쟁점이므로, 다투는 법이 달라지면 준비도 달라집니다.</p>
+    <p>셋째, <b>차액 의제</b>입니다. 특수관계자 간 거래에서 양도와 양수 가액이 시가와 차이가 나고 그 차액이 일정 기준금액 이상인 경우, 그 차액 상당을 증여재산으로 의제합니다. <b>법인세법 시행령 제89조</b>가 시가의 범위 등과 연결되는 근거입니다.</p>
+    <p>즉 다툴 것은 합의 가격이 아니라 시가입니다. 세목별로 어느 제도로 문제되는지를 먼저 확인하고, 과세관청이 정한 순서와 방법으로 시가를 매겼는지를 봅니다. 비교대상 거래의 유사성과 객관성을 점검하고, 매매사례가액이 정상거래로서 객관적 교환가치를 반영하는지를 봅니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>관계·시가·차액·세목이 쟁점을 가른다</h2>
+    <ul class="points">
+      <li><b>특수관계</b> — 거래 당사자가 특수관계에 해당하는지를 먼저 봅니다. 해당하지 않으면 이 쟁점 자체가 성립하지 않으므로 관계도부터 그립니다.</li>
+      <li><b>시가</b> — 과세관청이 법인세법 시행령 제89조의 순서와 방법을 준수했는지를 봅니다. 순서가 틀리면 시가가 무너지고, 그 위의 과세도 흔들립니다.</li>
+      <li><b>차액</b> — 양도·양수 가액이 시가와 차이가 나는지, 그 차액이 일정 기준금액 이상인지를 봅니다. 차액 상당이 증여재산으로 의제되는지가 여기 달려 있으므로 숫자로 확정합니다.</li>
+      <li><b>세목</b> — 증여의제와 부당행위계산부인 중 어느 제도로 문제되는지를 먼저 확인합니다. 세목이 달라지면 다투는 법도 달라집니다.</li>
+      <li><b>사례가액</b> — 매매사례가액의 시가성을 다툽니다. 사례 거래가 정상거래로서 객관적 교환가치를 반영하는지를 봅니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 세목을 먼저 가리는 것이 수순입니다. 제도가 달라지면 준비할 서류와 다툴 법이 함께 달라집니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">세목 분리·시가 검증·차액 검토를 표준화하십시오. 다섯 단계로 나눕니다.</p>
+    <ol>
+      <li><b>① 특수관계 확인</b> — 거래 당사자의 특수관계 해당 여부를 가리고 관계도를 그려 둡니다.</li>
+      <li><b>② 세목 분리</b> — 증여의제와 부당행위계산부인 중 어느 제도로 문제되는지를 먼저 봅니다.</li>
+      <li><b>③ 시가 검증</b> — 법인세법 시행령 제89조의 순서와 방법을 지켰는지, 비교대상 거래의 유사성과 객관성을 살펴보고 그 결과를 문서로 남깁니다.</li>
+      <li><b>④ 차액 검토</b> — 시가와의 차이와 기준금액 이상 여부를 보고 차액을 표로 확정합니다.</li>
+      <li><b>⑤ 사례가액 다툼</b> — 매매사례가액이 정상거래의 객관적 교환가치를 반영하는지를 봅니다. 시가를 아는 팀이 특수관계 거래에 흔들리지 않습니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
