@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>게시물 하나를 방치한 책임은 인식의 시점과 조치의 순서로 갈린다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 플랫폼·게시물 책임</div>
+    <h1>게시물 하나를 방치한 책임은 인식의 시점과 조치의 순서로 갈린다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 플랫폼 운영자의 책임은 게시물이 <b>얼마나 나빴는지</b>보다 <b>언제 알았고 무엇을 했는지</b>로 갈립니다. 삭제 요구를 받기 전에는 <b>인식</b>의 문제, 받은 뒤에는 <b>조치</b>의 문제입니다. 그래서 답은 게시물이 아니라 <b>타임라인</b>에 있습니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      건물 계단에 물이 새는 상황을 떠올려 보십시오. 아무도 알려주지 않았을 때와, 입주자가 알려준 뒤에도 손을 놓고 있었을 때는 책임이 전혀 다릅니다. 관건은 '언제 통보받았는가'와 '통보 뒤 며칠 안에 무엇을 했는가'입니다. 통보 시각을 적어둔 기록이 곧 방어 자료가 됩니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+        <p>첫째, <b>책임 제한의 조건</b>입니다. <b>정보통신망 이용촉진 및 정보보호 등에 관한 법률 제44조의3</b>에 따라 운영자가 약관과 법정 절차에 따라 <b>임시조치</b>를 했거나 게시물의 <b>위법성 판단이 곤란한 경우</b>에는 책임이 제한될 수 있습니다. 절차를 밟았다는 기록이 곧 방어가 되는 구조입니다.</p>
+    <p>둘째, <b>인식의 유무</b>입니다. <b>대법원 2016다271608 판결</b>은 타인의 저작권을 침해하는 게시물이 게시되었으나 피해자로부터 <b>구체적·개별적인 삭제·차단 요구를 받지 않아</b> 게시된 사정을 구체적으로 인식하지 못했거나, 기술적·경제적으로 관리·통제할 수 없는 경우 삭제·차단 의무를 부담하는지를 원칙적으로 <b>소극</b>으로 보았습니다.</p>
+    <p>셋째, <b>방조의 책임</b>입니다. <b>대법원 2009다5643 판결</b>은 인터넷 링크 행위가 저작권법상 복제·전송·전시에 해당하는지를 소극으로 보았고, 온라인서비스제공자가 직접 게시한 자의 행위에 대한 <b>부작위 방조자로서의 공동불법행위책임</b>을 함께 다루었습니다.</p>
+    <p>넷째, <b>시점의 경계</b>입니다. 요구를 받기 전의 방치와 받은 뒤의 방치는 판단이 달라집니다. 전자는 인식의 문제, 후자는 조치의 문제로 나눠 기록합니다.</p>
+    <p>다섯째, <b>증거의 형태</b>입니다. 타임라인은 말로 설명하지 않고 <b>화면과 로그</b>로 남깁니다. 사람이 기억한 시각은 나중에 서로 어긋납니다.</p>
+    <p>확인이 필요한 항목은 공란으로 두지 않고 담당자와 확인 시기를 적습니다. 빈 칸은 처리된 것이 아니라 확인이 남은 것입니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>인식·절차·범위·관리능력이 책임의 크기를 가른다</h2>
+    <ul class="points">
+      <li><b>인식</b> — 언제 알았고 얼마 동안 방치했는지를 시각 단위로 남깁니다. 인식 시점 이후의 조치가 판단 대상이 됩니다.</li>
+      <li><b>절차</b> — 약관에 따른 임시조치와 법정 절차를 각각 다른 항목으로 기록합니다. 한쪽만 밟았다면 어느 쪽이었는지가 남습니다.</li>
+      <li><b>범위</b> — 게시물을 개별로 특정하고 불법성 명백성 자료를 붙입니다. 한 묶음으로 처리하면 특정이 어려워집니다.</li>
+      <li><b>판단 곤란</b> — 위법성 판단이 어려운 게시물은 그 사실과 판단 시점, 검토 자료를 남깁니다. '미뤘다'가 아니라 '검토했다'가 남아야 합니다.</li>
+      <li><b>관리 능력</b> — 기술적·경제적으로 관리·통제할 수 없었는지는 주관이 아니라 시스템 자료로 보여야 합니다.</li>
+      <li><b>반복 요구</b> — 같은 게시물에 요구가 반복되면 접수 시각과 처리 결과를 각각 따로 적습니다. 한 줄로 합치면 이력이 사라집니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 삭제 요구를 받은 시각을 그 자리에서 적으십시오. 그 한 줄이 방치 기간 계산의 시작점이고, 기억은 며칠만 지나도 서로 어긋납니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">인식·타임라인·조치·특정·능력의 점검표를 표준화하십시오. 다섯 단계로 나눕니다.</p>
+    <ol>
+      <li><b>① 인식 기록</b> — 요구 접수 시각과 그 이전의 인식 정황을 나누어 기록합니다.</li>
+      <li><b>② 타임라인</b> — 알게 된 시각부터 조치한 시각까지 시각 단위로 나열하고 방치 기간을 그 안에서 계산합니다.</li>
+      <li><b>③ 조치 분리</b> — 약관상 임시조치와 법정 절차를 각각의 항목으로 기록하고 어느 순서로 밟았는지 적습니다.</li>
+      <li><b>④ 개별 특정</b> — 게시물마다 주소, 게시 시각, 불법성 판단 근거를 붙입니다.</li>
+      <li><b>⑤ 능력 증명</b> — 관리·통제 가능 여부의 시스템 자료와 제약 사유를 남기고, 판단이 곤란했던 게시물은 검토 기록을 첨부합니다. 게시물 목록은 주소·게시 시각·요구 접수 시각·조치 시각 네 칸으로 관리합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
