@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>상속세 신고와 연부연납 — 기한과 담보가 승계의 성패를 가른다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 상속세 신고·연부연납</div>
+    <h1>상속세 신고와 연부연납 — 기한과 담보가 승계의 성패를 가른다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 상속세 신고 기한의 기준일은 상속개시일 자체가 아니라 <b>상속개시일이 속하는 달의 말일</b>이고, 그날부터 <b>여섯 달</b>입니다(<b>상속세 및 증여세법 제67조</b>). 그리고 연부연납은 권리가 아니라 <b>조건부 허가</b>입니다 — <b>담보 변경 명령에 불응하거나 연체하면 허가가 취소되고 잔여 세액이 즉시 징수</b>됩니다(<b>제71조</b>). 기한이 먼저, 담보가 나중입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      건물 리모델링의 공정표와 같습니다. 준공일이 정해져 있고, 중간에 자재 대금을 나눠 내는 조건이 붙습니다. 조건은 <b>'담보를 계속 유지한다'</b>입니다. 담보가 흔들리면 남은 공정을 다 마쳤어도 <b>대금 전액을 당장 내라</b>고 합니다. 그래서 공정표 맨 위에 <b>준공일</b>을, 그 아래 담보와 회차를 적습니다. 순서를 바꾸면 준공일부터 놓칩니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+        <p>첫째, <b>신고 기한의 계산</b>입니다. 상속세 납부의무가 있는 상속인·수유자는 <b>상속개시일이 속하는 달의 말일부터 여섯 달 이내</b>에 과세표준을 신고합니다(<b>제67조</b>). 기준일은 개시일이 아니라 <b>그 달의 말일</b>입니다. 월초에 개시되면 그 달 말일이 기준일이고, 월말에 개시되면 그날이 기준일입니다. <b>하루만 넘겨도 기한 초과</b>이고, 초과 신고는 별도의 확인 과제를 낳습니다.</p>
+    <p>둘째, <b>연부연납의 담보 관리</b>입니다. 연부연납 허가 뒤에는 <b>담보 관리 의무</b>가 따라옵니다(<b>제71조</b>). <b>담보 변경 명령에 불응</b>하거나 <b>연체</b>하면 허가가 취소되고 <b>잔여 세액 전액이 즉시 징수</b>될 수 있습니다. 분납의 이점이 한 번에 사라집니다.</p>
+    <p>셋째, <b>두 기둥의 연결</b>입니다. 신고 기한을 지켜야 연부연납 신청의 자리도 섭니다. 기한이 흔들리면 분납 계획도 함께 흔들립니다. <b>신고와 분납은 따로 서지 않습니다.</b> 실무 순서는 <b>기준일 확정 → 기한 표시 → 담보·회차</b>입니다.</p>
+    <p>넷째, <b>담보의 성격</b>입니다. 연부연납의 담보는 <b>납부를 보장하는 장치</b>입니다. 담보가 약하면 허가도 약합니다. 그래서 <b>담보 선택이 분납의 첫 결정</b>이고, 담보 변경 명령에 응할 <b>창구를 한 곳으로</b> 정해 두어야 책임이 흩어지지 않습니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>기준일·담보·회차·창구가 갈림길이다</h2>
+    <ul class="points">
+      <li><b>기준일</b> — 상속개시일이 속하는 달의 말일. <b>개시일이 아닙니다.</b> 월초 개시면 그 달 말일입니다.</li>
+      <li><b>기한</b> — 기준일부터 여섯 달의 끝을 달력에 표시합니다. 표시 없는 기한은 잊힙니다.</li>
+      <li><b>담보</b> — 담보 종류와 제공 계획을 표에 둡니다. 담보가 약하면 허가도 약합니다.</li>
+      <li><b>변경 대응</b> — 담보 변경 명령에 응할 창구를 <b>한 곳</b>으로 정합니다. 창구가 여럿이면 책임이 흩어집니다.</li>
+      <li><b>회차</b> — 회차 납부일과 자금 출처를 미리 정합니다. <b>연체가 곧 취소의 문턱</b>입니다.</li>
+      <li><b>확인 과제</b> — 물납·각종 공제 요건은 단정하지 않고 확인 과제로 남깁니다.</li>
+    </ul>
+    <div class="callout"><b>달력에 두 개만 표시하세요.</b> ① <b>기준일</b>(개시일이 속한 달의 말일) ② <b>기준일 + 6개월의 마지막 날</b>. 이 두 날짜가 정해지기 전에는 분납 상담을 시작하지 않는 편이 안전합니다. 기한이 흔들리면 담보 계획도 같이 흔들립니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">기준일·기한·담보·회차를 한 표로 묶는 여섯 단계입니다. 표의 행 이름은 바꾸지 않습니다.</p>
+    <ol>
+      <li><b>① 기준일 확정</b> — 상속개시일이 속하는 달의 말일을 적습니다. 개시일과 다를 수 있습니다.</li>
+      <li><b>② 기한 표시</b> — 기준일부터 여섯 달의 끝을 달력에 표시하고, 표에도 함께 적습니다.</li>
+      <li><b>③ 담보 점검</b> — 제71조의 연부연납 담보 종류와 제공 계획을 표에 둡니다.</li>
+      <li><b>④ 변경 창구</b> — 담보 변경 명령에 응할 창구를 한 곳으로 정하고 담당을 지정합니다.</li>
+      <li><b>⑤ 회차 관리</b> — 회차 납부일과 자금 출처를 못 박습니다. 연체는 허가 취소의 문턱입니다.</li>
+      <li><b>⑥ 확인·기록</b> — 물납·공제 요건은 확인 과제로 두고, 누가 언제까지 무엇을 갖출지 네 줄로 적습니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
