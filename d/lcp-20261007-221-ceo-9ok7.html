@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>고소한 뒤 회수까지, 사후 비용을 미리 계산한다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>고소한 뒤 회수까지, 사후 비용을 미리 계산한다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 유죄 판결 뒤에도 결정할 것이 남는다. 피고인만 항소한 경우에는 불이익변경금지 원칙이 적용되어(형사소송법 제368조) 1심보다 형이 무거워지지 않고, 가해자가 사망하면 형사사건은 공소권 없음으로 종결되지만 민사상 손해배상 채무는 상속인에게 승계된다(민법 제1005조). 외국인 가해자는 국외로 나갈 수 있어 출국정지 요청 시점이 중요하다(출입국관리법 제29조). 대표가 정할 것은 승소 여부가 아니라 단계별 비용 한도와 중단 기준이다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      민경원은 새솔건축사무소의 대표다. <b>직원이 설계 용역 대금을 가로챈 사건으로 고소했고 1심에서 유죄 판결이 나왔는데, 판결 뒤에도 비용과 일정 문제가 남아 있었다.</b> 상대가 항소하면 절차가 길어지고, 회수는 또 다른 절차가 필요했다. 민경원은 어디까지 비용을 쓰고 언제 멈출지 정해야 한다고 봤다. 그는 판결문과 손해 산정 자료를 확인하게 했고, 상대의 재산 상태와 항소 여부도 함께 파악하게 했다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, <b>항소와 형량</b>이다. 피고인만 항소한 경우에는 불이익변경금지의 원칙이 적용된다. 형사소송법 제368조가 그 근거다. 그래서 그 경우 1심보다 형이 무거워지지는 않는다. 이 점이 예상 비용 계산에 반영되어야 한다.</p>
+    <p>둘째, <b>사망과 승계</b>다. 가해자가 사망하면 형사사건은 공소권 없음으로 종결된다. 다만 민사상 손해배상 채무는 상속인에게 승계된다. 민법 제1005조가 그 근거다. 회수 계획을 세울 때 상속인을 함께 봐야 하는 이유다.</p>
+    <p>셋째, <b>출국</b>이다. 외국인 가해자는 국외로 나갈 수 있다. 고소 단계에서 출국정지를 요청하는 것이 그래서 중요하다. 출입국관리법 제29조가 그 근거다.</p>
+    <p>넷째, <b>보복 협박</b>이다. 보복 협박은 일반 협박보다 훨씬 무겁게 처벌된다. 특정범죄가중법 제5조의 보복 협박 가중처벌 규정이 그 근거다. 협박이 오면 그때마다 기록하고 보고해야 한다.</p>
+    <p>다섯째, <b>준수사항과 속지주의</b>다. 준수사항을 위반해도 처분이 취소될 수 있다(형법 제64조). 또 대한민국 영토 안의 범죄는 국적과 무관하게 처벌 대상이 된다. 형법 제2조가 정한 속지주의이므로 상대가 해외에 있어도 절차를 이어 갈 수 있다.</p>
+    <div class="callout">
+      <b>출국정지 요청은 이른 편이 낫다.</b> 늦으면 회수 가능성이 줄어든다. 요청 시점이 조건이라는 뜻이다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>놓치기 쉬운 조건과 예외</h2>
+    <p><b>항소 주체</b>가 조건이다. 피고인만 항소했는지에 따라 형량 결론이 달라진다. <b>요청 시점</b>도 조건이다. 출국정지 요청은 이른 편이 낫다.</p>
+    <p><b>승계 여부</b>도 조건이다. 상속인이 채무를 승계하는 범위를 확인해야 회수 계획을 세울 수 있다. <b>비용 한도</b>도 조건이다. 절차가 길어지면 비용도 늘어나므로 단계별로 정한다.</p>
+    <ul class="points">
+      <li>국적은 조건이지만 결론을 바꾸지는 않는다. 영토 안의 범죄는 국적과 무관하게 다뤄진다.</li>
+      <li>준수사항 이행을 확인할 담당자를 지정한다.</li>
+      <li>손해액과 회수 가능성을 견주어 중단 기준을 세운다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>비용 한도와 중단 기준을 정한다.</b> 민경원이 세운 순서는 다음과 같다.</p>
+      <ol>
+        <li><b>① 항소를 본다</b> — 항소 주체를 확인한다(형사소송법 제368조).</li>
+        <li><b>② 형량을 본다</b> — 불이익변경금지 적용을 확인한다.</li>
+        <li><b>③ 사망을 본다</b> — 상대 사망 여부를 확인한다.</li>
+        <li><b>④ 승계를 본다</b> — 상속인 승계를 확인한다(민법 제1005조).</li>
+        <li><b>⑤ 출국을 본다</b> — 출국정지 요청을 확인한다(출입국관리법 제29조).</li>
+        <li><b>⑥ 시점을 본다</b> — 요청 시점을 앞당긴다.</li>
+        <li><b>⑦ 협박을 본다</b> — 보복 협박 정황을 적는다(특정범죄가중법 제5조).</li>
+        <li><b>⑧ 준수를 본다</b> — 준수사항 이행을 확인한다(형법 제64조).</li>
+        <li><b>⑨ 속지를 본다</b> — 국적 불문 처벌을 확인한다(형법 제2조).</li>
+        <li><b>⑩ 손해를 산정한다</b> — 손해액을 계산한다.</li>
+        <li><b>⑪ 회수를 본다</b> — 회수 가능성을 본다.</li>
+        <li><b>⑫ 비용을 본다</b> — 단계별 비용 한도를 정한다.</li>
+        <li><b>⑬ 중단을 본다</b> — 중단 기준을 정한다.</li>
+        <li><b>⑭ 담당을 정한다</b> — 감시 담당자를 지정한다.</li>
+        <li><b>⑮ 보고를 받는다</b> — 정기 보고를 받는다.</li>
+        <li><b>⑯ 기록을 남긴다</b> — 결정 근거를 남긴다.</li>
+        <li><b>⑰ 재검토를 건다</b> — 조건 변경 시 다시 본다.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;">민경원은 형사 절차와 회수 절차의 단계별 비용 한도를 정하게 했다. 손해액과 회수 가능성을 견주어 중단 기준을 세우고 진행 상황을 정해진 시각마다 보고받게 했으며, 준수사항 이행을 확인할 담당자를 지정하고 조건이 바뀌면 다시 판단하게 했다. <b>회수까지의 비용을 먼저 계산하는 것</b>이 그의 결정이었다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
