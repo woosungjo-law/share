@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>체인을 열기 전에 업종이 아니라 공통 쟁점부터 본다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>체인을 열기 전에 업종이 아니라 공통 쟁점부터 본다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 노래방·PC방·당구장·멀티방은 적용 법령이 각각 다르지만, 영업 실무에서는 <b>다섯 가지가 공통 쟁점</b>이다 — 영업허가·신고·등록의 체계, 청소년 출입 시간과 고용 제한, 소음 규제, 저작권료, 위생과 안전 기준. 노래방 저작권료는 저작권법 제104조에 따라 노래연습장 영업자가 한국음악저작권협회에 납부하고, 청소년 고용 금지와 출입 제한은 청소년 보호법 제29조가 정한다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>사건의 시작: "업종마다 따로 보면 된다"</h2>
+    <div class="analogy">
+      버금전자의 대표 강해준은 위락시설 체인 진출 보고를 받았다. 노래방과 PC방, 당구장과 멀티방을 함께 여는 구상이었다. 현장에서는 업종마다 따로 보면 된다는 말이 나왔다. <b>그가 미룬 결정은 업종별로 나눠 보는 것이 아니라, 업종보다 다섯 가지 공통 쟁점이 먼저라는 판단이었다.</b> 업종마다 무엇이 다른지, 공통으로 무엇을 갖출지, 청소년과 저작권료를 어떻게 볼지 — 세 가지가 문서로 나오기 전에는 확정하지 않는다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 보는 핵심: 저작권료와 다섯 쟁점</h2>
+    <p>첫째, <b>저작권료의 주체</b>다. 노래방 저작권료는 저작권법 제104조에 따라 노래연습장 영업자가 한국음악저작권협회에 납부해야 한다. 누가 누구에게 내는지를 먼저 묻고, 산정과 주기를 함께 본다.</p>
+    <p>둘째, <b>공통의 다섯 가지</b>다. 업종마다 적용 법령은 다르지만 영업 실무에서는 영업허가·신고·등록의 체계, 청소년 출입 시간과 고용 제한, 소음 규제, 저작권료, 위생과 안전 기준이 공통 쟁점이다. 청소년 보호법 제29조는 고용 금지와 출입 제한을 정한다.</p>
+    <div class="callout">
+      <b>업종마다 다른 법과 공통의 다섯 가지를 나눈다.</b> 나누지 않으면 한 업종의 허가만 갖추고 나머지를 놓친다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>놓치기 쉬운 조건과 예외</h2>
+    <p><b>같은 건물에 여러 업종이 있으면 각 업종의 허가를 따로 본다.</b> 복합 출점일수록 각각 물어야 빠짐이 없다.</p>
+    <ul class="points">
+      <li>청소년 고용의 금지를 먼저 본다 — 고용 명부와 신분 확인 기록으로 확인한다.</li>
+      <li>출입 제한 시간을 먼저 본다 — 출입 기록과 나이 확인 절차로 확인한다.</li>
+      <li>소음의 기준은 측정 시점과 방법을 함께 보고, 영업시간대와 심야의 기준을 나눈다.</li>
+      <li>위생과 안전의 기준은 점검 주기와 시정 기록으로 본다.</li>
+    </ul>
+    <p>기준이 서야 영업이 선다. 예외를 말하기 전에 기록을 먼저 갖춘다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>단정적인 영업 가능을 먼저 듣지 말고 공통부터 본다.</b> 한 묶음으로 보고받을 것은 다음과 같다.</p>
+      <ol>
+        <li><b>① 업종별 허가 기록</b> — 허가·신고·등록을 업종별로 확인한다.</li>
+        <li><b>② 저작권료 검토표</b> — 저작권법 제104조의 주체·산정·주기를 확인한다.</li>
+        <li><b>③ 청소년 검토표</b> — 청소년 보호법 제29조의 고용·출입을 확인한다.</li>
+        <li><b>④ 기준 검토표</b> — 소음·위생·안전의 기준과 기록을 확인한다.</li>
+        <li><b>⑤ 표준 점검표</b> — 다섯 가지를 업종별로 묶어 만든다.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;">출점이 반복되면 표준 점검표를 손본다. <b>업종마다 무엇이 다른지와 공통으로 무엇을 갖출지가 서면 영업은 흔들리지 않는다.</b> 확정되지 않은 부분은 서두르지 않게 한다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
