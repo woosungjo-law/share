@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>추천 메시지를 받은 날과 산 날을 나란히 적어 두라</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 부정거래와 기록</div>
+    <h1>추천 메시지를 받은 날과 산 날을 나란히 적어 두라</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> <b>부정거래의 다툼은 기록에서 시작됩니다.</b> <b>자본시장법 제178조</b>는 <b>부정한 수단·계획·기교의 사용, 거짓의 기재나 표시 또는 필요한 표시의 누락으로 재산상 이익을 얻으려는 행위, 거래 유인을 위한 거짓 시세의 이용</b> 등 <b>네 가지 금지 유형</b>을 정하고, <b>금융투자상품의 매매 그 밖의 거래와 관련하여 이런 행위를 하지 못하도록</b> 합니다. 그리고 <b>대법원 2023다207834 판결</b>은 <b>해당 사실을 안 날의 의미</b>를 다루며 <b>어떤 보고서가 허위인지 현실적으로 인식한 경우를 적극적으로</b> 봤습니다. <b>내가 언제 무엇을 알았느냐가 기간을 가릅니다.</b>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>추천 메시지와 매매 내역이 겹치는 것을 발견한 투자자</b>를 떠올려 보십시오. 배소윤은 자문 채널에서 받은 추천 메시지가 온 <b>바로 다음 날</b> 사고 있었다는 사실을 확인하고 화면을 캡처해 날짜를 적었습니다. <b>나중에 무엇을 보고 샀는지, 그 정보가 이미 나와 있었는지를 확인할 근거가 그 기록에서만 나오기 때문</b>입니다. 회사가 나중에 한다는 설명과 별개로, <b>본인이 확보할 수 있는 자료는 그 시점에 확보하는 것이 먼저</b>였습니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, <b>금지 유형</b>을 봅니다. <b>자본시장법 제178조</b>는 <b>네 가지 금지 유형</b>을 규정합니다. <b>부정한 수단·계획·기교의 사용, 거짓의 기재나 표시 또는 필요한 표시의 누락으로 재산상 이익을 얻으려는 행위, 거래 유인을 위한 거짓 시세의 이용</b> 등이 여기 들어갑니다. 둘째, <b>조문의 위치</b>를 봅니다. <b>같은 조는 금융투자상품의 매매 그 밖의 거래와 관련하여 이런 행위를 하지 못하도록</b> 정합니다.</p>
+    <p>셋째, <b>인식의 시점</b>을 봅니다. <b>대법원 2023다207834 판결</b>은 <b>사업보고서의 허위 기재나 기재 누락으로 인한 손해배상책임의 제척기간 기산점이 되는 해당 사실을 안 날의 의미</b>를 다루었고, <b>어떤 보고서가 허위인지 현실적으로 인식한 경우를 적극적으로</b> 봤습니다. <b>내가 언제 무엇을 알았느냐가 기간을 가른다</b>는 뜻입니다.</p>
+    <p>넷째, <b>인과관계</b>를 봅니다. <b>대법원 2022다214446 판결</b>은 <b>손해와 거짓 기재 사이에 인과관계가 없다는 점이 증명되면 책임을 면할 수 있는지</b>를 적극적으로 보았고, <b>그 증명 방법도 쟁점으로</b> 삼았습니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>기록·정보·시점이 쟁점을 가른다</h2>
+    <ul class="points">
+      <li><b>첫째, 기록을 봅니다</b> — <b>추천이나 자문 메시지는 원본 화면과 날짜를 함께</b> 남깁니다. <b>나중에 정리한 메모는 같은 힘을 갖지 못합니다.</b></li>
+      <li><b>둘째, 정보를 봅니다</b> — <b>그 시점에 공개되어 있었던 정보와 그렇지 않았던 정보</b>를 나눕니다. <b>이미 공개된 사실을 보고 샀는지, 그렇지 않은 정보에 의존했는지</b>가 판단의 갈림길입니다.</li>
+      <li><b>셋째, 시점을 봅니다</b> — <b>손해가 언제 시작되었는지</b>를 보려면 <b>정상적인 가격이 형성된 시점 자료</b>가 필요합니다. 거래 내역과 시세 자료를 같은 기준으로 정리합니다.</li>
+      <li><b>넷째, 범위를 봅니다</b> — <b>추천만 받았는지, 추천과 함께 매수·매도 타이밍까지 받았는지</b>에 따라 대응이 달라집니다.</li>
+      <li><b>다섯째, 단정하지 않습니다</b> — <b>책임과 적용은 사안에 따라 달라질 수 있으므로 확인되지 않은 부분은 사실대로 남기고, 원본 기록을 갖고 전문가의 확인을 받습니다.</b></li>
+    </ul>
+    <div class="callout"><b>핵심.</b> <b>부정거래는 금지 유형에 해당하는지와 함께, 언제 무엇을 알고 거래했는지가 책임과 기간을 가릅니다.</b> <b>대법원 2023다207834 판결은 허위를 현실적으로 인식한 때를, 2022다214446 판결은 인과관계 증명이 책임을 면하게 하는지를 다뤘습니다.</b> <b>추천 메시지 원본과 매수일, 정보 공개일을 한 줄에 나란히 적는 것이 먼저</b>입니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;">먼저 <b>추천 메시지와 공시를 화면 그대로 저장</b>하고 날짜를 적습니다. 이어서 <b>메시지·매수·공개 정보의 날짜를 한 줄에 나란히</b> 두고 <b>그 시점의 공개 범위</b>를 확인한 뒤, <b>추천 근거를 서면으로 요청</b>하고 회신이 없으면 그 사실을 남깁니다.</p>
+    <ol>
+      <li><b>① 원본 저장</b> — 추천 메시지·공시를 화면 그대로 저장하고 날짜를 적는다.</li>
+      <li><b>② 날짜 겹보기</b> — 메시지·매수·공개 정보의 날짜를 한 줄에 나란히 둔다.</li>
+      <li><b>③ 공개 범위</b> — 그 시점에 이미 공개된 사실을 공시 목록에서 확인한다.</li>
+      <li><b>④ 손해 시점</b> — 가격 변동 시점과 거래 시점을 같은 기준으로 적는다.</li>
+      <li><b>⑤ 서면 요구</b> — 추천 근거를 문서로 요청하고, 회신이 없으면 그 사실을 남긴다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
