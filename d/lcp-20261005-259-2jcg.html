@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>몰수와 추징 — 대상을 특정하고 흐름을 따라간다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 몰수·추징 대상 특정</div>
+    <h1>몰수와 추징 — 대상을 특정하고 흐름을 따라간다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 몰수 대상은 세 갈래입니다 — <b>범죄행위에 제공한 물건</b>, <b>범죄행위로 생기거나 취득한 물건</b>, <b>그 물건의 대가로 취득한 물건</b>(<b>형법 제48조</b>). 물건이 남아 있으면 <b>몰수</b>, 없거나 몰수할 수 없으면 <b>가액을 징수하는 추징</b>으로 갈립니다. 그리고 <b>범행 시기별 적용법령</b>이 추징의 존부와 범위를 결정합니다(<b>대법원 2025도4689</b>). 계좌는 <b>잔액이 아니라 흐름</b>으로 봅니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      영수증으로 지출을 추적하는 일과 같습니다. 통장에 남은 잔액만 보면 <b>어디로 어떻게 흘러갔는지</b> 알 수 없습니다. 입금되고, 섞이고, 빠져나가고, 다른 것으로 바뀐 <b>경로</b>를 따라가야 합니다. 그리고 각 지출에 <b>날짜와 성격</b>을 붙여야 합니다. 성격을 붙이지 못한 돈은 아무 데도 귀속되지 않습니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+        <p>첫째, <b>몰수의 세 갈래</b>입니다. <b>범죄행위에 제공한 물건</b>, <b>범죄행위로 인해 생기거나 취득한 물건</b>, <b>그 물건의 대가로 취득한 물건</b>입니다(<b>형법 제48조</b>). <b>이 셋 중 어디에 속하는지가 특정의 출발점</b>입니다. 갈래를 정하지 못하면 금액도 정해지지 않습니다.</p>
+    <p>둘째, <b>몰수와 추징의 구분</b>입니다. 몰수는 관련 물건을 국가가 강제로 박탈하는 <b>재산형(부가형)</b>이고, 추징은 <b>몰수할 수 없는 경우 그 가액을 징수</b>하는 제도입니다. <b>물건이 남아 있으면 몰수, 없거나 몰수할 수 없으면 추징</b>입니다. 같은 대상이라도 <b>형태에 따라 갈래가 바뀝니다</b>.</p>
+    <p>셋째, <b>시기별 법령의 적용</b>입니다. <b>대법원 2025도4689</b>는 개정·시행된 <b>범죄수익은닉의 규제 및 처벌 등에 관한 법률</b>이 구 법률과 달리 <b>일정한 법정형 이상의 범죄를 중대범죄로 정한 취지</b>를 다루고, <b>몰수를 갈음하는 추징이 형벌적 성격을 가지는지</b>에 대해 적극으로 보았습니다. <b>범행 시기별로 어느 법이 적용되는지가 추징의 존부와 범위를 결정</b>합니다.</p>
+    <p>넷째, <b>특정의 단위</b>입니다. <b>기간·횟수·수량·금액</b> 기준을 먼저 고정하고 <b>공소사실과 정합성</b>을 유지합니다. 단위가 흔들리면 논증도 흔들립니다. 그리고 자금흐름은 <b>잔액이 아니라 혼화·인출·전환</b>을 중심으로 논증합니다. <b>잔액은 흐름의 결과일 뿐</b>입니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>대상·형태·시기·단위·흐름이 갈림길이다</h2>
+    <ul class="points">
+      <li><b>제공물</b> — 범죄행위에 제공한 물건. 제공 시점과 사용처를 함께 붙입니다.</li>
+      <li><b>취득물</b> — 범죄행위로 생기거나 취득한 물건. 발생 시점과 경로를 붙입니다.</li>
+      <li><b>대가물</b> — 위 물건의 대가로 취득한 물건. <b>대가로 바뀐 경로가 추적의 핵심</b>입니다.</li>
+      <li><b>형태</b> — 잔존 여부로 몰수와 추징을 나눕니다. 같은 대상이라도 갈래가 바뀝니다.</li>
+      <li><b>시기</b> — 범행 시기별 적용법령을 먼저 고정합니다. 추징의 존부와 범위가 여기서 갈립니다.</li>
+      <li><b>단위·흐름</b> — 기간·횟수·수량·금액을 고정하고 <b>혼화·인출·전환</b>을 시간순으로 적습니다.</li>
+    </ul>
+    <div class="callout"><b>잔액표를 먼저 만들지 마세요.</b> 시간순 <b>흐름표</b>를 먼저 만들고, 각 줄에 <b>성격(제공·취득·대가·혼화·인출·전환)</b>을 붙이세요. 성격을 붙이지 못한 줄이 곧 확인 과제입니다. 그 줄을 회의 첫 안건으로 올립니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">대상·형태·시기·단위·흐름을 한 표로 묶는 여섯 단계입니다. 표의 행 이름은 바꾸지 않습니다.</p>
+    <ol>
+      <li><b>① 대상 나누기</b> — 형법 제48조의 제공물·취득물·대가물을 한 줄씩 적고 근거 문서를 붙입니다.</li>
+      <li><b>② 형태 가르기</b> — 물건 잔존 여부로 몰수와 추징을 나눕니다.</li>
+      <li><b>③ 시기 점검</b> — 대법원 2025도4689의 구조로 범행 시기별 적용법령을 표에 적습니다.</li>
+      <li><b>④ 단위 고정</b> — 기간·횟수·수량·금액을 먼저 적고 공소사실과 정합성을 맞춥니다.</li>
+      <li><b>⑤ 흐름 추적</b> — 혼화·인출·전환을 시간순으로 적고, 각 줄에 성격을 붙입니다.</li>
+      <li><b>⑥ 확인·기록</b> — 부칙 해석 등 단정할 수 없는 부분은 확인 과제로 두고, 누가 언제까지 무엇을 갖출지 네 줄로 적습니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
