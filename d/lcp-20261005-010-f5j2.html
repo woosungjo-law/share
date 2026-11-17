@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>계정을 지웠는데 접근이 남았다, 시스템의 범위가 곧 통제의 범위이기 때문이다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 개인정보 접근통제</div>
+    <h1>계정을 지웠는데 접근이 남았다, 시스템의 범위가 곧 통제의 범위이기 때문이다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 퇴직자 계정을 지웠다고 접근이 끝나지 않습니다. 개인정보처리시스템은 <b>데이터베이스와 연동된 응용프로그램까지</b> 포함하는 넓은 개념이어서, 토큰·인터페이스 키·공유 계정·서버 간 신뢰 구간이 남아 있으면 <b>계정 삭제는 반쪽짜리 조치</b>입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      건물에서 퇴사자의 출입카드를 회수하는 상황을 떠올려 보십시오. 카드는 회수했는데 주차장 게이트 비밀번호, 창고 도어락 번호, 서버실 비밀번호를 그대로 알고 있다면 출입은 계속됩니다. 문 하나를 잠그고 집 전체를 잠갔다고 말할 수 없습니다. 그래서 <b>문의 목록</b>을 먼저 세는 것이 첫 단계입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+        <p>축이 세 개입니다. 첫째, <b>안전성 확보조치</b>입니다. <b>개인정보 보호법 제29조</b>는 내부 관리계획의 수립, 접속기록의 보관 등 안전성 확보에 필요한 기술적·관리적·물리적 조치를 정합니다. 정규직은 물론 <b>외주 인력과 퇴직자까지</b> 포함한 접근통제·권한관리가 이 조항의 핵심 영역입니다.</p>
+    <p>둘째, <b>시스템의 범위</b>입니다. <b>개인정보 보호법 시행령 제30조</b>에 따라 보호 대상 개인정보처리시스템은 데이터베이스 자체뿐 아니라 <b>그와 연동되어 처리 과정에 관여하는 응용프로그램까지</b> 포함합니다. 그래서 접근통제·접속기록 보관·퇴직자 권한 말소·이상행위 탐지·외주 인력 통제가 따로 떨어진 항목이 아니라 <b>하나의 세트</b>로 요구됩니다. 세트 중 하나가 비면 나머지의 효과도 함께 줄어듭니다.</p>
+    <p>셋째, <b>판례의 태도</b>입니다. <b>대법원 2020두55220 판결</b>은 개인정보처리시스템의 의미에 데이터베이스와 연동되어 처리 과정에 관여하는 응용프로그램 등이 포함되는지를 적극으로 보았고, 같은 고시 조항이 내부 부주의로 인한 유출뿐 아니라 <b>외부로부터의 불법 접근</b>까지 다루는지도 함께 살폈습니다.</p>
+    <p>또 <b>대법원 2015다24904 판결</b>은 정보통신서비스 제공자가 안전성 확보를 위한 보호조치 의무를 위반했는지 판단하는 기준을 다루었습니다. 기술적·관리적 보호조치 기준을 다 갖춘 경우의 의무 위반 여부도 쟁점으로 남습니다.</p>
+    <p>실무에서 결정적인 것은 <b>기록의 질</b>입니다. 조치를 했다는 기록과 실제로 작동했다는 기록은 다릅니다. 확인되지 않은 항목은 공란으로 두지 않고 조치 시기와 근거를 적습니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>범위·시점·기록·인력이 방어를 가른다</h2>
+    <ul class="points">
+      <li><b>범위</b> — 데이터베이스·연동 응용프로그램·연동 모듈·인터페이스까지 포괄해 접근통제 대상을 설계합니다. 범위에서 빠진 계층은 계정을 지워도 남습니다.</li>
+      <li><b>시점</b> — 권한 회수는 계정 삭제 시점이 아니라 <b>모든 우회 경로가 차단된 시점</b>이 기준입니다. 토큰·키·공유 계정·신뢰 구간이 함께 막혔는지 봅니다.</li>
+      <li><b>기록</b> — 접속 기록은 식별자·처리내역·일시를 담아 이상행위 탐지와 사후 원인분석이 가능한 수준이어야 하고, 정기 점검이 함께 돌아야 합니다.</li>
+      <li><b>인력</b> — 외주 인력 권한은 계약 기간과 실제 업무 범위에 맞춥니다. 범위가 줄면 권한도 함께 줄입니다.</li>
+      <li><b>입증</b> — 조치 기록과 작동 기록은 다릅니다. 점검 결과만 남기지 않고 접근 시도 기록까지 남깁니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 권한 회수 체크리스트에 '계정 삭제'만 적혀 있다면 그 목록은 절반입니다. 토큰과 키와 공유 계정을 같은 줄에 넣으십시오.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">범위·회수·기록·판례·공란의 점검표를 표준화하십시오. 다섯 단계로 나눕니다.</p>
+    <ol>
+      <li><b>① 범위 설계</b> — 데이터베이스와 연동 응용프로그램, 연동 모듈, 인터페이스를 한 장에 나열하고 접근통제 대상을 표시합니다.</li>
+      <li><b>② 회수 절차</b> — 퇴직·인사이동 단계에서 어떤 순서로 권한을 줄이고 우회 경로를 차단하는지 절차 문서로 남깁니다.</li>
+      <li><b>③ 기록 수준</b> — 접속 기록에 식별자·처리내역·일시가 남는지, 정기 점검이 실제로 돌아가는지 확인합니다.</li>
+      <li><b>④ 판례 대조</b> — 2020두55220 판결로 시스템의 범위를, 2015다24904 판결로 보호조치 의무의 판단 기준을 점검 항목에 옮겨 적습니다.</li>
+      <li><b>⑤ 공란 보고</b> — 조치했으나 기록이 없는 항목은 공란으로 두지 않고 조치 시기와 근거를 적습니다. 외주 인력 권한 기한이 계약 기간과 맞는지도 같은 표에서 확인합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
