@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>담합의 사법상 효력, 무효와 손해배상을 나눠 본다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 담합의 사법상 효력</div>
+    <h1>담합의 사법상 효력, 무효와 손해배상을 나눠 본다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 담합 약정의 무효와 <b>개별 거래계약의 효력</b>은 <b>같은 것이 아닙니다</b>. <b>부당한 공동행위를 약정한 계약</b>은 사업자 상호 간에 <b>무효</b>이고(<b>공정거래법 제40조</b>), 그 담합으로 체결된 <b>대외적 거래계약</b>은 <b>당연무효가 아니라</b> <b>반사회질서 법률행위인지 개별로</b> 판단합니다(<b>민법 제103조</b>). 그리고 피해구제의 중심은 <b>무효가 아니라 손해배상</b>입니다(<b>제109조</b>). <b>두 경로의 목적과 요건이 다릅니다.</b>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>밀수 계약서</b>와 <b>그 회사가 체결한 정상 납품계약</b>의 차이와 같습니다. 밀수 약정은 그 자체로 무효지만, <b>같은 회사가 다른 거래처와 맺은 납품계약</b>이 자동으로 무효가 되지는 않습니다. 그 계약이 <b>어떤 내용이고 어떤 동기로 맺어졌는지</b>를 따로 봐야 합니다. <b>한 사건의 오염이 모든 계약서로 번지지는 않습니다.</b>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+        <p>첫째, <b>담합 약정의 무효</b>입니다. <b>부당한 공동행위를 할 것을 약정하는 계약</b>은 <b>사업자 상호 간에 무효</b>입니다(<b>공정거래법 제40조</b>). <b>담합 자체를 약정한 계약</b>은 효력이 없습니다. <b>여기까지는 명확</b>합니다. 문제는 <b>그 다음 단계</b>입니다 — <b>그 담합으로 체결된 거래계약</b>은 <b>별도의 심사</b>를 받습니다.</p>
+    <p>둘째, <b>거래계약의 개별 판단</b>입니다. <b>담합으로 체결된 대외적 거래계약이 당연히 무효가 되는 것은 아니고</b>, <b>민법 제103조에 따라 반사회질서의 법률행위인지 여부를 개별적으로</b> 판단해야 합니다. <b>계약의 내용과 동기, 거래의 구체적 사정</b>을 함께 봅니다. <b>담합에 가담한 사정이 있더라도 개별 거래계약이 곧바로 무효라고 단정할 수는 없습니다.</b> <b>계약별로 나눠야</b> 답이 나옵니다.</p>
+    <p>셋째, <b>손해배상이 중심</b>입니다. <b>피해구제는 계약 무효보다 손해배상이 중심</b>이 됩니다(<b>제109조</b>). <b>무효를 주장해 계약을 되돌리는 길</b>과 <b>손해배상을 청구하는 길</b>은 <b>목적과 요건이 다릅니다</b>. <b>무효를 이유로 계약 이행을 거부하면</b>, <b>정당한 이행 요구를 받고 손해배상 책임까지 떠안을 수 있습니다</b>. 반대로 <b>배상만 생각하고 무효 주장을 준비하지 않으면</b>, <b>상대의 무효 항변에 대응할 근거가 사라집니다</b>.</p>
+    <p>넷째, <b>입증과 신뢰 보호</b>입니다. 손해배상은 <b>청구하는 쪽이 손해와 인과관계를 입증</b>해야 하고, <b>손해액 산정은 감정·통제변수·전가 여부</b> 같은 쟁점을 낳습니다. 그리고 <b>교섭 과정에서 정당한 신뢰를 침해당한 경우에는 불법행위</b>가 문제 될 수 있습니다 — <b>보호가치 있는 기대나 신뢰</b>를 가지게 된 경우, <b>상당한 이유 없이 이를 침해해 손해를 입혔다면 불법행위가 성립</b>할 수 있고, <b>계약 성립을 기대하고 지출한 비용</b>이 배상 범위에 포함될 수 있습니다(<b>2021다216773</b>).</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>약정무효·개별판단·배상중심·입증·신뢰보호·두경로가 갈림길이다</h2>
+    <ul class="points">
+      <li><b>약정 무효</b> — 담합 자체를 약정한 계약을 <b>먼저 분리</b>합니다. 여기까지는 명확합니다.</li>
+      <li><b>거래계약</b> — 담합으로 체결된 계약을 <b>계약별로</b> 나눠 제103조 관점에서 봅니다.</li>
+      <li><b>내용·동기</b> — 계약의 <b>내용과 동기, 거래 사정</b>을 함께 적습니다. 정상성 자료가 방어선입니다.</li>
+      <li><b>배상 경로</b> — 손해와 인과관계, 산정 기준을 <b>청구 근거와 대응</b>시켜 준비합니다.</li>
+      <li><b>신뢰 침해</b> — 교섭 단계의 <b>기대·지출 비용</b>을 기록으로 남깁니다.</li>
+      <li><b>두 경로</b> — 규제 대응과 민사 대응의 <b>결론이 다를 수 있음</b>을 전제로 자료를 나눕니다.</li>
+    </ul>
+    <div class="callout"><b>'무효이니 계약을 지킬 필요가 없다'는 말을 먼저 지우세요.</b> 그 한 줄이 <b>이행 거부 → 손해배상</b>으로 이어지는 경로입니다. 대신 계약 목록에 <b>세 칸</b>을 두세요 — <b>담합 약정인지 / 거래계약인지 / 정상성 자료가 있는지</b>. 세 번째 칸이 <b>비어 있으면 그 계약은 방어가 어렵습니다</b>. 그리고 <b>가격 결정 과정과 체결 경위를 시간 순서로</b> 남기세요 — 그 기록이 <b>개별 계약의 효력을 지키는 재료</b>입니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">무효·배상·기록을 한 표로 묶는 여섯 단계입니다. 표의 행 이름은 바꾸지 않습니다.</p>
+    <ol>
+      <li><b>① 약정 무효</b> — 공정거래법 제40조의 구조로 부당 공동행위를 약정한 계약을 분리합니다.</li>
+      <li><b>② 개별 판단</b> — 민법 제103조의 관점으로 담합으로 체결된 거래계약의 효력을 계약별로 검토합니다.</li>
+      <li><b>③ 배상 경로</b> — 공정거래법 제109조의 구조로 손해배상 청구의 근거와 산정 기준을 대응시킵니다.</li>
+      <li><b>④ 원상회복</b> — 대법원 2004다20265의 취지로 주계약 소멸 시 보증인의 부당이득반환 문제를 확인합니다.</li>
+      <li><b>⑤ 신뢰 침해</b> — 대법원 2021다216773의 취지로 교섭 과정의 기대와 지출 비용을 정리합니다.</li>
+      <li><b>⑥ 준법·두 경로</b> — 정보 교환 경로와 기록을 재점검하고, 규제 대응과 민사 대응 자료를 나눠 관리합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
