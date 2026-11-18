@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>영업을 팔 때 가장 늦게 나오는 숫자가 사람이다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 영업양도</div>
+    <h1>영업을 팔 때 가장 늦게 나오는 숫자가 사람이다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> <b>영업양도는 영업 재산과 사실 관계, 고객 관계, 영업상 노하우 등을 일체로 이전하는 거래</b>입니다. 그러면 <b>주주총회 특별결의가 필요하고</b>(<b>상법 제374조</b>), <b>영업의 동일성이 유지되는 범위에서 근로관계가 포괄 승계</b>됩니다. 그리고 <b>양수인은 양도인의 채무를 상호를 사용하는 동안 발생한 채무가 아니더라도 책임을 집니다</b>(<b>제42조 제1항</b>). <b>계약서에 없다고 해서 없어지지 않습니다.</b>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>가게를 통째로 넘기는 것</b>과 같습니다. <b>집기와 재고를 판다</b>고 하면 <b>물건만 넘어갑니다.</b> 그런데 <b>간판과 손님, 직원까지 그대로 넘기면</b>, <b>예전에 생긴 외상값까지 새 주인이 떠안을 수 있습니다.</b> <b>이름이 "자산 매각"인지 "영업 양도"인지에 따라</b> <b>책임의 크기가 완전히 달라지는</b> 이유입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, <b>조직적 일체의 이전</b>입니다. <b>영업양도는 영업에 관한 조직적 재산, 즉 영업 재산과 사실 관계, 고객 관계, 영업상 노하우 등을 일체로 이전하는 거래</b>입니다. 이때 <b>주주총회 특별결의가 필요하고</b>(<b>상법 제374조</b>), <b>근로관계가 포괄 승계</b>됩니다.</p>
+    <p>둘째, <b>특별결의의 기준</b>입니다. <b>출석주주의 의결권 3분의 2 이상과 발행주식 총수 3분의 1 이상이 필요합니다</b>(<b>제374조</b>). <b>이 두 숫자를 결의 요건표의 첫 줄</b>에 옮겨 두어야 합니다.</p>
+    <p>셋째, <b>양수인의 법정책임</b>입니다. <b>영업을 양수한 사람은 양도인의 채무를 그 상호를 사용하는 동안에 발생한 채무가 아니더라도 책임을 집니다</b>(<b>제42조 제1항</b>). <b>당사자의 의사와 인식과 무관하게 발생하는 법정책임</b>이고, <b>영업양도 전에 발생한 채무이면 충분</b>합니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>특정·결의·승계 — 셋이 조건</h2>
+    <ul class="points">
+      <li><b>특정</b> — <b>양도 대상 자산과 권리를 구체적·개별적으로 특정하지 않으면 조직적 일체성의 인정 범위가 불명확해져 분쟁의 여지가 남습니다.</b></li>
+      <li><b>결의</b> — <b>영업양도 해당 여부가 불분명하더라도 사전에 특별결의를 받아 두는 것이 무효 리스크를 줄입니다.</b></li>
+      <li><b>승계</b> — <b>근로조건 유지 기간과 퇴직금 정산·승계 방법을 계약에 넣어야 나중에 다툼이 없습니다.</b></li>
+      <li><b>동일성</b> — <b>무엇을 남겼는지가 명확하지 않으면 남긴 부분의 책임까지 우리에게 되돌아올 수 있습니다.</b></li>
+      <li><b>상호</b> — <b>양수인이 어느 기간에 어떤 상호를 쓰는지에 따라 제42조상 책임의 구간이 달라집니다.</b></li>
+      <li><b>과거 채무</b> — <b>회계 장부에 남아 있지 않은 채무까지 문제될 수 있습니다.</b></li>
+    </ul>
+    <div class="callout"><b>양수인 측에 채무 목록을 넘기세요.</b> <b>양수인의 법정책임은 계약서에 없는 채무까지 잡아채기 때문입니다.</b> 그리고 <b>양도 후 감사권과 정보 제공 요구를 계약에 남겨야</b> 합니다 — <b>숨겨진 채무가 발견됐을 때 되물을 통로가 계약서에 있어야 합니다.</b> <b>영업은 넘어가지만 계약상 지위가 자동으로 넘어가지 않는 경우</b>도 있으므로 <b>기존 계약과 미완성 공사의 이관 방법을 따로</b> 정리해야 합니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">대상을 특정하고 순서를 만드는 열두 단계입니다.</p>
+    <ol>
+      <li><b>① 성격을 본다</b> — 자산 매각인지 영업양도인지 구분합니다.</li>
+      <li><b>② 특정을 본다</b> — 양도 대상을 자산별로 특정합니다.</li>
+      <li><b>③ 결의를 본다</b> — 주주총회 특별결의 요건을 확인합니다(상법 제374조).</li>
+      <li><b>④ 숫자를 본다</b> — 의결권 3분의 2, 주식 총수 3분의 1을 셉니다.</li>
+      <li><b>⑤ 책임을 본다</b> — 양수인의 법정책임을 점검합니다(상법 제42조).</li>
+      <li><b>⑥ 범위를 본다</b> — 양도 전 채무도 포함되는지 확인합니다.</li>
+      <li><b>⑦ 승계를 본다</b> — 근로관계 승계 조건을 문서화합니다.</li>
+      <li><b>⑧ 명단을 본다</b> — 근로자 명단과 소속 이전일을 확인합니다.</li>
+      <li><b>⑨ 기록을 본다</b> — 결의 회의록과 거래 문서를 함께 보관합니다.</li>
+      <li><b>⑩ 동일성을 본다</b> — 영업의 동일성이 유지되는 범위를 확인합니다.</li>
+      <li><b>⑪ 상호를 본다</b> — 양수인의 상호 사용 기간을 기록합니다.</li>
+      <li><b>⑫ 잔여를 본다</b> — 거래 종결 후 남은 의무를 목록화합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
