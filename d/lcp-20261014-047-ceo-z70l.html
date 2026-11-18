@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>빌려준 돈의 이자, 상한 넘으면 무효고 낸 돈은 원금에서 깎인다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>빌려준 돈의 이자, 상한 넘으면 무효고 낸 돈은 원금에서 깎인다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 순서는 셋이다 — ⑴ <b>어느 법의 상한이 적용되는지</b>(대부업법 제2조의 등록 요건 해당성), ⑵ <b>상한을 넘은 부분의 효력</b>(이자제한법 제2조 제3항)과 <b>이미 낸 초과분의 처리</b>(제4조), ⑶ <b>갚은 돈의 충당 순서</b>(대부업법 제8조·민법 제476조). <b>차용증에 적힌 이자율이 곧 유효한 이자율은 아니다.</b>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>사건의 시작: 높은 이자의 차용증과 갚은 돈의 행방</h2>
+    <div class="analogy">
+      오프라인 소매 업체 <b>온새미로스토어</b>의 대표 <b>최하린</b>은 <b>관계사 간 금전 대차의 차용증</b>을 보고받았다. <b>약정 이자율이 높아 보였고</b>, 채무자가 이미 <b>여러 차례에 걸쳐 돈을 갚았는데</b> 그 돈이 <b>원금에 충당된 것인지 이자에 충당된 것인지</b>가 불분명했다.<br><br>
+      이 상황은 <b>카드값을 여러 번 나눠 냈는데, 어느 결제 건부터 갚아진 것인지 아무도 모르는 상태</b>와 같다. <b>같은 금액을 냈어도 충당 순서에 따라 남은 빚이 달라진다.</b> 이자에 먼저 붙으면 <b>원금이 거의 줄지 않는다.</b><br><br>
+      대표의 결단은 <b>어느 법의 상한이 적용되는지, 초과 이자를 냈다면 어떻게 되는지, 갚은 돈을 어디에 먼저 충당할지</b>를 가리는 데서 시작되어야 했다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 보는 핵심: 적용 법·상한 초과·초과분 처리·충당 지정을 알아야 한다</h2>
+    <p>첫째, <b>적용 법</b>의 문제다. <b>대부업자가 아닌 일반 개인 간의 대차</b> 중 <b>대부업의 등록 요건에 해당하는지</b>를 가려야 하며, <b>등록 요건을 충족하지 않는 거래</b>에는 <b>이자제한법</b>이 적용된다는 점이 함께 문제 된다. <b>대부업법 제2조</b>의 등록 요건 해당성이 적용 법을 가르는 갈림길이다. 다만 이 대목은 <b>근거 확인에 보완이 필요한 부분</b>이 있으므로 <b>거래의 실질을 함께</b> 놓고 검토해야 한다.</p>
+    <p>둘째, <b>상한 초과</b>의 문제다. <b>약정 이자율이 최고이자율을 초과</b>하는 경우, <b>초과 부분은 무효</b>다. <b>이자제한법 제2조 제3항</b>이 그 근거다. 무효라는 것은 <b>나중에 다투어 깎는 것이 아니라 처음부터 효력이 없다</b>는 뜻이다.</p>
+    <p>셋째, <b>초과분 처리</b>의 문제다. 채무자가 <b>이미 초과 이자를 지급한 경우</b>, 그 초과분은 <b>원본인 원금에 충당</b>되고, <b>원본이 소멸하면 반환을 청구</b>할 수 있다. <b>이자제한법 제4조</b>가 그 근거다.</p>
+    <p>넷째, <b>변제충당</b>의 문제다. 채무자가 변제한 금액을 <b>원본과 이자, 비용 중 어디에 먼저 충당</b>할지를 정하는 법리가 문제 된다. <b>대부업법 제8조</b>의 이자율 제한 규율과 함께 봐야 한다.</p>
+    <p>다섯째, <b>충당 지정의 효력</b> 문제다. 채무자가 변제금의 충당 방법을 지정하는 경우, 그 지정은 <b>명시적</b>이어야 하나 <b>반드시 서면일 필요는 없고</b>, <b>변제 시에 이루어져야 하며</b>, <b>사후 지정은 효력이 없고</b>, <b>순서를 변경할 수 있지만 제3자의 이익을 해하는 지정은 효력이 제한</b>될 수 있다. <b>민법 제476조</b>가 그 근거다.</p>
+    <div class="callout">
+      <b>변제할 때 남긴 한마디가 충당을 정한다.</b> "이번 돈은 원금으로 갚습니다"라는 말을 <b>변제하는 그 자리에서</b> 남겼는지가 갈림길이다. <b>나중에 한 말은 효력이 없다.</b> 차용증과 입금 내역, 지정의 경위를 <b>하나의 파일로 묶어</b> 관리하도록 하십시오. <b>상한과 충당의 기록이 곧 분쟁의 근거</b>다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외: 대표가 결단 전에 가려야 할 세 가지</h2>
+    <ul class="points">
+      <li><b>등록 요건의 해당성</b> — <b>대부업법 제2조</b>의 등록 요건에 해당하는지를 가려 <b>적용 법을 확정</b>해야 한다. 여기서 갈리면 상한의 숫자 자체가 달라진다.</li>
+      <li><b>상한과 초과분의 처리</b> — <b>이자제한법 제2조 제3항</b>에 따른 상한과 <b>제4조</b>에 따른 <b>초과 지급분의 원금 충당</b>, <b>원본 소멸 시 반환</b>을 챙겨야 한다.</li>
+      <li><b>변제충당과 지정</b> — <b>대부업법 제8조</b>와 <b>민법 제476조</b>에 따른 충당 순서와 <b>지정의 효력 요건</b>을 갖춰야 한다. 지정은 변제 시에, 명시적으로.</li>
+    </ul>
+    <p>어디까지 이자로 보고 어디서 원금으로 돌릴 것인지는 <b>지급 내역과 지정의 경위</b>를 놓고 정하십시오.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것: 적용·상한·충당을 보고받고 결단합니다</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>이자율을 깎는 협상보다 적용 법과 충당 순서를 확정하는 보고가 먼저다.</b></p>
+      <ol>
+        <li><b>① 적용 보고</b> — <b>대부업법 제2조</b>에 따른 등록 요건 해당성을 보고받는다.</li>
+        <li><b>② 상한 챙김</b> — <b>이자제한법 제2조 제3항과 제4조</b>에 따른 상한과 초과분의 처리를 챙긴다.</li>
+        <li><b>③ 충당 확인</b> — <b>민법 제476조</b>에 따른 지정의 효력 요건을 확인한다.</li>
+        <li><b>④ 내역 정리</b> — 지급 내역과 지정의 경위를 정리하도록 한다.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;">금전 대차를 두고 대표는 <b>적용 법, 상한과 초과분의 처리, 변제충당과 지정의 효력</b>을 보고받으십시오. <b>차용증·입금 내역·지정 경위</b>를 한 파일로 묶어 두면, 상한과 충당을 다투는 자리에서 <b>기록이 곧 방어의 근거</b>가 된다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
