@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>상속채무 승계와 한정승인 정산을 분리하는 법</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 노트 · 상속채무 승계와 한정승인</div>
+    <h1>상속채무 승계와 한정승인 정산을 분리하는 법</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>한 문장.</b> 상속채무 사건은 <b>채무가 있다는 사실보다 '언제 알았고 어떤 선택을 했는지'</b>가 중요합니다. <b>민법 제1005조의 포괄승계</b>, <b>제1019조의 신고기간</b>, <b>제1030조의 한정승인 효과</b>를 하나의 문장으로 처리해서는 안 되고, <b>승계 범위·선택 기한·재산 보존·채권자 정산을 각각 기록</b>해야 합니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>이사(移徙)를 떠올려 보십시오.</b> 새 집으로 <b>짐을 통째로 옮기는 것</b>이 포괄승계입니다. 짐을 옮기기 전에 <b>어느 상자에 무엇이 들었는지 목록을 만들지 않으면</b>, 나중에 빚이 든 상자를 발견해도 손쓸 수 없습니다. <b>한정승인은 '옮긴 짐 안에서만 정리하겠다'고 미리 신고하는 절차</b>입니다. 신고서를 냈다고 <b>짐 정리가 저절로 끝나는 것이 아니라</b>, 어떤 상자를 열어 무엇을 갚을지 순서대로 처리해야 합니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+        <p>첫째, <b>포괄승계가 출발점</b>입니다. <b>민법 제1005조</b>는 상속인이 피상속인의 <b>재산상 권리·의무를 포괄적으로 승계</b>하는 출발점을 둡니다. 따라서 <b>상속재산 목록만 작성하고 채무 목록을 나중에 만들면 위험</b>합니다. 금융기관, 세금, 임대차, 보증, 소송, 미지급 비용을 확인하고 <b>채무의 존재·금액·기한·담보를 각각 표시</b>해야 합니다.</p>
+    <p>둘째, <b>3개월 신고기간의 계산</b>입니다. <b>민법 제1019조</b>와 관련해 한정승인을 하려면 <b>상속개시를 안 날부터 3개월 내 신고 여부</b>가 핵심입니다. <b>가족이 사망 사실을 안 날과 상속채무를 처음 안 날이 항상 같은지</b> 사실관계를 검토하고, <b>주민등록·통지·법원 서류·채권자 연락을 증빙</b>으로 남깁니다. <b>기한 계산은 담당자 한 명의 메모에 의존하지 말고</b> 법무 캘린더와 결재로 이중 관리합니다.</p>
+    <p>셋째, <b>한정승인의 효과와 그 한계</b>입니다. <b>민법 제1030조</b>와 관련된 한정승인은 <b>상속재산의 범위 내에서 피상속인의 채무를 변제하는 구조</b>로 이해됩니다. 그러나 <b>신고했다고 곧바로 모든 채권자가 정리되는 것은 아닙니다.</b> 신고 후 <b>재산을 어떻게 보존하고, 채권자에게 어떤 방식으로 통지하며, 변제 순서를 어떻게 관리할지</b> 별도 절차를 만들어야 합니다.</p>
+    <p>넷째, <b>상속재산과 고유재산의 분리</b>입니다. <b>상속재산과 고유재산이 섞이면 정산이 어려워집니다.</b> 상속 전용 계좌, 부동산·차량 목록, 장례비, 세금, 보존비용을 구분하고, <b>상속인이 개인 돈으로 대신 낸 항목은 대여인지 선지출인지 표시</b>합니다. 채권자에게 보내는 답변에는 <b>확인된 채무와 조사 중인 채무를 나누어</b> 기재합니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외 — 기한이 급할수록 조사보다 절차를 먼저 본다</h2>
+    <ul class="points">
+      <li><b>채무 조사 기준일</b> — 금융기관·세금·등기·보증·소송을 <b>같은 기준일</b>로 조사합니다.</li>
+      <li><b>주장과 확정의 구분</b> — <b>채권자의 주장만으로 채무를 확정하지 말고</b> 계약서·거래내역·판결·공정증서·변제 내역을 대조합니다.</li>
+      <li><b>조사 중 채무</b> — <b>예상액과 확인 기한</b>을 별도로 표시합니다.</li>
+      <li><b>기한 임박 시</b> — <b>완전한 조사보다 신고 가능성과 절차상 보완책을 먼저</b> 확인합니다.</li>
+      <li><b>고유재산 변제</b> — 고유재산에서 임의로 변제하거나 상속재산을 처분하는 행위는 <b>법무 검토 후</b> 진행합니다.</li>
+      <li><b>표현의 위험</b> — <b>변제 약속처럼 읽힐 수 있는 표현은 승인 후 사용</b>합니다.</li>
+    </ul>
+    <div class="callout"><b>신고가 접수되었다는 사실과 변제가 완료되었다는 사실은 다릅니다.</b> 법원 절차, 재산 보존, 채권자 확인, 최종 정산을 <b>각각 완료 조건</b>으로 두고, 한 단계가 끝나지 않았다고 다음 단계가 끝난 것으로 기록하지 마십시오. 이 구분이 있어야 <b>상속인의 고유재산과 상속재산의 회계를 안전하게 분리</b>할 수 있습니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">상속채무 대응은 아래 다섯 단계를 시간순으로 정리하는 일입니다. 순서를 바꾸면 기한을 놓치거나 재산이 섞입니다.</p>
+    <ol>
+      <li><b>승계 범위</b> — 민법 제1005조의 권리·의무 승계를 확인합니다.</li>
+      <li><b>신고기간</b> — 민법 제1019조에 따른 3개월 신고기간을 계산합니다.</li>
+      <li><b>한정승인 효과</b> — 민법 제1030조의 한정승인 효과를 검토합니다.</li>
+      <li><b>증빙 보존</b> — 상속개시를 안 날과 신고일의 증빙을 보존합니다.</li>
+      <li><b>정산 순서</b> — 채무별 변제·공고·정산 순서를 기록합니다.</li>
+      <li><b>최종 정산 파일</b> — 법원 신고서·접수증, 상속재산 목록, 채무 조사표, 채권자 통지, 변제 영수증, 가족 합의서를 사건별로 묶고, 문서 첫 장에 선택 상태와 다음 기한을 표시합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
