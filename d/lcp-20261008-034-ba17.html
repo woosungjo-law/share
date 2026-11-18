@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>해지는 언제든 가능하지만 시기가 값을 정한다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 위임계약 해지·보수</div>
+    <h1>해지는 언제든 가능하지만 시기가 값을 정한다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> <b>소송위임계약은 민법상 위임계약으로, 의뢰인은 언제든지 해지할 수 있습니다</b>(<b>민법 제689조</b>). 하지만 <b>해지 시기와 경과에 따라 착수금과 성공보수 등의 반환 범위가 달라지고</b>, <b>약정된 보수가 과다한 경우 신의칙상 감액될 수 있습니다.</b> 그리고 <b>불리한 시기에 해지하면 상대방에게 손해배상책임을 질 수 있습니다</b>(<b>제689조 제2항</b>).
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>공연 전날 취소</b>와 같습니다. <b>취소는 언제든 할 수 있습니다.</b> 그런데 <b>공연 한 달 전에 취소하면 표값만 돌려받고</b>, <b>공연 전날 취소하면 준비에 들어간 비용까지 부담</b>합니다. <b>권리는 같지만 값은 시기가 정합니다.</b> 그래서 <b>해지를 결정하는 회의에서 먼저 물어야 할 것은 "지금인가"가 아니라 "지금 하면 무엇을 내야 하는가"</b>입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, <b>해지권</b>입니다. <b>의뢰인은 언제든지 해지할 수 있습니다</b>(<b>민법 제689조</b>). 다만 <b>해지 시기와 경과에 따라 반환 범위가 달라지고, 약정된 보수가 과다한 경우 신의칙상 감액될 수 있습니다.</b></p>
+    <p>둘째, <b>시기의 책임</b>입니다. <b>불리한 시기에 해지하면 상대방에게 손해배상책임을 질 수 있습니다</b>(<b>제689조 제2항</b>). <b>변론기일을 앞둔 시점의 해지가 왜 비싼지</b>를 설명해야 하는 이유입니다.</p>
+    <p>셋째, <b>약정의 무효</b>입니다. <b>성공보수약정의 기초가 된 법률행위가 강행법규를 위반하거나 반사회질서에 해당하면, 성공보수약정 자체가 무효가 될 수 있습니다</b>(<b>민법 제103조</b>). 그리고 <b>계약 해석은 문언 내용에서 시작해 법률행위의 동기와 경위, 달성하려는 목적, 당사자의 진정한 의사의 순서로 합니다</b>(<b>대법원 2017다22407</b>).</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>시기·경과·과다 — 셋이 조건</h2>
+    <ul class="points">
+      <li><b>시점</b> — <b>언제 해지했는지에 따라 반환 범위가 달라집니다.</b></li>
+      <li><b>경과</b> — <b>이미 행위가 경과한 정도가 반환의 폭을 정합니다.</b></li>
+      <li><b>과다</b> — <b>약정보수가 과다하면 신의칙에 따라 감액될 수 있습니다.</b></li>
+      <li><b>불법성</b> — <b>기초가 된 법률행위의 불법성은 약정 자체의 효력을 흔듭니다</b>(<b>민법 제103조</b>).</li>
+      <li><b>양보</b> — <b>해지 협상은 반환 범위를 두고 이루어집니다.</b> <b>어느 지점에서 양보할지 미리 정해 두지 않으면 협상마다 흔들립니다.</b></li>
+      <li><b>인계</b> — <b>해지 후 기록이 넘어가지 않으면 소송이 멈춥니다.</b></li>
+    </ul>
+    <div class="callout"><b>해지의 통보 방법도 정해야 합니다.</b> <b>언제, 어떤 형태로, 누구에게 통보했는지가 기록돼야 그 시점이 분쟁 없이 정해집니다.</b> 그리고 <b>교체되는 변호사와 되는 변호사의 기록 인수인계를 같은 문서로 관리</b>하세요 — <b>무엇이 넘어갔는지 양쪽이 동시에 서명하면 이후의 분쟁이 줄어듭니다.</b></div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">시기표와 근거표를 나란히 두는 열여섯 단계입니다.</p>
+    <ol>
+      <li><b>① 성격을 본다</b> — 소송위임계약의 위임계약 성격을 확인합니다(민법 제689조).</li>
+      <li><b>② 해지를 본다</b> — 언제든지 해지 가능함을 확인합니다.</li>
+      <li><b>③ 시기를 본다</b> — 해지 시기와 반환 범위를 나눕니다(민법 제689조 제2항).</li>
+      <li><b>④ 경과를 본다</b> — 이미 경과한 행위를 항목으로 남깁니다.</li>
+      <li><b>⑤ 착수를 본다</b> — 착수금의 반환 여부를 확인합니다.</li>
+      <li><b>⑥ 과다를 본다</b> — 약정보수의 과다 여부를 확인합니다(민법 제689조).</li>
+      <li><b>⑦ 무효를 본다</b> — 기초 법률행위의 불법성을 점검합니다(민법 제103조).</li>
+      <li><b>⑧ 반사회를 본다</b> — 반사회질서 해당 여부를 확인합니다.</li>
+      <li><b>⑨ 해석을 본다</b> — 해석 순서로 문구를 읽습니다(대법원 2017다22407).</li>
+      <li><b>⑩ 기록을 한다</b> — 구두 약속은 별도로 표시합니다.</li>
+      <li><b>⑪ 범위를 본다</b> — 반환 협상의 목표 범위를 정합니다.</li>
+      <li><b>⑫ 인수를 본다</b> — 기록 인수인계를 문서로 관리합니다.</li>
+      <li><b>⑬ 경위를 본다</b> — 조항의 작성 경위를 한 줄로 남깁니다.</li>
+      <li><b>⑭ 통보를 본다</b> — 해지 통보의 시점과 방법을 기록합니다.</li>
+      <li><b>⑮ 감액을 본다</b> — 과다 주장의 비교 자료를 준비합니다.</li>
+      <li><b>⑯ 대조를 한다</b> — 기일 일정과 해지 시점을 나란히 확인합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
