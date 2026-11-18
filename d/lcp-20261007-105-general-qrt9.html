@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>상속받은 집 팔기, 협의 끝나도 등기까지 본다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 상속집 매매</div>
+    <h1>상속받은 집 팔기, 협의 끝나도 등기까지 본다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> <b>협의가 끝났어도 등기가 없으면 완성이 아닙니다.</b> <b>민법 제186조</b>에 따라 <b>부동산은 등기를 해야 소유권 변동의 효력이 최종적으로 완성되고 다른 사람에게 주장</b>할 수 있습니다. 그리고 <b>함께 가진 집은 다른 사람의 동의 없이 팔거나 고치지 못합니다</b>(<b>민법 제264조</b>). <b>협의서·등기부·동의 여부</b>를 세 가지로 봐야 합니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>형제들과 "1층은 네가 가져라"고 말로 정리했는데, 등기부에는 아직 모두의 이름이 남아 있는 상황</b>입니다. 말로 정한 것과 <b>등기부에 적힌 것</b> 사이의 <b>간격</b>이 다툼의 자리가 됩니다. 그 간격을 메우는 것이 <b>문서로 받은 동의</b>입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>먼저 <b>등기</b>입니다. <b>부동산은 등기를 해야 소유권 변동의 효력이 최종적으로 완성되고 다른 사람에게 주장</b>할 수 있습니다(<b>민법 제186조</b>). <b>협의가 끝났어도 등기가 없으면 완성이 아닙니다.</b></p>
+    <p>다음은 <b>동의</b>입니다. <b>함께 가진 집은 다른 사람의 동의 없이 팔거나 고치지 못합니다</b>(<b>민법 제264조</b>). <b>혼자 팔 수 없고, 동의 없는 처분은 상대방이 물고 들어오는 지점</b>이 됩니다.</p>
+    <p>마지막은 <b>세 가지 대조</b>입니다. <b>협의로 누구 것으로 정해도 등기가 효력을 완성</b>합니다. <b>함께 가진 상태가 남아 있으면 동의가 파는 일을 가르므로, 협의서와 등기부, 동의 여부를 세 가지로 봅니다.</b></p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>간격과 문서</h2>
+    <ul class="points">
+      <li><b>① 간격</b> — 협의서에는 적혀 있는데 등기부는 이전 상태로 남아 있으면 그 간격이 다툼의 자리가 됩니다.</li>
+      <li><b>② 문구</b> — 협의서 문구를 먼저 봅니다. 1층을 누구 것으로 적었는지, 조건이 붙었는지를 봅니다.</li>
+      <li><b>③ 등기부 표시</b> — 등기부의 표시를 협의서와 함께 봅니다.</li>
+      <li><b>④ 문서 동의</b> — 말로 한 동의와 문서로 남은 동의는 다릅니다. 문서로 남겨야 나중에 보여줄 것이 있습니다.</li>
+      <li><b>⑤ 전원 동의</b> — 함께 가진 사람 전원의 동의인지를 봅니다. 일부만 동의하고 일부가 빠져 있으면 다툼이 남습니다.</li>
+      <li><b>⑥ 순서</b> — 협의와 등기, 매매의 순서를 날짜 순서로 적습니다.</li>
+      <li><b>⑦ 명단</b> — 함께 가진 사람이 누구인지 먼저 적습니다. 동의 대상이 정해져야 다음으로 갈 수 있습니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> <b>협의 ≠ 완성</b>입니다. <b>등기부가 이전 상태로 남아 있으면 전원의 문서 동의</b>가 필요합니다. 명단을 먼저 만들고 빠진 사람이 없는지 보십시오.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;">협의서와 등기부를 <b>대조해 간격을 표시</b>하고, 1층을 파는 데 필요한 동의를 <b>문서로</b> 받으십시오. 협의·등기·매매의 순서를 날짜 순서로 적으면 됩니다.</p>
+    <ol>
+      <li><b>① 등기</b> — 변동 완성과 주장에 등기가 필요함을 알아둔다(민법 제186조).</li>
+      <li><b>② 동의</b> — 함께 가진 집은 동의 없이 팔지 못함을 알아둔다(민법 제264조).</li>
+      <li><b>③ 간격</b> — 협의서와 등기부의 차이를 본다(민법 제186조).</li>
+      <li><b>④ 귀속</b> — 협의서가 1층을 누구 것으로 적었는지 본다(민법 제264조).</li>
+      <li><b>⑤ 문서</b> — 동의는 문서로 받는다(민법 제264조).</li>
+      <li><b>⑥ 순서</b> — 협의·등기·매매의 선후를 적는다(민법 제186조).</li>
+      <li><b>⑦ 완성</b> — 등기 전에는 완성이 아님을 알아둔다(민법 제186조).</li>
+      <li><b>⑧ 전원</b> — 함께 가진 사람 전원의 동의를 명단으로 대조한다(민법 제264조).</li>
+      <li><b>⑨ 명단</b> — 함께 가진 사람이 누구인지 먼저 적는다.</li>
+      <li><b>⑩ 문구</b> — 협의서 문구와 등기부 표시를 나란히 본다.</li>
+      <li><b>⑪ 대조</b> — 협의서·등기부·동의 여부를 한 표에 대조한다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
