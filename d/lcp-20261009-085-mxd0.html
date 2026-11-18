@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>도산절차에서 상계할 수 있는지, 발생 시점부터 다시 본다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 노트 · 회생·파산과 상계 제한</div>
+    <h1>도산절차에서 상계할 수 있는지, 발생 시점부터 다시 본다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>한 문장.</b> <b>거래처가 회생·파산 절차에 들어갔다고 해서 상계 계산서부터 만들지 마십시오.</b> <b>자동채권과 수동채권이 각각 언제 생겼고, 도산 사실을 언제 알았는지</b>를 먼저 고정해야 합니다. <b>채무자 회생 및 파산에 관한 법률 제145조와 제422조</b>는 <b>회생과 파산을 따로</b> 보게 하고, <b>대법원 2025다202598</b>은 <b>부인권·원상회복이라는 특수한 출발점</b>을 먼저 확인하게 합니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>문을 닫은 가게에 외상값을 받으러 갔는데, 내가 그 가게에 물건값을 줄 돈도 남아 있는 상황</b>을 떠올려 보십시오. <b>“서로 셈하자”</b>고 말하기 전에 <b>내 외상값이 언제 생겼는지, 내가 줄 돈이 언제 생겼는지, 가게가 문 닫는다는 소식을 내가 언제 들었는지</b>를 확인해야 합니다. <b>가게가 닫힌 뒤에 새로 산 외상값은 같은 방식으로 셈할 수 없기</b> 때문입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+        <p>첫째, <b>회생절차의 상계 제한</b>입니다. <b>채무자 회생 및 파산에 관한 법률 제145조</b>는 <b>위기시기 이후에 취득한 회생채권이나 부담한 채무와 관련된 상계 제한</b>을 검토하는 기준입니다. <b>지급정지나 회생신청을 언제 알았는지, 채권이 언제 생겼는지, 채무를 언제 부담했는지의 순서</b>를 시간순으로 세웁니다. <b>계약서에 상계조항이 있어도 강행적 절차 제한을 자동으로 피할 수 있다고 단정하지 않습니다.</b></p>
+    <p>둘째, <b>파산절차의 상계 제한</b>입니다. <b>제422조</b>는 <b>파산절차에서 위기시기 이후 취득한 채권·부담 채무의 상계 제한</b>을 검토하는 기준입니다. <b>회생과 파산은 절차와 예외가 다를 수 있으므로 한 문단에서 같은 결론을 쓰지 않습니다.</b> 그리고 <b>상계가 금지되는지와 별개로 채권 신고, 변제, 담보, 합의의 절차</b>를 함께 확인합니다.</p>
+    <p>셋째, <b>판례를 그대로 복사하지 않기</b>입니다. <b>대법원 2025다202598</b>은 <b>부인권 행사로 파산채권자가 부담하게 된 원상회복의무를 제422조 제2호 단서 (가)목의 ‘법정의 원인’에 의해 부담한 채무라고 볼 수 있는지</b>를 다룬 판결로 정리됩니다. <b>특수한 부인권·원상회복 구조와 연결되어 있으므로</b>, <b>일반 매매대금이나 손해배상채권의 상계에 결론을 그대로 확장하지 않습니다.</b></p>
+    <p>넷째, <b>시점과 증거의 분리</b>입니다. <b>상계 의사표시의 도달일과 상계적상 시점은 다를 수 있습니다.</b> <b>자동채권과 수동채권의 발생 원인, 변제기, 도산절차 개시 전후를 표로 만들고</b>, <b>제145조·제422조의 제한 사유와 법정의 원인 해당 여부를 문장별로 검토</b>합니다. <b>도산 사실을 알게 된 경위는 내부 이메일·회의록·거래처 공지·법원 통지로 입증</b>하고, <b>‘소문을 들었다’와 공식 통지를 받은 날을 구분</b>합니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외 — 절차·시점·판례 한계</h2>
+    <ul class="points">
+      <li><b>양수와 담보의 실질</b> — <b>채권을 양수하거나 새 담보를 받는 거래도 실질이 기존 채권 회수인지, 위기시기 이후 새로 취득한 권리인지</b> 확인합니다.</li>
+      <li><b>신고와 이의의 별도 관리</b> — <b>관리인·관재인에게 채권을 신고했는지, 상계 통지에 이의가 있는지, 신고·이의 기한이 언제인지</b>를 따로 관리합니다.</li>
+      <li><b>자력 회수의 금지</b> — <b>상계가 제한될 가능성이 있으면 일방 지급 거절이나 자력 회수로 거래를 악화시키지 않습니다.</b></li>
+      <li><b>판례 비교의 형식</b> — <b>2025다202598을 인용할 때는 판결의 사실관계, 우리 채권의 발생 원인, 부인권·원상회복 여부를 나란히 제시하고 유사하지 않은 부분은 미확인으로</b> 남깁니다.</li>
+      <li><b>단정의 금지</b> — <b>판례가 직접 말하지 않는 회수 가능액이나 일반화는 단정하지 않습니다.</b></li>
+      <li><b>전제와 기한 우선</b> — <b>의견서는 결론보다 전제와 기한을 앞에 둡니다.</b></li>
+    </ul>
+    <div class="callout"><b>상계 검토표의 필수 열은 절차 종류, 상대방, 자동채권, 수동채권, 발생일, 변제기, 상계적상일, 도산 인식일, 통지일, 증거, 예상 결과</b>입니다. <b>제145조와 제422조를 각각 적용한 뒤 허용·금지·추가 확인으로 나누고</b>, <b>법정의 원인이나 예외를 주장할 때에는 해당 조문 문언과 사실 증거를 한 줄씩 연결</b>하십시오. <b>거래처 통지에는 상계 의사, 권리 유보, 금액 산정 근거, 이의 제기 방법을 명확히 하고 법무 검토를 거칩니다.</b> <b>상계가 실패할 경우 회생·파산 절차에서 회수할 금액과 비용, 공급망·현금흐름 영향을 함께 계산</b>해 경영진에게 보고합니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">도산 상계 검토는 아래 네 항목을 순서대로 세우는 일입니다. 절차·시점·판례·대안을 나눠야 손실 계산이 흔들리지 않습니다.</p>
+    <ol>
+      <li><b>절차의 분리</b> — <b>제145조와 제422조를 회생·파산별로 나누어 검토</b>했는지 봅니다.</li>
+      <li><b>시점의 고정</b> — <b>채권·채무 발생일과 도산 인식일을 증거로 고정</b>했는지 확인합니다.</li>
+      <li><b>판례의 한계</b> — <b>2025다202598의 부인권·원상회복 사실과 우리 거래를 비교</b>했는지 확인합니다.</li>
+      <li><b>기한과 대안</b> — <b>상계 통지·채권 신고·합의의 기한과 효과를 관리</b>하는지, <b>상계 실패 시 회수·담보·공급망 대안을 보고</b>했는지 봅니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
