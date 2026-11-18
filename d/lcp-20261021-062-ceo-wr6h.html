@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>상속세 평가의 싸움은 숫자가 아니라 준비의 두께로 정해진다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>상속세 평가의 싸움은 숫자가 아니라 준비의 두께로 정해진다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 원칙은 <b>시가</b>다. 상속세가 부과되는 재산의 가액은 상속개시일 현재의 시가에 따르고, 그 기준일에 다른 자료들이 맞춰진다(상속세 및 증여세법 제60조). 부동산의 평가 방법은 같은 법 제61조가 정한다. 공장과 상가처럼 <b>거래 실례가 드문 물건</b>일수록 감정가·기준시가·보충적 평가액의 편차가 커지고, 그 편차가 세액의 방향을 정한다. 준비가 얇으면 숫자를 두고 싸우게 된다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>사건의 시작: 가족 회의에 올라온 세 개의 감정 결과</h2>
+    <div class="analogy">
+      아버지가 남긴 재산을 정리하는 과정에서 공장 부지와 상가가 포함됐고, 평가 금액이 감정 결과와 세무사의 자료에서 달라졌다. 가족 회의는 <b>어느 값을 믿을지</b>에 대한 싸움으로 시작됐다. 먼저 정리할 것은 두 가지다. <b>이 숫자 차이가 왜 생기는가, 그리고 우리는 무엇을 준비해야 유리해지는가.</b> 결정은 금액이 아니라 준비의 상태에서 갈린다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 보는 핵심: 시가 원칙과 비주거용 부동산의 구조</h2>
+    <p>첫째, <b>평가의 원칙</b>이다. 상속세가 부과되는 재산의 가액은 상속개시일 현재의 시가에 따르고, 그 기준일에 다른 자료들이 맞춰진다(상속세 및 증여세법 제60조).</p>
+    <p>둘째, <b>평가의 방법</b>이다. 부동산의 평가 방법은 같은 법 제61조가 정한다. 원칙 하나와 방법 하나, 이 두 줄이 출발점이다.</p>
+    <p>셋째, <b>쟁점의 발생</b>이다. 비주거용 부동산의 시가가 불분명하거나 감정가·기준시가·보충적 평가액이 크게 차이 나는 경우, 평가원칙과 보충적 평가방법의 적용 순서·선택이 쟁점이 된다.</p>
+    <p>넷째, <b>편차의 원인</b>이다. 비주거용 부동산은 주거용과 달리 세 값 간 편차가 크고 거래 실례가 드물어 시가 산정이 어려운 경우가 많다. 거래가 드문 물건일수록 편차가 커진다.</p>
+    <div class="callout">
+      <b>시가 입증 자료가 두꺼울수록 보충적 평가 쪽으로 밀릴 가능성이 작아진다.</b> 거래 실례와 감정 자료를 모으는 일은 미리 시작할수록 싸다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>놓치기 쉬운 조건과 예외: 여섯 가지 판단 갈림길</h2>
+    <p><b>평가기준일</b>이 첫 조건이다. 상속개시일이 언제인지가 모든 자료의 출발점이다.</p>
+    <p><b>편차의 크기</b>가 둘째 조건이다. 세 값이 얼마나 벌어져 있는지에 따라 대응에 들일 비용의 상한이 정해진다.</p>
+    <p><b>순서의 문서화</b>가 셋째 조건이다. 무엇을 먼저 보고 무엇을 보조로 삼는지 정해 두지 않으면 판단이 숫자마다 바뀐다.</p>
+    <ul class="points">
+      <li>이의의 시점을 정한다. 과세관청의 평가 근거가 법령 기준과 다르다고 보는 경우 감정평가 재의뢰와 불복 검토 일정이 필요하다.</li>
+      <li>자료 확보 비용을 예산에 넣는다. 거래 실례를 찾는 일과 감정을 다시 받는 일은 미리 시작할수록 싸다.</li>
+      <li>담당을 한 사람으로 지정한다. 법무와 세무가 각자 판단하면 두 개의 평가 이야기가 나온다.</li>
+      <li>기준일을 먼저 확정한다. 가족이 합의하기 전에 날짜부터 흔들리면 뒤의 모든 자료가 다시 잡혀야 한다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>준비의 순서를 먼저 정한다.</b> 항목은 다음과 같다.</p>
+      <ol>
+        <li><b>① 기준일 확정</b> — 평가기준일을 먼저 못 박는다.</li>
+        <li><b>② 세 값 병치</b> — 감정가, 기준시가, 보충적 평가액을 한 장에 올리고 차이의 이유를 묻는다.</li>
+        <li><b>③ 자료 예산</b> — 시가 입증 자료 확보에 예산을 배정한다. 거래 실례와 임대차 기록이 가장 이른 시점에 시작되어야 한다.</li>
+        <li><b>④ 중단 기준</b> — 어느 지점까지 자료를 더 확보하고 어디서 멈출지 기준을 문장으로 둔다.</li>
+        <li><b>⑤ 일정 등록</b> — 감정평가 재의뢰·불복 검토 기한을 경영 일정에 올린다.</li>
+        <li><b>⑥ 단일 창구</b> — 법무·세무 보고를 한 담당자에게 모은다.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;">대표의 자리에서 실행 순서는 <b>기준일 확정 → 세 값 병치 → 시가 자료 확보 → 적용 순서 문서화 → 신고 → 이의 검토</b>다. 비용이 가장 작은 구간은 앞의 세 가지이고, 가장 큰 구간은 뒤에서 되묻는 구간이다. 준비가 두꺼우면 순서를 보여 주는 것만으로 정리된다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
