@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>원격의료 플랫폼은 의료행위와 정보 흐름을 함께 관리해야 한다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 원격의료와 플랫폼 책임</div>
+    <h1>원격의료 플랫폼은 의료행위와 정보 흐름을 함께 관리해야 한다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 판단 기준은 <b>앱 이름이 아니라 실제 기능과 데이터 흐름</b>입니다. <b>의료인 간 원격의료가 원칙</b>이고 <b>의사·환자 간 원격진료는 제한적</b>으로 허용되며(<b>의료법 제34조</b>), <b>의료인이 아닌 주체가 의료행위를 하면 무면허의료행위</b> 문제가 됩니다(<b>제27조</b>). 그리고 <b>질병·진료·건강정보는 민감정보</b>로 별도 관리 대상입니다(<b>개인정보 보호법 제23조</b>). <b>세 개의 문을 한 번에 통과해야 출시할 수 있습니다.</b>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>약국 앞 자판기</b>와 같습니다. <b>'그냥 정보를 준다'</b>고 붙여 놓아도, <b>증상을 넣으면 먹을 약을 알려주는 기계</b>라면 그건 <b>판단을 대신하는 것</b>입니다. <b>이름표를 '안내'로 바꿔도 기능이 그대로면</b> 성격도 그대로입니다. <b>화면에 무엇이 나오는지</b>가 기준이고, <b>누가 그 판단에 책임지는지</b>가 다음 질문입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+        <p>첫째, <b>의료행위의 경계</b>입니다. <b>AI 건강조언과 챗봇 상담이 제27조의 의료행위에 해당하는지</b>가 핵심입니다. <b>의료인 외 주체가 의료행위를 하면 무면허의료행위 금지</b>가 문제 됩니다. 그래서 <b>'정보'라는 이름만으로 결론 내리지 않습니다</b>. 기준은 <b>답변이 일반 건강정보인지, 개인별 진단·처방인지</b>입니다. <b>사용자 증상에 따라 병원 방문 시점과 복용 방법을 제안하는 문장</b>은 <b>단순 안내와 다릅니다</b>.</p>
+    <p>둘째, <b>구조의 구분</b>입니다. <b>제34조는 의료인 간 원격의료를 원칙</b>으로 하고, <b>의사와 환자 사이의 원격진료는 일부 조건에서 제한적으로</b> 허용합니다. 그래서 <b>플랫폼이 단순 연결인지, 의료인이 실제로 참여하는지</b>를 구분해야 합니다. 그리고 <b>제33조의 비의료인 개설 금지</b>와 <b>플랫폼 운영 구조</b>도 대조합니다 — <b>의료기관을 개설하거나 실질적으로 운영하는 것처럼 보이면</b> 문제가 됩니다. <b>계약·광고·결제 구조</b>를 함께 봐야 이 판단이 섭니다.</p>
+    <p>셋째, <b>플랫폼 책임의 세 층</b>입니다. <b>의료법 위반 방조책임</b>, <b>전자상거래법상 통신판매중개자 책임</b>, <b>개인정보 보호법 제23조의 민감정보 보호 의무</b>를 <b>함께</b> 검토합니다. <b>단순 중개라고 주장하더라도</b> <b>실제 광고·결제·상담·환자정보 처리 범위</b>를 기준으로 책임을 검토합니다. <b>주장이 아니라 실제 통제권</b>이 기준입니다. <b>책임을 모두 의료인에게 넘기는 조항은 실제 통제권과 맞지 않아 방어력이 약해집니다.</b></p>
+    <p>넷째, <b>사고 시의 기록</b>입니다. 분쟁이 나면 <b>첫 단계는 책임 공방이 아니라 시간표 고정</b>입니다. <b>접속기록·본인확인 결과·상담 화면·결제 상태·배송 여부·통화기록</b>을 보존하고 <b>변경 이력</b>을 남깁니다. <b>화면을 임의로 수정하거나 상담 내용을 요약해 원문을 덮어쓰면</b> 나중에 사실관계를 설명할 수 없습니다. 그리고 <b>의료기관에는 진료 판단과 처방의 근거</b>를, <b>플랫폼에는 시스템 작동과 안내 문구의 근거</b>를 <b>각각</b> 남기는 방식이 안전합니다. <b>한 파일에 섞으면 어느 쪽 책임인지 흐려집니다.</b></p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>의료행위경계·구조구분·개설금지·삼중책임·민감정보·기록보존이 갈림길이다</h2>
+    <ul class="points">
+      <li><b>의료행위 경계</b> — <b>개인별 진단·처방</b>인지 <b>일반 정보</b>인지 가릅니다.</li>
+      <li><b>구조 구분</b> — <b>의료인 간</b>인지 <b>의사·환자 간</b>인지 확인합니다.</li>
+      <li><b>참여 단계</b> — <b>의료인이 어느 단계</b>에 들어오는지 표시합니다.</li>
+      <li><b>개설 금지</b> — <b>비의료인 개설·실질 운영</b>으로 보이지 않는지 봅니다.</li>
+      <li><b>민감정보</b> — <b>수집·이용·제공 흐름</b>을 기능별로 그립니다.</li>
+      <li><b>기록 보존</b> — <b>접속·화면·결제·통화</b>를 변경 이력과 함께 남깁니다.</li>
+    </ul>
+    <div class="callout"><b>출시 전에 표 한 장을 만드세요 — 화면 / 답변 주체 / 의료인 참여 / 데이터 항목 / 저장 위치 / 이용자 고지.</b> 여섯 칸 중 <b>하나라도 담당자가 비어 있으면 출시를 미루세요</b>. 그리고 <b>확인이 끝나지 않은 기능은 출시 목록에서 빼는 것</b>이 원칙입니다 — <b>보건복지부 유권해석이나 식약처 의료기기 확인이 필요한 기능</b>은 <b>답변 전에 출시하지 않습니다</b>. 마지막으로 <b>사고 매뉴얼을 출시 전에</b> 만드세요 — <b>환자 통지 → 로그 보존 → 의료기관 보고 → 서비스 중단</b> 순서입니다. <b>사고 뒤에 순서를 정하면 순서가 뒤집힙니다.</b></div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">기능·주체·데이터를 한 표로 묶는 여섯 단계입니다. 표의 행 이름은 바꾸지 않습니다.</p>
+    <ol>
+      <li><b>① 구조</b> — 의료법 제34조의 구조로 의료인 간 원격의료와 의사·환자 간 원격진료를 구분합니다.</li>
+      <li><b>② 경계</b> — 제27조의 구조로 AI 답변이 의료행위에 해당하는지 검토합니다.</li>
+      <li><b>③ 개설·운영</b> — 제33조의 구조로 비의료인 개설·실질 운영에 해당하지 않는지 대조합니다.</li>
+      <li><b>④ 책임</b> — 방조책임과 통신판매중개자 책임을 실제 광고·결제·상담 범위 기준으로 검토합니다.</li>
+      <li><b>⑤ 민감정보</b> — 개인정보 보호법 제23조의 구조로 건강정보의 수집·이용·제공 흐름과 접근권한을 관리합니다.</li>
+      <li><b>⑥ 기록·게이트</b> — 접속·화면·결제·통화 기록의 보존과 변경 이력 관리, 확인 필요 기능의 출시 보류 절차를 정합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
