@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>같은 보증이라도 서명 앞의 글자가 책임을 가른다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 보증·연대채무</div>
+    <h1>같은 보증이라도 서명 앞의 글자가 책임을 가른다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> <b>분할채무에서는 각 채무자가 균등한 지분에 대해서만 책임을 지고</b>(<b>민법 제408조 단서</b>), <b>보증인은 주채무자에게 최고와 검색을 요구할 수 있습니다</b>(<b>제437조 본문</b>). 반면 <b>연대보증인에게는 그 항변이 없어 채권자가 곧바로 청구할 수 있습니다.</b> <b>같은 서명이라도 문구 하나가 책임의 폭을 바꿉니다.</b>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>보증서에 붙는 한 줄짜리 주석</b>과 같습니다. <b>"연대하여"라는 세 글자가 붙으면</b>, 채권자는 <b>다른 사람을 거치지 않고 곧바로 이 사람에게</b> 청구할 수 있습니다. <b>그 글자가 없으면</b>, 먼저 <b>주채무자에게 청구해 보라</b>고 요구할 수 있습니다. <b>서명은 똑같은데, 앞에 붙은 글자 하나로 순서가 뒤집힙니다.</b>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, <b>분할채무</b>입니다. <b>분할채권관계에서 각 채무자는 균등한 지분에 대해서만 책임을 지며, 특약이 없으면 균등이 원칙</b>입니다(<b>민법 제408조 단서</b>).</p>
+    <p>둘째, <b>공동사업자의 연대책임</b>입니다. <b>조합 채무에 대해 조합원이 연대책임을 집니다</b>(<b>민법 제712조</b>). 그래서 <b>사업의 형태가 무엇인지</b>를 함께 봐야 합니다.</p>
+    <p>셋째, <b>보증인의 항변과 구상</b>입니다. <b>보증인은 최고와 검색을 요구할 수 있지만</b>(<b>제437조 본문</b>), <b>연대보증인에게는 그 항변이 없습니다.</b> 그리고 <b>사전구상은 주채무자가 변제기 전이라도 자력이 불충분하거나 이행을 지체했는지를 입증하면 가능하고</b>(<b>제441조</b>), <b>사후구상은 보증인이 변제하면 주채무자에게 전액 청구할 수 있습니다</b>(<b>제442조</b>).</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>문구·지분·시점 — 셋이 조건</h2>
+    <ul class="points">
+      <li><b>문구</b> — <b>'연대하여'라는 문구가 있느냐에 따라 항변이 생기고 없어집니다.</b></li>
+      <li><b>지분</b> — <b>특약이 없으면 각자 균등한 지분만 부담합니다</b>(<b>민법 제408조 단서</b>).</li>
+      <li><b>시점</b> — <b>사전구상은 변제기 전이라도 가능하고, 사후구상은 변제 후에 각각의 요건으로 갈립니다</b>(<b>제441조·제442조</b>).</li>
+      <li><b>형태</b> — <b>공동사업이면 조합원의 연대책임이 붙습니다</b>(<b>제712조</b>).</li>
+      <li><b>금액</b> — <b>연대보증이라면 금액 한도가 곧 회사의 현금 한도가 됩니다.</b></li>
+      <li><b>범위</b> — <b>범위가 넓게 쓰인 보증서는 같은 서명으로 더 많은 것을 약속하게 됩니다.</b></li>
+    </ul>
+    <div class="callout"><b>금액만 보고 승인하면 문구는 늘 뒷전이 됩니다.</b> 그래서 <b>보증 계약의 승인 단계에 문구 확인을 넣어야</b> 합니다 — <b>두 번째 확인이 한 번의 분쟁을 막습니다.</b> 그리고 <b>협상 중 바뀐 문구를 별도로 관리</b>하세요. <b>초안과 최종본의 차이를 한 장에 남기지 않으면, 나중에 어떤 문구로 합의했는지 기억이 갈립니다.</b></div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">문구부터 대조하고 지분을 적는 열두 단계입니다.</p>
+    <ol>
+      <li><b>① 형태를 본다</b> — 분할채무인지 확인합니다(민법 제408조).</li>
+      <li><b>② 지분을 본다</b> — 특약 없는 균등 지분을 확인합니다.</li>
+      <li><b>③ 사업을 본다</b> — 공동사업자 여부를 확인합니다(민법 제712조).</li>
+      <li><b>④ 문구를 본다</b> — 연대 문구 유무를 확인합니다.</li>
+      <li><b>⑤ 항변을 본다</b> — 보증인의 최고·검색 항변을 확인합니다(민법 제437조 본문).</li>
+      <li><b>⑥ 청구를 본다</b> — 연대보증인에 대한 즉시 청구를 이해합니다(민법 제437조 단서).</li>
+      <li><b>⑦ 사전을 본다</b> — 사전구상 요건을 점검합니다(민법 제441조).</li>
+      <li><b>⑧ 사후를 본다</b> — 사후구상 범위를 점검합니다(민법 제442조).</li>
+      <li><b>⑨ 시점을 본다</b> — 변제기 전후를 나눕니다.</li>
+      <li><b>⑩ 범위를 본다</b> — 주채무의 범위를 적습니다.</li>
+      <li><b>⑪ 기록을 한다</b> — 판단 근거를 결재선에 남깁니다.</li>
+      <li><b>⑫ 확인을 건다</b> — 없는 문구는 없는 대로 기록합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
