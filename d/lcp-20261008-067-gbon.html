@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>공정이용은 복사량보다 사용 맥락을 먼저 본다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 저작권 공정이용</div>
+    <h1>공정이용은 복사량보다 사용 맥락을 먼저 본다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> <b>저작권법 제35조의3과 제35조의5는 공정한 이용을 검토할 때 확인해야 할 법적 틀과 판단 요소를 제공합니다.</b> 다만 <b>자동 허용 목록처럼 읽으면 안 됩니다.</b> <b>출처 표시는 공정이용 판단의 전부가 아닙니다.</b> <b>사용 목적과 원저작물 시장에 미치는 영향을 사실관계와 함께</b> 검토해야 합니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>요리 레시피를 옮기는 것</b>과 같습니다. <b>재료 목록만 베껴 적는 것</b>과, <b>그 레시피를 읽고 내 방식으로 새 요리를 만드는 것</b>은 <b>가져온 양이 같아도 다릅니다.</b> <b>어디에 쓸 것인지</b>도 중요합니다 — <b>집에서 혼자 해 먹는 것</b>과 <b>그 레시피로 식당을 차리는 것</b>은 <b>원래 요리사에게 미치는 영향이 전혀 다릅니다.</b>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, <b>법적 틀</b>입니다. <b>저작권법 제35조의3과 제35조의5는 공정한 이용을 검토할 때 확인해야 할 법적 틀과 판단 요소를 제공합니다.</b> <b>일반 조항에 해당하는지 먼저 가린 뒤 구체적 판단 기준으로 넘어가는 순서</b>가 필요합니다.</p>
+    <p>둘째, <b>변형성</b>입니다. <b>대법원 2021다272001은 공정이용 판단에서 관련 법리의 변형성을 고려한 쟁점을 보여줍니다.</b> <b>원본을 그대로 옮긴 것인지 새로운 맥락과 기능을 덧붙인 것인지</b>가 검토 재료가 됩니다.</p>
+    <p>셋째, <b>시장 대체</b>입니다. <b>대법원 2021다216872는 비영리적 목적과 원저작물 시장을 대체하지 않는 사용이 긍정 요소가 될 수 있다는 자료</b>입니다. 다만 <b>비영리라는 이유 하나만으로 결론이 정해지는 것은 아닙니다.</b> <b>무료 교육 자료라 하더라도 원본 사진의 유료 라이선스 수요를 대신한다면 긍정 요소만으로 안심할 수 없습니다.</b></p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>목적·양·시장 — 셋이 조건</h2>
+    <ul class="points">
+      <li><b>목적</b> — <b>교육·비평·보도인지 광고·판매 촉진인지 기록합니다.</b> <b>같은 이미지라도 기능이 달라지면 판단이 달라질 수 있습니다.</b></li>
+      <li><b>양</b> — <b>필요한 부분만 썼는지, 핵심 장면을 그대로 가져왔는지 확인합니다.</b> <b>짧다는 이유만으로 안전하다고 단정하지 않습니다.</b></li>
+      <li><b>시장</b> — <b>사용물이 원저작물의 구매나 라이선스를 대신하는지 확인합니다.</b></li>
+      <li><b>기간·범위</b> — <b>게시 기간이 길고 노출 범위가 넓을수록 대체 가능성을 높게 보고, 사내 한정·단기 사용은 낮게 봅니다.</b></li>
+      <li><b>대안</b> — <b>대체 가능성이 보이면 공정이용 판단에 기대지 않고 이용허락을 받는 쪽으로 정리합니다.</b></li>
+    </ul>
+    <div class="callout"><b>"출처 표기 완료"만으로 게시를 승인하지 마세요.</b> <b>공정이용 판단이 약한데도 출처만 적혀 있으면 그건 근거가 아닙니다.</b> 그리고 <b>검토가 끝나지 않은 콘텐츠는 게시를 늦추거나 라이선스를 확보하는 대안</b>을 제시해야 합니다. <b>저작권법 제35조의3·제35조의5의 요소를 체크했다고 해서 사실 검토를 생략할 수는 없습니다.</b></div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">사용 승인표를 만드는 열 단계입니다.</p>
+    <ol>
+      <li><b>① 원저작물을 본다</b> — 무엇을 가져왔는지 특정합니다.</li>
+      <li><b>② 목적을 본다</b> — 비평·교육인지 광고인지 구분합니다.</li>
+      <li><b>③ 양을 본다</b> — 전체 중 사용 비율과 핵심성까지 봅니다.</li>
+      <li><b>④ 변형을 본다</b> — 새 기능과 편집 내용을 기록합니다.</li>
+      <li><b>⑤ 시장을 본다</b> — 원저작물 시장을 대체하는지 검토합니다.</li>
+      <li><b>⑥ 조문을 본다</b> — 저작권법 제35조의3·제35조의5의 틀을 확인합니다.</li>
+      <li><b>⑦ 판례를 본다</b> — 2021다272001의 쟁점을 확인합니다.</li>
+      <li><b>⑧ 요소를 본다</b> — 2021다216872의 비영리·시장 요소를 확인합니다.</li>
+      <li><b>⑨ 대안을 본다</b> — 라이선스와 게시 보류를 함께 검토합니다.</li>
+      <li><b>⑩ 기록을 남긴다</b> — 승인 근거와 미확인 사실을 분리합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
