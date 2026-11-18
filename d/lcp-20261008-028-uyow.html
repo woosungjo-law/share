@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>유전체정보는 일반 개인정보가 아니다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 유전체정보 취급</div>
+    <h1>유전체정보는 일반 개인정보가 아니다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> <b>유전체정보는 고유식별정보이면서 가족정보이고, 영구정보이며 예측정보라는 4중 특성을 갖습니다</b>(<b>개인정보보호법 제23조</b>). <b>혈연관계를 추정할 수 있고 일생 동안 바뀌지 않으며 질병 발병 가능성을 예측합니다.</b> 그래서 <b>이 네 가지가 일반 민감정보와 다른 법적 취급을 요구합니다.</b> <b>보관과 파기의 설계가 일반 문서와 같을 수 없습니다.</b>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>가족사진첩</b>과 같습니다. <b>내 사진 한 장인데</b>, 그 안에 <b>부모와 형제의 얼굴이 함께 찍혀</b> 있습니다. 그래서 <b>내 사진을 정리한다고 해서</b> <b>가족 전체의 사진이 정리되는 것이 아닙니다.</b> <b>한 사람의 유전체정보가 사실상 가족의 정보가 되는</b> 것도 같습니다. <b>동의를 받은 사람의 범위를 넘어서는 사용이 쉬워지는</b> 이유입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, <b>4중 특성</b>입니다. <b>유전체정보는 고유식별정보·가족정보·영구정보·예측정보의 네 특성을 갖습니다</b>(<b>개인정보보호법 제23조</b>). <b>가족정보라는 점이 특히 무겁습니다</b> — <b>동의서 문구를 그 기준으로 다시 봐야 합니다.</b> 그리고 <b>영구정보·예측정보라는 점에서 한 번 유출되면 되돌릴 수 없고, 결과가 미래의 불이익으로 이어질 수 있습니다.</b></p>
+    <p>둘째, <b>법제의 층위</b>입니다. <b>유전체정보의 법제는 생명윤리법·유전자검사법·개인정보보호법·바이오뱅크 운영·맞춤형의료·유전자차별금지를 아우릅니다</b>(<b>제3조</b>). <b>어느 한 법만 보고 설계하면 빠지는 부분이 생깁니다.</b></p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>정의·동의·경계 — 셋이 조건</h2>
+    <ul class="points">
+      <li><b>정의</b> — <b>네 특성에 걸리면 일반 민감정보와 다른 기준이 붙습니다.</b></li>
+      <li><b>동의</b> — <b>가족정보성 때문에 동의의 범위가 실제 사용 범위와 어긋나기 쉽습니다.</b></li>
+      <li><b>경계</b> — <b>맞춤형의료와 바이오뱅크 운영은 서로 다른 지점에서 규제를 받습니다.</b></li>
+      <li><b>차별</b> — <b>검사 결과를 어떤 판단에 쓸 수 없는지가 도입 전에 정해져야 합니다.</b></li>
+      <li><b>수집</b> — <b>항목의 추가는 동의의 추가입니다.</b></li>
+      <li><b>보안</b> — <b>접근 권한과 전송 경로가 일반 문서와 같은 등급일 수 없습니다.</b></li>
+    </ul>
+    <div class="callout"><b>보관 기간이 지나면 남기는 것이 아니라 없애는 쪽으로 설계하세요.</b> 영구정보의 특성상 이것이 원칙입니다. 그리고 <b>제휴 계약에 목적 제한 조항</b>을 넣어야 합니다 — <b>받은 데이터를 다른 목적으로 쓰지 못하게 하는 문구가 없으면, 동의의 범위가 계약으로 넓어집니다.</b> <b>내부 감사 항목에서 유전체정보를 별도로 분류</b>해야 <b>일반 개인정보 목록에 섞여 점검에서 빠지는 일이 없습니다.</b></div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">데이터 항목을 정의부터 다시 적는 열아홉 단계입니다.</p>
+    <ol>
+      <li><b>① 정의를 본다</b> — 유전체정보의 4중 특성을 확인합니다(개인정보보호법 제23조).</li>
+      <li><b>② 식별을 본다</b> — 고유식별정보 해당 여부를 확인합니다.</li>
+      <li><b>③ 가족을 본다</b> — 가족정보성의 영향을 확인합니다.</li>
+      <li><b>④ 영구를 본다</b> — 영구정보의 보관·파기 설계를 확인합니다.</li>
+      <li><b>⑤ 예측을 본다</b> — 예측정보의 사용 경계를 확인합니다.</li>
+      <li><b>⑥ 틀을 본다</b> — 아우르는 법제 전체를 점검합니다(개인정보보호법 제3조).</li>
+      <li><b>⑦ 동의를 본다</b> — 동의 범위와 사용 범위를 대조합니다.</li>
+      <li><b>⑧ 목적을 본다</b> — 목적 제한 조항을 확인합니다.</li>
+      <li><b>⑨ 경계를 본다</b> — 맞춤형의료·바이오뱅크의 경계를 나눕니다.</li>
+      <li><b>⑩ 차별을 본다</b> — 유전자차별금지의 적용을 확인합니다.</li>
+      <li><b>⑪ 파기를 본다</b> — 보관 기간 종료 시 파기 절차를 확인합니다.</li>
+      <li><b>⑫ 확인을 건다</b> — 미확인 절차는 적지 않습니다.</li>
+      <li><b>⑬ 수집을 본다</b> — 수집 항목의 추가가 동의의 추가임을 확인합니다.</li>
+      <li><b>⑭ 보안을 본다</b> — 접근 권한과 전송 경로를 점검합니다.</li>
+      <li><b>⑮ 알림을 본다</b> — 사고 시 알림 순서를 정합니다.</li>
+      <li><b>⑯ 점검을 한다</b> — 제휴사 보안 조항을 주기 확인합니다.</li>
+      <li><b>⑰ 분류를 한다</b> — 유전체정보를 별도 목록에서 관리합니다.</li>
+      <li><b>⑱ 금지를 본다</b> — 결과의 이용 금지 범위를 문서화합니다.</li>
+      <li><b>⑲ 안전을 본다</b> — 전송 구간의 보호 조치를 확인합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
