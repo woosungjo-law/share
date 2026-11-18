@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>중개앱에서 산 물건, 문제 생기면 누구에게</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 중개앱 거래</div>
+    <h1>중개앱에서 산 물건, 문제 생기면 누구에게</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> <b>통신판매중개자에게는 일반 판매자와 다른 의무</b>가 있습니다. <b>자신이 통신판매의 당사자가 아니라는 점과 판매자 정보를 소비자에게 알려야</b> 합니다(<b>전자상거래법 제20조</b>). 그리고 <b>고지가 빠지거나 부족하면 중개자가 판매자와 함께 책임을 지는 구조</b>가 문제 됩니다(<b>전자상거래법 제20조의2</b>). 다만 <b>앱이 직접 판매한 물건이라면 중개자가 아니고</b>, <b>고지 누락이 그대로 전액 배상으로 이어지는지는 개별 확인이 필요</b>합니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>중고거래 앱에서 물건을 샀다가 설명과 다른 제품을 받았는데, 판매자에게 연락이 닿지 않았던 사람</b>을 떠올려 보십시오. 윤가람은 앱 화면에 판매자 정보가 흐릿하게만 보였고, 판매자를 못 찾겠는데 앱에 책임을 물을 수 있는지 궁금했습니다. 그때 배운 것은 이것입니다. <b>앱이 무엇을 안내했는지가 갈림길</b>이 된다는 점입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, <b>중개자에게는 안내 의무가 있습니다</b>. <b>전자상거래법 제20조</b>는 <b>중개자의 고지 등에 관한 의무</b>를 정합니다. <b>자신이 통신판매의 당사자가 아니라는 점과 판매자 정보를 소비자에게 알려야</b> 합니다. 그래서 <b>결제 전 화면에 그 안내가 있었는지</b>를 다시 확인합니다.</p>
+    <p>둘째, <b>판매자 정보의 범위도 정해져 있습니다</b>. <b>대표자 성명과 주소, 전화번호</b>처럼 <b>소비자가 판매자를 특정할 수 있어야</b> 합니다. <b>이 정보가 흐릿하면 소비자는 판매자를 찾지 못하고 앱에 책임을 묻게 됩니다.</b> 그래서 <b>표시된 정보를 하나씩 적어 두는 것</b>이 출발점입니다.</p>
+    <p>셋째, <b>책임 구조도 이어집니다</b>. <b>전자상거래법 제20조의2</b>는 <b>통신판매중개자의 책임</b>을 다룹니다. <b>고지가 빠지거나 부족하면 중개자가 판매자와 함께 책임을 지는 구조</b>가 문제 됩니다. 그래서 <b>앱이 무엇을 안내했는지가 갈림길</b>이 됩니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>위치·시점·유형이 책임을 가릅니다 — 조건과 예외</h2>
+    <ul class="points">
+      <li><b>첫째, 안내의 위치가 조건입니다</b> — <b>약관 안에만 있고 구매 화면에 없으면 본 것으로 보기 어렵습니다.</b> <b>결제 버튼 전에 본 화면</b>을 다시 확인합니다.</li>
+      <li><b>둘째, 안내의 시점도 조건입니다</b> — <b>판매자 정보는 거래 전후 어느 때든 확인할 수 있어야 합니다.</b> <b>배송 뒤에만 보이면 늦습니다.</b></li>
+      <li><b>셋째, 앱이 직접 파는 물건인지 구분해야 합니다</b> — <b>앱이 직접 판매했다면 중개자가 아닙니다.</b> <b>주문 내역에서 판매 주체를 다시 확인</b>합니다.</li>
+      <li><b>넷째, 책임의 범위는 사안마다 다릅니다</b> — <b>고지 누락이 그대로 전액 배상으로 이어지는지는 개별 확인이 필요합니다.</b> 그래서 <b>결론을 혼자 단정하지 않습니다.</b></li>
+      <li><b>다섯째, 거래 기록을 남겨 둡니다</b> — <b>앱 안에서만 대화했다면 앱이 기록을 갖고 있을 수 있습니다.</b> 그래서 <b>앱에 기록 보관을 요청</b>합니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> <b>중개자는 비당사자 안내와 판매자 정보 제공 의무</b>가 있고(<b>전자상거래법 제20조</b>), <b>고지가 부족하면 판매자와 함께 책임을 지는 구조</b>가 문제 됩니다(<b>전자상거래법 제20조의2</b>). <b>결제 전 화면 확인 → 판매자 정보 요청 → 판매 주체 구분</b>의 순서가 섭니다. <b>전액 배상 여부는 단정하지 않고</b> 개별 확인으로 남깁니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;">먼저 <b>결제 전 화면과 판매자 정보 표시, 대화 기록</b>을 캡처해 둡니다. 다음으로 <b>앱에 판매자 정보를 요청</b>하고 그 기록을 남깁니다. 이어서 <b>주문 내역에서 판매 주체가 앱인지 판매자인지</b> 확인합니다. 답이 흐릿하면 <b>소비자 상담 창구</b>에 문의합니다. <b>확인되지 않은 내용은 추측으로 채우지 않습니다.</b></p>
+    <ol>
+      <li><b>① 안내를 본다</b> — 비당사자 안내 문구를 확인한다(전자상거래법 제20조).</li>
+      <li><b>② 위치를 본다</b> — 결제 전 화면에 있었는지 본다.</li>
+      <li><b>③ 판매자 정보를 본다</b> — 성명·주소·전화번호를 확인한다.</li>
+      <li><b>④ 정보를 요청한다</b> — 앱에 판매자 정보를 요청한다.</li>
+      <li><b>⑤ 책임을 본다</b> — 중개자 책임 규정을 확인한다(전자상거래법 제20조의2).</li>
+      <li><b>⑥ 주체를 가른다</b> — 앱 직접 판매인지 중개인지 본다.</li>
+      <li><b>⑦ 캡처를 남긴다</b> — 화면과 대화 기록을 남긴다.</li>
+      <li><b>⑧ 동의를 본다</b> — 결제 전 동의 화면을 본다.</li>
+      <li><b>⑨ 환불을 요청한다</b> — 판매자와 앱에 환불을 요청한다.</li>
+      <li><b>⑩ 상담을 받는다</b> — 흐릿하면 소비자 상담을 받는다.</li>
+      <li><b>⑪ 기록을 남긴다</b> — 문의 날짜와 답변을 적어 둔다.</li>
+      <li><b>⑫ 기록을 요청한다</b> — 앱에 거래 기록 보관을 요청한다.</li>
+      <li><b>⑬ 요청 날짜를 적는다</b> — 요청 시점을 적어 둔다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
