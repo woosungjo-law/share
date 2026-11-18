@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>거래처가 회생을 신청하면, 이미 받은 돈도 다시 나갑니다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>거래처가 회생을 신청하면, 이미 받은 돈도 다시 나갑니다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 부인권은 <b>공평한 배당을 되돌리는 제도</b>다. 회생절차에서는 관리인이 채무자가 회생채권자나 회생담보권자를 해하는 것을 <b>알고 한 행위</b>를 부인할 수 있고, 이익을 받은 자가 그 사실을 <b>알지 못한 경우에는 부인할 수 없다</b>(채무자 회생 및 파산에 관한 법률 제100조 제1항). 그래서 승부는 <b>시점</b>과 <b>인식</b>에서 갈린다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>사건의 시작: 회수했다고 안심한 두 달 뒤</h2>
+    <div class="analogy">
+      지급이 두 달째 밀리자 협상 끝에 부동산 담보를 받고 일부는 상계로 정리했다. 회수 보고를 받은 지 두 달 뒤 그 거래처가 회생절차를 신청했다. 관리인은 담보 제공과 상계가 부인 대상이라며 원상회복을 요구했다. <b>확인할 것은 받은 금액이 아니라, 담보를 받은 날이 지급정지 전인지 후인지, 그리고 그때 상대의 상황을 알고 있었는지</b>다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 보는 핵심: 세 유형과 회생·파산의 부인</h2>
+    <p>첫째, <b>부인권의 성격</b>이다. 채무자의 재산 감소 행위를 도산 절차 안으로 환원시켜 채권자 간 공평한 배당을 실현하는 제도로, 사해행위부인·편파행위부인·무상부인의 세 유형이 있고 요건과 항변 사유가 유형별로 다르다.</p>
+    <p>둘째, <b>회생절차의 부인</b>이다. 관리인은 회생절차개시 이후 채무자의 재산을 위하여, 채무자가 회생채권자나 회생담보권자를 해하는 것을 알고 한 행위를 부인할 수 있다. 이익을 받은 자가 그 사실을 알지 못한 경우에는 부인할 수 없다(채무자 회생 및 파산에 관한 법률 제100조 제1항). 지급정지나 신청 후에 한 담보 제공·채무소멸 행위도 부인 대상이지만, 상대가 알고 있었던 경우로 한정된다.</p>
+    <p>셋째, <b>파산절차의 부인</b>이다. 파산채권자를 해하는 것을 알고 한 행위, 지급정지나 파산신청 후의 담보 제공·채무소멸, 그리고 신청 후 또는 그 전 <b>60일 이내</b>에 한 담보 제공·채무소멸로서 채무자의 의무에 속하지 않거나 방법·시기가 의무에 속하지 않은 행위가 부인 대상이다(같은 법 제391조).</p>
+    <p>넷째, <b>효과</b>다. 부인권 행사는 파산재단을 원상으로 회복시킨다. 상대방이 선의였다면 이익이 현존하는 한도에서 상환한다(같은 법 제397조).</p>
+    <div class="callout">
+      <b>상계의 함정이 따로 있다.</b> 부인권 행사로 부담하게 된 원상회복의무는 법정의 원인에 의한 채무로 볼 수 없다는 판단이 대법원 2025다202598에 나왔다. 상계로 정리한 부분은 별도로 검토해야 한다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>놓치기 쉬운 조건과 예외: 시점·인식·60일</h2>
+    <p><b>시점</b>이 첫 조건이다. 지급정지나 신청 전인지 후인지가 부인 가능성을 크게 바꾼다.</p>
+    <p><b>상대의 인식</b>이 둘째 조건이다. 우리가 그 거래처의 지급 사정을 알고 있었는지가 선의 항변의 갈림길이다.</p>
+    <p><b>60일 구간</b>이 셋째 조건이다. 신청 전 60일 이내의 담보 제공이나 변제는 의무에 속하지 않은 것인지에 따라 판단이 달라진다.</p>
+    <ul class="points">
+      <li>받은 것의 성격을 가른다. 현금 변제인지 담보 취득인지에 따라 원상회복의 방식과 범위가 달라진다.</li>
+      <li>언제 어떤 정보를 알았는지 남아 있지 않으면 선의를 주장하기 어렵다.</li>
+      <li>회수 성과는 "받았는가"가 아니라 "되돌아가지 않을 방식으로 받았는가"로 평가한다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>회수 목표가 아니라 회수 방식에 날짜와 인식을 넣는다.</b> 항목은 다음과 같다.</p>
+      <ol>
+        <li><b>① 시점 확인</b> — 지급정지·신청일과 담보 취득일을 대조한다.</li>
+        <li><b>② 인식 기록</b> — 상대의 지급 사정을 언제 알았는지 문서로 남긴다.</li>
+        <li><b>③ 60일 점검</b> — 신청 전 60일 내 담보·변제 건을 목록화한다.</li>
+        <li><b>④ 성격 구분</b> — 현금 변제와 담보 취득을 나눠 원상회복 범위를 본다.</li>
+        <li><b>⑤ 상계 분리</b> — 상계 정리 건은 원상회복과 별도로 검토한다.</li>
+        <li><b>⑥ 절차 반영</b> — 장기 연체 거래처의 담보 취득 전에 법무 검토를 거치게 한다.</li>
+        <li><b>⑦ 협상 설계</b> — 전액을 두고 다투기보다 존속시킬 거래와 반환할 거래를 나눠 제안한다.</li>
+        <li><b>⑧ 협상 경과</b> — 담보 취득 시 상대의 지급 상태 확인 자료와 협상 경과를 남긴다.</li>
+        <li><b>⑨ 평가 기준</b> — 회수 성과 평가에 되돌아가지 않는 방식을 함께 넣는다.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;">대표의 자리에서 부인권은 <b>"받았으니 끝"이 아니라 "받은 방식이 남느냐"</b>의 문제다. 두 달 이상 밀린 거래처에서는 담보 취득과 상계보다 법무 검토를 먼저 거치는 순서 하나가 원상회복을 막는다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
