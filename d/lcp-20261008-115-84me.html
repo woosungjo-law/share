@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>벤처 혜택은 인증과 사후관리를 함께 설계해야 한다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 벤처기업 인증과 세제 혜택</div>
+    <h1>벤처 혜택은 인증과 사후관리를 함께 설계해야 한다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 세제 혜택은 <b>인증서를 받는 순간 끝나는 업무가 아닙니다</b>. 혜택은 <b>거래 유형과 요건이 맞을 때</b> 적용되고(<b>조세특례제한법 제12조</b>), <b>정당한 사유 없이 휴·폐업하거나 부정한 방법으로 감면받으면 감면세액과 이자 상당 가산액이 추징</b>됩니다(<b>제6조</b>). <b>받는 시점보다 사후관리 자료가 더 중요할 수 있습니다.</b>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>장학금</b>과 같습니다. <b>선발될 때 성적표를 냈다고</b> 끝이 아니라, <b>학기 중 이수 요건을 못 채우면</b> <b>돌려줘야 합니다</b>. 그리고 <b>선발 이후에 전공을 바꾸면</b> <b>미리 알려야</b> 합니다. <b>받을 때의 서류보다 유지하는 동안의 기록</b>이 결정적입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+        <p>첫째, <b>혜택의 근거 조항</b>입니다. <b>특허권 관련 혜택</b>은 <b>조세특례제한법 제12조의 기술이전 및 기술취득 등에 대한 과세특례</b>에 근거합니다. 그래서 <b>실제 거래 유형과 회사의 요건이 맞는지</b> 확인해야 합니다. <b>특허권 이전계약과 대금 지급자료</b>가 <b>세무신고와 연결</b>되어야 하고, <b>인증과 계약자료가 언제 갖춰졌는지</b>가 기준이 됩니다. <b>거래 유형이 다르면 조항도 달라집니다.</b></p>
+    <p>둘째, <b>소급 적용의 함정</b>입니다. <b>인증 전 거래를 인증 후 혜택으로 소급할 수 있는지 단정하지 않습니다.</b> <b>인증일과 거래일의 선후</b>가 <b>적용 가능성</b>을 바꿉니다. 그래서 <b>인증 신청일·발급일, 특허권 거래일, 세금신고일</b>을 <b>한 타임라인</b>에 놓고 <b>기간을 분리</b>합니다. <b>세 날짜가 어긋난 채 신고하면 나중에 설명이 필요해집니다.</b> <b>소급이 된다고 가정하고 예산을 짜면 안 됩니다.</b></p>
+    <p>셋째, <b>사후관리의 두 축</b>입니다. <b>정당한 사유 없이 휴·폐업</b>하거나 <b>부정한 방법으로 감면받은 사실이 적발되면</b> <b>감면세액과 이자 상당 가산액이 추징</b>됩니다(<b>제6조</b>). 그래서 <b>휴·폐업 여부와 사업장 변경, 부정한 서류 작성, 특수관계인 거래</b>를 <b>정기적으로 점검</b>합니다. 그리고 <b>정당한 사유로 사업을 변경한 경우에도 사실과 자료를 남겨</b> 법무·세무 검토를 다시 받습니다. <b>사유가 있으면 기록이 곧 방어</b>입니다.</p>
+    <p>넷째, <b>추징 위험의 계산</b>입니다. <b>추징 위험이 생기면 감면세액뿐 아니라 이자 상당 가산액, 신고 수정 비용, 투자자에게 설명할 비용</b>까지 계산합니다. <b>감면액만 보면 위험이 과소평가됩니다.</b> 그리고 <b>혜택을 유지하기 위한 자료를 사후에 맞추지 않고</b> <b>거래 당시부터 원본과 승인 이력</b>을 보관합니다. <b>사후에 만든 자료는 부정한 방법으로 읽힐 수 있습니다.</b></p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>근거조항·거래유형·인증거래선후·휴폐업·부정방법·추징계산이 갈림길이다</h2>
+    <ul class="points">
+      <li><b>근거 조항</b> — <b>제12조</b>의 요건과 거래 유형이 맞는지 확인합니다.</li>
+      <li><b>거래 자료</b> — <b>이전계약·대금 지급</b>을 세무신고와 연결합니다.</li>
+      <li><b>날짜 대조</b> — <b>인증 신청·발급일</b>과 <b>거래일</b>을 나란히 적습니다.</li>
+      <li><b>소급 금지</b> — <b>인증 전 거래의 소급</b>을 단정하지 않습니다.</li>
+      <li><b>사후 점검</b> — <b>휴·폐업·사업장 변경·특수관계 거래</b>를 정기 점검합니다.</li>
+      <li><b>추징 계산</b> — <b>감면세액 + 가산액 + 수정 비용</b>을 함께 봅니다.</li>
+    </ul>
+    <div class="callout"><b>타임라인 한 장을 만드세요 — 인증 신청일 / 발급일 / 특허권 거래일 / 대금 지급일 / 세금신고일 / 사후 점검일.</b> 앞의 다섯 날짜가 <b>어긋나면 그 자체가 추징 검토 대상</b>입니다. 그리고 <b>휴·폐업이나 주된 사업 변경이 생기면 즉시 추징 위험을 재검토</b>하세요 — <b>알림을 시스템에 걸어 두세요</b>. 마지막으로 <b>계약서에 '벤처기업이므로 혜택을 받는다'고 단정하지 마세요</b>. <b>인증의 유효기간과 변경 통지 의무</b>를 적어 두면 <b>인증이 바뀌었을 때 분쟁이 작아집니다.</b></div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">근거·시점·사후관리를 한 표로 묶는 여섯 단계입니다. 표의 행 이름은 바꾸지 않습니다.</p>
+    <ol>
+      <li><b>① 근거 확인</b> — 조세특례제한법 제12조의 과세특례 요건과 거래 유형을 대조합니다.</li>
+      <li><b>② 계약·지급</b> — 특허권 이전계약과 대금 지급자료를 보관하고 세무신고 근거로 연결합니다.</li>
+      <li><b>③ 시점 대조</b> — 인증 신청일·발급일과 거래일을 대조하고 인증 전후 기간을 분리합니다.</li>
+      <li><b>④ 사후관리</b> — 제6조의 구조로 휴·폐업, 사업장 변경, 부정한 방법 해당 여부를 점검합니다.</li>
+      <li><b>⑤ 추징 계산</b> — 감면세액과 이자 상당 가산액, 신고 수정 비용을 함께 산정합니다.</li>
+      <li><b>⑥ 기록·승계</b> — 거래 당시 원본과 승인 이력을 보관하고, 조직개편 시 인증 승계·변경신고 필요성을 검토합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
