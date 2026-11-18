@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>수사와 기소 사이에 서면이 쌓인다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 수사·기소 분리</div>
+    <h1>수사와 기소 사이에 서면이 쌓인다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> <b>보이지 않는 관계는 문서로만 남습니다.</b> <b>검사는 기소 여부 판단을 위해 사실관계를 확인할 수 있고, 의견 청취와 의견서 제출이 가능합니다</b>(<b>형사소송법 제245조의13</b>). 그리고 <b>경찰이 검사에게 법률 판단과 증거수집의 적절성 의견을 요청할 수 있고, 검사는 특별한 사정이 없는 한 응합니다</b>(<b>제195조 제3항</b>). <b>공문과 보고가 없는 관계는 없다고 봐야 합니다.</b>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>택배 송장</b>과 같습니다. <b>물건이 어디를 거쳐 왔는지</b>는 <b>송장에 찍힌 도장으로만</b> 확인됩니다. <b>보낸 사람이 "분명히 보냈다"고 말해도</b>, <b>송장에 기록이 없으면</b> 나중에 <b>누가 어디서 잘못했는지 아무도 설명할 수 없습니다.</b> 그래서 <b>수사 단계에서 주고받은 것을 그때그때 서면으로 남기는 일</b>이 전부입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, <b>검사의 사실관계 확인</b>입니다. <b>형사소송법 제245조의13은 검사의 사실관계 확인을 정하고, 기소 여부 판단을 위한 의견 청취와 의견서 제출이 가능합니다.</b> <b>구속영장 신청 사건의 면담도 가능합니다</b>(<b>제201조 제7항</b>).</p>
+    <p>둘째, <b>의견 요청</b>입니다. <b>경찰이 검사에게 법률 판단과 증거수집의 적절성 의견을 요청할 수 있고, 검사는 특별한 사정이 없는 한 응합니다</b>(<b>제195조 제3항</b>). <b>요청과 응답이 문서로 남는지</b>를 점검해야 합니다.</p>
+    <p>셋째, <b>공소청</b>입니다. <b>해당 경찰관의 직무배제와 징계를 요구할 수 있고, 상급 관서나 다른 수사기관을 지정할 수 있습니다</b>(<b>제197조의2 제7·8항</b>). <b>주체의 경계가 흔들릴 때의 수단</b>이 마련돼 있습니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>주체·시점·기록 — 셋이 조건</h2>
+    <ul class="points">
+      <li><b>주체</b> — <b>수사와 기소의 주체가 어디서 갈리는지가 초기에 확인돼야 합니다.</b></li>
+      <li><b>시점</b> — <b>착수 단계의 기록은 나중에 되돌릴 수 없습니다.</b> <b>뒤늦게 요청하면 남는 것이 없습니다.</b></li>
+      <li><b>기록</b> — <b>지휘 관계와 의견 요청은 문서로만 증명됩니다.</b></li>
+      <li><b>범위</b> — <b>확인 대상이 회사 서류인지 임직원 개인인지에 따라 준비할 자료가 달라집니다.</b></li>
+      <li><b>형태</b> — <b>구두로 받은 요청도 받은 순간 문서로 옮겨야 합니다.</b></li>
+      <li><b>단계</b> — <b>수사가 검찰로 넘어간 뒤에는 경찰에 하던 방식으로 요청해도 답이 돌아오지 않습니다.</b></li>
+    </ul>
+    <div class="callout"><b>임직원에게 개별적인 진술 요청이 오면 법무에 먼저 알리도록 안내하세요.</b> <b>각자 대응하면 진술이 어긋나고, 어긋난 진술은 나중에 회사 전체의 문제가 됩니다.</b> 그리고 <b>의견 요청이 있었는지 분기마다 다시 확인</b>해야 합니다 — <b>요청이 있었는데 기록이 없다면 그 사이에 무엇이 오갔는지 아무도 설명할 수 없게 됩니다.</b></div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">주체와 문서를 한 표로 남기는 열일곱 단계입니다.</p>
+    <ol>
+      <li><b>① 주체를 본다</b> — 수사·기소 주체의 동일 여부를 확인합니다.</li>
+      <li><b>② 시점을 본다</b> — 수사 착수 단계의 기록을 확보합니다.</li>
+      <li><b>③ 확인을 본다</b> — 검사의 사실관계 확인을 이해합니다(형소법 제245조의13).</li>
+      <li><b>④ 청취를 본다</b> — 의견 청취·의견서 제출을 확인합니다.</li>
+      <li><b>⑤ 면담을 본다</b> — 구속영장 신청 사건의 면담을 확인합니다(형소법 제201조 제7항).</li>
+      <li><b>⑥ 요청을 본다</b> — 법률 판단·증거수집 의견 요청을 확인합니다(형소법 제195조 제3항).</li>
+      <li><b>⑦ 응답을 본다</b> — 검사의 응답 여부를 기록합니다.</li>
+      <li><b>⑧ 공소청을 본다</b> — 직무배제·징계 요구 가능성을 확인합니다(형소법 제197조의2 제7·8항).</li>
+      <li><b>⑨ 지휘를 본다</b> — 지휘 공문을 확보합니다.</li>
+      <li><b>⑩ 보고를 본다</b> — 수사결과보고를 보관합니다.</li>
+      <li><b>⑪ 서면을 남긴다</b> — 사실관계 확인 시 의견을 서면으로 남깁니다.</li>
+      <li><b>⑫ 기록을 한다</b> — 면담 일정과 참석자를 기록합니다.</li>
+      <li><b>⑬ 범위를 본다</b> — 회사 서류와 개인 자료를 구분합니다.</li>
+      <li><b>⑭ 형태를 본다</b> — 구두 요청도 문서로 옮깁니다.</li>
+      <li><b>⑮ 단계를 본다</b> — 어느 단계인지에 따라 요청 경로가 달라집니다.</li>
+      <li><b>⑯ 관리를 한다</b> — 제출 자료 목록과 시점을 한 표로 관리합니다.</li>
+      <li><b>⑰ 안내를 한다</b> — 임직원의 개별 진술 요청은 법무에 먼저 알립니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
