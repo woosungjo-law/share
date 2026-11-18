@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>두 번째 건설 현장에서 같은 공사중단 문제가 생겼다면 이전 현장의 계산표를 그대로 복사하면 안 된다. 계약상 지급시기와 현장별 기성, 최고·중단 시점을 새로 확인해야 한다.</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 노트 · 반복 현장의 기성고와 공사중단</div>
+    <h1>두 번째 건설 현장에서 같은 공사중단 문제가 생겼다면 이전 현장의 계산표를 그대로 복사하면 안 된다. 계약상 지급시기와 현장별 기성, 최고·중단 시점을 새로 확인해야 한다.</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>한 문장.</b> 같은 회사의 <b>다른 현장에서 쓰던 산식을 이번 현장에 자동 적용하면 안 됩니다.</b> <b>설계변경의 범위, 발주자가 인정한 공정, 최고 도달 시점</b>이 현장마다 다르므로, 법무팀은 <b>현장별 타임라인을 새로 만들어</b> 청구와 중단의 근거를 다시 세웁니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>지난번 요리와 같은 레시피를 썼는데 이번엔 재료가 다른 상황</b>을 떠올려 보십시오. <b>같은 요리 이름</b>이어도 <b>불 세기와 재료의 양이 다르면 결과가 달라집니다.</b> <b>이전 접시의 사진을 이번 접시에 붙여 놓으면</b>, <b>이번에 실제로 무엇을 했는지 아무도 설명하지 못합니다.</b>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+        <p>첫째, <b>현장별 재구성</b>입니다. <b>발주자는 설계변경을 이유로 기성검사를 미뤘고 수급인은 인건비와 자재비를 먼저 부담</b>했습니다. 법무팀은 <b>원계약, 변경합의, 감리보고, 공사일지와 사진</b>을 받아 <b>발주자가 인정한 공정과 다툰 공정을 나눕니다.</b> <b>같은 회사의 다른 현장에서 쓰던 산식을 이번 현장에 자동 적용하지 않습니다.</b></p>
+    <p>둘째, <b>청구와 중단의 요건 분리</b>입니다. <b>민법 제665조와 계약의 지급조항</b>을 기준으로 <b>완성된 부분의 보수를 산정</b>합니다. <b>민법 제673조와 관련한 공사중단권</b>은 <b>지급 지체와 상당한 기간의 최고가 전제되는지, 최고 이후 어느 공정을 멈췄는지</b> 확인해야 합니다. <b>중단 통지보다 먼저 객관적 기성 자료를 확보해 발주자의 검사 거부와 수급인의 자료 부족을 구분</b>합니다.</p>
+    <p>셋째, <b>계산 방식의 전제 확인</b>입니다. <b>대법원 2015다225561</b>은 <b>약정총액에서 잔여공사비를 빼는 계산이 특약에 근거하는지</b> 문제 삼고, <b>대법원 2016다35567</b>은 <b>기성고 비율과 약정 총공사대금 계산</b>을 참고하게 합니다. <b>대법원 2014다83890</b> 관련 쟁점은 <b>중단 전 사진·감리 확인·기성검사가 대체시공과 지체 책임의 자료가 될 수 있음</b>을 보여 줍니다. <b>공정률 곱하기 총액의 계산과 총액에서 잔여공사비를 빼는 계산은 전제가 다르므로</b>, <b>어느 방식이 계약상 근거를 갖는지 별도 의견</b>을 냅니다.</p>
+    <p>넷째, <b>공사 상태의 보전</b>입니다. <b>중단 전후 현장 상태, 안전조치, 자재와 장비 위치, 하도급 정산을 날짜별로 보존</b>합니다. <b>발주자가 대체시공을 준비하면 인도일과 변경된 공정도 기록</b>하고, <b>잔여공사비는 감정인의 추정만으로 확정하지 않고 계약과 실제 시공 자료를 함께 대조</b>합니다. <b>대체시공이 시작된 뒤에는 회사가 현장을 더 이상 지배하지 않는 시점과 하자·안전 자료의 인수 상태</b>를 확인합니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외 — 문서 분리·협상·내부승인</h2>
+    <ul class="points">
+      <li><b>문서의 분리</b> — <b>지급 청구 문서에는 완성 부분과 산식을, 중단 예고 문서에는 지체 사실과 상당한 기간, 중단 범위</b>를 적습니다. 한 문서에서 섞어 쓰지 않습니다.</li>
+      <li><b>검사 거부의 기록</b> — <b>재검사 요청과 거부의 이유</b>를 남겨 <b>수급인의 협조 의무와 발주자의 지체</b>를 구분합니다.</li>
+      <li><b>협상 항목의 분리</b> — <b>기성 확정액, 다툼액, 안전·보전 비용, 추가공사와 설계변경</b>을 나눠 협상합니다.</li>
+      <li><b>하도급 대응의 일원화</b> — <b>회사의 공식 통지 범위만 전달</b>하고, <b>현장 직원이 지급 책임이나 공사 재개를 임의로 약속하지 않도록</b> 합니다.</li>
+      <li><b>판례의 제한 사용</b> — <b>2014다83890</b>은 <b>중단 이후 모든 손해를 면하게 한다는 뜻이 아니라</b>, <b>객관적 확인 절차가 지체 책임 판단의 자료가 될 수 있다는 의미로 제한</b>합니다.</li>
+      <li><b>내부 승인의 구분</b> — <b>확정 사실, 법률상 추정, 상대방 주장, 추가 확인 자료</b>를 나눠 승인표에 적습니다.</li>
+    </ul>
+    <div class="callout"><b>각 현장별 타임라인을 새로 만드십시오.</b> <b>기성 청구, 발주자의 이의, 검사 요청, 최고 도달, 실제 중단과 대체시공의 날짜</b>가 하나로 연결돼야 합니다. <b>재판상 감정에 의존할 부분은 현장 보존을 우선</b>하고, <b>협상액을 정할 때에는 권리 포기 범위와 정산 기준일을 명확히</b> 하십시오. <b>같은 공사 주제라도 후보별 원문과 증거를 다시 검토해 복사된 계산이 생기지 않도록</b> 합니다. <b>소송 가능성이 있으면 현장 사진의 원본성과 감리 확인의 작성 시점</b>을 보존합니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">반복 현장 검토는 아래 네 항목을 순서대로 세우는 일입니다. 복사하지 않은 계산만이 그 현장의 근거가 됩니다.</p>
+    <ol>
+      <li><b>지급시기의 대조</b> — <b>제665조 지급시기와 기성검사 결과</b>를 계약·현장자료로 맞춥니다.</li>
+      <li><b>최고의 특정</b> — <b>제673조 관련 최고서</b>에 <b>미지급액·기한·중단 범위</b>를 특정합니다.</li>
+      <li><b>판례의 역할 구분</b> — <b>2015다225561·2014다83890·2016다35567</b>을 각각 <b>계산·증거·시점 쟁점으로 나눕니다.</b></li>
+      <li><b>현장별 타임라인</b> — <b>기성 청구부터 대체시공까지의 날짜</b>가 하나의 축에 놓였는지 확인합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
