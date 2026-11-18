@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>운송을 넘겨도 책임은 남는다 — 재위탁의 계산법</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>운송을 넘겨도 책임은 남는다 — 재위탁의 계산법</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 운송을 넘겨도 책임은 남는다. 실제 운송을 다른 회사가 맡았더라도 그 사람이 우리 이행을 보조하는 지위에 있으면 <b>그 과실은 우리 회사의 과실로 취급</b>된다(민법 제391조). 배상 범위는 통상의 손해가 한도이고(같은 법 제393조 제1항), 특별한 사정으로 인한 손해는 <b>알았거나 알 수 있었을 때</b>만 인정된다(같은 조 제2항). 넘기는 것은 운송이지 책임이 아니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>사건의 시작: 물량이 몰린 달의 선택</h2>
+    <div class="analogy">
+      물량이 몰린 달에 협력 업체에 운송을 나눠 맡겼다. 계약서에는 재위탁 관련 조항이 없었고, 현장에서는 배차만 맞으면 된다는 분위기였다. 얼마 뒤 <b>냉동 화물이 상해 폐기</b>되는 사고가 났고, 화주는 우리 회사에 배상을 요구했다. 실제 운송은 협력 업체 기사가 했다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 보는 핵심: 넘겨도 남는 책임의 구조</h2>
+    <p>첫째, <b>이행보조자의 과실</b>이다. 채무자가 타인을 사용하여 이행하는 경우 그 피용자의 고의나 과실을 채무자의 고의나 과실로 본다(민법 제391조). 실제 운송을 다른 회사가 맡았더라도 그 사람이 우리 회사의 이행을 보조하는 지위에 있으면, 그 과실은 우리 회사의 과실로 취급된다.</p>
+    <p>둘째, <b>손해배상의 범위</b>다. 채무불이행으로 인한 손해배상은 통상의 손해를 한도로 하고(같은 법 제393조 제1항), 특별한 사정으로 인한 손해는 채무자가 그 사정을 알았거나 알 수 있었을 때에 한하여 배상 책임이 있다(같은 조 제2항).</p>
+    <p>셋째, <b>사업의 구분</b>이다. 화물자동차 운수사업은 운송사업·운송주선사업·운송가맹사업으로 나뉜다. 운송사업은 다른 사람의 요구에 응하여 화물자동차를 사용해 화물을 유상으로 운송하는 사업, 운송주선사업은 유상으로 화물운송계약을 중개·대리하거나 자기 명의와 계산으로 화물을 운송하는 사업이다(화물자동차 운수사업법 제2조). 우리가 어느 지위에서 수주했는지가 규제와 책임의 출발점이다.</p>
+    <div class="callout">
+      <b>지위가 책임의 구조를 정한다.</b> 운송을 맡긴 것인지 중개한 것인지에 따라 적용 조문과 규제가 달라진다. 계약서의 문구보다 실제 수행 구조를 먼저 확인한다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>놓치기 쉬운 조건과 예외: 조항·지위·고지·허가</h2>
+    <p><b>계약 조항의 공백</b>이 첫 조건이다. 재위탁 금지나 통지·승낙 조항이 없으면 사후에 설명할 근거가 줄어든다.</p>
+    <p><b>손해의 종류</b>가 둘째 조건이다. 냉동 화물의 변질처럼 거래 성격상 예견되는 손해와, 특별한 사정이 있어야 인정되는 손해를 구분해야 한다.</p>
+    <p><b>고지</b>가 셋째 조건이다. 재위탁 사실을 화주에게 알리지 않았다면, 그 자체가 계약 위반으로 문제 될 수 있다.</p>
+    <ul class="points">
+      <li>허가의 문제를 본다. 협력 업체의 사업 구분과 실제 운영이 어긋나면 별도의 규제 문제가 생긴다.</li>
+      <li>구상을 확보한다. 하수급인의 과실로 손해가 났다면 그에 대한 구상권을 미리 정해 둔다.</li>
+      <li>이행보조자에 해당하는지는 그 사람이 우리 이행을 보조하는 지위에 있었는지로 판단한다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>재위탁을 원가가 아니라 위험으로 계산한다.</b> 항목은 다음과 같다.</p>
+      <ol>
+        <li><b>① 계약 정비</b> — 재위탁 금지·통지·승낙 조항을 계약서에 넣는다.</li>
+        <li><b>② 지위 확인</b> — 운송사업인지 운송주선사업인지 실제 수행 구조로 확인한다.</li>
+        <li><b>③ 허가 확인</b> — 협력 업체의 사업 구분과 실제 운영을 대조한다.</li>
+        <li><b>④ 고지 기록</b> — 화주에게 알린 시점과 방법을 남긴다.</li>
+        <li><b>⑤ 손해 구분</b> — 통상 손해와 특별 손해를 나눠 계산한다.</li>
+        <li><b>⑥ 증거 확보</b> — 사고 시 온도와 위치, 배차 기록을 즉시 확보한다.</li>
+        <li><b>⑦ 구상 확보</b> — 사고 시 구상권 행사 방법을 미리 정한다.</li>
+        <li><b>⑧ 배차 절차</b> — 계약 조항·허가 구분·배차 기록을 한 번에 확인하는 절차를 만든다.</li>
+        <li><b>⑨ 노선 관리</b> — 협력 업체 의존도가 높은 노선을 별도 목록으로 관리하고 대체 가능성을 점검한다.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;">대표의 자리에서 재위탁은 <b>배차의 문제가 아니라 책임의 문제</b>다. 계약 조항과 고지 기록 두 가지가 사고 뒤의 계산을 바꾼다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
