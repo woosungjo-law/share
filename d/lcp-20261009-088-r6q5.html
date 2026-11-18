@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>주주간 의결권 약정, 계약과 회사법 장치를 분리해 설계하기</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 노트 · 주주간계약과 의결권 구속</div>
+    <h1>주주간 의결권 약정, 계약과 회사법 장치를 분리해 설계하기</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>한 문장.</b> <b>“같은 방향으로 의결권을 행사한다”는 약속 하나로 주주총회 결과를 안정시킬 수 있다고 보지 마십시오.</b> <b>계약 당사자 사이의 효력</b>과 <b>회사 기관결의의 효력</b>은 <b>별개의 층위</b>입니다. <b>상법 제369조의 의결권 구조</b>, <b>대법원 2020다219577</b>, <b>제366조 제2항의 소집청구</b>, <b>제363조 제3항·제4항의 통지와 전원 동의</b>를 각각 따로 세워야 합니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>팀원끼리 “회의에서 무조건 손을 같이 들자”고 약속했는데, 정작 회의 규칙에는 발언 순서와 안건 공지 기한이 따로 정해져 있는 상황</b>을 떠올려 보십시오. <b>약속을 어긴 사람에게 “약속 위반”이라고 말할 수는 있어도</b>, <b>그 회의에서 정해진 결론 자체가 자동으로 없어지는 것은 아닙니다.</b> <b>회의를 여는 절차가 규칙에 맞았는지는 또 다른 문제</b>입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+        <p>첫째, <b>의결권의 회사법적 구조</b>입니다. <b>상법 제369조</b>와 관련해 <b>의결권은 주주가 주주총회에서 행사하는 권리</b>입니다. <b>의결권 비율을 바꾸거나 특정 방향의 결의를 안정적으로 만들 목적이라면</b>, <b>주주간계약만으로 해결하지 않고 정관·종류주식 등 회사법적 장치를 함께 검토</b>해야 합니다. <b>계약이 유효한지와 회사의 기관결의가 유효한지는 별개의 층위</b>입니다.</p>
+    <p>둘째, <b>약정의 효력과 다툼의 한계</b>입니다. <b>대법원 2020다219577</b>은 <b>주주 사이의 의결권구속약정이 원칙적으로 유효할 수 있지만</b>, <b>약정 당사자가 이를 위반해 의결권을 행사하여 결의가 성립한 경우 다른 당사자가 회사를 상대로 약정 위반만을 이유로 결의의 하자를 다툴 수 있는지에는 제한이 있음</b>을 다룬 판결로 정리됩니다. <b>판결의 구체적 사실과 청구 형태를 확인하지 않고 ‘약정을 어기면 결의가 자동 무효’라고 쓰지 않습니다.</b></p>
+    <p>셋째, <b>소집 절차의 요건</b>입니다. <b>상법 제366조 제2항</b>은 <b>회사가 소수주주의 총회 소집청구를 지체하는 경우 법원의 허가를 받아 직접 총회를 소집하는 절차</b>를 검토하게 합니다. <b>주주간 갈등이 총회 소집 문제로 이어지면</b>, <b>계약 위반과 별도로 이 절차의 요건·주주 지위·법원 허가</b>를 확인합니다.</p>
+    <p>넷째, <b>통지와 전원 동의</b>입니다. <b>상법 제363조 제3항</b>에 따라 <b>자본금 10억 원 미만 회사의 주주총회 소집 통지는 원칙적으로 소집일 일정 기간 전에 서면 또는 전자문서로 하는 방식</b>이 문제될 수 있습니다. <b>제363조 제4항의 주주 전원 동의로 소집절차를 생략하는 경우도 실제 동의와 기록</b>을 확인하고, <b>정관·회사의 규모·개정 법령 적용을 함께 검토</b>합니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외 — 층위 분리와 문언 확인</h2>
+    <ul class="points">
+      <li><b>채무와 결의의 구별</b> — <b>의결권 약정은 당사자 사이의 채무로서 협의·통지·손해배상·금지청구의 문제가 될 수 있지만</b>, <b>회사와 주주총회 결의의 효력은 회사법의 절차·정관·상법에 따라 별도 판단</b>될 수 있습니다.</li>
+      <li><b>승계의 확인</b> — <b>계약 당사자가 아닌 회사나 후속 투자자가 약정을 인수했는지, 주식 양수인이 구속되는지, 약정이 정관이나 종류주식 발행과 충돌하는지</b> 문언별로 확인합니다.</li>
+      <li><b>범위와 기간</b> — <b>약정의 대상 안건이 지나치게 넓거나 장기간 계속되면 주주권과 회사 운영에 미치는 효과가 달라집니다.</b></li>
+      <li><b>구제수단의 한계</b> — <b>손해배상 조항만으로 의결권 행사를 실제로 통제할 수 있다고 단정하지 않습니다.</b></li>
+      <li><b>하자의 기준</b> — <b>총회 소집 통지의 하자는 제363조 제3항·제4항의 적용 사실과 주주 전원의 동의 여부, 통지 방법·도달 시점·안건 기재</b>를 기준으로 검토합니다.</li>
+      <li><b>두 주장의 분리</b> — <b>소집 절차 하자와 의결권 약정 위반을 각각 주장</b>합니다.</li>
+    </ul>
+    <div class="callout"><b>주주간계약, 정관, 주주명부, 종류주식 조건, 투자계약, 이사회·총회 의사록, 소집통지, 의결 결과와 주주별 투표 자료를 한 세트로</b> 관리하십시오. <b>검토 의견의 마지막에는 계약 당사자 사이에서 가능한 조치, 회사 기관절차에서 가능한 조치, 추가 확인이 필요한 자료를 나눕니다.</b> <b>통지 누락을 발견했다면 결의 후에만 다투지 말고 재소집·보완 가능성도 검토</b>하고, <b>새 투자나 지분 변동이 있으면 가입·승계·우선협상·의결권 조항을 다시 정리</b>합니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">주주간계약 검토는 아래 네 항목을 순서대로 세우는 일입니다. 계약과 회사법을 섞으면 결론이 어느 층위의 것인지 알 수 없게 됩니다.</p>
+    <ol>
+      <li><b>의결권 구조의 확인</b> — <b>제369조 의결권 구조와 정관·종류주식 장치</b>를 확인했는지 봅니다.</li>
+      <li><b>판례의 분리</b> — <b>2020다219577의 계약 효력과 결의 하자 제한을 구분</b>했는지 확인합니다.</li>
+      <li><b>소집 절차의 요건</b> — <b>제366조 제2항 소집청구·법원 허가 요건</b>을 확인했는지 확인합니다.</li>
+      <li><b>통지와 별도 결론</b> — <b>제363조 제3항·제4항의 통지와 전원 동의 자료</b>가 있는지, <b>계약 위반 구제와 회사 결의 효력을 별도 결론으로</b> 썼는지 봅니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
