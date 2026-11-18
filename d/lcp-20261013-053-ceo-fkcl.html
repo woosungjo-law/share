@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>청구금액은 기세의 문제가 아니라, 회수 목표와 비용 한도를 함께 정하는 결정입니다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>청구금액은 기세의 문제가 아니라, 회수 목표와 비용 한도를 함께 정하는 결정입니다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 청구금액에는 <b>계산 근거</b>가 있다 — 원금, 지연에 대한 배상(민법 제397조의 법정이율), 그리고 그 금액을 뒷받침하는 자료다. 소장에는 <b>청구 취지와 금액이 특정</b>되어야 하고(민사소송법 제249조), 흐릿하면 보정 요구로 <b>회수 일정이 밀린다.</b> <b>크게 부른다고 회수액이 커지지 않고, 소송비용과 기간이 함께 늘어난다.</b>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>사건의 시작: 얼마를 부를지 정하지 못한 회의</h2>
+    <div class="analogy">
+      식품 유통업체를 운영하는 구지원 대표는 <b>거래처의 장기 미수금</b>을 어떻게 회수할지 회의를 열었다. 영업팀은 <b>"많이 청구해 두고 협상에서 줄이자"</b>고 했고, 재무팀은 <b>"받을 수 있는 금액만 청구하자"</b>고 했다. 금액이 커지면 <b>소송비용과 기간이 늘어난다</b>는 점은 모두 알고 있었지만, <b>어디서 멈출지에 대한 기준은 없었다.</b> 구 대표는 청구금액을 정하는 일이 감정이 아니라 계산의 문제라는 점을 확인하고 싶었다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 보는 핵심: 계산되는 금액과 적어야 하는 금액</h2>
+    <p>첫째, <b>계산 근거</b>다. 민법 제397조는 금전채무를 이행하지 않으면 <b>손해배상액은 법정이율에 따라 계산</b>한다고 정한다. 지연된 기간에 대한 배상은 정해진 이율로 계산되는 금액이므로, <b>언제부터 언제까지인지를 특정</b>해야 한다.</p>
+    <p>둘째, <b>소장의 기재</b>다. 민사소송법 제249조에 따르면 소장에는 <b>청구의 취지와 원인</b>을 적어야 하고, <b>청구금액이 특정</b>되어야 한다. 금액이 흐릿하면 <b>보정 요구로 시간이 늘어나고</b>, 그만큼 회수 일정이 밀린다.</p>
+    <p>셋째, <b>일부 변제</b>다. 일부라도 돌려받은 기록이 있으면 <b>원금과 계산 기간이 달라지므로</b>, 입금 내역을 먼저 확인한다.</p>
+    <div class="callout">
+      <b>목표는 금액과 따로 정한다.</b> 회수 기대치와 비용을 나란히 놓고 <b>현실적인 목표</b>를 정한 뒤, 협상에서 줄일 수 있는 <b>하한을 미리 정해</b> 두는 편이 낫다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>놓치기 쉬운 조건과 예외: 판단이 흔들리는 지점</h2>
+    <ul class="points">
+      <li>기산일 — <b>이행기, 독촉일, 지급 약속일</b> 가운데 기준이 되는 날짜를 정한다.</li>
+      <li>이율의 근거 — 약정이 있는지에 따라 계산이 달라진다. 약정이 없다면 <b>법정이율 구조</b>를 전제로 표를 만든다.</li>
+      <li>비용의 증가 — 청구금액이 커지면 <b>인지대와 비용도 늘어난다.</b> 회수 목표와 비용을 함께 보지 않으면 이익이 줄어든다.</li>
+      <li>청구 취지의 명확성 — <b>원금과 이자를 구분해 적지 않으면</b> 보정으로 일정이 밀린다.</li>
+      <li>중단 기준 — 협상이 길어지고 비용이 한도를 넘으면 <b>소송을 이어갈지 판단</b>해야 한다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것: 목표와 한도를 정합니다</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>결재 문서에는 계산에 쓴 전제와 근거 자료를 함께 붙인다.</b> 나중에 금액을 다시 볼 때 무엇을 기준으로 정했는지 바로 확인할 수 있다.</p>
+      <ol>
+        <li><b>① 원금</b> — 거래 기록과 연결되는 원금을 확정한다.</li>
+        <li><b>② 기산·이율</b> — 지연 계산의 기산일을 정하고 민법 제397조의 계산 구조를 확인한다.</li>
+        <li><b>③ 분리 결재</b> — 원금, 지연 배상, 근거 자료를 따로 적고 <b>기산일·이율·일부 변제 반영 여부</b>를 함께 적어 혼동을 없앤다.</li>
+        <li><b>④ 기재</b> — 민사소송법 제249조에 따라 <b>취지와 금액을 특정</b>한다.</li>
+        <li><b>⑤ 목표·비용</b> — 상대의 상황과 <b>인지대·대응 비용</b>을 반영해 회수 목표를 정하고, 목표에서 비용을 빼 <b>실제 남는 금액</b>을 확인한다.</li>
+        <li><b>⑥ 하한·중단</b> — 협상에서 어디까지 줄일 수 있는지 <b>하한을 정해 담당자에게 위임</b>하고, 진행이 길어질 때 다른 방법으로 전환할 시점을 미리 정한다.</li>
+      </ol>
+    </div>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
