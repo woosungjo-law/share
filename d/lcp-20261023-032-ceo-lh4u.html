@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>늦은 돈에 붙는 이자, 구간을 나누십시오</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>늦은 돈에 붙는 이자, 구간을 나누십시오</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 미수금 회수는 <b>합계가 아니라 구간</b>의 문제다. 반환채무가 <b>이행지체에 빠진 뒤부터</b> 지연손해금이 문제되고, 소장 부본 송달 다음 날 이후에는 <b>소송촉진법 제3조</b> 적용 여부가 쟁점이 된다. 금전채무 불이행의 손해배상액은 원칙적으로 법정이율에 의하고(민법 제397조), 상행위 채무는 연 6분이 적용된다(상법 제54조). 구간을 섞으면 회수 전망이 틀어진다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>사건의 시작: 지연손해금 계산 보고</h2>
+    <div class="analogy">
+      미수금 소송 보고를 받았다. 원금에 <b>지연손해금이 얼마나 붙는지</b>, 소장을 낸 뒤에는 <b>이율이 달라지는지</b>가 문제였다. 확인한 것은 합계가 아니라 <b>구간</b>이었다. 지체가 시작된 시점과 소장 송달일 사이에서 이율이 바뀌기 때문이다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 보는 핵심: 언제부터 어떤 이율인지가 답입니다</h2>
+    <p>첫째, <b>기산점의 구분</b>이다. 반환채무가 이행지체에 빠진 뒤부터 비로소 지연손해금이 문제된다. 소장 부본 송달 다음 날 이후에는 소송촉진법 제3조 적용 여부가 쟁점이 된다. 지체 전과 송달 전후를 나누어 계산해야 한다.</p>
+    <p>둘째, <b>항쟁 상당성의 기준</b>이다. 대법원 86다카1876 전원합의체 판결은 소송촉진법 제3조 제2항의 항쟁 상당성 판단 기준을 제시했다. <b>채무자가 의무의 존부나 범위를 다툴 상당한 근거가 있었는지</b>가 기준이다. 다툴 만했다면 고율 이율이 제한될 수 있다.</p>
+    <p>셋째, <b>주장의 필요성</b>이다. 상당한 근거가 있으면 소송촉진법 제3조 제2항 적용을 <b>명시적으로 주장</b>해야 한다. 빠져 있으면 판단하지 않는다. 항소심에서 1심 인용액이 유지되면 항쟁 상당성이 부정될 수 있음을 들어 이율 적용을 주장하는 것도 같은 맥락이다.</p>
+    <p>넷째, <b>법정이율의 원칙</b>이다. 금전채무 불이행의 손해배상액은 원칙적으로 법정이율에 의한다(민법 제397조). 손해 증명이 필요 없고, 과실 없음 항변도 듣지 않는다.</p>
+    <p>다섯째, <b>원상회복 이자의 구분</b>이다. 계약해제로 인한 원상회복금에 붙는 <b>받은 날부터의 이자</b>는 지연손해금이 아니라 원상회복 범위에 속하는 이자다(민법 제548조). 해제 사건에서는 두 이자를 혼동하면 안 된다.</p>
+    <p>여섯째, <b>이율의 구간</b>이다. 민사 법정이율, 상사 법정이율, 소송촉진법상 이율은 적용 요건과 구간이 다르므로 청구취지에서 기간을 나누어 표시해야 한다(상법 제54조). 상행위 채무의 법정이율은 연 6분이다.</p>
+    <div class="callout">
+      <b>고율 이율은 자동으로 붙지 않습니다.</b> 항쟁 상당성 다툼이 살아 있으면 제3조 제2항 적용을 명시적으로 주장해야 하고, 주장이 빠지면 법원은 그 구간을 그대로 계산하지 않습니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>놓치기 쉬운 조건과 예외: 결재 전에 확인할 세 가지</h2>
+    <p><b>원금과 이자의 분리</b>가 첫 조건이다. 원금, 약정이자, 지연손해금, 소송촉진법 이율 구간을 나누어 본다. 합계만 보면 협상이 되지 않는다.</p>
+    <p><b>해제 여부</b>가 둘째 조건이다. 계약해제 사건이라면 <b>받은 날부터의 이자</b>인지 <b>지체 후 지연손해금</b>인지를 구분한다.</p>
+    <p><b>다툼의 상당성</b>이 셋째 조건이다. 의무 존부나 범위를 다툴 근거가 있었는지를 본다. 있으면 제3조 제2항 주장을 준비한다.</p>
+    <ul class="points">
+      <li>지체 시작일·소장 송달일·판결일을 축으로 한 구간표를 받는다.</li>
+      <li>상행위 채무인지에 따라 적용 이율이 달라지므로 성질부터 확인한다.</li>
+      <li>항쟁 상당성이 있으면 제3조 제2항 주장을 서면에 명시한다.</li>
+      <li>항소심에서는 1심 인용액 변동 내역과 다툼 경위를 함께 보고받는다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>회수 계산의 룰을 만든다.</b> 항목은 다음과 같다.</p>
+      <ol>
+        <li><b>① 구간표</b> — 지체 시작일과 송달일, 판결일을 축으로 기간별 이율을 정리하게 한다.</li>
+        <li><b>② 상사성 확인</b> — 상행위 채무인지에 따라 이율이 달라짐을 먼저 확인한다.</li>
+        <li><b>③ 항쟁 주장</b> — 상당한 근거가 있으면 제3조 제2항 주장을 명시하게 한다.</li>
+        <li><b>④ 원상회복 구분</b> — 해제 사건이면 받은 날부터의 이자와 지연손해금을 나눈다.</li>
+        <li><b>⑤ 항소심 대비</b> — 인용액 변동 내역과 다툼 경위를 함께 보고받는다.</li>
+        <li><b>⑥ 합계 검증</b> — 원금·약정이자·지연손해금을 따로 계산한 뒤 합계를 맞춘다.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;">대표의 자리에서 이 보고는 <b>금액의 문제가 아니라 기간의 문제</b>다. 어느 구간에서 어떤 이율을 주장했는지가 회수액을 정하고, 그 판단은 소장 단계에서 이미 굳는다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
