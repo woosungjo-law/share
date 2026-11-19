@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko" data-design="M1">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>작아서 해당 없다고 넘겼을 때 — 우리 사업장에 안전보건 의무가 어디까지 걸리는지 · 3MUST</title>
+<link rel="icon" href="data:,">
+<style>
+:root { color-scheme:light dark; --bg:#edf1f3; --paper:#fff; --ink:#202d3d; --muted:#596b80; --line:#cbd6e4; --accent:#245aa6; --wash:#e7eef8; font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif; }
+@media(prefers-color-scheme:dark){:root{--bg:#111a20;--paper:#1a252d;--ink:#eff4f4;--muted:#bac7c8;--line:#394a52;--wash:#253541;}}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);line-height:1.55}
+main{width:calc(100% - 28px);max-width:850px;margin:24px auto;padding:clamp(22px,5vw,48px);background:var(--paper);border:1px solid var(--line);border-top:7px solid var(--accent)}
+.eyebrow{font-size:.75rem;font-weight:750;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin:0 0 10px}
+h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.12;letter-spacing:-.035em;margin:0;text-wrap:balance}
+.situation{color:var(--muted);max-width:64ch;margin:14px 0 24px}
+.three{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+section{min-width:0;padding:17px 0;border-top:1px solid var(--line)}
+h2{font-size:.9rem;color:var(--accent);margin:0 0 7px;letter-spacing:.02em}
+p,li{max-width:68ch} section p{margin:0} section ul,section ol{margin:0;padding-left:1.25rem}
+.table-wrap{max-width:100%;overflow-x:auto;margin:10px 0 0;border:1px solid var(--line);border-radius:8px;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;min-width:560px;font-size:.88rem;line-height:1.45}
+th,td{padding:9px 11px;text-align:left;vertical-align:top;border-right:1px solid var(--line);border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+th:last-child,td:last-child{border-right:0} tbody tr:last-child td{border-bottom:0}
+th{background:var(--wash);font-weight:700;color:var(--ink)}
+.pause{margin-top:20px;padding:13px 15px;background:var(--wash);border-left:3px solid var(--accent)}
+.pause strong{display:block;margin-bottom:4px}.sources{margin-top:20px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+.sources p{margin:4px 0}.disclaimer{font-size:.75rem;color:var(--muted);margin-top:18px}
+html[data-design="M1"]{--accent:#bd4d28;--wash:#f8e7df;--bg:#ece9e5;--line:#dfc7bb;--ink:#252b2c;--muted:#59615f}
+html[data-design="M1"] main{border-top-width:10px}.m1 .three{grid-template-columns:1fr 1fr;gap:12px}.m1 section{border:1px solid var(--line);padding:14px;background:color-mix(in srgb,var(--wash) 35%,var(--paper))}.m1 section:last-child{grid-column:1/-1}
+html[data-design="M2"]{--accent:#176b68;--wash:#e3efed;--bg:#e7eeee;--line:#c5d7d4;--ink:#162c31;--muted:#52696a}
+html[data-design="M2"] h1{font-family:Georgia,"Batang",serif;font-weight:600}.m2 .three{grid-template-columns:1fr 1fr;gap:22px}.m2 section:nth-child(2){background:var(--wash);padding:15px;border-top:0}.m2 section:last-child{grid-column:1/-1}
+html[data-design="M3"]{--accent:#126d57;--wash:#e4f1eb;--bg:#e9eeea;--line:#c5d7cc;--ink:#1d3028;--muted:#5b6e64}
+.m3 .three{position:relative;padding-left:20px}.m3 .three:before{content:"";position:absolute;top:18px;bottom:18px;left:4px;width:2px;background:var(--accent);opacity:.45}.m3 section{position:relative;padding-left:14px}.m3 section:before{content:"";position:absolute;left:-20px;top:20px;width:9px;height:9px;border:2px solid var(--accent);border-radius:50%;background:var(--paper)}
+html[data-design="M4"]{--accent:#714d83;--wash:#eee8f3;--bg:#ece8ef;--line:#d7ccdf;--ink:#292331;--muted:#686071}
+.m4 .situation{background:var(--wash);border-left:3px solid var(--accent);padding:12px 15px}.m4 .three{grid-template-columns:1fr 1fr;gap:12px}.m4 section{border:1px solid var(--line);padding:15px}.m4 section:last-child{grid-column:1/-1}
+/* M4-wide is reserved for cards whose text and table need equal full-width measure. */
+.m4-wide .three{grid-template-columns:1fr;gap:14px}.m4-wide section:last-child{grid-column:auto}
+html[data-design="M5"]{--accent:#245aa6;--wash:#e7eef8;--bg:#edf1f3;--line:#cbd6e4;--ink:#202d3d;--muted:#596b80}
+.m5 .situation{background:var(--wash);padding:10px 12px;border:1px solid var(--line)}.m5 section{display:grid;grid-template-columns:minmax(145px,.34fr) 1fr;gap:18px}.m5 h2{color:var(--ink)}
+@media(prefers-color-scheme:dark){
+ html[data-design="M1"]{--accent:#f29a72;--wash:#392d29;--bg:#131a1a;--paper:#202929;--line:#48524f;--ink:#edf1ed;--muted:#b9c5bf}
+ html[data-design="M2"]{--accent:#73c6be;--wash:#203936;--bg:#101a1b;--paper:#1b292b;--line:#405452;--ink:#eaf3f2;--muted:#afc6c3}
+ html[data-design="M3"]{--accent:#78d4a8;--wash:#20382f;--bg:#111a17;--paper:#1b2822;--line:#40564a;--ink:#eaf3ed;--muted:#b4c8bc}
+ html[data-design="M4"]{--accent:#d0a5e2;--wash:#342b3a;--bg:#19151d;--paper:#28212e;--line:#51445b;--ink:#f1eaf4;--muted:#c7b9ce}
+ html[data-design="M5"]{--accent:#8cb7ff;--wash:#24364d;--bg:#141a22;--paper:#202a37;--line:#3d4d62;--ink:#edf2fa;--muted:#b8c5d8}
+}
+@media(max-width:620px){main{width:calc(100% - 18px);max-width:850px;margin:9px auto;padding:22px 17px}.m1 .three,.m2 .three,.m4 .three{grid-template-columns:1fr}.m1 section:last-child,.m2 section:last-child,.m4 section:last-child{grid-column:auto}.m5 section{grid-template-columns:1fr;gap:5px}}
+@media print{@page{size:A4 portrait;margin:10mm}html{color-scheme:light}body{background:#fff}main{width:100%;max-width:none;margin:0;padding:10mm;border:0;border-top:4mm solid var(--accent);box-shadow:none}.sources,.disclaimer{font-size:8.5pt}a{color:inherit;text-decoration:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="m1">
+  <p class="eyebrow">3MUST · 기업법무</p>
+  <h1>작아서 해당 없다고 넘겼을 때 — 우리 사업장에 안전보건 의무가 어디까지 걸리는지</h1>
+  <p class="situation"><strong>적용 상황:</strong> 작아서 해당 없다고 넘겼을 때 — 우리 사업장에 안전보건 의무가 어디까지 걸리는지</p>
+  <div class="three">
+    <section><h2>Must Know · 알아야 할 것</h2><p>출발점은 "적용되지 않는다"가 아니라 "무엇이 빠지는가"입니다. 산업안전보건법은 모든 사업에 적용하고, 유해·위험의 정도, 사업의 종류, 상시근로자 수를 고려해 대통령령으로 정하는 사업 또는 사업장에 법의 전부 또는 일부를 적용하지 않을 수 있다고 정합니다(산업안전보건법 제3조). 즉 면제가 아니라 예외 목록이고, 그 목록은 시행령 별표 1에 있습니다.</p><p>5인 미만 사업장의 실제 제외 범위를 보면 오해가 풀립니다. 상시근로자 5명 미만을 사용하는 사업장은 시행령 별표 1 제6호에 따라 제2장 제1절·제2절, 제3장(제29조 제3항 추가교육은 제외), 제47조·제49조·제50조 및 제159조가 적용 제외됩니다. 여기서 빠지는 것에는 정기·채용 시 안전보건교육(제29조 제1항·제2항)이 포함됩니다. 반대로 사업주가 근로자의 안전 및 건강을 유지·증진하고 산업재해 예방 기준을 지켜야 한다는 의무 자체(제5조)는 남습니다.</p><p>사무직만 있는 사업장도 별도 갈래입니다. 사무직에 종사하는 근로자만을 사용하는 사업장은 별표 1 제5호로 제2장 제1절·제2절, 제3장 및 제5장 제2절이 적용 제외됩니다. 다만 업종별로 제29조·제30조만 빠지는 갈래(제2호), 상시근로자 50명 미만인 업종 갈래(제3호)도 따로 있어, 같은 "작은 회사"라도 업종에 따라 결론이 달라집니다.</p><p>중대재해처벌법은 더 조심해야 합니다. 상시 근로자가 5명 미만인 사업 또는 사업장의 사업주(개인사업주에 한정) 또는 경영책임자등에게는 제4조부터 제6조까지의 규정을 적용하지 않습니다(중대재해처벌법 제3조). 여기서 "개인사업주에 한정"이라는 단서가 핵심입니다. 법인이라면 상시근로자가 5명 미만이어도 이 장의 적용이 그대로 남습니다. "5인 미만이면 중대재해처벌법도 해당 없다"는 통념은 개인사업자에게만 성립하는 이야기입니다.</p><p>의무의 내용도 확인해 둘 필요가 있습니다. 사업주·경영책임자등은 사업장의 특성과 규모를 고려해 ⑴ 안전보건관리체계의 구축 및 이행 ⑵ 재발방지 대책의 수립 및 이행 ⑶ 행정기관이 명한 개선·시정 사항의 이행 ⑷ 안전·보건 관계 법령상 의무이행에 필요한 관리상 조치를 해야 합니다(제4조 제1항). 위반해 사망자가 발생하면 1년 이상의 징역 또는 10억원 이하의 벌금에 처해지고, 징역과 벌금을 병과할 수 있습니다(제6조 제1항). 이 조항이 적용되는지는 위의 적용 범위 판정이 먼저입니다.</p></section>
+    <section><h2>Must Check · 확인할 것</h2><ul><li>상시근로자 수가 5명 미만인지, 5명 이상인지(산정 기준일과 산정 방법 포함)</li><li>개인사업주인지 법인인지</li><li>한국표준산업분류상 우리 업종 코드</li><li>사무직만 종사하는 사업장인지, 현업 인력이 섞여 있는지</li><li>사업장이 물리적으로 분리돼 있는지</li><li>산업안전보건법 시행령 별표 1의 어느 호에 해당하는지(복수 해당 여부 포함)</li><li>안전보건관리책임자를 두었는지, 실질적으로 사업장을 총괄하는 사람이 누구인지</li><li>근로자에게 안전·보건 정보를 제공한 기록이 있는지</li><li>위험한 작업·기계·설비가 있는지, 보호구 지급 기록이 있는지</li><li>산업재해 발생 시 보고·기록 체계가 있는지</li></ul></section>
+    <section><h2>Must Do · 실행할 것</h2><ol><li>적용 범위 판정표를 한 장 만듭니다. 행에 상시근로자 수·사업 형태(개인/법인)·업종·사무직 여부를 적고, 열에 산업안전보건법과 중대재해처벌법을 놓습니다.</li><li>시행령 별표 1을 직접 펴서 우리 업종·규모가 몇 호에 해당하는지 적습니다. 여러 호에 동시에 해당하면 각 호의 제외 규정이 모두 적용된다는 점(별표 1 비고)을 함께 확인합니다.</li><li>빠지는 조항과 남는 조항을 나눠 씁니다. "교육이 빠진다"와 "의무가 없다"를 같은 칸에 적지 않습니다.</li><li>법인 여부를 먼저 확정합니다. 법인이면 5인 미만이라는 이유로 중대재해처벌법 논의를 접지 않습니다.</li><li>남은 의무 중 지금 아무 기록도 없는 항목을 표시합니다. 기록이 없다는 사실 자체가 가장 먼저 확인해야 할 항목입니다.</li><li>안전보건관리책임자 지정 여부를 확인합니다. 사업장을 실질적으로 총괄하는 사람이 누구인지, 그 지정이 문서로 남아 있는지 봅니다(제15조).</li><li>근로자에게 안전·보건 정보를 제공한 경로를 정리합니다. 게시, 교육, 작업 전 브리핑 중 무엇을 하고 있고 무엇이 기록으로 남는지 적습니다.</li><li>위험 요인 목록을 만듭니다. 기계·설비·화학물질·고소작업·야간작업 등 해당 항목만 추리고, 각각에 대한 현재 조치를 옆 칸에 적습니다.</li><li>판정 결과를 대표에게 서면 보고합니다. "해당 없음"으로 결론 냈다면 그 근거 조항(별표 1 몇 호)을 함께 적습니다. 나중에 문제가 됐을 때 남는 것은 이 판정 근거입니다.</li><li>반기마다 상시근로자 수와 업종을 다시 확인합니다. 인원이 늘거나 업무가 바뀌면 적용 범위가 조용히 달라집니다.</li></ol></section>
+  </div>
+  <aside class="pause"><strong>잠깐 멈추고 검토할 때</strong><p>상시근로자 수가 5명 안팎에서 오르내릴 때 · 도급·용역·파견 인력이 사업장 안에서 일하고 있을 때 · 사무직만 있던 사업장에 현장·물류·시설관리 업무가 새로 생겼을 때 · 중대재해(사망자 1명 이상 등)가 발생했거나 발생 직전 상황일 때 · 산업재해가 발생해 근로복지공단 신청 절차가 진행 중일 때 · 안전보건 업무를 특정 임원에게 위임했다며 책임이 이전됐다고 판단하려 할 때</p></aside>
+  <div class="sources"></div>
+  <p class="disclaimer">일반적인 법률 정보입니다. 개별 사안의 결론은 사실관계와 적용 기준을 확인해 판단해야 합니다.</p>
+</main>
+</body>
+</html>
