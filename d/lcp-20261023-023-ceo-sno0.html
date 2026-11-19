@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>논 값이 싼 이유, 부담금을 빼고 계산해서입니다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>논 값이 싼 이유, 부담금을 빼고 계산해서입니다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 땅값에 <b>부담금을 더해야 진짜 비용</b>이 나온다. 농지를 공장·창고·태양광·주택 부지로 전용할 때에는 농지전용부담금과 그 산정기준, 감면·환급 사유가 함께 문제되고(농지법 제38조), 전용허가를 받는 자가 그 부담금을 내야 한다. 허가 없이 주차장·야적장·진입로·창고로 쓰면 전용허가 위반이 되어 <b>원상회복명령과 고발·이행강제금</b>이 문제된다(같은 법 제34조·제42조).
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>사건의 시작: 싼 땅의 유혹</h2>
+    <div class="analogy">
+      사업부의 부지 보고를 받았다. <b>논으로 된 땅값이 저렴</b>했다. 물류창고 부지로 쓰면 남는 장사처럼 보였다. 따져봐야 할 것은 땅값이 아니라 <b>전용허가와 농지전용부담금</b>이었다. 부담금을 빼고 계산한 땅값은 그 땅의 값이 아니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 보는 핵심: 땅값에 부담금을 더하십시오</h2>
+    <p>첫째, <b>전용의 세 가지 문제</b>다. 농지를 공장·창고·태양광·주택 부지로 전용할 때 농지전용부담금과 그 산정기준, 감면·환급 사유가 문제된다(농지법 제38조).</p>
+    <p>둘째, <b>부담금의 부과</b>다. 농지를 전용하면 농지전용부담금이 부과된다. 전용허가를 받는 자가 부담금을 내야 한다. 전용은 허가와 부담금이 한 세트다.</p>
+    <p>셋째, <b>허가 없는 사용의 대가</b>다. 농지를 허가 없이 주차장·야적장·진입로·창고로 사용하면 전용허가 위반이 되고 원상회복명령이 나오며 고발과 이행강제금이 문제된다(같은 법 제34조·제42조). 잠깐 쓰는 것이라고 봐주지 않는다.</p>
+    <p>넷째, <b>전용허가의 원칙</b>이다. 농지를 전용하려면 전용허가를 받아야 한다. 허가 없이 착공하면 위반이다. 협의나 신고로 처리되는 경우도 있으므로 해당 여부를 먼저 확인해야 한다.</p>
+    <p>다섯째, <b>원상회복과 제재</b>다. 명을 받으면 기한 안에 원상대로 돌려놓아야 한다. 회복 비용까지 합하면 싼 땅이 비싼 땅이 된다.</p>
+    <p>여섯째, <b>부담금 납부의 구조</b>다. 전용허가를 받는 자는 농지의 보전·관리 및 조성을 위한 부담금을 농지관리기금을 운용·관리하는 자에게 내야 한다. 누구에게 얼마를 내는지를 먼저 확정하면 부과 주체 다툼에서 밀리지 않는다.</p>
+    <p>일곱째, <b>원상회복 명의 사유의 점검</b>이다. 허가를 받지 않고 전용하거나 신고를 하지 않고 전용한 경우, 허가가 취소된 경우가 원상회복 명의 사유다. 우리 부지가 셋 중 어디에도 해당하지 않는지를 먼저 가려야 한다.</p>
+    <div class="callout">
+      <b>산정기준과 감면이 승부처다.</b> 부담금이 얼마인지보다 어떤 기준으로 계산했고 어떤 감면·환급 사유가 있는지가 총액을 바꾼다. 근거 없는 숫자를 받아들이면 감면받을 기회까지 함께 사라진다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>놓치기 쉬운 조건과 예외: 돈이 새는 세 곳</h2>
+    <p><b>감면의 확인</b>이 첫 조건이다. 감면·환급 요건에 해당하면 부담금이 달라진다. 산정기준과 감면 사유를 먼저 따져야 한다.</p>
+    <p><b>사용 실태</b>가 둘째 조건이다. 주차장이나 야적장으로 쓰고 있는 부분이 있는지를 확인해야 한다. <b>일부만 쓰고 있어도 전체가 문제될 수 있다.</b></p>
+    <p><b>명의의 범위</b>가 셋째 조건이다. 행위한 자뿐 아니라 소유자·점유자·관리자도 원상회복 명의 대상이 될 수 있다. 빌려 쓰는 땅이라도 책임에서 벗어나지 않는다.</p>
+    <ul class="points">
+      <li>땅값 비교표에 부담금 열을 반드시 넣는다. 부담금 없는 비교는 비교가 아니다.</li>
+      <li>전용허가 대상인지부터 확정하고, 허가 없이 착공하지 않는다.</li>
+      <li>현재 용도를 지번별로 점검해 허가 없는 사용이 있는지 확인한다.</li>
+      <li>행정청의 산정 근거를 받아 대조하고, 감면 해당분은 주장한다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>총비용으로 판단하게 한다.</b> 항목은 다음과 같다.</p>
+      <ol>
+        <li><b>① 허가 여부</b> — 전용허가 대상인지 확정하고 허가 없이 착공하지 못하게 한다.</li>
+        <li><b>② 부담금 산정</b> — 산정기준과 감면·환급을 검토해 총비용을 산출한다.</li>
+        <li><b>③ 산정 근거 대조</b> — 행정청의 산정 근거를 받아 검토하고, 근거 없는 부과에는 이의를 제기한다.</li>
+        <li><b>④ 사용 실태</b> — 허가 없이 쓰는 용도가 없는지 지번별로 확인한다.</li>
+        <li><b>⑤ 명의 범위</b> — 소유자·점유자·관리자로서의 노출을 함께 점검한다.</li>
+        <li><b>⑥ 회복 비용</b> — 원상회복 비용을 총비용에 넣어 비교한다.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;">대표의 자리에서 이 땅은 <b>매입가의 문제가 아니라 총비용의 문제</b>다. 부담금과 회복 비용을 더한 표에서 결론이 뒤집히는 경우가 적지 않다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
