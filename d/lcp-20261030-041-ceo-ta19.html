@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>세금계산서 명의 하나가 매입세액을 날린다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>세금계산서 명의 하나가 매입세액을 날린다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> <b>실물이 있었다는 사실만으로는 부족하다</b>. 세금계산서는 공급시기에 발행해야 하고(부가가치세법 제34조 제1항), 공급시기 전에 발행하려면 계약서에 <b>대금 청구시기와 지급시기를 따로 적고 간격이 30일 이내</b>인 경우 등 요건을 갖춰야 한다(같은 법 제17조 제3항 제1호). 그리고 공급자 명의만 다르고 실질적 공급자가 같더라도 <b>사실과 다른 세금계산서</b>가 된다(같은 법 제32조). 명의 하나가 매입세액 전액을 날린다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>사건의 시작: 세무조사 통지서</h2>
+    <div class="analogy">
+      세무조사 결과 통지서를 받았다. <b>자재는 분명히 납품받았고 돈도 지급</b>했다. 그런데 세무서는 <b>세금계산서의 공급자 명의가 실제 납품업체와 다르다</b>며 매입세액 공제를 부인했다. 현장 팀이 다른 법인 명의로 계산서를 받은 것이 원인이었다. 실물 거래가 있었는데 왜 공제가 안 되는지 이해하기 어려웠다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 보는 핵심: 실물만으로는 부족합니다</h2>
+    <p>첫째, <b>발행 시기</b>다. 부가가치세법 제34조 제1항은 세금계산서를 <b>공급시기에 발행</b>하도록 정한다.</p>
+    <p>둘째, <b>선발행의 요건</b>이다. 같은 법 제17조 제3항 제1호는 공급시기 전에 발행하려면 <b>계약서에 대금 청구시기와 지급시기를 따로 적고 간격이 30일 이내</b>인 경우 등 요건을 충족해야 한다고 정한다.</p>
+    <p>셋째, <b>명의 위장</b>이다. 같은 법 제32조는 <b>공급자 명의만 다르고 실질적 공급자가 같더라도</b> 사실과 다른 세금계산서에 해당한다고 본다.</p>
+    <p>넷째, <b>실질 요건</b>이다. 같은 법 제38조는 실물 거래와 실제 공급자 요건을 충족하면 매입세액 공제가 가능하다고 정한다. 다만 명의가 다르면 이 요건을 따로 따져야 한다.</p>
+    <p>다섯째, <b>판례</b>다. 대법원 2023두41314는 세금계산서 제도의 취지와 사실과 다른 기재의 의미를 다뤘다. <b>제3자 명의를 이용한 거래</b>도 판단 대상이 되었다.</p>
+    <p>여섯째, <b>가공 거래와 실물 거래의 구분</b>이다. 실제 재화가 오가지 않았다면 실질 요건을 충족하지 못한다. 실물이 있었다는 증빙이 먼저 필요하다.</p>
+    <p>일곱째, <b>거래 명세와 금액의 일치</b>다. 계산서 금액과 명세서, 지급액이 같아야 한다. 차이가 있으면 사실과 다른 기재로 문제 된다.</p>
+    <div class="callout">
+      <b>"다른 법인 명의로 받아도 세금만 맞으면 된다"는 통념이 가장 비쌉니다.</b> 명의가 어긋나는 순간 매입세액은 사라지고, 그 금액은 비용이 아니라 세금으로 다시 나갑니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>놓치기 쉬운 조건과 예외: 비용보다 큰 위험</h2>
+    <p><b>명의 일치</b>가 첫 조건이다. 계산서의 공급자와 실제 공급자가 같은지 확인해야 한다. 다르면 공제가 부인될 수 있다.</p>
+    <p><b>증빙의 완비</b>가 둘째 조건이다. 계약서, 거래 명세서, 대금 지급 증빙, 물품 인도 증빙이 있어야 한다.</p>
+    <p><b>선발행 요건</b>이 셋째 조건이다. 청구시기와 지급시기를 계약서에 적고 간격을 관리해야 한다. 문구가 없으면 선발행 요건을 입증하기 어렵다.</p>
+    <p><b>거래처 검증</b>이 넷째 조건이다. 신규 거래처의 사업자등록과 과세 유형을 확인해야 한다.</p>
+    <p><b>반복 거래의 위험</b>도 봐야 한다. 한 건의 명의 문제가 전체 거래로 번질 수 있다.</p>
+    <ul class="points">
+      <li>계산서 수취 전에 명의·시기·금액을 확인하는 절차를 만든다.</li>
+      <li>현장 담당자에게 명의 대여의 위험과 정해진 절차를 교육한다.</li>
+      <li>계약서·명세서·지급 증빙·인도 증빙을 거래별로 함께 보관한다.</li>
+      <li>불공제 처분에 이의가 있으면 증빙과 2023두41314를 정리해 대응한다.</li>
+      <li>불공제 금액과 원인, 대응 계획을 경영진에 보고한다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>계산서 수취 절차를 바꾼다.</b> 항목은 다음과 같다.</p>
+      <ol>
+        <li><b>① 수취 전 확인</b> — 명의·시기·금액을 확인한 뒤 계산서를 받는다.</li>
+        <li><b>② 현장 교육</b> — 명의 대여의 위험과 정해진 절차를 알린다.</li>
+        <li><b>③ 증빙 보관</b> — 계약·명세·지급·인도 증빙을 거래별로 모은다.</li>
+        <li><b>④ 거래처 검증</b> — 신규 거래처의 사업자등록과 과세 유형을 정례 확인한다.</li>
+        <li><b>⑤ 세무 대응</b> — 불공제 처분의 이의 절차와 근거 판례를 준비한다.</li>
+        <li><b>⑥ 체크리스트</b> — 수취 전 확인 항목을 만들어 현장에 배포한다.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;">대표의 자리에서 이 통지서는 <b>세금의 문제가 아니라 절차의 문제</b>다. 실물이 있었다는 사실은 방어의 출발점일 뿐이고, 명의와 시기와 금액이 맞아야 그 방어가 완성된다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
