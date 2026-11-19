@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>공장을 팔아도 돈이 남지 않을 수 있다, 국세와 담보권의 순서</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>공장을 팔아도 돈이 남지 않을 수 있다, 국세와 담보권의 순서</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 매각대금의 잔액은 <b>가격이 아니라 순서</b>가 정한다. 국세의 우선순위는 <b>법정기일</b>에서 출발하고(국세기본법 제35조), 그 날짜가 은행 근저당권 설정일보다 앞서면 국세가, 뒤지면 담보권이 앞선다. 그리고 담보권이 설정된 재산을 팔 때 그 재산에 직접 부과된 <b>당해세</b>는 일정한 채권보다 우선하며(같은 조 제3항), <b>임금채권</b>은 국세보다 앞서는 최우선변제권을 가진다(근로기준법 제38조). 순서를 세우지 않은 매각 계획은 잔액을 잘못 계산한다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>사건의 시작: 매각 협상 중에 발견한 체납 고지서</h2>
+    <div class="analogy">
+      공장 부동산을 매각해 사업을 정리하려 했다. 매수자와 가격을 거의 맞춘 시점에 회계 담당자가 <b>체납 고지서 묶음</b>을 가져왔다. 공장에는 <b>은행 근저당권</b>이 있었고 <b>국세 체납</b>도 쌓여 있었다. 매각대금에서 은행 대출을 갚고 남는 돈으로 임금과 물류비를 정리할 생각이었는데, 세무 대리인이 <b>"순서에 따라 남는 돈이 없을 수도 있다"</b>고 말했다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 보는 핵심: 법정기일이 순위를 정합니다</h2>
+    <p>첫째, <b>법정기일</b>이다. 국세의 우선순위는 법정기일에서 출발한다(국세기본법 제35조). <b>신고일 또는 납세고지서 발송일</b>이 기준이 되므로, 어느 날짜가 적용되는지가 협상의 출발점이다.</p>
+    <p>둘째, <b>담보권과의 비교</b>다. 법정기일이 은행 근저당권 설정일보다 앞서면 국세가 먼저일 수 있고, 뒤지면 담보권이 앞설 수 있다. 매각대금 배분을 예상하려면 두 날짜를 나란히 놓아야 한다.</p>
+    <p>셋째, <b>당해세의 특례</b>다. 담보권이 설정된 재산을 매각할 때 그 재산에 부과된 <b>상속세·증여세·종합부동산세</b>는 일정한 채권보다 우선하여 징수된다(같은 조 제3항). 어떤 세목이 그 재산에 직접 부과됐는지 확인해야 한다.</p>
+    <p>넷째, <b>임금채권과 소액임차보증금</b>이다. 이들은 국세보다 우선하는 최우선변제권이 있다. 근로기준법 제38조가 임금채권의 우선변제를 정한다. 매각대금에서 직원 임금이 먼저 나갈 수 있다는 뜻이므로 인건비 계획도 다시 세워야 한다.</p>
+    <p>다섯째, <b>판례의 쟁점</b>이다. 대법원 95다39175는 조세채권과 담보권의 우열 기준시점을 납세고지서 발송일로 본 규정의 헌법 위반 여부를 다뤘고, 헌법재판소 2011헌바97은 납세고지서 발송일 후에 설정된 담보권보다 국세를 우선징수하도록 한 구 국세기본법 제35조 제1항 제3호 나목 중 국세에 관한 부분을 판단했다. 기준시점을 둘러싼 다툼이 계속되어 온 영역이다.</p>
+    <div class="callout">
+      <b>매각대금이 남는다는 가정부터 확인해야 합니다.</b> 국세와 담보권, 임금이 순서대로 빠지면 대표가 계산한 잔액과 크게 달라집니다. 최악의 경우를 전제로 자금 계획을 다시 세워야 합니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>놓치기 쉬운 조건과 예외: 예상 배당액을 낙관하지 마십시오</h2>
+    <p><b>법정기일의 입증</b>이 첫 조건이다. 신고일과 납세고지서 발송일 중 무엇이 적용되는지는 세목과 절차에 따라 다르다. 증빙이 없으면 회사에 불리하게 계산될 수 있다.</p>
+    <p><b>당해세와 일반 국세의 구분</b>이 둘째 조건이다. 같은 체납이라도 재산 자체에 부과된 세목이면 취급이 달라진다. 세목별로 분류해 두어야 정확한 예상이 가능하다.</p>
+    <p><b>임금 우선변제의 요건</b>이 셋째 조건이다. 근로기준법 제38조의 우선변제는 요건을 갖춰야 인정된다. 미지급 임금 내역과 재직 기간을 확정하지 않으면 배당에서 빠질 수 있다.</p>
+    <p><b>배당요구 기한</b>도 함께 봐야 한다. 절차에서 배당요구를 하지 않으면 순위가 있어도 반영되지 않는다. 매각 일정과 함께 기한을 관리해야 한다.</p>
+    <ul class="points">
+      <li>세목별 법정기일과 담보권 설정일을 표로 만들고 증빙을 붙인다.</li>
+      <li>국세·담보권·임금·보증금을 순서대로 차감한 잔액을 매각가별로 계산한다.</li>
+      <li>임금과 소액임차보증금은 요건과 배당요구 여부를 따로 확인한다.</li>
+      <li>매수자에게 순위 정보를 문서로 제공한다. 숨긴 사실은 거래 자체를 흔든다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>매각 전에 순위표를 확정한다.</b> 항목은 다음과 같다.</p>
+      <ol>
+        <li><b>① 법정기일</b> — 세목별 신고일·납세고지서 발송일을 증빙과 함께 확정한다.</li>
+        <li><b>② 담보권</b> — 설정일과 피담보채권액을 대조한다.</li>
+        <li><b>③ 당해세</b> — 재산 자체에 부과된 국세를 별도로 표시한다.</li>
+        <li><b>④ 임금</b> — 근로기준법 제38조 요건과 미지급 내역을 확정한다.</li>
+        <li><b>⑤ 배당 시뮬레이션</b> — 매각 가격별로 두세 가지 시나리오를 준비한다.</li>
+        <li><b>⑥ 기한 관리</b> — 배당요구 기한과 이의신청 기간을 달력에 올린다.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;">대표의 자리에서 이 매각은 <b>가격의 문제가 아니라 순서의 문제</b>다. 순위표 없이 협상하면 잔액은 추정에 머물고, 추정은 대개 희망 쪽으로 기운다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
