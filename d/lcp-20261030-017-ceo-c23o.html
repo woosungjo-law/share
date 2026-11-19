@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>세입자 전출 요청을 받았다면, 대항력부터 확인하라</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>세입자 전출 요청을 받았다면, 대항력부터 확인하라</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 대항력은 <b>인도와 주민등록이 함께 있을 때</b> 생긴다. 임차인이 주택의 인도와 주민등록을 마치면 그 <b>다음 날부터</b> 제3자에 대한 효력이 생기고(주택임대차보호법 제3조), 주민등록이 다른 곳으로 옮겨지면 그 기초가 사라진다. 우선변제권은 여기에 <b>확정일자</b>까지 갖춰야 인정된다(같은 법 제3조의2). 전출 기간에 담보권을 설정했다면, 그 순서가 분쟁의 중심이 된다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>사건의 시작: 전출 동의서에 서명한 뒤 벌어진 일</h2>
+    <div class="analogy">
+      세입자로부터 <b>"한두 달 지방에 가 있어야 하니 주민등록을 잠시 옮겨도 되느냐"</b>는 요청을 받았다. 세입자는 곧 돌아온다며 걱정 말라고 했고, 편의를 봐주는 셈으로 동의했다. 그사이 사업 자금을 위해 건물에 <b>담보권을 설정</b>했다. 얼마 뒤 세입자가 복귀했지만, <b>경매가 시작되자</b> 세입자는 "보증금을 먼저 받아야 한다"고 주장했다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 보는 핵심: 대항력은 인도와 주민등록에서 생깁니다</h2>
+    <p>첫째, <b>대항력의 발생</b>이다. 주택임대차보호법 제3조는 임차인이 주택의 <b>인도와 주민등록</b>을 마친 때 그 다음 날부터 제3자에 대하여 효력이 생긴다고 정한다. 실제로 들어와 살고, 주민등록이 그 주택에 있어야 힘이 생긴다.</p>
+    <p>둘째, <b>대항력의 상실</b>이다. 주민등록이 다른 곳으로 옮겨지면 대항력의 기초가 사라진다. 전출이 일시적이었더라도 주민등록이 실제로 이전되면 문제가 생긴다. "곧 돌아온다"는 말만으로는 유지되지 않는다.</p>
+    <p>셋째, <b>우선변제권의 요건</b>이다. 같은 법 제3조의2는 <b>대항요건과 확정일자</b>를 갖춘 임차인이 경매 시 후순위권리자보다 우선하여 보증금을 변제받을 권리가 있다고 정한다. 둘 중 하나만으로는 이 권리가 인정되지 않는다.</p>
+    <p>넷째, <b>재취득의 한계</b>다. 복귀 후 다시 전입하면 대항력은 새로 생기지만, 그 전에 설정된 담보권에는 <b>소급해 대항하기 어렵다</b>. 전출 기간에 설정된 권리가 분쟁의 중심이 된다.</p>
+    <p>다섯째, <b>임대인의 책임</b>이다. 임대인이 전출을 유도하고 그 사이 담보권을 설정했다면, 민법 제750조에 따른 <b>불법행위 손해배상 책임</b>이 문제 될 수 있다. 임대인의 요청과 담보권 설정 시점이 겹치면 설명이 어려워진다.</p>
+    <div class="callout">
+      <b>"곧 돌아온다"는 약속은 등기부에 남지 않습니다.</b> 주민등록이 옮겨진 사실만 남고, 복귀 예정일은 어디에도 기록되지 않습니다. 전출 기간에 설정된 담보권은 그 기간에 생긴 사실만으로 평가됩니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>놓치기 쉬운 조건과 예외: 편의를 봐준 동의가 위험이 됩니다</h2>
+    <p><b>전출 요청의 경위</b>가 첫 조건이다. 세입자 요청인지, 임대인 제안인지에 따라 책임 구조가 달라진다. 요청과 동의를 문자로 남긴다.</p>
+    <p><b>담보권 설정 시점</b>이 둘째 조건이다. 대항력이 유지되는 동안 담보권을 설정하면 세입자의 권리가 문제 될 수 있다. <b>전출 여부를 확인한 뒤 담보권을 설정하는 순서</b>가 안전하다.</p>
+    <p><b>확정일자의 확인</b>이 셋째 조건이다. 세입자가 확정일자를 받았는지 확인해야 한다. 확정일자가 있으면 경매에서 우선변제를 주장할 수 있다.</p>
+    <p><b>보증금 반환의 상대</b>도 달라진다. 경매로 소유자가 바뀌면 반환의 상대와 범위가 달라지므로, 대항력과 우선변제권의 인정 범위를 먼저 정리해야 한다.</p>
+    <ul class="points">
+      <li>전출 요청은 기간·사유·복귀 예정일·주민등록 처리 방식을 적어 서면으로 받는다.</li>
+      <li>전출로 대항력이 약해질 수 있음을 설명하고 그 동의를 문서로 남긴다.</li>
+      <li>담보권 설정 전에 전출 여부와 대항력 상태를 확인한다.</li>
+      <li>배당요구 기한과 이의신청 기간을 매각 일정과 함께 관리한다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>전출 전에 서면으로 정리한다.</b> 항목은 다음과 같다.</p>
+      <ol>
+        <li><b>① 서면 요청</b> — 기간·사유·복귀 예정일·주민등록 처리 방식을 적어 받는다.</li>
+        <li><b>② 설명과 동의</b> — 대항력 약화 가능성을 알리고 동의를 문서로 남긴다.</li>
+        <li><b>③ 설정 순서</b> — 전출 여부와 대항력 상태를 확인한 뒤 담보권을 설정한다.</li>
+        <li><b>④ 확정일자</b> — 세입자의 확정일자 취득 여부와 보증금 액수를 확인한다.</li>
+        <li><b>⑤ 손해배상 위험</b> — 제750조 책임 가능성을 법무 검토 대상에 넣는다.</li>
+        <li><b>⑥ 기한 관리</b> — 배당요구·이의신청 기간의 담당과 시점을 고정한다.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;">대표의 자리에서 이 동의는 <b>편의의 문제가 아니라 순서의 문제</b>다. 전출을 허락하는 결정과 담보권을 설정하는 결정 사이의 며칠이, 몇 년 뒤 경매에서 보증금 전액으로 되돌아온다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
