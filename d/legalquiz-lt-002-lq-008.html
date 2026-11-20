@@ -7,49 +7,199 @@
 <meta name="referrer" content="no-referrer">
 <title>지급명령, 신청 전 확인할 절차와 갈림길</title>
 <style>
-:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#1b2530;background:#f4f6f8;line-height:1.55}*{box-sizing:border-box}body{margin:0}.wrap{max-width:720px;margin:auto;padding:20px 16px 36px}.card{background:white;border:1px solid #dbe1e6;border-radius:16px;padding:20px;margin:12px 0;box-shadow:0 2px 10px #1525360a}h1{font-size:1.35rem;margin:4px 0 12px}h2{font-size:1.05rem;margin:0 0 12px}.muted{color:#596873}.progress{height:8px;background:#e8edf1;border-radius:10px;overflow:hidden}.progress>i{display:block;height:100%;background:#176b60;width:0;transition:width .2s}.prompt{font-size:1.05rem;margin:12px 0}.choices{display:grid;gap:10px;min-width:0}.choices button,.action{font:inherit;color:inherit;background:#fff;border:1px solid #9eabb5;border-radius:12px;padding:12px 14px;min-height:48px;text-align:left;cursor:pointer}.choices button{width:100%;min-width:0;overflow-wrap:anywhere}.choices button:hover,.action:hover{background:#f0f6f4;border-color:#176b60}.feedback{border-left:4px solid #176b60;background:#f0f6f4;padding:12px;margin-top:14px;border-radius:6px}.action{background:#176b60;color:white;border:0;text-align:center;font-weight:650}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.actions .action{flex:1}.small{font-size:.9rem}.result{white-space:pre-wrap}.badge{display:inline-block;padding:2px 8px;border-radius:99px;background:#e8edf1;font-size:.82rem}
+:root{font-family:system-ui,-apple-system,"Segoe UI","Malgun Gothic",sans-serif;color:#1b2530;background:#f4f6f8;line-height:1.6;
+  --ink:#1b2530;--muted:#596873;--line:#c9d2d9;--brand:#176b60;--brand-bg:#eef6f4;--ok:#176b60;--ok-bg:#e6f4ef;--bad:#a3322b;--bad-bg:#fbeceb}
+*{box-sizing:border-box}
+body{margin:0}
+.wrap{max-width:720px;margin:auto;padding:20px 16px 40px}
+.card{background:#fff;border:1px solid #dbe1e6;border-radius:16px;padding:20px;margin:12px 0;box-shadow:0 2px 10px #1525360a}
+h1{font-size:1.3rem;margin:4px 0 8px}
+h2{font-size:1.05rem;margin:0 0 10px}
+h3{font-size:.98rem;margin:18px 0 6px}
+p{margin:8px 0}
+.muted{color:var(--muted)}
+.small{font-size:.9rem}
+.progress{height:8px;background:#e8edf1;border-radius:10px;overflow:hidden;margin-top:10px}
+.progress>i{display:block;height:100%;background:var(--brand);width:0;transition:width .2s}
+.badge{display:inline-block;padding:2px 10px;border-radius:99px;background:#e8edf1;font-size:.82rem;margin-bottom:8px}
+.prompt{font-size:1.02rem;font-weight:650;margin:14px 0 10px}
+.panel{background:#f7f9fa;border:1px solid #e2e8ec;border-radius:12px;padding:12px 14px;margin:10px 0}
+.panel b{display:block;font-size:.82rem;color:var(--muted);margin-bottom:2px}
+.choices{display:grid;gap:10px;margin-top:10px}
+.choices.two{grid-template-columns:1fr 1fr}
+@media (max-width:420px){.choices.two{grid-template-columns:1fr}}
+.choice{font:inherit;color:inherit;background:#fff;border:2px solid var(--line);border-radius:12px;padding:12px 14px;min-height:52px;text-align:left;cursor:pointer;overflow-wrap:anywhere;width:100%}
+.choice:hover:not(:disabled){background:var(--brand-bg);border-color:var(--brand)}
+.choice:disabled{cursor:default;color:var(--ink);opacity:1}
+.choice.center{text-align:center;font-weight:650}
+.choice[aria-pressed="true"]{border-color:#2b4a63;background:#eef3f8}
+.choice.is-correct{border-color:var(--ok);background:var(--ok-bg)}
+.choice.is-wrong{border-color:var(--bad);background:var(--bad-bg)}
+.choice.is-error .stmt{text-decoration:line-through;text-decoration-thickness:2px;color:var(--bad)}
+.tag{display:inline-block;margin:6px 6px 0 0;padding:1px 8px;border-radius:99px;font-size:.78rem;font-weight:700;background:#2b4a63;color:#fff}
+.is-correct .tag.t-ok,.tag.t-ok{background:var(--ok)}
+.tag.t-bad{background:var(--bad)}
+.verdict{font-weight:800;font-size:1.05rem;margin:0 0 6px}
+.verdict.ok{color:var(--ok)}
+.verdict.bad{color:var(--bad)}
+.feedback{border-left:5px solid var(--brand);background:var(--brand-bg);padding:12px 14px;margin-top:16px;border-radius:6px}
+.feedback.bad{border-left-color:var(--bad);background:var(--bad-bg)}
+.fix{margin-top:10px;padding:10px 12px;border-radius:8px;background:var(--ok-bg);border:1px solid #b9dccf}
+.fix b{color:var(--ok)}
+.next{font:inherit;font-weight:700;color:#fff;background:var(--brand);border:0;border-radius:12px;padding:12px 18px;min-height:48px;cursor:pointer;margin-top:14px;width:100%}
+.next.alt{background:#fff;color:var(--brand);border:2px solid var(--brand)}
+.bubble{max-width:88%;padding:10px 14px;border-radius:16px;margin:8px 0;overflow-wrap:anywhere}
+.bubble.them{background:#eef1f4;border-top-left-radius:4px}
+.bubble.me{background:#d9ece7;margin-left:auto;border-top-right-radius:4px}
+.who{display:block;font-size:.78rem;font-weight:700;color:var(--muted)}
+.chip{display:inline-block;background:#fff3d6;border:1px solid #ecd28a;border-radius:99px;padding:4px 12px;font-weight:700}
+.rows p{display:flex;gap:8px;margin:6px 0}
+.rows .mk{flex:none;width:1.6em;font-weight:800}
+.mk.ok{color:var(--ok)}.mk.bad{color:var(--bad)}
+.score{font-size:1.5rem;font-weight:800;margin:4px 0 10px}
+.sr{position:absolute;left:-9999px}
 </style>
 </head>
-<body><main class="wrap"><header class="card"><h1>지급명령, 신청 전 확인할 절차와 갈림길</h1><p class="muted">가상의 거래 사례에서 신청 대상, 이의 기간, 소송 전환과 확정 효력을 차례로 살펴봅니다.</p><div class="progress" aria-label="진행 상황"><i id="bar"></i></div><p id="counter" class="muted small" aria-live="polite"></p></header><section id="stage" class="card" aria-live="polite"></section></main>
+<body><main class="wrap">
+<header class="card"><h1>지급명령, 신청 전 확인할 절차와 갈림길</h1><p class="muted">가상의 거래 사례에서 신청 대상, 이의 기간, 소송 전환과 확정 효력을 맞음·틀림으로 판별해 보세요.</p>
+<div class="progress" aria-hidden="true"><i id="bar"></i></div>
+<p id="counter" class="muted small" aria-live="polite"></p></header>
+<section id="stage" class="card"></section>
+</main>
 <script>
 (()=>{'use strict';
-const DATA={"activities":[{"title":"공시송달만 가능한 경우","stem":"이 조건은 지급명령 신청 대상 판단에 어떤 영향을 주나요?","options":[{"text":"송달 방법과 관계없이 언제나 신청할 수 있습니다.","react":""},{"text":"신청하면 채무자가 심문 없이 자동으로 변제합니다.","react":""},{"text":"제462조의 송달 조건을 충족하지 못해 지급명령 신청 대상이 아닙니다.","react":""}],"answer":2,"why":"제462조는 국내에서 공시송달 외의 방법으로 송달할 수 있는 경우에 한해 지급명령을 신청하도록 합니다.","context":"(가상 상황) 가상의 회사가 국내 거래처에 물품대금 지급을 청구하려 합니다. 청구 원인·금액 자료가 연결되어 있고 공시송달 외 방법으로 송달할 수 있으며, 아직 구체적인 항변이 제기되지 않았다고 둡니다. 각 문항에서는 신청 전 조건 하나만 바꾸고 나머지는 그대로 둡니다. 조건 변경 ① 채무자에게 국내에서 공시송달 외 방법으로 송달할 수 없습니다.","kind":"choice","retake":{"stem":"채무자의 주소 확인이 되지 않아 공시송달 외 송달이 불가능합니다. 제462조상 어떤 쟁점이 생기나요?","options":[{"text":"채권 자료가 있으면 송달 요건은 사라집니다.","react":""},{"text":"공시송달만 가능하면 제462조 조건을 충족합니다.","react":""},{"text":"지급명령 신청의 송달 조건을 충족하지 못합니다.","react":""}],"answer":2},"issues":["지급명령 신청 대상"],"response_labels":{"correct":"알아챔","wrong":"혼동","dont_know":"추가 근거 필요"}},{"title":"청구 종류가 금전 지급이 아닌 경우","stem":"제462조가 정한 지급명령의 청구 범위에 들어가는지 어떻게 판단하나요?","options":[{"text":"청구 종류와 관계없이 채권자가 선택하면 지급명령을 신청할 수 있습니다.","react":""},{"text":"계약에서 생긴 청구이면 어떤 행위의 이행도 모두 지급명령 대상입니다.","react":""},{"text":"금전 등 일정 수량의 지급 청구가 아니므로 제462조의 대상이 아닙니다.","react":""}],"answer":2,"why":"제462조는 금전·대체물·유가증권의 일정 수량 지급 청구를 대상으로 합니다. 특정 수리행위를 하라는 청구와 구별됩니다.","context":"(가상 상황) 가상의 회사가 국내 거래처에 물품대금 지급을 청구하려 합니다. 청구 원인·금액 자료가 연결되어 있고 공시송달 외 방법으로 송달할 수 있으며, 아직 구체적인 항변이 제기되지 않았다고 둡니다. 각 문항에서는 신청 전 조건 하나만 바꾸고 나머지는 그대로 둡니다. 조건 변경 ② 청구 내용이 물품대금 지급이 아니라 수리 작업을 하라는 특정 행위의 이행으로 바뀝니다.","kind":"choice","retake":{"stem":"대금 지급이 아니라 채무자에게 특정 수리 작업을 하라고 요구하는 청구입니다. 지급명령 대상인가요?","options":[{"text":"계약상 청구면 행위 이행도 전부 지급명령 대상입니다.","react":""},{"text":"제462조가 정한 일정 수량의 지급청구가 아닙니다.","react":""},{"text":"채권자가 원하면 청구 종류와 관계없이 대상이 됩니다.","react":""}],"answer":1},"issues":["지급명령 신청 대상"],"response_labels":{"correct":"알아챔","wrong":"혼동","dont_know":"추가 근거 필요"}},{"title":"청구자료 연결이 불완전한 경우","stem":"이 사실이 곧바로 지급명령 신청의 법정 요건을 충족하지 못했다는 뜻인가요?","options":[{"text":"아닙니다. 법정 요건 위반이라고 단정할 수는 없지만, 신청 전 자료와 청구액을 대조해 보강할 실무상 필요가 있습니다.","react":""},{"text":"예. 자료가 연결되지 않으면 제462조상 언제나 신청할 수 없습니다.","react":""},{"text":"아닙니다. 자료는 청구 원인이나 금액 확인과 무관하므로 검토하지 않아도 됩니다.","react":""}],"answer":0,"why":"자료 연결은 마더가 제안한 신청 전 실무 점검입니다. 이를 별도의 법정 신청요건이나 자동 각하 사유로 표현하지 않습니다.","context":"(가상 상황) 가상의 회사가 국내 거래처에 물품대금 지급을 청구하려 합니다. 청구 원인·금액 자료가 연결되어 있고 공시송달 외 방법으로 송달할 수 있으며, 아직 구체적인 항변이 제기되지 않았다고 둡니다. 각 문항에서는 신청 전 조건 하나만 바꾸고 나머지는 그대로 둡니다. 조건 변경 ③ 계약·거래·검수·변제 자료가 청구 원인이나 금액과 아직 연결되지 않았습니다.","kind":"choice","retake":{"stem":"청구액 산정자료가 서로 맞물리지 않습니다. 이를 법률상 신청 불가 사유라고 단정해도 될까요?","options":[{"text":"아니요. 청구 근거와 금액 자료는 검토할 필요가 없습니다.","react":""},{"text":"아니요. 먼저 자료를 대조·보강할 실무상 점검 사항으로 봅니다.","react":""},{"text":"예. 계약 자료 하나라도 빠지면 제462조가 자동으로 신청을 금지합니다.","react":""}],"answer":1},"issues":["청구자료 연결"],"response_labels":{"correct":"알아챔","wrong":"혼동","dont_know":"추가 근거 필요"}},{"title":"예상 항변이 확인된 경우","stem":"이 사실만으로 지급명령 신청이 법적으로 불가능하거나 결과가 정해졌다고 할 수 있나요?","options":[{"text":"예. 항변이 하나라도 예상되면 지급명령 신청은 법으로 금지됩니다.","react":""},{"text":"아닙니다. 항변 가능성은 이후 절차에 아무런 영향을 주지 않으니 기록할 필요가 없습니다.","react":""},{"text":"아닙니다. 법적 가능성이나 결과를 단정할 수는 없고 예상 항변과 반박자료를 검토할 실무상 필요가 있습니다.","react":""}],"answer":2,"why":"예상 항변을 점검하는 것은 실무상 준비입니다. 항변 가능성만으로 신청의 법적 적합성이나 결과를 일률적으로 단정할 수 없습니다.","context":"(가상 상황) 가상의 회사가 국내 거래처에 물품대금 지급을 청구하려 합니다. 청구 원인·금액 자료가 연결되어 있고 공시송달 외 방법으로 송달할 수 있으며, 아직 구체적인 항변이 제기되지 않았다고 둡니다. 각 문항에서는 신청 전 조건 하나만 바꾸고 나머지는 그대로 둡니다. 조건 변경 ④ 채무자가 물품 하자나 상계를 주장했지만, 그 주장과 반박자료를 아직 정리하지 않았습니다.","kind":"choice","retake":{"stem":"상대방이 하자·상계 주장을 했지만 아직 자료 대조가 끝나지 않았습니다. 가장 정확한 안내는 무엇인가요?","options":[{"text":"예상 항변은 언제나 지급명령을 법적으로 금지합니다.","react":""},{"text":"항변은 실제 절차와 무관하므로 검토를 생략합니다.","react":""},{"text":"항변과 반박자료를 검토할 필요가 있지만, 이 사실만으로 신청 가능성이나 결과를 단정하지 않습니다.","react":""}],"answer":2},"issues":["예상 항변 점검"],"response_labels":{"correct":"알아챔","wrong":"혼동","dont_know":"추가 근거 필요"}}],"summary":{"correct_rules":["금전·대체물·유가증권의 일정 수량 지급 청구에 대해 국내에서 공시송달 외 방법으로 송달할 수 있는 경우 지급명령을 신청할 수 있습니다.","청구 원인·금액을 계약·거래·검수·변제자료와 연결해 보는 것은 신청 전 실무 점검입니다. 이를 독립된 법정 신청요건이나 회수 보장으로 표현하지 않습니다.","하자·계약불일치·상계·변제 가능성과 반박자료를 검토하는 것은 실무 준비입니다. 예상 항변만으로 신청 적합성이나 절차 결과가 확정되지는 않습니다."],"caution":"일반적인 절차 학습용입니다. 개별 청구의 성립·지급명령 신청 적합성·송달 여부·이의 가능성·실제 회수나 집행 결과를 판단하거나 보장하지 않습니다. 구체적 자료와 절차 상태를 별도로 확인하세요."}};
+const DATA={"model":"K4","items":[{"title":"공시송달만 가능","change":"상대방에게 국내에서 공시송달 외의 방법으로는 송달할 수 없게 되었다","answer":"differs","why":"제462조는 국내에서 공시송달 외의 방법으로 송달할 수 있는 경우에 한하여 지급명령을 할 수 있다고 정하므로, 이 조건에서는 신청 대상이 아닙니다.","base":"(가상 상황) 회사가 국내 거래처에 미지급 물품대금을 청구하려 합니다. 상대방에게 국내에서 일반 송달이 가능한 상태입니다.","base_conclusion":"지급명령을 신청할 수 있다."},{"title":"용역대금으로 변경","change":"청구가 물품대금에서 용역대금으로 바뀌었다","answer":"same","why":"용역대금도 금전의 지급을 구하는 청구이므로 신청 대상이라는 결론은 달라지지 않습니다.","base":"(가상 상황) 회사가 국내 거래처에 미지급 물품대금을 청구하려 합니다. 상대방에게 국내에서 일반 송달이 가능한 상태입니다.","base_conclusion":"지급명령을 신청할 수 있다."},{"title":"부동산 인도","change":"청구가 금전이 아니라 특정 부동산의 인도로 바뀌었다","answer":"differs","why":"제462조가 정한 대상은 금전·대체물·유가증권의 일정 수량 지급 청구입니다. 부동산 인도 청구는 이에 해당하지 않습니다.","base":"(가상 상황) 회사가 국내 거래처에 미지급 물품대금을 청구하려 합니다. 상대방에게 국내에서 일반 송달이 가능한 상태입니다.","base_conclusion":"지급명령을 신청할 수 있다."},{"title":"자료 연결 미비","change":"계약서 외에 거래·검수·변제 자료를 아직 연결해 두지 못했다","answer":"same","why":"자료 연결은 신청 전 실무 점검이며 별도의 법정 신청요건이 아닙니다. 신청 대상이라는 결론 자체는 달라지지 않습니다.","base":"(가상 상황) 회사가 국내 거래처에 미지급 물품대금을 청구하려 합니다. 상대방에게 국내에서 일반 송달이 가능한 상태입니다.","base_conclusion":"지급명령을 신청할 수 있다."},{"title":"예상 항변 발견","change":"상대방이 하자를 이유로 다툴 가능성이 있다는 점을 알게 되었다","answer":"same","why":"예상 항변을 살피는 것은 실무 준비이며, 그것만으로 신청 대상이라는 결론이 달라지거나 결과가 단정되지는 않습니다.","base":"(가상 상황) 회사가 국내 거래처에 미지급 물품대금을 청구하려 합니다. 상대방에게 국내에서 일반 송달이 가능한 상태입니다.","base_conclusion":"지급명령을 신청할 수 있다."}],"summary":{"correct_rules":["금전·대체물·유가증권의 일정 수량 지급 청구에 대해 국내에서 공시송달 외 방법으로 송달할 수 있는 경우 지급명령을 신청할 수 있습니다.","청구 원인·금액을 계약·거래·검수·변제자료와 연결해 보는 것은 신청 전 실무 점검입니다. 이를 독립된 법정 신청요건이나 회수 보장으로 표현하지 않습니다.","하자·계약불일치·상계·변제 가능성과 반박자료를 검토하는 것은 실무 준비입니다. 예상 항변만으로 신청 적합성이나 절차 결과가 확정되지는 않습니다."],"caution":"일반적인 절차 학습용입니다. 개별 청구의 성립·지급명령 신청 적합성·송달 여부·이의 가능성·실제 회수나 집행 결과를 판단하거나 보장하지 않습니다. 구체적 자료와 절차 상태를 별도로 확인하세요."}};
 const stage=document.getElementById('stage'),bar=document.getElementById('bar'),counter=document.getElementById('counter');
-let at=0, first=[], retakes=[], followups=[], active=null, copied=false;
-function el(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n}
-function progress(){bar.style.width=(DATA.activities.length?Math.round(at/DATA.activities.length*100):0)+'%';counter.textContent=`${Math.min(at+1,DATA.activities.length)} / ${DATA.activities.length}`}
-function button(label,fn,cls=''){const b=el('button','action '+cls,label);b.type='button';b.addEventListener('click',fn);return b}
-function renderQuestion(retry=false){const a=DATA.activities[at];active=retry?{...a,stem:a.retake.stem,options:a.retake.options,answer:a.retake.answer}:a;stage.replaceChildren();stage.append(el('span','badge',retry?'한 번 더':'문항'));stage.append(el('h2','',active.title));if(active.context)stage.append(el('p','muted',active.context));stage.append(el('p','prompt',active.stem));const opts=el('div','choices');active.options.forEach((o,i)=>{const b=el('button','',o.text);b.type='button';b.addEventListener('click',()=>answer(i,retry));opts.append(b)});const unsure=el('button','small muted','잘 모르겠어요');unsure.type='button';unsure.addEventListener('click',()=>answer(-1,retry));opts.append(unsure);stage.append(opts);progress()}
-function askConfidence(entry,continueFlow){stage.replaceChildren();stage.append(el('h2','','첫 응답 확신도 (선택)'));stage.append(el('p','muted','한 번 눌러 기록하거나 건너뛸 수 있습니다. 재도전으로 바뀌지 않습니다.'));[['확실','sure'],['긴가민가','unsure'],['건너뛰기',null]].forEach(([label,value])=>stage.append(button(label,()=>{entry.confidence=value;continueFlow()})));}
-function answer(index,retry){const a=active,correct=index<0?null:index===a.answer,entry={activity:at,choice:index,correct,dont_know:index<0,round:retry?'retake':'first'};if(!retry&&a.options[index]?.level!==undefined)entry.level=index<0?null:a.options[index].level;if(retry){retakes.push(entry);showFeedback(a,index,correct,true,entry);return}first.push(entry);askConfidence(entry,()=>showFeedback(a,index,correct,false,entry))}
-function renderRecall(){const a=DATA.activities[at];active=a;stage.replaceChildren();stage.append(el('span','badge','회상 자기보고'));stage.append(el('h2','',a.title));stage.append(el('p','prompt',a.stem));stage.append(button('떠올림',()=>renderConfirmation(a,'remembered')));stage.append(button('힌트',()=>renderHint(a)));stage.append(button('모르겠다',()=>renderConfirmation(a,'dont_know')));progress()}
-function renderHint(a){stage.replaceChildren();stage.append(el('span','badge','회상 자기보고'));stage.append(el('h2','',a.title));stage.append(el('p','muted','힌트'));stage.append(el('p','feedback',a.hint));stage.append(button('확인 선택지 보기',()=>renderConfirmation(a,'hint')));progress()}
-function renderConfirmation(a,signal){active=a;stage.replaceChildren();stage.append(el('span','badge','정답 확인'));stage.append(el('h2','',a.title));stage.append(el('p','prompt','떠올린 내용을 확인해 보세요.'));const opts=el('div','choices');a.options.forEach((o,i)=>{const b=el('button','',o.text);b.type='button';b.addEventListener('click',()=>finishConfirmation(a,signal,i));opts.append(b)});const unsure=el('button','small muted','모르겠다');unsure.type='button';unsure.addEventListener('click',()=>finishConfirmation(a,signal,-1));opts.append(unsure);stage.append(opts);progress()}
-function finishConfirmation(a,signal,index){const correct=index<0?null:index===a.answer,confirmation=index<0?'dont_know':correct?'correct':'wrong';const prefix={remembered:'recalled',hint:'hint',dont_know:'dont_know_signal'}[signal];let classification;if(signal==='dont_know')classification='dont_know_self_report';else if(signal==='remembered')classification=correct===true?'recalled_correct':'recalled_not_correct';else classification=correct===true?'hint_correct':'hint_not_correct';const entry={activity:at,choice:index,correct,dont_know:index<0,round:'first',recall_signal:signal,confirmation_result:confirmation,classification};first.push(entry);askConfidence(entry,()=>showFeedback(a,index,correct,false,entry))}
-function showFeedback(a,index,correct,retry,entry){stage.replaceChildren();if(a.kind==='recall')stage.append(el('span','badge',entry?.recall_signal==='dont_know'?'회상 자기보고':'정답 확인'));if(!retry&&index>=0&&a.options[index]?.misconception)stage.append(el('span','badge','오답 보기(오해)'));stage.append(el('h2','',correct?'좋아요':'다시 살펴볼 부분이 있어요'));const msg=index<0?'답을 고르지 않고 넘어가기로 했습니다.':(a.options[index]?.react||'');if(msg)stage.append(el('p','feedback',msg));if(a.why)stage.append(el('p','',a.why));if(!retry&&!correct&&a.followup){stage.append(el('p','prompt',a.followup.stem));const opts=el('div','choices');a.followup.options.forEach(o=>{const b=el('button','',o.text);b.type='button';b.addEventListener('click',()=>{opts.querySelectorAll('button').forEach(x=>x.disabled=true);followups.push({activity:at,correct:o.correct});stage.append(el('p','feedback',o.correct?'잘 짚었습니다.':'이 부분을 다시 확인해 보세요.'));appendNextChoices(a,index,correct,retry)});opts.append(b)});stage.append(opts);return}appendNextChoices(a,index,correct,retry)}
-function appendNextChoices(a,index,correct,retry){if(!retry&&!correct&&a.retake){stage.append(el('p','muted small','첫 응답은 유지됩니다. 바꿔 쓴 문항에 한 번 더 답할 수 있습니다.'));stage.append(button('한 번 더 풀기',()=>renderQuestion(true)));}stage.append(button('다음으로',next))}
-function renderGray(){const a=DATA.activities[at];stage.replaceChildren();stage.append(el('span','badge','점수에 반영되지 않는 견해 선택'));stage.append(el('h2','',a.title));stage.append(el('p','prompt',a.stem));(a.views||[]).forEach(v=>{const block=el('div','feedback');block.append(el('strong','',v.label));block.append(el('p','',v.text));stage.append(block)});(a.options||[]).forEach((o,i)=>stage.append(button(o.text,()=>{const entry={activity:at,choice:i,correct:null,opinion:true,round:'first'};first.push(entry);askConfidence(entry,()=>{stage.replaceChildren(el('p','feedback',a.why||'의견을 확인했습니다.'));stage.append(button('다음으로',next))})})));progress()}
-function next(){at++;if(at>=DATA.activities.length)return result();const a=DATA.activities[at];if(a.kind==='opinion')renderGray();else if(a.kind==='recall')renderRecall();else renderQuestion(false)}
-function responsePattern(row,a){if(a.kind==='opinion')return '견해 선택 (정오 없음)';const confidence=row.confidence==='sure'?'확실':row.confidence==='unsure'?'긴가민가':'확신 미표시';if(row.dont_know||row.correct===null){const label=a.response_labels?.dont_know||'몰랐음·모르겠다';return `${label} · ${confidence}`}if(a.options.some(o=>o.level!==undefined)){const label=row.level===2?'정확한 이해':row.level===1?'부분 이해':'오해 보기 선택';return `${label} · ${confidence}`}if(row.confidence===null||row.confidence===undefined){const label=row.correct?(a.response_labels?.correct||'맞음'):(a.response_labels?.wrong||'틀림');return `${label}(확신 미표시)`}if(row.correct&&row.confidence==='sure')return a.response_labels?.correct||'알고 있음';if(row.correct)return a.response_labels?'알아챔 · 긴가민가':'불안한 정답';if(row.confidence==='sure')return a.response_labels?'혼동 · 확실':'확신했지만 달랐음';return a.response_labels?'혼동 · 긴가민가':'몰랐음·모르겠다'}
-function result(){
- bar.style.width='100%';counter.textContent='완료';
- const recoveredRetakes=new Set(retakes.filter(x=>x.correct).map(x=>x.activity)),recoveredFollowups=new Set(followups.filter(x=>x.correct).map(x=>x.activity)),states=new Map();
- const rank={'첫 답에서 확인':1,'재도전에서 확인':2,'후속 질문에서 보완':2,'추가 확인 권장':3};
- for(const row of first){const activity=DATA.activities[row.activity];if(activity.kind==='opinion')continue;let state;if(row.correct===true)state='첫 답에서 확인';else if(recoveredRetakes.has(row.activity))state='재도전에서 확인';else if(recoveredFollowups.has(row.activity))state='후속 질문에서 보완';else state='추가 확인 권장';for(const label of activity.issues||[]){if(!states.has(label)||rank[state]>rank[states.get(label)])states.set(label,state)}}
- const pattern=states.size?[...states].map(([label,state])=>`${label}: ${state}`):['기록할 쟁점 상태가 없습니다.'];
- const responseRows=first.map(x=>`${DATA.activities[x.activity].title}: ${responsePattern(x,DATA.activities[x.activity])}`);
- const recallLabels={recalled_correct:'떠올림 후 정답',recalled_not_correct:'떠올림 후 오답/모름',hint_correct:'힌트 후 정답',hint_not_correct:'힌트 후 오답/모름',dont_know_self_report:'처음부터 모르겠다 자기보고'};
- const confirmationLabels={correct:'정답',wrong:'오답',dont_know:'모르겠다'};
- const recallPaths=first.filter(x=>DATA.activities[x.activity].kind==='recall').map(x=>`${DATA.activities[x.activity].title}: ${recallLabels[x.classification]||'회상 경로'} · 정답 확인: ${confirmationLabels[x.confirmation_result]||'확인 전'}`);
- const rules=DATA.summary.correct_rules||[],caution=DATA.summary.caution||'';
- stage.replaceChildren(el('h2','','응답 패턴 및 쟁점 상태'));pattern.forEach(x=>stage.append(el('p','',x)));
- stage.append(el('h2','','최초 응답 패턴'));responseRows.forEach(x=>stage.append(el('p','',x)));
- if(recallPaths.length){stage.append(el('h2','','회상 자기보고와 정답 확인'));recallPaths.forEach(x=>stage.append(el('p','',x)))}
- stage.append(el('h2','','확인된 법리'));rules.forEach(x=>stage.append(el('p','',x)));
- stage.append(el('h2','','주의 사항'));stage.append(el('p','',caution));stage.append(el('p','muted small','개별 답변은 저장되지 않습니다.'));
- stage.append(button('결과 복사',async()=>{try{const copyLines=['쟁점 상태',...pattern,'','확인된 법리',...rules.map(x=>'• '+x),'','주의 사항',caution];await navigator.clipboard.writeText(copyLines.join('\n'));copied=true;stage.append(el('p','feedback','결과를 복사했습니다.'))}catch(_){stage.append(el('p','feedback','이 브라우저에서는 복사할 수 없습니다. 결과를 선택해 복사해 주세요.'))}}));
- stage.append(button('처음부터',()=>{at=0;first=[];retakes=[];followups=[];copied=false;const a=DATA.activities[0];a.kind==='opinion'?renderGray():a.kind==='recall'?renderRecall():renderQuestion(false)}));
+let at=0,results=[];
+
+const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n};
+const MODEL={
+  K1:{name:'진술 판정',prompt:'이 진술은 맞을까요?'},
+  K2:{name:'선배에게 대응하기',prompt:'선배에게 어떻게 답하시겠어요?'},
+  K3:{name:'틀린 멘트 찾기',prompt:'틀린 문장을 눌러 지적해 보세요.'},
+  K4:{name:'조건 바꿔 보기',prompt:'이 조건이 바뀌면 결론은 어떻게 될까요?'}
+};
+const items=DATA.items,N=items.length,M=MODEL[DATA.model];
+
+function progress(){bar.style.width=Math.round(at/N*100)+'%';counter.textContent=at<N?`${at+1} / ${N}`:'완료'}
+function start(){at=0;results=[];render()}
+function render(){
+  progress();stage.replaceChildren();
+  const it=items[at];
+  stage.append(el('span','badge',`${M.name} · 문항 ${at+1}`));
+  stage.append(el('h2','',it.title));
+  ({K1:renderJudge,K2:renderAdvise,K3:renderSpot,K4:renderWhatIf})[DATA.model](it);
 }
-if(DATA.activities.length){const a=DATA.activities[0];a.kind==='opinion'?renderGray():a.kind==='recall'?renderRecall():renderQuestion(false)}else stage.textContent='문항을 불러오지 못했습니다.';
+
+/* ---- 공통: 선택 표시를 유지한 채 정오를 붙인다 (화면을 비우지 않는다) ---- */
+function lockChoices(btns,picked,correct,correctTag){
+  btns.forEach((b,i)=>{
+    b.disabled=true;b.setAttribute('aria-pressed',String(i===picked));
+    if(i===correct)b.classList.add('is-correct');
+    if(i===picked&&i!==correct)b.classList.add('is-wrong');
+    const wrap=el('div');
+    if(i===picked)wrap.append(el('span','tag','내 선택'),' ');
+    if(i===correct)wrap.append(el('span','tag t-ok',correctTag||'정답'));
+    if(wrap.childNodes.length)b.append(wrap);
+  });
+}
+function verdictBox(ok,why,extra){
+  const box=el('div','feedback'+(ok?'':' bad'));
+  box.setAttribute('role','status');
+  box.append(el('p','verdict '+(ok?'ok':'bad'),ok?'✓ 맞아요':'✕ 다시 볼 부분이에요'));
+  if(why)box.append(el('p','',why));
+  if(extra)box.append(extra);
+  const last=at===N-1;
+  const nb=el('button','next',last?'결과 보기':'다음 문항');nb.type='button';
+  nb.addEventListener('click',()=>{at++;if(at>=N)showResult();else render()});
+  stage.append(box,nb);
+  nb.focus({preventScroll:false});
+  return box;
+}
+function record(ok){results.push({title:items[at].title,ok})}
+
+/* ---- K1 진술 판정 ---- */
+function renderJudge(it){
+  const p=el('div','panel');p.append(el('b','','진술'));p.append(el('p','',it.statement));stage.append(p);
+  stage.append(el('p','prompt',M.prompt));
+  const box=el('div','choices two');
+  const btns=['맞다','틀리다'].map((label,i)=>{const b=el('button','choice center',label);b.type='button';b.setAttribute('aria-pressed','false');
+    b.addEventListener('click',()=>{const ans=it.answer?0:1,ok=i===ans;record(ok);lockChoices(btns,i,ans,'정답');verdictBox(ok,it.why)});return b});
+  btns.forEach(b=>box.append(b));stage.append(box);
+}
+
+/* ---- K2 선배 대응 (말풍선 대화) ---- */
+function bubble(who,text,me){const b=el('div','bubble '+(me?'me':'them'));b.append(el('span','who',who));b.append(el('span','',text));return b}
+function renderAdvise(it){
+  if(it.situation)stage.append(el('p','muted small',it.situation));
+  stage.append(bubble('선배',it.senior,false));
+  stage.append(el('p','prompt',M.prompt));
+  const order=at%2?['check','proceed']:['proceed','check'];
+  const label={proceed:'네, 그대로 진행하겠습니다.',check:'잠깐만요, 확인이 필요합니다.'};
+  const box=el('div','choices');
+  const btns=order.map((k,i)=>{const b=el('button','choice',label[k]);b.type='button';b.setAttribute('aria-pressed','false');
+    b.addEventListener('click',()=>{
+      const ok=k===it.answer,ans=order.indexOf(it.answer);record(ok);
+      lockChoices(btns,i,ans,'올바른 대응');
+      stage.append(bubble('나',label[k],true));
+      stage.append(bubble('선배',it.reply[k],false));
+      verdictBox(ok,it.why);
+    });return b});
+  btns.forEach(b=>box.append(b));stage.append(box);
+}
+
+/* ---- K3 틀린 멘트 찾기 ---- */
+function renderSpot(it){
+  stage.append(el('p','muted small','(가상 멘트) 아래 문장 중 정확히 하나가 틀렸습니다.'));
+  stage.append(el('p','prompt',M.prompt));
+  const box=el('div','choices');
+  const btns=it.sentences.map((s,i)=>{
+    const b=el('button','choice');b.type='button';b.setAttribute('aria-pressed','false');
+    b.append(el('span','muted small',`문장 ${i+1}`));b.append(el('div','stmt',s));
+    b.addEventListener('click',()=>{
+      const ok=i===it.wrong;record(ok);
+      lockChoices(btns,i,it.wrong,'틀린 문장');
+      btns[it.wrong].classList.add('is-error');
+      const fix=el('div','fix');fix.append(el('b','','교정문'));fix.append(el('p','',it.fix));
+      verdictBox(ok,it.why,fix);
+    });return b});
+  btns.forEach(b=>box.append(b));stage.append(box);
+}
+
+/* ---- K4 조건 바꿔 보기 ---- */
+function renderWhatIf(it){
+  const p=el('div','panel');p.append(el('b','','기준 상황'));p.append(el('p','',it.base));
+  p.append(el('b','','기준 결론'));p.append(el('p','',it.base_conclusion));stage.append(p);
+  const c=el('p','');c.append(el('span','muted small','바뀐 조건  '));c.append(el('span','chip',it.change));stage.append(c);
+  stage.append(el('p','prompt',M.prompt));
+  const box=el('div','choices two');
+  const btns=['기준 결론 그대로다','결론이 달라진다'].map((label,i)=>{const b=el('button','choice center',label);b.type='button';b.setAttribute('aria-pressed','false');
+    b.addEventListener('click',()=>{const ans=it.answer==='same'?0:1,ok=i===ans;record(ok);lockChoices(btns,i,ans,'정답');verdictBox(ok,it.why)});return b});
+  btns.forEach(b=>box.append(b));stage.append(box);
+}
+
+/* ---- 종료 요약 ---- */
+function showResult(){
+  progress();stage.replaceChildren();
+  const right=results.filter(r=>r.ok).length;
+  stage.append(el('h2','','결과'));
+  const sc=el('p','score',`${N}문항 중 ${right}문항 맞음`);sc.setAttribute('role','status');stage.append(sc);
+  const rows=el('div','rows');
+  results.forEach(r=>{const p=el('p');p.append(el('span','mk '+(r.ok?'ok':'bad'),r.ok?'○':'✕'));p.append(el('span','',r.title+(r.ok?' — 맞음':' — 다시 볼 부분')));rows.append(p)});
+  stage.append(rows);
+  const rules=DATA.summary.correct_rules||[],caution=DATA.summary.caution||'';
+  stage.append(el('h3','','확인된 법리'));rules.forEach(x=>stage.append(el('p','','• '+x)));
+  stage.append(el('h3','','주의 사항'));stage.append(el('p','',caution));
+  stage.append(el('p','muted small','답변은 저장·전송되지 않습니다. 형성학습용 퀴즈이며 개별 사건의 법률 판단이 아닙니다.'));
+  const msg=el('p','small');msg.setAttribute('role','status');
+  const copy=el('button','next','결과 복사');copy.type='button';
+  copy.addEventListener('click',async()=>{
+    try{await navigator.clipboard.writeText([`${N}문항 중 ${right}문항 맞음`,'','확인된 법리',...rules.map(x=>'• '+x),'','주의 사항',caution].join('\n'));msg.textContent='결과를 복사했습니다.'}
+    catch(_){msg.textContent='이 브라우저에서는 복사할 수 없습니다. 결과를 선택해 복사해 주세요.'}});
+  const again=el('button','next alt','처음부터 다시');again.type='button';again.addEventListener('click',start);
+  stage.append(copy,msg,again);
+  copy.focus({preventScroll:true});
+}
+if(N)start();else stage.textContent='문항을 불러오지 못했습니다.';
 })();
 </script></body></html>
