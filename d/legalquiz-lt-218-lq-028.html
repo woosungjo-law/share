@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="referrer" content="no-referrer">
+<title>국세 부과제척기간과 가산세 확인</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Segoe UI","Malgun Gothic",sans-serif;color:#1b2530;background:#f4f6f8;line-height:1.6;
+  --ink:#1b2530;--muted:#596873;--line:#c9d2d9;--brand:#176b60;--brand-bg:#eef6f4;--ok:#176b60;--ok-bg:#e6f4ef;--bad:#a3322b;--bad-bg:#fbeceb}
+*{box-sizing:border-box}
+body{margin:0}
+.wrap{max-width:720px;margin:auto;padding:20px 16px 40px}
+.card{background:#fff;border:1px solid #dbe1e6;border-radius:16px;padding:20px;margin:12px 0;box-shadow:0 2px 10px #1525360a}
+h1{font-size:1.3rem;margin:4px 0 8px}
+h2{font-size:1.05rem;margin:0 0 10px}
+h3{font-size:.98rem;margin:18px 0 6px}
+p{margin:8px 0}
+.muted{color:var(--muted)}
+.small{font-size:.9rem}
+.progress{height:8px;background:#e8edf1;border-radius:10px;overflow:hidden;margin-top:10px}
+.progress>i{display:block;height:100%;background:var(--brand);width:0;transition:width .2s}
+.badge{display:inline-block;padding:2px 10px;border-radius:99px;background:#e8edf1;font-size:.82rem;margin-bottom:8px}
+.prompt{font-size:1.02rem;font-weight:650;margin:14px 0 10px}
+.panel{background:#f7f9fa;border:1px solid #e2e8ec;border-radius:12px;padding:12px 14px;margin:10px 0}
+.panel b{display:block;font-size:.82rem;color:var(--muted);margin-bottom:2px}
+.choices{display:grid;gap:10px;margin-top:10px}
+.choices.two{grid-template-columns:1fr 1fr}
+@media (max-width:420px){.choices.two{grid-template-columns:1fr}}
+.choice{font:inherit;color:inherit;background:#fff;border:2px solid var(--line);border-radius:12px;padding:12px 14px;min-height:52px;text-align:left;cursor:pointer;overflow-wrap:anywhere;width:100%}
+.choice:hover:not(:disabled){background:var(--brand-bg);border-color:var(--brand)}
+.choice:disabled{cursor:default;color:var(--ink);opacity:1}
+.choice.center{text-align:center;font-weight:650}
+.choice[aria-pressed="true"]{border-color:#2b4a63;background:#eef3f8}
+.choice.is-correct{border-color:var(--ok);background:var(--ok-bg)}
+.choice.is-wrong{border-color:var(--bad);background:var(--bad-bg)}
+.choice.is-error .stmt{text-decoration:line-through;text-decoration-thickness:2px;color:var(--bad)}
+.tag{display:inline-block;margin:6px 6px 0 0;padding:1px 8px;border-radius:99px;font-size:.78rem;font-weight:700;background:#2b4a63;color:#fff}
+.is-correct .tag.t-ok,.tag.t-ok{background:var(--ok)}
+.tag.t-bad{background:var(--bad)}
+.verdict{font-weight:800;font-size:1.05rem;margin:0 0 6px}
+.verdict.ok{color:var(--ok)}
+.verdict.bad{color:var(--bad)}
+.feedback{border-left:5px solid var(--brand);background:var(--brand-bg);padding:12px 14px;margin-top:16px;border-radius:6px}
+.feedback.bad{border-left-color:var(--bad);background:var(--bad-bg)}
+.fix{margin-top:10px;padding:10px 12px;border-radius:8px;background:var(--ok-bg);border:1px solid #b9dccf}
+.fix b{color:var(--ok)}
+.next{font:inherit;font-weight:700;color:#fff;background:var(--brand);border:0;border-radius:12px;padding:12px 18px;min-height:48px;cursor:pointer;margin-top:14px;width:100%}
+.next.alt{background:#fff;color:var(--brand);border:2px solid var(--brand)}
+.bubble{max-width:88%;padding:10px 14px;border-radius:16px;margin:8px 0;overflow-wrap:anywhere}
+.bubble.them{background:#eef1f4;border-top-left-radius:4px}
+.bubble.me{background:#d9ece7;margin-left:auto;border-top-right-radius:4px}
+.who{display:block;font-size:.78rem;font-weight:700;color:var(--muted)}
+.chip{display:inline-block;background:#fff3d6;border:1px solid #ecd28a;border-radius:99px;padding:4px 12px;font-weight:700}
+.rows p{display:flex;gap:8px;margin:6px 0}
+.rows .mk{flex:none;width:1.6em;font-weight:800}
+.mk.ok{color:var(--ok)}.mk.bad{color:var(--bad)}
+.score{font-size:1.5rem;font-weight:800;margin:4px 0 10px}
+.sr{position:absolute;left:-9999px}
+</style>
+</head>
+<body><main class="wrap">
+<header class="card"><h1>국세 부과제척기간과 가산세 확인</h1><p class="muted">부과제척기간의 기본 규칙·예외와 가산세·재조사 조항을 구분해 확인합니다.</p>
+<div class="progress" aria-hidden="true"><i id="bar"></i></div>
+<p id="counter" class="muted small" aria-live="polite"></p></header>
+<section id="stage" class="card"></section>
+</main>
+<script>
+(()=>{'use strict';
+const DATA={"model":"judge","items":[{"title":"일반 부과제척기간","statement":"역외거래 등 법정 예외가 적용되지 않는 일반 국세의 부과제척기간은 국세를 부과할 수 있는 날부터 5년이다.","answer":true,"why":"국세기본법 제26조의2 제1항은 기본 기간을 5년으로 정하면서 역외거래 등 예외를 따로 두고 있습니다. 적용 기간은 세목과 구체적 사정에 따라 확인해야 합니다."},{"title":"법정신고기한까지 신고하지 않은 경우","statement":"역외거래가 아닌 국세에서 법정신고기한까지 과세표준신고서를 제출하지 않았다면 부과제척기간은 제26조의2 제2항 제1호에 따라 5년이다.","answer":false,"why":"제26조의2 제2항 제1호는 법정신고기한까지 신고서를 제출하지 않은 경우를 기본 5년과 구별해 7년으로 정합니다."},{"title":"부정행위와 포탈 결과","statement":"역외거래가 아닌 국세에서 납세자가 부정행위로 국세를 포탈하거나 환급·공제를 받은 경우, 제26조의2 제2항 제2호는 그 국세의 부과제척기간을 10년으로 정한다.","answer":true,"why":"제26조의2 제2항 제2호는 대통령령으로 정하는 부정행위로 국세를 포탈하거나 환급·공제를 받은 경우 10년을 정합니다. 역외거래에는 15년이 적용될 수 있고, 같은 항 제3호는 특정 가산세 부과대상에 별도 10년을 둡니다."},{"title":"2024두57262 판결의 사건 판단","statement":"대법원 2024두57262 판결은 구 국세기본법 적용 사건에서, 법정신고기한 내 신고를 한 납세자의 부정행위로 국세포탈이나 환급·공제가 생기지 않았어도 해당 국세의 부과제척기간은 10년이라고 보았다.","answer":false,"why":"대법원은 해당 구 국세기본법 사건에서 부정행위가 있었더라도 그로 인한 국세포탈이나 환급·공제가 없으면 부과제척기간은 원칙으로 돌아가 5년이라고 판시했습니다. 이는 판결의 구법 사건에 관한 설명이며 현행법의 모든 경우를 일반화하지 않습니다."},{"title":"가산세의 법적 근거","statement":"국세기본법 제47조 제1항은 세법상 의무를 위반한 사람에게 법 또는 세법이 정하는 바에 따라 가산세를 부과할 수 있도록 한다.","answer":true,"why":"제47조 제1항은 세법에서 규정한 의무 위반에 대해 이 법 또는 세법이 정하는 바에 따라 가산세를 부과할 수 있다고 정합니다."},{"title":"같은 세목·과세기간의 재조사","statement":"국세기본법 제81조의4 제2항은 같은 세목과 과세기간에 대한 재조사를 법정 사유가 없어도 허용한다.","answer":false,"why":"제81조의4 제2항은 각 호의 어느 하나에 해당하지 않으면 같은 세목 및 같은 과세기간에 대한 재조사를 할 수 없도록 정합니다."}],"summary":{"correct_rules":["부과제척기간의 기본은 국세를 부과할 수 있는 날부터 5년이며, 역외거래 등은 별도 기간을 둡니다.","법정신고기한까지 과세표준신고서를 제출하지 않은 경우의 기본 기간은 7년이며, 역외거래는 별도입니다.","대통령령으로 정하는 부정행위로 국세를 포탈하거나 환급·공제를 받은 경우 10년이 적용되며, 역외거래는 별도입니다. 같은 항 제3호는 특정 가산세에 별도의 10년을 둡니다.","구 국세기본법이 적용된 이 사건에서 대법원은 기한 내 신고가 있었고 부정행위로 인한 국세포탈·환급·공제가 없으면 5년이라고 판시했습니다.","세법상 의무 위반에 대해 법 또는 세법이 정하는 바에 따라 가산세를 부과할 수 있습니다.","같은 세목·과세기간에 대한 재조사는 법에 열거된 사유 등 예외에 해당하지 않으면 할 수 없습니다."],"caution":"일반적인 법률 학습용입니다. 부과제척기간·가산세는 세목·신고 내용·적용 시점과 법정 예외에 따라 달라질 수 있고, 개별 과세 결과나 불복 기한을 판단·보장하지 않습니다."}};
+const stage=document.getElementById('stage'),bar=document.getElementById('bar'),counter=document.getElementById('counter');
+let at=0,results=[];
+
+const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n};
+const MODEL={
+  judge:{name:'진술 판정',prompt:'이 진술은 맞을까요?'},
+  advise:{name:'선배에게 대응하기',prompt:'선배에게 어떻게 답하시겠어요?'},
+  spot:{name:'틀린 멘트 찾기',prompt:'틀린 문장을 눌러 지적해 보세요.'},
+  whatif:{name:'조건 바꿔 보기',prompt:'이 조건이 바뀌면 결론은 어떻게 될까요?'}
+};
+const items=DATA.items,N=items.length,M=MODEL[DATA.model];
+
+function progress(){bar.style.width=Math.round(at/N*100)+'%';counter.textContent=at<N?`${at+1} / ${N}`:'완료'}
+function start(){at=0;results=[];render()}
+function render(){
+  progress();stage.replaceChildren();
+  const it=items[at];
+  stage.append(el('span','badge',`${M.name} · 문항 ${at+1}`));
+  stage.append(el('h2','',it.title));
+  ({judge:renderJudge,advise:renderAdvise,spot:renderSpot,whatif:renderWhatIf})[DATA.model](it);
+}
+
+/* ---- 공통: 선택 표시를 유지한 채 정오를 붙인다 (화면을 비우지 않는다) ---- */
+function lockChoices(btns,picked,correct,correctTag){
+  btns.forEach((b,i)=>{
+    b.disabled=true;b.setAttribute('aria-pressed',String(i===picked));
+    if(i===correct)b.classList.add('is-correct');
+    if(i===picked&&i!==correct)b.classList.add('is-wrong');
+    const wrap=el('div');
+    if(i===picked)wrap.append(el('span','tag','내 선택'),' ');
+    if(i===correct)wrap.append(el('span','tag t-ok',correctTag||'정답'));
+    if(wrap.childNodes.length)b.append(wrap);
+  });
+}
+function verdictBox(ok,why,extra){
+  const box=el('div','feedback'+(ok?'':' bad'));
+  box.setAttribute('role','status');
+  box.append(el('p','verdict '+(ok?'ok':'bad'),ok?'✓ 맞아요':'✕ 다시 볼 부분이에요'));
+  if(why)box.append(el('p','',why));
+  if(extra)box.append(extra);
+  const last=at===N-1;
+  const nb=el('button','next',last?'결과 보기':'다음 문항');nb.type='button';
+  nb.addEventListener('click',()=>{at++;if(at>=N)showResult();else render()});
+  stage.append(box,nb);
+  nb.focus({preventScroll:false});
+  return box;
+}
+function record(ok){results.push({title:items[at].title,ok})}
+
+/* ---- 진술 판정 ---- */
+function renderJudge(it){
+  const p=el('div','panel');p.append(el('b','','진술'));p.append(el('p','',it.statement));stage.append(p);
+  stage.append(el('p','prompt',M.prompt));
+  const box=el('div','choices two');
+  const btns=['맞다','틀리다'].map((label,i)=>{const b=el('button','choice center',label);b.type='button';b.setAttribute('aria-pressed','false');
+    b.addEventListener('click',()=>{const ans=it.answer?0:1,ok=i===ans;record(ok);lockChoices(btns,i,ans,'정답');verdictBox(ok,it.why)});return b});
+  btns.forEach(b=>box.append(b));stage.append(box);
+}
+
+/* ---- 선배 대응 (말풍선 대화) ---- */
+function bubble(who,text,me){const b=el('div','bubble '+(me?'me':'them'));b.append(el('span','who',who));b.append(el('span','',text));return b}
+function renderAdvise(it){
+  if(it.situation)stage.append(el('p','muted small',it.situation));
+  stage.append(bubble('선배',it.senior,false));
+  stage.append(el('p','prompt',M.prompt));
+  const order=at%2?['check','proceed']:['proceed','check'];
+  const label={proceed:'네, 그대로 진행하겠습니다.',check:'잠깐만요, 확인이 필요합니다.'};
+  const box=el('div','choices');
+  const btns=order.map((k,i)=>{const b=el('button','choice',label[k]);b.type='button';b.setAttribute('aria-pressed','false');
+    b.addEventListener('click',()=>{
+      const ok=k===it.answer,ans=order.indexOf(it.answer);record(ok);
+      lockChoices(btns,i,ans,'올바른 대응');
+      stage.append(bubble('나',label[k],true));
+      stage.append(bubble('선배',it.reply[k],false));
+      verdictBox(ok,it.why);
+    });return b});
+  btns.forEach(b=>box.append(b));stage.append(box);
+}
+
+/* ---- 틀린 멘트 찾기 ---- */
+function renderSpot(it){
+  stage.append(el('p','muted small','(가상 멘트) 아래 문장 중 정확히 하나가 틀렸습니다.'));
+  stage.append(el('p','prompt',M.prompt));
+  const box=el('div','choices');
+  const btns=it.sentences.map((s,i)=>{
+    const b=el('button','choice');b.type='button';b.setAttribute('aria-pressed','false');
+    b.append(el('span','muted small',`문장 ${i+1}`));b.append(el('div','stmt',s));
+    b.addEventListener('click',()=>{
+      const ok=i===it.wrong;record(ok);
+      lockChoices(btns,i,it.wrong,'틀린 문장');
+      btns[it.wrong].classList.add('is-error');
+      const fix=el('div','fix');fix.append(el('b','','교정문'));fix.append(el('p','',it.fix));
+      verdictBox(ok,it.why,fix);
+    });return b});
+  btns.forEach(b=>box.append(b));stage.append(box);
+}
+
+/* ---- 조건 바꿔 보기 ---- */
+function renderWhatIf(it){
+  const p=el('div','panel');p.append(el('b','','기준 상황'));p.append(el('p','',it.base));
+  p.append(el('b','','기준 결론'));p.append(el('p','',it.base_conclusion));stage.append(p);
+  const c=el('p','');c.append(el('span','muted small','바뀐 조건  '));c.append(el('span','chip',it.change));stage.append(c);
+  stage.append(el('p','prompt',M.prompt));
+  const box=el('div','choices two');
+  const btns=['기준 결론 그대로다','결론이 달라진다'].map((label,i)=>{const b=el('button','choice center',label);b.type='button';b.setAttribute('aria-pressed','false');
+    b.addEventListener('click',()=>{const ans=it.answer==='same'?0:1,ok=i===ans;record(ok);lockChoices(btns,i,ans,'정답');verdictBox(ok,it.why)});return b});
+  btns.forEach(b=>box.append(b));stage.append(box);
+}
+
+/* ---- 종료 요약 ---- */
+function showResult(){
+  progress();stage.replaceChildren();
+  const right=results.filter(r=>r.ok).length;
+  stage.append(el('h2','','결과'));
+  const sc=el('p','score',`${N}문항 중 ${right}문항 맞음`);sc.setAttribute('role','status');stage.append(sc);
+  const rows=el('div','rows');
+  results.forEach(r=>{const p=el('p');p.append(el('span','mk '+(r.ok?'ok':'bad'),r.ok?'○':'✕'));p.append(el('span','',r.title+(r.ok?' — 맞음':' — 다시 볼 부분')));rows.append(p)});
+  stage.append(rows);
+  const rules=DATA.summary.correct_rules||[],caution=DATA.summary.caution||'';
+  stage.append(el('h3','','확인된 법리'));rules.forEach(x=>stage.append(el('p','','• '+x)));
+  stage.append(el('h3','','주의 사항'));stage.append(el('p','',caution));
+  stage.append(el('p','muted small','답변은 저장·전송되지 않습니다. 형성학습용 퀴즈이며 개별 사건의 법률 판단이 아닙니다.'));
+  const msg=el('p','small');msg.setAttribute('role','status');
+  const copy=el('button','next','결과 복사');copy.type='button';
+  copy.addEventListener('click',async()=>{
+    try{const rows=results.map(r=>`${r.title} — ${r.ok?'맞음':'다시 볼 부분'}`);await navigator.clipboard.writeText([`${N}문항 중 ${right}문항 맞음`,'',...rows,'','확인된 법리',...rules.map(x=>'• '+x),'','주의 사항',caution].join('\n'));msg.textContent='결과를 복사했습니다.'}
+    catch(_){msg.textContent='이 브라우저에서는 복사할 수 없습니다. 결과를 선택해 복사해 주세요.'}});
+  stage.append(copy,msg);
+  copy.focus({preventScroll:true});
+}
+if(N)start();else stage.textContent='문항을 불러오지 못했습니다.';
+})();
+</script></body></html>
