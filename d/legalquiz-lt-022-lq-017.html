@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="referrer" content="no-referrer">
+<title>거래처 회생절차 개시 시 자동해지 조항과 관리인 선택권 점검</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Segoe UI","Malgun Gothic",sans-serif;color:#1b2530;background:#f4f6f8;line-height:1.6;
+  --ink:#1b2530;--muted:#596873;--line:#c9d2d9;--brand:#176b60;--brand-bg:#eef6f4;--ok:#176b60;--ok-bg:#e6f4ef;--bad:#a3322b;--bad-bg:#fbeceb}
+*{box-sizing:border-box}
+body{margin:0}
+.wrap{max-width:720px;margin:auto;padding:20px 16px 40px}
+.card{background:#fff;border:1px solid #dbe1e6;border-radius:16px;padding:20px;margin:12px 0;box-shadow:0 2px 10px #1525360a}
+h1{font-size:1.3rem;margin:4px 0 8px}
+h2{font-size:1.05rem;margin:0 0 10px}
+h3{font-size:.98rem;margin:18px 0 6px}
+p{margin:8px 0}
+.muted{color:var(--muted)}
+.small{font-size:.9rem}
+.progress{height:8px;background:#e8edf1;border-radius:10px;overflow:hidden;margin-top:10px}
+.progress>i{display:block;height:100%;background:var(--brand);width:0;transition:width .2s}
+.badge{display:inline-block;padding:2px 10px;border-radius:99px;background:#e8edf1;font-size:.82rem;margin-bottom:8px}
+.prompt{font-size:1.02rem;font-weight:650;margin:14px 0 10px}
+.panel{background:#f7f9fa;border:1px solid #e2e8ec;border-radius:12px;padding:12px 14px;margin:10px 0}
+.panel b{display:block;font-size:.82rem;color:var(--muted);margin-bottom:2px}
+.choices{display:grid;gap:10px;margin-top:10px}
+.choices.two{grid-template-columns:1fr 1fr}
+@media (max-width:420px){.choices.two{grid-template-columns:1fr}}
+.choice{font:inherit;color:inherit;background:#fff;border:2px solid var(--line);border-radius:12px;padding:12px 14px;min-height:52px;text-align:left;cursor:pointer;overflow-wrap:anywhere;width:100%}
+.choice:hover:not(:disabled){background:var(--brand-bg);border-color:var(--brand)}
+.choice:disabled{cursor:default;color:var(--ink);opacity:1}
+.choice.center{text-align:center;font-weight:650}
+.choice[aria-pressed="true"]{border-color:#2b4a63;background:#eef3f8}
+.choice.is-correct{border-color:var(--ok);background:var(--ok-bg)}
+.choice.is-wrong{border-color:var(--bad);background:var(--bad-bg)}
+.choice.is-error .stmt{text-decoration:line-through;text-decoration-thickness:2px;color:var(--bad)}
+.tag{display:inline-block;margin:6px 6px 0 0;padding:1px 8px;border-radius:99px;font-size:.78rem;font-weight:700;background:#2b4a63;color:#fff}
+.is-correct .tag.t-ok,.tag.t-ok{background:var(--ok)}
+.tag.t-bad{background:var(--bad)}
+.verdict{font-weight:800;font-size:1.05rem;margin:0 0 6px}
+.verdict.ok{color:var(--ok)}
+.verdict.bad{color:var(--bad)}
+.feedback{border-left:5px solid var(--brand);background:var(--brand-bg);padding:12px 14px;margin-top:16px;border-radius:6px}
+.feedback.bad{border-left-color:var(--bad);background:var(--bad-bg)}
+.fix{margin-top:10px;padding:10px 12px;border-radius:8px;background:var(--ok-bg);border:1px solid #b9dccf}
+.fix b{color:var(--ok)}
+.next{font:inherit;font-weight:700;color:#fff;background:var(--brand);border:0;border-radius:12px;padding:12px 18px;min-height:48px;cursor:pointer;margin-top:14px;width:100%}
+.next.alt{background:#fff;color:var(--brand);border:2px solid var(--brand)}
+.bubble{max-width:88%;padding:10px 14px;border-radius:16px;margin:8px 0;overflow-wrap:anywhere}
+.bubble.them{background:#eef1f4;border-top-left-radius:4px}
+.bubble.me{background:#d9ece7;margin-left:auto;border-top-right-radius:4px}
+.who{display:block;font-size:.78rem;font-weight:700;color:var(--muted)}
+.chip{display:inline-block;background:#fff3d6;border:1px solid #ecd28a;border-radius:99px;padding:4px 12px;font-weight:700}
+.rows p{display:flex;gap:8px;margin:6px 0}
+.rows .mk{flex:none;width:1.6em;font-weight:800}
+.mk.ok{color:var(--ok)}.mk.bad{color:var(--bad)}
+.score{font-size:1.5rem;font-weight:800;margin:4px 0 10px}
+.sr{position:absolute;left:-9999px}
+</style>
+</head>
+<body><main class="wrap">
+<header class="card"><h1>거래처 회생절차 개시 시 자동해지 조항과 관리인 선택권 점검</h1><p class="muted">가상의 거래처 회생 상황을 떠올리며 관리인의 선택권, 자동해지 조항, 확답 최고와 채권 분류를 맞음·틀림으로 판별해 보세요.</p>
+<div class="progress" aria-hidden="true"><i id="bar"></i></div>
+<p id="counter" class="muted small" aria-live="polite"></p></header>
+<section id="stage" class="card"></section>
+</main>
+<script>
+(()=>{'use strict';
+const DATA={"model":"K1","items":[{"title":"관리인의 선택권","statement":"쌍무계약에서 채무자와 그 상대방이 모두 회생절차개시 당시 아직 이행을 완료하지 않았다면, 관리인은 계약을 해제 또는 해지하거나 채무자의 채무를 이행하고 상대방의 채무이행을 청구할 수 있다.","answer":true,"why":"채무자 회생 및 파산에 관한 법률 제119조 제1항이 정하는 내용입니다. 양쪽 모두 이행을 완료하지 않았다는 요건이 먼저 필요합니다."},{"title":"자동해지 조항의 효력","statement":"대법원은 회생절차 개시신청이나 개시를 해지 사유로 정한 도산해지조항은 어느 경우에나 회생절차의 목적에 반하므로 일률적으로 무효라고 보았다.","answer":false,"why":"대법원 2005다38263 판결은 도산해지조항을 일률적으로 무효로 보면 계약자유의 원칙을 심각하게 침해하고 상대방의 정당한 이익을 무시하게 된다고 보았습니다. 부인권의 대상이 되거나 공서양속에 위배되는 등의 경우를 제외하고는, 회생절차개시 후 회생회사에 영향을 미칠 수 있다는 사정만으로 무효라고 할 수 없다는 취지입니다."},{"title":"조항 적용의 제한 여지","statement":"대법원은 쌍방 미이행 쌍무계약에서는 관리인에게 선택권을 준 규정의 취지에 비추어 도산해지조항의 적용이 회생절차개시 이후 종료 시까지 제한된다고 해석할 여지가 있다고 밝힌 바 있다.","answer":true,"why":"대법원 2005다38263 판결이 이런 해석의 여지가 없지 않다고 밝혔습니다. 다만 '여지'를 언급한 것이며, 모든 경우에 해지권 행사가 제한된다고 확정한 것은 아닙니다."},{"title":"확답 최고의 기간","statement":"상대방이 관리인에게 확답을 최고한 경우의 30일 기간은 법으로 고정되어 있어서 법원이 늘이거나 줄일 수 없다.","answer":false,"why":"제119조 제3항은 법원이 관리인 또는 상대방의 신청에 의하거나 직권으로 제2항의 기간을 늘이거나 줄일 수 있다고 정합니다. 30일은 고정된 기간이 아닙니다."},{"title":"해제 뒤 손해배상","statement":"관리인이 제119조에 따라 계약을 해제한 경우, 상대방은 그 손해배상에 관하여 공익채권자로서 권리를 행사한다.","answer":false,"why":"제121조 제1항은 상대방이 손해배상에 관하여 회생채권자로서 권리를 행사할 수 있다고 정합니다. 공익채권자로 행사하는 것은 같은 조 제2항의 반대급부 가액 상환에 관한 부분입니다."},{"title":"대가관계가 없는 의무","statement":"대법원은 합작투자계약에서 회사를 설립한 뒤 의결권 행사 등을 위해 서로 협조해야 할 의무만 남은 경우, 그 의무를 서로 대등한 대가관계에 있는 채무로 보기 어렵다고 보았다.","answer":true,"why":"대법원 2005다38263 판결은 쌍무계약을 서로 대등한 대가관계에 있는 채무를 부담하고 성립·이행·존속상 견련성이 있어 서로 담보로서 기능하는 계약으로 설명합니다. 서로 협조할 의무만 남은 합작투자계약의 의무는 이런 대가관계로 보기 어렵다고 판단했습니다."},{"title":"관리인의 해제와 절차 폐지","statement":"관리인이 제119조 제1항에 따라 쌍무계약을 해제한 뒤 회생절차폐지결정이 확정되면, 그 해제는 소급하여 효력을 잃는다.","answer":false,"why":"대법원 2022다211850 판결은 회생절차폐지결정에는 소급효가 없고, 관리인이 제119조 제1항에 따라 해제·해지하면 계약의 효력이 종국적으로 상실되므로 이후 폐지결정이 확정되어도 해제·해지의 효력에는 영향이 없다고 보았습니다."},{"title":"반대급부가 남아 있지 않을 때","statement":"관리인의 해제·해지로 계약이 끝난 경우, 채무자가 받은 반대급부가 채무자의 재산 중에 현존하지 않으면 상대방은 그 가액의 상환에 관하여 공익채권자로서 권리를 행사할 수 있다.","answer":true,"why":"제121조 제2항이 정하는 내용입니다. 반대급부가 현존하면 그 반환을 청구하고, 현존하지 않으면 가액 상환에 관하여 공익채권자로서 권리를 행사할 수 있습니다."}],"summary":{"correct_rules":["양쪽 모두 회생절차개시 당시 이행을 완료하지 않은 쌍무계약에서 관리인은 해제·해지하거나 채무자의 채무를 이행하고 상대방의 채무이행을 청구할 수 있습니다. 같은 항 단서에 따라 회생계획안 심리를 위한 관계인집회가 끝난 뒤에는 해제·해지할 수 없습니다(문항에서는 다루지 않음).","도산해지조항을 일률적으로 무효로 보지 않고, 부인권 대상·공서양속 위반 등을 제외하면 회생절차개시 후 회생회사에 영향을 미칠 수 있다는 사정만으로 무효가 아니라고 보았습니다. 사건은 구 회사정리법 하의 판결이며 현행 법과의 관계는 문항에서 다루지 않습니다.","쌍방 미이행 쌍무계약에서는 관리인 선택권 규정의 취지에 비추어 도산해지조항을 무효로 보거나 개시 이후 종료 시까지 적용이 제한된다고 해석할 여지가 없지는 않다고 밝혔습니다. 해당 사건에서는 합작투자계약이 쌍무계약이 아니라는 이유로 그 규정 적용을 부정했습니다.","쌍무계약은 서로 대등한 대가관계에 있는 채무를 부담하고 성립·이행·존속상 견련성이 있어 서로 담보로서 기능하는 계약이며, 합작투자계약에서 회사 설립 뒤 서로 협조할 의무는 대등한 대가관계에 있다고 보기 어렵다고 했습니다.","상대방은 관리인에게 확답을 최고할 수 있고, 최고를 받은 후 30일 이내 확답하지 않으면 관리인은 해제권 또는 해지권을 포기한 것으로 봅니다. 법원은 신청 또는 직권으로 이 기간을 늘이거나 줄일 수 있습니다.","회생절차폐지결정은 소급효가 없고, 관리인이 제119조 제1항에 따라 해제·해지한 경우 계약 효력이 종국적으로 상실되므로 이후 폐지결정이 확정되어도 해제·해지의 효력에는 영향이 없습니다.","제119조에 따른 해제·해지 시 상대방은 손해배상에 관하여 회생채권자로서 권리를 행사하고, 채무자가 받은 반대급부가 현존하면 반환을 청구하며 현존하지 않으면 가액 상환에 관하여 공익채권자로서 권리를 행사할 수 있습니다."],"caution":"일반적인 법률 학습용입니다. 개별 사안의 성립·결과·기간·비용을 판단하거나 보장하지 않습니다. 구체적인 자료와 절차 상태를 별도로 확인하세요."}};
+const stage=document.getElementById('stage'),bar=document.getElementById('bar'),counter=document.getElementById('counter');
+let at=0,results=[];
+
+const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n};
+const MODEL={
+  K1:{name:'진술 판정',prompt:'이 진술은 맞을까요?'},
+  K2:{name:'선배에게 대응하기',prompt:'선배에게 어떻게 답하시겠어요?'},
+  K3:{name:'틀린 멘트 찾기',prompt:'틀린 문장을 눌러 지적해 보세요.'},
+  K4:{name:'조건 바꿔 보기',prompt:'이 조건이 바뀌면 결론은 어떻게 될까요?'}
+};
+const items=DATA.items,N=items.length,M=MODEL[DATA.model];
+
+function progress(){bar.style.width=Math.round(at/N*100)+'%';counter.textContent=at<N?`${at+1} / ${N}`:'완료'}
+function start(){at=0;results=[];render()}
+function render(){
+  progress();stage.replaceChildren();
+  const it=items[at];
+  stage.append(el('span','badge',`${M.name} · 문항 ${at+1}`));
+  stage.append(el('h2','',it.title));
+  ({K1:renderJudge,K2:renderAdvise,K3:renderSpot,K4:renderWhatIf})[DATA.model](it);
+}
+
+/* ---- 공통: 선택 표시를 유지한 채 정오를 붙인다 (화면을 비우지 않는다) ---- */
+function lockChoices(btns,picked,correct,correctTag){
+  btns.forEach((b,i)=>{
+    b.disabled=true;b.setAttribute('aria-pressed',String(i===picked));
+    if(i===correct)b.classList.add('is-correct');
+    if(i===picked&&i!==correct)b.classList.add('is-wrong');
+    const wrap=el('div');
+    if(i===picked)wrap.append(el('span','tag','내 선택'),' ');
+    if(i===correct)wrap.append(el('span','tag t-ok',correctTag||'정답'));
+    if(wrap.childNodes.length)b.append(wrap);
+  });
+}
+function verdictBox(ok,why,extra){
+  const box=el('div','feedback'+(ok?'':' bad'));
+  box.setAttribute('role','status');
+  box.append(el('p','verdict '+(ok?'ok':'bad'),ok?'✓ 맞아요':'✕ 다시 볼 부분이에요'));
+  if(why)box.append(el('p','',why));
+  if(extra)box.append(extra);
+  const last=at===N-1;
+  const nb=el('button','next',last?'결과 보기':'다음 문항');nb.type='button';
+  nb.addEventListener('click',()=>{at++;if(at>=N)showResult();else render()});
+  stage.append(box,nb);
+  nb.focus({preventScroll:false});
+  return box;
+}
+function record(ok){results.push({title:items[at].title,ok})}
+
+/* ---- K1 진술 판정 ---- */
+function renderJudge(it){
+  const p=el('div','panel');p.append(el('b','','진술'));p.append(el('p','',it.statement));stage.append(p);
+  stage.append(el('p','prompt',M.prompt));
+  const box=el('div','choices two');
+  const btns=['맞다','틀리다'].map((label,i)=>{const b=el('button','choice center',label);b.type='button';b.setAttribute('aria-pressed','false');
+    b.addEventListener('click',()=>{const ans=it.answer?0:1,ok=i===ans;record(ok);lockChoices(btns,i,ans,'정답');verdictBox(ok,it.why)});return b});
+  btns.forEach(b=>box.append(b));stage.append(box);
+}
+
+/* ---- K2 선배 대응 (말풍선 대화) ---- */
+function bubble(who,text,me){const b=el('div','bubble '+(me?'me':'them'));b.append(el('span','who',who));b.append(el('span','',text));return b}
+function renderAdvise(it){
+  if(it.situation)stage.append(el('p','muted small',it.situation));
+  stage.append(bubble('선배',it.senior,false));
+  stage.append(el('p','prompt',M.prompt));
+  const order=at%2?['check','proceed']:['proceed','check'];
+  const label={proceed:'네, 그대로 진행하겠습니다.',check:'잠깐만요, 확인이 필요합니다.'};
+  const box=el('div','choices');
+  const btns=order.map((k,i)=>{const b=el('button','choice',label[k]);b.type='button';b.setAttribute('aria-pressed','false');
+    b.addEventListener('click',()=>{
+      const ok=k===it.answer,ans=order.indexOf(it.answer);record(ok);
+      lockChoices(btns,i,ans,'올바른 대응');
+      stage.append(bubble('나',label[k],true));
+      stage.append(bubble('선배',it.reply[k],false));
+      verdictBox(ok,it.why);
+    });return b});
+  btns.forEach(b=>box.append(b));stage.append(box);
+}
+
+/* ---- K3 틀린 멘트 찾기 ---- */
+function renderSpot(it){
+  stage.append(el('p','muted small','(가상 멘트) 아래 문장 중 정확히 하나가 틀렸습니다.'));
+  stage.append(el('p','prompt',M.prompt));
+  const box=el('div','choices');
+  const btns=it.sentences.map((s,i)=>{
+    const b=el('button','choice');b.type='button';b.setAttribute('aria-pressed','false');
+    b.append(el('span','muted small',`문장 ${i+1}`));b.append(el('div','stmt',s));
+    b.addEventListener('click',()=>{
+      const ok=i===it.wrong;record(ok);
+      lockChoices(btns,i,it.wrong,'틀린 문장');
+      btns[it.wrong].classList.add('is-error');
+      const fix=el('div','fix');fix.append(el('b','','교정문'));fix.append(el('p','',it.fix));
+      verdictBox(ok,it.why,fix);
+    });return b});
+  btns.forEach(b=>box.append(b));stage.append(box);
+}
+
+/* ---- K4 조건 바꿔 보기 ---- */
+function renderWhatIf(it){
+  const p=el('div','panel');p.append(el('b','','기준 상황'));p.append(el('p','',it.base));
+  p.append(el('b','','기준 결론'));p.append(el('p','',it.base_conclusion));stage.append(p);
+  const c=el('p','');c.append(el('span','muted small','바뀐 조건  '));c.append(el('span','chip',it.change));stage.append(c);
+  stage.append(el('p','prompt',M.prompt));
+  const box=el('div','choices two');
+  const btns=['기준 결론 그대로다','결론이 달라진다'].map((label,i)=>{const b=el('button','choice center',label);b.type='button';b.setAttribute('aria-pressed','false');
+    b.addEventListener('click',()=>{const ans=it.answer==='same'?0:1,ok=i===ans;record(ok);lockChoices(btns,i,ans,'정답');verdictBox(ok,it.why)});return b});
+  btns.forEach(b=>box.append(b));stage.append(box);
+}
+
+/* ---- 종료 요약 ---- */
+function showResult(){
+  progress();stage.replaceChildren();
+  const right=results.filter(r=>r.ok).length;
+  stage.append(el('h2','','결과'));
+  const sc=el('p','score',`${N}문항 중 ${right}문항 맞음`);sc.setAttribute('role','status');stage.append(sc);
+  const rows=el('div','rows');
+  results.forEach(r=>{const p=el('p');p.append(el('span','mk '+(r.ok?'ok':'bad'),r.ok?'○':'✕'));p.append(el('span','',r.title+(r.ok?' — 맞음':' — 다시 볼 부분')));rows.append(p)});
+  stage.append(rows);
+  const rules=DATA.summary.correct_rules||[],caution=DATA.summary.caution||'';
+  stage.append(el('h3','','확인된 법리'));rules.forEach(x=>stage.append(el('p','','• '+x)));
+  stage.append(el('h3','','주의 사항'));stage.append(el('p','',caution));
+  stage.append(el('p','muted small','답변은 저장·전송되지 않습니다. 형성학습용 퀴즈이며 개별 사건의 법률 판단이 아닙니다.'));
+  const msg=el('p','small');msg.setAttribute('role','status');
+  const copy=el('button','next','결과 복사');copy.type='button';
+  copy.addEventListener('click',async()=>{
+    try{await navigator.clipboard.writeText([`${N}문항 중 ${right}문항 맞음`,'','확인된 법리',...rules.map(x=>'• '+x),'','주의 사항',caution].join('\n'));msg.textContent='결과를 복사했습니다.'}
+    catch(_){msg.textContent='이 브라우저에서는 복사할 수 없습니다. 결과를 선택해 복사해 주세요.'}});
+  stage.append(copy,msg);
+  copy.focus({preventScroll:true});
+}
+if(N)start();else stage.textContent='문항을 불러오지 못했습니다.';
+})();
+</script></body></html>
