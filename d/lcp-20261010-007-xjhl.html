@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>주차장 차량 사고, "도로냐 아니냐" 하나가 아니라 책임의 층을 쌓는 문제다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 주차장 차량 사고</div>
+    <h1>주차장 차량 사고, "도로냐 아니냐" 하나가 아니라 책임의 층을 쌓는 문제다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> '주차장은 도로가 아니니 도로교통법은 안 된다'는 통념으로 한 줄에 정리하면 유형별 차이를 놓칩니다. <b>도로교통법 제2조</b>의 도로 정의부터 가리되, 시설 하자와 운행자·사용자 책임, 보험의 층까지 겹쳐 보아야 합니다. 한 사고에 두 층 이상이 동시에 성립할 수 있습니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      복층 구조를 떠올리십시오. 아래층은 운전자끼리의 과실, 그 위층은 주차장 시설의 하자, 또 그 위층은 대행 인력을 쓴 차주의 책임입니다. 보험도 층마다 다르게 겹칩니다. '주차장이니 한 층'으로 덮어버리면 위층의 배상 주체를 놓칩니다. <b>책임의 층을 하나씩 쌓아 올리는 것</b>이 이 사건의 정리입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+        <p>첫 층은 <b>도로교통법 제2조</b>입니다. 이 조는 '도로'를 일반 교통에 사용되는 장소 등으로 정의합니다. 주차장은 원칙적으로 이 도로에 포함되지 않으므로, 주차장 안에서의 사고는 일반 도로 주행 사고와 같은 법리가 그대로 적용되지 않는 경우가 많습니다. 다만 주차장이 도로의 정의에 포함되는지 여부가 사고 유형별로 달라질 수 있고, 주차장 내 사고는 주행 중·주차 중·보행자·주차면 이탈 사고 등이 혼재합니다.</p>
+    <p>둘째 층은 시설의 하자입니다. 주차장 관리자(시설 소유자·운영자)가 주차장법상 안전기준(조명·바닥 상태·안전표지판·배수)을 위반한 경우에는 <b>민법 제758조</b>의 공작물책임에 따라 별도의 손해배상책임을 부담할 수 있습니다. 차량 간 과실 다툼과는 별개로, 시설 자체의 하자가 사고에 기여했는지가 또 하나의 쟁점입니다.</p>
+    <p>셋째 층은 운행자 책임과 사용자 책임입니다. <b>자동차손해배상 보장법 제3조</b>는 자기를 위하여 자동차를 운행하는 자의 손해배상책임을 정하므로, 주차장 안에서도 자동차 운행 중 사고라면 이 책임이 문제 됩니다. 여기에 차주가 주차대행업체의 선정·감독을 게을리한 경우에는 <b>민법 제756조</b>의 사용자책임이 병행될 수 있습니다. 발렛과 대행이 얽히는 장면에서 이 층이 자주 등장합니다.</p>
+    <p>책임의 층이 쌓이면 보험도 겹칩니다. <b>자동차손해배상 보장법 제5조</b>는 자동차 보유자의 보험 가입 의무를 정하고, 이와 별개로 대부분의 주차대행업체는 영업배상책임보험에 가입되어 있습니다. 어느 보험이 어느 층의 손해를 담당하는지부터 확인해야 합니다. 사고 직후의 대응(현장 보존·통보·수리 견적)이 늦으면, 나중에 어느 층의 책임이 살아 있는지를 다툴 때 기록이 비어 있게 됩니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>책임의 층을 가르는 조건</h2>
+    <ul class="points">
+      <li><b>장소 판정</b> — 도로교통법 제2조의 도로 정의에 해당하는 구간인지부터 가려 사고 유형을 나눕니다. '주차장이니 도로교통법은 안 된다'로 한 줄에 정리하면 유형별 차이를 놓칩니다.</li>
+      <li><b>유형 분류</b> — 주행·주차·시동·개문·보행자·주차면 이탈 중 어느 유형인지 기록해 적용 법리를 정합니다.</li>
+      <li><b>시설 하자</b> — 주차장법상 안전기준 위반 여부와 민법 제758조 공작물책임 가능성을 검토합니다. 차량 간 과실 다툼과 별개입니다.</li>
+      <li><b>운행·사용자 책임</b> — 자동차손해배상 보장법 제3조의 운행자 책임과, 대행업체 선정·감독 문제 시 민법 제756조 사용자책임을 함께 봅니다. 두 층 이상이 동시에 성립할 수 있습니다.</li>
+      <li><b>보험 대조</b> — 자동차손해배상 보장법 제5조의 가입 의무와 주차대행업체의 영업배상책임보험 가입 여부를 확인해 배상 범위를 정리합니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 세 층은 서로 배타적이지 않습니다. 한 사고에서 두 층 이상이 동시에 성립할 수 있고, 그만큼 배상의 주체와 범위가 늘어납니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">사고 유형과 책임의 층을 표로 나눠야 합니다. 다섯 단계를 갖추십시오.</p>
+    <ol>
+      <li><b>① 장소 판정</b> — 도로교통법 제2조의 도로 정의에 해당하는 구간인지부터 가려 사고 유형을 나눕니다.</li>
+      <li><b>② 유형 분류</b> — 주행·주차·시동·개문·보행자·주차면 이탈 중 어느 유형인지 기록해 적용 법리를 정합니다.</li>
+      <li><b>③ 시설 점검</b> — 주차장법상 안전기준(조명·바닥·표지판·배수) 위반 여부와 민법 제758조 공작물책임 가능성을 검토합니다.</li>
+      <li><b>④ 운행·사용자 책임</b> — 자동차손해배상 보장법 제3조의 운행자 책임과, 대행업체 선정·감독 문제 시 민법 제756조 사용자책임을 함께 봅니다.</li>
+      <li><b>⑤ 보험 대조</b> — 자동차손해배상 보장법 제5조의 가입 의무와 주차대행업체의 영업배상책임보험 가입 여부를 확인해 배상 범위를 정리합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
