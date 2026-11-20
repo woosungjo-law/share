@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko" data-design="M2">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>사고로 다친 사람의 소득을 어떻게 잡나 — 신고소득·실제소득·통계소득 세 갈래 · 3MUST</title>
+<link rel="icon" href="data:,">
+<style>
+:root { color-scheme:light dark; --bg:#edf1f3; --paper:#fff; --ink:#202d3d; --muted:#596b80; --line:#cbd6e4; --accent:#245aa6; --wash:#e7eef8; font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif; }
+@media(prefers-color-scheme:dark){:root{--bg:#111a20;--paper:#1a252d;--ink:#eff4f4;--muted:#bac7c8;--line:#394a52;--wash:#253541;}}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);line-height:1.55}
+main{width:calc(100% - 28px);max-width:850px;margin:24px auto;padding:clamp(22px,5vw,48px);background:var(--paper);border:1px solid var(--line);border-top:7px solid var(--accent)}
+.eyebrow{font-size:.75rem;font-weight:750;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin:0 0 10px}
+h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.12;letter-spacing:-.035em;margin:0;text-wrap:balance}
+.situation{color:var(--muted);max-width:64ch;margin:14px 0 24px}
+.three{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+section{min-width:0;padding:17px 0;border-top:1px solid var(--line)}
+h2{font-size:.9rem;color:var(--accent);margin:0 0 7px;letter-spacing:.02em}
+p,li{max-width:68ch} section p{margin:0} section ul,section ol{margin:0;padding-left:1.25rem}
+.table-wrap{max-width:100%;overflow-x:auto;margin:10px 0 0;border:1px solid var(--line);border-radius:8px;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;min-width:560px;font-size:.88rem;line-height:1.45}
+th,td{padding:9px 11px;text-align:left;vertical-align:top;border-right:1px solid var(--line);border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+th:last-child,td:last-child{border-right:0} tbody tr:last-child td{border-bottom:0}
+th{background:var(--wash);font-weight:700;color:var(--ink)}
+.pause{margin-top:20px;padding:13px 15px;background:var(--wash);border-left:3px solid var(--accent)}
+.pause strong{display:block;margin-bottom:4px}.sources{margin-top:20px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+.sources p{margin:4px 0}.disclaimer{font-size:.75rem;color:var(--muted);margin-top:18px}
+html[data-design="M1"]{--accent:#bd4d28;--wash:#f8e7df;--bg:#ece9e5;--line:#dfc7bb;--ink:#252b2c;--muted:#59615f}
+html[data-design="M1"] main{border-top-width:10px}.m1 .three{grid-template-columns:1fr 1fr;gap:12px}.m1 section{border:1px solid var(--line);padding:14px;background:color-mix(in srgb,var(--wash) 35%,var(--paper))}.m1 section:last-child{grid-column:1/-1}
+html[data-design="M2"]{--accent:#176b68;--wash:#e3efed;--bg:#e7eeee;--line:#c5d7d4;--ink:#162c31;--muted:#52696a}
+html[data-design="M2"] h1{font-family:Georgia,"Batang",serif;font-weight:600}.m2 .three{grid-template-columns:1fr 1fr;gap:22px}.m2 section:nth-child(2){background:var(--wash);padding:15px;border-top:0}.m2 section:last-child{grid-column:1/-1}
+html[data-design="M3"]{--accent:#126d57;--wash:#e4f1eb;--bg:#e9eeea;--line:#c5d7cc;--ink:#1d3028;--muted:#5b6e64}
+.m3 .three{position:relative;padding-left:20px}.m3 .three:before{content:"";position:absolute;top:18px;bottom:18px;left:4px;width:2px;background:var(--accent);opacity:.45}.m3 section{position:relative;padding-left:14px}.m3 section:before{content:"";position:absolute;left:-20px;top:20px;width:9px;height:9px;border:2px solid var(--accent);border-radius:50%;background:var(--paper)}
+html[data-design="M4"]{--accent:#714d83;--wash:#eee8f3;--bg:#ece8ef;--line:#d7ccdf;--ink:#292331;--muted:#686071}
+.m4 .situation{background:var(--wash);border-left:3px solid var(--accent);padding:12px 15px}.m4 .three{grid-template-columns:1fr 1fr;gap:12px}.m4 section{border:1px solid var(--line);padding:15px}.m4 section:last-child{grid-column:1/-1}
+/* M4-wide is reserved for cards whose text and table need equal full-width measure. */
+.m4-wide .three{grid-template-columns:1fr;gap:14px}.m4-wide section:last-child{grid-column:auto}
+html[data-design="M5"]{--accent:#245aa6;--wash:#e7eef8;--bg:#edf1f3;--line:#cbd6e4;--ink:#202d3d;--muted:#596b80}
+.m5 .situation{background:var(--wash);padding:10px 12px;border:1px solid var(--line)}.m5 section{display:grid;grid-template-columns:minmax(145px,.34fr) 1fr;gap:18px}.m5 h2{color:var(--ink)}
+@media(prefers-color-scheme:dark){
+ html[data-design="M1"]{--accent:#f29a72;--wash:#392d29;--bg:#131a1a;--paper:#202929;--line:#48524f;--ink:#edf1ed;--muted:#b9c5bf}
+ html[data-design="M2"]{--accent:#73c6be;--wash:#203936;--bg:#101a1b;--paper:#1b292b;--line:#405452;--ink:#eaf3f2;--muted:#afc6c3}
+ html[data-design="M3"]{--accent:#78d4a8;--wash:#20382f;--bg:#111a17;--paper:#1b2822;--line:#40564a;--ink:#eaf3ed;--muted:#b4c8bc}
+ html[data-design="M4"]{--accent:#d0a5e2;--wash:#342b3a;--bg:#19151d;--paper:#28212e;--line:#51445b;--ink:#f1eaf4;--muted:#c7b9ce}
+ html[data-design="M5"]{--accent:#8cb7ff;--wash:#24364d;--bg:#141a22;--paper:#202a37;--line:#3d4d62;--ink:#edf2fa;--muted:#b8c5d8}
+}
+@media(max-width:620px){main{width:calc(100% - 18px);max-width:850px;margin:9px auto;padding:22px 17px}.m1 .three,.m2 .three,.m4 .three{grid-template-columns:1fr}.m1 section:last-child,.m2 section:last-child,.m4 section:last-child{grid-column:auto}.m5 section{grid-template-columns:1fr;gap:5px}}
+@media print{@page{size:A4 portrait;margin:10mm}html{color-scheme:light}body{background:#fff}main{width:100%;max-width:none;margin:0;padding:10mm;border:0;border-top:4mm solid var(--accent);box-shadow:none}.sources,.disclaimer{font-size:8.5pt}a{color:inherit;text-decoration:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="m2">
+  <p class="eyebrow">3MUST · 민사법</p>
+  <h1>사고로 다친 사람의 소득을 어떻게 잡나 — 신고소득·실제소득·통계소득 세 갈래</h1>
+  <p class="situation"><strong>적용 상황:</strong> 사고로 다친 사람의 소득을 어떻게 잡나 — 신고소득·실제소득·통계소득 세 갈래</p>
+  <div class="three">
+    <section><h2>Must Know · 알아야 할 것</h2><p>출발점은 하나입니다. 불법행위 당시 일정한 수입을 얻고 있던 피해자의 일실수입은 <strong>객관적이고 합리적인 자료</strong>로 그 당시 실제로 얻고 있던 수입금액을 확정해 산정합니다(대법원 1994. 9. 30. 선고 93다37885 판결). "객관적이고 합리적"이라는 표현이 이 영역의 기준선입니다. 본인이 "그 정도 벌었다"고 진술하는 것은 여기에 들지 않습니다.</p><p>신고소득은 원칙이지만 절대 기준이 아닙니다. 피해자가 세무당국에 신고한 소득이 있으면 그 신고소득액을 사고 당시의 수입금액으로 보는 것이 원칙입니다. 다만 신고된 소득액이 피해자의 <strong>직업·나이·경력 등에 비추어 현저히 저액</strong>이라고 판단되거나, 신고소득 이외에 다른 소득이 있었다는 점에 대한 객관적이고 합리적인 자료가 있으면 신고소득액만을 기준으로 삼을 수 없습니다(같은 판결). 신고소득은 반박 가능한 추정이지 확정된 사실이 아닙니다.</p><p>실제소득의 증거가 없으면 통계로 내려갑니다. 피해자가 일정한 수입을 얻고 있었으나 신빙성 있는 실제 수입에 대한 증거가 제시되지 않는 경우에는, 그가 종사했던 직종과 유사한 직종 종사자들에 대한 통계소득으로 일실수입을 산정합니다(대법원 2007. 12. 14. 선고 2007다52607 판결). 자료가 없다고 청구를 포기하는 구조가 아니라, 기준을 바꿔 계산하는 구조입니다.</p><p>방향은 한쪽으로만 열려 있지 않습니다. 실제수입을 확정할 객관적 자료가 있어 그것으로 합리적인 기대수입을 산정할 수 있으면 실제수입을 기준으로 삼아야 하고, 통계소득이 실제수입보다 높다고 해서 곧바로 통계소득을 쓰는 것은 아닙니다. 실제로 얻던 수입보다 높은 통계소득만큼 장차 얻을 수 있으리라는 <strong>특수한 사정이 인정되는 경우에 한하여</strong> 통계소득을 기준으로 산정합니다(같은 판결). 통계가 높다는 사실만으로 상향되지 않는다는 뜻입니다.</p><p>손해배상의 일반 원칙은 그대로 얹혀 있습니다. 채무불이행으로 인한 손해배상은 통상의 손해를 한도로 하고, 특별한 사정으로 인한 손해는 채무자가 그 사정을 알았거나 알 수 있었을 때에만 책임이 있습니다(민법 제393조). 이 조항은 불법행위로 인한 손해배상에 준용됩니다(민법 제763조).</p></section>
+    <section><h2>Must Check · 확인할 것</h2><ul><li>사고 당시 소득의 종류를 구분했는가(급여소득·사업소득·기타 소득이 섞여 있는지)</li><li>실제소득을 보여줄 객관적 자료가 있는가(원천징수영수증, 사업소득 원장, 입금 내역, 거래처 계약서)</li><li>신고소득과 실제소득의 차이가 왜 생겼는지 설명 자료가 있는가(비용 처리, 업종 특성, 신고 누락)</li><li>신고소득이 직업·나이·경력에 비추어 현저히 저액이라고 볼 근거가 있는가</li><li>실제소득 증거가 부족할 때 적용할 유사 직종 통계의 출처와 기준연도를 특정했는가</li><li>통계소득을 실제수입보다 높게 적용하려는 경우, 그 특수한 사정을 보여줄 자료가 있는가</li><li>특별손해로 주장하는 항목이 있다면 상대방의 예견 가능성을 보여줄 자료가 있는가</li><li>소득 산정의 기준 기간(사고 직전 어느 정도 기간)을 정했는가</li><li>다음이면 멈추고 검토 — 실제소득을 신고소득보다 높게 주장하는 것이 세무상 문제와 연결되는 경우</li><li>다음이면 멈추고 검토 — 사업소득의 비용 구조가 자료마다 다르게 나타나는 경우</li><li>다음이면 멈추고 검토 — 상대방이 신고소득을 근거로 이미 합의금을 제시한 경우</li></ul></section>
+    <section><h2>Must Do · 실행할 것</h2><ol><li>소득을 종류별로 분해합니다. 급여소득, 사업소득, 기타 소득을 한 표에 나란히 놓습니다. 하나로 뭉뚱그리면 어느 자료가 어느 소득을 뒷받침하는지 설명할 수 없습니다.</li><li>실제소득 자료를 모읍니다. 원천징수영수증, 사업소득 원장, 통장 입금 내역, 거래처와 주고받은 계약서·세금계산서·정산서가 여기에 해당합니다. 플랫폼을 통해 일했다면 플랫폼 정산 내역도 자료입니다.</li><li>신고소득 자료를 따로 모읍니다. 신고소득은 없애야 할 자료가 아니라, 차이를 설명해야 할 자료입니다. 두 자료를 같은 기간·같은 항목으로 맞춰 놓습니다.</li><li>차이가 생긴 이유를 서면 한 장으로 정리합니다. 업종 특성상 비용을 많이 뺐는지, 일부만 신고했는지, 신고 자체가 누락됐는지 갈래를 나눕니다. 이유를 설명하지 못하면 신고소득 쪽이 그대로 기준이 됩니다.</li><li>실제소득 증거가 약한 부분은 유사 직종 통계로 넘깁니다. 어떤 통계인지, 기준연도가 언제인지, 그 직종이 피해자의 직종과 유사하다고 볼 근거가 무엇인지 함께 적습니다. 통계 이름만 적어 두면 나중에 반박당합니다.</li><li>통계를 실제수입보다 높게 적용하려면 특수사정 자료를 별도로 붙입니다. 승진·자격 취득·수주 확대처럼 장래 소득 상승을 뒷받침하는 자료가 있어야 하고, 없으면 실제수입 기준으로 계산합니다.</li><li>상한과 하한을 동시에 준비합니다. 실제소득 기준 계산과 통계소득 기준 계산을 나란히 만들어 두면, 협상에서 어느 쪽이 유리한지 즉시 판단할 수 있습니다. 한쪽만 만들어 두면 상대가 다른 기준을 들고 나왔을 때 대응할 자료가 없습니다.</li><li>세무 검토를 병행합니다. 신고소득보다 실제소득이 많다고 주장하는 순간 그 차액의 세무상 처리가 문제 될 수 있습니다. 손해배상 청구와 세무 리스크는 별개 절차이므로, 소득 자료를 제출하기 전에 세무 담당의 검토를 받습니다.</li></ol></section>
+  </div>
+  
+  <div class="sources"></div>
+  <p class="disclaimer">일반적인 법률 정보입니다. 개별 사안의 결론은 사실관계와 적용 기준을 확인해 판단해야 합니다.</p>
+</main>
+</body>
+</html>
