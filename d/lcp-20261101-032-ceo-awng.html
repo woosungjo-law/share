@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>임대하지 못한 기간의 손실, 매도인에게 물을 수 있을까</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>임대하지 못한 기간의 손실, 매도인에게 물을 수 있을까</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 민법 제580조의 하자담보책임이 문제 되지만, <b>임대료 손실은 하자 사실만으로 자동 인정되지 않습니다</b>. 하자로 임대를 못한 손해는 민법 제393조의 특별 손해에 해당할 수 있고, <b>매도인이 계약 당시 그 사정을 알았거나 알 수 있었을 때</b> 배상 범위에 들어옵니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>사건의 시작: 상가 하자로 임대 일정이 밀렸습니다</h2>
+    <div class="analogy">
+      상가를 매입해 임대 사업을 준비하던 회사의 대표가 입주 전 점검에서 <b>배관 누수와 바닥 침하</b>를 발견합니다. 보수 공사가 길어지면서 임차인과의 계약이 미뤄졌고 임대 수익이 발생하지 않았습니다. 매도인은 수리비만 부담하겠다고 합니다. 대표가 정할 것은 임대료 손실까지 청구할지, 협상으로 정리할지, 매입 절차를 어떻게 바꿀지입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 보는 핵심: 하자담보책임과 손해 범위가 따로 있습니다</h2>
+    <p>민법 <b>제580조</b>는 매도인에게 <b>하자담보책임</b>을 부과합니다. 손해배상 범위가 보수비용에 한정되는지, 하자로 인한 간접 손해까지 포함되는지가 핵심 쟁점입니다.</p>
+    <p>민법 <b>제393조</b>는 손해배상의 범위를 <b>통상 손해와 특별 손해</b>로 구분합니다. 하자로 임대를 못해 발생한 임대료 손해는 <b>특별 손해에 해당할 수 있습니다</b>.</p>
+    <p>특별 손해는 <b>매도인이 계약 당시 그 사정을 알았거나 알 수 있었을 경우에만</b> 배상 범위에 포함됩니다. 즉 임대 계획을 알렸는지가 갈림길입니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>놓치기 쉬운 조건과 예외: 임대 계획을 알렸는지가 갈림길입니다</h2>
+    <p><b>예견가능성의 자료.</b> 매수 당시 임대 계획을 매도인에게 알린 자료가 있으면 예견가능성을 뒷받침할 수 있습니다. 계약서에 임대 목적이 적혀 있거나, 협상 과정에서 임대 계획을 설명한 기록이 있으면 유리합니다. 반대로 매도인이 알지 못했다는 점을 입증하면 책임이 제한됩니다.</p>
+    <p><b>하자의 입증.</b> 하자의 존재와 정도를 먼저 입증해야 합니다. 발견 당시 사진과 점검 기록, 수리 견적, 실제 공사 내역을 확보하고, 하자를 안 뒤 상당한 기간이 지나지 않도록 통지 시점을 관리하십시오. 매도인이 하자를 알면서 숨긴 사정이 있으면 책임 범위가 달라질 수 있으므로 계약 전 설명 자료도 확인해야 합니다.</p>
+    <p><b>손해의 계산.</b> 임대료 손실은 실제로 임대하지 못한 기간과 그 기간의 예상 임대료로 계산합니다. 주변 시세와 공실률, 임차인과의 협의 기록을 모아 근거를 마련하고, 수리 기간이 합리적이었는지, 손해를 줄이기 위해 노력했는지도 정리합니다. 임대료 손실은 <b>수리 기간과 임대 준비 기간을 나누어</b> 계산하고, 실제 임대가 가능했던 시점을 기준으로 산정합니다.</p>
+    <p><b>특약과 중단 기준.</b> 하자 면책 특약이 있어도 고의로 숨긴 경우에는 책임을 면하기 어려울 수 있습니다. 중단 기준은 <b>하자와 임대 지연의 인과관계를 뒷받침하는 자료가 부족할 때</b>입니다.</p>
+    <div class="callout">
+      <b>주의.</b> 협상에서는 수리비와 임대료 손실을 나누어 제시하면 대화가 수월합니다. 합의서에는 손해 항목과 금액, 향후 청구 포기 여부를 명확히 적으십시오.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>청구 범위와 협상 전략을 정하십시오.</b> 결정할 항목은 다음과 같습니다.</p>
+      <ol>
+        <li><b>① 하자 기록</b> — 발견 시점과 통지 기록, 사진·점검 기록·수리 견적·공사 내역을 확보합니다.</li>
+        <li><b>② 고지 자료</b> — 계약 당시 임대 계획을 알린 자료를 찾고 매매계약서의 하자 조항을 확인합니다.</li>
+        <li><b>③ 손해 구분</b> — 보수비와 임대료 손실을 구분해 계산하고 시세·공실률·협의 기록을 붙입니다.</li>
+        <li><b>④ 대응 선택</b> — 매도인과 협상할지 조정·소송으로 갈지 결정합니다. 협의가 어려우면 조정을 먼저 검토하고, 소송으로 갈 경우 감정과 시세 자료를 보강합니다.</li>
+        <li><b>⑤ 재발 방지</b> — 향후 매입 계약에 하자와 임대 목적 고지 조항을 넣습니다. 비용은 보수비·임대료 손실·협상·소송 비용을 함께 계산하고, 청구 금액과 근거, 협상 결과를 의사결정 기록에 남깁니다.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;">대표가 정할 것은 <b>"수리비만 받을 것인가"가 아니라 "임대 계획을 증명할 자료가 있는가"</b>입니다. 자료가 있으면 청구 범위가 달라집니다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
