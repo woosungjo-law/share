@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>국외 이전 개인정보(제28조의8), 동의 한 장이 아니라 계약과 사후 점검의 문제다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 국외 이전 개인정보</div>
+    <h1>국외 이전 개인정보(제28조의8), 동의 한 장이 아니라 계약과 사후 점검의 문제다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 해외 서버에 올린다는 사실 자체는 허용의 근거가 아니라 요건 충족을 물어야 할 신호입니다. <b>개인정보 보호법 제28조의8</b>의 예외사유를 먼저 확보하고, 그 위에 표준계약조항(SCC)을 얹고, 이전 후 목적·범위 재검토까지 묶어야 합니다. 동의서 한 장으로 끝나지 않습니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      해외로 짐을 보내는 절차에 비유합시다. 먼저 보내도 되는 근거(세관 신고)를 확인하고, 그다음 포장 계약서를 쓰고, 도착 뒤에도 짐이 약속한 용도로 쓰이는지 점검해야 합니다. 국외 이전도 같습니다. <b>근거와 계약과 사후 점검은 각각 별개</b>이고, 하나가 비면 나머지가 갖춰져도 전체가 흔들립니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+        <p>출발점은 <b>개인정보 보호법 제28조의8</b>입니다. 개인정보처리자는 원칙적으로 개인정보를 국외로 이전할 수 없고, 같은 조가 정한 예외사유가 있을 때에만 이전할 수 있습니다. 정보주체로부터 별도의 동의를 받은 경우, 법률이나 조약에 특별한 규정이 있는 경우, 정보주체와의 계약 체결과 이행을 위해 처리위탁·보관이 필요한 경우 등이 그 예외입니다.</p>
+    <p>표준계약조항(SCC)은 자주 오해됩니다. SCC는 그 자체로 제28조의8상의 독립된 면제 사유가 아닙니다. 면제는 제28조의8의 예외사유가 있을 때에만 가능하고, SCC는 그 위에 추가되는 계약상 보호장치입니다. 'SCC를 맺었으니 이전이 자동으로 허용된다'가 아니라, 이전이 허용되는 근거를 먼저 확보한 다음 그 이전을 안전하게 묶는 장치로 SCC를 체결하는 순서입니다.</p>
+    <p>이전 전 평가도 같은 맥락입니다. 이전 국가의 법적 환경과 데이터 보호 수준을 평가하고, 미흡하다면 암호화·익명화·접근 통제 같은 추가 보호조치를 마련해야 합니다. 실무적으로는 개인정보위 고시에 따른 SCC 체결이 가장 널리 쓰이며, 글로벌 클라우드나 해외 본사, 해외 협력사와의 이전에 특히 필요합니다. EU와 한국 사이처럼 국경을 넘는 이전은 한국의 요건과 함께 GDPR 요건도 충족해야 하므로, 한국 SCC와 EU SCC를 모두 검토하는 것이 안전합니다.</p>
+    <p>국외 이전은 '보내면 끝'이 아닙니다. <b>개인정보 보호법 시행령 제30조</b>가 정하는 안전성 확보 조치의 틀 안에서, 이전 후 양수인은 기존 개인정보의 처리 목적과 범위를 다시 검토하고 목적 외 사용을 금지해야 합니다. 보내는 순간의 서류만 챙기고 그 뒤의 점검을 비워 두면, 나중에 목적 외 사용이 드러날 때 방어할 기록이 남지 않습니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>근거와 계약과 점검의 갈림길</h2>
+    <ul class="points">
+      <li><b>예외사유의 성립</b> — 개인정보 보호법 제28조의8의 별도 동의·법률·조약의 특별 규정·계약 이행을 위한 처리위탁·보관 등의 예외가 실제로 성립하는지가 먼저입니다.</li>
+      <li><b>SCC의 지위</b> — SCC는 독립된 면제 사유가 아니라 예외사유 위에 얹히는 계약상 보호장치입니다. 근거 없이 계약만 갖춘 이전은 아래가 비어 있는 셈입니다.</li>
+      <li><b>이전의 범위</b> — 국외로 제공하는 경우뿐 아니라 조회되는 경우와 처리위탁·보관하는 경우도 이전에 포함될 수 있어, 클라우드 리전 하나를 옮기는 작업이 여러 이전으로 쪼개질 수 있습니다.</li>
+      <li><b>이중 요건</b> — EU를 거치는 이전은 한국 SCC와 EU SCC를 함께 검토해야 합니다. 한국의 요건과 함께 GDPR 요건도 충족해야 합니다.</li>
+      <li><b>사후 점검</b> — 개인정보 보호법 시행령 제30조의 틀에서 이전 후 양수인이 처리 목적·범위를 재검토하고 목적 외 사용을 금지해야 합니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 이전자 쪽은 '예외사유와 계약이 모두 갖추어졌다'고 주장하고, 감독기관은 '예외가 실제로 성립하는지, 사후 점검이 이뤄졌는지'를 묻습니다. 어느 하나가 비면 전체가 흔들립니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">근거·계약·점검을 한 장에 묶어야 합니다. 다섯 단계를 갖추십시오.</p>
+    <ol>
+      <li><b>① 근거 확정</b> — 이전 건별로 개인정보 보호법 제28조의8의 어느 예외사유에 해당하는지 문서로 특정합니다.</li>
+      <li><b>② SCC 체결</b> — 개인정보위 고시 표준계약조항을 체결하고, 글로벌 클라우드·해외 본사·협력사 이전에 빠짐이 없는지 목록으로 점검합니다.</li>
+      <li><b>③ 이전 전 평가</b> — 이전 국가의 법적 환경과 보호 수준을 평가하고, 미흡하면 암호화·익명화·접근 통제를 추가 조치로 마련합니다.</li>
+      <li><b>④ 이중 요건</b> — EU를 거치는 이전은 한국 SCC와 EU SCC를 함께 검토해 양쪽 요건을 충족시킵니다.</li>
+      <li><b>⑤ 사후 점검</b> — 개인정보 보호법 시행령 제30조의 틀에서 이전 후 양수인이 처리 목적·범위를 재검토하고 목적 외 사용을 금지하도록 기록을 남깁니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
