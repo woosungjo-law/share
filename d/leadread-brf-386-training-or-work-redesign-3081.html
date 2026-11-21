@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="교육이 성과로 이어지는 조건은 강의의 완성도인가, 배운 것을 쓸 수 있는 일의 구조인가 — 3분 브리핑">
+  <title>학습은 훈련인가 일의 재설계인가 · Lead Read</title>
+  <style>
+    :root { color-scheme:light; --ground:#f3f5f1; --surface:#ffffff; --ink:#181d1a; --muted:#4d574f; --rule:#cfd7cd; --accent:#1f5c4a; --accent-soft:#e4efe9; --mark:#7a5a12; --mark-soft:#f4eeda; --focus:#1f5c4a; }
+    @media(prefers-color-scheme:dark) { :root { color-scheme:dark; --ground:#12160f; --surface:#1b211a; --ink:#eef2ec; --muted:#a8b3a6; --rule:#3a443a; --accent:#8fd6b8; --accent-soft:#1b2621; --mark:#dfc078; --mark-soft:#262117; --focus:#8fd6b8; } }
+    :root[data-theme="dark"] { color-scheme:dark; --ground:#12160f; --surface:#1b211a; --ink:#eef2ec; --muted:#a8b3a6; --rule:#3a443a; --accent:#8fd6b8; --accent-soft:#1b2621; --mark:#dfc078; --mark-soft:#262117; --focus:#8fd6b8; }
+    :root[data-theme="light"] { color-scheme:light; --ground:#f3f5f1; --surface:#ffffff; --ink:#181d1a; --muted:#4d574f; --rule:#cfd7cd; --accent:#1f5c4a; --accent-soft:#e4efe9; --mark:#7a5a12; --mark-soft:#f4eeda; --focus:#1f5c4a; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--ground); color:var(--ink); font-family:"Noto Sans KR",Pretendard,"Malgun Gothic",sans-serif; line-height:1.76; word-break:keep-all; }
+    .page { width:min(100% - 36px, 900px); margin:0 auto; }
+    header { display:flex; justify-content:space-between; align-items:center; gap:16px; padding:22px 0 15px; border-bottom:1px solid var(--rule); color:var(--muted); font-size:.78rem; letter-spacing:.14em; }
+    button { font:inherit; font-size:.82rem; color:var(--ink); border:1px solid var(--rule); background:var(--surface); border-radius:2px; padding:6px 10px; cursor:pointer; letter-spacing:0; }
+    :focus-visible { outline:3px solid var(--focus); outline-offset:3px; }
+    main { padding:44px 0 60px; }
+    .kicker { margin:0 0 12px; color:var(--mark); font-size:.75rem; font-weight:800; letter-spacing:.18em; }
+    h1,h2,h3 { line-height:1.3; text-wrap:balance; }
+    h1 { font-size:clamp(1.85rem,5vw,2.95rem); font-weight:750; letter-spacing:-.04em; margin:0 0 16px; }
+    .dek { max-width:62ch; color:var(--muted); font-size:1.03rem; margin:0; }
+    .leadbox { margin:28px 0 38px; padding:20px 22px; border:1px solid var(--rule); border-top:4px solid var(--accent); background:var(--surface); }
+    .lb-label { margin:0 0 4px; color:var(--accent); font-size:.72rem; font-weight:800; letter-spacing:.13em; }
+    .lb-q { margin:0 0 14px; font-size:1.05rem; font-weight:700; }
+    .lb-a { margin:0; font-size:1.02rem; font-weight:600; }
+    section { margin:40px 0; }
+    h2 { font-size:1.3rem; margin:0 0 14px; font-weight:750; letter-spacing:-.02em; }
+    h2 span { display:block; margin-top:4px; color:var(--muted); font-size:.76rem; font-weight:600; letter-spacing:.1em; }
+    h3 { font-size:.97rem; margin:0 0 8px; }
+    p { max-width:64ch; margin:0 0 15px; }
+    .scan { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px; margin:20px 0 6px; }
+    .scan div { padding:15px 16px; background:var(--surface); border:1px solid var(--rule); border-top:3px solid var(--accent); }
+    .scan b { display:block; margin-bottom:5px; color:var(--accent); font-size:.74rem; letter-spacing:.1em; }
+    .scan p { margin:0; font-size:.92rem; }
+    .tablewrap { margin:20px 0; }
+    table { width:100%; table-layout:fixed; border-collapse:collapse; font-size:.9rem; }
+    th,td { text-align:left; padding:10px 9px; border-bottom:1px solid var(--rule); vertical-align:top; overflow-wrap:anywhere; }
+    th { color:var(--muted); font-size:.76rem; letter-spacing:.07em; }
+    td:first-child,th:first-child { width:26%; color:var(--ink); font-weight:700; }
+    .counter { margin:20px 0; padding:18px 20px; background:var(--surface); border:1px solid var(--rule); border-left:4px solid var(--mark); }
+    .counter h3 { color:var(--mark); }
+    .counter p:last-child { margin:0; }
+    .questions { counter-reset:q; list-style:none; margin:16px 0; padding:0; }
+    .questions li { counter-increment:q; display:grid; grid-template-columns:32px minmax(0,1fr); gap:10px; padding:12px 0; border-bottom:1px solid var(--rule); }
+    .questions li::before { content:counter(q,decimal-leading-zero); color:var(--mark); font-weight:800; font-size:.84rem; font-variant-numeric:tabular-nums; }
+    .closing { margin:44px 0 0; padding:22px 24px; background:var(--accent-soft); border:1px solid var(--rule); }
+    .closing h2 { font-size:1.12rem; margin:0 0 10px; }
+    .closing p { margin:0; }
+    details { padding:13px 0; border-top:1px solid var(--rule); }
+    summary { color:var(--ink); font-weight:700; cursor:pointer; }
+    .source { margin:9px 0 0; color:var(--muted); font-size:.87rem; }
+    .cite { color:var(--muted); font-size:.88rem; }
+    a { color:var(--accent); text-underline-offset:3px; }
+    footer { border-top:1px solid var(--rule); padding:18px 0 30px; color:var(--muted); font-size:.86rem; }
+    .author-credit { margin:6px 0 0; color:var(--ink); font-weight:750; }
+    @media(max-width:640px) { .page { width:min(100% - 26px,900px); } main { padding-top:32px; } section { margin:34px 0; } h2 { font-size:1.18rem; } .leadbox { padding:17px 16px; } table { font-size:.82rem; } th,td { padding:8px 5px; } .scan { grid-template-columns:1fr; } }
+    @media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header><span>LEAD READ · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="색상 테마 바꾸기">테마 바꾸기</button></header>
+    <main>
+      <p class="kicker">LEARNING / 교육은 어디서 사라지는가</p>
+      <h1>학습은 훈련인가,<br>일의 재설계인가</h1>
+      <p class="dek">교육을 마친 사람이 현장에서 아무것도 바꾸지 않는다면, 강사의 문제일까요. 자주 돌아보게 되는 것은 배운 것을 써도 손해 보지 않는 조건입니다.</p>
+
+      <div class="leadbox">
+        <p class="lb-label">핵심 질문</p>
+        <p class="lb-q">우리는 교육을 잘했는가를 묻는가, 배운 사람이 다음 주에 다르게 일할 수 있는 조건을 만들었는가를 묻는가?</p>
+        <p class="lb-label">한 문장 결론</p>
+        <p class="lb-a">교육이 성과로 이어지는지는 강의의 완성도보다 배운 것을 실제 일에서 쓸 수 있는 조건에 달려 있습니다. 교육 시간을 늘리는 데서 멈추지 말고, 새 기술을 써도 손해 보지 않는 역할·도구·평가·관리자의 반응을 함께 바꿔야 합니다. 다만 모든 업무를 교육 과정에 맞춰 다시 만드는 것도 답은 아닙니다. 개인의 동기와 조직의 사용 조건을 나눠서 진단해야 합니다.</p>
+      </div>
+
+      <section>
+        <h2>왜 지금 이 문제인가<span>수료율은 배움의 증거가 아니다</span></h2>
+        <p>교육을 평가하는 가장 쉬운 지표는 수료율과 만족도입니다. 강의가 끝나면 설문을 돌리고, 몇 명이 끝까지 들었는지 세고, 비용 대비 인원을 보고합니다. 이 숫자는 관리하기 편하지만 배움이 일에서 쓰였는지는 말해주지 않습니다.</p>
+        <p>교육을 마친 사람이 현장으로 돌아가면 곧바로 다른 힘을 만납니다. 처리 속도를 재는 지표, 익숙한 절차, 새 방식을 의심하는 동료, 승인을 요구하는 보고선입니다. 새 기술을 쓰려면 시간이 더 걸리고 실수 가능성도 커지는데, 그 비용을 혼자 부담해야 한다면 합리적인 사람은 배운 것을 숨깁니다.</p>
+        <p>그래서 질문은 두 갈래가 됩니다. 교육을 더 잘할 것인가, 아니면 배운 것이 쓰이는 일의 구조를 바꿀 것인가. 두 질문을 함께 다루지 않으면 교육은 좋은 의도만 남기고 작업 방식은 그대로입니다.</p>
+      </section>
+
+      <section>
+        <h2>배움은 어디에서 멈추는가<span>전이의 세 구간과 조건</span></h2>
+        <p>블룸·포드·볼드윈·황은 2010년 메타분석에서 훈련에서 배운 지식과 기술이 직무로 옮겨 가는 조건을 정리했습니다. 교육생의 능력과 의욕만으로 결과를 설명하지 않고, 훈련 설계, 학습 내용, 직무 환경, 전이 동기가 함께 작동한다고 봅니다. 교육 직후 시험을 잘 본 사람이 현장에서 행동을 바꾸리라는 보장은 없습니다.</p>
+        <div class="scan">
+          <div><b>교육 전 · 정할 것</b><p>어떤 업무 장면 하나를 바꿀지, 그 장면의 책임자가 누구인지 먼저 정합니다.</p></div>
+          <div><b>교육 중 · 닮게 할 것</b><p>연습이 실제 도구, 실제 시간, 실제 고객의 제약을 닮아야 합니다. 교재용 화면은 전이되지 않습니다.</p></div>
+          <div><b>교육 후 · 볼 것</b><p>첫 적용을 관찰하고, 새 방식을 쓴 사람의 지표가 불리해지지 않는지 확인합니다.</p></div>
+        </div>
+        <div class="tablewrap">
+          <table>
+            <thead><tr><th>구분</th><th>훈련 중심 접근</th><th>일의 재설계 접근</th></tr></thead>
+            <tbody>
+              <tr><td>성공 지표</td><td>수료율, 시험 점수, 만족도</td><td>업무 장면의 변화, 반복 사용</td></tr>
+              <tr><td>책임자</td><td>교육 담당자</td><td>교육 담당자와 현장 관리자 공동</td></tr>
+              <tr><td>실패 신호</td><td>현장 적용 없음</td><td>조건만 바뀌고 동기가 비어 있음</td></tr>
+              <tr><td>중단 기준</td><td>과정 종료</td><td>60일 뒤 행동이 반복되지 않을 때</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>이 틀에서 교육은 행사나 복지가 아니라 작업 시스템의 입력입니다. 교육팀이 수료율을 높이고 운영팀이 처리량만 높이면, 배운 사람은 두 목표 사이에서 새 기술을 감추게 됩니다. 전이의 최소 단위는 거창한 혁신이 아닙니다. 고객에게 질문하는 순서 하나, 보고서의 확인 항목 하나, 오류를 공유하는 회의의 규칙 하나면 충분합니다.</p>
+      </section>
+
+      <section class="case">
+        <h2>적용 사례 — 교육비를 지원한 회사가 실제로 바꾼 것<span>현장 인력의 학습 경로, 2012년</span></h2>
+        <p>한 대형 유통·물류 기업은 2012년부터 일정 기간 근무한 현장 인력을 대상으로 학비를 지원하는 제도를 시작했습니다. 이후 지원 범위는 고등학교 학력 취득, 언어 학습, 자격증, 전문대와 대학 과정으로 넓어졌습니다. 이 사례의 핵심은 돈을 냈다는 사실만이 아닙니다. 근무와 학습을 병행할 수 있도록 비용, 과정 선택, 근무 일정이라는 세 가지 조건을 하나의 제안으로 묶었다는 데 있습니다.</p>
+        <p>그러나 이 제도가 곧바로 조직 안의 역량 활용을 보장하지는 않습니다. 물류 현장에서 자격을 얻은 사람이 새 기술을 지금 업무에 적용할 권한이 없거나, 교육에 쓴 시간 때문에 단기 생산성 평가에서 불이익을 받는다면 학습은 개인의 이력으로만 남습니다. 반대로 관리자가 새 자격과 경험을 어떤 직무 이동과 문제 해결에 연결할지 설명하면, 교육은 퇴근 후 소비하는 콘텐츠가 아니라 다음 일의 선택지를 넓히는 조직 자원이 됩니다.</p>
+        <p>이 지점에서 흔한 착각이 생깁니다. 제도를 만들면 조직이 학습하는 것처럼 보이지만, 실제로 확인해야 할 것은 교육 이후의 이동입니다. 누가 어떤 자리로 옮겼는지, 어떤 업무 개선 제안이 나왔는지, 관리자의 반응이 달라졌는지, 근무와 학습을 함께 유지한 기간이 얼마인지가 남는 증거입니다.</p>
+      </section>
+
+      <section>
+        <h2>반증 — 조직의 조건만 바꾸면 교육은 작동하는가<span>동기와 조건은 서로를 기다린다</span></h2>
+        <div class="counter">
+          <h3>조건을 열어도 학습자가 목표를 갖지 않으면 새 행동은 오래가지 않는다</h3>
+          <p>노에·클라크·클라인은 2014년 정리에서 직장의 학습을 공식 훈련만이 아니라 비공식 학습, 자기주도 탐색, 동료와의 지식 교환이 결합한 과정으로 설명합니다. 조직이 시간을 주고 도구를 열어도 학습자가 자기 경력 목표와 연결하지 못하면 새 행동은 유지되지 않습니다.</p>
+          <p>반대 방향도 성립합니다. 개인의 열정만 강조하면 낡은 절차와 보상 체계가 새 기술을 다시 밀어냅니다. 그래서 "좋은 교육을 제공하면 현장이 바뀐다"는 주장은 두 번 시험해야 합니다. 교육 뒤에도 우선순위·권한·평가가 그대로라면 전이는 일어나지 않고, 조건을 바꿨는데도 학습자가 무엇을 왜 배우는지 모르고 연습할 동료를 찾지 못하면 조건 개선만으로는 부족합니다.</p>
+          <p>결국 전이는 개인의 소유물이 아니라 사용 조건과 주체적 학습이 만나는 사건입니다. 그래서 진단은 사람의 의욕을 먼저 의심하는 대신, 배운 것을 쓰려는 사람이 부딪히는 첫 번째 벽을 찾는 데서 시작해야 합니다.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>가지고 있는 것과 사용하는 것<span>배움을 소유로 볼 때 생기는 착시</span></h2>
+        <p>에리히 프롬은 소유와 존재를 구분했습니다. 무엇을 가지고 있는 상태와, 그것을 어떻게 쓰며 사는 상태는 다르다는 관점입니다. 학습도 같습니다. 자격증을 가진 상태와 배운 것을 함께 사용하는 상태는 다르고, 수료증 수와 교육비 지출은 앞의 지표에 가깝습니다.</p>
+        <p>뒤의 지표는 조용합니다. 회의에서 질문이 달라졌는지, 작업 순서가 개선됐는지, 동료에게 지식이 옮겨졌는지, 고객이 같은 설명을 두 번 하지 않게 되었는지입니다. 측정하기 어렵다고 해서 없는 것은 아니고, 측정하지 않는다고 해서 사라지지도 않습니다.</p>
+        <p>이 구분은 교육 예산을 줄이자는 말이 아닙니다. 같은 지출을 소유의 지표로만 보고하면 다음 해에 과정을 하나 더 사게 되고, 존재의 지표로 보면 관리자의 검토 시간과 업무 규칙의 수정에 예산이 배분됩니다. 배움이 사라지는 지점을 조직이 책임지고 찾는 일, 그것이 전이를 측정한다는 말의 실제 의미입니다.</p>
+      </section>
+
+      <section>
+        <h2>리더의 판단 질문<span>교육을 승인하기 전에</span></h2>
+        <ol class="questions">
+          <li>이 교육으로 바뀌어야 할 업무 장면 하나를 문장으로 적을 수 있는가?</li>
+          <li>새 방식을 처음 쓸 때 단기 지표가 불리해지지 않도록 무엇을 조정했는가?</li>
+          <li>관리자에게 교육 독려가 아니라 첫 적용을 함께 검토할 의무를 주었는가?</li>
+          <li>60일 뒤 무엇이 반복되었는지 확인할 사람과 날짜가 정해져 있는가?</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>근거 자료<span>서지와 확인 범위</span></h2>
+        <p class="cite">두 연구는 서지와 공개된 논지 범위에서 정리했습니다. 사례는 제도 시작 연도와 공개된 지원 범위에서만 다루었고, 참여율이나 생산성 효과는 인용하지 않았습니다.</p>
+        <details>
+          <summary>훈련 전이의 조건에 관한 메타분석</summary>
+          <p class="source">Brian D. Blume·J. Kevin Ford·Timothy T. Baldwin·Jason L. Huang, “Transfer of Training: A Meta-Analytic Review”, <cite>Journal of Management</cite>, 2010. 훈련 설계·직무 환경·전이 동기의 상호작용에 관한 논지를 참조했습니다. <a href="https://doi.org/10.1177/0149206309352880">학술지 서지</a>.</p>
+        </details>
+        <details>
+          <summary>직장 학습을 비공식 학습까지 넓힌 정리</summary>
+          <p class="source">Raymond A. Noe·Angela D. M. Clarke·Howard J. Klein, “Learning in the Twenty-First-Century Workplace”, <cite>Annual Review of Organizational Psychology and Organizational Behavior</cite>, 2014. 공식 훈련과 비공식 학습·자기주도 탐색의 결합에 관한 논지를 참조했습니다. <a href="https://doi.org/10.1146/annurev-orgpsych-031413-091321">학술지 서지</a>.</p>
+        </details>
+        <details>
+          <summary>사례 자료 — 2012년 학비 지원 제도</summary>
+          <p class="source">해당 기업이 공개한 제도 안내 페이지와 2012년 시행 관련 보도 자료. 지원 대상, 교육 경로, 근무 일정과의 병행 조건은 공개 기록으로 확인되는 범위에서만 서술했고, 참여 인원과 성과 수치는 쓰지 않았습니다. <a href="https://www.aboutamazon.com/news/workplace/amazon-career-choice">제도 공개 안내</a>.</p>
+        </details>
+        <details>
+          <summary>소유와 존재의 구분</summary>
+          <p class="source">에리히 프롬, <cite>소유냐 존재냐</cite>, 1976년 영문판 간행. 가지는 양식과 사용하는 양식의 구분에 관한 논지를 개념 수준에서 참조했으며 원문 인용은 하지 않았습니다. <a href="https://us.macmillan.com/books/9780062510464/tohaveortobe">출판사 서지</a>.</p>
+        </details>
+      </section>
+
+      <section class="closing">
+        <h2>한 줄로 남기면</h2>
+        <p>교육의 성과는 강의실에서 결정되지 않습니다. 배운 사람이 다음 주에 그 방식을 써도 손해 보지 않는 조건, 즉 역할과 도구와 평가와 관리자의 반응이 함께 움직여야 합니다. 동시에 조건만 열어 두고 학습자의 목표를 묻지 않으면 새 행동은 오래가지 않습니다. 수료증을 세는 일에서 멈추지 말고, 배운 것이 사라지는 지점을 조직이 책임지고 찾아야 합니다. 교육은 사람을 채우는 일이 아니라 일을 다시 설계하는 일의 일부입니다.</p>
+      </section>
+    </main>
+    <footer>Lead Read<p class="author-credit">&lt;조우성 변호사 작성&gt;</p></footer>
+  </div>
+  <script>
+    const root = document.documentElement;
+    const button = document.getElementById('theme-toggle');
+    button.addEventListener('click', () => {
+      const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+      root.dataset.theme = next;
+      button.setAttribute('aria-label', next === 'dark' ? '라이트 테마로 바꾸기' : '다크 테마로 바꾸기');
+    });
+  </script>
+</body>
+</html>
