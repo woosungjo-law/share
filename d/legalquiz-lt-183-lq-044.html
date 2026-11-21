@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="referrer" content="no-referrer">
+<title>대표이사가 이사회 결의 없이 중요한 자산을 처분했다면, 거래상대방의 선의·중과실을 확인했나요?</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Segoe UI","Malgun Gothic",sans-serif;color:#1b2530;background:#f4f6f8;line-height:1.6;
+  --ink:#1b2530;--muted:#596873;--line:#c9d2d9;--brand:#176b60;--brand-bg:#eef6f4;--ok:#176b60;--ok-bg:#e6f4ef;--bad:#a3322b;--bad-bg:#fbeceb}
+*{box-sizing:border-box}
+body{margin:0}
+.wrap{max-width:720px;margin:auto;padding:20px 16px 40px}
+.card{background:#fff;border:1px solid #dbe1e6;border-radius:16px;padding:20px;margin:12px 0;box-shadow:0 2px 10px #1525360a}
+h1{font-size:1.3rem;margin:4px 0 8px}
+h2{font-size:1.05rem;margin:0 0 10px}
+h3{font-size:.98rem;margin:18px 0 6px}
+p{margin:8px 0}
+.muted{color:var(--muted)}
+.small{font-size:.9rem}
+.progress{height:8px;background:#e8edf1;border-radius:10px;overflow:hidden;margin-top:10px}
+.progress>i{display:block;height:100%;background:var(--brand);width:0;transition:width .2s}
+.badge{display:inline-block;padding:2px 10px;border-radius:99px;background:#e8edf1;font-size:.82rem;margin-bottom:8px}
+.prompt{font-size:1.02rem;font-weight:650;margin:14px 0 10px}
+.panel{background:#f7f9fa;border:1px solid #e2e8ec;border-radius:12px;padding:12px 14px;margin:10px 0}
+.panel b{display:block;font-size:.82rem;color:var(--muted);margin-bottom:2px}
+.choices{display:grid;gap:10px;margin-top:10px}
+.choices.two{grid-template-columns:1fr 1fr}
+@media (max-width:420px){.choices.two{grid-template-columns:1fr}}
+.choice{font:inherit;color:inherit;background:#fff;border:2px solid var(--line);border-radius:12px;padding:12px 14px;min-height:52px;text-align:left;cursor:pointer;overflow-wrap:anywhere;width:100%}
+.choice:hover:not(:disabled){background:var(--brand-bg);border-color:var(--brand)}
+.choice:disabled{cursor:default;color:var(--ink);opacity:1}
+.choice.center{text-align:center;font-weight:650}
+.choice[aria-pressed="true"]{border-color:#2b4a63;background:#eef3f8}
+.choice.is-correct{border-color:var(--ok);background:var(--ok-bg)}
+.choice.is-wrong{border-color:var(--bad);background:var(--bad-bg)}
+.choice.is-error .stmt{text-decoration:line-through;text-decoration-thickness:2px;color:var(--bad)}
+.tag{display:inline-block;margin:6px 6px 0 0;padding:1px 8px;border-radius:99px;font-size:.78rem;font-weight:700;background:#2b4a63;color:#fff}
+.is-correct .tag.t-ok,.tag.t-ok{background:var(--ok)}
+.tag.t-bad{background:var(--bad)}
+.verdict{font-weight:800;font-size:1.05rem;margin:0 0 6px}
+.verdict.ok{color:var(--ok)}
+.verdict.bad{color:var(--bad)}
+.feedback{border-left:5px solid var(--brand);background:var(--brand-bg);padding:12px 14px;margin-top:16px;border-radius:6px}
+.feedback.bad{border-left-color:var(--bad);background:var(--bad-bg)}
+.fix{margin-top:10px;padding:10px 12px;border-radius:8px;background:var(--ok-bg);border:1px solid #b9dccf}
+.fix b{color:var(--ok)}
+.next{font:inherit;font-weight:700;color:#fff;background:var(--brand);border:0;border-radius:12px;padding:12px 18px;min-height:48px;cursor:pointer;margin-top:14px;width:100%}
+.next.alt{background:#fff;color:var(--brand);border:2px solid var(--brand)}
+.bubble{max-width:88%;padding:10px 14px;border-radius:16px;margin:8px 0;overflow-wrap:anywhere}
+.bubble.them{background:#eef1f4;border-top-left-radius:4px}
+.bubble.me{background:#d9ece7;margin-left:auto;border-top-right-radius:4px}
+.who{display:block;font-size:.78rem;font-weight:700;color:var(--muted)}
+.chip{display:inline-block;background:#fff3d6;border:1px solid #ecd28a;border-radius:99px;padding:4px 12px;font-weight:700}
+.rows p{display:flex;gap:8px;margin:6px 0}
+.rows .mk{flex:none;width:1.6em;font-weight:800}
+.mk.ok{color:var(--ok)}.mk.bad{color:var(--bad)}
+.score{font-size:1.5rem;font-weight:800;margin:4px 0 10px}
+.sr{position:absolute;left:-9999px}
+</style>
+</head>
+<body><main class="wrap">
+<header class="card"><h1>대표이사가 이사회 결의 없이 중요한 자산을 처분했다면, 거래상대방의 선의·중과실을 확인했나요?</h1><p class="muted">대표이사의 포괄적 권한, 이사회 결의 사항, 거래상대방의 보호 기준과 표현대표이사 책임을 구분해 확인해 보세요.</p>
+<div class="progress" aria-hidden="true"><i id="bar"></i></div>
+<p id="counter" class="muted small" aria-live="polite"></p></header>
+<section id="stage" class="card"></section>
+</main>
+<script>
+(()=>{'use strict';
+const DATA={"model":"judge","items":[{"title":"대표이사의 포괄적 권한","statement":"대표이사는 상법 제389조 제3항에 따라 제209조 제1항을 준용받으므로, 회사의 영업에 관하여 재판상 또는 재판 외의 모든 행위를 할 권한이 있다.","answer":true,"why":"상법 제389조 제3항은 제209조를 대표이사에 준용하고, 제209조 제1항은 회사를 대표하는 자에게 영업에 관한 재판상 또는 재판 외의 모든 행위를 할 권한이 있다고 정합니다."},{"title":"중요한 자산 처분의 결의","statement":"상법 제393조 제1항에 따르면 대표이사는 중요한 자산의 처분·양도를 이사회 결의 없이 단독으로 결정할 수 있다.","answer":false,"why":"상법 제393조 제1항은 중요한 자산의 처분 및 양도, 대규모 재산의 차입 등 회사의 업무집행을 이사회 결의로 하도록 정합니다."},{"title":"결의가 없는 거래의 상대방 보호","statement":"중요한 자산 처분에 이사회 결의가 없었더라도, 거래 상대방이 그 부존재를 알지 못했고 중대한 과실 없이 알지 못한 경우에는 보호될 수 있다.","answer":true,"why":"대법원 2021. 2. 18. 선고 2015다45451 전원합의체 판결은 상법 제393조 제1항의 중요 자산 처분 등에도 제209조 제2항의 제3자 보호 기준을 적용합니다. 상대방은 이사회 결의 부존재를 몰랐고, 이를 몰랐다는 데 중대한 과실이 없으면 보호될 수 있습니다."},{"title":"보호 요건과 일반 과실","statement":"이사회 결의가 없었던 거래에서 상대방이 보호되려면, 중대한 과실뿐 아니라 일반적인 과실도 전혀 없어야 한다.","answer":false,"why":"대법원 2021. 2. 18. 선고 2015다45451 전원합의체 판결은 상대방에게 선의 외에 무과실까지 요구하지 않습니다. 다만 이사회 결의가 없다는 점을 알지 못한 데 중대한 과실이 있으면 거래는 무효가 될 수 있습니다."},{"title":"표현대표이사와 회사 책임","statement":"회사를 대표할 권한이 있는 것으로 인정될 만한 명칭을 사용한 이사의 행위에는, 그 이사에게 실제 대표권이 없어도 상법 제395조가 적용될 수 있다.","answer":true,"why":"상법 제395조는 대표할 권한이 있는 것으로 인정될 만한 명칭을 사용한 이사의 행위에 관하여, 그 이사에게 실제 대표권이 없더라도 회사가 선의의 제3자에 대해 책임을 지도록 정합니다. 대법원 2013. 7. 11. 선고 2013다16473 판결은 대표이사 명의를 사용한 경우에도 이 조항이 적용될 수 있다고 확인했습니다."},{"title":"표현대표 상대방의 중대한 과실","statement":"표현대표이사의 행위에서 상대방이 악의이거나 선의라도 중대한 과실이 있더라도, 회사는 상법 제395조에 따른 책임을 부담한다.","answer":false,"why":"대법원 2013. 7. 11. 선고 2013다16473 판결은 상대방이 악의이거나 선의라도 중대한 과실이 있으면 상법 제395조에 따른 회사 책임이 발생하지 않는다고 판시했습니다."}],"summary":{"correct_rules":["상법 제389조 제3항에 따라 제209조가 대표이사에 준용되고, 제209조 제1항은 영업에 관한 재판상·재판 외의 포괄적 대표 권한을 정합니다.","중요한 자산의 처분 및 양도, 대규모 재산의 차입 등 회사 업무집행은 이사회 결의로 합니다. 중요 자산 해당 여부는 재산 가액과 총자산 비중, 회사의 규모·영업·재산 상황, 경영상태, 보유 목적, 일상 업무 관련성 및 종래 처리 등을 종합해 판단합니다(대법원 2015다45451 전원합의체).","중요 자산 처분 등 제393조 제1항의 거래도 결의 흠결만으로 제3자 보호가 배제되지 않습니다. 상대방은 결의 부존재를 몰랐고 중대한 과실도 없어야 보호되며, 일반 과실만으로는 배제되지 않습니다. 중과실 판단은 인식 가능성·경험과 지위·거래관계·거래의 이례성 등을 종합합니다.","표현대표이사 행위에서 제3자가 악의이거나 선의라도 중대한 과실이 있으면 제395조상 회사 책임이 발생하지 않습니다. 2013다16473은 대표이사 명의를 사용한 경우에도 제395조가 적용될 수 있음을 확인합니다."],"caution":"일반적인 법률 학습용입니다. 개별 거래의 효력, 자산의 중요성, 상대방의 선의·중과실 또는 회사 책임을 판단하거나 보장하지 않습니다. 구체적인 거래 자료와 회사 규정, 판례 적용을 별도로 확인하세요."}};
+const stage=document.getElementById('stage'),bar=document.getElementById('bar'),counter=document.getElementById('counter');
+let at=0,results=[];
+
+const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n};
+const MODEL={
+  judge:{name:'진술 판정',prompt:'이 진술은 맞을까요?'},
+  advise:{name:'선배에게 대응하기',prompt:'선배에게 어떻게 답하시겠어요?'},
+  spot:{name:'틀린 멘트 찾기',prompt:'틀린 문장을 눌러 지적해 보세요.'},
+  whatif:{name:'조건 바꿔 보기',prompt:'이 조건이 바뀌면 결론은 어떻게 될까요?'}
+};
+const items=DATA.items,N=items.length,M=MODEL[DATA.model];
+
+function progress(){bar.style.width=Math.round(at/N*100)+'%';counter.textContent=at<N?`${at+1} / ${N}`:'완료'}
+function start(){at=0;results=[];render()}
+function render(){
+  progress();stage.replaceChildren();
+  const it=items[at];
+  stage.append(el('span','badge',`${M.name} · 문항 ${at+1}`));
+  stage.append(el('h2','',it.title));
+  ({judge:renderJudge,advise:renderAdvise,spot:renderSpot,whatif:renderWhatIf})[DATA.model](it);
+}
+
+/* ---- 공통: 선택 표시를 유지한 채 정오를 붙인다 (화면을 비우지 않는다) ---- */
+function lockChoices(btns,picked,correct,correctTag){
+  btns.forEach((b,i)=>{
+    b.disabled=true;b.setAttribute('aria-pressed',String(i===picked));
+    if(i===correct)b.classList.add('is-correct');
+    if(i===picked&&i!==correct)b.classList.add('is-wrong');
+    const wrap=el('div');
+    if(i===picked)wrap.append(el('span','tag','내 선택'),' ');
+    if(i===correct)wrap.append(el('span','tag t-ok',correctTag||'정답'));
+    if(wrap.childNodes.length)b.append(wrap);
+  });
+}
+function verdictBox(ok,why,extra){
+  const box=el('div','feedback'+(ok?'':' bad'));
+  box.setAttribute('role','status');
+  box.append(el('p','verdict '+(ok?'ok':'bad'),ok?'✓ 맞아요':'✕ 다시 볼 부분이에요'));
+  if(why)box.append(el('p','',why));
+  if(extra)box.append(extra);
+  const last=at===N-1;
+  const nb=el('button','next',last?'결과 보기':'다음 문항');nb.type='button';
+  nb.addEventListener('click',()=>{at++;if(at>=N)showResult();else render()});
+  stage.append(box,nb);
+  nb.focus({preventScroll:false});
+  return box;
+}
+function record(ok){results.push({title:items[at].title,ok})}
+
+/* ---- 진술 판정 ---- */
+function renderJudge(it){
+  const p=el('div','panel');p.append(el('b','','진술'));p.append(el('p','',it.statement));stage.append(p);
+  stage.append(el('p','prompt',M.prompt));
+  const box=el('div','choices two');
+  const btns=['맞다','틀리다'].map((label,i)=>{const b=el('button','choice center',label);b.type='button';b.setAttribute('aria-pressed','false');
+    b.addEventListener('click',()=>{const ans=it.answer?0:1,ok=i===ans;record(ok);lockChoices(btns,i,ans,'정답');verdictBox(ok,it.why)});return b});
+  btns.forEach(b=>box.append(b));stage.append(box);
+}
+
+/* ---- 선배 대응 (말풍선 대화) ---- */
+function bubble(who,text,me){const b=el('div','bubble '+(me?'me':'them'));b.append(el('span','who',who));b.append(el('span','',text));return b}
+function renderAdvise(it){
+  if(it.situation)stage.append(el('p','muted small',it.situation));
+  stage.append(bubble('선배',it.senior,false));
+  stage.append(el('p','prompt',M.prompt));
+  const order=at%2?['check','proceed']:['proceed','check'];
+  const label={proceed:'네, 그대로 진행하겠습니다.',check:'잠깐만요, 확인이 필요합니다.'};
+  const box=el('div','choices');
+  const btns=order.map((k,i)=>{const b=el('button','choice',label[k]);b.type='button';b.setAttribute('aria-pressed','false');
+    b.addEventListener('click',()=>{
+      const ok=k===it.answer,ans=order.indexOf(it.answer);record(ok);
+      lockChoices(btns,i,ans,'올바른 대응');
+      stage.append(bubble('나',label[k],true));
+      stage.append(bubble('선배',it.reply[k],false));
+      verdictBox(ok,it.why);
+    });return b});
+  btns.forEach(b=>box.append(b));stage.append(box);
+}
+
+/* ---- 틀린 멘트 찾기 ---- */
+function renderSpot(it){
+  stage.append(el('p','muted small','(가상 멘트) 아래 문장 중 정확히 하나가 틀렸습니다.'));
+  stage.append(el('p','prompt',M.prompt));
+  const box=el('div','choices');
+  const btns=it.sentences.map((s,i)=>{
+    const b=el('button','choice');b.type='button';b.setAttribute('aria-pressed','false');
+    b.append(el('span','muted small',`문장 ${i+1}`));b.append(el('div','stmt',s));
+    b.addEventListener('click',()=>{
+      const ok=i===it.wrong;record(ok);
+      lockChoices(btns,i,it.wrong,'틀린 문장');
+      btns[it.wrong].classList.add('is-error');
+      const fix=el('div','fix');fix.append(el('b','','교정문'));fix.append(el('p','',it.fix));
+      verdictBox(ok,it.why,fix);
+    });return b});
+  btns.forEach(b=>box.append(b));stage.append(box);
+}
+
+/* ---- 조건 바꿔 보기 ---- */
+function renderWhatIf(it){
+  const p=el('div','panel');p.append(el('b','','기준 상황'));p.append(el('p','',it.base));
+  p.append(el('b','','기준 결론'));p.append(el('p','',it.base_conclusion));stage.append(p);
+  const c=el('p','');c.append(el('span','muted small','바뀐 조건  '));c.append(el('span','chip',it.change));stage.append(c);
+  stage.append(el('p','prompt',M.prompt));
+  const box=el('div','choices two');
+  const btns=['기준 결론 그대로다','결론이 달라진다'].map((label,i)=>{const b=el('button','choice center',label);b.type='button';b.setAttribute('aria-pressed','false');
+    b.addEventListener('click',()=>{const ans=it.answer==='same'?0:1,ok=i===ans;record(ok);lockChoices(btns,i,ans,'정답');verdictBox(ok,it.why)});return b});
+  btns.forEach(b=>box.append(b));stage.append(box);
+}
+
+/* ---- 종료 요약 ---- */
+function showResult(){
+  progress();stage.replaceChildren();
+  const right=results.filter(r=>r.ok).length;
+  stage.append(el('h2','','결과'));
+  const sc=el('p','score',`${N}문항 중 ${right}문항 맞음`);sc.setAttribute('role','status');stage.append(sc);
+  const rows=el('div','rows');
+  results.forEach(r=>{const p=el('p');p.append(el('span','mk '+(r.ok?'ok':'bad'),r.ok?'○':'✕'));p.append(el('span','',r.title+(r.ok?' — 맞음':' — 다시 볼 부분')));rows.append(p)});
+  stage.append(rows);
+  const rules=DATA.summary.correct_rules||[],caution=DATA.summary.caution||'';
+  stage.append(el('h3','','확인된 법리'));rules.forEach(x=>stage.append(el('p','','• '+x)));
+  stage.append(el('h3','','주의 사항'));stage.append(el('p','',caution));
+  stage.append(el('p','muted small','답변은 저장·전송되지 않습니다. 형성학습용 퀴즈이며 개별 사건의 법률 판단이 아닙니다.'));
+  const msg=el('p','small');msg.setAttribute('role','status');
+  const copy=el('button','next','결과 복사');copy.type='button';
+  copy.addEventListener('click',async()=>{
+    try{const rows=results.map(r=>`${r.title} — ${r.ok?'맞음':'다시 볼 부분'}`);await navigator.clipboard.writeText([`${N}문항 중 ${right}문항 맞음`,'',...rows,'','확인된 법리',...rules.map(x=>'• '+x),'','주의 사항',caution].join('\n'));msg.textContent='결과를 복사했습니다.'}
+    catch(_){msg.textContent='이 브라우저에서는 복사할 수 없습니다. 결과를 선택해 복사해 주세요.'}});
+  stage.append(copy,msg);
+  copy.focus({preventScroll:true});
+}
+if(N)start();else stage.textContent='문항을 불러오지 못했습니다.';
+})();
+</script></body></html>
