@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="서비스 회복은 사과인가 시스템 개선인가 — 2009년 공개 위기 사례로 읽는 3분 브리핑">
+  <title>서비스 회복은 사과인가 시스템 개선인가 · Lead Read</title>
+  <style>
+    :root { color-scheme:light; --ground:#f7f5f2; --surface:#ffffff; --ink:#1b1917; --muted:#57534c; --rule:#dbd5ca; --accent:#1f4a3d; --accent-soft:#e8f0ec; --mark:#8a4b1f; --mark-soft:#f7ebe0; --focus:#1f4a3d; }
+    @media(prefers-color-scheme:dark) { :root { color-scheme:dark; --ground:#131210; --surface:#1d1b18; --ink:#f2efe7; --muted:#b3ada1; --rule:#423d34; --accent:#9dd3c1; --accent-soft:#1a2521; --mark:#e8b68d; --mark-soft:#28201a; --focus:#9dd3c1; } }
+    :root[data-theme="dark"] { color-scheme:dark; --ground:#131210; --surface:#1d1b18; --ink:#f2efe7; --muted:#b3ada1; --rule:#423d34; --accent:#9dd3c1; --accent-soft:#1a2521; --mark:#e8b68d; --mark-soft:#28201a; --focus:#9dd3c1; }
+    :root[data-theme="light"] { color-scheme:light; --ground:#f7f5f2; --surface:#ffffff; --ink:#1b1917; --muted:#57534c; --rule:#dbd5ca; --accent:#1f4a3d; --accent-soft:#e8f0ec; --mark:#8a4b1f; --mark-soft:#f7ebe0; --focus:#1f4a3d; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--ground); color:var(--ink); font-family:"Noto Sans KR",Pretendard,"Malgun Gothic",sans-serif; line-height:1.8; word-break:keep-all; }
+    .page { width:min(100% - 36px, 900px); margin:0 auto; }
+    header { display:flex; justify-content:space-between; align-items:center; gap:16px; padding:22px 0 15px; border-bottom:1px solid var(--rule); color:var(--muted); font-size:.78rem; letter-spacing:.14em; }
+    button { font:inherit; font-size:.82rem; color:var(--ink); border:1px solid var(--rule); background:var(--surface); border-radius:2px; padding:6px 10px; cursor:pointer; letter-spacing:0; }
+    :focus-visible { outline:3px solid var(--focus); outline-offset:3px; }
+    main { padding:44px 0 60px; }
+    .kicker { margin:0 0 12px; color:var(--mark); font-size:.75rem; font-weight:800; letter-spacing:.18em; }
+    h1,h2,h3 { line-height:1.3; text-wrap:balance; }
+    h1 { font-size:clamp(1.85rem,5vw,2.9rem); font-weight:750; letter-spacing:-.04em; margin:0 0 16px; }
+    .dek { max-width:62ch; color:var(--muted); font-size:1.03rem; margin:0; }
+    .leadbox { margin:28px 0 38px; padding:20px 22px; background:var(--surface); border:1px solid var(--rule); border-left:5px solid var(--accent); }
+    .lb-label { margin:0 0 4px; color:var(--accent); font-size:.72rem; font-weight:800; letter-spacing:.13em; }
+    .lb-q { margin:0 0 14px; font-size:1.05rem; font-weight:700; }
+    .lb-a { margin:0; font-size:1.02rem; font-weight:600; }
+    section { margin:40px 0; }
+    h2 { font-size:1.3rem; margin:0 0 14px; font-weight:750; letter-spacing:-.02em; }
+    h2 span { display:block; margin-top:4px; color:var(--muted); font-size:.76rem; font-weight:600; letter-spacing:.1em; }
+    h3 { font-size:.97rem; margin:0 0 8px; }
+    p { max-width:64ch; margin:0 0 15px; }
+    .signal { margin:20px 0; border-top:3px solid var(--accent); background:var(--surface); border-right:1px solid var(--rule); border-bottom:1px solid var(--rule); border-left:1px solid var(--rule); }
+    .signal .sig { display:grid; grid-template-columns:132px minmax(0,1fr); gap:14px; padding:14px 16px; border-bottom:1px solid var(--rule); }
+    .signal .sig:last-child { border-bottom:0; }
+    .siglabel { color:var(--accent); font-size:.76rem; font-weight:800; letter-spacing:.1em; padding-top:3px; }
+    .signal .sig p { margin:0; font-size:.93rem; max-width:none; }
+    .ask { margin:22px 0; padding:18px 20px; background:var(--mark-soft); border-left:4px solid var(--mark); }
+    .ask h3 { color:var(--mark); }
+    .ask p:last-child { margin:0; }
+    .counter { margin:20px 0; padding:18px 20px; background:var(--surface); border:1px solid var(--rule); border-left:4px solid var(--mark); }
+    .counter h3 { color:var(--mark); }
+    .counter p:last-child { margin:0; }
+    .questions { counter-reset:q; list-style:none; margin:16px 0; padding:0; }
+    .questions li { counter-increment:q; display:grid; grid-template-columns:32px minmax(0,1fr); gap:10px; padding:12px 0; border-bottom:1px solid var(--rule); }
+    .questions li::before { content:counter(q,decimal-leading-zero); color:var(--mark); font-weight:800; font-size:.84rem; font-variant-numeric:tabular-nums; }
+    .closing { margin:44px 0 0; padding:22px 24px; background:var(--accent-soft); border:1px solid var(--rule); }
+    .closing h2 { font-size:1.12rem; margin:0 0 10px; }
+    .closing p { margin:0; }
+    details { padding:13px 0; border-top:1px solid var(--rule); }
+    summary { color:var(--ink); font-weight:700; cursor:pointer; }
+    .source { margin:9px 0 0; color:var(--muted); font-size:.87rem; }
+    .cite { color:var(--muted); font-size:.88rem; }
+    a { color:var(--accent); text-underline-offset:3px; }
+    footer { border-top:1px solid var(--rule); padding:18px 0 30px; color:var(--muted); font-size:.86rem; }
+    .author-credit { margin:6px 0 0; color:var(--ink); font-weight:750; }
+    @media(max-width:640px) { .page { width:min(100% - 26px,900px); } main { padding-top:32px; } section { margin:34px 0; } h2 { font-size:1.18rem; } .leadbox { padding:17px 16px; } .signal .sig { grid-template-columns:1fr; gap:4px; padding:12px 13px; } .siglabel { padding-top:0; } }
+    @media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header><span>LEAD READ · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="색상 테마 바꾸기">테마 바꾸기</button></header>
+    <main>
+      <p class="kicker">RECOVERY / 사과 뒤에 남는 질문</p>
+      <h1>서비스 회복은 사과인가,<br>시스템 개선인가</h1>
+      <p class="dek">고객 불만이 생기면 기업은 먼저 사과문을 냅니다. 사과는 중요하지만, 사과만으로 서비스가 회복되지는 않습니다. 고객이 겪은 실패는 말 한마디의 문제가 아니라 주문과 인력과 규칙과 기대가 만나는 접점에서 생깁니다.</p>
+
+      <div class="leadbox">
+        <p class="lb-label">핵심 질문</p>
+        <p class="lb-q">우리는 이번 불만을 닫고 있는가, 같은 실패가 다시 일어나지 않게 규칙을 고치고 있는가?</p>
+        <p class="lb-label">한 문장 결론</p>
+        <p class="lb-a">회복은 감정을 달래는 일과 같은 실패를 막는 일을 함께 요구합니다. 사과의 속도와 운영의 기억이 같은 계획에 들어 있지 않으면, 다음 접점에서 같은 사과를 다시 하게 됩니다.</p>
+      </div>
+
+      <section>
+        <h2>왜 지금 이 문제인가<span>불만은 과정에 대한 평가다</span></h2>
+        <p>스미스·볼턴·와그너는 1999년 연구에서 고객이 서비스 실패와 회복을 평가할 때 결과의 공정성, 절차의 공정성, 상호작용의 공정성을 서로 다르게 경험한다고 설명합니다. 보상이 충분해도 절차가 불투명하거나 응대가 무시하는 태도라면 회복은 완성되지 않습니다.</p>
+        <p>고객은 무엇을 받았는지뿐 아니라 어떤 설명을 들었고 문제를 해결할 기회가 있었는지를 기억합니다. 그래서 불만 처리 건수만 보면 회복의 질을 알 수 없습니다.</p>
+        <p>이 구분은 현장 직원에게 모든 책임을 넘기지 않게 합니다. 직원의 친절은 회복의 한 요소지만, 반복되는 오류가 시스템에 남아 있으면 다음 직원도 같은 사과를 해야 합니다.</p>
+      </section>
+
+      <section>
+        <h2>회복을 가르는 세 신호<span>같은 실패를 세는 방식</span></h2>
+        <div class="signal">
+          <div class="sig">
+            <span class="siglabel">결과의 공정성</span>
+            <p>고객이 받은 보상이나 대체물이 실패의 크기에 맞는가. 이 신호가 약하면 고객은 "손해를 인정받지 못했다"고 판단합니다.</p>
+          </div>
+          <div class="sig">
+            <span class="siglabel">절차의 공정성</span>
+            <p>문제를 제기하고 처리되는 과정이 예측 가능하고 투명한가. 절차가 보이지 않으면 보상이 있어도 회복으로 느껴지지 않습니다.</p>
+          </div>
+          <div class="sig">
+            <span class="siglabel">상호작용의 공정성</span>
+            <p>설명과 태도가 존중을 담고 있는가. 자동 응답과 형식적 사과는 이 신호를 가장 빠르게 무너뜨립니다.</p>
+          </div>
+        </div>
+        <div class="ask">
+          <h3>여기서 던질 질문</h3>
+          <p>세 신호를 모두 지표로 보고 있는지 확인해 보십시오. 보상 금액만 측정하고 절차의 대기 시간과 설명의 품질을 측정하지 않는다면, 회복은 감으로 관리되고 있는 셈입니다.</p>
+          <ol class="questions">
+            <li>보상 금액 외에 절차의 대기 시간과 설명의 품질을 기록하는 지표가 있는가?</li>
+            <li>세 신호 중 어느 것이 반복 실패와 가장 자주 연결되는가?</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="case">
+        <h2>적용 사례 — 위생 영상 하나가 브랜드 전체를 흔든 사건<span>2009년 공개 위기</span></h2>
+        <p>2009년 한 피자 프랜차이즈의 매장 직원이 비위생적인 행동을 담은 영상을 공개하면서 브랜드 신뢰에 큰 위기가 발생했습니다. 회사는 해당 직원의 해고와 수사 협조, 공개 사과로 대응했고, 이후 제품 개선과 고객과의 소통을 강조하는 활동을 전개했습니다.</p>
+        <p>이 사건은 불만 접수 창구에서 처리할 수 있는 일반적 실패와 달랐습니다. 고객이 브랜드의 약속과 실제 운영을 한꺼번에 의심하게 만든 사건이었기 때문입니다. 회복의 첫 층위는 상호작용이었습니다. 최고경영자의 공개 사과와 설명은 기업이 사건을 숨기지 않는다는 신호를 보냈습니다.</p>
+        <p>두 번째 층위는 제품과 운영이었습니다. 회사는 이후 피자 품질과 주문 경험을 다시 말하는 캠페인과 제품 개선, 디지털 주문 도구를 함께 강조했습니다. 사과와 재설계가 연결될 때 고객은 기업이 감정만 관리하는 것이 아니라 약속의 내용을 다시 만들고 있다고 판단할 수 있습니다.</p>
+        <p>그렇다고 이후의 매출이나 브랜드 회복을 이 대응 하나의 결과로 단정할 수는 없습니다. 연차보고서에는 제품과 광고와 점포 운영과 배달과 디지털 주문과 프랜차이즈 관리가 함께 기록됩니다. 공개 기록이 보여주는 것은 원인 하나의 성공 공식이 아니라, 신뢰가 손상되었을 때 메시지와 제품과 운영을 동시에 조정해야 했다는 사실입니다.</p>
+      </section>
+
+      <section>
+        <h2>사과의 시간표와 회복의 시간표<span>첫날과 몇 달 뒤</span></h2>
+        <p>위기 직후의 관심과 회복된 관계는 다른 시간표를 가집니다. 첫날의 사과는 인정의 신호입니다. 그러나 몇 달 뒤 동일한 불편이 반복되지 않는지, 직원이 예외를 처리할 권한을 갖는지가 장기 신뢰를 결정합니다.</p>
+        <p>스미스·볼턴·와그너의 분석처럼 실패의 유형과 심각도, 회복 방식, 기존 관계가 만족을 바꾼다면, 하나의 보상표로 모든 실패를 처리할 수 없습니다. 어떤 실패는 즉시 보상이 필요하고, 어떤 실패는 설명과 재발 방지 약속이 더 중요하며, 어떤 실패는 고객이 선택할 수 있는 해결 경로를 요구합니다.</p>
+        <p>그래서 회복 설계에는 두 개의 시계가 필요합니다. 지금 닫아야 하는 사건의 시계와, 같은 원인이 다시 발생하지 않도록 규칙과 화면과 교육을 고치는 시계입니다. 조직은 단기 반응을 장기 학습의 완료로 착각하지 않도록 사건별 후속 지표를 남겨야 합니다.</p>
+      </section>
+
+      <section>
+        <h2>반증 — 좋은 사과가 서비스를 회복시키는가<span>말의 속도와 운영의 기억</span></h2>
+        <div class="counter">
+          <h3>사과는 필요조건이지 충분조건이 아니다</h3>
+          <p>공정성의 세 축을 설계하라는 관점은 보상과 절차와 설명을 함께 보라고 합니다. 실패의 유형과 기대의 차이가 만족을 바꾼다는 관점은 동일한 회복책이 모든 실패에 맞는다는 가정을 버리라고 합니다.</p>
+          <p>두 요구는 서로를 지우지 않습니다. 공개 사과가 없으면 기업은 고객의 경험을 인정하지 않는 것처럼 보이고, 제품과 운영의 변화가 없으면 사과는 일회성 장면으로 끝납니다. 반대로 모든 문제를 대규모 캠페인으로 덮으려 하면 실제 접점의 작은 실패가 계속됩니다.</p>
+          <p>그래서 회복의 성과는 사과문 조회 수가 아니라, 고객이 다시 접점에 들어왔을 때 실제 경험이 달라졌는지로 확인해야 합니다. 같은 불만이 같은 원인으로 반복되는지가 가장 정직한 지표입니다.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>고객은 문장이 아니라 몸으로 평가한다<span>지각의 단위</span></h2>
+        <p>모리스 메를로퐁티는 인간의 지각을 머릿속에서 정보를 처리하는 일로만 보지 않고, 몸이 세계와 부딪히며 의미를 얻는 경험으로 이해했습니다. 서비스도 광고 문구를 읽는 순간보다 주문하고 기다리고 받고 항의하는 몸의 경험 속에서 평가됩니다.</p>
+        <p>고객은 기업의 약속을 문장으로만 믿지 않고 접점의 속도와 표정과 화면과 포장과 해결 방식으로 느낍니다. 그래서 회복의 단위를 "무슨 사과문을 낼 것인가"에서 "고객이 어느 순간 불편을 느꼈는가"로 옮겨야 합니다.</p>
+        <p>다음 개선 회의에서는 불만 건수 옆에 고객 여정의 장면을 그려 보십시오. 대기하고, 이동하고, 설명을 듣고, 다시 연락하는 각 장면에서 무엇이 달라질 것인지 적어야 합니다. 회복된 서비스는 기업이 잘 말했다는 뜻이 아니라 고객이 다시 안심할 수 있다는 뜻입니다.</p>
+      </section>
+
+      <section>
+        <h2>리더의 판단 질문<span>불만 처리 회의에서</span></h2>
+        <ol class="questions">
+          <li>이번 보상은 실패의 크기와 결과의 공정성에 맞는가?</li>
+          <li>고객이 처리 과정을 예측할 수 있었는가, 아니면 기다리게만 했는가?</li>
+          <li>같은 원인의 불만이 최근 3개월 안에 반복되었는가?</li>
+          <li>현장 직원이 예외를 처리할 권한을 가지고 있는가?</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>근거 자료<span>서지와 확인 범위</span></h2>
+        <p class="cite">두 연구는 학술지 서지와 공개 논지 범위에서 정리했습니다. 사례는 공개 보도와 연차보고서 서술 범위에서 다루었고, 매출 회복 수치는 인용하지 않았습니다.</p>
+        <details>
+          <summary>서비스 실패와 회복의 평가 모델</summary>
+          <p class="source">Amy K. Smith·Ruth N. Bolton·Janet Wagner, “A Model of Customer Satisfaction with Service Encounters Involving Failure and Recovery”, <cite>Journal of Marketing Research</cite>, 1999. 결과·절차·상호작용 공정성에 관한 논지를 참조했습니다. <a href="https://doi.org/10.2307/3152082">학술지 서지</a>.</p>
+        </details>
+        <details>
+          <summary>실패의 심각도와 회복 평가</summary>
+          <p class="source">T. Weun·J. S. Beatty·M. A. Jones, “The Impact of Service Failure Severity on Service Recovery Evaluations”, <cite>Journal of Services Marketing</cite>, 2004. 실패 유형·심각도와 회복 방식의 상호작용에 관한 논지를 참조했습니다. <a href="https://doi.org/10.1108/08876040410519645">학술지 서지</a>.</p>
+        </details>
+        <details>
+          <summary>사례 자료 — 2009년 위기 대응</summary>
+          <p class="source">해당 기업의 2009년 공개 사과 관련 회사 자료와 당시 보도 기록. 사건 경과와 대응 서술만 참조했습니다. <a href="https://ir.dominos.com/financial-information/annual-reports-and-proxy-statements">투자자 자료</a>.</p>
+        </details>
+        <details>
+          <summary>사례 자료 — 제품·디지털 주문 개선</summary>
+          <p class="source">해당 기업의 2009~2012년 연차보고서. 제품 개선과 디지털 주문, 브랜드 캠페인에 관한 서술만 참조했고 매출 수치는 쓰지 않았습니다. <a href="https://ir.dominos.com/financial-information/annual-reports-and-proxy-statements">연차보고서 목록</a>.</p>
+        </details>
+      </section>
+
+      <section class="closing">
+        <h2>한 줄로 남기면</h2>
+        <p>회복은 사과의 문장이 아니라 접점의 변화로 완성됩니다. 결과와 절차와 상호작용의 공정성을 함께 보고, 같은 원인의 불만이 반복되는지를 세십시오. 사과의 시계와 운영의 시계가 따로 움직이면 첫날의 진정성은 몇 달 뒤의 반복 앞에서 사라집니다. 고객은 기업이 잘 말했는지가 아니라 다시 왔을 때 안심할 수 있는지로 판단합니다. 그 판단이 남을 때 사과는 시스템 개선의 입구가 됩니다.</p>
+      </section>
+    </main>
+    <footer>Lead Read<p class="author-credit">&lt;조우성 변호사 작성&gt;</p></footer>
+  </div>
+  <script>
+    const root = document.documentElement;
+    const button = document.getElementById('theme-toggle');
+    button.addEventListener('click', () => {
+      const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+      root.dataset.theme = next;
+      button.setAttribute('aria-label', next === 'dark' ? '라이트 테마로 바꾸기' : '다크 테마로 바꾸기');
+    });
+  </script>
+</body>
+</html>
