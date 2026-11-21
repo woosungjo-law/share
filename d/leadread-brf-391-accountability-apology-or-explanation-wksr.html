@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="책임은 사과로 완성되는가, 설명과 판단의 경로가 필요한가 — 대규모 정보 유출 사례로 읽는 3분 브리핑">
+  <title>책임은 사과인가 추적 가능한 설명인가 · Lead Read</title>
+  <style>
+    :root { color-scheme:light; --ground:#f7f4f5; --surface:#ffffff; --ink:#1c1518; --muted:#564a4f; --rule:#dbd0d4; --accent:#5b2033; --accent-soft:#f0e6ea; --mark:#2f5d5a; --mark-soft:#e6efed; --focus:#5b2033; }
+    @media(prefers-color-scheme:dark) { :root { color-scheme:dark; --ground:#14100f; --surface:#1e1918; --ink:#f2ecec; --muted:#b8a9ad; --rule:#463a3d; --accent:#e0a8bb; --accent-soft:#241a1d; --mark:#8fd0c9; --mark-soft:#182322; --focus:#e0a8bb; } }
+    :root[data-theme="dark"] { color-scheme:dark; --ground:#14100f; --surface:#1e1918; --ink:#f2ecec; --muted:#b8a9ad; --rule:#463a3d; --accent:#e0a8bb; --accent-soft:#241a1d; --mark:#8fd0c9; --mark-soft:#182322; --focus:#e0a8bb; }
+    :root[data-theme="light"] { color-scheme:light; --ground:#f7f4f5; --surface:#ffffff; --ink:#1c1518; --muted:#564a4f; --rule:#dbd0d4; --accent:#5b2033; --accent-soft:#f0e6ea; --mark:#2f5d5a; --mark-soft:#e6efed; --focus:#5b2033; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--ground); color:var(--ink); font-family:"Noto Sans KR",Pretendard,"Malgun Gothic",sans-serif; line-height:1.76; word-break:keep-all; }
+    .page { width:min(100% - 36px, 900px); margin:0 auto; }
+    header { display:flex; justify-content:space-between; align-items:center; gap:16px; padding:22px 0 15px; border-bottom:1px solid var(--rule); color:var(--muted); font-size:.78rem; letter-spacing:.14em; }
+    button { font:inherit; font-size:.82rem; color:var(--ink); border:1px solid var(--rule); background:var(--surface); border-radius:2px; padding:6px 10px; cursor:pointer; letter-spacing:0; }
+    :focus-visible { outline:3px solid var(--focus); outline-offset:3px; }
+    main { padding:44px 0 60px; }
+    .kicker { margin:0 0 12px; color:var(--mark); font-size:.75rem; font-weight:800; letter-spacing:.18em; }
+    h1,h2,h3 { line-height:1.3; text-wrap:balance; }
+    h1 { font-size:clamp(1.85rem,5vw,2.9rem); font-weight:750; letter-spacing:-.04em; margin:0 0 16px; }
+    .dek { max-width:62ch; color:var(--muted); font-size:1.03rem; margin:0; }
+    .leadbox { margin:28px 0 38px; padding:20px 22px; background:var(--surface); border:1px solid var(--rule); border-left:5px solid var(--accent); }
+    .lb-label { margin:0 0 4px; color:var(--accent); font-size:.72rem; font-weight:800; letter-spacing:.13em; }
+    .lb-q { margin:0 0 14px; font-size:1.05rem; font-weight:700; }
+    .lb-a { margin:0; font-size:1.02rem; font-weight:600; }
+    section { margin:40px 0; }
+    h2 { font-size:1.3rem; margin:0 0 14px; font-weight:750; letter-spacing:-.02em; }
+    h2 span { display:block; margin-top:4px; color:var(--muted); font-size:.76rem; font-weight:600; letter-spacing:.1em; }
+    h3 { font-size:.97rem; margin:0 0 8px; }
+    p { max-width:64ch; margin:0 0 15px; }
+    .scan { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; margin:20px 0 8px; }
+    .scan div { padding:14px 15px; background:var(--surface); border:1px solid var(--rule); border-left:3px solid var(--mark); }
+    .scan b { display:block; margin-bottom:5px; color:var(--mark); font-size:.74rem; letter-spacing:.1em; }
+    .scan p { margin:0; font-size:.91rem; }
+    .tablewrap { margin:20px 0; }
+    table { width:100%; table-layout:fixed; border-collapse:collapse; font-size:.89rem; }
+    th,td { text-align:left; padding:10px 9px; border-bottom:1px solid var(--rule); vertical-align:top; overflow-wrap:anywhere; }
+    th { color:var(--muted); font-size:.75rem; letter-spacing:.07em; }
+    td:first-child,th:first-child { width:28%; font-weight:700; }
+    .counter { margin:20px 0; padding:18px 20px; background:var(--surface); border:1px solid var(--rule); border-left:4px solid var(--mark); }
+    .counter h3 { color:var(--mark); }
+    .counter p:last-child { margin:0; }
+    .questions { counter-reset:q; list-style:none; margin:16px 0; padding:0; }
+    .questions li { counter-increment:q; display:grid; grid-template-columns:32px minmax(0,1fr); gap:10px; padding:12px 0; border-bottom:1px solid var(--rule); }
+    .questions li::before { content:counter(q,decimal-leading-zero); color:var(--accent); font-weight:800; font-size:.84rem; font-variant-numeric:tabular-nums; }
+    .closing { margin:44px 0 0; padding:22px 24px; background:var(--accent-soft); border:1px solid var(--rule); }
+    .closing h2 { font-size:1.12rem; margin:0 0 10px; }
+    .closing p { margin:0; }
+    details { padding:13px 0; border-top:1px solid var(--rule); }
+    summary { color:var(--ink); font-weight:700; cursor:pointer; }
+    .source { margin:9px 0 0; color:var(--muted); font-size:.87rem; }
+    .cite { color:var(--muted); font-size:.88rem; }
+    a { color:var(--accent); text-underline-offset:3px; }
+    footer { border-top:1px solid var(--rule); padding:18px 0 30px; color:var(--muted); font-size:.86rem; }
+    .author-credit { margin:6px 0 0; color:var(--ink); font-weight:750; }
+    @media(max-width:640px) { .page { width:min(100% - 26px,900px); } main { padding-top:32px; } section { margin:34px 0; } h2 { font-size:1.18rem; } .leadbox { padding:17px 16px; } table { font-size:.82rem; } th,td { padding:8px 5px; } .scan { grid-template-columns:1fr; } }
+    @media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header><span>LEAD READ · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="색상 테마 바꾸기">테마 바꾸기</button></header>
+    <main>
+      <p class="kicker">ACCOUNTABILITY / 고개 숙임 다음에 남는 것</p>
+      <h1>책임은 사과인가,<br>추적 가능한 설명인가</h1>
+      <p class="dek">사과는 하루면 끝나고, 책임은 몇 년이 걸립니다. 그 차이를 만드는 것은 무엇을 공개했는가가 아니라 누가 질문하고 누가 판단하는가입니다.</p>
+
+      <div class="leadbox">
+        <p class="lb-label">핵심 질문</p>
+        <p class="lb-q">우리 조직에서 어떤 결정에 대해 질문하고 판단할 수 있는 사람은 누구이며, 그 판단 뒤에 실제로 바뀐 것은 무엇인가?</p>
+        <p class="lb-label">한 문장 결론</p>
+        <p class="lb-a">책임은 고개를 숙이는 태도만으로 완성되지 않습니다. 무엇을 결정했고, 어떤 정보가 있었으며, 누가 질문하고 판단할 수 있는지를 연결해야 책임이 조직 안에 남습니다. 설명을 많이 공개해도 판단할 자리와 후속 조치가 없으면 투명성은 자료의 양으로 끝납니다.</p>
+      </div>
+
+      <section>
+        <h2>왜 지금 이 문제인가<span>사과는 시작이고, 책임은 경로다</span></h2>
+        <p>사건이 터지면 조직은 빠르게 사과문을 준비합니다. 유감을 표하고, 재발 방지를 약속하고, 담당자를 문책합니다. 이 절차는 필요하지만 자주 여기서 멈춥니다. 사과문이 나온 뒤 무엇이 바뀌었는지 묻는 사람이 없으면, 다음 사건에서 같은 문장이 다시 등장합니다.</p>
+        <p>책임의 문제는 도덕적 성실성만으로 풀리지 않습니다. 누가 결정했는지, 어떤 정보가 있었는지, 누가 질문할 권한을 가지는지, 판단 뒤에 무엇이 바뀌었는지가 연결되어야 합니다. 이 네 가지 중 하나가 빠지면 조직은 책임을 맡은 사람을 찾았다고 믿으면서 학습 경로를 닫습니다.</p>
+        <p>특히 복잡한 사고에서는 결과만 보고 담당자를 지목하기 쉽습니다. 그러나 위험 신호가 어디서 사라졌고 어떤 권한선이 그것을 통과시켰는지를 보지 않으면, 같은 구조가 다음에도 반복됩니다.</p>
+      </section>
+
+      <section>
+        <h2>책임을 네 칸으로 나누면 보이는 것<span>행위자·포럼·질문·후속</span></h2>
+        <div class="scan">
+          <div><b>행위자</b><p>결정을 한 사람이나 조직. 이름을 밝히되 개인의 성격이 아니라 결정의 범위를 적습니다.</p></div>
+          <div><b>포럼</b><p>질문하고 판단할 수 있는 자리. 이사회, 규제기관, 고객, 현장 회의가 각각 다른 질문을 합니다.</p></div>
+          <div><b>판단 이후</b><p>보상, 제재, 절차 수정, 재검증 일정. 판단이 문서로만 남으면 책임은 사라집니다.</p></div>
+        </div>
+        <div class="tablewrap">
+          <table>
+            <thead><tr><th>기록</th><th>남길 내용</th></tr></thead>
+            <tbody>
+              <tr><td>사실 기록</td><td>무엇이 언제 일어났는가. 확인된 것과 추정을 구분한다.</td></tr>
+              <tr><td>판단 기록</td><td>당시 어떤 정보와 선택지가 있었는가. 누가 무엇을 승인했는가.</td></tr>
+              <tr><td>영향 기록</td><td>누구에게 어떤 부담이 갔는가. 집계 기준과 시점을 함께 적는다.</td></tr>
+              <tr><td>변화 기록</td><td>어떤 통제가 바뀌었고, 누가 언제 다시 확인하는가.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>이 네 장의 기록이 서로 연결되면 책임은 한 사람의 표정이나 한 번의 기자회견이 아니라, 다음 판단을 더 나은 방향으로 바꾸는 조직의 기억이 됩니다. 기록의 목적은 누군가를 심판하는 것이 아니라 판단의 재료를 남기는 것입니다.</p>
+      </section>
+
+      <section class="case">
+        <h2>적용 사례 — 한 번의 유출, 여러 층의 책임<span>신용정보 기업의 침해와 합의, 2017~2019년</span></h2>
+        <p>미국의 한 신용정보 기업은 2017년 네트워크 침해를 공개했고, 이후 규제기관과 소비자들이 규모와 예방 가능성과 구제 방식에 대해 질문했습니다. 미 연방거래위원회와 여러 기관의 2019년 사건 자료는 침해로 약 1억 4,700만 명의 개인정보가 영향을 받았다고 기록하며, 보안 조치의 미흡과 소비자 구제·보안 개선 조건을 합의의 핵심으로 제시합니다. 미 의회 청문 자료는 당시 피해 규모를 1억 4,550만 명으로 기록합니다.</p>
+        <p>수치가 다른 이유는 집계 기준과 시점이 다르기 때문입니다. 사건을 하나의 숫자로 단정하면 정확해 보이지만, 실제로는 어떤 범위를 셌는지에 대한 질문이 사라집니다. 책임을 다루는 문서일수록 숫자의 출처와 기준을 함께 적어야 합니다.</p>
+        <p>이 사건에서 사과문은 책임의 시작이지 종착점이 아니었습니다. 공개된 규제 문서는 취약점 관리, 패치 적용, 내부 보안 절차, 소비자 통지와 보상이라는 서로 다른 질문을 한 사건 안에 배치했습니다. 2019년 합의에는 소비자 지원과 장기적인 보안 요구사항이 포함됐고, 기업도 합의와 기술·보안 투자 계획을 함께 설명했습니다.</p>
+        <p>그러나 돈을 지급하고 절차를 고치는 것이 피해 경험을 완전히 되돌린다는 뜻은 아닙니다. 책임은 법적·행정적 판단, 소비자 구제, 재발 방지의 층위가 서로 다르다는 사실을 인정할 때 더 정확해집니다. 한 층의 완료를 다른 층의 완료로 읽는 순간, 조직은 스스로에게 면죄부를 발급합니다.</p>
+      </section>
+
+      <section>
+        <h2>반증 — 투명성이 책임을 자동으로 만드는가<span>공개와 판단은 다른 일이다</span></h2>
+        <div class="counter">
+          <h3>자료를 더 공개하면 책임이 생긴다는 가정</h3>
+          <p>크리스토퍼 후드는 2010년 논문에서 책임성과 투명성의 관계를 세 가지로 나눕니다. 거의 같은 것이라는 관점, 서로를 보완하는 부품이라는 관점, 때로 긴장을 만드는 어색한 짝이라는 관점입니다. 공개 정보가 늘어도 그것을 해석하고 질문할 자리가 없으면 책임은 생기지 않습니다.</p>
+          <p>반대 위험도 있습니다. 공개가 지나치게 넓거나 시점이 나쁘면 현장 판단이 위축되고, 책임은 숫자 관리로 축소됩니다. 사건 직후의 공개는 원인 규명보다 여론 대응의 도구가 되기 쉽습니다.</p>
+          <p>그래서 "사과하면 책임이 끝난다"와 "모두 공개하면 책임이 생긴다"를 함께 압박해야 합니다. 책임자는 사실을 설명하고 결과를 감수해야 하고, 공개의 방식은 질문과 판단을 살리는지를 기준으로 따져야 합니다. 공개된 정보가 누구에게 어떤 행동 능력을 주었는지가 성패를 가릅니다.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>하나의 잣대가 모든 영역을 지배하지 않게<span>영역마다 다른 권한</span></h2>
+        <p>마이클 왈저의 복합적 평등은 하나의 재화나 권한이 모든 영역을 지배해서는 안 된다는 생각으로 읽을 수 있습니다. 그 관점을 책임에 적용하면, 보안 책임자가 기술 지식을 가진다는 이유만으로 소비자 구제의 기준까지 독점해서는 안 됩니다.</p>
+        <p>반대 방향도 마찬가지입니다. 법적 합의가 끝났다는 이유로 기술 학습과 조직의 신뢰 회복을 닫아서도 안 됩니다. 피해를 말할 수 있는 사람, 사실을 확인할 수 있는 사람, 개선을 요구할 수 있는 사람에게 서로 다른 권한이 배분되어야 합니다.</p>
+        <p>책임의 공정성은 모두에게 같은 발언권을 주는 데 있지 않고, 각 영역의 판단이 다른 영역의 자원을 압도하지 못하게 하는 데 있습니다. 기술 판단이 법적 판단을 덮으면 피해자는 절차만 남고, 법적 판단이 기술 판단을 덮으면 재발 방지가 문서로 끝납니다.</p>
+      </section>
+
+      <section>
+        <h2>리더의 판단 질문<span>사건 대응 회의에서</span></h2>
+        <ol class="questions">
+          <li>이 결정에 대해 질문할 권한을 가진 사람이 누구인지 이름으로 적을 수 있는가?</li>
+          <li>공개할 정보와 보호할 정보를 목적별로 구분했는가?</li>
+          <li>사과와 재발 방지 조치의 책임자를 분리해 각각의 완료 기준을 정했는가?</li>
+          <li>수정된 절차가 실제로 작동하는지 언제 누가 다시 검증하는가?</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>근거 자료<span>서지와 확인 범위</span></h2>
+        <p class="cite">공개된 규제 문서와 학술지 서지 범위에서 정리했습니다. 피해 규모는 기관별 집계 차이가 있어 단일 숫자로 단정하지 않았습니다.</p>
+        <details>
+          <summary>책임을 행위자와 포럼의 관계로 정의한 연구</summary>
+          <p class="source">Mark Bovens, “Analysing and Assessing Accountability: A Conceptual Framework”, <cite>European Law Journal</cite>, 2007. 설명 의무·질문 권한·판단과 결과의 관계에 관한 논지를 참조했습니다. <a href="https://doi.org/10.1111/j.1468-0386.2007.00378.x">학술지 서지</a>.</p>
+        </details>
+        <details>
+          <summary>책임성과 투명성의 긴장</summary>
+          <p class="source">Christopher Hood, “Accountability and Transparency: Siamese Twins, Matching Parts, Awkward Couple?”, <cite>West European Politics</cite>, 2010. 공개가 책임을 보장하지 않는다는 논지를 참조했습니다. <a href="https://doi.org/10.1080/01402382.2010.486122">학술지 서지</a>.</p>
+        </details>
+        <details>
+          <summary>사례 자료 — 2017년 침해와 2019년 합의</summary>
+          <p class="source">미 연방거래위원회의 사건 기록과 소비자 안내, 미 의회 청문 자료. 2017년 침해 공개와 2019년 합의·보안 개선 조건의 경과를 공개 기록에 맞춰 서술했고, 피해 규모는 기관별 집계 차이를 함께 적었습니다. <a href="https://www.ftc.gov/legal-library/browse/cases-proceedings/172-3203-equifax-inc">사건 기록</a>.</p>
+        </details>
+        <details>
+          <summary>복합적 평등</summary>
+          <p class="source">Michael Walzer, <cite>Spheres of Justice</cite>, Basic Books, 1983. 하나의 재화가 여러 영역을 지배해서는 안 된다는 논지를 개념 수준에서 참조했으며 원문 인용은 하지 않았습니다. <a href="https://www.basicbooks.com/titles/michael-walzer/spheres-of-justice/9780465081899/">출판사 서지</a>.</p>
+        </details>
+      </section>
+
+      <section class="closing">
+        <h2>한 줄로 남기면</h2>
+        <p>책임은 사과와 처벌 중 하나를 고르는 일이 아닙니다. 무엇을 결정했고 어떤 정보가 있었으며 누가 질문하고 판단할 수 있는지를 연결하고, 그 판단 뒤에 실제로 바뀐 것을 남기는 일입니다. 공개는 그 경로의 재료이고, 그 자체가 책임은 아닙니다. 영역마다 다른 권한을 인정해 기술 판단이 구제를 덮지 않게, 법적 판단이 학습을 닫지 않게 해야 합니다. 사과가 하루라면 책임은 다음 검증 일정까지 이어지는 약속입니다.</p>
+      </section>
+    </main>
+    <footer>Lead Read<p class="author-credit">&lt;조우성 변호사 작성&gt;</p></footer>
+  </div>
+  <script>
+    const root = document.documentElement;
+    const button = document.getElementById('theme-toggle');
+    button.addEventListener('click', () => {
+      const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+      root.dataset.theme = next;
+      button.setAttribute('aria-label', next === 'dark' ? '라이트 테마로 바꾸기' : '다크 테마로 바꾸기');
+    });
+  </script>
+</body>
+</html>
