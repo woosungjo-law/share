@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="referrer" content="no-referrer">
+<title>반복 민원 종결 요건과 온라인 게시 대응 규정을 확인했나요?</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Segoe UI","Malgun Gothic",sans-serif;color:#1b2530;background:#f4f6f8;line-height:1.6;
+  --ink:#1b2530;--muted:#596873;--line:#c9d2d9;--brand:#176b60;--brand-bg:#eef6f4;--ok:#176b60;--ok-bg:#e6f4ef;--bad:#a3322b;--bad-bg:#fbeceb}
+*{box-sizing:border-box}
+body{margin:0}
+.wrap{max-width:720px;margin:auto;padding:20px 16px 40px}
+.card{background:#fff;border:1px solid #dbe1e6;border-radius:16px;padding:20px;margin:12px 0;box-shadow:0 2px 10px #1525360a}
+h1{font-size:1.3rem;margin:4px 0 8px}
+h2{font-size:1.05rem;margin:0 0 10px}
+h3{font-size:.98rem;margin:18px 0 6px}
+p{margin:8px 0}
+.muted{color:var(--muted)}
+.small{font-size:.9rem}
+.progress{height:8px;background:#e8edf1;border-radius:10px;overflow:hidden;margin-top:10px}
+.progress>i{display:block;height:100%;background:var(--brand);width:0;transition:width .2s}
+.badge{display:inline-block;padding:2px 10px;border-radius:99px;background:#e8edf1;font-size:.82rem;margin-bottom:8px}
+.prompt{font-size:1.02rem;font-weight:650;margin:14px 0 10px}
+.panel{background:#f7f9fa;border:1px solid #e2e8ec;border-radius:12px;padding:12px 14px;margin:10px 0}
+.panel b{display:block;font-size:.82rem;color:var(--muted);margin-bottom:2px}
+.choices{display:grid;gap:10px;margin-top:10px}
+.choices.two{grid-template-columns:1fr 1fr}
+@media (max-width:420px){.choices.two{grid-template-columns:1fr}}
+.choice{font:inherit;color:inherit;background:#fff;border:2px solid var(--line);border-radius:12px;padding:12px 14px;min-height:52px;text-align:left;cursor:pointer;overflow-wrap:anywhere;width:100%}
+.choice:hover:not(:disabled){background:var(--brand-bg);border-color:var(--brand)}
+.choice:disabled{cursor:default;color:var(--ink);opacity:1}
+.choice.center{text-align:center;font-weight:650}
+.choice[aria-pressed="true"]{border-color:#2b4a63;background:#eef3f8}
+.choice.is-correct{border-color:var(--ok);background:var(--ok-bg)}
+.choice.is-wrong{border-color:var(--bad);background:var(--bad-bg)}
+.choice.is-error .stmt{text-decoration:line-through;text-decoration-thickness:2px;color:var(--bad)}
+.tag{display:inline-block;margin:6px 6px 0 0;padding:1px 8px;border-radius:99px;font-size:.78rem;font-weight:700;background:#2b4a63;color:#fff}
+.is-correct .tag.t-ok,.tag.t-ok{background:var(--ok)}
+.tag.t-bad{background:var(--bad)}
+.verdict{font-weight:800;font-size:1.05rem;margin:0 0 6px}
+.verdict.ok{color:var(--ok)}
+.verdict.bad{color:var(--bad)}
+.feedback{border-left:5px solid var(--brand);background:var(--brand-bg);padding:12px 14px;margin-top:16px;border-radius:6px}
+.feedback.bad{border-left-color:var(--bad);background:var(--bad-bg)}
+.fix{margin-top:10px;padding:10px 12px;border-radius:8px;background:var(--ok-bg);border:1px solid #b9dccf}
+.fix b{color:var(--ok)}
+.next{font:inherit;font-weight:700;color:#fff;background:var(--brand);border:0;border-radius:12px;padding:12px 18px;min-height:48px;cursor:pointer;margin-top:14px;width:100%}
+.next.alt{background:#fff;color:var(--brand);border:2px solid var(--brand)}
+.bubble{max-width:88%;padding:10px 14px;border-radius:16px;margin:8px 0;overflow-wrap:anywhere}
+.bubble.them{background:#eef1f4;border-top-left-radius:4px}
+.bubble.me{background:#d9ece7;margin-left:auto;border-top-right-radius:4px}
+.who{display:block;font-size:.78rem;font-weight:700;color:var(--muted)}
+.chip{display:inline-block;background:#fff3d6;border:1px solid #ecd28a;border-radius:99px;padding:4px 12px;font-weight:700}
+.rows p{display:flex;gap:8px;margin:6px 0}
+.rows .mk{flex:none;width:1.6em;font-weight:800}
+.mk.ok{color:var(--ok)}.mk.bad{color:var(--bad)}
+.score{font-size:1.5rem;font-weight:800;margin:4px 0 10px}
+.sr{position:absolute;left:-9999px}
+</style>
+</head>
+<body><main class="wrap">
+<header class="card"><h1>반복 민원 종결 요건과 온라인 게시 대응 규정을 확인했나요?</h1><p class="muted">행정기관의 반복 민원 종결 요건, 온라인 권리침해 정보의 삭제 요청·임시조치, 형법상 명예훼손 조문을 확인합니다.</p>
+<div class="progress" aria-hidden="true"><i id="bar"></i></div>
+<p id="counter" class="muted small" aria-live="polite"></p></header>
+<section id="stage" class="card"></section>
+</main>
+<script>
+(()=>{'use strict';
+const DATA={"model":"statement","items":[{"title":"행정기관의 반복 민원 종결","statement":"행정기관은 법정민원이 아닌 동일 내용의 민원이 정당한 사유 없이 3회 이상 접수되고 처리결과를 2회 이상 통지한 뒤에는, 그 후 접수되는 민원을 종결처리할 수 있다.","answer":true,"why":"민원 처리에 관한 법률 제23조 제1항은 행정기관의 장이 법정민원을 제외한 동일 내용의 민원이 정당한 사유 없이 3회 이상 반복되면 2회 이상 처리결과를 통지한 뒤 접수되는 민원을 종결처리할 수 있다고 정합니다."},{"title":"동일 내용 여부의 판단 요소","statement":"행정기관은 반복 민원이 종전 민원과 동일한 내용인지 판단할 때 민원의 성격, 내용상 유사성·관련성, 같은 답변을 할 수밖에 없는 사정을 종합적으로 고려해야 한다.","answer":true,"why":"민원 처리에 관한 법률 제23조 제3항은 동일 내용 여부를 판단할 때 민원의 성격, 종전 민원과의 내용적 유사성·관련성, 같은 답변을 할 수밖에 없는 사정 등을 종합적으로 고려하도록 정합니다."},{"title":"민간 기업에 대한 직접 적용","statement":"민원 처리에 관한 법률 제23조의 반복 민원 종결 규정은 민간 기업에도 직접 적용된다.","answer":false,"why":"제23조 제1항과 제3항은 행정기관의 장을 주체로 정합니다. 이 조문만으로 민간 기업이 같은 법정 종결 권한을 가진다고 볼 수 없습니다."},{"title":"요청이 있으면 반드시 삭제","statement":"정보통신서비스 제공자는 삭제 요청을 받으면 요청된 정보를 반드시 삭제해야 하고 임시조치를 선택할 수는 없다.","answer":false,"why":"정보통신망법 제44조의2 제2항은 지체 없이 삭제·임시조치 등의 필요한 조치를 하도록 정하고, 제4항은 권리 침해 여부를 판단하기 어렵거나 다툼이 예상되면 임시조치를 할 수 있다고 정합니다."},{"title":"임시조치의 기간","statement":"권리 침해 여부를 판단하기 어렵거나 이해당사자 간 다툼이 예상되는 경우, 정보통신서비스 제공자는 해당 정보에 대한 임시조치를 할 수 있고 그 기간은 30일 이내다.","answer":true,"why":"정보통신망법 제44조의2 제4항은 권리 침해 여부를 판단하기 어렵거나 이해당사자 간 다툼이 예상되는 경우 정보통신서비스 제공자가 임시조치를 할 수 있으며, 그 기간은 30일 이내라고 정합니다."},{"title":"사실 적시와 명예훼손 조항","statement":"형법 제307조 제1항은 허위 사실을 적시한 경우에만 명예훼손의 법정형을 정한다.","answer":false,"why":"형법 제307조 제1항은 공연히 사실을 적시하여 사람의 명예를 훼손한 경우를, 제2항은 공연히 허위의 사실을 적시한 경우를 각각 규정합니다."}],"summary":{"correct_rules":["행정기관의 장은 법정민원을 제외한 동일 내용의 민원이 정당한 사유 없이 3회 이상 반복되면 2회 이상 처리결과를 통지한 뒤 접수되는 민원을 종결처리할 수 있고, 동일 내용 여부는 민원의 성격·유사성·관련성과 같은 답변을 할 수밖에 없는 사정을 종합해 판단합니다.","권리가 침해된 사람은 침해사실을 소명해 공개 정보의 삭제나 반박내용 게재를 요청할 수 있습니다. 정보통신서비스 제공자는 필요한 조치를 하고 당사자에게 알려야 하며, 침해 여부를 판단하기 어렵거나 다툼이 예상되면 30일 이내 임시조치를 할 수 있습니다.","형법 제307조는 공연히 사실을 적시해 사람의 명예를 훼손한 경우와 허위 사실을 적시한 경우의 법정형을 각각 정합니다. 제314조 제1항은 제313조의 방법 또는 위력으로 사람의 업무를 방해한 경우의 법정형을 정합니다."],"caution":"일반적인 법률 학습용입니다. 개별 사안의 성립·결과·기간·비용을 판단하거나 보장하지 않습니다. 구체적인 자료와 절차 상태를 별도로 확인하세요."}};
+const stage=document.getElementById('stage'),bar=document.getElementById('bar'),counter=document.getElementById('counter');
+let at=0,results=[];
+
+const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n};
+const MODEL={statement:{name:'진술 판정',prompt:'이 진술은 맞을까요?'}};
+const items=DATA.items,N=items.length,M=MODEL[DATA.model];
+
+function progress(){bar.style.width=Math.round(at/N*100)+'%';counter.textContent=at<N?`${at+1} / ${N}`:'완료'}
+function start(){at=0;results=[];render()}
+function render(){
+  progress();stage.replaceChildren();
+  const it=items[at];
+  stage.append(el('span','badge',`${M.name} · 문항 ${at+1}`));
+  stage.append(el('h2','',it.title));
+  renderStatement(it);
+}
+
+/* ---- 공통: 선택 표시를 유지한 채 정오를 붙인다 (화면을 비우지 않는다) ---- */
+function lockChoices(btns,picked,correct,correctTag){
+  btns.forEach((b,i)=>{
+    b.disabled=true;b.setAttribute('aria-pressed',String(i===picked));
+    if(i===correct)b.classList.add('is-correct');
+    if(i===picked&&i!==correct)b.classList.add('is-wrong');
+    const wrap=el('div');
+    if(i===picked)wrap.append(el('span','tag','내 선택'),' ');
+    if(i===correct)wrap.append(el('span','tag t-ok',correctTag||'정답'));
+    if(wrap.childNodes.length)b.append(wrap);
+  });
+}
+function verdictBox(ok,why,extra){
+  const box=el('div','feedback'+(ok?'':' bad'));
+  box.setAttribute('role','status');
+  box.append(el('p','verdict '+(ok?'ok':'bad'),ok?'✓ 맞아요':'✕ 다시 볼 부분이에요'));
+  if(why)box.append(el('p','',why));
+  if(extra)box.append(extra);
+  const last=at===N-1;
+  const nb=el('button','next',last?'결과 보기':'다음 문항');nb.type='button';
+  nb.addEventListener('click',()=>{at++;if(at>=N)showResult();else render()});
+  stage.append(box,nb);
+  nb.focus({preventScroll:false});
+  return box;
+}
+function record(ok){results.push({title:items[at].title,ok})}
+
+/* ---- 진술 판정 ---- */
+function renderStatement(it){
+  const p=el('div','panel');p.append(el('b','','진술'));p.append(el('p','',it.statement));stage.append(p);
+  stage.append(el('p','prompt',M.prompt));
+  const box=el('div','choices two');
+  const btns=['맞다','틀리다'].map((label,i)=>{const b=el('button','choice center',label);b.type='button';b.setAttribute('aria-pressed','false');
+    b.addEventListener('click',()=>{const ans=it.answer?0:1,ok=i===ans;record(ok);lockChoices(btns,i,ans,'정답');verdictBox(ok,it.why)});return b});
+  btns.forEach(b=>box.append(b));stage.append(box);
+}
+
+/* ---- 종료 요약 ---- */
+function showResult(){
+  progress();stage.replaceChildren();
+  const right=results.filter(r=>r.ok).length;
+  stage.append(el('h2','','결과'));
+  const sc=el('p','score',`${N}문항 중 ${right}문항 맞음`);sc.setAttribute('role','status');stage.append(sc);
+  const rows=el('div','rows');
+  results.forEach(r=>{const p=el('p');p.append(el('span','mk '+(r.ok?'ok':'bad'),r.ok?'○':'✕'));p.append(el('span','',r.title+(r.ok?' — 맞음':' — 다시 볼 부분')));rows.append(p)});
+  stage.append(rows);
+  const rules=DATA.summary.correct_rules||[],caution=DATA.summary.caution||'';
+  stage.append(el('h3','','확인된 법리'));rules.forEach(x=>stage.append(el('p','','• '+x)));
+  stage.append(el('h3','','주의 사항'));stage.append(el('p','',caution));
+  stage.append(el('p','muted small','답변은 저장·전송되지 않습니다. 형성학습용 퀴즈이며 개별 사건의 법률 판단이 아닙니다.'));
+  const msg=el('p','small');msg.setAttribute('role','status');
+  const copy=el('button','next','결과 복사');copy.type='button';
+  copy.addEventListener('click',async()=>{
+    try{const rows=results.map(r=>`${r.title} — ${r.ok?'맞음':'다시 볼 부분'}`);await navigator.clipboard.writeText([`${N}문항 중 ${right}문항 맞음`,'',...rows,'','확인된 법리',...rules.map(x=>'• '+x),'','주의 사항',caution].join('\n'));msg.textContent='결과를 복사했습니다.'}
+    catch(_){msg.textContent='이 브라우저에서는 복사할 수 없습니다. 결과를 선택해 복사해 주세요.'}});
+  stage.append(copy,msg);
+  copy.focus({preventScroll:true});
+}
+if(N)start();else stage.textContent='문항을 불러오지 못했습니다.';
+})();
+</script></body></html>
