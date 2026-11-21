@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="설계는 기능을 해결하는 일인가, 누가 환영받는지를 정하는 일인가 — 게임 콘솔 사례로 읽는 3분 브리핑">
+  <title>설계는 기능인가 의미를 만드는가 · Lead Read</title>
+  <style>
+    :root { color-scheme:light; --ground:#f4f1ea; --surface:#fffdf8; --ink:#1d1b16; --muted:#625d52; --rule:#d2cbbd; --accent:#4a3f2c; --accent-soft:#efe9dc; --warm:#8a4b2a; --warm-soft:#f6ece2; --ink-soft:#eeeae1; --focus:#5c4a2e; }
+    @media(prefers-color-scheme:dark) { :root { color-scheme:dark; --ground:#16140f; --surface:#201d17; --ink:#f0ece2; --muted:#b6afa1; --rule:#4a4437; --accent:#d8c9ab; --accent-soft:#282318; --warm:#e5ac86; --warm-soft:#2b211a; --ink-soft:#262218; --focus:#e0d1b4; } }
+    :root[data-theme="dark"] { color-scheme:dark; --ground:#16140f; --surface:#201d17; --ink:#f0ece2; --muted:#b6afa1; --rule:#4a4437; --accent:#d8c9ab; --accent-soft:#282318; --warm:#e5ac86; --warm-soft:#2b211a; --ink-soft:#262218; --focus:#e0d1b4; }
+    :root[data-theme="light"] { color-scheme:light; --ground:#f4f1ea; --surface:#fffdf8; --ink:#1d1b16; --muted:#625d52; --rule:#d2cbbd; --accent:#4a3f2c; --accent-soft:#efe9dc; --warm:#8a4b2a; --warm-soft:#f6ece2; --ink-soft:#eeeae1; --focus:#5c4a2e; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--ground); color:var(--ink); font-family:"Noto Sans KR",Pretendard,"Malgun Gothic",sans-serif; line-height:1.82; word-break:keep-all; }
+    .page { width:min(100% - 36px, 840px); margin:0 auto; }
+    header { display:flex; justify-content:space-between; align-items:center; gap:16px; padding:23px 0 16px; border-bottom:1px solid var(--rule); color:var(--muted); font-size:.78rem; letter-spacing:.14em; }
+    button { font:inherit; color:var(--ink); border:1px solid var(--rule); background:var(--surface); border-radius:2px; padding:6px 10px; cursor:pointer; letter-spacing:0; }
+    :focus-visible { outline:3px solid var(--focus); outline-offset:3px; }
+    main { padding:48px 0 62px; }
+    .kicker { margin:0 0 12px; color:var(--warm); font-size:.76rem; font-weight:800; letter-spacing:.18em; }
+    h1,h2,h3 { line-height:1.32; text-wrap:balance; }
+    h1 { font-size:clamp(1.9rem,5vw,3.15rem); font-weight:700; letter-spacing:-.045em; margin:0 0 18px; max-width:700px; }
+    .dek { max-width:60ch; color:var(--muted); font-size:1.04rem; margin:0; font-style:italic; }
+    .leadbox { margin:30px 0 42px; padding:22px 24px; border-top:3px double var(--accent); border-bottom:3px double var(--accent); background:transparent; }
+    .lb-label { margin:0 0 6px; color:var(--warm); font-size:.72rem; font-weight:800; letter-spacing:.14em; }
+    .lb-q { margin:0 0 15px; font-size:1.05rem; font-weight:700; }
+    .lb-a { margin:0; font-size:1.05rem; font-weight:600; }
+    section { margin:44px 0; }
+    h2 { font-size:1.32rem; letter-spacing:-.02em; margin:0 0 16px; font-weight:750; }
+    h2 span { display:block; margin-top:5px; color:var(--muted); font-size:.78rem; font-weight:600; letter-spacing:.1em; }
+    h3 { font-size:.98rem; margin:0 0 8px; }
+    p { max-width:64ch; margin:0 0 16px; }
+    .mnote { margin:20px 0; padding:13px 16px 13px 18px; border-left:3px solid var(--warm); background:var(--warm-soft); font-size:.88rem; color:var(--ink); }
+    .mnote b { display:block; margin-bottom:4px; color:var(--warm); font-size:.72rem; letter-spacing:.12em; font-weight:800; }
+    .mnote p { margin:0; max-width:none; }
+    .case { border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); padding:24px 0 8px; }
+    .counter { margin:22px 0; padding:20px 22px; background:var(--surface); border:1px solid var(--rule); }
+    .counter h3 { color:var(--warm); }
+    .counter p { margin:0 0 11px; font-size:.95rem; }
+    .counter p:last-child { margin:0; }
+    .questions { list-style:none; counter-reset:q; margin:18px 0; padding:0; }
+    .questions li { counter-increment:q; display:grid; grid-template-columns:34px minmax(0,1fr); gap:12px; padding:13px 0; border-bottom:1px solid var(--rule); }
+    .questions li::before { content:counter(q,decimal-leading-zero); color:var(--warm); font-weight:800; font-variant-numeric:tabular-nums; font-size:.85rem; }
+    .closing { margin:44px 0 0; padding:24px 26px; background:var(--accent-soft); }
+    .closing h2 { font-size:1.14rem; margin:0 0 11px; }
+    .closing p { margin:0; }
+    details { padding:14px 0; border-top:1px solid var(--rule); }
+    summary { color:var(--accent); font-weight:700; cursor:pointer; }
+    .source { color:var(--muted); font-size:.88rem; margin:10px 0 0; }
+    .cite { color:var(--muted); font-size:.88rem; }
+    a { color:var(--warm); text-underline-offset:3px; }
+    footer { border-top:1px solid var(--rule); padding:19px 0 32px; color:var(--muted); font-size:.87rem; }
+    .author-credit { margin:7px 0 0; color:var(--ink); font-weight:750; }
+    @media(max-width:640px) { .page { width:min(100% - 28px,840px); } main { padding-top:34px; } section { margin:37px 0; } h2 { font-size:1.2rem; } .leadbox { padding:18px 18px; } .mnote { padding:12px 14px; } }
+    @media(prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; animation:none!important; transition:none!important; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header><span>LEAD READ · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="색상 테마 바꾸기">테마 바꾸기</button></header>
+    <main>
+      <p class="kicker">DESIGN / 무엇을 보이게 하는가</p>
+      <h1>설계는 기능인가,<br>의미를 만드는가</h1>
+      <p class="dek">리모컨 하나가 게임을 하는 사람의 범위를 바꿉니다. 누가 화면 앞에 앉을 수 있는지가 바뀌기 때문입니다. 기능 목록에는 끝내 적히지 않는 그 변화가, 제품의 성패를 가르는 경우가 있습니다.</p>
+
+      <div class="leadbox">
+        <p class="lb-label">핵심 질문</p>
+        <p class="lb-q">우리 제품은 사용자가 무엇을 더 쉽게 하도록 돕는가, 그리고 누구를 그 장면에 초대하고 누구를 밖에 남기는가?</p>
+        <p class="lb-label">한 문장 결론</p>
+        <p class="lb-a">설계는 사용자가 기능을 수행하게 하는 구조이면서, 누가 환영받고 무엇이 자연스러운지 보여주는 의미의 배치입니다. 기능이 부족하면 의미는 오래가지 못하지만, 기능만 완성해도 사람의 삶에 들어갈 이유가 생기지는 않습니다.</p>
+      </div>
+
+      <section>
+        <h2>왜 지금 이 문제인가<span>기능 목록이 감추는 것</span></h2>
+        <p>디자인을 기능과 미학의 조합으로 보면 좋은 설계는 단순해집니다. 문제를 정확히 해결하고, 보기에도 아름다우면 된다는 것입니다. 사용자의 요구를 조사하고 불편을 줄이고 사용성을 시험하면 시장에서 선택될 가능성이 커집니다.</p>
+        <p>그러나 사용자는 기능 목록만 사지 않습니다. 제품의 모양과 조작 방식은 사용자가 자신을 어떤 사람으로 상상할지, 주변 사람과 어떻게 관계 맺을지, 기존의 규칙을 따라야 할지에까지 개입합니다.</p>
+        <p>설계는 행동을 유도하면서 동시에 그 행동이 어떤 의미로 읽힐지를 제안합니다. 그래서 질문은 두 개가 됩니다. "무엇을 더 쉽게 할 것인가" 그리고 "누구의 삶을 어떤 모습으로 보이게 할 것인가".</p>
+      </section>
+
+      <section>
+        <h2>기능의 설계와 의미의 설계<span>두 연구, 두 경로</span></h2>
+        <p>도널드 노먼은 제품의 보이는 단서, 가능한 행동, 피드백, 머릿속 모형이 사용자 경험을 좌우한다고 설명합니다. 좋은 설계는 설명서를 외우지 않아도 무엇을 할 수 있고 무슨 일이 일어났는지 알게 합니다. 문이 밀지 당겨야 하는지 헷갈리는 순간은 사용자의 실수가 아니라 설계의 신호가 부족한 결과입니다.</p>
+        <div class="mnote">
+          <b>여백 메모</b>
+          <p>노먼의 기준은 겸손합니다. 사용자가 잘못했다고 말하기 전에, 무엇을 어떻게 해야 하는지 물어보게 만든 것이 무엇인지 확인하라는 요구입니다.</p>
+        </div>
+        <p>로베르토 베르간티는 다른 경로를 봅니다. 혁신이 기존 기능을 더 잘 수행하는 데서만 나오는 것이 아니라, 제품과 서비스의 의미를 다시 해석하는 데서 나올 수 있다고 말합니다. 사용자에게 무엇을 원하는지 묻는 조사만으로는 아직 표현되지 않은 의미의 변화를 발견하기 어렵습니다. 사람들은 아직 존재하지 않는 것을 요구하지 못합니다.</p>
+        <p>두 경로는 경쟁 관계가 아닙니다. 기능의 개선은 제품이 작동하게 만들고, 의미의 전환은 제품이 필요해지는 이유를 만듭니다. 문제는 조직이 대개 앞의 경로만 측정한다는 데 있습니다. 사용성 지표는 있지만 의미가 통했는지 재는 지표는 잘 없습니다.</p>
+        <div class="mnote">
+          <b>여백 메모</b>
+          <p>베르간티의 논지는 "사용자 조사를 하지 말자"가 아닙니다. 조사가 답할 수 있는 질문과, 해석과 관점으로 답해야 하는 질문을 구분하자는 것입니다.</p>
+        </div>
+      </section>
+
+      <section class="case">
+        <h2>적용 사례 — 리모컨 하나가 바꾼 자리<span>닌텐도 Wii, 2006년</span></h2>
+        <p>닌텐도는 2006년 Wii를 출시하며 게임 콘솔 경쟁의 축을 옮겼습니다. 고성능 그래픽과 복잡한 버튼 조작으로 경쟁하는 대신, 움직임을 감지하는 리모컨과 몸의 동작을 활용해 게임을 더 넓은 사람들의 활동으로 보이게 했습니다.</p>
+        <p>테니스 라켓을 휘두르는 듯한 동작, 균형을 재는 보드, 가족이 함께 화면을 보는 장면은 게임을 "혼자 앉아 숙련된 조작을 겨루는 행위"에서 떼어냈습니다. 기능의 변화가 사용자의 자기 이미지와 가족의 참여 방식을 동시에 바꾼 것입니다. 이 변화는 사양표에 적을 수 없습니다.</p>
+        <p>그러나 이 사례를 "기능보다 의미가 중요하다"는 성공 공식으로 만들면 반증을 놓칩니다. 동작 인식은 새로운 참여를 열었지만, 모든 게임과 사용 상황에서 정확하거나 편안하지는 않았습니다. 몸을 쓰는 장면을 강조할수록 공간과 안전, 접근성의 문제가 따라왔습니다.</p>
+        <p>가족이 함께하는 경험을 약속해도 실제 가정의 구성과 시간은 다릅니다. 제품의 의미가 모든 사람에게 같은 방식으로 열리지는 않습니다. 설계자는 새로운 상상력을 제안하면서도, 사용자가 그 의미를 거부하거나 다른 방식으로 가져다 쓸 여지를 남겨야 합니다.</p>
+      </section>
+
+      <section>
+        <h2>반증 — 새 의미가 항상 더 좋은 사용성을 만드는가<span>낯섦의 비용</span></h2>
+        <div class="counter">
+          <h3>의미의 혁신에는 학습 비용이 따라온다</h3>
+          <p>새로운 의미를 제시하면 제품이 더 혁신적이고 사랑받는다는 주장부터 반증해야 합니다. 사용자의 익숙한 행동을 지나치게 깨면 학습 비용과 오류가 커집니다. 상징적인 외형이 실제 접근성과 수리 가능성을 해칠 수도 있습니다.</p>
+          <p>반대 방향도 성립합니다. 기능을 충실히 개선한 제품이 의미의 과잉 해석 없이도 사람들의 삶을 크게 편하게 할 수 있습니다. 모든 제품이 세계관을 제안할 필요는 없습니다.</p>
+          <p>그리고 디자인의 의미는 회사가 선언한 이야기만으로 결정되지 않습니다. 사용자가 실제로 제품을 어떻게 쓰고, 누구에게 추천하고, 실패했을 때 어떤 책임을 느끼는지에서 의미가 다시 만들어집니다. 혁신은 낯선 의미와 익숙한 조작 사이의 번역을 필요로 합니다.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>보는 방식은 무엇을 가리는가<span>존 버거의 시선</span></h2>
+        <p>존 버거는 보는 일이 눈에 들어오는 자극을 받는 것이 아니라, 무엇을 알고 기대하는지와 함께 이루어진다고 보았습니다. 우리가 보는 방식은 배운 것이고, 그래서 바뀔 수 있습니다.</p>
+        <p>제품도 마찬가지입니다. 게임 컨트롤러를 본 사람은 특정한 숙련자와 경쟁하는 장면을 떠올립니다. 움직이는 리모컨은 게임을 놀이이자 운동이고 가족 행사로 다시 보게 합니다. 같은 기계가 다른 장면을 부릅니다.</p>
+        <p>다만 새로운 이미지는 기존의 시선을 자동으로 해방하지 않습니다. 광고가 가족의 웃음을 보여줘도 실제 사용자가 느끼는 피로와 배제는 화면 밖에 남습니다. 디자인은 무엇을 보이게 할지뿐 아니라 무엇을 가리고 있는지까지 책임져야 합니다. 이것이 이 브리핑에서 가장 불편한 문장입니다.</p>
+      </section>
+
+      <section>
+        <h2>리더의 판단 질문<span>제품 회의에서 쓸 네 문장</span></h2>
+        <ol class="questions">
+          <li>우리 제품은 사용자가 어떤 사람처럼 행동하도록 초대하며, 그 초대에 응하지 않는 사람은 누구인가?</li>
+          <li>가장 중요한 기능을 처음 보는 사람이 어떻게 이해하는지 실제로 확인했는가?</li>
+          <li>광고와 설명이 보여주는 사용자와, 실제로 배제되거나 포기하는 사용자는 각각 누구인가?</li>
+          <li>사용자가 제품을 다른 목적과 방식으로 쓸 때, 조직은 그 의미를 관찰하고 설계를 수정하는가?</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>근거 자료<span>서지와 확인 범위</span></h2>
+        <p class="cite">두 연구는 서지와 공개된 논지 범위에서 정리했습니다. 제품 사례는 출시 연도와 공개된 제품 설명 범위에서만 다루었고, 판매 수치나 시장 점유율은 인용하지 않았습니다.</p>
+        <details>
+          <summary>보이는 단서와 머릿속 모형</summary>
+          <p class="source">Donald A. Norman, <cite>The Design of Everyday Things</cite>, revised and expanded ed., Basic Books, 2013. 가시성, 가능한 행동, 피드백, 개념 모형의 설계 논지를 참조했습니다. <a href="https://www.basicbooks.com/titles/don-norman/the-design-of-everyday-things/9780465050659/">출판사 서지</a>.</p>
+        </details>
+        <details>
+          <summary>의미를 혁신하는 경로</summary>
+          <p class="source">Roberto Verganti, <cite>Design-Driven Innovation: Changing the Rules of Competition by Radically Innovating What Things Mean</cite>, Harvard Business Press, 2009. 기능 개선과 의미 전환을 구분하는 논지를 참조했습니다. <a href="https://www.hbs.edu/faculty/Pages/item.aspx?num=37736">하버드비즈니스스쿨 교수 자료 페이지</a>.</p>
+        </details>
+        <details>
+          <summary>사례 자료 — 2006년 출시와 조작 방식</summary>
+          <p class="source"><a href="https://www.nintendo.co.jp/ir/en/finance/historical_data/index.html">닌텐도 IR 과거 데이터 페이지</a>와 <a href="https://www.nintendo.co.jp/ir/en/finance/hard_soft/index.html">하드웨어·소프트웨어 판매 데이터 페이지</a>. 출시 연도와 제품 구성은 이 공개 자료로 확인되는 범위에서만 서술했고, 판매 대수는 본문에 쓰지 않았습니다.</p>
+        </details>
+        <details>
+          <summary>보는 방식 — 시선은 배운 것이다</summary>
+          <p class="source">John Berger, <cite>Ways of Seeing</cite>, BBC·Penguin, 1972. 보는 일과 아는 일의 관계, 이미지가 만들어지는 방식에 관한 논지를 개념 수준에서 참조했으며 원문 인용은 하지 않았습니다. <a href="https://www.penguinrandomhouse.com/books/324430/ways-of-seeing-by-john-berger/">출판사 서지</a>.</p>
+        </details>
+      </section>
+
+      <section class="closing">
+        <h2>한 줄로 남기면</h2>
+        <p>설계는 기능을 아름답게 포장하는 일이 아닙니다. 어떤 행동을 가능하게 하고, 어떤 사람을 사용자로 상상하며, 어떤 관계를 정상으로 보이게 할지 결정하는 일입니다. 기능이 충분하지 않으면 의미는 오래가지 못하지만, 기능만 완성해도 사람의 삶에 들어가는 이유가 생기지는 않습니다. 좋은 제품은 낯선 가능성을 열면서도 사용자가 자신의 경험으로 다시 해석할 수 있는 여백을 남깁니다. 그때 디자인은 기능의 전달물이 아니라 함께 의미를 만드는 접점이 됩니다.</p>
+      </section>
+    </main>
+    <footer>Lead Read<p class="author-credit">&lt;조우성 변호사 작성&gt;</p></footer>
+  </div>
+  <script>
+    const root = document.documentElement;
+    const button = document.getElementById('theme-toggle');
+    button.addEventListener('click', () => {
+      const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+      root.dataset.theme = next;
+      button.setAttribute('aria-label', next === 'dark' ? '라이트 테마로 바꾸기' : '다크 테마로 바꾸기');
+    });
+  </script>
+</body>
+</html>
