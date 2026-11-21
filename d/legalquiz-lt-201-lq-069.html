@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="referrer" content="no-referrer">
+<title>남이 버린 폐기물로 우리 땅에 명령이 왔다면, 대상·순서·비용 근거를 확인했나요?</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Segoe UI","Malgun Gothic",sans-serif;color:#1b2530;background:#f4f6f8;line-height:1.6;
+  --ink:#1b2530;--muted:#596873;--line:#c9d2d9;--brand:#176b60;--brand-bg:#eef6f4;--ok:#176b60;--ok-bg:#e6f4ef;--bad:#a3322b;--bad-bg:#fbeceb}
+*{box-sizing:border-box}
+body{margin:0}
+.wrap{max-width:720px;margin:auto;padding:20px 16px 40px}
+.card{background:#fff;border:1px solid #dbe1e6;border-radius:16px;padding:20px;margin:12px 0;box-shadow:0 2px 10px #1525360a}
+h1{font-size:1.3rem;margin:4px 0 8px}
+h2{font-size:1.05rem;margin:0 0 10px}
+h3{font-size:.98rem;margin:18px 0 6px}
+p{margin:8px 0}
+.muted{color:var(--muted)}
+.small{font-size:.9rem}
+.progress{height:8px;background:#e8edf1;border-radius:10px;overflow:hidden;margin-top:10px}
+.progress>i{display:block;height:100%;background:var(--brand);width:0;transition:width .2s}
+.badge{display:inline-block;padding:2px 10px;border-radius:99px;background:#e8edf1;font-size:.82rem;margin-bottom:8px}
+.prompt{font-size:1.02rem;font-weight:650;margin:14px 0 10px}
+.panel{background:#f7f9fa;border:1px solid #e2e8ec;border-radius:12px;padding:12px 14px;margin:10px 0}
+.panel b{display:block;font-size:.82rem;color:var(--muted);margin-bottom:2px}
+.choices{display:grid;gap:10px;margin-top:10px}
+.choices.two{grid-template-columns:1fr 1fr}
+@media (max-width:420px){.choices.two{grid-template-columns:1fr}}
+.choice{font:inherit;color:inherit;background:#fff;border:2px solid var(--line);border-radius:12px;padding:12px 14px;min-height:52px;text-align:left;cursor:pointer;overflow-wrap:anywhere;width:100%}
+.choice:hover:not(:disabled){background:var(--brand-bg);border-color:var(--brand)}
+.choice:disabled{cursor:default;color:var(--ink);opacity:1}
+.choice.center{text-align:center;font-weight:650}
+.choice[aria-pressed="true"]{border-color:#2b4a63;background:#eef3f8}
+.choice.is-correct{border-color:var(--ok);background:var(--ok-bg)}
+.choice.is-wrong{border-color:var(--bad);background:var(--bad-bg)}
+.choice.is-error .stmt{text-decoration:line-through;text-decoration-thickness:2px;color:var(--bad)}
+.tag{display:inline-block;margin:6px 6px 0 0;padding:1px 8px;border-radius:99px;font-size:.78rem;font-weight:700;background:#2b4a63;color:#fff}
+.is-correct .tag.t-ok,.tag.t-ok{background:var(--ok)}
+.tag.t-bad{background:var(--bad)}
+.verdict{font-weight:800;font-size:1.05rem;margin:0 0 6px}
+.verdict.ok{color:var(--ok)}
+.verdict.bad{color:var(--bad)}
+.feedback{border-left:5px solid var(--brand);background:var(--brand-bg);padding:12px 14px;margin-top:16px;border-radius:6px}
+.feedback.bad{border-left-color:var(--bad);background:var(--bad-bg)}
+.fix{margin-top:10px;padding:10px 12px;border-radius:8px;background:var(--ok-bg);border:1px solid #b9dccf}
+.fix b{color:var(--ok)}
+.next{font:inherit;font-weight:700;color:#fff;background:var(--brand);border:0;border-radius:12px;padding:12px 18px;min-height:48px;cursor:pointer;margin-top:14px;width:100%}
+.next.alt{background:#fff;color:var(--brand);border:2px solid var(--brand)}
+.bubble{max-width:88%;padding:10px 14px;border-radius:16px;margin:8px 0;overflow-wrap:anywhere}
+.bubble.them{background:#eef1f4;border-top-left-radius:4px}
+.bubble.me{background:#d9ece7;margin-left:auto;border-top-right-radius:4px}
+.who{display:block;font-size:.78rem;font-weight:700;color:var(--muted)}
+.chip{display:inline-block;background:#fff3d6;border:1px solid #ecd28a;border-radius:99px;padding:4px 12px;font-weight:700}
+.rows p{display:flex;gap:8px;margin:6px 0}
+.rows .mk{flex:none;width:1.6em;font-weight:800}
+.mk.ok{color:var(--ok)}.mk.bad{color:var(--bad)}
+.score{font-size:1.5rem;font-weight:800;margin:4px 0 10px}
+.sr{position:absolute;left:-9999px}
+</style>
+</head>
+<body><main class="wrap">
+<header class="card"><h1>남이 버린 폐기물로 우리 땅에 명령이 왔다면, 대상·순서·비용 근거를 확인했나요?</h1><p class="muted">청결명령과 폐기물 처리 조치명령을 구분하고, 토지소유자 요건과 명령 순서, 대집행 비용 요건을 맞음·틀림으로 확인합니다.</p>
+<div class="progress" aria-hidden="true"><i id="bar"></i></div>
+<p id="counter" class="muted small" aria-live="polite"></p></header>
+<section id="stage" class="card"></section>
+</main>
+<script>
+(()=>{'use strict';
+const DATA={"model":"statement","items":[{"title":"청결명령과 폐기물 조치명령","statement":"폐기물관리법 제8조 제3항은 청결유지의무 위반에 대한 필요한 조치를, 제48조는 부적정처리폐기물에 대한 처리 등 조치를 각각 규정한다.","answer":true,"why":"폐기물관리법 제8조 제3항은 토지·건물 소유자·점유자·관리자가 제7조 제2항에 따라 청결을 유지하지 않은 경우 지방자치단체 조례에 따른 필요한 조치를 명할 수 있게 합니다. 제48조는 부적정처리폐기물의 처리 등에 관한 별도 조치명령을 규정합니다. 명령서의 근거 조문을 구분해야 합니다."},{"title":"소유자 지위만으로 명령 대상","statement":"폐기물관리법 제48조 제1항 제9호의 토지소유자는 소유자라는 지위만 있으면 부적정처리폐기물과의 관계를 보지 않고 조치명령 대상자가 된다.","answer":false,"why":"제48조 제1항 제9호는 토지소유자가 부적정처리폐기물을 직접 처리하거나 다른 사람에게 자기 소유 토지의 사용을 허용한 경우를 대상으로 정합니다. 소유자라는 지위만으로 자동 해당한다고 규정하지 않습니다."},{"title":"토지소유자 조치명령의 조건","statement":"토지소유자가 부적정처리폐기물을 직접 처리했거나 다른 사람에게 자기 소유 토지의 사용을 허용한 경우에는 제48조 제1항 제9호의 조치명령대상자에 해당할 수 있다.","answer":true,"why":"폐기물관리법 제48조 제1항 제9호는 부적정처리폐기물을 직접 처리한 자 또는 다른 사람에게 자기 소유 토지 사용을 허용한 경우의 해당 토지소유자를 조치명령대상자로 열거합니다. 실제 개별 명령의 적법성은 구체적 사실과 다른 조항도 함께 확인해야 합니다."},{"title":"여러 대상자 사이의 기본 순서","statement":"조치명령대상자가 여러 명이면, 제48조 제2항의 기본 순서상 다른 사람에게 자기 토지 사용을 허용한 제1항 제9호의 소유자는 폐기물 발생자보다 먼저 조치명령을 받는다.","answer":false,"why":"폐기물관리법 제48조 제2항 제1호 다목은 자기 소유 토지에서 폐기물을 직접 처리한 토지소유자를 첫 순위에 포함하고, 제3호는 다른 사람에게 토지 사용을 허용한 토지소유자(직접 처리한 경우는 제외)를 세 번째 순위로 둡니다. 따라서 사용을 허용한 소유자가 발생자보다 먼저라는 진술은 틀립니다. 제3항은 책임 정도와 이행 가능성 등에 따른 순서 조정을 허용합니다."},{"title":"명령 불이행과 대집행 비용","statement":"제48조에 따른 명령을 받은 사람이 이행하지 않으면, 행정청은 행정대집행법에 따라 대집행하고 그 비용을 징수할 수 있다.","answer":true,"why":"폐기물관리법 제49조 제1항은 제48조에 따른 명령을 받은 자가 명령을 이행하지 않은 경우 행정청이 행정대집행법에 따라 대집행하고 비용을 징수할 수 있다고 정합니다. 비용이 누구에게 어떤 범위로 청구되는지는 명령 대상자와 구체적 절차를 별도로 확인해야 합니다."},{"title":"명령 없는 직접 대집행","statement":"폐기물관리법상 조치명령대상자를 확인할 수 없는 경우에도 행정청은 먼저 그 대상자에게 정식 명령을 하고 이행을 기다려야만 대집행을 할 수 있다.","answer":false,"why":"폐기물관리법 제49조 제2항 제1호는 조치명령대상자를 행정청이 확인할 수 없는 경우 제48조에 따른 명령 없이 대집행할 수 있도록 합니다. 이 경우에도 법정 대상자 확인과 비용 징수 규정을 함께 살펴야 합니다."}],"summary":{"correct_rules":["제8조 제3항은 법정 청결유지의무 위반에 대한 조례상 조치명령을, 제48조는 부적정처리폐기물의 처리 조치명령을 각각 규정합니다.","토지소유자 조치명령은 부적정처리폐기물을 직접 처리했거나 다른 사람에게 자기 소유 토지 사용을 허용한 경우에 해당할 수 있습니다.","복수 대상자에게는 법정 기본 순서가 적용되며, 발생자 등은 토지 사용을 허용한 토지소유자보다 앞섭니다. 법은 책임 정도와 이행 가능성에 따른 순서 조정도 허용합니다.","제48조 등에 따른 명령을 받은 자가 이행하지 않으면 행정대집행을 하고 그 비용을 징수할 수 있습니다.","대상자를 확인할 수 없거나 이행 능력이 없다고 인정되는 경우, 또는 긴급한 위해를 막아야 하는 경우에는 명령 없이 대집행할 수 있는 법정 예외가 있습니다."],"caution":"일반적인 법률 학습용입니다. 개별 처분의 적법성, 토지소유자의 책임, 비용 부담액 또는 불복 결과를 판단하거나 보장하지 않습니다. 명령서의 근거 조문, 폐기물 처리 경위, 토지 사용 허용 여부와 비용 내역을 별도로 확인하세요."}};
+const stage=document.getElementById('stage'),bar=document.getElementById('bar'),counter=document.getElementById('counter');
+let at=0,results=[];
+
+const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n};
+const MODEL={statement:{name:'진술 판정',prompt:'이 진술은 맞을까요?'}};
+const items=DATA.items,N=items.length,M=MODEL[DATA.model];
+
+function progress(){bar.style.width=Math.round(at/N*100)+'%';counter.textContent=at<N?`${at+1} / ${N}`:'완료'}
+function start(){at=0;results=[];render()}
+function render(){
+  progress();stage.replaceChildren();
+  const it=items[at];
+  stage.append(el('span','badge',`${M.name} · 문항 ${at+1}`));
+  stage.append(el('h2','',it.title));
+  renderStatement(it);
+}
+
+/* ---- 공통: 선택 표시를 유지한 채 정오를 붙인다 (화면을 비우지 않는다) ---- */
+function lockChoices(btns,picked,correct,correctTag){
+  btns.forEach((b,i)=>{
+    b.disabled=true;b.setAttribute('aria-pressed',String(i===picked));
+    if(i===correct)b.classList.add('is-correct');
+    if(i===picked&&i!==correct)b.classList.add('is-wrong');
+    const wrap=el('div');
+    if(i===picked)wrap.append(el('span','tag','내 선택'),' ');
+    if(i===correct)wrap.append(el('span','tag t-ok',correctTag||'정답'));
+    if(wrap.childNodes.length)b.append(wrap);
+  });
+}
+function verdictBox(ok,why,extra){
+  const box=el('div','feedback'+(ok?'':' bad'));
+  box.setAttribute('role','status');
+  box.append(el('p','verdict '+(ok?'ok':'bad'),ok?'✓ 맞아요':'✕ 다시 볼 부분이에요'));
+  if(why)box.append(el('p','',why));
+  if(extra)box.append(extra);
+  const last=at===N-1;
+  const nb=el('button','next',last?'결과 보기':'다음 문항');nb.type='button';
+  nb.addEventListener('click',()=>{at++;if(at>=N)showResult();else render()});
+  stage.append(box,nb);
+  nb.focus({preventScroll:false});
+  return box;
+}
+function record(ok){results.push({title:items[at].title,ok})}
+
+/* ---- 진술 판정 ---- */
+function renderStatement(it){
+  const p=el('div','panel');p.append(el('b','','진술'));p.append(el('p','',it.statement));stage.append(p);
+  stage.append(el('p','prompt',M.prompt));
+  const box=el('div','choices two');
+  const btns=['맞다','틀리다'].map((label,i)=>{const b=el('button','choice center',label);b.type='button';b.setAttribute('aria-pressed','false');
+    b.addEventListener('click',()=>{const ans=it.answer?0:1,ok=i===ans;record(ok);lockChoices(btns,i,ans,'정답');verdictBox(ok,it.why)});return b});
+  btns.forEach(b=>box.append(b));stage.append(box);
+}
+
+/* ---- 종료 요약 ---- */
+function showResult(){
+  progress();stage.replaceChildren();
+  const right=results.filter(r=>r.ok).length;
+  stage.append(el('h2','','결과'));
+  const sc=el('p','score',`${N}문항 중 ${right}문항 맞음`);sc.setAttribute('role','status');stage.append(sc);
+  const rows=el('div','rows');
+  results.forEach(r=>{const p=el('p');p.append(el('span','mk '+(r.ok?'ok':'bad'),r.ok?'○':'✕'));p.append(el('span','',r.title+(r.ok?' — 맞음':' — 다시 볼 부분')));rows.append(p)});
+  stage.append(rows);
+  const rules=DATA.summary.correct_rules||[],caution=DATA.summary.caution||'';
+  stage.append(el('h3','','확인된 법리'));rules.forEach(x=>stage.append(el('p','','• '+x)));
+  stage.append(el('h3','','주의 사항'));stage.append(el('p','',caution));
+  stage.append(el('p','muted small','답변은 저장·전송되지 않습니다. 형성학습용 퀴즈이며 개별 사건의 법률 판단이 아닙니다.'));
+  const msg=el('p','small');msg.setAttribute('role','status');
+  const copy=el('button','next','결과 복사');copy.type='button';
+  copy.addEventListener('click',async()=>{
+    try{const rows=results.map(r=>`${r.title} — ${r.ok?'맞음':'다시 볼 부분'}`);await navigator.clipboard.writeText([`${N}문항 중 ${right}문항 맞음`,'',...rows,'','확인된 법리',...rules.map(x=>'• '+x),'','주의 사항',caution].join('\n'));msg.textContent='결과를 복사했습니다.'}
+    catch(_){msg.textContent='이 브라우저에서는 복사할 수 없습니다. 결과를 선택해 복사해 주세요.'}});
+  stage.append(copy,msg);
+  copy.focus({preventScroll:true});
+}
+if(N)start();else stage.textContent='문항을 불러오지 못했습니다.';
+})();
+</script></body></html>
