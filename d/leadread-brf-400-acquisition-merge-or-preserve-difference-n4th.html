@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="인수는 합치기인가 차이를 보존하는가 — 엔터테인먼트 기업 인수 사례로 읽는 3분 브리핑">
+  <title>인수는 합치기인가 차이를 보존하는가 · Lead Read</title>
+  <style>
+    :root { color-scheme:light; --ground:#f6f4f1; --surface:#ffffff; --ink:#1a1815; --muted:#565046; --rule:#d9d3c7; --accent:#5a2f2a; --accent-soft:#f2e6e3; --mark:#2c4a4f; --mark-soft:#e4edee; --focus:#5a2f2a; }
+    @media(prefers-color-scheme:dark) { :root { color-scheme:dark; --ground:#141210; --surface:#1e1b17; --ink:#f2eee6; --muted:#b4ac9d; --rule:#433c31; --accent:#e0a79c; --accent-soft:#271c1a; --mark:#93c3c9; --mark-soft:#182324; --focus:#e0a79c; } }
+    :root[data-theme="dark"] { color-scheme:dark; --ground:#141210; --surface:#1e1b17; --ink:#f2eee6; --muted:#b4ac9d; --rule:#433c31; --accent:#e0a79c; --accent-soft:#271c1a; --mark:#93c3c9; --mark-soft:#182324; --focus:#e0a79c; }
+    :root[data-theme="light"] { color-scheme:light; --ground:#f6f4f1; --surface:#ffffff; --ink:#1a1815; --muted:#565046; --rule:#d9d3c7; --accent:#5a2f2a; --accent-soft:#f2e6e3; --mark:#2c4a4f; --mark-soft:#e4edee; --focus:#5a2f2a; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--ground); color:var(--ink); font-family:"Noto Sans KR",Pretendard,"Malgun Gothic",sans-serif; line-height:1.8; word-break:keep-all; }
+    .page { width:min(100% - 36px, 900px); margin:0 auto; }
+    header { display:flex; justify-content:space-between; align-items:center; gap:16px; padding:22px 0 15px; border-bottom:1px solid var(--rule); color:var(--muted); font-size:.78rem; letter-spacing:.14em; }
+    button { font:inherit; font-size:.82rem; color:var(--ink); border:1px solid var(--rule); background:var(--surface); border-radius:2px; padding:6px 10px; cursor:pointer; letter-spacing:0; }
+    :focus-visible { outline:3px solid var(--focus); outline-offset:3px; }
+    main { padding:44px 0 60px; }
+    .kicker { margin:0 0 12px; color:var(--mark); font-size:.75rem; font-weight:800; letter-spacing:.18em; }
+    h1,h2,h3 { line-height:1.3; text-wrap:balance; }
+    h1 { font-size:clamp(1.85rem,5vw,2.9rem); font-weight:750; letter-spacing:-.04em; margin:0 0 16px; }
+    .dek { max-width:62ch; color:var(--muted); font-size:1.03rem; margin:0; }
+    .leadbox { margin:28px 0 38px; padding:20px 22px; background:var(--surface); border:1px solid var(--rule); border-left:5px solid var(--accent); }
+    .lb-label { margin:0 0 4px; color:var(--accent); font-size:.72rem; font-weight:800; letter-spacing:.13em; }
+    .lb-q { margin:0 0 14px; font-size:1.05rem; font-weight:700; }
+    .lb-a { margin:0; font-size:1.02rem; font-weight:600; }
+    section { margin:40px 0; }
+    h2 { font-size:1.3rem; margin:0 0 14px; font-weight:750; letter-spacing:-.02em; }
+    h2 span { display:block; margin-top:4px; color:var(--muted); font-size:.76rem; font-weight:600; letter-spacing:.1em; }
+    h3 { font-size:.97rem; margin:0 0 8px; }
+    p { max-width:64ch; margin:0 0 15px; }
+    .timeline { margin:22px 0 10px; border-left:2px solid var(--rule); padding-left:20px; }
+    .tl { position:relative; padding:0 0 22px 0; display:grid; grid-template-columns:88px minmax(0,1fr); gap:14px; }
+    .tl::before { content:""; position:absolute; left:-27px; top:9px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+    .tl:last-child { padding-bottom:0; }
+    .tl .yr { color:var(--accent); font-weight:800; font-size:.88rem; letter-spacing:.02em; font-variant-numeric:tabular-nums; }
+    .tl div p { margin:0 0 6px; font-size:.94rem; }
+    .tl div p:last-child { margin:0; }
+    .counter { margin:20px 0; padding:18px 20px; background:var(--surface); border:1px solid var(--rule); border-left:4px solid var(--mark); }
+    .counter h3 { color:var(--mark); }
+    .counter p:last-child { margin:0; }
+    .questions { counter-reset:q; list-style:none; margin:16px 0; padding:0; }
+    .questions li { counter-increment:q; display:grid; grid-template-columns:32px minmax(0,1fr); gap:10px; padding:12px 0; border-bottom:1px solid var(--rule); }
+    .questions li::before { content:counter(q,decimal-leading-zero); color:var(--mark); font-weight:800; font-size:.84rem; font-variant-numeric:tabular-nums; }
+    .closing { margin:44px 0 0; padding:22px 24px; background:var(--accent-soft); border:1px solid var(--rule); }
+    .closing h2 { font-size:1.12rem; margin:0 0 10px; }
+    .closing p { margin:0; }
+    details { padding:13px 0; border-top:1px solid var(--rule); }
+    summary { color:var(--ink); font-weight:700; cursor:pointer; }
+    .source { margin:9px 0 0; color:var(--muted); font-size:.87rem; }
+    .cite { color:var(--muted); font-size:.88rem; }
+    a { color:var(--accent); text-underline-offset:3px; }
+    footer { border-top:1px solid var(--rule); padding:18px 0 30px; color:var(--muted); font-size:.86rem; }
+    .author-credit { margin:6px 0 0; color:var(--ink); font-weight:750; }
+    @media(max-width:640px) { .page { width:min(100% - 26px,900px); } main { padding-top:32px; } section { margin:34px 0; } h2 { font-size:1.18rem; } .leadbox { padding:17px 16px; } .timeline { padding-left:14px; } .tl { grid-template-columns:1fr; gap:3px; } .tl::before { left:-21px; } }
+    @media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header><span>LEAD READ · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="색상 테마 바꾸기">테마 바꾸기</button></header>
+    <main>
+      <p class="kicker">M&amp;A / 합쳐야 할 것과 남겨야 할 것</p>
+      <h1>인수는 합치기인가,<br>차이를 보존하는가</h1>
+      <p class="dek">인수 뒤에 가장 쉬운 말은 "하나가 되자"입니다. 시스템을 통합하고 보고 체계를 맞추면 시너지가 날 것처럼 보입니다. 그러나 인수 대상의 가치는 모기업과 똑같아지는 데 있지 않을 수 있습니다. 통합은 더 많이 섞는 일이 아니라 무엇을 보호할지 정하는 판단입니다.</p>
+
+      <div class="leadbox">
+        <p class="lb-label">핵심 질문</p>
+        <p class="lb-q">우리가 지우려는 차이가 실제로는 인수한 이유는 아니었는가?</p>
+        <p class="lb-label">한 문장 결론</p>
+        <p class="lb-a">좋은 통합은 차이를 없애는 기술이 아니라, 차이가 공동의 능력으로 실현될 때까지 잠재성을 관리하는 기술입니다. 합칠 것과 보존할 것과 새로 배울 것을 나눠야 인수는 두 회사의 병렬 보유를 넘어섭니다.</p>
+      </div>
+
+      <section>
+        <h2>왜 지금 이 문제인가<span>통합 강도를 설계하는 일</span></h2>
+        <p>하스페슬라와 제미슨은 1991년 저서에서 인수합병의 가치를 규모 확대가 아니라 두 기업의 자원을 어떻게 결합하고 관리하느냐의 문제로 봅니다. 통합의 강도는 흡수와 보존과 공생과 지주회사형 관계처럼 여러 형태로 설계될 수 있고, 사업 간 상호의존과 조직 정체성의 차이가 처방을 바꿉니다.</p>
+        <p>이 관점은 통합을 자동으로 선한 것으로 만들지 않습니다. 고객 접점과 연구개발이 긴밀히 얽혀 있으면 공통 시스템이 필요할 수 있지만, 창의적 판단이나 독특한 조직 역량을 빠르게 표준화하면 인수의 목적 자체가 훼손됩니다.</p>
+        <p>그래서 리더의 첫 질문은 "언제 합칠 것인가"가 아니라 "어떤 가치가 두 조직의 경계에서 만들어지는가"입니다. 이 질문에 답하지 않으면 통합 일정이 전략을 대신합니다.</p>
+      </section>
+
+      <section>
+        <h2>너무 빠른 통합이 지우는 것<span>자율성과 뜻밖의 기회</span></h2>
+        <p>그레브너는 2004년 연구에서 인수 뒤 피인수 기업의 리더와 인력이 기존 방식의 자율성을 유지할 때, 처음 계획하지 않았던 기회와 성과가 나타날 수 있다고 봅니다. 너무 빠른 구조적 통합은 인수하려 했던 능력과 관계망을 파괴하고, 모기업의 기준을 일방적으로 덮어씌울 수 있습니다.</p>
+        <p>보존은 방치가 아니라 새로운 조합이 생길 시간을 확보하는 관리 방식입니다. 란프트와 로드도 2002년 연구에서 인수 뒤 지식이 이동하고 새로운 역량이 만들어지는 과정이 자동으로 일어나지 않는다고 봅니다. 핵심 인력이 남아도 그들이 가진 암묵지와 관계가 사라지면 인수의 기대는 빈 표가 됩니다.</p>
+        <p>따라서 통합 계획에는 시스템과 숫자뿐 아니라 누가 누구와 어떤 방식으로 일하며 무엇을 새로 배울지가 들어가야 합니다. 조직도는 결과이고, 관계의 재설계가 과정입니다.</p>
+      </section>
+
+      <section class="case">
+        <h2>적용 사례 — 캐릭터를 사서 세계를 붙인 인수<span>엔터테인먼트 기업, 2009~2012년</span></h2>
+        <div class="timeline">
+          <div class="tl">
+            <span class="yr">2009</span>
+            <div>
+              <p>한 엔터테인먼트 기업이 캐릭터와 이야기 자산을 가진 제작사를 인수하기로 발표했습니다. 공시 자료는 인수 대가와 대상 기업의 콘텐츠·캐릭터 자산을 기록합니다. 논리는 규모를 키우는 데 있지 않고, 캐릭터와 이야기 세계를 배급과 마케팅과 테마파크와 상품화 네트워크에 연결하는 데 있었습니다.</p>
+            </div>
+          </div>
+          <div class="tl">
+            <span class="yr">2010</span>
+            <div>
+              <p>주주 승인과 거래 종결 절차를 거쳐 인수가 완료되었습니다. 이 시점의 공시는 결합의 조건과 대가를 남기지만, 결합이 실제로 어떤 능력을 만드는지는 아직 숫자로 확인되지 않습니다. 통합의 성과는 이때부터 시작되는 운영의 문제입니다.</p>
+            </div>
+          </div>
+          <div class="tl">
+            <span class="yr">2012</span>
+            <div>
+              <p>연차보고서는 인수 이후 영화와 소비재와 테마파크 등 여러 사업이 연결되는 구조를 보여줍니다. 그러나 연결은 각 사업을 하나의 제작 방식으로 평준화하는 것과 다릅니다. 제작 판단과 캐릭터 세계의 연속성, 팬 공동체와의 관계는 고유한 전문성과 리듬을 필요로 했습니다.</p>
+            </div>
+          </div>
+        </div>
+        <p>이 사례를 성공담으로만 읽어서는 안 됩니다. 인수 뒤에는 창작 통제, 브랜드 충돌, 일정 조정, 수익 배분, 팬의 기대라는 긴장이 계속됩니다. 다만 공개 기록은 한 회사 안에서 결합의 이익을 얻으면서도 피인수 조직의 전문성과 정체성과 의사결정 리듬을 모두 제거하지 않는 선택이 가능하다는 점을 보여줍니다.</p>
+        <p>인수 직후의 성과와 장기 역량 형성도 나눠 봐야 합니다. 첫 흥행작이나 매출 상승은 결합의 가능성을 보여주지만, 반복해서 새로운 작품과 상품을 만들 수 있는 권한과 관계와 학습 구조가 남아 있는지는 다른 질문입니다. 단기 시너지와 장기 잠재성을 같은 지표로 읽지 않을 때 통합의 과잉을 줄일 수 있습니다.</p>
+      </section>
+
+      <section>
+        <h2>세 칸으로 나누는 통합 설계<span>공통화·보존·새 학습</span></h2>
+        <p>통합 회의에서 유용한 형식은 세 칸입니다. 공통화할 것, 보존할 것, 서로 만나 새로 배울 것. 첫 칸은 배급과 회계와 보안처럼 규모의 이익이 분명한 영역입니다. 둘째 칸은 창작 판단과 고객 관계처럼 차이가 곧 가치인 영역입니다. 셋째 칸은 두 조직이 만나야만 생기는 영역입니다.</p>
+        <p>이 세 칸을 채우면 통합의 속도가 영역별로 달라져야 한다는 사실이 드러납니다. 모든 것을 같은 일정으로 흡수하면 둘째 칸이 사라지고, 반대로 아무것도 합치지 않으면 첫째 칸의 이익을 포기합니다.</p>
+        <p>문제는 대개 둘째 칸이 문서에 없다는 것입니다. 보존할 것을 명시하지 않으면 통합은 기본값으로 흡수가 됩니다. 그래서 보존 목록에는 무엇을 남길지만 아니라 누가 그 결정을 지키고 언제 재검토할지까지 적어야 합니다.</p>
+      </section>
+
+      <section>
+        <h2>반증 — 통합하면 시너지가 커지는가<span>차이를 신성시하는 것도 답이 아니다</span></h2>
+        <div class="counter">
+          <h3>합치는 것도 미루는 것도 비용이다</h3>
+          <p>자원 결합과 상호의존을 설계하라는 관점은 필요한 곳의 연결 강도를 정하라고 합니다. 너무 빠른 통합이 자율성과 뜻밖의 기회를 파괴한다는 반론은 연결이 원래의 능력과 관계를 없애지 않는지 확인하라고 합니다.</p>
+          <p>두 요구는 서로를 지우지 않습니다. 배급과 마케팅과 상품화의 연결은 규모의 이익을 만들 수 있지만, 창작 판단을 일괄 표준화하면 인수한 잠재력이 줄어듭니다. 반대로 차이를 신성시해 공동 자산과 운영 규칙을 만들지 않으면 인수는 두 회사의 병렬 보유에 머뭅니다. 그 상태도 비용입니다. 중복 시스템, 느린 의사결정, 서로 다른 기준이 남습니다.</p>
+          <p>그래서 질문은 "누가 누구를 흡수하는가"가 아니라 "어떤 차이가 함께 있을 때 더 큰 능력이 되는가"입니다. 이 질문은 통합의 속도와 범위를 영역별로 다르게 정하게 만듭니다.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>아직 실현되지 않은 능력을 관리하기<span>잠재성과 실천</span></h2>
+        <p>조르조 아감벤의 잠재성 논의는 능력을 이미 실현된 기능으로만 보지 말라고 요구합니다. 어떤 능력은 실제로 사용되는 힘일 뿐 아니라, 아직 다른 방식으로 발현될 수 있는 가능성도 품습니다. 잠재성을 보존한다는 것은 아무것도 하지 않는다는 뜻이 아닙니다.</p>
+        <p>이 렌즈로 보면 통합팀의 역할이 달라집니다. 모든 것을 빠르게 하나의 기준으로 맞추는 대신, 모기업의 규모와 피인수 기업의 고유성이 서로 다른 방식으로 작동할 여지를 설계해야 합니다. 무엇을 지금 실현하고 무엇을 아직 열어 둘지 판단하는 일이 통합의 핵심이 됩니다.</p>
+        <p>그 판단은 시간표를 요구합니다. 열어 둔 것을 언제 검토할지 정하지 않으면 보존은 방치가 되고, 검토 시점을 너무 앞당기면 잠재성은 실현되기 전에 표준화됩니다.</p>
+      </section>
+
+      <section>
+        <h2>리더의 판단 질문<span>통합 계획 회의에서</span></h2>
+        <ol class="questions">
+          <li>우리가 인수한 능력 중 통합 과정에서 사라질 위험이 있는 것은 무엇인가?</li>
+          <li>보존할 항목마다 책임자와 재검토 시점이 적혀 있는가?</li>
+          <li>공통화로 줄어드는 비용과 잃는 차이의 가치를 같은 표에서 비교했는가?</li>
+          <li>단기 시너지와 장기 역량 형성을 다른 지표로 보고 있는가?</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>근거 자료<span>서지와 확인 범위</span></h2>
+        <p class="cite">세 연구는 서지와 공개 논지 범위에서 정리했습니다. 사례는 공시와 연차보고서 서술 범위에서 다루었고, 인수 대가와 매출 수치는 인용하지 않았습니다.</p>
+        <details>
+          <summary>인수합병의 가치 창출과 통합 형태</summary>
+          <p class="source">Philippe Haspeslagh·David B. Jemison, <cite>Managing Acquisitions: Creating Value through Corporate Renewal</cite>, Free Press, 1991. 흡수·보존·공생의 통합 형태에 관한 논지를 참조했습니다. 서지 정보만 확인했습니다.</p>
+        </details>
+        <details>
+          <summary>피인수 리더의 자율성과 뜻밖의 기회</summary>
+          <p class="source">Mary E. Graebner, “Momentum and Serendipity”, <cite>Strategic Management Journal</cite>, 2004. 자율성 유지와 우연적 가치 창출에 관한 논지를 참조했습니다. <a href="https://doi.org/10.1002/smj.419">학술지 서지</a>.</p>
+        </details>
+        <details>
+          <summary>지식 이동과 역량 형성</summary>
+          <p class="source">Alexandra Ranft·Michael Lord, “Acquiring New Technologies and Capabilities”, <cite>Organization Science</cite>, 2002. 암묵지와 관계의 이동에 관한 논지를 참조했습니다. <a href="https://doi.org/10.1287/orsc.13.4.420.2952">학술지 서지</a>.</p>
+        </details>
+        <details>
+          <summary>사례 자료 — 2009~2012년 인수 경과</summary>
+          <p class="source">해당 기업의 인수 발표 공시, 주주 승인·거래 종결 자료, 2012년 연차보고서. 사업 연결에 관한 서술만 참조했고 대가·매출 수치는 쓰지 않았습니다. <a href="https://thewaltdisneycompany.com/investor-relations/">투자자 자료</a>.</p>
+        </details>
+      </section>
+
+      <section class="closing">
+        <h2>한 줄로 남기면</h2>
+        <p>인수의 성과는 조직도가 아니라 차이가 어떤 공동 결과로 이어졌는지에서 확인해야 합니다. 공통화할 것과 보존할 것과 새로 배울 것을 나누고, 보존 항목마다 책임자와 재검토 시점을 적어 두십시오. 그 목록이 없으면 통합은 기본값으로 흡수가 되고, 인수한 이유였던 능력이 가장 먼저 사라집니다. 반대로 차이를 신성시하면 두 회사의 병렬 보유에 머뭅니다. 좋은 통합은 잠재성을 언제 실현할지 정하는 일입니다.</p>
+      </section>
+    </main>
+    <footer>Lead Read<p class="author-credit">&lt;조우성 변호사 작성&gt;</p></footer>
+  </div>
+  <script>
+    const root = document.documentElement;
+    const button = document.getElementById('theme-toggle');
+    button.addEventListener('click', () => {
+      const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+      root.dataset.theme = next;
+      button.setAttribute('aria-label', next === 'dark' ? '라이트 테마로 바꾸기' : '다크 테마로 바꾸기');
+    });
+  </script>
+</body>
+</html>
