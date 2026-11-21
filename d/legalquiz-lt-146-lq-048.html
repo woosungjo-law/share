@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="referrer" content="no-referrer">
+<title>해외 법인 사용료 지급, 원천징수와 조약 제한세율</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Segoe UI","Malgun Gothic",sans-serif;color:#1b2530;background:#f4f6f8;line-height:1.6;
+  --ink:#1b2530;--muted:#596873;--line:#c9d2d9;--brand:#176b60;--brand-bg:#eef6f4;--ok:#176b60;--ok-bg:#e6f4ef;--bad:#a3322b;--bad-bg:#fbeceb}
+*{box-sizing:border-box}
+body{margin:0}
+.wrap{max-width:720px;margin:auto;padding:20px 16px 40px}
+.card{background:#fff;border:1px solid #dbe1e6;border-radius:16px;padding:20px;margin:12px 0;box-shadow:0 2px 10px #1525360a}
+h1{font-size:1.3rem;margin:4px 0 8px}
+h2{font-size:1.05rem;margin:0 0 10px}
+h3{font-size:.98rem;margin:18px 0 6px}
+p{margin:8px 0}
+.muted{color:var(--muted)}
+.small{font-size:.9rem}
+.progress{height:8px;background:#e8edf1;border-radius:10px;overflow:hidden;margin-top:10px}
+.progress>i{display:block;height:100%;background:var(--brand);width:0;transition:width .2s}
+.badge{display:inline-block;padding:2px 10px;border-radius:99px;background:#e8edf1;font-size:.82rem;margin-bottom:8px}
+.prompt{font-size:1.02rem;font-weight:650;margin:14px 0 10px}
+.panel{background:#f7f9fa;border:1px solid #e2e8ec;border-radius:12px;padding:12px 14px;margin:10px 0}
+.panel b{display:block;font-size:.82rem;color:var(--muted);margin-bottom:2px}
+.choices{display:grid;gap:10px;margin-top:10px}
+.choices.two{grid-template-columns:1fr 1fr}
+@media (max-width:420px){.choices.two{grid-template-columns:1fr}}
+.choice{font:inherit;color:inherit;background:#fff;border:2px solid var(--line);border-radius:12px;padding:12px 14px;min-height:52px;text-align:left;cursor:pointer;overflow-wrap:anywhere;width:100%}
+.choice:hover:not(:disabled){background:var(--brand-bg);border-color:var(--brand)}
+.choice:disabled{cursor:default;color:var(--ink);opacity:1}
+.choice.center{text-align:center;font-weight:650}
+.choice[aria-pressed="true"]{border-color:#2b4a63;background:#eef3f8}
+.choice.is-correct{border-color:var(--ok);background:var(--ok-bg)}
+.choice.is-wrong{border-color:var(--bad);background:var(--bad-bg)}
+.choice.is-error .stmt{text-decoration:line-through;text-decoration-thickness:2px;color:var(--bad)}
+.tag{display:inline-block;margin:6px 6px 0 0;padding:1px 8px;border-radius:99px;font-size:.78rem;font-weight:700;background:#2b4a63;color:#fff}
+.is-correct .tag.t-ok,.tag.t-ok{background:var(--ok)}
+.tag.t-bad{background:var(--bad)}
+.verdict{font-weight:800;font-size:1.05rem;margin:0 0 6px}
+.verdict.ok{color:var(--ok)}
+.verdict.bad{color:var(--bad)}
+.feedback{border-left:5px solid var(--brand);background:var(--brand-bg);padding:12px 14px;margin-top:16px;border-radius:6px}
+.feedback.bad{border-left-color:var(--bad);background:var(--bad-bg)}
+.fix{margin-top:10px;padding:10px 12px;border-radius:8px;background:var(--ok-bg);border:1px solid #b9dccf}
+.fix b{color:var(--ok)}
+.next{font:inherit;font-weight:700;color:#fff;background:var(--brand);border:0;border-radius:12px;padding:12px 18px;min-height:48px;cursor:pointer;margin-top:14px;width:100%}
+.next.alt{background:#fff;color:var(--brand);border:2px solid var(--brand)}
+.bubble{max-width:88%;padding:10px 14px;border-radius:16px;margin:8px 0;overflow-wrap:anywhere}
+.bubble.them{background:#eef1f4;border-top-left-radius:4px}
+.bubble.me{background:#d9ece7;margin-left:auto;border-top-right-radius:4px}
+.who{display:block;font-size:.78rem;font-weight:700;color:var(--muted)}
+.chip{display:inline-block;background:#fff3d6;border:1px solid #ecd28a;border-radius:99px;padding:4px 12px;font-weight:700}
+.rows p{display:flex;gap:8px;margin:6px 0}
+.rows .mk{flex:none;width:1.6em;font-weight:800}
+.mk.ok{color:var(--ok)}.mk.bad{color:var(--bad)}
+.score{font-size:1.5rem;font-weight:800;margin:4px 0 10px}
+.sr{position:absolute;left:-9999px}
+</style>
+</head>
+<body><main class="wrap">
+<header class="card"><h1>해외 법인 사용료 지급, 원천징수와 조약 제한세율</h1><p class="muted">원천징수 의무자, 제한세율 신청서류, 조약과 국내 세율의 적용 원칙을 확인합니다.</p>
+<div class="progress" aria-hidden="true"><i id="bar"></i></div>
+<p id="counter" class="muted small" aria-live="polite"></p></header>
+<section id="stage" class="card"></section>
+</main>
+<script>
+(()=>{'use strict';
+const DATA={"model":"statement","items":[{"title":"사용료 지급과 원천징수","statement":"국내사업장과 실질적으로 관련되지 않고 그 국내사업장에 귀속되지 않는 국내원천 사용료소득을 외국법인에 지급하는 자는 지급할 때 원천징수해야 한다.","answer":true,"why":"법인세법 제98조 제1항은 외국법인의 국내원천소득 중 국내사업장과 실질적으로 관련되지 않거나 그 국내사업장에 귀속되지 않는 일정 소득을 지급하는 자가 지급 시 원천징수하도록 정합니다. 국내원천 사용료소득은 제93조 제8호에 규정되어 있습니다."},{"title":"제한세율 신청 서류","statement":"법령상 신청서 제출 면제 사유가 없는 지급에서 제한세율을 적용받으려는 실질귀속자 외국법인은 제한세율 적용신청서와 실질귀속자임을 증명하는 서류를 원천징수의무자에게 제출해야 한다.","answer":true,"why":"법인세법 제98조의6 제1항은 제한세율 적용신청서와 실질귀속자 증명서류의 제출을 정합니다. 다만 법인세법 시행령 제138조의7 제1항은 외국예탁결제기관이 한국예탁결제원에 개설한 계좌를 통해 받는 일정한 국내원천소득에 대해 신청서를 제출하지 않을 수 있게 하므로, 문항은 그 면제 사유가 없는 지급을 전제로 합니다."},{"title":"조약 세율과 국내 세율","statement":"조세조약상 사용료 제한세율이 국내법상 해당 소득의 세율보다 높더라도, 사용료에는 조약상 제한세율을 적용한다.","answer":false,"why":"법인세법 제98조의7 제1항은 조세조약상 사용료소득에 대해 조약 제한세율과 제98조 제1항의 국내법 세율 중 낮은 세율을 적용하도록 정합니다. 제98조의5 제1항의 특례 대상은 별도 예외입니다."},{"title":"국내사업장이 없는 외국법인","statement":"지급받는 외국법인에 국내사업장이 없으면, 그 외국법인의 국내원천 사용료소득을 지급하는 자에게 원천징수 의무가 생기지 않는다.","answer":false,"why":"법인세법 제98조 제1항은 국내사업장이 없는 외국법인에게 지급하는 금액도 포함해 정하고 있습니다. 요건에 해당하는 국내원천 사용료소득이면 지급자가 지급 시 원천징수합니다."},{"title":"적용할 세율의 선택","statement":"조세조약상 제한세율이 국내법상 해당 사용료소득의 세율보다 낮다면, 일반적인 경우 그 낮은 제한세율을 적용한다.","answer":true,"why":"법인세법 제98조의7 제1항은 조약 제한세율과 국내법 세율 중 낮은 세율을 적용하도록 합니다. 다만 제98조의5 제1항의 특례에 해당하는 경우는 이 일반 원칙과 다릅니다."},{"title":"신청서가 없는 경우","statement":"법령상 신청서 제출 면제 사유가 없고 신청서 등 서류를 제출받지 못했더라도, 지급자가 실질귀속자를 알면 조약상 제한세율을 적용해야 한다.","answer":false,"why":"법인세법 제98조의6 제3항은 신청서 등 서류를 제출받지 못하는 등 대통령령으로 정하는 사유가 있으면 제한세율을 적용하지 않고 제98조 제1항의 금액을 원천징수하도록 정합니다. 이 문항은 시행령 제138조의7 제1항의 신청서 제출 면제 상황이 아니라고 전제합니다."}],"summary":{"correct_rules":["국내사업장과 실질적으로 관련되거나 귀속되지 않는 일정 국내원천소득을 외국법인에 지급하는 자는 지급 시 원천징수합니다. 제93조 제8호는 국내에서 사용하거나 대가를 국내에서 지급하는 권리·자산·정보의 대가 등을 국내원천 사용료소득으로 정합니다.","제한세율을 적용받으려는 실질귀속자는 신청서와 실질귀속자 증명서류를 원천징수의무자에게 제출해야 합니다. 다만 시행령은 특정 외국예탁결제기관 계좌 경유 지급에 신청서 제출 예외를 두며, 서류 미제출 등 법령상 사유가 있으면 제한세율 대신 법인세법상 세율을 원천징수합니다.","조세조약상 사용료 제한세율과 법인세법상 해당 국내원천소득의 세율 중 낮은 세율을 적용합니다. 법인세법 제98조의5 제1항 특례 대상은 별도로 취급됩니다."],"caution":"일반적인 법률 학습용입니다. 소득의 국내원천성, 조세조약 요건, 실질귀속자 지위와 서류 상태는 개별 거래에 따라 확인해야 하며, 이 퀴즈는 적용 세율이나 납부세액을 판단하거나 보장하지 않습니다."}};
+const stage=document.getElementById('stage'),bar=document.getElementById('bar'),counter=document.getElementById('counter');
+let at=0,results=[];
+
+const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n};
+const MODEL={statement:{name:'진술 판정',prompt:'이 진술은 맞을까요?'}};
+const items=DATA.items,N=items.length,M=MODEL[DATA.model];
+
+function progress(){bar.style.width=Math.round(at/N*100)+'%';counter.textContent=at<N?`${at+1} / ${N}`:'완료'}
+function start(){at=0;results=[];render()}
+function render(){
+  progress();stage.replaceChildren();
+  const it=items[at];
+  stage.append(el('span','badge',`${M.name} · 문항 ${at+1}`));
+  stage.append(el('h2','',it.title));
+  renderStatement(it);
+}
+
+/* ---- 공통: 선택 표시를 유지한 채 정오를 붙인다 (화면을 비우지 않는다) ---- */
+function lockChoices(btns,picked,correct,correctTag){
+  btns.forEach((b,i)=>{
+    b.disabled=true;b.setAttribute('aria-pressed',String(i===picked));
+    if(i===correct)b.classList.add('is-correct');
+    if(i===picked&&i!==correct)b.classList.add('is-wrong');
+    const wrap=el('div');
+    if(i===picked)wrap.append(el('span','tag','내 선택'),' ');
+    if(i===correct)wrap.append(el('span','tag t-ok',correctTag||'정답'));
+    if(wrap.childNodes.length)b.append(wrap);
+  });
+}
+function verdictBox(ok,why,extra){
+  const box=el('div','feedback'+(ok?'':' bad'));
+  box.setAttribute('role','status');
+  box.append(el('p','verdict '+(ok?'ok':'bad'),ok?'✓ 맞아요':'✕ 다시 볼 부분이에요'));
+  if(why)box.append(el('p','',why));
+  if(extra)box.append(extra);
+  const last=at===N-1;
+  const nb=el('button','next',last?'결과 보기':'다음 문항');nb.type='button';
+  nb.addEventListener('click',()=>{at++;if(at>=N)showResult();else render()});
+  stage.append(box,nb);
+  nb.focus({preventScroll:false});
+  return box;
+}
+function record(ok){results.push({title:items[at].title,ok})}
+
+/* ---- 진술 판정 ---- */
+function renderStatement(it){
+  const p=el('div','panel');p.append(el('b','','진술'));p.append(el('p','',it.statement));stage.append(p);
+  stage.append(el('p','prompt',M.prompt));
+  const box=el('div','choices two');
+  const btns=['맞다','틀리다'].map((label,i)=>{const b=el('button','choice center',label);b.type='button';b.setAttribute('aria-pressed','false');
+    b.addEventListener('click',()=>{const ans=it.answer?0:1,ok=i===ans;record(ok);lockChoices(btns,i,ans,'정답');verdictBox(ok,it.why)});return b});
+  btns.forEach(b=>box.append(b));stage.append(box);
+}
+
+/* ---- 종료 요약 ---- */
+function showResult(){
+  progress();stage.replaceChildren();
+  const right=results.filter(r=>r.ok).length;
+  stage.append(el('h2','','결과'));
+  const sc=el('p','score',`${N}문항 중 ${right}문항 맞음`);sc.setAttribute('role','status');stage.append(sc);
+  const rows=el('div','rows');
+  results.forEach(r=>{const p=el('p');p.append(el('span','mk '+(r.ok?'ok':'bad'),r.ok?'○':'✕'));p.append(el('span','',r.title+(r.ok?' — 맞음':' — 다시 볼 부분')));rows.append(p)});
+  stage.append(rows);
+  const rules=DATA.summary.correct_rules||[],caution=DATA.summary.caution||'';
+  stage.append(el('h3','','확인된 법리'));rules.forEach(x=>stage.append(el('p','','• '+x)));
+  stage.append(el('h3','','주의 사항'));stage.append(el('p','',caution));
+  stage.append(el('p','muted small','답변은 저장·전송되지 않습니다. 형성학습용 퀴즈이며 개별 사건의 법률 판단이 아닙니다.'));
+  const msg=el('p','small');msg.setAttribute('role','status');
+  const copy=el('button','next','결과 복사');copy.type='button';
+  copy.addEventListener('click',async()=>{
+    try{const rows=results.map(r=>`${r.title} — ${r.ok?'맞음':'다시 볼 부분'}`);await navigator.clipboard.writeText([`${N}문항 중 ${right}문항 맞음`,'',...rows,'','확인된 법리',...rules.map(x=>'• '+x),'','주의 사항',caution].join('\n'));msg.textContent='결과를 복사했습니다.'}
+    catch(_){msg.textContent='이 브라우저에서는 복사할 수 없습니다. 결과를 선택해 복사해 주세요.'}});
+  stage.append(copy,msg);
+  copy.focus({preventScroll:true});
+}
+if(N)start();else stage.textContent='문항을 불러오지 못했습니다.';
+})();
+</script></body></html>
