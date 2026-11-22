@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>지식은 전달되는가, 실천되는가 — Lead Read</title>
+<style>
+:root{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}}
+html[data-theme="dark"]{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}
+html[data-theme="light"]{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;line-height:1.78;word-break:keep-all;overflow-wrap:anywhere}
+.page{max-width:920px;margin:auto;padding:26px 20px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--ln);font-size:.78rem;letter-spacing:.1em;color:var(--mut)}
+.top b{color:var(--ink)}
+button{font:inherit;font-size:.8rem;padding:6px 10px;color:var(--ink);background:var(--sf);border:1px solid var(--ln);border-radius:4px;cursor:pointer}
+a{color:var(--ac);text-underline-offset:.2em}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--mk);outline-offset:3px}
+header{padding:34px 0 10px}
+.kicker{color:var(--mk);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.28;letter-spacing:-.03em;margin:.4em 0 .3em}
+.dek{font-size:clamp(1.02rem,2.2vw,1.18rem);color:var(--mut);margin:0 0 10px;max-width:62ch}
+.tag{display:inline-block;margin-top:12px;padding:4px 10px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:700;border-radius:3px}
+h2{font-size:clamp(1.22rem,2.8vw,1.62rem);line-height:1.34;letter-spacing:-.02em;margin:0 0 8px}
+h2 span{display:block;font-size:.78rem;font-weight:600;letter-spacing:.06em;color:var(--mk);margin-top:5px}
+h3{font-size:1.02rem;margin:0 0 6px}
+p{margin:0 0 14px;max-width:70ch}
+section{padding:26px 0;border-top:1px solid var(--ln)}
+.leadbox{margin:22px 0 4px;padding:20px;background:var(--sf);border-left:4px solid var(--ac)}
+.lb-label{font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin:0 0 4px}
+.lb-q{font-size:1.06rem;font-weight:700;margin:0 0 14px}
+.lb-a{margin:0;color:var(--ink)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.pole{padding:18px;background:var(--sf);border-top:4px solid var(--ac)}
+.pole:nth-child(2){border-top-color:var(--mk)}
+.pole small{display:block;font-size:.72rem;letter-spacing:.1em;font-weight:800;color:var(--mk);margin-bottom:6px}
+.clash{margin-top:16px;padding:16px 18px;background:var(--ac2);border-left:4px solid var(--mk)}
+.timeline{margin-top:18px;padding-left:18px;border-left:2px solid var(--ln)}
+.tl{position:relative;margin:0 0 16px}
+.tl:before{content:"";position:absolute;left:-25px;top:.55em;width:9px;height:9px;border-radius:50%;background:var(--mk)}
+.tl b{display:block;color:var(--mk);font-size:.92rem}
+.tl p{margin:2px 0 0;color:var(--mut)}
+.signal{margin-top:16px;padding:18px;background:var(--ac2);border:1px solid var(--ln)}
+.siglabel{display:inline-block;font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin-right:8px}
+.mnote{margin:16px 0;padding:13px 15px;background:var(--mk2);border-left:3px solid var(--mk);font-size:.95rem}
+.mnote b{display:block;font-size:.72rem;letter-spacing:.1em;color:var(--mk);margin-bottom:4px}
+.table-wrap{overflow-x:auto;margin-top:14px}
+table{width:100%;border-collapse:collapse;font-size:.93rem;table-layout:fixed;word-break:normal}
+caption{word-break:normal;text-align:left;padding-bottom:8px}
+th,td{border-bottom:1px solid var(--ln);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--ac2);color:var(--ink);font-size:.85rem}
+.scan{margin-top:16px;padding:15px 17px;background:var(--sf);border:1px solid var(--ln);border-left:4px solid var(--ac)}
+.ask ol{margin:12px 0 0;padding-left:22px}
+.ask li{margin:0 0 10px}
+.closing{padding:24px;background:var(--sf);border-top:2px solid var(--ac)}
+.closing h2{margin-bottom:10px}
+.closing p{font-size:1.04rem;margin:0}
+.cite{color:var(--mut);font-size:.94rem}
+details{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--ln)}
+summary{cursor:pointer;font-weight:700;color:var(--ac)}
+.source{margin:8px 0 0;font-size:.92rem;color:var(--mut)}
+.source cite{font-style:normal;color:var(--ink);font-weight:600}
+footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--ln);color:var(--mut);font-size:.84rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.author-credit{color:var(--ink);font-weight:800}
+@media (max-width:640px){
+.page{padding:18px 14px 44px}
+.duo{grid-template-columns:1fr}
+header{padding:24px 0 6px}
+section{padding:22px 0}
+table{font-size:.84rem}
+th,td{padding:8px 7px}
+.closing{padding:18px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="top"><span><b>Lead Read</b> · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="테마 바꾸기">테마</button></div>
+<header>
+<p class="kicker">Lead Read · 리더십 브리핑</p>
+<h1>지식은 전달되는가, 실천되는가</h1>
+<p class="dek">아는 것을 쓰지 못하는 이유는 흐름이 막혔기 때문일까, 받아 줄 실천이 없기 때문일까.</p>
+<p class="tag">두 관점 · 적용 사례 · 판단 질문</p>
+</header>
+
+<div class="leadbox">
+<p class="lb-label">핵심 질문</p>
+<p class="lb-q">우리 조직의 지식은 어디서 막혀 있고, 그 지식을 받아 줄 실천은 어디에 있는가?</p>
+<p class="lb-label">한 문장 결론</p>
+<p class="lb-a">흐르게 하는 일과 머물게 하는 일은 서로를 대신하지 못합니다. 채널을 넓히는 동시에, 그 지식을 이미 하는 일에 붙일 자리를 함께 만들어야 합니다.</p>
+</div>
+
+<section>
+<h2>왜 지금 이 문제인가<span>문서의 양과 쓰임의 거리</span></h2>
+<p>조직은 자기가 아는 것을 다 쓰지 못합니다. 보고서가 있고 매뉴얼이 있고 교육 자료가 있는데, 결정의 순간에 그 지식은 나타나지 않습니다.</p><p>흔한 처방은 전달입니다. 저장소를 만들고 공유를 늘리면 해결된다는 기대입니다. 다른 쪽은 전달의 문제가 아니라고 봅니다. 지식은 물건처럼 옮겨지지 않고, 하는 일 속에서만 살아 있다는 것입니다.</p>
+</section>
+
+<section>
+<h2>두 연구가 갈라지는 지점<span>유통의 문제인가, 실천의 문제인가</span></h2>
+<div class="duo"><div class="pole"><small>유통의 관점</small><h3>네 과정을 지나야 쌓인다</h3><p>휴버는 조직 학습을 하나의 사건이 아니라 네 과정의 연결로 정리합니다. 지식의 획득, 정보의 분배, 정보의 해석, 그리고 조직 기억입니다. 이 틀에서 학습 실패는 네 곳 중 어디가 막혔는지로 진단됩니다. 정보를 얻었는데 퍼지지 않았는가, 퍼졌는데 서로 다르게 읽혔는가, 읽었는데 기억되지 않았는가. 처방은 채널을 열고 저장소를 만들고 해석의 합의를 붙이는 일입니다.</p></div><div class="pole"><small>실천의 관점</small><h3>아는 것은 하는 일 속에 산다</h3><p>게라르디는 지식을 머릿속이나 저장소의 내용물로 보지 않습니다. 아는 것은 사람들이 하는 일입니다. 작업장의 지식은 규칙과 문서로 따로 떨어져 있지 않고, 참여와 상호작용과 사물과 공간이 함께 엮인 결 속에 있습니다. 그래서 처방이 달라집니다. 저장소를 채우는 일이 아니라 참여의 구조와 실천의 배열을 바꾸는 일입니다.</p></div></div><div class="clash"><p>두 처방의 함정은 서로의 빈틈에 있습니다. 채널만 넓히면 정확한 문서가 아무도 하지 않는 일 옆에 쌓입니다. 실천만 강조하면 그 집단이 떠난 뒤에 아무것도 남지 않습니다.</p></div>
+</section>
+
+<section class="case">
+<h2>적용 사례 — 같은 연구소에서 제품이 된 것과 전시품이 된 것<span>제록스 팰로앨토, 1970년에서 1983년</span></h2>
+<p>제록스는 1970년 캘리포니아 팰로앨토에 연구센터를 열었습니다. 1973년에는 알토라는 개인용 컴퓨터가 그곳에서 만들어졌고, 같은 해 알토들을 잇는 이더넷이 개발됐습니다. 레이저 인쇄는 1971년과 1972년에 시연됐고, 1977년에 나온 9700은 회사의 대표 상품이 됐습니다.</p><p>반면 알토는 연구용으로 내부에 머물렀고, 1981년에 내놓은 스타는 높은 가격과 닫힌 구조로 시장에서 힘을 쓰지 못했습니다. 이더넷은 1980년 세 회사의 공동 규격을 거쳐 1983년 표준이 됐습니다.</p><p>유통의 언어로 보면 분배와 기억의 문제입니다. 인쇄 기술은 복사기 사업이라는 기존 경로와 기억 장치에 바로 연결됐습니다. 개인용 컴퓨터는 그 경로에 연결될 자리가 없었습니다. 실천의 언어로 보면 다른 그림이 보입니다. 제록스의 실천은 종이를 다루는 일이었고, 화면과 마우스와 네트워크로 일하는 방식은 그 결에 날실이 없었습니다. 경로가 없어서 가지 않았고, 결이 없어서 붙지 않았습니다.</p>
+</section>
+
+<section>
+<h2>렌즈 — 오크숏의 요약과 실천<span>요약을 전체로 착각할 때</span></h2>
+<p>마이클 오크숏은 지식에 두 종류가 있다고 봤습니다. 기술적 지식은 규칙과 처방으로 요약될 수 있는 것이고, 실천적 지식은 해 보지 않고는 배울 수 없으며 아무리 잘 써도 전부 적어 낼 수 없는 것입니다.</p><p>그는 요약을 전체로 착각하는 태도를 합리주의라 불렀습니다. 요약은 실천에서 뽑아낸 줄임표인데, 그것을 원본으로 여기면 실천은 사라지고 규칙만 남습니다. 오크숏은 실천적 지식이 전수되지 않는다고 말하지 않습니다. 함께 일하면서만 전수된다고 말합니다. 그래서 첫 질문은 무엇을 저장할까가 아니라 누구와 함께 일하게 할까입니다.</p>
+</section>
+
+<section class="ask">
+<h2>리더의 판단 질문<span>결정 전에 스스로 확인할 것</span></h2>
+<ol><li>이 정보가 어느 사업 단위까지 도달했는가?</li><li>도달한 자리에서 같은 뜻으로 읽혔는가?</li><li>그 일을 이미 하는 사람과 함께 일하게 했는가?</li><li>문서로 남긴 지식이 붙을 실천의 자리가 있는가?</li><li>이 지식을 쓰지 못한 것이 흐름의 문제인가, 결의 문제인가?</li></ol>
+</section>
+
+<section class="closing">
+<h2>한 줄로 남기면</h2>
+<p>지식이 쓰이지 않는 이유는 두 곳에서 갈립니다. 흐름이 막혔는가, 받아 줄 실천이 없는가. 진단 없이 저장소부터 늘리면 정확한 문서만 쌓이고, 진단 없이 실천만 강조하면 사람이 떠날 때 지식도 함께 떠납니다. 다음번에 아는 것을 못 쓰는 장면을 만나면 세 줄을 적어 보십시오. 이 정보가 어디까지 갔는가, 그 자리에서 같은 뜻으로 읽혔는가, 그 일을 이미 하는 사람과 함께 일했는가.</p>
+</section>
+
+<section>
+<h2>근거 자료<span>서지와 확인 범위</span></h2>
+<p class="cite">두 연구는 공개 서지와 논지 범위에서 정리했습니다. 사례는 연구소의 연혁과 기술사 기록 범위에서 다루었고, 매출과 시장 점유율은 인용하지 않았습니다.</p>
+<details><summary>학습의 네 과정</summary><p class="source">George P. Huber, “Organizational Learning: The Contributing Processes and the Literatures”, <cite>Organization Science</cite> 2(1), 1991. 획득·분배·해석·기억의 구분을 참조했습니다.</p></details><details><summary>실천의 결</summary><p class="source">Silvia Gherardi, <cite>Organizational Knowledge: The Texture of Workplace Learning</cite>, Blackwell, 2006. 참여와 상호작용으로 짜인 앎의 논지를 참조했습니다.</p></details><details><summary>연구소의 두 발명</summary><p class="source">제록스 팰로앨토 연구센터의 1970년 설립, 알토 1973년, 이더넷 1973년 개발과 1980년 공동 규격·1983년 표준, 레이저 인쇄 1971~1972년 시연과 1977년 9700, 1981년 스타. 기술사 기록으로 교차 확인한 범위만 서술했습니다.</p></details>
+</section>
+
+<footer>
+<span>Lead Read · 3분 브리핑</span>
+<p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+const root=document.documentElement;const b=document.getElementById('theme-toggle');
+b.addEventListener('click',()=>{const n=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=n;});
+</script>
+</body>
+</html>
