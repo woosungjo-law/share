@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>조직은 왜 수평을 유지하지 못하는가 — Lead Read</title>
+<style>
+:root{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}}
+html[data-theme="dark"]{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}
+html[data-theme="light"]{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;line-height:1.78;word-break:keep-all;overflow-wrap:anywhere}
+.page{max-width:920px;margin:auto;padding:26px 20px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--ln);font-size:.78rem;letter-spacing:.1em;color:var(--mut)}
+.top b{color:var(--ink)}
+button{font:inherit;font-size:.8rem;padding:6px 10px;color:var(--ink);background:var(--sf);border:1px solid var(--ln);border-radius:4px;cursor:pointer}
+a{color:var(--ac);text-underline-offset:.2em}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--mk);outline-offset:3px}
+header{padding:34px 0 10px}
+.kicker{color:var(--mk);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.28;letter-spacing:-.03em;margin:.4em 0 .3em}
+.dek{font-size:clamp(1.02rem,2.2vw,1.18rem);color:var(--mut);margin:0 0 10px;max-width:62ch}
+.tag{display:inline-block;margin-top:12px;padding:4px 10px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:700;border-radius:3px}
+h2{font-size:clamp(1.22rem,2.8vw,1.62rem);line-height:1.34;letter-spacing:-.02em;margin:0 0 8px}
+h2 span{display:block;font-size:.78rem;font-weight:600;letter-spacing:.06em;color:var(--mk);margin-top:5px}
+h3{font-size:1.02rem;margin:0 0 6px}
+p{margin:0 0 14px;max-width:70ch}
+section{padding:26px 0;border-top:1px solid var(--ln)}
+.leadbox{margin:22px 0 4px;padding:20px;background:var(--sf);border-left:4px solid var(--ac)}
+.lb-label{font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin:0 0 4px}
+.lb-q{font-size:1.06rem;font-weight:700;margin:0 0 14px}
+.lb-a{margin:0;color:var(--ink)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.pole{padding:18px;background:var(--sf);border-top:4px solid var(--ac)}
+.pole:nth-child(2){border-top-color:var(--mk)}
+.pole small{display:block;font-size:.72rem;letter-spacing:.1em;font-weight:800;color:var(--mk);margin-bottom:6px}
+.clash{margin-top:16px;padding:16px 18px;background:var(--ac2);border-left:4px solid var(--mk)}
+.timeline{margin-top:18px;padding-left:18px;border-left:2px solid var(--ln)}
+.tl{position:relative;margin:0 0 16px}
+.tl:before{content:"";position:absolute;left:-25px;top:.55em;width:9px;height:9px;border-radius:50%;background:var(--mk)}
+.tl b{display:block;color:var(--mk);font-size:.92rem}
+.tl p{margin:2px 0 0;color:var(--mut)}
+.signal{margin-top:16px;padding:18px;background:var(--ac2);border:1px solid var(--ln)}
+.siglabel{display:inline-block;font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin-right:8px}
+.mnote{margin:16px 0;padding:13px 15px;background:var(--mk2);border-left:3px solid var(--mk);font-size:.95rem}
+.mnote b{display:block;font-size:.72rem;letter-spacing:.1em;color:var(--mk);margin-bottom:4px}
+.table-wrap{overflow-x:auto;margin-top:14px}
+table{width:100%;border-collapse:collapse;font-size:.93rem;table-layout:fixed;word-break:normal}
+caption{word-break:normal;text-align:left;padding-bottom:8px}
+th,td{border-bottom:1px solid var(--ln);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--ac2);color:var(--ink);font-size:.85rem}
+.scan{margin-top:16px;padding:15px 17px;background:var(--sf);border:1px solid var(--ln);border-left:4px solid var(--ac)}
+.ask ol{margin:12px 0 0;padding-left:22px}
+.ask li{margin:0 0 10px}
+.closing{padding:24px;background:var(--sf);border-top:2px solid var(--ac)}
+.closing h2{margin-bottom:10px}
+.closing p{font-size:1.04rem;margin:0}
+.cite{color:var(--mut);font-size:.94rem}
+details{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--ln)}
+summary{cursor:pointer;font-weight:700;color:var(--ac)}
+.source{margin:8px 0 0;font-size:.92rem;color:var(--mut)}
+.source cite{font-style:normal;color:var(--ink);font-weight:600}
+footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--ln);color:var(--mut);font-size:.84rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.author-credit{color:var(--ink);font-weight:800}
+@media (max-width:640px){
+.page{padding:18px 14px 44px}
+.duo{grid-template-columns:1fr}
+header{padding:24px 0 6px}
+section{padding:22px 0}
+table{font-size:.84rem}
+th,td{padding:8px 7px}
+.closing{padding:18px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="top"><span><b>Lead Read</b> · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="테마 바꾸기">테마</button></div>
+<header>
+<p class="kicker">Lead Read · 리더십 브리핑</p>
+<h1>조직은 왜 수평을 유지하지 못하는가</h1>
+<p class="dek">평평하게 설계해도 왜 다시 위계로 굳는가. 필연인가, 환경과의 불일치인가.</p>
+<p class="tag">여백 메모 · 적용 사례 · 판단 질문</p>
+</header>
+
+<div class="leadbox">
+<p class="lb-label">핵심 질문</p>
+<p class="lb-q">우리 조직에서 이번 주에 팀이 스스로 결정한 일은 무엇인가?</p>
+<p class="lb-label">한 문장 결론</p>
+<p class="lb-a">수평은 선언이 아니라 습관입니다. 위계를 없애는 일이 아니라, 작은 결정을 팀이 스스로 내리는 자리를 규칙으로 남기는 일이 먼저입니다.</p>
+</div>
+
+<section>
+<h2>왜 지금 이 문제인가<span>몇 해 뒤 다시 계단이 세워지는 이유</span></h2>
+<p>조직이 커지면 사람들은 수평을 시도합니다. 명칭을 없애고, 회의를 열고, 결정을 나눕니다. 그런데 몇 해가 지나면 어느새 몇 사람이 결정하고 나머지가 듣습니다.</p><p>문제는 리더의 의지가 부족해서가 아닙니다. 수평을 설계한 사람들조차 몇 해 뒤 그 위에 다시 계단을 세웁니다. 조직학은 이 현상을 두 가지로 읽습니다.</p>
+</section>
+
+<section>
+<h2>두 설명이 갈라지는 지점<span>조직화의 운명인가, 적응의 형태인가</span></h2>
+<h3>과두의 법칙 — 조직을 말하면 과두제를 말한다</h3><p>미헬스는 1911년 민주적 조직의 내부를 들여다보고 이 문장을 남겼습니다. 조직이 커지면 업무가 전문화되고, 전문화된 업무는 특정 간부의 손에 들어갑니다. 정보의 비대칭이 생기고, 의사결정의 기술을 가진 소수가 앞섭니다. 대의 구조를 세워도 대표는 곧 전문가가 되고, 전문가는 곧 권력이 됩니다. 그래서 처방은 과두를 인정하고 견제 장치를 세우라는 쪽으로 갑니다.</p><div class="mnote"><b>여백 메모 1</b>수평을 선언한 조직의 첫 점검은 명칭이 아니라 결정의 흔적입니다. 최근 한 달 회의록에서 팀이 스스로 내린 결정이 몇 건인지 세어 보면 선언의 두께가 보입니다.</div><h3>적응의 형태 — 환경의 속도가 구조를 정한다</h3><p>번스와 스태커는 1961년 영국 제조업체들을 비교하며 기계적 체계와 유기적 체계를 나눴습니다. 역할이 고정되고 절차가 문서로 굳은 쪽과, 역할이 흐르고 결정이 현장 가까이에서 이뤄지는 쪽입니다. 중요한 것은 우열이 아니라 적합성입니다. 안정된 환경에서는 기계적이, 변화가 빠른 환경에서는 유기적이 효과적입니다. 위계가 굳는 것은 필연이 아니라 환경과의 불일치 신호입니다.</p><div class="mnote"><b>여백 메모 2</b>자율이 유지된 조직의 공통점은 관리자의 부재가 아니라 결정의 반복입니다. 같은 종류의 결정을 매주 반복하면 그 결정은 규칙이 되고, 규칙이 되면 사람이 바뀌어도 남습니다.</div><div class="clash"><p>미헬스는 과두를 견제하라고 하고, 번스와 스태커는 환경이 변했을 때 구조를 다시 묶으라고 합니다. 견제만 하면 결정이 다시 중앙으로 모이고, 재설계만 하면 습관이 없는 자리에서 위계가 다시 자랍니다.</p></div>
+</section>
+
+<section class="case">
+<h2>적용 사례 — 관리자를 없애지 않고 위계를 희석한 회사<span>브라질, 1980년대 이후</span></h2>
+<p>라파엘 셈러는 1980년대 브라질의 제조업체를 맡으며 두 견해를 한 번에 시험했습니다. 상속받은 회사의 경영진을 대폭 정리하고, 그 자리에 직원의 결정권을 넣었습니다. 관리 계층을 줄이는 대신 직원이 스스로의 일과 보상을 정하게 했습니다.</p><p>1989년 그가 경영전문지에 남긴 설명에 따르면 직원 수백 명이 근무 시간을 스스로 정하고 회사 장부를 열어 보며 주요 결정에 투표했습니다. 2004년 보도에서는 직원이 임금과 근무 시간을 정하고 관리자를 고용·해고하며 경영자를 평가했습니다.</p><p>주의할 것은 이 자율이 특정 시장과 특정 경영자의 지속적 개입 아래서 유지되었다는 점입니다. 사례는 수평의 가능성을 보여줄 뿐, 누구에게나 가능한 처방은 아닙니다.</p>
+</section>
+
+<section>
+<h2>렌즈 — 토케빌의 자치<span>선언이 아니라 반복된 경험</span></h2>
+<p>알렉시 드 토케빌은 위계와 수평 사이의 균형을 미국의 자치 전통에서 찾았습니다. 그에게 자치는 중앙의 통제가 없어서가 아니라, 시민이 스스로의 일을 직접 다스리는 습관이 있기 때문에 가능했습니다.</p><p>조직에서의 수평도 같습니다. 수평은 리더가 내려주는 선언이 아니라, 팀이 스스로의 일을 정하는 반복된 경험 속에서만 유지됩니다. 그는 경고도 남겼습니다. 자치의 습관이 없는데 중앙의 통제만 없애면 사람들은 새로운 지배자를 스스로 청원하게 됩니다.</p>
+</section>
+
+<section class="ask">
+<h2>리더의 판단 질문<span>결정 전에 스스로 확인할 것</span></h2>
+<ol><li>이번 주에 팀이 스스로 결정한 일은 무엇인가?</li><li>그 결정이 반복될 규칙으로 남았는가?</li><li>위계가 굳은 것이 환경 변화의 신호인가?</li><li>자율이 특정 관리자의 개입에만 기대고 있는가?</li><li>결정이 다시 중앙으로 모인 자리를 알고 있는가?</li></ol>
+</section>
+
+<section class="closing">
+<h2>한 줄로 남기면</h2>
+<p>수평을 유지하지 못하는 이유는 의지의 부족이 아니라 습관의 부재에서 찾는 편이 낫습니다. 선언을 몇 해 지킬 수 있을지 묻지 말고, 선언 다음 주 월요일에 팀이 무엇을 스스로 결정했는지를 물어야 합니다. 그 자리를 매일의 회의로 채운 조직만이 위계가 다시 굳는 것을 늦출 수 있습니다.</p>
+</section>
+
+<section>
+<h2>근거 자료<span>서지와 확인 범위</span></h2>
+<p class="cite">두 연구는 원전 서지로 확인했고, 사례는 공개된 경영 사례 서술 범위에서 다루었습니다. 직원 수와 매출은 출처별 차이가 있어 수치를 확정하지 않았습니다.</p>
+<details><summary>과두의 법칙</summary><p class="source">Robert Michels, <cite>Political Parties</cite>, 1915(독일어 원서 1911). 조직화가 과두를 낳는다는 논지를 참조했습니다.</p></details><details><summary>기계적·유기적 체계</summary><p class="source">Tom Burns·G. M. Stalker, <cite>The Management of Innovation</cite>, Tavistock, 1961. 환경 적합성 논지를 참조했습니다.</p></details><details><summary>자치의 습관</summary><p class="source">Alexis de Tocqueville, <cite>Democracy in America</cite>, 1835·1840. 자치와 연대의 조건을 참조했습니다.</p></details>
+</section>
+
+<footer>
+<span>Lead Read · 3분 브리핑</span>
+<p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+const root=document.documentElement;const b=document.getElementById('theme-toggle');
+b.addEventListener('click',()=>{const n=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=n;});
+</script>
+</body>
+</html>
