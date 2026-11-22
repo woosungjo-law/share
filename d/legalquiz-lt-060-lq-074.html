@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="referrer" content="no-referrer">
+<title>우선주 권리와 주주 전환청구 시점 점검</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Segoe UI","Malgun Gothic",sans-serif;color:#1b2530;background:#f4f6f8;line-height:1.6;
+  --ink:#1b2530;--muted:#596873;--line:#c9d2d9;--brand:#176b60;--brand-bg:#eef6f4;--ok:#176b60;--ok-bg:#e6f4ef;--bad:#a3322b;--bad-bg:#fbeceb}
+*{box-sizing:border-box}
+body{margin:0}
+.wrap{max-width:720px;margin:auto;padding:20px 16px 40px}
+.card{background:#fff;border:1px solid #dbe1e6;border-radius:16px;padding:20px;margin:12px 0;box-shadow:0 2px 10px #1525360a}
+h1{font-size:1.3rem;margin:4px 0 8px}
+h2{font-size:1.05rem;margin:0 0 10px}
+h3{font-size:.98rem;margin:18px 0 6px}
+p{margin:8px 0}
+.muted{color:var(--muted)}
+.small{font-size:.9rem}
+.progress{height:8px;background:#e8edf1;border-radius:10px;overflow:hidden;margin-top:10px}
+.progress>i{display:block;height:100%;background:var(--brand);width:0;transition:width .2s}
+.badge{display:inline-block;padding:2px 10px;border-radius:99px;background:#e8edf1;font-size:.82rem;margin-bottom:8px}
+.prompt{font-size:1.02rem;font-weight:650;margin:14px 0 10px}
+.panel{background:#f7f9fa;border:1px solid #e2e8ec;border-radius:12px;padding:12px 14px;margin:10px 0}
+.panel b{display:block;font-size:.82rem;color:var(--muted);margin-bottom:2px}
+.choices{display:grid;gap:10px;margin-top:10px}
+.choices.two{grid-template-columns:1fr 1fr}
+@media (max-width:420px){.choices.two{grid-template-columns:1fr}}
+.choice{font:inherit;color:inherit;background:#fff;border:2px solid var(--line);border-radius:12px;padding:12px 14px;min-height:52px;text-align:left;cursor:pointer;overflow-wrap:anywhere;width:100%}
+.choice:hover:not(:disabled){background:var(--brand-bg);border-color:var(--brand)}
+.choice:disabled{cursor:default;color:var(--ink);opacity:1}
+.choice.center{text-align:center;font-weight:650}
+.choice[aria-pressed="true"]{border-color:#2b4a63;background:#eef3f8}
+.choice.is-correct{border-color:var(--ok);background:var(--ok-bg)}
+.choice.is-wrong{border-color:var(--bad);background:var(--bad-bg)}
+.choice.is-error .stmt{text-decoration:line-through;text-decoration-thickness:2px;color:var(--bad)}
+.tag{display:inline-block;margin:6px 6px 0 0;padding:1px 8px;border-radius:99px;font-size:.78rem;font-weight:700;background:#2b4a63;color:#fff}
+.is-correct .tag.t-ok,.tag.t-ok{background:var(--ok)}
+.tag.t-bad{background:var(--bad)}
+.verdict{font-weight:800;font-size:1.05rem;margin:0 0 6px}
+.verdict.ok{color:var(--ok)}
+.verdict.bad{color:var(--bad)}
+.feedback{border-left:5px solid var(--brand);background:var(--brand-bg);padding:12px 14px;margin-top:16px;border-radius:6px}
+.feedback.bad{border-left-color:var(--bad);background:var(--bad-bg)}
+.fix{margin-top:10px;padding:10px 12px;border-radius:8px;background:var(--ok-bg);border:1px solid #b9dccf}
+.fix b{color:var(--ok)}
+.next{font:inherit;font-weight:700;color:#fff;background:var(--brand);border:0;border-radius:12px;padding:12px 18px;min-height:48px;cursor:pointer;margin-top:14px;width:100%}
+.next.alt{background:#fff;color:var(--brand);border:2px solid var(--brand)}
+.bubble{max-width:88%;padding:10px 14px;border-radius:16px;margin:8px 0;overflow-wrap:anywhere}
+.bubble.them{background:#eef1f4;border-top-left-radius:4px}
+.bubble.me{background:#d9ece7;margin-left:auto;border-top-right-radius:4px}
+.who{display:block;font-size:.78rem;font-weight:700;color:var(--muted)}
+.chip{display:inline-block;background:#fff3d6;border:1px solid #ecd28a;border-radius:99px;padding:4px 12px;font-weight:700}
+.rows p{display:flex;gap:8px;margin:6px 0}
+.rows .mk{flex:none;width:1.6em;font-weight:800}
+.mk.ok{color:var(--ok)}.mk.bad{color:var(--bad)}
+.score{font-size:1.5rem;font-weight:800;margin:4px 0 10px}
+.sr{position:absolute;left:-9999px}
+</style>
+</head>
+<body><main class="wrap">
+<header class="card"><h1>우선주 권리와 주주 전환청구 시점 점검</h1><p class="muted">종류주식의 권리 기재, 잔여재산 분배 조건, 주주가 청구한 전환의 효력 시점을 구분합니다.</p>
+<div class="progress" aria-hidden="true"><i id="bar"></i></div>
+<p id="counter" class="muted small" aria-live="polite"></p></header>
+<section id="stage" class="card"></section>
+</main>
+<script>
+(()=>{'use strict';
+const DATA={"model":"statement","items":[{"title":"종류주식 내용과 수","statement":"종류주식을 발행하려면 각 종류주식의 내용과 수를 정관으로 정해야 한다.","answer":true,"why":"상법 제344조 제2항은 종류주식을 발행하는 경우 각 종류주식의 내용과 수를 정관으로 정하도록 합니다. 발행조건 자료도 정관 기재와 대조해 누락 여부를 확인하세요."},{"title":"잔여재산 분배와 정관","statement":"잔여재산을 우선 분배받는 종류주식이라도 투자계약서에만 그 내용을 적으면 정관에는 별도로 정하지 않아도 된다.","answer":false,"why":"상법 제344조의2 제2항은 잔여재산 분배에 관한 종류주식을 발행하는 경우 해당 내용을 정관에 정하도록 합니다. 투자계약서가 있다는 사정만으로 정관 기재를 대신한다고 단정할 수 없습니다."},{"title":"잔여재산 분배 조항","statement":"잔여재산 분배에 관한 종류주식의 정관에는 잔여재산의 종류와 가액 결정방법, 그 밖의 분배 내용을 정해야 한다.","answer":true,"why":"상법 제344조의2 제2항은 정관 기재사항으로 잔여재산의 종류, 가액의 결정방법 및 그 밖의 잔여재산 분배 내용을 규정합니다. 실제 정관의 문구와 발행조건을 함께 확인해야 합니다."},{"title":"종류별 문서 대조","statement":"종류별 권리 내용이 서로 다르게 정리되어 있는지 살피기 위해 투자계약서, 정관, 발행조건 자료를 서로 대조하는 것은 실무상 점검 방법이다.","answer":true,"why":"이는 문서 간 차이와 누락을 찾기 위한 실무 점검 방법입니다. 대조 자체를 별도의 법정 요건으로 규정한 것은 아니며, 각 문서의 작성 경위와 실제 발행 내용을 함께 확인해야 합니다."},{"title":"종류주식의 권리 범위","statement":"상법상 종류주식은 이익배당 내용만 달리 정할 수 있고, 잔여재산 분배나 의결권, 상환·전환 내용은 달리 정할 수 없다.","answer":false,"why":"상법 제344조 제1항은 이익배당뿐 아니라 잔여재산 분배, 의결권, 상환 및 전환 등에 관해 내용이 다른 종류주식을 둘 수 있도록 합니다. 구체적인 발행 조건은 법률과 정관을 함께 검토해야 합니다."},{"title":"주주 전환청구의 효력","statement":"주주가 전환을 청구한 경우에도 전환의 효력은 회사가 전환을 결정한 때가 아니라 정관에 정한 전환기간의 마지막 날에 발생한다.","answer":false,"why":"상법 제350조 제1항은 주주가 전환을 청구한 경우 그 청구한 때 전환의 효력이 발생한다고 정합니다. 회사가 전환하는 경우의 시점과 혼동하지 않도록 이번 문항은 주주 청구 상황에 한정합니다."}],"summary":{"correct_rules":["이익배당, 잔여재산 분배, 의결권, 상환 및 전환 등에 관해 내용이 다른 종류주식을 발행할 수 있다.","종류주식을 발행하는 경우 각 종류주식의 내용과 수를 정관으로 정하여야 한다.","잔여재산 분배에 관한 종류주식이면 잔여재산의 종류, 가액 결정방법 및 그 밖의 분배 내용을 정관에 정하여야 한다.","주주가 전환을 청구한 경우에는 그 청구한 때 전환 효력이 발생한다. 회사가 전환하는 경우의 시점은 이번 점검 범위에서 다루지 않는다.","투자계약서, 정관, 발행조건 자료를 종류별로 맞춰 보는 문서 점검 방법이며, 그 자체를 별도의 법정 요건으로 말하지 않는다."],"caution":"일반적인 법률 학습용입니다. 구체적인 종류주식의 유효성, 권리 내용 또는 분쟁 결과를 판단하거나 보장하지 않습니다. 최신 정관·발행조건·청구 자료를 별도로 확인하세요."}};
+const stage=document.getElementById('stage'),bar=document.getElementById('bar'),counter=document.getElementById('counter');
+let at=0,results=[];
+
+const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n};
+const MODEL={statement:{name:'진술 판정',prompt:'이 진술은 맞을까요?'}};
+const items=DATA.items,N=items.length,M=MODEL[DATA.model];
+
+function progress(){bar.style.width=Math.round(at/N*100)+'%';counter.textContent=at<N?`${at+1} / ${N}`:'완료'}
+function start(){at=0;results=[];render()}
+function render(){
+  progress();stage.replaceChildren();
+  const it=items[at];
+  stage.append(el('span','badge',`${M.name} · 문항 ${at+1}`));
+  stage.append(el('h2','',it.title));
+  renderStatement(it);
+}
+
+/* ---- 공통: 선택 표시를 유지한 채 정오를 붙인다 (화면을 비우지 않는다) ---- */
+function lockChoices(btns,picked,correct,correctTag){
+  btns.forEach((b,i)=>{
+    b.disabled=true;b.setAttribute('aria-pressed',String(i===picked));
+    if(i===correct)b.classList.add('is-correct');
+    if(i===picked&&i!==correct)b.classList.add('is-wrong');
+    const wrap=el('div');
+    if(i===picked)wrap.append(el('span','tag','내 선택'),' ');
+    if(i===correct)wrap.append(el('span','tag t-ok',correctTag||'정답'));
+    if(wrap.childNodes.length)b.append(wrap);
+  });
+}
+function verdictBox(ok,why,extra){
+  const box=el('div','feedback'+(ok?'':' bad'));
+  box.setAttribute('role','status');
+  box.append(el('p','verdict '+(ok?'ok':'bad'),ok?'✓ 맞아요':'✕ 다시 볼 부분이에요'));
+  if(why)box.append(el('p','',why));
+  if(extra)box.append(extra);
+  const last=at===N-1;
+  const nb=el('button','next',last?'결과 보기':'다음 문항');nb.type='button';
+  nb.addEventListener('click',()=>{at++;if(at>=N)showResult();else render()});
+  stage.append(box,nb);
+  nb.focus({preventScroll:false});
+  return box;
+}
+function record(ok){results.push({title:items[at].title,ok})}
+
+/* ---- 진술 판정 ---- */
+function renderStatement(it){
+  const p=el('div','panel');p.append(el('b','','진술'));p.append(el('p','',it.statement));stage.append(p);
+  stage.append(el('p','prompt',M.prompt));
+  const box=el('div','choices two');
+  const btns=['맞다','틀리다'].map((label,i)=>{const b=el('button','choice center',label);b.type='button';b.setAttribute('aria-pressed','false');
+    b.addEventListener('click',()=>{const ans=it.answer?0:1,ok=i===ans;record(ok);lockChoices(btns,i,ans,'정답');verdictBox(ok,it.why)});return b});
+  btns.forEach(b=>box.append(b));stage.append(box);
+}
+
+/* ---- 종료 요약 ---- */
+function showResult(){
+  progress();stage.replaceChildren();
+  const right=results.filter(r=>r.ok).length;
+  stage.append(el('h2','','결과'));
+  const sc=el('p','score',`${N}문항 중 ${right}문항 맞음`);sc.setAttribute('role','status');stage.append(sc);
+  const rows=el('div','rows');
+  results.forEach(r=>{const p=el('p');p.append(el('span','mk '+(r.ok?'ok':'bad'),r.ok?'○':'✕'));p.append(el('span','',r.title+(r.ok?' — 맞음':' — 다시 볼 부분')));rows.append(p)});
+  stage.append(rows);
+  const rules=DATA.summary.correct_rules||[],caution=DATA.summary.caution||'';
+  stage.append(el('h3','','확인된 법리'));rules.forEach(x=>stage.append(el('p','','• '+x)));
+  stage.append(el('h3','','주의 사항'));stage.append(el('p','',caution));
+  const disclosure='답변은 저장·전송되지 않습니다. 형성학습용 퀴즈이며 개별 사건의 법률 판단이 아닙니다.';
+  stage.append(el('p','muted small',disclosure));
+  const msg=el('p','small');msg.setAttribute('role','status');
+  const copy=el('button','next','결과 복사');copy.type='button';
+  copy.addEventListener('click',async()=>{
+    try{const rows=results.map(r=>`${r.title} — ${r.ok?'맞음':'다시 볼 부분'}`);await navigator.clipboard.writeText([`${N}문항 중 ${right}문항 맞음`,'',...rows,'','확인된 법리',...rules.map(x=>'• '+x),'','주의 사항',caution,'',disclosure].join('\n'));msg.textContent='결과를 복사했습니다.'}
+    catch(_){msg.textContent='이 브라우저에서는 복사할 수 없습니다. 결과를 선택해 복사해 주세요.'}});
+  stage.append(copy,msg);
+  copy.focus({preventScroll:true});
+}
+if(N)start();else stage.textContent='문항을 불러오지 못했습니다.';
+})();
+</script></body></html>
