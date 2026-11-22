@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="책임은 사람의 문제인가 사안의 문제인가 — 윤리적 판단의 두 축을 읽는 3분 브리핑">
+<title>책임은 사람의 문제인가 사안의 문제인가 · Lead Read</title>
+<style>
+:root{color-scheme:light;--bg:#f6f4f4;--sf:#fff;--ink:#1a1818;--mut:#57504f;--ln:#dcd3d1;--ac:#503038;--ac2:#f2e8ea;--mk:#3a4a5e;--mk2:#e9eef4;--fc:#503038}
+@media(prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#131111;--sf:#1d1a1a;--ink:#f2eeec;--mut:#b4aaa7;--ln:#423a38;--ac:#e5b3b6;--ac2:#271d1e;--mk:#a8bdd4;--mk2:#181f26;--fc:#e5b3b6}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#131111;--sf:#1d1a1a;--ink:#f2eeec;--mut:#b4aaa7;--ln:#423a38;--ac:#e5b3b6;--ac2:#271d1e;--mk:#a8bdd4;--mk2:#181f26;--fc:#e5b3b6}
+:root[data-theme="light"]{color-scheme:light;--bg:#f6f4f4;--sf:#fff;--ink:#1a1818;--mut:#57504f;--ln:#dcd3d1;--ac:#503038;--ac2:#f2e8ea;--mk:#3a4a5e;--mk2:#e9eef4;--fc:#503038}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans KR",Pretendard,"Malgun Gothic",sans-serif;line-height:1.8;word-break:keep-all}
+.page{width:min(100% - 36px,900px);margin:0 auto}
+header{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0 15px;border-bottom:1px solid var(--ln);color:var(--mut);font-size:.78rem;letter-spacing:.14em}
+button{font:inherit;font-size:.82rem;color:var(--ink);background:var(--sf);border:1px solid var(--ln);border-radius:2px;padding:6px 10px;cursor:pointer;letter-spacing:0}
+:focus-visible{outline:3px solid var(--fc);outline-offset:3px}
+main{padding:44px 0 60px}
+.kicker{margin:0 0 12px;color:var(--mk);font-size:.75rem;font-weight:800;letter-spacing:.18em}
+h1,h2,h3{line-height:1.3;text-wrap:balance}
+h1{font-size:clamp(1.85rem,5vw,2.9rem);font-weight:750;letter-spacing:-.04em;margin:0 0 16px}
+.dek{max-width:62ch;color:var(--mut);font-size:1.03rem;margin:0}
+.leadbox{margin:28px 0 38px;padding:20px 22px;background:var(--sf);border:1px solid var(--ln);border-top:4px solid var(--ac)}
+.lb-label{margin:0 0 4px;color:var(--ac);font-size:.72rem;font-weight:800;letter-spacing:.13em}
+.lb-q{margin:0 0 14px;font-size:1.05rem;font-weight:700}
+.lb-a{margin:0;font-size:1.02rem;font-weight:600}
+section{margin:40px 0}
+h2{font-size:1.28rem;margin:0 0 14px;font-weight:750;letter-spacing:-.02em}
+h2 span{display:block;margin-top:4px;color:var(--mut);font-size:.76rem;font-weight:600;letter-spacing:.1em}
+h3{font-size:.97rem;margin:0 0 8px}
+p{max-width:64ch;margin:0 0 15px}
+.duo{display:grid;grid-template-columns:1fr 1fr;margin:20px 0;border:1px solid var(--ln);background:var(--sf)}
+.pole{padding:18px}
+.pole + .pole{border-left:1px solid var(--ln)}
+.pole .tag{display:block;margin-bottom:8px;color:var(--mk);font-size:.72rem;font-weight:800;letter-spacing:.12em}
+.pole p{margin:0 0 10px;font-size:.93rem}
+.pole p:last-child{margin:0}
+.clash{margin:20px 0 0;padding:18px 20px;background:var(--ac2);border-left:4px solid var(--ac)}
+.clash h3{color:var(--ac)}
+.clash p:last-child{margin:0}
+.counter{margin:20px 0;padding:18px 20px;background:var(--sf);border:1px solid var(--ln);border-left:4px solid var(--mk)}
+.counter h3{color:var(--mk)}
+.counter p:last-child{margin:0}
+.questions{counter-reset:q;list-style:none;margin:16px 0;padding:0}
+.questions li{counter-increment:q;display:grid;grid-template-columns:32px minmax(0,1fr);gap:10px;padding:12px 0;border-bottom:1px solid var(--ln)}
+.questions li::before{content:counter(q,decimal-leading-zero);color:var(--mk);font-weight:800;font-size:.84rem}
+.closing{margin:44px 0 0;padding:22px 24px;background:var(--ac2)}
+.closing h2{font-size:1.12rem;margin:0 0 10px}
+.closing p{margin:0}
+details{padding:13px 0;border-top:1px solid var(--ln)}
+summary{font-weight:700;cursor:pointer}
+.source{margin:9px 0 0;color:var(--mut);font-size:.87rem}
+.cite{color:var(--mut);font-size:.88rem}
+a{color:var(--ac);text-underline-offset:3px}
+footer{border-top:1px solid var(--ln);padding:18px 0 30px;color:var(--mut);font-size:.86rem}
+.author-credit{margin:6px 0 0;color:var(--ink);font-weight:750}
+@media(max-width:640px){.page{width:min(100% - 26px,900px)}main{padding-top:32px}section{margin:34px 0}h2{font-size:1.17rem}.leadbox{padding:17px 16px}.duo{grid-template-columns:1fr}.pole + .pole{border-left:0;border-top:1px solid var(--ln)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="page">
+<header><span>LEAD READ · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="색상 테마 바꾸기">테마 바꾸기</button></header>
+<main>
+<p class="kicker">RESPONSIBILITY / 판단을 깨우는 자리</p>
+<h1>책임은 사람의 문제인가,<br>사안의 문제인가</h1>
+<p class="dek">조직에서 윤리 사고가 터지면 첫 질문은 대개 사람으로 향합니다. 누가 그랬는지, 어떤 성향의 사람이었는지 묻습니다. 그러나 같은 사람도 사안에 따라 다르게 판단합니다. 어떤 결정은 윤리 문제로 보이고, 어떤 결정은 그냥 업무로 처리됩니다.</p>
+
+<div class="leadbox">
+<p class="lb-label">핵심 질문</p>
+<p class="lb-q">윤리적 실패는 나쁜 사람 때문인가, 판단 위에 올라오지 않은 사안 때문인가?</p>
+<p class="lb-label">한 문장 결론</p>
+<p class="lb-a">사람을 가리는 일과 사안을 드러내는 일은 경쟁하는 처방이 아닙니다. 상황의 압력을 낮추는 구조 설계와, 결과의 규모와 피해자와의 거리를 결정 문서에 올리는 정보 설계가 함께 있어야 합니다.</p>
+</div>
+
+<section>
+<h2>왜 지금 이 문제인가<span>사람과 상황의 만남</span></h2>
+<p>트레비뇨는 1986년 사람·상황 상호작용 모형에서 조직의 윤리적 결정이 사람과 상황의 만남에서 갈린다고 설명합니다. 개인 쪽에는 도덕 발달 단계와 자아 강도, 통제 위치 같은 변인이 있고, 상황 쪽에는 조직 문화와 직무 특성, 보상과 압력이 있습니다.</p>
+<p>같은 사람도 어떤 상황에 놓이는지에 따라 판단과 행동이 달라집니다. 이 관점에서 리더의 일은 판단력이 자란 사람을 뽑고 기르며, 그 사람이 버틸 수 있는 구조를 함께 설계하는 것입니다.</p>
+</section>
+
+<section>
+<h2>두 연구가 갈라지는 지점<span>사람·상황과 쟁점의 강도</span></h2>
+<div class="duo">
+<div class="pole">
+<span class="tag">관점 A · 사람과 상황</span>
+<h3>누가 어떤 압력 아래 결정하는가</h3>
+<p>보상 구조와 직무 압력이 판단을 짓누르면 좋은 사람도 다른 선택을 합니다. 그래서 선발과 사회화와 압력 구조의 재설계가 처방이 됩니다.</p>
+<p>사고의 원인을 개인의 성향으로만 돌리면, 같은 구조가 다음 사람에게 같은 결과를 만듭니다.</p>
+</div>
+<div class="pole">
+<span class="tag">관점 B · 사안의 강도</span>
+<h3>무슨 사안인지가 판단을 깨우는가</h3>
+<p>존스는 1991년 기존 모형들이 사안 자체의 특성을 비워 두었다고 지적합니다. 결과의 크기, 사회적 합의, 발생 가능성, 시간적 가까움, 피해자와의 거리, 피해의 집중도가 판단의 매 단계에 스며듭니다.</p>
+<p>같은 사람과 같은 상황에서도 사안의 강도가 높게 읽히면 판단이 깨어나고, 낮게 읽히면 잠듭니다.</p>
+</div>
+</div>
+<div class="clash">
+<h3>갈라지는 지점 — 사람을 바꾸는가, 사안을 올리는가</h3>
+<p>좋은 사람을 뽑으면 된다는 처방은 사안의 강도를 읽는 설계를 빠뜨립니다. 사안을 드러내면 된다는 처방은 사람과 상황의 만남이 만드는 차이를 가립니다. 두 처방은 서로 다른 실패를 놓칩니다.</p>
+<p>그래서 결정 문서에는 두 칸이 필요합니다. 이 결정을 내리는 사람에게 압력은 견딜 만한가, 이 사안의 결과 규모와 가까움은 판단 위에 올라와 있는가입니다. 한 칸이라도 비어 있으면 그 결정은 아직 내릴 때가 아닙니다.</p>
+</div>
+</section>
+
+<section class="case">
+<h2>적용 사례 — 같은 상황에서 갈린 판단과 늦게 읽힌 강도<span>진통제 오표시 사건</span></h2>
+<p>한 제약회사는 2007년 5월 진통제 오피오이드 제품의 오표시 혐의로 유죄를 인정하고 경영진과 함께 6억 3천만 달러대를 지급하기로 했습니다. 법무부는 근거 없는 안전성 주장을 문제 삼았고, 같은 날 통신사 보도도 금액과 혐의를 함께 전했습니다.</p>
+<p>이후 회사는 2019년 9월 파산보호를 신청했고, 2020년 10월 법무부는 83억 달러대의 형사·민사 포괄 합의를 발표했습니다. 합의 문서는 파산 경과와 중죄 인정, 반납 금지법 위반 공모 혐의를 담았고, 방송사 보도도 합의 규모와 법원 승인 조건을 전했습니다.</p>
+<p>사람과 상황의 렌즈로 보면 같은 영업 목표와 보상 구조 아래에서도 개인의 판단이 갈렸다는 점이 남습니다. 내부에서 제품의 남용 가능성이 가장 큰 약점으로 잡혔는데도 판매 현장의 말은 바뀌지 않았습니다.</p>
+<p>사안의 강도 렌즈로 보면 결과가 터진 뒤에야 피해 규모와 사회적 합의가 드러났다는 점이 남습니다. 2007년 합의 뒤에도 판매가 이어진 것은 사안의 강도가 판단 과정에 고정되지 않았다는 신호입니다.</p>
+</section>
+
+<section>
+<h2>반증 — 사안을 크게 만들면 판단이 깨어나는가<span>강조의 부작용</span></h2>
+<div class="counter">
+<h3>강도만 올리면 판단은 마비된다</h3>
+<p>모든 결정에 결과의 규모와 피해의 집중도를 크게 적으면, 문서는 길어지고 판단은 오히려 흐려집니다. 강도 표시가 형식이 되면 사람들은 가장 큰 숫자를 피하는 쪽으로 움직이고, 중요한 작은 사안은 눈에 띄지 않습니다.</p>
+<p>그래서 강도는 많이 적는 것이 아니라 비교 가능하게 적어야 합니다. 같은 기준으로 전 분기 결정과 나란히 놓고, 강도가 낮게 읽힌 결정을 따로 표시해 검토하는 편이 낫습니다.</p>
+<p>사람과 상황의 축도 마찬가지입니다. 압력을 낮추는 일은 보상 구조를 손보는 일과 함께, 회의에서 반대 의견을 말해도 손해가 없다는 사실이 반복적으로 확인될 때 작동합니다. 두 축 모두 형식이 아니라 반복되는 확인이 필요합니다.</p>
+</div>
+</section>
+
+<section>
+<h2>운이 책임을 키우기 전에<span>결과의 운</span></h2>
+<p>버나드 윌리엄스는 결과의 운이 책임 판단을 바꾼다는 문제를 파고들었습니다. 같은 부주의라도 운이 나쁘면 비난이 커지고, 운이 좋으면 아무 일도 없었던 것처럼 지나갑니다.</p>
+<p>책임은 운에 따라 달라지지 않아야 하지만 실제로는 달라집니다. 사고가 나지 않았다는 사실은 판단이 옳았다는 증거가 아닙니다. 운 좋은 위반을 실력으로 착각하는 조직은 다음번에 같은 판단을 반복합니다.</p>
+<p>결정 당시에 결과의 규모를 미리 읽는 질문을 두는 일이, 운의 심판을 기다리는 것보다 낫습니다. 그 질문이 있어야 사후의 낙차가 줄어듭니다.</p>
+</section>
+
+<section>
+<h2>리더의 판단 질문<span>윤리 검토 자리에서</span></h2>
+<ol class="questions">
+<li>이 결정을 내리는 사람에게 상황의 압력은 견딜 만한가?</li>
+<li>이 사안의 결과 규모와 피해자와의 거리는 판단 위에 올라와 있는가?</li>
+<li>강도가 낮게 읽힌 결정을 따로 검토하는 자리가 있는가?</li>
+<li>사고가 없었다는 사실을 판단의 정당성으로 착각하고 있지 않은가?</li>
+</ol>
+</section>
+
+<section>
+<h2>근거 자료<span>서지와 확인 범위</span></h2>
+<p class="cite">두 연구는 학술지 서지와 초록 범위에서 정리했습니다. 사건은 정부 발표와 보도 서술 범위에서 다루었고, 개별 책임자의 형량과 현재 소송 진행은 인용하지 않았습니다.</p>
+<details>
+<summary>사람·상황 상호작용 모형</summary>
+<p class="source">Linda Klebe Treviño, “Ethical Decision Making in Organizations: A Person-Situation Interactionist Model”, <cite>Academy of Management Review</cite> 11(3), 1986. 개인 변인과 상황 변인의 상호작용 논지를 참조했습니다.</p>
+</details>
+<details>
+<summary>쟁점 조건 모형과 도덕적 강도</summary>
+<p class="source">Thomas M. Jones, “Ethical Decision Making by Individuals in Organizations: An Issue-Contingent Model”, <cite>Academy of Management Review</cite> 16(2), 1991. 도덕적 강도의 여섯 속성에 관한 논지를 참조했습니다.</p>
+</details>
+<details>
+<summary>사건 자료 — 2007년 유죄 인정</summary>
+<p class="source">미국 법무부의 2007년 5월 10일 보도자료와 같은 날 통신사 보도. 유죄 인정과 지급 규모에 관한 서술만 참조했습니다.</p>
+</details>
+<details>
+<summary>사건 자료 — 2019~2020년 파산과 합의</summary>
+<p class="source">미국 법무부의 2020년 10월 21일 포괄 합의 발표와 방송사 보도. 파산 경과와 합의 규모·조건에 관한 서술만 참조했습니다.</p>
+</details>
+</section>
+
+<section class="closing">
+<h2>한 줄로 남기면</h2>
+<p>윤리 사고를 막는 일은 사람을 가리는 일과 사안을 드러내는 일을 함께 놓아야 합니다. 선발과 사회화, 압력을 낮추는 상황 설계가 한 축이고, 결정 과정에 사안의 강도를 올리는 정보 설계가 다른 한 축입니다. 다음 결정을 앞두고 두 질문을 던지십시오. 이 사람에게 압력은 견딜 만한가, 이 사안의 규모와 가까움은 판단 위에 있는가. 둘 중 하나라도 비어 있으면 결정을 미루는 편이 낫습니다.</p>
+</section>
+</main>
+<footer>Lead Read<p class="author-credit">&lt;조우성 변호사 작성&gt;</p></footer>
+</div>
+<script>
+const root=document.documentElement;const b=document.getElementById('theme-toggle');
+b.addEventListener('click',()=>{const n=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=n;b.setAttribute('aria-label',n==='dark'?'라이트 테마로 바꾸기':'다크 테마로 바꾸기');});
+</script>
+</body>
+</html>
