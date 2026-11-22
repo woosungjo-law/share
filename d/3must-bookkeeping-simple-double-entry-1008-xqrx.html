@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko" data-design="M2">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>장부는 누가 어떻게 써야 하나 — 간편장부와 복식부기의 갈림길 · 3MUST</title>
+<link rel="icon" href="data:,">
+<style>
+:root { color-scheme:light dark; --bg:#edf1f3; --paper:#fff; --ink:#202d3d; --muted:#596b80; --line:#cbd6e4; --accent:#245aa6; --wash:#e7eef8; font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif; }
+@media(prefers-color-scheme:dark){:root{--bg:#111a20;--paper:#1a252d;--ink:#eff4f4;--muted:#bac7c8;--line:#394a52;--wash:#253541;}}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);line-height:1.55}
+main{width:calc(100% - 28px);max-width:850px;margin:24px auto;padding:clamp(22px,5vw,48px);background:var(--paper);border:1px solid var(--line);border-top:7px solid var(--accent)}
+.eyebrow{font-size:.75rem;font-weight:750;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin:0 0 10px}
+h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.12;letter-spacing:-.035em;margin:0;text-wrap:balance}
+.situation{color:var(--muted);max-width:64ch;margin:14px 0 24px}
+.three{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+section{min-width:0;padding:17px 0;border-top:1px solid var(--line)}
+h2{font-size:.9rem;color:var(--accent);margin:0 0 7px;letter-spacing:.02em}
+p,li{max-width:68ch} section h3{margin:12px 0 4px;font-size:.82rem;font-weight:650;letter-spacing:.03em;color:var(--accent)} section h3:first-child{margin-top:0} section ul+ol,section ol+ul{margin-top:4px} section p{margin:0} section ul,section ol{margin:0;padding-left:1.25rem}
+.table-wrap{max-width:100%;overflow-x:auto;margin:10px 0 0;border:1px solid var(--line);border-radius:8px;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;min-width:560px;font-size:.88rem;line-height:1.45}
+th,td{padding:9px 11px;text-align:left;vertical-align:top;border-right:1px solid var(--line);border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+th:last-child,td:last-child{border-right:0} tbody tr:last-child td{border-bottom:0}
+th{background:var(--wash);font-weight:700;color:var(--ink)}
+.pause{margin-top:20px;padding:13px 15px;background:var(--wash);border-left:3px solid var(--accent)}
+.pause strong{display:block;margin-bottom:4px}.sources{margin-top:20px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+.sources p{margin:4px 0}.disclaimer{font-size:.75rem;color:var(--muted);margin-top:18px}
+html[data-design="M1"]{--accent:#bd4d28;--wash:#f8e7df;--bg:#ece9e5;--line:#dfc7bb;--ink:#252b2c;--muted:#59615f}
+html[data-design="M1"] main{border-top-width:10px}.m1 .three{grid-template-columns:1fr 1fr;gap:12px}.m1 section{border:1px solid var(--line);padding:14px;background:color-mix(in srgb,var(--wash) 35%,var(--paper))}.m1 section:last-child{grid-column:1/-1}
+html[data-design="M2"]{--accent:#176b68;--wash:#e3efed;--bg:#e7eeee;--line:#c5d7d4;--ink:#162c31;--muted:#52696a}
+html[data-design="M2"] h1{font-family:Georgia,"Batang",serif;font-weight:600}.m2 .three{grid-template-columns:1fr 1fr;gap:22px}.m2 section:nth-child(2){background:var(--wash);padding:15px;border-top:0}.m2 section:last-child{grid-column:1/-1}
+html[data-design="M3"]{--accent:#126d57;--wash:#e4f1eb;--bg:#e9eeea;--line:#c5d7cc;--ink:#1d3028;--muted:#5b6e64}
+.m3 .three{position:relative;padding-left:20px}.m3 .three:before{content:"";position:absolute;top:18px;bottom:18px;left:4px;width:2px;background:var(--accent);opacity:.45}.m3 section{position:relative;padding-left:14px}.m3 section:before{content:"";position:absolute;left:-20px;top:20px;width:9px;height:9px;border:2px solid var(--accent);border-radius:50%;background:var(--paper)}
+html[data-design="M4"]{--accent:#714d83;--wash:#eee8f3;--bg:#ece8ef;--line:#d7ccdf;--ink:#292331;--muted:#686071}
+.m4 .situation{background:var(--wash);border-left:3px solid var(--accent);padding:12px 15px}.m4 .three{grid-template-columns:1fr 1fr;gap:12px}.m4 section{border:1px solid var(--line);padding:15px}.m4 section:last-child{grid-column:1/-1}
+/* M4-wide is reserved for cards whose text and table need equal full-width measure. */
+.m4-wide .three{grid-template-columns:1fr;gap:14px}.m4-wide section:last-child{grid-column:auto}
+html[data-design="M5"]{--accent:#245aa6;--wash:#e7eef8;--bg:#edf1f3;--line:#cbd6e4;--ink:#202d3d;--muted:#596b80}
+.m5 .situation{background:var(--wash);padding:10px 12px;border:1px solid var(--line)}.m5 section{display:grid;grid-template-columns:minmax(145px,.34fr) 1fr;gap:18px}.m5 h2{color:var(--ink)}
+@media(prefers-color-scheme:dark){
+ html[data-design="M1"]{--accent:#f29a72;--wash:#392d29;--bg:#131a1a;--paper:#202929;--line:#48524f;--ink:#edf1ed;--muted:#b9c5bf}
+ html[data-design="M2"]{--accent:#73c6be;--wash:#203936;--bg:#101a1b;--paper:#1b292b;--line:#405452;--ink:#eaf3f2;--muted:#afc6c3}
+ html[data-design="M3"]{--accent:#78d4a8;--wash:#20382f;--bg:#111a17;--paper:#1b2822;--line:#40564a;--ink:#eaf3ed;--muted:#b4c8bc}
+ html[data-design="M4"]{--accent:#d0a5e2;--wash:#342b3a;--bg:#19151d;--paper:#28212e;--line:#51445b;--ink:#f1eaf4;--muted:#c7b9ce}
+ html[data-design="M5"]{--accent:#8cb7ff;--wash:#24364d;--bg:#141a22;--paper:#202a37;--line:#3d4d62;--ink:#edf2fa;--muted:#b8c5d8}
+}
+@media(max-width:620px){main{width:calc(100% - 18px);max-width:850px;margin:9px auto;padding:22px 17px}.m1 .three,.m2 .three,.m4 .three{grid-template-columns:1fr}.m1 section:last-child,.m2 section:last-child,.m4 section:last-child{grid-column:auto}.m5 section{grid-template-columns:1fr;gap:5px}}
+@media print{@page{size:A4 portrait;margin:10mm}html{color-scheme:light}body{background:#fff}main{width:100%;max-width:none;margin:0;padding:10mm;border:0;border-top:4mm solid var(--accent);box-shadow:none}.sources,.disclaimer{font-size:8.5pt}a{color:inherit;text-decoration:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="m2">
+  <p class="eyebrow">3MUST · 조세법</p>
+  <h1>장부는 누가 어떻게 써야 하나 — 간편장부와 복식부기의 갈림길</h1>
+  <p class="situation"><strong>적용 상황:</strong> 개인사업자로 장부를 써야 하는데 간편장부로 충분한지 복식부기로 가야 하는지 모르고, 세무사에게 맡기면 내 책임이 없는지 궁금한 상황.</p>
+  <div class="three">
+    <section><h2>Must Know · 알아야 할 것</h2><p><strong>원칙은 복식부기이고, 간편장부는 예외입니다.</strong> 사업자는 소득금액을 계산할 수 있도록 증명서류를 갖춰 놓고 그 사업에 관한 모든 거래 사실이 객관적으로 파악될 수 있도록 복식부기에 따라 장부에 기록·관리해야 합니다(소득세법 제160조 제1항). 업종·규모 등을 고려해 대통령령으로 정하는 일정 규모 미만의 사업자가 간편장부를 갖춰 놓고 거래 사실을 성실히 기재한 경우에만 복식부기 장부를 비치·기록한 것으로 봅니다(같은 조 제2항). 그 미만 규모 사업자가 간편장부대상자, 나머지가 복식부기의무자입니다(같은 조 제3항).</p><p><strong>복식부기 장부가 무엇인지도 정해져 있습니다.</strong> 재산상태와 손익거래내용의 변동을 빠짐없이 이중으로 기록해 계산하는 부기형식의 장부입니다(같은 법 시행령 제208조 제1항). 이중으로 대차평균하게 기표된 전표와 증빙서류가 완비되어 있거나, 그 장부·전표를 전산처리된 테이프나 디스크 등으로 보관하면 장부를 비치·기장한 것으로 봅니다(같은 조 제2항).</p><p><strong>갈림 기준은 업종별 수입금액 세 구간입니다.</strong> 직전 과세기간 수입금액이 다음 금액에 미달하면 간편장부대상자입니다(같은 조 제5항 제2호). 농업·임업·어업, 광업, 도매 및 소매업(상품중개업 제외), 부동산매매업, 그 밖에 나목·다목에 해당하지 않는 사업은 3억 원. 제조업, 숙박 및 음식점업, 전기·가스·증기 및 공기조절 공급업, 수도·하수·폐기물처리·원료재생업, 건설업(비주거용 건물 건설업 제외), 주거용 부동산 개발·공급업, 운수업 및 창고업, 정보통신업, 금융 및 보험업, 상품중개업은 1억 5천만 원. 부동산임대업, 부동산업(부동산매매업 제외), 전문·과학 및 기술서비스업, 사업시설관리·사업지원 및 임대서비스업, 교육서비스업, 보건업 및 사회복지서비스업, 예술·스포츠 및 여가 관련 서비스업, 협회 및 단체, 수리 및 기타 개인서비스업, 가구내 고용활동은 7천 5백만 원입니다.</p><p><strong>신규 개업자는 첫해에 간편장부대상자입니다.</strong> 해당 과세기간에 신규로 사업을 개시한 사업자도 같은 구간에 해당합니다(같은 조 제5항 제1호). 다만 일부 사업자는 제외됩니다(같은 항 단서).</p><p><strong>업종을 겸영하거나 사업장이 둘 이상이면 계산식이 따로 있습니다.</strong> 주업종(수입금액이 가장 큰 업종)의 수입금액에, 주업종 외 업종의 수입금액 × (주업종 기준금액 ÷ 주업종 외 업종 기준금액)을 더해 판정합니다(같은 조 제7항). 업종이 둘이라는 이유로 두 금액을 단순히 합산하면 안 됩니다.</p><p><strong>기장하지 않으면 산출세액의 최대 20%가 가산됩니다.</strong> 사업자(대통령령으로 정하는 소규모사업자 제외)가 장부를 비치·기록하지 않았거나, 기록한 장부에 따른 소득금액이 기장해야 할 금액에 미달한 경우에는 종합소득산출세액 × (기장하지 않은 소득금액 ÷ 종합소득금액) × 100분의 20을 가산세로 냅니다(같은 법 제81조의5). 비율이 1보다 크면 1로, 0보다 작으면 0으로 봅니다.</p><p><strong>장부를 못 믿겠으면 추계로 결정될 수 있습니다.</strong> 과세표준과 세액을 결정·경정할 때는 장부나 그 밖의 증명서류를 근거로 해야 하지만, 대통령령으로 정하는 사유로 장부·증명서류로 소득금액을 계산할 수 없으면 추계조사결정을 할 수 있습니다(같은 법 제80조 제3항).</p><p><strong>세무사에게 맡겨도 의무 자체는 남습니다.</strong> 장부 비치·기록 의무는 사업자인 납세자에게 부과된 것이고, 법 조문 어디에도 기장 대행을 이유로 의무가 이전된다는 규정이 없습니다. 기장 대행 계약은 업무를 대신 수행하는 위임일 뿐 의무의 귀속을 바꾸지 않습니다.</p></section>
+    <section><h2>Must Check · 확인할 것</h2><ul><li>직전 과세기간 수입금액 합계와 그 산정 근거</li><li>내 업종이 시행령 제208조 제5항의 가·나·다목 중 어디인지</li><li>신규 개업 과세기간인지, 단서의 제외 대상인지</li><li>업종을 겸영하거나 사업장이 둘 이상인지</li><li>부동산임대업 소득이 사업소득에 포함되어 있는지</li><li>실제로 갖춰 둔 장부가 복식부기 형식인지, 전표·증빙이 완비되었는지</li><li>카드매출·현금영수증 등 전산 자료의 보관 상태</li><li>기장 대행 계약의 범위와 내가 넘겨야 할 자료</li><li>다음이면 멈추고 검토: 수입금액이 구간 경계에 걸쳐 판정이 갈리는 경우</li><li>다음이면 멈추고 검토: 업종 분류 자체가 다툼이 되는 경우</li><li>다음이면 멈추고 검토: 세무조사나 경정이 이미 진행 중인 경우</li><li>다음이면 멈추고 검토: 과거 과세기간의 기장 방식을 소급해 바로잡으려는 경우</li><li>다음이면 멈추고 검토: 기장 대행자가 작성한 장부의 오류가 확인된 경우</li></ul></section>
+    <section><h2>Must Do · 실행할 것</h2><ol><li>직전 과세기간 수입금액 합계를 확정합니다. 결정·경정으로 늘어난 수입금액이 포함되는지 확인합니다.</li><li>내 업종이 시행령 제208조 제5항 각 목 중 어디인지 정하고, 그 목의 기준금액과 내 수입금액을 대조합니다.</li><li>겸영이나 복수 사업장이 있으면 같은 조 제7항 계산식으로 다시 판정합니다. 단순 합산과 결과가 달라질 수 있습니다.</li><li>신규 개업 과세기간이면 단서의 제외 대상인지 확인합니다.</li><li>복식부기의무자라면 지금 갖춘 장부가 제208조 제2항의 형식을 충족하는지 점검합니다.</li><li>카드매출·현금영수증·세금계산서 자료를 과세기간별로 모아 둡니다.</li><li>기장 대행 계약서에서 내가 제공해야 할 자료와 기한을 확인하고, 위 판정 결과를 함께 검토받습니다.</li></ol></section>
+  </div>
+  <aside class="pause"><strong>잠깐 멈추고 검토할 때</strong><p>수입금액이 구간 경계에 걸쳐 판정이 갈리는 경우 · 업종 분류 자체가 다툼이 되는 경우 · 세무조사나 경정이 이미 진행 중인 경우 · 과거 과세기간의 기장 방식을 소급해 바로잡으려는 경우 · 기장 대행자가 작성한 장부의 오류가 확인된 경우</p></aside>
+  <div class="sources"><p><strong>원자료:</strong> 리커시브 독트린 D-RD-자영업자-장부작성_기장의무_복식부기(작성 2026-07-01). 독트린의 3단계 구조(간편장부·복식부기·추계결정)는 유지하고, 판정 기준표는 현행 시행령으로 교체했습니다.</p><p><strong>법률 검증:</strong> 소득세법(법령ID 001565, 시행 2026-07-01) 제160조·제80조·제81조의5, 같은 법 시행령(법령ID 003956, 시행 2026-10-01) 제208조를 2026-11-22 한국법 MCP 현행 본문으로 확인했습니다. 웹 화이트리스트는 별도 조회하지 않았습니다.</p><p><strong>조문 정정:</strong> 독트린의 업종별 기준표(도·소매 7,500만 원, 서비스 7,500만 원, 제조·건설 6,000만 원, 부동산임대 6,000만 원)는 현행 시행령 제208조 제5항과 맞지 않습니다. 현행은 3억 원·1억 5천만 원·7천 5백만 원의 세 구간이고 업종 묶음도 다릅니다. 표를 그대로 쓰면 도·소매 사업자가 7,500만 원을 넘는 순간 복식부기의무자로 잘못 판단하게 되므로 전면 교체했습니다.</p><p><strong>조문 정정:</strong> 독트린은 "기장가산세 20% 추가", "수입금액 0.14%~0.7% 가산세"라고 적었습니다. 제81조의5의 계산식은 산출세액 기준이며 수입금액 비율 방식이 아닙니다. 수입금액 기준 가산세는 무신고·과소신고 등 다른 항목이므로 이 카드에서 섞지 않았습니다.</p><p><strong>삭제·하향:</strong> 독트린의 "세무사 기장 대행 시에도 납세자 책임" 항목은 조문 근거가 아니라 해석이므로, 조문에 근거한 서술(의무 귀속 주체는 사업자)로 바꿔 적었습니다. 추계결정 시 경비율 적용 실무는 확인하지 않아 다루지 않았습니다.</p><p><strong>판례:</strong> 이 카드에 인용한 판례는 없습니다. 독트린의 key_caselaw가 비어 있었고, 검증을 통과한 판례를 추가로 찾지 않았습니다.</p><p><strong>범위 분리:</strong> 간이과세자 부가가치세는 독트린 RD-420, 사업용계좌는 RD-421, 수정신고·경정청구는 RD-422가 다룹니다. 이 카드는 소득세법상 장부 비치·기장 의무와 그 위반 효과만 다룹니다.</p><p><strong>미확인·제한:</strong> 업종 분류의 개별 판정, 추계조사결정의 경비율 적용, 소규모사업자의 범위, 개별 사안의 가산세 액수.</p><p><strong>변경:</strong> 초안 신규 작성.</p></div>
+  <p class="disclaimer">일반적인 실무 참고자료입니다. 개별 사안에서는 사실관계와 적용 기준을 확인하세요.</p>
+</main>
+</body>
+</html>
