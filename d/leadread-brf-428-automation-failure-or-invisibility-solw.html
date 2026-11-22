@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>자동화는 왜 실패하는가, 무엇을 감추는가 — Lead Read</title>
+<style>
+:root{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}}
+html[data-theme="dark"]{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}
+html[data-theme="light"]{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;line-height:1.78;word-break:keep-all;overflow-wrap:anywhere}
+.page{max-width:920px;margin:auto;padding:26px 20px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--ln);font-size:.78rem;letter-spacing:.1em;color:var(--mut)}
+.top b{color:var(--ink)}
+button{font:inherit;font-size:.8rem;padding:6px 10px;color:var(--ink);background:var(--sf);border:1px solid var(--ln);border-radius:4px;cursor:pointer}
+a{color:var(--ac);text-underline-offset:.2em}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--mk);outline-offset:3px}
+header{padding:34px 0 10px}
+.kicker{color:var(--mk);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.28;letter-spacing:-.03em;margin:.4em 0 .3em}
+.dek{font-size:clamp(1.02rem,2.2vw,1.18rem);color:var(--mut);margin:0 0 10px;max-width:62ch}
+.tag{display:inline-block;margin-top:12px;padding:4px 10px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:700;border-radius:3px}
+h2{font-size:clamp(1.22rem,2.8vw,1.62rem);line-height:1.34;letter-spacing:-.02em;margin:0 0 8px}
+h2 span{display:block;font-size:.78rem;font-weight:600;letter-spacing:.06em;color:var(--mk);margin-top:5px}
+h3{font-size:1.02rem;margin:0 0 6px}
+p{margin:0 0 14px;max-width:70ch}
+section{padding:26px 0;border-top:1px solid var(--ln)}
+.leadbox{margin:22px 0 4px;padding:20px;background:var(--sf);border-left:4px solid var(--ac)}
+.lb-label{font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin:0 0 4px}
+.lb-q{font-size:1.06rem;font-weight:700;margin:0 0 14px}
+.lb-a{margin:0;color:var(--ink)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.pole{padding:18px;background:var(--sf);border-top:4px solid var(--ac)}
+.pole:nth-child(2){border-top-color:var(--mk)}
+.pole small{display:block;font-size:.72rem;letter-spacing:.1em;font-weight:800;color:var(--mk);margin-bottom:6px}
+.clash{margin-top:16px;padding:16px 18px;background:var(--ac2);border-left:4px solid var(--mk)}
+.timeline{margin-top:18px;padding-left:18px;border-left:2px solid var(--ln)}
+.tl{position:relative;margin:0 0 16px}
+.tl:before{content:"";position:absolute;left:-25px;top:.55em;width:9px;height:9px;border-radius:50%;background:var(--mk)}
+.tl b{display:block;color:var(--mk);font-size:.92rem}
+.tl p{margin:2px 0 0;color:var(--mut)}
+.signal{margin-top:16px;padding:18px;background:var(--ac2);border:1px solid var(--ln)}
+.siglabel{display:inline-block;font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin-right:8px}
+.mnote{margin:16px 0;padding:13px 15px;background:var(--mk2);border-left:3px solid var(--mk);font-size:.95rem}
+.mnote b{display:block;font-size:.72rem;letter-spacing:.1em;color:var(--mk);margin-bottom:4px}
+.table-wrap{overflow-x:auto;margin-top:14px}
+table{width:100%;border-collapse:collapse;font-size:.93rem;table-layout:fixed;word-break:normal}
+caption{word-break:normal;text-align:left;padding-bottom:8px}
+th,td{border-bottom:1px solid var(--ln);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--ac2);color:var(--ink);font-size:.85rem}
+.scan{margin-top:16px;padding:15px 17px;background:var(--sf);border:1px solid var(--ln);border-left:4px solid var(--ac)}
+.ask ol{margin:12px 0 0;padding-left:22px}
+.ask li{margin:0 0 10px}
+.closing{padding:24px;background:var(--sf);border-top:2px solid var(--ac)}
+.closing h2{margin-bottom:10px}
+.closing p{font-size:1.04rem;margin:0}
+.cite{color:var(--mut);font-size:.94rem}
+details{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--ln)}
+summary{cursor:pointer;font-weight:700;color:var(--ac)}
+.source{margin:8px 0 0;font-size:.92rem;color:var(--mut)}
+.source cite{font-style:normal;color:var(--ink);font-weight:600}
+footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--ln);color:var(--mut);font-size:.84rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.author-credit{color:var(--ink);font-weight:800}
+@media (max-width:640px){
+.page{padding:18px 14px 44px}
+.duo{grid-template-columns:1fr}
+header{padding:24px 0 6px}
+section{padding:22px 0}
+table{font-size:.84rem}
+th,td{padding:8px 7px}
+.closing{padding:18px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="top"><span><b>Lead Read</b> · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="테마 바꾸기">테마</button></div>
+<header>
+<p class="kicker">Lead Read · 리더십 브리핑</p>
+<h1>자동화는 왜 실패하는가, 무엇을 감추는가</h1>
+<p class="dek">시스템이 잘 돌리고 있는데 왜 사고가 나는가. 사람의 태도 문제인가, 설계의 불가시성인가.</p>
+<p class="tag">비교표 · 적용 사례 · 판단 질문</p>
+</header>
+
+<div class="leadbox">
+<p class="lb-label">핵심 질문</p>
+<p class="lb-q">우리 자동화는 지금 무엇을 하고 있는지 사람이 볼 수 있는가?</p>
+<p class="lb-label">한 문장 결론</p>
+<p class="lb-a">교육과 관찰 가능성은 서로를 대신하지 못합니다. 사람의 경계심만 요구하면 실패할 때마다 같은 교육을 다시 시작하게 됩니다. 시스템이 자기 상태를 드러내는 설계가 먼저입니다.</p>
+</div>
+
+<section>
+<h2>왜 지금 이 문제인가<span>자동화가 촘촘해질수록 사고는 안 보인다</span></h2>
+<p>조직이 자동화를 도입하는 이유는 분명합니다. 사람은 피로하고, 규칙을 어기고, 계산에서 밀립니다. 기계는 그러지 않습니다. 그런데 자동화가 자리를 잡은 조직에서 사고가 사라진 적은 없습니다.</p><p>오히려 자동화가 촘촘해질수록 사고는 드러나기 어려워집니다. 실패하는 지점이 사람의 손이 닿지 않는 곳으로 밀려나기 때문입니다. 같은 사고를 놓고도 조직은 두 가지로 읽고, 처방이 갈립니다.</p>
+</section>
+
+<section>
+<h2>두 진단이 갈라지는 지점<span>태도의 문제인가, 설계의 문제인가</span></h2>
+<div class="scan"><p><b>태도의 관점</b> 파라수라만과 라일리는 1997년 자동화를 둘러싼 사람의 태도를 네 가지로 나눴습니다. 제 역할을 할 때는 사용, 필요 이상으로 의지해 경계를 놓는 것은 오용, 필요할 때 쓰지 않는 것은 불사용, 없애려 드는 것은 남용입니다. 사고의 다수는 이 어긋남에서 나오고, 문제는 자동화가 성공할수록 커집니다. 그래서 처방은 역할 설계와 훈련, 그리고 사람이 최종 판단자라는 원칙입니다.</p><p><b>설계의 관점</b> 사터와 우즈와 빌링스는 같은 해 다른 곳을 짚었습니다. 자동화가 지금 어떤 모드에 있고 무엇을 하며 다음에 무엇을 하려는지가 사용자에게 드러나지 않을 때, 사람은 변화를 인지하지 못한 채 상황이 지나갑니다. 조종사의 잘못이 아니라 자동화가 내부 상태를 감춘 탓에 생기는 놀라움입니다. 사람에게 경계심을 기르라 해도, 시스템이 상태를 숨기면 경계심이 작동할 단서 자체가 없습니다.</p></div><div class="table-wrap"><table><caption class="cite">두 진단을 같은 질문에 놓으면 처방이 갈립니다.</caption><thead><tr><th>질문</th><th>태도의 관점</th><th>설계의 관점</th></tr></thead><tbody><tr><th>사고의 출발점</th><td>사람의 의존 수준과 태도</td><td>자동화가 감춘 내부 상태</td></tr><tr><th>경계심의 단서</th><td>훈련과 절차가 만든다</td><td>시스템이 드러내야 생긴다</td></tr><tr><th>처방</th><td>역할 설계와 교육, 최종 판단자 원칙</td><td>모드·상태·의도의 관찰 가능성</td></tr><tr><th>실패 뒤</th><td>같은 교육을 다시 시작한다</td><td>설계를 고치면 재발이 줄어든다</td></tr></tbody></table></div><div class="clash"><p>오용과 불사용의 책임을 사람에게 돌리기 전에, 자동화가 자기 상태를 보여주는 설계를 했는지가 먼저입니다. 교육이 아니라 관찰 가능성의 문제입니다.</p></div>
+</section>
+
+<section class="case">
+<h2>적용 사례 — 요격하지 못한 미사일, 보이지 않은 오차<span>다란, 1991년 2월 25일</span></h2>
+<p>1991년 2월 25일 사우디아라비아 다란의 미군 기지에 이라크 스커드 미사일이 떨어져 병사 28명이 목숨을 잃었습니다. 가까운 포대의 방어 시스템은 미사일을 추적하지 못했습니다.</p><p>미국 회계검사원은 1992년 2월 보고서에서 원인을 규명했습니다. 무기 제어 컴퓨터의 소프트웨어가 내부 시간을 계산하는 과정에서 생긴 정밀도 손실이 오차로 누적된 탓이었습니다. 시스템은 당시 100시간 이상 연속으로 가동된 뒤였고, 레이더의 탐색 범위는 표적 위치에서 어긋나 있었지만 조작자에게 그 어긋남이 화면에 드러나지 않았습니다.</p><p>조작자는 훈련을 받았고 절차를 지켰습니다. 그런데도 실패했습니다. 다음 포대의 시간 계산이 나아진 것은 소프트웨어를 고쳤기 때문이지 조작자의 경계심이 높아진 때문이 아니었습니다.</p>
+</section>
+
+<section>
+<h2>렌즈 — 비너의 피드백<span>조종장치는 부품이 아니라 능력</span></h2>
+<p>노버트 비너가 사이버네틱스에서 말한 조종장치는 정밀한 부품이 아니라 한 가지 능력입니다. 현재 상태와 목표의 차이를 읽어 되돌려주는 능력입니다. 냉방 장치도 온도계가 없다면 정밀한 기계에 불과합니다.</p><p>레이더가 어긋난 줄을 알려주지 않으면 시스템은 아무리 정밀해도 스스로를 바로잡을 수 없습니다. 조직도 같습니다. 리더가 아무리 정확한 명령을 내려도, 그 명령이 현장에서 어떻게 실행되고 어디서 어긋나는지가 피드백으로 돌아오지 않으면 리더는 조종장치 없는 자동화입니다.</p>
+</section>
+
+<section class="ask">
+<h2>리더의 판단 질문<span>결정 전에 스스로 확인할 것</span></h2>
+<ol><li>이 자동화는 지금 어떤 모드에 있는지 화면에서 보이는가?</li><li>사람이 최종 판단자라는 원칙이 실제 절차에 있는가?</li><li>경계심을 요구할 단서가 시스템 안에 있는가?</li><li>실패가 났을 때 교육을 다시 하는가, 설계를 고치는가?</li><li>현장의 어긋남이 리더에게 돌아오는 통로가 있는가?</li></ol>
+</section>
+
+<section class="closing">
+<h2>한 줄로 남기면</h2>
+<p>자동화의 사고는 대부분 사람이 과실했다는 문장으로 정리됩니다. 틀린 말은 아니지만 반쪽입니다. 사람의 태도를 다잡는 일과 시스템이 자기 상태를 드러내는 일은 서로를 대신하지 않습니다. 두 번째가 빠지면 첫 번째는 실패할 때마다 다시 시작해야 하는 교육이 됩니다.</p>
+</section>
+
+<section>
+<h2>근거 자료<span>서지와 확인 범위</span></h2>
+<p class="cite">두 연구는 공개 서지와 논지 범위에서 정리했고, 사례는 회계검사원 보고서의 공개 내용 범위에서 다루었습니다.</p>
+<details><summary>자동화의 네 태도</summary><p class="source">Raja Parasuraman·Victor Riley, “Humans and Automation: Use, Misuse, Disuse, Abuse”, <cite>Human Factors</cite> 39(2), 1997. 사용·오용·불사용·남용의 구분을 참조했습니다.</p></details><details><summary>자동화의 놀라움</summary><p class="source">Nadine B. Sarter·David D. Woods·Charles E. Billings, “Automation Surprises”, <cite>Handbook of Human Factors and Ergonomics</cite>, 2nd ed., 1997. 불가시성 논지를 참조했습니다.</p></details><details><summary>다란 사례</summary><p class="source">미국 회계검사원, <cite>Patriot Missile Defense: Software Problem Led to System Failure at Dhahran</cite>, GAO/IMTEC-92-26, 1992. 시간 계산 오차와 가동 시간을 확인한 범위만 서술했습니다.</p></details>
+</section>
+
+<footer>
+<span>Lead Read · 3분 브리핑</span>
+<p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+const root=document.documentElement;const b=document.getElementById('theme-toggle');
+b.addEventListener('click',()=>{const n=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=n;});
+</script>
+</body>
+</html>
