@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko" data-design="M5">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>재택근무 중 밤까지 일했다 — 사전 승인이 없어도 초과근무는 성립하는가 · 3MUST</title>
+<link rel="icon" href="data:,">
+<style>
+:root { color-scheme:light dark; --bg:#edf1f3; --paper:#fff; --ink:#202d3d; --muted:#596b80; --line:#cbd6e4; --accent:#245aa6; --wash:#e7eef8; font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif; }
+@media(prefers-color-scheme:dark){:root{--bg:#111a20;--paper:#1a252d;--ink:#eff4f4;--muted:#bac7c8;--line:#394a52;--wash:#253541;}}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);line-height:1.55}
+main{width:calc(100% - 28px);max-width:850px;margin:24px auto;padding:clamp(22px,5vw,48px);background:var(--paper);border:1px solid var(--line);border-top:7px solid var(--accent)}
+.eyebrow{font-size:.75rem;font-weight:750;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin:0 0 10px}
+h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.12;letter-spacing:-.035em;margin:0;text-wrap:balance}
+.situation{color:var(--muted);max-width:64ch;margin:14px 0 24px}
+.three{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+section{min-width:0;padding:17px 0;border-top:1px solid var(--line)}
+h2{font-size:.9rem;color:var(--accent);margin:0 0 7px;letter-spacing:.02em}
+p,li{max-width:68ch} section h3{margin:12px 0 4px;font-size:.82rem;font-weight:650;letter-spacing:.03em;color:var(--accent)} section h3:first-child{margin-top:0} section ul+ol,section ol+ul{margin-top:4px} section p{margin:0} section ul,section ol{margin:0;padding-left:1.25rem}
+.table-wrap{max-width:100%;overflow-x:auto;margin:10px 0 0;border:1px solid var(--line);border-radius:8px;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;min-width:560px;font-size:.88rem;line-height:1.45}
+th,td{padding:9px 11px;text-align:left;vertical-align:top;border-right:1px solid var(--line);border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+th:last-child,td:last-child{border-right:0} tbody tr:last-child td{border-bottom:0}
+th{background:var(--wash);font-weight:700;color:var(--ink)}
+.pause{margin-top:20px;padding:13px 15px;background:var(--wash);border-left:3px solid var(--accent)}
+.pause strong{display:block;margin-bottom:4px}.sources{margin-top:20px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+.sources p{margin:4px 0}.disclaimer{font-size:.75rem;color:var(--muted);margin-top:18px}
+html[data-design="M1"]{--accent:#bd4d28;--wash:#f8e7df;--bg:#ece9e5;--line:#dfc7bb;--ink:#252b2c;--muted:#59615f}
+html[data-design="M1"] main{border-top-width:10px}.m1 .three{grid-template-columns:1fr 1fr;gap:12px}.m1 section{border:1px solid var(--line);padding:14px;background:color-mix(in srgb,var(--wash) 35%,var(--paper))}.m1 section:last-child{grid-column:1/-1}
+html[data-design="M2"]{--accent:#176b68;--wash:#e3efed;--bg:#e7eeee;--line:#c5d7d4;--ink:#162c31;--muted:#52696a}
+html[data-design="M2"] h1{font-family:Georgia,"Batang",serif;font-weight:600}.m2 .three{grid-template-columns:1fr 1fr;gap:22px}.m2 section:nth-child(2){background:var(--wash);padding:15px;border-top:0}.m2 section:last-child{grid-column:1/-1}
+html[data-design="M3"]{--accent:#126d57;--wash:#e4f1eb;--bg:#e9eeea;--line:#c5d7cc;--ink:#1d3028;--muted:#5b6e64}
+.m3 .three{position:relative;padding-left:20px}.m3 .three:before{content:"";position:absolute;top:18px;bottom:18px;left:4px;width:2px;background:var(--accent);opacity:.45}.m3 section{position:relative;padding-left:14px}.m3 section:before{content:"";position:absolute;left:-20px;top:20px;width:9px;height:9px;border:2px solid var(--accent);border-radius:50%;background:var(--paper)}
+html[data-design="M4"]{--accent:#714d83;--wash:#eee8f3;--bg:#ece8ef;--line:#d7ccdf;--ink:#292331;--muted:#686071}
+.m4 .situation{background:var(--wash);border-left:3px solid var(--accent);padding:12px 15px}.m4 .three{grid-template-columns:1fr 1fr;gap:12px}.m4 section{border:1px solid var(--line);padding:15px}.m4 section:last-child{grid-column:1/-1}
+/* M4-wide is reserved for cards whose text and table need equal full-width measure. */
+.m4-wide .three{grid-template-columns:1fr;gap:14px}.m4-wide section:last-child{grid-column:auto}
+html[data-design="M5"]{--accent:#245aa6;--wash:#e7eef8;--bg:#edf1f3;--line:#cbd6e4;--ink:#202d3d;--muted:#596b80}
+.m5 .situation{background:var(--wash);padding:10px 12px;border:1px solid var(--line)}.m5 section{display:grid;grid-template-columns:minmax(145px,.34fr) 1fr;gap:18px}.m5 h2{color:var(--ink)}
+@media(prefers-color-scheme:dark){
+ html[data-design="M1"]{--accent:#f29a72;--wash:#392d29;--bg:#131a1a;--paper:#202929;--line:#48524f;--ink:#edf1ed;--muted:#b9c5bf}
+ html[data-design="M2"]{--accent:#73c6be;--wash:#203936;--bg:#101a1b;--paper:#1b292b;--line:#405452;--ink:#eaf3f2;--muted:#afc6c3}
+ html[data-design="M3"]{--accent:#78d4a8;--wash:#20382f;--bg:#111a17;--paper:#1b2822;--line:#40564a;--ink:#eaf3ed;--muted:#b4c8bc}
+ html[data-design="M4"]{--accent:#d0a5e2;--wash:#342b3a;--bg:#19151d;--paper:#28212e;--line:#51445b;--ink:#f1eaf4;--muted:#c7b9ce}
+ html[data-design="M5"]{--accent:#8cb7ff;--wash:#24364d;--bg:#141a22;--paper:#202a37;--line:#3d4d62;--ink:#edf2fa;--muted:#b8c5d8}
+}
+@media(max-width:620px){main{width:calc(100% - 18px);max-width:850px;margin:9px auto;padding:22px 17px}.m1 .three,.m2 .three,.m4 .three{grid-template-columns:1fr}.m1 section:last-child,.m2 section:last-child,.m4 section:last-child{grid-column:auto}.m5 section{grid-template-columns:1fr;gap:5px}}
+@media print{@page{size:A4 portrait;margin:10mm}html{color-scheme:light}body{background:#fff}main{width:100%;max-width:none;margin:0;padding:10mm;border:0;border-top:4mm solid var(--accent);box-shadow:none}.sources,.disclaimer{font-size:8.5pt}a{color:inherit;text-decoration:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="m5">
+  <p class="eyebrow">3MUST · 노동법</p>
+  <h1>재택근무 중 밤까지 일했다 — 사전 승인이 없어도 초과근무는 성립하는가</h1>
+  <p class="situation"><strong>적용 상황:</strong> 재택·원격으로 일하면서 야간이나 주말에 업무를 했는데, 회사가 "사전 승인이 없었다"며 초과근무수당 지급을 거절한 상황. 또는 그런 요구에 대응할 자료를 준비해야 하는 자리.</p>
+  <div class="three">
+    <section><h2>Must Know · 알아야 할 것</h2><p><strong>근로시간의 상한은 장소와 무관합니다.</strong> 1주 간의 근로시간은 휴게시간을 제외하고 40시간, 1일의 근로시간은 휴게시간을 제외하고 8시간을 초과할 수 없습니다(근로기준법 제50조 제1항·제2항). 재택이든 사무실이든 이 기준은 그대로 적용됩니다.</p><p><strong>지휘·감독 아래 있던 시간은 근로시간으로 봅니다.</strong> 근로시간을 산정할 때 작업을 위해 근로자가 사용자의 지휘·감독 아래에 있는 대기시간 등은 근로시간으로 봅니다(같은 조 제3항). 대법원도 근로자가 작업시간 도중 실제로 작업에 종사하지 않은 대기시간이나 휴식·수면시간이라도 자유로운 이용이 보장된 것이 아니라 실질적으로 사용자의 지휘·감독 아래 놓여 있으면 근로시간에 포함된다고 보았습니다(대법원 2006. 11. 23. 선고 2006다41990). 이 판결은 후속 인용 22건에서 변경·폐기 신호가 감지되지 않았습니다.</p><p><strong>연장근로에는 가산임금이 붙습니다.</strong> 사용자는 연장근로에 대하여 통상임금의 100분의 50 이상을 가산해 지급해야 하고, 야간근로(오후 10시부터 다음 날 오전 6시 사이)에 대해서도 통상임금의 100분의 50 이상을 가산해야 합니다(같은 법 제56조 제1항·제3항). 휴일근로는 8시간 이내 50%, 8시간 초과분 100%입니다(같은 조 제2항).</p><p><strong>그래서 남는 문제는 입증입니다.</strong> 조문은 '지휘·감독 아래 있었는지'를 기준으로 삼는데, 재택에서는 그 사실을 보여줄 물증이 흩어져 있습니다. 사전 승인 절차는 회사 내부 규정일 뿐이고, 그것이 없었다는 사실만으로 지급 의무가 사라지는 것은 아닙니다. 다만 절차를 밟지 않은 상태에서는 실제 근무 사실을 자료로 세워야 합니다.</p></section>
+    <section><h2>Must Check · 확인할 것</h2><ul><li>취업규칙·재택근무 규정상 초과근무 신청·승인 절차와 그 문언</li><li>업무 지시가 오간 메신저·메일·문자 원본(일시, 발신자, 지시 내용)</li><li>지시받은 업무의 마감 시점과 실제 제출 시각</li><li>파일 생성·수정 시각, 업무 시스템 접속·로그아웃 기록</li><li>급여명세서상 지급된 연장·야간·휴일근로수당 항목과 시간</li><li>통상임금 산정의 기초가 되는 기본급·수당 항목</li><li>회사가 사전 승인을 요구한 근거 문서와, 다른 직원에게 다르게 적용한 사례가 있는지</li><li>다음이면 멈추고 검토: 근로시간 내 업무와 사적 사용이 섞여 구분이 어려운 경우</li><li>다음이면 멈추고 검토: 관리·감독 직책으로 근로시간 적용이 달라지는 지위인 경우</li><li>다음이면 멈추고 검토: 재택이 아니라 교대·격일제 등 근로시간 산정 특례가 적용되는 사업장인 경우</li><li>다음이면 멈추고 검토: 퇴사 후 정산과 함께 다투는 경우(청구할 수 있는 기간의 범위가 쟁점이 됨)</li></ul></section>
+    <section><h2>Must Do · 실행할 것</h2><ol><li>재택근무 규정과 초과근무 신청 절차를 발췌해, 어떤 요건을 요구하는지 원문으로 확인합니다.</li><li>지시가 오간 메신저·메일을 날짜별로 내려받아 원본 그대로 보관합니다. 화면 캡처만 두지 말고 내보내기 기능을 씁니다.</li><li>일자별로 지시 시각, 작업 시작·종료 시각, 제출 시각을 한 표에 적습니다.</li><li>파일 생성·수정 시각과 시스템 접속 기록을 그 표에 붙입니다.</li><li>급여명세서의 가산수당 지급 내역과 위 표의 시간을 대조해, 지급되지 않은 시간을 뽑아냅니다.</li><li>사전 승인을 요구한 근거 문서와 실제 운용 사례를 확인해, 절차가 일관되게 적용됐는지 봅니다.</li><li>위 표와 원본을 묶어 청구할 기간과 시간을 확정하고, 산정 방식은 검토를 받습니다.</li></ol></section>
+  </div>
+  
+  <div class="sources"></div>
+  <p class="disclaimer">일반적인 법률 정보입니다. 개별 사안의 결론은 사실관계와 적용 기준을 확인해 판단해야 합니다.</p>
+</main>
+</body>
+</html>
