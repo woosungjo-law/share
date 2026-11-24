@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>소송비용확정(민사소송법 제109조), 이긴 판결 뒤에 남는 정산의 문제다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 승소 뒤의 비용 회수</div>
+    <h1>소송비용확정(민사소송법 제109조), 이긴 판결 뒤에 남는 정산의 문제다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 판결문에 '소송비용은 피고가 부담한다'고 적혀 있어도, 그 문장만으로 돈이 들어오지는 않습니다. 비용 부담을 구체적 액수로 확정하는 절차(민사소송법 제109조)를 거치고, 확정된 뒤에 다시 집행 절차를 거쳐야 회수가 됩니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      식당에서 '계산은 저쪽에서 하기로 했습니다'라는 말을 들은 상황과 비슷합니다. 약속은 분명하지만, 얼마인지 계산서가 나오지 않으면 받을 수 없고, 계산서가 나와도 실제로 걷는 절차가 따로 있습니다. <b>승소 판결은 약속이고, 비용확정은 계산서이며, 집행은 수금입니다.</b> 세 단계 중 하나가 비면 이겨도 손에 남는 것은 없습니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+        <p>소송비용확정은 본안판결의 '비용 부담'을 구체적 액수로 확정하는 절차입니다(민사소송법 제109조). 판결 주문만으로는 금액이 특정되지 않으므로, 인지대·송달료·감정료·변호사보수 등을 누락 없이 일괄 청구하는 것이 실무입니다.</p>
+    <p>변호사보수는 법정범위 내에서만 산입되므로 약정보수와 다를 수 있습니다. 일부만 청구할 의사가 있으면 신청서에 그 의사를 명시해야 추가 신청이 가능합니다.</p>
+    <p>비용확정은 본안의 결론을 다시 다투는 절차가 아닙니다. 이미 정해진 비용 부담을 액수로 확정하는 절차이므로, 본안에서 다투지 못한 사정을 이 단계에서 새로 주장하기는 어렵습니다. 대신 금액 산정에 들어갈 항목과 범위를 정확히 하는 것이 승부처가 됩니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>이의기간·누락·종국적 정리</h2>
+    <ul class="points">
+      <li><b>화해·조정의 효력</b> — 화해권고결정이 이의신청 없이 확정되거나 조정조서가 작성되면 재판상 화해와 동일한 효력(기판력·집행력)이 생겨 분쟁이 종국적으로 정리됩니다(민사소송법 제231조와 관련). 조정조서(민사조정법 제29조)도 같은 효력이 있어 불이행 시 별도 소송 없이 강제집행의 기초가 됩니다.</li>
+      <li><b>이의기간 2주</b> — 화해권고결정이나 조정조서는 이의기간 내 이의신청이 사실상 유일한 안전장치입니다(민사조정법 제34조와 관련). 기간을 넘기면 내용에 불만이 있어도 다툴 수 없습니다.</li>
+      <li><b>누락이 함정</b> — 인지대·송달료·감정료·변호사보수를 빠뜨리면 뒤늦게 회수할 수 없거나 절차가 늘어납니다.</li>
+      <li><b>항목별로 근거가 다르다</b> — 인지대와 송달료는 법령상 기준, 감정료는 실제 지출 내역, 변호사보수는 법정범위 내 산입입니다. 항목마다 무엇을 어떻게 입증할지가 다르므로 영수증과 산정 근거를 함께 갖춥니다.</li>
+      <li><b>확정만으로 끝나지 않는다</b> — 확정된 비용은 별도 집행 절차를 거쳐 회수합니다. 상대방의 재산 상황과 집행 가능성까지 함께 봐야 합니다. 불복이 이어지면 절차가 한 단계 늘고 회수 시점이 밀립니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 종국적 정리와 회수는 목적이 다릅니다. 화해·조정으로 분쟁이 끝나더라도 그 안에 비용 부담과 지급 시기·방법이 정해지지 않았다면, 회수할 금액이 특정되지 않습니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">신청서 초안보다 먼저 필요한 것은 비용 항목과 기한의 표입니다. 아래 다섯 항목에 확정 이후의 집행 계획까지 넣어 두십시오.</p>
+    <ol>
+      <li><b>① 비용확정</b> — 민사소송법 제109조에 따라 본안판결의 비용 부담을 구체적 액수로 확정합니다.</li>
+      <li><b>② 항목 누락 방지</b> — 인지대·송달료·감정료·변호사보수를 빠짐없이 일괄 청구합니다.</li>
+      <li><b>③ 변호사보수</b> — 법정범위 내 산입 기준과 약정보수의 차이를 미리 계산해 확인합니다.</li>
+      <li><b>④ 조정·화해 효력</b> — 민사조정법 제29조의 조정조서와 민사소송법 제231조의 화해권고결정 효력을 확인합니다.</li>
+      <li><b>⑤ 이의기간</b> — 민사조정법 제34조의 이의기간(2주)을 달력에 표시하고, 결정문을 받은 즉시 이의 여부를 정합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
