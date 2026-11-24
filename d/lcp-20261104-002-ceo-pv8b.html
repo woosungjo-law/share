@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>조업 중단 손해, 어디까지 물어야 하나</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>조업 중단 손해, 어디까지 물어야 하나</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 조업 중단 손해는 총액보다 먼저 <b>통상손해와 특별손해를 가르는 일</b>입니다. 생산이 멈췄다는 사실만으로 청구표의 모든 항목이 같은 방식으로 인정되지는 않습니다. 대표가 정할 것은 <b>분류표와 자료 범위</b>입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>사건의 시작: 납품 차질 보고서가 올라왔다</h2>
+    <div class="analogy">
+      한성부품 대표 이도현은 원자재 공급이 늦어져 <b>생산이 멈췄다</b>는 보고를 받습니다. 실무팀은 손실액을 합산해 공급자에게 청구하자고 제안하지만, 표에는 생산 차질 비용과 거래처 납품계약에서 생긴 부담이 한 줄에 들어 있습니다. 도현은 총액을 바로 확정하지 않고 <b>두 항목의 발생 이유와 상대방이 알고 있던 정보</b>를 나눠 보고하도록 합니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 보는 핵심: 손해의 종류에 따라 기준이 달라진다</h2>
+    <p><b>민법 제393조 제1항</b>은 채무불이행으로 인한 배상을 <b>통상의 손해</b>로 제한합니다.</p>
+    <p><b>제2항</b>은 <b>특별한 사정으로 인한 손해</b>에 관해 채무자가 그 사정을 알았거나 알 수 있었을 때 배상책임을 인정합니다. 그러므로 생산이 멈췄다는 사실만으로 청구표의 모든 항목이 같은 방식으로 인정되는 것은 아닙니다.</p>
+    <p>제3자와의 납품계약 때문에 발생한 부담이 특별한 사정에 기초한다면, <b>그 계약과 납기 정보를 공급자가 알았거나 알 수 있었는지</b> 살펴야 합니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>놓치기 쉬운 조건과 예외: 의사결정은 사실 확인 뒤에</h2>
+    <p><b>먼저 확인할 것.</b> 공급 지연의 시점과 생산 중단 기간을 확인하고, 손해 항목별 계산 근거를 요구해야 합니다.</p>
+    <p><b>인식 가능성의 자료.</b> 거래처 계약, 납기, 공급자에게 전달한 생산 일정과 회신을 확인하십시오. 이 자료는 제393조 제2항의 인식 가능성을 살피는 데 쓰일 수 있습니다.</p>
+    <p><b>확정액처럼 내세우지 않기.</b> 자료가 부족한 특별손해 항목을 확정 청구액처럼 내세우면 협상에서 신뢰를 잃거나 쟁점이 흐려질 수 있습니다. 반대로 항목을 나눠 확인 상태를 표시하면 추가 자료 확보와 합의 범위를 현실적으로 정할 수 있습니다.</p>
+    <p><b>예상치와 확인치의 분리.</b> 생산량, 출하 기록, 재고, 대체 조달 검토 결과를 보고서에 붙이고, 계산에 사용한 기간과 가정을 밝히십시오.</p>
+    <p><b>주장과 합의의 분리.</b> 법적 주장과 사업상 합의 제안은 결재 문서에서 분리해, 합의가 어떤 손해 항목을 포함하는지 임원들이 확인하게 하십시오.</p>
+    <div class="callout">
+      <b>주의.</b> 무엇이 멈췄나만 보고받지 말고 <b>어떤 손해가 왜 생겼나</b>를 함께 확인하십시오. 통상손해로 주장하는 부분은 제393조 제1항, 특별한 사정에 따른 부분은 제2항의 인식 가능성과 연결해 설명하도록 하십시오.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>총액 승인 전에 분류표를 받으십시오.</b> 정할 항목은 다음과 같습니다.</p>
+      <ol>
+        <li><b>① 분류</b> — 생산 차질과 거래처 계약에서 파생된 부담을 나눈 표를 승인합니다.</li>
+        <li><b>② 근거</b> — 기간·수량·산식마다 생산 및 출하 자료를 연결합니다.</li>
+        <li><b>③ 상대방 인식</b> — 납기와 계약 정보를 공급자에게 전달한 시점을 확인합니다.</li>
+        <li><b>④ 불확실성</b> — 추정액·확정액·추가 확인액을 구분해 보고받습니다.</li>
+        <li><b>⑤ 협상</b> — 확인된 사실과 추가 확인 중인 금액을 구분하고, 합의서가 어떤 손해 항목을 포함하는지 문구로 확인합니다.</li>
+        <li><b>⑥ 갱신</b> — 자료가 더 들어오면 청구표를 갱신하고 바뀐 전제와 영향을 보고받습니다.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;"><b>최초 숫자를 그대로 고수하기보다</b> 확인된 내용에 맞춰 협상 범위를 조정하십시오. 법무팀이 반대 해석과 자료 공백을 제시하면 숨기지 말고 손익 판단에 포함해야 합니다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
