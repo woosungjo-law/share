@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>카드 사고와 PG 정산 지연, 비용은 어디까지 감당해야 하나</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>카드 사고와 PG 정산 지연, 비용은 어디까지 감당해야 하나</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 카드 도용과 PG 정산 지연은 <b>원인과 책임 주체가 달라</b> 나누어 대응해야 합니다. 대표가 정할 것은 <b>차지백 대응 비용, PG에 대한 손해배상 청구, 소비자 환불 범위</b>입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>사건의 시작: 부정 결제와 정산 지연이 동시에 발생했습니다</h2>
+    <div class="analogy">
+      온라인 쇼핑몰을 운영하는 회사의 대표는 고객의 카드가 도용된 결제가 발생해 <b>차지백이 요청</b>되었고, 같은 시기에 <b>결제대행사가 정산을 미루고 있다</b>는 보고를 받습니다. 대표가 정해야 할 것은 차지백 대응 비용, PG에 대한 손해배상 청구, 소비자 환불 범위입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 보는 핵심: 카드사 책임과 PG 정산 의무가 따로 있습니다</h2>
+    <p><b>여신전문금융업법 제14조</b>는 카드 정보가 도용된 온라인 결제에서 카드사의 책임과 차지백, 가맹점과 결제대행사의 본인확인 책임, 소비자 보호를 문제 삼는 근거가 됩니다.</p>
+    <p>전자지급결제대행사는 <b>전자금융거래법 제2조</b>에서 정한 PG로서 가맹점 대금을 정산할 의무를 부담합니다.</p>
+    <p>PG가 시스템 장애나 자금난으로 정산하지 못하면 <b>민법 제390조</b>에 따른 채무불이행 책임이 문제 되고, 가맹점의 매출 손실과 소비자 환불 책임이 함께 검토됩니다. 두 문제는 <b>원인과 책임 주체가 다르므로</b> 나누어 대응해야 합니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>놓치기 쉬운 조건과 예외: 계약 조항과 절차 이행 여부를 봅니다</h2>
+    <p><b>정상 거래의 입증.</b> 가맹점은 본인확인과 보안, 승인 절차를 제대로 이행했는지 입증해야 합니다. 접속 IP와 기기 정보, 인증 기록, 배송 자료를 확보해 정상 거래였음을 설명할 수 있어야 합니다. 소비자에게 정보 관리 과실이 있으면 책임 분담이 달라질 수 있습니다.</p>
+    <p><b>차지백의 기한.</b> 차지백 요청이 들어오면 정해진 기간 안에 반론 자료를 제출해야 합니다. 주문 당시 IP와 기기 정보, 인증 기록, 배송 증빙, 고객 연락 기록을 모아 정상 거래임을 설명하고, 같은 고객에게 차지백이 반복되면 내부 부정 거래 가능성도 살펴보십시오.</p>
+    <p><b>PG 정산 지연.</b> 계약상 정산 주기와 지연이자, 손해배상 조항, 해지 조건을 확인하고, 필요하면 다른 결제 수단으로 전환해 매출 중단을 막아야 합니다.</p>
+    <p><b>환불 책임의 소재.</b> 소비자 환불 책임이 누구에게 있는지도 계약에 따라 달라질 수 있으므로 정산 관계와 분리해 정리하십시오.</p>
+    <p><b>비용과 중단 기준.</b> 비용은 차지백 대응 비용과 환불 비용, PG 청구 비용을 함께 계산하고, 중단 기준은 <b>PG의 자금 사정이 회복될 가능성이 낮을 때</b>입니다.</p>
+    <div class="callout">
+      <b>주의.</b> 카드 사고는 예방이 가장 중요합니다. 본인확인 절차와 이상거래 탐지 기준을 정기적으로 점검하고 의심 거래 차단 절차를 마련하며, 카드사·PG와의 책임 분담을 계약서에 명확히 적어 두십시오.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>대응 우선순위와 계약 정비를 함께 정하십시오.</b> 정할 항목은 다음과 같습니다.</p>
+      <ol>
+        <li><b>① 거래 확인</b> — 문제된 거래의 인증·접속 기록을 확인하게 합니다.</li>
+        <li><b>② 계약 확인</b> — 카드사와 PG에 대한 계약 조항을 확인합니다.</li>
+        <li><b>③ 차지백</b> — 차지백 대응과 소비자 환불 범위를 정합니다.</li>
+        <li><b>④ 정산 청구</b> — PG에 대한 손해배상 청구 여부를 결정합니다.</li>
+        <li><b>⑤ 비용 계산</b> — 예상 비용과 회수 가능성을 의사결정 기록에 함께 적습니다.</li>
+        <li><b>⑥ 재발방지</b> — 신규 PG 계약에서는 정산 지연과 손해배상 조항을 강화합니다.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;">인증 로그와 배송 기록을 평소에 보관하는 체계를 만들고, 카드사·PG가 요구하는 자료 목록을 미리 파악해 두십시오. PG 의존도가 높다면 <b>정산 구조를 분산</b>해 자금 경색 위험을 줄이는 것도 방법입니다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
