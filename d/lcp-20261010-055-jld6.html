@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>상가 권리금과 재건축(상가임대차법 제10조·제10조의4), '딱지 붙으면 끝'이 아닌 예외와 손해배상으로 갈리는 문제다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 상가 재건축과 권리금</div>
+    <h1>상가 권리금과 재건축(상가임대차법 제10조·제10조의4), '딱지 붙으면 끝'이 아닌 예외와 손해배상으로 갈리는 문제다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> '재건축이 결정되면 권리금은 포기해야 한다'는 말은 조문과 어긋납니다. 재건축은 계약갱신 거절의 정당한 사유가 될 수 있지만(상가임대차법 제10조 제1항 제7호 나목), 그 경우에도 권리금 회수기회 보호의 예외에 해당하는지와 손해배상 청구(제10조의4 제3항)가 남는지를 따로 판단해야 합니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      가게를 오래 운영해 손님과 자리를 함께 키운 임차인에게 권리금은 '장사 자리의 값'입니다. 건물주가 재건축을 한다고 할 때, 그 값이 자동으로 사라지는 것이 아니라 <b>두 개의 서로 다른 질문</b>을 통과해야 합니다. 갱신을 거절할 정당한 사유가 있는가, 그리고 그 거절로 임차인이 아무 보호도 받지 못하는가. 첫 질문이 '예'여도 둘째 질문은 따로 남습니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+        <p>권리금 회수의 출발점은 상가건물 임대차보호법 제10조의4입니다. 이 조문은 권리금 회수기회 보호를 다루고, 제1항 단서는 '제10조 제1항 각 호의 어느 하나에 해당하는 사유가 있는 경우에는 그러하지 아니하다'고 규정합니다. 즉 권리금 회수기회 보호에도 예외가 붙습니다.</p>
+    <p>그 예외의 하나가 재건축입니다. 상가건물 임대차보호법 제10조는 계약갱신 요구를 다루고, 제10조 제1항 제7호 나목은 임대인의 재건축을 정당한 거절 사유로 인정하고 있습니다. 그래서 재건축이라는 사유가 실제로 이 항목에 해당하는지가 첫 번째 관문입니다.</p>
+    <p>재건축을 이유로 갱신이 거절되면 임차인의 길이 막히는지도 따로 봐야 합니다. 이 경우 임차인은 상가건물 임대차보호법 제10조의4 제3항에 따라 손해배상을 청구할 수 있습니다. 거절 자체가 곧 권리 상실을 뜻하지는 않는다는 구조입니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>사유의 성격과 시점이 갈림길이다</h2>
+    <ul class="points">
+      <li><b>두 질문은 별개다</b> — 재건축이 정당한 거절 사유가 되는지와, 그 거절로 권리금 보호가 배제되는지는 서로 다른 질문입니다. 제10조 제1항 제7호 나목에 해당하더라도 제10조의4 제3항의 손해배상 청구가 함께 검토되어야 합니다.</li>
+      <li><b>시점이 적용 조문을 가른다</b> — 갱신 요구가 언제 있었고 재건축 통지가 언제 왔는지에 따라 어느 조문을 적용할지가 달라집니다. 통지와 요구의 시간 순서를 문서로 정리해야 다툼에서 흔들리지 않습니다.</li>
+      <li><b>투자 내역도 확인 대상</b> — 권리금으로 지급한 금액과 시설 투자금은 성격이 다르므로, 각각의 지급 근거와 시점을 나눠 정리해야 청구의 기초가 갖춰집니다.</li>
+      <li><b>사유는 사실로 확인되어야</b> — 재건축 사유를 주장하려면 사업 계획과 인허가 일정처럼 객관적 자료가 있는지가 첫 점검 항목입니다.</li>
+      <li><b>예외는 요건 충족으로 판단</b> — 예외를 앞세운 갱신 거절이 성립하려면 제10조 제1항 각 호의 사유에 실제로 해당해야 합니다. 통지 문서에는 사유만 적지 말고 근거를 함께 적습니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 예외와 청구 가능성을 함께 적은 표를 이사회에 올리고, 두 칸이 비어 있으면 통지를 내보내지 않는 기준을 두십시오.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">검토 메모가 아니라 조문별 확인표가 필요합니다. 아래 다섯 항목을 채우고, 임차인 제시 자료와 우리 쪽 감정 자료를 나란히 놓아 어긋나는 지점을 미리 설명할 수 있게 하십시오.</p>
+    <ol>
+      <li><b>① 권리금 조문</b> — 상가임대차법 제10조의4의 권리금 회수기회 보호와 제1항 단서의 예외를 확인합니다.</li>
+      <li><b>② 갱신 요구</b> — 상가임대차법 제10조의 계약갱신 요구와 제1항 각 호 사유를 대조합니다.</li>
+      <li><b>③ 재건축 사유</b> — 제10조 제1항 제7호 나목의 재건축이 정당한 거절 사유인지 사실관계로 확인합니다.</li>
+      <li><b>④ 손해배상</b> — 갱신이 거절된 경우 제10조의4 제3항에 따른 청구 가능성을 검토합니다.</li>
+      <li><b>⑤ 기록</b> — 통지·요구 시점과 투자 내역을 문서로 남기고, 면담 일시와 참석자까지 기록합니다. 정리 일정과 공사 일정은 같은 표에서 관리합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
