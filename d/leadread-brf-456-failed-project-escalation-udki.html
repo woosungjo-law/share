@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>실패한 프로젝트는 왜 멈추지 못하는가 — Lead Read</title>
+<style>
+:root{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}}
+html[data-theme="dark"]{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}
+html[data-theme="light"]{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;line-height:1.78;word-break:keep-all;overflow-wrap:anywhere}
+.page{max-width:920px;margin:auto;padding:26px 20px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--ln);font-size:.78rem;letter-spacing:.1em;color:var(--mut)}
+.top b{color:var(--ink)}
+button{font:inherit;font-size:.8rem;padding:6px 10px;color:var(--ink);background:var(--sf);border:1px solid var(--ln);border-radius:4px;cursor:pointer}
+a{color:var(--ac);text-underline-offset:.2em}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--mk);outline-offset:3px}
+header{padding:34px 0 10px}
+.kicker{color:var(--mk);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.28;letter-spacing:-.03em;margin:.4em 0 .3em}
+.dek{font-size:clamp(1.02rem,2.2vw,1.18rem);color:var(--mut);margin:0 0 10px;max-width:62ch}
+.tag{display:inline-block;margin-top:12px;padding:4px 10px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:700;border-radius:3px}
+h2{font-size:clamp(1.22rem,2.8vw,1.62rem);line-height:1.34;letter-spacing:-.02em;margin:0 0 8px}
+h2 span{display:block;font-size:.78rem;font-weight:600;letter-spacing:.06em;color:var(--mk);margin-top:5px}
+h3{font-size:1.02rem;margin:0 0 6px}
+p{margin:0 0 14px;max-width:70ch}
+section{padding:26px 0;border-top:1px solid var(--ln)}
+.leadbox{margin:22px 0 4px;padding:20px;background:var(--sf);border-left:4px solid var(--ac)}
+.lb-label{font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin:0 0 4px}
+.lb-q{font-size:1.06rem;font-weight:700;margin:0 0 14px}
+.lb-a{margin:0;color:var(--ink)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.pole{padding:18px;background:var(--sf);border-top:4px solid var(--ac)}
+.pole:nth-child(2){border-top-color:var(--mk)}
+.pole small{display:block;font-size:.72rem;letter-spacing:.1em;font-weight:800;color:var(--mk);margin-bottom:6px}
+.clash{margin-top:16px;padding:16px 18px;background:var(--ac2);border-left:4px solid var(--mk)}
+.timeline{margin-top:18px;padding-left:18px;border-left:2px solid var(--ln)}
+.tl{position:relative;margin:0 0 16px}
+.tl:before{content:"";position:absolute;left:-25px;top:.55em;width:9px;height:9px;border-radius:50%;background:var(--mk)}
+.tl b{display:block;color:var(--mk);font-size:.92rem}
+.tl p{margin:2px 0 0;color:var(--mut)}
+.signal{margin-top:16px;padding:18px;background:var(--ac2);border:1px solid var(--ln)}
+.siglabel{display:inline-block;font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin-right:8px}
+.mnote{margin:16px 0;padding:13px 15px;background:var(--mk2);border-left:3px solid var(--mk);font-size:.95rem}
+.mnote b{display:block;font-size:.72rem;letter-spacing:.1em;color:var(--mk);margin-bottom:4px}
+.table-wrap{overflow-x:auto;margin-top:14px}
+table{width:100%;border-collapse:collapse;font-size:.93rem;table-layout:fixed;word-break:normal}
+caption{word-break:normal;text-align:left;padding-bottom:8px}
+th,td{border-bottom:1px solid var(--ln);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--ac2);color:var(--ink);font-size:.85rem}
+.scan{margin-top:16px;padding:15px 17px;background:var(--sf);border:1px solid var(--ln);border-left:4px solid var(--ac)}
+.ask ol{margin:12px 0 0;padding-left:22px}
+.ask li{margin:0 0 10px}
+.closing{padding:24px;background:var(--sf);border-top:2px solid var(--ac)}
+.closing h2{margin-bottom:10px}
+.closing p{font-size:1.04rem;margin:0}
+.cite{color:var(--mut);font-size:.94rem}
+details{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--ln)}
+summary{cursor:pointer;font-weight:700;color:var(--ac)}
+.source{margin:8px 0 0;font-size:.92rem;color:var(--mut)}
+.source cite{font-style:normal;color:var(--ink);font-weight:600}
+footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--ln);color:var(--mut);font-size:.84rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.author-credit{color:var(--ink);font-weight:800}
+@media (max-width:640px){
+.page{padding:18px 14px 44px}
+.duo{grid-template-columns:1fr}
+header{padding:24px 0 6px}
+section{padding:22px 0}
+table{font-size:.84rem}
+th,td{padding:8px 7px}
+.closing{padding:18px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="top"><span><b>Lead Read</b> · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="테마 바꾸기">테마</button></div>
+<header>
+<p class="kicker">Lead Read · 리더십 브리핑</p>
+<h1>실패한 프로젝트는 왜 멈추지 못하는가</h1>
+<p class="dek">실패가 확인된 뒤에 더 많은 자원이 들어갑니다. 원인이 자존심인지 마감인지에 따라 처방이 달라집니다.</p>
+<p class="tag">두 관점 · 적용 사례 · 판단 질문</p>
+</header>
+
+<div class="leadbox">
+<p class="lb-label">핵심 질문</p>
+<p class="lb-q">우리가 지키는 것은 성과인가, 완주인가?</p>
+<p class="lb-label">한 문장 결론</p>
+<p class="lb-a">자기 판단을 지키려는 동기는 실재하지만 가장 큰 힘은 아닙니다. 조금만 더 하면 끝난다는 인식이 더 크게 작동하며, 그래서 중단 기준은 착수 시점에 절차로 정해 두어야 합니다.</p>
+</div>
+
+<section>
+<h2>왜 지금 이 문제인가<span>손실이 보이는데 왜 더 넣는가</span></h2>
+<p>프로젝트가 실패하면 자원을 회수하는 것이 합리적입니다. 그런데 실제 조직은 실패가 확인된 뒤에 더 많이 넣습니다.</p><p>이 행동을 무엇으로 설명할 것인가가 결정을 가릅니다. 원인이 사람의 자존심이라면 책임을 분산시키고, 원인이 목표의 구조라면 완료의 정의를 바꿉니다.</p>
+</section>
+
+<section>
+<h2>두 연구가 갈라지는 지점<span>책임의 구조인가, 목표의 구조인가</span></h2>
+<div class="duo"><div class="pole"><small>자기 정당화</small><h3>책임이 클수록 더 넣는다</h3><p>배리 스타우는 1976년 논문에서 경영대학원생 240명에게 투자 결정 역할극을 시켰습니다. 참가자는 먼저 한 사업에 자원을 배분하고, 그 사업이 나빠졌다는 정보를 받은 뒤 추가 배분을 결정했습니다. 핵심 변수는 첫 결정에 대한 개인적 책임이 있는지와 그 결과가 부정적인지였습니다. 자기가 결정한 사업이 나빠졌을 때, 그리고 그 결정에 자신이 책임이 있을 때 사람들은 가장 많은 자원을 추가로 넣었습니다. 그는 이 현상을 자기 정당화로 설명했습니다. 자신의 판단을 부정하는 정보가 오면 판단을 고치는 대신 판단을 지키는 쪽으로 자원을 씁니다.</p></div><div class="pole"><small>목표 대체</small><h3>원인은 자아보다 마감이다</h3><p>슬리스먼과 동료들은 2012년 논문에서 35년간 쌓인 실험과 현장 연구를 메타분석으로 묶었습니다. 여러 이론이 제안한 결정요인의 효과 크기를 나란히 비교했습니다. 개인적 책임의 효과는 실재했지만 크지 않았고(상관 .258, 54개 연구), 매몰비용은 그보다 조금 작았으며(.243), 완료가 코앞이라는 인식은 더 컸습니다(.393). 자아 위협은 가장 컸습니다(.473). 실패를 밀어붙이는 힘의 상당 부분은 내 판단을 지켜야 한다가 아니라 조금만 더 하면 끝난다에서 옵니다. 원래 목표였던 성과가 어느 순간 프로젝트를 끝내는 일 자체로 바뀌면, 중단은 성과의 포기가 아니라 완주의 포기가 됩니다.</p></div></div><div class="clash"><p>두 연구는 같은 현상에 다른 처방을 냅니다. 앞은 책임의 구조를 보고, 뒤는 목표의 구조를 봅니다. 앞의 처방은 결정을 나누고 평가를 분리하는 것이고, 뒤의 처방은 완료의 정의를 미리 못 박고 중단 기준을 착수 시점에 정하는 것입니다. 두 처방은 겹치지만 예산과 권한이 먼저 가는 자리가 다릅니다. 책임 분산은 사람을 바꾸고, 중단 기준은 절차를 바꿉니다. 하나만 고를 때 무엇을 먼저 볼 것인가는 사례의 성격에 달려 있습니다.</p></div>
+</section>
+
+<section class="case">
+<h2>적용 사례 — 덴버 공항의 수하물 자동화<span>1989년 착공에서 2005년 전원 차단까지</span></h2>
+<p>덴버는 1989년 9월 공항 건설을 시작하며 첫 공사비를 20억 8,000만 달러로 잡았습니다. 규모가 커서 짐을 20분 안에 옮기는 전면 자동화 시스템을 넣기로 했고, BAE가 1억 9,300만 달러에 계약했습니다. 17마일 선로와 4,000대의 무선 카트, 5,000개의 감지기로 이루어진 시스템이었습니다.</p><p>개항은 네 차례 밀렸습니다. 1993년 12월, 1994년 3월, 1994년 5월, 그리고 무기한이었습니다. 1994년 7월 시는 자동화와 별도로 수동 시스템을 짓기로 했고, 1995년 2월 28일 공항은 문을 열었습니다. 자동화 시스템은 B동 유나이티드 출발 수하물에만 부분 가동됐습니다. 비용은 1억 9,500만 달러에서 2억 9,000만 달러 이상으로 늘었고, 공사비는 30억 달러를 넘어 처음 추정보다 약 10억 달러 많았습니다.</p><p>주목할 것은 그 뒤입니다. 부분 가동된 시스템은 10년을 더 살아남았습니다. 2005년 9월 유나이티드가 수동으로 돌아섰고 10월에 전원이 꺼졌습니다. 이 사례에서 책임과 매몰비용과 완료 근접은 모두 작동했습니다. 특히 개항이라는 마감과 B동 출발 수하물만이라는 부분 가동은 완료를 계속 코앞으로 밀어 놓았습니다.</p>
+</section>
+
+<section>
+<h2>렌즈 — 재서술<span>로티의 어휘</span></h2>
+<p>리처드 로티는 세계를 기술하는 언어를 바꾸는 일이 곧 무엇을 할 수 있는지를 바꾸는 일이라고 보았습니다. 같은 사건도 다른 어휘로 서술되면 다른 실천이 가능해집니다.</p><p>실패한 프로젝트에 이 개념을 대면 불편한 사실이 보입니다. 프로젝트는 실패로 서술되는 동안에만 중단됩니다. B동 출발 수하물용 시스템으로 재서술되는 순간 그것은 부분 성공이 되고 중단할 이유가 사라집니다. 재서술은 해방의 기술이지만 회피의 기술로도 쓰입니다. 누가 어떤 어휘로 프로젝트를 다시 부르는지가 중단 여부를 정한다면, 중단 기준은 문장이 아니라 절차에 있어야 합니다.</p>
+</section>
+
+<section class="ask">
+<h2>리더의 판단 질문<span>결정 전에 스스로 확인할 것</span></h2>
+<ol><li>우리가 지키는 것은 성과인가 완주인가?</li><li>이 프로젝트를 지금 어떤 이름으로 부르고 있는가?</li><li>중단 기준은 착수 때 정했는가, 지금 정하고 있는가?</li></ol>
+</section>
+
+<section class="closing">
+<h2>한 줄로 남기면</h2>
+<p>중단을 결정하는 자리에서 세 가지를 물어야 합니다. 지키는 것이 성과인가 완주인가, 이 프로젝트를 지금 어떤 이름으로 부르는가, 중단 기준은 착수 때 정했는가. 첫째를 놓치면 진흙탕에 더 들어가고, 둘째를 놓치면 이름이 바뀐 프로젝트가 영원히 살아남고, 셋째를 놓치면 기준이 매번 사후에 만들어집니다.</p>
+</section>
+
+<section>
+<h2>근거 자료<span>서지와 확인 범위</span></h2>
+<p class="cite">두 논문은 공개 서지와 논지 범위에서 정리했고 효과크기는 본문의 상관값을 인용했습니다. 사례는 공개 감사 보고서와 보도로 확인했으며 어느 기관이나 개인의 법적·도덕적 책임을 판단하지 않습니다.</p>
+<details><summary>진흙탕에 발을 담그면</summary><p class="source">Barry M. Staw, “Knee-deep in the Big Muddy,” <cite>Organizational Behavior and Human Performance</cite> 16(1) (1976).</p></details><details><summary>결정요인의 크기를 비교한다</summary><p class="source">Dustin J. Sleesman·Donald E. Conlon·Gerry McNamara·Jonathan E. Miles, “Cleaning Up the Big Muddy,” <cite>Academy of Management Journal</cite> 55(3) (2012). 책임 .258·매몰비용 .243·완료 근접 .393·자아 위협 .473.</p></details><details><summary>재서술의 개념</summary><p class="source">리처드 로티, 『우연성, 아이러니, 연대』(1989). 재서술 논지만 사용했고 발췌는 없습니다.</p></details>
+</section>
+
+<footer>
+<span>Lead Read · 3분 브리핑</span>
+<p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+const root=document.documentElement;const b=document.getElementById('theme-toggle');
+b.addEventListener('click',()=>{const n=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=n;});
+</script>
+</body>
+</html>
