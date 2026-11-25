@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>청구금액은 감으로 정하는 숫자가 아니라, 이자 계산과 소장 기재 요건으로 확정하는 금액입니다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 청구금액 산정</div>
+    <h1>청구금액은 감으로 정하는 숫자가 아니라, 이자 계산과 소장 기재 요건으로 확정하는 금액입니다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 청구금액은 <b>세 부분</b>으로 나눠 계산합니다 — <b>원금</b>, <b>이행기 이후의 지연배상</b>(민법 제397조의 법정이율), 그리고 <b>청구 원인을 뒷받침하는 근거 자료</b>. 소장에는 금액을 <b>특정해</b> 적어야 합니다(민사소송법 제249조). 그리고 실무에서 금액을 흔드는 것은 계산 자체가 아니라 <b>전제</b>입니다 — 기산일, 이율, 중도 상환의 반영.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>여행 경비 정산</b>을 떠올려 보십시오. "대충 100만 원"이라고 적으면 나중에 누가 봐도 확인할 방법이 없습니다. 그러나 <b>교통비·숙박비·식비</b>로 나누고 각 항목에 <b>영수증</b>을 붙이면, 총액이 달라져도 왜 달라졌는지가 즉시 보입니다. 청구금액도 같습니다 — <b>합계만 큰 숫자</b>는 협상에서 밀리고, <b>항목과 근거가 붙은 표</b>는 그 자체로 협상력이 됩니다. 그리고 항목이 나뉘어 있으면 <b>어디까지 줄일 수 있는지</b>도 미리 정할 수 있습니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p><b>① 계산 근거.</b> 민법 제397조는 금전채무를 이행하지 않으면 손해배상액은 <b>법정이율</b>에 따라 계산한다고 정하고 있습니다. 지연된 기간에 대한 배상은 감정적인 액수가 아니라 <b>정해진 이율로 계산되는 금액</b>이라는 뜻이므로, <b>기산일과 이율을 문서로 특정</b>해야 합니다.</p>
+    <p><b>② 소장의 기재.</b> 민사소송법 제249조에 따르면 소장에는 청구의 취지와 원인을 적어야 하고, 여기에 <b>청구금액이 특정</b>되어야 합니다. 청구 취지에 금액이 흐릿하게 적히면 절차가 늘어지고, 청구 원인이 금액과 연결되지 않으면 법원이 다시 확인할 사항이 생깁니다.</p>
+    <p><b>③ 세 부분의 맞물림.</b> 원금·지연배상(제397조)·근거 자료가 <b>한 표 안에서 서로 맞물려야</b> 소장의 기재(제249조)와 계산이 어긋나지 않습니다.</p>
+    <div class="callout"><b>금액을 흔드는 것은 전제입니다.</b> 같은 원금이라도 <b>기산일</b>을 언제로 잡는지, <b>약정을 뒷받침할 자료</b>가 있는지, <b>중도 상환</b>을 어떻게 반영하는지에 따라 합계가 달라집니다. 그래서 산정표에는 계산 결과만 적지 않고 <b>전제 항목과 각 전제에 붙는 근거 문서</b>를 함께 적습니다 — 계산에 쓰는 값과 근거를 나란히 두면 누가 보더라도 같은 결론에 이르게 됩니다.</div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외 — 숫자가 흔들리는 일곱 지점</h2>
+    <ul class="points">
+      <li><b>기산일</b> — 지연배상을 언제부터 계산할지가 금액을 좌우합니다. <b>계약서상 이행기·독촉일·지급 약속일</b> 가운데 어느 날짜를 기준으로 삼을지 정하고 근거를 남깁니다.</li>
+      <li><b>이율</b> — 특약이 있는지 없는지에 따라 계산이 달라집니다. 약정이 없다면 <b>법정이율</b>로 계산하는 구조(민법 제397조)를 전제로 표를 만듭니다.</li>
+      <li><b>청구 취지의 표기</b> — 원금과 이자를 <b>구분해</b> 적고 합계를 표시합니다. 금액이 특정되지 않으면 <b>보정 요구로 시간이 지연</b>됩니다(제249조).</li>
+      <li><b>청구 원인과 금액의 연결</b> — 어느 계약과 어느 거래에서 발생한 금액인지 항목별로 연결합니다. <b>연결되지 않은 금액은 다툼에서 먼저 공격받습니다.</b></li>
+      <li><b>비용의 고려</b> — 청구금액이 커지면 <b>인지대와 변호 비용</b>도 늘어납니다. 회수 기대치와 비용을 나란히 놓고 목표를 조정합니다.</li>
+      <li><b>감액의 여지</b> — 협상에서 줄일 수 있는 범위를 미리 정해 두면, 진행 중에 기준이 흔들리지 않습니다.</li>
+      <li><b>중도 상환과 일부 변제</b> — 일부라도 갚은 기록이 있으면 원금과 계산 기간이 달라지므로, <b>입금 내역을 시간순으로</b> 확인해 계산에 반영합니다.</li>
+    </ul>
+    <p><b>목표도 함께 정합니다.</b> 청구금액이 크다고 회수액이 커지지 않습니다. 상대의 자산 상황·소송비용·회수 기간을 함께 계산해 현실적인 목표를 세우고, 협상 단계에서 어디까지 줄일 수 있는지 미리 정해 두면 판단이 흔들리지 않습니다.</p>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">세 문서를 만드십시오. 산정표는 <b>결재 문서에 첨부</b>해 금액의 근거를 한 번에 확인할 수 있게 합니다.</p>
+    <ol>
+      <li><b>① 원금</b> — 청구 원인과 연결되는 원금을 확정합니다.</li>
+      <li><b>② 기산</b> — 지연 계산의 기산일을 정하고 근거를 남깁니다.</li>
+      <li><b>③ 이율</b> — 민법 제397조에 따른 법정이율 계산 구조를 확인합니다.</li>
+      <li><b>④ 기재</b> — 민사소송법 제249조에 따라 청구 취지·원인·금액을 특정합니다.</li>
+      <li><b>⑤ 비용</b> — 인지대와 비용을 포함해 회수 목표를 조정합니다.</li>
+      <li><b>⑥ 한도</b> — 협상에서 줄일 수 있는 하한과 중단 기준을 정합니다.</li>
+    </ol>
+    <p style="margin-top:16px;margin-bottom:0;">문서는 세 가지입니다 — 청구금액 산정표(원금·기산일·이율·계산 기간·합계를 한 표에, <b>각 전제에 근거 문서를 연결</b>), 소장 기재 점검표(청구 취지에 금액이 특정됐는지, 청구 원인과 금액이 연결됐는지), 목표·한도 메모(현실적인 회수 목표·협상 하한·중단 기준). 문서를 만든 뒤에는 계산 근거 자료를 <b>원본과 함께</b> 묶어 보관하고, 상대의 자산 상황이 바뀌면 목표를 다시 계산합니다. 청구금액을 바꾸는 경우에는 <b>소장 기재와 산정표를 함께 고쳐</b> 어긋나지 않게 하고, 협상에서 금액이 조정되면 표를 갱신하며 <b>변경 사유를 함께</b> 남깁니다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
