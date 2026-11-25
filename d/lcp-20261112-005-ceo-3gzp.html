@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>이사회에서 끝낼 수 있는 안건인지부터 확인하라</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>이사회에서 끝낼 수 있는 안건인지부터 확인하라</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 같은 회사 안에서도 <b>안건마다 결정 권한의 층이 다릅니다.</b> 이사회에서 끝낼 수 있는 일과 <b>총회 결의가 필요한 일</b>이 섞여 있고, 그 구분은 <b>경영 판단이 아니라 조문</b>이 정합니다. 그리고 <b>정관이 배분을 바꿔 놓았을 수 있습니다.</b>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>사건의 시작: 막판에 던져진 질문 하나</h2>
+    <div class="analogy">
+      <b>회사 인감으로 서명하는 자리</b>를 떠올려 보십시오. 대표가 서명할 수 있는 문서와 <b>이사회 승인을 받아야 하는 문서</b>가 따로 있습니다. 서명이 빠르다고 해서 권한이 생기는 것이 아닙니다. 대표는 이사회에서 <b>지주회사 전환 계획</b>을 통과시키려 했고, <b>분할 후 남는 회사가 보유한 자기주식을 어떻게 쓸지</b>도 함께 정하려 했습니다. <b>경영진의 판단</b>이라고 생각했고 일정도 촉박했습니다. 막판에 법무 담당자가 물었습니다. <b>"이 안건을 총회에 올려야 하는지, 이사회에서 끝낼 수 있는지 확인하셨습니까."</b> 대표는 답하지 못했습니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 보는 핵심: 상법 제361조·제393조·제374조·제368조</h2>
+    <p>
+      <b>상법 제361조</b>는 <b>주주총회가 이 법 또는 정관에 정하는 사항에 한하여 결의할 수 있다</b>고 정합니다. <b>총회가 무엇이든 결정할 수 있는 자리가 아니라는 뜻</b>입니다. 반대로 그 목록 밖의 업무집행은 <b>이사회</b>가 맡습니다.
+    </p>
+    <p>
+      <b>상법 제393조</b>는 <b>중요한 자산의 처분과 양도, 대규모 재산의 차입, 지배인의 선임·해임</b> 같은 회사의 업무집행을 <b>이사회 결의</b>로 한다고 정하고, <b>이사회가 이사의 직무 집행을 감독</b>한다고 밝힙니다. 그래서 <b>대규모 투자나 사업 재편의 세부 설계</b>는, <b>회사의 기초를 바꾸는 단계가 아니라면 이사회에서 처리</b>할 수 있습니다.
+    </p>
+    <p>
+      반대로 <b>상법 제374조</b>가 정한 <b>영업의 전부나 중요한 일부의 양도, 영업 전부의 임대나 경영위임, 손익 전부를 같이하는 계약, 영업에 중대한 영향을 미치는 다른 회사 영업의 양수</b> 같은 행위에는 <b>총회 결의가 필요</b>합니다. <b>같은 회사 안에서도 안건마다 층이 다릅니다.</b>
+    </p>
+    <p>
+      총회에 올리기로 했다면 <b>숫자를 맞춰야 합니다.</b> <b>상법 제368조</b>는 결의가 <b>출석한 주주의 의결권의 과반수</b>와 <b>발행주식총수의 4분의 1 이상의 수</b>로 이루어진다고 정합니다. <b>두 요건을 동시에 채워야 합니다.</b> 출석자 과반수만 확인하고 안심하면, 개표 뒤에 요건 미달이 드러납니다.
+    </p>
+    <p>
+      주주 쪽 수단도 알고 있어야 합니다. <b>상법 제363조의2의 주주제안권</b>은 발행주식총수의 <b>100분의 3 이상</b>을 가진 주주에게 총회 목적사항 제안을 허용하고, <b>상법 제402조의 유지청구권</b>은 이사의 위법 행위로 <b>회복할 수 없는 손해가 생길 염려</b>가 있을 때 일정 지분을 가진 주주나 감사가 그 행위를 유지할 것을 청구할 수 있게 합니다.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외: 자기주식 계획은 숫자로 검증됩니다</h2>
+    <ul class="points">
+      <li><b>자기주식의 함정</b> — <b>자기주식은 분할 안건에서 가장 자주 문제 되는 항목</b>입니다.</li>
+      <li><b>"추후 정한다"의 위험</b> — 처분 계획이 <b>"추후 이사회에서 정한다"</b>로 끝나 있으면, 총회 직전에 구체적 처분 내용을 요구받고 <b>일정이 무너집니다.</b></li>
+      <li><b>미리 적을 것</b> — <b>처분 시기, 방법, 상대방, 가격 산정 근거</b>를 계획서에 미리 적습니다.</li>
+      <li><b>기준일</b> — <b>기준일을 언제로 잡는지, 발행주식총수에 어떤 주식을 넣는지</b>에 따라 <b>4분의 1 요건의 계산이 달라집니다.</b></li>
+      <li><b>주식 변동</b> — 주식 변동이 예정되어 있다면 <b>일정과 함께 확정</b>해야 합니다.</li>
+      <li><b>정관 우선</b> — <b>정관이 특정 사항을 총회 결의로 정하고 있으면</b> 그 사항은 <b>이사회 단독 결정으로 넘길 수 없습니다.</b></li>
+      <li><b>일정 압박</b> — <b>주주제안은 총회일 6주 전</b>이라는 기한이 있어, 일정을 급하게 잡으면 주주는 제안권을 행사할 시간을 잃고 <b>그 자체가 분쟁의 씨앗</b>이 됩니다.</li>
+    </ul>
+    <div class="callout"><b>주의.</b> 현장에서 자주 나오는 실수는 두 가지입니다. <b>이사회에서 통과시키고 나서 총회 사항이었다는 사실을 발견</b>하는 경우, <b>총회에서 가결하고 나서 요건 계산이 틀린 것을 발견</b>하는 경우. <b>둘 다 안건을 다시 여는 비용이 처음 검토 비용보다 큽니다.</b></div>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;">안건을 올리기 전에 세 가지 선을 정하십시오.</p>
+      <ol>
+        <li><b>① 권한의 선</b> — 이 안건이 <b>총회 사항인지 이사회 사항인지 법무 검토를 받아 문서로 확정</b>합니다. <b>구두 확인으로 넘기지 않습니다.</b></li>
+        <li><b>② 목록 대조</b> — <b>제374조의 목록에 해당하는 부분이 안건에 섞여 있지 않은지</b> 확인합니다.</li>
+        <li><b>③ 정관 확인</b> — 안건을 올리기 전에 <b>정관부터 읽습니다.</b> 정관이 총회 사항으로 정한 것이 없는지 봅니다.</li>
+        <li><b>④ 숫자의 선</b> — <b>발행주식총수, 자기주식 수, 의결권 없는 주식 수, 기준일</b>을 표로 만들고 <b>결의 요건 충족 여부를 계산</b>합니다.</li>
+        <li><b>⑤ 두 요건</b> — <b>출석 과반수</b>와 <b>발행주식총수 4분의 1</b>을 <b>동시에</b> 계산합니다.</li>
+        <li><b>⑥ 자기주식 계획서</b> — <b>처분 시기·방법·상대방·가격 산정 근거</b>를 계획서에 미리 적습니다.</li>
+        <li><b>⑦ 소통의 선</b> — <b>자기주식 처분 계획과 그 목적을 주주에게 설명할 자료</b>를 미리 만듭니다.</li>
+        <li><b>⑧ 일정 여유</b> — <b>주주제안 기한(총회일 6주 전)</b>을 역산해 일정을 잡습니다. 시간을 주면 <b>예상 질문을 준비할 여유</b>가 생깁니다.</li>
+        <li><b>⑨ 주주 수단 인식</b> — <b>제안권·유지청구권</b>의 행사 시점을 앞지르는 속도로 밀어붙이지 않습니다.</li>
+        <li><b>⑩ 위험 보고</b> — 안건을 다시 열어야 할 경우의 <b>비용과 일정 영향</b>을 미리 보고받습니다.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;">대표가 아끼려던 시간은 <b>권한 확인에 쓰는 하루</b>입니다. 그 하루를 건너뛰면 <b>안건을 다시 여는 몇 주</b>가 돌아옵니다. 이사회 의사록을 만들기 전에 <b>권한·숫자·소통 세 칸을 채운 한 장</b>을 먼저 만들게 하십시오.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
