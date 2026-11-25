@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>계약서에 없는 납품대금 연동, 원사업자에 조정 요구하는 법</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>계약서에 없는 납품대금 연동, 원사업자에 조정 요구하는 법</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 계약서에 연동 조항이 없어도 <b>법률상 조정 신청 요건</b>에 해당하는지 살펴볼 수 있습니다. 다만 신청만으로 인상액이 자동 확정되지는 않고, 신청 도달일과 협의 개시 여부를 따로 관리해야 합니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>사건의 시작: 원재료 가격 상승이 이익을 잠식합니다</h2>
+    <div class="analogy">
+      새봄정밀 대표 남재호는 원재료 가격이 크게 오른 뒤 <b>납품 단가가 그대로인 상황</b>을 보고받습니다. 구매 담당자는 계약서에 연동 조항이 없어서 조정 요청을 거절당했다고 합니다. 재호는 곧바로 대금 인상을 단정하지 않고, 법무팀에 법률상 조정 신청 가능성과 계약상 대응을 나눠 확인하도록 하며, 요청 날짜와 상대방 답변도 자료로 남기라고 지시합니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 보는 핵심: 신청할 수 있고, 신청 후 10일 내 협의를 시작해야 합니다</h2>
+    <p><b>하도급법 제16조의2</b>는 공급원가 변동으로 조정이 불가피한 경우 수급사업자가 원사업자에게 조정을 신청할 수 있도록 합니다. 계약서에 연동 산식이 없는 경우라도 법률상 신청 요건에 해당하는지 살펴볼 수 있습니다. 다만 신청만으로 대금 인상액이 자동 확정되는 것은 아닙니다.</p>
+    <p>같은 조 제10항은 원사업자가 해당 조정 신청을 받은 날부터 <b>10일 안에 협의를 시작</b>하도록 정하고, 정당한 사유 없이 협의를 거부하거나 게을리하지 못하게 합니다.</p>
+    <p>그래서 신청이 언제 도달했는지와 실제 협의가 열렸는지가 중요합니다. 요청에 답하지 않았다는 사정만으로 위반이 확정되는 것은 아니므로, 회의 제안·답변·자료 요청을 확인해야 합니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>놓치기 쉬운 조건과 예외: 인상 요구와 협의 의무를 구분합니다</h2>
+    <p><b>증빙.</b> 원가 변동의 증빙, 조정 신청서, 거래 상대방의 수신 확인을 모으게 합니다. 원재료 구매 자료와 납품 품목·기간을 연결해 왜 조정이 불가피한지 설명할 수 있어야 합니다.</p>
+    <p><b>미합의와 회피의 구분.</b> 상대방이 조정 금액에 동의하지 않은 것과 협의 자체를 거부하거나 방치한 것은 다른 상황입니다.</p>
+    <p><b>단계 확인.</b> 어느 단계까지 진행됐는지 확인하고 법적 평가를 받습니다.</p>
+    <p><b>신고 검토.</b> 제16조의2 제10항 위반에 해당하는 회피가 확인되면 공정거래위원회 신고 등 조치를 검토할 수 있지만, 신고 여부는 사실과 증거를 살핀 뒤 결정합니다.</p>
+    <p><b>단정 금지.</b> ‘계약서에 없으니 조정 불가’ 또는 ‘요청했으니 인상 확정’처럼 한쪽으로만 단정하지 말고 법무 검토를 받습니다.</p>
+    <div class="callout">
+      <b>주의.</b> 협의가 시작되었다는 사실만으로 원하는 조정액이 확정되는 것은 아닙니다. <b>절차상 협의가 있었는지</b>와 <b>상업적 합의가 이루어졌는지</b>를 별도로 보고받으십시오.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>절차와 사업 협상을 함께 관리하십시오.</b> 정할 항목은 다음과 같습니다.</p>
+      <ol>
+        <li><b>① 증빙</b> — 원가 변동과 조정 필요성을 보여주는 자료를 모읍니다.</li>
+        <li><b>② 신청</b> — 조정 요청서와 상대방의 수신 날짜를 기록합니다.</li>
+        <li><b>③ 기한</b> — 신청 수령 후 10일 내 협의가 시작됐는지 확인합니다.</li>
+        <li><b>④ 구분</b> — 조정 금액 미합의와 협의 거부를 나눠 봅니다.</li>
+        <li><b>⑤ 대응</b> — 신고 등 법적 조치와 거래 협상 결정을 따로 검토합니다.</li>
+        <li><b>⑥ 기록</b> — 보고서에 회의 일자, 참여자, 합의된 항목과 미합의 항목을 남깁니다.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;">장기적으로는 원가 자료를 정기적으로 공유하고, 계약 개정 과정에서 <b>신청과 협의 기록</b>을 관리하는 절차를 마련하십시오.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
