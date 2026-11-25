@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>해킹 인지 72시간, 피해 규모 파악 중이라는 말로 시계는 멈추지 않는다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 개인정보 유출 신고</div>
+    <h1>해킹 인지 72시간, 피해 규모 파악 중이라는 말로 시계는 멈추지 않는다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 개인정보보호법 <b>제34조 제1항·제3항</b>은 유출 사실을 <b>알게 된 때</b> 지체 없이 정보주체에게 통지하고 보호위원회에 신고할 의무를 부과합니다. 기산점은 <b>피해 규모가 확정된 때가 아니라 유출 가능성을 인식한 때</b>입니다. 그리고 시행령 <b>제39조</b>가 <b>72시간 이내</b> 완료를 요구합니다. 규모 파악 중이라는 사정은 시계를 늦추지 못합니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>화재경보기가 울린 새벽</b>을 떠올려 보십시오. 불이 난 범위가 아직 확인되지 않았다고 해서 119 신고를 미루지는 않습니다. <b>경보가 울린 시점</b>이 신고의 시작이고, 규모는 나중에 정리합니다. 오히려 "규모부터 확인하겠다"며 시간을 쓰는 동안 불은 커집니다. 유출 신고도 같은 구조입니다 — <b>인지 시점이 출발선</b>이고, <b>1차 통지와 추가 통지를 나눠 가는 것</b>이 정석입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점 — 네 조각</h2>
+    <p><b>① 통지·신고 의무(제34조 제1항·제3항).</b> 개인정보처리자는 유출 사실을 <b>알게 된 때 지체 없이</b> 정보주체에게 통지하고 <b>보호위원회에 신고</b>할 의무가 있습니다. <b>알게 된 때</b>가 의무의 출발점입니다.</p>
+    <p><b>② 기산점.</b> 개인정보보호위원회는 <b>유출 가능성을 인식한 때</b>, 즉 <b>해킹 정황을 인지한 시점</b>을 기산점으로 보는 엄격한 입장입니다. 피해 규모가 확정된 때가 아니라 <b>정황을 인지한 때</b>가 기준이므로, 규모 파악 중이라는 사정으로 시계를 늦출 수 없습니다.</p>
+    <p><b>③ 72시간(시행령 제39조).</b> 유출 사실을 알게 된 때로부터 <b>72시간 이내</b>에 정보주체 통지와 보호위원회 신고를 완료하도록 의무화하고 있습니다. <b>통지와 신고의 완료 시한</b>이 정해져 있다는 점이 실무의 압박이 됩니다.</p>
+    <div class="callout"><b>단계적 대응이 답입니다.</b> 규모가 확정되지 않아도 <b>통지할 수 있는 범위부터</b> 통지하는 순서를 갖춥니다. 1차 통지에서는 <b>인지 사실과 조사 중임</b>을 알리고, 규모가 확정되는 대로 <b>추가 통지</b>를 이어갑니다. 시행령 <b>제40조</b>의 신고 관련 규율에 따라 절차를 밟고, 통지·신고의 <b>일시와 내용을 기록</b>합니다.</div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외 — 네 개의 기록</h2>
+    <ul class="points">
+      <li><b>인지 시점</b> — 이상 징후의 <b>최초 인지 시점</b>을 기록으로 남깁니다. 위원회의 태도에 비추어 볼 때 <b>인지 시점을 뒤로 미루는 주장</b>은 받아들여지기 어렵습니다.</li>
+      <li><b>기산점의 엄격성</b> — 정황을 인지하고도 규모 파악을 이유로 신고를 미루면 <b>의무 위반의 위험</b>이 커집니다.</li>
+      <li><b>1차 통지의 범위</b> — 확정되지 않은 부분은 <b>"조사 중"으로 표시</b>하는 방식이 안전합니다. 확정된 것만 쓰려다 시한을 넘기면 그 자체가 문제가 됩니다.</li>
+      <li><b>기록의 묶음</b> — 통지문의 <b>발송 시각과 수신 확인 내역</b>, 신고서의 <b>접수 번호</b>를 하나의 파일로 묶어 보관하면 사후 다툼에서 시한 준수의 증거가 됩니다.</li>
+      <li><b>경영진 커뮤니케이션</b> — "확정되지 않은 사실로 외부에 알리는 일"을 망설이는 것이 가장 흔한 지연 원인입니다. <b>법정 시한이 있다는 사실</b>을 의사결정 문서에 명시해 두어야 논의가 지연되지 않습니다.</li>
+      <li><b>보유 규모의 인식</b> — 대규모 정보를 보유한 사업자일수록 <b>기산점과 시한 관리</b>가 중요합니다. 정보주체 수가 많으면 통지 발송 자체에 시간이 걸리므로 <b>발송 수단을 미리 정해</b> 두어야 합니다.</li>
+    </ul>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">정황이 포착되면 <b>네 가지를 동시에</b> 가동하십시오. 순차로 하면 시한을 넘깁니다.</p>
+    <ol>
+      <li><b>① 인지</b> — 제34조 제1항·제3항의 출발점인 '알게 된 때'를 기록합니다.</li>
+      <li><b>② 기산</b> — 해킹 정황 인지 시점을 기산점으로 삼아 일정을 관리합니다.</li>
+      <li><b>③ 시한</b> — 시행령 제39조의 72시간 이내에 통지와 신고를 완료합니다.</li>
+      <li><b>④ 절차</b> — 시행령 제40조의 신고 관련 규율에 따라 절차를 밟습니다.</li>
+      <li><b>⑤ 분할</b> — 1차 통지와 추가 통지의 범위를 나눠 설계합니다.</li>
+      <li><b>⑥ 기록</b> — 통지·신고의 일시와 내용, 접수 번호를 한 파일로 묶습니다.</li>
+    </ol>
+    <p style="margin-top:16px;margin-bottom:0;">문서는 세 가지입니다 — 인지·기산 기록(최초 인지 일시·경로·인지 내용·판단 근거), 통지·신고 대장(1차/추가 통지 발송 시각·대상·수신 확인, 신고 접수 번호·시각), 조사 진행표(확인된 범위·미확인 항목·다음 통지 예정 시점). <b>인지 시점의 기록과 1차 통지의 범위</b>를 함께 남기면 기산점 다툼에도 대비됩니다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
