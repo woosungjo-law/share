@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>온보딩은 조직의 틀에 맞추는 것인가, 고유성을 살리는 것인가 — Lead Read</title>
+<style>
+:root{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}}
+html[data-theme="dark"]{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}
+html[data-theme="light"]{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;line-height:1.78;word-break:keep-all;overflow-wrap:anywhere}
+.page{max-width:920px;margin:auto;padding:26px 20px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--ln);font-size:.78rem;letter-spacing:.1em;color:var(--mut)}
+.top b{color:var(--ink)}
+button{font:inherit;font-size:.8rem;padding:6px 10px;color:var(--ink);background:var(--sf);border:1px solid var(--ln);border-radius:4px;cursor:pointer}
+a{color:var(--ac);text-underline-offset:.2em}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--mk);outline-offset:3px}
+header{padding:34px 0 10px}
+.kicker{color:var(--mk);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.28;letter-spacing:-.03em;margin:.4em 0 .3em}
+.dek{font-size:clamp(1.02rem,2.2vw,1.18rem);color:var(--mut);margin:0 0 10px;max-width:62ch}
+.tag{display:inline-block;margin-top:12px;padding:4px 10px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:700;border-radius:3px}
+h2{font-size:clamp(1.22rem,2.8vw,1.62rem);line-height:1.34;letter-spacing:-.02em;margin:0 0 8px}
+h2 span{display:block;font-size:.78rem;font-weight:600;letter-spacing:.06em;color:var(--mk);margin-top:5px}
+h3{font-size:1.02rem;margin:0 0 6px}
+p{margin:0 0 14px;max-width:70ch}
+section{padding:26px 0;border-top:1px solid var(--ln)}
+.leadbox{margin:22px 0 4px;padding:20px;background:var(--sf);border-left:4px solid var(--ac)}
+.lb-label{font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin:0 0 4px}
+.lb-q{font-size:1.06rem;font-weight:700;margin:0 0 14px}
+.lb-a{margin:0;color:var(--ink)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.pole{padding:18px;background:var(--sf);border-top:4px solid var(--ac)}
+.pole:nth-child(2){border-top-color:var(--mk)}
+.pole small{display:block;font-size:.72rem;letter-spacing:.1em;font-weight:800;color:var(--mk);margin-bottom:6px}
+.clash{margin-top:16px;padding:16px 18px;background:var(--ac2);border-left:4px solid var(--mk)}
+.timeline{margin-top:18px;padding-left:18px;border-left:2px solid var(--ln)}
+.tl{position:relative;margin:0 0 16px}
+.tl:before{content:"";position:absolute;left:-25px;top:.55em;width:9px;height:9px;border-radius:50%;background:var(--mk)}
+.tl b{display:block;color:var(--mk);font-size:.92rem}
+.tl p{margin:2px 0 0;color:var(--mut)}
+.signal{margin-top:16px;padding:18px;background:var(--ac2);border:1px solid var(--ln)}
+.siglabel{display:inline-block;font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin-right:8px}
+.mnote{margin:16px 0;padding:13px 15px;background:var(--mk2);border-left:3px solid var(--mk);font-size:.95rem}
+.mnote b{display:block;font-size:.72rem;letter-spacing:.1em;color:var(--mk);margin-bottom:4px}
+.table-wrap{overflow-x:auto;margin-top:14px}
+table{width:100%;border-collapse:collapse;font-size:.93rem;table-layout:fixed;word-break:normal}
+caption{word-break:normal;text-align:left;padding-bottom:8px}
+th,td{border-bottom:1px solid var(--ln);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--ac2);color:var(--ink);font-size:.85rem}
+.scan{margin-top:16px;padding:15px 17px;background:var(--sf);border:1px solid var(--ln);border-left:4px solid var(--ac)}
+.ask ol{margin:12px 0 0;padding-left:22px}
+.ask li{margin:0 0 10px}
+.closing{padding:24px;background:var(--sf);border-top:2px solid var(--ac)}
+.closing h2{margin-bottom:10px}
+.closing p{font-size:1.04rem;margin:0}
+.cite{color:var(--mut);font-size:.94rem}
+details{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--ln)}
+summary{cursor:pointer;font-weight:700;color:var(--ac)}
+.source{margin:8px 0 0;font-size:.92rem;color:var(--mut)}
+.source cite{font-style:normal;color:var(--ink);font-weight:600}
+footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--ln);color:var(--mut);font-size:.84rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.author-credit{color:var(--ink);font-weight:800}
+@media (max-width:640px){
+.page{padding:18px 14px 44px}
+.duo{grid-template-columns:1fr}
+header{padding:24px 0 6px}
+section{padding:22px 0}
+table{font-size:.84rem}
+th,td{padding:8px 7px}
+.closing{padding:18px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="top"><span><b>Lead Read</b> · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="테마 바꾸기">테마</button></div>
+<header>
+<p class="kicker">Lead Read · 리더십 브리핑</p>
+<h1>온보딩은 조직의 틀에 맞추는 것인가, 고유성을 살리는 것인가</h1>
+<p class="dek">첫날의 한 시간. 회사의 이야기를 들려주는가, 입사자의 강점을 묻는가에 따라 이직률이 갈렸습니다.</p>
+<p class="tag">요약 표 · 적용 사례 · 판단 질문</p>
+</header>
+
+<div class="leadbox">
+<p class="lb-label">핵심 질문</p>
+<p class="lb-q">첫날 입사자가 들은 이야기는 회사의 자랑인가, 자신의 강점에 대한 탐색인가?</p>
+<p class="lb-label">한 문장 결론</p>
+<p class="lb-a">명확한 절차는 불확실성을 낮춥니다. 그러나 절차가 순응만 요구하면 사람은 조용히 떠납니다. 온보딩은 규칙을 가르치되 고유성을 드러낼 여백을 남겨야 합니다.</p>
+</div>
+
+<section>
+<h2>왜 지금 이 문제인가<span>채워 넣을 그릇인가, 결을 지닌 사람인가</span></h2>
+<p>새 조직에 들어선 사람은 오리엔테이션에서 회사의 역사를 듣고 핵심 가치를 외웁니다. 목적은 밖에서 온 개인을 조직의 일원으로 빠르게 전환하는 것입니다.</p><p>그런 질문 뒤에는 전제가 있습니다. 개인이 지닌 고유한 시선은 깎아야 할 장애물인가. 온보딩은 틀에 맞추는 일인가, 고유성을 펼치게 하는 일인가.</p>
+</section>
+
+<section>
+<h2>두 연구가 갈라지는 지점<span>불확실성을 낮추는가, 소외를 막는가</span></h2>
+<div class="scan"><p><b>제도적 사회화</b> 삭스, 우거슬레브, 파시나는 2007년 메타분석에서 30개 연구와 7천 명 이상의 자료를 종합했습니다. 동기들을 묶어 교육하고, 현장과 떨어진 공식 훈련을 거치고, 단계와 일정을 미리 제시하고, 선배를 관찰하게 하는 방식이 불확실성과 역할 모호성을 낮췄습니다. 무엇을 해야 할지 명확해지면 역할 갈등은 줄고 몰입과 만족은 오릅니다. 안내 없이 현장에 던져진 입사자들은 혼란 속에서 일찍 떠났습니다.</p><p><b>진정한 자기표현</b> 케이블, 지노, 스타츠는 2013년 연구에서 전통적 온보딩이 회사의 역사와 규범을 일방적으로 쏟아붓는다고 비판했습니다. 첫날부터 모범 답안에 맞추려면 본래의 모습과 요구되는 역할 사이의 괴리가 생깁니다. 고유한 강점을 누른 채 감정을 꾸미는 노동이 시작되고, 진정한 자아를 표현하지 못하면 탈진과 소외가 옵니다. 겉으로 가치를 복창해도 속으로는 조용한 퇴사를 준비합니다.</p></div><div class="table-wrap"><table><caption class="cite">첫날 설계를 읽는 두 질문</caption><thead><tr><th>질문</th><th>제도적 사회화</th><th>진정한 자기표현</th></tr></thead><tbody><tr><th>목적</th><td>역할과 절차를 알려 불확실성을 없앤다</td><td>고유한 강점을 확인해 소외와 탈진을 막는다</td></tr><tr><th>위험</th><td>안내가 없으면 조기 이탈이 늘어난다</td><td>주입이 강하면 감정 노동과 조용한 퇴사가 늘어난다</td></tr><tr><th>설계 질문</th><td>절차를 어떻게 체계화할 것인가</td><td>자기표현의 여백을 어디에 남길 것인가</td></tr></tbody></table></div><div class="clash"><p>하나는 조직의 질서를 학습시키는 데 목적을 두고, 다른 하나는 개인의 강점을 확인시켜 소외를 막는 데 둡니다. 전자는 규범을 기준으로 사람을 수렴시키고 후자는 사람을 기준으로 조직을 확장합니다. 신규 입사자를 빈 그릇으로 보는가, 결을 지닌 존재로 보는가가 갈립니다.</p></div>
+</section>
+
+<section class="case">
+<h2>적용 사례 — 2010년 11월, 위프로의 첫날 실험<span>605명을 셋으로 나눈 현장 실험</span></h2>
+<p>인도 콜센터 부문은 감정 노동과 스트레스로 신규 입사자의 연간 이직률이 50~70퍼센트였습니다. 교육을 늘리고 고객 만족 철학을 더 가르쳐도 이탈은 멈추지 않았습니다.</p><p>2010년 11월 신규 입사자 605명을 대상으로 현장 무작위 통제 실험을 했습니다. 첫날 방식을 셋으로 나눴습니다. 조직 집중형은 회사의 역사와 가치를 교육하고 체화하는 법을 토론했습니다. 개인 집중형은 한 시간 동안 일터에서 빛난 순간과 자기 강점을 성찰해 동료와 나누고 이름과 강점이 적힌 배지를 달았습니다. 통제 집단은 직무 기술만 배웠습니다.</p><p>이후 모두 같은 기술 훈련을 거쳤습니다. 6개월 뒤 개인 집중형의 퇴사율은 조직 집중형보다 33.2퍼센트, 통제 집단보다 32.4퍼센트 낮았습니다. 조직 집중형은 통제 집단과 차이가 없었습니다. 고객 만족도도 개인 집중형이 3.72점으로 조직 집중형 3.59점보다 높았습니다.</p>
+</section>
+
+<section>
+<h2>렌즈 — 제도와 부담 완화<span>겔렌의 피난처</span></h2>
+<p>겔렌은 인간을 본능적 프로그램이 없는 결핍된 존재로 규정했습니다. 외부 자극 앞에서 과부하와 불안을 겪는 인간이 만든 인공적 피난처가 제도입니다. 정형화된 행위의 틀은 매 순간 고민해야 하는 에너지를 덜어 줍니다.</p><p>제도적 사회화가 직무 불안을 덜어주는 자리가 바로 이 지점입니다. 그러나 부담 완화가 지나쳐 고유성을 규격화하면 제도는 보호막이 아니라 족쇄가 됩니다. 건강한 제도는 불안을 덜어주되 고유성을 드러낼 여백을 남깁니다.</p>
+</section>
+
+<section class="ask">
+<h2>리더의 판단 질문<span>결정 전에 스스로 확인할 것</span></h2>
+<ol><li>이 온보딩은 불안을 덜어주는가, 순응을 강요하는가?</li><li>교육 시간에 들은 이야기는 회사의 자랑인가, 자신의 강점인가?</li><li>이 제도는 주형인가 받침대인가?</li></ol>
+</section>
+
+<section class="closing">
+<h2>한 줄로 남기면</h2>
+<p>핵심 가치 시험에서 만점을 받은 직원이 가장 먼저 사직서를 내는 장면을 피하려면 여백을 남겨야 합니다. 불안을 덜어주는가, 순응을 강요하는가, 사람을 주형에 넣는가 받침대에 올리는가. 셋째에 답하지 않은 온보딩은 문화를 주입하다 사람을 잃습니다.</p>
+</section>
+
+<section>
+<h2>근거 자료<span>서지와 확인 범위</span></h2>
+<p class="cite">두 연구는 공개 학술 서지와 실험 결과 범위에서 정리했습니다. 사례는 공개 실험 데이터와 보도로 확인했고, 기업의 노무 관리 우열을 평가하지 않습니다.</p>
+<details><summary>사회화 전술의 효과</summary><p class="source">Alan M. Saks·Krista L. Uggerslev·Neil E. Fassina, <cite>Journal of Vocational Behavior</cite> 70(3) (2007). 메타분석 결과를 참조했습니다.</p></details><details><summary>진정한 자기표현</summary><p class="source">Daniel M. Cable·Francesca Gino·Bradley R. Staats, <cite>Administrative Science Quarterly</cite> 58(1) (2013). 첫날 실험 설계를 참조했습니다.</p></details><details><summary>제도와 부담 완화</summary><p class="source">아르놀트 겔렌, 『인간학적 탐구』(1961), 『인간, 그의 본성과 세계에서의 위치』(1940). 개념만 사용했고 원문 발췌는 없습니다.</p></details>
+</section>
+
+<footer>
+<span>Lead Read · 3분 브리핑</span>
+<p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+const root=document.documentElement;const b=document.getElementById('theme-toggle');
+b.addEventListener('click',()=>{const n=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=n;});
+</script>
+</body>
+</html>
