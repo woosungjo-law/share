@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>압류 신청일과 송달일, 시효 관리표에서 따로 관리한다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>압류 신청일과 송달일, 시효 관리표에서 따로 관리한다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 압류를 접수했다는 사실만으로 시효 문제가 해결됐다고 믿으면 안 됩니다. 시효중단 효력은 <b>송달일이 아니라 신청·위임 시점</b>에 발생하는 것이 원칙이고, 대상 채권이 없었다면 <b>절차가 끝난 시점부터 시효가 다시 흐릅니다.</b> 신청일과 송달일, 종료일을 한 칸에 넣지 말고 각각 관리하십시오.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>사건의 시작: 회수 절차는 진행됐는데 채권 시효가 문제 됩니다</h2>
+    <div class="analogy">
+      택배 발송증을 떠올려 보십시오. <b>접수증에 찍힌 시각</b>과 <b>받는 사람이 물건을 받은 시각</b>은 다릅니다. 분쟁이 생겼을 때 "언제 발송했나"를 증명하는 것은 접수증이고, "언제 도착했나"는 배송기록입니다. 두 시각을 하나로 뭉개면 어느 쪽도 증명하지 못합니다. 회사가 채권압류를 신청했지만 압류명령이 제3채무자에게 송달되기 전에 시효가 완성됐다는 주장이 나온 상황이 이와 같습니다. 여기에 함정이 하나 더 있습니다. 압류 대상 채권이 이미 없어졌거나, 아직 발생하지 않은 장래 채권일 수 있습니다. 경영진은 "압류를 걸었으니 시효는 멈췄다"가 아니라 <b>기초 채권과 집행 기록을 함께 확인</b>하는 자리에서 시작해야 합니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 보는 핵심: 민법 제168조 제2호와 대법원 2025다212338</h2>
+    <p>
+      <b>민법 제168조 제2호</b>는 압류를 소멸시효 중단 사유로 정합니다. 그런데 "압류"라는 사건이 정확히 어느 시점에 일어난 것인지가 실무에서 다툼이 됩니다.
+    </p>
+    <p>
+      <b>대법원 2025다212338</b>은 시효중단 효력이 <b>집행기관에 강제집행을 신청하거나 위임한 때</b> 발생하는 것이 원칙이라고 판시했습니다. 즉 압류명령의 송달일과 효력 발생일은 다를 수 있습니다. 송달일만 기준으로 시효를 계산하면, 회사의 권리보전 상황을 실제보다 나쁘게 또는 좋게 잘못 평가하게 됩니다.
+    </p>
+    <p>
+      대상 채권이 없었던 경우에도 예외적인 길이 있습니다. 압류할 당시 대상 채권이 없어도 <b>집행채권에 대한 권리행사로 볼 수 있으면</b> 시효중단 효과가 생길 수 있습니다. 다만 압류 대상이 없어 집행 절차가 끝나는 경우에는 <b>그때부터 시효가 다시 진행</b>할 수 있습니다. 회사는 신청일뿐 아니라 압류 대상과 절차가 끝난 시점까지 관리해야 합니다.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외: 대상 채권이 없으면 후속 시효도 다시 계산합니다</h2>
+    <ul class="points">
+      <li><b>채권의 실재</b> — 신청 당시 제3채무자에게 지급받을 채권이 실제 존재했는지, 계약에 따라 장래 발생이 예상됐는지 확인합니다. 존재하지 않는 채권에 대한 압류는 송달됐더라도 집행 효력이 생기지 않을 수 있고 절차가 종료될 수 있습니다.</li>
+      <li><b>정지가 아니다</b> — 신청을 했다는 이유로 장기간 시효 관리가 필요 없다고 보고해서는 안 됩니다. 신청이 있었다는 사실만으로 시효가 계속 정지한다고 이해하면 안 됩니다.</li>
+      <li><b>별개의 절차</b> — 가등기담보법 제16조에 따른 담보가등기 채권신고는 경매 배당에서 별도로 확인할 절차입니다. 대법원 2024다291102는 정해진 신고기간 내 채권신고를 하지 않은 담보가등기권리자가 배당받을 자격을 잃을 수 있다고 판시했습니다.</li>
+      <li><b>또 하나의 트랙</b> — 민법 제214조상 소유권 방해배제청구나 가등기 말소 문제는 낙찰 이후 등기 상태를 확인해 따로 판단합니다. 압류채권의 시효중단 판단과 다른 질문이므로, 두 쟁점을 하나의 결론으로 묶지 않습니다.</li>
+    </ul>
+    <div class="callout"><b>주의.</b> 압류 신청만을 근거로 회수 가능성을 확정적으로 전망하지 마십시오. 대상이 없어 절차가 종료된 경우에는 종료 후 시효가 다시 진행할 수 있으므로, 미수금 회수전략과 충당금 판단에 종료 시점을 반영해야 합니다.</div>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;">집행 일정과 시효 위험을 한 화면으로 관리하십시오. 정할 항목은 다음과 같습니다.</p>
+      <ol>
+        <li><b>① 관리표</b> — 법무·재무 담당자에게 기초채권의 시효 만료 예정일, 집행 신청·위임일, 압류명령과 송달일, 압류 대상 채권의 상태, 집행 종료 여부를 표로 정리하게 합니다.</li>
+        <li><b>② 기준 적용</b> — 2025다212338 기준상 신청·위임일이 시효 계산에 어떤 영향을 주는지 확인합니다.</li>
+        <li><b>③ 재기산</b> — 대상 채권이 없거나 압류 절차가 끝났다면 새 시효 기산 시점을 보고받습니다.</li>
+        <li><b>④ 원본 확보</b> — 접수증, 위임 자료, 법원 사건기록을 확보해 실제 신청 시점을 먼저 확인합니다.</li>
+        <li><b>⑤ 배당 리스크</b> — 경매 배당과 가등기 문제가 함께 있다면 제16조의 신고기간과 실제 신고 증빙을 별도 항목으로 확인하고, 2024다291102의 적용 범위를 사실관계와 맞춥니다.</li>
+        <li><b>⑥ 담당·기한</b> — 담당자, 다음 확인 날짜, 필요한 증거와 외부 법률자문 시점을 지정합니다. 추가 압류나 소송 등 후속 조치의 기한은 담당 변호사가 별도로 확인하도록 합니다.</li>
+        <li><b>⑦ 보고 형식</b> — 기초채권, 시효 만료 예정일, 신청·위임일, 송달 및 종료일, 보완이 필요한 기록을 한눈에 표시하고, 결론이 확정되기 전까지는 보수적·기준·낙관 시나리오를 구분합니다.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;">원본 집행기록을 확보한 뒤 계산을 갱신하십시오. 담보가등기권자가 있는 경매라면 채권신고 절차를 별도 리스크 항목으로 올리고, 담당 부서와 법률 검토 책임자를 지정하십시오.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
