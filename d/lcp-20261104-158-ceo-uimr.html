@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CB와 BW, 자금 조달 조건을 구분해 승인하기</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>CB와 BW, 자금 조달 조건을 구분해 승인하기</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> CB와 BW를 <b>"주식으로 바뀔 수 있는 사채"</b>라는 한 문장으로 묶으면, 승인하려는 것이 무엇인지 알 수 없습니다. <b>CB는 사채가 소멸하고 주식으로 바뀌고, BW는 신주인수권을 행사해 별도 대금을 납입</b>합니다. 현금 흐름도, 희석 효과도, 근거 조문도 다릅니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>사건의 시작: 투자설명 자료가 둘을 같은 것처럼 적었습니다</h2>
+    <div class="analogy">
+      <b>전세와 월세</b>를 떠올려 보십시오. 둘 다 "집에 살 수 있는 계약"이지만, 목돈이 언제 오가고 계약이 끝날 때 무엇이 남는지가 전혀 다릅니다. "주거 계약입니다"라는 한 줄로 승인하면 안 되는 것과 같습니다. 회사가 <b>CB와 BW 발행안을 함께 검토</b>하는 상황입니다. 투자설명 자료에는 둘 다 <b>"주식으로 바뀔 수 있는 사채"</b>라고만 적혀 있어, <b>권리 행사 후 사채가 어떻게 되는지, 추가 납입이 있는지</b>가 불명확합니다. 대표가 볼 것은 발행 총액이 아니라 <b>권리 구조, 주주 절차, 희석과 회계 영향</b>입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 보는 핵심: 상법 제513조, 제516조의2, 제516조의9</h2>
+    <p>
+      <b>상법 제513조</b>는 <b>CB 발행</b>을, <b>제516조의2</b>는 <b>BW 발행</b>을 다룹니다. <b>CB는 일정 조건에서 사채를 주식으로 전환하는 권리</b>가 중심입니다. <b>BW는 사채와 별도의 신주인수권이 결합된 구조</b>입니다.
+    </p>
+    <p>
+      그래서 <b>권리의 내용과 발행 절차가 서로 다르므로 하나의 증권처럼 보고하지 않습니다.</b>
+    </p>
+    <p>
+      현금 흐름도 다릅니다. <b>CB 전환은 사채권이 소멸하고 주식으로 바뀌는 구조</b>로 설명됩니다. 반면 <b>BW의 신주인수권 행사는 사채와 구별되며, 행사대금 납입과 사채 존속 여부를 계약으로 확인</b>해야 합니다. BW 행사 절차는 <b>제516조의9</b>도 함께 검토합니다.
+    </p>
+    <p>
+      흔한 확대 해석을 짚습니다. <b>제513조만으로 두 증권의 모든 현금 흐름을 설명한다고 확대하지 않습니다.</b> CB 조문을 BW에 그대로 적용하면 납입과 잔액 구조를 놓칩니다.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외: 증권별로 나란히 놓고 봅니다</h2>
+    <ul class="points">
+      <li><b>발행 결의</b> — 결의 기관과 절차를 증권별로 비교합니다.</li>
+      <li><b>주주 관련 절차</b> — 통지·공고와 주주 관련 절차를 각각 확인합니다.</li>
+      <li><b>가격과 기간</b> — <b>전환·행사가격, 행사 기간과 통지 방법</b>을 증권별로 비교합니다.</li>
+      <li><b>실제 조건의 확인</b> — 실제 조건은 <b>정관, 이사회 결의와 계약서</b>에 맞춰 확인합니다. 설명 자료만 보고 결론을 내리지 않습니다.</li>
+      <li><b>희석과 자금</b> — CB 전환과 BW 행사 후 <b>희석 효과와 회사에 들어오는 자금이 어떻게 다른지</b> 재무팀이 수치로 제시하게 합니다.</li>
+      <li><b>행사 절차</b> — 신주인수권 행사에서는 제516조의9와 발행 조건에 따라 <b>신청·납입·신주 발행</b> 절차를 확인합니다.</li>
+      <li><b>사후 확인</b> — 행사 후 <b>사채 잔액과 주주명부 반영</b>도 확인합니다.</li>
+    </ul>
+    <div class="callout"><b>주의.</b> 특정 조건이나 시점은 <b>계약 문언과 현행 규정에 따라 달라질 수 있습니다.</b> 법률 검토가 끝나지 않은 조건은 확정된 것처럼 공표하지 마십시오.</div>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;">분리된 체크리스트와 시나리오를 만들도록 지시하십시오. 정할 항목은 다음과 같습니다.</p>
+      <ol>
+        <li><b>① 버전 통일</b> — 이사회 결의안, 발행 조건, 투자자 계약, 주주 통지, 재무 시뮬레이션을 <b>같은 버전</b>으로 맞춥니다.</li>
+        <li><b>② 유상증자 자료 재사용 금지</b> — 일반 유상증자 자료를 그대로 승인하지 않고 CB·BW 조건을 별도로 점검합니다.</li>
+        <li><b>③ 분리 체크리스트</b> — 법무팀에 CB와 BW를 분리한 발행 체크리스트를 만들게 합니다.</li>
+        <li><b>④ 5항목 대조</b> — 결의 기관, 통지·공고, 발행 조건, 전환가액·행사가액, 권리 행사 기간을 각각 확인합니다.</li>
+        <li><b>⑤ 시나리오 보고</b> — 재무팀에 전환 또는 행사에 따른 <b>현금 유입·부채 변화·희석 효과</b>를 시나리오별로 보고하게 합니다.</li>
+        <li><b>⑥ 구조 설명</b> — CB는 전환 시 사채권이 주식으로 바뀌는 흐름을, BW는 신주인수권 행사와 사채 자체의 관계를 각각 설명하게 합니다.</li>
+        <li><b>⑦ 조문 분리</b> — CB는 제513조, BW는 제516조의2·제516조의9를 분리해서 확인합니다.</li>
+        <li><b>⑧ 안내문 대조</b> — 주주와 투자자에게 제공할 안내문이 이사회 결의안 및 계약서와 <b>숫자·기간이 맞는지</b> 확인합니다.</li>
+        <li><b>⑨ 행사 기록</b> — 발행 후 실제 권리 행사 때도 <b>신청일, 납입액, 발행 주식, 남은 사채</b>를 기록하도록 담당자를 지정합니다.</li>
+        <li><b>⑩ 기준 문서 지정</b> — 승인된 조건표를 <b>기준 문서</b>로 지정하고, 변경 시 사유와 승인 절차를 다시 기록합니다.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;">발행 여부를 결정할 때 <b>자금 필요성만 보지 말고</b> 권리 행사 시나리오, 주주 영향, 공시·회계 처리, 계약 조건을 함께 검토하십시오. 외부 투자자와 협상한 조건이 <b>최종 이사회 자료에서 빠지지 않았는지</b>도 확인하고, 승인 문서와 투자자에게 전달하는 요약표의 <b>수량·가격·기간을 최종 대조</b>해 결재 자료에 남기십시오.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
