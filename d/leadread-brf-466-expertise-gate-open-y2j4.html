@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>전문성은 문을 닫는가, 열리는가 — Lead Read</title>
+<style>
+:root{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}}
+html[data-theme="dark"]{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}
+html[data-theme="light"]{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans KR","Pretendard","Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;line-height:1.78;word-break:keep-all;overflow-wrap:anywhere}
+.page{max-width:920px;margin:auto;padding:26px 20px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--ln);font-size:.78rem;letter-spacing:.1em;color:var(--mut)}
+.top b{color:var(--ink)}
+button{font:inherit;font-size:.8rem;padding:6px 10px;color:var(--ink);background:var(--sf);border:1px solid var(--ln);border-radius:4px;cursor:pointer}
+a{color:var(--ac);text-underline-offset:.2em}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--mk);outline-offset:3px}
+header{padding:34px 0 10px}
+.kicker{color:var(--mk);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.28;letter-spacing:-.03em;margin:.4em 0 .3em}
+.dek{font-size:clamp(1.02rem,2.2vw,1.18rem);color:var(--mut);margin:0 0 10px;max-width:62ch}
+.tag{display:inline-block;margin-top:12px;padding:4px 10px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:700;border-radius:3px}
+h2{font-size:clamp(1.22rem,2.8vw,1.62rem);line-height:1.34;letter-spacing:-.02em;margin:0 0 8px}
+h2 span{display:block;font-size:.78rem;font-weight:600;letter-spacing:.06em;color:var(--mk);margin-top:5px}
+h3{font-size:1.02rem;margin:0 0 6px}
+p{margin:0 0 14px;max-width:70ch}
+section{padding:26px 0;border-top:1px solid var(--ln)}
+.leadbox{margin:22px 0 4px;padding:20px;background:var(--sf);border-left:4px solid var(--ac)}
+.lb-label{font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin:0 0 4px}
+.lb-q{font-size:1.06rem;font-weight:700;margin:0 0 14px}
+.lb-a{margin:0;color:var(--ink)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.pole{padding:18px;background:var(--sf);border-top:4px solid var(--ac)}
+.pole:nth-child(2){border-top-color:var(--mk)}
+.pole small{display:block;font-size:.72rem;letter-spacing:.1em;font-weight:800;color:var(--mk);margin-bottom:6px}
+.clash{margin-top:16px;padding:16px 18px;background:var(--ac2);border-left:4px solid var(--mk)}
+.timeline{margin-top:18px;padding-left:18px;border-left:2px solid var(--ln)}
+.tl{position:relative;margin:0 0 16px}
+.tl:before{content:"";position:absolute;left:-25px;top:.55em;width:9px;height:9px;border-radius:50%;background:var(--mk)}
+.tl b{display:block;color:var(--mk);font-size:.92rem}
+.tl p{margin:2px 0 0;color:var(--mut)}
+.signal{margin-top:16px;padding:18px;background:var(--ac2);border:1px solid var(--ln)}
+.signal p{margin:0 0 10px}
+.signal p:last-child{margin:0}
+.siglabel{display:inline-block;font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin-right:8px}
+.mnote{margin:16px 0;padding:13px 15px;background:var(--mk2);border-left:3px solid var(--mk);font-size:.95rem}
+.mnote b{display:block;font-size:.72rem;letter-spacing:.1em;color:var(--mk);margin-bottom:4px}
+.table-wrap{overflow-x:auto;margin-top:14px}
+table{width:100%;border-collapse:collapse;font-size:.93rem;table-layout:fixed;word-break:normal}
+caption{word-break:normal;text-align:left;padding-bottom:8px;color:var(--mut);font-size:.88rem}
+th,td{border-bottom:1px solid var(--ln);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--ac2);color:var(--ink);font-size:.85rem}
+.scan{margin-top:16px;padding:15px 17px;background:var(--sf);border:1px solid var(--ln);border-left:4px solid var(--ac)}
+.scan ul{margin:6px 0 0;padding-left:20px}
+.ask ol{margin:12px 0 0;padding-left:22px}
+.ask li{margin:0 0 10px}
+.closing{padding:24px;background:var(--sf);border-top:2px solid var(--ac)}
+.closing h2{margin-bottom:10px}
+.closing p{font-size:1.04rem;margin:0}
+.cite{color:var(--mut);font-size:.94rem}
+details{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--ln)}
+summary{cursor:pointer;font-weight:700;color:var(--ac)}
+.source{margin:8px 0 0;font-size:.92rem;color:var(--mut)}
+.source cite{font-style:normal;color:var(--ink);font-weight:600}
+footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--ln);color:var(--mut);font-size:.84rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.author-credit{color:var(--ink);font-weight:800}
+@media (max-width:640px){
+.page{padding:18px 14px 44px}
+.duo{grid-template-columns:1fr}
+header{padding:24px 0 6px}
+section{padding:22px 0}
+table{font-size:.84rem}
+th,td{padding:8px 7px}
+.closing{padding:18px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="top"><span><b>Lead Read</b> · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="테마 바꾸기">테마</button></div>
+<header>
+<p class="kicker">Lead Read · 리더십 브리핑</p>
+<h1>전문성은 문을 닫는가, 열리는가</h1>
+<p class="dek">어려운 문제를 보면 먼저 자격을 떠올립니다. 그런데 문제가 도구로 옮겨지면 풀 수 있는 사람의 범위가 달라집니다.</p>
+<p class="tag">두 관점 · 관할과 참가 범위 · 판단 질문</p>
+</header>
+
+<div class="leadbox">
+<p class="lb-label">핵심 질문</p>
+<p class="lb-q">전문가만 풀 수 있는 문제인가?</p>
+<p class="lb-label">한 문장 결론</p>
+<p class="lb-a">문을 닫을지 열지는 도구의 성능만으로 정해지지 않습니다. 풀이의 자리와 확인의 자리를 먼저 나누면 전문성은 사라지지 않고 옮겨 갑니다.</p>
+</div>
+
+<section><h2>왜 지금 이 문제인가<span>자격이 품질을 보장하는가</span></h2><p>어려운 문제를 떠올리면 먼저 자격을 생각합니다. 누가 배웠고 누가 면허를 가졌고 누가 그 일을 맡아 왔는가. 자격은 품질의 대리 지표로 오래 쓰여 왔고, 그 덕에 책임을 물을 자리도 분명해졌습니다.</p><p>그런데 문제 자체가 도구로 옮겨지면 상황이 달라집니다. 같은 문제를 다른 방식으로 표현할 수 있는 사람이 늘어나고, 그중 일부는 전문 교육을 받지 않은 사람입니다. 문을 지키는 일이 품질을 보장하는 것인지, 가능한 해결자를 막는 것인지가 여기서 갈립니다.</p></section><section><h2>두 연구가 갈라지는 지점<span>관할을 지킬 것인가, 참가 범위를 넓힐 것인가</span></h2><div class="duo"><div class="pole"><small>전문직 시스템</small><h3>전문직은 관할을 지킨다</h3><p>앤드류 애보트는 1988년 전문직 시스템을 직업들 사이의 관할권 경쟁으로 설명했습니다. 의학과 법률, 회계 같은 전문직은 추상적 지식을 자기 영역으로 묶고 교육과 자격, 윤리 규범으로 경계를 지킵니다. 권한은 기술이 뛰어나서만 생기지 않습니다. 그 기술을 말할 수 있는 자리가 제도로 정해졌기 때문에 생깁니다. 이 모형에서 경계는 품질 장치입니다. 누가 문제를 정의하고 어떤 해법을 인정할지가 정해져 있으니 결과에 책임을 물을 자리도 분명합니다. 문을 열면 자격 없는 판단이 섞이고 잘못된 판단을 구별할 기준이 흐려집니다.</p></div><div class="pole"><small>혁신의 민주화</small><h3>혁신은 사용자에게 옮겨 간다</h3><p>에릭 폰 히펠은 2005년 혁신이 꼭 생산자나 전문가에게서 나오지 않는다고 보았습니다. 사용자는 자기가 겪는 문제를 가장 먼저 알고 자기 필요에 맞게 도구를 고칩니다. 특히 취향이 앞선 선도 사용자는 제조사보다 먼저 해법을 만듭니다. 중요한 것은 해법을 혼자 간직하지 않고 공개하는 일입니다. 지식을 열어 두면 다른 사용자의 실험이 다시 불려 옵니다. 이쪽 처방은 문제를 도구와 인터페이스로 옮기고, 자격보다 먼저 많은 사람이 시도할 수 있게 만들라는 것입니다. 전문가는 마지막 검증자로 남으면 충분합니다.</p></div></div><div class="clash"><p>애보트는 전문직의 경계를 품질과 책임의 조건으로 보고 누가 말할 수 있는가를 먼저 묻습니다. 폰 히펠은 미해결 문제가 전문가 밖의 사람에게도 열려 있다고 보고 얼마나 많은 사람이 시도할 수 있는가를 먼저 묻습니다. 실무에서 갈리는 문장은 간단합니다. 이건 자격 있는 사람이 판단해야 한다와 일단 더 많은 사람에게 풀게 해 보자가 맞섭니다. 전자는 오판의 책임을, 후자는 재능이 문밖에 머무는 비용을 걱정합니다.</p></div></section><section class="case"><h2>적용 사례 — 단백질 구조를 게임이 푼 날<span>2008년의 도구, 2011년의 논문</span></h2><p>폴디트는 2008년 미국 대학 연구팀이 만든 단백질 접힘 게임입니다. 단백질의 모양을 손으로 만지듯 조작하면 점수가 나오고, 그 점수가 실제 구조 예측의 단서가 됩니다. 전문 실험실의 계산 자원과 다른 방식으로, 이용자는 공간 감각을 써서 후보 구조를 만들었습니다.</p><p>2011년 9월 18일 학술지에 게재된 논문은 M-PMV라고 불리는 원숭이 백혈병 바이러스의 단백질 분해효소 구조를 폴디트 이용자들이 풀었다고 보고했습니다. 기존의 분자치환 시도는 여러 번 실패했고, 이용자들이 만든 모형이 구조 결정으로 이어질 만큼 정확했습니다. 공개 보도에 따르면 오래 풀리지 않던 문제였고 게임에서는 열흘 안에 해답이 나왔습니다.</p><p>여기서 전문성은 사라지지 않고 자리를 옮겼습니다. 이용자가 만든 후보를 실제 결정 구조로 확인하고 논문으로 정리한 것은 연구팀이었습니다. 최종 인정 권한은 전문 관할에 남았고, 문제를 푸는 첫 손은 문밖에서 들어왔습니다. 도구가 문을 열었고 검증이 문을 다시 닫았습니다.</p></section><section><h2>렌즈 — 도구는 사람의 자리를 다시 쓴다<span>한스 블루멘베르크의 기술</span></h2><p>한스 블루멘베르크는 인간이 자기 한계를 메우려 기술을 만들지만, 기술이 생긴 뒤에는 그 기술이 인간이 할 수 있는 일의 범위를 다시 정한다고 보았습니다. 보완재가 주인을 다시 규정하는 셈입니다.</p><p>폴디트의 인터페이스도 그런 도구였습니다. 도구는 중립적 통로가 아니라 누가 문제를 만질 수 있는지를 정하는 장치입니다. 내가 통제할 수 있는 것은 도구를 누구에게 열어 두는가입니다. 통제할 수 없는 것은 열린 도구가 전문성의 경계를 어디로 옮겨 놓을지입니다.</p></section><section class="ask"><h2>리더의 판단 질문<span>결정 전에 스스로 확인할 것</span></h2><ol><li>이 문제의 병목은 지식인가, 참가자 수인가?</li><li>해답을 낸 사람과 최종 확인을 하는 사람이 같은 자리에 있는가?</li><li>도구를 열었을 때 책임은 누구에게 남는가?</li></ol></section><section class="closing"><h2>한 줄로 남기면</h2><p>문을 닫을지 열지는 도구의 성능만으로 정해지지 않습니다. 풀이와 확인의 자리를 먼저 나누지 않으면, 문을 연 뒤에는 누가 옳은지 가릴 수 없고 문을 닫은 뒤에는 재능이 문밖에 남습니다.</p></section><section><h2>근거 자료<span>서지와 확인 범위</span></h2><p class="cite">책의 주장은 원문 발췌 없이 개념만 재구성했습니다. 사건은 게재 논문과 공개 보도로 교차했습니다.</p><details><summary>전문직 시스템</summary><p class="source">Andrew Abbott, <cite>The System of Professions: An Essay on the Division of Expert Labor</cite> (University of Chicago Press, 1988).</p></details><details><summary>혁신의 민주화</summary><p class="source">Eric von Hippel, <cite>Democratizing Innovation</cite> (MIT Press, 2005).</p></details><details><summary>적용 사례</summary><p class="source">Firas Khatib 외, “Crystal structure of a monomeric retroviral protease solved by protein folding game players,” <cite>Nature Structural &amp; Molecular Biology</cite> 18 (2011), 1175–1177.</p></details></section>
+
+<footer>
+<span>Lead Read · 3분 브리핑</span>
+<p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+const root=document.documentElement;const b=document.getElementById('theme-toggle');
+b.addEventListener('click',()=>{const n=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=n;});
+</script>
+</body>
+</html>
