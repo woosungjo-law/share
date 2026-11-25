@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>확신은 결정을 돕는가, 판단을 흐리는가 — Lead Read</title>
+<style>
+:root{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}}
+html[data-theme="dark"]{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}
+html[data-theme="light"]{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans KR","Pretendard","Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;line-height:1.78;word-break:keep-all;overflow-wrap:anywhere}
+.page{max-width:920px;margin:auto;padding:26px 20px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--ln);font-size:.78rem;letter-spacing:.1em;color:var(--mut)}
+.top b{color:var(--ink)}
+button{font:inherit;font-size:.8rem;padding:6px 10px;color:var(--ink);background:var(--sf);border:1px solid var(--ln);border-radius:4px;cursor:pointer}
+a{color:var(--ac);text-underline-offset:.2em}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--mk);outline-offset:3px}
+header{padding:34px 0 10px}
+.kicker{color:var(--mk);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.28;letter-spacing:-.03em;margin:.4em 0 .3em}
+.dek{font-size:clamp(1.02rem,2.2vw,1.18rem);color:var(--mut);margin:0 0 10px;max-width:62ch}
+.tag{display:inline-block;margin-top:12px;padding:4px 10px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:700;border-radius:3px}
+h2{font-size:clamp(1.22rem,2.8vw,1.62rem);line-height:1.34;letter-spacing:-.02em;margin:0 0 8px}
+h2 span{display:block;font-size:.78rem;font-weight:600;letter-spacing:.06em;color:var(--mk);margin-top:5px}
+h3{font-size:1.02rem;margin:0 0 6px}
+p{margin:0 0 14px;max-width:70ch}
+section{padding:26px 0;border-top:1px solid var(--ln)}
+.leadbox{margin:22px 0 4px;padding:20px;background:var(--sf);border-left:4px solid var(--ac)}
+.lb-label{font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin:0 0 4px}
+.lb-q{font-size:1.06rem;font-weight:700;margin:0 0 14px}
+.lb-a{margin:0;color:var(--ink)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.pole{padding:18px;background:var(--sf);border-top:4px solid var(--ac)}
+.pole:nth-child(2){border-top-color:var(--mk)}
+.pole small{display:block;font-size:.72rem;letter-spacing:.1em;font-weight:800;color:var(--mk);margin-bottom:6px}
+.clash{margin-top:16px;padding:16px 18px;background:var(--ac2);border-left:4px solid var(--mk)}
+.timeline{margin-top:18px;padding-left:18px;border-left:2px solid var(--ln)}
+.tl{position:relative;margin:0 0 16px}
+.tl:before{content:"";position:absolute;left:-25px;top:.55em;width:9px;height:9px;border-radius:50%;background:var(--mk)}
+.tl b{display:block;color:var(--mk);font-size:.92rem}
+.tl p{margin:2px 0 0;color:var(--mut)}
+.signal{margin-top:16px;padding:18px;background:var(--ac2);border:1px solid var(--ln)}
+.signal p{margin:0 0 10px}
+.signal p:last-child{margin:0}
+.siglabel{display:inline-block;font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin-right:8px}
+.mnote{margin:16px 0;padding:13px 15px;background:var(--mk2);border-left:3px solid var(--mk);font-size:.95rem}
+.mnote b{display:block;font-size:.72rem;letter-spacing:.1em;color:var(--mk);margin-bottom:4px}
+.table-wrap{overflow-x:auto;margin-top:14px}
+table{width:100%;border-collapse:collapse;font-size:.93rem;table-layout:fixed;word-break:normal}
+caption{word-break:normal;text-align:left;padding-bottom:8px;color:var(--mut);font-size:.88rem}
+th,td{border-bottom:1px solid var(--ln);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--ac2);color:var(--ink);font-size:.85rem}
+.scan{margin-top:16px;padding:15px 17px;background:var(--sf);border:1px solid var(--ln);border-left:4px solid var(--ac)}
+.scan ul{margin:6px 0 0;padding-left:20px}
+.ask ol{margin:12px 0 0;padding-left:22px}
+.ask li{margin:0 0 10px}
+.closing{padding:24px;background:var(--sf);border-top:2px solid var(--ac)}
+.closing h2{margin-bottom:10px}
+.closing p{font-size:1.04rem;margin:0}
+.cite{color:var(--mut);font-size:.94rem}
+details{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--ln)}
+summary{cursor:pointer;font-weight:700;color:var(--ac)}
+.source{margin:8px 0 0;font-size:.92rem;color:var(--mut)}
+.source cite{font-style:normal;color:var(--ink);font-weight:600}
+footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--ln);color:var(--mut);font-size:.84rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.author-credit{color:var(--ink);font-weight:800}
+@media (max-width:640px){
+.page{padding:18px 14px 44px}
+.duo{grid-template-columns:1fr}
+header{padding:24px 0 6px}
+section{padding:22px 0}
+table{font-size:.84rem}
+th,td{padding:8px 7px}
+.closing{padding:18px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="top"><span><b>Lead Read</b> · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="테마 바꾸기">테마</button></div>
+<header>
+<p class="kicker">Lead Read · 리더십 브리핑</p>
+<h1>확신은 결정을 돕는가, 판단을 흐리는가</h1>
+<p class="dek">중요한 결정 앞에서 신뢰받는 사람은 대개 확신에 차 말하는 사람입니다. 그 확신이 어디서 왔는지가 문제입니다.</p>
+<p class="tag">선명신호 · 두 신호 · 판단 질문</p>
+</header>
+
+<div class="leadbox">
+<p class="lb-label">핵심 질문</p>
+<p class="lb-q">자신 있는 사람이 좋은 결정을 내리는가?</p>
+<p class="lb-label">한 문장 결론</p>
+<p class="lb-a">확신은 근거의 크기보다 정보량의 크기를 반영할 때가 많습니다. 확신과 정확도를 따로 기록하면 결단은 남고 착각은 드러납니다.</p>
+</div>
+
+<section><h2>왜 지금 이 문제인가<span>단호함이 실력의 대리 지표가 될 때</span></h2><p>중요한 결정 앞에서 가장 신뢰받는 사람은 대개 확신에 차 말하는 사람입니다. 망설이는 사람보다 단호한 사람이 책임을 맡기 쉽습니다. 조직은 시간이 없고, 시간이 없으면 태도가 근거를 대신합니다.</p><p>문제는 그 확신이 실력에서 나온 것인지 정보를 많이 가졌다는 느낌에서 나온 것인지 구분하기 어렵다는 점입니다. 아래 두 연구는 확신의 원천을 서로 다른 곳에 둡니다. 하나는 개입감, 다른 하나는 정보량입니다.</p><div class="signal"><p><span class="siglabel">신호 1 · 개입감</span>선택권이 있고 경쟁 상대가 있다고 느끼면 사람은 우연을 기술처럼 다룹니다. 확신은 결과를 아는 데서 오는 것이 아니라 결과에 개입했다는 감각에서 옵니다.</p><p><span class="siglabel">신호 2 · 정보량</span>정보가 늘어날수록 확신은 꾸준히 오르지만 정확도는 그만큼 오르지 않습니다. 확신은 판단의 신호가 아니라 정보량의 대리 지표가 됩니다.</p></div></section><section><h2>두 연구가 갈라지는 지점<span>원천의 문제인가, 배수의 문제인가</span></h2><p>엘런 랑어는 1975년 통제 착각을 실험으로 보여주었습니다. 사람들은 우연에 좌우되는 일에도 자기 행동이 결과를 바꾼다고 믿습니다. 복권을 직접 고르면 남이 준 것보다 비싸게 되팔려 하고, 주사위를 던질 때 높은 수를 원하면 세게 던집니다. 착각이 나타나는 조건은 선택권과 경쟁 상대, 익숙함, 참여감입니다.</p><p>스튜어트 오스캄프는 1965년 임상 판단에서 과신을 측정했습니다. 판단자들에게 사례 정보를 단계적으로 나눠 주고 단계마다 판단과 확신도를 적게 했습니다. 정보가 늘수록 확신은 올라갔지만 정확도는 따라오지 않았고, 둘의 간격은 단계마다 벌어졌습니다.</p></section><section class="case"><h2>적용 사례 — 에드셀, 1957년 9월 4일에서 1959년 11월 19일까지<span>큰 확신과 얇은 근거</span></h2><p>포드는 1955년부터 코드명 E car로 새 중가 브랜드를 준비했습니다. 이름 후보만 6천 개를 검토했고 1957년 9월 4일 대대적인 공개 행사로 시장에 내놓았습니다. 회사는 이 차를 미래의 차로 소개했고 출시 전부터 광고와 행사에 큰 자원을 쏟았습니다.</p><p>결과는 어긋났습니다. 1958년 미국 판매는 6만 3,110대였고 캐나다를 합쳐도 6만 8천여 대였습니다. 누적 생산은 11만 8,287대, 판매는 약 11만 6천 대에 그쳤고 1959년 11월 19일 브랜드 종료가 발표됐습니다. 개발과 광고와 출시에 들어간 비용은 공개 기록에 따라 2억 5천만 달러에서 4억 달러 사이로 전해집니다.</p><p>여기서 두 진단이 겹칩니다. 개입감의 언어로 보면 회사는 시장 조사와 사전 홍보로 확신을 키웠습니다. 정보량의 언어로 보면 정보는 늘었지만 그 정보가 실제 구매 의향인지 검증되지 않았습니다. 공개 기록은 사전 조사가 상당했음에도 시장성을 진지하게 검토한 흔적이 없다는 지적을 전합니다.</p></section><section><h2>렌즈 — 이 확신은 어디서 복사되었는가<span>귀스타브 르 봉의 군중</span></h2><p>귀스타브 르 봉은 군중이 모이면 개별 판단이 흐려지고 단순하고 강한 확신이 퍼진다고 보았습니다. 사람들은 근거를 검토하기보다 이미 집단이 믿는 것을 확인하고 그 확인을 확신으로 바꿉니다.</p><p>출시 전 홍보도 그런 장치였습니다. 같은 이야기를 반복해서 듣고 같은 기대를 공유하면 그 기대는 검증 없이도 확실해집니다. 내가 통제할 수 있는 것은 확신이 도는 통로를 좁히는 일입니다. 통제할 수 없는 것은 그 통로에 어떤 기대가 실려 오는지입니다.</p></section><section class="ask"><h2>리더의 판단 질문<span>결정 전에 스스로 확인할 것</span></h2><ol><li>이 결정의 병목은 의지인가, 근거인가?</li><li>확신을 말하는 사람이 그 근거를 직접 확인했는가?</li><li>확신이 틀렸을 때 그것을 드러낼 기록이 남는가?</li></ol></section><section class="closing"><h2>한 줄로 남기면</h2><p>확신을 신뢰할지는 태도의 크기만으로 정해지지 않습니다. 확신과 정확도를 따로 적으면 결단은 남고 착각은 드러납니다. 기록하지 않으면 같은 확신이 다음 결정에 그대로 복사됩니다.</p></section><section><h2>근거 자료<span>서지와 확인 범위</span></h2><p class="cite">실험의 논지는 원문 발췌 없이 재구성했습니다. 사례 수치는 공개 자료 사이의 차이가 있어 범위로 적었습니다.</p><details><summary>통제 착각</summary><p class="source">Ellen J. Langer, “The Illusion of Control,” <cite>Journal of Personality and Social Psychology</cite> 32(2) (1975), 311–328.</p></details><details><summary>과신</summary><p class="source">Stuart Oskamp, “Overconfidence in Case-Study Judgments,” <cite>Journal of Consulting Psychology</cite> 29(3) (1965), 261–265.</p></details><details><summary>적용 사례</summary><p class="source">포드 에드셀 공개 기록 — 1955년 개발 착수, 1957-09-04 출시, 1958년 미국 63,110대, 누적 생산 118,287대, 1959-11-19 종료 발표.</p></details></section>
+
+<footer>
+<span>Lead Read · 3분 브리핑</span>
+<p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+const root=document.documentElement;const b=document.getElementById('theme-toggle');
+b.addEventListener('click',()=>{const n=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=n;});
+</script>
+</body>
+</html>
