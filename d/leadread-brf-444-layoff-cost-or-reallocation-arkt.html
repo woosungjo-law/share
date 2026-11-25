@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>해고는 비용인가, 재배치인가 — Lead Read</title>
+<style>
+:root{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}}
+html[data-theme="dark"]{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}
+html[data-theme="light"]{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;line-height:1.78;word-break:keep-all;overflow-wrap:anywhere}
+.page{max-width:920px;margin:auto;padding:26px 20px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--ln);font-size:.78rem;letter-spacing:.1em;color:var(--mut)}
+.top b{color:var(--ink)}
+button{font:inherit;font-size:.8rem;padding:6px 10px;color:var(--ink);background:var(--sf);border:1px solid var(--ln);border-radius:4px;cursor:pointer}
+a{color:var(--ac);text-underline-offset:.2em}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--mk);outline-offset:3px}
+header{padding:34px 0 10px}
+.kicker{color:var(--mk);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.28;letter-spacing:-.03em;margin:.4em 0 .3em}
+.dek{font-size:clamp(1.02rem,2.2vw,1.18rem);color:var(--mut);margin:0 0 10px;max-width:62ch}
+.tag{display:inline-block;margin-top:12px;padding:4px 10px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:700;border-radius:3px}
+h2{font-size:clamp(1.22rem,2.8vw,1.62rem);line-height:1.34;letter-spacing:-.02em;margin:0 0 8px}
+h2 span{display:block;font-size:.78rem;font-weight:600;letter-spacing:.06em;color:var(--mk);margin-top:5px}
+h3{font-size:1.02rem;margin:0 0 6px}
+p{margin:0 0 14px;max-width:70ch}
+section{padding:26px 0;border-top:1px solid var(--ln)}
+.leadbox{margin:22px 0 4px;padding:20px;background:var(--sf);border-left:4px solid var(--ac)}
+.lb-label{font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin:0 0 4px}
+.lb-q{font-size:1.06rem;font-weight:700;margin:0 0 14px}
+.lb-a{margin:0;color:var(--ink)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.pole{padding:18px;background:var(--sf);border-top:4px solid var(--ac)}
+.pole:nth-child(2){border-top-color:var(--mk)}
+.pole small{display:block;font-size:.72rem;letter-spacing:.1em;font-weight:800;color:var(--mk);margin-bottom:6px}
+.clash{margin-top:16px;padding:16px 18px;background:var(--ac2);border-left:4px solid var(--mk)}
+.timeline{margin-top:18px;padding-left:18px;border-left:2px solid var(--ln)}
+.tl{position:relative;margin:0 0 16px}
+.tl:before{content:"";position:absolute;left:-25px;top:.55em;width:9px;height:9px;border-radius:50%;background:var(--mk)}
+.tl b{display:block;color:var(--mk);font-size:.92rem}
+.tl p{margin:2px 0 0;color:var(--mut)}
+.signal{margin-top:16px;padding:18px;background:var(--ac2);border:1px solid var(--ln)}
+.siglabel{display:inline-block;font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin-right:8px}
+.mnote{margin:16px 0;padding:13px 15px;background:var(--mk2);border-left:3px solid var(--mk);font-size:.95rem}
+.mnote b{display:block;font-size:.72rem;letter-spacing:.1em;color:var(--mk);margin-bottom:4px}
+.table-wrap{overflow-x:auto;margin-top:14px}
+table{width:100%;border-collapse:collapse;font-size:.93rem;table-layout:fixed;word-break:normal}
+caption{word-break:normal;text-align:left;padding-bottom:8px}
+th,td{border-bottom:1px solid var(--ln);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--ac2);color:var(--ink);font-size:.85rem}
+.scan{margin-top:16px;padding:15px 17px;background:var(--sf);border:1px solid var(--ln);border-left:4px solid var(--ac)}
+.ask ol{margin:12px 0 0;padding-left:22px}
+.ask li{margin:0 0 10px}
+.closing{padding:24px;background:var(--sf);border-top:2px solid var(--ac)}
+.closing h2{margin-bottom:10px}
+.closing p{font-size:1.04rem;margin:0}
+.cite{color:var(--mut);font-size:.94rem}
+details{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--ln)}
+summary{cursor:pointer;font-weight:700;color:var(--ac)}
+.source{margin:8px 0 0;font-size:.92rem;color:var(--mut)}
+.source cite{font-style:normal;color:var(--ink);font-weight:600}
+footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--ln);color:var(--mut);font-size:.84rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.author-credit{color:var(--ink);font-weight:800}
+@media (max-width:640px){
+.page{padding:18px 14px 44px}
+.duo{grid-template-columns:1fr}
+header{padding:24px 0 6px}
+section{padding:22px 0}
+table{font-size:.84rem}
+th,td{padding:8px 7px}
+.closing{padding:18px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="top"><span><b>Lead Read</b> · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="테마 바꾸기">테마</button></div>
+<header>
+<p class="kicker">Lead Read · 리더십 브리핑</p>
+<h1>해고는 비용인가, 재배치인가</h1>
+<p class="dek">회계의 층에서는 자원 이동, 사람의 층에서는 생계가 끊긴다.</p>
+<p class="tag">여백 메모 · 적용 사례 · 판단 질문</p>
+</header>
+
+<div class="leadbox">
+<p class="lb-label">핵심 질문</p>
+<p class="lb-q">청구서를 지불한 뒤 그 조직에 새 규범을 세울 여유가 남았는가?</p>
+<p class="lb-label">한 문장 결론</p>
+<p class="lb-a">해고는 자원의 재배치이자 위험의 이전입니다. 합계의 이득과 개인의 손실을 함께 계상하지 않으면 한쪽 비용은 나중에 지불됩니다.</p>
+</div>
+
+<section>
+<h2>왜 지금 이 문제인가<span>같은 사건에 붙는 두 개의 값</span></h2>
+<p>조직이 사람을 내보내면 두 이야기가 동시에 나옵니다. 하나는 살아남기 위한 조정이고, 다른 하나는 한 사람의 생계가 끊겼다는 이야기입니다.</p><p>앞의 이야기에서 해고는 자원을 더 잘 쓰는 자리로 옮기는 일이 됩니다. 뒤의 이야기에서 해고는 옮겨지지 않고 버려지는 일이 됩니다. 회계의 층과 사람의 층이 서로 다른 값을 냅니다.</p>
+</section>
+
+<section>
+<h2>두 연구가 갈라지는 지점<span>산업의 합계인가, 개인의 경로인가</span></h2>
+<h3>합계의 관점 — 생산성은 교체에서 온다</h3><p>포스터, 할티웬저, 크리잔은 2006년 논문에서 1990년대 미국 소매업의 노동생산성 증가를 분해했습니다. 증가의 거의 전부가 더 생산적인 신규 사업체가 덜 생산적인 기존 사업체를 밀어내면서 생겼습니다. 퇴출 사업체의 생산성은 잔존 사업체보다 약 25퍼센트 낮았고, 신규 진입 사업체는 진입 시점에 이미 잔존 사업체와 비슷했습니다.</p><div class="mnote"><b>여백 메모 1</b>두 문헌은 대립하지 않습니다. 한쪽은 산업의 합계를, 다른 쪽은 개인의 경로를 잽니다. 같은 교체가 합계에서는 플러스, 개인에서는 마이너스일 수 있습니다. 갈리는 것은 처방의 순서입니다.</div><h3>개인의 관점 — 교체의 청구서는 개인에게 온다</h3><p>데이비스와 폰 바흐터는 2011년 논문에서 1974년부터 2008년까지사회보장 소득 기록을 붙여 대량 해고로 직장을 잃은 사람의 소득 경로를 추적했습니다. 해고 첫해 소득은 25~39퍼센트 줄고 10년이 지나도 10~20퍼센트 낮게 유지되며 20년이 지나도 완전히 회복되지 않았습니다. 1980~2005년 해고된 남성의 평균 손실은 2000년 불변가격으로 7만 7,557달러였습니다.</p><div class="mnote"><b>여백 메모 2</b>교체를 먼저 열면 합계의 이득이 먼저 오고 청구서는 나중에 옵니다. 청구서를 먼저 정하면 교체가 느려집니다. 어느 쪽을 택하든 한쪽 계정만 보는 결정은 반대쪽 계정을 보이지 않는 비용으로 만듭니다.</div><div class="clash"><p>생산성 회계에서 사라진 사업체의 몫은 사라지지만 그 안에 있던 사람의 손실은 사라지지 않고 남은 노동 생애에 붙습니다. 진입과 퇴출의 마찰을 낮추는 일과 그 마찰이 만든 청구서를 누가 지불할지 정하는 일은 별개의 과제입니다.</p></div>
+</section>
+
+<section class="case">
+<h2>적용 사례 — 2003년 2월 5일, 서킷시티<span>보상 변경에서 2009년 청산까지</span></h2>
+<p>이 회사는 그날 전 직원에게 통보했습니다. 매장 625곳이 늦게 문을 열었고 그 자리에서 3,900명의 커미션 영업사원이 해고됐습니다. 회사가 밝힌 이유는 임금 체계였습니다. 성과급과 기본급이 섞인 구조가 다루기 어렵고 비싸다고 판단해 시간급 단일 체계로 바꾸고 2,100명을 새로 뽑겠다고 했습니다.</p><p>회계연도 2004년 판관비율은 23.4퍼센트에서 22.8퍼센트로 내려갔고 공시문은 그 원인을 2003년 2월에 시작한 매장 보상 체계 변경에 따른 약 1억 3,000만 달러의 인건비 절감으로 명시했습니다. 그러나 매출은 2퍼센트 줄어 97억 5,000만 달러, 기존점 매출은 3퍼센트 줄었습니다. 다음 해 기존점은 0.7퍼센트 늘어난 데 그쳤습니다.</p><p>2007년에는 경력이 긴 영업사원 3,400명을 다시 내보냈고, 2008년 11월 10일 회사는 법정관리를 신청해 2009년 1월 16일 청산에 들어갔습니다. 인건비 절감은 공시로 확인되지만 그 절감이 매출로 이어졌다는 증거는 같은 공시에 없습니다. 소매업 전체의 퇴출 통계와 회사 안에서 시도한 2003년 결정을 같은 선에 놓을 수는 없습니다.</p>
+</section>
+
+<section>
+<h2>렌즈 — 정상과 병리<span>조르주 캉길렘의 규범</span></h2>
+<p>캉길렘은 1943년 논문에서 병리를 정상에서 벗어난 양적 편차로 보는 관점을 거부했습니다. 병적인 상태는 규범이 없는 상태가 아니라 규범이 좁아진 상태입니다. 좁아진 규범 아래에서만 기능할 수 있는 유기체가 병든 유기체이고, 건강은 환경의 충격을 견디고 새 규범을 세울 수 있는 여유입니다.</p><p>서킷시티의 2003년 결정은 비용이라는 지표를 정상 범위로 되돌렸습니다. 판관비율은 내려갔고 인건비는 줄었습니다. 그러나 커미션을 받던 사람들이 하던 일, 곧 비싼 물건을 권하고 고객을 붙잡아 두는 일은 시간급 체계 안에 남지 않았습니다. 지표는 정상으로 돌아왔고 기능의 범위는 줄었습니다.</p>
+</section>
+
+<section class="ask">
+<h2>리더의 판단 질문<span>결정 전에 스스로 확인할 것</span></h2>
+<ol><li>이 교체가 만드는 합계의 이득은 무엇인가</li><li>그 이득의 청구서는 누구에게 얼마 동안 오는가</li><li>청구서를 지불한 뒤 새 규범을 세울 여유가 남았는가</li></ol>
+</section>
+
+<section class="closing">
+<h2>한 줄로 남기면</h2>
+<p>두 계정을 같이 놓아야 합니다. 합계의 이득, 청구서의 수령자와 기간, 그리고 청구서를 낸 뒤의 여유. 셋째에 답하지 않은 감원은 비용을 줄이고 기능의 폭을 줄입니다. 해고는 재배치이면서 위험의 이전이고, 하나만 계상한 결정은 다른 하나를 나중에 지불합니다.</p>
+</section>
+
+<section>
+<h2>근거 자료<span>서지와 확인 범위</span></h2>
+<p class="cite">두 연구는 공개 학술 서지와 추적 수치를 대조했습니다. 사례는 회사 공시와 복수 보도로 확인했고, 해당 기업의 경영 판단을 평가하지 않습니다.</p>
+<details><summary>소매업의 교체와 생산성</summary><p class="source">Lucia Foster·John Haltiwanger·C. J. Krizan, “Market Selection, Reallocation, and Restructuring,” <cite>Review of Economics and Statistics</cite> 88(4) (2006).</p></details><details><summary>해고의 비용을 잰다</summary><p class="source">Steven J. Davis·Till von Wachter, “Recessions and the Costs of Job Loss,” <cite>Brookings Papers on Economic Activity</cite> 2011(2) (2011).</p></details><details><summary>서킷시티 공시와 보도</summary><p class="source">8-K 공시(2004-03-04, 2005-03-04), 연방준비은행 『Econ Focus』(2013), 2003년 2월 보도로 시점과 수치를 확인했습니다.</p></details>
+</section>
+
+<footer>
+<span>Lead Read · 3분 브리핑</span>
+<p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+const root=document.documentElement;const b=document.getElementById('theme-toggle');
+b.addEventListener('click',()=>{const n=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=n;});
+</script>
+</body>
+</html>
