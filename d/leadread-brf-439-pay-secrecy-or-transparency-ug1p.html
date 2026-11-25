@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>보상은 비밀인가, 공개인가 — Lead Read</title>
+<style>
+:root{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}}
+html[data-theme="dark"]{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}
+html[data-theme="light"]{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;line-height:1.78;word-break:keep-all;overflow-wrap:anywhere}
+.page{max-width:920px;margin:auto;padding:26px 20px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--ln);font-size:.78rem;letter-spacing:.1em;color:var(--mut)}
+.top b{color:var(--ink)}
+button{font:inherit;font-size:.8rem;padding:6px 10px;color:var(--ink);background:var(--sf);border:1px solid var(--ln);border-radius:4px;cursor:pointer}
+a{color:var(--ac);text-underline-offset:.2em}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--mk);outline-offset:3px}
+header{padding:34px 0 10px}
+.kicker{color:var(--mk);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.28;letter-spacing:-.03em;margin:.4em 0 .3em}
+.dek{font-size:clamp(1.02rem,2.2vw,1.18rem);color:var(--mut);margin:0 0 10px;max-width:62ch}
+.tag{display:inline-block;margin-top:12px;padding:4px 10px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:700;border-radius:3px}
+h2{font-size:clamp(1.22rem,2.8vw,1.62rem);line-height:1.34;letter-spacing:-.02em;margin:0 0 8px}
+h2 span{display:block;font-size:.78rem;font-weight:600;letter-spacing:.06em;color:var(--mk);margin-top:5px}
+h3{font-size:1.02rem;margin:0 0 6px}
+p{margin:0 0 14px;max-width:70ch}
+section{padding:26px 0;border-top:1px solid var(--ln)}
+.leadbox{margin:22px 0 4px;padding:20px;background:var(--sf);border-left:4px solid var(--ac)}
+.lb-label{font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin:0 0 4px}
+.lb-q{font-size:1.06rem;font-weight:700;margin:0 0 14px}
+.lb-a{margin:0;color:var(--ink)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.pole{padding:18px;background:var(--sf);border-top:4px solid var(--ac)}
+.pole:nth-child(2){border-top-color:var(--mk)}
+.pole small{display:block;font-size:.72rem;letter-spacing:.1em;font-weight:800;color:var(--mk);margin-bottom:6px}
+.clash{margin-top:16px;padding:16px 18px;background:var(--ac2);border-left:4px solid var(--mk)}
+.timeline{margin-top:18px;padding-left:18px;border-left:2px solid var(--ln)}
+.tl{position:relative;margin:0 0 16px}
+.tl:before{content:"";position:absolute;left:-25px;top:.55em;width:9px;height:9px;border-radius:50%;background:var(--mk)}
+.tl b{display:block;color:var(--mk);font-size:.92rem}
+.tl p{margin:2px 0 0;color:var(--mut)}
+.signal{margin-top:16px;padding:18px;background:var(--ac2);border:1px solid var(--ln)}
+.siglabel{display:inline-block;font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin-right:8px}
+.mnote{margin:16px 0;padding:13px 15px;background:var(--mk2);border-left:3px solid var(--mk);font-size:.95rem}
+.mnote b{display:block;font-size:.72rem;letter-spacing:.1em;color:var(--mk);margin-bottom:4px}
+.table-wrap{overflow-x:auto;margin-top:14px}
+table{width:100%;border-collapse:collapse;font-size:.93rem;table-layout:fixed;word-break:normal}
+caption{word-break:normal;text-align:left;padding-bottom:8px}
+th,td{border-bottom:1px solid var(--ln);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--ac2);color:var(--ink);font-size:.85rem}
+.scan{margin-top:16px;padding:15px 17px;background:var(--sf);border:1px solid var(--ln);border-left:4px solid var(--ac)}
+.ask ol{margin:12px 0 0;padding-left:22px}
+.ask li{margin:0 0 10px}
+.closing{padding:24px;background:var(--sf);border-top:2px solid var(--ac)}
+.closing h2{margin-bottom:10px}
+.closing p{font-size:1.04rem;margin:0}
+.cite{color:var(--mut);font-size:.94rem}
+details{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--ln)}
+summary{cursor:pointer;font-weight:700;color:var(--ac)}
+.source{margin:8px 0 0;font-size:.92rem;color:var(--mut)}
+.source cite{font-style:normal;color:var(--ink);font-weight:600}
+footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--ln);color:var(--mut);font-size:.84rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.author-credit{color:var(--ink);font-weight:800}
+@media (max-width:640px){
+.page{padding:18px 14px 44px}
+.duo{grid-template-columns:1fr}
+header{padding:24px 0 6px}
+section{padding:22px 0}
+table{font-size:.84rem}
+th,td{padding:8px 7px}
+.closing{padding:18px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="top"><span><b>Lead Read</b> · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="테마 바꾸기">테마</button></div>
+<header>
+<p class="kicker">Lead Read · 리더십 브리핑</p>
+<h1>보상은 비밀인가, 공개인가</h1>
+<p class="dek">급여를 숨기면 추측이 들어앉고, 열면 비교가 시작된다.</p>
+<p class="tag">여백 메모 · 적용 사례 · 판단 질문</p>
+</header>
+
+<div class="leadbox">
+<p class="lb-label">핵심 질문</p>
+<p class="lb-q">방금 내린 보상 결정을 당사자가 아닌 사람에게도 설명할 수 있는가?</p>
+<p class="lb-label">한 문장 결론</p>
+<p class="lb-a">비밀과 공개는 어느 쪽도 안전한 기본값이 아닙니다. 물어야 할 것은 공개 여부가 아니라 공개 단위와 격차의 설명입니다.</p>
+</div>
+
+<section>
+<h2>왜 지금 이 문제인가<span>침묵이 만드는 정보와 비교가 만드는 순위</span></h2>
+<p>대부분의 회사는 급여를 말하지 말라고 합니다. 사생활이고, 비교로 갈등이 생기고, 협상이 어려워진다는 이유입니다. 그러나 침묵은 정보를 없애지 않습니다. 정보가 없는 자리에 추측이 들어앉습니다.</p><p>반대로 급여를 공개한 회사는 비교를 제도화합니다. 사람들은 얼마를 받는지보다 몇 번째인지에 더 크게 흔들릴 수 있습니다. 비밀과 공개 중 어느 쪽이 조직을 덜 망가뜨리는가는 단순한 선택이 아닙니다.</p>
+</section>
+
+<section>
+<h2>두 연구가 갈라지는 지점<span>왜곡정보인가, 순위 비교인가</span></h2>
+<h3>비밀의 비용 — 비밀은 중립이 아니다</h3><p>콜렐라와 동료들은 2007년 연구에서 급여 비밀을 하나의 의사소통 방식으로 다룹니다. 급여가 공개되지 않으면 사람은 자기와 같거나 낮은 직급의 급여를 실제보다 높게, 더 높은 직급의 급여를 실제보다 낮게 추정하는 경향이 있습니다. 추정이 체계적으로 틀어지면 분배뿐 아니라 절차와 설명의 공정성까지 의심하게 됩니다.</p><div class="mnote"><b>여백 메모 1</b>비밀이 주는 이득도 있습니다. 사생활 보호, 소모적 비교의 회피, 개인별 협상 여지의 유지입니다. 문제는 그 이득이 비용 없이 오지 않는다는 점입니다. 침묵을 기본값으로 두지 말고 무엇을 누구에게 어느 수준까지 알릴지 정하라는 것이 콜렐라 등의 처방입니다.</div><h3>공개의 비용 — 공개는 비교를 켠다</h3><p>카드와 동료들은 2012년 캘리포니아 대학 직원을 대상으로 실험했습니다. 급여 공개 사이트를 안내받은 집단에서, 자기 단위와 직종의 중위값보다 낮은 사람은 만족이 낮아지고 새 직장을 찾아볼 가능성이 높아졌습니다. 중위값보다 높은 사람은 영향을 받지 않았습니다. 격차의 크기보다 순위가 더 컸습니다.</p><div class="mnote"><b>여백 메모 2</b>공개는 한 번의 결정으로 끝나지 않습니다. 개별 금액을 공개할 것인지, 구간과 규칙을 공개할 것인지는 다른 결정입니다. 전자는 비교의 강도를 높이고 후자는 비교의 근거를 바꿉니다.</div><div class="clash"><p>정보를 열면 왜곡은 줄지만 비교가 작동을 시작합니다. 하나는 추측을 줄이는 일을, 다른 하나는 순위를 만드는 규칙을 먼저 봅니다. 공개 여부를 묻기 전에 공개 단위를 정해야 하는 이유입니다.</p></div>
+</section>
+
+<section class="case">
+<h2>적용 사례 — 2013년 12월 19일, 한 소프트웨어 회사의 급여 공개<span>2013년 공개에서 2024년 공식 개정까지</span></h2>
+<p>2013년 12월 19일 이 회사는 급여 공식을 공개하고 전 직원의 개별 급여를 함께 올렸습니다. 창업자의 급여도 예외가 아니었습니다. 공개 직후 30일 동안 지원자는 그 전 30일의 1,263명에서 2,886명으로 늘었습니다. 채용과 신뢰에서 이득이 있었다는 것이 회사와 보도의 정리입니다.</p><p>그러나 공개는 한 번의 결정으로 끝나지 않았습니다. 2015년 11월 회사는 직원이 60명을 넘어서면서 공식을 개정했고, 생활비 차이를 최대 8,000달러까지 보정하는 장치를 넣었습니다. 이후 2019년, 2022년, 2024년에 공식을 다시 손봤고, 2022년에는 생활비 구간을 두 개로 줄였습니다.</p><p>콜렐라 등의 관점에서 보면 공개는 정보 왜곡을 줄이고 규칙을 검증 가능하게 만들었습니다. 카드 등의 관점에서 보면 공개는 비교를 제도화했고 그래서 회사는 규칙을 계속 고쳐야 했습니다. 중요한 것은 방향입니다. 회사는 금액을 다시 감추지 않고 규칙을 더 설명하는 쪽으로 움직였습니다. 다만 조건이 다른 조직에 같은 처방을 옮길 수는 없습니다.</p>
+</section>
+
+<section>
+<h2>렌즈 — 르상티망<span>막스 셸러의 비교와 무력감</span></h2>
+<p>셸러에게 르상티망은 단순한 부러움이 아닙니다. 비교와 무력감이 오래 겹칠 때 생기고, 끝내 얻을 수 없는 가치를 낮추어 평가함으로써 균형을 되찾으려는 마음의 운동입니다. 부러움은 얻으려는 의지를 약하게 만들고, 르상티망은 그 가치 자체를 깎아 내립니다.</p><p>공개는 비교를 켜고, 비교는 격차의 근거가 설명되지 않을 때 가치 전도로 넘어갑니다. 셸러의 분석은 처방도 줍니다. 르상티망의 조건은 비교가 아니라 이동 경로가 보이지 않는 비교입니다. 격차의 규칙과 도달 경로가 공개되면 비교는 협상의 재료가 되고, 그렇지 않으면 서사의 재료가 됩니다.</p>
+</section>
+
+<section class="ask">
+<h2>리더의 판단 질문<span>결정 전에 스스로 확인할 것</span></h2>
+<ol><li>공개 단위가 개별 금액인가, 구간인가, 규칙인가?</li><li>이 차이가 무엇으로 정해졌고 지금 그 자리에 오르려면 무엇이 필요한가?</li><li>격차의 규칙을 당사자가 아닌 사람도 설명할 수 있는가?</li></ol>
+</section>
+
+<section class="closing">
+<h2>한 줄로 남기면</h2>
+<p>금액을 감출 것인가, 규칙을 설명할 것인가. 답하지 않은 공개는 비교만 남기고, 답하지 않은 비밀은 추측만 남깁니다. 다음 인사 장면에서 확인할 것은 공개 여부가 아니라 방금 내린 보상 결정을 당사자가 아닌 사람에게도 설명할 수 있는가입니다.</p>
+</section>
+
+<section>
+<h2>근거 자료<span>서지와 확인 범위</span></h2>
+<p class="cite">두 연구는 공개 학술 서지와 실험 결과 범위에서 정리했습니다. 사례는 회사 공개 글과 언론 보도를 교차 확인했고, 공개가 모든 조직에 낫다는 주장으로 일반화하지 않습니다.</p>
+<details><summary>급여 비밀을 읽다</summary><p class="source">Adrienne Colella 외, “Exposing Pay Secrecy,” <cite>Academy of Management Review</cite> 32(1) (2007). 추측의 왜곡을 참조했습니다.</p></details><details><summary>동료 급여와 만족</summary><p class="source">David Card·Alexandre Mas·Enrico Moretti·Emmanuel Saez, “Inequality at Work,” <cite>American Economic Review</cite> 102(6) (2012). 순위 효과를 참조했습니다.</p></details><details><summary>공개와 개정 기록</summary><p class="source">회사 공개 글(2013-12-19), 보도(2013-12-20), 공식 개정 보도(2015-11-24), 회고 글(2024-01-25)을 확인했습니다.</p></details>
+</section>
+
+<footer>
+<span>Lead Read · 3분 브리핑</span>
+<p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+const root=document.documentElement;const b=document.getElementById('theme-toggle');
+b.addEventListener('click',()=>{const n=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=n;});
+</script>
+</body>
+</html>
