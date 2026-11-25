@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>성과급은 능률을 올리는가, 측정 가능한 것만 키우는가 — Lead Read</title>
+<style>
+:root{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}}
+html[data-theme="dark"]{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}
+html[data-theme="light"]{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;line-height:1.78;word-break:keep-all;overflow-wrap:anywhere}
+.page{max-width:920px;margin:auto;padding:26px 20px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--ln);font-size:.78rem;letter-spacing:.1em;color:var(--mut)}
+.top b{color:var(--ink)}
+button{font:inherit;font-size:.8rem;padding:6px 10px;color:var(--ink);background:var(--sf);border:1px solid var(--ln);border-radius:4px;cursor:pointer}
+a{color:var(--ac);text-underline-offset:.2em}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--mk);outline-offset:3px}
+header{padding:34px 0 10px}
+.kicker{color:var(--mk);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.28;letter-spacing:-.03em;margin:.4em 0 .3em}
+.dek{font-size:clamp(1.02rem,2.2vw,1.18rem);color:var(--mut);margin:0 0 10px;max-width:62ch}
+.tag{display:inline-block;margin-top:12px;padding:4px 10px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:700;border-radius:3px}
+h2{font-size:clamp(1.22rem,2.8vw,1.62rem);line-height:1.34;letter-spacing:-.02em;margin:0 0 8px}
+h2 span{display:block;font-size:.78rem;font-weight:600;letter-spacing:.06em;color:var(--mk);margin-top:5px}
+h3{font-size:1.02rem;margin:0 0 6px}
+p{margin:0 0 14px;max-width:70ch}
+section{padding:26px 0;border-top:1px solid var(--ln)}
+.leadbox{margin:22px 0 4px;padding:20px;background:var(--sf);border-left:4px solid var(--ac)}
+.lb-label{font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin:0 0 4px}
+.lb-q{font-size:1.06rem;font-weight:700;margin:0 0 14px}
+.lb-a{margin:0;color:var(--ink)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.pole{padding:18px;background:var(--sf);border-top:4px solid var(--ac)}
+.pole:nth-child(2){border-top-color:var(--mk)}
+.pole small{display:block;font-size:.72rem;letter-spacing:.1em;font-weight:800;color:var(--mk);margin-bottom:6px}
+.clash{margin-top:16px;padding:16px 18px;background:var(--ac2);border-left:4px solid var(--mk)}
+.timeline{margin-top:18px;padding-left:18px;border-left:2px solid var(--ln)}
+.tl{position:relative;margin:0 0 16px}
+.tl:before{content:"";position:absolute;left:-25px;top:.55em;width:9px;height:9px;border-radius:50%;background:var(--mk)}
+.tl b{display:block;color:var(--mk);font-size:.92rem}
+.tl p{margin:2px 0 0;color:var(--mut)}
+.signal{margin-top:16px;padding:18px;background:var(--ac2);border:1px solid var(--ln)}
+.siglabel{display:inline-block;font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin-right:8px}
+.mnote{margin:16px 0;padding:13px 15px;background:var(--mk2);border-left:3px solid var(--mk);font-size:.95rem}
+.mnote b{display:block;font-size:.72rem;letter-spacing:.1em;color:var(--mk);margin-bottom:4px}
+.table-wrap{overflow-x:auto;margin-top:14px}
+table{width:100%;border-collapse:collapse;font-size:.93rem;table-layout:fixed;word-break:normal}
+caption{word-break:normal;text-align:left;padding-bottom:8px}
+th,td{border-bottom:1px solid var(--ln);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--ac2);color:var(--ink);font-size:.85rem}
+.scan{margin-top:16px;padding:15px 17px;background:var(--sf);border:1px solid var(--ln);border-left:4px solid var(--ac)}
+.ask ol{margin:12px 0 0;padding-left:22px}
+.ask li{margin:0 0 10px}
+.closing{padding:24px;background:var(--sf);border-top:2px solid var(--ac)}
+.closing h2{margin-bottom:10px}
+.closing p{font-size:1.04rem;margin:0}
+.cite{color:var(--mut);font-size:.94rem}
+details{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--ln)}
+summary{cursor:pointer;font-weight:700;color:var(--ac)}
+.source{margin:8px 0 0;font-size:.92rem;color:var(--mut)}
+.source cite{font-style:normal;color:var(--ink);font-weight:600}
+footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--ln);color:var(--mut);font-size:.84rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.author-credit{color:var(--ink);font-weight:800}
+@media (max-width:640px){
+.page{padding:18px 14px 44px}
+.duo{grid-template-columns:1fr}
+header{padding:24px 0 6px}
+section{padding:22px 0}
+table{font-size:.84rem}
+th,td{padding:8px 7px}
+.closing{padding:18px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="top"><span><b>Lead Read</b> · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="테마 바꾸기">테마</button></div>
+<header>
+<p class="kicker">Lead Read · 리더십 브리핑</p>
+<h1>성과급은 능률을 올리는가, 측정 가능한 것만 키우는가</h1>
+<p class="dek">값을 매기면 무엇이 좋아지고, 무엇이 사라지는가.</p>
+<p class="tag">요약 표 · 적용 사례 · 판단 질문</p>
+</header>
+
+<div class="leadbox">
+<p class="lb-label">핵심 질문</p>
+<p class="lb-q">이 지표가 올라갈 때 함께 올라가야 하는데 지표에 없는 것은 무엇인가?</p>
+<p class="lb-label">한 문장 결론</p>
+<p class="lb-a">측정이 일의 핵심을 덮으면 강한 유인이 성과를 끌어올립니다. 측정이 일부만 덮으면 유인은 그 일부로 사람을 몰아넣습니다. 먼저 물어야 할 것은 지급률이 아니라 측정의 범위입니다.</p>
+</div>
+
+<section>
+<h2>왜 지금 이 문제인가<span>측정되는 일과 측정되지 않는 일</span></h2>
+<p>성과급은 공정해 보입니다. 더 많이 한 사람에게 더 준다는 논리입니다. 그런데 성과급이 붙는 순간 그 일은 측정되는 일과 측정되지 않는 일로 갈라집니다.</p><p>수리 건수는 셀 수 있지만 고객이 설명을 이해했는지는 세기 어렵고, 통화 건수는 셀 수 있지만 통화가 끝난 뒤 남는 신뢰는 세기 어렵습니다. 유인이 한쪽에만 걸리면 나머지는 누가 지키는가가 질문입니다.</p>
+</section>
+
+<section>
+<h2>두 연구가 갈라지는 지점<span>측정의 부재인가, 측정의 부분성인가</span></h2>
+<div class="scan"><p><b>측정의 부재</b> 레이지어는 2000년 유리 교체 회사의 보상 제도 변경을 분석했습니다. 시간급이던 보수를 건당 지급으로 바꾸자 한 사람의 산출이 44퍼센트 늘었습니다. 평균 생산성이 오르고 더 유능한 사람들이 몰렸으며 산출 격차도 커졌습니다. 기존 보상 체계가 최적이 아니었다는 것이 저자의 정리입니다.</p><p><b>측정의 부분성</b> 홀름스트룀과 밀그롬은 여러 과제 중 일부만 측정이 쉬울 때, 측정이 쉬운 과제에 강한 유인을 걸수록 노력이 그 과제로 옮겨간다고 봅니다. 측정이 어려운 과제의 노력은 줄어들고 전체 가치가 떨어질 수 있습니다. 처방은 성과급 폐지가 아니라 과제 분리, 유인 강도 조절, 직무 설계 변경입니다.</p></div><div class="table-wrap"><table><caption class="cite">같은 성과급을 읽는 두 질문</caption><thead><tr><th>질문</th><th>측정의 부재</th><th>측정의 부분성</th></tr></thead><tbody><tr><th>출발점</th><td>측정이 없어 좋은 일과 나쁜 일이 같은 값을 받는다</td><td>측정이 일부만 덮어 노력이 그쪽으로 쏠린다</td></tr><tr><th>관찰되는 변화</th><td>건당 지급으로 산출 44퍼센트 증가</td><td>측정된 지표는 오르고 측정 밖의 일은 줄어든다</td></tr><tr><th>설계 질문</th><td>측정해서 지급할 자리가 어디인가</td><td>측정이 덮지 못하는 일을 누가 지키는가</td></tr></tbody></table></div><div class="clash"><p>앞의 연구는 측정할 수 있는 곳을 찾아 값을 매기라고 하고, 뒤의 연구는 그 값이 덮지 못하는 부분을 먼저 확인하라고 합니다. 같은 질문에 하나는 측정의 부재를, 다른 하나는 측정의 부분성을 가리킵니다.</p></div>
+</section>
+
+<section class="case">
+<h2>적용 사례 — 2009년 애틀랜타 교육청의 시험 점수<span>2009년 결과에서 2015년 선고까지</span></h2>
+<p>2009년 미국 애틀랜타 교육청은 표준화 시험에서 이례적으로 높은 결과를 냈습니다. 같은 해 답안 분석에서 정답으로 바뀐 지우개 자국이 주 전체 평균의 세 배를 넘었습니다. 조사는 2011년 7월 5일 결과를 내놓았습니다.</p><p>조사 대상 56개 학교 중 44곳에서 부정 행위가 확인됐고, 교사와 교장 178명이 관여한 것으로 정리됐으며 그중 82명이 인정했습니다. 보고서는 연방법이 요구한 진전 목표를 맞추라는 압박이 주된 원인이라고 적었습니다. 2013년 3월 대배심은 35명을 기소했습니다.</p><p>2015년 4월 1일 배심원은 12명 중 11명에게 조직적 범죄 혐의로 유죄를 인정했고, 4월 14일 선고에서 10명 중 8명이 실형을 받았습니다. 교사 개인의 보수가 시험 점수에 직접 연동되지는 않았지만, 학교와 관리자의 평가가 점수에 걸려 있었습니다. 다만 이 사건을 성과급 하나로 설명할 수는 없습니다. 자원 배분의 불균형과 감독 체계의 실패가 함께 작용했습니다.</p>
+</section>
+
+<section>
+<h2>렌즈 — 놀이의 세계<span>요한 하위징아의 규칙</span></h2>
+<p>하위징아는 1938년 저서에서 놀이를 일상에서 떼어낸, 시간과 장소의 경계를 가진 활동으로 정의합니다. 놀이는 자발적이고 그 자체로 목적을 가지며, 규칙은 스스로 받아들였지만 절대적입니다. 규칙이 깨지면 놀이 세계는 무너집니다.</p><p>점수 제도는 교실 옆에 또 하나의 세계를 세웁니다. 문제는 이 세계가 오래 지속되면 원래의 일이 그 세계의 잔여물로 밀려난다는 점입니다. 하위징아에게 규칙을 어기는 사람은 반칙자이기 전에 흥을 깨는 자입니다. 문제를 제기한 사람이 어느 쪽으로 분류됐는지가 그 조직이 놀이를 하는지 놀이에 잡혔는지를 보여줍니다.</p>
+</section>
+
+<section class="ask">
+<h2>리더의 판단 질문<span>결정 전에 스스로 확인할 것</span></h2>
+<ol><li>이 지표가 올라갈 때 함께 올라가야 하는데 지표에 없는 것은 무엇인가?</li><li>그 부분을 지킨 사람이 손해를 보지 않게 하는 장치가 있는가?</li><li>지표가 좋아졌을 때 현장에서 사라진 신호는 무엇인가?</li></ol>
+</section>
+
+<section class="closing">
+<h2>한 줄로 남기면</h2>
+<p>무엇을 재고 있는지 먼저 확인해야 합니다. 측정이 일의 핵심을 덮으면 유인이 성과를 끌어올리고, 일부만 덮으면 유인이 사람을 그 일부로 몰아넣습니다. 지표에 없는 것을 지킨 사람이 손해를 보지 않는 장치가 없으면 성과급은 일을 재는 장치가 아니라 일을 줄이는 장치가 됩니다.</p>
+</section>
+
+<section>
+<h2>근거 자료<span>서지와 확인 범위</span></h2>
+<p class="cite">두 연구는 공개 학술 서지와 논지 범위에서 정리했습니다. 사례는 조사 결과 발표와 언론 보도로 교차 확인했고, 개인의 법적 책임을 새로 판단하지 않습니다.</p>
+<details><summary>측정 가능한 성과에 값을 매기다</summary><p class="source">Edward P. Lazear, “Performance Pay and Productivity,” <cite>American Economic Review</cite> 90(5) (2000). 산출 44퍼센트 변화를 참조했습니다.</p></details><details><summary>여러 과제와 유인</summary><p class="source">Bengt Holmström·Paul Milgrom, “Multitask Principal–Agent Analyses,” <cite>Journal of Law, Economics, & Organization</cite> 7 (1991). 노력의 이동을 참조했습니다.</p></details><details><summary>애틀랜타 조사 기록</summary><p class="source">조지아 주지사실 조사 결과 발표(2011-07-05)와 뉴욕타임스 보도(2011-07-05, 2015-04-01, 2015-04-14)를 확인했습니다.</p></details>
+</section>
+
+<footer>
+<span>Lead Read · 3분 브리핑</span>
+<p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+const root=document.documentElement;const b=document.getElementById('theme-toggle');
+b.addEventListener('click',()=>{const n=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=n;});
+</script>
+</body>
+</html>
