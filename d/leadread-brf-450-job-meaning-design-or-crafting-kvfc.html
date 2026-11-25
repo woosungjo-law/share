@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>일의 의미는 설계되는가, 다시 그어지는가 — Lead Read</title>
+<style>
+:root{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}}
+html[data-theme="dark"]{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}
+html[data-theme="light"]{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;line-height:1.78;word-break:keep-all;overflow-wrap:anywhere}
+.page{max-width:920px;margin:auto;padding:26px 20px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--ln);font-size:.78rem;letter-spacing:.1em;color:var(--mut)}
+.top b{color:var(--ink)}
+button{font:inherit;font-size:.8rem;padding:6px 10px;color:var(--ink);background:var(--sf);border:1px solid var(--ln);border-radius:4px;cursor:pointer}
+a{color:var(--ac);text-underline-offset:.2em}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--mk);outline-offset:3px}
+header{padding:34px 0 10px}
+.kicker{color:var(--mk);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.28;letter-spacing:-.03em;margin:.4em 0 .3em}
+.dek{font-size:clamp(1.02rem,2.2vw,1.18rem);color:var(--mut);margin:0 0 10px;max-width:62ch}
+.tag{display:inline-block;margin-top:12px;padding:4px 10px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:700;border-radius:3px}
+h2{font-size:clamp(1.22rem,2.8vw,1.62rem);line-height:1.34;letter-spacing:-.02em;margin:0 0 8px}
+h2 span{display:block;font-size:.78rem;font-weight:600;letter-spacing:.06em;color:var(--mk);margin-top:5px}
+h3{font-size:1.02rem;margin:0 0 6px}
+p{margin:0 0 14px;max-width:70ch}
+section{padding:26px 0;border-top:1px solid var(--ln)}
+.leadbox{margin:22px 0 4px;padding:20px;background:var(--sf);border-left:4px solid var(--ac)}
+.lb-label{font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin:0 0 4px}
+.lb-q{font-size:1.06rem;font-weight:700;margin:0 0 14px}
+.lb-a{margin:0;color:var(--ink)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.pole{padding:18px;background:var(--sf);border-top:4px solid var(--ac)}
+.pole:nth-child(2){border-top-color:var(--mk)}
+.pole small{display:block;font-size:.72rem;letter-spacing:.1em;font-weight:800;color:var(--mk);margin-bottom:6px}
+.clash{margin-top:16px;padding:16px 18px;background:var(--ac2);border-left:4px solid var(--mk)}
+.timeline{margin-top:18px;padding-left:18px;border-left:2px solid var(--ln)}
+.tl{position:relative;margin:0 0 16px}
+.tl:before{content:"";position:absolute;left:-25px;top:.55em;width:9px;height:9px;border-radius:50%;background:var(--mk)}
+.tl b{display:block;color:var(--mk);font-size:.92rem}
+.tl p{margin:2px 0 0;color:var(--mut)}
+.signal{margin-top:16px;padding:18px;background:var(--ac2);border:1px solid var(--ln)}
+.siglabel{display:inline-block;font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin-right:8px}
+.mnote{margin:16px 0;padding:13px 15px;background:var(--mk2);border-left:3px solid var(--mk);font-size:.95rem}
+.mnote b{display:block;font-size:.72rem;letter-spacing:.1em;color:var(--mk);margin-bottom:4px}
+.table-wrap{overflow-x:auto;margin-top:14px}
+table{width:100%;border-collapse:collapse;font-size:.93rem;table-layout:fixed;word-break:normal}
+caption{word-break:normal;text-align:left;padding-bottom:8px}
+th,td{border-bottom:1px solid var(--ln);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--ac2);color:var(--ink);font-size:.85rem}
+.scan{margin-top:16px;padding:15px 17px;background:var(--sf);border:1px solid var(--ln);border-left:4px solid var(--ac)}
+.ask ol{margin:12px 0 0;padding-left:22px}
+.ask li{margin:0 0 10px}
+.closing{padding:24px;background:var(--sf);border-top:2px solid var(--ac)}
+.closing h2{margin-bottom:10px}
+.closing p{font-size:1.04rem;margin:0}
+.cite{color:var(--mut);font-size:.94rem}
+details{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--ln)}
+summary{cursor:pointer;font-weight:700;color:var(--ac)}
+.source{margin:8px 0 0;font-size:.92rem;color:var(--mut)}
+.source cite{font-style:normal;color:var(--ink);font-weight:600}
+footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--ln);color:var(--mut);font-size:.84rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.author-credit{color:var(--ink);font-weight:800}
+@media (max-width:640px){
+.page{padding:18px 14px 44px}
+.duo{grid-template-columns:1fr}
+header{padding:24px 0 6px}
+section{padding:22px 0}
+table{font-size:.84rem}
+th,td{padding:8px 7px}
+.closing{padding:18px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="top"><span><b>Lead Read</b> · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="테마 바꾸기">테마</button></div>
+<header>
+<p class="kicker">Lead Read · 리더십 브리핑</p>
+<h1>일의 의미는 설계되는가, 다시 그어지는가</h1>
+<p class="dek">같은 과업 기술서를 받은 두 사람이 서로 다른 이유로 그 일을 계속합니다. 의미는 도면에 있는가, 매일의 실천에 있는가.</p>
+<p class="tag">두 관점 · 적용 사례 · 판단 질문</p>
+</header>
+
+<div class="leadbox">
+<p class="lb-label">핵심 질문</p>
+<p class="lb-q">우리가 준 자율성을 자재와 규칙이 회수하고 있지는 않은가?</p>
+<p class="lb-label">한 문장 결론</p>
+<p class="lb-a">과업의 성질은 의미를 만듭니다. 그러나 사람은 매일 자기 일의 경계를 다시 긋습니다. 설계는 의미를 공급하는 동시에 그 재작성의 여백을 남겨야 합니다.</p>
+</div>
+
+<section>
+<h2>왜 지금 이 문제인가<span>도면에 새겨진 의미와 현장에서 그어지는 의미</span></h2>
+<p>직무를 다시 설계하는 회의는 같은 도면 위에서 시작합니다. 과업의 범위를 넓히고 자율성을 늘리고 되먹임을 붙입니다. 전제는 의미가 과업의 성질에 새겨진다는 것입니다.</p><p>그런데 현장에서는 설계도와 다르게 움직입니다. 같은 기술서를 받은 두 사람이 서로 다른 이유로 그 일을 계속합니다. 의미는 설계가 공급하는 것인가, 일하는 사람이 경계를 다시 그으면서 만드는 것인가.</p>
+</section>
+
+<section>
+<h2>두 연구가 갈라지는 지점<span>과업의 성질인가, 경계를 긋는 실천인가</span></h2>
+<div class="duo"><div class="pole"><small>설계의 관점</small><h3>과업의 성질이 태도를 만든다</h3><p>프리드와 페리스는 1987년 직무특성모형을 검토하고 메타분석했습니다. 거의 200편의 연구에서 기능의 다양성, 과업의 정체성, 중요성, 자율성, 되먹임이 만족과 내적 동기, 성과에 연결됐습니다. 의미가 얇은 직무는 과업을 다시 잘라 붙여 두껍게 만들 수 있습니다. 부품 하나만 붙이던 일을 완성품 단위로 묶고 결과를 확인하게 하고 그 일이 누구에게 쓰이는지를 드러내면 의미가 생깁니다.</p></div><div class="pole"><small>실천의 관점</small><h3>사람은 자기 일의 경계를 다시 긋는다</h3><p>브제스니에프스키와 더튼은 2001년 논문에서 종업원을 수동적 수령자가 아니라 능동적 제작자로 규정했습니다. 사람들은 맡은 일의 범위와 개수를 조정하고, 누구와 얼마나 상호작용할지 정하고, 같은 일을 다른 전체의 일부로 다시 봅니다. 이 세 가지 변경은 일의 의미와 정체성을 바꿉니다. 동기는 통제감, 긍정적 자기상, 관계에 대한 욕구입니다. 설계자가 의미를 배달한다는 전제를 버리고 경계를 다시 그을 여백을 남겨야 한다는 처방입니다.</p></div></div><div class="clash"><p>하나는 과업의 구조적 성질이 심리 상태를 거쳐 의미를 만든다고 보고, 다른 하나는 의미가 경계 재작성에서 생기며 설계는 그 조건일 뿐이라고 봅니다. 개입 지점이 다릅니다. 전자는 직무 기술서와 과업 묶음을 고치라고 하고, 후자는 기술서가 남겨둔 빈칸의 크기를 보라고 합니다.</p></div>
+</section>
+
+<section class="case">
+<h2>적용 사례 — 1974년 2월 8일, 볼보 칼마르<span>설계된 공장이 문을 닫기까지</span></h2>
+<p>볼보는 1971년 6월 신규 공장 입지를 칼마르로 정하고 1972년 5월 조립라인을 해체하는 방식을 채택했습니다. 공장은 1974년 2월 8일 생산을 시작했습니다. 차체는 컨베이어가 아니라 자동운반차가 실어 날랐고, 작업자는 약 20명 단위의 27개 조로 나뉘어 한 기능을 맡고 품질에 책임졌습니다. 조마다 출입구와 탈의실과 휴게실이 있었습니다.</p><p>결과는 한 방향이 아니었습니다. 초기 몇 해는 기존 라인만큼의 생산성을 내지 못했고, 생산기술과 데이터, 임금체계를 손보고 인원을 줄인 뒤에야 시간당 원가가 전통 라인 공장보다 25퍼센트 낮아졌습니다. 결정적인 것은 자율성의 실제 크기였습니다. 운반차는 작업자가 속도를 정하도록 설계됐지만 현장에서는 그렇게 쓰이지 않았고 자재 공급과 선입선출 규칙 때문에 병행 방식도 폐기됐습니다.</p><p>결국 작업자는 창가에 서서 전통적 조립으로 수렴했습니다. 도면이 준 자율성을 자재와 규칙이 회수한 것입니다. 공장은 1992년 11월 이사회 결정으로 문을 닫았는데 사유는 성과 부진이 아니라 가동률이었습니다. 생산성과 품질은 주력 공장보다 높았다는 평가가 남았습니다.</p>
+</section>
+
+<section>
+<h2>렌즈 — 민속방법론<span>가핀켈의 현장 질서</span></h2>
+<p>가핀켈은 사회의 질서가 규칙에 미리 적혀 있다고 보지 않았습니다. 사람들은 매 순간 자기 행동을 설명 가능한 형태로 만들어 내면서 질서를 완성합니다. 규칙을 일부러 어긋나게 해 그 질서가 어떻게 유지되는지 드러내는 실험도 했습니다.</p><p>직무 기술서는 질서의 원천이 아니라 질서를 만드는 재료입니다. 칼마르의 조가 창가에서 전통 조립으로 돌아간 것은 규칙 위반이 아니라 규칙과 자재와 시간이 만나는 자리에서 다시 만든 질서였습니다. 설계자는 그 재작성을 없앨 수 없고 재료만 좋게 만들 수 있습니다.</p>
+</section>
+
+<section class="ask">
+<h2>리더의 판단 질문<span>결정 전에 스스로 확인할 것</span></h2>
+<ol><li>이 직무의 의미는 기술서에 있는가, 매일 다시 긋는 경계에 있는가?</li><li>우리가 준 자율성을 자재와 규칙이 회수하고 있지는 않은가?</li><li>재작성의 여백을 남겼는가, 빈칸을 지웠는가?</li></ol>
+</section>
+
+<section class="closing">
+<h2>한 줄로 남기면</h2>
+<p>좋은 설계도가 현장에서 조용히 폐기되는 장면을 막으려면 빈칸을 남겨야 합니다. 의미가 어디서 오는가, 준 자율성이 회수되고 있지 않은가, 재작성의 여백이 있는가. 셋째에 답하지 않으면 회의는 다음 분기에 같은 도면을 다시 그립니다.</p>
+</section>
+
+<section>
+<h2>근거 자료<span>서지와 확인 범위</span></h2>
+<p class="cite">두 연구는 공개 학술 서지와 논지 범위에서 정리했습니다. 사례는 공개 사료와 생산시스템 연구로 확인했고, 기업이나 노사 관계의 우열을 평가하지 않습니다.</p>
+<details><summary>과업 성질의 검증</summary><p class="source">Yitzhak Fried·Gerald R. Ferris, “The Validity of the Job Characteristics Model,” <cite>Personnel Psychology</cite> 40(2) (1987).</p></details><details><summary>일을 다시 긋는 사람들</summary><p class="source">Amy Wrzesniewski·Jane E. Dutton, “Crafting a Job,” <cite>Academy of Management Review</cite> 26(2) (2001). 과업·관계·인식의 경계를 참조했습니다.</p></details><details><summary>칼마르 공장 기록</summary><p class="source">1974년 사내 발간물 연혁, 찰머스공과대학 생산시스템 연구(1996·1997), 폐쇄를 다룬 학술 편저로 시점과 수치를 확인했습니다.</p></details>
+</section>
+
+<footer>
+<span>Lead Read · 3분 브리핑</span>
+<p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+const root=document.documentElement;const b=document.getElementById('theme-toggle');
+b.addEventListener('click',()=>{const n=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=n;});
+</script>
+</body>
+</html>
