@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>실패는 옵션인가, 그냥 손실인가 — Lead Read</title>
+<style>
+:root{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}}
+html[data-theme="dark"]{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}
+html[data-theme="light"]{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;line-height:1.78;word-break:keep-all;overflow-wrap:anywhere}
+.page{max-width:920px;margin:auto;padding:26px 20px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--ln);font-size:.78rem;letter-spacing:.1em;color:var(--mut)}
+.top b{color:var(--ink)}
+button{font:inherit;font-size:.8rem;padding:6px 10px;color:var(--ink);background:var(--sf);border:1px solid var(--ln);border-radius:4px;cursor:pointer}
+a{color:var(--ac);text-underline-offset:.2em}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--mk);outline-offset:3px}
+header{padding:34px 0 10px}
+.kicker{color:var(--mk);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.28;letter-spacing:-.03em;margin:.4em 0 .3em}
+.dek{font-size:clamp(1.02rem,2.2vw,1.18rem);color:var(--mut);margin:0 0 10px;max-width:62ch}
+.tag{display:inline-block;margin-top:12px;padding:4px 10px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:700;border-radius:3px}
+h2{font-size:clamp(1.22rem,2.8vw,1.62rem);line-height:1.34;letter-spacing:-.02em;margin:0 0 8px}
+h2 span{display:block;font-size:.78rem;font-weight:600;letter-spacing:.06em;color:var(--mk);margin-top:5px}
+h3{font-size:1.02rem;margin:0 0 6px}
+p{margin:0 0 14px;max-width:70ch}
+section{padding:26px 0;border-top:1px solid var(--ln)}
+.leadbox{margin:22px 0 4px;padding:20px;background:var(--sf);border-left:4px solid var(--ac)}
+.lb-label{font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin:0 0 4px}
+.lb-q{font-size:1.06rem;font-weight:700;margin:0 0 14px}
+.lb-a{margin:0;color:var(--ink)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.pole{padding:18px;background:var(--sf);border-top:4px solid var(--ac)}
+.pole:nth-child(2){border-top-color:var(--mk)}
+.pole small{display:block;font-size:.72rem;letter-spacing:.1em;font-weight:800;color:var(--mk);margin-bottom:6px}
+.clash{margin-top:16px;padding:16px 18px;background:var(--ac2);border-left:4px solid var(--mk)}
+.timeline{margin-top:18px;padding-left:18px;border-left:2px solid var(--ln)}
+.tl{position:relative;margin:0 0 16px}
+.tl:before{content:"";position:absolute;left:-25px;top:.55em;width:9px;height:9px;border-radius:50%;background:var(--mk)}
+.tl b{display:block;color:var(--mk);font-size:.92rem}
+.tl p{margin:2px 0 0;color:var(--mut)}
+.signal{margin-top:16px;padding:18px;background:var(--ac2);border:1px solid var(--ln)}
+.siglabel{display:inline-block;font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin-right:8px}
+.mnote{margin:16px 0;padding:13px 15px;background:var(--mk2);border-left:3px solid var(--mk);font-size:.95rem}
+.mnote b{display:block;font-size:.72rem;letter-spacing:.1em;color:var(--mk);margin-bottom:4px}
+.table-wrap{overflow-x:auto;margin-top:14px}
+table{width:100%;border-collapse:collapse;font-size:.93rem;table-layout:fixed;word-break:normal}
+caption{word-break:normal;text-align:left;padding-bottom:8px}
+th,td{border-bottom:1px solid var(--ln);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--ac2);color:var(--ink);font-size:.85rem}
+.scan{margin-top:16px;padding:15px 17px;background:var(--sf);border:1px solid var(--ln);border-left:4px solid var(--ac)}
+.ask ol{margin:12px 0 0;padding-left:22px}
+.ask li{margin:0 0 10px}
+.closing{padding:24px;background:var(--sf);border-top:2px solid var(--ac)}
+.closing h2{margin-bottom:10px}
+.closing p{font-size:1.04rem;margin:0}
+.cite{color:var(--mut);font-size:.94rem}
+details{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--ln)}
+summary{cursor:pointer;font-weight:700;color:var(--ac)}
+.source{margin:8px 0 0;font-size:.92rem;color:var(--mut)}
+.source cite{font-style:normal;color:var(--ink);font-weight:600}
+footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--ln);color:var(--mut);font-size:.84rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.author-credit{color:var(--ink);font-weight:800}
+@media (max-width:640px){
+.page{padding:18px 14px 44px}
+.duo{grid-template-columns:1fr}
+header{padding:24px 0 6px}
+section{padding:22px 0}
+table{font-size:.84rem}
+th,td{padding:8px 7px}
+.closing{padding:18px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="top"><span><b>Lead Read</b> · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="테마 바꾸기">테마</button></div>
+<header>
+<p class="kicker">Lead Read · 리더십 브리핑</p>
+<h1>실패는 옵션인가, 그냥 손실인가</h1>
+<p class="dek">실패해도 배운다는 문장이 손익계산서에는 항목으로 없습니다. 어떤 실패는 정보이고 어떤 실패는 재고입니다.</p>
+<p class="tag">신호 · 적용 사례 · 판단 질문</p>
+</header>
+
+<div class="leadbox">
+<p class="lb-label">핵심 질문</p>
+<p class="lb-q">이 베팅의 포기 기준을 지금 적을 수 있는가?</p>
+<p class="lb-label">한 문장 결론</p>
+<p class="lb-a">실패를 옵션으로 설계하려면 중단 기준을 미리 적을 수 있어야 합니다. 적지 못하면 그것은 옵션이 아니라 경로이고, 남는 것은 배움이 아니라 청구서일 수 있습니다.</p>
+</div>
+
+<section>
+<h2>왜 지금 이 문제인가<span>배움이라는 말과 손실이라는 항목</span></h2>
+<p>신사업 검토서에는 실패해도 배운다는 문장이 들어갑니다. 그러나 손익계산서에는 배움이 항목으로 없습니다.</p><p>어떤 실패는 작은 비용으로 많은 것을 알려주고 어떤 실패는 큰 손실만 남깁니다. 차이는 어디서 오는가. 실패를 미리 옵션으로 설계할 수 있는가.</p>
+</section>
+
+<section>
+<h2>두 연구가 갈라지는 지점<span>옵션 묶음인가, 경로 의존인가</span></h2>
+<div class="signal"><p><span class="siglabel">신호 A · 옵션의 신호</span>맥그래스는 1999년 논문에서 불확실성이 큰 사업에 전액을 걸지 않고 조건이 유리해질 때만 투자를 키우라고 했습니다. 옵션은 하나씩이 아니라 묶음으로 값 매겨지고, 실패는 이 방향이 아니라는 사실을 확인한 비용이 됩니다. 실패를 피하는 규칙은 기회를 놓치는 비용을 만듭니다. 작게 여러 번 시도하고 각 단계에서 다음 투자를 결정하라는 처방입니다. 회수할 수 없는 지출은 옵션이 아니라 약속입니다.</p><p><span class="siglabel">신호 B · 경계의 신호</span>애드너와 레빈설은 2004년 논문에서 실물옵션 논리의 경계를 따졌습니다. 탐색이 선택지 자체를 바꾸면 중단 결정은 미리 구조화되지 않습니다. 시장과 기술 목표가 유동적이면 단계적 투자는 경로 의존적 탐색과 구별되지 않습니다. 옵션은 행사와 포기가 사전에 정의될 때 성립합니다. 옵션을 유지하려고 조직을 유연하게 만들면 탐색에서 나온 발견을 실행으로 옮기는 힘이 약해질 수 있습니다.</p></div><div class="clash"><p>하나는 실패를 옵션 프리미엄으로 회계해 작은 실패를 늘리라고 하고, 다른 하나는 선택지가 탐색으로 변하는 영역에서는 옵션과 경로를 구별할 수 없다고 합니다. 갈리는 것은 중단 기준을 사전에 적을 수 있는가입니다.</p></div>
+</section>
+
+<section class="case">
+<h2>적용 사례 — 2014년, 아마존 파이어폰<span>6월 공개에서 2015년 판매 종료까지</span></h2>
+<p>아마존은 2014년 6월 18일 첫 스마트폰을 공개하고 7월 25일 판매를 시작했습니다. 32GB 모델은 약정 199달러, 무약정 649달러였습니다. 3D 화면과 상품 인식 버튼을 내세우고 1년 이용권을 끼워 팔았습니다. 가격은 하드웨어 하나의 값이 아니라 생태계 유입의 값이었습니다.</p><p>7주 뒤인 9월 8일 회사는 약정가를 99센트로, 무약정가를 449달러로 내렸습니다. 10월 23일 3분기 실적에서 1억 7,000만 달러의 평가손실을 기록했습니다. 재고 평가와 공급업체 약정 비용이 대부분이었고 남은 재고는 8,300만 달러였습니다. 2015년 재고가 소진되며 판매가 끝났습니다.</p><p>남은 재고는 다음 실험의 씨앗이 아니라 이미 만든 물량의 값이었습니다. 옵션이었다면 남은 물량을 다 팔지 않고도 다음 단계로 넘어갈 수 있었어야 합니다. 공개된 자료에는 단계별 중단 기준이 없었습니다. 가격 인하는 같은 제품을 계속 밀면서 변수 하나를 바꾼 조정이었습니다.</p>
+</section>
+
+<section>
+<h2>렌즈 — 이중학습<span>베이트슨의 두 층</span></h2>
+<p>베이트슨은 학습을 두 층으로 나눴습니다. 학습 I은 주어진 틀 안에서 반응을 고치는 일이고, 학습 II는 그 틀 자체를 배우는 일입니다. 시험을 거듭한 동물이 다음 시험을 빨리 익히는 것은 반응 개선이 아니라 상황의 구조를 학습한 결과입니다.</p><p>파이어폰의 가격 인하는 학습 I입니다. 같은 게임에서 점수를 고치는 일입니다. 옵션 논리가 요구하는 것은 학습 II입니다. 어떤 베팅을 옵션으로 만들지, 포기 기준을 어디에 둘지 그 규칙을 바꾸는 일입니다. 실패를 배움으로 부르는 문장은 어느 층의 학습이 일어났는지를 밝힐 때만 값을 갖습니다.</p>
+</section>
+
+<section class="ask">
+<h2>리더의 판단 질문<span>결정 전에 스스로 확인할 것</span></h2>
+<ol><li>이 베팅의 포기 기준을 지금 적을 수 있는가?</li><li>실패했을 때 남는 것이 정보인가 재고인가?</li><li>우리가 요구하는 학습은 학습 I인가 학습 II인가?</li></ol>
+</section>
+
+<section class="closing">
+<h2>한 줄로 남기면</h2>
+<p>실패를 자산으로 부르는 조직은 그 자산의 이름과 상한을 함께 적어야 합니다. 포기 기준을 적을 수 있는가, 남는 것이 정보인가 재고인가, 요구하는 학습이 어느 층인가. 첫째를 적지 못하면 배움이라는 문장이 청구서를 가립니다.</p>
+</section>
+
+<section>
+<h2>근거 자료<span>서지와 확인 범위</span></h2>
+<p class="cite">두 논문은 공개 학술 서지와 논지 범위에서 정리했습니다. 사례는 회사 보도자료와 분기 공시로 확인했고, 경영 판단을 평가하지 않습니다.</p>
+<details><summary>실패를 옵션으로 본다</summary><p class="source">Rita Gunther McGrath, “Falling Forward,” <cite>Academy of Management Review</cite> 24(1) (1999).</p></details><details><summary>옵션의 경계를 긋는다</summary><p class="source">Ron Adner·Daniel A. Levinthal, “What Is Not a Real Option,” <cite>Academy of Management Review</cite> 29(1) (2004).</p></details><details><summary>공개 사건 기록</summary><p class="source">보도자료(2014-06-18, 2014-07-25, 2014-09-08), 2014년 3분기 10-Q(2014-10-23), 판매 종료 보도(2015-09-09)로 확인했습니다.</p></details>
+</section>
+
+<footer>
+<span>Lead Read · 3분 브리핑</span>
+<p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+const root=document.documentElement;const b=document.getElementById('theme-toggle');
+b.addEventListener('click',()=>{const n=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=n;});
+</script>
+</body>
+</html>
