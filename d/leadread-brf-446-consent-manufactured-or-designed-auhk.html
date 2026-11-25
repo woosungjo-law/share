@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>자발성은 동의인가, 설계인가 — Lead Read</title>
+<style>
+:root{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}}
+html[data-theme="dark"]{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}
+html[data-theme="light"]{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;line-height:1.78;word-break:keep-all;overflow-wrap:anywhere}
+.page{max-width:920px;margin:auto;padding:26px 20px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--ln);font-size:.78rem;letter-spacing:.1em;color:var(--mut)}
+.top b{color:var(--ink)}
+button{font:inherit;font-size:.8rem;padding:6px 10px;color:var(--ink);background:var(--sf);border:1px solid var(--ln);border-radius:4px;cursor:pointer}
+a{color:var(--ac);text-underline-offset:.2em}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--mk);outline-offset:3px}
+header{padding:34px 0 10px}
+.kicker{color:var(--mk);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.28;letter-spacing:-.03em;margin:.4em 0 .3em}
+.dek{font-size:clamp(1.02rem,2.2vw,1.18rem);color:var(--mut);margin:0 0 10px;max-width:62ch}
+.tag{display:inline-block;margin-top:12px;padding:4px 10px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:700;border-radius:3px}
+h2{font-size:clamp(1.22rem,2.8vw,1.62rem);line-height:1.34;letter-spacing:-.02em;margin:0 0 8px}
+h2 span{display:block;font-size:.78rem;font-weight:600;letter-spacing:.06em;color:var(--mk);margin-top:5px}
+h3{font-size:1.02rem;margin:0 0 6px}
+p{margin:0 0 14px;max-width:70ch}
+section{padding:26px 0;border-top:1px solid var(--ln)}
+.leadbox{margin:22px 0 4px;padding:20px;background:var(--sf);border-left:4px solid var(--ac)}
+.lb-label{font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin:0 0 4px}
+.lb-q{font-size:1.06rem;font-weight:700;margin:0 0 14px}
+.lb-a{margin:0;color:var(--ink)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.pole{padding:18px;background:var(--sf);border-top:4px solid var(--ac)}
+.pole:nth-child(2){border-top-color:var(--mk)}
+.pole small{display:block;font-size:.72rem;letter-spacing:.1em;font-weight:800;color:var(--mk);margin-bottom:6px}
+.clash{margin-top:16px;padding:16px 18px;background:var(--ac2);border-left:4px solid var(--mk)}
+.timeline{margin-top:18px;padding-left:18px;border-left:2px solid var(--ln)}
+.tl{position:relative;margin:0 0 16px}
+.tl:before{content:"";position:absolute;left:-25px;top:.55em;width:9px;height:9px;border-radius:50%;background:var(--mk)}
+.tl b{display:block;color:var(--mk);font-size:.92rem}
+.tl p{margin:2px 0 0;color:var(--mut)}
+.signal{margin-top:16px;padding:18px;background:var(--ac2);border:1px solid var(--ln)}
+.siglabel{display:inline-block;font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin-right:8px}
+.mnote{margin:16px 0;padding:13px 15px;background:var(--mk2);border-left:3px solid var(--mk);font-size:.95rem}
+.mnote b{display:block;font-size:.72rem;letter-spacing:.1em;color:var(--mk);margin-bottom:4px}
+.table-wrap{overflow-x:auto;margin-top:14px}
+table{width:100%;border-collapse:collapse;font-size:.93rem;table-layout:fixed;word-break:normal}
+caption{word-break:normal;text-align:left;padding-bottom:8px}
+th,td{border-bottom:1px solid var(--ln);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--ac2);color:var(--ink);font-size:.85rem}
+.scan{margin-top:16px;padding:15px 17px;background:var(--sf);border:1px solid var(--ln);border-left:4px solid var(--ac)}
+.ask ol{margin:12px 0 0;padding-left:22px}
+.ask li{margin:0 0 10px}
+.closing{padding:24px;background:var(--sf);border-top:2px solid var(--ac)}
+.closing h2{margin-bottom:10px}
+.closing p{font-size:1.04rem;margin:0}
+.cite{color:var(--mut);font-size:.94rem}
+details{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--ln)}
+summary{cursor:pointer;font-weight:700;color:var(--ac)}
+.source{margin:8px 0 0;font-size:.92rem;color:var(--mut)}
+.source cite{font-style:normal;color:var(--ink);font-weight:600}
+footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--ln);color:var(--mut);font-size:.84rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.author-credit{color:var(--ink);font-weight:800}
+@media (max-width:640px){
+.page{padding:18px 14px 44px}
+.duo{grid-template-columns:1fr}
+header{padding:24px 0 6px}
+section{padding:22px 0}
+table{font-size:.84rem}
+th,td{padding:8px 7px}
+.closing{padding:18px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="top"><span><b>Lead Read</b> · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="테마 바꾸기">테마</button></div>
+<header>
+<p class="kicker">Lead Read · 리더십 브리핑</p>
+<h1>자발성은 동의인가, 설계인가</h1>
+<p class="dek">앱에 뜨는 금액 하나. 그 안에 임금과 팁이 섞여 있는지는 보이지 않습니다.</p>
+<p class="tag">시간축 · 두 관점 · 판단 질문</p>
+</header>
+
+<div class="leadbox">
+<p class="lb-label">핵심 질문</p>
+<p class="lb-q">이 일의 규칙을 정한 사람은 자기를 무엇이라고 부르는가?</p>
+<p class="lb-label">한 문장 결론</p>
+<p class="lb-a">자발적으로 일하는 것과 규칙을 정한 사람이 책임지는 것은 다른 일입니다. 게임에 참여하는 동안 동의가 생기지만, 게임의 계산식을 정한 자가 비어 있으면 그 동의는 책임으로 이어지지 않습니다.</p>
+</div>
+
+<section>
+<h2>왜 지금 이 문제인가<span>같은 화면에 있는 자발성과 통제</span></h2>
+<p>배달을 마치면 앱에 금액 하나가 뜹니다. 사람은 그 숫자를 자기 하루의 값으로 읽습니다. 그러나 그 숫자가 어떻게 만들어졌는지는 보이지 않습니다.</p><p>내가 번 돈인지, 누가 지급하기로 한 최소선인지. 같은 숫자인데 뒤의 회계가 다르면 다른 사건입니다.</p>
+</section>
+
+<section>
+<h2>두 연구가 갈라지는 지점<span>게임의 안쪽인가, 게임을 세팅한 바깥쪽인가</span></h2>
+<h3>노동 과정 — 동의는 일하면서 만들어진다</h3><p>부라워이는 1979년 저서에서 공장 노동자가 왜 그렇게까지 일하는지를 물었습니다. 강제만으로는 설명이 되지 않았습니다. 노동자들은 목표를 정하고 넘기는 일을 게임으로 조직했습니다. 규칙이 있고 점수가 있고 요령이 있습니다. 그 게임에 참여하는 동안 노동자는 자기 일의 조건을 자기 선택으로 경험합니다. 그래서 동의는 임금으로 사는 것이 아니라 노동 과정에서 생산됩니다.</p><h3>플랫폼 — 통제자는 있는데 고용주가 없다</h3><p>발라스와 쇼어는 2020년 리뷰에서 플랫폼을 관대한 군주로 불렀습니다. 거래에 대한 책임은 밖으로 밀어내면서 권력은 한곳에 모은다는 진단입니다. 시장은 계약하고 위계는 명령하며 네트워크는 협력하지만, 플랫폼은 어느 것도 아니면서 셋의 효과를 냅니다. 공장에서는 관리자가 규칙 앞에 서 있었지만, 플랫폼에서는 그 자리가 비어 있어 알고리즘이 규칙을 민다.</p><div class="clash"><p>한쪽은 게임의 안쪽을, 다른 쪽은 게임을 세팅한 바깥쪽을 봅니다. 게임이 성립하려면 규칙을 정하는 자와 그것을 부인하는 자가 동시에 있어야 합니다. 처방도 갈립니다. 규칙을 협상 가능하게 만들 것인가, 규칙을 정한 자를 규칙 제정자로 호명할 것인가.</p></div>
+</section>
+
+<section class="case">
+<h2>적용 사례 — 아마존 플렉스의 팁 계산<span>2015년 광고에서 2021년 합의까지</span></h2>
+<p>이 회사는 2015년 배달 프로그램을 열며 시간당 18~25달러에 팁 전액을 더 준다고 광고했습니다. 2016년 말 계산이 바뀝니다. 지역 평균 팁 자료로 내부 기준시급을 정하고, 그 값을 광고 범위의 하한으로 삼아 팁으로 하한을 채운 것입니다.</p><p>미 연방거래위원회가 공개한 사례가 구조를 보여줍니다. 1시간에 18~25달러를 제시했는데 기준시급이 12달러이고 고객이 6달러를 남기면, 회사는 12달러만 내고 팁 6달러로 18달러를 맞췄습니다. 앱은 합계만 보여주고 팁을 따로 표시하지 않았습니다.</p><p>2년 반 동안 고객 팁의 거의 3분의 1이 회사 급여 쪽으로 돌아갔고 총액은 6,170만 달러였습니다. 바뀐 것은 2019년 5월 조사 착수 통지가 온 뒤였습니다. 2021년 2월 회사는 6,171만 583달러를 내기로 합의했고, 팁 처리 방식을 바꿀 때 운전자의 명시적 동의를 먼저 받으라는 명령이 뒤따랐습니다.</p><div class="timeline"><div class="tl"><b>2015년</b><p>시간당 18~25달러에 팁 전액을 더 준다고 광고했습니다.</p></div><div class="tl"><b>2016년 말</b><p>기준시급을 정해 팁으로 광고 하한을 채우는 방식이 시작됐습니다.</p></div><div class="tl"><b>2019-05</b><p>연방거래위원회의 조사 착수 통지가 왔습니다.</p></div><div class="tl"><b>2019-08-22</b><p>지급 내역을 나눠 보여주는 방식이 나왔습니다.</p></div><div class="tl"><b>2021-02</b><p>회사는 6,171만 583달러 지급에 합의했습니다.</p></div><div class="tl"><b>이후 명령</b><p>팁 처리 방식을 바꿀 때 명시적 동의를 먼저 받도록 했습니다.</p></div></div>
+</section>
+
+<section>
+<h2>렌즈 — 정의의 영역들<span>발저의 차단된 교환</span></h2>
+<p>발저는 1983년 저서에서 한 원리로 모든 것을 나누려는 이론을 거부했습니다. 의료는 필요로, 직위는 자격으로, 처벌은 응보로 나뉩니다. 평등은 하나의 저울이 아니라 영역 사이의 경계 문제입니다. 한 영역의 우위가 다른 영역을 지배하면 폭정이라 불렀습니다.</p><p>팁은 고객이 준 보상이고 임금은 계약의 대가입니다. 의미가 다른 두 재화인데 회사는 임금 몫을 팁으로 채웠습니다. 처분은 차단된 교환의 설치였습니다. 팁과 급여를 나눠 표시하고, 방식을 바꾸려면 명시적 동의를 받도록 한 것입니다. 총량이 아니라 환전의 통로를 막은 처방입니다.</p>
+</section>
+
+<section class="ask">
+<h2>리더의 판단 질문<span>결정 전에 스스로 확인할 것</span></h2>
+<ol><li>이 게임의 규칙은 무엇이며 누구에게 유리한가?</li><li>규칙을 정한 자는 자기를 무엇이라고 부르는가?</li><li>의미가 다른 두 재화가 어디서 환전되고 있는가?</li></ol>
+</section>
+
+<section class="closing">
+<h2>한 줄로 남기면</h2>
+<p>자발성과 통제를 같은 숫자 안에서 읽지 말아야 합니다. 규칙이 누구에게 유리한가, 규칙을 정한 자가 자기를 어떻게 부르는가, 의미가 다른 재화가 어디서 바뀌는가. 세 번째를 묻지 않으면 화면의 숫자가 두 사건을 하나로 가립니다.</p>
+</section>
+
+<section>
+<h2>근거 자료<span>서지와 확인 범위</span></h2>
+<p class="cite">두 저작은 공개 서지와 논지 범위에서 정리했습니다. 사례는 규제 당국 문서와 공개 보도로 교차 확인했고, 법적 책임을 새로 판단하지 않습니다.</p>
+<details><summary>동의는 게임에서 생산된다</summary><p class="source">Michael Burawoy, <cite>Manufacturing Consent</cite> (1979). 노동 과정으로서의 게임을 참조했습니다.</p></details><details><summary>관대한 군주</summary><p class="source">Steven Vallas·Juliet B. Schor, “What Do Platforms Do?”, <cite>Annual Review of Sociology</cite> 46 (2020). 책임의 외부화와 권력 집중을 참조했습니다.</p></details><details><summary>공개 사건 기록</summary><p class="source">연방거래위원회 민원서(사건 1923123), 보도자료(2021-02-02), 명령(2021-06-09)으로 수치와 시점을 확인했습니다.</p></details>
+</section>
+
+<footer>
+<span>Lead Read · 3분 브리핑</span>
+<p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+const root=document.documentElement;const b=document.getElementById('theme-toggle');
+b.addEventListener('click',()=>{const n=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=n;});
+</script>
+</body>
+</html>
