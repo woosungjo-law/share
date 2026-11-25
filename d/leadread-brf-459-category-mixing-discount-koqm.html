@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>범주를 섞으면 왜 할인되는가 — Lead Read</title>
+<style>
+:root{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}}
+html[data-theme="dark"]{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}
+html[data-theme="light"]{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;line-height:1.78;word-break:keep-all;overflow-wrap:anywhere}
+.page{max-width:920px;margin:auto;padding:26px 20px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--ln);font-size:.78rem;letter-spacing:.1em;color:var(--mut)}
+.top b{color:var(--ink)}
+button{font:inherit;font-size:.8rem;padding:6px 10px;color:var(--ink);background:var(--sf);border:1px solid var(--ln);border-radius:4px;cursor:pointer}
+a{color:var(--ac);text-underline-offset:.2em}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--mk);outline-offset:3px}
+header{padding:34px 0 10px}
+.kicker{color:var(--mk);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.28;letter-spacing:-.03em;margin:.4em 0 .3em}
+.dek{font-size:clamp(1.02rem,2.2vw,1.18rem);color:var(--mut);margin:0 0 10px;max-width:62ch}
+.tag{display:inline-block;margin-top:12px;padding:4px 10px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:700;border-radius:3px}
+h2{font-size:clamp(1.22rem,2.8vw,1.62rem);line-height:1.34;letter-spacing:-.02em;margin:0 0 8px}
+h2 span{display:block;font-size:.78rem;font-weight:600;letter-spacing:.06em;color:var(--mk);margin-top:5px}
+h3{font-size:1.02rem;margin:0 0 6px}
+p{margin:0 0 14px;max-width:70ch}
+section{padding:26px 0;border-top:1px solid var(--ln)}
+.leadbox{margin:22px 0 4px;padding:20px;background:var(--sf);border-left:4px solid var(--ac)}
+.lb-label{font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin:0 0 4px}
+.lb-q{font-size:1.06rem;font-weight:700;margin:0 0 14px}
+.lb-a{margin:0;color:var(--ink)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.pole{padding:18px;background:var(--sf);border-top:4px solid var(--ac)}
+.pole:nth-child(2){border-top-color:var(--mk)}
+.pole small{display:block;font-size:.72rem;letter-spacing:.1em;font-weight:800;color:var(--mk);margin-bottom:6px}
+.clash{margin-top:16px;padding:16px 18px;background:var(--ac2);border-left:4px solid var(--mk)}
+.timeline{margin-top:18px;padding-left:18px;border-left:2px solid var(--ln)}
+.tl{position:relative;margin:0 0 16px}
+.tl:before{content:"";position:absolute;left:-25px;top:.55em;width:9px;height:9px;border-radius:50%;background:var(--mk)}
+.tl b{display:block;color:var(--mk);font-size:.92rem}
+.tl p{margin:2px 0 0;color:var(--mut)}
+.signal{margin-top:16px;padding:18px;background:var(--ac2);border:1px solid var(--ln)}
+.siglabel{display:inline-block;font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin-right:8px}
+.mnote{margin:16px 0;padding:13px 15px;background:var(--mk2);border-left:3px solid var(--mk);font-size:.95rem}
+.mnote b{display:block;font-size:.72rem;letter-spacing:.1em;color:var(--mk);margin-bottom:4px}
+.table-wrap{overflow-x:auto;margin-top:14px}
+table{width:100%;border-collapse:collapse;font-size:.93rem;table-layout:fixed;word-break:normal}
+caption{word-break:normal;text-align:left;padding-bottom:8px}
+th,td{border-bottom:1px solid var(--ln);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--ac2);color:var(--ink);font-size:.85rem}
+.scan{margin-top:16px;padding:15px 17px;background:var(--sf);border:1px solid var(--ln);border-left:4px solid var(--ac)}
+.ask ol{margin:12px 0 0;padding-left:22px}
+.ask li{margin:0 0 10px}
+.closing{padding:24px;background:var(--sf);border-top:2px solid var(--ac)}
+.closing h2{margin-bottom:10px}
+.closing p{font-size:1.04rem;margin:0}
+.cite{color:var(--mut);font-size:.94rem}
+details{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--ln)}
+summary{cursor:pointer;font-weight:700;color:var(--ac)}
+.source{margin:8px 0 0;font-size:.92rem;color:var(--mut)}
+.source cite{font-style:normal;color:var(--ink);font-weight:600}
+footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--ln);color:var(--mut);font-size:.84rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.author-credit{color:var(--ink);font-weight:800}
+@media (max-width:640px){
+.page{padding:18px 14px 44px}
+.duo{grid-template-columns:1fr}
+header{padding:24px 0 6px}
+section{padding:22px 0}
+table{font-size:.84rem}
+th,td{padding:8px 7px}
+.closing{padding:18px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="top"><span><b>Lead Read</b> · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="테마 바꾸기">테마</button></div>
+<header>
+<p class="kicker">Lead Read · 리더십 브리핑</p>
+<h1>범주를 섞으면 왜 할인되는가</h1>
+<p class="dek">통신사이면서 투자회사인 기업. 분류가 흔들리면 비교 대상이 사라지고, 비교 대상이 사라지면 값이 매겨지지 않습니다.</p>
+<p class="tag">신호 · 적용 사례 · 판단 질문</p>
+</header>
+
+<div class="leadbox">
+<p class="lb-label">핵심 질문</p>
+<p class="lb-q">우리를 평가하는 이는 시장 수용자인가, 시장 조성자인가?</p>
+<p class="lb-label">한 문장 결론</p>
+<p class="lb-a">범주를 벗어난 기업에 붙는 할인은 실적의 결과가 아니라 분류의 결과입니다. 다만 같은 모호함이 소비자에게는 결함이고 투자자에게는 유연성입니다. 청중이 부호를 정합니다.</p>
+</div>
+
+<section>
+<h2>왜 지금 이 문제인가<span>서랍 밖에 놓인 회사</span></h2>
+<p>한 회사가 통신사이면서 투자회사이고, 제조사이면서 소프트웨어 회사라면 시장은 이 회사를 어디에 넣어야 하는가. 분류가 흔들리면 비교 대상이 사라집니다.</p><p>비교 대상이 사라지면 값이 매겨지지 않습니다. 그렇다면 이 할인은 보편적인 벌인가, 아니면 평가자에 따라 달라지는 조건인가. 답에 따라 범주를 정리할 일인지 청중을 고를 일인지가 갈립니다.</p>
+</section>
+
+<section>
+<h2>두 연구가 갈라지는 지점<span>보편적 할인인가, 청중별 부호인가</span></h2>
+<div class="signal"><p><span class="siglabel">신호 A · 정당성 할인</span>에즈라 저커만은 1999년 논문에서 1985년부터 1994년까지의 미국 상장기업을 분석했습니다. 주식 시장을 평론가가 매개하는 시장으로 보았습니다. 애널리스트는 특정 산업을 전문으로 다루며 그 산업의 기업을 분석해 리포트를 냅니다. 기업이 자기 산업의 전문 애널리스트에게 커버리지를 받지 못하면 그 기업의 정체성이 평론가에게 읽히지 않았다는 신호입니다. 분석 결과, 해당 산업 전문가의 커버리지를 받지 못한 기업의 주가는 그만큼 할인됐습니다. 벌의 근거가 성과가 아니라 분류라는 점이 중요합니다. 전문 애널리스트가 없으면 그 기업의 정보가 시장에 덜 풀리고 정보가 적으면 수요도 적어집니다.</p><p><span class="siglabel">신호 B · 청중의 부호</span>엘리자베스 폰티키스는 2012년 논문에서 이 결론에 조건을 붙였습니다. 1990년부터 2002년까지 미국 소프트웨어 기업을 추적하며 청중을 둘로 나눴습니다. 시장 수용자는 상품을 소비하거나 평가하며 시장 라벨을 이용해 기업을 찾고 비교합니다. 시장 조성자는 시장 구조 자체를 다시 정의하는 데 관심이 있습니다. 모호한 라벨을 내건 기업은 소비자에게 덜 매력적이었습니다. 무엇을 사는지 알 수 없기 때문입니다. 반대로 벤처캐피털은 같은 모호함을 유연성으로 읽고 더 매력적으로 평가했습니다. 라벨을 여러 개 붙인다고 소비자의 혐오가 더 커지거나 투자자의 선호가 더 커지지는 않았습니다. 효과는 개수가 아니라 성질에서 나왔습니다.</p></div><div class="clash"><p>두 논문은 범주 위반의 비용을 보편적 벌로 보는가, 청중별 조건으로 보는가에서 갈립니다. 앞은 평론가가 매개하는 시장에서 할인이 구조적으로 발생한다고 보고, 뒤는 누가 평가하느냐가 부호를 정한다고 봅니다. 처방도 다릅니다. 앞은 범주를 명확히 하라고 하고 뒤는 청중을 나눠 라벨을 설계하라고 합니다. 공개 시장에 상장된 기업이라면 두 청중이 동시에 존재하므로 두 논문을 함께 적용해야 합니다.</p></div>
+</section>
+
+<section class="case">
+<h2>적용 사례 — 소프트뱅크의 자기 규정과 할인<span>2020년 73퍼센트에서 2026년 39퍼센트로</span></h2>
+<p>이 회사는 일본의 통신 사업자이면서 세계의 기술 기업에 투자하는 지주회사입니다. 회사는 스스로를 전략적 투자 지주회사로 규정하고 기업 가치의 지표로 순자산가치를 씁니다. 문제는 시장이 이 지표를 그대로 받아들이지 않는다는 점입니다.</p><p>2020년 3월 23일 회사는 4조 5,000억 엔 규모의 자산 매각과 자사주 매입·부채 축소를 발표하며 직전 주까지 주가가 내재가치 대비 73퍼센트 할인으로 거래됐고 이것이 역대 최대 할인이라고 밝혔습니다. 2022년 8월 8일 자사주 매입 결의에서도 이유를 순자산가치 대비 깊은 할인의 교정이라고 적었습니다. 2026년 9월 30일 기준 순자산가치는 주당 1만 499엔, 주가는 6,430엔이었습니다. 할인은 약 39퍼센트입니다.</p><p>이 사례는 저커만의 논지와 맞물립니다. 통신 분석가와 기술 투자 분석가 사이에서 이 회사의 정체성은 분절되고 비교 가능한 동종 기업이 없습니다. 동시에 폰티키스의 논지도 성립합니다. 사모 시장에서 이 회사는 시장 조성자로 프리미엄을 받지만 공개 시장의 시장 수용자는 같은 회사를 할인합니다. 시장을 만드는 회사가 시장 수용자의 눈으로 평가받을 때 할인이 가장 크게 붙는 셈입니다.</p>
+</section>
+
+<section>
+<h2>렌즈 — 분류와 오염<span>더글러스의 위치</span></h2>
+<p>메리 더글러스는 1966년 저서에서 오염을 제자리에 있지 않은 것으로 정의했습니다. 분류 체계는 사물을 질서 안에 배치하고 그 질서를 벗어나는 것을 경계로 밀어냅니다. 그녀에게 더러움은 물질의 성질이 아니라 위치의 문제였습니다.</p><p>범주를 섞은 기업은 이 체계에서 오염에 가깝습니다. 통신사도 투자회사도 아닌 존재는 어느 서랍에도 들어가지 않고 서랍 밖에 놓인 것은 경계를 흔듭니다. 할인은 그 존재에 대한 벌이라기보다 체계가 자기 질서를 지키는 방식입니다. 그렇다면 할인을 없애는 방법은 실적 개선이 아니라 분류를 바꾸는 일이 됩니다. 다만 분류를 바꾸는 일은 서류를 고치는 일이 아니라 청중의 눈을 바꾸는 일입니다.</p>
+</section>
+
+<section class="ask">
+<h2>리더의 판단 질문<span>결정 전에 스스로 확인할 것</span></h2>
+<ol><li>우리 회사는 어느 서랍에 들어가는가, 아니면 서랍 밖에 있는가?</li><li>우리를 평가하는 이는 시장 수용자인가 시장 조성자인가?</li><li>할인은 성과의 결과인가 분류의 결과인가?</li></ol>
+</section>
+
+<section class="closing">
+<h2>한 줄로 남기면</h2>
+<p>할인을 실적으로 오진하지 않으려면 세 가지를 물어야 합니다. 우리가 어느 서랍에 있는가, 평가자가 시장 수용자인가 시장 조성자인가, 할인이 성과의 결과인가 분류의 결과인가. 첫째를 놓치면 비교 대상 없이 값이 매겨지고, 둘째를 놓치면 엉뚱한 청중에게 잘 보이려 하고, 셋째를 놓치면 분류 문제를 실적 문제로 오진합니다.</p>
+</section>
+
+<section>
+<h2>근거 자료<span>서지와 확인 범위</span></h2>
+<p class="cite">두 논문은 공개 서지와 분석 기간을 기준으로 정리했습니다. 사례 수치는 회사 공시 자료로 확인했고, 어느 기업의 투자 가치나 법적 책임을 판단하지 않습니다.</p>
+<details><summary>정당성 할인</summary><p class="source">Ezra W. Zuckerman, “The Categorical Imperative,” <cite>American Journal of Sociology</cite> 104(5) (1999). 1985~1994년 미국 상장기업.</p></details><details><summary>청중에 따라 뒤집히는 평가</summary><p class="source">Elizabeth G. Pontikes, “Two Sides of the Same Coin,” <cite>Administrative Science Quarterly</cite> 57(1) (2012). 1990~2002년 미국 소프트웨어 기업.</p></details><details><summary>오염과 분류</summary><p class="source">메리 더글러스, 『순수와 위험』(1966). 오염·분류 논지만 사용했고 발췌는 없습니다.</p></details>
+</section>
+
+<footer>
+<span>Lead Read · 3분 브리핑</span>
+<p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+const root=document.documentElement;const b=document.getElementById('theme-toggle');
+b.addEventListener('click',()=>{const n=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=n;});
+</script>
+</body>
+</html>
