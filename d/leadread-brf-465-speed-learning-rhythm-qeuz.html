@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>속도는 학습을 밀어내는가, 학습이 속도를 만드는가 — Lead Read</title>
+<style>
+:root{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}}
+html[data-theme="dark"]{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}
+html[data-theme="light"]{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans KR","Pretendard","Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;line-height:1.78;word-break:keep-all;overflow-wrap:anywhere}
+.page{max-width:920px;margin:auto;padding:26px 20px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--ln);font-size:.78rem;letter-spacing:.1em;color:var(--mut)}
+.top b{color:var(--ink)}
+button{font:inherit;font-size:.8rem;padding:6px 10px;color:var(--ink);background:var(--sf);border:1px solid var(--ln);border-radius:4px;cursor:pointer}
+a{color:var(--ac);text-underline-offset:.2em}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--mk);outline-offset:3px}
+header{padding:34px 0 10px}
+.kicker{color:var(--mk);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.28;letter-spacing:-.03em;margin:.4em 0 .3em}
+.dek{font-size:clamp(1.02rem,2.2vw,1.18rem);color:var(--mut);margin:0 0 10px;max-width:62ch}
+.tag{display:inline-block;margin-top:12px;padding:4px 10px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:700;border-radius:3px}
+h2{font-size:clamp(1.22rem,2.8vw,1.62rem);line-height:1.34;letter-spacing:-.02em;margin:0 0 8px}
+h2 span{display:block;font-size:.78rem;font-weight:600;letter-spacing:.06em;color:var(--mk);margin-top:5px}
+h3{font-size:1.02rem;margin:0 0 6px}
+p{margin:0 0 14px;max-width:70ch}
+section{padding:26px 0;border-top:1px solid var(--ln)}
+.leadbox{margin:22px 0 4px;padding:20px;background:var(--sf);border-left:4px solid var(--ac)}
+.lb-label{font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin:0 0 4px}
+.lb-q{font-size:1.06rem;font-weight:700;margin:0 0 14px}
+.lb-a{margin:0;color:var(--ink)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.pole{padding:18px;background:var(--sf);border-top:4px solid var(--ac)}
+.pole:nth-child(2){border-top-color:var(--mk)}
+.pole small{display:block;font-size:.72rem;letter-spacing:.1em;font-weight:800;color:var(--mk);margin-bottom:6px}
+.clash{margin-top:16px;padding:16px 18px;background:var(--ac2);border-left:4px solid var(--mk)}
+.timeline{margin-top:18px;padding-left:18px;border-left:2px solid var(--ln)}
+.tl{position:relative;margin:0 0 16px}
+.tl:before{content:"";position:absolute;left:-25px;top:.55em;width:9px;height:9px;border-radius:50%;background:var(--mk)}
+.tl b{display:block;color:var(--mk);font-size:.92rem}
+.tl p{margin:2px 0 0;color:var(--mut)}
+.signal{margin-top:16px;padding:18px;background:var(--ac2);border:1px solid var(--ln)}
+.signal p{margin:0 0 10px}
+.signal p:last-child{margin:0}
+.siglabel{display:inline-block;font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin-right:8px}
+.mnote{margin:16px 0;padding:13px 15px;background:var(--mk2);border-left:3px solid var(--mk);font-size:.95rem}
+.mnote b{display:block;font-size:.72rem;letter-spacing:.1em;color:var(--mk);margin-bottom:4px}
+.table-wrap{overflow-x:auto;margin-top:14px}
+table{width:100%;border-collapse:collapse;font-size:.93rem;table-layout:fixed;word-break:normal}
+caption{word-break:normal;text-align:left;padding-bottom:8px;color:var(--mut);font-size:.88rem}
+th,td{border-bottom:1px solid var(--ln);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--ac2);color:var(--ink);font-size:.85rem}
+.scan{margin-top:16px;padding:15px 17px;background:var(--sf);border:1px solid var(--ln);border-left:4px solid var(--ac)}
+.scan ul{margin:6px 0 0;padding-left:20px}
+.ask ol{margin:12px 0 0;padding-left:22px}
+.ask li{margin:0 0 10px}
+.closing{padding:24px;background:var(--sf);border-top:2px solid var(--ac)}
+.closing h2{margin-bottom:10px}
+.closing p{font-size:1.04rem;margin:0}
+.cite{color:var(--mut);font-size:.94rem}
+details{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--ln)}
+summary{cursor:pointer;font-weight:700;color:var(--ac)}
+.source{margin:8px 0 0;font-size:.92rem;color:var(--mut)}
+.source cite{font-style:normal;color:var(--ink);font-weight:600}
+footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--ln);color:var(--mut);font-size:.84rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.author-credit{color:var(--ink);font-weight:800}
+@media (max-width:640px){
+.page{padding:18px 14px 44px}
+.duo{grid-template-columns:1fr}
+header{padding:24px 0 6px}
+section{padding:22px 0}
+table{font-size:.84rem}
+th,td{padding:8px 7px}
+.closing{padding:18px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="top"><span><b>Lead Read</b> · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="테마 바꾸기">테마</button></div>
+<header>
+<p class="kicker">Lead Read · 리더십 브리핑</p>
+<h1>속도는 학습을 밀어내는가, 학습이 속도를 만드는가</h1>
+<p class="dek">일이 밀리면 학습은 뒤로 밀립니다. 그런데 학습을 더 하라는 처방과 일하는 리듬을 다시 짜라는 처방은 다른 곳을 고칩니다.</p>
+<p class="tag">두 관점 · 사건 연대기 · 판단 질문</p>
+</header>
+
+<div class="leadbox">
+<p class="lb-label">핵심 질문</p>
+<p class="lb-q">바쁜 조직은 언제 배우는가?</p>
+<p class="lb-label">한 문장 결론</p>
+<p class="lb-a">속도와 학습은 맞바꿀 대상이 아닙니다. 리듬을 다시 짤 자리와 개선할 여유를 배선할 자리를 나눠 물으면, 둘은 같은 일정 안에서 자리를 얻습니다.</p>
+</div>
+
+<section><h2>왜 지금 이 문제인가<span>바쁜 조직의 학습은 어디로 가는가</span></h2><p>일이 밀리면 가장 먼저 밀리는 것이 학습입니다. 오늘의 납품을 지키느라 내일의 검증을 미루고, 미뤄 둔 검증은 몇 달 뒤 같은 자리에서 다시 사고가 됩니다. 문제는 그때도 그 사고가 학습 부족이 아니라 실행 부족으로 불린다는 점입니다.</p><p>그래서 처방이 갈립니다. 학습 시간을 더 확보하라는 쪽과, 일하는 리듬 자체를 다시 짜라는 쪽입니다. 두 처방은 같은 말처럼 들리지만 고치는 대상이 다릅니다. 하나는 사람의 일정을, 다른 하나는 조직이 안정과 변동을 오가는 방식을 건드립니다.</p></section><section><h2>두 연구가 갈라지는 지점<span>리듬의 문제인가, 여유의 문제인가</span></h2><div class="duo"><div class="pole"><small>자기설계 조직</small><h3>조직은 배우고 잊는 리듬으로 선다</h3><p>보 헤드버그와 폴 니스트롬, 윌리엄 스타버크는 1976년 자기설계 조직을 논하면서 학습만으로는 부족하다고 보았습니다. 배운 것을 굳혀 안정적으로 쓰는 기간이 필요하고, 같은 방식이 오래 유지되면 그 방식이 언제 만들어졌는지 잊습니다. 낡은 전제를 버리는 미학습이 따로 필요합니다. 이들은 조직을 시소에 비유했습니다. 한쪽에 머물면 익숙함이 쌓이지만 다른 쪽 감각이 죽고, 반대로만 기울면 아무것도 굳지 않습니다. 처방은 리듬 설계입니다. 안정과 변동이 번갈아 오도록 일정과 권한을 배치하고, 기존 방식을 의심하는 구간을 정기적으로 만듭니다.</p></div><div class="pole"><small>능력 함정</small><h3>압박이 개선을 잡아먹는다</h3><p>넬슨 레페닝과 존 스터먼은 2002년 공정 개선 시도를 추적해 다른 고리를 찾았습니다. 성과가 나빠지면 당장의 생산을 늘리고, 개선에 쓸 여유가 줄고, 개선의 효과는 뒤늦게 나타납니다. 지연된 보상이 문제를 키웁니다. 개선이 먹힌다는 신호가 늦게 오니 관리자는 투자해도 소용없다고 판단하고 사람을 탓합니다. 통제가 강해지면 현장은 문제를 숨기고, 숨겨진 문제가 다시 성과를 나쁘게 만듭니다. 처방은 리듬이 아니라 여유와 피드백입니다. 개선 시간을 생산 목표와 분리해 보호하고, 작은 선행 지표로 결과를 빨리 보이게 합니다.</p></div></div><div class="clash"><p>한쪽은 조직이 안정과 변동을 오가지 않으면 배운 것이 굳어버린다고 보고 의도적인 흔들림을 일정에 넣으라고 합니다. 다른 쪽은 흔들림은 이미 충분한데 개선이 안 된다며 압박에서 개선 시간을 떼어내고 지연을 줄이라고 합니다. 공장 회의에서 갈리는 문장은 이렇습니다. 한쪽은 이제 절차를 바꿔야 할 때라고 말하고, 다른 쪽은 바꿀 시간을 먼저 확보해야 한다고 말합니다. 전자는 변화의 타이밍을, 후자는 변화의 조건을 묻습니다.</p></div></section><section class="case"><h2>적용 사례 — 갤럭시 노트7, 2016년 여름에서 가을까지<span>출시 일정과 검증 일정이 겹친 다섯 달</span></h2><p>삼성전자는 2016년 8월 새 플래그십을 내놓았습니다. 출시 일정은 지켜졌고 배터리 검증은 그 일정 안에 들어가 있었습니다. 아래 날짜는 공개 보도와 회사 성명으로 확인된 순서입니다. 사건의 법적 책임을 판단하려는 것이 아니라, 실행과 해석이 어느 간격으로 움직였는지를 보려는 것입니다.</p><div class="timeline"><div class="tl"><b>2016-08</b><p>신제품 출시. 출시 일정과 검증 일정이 같은 달력에 묶여 있었다.</p></div><div class="tl"><b>2016-09-02</b><p>배터리 화재 위험으로 약 250만 대 회수 발표. 첫 신호가 나온 시점이다.</p></div><div class="tl"><b>2016-09-15</b><p>미국에서 소비자제품안전위원회와 함께 자발적 리콜, 같은 날 교체품 공급 시작.</p></div><div class="tl"><b>2016-10-10</b><p>교체 기기에서도 화재가 보고되자 생산·판매·교체를 모두 중단.</p></div><div class="tl"><b>2016-10-13</b><p>원래 기기와 교체 기기를 모두 포함하도록 리콜 범위 확대.</p></div></div><p>속도의 그림자가 여기 있습니다. 첫 신호가 새 학습으로 번역되기 전에 다음 실행이 먼저 나갔습니다. 교체품에서 같은 종류의 사고가 반복된 것은 검증이 늦었기 때문만이 아니라, 검증 결과를 반영할 시간이 일정에 없었기 때문으로 읽힙니다. 사후 조치는 학습 쪽에 남았습니다. 제조 공정을 다시 점검하고 배터리 안전 검사 항목을 강화했습니다. 다만 그것이 리듬을 다시 짠 것인지, 사고 뒤에만 흔들린 것인지는 공개 기록만으로 단정하기 어렵습니다.</p></section><section><h2>렌즈 — 지식은 어디에서 말해지는가<span>칼 만하임의 자리</span></h2><p>칼 만하임은 지식이 그것을 말하는 사회적 자리와 무관하게 성립하지 않는다고 보았습니다. 어떤 문제가 보이고 무엇이 원인으로 불리는가는 그 문제를 바라보는 자리와 함께 정해집니다.</p><p>출시 일정의 압박을 보는 자리에서는 일정 준수가 성과였고, 배터리 검증을 보는 자리에서는 같은 일정이 위험이었습니다. 사고 뒤에 열린 점검은 그 자리를 옮긴 결과였습니다. 내가 통제할 수 있는 것은 누가 어느 자리에서 문제를 말할 수 있게 두는가입니다. 통제할 수 없는 것은 자리가 바뀌기 전까지 그 위험이 문제로 보이지 않는다는 점입니다.</p></section><section class="ask"><h2>리더의 판단 질문<span>결정 전에 스스로 확인할 것</span></h2><ol><li>지금 조직이 너무 오래 한 자리에 머물고 있지는 않은가?</li><li>개선에 쓸 시간이 실행 일정에 실제로 잡혀 있는가?</li><li>문제를 먼저 말한 사람은 어떤 자리에 있었는가?</li></ol></section><section class="closing"><h2>한 줄로 남기면</h2><p>리듬을 바꿀지 여유를 지킬지 먼저 가려야 합니다. 첫째를 놓치면 낡은 방식이 학습인 척하고, 둘째를 놓치면 흔들림만 남고, 셋째를 놓치면 아는 사람이 말하지 못합니다.</p></section><section><h2>근거 자료<span>서지와 확인 범위</span></h2><p class="cite">책과 논문은 원문 발췌 없이 논지만 재구성했습니다. 사건은 공개 보도와 회사 성명으로 교차했고 법적 책임 판단은 하지 않았습니다.</p><details><summary>자기설계 조직</summary><p class="source">Bo L. T. Hedberg, Paul C. Nystrom &amp; William H. Starbuck, “Camping on See-Saws: Prescriptions for a Self-Designing Organization,” <cite>Administrative Science Quarterly</cite> 21(1) (1976), 41–65.</p></details><details><summary>능력 함정</summary><p class="source">Nelson P. Repenning &amp; John D. Sterman, “Capability Traps and Self-Confirming Attribution Errors in the Dynamics of Process Improvement,” <cite>Administrative Science Quarterly</cite> 47(2) (2002), 265–295.</p></details><details><summary>지식의 자리</summary><p class="source">칼 만하임의 지식사회학 개념. 개념만 재구성했고 원문 발췌는 없습니다.</p></details></section>
+
+<footer>
+<span>Lead Read · 3분 브리핑</span>
+<p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+const root=document.documentElement;const b=document.getElementById('theme-toggle');
+b.addEventListener('click',()=>{const n=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=n;});
+</script>
+</body>
+</html>
