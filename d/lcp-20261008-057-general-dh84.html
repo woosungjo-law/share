@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>가압류 통지는 확인하고 나서 답할 때다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 가압류 문서를 받았을 때</div>
+    <h1>가압류 통지는 확인하고 나서 답할 때다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> 집 앞에 법원 문서가 놓여 있었다면, <b>바로 전화해서 약속부터 잡지 마십시오.</b> 먼저 <b>무엇이 왔는지(문서의 종류)</b>와 <b>언제 왔는지(날짜)</b>를 확인해야 합니다. 가압류 신청은 <b>법원에 이유를 소명하여야 하고</b>(민사집행법 제279조), 법원은 <b>담보를 제공하게 하여 가압류를 명할 수 있으며, 담보를 제공하지 아니하면 가압류를 취소할 수 있습니다</b>(민사집행법 제280조). 즉 <b>명령이 나왔다고 끝난 것이 아니라 담보라는 관문이 남아 있고</b>, 모든 기한은 <b>수령한 날짜</b>에서 흘러갑니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>택배 상자에 붙은 송장</b>을 떠올려 보십시오. 상자를 열기 전에 <b>보낸 사람이 누구인지, 무엇이 들었는지, 언제 도착했는지</b>를 먼저 봅니다. 그 정보가 없으면 안에 든 물건을 어떻게 처리할지 정할 수 없습니다. <b>법원 문서</b>도 같습니다. 봉투를 열자마자 상대에게 전화를 걸어 <b>"얼마를 어떻게 하겠다"고 말하는 것</b>은, 송장도 안 읽고 물건을 쓰는 일과 비슷합니다. <b>결정문인지 신청서인지</b>, <b>무엇이 얼마큼 묶였는지</b>를 먼저 읽어야 <b>다툴 것과 인정할 것</b>이 갈립니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>첫째, <b>소명</b>입니다. 가압류 신청은 <b>법원에 이유를 소명하여야 합니다</b>(민사집행법 제279조). <b>상대방이 무엇을 어떤 권리로 주장했는지</b>가 문서에 적혀 있고, <b>그것이 곧 사건의 지도</b>입니다. 그래서 문서를 읽는 일이 곧 대응의 시작입니다.</p>
+    <p>둘째, <b>담보</b>입니다. 법원은 <b>담보를 제공하게 하여 가압류를 명할 수 있고</b>, <b>담보를 제공하지 아니하면 가압류를 취소할 수 있습니다</b>(민사집행법 제280조). <b>명령이 나왔다고 끝난 것이 아니라 담보라는 관문이 남아 있다</b>는 뜻입니다. 그래서 "이미 결정이 났으니 방법이 없다"고 단정할 필요가 없습니다.</p>
+    <p>셋째, <b>구분해서 봐야 하는 두 가지</b>입니다. <b>상대방이 돈을 달라고 했다는 사실</b>과 <b>법원이 가압류를 명령했다는 사실</b>은 다릅니다. 그리고 <b>피보전권리와 보전의 필요성</b>이 무엇인지 확인해야, 내가 무엇을 설명할 수 있고 무엇이 다툼의 대상인지 나뉩니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>종류·날짜·범위가 대응을 가른다</h2>
+    <ul class="points">
+      <li><b>종류가 조건이다</b> — <b>무엇이 왔는지</b>에 따라 내가 할 일이 완전히 달라집니다. 이해하지 못하는 문서를 그대로 두면 <b>기한이 먼저 지납니다.</b></li>
+      <li><b>날짜가 조건이다</b> — <b>발송일과 수령일</b>이 언제인지가 이후 이의와 불복의 기준이 됩니다. 메모장에 적어 두는 것으로 충분합니다.</li>
+      <li><b>범위가 조건이다</b> — <b>무엇이 묶였는지</b>가 불분명하면 생활비까지 흔들린다고 잘못 판단하게 됩니다. 범위는 <b>등기와 금융 기록</b>에서 확인됩니다.</li>
+    </ul>
+    <div class="callout"><b>유의.</b> <b>서류를 받은 이유만으로 새로운 합의서에 서명하지 마십시오.</b> 생활비나 급여처럼 <b>당장 필요한 돈이 묶였다면</b>, 금융기관의 안내만 듣고 끝내지 말고 <b>법원 사건번호와 수령일을 적어 전문가에게 보여 주십시오.</b> 확인되지 않은 사정을 단정하지 말고, <b>통지받은 사실</b>과 <b>내가 가진 자료</b>를 구분해 말하는 것이 다음 대응을 빠르게 합니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;">문서를 나눠 읽습니다. 사진으로 남기고, 금액과 대상을 옮겨 적고, 수령 날짜를 달력에 찍습니다. 이미 갚은 돈이 있다면 이체확인증과 대화 기록을 날짜순으로 정리합니다.</p>
+    <ol>
+      <li><b>① 종류를 본다</b> — 어떤 문서가 왔는지 확인한다. 결정문인지 신청서인지 구분한다.</li>
+      <li><b>② 소명을 본다</b> — 상대의 이유와 권리를 확인한다(민사집행법 제279조).</li>
+      <li><b>③ 명령을 본다</b> — 담보 요구와 효과를 확인한다(민사집행법 제280조).</li>
+      <li><b>④ 금액을 본다</b> — 적힌 금액과 대상을 옮겨 적는다. 얼마에 대한 무엇인지가 보여야 대응이 시작된다.</li>
+      <li><b>⑤ 날짜를 본다</b> — 발송일과 수령일을 달력에 찍는다. 모든 기한은 그 날짜에서 흘러간다.</li>
+      <li><b>⑥ 범위를 본다</b> — 무엇이 묶였는지 기록으로 확인한다.</li>
+      <li><b>⑦ 증거를 모은다</b> — 계약과 약속을 한 폴더에 모은다. 빌려준 금액과 약속이 어디에 적혀 있는지가 권리의 크기를 정한다.</li>
+      <li><b>⑧ 기한을 놓치지 않는다</b> — 기한 내에 다음 행동을 정한다.</li>
+      <li><b>⑨ 사진으로 남긴다</b> — 원본을 분실해도 정보는 남는다.</li>
+      <li><b>⑩ 갚은 돈을 정리한다</b> — 이미 갚은 돈이 있다면 이체확인증과 대화 기록을 날짜순으로 정리한다.</li>
+      <li><b>⑪ 상담을 앞당긴다</b> — 금액이 작아도 절차의 기한은 똑같이 지난다. 필요하면 전문가와 먼저 상담한다.</li>
+      <li><b>⑫ 서명하지 않는다</b> — 서류를 받은 이유만으로 새로운 합의서에 서명하지 않고, 담보 제공이나 다른 해소 방법의 조건과 비용을 기록한다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
