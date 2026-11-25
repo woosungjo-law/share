@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>플랫폼은 중립적인 심판인가 — Lead Read</title>
+<style>
+:root{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}}
+html[data-theme="dark"]{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}
+html[data-theme="light"]{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;line-height:1.78;word-break:keep-all;overflow-wrap:anywhere}
+.page{max-width:920px;margin:auto;padding:26px 20px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--ln);font-size:.78rem;letter-spacing:.1em;color:var(--mut)}
+.top b{color:var(--ink)}
+button{font:inherit;font-size:.8rem;padding:6px 10px;color:var(--ink);background:var(--sf);border:1px solid var(--ln);border-radius:4px;cursor:pointer}
+a{color:var(--ac);text-underline-offset:.2em}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--mk);outline-offset:3px}
+header{padding:34px 0 10px}
+.kicker{color:var(--mk);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.28;letter-spacing:-.03em;margin:.4em 0 .3em}
+.dek{font-size:clamp(1.02rem,2.2vw,1.18rem);color:var(--mut);margin:0 0 10px;max-width:62ch}
+.tag{display:inline-block;margin-top:12px;padding:4px 10px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:700;border-radius:3px}
+h2{font-size:clamp(1.22rem,2.8vw,1.62rem);line-height:1.34;letter-spacing:-.02em;margin:0 0 8px}
+h2 span{display:block;font-size:.78rem;font-weight:600;letter-spacing:.06em;color:var(--mk);margin-top:5px}
+h3{font-size:1.02rem;margin:0 0 6px}
+p{margin:0 0 14px;max-width:70ch}
+section{padding:26px 0;border-top:1px solid var(--ln)}
+.leadbox{margin:22px 0 4px;padding:20px;background:var(--sf);border-left:4px solid var(--ac)}
+.lb-label{font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin:0 0 4px}
+.lb-q{font-size:1.06rem;font-weight:700;margin:0 0 14px}
+.lb-a{margin:0;color:var(--ink)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.pole{padding:18px;background:var(--sf);border-top:4px solid var(--ac)}
+.pole:nth-child(2){border-top-color:var(--mk)}
+.pole small{display:block;font-size:.72rem;letter-spacing:.1em;font-weight:800;color:var(--mk);margin-bottom:6px}
+.clash{margin-top:16px;padding:16px 18px;background:var(--ac2);border-left:4px solid var(--mk)}
+.timeline{margin-top:18px;padding-left:18px;border-left:2px solid var(--ln)}
+.tl{position:relative;margin:0 0 16px}
+.tl:before{content:"";position:absolute;left:-25px;top:.55em;width:9px;height:9px;border-radius:50%;background:var(--mk)}
+.tl b{display:block;color:var(--mk);font-size:.92rem}
+.tl p{margin:2px 0 0;color:var(--mut)}
+.signal{margin-top:16px;padding:18px;background:var(--ac2);border:1px solid var(--ln)}
+.siglabel{display:inline-block;font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin-right:8px}
+.mnote{margin:16px 0;padding:13px 15px;background:var(--mk2);border-left:3px solid var(--mk);font-size:.95rem}
+.mnote b{display:block;font-size:.72rem;letter-spacing:.1em;color:var(--mk);margin-bottom:4px}
+.table-wrap{overflow-x:auto;margin-top:14px}
+table{width:100%;border-collapse:collapse;font-size:.93rem;table-layout:fixed;word-break:normal}
+caption{word-break:normal;text-align:left;padding-bottom:8px}
+th,td{border-bottom:1px solid var(--ln);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--ac2);color:var(--ink);font-size:.85rem}
+.scan{margin-top:16px;padding:15px 17px;background:var(--sf);border:1px solid var(--ln);border-left:4px solid var(--ac)}
+.ask ol{margin:12px 0 0;padding-left:22px}
+.ask li{margin:0 0 10px}
+.closing{padding:24px;background:var(--sf);border-top:2px solid var(--ac)}
+.closing h2{margin-bottom:10px}
+.closing p{font-size:1.04rem;margin:0}
+.cite{color:var(--mut);font-size:.94rem}
+details{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--ln)}
+summary{cursor:pointer;font-weight:700;color:var(--ac)}
+.source{margin:8px 0 0;font-size:.92rem;color:var(--mut)}
+.source cite{font-style:normal;color:var(--ink);font-weight:600}
+footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--ln);color:var(--mut);font-size:.84rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.author-credit{color:var(--ink);font-weight:800}
+@media (max-width:640px){
+.page{padding:18px 14px 44px}
+.duo{grid-template-columns:1fr}
+header{padding:24px 0 6px}
+section{padding:22px 0}
+table{font-size:.84rem}
+th,td{padding:8px 7px}
+.closing{padding:18px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="top"><span><b>Lead Read</b> · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="테마 바꾸기">테마</button></div>
+<header>
+<p class="kicker">Lead Read · 리더십 브리핑</p>
+<h1>플랫폼은 중립적인 심판인가</h1>
+<p class="dek">참여자의 자격을 정하고 내보내는 권한. 그 규칙은 모두에게 같은 잣대인가, 규칙을 만드는 자의 위치인가.</p>
+<p class="tag">두 관점 · 적용 사례 · 판단 질문</p>
+</header>
+
+<div class="leadbox">
+<p class="lb-label">핵심 질문</p>
+<p class="lb-q">규칙을 만드는 자가 같은 시장에서 경쟁하는가?</p>
+<p class="lb-label">한 문장 결론</p>
+<p class="lb-a">플랫폼의 규칙은 가격만이 아니라 법적 조건과 기술적 설계로 작동하는 사적 규제입니다. 그 규칙을 만드는 자가 같은 시장의 경쟁자라면 중립성은 규칙의 내용이 아니라 규칙을 만드는 절차에서 확보해야 합니다.</p>
+</div>
+
+<section>
+<h2>왜 지금 이 문제인가<span>심판인가, 당사자인가</span></h2>
+<p>플랫폼은 참여자의 자격을 정하고 무엇을 할 수 있는지 정하고 어길 때 내보냅니다. 이 권한은 사적 계약에서 나오지만 작동 방식은 규제에 가깝습니다.</p><p>그렇다면 그 규칙은 참여자 모두에게 같은 잣대인가, 아니면 규칙을 만드는 자의 위치를 반영하는가. 이 질문은 플랫폼에 입점한 사업자와 그 플랫폼을 규제하는 당국 모두에게 실무적입니다.</p>
+</section>
+
+<section>
+<h2>두 연구가 갈라지는 지점<span>시장 위의 규제자인가, 시장 안의 경쟁자인가</span></h2>
+<div class="duo"><div class="pole"><small>사적 규제</small><h3>규칙은 배경이 아니라 전략이다</h3><p>부드로와 하기우는 2009년 논문에서 다면 플랫폼을 사적 규제자로 개념화했습니다. 플랫폼은 접근과 상호작용을 규율합니다. 소셜 네트워크, 알고리즘 경진 플랫폼, 복합 상업시설, 경영대학원이 사례로 제시됐는데 서로 다른 산업인데도 누가 들어올 수 있고 무엇을 할 수 있는지를 정하는 규칙을 운영한다는 공통점이 있었습니다. 중요한 발견은 규칙의 도구가 가격만이 아니라는 점이었습니다. 법적 조건과 기술적 설계, 정보 공개 여부가 함께 쓰였습니다. 어떤 참여자에게는 문을 열고 어떤 참여자에게는 기술적으로 닫는 방식이 가격보다 정교했습니다.</p></div><div class="pole"><small>이해당사자</small><h3>규칙을 만드는 자도 보완재 사업자다</h3><p>카사데수스-마사넬과 요피는 2007년 논문에서 인텔과 마이크로소프트의 관계를 모형으로 풀었습니다. 두 회사는 서로 보완재를 만들고 최종 제품의 가치는 두 부품이 얼마나 잘 맞물리는지에 달려 있으며 그 맞물림은 양쪽의 보완 연구개발 투자에 달려 있습니다. 그들은 두 회사가 협력할 유인과 갈등할 유인이 동시에 존재함을 보였습니다. 보완재 사업자는 상대의 성공이 자신의 성공이지만 가치 배분에서는 상대의 몫이 자신의 손실입니다. 규칙을 만드는 자가 그 규칙이 적용되는 시장의 경쟁자라면 규칙은 조정 도구이면서 자기 위치를 지키는 수단입니다.</p></div></div><div class="clash"><p>두 논문은 플랫폼을 다른 자리에 놓습니다. 하나는 시장 위에 선 규제자로, 다른 하나는 시장 안의 보완재 사업자로 봅니다. 앞의 처방은 규칙의 설계와 집행을 다듬는 일이고 뒤의 처방은 이해상충을 드러내고 견제하는 일입니다. 규칙이 전략이라면 중립성은 규칙의 내용이 아니라 규칙을 만드는 절차에서 확보해야 합니다. 누가 규칙을 심의하고 누가 이의를 제기할 수 있는지가 실질을 가릅니다.</p></div>
+</section>
+
+<section class="case">
+<h2>적용 사례 — 안드로이드의 두 얼굴<span>2007년 출범에서 2026년 확정 판결까지</span></h2>
+<p>2007년 11월 5일 구글을 포함한 34개 기업이 오픈핸드셋얼라이언스를 출범시키며 안드로이드를 모바일 기기를 위한 최초의 진정한 개방형 플랫폼으로 소개했습니다. 핵심 코드는 아파치 2.0 라이선스로 공개됐고 제조사는 안드로이드를 수정해 자기 색을 입힌 기기를 내놓을 수 있었으며 수정 내용을 공개할 의무도 없었습니다. 2008년 9월 개발도구가 나왔고 10월 첫 기기가 판매됐습니다.</p><p>그러나 개방은 한 겹이었습니다. 검색과 앱 스토어 같은 핵심 서비스는 별도 라이선스로 제공됐습니다. 안드로이드를 쓸 수 있는 것과 그 서비스를 쓸 수 있는 것은 다른 문제였습니다. 2018년 7월 18일 유럽연합 집행위원회는 이 구조에 43억 4,000만 유로의 과징금을 부과했습니다. 집행위가 문제 삼은 것은 세 가지 계약 조건이었고, 결정문은 오픈소스 모델이나 운영체제 자체를 문제 삼는 것이 아니라고 명시했습니다.</p><p>2022년 9월 14일 일반법원은 네 번째 요소인 수익 배분 조건을 취소하고 과징금을 41억 2,500만 유로로 줄였고, 2026년 7월 2일 유럽사법재판소가 상고를 기각해 이 금액이 확정됐습니다. 이 사례에서 두 논문은 모두 맞습니다. 규칙은 사적 규제의 정교한 도구였고 동시에 그 규칙은 검색 시장에서의 위치를 지키는 수단이었습니다. 개방이라는 원칙과 배타적 계약이 한 플랫폼 안에 공존했습니다.</p>
+</section>
+
+<section>
+<h2>렌즈 — 상징형식<span>카시러의 범주</span></h2>
+<p>에른스트 카시러는 인간을 기호를 쓰는 동물로 보았습니다. 언어와 신화와 예술과 과학은 세계를 각기 다른 방식으로 구성하는 상징형식입니다. 형식은 내용을 담는 그릇이 아니라 무엇이 경험되고 무엇이 말해질 수 있는지를 규정합니다.</p><p>플랫폼의 라이선스 조항과 개발자 정책, 응용 프로그래밍 인터페이스는 상징형식입니다. 이 문서들은 누가 개발자이고 누가 침입자인지, 어떤 기능이 허용되고 어떤 기능이 차단되는지를 규정합니다. 개방형이라는 기호는 그 자체로 하나의 형식이며 그 형식이 실제 접근 조건을 가릴 수 있습니다. 규칙의 문구보다 규칙이 만드는 범주를 보아야 합니다. 누가 이 형식 안에서 참여자로 불리는가가 실질입니다.</p>
+</section>
+
+<section class="ask">
+<h2>리더의 판단 질문<span>결정 전에 스스로 확인할 것</span></h2>
+<ol><li>이 규칙은 참여자의 자격을 어떻게 정의하는가?</li><li>규칙을 만드는 자가 같은 시장에서 경쟁하는가?</li><li>개방이라는 말이 실제 접근 조건과 일치하는가?</li></ol>
+</section>
+
+<section class="closing">
+<h2>한 줄로 남기면</h2>
+<p>개방을 말하는 플랫폼을 볼 때 세 가지를 물어야 합니다. 이 규칙이 참여자의 자격을 어떻게 정의하는가, 규칙을 만드는 자가 같은 시장에서 경쟁하는가, 개방이라는 말이 실제 접근 조건과 일치하는가. 첫째를 놓치면 규칙을 홍보 문구로 읽고, 둘째를 놓치면 심판의 이해관계를 놓치고, 셋째를 놓치면 형식이 내용을 가리는 것을 보지 못합니다.</p>
+</section>
+
+<section>
+<h2>근거 자료<span>서지와 확인 범위</span></h2>
+<p class="cite">두 논문은 공개 서지와 논지 범위에서 정리했습니다. 사례는 공개 결정문과 보도자료로 확인했고, 어느 기업의 법적 책임을 새로 판단하지 않습니다.</p>
+<details><summary>플랫폼을 규제자로 본다</summary><p class="source">Kevin J. Boudreau·Andrei Hagiu, “Platform Rules: Multi-Sided Platforms as Regulators,” in <cite>Platforms, Markets and Innovation</cite> (2009), ch. 7.</p></details><details><summary>협력과 갈등의 유인</summary><p class="source">Ramon Casadesus-Masanell·David B. Yoffie, “Wintel: Cooperation and Conflict,” <cite>Management Science</cite> 53(4) (2007).</p></details><details><summary>개방의 형식</summary><p class="source">에른스트 카시러, 『인간이란 무엇인가』(1944)·『상징형식의 철학』(1923~1929). 개념만 사용했고 발췌는 없습니다.</p></details>
+</section>
+
+<footer>
+<span>Lead Read · 3분 브리핑</span>
+<p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+const root=document.documentElement;const b=document.getElementById('theme-toggle');
+b.addEventListener('click',()=>{const n=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=n;});
+</script>
+</body>
+</html>
