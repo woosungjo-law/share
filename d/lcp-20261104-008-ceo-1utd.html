@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Change of Control(COC) 조항 설계 및 M&A 딜 리스크 관리</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>Change of Control(COC) 조항 설계 및 M&A 딜 리스크 관리</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 경영권 변경 조항은 <b>거래 일정</b>과 <b>기존 계약의 동의·통지 절차</b>를 함께 관리하는 문제입니다. 조항이 있다는 사실만으로 책임이 정해지지 않고, 어떤 계약이 무엇을 요구하는지가 먼저입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>사건의 시작: 종결일 전에 확인할 계약이 늘어났습니다</h2>
+    <div class="analogy">
+      세림솔루션 대표 최은경은 인수 거래 종결을 앞두고 주요 고객·공급업체 계약에 <b>경영권 변경 조항</b>이 있다는 보고를 받습니다. 일부 계약은 사전 동의를, 다른 계약은 사후 통지를 요구하는 것처럼 보입니다. 은경은 거래팀에 종결일만 맞추라고 지시하는 대신, <b>계약별 요구사항과 미확인 자료를 한 표에 정리</b>하라고 합니다. 동의나 통지가 누락되면 거래 뒤에 대응할 일이 생길 수 있으므로, 결정 전에 무엇이 필요한지 확인하는 것입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 보는 핵심: 계약 문구와 해제 절차를 나눠 읽습니다</h2>
+    <p><b>민법 제105조</b>는 당사자가 임의규정과 다른 의사를 표시한 경우 그 의사에 따르도록 합니다. 그러므로 COC 조항의 정의, 동의·통지 문구, 상대방이 가진 선택권을 계약별로 읽어야 합니다.</p>
+    <p><b>민법 제543조</b>는 해지·해제를 상대방에 대한 의사표시로 하도록 정하고, <b>제544조</b>는 채무불이행 때 상당한 기간을 정해 이행을 최고한 뒤에도 이행하지 않으면 해제할 수 있는 기준을 둡니다.</p>
+    <p><b>민법 제750조</b>는 고의 또는 과실의 위법행위로 타인에게 손해를 준 경우의 손해배상책임을 정합니다. COC 관련 행위가 별도 불법행위 책임과 연결되는지 검토할 수 있지만, <b>경영권 변경이 있었다는 사실만으로 책임이 정해지는 것은 아닙니다.</b></p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>놓치기 쉬운 조건과 예외: 일정·비용·선택지를 한 화면에서 봅니다</h2>
+    <p><b>유형 구분.</b> 계약별로 사전 동의가 필요한지, 통지만 하면 되는지, 상대방의 답변을 기다려야 하는지를 나눠 보고받습니다.</p>
+    <p><b>최종본 대조.</b> 문서가 여러 차례 수정됐다면 최종 서명본과 변경합의서를 대조합니다.</p>
+    <p><b>불명확한 문구.</b> 조항의 뜻이 불명확하면 이를 확정 의무처럼 보고하지 말고 법무 검토 대상으로 남깁니다.</p>
+    <p><b>대안 비교.</b> 거래가 늦어질 비용, 동의를 받지 못할 가능성, 기존 계약을 계속 유지할 대안을 각각 비교합니다.</p>
+    <p><b>일괄 발송 금지.</b> 통지·해제 문안은 계약별 조건과 의사표시의 효과를 확인한 뒤 승인합니다. 빠른 대응이 필요하더라도 확인되지 않은 해석을 전제로 한꺼번에 보내지 않습니다.</p>
+    <div class="callout">
+      <b>주의.</b> <b>민법 제543조·제544조에 따른 해제 문제</b>와 <b>계약 조항상 선택권</b>을 섞어 보고받지 않도록 하십시오. 손해배상 가능성은 제750조의 문언을 기준으로 구체적인 주장과 사실을 따로 확인합니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>종결 승인 전에 계약별 상태표를 받으십시오.</b> 정할 항목은 다음과 같습니다.</p>
+      <ol>
+        <li><b>① 우선순위</b> — 사업상 영향이 큰 계약부터 정의·동의·통지 의무를 확인합니다.</li>
+        <li><b>② 일정</b> — 상대방 회신과 필요한 승인 시점을 종결 일정에 반영합니다.</li>
+        <li><b>③ 의사결정</b> — 불명확한 문구는 법무 검토 전 확정 의무로 처리하지 않습니다.</li>
+        <li><b>④ 대안 비교</b> — 지연 비용과 실행 가능한 안을 같은 기준으로 비교합니다.</li>
+        <li><b>⑤ 기록</b> — 발송 문안과 회신, 내부 승인 근거를 종결 자료에 보관합니다.</li>
+        <li><b>⑥ 미확인 관리</b> — 확인되지 않은 쟁점을 일정표에서 지우지 말고 처리 책임자와 다음 점검 시점을 지정합니다.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;">거래 책임자가 계약별 완료 상태를 갱신하고, 회신이 없거나 추가 동의가 필요한 건을 <b>종결 회의 안건</b>으로 올리게 하십시오.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
