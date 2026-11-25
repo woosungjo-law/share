@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>지위는 품질을 말해주는가, 아니면 자기 자신을 말해주는가 — Lead Read</title>
+<style>
+:root{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}}
+html[data-theme="dark"]{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}
+html[data-theme="light"]{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;line-height:1.78;word-break:keep-all;overflow-wrap:anywhere}
+.page{max-width:920px;margin:auto;padding:26px 20px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--ln);font-size:.78rem;letter-spacing:.1em;color:var(--mut)}
+.top b{color:var(--ink)}
+button{font:inherit;font-size:.8rem;padding:6px 10px;color:var(--ink);background:var(--sf);border:1px solid var(--ln);border-radius:4px;cursor:pointer}
+a{color:var(--ac);text-underline-offset:.2em}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--mk);outline-offset:3px}
+header{padding:34px 0 10px}
+.kicker{color:var(--mk);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.28;letter-spacing:-.03em;margin:.4em 0 .3em}
+.dek{font-size:clamp(1.02rem,2.2vw,1.18rem);color:var(--mut);margin:0 0 10px;max-width:62ch}
+.tag{display:inline-block;margin-top:12px;padding:4px 10px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:700;border-radius:3px}
+h2{font-size:clamp(1.22rem,2.8vw,1.62rem);line-height:1.34;letter-spacing:-.02em;margin:0 0 8px}
+h2 span{display:block;font-size:.78rem;font-weight:600;letter-spacing:.06em;color:var(--mk);margin-top:5px}
+h3{font-size:1.02rem;margin:0 0 6px}
+p{margin:0 0 14px;max-width:70ch}
+section{padding:26px 0;border-top:1px solid var(--ln)}
+.leadbox{margin:22px 0 4px;padding:20px;background:var(--sf);border-left:4px solid var(--ac)}
+.lb-label{font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin:0 0 4px}
+.lb-q{font-size:1.06rem;font-weight:700;margin:0 0 14px}
+.lb-a{margin:0;color:var(--ink)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.pole{padding:18px;background:var(--sf);border-top:4px solid var(--ac)}
+.pole:nth-child(2){border-top-color:var(--mk)}
+.pole small{display:block;font-size:.72rem;letter-spacing:.1em;font-weight:800;color:var(--mk);margin-bottom:6px}
+.clash{margin-top:16px;padding:16px 18px;background:var(--ac2);border-left:4px solid var(--mk)}
+.timeline{margin-top:18px;padding-left:18px;border-left:2px solid var(--ln)}
+.tl{position:relative;margin:0 0 16px}
+.tl:before{content:"";position:absolute;left:-25px;top:.55em;width:9px;height:9px;border-radius:50%;background:var(--mk)}
+.tl b{display:block;color:var(--mk);font-size:.92rem}
+.tl p{margin:2px 0 0;color:var(--mut)}
+.signal{margin-top:16px;padding:18px;background:var(--ac2);border:1px solid var(--ln)}
+.siglabel{display:inline-block;font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin-right:8px}
+.mnote{margin:16px 0;padding:13px 15px;background:var(--mk2);border-left:3px solid var(--mk);font-size:.95rem}
+.mnote b{display:block;font-size:.72rem;letter-spacing:.1em;color:var(--mk);margin-bottom:4px}
+.table-wrap{overflow-x:auto;margin-top:14px}
+table{width:100%;border-collapse:collapse;font-size:.93rem;table-layout:fixed;word-break:normal}
+caption{word-break:normal;text-align:left;padding-bottom:8px}
+th,td{border-bottom:1px solid var(--ln);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--ac2);color:var(--ink);font-size:.85rem}
+.scan{margin-top:16px;padding:15px 17px;background:var(--sf);border:1px solid var(--ln);border-left:4px solid var(--ac)}
+.ask ol{margin:12px 0 0;padding-left:22px}
+.ask li{margin:0 0 10px}
+.closing{padding:24px;background:var(--sf);border-top:2px solid var(--ac)}
+.closing h2{margin-bottom:10px}
+.closing p{font-size:1.04rem;margin:0}
+.cite{color:var(--mut);font-size:.94rem}
+details{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--ln)}
+summary{cursor:pointer;font-weight:700;color:var(--ac)}
+.source{margin:8px 0 0;font-size:.92rem;color:var(--mut)}
+.source cite{font-style:normal;color:var(--ink);font-weight:600}
+footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--ln);color:var(--mut);font-size:.84rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.author-credit{color:var(--ink);font-weight:800}
+@media (max-width:640px){
+.page{padding:18px 14px 44px}
+.duo{grid-template-columns:1fr}
+header{padding:24px 0 6px}
+section{padding:22px 0}
+table{font-size:.84rem}
+th,td{padding:8px 7px}
+.closing{padding:18px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="top"><span><b>Lead Read</b> · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="테마 바꾸기">테마</button></div>
+<header>
+<p class="kicker">Lead Read · 리더십 브리핑</p>
+<h1>지위는 품질을 말해주는가, 아니면 자기 자신을 말해주는가</h1>
+<p class="dek">확인할 수 없는 품질 앞에서 사람들은 이름을 봅니다. 그 이름이 품질에서 온 것인지, 이름이 다시 이름을 부른 것인지.</p>
+<p class="tag">여백 메모 · 적용 사례 · 판단 질문</p>
+</header>
+
+<div class="leadbox">
+<p class="lb-label">핵심 질문</p>
+<p class="lb-q">이 이름이 품질을 알려 주는가, 아니면 다른 이름과의 연결을 알려 주는가?</p>
+<p class="lb-label">한 문장 결론</p>
+<p class="lb-a">지위는 관찰되지 않은 품질의 대리 신호로 작동합니다. 그러나 지위는 제휴의 누적으로 다시 만들어지므로, 신호가 만들어지는 자리와 소비되는 자리를 나눠 봐야 합니다.</p>
+</div>
+
+<section>
+<h2>왜 지금 이 문제인가<span>이름을 믿는 이유</span></h2>
+<p>서비스나 기관의 품질을 거래 전에 직접 확인할 수 없을 때 사람들은 이름을 봅니다. 이름이 높으면 덜 의심합니다.</p><p>그런데 그 이름이 실제 품질에서 나온 것인지, 아니면 과거의 이름이 스스로를 다시 불러낸 것인지는 별개의 문제입니다. 지위가 품질의 신호라면 신호를 믿는 일은 합리적이고, 자기강화 장치라면 같은 신호가 판단을 흐립니다.</p>
+</section>
+
+<section>
+<h2>두 연구가 갈라지는 지점<span>품질의 대리 신호인가, 연결의 누적인가</span></h2>
+<h3>대리 신호 — 지위는 관찰되지 않은 품질을 대신한다</h3><p>조엘 포돌니는 1993년 논문에서 시장 경쟁을 지위 구조로 설명했습니다. 품질을 미리 관찰하기 어려운 시장에서 구매자는 생산자의 지위를 대리 신호로 삼습니다. 지위는 한 번의 성과가 아니라 시장 안에서 반복 확인된 위치이므로 같은 이름이 거래마다 다시 작동합니다. 이 모형에서 경쟁은 완전한 자유 경쟁이 아닙니다. 높은 지위의 생산자는 낮은 지위의 생산자보다 유리한 조건을 얻고 낮은 지위의 생산자는 높은 지위로 곧바로 올라가기 어렵습니다. 거래 상대를 고를 때도 비슷한 지위끼리 만나는 경향이 생깁니다. 처방은 품질을 꾸준히 증명하는 것입니다.</p><div class="mnote"><b>여백 메모 1</b>두 논문은 같은 저자 계보에 있으면서 신호의 작동 방식을 다르게 잡습니다. 1993년 모형은 지위를 품질의 신호로 읽고 1999년 분석은 지위를 품질과 느슨하게 연결된 자기강화로 읽습니다. 후자는 전자를 부정하지 않고 그 신호가 어디서 충전되는지를 덧붙입니다.</div><h3>제휴의 누적 — 지위는 제휴로 자기를 다시 만든다</h3><p>베스 벤자민과 조엘 포돌니는 1999년 다른 논문에서 같은 문제를 다시 다뤘습니다. 캘리포니아 와인 산업의 595개 와이너리가 10년 동안 맺은 만여 건의 제휴 선택을 분석했습니다. 경제적 평판 모형은 과거 품질이 현재 품질을 알려 준다고 보고 사회학적 지위 모형은 누구와 연결되었는가가 더 중요하다고 봅니다. 분석 결과는 후자에 무게를 실었습니다. 높은 지위에 있는 행위자는 이후의 높은 지위 제휴에서 더 큰 이득을 얻었고 그 제휴를 위해 비용을 지불할 의지와 능력도 더 컸습니다. 낮은 지위의 행위자에게 같은 제휴는 덜 열려 있었습니다. 지위는 품질의 보고서이기 이전에 연결의 누적이었고 연결은 다시 지위를 밀어 올렸습니다.</p><div class="mnote"><b>여백 메모 2</b>실무의 갈림은 조달 회의에서 드러납니다. 한쪽은 지난 성과가 이를 뒷받침하느냐를 묻고 다른 쪽은 누구와 함께 일해 왔느냐를 묻습니다. 전자는 신호의 근거를 원자료에서 찾고 후자는 신호의 유통 경로를 관계망에서 찾습니다. 신호가 만들어지는 자리와 소비되는 자리를 나눠 보라는 뜻입니다.</div><div class="clash"><p>한쪽 모형은 지위를 품질의 신호로 읽고 신호가 흔들리면 품질을 다시 증명하라고 합니다. 다른 쪽 분석은 지위를 품질과 느슨하게 연결된 자기강화로 읽고 서열 속 제휴를 설계하라고 합니다. 같은 질문에 하나는 실적을 묻고 다른 하나는 연결을 묻습니다. 어느 쪽만 옳다고 하기보다 신호의 제작과 소비를 나눠 보아야 합니다.</p></div>
+</section>
+
+<section class="case">
+<h2>적용 사례 — 2022년 한 대학의 순위 제외<span>2월의 문제 제기에서 7월의 제외까지</span></h2>
+<p>2021년 9월 발표된 2022년도 전미대학 순위에서 한 대학은 공동 2위였습니다. 2022년 2월 그 대학의 수학과 교수는 대학이 순위에 제출한 수치가 대학이 다른 곳에 공개한 자료와 어긋난다고 정리했습니다. 20명 미만 수업 비율 82.5퍼센트, 전임 교원의 100퍼센트 박사 학위, 학생과 교수 6대 1, 2019~2020 회계연도 교육 지출 31억 달러가 대표 항목이었습니다.</p><p>대학은 6월 30일 다음 해 순위를 위해 자료를 제출하지 않겠다고 밝혔고 자체 검토를 시작했습니다. 학사 책임자는 검토에 지름길은 없다고 말했습니다. 순위를 매기는 매체의 편집 책임자는 7월 초 성명에서 대학이 2023년 판의 데이터 기준을 충족하지 못했다며 과거 제출 자료의 재검토 가능성을 언급했습니다. 7월 8일 그 매체는 대학을 2022년 판 순위에서 제외했습니다.</p><p>이 사건은 두 논문을 함께 비춥니다. 2위는 품질이 만들어 낸 이름처럼 읽혔지만 이름을 떠받친 값은 다른 잣대에서 다시 쓰인 수치였습니다. 제도는 지위를 유지하려고 입력을 골랐고 입력이 흔들리자 지위도 따라 내려앉았습니다. 품질 자체가 갑자기 바뀌어서가 아니라 신호의 제작 과정이 드러난 것입니다.</p>
+</section>
+
+<section>
+<h2>렌즈 — 전통과 명성<span>곰브리치의 목록</span></h2>
+<p>에른스트 곰브리치는 미술사를 추상적인 예술이 스스로 전진한 기록이 아니라 개별 작가와 작품이 전승 속에서 이름을 얻어 가는 과정으로 보았습니다. 작품의 목록은 작품 안에 완결되어 있지 않고 무엇을 기억할지 정해 온 전통 위에 놓입니다.</p><p>순위표도 그런 목록입니다. 2위라는 자리는 수업이나 연구만으로 만들어지지 않습니다. 어떤 값을 넣고 어떤 값을 빼느냐를 정한 관행이 먼저 있고 그 관행이 이름을 붙입니다. 통제할 수 있는 것은 입력을 고르는 기준이고, 통제할 수 없는 것은 그 기준이 나중에 나에게 붙여 주는 뜻입니다. 실제가 어떤가보다 누가 목록에 올랐는가를 먼저 물어야 합니다.</p>
+</section>
+
+<section class="ask">
+<h2>리더의 판단 질문<span>결정 전에 스스로 확인할 것</span></h2>
+<ol><li>이 이름이 품질을 알려 주는가, 아니면 다른 이름과의 연결을 알려 주는가?</li><li>제출한 값이 다른 공개 자료와 같은 잣대를 쓰는가?</li><li>목록에 오른 이름이 실체보다 앞서가고 있지는 않은가?</li></ol>
+</section>
+
+<section class="closing">
+<h2>한 줄로 남기면</h2>
+<p>이름을 근거로 결정하기 전에 세 겹을 떼어 보아야 합니다. 이 이름이 품질을 알려 주는가 연결을 알려 주는가, 제출한 값이 다른 공개 자료와 같은 잣대를 쓰는가, 목록에 오른 이름이 실체보다 앞서가고 있지는 않은가. 첫째를 놓치면 근거 없이 이름을 사고, 둘째를 놓치면 신호가 꺾이는 순간을 놓치고, 셋째를 놓치면 전통이 만들어 준 지위를 내 품질로 착각합니다.</p>
+</section>
+
+<section>
+<h2>근거 자료<span>서지와 확인 범위</span></h2>
+<p class="cite">두 논문의 논지는 원문 발췌 없이 재구성했습니다. 사례는 공개 조사글과 당사자 발표를 보도한 기사로 교차했고, 어느 기관의 법적 책임을 판단하지 않습니다.</p>
+<details><summary>지위 기반 경쟁 모형</summary><p class="source">Joel M. Podolny, “A Status-Based Model of Market Competition,” <cite>American Journal of Sociology</cite> 98(4) (1993).</p></details><details><summary>지위와 품질의 간격</summary><p class="source">Beth A. Benjamin·Joel M. Podolny, “Status, Quality, and Social Order in the California Wine Industry,” <cite>Administrative Science Quarterly</cite> 44(3) (1999). 595개 와이너리, 만여 건 제휴.</p></details><details><summary>전통이 만드는 목록</summary><p class="source">에른스트 곰브리치의 미술사 서술. 개념만 재구성했고 발췌는 없습니다.</p></details>
+</section>
+
+<footer>
+<span>Lead Read · 3분 브리핑</span>
+<p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+const root=document.documentElement;const b=document.getElementById('theme-toggle');
+b.addEventListener('click',()=>{const n=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=n;});
+</script>
+</body>
+</html>
