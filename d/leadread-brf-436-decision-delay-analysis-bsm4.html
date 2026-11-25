@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>결정은 왜 미루어지는가 — Lead Read</title>
+<style>
+:root{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}}
+html[data-theme="dark"]{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}
+html[data-theme="light"]{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;line-height:1.78;word-break:keep-all;overflow-wrap:anywhere}
+.page{max-width:920px;margin:auto;padding:26px 20px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--ln);font-size:.78rem;letter-spacing:.1em;color:var(--mut)}
+.top b{color:var(--ink)}
+button{font:inherit;font-size:.8rem;padding:6px 10px;color:var(--ink);background:var(--sf);border:1px solid var(--ln);border-radius:4px;cursor:pointer}
+a{color:var(--ac);text-underline-offset:.2em}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--mk);outline-offset:3px}
+header{padding:34px 0 10px}
+.kicker{color:var(--mk);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.28;letter-spacing:-.03em;margin:.4em 0 .3em}
+.dek{font-size:clamp(1.02rem,2.2vw,1.18rem);color:var(--mut);margin:0 0 10px;max-width:62ch}
+.tag{display:inline-block;margin-top:12px;padding:4px 10px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:700;border-radius:3px}
+h2{font-size:clamp(1.22rem,2.8vw,1.62rem);line-height:1.34;letter-spacing:-.02em;margin:0 0 8px}
+h2 span{display:block;font-size:.78rem;font-weight:600;letter-spacing:.06em;color:var(--mk);margin-top:5px}
+h3{font-size:1.02rem;margin:0 0 6px}
+p{margin:0 0 14px;max-width:70ch}
+section{padding:26px 0;border-top:1px solid var(--ln)}
+.leadbox{margin:22px 0 4px;padding:20px;background:var(--sf);border-left:4px solid var(--ac)}
+.lb-label{font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin:0 0 4px}
+.lb-q{font-size:1.06rem;font-weight:700;margin:0 0 14px}
+.lb-a{margin:0;color:var(--ink)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.pole{padding:18px;background:var(--sf);border-top:4px solid var(--ac)}
+.pole:nth-child(2){border-top-color:var(--mk)}
+.pole small{display:block;font-size:.72rem;letter-spacing:.1em;font-weight:800;color:var(--mk);margin-bottom:6px}
+.clash{margin-top:16px;padding:16px 18px;background:var(--ac2);border-left:4px solid var(--mk)}
+.timeline{margin-top:18px;padding-left:18px;border-left:2px solid var(--ln)}
+.tl{position:relative;margin:0 0 16px}
+.tl:before{content:"";position:absolute;left:-25px;top:.55em;width:9px;height:9px;border-radius:50%;background:var(--mk)}
+.tl b{display:block;color:var(--mk);font-size:.92rem}
+.tl p{margin:2px 0 0;color:var(--mut)}
+.signal{margin-top:16px;padding:18px;background:var(--ac2);border:1px solid var(--ln)}
+.siglabel{display:inline-block;font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin-right:8px}
+.mnote{margin:16px 0;padding:13px 15px;background:var(--mk2);border-left:3px solid var(--mk);font-size:.95rem}
+.mnote b{display:block;font-size:.72rem;letter-spacing:.1em;color:var(--mk);margin-bottom:4px}
+.table-wrap{overflow-x:auto;margin-top:14px}
+table{width:100%;border-collapse:collapse;font-size:.93rem;table-layout:fixed;word-break:normal}
+caption{word-break:normal;text-align:left;padding-bottom:8px}
+th,td{border-bottom:1px solid var(--ln);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--ac2);color:var(--ink);font-size:.85rem}
+.scan{margin-top:16px;padding:15px 17px;background:var(--sf);border:1px solid var(--ln);border-left:4px solid var(--ac)}
+.ask ol{margin:12px 0 0;padding-left:22px}
+.ask li{margin:0 0 10px}
+.closing{padding:24px;background:var(--sf);border-top:2px solid var(--ac)}
+.closing h2{margin-bottom:10px}
+.closing p{font-size:1.04rem;margin:0}
+.cite{color:var(--mut);font-size:.94rem}
+details{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--ln)}
+summary{cursor:pointer;font-weight:700;color:var(--ac)}
+.source{margin:8px 0 0;font-size:.92rem;color:var(--mut)}
+.source cite{font-style:normal;color:var(--ink);font-weight:600}
+footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--ln);color:var(--mut);font-size:.84rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.author-credit{color:var(--ink);font-weight:800}
+@media (max-width:640px){
+.page{padding:18px 14px 44px}
+.duo{grid-template-columns:1fr}
+header{padding:24px 0 6px}
+section{padding:22px 0}
+table{font-size:.84rem}
+th,td{padding:8px 7px}
+.closing{padding:18px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="top"><span><b>Lead Read</b> · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="테마 바꾸기">테마</button></div>
+<header>
+<p class="kicker">Lead Read · 리더십 브리핑</p>
+<h1>결정은 왜 미루어지는가</h1>
+<p class="dek">기다림은 불확실성을 다루는 절차일까, 책임을 미루는 관성일까.</p>
+<p class="tag">시간축 · 두 관점 · 판단 질문</p>
+</header>
+
+<div class="leadbox">
+<p class="lb-label">핵심 질문</p>
+<p class="lb-q">지금 기다리는 이유와 그 대가를 한 문장으로 설명할 수 있는가?</p>
+<p class="lb-label">한 문장 결론</p>
+<p class="lb-a">지연에는 갈등을 잘게 나누는 과정과 확인 가능한 신호를 기다리는 절차가 있습니다. 목적·신호·책임자·재검토 시점을 정하지 않으면 기다림은 선택을 보류하는 습관이 됩니다.</p>
+</div>
+
+<section>
+<h2>왜 지금 이 문제인가<span>회의는 끝났는데 결정은 남아 있다</span></h2>
+<p>‘더 확인하자’는 말은 때로 손실을 막습니다. 그러나 시간이 흐를수록 선택지는 줄고 비용은 커집니다. 지연을 한 사람의 우유부단함으로만 설명하면 조직의 구조가 보이지 않습니다.</p><p>여러 부서가 서로 다른 목표를 좇고 결과를 확신할 수 없을 때, 기다림은 조직이 갈등과 불확실성을 다루는 방식이 됩니다. 그 방식이 신중한 탐색인지 행동을 늦추는 관성인지가 질문입니다.</p>
+</section>
+
+<section>
+<h2>두 연구가 갈라지는 지점<span>갈등의 분해인가, 속도의 설계인가</span></h2>
+<h3>조직의 관점 — 갈등과 불확실성을 나눠 다룬다</h3><p>Cyert와 March는 1963년 저서에서 기업을 단일한 두뇌로 그리지 않습니다. 목표는 여러 집단 사이에 나뉘고, 선택은 제한된 정보와 통상 절차를 거칩니다. 합의하기 어려운 목표를 한 번에 풀기보다 하위 목표를 차례로 다루고, 예측이 불안할 때는 장기 전망보다 규칙과 단기 피드백에 기대는 경향이 생깁니다. 지연이 어떤 갈등을 잘게 나누고 어떤 불확실성을 견디게 하는지가 이 관점의 질문입니다.</p><h3>속도의 관점 — 실시간 정보로 빨리 닫는다</h3><p>Eisenhardt는 1989년 변화가 빠른 산업의 전략 결정을 살폤습니다. 빠르게 결정한 경영진은 정보를 덜 모은 것이 아니라 실시간 정보를 활용하고, 더 많은 대안을 비교했으며, 경험 많은 조언자와 팀의 의견을 결합했습니다. 결정을 빨리 닫으면서도 실행은 단계적으로 설계할 수 있어 속도와 숙고가 서로 배척되지 않습니다.</p><div class="clash"><p>Cyert와 March의 틀도 지연을 언제나 지혜로 보증하지 않고, Eisenhardt의 반론도 모든 지연을 없애라는 처방이 아닙니다. 하나는 갈등이 나뉘는 방식을, 다른 하나는 제한된 시간에 정보와 대안을 모으는 방식을 보여줍니다. 같은 상관이 두 결론을 모두 지지할 수 있는 기준점이 갈림입니다.</p></div>
+</section>
+
+<section class="case">
+<h2>적용 사례 — 리먼 파산 직후 Lloyds의 HBOS 인수<span>2008년 9월 합의에서 2009년 1월 완료까지</span></h2>
+<p>2008년 9월 14일 리먼브러더스가 파산을 신청한 뒤 자금시장이 얼어붙자 HBOS는 예금과 도매자금 조달 압박을 받았습니다. Lloyds TSB는 9월 18일 HBOS 인수 조건에 합의했다고 발표했습니다. 영국 하원 재무위원회는 거래가 상대적으로 적은 실사로 빠르게 진행됐다고 지적했습니다.</p><p>Lloyds 최고경영자 에릭 대니얼스는 의회에서 약 5,000 인일을 투입했다고 말하면서도, 시간이 더 있었다면 실사에 세 배에서 다섯 배를 썼을 것이라고 답했습니다. 인수는 2009년 1월 16일 완료됐지만, HBOS는 2008년 108억 파운드의 손실을 냈고 정부와 Lloyds의 후속 자본 투입은 합계 280억 파운드에 달했습니다.</p><p>공개 자료만으로 실사 부족이 이후 손실을 얼마만큼 초래했는지 단정할 수 없습니다. 시장 붕괴와 HBOS의 기존 대출·자금조달 취약성이 함께 작용했습니다. 이 사례가 던지는 질문은 ‘더 빨리 결정했어야 했나’가 아니라, 급한 거래를 밀어붙이는 동안 어떤 핵심 정보를 먼저 확인하고 어떤 위험을 뒤에 남겼는가입니다.</p><div class="timeline"><div class="tl"><b>2008-09-14</b><p>리먼브러더스가 파산을 신청하고 자금시장이 얼어붙었습니다.</p></div><div class="tl"><b>2008-09-18</b><p>Lloyds TSB가 HBOS 인수 조건 합의를 발표했습니다.</p></div><div class="tl"><b>실사 규모</b><p>약 5,000 인일이 투입됐지만, 시간이 더 있었다면 세 배에서 다섯 배를 썼을 것으로 답했습니다.</p></div><div class="tl"><b>2008-10-01</b><p>HBOS가 영란은행의 긴급 유동성 지원을 받았습니다.</p></div><div class="tl"><b>2009-01-16</b><p>인수가 완료됐습니다.</p></div><div class="tl"><b>이후</b><p>HBOS는 2008년 108억 파운드 손실을 냈고 후속 자본 투입은 합계 280억 파운드였습니다.</p></div></div>
+</section>
+
+<section>
+<h2>렌즈 — 상황의 잠재성<span>프랑수아 줄리앙의 효과</span></h2>
+<p>프랑수아 줄리앙은 정해 둔 계획을 상황에 투사하는 방식과, 상황 안에서 형성되는 변화의 가능성을 읽고 그 흐름을 활용하는 방식을 대비합니다. 이 렌즈로 보면 기다림은 막연한 시간을 더하는 일이 아니라 무엇이 변하고 어떤 선택지가 열리거나 닫히는지 관찰하는 시간일 수 있습니다.</p><p>다만 잠재성을 읽는다는 말이 위험 신호를 무기한 관찰하라는 뜻은 아닙니다. 변화가 임박한 징후와 행동을 미룰 때 생길 비용을 함께 공개해야 기다림을 전략으로 구별할 수 있습니다. 인수 후에도 감당해야 할 자산·자금·통합 위험을 결정 과정 안에 연결했는지가 남은 질문입니다.</p>
+</section>
+
+<section class="ask">
+<h2>리더의 판단 질문<span>결정 전에 스스로 확인할 것</span></h2>
+<ol><li>기다리는 목적을 한 문장으로 적어 두었는가?</li><li>확인할 신호와 그 신호를 볼 사람이 정해졌는가?</li><li>책임자와 재검토 시점이 지정되어 있는가?</li><li>지연이 폭로하는 갈등은 무엇인가?</li></ol>
+</section>
+
+<section class="closing">
+<h2>한 줄로 남기면</h2>
+<p>지연을 진단하고 속도를 설계해야 합니다. 기다림의 목적, 확인할 신호, 책임자, 재검토 시점을 정하지 않은 채 ‘조금 더 보자’고만 하면 지연은 선택을 보류하는 습관이 됩니다. 시한을 정하고 정보·대안·반대 의견을 함께 검토하면 속도를 높여도 숙고를 버리지 않을 수 있습니다.</p>
+</section>
+
+<section>
+<h2>근거 자료<span>서지와 확인 범위</span></h2>
+<p class="cite">두 연구는 공개 서지와 논지 범위에서 정리했습니다. 사례는 영국 의회와 감독당국의 공개 기록으로 교차 확인했고, 실사 부족과 손실의 인과를 확정하지 않습니다.</p>
+<details><summary>조직은 갈등을 나눠 다룬다</summary><p class="source">Richard M. Cyert·James G. March, <cite>A Behavioral Theory of the Firm</cite> (1963). 갈등의 준해결·불확실성 회피를 참조했습니다.</p></details><details><summary>빠른 결정의 조건</summary><p class="source">Kathleen M. Eisenhardt, “Making Fast Strategic Decisions in High-Velocity Environments,” <cite>Academy of Management Journal</cite> 32(3) (1989). 실시간 정보와 대안 비교를 참조했습니다.</p></details><details><summary>Lloyds-HBOS 결정 기록</summary><p class="source">영국 하원 재무위원회 보고서(2009), 의회 금융기준위원회 조사(2013), PRA·FCA 검토 공지(2015)로 시점과 수치를 확인했습니다.</p></details>
+</section>
+
+<footer>
+<span>Lead Read · 3분 브리핑</span>
+<p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+const root=document.documentElement;const b=document.getElementById('theme-toggle');
+b.addEventListener('click',()=>{const n=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=n;});
+</script>
+</body>
+</html>
