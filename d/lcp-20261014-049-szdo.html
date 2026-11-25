@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>내용증명 보내고 기다리기만 하면 권리를 잃는다 — 보전·취소·명령 3단이다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 채권 회수</div>
+    <h1>내용증명 보내고 기다리기만 하면 권리를 잃는다 — 보전·취소·명령 3단이다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 내용증명은 <b>통지의 증거</b>일 뿐 권리를 보전하지 않습니다. 그래서 <b>가압류</b>(민사집행법 제276조)로 재산을 붙잡고, <b>사해행위 취소</b>(민법 제406조)로 빼돌린 처분을 되돌리고, <b>지급명령</b>(민사소송법 제462조)으로 무응답을 끊는 3단이 이어져야 합니다. 기다리는 시간이 길어질수록 <b>보전의 실익은 줄어듭니다.</b>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>빌려준 돈을 받으러 갔다가 "다음 주에 주겠다"는 말만 듣고 돌아오는 상황</b>을 떠올려 보십시오. 그 사이 상대가 <b>집을 다른 사람 명의로 바꾸고 차를 팔아 버리면</b>, 나중에 이겨도 받을 것이 남지 않습니다. 편지를 보냈다는 사실은 <b>내가 요구했다는 증거</b>일 뿐, 상대의 재산을 붙잡아 두지는 못합니다. 그래서 <b>요구와 동시에 붙잡는 절차</b>를 준비해야 합니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점 — 세 절차</h2>
+    <p><b>① 가압류(민사집행법 제276조).</b> <b>금전채권의 보전</b>을 위해 가압류를 검토합니다. 본안 소송 전에 <b>재산을 묶어 두는 절차</b>이므로, 재산의 동향을 살피고 <b>빠져나가기 전에</b> 움직이는 편이 안전합니다. <b>보전의 필요성과 피보전권리를 소명할 자료</b>를 갖춰야 합니다.</p>
+    <p><b>② 사해행위 취소(민법 제406조).</b> <b>채권자를 해한다는 인식</b>으로 한 재산처분은 취소할 수 있습니다. <b>처분의 시점과 경위</b>, <b>상대방의 인식</b>을 따져야 하며, <b>무상 처분과 염가 처분의 흔적</b>을 살펴야 합니다.</p>
+    <p><b>③ 지급명령(민사소송법 제462조).</b> <b>금전 등의 지급을 구하는 청구</b>라면 법원이 <b>서면 심리만으로</b> 명령을 내릴 수 있습니다. 소송보다 <b>빠르고 비용이 적게</b> 드는 길이므로, 무응답 사안에서 먼저 검토할 절차입니다.</p>
+    <div class="callout"><b>내용증명의 한계를 분명히 하십시오.</b> 내용증명은 <b>통지의 증거</b>가 될 뿐 <b>권리를 보전하지 않습니다.</b> 보낸 뒤에는 반드시 <b>가압류와 지급명령의 수순</b>으로 이어가야 합니다. 그리고 지급명령에 상대방이 <b>이의를 제기하면 소송으로 이어지므로</b>, 신청 단계부터 소송 자료를 함께 준비해야 합니다.</div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외 — 여섯 지점</h2>
+    <ul class="points">
+      <li><b>재산 동향의 감시</b> — 채무자의 재산이 빠져나가는 정황이 포착되면 <b>즉시 보전으로</b> 넘어갑니다. 등기와 계좌의 변동을 살피는 체계를 갖춥니다.</li>
+      <li><b>소명 자료</b> — 가압류에는 <b>보전의 필요성과 피보전권리</b>를 소명할 자료가 필요합니다. 채권 내역을 미리 정리해 두어야 즉시 움직일 수 있습니다.</li>
+      <li><b>처분의 흔적</b> — 사해행위 취소는 <b>처분 시점·경위·상대방의 인식</b>이 핵심입니다. 무상·염가 처분의 흔적을 모읍니다.</li>
+      <li><b>절차의 선택</b> — 무응답이 이어지면 <b>지급명령을 먼저</b> 검토합니다. 소송보다 빠르고 저렴한 길이기 때문입니다.</li>
+      <li><b>이의 대비</b> — 지급명령에 이의가 나오면 소송으로 갑니다. <b>신청 단계에서부터</b> 소송 자료를 함께 준비합니다.</li>
+      <li><b>시기의 관리</b> — 기다리는 시간이 길어질수록 보전의 실익이 줄어듭니다. <b>내용증명 발송과 동시에</b> 후속 절차의 일정을 잡습니다.</li>
+    </ul>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">내용증명을 보낸 날에 <b>후속 일정표를 함께</b> 만드십시오. 일정표에는 보전·취소·명령의 순서를 적습니다.</p>
+    <ol>
+      <li><b>① 기록</b> — 발송 일시·도달 여부·무응답 기간을 남겨 후속 절차의 명분을 만듭니다.</li>
+      <li><b>② 채권</b> — 발생 경위·금액·변제 내역을 정리해 소명 자료로 씁니다.</li>
+      <li><b>③ 보전</b> — 제276조에 따라 가압류를 검토하고, 재산 동향을 확인합니다.</li>
+      <li><b>④ 취소</b> — 제406조에 따라 사해행위 취소의 여지를 살핍니다.</li>
+      <li><b>⑤ 명령</b> — 제462조에 따라 지급명령을 신청하고, 이의 대비 자료를 함께 준비합니다.</li>
+      <li><b>⑥ 일정</b> — 내용증명 발송일을 기준으로 후속 절차의 시점을 표로 확정합니다.</li>
+    </ol>
+    <p style="margin-top:16px;margin-bottom:0;">문서는 세 가지입니다 — 채권 내역서(발생 경위·금액·변제 내역·증빙), 재산 동향 기록(등기·계좌 변동의 확인일과 내용, 처분의 시점과 상대방), 절차 일정표(내용증명 발송일·도달일·무응답 기간·보전 검토일·명령 신청 예정일). <b>무응답 기간과 재산 변동을 나란히 적으면</b> 어느 절차를 먼저 쓸지가 표에서 드러납니다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
