@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko" data-design="M2">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>이사는 결과가 아니라 절차로 방어한다 — 흔적을 남기는 다섯 칸 · 3MUST</title>
+<link rel="icon" href="data:,">
+<style>
+:root { color-scheme:light dark; --bg:#edf1f3; --paper:#fff; --ink:#202d3d; --muted:#596b80; --line:#cbd6e4; --accent:#245aa6; --wash:#e7eef8; font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif; }
+@media(prefers-color-scheme:dark){:root{--bg:#111a20;--paper:#1a252d;--ink:#eff4f4;--muted:#bac7c8;--line:#394a52;--wash:#253541;}}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);line-height:1.55}
+main{width:calc(100% - 28px);max-width:850px;margin:24px auto;padding:clamp(22px,5vw,48px);background:var(--paper);border:1px solid var(--line);border-top:7px solid var(--accent)}
+.eyebrow{font-size:.75rem;font-weight:750;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin:0 0 10px}
+h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.12;letter-spacing:-.035em;margin:0;text-wrap:balance}
+.situation{color:var(--muted);max-width:64ch;margin:14px 0 24px}
+.three{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+section{min-width:0;padding:17px 0;border-top:1px solid var(--line)}
+h2{font-size:.9rem;color:var(--accent);margin:0 0 7px;letter-spacing:.02em}
+p,li{max-width:68ch} section h3{margin:12px 0 4px;font-size:.82rem;font-weight:650;letter-spacing:.03em;color:var(--accent)} section h3:first-child{margin-top:0} section ul+ol,section ol+ul{margin-top:4px} section p{margin:0} section ul,section ol{margin:0;padding-left:1.25rem}
+.table-wrap{max-width:100%;overflow-x:auto;margin:10px 0 0;border:1px solid var(--line);border-radius:8px;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;min-width:560px;font-size:.88rem;line-height:1.45}
+th,td{padding:9px 11px;text-align:left;vertical-align:top;border-right:1px solid var(--line);border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+th:last-child,td:last-child{border-right:0} tbody tr:last-child td{border-bottom:0}
+th{background:var(--wash);font-weight:700;color:var(--ink)}
+.pause{margin-top:20px;padding:13px 15px;background:var(--wash);border-left:3px solid var(--accent)}
+.pause strong{display:block;margin-bottom:4px}.sources{margin-top:20px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+.sources p{margin:4px 0}.disclaimer{font-size:.75rem;color:var(--muted);margin-top:18px}
+html[data-design="M1"]{--accent:#bd4d28;--wash:#f8e7df;--bg:#ece9e5;--line:#dfc7bb;--ink:#252b2c;--muted:#59615f}
+html[data-design="M1"] main{border-top-width:10px}.m1 .three{grid-template-columns:1fr 1fr;gap:12px}.m1 section{border:1px solid var(--line);padding:14px;background:color-mix(in srgb,var(--wash) 35%,var(--paper))}.m1 section:last-child{grid-column:1/-1}
+html[data-design="M2"]{--accent:#176b68;--wash:#e3efed;--bg:#e7eeee;--line:#c5d7d4;--ink:#162c31;--muted:#52696a}
+html[data-design="M2"] h1{font-family:Georgia,"Batang",serif;font-weight:600}.m2 .three{grid-template-columns:1fr 1fr;gap:22px}.m2 section:nth-child(2){background:var(--wash);padding:15px;border-top:0}.m2 section:last-child{grid-column:1/-1}
+html[data-design="M3"]{--accent:#126d57;--wash:#e4f1eb;--bg:#e9eeea;--line:#c5d7cc;--ink:#1d3028;--muted:#5b6e64}
+.m3 .three{position:relative;padding-left:20px}.m3 .three:before{content:"";position:absolute;top:18px;bottom:18px;left:4px;width:2px;background:var(--accent);opacity:.45}.m3 section{position:relative;padding-left:14px}.m3 section:before{content:"";position:absolute;left:-20px;top:20px;width:9px;height:9px;border:2px solid var(--accent);border-radius:50%;background:var(--paper)}
+html[data-design="M4"]{--accent:#714d83;--wash:#eee8f3;--bg:#ece8ef;--line:#d7ccdf;--ink:#292331;--muted:#686071}
+.m4 .situation{background:var(--wash);border-left:3px solid var(--accent);padding:12px 15px}.m4 .three{grid-template-columns:1fr 1fr;gap:12px}.m4 section{border:1px solid var(--line);padding:15px}.m4 section:last-child{grid-column:1/-1}
+/* M4-wide is reserved for cards whose text and table need equal full-width measure. */
+.m4-wide .three{grid-template-columns:1fr;gap:14px}.m4-wide section:last-child{grid-column:auto}
+html[data-design="M5"]{--accent:#245aa6;--wash:#e7eef8;--bg:#edf1f3;--line:#cbd6e4;--ink:#202d3d;--muted:#596b80}
+.m5 .situation{background:var(--wash);padding:10px 12px;border:1px solid var(--line)}.m5 section{display:grid;grid-template-columns:minmax(145px,.34fr) 1fr;gap:18px}.m5 h2{color:var(--ink)}
+@media(prefers-color-scheme:dark){
+ html[data-design="M1"]{--accent:#f29a72;--wash:#392d29;--bg:#131a1a;--paper:#202929;--line:#48524f;--ink:#edf1ed;--muted:#b9c5bf}
+ html[data-design="M2"]{--accent:#73c6be;--wash:#203936;--bg:#101a1b;--paper:#1b292b;--line:#405452;--ink:#eaf3f2;--muted:#afc6c3}
+ html[data-design="M3"]{--accent:#78d4a8;--wash:#20382f;--bg:#111a17;--paper:#1b2822;--line:#40564a;--ink:#eaf3ed;--muted:#b4c8bc}
+ html[data-design="M4"]{--accent:#d0a5e2;--wash:#342b3a;--bg:#19151d;--paper:#28212e;--line:#51445b;--ink:#f1eaf4;--muted:#c7b9ce}
+ html[data-design="M5"]{--accent:#8cb7ff;--wash:#24364d;--bg:#141a22;--paper:#202a37;--line:#3d4d62;--ink:#edf2fa;--muted:#b8c5d8}
+}
+@media(max-width:620px){main{width:calc(100% - 18px);max-width:850px;margin:9px auto;padding:22px 17px}.m1 .three,.m2 .three,.m4 .three{grid-template-columns:1fr}.m1 section:last-child,.m2 section:last-child,.m4 section:last-child{grid-column:auto}.m5 section{grid-template-columns:1fr;gap:5px}}
+@media print{@page{size:A4 portrait;margin:10mm}html{color-scheme:light}body{background:#fff}main{width:100%;max-width:none;margin:0;padding:10mm;border:0;border-top:4mm solid var(--accent);box-shadow:none}.sources,.disclaimer{font-size:8.5pt}a{color:inherit;text-decoration:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="m2">
+  <p class="eyebrow">3MUST · 회사법</p>
+  <h1>이사는 결과가 아니라 절차로 방어한다 — 흔적을 남기는 다섯 칸</h1>
+  <p class="situation"><strong>적용 상황:</strong> 이사회에서 자본거래·자기주식 처분·특수관계인 거래를 결의했는데, 나중에 손실이 났거나 주주대표소송·손해배상 청구를 받은 상황. 또는 그런 안건을 올리기 전에 무엇을 남겨야 하는지 정해야 할 때.</p>
+  <div class="three">
+    <section><h2>Must Know · 알아야 할 것</h2><ul><li><strong>인식</strong> — 이사회가 법령·정관·주주이익과 관련된 위험을 알고 있었는가</li><li><strong>검토</strong> — 대안, 이해상충, 소액주주 영향, 재무효과를 실제로 따졌는가</li><li><strong>결의</strong> — 고른 안과 그 이유, 반대·유보 의견이 기록으로 남았는가</li><li><strong>실행</strong> — 결의 후 공시·승인·소집통지 같은 후속 조치가 실제로 있었는가</li><li><strong>보존</strong> — 나중에 제출할 수 있는 형태로 남아 있는가</li></ul></section>
+    <section><h2>Must Check · 확인할 것</h2><ul><li>적용 법령·정관과 그 시행일이 확인되었는지 (법령맵)</li><li>대안이 둘 이상 비교되었는지 (대안 비교표)</li><li>이해상충·특수관계가 점검되었는지 (점검표)</li><li>총주주 이익·소액주주 영향이 검토되었는지 (주주영향 분석표)</li><li>반대·유보·조건부 찬성 의견이 누락 없이 기재되었는지 (의사록)</li><li>결의 후 실행 담당자와 기한이 정해졌는지 (실행 체크리스트)</li><li>원본·마스킹본·제출등급이 관리되는지 (증거룸 목록)</li><li>의사록에 안건, 경과 요령, 결과, 반대자와 이유, 이해상충 관련 중요사실이 들어 있는지</li><li>주주 간 이해가 갈리는 안건(자본거래·합병·분할·특수관계인 거래)</li><li>이사 본인이나 그 특수관계인이 거래 상대방인 경우</li><li>손실 가능성이 큰데 대안 검토 자료가 한 개뿐인 경우</li><li>이미 대표소송 제소 청구를 받은 상태</li><li>회복할 수 없는 손해가 우려되어 대기 기간 없이 제소될 수 있는 경우</li><li>해외 제출·수사 협조가 예상되어 증거 등급을 새로 정해야 하는 경우</li></ul></section>
+    <section><h2>Must Do · 실행할 것</h2><ol><li>이번 안건이 다섯 칸 중 어디가 비어 있는지 표로 먼저 표시합니다.</li><li>빈 칸에 대응하는 자료를 만듭니다. 법무검토 메모, 재무영향 분석표, 대안 비교표, 이해상충 점검표.</li><li>안건 설명 문구에 "무엇을 확인하고 무엇을 논의해 왜 이 안을 골랐는지"를 문장으로 남깁니다.</li><li>반대·유보 의견은 그 자리에서 의사록에 적고, 필요한 보완을 하기로 한 사실까지 기록합니다.</li><li>결의 직후 실행 체크리스트를 만들어 담당자와 기한을 지정합니다.</li><li>결의·실행 자료를 증거룸에 원본으로 넣고, 제출등급 네 단계로 분류합니다.</li><li>외부 제출이 필요한 경우 변호사 검토를 거쳐 마스킹본을 씁니다.</li></ol></section>
+  </div>
+  <aside class="pause"><strong>잠깐 멈추고 검토할 때</strong><p>의사록이 찬반 표만 있고 이유가 없을 때 · 대안을 하나만 올렸는데 그 안이 채택된 이유가 설명되지 않을 때 · 안건 자료와 실제 결의 내용이 다를 때 · 결의 후 후속 조치가 누락된 채 시간이 지났을 때 · 증거 원본이 개인 메일·메신저에만 남아 있을 때 · 이미 소 제기가 임박해 자료 정리 순서를 바꿔야 할 때 · 보존 기간을 정하지 않아 자료가 폐기된 경우</p></aside>
+  <div class="sources"><p><strong>원자료:</strong> <code>_WIKI_법률지식/25_recursive doctrine/회사법/D-RD-회사법-이사회_방어의_5요소.md</code>(RD-055, <code>status: verified</code>, 2026-07-23 갱신). 원자료는 리스크레이더 이사회방어팩 5개 모듈을 묶어 5요소 틀을 만든 문서입니다.</p><p><strong>원자료가 제시한 법적 근거축:</strong> 상법 제382조의3(충실의무), 제399조(회사에 대한 책임), 제401조(제3자에 대한 책임), 제403조(주주대표소송), 제341조의3·제341조의4(자기주식), 제542조의7·제542조의8·제542조의12·제542조의14(감사·감사위원회 등).</p><p><strong>원자료가 인용한 판례:</strong> 대법원 2023.3.30. 선고 2019다280481, 2017.9.12. 선고 2015다70044, 2023.10.26. 선고 2020다236848, 2010.4.15. 선고 2009다98058, 2016.7.1.자 2014마2239, 2026.2.26. 선고 2025도13141.</p><p><strong>원자료가 스스로 밝힌 한계:</strong> 서울중앙지방법원 2025.12.24.자 2025카합22020과 대전지방법원 2025.7.25.자 2025카합50204는 검색에서 미수록이라 "하급심 언급" 정도의 보조 메모로만 두었습니다. 전자주총 기술요건·위탁요건은 고시 확인 전까지 보류 상태입니다.</p><p><strong>조정한 것:</strong> 원자료는 모듈별(자기주식·의사록·주총·증거룸)로 적용 방식을 나눠 설명하지만, 카드 독자는 자기 회사 이사회 하나를 두고 보므로 5요소 절차로 합쳤습니다. 특정 모듈의 세부 절차(자기주식 소각 절차, 전자주총 요건)는 이 카드 범위 밖입니다.</p><p><strong>미확인:</strong> 이번 세션(2026-11-25)에 한국법 MCP 조문 조회가 장애(<code>EXTERNAL_API_ERROR</code>)로 실패해 위 조문·판례를 <strong>직접 재확인하지 못했습니다.</strong> 카드에 적힌 조문 번호와 판례 번호는 원자료(RD-055, 검증 완료 표시)에 실린 것을 그대로 옮긴 것이며, 인용의 최종 확인은 MCP 복구 후 별도로 필요합니다. 본문 서술은 조문 번호 없이 절차와 증거 중심으로 구성했습니다.</p></div>
+  <p class="disclaimer">일반적인 실무 참고자료입니다. 개별 사안에서는 사실관계와 적용 기준을 확인하세요.</p>
+</main>
+</body>
+</html>
