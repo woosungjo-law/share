@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="referrer" content="no-referrer">
+<title>가명정보의 동의 없는 처리와 결합·반출 요건</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Segoe UI","Malgun Gothic",sans-serif;color:#1b2530;background:#f4f6f8;line-height:1.6;
+  --ink:#1b2530;--muted:#596873;--line:#c9d2d9;--brand:#176b60;--brand-bg:#eef6f4;--ok:#176b60;--ok-bg:#e6f4ef;--bad:#a3322b;--bad-bg:#fbeceb}
+*{box-sizing:border-box}
+body{margin:0}
+.wrap{max-width:720px;margin:auto;padding:20px 16px 40px}
+.card{background:#fff;border:1px solid #dbe1e6;border-radius:16px;padding:20px;margin:12px 0;box-shadow:0 2px 10px #1525360a}
+h1{font-size:1.3rem;margin:4px 0 8px}
+h2{font-size:1.05rem;margin:0 0 10px}
+h3{font-size:.98rem;margin:18px 0 6px}
+p{margin:8px 0}
+.muted{color:var(--muted)}
+.small{font-size:.9rem}
+.progress{height:8px;background:#e8edf1;border-radius:10px;overflow:hidden;margin-top:10px}
+.progress>i{display:block;height:100%;background:var(--brand);width:0;transition:width .2s}
+.badge{display:inline-block;padding:2px 10px;border-radius:99px;background:#e8edf1;font-size:.82rem;margin-bottom:8px}
+.prompt{font-size:1.02rem;font-weight:650;margin:14px 0 10px}
+.panel{background:#f7f9fa;border:1px solid #e2e8ec;border-radius:12px;padding:12px 14px;margin:10px 0}
+.panel b{display:block;font-size:.82rem;color:var(--muted);margin-bottom:2px}
+.choices{display:grid;gap:10px;margin-top:10px}
+.choices.two{grid-template-columns:1fr 1fr}
+@media (max-width:420px){.choices.two{grid-template-columns:1fr}}
+.choice{font:inherit;color:inherit;background:#fff;border:2px solid var(--line);border-radius:12px;padding:12px 14px;min-height:52px;text-align:left;cursor:pointer;overflow-wrap:anywhere;width:100%}
+.choice:hover:not(:disabled){background:var(--brand-bg);border-color:var(--brand)}
+.choice:disabled{cursor:default;color:var(--ink);opacity:1}
+.choice.center{text-align:center;font-weight:650}
+.choice[aria-pressed="true"]{border-color:#2b4a63;background:#eef3f8}
+.choice.is-correct{border-color:var(--ok);background:var(--ok-bg)}
+.choice.is-wrong{border-color:var(--bad);background:var(--bad-bg)}
+.choice.is-error .stmt{text-decoration:line-through;text-decoration-thickness:2px;color:var(--bad)}
+.tag{display:inline-block;margin:6px 6px 0 0;padding:1px 8px;border-radius:99px;font-size:.78rem;font-weight:700;background:#2b4a63;color:#fff}
+.is-correct .tag.t-ok,.tag.t-ok{background:var(--ok)}
+.tag.t-bad{background:var(--bad)}
+.verdict{font-weight:800;font-size:1.05rem;margin:0 0 6px}
+.verdict.ok{color:var(--ok)}
+.verdict.bad{color:var(--bad)}
+.feedback{border-left:5px solid var(--brand);background:var(--brand-bg);padding:12px 14px;margin-top:16px;border-radius:6px}
+.feedback.bad{border-left-color:var(--bad);background:var(--bad-bg)}
+.fix{margin-top:10px;padding:10px 12px;border-radius:8px;background:var(--ok-bg);border:1px solid #b9dccf}
+.fix b{color:var(--ok)}
+.next{font:inherit;font-weight:700;color:#fff;background:var(--brand);border:0;border-radius:12px;padding:12px 18px;min-height:48px;cursor:pointer;margin-top:14px;width:100%}
+.next.alt{background:#fff;color:var(--brand);border:2px solid var(--brand)}
+.bubble{max-width:88%;padding:10px 14px;border-radius:16px;margin:8px 0;overflow-wrap:anywhere}
+.bubble.them{background:#eef1f4;border-top-left-radius:4px}
+.bubble.me{background:#d9ece7;margin-left:auto;border-top-right-radius:4px}
+.who{display:block;font-size:.78rem;font-weight:700;color:var(--muted)}
+.chip{display:inline-block;background:#fff3d6;border:1px solid #ecd28a;border-radius:99px;padding:4px 12px;font-weight:700}
+.rows p{display:flex;gap:8px;margin:6px 0}
+.rows .mk{flex:none;width:1.6em;font-weight:800}
+.mk.ok{color:var(--ok)}.mk.bad{color:var(--bad)}
+.score{font-size:1.5rem;font-weight:800;margin:4px 0 10px}
+.sr{position:absolute;left:-9999px}
+</style>
+</head>
+<body><main class="wrap">
+<header class="card"><h1>가명정보의 동의 없는 처리와 결합·반출 요건</h1><p class="muted">가명정보를 동의 없이 처리할 수 있는 목적, 제3자 제공·결합·반출 요건, 안전조치와 기록 의무를 문항으로 확인합니다.</p>
+<div class="progress" aria-hidden="true"><i id="bar"></i></div>
+<p id="counter" class="muted small" aria-live="polite"></p></header>
+<section id="stage" class="card"></section>
+</main>
+<script>
+(()=>{'use strict';
+const DATA={"model":"statement","items":[{"title":"연구 목적과 동의 없는 처리","statement":"통계작성·과학적 연구·공익적 기록보존 등을 위한 경우에는 정보주체의 동의 없이 가명정보를 처리할 수 있다.","answer":true,"why":"개인정보 보호법 제28조의2 제1항은 개인정보처리자가 통계작성, 과학적 연구, 공익적 기록보존 등을 위하여 정보주체의 동의 없이 가명정보를 처리할 수 있다고 정하고 있습니다."},{"title":"알아볼 수 없는 정보의 취급","statement":"다른 정보를 사용하여도 더 이상 개인을 알아볼 수 없는 정보도 가명정보와 마찬가지로 개인정보 보호법의 적용을 받는다.","answer":false,"why":"개인정보 보호법 제58조의2는 시간·비용·기술 등을 합리적으로 고려할 때 다른 정보를 사용하여도 더 이상 개인을 알아볼 수 없는 정보에는 이 법을 적용하지 않는다고 정하고 있습니다. 같은 법 제2조 제1호 다목의 가명정보와는 적용 범위가 다릅니다."},{"title":"제3자 제공 시 포함 정보","statement":"가명정보를 제3자에게 제공하는 경우에는 특정 개인을 알아보기 위하여 사용될 수 있는 정보도 함께 포함할 수 있다.","answer":false,"why":"개인정보 보호법 제28조의2 제2항은 제1항에 따라 가명정보를 제3자에게 제공하는 경우에는 특정 개인을 알아보기 위하여 사용될 수 있는 정보를 포함해서는 아니 된다고 정하고 있습니다."},{"title":"결합은 누가 수행하나","statement":"통계작성·과학적 연구 등을 위한 서로 다른 개인정보처리자 간의 가명정보 결합은 보호위원회나 관계 중앙행정기관의 장이 지정하는 전문기관이 수행한다.","answer":true,"why":"개인정보 보호법 제28조의3 제1항은 제28조의2에도 불구하고 통계작성, 과학적 연구, 공익적 기록보존 등을 위한 서로 다른 개인정보처리자 간의 가명정보 결합은 보호위원회 또는 관계 중앙행정기관의 장이 지정하는 전문기관이 수행한다고 정하고 있습니다."},{"title":"결합정보 반출 절차","statement":"결합을 수행한 기관 외부로 결합된 정보를 반출하려면 가명정보로 처리하거나 더 이상 개인을 알아볼 수 없는 정보로 처리한 뒤 전문기관의 장의 승인을 받아야 한다.","answer":true,"why":"개인정보 보호법 제28조의3 제2항은 결합을 수행한 기관 외부로 결합된 정보를 반출하려는 개인정보처리자는 가명정보 또는 같은 법 제58조의2에 해당하는 정보로 처리한 뒤 전문기관의 장의 승인을 받아야 한다고 정하고 있습니다."},{"title":"복원 정보의 보관","statement":"가명정보를 처리할 때 원래의 상태로 복원하기 위한 추가 정보는 안전조치 대상이 아니므로 가명정보와 함께 보관해도 된다.","answer":false,"why":"개인정보 보호법 제28조의4 제1항은 가명정보를 처리하는 경우 원래의 상태로 복원하기 위한 추가 정보를 별도로 분리하여 보관·관리하는 등 대통령령으로 정하는 바에 따라 기술적·관리적 및 물리적 조치를 하여야 한다고 정하고 있습니다."},{"title":"처리 기록의 보관 기간","statement":"가명정보를 파기한 경우 그 처리에 관한 기록은 파기한 날부터 1년 이상 보관하면 충분하다.","answer":false,"why":"개인정보 보호법 제28조의4 제3항은 가명정보의 처리 내용에 관한 기록을 작성하여 보관하여야 하며, 가명정보를 파기한 경우에는 파기한 날부터 3년 이상 보관하여야 한다고 정하고 있습니다."},{"title":"가명처리의 의미","statement":"가명처리란 개인정보의 일부를 삭제하거나 일부 또는 전부를 대체하는 등의 방법으로 추가 정보가 없이는 특정 개인을 알아볼 수 없도록 처리하는 것을 말한다.","answer":true,"why":"개인정보 보호법 제2조 제1호의2는 가명처리를 개인정보의 일부를 삭제하거나 일부 또는 전부를 대체하는 등의 방법으로 추가 정보가 없이는 특정 개인을 알아볼 수 없도록 처리하는 것으로 정의하고 있습니다."}],"summary":{"correct_rules":["개인정보처리자는 통계작성, 과학적 연구, 공익적 기록보존 등을 위하여 정보주체의 동의 없이 가명정보를 처리할 수 있습니다.","가명정보를 제3자에게 제공하는 경우에는 특정 개인을 알아보기 위하여 사용될 수 있는 정보를 포함해서는 안 됩니다.","서로 다른 개인정보처리자 간의 가명정보 결합은 보호위원회 또는 관계 중앙행정기관의 장이 지정하는 전문기관이 수행합니다.","결합을 수행한 기관 외부로 결합된 정보를 반출하려면 가명정보 또는 같은 법 제58조의2에 해당하는 정보로 처리한 뒤 전문기관의 장의 승인을 받아야 합니다.","가명정보를 처리하는 경우에는 원래 상태로 복원하기 위한 추가 정보를 별도로 분리해 보관·관리하는 등 기술적·관리적·물리적 안전조치를 해야 합니다.","가명정보의 처리 목적·제공받는 자·처리 기간 등 처리 내용을 기록해 보관해야 하며, 파기한 경우에는 파기한 날부터 3년 이상 보관해야 합니다.","가명정보는 추가 정보의 사용·결합 없이는 특정 개인을 알아볼 수 없는 정보이고, 가명처리는 개인정보의 일부를 삭제하거나 일부 또는 전부를 대체하는 등의 방법으로 그렇게 처리하는 것을 말합니다.","시간·비용·기술 등을 합리적으로 고려할 때 다른 정보를 사용하여도 더 이상 개인을 알아볼 수 없는 정보에는 이 법이 적용되지 않습니다."],"caution":"일반적인 법률 학습용입니다. 개별 사안의 성립·결과·기간·비용을 판단하거나 보장하지 않습니다. 구체적인 자료와 절차 상태를 별도로 확인하세요."}};
+const stage=document.getElementById('stage'),bar=document.getElementById('bar'),counter=document.getElementById('counter');
+let at=0,results=[];
+
+const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n};
+const MODEL={statement:{name:'진술 판정',prompt:'이 진술은 맞을까요?'}};
+const items=DATA.items,N=items.length,M=MODEL[DATA.model];
+
+function progress(){bar.style.width=Math.round(at/N*100)+'%';counter.textContent=at<N?`${at+1} / ${N}`:'완료'}
+function start(){at=0;results=[];render()}
+function render(){
+  progress();stage.replaceChildren();
+  const it=items[at];
+  stage.append(el('span','badge',`${M.name} · 문항 ${at+1}`));
+  stage.append(el('h2','',it.title));
+  renderStatement(it);
+}
+
+/* ---- 공통: 선택 표시를 유지한 채 정오를 붙인다 (화면을 비우지 않는다) ---- */
+function lockChoices(btns,picked,correct,correctTag){
+  btns.forEach((b,i)=>{
+    b.disabled=true;b.setAttribute('aria-pressed',String(i===picked));
+    if(i===correct)b.classList.add('is-correct');
+    if(i===picked&&i!==correct)b.classList.add('is-wrong');
+    const wrap=el('div');
+    if(i===picked)wrap.append(el('span','tag','내 선택'),' ');
+    if(i===correct)wrap.append(el('span','tag t-ok',correctTag||'정답'));
+    if(wrap.childNodes.length)b.append(wrap);
+  });
+}
+function verdictBox(ok,why,extra){
+  const box=el('div','feedback'+(ok?'':' bad'));
+  box.setAttribute('role','status');
+  box.append(el('p','verdict '+(ok?'ok':'bad'),ok?'✓ 맞아요':'✕ 다시 볼 부분이에요'));
+  if(why)box.append(el('p','',why));
+  if(extra)box.append(extra);
+  const last=at===N-1;
+  const nb=el('button','next',last?'결과 보기':'다음 문항');nb.type='button';
+  nb.addEventListener('click',()=>{at++;if(at>=N)showResult();else render()});
+  stage.append(box,nb);
+  nb.focus({preventScroll:false});
+  return box;
+}
+function record(ok){results.push({title:items[at].title,ok})}
+
+/* ---- 진술 판정 ---- */
+function renderStatement(it){
+  const p=el('div','panel');p.append(el('b','','진술'));p.append(el('p','',it.statement));stage.append(p);
+  stage.append(el('p','prompt',M.prompt));
+  const box=el('div','choices two');
+  const btns=['맞다','틀리다'].map((label,i)=>{const b=el('button','choice center',label);b.type='button';b.setAttribute('aria-pressed','false');
+    b.addEventListener('click',()=>{const ans=it.answer?0:1,ok=i===ans;record(ok);lockChoices(btns,i,ans,'정답');verdictBox(ok,it.why)});return b});
+  btns.forEach(b=>box.append(b));stage.append(box);
+}
+
+/* ---- 종료 요약 ---- */
+function showResult(){
+  progress();stage.replaceChildren();
+  const right=results.filter(r=>r.ok).length;
+  stage.append(el('h2','','결과'));
+  const sc=el('p','score',`${N}문항 중 ${right}문항 맞음`);sc.setAttribute('role','status');stage.append(sc);
+  const rows=el('div','rows');
+  results.forEach(r=>{const p=el('p');p.append(el('span','mk '+(r.ok?'ok':'bad'),r.ok?'○':'✕'));p.append(el('span','',r.title+(r.ok?' — 맞음':' — 다시 볼 부분')));rows.append(p)});
+  stage.append(rows);
+  const rules=DATA.summary.correct_rules||[],caution=DATA.summary.caution||'';
+  stage.append(el('h3','','확인된 법리'));rules.forEach(x=>stage.append(el('p','','• '+x)));
+  stage.append(el('h3','','주의 사항'));stage.append(el('p','',caution));
+  const disclosure='답변은 저장·전송되지 않습니다. 형성학습용 퀴즈이며 개별 사건의 법률 판단이 아닙니다.';
+  stage.append(el('p','muted small',disclosure));
+  const msg=el('p','small');msg.setAttribute('role','status');
+  const copy=el('button','next','결과 복사');copy.type='button';
+  copy.addEventListener('click',async()=>{
+    try{const rows=results.map(r=>`${r.title} — ${r.ok?'맞음':'다시 볼 부분'}`);await navigator.clipboard.writeText([`${N}문항 중 ${right}문항 맞음`,'',...rows,'','확인된 법리',...rules.map(x=>'• '+x),'','주의 사항',caution,'',disclosure].join('\n'));msg.textContent='결과를 복사했습니다.'}
+    catch(_){msg.textContent='이 브라우저에서는 복사할 수 없습니다. 결과를 선택해 복사해 주세요.'}});
+  stage.append(copy,msg);
+  copy.focus({preventScroll:true});
+}
+if(N)start();else stage.textContent='문항을 불러오지 못했습니다.';
+})();
+</script></body></html>
