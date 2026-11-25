@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>집단의 기억은 기록에 남는가, 해석에 남는가 — Lead Read</title>
+<style>
+:root{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}}
+html[data-theme="dark"]{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}
+html[data-theme="light"]{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans KR","Pretendard","Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;line-height:1.78;word-break:keep-all;overflow-wrap:anywhere}
+.page{max-width:920px;margin:auto;padding:26px 20px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--ln);font-size:.78rem;letter-spacing:.1em;color:var(--mut)}
+.top b{color:var(--ink)}
+button{font:inherit;font-size:.8rem;padding:6px 10px;color:var(--ink);background:var(--sf);border:1px solid var(--ln);border-radius:4px;cursor:pointer}
+a{color:var(--ac);text-underline-offset:.2em}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--mk);outline-offset:3px}
+header{padding:34px 0 10px}
+.kicker{color:var(--mk);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.28;letter-spacing:-.03em;margin:.4em 0 .3em}
+.dek{font-size:clamp(1.02rem,2.2vw,1.18rem);color:var(--mut);margin:0 0 10px;max-width:62ch}
+.tag{display:inline-block;margin-top:12px;padding:4px 10px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:700;border-radius:3px}
+h2{font-size:clamp(1.22rem,2.8vw,1.62rem);line-height:1.34;letter-spacing:-.02em;margin:0 0 8px}
+h2 span{display:block;font-size:.78rem;font-weight:600;letter-spacing:.06em;color:var(--mk);margin-top:5px}
+h3{font-size:1.02rem;margin:0 0 6px}
+p{margin:0 0 14px;max-width:70ch}
+section{padding:26px 0;border-top:1px solid var(--ln)}
+.leadbox{margin:22px 0 4px;padding:20px;background:var(--sf);border-left:4px solid var(--ac)}
+.lb-label{font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin:0 0 4px}
+.lb-q{font-size:1.06rem;font-weight:700;margin:0 0 14px}
+.lb-a{margin:0;color:var(--ink)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.pole{padding:18px;background:var(--sf);border-top:4px solid var(--ac)}
+.pole:nth-child(2){border-top-color:var(--mk)}
+.pole small{display:block;font-size:.72rem;letter-spacing:.1em;font-weight:800;color:var(--mk);margin-bottom:6px}
+.clash{margin-top:16px;padding:16px 18px;background:var(--ac2);border-left:4px solid var(--mk)}
+.timeline{margin-top:18px;padding-left:18px;border-left:2px solid var(--ln)}
+.tl{position:relative;margin:0 0 16px}
+.tl:before{content:"";position:absolute;left:-25px;top:.55em;width:9px;height:9px;border-radius:50%;background:var(--mk)}
+.tl b{display:block;color:var(--mk);font-size:.92rem}
+.tl p{margin:2px 0 0;color:var(--mut)}
+.signal{margin-top:16px;padding:18px;background:var(--ac2);border:1px solid var(--ln)}
+.signal p{margin:0 0 10px}
+.signal p:last-child{margin:0}
+.siglabel{display:inline-block;font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin-right:8px}
+.mnote{margin:16px 0;padding:13px 15px;background:var(--mk2);border-left:3px solid var(--mk);font-size:.95rem}
+.mnote b{display:block;font-size:.72rem;letter-spacing:.1em;color:var(--mk);margin-bottom:4px}
+.table-wrap{overflow-x:auto;margin-top:14px}
+table{width:100%;border-collapse:collapse;font-size:.93rem;table-layout:fixed;word-break:normal}
+caption{word-break:normal;text-align:left;padding-bottom:8px;color:var(--mut);font-size:.88rem}
+th,td{border-bottom:1px solid var(--ln);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--ac2);color:var(--ink);font-size:.85rem}
+.scan{margin-top:16px;padding:15px 17px;background:var(--sf);border:1px solid var(--ln);border-left:4px solid var(--ac)}
+.scan ul{margin:6px 0 0;padding-left:20px}
+.ask ol{margin:12px 0 0;padding-left:22px}
+.ask li{margin:0 0 10px}
+.closing{padding:24px;background:var(--sf);border-top:2px solid var(--ac)}
+.closing h2{margin-bottom:10px}
+.closing p{font-size:1.04rem;margin:0}
+.cite{color:var(--mut);font-size:.94rem}
+details{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--ln)}
+summary{cursor:pointer;font-weight:700;color:var(--ac)}
+.source{margin:8px 0 0;font-size:.92rem;color:var(--mut)}
+.source cite{font-style:normal;color:var(--ink);font-weight:600}
+footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--ln);color:var(--mut);font-size:.84rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.author-credit{color:var(--ink);font-weight:800}
+@media (max-width:640px){
+.page{padding:18px 14px 44px}
+.duo{grid-template-columns:1fr}
+header{padding:24px 0 6px}
+section{padding:22px 0}
+table{font-size:.84rem}
+th,td{padding:8px 7px}
+.closing{padding:18px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="top"><span><b>Lead Read</b> · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="테마 바꾸기">테마</button></div>
+<header>
+<p class="kicker">Lead Read · 리더십 브리핑</p>
+<h1>집단의 기억은 기록에 남는가, 해석에 남는가</h1>
+<p class="dek">조직이 과거를 잊지 않으려 할 때 먼저 하는 일은 기록입니다. 그런데 기록은 남아 있는데 같은 실수가 반복됩니다.</p>
+<p class="tag">산문 · 근거 주석 · 판단 질문</p>
+</header>
+
+<div class="leadbox">
+<p class="lb-label">핵심 질문</p>
+<p class="lb-q">남는 것은 문서인가, 그때의 판단인가?</p>
+<p class="lb-label">한 문장 결론</p>
+<p class="lb-a">기록을 남기는 일과 그 기록을 다시 읽는 일은 다른 일입니다. 저장의 양과 해석의 틀을 나눠 물어야 기억이 판단으로 돌아옵니다.</p>
+</div>
+
+<section><h2>왜 지금 이 문제인가<span>기록은 쌓이는데 왜 같은 실수가 반복되는가</span></h2><p>조직이 과거를 잊지 않으려 할 때 가장 먼저 하는 일은 기록을 남기는 것입니다. 회의록을 쌓고 사건 보고서를 철하고 조사 결과를 문서로 묶습니다. 그런데 기록은 남아 있는데 같은 실수가 반복되는 경우가 많습니다. 문서고가 두꺼워질수록 오히려 아무도 다시 읽지 않는 일이 생깁니다.</p><p>그래서 물음이 갈립니다. 기억을 문서 보관함으로 볼 것인가, 지금 사람들이 과거를 읽는 방식으로 볼 것인가. 두 답은 같은 예산을 다른 곳에 쓰게 만듭니다. 하나는 색인과 보존에, 다른 하나는 다시 읽는 자리의 설계에 씁니다.</p><p><div class="mnote"><b>여백 1 · 두 층</b>문서가 남았다는 사실과 그 문서가 지금 판단을 이끌고 있다는 사실은 별개의 확인입니다. 감사에서 흔히 앞의 하나만 확인합니다.</div></p></section><section><h2>기억은 어디에 있는가<span>사회적 틀과 조직 저장소</span></h2><p>모리스 알브왁스는 1925년 기억의 사회적 틀을 다루면서 과거가 그대로 보존되는 것이 아니라 현재를 기준으로 재구성된다고 보았습니다. 개인은 혼자 기억하지 않습니다. 가족과 직장, 세대가 공유하는 틀 안에서 장면을 다시 세웁니다. 이 관점에서 기억의 실체는 저장물이 아니라 작동하는 해석입니다. 같은 문서를 두고도 어느 집단의 틀로 읽느냐에 따라 강조점이 달라집니다.</p><p>제임스 월시와 게리 웅슨은 1991년 조직 기억을 정리하면서 기억이 사람 머릿속에만 있지 않다고 보았습니다. 개인, 문화, 변환, 구조, 생태, 외부 기록이라는 여섯 개의 저장소가 있습니다. 규정집과 보고서, 사무 공간의 배치, 관행으로 굳은 절차가 모두 기억의 그릇입니다. 이 모형에서 기억은 해석 이전에 물질적 흔적으로 존재합니다. 사람이 바뀌어도 절차가 남아 있으면 조직은 같은 방식으로 움직입니다.</p><p>두 설명은 서로를 부정하지 않습니다. 다만 예산을 어디에 둘지가 달라집니다. 저장소를 늘리는 일은 측정하기 쉽고, 틀을 바꾸는 일은 측정하기 어렵습니다. 그래서 조직은 대개 앞의 하나를 고릅니다.</p><p><div class="mnote"><b>여백 2 · 측정 가능성</b>측정하기 쉬운 쪽으로 예산이 몰리는 것은 게으름이 아니라 보고 체계의 문제입니다. 틀의 변화는 다음 사건이 터져야 확인됩니다.</div></p></section><section class="case"><h2>적용 사례 — 진실화해위원회, 2005년에서 2010년으로<span>문서로 남은 것과 읽히는 방식</span></h2><p>한국은 2005년 12월 1일 과거사 정리 기본법에 따라 진실화해위원회를 세웠습니다. 일제 강점기부터 권위주의 정권 시기까지의 사건을 신고받아 조사하는 기구였습니다. 246개 지역 단체와 함께 1년간 신고 접수를 알렸고, 시민 신고를 바탕으로 사건을 묶어 조사했습니다.</p><p>위원회가 5년 활동을 마친 2010년 말 공개된 집계에 따르면 접수된 신고는 10,860건이었고 그중 8,468건에서 진실이 규명됐습니다. 약 80퍼센트입니다. 문서로 남은 것은 상당했습니다. 그러나 같은 시기 평가는 갈렸습니다. 유족 단체 열 곳은 최종 보고서가 가해자에게 관용을 베풀었다고 비판했고, 학계 일부는 군과 경의 집행과 좌익 측 사건을 나란히 배치해 국가 권력의 의도를 희석했다고 지적했습니다.</p><p>문서의 양과 해석의 질문이 여기서 갈립니다. 저장소의 언어로 보면 8,468건의 조사 기록은 조직 기억의 축적입니다. 틀의 언어로 보면 그 기록이 무엇을 말하는지는 이후 누가 어떤 틀로 읽는지에 달렸습니다. 실제로 2008년 당시 대통령이 특정 사건에 대해 공식 사과를 했고, 그 뒤 위원회의 권한과 예산을 둘러싼 논쟁이 이어졌습니다. 남은 문서는 그대로였지만 문서를 읽는 제도적 틀은 움직였습니다.</p></section><section><h2>렌즈 — 이 기록은 지금 누구의 기억인가<span>알브왁스의 질문</span></h2><p>알브왁스에게 기억은 개인이 보관하는 사진첩이 아니라 집단이 지금의 문제를 풀기 위해 과거를 다시 세우는 작업입니다. 틀이 바뀌면 같은 과거가 다른 사건이 됩니다.</p><p>내가 통제할 수 있는 것은 무엇을 남길지 정하는 일입니다. 통제할 수 없는 것은 남긴 기록이 다음 세대의 어떤 틀에 들어가 다시 읽힐지입니다. 그래서 기록을 남기는 회의에서 물어야 할 것은 몇 건을 남겼는가가 아니라, 이 기록을 누가 다시 열 권한을 갖는가입니다.</p></section><section class="ask"><h2>리더의 판단 질문<span>결정 전에 스스로 확인할 것</span></h2><ol><li>이 사안의 병목은 저장의 양인가, 해석의 틀인가?</li><li>기록을 남긴 사람과 기록을 다시 읽는 사람이 같은 집단인가?</li><li>틀이 바뀌었을 때 기록을 다시 열 권한은 누구에게 있는가?</li></ol></section><section class="closing"><h2>한 줄로 남기면</h2><p>문서를 더 쌓는 일만으로는 기억이 판단으로 돌아오지 않습니다. 무엇을 남겼는지와 누가 다시 읽는지를 같은 회의에서 정해야, 남긴 기록이 다음 결정의 근거가 됩니다.</p></section><section><h2>근거 자료<span>서지와 확인 범위</span></h2><p class="cite">개념은 원문 발췌 없이 재구성했습니다. 사건은 위원회 공개 자료와 2010년 말 보도로 교차했습니다.</p><details><summary>사회적 틀</summary><p class="source">Maurice Halbwachs, <cite>Les cadres sociaux de la mémoire</cite> (1925), 영역본 <cite>On Collective Memory</cite> (University of Chicago Press, 1992).</p></details><details><summary>조직 기억</summary><p class="source">James P. Walsh &amp; Gerardo Rivera Ungson, “Organizational Memory,” <cite>Academy of Management Review</cite> 16(1) (1991), 57–91.</p></details><details><summary>적용 사례</summary><p class="source">진실화해위원회 공개 자료와 2010년 말 보도 — 2005-12-01 출범, 신고 10,860건 중 8,468건 규명, 2008년 대통령 사과, 최종 보고서 비판.</p></details></section>
+
+<footer>
+<span>Lead Read · 3분 브리핑</span>
+<p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+const root=document.documentElement;const b=document.getElementById('theme-toggle');
+b.addEventListener('click',()=>{const n=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=n;});
+</script>
+</body>
+</html>
