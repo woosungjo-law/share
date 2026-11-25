@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>드론 사고의 책임, 조종자·사업자·제조사를 가려 묻는다 — 3중 법리로 보십시오</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 드론·신기술 책임</div>
+    <h1>드론 사고의 책임, 조종자·사업자·제조사를 가려 묻는다 — 3중 법리로 보십시오</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 드론 사고는 <b>누구의 책임인지</b>를 세 갈래로 나눠 물어야 합니다. 제3자의 인명·재산 피해는 <b>민법 제750조</b>(불법행위)와 <b>제756조</b>(사용자책임)로, 배송 화물의 손해는 <b>제390조</b>(채무불이행)로 다룹니다. 사업자 책임의 갈림길은 <b>업무 수행 중이었는지</b>이고, 드론 자체의 결함이 원인이면 <b>제조물책임</b>까지 겹칩니다. 그리고 <b>드론 사고 판례는 아직 정립 단계</b>입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>배달 오토바이가 인도에 서 있던 사람을 치고, 실어 나르던 짐도 깨진 상황</b>을 떠올려 보십시오. <b>사람이 다친 것</b>과 <b>짐이 깨진 것</b>은 청구하는 상대와 근거가 다릅니다. 사람이 다친 건 <b>가해 행위</b>의 문제이고, 짐이 깨진 건 <b>운송 약속을 어긴</b> 문제입니다. 여기에 <b>배달원을 시킨 가게의 책임</b>이 붙고, <b>오토바이 자체가 고장 난 것</b>이라면 만든 회사의 문제까지 따라붙습니다. 드론도 똑같이 나눠 봐야 합니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점 — 세 갈래</h2>
+    <p><b>① 불법행위 — 제3자 피해(민법 제750조).</b> 드론 추락·충돌로 <b>제3자의 인명과 재산에 피해</b>가 생기면 불법행위 성립을 검토합니다. 초점은 <b>추락의 경위와 조종자의 과실</b>입니다.</p>
+    <p><b>② 사용자책임 — 사업자의 배상(민법 제756조).</b> 피해를 입힌 드론이 <b>사업자의 업무 수행 중</b>이었다면 사업자가 배상할 수 있습니다. <b>업무 수행 중인지가 갈림길</b>이므로 운항 기록과 지시 내역을 가려야 합니다. 여기서 <b>사업자의 지휘감독 관계</b>가 함께 따져집니다.</p>
+    <p><b>③ 채무불이행 — 화물 손해(민법 제390조).</b> 드론 배송은 <b>화물 운송의 일종</b>입니다. 화주·수하인과의 <b>운송계약(택배·물류 계약)</b>에 따라 채무불이행 책임이 발생할 수 있습니다. 운송계약서의 <b>책임 범위와 면책 조항</b>을 살펴야 합니다.</p>
+    <div class="callout"><b>판례가 아직 정립 단계입니다.</b> 드론 사고 배상에 관한 판례는 <b>확립되어 있지 않아</b>, 사안별로 <b>불법행위·사용자책임·제조물책임</b>의 법리를 종합 검토해야 합니다. <b>민법 제750조를 출발점</b>으로 삼아 사실관계에 맞는 법리를 고르는 것이 실무의 핵심입니다. 드론 자체의 결함이 사고 원인이었다면 <b>제조물책임</b>의 법리까지 검토하고, <b>제조사의 설계와 제조 과정</b>을 살펴 <b>결함의 원인</b>을 가려야 합니다.</div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외 — 여섯 지점</h2>
+    <ul class="points">
+      <li><b>피해의 구분</b> — <b>화물 손해</b>는 운송계약의 채무불이행으로, <b>제3자의 인명·재산 피해</b>는 불법행위로 다룹니다. 청구의 상대가 달라집니다.</li>
+      <li><b>주체의 특정</b> — <b>운항자(조종자)·사업자·제조사</b>를 가리고 각각의 청구를 설계합니다.</li>
+      <li><b>운항 기록</b> — <b>비행 경로·조종 내역·점검 기록</b>을 확보해야 과실 유무를 가릴 수 있습니다.</li>
+      <li><b>교육·승인</b> — <b>안전교육 이수</b>와 <b>비행 승인·허가</b> 내역을 함께 살핍니다.</li>
+      <li><b>계약과 보험</b> — 운송계약서의 <b>책임 범위·면책 조항</b>(면책이 과도한지 포함), <b>드론 책임보험·운송 배상책임 보험</b>의 가입 여부와 한도를 확인합니다.</li>
+      <li><b>보험의 공백</b> — 범위와 한도를 따진 뒤 <b>공백을 메울 방안</b>을 마련합니다. 사고 후에 알면 늦습니다.</li>
+    </ul>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">사고 <b>직후</b>에 세 가지를 고정하십시오. 시간이 지나면 영상은 덮어써지고 기록은 사라집니다.</p>
+    <ol>
+      <li><b>① 현장 고정</b> — 사고의 <b>일시·장소</b>, 드론의 <b>식별 정보</b>와 <b>영상</b>을 확보합니다.</li>
+      <li><b>② 주체 특정</b> — 운항자·사업자·제조사를 가립니다.</li>
+      <li><b>③ 법리 배분</b> — 제3자 피해는 제750조·제756조, 화물 손해는 제390조로 나눕니다.</li>
+      <li><b>④ 과실 입증</b> — 운항 기록·점검 기록·교육 이수·비행 승인 내역을 모읍니다.</li>
+      <li><b>⑤ 계약 검토</b> — 운송계약서의 책임 범위와 면책 조항을 확인합니다.</li>
+      <li><b>⑥ 보험 확인</b> — 책임보험·배상책임보험의 가입 여부, 범위와 한도를 확인합니다.</li>
+    </ol>
+    <p style="margin-top:16px;margin-bottom:0;">문서는 세 가지입니다 — <b>사고 조사표</b>(일시·장소·식별 정보·피해 내역·영상 보관 위치), <b>책임 주체표</b>(운항자·사업자·제조사별 적용 법리와 근거 조문, 업무 수행 중이었는지의 판단), <b>보험·계약 점검표</b>(가입 보험의 종류·한도, 면책 조항의 범위와 과도성). <b>판례가 정립되지 않은 영역</b>이므로, 어느 법리를 택했는지와 그 이유를 문서에 남기는 것 자체가 방어가 됩니다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
