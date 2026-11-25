@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>지식은 가까이서만 흐르는가 — Lead Read</title>
+<style>
+:root{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}}
+html[data-theme="dark"]{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}
+html[data-theme="light"]{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;line-height:1.78;word-break:keep-all;overflow-wrap:anywhere}
+.page{max-width:920px;margin:auto;padding:26px 20px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--ln);font-size:.78rem;letter-spacing:.1em;color:var(--mut)}
+.top b{color:var(--ink)}
+button{font:inherit;font-size:.8rem;padding:6px 10px;color:var(--ink);background:var(--sf);border:1px solid var(--ln);border-radius:4px;cursor:pointer}
+a{color:var(--ac);text-underline-offset:.2em}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--mk);outline-offset:3px}
+header{padding:34px 0 10px}
+.kicker{color:var(--mk);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.28;letter-spacing:-.03em;margin:.4em 0 .3em}
+.dek{font-size:clamp(1.02rem,2.2vw,1.18rem);color:var(--mut);margin:0 0 10px;max-width:62ch}
+.tag{display:inline-block;margin-top:12px;padding:4px 10px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:700;border-radius:3px}
+h2{font-size:clamp(1.22rem,2.8vw,1.62rem);line-height:1.34;letter-spacing:-.02em;margin:0 0 8px}
+h2 span{display:block;font-size:.78rem;font-weight:600;letter-spacing:.06em;color:var(--mk);margin-top:5px}
+h3{font-size:1.02rem;margin:0 0 6px}
+p{margin:0 0 14px;max-width:70ch}
+section{padding:26px 0;border-top:1px solid var(--ln)}
+.leadbox{margin:22px 0 4px;padding:20px;background:var(--sf);border-left:4px solid var(--ac)}
+.lb-label{font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin:0 0 4px}
+.lb-q{font-size:1.06rem;font-weight:700;margin:0 0 14px}
+.lb-a{margin:0;color:var(--ink)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.pole{padding:18px;background:var(--sf);border-top:4px solid var(--ac)}
+.pole:nth-child(2){border-top-color:var(--mk)}
+.pole small{display:block;font-size:.72rem;letter-spacing:.1em;font-weight:800;color:var(--mk);margin-bottom:6px}
+.clash{margin-top:16px;padding:16px 18px;background:var(--ac2);border-left:4px solid var(--mk)}
+.timeline{margin-top:18px;padding-left:18px;border-left:2px solid var(--ln)}
+.tl{position:relative;margin:0 0 16px}
+.tl:before{content:"";position:absolute;left:-25px;top:.55em;width:9px;height:9px;border-radius:50%;background:var(--mk)}
+.tl b{display:block;color:var(--mk);font-size:.92rem}
+.tl p{margin:2px 0 0;color:var(--mut)}
+.signal{margin-top:16px;padding:18px;background:var(--ac2);border:1px solid var(--ln)}
+.siglabel{display:inline-block;font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin-right:8px}
+.mnote{margin:16px 0;padding:13px 15px;background:var(--mk2);border-left:3px solid var(--mk);font-size:.95rem}
+.mnote b{display:block;font-size:.72rem;letter-spacing:.1em;color:var(--mk);margin-bottom:4px}
+.table-wrap{overflow-x:auto;margin-top:14px}
+table{width:100%;border-collapse:collapse;font-size:.93rem;table-layout:fixed;word-break:normal}
+caption{word-break:normal;text-align:left;padding-bottom:8px}
+th,td{border-bottom:1px solid var(--ln);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--ac2);color:var(--ink);font-size:.85rem}
+.scan{margin-top:16px;padding:15px 17px;background:var(--sf);border:1px solid var(--ln);border-left:4px solid var(--ac)}
+.ask ol{margin:12px 0 0;padding-left:22px}
+.ask li{margin:0 0 10px}
+.closing{padding:24px;background:var(--sf);border-top:2px solid var(--ac)}
+.closing h2{margin-bottom:10px}
+.closing p{font-size:1.04rem;margin:0}
+.cite{color:var(--mut);font-size:.94rem}
+details{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--ln)}
+summary{cursor:pointer;font-weight:700;color:var(--ac)}
+.source{margin:8px 0 0;font-size:.92rem;color:var(--mut)}
+.source cite{font-style:normal;color:var(--ink);font-weight:600}
+footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--ln);color:var(--mut);font-size:.84rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.author-credit{color:var(--ink);font-weight:800}
+@media (max-width:640px){
+.page{padding:18px 14px 44px}
+.duo{grid-template-columns:1fr}
+header{padding:24px 0 6px}
+section{padding:22px 0}
+table{font-size:.84rem}
+th,td{padding:8px 7px}
+.closing{padding:18px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="top"><span><b>Lead Read</b> · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="테마 바꾸기">테마</button></div>
+<header>
+<p class="kicker">Lead Read · 리더십 브리핑</p>
+<h1>지식은 가까이서만 흐르는가</h1>
+<p class="dek">같은 논문을 읽은 두 지역의 산업이 갈렸습니다. 지식은 문서로 다 옮겨지는가, 아니면 가까운 거리에 머무는가.</p>
+<p class="tag">시간축 · 두 관점 · 판단 질문</p>
+</header>
+
+<div class="leadbox">
+<p class="lb-label">핵심 질문</p>
+<p class="lb-q">우리가 옮기려는 지식은 문서로 완전히 옮겨지는가?</p>
+<p class="lb-label">한 문장 결론</p>
+<p class="lb-a">특허 인용은 같은 대도시권 안에서 더 자주 일어나고, 그 근접의 상당 부분은 사람 사이의 연결로 설명됩니다. 문서로 옮길 수 없는 부분이 무엇에 붙어 있는지를 먼저 가려야 합니다.</p>
+</div>
+
+<section>
+<h2>왜 지금 이 문제인가<span>같은 문서, 다른 성과</span></h2>
+<p>기술은 문서와 특허와 논문으로 남습니다. 그런데 같은 문서를 가진 두 회사의 성과가 다르고, 같은 논문을 읽은 두 나라의 산업이 갈립니다.</p><p>지식이 활자로 완전히 옮겨진다면 그런 차이는 나오지 않아야 합니다. 연구소를 어디에 둘지, 협력자를 어떻게 고를지, 클러스터에 돈을 넣을지의 결정이 여기서 갈립니다.</p>
+</section>
+
+<section>
+<h2>두 연구가 갈라지는 지점<span>장소를 재는가, 관계를 재는가</span></h2>
+<h3>국지적 파급 — 인용은 가까운 곳에서 더 자주 일어난다</h3><p>재피·트라텐버그·헨더슨은 1993년 논문에서 특허 인용으로 지식 파급의 지리를 측정했습니다. 인용하는 특허와 인용되는 특허의 위치를 비교하니, 인용은 같은 나라, 같은 주, 같은 대도시권 안에서 나올 확률이 그 지역의 기존 연구 밀도로 예상한 확률보다 높았습니다. 효과는 대도시권 수준에서 가장 뚜렷했고 시간이 지나도 아주 천천히 줄었습니다. 인용은 내가 이 선행 지식을 참조했다는 공개 기록이므로 누가 무엇을 읽었는지의 흔적이 남습니다.</p><h3>관계의 그림자 — 거리의 벽은 관계의 벽이었다</h3><p>자싯 싱은 2005년 논문에서 같은 인용 자료를 다시 썼습니다. 발명가들의 과거 공동 연구로 인적 네트워크를 구성하고, 두 특허 사이에 지식이 흐를 확률을 추정했습니다. 직접 또는 간접의 연결이 있으면 확률이 높았고 연결의 거리가 멀수록 낮았습니다. 결정적인 것은 그다음입니다. 지역 경계와 기업 경계가 지식 흐름에 주는 효과는 인적 연결을 넣은 뒤 줄어들었습니다. 지리와 기업이라는 벽의 상당 부분이 관계의 벽이었다는 뜻입니다.</p><div class="clash"><p>두 논문은 같은 자료에서 다른 원인을 찾습니다. 하나는 인용의 지리적 근접을 지식 파급의 증거로 읽고, 다른 하나는 그 근접이 인적 연결의 그림자라고 봅니다. 갈리는 것은 측정 단위입니다. 앞은 장소를 재고 뒤는 관계를 잽니다. 예산이 먼저 가는 곳도 다릅니다. 앞은 부지를 사고 뒤는 사람을 잇습니다. 어느 쪽도 상대의 증거를 없애지 못했기 때문에 이 논쟁은 아직 측정 설계의 문제로 남아 있습니다.</p></div>
+</section>
+
+<section class="case">
+<h2>적용 사례 — 1965년 루트 128, 1975년 실리콘밸리<span>고용에서 격차가 벌어진 시간</span></h2>
+<p>1965년 루트 128의 기술 고용은 실리콘밸리의 세 배였습니다. 두 지역 모두 대학과 연구소와 공급망이 밀집한 곳이었고, 루트 128은 벤처 자본과 대형 기술기업에서 오히려 앞서 있었습니다.</p><p>1975년에는 실리콘밸리가 약 15퍼센트 앞섰고 그 뒤 격차는 벌어졌습니다. 1990년 전자제품 수출은 110억 달러 대 46억 달러였고, 미국 100대 고성장 전자기업은 39개 대 4개였습니다. 같은 해 HP는 130억 달러 매출에 7억 7,100만 달러 이익을 냈고, DEC는 같은 매출에 9,500만 달러 손실을 냈습니다.</p><p>색세니언이 지적한 차이는 기업 간 관계였습니다. 실리콘밸리에는 수평적 네트워크와 잦은 이동, 활발한 창업이 있었고 루트 128의 수직 통합된 대기업들은 서로 닫혀 있었습니다. 거리와 자본 조건만으로는 이 격차를 설명하기 어렵습니다. 다만 그 네트워크가 지역 안에서 작동했다는 점에서 거리는 여전히 조건입니다.</p><div class="timeline"><div class="tl"><b>1965년</b><p>루트 128의 기술 고용이 실리콘밸리의 세 배였습니다.</p></div><div class="tl"><b>1975년</b><p>실리콘밸리가 고용에서 약 15퍼센트 앞섰습니다.</p></div><div class="tl"><b>1975~1990년</b><p>실리콘밸리의 신규 기술 일자리는 약 15만 개로 세 배였습니다.</p></div><div class="tl"><b>1990년</b><p>전자제품 수출 110억 달러 대 46억 달러, 고성장 전자기업 39개 대 4개였습니다.</p></div><div class="tl"><b>1990년</b><p>HP는 7억 7,100만 달러 이익, DEC는 9,500만 달러 손실을 냈습니다.</p></div><div class="tl"><b>1992년</b><p>DEC는 28억 달러 분기 손실을 기록하고 최고경영자가 물러났습니다.</p></div></div>
+</section>
+
+<section>
+<h2>렌즈 — 거리의 눈<span>제이콥스의 다양성</span></h2>
+<p>제인 제이콥스는 1961년 책에서 도시의 활력이 다양한 용도와 사람이 좁은 공간에서 교차하는 데서 나온다고 보았습니다. 서로 다른 목적을 가진 사람들이 같은 보도를 쓰고 우연히 마주치면서 서로의 일을 알게 됩니다. 그 우연한 접촉이 도시의 경제를 움직입니다.</p><p>지식도 같은 방식으로 움직입니다. 필요한 정보는 회의실이 아니라 복도와 식당에서 옮겨집니다. 루트 128의 대기업 단지는 잘 정리되어 있었지만 교차가 적었고, 실리콘밸리는 잡다한 회사와 사람이 뒤섞여 있었습니다. 클러스터를 만들 때 건물만 세우면 그 교차가 빠집니다. 다양성은 배치도가 아니라 서로 다른 사람이 같은 자리를 쓰는 빈도에서 나옵니다.</p>
+</section>
+
+<section class="ask">
+<h2>리더의 판단 질문<span>결정 전에 스스로 확인할 것</span></h2>
+<ol><li>우리가 옮기려는 지식은 문서로 완전히 옮겨지는가?</li><li>이 격차는 거리 때문인가, 관계 때문인가?</li><li>우리 클러스터에 서로 다른 목적의 사람이 교차할 자리가 있는가?</li></ol>
+</section>
+
+<section class="closing">
+<h2>한 줄로 남기면</h2>
+<p>클러스터를 만들기 전에 세 가지를 물어야 합니다. 옮기려는 지식이 문서로 완전히 옮겨지는가, 격차가 거리에서 오는가 관계에서 오는가, 서로 다른 목적의 사람이 교차할 자리가 있는가. 첫째를 놓치면 문서만 배포하고, 둘째를 놓치면 건물만 세우고, 셋째를 놓치면 지도 위의 클러스터가 됩니다.</p>
+</section>
+
+<section>
+<h2>근거 자료<span>서지와 확인 범위</span></h2>
+<p class="cite">두 논문은 공개 서지와 논지 범위에서 정리했습니다. 사례 수치는 공개 통계와 그 통계를 인용한 연구의 값으로 확인했고, 어느 지역이나 기업의 우열을 평가하지 않습니다.</p>
+<details><summary>국지적 파급을 측정한다</summary><p class="source">Adam B. Jaffe·Manuel Trajtenberg·Rebecca Henderson, “Geographic Localization of Knowledge Spillovers as Evidenced by Patent Citations,” <cite>Quarterly Journal of Economics</cite> 108(3) (1993).</p></details><details><summary>거리를 관계로 다시 읽는다</summary><p class="source">Jasjit Singh, “Collaborative Networks as Determinants of Knowledge Diffusion Patterns,” <cite>Management Science</cite> 51(5) (2005).</p></details><details><summary>도시의 교차</summary><p class="source">제인 제이콥스, 『미국 대도시의 죽음과 삶』(1961). 다양성과 거리의 눈 개념만 사용했고 발췌는 없습니다.</p></details>
+</section>
+
+<footer>
+<span>Lead Read · 3분 브리핑</span>
+<p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+const root=document.documentElement;const b=document.getElementById('theme-toggle');
+b.addEventListener('click',()=>{const n=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=n;});
+</script>
+</body>
+</html>
