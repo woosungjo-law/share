@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사고 하나에 책임 셋 — 공동불법행위와 보험자 구상의 순서</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 공동불법행위 구상</div>
+    <h1>사고 하나에 책임 셋 — 공동불법행위와 보험자 구상의 순서</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 순서가 세 단계입니다 — <b>공동불법행위 성립(민법 제760조)</b> → <b>보험자의 피해자에 대한 직접책임(상법 제724조 제2항)</b> → <b>구상권 행사</b>. 그리고 구상권에는 <b>일반채권과 같은 시효기간</b>이 적용됩니다(대법원 2024다249729). 특별한 시효를 기대하지 말고 <b>기산점을 먼저 계산</b>해야 회수 기회를 잃지 않습니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>식당에서 음식이 상해 손님이 배상을 청구한 상황</b>을 떠올려 보십시오. 조리한 주방, 식자재를 납품한 업체, 냉장 설비를 점검한 업체가 모두 관련되어 있습니다. 손님은 <b>아무에게나 청구할 수 있고</b>, 한 곳이 전액을 물어 주면 나머지는 그 범위에서 빠집니다. 문제는 <b>그 뒤</b>입니다 — 돈을 먼저 낸 곳이 나머지에게 <b>자기 몫을 넘는 부분</b>을 돌려받으려면, <b>누가 얼마나 기여했는지</b>를 자료로 보여야 합니다. 그래서 <b>사고 직후에 만든 기록</b>이 몇 달 뒤 청구의 성패를 가릅니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점 — 세 단계</h2>
+    <p><b>① 성립.</b> 민법 제760조는 여러 사람이 공동으로 타인에게 손해를 입힌 경우 공동으로 배상할 책임이 있다고 정하고, 공모까지 없더라도 <b>객관적 관련 공동성</b>이 있으면 공동불법행위가 성립한다고 봅니다. 판단 기준은 누가 먼저 지시했는지, 누가 마지막에 손을 댔는지가 아니라 <b>사고에 이르는 과정에서 각자의 행위가 객관적으로 관련되어 있는지</b>입니다.</p>
+    <p><b>② 직접책임.</b> 상법 제724조 제2항은 공동불법행위자들과 각각 보험계약을 체결한 보험자들이 피해자에 대하여 <b>각자 직접</b> 손해배상채무를 부담한다고 정합니다. 피해자는 보험자들을 상대로 직접 청구할 수 있고, 보험자 한 곳이 전액을 지급하면 다른 보험자들은 그 범위에서 면책됩니다. 한 곳이 먼저 지급한 뒤 나머지에게 돌려받는 구조가 여기서 나옵니다.</p>
+    <p><b>③ 구상과 시효.</b> 보험자대위 법리로 취득한 피보험자의 다른 공동불법행위자 및 그 보험자에 대한 구상권에는 <b>일반채권과 동일한 시효기간</b>이 적용된다는 것이 대법원 2024다249729의 결론입니다. 구상권이라는 이유로 특별한 시효가 적용되는 것이 아니므로, <b>언제부터 시효가 흐르는지</b>를 놓치면 회수 기회를 잃습니다.</p>
+    <div class="callout"><b>단계를 바꾸면 근거가 흐려집니다.</b> 사고와 각 업체의 객관적 관련성을 확인하고, 피해자에 대한 보험자의 직접책임 범위를 확정한 뒤, 지급한 금액 가운데 다른 주체가 부담할 부분을 구상으로 청구합니다. 단계마다 확인할 자료가 다르므로 순서를 지키는 것 자체가 준비입니다.</div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외 — 다섯 가지를 나눠 봅니다</h2>
+    <ul class="points">
+      <li><b>책임 비율</b> — 공동불법행위가 인정되면 내부적으로 부담 부분이 나뉘고, 한 사람이 자기 부담을 넘겨 지급한 만큼 다른 사람에게 구상할 수 있습니다. 비율은 사고에 기여한 정도로 정해지므로 <b>설비 결함과 시공·유지보수의 기여를 각각 자료로</b> 남깁니다.</li>
+      <li><b>지급과 면책의 구별</b> — 보험자가 전액을 지급했다는 사실과 구상이 인정되는 것은 다른 문제입니다. <b>어느 보험자가, 무엇을, 언제</b> 지급했는지를 지급 내역으로 확정합니다.</li>
+      <li><b>시효의 기산점</b> — 일반채권의 시효기간이 적용된다면 언제부터 시효가 흐르는지가 핵심입니다. 지급일과 청구 시점을 기록으로 남기고, <b>청구 전에 시효를 먼저 계산</b>합니다.</li>
+      <li><b>피해자와의 관계</b> — 이미 지급된 금액과 향후 청구 가능성을 함께 봅니다. 추가 청구가 예상되면 구상 협의의 범위도 함께 달라집니다.</li>
+      <li><b>청구 상대의 선정</b> — 공동불법행위자 개인에게 직접 청구할지, 그 보험자를 상대로 할지에 따라 회수 속도가 달라집니다. 보험자가 있는 경우에는 <b>보험자를 상대로 하는 편</b>이 지급까지의 절차가 단순합니다.</li>
+    </ul>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">네 문서로 회수 경로를 남기십시오. 협의가 진행되는 동안에도 시효는 흐르므로, 대화가 길어질수록 관리표의 의미가 커집니다.</p>
+    <ol>
+      <li><b>① 성립</b> — 공모 여부와 무관하게 객관적 관련 공동성이 있는지 확인합니다.</li>
+      <li><b>② 보험자</b> — 상법 제724조 제2항에 따른 각 보험자의 직접책임 범위를 확인합니다.</li>
+      <li><b>③ 지급</b> — 어느 보험자가 무엇을 언제 지급했는지 내역으로 확정합니다.</li>
+      <li><b>④ 비율</b> — 기여 자료로 내부 부담 비율을 산정합니다.</li>
+      <li><b>⑤ 시효</b> — 일반채권 시효기간이 적용됨을 전제로 기산점을 계산합니다.</li>
+      <li><b>⑥ 협의</b> — 다른 보험자와의 협의 내용과 시효 관리표를 함께 갱신합니다.</li>
+    </ol>
+    <p style="margin-top:16px;margin-bottom:0;">문서는 네 가지입니다 — 관계도(사고와 관련된 업체·보험자·계약 관계를 한 장에 그리고 각자의 역할 표시), 기여 자료 목록(설비 이력·시공 기록·유지보수 일지·감정 결과를 모아 기여 정도를 뒷받침), 지급 내역표(지급한 보험자·지급일·금액·지급 근거 — 구상 청구의 출발점), 시효 관리표(구상권의 시효기간·기산점·만료 예정일과 담당자). 구상 청구서에는 <b>법적 근거와 금액 산정 방식을 함께</b> 적고, 상법 제724조 제2항에 따른 지급 사실과 기여 자료를 붙여 보내면 상대 보험사가 검토할 때 다툼의 여지가 줄어듭니다. 마지막으로 <b>다른 보험자와의 협의 기록</b>을 남겨 두십시오 — 협의 중에도 시효는 흐르므로 대화록과 관리표를 같은 날짜로 갱신하는 습관이 회수 기회를 지킵니다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
