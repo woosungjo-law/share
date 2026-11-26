@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta name="robots" content="noindex,nofollow">
 <meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="수사관 현관 도착 시 초동 대응 (신분증 및 영장 제시 요구) — 일반 법률정보">
+<meta name="description" content="수사관 현관 도착 시 초동 대응 — 일반 법률정보">
 <meta property="og:type" content="article">
-<meta property="og:title" content="수사관 현관 도착 시 초동 대응 (신분증 및 영장 제시 요구)">
-<meta property="og:description" content="수사관 현관 도착 시 초동 대응 (신분증 및 영장 제시 요구) — 일반 법률정보">
-<title>수사관 현관 도착 시 초동 대응 (신분증 및 영장 제시 요구) — 조우성 변호사</title>
+<meta property="og:title" content="수사관 현관 도착 시 초동 대응">
+<meta property="og:description" content="수사관 현관 도착 시 초동 대응 — 일반 법률정보">
+<title>수사관 현관 도착 시 초동 대응 — 조우성 변호사</title>
 <style>
 :root{
   --bg:#f5f1f2; --panel:#ffffff; --panel2:#faf6f7;
@@ -153,20 +153,27 @@ th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px
 .footer .mn-credit .who a,.mn-credit--dark .who a{color:var(--header-accent,#d4a0aa)}
 .footer .mn-credit .msg,.mn-credit--dark .msg{color:rgba(255,255,255,.75)}
 
+
+:focus-visible{outline:3px solid var(--wine-l);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 </style>
 </head>
 <body>
 <div id="progress"></div>
-<button id="toTop" aria-label="맨 위로" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<button id="toTop" aria-label="맨 위로" onclick="window.scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})">↑</button>
 <div class="hero">
 <!-- MN-CREDIT-UPGRADE v1 :: ribbon -->
   <div class="mn-ribbon"><span class="in"><span class="mk"></span>로펌 머스트노우의 조우성 변호사가 제공하는 법률컨텐츠입니다</span></div>
-  <h1>수사관 현관 도착 시 초동 대응 (신분증 및 영장 제시 요구)</h1>
-  <div class="tldr"><div class="lb">3줄 요약 (TL;DR)</div><ul><li>수사관이 현관에 도착하면 <strong>절대 즉시 문을 열어주지 말고</strong>, 인터폰으로 신분증과 영장 제시를 먼저 요구해야 한다</li><li>신분증(사진·소속·성명)·영장 원본(법관 날인·피의자·혐의사실·압수대상물·수색장소)을 확인하기 전까지 출입 및 대화를 거부하는 것이 법상 권리다</li><li>자진 출입 허용·임의제출 동의는 추후 증거능력 다툼에서 불리하게 작용하므로 반드시 변호인 도착까지 대기해야 한다</li></ul></div>
+  <h1>PROC-RAID-005 | 수사관 현관 도착 시 초동 대응</h1>
+  <div class="tldr"><div class="lb">3줄 요약</div><ul>
+<li>문을 잠그거나 몸으로 막지 않습니다. 소속과 성명을 확인하고, 영장 제시를 요청하고, 곧바로 책임자에게 알립니다.</li>
+<li>영장은 처분을 받는 사람에게 제시되어야 합니다. 받는 사람이 피의자이면 사본을 받습니다.</li>
+<li>변호인 참여는 분명하게 요청합니다. 다만 <strong>변호인이 올 때까지 출입이나 집행을 거부할 수 있다고 전제하고 움직이지 않습니다.</strong></li>
+</ul></div>
   <div class="meta">
-    <span>작성일 2026-07-31</span>
-    <span>· 기준 법령 형사소송법(현행) · 착수 단계</span>
-<span>· 읽는 시간 약 8분</span>
+    <span>기준일 2026-11-26</span>
+    <span>· 기준 법령 형사소송법·수사준칙 (2026-10-02 시행본)</span>
+    <span>· 일반 법률정보</span>
   </div>
   <div class="cta-row">
     <a class="btn btn-p" href="#s1">바로 체크리스트</a>
@@ -179,314 +186,106 @@ th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px
       목차 <span class="ar">▾</span>
     </button>
     <div class="tt">목차</div>
-    <ol id="toc-list"><li><a href="#s1">0. 지금 당신의 위치</a></li><li><a href="#s2">1. 이번 단계에서 반드시 할 일</a></li><li><a href="#s3">2. 준비물</a></li><li><a href="#s4">3. 작성·제출물</a></li><li><a href="#s5">4. 흔한 실수</a></li><li><a href="#s6">5. 전문가 상담 신호</a></li><li><a href="#s7">6. 인접 절차 연결</a></li><li><a href="#s8">7. 근거 조문·판례</a></li><li><a href="#s9">8. 다음 단계</a></li><li><a href="#s10">실전 운영 부록 — 현관에서 사후 불복까지</a></li><li><a href="#s11">근거 카드 — 검증 전 후보와 적용 주의</a></li><li><a href="#s12">면책·상담 CTA</a></li></ol>
+    <ol id="toc-list"><li><a href="#s1">1. 이 단계에서 할 일</a></li><li><a href="#s2">2. 하지 않는 것</a></li><li><a href="#s3">3. 현장에서 쓸 말</a></li><li><a href="#s4">4. 바로 변호인에게 알릴 상황</a></li><li><a href="#s5">5. 근거</a></li><li><a href="#s6">안내</a></li></ol></ol>
   </nav>
   <main class="content">
-    <section class="blk" id="s1">
-      <div class="secl">STEP 1</div>
-      <h2>0. 지금 당신의 위치</h2>
-      <p>공통 5단계: 사전 → 착수 → 대응 → 결정 → 사후</p>
-<pre><code class="language-text">PROC-RAID-004(사전 TF구성) -&gt; [PROC-RAID-005: 현관 초동] -&gt; PROC-RAID-006(변호사 호출)
-</code></pre>
-
-    </section><section class="blk" id="s2">
-      <div class="secl">STEP 2</div>
-      <h2>1. 이번 단계에서 반드시 할 일</h2>
-      <ul>
-<li><input disabled="" type="checkbox"> 인터폰/문고리로 수사관의 <strong>소속·직급·성명·신분증 번호</strong>를 확인받고 메모한다</li>
-<li><input disabled="" type="checkbox"> 영장 원본을 <strong>문틈/인터폰 카메라로 비춰달라</strong> 요구하고, <strong>법원명·발부일자·판사 서명·압수대상물·수색장소</strong>를 육안 확인한다</li>
-<li><input disabled="" type="checkbox"> 영장에 기재된 피의자가 <strong>회사 또는 당사자 본인</strong>인지 확인한다</li>
-<li><input disabled="" type="checkbox"> &quot;변호사가 도착할 때까지 출입과 진술을 거부한다&quot;고 <strong>명시적으로 고지</strong>한다</li>
-<li><input disabled="" type="checkbox"> <strong>절대 임의제출·임의동행에 응하지 말고</strong>, 수사관이 제시하는 어떤 서류에도 즉시 서명하지 않는다</li>
-<li><input disabled="" type="checkbox"> PROC-RAID-006 비상연락망을 통해 사내 변호사+외부 로펌에 <strong>도착 사실과 영장 개요를 전파</strong>한다</li>
-</ul>
-
-    </section><section class="blk" id="s3">
-      <div class="secl">STEP 3</div>
-      <h2>2. 준비물</h2>
-      <div class="tbl-wrap"><table>
+<section class="blk" id="s1"><div class="secl">STEP 1</div><h2>1. 이 단계에서 할 일</h2><ul>
+<li>정중히 맞이하고 소속·직급·성명을 확인해 시각과 함께 적습니다.</li>
+<li>영장 제시를 요청합니다. 영장에 따른 처분이라는 사실, 기재된 범죄사실, 수색할 장소·신체·물건, 압수할 물건을 알려 주고 열람할 수 있게 해야 합니다.</li>
+<li>처분을 받는 사람이 피의자이면 영장 사본을 받습니다.</li>
+<li>책임자와 법무 담당자에게 도착 사실과 영장 개요를 알립니다.</li>
+<li>건물 책임자(간수자 또는 이에 준하는 사람)로 참여할 사람을 부릅니다.</li>
+<li>"이 자료도 주시겠어요?"라는 요청은 영장 집행과 구분해 책임자에게 넘깁니다. 임의로 낸 물건은 영장 없이 압수될 수 있습니다.</li>
+<li>집행 중 출입을 통제하는 지시가 있으면 따릅니다.</li>
+<li>파일과 문서를 지우거나 옮기지 않고, 다른 사람에게 그렇게 하라고 말하지 않습니다.</li>
+</ul></section>
+<section class="blk" id="s2"><div class="secl">STEP 2</div><h2>2. 하지 않는 것</h2><table>
 <thead>
 <tr>
-<th>준비물</th>
-<th>왜 필요한가</th>
-<th>준비 상태</th>
+<th>하지 않는 것</th>
+<th>이유</th>
 </tr>
 </thead>
-<tbody><tr>
-<td>비상연락망 카드 (PROC-RAID-001 출력물)</td>
-<td>변호사·로펌 전화번호 즉시 확보</td>
-<td>미확인</td>
+<tbody>
+<tr>
+<td>문 잠그기, 몸으로 막기</td>
+<td>집행에는 잠금을 열거나 개봉하는 등 필요한 처분이 허용됩니다</td>
 </tr>
 <tr>
-<td>영장 확인 체크리스트 카드 (PROC-RAID-004 출력물)</td>
-<td>확인 누락 방지, 초동 메모 틀</td>
-<td>미확인</td>
+<td>"변호인이 올 때까지 거부한다"고 선언하기</td>
+<td>확인한 조문에서 그런 권리를 확인하지 못했습니다</td>
 </tr>
 <tr>
-<td>현장 메모지+볼펜 (또는 녹음기)</td>
-<td>신분증 정보·영장 기재사항·수사관 발언 즉시 기록</td>
-<td>미확인</td>
+<td>내용을 읽지 않고 서명하기</td>
+<td>압수목록은 실물과 대조한 뒤 서명합니다</td>
 </tr>
 <tr>
-<td>인터폰/초인종 녹화 가능한 CCTV</td>
-<td>대응 과정의 객관적 증거 확보 (고성·위협·기만수사 입증용)</td>
-<td>미확인</td>
+<td>추측으로 설명하기</td>
+<td>모르는 것은 모른다고 말하고 책임자에게 넘깁니다</td>
 </tr>
-</tbody></table></div>
-
-    </section><section class="blk" id="s4">
-      <div class="secl">STEP 4</div>
-      <h2>3. 작성·제출물</h2>
-      <div class="tbl-wrap"><table>
+</tbody>
+</table></section>
+<section class="blk" id="s3"><div class="secl">STEP 3</div><h2>3. 현장에서 쓸 말</h2><blockquote>
+<p>"집행을 방해할 뜻은 없습니다. 영장을 보여 주시고 내용을 확인하게 해 주십시오. 지금 책임자와 변호인에게 연락하겠습니다."</p>
+<p>"변호인이 참여하려고 합니다. 도착 예정 시각은 ○시 ○분입니다."</p>
+<p>"그 자료의 제출은 책임자가 확인한 뒤 답변드리겠습니다."</p>
+</blockquote></section>
+<section class="blk" id="s4"><div class="secl">STEP 4</div><h2>4. 바로 변호인에게 알릴 상황</h2><ul>
+<li>영장을 보여 주지 않거나 내용을 확인할 수 없게 하는 경우</li>
+<li>일출 전 또는 일몰 후인데 영장에 야간집행을 할 수 있다는 기재가 없는 경우</li>
+<li>영장에 적힌 장소·물건 밖으로 수색이나 압수가 넓어지는 경우</li>
+<li>현장의 다른 직원이 지닌 물건을 그 직원에게 영장을 보이지 않고 가져가려는 경우</li>
+</ul></section>
+<section class="blk" id="s5"><div class="secl">STEP 5</div><h2>5. 근거</h2><table>
 <thead>
 <tr>
-<th>문서</th>
-<th>제출처</th>
-<th>주의점</th>
+<th>근거</th>
+<th>내용</th>
 </tr>
 </thead>
-<tbody><tr>
-<td>초동 대응 현장 기록지 (자체 양식)</td>
-<td>사내 변호사·외부 로펌</td>
-<td>당일 중으로 작성 완료, 미기재 시 사실관계 입증 곤란</td>
-</tr>
-<tr>
-<td>신분증 촬영본/메모</td>
-<td>사건 파일 저장</td>
-<td>신분증 촬영은 수사관 동의 필요 — 거부 시 육안 확인+성명·소속 메모</td>
-</tr>
-</tbody></table></div>
-
-    </section><section class="blk" id="s5">
-      <div class="secl">STEP 5</div>
-      <h2>4. 흔한 실수</h2>
-      <ul>
-<li><strong>실수 1</strong>: &quot;경찰이다&quot;는 말만 듣고 곧바로 현관 개방 → 수사관이 변호사 도착 전에 이미 사무실 내부를 둘러보거나 PC 화면을 목격할 수 있음</li>
-<li><strong>실수 2</strong>: 신분증도 영장도 안 보여줬는데 &quot;임의제출 각서&quot;에 서명 → 자진제출로 간주되어 압수의 위법성 다툼 불가</li>
-<li><strong>실수 3</strong>: 현장 직원이 당황해서 &quot;저희 회사가 무슨 잘못을 했습니까&quot;라고 질문 → 수사관이 그 발언을 초기 진술로 조서에 기재 가능</li>
-<li><strong>실수 4</strong>: 영장 원본을 스마트폰 사진으로 찍지 않고 &quot;잘 기억하겠다&quot;고 넘김 → 나중에 영장 기재사항이 기억나지 않아 범위 이탈 여부 판단 불가</li>
-<li><strong>실수 5</strong>: &quot;문을 안 열어주면 강제로 열겠다&quot;는 수사관 협박에 굴복 → 강제개방은 영장 집행의 범위 내에서만 가능하며 변호사 도착 지연도 정당한 권리행사</li>
-</ul>
-
-    </section><section class="blk" id="s6">
-      <div class="secl">STEP 6</div>
-      <h2>5. 전문가 상담 신호</h2>
-      <p><strong>위험도:</strong> 상담 권장</p>
-<ul>
-<li>수사관이 법원 발부 영장을 소지하지 않았거나 팩스/모바일 이미지만 제시하는 경우 — 영장 미제시 압수수색은 위법</li>
-<li><strong>위험도:</strong> 전문가 필요</li>
-<li>수사관이 복수 기관(경찰+검찰+국세청 등) 합동으로 출동한 경우 — 각 기관별 영장·권한 범위 확인 필수</li>
-<li>수사관이 &quot;참고인 자격으로 왔다&quot;며 임의동행을 요구하면서도 구두 수색을 시도하는 경우 — 사실상 강제처분일 수 있음</li>
-<li>수사관에게 이미 회사 관계자가 문을 열어주었거나 수색이 진행 중인 경우 → 005조 건너뛰고 즉시 006(변호사 호출)로 점프</li>
-</ul>
-
-    </section><section class="blk" id="s7">
-      <div class="secl">STEP 7</div>
-      <h2>6. 인접 절차 연결</h2>
-      <ul>
-<li>선행: PROC-RAID-004 (압수수색 사전 대비 태세 점검) · 후속: PROC-RAID-006 (사내 변호사·외부 로펌 긴급 호출)</li>
-<li>선행2: PROC-RAID-001 (TF 구성·비상연락망)에 등록된 연락망으로 즉시 전파</li>
-</ul>
-
-    </section><section class="blk" id="s8">
-      <div class="secl">STEP 8</div>
-      <h2>7. 근거 조문·판례</h2>
-      <div class="tbl-wrap"><table>
-<thead>
-<tr>
-<th>근거 후보</th>
-<th>의미</th>
-<th>검증상태</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>형사소송법 제118조</td>
-<td>영장 집행 시 피고인·피의자에게 반드시 영장을 제시해야 함 — 제시 없이 개한 압수수색은 위법수집증거</td>
-<td>검증완료(L2)</td>
-</tr>
+<tbody>
 <tr>
 <td>형사소송법 제219조</td>
-<td>검사·사법경찰관의 압수수색에 제118조 등 준용</td>
-<td>검증완료(L2)</td>
+<td>사법경찰관의 압수·수색에 제118조부터 제132조까지 등을 준용</td>
 </tr>
 <tr>
-<td>대법원 2007. 11. 29. 선고 2007도3061</td>
-<td>영장 제시 없이 이루어진 압수수색은 원칙적으로 위법하고, 그 수집된 증거는 증거능력이 없음</td>
-<td>검증완료(L2)</td>
+<td>형사소송법 제118조</td>
+<td>영장 제시. 받는 사람이 피고인이면 사본 교부(수사에는 준용). 현장에 없거나 거부하는 경우 등 예외</td>
 </tr>
 <tr>
-<td>헌법 제12조 제5항</td>
-<td>체포·구속·압수·수색에는 적법한 절차에 따른 영장 제시 필요</td>
-<td>검증완료(L2)</td>
+<td>수사준칙 제38조 ①②</td>
+<td>알릴 사항과 열람, 피의자에게 사본 교부, 여럿이면 각자에게 제시</td>
 </tr>
 <tr>
-<td>형사소송법 제200조의5(진술거부권)</td>
-<td>피의자는 진술을 거부할 수 있고, 진술거부로 불이익을 받지 않음</td>
-<td>검증완료(L2)</td>
-</tr>
-</tbody></table></div>
-
-    </section><section class="blk" id="s9">
-      <div class="secl">STEP 9</div>
-      <h2>8. 다음 단계</h2>
-      <p>PROC-RAID-006: 사내 변호사 및 외부 로펌 긴급 호출 절차</p>
-
-    </section><section class="blk" id="s10">
-      <div class="secl">STEP 10</div>
-      <h2>실전 운영 부록 — 현관에서 사후 불복까지</h2>
-      <h3>1. 3분 초동 프로토콜</h3>
-<div class="tbl-wrap"><table>
-<thead>
-<tr>
-<th>시점</th>
-<th>담당</th>
-<th>반드시 할 일</th>
-<th>금지할 일</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>0~30초</td>
-<td>보안·프론트</td>
-<td>신분·소속·영장 제시를 정중히 확인하고 법무 호출</td>
-<td>문을 잠그거나 물리적으로 저지</td>
+<td>형사소송법 제119조</td>
+<td>집행 중 타인의 출입 금지 가능</td>
 </tr>
 <tr>
-<td>30초~3분</td>
-<td>법무·임원</td>
-<td>영장의 죄명·장소·압수물·기간·유효기간을 메모</td>
-<td>영장 범위를 읽지 않고 전사 안내</td>
+<td>형사소송법 제120조</td>
+<td>잠금 해제·개봉 등 필요한 처분</td>
 </tr>
 <tr>
-<td>3분 이후</td>
-<td>TF</td>
-<td>참관인 배치, 자료보존, 이의사항 기록, 부서별 동행</td>
-<td>파일 삭제·서버 종료·직원 단체 대화</td>
-</tr>
-</tbody></table></div>
-<h3>2. 영장과 임의제출 분리표</h3>
-<div class="tbl-wrap"><table>
-<thead>
-<tr>
-<th>구분</th>
-<th>영장 집행</th>
-<th>임의제출</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>출발점</td>
-<td>법원이 발부한 강제처분</td>
-<td>소유자·소지자·보관자의 자발적 제출</td>
+<td>형사소송법 제123조 ②</td>
+<td>건조물 등에서는 주거주·간수자 또는 이에 준하는 사람을 참여시킴</td>
 </tr>
 <tr>
-<td>현장 대응</td>
-<td>범위 안에서는 방해 없이 집행 협조</td>
-<td>자료·기간·목적을 특정한 뒤 승인 여부 결정</td>
+<td>형사소송법 제125조</td>
+<td>야간집행 제한</td>
 </tr>
 <tr>
-<td>확인 기록</td>
-<td>영장 원본·집행일시·압수목록</td>
-<td>제출자료 목록·동의 범위·확인서 문구</td>
+<td>형사소송법 제218조</td>
+<td>임의로 제출한 물건의 압수</td>
 </tr>
 <tr>
-<td>핵심 리스크</td>
-<td>범위 밖 수색·압수</td>
-<td>압박 속 포괄 동의·불리한 자료 제출</td>
+<td>대법원 2017. 9. 21. 선고 2015도12400</td>
+<td>영장은 피압수자가 여럿이면 각자에게 제시하는 것이 원칙</td>
 </tr>
-</tbody></table></div>
-<h3>3. 디지털 자료 보존 체크</h3>
-<ul>
-<li><input disabled="" type="checkbox"> 서버·PC·휴대전화의 전원을 임의로 끄거나 삭제하지 않는다.</li>
-<li><input disabled="" type="checkbox"> 조사관의 이미징·복제 방식, 대상 계정·기간·키워드를 기록한다.</li>
-<li><input disabled="" type="checkbox"> 원본 반출인지 현장 이미징인지 구분하고 해시·매체·봉인 정보를 요청한다.</li>
-<li><input disabled="" type="checkbox"> 업무 중단이 큰 자료는 가환부·사본 제공·업무용 복제본 가능성을 별도로 요청한다.</li>
-<li><input disabled="" type="checkbox"> 압수목록에 파일명·기기번호·수량·상태가 구체적으로 기재됐는지 확인한다.</li>
-</ul>
-<h3>4. 현장 문구</h3>
-<blockquote>
-<p>“집행을 방해할 의사는 없습니다. 다만 영장에 기재된 장소·물건·기간과 다른 범위는 이의를 제기하고 기록해 주시기 바랍니다.”</p>
-</blockquote>
-<blockquote>
-<p>“영장 범위 밖 자료의 임의제출 여부는 자료를 확인하고 법무·책임자의 승인을 거친 뒤 서면으로 답변하겠습니다.”</p>
-</blockquote>
-<blockquote>
-<p>“이 자료가 업무에 필수적이므로 압수목록에 특정해 주시고, 사본·가환부 가능 여부를 함께 검토해 주십시오.”</p>
-</blockquote>
-<h3>5. 사후 48시간 기록 패키지</h3>
-<div class="tbl-wrap"><table>
-<thead>
-<tr>
-<th>파일</th>
-<th>포함 내용</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>01_현장타임라인</td>
-<td>도착·영장 제시·수색 장소·반출 시각</td>
-</tr>
-<tr>
-<td>02_영장검토표</td>
-<td>죄명·장소·압수물·기간·범위 이탈 이의</td>
-</tr>
-<tr>
-<td>03_압수목록대조표</td>
-<td>목록과 실제 반출물·전자기기·봉인 상태</td>
-</tr>
-<tr>
-<td>04_임의제출기록</td>
-<td>요청자·요청 자료·동의 범위·서명 문서</td>
-</tr>
-<tr>
-<td>05_후속쟁점표</td>
-<td>반환·가환부·준항고·증거능력·소환 연계</td>
-</tr>
-</tbody></table></div>
-
-    </section><section class="blk" id="s11">
-      <div class="secl">STEP 11</div>
-      <h2>근거 카드 — 검증 전 후보와 적용 주의</h2>
-      <blockquote>
-<p>형사소송법상 영장주의·압수수색·임의제출·위법수집증거·변호인 조력권을 중심으로 내부 doctrine과 연결한다. 조문 번호·판례는 현행 전문을 MCP로 확인한 뒤에만 확정 인용한다.</p>
-</blockquote>
-<div class="tbl-wrap"><table>
-<thead>
-<tr>
-<th>쟁점</th>
-<th>내부 연결</th>
-<th>상태</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>영장주의·압수수색 범위</td>
-<td>형사절차 수사방어 doctrine</td>
-<td>검증대기(L1)</td>
-</tr>
-<tr>
-<td>임의제출의 자발성·범위</td>
-<td>현관출동 강의·증거수집 RD</td>
-<td>검증대기(L1)</td>
-</tr>
-<tr>
-<td>위법수집증거 배제</td>
-<td>형사절차 전문증거·증거법 RD</td>
-<td>검증대기(L1)</td>
-</tr>
-<tr>
-<td>변호인 참여·기록 열람</td>
-<td>변호인 조력권 RD-335</td>
-<td>검증대기(L1)</td>
-</tr>
-</tbody></table></div>
-
-    </section><section class="blk" id="s12">
-      <div class="secl">STEP 12</div>
-      <h2>면책·상담 CTA</h2>
-      <p>압수수색은 수사기관의 권한 행사와 회사의 방어권이 동시에 작동하는 고위험 절차다. 현장에 이미 도착했거나 영장 범위·디지털 자료·임의제출에 이견이 있으면 즉시 형사절차 전문 변호사와 사실관계·자료보존·불복 가능성을 상담한다.</p>
-
-    </section>
-    <div class="notice">
-      본 자료는 2026-07-31 기준 일반 법률정보이며 특정 사건에 대한 법률 자문이 아닙니다.
-      법령·예규·법원 실무와 사건별 요구는 변경될 수 있으므로 제출 전 최신 원문과 관할 법원 안내를 확인해야 합니다.
-    </div>
+</tbody>
+</table>
+<p>수사준칙: 「검사와 사법경찰관의 상호협력과 일반적 수사준칙에 관한 규정」.</p></section>
+<section class="blk" id="s6"><div class="secl">STEP 6</div><h2>안내</h2><p>일반적인 법률 정보이며 특정 사건에 대한 자문이 아닙니다. 기관과 영장 내용에 따라 달라질 수 있고 법령은 바뀔 수 있습니다. 현장에 수사관이 도착했다면 바로 변호사에게 연락하십시오.</p></section>
+<section class="blk" id="sources"><div class="secl">원문 확인</div><h2>법령·판례 원문</h2><ul><li><a href="https://www.law.go.kr/LSW/lsInfoP.do?lsId=001671" rel="noopener noreferrer">국가법령정보센터 — 형사소송법 제118조부터 제125조까지</a></li><li><a href="https://www.scourt.go.kr/supreme/news/NewsViewAction2.work?gubun=4&amp;searchOption=&amp;searchWord=&amp;seqnum=5871" rel="noopener noreferrer">대법원 주요판결 — 2015도12400</a></li></ul><p>원문 확인일: 2026-11-26</p></section>
+<div class="notice">본 자료는 2026-11-26 기준 일반 법률정보이며 특정 사건에 대한 법률 자문이 아닙니다. 법령은 변경될 수 있습니다. 구체적인 현장 대응은 변호사와 상담하십시오.</div>
   </main>
 </div>
 <!-- MN-CREDIT-UPGRADE v1 :: credit -->
@@ -497,9 +296,7 @@ th{background:var(--panel2);color:var(--wine-d);font-weight:700;font-size:12.5px
 <footer class="footer" id="consult">
   <div class="wrap">
 
-    <div class="fine">
-      ? 2026 ??? ???. ? ???? ?? ?? ???? ?? ??? ???? ????.
-    </div>
+    <div class="fine">© 2026 로펌 머스트노우. 본 자료는 일반 법률정보이며, 특정 사건에 대한 법률 자문이 아닙니다.</div>
   </div>
 </footer>
 <script>
