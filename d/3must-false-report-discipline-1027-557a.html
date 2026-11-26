@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko" data-design="M2">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>신고 내용이 허위로 밝혀졌다 — 신고자를 징계하거나 고소할 수 있나 · 3MUST</title>
+<link rel="icon" href="data:,">
+<style>
+:root { color-scheme:light dark; --bg:#edf1f3; --paper:#fff; --ink:#202d3d; --muted:#596b80; --line:#cbd6e4; --accent:#245aa6; --wash:#e7eef8; font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif; }
+@media(prefers-color-scheme:dark){:root{--bg:#111a20;--paper:#1a252d;--ink:#eff4f4;--muted:#bac7c8;--line:#394a52;--wash:#253541;}}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);line-height:1.55}
+main{width:calc(100% - 28px);max-width:850px;margin:24px auto;padding:clamp(22px,5vw,48px);background:var(--paper);border:1px solid var(--line);border-top:7px solid var(--accent)}
+.eyebrow{font-size:.75rem;font-weight:750;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin:0 0 10px}
+h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.12;letter-spacing:-.035em;margin:0;text-wrap:balance}
+.situation{color:var(--muted);max-width:64ch;margin:14px 0 24px}
+.three{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+section{min-width:0;padding:17px 0;border-top:1px solid var(--line)}
+h2{font-size:.9rem;color:var(--accent);margin:0 0 7px;letter-spacing:.02em}
+p,li{max-width:68ch} section h3{margin:12px 0 4px;font-size:.82rem;font-weight:650;letter-spacing:.03em;color:var(--accent)} section h3:first-child{margin-top:0} section ul+ol,section ol+ul{margin-top:4px} section p{margin:0} section ul,section ol{margin:0;padding-left:1.25rem}
+.table-wrap{max-width:100%;overflow-x:auto;margin:10px 0 0;border:1px solid var(--line);border-radius:8px;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;min-width:560px;font-size:.88rem;line-height:1.45}
+th,td{padding:9px 11px;text-align:left;vertical-align:top;border-right:1px solid var(--line);border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+th:last-child,td:last-child{border-right:0} tbody tr:last-child td{border-bottom:0}
+th{background:var(--wash);font-weight:700;color:var(--ink)}
+.pause{margin-top:20px;padding:13px 15px;background:var(--wash);border-left:3px solid var(--accent)}
+.pause strong{display:block;margin-bottom:4px}.sources{margin-top:20px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+.sources p{margin:4px 0}.disclaimer{font-size:.75rem;color:var(--muted);margin-top:18px}
+html[data-design="M1"]{--accent:#bd4d28;--wash:#f8e7df;--bg:#ece9e5;--line:#dfc7bb;--ink:#252b2c;--muted:#59615f}
+html[data-design="M1"] main{border-top-width:10px}.m1 .three{grid-template-columns:1fr 1fr;gap:12px}.m1 section{border:1px solid var(--line);padding:14px;background:color-mix(in srgb,var(--wash) 35%,var(--paper))}.m1 section:last-child{grid-column:1/-1}
+html[data-design="M2"]{--accent:#176b68;--wash:#e3efed;--bg:#e7eeee;--line:#c5d7d4;--ink:#162c31;--muted:#52696a}
+html[data-design="M2"] h1{font-family:Georgia,"Batang",serif;font-weight:600}.m2 .three{grid-template-columns:1fr 1fr;gap:22px}.m2 section:nth-child(2){background:var(--wash);padding:15px;border-top:0}.m2 section:last-child{grid-column:1/-1}
+html[data-design="M3"]{--accent:#126d57;--wash:#e4f1eb;--bg:#e9eeea;--line:#c5d7cc;--ink:#1d3028;--muted:#5b6e64}
+.m3 .three{position:relative;padding-left:20px}.m3 .three:before{content:"";position:absolute;top:18px;bottom:18px;left:4px;width:2px;background:var(--accent);opacity:.45}.m3 section{position:relative;padding-left:14px}.m3 section:before{content:"";position:absolute;left:-20px;top:20px;width:9px;height:9px;border:2px solid var(--accent);border-radius:50%;background:var(--paper)}
+html[data-design="M4"]{--accent:#714d83;--wash:#eee8f3;--bg:#ece8ef;--line:#d7ccdf;--ink:#292331;--muted:#686071}
+.m4 .situation{background:var(--wash);border-left:3px solid var(--accent);padding:12px 15px}.m4 .three{grid-template-columns:1fr 1fr;gap:12px}.m4 section{border:1px solid var(--line);padding:15px}.m4 section:last-child{grid-column:1/-1}
+/* M4-wide is reserved for cards whose text and table need equal full-width measure. */
+.m4-wide .three{grid-template-columns:1fr;gap:14px}.m4-wide section:last-child{grid-column:auto}
+html[data-design="M5"]{--accent:#245aa6;--wash:#e7eef8;--bg:#edf1f3;--line:#cbd6e4;--ink:#202d3d;--muted:#596b80}
+.m5 .situation{background:var(--wash);padding:10px 12px;border:1px solid var(--line)}.m5 section{display:grid;grid-template-columns:minmax(145px,.34fr) 1fr;gap:18px}.m5 h2{color:var(--ink)}
+@media(prefers-color-scheme:dark){
+ html[data-design="M1"]{--accent:#f29a72;--wash:#392d29;--bg:#131a1a;--paper:#202929;--line:#48524f;--ink:#edf1ed;--muted:#b9c5bf}
+ html[data-design="M2"]{--accent:#73c6be;--wash:#203936;--bg:#101a1b;--paper:#1b292b;--line:#405452;--ink:#eaf3f2;--muted:#afc6c3}
+ html[data-design="M3"]{--accent:#78d4a8;--wash:#20382f;--bg:#111a17;--paper:#1b2822;--line:#40564a;--ink:#eaf3ed;--muted:#b4c8bc}
+ html[data-design="M4"]{--accent:#d0a5e2;--wash:#342b3a;--bg:#19151d;--paper:#28212e;--line:#51445b;--ink:#f1eaf4;--muted:#c7b9ce}
+ html[data-design="M5"]{--accent:#8cb7ff;--wash:#24364d;--bg:#141a22;--paper:#202a37;--line:#3d4d62;--ink:#edf2fa;--muted:#b8c5d8}
+}
+@media(max-width:620px){main{width:calc(100% - 18px);max-width:850px;margin:9px auto;padding:22px 17px}.m1 .three,.m2 .three,.m4 .three{grid-template-columns:1fr}.m1 section:last-child,.m2 section:last-child,.m4 section:last-child{grid-column:auto}.m5 section{grid-template-columns:1fr;gap:5px}}
+@media print{@page{size:A4 portrait;margin:10mm}html{color-scheme:light}body{background:#fff}main{width:100%;max-width:none;margin:0;padding:10mm;border:0;border-top:4mm solid var(--accent);box-shadow:none}.sources,.disclaimer{font-size:8.5pt}a{color:inherit;text-decoration:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="m2">
+  <p class="eyebrow">3MUST · 노동법</p>
+  <h1>신고 내용이 허위로 밝혀졌다 — 신고자를 징계하거나 고소할 수 있나</h1>
+  <p class="situation"><strong>적용 상황:</strong> 신고 내용이 허위로 밝혀졌다 — 신고자를 징계하거나 고소할 수 있나</p>
+  <div class="three">
+    <section><h2>Must Know · 알아야 할 것</h2><p><strong>금지되는 것은 '신고 행위 자체'를 이유로 한 불이익입니다.</strong> 근로기준법 제76조의3 제6항은 직장 내 괴롭힘을 신고한 근로자와 피해근로자등에게 해고나 그 밖의 불리한 처우를 하지 못하게 하고, 위반하면 같은 법 제109조 제1항에 따라 3년 이하의 징역 또는 3천만 원 이하의 벌금에 처해집니다. 성희롱 신고도 구조가 같습니다. 남녀고용평등법 제14조 제6항이 불이익 조치를 열거해 금지하고, 제30조는 이 법 관련 분쟁의 입증책임을 사업주에게 지웁니다.</p><p><strong>징계 사유를 어디에 두느냐가 결론을 바꿉니다.</strong> 사유가 "신고를 했다"이면 제76조의3 제6항 위반입니다. 사유가 "허위·조작된 사실을 신고해 동료의 명예와 인격권을 침해하고 조사 절차를 남용했다"이면 별개의 비위에 대한 징계이고 같은 항의 금지 대상이 아닙니다. 문구를 바꿔 적는 것이 요령이 아니라, 그런 비위가 실제로 입증되어야 사유가 성립합니다.</p><p><strong>'허위'의 기준은 인식입니다.</strong> 대법원은 허위사실 신고를 "신고사실이 객관적 사실에 반한다는 것을 확정적이거나 미필적으로 인식하고 신고하는 것"으로 설명하고, 허위성에 대한 인식이 없으면 무고의 고의가 없다고 봅니다(대법원 1995. 12. 5. 선고 95도231 판결). 범의는 미필적 고의로 충분하다는 판시도 있습니다(대법원 2022. 6. 30. 선고 2022도3413 판결).</p><p><strong>무고죄의 문언은 '공무소 또는 공무원'입니다.</strong> 형법 제156조는 "타인으로 하여금 형사처분 또는 징계처분을 받게 할 목적으로 공무소 또는 공무원에 대하여 허위의 사실을 신고한 자"를 10년 이하의 징역 또는 1천500만 원 이하의 벌금에 처합니다. 사내 인사팀 신고는 대상이 되기 어렵고, 노동청 진정·수사기관 고소는 대상이 될 수 있습니다.</p><p><strong>민사 책임과 명예훼손은 따로 봅니다.</strong> 허위 신고로 조사를 받은 사람은 민법 제750조·제751조로 손해배상을 청구할 수 있지만, 허위 인식과 손해, 인과관계는 청구하는 쪽이 입증해야 합니다. 형법 제307조의 명예훼손은 '공연성'이 관문이므로, 사내 조사 절차 안에서만 공유된 신고라면 공연성 판단이 별도로 문제됩니다.</p></section>
+    <section><h2>Must Check · 확인할 것</h2><ul><li>조사 결과 보고서가 "사실과 다름"과 "허위 인식"을 구분해 적고 있는지</li><li>조작이 확인된 항목이 날짜·장소·발언 단위로 특정됐는지</li><li>그 조작을 반증하는 객관 자료가 있는지(출입기록, 메신저 로그, 참고인 진술)</li><li>신고자가 허위임을 인식했음을 보여주는 간접 자료가 있는지(신고 전 대화, 동기 정황)</li><li>징계 사유 문구가 '신고 행위'가 아니라 '허위 신고 비위'로 특정됐는지</li><li>취업규칙에 해당 비위의 징계 근거 조항이 있는지, 양정이 유사 사례와 균형을 이루는지</li><li>신고 내용이 고용노동청·수사기관에도 제출됐는지(무고죄 검토가 달라짐)</li><li>신고자에게 전보·평가 하향·업무 배제 등 징계 외 불이익이 있었는지</li></ul></section>
+    <section><h2>Must Do · 실행할 것</h2><ol><li>조사 결과 보고서와 원자료를 즉시 보존합니다. 수정·파기 금지를 문서로 공지하고 원본을 별도 보관합니다.</li><li>신고 내용을 항목별로 쪼개 각 항목에 '사실 일치 / 불일치 / 조작'을 표시합니다. 전체를 한 덩어리로 '허위'라 쓰지 않습니다.</li><li>불일치·조작 항목마다 반증 자료를 붙입니다. 날짜·장소가 어긋나면 출입기록·일정표로, 발언이 문제되면 목격자 진술로 뒷받침합니다.</li><li>징계 사유를 "허위·조작된 사실을 신고하여 동료의 명예와 인격권을 침해하고 조사 절차를 남용하여"로 특정합니다.</li><li>징계위원회 전에 취업규칙상 근거 조항과 유사 사례 양정을 확인하고, 결정문에 그 근거를 적습니다.</li><li>형사 고소는 신고가 공무소에 제출된 경우에 한해 검토합니다.</li><li>민사 손해배상은 별도 트랙으로 분리해 청구 금액·입증 자료·소송 리스크를 따로 정리합니다.</li><li>허위 신고 징계 조항을 두되 요건을 "허위임을 알면서 신고한 경우"로 한정하고, 정당한 신고를 위축시키지 않는다는 점을 함께 적습니다.</li></ol></section>
+  </div>
+  
+  <div class="sources"><p><strong>검증(2026-11-26, 한국법 MCP 현행 본문):</strong> 근로기준법(001872) 제76조의3 제6항·제23조 제1항·제109조 제1항, 형법(001692) 제156조·제307조, 민법(001706) 제750조·제751조, 남녀고용평등법(000130) 제14조 제6항·제30조.</p><p><strong>판례 확인(2026-11-26, 한국법 MCP):</strong> 95도231·2022도3413·2006도4255·83도3075의 사건번호와 선고일.</p><p><strong>조정:</strong> 원자료 CASE A·B는 쟁점이 같아 한 카드로 합치고, 두 사례의 차이(징계 전 판단 / 징계 후 방어)를 Must Check에 반영했습니다. 대전지법 천안지원 2019가합104979는 확인하지 않아 인용하지 않았고, 손해배상액·치료비 산정은 범위에서 제외했습니다.</p><p><strong>미확인:</strong> 사내 신고에 대한 무고죄 성립을 직접 판단한 판례(문언 해석으로만 정리).</p></div>
+  <p class="disclaimer">일반적인 실무 참고자료입니다. 개별 사안에서는 사실관계와 적용 기준을 확인하세요.</p>
+</main>
+</body>
+</html>
