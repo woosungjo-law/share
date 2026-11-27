@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>기부는 이타심인가 평판인가 — Lead Read</title>
+<style>
+:root{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}}
+html[data-theme="dark"]{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}
+html[data-theme="light"]{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;line-height:1.78;word-break:keep-all;overflow-wrap:anywhere}
+.page{max-width:920px;margin:auto;padding:26px 20px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--ln);font-size:.78rem;letter-spacing:.1em;color:var(--mut)}
+.top b{color:var(--ink)}
+button{font:inherit;font-size:.8rem;padding:6px 10px;color:var(--ink);background:var(--sf);border:1px solid var(--ln);border-radius:4px;cursor:pointer}
+a{color:var(--ac);text-underline-offset:.2em}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--mk);outline-offset:3px}
+header{padding:34px 0 10px}
+.kicker{color:var(--mk);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.28;letter-spacing:-.03em;margin:.4em 0 .3em}
+.dek{font-size:clamp(1.02rem,2.2vw,1.18rem);color:var(--mut);margin:0 0 10px;max-width:62ch}
+.tag{display:inline-block;margin-top:12px;padding:4px 10px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:700;border-radius:3px}
+h2{font-size:clamp(1.22rem,2.8vw,1.62rem);line-height:1.34;letter-spacing:-.02em;margin:0 0 8px}
+h2 span{display:block;font-size:.78rem;font-weight:600;letter-spacing:.06em;color:var(--mk);margin-top:5px}
+h3{font-size:1.02rem;margin:0 0 6px}
+p{margin:0 0 14px;max-width:70ch}
+section{padding:26px 0;border-top:1px solid var(--ln)}
+.leadbox{margin:22px 0 4px;padding:20px;background:var(--sf);border-left:4px solid var(--ac)}
+.lb-label{font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin:0 0 4px}
+.lb-q{font-size:1.06rem;font-weight:700;margin:0 0 14px}
+.lb-a{margin:0;color:var(--ink)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.pole{padding:18px;background:var(--sf);border-top:4px solid var(--ac)}
+.pole:nth-child(2){border-top-color:var(--mk)}
+.pole small{display:block;font-size:.72rem;letter-spacing:.1em;font-weight:800;color:var(--mk);margin-bottom:6px}
+.clash{margin-top:16px;padding:16px 18px;background:var(--ac2);border-left:4px solid var(--mk)}
+.ask ol{margin:12px 0 0;padding-left:22px}
+.ask li{margin:0 0 10px}
+.closing{padding:24px;background:var(--sf);border-top:2px solid var(--ac)}
+.closing h2{margin-bottom:10px}
+.closing p{font-size:1.04rem;margin:0}
+.cite{color:var(--mut);font-size:.94rem}
+details{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--ln)}
+summary{cursor:pointer;font-weight:700;color:var(--ac)}
+.source{margin:8px 0 0;font-size:.92rem;color:var(--mut)}
+.source cite{font-style:normal;color:var(--ink);font-weight:600}
+footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--ln);color:var(--mut);font-size:.84rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.author-credit{color:var(--ink);font-weight:800}
+@media (max-width:640px){
+.page{padding:18px 14px 44px}
+.duo{grid-template-columns:1fr}
+header{padding:24px 0 6px}
+section{padding:22px 0}
+.closing{padding:18px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="top"><span><b>Lead Read</b> · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="테마 바꾸기">테마</button></div>
+<header>
+<p class="kicker">Lead Read · 리더십 브리핑</p>
+<h1>기부는 이타심인가 평판인가</h1>
+<p class="dek">기부는 경제학적으로 설명하기 어려운 행동입니다. 주는 사람이 손실을 보는 것이 분명한데도 막대한 돈을 내어놓습니다. 이는 순수한 선의일까요, 아니면 보이지 않는 자본을 사는 교환일까요.</p>
+<p class="tag">두 관점 · 적용 사례 · 판단 질문</p>
+</header>
+
+<div class="leadbox">
+<p class="lb-label">핵심 질문</p>
+<p class="lb-q">기부는 순수한 손해인가, 아니면 전략적 자산의 축적인가?</p>
+<p class="lb-label">한 문장 결론</p>
+<p class="lb-a">기부는 위기 시 조직을 지키는 도덕적 자본을 쌓지만, 가시성에만 집착해 공개적 평판만을 노릴 때 실제 집행이 실종되고 선행의 가치는 훼손됩니다.</p>
+</div>
+
+<section>
+<h2>왜 지금 이 문제인가<span>선의의 낭비인가, 보이지 않는 보험인가</span></h2>
+<p>기업의 사회공헌과 거액 기부는 흔히 회계상의 비용 지출로 취급됩니다. 단기 이익만을 중시하는 주주들은 왜 남에게 돈을 퍼주느냐고 비판하기도 합니다.</p>
+<p>그러나 예기치 않은 스캔들이나 위기가 닥쳤을 때, 평소에 쌓아 둔 신뢰가 있는 기업과 그렇지 않은 기업의 생존율은 천양지차입니다. 기부를 단순한 감정의 낭비가 아닌 정교한 위험관리의 시선으로 바라볼 필요가 있습니다.</p>
+</section>
+
+<section>
+<h2>두 연구가 갈라지는 지점<span>도덕적 자본의 축적인가, 이미지 동기의 역설인가</span></h2>
+<div class="duo">
+<div class="pole">
+<small>위험관리 관점</small>
+<h3>선행은 위기 시의 보험료다</h3>
+<p>2005년 폴 고드프리는 기업의 자선 활동이 주주가치에 기여하는 메커니즘을 규명했습니다. 지속적인 기부는 지역사회와 이해관계자 사이에 '도덕적 자본'을 형성합니다. 이 자본은 평소에는 대차대조표에 잡히지 않지만, 불의의 사고나 규제 리스크가 발생했을 때 기업의 무형자산 가치를 지켜주는 보험 역할을 합니다. 자선 이력이 두터운 기업은 악재가 터져도 비난의 강도가 약하고 주가 회복도 빠릅니다.</p>
+</div>
+<div class="pole">
+<small>행동경제학 관점</small>
+<h3>보이기 때문에 하는 선행의 함정</h3>
+<p>2009년 댄 아리에리 연구팀은 사람들의 친사회적 행동을 이끄는 '이미지 동기'를 실험했습니다. 사람들은 자신의 선행이 남에게 공개될 때 훨씬 더 많이 기부했습니다. 그러나 여기에 금전적 혜택이나 물질적 보상이 결합되면 오히려 기부가 줄어들었습니다. 순수한 평판 동기가 상업적 보상에 의해 쫓겨나는 구축 효과가 나타난 것입니다. 공개적인 선행은 평판을 낳지만, 계산이 개입되는 순간 동기 자체가 오염됩니다.</p>
+</div>
+</div>
+<div class="clash">
+<p>한쪽은 기부를 전략적으로 배분해 사고에 대비한 도덕적 완충 자본을 쌓으라고 조언합니다. 다른 쪽은 남에게 보이는 가시성에만 의존해 기부를 설계하면 그 선행의 성격이 왜곡된다고 경고합니다. 전자는 자본의 총량을 키우자고 말하고, 후자는 기부 행위의 순수성과 동기의 출처를 묻습니다.</p>
+</div>
+</section>
+
+<section class="case">
+<h2>적용 사례 — 기빙 플레지의 거대한 선언과 그 후<span>2010년 8월 40가문의 서약이 던진 질문</span></h2>
+<p>2010년 8월 빌 게이츠와 워런 버핏은 재산의 절반 이상을 자선에 내놓겠다는 '기빙 플레지(Giving Pledge)'를 시작했고, 40가문이 동참했습니다. 이들의 순자산만 1,200억 달러를 넘는 천문학적 규모였습니다.</p>
+<p>하지만 이 서약은 법적 구속력이 없는 도덕적 약속이었습니다. 서약 이후 대형 기부 집행이 눈에 띄게 늘지 않았다는 언론의 지적이 이어졌습니다. 위험관리의 눈으로 보면 이 서약은 참여자들에게 막대한 도덕적 자본을 즉각 부여했지만, 행동경제학의 눈으로 보면 화려한 공개 선언 자체가 실제 지출을 대체하는 신호로 작동한 셈입니다. 서약의 문장은 공개되었지만 집행의 내역은 가려져 있었습니다.</p>
+</section>
+
+<section>
+<h2>렌즈 — 증여의 세 가지 의무<span>마르셀 모스의 통찰</span></h2>
+<p>인류학자 마르셀 모스는 1925년 고전 《증여론》에서 선물을 주고받는 행위가 단순한 호의가 아니라 '주는 의무, 받는 의무, 되돌려주는 의무'라는 세 가지 사회적 사슬로 묶여 있다고 보았습니다. 증여는 계산의 반대가 아니라 관계를 엮어내는 절차입니다.</p>
+<p>그러나 증여가 주는 사람의 위세를 과시하는 경쟁(포틀래치)이 될 때, 받는 사람의 필요는 배경으로 밀려나고 기부는 주는 사람의 지위를 확인하는 도구가 됩니다. 리더가 통제할 수 있는 것은 기부 금액과 홍보 보도자료이지만, 통제할 수 없는 것은 그 기부가 현장의 사람을 살리는지 자신의 명예를 빛내는 데 그치는지입니다. 기부의 크기보다 중요한 것은 수혜자가 수단으로 전락하지 않는 존중입니다.</p>
+</section>
+
+<section class="ask">
+<h2>리더의 판단 질문<span>기부 서명 전에 스스로 점검할 것</span></h2>
+<ol>
+<li>이 기부는 우리 조직이 겪을지 모를 도덕적 위험을 덮으려는 방패인가, 공동체를 향한 진정한 헌신인가?</li>
+<li>언론 보도와 화려한 전달식이 사라져 아무도 보지 않는 곳에서도 같은 규모의 지원을 지속할 수 있는가?</li>
+<li>기부의 수혜자를 회사의 평판을 돋보이게 하는 마케팅의 소품으로 취급하고 있지는 않은가?</li>
+</ol>
+</section>
+
+<section class="closing">
+<h2>한 줄로 남기면</h2>
+<p>기부가 진정한 도덕적 자본이 되려면 세 가지가 지켜져야 합니다. 위기 시의 완충이라는 현실적 자각, 보여주기식 과시를 경계하는 절제, 그리고 수혜자의 자존을 지키는 진정성입니다. 이 셋이 조화를 이룰 때 나눔은 비로소 조직과 사회를 함께 살립니다.</p>
+</section>
+
+<section>
+<h2>근거 자료<span>서지와 확인 범위</span></h2>
+<p class="cite">본 브리핑은 기업의 사회적 책임과 행동경제학, 인류학 분야의 공인된 학술 연구를 바탕으로 작성된 분석 자료입니다.</p>
+<details><summary>기업 자선과 위험관리 관점의 도덕적 자본 연구</summary><p class="source"><cite>Paul C. Godfrey, "The Relationship Between Corporate Philanthropy and Shareholder Wealth: A Risk Management Perspective," Academy of Management Review 30(4) (2005), pp. 777–798.</cite></p></details>
+<details><summary>이미지 동기와 친사회적 행동의 경제학 실험</summary><p class="source"><cite>Dan Ariely, Anat Bracha, &amp; Stephan Meier, "Doing Good or Doing Well? Image Motivation and Monetary Incentives in Behaving Prosocially," American Economic Review 99(1) (2009), pp. 544–555.</cite></p></details>
+<details><summary>증여와 호혜성의 고전 인류학</summary><p class="source"><cite>Marcel Mauss, Essai sur le don (1925; Paris: Alcan).</cite></p></details>
+</section>
+
+<footer>
+<span>Lead Read · 3분 브리핑</span>
+<p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+const root=document.documentElement;const b=document.getElementById('theme-toggle');
+b.addEventListener('click',()=>{const n=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=n;});
+</script>
+</body>
+</html>
