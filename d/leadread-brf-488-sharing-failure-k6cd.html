@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>실패의 공유는 학습인가 낙인인가 — Lead Read</title>
+<style>
+:root{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}}
+html[data-theme="dark"]{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}
+html[data-theme="light"]{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans KR","Pretendard","Malgun Gothic",sans-serif;line-height:1.78;word-break:keep-all;overflow-wrap:anywhere}
+.page{max-width:920px;margin:auto;padding:26px 20px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--ln);font-size:.78rem;letter-spacing:.1em;color:var(--mut)}
+.top b{color:var(--ink)}
+button{font:inherit;font-size:.8rem;padding:6px 10px;color:var(--ink);background:var(--sf);border:1px solid var(--ln);border-radius:4px;cursor:pointer}
+a{color:var(--ac);text-underline-offset:.2em}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--mk);outline-offset:3px}
+header{padding:34px 0 10px}
+.kicker{color:var(--mk);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.28;letter-spacing:-.03em;margin:.4em 0 .3em}
+.dek{font-size:clamp(1.02rem,2.2vw,1.18rem);color:var(--mut);margin:0 0 10px;max-width:62ch}
+.tag{display:inline-block;margin-top:12px;padding:4px 10px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:700;border-radius:3px}
+h2{font-size:clamp(1.22rem,2.8vw,1.62rem);line-height:1.34;letter-spacing:-.02em;margin:0 0 8px}
+h2 span{display:block;font-size:.78rem;font-weight:600;letter-spacing:.06em;color:var(--mk);margin-top:5px}
+h3{font-size:1.02rem;margin:0 0 6px}
+p{margin:0 0 14px;max-width:70ch}
+section{padding:26px 0;border-top:1px solid var(--ln)}
+.leadbox{margin:22px 0 4px;padding:20px;background:var(--sf);border-left:4px solid var(--ac)}
+.lb-label{font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin:0 0 4px}
+.lb-q{font-size:1.06rem;font-weight:700;margin:0 0 14px}
+.lb-a{margin:0;color:var(--ink)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.pole{padding:18px;background:var(--sf);border-top:4px solid var(--ac)}
+.pole:nth-child(2){border-top-color:var(--mk)}
+.pole small{display:block;font-size:.72rem;letter-spacing:.1em;font-weight:800;color:var(--mk);margin-bottom:6px}
+.clash{margin-top:16px;padding:16px 18px;background:var(--ac2);border-left:4px solid var(--mk)}
+.signal{margin-top:16px;padding:18px;background:var(--mk2);border:2px solid var(--mk)}
+.siglabel{display:inline-block;margin:0 8px 8px 0;padding:4px 9px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:800;border-radius:3px}
+.timeline{margin-top:16px;padding-left:16px;border-left:2px solid var(--ac)}
+.tl{margin:0 0 16px;padding-left:16px;position:relative}
+.tl:before{content:"";position:absolute;left:-23px;top:.6em;width:10px;height:10px;border-radius:50%;background:var(--mk)}
+.tl b{display:block;color:var(--mk);font-size:.9rem}
+.mnote{margin:14px 0;padding:12px 16px;background:var(--mk2);border-left:3px solid var(--mk);font-size:.95rem;color:var(--mut)}
+.scan{margin-top:16px;padding:16px;background:var(--ac2);border:1px solid var(--ln)}
+table{width:100%;border-collapse:collapse;font-size:.86rem;table-layout:fixed}
+th,td{border:1px solid var(--ln);padding:9px 10px;text-align:left;vertical-align:top;overflow-wrap:anywhere}
+th{background:var(--sf);color:var(--ink);font-weight:800}
+.ask ol{margin:12px 0 0;padding-left:22px}
+.ask li{margin:0 0 10px}
+.closing{padding:24px;background:var(--sf);border-top:2px solid var(--ac)}
+.closing h2{margin-bottom:10px}
+.closing p{font-size:1.04rem;margin:0}
+.cite{color:var(--mut);font-size:.94rem}
+details{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--ln)}
+summary{cursor:pointer;font-weight:700;color:var(--ac)}
+.source{margin:8px 0 0;font-size:.92rem;color:var(--mut)}
+.source cite{font-style:normal;color:var(--ink);font-weight:600}
+footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--ln);color:var(--mut);font-size:.84rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.author-credit{color:var(--ink);font-weight:800}
+@media (max-width:640px){
+.page{padding:18px 14px 44px}
+.duo{grid-template-columns:1fr}
+header{padding:24px 0 6px}
+section{padding:22px 0}
+.closing{padding:18px}
+table{font-size:.79rem}
+th,td{padding:7px 6px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="top"><span><b>Lead Read</b> · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="테마 바꾸기">테마</button></div>
+<header>
+<p class="kicker">Lead Read · 리더십 브리핑</p>
+<h1>실패의 공유는 학습인가 낙인인가</h1>
+<p class="lede dek"></p>
+<p class="tag">두 관점 · 갈리는 지점 · 적용 사례</p>
+</header>
+<div class="leadbox">
+<p class="lb-label">핵심 질문</p>
+<p class="lb-q"></p>
+<p class="lb-label">한 문장 결론</p>
+<p class="lb-a">---</p>
+</div>
+<section>
+<h2>왜 지금 이 문제인가<span>리더가 실제로 마주하는 판단 장면</span></h2>
+
+</section>
+<section>
+<h2>두 연구가 갈라지는 지점<span>마크 캐넌과 에이미 에드먼슨은 2001년 《조직행동 저널》 22권 2호에서 실패에 대한 공유 신념을 연구했다. 이들은 조직학습의 이상이 심리적·조직적 장벽에 막힌다고 보았다. 사람들은 실수에 어떻게 반응해야 하는지에 대한 암묵적 신념을 공유한다. 이 신념은 개인의 성격이 아니라 집단의 학습 규칙이다. / 다이앤 본은 1996년 《챌린저호 발사 결정》에서 일탈의 정상화를 분석했다. 반복되는 예외가 조직의 해석 속에서 정상으로 바뀌는 과정이다. 실패의 신호가 공유되어도, 그 신호가 정상으로 분류되면 학습은 일어나지 않는다. 신호가 공유되어도 해석이 틀리면 학습은 없다.</span></h2>
+<div class="duo"><div class="pole"><small>관점 A</small><h3>마크 캐넌과 에이미 에드먼슨은 2001년 《조직행동 저널》 22권 2호에서 실패에 대한 공유 신념을 연구했다. 이들은 조직학습의 이상이 심리적·조직적 장벽에 막힌다고 보았다. 사람들은 실수에 어떻게 반응해야 하는지에 대한 암묵적 신념을 공유한다. 이 신념은 개인의 성격이 아니라 집단의 학습 규칙이다.</h3>이들의 연구에서 학습 접근을 취하는 집단은 실수를 식별하고, 논의하고, 분석하는 행동을 더 많이 했다. 그리고 그런 집단은 더 나은 성과를 냈다. 실패를 말하는 것이 학습의 출발점이라는 뜻이다. 침묵은 학습을 막고, 공유는 학습을 연다.</div><div class="pole"><small>관점 B</small><h3>다이앤 본은 1996년 《챌린저호 발사 결정》에서 일탈의 정상화를 분석했다. 반복되는 예외가 조직의 해석 속에서 정상으로 바뀌는 과정이다. 실패의 신호가 공유되어도, 그 신호가 정상으로 분류되면 학습은 일어나지 않는다. 신호가 공유되어도 해석이 틀리면 학습은 없다.</h3>본의 분석에서 조직은 실패를 은폐하지 않았다. 회의도 있었고, 보고도 있었다. 그러나 신호는 위험으로 해석되지 않았다. 공유는 학습의 필요조건이지 충분조건이 아니다. 공유된 실패가 잘못된 해석틀에 들어가면, 조직은 실패를 반복하면서도 학습했다고 믿는다. 본의 사례에서 조직은 실패를 말하지 않은 것이 아니라, 말한 실패를 위험으로 분류하지 않았다. 공유의 양이 아니라 해석의 질이 문제였다. 그래서 공유를 늘리는 것만으로는 학습이 되지 않는다.</div></div><div class="clash"><p>실무 문장은 이렇게 갈린다. &quot;실패를 말하게 하라&quot;와 &quot;말한 실패를 어떻게 해석할지 먼저 정하라&quot;가 맞선다. 전자는 침묵을 깨고, 후자는 해석을 설계한다. 한쪽은 발언을 보고, 다른 쪽은 해석을 본다. 실패의 공유는 학습이면서 동시에 낙인이 될 수 있다. 어느 쪽이 되는지는 공유 뒤의 해석과 책임의 방식에 달려 있다. 공유의 형식과 해석의 내용은 함께 설계되어야 한다.</p></div>
+</section>
+<section class="case">
+<h2>적용 사례 — 머크는 1999년 5월 21일 미국 식품의약국(FDA)의 승인을 받아 바이옥스(로페콕시브)를 출시했다. 2004년 9월 30일 머크는 바이옥스를 전 세계적으로 자발적 철수했다. APPROVe 임상시험이 18개월 이후 심혈관 사건 위험을 보여주었기 때문이다. 철수 당시 8,000만 명 이상이 이 약을 복용했고, 연매출은 25억 달러를 넘었다.<span>확인된 날짜와 경과</span></h2>
+<p>바이옥스의 실패는 공유되지 않았다. 초기 임상에서 심혈관 위험의 신호가 있었지만, 회사는 이를 해석하지 않았다. 바이옥스의 신호는 초기부터 있었다. 그러나 신호는 부작용의 가능성으로 분류되었고, 위험으로 해석되지 않았다. 공유는 있었지만, 해석은 정상화되었다. 내부 보고는 있었지만, 위험으로 분류되지 않았다. 공유는 있었으나 학습은 없었다. 실패의 신호가 정상화되었다.</p><p>철수 뒤 머크는 법적 책임을 지었다. 그러나 조직의 학습은 늦었다. 실패를 말하는 것만으로는 충분하지 않았다. 해석과 책임의 방식이 바뀌지 않으면, 공유는 낙인의 재료가 된다. 바이옥스는 공유와 학습 사이의 간극을 보여준다.</p>
+</section>
+<section>
+<h2>렌즈 — 폴 리쾨르는 2000년 《기억, 역사, 망각》에서 기억과 망각의 관계를 다뤘다. 기억은 과거를 그대로 보존하는 것이 아니라, 현재의 필요에 따라 선택하고 재구성한다. 망각은 기억의 실패가 아니라, 기억의 조건이기도 하다.<span>개념을 재구성한 사유의 틀</span></h2>
+<p>실패의 공유는 기억의 문제다. 조직은 실패를 기억하지만, 그 기억을 어떻게 해석할지 선택한다. 리쾨르에게 중요한 것은 기억의 정확성만이 아니라, 기억을 어떻게 사용하는가다. 실패를 기억하는 방식이 학습을 만들거나 낙인을 만든다. 리쾨르에게 기억은 과거의 재현이 아니라 현재의 구성이다. 조직이 실패를 기억하는 방식은 현재의 책임 구조를 반영한다.</p><p>리쾨르는 또한 용서와 망각을 구분했다. 용서는 과거를 지우는 것이 아니라, 과거와의 관계를 바꾸는 일이다. 실패의 공유도 같다. 실패를 지우는 것이 아니라, 실패와의 관계를 바꾸는 일이 학습이다. 망각이 책임을 지우면 낙인이 되고, 기억이 책임을 열면 학습이 된다.</p>
+</section>
+<section class="ask">
+<h2>리더의 판단 질문<span>결정 전에 확인할 것</span></h2>
+<ol><li>이 결정의 주된 수혜자는 누구인가?</li><li>반대 관점이 지적하는 비용은 무엇인가?</li><li>판단을 바꿀 확인 자료가 있는가?</li></ol>
+</section>
+<section class="closing">
+<h2>한 줄로 남기면</h2>
+<p>---</p>
+</section>
+<section>
+<h2>근거 자료<span>서지와 확인 범위</span></h2>
+<p class="cite">본 브리핑은 공개된 학술 문헌의 논지를 바탕으로 작성된 분석 자료입니다.</p>
+<details><summary>참고 문헌 1</summary><p class="source"><cite>Edmondson, &quot;Confronting Failure: Antecedents and Consequences of Shared Beliefs About Failure in Organizational Work Groups,&quot; *Journal of Organizational Behavior* 22(2) (2001), 161–177 — 실패에 대한 공유 신념이 학습 접근과 집단 성과에 영향을 준다는 논지를 재구성했다.</cite></p></details>
+<details><summary>참고 문헌 2</summary><p class="source"><cite>Diane Vaughan, *The Challenger Launch Decision: Risky Technology, Culture, and Deviance at NASA* (University of Chicago Press, 1996) — 일탈의 정상화가 실패 신호를 정상으로 바꾸는 과정을 요약했다. 적용 사례는 머크의 1999-05-21 바이옥스(로페콕시브) FDA 승인, 2004-09-30 전 세계 자발적 철수(APPROVe 임상 18개월 이후 심혈관 사건 위험, 8,000만 명 이상 복용, 연매출 25억 달러 이상)를 FDA 자료·머크 보도자료·유럽의약품청 성명으로 교차했다.</cite></p></details>
+<details><summary>참고 문헌 3</summary><p class="source"><cite>폴 리쾨르의 기억·망각·용서 개념은 《기억, 역사, 망각》(2000)에서 개념만 재구성했으며, 실패 공유에의 적용은 저자 해석이다. 발행월은 통상 인용 정보이며 대외 발행 전 1차 출처 재확인을 권장한다.</cite></p></details>
+</section>
+<footer>
+<span>Lead Read · 3분 브리핑</span>
+<p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+const root=document.documentElement;const b=document.getElementById('theme-toggle');
+b.addEventListener('click',()=>{const n=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=n;});
+</script>
+</body>
+</html>
