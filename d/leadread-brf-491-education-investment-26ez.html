@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>교육은 투자인가 소비인가 — Lead Read</title>
+<style>
+:root{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}}
+html[data-theme="dark"]{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}
+html[data-theme="light"]{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans KR","Pretendard","Malgun Gothic",sans-serif;line-height:1.78;word-break:keep-all;overflow-wrap:anywhere}
+.page{max-width:920px;margin:auto;padding:26px 20px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--ln);font-size:.78rem;letter-spacing:.1em;color:var(--mut)}
+.top b{color:var(--ink)}
+button{font:inherit;font-size:.8rem;padding:6px 10px;color:var(--ink);background:var(--sf);border:1px solid var(--ln);border-radius:4px;cursor:pointer}
+a{color:var(--ac);text-underline-offset:.2em}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--mk);outline-offset:3px}
+header{padding:34px 0 10px}
+.kicker{color:var(--mk);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.28;letter-spacing:-.03em;margin:.4em 0 .3em}
+.dek{font-size:clamp(1.02rem,2.2vw,1.18rem);color:var(--mut);margin:0 0 10px;max-width:62ch}
+.tag{display:inline-block;margin-top:12px;padding:4px 10px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:700;border-radius:3px}
+h2{font-size:clamp(1.22rem,2.8vw,1.62rem);line-height:1.34;letter-spacing:-.02em;margin:0 0 8px}
+h2 span{display:block;font-size:.78rem;font-weight:600;letter-spacing:.06em;color:var(--mk);margin-top:5px}
+h3{font-size:1.02rem;margin:0 0 6px}
+p{margin:0 0 14px;max-width:70ch}
+section{padding:26px 0;border-top:1px solid var(--ln)}
+.leadbox{margin:22px 0 4px;padding:20px;background:var(--sf);border-left:4px solid var(--ac)}
+.lb-label{font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin:0 0 4px}
+.lb-q{font-size:1.06rem;font-weight:700;margin:0 0 14px}
+.lb-a{margin:0;color:var(--ink)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.pole{padding:18px;background:var(--sf);border-top:4px solid var(--ac)}
+.pole:nth-child(2){border-top-color:var(--mk)}
+.pole small{display:block;font-size:.72rem;letter-spacing:.1em;font-weight:800;color:var(--mk);margin-bottom:6px}
+.clash{margin-top:16px;padding:16px 18px;background:var(--ac2);border-left:4px solid var(--mk)}
+.signal{margin-top:16px;padding:18px;background:var(--mk2);border:2px solid var(--mk)}
+.siglabel{display:inline-block;margin:0 8px 8px 0;padding:4px 9px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:800;border-radius:3px}
+.timeline{margin-top:16px;padding-left:16px;border-left:2px solid var(--ac)}
+.tl{margin:0 0 16px;padding-left:16px;position:relative}
+.tl:before{content:"";position:absolute;left:-23px;top:.6em;width:10px;height:10px;border-radius:50%;background:var(--mk)}
+.tl b{display:block;color:var(--mk);font-size:.9rem}
+.mnote{margin:14px 0;padding:12px 16px;background:var(--mk2);border-left:3px solid var(--mk);font-size:.95rem;color:var(--mut)}
+.scan{margin-top:16px;padding:16px;background:var(--ac2);border:1px solid var(--ln)}
+table{width:100%;border-collapse:collapse;font-size:.86rem;table-layout:fixed}
+th,td{border:1px solid var(--ln);padding:9px 10px;text-align:left;vertical-align:top;overflow-wrap:anywhere}
+th{background:var(--sf);color:var(--ink);font-weight:800}
+.ask ol{margin:12px 0 0;padding-left:22px}
+.ask li{margin:0 0 10px}
+.closing{padding:24px;background:var(--sf);border-top:2px solid var(--ac)}
+.closing h2{margin-bottom:10px}
+.closing p{font-size:1.04rem;margin:0}
+.cite{color:var(--mut);font-size:.94rem}
+details{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--ln)}
+summary{cursor:pointer;font-weight:700;color:var(--ac)}
+.source{margin:8px 0 0;font-size:.92rem;color:var(--mut)}
+.source cite{font-style:normal;color:var(--ink);font-weight:600}
+footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--ln);color:var(--mut);font-size:.84rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.author-credit{color:var(--ink);font-weight:800}
+@media (max-width:640px){
+.page{padding:18px 14px 44px}
+.duo{grid-template-columns:1fr}
+header{padding:24px 0 6px}
+section{padding:22px 0}
+.closing{padding:18px}
+table{font-size:.79rem}
+th,td{padding:7px 6px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="top"><span><b>Lead Read</b> · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="테마 바꾸기">테마</button></div>
+<header>
+<p class="kicker">Lead Read · 리더십 브리핑</p>
+<h1>교육은 투자인가 소비인가</h1>
+<p class="lede dek"></p>
+<p class="tag">요약 표 · 비교 · 적용 사례</p>
+</header>
+<div class="leadbox">
+<p class="lb-label">핵심 질문</p>
+<p class="lb-q"></p>
+<p class="lb-label">한 문장 결론</p>
+<p class="lb-a">---</p>
+</div>
+<section>
+<h2>왜 지금 이 문제인가<span>리더가 실제로 마주하는 판단 장면</span></h2>
+
+</section>
+<section>
+<h2>두 연구가 갈라지는 지점<span>시어도어 슐츠는 1961년 《미국경제학회보》 51권 1호에서 인적자본 투자를 제안했다. 그는 사람이 습득한 기술과 지식도 자본의 한 형태라고 보았다. 교육, 건강, 직장 훈련, 이주는 모두 그 자본을 키우는 투자다. / 피터 카펠리는 2015년 《산업노동관계 리뷰》 68권 2호에서 미국의 기술 부족 담론을 검토했다. 그는 기업과 정부가 주장하는 기술 격차가 객관적 증거로 뒷받침되지 않는다고 보았다. 기술 부족은 노동 공급의 문제가 아니라 고용 관행의 문제일 수 있다.</span></h2>
+<div class="scan"><p>빠른 비교: 같은 질문에 두 관점이 다른 답을 줍니다.</p><table><thead><tr><th>구분</th><th>관점 A</th><th>관점 B</th></tr></thead><tbody><tr><td>핵심</td><td>시어도어 슐츠는 1961년 《미국경제학회보》 51권 1호에서 인적자본 투자를 제안했다. 그는 사람이 습득한 기술과 지식도 자본의 한 형태라고 보았다. 교육, 건강, 직장 훈련, 이주는 모두 그 자본을 키우는 투자다.</td><td>피터 카펠리는 2015년 《산업노동관계 리뷰》 68권 2호에서 미국의 기술 부족 담론을 검토했다. 그는 기업과 정부가 주장하는 기술 격차가 객관적 증거로 뒷받침되지 않는다고 보았다. 기술 부족은 노동 공급의 문제가 아니라 고용 관행의 문제일 수 있다.</td></tr><tr><td>근거</td><td>슐츠에게 교육비는 소비가 아니라 미래 소득을 만드는 비용이다. 학교에 다니는 기간은 생산에서 빠진 시간이지만, 그 시간은 더 높은 생산성으로 돌아온다. 교육을 투자로 부르면, 개인과 사회가 지출을 정당화할 수 있다.</td><td>카펠리는 기업이 훈련 투자를 줄이고, 이미 훈련된 인력을 외부에서 찾는다고 지적한다. 기술이 없다는 말은 교육의 부족을 탓하지만, 실제로는 기업이 교육 비용을 부담하지 않으려는 선택일 수 있다. 투자라는 이름은 누가 투자할 책임이 있</td></tr></tbody></table></div><div class="clash"><p>실무 문장은 이렇게 갈린다. &quot;교육은 투자이니 지출을 늘려야 한다&quot;와 &quot;교육을 투자로 부르면 누가 투자할지는 사라진다&quot;가 맞선다. 전자는 배움의 수익을 보고, 후자는 비용의 부담자를 본다. 교육은 투자이면서 동시에 소비가 될 수 있다. 어느 쪽이 되는지는 누가 비용을 대고, 누가 수익을 가져가는지에 달려 있다. 투자라는 말은 시간의 방향을 바꾼다. 오늘의 지출을 미래의 수익으로 읽게 만든다. 그러나 그 미래가 누구의 것인지는 별개의 질문이다.</p></div>
+</section>
+<section class="case">
+<h2>적용 사례 — 독일의 이중 직업교육은 기업과 직업학교가 함께 훈련을 제공하는 제도다. 훈련생은 기업에서 일하고 직업학교에서 배운다. 교육 기간은 보통 2~3년 반이며, 300개가 넘는 인정 직업이 있다.<span>확인된 날짜와 경과</span></h2>
+<p>이 제도에서 교육은 개인의 투자이면서 기업의 투자다. 기업은 훈련 비용을 부담하고, 훈련생은 생산에 참여한다. 직업학교는 이론을 제공하고, 상공회의소는 훈련의 기준을 관리한다. 비용과 수익이 여러 주체에게 나뉜다.</p><p>독일의 이중제는 교육을 투자로 부르는 일의 조건을 보여준다. 투자라는 이름이 개인에게만 붙으면 책임이 사라진다. 그러나 기업과 학교와 국가가 비용을 나누면, 교육은 공공의 투자가 된다. 같은 이름이라도 누가 지불하는지에 따라 뜻이 달라진다. 이중제의 핵심은 비용의 분담이다. 기업은 훈련 비용을 부담하고, 훈련생은 생산에 참여하며, 국가는 직업학교를 지원한다. 어느 한 주체가 비용을 독점하지 않기 때문에 교육은 공공의 투자가 된다.</p>
+</section>
+<section>
+<h2>렌즈 — 카를 폴라니는 1944년 《대전환》에서 노동, 토지, 화폐를 허구적 상품이라고 불렀다. 이들은 시장을 위해 생산된 것이 아니지만, 시장에서는 상품처럼 거래된다. 노동을 상품으로 다루면, 사람의 삶은 시장의 논리에 종속된다.<span>개념을 재구성한 사유의 틀</span></h2>
+<p>교육을 투자로 부르는 일은 노동을 상품으로 만드는 과정과 닮아 있다. 교육은 사람의 능력을 시장에서 거래 가능한 자본으로 바꾼다. 그 자본의 수익은 개인에게 돌아가지만, 비용은 사회가 부담하는 경우가 많다.</p><p>폴라니에게 시장은 사회에 뿌리내려야 한다. 교육도 마찬가지다. 교육을 투자로만 보면, 배움의 공공적 의미가 사라진다. 교육은 자본이면서 동시에 사회의 재생산이다. 투자라는 이름은 그 이중성을 담아야 한다. 폴라니에게 노동은 상품이지만 상품이 아닌 것이다. 교육도 자본이지만 자본만은 아니다. 배움은 생산성을 높이지만, 동시에 시민을 만들고 사회를 재생산한다.</p>
+</section>
+<section class="ask">
+<h2>리더의 판단 질문<span>결정 전에 확인할 것</span></h2>
+<ol><li>이 결정의 주된 수혜자는 누구인가?</li><li>반대 관점이 지적하는 비용은 무엇인가?</li><li>판단을 바꿀 확인 자료가 있는가?</li></ol>
+</section>
+<section class="closing">
+<h2>한 줄로 남기면</h2>
+<p>---</p>
+</section>
+<section>
+<h2>근거 자료<span>서지와 확인 범위</span></h2>
+<p class="cite">본 브리핑은 공개된 학술 문헌의 논지를 바탕으로 작성된 분석 자료입니다.</p>
+<details><summary>참고 문헌 1</summary><p class="source"><cite>Schultz, &quot;Investment in Human Capital,&quot; *American Economic Review* 51(1) (1961), 1–17 — 교육·훈련·건강을 인적자본 투자로 보는 논지를 재구성했다.</cite></p></details>
+<details><summary>참고 문헌 2</summary><p class="source"><cite>Cappelli, &quot;Skill Gaps, Skill Shortages, and Skill Mismatches: Evidence and Arguments for the United States,&quot; *ILR Review* 68(2) (2015), 251–290 — 기술 부족 담론의 증거를 검토하고 고용 관행의 문제를 지적한 논지를 요약했다. 독일 이중제는 독일 연방교육연구부 2023 직업교육보고서(2022년 이중제 신규 진입 444,500명), BIBB 이중제 안내(학교 졸업자의 약 절반, 300개 이상 인정 직업, 2~3년 반), BIBB 2023 데이터보고서(2020년 훈련생 1,288,962명)를 교차 확인했다.</cite></p></details>
+<details><summary>참고 문헌 3</summary><p class="source"><cite>Karl Polanyi, *The Great Transformation* (1944) — 허구적 상품 개념만 재구성했으며, 교육에의 적용은 저자 해석이다. 발행월은 통상 인용 정보이며 대외 발행 전 1차 출처 재확인을 권장한다.</cite></p></details>
+</section>
+<footer>
+<span>Lead Read · 3분 브리핑</span>
+<p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+const root=document.documentElement;const b=document.getElementById('theme-toggle');
+b.addEventListener('click',()=>{const n=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=n;});
+</script>
+</body>
+</html>
