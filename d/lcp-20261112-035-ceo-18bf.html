@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>기술은 사람을 따라가고, 증명은 기록을 따라간다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>기술은 사람을 따라가고, 증명은 기록을 따라간다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 퇴사자가 기술을 들고 나갔다는 의심만으로는 이길 수 없습니다. 승부는 <b>우리가 무엇을 비밀로 관리했고 무엇을 기록으로 남겼는지</b>에서 갈립니다. <b>기술은 사람을 따라가지만, 증명은 기록을 따라갑니다.</b>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>사건의 시작: 퇴사자 한 명이 회사의 기술을 흔들었습니다</h2>
+    <div class="analogy">
+      <b>금고와 열쇠 관리대장</b>을 떠올려 보십시오. 금고가 아무리 튼튼해도 <b>누가 언제 열었는지 기록이 없으면</b> 도난을 증명하지 못합니다. 뉴럴테크의 한지원 대표는 <b>핵심 연구자 두 명이 경쟁사로 옮긴 뒤</b> 벌어진 일을 보고받았습니다. <b>몇 주 만에 비슷한 성능의 제품</b>이 나왔고, 상대 회사는 <b>"독자 개발"</b>이라고 밝혔습니다. 대표의 첫 질문은 <b>"우리가 이길 수 있나"</b>였고, 두 번째는 <b>"얼마가 드나"</b>였습니다. 법무팀의 답은 순서를 바꿨습니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 보는 핵심: 세 요건을 갖춰야 영업비밀이 됩니다</h2>
+    <p><b>부정경쟁방지법 제2조 제2호</b>는 영업비밀을 <b>공공연히 알려져 있지 않고</b>, <b>독립된 경제적 가치를 가지는 것으로서</b>, <b>비밀로 관리된</b> 기술상 또는 경영상의 정보로 정의합니다. <b>비공지성, 경제적 유용성, 비밀관리성</b>입니다.</p>
+    <p><b>비공지성</b>은 공개되지 않았다는 뜻입니다. <b>오픈소스로 공개한 부분이나 업계 통용 기술</b>은 여기에 들지 않습니다. 반면 <b>내부 실험 결과, 파라미터 조합, 실패와 수정의 기록</b>은 후보가 됩니다.</p>
+    <p><b>경제적 유용성</b>은 그 정보가 <b>제품 성능이나 개발 기간에 실제로 기여</b>하는지입니다. <b>성능 지표와 개발 일정으로 설명</b>할 수 있어야 합니다.</p>
+    <p><b>비밀관리성</b>은 조직이 비밀로 관리했는지입니다. <b>접근 권한, 문서 등급, 반출 통제, 교육, 퇴사 시 반환 확인</b>이 모두 여기에 속합니다. <b>이 요건은 사후에 만들 수 없습니다.</b> <b>분쟁이 시작된 뒤 규정을 정비한 흔적은 오히려 약점</b>이 됩니다.</p>
+    <p><b>침해 입증</b>은 또 다른 관문입니다. <b>우리가 주장하는 정보가 요건을 충족하는지</b>, 그리고 <b>상대가 그 영업비밀을 침해했다는 사실을 우리가 충분히 입증했는지</b>가 각각 문제 됩니다. <b>상대가 같은 결과에 이르렀다는 사실만으로 침해가 곧바로 인정되지는 않습니다.</b></p>
+    <p><b>조직의 경계</b>도 살펴야 합니다. <b>계열사나 공동연구 구조</b>에서 개발했다면 <b>정보의 귀속과 관리 주체가 흐려집니다.</b> <b>대법원 2025도15060 판결</b>은 영업비밀 사건이 아니라 중대재해 처벌 등에 관한 법률상 <b>'사업 또는 사업장'의 의미</b>를 다툰 사건이지만, 조직을 <b>'경영상의 일체를 이루면서 유기적으로 운영되는 경제적, 사회적 활동단위'</b>로 파악하고 <b>인사와 재무가 독립적이지 않은 조직은 그 일부로 본다</b>는 판단 틀을 보여 줍니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외: 비용은 세 시점에 발생합니다</h2>
+    <p><b>예방 비용.</b> <b>접근 권한 관리, 문서 등급, 교육과 퇴사 절차</b>에 드는 비용입니다. <b>가장 싸고 가장 효과가 큽니다.</b></p>
+    <p><b>분쟁 비용.</b> <b>소송과 가처분</b>에 드는 법률 비용과 기간입니다. <b>기술 감정이 붙으면 길어집니다.</b></p>
+    <p><b>사업 비용.</b> <b>제품 출시가 늦어지거나 판매가 중단되면 매출이 사라집니다.</b> 반대로 <b>우리가 방어에 성공하면 상대의 출시가 멈춥니다.</b></p>
+    <p><b>관리 조치의 시점.</b> 비밀관리성은 <b>사후에 만들 수 없습니다.</b> 분쟁 후 정비 흔적은 <b>약점</b>이 됩니다.</p>
+    <p><b>귀속의 경계.</b> <b>계열사·공동연구</b> 구조라면 <b>정보의 귀속과 관리 주체</b>를 먼저 정리해야 합니다.</p>
+    <div class="callout">
+      <b>주의.</b> <b>세 가지 중 하나라도 비면 소송보다 계약과 협상이 나은 선택이 됩니다.</b> 판단 기준은 <b>보호할 가치가 있는 정보인지, 관리 조치가 실제로 작동했는지, 침해를 보여 줄 기록이 있는지</b>입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것: 네 가지를 정합니다</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>기록 체계를 소송 전에 만들어 두십시오.</b> 정할 항목은 다음과 같습니다.</p>
+      <ol>
+        <li><b>① 보호 대상</b> — <b>무엇을 영업비밀로 관리할지 목록</b>을 만들고 <b>등급</b>을 매깁니다.</li>
+        <li><b>② 관리 체계</b> — <b>접근 권한과 반출 절차, 교육 주기, 퇴사 시 확인 절차</b>를 문서로 만듭니다.</li>
+        <li><b>③ 기록 체계</b> — <b>설계 문서, 실험 로그, 커밋 이력</b>이 남도록 도구와 규칙을 정합니다. <b>독자 개발을 주장할 때도, 침해를 주장할 때도 이 기록이 쓰입니다.</b></li>
+        <li><b>④ 대응의 선</b> — <b>가처분, 본안 소송, 협상</b> 가운데 무엇을 먼저 할지 정하고 <b>예산과 기간</b>을 배정합니다.</li>
+        <li><b>⑤ 귀속 정리</b> — <b>계열사·공동연구</b> 구조에서 개발했다면 <b>정보의 귀속과 관리 주체</b>를 문서로 확정합니다.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;"><b>기술은 사람을 따라가고, 증명은 기록을 따라갑니다.</b> 퇴사자가 문을 나서기 전에 <b>기록이 남아 있어야</b> 그 문을 잠글 수 있습니다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
