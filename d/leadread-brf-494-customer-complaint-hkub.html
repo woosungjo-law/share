@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>고객 불만은 자산인가 소음인가 — Lead Read</title>
+<style>
+:root{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}}
+html[data-theme="dark"]{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}
+html[data-theme="light"]{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans KR","Pretendard","Malgun Gothic",sans-serif;line-height:1.78;word-break:keep-all;overflow-wrap:anywhere}
+.page{max-width:920px;margin:auto;padding:26px 20px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--ln);font-size:.78rem;letter-spacing:.1em;color:var(--mut)}
+.top b{color:var(--ink)}
+button{font:inherit;font-size:.8rem;padding:6px 10px;color:var(--ink);background:var(--sf);border:1px solid var(--ln);border-radius:4px;cursor:pointer}
+a{color:var(--ac);text-underline-offset:.2em}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--mk);outline-offset:3px}
+header{padding:34px 0 10px}
+.kicker{color:var(--mk);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.28;letter-spacing:-.03em;margin:.4em 0 .3em}
+.dek{font-size:clamp(1.02rem,2.2vw,1.18rem);color:var(--mut);margin:0 0 10px;max-width:62ch}
+.tag{display:inline-block;margin-top:12px;padding:4px 10px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:700;border-radius:3px}
+h2{font-size:clamp(1.22rem,2.8vw,1.62rem);line-height:1.34;letter-spacing:-.02em;margin:0 0 8px}
+h2 span{display:block;font-size:.78rem;font-weight:600;letter-spacing:.06em;color:var(--mk);margin-top:5px}
+h3{font-size:1.02rem;margin:0 0 6px}
+p{margin:0 0 14px;max-width:70ch}
+section{padding:26px 0;border-top:1px solid var(--ln)}
+.leadbox{margin:22px 0 4px;padding:20px;background:var(--sf);border-left:4px solid var(--ac)}
+.lb-label{font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin:0 0 4px}
+.lb-q{font-size:1.06rem;font-weight:700;margin:0 0 14px}
+.lb-a{margin:0;color:var(--ink)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.pole{padding:18px;background:var(--sf);border-top:4px solid var(--ac)}
+.pole:nth-child(2){border-top-color:var(--mk)}
+.pole small{display:block;font-size:.72rem;letter-spacing:.1em;font-weight:800;color:var(--mk);margin-bottom:6px}
+.clash{margin-top:16px;padding:16px 18px;background:var(--ac2);border-left:4px solid var(--mk)}
+.signal{margin-top:16px;padding:18px;background:var(--mk2);border:2px solid var(--mk)}
+.siglabel{display:inline-block;margin:0 8px 8px 0;padding:4px 9px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:800;border-radius:3px}
+.timeline{margin-top:16px;padding-left:16px;border-left:2px solid var(--ac)}
+.tl{margin:0 0 16px;padding-left:16px;position:relative}
+.tl:before{content:"";position:absolute;left:-23px;top:.6em;width:10px;height:10px;border-radius:50%;background:var(--mk)}
+.tl b{display:block;color:var(--mk);font-size:.9rem}
+.mnote{margin:14px 0;padding:12px 16px;background:var(--mk2);border-left:3px solid var(--mk);font-size:.95rem;color:var(--mut)}
+.scan{margin-top:16px;padding:16px;background:var(--ac2);border:1px solid var(--ln)}
+table{width:100%;border-collapse:collapse;font-size:.86rem;table-layout:fixed}
+th,td{border:1px solid var(--ln);padding:9px 10px;text-align:left;vertical-align:top;overflow-wrap:anywhere}
+th{background:var(--sf);color:var(--ink);font-weight:800}
+.ask ol{margin:12px 0 0;padding-left:22px}
+.ask li{margin:0 0 10px}
+.closing{padding:24px;background:var(--sf);border-top:2px solid var(--ac)}
+.closing h2{margin-bottom:10px}
+.closing p{font-size:1.04rem;margin:0}
+.cite{color:var(--mut);font-size:.94rem}
+details{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--ln)}
+summary{cursor:pointer;font-weight:700;color:var(--ac)}
+.source{margin:8px 0 0;font-size:.92rem;color:var(--mut)}
+.source cite{font-style:normal;color:var(--ink);font-weight:600}
+footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--ln);color:var(--mut);font-size:.84rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.author-credit{color:var(--ink);font-weight:800}
+@media (max-width:640px){
+.page{padding:18px 14px 44px}
+.duo{grid-template-columns:1fr}
+header{padding:24px 0 6px}
+section{padding:22px 0}
+.closing{padding:18px}
+table{font-size:.79rem}
+th,td{padding:7px 6px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="top"><span><b>Lead Read</b> · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="테마 바꾸기">테마</button></div>
+<header>
+<p class="kicker">Lead Read · 리더십 브리핑</p>
+<h1>고객 불만은 자산인가 소음인가</h1>
+<p class="lede dek"></p>
+<p class="tag">두 관점 · 갈리는 지점 · 적용 사례</p>
+</header>
+<div class="leadbox">
+<p class="lb-label">핵심 질문</p>
+<p class="lb-q"></p>
+<p class="lb-label">한 문장 결론</p>
+<p class="lb-a">---</p>
+</div>
+<section>
+<h2>왜 지금 이 문제인가<span>리더가 실제로 마주하는 판단 장면</span></h2>
+
+</section>
+<section>
+<h2>두 연구가 갈라지는 지점<span>앨버트 허시먼은 1970년 《이탈, 발언, 충성》에서 조직이 쇠퇴할 때 구성원이 선택할 수 있는 두 가지 경로를 제시했다. 하나는 떠나는 것, 다른 하나는 말하는 것이다. 그는 이를 각각 이탈과 발언이라고 불렀다. / 기술지원연구프로그램(TARP)은 1980년대 미국 소비자의 불만 행동을 조사했다. 그 결과는 불만 채널이 전체 불만족을 대표하지 않는다는 것을 보여주었다. 불만을 말하는 고객은 극히 일부였다.</span></h2>
+<div class="duo"><div class="pole"><small>관점 A</small><h3>앨버트 허시먼은 1970년 《이탈, 발언, 충성》에서 조직이 쇠퇴할 때 구성원이 선택할 수 있는 두 가지 경로를 제시했다. 하나는 떠나는 것, 다른 하나는 말하는 것이다. 그는 이를 각각 이탈과 발언이라고 불렀다.</h3>허시먼에게 발언은 충성의 표현이다. 고객이 불만을 말하는 것은 아직 조직과의 관계를 포기하지 않았다는 뜻이다. 발언은 조직이 문제를 인지하고 고칠 수 있는 기회를 준다. 이탈은 조용하지만, 발언은 정보를 남긴다.</div><div class="pole"><small>관점 B</small><h3>기술지원연구프로그램(TARP)은 1980년대 미국 소비자의 불만 행동을 조사했다. 그 결과는 불만 채널이 전체 불만족을 대표하지 않는다는 것을 보여주었다. 불만을 말하는 고객은 극히 일부였다.</h3>대부분의 불만족 고객은 조용히 떠나거나, 아무것도 하지 않는다. 불만을 말하는 사람은 문제가 크거나, 시간이 많거나, 말하는 데 익숙한 사람이다. 불만의 양은 만족의 양이 아니라, 발언 능력의 분포를 반영한다.</div></div><div class="clash"><p>불만의 양은 신호의 크기이지 신호의 대표성이 아니다. 불만이 많다는 것은 문제가 많다는 뜻일 수도 있고, 말하기 쉬운 고객이 많다는 뜻일 수도 있다. 조직은 불만의 양보다 불만의 분포를 보아야 한다.</p></div>
+</section>
+<section class="case">
+<h2>적용 사례 — 2008년 3월, 캐나다 뮤지션 데이브 캐럴은 유나이티드 항공의 시카고 오헤어 공항 환승 과정에서 기타가 파손되는 일을 겪었다. 그는 약 1년 넘게 보상을 요구했지만, 항공사는 책임이 없다고 답했다.<span>확인된 날짜와 경과</span></h2>
+<p>2009년 7월 6일 캐럴은 &quot;United Breaks Guitars&quot;라는 노래와 영상을 유튜브에 올렸다. 영상은 나흘 만에 100만 조회를 넘겼고, 일주일 안에 300만 조회를 기록했다. 7월 말에는 460만 조회를 넘어섰다.</p><p>유나이티드는 7월 8일 캐럴에게 1,200달러 현금과 1,200달러 상당의 항공권을 제안했다. 그러나 이미 여론은 항공사의 대응을 문제로 삼았다. 한 건의 불만이 처리되지 않자, 그것이 공개적 사건이 되었다.</p><p>이 사례에서 불만은 자산이었다. 캐럴의 발언은 항공사의 서비스 문제를 공개했고, 다른 고객들의 경험을 소환했다. 그러나 동시에 불만은 소음이었다. 항공사는 1년 동안 그 목소리를 처리해야 할 소음으로 분류했다. 불만의 가치는 조직이 언제 듣느냐에 달려 있었다.</p>
+</section>
+<section>
+<h2>렌즈 — 알베르 카뮈는 1951년 《반항하는 인간》에서 반항을 부정이 아니라 긍정으로 보았다. 반항하는 사람은 &quot;이것은 옳지 않다&quot;라고 말하면서, 동시에 &quot;이것은 옳아야 한다&quot;라고 말한다. 반항은 세계를 거부하는 것이 아니라, 세계에 대한 요구다.<span>개념을 재구성한 사유의 틀</span></h2>
+<p>고객의 불만은 반항의 작은 형태다. 고객은 &quot;이 서비스는 옳지 않다&quot;라고 말하면서, 동시에 &quot;서비스는 옳아야 한다&quot;라고 요구한다. 불만은 관계의 단절이 아니라, 관계의 조건에 대한 협상이다.</p><p>카뮈에게 반항은 고립되지 않는다. 한 사람의 반항은 다른 사람의 반항과 만나 연대가 된다. 유나이티드의 사례에서 캐럴의 영상은 다른 고객들의 불만을 불러냈다. 한 목소리가 다른 목소리를 만나 공론이 되었다.</p><p>이 렌즈는 불만의 의미를 바꾼다. 불만은 처리할 민원이 아니라, 관계를 다시 협상하는 요구다. 조직이 불만을 소음으로 처리하면, 반항은 더 커진다. 불만을 자산으로 읽으면, 반항은 개선의 언어가 된다.</p>
+</section>
+<section class="ask">
+<h2>리더의 판단 질문<span>결정 전에 확인할 것</span></h2>
+<ol><li>이 결정의 주된 수혜자는 누구인가?</li><li>반대 관점이 지적하는 비용은 무엇인가?</li><li>판단을 바꿀 확인 자료가 있는가?</li></ol>
+</section>
+<section class="closing">
+<h2>한 줄로 남기면</h2>
+<p>---</p>
+</section>
+<section>
+<h2>근거 자료<span>서지와 확인 범위</span></h2>
+<p class="cite">본 브리핑은 공개된 학술 문헌의 논지를 바탕으로 작성된 분석 자료입니다.</p>
+<details><summary>참고 문헌 1</summary><p class="source"><cite>Hirschman, *Exit, Voice, and Loyalty: Responses to Decline in Firms, Organizations, and States* (1970) — 이탈·발언·충성의 구분과 발언의 정보 기능을 재구성했다.</cite></p></details>
+<details><summary>참고 문헌 2</summary><p class="source"><cite>참고 문헌 2 — 1986</cite></p></details>
+<details><summary>참고 문헌 3</summary><p class="source"><cite>참고 문헌 3 — 2009</cite></p></details>
+</section>
+<footer>
+<span>Lead Read · 3분 브리핑</span>
+<p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+const root=document.documentElement;const b=document.getElementById('theme-toggle');
+b.addEventListener('click',()=>{const n=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=n;});
+</script>
+</body>
+</html>
