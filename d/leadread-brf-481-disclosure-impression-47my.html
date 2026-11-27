@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>공시는 진실인가 연출인가 — Lead Read</title>
+<style>
+:root{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}}
+html[data-theme="dark"]{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}
+html[data-theme="light"]{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;line-height:1.78;word-break:keep-all;overflow-wrap:anywhere}
+.page{max-width:920px;margin:auto;padding:26px 20px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--ln);font-size:.78rem;letter-spacing:.1em;color:var(--mut)}
+.top b{color:var(--ink)}
+button{font:inherit;font-size:.8rem;padding:6px 10px;color:var(--ink);background:var(--sf);border:1px solid var(--ln);border-radius:4px;cursor:pointer}
+a{color:var(--ac);text-underline-offset:.2em}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--mk);outline-offset:3px}
+header{padding:34px 0 10px}
+.kicker{color:var(--mk);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.28;letter-spacing:-.03em;margin:.4em 0 .3em}
+.dek{font-size:clamp(1.02rem,2.2vw,1.18rem);color:var(--mut);margin:0 0 10px;max-width:62ch}
+.tag{display:inline-block;margin-top:12px;padding:4px 10px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:700;border-radius:3px}
+h2{font-size:clamp(1.22rem,2.8vw,1.62rem);line-height:1.34;letter-spacing:-.02em;margin:0 0 8px}
+h2 span{display:block;font-size:.78rem;font-weight:600;letter-spacing:.06em;color:var(--mk);margin-top:5px}
+h3{font-size:1.02rem;margin:0 0 6px}
+p{margin:0 0 14px;max-width:70ch}
+section{padding:26px 0;border-top:1px solid var(--ln)}
+.leadbox{margin:22px 0 4px;padding:20px;background:var(--sf);border-left:4px solid var(--ac)}
+.lb-label{font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin:0 0 4px}
+.lb-q{font-size:1.06rem;font-weight:700;margin:0 0 14px}
+.lb-a{margin:0;color:var(--ink)}
+.scan{margin-top:16px;padding:18px;background:var(--sf);border:1px solid var(--ln);border-left:4px solid var(--ac)}
+.table-wrap{overflow-x:auto;margin-top:16px}
+table{width:100%;border-collapse:collapse;font-size:.92rem;table-layout:fixed;word-break:keep-all}
+th,td{border-bottom:1px solid var(--ln);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--ac2);color:var(--ink);font-size:.86rem;font-weight:700}
+.ask ol{margin:12px 0 0;padding-left:22px}
+.ask li{margin:0 0 10px}
+.closing{padding:24px;background:var(--sf);border-top:2px solid var(--ac)}
+.closing h2{margin-bottom:10px}
+.closing p{font-size:1.04rem;margin:0}
+.cite{color:var(--mut);font-size:.94rem}
+details{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--ln)}
+summary{cursor:pointer;font-weight:700;color:var(--ac)}
+.source{margin:8px 0 0;font-size:.92rem;color:var(--mut)}
+.source cite{font-style:normal;color:var(--ink);font-weight:600}
+footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--ln);color:var(--mut);font-size:.84rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.author-credit{color:var(--ink);font-weight:800}
+@media (max-width:640px){
+.page{padding:18px 14px 44px}
+header{padding:24px 0 6px}
+section{padding:22px 0}
+table{font-size:.82rem}
+th,td{padding:8px 6px}
+.closing{padding:18px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="top"><span><b>Lead Read</b> · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="테마 바꾸기">테마</button></div>
+<header>
+<p class="kicker">Lead Read · 리더십 브리핑</p>
+<h1>공시는 진실인가 연출인가</h1>
+<p class="dek">기업은 분기마다 방대한 숫자와 희망찬 서사를 공시합니다. 공시의 양이 늘어날수록 투자자는 진실에 가까워질까요, 아니면 더 정교하게 짜인 연극의 관객이 될 뿐일까요.</p>
+<p class="tag">3분스캔 · 비교표 · 판단 질문</p>
+</header>
+
+<div class="leadbox">
+<p class="lb-label">핵심 질문</p>
+<p class="lb-q">더 많은 공시가 언제나 더 높은 투명성을 뜻하는가?</p>
+<p class="lb-label">한 문장 결론</p>
+<p class="lb-a">공시는 시장과의 정보 격차를 좁히는 계측기일 수도 있지만, 불리한 사실을 각주로 가리고 장밋빛 서사만 무대에 올리는 '인상 관리의 연출'일 수 있으므로 검증 가능성을 보아야 합니다.</p>
+</div>
+
+<section>
+<h2>왜 지금 이 문제인가<span>투명성의 창문인가, 인상 관리의 무대인가</span></h2>
+<p>상장 기업의 IR 자료와 사업보고서는 갈수록 두꺼워지고 있습니다. 경영진은 투명성을 입증했다고 주장하지만, 정작 독자는 수백 쪽의 문장 속에서 무엇이 진짜 위험인지 파악하기 어렵습니다.</p>
+<p>공시의 목적이 사실 전달이 아니라 주가 부양을 위한 인상 관리에 머물 때, 정보 공개는 오히려 판단을 흐리는 연막탄이 됩니다. 쏟아지는 공시 속에서 진실의 신호를 가려내는 눈이 절실합니다.</p>
+<div class="scan">
+<h3>3분 스캔 요약</h3>
+<p>공시는 숫자를 나열하는 단순한 회계 행위가 아닙니다. 시장의 신뢰를 얻는 공시는 독립적인 외부 감사를 거쳐 '나쁜 소식'까지 검증 가능하게 드러내는 공시입니다. 반면 나쁜 소식을 모호한 문장으로 흐리고 좋은 지표만 골라 편집하는 서사는 인상 관리에 불과합니다.</p>
+</div>
+</section>
+
+<section>
+<h2>두 연구의 프레임 비교<span>정보 비대칭의 축소인가, 서사적 인상 관리인가</span></h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>정보 비대칭 축소 (힐리·팔레푸 2001)</th>
+<th>인상 관리 연출 (메르클-데이비스 2007)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><b>기본 시각</b></td>
+<td>공시는 경영자와 투자자 사이의 틈을 메우는 계측기</td>
+<td>공시는 독자의 인식을 통제하기 위해 연출된 무대</td>
+</tr>
+<tr>
+<td><b>신뢰의 원천</b></td>
+<td>회계기준, 외부 감사인, 규제기관의 사후 검증력</td>
+<td>서사의 강조점 선택, 불리한 뉴스의 각주 은폐</td>
+</tr>
+<tr>
+<td><b>성패 판정</b></td>
+<td>자본 비용 인하, 거래 유동성 증가, 오차 축소</td>
+<td>단기 주가 방어, 경영진의 책임 회피 성공 여부</td>
+</tr>
+<tr>
+<td><b>실무 처방</b></td>
+<td>"더 빠르고 폭넓게 정보를 공개하라"</td>
+<td>"무엇을 숨기고 어떻게 편집했는지 문법을 읽어라"</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="case">
+<h2>적용 사례 — 럭인 커피의 화려한 공시와 상장 폐지<span>2019년 5월 상장에서 2020년 몰락까지</span></h2>
+<p>2019년 5월 나스닥에 상장한 럭인 커피는 분기마다 폭발적인 매장 확대와 매출 성장을 공시하며 시장의 찬사를 받았습니다. 2020년 1월 추가 공모를 성공시킬 때까지만 해도 회사의 공시 서류는 완벽해 보였습니다.</p>
+<p>그러나 2020년 1월 말 터져 나온 익명 보고서 이후 진실이 드러났습니다. 2020년 4월 회사는 2019년 매출 중 무려 21억 2천만 위안(약 3,600억 원)이 가짜 거래였다고 실토했습니다. 주가는 하루 만에 75% 이상 폭락했고, 2020년 7월 결국 나스닥에서 상장 폐지되었습니다. 상세한 공시 문장들이 사실은 거대한 연극의 대본이었음이 입증된 순간이었습니다.</p>
+</section>
+
+<section>
+<h2>렌즈 — 앞무대와 뒷무대<span>어빙 고프먼의 통찰</span></h2>
+<p>사회학자 어빙 고프먼은 1959년 저서에서 인간의 사회적 상호작용을 연극에 빗대었습니다. 배우는 관객이 있는 '앞무대'에서 대본에 따라 이상적인 모습을 연기하고, 허점과 비밀은 보이지 않는 '뒷무대'에 감추어 둡니다.</p>
+<p>기업의 공시 역시 정교하게 꾸며진 앞무대입니다. 리더가 통제할 수 있는 것은 대본의 수려함과 발표의 조명입니다. 통제할 수 없는 것은 뒷무대에서 일어나는 회계 조작과 내부 고발의 누출입니다. 물어야 할 것은 무대의 대본이 얼마나 화려한가가 아니라, 그 무대를 떠받치는 뒷무대의 현실이 정직한가입니다.</p>
+</section>
+
+<section class="ask">
+<h2>리더의 판단 질문<span>공시 서류에 도장을 찍기 전에 확인할 것</span></h2>
+<ol>
+<li>이 공시는 조직에 불리한 사실과 잠재적 위험을 회피하지 않고 독립적으로 검증 가능하게 밝히고 있는가?</li>
+<li>실적 악화의 원인을 외부 환경 탓으로 돌리고 좋은 실적만 경영진의 역량으로 포장하는 왜곡이 없는가?</li>
+<li>앞무대의 화려한 발표 뒤편에 감추어진 뒷무대의 숫자가 드러났을 때도 이 서류의 신뢰가 유지되는가?</li>
+</ol>
+</section>
+
+<section class="closing">
+<h2>한 줄로 남기면</h2>
+<p>공시는 투명성의 증명서가 아니라 사후 검증을 약속하는 서약서입니다. 화려한 수식어를 걷어내고, 불리한 숫자를 정직하게 드러내며, 독립된 검증을 감당하겠다는 의지가 있을 때 공시는 비로소 시장의 신뢰를 얻습니다.</p>
+</section>
+
+<section>
+<h2>근거 자료<span>서지와 확인 범위</span></h2>
+<p class="cite">본 브리핑은 회계학 및 사회학 분야의 공인된 학술 문헌의 정본 논지를 바탕으로 작성된 분석 자료입니다.</p>
+<details><summary>기업 공시와 자본 시장의 정보 비대칭 연구</summary><p class="source"><cite>Paul M. Healy &amp; Krishna G. Palepu, "Information Asymmetry, Corporate Disclosure, and the Capital Markets," Journal of Accounting and Economics 31(1–3) (2001), pp. 405–440.</cite></p></details>
+<details><summary>기업 서사의 임의적 공시와 인상 관리 전략 연구</summary><p class="source"><cite>Doris M. Merkl-Davies &amp; Niamh M. Brennan, "Discretionary Disclosure Strategies in Corporate Narratives," Journal of Accounting Literature 26 (2007), pp. 116–196.</cite></p></details>
+<details><summary>일상생활에서의 자아 연출 사회학 고전</summary><p class="source"><cite>Erving Goffman, The Presentation of Self in Everyday Life (1959; Anchor Books).</cite></p></details>
+</section>
+
+<footer>
+<span>Lead Read · 3분 브리핑</span>
+<p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+const root=document.documentElement;const b=document.getElementById('theme-toggle');
+b.addEventListener('click',()=>{const n=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=n;});
+</script>
+</body>
+</html>
