@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>외부 자문은 판단인가 면책인가 — Lead Read</title>
+<style>
+:root{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}}
+html[data-theme="dark"]{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}
+html[data-theme="light"]{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;line-height:1.78;word-break:keep-all;overflow-wrap:anywhere}
+.page{max-width:920px;margin:auto;padding:26px 20px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--ln);font-size:.78rem;letter-spacing:.1em;color:var(--mut)}
+.top b{color:var(--ink)}
+button{font:inherit;font-size:.8rem;padding:6px 10px;color:var(--ink);background:var(--sf);border:1px solid var(--ln);border-radius:4px;cursor:pointer}
+a{color:var(--ac);text-underline-offset:.2em}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--mk);outline-offset:3px}
+header{padding:34px 0 10px}
+.kicker{color:var(--mk);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.28;letter-spacing:-.03em;margin:.4em 0 .3em}
+.dek{font-size:clamp(1.02rem,2.2vw,1.18rem);color:var(--mut);margin:0 0 10px;max-width:62ch}
+.tag{display:inline-block;margin-top:12px;padding:4px 10px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:700;border-radius:3px}
+h2{font-size:clamp(1.22rem,2.8vw,1.62rem);line-height:1.34;letter-spacing:-.02em;margin:0 0 8px}
+h2 span{display:block;font-size:.78rem;font-weight:600;letter-spacing:.06em;color:var(--mk);margin-top:5px}
+h3{font-size:1.02rem;margin:0 0 6px}
+p{margin:0 0 14px;max-width:70ch}
+section{padding:26px 0;border-top:1px solid var(--ln)}
+.leadbox{margin:22px 0 4px;padding:20px;background:var(--sf);border-left:4px solid var(--ac)}
+.lb-label{font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin:0 0 4px}
+.lb-q{font-size:1.06rem;font-weight:700;margin:0 0 14px}
+.lb-a{margin:0;color:var(--ink)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.pole{padding:18px;background:var(--sf);border-top:4px solid var(--ac)}
+.pole:nth-child(2){border-top-color:var(--mk)}
+.pole small{display:block;font-size:.72rem;letter-spacing:.1em;font-weight:800;color:var(--mk);margin-bottom:6px}
+.clash{margin-top:16px;padding:16px 18px;background:var(--ac2);border-left:4px solid var(--mk)}
+.ask ol{margin:12px 0 0;padding-left:22px}
+.ask li{margin:0 0 10px}
+.closing{padding:24px;background:var(--sf);border-top:2px solid var(--ac)}
+.closing h2{margin-bottom:10px}
+.closing p{font-size:1.04rem;margin:0}
+.cite{color:var(--mut);font-size:.94rem}
+details{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--ln)}
+summary{cursor:pointer;font-weight:700;color:var(--ac)}
+.source{margin:8px 0 0;font-size:.92rem;color:var(--mut)}
+.source cite{font-style:normal;color:var(--ink);font-weight:600}
+footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--ln);color:var(--mut);font-size:.84rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.author-credit{color:var(--ink);font-weight:800}
+@media (max-width:640px){
+.page{padding:18px 14px 44px}
+.duo{grid-template-columns:1fr}
+header{padding:24px 0 6px}
+section{padding:22px 0}
+.closing{padding:18px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="top"><span><b>Lead Read</b> · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="테마 바꾸기">테마</button></div>
+<header>
+<p class="kicker">Lead Read · 리더십 브리핑</p>
+<h1>외부 자문은 판단인가 면책인가</h1>
+<p class="dek">조직이 중대한 결정을 앞두고 외부 전문 컨설팅을 부릅니다. 부족한 전문성을 메우기 위한 선택이지만, 프로젝트가 끝난 뒤 그 결정의 책임과 소유권은 누구에게 남게 될까요.</p>
+<p class="tag">두 관점 · 적용 사례 · 판단 질문</p>
+</header>
+
+<div class="leadbox">
+<p class="lb-label">핵심 질문</p>
+<p class="lb-q">외부 전문가의 보고서는 결정을 돕는가, 아니면 책임을 분산하는가?</p>
+<p class="lb-label">한 문장 결론</p>
+<p class="lb-a">외부 자문은 역량의 유용한 조달이 될 수 있지만, 서명의 주체와 책임 귀속을 외부에 떠넘기는 순간 조직의 고유한 판단력은 마비되고 실패의 책임은 증발합니다.</p>
+</div>
+
+<section>
+<h2>왜 지금 이 문제인가<span>전문성의 보충인가, 책임의 외주화인가</span></h2>
+<p>조직 구조 개편, 대규모 디지털 전환, 신사업 진출과 같은 고위험 결정에서 경영진은 글로벌 컨설팅 펌의 이름표를 찾습니다. 유명 컨설팅사의 로고가 찍힌 보고서는 이사회와 주주를 설득하는 가장 손쉬운 방패가 됩니다.</p>
+<p>하지만 자문이 '의사결정의 주체성'을 대체하는 순간 위험이 시작됩니다. 컨설턴트는 조언할 뿐 결과에 따른 책임을 지지 않으며, 실패가 발생했을 때 책임은 계약서와 보고서 사이의 모호한 공간으로 흩어지고 맙니다.</p>
+</section>
+
+<section>
+<h2>두 연구가 갈라지는 지점<span>역량의 시장 조달인가, 정당성의 불안한 거래인가</span></h2>
+<div class="duo">
+<div class="pole">
+<small>경제학적 관점</small>
+<h3>전문 역량의 효율적 조달</h3>
+<p>2007년 토마스 암브뤼스터와 요하네스 글뤽클러는 컨설팅 산업을 향한 비판에 맞서 전문 역량 조달의 합리성을 옹호했습니다. 고객 기업은 바보가 아니며, 평판 메커니즘과 재계약 여부를 통해 자문의 품질을 검증합니다. 단기적 기회주의나 헛된 유행어를 파는 회사는 반복 게임에서 도태됩니다. 따라서 기업이 외부 자문을 찾는 것은 내부적으로 육성하기 어려운 고도의 전문성을 시장에서 효율적으로 구매하는 정당한 경영 전략입니다.</p>
+</div>
+<div class="pole">
+<small>조직사회학 관점</small>
+<h3>불안의 거래와 정당성 교환</h3>
+<p>1997년 앤드루 스터디는 컨설팅 과정을 '불안한 비즈니스'로 분석했습니다. 자문은 객관적 지식의 전달이 아니라 상호 불안을 달래는 정체성 교환입니다. 고객 경영진은 위험한 결정 앞에서 자신의 통제감을 확인하고 책임을 분산하고 싶어 하며, 컨설턴트는 전문성이라는 권위를 빌려주고 수수료를 챙깁니다. 이 과정에서 판단의 소유권이 흐려지고, 누구의 결정인지 알 수 없는 회색지대가 형성됩니다.</p>
+</div>
+</div>
+<div class="clash">
+<p>한쪽은 외부 자문을 부족한 전문 역량을 사 오는 합리적 계약으로 보고 평판 신호로 검증하라고 처방합니다. 다른 쪽은 자문 계약이 사실상 결정의 주인을 지우고 책임을 흐리는 정당성 거래라고 경고합니다. 전자는 보고서의 품질을 따지고, 후자는 자문이 끝난 뒤 서명할 사람의 위치를 묻습니다.</p>
+</div>
+</section>
+
+<section class="case">
+<h2>적용 사례 — 베인의 남아공 국세청 개편과 2억 란드의 반환<span>2015년 수주에서 2019년 수수료 반환까지</span></h2>
+<p>2014년 말 취임한 남아프리카공화국 국세청장은 2015년 1월 글로벌 컨설팅사 베인 앤드 컴퍼니와 대규모 조직 진단 및 구조 개편 계약을 체결했습니다. 수수료만 1억 5천만 란드(약 130억 원)가 넘는 대형 프로젝트였습니다. 베인의 계획대로 핵심 조사 및 탈세 단속 부서가 해체되었습니다.</p>
+<p>그러나 이 개편은 세수 징수 기능을 치명적으로 파괴했습니다. 2018년 사법조사위원회에서 베인 대표는 이 작업을 "거대한 실패"라고 증언했습니다. 여론의 분노 속에서 베인은 수수료와 이자를 포함한 2억 1,700만 란드를 국세청에 전액 반환했습니다. 결정은 국세청이 내렸고 설계는 자문사가 했지만, 국가 기관이 망가진 뒤 책임은 공중에 붕 떴습니다. 자문이 판단의 소유권을 흩어놓은 대표적 비극입니다.</p>
+</section>
+
+<section>
+<h2>렌즈 — 전문가의 전횡과 주체의 무능화<span>아이반 일리치의 통찰</span></h2>
+<p>사회비평가 아이반 일리치는 1977년 저서 《무능하게 만드는 전문직》에서 전문가 집단이 문제 정의와 해법을 독점할 때 시민과 공동체가 스스로 판단하고 치유하는 능력을 박탈당한다고 질타했습니다.</p>
+<p>기업의 외부 자문도 같은 함정에 빠집니다. 리더가 통제할 수 있는 것은 계약의 범위와 예산, 자문사의 명성이지만, 통제할 수 없는 것은 전문가에게 기댈수록 조직 내부가 스스로 생각하고 판단하는 훈련을 잃어버리는 '제도적 무능화'입니다. 자문의 진정한 가치는 정답을 사 오는 데 있지 않고, 우리 조직이 스스로 바른 결정을 내릴 수 있도록 생각의 거울이 되어 주는 데 있습니다.</p>
+</section>
+
+<section class="ask">
+<h2>리더의 판단 질문<span>자문 계약서에 서명하기 전에 확인할 것</span></h2>
+<ol>
+<li>이 프로젝트가 실패했을 때 '외부 자문사가 권고한 대로 했을 뿐'이라는 핑계 뒤로 숨지 않을 자신이 있는가?</li>
+<li>컨설턴트의 화려한 프레임워크가 현장 관리자들의 직관적 지혜와 생생한 비판을 억누르고 있지는 않은가?</li>
+<li>컨설팅 팀이 철수한 뒤 우리 조직에 남는 것은 두꺼운 보고서 파일인가, 아니면 한 단계 성장한 내부의 판단 역량인가?</li>
+</ol>
+</section>
+
+<section class="closing">
+<h2>한 줄로 남기면</h2>
+<p>외부 자문은 판단의 도구일 뿐 책임의 방패가 될 수 없습니다. 결론에 서명할 내부의 책임자를 분명히 세우고, 자문 이후 남겨질 내부의 역량을 계산할 때만 외부의 지혜는 비로소 조직의 자산이 됩니다.</p>
+</section>
+
+<section>
+<h2>근거 자료<span>서지와 확인 범위</span></h2>
+<p class="cite">본 브리핑은 조직학 및 경영컨설팅 연구, 사회철학 분야의 공인된 학술 문헌의 정본 논지를 바탕으로 작성된 분석 자료입니다.</p>
+<details><summary>컨설팅 경제학과 조직 변화 연구</summary><p class="source"><cite>Thomas Armbrüster &amp; Johannes Glückler, "Organizational Change and the Economics of Management Consulting," Organization Studies 28(12) (2007), pp. 1879–1885.</cite></p></details>
+<details><summary>컨설팅 프로세스의 사회학적 분석</summary><p class="source"><cite>Andrew Sturdy, "The Consultancy Process — An Insecure Business?" Journal of Management Studies 34(3) (1997), pp. 389–413.</cite></p></details>
+<details><summary>전문가주의와 주체적 역량의 사회철학 고전</summary><p class="source"><cite>Ivan Illich et al., Disabling Professions (1977; Marion Boyars).</cite></p></details>
+</section>
+
+<footer>
+<span>Lead Read · 3분 브리핑</span>
+<p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+const root=document.documentElement;const b=document.getElementById('theme-toggle');
+b.addEventListener('click',()=>{const n=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=n;});
+</script>
+</body>
+</html>
