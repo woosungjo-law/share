@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>유출 통보 뒤의 쟁점은 세 가지다 — 항목, 중단 기간, 인과</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 개인정보 유출</div>
+    <h1>유출 통보 뒤의 쟁점은 세 가지다 — 항목, 중단 기간, 인과</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> <b>개인정보 보호법 제39조 제1항</b>은 정보주체가 손해를 입으면 <b>손해배상을 청구할 수 있고</b>, <b>개인정보처리자가 고의 또는 과실이 없음을 입증하지 아니하면 책임을 면할 수 없다</b>고 정합니다. 그래서 유출이 확인되는 순간 다툼의 무게중심은 <b>"회사에 고의·과실이 있었는가"</b>에서 <b>"회사가 없음을 증명할 수 있는가"</b>로 옮겨 갑니다. 남는 것은 대응 과정이 아니라 <b>셈</b>입니다 — <b>유출 항목, 중단 기간, 인과</b>.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>대응은 끝났는데 셈이 남지 않은 상황</b>을 떠올려 보십시오. 유출 사실의 파급과 통보 절차에 자원을 다 쓴 뒤, <b>몇 달 뒤 손해액을 두고 다툴 때</b> 남는 것은 <b>대응 과정이 아니라 숫자</b>입니다. <b>무엇이 유출됐고, 얼마나 멈췄고, 그동안 어떤 비용이 났는지</b>가 기록으로 남지 않으면, 회사가 내세울 수 있는 반론 — <b>인과의 부재, 손해의 경미함, 손해액의 과다</b> — 도 함께 사라집니다. <b>방어는 반론이 아니라 기록에서 시작</b>됩니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점 — 네 층</h2>
+    <p><b>① 손해배상청구의 근거(개인정보 보호법 제39조 제1항).</b> 정보주체가 <b>개인정보처리자가 이 법을 위반한 행위로 손해를 입으면</b> 손해배상을 청구할 수 있고, 이 경우 그 <b>개인정보처리자가 고의 또는 과실이 없음을 입증하지 아니하면 책임을 면할 수 없습니다.</b></p>
+    <p><b>② 유출 사고의 배상액(같은 조 제3항).</b> 개인정보처리자의 <b>고의 또는 중대한 과실</b>로 인하여 <b>개인정보가 유출등이 된 경우</b>로서 <b>정보주체에게 손해가 발생한 때</b>에는 법원이 <b>그 손해액의 5배를 넘지 아니하는 범위</b>에서 손해배상액을 정할 수 있고, <b>고의 또는 중대한 과실이 없음을 증명한 경우</b>에는 그러하지 아니합니다.</p>
+    <p><b>③ 정신적 손해(민법 제751조).</b> 타인의 <b>신체·자유·명예를 해하거나 기타 정신상 고통을 가한 자</b>는 <b>재산 이외의 손해에 대하여도 배상할 책임</b>이 있습니다. 위자료가 별도 항목으로 청구되는 근거입니다.</p>
+    <p><b>④ 손해액 산정의 기준(민법 제393조).</b> <b>통상의 손해</b>를 한도로 하고, <b>특별한 사정으로 인한 손해</b>는 <b>채무자가 그 사정을 알았거나 알 수 있었을 때</b>에 한하여 배상 책임이 있습니다. 청구 금액 중 <b>통상의 손해를 넘는 부분</b>은 <b>예견 가능성과 특별한 사정</b>을 두고 다투게 됩니다.</p>
+    <div class="callout"><b>셈으로 남기지 않으면 반론도 없습니다.</b> ⑴ <b>입증 책임의 방향</b> — 회사는 <b>고의·과실이 없음을 스스로 증명</b>해야 하므로, <b>내부 감사 기록과 대응 일지</b>가 곧 방어 자료가 됩니다. ⑵ <b>5배 배상의 요건</b> — <b>고의 또는 중대한 과실</b>, <b>유출등</b>, <b>손해 발생</b>이 함께 요구되므로 <b>셋 중 하나가 비면 상한이 적용되지 않습니다.</b> ⑶ <b>인과관계</b> — <b>유출이나 중단이 아니었다면 그 손해가 발생하지 않았는지</b>를 상대가 묻고, 회사는 <b>다른 원인</b>을 제시합니다.</div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외 — 여덟 지점</h2>
+    <ul class="points">
+      <li><b>입증 책임</b> — <b>고의·과실 없음을 회사가 증명</b>해야 합니다. <b>감사 기록·대응 일지</b>가 방어 자료입니다.</li>
+      <li><b>5배 배상 요건</b> — <b>고의·중대한 과실 + 유출등 + 손해 발생</b>이 함께 있어야 상한이 적용됩니다.</li>
+      <li><b>인과관계</b> — <b>유출·중단과 손해 사이의 연결</b>을 상대와 회사가 서로 다툽니다.</li>
+      <li><b>손해의 범위</b> — <b>재발급·복구 비용 같은 재산상 손해</b>와 <b>정신적 손해</b>는 <b>입증 방법이 달라</b> 항목을 분리해야 합니다.</li>
+      <li><b>통상 손해의 범위</b> — <b>통상의 손해를 넘는 손해</b>는 <b>그 사정을 알았거나 알 수 있었어야</b> 인정됩니다.</li>
+      <li><b>손해액 과다 다툼</b> — <b>중단 기간과 실제 손실액을 연결하는 계산</b>이 없으면 금액 다툼에서 밀립니다.</li>
+      <li><b>기간의 기록</b> — <b>유출 항목과 민감성, 중단의 시작·종료 시점</b>은 나중에 <b>어떤 증거로도 대체되지 않습니다.</b></li>
+      <li><b>정신적 손해의 구체성</b> — <b>고통의 내용은 개인마다 다르므로</b>, 회사도 <b>일괄 반박 대신 항목별 판단</b>을 준비해야 합니다.</li>
+    </ul>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">필요한 것은 항의문이 아니라 <b>대장</b>입니다. 첫 표에는 <b>유출 항목과 민감성, 서비스 중단의 시작·종료 시점, 그 기간에 발생한 비용과 영업 손해</b>를 적습니다. 두 번째 표에는 <b>피해자 측이 제시한 손해 항목과 근거 자료</b>, <b>회사가 제시할 반론</b>(인과의 부재·손해의 경미함·손해액의 과다)을 나란히 놓습니다. 두 표를 붙여 보면 <b>어느 항목이 다툼의 중심</b>인지가 드러납니다.</p>
+    <ol>
+      <li><b>① 유출 항목</b> — 어떤 항목이 유출됐고 <b>민감성은 어떤지</b> 목록으로 확정합니다.</li>
+      <li><b>② 중단 기간</b> — 서비스 중단의 <b>시작·종료 시점</b>을 문서로 남깁니다.</li>
+      <li><b>③ 손해 항목</b> — <b>재산상 손해와 정신적 손해</b>를 분리해 계산합니다.</li>
+      <li><b>④ 대응 기록</b> — <b>고의·과실 없음을 뒷받침하는 감사·대응 일지</b>를 보관합니다.</li>
+      <li><b>⑤ 인과 자료</b> — <b>유출·중단과 손해 사이의 인과</b>를 항목별로 정리합니다.</li>
+      <li><b>⑥ 반론 포인트</b> — <b>인과 부재·손해 경미·손해액 과다</b> 세 반론의 근거 자료를 미리 준비합니다.</li>
+    </ol>
+    <p style="margin-top:16px;margin-bottom:0;">사고 대응을 시작할 때 <b>손실 계산과 비용 증빙을 별도 작업으로 분리하지 말고 같은 일지에</b> 기록하십시오. 피해자 측 자료가 오면 <b>금액에 즉시 반박하지 말고</b>, <b>어떤 손해 항목이 어떤 근거로 산정됐는지</b> 항목별로 대응 계획을 세우십시오. 소송 대비 여부를 판단할 때도 <b>승소 가능성만이 아니라 입증 자료의 유무</b>를 기준으로 삼으십시오 — <b>자료가 없는 항목은 어떤 주장보다 약합니다.</b></p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
