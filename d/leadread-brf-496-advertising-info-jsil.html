@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>광고는 정보인가 설득인가 — Lead Read</title>
+<style>
+:root{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}}
+html[data-theme="dark"]{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}
+html[data-theme="light"]{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans KR","Pretendard","Malgun Gothic",sans-serif;line-height:1.78;word-break:keep-all;overflow-wrap:anywhere}
+.page{max-width:920px;margin:auto;padding:26px 20px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--ln);font-size:.78rem;letter-spacing:.1em;color:var(--mut)}
+.top b{color:var(--ink)}
+button{font:inherit;font-size:.8rem;padding:6px 10px;color:var(--ink);background:var(--sf);border:1px solid var(--ln);border-radius:4px;cursor:pointer}
+a{color:var(--ac);text-underline-offset:.2em}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--mk);outline-offset:3px}
+header{padding:34px 0 10px}
+.kicker{color:var(--mk);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.28;letter-spacing:-.03em;margin:.4em 0 .3em}
+.dek{font-size:clamp(1.02rem,2.2vw,1.18rem);color:var(--mut);margin:0 0 10px;max-width:62ch}
+.tag{display:inline-block;margin-top:12px;padding:4px 10px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:700;border-radius:3px}
+h2{font-size:clamp(1.22rem,2.8vw,1.62rem);line-height:1.34;letter-spacing:-.02em;margin:0 0 8px}
+h2 span{display:block;font-size:.78rem;font-weight:600;letter-spacing:.06em;color:var(--mk);margin-top:5px}
+h3{font-size:1.02rem;margin:0 0 6px}
+p{margin:0 0 14px;max-width:70ch}
+section{padding:26px 0;border-top:1px solid var(--ln)}
+.leadbox{margin:22px 0 4px;padding:20px;background:var(--sf);border-left:4px solid var(--ac)}
+.lb-label{font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin:0 0 4px}
+.lb-q{font-size:1.06rem;font-weight:700;margin:0 0 14px}
+.lb-a{margin:0;color:var(--ink)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.pole{padding:18px;background:var(--sf);border-top:4px solid var(--ac)}
+.pole:nth-child(2){border-top-color:var(--mk)}
+.pole small{display:block;font-size:.72rem;letter-spacing:.1em;font-weight:800;color:var(--mk);margin-bottom:6px}
+.clash{margin-top:16px;padding:16px 18px;background:var(--ac2);border-left:4px solid var(--mk)}
+.signal{margin-top:16px;padding:18px;background:var(--mk2);border:2px solid var(--mk)}
+.siglabel{display:inline-block;margin:0 8px 8px 0;padding:4px 9px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:800;border-radius:3px}
+.timeline{margin-top:16px;padding-left:16px;border-left:2px solid var(--ac)}
+.tl{margin:0 0 16px;padding-left:16px;position:relative}
+.tl:before{content:"";position:absolute;left:-23px;top:.6em;width:10px;height:10px;border-radius:50%;background:var(--mk)}
+.tl b{display:block;color:var(--mk);font-size:.9rem}
+.mnote{margin:14px 0;padding:12px 16px;background:var(--mk2);border-left:3px solid var(--mk);font-size:.95rem;color:var(--mut)}
+.scan{margin-top:16px;padding:16px;background:var(--ac2);border:1px solid var(--ln)}
+table{width:100%;border-collapse:collapse;font-size:.86rem;table-layout:fixed}
+th,td{border:1px solid var(--ln);padding:9px 10px;text-align:left;vertical-align:top;overflow-wrap:anywhere}
+th{background:var(--sf);color:var(--ink);font-weight:800}
+.ask ol{margin:12px 0 0;padding-left:22px}
+.ask li{margin:0 0 10px}
+.closing{padding:24px;background:var(--sf);border-top:2px solid var(--ac)}
+.closing h2{margin-bottom:10px}
+.closing p{font-size:1.04rem;margin:0}
+.cite{color:var(--mut);font-size:.94rem}
+details{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--ln)}
+summary{cursor:pointer;font-weight:700;color:var(--ac)}
+.source{margin:8px 0 0;font-size:.92rem;color:var(--mut)}
+.source cite{font-style:normal;color:var(--ink);font-weight:600}
+footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--ln);color:var(--mut);font-size:.84rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.author-credit{color:var(--ink);font-weight:800}
+@media (max-width:640px){
+.page{padding:18px 14px 44px}
+.duo{grid-template-columns:1fr}
+header{padding:24px 0 6px}
+section{padding:22px 0}
+.closing{padding:18px}
+table{font-size:.79rem}
+th,td{padding:7px 6px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="top"><span><b>Lead Read</b> · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="테마 바꾸기">테마</button></div>
+<header>
+<p class="kicker">Lead Read · 리더십 브리핑</p>
+<h1>광고는 정보인가 설득인가</h1>
+<p class="lede dek"></p>
+<p class="tag">두 관점 · 갈리는 지점 · 적용 사례</p>
+</header>
+<div class="leadbox">
+<p class="lb-label">핵심 질문</p>
+<p class="lb-q"></p>
+<p class="lb-label">한 문장 결론</p>
+<p class="lb-a">광고는 정보이면서 동시에 설득이다. 두 성질은 한 광고 안에 함께 있고, 어느 쪽이 두드러지는지는 재화의 성질과 매체의 형식과 시장의 구조가 정한다. 그래서 광고를 규제하는 일은 정보를 줄이는 일이면서 동시에 경쟁의 조건을 바꾸는 일이다.</p>
+</div>
+<section>
+<h2>왜 지금 이 문제인가<span>리더가 실제로 마주하는 판단 장면</span></h2>
+
+</section>
+<section>
+<h2>두 연구가 갈라지는 지점<span>필립 넬슨은 1974년 《정치경제학 저널》 82권 4호의 &quot;광고로서의 정보&quot;에서 광고를 정보의 한 형태로 다루었다. 그가 먼저 한 일은 재화를 구분한 것이다. 사기 전에 품질을 확인할 수 있는 재화가 있고, 써 본 뒤에야 품질을 아는 재화가 있다. 넬슨은 앞을 탐색재, 뒤를 경험재라 불렀다. / 윌리엄 코머너와 토머스 윌슨은 1967년 《경제학·통계학 리뷰》 49권 4호의 &quot;광고, 시장구조, 성과&quot;에서 광고를 시장구조의 변수로 놓았다. 그들에게 광고는 소비자에게 가는 정보가 아니라, 시장에 남는 비용이다.</span></h2>
+<div class="duo"><div class="pole"><small>관점 A</small><h3>필립 넬슨은 1974년 《정치경제학 저널》 82권 4호의 &quot;광고로서의 정보&quot;에서 광고를 정보의 한 형태로 다루었다. 그가 먼저 한 일은 재화를 구분한 것이다. 사기 전에 품질을 확인할 수 있는 재화가 있고, 써 본 뒤에야 품질을 아는 재화가 있다. 넬슨은 앞을 탐색재, 뒤를 경험재라 불렀다.</h3>탐색재에서 광고는 사실을 전달한다. 가격, 규격, 판매처, 성능이 광고의 내용이다. 소비자는 광고를 읽고 후보를 줄인다. 정보가 늘면 탐색 비용이 줄고, 선택의 질이 올라간다. 이 경우 광고를 규제하는 일은 소비자가 쓸 정보를 줄이는 일이다.</div><div class="pole"><small>관점 B</small><h3>윌리엄 코머너와 토머스 윌슨은 1967년 《경제학·통계학 리뷰》 49권 4호의 &quot;광고, 시장구조, 성과&quot;에서 광고를 시장구조의 변수로 놓았다. 그들에게 광고는 소비자에게 가는 정보가 아니라, 시장에 남는 비용이다.</h3>광고는 제품 차별화를 만든다. 같은 성분의 세제도 광고를 거치면 다른 물건이 된다. 차별화가 생기면 가격 경쟁이 약해지고, 기업은 광고한 만큼 가격을 받을 수 있다.</div></div><div class="clash"><p>그래서 실무 문장도 갈린다. &quot;광고는 알리는 일이다&quot;와 &quot;광고는 막는 일이다&quot;가 맞선다. 전자는 소비자의 눈으로, 후자는 시장의 문으로 본다. 광고를 규제할 때 어느 층을 기준으로 삼는지가 결론을 바꾼다.</p></div>
+</section>
+<section class="case">
+<h2>적용 사례 — 1970년 4월 1일 닉슨 대통령은 《공중보건 흡연법》에 서명했다. 이 법은 1971년 1월 2일부터 텔레비전과 라디오에서 담배 광고를 금지했다. 특정 제품의 방송 광고를 전면 금지한 첫 연방법이었다. 예상은 분명했다. 광고가 흡연을 부추기므로 광고를 없애면 흡연이 줄어든다는 것이었다.<span>확인된 날짜와 경과</span></h2>
+<p>결과는 반대였다. 미국 내 담배 판매량은 1970년 5,342억 개비에서 1971년 5,472억 개비로, 1972년 5,617억 개비로, 1973년 5,847억 개비로 늘었다. 1인당 판매량도 1970년 3,969개비에서 1973년 4,112개비로 올랐다. 광고를 없앴는데 소비는 늘었다.</p><p>그러나 시점을 뜯어보면 원인이 달라진다. 1968년과 1969년의 감소는 방송사가 반흡연 공익광고를 의무적으로 내보내던 시기와 겹친다. 그 무료 반광고가 1970년 1월에 사라지자, 금지가 발효되기도 전에 소비는 이미 반등했다. 총수요를 움직인 것은 담배 광고가 아니라, 담배 광고에 맞서던 메시지의 소멸이었다.</p><p>브랜드 광고가 사라진 뒤 시장점유율은 굳었다. 기존 사업자에게 금지는 경쟁의 정지였다. 이 사건에서 넬슨의 정보와 코머너·윌슨의 장벽이 동시에 확인된다. 광고는 총수요를 만들지 않았고, 브랜드 사이의 차이를 만들었다.</p>
+</section>
+<section>
+<h2>렌즈 — 마셜 맥루언은 1964년 《미디어의 이해》에서 &quot;매체가 메시지다&quot;라고 썼다. 사람들은 내용을 보고 매체를 보지 않는다. 그러나 매체의 형식이 감각과 사회의 척도를 바꾼다.<span>개념을 재구성한 사유의 틀</span></h2>
+<p>텔레비전 광고의 내용은 제품이지만, 형식은 30초의 서사다. 매체는 제품을 이미지로 바꾸고, 소비자는 이미지를 기억한다. 같은 담배도 신문 광고에서는 정보가 되고, 텔레비전 광고에서는 장면이 된다. 정보와 설득의 경계는 내용이 아니라 형식이 정한다.</p><p>금지는 내용을 지운 것이 아니라 매체를 바꿨다. 담배는 사라지지 않고 인쇄 광고와 판촉과 가격으로 이동했다. 방송에서 사라진 것은 설득의 형식이었고, 남은 것은 가격과 진열이라는 다른 형식이었다.</p><p>맥루언에게 광고 논쟁은 내용 논쟁이다. 정보냐 설득이냐는 문장의 성질을 묻는다. 그러나 효과는 형식에서 온다. 광고를 판단하려면 무엇을 말했는지보다 어디에 실렸는지를 먼저 봐야 한다.</p>
+</section>
+<section class="ask">
+<h2>리더의 판단 질문<span>결정 전에 확인할 것</span></h2>
+<ol><li>광고는 정보이면서 동시에 설득이다</li><li>두 성질은 한 광고 안에 함께 있고, 어느 쪽이 두드러지는지는 재화의 성질과 매체의 형식과 시장의 구조가 정한다</li><li>그래서 광고를 규제하는 일은 정보를 줄이는 일이면서 동시에 경쟁의 조건을 바꾸는 일이다</li></ol>
+</section>
+<section class="closing">
+<h2>한 줄로 남기면</h2>
+<p>광고는 정보이면서 동시에 설득이다. 두 성질은 한 광고 안에 함께 있고, 어느 쪽이 두드러지는지는 재화의 성질과 매체의 형식과 시장의 구조가 정한다. 그래서 광고를 규제하는 일은 정보를 줄이는 일이면서 동시에 경쟁의 조건을 바꾸는 일이다.</p>
+</section>
+<section>
+<h2>근거 자료<span>서지와 확인 범위</span></h2>
+<p class="cite">본 브리핑은 공개된 학술 문헌의 논지를 바탕으로 작성된 분석 자료입니다.</p>
+<details><summary>참고 문헌 1</summary><p class="source"><cite>Phillip Nelson, &quot;Advertising as Information,&quot; *Journal of Political Economy* 82(4) (1974), 729–754 — 탐색재·경험재 구분과 광고량의 신호 기능을 재구성했다.</cite></p></details>
+<details><summary>참고 문헌 2</summary><p class="source"><cite>참고 문헌 2 — 1967</cite></p></details>
+<details><summary>참고 문헌 3</summary><p class="source"><cite>참고 문헌 3 — 1970</cite></p></details>
+</section>
+<footer>
+<span>Lead Read · 3분 브리핑</span>
+<p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+const root=document.documentElement;const b=document.getElementById('theme-toggle');
+b.addEventListener('click',()=>{const n=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=n;});
+</script>
+</body>
+</html>
