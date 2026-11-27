@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>익명성은 용기인가 회피인가 — Lead Read</title>
+<style>
+:root{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}}
+html[data-theme="dark"]{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}
+html[data-theme="light"]{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans KR","Pretendard","Malgun Gothic",sans-serif;line-height:1.78;word-break:keep-all;overflow-wrap:anywhere}
+.page{max-width:920px;margin:auto;padding:26px 20px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--ln);font-size:.78rem;letter-spacing:.1em;color:var(--mut)}
+.top b{color:var(--ink)}
+button{font:inherit;font-size:.8rem;padding:6px 10px;color:var(--ink);background:var(--sf);border:1px solid var(--ln);border-radius:4px;cursor:pointer}
+a{color:var(--ac);text-underline-offset:.2em}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--mk);outline-offset:3px}
+header{padding:34px 0 10px}
+.kicker{color:var(--mk);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.28;letter-spacing:-.03em;margin:.4em 0 .3em}
+.dek{font-size:clamp(1.02rem,2.2vw,1.18rem);color:var(--mut);margin:0 0 10px;max-width:62ch}
+.tag{display:inline-block;margin-top:12px;padding:4px 10px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:700;border-radius:3px}
+h2{font-size:clamp(1.22rem,2.8vw,1.62rem);line-height:1.34;letter-spacing:-.02em;margin:0 0 8px}
+h2 span{display:block;font-size:.78rem;font-weight:600;letter-spacing:.06em;color:var(--mk);margin-top:5px}
+h3{font-size:1.02rem;margin:0 0 6px}
+p{margin:0 0 14px;max-width:70ch}
+section{padding:26px 0;border-top:1px solid var(--ln)}
+.leadbox{margin:22px 0 4px;padding:20px;background:var(--sf);border-left:4px solid var(--ac)}
+.lb-label{font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin:0 0 4px}
+.lb-q{font-size:1.06rem;font-weight:700;margin:0 0 14px}
+.lb-a{margin:0;color:var(--ink)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.pole{padding:18px;background:var(--sf);border-top:4px solid var(--ac)}
+.pole:nth-child(2){border-top-color:var(--mk)}
+.pole small{display:block;font-size:.72rem;letter-spacing:.1em;font-weight:800;color:var(--mk);margin-bottom:6px}
+.clash{margin-top:16px;padding:16px 18px;background:var(--ac2);border-left:4px solid var(--mk)}
+.signal{margin-top:16px;padding:18px;background:var(--mk2);border:2px solid var(--mk)}
+.siglabel{display:inline-block;margin:0 8px 8px 0;padding:4px 9px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:800;border-radius:3px}
+.timeline{margin-top:16px;padding-left:16px;border-left:2px solid var(--ac)}
+.tl{margin:0 0 16px;padding-left:16px;position:relative}
+.tl:before{content:"";position:absolute;left:-23px;top:.6em;width:10px;height:10px;border-radius:50%;background:var(--mk)}
+.tl b{display:block;color:var(--mk);font-size:.9rem}
+.mnote{margin:14px 0;padding:12px 16px;background:var(--mk2);border-left:3px solid var(--mk);font-size:.95rem;color:var(--mut)}
+.scan{margin-top:16px;padding:16px;background:var(--ac2);border:1px solid var(--ln)}
+table{width:100%;border-collapse:collapse;font-size:.86rem;table-layout:fixed}
+th,td{border:1px solid var(--ln);padding:9px 10px;text-align:left;vertical-align:top;overflow-wrap:anywhere}
+th{background:var(--sf);color:var(--ink);font-weight:800}
+.ask ol{margin:12px 0 0;padding-left:22px}
+.ask li{margin:0 0 10px}
+.closing{padding:24px;background:var(--sf);border-top:2px solid var(--ac)}
+.closing h2{margin-bottom:10px}
+.closing p{font-size:1.04rem;margin:0}
+.cite{color:var(--mut);font-size:.94rem}
+details{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--ln)}
+summary{cursor:pointer;font-weight:700;color:var(--ac)}
+.source{margin:8px 0 0;font-size:.92rem;color:var(--mut)}
+.source cite{font-style:normal;color:var(--ink);font-weight:600}
+footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--ln);color:var(--mut);font-size:.84rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.author-credit{color:var(--ink);font-weight:800}
+@media (max-width:640px){
+.page{padding:18px 14px 44px}
+.duo{grid-template-columns:1fr}
+header{padding:24px 0 6px}
+section{padding:22px 0}
+.closing{padding:18px}
+table{font-size:.79rem}
+th,td{padding:7px 6px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="top"><span><b>Lead Read</b> · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="테마 바꾸기">테마</button></div>
+<header>
+<p class="kicker">Lead Read · 리더십 브리핑</p>
+<h1>익명성은 용기인가 회피인가</h1>
+<p class="lede dek"></p>
+<p class="tag">두 관점 · 갈리는 지점 · 적용 사례</p>
+</header>
+<div class="leadbox">
+<p class="lb-label">핵심 질문</p>
+<p class="lb-q"></p>
+<p class="lb-label">한 문장 결론</p>
+<p class="lb-a">익명은 용기의 대체물이 아니라 용기의 조건을 만드는 장치다. 조건을 만들었는데 내용의 검열까지 없애면, 그것은 용기가 아니라 회피의 인프라다.</p>
+</div>
+<section>
+<h2>왜 지금 이 문제인가<span>리더가 실제로 마주하는 판단 장면</span></h2>
+
+</section>
+<section>
+<h2>두 연구가 갈라지는 지점<span>아담 조인슨은 2001년 《유럽 사회심리학 저널》 31권 2호에 컴퓨터 매개 의사소통에서 자기 개시가 왜 늘어나는지를 세 연구로 나눠 실었다. 첫 연구에서 컴퓨터로 대화한 집단은 대면 집단보다 자발적으로 자신에 대해 더 많이 말했다. 둘째 연구는 원인을 시각적 익명으로 좁혔다. 얼굴이 보이지 않는 조건의 참가자는 그렇지 않은 참가자보다 자신에 대한 정보를 유의하게 더 많이 드러냈다. / 제인 시걸과 비탈리 두브로프스키와 세라 키슬러와 티머시 맥과이어는 1986년 《조직행동과 인간 의사결정 과정》 37권 2호에 세 실험을 실었다. 세 사람이 한 조가 되어 진로 선택 문제로 합의에 이르는 과제였다. 조의 일부는 대면으로, 일부는 동시 접속 컴퓨터로, 일부는 전자우편으로 대화했다.</span></h2>
+<div class="duo"><div class="pole"><small>관점 A</small><h3>아담 조인슨은 2001년 《유럽 사회심리학 저널》 31권 2호에 컴퓨터 매개 의사소통에서 자기 개시가 왜 늘어나는지를 세 연구로 나눠 실었다. 첫 연구에서 컴퓨터로 대화한 집단은 대면 집단보다 자발적으로 자신에 대해 더 많이 말했다. 둘째 연구는 원인을 시각적 익명으로 좁혔다. 얼굴이 보이지 않는 조건의 참가자는 그렇지 않은 참가자보다 자신에 대한 정보를 유의하게 더 많이 드러냈다.</h3>셋째 연구는 이 효과의 구조를 분해했다. 사적 자기 인식과 공적 자기 인식을 따로 조작한 2×2 설계에서, 사적 자기 인식이 높고 공적 자기 인식이 낮을 때 자기 개시가 가장 많았다. 공적 자기 인식은 타인이 나를 보고 있다는 자각이다. 익명은 이 자각을 낮춘다.</div><div class="pole"><small>관점 B</small><h3>제인 시걸과 비탈리 두브로프스키와 세라 키슬러와 티머시 맥과이어는 1986년 《조직행동과 인간 의사결정 과정》 37권 2호에 세 실험을 실었다. 세 사람이 한 조가 되어 진로 선택 문제로 합의에 이르는 과제였다. 조의 일부는 대면으로, 일부는 동시 접속 컴퓨터로, 일부는 전자우편으로 대화했다.</h3>컴퓨터로 연결된 조는 대면 조보다 발언 수가 적었고 결정에 더 오래 걸렸다. 대신 참여는 더 평등했다. 지위가 낮은 구성원도 발언량에서 뒤처지지 않았다. 여기까지는 익명의 낙관적 면이다.</div></div><div class="clash"><p>실무 문장도 갈린다. &quot;눈치 보지 말고 말하게 하라&quot;와 &quot;누가 말했는지 남겨야 책임이 선다&quot;가 맞선다. 전자는 발언의 문턱을, 후자는 책임의 문턱을 본다. 두 문장 사이에는 하나의 구분이 빠져 있다. 숨기는 것이 사람인지, 내용인지다.</p></div>
+</section>
+<section class="case">
+<h2>적용 사례 — 2015년 8월 보도된 아마존의 사내 도구는 이 구분이 없을 때 무엇이 일어나는지 보여준다. 직원은 동료에 대한 칭찬이나 비판을 그 동료의 상사에게 익명으로 보낼 수 있었다. 보도는 이 도구가 평가를 견제하고 보복하는 통로로 쓰일 수 있다는 전직 직원들의 증언을 전했다.<span>확인된 날짜와 경과</span></h2>
+<p>아마존 측의 해명은 도구의 성격을 다르게 규정했다. 상사와 대화를 나누는 것과 다르지 않은 피드백 경로라는 것이었다. 최고경영자는 보도가 묘사한 회사가 실제라면 그런 회사에 남아 있을 사람은 없을 것이라는 취지의 전사 메모를 보냈다. 도구의 존재와 익명성은 어느 쪽도 부인하지 않았다.</p><p>이 사례에서 익명은 발언의 문턱을 낮추는 방식으로 설계됐다. 발신자는 보이지 않고, 수신자는 상사이며, 내용은 인사 기록으로 남는다. 문제는 남는 것과 남지 않는 것의 배치다. 평가의 결과는 남고, 평가의 출처는 남지 않는다. 반론과 이의를 제기할 상대도 남지 않는다.</p><p>이 배치에서 익명은 용기와 회피를 구별하지 않는다. 상사의 부당함을 알리는 데 쓴 사람과 동료를 깎아내리는 데 쓴 사람은 같은 인터페이스를 본다. 도구는 두 용도를 구별할 이유를 갖지 않는다.</p>
+</section>
+<section>
+<h2>렌즈 — 칸트는 1795년 《영구평화론》의 부록에서 공공성의 원칙을 세웠다. 다른 사람의 권리에 영향을 미치는 모든 행위는, 그 준칙이 공개와 양립할 수 없으면 부정하다. 판단 기준은 행위의 결과가 아니라 준칙이 공개를 견디는가다.<span>개념을 재구성한 사유의 틀</span></h2>
+<p>이 원칙은 익명성의 두 층을 가른다. 하나는 내용이고 다른 하나는 화자다. &quot;상사의 부당한 지시를 알린다&quot;는 준칙은 공개를 견딘다. &quot;동료의 평가를 낮춰 내 위치를 올린다&quot;는 준칙은 공개를 견디지 못한다. 익명이 용기가 되는 것은 준칙이 이 시험을 통과할 때다.</p><p>화자의 신원은 다른 문제다. 준칙이 공개 가능해도 화자가 위험을 감수해야 한다면 신원의 은폐는 정당할 수 있다. 칸트의 기준은 신원이 아니라 준칙을 본다. 그러므로 익명을 판단하는 질문은 &quot;이름을 밝힐 수 있는가&quot;가 아니라 &quot;이 내용이 이름과 함께 밝혀져도 그대로 서는가&quot;다.</p><p>아마존의 도구는 이 질문을 설계에서 지웠다. 내용의 공개 가능성을 묻지 않고 신원만 가렸다. 그 결과 준칙의 시험 없이 모든 발언이 같은 무게로 기록되었다. 익명이 회피의 인프라가 되는 경로는 이렇게 만들어진다.</p>
+</section>
+<section class="ask">
+<h2>리더의 판단 질문<span>결정 전에 확인할 것</span></h2>
+<ol><li>이 결정의 주된 수혜자는 누구인가?</li><li>반대 관점이 지적하는 비용은 무엇인가?</li><li>판단을 바꿀 확인 자료가 있는가?</li></ol>
+</section>
+<section class="closing">
+<h2>한 줄로 남기면</h2>
+<p>익명은 용기의 대체물이 아니라 용기의 조건을 만드는 장치다. 조건을 만들었는데 내용의 검열까지 없애면, 그것은 용기가 아니라 회피의 인프라다.</p>
+</section>
+<section>
+<h2>근거 자료<span>서지와 확인 범위</span></h2>
+<p class="cite">본 브리핑은 공개된 학술 문헌의 논지를 바탕으로 작성된 분석 자료입니다.</p>
+<details><summary>참고 문헌 1</summary><p class="source"><cite>Joinson, &quot;Self-Disclosure in Computer-Mediated Communication: The Role of Self-Awareness and Visual Anonymity,&quot; *European Journal of Social Psychology* 31(2) (2001), 177–192 — 세 연구에서 컴퓨터 매개 대화의 자기 개시 증가, 시각적 익명의 효과, 사적 자기 인식 상승·공적 자기 인식 하락의 결합을 재구성했다.</cite></p></details>
+<details><summary>참고 문헌 2</summary><p class="source"><cite>참고 문헌 2 — 1986</cite></p></details>
+<details><summary>참고 문헌 3</summary><p class="source"><cite>참고 문헌 3 — 2015</cite></p></details>
+</section>
+<footer>
+<span>Lead Read · 3분 브리핑</span>
+<p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+const root=document.documentElement;const b=document.getElementById('theme-toggle');
+b.addEventListener('click',()=>{const n=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=n;});
+</script>
+</body>
+</html>
