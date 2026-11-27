@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>공급망의 책임은 계약인가 관계인가 — Lead Read</title>
+<style>
+:root{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}}
+html[data-theme="dark"]{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}
+html[data-theme="light"]{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;line-height:1.78;word-break:keep-all;overflow-wrap:anywhere}
+.page{max-width:920px;margin:auto;padding:26px 20px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--ln);font-size:.78rem;letter-spacing:.1em;color:var(--mut)}
+.top b{color:var(--ink)}
+button{font:inherit;font-size:.8rem;padding:6px 10px;color:var(--ink);background:var(--sf);border:1px solid var(--ln);border-radius:4px;cursor:pointer}
+a{color:var(--ac);text-underline-offset:.2em}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--mk);outline-offset:3px}
+header{padding:34px 0 10px}
+.kicker{color:var(--mk);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.28;letter-spacing:-.03em;margin:.4em 0 .3em}
+.dek{font-size:clamp(1.02rem,2.2vw,1.18rem);color:var(--mut);margin:0 0 10px;max-width:62ch}
+.tag{display:inline-block;margin-top:12px;padding:4px 10px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:700;border-radius:3px}
+h2{font-size:clamp(1.22rem,2.8vw,1.62rem);line-height:1.34;letter-spacing:-.02em;margin:0 0 8px}
+h2 span{display:block;font-size:.78rem;font-weight:600;letter-spacing:.06em;color:var(--mk);margin-top:5px}
+h3{font-size:1.02rem;margin:0 0 6px}
+p{margin:0 0 14px;max-width:70ch}
+section{padding:26px 0;border-top:1px solid var(--ln)}
+.leadbox{margin:22px 0 4px;padding:20px;background:var(--sf);border-left:4px solid var(--ac)}
+.lb-label{font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin:0 0 4px}
+.lb-q{font-size:1.06rem;font-weight:700;margin:0 0 14px}
+.lb-a{margin:0;color:var(--ink)}
+.mnote{margin:18px 0;padding:14px 16px;background:var(--mk2);border-left:3px solid var(--mk);font-size:.95rem}
+.mnote b{display:block;font-size:.74rem;letter-spacing:.1em;color:var(--mk);margin-bottom:4px}
+.ask ol{margin:12px 0 0;padding-left:22px}
+.ask li{margin:0 0 10px}
+.closing{padding:24px;background:var(--sf);border-top:2px solid var(--ac)}
+.closing h2{margin-bottom:10px}
+.closing p{font-size:1.04rem;margin:0}
+.cite{color:var(--mut);font-size:.94rem}
+details{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--ln)}
+summary{cursor:pointer;font-weight:700;color:var(--ac)}
+.source{margin:8px 0 0;font-size:.92rem;color:var(--mut)}
+.source cite{font-style:normal;color:var(--ink);font-weight:600}
+footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--ln);color:var(--mut);font-size:.84rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.author-credit{color:var(--ink);font-weight:800}
+@media (max-width:640px){
+.page{padding:18px 14px 44px}
+header{padding:24px 0 6px}
+section{padding:22px 0}
+.closing{padding:18px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="top"><span><b>Lead Read</b> · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="테마 바꾸기">테마</button></div>
+<header>
+<p class="kicker">Lead Read · 리더십 브리핑</p>
+<h1>공급망의 책임은 계약인가 관계인가</h1>
+<p class="dek">글로벌 브랜드가 단가를 낮추고 납기를 앞당기면 그 압박은 2차, 3차 하청 공장으로 고스란히 전가됩니다. 법적으로 직접 고용한 적이 없는 사람들의 안전과 생명은 누구의 책임이어야 할까요.</p>
+<p class="tag">리더메모 · 두 연구 · 판단 질문</p>
+</header>
+
+<div class="leadbox">
+<p class="lb-label">핵심 질문</p>
+<p class="lb-q">법적 고용 계약 밖의 사람들에게 원청의 책임은 어디까지 미치는가?</p>
+<p class="lb-label">한 문장 결론</p>
+<p class="lb-a">공급망의 비극은 하청업체의 준법 교육이나 형식적 감사만으로 해결되지 않으며, 원청의 단가와 납기 조건을 안정화하고 장기적 역량에 투자하는 계약 구조의 재설계가 있어야 멈춥니다.</p>
+</div>
+
+<section>
+<h2>왜 지금 이 문제인가<span>구매력의 행사인가, 위험의 외주화인가</span></h2>
+<p>기업은 비용을 줄이기 위해 글로벌 공급망을 개척하고 아웃소싱을 확대했습니다. 그러나 본사는 이익을 거두고, 위험과 열악한 환경은 보이지 않는 하청 노동자에게 외주화되는 모순이 심화되고 있습니다.</p>
+<p>감사 체크리스트를 만들어 현장에 들이미는 것만으로는 사고를 막을 수 없습니다. 구매팀의 단가 후려치기와 짧은 납기 압박을 방치한 채 ESG 서약서에 서명하라고 요구하는 것은 기만에 불과합니다.</p>
+<div class="mnote">
+<b>메모: 시간축의 충돌</b>
+본사의 발주 주기는 몇 주 단위로 급변하지만, 현장 공장의 안전 설비 투자와 작업 환경 개선은 몇 년 단위의 회수 기간이 필요합니다. 납기 압박 속에서 설비 투자는 언제나 뒤로 밀립니다.
+</div>
+</section>
+
+<section>
+<h2>두 연구의 진단<span>감사 중심 준법 모델인가, 발주 조건의 근본 개혁인가</span></h2>
+<p>2013년 리처드 로크는 14개국 120여 개 공장의 방대한 자료를 분석하여 사적 규제의 한계를 짚었습니다. 규정과 감사로 위반을 적발하는 전통적 준법 모델은 공급업체의 편법만 키울 뿐이었습니다. 그는 브랜드와 공급업체가 장기적 파트너십을 맺고 기술과 환경에 공동 투자하는 '약속 모델'로 전환해야 한다고 역설했습니다.</p>
+<p>한편 2020년 마크 애너의 실증 연구는 원인을 더 직설적으로 지목했습니다. 그는 글로벌 브랜드의 구매 관행 자체가 비극의 근원임을 밝혔습니다. 공급 단가를 깎고 납기를 단축하면, 하청 공장은 감사 비용조차 노동자의 임금과 안전 예산에서 깎아내어 충당합니다. 구매팀의 발주 조건을 바꾸지 않는 한 어떤 감사도 위선을 벗어나지 못합니다.</p>
+<div class="mnote">
+<b>메모: 감사의 역설</b>
+감사 항목이 100개로 늘어나도 납품 단가가 10% 깎이면, 공장 관리자는 서류를 위조하고 노동자에게 잔업을 강요할 수밖에 없습니다. 문제는 현장의 도덕성이 아니라 구매 계약의 구조입니다.
+</div>
+</section>
+
+<section class="case">
+<h2>적용 사례 — 라나플라자 참사와 구속력 있는 협약<span>2013년 4월의 붕괴가 바꾼 규칙</span></h2>
+<p>2013년 4월 24일 방글라데시 다카의 라나플라자 의류 공장 건물이 붕괴되어 1,100명이 넘는 노동자가 목숨을 잃었습니다. 사고 전날 건물에 금이 가 대피령이 내려졌음에도, 납기를 맞추지 못하면 계약을 해지하겠다는 원청의 압박 앞에 공장주는 출근을 강요했습니다.</p>
+<p>이 참사 이후 2013년 5월 글로벌 브랜드들이 참여한 방글라데시 화재·건물 안전 협약이 체결되었습니다. 중요한 변화는 자발적 선언을 넘어 법적 구속력을 부여했다는 점입니다. 그러나 이후 연구는 2011년부터 2015년 사이 방글라데시 공장의 납품 단가가 13% 떨어지고 납기는 8% 단축되었음을 확인했습니다. 제도가 바뀌어도 구매 압박이 유지되는 한 현장의 취약성은 계속됩니다.</p>
+</section>
+
+<section>
+<h2>렌즈 — 목민심서의 통찰<span>정약용의 책임관</span></h2>
+<p>조선의 실학자 정약용은 《목민심서》에서 수령의 직무를 백성을 돌보는 일로 규정하며, 책임의 무게는 상대와의 물리적 거리가 멀다고 해서 결코 줄어들지 않는다고 역설했습니다. 보이지 않는 사람일수록 추상적인 도덕심이 아니라 엄격한 제도와 구체적인 점검 항목으로 챙겨야 합니다.</p>
+<p>공급망의 리더십도 이와 같습니다. 리더가 통제할 수 있는 것은 구매 발주서의 단가, 납기 마감일, 계약서의 시정 조항입니다. 통제할 수 없는 것은 그 압박이 지구 반대편 공장에서 누구의 목숨을 위협하는가입니다. 계약서 바깥에 있는 사람들의 안전을 계약 조건의 핵심으로 끌어들이는 것이야말로 진정한 책임의 시작입니다.</p>
+</section>
+
+<section class="ask">
+<h2>리더의 판단 질문<span>발주서를 확정하기 전에 스스로 확인할 것</span></h2>
+<ol>
+<li>우리 구매팀의 납기 마감과 단가 인하 요구가 하청업체의 안전 규정 위반을 구조적으로 강요하고 있지는 않은가?</li>
+<li>공급업체를 단순한 단가 절감의 도구가 아니라 장기적 기술과 안전 역량을 함께 키우는 파트너로 대우하고 있는가?</li>
+<li>공급망에서 사고가 났을 때 법적 계약 관계 뒤에 숨지 않고 원청의 책임을 정직하게 인정하는 가이드라인이 있는가?</li>
+</ol>
+</section>
+
+<section class="closing">
+<h2>한 줄로 남기면</h2>
+<p>공급망의 안전은 감사관의 수첩에서 나오지 않습니다. 단가를 후려치지 않는 정직한 구매, 충분한 납기를 보장하는 협력, 그리고 위험을 함께 나누는 구속력 있는 약속이라는 세 기둥이 서야만 보이지 않는 노동자의 생명을 지킬 수 있습니다.</p>
+</section>
+
+<section>
+<h2>근거 자료<span>서지와 확인 범위</span></h2>
+<p class="cite">본 브리핑은 공인된 글로벌 공급망 노동 연구와 정치경제학 연구의 정본 논지를 바탕으로 작성된 분석 자료입니다.</p>
+<details><summary>공급망 노동기준과 사적 규제의 한계 연구</summary><p class="source"><cite>Richard M. Locke, The Promise and Limits of Private Power: Promoting Labor Standards in a Global Economy (Cambridge University Press, 2013).</cite></p></details>
+<details><summary>구매 관행과 노동권 압박 실증 분석</summary><p class="source"><cite>Mark Anner, "Squeezing Workers' Rights in Global Supply Chains: Purchasing Practices in the Bangladesh Garment Export Sector in Comparative Perspective," Review of International Political Economy 27(2) (2020).</cite></p></details>
+<details><summary>공직 윤리와 원거리 책임의 고전</summary><p class="source"><cite>정약용, 《목민심서》 (1818).</cite></p></details>
+</section>
+
+<footer>
+<span>Lead Read · 3분 브리핑</span>
+<p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+const root=document.documentElement;const b=document.getElementById('theme-toggle');
+b.addEventListener('click',()=>{const n=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=n;});
+</script>
+</body>
+</html>
