@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>채용 추천서는 신뢰인가 책임인가 — Lead Read</title>
+<style>
+:root{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}}
+html[data-theme="dark"]{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}
+html[data-theme="light"]{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans KR","Pretendard","Malgun Gothic",sans-serif;line-height:1.78;word-break:keep-all;overflow-wrap:anywhere}
+.page{max-width:920px;margin:auto;padding:26px 20px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--ln);font-size:.78rem;letter-spacing:.1em;color:var(--mut)}
+.top b{color:var(--ink)}
+button{font:inherit;font-size:.8rem;padding:6px 10px;color:var(--ink);background:var(--sf);border:1px solid var(--ln);border-radius:4px;cursor:pointer}
+a{color:var(--ac);text-underline-offset:.2em}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--mk);outline-offset:3px}
+header{padding:34px 0 10px}
+.kicker{color:var(--mk);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.28;letter-spacing:-.03em;margin:.4em 0 .3em}
+.dek{font-size:clamp(1.02rem,2.2vw,1.18rem);color:var(--mut);margin:0 0 10px;max-width:62ch}
+.tag{display:inline-block;margin-top:12px;padding:4px 10px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:700;border-radius:3px}
+h2{font-size:clamp(1.22rem,2.8vw,1.62rem);line-height:1.34;letter-spacing:-.02em;margin:0 0 8px}
+h2 span{display:block;font-size:.78rem;font-weight:600;letter-spacing:.06em;color:var(--mk);margin-top:5px}
+h3{font-size:1.02rem;margin:0 0 6px}
+p{margin:0 0 14px;max-width:70ch}
+section{padding:26px 0;border-top:1px solid var(--ln)}
+.leadbox{margin:22px 0 4px;padding:20px;background:var(--sf);border-left:4px solid var(--ac)}
+.lb-label{font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin:0 0 4px}
+.lb-q{font-size:1.06rem;font-weight:700;margin:0 0 14px}
+.lb-a{margin:0;color:var(--ink)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.pole{padding:18px;background:var(--sf);border-top:4px solid var(--ac)}
+.pole:nth-child(2){border-top-color:var(--mk)}
+.pole small{display:block;font-size:.72rem;letter-spacing:.1em;font-weight:800;color:var(--mk);margin-bottom:6px}
+.clash{margin-top:16px;padding:16px 18px;background:var(--ac2);border-left:4px solid var(--mk)}
+.signal{margin-top:16px;padding:18px;background:var(--mk2);border:2px solid var(--mk)}
+.siglabel{display:inline-block;margin:0 8px 8px 0;padding:4px 9px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:800;border-radius:3px}
+.timeline{margin-top:16px;padding-left:16px;border-left:2px solid var(--ac)}
+.tl{margin:0 0 16px;padding-left:16px;position:relative}
+.tl:before{content:"";position:absolute;left:-23px;top:.6em;width:10px;height:10px;border-radius:50%;background:var(--mk)}
+.tl b{display:block;color:var(--mk);font-size:.9rem}
+.mnote{margin:14px 0;padding:12px 16px;background:var(--mk2);border-left:3px solid var(--mk);font-size:.95rem;color:var(--mut)}
+.scan{margin-top:16px;padding:16px;background:var(--ac2);border:1px solid var(--ln)}
+table{width:100%;border-collapse:collapse;font-size:.86rem;table-layout:fixed}
+th,td{border:1px solid var(--ln);padding:9px 10px;text-align:left;vertical-align:top;overflow-wrap:anywhere}
+th{background:var(--sf);color:var(--ink);font-weight:800}
+.ask ol{margin:12px 0 0;padding-left:22px}
+.ask li{margin:0 0 10px}
+.closing{padding:24px;background:var(--sf);border-top:2px solid var(--ac)}
+.closing h2{margin-bottom:10px}
+.closing p{font-size:1.04rem;margin:0}
+.cite{color:var(--mut);font-size:.94rem}
+details{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--ln)}
+summary{cursor:pointer;font-weight:700;color:var(--ac)}
+.source{margin:8px 0 0;font-size:.92rem;color:var(--mut)}
+.source cite{font-style:normal;color:var(--ink);font-weight:600}
+footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--ln);color:var(--mut);font-size:.84rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.author-credit{color:var(--ink);font-weight:800}
+@media (max-width:640px){
+.page{padding:18px 14px 44px}
+.duo{grid-template-columns:1fr}
+header{padding:24px 0 6px}
+section{padding:22px 0}
+.closing{padding:18px}
+table{font-size:.79rem}
+th,td{padding:7px 6px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="top"><span><b>Lead Read</b> · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="테마 바꾸기">테마</button></div>
+<header>
+<p class="kicker">Lead Read · 리더십 브리핑</p>
+<h1>채용 추천서는 신뢰인가 책임인가</h1>
+<p class="lede dek"></p>
+<p class="tag">요약 표 · 비교 · 적용 사례</p>
+</header>
+<div class="leadbox">
+<p class="lb-label">핵심 질문</p>
+<p class="lb-q"></p>
+<p class="lb-label">한 문장 결론</p>
+<p class="lb-a"></p>
+</div>
+<section>
+<h2>왜 지금 이 문제인가<span>리더가 실제로 마주하는 판단 장면</span></h2>
+
+</section>
+<section>
+<h2>두 연구가 갈라지는 지점<span>1984년 존 헌터와 론다 헌터는 직무수행을 예측하는 선발 도구 11종을 메타분석해 심리학 학술지에 발표했다. 추천서 항목은 연구 10편, 누적 표본 5,389명에서 상사 평정과의 상관이 .26이었다. 같은 표에서 지능은 .53, 직무시연은 .44, 전기자료는 .37, 비구조화 면접은 .14였다. 추천서는 최하위는 아니지만 상위권과 두 배 가까이 벌어져 있었다. 이 숫자가 오래 인용된 이유는 따로 있다. 추천서는 &quot;그 사람이 어떤 사람인가&quot;를 가장 직접적으로 말해 주는 문서처럼 보이는데, 실제로 성과를 예측하는 힘은 중하위권이라는 사실이 직관과 어긋나기 때문이다. 헌터 부부의 처방은 그래서 대체였다. 판단의 무게를 인지능력과 구조화된 측정에 두고, 평판은 보조 자료로 내려라는 것이다. 이 처방은 오랫동안 채용 실무의 상식이 되었다. 추천서는 형식적으로 받아 두고, 결정은 시험이나 면접 점수로 내린다. 그런데 현장은 반대로 움직였다. 국가 간 선발 관행을 비교한 연구에서도 평판조회는 거의 모든 조직이 채용 절차에 넣어 두는 항목으로 보고됐다. 예측력이 낮다는 연구 결과가 알려진 뒤에도 이 절차가 사라지지 않은 이유는, 채용 담당자가 숫자보다 다른 것을 추천서에서 얻고 있기 때문이다. 이 간극이 이 글의 출발점이다. / 2013년 헤드릭스·로비·오즈월드는 웹 기반 다중 출처 추천조회를 실제 채용 현장에서 검증해 국제 선발·평가 학술지에 발표했다. 내적 일치도가 .96에서 .98, 2주 간격 검사-재검사 신뢰도가 .74, 상사 평정과의 상관이 .35였다. 성격검사나 평가센터와 견줄 만한 수준이다. 같은 시기 테일러 등이 구조화된 전화 추천조회에서 얻은 .25도, 범위 제한과 준거 불신뢰를 보정하면 .36으로 올라갔다. 반증의 핵심은 숫자의 크기가 아니라 숫자가 만들어진 조건이다. .26은 추천서라는 도구의 본질이 아니라 당시 운영 방식의 산물이라는 주장이다. 질문이 지원자마다 달랐고, 출처가 한 사람이었고, 무엇을 물었고 무엇을 확인했는지 기록이 남지 않았다. 그 상태에서 얻은 평정은 추천자의 성향과 관계의 온도에 가까운 값이 된다. 질문지를 고정하고, 여러 출처에서 같은 차원을 묻고, 행동 사례를 요구하고, 응답을 기록으로 남기면 다른 값이 나온다. 그렇다면 처방은 대체가 아니라 재설계다. 다만 이 재설계에는 조건이 붙는다. 2019년 같은 연구진이 미국 성인 905명을 대상으로 조사했을 때, 추천을 요청받은 사람이 응답을 거절하거나 축소하면 절차의 유용성 자체가 무너졌다. 구조화된 추천조회는 추천자가 협조할 때만 작동하는 도구이며, 그 협조는 법이나 관행이 아니라 관계와 보호 장치에 달려 있다. 같은 질문, 즉 &quot;추천서는 채용 판단의 근거가 될 수 있는가&quot;에 한쪽은 더 강한 예측변수로 갈아타라고 하고, 다른 쪽은 추천 절차를 측정 도구로 다시 짜라고 답한다.</span></h2>
+<div class="scan"><p>빠른 비교: 같은 질문에 두 관점이 다른 답을 줍니다.</p><table><thead><tr><th>구분</th><th>관점 A</th><th>관점 B</th></tr></thead><tbody><tr><td>핵심</td><td>1984년 존 헌터와 론다 헌터는 직무수행을 예측하는 선발 도구 11종을 메타분석해 심리학 학술지에 발표했다. 추천서 항목은 연구 10편, 누적 표본 5,389명에서 상사 평정과의 상관이 .26이었다. 같은 표에서 지능은 .53, 직무시연은 .44, 전기자료는 .37, 비구조화 면접은 .14였다. 추천서는 최하위는 아니지만 상위권과 두 배 가까이 벌어져 있었다. 이 숫자가 오래 인용된 이유는 따로 있다. 추천서는 &quot;그 사람이 어떤 사람인가&quot;를 가장 직접적으로 말해 주는 문서처럼 보이는데, 실제로 성과를 예측하는 힘은 중하위권이라는 사실이 직관과 어긋나기 때문이다. 헌터 부부의 처방은 그래서 대체였다. 판단의 무게를 인지능력과 구조화된 측정에 두고, 평판은 보조 자료로 내려라는 것이다. 이 처방은 오랫동안 채용 실무의 상식이 되었다. 추천서는 형식적으로 받아 두고, 결정은 시험이나 면접 점수로 내린다. 그런데 현장은 반대로 움직였다. 국가 간 선발 관행을 비교한 연구에서도 평판조회는 거의 모든 조직이 채용 절차에 넣어 두는 항목으로 보고됐다. 예측력이 낮다는 연구 결과가 알려진 뒤에도 이 절차가 사라지지 않은 이유는, 채용 담당자가 숫자보다 다른 것을 추천서에서 얻고 있기 때문이다. 이 간극이 이 글의 출발점이다.</td><td>2013년 헤드릭스·로비·오즈월드는 웹 기반 다중 출처 추천조회를 실제 채용 현장에서 검증해 국제 선발·평가 학술지에 발표했다. 내적 일치도가 .96에서 .98, 2주 간격 검사-재검사 신뢰도가 .74, 상사 평정과의 상관이 .35였다. 성격검사나 평가센터와 견줄 만한 수준이다. 같은 시기 테일러 등이 구조화된 전화 추천조회에서 얻은 .25도, 범위 제한과 준거 불신뢰를 보정하면 .36으로 올라갔다. 반증의 핵심은 숫자의 크기가 아니라 숫자가 만들어진 조건이다. .26은 추천서라는 도구의 본질이 아니라 당시 운영 방식의 산물이라는 주장이다. 질문이 지원자마다 달랐고, 출처가 한 사람이었고, 무엇을 물었고 무엇을 확인했는지 기록이 남지 않았다. 그 상태에서 얻은 평정은 추천자의 성향과 관계의 온도에 가까운 값이 된다. 질문지를 고정하고, 여러 출처에서 같은 차원을 묻고, 행동 사례를 요구하고, 응답을 기록으로 남기면 다른 값이 나온다. 그렇다면 처방은 대체가 아니라 재설계다. 다만 이 재설계에는 조건이 붙는다. 2019년 같은 연구진이 미국 성인 905명을 대상으로 조사했을 때, 추천을 요청받은 사람이 응답을 거절하거나 축소하면 절차의 유용성 자체가 무너졌다. 구조화된 추천조회는 추천자가 협조할 때만 작동하는 도구이며, 그 협조는 법이나 관행이 아니라 관계와 보호 장치에 달려 있다. 같은 질문, 즉 &quot;추천서는 채용 판단의 근거가 될 수 있는가&quot;에 한쪽은 더 강한 예측변수로 갈아타라고 하고, 다른 쪽은 추천 절차를 측정 도구로 다시 짜라고 답한다.</td></tr><tr><td>근거</td><td></td><td></td></tr></tbody></table></div><div class="clash"><p></p></div>
+</section>
+<section class="case">
+<h2>적용 사례 — 2012년 1월 스콧 톰슨이 야후 최고경영자로 취임했다. 그해 4월 27일 회사가 미국 증권거래위원회에 제출한 수정 연차보고서에는 그가 스톤힐 칼리지에서 회계학과 컴퓨터과학 학사를 받았다고 적혀 있었다. 5월 3일 지분 5.8퍼센트를 보유한 헤지펀드 서드포인트가 이사회에 공개 편지를 보냈다. &quot;기초적인 구글 검색 한 번이면&quot; 학교 동문 공지에서 학위가 회계학 하나뿐임을 확인할 수 있다는 내용이었다. 야후는 이를 부주의한 오류라고 해명했고, 톰슨은 사내 설명에서 자신을 영입한 서치펌에 책임을 돌렸다. 해당 회사는 그런 사실이 없다고 즉시 반박했다. 언론 보도에 따르면 이사회는 통상적인 서치펌 검증 절차 없이 그를 영입했고, 그는 직접 접촉해 자리를 얻었다. 5월 13일 톰슨은 사임했고, 그를 추천한 이사회 인사도 재선에 나서지 않겠다고 밝혔다. 후임 사령탑을 찾는 동안 임시 체제가 이어졌고, 1년이 채 지나기 전에 야후는 네 번째 최고경영자를 맞게 되었다. 이사회가 그를 영입할 때 통상적인 평판조회와 경력 검증을 누가 맡았는지에 대한 공개 기록은 남아 있지 않다. 남아 있는 것은 사후의 해명과 책임 공방뿐이다. 이 사건에서 무너진 것은 예측이 아니라 배분이었다. 학위라는 사실 확인은 어려운 판단이 아니었다. 누구의 일인지만 정해져 있지 않았다.<span>확인된 날짜와 경과</span></h2>
+
+</section>
+<section>
+<h2>렌즈 — J. L. 오스틴은 1962년 『말과 행위』에서 문장을 두 갈래로 나눈다. 사실을 기술하는 발화와, 말하는 것 자체가 행위가 되는 발화다. &quot;약속합니다&quot;는 약속에 대한 보고가 아니라 약속을 만들어 내는 사건이다. 이런 수행적 발화는 아무 자리에서나 성립하지 않는다. 말하는 사람에게 그럴 자격이 있어야 하고, 절차가 갖춰져야 하고, 성실해야 한다. 이 조건이 무너지면 발화는 거짓이 되기 전에 먼저 무효가 된다. 추천서도 같은 종류의 문서다. 그것은 지원자의 과거를 기술하는 보고서이면서 동시에 추천자의 평판을 담보로 거는 행위다. 예측력이 .26이냐 .35이냐는 이 행위의 성능 문제이지만, 행위가 성립하려면 누가 자기 이름으로 걸었는지와 누가 그것을 받아 확인하는지가 정해져 있어야 한다. 야후 사건에서 실패한 것은 예측이 아니라 이 조건이었다. 발화는 여러 번 있었지만, 그 발화에 답할 주체가 지정되어 있지 않았다.<span>개념을 재구성한 사유의 틀</span></h2>
+
+</section>
+<section class="ask">
+<h2>리더의 판단 질문<span>결정 전에 확인할 것</span></h2>
+<ol><li>이 결정의 주된 수혜자는 누구인가?</li><li>반대 관점이 지적하는 비용은 무엇인가?</li><li>판단을 바꿀 확인 자료가 있는가?</li></ol>
+</section>
+<section class="closing">
+<h2>한 줄로 남기면</h2>
+<p></p>
+</section>
+<section>
+<h2>근거 자료<span>서지와 확인 범위</span></h2>
+<p class="cite">본 브리핑은 공개된 학술 문헌의 논지를 바탕으로 작성된 분석 자료입니다.</p>
+<details><summary>참고 문헌 1</summary><p class="source"><cite>이 글은 헌터·헌터(1984, Psychological Bulletin 96권 1호), 헤드릭스·로비·오즈월드(2013, International Journal of Selection and Assessment), 테일러 등(2004, Personnel Psychology)의 논지를 필자의 언어로 재구성한 것이며 원문을 인용하지 않았다. 야후 사례의 날짜와 경과는 2012년 5월 3일 서드포인트 공개 편지(미국 증권거래위원회 제출본), 로이터 2012년 5월 3일 보도, 가디언 2012년 5월 13일 보도, 뉴욕타임스 2012년 5월 18일 보도로 교차 확인했다. 학술지 발행월과 권·호는 통상 인용 정보이므로 대외 발행 전 1차 출처 재확인을 권장한다.</cite></p></details>
+<details><summary>참고 문헌 2</summary><p class="source"><cite>참고 문헌 2 — 2013</cite></p></details>
+<details><summary>참고 문헌 3</summary><p class="source"><cite>참고 문헌 3 — 2004</cite></p></details>
+</section>
+<footer>
+<span>Lead Read · 3분 브리핑</span>
+<p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+const root=document.documentElement;const b=document.getElementById('theme-toggle');
+b.addEventListener('click',()=>{const n=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=n;});
+</script>
+</body>
+</html>
