@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>직무 순환은 성장인가 혼란인가 — Lead Read</title>
+<style>
+:root{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}}
+html[data-theme="dark"]{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}
+html[data-theme="light"]{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans KR","Pretendard","Malgun Gothic",sans-serif;line-height:1.78;word-break:keep-all;overflow-wrap:anywhere}
+.page{max-width:920px;margin:auto;padding:26px 20px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--ln);font-size:.78rem;letter-spacing:.1em;color:var(--mut)}
+.top b{color:var(--ink)}
+button{font:inherit;font-size:.8rem;padding:6px 10px;color:var(--ink);background:var(--sf);border:1px solid var(--ln);border-radius:4px;cursor:pointer}
+a{color:var(--ac);text-underline-offset:.2em}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--mk);outline-offset:3px}
+header{padding:34px 0 10px}
+.kicker{color:var(--mk);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.28;letter-spacing:-.03em;margin:.4em 0 .3em}
+.dek{font-size:clamp(1.02rem,2.2vw,1.18rem);color:var(--mut);margin:0 0 10px;max-width:62ch}
+.tag{display:inline-block;margin-top:12px;padding:4px 10px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:700;border-radius:3px}
+h2{font-size:clamp(1.22rem,2.8vw,1.62rem);line-height:1.34;letter-spacing:-.02em;margin:0 0 8px}
+h2 span{display:block;font-size:.78rem;font-weight:600;letter-spacing:.06em;color:var(--mk);margin-top:5px}
+h3{font-size:1.02rem;margin:0 0 6px}
+p{margin:0 0 14px;max-width:70ch}
+section{padding:26px 0;border-top:1px solid var(--ln)}
+.leadbox{margin:22px 0 4px;padding:20px;background:var(--sf);border-left:4px solid var(--ac)}
+.lb-label{font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin:0 0 4px}
+.lb-q{font-size:1.06rem;font-weight:700;margin:0 0 14px}
+.lb-a{margin:0;color:var(--ink)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.pole{padding:18px;background:var(--sf);border-top:4px solid var(--ac)}
+.pole:nth-child(2){border-top-color:var(--mk)}
+.pole small{display:block;font-size:.72rem;letter-spacing:.1em;font-weight:800;color:var(--mk);margin-bottom:6px}
+.clash{margin-top:16px;padding:16px 18px;background:var(--ac2);border-left:4px solid var(--mk)}
+.signal{margin-top:16px;padding:18px;background:var(--mk2);border:2px solid var(--mk)}
+.siglabel{display:inline-block;margin:0 8px 8px 0;padding:4px 9px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:800;border-radius:3px}
+.timeline{margin-top:16px;padding-left:16px;border-left:2px solid var(--ac)}
+.tl{margin:0 0 16px;padding-left:16px;position:relative}
+.tl:before{content:"";position:absolute;left:-23px;top:.6em;width:10px;height:10px;border-radius:50%;background:var(--mk)}
+.tl b{display:block;color:var(--mk);font-size:.9rem}
+.mnote{margin:14px 0;padding:12px 16px;background:var(--mk2);border-left:3px solid var(--mk);font-size:.95rem;color:var(--mut)}
+.scan{margin-top:16px;padding:16px;background:var(--ac2);border:1px solid var(--ln)}
+table{width:100%;border-collapse:collapse;font-size:.86rem;table-layout:fixed}
+th,td{border:1px solid var(--ln);padding:9px 10px;text-align:left;vertical-align:top;overflow-wrap:anywhere}
+th{background:var(--sf);color:var(--ink);font-weight:800}
+.ask ol{margin:12px 0 0;padding-left:22px}
+.ask li{margin:0 0 10px}
+.closing{padding:24px;background:var(--sf);border-top:2px solid var(--ac)}
+.closing h2{margin-bottom:10px}
+.closing p{font-size:1.04rem;margin:0}
+.cite{color:var(--mut);font-size:.94rem}
+details{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--ln)}
+summary{cursor:pointer;font-weight:700;color:var(--ac)}
+.source{margin:8px 0 0;font-size:.92rem;color:var(--mut)}
+.source cite{font-style:normal;color:var(--ink);font-weight:600}
+footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--ln);color:var(--mut);font-size:.84rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.author-credit{color:var(--ink);font-weight:800}
+@media (max-width:640px){
+.page{padding:18px 14px 44px}
+.duo{grid-template-columns:1fr}
+header{padding:24px 0 6px}
+section{padding:22px 0}
+.closing{padding:18px}
+table{font-size:.79rem}
+th,td{padding:7px 6px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="top"><span><b>Lead Read</b> · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="테마 바꾸기">테마</button></div>
+<header>
+<p class="kicker">Lead Read · 리더십 브리핑</p>
+<h1>직무 순환은 성장인가 혼란인가</h1>
+<p class="lede dek"></p>
+<p class="tag">시간축 · 전환 · 적용 사례</p>
+</header>
+<div class="leadbox">
+<p class="lb-label">핵심 질문</p>
+<p class="lb-q"></p>
+<p class="lb-label">한 문장 결론</p>
+<p class="lb-a">---</p>
+</div>
+<section>
+<h2>왜 지금 이 문제인가<span>리더가 실제로 마주하는 판단 장면</span></h2>
+
+</section>
+<section>
+<h2>두 연구가 갈라지는 지점<span>마이클 캠피언, 리사 체라스킨, 마이클 스티븐스는 1994년 《경영학회 저널》 37권 6호에서 직무 순환의 경력 효과를 연구했다. 이들은 순환을 승진이 아닌 수평 이동으로 정의했다. 그리고 255명의 직원을 대상으로 순환의 선행 요인과 결과를 분석했다. / 토르 에릭손과 하이메 오르테가는 2006년 《산업노동관계 리뷰》 59권 4호에서 직무 순환의 도입 이유를 검증했다. 이들은 세 가지 가설을 세웠다. 직원 학습, 고용주 학습, 직원 동기다.</span></h2>
+<div class="timeline"><div class="tl"><b>마이클 캠피언, 리사 체라스킨, 마이클 스티븐스는 1994년 《경영학회 저널》 37권 6호에서 직무 순환의 경력 효과를 연구했다. 이들은 순환을 승진이 아닌 수평 이동으로 정의했다. 그리고 255명의 직원을 대상으로 순환의 선행 요인과 결과를 분석했다.</b><p>결과는 긍정적이었다. 순환은 임금과 승진, 긍정 정서, 기술 습득 지각과 연결되었다. 순환을 많이 한 사람은 더 넓은 시각을 얻고, 여러 기능을 이해하며, 관리자로서의 경력을 준비한다. 이들에게 순환은 경력 개발의 자산이다.</p></div><div class="tl"><b>토르 에릭손과 하이메 오르테가는 2006년 《산업노동관계 리뷰》 59권 4호에서 직무 순환의 도입 이유를 검증했다. 이들은 세 가지 가설을 세웠다. 직원 학습, 고용주 학습, 직원 동기다.</b><p>덴마크 기업 자료를 분석한 결과, 직원 동기 가설은 기각되었다. 직원 학습 가설은 지지되었고, 고용주 학습 가설은 더 강하게 지지되었다. 기업은 직원의 능력을 더 잘 파악하기 위해 순환을 활용한다. 순환은 직원의 성장이 아니라 고용주의 정보 획득일 수 있다.</p></div></div><div class="clash"><p>실무 문장은 이렇게 갈린다. &quot;순환하면 성장한다&quot;와 &quot;순환은 회사가 사람을 알아가는 방식이다&quot;가 맞선다. 전자는 개인의 학습을 보고, 후자는 조직의 정보를 본다. 한쪽은 경력을 보고, 다른 쪽은 배치를 본다. 직무 순환은 성장이면서 동시에 혼란이 될 수 있다. 어느 쪽이 되는지는 순환의 설계와 깊이의 균형에 달려 있다. 순환의 목적이 개인인지 조직인지가 결과를 가른다.</p></div>
+</section>
+<section class="case">
+<h2>적용 사례 — 볼보는 1974년 스웨덴 칼마르에 조립 라인을 대체하는 공장을 세웠다. 공장은 20개 팀으로 구성되었고, 자동 운반차(AGV)가 차체를 운반했다. 팀은 여러 작업을 돌아가며 수행했고, 직무 순환은 작업의 단조로움을 줄이는 장치로 설계되었다.<span>확인된 날짜와 경과</span></h2>
+<p>칼마르는 세계적 주목을 받았다. 인간 중심의 작업 조직이 생산성과 품질을 동시에 높일 수 있다는 상징이었다. 그러나 1992년 11월 볼보는 칼마르와 우데발라 공장을 폐쇄하겠다고 발표했고, 칼마르는 1994년 6월 문을 닫았다.</p><p>칼마르의 순환은 성장의 상징이었지만, 깊이의 문제를 남겼다. 한 사람이 여러 작업을 익히는 동안 특정 작업의 전문성은 얕아질 수 있다. 순환은 유연성을 높이지만, 숙련의 깊이를 희생할 수 있다. 칼마르의 팀은 순환을 통해 유연성을 얻었지만, 한 작업의 숙련을 깊게 쌓기는 어려웠다. 칼마르는 순환의 가능성과 한계를 동시에 보여준다. 순환은 유연한 인력을 만들지만, 숙련의 깊이를 보장하지 않는다. 깊이 없는 유연성은 혼란으로 이어질 수 있다.</p>
+</section>
+<section>
+<h2>렌즈 — 한나 아렌트는 1958년 《인간의 조건》에서 노동과 작업을 구분했다. 노동은 생존을 위해 반복되는 활동이고, 작업은 세계에 남는 것을 만드는 활동이다. 노동은 소모되고, 작업은 지속된다.<span>개념을 재구성한 사유의 틀</span></h2>
+<p>직무 순환은 노동과 작업 사이에 놓인다. 순환이 단순히 반복되는 업무를 바꾸는 것이라면, 그것은 노동의 재배치다. 순환이 새로운 기술과 판단을 쌓는 것이라면, 그것은 작업의 확장이다. 아렌트에게 중요한 것은 활동이 세계에 무엇을 남기는가다. 노동은 소모되지만, 작업은 세계를 만든다.</p><p>칼마르의 순환은 노동의 단조로움을 줄였지만, 작업의 깊이를 키웠는지는 별개의 문제다. 순환이 작업이 되려면, 각 자리에서 쌓은 것이 다음 자리로 이어져야 한다. 그렇지 않으면 순환은 노동의 이동에 그친다. 작업은 각 자리의 경험이 다음 자리로 이어질 때 생긴다. 순환이 작업이 되려면, 경험을 연결하는 설계가 필요하다.</p>
+</section>
+<section class="ask">
+<h2>리더의 판단 질문<span>결정 전에 확인할 것</span></h2>
+<ol><li>이 결정의 주된 수혜자는 누구인가?</li><li>반대 관점이 지적하는 비용은 무엇인가?</li><li>판단을 바꿀 확인 자료가 있는가?</li></ol>
+</section>
+<section class="closing">
+<h2>한 줄로 남기면</h2>
+<p>---</p>
+</section>
+<section>
+<h2>근거 자료<span>서지와 확인 범위</span></h2>
+<p class="cite">본 브리핑은 공개된 학술 문헌의 논지를 바탕으로 작성된 분석 자료입니다.</p>
+<details><summary>참고 문헌 1</summary><p class="source"><cite>Stevens, &quot;Career-Related Antecedents and Outcomes of Job Rotation,&quot; *Academy of Management Journal* 37(6) (1994), 1518–1542 — 직무 순환이 임금·승진·기술 습득 지각과 연결된다는 논지를 재구성했다.</cite></p></details>
+<details><summary>참고 문헌 2</summary><p class="source"><cite>Tor Eriksson·Jaime Ortega, &quot;The Adoption of Job Rotation: Testing the Theories,&quot; *Industrial and Labor Relations Review* 59(4) (2006), 653–666 — 직원 동기 가설은 기각되고 직원 학습·고용주 학습 가설이 지지된다는 논지를 요약했다. 적용 사례는 볼보 칼마르 공장의 1974년 생산 시작(20개 팀·AGV·직무 순환), 1992년 11월 폐쇄 발표, 1994년 6월 폐쇄를 《뉴욕타임스》 1974-05-21 보도·볼보 칼마르 자료·챌머스 공개 연구로 교차했다.</cite></p></details>
+<details><summary>참고 문헌 3</summary><p class="source"><cite>한나 아렌트의 노동·작업 구분은 《인간의 조건》(1958)에서 개념만 재구성했으며, 직무 순환에의 적용은 저자 해석이다. 발행월은 통상 인용 정보이며 대외 발행 전 1차 출처 재확인을 권장한다.</cite></p></details>
+</section>
+<footer>
+<span>Lead Read · 3분 브리핑</span>
+<p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+const root=document.documentElement;const b=document.getElementById('theme-toggle');
+b.addEventListener('click',()=>{const n=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=n;});
+</script>
+</body>
+</html>
