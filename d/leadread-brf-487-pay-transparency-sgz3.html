@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>보상의 투명성은 공정인가 감시인가 — Lead Read</title>
+<style>
+:root{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}}
+html[data-theme="dark"]{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}
+html[data-theme="light"]{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans KR","Pretendard","Malgun Gothic",sans-serif;line-height:1.78;word-break:keep-all;overflow-wrap:anywhere}
+.page{max-width:920px;margin:auto;padding:26px 20px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--ln);font-size:.78rem;letter-spacing:.1em;color:var(--mut)}
+.top b{color:var(--ink)}
+button{font:inherit;font-size:.8rem;padding:6px 10px;color:var(--ink);background:var(--sf);border:1px solid var(--ln);border-radius:4px;cursor:pointer}
+a{color:var(--ac);text-underline-offset:.2em}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--mk);outline-offset:3px}
+header{padding:34px 0 10px}
+.kicker{color:var(--mk);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.28;letter-spacing:-.03em;margin:.4em 0 .3em}
+.dek{font-size:clamp(1.02rem,2.2vw,1.18rem);color:var(--mut);margin:0 0 10px;max-width:62ch}
+.tag{display:inline-block;margin-top:12px;padding:4px 10px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:700;border-radius:3px}
+h2{font-size:clamp(1.22rem,2.8vw,1.62rem);line-height:1.34;letter-spacing:-.02em;margin:0 0 8px}
+h2 span{display:block;font-size:.78rem;font-weight:600;letter-spacing:.06em;color:var(--mk);margin-top:5px}
+h3{font-size:1.02rem;margin:0 0 6px}
+p{margin:0 0 14px;max-width:70ch}
+section{padding:26px 0;border-top:1px solid var(--ln)}
+.leadbox{margin:22px 0 4px;padding:20px;background:var(--sf);border-left:4px solid var(--ac)}
+.lb-label{font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin:0 0 4px}
+.lb-q{font-size:1.06rem;font-weight:700;margin:0 0 14px}
+.lb-a{margin:0;color:var(--ink)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.pole{padding:18px;background:var(--sf);border-top:4px solid var(--ac)}
+.pole:nth-child(2){border-top-color:var(--mk)}
+.pole small{display:block;font-size:.72rem;letter-spacing:.1em;font-weight:800;color:var(--mk);margin-bottom:6px}
+.clash{margin-top:16px;padding:16px 18px;background:var(--ac2);border-left:4px solid var(--mk)}
+.signal{margin-top:16px;padding:18px;background:var(--mk2);border:2px solid var(--mk)}
+.siglabel{display:inline-block;margin:0 8px 8px 0;padding:4px 9px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:800;border-radius:3px}
+.timeline{margin-top:16px;padding-left:16px;border-left:2px solid var(--ac)}
+.tl{margin:0 0 16px;padding-left:16px;position:relative}
+.tl:before{content:"";position:absolute;left:-23px;top:.6em;width:10px;height:10px;border-radius:50%;background:var(--mk)}
+.tl b{display:block;color:var(--mk);font-size:.9rem}
+.mnote{margin:14px 0;padding:12px 16px;background:var(--mk2);border-left:3px solid var(--mk);font-size:.95rem;color:var(--mut)}
+.scan{margin-top:16px;padding:16px;background:var(--ac2);border:1px solid var(--ln)}
+table{width:100%;border-collapse:collapse;font-size:.86rem;table-layout:fixed}
+th,td{border:1px solid var(--ln);padding:9px 10px;text-align:left;vertical-align:top;overflow-wrap:anywhere}
+th{background:var(--sf);color:var(--ink);font-weight:800}
+.ask ol{margin:12px 0 0;padding-left:22px}
+.ask li{margin:0 0 10px}
+.closing{padding:24px;background:var(--sf);border-top:2px solid var(--ac)}
+.closing h2{margin-bottom:10px}
+.closing p{font-size:1.04rem;margin:0}
+.cite{color:var(--mut);font-size:.94rem}
+details{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--ln)}
+summary{cursor:pointer;font-weight:700;color:var(--ac)}
+.source{margin:8px 0 0;font-size:.92rem;color:var(--mut)}
+.source cite{font-style:normal;color:var(--ink);font-weight:600}
+footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--ln);color:var(--mut);font-size:.84rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.author-credit{color:var(--ink);font-weight:800}
+@media (max-width:640px){
+.page{padding:18px 14px 44px}
+.duo{grid-template-columns:1fr}
+header{padding:24px 0 6px}
+section{padding:22px 0}
+.closing{padding:18px}
+table{font-size:.79rem}
+th,td{padding:7px 6px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="top"><span><b>Lead Read</b> · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="테마 바꾸기">테마</button></div>
+<header>
+<p class="kicker">Lead Read · 리더십 브리핑</p>
+<h1>보상의 투명성은 공정인가 감시인가</h1>
+<p class="lede dek"></p>
+<p class="tag">두 관점 · 갈리는 지점 · 적용 사례</p>
+</header>
+<div class="leadbox">
+<p class="lb-label">핵심 질문</p>
+<p class="lb-q"></p>
+<p class="lb-label">한 문장 결론</p>
+<p class="lb-a">---</p>
+</div>
+<section>
+<h2>왜 지금 이 문제인가<span>리더가 실제로 마주하는 판단 장면</span></h2>
+
+</section>
+<section>
+<h2>두 연구가 갈라지는 지점<span>조 커렌과 리카르도 페레스-트루글리아는 2022년 《정치경제학 저널》 130권 3호에서 임금 비교의 효과를 실험했다. 동남아시아의 대기업 직원 2,060명을 대상으로 상사와 동료의 연봉 정보를 제공하고, 이후 90일간 근무 행동을 관찰했다. / 피터 밤베르거와 엘레나 벨로골로프스키는 2010년 《퍼스널 사이콜로지》 63권 4호에서 임금 비밀의 효과를 실험했다. 이들은 임금 비밀 정책이 모든 사람에게 같은 방식으로 작동하지 않는다고 보았다.</span></h2>
+<div class="duo"><div class="pole"><small>관점 A</small><h3>조 커렌과 리카르도 페레스-트루글리아는 2022년 《정치경제학 저널》 130권 3호에서 임금 비교의 효과를 실험했다. 동남아시아의 대기업 직원 2,060명을 대상으로 상사와 동료의 연봉 정보를 제공하고, 이후 90일간 근무 행동을 관찰했다.</h3>결과는 방향에 따라 갈렸다. 상사의 연봉이 생각보다 높다는 사실을 알게 된 직원은 더 열심히 일했다. 동료의 연봉이 생각보다 높다는 사실을 알게 된 직원은 덜 일했다. 같은 투명성인데, 위쪽 비교는 동기를 높이고 옆쪽 비교는 동기를 낮췄다. 이들은 투명성의 효과가 방향에 달려 있음을 보여주었다.</div><div class="pole"><small>관점 B</small><h3>피터 밤베르거와 엘레나 벨로골로프스키는 2010년 《퍼스널 사이콜로지》 63권 4호에서 임금 비밀의 효과를 실험했다. 이들은 임금 비밀 정책이 모든 사람에게 같은 방식으로 작동하지 않는다고 보았다.</h3>이들의 실험에서 임금 비밀은 불평등 감내도가 낮은 사람에게 성과를 떨어뜨렸다. 그러나 불평등 감내도가 높은 사람에게는 임금 비밀이 오히려 더 높은 성과와 연결되었다. 감춤이 모두에게 해로운 것은 아니라는 뜻이다.</div></div><div class="clash"><p>실무 문장은 이렇게 갈린다. &quot;공개하면 공정이 된다&quot;와 &quot;감추면 성과가 지켜진다&quot;가 맞선다. 전자는 정보의 비대칭을 줄이고, 후자는 비교의 비용을 줄인다. 한쪽은 공정을 보고, 다른 쪽은 성과를 본다. 보상의 투명성은 공정이면서 동시에 감시가 될 수 있다. 어느 쪽이 되는지는 비교의 방향과 감내도에 달려 있다. 공개는 공정의 언어를 쓰지만, 그 효과는 사람마다 다르다.</p></div>
+</section>
+<section class="case">
+<h2>적용 사례 — 콜로라도주는 2021년 1월 1일 「동일 노동 동일 임금법」 2부를 시행했다. 이 법은 모든 채용 공고에 보상 또는 보상 범위를 공개하도록 요구한다. 2024년 1월 1일부터는 지원 마감일과 내부 공지 의무도 강화되었다.<span>확인된 날짜와 경과</span></h2>
+<p>법의 목적은 임금 격차를 줄이는 것이다. 공고에 범위를 쓰면 구직자는 협상 전에 정보를 갖고, 고용주는 자의적 보상을 줄인다. 콜로라도 노동부는 공고·내부 공지·선발 결과 공개·기록 보존을 요구한다. 투명성은 공정의 제도적 장치가 되었다.</p><p>그러나 법이 모든 비교를 없애지는 않는다. 공개된 범위는 최소와 최대를 보여줄 뿐, 동료의 실제 연봉을 알려주지 않는다. 투명성은 수평 비교를 완전히 열지 않는다. 제도는 공정의 방향을 정하지만, 비교의 효과까지 통제하지는 못한다. 공개된 범위는 협상의 출발점을 바꾸지만, 동료 간 비교의 감정까지 바꾸지는 않는다. 법은 정보를 공개하지만, 해석은 조직에 남는다.</p>
+</section>
+<section>
+<h2>렌즈 — 존 롤스는 1971년 《정의론》에서 정의를 공정으로 설명했다. 정의의 원칙은 무지의 베일 뒤에서 선택되어야 한다. 아무도 자신의 위치를 모르는 상태에서 합의한 원칙이 공정하다.<span>개념을 재구성한 사유의 틀</span></h2>
+<p>보상의 투명성은 롤스의 질문과 닮았다. 우리가 연봉을 공개할 것인가를 결정할 때, 우리는 자신이 높은 연봉을 받을지 낮은 연봉을 받을지 모른다. 무지의 베일 뒤에서라면, 공개는 공정한 원칙이 될 수 있다. 그러나 베일이 걷히면, 비교의 효과가 남는다.</p><p>롤스에게 정의는 결과의 평등이 아니라 불평등의 정당화다. 불평등은 가장 불리한 사람에게 이익이 될 때만 정당하다. 보상의 투명성도 같은 기준으로 평가해야 한다. 공개가 가장 불리한 사람에게 정보를 주는가. 그렇다면 투명성은 공정이다. 공개가 비교의 상처만 남긴다면, 감시가 된다. 롤스의 기준은 공개 자체가 아니라 공개가 누구에게 이익이 되는가다.</p>
+</section>
+<section class="ask">
+<h2>리더의 판단 질문<span>결정 전에 확인할 것</span></h2>
+<ol><li>이 결정의 주된 수혜자는 누구인가?</li><li>반대 관점이 지적하는 비용은 무엇인가?</li><li>판단을 바꿀 확인 자료가 있는가?</li></ol>
+</section>
+<section class="closing">
+<h2>한 줄로 남기면</h2>
+<p>---</p>
+</section>
+<section>
+<h2>근거 자료<span>서지와 확인 범위</span></h2>
+<p class="cite">본 브리핑은 공개된 학술 문헌의 논지를 바탕으로 작성된 분석 자료입니다.</p>
+<details><summary>참고 문헌 1</summary><p class="source"><cite>Zoë Cullen·Ricardo Perez-Truglia, &quot;How Much Does Your Boss Make? The Effects of Salary Comparisons,&quot; *Journal of Political Economy* 130(3) (2022), 766–822 — 상사 연봉 정보는 노력을 높이고 동료 연봉 정보는 노력을 낮춘다는 실험 결과를 재구성했다.</cite></p></details>
+<details><summary>참고 문헌 2</summary><p class="source"><cite>Bamberger·Elena Belogolovsky, &quot;The Impact of Pay Secrecy on Individual Task Performance,&quot; *Personnel Psychology* 63(4) (2010), 965–996 — 임금 비밀이 불평등 감내도에 따라 성과에 다르게 작용한다는 논지를 요약했다. 적용 사례는 콜로라도 「동일 노동 동일 임금법」 2부의 2021-01-01 시행(채용 공고 보상 공개), 2024-01-01 강화(지원 마감일·내부 공지)와 콜로라도 노동부 지침을 콜로라도 노동부 공식 자료로 확인했다.</cite></p></details>
+<details><summary>참고 문헌 3</summary><p class="source"><cite>존 롤스의 정의론(무지의 베일·차등 원칙)은 《정의론》(1971)에서 개념만 재구성했으며, 보상 투명성에의 적용은 저자 해석이다. 발행월은 통상 인용 정보이며 대외 발행 전 1차 출처 재확인을 권장한다.</cite></p></details>
+</section>
+<footer>
+<span>Lead Read · 3분 브리핑</span>
+<p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+const root=document.documentElement;const b=document.getElementById('theme-toggle');
+b.addEventListener('click',()=>{const n=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=n;});
+</script>
+</body>
+</html>
