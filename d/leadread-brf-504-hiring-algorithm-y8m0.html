@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>채용 알고리즘은 측정인가 편향인가 — Lead Read</title>
+<style>
+:root{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}}
+html[data-theme="dark"]{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}
+html[data-theme="light"]{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans KR","Pretendard","Malgun Gothic",sans-serif;line-height:1.78;word-break:keep-all;overflow-wrap:anywhere}
+.page{max-width:920px;margin:auto;padding:26px 20px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--ln);font-size:.78rem;letter-spacing:.1em;color:var(--mut)}
+.top b{color:var(--ink)}
+button{font:inherit;font-size:.8rem;padding:6px 10px;color:var(--ink);background:var(--sf);border:1px solid var(--ln);border-radius:4px;cursor:pointer}
+a{color:var(--ac);text-underline-offset:.2em}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--mk);outline-offset:3px}
+header{padding:34px 0 10px}
+.kicker{color:var(--mk);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.28;letter-spacing:-.03em;margin:.4em 0 .3em}
+.dek{font-size:clamp(1.02rem,2.2vw,1.18rem);color:var(--mut);margin:0 0 10px;max-width:62ch}
+.tag{display:inline-block;margin-top:12px;padding:4px 10px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:700;border-radius:3px}
+h2{font-size:clamp(1.22rem,2.8vw,1.62rem);line-height:1.34;letter-spacing:-.02em;margin:0 0 8px}
+h2 span{display:block;font-size:.78rem;font-weight:600;letter-spacing:.06em;color:var(--mk);margin-top:5px}
+h3{font-size:1.02rem;margin:0 0 6px}
+p{margin:0 0 14px;max-width:70ch}
+section{padding:26px 0;border-top:1px solid var(--ln)}
+.leadbox{margin:22px 0 4px;padding:20px;background:var(--sf);border-left:4px solid var(--ac)}
+.lb-label{font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin:0 0 4px}
+.lb-q{font-size:1.06rem;font-weight:700;margin:0 0 14px}
+.lb-a{margin:0;color:var(--ink)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.pole{padding:18px;background:var(--sf);border-top:4px solid var(--ac)}
+.pole:nth-child(2){border-top-color:var(--mk)}
+.pole small{display:block;font-size:.72rem;letter-spacing:.1em;font-weight:800;color:var(--mk);margin-bottom:6px}
+.clash{margin-top:16px;padding:16px 18px;background:var(--ac2);border-left:4px solid var(--mk)}
+.signal{margin-top:16px;padding:18px;background:var(--mk2);border:2px solid var(--mk)}
+.siglabel{display:inline-block;margin:0 8px 8px 0;padding:4px 9px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:800;border-radius:3px}
+.timeline{margin-top:16px;padding-left:16px;border-left:2px solid var(--ac)}
+.tl{margin:0 0 16px;padding-left:16px;position:relative}
+.tl:before{content:"";position:absolute;left:-23px;top:.6em;width:10px;height:10px;border-radius:50%;background:var(--mk)}
+.tl b{display:block;color:var(--mk);font-size:.9rem}
+.mnote{margin:14px 0;padding:12px 16px;background:var(--mk2);border-left:3px solid var(--mk);font-size:.95rem;color:var(--mut)}
+.scan{margin-top:16px;padding:16px;background:var(--ac2);border:1px solid var(--ln)}
+table{width:100%;border-collapse:collapse;font-size:.86rem;table-layout:fixed}
+th,td{border:1px solid var(--ln);padding:9px 10px;text-align:left;vertical-align:top;overflow-wrap:anywhere}
+th{background:var(--sf);color:var(--ink);font-weight:800}
+.ask ol{margin:12px 0 0;padding-left:22px}
+.ask li{margin:0 0 10px}
+.closing{padding:24px;background:var(--sf);border-top:2px solid var(--ac)}
+.closing h2{margin-bottom:10px}
+.closing p{font-size:1.04rem;margin:0}
+.cite{color:var(--mut);font-size:.94rem}
+details{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--ln)}
+summary{cursor:pointer;font-weight:700;color:var(--ac)}
+.source{margin:8px 0 0;font-size:.92rem;color:var(--mut)}
+.source cite{font-style:normal;color:var(--ink);font-weight:600}
+footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--ln);color:var(--mut);font-size:.84rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.author-credit{color:var(--ink);font-weight:800}
+@media (max-width:640px){
+.page{padding:18px 14px 44px}
+.duo{grid-template-columns:1fr}
+header{padding:24px 0 6px}
+section{padding:22px 0}
+.closing{padding:18px}
+table{font-size:.79rem}
+th,td{padding:7px 6px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="top"><span><b>Lead Read</b> · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="테마 바꾸기">테마</button></div>
+<header>
+<p class="kicker">Lead Read · 리더십 브리핑</p>
+<h1>채용 알고리즘은 측정인가 편향인가</h1>
+<p class="lede dek"></p>
+<p class="tag">요약 표 · 비교 · 적용 사례</p>
+</header>
+<div class="leadbox">
+<p class="lb-label">핵심 질문</p>
+<p class="lb-q"></p>
+<p class="lb-label">한 문장 결론</p>
+<p class="lb-a">채용 알고리즘은 편향을 없애지 않는다. 편향을 어디에 두는지를 바꾼다. 사람의 눈에서 코드로 옮겨졌을 뿐, 판단의 기준은 여전히 누군가 정한 것이다.</p>
+</div>
+<section>
+<h2>왜 지금 이 문제인가<span>리더가 실제로 마주하는 판단 장면</span></h2>
+
+</section>
+<section>
+<h2>두 연구가 갈라지는 지점<span>프랭크 슈미트와 존 헌터는 1998년 85년치 선발 연구를 메타분석해 《심리학보》에 정리했다. 그들은 채용을 미래 성과를 예측하는 문제로 규정하고, 어떤 선발 도구가 실제로 예측력을 갖는지 비교했다. 결과는 불편할 만큼 명확했다. 일반정신능력 검사의 타당도는 중간 복잡도 직무에서 0.51이었고, 구조화 면접도 같은 수준이었다. 반면 비구조화 면접은 0.38, 경력 연수는 0.18, 학력은 0.10이었다. / 캐시 오닐은 2016년 《수학 파괴 무기》에서 빅데이터 모델이 편향을 어떻게 증폭하는지 정리했다. 그녀의 논지는 세 가지다. 첫째, 모델은 과거 데이터에서 배우므로 과거의 차별을 그대로 물려받는다. 둘째, 그 모델은 규모 있게 적용되므로 편향도 규모 있게 재생산된다. 셋째, 모델의 판단 근거는 당사자에게 공개되지 않아 이의를 제기할 수 없다.</span></h2>
+<div class="scan"><p>빠른 비교: 같은 질문에 두 관점이 다른 답을 줍니다.</p><table><thead><tr><th>구분</th><th>관점 A</th><th>관점 B</th></tr></thead><tbody><tr><td>핵심</td><td>프랭크 슈미트와 존 헌터는 1998년 85년치 선발 연구를 메타분석해 《심리학보》에 정리했다. 그들은 채용을 미래 성과를 예측하는 문제로 규정하고, 어떤 선발 도구가 실제로 예측력을 갖는지 비교했다. 결과는 불편할 만큼 명확했다. 일반정신능력 검사의 타당도는 중간 복잡도 직무에서 0.51이었고, 구조화 면접도 같은 수준이었다. 반면 비구조화 면접은 0.38, 경력 연수는 0.18, 학력은 0.10이었다.</td><td>캐시 오닐은 2016년 《수학 파괴 무기》에서 빅데이터 모델이 편향을 어떻게 증폭하는지 정리했다. 그녀의 논지는 세 가지다. 첫째, 모델은 과거 데이터에서 배우므로 과거의 차별을 그대로 물려받는다. 둘째, 그 모델은 규모 있게 적용되므로 편향도 규모 있게 재생산된다. 셋째, 모델의 판단 근거는 당사자에게 공개되지 않아 이의를 제기할 수 없다.</td></tr><tr><td>근거</td><td>이 수치는 채용 담당자의 감이 얼마나 약한 예측인지를 보여준다. 면접관이 &quot;느낌이 좋다&quot;고 말할 때 그 느낌의 예측력은 동전 던지기보다 조금 나은 정도다. 반대로 표준화된 측정은 같은 질문을 같은 방식으로 던져 비교 가능한 값을 만든</td><td>이 세 조건이 갖춰지면 알고리즘은 감보다 나쁘다. 감은 적어도 사람이 설명하고 반성할 수 있다. 모델은 반성하지 않는다. 정확도가 올라간다는 이유로 편향이 가려지고, 그 편향은 &quot;데이터가 그렇게 말한다&quot;는 문장으로 정당화된다.</td></tr></tbody></table></div><div class="clash"><p>판별 기준은 네 가지다. 무엇을 예측하려 하는가. 그 예측 대상이 직무 성과인가, 과거 합격자의 모습인가. 학습 데이터가 어떤 집단의 역사를 담고 있는가. 결과가 당사자에게 설명되는가. 네 번째가 결정적이다. 설명되지 않는 점수는 반박할 수 없고, 반박할 수 없는 기준은 권위가 아니라 권력이 된다.</p></div>
+</section>
+<section class="case">
+<h2>적용 사례 — 아마존은 2014년부터 이력서를 자동으로 평가하는 기계학습 도구를 만들었다. 지원자에게 1점에서 5점까지 점수를 매기고 상위 후보를 추리는 방식이었다. 팀은 지난 10년간 회사에 들어온 이력서로 모델을 학습시켰다. 문제는 그 10년의 이력서 대부분이 남성의 것이었다는 점이다.<span>확인된 날짜와 경과</span></h2>
+<p>2015년 무렵 회사는 이 도구가 성 중립적으로 평가하지 않는다는 것을 확인했다. 모델은 &quot;여성&quot;이라는 단어가 들어간 이력서에 감점을 주기 시작했다. 단어를 중립적으로 바꾸는 수정이 있었지만 신뢰할 수 없다는 판단이 남았다. 이 도구는 최종 채용 결정에 쓰이지 않았고, 2017년까지 팀이 해체되었다.</p><p>이 사건이 보여주는 것은 알고리즘의 야심이 아니라 학습의 방향이다. 회사는 성과를 예측하려 했지만, 모델은 합격자의 역사를 예측했다. 그 역사가 남성 중심이었으므로 결과도 남성 중심이 되었다. 의도가 아니라 데이터가 방향을 정했다.</p>
+</section>
+<section>
+<h2>렌즈 — 자크 엘륄은 1954년 《기술 사회》에서 기술을 도구의 모음이 아니라 하나의 체계로 보았다. 그는 이것을 라 테크니크라 불렀다. 기술은 특정 목적을 위한 수단이 아니라, 효율을 최고 가치로 삼는 자기 법칙을 가진 체계가 된다. 그 체계 안에서 모든 것은 계산 가능한 것으로 환원된다.<span>개념을 재구성한 사유의 틀</span></h2>
+<p>엘륄의 진단은 채용에 그대로 적용된다. 채용이 효율의 문제로 번역되는 순간, 사람은 예측 가능성의 정도로 환원된다. 그 환원은 편향을 없애는 것처럼 보이지만 실제로는 다른 것을 지운다. 설명되지 않는 것, 측정되지 않는 것, 예측에 저항하는 것이 후보에서 사라진다.</p><p>그는 기술이 나쁜 결과를 낳는다고 말하지 않았다. 기술이 스스로 목적이 된다고 말했다. 아마존의 도구가 무해하게 수정될 수 있었는데도 폐기된 이유는 편향이 남아서가 아니라, 그 편향이 효율의 언어로 설명되지 않았기 때문이다. 엘륄의 눈에는 그것이 기술의 배신이 아니라 기술의 정상 작동이다.</p>
+</section>
+<section class="ask">
+<h2>리더의 판단 질문<span>결정 전에 확인할 것</span></h2>
+<ol><li>채용 알고리즘은 편향을 없애지 않는다</li><li>편향을 어디에 두는지를 바꾼다</li><li>사람의 눈에서 코드로 옮겨졌을 뿐, 판단의 기준은 여전히 누군가 정한 것이다</li></ol>
+</section>
+<section class="closing">
+<h2>한 줄로 남기면</h2>
+<p>채용 알고리즘은 편향을 없애지 않는다. 편향을 어디에 두는지를 바꾼다. 사람의 눈에서 코드로 옮겨졌을 뿐, 판단의 기준은 여전히 누군가 정한 것이다.</p>
+</section>
+<section>
+<h2>근거 자료<span>서지와 확인 범위</span></h2>
+<p class="cite">본 브리핑은 공개된 학술 문헌의 논지를 바탕으로 작성된 분석 자료입니다.</p>
+<details><summary>참고 문헌 1</summary><p class="source"><cite>참고 문헌 1 — 1998</cite></p></details>
+<details><summary>참고 문헌 2</summary><p class="source"><cite>참고 문헌 2 — 2016</cite></p></details>
+<details><summary>참고 문헌 3</summary><p class="source"><cite>참고 문헌 3 — 2018</cite></p></details>
+</section>
+<footer>
+<span>Lead Read · 3분 브리핑</span>
+<p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+const root=document.documentElement;const b=document.getElementById('theme-toggle');
+b.addEventListener('click',()=>{const n=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=n;});
+</script>
+</body>
+</html>
