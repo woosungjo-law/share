@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>부업은 자유인가 충성인가 — Lead Read</title>
+<style>
+:root{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}}
+html[data-theme="dark"]{color-scheme:dark;--bg:#111318;--sf:#1a1d24;--ink:#f2efe7;--mut:#c2bcad;--ln:#3a414d;--ac:#a9bde0;--ac2:#232b3a;--mk:#e8b587;--mk2:#2b241d}
+html[data-theme="light"]{color-scheme:light;--bg:#f6f5f1;--sf:#fffdf9;--ink:#1b1a17;--mut:#4d493f;--ln:#d6d0c2;--ac:#33405c;--ac2:#e8ecf3;--mk:#7a4a22;--mk2:#f8efe4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans KR","Pretendard","Malgun Gothic",sans-serif;line-height:1.78;word-break:keep-all;overflow-wrap:anywhere}
+.page{max-width:920px;margin:auto;padding:26px 20px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--ln);font-size:.78rem;letter-spacing:.1em;color:var(--mut)}
+.top b{color:var(--ink)}
+button{font:inherit;font-size:.8rem;padding:6px 10px;color:var(--ink);background:var(--sf);border:1px solid var(--ln);border-radius:4px;cursor:pointer}
+a{color:var(--ac);text-underline-offset:.2em}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--mk);outline-offset:3px}
+header{padding:34px 0 10px}
+.kicker{color:var(--mk);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.28;letter-spacing:-.03em;margin:.4em 0 .3em}
+.dek{font-size:clamp(1.02rem,2.2vw,1.18rem);color:var(--mut);margin:0 0 10px;max-width:62ch}
+.tag{display:inline-block;margin-top:12px;padding:4px 10px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:700;border-radius:3px}
+h2{font-size:clamp(1.22rem,2.8vw,1.62rem);line-height:1.34;letter-spacing:-.02em;margin:0 0 8px}
+h2 span{display:block;font-size:.78rem;font-weight:600;letter-spacing:.06em;color:var(--mk);margin-top:5px}
+h3{font-size:1.02rem;margin:0 0 6px}
+p{margin:0 0 14px;max-width:70ch}
+section{padding:26px 0;border-top:1px solid var(--ln)}
+.leadbox{margin:22px 0 4px;padding:20px;background:var(--sf);border-left:4px solid var(--ac)}
+.lb-label{font-size:.72rem;letter-spacing:.12em;font-weight:800;color:var(--mk);margin:0 0 4px}
+.lb-q{font-size:1.06rem;font-weight:700;margin:0 0 14px}
+.lb-a{margin:0;color:var(--ink)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.pole{padding:18px;background:var(--sf);border-top:4px solid var(--ac)}
+.pole:nth-child(2){border-top-color:var(--mk)}
+.pole small{display:block;font-size:.72rem;letter-spacing:.1em;font-weight:800;color:var(--mk);margin-bottom:6px}
+.clash{margin-top:16px;padding:16px 18px;background:var(--ac2);border-left:4px solid var(--mk)}
+.signal{margin-top:16px;padding:18px;background:var(--mk2);border:2px solid var(--mk)}
+.siglabel{display:inline-block;margin:0 8px 8px 0;padding:4px 9px;background:var(--ac2);color:var(--ac);font-size:.76rem;font-weight:800;border-radius:3px}
+.timeline{margin-top:16px;padding-left:16px;border-left:2px solid var(--ac)}
+.tl{margin:0 0 16px;padding-left:16px;position:relative}
+.tl:before{content:"";position:absolute;left:-23px;top:.6em;width:10px;height:10px;border-radius:50%;background:var(--mk)}
+.tl b{display:block;color:var(--mk);font-size:.9rem}
+.mnote{margin:14px 0;padding:12px 16px;background:var(--mk2);border-left:3px solid var(--mk);font-size:.95rem;color:var(--mut)}
+.scan{margin-top:16px;padding:16px;background:var(--ac2);border:1px solid var(--ln)}
+table{width:100%;border-collapse:collapse;font-size:.86rem;table-layout:fixed}
+th,td{border:1px solid var(--ln);padding:9px 10px;text-align:left;vertical-align:top;overflow-wrap:anywhere}
+th{background:var(--sf);color:var(--ink);font-weight:800}
+.ask ol{margin:12px 0 0;padding-left:22px}
+.ask li{margin:0 0 10px}
+.closing{padding:24px;background:var(--sf);border-top:2px solid var(--ac)}
+.closing h2{margin-bottom:10px}
+.closing p{font-size:1.04rem;margin:0}
+.cite{color:var(--mut);font-size:.94rem}
+details{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--ln)}
+summary{cursor:pointer;font-weight:700;color:var(--ac)}
+.source{margin:8px 0 0;font-size:.92rem;color:var(--mut)}
+.source cite{font-style:normal;color:var(--ink);font-weight:600}
+footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--ln);color:var(--mut);font-size:.84rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.author-credit{color:var(--ink);font-weight:800}
+@media (max-width:640px){
+.page{padding:18px 14px 44px}
+.duo{grid-template-columns:1fr}
+header{padding:24px 0 6px}
+section{padding:22px 0}
+.closing{padding:18px}
+table{font-size:.79rem}
+th,td{padding:7px 6px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="top"><span><b>Lead Read</b> · 3분 브리핑</span><button type="button" id="theme-toggle" aria-label="테마 바꾸기">테마</button></div>
+<header>
+<p class="kicker">Lead Read · 리더십 브리핑</p>
+<h1>부업은 자유인가 충성인가</h1>
+<p class="lede dek"></p>
+<p class="tag">두 관점 · 갈리는 지점 · 적용 사례</p>
+</header>
+<div class="leadbox">
+<p class="lb-label">핵심 질문</p>
+<p class="lb-q"></p>
+<p class="lb-label">한 문장 결론</p>
+<p class="lb-a">부업은 자유일 수도 충성의 위반일 수도 있다. 구별은 마음이 아니라 사건에 있다. 업무와 기밀, 신용과 경쟁이라는 관찰 가능한 지점을 건드리지 않는다면 그 시간은 여전히 근로자의 것이고, 회사가 그 바깥까지 요구한다면 그것은 성과가 아니라 신분을 사는 계약이다.</p>
+</div>
+<section>
+<h2>왜 지금 이 문제인가<span>리더가 실제로 마주하는 판단 장면</span></h2>
+
+</section>
+<section>
+<h2>두 연구가 갈라지는 지점<span>허드슨 세션스와 동료들은 2021년 경영학 학술지에 실은 논문에서 부업을 반대편에서 조명했다. 부업이 본업의 에너지를 빼앗는다는 통념을 검증한 것이다. 그들은 부업의 복잡성, 곧 부업에서 요구되는 기획과 판단, 관계의 난이도가 심리적 임파워먼트를 만든다고 봤다. 내 일을 내가 결정한다는 감각이 부업에서 생기고 그 감각이 본업으로 넘어온다. / 펑과 왕, 왕은 2021년 심리학 학술지에 실은 연구에서 324명의 중국 공공부문 근로자를 패널로 추적했다. 이들이 본 것은 성과가 아니라 몰입의 두 얼굴이었다. 업무 몰입과 조직 몰입을 나눠 측정하자 경로가 갈렸다.</span></h2>
+<div class="duo"><div class="pole"><small>관점 A</small><h3>허드슨 세션스와 동료들은 2021년 경영학 학술지에 실은 논문에서 부업을 반대편에서 조명했다. 부업이 본업의 에너지를 빼앗는다는 통념을 검증한 것이다. 그들은 부업의 복잡성, 곧 부업에서 요구되는 기획과 판단, 관계의 난이도가 심리적 임파워먼트를 만든다고 봤다. 내 일을 내가 결정한다는 감각이 부업에서 생기고 그 감각이 본업으로 넘어온다.</h3>자료는 두 층이었다. 337명의 설문에서 임파워먼트와 본업 성과의 관계를 확인했고, 80쌍의 직원과 동료를 열흘간 추적해 하루 단위의 경로를 봤다. 부업에서의 임파워먼트가 긍정 정서를 거쳐 본업 성과를 높이는 경로와, 부업에 대한 생각이 본업 중에도 남는 주의 잔류를 거쳐 성과를 깎는 경로가 함께 있었다. 그들이 내린 결론은 갈등보다 강화가 크다는 것이다.</div><div class="pole"><small>관점 B</small><h3>펑과 왕, 왕은 2021년 심리학 학술지에 실은 연구에서 324명의 중국 공공부문 근로자를 패널로 추적했다. 이들이 본 것은 성과가 아니라 몰입의 두 얼굴이었다. 업무 몰입과 조직 몰입을 나눠 측정하자 경로가 갈렸다.</h3>경계 없는 경력 지향이 강한 사람은 역할 갈등이 줄어 업무 몰입이 올랐다. 일 자체를 더 잘하게 된다는 뜻이다. 반면 조직 몰입은 내려갔다. 관계적 심리계약, 곧 회사가 나를 오래 돌볼 것이라는 기대와 내가 그에 답할 것이라는 기대가 약해지기 때문이다. 일은 잘하는데 회사와의 관계는 얇아지는 상태다.</div></div><div class="clash"><p>판별점은 셋이다. 첫째, 부업이 만드는 것이 기술과 자신감인가, 관계의 분산인가. 둘째, 회사가 사려는 것이 노동인가 전속적 충성인가. 셋째, 부업을 제한하는 근거가 본업의 지장인가, 관계의 희석인가. 둘째와 셋째가 충성 쪽으로 기울면 그 계약은 노동의 계약이 아니라 신분의 계약이 된다.</p></div>
+</section>
+<section class="case">
+<h2>적용 사례 — 일본 후생노동성은 2018년 1월 부업·겸업 추진 가이드라인을 내고 모델취업규칙을 고쳤다. 종전의 금지 원칙을 뒤집어 원칙 허용, 사전 신고로 바꾼 것이다. 근거로 든 것은 판례였다. 근로자는 근로시간 밖의 시간을 자유롭게 쓸 수 있다는 점이 이미 확립된 해석이라는 것이다.<span>확인된 날짜와 경과</span></h2>
+<p>개정은 한 번으로 끝나지 않았다. 2020년 9월에는 부업처의 근로시간을 본인이 신고하는 방식 등 파악 방법을 구체화했고, 2022년 7월에는 다양한 경력 형성을 촉진한다는 관점에서 기업이 부업 허용 실태를 공표하도록 권하는 쪽으로 나아갔다. 모델 규정은 회사가 금지할 수 있는 사유를 네 가지로 좁혔다. 업무에 지장이 있는 경우, 기밀이 새는 경우, 신용과 신뢰를 훼손하는 경우, 경쟁으로 이익이 침해되는 경우다.</p><p>주목할 것은 이 넷이 모두 결과에 대한 조건이라는 점이다. 다른 회사에 마음을 준다는 이유만으로는 금지 사유가 되지 않는다. 충성은 마음의 상태가 아니라 업무와 기밀, 신용과 경쟁이라는 네 개의 관찰 가능한 사건으로 번역됐다. 다만 이 전환은 회사의 재량을 없앤 것이 아니라 재량의 언어를 바꾼 것이다.</p><p>가이드라인의 실질은 허용 그 자체보다 근로시간 관리에 있었다. 부업처에서 일한 시간을 합산해 과로를 막아야 한다는 의무가 회사에 남았기 때문이다. 허용은 자유의 확대이면서 동시에 관리 대상의 확대이기도 했다. 근로자에게는 문이 열렸고, 회사에게는 계산기가 하나 더 생긴 셈이다.</p>
+</section>
+<section>
+<h2>렌즈 — 헨리 데이비드 소로는 1854년 《월든》의 첫 장에서 회계를 한다. 무엇을 사려면 그 값으로 삶의 일부를 내놓아야 한다는 계산이다. 옷과 집과 음식의 값을 삶의 시간으로 환산하면 많은 사람이 필요 이상으로 일하고 그 대가로 살아 있는 시간을 잃는다. 그가 숲에서 확인한 것은 적게 일해도 살 수 있다는 사실이었다.<span>개념을 재구성한 사유의 틀</span></h2>
+<p>이 계산을 부업에 대면 질문이 둘로 갈린다. 하나는 내가 파는 시간이 얼마인가이고, 다른 하나는 그 시간의 목적을 누가 정하는가다. 소로의 기준에서 노동은 삶을 유지하는 수단이고 삶 자체가 목적이다. 회사가 근무시간 밖의 시간까지 자기 목적에 배치하려 들면, 그 계약은 노동을 사는 것이 아니라 삶의 목적을 사는 것이 된다.</p>
+</section>
+<section class="ask">
+<h2>리더의 판단 질문<span>결정 전에 확인할 것</span></h2>
+<ol><li>부업은 자유일 수도 충성의 위반일 수도 있다</li><li>구별은 마음이 아니라 사건에 있다</li><li>업무와 기밀, 신용과 경쟁이라는 관찰 가능한 지점을 건드리지 않는다면 그 시간은 여전히 근로자의 것이고, 회사가 그 바깥까지 요구한다면 그것은 성과가 아니라 신분을 사는 계약이다</li></ol>
+</section>
+<section class="closing">
+<h2>한 줄로 남기면</h2>
+<p>부업은 자유일 수도 충성의 위반일 수도 있다. 구별은 마음이 아니라 사건에 있다. 업무와 기밀, 신용과 경쟁이라는 관찰 가능한 지점을 건드리지 않는다면 그 시간은 여전히 근로자의 것이고, 회사가 그 바깥까지 요구한다면 그것은 성과가 아니라 신분을 사는 계약이다.</p>
+</section>
+<section>
+<h2>근거 자료<span>서지와 확인 범위</span></h2>
+<p class="cite">본 브리핑은 공개된 학술 문헌의 논지를 바탕으로 작성된 분석 자료입니다.</p>
+<details><summary>참고 문헌 1</summary><p class="source"><cite>Bartels, &quot;Do the Hustle! Empowerment from Side-Hustles and Its Effects on Full-Time Work Performance,&quot; *Academy of Management Journal*(2021, 2021년 2월 18일 온라인 게재) — 부업의 복잡성·임파워먼트·주의 잔류 경로와 337명 설문·80쌍 열흘 추적 설계를 재구성했다.</cite></p></details>
+<details><summary>참고 문헌 2</summary><p class="source"><cite>Zhen Peng, Qingsong Wang &amp; Siwei Wang, &quot;Work Engagement of Employees in Moonlighting: A Moderated Mediation Model From a Boundaryless Career Perspective,&quot; *Frontiers in Psychology* 12:693547(2021) — 324명 패널, 업무 몰입 상승과 조직 몰입 하락의 경로를 재구성했다. 일본 사례는 후생노동성의 노동관계법 해설 자료(2018년 1월 가이드라인·모델취업규칙 개정, 2020년 9월·2022년 7월 개정)와 모델취업규칙 제68조 조문 소개 자료로 확인했다.</cite></p></details>
+<details><summary>참고 문헌 3</summary><p class="source"><cite>참고 문헌 3 — 2021</cite></p></details>
+</section>
+<footer>
+<span>Lead Read · 3분 브리핑</span>
+<p class="author-credit">&lt;조우성 변호사 작성&gt;</p>
+</footer>
+</div>
+<script>
+const root=document.documentElement;const b=document.getElementById('theme-toggle');
+b.addEventListener('click',()=>{const n=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=n;});
+</script>
+</body>
+</html>
