@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>상속포기 신고서 한 장으로 협의가 끝나지는 않는다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>상속포기 신고서 한 장으로 협의가 끝나지는 않는다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 상속인의 선택은 <b>회사의 회수 범위를 사실상 결정</b>합니다. 그런데 <b>포기 신고서 사본만으로 협의를 종결하면</b> 위험합니다. <b>확인해야 할 것은 가정법원의 수리 심판 고지</b>이고, 그 전에 <b>상속재산에 처분행위가 있었는지</b>도 봐야 합니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>사건의 시작: 협의가 멈춘 자리</h2>
+    <div class="analogy">
+      <b>보험금 청구 서류</b>를 떠올려 보십시오. <b>신청서를 냈다는 것과 지급이 확정된 것은 다릅니다.</b> 한빛상사의 김도현 대표는 거래처 회장이 별세한 뒤 <b>그 아들과 채무 협의</b>를 진행하고 있었습니다. 아들은 <b>상속포기를 신고했으니 회사 채무와 자신은 무관하다</b>며 협의 중단을 요청했습니다. 그런데 재무팀이 모아 온 자료에는 <b>고인 명의 계좌에서 별세 직후 두 차례 자금이 인출된 기록</b>이 있었습니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 보는 핵심: 세 갈래 선택과 회수 범위</h2>
+    <p>상속인이 고를 수 있는 길은 <b>세 가지</b>입니다. <b>민법 제1019조</b>는 상속인이 <b>상속개시가 있었음을 안 날부터 3개월 안에 단순승인, 한정승인, 포기</b> 가운데 하나를 선택할 수 있게 합니다. <b>이 선택이 회사의 회수 범위를 사실상 결정합니다.</b></p>
+    <p><b>단순승인</b>은 상속인이 <b>채무를 전부 부담</b>하는 길입니다. <b>한정승인</b>은 <b>상속받은 재산 범위 안에서만 책임</b>이 남습니다. <b>포기</b>는 <b>상속인 자격이 처음부터 없던 것</b>으로 처리됩니다. 회사 입장에서 세 선택의 차이는 곧 <b>받을 수 있는 금액의 차이</b>입니다.</p>
+    <p><b>선택이 흔들리는 지점</b>은 <b>민법 제1026조</b>입니다. 상속인이 <b>상속재산에 대한 처분행위</b>를 하면 <b>단순승인을 한 것으로 봅니다.</b> <b>상속재산에 속한 채권을 추심하거나 채무를 변제하는 행위</b>가 대표적인 예이고, <b>계좌에서 자금을 인출하는 행위</b>도 같은 범주에서 검토됩니다. <b>포기를 신고했다고 하더라도 그 전에 처분행위가 있었다면 결론이 달라질 수 있습니다.</b></p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외: 시점과 증명이 갈림길</h2>
+    <p><b>기산점.</b> 3개월은 <b>상속이 시작된 날이 아니라 그 사실을 안 날부터</b> 계산합니다. <b>상속인이 언제 알았는지</b>가 다툼의 대상이 됩니다.</p>
+    <p><b>특별한정승인의 문턱.</b> <b>3개월이 지났더라도 민법 제1019조 제3항</b>에 따라 한정승인이 가능합니다. 다만 <b>상속채무가 상속재산을 초과한다는 사실을 중대한 과실 없이 알지 못한 경우</b>로 한정되고, <b>그 증명은 상속인이 집니다.</b></p>
+    <p><b>시점의 함정.</b> 처분을 피해야 하는 시기는 <b>신고 접수 때가 아니라 수리 심판의 고지 때까지</b>로 봅니다. <b>접수와 고지 사이의 공백</b>이 상속인에게는 위험 구간, 회사에게는 확인 구간이 됩니다.</p>
+    <p><b>회수 순서.</b> <b>상속인의 선택이 확정되기 전에 채무 일부를 변제받으면 그 변제가 상속재산의 처분으로 평가될 여지</b>가 생깁니다.</p>
+    <p><b>기대치의 재계산.</b> <b>단순승인으로 평가되면 회수 대상은 상속인의 고유재산까지 넓어지고</b>, <b>한정승인이 인정되면 상속받은 재산 안으로 잘립니다.</b></p>
+    <div class="callout">
+      <b>주의.</b> <b>회수액을 조금 앞당기려다 협의 전체가 흔들릴 수 있습니다.</b> 선택이 확정되기 전에는 <b>변제를 서두르지 않는 것</b>이 협상의 여지를 지킵니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것: 네 가지 기준을 세웁니다</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>기간 기준과 확인 서류를 먼저 정하십시오. 기준이 없으면 담당자마다 판단이 달라집니다.</b></p>
+      <ol>
+        <li><b>① 기간 기준</b> — <b>별세 통지를 받은 시점부터 상속인 확인, 선택 방식 확인, 협의 재개 판단까지의 일정</b>을 정합니다.</li>
+        <li><b>② 문서 확인</b> — <b>상속인의 신고 사실은 가정법원의 수리 심판 고지로 확인</b>합니다. <b>신고서 사본만으로 협의를 종결하지 않습니다.</b></li>
+        <li><b>③ 처분행위 확인</b> — <b>별세 이후 상속재산에 어떤 행위가 있었는지 확인하기 전에는 회수 포기 결정을 내리지 않습니다.</b></li>
+        <li><b>④ 협상 태도 기록</b> — <b>어떤 기준으로 협의를 멈추거나 다시 열었는지</b> 남겨 두면, 다른 거래처와의 협상에서도 같은 기준을 설명할 수 있습니다.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;"><b>상속포기 신고서 한 장으로 협의가 끝나지는 않습니다.</b> <b>수리 심판 고지</b>와 <b>처분행위 확인</b> — 두 가지가 갖춰진 뒤에 회수 계획을 접어도 늦지 않습니다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
