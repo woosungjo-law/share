@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>한 시간의 침묵이 수사 자료를 바꾼다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>한 시간의 침묵이 수사 자료를 바꾼다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 압수수색에서 되돌릴 수 없는 것은 <b>이미 넘어간 자료</b>입니다. 그러나 <b>다툴 수는 있습니다.</b> 승부는 <b>법무 담당자가 도착하기 전 한 시간</b>에 갈립니다. 그래서 대표가 정할 것은 대응 논리가 아니라 <b>현장 규칙</b>입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>사건의 시작: 법무팀이 도착하기 전에 끝난 일</h2>
+    <div class="analogy">
+      <b>소방 점검 나온 사람에게 창고 열쇠를 먼저 건네는 상황</b>을 떠올려 보십시오. <b>무엇을 가져갔는지 목록이 없으면</b> 나중에 확인할 방법이 없습니다. 한빛테크 최준혁 대표는 <b>압수수색이 진행 중이라는 연락을 오전에</b> 받았습니다. 현장에는 법무팀이 없었고, <b>직원들은 시키는 대로 서버 권한을 알려 주고 자료를 건넸습니다.</b> <b>임원 한 명은 개인 노트북까지 내놓았습니다.</b> 법무팀이 도착했을 때 <b>영장에 적힌 범위와 실제로 넘어간 자료가 달랐습니다.</b>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 보는 핵심: 세 개의 문</h2>
+    <p><b>첫째 문은 임의제출</b>입니다. <b>형사소송법 제108조</b>는 <b>소지자나 보관자가 임의로 제출한 물건은 영장 없이 압수할 수 있다</b>고 정합니다. <b>영장이 없어도 자료가 넘어가는 통로</b>가 있습니다. 이때 문제가 되는 것은 <b>임의성</b>입니다. <b>직원이 스스로 내놓은 것인지, 거절하기 어려운 상황에서 내놓은 것인지</b>가 갈립니다.</p>
+    <p><b>둘째 문은 영장의 범위</b>입니다. <b>형사소송법 제118조</b>는 <b>영장을 처분받는 자에게 반드시 제시</b>하도록 하고, <b>제219조</b>는 이를 <b>수색에 준용</b>합니다. 수사기관은 <b>영장에 적힌 범위 안에서만 압수</b>해야 합니다. <b>영장에 없는 노트북과 감사 보고서가 같은 방식으로 넘어갔다면 범위를 벗어난 집행</b>이 됩니다.</p>
+    <p><b>셋째 문은 증거능력</b>입니다. <b>형사소송법 제308조의2</b>는 <b>적법한 절차와 방식에 따라 수집하지 않은 증거를 증거로 쓸 수 없다</b>고 정합니다. <b>임의성이 부정되거나, 범위를 넘었거나, 전자정보 복제 과정에서 참여권이 보장되지 않았다면</b> 이 조문으로 다툴 수 있습니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외: 비용은 세 갈래로 발생합니다</h2>
+    <p><b>즉시 비용.</b> <b>압수수색에 대응할 인력과 외부 자문 비용</b>입니다. <b>이 비용을 아끼면 이후 다툼의 근거가 사라집니다.</b></p>
+    <p><b>수사 확대 비용.</b> <b>영장 범위를 넘은 자료가 단서가 되면 수사 대상이 넓어집니다.</b> <b>대표 개인까지 수사가 향하는 경우</b>도 여기에 해당합니다.</p>
+    <p><b>사업 비용.</b> <b>수사 소식이 알려지면 거래처와 금융기관의 태도가 달라집니다.</b> <b>계약 갱신과 자금 조달이 늦어집니다.</b></p>
+    <p><b>임의성의 경계.</b> <b>거절하기 어려운 상황에서 내놓은 것</b>이라면 임의제출로 보기 어렵습니다. 그 판단이 <b>증거능력 다툼의 출발점</b>이 됩니다.</p>
+    <p><b>기록의 유무.</b> <b>구두로 한 이의는 남지 않습니다.</b> 범위를 넘은 자료가 확인되면 <b>문서로 정리해 전달</b>해야 합니다.</p>
+    <div class="callout">
+      <b>주의.</b> 우선순위는 정해져 있습니다. <b>현장에 법무 담당자가 도착하기 전까지 아무도 자료를 건네지 않도록 하는 것이 첫째</b>, <b>도착한 뒤에는 영장과 압수목록을 대조하는 것이 둘째</b>입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것: 네 가지를 미리 정합니다</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>현장 규칙을 문서로 만들어 두십시오. 그날 아침에는 만들 시간이 없습니다.</b> 정할 항목은 다음과 같습니다.</p>
+      <ol>
+        <li><b>① 현장 대응자</b> — <b>압수수색이 시작되면 법무 담당자에게 즉시 연락</b>이 가고, <b>그 전에는 자료를 넘기지 않는다는 규칙</b>을 정합니다.</li>
+        <li><b>② 영장 확인 절차</b> — <b>영장 원본을 확인하고 범위를 기록</b>하며, <b>범위를 넘는 요구에는 이유를 밝혀 응하지 않습니다.</b></li>
+        <li><b>③ 기록 체계</b> — <b>임의제출 경위, 압수목록, 복제 참여 기록</b>을 한 파일로 관리합니다.</li>
+        <li><b>④ 사전 교육</b> — <b>임직원에게 연락 체계와 대응 원칙</b>을 알립니다. <b>교육 기록 자체가 관리 체계의 증거</b>가 됩니다.</li>
+        <li><b>⑤ 사후 절차</b> — 범위를 넘은 자료가 확인되면 <b>이의를 문서로 정리해 전달</b>하고, <b>자료의 반환과 복제본 폐기를 요청</b>하며 <b>요청과 답변을 모두 남깁니다.</b></li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;"><b>한 시간의 침묵이 수사 자료를 바꿉니다.</b> 그 한 시간을 지키는 것은 결단이 아니라 <b>미리 정해 둔 연락 체계</b>입니다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
