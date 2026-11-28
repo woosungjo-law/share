@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>위치정보는 기능이 아니라 규제다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>위치정보는 기능이 아니라 규제다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 위치정보를 받는 순간 <b>동의의 형식이 바뀝니다.</b> 기존 동의 화면에 한 줄을 더하는 방식으로는 <b>개별 동의가 되지 않습니다.</b> 그래서 대표가 판단할 것은 <b>일정을 미룰지</b>가 아니라, <b>화면과 서버와 신고를 언제 누구에게 맡길지</b>입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>사건의 시작: 개편 일정표와 법무 검토</h2>
+    <div class="analogy">
+      <b>매장에 새 출입문을 다는 일</b>을 떠올려 보십시오. <b>문 하나 붙이는 일처럼 보이지만</b> 소방과 구조 기준이 함께 따라옵니다. 모아플레이스의 서정후 대표는 <b>앱 개편 일정표를 승인하려다 멈췄습니다.</b> 신규 기능은 <b>이용자 위치를 받아 주변 매장을 보여 주는 것</b>이었고, 일정표에는 <b>개인정보 처리방침 수정 한 줄</b>이 들어 있었습니다. <b>법무에서는 검토가 더 필요하다는 의견</b>을 냈습니다. 대표가 판단해야 할 것은 <b>일정을 미룰지, 아니면 검토를 나중으로 돌릴지</b>였습니다. <b>위치정보가 들어가는 순간 무엇이 달라지는지, 그 차이가 일정과 비용에 어떤 영향을 주는지</b>가 기준이 되어야 했습니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 보는 핵심: 세 항목 고지와 개별 동의</h2>
+    <p><b>위치정보법 제15조</b>는 <b>개인위치정보를 수집·이용하려면 이용 목적, 수집 주기, 보유 기간을 구체적으로 고지하고 개별적 동의를 받도록</b> 요구합니다. <b>세 항목은 형식이 아니라 각각이 고지 대상</b>입니다. <b>일반 개인정보 처리 동의보다 더 까다로운 절차적 요건을 충족해야 한다</b>는 뜻입니다.</p>
+    <p><b>이용자의 통제권</b>도 정해져 있습니다. <b>위치정보법 제18조</b>는 <b>정보주체가 언제든지 위치정보 제공의 일시 중지를 요청할 수 있는 권리</b>를 보장하고, <b>사업자는 이를 즉시 이행</b>해야 합니다. <b>기능을 설계할 때 이 요청을 처리하는 경로가 함께 설계</b>되어야 합니다.</p>
+    <p><b>사업자의 지위에 따라 신고 의무</b>도 붙습니다. <b>위치정보법 제5조와 제9조</b>는 사업자를 <b>위치정보사업자 또는 위치기반서비스사업자로 구분해 각각 방송통신위원회에 신고</b>하도록 정합니다. <b>어느 지위인지에 따라 준비 서류와 일정이 달라집니다.</b></p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외: 비용이 생기는 세 지점</h2>
+    <p><b>화면 설계 비용.</b> <b>동의를 개별로 받으려면 동의 화면을 다시 설계</b>해야 합니다. <b>기존 화면에 항목을 한 줄 더하는 방식으로는 개별 동의가 되지 않습니다.</b> 실태조사에서도 <b>약관 전체 동의로 위치정보 수집을 일괄 처리한 사례</b>가 확인되었습니다.</p>
+    <p><b>운영 비용.</b> <b>일시 중지 요청을 즉시 처리하려면 설정 화면과 서버 처리가 함께 준비</b>되어야 합니다. <b>요청을 받는 창구만 만들고 처리가 늦으면 같은 문제가 반복</b>됩니다. 실태조사에서는 <b>일시 중지 요청 절차를 안내하지 않은 사례</b>도 확인되었습니다.</p>
+    <p><b>적용 법률의 이중 구조.</b> <b>개인위치정보는 개인정보 보호법상 개인정보에 해당</b>하지만, 별도로 <b>위치정보의 보호 및 이용 등에 관한 법률이 더 엄격한 규제</b>를 부과합니다. <b>한쪽 기준으로 정리해 두면 다른 쪽에서 다시 손봐야 합니다.</b> <b>위치정보법 제21조에 따른 실태조사</b>가 이 정합성을 봅니다.</p>
+    <p><b>위탁의 책임 소재.</b> <b>위치정보 처리를 외부에 맡기더라도 고지와 동의의 주체는 회사</b>입니다. <b>수탁사가 어떤 목적으로 위치정보를 쓰는지 확인하는 절차를 계약에 넣어</b> 두어야 합니다.</p>
+    <p><b>담당의 분산.</b> <b>화면 설계와 서버 처리, 신고 업무가 다른 부서에 흩어져 있으면 하나만 늦어도 출시 전체가 밀립니다.</b></p>
+    <div class="callout">
+      <b>주의.</b> 판단 기준은 세 가지로 정리됩니다. <b>어떤 위치정보를 어느 주기로 수집하는지, 그 목적과 기간이 화면에 특정되어 있는지, 이용자가 언제든 멈출 수 있는 경로가 실제로 작동하는지.</b>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것: 여섯 가지를 정합니다</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>출시 전 점검표와 담당·일정을 먼저 문서로 만드십시오.</b> 정할 항목은 다음과 같습니다.</p>
+      <ol>
+        <li><b>① 출시 전 확인 항목</b> — <b>고지 항목, 동의 분리, 일시 중지 경로, 신고 상태</b>를 출시 전 점검표에 넣고, <b>네 항목이 모두 확인되어야 배포</b>합니다.</li>
+        <li><b>② 담당과 일정</b> — <b>화면 설계와 서버 처리, 신고 업무를 각각 누가 언제까지</b> 하는지 정합니다.</li>
+        <li><b>③ 기능 축소의 기준</b> — <b>수집 주기를 넓히거나 보유 기간을 줄이면 규제 부담이 달라집니다.</b> <b>기능의 정확도와 규제 부담을 맞바꾸는 판단 기준</b>을 미리 정해 두면 현장에서 결정이 빨라집니다.</li>
+        <li><b>④ 문의 대응 창구</b> — <b>이용자가 위치정보 제공 중지를 요청했을 때 어느 창구가 어떤 시간 안에 처리하는지</b> 정합니다. <b>이 창구가 곧 규제 대응의 실체</b>입니다.</li>
+        <li><b>⑤ 위탁 처리의 책임 소재</b> — <b>수탁사의 이용 목적을 확인하는 절차를 계약에</b> 넣습니다.</li>
+        <li><b>⑥ 두 법을 함께 점검할 책임자</b> — <b>위치정보법 제30조가 전제하는 것처럼 개인위치정보는 개인정보 보호법상 개인정보에도 해당</b>합니다. <b>한쪽 법만 검토한 상태로 출시하면 다른 쪽 기준에서 다시 문제가 생깁니다.</b></li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;"><b>위치정보는 기능이 아니라 규제입니다.</b> 개편 일정표에 <b>처리방침 수정 한 줄</b>만 적혀 있다면, 그 일정표는 아직 <b>네 개의 문</b>을 통과할 준비가 되지 않은 것입니다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
