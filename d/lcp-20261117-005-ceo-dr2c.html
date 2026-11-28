@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>면세인 줄 알았던 거래, 세금계산서 한 장에서 갈린다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>면세인 줄 알았던 거래, 세금계산서 한 장에서 갈린다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> <b>세율 분류는 회계의 문제가 아니라 거래의 문제입니다.</b> <b>과세·면세·영세율의 삼분법과 세금계산서 발행의무, 가산세는 서로 다른 축이지만 한 장부에서 맞물립니다.</b> <b>분류를 먼저 정하고 증빙을 붙이는 순서가 비용을 줄입니다.</b>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>사건의 시작: 해외 납품 건을 두고 보고가 엇갈렸다</h2>
+    <div class="analogy">
+      <b>영업팀은 영세율로 처리했다 하고, 회계팀은 면세로 신고했다고 하는, 같은 거래에 두 가지 이름표가 붙은 상황</b>을 떠올려 보십시오. <b>이름표가 다르면 공제도 다르게 흘러갑니다.</b> 중소기업 대표 서주하는 <b>해외 납품 건의 정산 보고를 받고 의문이 생겼습니다.</b> <b>영업팀은 영세율로 처리했다고 했고, 회계팀은 면세로 신고했다고 했습니다.</b> <b>거기에 세금계산서를 나중에 수정했다는 얘기와, 거래처가 간이과세자라는 설명까지 섞였습니다.</b> <b>서 대표는 비용보다 먼저 정리해야 할 것이 있었습니다. 어떤 거래에 어떤 세율이 붙는지, 세금계산서를 언제 발행해야 하는지, 그리고 공제를 어느 쪽으로 챙겼는지.</b>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 보는 핵심: 분류와 증빙이 함께 간다</h2>
+    <p><b>부가가치세</b>는 <b>재화·용역의 공급과 수입에 부과하는 간접소비세입니다.</b> <b>부가가치세법 제4조</b>를 중심으로 <b>과세·면세·영세율의 삼분법이 만들어지고, 세금계산서 발행의무가 옆에 있으며, 가산세가 이를 담보합니다.</b> <b>서 대표가 받은 보고가 엇갈린 이유도 이 축을 구분하지 않았기 때문입니다.</b></p>
+    <p><b>영세율은 부가가치세법 제24조에서 봅니다.</b> <b>수출·국외제공용역·외국항행·군납·외국관광객 즉시환급 등이 대상에 해당하는지가 다투어질 때, 문제는 실질적 수출 여부와 외국용역 공급 해당 여부입니다.</b> <b>서류상의 수출과 실제 국외 공급을 나눠 봐야 한다는 뜻입니다.</b></p>
+    <p><b>세금계산서는 부가가치세법 제32조입니다.</b> <b>2023년 이후 수정세금계산서 발행기한이 짧아지고 전자세금계산서 의무발행이 늘었습니다.</b> <b>예전 관행으로 미뤘다가는 기한을 넘기기 쉽습니다.</b> <b>부가가치세법 제47조의 전자세금계산서 발급·전송에 대한 세액공제 특례도 함께 챙겨야 합니다.</b></p>
+    <p><b>실무에서 자주 나오는 문제는 면세·영세율 오판, 세금계산서 지연발행·허위기재, 대손세액공제 요건, 수정신고 시기입니다.</b> <b>이를 체계적으로 정리해 두지 않으면 한 건의 실수가 다음 신고로 이어집니다.</b> <b>한 곳을 고쳤다고 해서 같은 장부의 다른 신고까지 함께 정리되는 것은 아닙니다.</b> <b>분류표와 발행 내역을 한 장에서 대조하는 절차를 만들어 두지 않으면, 작은 오류가 쌓여 다음 분기 비용으로 돌아옵니다.</b> <b>대손세액공제는 부가가치세법 제57조의 경정과 맞물려, 중복공제를 피하려면 어느 쪽을 선택했는지 남겨야 합니다.</b> <b>간이과세는 부가가치세법 제61조입니다. 8천만 원 기준의 변동 이력과 업종별 부가가치율 개정 내역을 확인해야 과거 분류를 다시 볼 수 있습니다.</b></p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외: 대표가 볼 지점</h2>
+    <p><b>첫째, 거래별 분류표를 만듭니다.</b> <b>부가가치세법 제4조에 따라 과세·면세·영세율을 한 건씩 적습니다.</b></p>
+    <p><b>둘째, 실질을 확인합니다.</b> <b>부가가치세법 제24조에 따라 수출과 외국용역이 실제 요건에 맞는지 봅니다.</b></p>
+    <p><b>셋째, 발행 기한을 지킵니다.</b> <b>부가가치세법 제32조에 따라 수정 발행 시점을 미리 달력에 표시합니다.</b></p>
+    <p><b>넷째, 특례를 챙깁니다.</b> <b>부가가치세법 제47조에 따른 전자세금계산서 세액공제를 확인합니다.</b></p>
+    <p><b>다섯째, 빈발 쟁점을 목록화합니다.</b> <b>오판·지연발행·허위기재·수정신고 시기를 한 장에 정리합니다.</b></p>
+    <p><b>여섯째, 중복공제를 막습니다.</b> <b>부가가치세법 제57조에 따라 대손과 경정 중 선택한 경로를 기록합니다.</b></p>
+    <p><b>일곱째, 간이과세 이력을 봅니다.</b> <b>부가가치세법 제61조의 기준 변동과 부가가치율 개정을 대조합니다.</b></p>
+    <p><b>여덟째, 보고 기준을 맞춥니다.</b> <b>영업과 회계가 같은 분류표를 쓰게 합니다.</b></p>
+    <div class="callout">
+      <b>주의.</b> <b>한 곳을 고쳤다고 같은 장부의 다른 신고까지 정리되지는 않습니다.</b> <b>분류표와 발행 내역을 한 장에서 대조해야 합니다.</b>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것: 세율 분류를 경영 지표로 본다</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>세율 분류는 회계의 문제가 아니라 거래의 문제입니다.</b></p>
+      <ol>
+        <li><b>① 분류표 승인</b> — <b>부가가치세법 제4조에 따라 거래 분류표를 승인한다.</b></li>
+        <li><b>② 실질 확인</b> — <b>부가가치세법 제24조에 따라 실질 수출·용역 요건을 확인한다.</b></li>
+        <li><b>③ 발행 기한</b> — <b>부가가치세법 제32조에 따라 세금계산서 기한을 관리한다.</b></li>
+        <li><b>④ 특례 확인</b> — <b>부가가치세법 제47조에 따라 전자세금계산서 특례를 확인한다.</b></li>
+        <li><b>⑤ 쟁점 보고</b> — <b>오판·지연발행·허위기재·수정신고 쟁점을 보고받는다.</b></li>
+        <li><b>⑥ 공제 경로</b> — <b>부가가치세법 제57조에 따라 공제 경로 중복을 점검한다.</b></li>
+        <li><b>⑦ 간이과세</b> — <b>부가가치세법 제61조에 따라 간이과세 기준 변동을 검토한다.</b></li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;"><b>분류를 먼저 정하고 증빙을 붙이는 순서가 비용을 줄입니다.</b> <b>그 순서를 대표가 승인 단계에서 정해야 합니다.</b></p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
