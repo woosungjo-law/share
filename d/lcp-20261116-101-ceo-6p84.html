@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사람을 줄이는 결정은, 문서를 남기는 결정이다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>사람을 줄이는 결정은, 문서를 남기는 결정이다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> <b>인력을 줄이는 결정은 비용 절감처럼 보이지만, 절차가 빠지면 오히려 더 큰 비용이 됩니다.</b> <b>정당한 이유가 있어도 서면이 없으면 절차에서 무너질 수 있고, 서면이 있어도 이유가 부족하면 결정 자체가 흔들립니다.</b> <b>네 요건을 문서로 채우는 일이 그 비용을 막습니다.</b>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>사건의 시작: 비용을 줄여야 하는데, 방법이 정리해고뿐이라고 했다</h2>
+    <div class="analogy">
+      <b>비용을 줄이려고 사람부터 내보내기로 했는데, 정작 그 결정의 근거를 적어 놓은 종이가 없는 상황</b>을 떠올려 보십시오. <b>가장 빠른 방법이 가장 비싼 방법이 될 수 있습니다.</b> 해밀디자인의 대표 민경원은 <b>분기 손익을 보고받고 인력 구조조정을 검토했습니다.</b> <b>재무 담당이 내놓은 안은 몇 명을 내보내는 것이 가장 빠르다는 것이었고, 임원들은 그 안에 고개를 끄덕였습니다.</b> 그런데 <b>인사 담당이 한 가지를 물었습니다. 해고를 하려면 어떤 요건을 갖춰야 하는지, 지금 그 요건을 채우고 있는지.</b> <b>민 대표는 그제야 이 문제가 비용 계산이 아니라 절차의 문제라는 것을 떠올렸습니다.</b> <b>정리해고를 결정한다면 무엇을 먼저 준비해야 하는지, 절차가 빠지면 어떤 비용이 되돌아오는지, 그리고 언제 결정을 멈춰야 하는지를 정해야 했습니다.</b>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 보는 핵심: 정당성과 서면, 그리고 네 가지 요건</h2>
+    <p><b>근로기준법 제23조</b>는 <b>정당한 이유 없는 해고를 금지</b>합니다. <b>사람을 내보내는 결정에는 그 이유가 사실로 뒷받침되어야 한다</b>는 뜻입니다. <b>같은 법 제27조</b>는 <b>해고의 사유와 시기를 서면으로 통지하도록 정합니다.</b> <b>구두로 전한 통보는 이 요건을 채우지 못합니다.</b> <b>정당한 이유가 있어도 서면이 없으면 절차에서 무너질 수 있고, 서면이 있어도 이유가 부족하면 결정 자체가 흔들립니다.</b></p>
+    <p><b>경영상 이유로 하는 정리해고는 근로기준법 제24조가 정하는 별도의 길을 갑니다.</b> <b>긴박한 경영상 필요성, 해고를 피하기 위한 노력, 공정한 대상자 선정, 근로자 대표와의 성실한 협의. 네 가지를 모두 충족해야 합니다.</b> <b>이 요건은 경영진이 느끼는 절박함으로 채워지지 않습니다.</b> <b>숫자로 된 경영 자료, 먼저 시도한 비용 절감의 기록, 대상자를 고른 기준, 협의한 자리의 회의록이 각각 필요합니다.</b></p>
+    <p><b>경영의 관점에서 보면 이 조항들은 정리해고를 어렵게 만드는 장애물이 아니라, 결정의 비용을 미리 계산하게 하는 장치입니다.</b> <b>해고 회피 노력을 기록하려면 대안을 먼저 검토해야 하고, 대상자 선정을 공정하게 하려면 기준을 먼저 정해야 합니다.</b> <b>그 과정을 거치면 인력 감축이 유일한 답이 아니었음을 발견하기도 합니다.</b> <b>절차는 결정을 늦추지만, 잘못된 결정으로 발생하는 비용을 막습니다.</b></p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외: 결정 전에 확인할 것들</h2>
+    <p><b>첫째, 경영상 필요성을 숫자로 확인한다.</b> <b>매출, 영업이익, 현금 흐름, 향후 계약 규모를 한 장에 정리합니다.</b> <b>"어렵다"는 느낌이 아니라 수치가 있어야 긴박성을 설명할 수 있습니다.</b></p>
+    <p><b>둘째, 해고를 피할 방법을 먼저 시도한다.</b> <b>신규 채용 중단, 비용 삭감, 근무 시간 조정, 사업 구조 조정 같은 대안을 검토한 기록을 남깁니다.</b> <b>아무런 시도 없이 인력 감축으로 가면 해고 회피 노력 요건이 비어 있다는 지적을 받습니다.</b></p>
+    <p><b>셋째, 대상자 선정 기준을 미리 정한다.</b> <b>직무의 필요성, 성과, 대체 가능성을 기준으로 삼고, 그 기준을 모든 대상에게 같은 방식으로 적용합니다.</b> <b>기준을 나중에 만들면 공정함을 설명할 수 없습니다.</b></p>
+    <p><b>넷째, 근로자 대표와 협의한다.</b> <b>통보가 아니라 협의입니다.</b> <b>어떤 안을 놓고 논의했는지, 어떤 이견이 있었는지, 그 이견을 어떻게 받아들였는지를 회의록으로 남깁니다.</b> <b>성실한 협의였음을 보여 주는 자료가 절차의 핵심입니다.</b></p>
+    <p><b>다섯째, 서면 통지의 시점과 내용을 관리한다.</b> <b>사유와 시기를 적은 문서를 충분히 앞서 전달하고, 전달 사실을 남깁니다.</b> <b>임원이 구두로 말한 내용은 통지가 아닙니다.</b></p>
+    <p><b>여섯째, 일반 해고와 정리해고를 구분한다.</b> <b>개인의 비행에 따른 해고는 근로기준법 제23조의 정당한 이유 문제이고, 경영상 필요에 따른 해고는 제24조의 네 요건 문제입니다.</b> <b>두 경로를 섞어 쓰면 어느 쪽의 요건도 채우지 못합니다.</b></p>
+    <p><b>일곱째, 중단 기준을 정한다.</b> <b>네 요건 중 하나라도 문서로 채워지지 않으면 감축 규모를 줄이거나 시점을 미루는 기준을 미리 정해 둡니다.</b> <b>현장에서 즉흥적으로 밀어붙이면 그 판단이 곧 분쟁 비용이 됩니다.</b></p>
+    <div class="callout">
+      <b>주의.</b> <b>임원이 구두로 말한 내용은 통지가 아닙니다.</b> <b>정당한 이유와 서면 통지가 함께 있어야 결정이 서 있습니다.</b>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것: 네 요건을 채우기 전에 결정을 유보한다</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>절차는 결정을 늦추지만, 잘못된 결정으로 발생하는 비용을 막습니다.</b></p>
+      <ol>
+        <li><b>① 필요성</b> — <b>경영상 필요성을 재무 자료로 확인한다.</b></li>
+        <li><b>② 회피 노력</b> — <b>해고 회피 노력의 대안과 검토 기록을 남긴다.</b></li>
+        <li><b>③ 선정 기준</b> — <b>대상자 선정 기준을 미리 정하고 균일하게 적용한다.</b></li>
+        <li><b>④ 협의 기록</b> — <b>근로자 대표와의 협의 내용을 회의록으로 남긴다.</b></li>
+        <li><b>⑤ 서면 통지</b> — <b>근로기준법 제27조에 따라 사유와 시기를 서면으로 통지한다.</b></li>
+        <li><b>⑥ 경로 구분</b> — <b>일반 해고와 정리해고의 경로를 구분한다.</b></li>
+        <li><b>⑦ 결정 유보</b> — <b>네 요건이 갖춰지지 않으면 감축 결정을 유보한다.</b></li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;"><b>사람을 줄이는 결정은 문서를 남기는 결정입니다.</b> <b>그 문서가 비용을 막습니다.</b></p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
