@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>명함이 아니라 권한이 기준입니다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 중대재해·안전보건</div>
+    <h1>명함이 아니라 권한이 기준입니다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> <b>대표이사라서 경영책임자인 것이 아니라, 그 지위에 있는 사람이 실제로 그 권한을 행사했는지가 기준</b>입니다. <b>반대로 대표이사가 아닌 사람도 제2조 제9호의 두 번째 갈래에 들어갈 수 있습니다.</b> <b>명의가 아니라 지배의 실질이 기준</b>입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>조직도에 없던 이름</b>을 떠올려 보십시오. <b>수사는 현장소장에서 시작해 본사로 올라왔고, 예상하지 못한 이름이 전달</b>되었습니다 — <b>대표이사가 아니라 안전보건을 총괄하던 상무</b>였습니다. <b>조직도에는 대표이사 아래에 그 상무가 있었지만, 예산 편성과 인사 발령에 관한 실제 결정은 그에게서 나오고</b> 있었습니다. 확인해야 할 것은 <b>직책이 아니라 그 사람이 실제로 무엇을 결정할 수 있었는지</b>입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점 — 목적·정의·의무·적용 범위</h2>
+    <p><b>① 이 법이 겨냥한 지점(중대재해처벌법 제1조).</b> <b>안전·보건 조치의무를 위반하여 인명피해를 발생하게 한 사업주, 경영책임자, 공무원 및 법인의 처벌 등을 규정함으로써 중대재해를 예방하고 시민과 종사자의 생명과 신체를 보호함을 목적</b>으로 합니다. <b>현장 관리자 개인의 주의의무에 머물던 규율을 최고경영층의 의무로 끌어올린 것이 이 법의 출발점</b>입니다.</p>
+    <p><b>② 경영책임자의 정의(제2조 제9호).</b> <b>두 갈래</b>입니다 — <b>사업을 대표하고 사업을 총괄하는 권한과 책임이 있는 사람</b>이 그 하나이고, <b>그에 준하여 안전보건에 관한 권한과 책임이 있는 사람</b>이 다른 하나입니다. <b>두 번째 갈래가 실무에서 문제됩니다 — 대표이사가 아닌 사람도 이 정의에 들어올 수 있기 때문입니다.</b></p>
+    <p><b>③ 의무의 내용(제4조 제1항).</b> <b>실질적으로 지배·운영·관리하는 사업 또는 사업장에서 종사자의 안전·보건상 유해 또는 위험을 방지하기 위하여 그 사업 또는 사업장의 특성 및 규모 등을 고려하여 각 호의 조치</b>를 하여야 합니다. <b>제1호</b>는 <b>재해예방에 필요한 인력 및 예산 등 안전보건관리체계의 구축 및 그 이행</b>, <b>제2호</b>는 <b>재해 발생 시 재발방지 대책의 수립 및 그 이행</b>, <b>제3호</b>는 <b>중앙행정기관·지방자치단체가 관계 법령에 따라 개선, 시정 등을 명한 사항의 이행</b>에 관한 조치입니다. <b>세 항목 모두 돈과 사람을 움직일 수 있는 지위를 전제로 합니다.</b></p>
+    <p><b>④ 도급 구조(제5조).</b> <b>제3자에게 도급, 용역, 위탁 등을 행한 경우 제3자의 종사자에게 중대산업재해가 발생하지 아니하도록 제4조의 조치</b>를 하여야 한다고 정하고, 다만 <b>사업주나 법인 또는 기관이 그 시설, 장비, 장소 등에 대하여 실질적으로 지배·운영·관리하는 책임이 있는 경우에 한정</b>한다고 정합니다.</p>
+    <div class="callout"><b>도급을 주었다는 사실만으로 책임이 확정되지 않고, 지배가 없으면 의무도 없습니다.</b> <b>이 한정 문구가 원청과 수급인의 경계를 만듭니다.</b></div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외 — 실질 권한은 어떻게 드러나는가</h2>
+    <ul class="points">
+      <li><b>직함은 결론이 아닙니다</b> — <b>그 지위에 있는 사람이 실제로 그 권한을 행사했는지가 기준</b>입니다.</li>
+      <li><b>권한의 증거는 문서에 남습니다</b> — <b>예산 편성권, 인사 발령권, 안전보건 조직의 지휘 계통, 결재선, 위험성 평가 결과의 승인 권한</b>이 그 증거입니다. <b>결재 문서에 이름이 남아 있는 사람은 그 결정의 주체로 설명됩니다.</b></li>
+      <li><b>도급 구조에는 한정 요건이 붙습니다</b> — <b>제5조의 의무는 시설, 장비, 장소 등에 대한 실질적 지배·운영·관리 책임이 있는 경우에만 미칩니다.</b></li>
+      <li><b>위임해도 남는 부분이 있습니다</b> — <b>안전보건 업무를 다른 임원에게 맡겼더라도, 예산과 인력을 결정하는 권한이 남아 있다면 그 부분은 이전되지 않습니다.</b> <b>위임의 범위와 실제 행사 범위가 다르면 다툼이 생깁니다.</b></li>
+      <li><b>판단 단위는 사업장입니다</b> — <b>같은 법인이라도 사업장마다 지배 구조가 다를 수 있습니다.</b> <b>사업장별로 누가 인력과 예산을 결정했는지를 따로 정리해야 합니다.</b></li>
+    </ul>
+    <div class="callout"><b>적용 범위의 본문은 대상 사업장을 "실질적으로 지배·운영·관리하는" 사업 또는 사업장으로 한정합니다.</b> <b>명의가 아니라 지배의 실질이 기준이라는 뜻입니다.</b></div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;"><b>조직도 옆에 권한표를 붙이십시오.</b> <b>직책, 결재 권한, 예산 편성 관여 여부, 안전보건 조직 지휘 여부를 네 개의 열로 두고 사람별로 채우는 경영책임자 후보표</b>가 출발점입니다 — <b>제2조 제9호의 두 갈래 중 어디에 해당하는지를 함께 적으십시오.</b></p>
+    <ol>
+      <li><b>① 정의 대조</b> — <b>제2조 제9호의 두 갈래에 각 임원을 대입</b>해 봅니다.</li>
+      <li><b>② 권한 증거</b> — <b>결재선·예산 편성·인사 발령 기록을 사람별로</b> 모읍니다.</li>
+      <li><b>③ 의무 이행</b> — <b>제4조 제1항 각 호의 이행 자료와 승인자를 짝지어</b> 정리합니다.</li>
+      <li><b>④ 지배 범위</b> — <b>사업장별 실질적 지배·운영·관리 관계를 문서로</b> 확정합니다.</li>
+      <li><b>⑤ 도급 한정</b> — <b>제5조의 한정 요건 해당 여부를 관계별로</b> 표시합니다.</li>
+      <li><b>⑥ 위임 점검</b> — <b>위임 문서와 실제 결재 기록의 간격</b>을 확인합니다.</li>
+    </ol>
+    <p style="margin-top:16px;margin-bottom:0;"><b>도급 관계 도면</b>에는 <b>시설, 장비, 장소별로 누가 지배·운영·관리하는지를 표시하고, 제5조의 한정 요건에 해당하는지 여부를 관계마다</b> 적으십시오 — <b>이 도면이 원청 책임의 범위를 정합니다.</b> <b>위임 장부</b>에는 <b>어떤 권한을 누구에게 언제 위임했고, 무엇이 남았는지</b>를 적고, <b>위임 문서와 실제 결재 기록이 어긋나는 지점을 먼저 찾으십시오.</b></p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
