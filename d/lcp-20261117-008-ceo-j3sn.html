@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>철회 요청이 들어온 뒤에도 데이터가 간다면, 기록이 답한다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>철회 요청이 들어온 뒤에도 데이터가 간다면, 기록이 답한다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> <b>동의·철회 관리와 수신자 관리는 서로 다른 팀이 맡기 쉬운 영역이고, 한쪽이 기록을 남기지 않으면 다른 쪽의 설명이 힘을 얻지 못합니다.</b> <b>철회가 제때 반영됐는지가 갈림길입니다.</b> <b>데이터 서비스에서 가장 비싼 비용은 없는 기록입니다.</b>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>사건의 시작: 고객 한 명의 민원이 경영 문제가 됐다</h2>
+    <div class="analogy">
+      <b>고객이 \"그만 보내달라\"고 했는데, 그 요청이 접수 창구에만 남고 데이터가 흐르는 파이프에는 전달되지 않은 상황</b>을 떠올려 보십시오. <b>접수와 반영은 다른 일입니다.</b> 마이데이터 서비스를 만드는 스타트업의 대표 오민서는 <b>고객 민원 보고를 받았습니다.</b> <b>금융소비자가 전송요구를 철회했는데도 데이터가 계속 수집되고 제3자에게 제공됐다는 내용이었습니다.</b> <b>실무자는 철회를 접수했다고 했고, 기술팀은 전송 로그를 확인하겠다고 했습니다.</b> <b>오 대표가 판단해야 할 것은 세 가지였습니다. 동의와 철회가 어떤 근거로 관리되는지, 철회 뒤의 데이터 흐름을 누가 입증하는지, 그리고 금융·신용 정보에 어떤 보호가 필요한지.</b>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 보는 핵심: 동의 관리와 수신자 관리를 나눠 본다</h2>
+    <p><b>본인신용정보의 전송요구·동의</b>는 <b>신용정보법 제33조의2</b>에 따라 이뤄집니다. <b>데이터 제공의 출발점입니다.</b> <b>오 대표가 확인한 민원도 동의가 있었는지보다, 철회가 제때 반영됐는지에서 갈립니다.</b></p>
+    <p><b>금융소비자가 전송요구를 철회했는데도 데이터가 계속 수집되거나 제3자에게 제공되면, 동의범위·철회, 수신자의 보안책임, 개인정보 보호가 함께 문제로 다루어질 수 있습니다.</b> <b>세 갈래를 한 덩어리로 보면 대응이 흔들립니다.</b> <b>동의·철회는 신용정보법 제33조의2에 연결되고, 나머지는 별도로 확인해야 합니다.</b></p>
+    <p><b>민감정보에는 개인정보보호법 제23조가 적용됩니다.</b> <b>금융·신용 정보가 특별 보호된다는 점을 고려하면, 동의 관리만 잘했다고 안심할 일이 아닙니다.</b> <b>보안과 보관의 이행도 함께 점검 대상입니다.</b></p>
+    <p><b>오 대표는 양쪽 기록을 나란히 보기로 했습니다.</b> <b>금융소비자 측은 전송요구·철회·동의범위의 기록을 확보하고, 철회 후의 수집·제3자 제공을 입증하며, 위반이나 손해배상을 주장할 수 있습니다.</b> <b>사업자 측은 동의·철회·전송의 적정 관리 기록을 입증하고 보안·보관의 이행을 제시할 수 있습니다.</b> <b>핵심은 동의·철회 관리와 수신자의 보안·제3자 제공입니다.</b> <b>어느 쪽 기록이 없으면 설명이 길어집니다.</b></p>
+    <p><b>동의·철회 시점과 범위를 남기는 일, 그리고 정보를 받은 쪽에 철회가 전달됐는지를 확인하는 일을 같은 타임라인에서 관리해야 합니다.</b> <b>개인정보보호법 제23조의 민감정보 보호까지 같은 표에 올리면, 민원이 커지기 전에 어느 구간에서 문제가 생겼는지 특정할 수 있습니다.</b> <b>기록을 경영 자산으로 보는 관점이 여기서 나옵니다.</b></p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외: 경영진이 정할 것들</h2>
+    <p><b>첫째, 동의 타임라인을 만듭니다.</b> <b>신용정보법 제33조의2에 따라 전송요구·동의와 철회 시점을 남깁니다.</b></p>
+    <p><b>둘째, 동의범위를 확정합니다.</b> <b>어떤 데이터를 어디까지 제공할지 문서로 정합니다.</b></p>
+    <p><b>셋째, 철회 후 로그를 확인합니다.</b> <b>수집과 제3자 제공이 철회 뒤에도 이어졌는지 대조합니다.</b></p>
+    <p><b>넷째, 수신자 전달을 점검합니다.</b> <b>철회 사실이 수신자에게 갔는지, 제공이 멈췄는지 확인합니다.</b></p>
+    <p><b>다섯째, 보호 조치를 봅니다.</b> <b>개인정보보호법 제23조에 따라 민감정보의 보안·보관 이행을 살핍니다.</b></p>
+    <p><b>여섯째, 입증 자료를 모읍니다.</b> <b>동의·철회·전송 관리 기록과 보안 이행 내역을 한곳에 둡니다.</b></p>
+    <p><b>일곱째, 주장 순서를 정합니다.</b> <b>사실관계를 먼저 확정하고 위반·손해배상 문제는 그 다음에 다룹니다.</b></p>
+    <p><b>여덟째, 단정을 피합니다.</b> <b>민원 한 건으로 책임을 확정하지 말고 동의·철회와 수신자 관리를 분리해 봅니다.</b></p>
+    <div class="callout">
+      <b>주의.</b> <b>민원 한 건으로 책임을 확정하지 마십시오.</b> <b>동의·철회와 수신자 관리를 분리해 보는 것이 먼저입니다.</b>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것: 기록을 경영 자산으로 만든다</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>데이터 서비스에서 가장 비싼 비용은 없는 기록입니다.</b></p>
+      <ol>
+        <li><b>① 동의·철회 기록</b> — <b>신용정보법 제33조의2에 따라 동의·철회 기록을 남긴다.</b></li>
+        <li><b>② 동의범위</b> — <b>동의범위를 문서로 확정한다.</b></li>
+        <li><b>③ 철회 후 로그</b> — <b>철회 후 수집·제3자 제공 로그를 대조한다.</b></li>
+        <li><b>④ 수신자 확인</b> — <b>수신자에게 철회가 전달됐는지 확인한다.</b></li>
+        <li><b>⑤ 민감정보</b> — <b>개인정보보호법 제23조에 따라 민감정보 보호를 점검한다.</b></li>
+        <li><b>⑥ 이행 자료</b> — <b>보안·보관 이행 자료를 확보한다.</b></li>
+        <li><b>⑦ 주장 순서</b> — <b>위반·손해배상 주장은 사실관계 뒤에 다룬다.</b></li>
+        <li><b>⑧ 분리 보고</b> — <b>동의 관리와 수신자 관리를 분리해 보고받는다.</b></li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;"><b>동의·철회와 수신자 관리를 나눠 기록하는 것부터가 신뢰를 지키는 시작입니다.</b></p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
