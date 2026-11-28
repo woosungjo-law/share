@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>지급명령이 송달되지 않았다고 바로 포기할 필요는 없다 — 주소를 확인할지 소송으로 넘어갈지 순서를 정하면 된다.</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 지급명령과 송달</div>
+    <h1>지급명령이 송달되지 않았다고 바로 포기할 필요는 없다 — 주소를 확인할지 소송으로 넘어갈지 순서를 정하면 된다.</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> <b>서류가 돌아왔다고 해서 청구가 끝난 것은 아닙니다.</b> <b>민사소송법 제466조</b>에 따르면 지급명령은 <b>공시송달에 의하지 않고는 송달할 수 없는 때에는 할 수 없고</b>, 송달할 수 없는 경우 법원이 <b>직권으로 사건을 소송절차로 회부</b>할 수도 있습니다. 그래서 지금 할 일은 <b>같은 주소를 다시 적는 것이 아니라</b>, <b>주소를 언제 어디서 확인했는지 정리</b>하고 <b>보정기한을 놓치지 않는 것</b>입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>소포를 보냈는데 주소 불명으로 되돌아온 상황</b>을 떠올려 보십시오. <b>같은 주소로 다시 부치면 또 돌아옵니다.</b> 필요한 것은 <b>새 주소를 어디서 확인했는지</b>입니다. 택배 전표에 찍힌 주소, 최근에 받은 문자에 적힌 주소처럼 <b>날짜가 있는 근거</b>가 있어야 접수처가 "이 주소로 다시 보내 보자"고 판단합니다. 그리고 <b>접수처가 정해 준 보정 기한</b>을 넘기면, 그 소포는 <b>다른 방식의 절차로 넘어갑니다</b>. 되돌아온 봉투를 버리지 않는 이유도 여기 있습니다 — <b>언제 왜 돌아왔는지가 기록</b>이기 때문입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>
+      <b>송달이 되지 않으면 절차가 갈립니다.</b> <b>민사소송법 제466조</b>에 따르면 지급명령은 <b>공시송달에 의하지 않고는 송달할 수 없는 때에는 할 수 없습니다</b>. 그리고 지급명령을 송달할 수 없는 경우 <b>법원이 직권으로 사건을 소송절차로 회부할 수도 있습니다</b>. 쉽게 말해 <b>주소보정으로 다시 전달할 기회가 있는지, 아니면 일반 소송으로 넘어갈지</b>를 확인하는 단계입니다.
+    </p>
+    <p>
+      그리고 <b>지급명령을 신청했다는 사실만으로 돈을 받게 되는 것은 아닙니다</b>. <b>계약서, 물건을 보냈다는 자료, 돈을 달라고 요청한 기록</b>을 함께 보관해야 합니다. 주소를 확인할 때는 <b>상대방의 개인정보를 필요 이상으로 모으지 않고</b>, <b>내가 합법적으로 가지고 있는 자료의 출처</b>를 적습니다.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>주소와 기한을 함께 봐야 합니다</h2>
+    <ul class="points">
+      <li><b>주소가 서로 다를 때</b> — <b>계약서 주소, 최근 거래서류의 주소, 상대방이 직접 알려준 주소</b>가 다르면 <b>날짜를 비교</b>합니다.</li>
+      <li><b>보정 기한이 먼저다</b> — 법원에서 보정하라는 기한이 있으면 <b>먼저 그 날짜를 놓치지 않습니다</b>.</li>
+      <li><b>두 번째 송달 실패</b> — 한 번 보정했는데 또 송달되지 않으면, <b>민사소송법 제466조에 따른 소송절차 회부 가능성과 소송 비용</b>을 상담합니다.</li>
+      <li><b>공시송달이 만능은 아니다</b> — <b>공시송달이 모든 경우의 해결책</b>이라고 생각해서는 안 됩니다.</li>
+      <li><b>정보 사용의 한계</b> — 주소를 찾는 과정에서 알게 된 정보는 <b>법원 절차에 필요한 범위에서만</b> 사용합니다. <b>상대방의 가족이나 지인에게 공개적으로 연락해 압박하는 방식</b>은 피하고, <b>확인한 자료의 날짜와 출처만</b> 정리합니다.</li>
+    </ul>
+    <div class="callout"><b>유의.</b> 주소를 다시 적는 것과 <b>주소를 확인했다는 근거를 붙이는 것</b>은 다릅니다. 근거 없는 재제출은 같은 반송을 반복할 뿐입니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;">순서는 <b>사유·기한 확인 → 주소 출처 정리 → 증거 묶기 → 전환 상담</b>입니다.</p>
+    <ol>
+      <li><b>① 송달불능 사유와 보정기한을 확인한다</b> — 반송 봉투와 법원 안내문을 <b>봉인 상태 그대로</b> 보관하고, 개봉했다면 <b>받은 날짜</b>를 적어 둡니다.</li>
+      <li><b>② 주소를 확인한 날짜와 출처를 적는다</b> — <b>가장 최근에 확인된 것부터</b> 제출하고, <b>그 근거가 되는 거래서류나 문자</b>를 함께 붙입니다.</li>
+      <li><b>③ 계약서·입금내역·문자·독촉기록을 모은다</b> — <b>시간순으로</b> 묶어 둡니다.</li>
+      <li><b>④ 제466조상 계속 가능한지 확인한다</b> — <b>민사소송법 제466조</b>상 지급명령을 계속할 수 있는지 살핍니다.</li>
+      <li><b>⑤ 소송 전환의 비용·시간을 상담한다</b> — 법원이 <b>사건을 소송절차로 회부할 수 있다는 점</b>을 염두에 두고 상담합니다. 보정을 두 번 이상 반복해도 송달되지 않으면 <b>소송 전환을 전제로 청구취지와 증거를 정리</b>해 두는 편이 낫습니다.</li>
+      <li><b>⑥ 개인정보를 임의로 다루지 않는다</b> — 상대방의 <b>주민등록 등 개인정보를 임의로 수집하거나 공개하지 않습니다</b>.</li>
+      <li><b>⑦ 추가 보정명령을 확인한다</b> — 주소보정 서류를 낸 뒤 <b>법원에서 추가 보정명령이 왔는지</b> 확인하고, <b>기한 안에 답하기 어려우면 즉시 상담</b>합니다.</li>
+      <li><b>⑧ 제출 내용과 날짜를 기록한다</b> — 법원에 제출한 <b>보정 내용과 제출 날짜</b>도 남겨 두면 이후 진행을 확인하기 쉽습니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
