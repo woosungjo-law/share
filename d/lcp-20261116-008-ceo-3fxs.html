@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>소액 회수전, 늘어지는 상대에 시간을 내주지 않는 방법</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>소액 회수전, 늘어지는 상대에 시간을 내주지 않는 방법</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 소액사건은 <b>본래 신속 처리를 전제로 설계된 절차</b>입니다. 그 전제를 활용하지 않으면 <b>오히려 지연에 취약해집니다.</b> 문제는 <b>어떤 장치를 언제 쓸지</b>를 정하는 것이고, 그건 <b>경영 판단의 영역</b>입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>사건의 시작: 금액은 작은데 비용은 커지는 소송</h2>
+    <div class="analogy">
+      <b>작은 수리 하나에 기술자를 세 번 부르는 상황</b>을 떠올려 보십시오. <b>부품값보다 출장비가 커집니다.</b> 버금전자의 <b>미수금 2,000만 원이 1년째 정리되지 않고 있었습니다.</b> 소송은 이미 제기했는데 <b>기일이 세 번 미뤄졌습니다.</b> 피고는 <b>기일마다 새로운 주장을 꺼내고, 담당자 교체를 이유로 자료 제출을 늦췄습니다.</b> 사내 변호인은 <b>이 사건에 들어간 시간과 비용이 회수 예정액의 상당 부분을 잠식하고 있다</b>고 보고했습니다. 대표가 물었습니다. <b>금액이 작은 사건인데 왜 이렇게 오래 걸리는가.</b> 답은 <b>절차의 성질</b>에 있었습니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 보는 핵심: 절차가 이미 지연 차단 장치를 갖고 있다</h2>
+    <p><b>소액사건심판법 제1조</b>는 <b>지방법원과 그 지원에서 소액의 민사사건을 간이한 절차에 따라 신속히 처리하기 위하여 민사소송법에 대한 특례를 규정함을 목적</b>으로 한다고 밝힙니다. <b>특례라는 말은 곧 기본 절차와 다르게 설계된 장치가 있다는 뜻</b>입니다.</p>
+    <p><b>소액사건심판법 제7조</b>가 그 장치의 핵심입니다. <b>제1항</b>은 <b>소가 제기되면 판사가 민사소송법의 기일 지정 관련 규정에도 불구하고 바로 변론기일을 정할 수 있다</b>고 정합니다. <b>제2항</b>은 <b>판사가 되도록 한 차례의 변론기일로 심리를 마치도록 하여야 한다</b>고 정하고, <b>제3항</b>은 <b>변론기일 전이라도 당사자로 하여금 증거신청을 하게 하는 등 필요한 조치를 할 수 있다</b>고 정합니다. <b>기일을 여러 번 두고 조금씩 다투는 구조가 아니라는 점이 경영 판단의 출발점</b>입니다.</p>
+    <p><b>민사소송법 제147조</b>는 <b>제출기간의 제한</b>을 정합니다. <b>재판장이 당사자의 의견을 들어 주장 제출이나 증거 신청의 기간을 정할 수 있고, 기간을 넘기면 원칙적으로 제출할 수 없으며, 정당한 사유를 소명한 경우에만 예외가 인정</b>됩니다. <b>기일마다 새 주장을 하나씩 꺼내는 방식은 이 기간 설정에 의해 차단됩니다.</b></p>
+    <p><b>소액사건심판법 제5조의3</b>은 <b>이행권고 결정</b>을 정합니다. <b>법원이 소장 부본 등을 첨부해 피고에게 청구취지대로 이행할 것을 권고할 수 있고, 일정한 경우에는 할 수 없습니다.</b> <b>피고가 이의하지 않으면 판결 없이 마무리됩니다.</b> <b>초기 단계에서 시간을 아끼는 경로가 여기에 있습니다.</b></p>
+    <p><b>민사소송법 제150조</b>는 <b>자백간주</b>를 정하고, <b>출석하지 않은 당사자에게 불리한 효과를 연결</b>합니다. <b>공시송달로 송달받은 경우는 예외</b>입니다. <b>민사소송법 제98조</b>는 <b>소송비용을 패소한 당사자가 부담</b>한다고 정합니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외: 비용을 줄이는 결정은 초기에 내려야 한다</h2>
+    <p><b>첫째, 청구취지 명확화를 첫 번째 관리 항목으로 둔다.</b> <b>이행권고는 청구취지나 청구원인이 분명하지 않으면 활용할 수 없습니다.</b> <b>소장 작성 단계에서 금액과 원인을 명확히 특정해야 절차 단축 경로가 열립니다.</b> <b>이 판단은 소송 착수 시점에 끝나야 하며, 기일이 두 번 지난 뒤에는 되돌리기 어렵습니다.</b></p>
+    <p><b>제출기간 설정 요청.</b> <b>민사소송법 제147조는 재판장의 재량에 맡긴 구조이므로, 요청하지 않으면 기간이 정해지지 않을 수 있습니다.</b> <b>대리인에게 "가능한 모든 기간 설정을 요청하라"고 지시하는 것이 비용 관리에 직접 연결</b>됩니다.</p>
+    <p><b>셋째, 한 차례 변론 종결을 목표로 증거를 미리 제출한다.</b> <b>소액사건심판법 제7조 제3항은 기일 전 증거신청을 가능하게 합니다.</b> <b>증거를 기일 당일에 준비하면 심리가 늘어지고, 늘어난 기일은 곧 추가 비용</b>입니다.</p>
+    <p><b>송달 상태 확인.</b> <b>불출석의 효과는 송달 방법에 따라 달라집니다.</b> <b>공시송달로 통지된 경우에는 자백간주 효과가 배제되므로, 송달이 적법하게 이루어졌는지를 확인하지 않고 절차가 끝났다고 판단하면 위험</b>합니다.</p>
+    <div class="callout">
+      <b>주의.</b> <b>소액 사건은 금액이 작아서 관리 대상에서 빠지기 쉽습니다.</b> 그러나 <b>시간이 늘어날수록 회수액은 줄고, 그 손실은 눈에 잘 띄지 않습니다.</b>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것: 소액 사건에 별도 관리 규칙을 둔다</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>사건의 크기가 아니라 절차의 성질에 맞춰 규칙을 두어야 합니다.</b> 정할 항목은 다음과 같습니다.</p>
+      <ol>
+        <li><b>① 착수 단계 검토</b> — <b>청구취지 명확화와 이행권고 활용 가능성을 착수 단계에서 검토하도록 지시</b>했는가.</li>
+        <li><b>② 기본 원칙</b> — <b>기일 전 증거 제출과 제출기간 설정 요청을 기본 원칙</b>으로 정했는가.</li>
+        <li><b>③ 이력 기록</b> — <b>기일 변경과 추가 주장 이력을 기록으로 남기도록 담당자에게 요구</b>했는가.</li>
+        <li><b>④ 진행 판단 기준</b> — <b>소송비용 부담 원칙과 실제 회수액을 비교해 계속 진행 여부를 판단하는 기준</b>을 정했는가.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;"><b>소액 회수전, 늘어지는 상대에 시간을 내주지 않는 방법</b>은 더 세게 밀어붙이는 것이 아니라 <b>절차가 이미 가진 장치를 초기에 쓰는 것</b>입니다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
