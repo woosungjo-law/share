@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>채무자가 손 놓은 채권, 대신 청구할지 결정하는 세 가지 질문</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>채무자가 손 놓은 채권, 대신 청구할지 결정하는 세 가지 질문</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 대신 청구할 수 있는지는 <b>요건 문제</b>입니다. <b>요건이 갖춰지지 않으면 승소가 아니라 각하</b>로 끝납니다. 그리고 <b>확정판결의 유무</b>가 비용 구조를 바꿉니다. 그래서 대표가 먼저 답할 것은 <b>소송비 승인</b>이 아니라 <b>세 가지 질문</b>입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>사건의 시작: 재무팀이 들고 온 숫자와 법무팀이 던진 질문</h2>
+    <div class="analogy">
+      <b>남의 집 열쇠로 문을 여는 일</b>을 떠올려 보십시오. <b>열쇠가 있어도 그 문을 열 권한이 있는지는 따로</b>입니다. 정운산업의 <b>미수금 2억 원이 회수 불가로 분류되기 직전</b>이었습니다. <b>채무 회사는 이미 부동산을 처분</b>했고, <b>남은 것이라곤 거래처에 대한 외상 매출채권</b>뿐이었습니다. <b>그 채권은 만기가 지났는데도 청구되지 않고 있었습니다.</b> 재무 담당 임원은 <b>"우리가 대신 청구하면 된다"</b>고 보고했고, 회의는 <b>곧바로 소송비 승인 여부로 넘어갈 뻔했습니다.</b> 법무 담당자가 손을 들었습니다. <b>대신 청구할 수 있는지는 요건 문제이고, 요건이 갖춰지지 않으면 승소가 아니라 각하로 끝난다</b>고 정리했습니다. <b>대표는 승인 여부를 미루고 세 가지 질문에 먼저 답하라고 지시했습니다.</b>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 보는 핵심: 권리 행사보다 요건 증명이 비용을 결정한다</h2>
+    <p><b>민법 제404조 제1항</b>은 <b>채권자가 자기의 채권을 보전하기 위해 채무자의 권리를 행사할 수 있다</b>고 정합니다. <b>제2항</b>은 <b>채권의 기한이 도래하기 전에는 법원의 허가 없이 그 권리를 행사하지 못하되 보전행위는 예외</b>라고 정합니다. <b>조문은 짧지만 소송의 구조는 단순하지 않습니다.</b></p>
+    <p><b>요건 세 개</b>가 모두 갖춰져야 합니다. <b>피보전채권의 유효한 존재, 보전의 필요성, 이행기 도래 또는 법원 허가</b>입니다. <b>보전의 필요성은 채무자의 무자력 등으로 인해 대위행사 없이는 채권 만족을 얻지 못할 위험이 있다는 뜻</b>입니다. <b>회수가 번거롭다는 사정이나 절차를 빨리 끝내고 싶다는 이유만으로는 이 요건을 채울 수 없습니다.</b></p>
+    <p><b>확정판결의 유무</b>가 비용 판단의 결정적 지점입니다. <b>피보전채권에 관해 확정판결이 있으면 제3채무자는 그 존재를 다툴 수 없습니다.</b> 반대로 <b>판결이 없으면 제3채무자는 본안에서 피보전채권의 존부를 다툽니다.</b> <b>법원이 이 부분을 깊게 심리하면 대위소송은 본안 판단에 이르지 못하고 각하되거나 기각</b>될 수 있습니다. <b>피보전채권이 다투어질 것이 예상되면 채무자를 상대로 선행소송을 제기해 확정판결을 먼저 확보하는 경로가 유효</b>합니다. <b>대위소송 하나로 끝내려던 계획이 소송 두 개로 늘어나는 순간 비용 구조가 달라집니다.</b></p>
+    <p><b>민법 제405조</b>는 <b>통지의 효과</b>를 정합니다. <b>채권자가 보전행위 이외의 권리를 행사한 때에는 채무자에게 통지해야 하고, 채무자가 통지를 받은 뒤에는 그 권리를 처분해도 채권자에게 대항하지 못합니다.</b> <b>대위 행사와 통지 사이의 공백이 곧 위험 구간</b>이라는 뜻입니다. <b>대위채권자는 제3채무자에게 직접 지급을 청구할 수 있지만, 그 권리는 채무자의 재산을 대신 행사하는 구조이므로 회수금의 정산과 다른 채권자와의 경합을 함께 설계</b>해야 합니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외: 승인 전에 확인할 세 가지 손익</h2>
+    <p><b>두 단계 비용.</b> <b>확정판결 없이 대위소송부터 시작하면 피보전채권 존부를 두고 본안 다툼이 벌어질 수 있습니다.</b> <b>소송 하나의 예상 비용이 아니라 두 단계의 비용과 시간을 계산에 넣어야 합니다.</b> <b>회수액 대비 손익이 맞지 않으면 대위를 포기하고 다른 회수 경로를 찾는 편이 낫습니다.</b></p>
+    <p><b>보전 필요성 자료.</b> <b>채무자의 책임재산과 집행 가능성 조사 결과, 대위 없이는 만족이 곤란하다는 위험, 대위가 사실상 우선변제로 변질되지 않는다는 설명</b>이 필요합니다. <b>이 자료는 법무팀이 만들 수 있지만, 원본 자료는 재무와 영업이 쥐고 있는 경우가 많습니다.</b> <b>승인 전에 자료 제공 약속을 받아 두지 않으면 소송비만 쓰고 요건을 못 채우는 결과</b>가 됩니다.</p>
+    <p><b>통지 시점의 순위 효과.</b> <b>대위소송을 제기하고 통지한 뒤 다른 일반채권자가 피대위채권에 대해 받은 전부명령은 원칙적으로 무효로 다루어집니다.</b> <b>반대로 우리가 늦으면 같은 논리가 우리에게 불리하게 작동합니다.</b> <b>대위 행사를 결정한 시점부터 통지 도달까지의 일정을 관리 지표로</b> 잡아야 합니다.</p>
+    <p><b>정산과 경합.</b> <b>회수금 정산과 다른 채권자와의 경합 가능성</b>을 검토한 의견이 필요합니다.</p>
+    <div class="callout">
+      <b>주의.</b> <b>요건이 갖춰지지 않으면 승소가 아니라 각하</b>입니다. <b>소송비를 승인하기 전에 요건 세 개가 채워질 수 있는지부터</b> 확인해야 합니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것: 승인 게이트를 요건 단위로 쪼갠다</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>승인은 한 번의 결정이지만 결과는 요건 세 개가 모두 채워졌는지에 달려 있습니다.</b> <b>승인 문서에 세 질문의 답을 함께 남기면, 나중에 회수가 지연될 때 책임 소재가 흐려지지 않습니다.</b></p>
+      <ol>
+        <li><b>① 피보전채권</b> — <b>확정판결로 뒷받침되는지, 아니라면 선행소송 비용과 기간을 포함해 손익을 재계산</b>했는가.</li>
+        <li><b>② 보전 필요성</b> — <b>뒷받침할 자료를 재무·영업 부서가 기한 내 제공하기로 확정</b>했는가.</li>
+        <li><b>③ 통지 공백</b> — <b>대위 행사와 통지 사이의 공백을 없앨 일정과 책임자를 지정</b>했는가.</li>
+        <li><b>④ 정산·경합</b> — <b>회수금 정산과 다른 채권자와의 경합 가능성을 검토한 의견을 받았는가.</b></li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;"><b>채무자가 손 놓은 채권, 대신 청구할지 결정하는 세 가지 질문</b>에 답하기 전에는 <b>소송비 승인을 넘기지 않습니다.</b></p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
