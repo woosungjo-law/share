@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>유출 통지의 72시간, 시계는 '알게 된 때'부터 돕니다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 개인정보</div>
+    <h1>유출 통지의 72시간, 시계는 '알게 된 때'부터 돕니다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> <b>개인정보 보호법 제34조 제1항</b>은 <b>유출을 알게 되었을 때 지체 없이 정보주체에게 알리도록</b> 정하고, <b>시행령 제39조 제1항</b>은 <b>서면 등의 방법으로 72시간 이내에</b> 알리도록 정합니다. <b>기산점은 침해 발생 시각도, 신고를 마친 시각도 아니라 "알게 되었을 때"</b>입니다. <b>인지와 확인을 같은 날로 착각하는 것이 가장 흔한 실수</b>입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>금요일 밤에 도착한 권한 오류 알림</b>을 떠올려 보십시오. <b>외부 스토리지 버킷 하나의 접근 권한이 공개로 바뀌어 있었고, 그 안에 고객 계정 정보가 담긴 파일</b>이 있었습니다. <b>개발팀은 권한을 곧바로 되돌렸고 서버 로그에는 외부 접속 기록이 남아</b> 있었습니다. 가장 먼저 물은 것은 <b>피해 규모가 아니라 시각</b>이었습니다 — <b>"우리가 이 사실을 안 게 언제입니까."</b> <b>그 시각이 통지와 신고의 기산점이 되고, 기산점이 곧 기한</b>이 되기 때문입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점 — 세 개의 조문이 만드는 순서</h2>
+    <p><b>① 통지 의무(제34조 제1항).</b> <b>개인정보가 유출되었음을 알게 되었을 때 지체 없이 해당 정보주체에게</b> 알립니다. 알려야 할 내용은 셋 — <b>유출된 개인정보의 항목</b>, <b>유출된 시점과 그 경위</b>, <b>유출로 생길 수 있는 피해를 줄이기 위해 정보주체가 할 수 있는 방법에 관한 구체적인 정보</b>. <b>정보주체의 연락처를 알 수 없는 경우 등 정당한 사유가 있으면 대통령령으로 정하는 방법으로 통지를 갈음하는 조치</b>를 할 수 있습니다.</p>
+    <p><b>② 기한(시행령 제39조 제1항).</b> <b>서면 등의 방법으로 72시간 이내에</b> 알립니다. <b>두 개의 예외</b>가 붙습니다 — <b>유출 확산과 추가 유출을 막기 위해 접속경로 차단, 취약점 점검·보완, 유출된 개인정보의 회수·삭제 같은 긴급한 조치가 필요한 경우</b>와, <b>천재지변이나 그 밖에 부득이한 사유로 72시간 안에 통지하기 곤란한 경우.</b> <b>두 경우 모두 사유가 해소된 뒤 즉시 알리면 됩니다.</b></p>
+    <p><b>③ 신고(시행령 제40조 제1항).</b> <b>1천 명 이상의 정보주체에 관한 개인정보가 유출된 경우</b>, <b>민감정보나 고유식별정보가 유출된 경우</b> 등 일정한 사유에 해당하면 <b>72시간 이내에 보호위원회 또는 조문이 정한 전문기관에 신고</b>합니다. <b>유출 경로가 확인되어 개인정보를 회수·삭제하는 등의 조치로 정보주체의 권익 침해 가능성이 현저히 낮아진 경우에는 신고하지 않을 수 있습니다.</b></p>
+    <div class="callout"><b>통지와 신고는 별개입니다.</b> <b>통지는 정보주체에게, 신고는 감독기관에 합니다. 대상도 기한의 예외도 다릅니다.</b> <b>신고 대상이 아니라고 해서 통지 의무가 사라지지 않고, 통지를 마쳤다고 해서 신고가 면제되지도 않습니다.</b></div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외 — 숫자보다 먼저 정할 것</h2>
+    <ul class="points">
+      <li><b>기산점</b> — <b>내부에서 이상 징후를 인지한 때와 사실을 확인한 때 사이에 며칠이 벌어지면, 그 며칠이 그대로 위험 구간</b>이 됩니다.</li>
+      <li><b>통지와 신고의 분리</b> — <b>두 절차를 하나의 일정표에 묶어 두지 않으면 어느 한쪽이 조용히 누락</b>됩니다.</li>
+      <li><b>통지 갈음 조치</b> — <b>갈음은 면제가 아닙니다.</b> <b>어떤 방법으로 갈음했고 왜 그 방법을 택했는지가 기록으로 남아야</b> 합니다.</li>
+      <li><b>신고 면제의 판단</b> — <b>회수·삭제의 범위, 유출 경로 확인의 근거, 그 판단을 내린 사람과 시각</b>이 함께 남아야 합니다. <b>판단이 옳았는지와 판단의 근거가 남았는지는 다른 문제</b>이고, <b>두 번째에서 자주 무너집니다.</b></li>
+      <li><b>제재와 배상의 연결</b> — <b>문제가 되는 것은 얼마나 빨리, 그리고 정확하게 통지하고 신고했는가</b>입니다. <b>사고의 크기만큼 대응의 기록이 중요해지는 이유</b>입니다.</li>
+    </ul>
+    <div class="callout"><b>나중에 설명할 수 없는 판단은 하지 않은 판단과 같습니다.</b> <b>대외 창구를 하나로 모으십시오</b> — <b>고객 문의, 감독기관 연락, 언론 대응이 각자 다른 말을 하면 그 자체가 별도의 문제</b>가 됩니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;"><b>시계와 기록을 먼저 만드십시오.</b> <b>인지 시각을 기록하는 양식</b> — <b>최초 인지 경로, 인지 시각, 사실 확인 시각, 확인한 사람을 한 줄로 남기는 칸</b>이면 충분합니다. <b>이 한 줄이 이후 모든 기한 계산의 기준</b>이 됩니다.</p>
+    <ol>
+      <li><b>① 인지 시각</b> — <b>최초 인지 경로와 시각, 사실 확인 시각</b>을 한 줄로 기록합니다.</li>
+      <li><b>② 통지 요건</b> — <b>유출 항목·시점과 경위·피해 최소화 방법</b> 세 가지를 빠짐없이 담습니다.</li>
+      <li><b>③ 72시간</b> — <b>긴급 조치나 천재지변으로 기한을 넘겼다면 사유와 해소 시각</b>을 남깁니다.</li>
+      <li><b>④ 신고 판단</b> — <b>정보주체 수와 민감정보·고유식별정보 포함 여부</b>로 대상을 가릅니다.</li>
+      <li><b>⑤ 갈음 조치</b> — <b>연락처를 알 수 없어 통지를 갈음했다면 방법과 사유</b>를 문서화합니다.</li>
+      <li><b>⑥ 면제 판단</b> — <b>회수·삭제의 범위와 판단 근거</b>를 사후 검증이 가능한 형태로 보관합니다.</li>
+    </ol>
+    <p style="margin-top:16px;margin-bottom:0;"><b>통지와 신고의 판단표를 미리 만들어 두십시오</b> — <b>정보주체 수, 민감정보·고유식별정보 포함 여부, 연락처 확보 가능성, 긴급 조치 필요성</b>으로 갈래를 나누고 <b>각 갈래의 담당과 기한</b>을 적어 둡니다. <b>사고가 난 뒤에 표를 만들면 표를 만드는 시간만큼 기한이 줄어듭니다.</b> <b>통지문 초안도 미리 준비</b>하십시오 — <b>사고 당일 처음 통지문을 쓰기 시작하면 문장을 다듬는 동안 기한이 흐릅니다.</b></p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
