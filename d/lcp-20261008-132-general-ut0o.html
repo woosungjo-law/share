@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>통장 압류·추심명령을 받았다면 확인할 것</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #0f6e5c; --accent-d: #07362c; --accent-l: #2a9d83;
+    --accent-tint: #eaf5f2; --accent-tint-ln: #c9e6dc;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #5cc9ae; --accent-d: #0a2420; --accent-l: #7fdcc4;
+      --accent-tint: #132622; --accent-tint-ln: #1e3b34;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">생활법률 안내 · 예금채권 압류와 추심명령</div>
+    <h1>통장 압류·추심명령을 받았다면 확인할 것</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터 말씀드리면.</b> 계좌 압류는 <b>즉시 모든 권리가 사라진다는 뜻도, 반대로 아무 영향이 없다는 뜻도 아닙니다.</b> 먼저 은행에서 <b>명령문 사본과 사건번호, 채권자, 금액, 송달일</b>을 확인하십시오. 놀라서 다른 계좌로 돈을 옮기거나 현금으로 빼는 행동은 상황을 더 복잡하게 만들 수 있습니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>택배 보관함에 잠금이 걸린 상황</b>을 떠올려 보십시오. 잠금이 걸렸다고 <b>안에 든 물건이 전부 사라진 것은 아니고</b>, 그렇다고 <b>아무 일도 없었다고 할 수도 없습니다</b>. 어느 칸이 잠겼는지, 누가 잠갔는지, 언제까지 잠기는지를 확인해야 다음 행동이 정해집니다. 통장 압류도 같습니다. <b>어느 계좌가, 얼마가, 어떤 근거로</b> 묶였는지를 먼저 읽어야 합니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+    <p>먼저 <b>명령의 범위</b>입니다. <b>민사집행법 제232조</b>와 관련된 추심명령은 <b>채권자가 은행 등 제3채무자에게 돈을 받아가는 절차</b>와 관련됩니다. 계좌에 <b>현재 있는 돈</b>과 <b>앞으로 입금될 돈</b>이 모두 같은 범위에 들어가는지는 <b>명령문과 돈의 발생 원인</b>을 봐야 합니다. 계좌번호만 보고 모든 돈이 자동으로 같은 취급된다고 생각하지 마십시오.</p>
+    <p>다음은 <b>돈의 출처</b>입니다. <b>민사집행법 제246조</b>에는 <b>압류가 제한되거나 금지되는 채권</b>이 있습니다. 급여 등 보호될 가능성이 있는 돈이 일반 입금과 섞였다면 <b>그 원천을 설명할 자료</b>가 필요합니다. 급여명세서, 입금내역, 생활비 지출자료를 모으고, 은행과 법률전문가에게 어떤 절차로 주장할지 확인하십시오.</p>
+    <p>그리고 <b>집행의 근거</b>입니다. <b>민사집행법 제28조</b>와 관련된 집행권원은 <b>판결이나 지급명령 등 집행의 근거가 되는 문서</b>입니다. 문서의 제목, 확정 여부, 집행문 유무, 송달 내용을 확인하고, 채권자가 요구하는 금액이 내가 알고 있는 채무와 맞는지 비교하십시오. 일부를 이미 갚았다면 이체내역과 영수증을 보관하십시오.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>압류금지채권은 따로 살핀다</h2>
+    <ul class="points">
+      <li><b>명령 범위가 조건이다</b> — 현재 잔액과 장래입금이 같은 범위인지는 명령문과 돈의 발생 원인을 봐야 합니다. 계좌번호만으로 판단하면 안 됩니다.</li>
+      <li><b>돈의 원천이 조건이다</b> — 급여 등 보호될 가능성이 있는 돈이 일반 입금과 섞였다면 그 원천을 설명할 자료가 필요합니다. 섞였다고 바로 포기하지 말고 어떤 절차로 이의를 제기할지 확인하십시오.</li>
+      <li><b>집행권원이 조건이다</b> — 판결·지급명령 등 근거 문서의 제목, 확정 여부, 집행문 유무, 송달 내용을 확인하고 요구 금액이 내가 아는 채무와 맞는지 비교해야 합니다.</li>
+      <li><b>장래입금은 원인별로 다르다</b> — 정기적으로 들어오는 돈이 급여인지, 사업대금인지, 일회성 송금인지 구분해 기록해야 합니다. 앞으로 받을 돈의 계약과 지급일이 명령에 어떻게 적혀 있는지 확인하십시오.</li>
+      <li><b>계좌 변경은 마지막 수단이다</b> — 모르는 상태에서 계좌를 바꾸기보다 공식 문의를 먼저 하는 것이 안전합니다. 거래처나 고용주에게 임의로 다른 지시를 하기보다 공식 절차를 먼저 알아보십시오.</li>
+    </ul>
+    <div class="callout"><b>유의.</b> 압류가 풀렸다는 말을 들으면 <b>은행의 서면 확인과 남은 금액</b>을 확인한 뒤 생활비와 지급 계획을 다시 세우십시오.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>지금 당장 해야 할 일</h2>
+    <p style="margin-bottom:16px;">문서를 읽고 돈의 출처를 정리한 뒤, <b>은행·법원·채권자에게 남는 방식으로 문의</b>하는 것이 첫 단계입니다.</p>
+    <ol>
+      <li><b>① 명령문과 사건번호를 확인한다</b> — 은행에서 명령문 사본과 사건번호, 채권자, 금액, 송달일을 확인합니다.</li>
+      <li><b>② 추심명령 내용을 읽는다</b> — 민사집행법 제232조의 추심명령 내용을 읽고, 현재 잔액과 장래입금 중 무엇이 대상인지 확인합니다.</li>
+      <li><b>③ 보호되는 돈인지 살핀다</b> — 민사집행법 제246조 관련 보호 대상인지 검토하고, 급여명세서·지급 내역·생활비 자료를 모읍니다.</li>
+      <li><b>④ 집행권원을 확인한다</b> — 민사집행법 제28조 관련 집행권원(판결·지급명령 등)의 확정 여부와 집행문 유무를 확인하고, 이미 갚은 금액의 이체내역·영수증을 보관합니다.</li>
+      <li><b>⑤ 문의 내용과 날짜를 기록한다</b> — 은행과 법원에 문의한 내용과 날짜를 기록합니다. 사건번호, 채권자, 압류금액, 송달일, 대상 계좌, 추심 처리 여부를 서면으로 물어보고, 통장이 여러 개라면 각 계좌가 명령에 포함되는지도 확인하며, 받은 답변을 보관합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
