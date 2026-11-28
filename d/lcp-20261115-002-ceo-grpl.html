@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>일정은 승인서가 아니라 두 개의 서류로 정해진다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>일정은 승인서가 아니라 두 개의 서류로 정해진다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 임상시험에는 <b>문이 두 개</b> 있습니다. <b>기관생명윤리위원회 심의</b>와 <b>식약처 승인</b>입니다. <b>두 문은 서로를 대신하지 않습니다.</b> 일정표에 한 칸만 채워져 있다면, 그 일정은 아직 확정된 것이 아닙니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>사건의 시작: 일정표에 빠진 한 칸</h2>
+    <div class="analogy">
+      <b>출국 심사대와 탑승구</b>를 떠올려 보십시오. <b>항공권을 샀다는 것과 탑승구가 열린 것은 다릅니다.</b> 라온바이오의 장민석 대표는 신약 후보물질의 임상 일정표를 받았습니다. <b>첫 대상자 등록일이 한 달 앞</b>으로 잡혀 있었고, 표에는 <b>식약처 승인 완료</b>라는 표시가 있었습니다. 그런데 <b>수행 병원의 심의 일정은 표에 없었습니다.</b> 실무진은 <b>심의가 늦어지면 등록일이 밀린다</b>고 보고했습니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 보는 핵심: 두 개의 서류, 두 개의 판단 주체</h2>
+    <p>임상시험에는 <b>두 개의 문</b>이 있습니다. 첫째는 <b>수행 기관의 기관생명윤리위원회 심의</b>입니다. <b>생명윤리법 제10조</b>는 인간대상연구를 수행하는 기관에 <b>기관생명윤리위원회를 설치</b>하도록 하고, 그 위원회가 <b>생명윤리와 안전을 확보하는 기능</b>을 맡게 합니다.</p>
+    <p>둘째는 <b>식품의약품안전처의 승인</b>입니다. <b>약사법 제34조</b>는 임상시험을 하려는 자가 <b>계획서를 작성해 승인을 받아야</b> 하고, <b>승인받은 사항을 변경할 때도 원칙적으로 변경승인</b>을 받아야 한다고 정합니다.</p>
+    <p><b>두 문은 서로를 대신하지 않습니다.</b> <b>승인은 계획서에 대한 행정청의 판단</b>이고, <b>심의는 시험이 실제로 수행되는 기관의 절차</b>입니다. <b>승인서가 있다는 이유로 심의를 건너뛸 수 없고, 심의를 받았다는 이유로 승인을 대신할 수도 없습니다.</b></p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외: 일정이 밀리는 세 지점</h2>
+    <p><b>기관별 심의.</b> <b>여러 병원에서 시험을 하면 병원마다 심의</b>를 거칩니다. <b>한 병원의 결과를 다른 병원에 그대로 쓸 수 없으므로</b>, 등록 일정은 <b>가장 늦은 병원의 심의에 맞춰집니다.</b></p>
+    <p><b>변경의 반복.</b> 계획을 조정하면 <b>변경승인 절차가 다시 붙습니다.</b> <b>총리령으로 정하는 사항은 보고로 갈음</b>할 수 있지만, <b>그 범위를 넘는 변경은 승인을 다시</b> 받아야 합니다.</p>
+    <p><b>심의 조건.</b> <b>심의는 통과와 미통과로만 갈리지 않습니다.</b> <b>조건이 붙어 나오는 경우가 많고, 그 조건을 이행하지 않으면 시험은 사실상 멈춥니다.</b></p>
+    <p><b>직접 비용.</b> <b>심의와 승인에 드는 비용</b>입니다.</p>
+    <p><b>일정 비용.</b> <b>일정이 밀리며 발생하는 인건비와 시설 비용</b>입니다.</p>
+    <p><b>재작업 비용.</b> <b>승인 없이 진행된 기간의 자료를 다시 만들어야 하는 비용</b>입니다. <b>가장 크고, 대개 예산에 없던 항목으로 나타납니다.</b></p>
+    <div class="callout">
+      <b>주의.</b> <b>일정표를 한 줄로 관리하면</b> 가장 늦은 기관이 보이지 않습니다. <b>기관이 늘어나면 일정은 평균이 아니라 가장 늦은 쪽을 따릅니다.</b>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것: 네 가지를 정합니다</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>일정표의 단위를 바꾸는 것이 첫 단계입니다.</b> 정할 항목은 다음과 같습니다.</p>
+      <ol>
+        <li><b>① 일정표의 단위</b> — <b>기관별로 승인 상태와 심의 상태를 따로 표시</b>하고, <b>두 칸이 모두 채워진 기관만 등록 대상으로</b> 표시합니다.</li>
+        <li><b>② 변경 절차 기준</b> — <b>어떤 변경이 승인 대상이고 어떤 변경이 보고 대상인지 목록</b>으로 만들어 두고, <b>목록에 없는 변경은 법무 검토</b>를 거치게 합니다.</li>
+        <li><b>③ 심의 조건의 이행 책임자</b> — <b>조건이 붙었을 때 누가 기한 안에 이행하는지</b> 미리 정합니다.</li>
+        <li><b>④ 중단 기준</b> — <b>승인이나 심의가 확인되지 않은 상태에서 대상자 등록이 시작되면 즉시 중단</b>하고 원인을 기록합니다.</li>
+        <li><b>⑤ 보고의 형식</b> — <b>승인 상태와 심의 상태를 두 칸으로 나눈 표</b>를 정기 보고에 쓰게 합니다.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;"><b>일정은 승인서가 아니라 두 개의 서류로 정해집니다.</b> <b>보고의 형식이 판단의 시점을 앞당깁니다.</b></p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
