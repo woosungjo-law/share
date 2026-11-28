@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>응모 양식의 주민번호 한 칸, 관행이 아니라 조문에서 근거를 찾는다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 개인정보</div>
+    <h1>응모 양식의 주민번호 한 칸, 관행이 아니라 조문에서 근거를 찾는다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> <b>개인정보 보호법 제24조의2</b>는 <b>주민등록번호 처리 금지가 원칙</b>이고, 예외는 <b>조문이 정한 세 가지뿐</b>입니다 — <b>법령 등에서 구체적으로 요구·허용한 경우</b>, <b>급박한 생명·신체·재산 이익을 위해 명백히 필요한 경우</b>, <b>이에 준해 보호위원회가 고시로 정하는 경우</b>. <b>경품 응모는 이 셋 어디에도 놓이지 않습니다.</b> <b>"다른 곳도 그렇게 한다"는 방어 수단이 되지 못합니다.</b>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>이벤트가 끝나고 지적받은 응모 양식</b>을 떠올려 보십시오. <b>신년 경품 이벤트가 끝나고 당첨자 명단을 정리하던 중</b>, 응모 양식에 <b>주민등록번호 칸</b>이 있었고 실제로 번호가 여러 건 들어왔다는 사실이 문제로 올라왔습니다. 마케팅 부서는 <b>"지금까지 그렇게 해 왔고 다른 업체도 같은 양식을 쓴다"</b>고 답했습니다. 먼저 확인할 것은 둘 — <b>그 칸을 만든 근거가 문서로 남아 있는지</b>, <b>이미 받은 번호가 지금 어디에서 어떻게 쓰이고 있는지.</b> <b>두 질문에 답이 없다면 문제는 양식 하나가 아니라 수집 전반의 구조</b>가 됩니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점 — 원칙은 금지, 예외는 셋</h2>
+    <p><b>① 원칙(제24조의2 제1항).</b> 개인정보처리자는 <b>조문이 정한 각 호의 어느 하나에 해당하는 경우를 제외하고는 주민등록번호를 처리할 수 없습니다.</b></p>
+    <p><b>② 예외 — 세 가지뿐.</b> <b>법률·대통령령·국회규칙·대법원규칙·헌법재판소규칙·중앙선거관리위원회규칙 및 감사원규칙에서 구체적으로 처리를 요구하거나 허용한 경우</b>, <b>정보주체 또는 제3자의 급박한 생명·신체·재산의 이익을 위하여 명백히 필요하다고 인정되는 경우</b>, 그리고 <b>제1호 및 제2호에 준하여 불가피한 경우로서 보호위원회가 고시로 정하는 경우</b>입니다.</p>
+    <p><b>③ 경품 응모의 위치.</b> <b>경품 응모는 이 셋 가운데 어디에도 놓이지 않습니다.</b> 응모자에게 필요한 것은 <b>이름과 연락처</b>이고, <b>법률이 그 응모 절차에서 주민등록번호의 처리를 요구하거나 허용하는 규정도 없습니다.</b></p>
+    <p><b>④ 과징금(제64조의2).</b> 보호위원회는 <b>개인정보 보호법을 위반하여 개인정보를 처리한 경우</b> 등에 해당하면 <b>전체 매출액의 100분의 3을 초과하지 아니하는 범위</b>에서 과징금을 부과할 수 있으며, <b>매출액이 없거나 산정이 곤란한 경우에는 20억원을 초과하지 아니하는 범위</b>에서 부과할 수 있습니다.</p>
+    <div class="callout"><b>관행이 근거를 대신하는 자리에는 과징금이 있습니다.</b> 보호위원회는 <b>주민등록번호 수집에 엄격한 기준</b>을 적용하므로, <b>관행적으로 해오던 방식이라도 법적 근거가 없으면 제재를 피하기 어렵습니다.</b></div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외 — 근거와 범위를 문서로 가른다</h2>
+    <ul class="points">
+      <li><b>근거의 종류</b> — <b>조문이 이 처리를 요구·허용하는지</b>, 아니면 <b>자체 판단으로 필요하다고 본 것인지</b>가 갈립니다.</li>
+      <li><b>근거가 있어도 범위</b> — <b>받는 항목·보유 기간·이용 목적</b>이 <b>근거의 문장을 넘지 않는지</b> 대조합니다.</li>
+      <li><b>보유와 처리의 구분</b> — <b>이미 받은 번호를 그대로 두는 것도 처리에 해당</b>하므로, <b>수집 시점의 적법성과 현재 보유의 적법성을 따로</b> 봅니다.</li>
+      <li><b>예외의 엄격함</b> — <b>급박한 이익을 위한 경우는 경품·마케팅 목적과 거리가 멀고</b>, <b>고시로 정하는 경우도 근거 문서 없이는 원용하기 어렵습니다.</b></li>
+      <li><b>산정 기준이 되는 매출</b> — <b>과징금 상한이 매출액에 연결</b>돼 있어, <b>어느 사업 단위의 매출이 기준이 될지</b> 사전에 정리합니다.</li>
+      <li><b>책임의 기록</b> — <b>누가 어떤 판단으로 그 칸을 유지했는지</b>가 남아 있지 않으면 <b>사후에 부서 간 책임 소재만 길어집니다.</b></li>
+    </ul>
+    <div class="callout"><b>반대 해석도 짚어야 합니다.</b> <b>근거 없는 수집이 곧바로 모든 거래를 무효로 하지는 않지만</b>, <b>감독 사안으로 붙잡히면 설명할 자료를 그때부터 찾게 됩니다.</b> 또 <b>응모 이벤트 하나에만 적용되는 문제가 아니라</b>, <b>회원 가입·배송·이벤트 등 여러 양식이 같은 구조를 공유하는지</b> 점검해야 합니다 — <b>한 곳을 고치고 나머지를 두면 다음 지적은 같은 이유로 돌아옵니다.</b></div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;"><b>양식 하나를 근거 문서에서 되짚으십시오.</b> <b>응모·가입·이벤트 양식 전수 점검</b>으로 <b>주민등록번호 칸이 있는 문서를 한 목록</b>으로 모으는 것이 출발점입니다.</p>
+    <ol>
+      <li><b>① 양식 전수</b> — <b>주민등록번호 칸이 있는 문서</b>를 한 목록으로 모읍니다.</li>
+      <li><b>② 근거 대조</b> — <b>각 칸에 조문상 근거 문서를 붙이지 못하면 닫습니다.</b></li>
+      <li><b>③ 보유 정리</b> — <b>보유 위치·열람 권한·파기 시점</b>을 문서로 확정합니다.</li>
+      <li><b>④ 관행 배제</b> — <b>"이전부터"는 조문의 예외에 해당하지 않습니다.</b></li>
+      <li><b>⑤ 매출 기준</b> — <b>과징금 산정이 될 매출 범위</b>를 미리 정리합니다.</li>
+      <li><b>⑥ 검토 흐름</b> — <b>새 이벤트 양식은 법무 확인을 거치게</b> 고정합니다.</li>
+    </ol>
+    <p style="margin-top:16px;margin-bottom:0;">이 점검은 한 번에 끝나지 않습니다. <b>양식은 캠페인마다 새로 생기므로</b>, 법무가 만드는 것은 <b>특정 양식의 수정이 아니라 검토를 거치지 않으면 내보내지 않는 흐름</b>입니다. <b>근거 문서가 붙지 않은 칸은 과징금 심사 때 가장 먼저 드러나는 지점</b>이므로, <b>그 한 칸을 확인하는 시간은 나중에 올 대응 비용보다 쌉니다.</b></p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
