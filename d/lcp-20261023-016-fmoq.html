@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>상대가 안 주면 나도 안 준다, 그 전에 이행제공부터</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 동시이행 항변권</div>
+    <h1>상대가 안 주면 나도 안 준다, 그 전에 이행제공부터</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> "상대가 안 주니 나도 안 준다"는 말은 <b>그 자체로는 법이 받아주지 않습니다.</b> 민법 제536조의 항변권은 <b>내가 이행을 제공할 준비를 갖춘 상태</b>에서만 열립니다. 거절하려면 먼저 <b>제공할 것을 갖추고, 그 사실을 서면으로 남겨야</b> 합니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>물건과 돈을 맞바꾸는 자리에서 내 물건을 들고 서 있는 것</b>과 같습니다. 상대가 돈을 안 내밀면 나도 안 주면 되지만, <b>물건을 창고에 둔 채로</b> "안 줄 거야"라고 말하면 그건 항변이 아니라 <b>내 쪽 이행지체</b>가 됩니다. 물건을 들고 나와 "준비됐다"는 것을 보여 주는 순간에야 거절이 방어가 됩니다. 계약이 깨진 뒤 정산에서도 이 자세는 똑같이 요구됩니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+        <p><b>① 동시이행 항변권의 정의(민법 제536조).</b> 쌍무계약에서 <b>상대방이 이행을 제공할 때까지 자기 채무의 이행을 거절할 수 있는 권리</b>입니다. 이행제공의 방법과 범위, 부분 이행과 이행지체 후의 취급, 변론주의 적용 등에 세부 법리가 형성되어 있습니다. 다만 <b>상대방의 채무가 변제기에 있지 않으면</b> 그러하지 않습니다.</p>
+    <p><b>② 이행제공의 세 가지(민법 제460조).</b> <b>현실제공·구두제공·변제준비</b>가 인정됩니다. 현실제공은 채무 내용에 좇은 실제 이행이고, 구두제공은 <b>이행의 통지와 상대방의 수령 거절이 맞물리는</b> 형태이며, 변제준비는 <b>채권자가 미리 변제받기를 거절하거나 채무의 이행에 채권자의 행위를 요하는 경우</b>에 변제준비의 완료를 통지하고 그 수령을 최고하는 것입니다. 말로만 하겠다는 뜻 표시가 아니라 <b>법이 정한 방법 중 하나를 갖춰야</b> 합니다.</p>
+    <p><b>③ 해제 후에도 이어집니다(민법 제549조).</b> 계약 해제 후 <b>원상회복의무와 손해배상의무는 동시이행 관계</b>에 있습니다. 계약이 깨진 뒤의 정산에서도 한쪽이 돌려주지 않으면 다른 쪽도 돌려주지 않을 수 있습니다. 분쟁은 계약 중뿐 아니라 <b>해제 후 정산에서도 같은 구조</b>로 이어집니다.</p>
+    <p><b>④ 자주 쓰이지만 쉽게 이기지 못합니다.</b> 동시이행 항변권은 쌍무계약 분쟁에서 <b>가장 빈번하게 원용되는 방어 수단</b>입니다. 그러나 이행제공의 현실성과 범위의 대가관계가 구체적 사안에 따라 복잡하게 전개되므로 별도 분석이 필요합니다. 꺼내 들기는 쉽지만 이기기는 어려운 카드입니다.</p>
+    <p><b>⑤ 대가관계의 확인.</b> 맞물리는 두 채무가 <b>서로 대가관계</b>에 있는지를 따져야 합니다. 대가관계 없는 별개의 채무를 붙잡고 거절하면 항변권이 성립하지 않습니다. 무엇을 주고 무엇을 받는 관계인지를 계약서에서 먼저 확정하십시오.</p>
+    <p><b>⑥ 선이행 약정의 점검.</b> 당사자 일방이 상대방에게 <b>먼저 이행하여야 할 경우</b>에는 원칙적으로 거절할 수 없습니다. 다만 <b>상대방의 이행이 곤란할 현저한 사유</b>가 있으면 그러하지 않습니다. 먼저 주기로 한 약속이 있는지를 계약서에서 확인하고, 상대의 이행 곤란 사유가 현저한 수준인지를 따로 판단하십시오.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>거절이 통하는 다섯 조건</h2>
+    <ul class="points">
+      <li><b>쌍무계약일 것</b> — 일방만 부담하는 계약에서는 항변권이 열리지 않습니다. 계약이 쌍무인지부터 확인하십시오.</li>
+      <li><b>변제기가 도래했을 것</b> — 상대방의 채무가 변제기에 있어야 합니다. <b>기한이 오지 않은 채무</b>를 이유로 거절할 수 없습니다.</li>
+      <li><b>이행제공을 갖췄을 것</b> — 현실제공·구두제공·변제준비 중 하나를 법이 정한 대로 갖춰야 합니다. <b>준비 중인 상태와 제공을 마친 상태는 다릅니다.</b></li>
+      <li><b>범위가 대가관계 안일 것</b> — 거절하는 범위가 상대방이 제공해야 할 범위와 맞물려야 합니다. 전부를 제공해야 할 상대에게 <b>일부만 들이밀며 전부를 거절하면</b> 통하지 않습니다.</li>
+      <li><b>먼저 이행할 사정이 없을 것</b> — 내가 먼저 이행하기로 한 경우에는 원칙적으로 거절할 수 없습니다. 다만 상대방의 이행이 곤란할 현저한 사유가 있으면 그러하지 않습니다. 약정이 있으면 거절이 원칙적으로 막히므로, <b>현저한 사유에 대한 증빙을 먼저</b> 모아야 합니다. 이행 곤란의 사실관계가 드러나는 자료를 먼저 확보하고, 그 위에 항변의 논리를 세우십시오. 순서가 바뀌면 방어가 무너집니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 이 사안의 함정은 <b>순서</b>입니다. "멈춘다"를 먼저 선언하고 나중에 이행제공을 갖추면, 그 사이가 이행지체로 남습니다. <b>이행제공 서면 → 거절 통지</b> 순으로 움직여야 합니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">거절 전에 다섯 가지를 갖추십시오.</p>
+    <ol>
+      <li><b>① 계약 성격 확정</b> — 쌍무계약인지, 대가관계가 무엇인지를 계약서에서 확정하십시오. 항변의 토대입니다.</li>
+      <li><b>② 변제기 확인</b> — 쌍방 채무의 변제기가 모두 도래했는지 대조하십시오. 기한 미도래가 있으면 거절이 막힙니다.</li>
+      <li><b>③ 이행제공 실행</b> — 현실제공이 어려우면 구두제공이나 변제준비의 요건을 갖추십시오. 통지와 최고를 서면으로 남기십시오.</li>
+      <li><b>④ 범위 정합</b> — 거절하는 채무와 상대방이 제공해야 할 채무의 범위를 대조하십시오. 대가관계를 벗어난 거절은 위험합니다.</li>
+      <li><b>⑤ 해제 후 정산 준비</b> — 계약이 깨질 경우 원상회복과 손해배상도 동시이행 관계임을 염두에 두고 정산 자료를 모으십시오.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
