@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>연차수당, 달력연도가 아니라 입사일과 사용촉진 기록이 결정한다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 근로기준</div>
+    <h1>연차수당, 달력연도가 아니라 입사일과 사용촉진 기록이 결정한다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 연차 정산은 <b>회계연도가 아니라 근로자별 입사일</b>을 기준으로 다시 계산해야 합니다. <b>근로기준법 제60조 제1항</b>은 <b>1년간 80퍼센트 이상 출근한 근로자에게 15일</b>의 유급휴가를, <b>제4항</b>은 <b>3년 이상 계속 근로자에게 가산해 총 25일을 한도</b>로 정합니다. 그리고 <b>제61조</b>의 <b>사용촉진</b>을 했더라도 <b>그 기록이 없으면 보상 의무를 면하기 어렵습니다.</b>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>연말 정산표에서 드러난 착오</b>를 떠올려 보십시오. 정산표는 모든 근로자의 연차를 <b>1월 1일부터 12월 31일까지의 달력연도</b>로 계산하고, <b>쓰지 않은 일수는 12월 31일에 일괄 소멸</b>시키고 있었습니다. <b>입사일이 6월인 근로자</b>와 <b>3년 넘게 근무한 근로자</b>가 같은 기준으로 처리됐고, <b>업무상 재해로 1년 가까이 휴업한 근로자</b>는 <b>"출근하지 않았으므로 연차 없음"</b>으로 정리돼 있었습니다. 다시 만들기 전에 확인할 것은 셋 — <b>근로자별 입사일</b>, <b>사용촉진 통지서의 발송 기록</b>, <b>휴업자에 대한 취업규칙의 문구</b>입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점 — 발생·한도·권리의 성격</h2>
+    <p><b>① 발생 기준(근로기준법 제60조 제1항).</b> 사용자는 <b>1년간 80퍼센트 이상 출근한 근로자에게 15일</b>의 유급휴가를 주어야 합니다.</p>
+    <p><b>② 1년 미만·80퍼센트 미만(같은 조 제2항).</b> <b>계속 근로기간이 1년 미만인 근로자</b>나 <b>1년간 80퍼센트 미만 출근한 근로자</b>에게는 <b>1개월 개근 시 1일</b>의 유급휴가를 주어야 합니다.</p>
+    <p><b>③ 가산과 한도(같은 조 제4항).</b> <b>3년 이상 계속 근로한 근로자</b>에게 <b>최초 1년을 초과하는 계속 근로 연수 매 2년에 대하여 1일을 가산</b>하고, <b>가산휴가를 포함한 총 휴가 일수를 25일로 한도</b>합니다.</p>
+    <p><b>④ 판례가 더하는 두 가지.</b> <b>대법원 2022다245419</b>는 <b>1년을 초과하되 2년 이하의 기간 동안 근로를 제공한 근로자에게 부여될 수 있는 최대 연차휴가일수를 총 26일</b>로 정리했습니다. <b>대법원 2023도5476</b>은 <b>연차휴가를 사용할 권리와 미사용수당 청구권의 성격</b>을 <b>전년도 1년간의 근로에 대한 대가</b>로 보고, <b>상시 5명 이상 사업장인지 판단하는 기준은 전년도</b>이며, <b>1년간 계속근로의 기산점은 원칙적으로 근로자가 근로를 개시한 날</b>이라고 정리했습니다.</p>
+    <div class="callout"><b>장기 휴업자도 예외가 아닙니다.</b> <b>업무상 재해 등으로 장기 휴업 중인 근로자의 연차수당을 일괄 부정하는 취업규칙은 무효</b>입니다. <b>전년도 요건을 충족해 이미 발생한 권리를 휴업 상태만으로 없앨 수는 없습니다.</b></div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외 — 사용촉진이 보상 범위를 가른다</h2>
+    <p><b>근로기준법 제61조</b>는 사용자가 <b>유급휴가의 사용을 촉진하기 위하여 일정한 조치</b>를 하였음에도 근로자가 휴가를 사용하지 아니하여 소멸된 경우에는 <b>보상할 의무가 없다</b>고 정합니다. 조치의 내용도 정해져 있습니다 — <b>휴가 기간이 끝나기 6개월 전을 기준으로 10일 이내</b>에 <b>근로자별 미사용 일수를 알려주고</b>, <b>사용 시기를 정해 통보하도록 서면으로 촉구</b>하는 절차입니다.</p>
+    <p>실무에서 문제가 되는 것은 <b>조치의 유무가 아니라 기록</b>입니다. <b>구두로 "연차 쓰세요"라고 말한 것</b>과, <b>근로자별 미사용 일수를 적어 서면으로 촉구하고 사용 시기를 통보받은 것</b>은 같은 조치가 아닙니다.</p>
+    <ul class="points">
+      <li><b>통지 시점</b> — <b>기준일과 발송일</b>이 남아 있어야 합니다.</li>
+      <li><b>대상 특정</b> — <b>근로자별 미사용 일수</b>가 적혀야 합니다.</li>
+      <li><b>사용 시기 통보</b> — 근로자가 <b>시기를 정해 알려오도록 안내한 기록</b>이 필요합니다.</li>
+      <li><b>예외의 처리</b> — <b>휴업·휴직처럼 출근 상태가 다른 근로자</b>는 별도로 검토하며, <b>취업규칙으로 일괄 배제할 수 없습니다.</b></li>
+      <li><b>퇴직 정산</b> — 퇴직 시 <b>남은 연차를 어떻게 정산했는지 근로자별로 설명</b>할 수 있어야 합니다.</li>
+      <li><b>취업규칙 점검</b> — <b>휴업자·휴직자의 연차수당을 일괄 부정하는 문구</b>가 남아 있는지 확인하고 개정 여부를 검토합니다.</li>
+    </ul>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;"><b>입사일 기준으로 다시 계산</b>하는 것이 출발점입니다. <b>달력연도 일괄 계산은 오류를 만듭니다.</b></p>
+    <ol>
+      <li><b>① 발생 재계산</b> — <b>근로자별 입사일과 계속근로기간</b>으로 발생 일수를 다시 계산합니다.</li>
+      <li><b>② 한도 적용</b> — <b>1년 미만 월 단위 발생</b>, <b>3년 이상 가산</b>, <b>총 25일 한도</b>를 함께 적용합니다.</li>
+      <li><b>③ 촉진 기록</b> — <b>통지서 발송일과 근로자별 미사용 일수</b>를 대조합니다. <b>기록이 없으면 보상 의무를 면하기 어렵습니다.</b></li>
+      <li><b>④ 휴업자 검토</b> — <b>장기 휴업·휴직자를 별도 목록</b>으로 분리해 <b>취업규칙 문구와 실제 정산</b>을 대조합니다.</li>
+      <li><b>⑤ 퇴직 정산</b> — <b>퇴직자별 미사용 일수와 정산 금액</b>을 남깁니다.</li>
+      <li><b>⑥ 차년도 준비</b> — <b>사용촉진 담당자와 발송 시점</b>을 미리 정합니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
