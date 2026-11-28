@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>세금계산서가 없다는 이유로 대금을 미루면, 그 지연이 먼저 문제된다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 하도급</div>
+    <h1>세금계산서가 없다는 이유로 대금을 미루면, 그 지연이 먼저 문제된다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> <b>하도급거래 공정화에 관한 법률 제13조</b>는 <b>목적물 등의 수령일부터 60일 이내의 가능한 짧은 기한</b>으로 정한 지급기일까지 하도급 대금을 지급하여야 한다고 정합니다. <b>계산서 발행일이 기산점이 되는 것은 당사자가 그렇게 정한 경우</b>이고, 그렇지 않으면 <b>목적물 수령일이 기준</b>입니다. <b>계산서가 없다는 사실은 대금 지급 의무를 없애지 않습니다.</b> 미발급을 이유로 지급을 지연하면 <b>하도급법 제13조 위반</b>으로 평가될 수 있습니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>준공은 끝났고, 계산서는 비어 있는 상황</b>을 떠올려 보십시오. 공사는 완료됐고 <b>준공검사도 통과</b>했는데, 재무팀은 <b>세금계산서가 발급되지 않았다는 이유로 지급을 보류</b>하자고 합니다. 현장 담당자는 <b>"계산서 없이 돈을 주면 회계 처리에 문제가 생긴다"</b>고 말합니다. 이때 확인할 것은 <b>지급기일</b>입니다. <b>목적물을 받은 날부터 기산되는 기한이 이미 가까워지고 있었고, 계산서 문제는 그 기한을 멈추는 사유가 아니었습니다.</b> <b>두 의무의 순서를 잘못 잡으면 회사가 먼저 위반자가 됩니다.</b>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점 — 지급기일과 계산서는 별개의 의무</h2>
+    <p><b>① 지급기일(하도급법 제13조).</b> 원사업자가 수급사업자에게 <b>제조 등의 위탁</b>을 하는 경우 <b>목적물 등의 수령일부터 60일 이내의 가능한 짧은 기한</b>으로 정한 지급기일까지 하도급 대금을 지급하여야 합니다.</p>
+    <p><b>② 기산점.</b> 같은 조는 <b>건설위탁의 경우 인수일</b>, <b>용역위탁의 경우 수급사업자가 위탁받은 용역의 수행을 마친 날</b>, <b>납품 등이 잦아 월 1회 이상 세금계산서 발행일을 정한 경우에는 그 정한 날</b>을 기산점으로 삼도록 하고 있습니다. 즉 <b>계산서 발행일이 기산점이 되는 것은 당사자가 그렇게 정한 경우</b>이고, 그렇지 않으면 <b>목적물 수령일이 기준</b>입니다.</p>
+    <p><b>③ 계산서 쪽의 해결 절차(부가가치세법 제32조).</b> 세금계산서에 기재할 사항을 정하고, <b>기재 오류가 있으면 같은 조 제7항에 따라 수정세금계산서를 발급</b>하여 정리할 수 있습니다.</p>
+    <div class="callout"><b>계산서 부재는 지급 의무를 없애지 않습니다.</b> 오히려 <b>미발급을 이유로 지급을 거절하거나 지연하면 하도급법 제13조 위반</b>으로 평가될 수 있습니다.</div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외 — 순서를 바꾸면 위험이 커진다</h2>
+    <p>판례도 <b>지급보증과 관련하여 수급사업자 보호를 중요한 기준</b>으로 삼았습니다. <b>대법원 2020다296451</b>은 원사업자가 <b>법이 정한 30일의 기간이 지나서 공사대금 지급보증</b>을 한 경우 <b>수급사업자가 계약이행 보증에 대한 청구를 할 수 있는지</b>에 대해 <b>원칙적으로 적극</b>이라고 보면서, <b>예외적인 경우를 판단할 때 수급사업자 보호를 주된 요소로 고려</b>해야 한다고 정리했습니다.</p>
+    <ul class="points">
+      <li><b>기산점</b> — <b>건설위탁은 인수일, 용역은 수행을 마친 날, 월 단위로 계산서 발행일을 정한 경우에는 그 날</b>이 기준입니다. <b>계약서에 어떤 기산점을 두었는지 먼저</b> 확인합니다.</li>
+      <li><b>지급기일의 단축</b> — <b>60일 이내에서 가능한 짧은 기한</b>으로 정해야 하므로, <b>계약이 60일을 넘겨 정하고 있다면 그 조항부터 문제</b>됩니다.</li>
+      <li><b>계산서 오류의 처리</b> — <b>수정세금계산서로 정리할 수 있으므로</b>, 지급 보류의 이유로 삼기 어렵습니다.</li>
+      <li><b>보증과의 관계</b> — <b>지급보증이 늦어졌더라도 수급사업자의 보증 청구가 곧바로 배제되지는 않습니다.</b></li>
+      <li><b>내부 통제</b> — <b>재무팀의 지급 보류 기준과 법정 지급기일이 충돌하지 않도록</b> 규정을 정비합니다.</li>
+      <li><b>기록</b> — <b>계산서 발급 요청·오류 통지·수정 발급의 경위</b>를 남겨야 <b>지연의 책임 소재</b>를 설명할 수 있습니다.</li>
+      <li><b>계약 조항의 정비</b> — <b>지급기일과 계산서 발행 시점을 같은 조항에 두면</b> 담당자가 둘을 같은 의무로 오해하기 쉬우므로, <b>기산점과 지급기일을 별도 항으로 분리</b>합니다.</li>
+      <li><b>내부 보고 체계</b> — <b>지급기일이 임박한 건은 재무와 법무가 같은 시점에 공유</b>해야 보류 결정이 늦게 뒤집히는 일을 막습니다.</li>
+    </ul>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;"><b>지급기일을 먼저 확정</b>하십시오. <b>계약서에서 기산점과 지급기일을 확인하고 법정 기한과 대조</b>하는 것이 출발점입니다.</p>
+    <ol>
+      <li><b>① 기산점 확인</b> — <b>인수일·수행 완료일·계산서 발행일</b> 중 무엇인지 확인합니다.</li>
+      <li><b>② 기한 대조</b> — <b>정한 지급기일이 법정 기한 안에 있는지</b> 대조합니다.</li>
+      <li><b>③ 계산서 처리</b> — <b>미발급·오류가 있으면 수정세금계산서 발급 절차를 안내</b>하고 <b>그 요청을 문서로</b> 남깁니다.</li>
+      <li><b>④ 보류 금지</b> — <b>계산서 미발급을 이유로 한 지급 보류를 차단</b>하도록 재무팀과 기준을 맞춥니다.</li>
+      <li><b>⑤ 보증 검토</b> — <b>지급보증이 늦어진 사안</b>이라면 <b>수급사업자의 청구 가능성</b>을 검토합니다.</li>
+      <li><b>⑥ 일정 관리</b> — <b>지급 일정과 계산서 발급 일정</b>을 한 표에 놓고 관리합니다.</li>
+    </ol>
+    <p style="margin-top:16px;margin-bottom:0;">분쟁이 시작되기 전에 <b>지급기일 도래 사실을 내부에 통지</b>하고, <b>계약 조항을 기산점과 지급기일로 나누어 정비</b>해 다음 계약의 표준 문안에 반영하십시오.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
