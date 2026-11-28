@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>회계가 잘못됐다고 바로 배임은 아니다 — 다만 반복은 따로 본다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>회계가 잘못됐다고 바로 배임은 아니다 — 다만 반복은 따로 본다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> <b>사건의 크기는 건수가 아니라 구조에서 정해집니다.</b> <b>반복 행위는 포괄일죄로 묶여 판단될 수 있지만, 교비회계 편입 사실만으로 업무상배임죄의 손해나 이익이 인정되는 것은 아닙니다.</b> <b>구조를 보고, 손해와 이익을 따로 확인하는 것이 정확한 순서입니다.</b>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>사건의 시작: 감사에서 나온 건수가 너무 많았다</h2>
+    <div class="analogy">
+      <b>감사 보고서에 위반 건수가 수십 개 찍혀 나왔는데, 그 숫자가 곧 형사 사건의 크기인지 판단이 서지 않는 상황</b>을 떠올려 보십시오. <b>회계가 잘못된 것과 형사책임이 성립하는 것은 다른 질문입니다.</b> 오재현은 <b>학교법인을 운영하는 기관의 대표입니다.</b> <b>내부 감사에서 교비회계에 들어가야 할 수입이 다른 회계로 편입된 정황이 여러 해에 걸쳐 나왔습니다.</b> <b>담당자는 건수를 세며 \"이 정도면 큰일입니다\"라고 했고, 이사회에서는 곧바로 형사 대응을 준비하자는 얘기가 나왔습니다.</b> <b>오 대표는 판단을 미뤘습니다. 회계가 잘못된 것과 형사책임이 성립하는 것은 다른 문제 같았기 때문입니다.</b> <b>그는 정리해야 할 것이 두 가지였습니다. 반복된 행위를 어떻게 묶어서 볼 것인지, 그리고 회계 편입 사실만으로 배임이 성립하는지.</b>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 보는 핵심: 판시사항이 두 갈래를 갈라 준다</h2>
+    <p><b>횡령죄 등 재산범죄에서 일정 기간 반복해 행한 각 범행은 포괄일죄로 될 수 있습니다.</b> <b>대법원 2024도11353 판결의 판시사항입니다.</b> <b>오 대표가 마주한 것처럼 여러 해에 걸친 자금 이동이 있다면, 건수를 그대로 처벌 단위로 보지 않고 하나의 범행 구조로 묶어 판단할 수 있다는 뜻입니다.</b> <b>경영의 언어로 옮기면, 사건의 크기는 건수가 아니라 구조에서 정해집니다.</b></p>
+    <p><b>교비회계 편입은 별도입니다.</b> <b>형법 제355조가 정하는 업무상배임죄의 요건을 함께 놓고 보아야 합니다.</b> <b>대법원 2021도8805 판결은 사립학교법이 학교법인의 회계를 분리하고 있는 취지와 교비회계의 역할을 설명합니다.</b> <b>회계 분리는 그 재원을 학교 운영에 쓰도록 하려는 장치입니다.</b> 그러나 <b>교비회계로 편입해야 할 수입을 다른 회계로 편입했다는 사정만으로 업무상배임죄의 재산상 손해나 행위자·제3자의 재산상 이익이 인정되는 것은 아닙니다.</b> <b>같은 판결의 판시사항이 그 점을 분명히 합니다.</b></p>
+    <p><b>여기서 중요한 것은 두 판결이 서로 다른 질문에 답한다는 점입니다.</b> <b>하나는 반복 행위를 어떻게 세는가이고, 다른 하나는 배임의 요건이 채워졌는가입니다.</b> <b>이 둘을 섞으면 엉뚱한 결론에 도달합니다.</b> <b>건수가 많다는 이유로 배임이 성립한다고 보거나, 돈이 학교에 남아 있다는 이유로 반복 행위를 아예 문제 삼지 않는 식입니다.</b> <b>정확한 순서는 구조를 보고, 손해와 이익을 따로 확인하는 것입니다.</b></p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외: 이사회가 정할 것들</h2>
+    <p><b>첫째, 사실관계부터 확정합니다.</b> <b>언제 어떤 금액이 어느 회계로 들어갔는지 시점별로 정리합니다.</b> <b>감사 보고서의 건수보다 이동의 구조가 먼저입니다.</b></p>
+    <p><b>둘째, 수입의 성격을 확인합니다.</b> <b>그 돈이 교비회계에 들어가야 하는 것인지, 다른 회계에 둘 수 있는 것인지를 규정으로 확인합니다.</b> <b>성격이 정해지지 않으면 위반 여부도 판단할 수 없습니다.</b></p>
+    <p><b>셋째, 재산상 손해를 별도로 봅니다.</b> <b>대법원 2021도8805 판결의 취지에 따라, 회계 편입만으로 손해가 인정되는 것은 아닙니다.</b> <b>학교 재산이 실제로 줄었는지를 확인합니다.</b></p>
+    <p><b>넷째, 이익을 본 사람을 찾습니다.</b> <b>행위자나 제3자가 재산상 이득을 얻었는지가 배임 판단의 또 다른 축입니다.</b> <b>돈의 최종 행선지를 확인합니다.</b></p>
+    <p><b>다섯째, 반복 행위를 묶어 봅니다.</b> <b>대법원 2024도11353 판결에 따라 동일한 범행 구조인지, 각 행위가 독립적인 결심에서 나왔는지를 검토합니다.</b></p>
+    <p><b>여섯째, 내부 조치의 범위를 정합니다.</b> <b>회계 정정과 재발 방지는 내부에서 바로 진행하되, 형사 대응은 사실관계와 판시사항 대조가 끝난 뒤에 결정합니다.</b> <b>순서를 바꾸면 비용이 커집니다.</b></p>
+    <p><b>일곱째, 판시사항을 원문으로 확인합니다.</b> <b>요약에 기대지 말고 판결문의 판시사항을 읽어 이 사안에 적용되는지 판단합니다.</b></p>
+    <div class="callout">
+      <b>주의.</b> <b>건수가 많다는 이유로 배임이 성립한다고 보면 안 됩니다.</b> <b>구조와 손해는 서로 다른 질문입니다.</b>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것: 감사 결과를 두 갈래로 나눈다</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>감사에서 건수가 많이 나왔다고 해서 곧바로 형사 사건이 되는 것은 아닙니다.</b></p>
+      <ol>
+        <li><b>① 구조 확정</b> — <b>자금 이동의 시점과 구조를 확정한다.</b></li>
+        <li><b>② 수입 성격</b> — <b>수입의 회계적 성격을 규정으로 확인한다.</b></li>
+        <li><b>③ 손해 여부</b> — <b>대법원 2021도8805 판결에 따라 손해 여부를 따로 본다.</b></li>
+        <li><b>④ 이익 확인</b> — <b>행위자·제3자의 재산상 이익을 확인한다.</b></li>
+        <li><b>⑤ 포괄일죄</b> — <b>대법원 2024도11353 판결에 따라 포괄일죄 구조를 검토한다.</b></li>
+        <li><b>⑥ 순서 정리</b> — <b>회계 정정과 형사 대응의 순서를 정한다.</b></li>
+        <li><b>⑦ 원문 대조</b> — <b>판시사항을 원문으로 대조한다.</b></li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;"><b>반복 행위의 구조와 재산상 손해를 나눠 보는 것, 그것이 이사회의 첫 판단입니다.</b></p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
