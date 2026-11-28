@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>조건이 붙은 자산, 세금은 언제부터 따집니까</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 조건부 자산 취득</div>
+    <h1>조건이 붙은 자산, 세금은 언제부터 따집니까</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 계약의 <b>이름</b>이 세무 취급을 정하지 않습니다. 국적취득조건부 용선계약이라도 <b>2회 이상 분할 지급 + 최종지급까지 1년 이상</b>이면 장기할부조건부 매매로 취급됩니다(대법원 2006두18270). 그래서 법무팀이 먼저 할 일은 해석이 아니라 <b>계약서에 날짜 세 개를 못 박는 것</b>입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>리스로 타던 차를 나중에 내 것으로 사는 계약</b>과 비슷합니다. 서류 제목은 '렌터카 계약'인데, 돈은 나눠 내고 마지막 할부가 1년 뒤라면 세무는 그것을 <b>할부 매매</b>로 봅니다. 그래서 <b>언제 내 것이 되었는지(소유권)</b>, <b>언제부터 내 책임으로 굴렸는지(위험)</b>, <b>언제부터 실제로 썼는지(사용)</b>를 각각 적어 두어야 합니다. 이 세 날짜가 없으면 세무조사에서 '언제부터'를 말할 근거가 사라집니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+        <p><b>① 장기할부조건부 매매로의 취급(대법원 2006두18270).</b> 이 판결의 판시사항은 <b>할부금을 2회 이상 분할하여 지급하되 최종지급기일까지의 기간이 1년 이상</b>인 국적취득조건부 용선계약의 경우, 법인세법을 적용할 때 <b>장기할부조건부 매매와 동일하게 취급하여야 하는지</b> 여부를 다룹니다. 결론은 적극입니다. 조건이 붙은 용선계약이라도 <b>실질이 장기할부 매매이면 그에 따라 취급</b>합니다.</p>
+    <p><b>② 취득가액의 산정.</b> 같은 판결의 판시사항은 법인세법상 장기할부조건부 매매로 인한 <b>자산의 취득가액 산정 방법</b>을 다룹니다. <b>계약의 형식 이름이 아니라 지급 구조와 기간</b>으로 판단하고, 그에 맞는 취득가액 산정 방법을 적용합니다. 형식이 용선계약이라는 이유만으로 다른 취급을 받지 않습니다.</p>
+    <p><b>③ 수익적 지출의 구분(법인세법 시행규칙 제17조).</b> <b>버그 수정·기존 기능 유지·외장 복구</b>는 수익적 지출로 <b>지출 사업연도에 즉시 손금 산입</b>이 가능합니다. 자산의 가치를 높이는 지출과 현상을 유지하는 지출은 취급이 다릅니다. 유지·보수 성격이면 해당 사업연도에 바로 손금에 넣습니다.</p>
+    <p><b>④ 계약서의 날짜 세 개.</b> <b>소유권 이전일, 위험 이전일, 실제 사용 개시일</b>을 계약서에 각각 명시하십시오. 세 날짜가 취득 시점과 감가상각 개시 시점을 가르는 기준이 됩니다. 날짜가 뭉개져 있으면 시점 다툼이 생깁니다.</p>
+    <p><b>⑤ 부서 간의 사전 확정.</b> 장기할부 구조가 결합된 계약에서는 <b>자산 인식 시점과 감가상각 개시 시점</b>을 회계팀과 사전에 확정하십시오. 법무의 계약 해석과 회계의 인식 시점이 어긋나면 세무조사에서 양쪽 다 흔들립니다.</p>
+    <p><b>⑥ 취득가액 산정의 틀.</b> 장기할부조건부 매매로 취급되면 그에 맞는 취득가액 산정 방법을 적용합니다. <b>지급 구조와 기간을 대금 일정표</b>에 담아두면 산정의 기초 자료가 됩니다. 일정표 없는 산정은 설명이 되지 않습니다. 대금 일정표는 계약서와 함께 보관하고 변경될 때마다 갱신하십시오. 변경 이력이 곧 산정의 정합성을 보여줍니다. 일정표와 계약서, 검수 서면의 날짜가 서로 맞아야 시점 다툼에서 밀리지 않습니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>시점을 증명하는 세 가지</h2>
+    <ul class="points">
+      <li><b>검수의 특정</b> — 검수 기준과 <b>검수 합격일</b>을 특정하는 방법, 서면 통보 등을 계약서에 구체화하십시오. 합격일이 사용 개시와 이어지면 <b>감가상각 개시의 근거</b>가 됩니다.</li>
+      <li><b>분할 지급의 구조</b> — <b>2회 이상 나누어 내고 최종지급까지 1년 이상</b>인지 확인하십시오. 이 구조에 해당하면 장기할부조건부 매매의 취급이 따라옵니다. 대금 일정표가 곧 세무 판단의 자료입니다.</li>
+      <li><b>지출의 성격 구분</b> — 수리·유지가 <b>자산의 가치를 올리는 것</b>인지 <b>현상을 유지하는 것</b>인지 구분하십시오. 전자면 자산 쪽으로, 후자면 수익적 지출로 해당 사업연도에 손금 산입합니다. 증빙의 성격란에 구분을 적어 두십시오.</li>
+      <li><b>사용 개시의 기록</b> — 실제로 쓰기 시작한 날을 <b>운행일지·가동 기록</b>으로 남기십시오. 계약서의 날짜와 현장의 기록이 맞아야 시점 다툼에서 밀리지 않습니다.</li>
+      <li><b>회계와의 정합성</b> — 계약 해석상 취득 시점과 회계상 자산 인식 시점이 같은지 대조하십시오. 어긋나면 어느 한쪽이 틀린 것이므로 계약서부터 다시 보십시오. 분기마다 인식 시점과 상각 개시를 대조하는 절차를 두면 어긋남을 조기에 잡을 수 있습니다.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 세무조사에서 다투는 것은 계약서 제목이 아니라 <b>날짜와 지급 구조</b>입니다. 세 날짜가 계약서에 없으면, 나중에 어떤 설명도 사후 조정으로 읽힙니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">날짜와 구조를 먼저 확정하십시오. 다섯 단계입니다.</p>
+    <ol>
+      <li><b>① 세 날짜 못 박기</b> — 소유권 이전일·위험 이전일·실제 사용 개시일을 계약서에 각각 명시하십시오. 시점의 출발점입니다.</li>
+      <li><b>② 검수 조항 구체화</b> — 검수 기준과 합격일 특정 방법, 서면 통보 절차를 계약서에 넣으십시오. 합격일이 곧 사용 개시의 증거가 됩니다.</li>
+      <li><b>③ 지급 구조 정리</b> — 분할 횟수와 최종지급기일까지의 기간을 일정표에 담으십시오. 장기할부 해당 여부가 여기서 갈립니다.</li>
+      <li><b>④ 회계팀과 사전 확정</b> — 자산 인식 시점과 감가상각 개시 시점을 계약 체결 전에 맞추십시오. 사후 조정은 세무조사에서 통하지 않습니다.</li>
+      <li><b>⑤ 지출 구분</b> — 유지·보수 지출은 수익적 지출로 해당 사업연도 손금 산입 대상인지 판단하십시오. 성격 구분이 세액의 시기를 바꿉니다.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
