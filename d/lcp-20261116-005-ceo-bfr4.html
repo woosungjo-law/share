@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>부품사 잘못이라는 보고를 믿기 전에 물어야 할 세 가지</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>부품사 잘못이라는 보고를 믿기 전에 물어야 할 세 가지</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> <b>부품 업체에 주어지는 면책 논리와 완성품 업체가 쓸 수 있는 논리는 다릅니다.</b> 그리고 <b>같은 손해에 책임 있는 회사가 둘이면 한쪽만 책임지는 구조가 아닙니다.</b> 대표가 물어야 할 것은 <b>"누구 잘못인가"</b>가 아니라 <b>"우리가 언제 무엇을 알았고 무엇을 했는가"</b>입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>사건의 시작: 두 줄짜리 보고서가 만든 착각</h2>
+    <div class="analogy">
+      <b>두 줄짜리 진단서</b>를 떠올려 보십시오. <b>원인 한 줄, 결론 한 줄</b>로는 치료 계획이 서지 않습니다. 튼튼기계의 대표는 품질본부에서 올라온 <b>두 줄짜리 보고</b>를 받았습니다. <b>화재 원인은 배터리 셀 결함이고, 셀은 협력사가 납품한 것이며, 따라서 배상 책임은 협력사에 있다</b>는 내용이었습니다. 대표는 <b>다음 주 이사회에 그대로 보고할 참</b>이었습니다. <b>법무 담당자가 제동을 걸었습니다.</b>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 보는 핵심: 책임은 부품사와 완성품사에 동시에 걸린다</h2>
+    <p><b>제조물 책임법 제4조 제1항</b>은 <b>면책 사유 네 가지</b>를 정합니다. 그중 <b>제4호</b>는 <b>원재료나 부품의 경우 그 원재료나 부품을 사용한 제조물 제조업자의 설계 또는 제작에 관한 지시로 인하여 결함이 발생하였다는 사실</b>을 듭니다. <b>이 조항의 주어는 부품을 공급한 자</b>입니다. <b>부품사가 "결함은 완성품 회사의 지시 탓"이라고 항변할 때 쓰는 조문</b>이라는 뜻입니다. <b>완성품 회사가 같은 조항을 들어 "결함은 부품사 탓"이라고 주장하는 구도는 조문의 문언과 맞지 않습니다.</b></p>
+    <p><b>제4조 제2항</b>은 면책의 문을 더 좁힙니다. <b>제조물을 공급한 후에 결함이 존재한다는 사실을 알거나 알 수 있었음에도 손해 발생을 방지하기 위한 적절한 조치를 하지 않으면, 제1항 제2호부터 제4호까지의 면책을 주장할 수 없습니다.</b> <b>여기에는 부품 지시 관련 제4호도 포함됩니다.</b> <b>결함을 알았거나 알 수 있었던 시점과, 그 뒤에 실제로 한 조치가 방어의 성패를 가릅니다.</b></p>
+    <p><b>제조물 책임법 제5조</b>는 <b>동일한 손해에 대해 배상 책임이 있는 자가 2인 이상이면 연대하여 배상할 책임이 있다</b>고 정합니다. <b>원고 입장에서는 부품사와 완성품사 중 누구에게 얼마를 청구할지 선택할 수 있고, 두 회사를 함께 상대로 할 수도 있습니다.</b> <b>매출과 평판에 직접 타격이 가는 쪽은 완성품 회사인 경우가 많습니다.</b></p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외: 이사회 보고 전에 바꿔야 할 세 문장</h2>
+    <p><b>"부품사 책임" → "연대 책임 구조".</b> <b>연대 책임은 원고에 대한 관계를 정하는 규칙이므로, 우리 회사가 원고에게 책임을 지지 않는다는 결론은 조문에서 나오지 않습니다.</b> <b>부품사와의 계약상 구상 조항은 별개의 문제</b>입니다. <b>이사회에는 두 층위를 분리해 보고해야 오판이 반복되지 않습니다.</b></p>
+    <p><b>"원인은 셀" → "인지 시점과 조치 기록".</b> <b>제4조 제2항은 인지 또는 인지 가능성과 조치의 적절성을 요건으로 삼습니다.</b> <b>품질 클레임이 언제 처음 접수되었고, 그때 무엇을 지시했고, 어떤 조치를 어떤 범위로 실행했는지가 문서로 남아 있어야 합니다.</b> <b>이 기록이 없으면 면책 항변은 사실상 불가능합니다.</b></p>
+    <p><b>"협력사가 배상" → "구상은 별도 트랙".</b> <b>연대 책임을 지고 나서 협력사에 구상하는 경로는 계약과 지시 이력에 달려 있습니다.</b> <b>지시 내용, 하자 통보, 개선 요구를 문서로 남기지 않았다면 구상도 어려워집니다.</b> <b>소송 대응과 구상 준비를 같은 팀이 동시에 시작해야 하는 이유</b>입니다.</p>
+    <p><b>질문의 전환.</b> <b>대표가 실제로 물어야 했던 것은 "누구 잘못인가"가 아니라 "우리가 언제 무엇을 알았고 무엇을 했는가"</b>였습니다.</p>
+    <div class="callout">
+      <b>주의.</b> <b>이사회에 올릴 문장은 결론이 아니라 검증 질문이어야 합니다.</b> <b>누가 잘못했는지가 아니라, 우리가 언제 무엇을 알았고 무엇을 했는지가 먼저 정리</b>되어야 합니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것: 보고 문장을 검증 단위로 바꾼다</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>네 가지를 확인한 뒤에 이사회 보고를 승인하십시오.</b></p>
+      <ol>
+        <li><b>① 인지 시점</b> — <b>결함 인지 시점을 특정하도록 지시하고, 인지 이후의 조치 기록 제출을 요구</b>했는가.</li>
+        <li><b>② 책임의 분리</b> — <b>부품사 책임과 우리 회사 책임을 분리해 설명하는 법무 의견을 받았는가.</b></li>
+        <li><b>③ 청구의 범위</b> — <b>연대 책임 구조에서 원고의 청구 상대와 범위를 확인</b>했는가.</li>
+        <li><b>④ 구상 준비</b> — <b>협력사 구상 가능성과 필요한 증거 확보를 소송 초기부터 진행하도록 지시</b>했는가.</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;"><b>부품사 잘못이라는 보고를 믿기 전에 물어야 할 세 가지</b>는 원인·책임·구상이 아니라 <b>인지 시점·조치 기록·구상 트랙</b>입니다.</p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
