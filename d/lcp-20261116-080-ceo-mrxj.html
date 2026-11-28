@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>우리 채권에 남의 추심명령이 붙었을 때, 회수가 달라지는 지점</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1a2f4a; --accent-d: #0d1b2e; --accent-l: #3a5a85;
+    --accent-tint: #eef1f5; --accent-tint-ln: #d2dae3;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #7fa0c9; --accent-d: #0a1420; --accent-l: #9fbcdc;
+      --accent-tint: #182430; --accent-tint-ln: #28374a;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead {
+    background: var(--accent-tint); border-left: 3px solid var(--accent);
+    padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px;
+  }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 {
+    font-size: 19px; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; font-size: 15px; color: var(--ink2);
+  }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2);
+  }
+  ul.points li::before {
+    content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
+  }
+  .callout {
+    background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px;
+  }
+  .callout b { color: var(--warn); }
+  .checklist {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing {
+    margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">CEO 의사결정 브리핑 · 원문 전체 통역</div>
+    <h1>우리 채권에 남의 추심명령이 붙었을 때, 회수가 달라지는 지점</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> <b>남의 추심명령이 붙었다고 해서 우리가 법정에서 문이 닫히는 것은 아닙니다.</b> 다만 <b>추심채권자가 같은 청구로 받은 판결이 있으면 우리 소송은 부적법해질 수 있습니다.</b> 그래서 <b>회수 전략은 "우리가 이길 수 있는가"가 아니라 "어떤 절차에서 어떤 지위를 확보할 수 있는가"의 문제</b>입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>사건의 시작: 받을 돈에 손이 붙었다</h2>
+    <div class="analogy">
+      <b>내 통장에 들어올 돈인데, 다른 사람이 먼저 손을 얹고 가져갈 순서를 정해 놓은 상황</b>을 떠올려 보십시오. <b>돈을 받을 권리는 그대로인데, 그 돈이 도착하는 순서가 바뀐 것입니다.</b> 정우소재의 대표는 <b>매출채권 회수 일정을 잡고</b> 있었습니다. 그런데 <b>거래처의 다른 채권자가 우리가 받을 돈에 대해 압류와 추심명령을 받았다는 통지를 받았습니다.</b> <b>게다가 그 채권자는 이미 소송을 진행하고</b> 있었습니다. <b>대표의 첫 반응은 당연했습니다. 우리 돈인데 왜 남이 먼저 가져가는가.</b> <b>재무팀은 회수 계획을 다시 짜야 했고, 영업팀은 거래처와의 관계를 어떻게 할지 물었습니다.</b> <b>대표가 알고 싶은 것은 하나였습니다. 이 상황에서 우리 회수가 얼마나 달라지는가.</b>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 보는 핵심: 소를 제기할 수 있는가와 판결이 우리에게 미치는가는 다르다</h2>
+    <p><b>민사소송법 제218조</b>는 <b>확정판결의 기판력이 미치는 범위</b>를 정합니다. <b>확정판결은 당사자, 변론을 종결한 뒤의 승계인 또는 청구의 목적물을 승계한 자에 대하여 효력이 생깁니다.</b> <b>원칙적으로 소송을 하지 않은 사람은 그 판결에 묶이지 않습니다.</b> <b>그러나 추심명령이 얽히면 이 원칙의 경계가 흔들립니다.</b></p>
+    <p><b>첫째, 우리가 소를 제기할 수 있는 지위는 유지됩니다.</b> <b>대법원 2021다252977 판결</b>은 <b>채무자의 제3채무자에 대한 채권에 관해 추심명령이 있어도 채무자가 그 채권에 관한 이행의 소를 제기할 당사자적격을 상실하지 않는다</b>고 보았습니다. <b>국가가 국세징수법에 의한 체납처분으로 압류한 경우에도 같은 법리가 적용됩니다.</b> 즉 <b>남의 추심명령이 붙었다고 해서 우리가 법정에서 문이 닫히는 것은 아닙니다.</b></p>
+    <p><b>둘째, 그러나 그 소송의 결과가 우리에게 미칠 수 있습니다.</b> <b>대법원 2022다299829 판결</b>은 <b>추심명령을 받은 채권자가 채무자를 위하여 추심소송에서 받은 확정판결의 기판력이, 소송 결과와 관계없이 채무자에게 미친다</b>고 판시했습니다. <b>승소 확정판결의 기판력이 미치는 자가 전소의 상대방을 상대로 전소와 동일한 청구의 소를 제기하는 경우의 처리</b>도 함께 다루어졌습니다. 정리하면 이렇습니다. <b>우리는 소를 제기할 수 있지만, 이미 추심채권자가 같은 청구로 받은 판결이 있으면 우리 소송은 부적법해질 수 있습니다.</b></p>
+    <p><b>대표에게 이 구조가 뜻하는 바는 분명합니다.</b> <b>회수 전략은 "우리가 이길 수 있는가"가 아니라 "어떤 절차에서 어떤 지위를 확보할 수 있는가"의 문제입니다.</b> <b>이 지점을 놓치면 회수 계획 전체가 어긋납니다.</b></p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>중요한 조건과 예외: 대표가 결정할 다섯 가지</h2>
+    <p><b>첫째, 회수 목표액을 다시 계산한다.</b> <b>압류의 범위와 추심명령의 대상이 채권 전부인지 일부인지를 확인하고, 배당 순서를 반영한 예상 회수액을 산정합니다.</b> <b>총액이 아니라 실제로 들어올 금액을 기준으로 계획을 세웁니다.</b></p>
+    <p><b>둘째, 별도 소송의 실익을 판단한다.</b> <b>같은 청구로 이미 소송이 진행 중이라면 별도 소송은 시간과 비용만 쓰고 결론을 얻지 못할 수 있습니다.</b> <b>그렇다면 절차에 참가해 의견을 내는 방법이 더 효율적일 수 있습니다.</b></p>
+    <p><b>셋째, 다른 청구원인을 찾는다.</b> <b>같은 채권이라도 원인이 다르면 별개의 청구가 될 수 있습니다.</b> <b>계약상 청구와 손해배상 청구를 구분해 검토합니다.</b></p>
+    <p><b>넷째, 시간표를 만든다.</b> <b>추심 절차의 진행 단계와 우리 대응 시점을 하나의 달력에 올립니다.</b> <b>이의 제기 기한, 참가 신청 시기, 배당 요구 시점이 흩어져 있으면 하나를 놓치는 것만으로 회수 기회를 잃습니다.</b></p>
+    <p><b>다섯째, 거래 관계의 처리 방침을 정한다.</b> <b>채권 회수는 관계를 끊는 일과 다릅니다.</b> <b>압류가 걸린 상대와 계속 거래할 것인지, 거래를 유지하되 결제 조건을 바꿀 것인지를 정합니다.</b> <b>이 판단을 미루면 영업 현장이 임의로 약속을 만들고, 그 약속이 회수 절차와 충돌합니다.</b></p>
+    <div class="callout">
+      <b>주의.</b> <b>명목 금액은 회수액이 아닙니다.</b> <b>배당 순위와 선행 압류를 차감한 숫자가 실제 회수액입니다.</b>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>그래서, 대표가 정할 것: 회수액 기준으로 다시 계획한다</h2>
+    <div class="checklist">
+      <p style="margin-bottom:16px;"><b>총액이 아니라 실제로 들어올 금액을 기준으로 재무 계획과 자금 일정을 다시 잡으십시오.</b></p>
+      <ol>
+        <li><b>① 대상과 범위</b> — <b>압류·추심명령의 대상 채권과 범위를 확인한다.</b></li>
+        <li><b>② 상대 소송</b> — <b>추심채권자가 제기한 소송의 청구와 진행 단계를 파악한다.</b></li>
+        <li><b>③ 동일성</b> — <b>우리 채권과 그 청구가 동일한지 검토한다.</b></li>
+        <li><b>④ 예상 회수액</b> — <b>압류를 반영한 실제 예상 회수액을 다시 계산한다.</b></li>
+        <li><b>⑤ 경로 선택</b> — <b>절차 참가와 별도 소송 중 어느 쪽이 유리한지 정한다.</b></li>
+        <li><b>⑥ 시점 고정</b> — <b>이의 제기·참가·배당 요구 시점을 달력에 고정한다.</b></li>
+        <li><b>⑦ 관계 방침</b> — <b>재무 계획과 영업 관계 대응 방침을 함께 조정한다.</b></li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;"><b>채권 회수는 금액의 문제로 시작해 절차의 문제로 끝납니다.</b> <b>같은 채권이라도 어느 절차에서 어떤 지위를 잡았는지에 따라 손에 쥐는 금액이 달라집니다.</b></p>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
