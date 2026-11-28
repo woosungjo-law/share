@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>집중투표 의무화, 정관 정비가 아닌 이사 선임 절차의 재설계다</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --panel2: #f1efec;
+    --line: #e4dfda; --ink: #1a1715; --ink2: #4d4742; --muted: #8a8078;
+    --accent: #1e3a5f; --accent-d: #13243c; --accent-l: #2c5691;
+    --accent-tint: #eef3f9; --accent-tint-ln: #d6e0ed;
+    --warn: #b45309; --warn-tint: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --panel: #1b2027; --panel2: #20262e;
+      --line: #2c333c; --ink: #eef1f4; --ink2: #c7cdd4; --muted: #8b93a0;
+      --accent: #6fa1e0; --accent-d: #0e1420; --accent-l: #8fb8ea;
+      --accent-tint: #1b2735; --accent-tint-ln: #2b3d54;
+      --warn: #e0a458; --warn-tint: #2c2416;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.85; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .header { background: var(--accent-d); color: #fff; padding: 44px 24px 30px; }
+  .header-inner { max-width: 760px; margin: 0 auto; }
+  .header .eyebrow { font-size: 13px; letter-spacing: .03em; color: rgba(255,255,255,.65); margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.45; }
+  .header .bar { width: 56px; height: 3px; background: var(--accent-l); margin-top: 16px; border-radius: 2px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 72px; }
+  .lead { background: var(--accent-tint); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 28px; font-size: 17px; }
+  .lead b { color: var(--accent); }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 19px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; flex-shrink: 0; }
+  p { margin-bottom: 14px; color: var(--ink2); }
+  .analogy { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font-size: 15px; color: var(--ink2); }
+  .analogy b { color: var(--ink); }
+  ul.points { list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink2); }
+  ul.points li::before { content: "-"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-tint); border: 1px solid var(--warn); border-radius: 10px; padding: 16px 20px; font-size: 14.5px; color: var(--ink2); margin-top: 10px; }
+  .callout b { color: var(--warn); }
+  .checklist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .checklist h2 { margin-bottom: 16px; }
+  .checklist ol { padding-left: 20px; }
+  .checklist li { margin-bottom: 12px; color: var(--ink2); }
+  .checklist li b { color: var(--ink); }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">법무팀 실무 브리핑 · 집중투표와 주총 준비</div>
+    <h1>집중투표 의무화, 정관 정비가 아닌 이사 선임 절차의 재설계다</h1>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <b>결론부터.</b> 2026년 9월 10일부터 <b>대규모 상장회사는 정관으로 집중투표를 배제할 수 없습니다</b>(상법 제542조의7 제3항). 정관에서 배제 문구를 지우는 것만으로 끝나지 않습니다. <b>이사 후보 구성, 선임 인원, 소집 통지·공고, 표결 집계</b>가 한 흐름으로 맞아야 새 제도가 실제 의사결정에 반영됩니다. <b>문구 정리와 절차 준수는 다른 일</b>입니다.
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>비유로 먼저 이해하기</h2>
+    <div class="analogy">
+      <b>경기 규칙을 바꿨는데 기록 방식은 그대로인 것</b>과 같습니다. 룰북에서 <b>"이 방식 금지"</b> 문장을 지웠어도, 선수 명단을 짜고 점수를 집계하는 방식이 예전 그대로라면 <b>새 룰이 실제로 적용됐는지 설명할 수 없습니다.</b> 룰북·명단·점수표가 <b>같은 인원과 같은 후보</b>를 가리켜야 합니다. 중간에 인원이 바뀌면 세 서류를 <b>다시 맞춰야</b> 합니다.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>법이 실제로 보는 지점</h2>
+        <p><b>① 적용 시점과 배제 금지(상법 제542조의7 제3항).</b> 2026년 9월 10일부터 <b>대규모 상장회사는 정관으로 집중투표를 배제할 수 없게</b> 됐습니다. 정관 문구를 고쳤더라도 절차가 그대로면 새 제도의 적용을 설명하기 어렵습니다.</p>
+    <p><b>② 집중투표의 구조(상법 제382조의2).</b> 두 명 이상의 이사를 선임할 때 주주가 가진 의결권을 <b>특정 후보에게 집중해 행사</b>할 수 있는 방식입니다. 소수주주가 지지하는 후보에게 표를 모을 수 있어 <b>후보별 득표 구도에 영향</b>을 줍니다.</p>
+    <p><b>③ 당선 보장은 아닙니다.</b> 소수주주 후보의 당선이 자동으로 보장되는 것은 아닙니다. <b>선임할 이사 수와 후보별 지지 분포</b>에 따라 결과가 달라집니다.</p>
+    <p><b>④ 정관 조항의 연결 점검.</b> 배제 조항 삭제 여부뿐 아니라 <b>다른 조항과의 연결</b>을 살펴야 합니다. 사내이사와 사외이사를 별도 선임하는 구조라면 <b>어떤 후보 전체에 어떤 방식의 집중투표를 적용하는지</b> 설명 가능해야 합니다.</p>
+    <p><b>⑤ 소집통지·공고의 인원 표시.</b> 복수 이사 선임 시 <b>소집통지·공고에 선임 인원수를 표시</b>해야 한다는 하급심 판단이 있습니다. 서울중앙지방법원은 단수 선임에서 인원수 미기재만으로 절차 하자가 되지 않는다고 봤지만, <b>이 판단을 단수 선임까지 일반화하지 마십시오.</b></p>
+    <p><b>⑥ 문서 간 불일치의 위험.</b> 정관 정비, 소집 통지, 실제 투표 자료가 다르면 <b>"문구를 바꿨다"는 설명만으로 절차의 일관성을 보여주기 어렵습니다.</b> 회의록에 선임 인원, 후보 구성, 집계 방식, 변경 사유를 남기십시오.</p>
+    <p><b>⑦ 부서 간 연결</b> — 정관 담당자만 완료 표시를 하는 방식으로는 부족합니다. <b>이사회 지원, 주총 사무국, 의결권 집계 담당자</b>가 각자 확인한 결과를 문서로 연결해야 합니다.</p>
+    <p><b>⑧ 변경 관리</b> — 이사 수나 후보 구성이 바뀌면 <b>통지문 수정, 주주 재안내, 투표 시스템 변경 시점</b>을 미리 정하십시오. 기존 검토가 자동으로 유효하다고 보지 말고 다시 확인해야 합니다.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>정관 완료를 종료로 오해하지 마라</h2>
+    <ul class="points">
+      <li><b>적용대상 확인</b> — 회사가 <b>대규모 상장회사 특례 대상인지, 적용 시점은 언제인지</b> 확인하고 근거 문서를 보관하십시오.</li>
+      <li><b>정관과 선임 조항의 대조</b> — 집중투표 배제 문구와 <b>이사 선임 조항</b>을 비교해 정비 결과를 기록하십시오.</li>
+      <li><b>인원의 3중 대조</b> — <b>이사회 의결, 소집 통지·공고, 투표용지</b>의 선임 인원이 같은지 확인하십시오.</li>
+      <li><b>후보·집계의 사전 확정</b> — 후보를 통합 또는 분리해 상정하는 구조가 <b>집중투표 적용범위와 충돌하지 않는지</b> 법무 검토를 남기십시오.</li>
+      <li><b>투표 수단의 반영</b> — 투표용지·전자투표 화면·집계 규칙에 <b>같은 인원과 후보 목록</b>이 반영되게 하십시오.</li>
+      <li><b>변경 시 재검토</b> — 후보 수나 선임 인원이 달라지면 <b>기존 검토를 유효하다고 보지 말고</b> 변경 문안과 집계 절차를 다시 확인하십시오.</li>
+      <li><b>사후 기록</b> — 회의 종료 후 실제 투표 방식과 결과를 <b>의사록·집계 자료</b>에 남겨 사전 계획과 실행의 차이를 설명하십시오.</li>
+    </ul>
+    <div class="callout"><b>핵심.</b> 가장 자주 놓치는 것은 <b>정관 개정 완료를 기준으로 나머지 업무를 자동 종료하는 것</b>입니다. 정관을 고친 날이 종료가 아니라, <b>그날부터 주총 자료를 다시 펼쳐야 하는 시작</b>입니다.</div>
+  </section>
+
+  <section class="checklist">
+    <h2><span class="num">4</span>그래서, 지금 해야 할 일</h2>
+    <p style="margin-bottom:16px;">정관에서 표결 기록까지 추적하라.</p>
+    <ol>
+      <li><b>① 적용대상 확인</b> — 대규모 상장회사 해당 여부와 적용 시점을 확인하고 근거를 보관하십시오.</li>
+      <li><b>② 정관 정비 기록</b> — 배제 조항과 이사 선임 조항을 함께 정비한 결과를 기록하십시오.</li>
+      <li><b>③ 인원·통지 대조</b> — 이사회 의결, 소집 통지·공고, 투표용지의 선임 인원을 맞추십시오.</li>
+      <li><b>④ 후보·집계 확정</b> — 후보 구성과 집계 절차를 사전에 확정하고 담당자를 지정하십시오.</li>
+      <li><b>⑤ 변경관리 절차</b> — 이사 수나 후보가 바뀔 때 통지·전자투표·집계·의사록에 미치는 영향을 재검토하십시오.</li>
+      <li><b>⑥ 기준 문서 지정</b> — 각 단계의 기준 문서와 승인자를 정해 주총 직전 변경도 추적하십시오.</li>
+      <li><b>⑦ 사후 기록</b> — 실제 투표 방식과 결과를 의사록·집계 자료에 남기십시오.</li>
+      <li><b>⑧ 부서 연결</b> — 정관·이사회·주총 사무국·집계 담당자의 확인 결과를 하나의 체크리스트로 연결하십시오.</li>
+    </ol>
+  </section>
+
+  <div class="closing">로펌 머스트노우 · 이 안내는 일반적인 법률 정보이며, 구체적 사안에 대한 법률 자문을 대체하지 않습니다.</div>
+
+</div>
+</body>
+</html>
